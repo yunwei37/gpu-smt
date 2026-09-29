@@ -127,3 +127,79 @@ Priority order:
 6. SMT-COMP as an unrelated-query control.
 
 The first paper-quality experiment is **not** GPU performance. It is a workload study answering whether independent real verification jobs expose enough repeated context to justify cross-job state reuse.
+
+
+## Reuse hierarchy experiment
+
+To separate term/AST reuse from live solver-state reuse:
+
+```bash
+python3 bench/reuse_levels_bench.py \
+  --queries 32 \
+  --prefix-sizes 16,64,256,1024 \
+  --repetitions 5 \
+  --json artifacts/reuse-levels.json
+```
+
+The three paths are:
+
+- cold context + ASTs + solver per query;
+- one shared Z3 context/AST prefix + fresh solver per query;
+- one persistent solver using push/pop.
+
+This experiment helps determine whether the project is merely avoiding parsing/term construction or actually benefits from retaining solver-internal state.
+
+## Fork/COW snapshot benchmark
+
+Synthetic fan-out:
+
+```bash
+python3 bench/fork_snapshot_bench.py \
+  --queries 16 \
+  --prefix-sizes 64,256,1024 \
+  --widths 1,2,4 \
+  --repetitions 3 \
+  --json artifacts/fork-snapshot.json
+```
+
+This benchmark compares equally parallel fresh children with children forked from a pre-built solver context. On Linux it also records child PSS from `/proc/self/smaps_rollup`.
+
+Do not use arbitrary multithreaded processes as snapshot parents. A production implementation needs a controlled single-threaded forkserver or equivalent snapshot mechanism.
+
+## Pinned real SMT-LIB workloads
+
+Fetch exact upstream revisions:
+
+```bash
+python3 bench/fetch_real_smt.py --out artifacts/real-smt
+```
+
+Run fresh-vs-incremental replay:
+
+```bash
+python3 bench/smt2_replay_bench.py \
+  artifacts/real-smt/*.smt2 \
+  --repetitions 20 \
+  --json artifacts/real-smt-replay.json
+```
+
+Run fork/COW fan-out on files containing at least two related `check-sat` commands:
+
+```bash
+python3 bench/related_snapshot_bench.py \
+  artifacts/real-smt/z3-loop-unrolling-bitvec.smt2 \
+  artifacts/real-smt/z3-loop-unrolling-int.smt2 \
+  --repetitions 30 \
+  --json artifacts/real-smt-snapshot.json
+```
+
+The manifest records upstream repository, revision, and path; third-party benchmark contents are not vendored into this repository.
+
+## Current preliminary results
+
+See:
+
+- `results/2026-09-29-libz3-state-reuse.md`
+- `results/2026-09-29-preliminary-serving.md`
+
+The main unresolved experiment remains VeruSAGE-Bench. Synthetic and small upstream workloads establish mechanism headroom, not the end-to-end systems claim.
