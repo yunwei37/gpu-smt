@@ -1,0 +1,153 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[letterpaper,margin=0.72in,columnsep=0.24in]{geometry}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{colorlinks=true,allcolors=blue}
+\setlist{nosep,leftmargin=*}
+\title{\textbf{VeriServe: SLO-Aware Verification Serving with Cross-Job State Reuse}}
+\author{Anonymous draft}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Formal verification is increasingly used as an online and large-scale systems workload: cloud services issue enormous numbers of SMT queries, systems verification tools invoke SMT solvers repeatedly during development, and proof/code-generation agents can produce many candidate programs that must be checked. Existing solver and verification infrastructure, however, largely optimizes either a single hard reasoning job or reuse explicitly exposed by one client session. Independent processes, CI jobs, and agent candidates often rebuild closely related solver state from scratch.
+
+We propose \emph{VeriServe}, a transparent verification-serving runtime that treats verification context as a reusable systems resource. VeriServe sits around unmodified solvers and verifiers, reconstructs a content-addressed context graph across otherwise independent jobs, and schedules requests to fresh solvers, warm incremental contexts, copy-on-write snapshots, portfolio workers, or optional accelerators according to latency and throughput SLOs. The design targets drop-in compatibility: applications need not be rewritten and solver correctness remains the authority.
+
+Preliminary experiments with stock libz3 show why the systems question is worth studying. On synthetic QF\_BV streams with large common prefixes, persistent incremental state improves total runtime by up to 25.5$\times$. A fork/COW prototype reduces median child memory footprint and improves throughput by roughly 1.6--3.1$\times$ across the configurations tested. On pinned bounded-model-checking examples from the Z3 repository, replaying the original incremental command stream is 8.2--17.5$\times$ faster than rebuilding a fresh solver for each check; a CBMC QF\_BV regression example shows a smaller 2.6$\times$ gain. These numbers are preliminary and do not establish end-to-end benefit. The central research question is whether large real verification workloads expose enough cross-job structure for an external runtime to improve the latency--throughput frontier without modifying their solvers.
+\end{abstract}
+
+\section{Introduction}
+SMT and proof checking are no longer only offline theorem-proving tasks. Industrial verification systems can issue queries at cloud scale: AWS reported growing Zelkova from roughly a thousand SMT invocations per day to about one billion per day~\cite{rungta2022billion}. Systems verification frameworks such as Verus use SMT-backed deductive verification on realistic operating-system, storage, memory-allocation, and distributed-systems code~\cite{lattuada2024verus}. New proof-synthesis systems add another dimension: a single logical task can generate many candidate programs or proofs whose contexts are almost identical but whose final proof fragments differ.
+
+This workload has two competing objectives. \textbf{Low latency} matters for interactive verification, policy checks, and admission paths. \textbf{High throughput} matters for CI, repository verification, symbolic execution, and agent search.
+
+Today, clients often cross process or job boundaries exactly where valuable state disappears. A verifier may invoke a fresh solver for each proof obligation; a CI system may start from scratch after a small source edit; an agent may evaluate many candidates in independent workers. Incremental SMT already supports explicit state reuse within a session, but the client must structure its interaction around that state. Result caches such as Green~\cite{visser2012green} and fine-grained verification caching in Boogie/Dafny~\cite{leino2015caching} demonstrate that reuse matters, yet they cache completed results or operate inside a particular verification pipeline.
+
+Our thesis is: \emph{modern verification workloads contain reusable reasoning state across jobs, and a systems runtime can recover and schedule around that state without modifying the solver or the application.}
+
+VeriServe explores this thesis. Rather than replacing Z3~\cite{demoura2008z3} or cvc5~\cite{barbosa2022cvc5}, it treats stock solver processes as stateful workers. It reconstructs a graph of verification contexts, keeps popular contexts warm, optionally snapshots them with copy-on-write, and routes requests according to deadlines and expected transition cost.
+
+The intended contributions are: (1) a workload characterization of interactive, CI, and agent verification traffic; (2) a verification-context abstraction that recovers incremental structure across independent solver clients; (3) a state-aware SLO scheduler; (4) a transparent implementation for unmodified verification frontends and stock solver backends; and (5) an evaluation on real systems-verification workloads, with unrelated SMT queries as a negative control.
+
+\section{Why a Serving Runtime?}
+\subsection{Existing systems optimize a different axis}
+Mallob scales automated reasoning by dynamically allocating distributed resources to reasoning jobs and now supports SAT, incremental SAT, MaxSAT, and SMT~\cite{schreiber2026mallob,sanders2022mallob}. This is complementary to our target. Mallob asks how to assign resources to reasoning jobs. VeriServe asks whether independent verification jobs can be incrementalized across their original client boundaries.
+
+Similarly, GPU SAT work such as ParaFROST accelerates inprocessing inside a SAT solver instance~\cite{osama2024parafrost}. Our GPU hypothesis, if pursued, is different: many small or medium related verification requests may expose inter-query parallelism and shared preprocessing.
+
+\subsection{Verification state is expensive and sticky}
+A solver worker can contain parsed and hash-consed terms, simplified assertions, bit-blasted or SAT-level representation, theory-solver state, learned clauses, heuristic state, and memory pages whose construction cost has already been paid. Starting a new solver discards all of this. Keeping every possible context alive is also infeasible. The resulting problem resembles cache placement and stateful serving more than a conventional stateless RPC service.
+
+\subsection{Reuse is not always a win}
+A reused incremental context can disable preprocessing opportunities, accumulate unhelpful state, consume memory, or serialize requests behind one worker. Snapshotting has fork/COW overhead; batching adds queueing delay; hedged requests waste compute when the first worker was already fast. Therefore the runtime should not obey a universal reuse rule. For worker $w$ and query $q$, the scheduler instead estimates
+\begin{equation}
+T(w,q)=T_{queue}(w)+T_{transition}(w,q)+T_{solve}(w,q),
+\end{equation}
+subject to the request deadline and resource budget.
+
+\section{Goals and Non-Goals}
+\paragraph{Backend-unmodified.} Stock solver binaries/libraries remain authoritative. We may use public incremental APIs, process control, and solver command protocols, but do not require a solver fork.
+\paragraph{Application-transparent baseline.} A verifier should be able to opt in by replacing a solver executable path or using a launcher.
+\paragraph{Semantic fidelity.} SAT/UNSAT/UNKNOWN and requested models, proofs, or unsat cores must match backend semantics. An accelerator may return a hint or validated certificate; it must not silently become a new trusted solver.
+\paragraph{Latency and throughput are co-equal.} We evaluate a Pareto frontier rather than one speedup number.
+\paragraph{GPU is optional.} The CPU-only system must justify itself. GPU execution is added only when real traces identify a sufficiently large suitable class.
+
+\section{Design}
+\subsection{Compatibility shim}
+A lightweight shim implements the solver-facing protocol used by existing applications. For SMT clients this is naturally SMT-LIB over stdin/stdout. The shim records commands and responses, identifies query boundaries, and forwards unsupported interactions directly to a stock backend. The current prototype includes a streaming Z3 capture shim, preserving interactive request/response behavior.
+
+\subsection{Content-addressed context graph}
+Each check request is represented as a context plus a terminal operation. A context is composed of solver configuration, declarations, definitions, assertions, and scope state. Commands are normalized and content-addressed. Related requests form a graph rather than independent strings. The trace tool currently reports both ordered common prefixes and order-insensitive exact-command overlap. The latter is a characterization metric only; a production graph must preserve declaration dependencies, push/pop scopes, solver options, and artifact semantics.
+
+\subsection{A hierarchy of reusable state}
+VeriServe searches a hierarchy: exact completed result; live worker already at the desired context; nearby live context plus a small transition; copy-on-write snapshot of a popular context; warm empty solver process; and cold solver. Result caching alone is not a contribution of this work; the new target is live, partially evaluated solver state across independent jobs.
+
+\subsection{Fork/COW context snapshots}
+With an unmodified native solver, exporting internal state is difficult. Process snapshots offer a systems-only alternative: construct a popular context in a controlled pre-fork process and fork children that inherit its heap copy-on-write. This requires no serialization format or solver source changes and can fan out branch-like workloads. It also has restrictions: arbitrary fork from a multithreaded process is unsafe, child mutation destroys sharing, and snapshot populations need eviction. A production implementation would use a dedicated single-threaded forkserver or equivalent snapshot mechanism.
+
+\subsection{State-aware SLO scheduling}
+Interactive workloads optimize p99 latency and deadline misses; batch/CI workloads optimize makespan and compute cost; agent search may optimize time-to-first-valid rather than completion of every request. The scheduler uses deadline, context similarity, worker residency, predicted solve time, queue length, and measured execution-path crossovers.
+
+\subsection{Optional heterogeneous execution}
+We do not propose to port an entire SMT solver to the GPU. Candidate accelerator work includes many-instance QF\_BV/SAT solving, batched bit blasting, preprocessing, model validation, hashing/deduplication, and certificate checking. ParaFROST demonstrates that selected SAT inprocessing phases can benefit from GPU execution while retaining proof checking~\cite{osama2024parafrost}. VeriServe instead asks whether cross-request batching creates a better accelerator mapping than one large solver invocation.
+
+\section{Prototype}
+The open-source prototype currently contains a transparent streaming Z3 capture shim; an SMT-LIB parser and context-reuse analyzer; a stock-libz3 fresh-vs-incremental microbenchmark; a Linux fork/COW snapshot benchmark; a replay benchmark for pinned public SMT-LIB workloads; and a Verus/VeruSAGE trace harness using \texttt{VERUS\_Z3\_PATH}. No current benchmark modifies Z3.
+
+\section{Preliminary Evaluation}
+These experiments are preliminary. Their purpose is to test whether the mechanisms have enough headroom to justify a larger system, not to establish the final end-to-end claim.
+
+\subsection{Environment}
+Measurements in this draft used stock libz3 4.13.3.0 on Linux 6.18 x86-64 with five visible Intel Xeon Platinum 8573C cores.
+
+\subsection{Synthetic live-state reuse}
+A synthetic QF\_BV workload creates a shared chain of 64-bit constraints and then issues alternating SAT/UNSAT query deltas. Rebuilding the context for every query is compared with one persistent solver using push/pop.
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rrrr}
+\toprule
+Prefix & Fresh & Reuse & Speedup \\
+\midrule
+16 & 362.1 ms & 52.0 ms & 6.96$\times$ \\
+64 & 944.3 ms & 37.0 ms & 25.50$\times$ \\
+256 & 730.5 ms & 29.8 ms & 24.55$\times$ \\
+1024 & 1916.8 ms & 199.2 ms & 9.62$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{64-query synthetic upper-bound experiment.}
+\end{table}
+The non-monotonic trend matters: even in this controlled case, larger context does not produce a monotonic reuse benefit.
+
+\subsection{Fork/COW snapshot crossover}
+We compare two equally parallel executions. In the baseline each child builds the full prefix before solving one delta. In the snapshot path the parent builds the prefix once and children inherit it via fork/COW. For 16 queries and parallel width two, median total-runtime speedups were 2.64$\times$, 2.67$\times$, and 3.14$\times$ for 64, 256, and 1024 prefix constraints. Median child PSS decreased from roughly 47.0 to 34.4 MiB, 47.6 to 36.0 MiB, and 48.8 to 38.7 MiB. Across widths one, two, and four, runtime improvement ranged from about 1.64$\times$ to 3.14$\times$.
+
+\subsection{Pinned real SMT-LIB workloads}
+We replayed solver-relevant command streams from public upstream workloads. For files with multiple checks, the fresh baseline reconstructs the entire active context for each check while the incremental path follows the original push/pop stream in one stock libz3 instance.
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Workload & Fresh & Incremental & Speedup \\
+\midrule
+Z3 BMC bit-vector loop & 16.11 ms & 1.97 ms & 8.16$\times$ \\
+Z3 BMC integer loop & 18.24 ms & 1.04 ms & 17.52$\times$ \\
+CBMC QF\_BV regression & 17.55 ms & 6.85 ms & 2.56$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{Median replay time over 20 repetitions in the preliminary harness.}
+\end{table}
+The BMC examples contain two related checks; the CBMC example contains one check and mainly measures warm construction overhead. These examples show both potential upside and why single-query workloads offer less opportunity.
+
+\subsection{Real branch fan-out}
+For the two Z3 bounded-model-checking loop examples, the verification branches share 13--14 solver commands and differ by one assertion each. Prebuilding the common context and forking both branches reduced median parallel makespan by 1.59$\times$ for the integer example and 1.98$\times$ for the bit-vector example compared with two children independently rebuilding the full context.
+
+\section{Evaluation Plan}
+\paragraph{RQ1: Is cross-job reuse common?} Use VeruSAGE-Bench, which contains 849 repository-level tasks from eight real Verus systems projects~\cite{verusagebench}, plus Dafny/Boogie, Viper-family workloads, and Kani/CBMC. Measure exact duplicates, context overlap, delta size, interarrival locality, and tail solve times.
+\paragraph{RQ2: Does live state beat result caching and warm processes?} Compare direct solver execution, independent process pools, exact result caching, warm empty workers, explicit incremental sessions, context-aware workers, and fork/COW snapshots.
+\paragraph{RQ3: What is the latency--throughput frontier?} Sweep offered load and deadlines. Report p50/p95/p99 latency, deadline-miss rate, throughput, CPU-seconds/query, memory, and energy where measurable.
+\paragraph{RQ4: Does the scheduler make the right choices?} Measure reuse-vs-fresh crossover, state-affinity versus load balancing, snapshot creation/eviction, and hedging only for tail requests.
+\paragraph{RQ5: Is GPU execution justified?} Only after workload characterization, identify a query class large enough to batch. Compare CPU-only VeriServe with CPU/GPU routing at equal SLOs and include transfer, batching delay, and validation cost.
+SMT-COMP-style unrelated queries serve as a negative control.
+
+\section{Related Work}
+\paragraph{SMT solvers.} Z3~\cite{demoura2008z3} and cvc5~\cite{barbosa2022cvc5} provide mature incremental interfaces and sophisticated internal portfolios. VeriServe manages their state across clients rather than replacing their search algorithms.
+\paragraph{Cloud and distributed reasoning.} Zelkova demonstrates that SMT latency and correctness matter at billion-query scale~\cite{rungta2022billion}. Mallob provides scalable reasoning on demand with dynamic resource allocation and incremental reasoning support~\cite{schreiber2026mallob}. VeriServe focuses on recovering shared contexts across independent verification jobs and scheduling around state residency.
+\paragraph{Constraint and verification caching.} Green persists canonicalized constraint results across analyses and programs~\cite{visser2012green}. Boogie/Dafny fine-grained caching avoids rechecking program regions unaffected by edits~\cite{leino2015caching}. These motivate reuse but do not expose live solver context as a schedulable resource across independent clients.
+\paragraph{GPU reasoning.} ParaFROST accelerates certified SAT inprocessing on GPUs~\cite{osama2024parafrost}. VeriServe instead targets inter-query batches and keeps GPU execution optional.
+\paragraph{Systems verification.} Verus demonstrates practical verification of realistic systems code~\cite{lattuada2024verus}; Spoq demonstrates that reducing machine-checkable systems-verification cost can itself be an operating-systems contribution~\cite{li2023spoq}.
+
+\section{Limitations and Open Questions}
+Real cross-job context similarity may be lower than expected. Exact textual overlap may miss semantic reuse, while stronger canonicalization may cost too much. Incremental solving can preserve stale heuristic state. COW snapshots are OS-specific and interact poorly with threads. Models, proofs, unsat cores, random seeds, and solver options complicate cache identity. GPU crossover may require batches larger than interactive SLOs permit. These risks define experimental decision points rather than details to hide.
+
+\section{Conclusion}
+Verification is becoming a serving workload. VeriServe treats solver context as a reusable resource, recovers related state across independent jobs, and schedules that state according to low-latency and high-throughput objectives. Early stock-libz3 experiments show enough headroom to justify a full workload study, but the project remains falsifiable: if large real verification traces do not expose strong cross-job locality, the runtime should be narrowed rather than forcing the abstraction.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}
