@@ -19,7 +19,7 @@ Formal verification is increasingly used as an online and large-scale systems wo
 
 We propose \emph{VeriServe}, a transparent verification-serving runtime that treats verification context as a reusable systems resource. VeriServe sits around unmodified solvers and verifiers, reconstructs a content-addressed context graph across otherwise independent jobs, and schedules requests to fresh solvers, warm incremental contexts, copy-on-write snapshots, portfolio workers, or optional accelerators according to latency and throughput SLOs. The design targets drop-in compatibility: applications need not be rewritten and solver correctness remains the authority.
 
-Preliminary experiments with stock libz3 show why the systems question is worth studying. On synthetic QF\_BV streams with large common prefixes, persistent incremental state improves total runtime by up to 25.5$\times$. A fork/COW prototype reduces median child memory footprint and improves throughput by roughly 1.6--3.1$\times$ across the configurations tested. On pinned bounded-model-checking examples from the Z3 repository, replaying the original incremental command stream is 8.2--17.5$\times$ faster than rebuilding a fresh solver for each check; a CBMC QF\_BV regression example shows a smaller 2.6$\times$ gain. These numbers are preliminary and do not establish end-to-end benefit. The central research question is whether large real verification workloads expose enough cross-job structure for an external runtime to improve the latency--throughput frontier without modifying their solvers.
+Preliminary experiments with stock libz3 show why the systems question is worth studying. A reuse decomposition shows that sharing only Z3 terms reduces end-to-end cost by roughly 1.7--3.4$\times$, while retaining a live solver improves a further 3.6--4.8$\times$ over term reuse on the same synthetic stream. A fork/COW prototype reduces memory footprint and improves throughput across the tested fan-out configurations. On two pinned bounded-model-checking examples from the Z3 repository, one-context incremental replay is roughly 2.1--2.7$\times$ faster end-to-end under CPU pinning, while an isolated single-check CBMC case ranges from a small regression to a 1.4$\times$ gain. These numbers are preliminary and do not establish end-to-end application benefit. The central research question is whether large real verification workloads expose enough cross-job structure for an external runtime to improve the latency--throughput frontier without modifying their solvers.
 \end{abstract}
 
 \section{Introduction}
@@ -116,22 +116,23 @@ Table~\ref{tab:reuse-levels} reports medians over five repetitions.
 \toprule
 Prefix & Cold & AST reuse & Live solver \\
 \midrule
-16 & 86.59 ms & 24.87 ms & 2.01 ms \\
-64 & 110.75 ms & 40.78 ms & 6.90 ms \\
-256 & 304.76 ms & 136.97 ms & 25.89 ms \\
-1024 & 769.56 ms & 470.14 ms & 90.14 ms \\
+16 & 80.77 ms & 23.55 ms & 4.90 ms \\
+64 & 121.75 ms & 48.88 ms & 10.45 ms \\
+256 & 224.29 ms & 126.68 ms & 31.32 ms \\
+1024 & 704.85 ms & 422.10 ms & 118.41 ms \\
 \bottomrule
 \end{tabular}
-\caption{Decomposing reuse: shared terms help, but retaining live solver state
-provides a further 5.2--12.4$\times$ improvement over AST reuse in this
-synthetic workload.}
+\caption{End-to-end reuse decomposition over 32 related queries. Shared terms
+help, and retaining live solver state provides a further 3.6--4.8$\times$
+improvement over AST reuse in this synthetic workload.}
 \label{tab:reuse-levels}
 \end{table}
 
-AST/context reuse alone improves cold execution by 1.6--3.5$\times$.
-Retaining the solver improves again by 5.2--12.4$\times$ over AST reuse.
-This suggests that a generic parser/cache is not sufficient: the stateful
-worker itself is the valuable systems resource.
+AST/context reuse alone improves cold execution by 1.7--3.4$\times$.
+Including the one-time creation of reusable state, retaining the solver
+improves another 3.6--4.8$\times$ over AST reuse; after the reusable state is
+warm, that gap is 3.9--8.0$\times$. This suggests that a generic parser/cache
+is not sufficient: the stateful worker itself is the valuable systems resource.
 
 \subsection{Fork/COW snapshot crossover}
 We compare two equally parallel executions. In the baseline each child builds the full prefix before solving one delta. In the snapshot path the parent builds the prefix once and children inherit it via fork/COW. For 16 queries and parallel width two, median total-runtime speedups were 2.64$\times$, 2.67$\times$, and 3.14$\times$ for 64, 256, and 1024 prefix constraints. Median child PSS decreased from roughly 47.0 to 34.4 MiB, 47.6 to 36.0 MiB, and 48.8 to 38.7 MiB. Across widths one, two, and four, runtime improvement ranged from about 1.64$\times$ to 3.14$\times$.
@@ -140,21 +141,30 @@ We compare two equally parallel executions. In the baseline each child builds th
 We replayed solver-relevant command streams from public upstream workloads. For files with multiple checks, the fresh baseline reconstructs the entire active context for each check while the incremental path follows the original push/pop stream in one stock libz3 instance.
 \begin{table}[t]
 \centering\small
-\begin{tabular}{lrrr}
+\begin{tabular}{lrr}
 \toprule
-Workload & Fresh & Incremental & Speedup \\
+Workload & E2E speedup & Warm speedup \\
 \midrule
-Z3 BMC bit-vector loop & 16.11 ms & 1.97 ms & 8.16$\times$ \\
-Z3 BMC integer loop & 18.24 ms & 1.04 ms & 17.52$\times$ \\
-CBMC QF\_BV regression & 17.55 ms & 6.85 ms & 2.56$\times$ \\
+Z3 BMC bit-vector loop & 2.10--2.47$\times$ & 3.39--3.95$\times$ \\
+Z3 BMC integer loop & 2.11--2.74$\times$ & 4.26--5.43$\times$ \\
+CBMC QF\_BV regression & 0.91--1.42$\times$ & 1.18--1.81$\times$ \\
 \bottomrule
 \end{tabular}
-\caption{Median replay time over 20 repetitions in the preliminary harness.}
+\caption{Three CPU-pinned repetitions; each cell is the range of per-run
+medians over 20 solver replays. E2E includes creation of the one shared Z3
+context, whereas warm timing starts after that context exists.}
 \end{table}
-The BMC examples contain two related checks; the CBMC example contains one check and mainly measures warm construction overhead. These examples show both potential upside and why single-query workloads offer less opportunity.
+The BMC examples contain two related checks and show consistent end-to-end
+benefit from one shared context. The CBMC regression contains only one check:
+its end-to-end result ranges from a small regression to a modest gain even
+though the warm path is faster. This negative case is evidence that the
+runtime must choose reuse versus fresh execution rather than always reusing.
 
 \subsection{Real branch fan-out}
-For the two Z3 bounded-model-checking loop examples, the verification branches share 13--14 solver commands and differ by one assertion each. Prebuilding the common context and forking both branches reduced median parallel makespan by 1.59$\times$ for the integer example and 1.98$\times$ for the bit-vector example compared with two children independently rebuilding the full context.
+For the two Z3 bounded-model-checking loop examples, the verification branches share 13--14 solver commands and differ by one assertion each. Prebuilding the common context and forking both branches reduced median
+parallel makespan by 2.26--2.73$\times$ for the integer example and
+2.40--2.81$\times$ for the bit-vector example across three CPU-pinned runs,
+compared with two children independently rebuilding the full context.
 
 \section{Evaluation Plan}
 \paragraph{RQ1: Is cross-job reuse common?} Use VeruSAGE-Bench, which contains 849 repository-level tasks from eight real Verus systems projects~\cite{verusagebench}, plus Dafny/Boogie, Viper-family workloads, and Kani/CBMC. Measure exact duplicates, context overlap, delta size, interarrival locality, and tail solve times.
