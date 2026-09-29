@@ -23,7 +23,10 @@ class TraceAnalyzerTests(unittest.TestCase):
         """
         cmds = ast.split_commands(text)
         self.assertEqual(len(cmds), 4)
-        self.assertEqual(ast.command_head(ast.normalize(cmds[-1])), "check-sat")
+        self.assertEqual(
+            ast.command_head(ast.normalize(cmds[-1])),
+            "check-sat",
+        )
 
     def test_push_pop_reconstructs_active_assertions(self):
         text = """
@@ -43,10 +46,45 @@ class TraceAnalyzerTests(unittest.TestCase):
             qs = ast.snapshot_queries(p)
 
         self.assertEqual(len(qs), 3)
-        self.assertEqual(sum(c.startswith("(assert") for c in qs[0]), 1)
-        self.assertEqual(sum(c.startswith("(assert") for c in qs[1]), 2)
-        self.assertEqual(sum(c.startswith("(assert") for c in qs[2]), 1)
-        self.assertEqual(ast.digest_query(qs[0]), ast.digest_query(qs[2]))
+        self.assertEqual(
+            sum(c.startswith("(assert") for c in qs[0]),
+            1,
+        )
+        self.assertEqual(
+            sum(c.startswith("(assert") for c in qs[1]),
+            2,
+        )
+        self.assertEqual(
+            sum(c.startswith("(assert") for c in qs[2]),
+            1,
+        )
+        self.assertEqual(
+            ast.digest_query(qs[0]),
+            ast.digest_query(qs[2]),
+        )
+
+    def test_context_overlap_can_detect_reordered_commands(self):
+        a = [
+            "(declare-fun x () Int)",
+            "(declare-fun y () Int)",
+            "(assert (> x 0))",
+            "(assert (> y 0))",
+        ]
+        b = [
+            "(declare-fun y () Int)",
+            "(declare-fun x () Int)",
+            "(assert (> y 0))",
+            "(assert (> x 1))",
+        ]
+        self.assertEqual(ast.lcp_len(a, b), 0)
+        self.assertEqual(ast.multiset_common_count(a, b), 2)
+
+    def test_byte_overlap_counts_duplicate_commands(self):
+        a = ["(assert a)", "(assert a)", "(assert b)"]
+        b = ["(assert a)", "(assert a)", "(assert c)"]
+        expected = 2 * (len("(assert a)") + 1)
+        self.assertEqual(ast.multiset_common_count(a, b), 2)
+        self.assertEqual(ast.multiset_common_bytes(a, b), expected)
 
 
 if __name__ == "__main__":
