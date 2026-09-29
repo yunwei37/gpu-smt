@@ -24,26 +24,27 @@ We decomposed reuse into three paths over 32 related QF_BV queries:
 2. **AST reuse** — keep one Z3 context and shared term DAG, but create a fresh solver for each query;
 3. **live state** — keep the context, terms, and solver alive, using push/pop for each delta.
 
-Median of 5 repetitions:
+The benchmark now records both **end-to-end** timing (including the one-time creation of reusable state) and **warm steady-state** timing. The table below is an end-to-end, single-CPU-pinned run using the median of 5 repetitions.
 
 | Shared prefix constraints | Cold | AST reuse | Live solver | Cold / AST | AST / live | Cold / live |
 |---:|---:|---:|---:|---:|---:|---:|
-| 16 | 86.59 ms | 24.87 ms | 2.01 ms | 3.48x | 12.37x | 43.09x |
-| 64 | 110.75 ms | 40.78 ms | 6.90 ms | 2.72x | 5.91x | 16.05x |
-| 256 | 304.76 ms | 136.97 ms | 25.89 ms | 2.23x | 5.29x | 11.77x |
-| 1024 | 769.56 ms | 470.14 ms | 90.14 ms | 1.64x | 5.22x | 8.54x |
+| 16 | 80.77 ms | 23.55 ms | 4.90 ms | 3.43x | 4.81x | 16.50x |
+| 64 | 121.75 ms | 48.88 ms | 10.45 ms | 2.49x | 4.68x | 11.65x |
+| 256 | 224.29 ms | 126.68 ms | 31.32 ms | 1.77x | 4.05x | 7.16x |
+| 1024 | 704.85 ms | 422.10 ms | 118.41 ms | 1.67x | 3.56x | 5.95x |
+
+Warm AST-to-live ratios for the same run were 8.03x, 7.33x, 4.74x, and 3.87x respectively.
 
 Interpretation:
 
-- Reusing only parsed/constructed terms is already useful: roughly 1.6–3.5x here.
-- Most of the remaining benefit comes from retaining **live solver state**, not merely avoiding parsing/AST allocation.
-- The relative benefit changes substantially with context size. This supports a hierarchy of execution choices rather than one universal reuse policy.
+- Reusing only parsed/constructed terms is useful: about 1.7–3.4x end-to-end here.
+- Retaining **live solver state** adds another 3.6–4.8x end-to-end beyond AST reuse in this workload.
+- The additional steady-state advantage can be larger once reusable state is already resident.
+- The relative benefit shrinks as the context becomes larger/more expensive to reason about, so a runtime should still measure the crossover instead of assuming every context is worth retaining.
 
 This experiment is implemented in:
 
 - `bench/reuse_levels_bench.py`
-
----
 
 ## 2. Fork/COW solver snapshots
 
@@ -96,16 +97,7 @@ Implemented in:
 
 We added a manifest that pins public workloads by upstream repository and commit, plus a fetcher that downloads them without copying third-party benchmark files into this repository.
 
-Current pinned sources include:
-
-- Z3 bounded-model-checking examples:
-  - bit-vector loop unrolling
-  - integer loop unrolling
-  - bubble sort
-- CBMC SMT2 regression workloads:
-  - QF_BV
-  - QF_BV without division
-  - array regression
+Current supported sources include Z3 bounded-model-checking loop-unrolling examples and CBMC SMT2 regression workloads.
 
 Files:
 
@@ -113,26 +105,32 @@ Files:
 - `bench/fetch_real_smt.py`
 - `bench/smt2_replay_bench.py`
 
-### Fresh replay vs original incremental stream
+### Fair replay methodology
 
-We compared:
+The replay harness now reports two incremental measurements:
 
-- **fresh:** reconstruct the full active solver context independently for each check;
-- **incremental:** retain one solver and follow the original push/pop structure.
+- **incremental E2E:** includes creation of one Z3 context, parsing/replaying the command stream, and solving all checks;
+- **incremental warm:** starts after the reusable Z3 context already exists, matching a steady-state serving worker.
 
-Median over 20 repetitions:
+The fresh baseline creates/rebuilds a solver context independently for every active `check-sat` snapshot.
 
-| Workload | Checks | Fresh | Incremental | Speedup |
-|---|---:|---:|---:|---:|
-| Z3 BMC bit-vector loop | 2 | 16.11 ms | 1.97 ms | 8.16x |
-| Z3 BMC integer loop | 2 | 18.24 ms | 1.04 ms | 17.52x |
-| CBMC QF_BV no-division regression | 1 | 17.55 ms | 6.85 ms | 2.56x |
+We repeated the experiment three times pinned to one CPU. Each run internally reports the median of 20 repetitions.
 
-The two BMC examples naturally contain two related verification branches, and incremental reuse is large. The CBMC regression contains only one check, so it mostly demonstrates warm construction/term reuse and has much less opportunity.
+| Workload | Checks | E2E speedup range | Warm speedup range |
+|---|---:|---:|---:|
+| Z3 BMC bit-vector loop | 2 | 2.10–2.47x | 3.39–3.95x |
+| Z3 BMC integer loop | 2 | 2.11–2.74x | 4.26–5.43x |
+| CBMC QF_BV no-division regression | 1 | 0.91–1.42x | 1.18–1.81x |
 
-This is a useful negative boundary: **the runtime should not expect large state-reuse gains from isolated one-shot queries.**
+This corrects an earlier preliminary measurement that compared fresh end-to-end timing against warm-only incremental timing and therefore overstated the speedup. Keeping both numbers is useful, but they answer different questions.
 
----
+The BMC examples naturally contain two related verification branches and show consistent end-to-end reuse. The CBMC regression contains only one check and can be slightly slower end-to-end despite a faster warm path.
+
+That negative result is important:
+
+> **state reuse is a policy choice, not an unconditional optimization.**
+
+A serving scheduler must account for setup/amortization, query count, context size, queueing delay, and deadline.
 
 ## 4. Real branch fan-out with fork/COW
 
@@ -150,20 +148,18 @@ We then compared two parallel children:
 - each child rebuilding common context + branch delta;
 - common context built once, then forked into two branch children.
 
-Median over 30 repetitions:
+Across three runs pinned to one CPU, with each run taking the median of 30 repetitions:
 
-| Workload | Fresh parallel | Snapshot parallel | Speedup |
-|---|---:|---:|---:|
-| Z3 BMC bit-vector loop | 33.23 ms | 16.77 ms | 1.98x |
-| Z3 BMC integer loop | 26.87 ms | 16.94 ms | 1.59x |
+| Workload | Snapshot speedup range |
+|---|---:|
+| Z3 BMC bit-vector loop | 2.40–2.81x |
+| Z3 BMC integer loop | 2.26–2.73x |
 
-This is a more realistic form of the same mechanism than the synthetic chain: the shared context and branch deltas come from actual BMC examples.
+This is a more realistic form of the snapshot mechanism than the synthetic chain because the shared context and branch deltas come from actual BMC examples.
 
 Implemented generically in:
 
 - `bench/related_snapshot_bench.py`
-
----
 
 ## 5. Better trace similarity metrics
 
