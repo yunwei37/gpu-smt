@@ -2,14 +2,23 @@
 """Analyze reuse opportunities in captured SMT-LIB traces.
 
 The analyzer reconstructs assertion contexts at each check-sat/check-sat-assuming
-point, then measures exact duplicates and nearest-recent common-prefix sharing.
-It is intentionally conservative and syntactic: semantic equivalence and
-commutative reordering are not inferred.
+point and reports several conservative syntactic reuse metrics:
+
+* exact duplicate queries;
+* ordered common-prefix sharing;
+* order-insensitive exact-command context overlap;
+* byte-weighted context overlap;
+* estimated command transitions to a nearby reusable context.
+
+These metrics intentionally do not attempt semantic equivalence. The purpose is
+first to determine whether a stateful runtime has enough obvious structure to
+exploit before implementing expensive canonicalization or solver changes.
 """
 
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 import math
@@ -87,19 +96,21 @@ def normalize(cmd: str) -> str:
 
 
 def command_head(cmd: str) -> str:
-    m = re.match(r"\(\s*([^\s()]+)", cmd)
-    return m.group(1) if m else ""
+    match = re.match(r"\(\s*([^\s()]+)", cmd)
+    return match.group(1) if match else ""
 
 
 def int_arg(cmd: str, default: int = 1) -> int:
-    m = re.match(r"\(\s*[^\s()]+\s+([0-9]+)", cmd)
-    return int(m.group(1)) if m else default
+    match = re.match(r"\(\s*[^\s()]+\s+([0-9]+)", cmd)
+    return int(match.group(1)) if match else default
 
 
 def snapshot_queries(path: Path) -> list[list[str]]:
     commands = [
         normalize(c)
-        for c in split_commands(path.read_text(encoding="utf-8", errors="replace"))
+        for c in split_commands(
+            path.read_text(encoding="utf-8", errors="replace")
+        )
     ]
 
     global_cmds: list[str] = []
@@ -123,10 +134,16 @@ def snapshot_queries(path: Path) -> list[list[str]]:
                 assertions = assertions[: stack.pop()]
         elif head in {"check-sat", "check-sat-assuming"}:
             queries.append(global_cmds + assertions + [cmd])
-        elif head in {"get-model", "get-proof", "get-unsat-core", "get-value", "exit"}:
+        elif head in {
+            "get-model",
+            "get-proof",
+            "get-unsat-core",
+            "get-value",
+            "echo",
+            "exit",
+        }:
             continue
         else:
-            # Conservatively treat declarations/options/definitions as global.
             global_cmds.append(cmd)
 
     return queries
@@ -140,12 +157,27 @@ def digest_query(cmds: list[str]) -> str:
     return h.hexdigest()
 
 
+def query_context(cmds: list[str]) -> list[str]:
+    if cmds and command_head(cmds[-1]) in {"check-sat", "check-sat-assuming"}:
+        return cmds[:-1]
+    return cmds
+
+
 def lcp_len(a: list[str], b: list[str]) -> int:
     n = min(len(a), len(b))
     i = 0
     while i < n and a[i] == b[i]:
         i += 1
     return i
+
+
+def multiset_common_count(a: list[str], b: list[str]) -> int:
+    return sum((Counter(a) & Counter(b)).values())
+
+
+def multiset_common_bytes(a: list[str], b: list[str]) -> int:
+    common = Counter(a) & Counter(b)
+    return sum((len(cmd) + 1) * count for cmd, count in common.items())
 
 
 def percentile(values: list[float], p: float) -> float:
@@ -162,6 +194,15 @@ def percentile(values: list[float], p: float) -> float:
     return xs[lo] * (hi - rank) + xs[hi] * (rank - lo)
 
 
+def distribution(values: list[float]) -> dict[str, float]:
+    return {
+        "mean": (sum(values) / len(values)) if values else 0.0,
+        "p50": percentile(values, 0.50),
+        "p95": percentile(values, 0.95),
+        "p99": percentile(values, 0.99),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("trace_dir", type=Path)
@@ -175,38 +216,76 @@ def main() -> int:
     args = parser.parse_args()
 
     paths = sorted(
-        p
-        for p in args.trace_dir.rglob("*")
-        if p.is_file() and p.suffix in {".smt2", ".smt"}
+        path
+        for path in args.trace_dir.rglob("*")
+        if path.is_file() and path.suffix in {".smt2", ".smt"}
     )
     all_queries: list[tuple[str, list[str]]] = []
     per_file: dict[str, int] = {}
 
     for path in paths:
-        qs = snapshot_queries(path)
-        per_file[str(path)] = len(qs)
-        for q in qs:
-            all_queries.append((str(path), q))
+        queries = snapshot_queries(path)
+        per_file[str(path)] = len(queries)
+        for query in queries:
+            all_queries.append((str(path), query))
 
     seen: set[str] = set()
     exact_hits = 0
     prefix_fractions: list[float] = []
     nearest_prefix_commands: list[int] = []
+    overlap_fractions: list[float] = []
+    byte_overlap_fractions: list[float] = []
+    transition_commands: list[float] = []
 
     for i, (_source, query) in enumerate(all_queries):
-        d = digest_query(query)
-        if d in seen:
+        digest = digest_query(query)
+        if digest in seen:
             exact_hits += 1
-        seen.add(d)
+        seen.add(digest)
 
-        best = 0
+        context = query_context(query)
+        best_prefix = 0
+        best_common = 0
+        best_common_bytes = 0
+        best_transition = len(context)
+
         start = max(0, i - max(args.window, 0))
         for j in range(start, i):
-            best = max(best, lcp_len(query, all_queries[j][1]))
-        nearest_prefix_commands.append(best)
-        prefix_fractions.append((best / len(query)) if query else 0.0)
+            previous = query_context(all_queries[j][1])
+            prefix = lcp_len(context, previous)
+            common = multiset_common_count(context, previous)
+            common_bytes = multiset_common_bytes(context, previous)
+            transition = (
+                len(context) - common + len(previous) - common
+            )
 
-    sizes = [len(q) for _src, q in all_queries]
+            best_prefix = max(best_prefix, prefix)
+
+            candidate = (common, common_bytes, -transition)
+            incumbent = (
+                best_common,
+                best_common_bytes,
+                -best_transition,
+            )
+            if candidate > incumbent:
+                best_common = common
+                best_common_bytes = common_bytes
+                best_transition = transition
+
+        nearest_prefix_commands.append(best_prefix)
+        prefix_fractions.append(
+            (best_prefix / len(context)) if context else 0.0
+        )
+        overlap_fractions.append(
+            (best_common / len(context)) if context else 0.0
+        )
+        total_bytes = sum(len(cmd) + 1 for cmd in context)
+        byte_overlap_fractions.append(
+            (best_common_bytes / total_bytes) if total_bytes else 0.0
+        )
+        transition_commands.append(float(best_transition))
+
+    sizes = [len(query_context(q)) for _src, q in all_queries]
     result = {
         "files": len(paths),
         "queries": len(all_queries),
@@ -215,44 +294,37 @@ def main() -> int:
         "exact_duplicate_fraction": (
             exact_hits / len(all_queries) if all_queries else 0.0
         ),
-        "commands_per_query": {
-            "mean": (sum(sizes) / len(sizes)) if sizes else 0.0,
-            "p50": percentile([float(x) for x in sizes], 0.50),
-            "p95": percentile([float(x) for x in sizes], 0.95),
-            "p99": percentile([float(x) for x in sizes], 0.99),
-        },
-        "nearest_recent_prefix_fraction": {
-            "mean": (
-                sum(prefix_fractions) / len(prefix_fractions)
-                if prefix_fractions
-                else 0.0
-            ),
-            "p50": percentile(prefix_fractions, 0.50),
-            "p95": percentile(prefix_fractions, 0.95),
-            "p99": percentile(prefix_fractions, 0.99),
-        },
-        "nearest_recent_prefix_commands": {
-            "mean": (
-                sum(nearest_prefix_commands) / len(nearest_prefix_commands)
-                if nearest_prefix_commands
-                else 0.0
-            ),
-            "p50": percentile(
-                [float(x) for x in nearest_prefix_commands], 0.50
-            ),
-            "p95": percentile(
-                [float(x) for x in nearest_prefix_commands], 0.95
-            ),
-            "p99": percentile(
-                [float(x) for x in nearest_prefix_commands], 0.99
-            ),
-        },
+        "commands_per_query": distribution([float(x) for x in sizes]),
+        "nearest_recent_prefix_fraction": distribution(prefix_fractions),
+        "nearest_recent_prefix_commands": distribution(
+            [float(x) for x in nearest_prefix_commands]
+        ),
+        "nearest_recent_context_overlap_fraction": distribution(
+            overlap_fractions
+        ),
+        "nearest_recent_context_byte_overlap_fraction": distribution(
+            byte_overlap_fractions
+        ),
+        "nearest_recent_transition_commands": distribution(
+            transition_commands
+        ),
         "window": args.window,
         "per_file_queries": per_file,
         "notes": [
-            "Similarity is syntactic and command-order sensitive.",
-            "Scoped declarations and unusual SMT-LIB command patterns may not be reconstructed exactly.",
-            "The metric is intended to falsify/validate the reuse hypothesis before implementing a runtime.",
+            "Prefix similarity is exact and order-sensitive.",
+            (
+                "Context overlap is exact normalized-command multiset overlap; "
+                "it is order-insensitive but not semantic equivalence."
+            ),
+            (
+                "Transition commands approximate edits to the nearest recent "
+                "context; a runtime still has to preserve scopes and backend "
+                "semantics."
+            ),
+            (
+                "These conservative metrics are intended to falsify/validate "
+                "the reuse hypothesis before implementing solver changes."
+            ),
         ],
     }
 
