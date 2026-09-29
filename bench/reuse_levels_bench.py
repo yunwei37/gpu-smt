@@ -173,35 +173,39 @@ def run_cold(z3: Z3, constraints: int, queries: int):
 
 
 def run_ast_reuse(z3: Z3, constraints: int, queries: int):
+    e2e_start = time.perf_counter()
     ctx = z3.context()
     sort, xlast, formulas, expected = build_terms(z3, ctx, constraints)
     statuses = []
-    start = time.perf_counter()
+    warm_start = time.perf_counter()
     for qid in range(queries):
         solver = make_solver(z3, ctx, formulas)
         add_delta(z3, ctx, sort, xlast, solver, expected, qid)
         statuses.append(z3.l.Z3_solver_check(ctx, solver))
         z3.l.Z3_solver_dec_ref(ctx, solver)
-    elapsed = time.perf_counter() - start
+    warm_elapsed = time.perf_counter() - warm_start
+    e2e_elapsed = time.perf_counter() - e2e_start
     z3.l.Z3_del_context(ctx)
-    return elapsed, statuses
+    return e2e_elapsed, warm_elapsed, statuses
 
 
 def run_live(z3: Z3, constraints: int, queries: int):
+    e2e_start = time.perf_counter()
     ctx = z3.context()
     sort, xlast, formulas, expected = build_terms(z3, ctx, constraints)
     solver = make_solver(z3, ctx, formulas)
     statuses = []
-    start = time.perf_counter()
+    warm_start = time.perf_counter()
     for qid in range(queries):
         z3.l.Z3_solver_push(ctx, solver)
         add_delta(z3, ctx, sort, xlast, solver, expected, qid)
         statuses.append(z3.l.Z3_solver_check(ctx, solver))
         z3.l.Z3_solver_pop(ctx, solver, 1)
-    elapsed = time.perf_counter() - start
+    warm_elapsed = time.perf_counter() - warm_start
+    e2e_elapsed = time.perf_counter() - e2e_start
     z3.l.Z3_solver_dec_ref(ctx, solver)
     z3.l.Z3_del_context(ctx)
-    return elapsed, statuses
+    return e2e_elapsed, warm_elapsed, statuses
 
 
 def main() -> int:
@@ -219,37 +223,52 @@ def main() -> int:
     for constraints in [
         int(x) for x in args.prefix_sizes.split(",") if x.strip()
     ]:
-        samples = {"cold": [], "ast_reuse": [], "live": []}
+        samples = {
+            "cold_e2e": [],
+            "ast_e2e": [],
+            "ast_warm": [],
+            "live_e2e": [],
+            "live_warm": [],
+        }
         reference_status = None
 
         for _ in range(args.repetitions):
             cold_t, cold_s = run_cold(z3, constraints, args.queries)
-            ast_t, ast_s = run_ast_reuse(
+            ast_e2e_t, ast_warm_t, ast_s = run_ast_reuse(
                 z3, constraints, args.queries
             )
-            live_t, live_s = run_live(z3, constraints, args.queries)
+            live_e2e_t, live_warm_t, live_s = run_live(
+                z3, constraints, args.queries
+            )
 
             if not (cold_s == ast_s == live_s):
                 raise RuntimeError("semantic mismatch between reuse levels")
             reference_status = cold_s
-            samples["cold"].append(cold_t)
-            samples["ast_reuse"].append(ast_t)
-            samples["live"].append(live_t)
+            samples["cold_e2e"].append(cold_t)
+            samples["ast_e2e"].append(ast_e2e_t)
+            samples["ast_warm"].append(ast_warm_t)
+            samples["live_e2e"].append(live_e2e_t)
+            samples["live_warm"].append(live_warm_t)
 
-        cold = statistics.median(samples["cold"])
-        ast = statistics.median(samples["ast_reuse"])
-        live = statistics.median(samples["live"])
+        cold = statistics.median(samples["cold_e2e"])
+        ast_e2e = statistics.median(samples["ast_e2e"])
+        ast_warm = statistics.median(samples["ast_warm"])
+        live_e2e = statistics.median(samples["live_e2e"])
+        live_warm = statistics.median(samples["live_warm"])
 
         row = {
             "prefix_constraints": constraints,
             "queries": args.queries,
             "repetitions": args.repetitions,
-            "cold_total_ms_median": cold * 1e3,
-            "ast_reuse_total_ms_median": ast * 1e3,
-            "live_total_ms_median": live * 1e3,
-            "cold_over_ast": cold / ast,
-            "ast_over_live": ast / live,
-            "cold_over_live": cold / live,
+            "cold_e2e_ms_median": cold * 1e3,
+            "ast_e2e_ms_median": ast_e2e * 1e3,
+            "ast_warm_ms_median": ast_warm * 1e3,
+            "live_e2e_ms_median": live_e2e * 1e3,
+            "live_warm_ms_median": live_warm * 1e3,
+            "cold_over_ast_e2e": cold / ast_e2e,
+            "ast_over_live_e2e": ast_e2e / live_e2e,
+            "cold_over_live_e2e": cold / live_e2e,
+            "ast_warm_over_live_warm": ast_warm / live_warm,
             "statuses": {
                 "sat": reference_status.count(1),
                 "unsat": reference_status.count(-1),
