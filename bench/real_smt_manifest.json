@@ -15,13 +15,6 @@
       "kind": "bounded-model-checking"
     },
     {
-      "name": "z3-bubble-sort",
-      "repo": "Z3Prover/z3",
-      "revision": "09ab50678a73e18cf2745a003b6ffc66fc426060",
-      "path": "examples/SMT-LIB2/bounded model checking/bubble_sort.smt2",
-      "kind": "bounded-model-checking"
-    },
-    {
       "name": "cbmc-weber-qf-bv",
       "repo": "diffblue/cbmc",
       "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
@@ -41,6 +34,17 @@
       "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
       "path": "regression/smt2_solver/arrays/arrays1.smt2",
       "kind": "solver-regression"
+    },
+    {
+      "name": "cbmc-as-const",
+      "repo": "diffblue/cbmc",
+      "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
+      "path": "regression/smt2_solver/arrays/as_const1.smt2",
+      "kind": "solver-regression"
     }
+  ],
+  "notes": [
+    "The current libz3 replay harness intentionally excludes the Z3 bubble-sort example because its List sort relies on command-context parser features not handled by Z3_solver_from_string in this prototype.",
+    "Add it back when the CLI-backed replay path is available."
   ]
 }
