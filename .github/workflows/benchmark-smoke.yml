@@ -21,6 +21,12 @@ jobs:
         run: |
           python3 -m py_compile bench/synthetic_prefix_bench.py
           python3 -m py_compile bench/libz3_state_reuse_bench.py
+          python3 -m py_compile bench/reuse_levels_bench.py
+          python3 -m py_compile bench/fork_snapshot_bench.py
+          python3 -m py_compile bench/related_snapshot_bench.py
+          python3 -m py_compile bench/smt2_replay_bench.py
+          python3 -m py_compile bench/fetch_real_smt.py
+          python3 -m py_compile bench/run_verus_trace.py
           python3 -m py_compile tools/analyze_smt_trace.py
           python3 -m py_compile tools/z3_capture.py
           python3 -m unittest discover -s tests -v
@@ -40,6 +46,14 @@ jobs:
             --queries 32 \
             --prefix-constraints 256 \
             --json artifacts/synthetic-libz3.json
+
+      - name: Decompose reuse levels
+        run: |
+          python3 bench/reuse_levels_bench.py \
+            --queries 8 \
+            --prefix-sizes 16,64 \
+            --repetitions 2 \
+            --json artifacts/reuse-levels.json
 
       - name: Analyze cross-query prefix reuse
         run: |
