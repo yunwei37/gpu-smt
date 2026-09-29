@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "name": "z3-loop-unrolling-bitvec",
+      "repo": "Z3Prover/z3",
+      "revision": "09ab50678a73e18cf2745a003b6ffc66fc426060",
+      "path": "examples/SMT-LIB2/bounded model checking/loop_unrolling_bitvec.smt2",
+      "kind": "bounded-model-checking"
+    },
+    {
+      "name": "z3-loop-unrolling-int",
+      "repo": "Z3Prover/z3",
+      "revision": "09ab50678a73e18cf2745a003b6ffc66fc426060",
+      "path": "examples/SMT-LIB2/bounded model checking/loop_unrolling.smt2",
+      "kind": "bounded-model-checking"
+    },
+    {
+      "name": "z3-bubble-sort",
+      "repo": "Z3Prover/z3",
+      "revision": "09ab50678a73e18cf2745a003b6ffc66fc426060",
+      "path": "examples/SMT-LIB2/bounded model checking/bubble_sort.smt2",
+      "kind": "bounded-model-checking"
+    },
+    {
+      "name": "cbmc-weber-qf-bv",
+      "repo": "diffblue/cbmc",
+      "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
+      "path": "regression/smt2_solver/basic-bv1/weber_qf_bv.smt2",
+      "kind": "solver-regression"
+    },
+    {
+      "name": "cbmc-weber-qf-bv-no-div",
+      "repo": "diffblue/cbmc",
+      "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
+      "path": "regression/smt2_solver/basic-bv1/weber_qf_bv_without_division.smt2",
+      "kind": "solver-regression"
+    },
+    {
+      "name": "cbmc-arrays",
+      "repo": "diffblue/cbmc",
+      "revision": "fd5dcee9e623c7d6539697abaafc15fbf73bd3ac",
+      "path": "regression/smt2_solver/arrays/arrays1.smt2",
+      "kind": "solver-regression"
+    }
+  ]
+}
