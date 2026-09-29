@@ -1,0 +1,68 @@
+name: benchmark-smoke
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  z3-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Z3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y z3
+
+      - name: Syntax and unit tests
+        run: |
+          python3 -m py_compile bench/synthetic_prefix_bench.py
+          python3 -m py_compile tools/analyze_smt_trace.py
+          python3 -m py_compile tools/z3_capture.py
+          python3 -m unittest discover -s tests -v
+
+      - name: Run synthetic cold-vs-incremental benchmark
+        run: |
+          mkdir -p artifacts/traces
+          python3 bench/synthetic_prefix_bench.py \
+            --queries 32 \
+            --prefix-constraints 512 \
+            --dump-dir artifacts/traces \
+            --json artifacts/synthetic.json
+
+      - name: Analyze cross-query prefix reuse
+        run: |
+          python3 tools/analyze_smt_trace.py artifacts/traces \
+            --window 64 \
+            --json artifacts/trace-analysis.json
+
+      - name: Validate benchmark output
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          bench = json.loads(Path("artifacts/synthetic.json").read_text())
+          trace = json.loads(Path("artifacts/trace-analysis.json").read_text())
+
+          assert bench["semantic_match"] is True
+          assert bench["statuses"]["sat"] == 16
+          assert bench["statuses"]["unsat"] == 16
+          assert trace["queries"] == 32
+          assert trace["nearest_recent_prefix_fraction"]["p50"] > 0.90
+
+          print("semantic match:", bench["semantic_match"])
+          print("cold total s:", bench["cold"]["total_s"])
+          print("incremental total s:", bench["incremental"]["total_s"])
+          print("total speedup:", bench["speedup_total"])
+          print("prefix p50:", trace["nearest_recent_prefix_fraction"]["p50"])
+          PY
+
+      - name: Upload smoke benchmark artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: z3-smoke-results
+          path: artifacts/
