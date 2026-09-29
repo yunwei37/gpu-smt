@@ -104,6 +104,35 @@ Prefix & Fresh & Reuse & Speedup \\
 \end{table}
 The non-monotonic trend matters: even in this controlled case, larger context does not produce a monotonic reuse benefit.
 
+\subsection{Where does reuse help?}
+To separate term-construction reuse from solver-state reuse, we compare three
+paths over 32 related queries: a fully cold context, a shared Z3 context and
+term DAG with a fresh solver per query, and one live solver using push/pop.
+Table~\ref{tab:reuse-levels} reports medians over five repetitions.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rrrr}
+\toprule
+Prefix & Cold & AST reuse & Live solver \\
+\midrule
+16 & 86.59 ms & 24.87 ms & 2.01 ms \\
+64 & 110.75 ms & 40.78 ms & 6.90 ms \\
+256 & 304.76 ms & 136.97 ms & 25.89 ms \\
+1024 & 769.56 ms & 470.14 ms & 90.14 ms \\
+\bottomrule
+\end{tabular}
+\caption{Decomposing reuse: shared terms help, but retaining live solver state
+provides a further 5.2--12.4$\times$ improvement over AST reuse in this
+synthetic workload.}
+\label{tab:reuse-levels}
+\end{table}
+
+AST/context reuse alone improves cold execution by 1.6--3.5$\times$.
+Retaining the solver improves again by 5.2--12.4$\times$ over AST reuse.
+This suggests that a generic parser/cache is not sufficient: the stateful
+worker itself is the valuable systems resource.
+
 \subsection{Fork/COW snapshot crossover}
 We compare two equally parallel executions. In the baseline each child builds the full prefix before solving one delta. In the snapshot path the parent builds the prefix once and children inherit it via fork/COW. For 16 queries and parallel width two, median total-runtime speedups were 2.64$\times$, 2.67$\times$, and 3.14$\times$ for 64, 256, and 1024 prefix constraints. Median child PSS decreased from roughly 47.0 to 34.4 MiB, 47.6 to 36.0 MiB, and 48.8 to 38.7 MiB. Across widths one, two, and four, runtime improvement ranged from about 1.64$\times$ to 3.14$\times$.
 
