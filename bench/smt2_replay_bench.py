@@ -211,13 +211,15 @@ def run_fresh(z3: Z3, snapshots: list[list[str]], repetitions: int):
 
 
 def run_incremental(z3: Z3, commands: list[str], repetitions: int):
-    elapsed = []
+    e2e_elapsed = []
+    warm_elapsed = []
     statuses = None
 
     for _ in range(repetitions):
+        e2e_start = time.perf_counter()
         ctx, solver = z3.context_solver()
+        warm_start = time.perf_counter()
         run_statuses = []
-        start = time.perf_counter()
 
         for cmd in commands:
             kind = head(cmd)
@@ -245,11 +247,12 @@ def run_incremental(z3: Z3, commands: list[str], repetitions: int):
             else:
                 z3.l.Z3_solver_from_string(ctx, solver, cmd.encode())
 
-        elapsed.append(time.perf_counter() - start)
+        warm_elapsed.append(time.perf_counter() - warm_start)
+        e2e_elapsed.append(time.perf_counter() - e2e_start)
         statuses = run_statuses
         z3.close(ctx, solver)
 
-    return elapsed, statuses
+    return e2e_elapsed, warm_elapsed, statuses
 
 
 def summarize(values: list[float]) -> dict:
@@ -303,8 +306,8 @@ def main() -> int:
         fresh_times, fresh_statuses = run_fresh(
             z3, snapshots, args.repetitions
         )
-        incremental_times, incremental_statuses = run_incremental(
-            z3, commands, args.repetitions
+        incremental_e2e_times, incremental_warm_times, incremental_statuses = (
+            run_incremental(z3, commands, args.repetitions)
         )
 
         if fresh_statuses != incremental_statuses:
@@ -314,16 +317,21 @@ def main() -> int:
             )
 
         fresh = summarize(fresh_times)
-        incremental = summarize(incremental_times)
+        incremental_e2e = summarize(incremental_e2e_times)
+        incremental_warm = summarize(incremental_warm_times)
         row = {
             "file": str(path),
             "commands": len(commands),
             "queries": len(snapshots),
             "statuses": fresh_statuses,
             "fresh": fresh,
-            "incremental": incremental,
-            "speedup_median": (
-                fresh["median_ms"] / incremental["median_ms"]
+            "incremental_e2e": incremental_e2e,
+            "incremental_warm": incremental_warm,
+            "speedup_e2e_median": (
+                fresh["median_ms"] / incremental_e2e["median_ms"]
+            ),
+            "speedup_warm_median": (
+                fresh["median_ms"] / incremental_warm["median_ms"]
             ),
             "skipped": False,
         }
