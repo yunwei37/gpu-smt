@@ -24,6 +24,12 @@ prefix pool changes `unsat`/`unknown` outcomes; it is a negative fidelity result
 not a serving speedup. Mathlib replay uses the established community REPL. The
 GPU result covers metadata computation, not full proof checking.
 
+The initial investigation/workspace/GPU-benchmark request is complete, including
+the temporary RTX 5090 Job cleanup receipt. Full GPU Lean checking and a novel
+production SMT runtime remain undemonstrated. [Reproduction after container
+recovery](docs/reproduce-checkpoint.md) documents surviving inputs and rebuilding
+lost temporary dependencies, with an evidence-grounded next research direction.
+
 ## Quick start
 
 With Z3 installed:

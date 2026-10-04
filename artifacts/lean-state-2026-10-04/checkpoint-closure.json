@@ -1,0 +1,58 @@
+{
+ "reviewed_at": "2026-10-04T22:30:13.819941+00:00",
+ "measured_checkpoint": "f9898332b29dabaccb14ea313e7f196d2c6d25eb",
+ "scope": "offline cleanup/runtime/result and archive review; no experiment rerun or infrastructure mutation",
+ "cleanup_identity_matches_runtime": true,
+ "cleanup_receipt_job_deleted": true,
+ "cleanup_receipt_pod_absent": true,
+ "cleanup_observation_utc": {
+  "start": "2026-10-04T11:16:00+00:00",
+  "end": "2026-10-04T11:24:00+00:00"
+ },
+ "cleanup_receipt_recorded_at": "2026-10-04T11:51:40.134936+00:00",
+ "runtime_exit_code": 0,
+ "gpu_passes_matching_official_lean": 7,
+ "gpu_device": "NVIDIA GeForce RTX 5090",
+ "gpu_result_provenance_matches_archived_inputs_ptx": true,
+ "resident_ratio_recomputed": 20.865286961990666,
+ "archives": [
+  {
+   "path": "artifacts/lean-state-2026-10-04/init-dag-inputs.tar.gz",
+   "members_reviewed": 3,
+   "sha256": "2cf86b9885bb462313c0b98c9e0cabdc3eab5c89dc4b76c37dfd64f3107e6732"
+  },
+  {
+   "path": "artifacts/verusage-2026-10-04/mixed100-raw.tar.gz",
+   "members_reviewed": 616,
+   "sha256": "2f08af2c5a1a38906ee0ed4b84605c3d295b48dda582fd9fbb8d25494d11d32f"
+  }
+ ],
+ "observed_path_inventory": {
+  "/tmp/lean-kernel-arena": false,
+  "/tmp/lean-repl": false,
+  "/tmp/gpu-smt-verus/verus-x86-linux": false,
+  "/tmp/gpu-smt-cuda-toolkit": false,
+  "/tmp/lean-mathlib-env.json": false,
+  "/workspaces/.agent-state/gpu-smt-lean-dag": true,
+  "/workspaces/.agent-state/gpu-smt-verusage-20261004/mixed100": true,
+  "bench/lean-persistent/.lake": true,
+  "bench/lean-source-trace/.lake": true
+ },
+ "later_recovery": {
+  "source": "outer coordinator user message; not independently polled Longhorn/Kubernetes",
+  "auto_salvage_at": "2026-10-04T22:16:05Z",
+  "replacement_pod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-64b88b8454-fmxjb",
+  "reported_state": "Running",
+  "reported_node": "lab",
+  "same_retained_disk": true
+ },
+ "documented_shell_blocks_syntax_checked": 7,
+ "embedded_python_syntax_checked": true,
+ "retained_pvc_input_members_reviewed": 619,
+ "cli_help_entrypoints_checked": [
+  "bench/lean_dag_gpu.py",
+  "bench/lean_repl_workload.py",
+  "bench/verus_session_replay.py"
+ ],
+ "git_object_review": "git fsck --full --no-dangling passed"
+}

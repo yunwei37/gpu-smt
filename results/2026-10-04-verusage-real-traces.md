@@ -163,26 +163,31 @@ hash-verified `mixed100-raw.tar.gz` contains all 100 sources, stdout/stderr,
 156 SMT streams and metadata (616 files). Uncompressed originals remain on
 the owning PVC at `/workspaces/.agent-state/gpu-smt-verusage-20261004/mixed100`.
 Extract the archive under `artifacts/verusage-2026-10-04/mixed100` before
-replaying repository paths:
+replaying repository paths. The original `/tmp` Verus/Z3 installation was lost
+in the later container replacement. Obtain the bundled Z3 4.16.0 from the pinned
+Verus release and set `VERUS_REPLAY_Z3` to its executable; solver-only replay
+does not require Rust. [Recovery instructions](../docs/reproduce-checkpoint.md)
+cover setup and reconstruction of the sampled source JSONL for full recapture.
 
 ```bash
+VERUS_REPLAY_Z3=/path/to/unpacked/verus-x86-linux/z3
 tar -xzf artifacts/verusage-2026-10-04/mixed100-raw.tar.gz \
   -C artifacts/verusage-2026-10-04/mixed100
 python3 tools/analyze_verus_jobs.py artifacts/verusage-2026-10-04/mixed100 \
   --json /tmp/verusage-cross-job.json
 python3 bench/verus_session_replay.py artifacts/verusage-2026-10-04/mixed100 \
-  --z3 /tmp/gpu-smt-verus/verus-x86-linux/z3 --cores 8 --repeat 3 \
+  --z3 "$VERUS_REPLAY_Z3" --cores 8 --repeat 3 \
   --out /tmp/verusage-session-replay
 python3 bench/verus_scope_ablation.py \
   --run-dir artifacts/verusage-2026-10-04/mixed100 \
   --replay-dir artifacts/verusage-2026-10-04/session-replay \
-  --z3 /tmp/gpu-smt-verus/verus-x86-linux/z3 --cores 8 --repeat 2 \
+  --z3 "$VERUS_REPLAY_Z3" --cores 8 --repeat 2 \
   --out /tmp/verusage-scope-ablation
 python3 bench/verus_history_probe.py \
   --run-dir artifacts/verusage-2026-10-04/mixed100 \
   --replay-dir artifacts/verusage-2026-10-04/session-replay \
   --ablation-dir /tmp/verusage-scope-ablation \
-  --z3 /tmp/gpu-smt-verus/verus-x86-linux/z3 --cores 8 --repeat 2 \
+  --z3 "$VERUS_REPLAY_Z3" --cores 8 --repeat 2 \
   --out /tmp/verusage-history-probe
 ```
 

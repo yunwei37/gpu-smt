@@ -1,5 +1,11 @@
 # Retained Lean research data
 
+The path-availability statements below describe the measurement container.
+The later 22:16 UTC recovery retained this repository/PVC but lost `/tmp`
+dependencies and large original exports. Fixture archives, measurement logs
+and pinned metadata remain; see `docs/reproduce-checkpoint.md` and
+`docs/lean-resource-status.md` for current availability and reconstruction.
+
 All paths are in the owning `gpu-smt-dev` workspace. These records preserve the
 first worker's measurements and the Codex continuation without changing source
 checkouts, input exports or branch history.

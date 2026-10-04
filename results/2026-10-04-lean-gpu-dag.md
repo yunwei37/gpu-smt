@@ -103,7 +103,13 @@ submitted artifacts. The script snapshot matches the source retained here.
 The user directed “不要 b300, 用 5090”. No GB300 computation ran. The four
 public files were mounted read-only from this project's existing PVC. No manual
 device mounts, host probing, production model move or interruption of another
-project was needed. Outer coordination owns temporary Job cleanup.
+project was needed. The retained `gpu-cleanup.json` receipt confirms Job
+deletion and Pod absence during 04:16–04:24 America/Los_Angeles
+(11:16–11:24 UTC), with the same Job/Pod/node identities. Node readiness,
+pressure and disk availability in that receipt are observations from that
+window. They do not describe the later Longhorn auto-salvage/container recovery
+at 22:16 UTC. The same source PVC survived that later recovery; temporary
+dependencies were lost.
 
 Seven passes are repetitions within one initialized context and one job, not
 seven independent device launches. Kernel/transfer timings do not include image
@@ -111,6 +117,12 @@ pull, Pod scheduling or allocation queue delay. No throughput-under-arrival-load
 device-memory peak, power/cost or sustained bandwidth result is inferred.
 
 ## Reproduce and use the evidence
+
+The following packed-input commands do not require the lost `/tmp` dependency
+checkouts. [Recovery reproduction instructions](../docs/reproduce-checkpoint.md)
+also cover optional toolchain rebuilding and the Mathlib/VeruSAGE entrypoints.
+CPU execution needs Python 3/C++17/OpenMP; the GPU step needs an assigned RTX
+5090 with matching driver libraries, and has not been rerun during closure.
 
 ```bash
 mkdir -p /tmp/lean-dag-replay
@@ -131,7 +143,10 @@ Rebuild PTX with `python3 bench/lean_dag_gpu.py --compile-only --ptx /tmp/dag.pt
 `bench/lean_dag_pack.py INPUT.ndjson OUTPUT.dag`; build `looseBVarReference` in
 `bench/lean-persistent` to regenerate the official reference. Input hashes,
 toolchains, build logs, initial/matched CPU results, full GPU JSON, runtime
-record and derived arithmetic are under `artifacts/lean-state-2026-10-04`.
+record, cleanup receipt and derived arithmetic are under
+`artifacts/lean-state-2026-10-04`. Original temporary paths in provenance describe
+the measured container; use the retained archives or rebuild dependencies after
+recovery. Hashes are provenance, not new startup or proof-acceptance gates.
 
 This result supports fast GPU execution of a wide dependency-ordered expression
 primitive **when the representation is resident**. Useful next GPU work requires

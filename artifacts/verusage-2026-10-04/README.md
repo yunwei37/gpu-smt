@@ -3,8 +3,10 @@
 Report: `results/2026-10-04-verusage-real-traces.md`.
 
 - `selection.json`: 100 task identities, original dataset revision/hash, seeded
-  selection and ground-truth hashes. 849-task original remains in
-  `/tmp/verusage-tasks.jsonl`; selected full records in `/tmp/verusage-sample100.jsonl`.
+  selection and ground-truth hashes. The later container replacement lost the
+  temporary 849-task dataset and sampled full-record JSONL. The archive retains
+  all selected ground-truth sources and task order needed by the harness;
+  `docs/reproduce-checkpoint.md` explains reconstruction and pinned dependencies.
 - `provenance.json`: Verus/Rust/Z3 versions, release and dataset URLs, exact
   capture command, binary/download hashes and concurrency/affinity scope.
 - `mixed100/runs.jsonl` and `summary.json`: original task order, per-task elapsed,

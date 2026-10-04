@@ -2,7 +2,8 @@
 
 Reports: `results/2026-10-04-lean-mathlib-state-reuse.md` and
 `results/2026-10-04-lean-gpu-dag.md`. Prior branch history and arena results
-remain unchanged. Checkouts/builds and raw inputs remain in the owning workspace.
+remain unchanged. The repository/PVC input copies survived the later recovery;
+original `/tmp` dependencies did not. See `docs/reproduce-checkpoint.md`.
 
 - `mathlib-gcd/`: eight completed runs, plus 59 responses from the final fresh
   pass interrupted by session handoff. `runs.json` contains only completed runs;
@@ -34,7 +35,8 @@ remain unchanged. Checkouts/builds and raw inputs remain in the owning workspace
 - `init-dag-inputs.tar.gz`: exact packed DAG, official Lean reference and metadata;
   all members rehashed against originals. `dag-archive-manifest.json` records
   member/archive hashes. Originals remain under
-  `/workspaces/.agent-state/gpu-smt-lean-dag` and `/tmp/lean-init-lbv*`.
+  `/workspaces/.agent-state/gpu-smt-lean-dag`; the historical
+  `/tmp/lean-init-lbv*` copies were lost in the later container replacement.
 - `dag_bounds.ptx` / build logs: CPU-only NVRTC build, target compute_80.
   `gpu-execution-script.py` is the submitted stdlib ctypes runtime snapshot.
   `gpu-submitted-identity.json` records the hardware instruction, paths/hashes,
@@ -43,8 +45,11 @@ remain unchanged. Checkouts/builds and raw inputs remain in the owning workspace
 - `dag-gpu.json`: actual RTX 5090 run, seven complete arrays matching official
   Lean. All input/reference/PTX hashes match submitted files.
   `gpu-runtime.json`: assigned healthy device, image identity, runtime, node,
-  container exit 0 and actual execution timestamps. Outer coordination owns
-  the temporary Job cleanup; no GB300 computation ran.
+  container exit 0 and actual execution timestamps. `gpu-cleanup.json` confirms
+  temporary Job deletion and Pod absence in the benchmark's 11:16–11:24 UTC
+  observation window; no GB300 computation ran. This receipt is separate from
+  the later 22:16 UTC storage/container recovery. `checkpoint-closure.json`
+  records the offline receipt/archive review and observed dependency inventory.
 - `dag-summary.json`: derived times and ratios, with host/device stages separate.
   One run with seven resident passes is not seven independent GPU launches.
 - Build/test logs, licenses and `provenance.json`: pinned Mathlib/REPL/exporter

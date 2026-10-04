@@ -1,0 +1,23 @@
+{
+ "observation_window": "2026-10-04 04:16-04:24 America/Los_Angeles",
+ "recorded_at": "2026-10-04T11:51:40.134936+00:00",
+ "outcome": "passed-restored",
+ "job": "coder/gpu-smt-lean-dag-5090-20261004",
+ "pod": "gpu-smt-lean-dag-5090-20261004-npq9w",
+ "job_deleted": true,
+ "pod_absent_after_delete": true,
+ "node": "lab",
+ "node_ready": true,
+ "node_disk_pressure": false,
+ "node_memory_pressure": false,
+ "workspace_backing_root_available": "342G",
+ "workspace_pvc_available": "29G",
+ "other_workloads_changed_by_this_experiment": false,
+ "notes": [
+  "GPU allocation became available independently; this coordinator did not stop other workloads.",
+  "Result/runtime receipt are retained as dag-gpu.json and gpu-runtime.json.",
+  "CPU resident compute timing excludes file/input loading; GPU initialization/upload/host-read measurements have different boundaries. Compare matched components before an end-to-end claim.",
+  "cuDriverGetVersion supplies a CUDA driver API compatibility version; the integer 13030 is not the NVIDIA release version.",
+  "SHA values are provenance only; no added SHA download/install/startup/acceptance gates are authorized."
+ ]
+}

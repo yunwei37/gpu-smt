@@ -104,23 +104,22 @@ memory behavior.
 
 Pinned source, spans, all candidates/contexts, versions, hashes, complete
 responses, interruption records, build logs and summaries are retained in
-`artifacts/lean-state-2026-10-04`. Existing checkouts/builds stay in the owning
-workspace. New output directories are required to keep runs distinct.
+`artifacts/lean-state-2026-10-04`. The later container replacement lost the
+original `/tmp` Mathlib/REPL checkouts and Lean environment file. Follow the
+[recovery reproduction instructions](../docs/reproduce-checkpoint.md) to install
+Lean 4.34.1, rebuild the pinned REPL, obtain the pinned Mathlib cache and create
+a new environment JSON. The retained source and parser spans can be replayed
+directly. New output directories are required to keep runs distinct.
 
 ```bash
-# Build the parser-span tracer in bench/lean-source-trace:
-PATH=/root/.elan/bin:$PATH lake build
-# From the pinned Mathlib checkout with cached dependencies:
-PATH=/root/.elan/bin:$PATH lake env \
-  /workspaces/repository/bench/lean-source-trace/.lake/build/bin/sourceTrace \
-  Mathlib/Data/Nat/GCD/Basic.lean > /tmp/gcd-spans.json
-PATH=/root/.elan/bin:$PATH lake env printenv LEAN_PATH
-# Store the preceding value as {"LEAN_PATH":"..."} in /tmp/mathlib-env.json.
-# From /workspaces/repository, with the pinned REPL built using Lean 4.34.1:
+# After the pinned dependency/environment setup in the recovery instructions:
 python3 bench/lean_repl_workload.py \
-  --source /tmp/lean-kernel-arena/_build/tests/work/mathlib/src/Mathlib/Data/Nat/GCD/Basic.lean \
-  --spans /tmp/gcd-spans.json --repl /tmp/lean-repl/.lake/build/bin/repl \
-  --env-json /tmp/mathlib-env.json --cores 0 --repeat 3 --out /tmp/mathlib-replay
+  --source artifacts/lean-state-2026-10-04/mathlib-gcd/source.lean \
+  --spans artifacts/lean-state-2026-10-04/mathlib-gcd/command-spans.json \
+  --repl /tmp/gpu-smt-reproduce/repl/.lake/build/bin/repl \
+  --lean "$(command -v lean)" \
+  --env-json /tmp/gpu-smt-reproduce/mathlib-env.json \
+  --cores 0 --repeat 3 --out /tmp/gpu-smt-reproduce/mathlib-replay
 ```
 
 The cold path's explicit `end Nat` matches this selected file's namespace;

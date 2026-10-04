@@ -7,8 +7,11 @@ The independent `/tmp/clean_timings.sh` run finished at 09:51 UTC with
 `CLEAN_DONE`. All benchmark processes had exited at takeover; it was not rerun.
 
 Raw records, selected commands and provenance are now retained under
-`artifacts/lean-2026-10-04`. The large original export inputs, checkouts and
-builds remain under `/tmp/lean-kernel-arena` on the owning workspace.
+`artifacts/lean-2026-10-04`. The large original export inputs and dependency
+checkouts were under `/tmp/lean-kernel-arena` during measurement; that temporary
+directory was lost in the later container replacement. Selected fixture/input
+archives, proof contexts, measurements and source revisions remain in the
+repository/PVC.
 
 The first continuation implementation was persistent official CPU replay, described in
 `docs/lean-acceleration-plan.md`. It does not depend on GPU access.
@@ -38,14 +41,30 @@ The following continuation is validated in this owning branch:
   establish whole Lean acceleration. Raw JSON/runtime, exact input/reference,
   executable snapshot, PTX and hashes are retained. No GB300 computation ran.
 
-Outer infrastructure coordination owns cleanup of the temporary GPU Job. The
-standard-dev Workspace was not changed to request a GPU, and the same owning
+Outer infrastructure coordination completed cleanup of the temporary GPU Job.
+`artifacts/lean-state-2026-10-04/gpu-cleanup.json` records Job deletion, Pod
+absence and healthy node observations during 04:16–04:24 America/Los_Angeles
+(11:16–11:24 UTC). It names the same Job, Pod and node as the exit-0 runtime
+receipt. Its `passed-restored` outcome describes that observation window,
+not a guarantee about subsequent infrastructure health.
+
+The later storage/container recovery is separate: outer coordination reports
+Longhorn auto-salvage at 2026-10-04T22:16:05Z and replacement owning Pod
+`coder-81668d0b-bcba-4058-a2e6-473350357c52-64b88b8454-fmxjb` Running on lab,
+with the same retained disk. These recovery facts were supplied by the outer
+coordinator; the cleanup receipt predates them. The repository, journal,
+archives and agent-state input copies survived; temporary dependencies did not.
+See [reproduction after recovery](reproduce-checkpoint.md) for dependency rebuild
+and retained-input entrypoints. No experiment was rerun to close this checkpoint.
+
+The standard-dev Workspace was not changed to request a GPU, and the same owning
 PVC/branch/history are preserved. No manual host-device probing/mounting,
 production model change or interruption of another project was required.
 
 Reports: `results/2026-10-04-lean-mathlib-state-reuse.md`,
 `results/2026-10-04-lean-gpu-dag.md`, and
 `results/2026-10-04-verusage-real-traces.md`. This is a meaningful research
-checkpoint; actual candidate streams, version-aligned broader VeruSAGE coverage,
+checkpoint completing the initial investigation/workspace/GPU-benchmark request;
+actual candidate streams, version-aligned broader VeruSAGE coverage,
 and integration of useful resident GPU operations into a real checker remain
 unfinished. See the branch's Git history for delivery state and checkpoint ID.
