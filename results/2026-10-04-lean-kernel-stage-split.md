@@ -333,3 +333,14 @@ on exactly those exports, and tiny fixture process pools scale. The next useful
 experiment is persistent official replay with fresh state, per-input parity and
 service-time measurements. No GPU checker or GPU acceleration result has been
 validated. Mechanism profiling and a real candidate stream remain open.
+
+
+## Subsequent validated continuation
+
+The GPU readiness statements above describe checkpoint `63c29e5`. Later on
+2026-10-04, [real Mathlib proof/state reuse](2026-10-04-lean-mathlib-state-reuse.md),
+[actual RTX 5090 metadata execution](2026-10-04-lean-gpu-dag.md), and
+[real VeruSAGE trace/replay ablations](2026-10-04-verusage-real-traces.md) completed.
+The GPU primitive is validated against official Lean metadata; a whole GPU
+proof checker remains unimplemented. Earlier measurements and their scope are
+preserved rather than replaced by these newer experiments.

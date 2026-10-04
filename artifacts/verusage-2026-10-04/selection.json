@@ -1,0 +1,610 @@
+{
+ "repository_revision": "cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1",
+ "dataset_sha256": "d9b23ed7066ea6a7d782b98d3660f1fee514633b6a3e12b2801c3691f1cf689a",
+ "sample_seed": 20261004,
+ "selection": "random.Random(seed).sample(all849,100), original sampled order retained",
+ "task_ids": [
+  "IR__delegation_map_v__impl3__new",
+  "AC__vreplicaset_controller__proof__liveness__terminate__lemma_from_after_create_or_delete_pod_rank_zero_to_reconcile_idle",
+  "ST__inv_L_invariants_imply_crash_recover",
+  "MA__bin_sizes__result_bounds_for_smallest_bitting_size",
+  "NO__spec__utils__seq_to_set_rec_is_finite",
+  "IR__verus_extra__map_set_finite_auto",
+  "NR__spec_t__mmu__rl2__lemma_mem_view_after_step_write",
+  "IR__host_impl_v__impl2__host_model_next_set_request",
+  "OS__util__page_ptr_util_u__v2l4index",
+  "OS__process_manager__impl_kill_thread__impl0__kill_running_thread",
+  "OS__pagetable__pagetable_impl_base__impl0__get_entry_l4",
+  "AL__seq_equal_preserved_by_add",
+  "NR__impl_u__wrapped_token__impl1__lemma_interps_match_aux1",
+  "AL__tla_forall_a_p_leads_to_q_a_is_stable",
+  "VE__regular__repetition__impl5__lemma_spec_serialize_max_length_2",
+  "OS__allocator__page_allocator_spec_impl__impl2__alloc_and_map_2m",
+  "MA__pigeonhole__nat_set_size",
+  "IR__marshal_v__impl0__deserialize",
+  "IR__marshal_v__impl1__lemma_serialize_injective",
+  "AL__filtered_size_is_zero_means_no_such_value",
+  "IR__single_delivery_model_v__impl2__send_single_cmessage",
+  "IR__delegation_map_v__impl4__empty_key_range_is_consistent",
+  "IR__verus_extra__lemma_seq_push_to_set",
+  "NR__definitions_u__impl3__lemma_entry_sizes_increase",
+  "IR__verus_extra__lemma_if_nothing_in_seq_satisfies_filter_then_filter_result_is_empty",
+  "IR__host_impl_v__impl2__host_model_next_receive_message",
+  "AL__transform_leads_to_with_until",
+  "OS__kernel__syscall_receive_empty__impl0__syscall_receive_empty_no_block",
+  "IR__single_delivery_model_v__impl2__retransmit_un_acked_packets_for_dst",
+  "AL__always_p_or_eventually_q",
+  "AL__tla_forall_always_implies_equality2",
+  "NR__impl_u__l1__impl2__lemma_interp_aux_contains_implies_interp_of_entry_contains",
+  "NR__impl_u__l1__impl2__lemma_interp_of_entry_disjoint_mappings",
+  "IR__marshal_v__impl3__lemma_serialize_injective",
+  "NO__spec__cyclicbuffer__log_entry_alive_wrap_around_helper",
+  "AC__vreplicaset_controller__proof__liveness__terminate__reconcile_eventually_terminates_on_vrs_object",
+  "IR__marshal_v__impl4__serialize",
+  "MA__bin_sizes__bin_size_result",
+  "OS__process_manager__spec_proof__impl2__endpoint_inv",
+  "NO__spec__unbounded_log_refines_simplelog__state_at_version_refines",
+  "OS__process_manager__container_tree__remove_container_preserve_tree_inv_6",
+  "NO__spec__cyclicbuffer__log_entry_alive_value_wrap_around",
+  "IR__single_delivery_state_v__impl3__un_acked_messages_extend",
+  "MA__bin_sizes__bounds_for_smallest_bin_fitting_size",
+  "OS__allocator__page_allocator_spec_impl__impl2__add_mapping_4k",
+  "MA__commit_mask__impl__lemma_change_one_entry",
+  "OS__pagetable__pagetable_spec__impl1__ps_entries_exist_in_mapped_pages_l3",
+  "AC__vreplicaset_controller__proof__liveness__proof__lemma_from_scheduled_to_init_step",
+  "AC__vreplicaset_controller__proof__liveness__api_actions__lemma_list_pods_request_returns_ok_list_resp_containing_matching_pods",
+  "OS__kernel__create_and_map_pages__impl0__alloc_and_map",
+  "MA__commit_mask__lemma_map_distribute",
+  "NR__theorem__lemma1_init",
+  "IR__host_impl_v__impl2__effect_of_delegation_map_set",
+  "VE__regular__repetition__impl1__lemma_spec_parse_err_unrecoverable",
+  "MA__bin_sizes__lemma_div_is_ordered",
+  "NR__spec_t__mmu__rl2__next_step_preserves_inv_mapping__inflight_walks",
+  "OS__array__impl2__init2zero",
+  "NR__impl_u__l1__impl2__lemma_interp_of_entry_insert_page_implies_interp_insert_page",
+  "AL__map_values_weaknes_no_duplicates",
+  "IR__marshal_v__impl3__lemma_same_views_serialize_the_same",
+  "AL__seq_pred_false_on_all_elements_implies_empty_filter",
+  "MA__layout__sub_distribute",
+  "OS__kernel__syscall_receive_endpoint__impl0__syscall_receive_endpoint",
+  "ST__pmemutil_L_ifnooutstandingwritesthenpersistentmemoryviewcanonlycrashascommitted",
+  "NR__impl_u__os_refinement__extra_mappings_inserted",
+  "OS__process_manager__impl_base__impl0__block_running_thread_and_change_queue_state_and_set_trap_frame",
+  "NR__spec_t__mmu__rl2__next_step_preserves_wf",
+  "OS__process_manager__process_tree__new_proc_preserve_tree_inv_2",
+  "NO__spec__unbounded_log__LogRangeMatchesQueue_append",
+  "OS__process_manager__process_tree__new_proc_preserve_tree_inv",
+  "AC__vreplicaset_controller__proof__liveness__resource_match__lemma_from_after_receive_list_pods_resp_to_send_delete_pod_req",
+  "IR__marshal_v__impl0__lemma_serialization_is_not_a_prefix_of",
+  "AC__vreplicaset_controller__proof__liveness__terminate__lemma_from_after_delete_pod_rank_n_to_delete_pod_rank_n_minus_1",
+  "OS__array__impl4__init2none",
+  "OS__process_manager__impl_base__impl0__new_endpoint",
+  "OS__allocator__page_allocator_spec_impl__impl1__free_pages_are_not_mapped",
+  "NR__spec_t__os_invariant__next_step_preserves_inv_basic",
+  "MA__commit_mask__impl__all_set",
+  "NR__spec_t__mmu__rl2__lemma_step_Writeback_post_valid_walk_unchanged",
+  "OS__process_manager__impl_base__impl0__block_running_thread_and_change_queue_state",
+  "MA__bin_sizes__result_sbin",
+  "NR__spec_t__mmu__defs__x86_arch_exec",
+  "MA__commit_mask__lemma_map_distribute_auto",
+  "NR__spec_t__os_invariant__lemma_candidate_mapping_inflight_pmem_overlap_os_implies_hl",
+  "NR__definitions_u__lemma_new_seq",
+  "NR__impl_u__l2_impl__lemma_page_aligned_implies_mask_dir_addr_is_identity",
+  "NR__impl_u__os_refinement__step_UnmapEnd_refines",
+  "NR__spec_t__mmu__rl2__lemma_writes_tso_empty_implies_sbuf_empty",
+  "NR__spec_t__mmu__rl2__lemma_step_WriteNonpos_post_valid_pt_walk_no_wraddr_in_path",
+  "MA__bin_sizes__pfd_lower_le_upper",
+  "NR__definitions_u__impl2__entry_base",
+  "OS__process_manager__process_tree__in_subtree_imply_exist_in_child",
+  "IR__marshal_ironsht_specific_v__impl2__lemma_serialization_is_not_a_prefix_of",
+  "NR__spec_t__os_code_vc__lemma_concurrent_trs_induct",
+  "MA__bin_sizes__size_of_bin_mult_word_size",
+  "NR__impl_u__l1__impl2__lemma_interp_of_entry_contains_mapping_implies_interp_aux_contains_mapping",
+  "AC__vreplicaset_controller__proof__liveness__spec__spec_of_previous_phases_entails_eventually_new_invariants",
+  "NR__spec_t__mmu__rl2__lemma_core_mem_pm14",
+  "AC__vreplicaset_controller__proof__liveness__terminate__reconcile_eventually_terminates",
+  "OS__pagetable__entry__page_entry2usize"
+ ],
+ "inputs": [
+  {
+   "task_id": "IR__delegation_map_v__impl3__new",
+   "project": "IR",
+   "sha256": "8d317846df8ec4d9f79c8e1a104ab4d3a16a2921cb7ebb9d433ef7ecd51c8c9d"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__terminate__lemma_from_after_create_or_delete_pod_rank_zero_to_reconcile_idle",
+   "project": "AC",
+   "sha256": "3368f6fbc9368dc84904ea82f9ec49ccdffdebe7a46158d5d09cb56b979b6c3a"
+  },
+  {
+   "task_id": "ST__inv_L_invariants_imply_crash_recover",
+   "project": "ST",
+   "sha256": "a7a411216319c17f12cc2346bda17e9995b5b468f68dd1d3deec8de1629dee40"
+  },
+  {
+   "task_id": "MA__bin_sizes__result_bounds_for_smallest_bitting_size",
+   "project": "MA",
+   "sha256": "6b54296bbe7d740579ff7b833b1c30fa53962773f2a565ea0bf59f813e4e0abe"
+  },
+  {
+   "task_id": "NO__spec__utils__seq_to_set_rec_is_finite",
+   "project": "NO",
+   "sha256": "df3f4ab6e1bda499cdbc2f04639e2efce1ce26f95c3990cee98352059bcd2420"
+  },
+  {
+   "task_id": "IR__verus_extra__map_set_finite_auto",
+   "project": "IR",
+   "sha256": "d1acf49cfffb5e9de1239f7f5e2bd018c971430eb7c9babf35538b2a53d55490"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__lemma_mem_view_after_step_write",
+   "project": "NR",
+   "sha256": "a55099c663b92ebd3b0899228007ff4e8c82f55e03e08ac41c8d8cdbe790bfc8"
+  },
+  {
+   "task_id": "IR__host_impl_v__impl2__host_model_next_set_request",
+   "project": "IR",
+   "sha256": "b052a996fd70d9b0d08149876aae1559595474dca80d020504198d33f71acca3"
+  },
+  {
+   "task_id": "OS__util__page_ptr_util_u__v2l4index",
+   "project": "OS",
+   "sha256": "5220d24517ba0e389c3f992dd2bf8db5ff62d1301f62660a85878528fb3cb0bb"
+  },
+  {
+   "task_id": "OS__process_manager__impl_kill_thread__impl0__kill_running_thread",
+   "project": "OS",
+   "sha256": "8d43e7182a7db47bb7154902ae69f6905dc8dd3577a8c0d8ddbebebad5fd9a27"
+  },
+  {
+   "task_id": "OS__pagetable__pagetable_impl_base__impl0__get_entry_l4",
+   "project": "OS",
+   "sha256": "87637929c26717f81bf66b9c6bb9ea432049fc2cc5897c8c725c4bb89553d5b0"
+  },
+  {
+   "task_id": "AL__seq_equal_preserved_by_add",
+   "project": "AL",
+   "sha256": "5414b0d066bd11e6e204dc8e81a29ac7c323c924c4b34e133ad50ba6efe77b66"
+  },
+  {
+   "task_id": "NR__impl_u__wrapped_token__impl1__lemma_interps_match_aux1",
+   "project": "NR",
+   "sha256": "7a6c5c73eefa7f46cf9d2e3ea657a61b986cb78112a9835ec0c067c309ae3b52"
+  },
+  {
+   "task_id": "AL__tla_forall_a_p_leads_to_q_a_is_stable",
+   "project": "AL",
+   "sha256": "a7afbb6f3104fcca6ffc123fd4edf274c318b6319e70fdb3bd388223db22af66"
+  },
+  {
+   "task_id": "VE__regular__repetition__impl5__lemma_spec_serialize_max_length_2",
+   "project": "VE",
+   "sha256": "c6a5ee879649856d0d9563737bf2a594ba281084afcdd6b67d6edb2991caaeca"
+  },
+  {
+   "task_id": "OS__allocator__page_allocator_spec_impl__impl2__alloc_and_map_2m",
+   "project": "OS",
+   "sha256": "e6691e29046eb5b9043ccc6dfc23187c7525cc896cb29154cdf057f2eded9455"
+  },
+  {
+   "task_id": "MA__pigeonhole__nat_set_size",
+   "project": "MA",
+   "sha256": "5baa93c7caf277fa91d917d1ed68ba70d4cf269ca7f1b65c362b797ba0f18b50"
+  },
+  {
+   "task_id": "IR__marshal_v__impl0__deserialize",
+   "project": "IR",
+   "sha256": "7ea501b632317e0dfcb7fc95b7c3c9caffd76c2f37e5a45665df9e72927be78f"
+  },
+  {
+   "task_id": "IR__marshal_v__impl1__lemma_serialize_injective",
+   "project": "IR",
+   "sha256": "8d06df9ff3c96eb11fe7347eb7425358b480dc740236d2ef669f3b042c6a66dd"
+  },
+  {
+   "task_id": "AL__filtered_size_is_zero_means_no_such_value",
+   "project": "AL",
+   "sha256": "683024a580e12903974b6ecb155d87a9e9db370c628a9ea78fe558d4b19d869f"
+  },
+  {
+   "task_id": "IR__single_delivery_model_v__impl2__send_single_cmessage",
+   "project": "IR",
+   "sha256": "cb793776eea3fb3e0e3a9c91679615d5cd94519f7659abc3ce918426d8e93046"
+  },
+  {
+   "task_id": "IR__delegation_map_v__impl4__empty_key_range_is_consistent",
+   "project": "IR",
+   "sha256": "bc81495c2f929bee15525da6a6759df4dcc47d6dfb949d360966d3c7af13836e"
+  },
+  {
+   "task_id": "IR__verus_extra__lemma_seq_push_to_set",
+   "project": "IR",
+   "sha256": "1cdb461673e5469244597d6cba23b8fc839c4cbe08ea4ebde20d726252e00fed"
+  },
+  {
+   "task_id": "NR__definitions_u__impl3__lemma_entry_sizes_increase",
+   "project": "NR",
+   "sha256": "a94271faf6b72f2ac1c3a5a12c74073dfbcbee5cbb4f124278f002756d1923ac"
+  },
+  {
+   "task_id": "IR__verus_extra__lemma_if_nothing_in_seq_satisfies_filter_then_filter_result_is_empty",
+   "project": "IR",
+   "sha256": "5dc4188a1e19b940d2011270f12d4e27ad41d5e5da987a7c4a926313d0a67d34"
+  },
+  {
+   "task_id": "IR__host_impl_v__impl2__host_model_next_receive_message",
+   "project": "IR",
+   "sha256": "8efe7a7d9c029d1b0192fffa5bdd8b8aa637d5957ff10f75b5aa411cdf6d66e2"
+  },
+  {
+   "task_id": "AL__transform_leads_to_with_until",
+   "project": "AL",
+   "sha256": "306d8a46fe21473ca9156753874766ed6fae8b255aafd6dec40954c843a8474b"
+  },
+  {
+   "task_id": "OS__kernel__syscall_receive_empty__impl0__syscall_receive_empty_no_block",
+   "project": "OS",
+   "sha256": "104a79b3efb9a590dfbf0d36ef5aa437d439e3a79e12955d851839c9407dabc2"
+  },
+  {
+   "task_id": "IR__single_delivery_model_v__impl2__retransmit_un_acked_packets_for_dst",
+   "project": "IR",
+   "sha256": "a6f796367e2670c8311ba54e04f02d739876f345fcd3c9e06f0b55c9a2c3e704"
+  },
+  {
+   "task_id": "AL__always_p_or_eventually_q",
+   "project": "AL",
+   "sha256": "26c772870ac1e6e0fd6f0a55c7e5a8985117a8aae55063e002783ae30eb7f330"
+  },
+  {
+   "task_id": "AL__tla_forall_always_implies_equality2",
+   "project": "AL",
+   "sha256": "f9e899df0ac18eceb9a6394027bfa2b35d9958535d3b92e9148be0a9b7a0321f"
+  },
+  {
+   "task_id": "NR__impl_u__l1__impl2__lemma_interp_aux_contains_implies_interp_of_entry_contains",
+   "project": "NR",
+   "sha256": "5b140197fd324f0e0832d78a75c0c3e57950252f5007731cbdb1400c74dac3f9"
+  },
+  {
+   "task_id": "NR__impl_u__l1__impl2__lemma_interp_of_entry_disjoint_mappings",
+   "project": "NR",
+   "sha256": "27724da2125cd05ffb4153a23c9d93f336a767338118c3b7ca11cae7722d2e34"
+  },
+  {
+   "task_id": "IR__marshal_v__impl3__lemma_serialize_injective",
+   "project": "IR",
+   "sha256": "2d43a9944ee4a6ecf963ef1d9c3b6f18e354fa5f8c605d5bf7cc5035d3804967"
+  },
+  {
+   "task_id": "NO__spec__cyclicbuffer__log_entry_alive_wrap_around_helper",
+   "project": "NO",
+   "sha256": "6ee088a8402f6b210b5f01a46897fe15b3da9fff6aa06593b425b3e35f31b994"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__terminate__reconcile_eventually_terminates_on_vrs_object",
+   "project": "AC",
+   "sha256": "3f66eb9953449a0f62afef6a165816ee3206c4bc31317347f91f20d8d8c8d3ea"
+  },
+  {
+   "task_id": "IR__marshal_v__impl4__serialize",
+   "project": "IR",
+   "sha256": "c26b91590b72a5c6540117f3dfd6a5ce8c5c0ee56822d1789d16e0d9ed243fdb"
+  },
+  {
+   "task_id": "MA__bin_sizes__bin_size_result",
+   "project": "MA",
+   "sha256": "3a161db6074163b0e49bd6af2caaef808e4cc49e22fa5b1ef3e8afc4f73380c6"
+  },
+  {
+   "task_id": "OS__process_manager__spec_proof__impl2__endpoint_inv",
+   "project": "OS",
+   "sha256": "03c86a41e1b77451bb660caadc34da320b5c78f2e522878be2503329f1774cc1"
+  },
+  {
+   "task_id": "NO__spec__unbounded_log_refines_simplelog__state_at_version_refines",
+   "project": "NO",
+   "sha256": "9c8a45e62ffbb2996761d17c0ab7ca67861b99eea0e77bc04252f713c3b963a5"
+  },
+  {
+   "task_id": "OS__process_manager__container_tree__remove_container_preserve_tree_inv_6",
+   "project": "OS",
+   "sha256": "2ab1489129727192a34c60c745b1863aa0e6d3885104d1cc8880fd4b7b97890e"
+  },
+  {
+   "task_id": "NO__spec__cyclicbuffer__log_entry_alive_value_wrap_around",
+   "project": "NO",
+   "sha256": "d40fcfe63c6821312fb21de57d9c0d618ec1bf7bfad245608d232a85895c7917"
+  },
+  {
+   "task_id": "IR__single_delivery_state_v__impl3__un_acked_messages_extend",
+   "project": "IR",
+   "sha256": "b85cfac71c3d019695b2e452a0a5f6f73ba0cb7e229411176d5aca0d37bb2e80"
+  },
+  {
+   "task_id": "MA__bin_sizes__bounds_for_smallest_bin_fitting_size",
+   "project": "MA",
+   "sha256": "0ec56272bba7c40e689f5a7e13d2ed08f7cec8cc1ad39389eef961fbcfcf27dd"
+  },
+  {
+   "task_id": "OS__allocator__page_allocator_spec_impl__impl2__add_mapping_4k",
+   "project": "OS",
+   "sha256": "736ced0939430b62fd44863ed9b25628a768e04d3a65255bff7a94d69aa2a7c6"
+  },
+  {
+   "task_id": "MA__commit_mask__impl__lemma_change_one_entry",
+   "project": "MA",
+   "sha256": "b6f83d8c8b3096450abd6b1a236fa4491a1329b36a440b0ae9ed01fd194325e7"
+  },
+  {
+   "task_id": "OS__pagetable__pagetable_spec__impl1__ps_entries_exist_in_mapped_pages_l3",
+   "project": "OS",
+   "sha256": "ed0106f66f199db404b082044c530074206b183955152cac18343a256643d65b"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__proof__lemma_from_scheduled_to_init_step",
+   "project": "AC",
+   "sha256": "d1080414f95c913c70d05971fee3463e43edd5d31d70e3584f80ccb6f0dc3eda"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__api_actions__lemma_list_pods_request_returns_ok_list_resp_containing_matching_pods",
+   "project": "AC",
+   "sha256": "c0b175db3115f0cf18c7917b4208e98bfd15e9de7d76eb5d1839adadfcb9d849"
+  },
+  {
+   "task_id": "OS__kernel__create_and_map_pages__impl0__alloc_and_map",
+   "project": "OS",
+   "sha256": "00481c61636cb2a37037c886f5769f8a57a4b522d590ea7c0e9651b186e36bd1"
+  },
+  {
+   "task_id": "MA__commit_mask__lemma_map_distribute",
+   "project": "MA",
+   "sha256": "5e7a5e337421da76771d196e498341877ead768bb4bf9fcc9d2edea5859d740f"
+  },
+  {
+   "task_id": "NR__theorem__lemma1_init",
+   "project": "NR",
+   "sha256": "266fb1ec2ab688074f80654289927ebe3941eeeea273726c1a7c23ebd97834e5"
+  },
+  {
+   "task_id": "IR__host_impl_v__impl2__effect_of_delegation_map_set",
+   "project": "IR",
+   "sha256": "34d887da741ac6ae7b9962d889e7ba55de6f7dbd51c847f1c3e807bf2cefdd9d"
+  },
+  {
+   "task_id": "VE__regular__repetition__impl1__lemma_spec_parse_err_unrecoverable",
+   "project": "VE",
+   "sha256": "1db55d8588722cfd27b78c01d03069c5161d02e990e4e1a643e5392a79cab317"
+  },
+  {
+   "task_id": "MA__bin_sizes__lemma_div_is_ordered",
+   "project": "MA",
+   "sha256": "9760de8c81379b13f8a9b724dfbea881a3889fae967821909e5764b347707dfc"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__next_step_preserves_inv_mapping__inflight_walks",
+   "project": "NR",
+   "sha256": "43d9c0801a693287c6cfb079054cf71f615dee12ed6c80e438c33d3e0a814022"
+  },
+  {
+   "task_id": "OS__array__impl2__init2zero",
+   "project": "OS",
+   "sha256": "b0c5e356fb9be94a904c49a22279d418618abc437bcb7a5a82a172a5b1882c76"
+  },
+  {
+   "task_id": "NR__impl_u__l1__impl2__lemma_interp_of_entry_insert_page_implies_interp_insert_page",
+   "project": "NR",
+   "sha256": "c6e0fa142b39ded0d44bf2d39ea59adda1260be1d105d94601ff7f4749d3ea74"
+  },
+  {
+   "task_id": "AL__map_values_weaknes_no_duplicates",
+   "project": "AL",
+   "sha256": "f02aa03bb9a5b35075006675495cec0ff0917b3e9afad12904835f393e1fd58d"
+  },
+  {
+   "task_id": "IR__marshal_v__impl3__lemma_same_views_serialize_the_same",
+   "project": "IR",
+   "sha256": "bd64d863c7f0b68f04ec2decf191b8450ce92e55543c67e1d5d8bf554f6df1e3"
+  },
+  {
+   "task_id": "AL__seq_pred_false_on_all_elements_implies_empty_filter",
+   "project": "AL",
+   "sha256": "f201673090d9913368d4ffbe2c8232ef94fcdd6d7267208f519aa10b6ace5f52"
+  },
+  {
+   "task_id": "MA__layout__sub_distribute",
+   "project": "MA",
+   "sha256": "03f0aa1d0aef567be934755d0ad5bc233c8421ffa350036197915af47cd4d6fd"
+  },
+  {
+   "task_id": "OS__kernel__syscall_receive_endpoint__impl0__syscall_receive_endpoint",
+   "project": "OS",
+   "sha256": "6829e81c2fc9a6f5a3168e2d581a50e10d36c32bf81ee52035ca825cd54775e1"
+  },
+  {
+   "task_id": "ST__pmemutil_L_ifnooutstandingwritesthenpersistentmemoryviewcanonlycrashascommitted",
+   "project": "ST",
+   "sha256": "85c0d5108dbd8870e360bb754b7f3270edc0c4ef7716dc3bb305554d5c63ab6b"
+  },
+  {
+   "task_id": "NR__impl_u__os_refinement__extra_mappings_inserted",
+   "project": "NR",
+   "sha256": "f6cc56970d4605fb5dc248d4399c1479f8557f6b6a097892e929e1099a927b71"
+  },
+  {
+   "task_id": "OS__process_manager__impl_base__impl0__block_running_thread_and_change_queue_state_and_set_trap_frame",
+   "project": "OS",
+   "sha256": "5a08ea59eee2b90d05be0db936f766ee910a4ecec9d22f96263bad0162c4931b"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__next_step_preserves_wf",
+   "project": "NR",
+   "sha256": "97b37e25e3653c56e18a6d6e43bec25330a7ae54907be1bc741616cd7f96afd8"
+  },
+  {
+   "task_id": "OS__process_manager__process_tree__new_proc_preserve_tree_inv_2",
+   "project": "OS",
+   "sha256": "15a5b682a213fbbb9a7b013fa9d0dd9c41fc087e1e0fa03b6bc0381495ce0d88"
+  },
+  {
+   "task_id": "NO__spec__unbounded_log__LogRangeMatchesQueue_append",
+   "project": "NO",
+   "sha256": "1a906f1b6b015b6a088edea79065d9e18f07d4721b6bb3eab059e2491409e232"
+  },
+  {
+   "task_id": "OS__process_manager__process_tree__new_proc_preserve_tree_inv",
+   "project": "OS",
+   "sha256": "442652dff9ede516f263266f3ac51d034b266b53130fb8dd4eb2e6886df01cb4"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__resource_match__lemma_from_after_receive_list_pods_resp_to_send_delete_pod_req",
+   "project": "AC",
+   "sha256": "20a73bfc035d381cf7371acf8e3be61cd4278894d677f5d7ee9064f188ae15af"
+  },
+  {
+   "task_id": "IR__marshal_v__impl0__lemma_serialization_is_not_a_prefix_of",
+   "project": "IR",
+   "sha256": "6dd4bf88a67bb068e02e0a7a317d744800157fcbf5ff6a781358433041c690c3"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__terminate__lemma_from_after_delete_pod_rank_n_to_delete_pod_rank_n_minus_1",
+   "project": "AC",
+   "sha256": "50f132a5d0bf23aaed7118130a74e7b0760c0fb4abb8fd58aa98356a0eb59cc4"
+  },
+  {
+   "task_id": "OS__array__impl4__init2none",
+   "project": "OS",
+   "sha256": "f56ac48f755ad740dad1b787b818c72f5b258c5ec1e58e95c0999774bc4584a8"
+  },
+  {
+   "task_id": "OS__process_manager__impl_base__impl0__new_endpoint",
+   "project": "OS",
+   "sha256": "dc5523d91fa7753051379e7576aa9a1ae68fdcd28e2cb782c42adb5504fd7dca"
+  },
+  {
+   "task_id": "OS__allocator__page_allocator_spec_impl__impl1__free_pages_are_not_mapped",
+   "project": "OS",
+   "sha256": "38096da54cc320c7ea045084a895cc772375beb72d53090ef043371282c727c1"
+  },
+  {
+   "task_id": "NR__spec_t__os_invariant__next_step_preserves_inv_basic",
+   "project": "NR",
+   "sha256": "4874500c19fcff6636a14ca2e7c2f3d9e25ccf8e8a594e2fcec4f78cbc50e405"
+  },
+  {
+   "task_id": "MA__commit_mask__impl__all_set",
+   "project": "MA",
+   "sha256": "a07521070160f8061bcf81304108aa55039a2c3ce92bc6e44fda7ffa0c3fa313"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__lemma_step_Writeback_post_valid_walk_unchanged",
+   "project": "NR",
+   "sha256": "b8e9fc74da11ad2a57521afc24805214d59c9c63a8fe7dba2068d14e77ff00e4"
+  },
+  {
+   "task_id": "OS__process_manager__impl_base__impl0__block_running_thread_and_change_queue_state",
+   "project": "OS",
+   "sha256": "f9fa31e424f7ff348009b2afda8a8d89deaaf6fc77a5a7ac381fd596ff78a1af"
+  },
+  {
+   "task_id": "MA__bin_sizes__result_sbin",
+   "project": "MA",
+   "sha256": "abd43aaf397254ae351b99a3ca0015aeef27c728b570bdf82af6bff0b4a0fe87"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__defs__x86_arch_exec",
+   "project": "NR",
+   "sha256": "ce32761c93a9c29635b280d7dac36a54ef85ed7334fa5d6cf9dcbf2e100c0d81"
+  },
+  {
+   "task_id": "MA__commit_mask__lemma_map_distribute_auto",
+   "project": "MA",
+   "sha256": "136d3ee277ccf168dad8c65eb652b8b6961ec01d70058a6d0e2c6916a798977d"
+  },
+  {
+   "task_id": "NR__spec_t__os_invariant__lemma_candidate_mapping_inflight_pmem_overlap_os_implies_hl",
+   "project": "NR",
+   "sha256": "130b2b7f5dae69fade44e9bc516022e4aaebbe4d2705065bde83972602f6ac09"
+  },
+  {
+   "task_id": "NR__definitions_u__lemma_new_seq",
+   "project": "NR",
+   "sha256": "eb6b0df08e14b603641b795f43d92c8ded64bb3ce79628434c172b994a9dd6bd"
+  },
+  {
+   "task_id": "NR__impl_u__l2_impl__lemma_page_aligned_implies_mask_dir_addr_is_identity",
+   "project": "NR",
+   "sha256": "c9c141bcdfff73f15269defd3464527122c4a2407df4b4e3b889d5f9619e892f"
+  },
+  {
+   "task_id": "NR__impl_u__os_refinement__step_UnmapEnd_refines",
+   "project": "NR",
+   "sha256": "1d4f1a5885cd85eb24be1c0f394db439a77dcafd7773159292e1ad3834c8568e"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__lemma_writes_tso_empty_implies_sbuf_empty",
+   "project": "NR",
+   "sha256": "2f8ce8a65c37768f13b5dc5902105e860a2fb24e12d95730d124d1006fa163be"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__lemma_step_WriteNonpos_post_valid_pt_walk_no_wraddr_in_path",
+   "project": "NR",
+   "sha256": "53049b4b9a19b682e8764effef3f294f7f8ddef1e84af2c0a6821e04dff4d162"
+  },
+  {
+   "task_id": "MA__bin_sizes__pfd_lower_le_upper",
+   "project": "MA",
+   "sha256": "d827331a00d330eef906a0568ca51cec5e487610399bf9150d5bfbf2305a923d"
+  },
+  {
+   "task_id": "NR__definitions_u__impl2__entry_base",
+   "project": "NR",
+   "sha256": "fbfc251e733503562a6614da72fb0d382b2d06b97a3419a33b379f08c5b3f6f0"
+  },
+  {
+   "task_id": "OS__process_manager__process_tree__in_subtree_imply_exist_in_child",
+   "project": "OS",
+   "sha256": "41aefe8d481ae7e3d710cb16a91fdae8351f7b8521d3babf05a88179a6ebf755"
+  },
+  {
+   "task_id": "IR__marshal_ironsht_specific_v__impl2__lemma_serialization_is_not_a_prefix_of",
+   "project": "IR",
+   "sha256": "fa43277b656325fc11d6e9c5a96bb2c8287789f19dd4965e67293dca9d9a934e"
+  },
+  {
+   "task_id": "NR__spec_t__os_code_vc__lemma_concurrent_trs_induct",
+   "project": "NR",
+   "sha256": "6c1d896e17aa96248cf6ff5194b712526bca0a05a7ec192360aaca6b1e7ac18e"
+  },
+  {
+   "task_id": "MA__bin_sizes__size_of_bin_mult_word_size",
+   "project": "MA",
+   "sha256": "c5bb9191839d0a12c79682afc9f134f6924cf03f167e8233e0a6e38e7a89b602"
+  },
+  {
+   "task_id": "NR__impl_u__l1__impl2__lemma_interp_of_entry_contains_mapping_implies_interp_aux_contains_mapping",
+   "project": "NR",
+   "sha256": "a3cd7e5ce3299c292ef343a94b847c65cd9c2f67a5267f29e73413ebd8fb74d8"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__spec__spec_of_previous_phases_entails_eventually_new_invariants",
+   "project": "AC",
+   "sha256": "f0ac2f6cd04d5aadcc6eb1708ce941387de27421ad6df54b0e813cd44ccb8d64"
+  },
+  {
+   "task_id": "NR__spec_t__mmu__rl2__lemma_core_mem_pm14",
+   "project": "NR",
+   "sha256": "4bf25e4f7cbf4988b018b130b7cf4410c1b8ac4d8aa86eba1d3665322d228d43"
+  },
+  {
+   "task_id": "AC__vreplicaset_controller__proof__liveness__terminate__reconcile_eventually_terminates",
+   "project": "AC",
+   "sha256": "da0d6e8681c34c29659ba1609858a7ba9fd951695ef3baebecb6ae3f6066ab3d"
+  },
+  {
+   "task_id": "OS__pagetable__entry__page_entry2usize",
+   "project": "OS",
+   "sha256": "43a75f1e82018da611afa15fe15828ecfe49d7aa4eb4113861d30f4760da6b36"
+  }
+ ]
+}

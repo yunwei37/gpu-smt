@@ -18,7 +18,11 @@ Milestone M0 is implemented on the `research/verification-serving` branch:
 - synthetic cold-vs-incremental Z3 benchmark;
 - CI smoke tests with stock Z3.
 
-The SMT-serving thread still needs to measure whether real Verus/Dafny/Viper/Kani workloads expose enough cross-job context reuse. The Lean thread also explores CPU and GPU verification acceleration, using measured public proof exports.
+The current branch has real VeruSAGE traces, complete Mathlib proof/state-reuse
+measurements, and an executed RTX 5090 expression-DAG primitive. The VeruSAGE
+prefix pool changes `unsat`/`unknown` outcomes; it is a negative fidelity result,
+not a serving speedup. Mathlib replay uses the established community REPL. The
+GPU result covers metadata computation, not full proof checking.
 
 ## Quick start
 
@@ -67,3 +71,11 @@ Lean acceleration thread:
 - [Lean kernel stage split and checker comparison (2026-10-04)](results/2026-10-04-lean-kernel-stage-split.md)
 - [Persistent official Lean replay: fixed-fixture throughput and normal frontend profiles](results/2026-10-04-lean-persistent.md)
 - [Retained commands, inputs and raw results](artifacts/lean-2026-10-04/README.md)
+- [Real Mathlib proofs and environment reuse](results/2026-10-04-lean-mathlib-state-reuse.md)
+- [Executed RTX 5090 expression-DAG primitive](results/2026-10-04-lean-gpu-dag.md)
+- [Mathlib/GPU raw evidence](artifacts/lean-state-2026-10-04/README.md)
+
+Real SMT workload continuation:
+
+- [VeruSAGE traces, replay and scope/history regression](results/2026-10-04-verusage-real-traces.md)
+- [Pinned sources, traces and per-query decisions](artifacts/verusage-2026-10-04/README.md)

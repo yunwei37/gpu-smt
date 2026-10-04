@@ -1,0 +1,52 @@
+{
+ "timestamp_utc": "2026-10-04T11:25:12Z",
+ "binary_sha256": "af7f5f88a46c339cd7e5a60adff41272fa0e25edb02eea6d0dbd4ab2fa954d6b",
+ "concurrency": "No deliberate Lean benchmark running; SMT history probe on CPU8. Affinity does not guarantee isolation.",
+ "commands": [
+  {
+   "command": [
+    "taskset",
+    "-c",
+    "1",
+    "/tmp/lean-dag-bounds",
+    "/tmp/lean-init-lbv.dag",
+    "/tmp/lean-init-lbv.lean-reference.bin",
+    "serial",
+    "1",
+    "7"
+   ],
+   "stderr": "",
+   "output": "dag-cpu-matched-serial.json"
+  },
+  {
+   "command": [
+    "taskset",
+    "-c",
+    "1",
+    "/tmp/lean-dag-bounds",
+    "/tmp/lean-init-lbv.dag",
+    "/tmp/lean-init-lbv.lean-reference.bin",
+    "wave",
+    "1",
+    "7"
+   ],
+   "stderr": "",
+   "output": "dag-cpu-matched-wave1.json"
+  },
+  {
+   "command": [
+    "taskset",
+    "-c",
+    "0-7",
+    "/tmp/lean-dag-bounds",
+    "/tmp/lean-init-lbv.dag",
+    "/tmp/lean-init-lbv.lean-reference.bin",
+    "wave",
+    "8",
+    "7"
+   ],
+   "stderr": "",
+   "output": "dag-cpu-matched-wave8.json"
+  }
+ ]
+}

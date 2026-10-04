@@ -1,0 +1,132 @@
+{
+ "completed_runs": [
+  {
+   "source": "mathlib-gcd",
+   "mode": "repl_prefix",
+   "repeat": 0,
+   "makespan_s": 6.7449301590022515,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 894124
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "cold_lean",
+   "repeat": 0,
+   "makespan_s": 108.07337868200557,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": null
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "repl_fresh",
+   "repeat": 0,
+   "makespan_s": 496.7508282330018,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 4046948
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "repl_fresh",
+   "repeat": 1,
+   "makespan_s": 212.41262131500116,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 4049616
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "cold_lean",
+   "repeat": 1,
+   "makespan_s": 281.1760441150036,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": null
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "repl_prefix",
+   "repeat": 1,
+   "makespan_s": 17.434434285998577,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 879424
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "repl_prefix",
+   "repeat": 2,
+   "makespan_s": 7.8928555689999484,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 878564
+  },
+  {
+   "source": "mathlib-gcd",
+   "mode": "cold_lean",
+   "repeat": 2,
+   "makespan_s": 114.8905544290028,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": null
+  },
+  {
+   "source": "mathlib-gcd-resumed-final-fresh",
+   "mode": "repl_fresh",
+   "repeat": 0,
+   "makespan_s": 216.64231049099908,
+   "jobs": 156,
+   "decision_counts": {
+    "rejected": 52,
+    "incomplete": 52,
+    "accepted": 52
+   },
+   "max_sampled_repl_rss_kib": 4054288
+  }
+ ],
+ "complete_jobs": 1404,
+ "interrupted_partial_jobs": 59,
+ "resumed_run": "mathlib-gcd-resumed-final-fresh is the missing final repl_fresh pass; repeat=0 is a separate invocation, not original repeat=0",
+ "medians": {
+  "cold_lean": 114.8905544290028,
+  "repl_fresh": 216.64231049099908,
+  "repl_prefix": 7.8928555689999484
+ },
+ "scope": "52 original Mathlib proofs plus two controlled mutations each; 3 complete passes per mode; not an agent candidate stream",
+ "median_cold_to_prefix_ratio": 14.55627224198147,
+ "median_fresh_to_prefix_ratio": 27.447900015031998
+}

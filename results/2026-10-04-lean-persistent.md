@@ -155,3 +155,14 @@ No GPU checker or GPU speedup is claimed or ready for execution; the next GPU
 resource request should attach a concrete executable and CPU reference. Resource
 coordination must use the existing Kubernetes NVIDIA allocation/runtime path,
 preserving the owning Workspace/PVC. See [resource status](../docs/lean-resource-status.md).
+
+
+## Subsequent validated continuation
+
+The GPU readiness statements above describe checkpoint `63c29e5`. Later on
+2026-10-04, [real Mathlib proof/state reuse](2026-10-04-lean-mathlib-state-reuse.md),
+[actual RTX 5090 metadata execution](2026-10-04-lean-gpu-dag.md), and
+[real VeruSAGE trace/replay ablations](2026-10-04-verusage-real-traces.md) completed.
+The GPU primitive is validated against official Lean metadata; a whole GPU
+proof checker remains unimplemented. Earlier measurements and their scope are
+preserved rather than replaced by these newer experiments.

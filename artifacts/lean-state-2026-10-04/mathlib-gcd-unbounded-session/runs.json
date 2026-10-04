@@ -1,0 +1,1726 @@
+[
+ {
+  "mode": "cold_lean",
+  "repeat": 0,
+  "makespan_s": 122.78032968099433,
+  "records": [
+   {
+    "name": "gcd_greatest",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.9439315529962187,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:36:22: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  d = a.gcd b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_greatest",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.5276277560042217,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:35:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_greatest",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.4898369700022158,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_right_comm",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.5035850100030075,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:39:77: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a.gcd b).gcd c = (a.gcd c).gcd b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_right_comm",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.49699367299763253,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:39:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_right_comm",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.5040124890001607,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.5724032620055368,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:42:88: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a.gcd c).gcd (b.gcd c) = (a.gcd b).gcd c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6135198780029896,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:42:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.5271335180004826,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.5138153869993403,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:45:87: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (c.gcd a).gcd (c.gcd b) = c.gcd (a.gcd b)\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.503951471997425,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:45:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_gcd_gcd_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.5059310540018487,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_mod_pow_sub_one",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.5264451379989623,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:51:100: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a ^ c - 1) % (a ^ b - 1) = a ^ (c % b) - 1\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_mod_pow_sub_one",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.5389015420005308,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:51:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_mod_pow_sub_one",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7352525070018601,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_gcd_pow_sub_one",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6928936869953759,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:69:56: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a ^ b - 1).gcd (a ^ c - 1) = a ^ b.gcd c - 1\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_gcd_pow_sub_one",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.666185611000401,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:68:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "pow_sub_one_gcd_pow_sub_one",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7539446350056096,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7486850040004356,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:77:68: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a \u2223 b.lcm c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7848202870009118,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:77:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.8148285689967452,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_right_dvd",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.73891691800236,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:82:73: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a \u2223 c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_right_dvd",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.774735539998801,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:82:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_right_dvd",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7229447899953811,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7756409200010239,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:85:79: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a \u2223 c.lcm b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7596805159992073,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:85:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_lcm_of_dvd_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.775632222997956,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_left_dvd",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7628264240047429,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:90:72: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  b \u2223 c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_left_dvd",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7366753629976301,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:90:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "dvd_of_lcm_left_dvd",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7501344909978798,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.lcm_eq_mul",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7842037769951276,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:99:79: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.lcm n = m * n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.lcm_eq_mul",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7637587429999257,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:99:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.lcm_eq_mul",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.760657564002031,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.869077709998237,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:107:86: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k \u2223 m * n \u2194 k \u2223 m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7901550669994322,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:107:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7979830959957326,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7963810279979953,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:110:85: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k \u2223 m * n \u2194 k \u2223 n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7788344210057403,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:110:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.dvd_mul_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7747522019999451,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.838152596996224,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:114:81: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (n + m) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.8392915160002303,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:114:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.8670944100013003,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7972951080009807,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:118:81: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (m + n) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.8033502699981909,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:118:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7707117699974333,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7934304980008164,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:122:80: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (m + n).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7863190499992925,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:122:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_self_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.8398222370014992,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7708032130030915,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:126:80: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (m + n).Coprime m \u2194 n.Coprime m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7764538650008035,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:126:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_add_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7795432639977662,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7053283720015315,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:130:92: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (n + k * m) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6404989840011694,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:130:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6484034820023226,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6894425270002102,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:134:91: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (n + m * k) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6554035000008298,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:134:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.646167004997551,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6522888410036103,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:138:92: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (k * m + n) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6720469299980323,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:138:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6659995640002307,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6757523260021117,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:142:91: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (m * k + n) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.648322544999246,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:142:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6485569389988086,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6444525689948932,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:146:91: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (m + k * n).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6675459100006265,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:146:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_right_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6528771379962564,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6622418830011156,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:150:90: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (m + n * k).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7116002870025113,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:150:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_mul_left_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6563935369995306,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.8672947580053005,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:154:91: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (k * n + m).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7202694269944914,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:154:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_right_add_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7215219139980036,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.680527438998979,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:158:90: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (n * k + m).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6763512769975932,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:158:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_mul_left_add_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6758264640011475,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6831230179959675,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:161:79: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a + b).Coprime c \u2194 a.Coprime c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7020725710026454,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:161:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6825782340019941,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6768114299993613,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:164:80: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a + b).Coprime c \u2194 b.Coprime c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.680190022001625,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:164:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "add_coprime_iff_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7016431850061053,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7037213329967926,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:167:79: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a.Coprime (b + c) \u2194 a.Coprime b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6779734550000285,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:167:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6867370390027645,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6991519810035243,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:170:80: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a.Coprime (b + c) \u2194 a.Coprime c\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6950863530000788,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:170:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_add_iff_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6916043400051421,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6973809390037786,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:174:81: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a\u2081.Coprime b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.721337068003777,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:174:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7275744869984919,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7194491859991103,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:177:82: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a.Coprime b\u2081\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7016023929973016,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:177:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7055619640013902,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7079494599965983,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:180:93: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a\u2081.Coprime b\u2081\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7364798810012871,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:180:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.of_dvd",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.712873854994541,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.6758572980033932,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:184:92: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (n - m).Coprime m \u2194 n.Coprime m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.6786026650006534,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:184:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6976458970020758,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7259713829989778,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:188:93: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime (n - m) \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.742356746995938,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:188:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_sub_self_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.778757615997165,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7176883809952415,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:192:92: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (n - m).Coprime n \u2194 m.Coprime n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7060415030064178,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:192:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7111515020005754,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7284089070017217,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:196:93: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  n.Coprime (n - m) \u2194 n.Coprime m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7266147949994775,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:196:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_self_sub_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.6975637130017276,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_left_iff",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7083925790066132,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:201:50: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a ^ n).Coprime b \u2194 a.Coprime b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_left_iff",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7043177290033782,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:200:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_left_iff",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7098465999952168,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_right_iff",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7273610730044311,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:208:50: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a.Coprime (b ^ n) \u2194 a.Coprime b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_right_iff",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7224856989996624,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:207:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_pow_right_iff",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7172771810000995,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "not_coprime_zero_zero",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7210205669980496,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:211:51: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  \u00acCoprime 0 0\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "not_coprime_zero_zero",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7351606379961595,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:211:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "not_coprime_zero_zero",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.7196655660009128,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_left_iff",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.7234244530045544,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:213:64: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Coprime 1 n \u2194 True\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_left_iff",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.7313302510010544,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:213:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_left_iff",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.8500053259995184,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_right_iff",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.956843302003108,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:215:65: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  n.Coprime 1 \u2194 True\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_right_iff",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.9198847099978593,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:215:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_one_right_iff",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.9683764949950273,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_of_coprime_of_dvd",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.9725127009951393,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:218:28: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (a * b).gcd c = b\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_of_coprime_of_dvd",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.012569769998663,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:217:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_of_coprime_of_dvd",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.9539458509971155,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.eq_of_mul_eq_zero",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.9663617269980023,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:225:40: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m = 0 \u2227 n = 1 \u2228 m = 1 \u2227 n = 0\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.eq_of_mul_eq_zero",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.0372353639977518,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:224:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.eq_of_mul_eq_zero",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.0908845869998913,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_iff_isRelPrime",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.550762897997629,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:230:78: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m.Coprime n \u2194 IsRelPrime m n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_iff_isRelPrime",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.0679559970012633,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:230:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "coprime_iff_isRelPrime",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.3557433360037976,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "eq_one_of_dvd_coprimes",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.997908892997657,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:236:32: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k = 1\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "eq_one_of_dvd_coprimes",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.0060664139964501,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:235:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "eq_one_of_dvd_coprimes",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.9654769240005407,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.mul_add_mul_ne_mul",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.9697423449979397,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:240:32: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  a * m + b * n \u2260 m * n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.mul_add_mul_ne_mul",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.9838000710005872,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:239:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "Coprime.mul_add_mul_ne_mul",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.040099783000187,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_gcd_eq_iff_dvd_mul_of_coprime",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 0.9889979510044213,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:257:44: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  x.gcd n * x.gcd m = x \u2194 x \u2223 n * m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_gcd_eq_iff_dvd_mul_of_coprime",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.9828005340023083,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:256:8: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "gcd_mul_gcd_eq_iff_dvd_mul_of_coprime",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.9659261699998751,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_mul_div",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.005071091996797,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:262:80: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k / m * (m / n) = k / n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_mul_div",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.9808993919941713,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:262:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_mul_div",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 0.9805774129999918,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.0186311560028116,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:268:73: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k / m \u2223 k / n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.0596798840051633,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:268:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.012068663003447,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_left",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.1008524800054147,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:273:32: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  k / m \u2223 k / n \u2194 n \u2223 m\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_left",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 0.9897349370003212,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:272:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_left",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.1058381210023072,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_right",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.0735767360019963,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:277:86: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  m / k \u2223 n / k \u2194 m \u2223 n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_right",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.1353448000008939,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:277:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_dvd_div_iff_right",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.1635596600026474,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_lcm_eq_div_gcd",
+    "variant": "rejected",
+    "decision": "rejected",
+    "seconds": 1.1195344090010622,
+    "response": {
+     "returncode": 1,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:282:97: error: Type mismatch\n  0\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  (k / m).lcm (k / n) = k / m.gcd n\nof sort `Prop`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_lcm_eq_div_gcd",
+    "variant": "incomplete",
+    "decision": "incomplete",
+    "seconds": 1.1180451129985158,
+    "response": {
+     "returncode": 0,
+     "stdout": "/workspaces/repository/artifacts/lean-state-2026-10-04/mathlib-gcd/Cold.lean:282:6: warning: declaration uses `sorry`\n",
+     "stderr": ""
+    }
+   },
+   {
+    "name": "div_lcm_eq_div_gcd",
+    "variant": "original",
+    "decision": "accepted",
+    "seconds": 1.1925255030000699,
+    "response": {
+     "returncode": 0,
+     "stdout": "",
+     "stderr": ""
+    }
+   }
+  ],
+  "setup": []
+ }
+]

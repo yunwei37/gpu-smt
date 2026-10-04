@@ -1,0 +1,22 @@
+{
+ "repl": {
+  "repository": "https://github.com/leanprover-community/repl",
+  "revision": "193cf4bb9a22bb3fc6d25774f0fe6a70db1fd6ee",
+  "checkout_tag": "v4.34.0",
+  "local_toolchain_override": "leanprover/lean4:v4.34.1",
+  "build_command": "PATH=/root/.elan/bin:$PATH lake build"
+ },
+ "mathlib": {
+  "repository": "https://github.com/leanprover-community/mathlib4",
+  "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+ },
+ "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+ "gxx_version": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+ "gpu_build": {
+  "nvrtc_package": "nvidia-cuda-nvrtc-cu12==12.9.86",
+  "target": "compute_80",
+  "source_sha256": "81a7ef844f6b1802fbb9a2f7f2bf21683453f81b3480a2dabe0779363579c321"
+ },
+ "official_exporter_revision": "f297dfe2a8557e8674fe892bb49dffe4bfadc0e9",
+ "concurrency": "REPL on CPU0; VeruSAGE capture8-15 and replay8 overlapped; CPU affinity does not establish isolation"
+}

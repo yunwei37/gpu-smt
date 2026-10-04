@@ -92,7 +92,31 @@ def split_commands(text: str) -> list[str]:
 
 
 def normalize(cmd: str) -> str:
-    return re.sub(r"\s+", " ", cmd).strip()
+    # Quoted symbols and string literals are part of the input identity.
+    # Collapsing their whitespace would create false exact-reuse matches.
+    out = []
+    quoted = None
+    escaped = False
+    pending_space = False
+    for ch in cmd.strip():
+        if quoted:
+            out.append(ch)
+            if escaped:
+                escaped = False
+            elif ch == "\\" and quoted == '"':
+                escaped = True
+            elif ch == quoted:
+                quoted = None
+        elif ch.isspace():
+            pending_space = True
+        else:
+            if pending_space and out:
+                out.append(' ')
+            pending_space = False
+            out.append(ch)
+            if ch in ('"', '|'):
+                quoted = ch
+    return ''.join(out)
 
 
 def command_head(cmd: str) -> str:
@@ -113,28 +137,35 @@ def snapshot_queries(path: Path) -> list[list[str]]:
         )
     ]
 
-    global_cmds: list[str] = []
-    assertions: list[str] = []
-    stack: list[int] = []
+    # Keep the observed command order. Declarations are scoped by push/pop
+    # unless :global-decls is enabled; options remain global. Treating every
+    # declaration as global inflated reuse on real multi-query Verus sessions.
+    active: list[tuple[str, int | None, bool]] = []
+    depth = 0
+    global_decls = False
     queries: list[list[str]] = []
 
     for cmd in commands:
         head = command_head(cmd)
         if head == "assert":
-            assertions.append(cmd)
+            active.append((cmd, depth, True))
         elif head == "push":
-            n = int_arg(cmd)
-            for _ in range(n):
-                stack.append(len(assertions))
+            depth += int_arg(cmd)
         elif head == "pop":
-            n = int_arg(cmd)
-            for _ in range(n):
-                if not stack:
-                    break
-                assertions = assertions[: stack.pop()]
+            depth = max(0, depth - int_arg(cmd))
+            active = [r for r in active if r[1] is None or r[1] <= depth]
+        elif head == "reset":
+            active = []
+            depth = 0
+            global_decls = False
+        elif head == "reset-assertions":
+            active = [r for r in active if not r[2] and (r[1] is None or r[1] == 0)]
+            depth = 0
         elif head in {"check-sat", "check-sat-assuming"}:
-            queries.append(global_cmds + assertions + [cmd])
+            queries.append([r[0] for r in active] + [cmd])
         elif head in {
+            "get-info",
+            "get-option",
             "get-model",
             "get-proof",
             "get-unsat-core",
@@ -144,7 +175,10 @@ def snapshot_queries(path: Path) -> list[list[str]]:
         }:
             continue
         else:
-            global_cmds.append(cmd)
+            if head == "set-option" and ":global-decls" in cmd:
+                global_decls = bool(re.search(r":global-decls\s+true", cmd))
+            scoped = head.startswith("declare-") or head.startswith("define-")
+            active.append((cmd, depth if scoped and not global_decls else None, False))
 
     return queries
 

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 149, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 138, in main
+    if status!=expected: raise RuntimeError(f"{mode} {case['name']} {variant}: {status} != {expected}")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: cold_lean gcd_greatest incomplete: accepted != incomplete

@@ -1,0 +1,10 @@
+cold 0 156 15.8565
+warm_reset 0 156 14.5866
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/verus_session_replay.py", line 146, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/verus_session_replay.py", line 134, in main
+    if statuses!=baseline[j['trace']]:raise RuntimeError('per-query decision mismatch: '+j['trace'])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: per-query decision mismatch: artifacts/verusage-2026-10-04/mixed100/traces/NR__definitions_u__impl3__lemma_entry_sizes_increase/z3-1791111012904161813-131353.smt2

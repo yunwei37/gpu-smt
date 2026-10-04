@@ -69,11 +69,30 @@ fixtures. It preserves the prior observations while correcting their scope.
    Full accept/reject fidelity or official fallback is mandatory for a serving
    claim. A preparatory primitive is not a validated whole Lean checker.
 
-No GPU code has yet been validated. Persistent CPU replay is the selected next
-experiment because the small-fixture baseline pays a separate process per check.
-This directly connects to the existing serving work and needs no infrastructure
-change. If it removes most overhead, a GPU tiny-export checker becomes a weaker
-near-term target; large-library checking remains a separate opportunity.
+## Completed real-workload continuation
+
+- [Mathlib source replay](../results/2026-10-04-lean-mathlib-state-reuse.md):
+  52 complete published proofs, each with controlled reject/sorry variants;
+  1404 complete-run decisions agree. Established community REPL prefix reuse
+  had median 7.893 s versus 114.891 s cold, with substantial variability and
+  interrupted partial records retained. This validates a real frontend subset,
+  not a new REPL or agent candidate stream. Unbounded fresh-import environment
+  retention reached 71.6 GiB RSS; process lifetime was bounded in the baseline.
+- [RTX 5090 metadata primitive](../results/2026-10-04-lean-gpu-dag.md):
+  6.13 million real init expressions, seven GPU arrays identical to official
+  Lean. Best native CPU resident median 17.799 ms, GPU 0.853 ms. Upload/download,
+  setup and packing materially change the comparison. This is an executed
+  primitive, not a GPU checker or a measured dominant kernel cost.
+- [Real VeruSAGE traces](../results/2026-10-04-verusage-real-traces.md): 100
+  sampled tasks, 57 successful, 440 queries. Additional SMT scope reproduces
+  29 of 31 prefix-pool status differences; recorded history explains the other
+  two. Warm/reset and prefix reuse cannot be assumed semantically transparent.
+
+The strongest immediate Lean serving baseline is established environment reuse,
+with completeness and state-lifetime handling. Further GPU work should measure
+where resident expression analyses contribute to a real checker before adding
+more kernels. Large-library kernel checking remains in scope alongside SMT
+serving and frontend proof construction.
 
 ## GPU decision and resource coordination
 
@@ -92,8 +111,10 @@ libraries, preserving this project's Workspace/PVC and other projects' processes
 No manual device allowlist changes or host-device probing is needed.
 
 A GPU resource request should name the ready executable, input hashes, CPU
-reference, measured operation/coverage and device memory requirement. The old
-whole-checker sketch is not a ready executable and is not an execution request.
+reference, measured operation/coverage and device memory requirement. The scoped
+metadata request was executed successfully on the user-requested RTX 5090 via
+the existing NVIDIA runtime/plugin, with the owning PVC preserved. No GB300
+computation ran. The old whole-checker sketch remains unimplemented.
 Current delivery/resource state is in `docs/lean-resource-status.md` and the
 owning agent-state request file.
 

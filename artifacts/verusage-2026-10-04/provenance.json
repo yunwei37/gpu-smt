@@ -1,0 +1,59 @@
+{
+ "verus_version": {
+  "verus": {
+   "profile": "release",
+   "version": "0.2026.09.27.3cf1832",
+   "platform": {
+    "os": "linux",
+    "arch": "x86_64"
+   },
+   "toolchain": "1.98.1-x86_64-unknown-linux-gnu (overridden by environment variable RUSTUP_TOOLCHAIN)",
+   "commit": "3cf18325f0fd0c3040fbdec8c0f2255c0504c91a"
+  }
+ },
+ "z3_version": "Z3 version 4.16.0 - 64 bit",
+ "release_url": "https://github.com/verus-lang/verus/releases/tag/release/0.2026.09.27.3cf1832",
+ "dataset_url": "https://raw.githubusercontent.com/microsoft/verus-proof-synthesis/cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1/benchmarks/VeruSAGE-Bench/tasks.jsonl",
+ "command": [
+  "taskset",
+  "-c",
+  "8-15",
+  "python3",
+  "bench/run_verus_trace.py",
+  "--verus",
+  "/tmp/gpu-smt-verus/verus-x86-linux/verus",
+  "--real-z3",
+  "/tmp/gpu-smt-verus/verus-x86-linux/z3",
+  "--tasks-jsonl",
+  "/tmp/verusage-sample100.jsonl",
+  "--limit",
+  "100",
+  "--verus-arg=--num-threads",
+  "--verus-arg=1",
+  "--out",
+  "artifacts/verusage-2026-10-04/mixed100"
+ ],
+ "concurrency": "Mathlib REPL benchmark ran on CPU 0 concurrently; affinity is not isolation",
+ "files": {
+  "/tmp/gpu-smt-verus/verus-x86-linux/verus": {
+   "bytes": 4708720,
+   "sha256": "2fe2fca366846ec5aaaaaf80edf061f7d19564c097cb9840c7638719e8bc1854"
+  },
+  "/tmp/gpu-smt-verus/verus-x86-linux/rust_verify": {
+   "bytes": 27453624,
+   "sha256": "0b701b0953e9ddc07cfac33e6b950efd90c812ce75dbe46c01831cf2529467a0"
+  },
+  "/tmp/gpu-smt-verus/verus-x86-linux/z3": {
+   "bytes": 34954456,
+   "sha256": "e583c4186a45e72411fa2cb2048401eed03f0f8e5f24694676a8f6271a50b765"
+  },
+  "/tmp/verus-0.2026.09.27.zip": {
+   "bytes": 485702797,
+   "sha256": "43814031e10df043221d83c7fa842e3ebd662cb7b0090fc1eb4d7a8673226978"
+  },
+  "/tmp/verusage-sample100.jsonl": {
+   "bytes": 6975858,
+   "sha256": "1982e2db9d2bd54f98d94e20e9eddbaf7624aba67a8602541ec575121151d71a"
+  }
+ }
+}

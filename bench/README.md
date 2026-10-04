@@ -100,7 +100,7 @@ The harness writes:
 - every captured Z3 SMT-LIB stdin session;
 - task runtime, return code, trace count, and trace bytes.
 
-Start with `--source ground_truth` so the workload represents real successful verification rather than only early failing candidates.
+Start with `--source ground_truth`, and retain actual verification reports: benchmark ground truth can still fail under a different Verus/vstd revision. Separate failures before SMT solving from solver-backed failures.
 
 Useful project-specific slices:
 
@@ -123,7 +123,7 @@ Priority order:
 2. Dafny / Boogie;
 3. Viper-family frontends;
 4. Kani / CBMC;
-5. Lean/Mathlib later;
+5. Lean/Mathlib is active in parallel under the expanded user scope;
 6. SMT-COMP as an unrelated-query control.
 
 The first paper-quality experiment is **not** GPU performance. It is a workload study answering whether independent real verification jobs expose enough repeated context to justify cross-job state reuse.
@@ -212,8 +212,8 @@ python3 bench/lean_export_batch.py \
 ```
 
 It reports makespan, jobs/s and accept/reject counts per pool width; the same
-binary an application would invoke is the one under test. `--duplicate` models
-a stream of repeated candidates while keeping the underlying job set fixed.
+binary an application would invoke is the one under test. `--duplicate` is a
+fixed-fixture throughput proxy; it does not supply a real candidate stream.
 
 ## Current results
 
@@ -227,8 +227,34 @@ Lean kernel acceleration:
 - `docs/lean-acceleration-plan.md`
 - `results/2026-10-04-lean-kernel-stage-split.md`
 - `results/2026-10-04-lean-batch-serving.json`
+- `results/2026-10-04-lean-mathlib-state-reuse.md`
+- `results/2026-10-04-lean-gpu-dag.md`
+- `results/2026-10-04-verusage-real-traces.md`
 
-The main unresolved SMT experiment remains VeruSAGE-Bench. Synthetic and small
-upstream workloads establish mechanism headroom, not the end-to-end systems
-claim.
+A pinned mixed 100-task VeruSAGE run and real-session reuse experiment are retained in `artifacts/verusage-2026-10-04`; see the result report. Synthetic and small upstream workloads establish mechanism headroom, not the end-to-end systems claim.
 
+## Real-task reuse and GPU continuation
+
+For cross-job characterization, use `tools/analyze_verus_jobs.py RUN_DIR --json
+OUTPUT.json`; unlike the generic file-order analyzer it follows recorded task
+order and excludes within-task matches. `bench/verus_session_replay.py` compares
+fresh sessions, warm reset and prefix pooling through the bundled stock Z3
+executable. `bench/verus_scope_ablation.py` and `bench/verus_history_probe.py`
+isolate the observed scope/history status differences. Preserve UNKNOWN and
+per-query identity; a changed decision disqualifies a transparent speedup claim.
+Exact commands and archived source/trace reproduction are in the result report.
+
+`bench/lean-source-trace` and `bench/lean_repl_workload.py` extract actual parser
+spans from a pinned Mathlib file and replay complete proofs plus controlled
+type-error/sorry variants. They compare established community REPL environment
+reuse, fresh commands and cold Lean. They do not reconstruct arbitrary source
+scopes or collect actual agent candidate streams. Always use a new output
+directory; the harness rejects overwriting old measurements.
+
+`bench/lean_dag_pack.py`, `bench/lean-persistent/LooseBVar.lean`, native
+`bench/lean-dag/dag_bounds.cpp`, CUDA `dag_bounds.cu` and `bench/lean_dag_gpu.py`
+implement a scoped expression metadata operation on a real export. All CPU/GPU
+outputs match official Lean, including the executed RTX 5090 run. This executable
+does not verify proofs. Separate original export preparation, packed input
+transfer, initialization, resident compute and return transfer. The compressed
+exact input/reference is retained in `artifacts/lean-state-2026-10-04`.

@@ -1,0 +1,43 @@
+{
+  "config": {
+    "libz3": "libz3.so.4",
+    "prefix_constraints": 256,
+    "queries": 32,
+    "z3_version": "4.13.3.0"
+  },
+  "fresh": {
+    "latency_ms_mean": 3.351164062451062,
+    "latency_ms_p50": 2.246497002488468,
+    "latency_ms_p95": 7.179692646604962,
+    "latency_ms_p99": 18.367747368756703,
+    "throughput_qps": 298.35767154300777,
+    "total_s": 0.10725382000237005
+  },
+  "reuse": {
+    "latency_ms_mean": 0.5841378756485938,
+    "latency_ms_p50": 0.019950501155108213,
+    "latency_ms_p95": 0.03300640491943341,
+    "latency_ms_p99": 12.538734673435124,
+    "throughput_qps": 1473.0624523044344,
+    "total_s": 0.021723450998251792
+  },
+  "semantic_match": true,
+  "speedup_total": 4.937236722240926
+}
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/libz3_state_reuse_bench.py", line 256, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/workspaces/repository/bench/libz3_state_reuse_bench.py", line 251, in main
+    args.json.write_text(encoded + "\n", encoding="utf-8")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 557, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 539, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/lean-state-2026-10-04/smt-smoke/synthetic-libz3.json'

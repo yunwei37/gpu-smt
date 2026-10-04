@@ -1,0 +1,24 @@
+test_expand_dedups_and_preserves_order (test_lean_export_batch.ExpandTests.test_expand_dedups_and_preserves_order) ... ok
+test_expand_duplicate_repeats_without_reordering_dedup (test_lean_export_batch.ExpandTests.test_expand_duplicate_repeats_without_reordering_dedup) ... ok
+test_expand_empty_when_no_match (test_lean_export_batch.ExpandTests.test_expand_empty_when_no_match) ... ok
+test_acceptance_requires_success_and_official_marker (test_lean_persistent_bench.DecisionTests.test_acceptance_requires_success_and_official_marker) ... ok
+test_process_failure_cannot_count_as_acceptance (test_lean_persistent_bench.DecisionTests.test_process_failure_cannot_count_as_acceptance) ... ok
+test_timeout_and_decline_are_not_proof_rejection (test_lean_persistent_bench.DecisionTests.test_timeout_and_decline_are_not_proof_rejection) ... ok
+test_forward_reference_cannot_enter_gpu_schedule (test_lean_state_workload.DAGValidationTests.test_forward_reference_cannot_enter_gpu_schedule) ... ok
+test_sparse_indices_are_explicitly_unsupported (test_lean_state_workload.DAGValidationTests.test_sparse_indices_are_explicitly_unsupported) ... ok
+test_incomplete_proof_is_distinct_from_type_error (test_lean_state_workload.ProofStatusTests.test_incomplete_proof_is_distinct_from_type_error) ... ok
+test_protocol_error_is_not_a_semantic_rejection (test_lean_state_workload.SMTStatusTests.test_protocol_error_is_not_a_semantic_rejection) ... ok
+test_unknown_is_preserved_in_query_order (test_lean_state_workload.SMTStatusTests.test_unknown_is_preserved_in_query_order) ... ok
+test_byte_overlap_counts_duplicate_commands (test_trace_analyzer.TraceAnalyzerTests.test_byte_overlap_counts_duplicate_commands) ... ok
+test_context_overlap_can_detect_reordered_commands (test_trace_analyzer.TraceAnalyzerTests.test_context_overlap_can_detect_reordered_commands) ... ok
+test_cross_task_reuse_excludes_same_task (test_trace_analyzer.TraceAnalyzerTests.test_cross_task_reuse_excludes_same_task) ... ok
+test_global_declarations_survive_pop_and_reset_clears_context (test_trace_analyzer.TraceAnalyzerTests.test_global_declarations_survive_pop_and_reset_clears_context) ... ok
+test_normalization_preserves_quoted_identity (test_trace_analyzer.TraceAnalyzerTests.test_normalization_preserves_quoted_identity) ... ok
+test_push_pop_reconstructs_active_assertions (test_trace_analyzer.TraceAnalyzerTests.test_push_pop_reconstructs_active_assertions) ... ok
+test_scoped_declarations_are_removed_and_order_is_preserved (test_trace_analyzer.TraceAnalyzerTests.test_scoped_declarations_are_removed_and_order_is_preserved) ... ok
+test_split_commands_handles_comments_and_strings (test_trace_analyzer.TraceAnalyzerTests.test_split_commands_handles_comments_and_strings) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.003s
+
+OK

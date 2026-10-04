@@ -1,0 +1,10 @@
+warning: use of deprecated method `vstd::set::Set::<A>::finite`: Every Set is always finite, so this is always true.
+  --> /workspaces/repository/artifacts/verusage-2026-10-04/smoke/inputs/IR__delegation_map_v__impl3__new.rs:58:27
+   |
+58 |         &&& self.m@.dom().finite()
+   |                           ^^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+warning: 1 warning emitted
+

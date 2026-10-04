@@ -1,0 +1,32 @@
+{
+  "cold": {
+    "latency_ms_mean": 10.180488562582468,
+    "latency_ms_p50": 10.123042997292941,
+    "latency_ms_p95": 10.796546800338547,
+    "latency_ms_p99": 11.256183997247717,
+    "queries": 32,
+    "throughput_qps": 97.01415238230669,
+    "total_s": 0.329848781999317
+  },
+  "config": {
+    "prefix_constraints": 512,
+    "queries": 32,
+    "z3": "/tmp/gpu-smt-verus/verus-x86-linux/z3"
+  },
+  "incremental": {
+    "latency_ms_mean": 3.0387523127046734,
+    "latency_ms_p50": 0.38692700036335737,
+    "latency_ms_p95": 0.6572790509380865,
+    "latency_ms_p99": 58.7153242288333,
+    "queries": 32,
+    "throughput_qps": 284.27014767289535,
+    "total_s": 0.11256897800194565
+  },
+  "semantic_match": true,
+  "speedup_total": 2.9301925615209536,
+  "statuses": {
+    "sat": 16,
+    "unknown": 0,
+    "unsat": 16
+  }
+}

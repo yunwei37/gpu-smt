@@ -1,0 +1,92 @@
+{
+  "job": "coder/gpu-smt-lean-dag-5090-20261004",
+  "pod": "gpu-smt-lean-dag-5090-20261004-npq9w",
+  "node": "lab",
+  "uid": "6c51b322-d8eb-4b6d-b16a-1c46a4158947",
+  "runtimeClassName": "nvidia",
+  "container": [
+    {
+      "allocatedResources": {
+        "nvidia.com/gpu": "1"
+      },
+      "allocatedResourcesStatus": [
+        {
+          "name": "nvidia.com/gpu",
+          "resources": [
+            {
+              "health": "Healthy",
+              "resourceID": "GPU-7eb74118-ee90-99c7-6567-e2d50fdf1d5a"
+            }
+          ]
+        }
+      ],
+      "containerID": "containerd://f346920b6f1711db0df8ec34c44da130f57be56161d22f269a4916292f63aea7",
+      "image": "sha256:1ee1e6337059bad1580a2fc0d8a238ba5ef9edf12e069c15b964564f184bb846",
+      "imageID": "docker.io/lmsysorg/sglang@sha256:9ca30410d6280c09c8e6804525b8ba0ef598c456044e758819046f8ef3037020",
+      "lastState": {},
+      "name": "benchmark",
+      "ready": false,
+      "resources": {
+        "limits": {
+          "nvidia.com/gpu": "1"
+        },
+        "requests": {
+          "nvidia.com/gpu": "1"
+        }
+      },
+      "restartCount": 0,
+      "started": false,
+      "state": {
+        "terminated": {
+          "containerID": "containerd://f346920b6f1711db0df8ec34c44da130f57be56161d22f269a4916292f63aea7",
+          "exitCode": 0,
+          "finishedAt": "2026-10-04T11:16:47Z",
+          "reason": "Completed",
+          "startedAt": "2026-10-04T11:16:45Z"
+        }
+      },
+      "user": {
+        "linux": {
+          "gid": 0,
+          "supplementalGroups": [
+            0
+          ],
+          "uid": 0
+        }
+      },
+      "volumeMounts": [
+        {
+          "mountPath": "/bench/init.dag",
+          "name": "workspace",
+          "readOnly": true,
+          "recursiveReadOnly": "Disabled"
+        },
+        {
+          "mountPath": "/bench/init.lean-reference.bin",
+          "name": "workspace",
+          "readOnly": true,
+          "recursiveReadOnly": "Disabled"
+        },
+        {
+          "mountPath": "/bench/lean_dag_gpu.py",
+          "name": "workspace",
+          "readOnly": true,
+          "recursiveReadOnly": "Disabled"
+        },
+        {
+          "mountPath": "/bench/dag_bounds.ptx",
+          "name": "workspace",
+          "readOnly": true,
+          "recursiveReadOnly": "Disabled"
+        },
+        {
+          "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+          "name": "kube-api-access-9tsnv",
+          "readOnly": true,
+          "recursiveReadOnly": "Disabled"
+        }
+      ]
+    }
+  ],
+  "observedAt": "2026-10-04T04:20:21.6082779-07:00"
+}

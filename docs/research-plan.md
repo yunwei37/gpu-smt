@@ -220,7 +220,7 @@ Covers bounded model checking and SAT/SMT workloads from Rust systems software.
 
 ### 5. Lean / Mathlib
 
-Later-stage backend to test whether the runtime abstraction generalizes beyond SMT. Lean-specific internal optimizations are explicitly out of scope for the first system.
+The user explicitly expanded the current research to Lean acceleration, including GPU experiments and useful checker internals. Lean/Mathlib is now an active thread alongside SMT serving. Separate full frontend verification, post-export kernel replay, and warm environment reuse; compare established persistent tools before claiming novelty. See [the Lean plan](lean-acceleration-plan.md).
 
 ### 6. SMT-COMP as a control
 

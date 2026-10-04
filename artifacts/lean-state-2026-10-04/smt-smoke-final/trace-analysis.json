@@ -1,0 +1,84 @@
+{
+  "commands_per_query": {
+    "mean": 1028.0,
+    "p50": 1028.0,
+    "p95": 1028.0,
+    "p99": 1028.0
+  },
+  "exact_duplicate_fraction": 0.0,
+  "exact_duplicate_queries": 0,
+  "files": 32,
+  "nearest_recent_context_byte_overlap_fraction": {
+    "mean": 0.9673363146134026,
+    "p50": 0.9985407118589963,
+    "p95": 0.9985407118589962,
+    "p99": 0.9985407118589962
+  },
+  "nearest_recent_context_overlap_fraction": {
+    "mean": 0.9678076361867705,
+    "p50": 0.9990272373540856,
+    "p95": 0.9990272373540856,
+    "p99": 0.9990272373540856
+  },
+  "nearest_recent_prefix_commands": {
+    "mean": 994.90625,
+    "p50": 1027.0,
+    "p95": 1027.0,
+    "p99": 1027.0
+  },
+  "nearest_recent_prefix_fraction": {
+    "mean": 0.9678076361867705,
+    "p50": 0.9990272373540856,
+    "p95": 0.9990272373540856,
+    "p99": 0.9990272373540856
+  },
+  "nearest_recent_transition_commands": {
+    "mean": 34.0625,
+    "p50": 2.0,
+    "p95": 2.0,
+    "p99": 709.9400000000013
+  },
+  "notes": [
+    "Prefix similarity is exact and order-sensitive.",
+    "Context overlap is exact normalized-command multiset overlap; it is order-insensitive but not semantic equivalence.",
+    "Transition commands approximate edits to the nearest recent context; a runtime still has to preserve scopes and backend semantics.",
+    "These conservative metrics are intended to falsify/validate the reuse hypothesis before implementing solver changes."
+  ],
+  "per_file_queries": {
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00000.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00001.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00002.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00003.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00004.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00005.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00006.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00007.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00008.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00009.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00010.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00011.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00012.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00013.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00014.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00015.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00016.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00017.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00018.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00019.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00020.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00021.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00022.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00023.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00024.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00025.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00026.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00027.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00028.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00029.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00030.smt2": 1,
+    "artifacts/lean-state-2026-10-04/smt-smoke-final/traces/cold-00031.smt2": 1
+  },
+  "queries": 32,
+  "unique_queries": 32,
+  "window": 64
+}

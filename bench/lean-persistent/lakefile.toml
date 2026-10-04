@@ -6,6 +6,10 @@ defaultTargets = ["persistentKernel"]
 name = "persistentKernel"
 root = "Main"
 
+[[lean_exe]]
+name = "looseBVarReference"
+root = "LooseBVar"
+
 [[require]]
 scope = "leanprover"
 name = "lean4export"

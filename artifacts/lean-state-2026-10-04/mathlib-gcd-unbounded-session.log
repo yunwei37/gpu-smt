@@ -1,0 +1,14 @@
+cold_lean 0 156 122.78
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 148, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 131, in main
+    response,elapsed=repl.call(request); status=classify(response)
+                     ~~~~~~~~~^^^^^^^^^
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 51, in call
+    if not self.selector.select(3600): raise TimeoutError('REPL response timeout')
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 162, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/workspaces/repository/bench/lean_repl_workload.py", line 123, in main
+    if classify(response)!='accepted': raise RuntimeError('prefix advancement failed')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: prefix advancement failed

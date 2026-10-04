@@ -1,0 +1,26 @@
+{
+ "timestamp_utc": "2026-10-04T11:19:54Z",
+ "hardware_instruction": "\u4e0d\u8981 b300, \u7528 5090",
+ "job": "coder/gpu-smt-lean-dag-5090-20261004",
+ "pod": "gpu-smt-lean-dag-5090-20261004-npq9w",
+ "image": "lmsysorg/sglang@sha256:9ca30410d6280c09c8e6804525b8ba0ef598c456044e758819046f8ef3037020",
+ "state_at_resume": "ContainerCreating image pull, per outer observation; no GPU result received",
+ "files": {
+  "bench/lean_dag_gpu.py": {
+   "bytes": 7591,
+   "sha256": "b8b62f9cc782af6d258e8a739e427fbea2ce97c8f615348cb0ef76b47b1d91b3"
+  },
+  "artifacts/lean-state-2026-10-04/dag_bounds.ptx": {
+   "bytes": 2948,
+   "sha256": "058b0532e79e805595e8134d9b863751b81cd476be72a1e9c024097d6d9df8eb"
+  },
+  "/workspaces/.agent-state/gpu-smt-lean-dag/init.dag": {
+   "bytes": 147644656,
+   "sha256": "257579d0d81040430646f3895a4b7540eaec09a84b4f726043f163a83ca3d7d8"
+  },
+  "/workspaces/.agent-state/gpu-smt-lean-dag/init.lean-reference.bin": {
+   "bytes": 24529108,
+   "sha256": "a005b640664d91d844e9e894e178f6c526660b2942bdae3df05c3c58823f7d60"
+  }
+ }
+}
