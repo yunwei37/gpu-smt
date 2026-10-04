@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/nested-unused-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0051547450000000005,
+  "cpu_time": 0.004431872000000001,
+  "max_rss": 2859008,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_1' (36291) panicked at src/tc.rs:505:21:\ninfer_proj prop\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_0' (36290) panicked at src/tc.rs:505:21:\ninfer_proj prop\n\nthread 'thread_3' (36293) panicked at src/tc.rs:505:21:\ninfer_proj prop\n\nthread 'main' (36288) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'thread_2' (36292) panicked at src/tc.rs:955:71:\nassertion failed: self.def_eq(u, v)\n"
+}

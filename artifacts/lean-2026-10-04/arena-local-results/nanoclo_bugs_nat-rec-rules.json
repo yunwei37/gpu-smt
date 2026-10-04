@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/nat-rec-rules",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.007671265000000001,
+  "cpu_time": 0.062090625,
+  "max_rss": 124981248,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_14' (38278) panicked at src/inductive.rs:1328:21:\nassertion failed: old_r.aux_data_ck(new_r)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_15' (38279) panicked at src/tc.rs:374:71:\nassertion failed: self.def_eq(u, v)\n\nthread 'main' (38263) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

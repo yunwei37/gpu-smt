@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/rec-of-subst-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.025825679,
+  "cpu_time": 0.036611758,
+  "max_rss": 24989696,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 130 declarations, 4165 exprs (4165 unique), 780 names in 0.000757541s\ndeclaration order verified in 2.3894e-05s\nenvironment built in 5.1377e-05s; checking with 4 worker processes\nFAIL Issue.opaqueEndpoint (line 4760): declaration type mismatch for 'Issue.opaqueEndpoint'\n  inferred: ((p : Issue.ModeP) -> (((Eq.{1} Nat) ((Nat.add (Issue.modeG Issue.modeQ)) 0)) ((Nat.add (Issue.modeG Issue.modeQ)) 0)))\n  declared: ((p : Issue.ModeP) -> (((Eq.{1} Nat) ((Nat.add (Issue.modeG #0)) 0)) ((Nat.add (Issue.modeG Issue.modeQ)) 0)))\nchecked 122 declarations, 1 failed, in 0.00960002s wall (9.27602e-06 core-hours over 4 workers); 2291 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}

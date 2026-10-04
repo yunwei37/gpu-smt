@@ -1,0 +1,16 @@
+description: |
+  The complete [Mathlib](https://github.com/leanprover-community/mathlib4) library export.
+
+  This test contains all the mathematical definitions, theorems, and proofs
+  from Mathlib, representing the largest and most comprehensive test case
+  in the Lean kernel arena.
+
+url: https://github.com/leanprover-community/mathlib4
+ref: v4.34.1
+rev: d13f23b723b8a846827a245b89c10fc7d3f11612
+pre-build: lake exe cache get
+module: Mathlib
+outcome: accept
+compare-perf: true
+skip-on-ci: true
+timeout: 5680

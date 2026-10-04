@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/positivity-whnf",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009129776000000001,
+  "cpu_time": 0.008303866,
+  "max_rss": 21643264,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 4 declarations, 50 exprs (50 unique), 23 names in 9.3827e-05s\ndeclaration order verified in 3.756e-06s\nenvironment built in 1.0005e-05s; checking with 4 worker processes\nFAIL LALReduciblePositivity (line 81): arg #1 of 'LALReduciblePositivity.mk' has a non positive occurrence of the datatypes being declared\nchecked 3 declarations, 1 failed, in 0.00124633s wall (8.83207e-07 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

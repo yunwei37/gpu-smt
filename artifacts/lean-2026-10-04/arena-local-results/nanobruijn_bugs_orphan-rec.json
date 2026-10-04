@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/orphan-rec",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0028227010000000004,
+  "cpu_time": 0.004015173,
+  "max_rss": 3235840,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 10 parser entries \u2192 9 DAG entries, 0 OSNF-shifted, 9 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_0' (41335) panicked at src/tc.rs:143:17:\nRecursors must be derived from an associated inductive type, but recursor rogue had none\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41334) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41333) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

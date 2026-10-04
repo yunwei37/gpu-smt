@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "bugs/ctor-num-fields",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.028231549,
+  "cpu_time": 0.026734627,
+  "max_rss": 72286208,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration '_private.Test.0.h':\n(kernel) declaration type mismatch, '_private.Test.0.h' has type\n  @Eq _private.Test.0.S (_private.Test.0.S.mk Bool.true) (_private.Test.0.S.mk Bool.true)\nbut it is expected to have type\n  @Eq _private.Test.0.S (_private.Test.0.S.mk Bool.true) (_private.Test.0.S.mk Bool.false)\n"
+}

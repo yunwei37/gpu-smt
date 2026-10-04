@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/proj-non-structure",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.006490997,
+  "cpu_time": 0.045282593,
+  "max_rss": 100052992,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_13' (38340) panicked at src/tc.rs:846:9:\ninvalid projection\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (38326) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/large-elim-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.007023738000000001,
+  "cpu_time": 0.047664719,
+  "max_rss": 99725312,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_12' (38171) panicked at src/expr.rs:397:9:\nassertion `left == right` failed\n  left: 2\n right: 1\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (38158) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

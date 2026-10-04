@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/large-elim-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0034455370000000003,
+  "cpu_time": 0.0025655350000000003,
+  "max_rss": 2920448,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_0' (36187) panicked at src/expr.rs:403:9:\nassertion `left == right` failed\n  left: 2\n right: 1\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (36186) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

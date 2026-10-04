@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "other/orphan-ctor",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.009243313000000001,
+  "cpu_time": 0.090953926,
+  "max_rss": 143966208,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_0' (39868) panicked at src/tc.rs:113:26:\nconstructor rogue names Orphan as its inductive type, which is not an inductive declaration\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (39867) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/nat-rec-rules",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012285133,
+  "cpu_time": 0.009695663,
+  "max_rss": 21909504,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 6 declarations, 92 exprs (92 unique), 27 names in 0.000164946s\ndeclaration order verified in 2.77501e-06s\nenvironment built in 1.3228e-05s; checking with 4 worker processes\nFAIL False (line 91): recursor 'False.rec' elimination universe is named 'u_1', expected 'u'\nchecked 0 declarations, 1 failed, in 0.0019684s wall (1.34262e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

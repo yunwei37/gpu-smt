@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "other/nat-lit-add-bad",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.028573614,
+  "cpu_time": 0.026545725000000003,
+  "max_rss": 71647232,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'natAddLitBad':\n(kernel) declaration type mismatch, 'natAddLitBad' has type\n  @Eq Nat (Nat.add 123456789 987654321) (Nat.add 123456789 987654321)\nbut it is expected to have type\n  @Eq Nat (Nat.add 123456789 987654321) 1111111111\n"
+}

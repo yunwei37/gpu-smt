@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/eta-rule-k",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.027853604,
+  "cpu_time": 0.026561585000000002,
+  "max_rss": 72417280,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'etaRuleK':\n(kernel) declaration type mismatch, 'etaRuleK' has type\n  (a : @Eq Bool Bool.true Bool.true \u2192 Bool) \u2192 @Eq (@Eq Bool Bool.true Bool.true \u2192 Bool) a a\nbut it is expected to have type\n  (a : @Eq Bool Bool.true Bool.true \u2192 Bool) \u2192\n    @Eq (@Eq Bool Bool.true Bool.true \u2192 Bool)\n      (@Eq.rec Bool Bool.true (fun x x_1 => Bool) (a (@Eq.refl Bool Bool.true)) Bool.true) a\n"
+}

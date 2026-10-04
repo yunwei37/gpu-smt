@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/proof-param-swap",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009316304000000001,
+  "cpu_time": 0.008420209,
+  "max_rss": 21659648,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 1 declarations, 39 exprs (39 unique), 10 names in 8.0283e-05s\ndeclaration order verified in 2.989e-06s\nenvironment built in 9.56401e-06s; checking with 4 worker processes\nFAIL LALProofParameterSwap (line 53): invalid return type for 'LALProofParameterSwap.mk'\nchecked 0 declarations, 1 failed, in 0.00121874s wall (8.96975e-07 core-hours over 4 workers); 0 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

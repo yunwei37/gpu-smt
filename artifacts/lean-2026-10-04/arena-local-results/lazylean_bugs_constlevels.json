@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/constlevels",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.015658388000000002,
+  "cpu_time": 0.013964227,
+  "max_rss": 21684224,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 12 declarations, 204 exprs (204 unique), 63 names in 0.000147841s\ndeclaration order verified in 3.667e-06s\nenvironment built in 3.4334e-05s; checking with 4 worker processes\nFAIL _test (line 283): let value type mismatch for 'x'\nchecked 11 declarations, 1 failed, in 0.00451529s wall (2.78147e-06 core-hours over 4 workers); 4 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

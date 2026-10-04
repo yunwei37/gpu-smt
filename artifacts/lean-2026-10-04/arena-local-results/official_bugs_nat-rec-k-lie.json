@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "bugs/nat-rec-k-lie",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.027083356000000003,
+  "cpu_time": 0.025809100999999997,
+  "max_rss": 71938048,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'k1':\n(kernel) declaration type mismatch, 'k1' has type\n  Nat \u2192 True\nbut it is expected to have type\n  (n : Nat) \u2192 g n\n"
+}

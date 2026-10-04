@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/proj-of-stuck-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.011911332,
+  "cpu_time": 0.116143548,
+  "max_rss": 181764096,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_2' (38371) panicked at src/tc.rs:310:9:\nensur_sort could not produce a sort\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_4' (38373) panicked at src/tc.rs:816:17:\napplication type mismatch\n\nthread 'thread_1' (38370) panicked at src/tc.rs:906:13:\ninfer_proj prop\n\nthread 'thread_11' (38380) panicked at src/tc.rs:310:9:\nensur_sort could not produce a sort\n\nthread 'main' (38368) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'thread_3' (38372) panicked at src/tc.rs:320:18:\nensur_sort could not produce a sort\n",
+  "timeout": 3600
+}

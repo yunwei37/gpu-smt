@@ -18,7 +18,7 @@ Milestone M0 is implemented on the `research/verification-serving` branch:
 - synthetic cold-vs-incremental Z3 benchmark;
 - CI smoke tests with stock Z3.
 
-The immediate goal is **workload characterization**, not GPU acceleration. We first need to measure whether real Verus/Dafny/Viper/Kani workloads expose enough cross-job context reuse.
+The SMT-serving thread still needs to measure whether real Verus/Dafny/Viper/Kani workloads expose enough cross-job context reuse. The Lean thread also explores CPU and GPU verification acceleration, using measured public proof exports.
 
 ## Quick start
 
@@ -65,3 +65,5 @@ Lean acceleration thread:
 
 - [Lean acceleration plan](docs/lean-acceleration-plan.md)
 - [Lean kernel stage split and checker comparison (2026-10-04)](results/2026-10-04-lean-kernel-stage-split.md)
+- [Persistent official Lean replay: fixed-fixture throughput and normal frontend profiles](results/2026-10-04-lean-persistent.md)
+- [Retained commands, inputs and raw results](artifacts/lean-2026-10-04/README.md)

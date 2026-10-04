@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/rec-k-lie",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0070593570000000005,
+  "cpu_time": 0.052610738,
+  "max_rss": 106098688,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_2' (38413) panicked at src/inductive.rs:1328:21:\nassertion failed: old_r.aux_data_ck(new_r)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (38410) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

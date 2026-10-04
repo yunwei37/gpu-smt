@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/subject-reduction-reduct",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.012514735,
+  "cpu_time": 0.018297193,
+  "max_rss": 24739840,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 41 declarations, 906 exprs (906 unique), 202 names in 0.000262478s\ndeclaration order verified in 7.259e-06s\nenvironment built in 2.137e-05s; checking with 4 worker processes\nFAIL reduct (line 1165): application type mismatch in ($11 $12)\n  argument type: ($9 ((f (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1))) $8))\n  expected: ($9 ((f (((OfNat.ofNat.{0} Nat) 0) (instOfNatNat 0))) (redex._proof_1 $8)))\nchecked 40 declarations, 1 failed, in 0.00422376s wall (3.75054e-06 core-hours over 4 workers); 522 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}

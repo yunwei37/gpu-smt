@@ -1,0 +1,17 @@
+Building checker: nanoclo (version: a2aa37e)
+  Fetching https://github.com/sgraf812/nanoclo at a2aa37ebdb2e28b85c4f3681b0bd8564628ea4a4...
+  Building:
+    cargo build --release
+    cat > config.json <<__END__
+     {
+       "use_stdin": true,
+       "nat_extension": true,
+       "string_extension": true,
+       "unpermitted_axiom_hard_error": false,
+       "unsafe_permit_all_axioms": true,
+       "num_threads": 4
+     }
+    __END__
+  Checker nanoclo built successfully
+
+Results: 1 succeeded, 0 failed

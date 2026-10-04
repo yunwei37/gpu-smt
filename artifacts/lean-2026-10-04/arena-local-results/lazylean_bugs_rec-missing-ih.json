@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/rec-missing-ih",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.05241876400000001,
+  "cpu_time": 0.034149724,
+  "max_rss": 24854528,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 118 declarations, 4596 exprs (4596 unique), 793 names in 0.000685859s\ndeclaration order verified in 1.3874e-05s\nenvironment built in 4.1775e-05s; checking with 4 worker processes\nFAIL Native64TwoHashOwner (line 4811): arg #3 of 'Native64TwoHashOwner.step' has a non valid occurrence of the datatypes being declared\nchecked 104 declarations, 1 failed, in 0.0277712s wall (1.46619e-05 core-hours over 4 workers); 1644 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}

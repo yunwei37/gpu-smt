@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/let-value-type-mismatch",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009519671,
+  "cpu_time": 0.008036244,
+  "max_rss": 21655552,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 1 declarations, 5 exprs (5 unique), 4 names in 7.2023e-05s\ndeclaration order verified in 1.76e-06s\nenvironment built in 8.302e-06s; checking with 4 worker processes\nFAIL EcosystemCase (line 13): let value type mismatch for 'u'\nchecked 0 declarations, 1 failed, in 0.00116695s wall (7.97298e-07 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

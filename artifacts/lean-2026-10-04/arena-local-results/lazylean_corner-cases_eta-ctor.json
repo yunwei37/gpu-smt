@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/eta-ctor",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009799704000000001,
+  "cpu_time": 0.009182486000000002,
+  "max_rss": 21598208,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 6 declarations, 104 exprs (104 unique), 34 names in 0.000108447s\ndeclaration order verified in 2.519e-06s\nenvironment built in 1.2083e-05s; checking with 4 worker processes\nFAIL etaCtor (line 148): declaration type mismatch for 'etaCtor'\n  inferred: ((a : ((proof : True) -> T)) -> (((Eq.{1} ((proof : True) -> T)) #0) #0))\n  declared: ((x : ((proof : True) -> T)) -> (((Eq.{1} ((proof : True) -> T)) (T.mk (T.val (#0 True.intro)))) #0))\nchecked 5 declarations, 1 failed, in 0.00169172s wall (1.24994e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

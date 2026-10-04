@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "other/nat-lit-add-bad",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012548871000000001,
+  "cpu_time": 0.154042913,
+  "max_rss": 169115648,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_15' (39796) panicked at src/tc.rs:374:71:\nassertion failed: self.def_eq(u, v)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (39780) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

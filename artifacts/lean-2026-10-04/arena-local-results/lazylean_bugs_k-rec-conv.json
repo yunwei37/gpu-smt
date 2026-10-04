@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/k-rec-conv",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012593882,
+  "cpu_time": 0.012903597,
+  "max_rss": 21889024,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 9 declarations, 158 exprs (158 unique), 60 names in 0.000166642s\ndeclaration order verified in 3.315e-06s\nenvironment built in 1.3645e-05s; checking with 4 worker processes\nFAIL bad (line 232): declaration type mismatch for 'bad'\n  inferred: (((Eq.{1} T) t1) t1)\n  declared: (((Eq.{1} T) t1) t2)\nchecked 8 declarations, 1 failed, in 0.00258071s wall (2.18091e-06 core-hours over 4 workers); 3 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

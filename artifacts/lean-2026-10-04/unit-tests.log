@@ -1,0 +1,24 @@
+test_expand_dedups_and_preserves_order (test_lean_export_batch.ExpandTests.test_expand_dedups_and_preserves_order) ... ok
+test_expand_duplicate_repeats_without_reordering_dedup (test_lean_export_batch.ExpandTests.test_expand_duplicate_repeats_without_reordering_dedup) ... ok
+test_expand_empty_when_no_match (test_lean_export_batch.ExpandTests.test_expand_empty_when_no_match) ... ok
+test_acceptance_requires_success_and_official_marker (test_lean_persistent_bench.DecisionTests.test_acceptance_requires_success_and_official_marker) ... ok
+test_process_failure_cannot_count_as_acceptance (test_lean_persistent_bench.DecisionTests.test_process_failure_cannot_count_as_acceptance) ... ok
+test_timeout_and_decline_are_not_proof_rejection (test_lean_persistent_bench.DecisionTests.test_timeout_and_decline_are_not_proof_rejection) ... ok
+test_byte_overlap_counts_duplicate_commands (test_trace_analyzer.TraceAnalyzerTests.test_byte_overlap_counts_duplicate_commands) ... ok
+test_context_overlap_can_detect_reordered_commands (test_trace_analyzer.TraceAnalyzerTests.test_context_overlap_can_detect_reordered_commands) ... FAIL
+test_push_pop_reconstructs_active_assertions (test_trace_analyzer.TraceAnalyzerTests.test_push_pop_reconstructs_active_assertions) ... ok
+test_split_commands_handles_comments_and_strings (test_trace_analyzer.TraceAnalyzerTests.test_split_commands_handles_comments_and_strings) ... ok
+
+======================================================================
+FAIL: test_context_overlap_can_detect_reordered_commands (test_trace_analyzer.TraceAnalyzerTests.test_context_overlap_can_detect_reordered_commands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/repository/tests/test_trace_analyzer.py", line 80, in test_context_overlap_can_detect_reordered_commands
+    self.assertEqual(ast.multiset_common_count(a, b), 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3 != 2
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+FAILED (failures=1)

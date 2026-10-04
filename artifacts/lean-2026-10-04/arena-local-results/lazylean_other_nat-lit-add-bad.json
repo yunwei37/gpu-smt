@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "other/nat-lit-add-bad",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.010004659,
+  "cpu_time": 0.012358232,
+  "max_rss": 22822912,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 15 declarations, 352 exprs (352 unique), 89 names in 0.000167943s\ndeclaration order verified in 5.403e-06s\nenvironment built in 1.3753e-05s; checking with 4 worker processes\nFAIL natAddLitBad (line 465): declaration type mismatch for 'natAddLitBad'\n  inferred: (((Eq.{1} Nat) ((Nat.add (((OfNat.ofNat.{0} Nat) 123456789) (instOfNatNat 123456789))) (((OfNat.ofNat.{0} Nat) 987654321) (instOfNatNat 987654321)))) ((Nat.add (((OfNat.ofNat.{0} Nat) 123456789) (instOfNatNat 123456789))) (((OfNat.ofNat.{0} Nat) 987654321) (instOfNatNat 987654321))))\n  declared: (((Eq.{1} Nat) ((Nat.add (((OfNat.ofNat.{0} Nat) 123456789) (instOfNatNat 123456789))) (((OfNat.ofNat.{0} Nat) 987654321) (instOfNatNat 987654321)))) (((OfNat.ofNat.{0} Nat) 1111111111) (instOfNatNat 1111111111)))\nchecked 14 declarations, 1 failed, in 0.002231s wall (1.94732e-06 core-hours over 4 workers); 62 reduction steps; peak 21 MB in one worker\n",
+  "timeout": 3600
+}

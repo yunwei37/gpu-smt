@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/alg-conv-trans-quot",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.028209873000000003,
+  "cpu_time": 0.026866193,
+  "max_rss": 72445952,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'trans':\n(kernel) declaration type mismatch, 'trans' has type\n  {P : Prop} \u2192\n    {r : P \u2192 P \u2192 Prop} \u2192\n      {\u03b1 : Type} \u2192\n        (f : P \u2192 \u03b1) \u2192\n          (h : (x y : P) \u2192 r x y \u2192 @Eq \u03b1 (f x) (f y)) \u2192\n            (q : @Quot P r) \u2192 P \u2192 @Eq \u03b1 (@Quot.lift P r \u03b1 f h q) (@Quot.lift P r \u03b1 f h q)\nbut it is expected to have type\n  {P : Prop} \u2192\n    {r : P \u2192 P \u2192 Prop} \u2192\n      {\u03b1 : Type} \u2192\n        (f : P \u2192 \u03b1) \u2192\n          (h : (x y : P) \u2192 r x y \u2192 @Eq \u03b1 (f x) (f y)) \u2192 (q : @Quot P r) \u2192 (z : P) \u2192 @Eq \u03b1 (@Quot.lift P r \u03b1 f h q) (f z)\n"
+}

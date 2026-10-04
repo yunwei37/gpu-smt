@@ -1,0 +1,13 @@
+name = "persistentKernel"
+version = "0.1.0"
+defaultTargets = ["persistentKernel"]
+
+[[lean_exe]]
+name = "persistentKernel"
+root = "Main"
+
+[[require]]
+scope = "leanprover"
+name = "lean4export"
+git = "https://github.com/leanprover/lean4export"
+rev = "f297dfe2a8557e8674fe892bb49dffe4bfadc0e9"

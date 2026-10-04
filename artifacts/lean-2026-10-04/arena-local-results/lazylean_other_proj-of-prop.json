@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "other/proj-of-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.009864283000000001,
+  "cpu_time": 0.009119424000000001,
+  "max_rss": 21680128,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 4 declarations, 35 exprs (35 unique), 15 names in 9.5926e-05s\ndeclaration order verified in 3.877e-06s\nenvironment built in 1.0467e-05s; checking with 4 worker processes\nFAIL badFalse (line 56): application type mismatch in (Wrapper.mk True.intro)\n  argument type: True\n  expected: False\nchecked 3 declarations, 1 failed, in 0.00153269s wall (1.17338e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

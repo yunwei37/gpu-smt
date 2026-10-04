@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/proj-non-structure",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.006044812,
+  "cpu_time": 0.004090623,
+  "max_rss": 3092480,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_0' (36320) panicked at src/tc.rs:471:59:\ncalled `Option::unwrap()` on a `None` value\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (36319) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

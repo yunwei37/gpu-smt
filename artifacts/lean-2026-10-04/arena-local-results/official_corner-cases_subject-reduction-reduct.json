@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/subject-reduction-reduct",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.028942463,
+  "cpu_time": 0.027350397000000002,
+  "max_rss": 71819264,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'reduct':\n(kernel) application type mismatch\n  k x0\nargument has type\n  D (f 1 a)\nbut function has type\n  D (f 0 (redex._proof_1 a)) \u2192 Unit\n"
+}

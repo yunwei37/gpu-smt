@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "other/extra-rec",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.010154521000000001,
+  "cpu_time": 0.008567358,
+  "max_rss": 21643264,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 2 declarations, 10 exprs (10 unique), 7 names in 0.000158546s\ndeclaration order verified in 2.10101e-06s\nenvironment built in 1.0826e-05s; checking with 4 worker processes\nFAIL False (line 18): recursor count mismatch for 'False': export has 2, derived 1\nchecked 1 declarations, 1 failed, in 0.00122805s wall (9.06039e-07 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

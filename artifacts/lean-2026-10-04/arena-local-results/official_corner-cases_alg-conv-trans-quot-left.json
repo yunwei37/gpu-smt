@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/alg-conv-trans-quot-left",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.028486682000000003,
+  "cpu_time": 0.027004963,
+  "max_rss": 72945664,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'left':\n(kernel) declaration type mismatch, 'left' has type\n  {P : Prop} \u2192\n    {r : P \u2192 P \u2192 Prop} \u2192\n      {\u03b1 : Type} \u2192\n        (f : P \u2192 \u03b1) \u2192\n          (h : (x y : P) \u2192 r x y \u2192 @Eq \u03b1 (f x) (f y)) \u2192\n            (q : @Quot P r) \u2192 P \u2192 @Eq \u03b1 (@Quot.lift P r \u03b1 f h q) (@Quot.lift P r \u03b1 f h q)\nbut it is expected to have type\n  {P : Prop} \u2192\n    {r : P \u2192 P \u2192 Prop} \u2192\n      {\u03b1 : Type} \u2192\n        (f : P \u2192 \u03b1) \u2192\n          (h : (x y : P) \u2192 r x y \u2192 @Eq \u03b1 (f x) (f y)) \u2192\n            (q : @Quot P r) \u2192 (z : P) \u2192 @Eq \u03b1 (@Quot.lift P r \u03b1 f h q) (@Quot.lift P r \u03b1 f h (@Quot.mk P r z))\n"
+}

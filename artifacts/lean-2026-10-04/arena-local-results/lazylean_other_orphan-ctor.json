@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "other/orphan-ctor",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.009243571,
+  "cpu_time": 0.00800844,
+  "max_rss": 21479424,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 2 declarations, 10 exprs (10 unique), 8 names in 7.3491e-05s\ndeclaration order verified in 2.119e-06s\nenvironment built in 8.943e-06s; checking with 4 worker processes\nFAIL False (line 19): constructor count mismatch in inductive block\nchecked 0 declarations, 1 failed, in 0.00114841s wall (8.1191e-07 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

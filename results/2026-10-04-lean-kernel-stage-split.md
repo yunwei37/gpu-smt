@@ -1,10 +1,10 @@
-# Lean kernel checking: stage split and checker comparison — 2026-10-04
+# Lean kernel checking: measured stages and checker comparison — 2026-10-04
 
-This note is the first real-workload result for the Lean acceleration thread.
-It measures **where Lean verification time actually goes** and compares the
-kernel-checking backends that a serving runtime would target.
-
-All numbers are measured in this workspace. Nothing here is projected.
+This report corrects the first-round draft at commit `00400a8`; that commit and
+all prior data remain preserved. Local measurements and the downloaded public
+arena snapshot are identified separately. GPU transfer estimates are conditional
+arithmetic, not measurements. New persistent-process results are in
+[the continuation report](2026-10-04-lean-persistent.md).
 
 ## Workload: lean-kernel-arena
 
@@ -34,86 +34,107 @@ The corpora are dominated by **theorems** (72% of `init`, 71% of `std`, 69% of
 `cslib`, 73% of `mathlib`), i.e. proof terms to type-check, which is the
 interesting case.
 
-### Environment
+### Environment and affinity
 
-- Intel Core Ultra 9 285K, 24 logical cores / 24 physical, single socket,
-  125 GB RAM.
-- Lean v4.34.1 (`leanprover/lean4:v4.34.1`), elapsed toolchain via elan.
-- All runs isolated with `taskset`; long runs pinned to cores `0-7`.
+Intel Core Ultra 9 285K, 24 distinct logical/physical cores, one socket and
+approximately 125 GB RAM. Checker toolchain `leanprover/lean4:v4.34.1`; CSLib export is from Lean
+4.34.0 and the other three library exports from 4.34.1, per retained headers.
+[Topology](../artifacts/lean-2026-10-04/cpu-topology.txt) reports CPUs 0–7 at
+5.5–5.7 GHz maximum, and 8–23 at 4.7 GHz maximum. The hybrid perf counters also
+identify core/atom classes. These groups cannot be treated as equal-speed cores.
 
-## Stage split: parse+load vs kernel checking
+`taskset` restricts affinity; it does not reserve cores or isolate memory,
+frequency, thermals or background work. Earlier runs overlapped on this machine,
+including the Mathlib stage-split and small-export measurements. Masks varied:
+0–7 for later official library runs, 0–15 for nanoda t1–t16, 0–23 for several
+alternatives/batches, and 8–23 or 8–15 for later batching/prefixes. Consult the
+[original commands](../artifacts/lean-2026-10-04/prior-commands.json) for each run.
+There is no evidence supporting a global “no competing jobs” assertion.
 
-The official kernel exposes a `--parse-only` flag that reads and deserializes the
-export but skips type-checking. That isolates the **import/parse floor** (the
-irreducible RAM-resident cost of materializing the environment) from the
-**kernel-checking** work.
+## Official parse/load versus replay
 
-Official kernel, `taskset -c 0-7`, best-of-repeat (isolated, no competing
-jobs):
+`--parse-only` reads/materializes the export but omits replay. Full minus
+parse-only is a difference between separate runs, estimating additional replay
+cost in this implementation. It is not direct instrumentation of every kernel
+operation and includes variability between runs.
 
-| Corpus | parse-only wall | full wall | check-only (Δ) | parse RSS | full RSS | check share of wall |
+| Corpus | parse wall | full wall | difference | parse peak RSS (KiB) | full peak RSS (KiB) | difference/full |
 |---|---:|---:|---:|---:|---:|---:|
-| `init` | 5.41 s | 32.78 s | **27.4 s** | 577 MB | 583 MB | 84% |
-| `std` | 9.30 s | 58.83 s | **49.5 s** | 954 MB | 955 MB | 84% |
-| `cslib` | 38.31 s | 305.74 s | **267.4 s** | 3.58 GB | 3.58 GB | 87% |
-| `mathlib` | 107.63 s | 1712.10 s | **1604.5 s** | 10.4 GB | 10.4 GB | 94% |
+| init | 5.47 s | 33.67 s | 28.20 s | 576960 | 582968 | 83.8% |
+| std | 9.30 s | 58.83 s | 49.53 s | 954416 | 954812 | 84.2% |
+| cslib | 38.31 s | 305.74 s | 267.43 s | 3581564 | 3581732 | 87.5% |
+| mathlib | 117.36 s | 1565.93 s | 1448.57 s | 10424436 | 10417484 | 92.5% |
 
-`mathlib` was measured twice on isolated cores: **1712.10 s** (first run, the
-table row) and **1565.93 s** (second, fully isolated run: parse-only 117.36 s,
-10.42 GB RSS). The ~9% spread on a 26-minute single-thread
-run is machine variance (turbo/thermal/ambient), not a methodology change; both
-give check share 93–94%. All `mathlib` statements elsewhere in this note are
-consistent with either and the arithmetic does not depend on which.
+The init row uses retained GNU-time records (`tv-init.log`, `tvpo-init.log`);
+the draft's 32.78/5.41 seconds could not be located in a raw timing record and
+is superseded here. Other rows come from the completed `clean_timings.log`.
+That script ended with `CLEAN_DONE` before takeover; no duplicate was launched.
+Std's second pair was 59.00/9.33 seconds. Cslib and Mathlib each have one pair
+in that script. The earlier Mathlib pair was 1712.10/107.63 seconds, with
+1604.47 seconds difference (93.7%). Full-wall spread is 8.5% relative to the
+first run; its cause was not measured. These are descriptive single-run or
+limited-repeat estimates, not confidence intervals or asymptotic scaling laws.
 
-Reading: **kernel checking is 84–94% of wall time and grows with corpus size**.
-Parsing/loading is a large constant (~5.4 s for 331 MB, ~108 s for 6.2 GB) but
-the checking work dominates asymptotically. Also note **RSS is identical with
-and without checking** — the checker builds the full environment either way;
-`--parse-only` is a genuine lower bound on resident memory, not a savings on it.
+Parse/full RSS is similar within the official implementation, approximately
+9.94 GiB for Mathlib. This is not a universal resident-memory floor. Alternative
+parsers, term representations, reduction algorithms and memory reclamation can
+change both time and memory. Nanoclo's full Mathlib run (69.97 seconds) is already
+below either official parse-only wall time.
 
-Instruction-level confirmation (`perf stat`, `init`, isolated):
+### Instruction counters
 
-| Mode | Instructions | IPC |
-|---|---:|---:|
-| full check | 398.3 G | 1.95 |
-| parse-only | 105.4 G | 3.53 |
+Retained `ps-full.csv` and `ps-po.csv`, init, affinity 0–7:
 
-Full checking executes **2.6× more instructions** and runs at **half the IPC**.
-Low IPC at ~4× the memory traffic is the signature of a **memory-latency-bound
-graph traversal** (the kernel's defeq/whnf reduction over the term DAG), not a
-FLOP-bound workload. This is the single most important fact for acceleration:
-the kernel is not compute-dense, so a GPU helps only if it is fed a *large batch*
-of independent checks to hide latency, not by making one check faster.
+| mode | instructions | IPC | task clock |
+|---|---:|---:|---:|
+| full | 398.337 G | 1.95 | 44.157 s |
+| parse-only | 105.408 G | 3.53 | 6.124 s |
 
-### The perf suite is also check-dominated
+The instruction ratio is **3.779×**; full IPC is **0.552×** parse IPC.
+These counters establish more instructions and fewer instructions per cycle.
+They do not measure memory traffic, cache misses, DRAM stalls or bandwidth.
+Pointer-heavy reduction may be sensitive to memory latency, but that remains a
+hypothesis. No GPU benefit follows from IPC alone.
 
-28 synthetic-but-real kernel stress tests (magma lists, app/binder ladders,
-Church numerals, shared subterms):
+The prior `bw.c` experiment reported 14.2/55.2/168.3 GB/s. Its OpenMP loop
+parallelizes repetitions writing the same destination array concurrently,
+without independent thread partitions or a validated checksum. It is not a
+sound bandwidth calibration and is excluded from mechanism conclusions.
 
-- Σ parse-only = **1.55 s**; Σ full = **60.16 s** → **97% is kernel checking**.
+## Alternative checker measurements
 
-The heavy tests are almost pure checking: `magma-list-deep-n36` 29.36 s with
-99.8% in the kernel; `magma-list-pair-n21` 15.55 s. Small bug/other tests are
-parse-dominated (check ≈ 0). So both the real library corpora and the stress
-tests agree: **the kernel is the target**.
+Wall times combine parsing and checking. They are individual observations with
+varying settings, not a matched, repeated best-backend study. Peak RSS is GNU
+`time`'s KiB value; for lazylean's forked workers it is not aggregate pool RSS.
 
-## Alternative checker comparison
-
-Same corpora, all cores `0-23`, each checker at its best measured parallelism
-(official is single-threaded per file; the alternatives are internally
-multi-threaded). Wall / user CPU / peak RSS:
-
-| Checker | `init` | `std` | `cslib` | `mathlib` |
+| checker | init wall / threads | std wall / threads | cslib wall / threads | mathlib wall / threads |
 |---|---|---|---|---|
-| official (1 core) | 32.8 s / 583 MB | 61.3 s / 954 MB | 323.4 s / 3.58 GB | 1712.1 s / 10.4 GB |
-| parse-only (1 core) | 5.4 s / 577 MB | 9.4 s / 954 MB | 42.4 s / 3.58 GB | 107.6 s / 10.4 GB |
-| nanoda (t24) | 4.02 s / 627 MB | 6.83 s | 33.69 s | 116.05 s / 7.49 GB |
-| nanoclo (t24) | 4.11 s / 617 MB | 4.21 s / 1.81 GB | 20.22 s / 4.13 GB | 69.97 s / 9.47 GB |
-| nanobruijn (t24) | 5.97 s / 652 MB | 11.04 s / 897 MB | 50.33 s / 2.91 GB | 142.31 s / 7.04 GB |
-| lazylean (j8) | 5.41 s / — | 6.60 s / 723 MB | 32.76 s / 2.63 GB | 123.44 s / 7.34 GB |
+| nanoda (Rust) | 4.02 s / t16 | 6.83 s / t16 | 33.69 s / t16 | 116.05 s / t24 |
+| nanoclo (Rust) | 4.11 s / t4; 3.74 s / t8 | 4.21 s / t24 | 20.22 s / t24 | 69.97 s / t24 |
+| nanobruijn (Rust) | 5.97 s / t24 | 11.04 s / t24 | 50.33 s / t24 | 142.31 s / t24 |
+| lazylean (C++) | 5.41 s / j8; 4.00 s / j24 | 6.60 s / j8 | 32.76 s / j8 | 123.44 s / j8 |
 
-On the full `perf` stress suite (28 tests, the cases that are nearly 100% kernel
-work), single-run totals with each checker's own multithreading:
+Nanoclo init's 4.11-second command changed `num_threads` from 4 to 24 **after**
+running; its original t24 label was incorrect. The later explicitly configured
+scaling series gives t1/t4/t8 = 11.86/4.57/3.74 seconds. Nanoda init t1/t2/t4/t8/t16
+was 27.07/13.13/7.51/5.11/4.02 seconds, affinity 0–15.
+
+Using the official table above, nanoda library speedups are 8.4×/8.6×/9.1×/13.5×,
+and nanoclo's displayed fastest library observations are 9.0×/14.0×/15.1×/22.4×.
+These ratios should not be confused with perf-suite totals below. Nanoclo at
+t1 was already faster than official init; parallelism is one contributor,
+alongside parser, representation and algorithm differences. This data does not
+attribute the speedup among those contributors.
+
+Retained peak RSS examples: nanoda Mathlib 7490252 KiB; nanoclo Mathlib
+9473224 KiB; nanobruijn Mathlib 7036272 KiB; lazylean Mathlib 7338096 KiB. Raw logs take precedence
+over rounded prose, and worker-process RSS does not establish total pool memory.
+
+### Perf stress suite
+
+28 exported kernel stress fixtures. Official sum is 60.155 seconds; parse-only
+sum 1.549 seconds; their difference is 97.4% of full wall. These are summed
+separate invocations, not normal frontend stage timings.
 
 | Checker | perf-suite total wall | Speedup vs official |
 |---|---:|---:|
@@ -124,33 +145,17 @@ work), single-run totals with each checker's own multithreading:
 | nanoda | 116.71 s | 0.52× (**slower**) |
 | nanobruijn | — | — |
 
-Interpretation:
+The arena integration defaults to four internal threads/workers, with some
+manual configurations changed during measurement. Nanoclo's suite command
+explicitly set t16; nanoda/lazylean use their arena configuration. Retained YAML,
+commands and per-test JSON document what is available; configs copied at takeover
+are final state and do not retroactively prove historical thread settings.
+These totals establish workload-specific performance, not a parallelism-only
+explanation or bandwidth saturation.
 
-- The modern Rust checkers are **4.6–7.6× faster than the official kernel** on
-  kernel-bound tests, but they get this from *parallelism across declarations*,
-  not from a fundamentally cheaper proof check.
-- **nanoda is not state of the art.** It is slower than the official kernel on
-  the perf suite (116.7 s vs 60.2 s) and only 2–3× faster on big corpora, where
-  nanoclo/lazylean reach 7.6×. Do not treat nanoda as the reference accelerator.
+## Independent export batching
 
-### Parallel scaling and its limit
-
-nanoda scaling on `init` (per-declaration parallelism):
-
-| threads | 1 | 2 | 4 | 8 | 16 |
-|---|---:|---:|---:|---:|---:|
-| wall (s) | 27.07 | 13.13 | 7.51 | 5.11 | 4.02 |
-
-Sub-linear (27.07→4.02 is 6.7× on 16 threads) and nanoclo is flat-to-4.1 s by
-t24. Parallel checking across *declarations within one file* is real but
-bandwidth-limited: the 125 GB machine saturates DRAM before it saturates cores.
-
-## Batching independent exports
-
-The serving-relevant question is whether the runtime can batch many
-independent Lean checks. Each job is one official-kernel invocation on one
-export; a pool of concurrent processes runs a fixed job set. All rows below
-are the same job set at increasing pool width.
+The original fixed-corpus process-pool observations are retained:
 
 | Job set | width 1 | 4 | 8 | 16 | 24 | best |
 |---|---:|---:|---:|---:|---:|---:|
@@ -158,47 +163,31 @@ are the same job set at increasing pool width.
 | 46 small correctness files ×10 (=460) | 12.32 s | 3.06 s | 1.59 s | 0.81 s | 0.68 s | 18.1× @24 |
 | perf suite (28 kernel-bound exports) | 75.3 s | 40.4 s | 41.6 s | 44.2 s | — | **1.86× @4, degrades ≥8** |
 
-Re-measured on cores 8-23 only (16 cores), to exclude the concurrent
-stage-split run, the 460-file set gives 12.09 s → 2.95 s (4) → 1.54 s (8) →
-0.88 s (16): **13.7× on 16 cores**. Independent small-export batching scales
-near-linearly with core count.
+A later affinity-8–23 run (16 lower-clock CPUs) of 460 small fixtures yielded
+12.09/2.95/1.54/0.88 seconds at widths 1/4/8/16 (13.7×). Perf28 at that mask
+was 75.3/40.4/41.6/44.2 seconds. Stragglers, aggregate memory demand, shared
+resources and oversubscription may contribute to weak scaling; no memory-stall
+or bandwidth measurement diagnoses which. Process peak RSS is not aggregate
+pool RSS. Width 24 under an 8–23 mask oversubscribes 16 CPUs.
 
-But on the **kernel-bound perf suite** it peaks at width 4 and then *degrades*:
-1→75.3 s, 4→40.4 s (1.86×), 8→41.6 s, 16→44.2 s. The heavy tests
-(`magma-list-deep-n36` alone is 29 s and several reach 4–8 GB RSS) saturate
-both memory and DRAM bandwidth; a width-24 run earlier touched ≈100 GB of the
-125 GB machine. So the GPU/batch story must be **small independent checks**
-(agent candidate proofs, `decide` certificates, repeated similar goals), not
-batching the giant magma/deep-n36 cases.
+## Frontend profiles: disabled checks are not a normal stage split
 
-## Elaboration vs kernel check (the other half of "Lean verification")
+The original magma profiles used `debug.skipKernelTC=true`. For deep-n36,
+17.1 seconds in `decide` and 1.65 ms in the profiler's type-check category
+therefore **do not** establish that normal kernel checking is negligible.
+Elaboration and tactic categories can overlap/nest and should not be added as
+independent stages. Exported replay checks the complete term regardless of
+this frontend option.
 
-A user running `lean Foo.lean` pays *elaboration* (tactic execution + proof term
-construction) and *kernel checking* of the resulting term. The arena export
-measures only the latter. Using `set_option profiler true` on the arena test
-sources (run with the official toolchain) separates them:
+The old grind-ring 721 ms sample also contained a syntax error from inserting
+`profiler` before its `module` header. It is not a validated normal frontend
+measurement. The original profile claims/table are withdrawn. Corrected normal
+and disabled-check runs are reported separately in the continuation report,
+including commands, exit codes and complete profiler output.
 
-| Test | elaboration | tactic (decide/ring) | kernel type-check |
-|---|---:|---:|---:|
-| `grind-ring-5` | — | — | 721 ms of 0.97 s total = **74% kernel** |
-| `magma-list-deep-n36` | 1.95 s | 17.1 s | 1.65 ms |
-| `magma-list-deep-n21` | 1.6–1.9 s | — | 1.81 s (≈1:1) |
-| `magma-list-pair-n21` | ~21.7 s | — | 15.5 s |
+## Correctness coverage and differences
 
-Two important consequences:
-
-1. In real proofs the split is **workload-dependent**: `grind-ring-5` is
-   kernel-bound, while `magma-list-deep-n36` spends 17.1 s in `decide` tactic
-   execution and only 1.65 ms in the kernel on the *unexported* term.
-2. The magma tests set `set_option debug.skipKernelTC true` (23 of 28 perf
-   tests do). That option only affects *elaboration-time* kernel checking; the
-   exported NDJSON contains the full proof term and the external checker pays
-   the full cost (hence the 29.36 s for deep-n36 at the checker, versus 1.65 ms
-   inside Lean). **Any Lean acceleration claim must say which stage it targets.**
-
-## Correctness: semantics preserved
-
-Every checker was run through the arena harness on the accept/reject groups:
+The retained local harness records establish the following tested subsets:
 
 | Checker | perf | bugs | other | corner-cases |
 |---|---|---|---|---|
@@ -209,59 +198,29 @@ Every checker was run through the arena harness on the accept/reject groups:
 | nanoda | 28 ✅ | 18 ✅ | — | — |
 | parse-only | 26 ✅ / 2 ❌ | 18 ❌ | 5 ✅ / 4 ❌ | 1 ✅ |
 
-`parse-only` accepting 2 rejects on perf and *all* 18 bug tests is the expected
-signature of a checker that never checks — it is a performance floor, never a
-correctness baseline. The four real alternative checkers agree with the official
-kernel on every accept/reject test.
+A dash means untested, not agreement. All tested definitive accept/reject
+fixtures scored correct for the alternative checkers in these records. That
+is finite test coverage, not proof of semantic equivalence. Some arena wrappers
+map all nonzero failures to rejection, so a “correct reject” score alone may
+not distinguish a deliberate rejection from a backend exception.
 
-The 2 `perf` tests the official kernel "rejects" are `refute-cheap-first` and
-`refute-cheap-last`, which the arena defines as `outcome: reject` — so the
-official and alternative checkers are **28/28 correct**, and `parse-only`'s two
-❌ are the two genuine rejects it wrongly accepts.
+The `either` cases are explicitly outside a single expected decision.
+Nanoclo differs from official on five such inputs: `proj-maybe-prop`,
+`proj-maybe-prop-past`, `nested-nonuniform-param`, `alg-conv-trans-quot-left`,
+and `imax-right-successor`. Lazylean differs on `nested-nonuniform-param`.
+Thus the claim that all checkers behaved identically was false. Parse-only
+fails all 18 bugs, two perf rejects and four other rejects; it is not a
+correctness baseline. Repeated acceptance counts alone cannot establish identity.
 
-## Provenance
+## Prefix experiment: block averages including parsing
 
-- Arena revision: `leanprover/lean-kernel-arena@b1d6e91d`
-  (2026-10-03); the public results snapshot for the same revision
-  (`b1d6e91d`, 223 tests × 25 checkers) was the cross-check baseline.
-- Test revisions: `cslib` rev `990e65a685be…`; `mathlib` rev
-  `d13f23b723b8…` (`v4.34.1`); arena test metadata sha256 digests matched the
-  built exports for `init`/`std`/`cslib`/`mathlib`.
-- Corpus digests: `init` `620502ac…`, `std` `289ed65a…`,
-  `cslib` `bc5c88e0…`, `mathlib` (exact match to the arena's recorded digest).
+`prefix_split.py` scans declaration record byte offsets, then selects endpoints
+at approximately equal **declaration counts**, not equally spaced bytes. Counts
+in the table are observed from the record scan, including inductive groups as
+one export record each. Every prefix reparses and replays its whole prefix.
+Affinity was 8–15 and the long Mathlib run overlapped on other CPUs.
 
-## Honest limitations
-
-- Single machine, single run per large corpus (repeats only where noted).
-- Ambient load explains the variance in the raw `std` repeats; the isolated
-  best-of values are reported above.
-- `corner-cases` "either" means the arena itself tolerates either accept or
-  reject (e.g. permitted-axiom policy differences); all checkers behave
-  identically there.
-- The arena measures post-elaboration checking. It says nothing about tactic
-  search cost, which the profiler table shows can dominate.
-
-## What this implies for acceleration
-
-1. **Target the kernel check, but only for the class where it dominates.**
-   Large libraries are 84–94% check; the stress suite is 97% check; but many
-   individual proofs are elaboration/`decide`-bound.
-2. **The kernel is memory-latency-bound** (2.6× instructions, half IPC, ~4×
-   traffic). This is the mechanism-level reason a GPU could help a *large batch*
-   of independent checks and little else.
-3. **The batchable unit is small independent exports**, where batching already
-   scales ~12× on CPU; large exports thrash and batching degrades.
-4. Alternative checkers already reach **7.6×** over the official kernel by
-   parallelizing across declarations — a GPU path must beat that, not just beat
-   single-threaded Lean.
-
-## Per-declaration check-cost distribution
-
-The batchable class is *small checks*. To measure how uniform per-declaration
-checking cost is, we split `init` by byte prefix at 12 equally spaced cut points
-and timed each prefix (official kernel, single-threaded, cores 8–15):
-
-| cut | decls | cumulative wall | Δwall for ~4,847 decls | marginal ms/decl | RSS |
+| cut | decls | cumulative wall | Δwall for ~4,847 decls | Δ full-wall ms/record | RSS (MiB) |
 |---:|---:|---:|---:|---:|---:|
 | 0 | 4,847 | 3.57 s | 3.57 | 0.74 | 122 MB |
 | 1 | 9,695 | 7.37 s | 3.80 | 0.78 | 168 MB |
@@ -276,49 +235,35 @@ and timed each prefix (official kernel, single-threaded, cores 8–15):
 | 10 | 53,322 | 41.22 s | 3.11 | 0.64 | 538 MB |
 | 11 | 58,170 | 48.38 s | 7.16 | 1.48 | 566 MB |
 
-Marginal check cost is **flat at 0.7–0.9 ms/decl** across the first 53k
-declarations of `init` (the last segment is heavier: the export ends with the
-harder core definitions). Two consequences:
+The last column is actually MiB (`rss_kb / 1024` in the script), despite the
+original MB label. “Δ full-wall ms/record” divides differences of independent prefix
+**full-wall** measurements by blocks of roughly 4,847 export records. It includes
+parse/setup differences, not just checking. The block means range from 0.64 to
+1.48 ms; neither their narrow middle range nor rising RSS establishes individual
+cost uniformity, optimal round-robin scheduling, linear memory scaling or a
+binding device-capacity constraint. Per-declaration measurements are still needed.
 
-1. The per-declaration check cost is remarkably uniform for most of a real
-   library. A GPU checker does not need to load-balance wildly skewed work;
-   static round-robin scheduling of declarations is close to optimal here.
-2. RSS grows **linearly with declaration count** (122 MB → 566 MB for 58k
-   decls), so resident memory is the binding constraint on how much of a library
-   a single GPU/checker process can hold; the environment is the object that
-   dominates, not the per-declaration work.
+## Conditional GPU transfer arithmetic
 
-## GPU feasibility arithmetic
+Using decimal KB (1000 bytes), the measured export bytes divided by export
+record counts are **5.9748 / 5.8908 / 6.3092 / 8.8092 KB per record** for
+init/std/cslib/mathlib. The earlier 23–38 KB statement was arithmetic error.
+These denominators count input records, not necessarily all generated kernel
+constants or independent scheduling tasks.
 
-Measured inputs (this machine, this workload):
+Assuming, without measurement, effective host-to-device throughput of 50 GB/s,
+a one-way copy of raw Mathlib NDJSON is 123.69 ms. That is 0.0085% of the
+completed official full-minus-parse estimate (1448.57 s), **0.0079% of official
+full wall (1565.93 s)**, and **0.177% of the fastest measured complete CPU run
+(nanoclo, 69.97 s)**. This calculation includes no JSON parsing, GPU term layout
+construction, allocation, launch, synchronization, driver startup, return path
+or checking, and it assumes a transfer bandwidth that was not measured.
+It only bounds a hypothetical raw byte-copy component under that assumption;
+it does not establish that GPU transfer/setup is negligible or that a GPU
+checker can beat the CPU. CPU time/declaration quotients are amortized corpus
+costs, not per-declaration latency or a target for an individual GPU lane.
 
-- export bytes: `init` 0.35 GB, `std` 0.60 GB, `cslib` 2.42 GB, `mathlib` 6.18 GB;
-- declarations: 58k / 101k / 384k / 702k, i.e. **~23–38 KB of export per declaration**;
-- CPU single-threaded check cost: `init` 27.4 s / 58,170 = **471 µs/decl** (official);
-- CPU peak DRAM bandwidth on this host: 14.2 GB/s (1 thread), 168.3 GB/s (24 threads);
-- best CPU accelerator: nanoclo `init` in 4.11 s wall / 12.96 s CPU = **223 µs/decl**,
-  i.e. already 2.1× cheaper per core than the official kernel *and* parallel.
-
-Transfer estimate (*inference*, not measured): host→device over PCIe 5.0 x16 is
-~64 GB/s theoretical, ~50 GB/s practical. Moving a whole corpus is then
-`mathlib` 6.18 GB / 50 GB/s ≈ **124 ms** against a 1.4–1.6 ks check — **~0.008%**.
-Even a batch of 10⁵ small exports totals a few GB → sub-second transfer.
-
-Conclusion: **per-corpus transfer bandwidth is not the GPU bottleneck** for
-large exports; the handoff worry that "transfer cost is decisive" only applies
-to the latency of many *tiny* transfers, fixable by coalescing. The real
-question is whether a GPU kernel can check a *single declaration* faster than
-223 µs, and whether the GPU can be fed 10⁵–10⁶ independent declarations to
-amortize launch/sync.
-
-This is why the ladder's rung 4 is *data-parallel checking of many independent
-declarations* (one logical checker per declaration, like nanoda's model but on
-GPU), not an intra-kernel port. Per-declaration work is pointer-chasing DAG
-traversal (low arithmetic intensity) — the GPU's weakness — but the GPU offers
-~10⁴ concurrent lanes versus 24 CPU cores. That trade is exactly what the
-blocked prototype must measure.
-
-## How much checking is actually "small independent checks"?
+## Public snapshot workload distribution
 
 The batching/GPU argument depends on the batchable class being a large share of
 real checking time. Using the public arena result snapshot
@@ -345,25 +290,16 @@ and the large exports themselves are dominated by a few:
 | `init` | 47.89 s | 1.3% |
 | all other 216 tests | 74.12 s | 2.0% |
 
-**This is a partial falsification of the naive batch premise.** In a *static*
-library pass, checking time is concentrated in a handful of giant exports, not
-in many tiny ones. So the batchable class cannot be justified by the arena
-distribution alone; it has to be justified by a workload that generates many
-small independent checks — which is exactly the agent/proof-search workload
-(candidate proofs, repeated similar goals) the research plan targets. The
-serving table above shows that such a stream batches at 517 jobs/s on CPU while
-preserving accept/reject counts, but the *fraction of real user time* in that
-class is an open question that needs an agent-style workload to settle.
+The size buckets are cumulative. These are public snapshot observations,
+from another runner, not timings collected on this workspace. The static pass
+is dominated by large libraries, which can still expose parallel declarations
+inside an export. It does not establish a real agent candidate distribution.
 
-## Repeated-candidate serving throughput
+## Repeated fixed-fixture throughput proxy
 
-The agent/proof-search axis from the research plan: many small independent
-checks (candidate proofs, repeated similar goals), where the runtime serves a
-stream rather than one big file. Using `bench/lean_export_batch.py` on the 46
-small correctness exports duplicated ×20 (=920 jobs, the same fixed job set at
-every width), official kernel, cores 8-23:
+46 other/bugs/corner-case exports repeated 20 times, 920 jobs, affinity 8–23:
 
-| width | makespan | jobs/s | sec/job |
+| width | makespan | jobs/s | amortized ms/job |
 |---:|---:|---:|---:|
 | 1 | 25.62 s | 35.9 | 27.8 ms |
 | 4 | 6.01 s | 153.0 | 6.54 ms |
@@ -371,8 +307,29 @@ every width), official kernel, cores 8-23:
 | 16 | 1.86 s | 495.6 | 2.02 ms |
 | 24 | 1.78 s | 517.8 | 1.93 ms |
 
-Acceptance count is **260/920 at every width** (the 46-file set contains 13
-accepting exports ×20), so batching does not change semantics. Throughput scales
-14.4× to width 24; makespan is dominated by process startup + parse for these
-tiny exports (each ~28 KB), not checking — the opposite regime from the perf
-suite. Raw JSON: `results/2026-10-04-lean-batch-serving.json`.
+The last column is milliseconds of **amortized throughput cost**, makespan/jobs,
+not seconds and not per-request latency. Width 24 still has only 16 allowed CPUs.
+The old JSON retains aggregate acceptance 260/920 at every width but no individual
+decisions; it cannot establish semantic fidelity. These are repeated correctness
+fixtures, not a collected agent/proof-search candidate stream. The new experiment
+records each input and compares its actual decision with official replay.
+
+## Provenance and limitations
+
+Retained data: [artifact directory](../artifacts/lean-2026-10-04/), including
+manual GNU-time/perf logs, scripts, local per-test arena records, the public
+snapshot, selected original command journal, topology and checker metadata.
+Arena revision: `b1d6e91d6de351f9bcf21e6b039f4d51d6b9bb42`.
+Exporter revision: `f297dfe2a8557e8674fe892bb49dffe4bfadc0e9`.
+CSLib and Mathlib revisions and full input hashes are in the artifact manifest.
+The checked-out code/builds/large exports remain in `/tmp/lean-kernel-arena` in
+this owning workspace. Large input bytes are retained there, with reproducible
+build metadata and hashes in the repository.
+
+One machine, limited repeats, mixed affinity and historical overlap limit causal
+and cross-machine claims. The strongest established conclusions are that official
+post-export replay is costly on these libraries, alternatives can be much faster
+on exactly those exports, and tiny fixture process pools scale. The next useful
+experiment is persistent official replay with fresh state, per-input parity and
+service-time measurements. No GPU checker or GPU acceleration result has been
+validated. Mechanism profiling and a real candidate stream remain open.

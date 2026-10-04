@@ -1,0 +1,13 @@
+loaded 58170 declarations, 6132277 exprs (6132277 unique), 296040 names in 0.693117s
+checked 58170 declarations, 0 failed, 0 added unchecked, in 29.0554s; 51915309 reduction steps; 6132719 exprs live
+counters: defeq 11592730 (quick 9468385, proof-irrel 11443, lazy 1823182, binding 164091); infer 23646735 (hit 10717032); whnf 1553250 (hit 883601); whnf_core 0 (hit 0)
+subst engine: unfold 4960085, iota/proj/quot 480609; spine-prefix cache hits 366
+machine: app 20763627, bvar 1572128, beta 13654272, let 18621, delta 3152690, iota 1001697, proj 779332, enter value/delayed/re-eval 1056657/3009342/0, memo hit/insert 334075/871623
+declarations rechecked with fusion: 3
+intern: permanent probes 0 (hits 0), temporary hits 0, new 0; by kind bvar 0 fvar 0 sort 0 const 0 app 0 lam 0 pi 0 let 0 lit 0 proj 0 clos 0
+fixpoint rules: derived 22, rejected 59, applied 5916
+fusion: bodies 28382, unfolds 15992, betas 17371, iotas 3444, projs 337, overflows 0
+closures: 55695921 created, 30777494 exposed, 23665899 envs, 6505074 composed, 146168 expanded
+nat ops: 153731, first-operand limbs 107908, GMP 0.0339354 Gcycles, literal interning 0.0194903 Gcycles
+peak exprs in a declaration: 6309373; thunk pool 1 MB; env pool 0 MB; thunks live/total 1440/9328915; envs live/total 1773/16270928; peak live thunks 14448, envs 23870, frames 258
+lazylean init j=1 wall=29.77 user=29.68 sys=0.26 rss_kb=402176

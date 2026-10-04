@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/rec-missing-ih",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.013436518000000001,
+  "cpu_time": 0.057225175,
+  "max_rss": 56111104,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 4596 parser entries \u2192 4636 DAG entries, 2024 OSNF-shifted, 3524 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_12' (41527) panicked at src/inductive.rs:780:21:\nassertion failed: self.which_valid_ind_app(st, cursor).is_some()\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n  assert_def_eq FAILED at depth 4:\n    u = C(Native64TwoHashOwner) (shift=65535 nlbv=0)\n    v = App(App(App(App(App(App(App(App(C(rec)+65535,V0+0)+0,Lam(C(Bool)+65535,Lam(C(Bool)+65535,Lam(C(Bool)+65535,Lam(C(Bool)+65535,Lam(App(App(App(App(App(C(Native64TwoHashGate)+65535,V0+0)+1,V0+0)+1,V0+0)+1,V0+0)+1,V0+0)+0,Sort(ExportFile@2)+65535)+0)+0)+0)+0)+0)+0,C(Native64TwoHashOwner)+65535)+0,App(C(2525080234)+65535,App(Lam(C(Nat)+65535,V0+1)+0,App(App(App(C(ofNat)+65535,C(Nat)+65535)+65535,NatLit(101831)+65535)+65535,App(C(instOfNatNat)+65535,NatLit(101831)+65535)+65535)+65535)+0)+0)+0,App(C(572478232)+65535,App(Lam(C(Nat)+65535,V0+1)+0,App(App(App(C(ofNat)+65535,C(Nat)+65535)+65535,NatLit(101831)+65535)+65535,App(C(instOfNatNat)+65535,NatLit(101831)+65535)+65535)+65535)+0)+0)+0,App(C(572478232)+65535,App(Lam(C(Nat)+65535,V0+1)+0,App(App(App(C(ofNat)+65535,C(Nat)+65535)+65535,NatLit(101831)+65535)+65535,App(C(instOfNatNat)+65535,NatLit(101831)+65535)+65535)+65535)+0)+0)+0,App(C(572478232)+65535,App(Lam(C(Nat)+65535,V0+1)+0,App(App(App(C(ofNat)+65535,C(Nat)+65535)+65535,NatLit(101831)+65535)+65535,App(C(instOfNatNat)+65535,NatLit(101831)+65535)+65535)+65535)+0)+0)+1,V0+0) (shift=1 nlbv=2)\n    SHIFT DIFF: shift=65535 vs shift=1\n    LEAF DIFF at depth 0: C(Native64TwoHashOwner) vs App(App(App(App(App(...+0,...+0)+0,App(...+65535,...+0)+0)+0,App(C(572478232)+65535,App(...+0,...+65535)+0)+0)+0,App(C(572478232)+65535,App(Lam(...+65535,...+1)+0,App(...+65535,...+65535)+65535)+0)+0)+1,V0+0)\n\nthread 'thread_15' (41530) panicked at src/tc.rs:1376:13:\nassert_def_eq failed\n\nthread 'main-worker' (41514) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41513) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

@@ -1,0 +1,17 @@
+Building checker: nanobruijn (version: 4f9b955)
+  Fetching https://github.com/nomeata/nanobruijn at 4f9b95507be9d5e8b4332594760e75e2d3e64221...
+  Building:
+    cargo build --release
+    cat > config.json <<__END__
+     {
+       "use_stdin": true,
+       "nat_extension": true,
+       "string_extension": true,
+       "unpermitted_axiom_hard_error": false,
+       "unsafe_permit_all_axioms": true,
+       "num_threads": 4
+     }
+    __END__
+  Checker nanobruijn built successfully
+
+Results: 1 succeeded, 0 failed

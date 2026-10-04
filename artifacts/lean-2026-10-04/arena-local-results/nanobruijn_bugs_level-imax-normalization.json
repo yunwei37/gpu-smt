@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/level-imax-normalization",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.004419768,
+  "cpu_time": 0.005963365,
+  "max_rss": 5214208,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 60 parser entries \u2192 57 DAG entries, 7 OSNF-shifted, 55 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n  assert_def_eq FAILED at depth 0:\n    u = Pi(Sort(ExportFile@5)+65535,Sort(ExportFile@5)+65535) (shift=65535 nlbv=0)\n    v = Pi(Sort(ExportFile@5)+65535,Sort(ExportFile@4)+65535) (shift=65535 nlbv=0)\n    DIFF Pi at depth 0\n        LEAF DIFF at depth 1: Sort(ExportFile@5) vs Sort(ExportFile@4)\n\nthread 'thread_1' (41216) panicked at src/tc.rs:1376:13:\nassert_def_eq failed\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41214) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41213) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

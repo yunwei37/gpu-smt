@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/proof-param-swap",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009577875000000001,
+  "cpu_time": 0.08820867,
+  "max_rss": 127180800,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_0' (40420) panicked at src/inductive.rs:921:9:\nassertion failed: self.is_valid_ind_app(st, parent_ind_name, ctor_type_cursor)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40419) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

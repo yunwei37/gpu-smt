@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "other/proj-of-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.009764821,
+  "cpu_time": 0.083158598,
+  "max_rss": 141926400,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_17' (39914) panicked at src/tc.rs:816:17:\napplication type mismatch\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (39896) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

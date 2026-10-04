@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "bugs/nat-rec-rules",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.027830597000000002,
+  "cpu_time": 0.026277319,
+  "max_rss": 72228864,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'proof_of_false':\n(kernel) application type mismatch\n  @Nat.rec (fun n => @Bool.rec (fun x => Prop) False True (Nat.beq n 0)) True.intro fun n ih => True.intro\nargument has type\n  (n : Nat) \u2192 (@fun n => @Bool.rec (fun x => Prop) False True (Nat.beq n 0)) n \u2192 True\nbut function has type\n  ((n : Nat) \u2192\n      (@fun n => @Bool.rec (fun x => Prop) False True (Nat.beq n 0)) n \u2192\n        (@fun n => @Bool.rec (fun x => Prop) False True (Nat.beq n 0)) (Nat.succ n)) \u2192\n    (t : Nat) \u2192 (@fun n => @Bool.rec (fun x => Prop) False True (Nat.beq n 0)) t\n"
+}

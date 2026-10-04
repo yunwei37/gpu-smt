@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "bugs/k-rec-conv",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.025708409,
+  "cpu_time": 0.024798878,
+  "max_rss": 72675328,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'bad':\n(kernel) declaration type mismatch, 'bad' has type\n  @Eq T t1 t1\nbut it is expected to have type\n  @Eq T t1 t2\n"
+}

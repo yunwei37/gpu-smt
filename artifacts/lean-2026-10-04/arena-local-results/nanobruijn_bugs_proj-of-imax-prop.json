@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/proj-of-imax-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.005103214,
+  "cpu_time": 0.011293236,
+  "max_rss": 17350656,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 217 parser entries \u2192 206 DAG entries, 50 OSNF-shifted, 199 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_5' (41400) panicked at src/tc.rs:778:21:\ninfer_proj prop\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41394) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41393) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

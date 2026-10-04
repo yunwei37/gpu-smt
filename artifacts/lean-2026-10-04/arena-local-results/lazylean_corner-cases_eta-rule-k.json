@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/eta-rule-k",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.010392120000000001,
+  "cpu_time": 0.00955998,
+  "max_rss": 21540864,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 3 declarations, 85 exprs (85 unique), 29 names in 9.5646e-05s\ndeclaration order verified in 2.541e-06s\nenvironment built in 1.132e-05s; checking with 4 worker processes\nFAIL etaRuleK (line 121): declaration type mismatch for 'etaRuleK'\n  inferred: ((a : ((a._@._internal._hyg.0 : (((Eq.{1} Bool) Bool.true) Bool.true)) -> Bool)) -> (((Eq.{1} ((a._@._internal._hyg.0 : (((Eq.{1} Bool) Bool.true) Bool.true)) -> Bool)) #0) #0))\n  declared: ((a : ((a._@._internal._hyg.0 : (((Eq.{1} Bool) Bool.true) Bool.true)) -> Bool)) -> (((Eq.{1} ((a._@._internal._hyg.0 : (((Eq.{1} Bool) Bool.true) Bool.true)) -> Bool)) (((((Eq.rec.{1, 1} Bool) Bool.true) (fun (x._@.Test.1420384072._hygCtx._hyg.30 : Bool) => (fun (x._@.Test.1420384072._hygCtx._hyg.32 : (((Eq.{1} Bool) Bool.true) #0)) => Bool))) (#0 ((Eq.refl.{1} Bool) Bool.true))) Bool.true)) #0))\nchecked 2 declarations, 1 failed, in 0.00162656s wall (1.10392e-06 core-hours over 4 workers); 0 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

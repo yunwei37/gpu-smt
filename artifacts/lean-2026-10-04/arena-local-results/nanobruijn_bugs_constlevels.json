@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/constlevels",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.007857168000000001,
+  "cpu_time": 0.012898142999999999,
+  "max_rss": 14065664,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 204 parser entries \u2192 185 DAG entries, 50 OSNF-shifted, 174 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n  assert_def_eq FAILED at depth 0:\n    u = Sort(ExportFile@1) (shift=65535 nlbv=0)\n    v = C(Nat) (shift=65535 nlbv=0)\n    LEAF DIFF at depth 0: Sort(ExportFile@1) vs C(Nat)\n\nthread 'thread_7' (41042) panicked at src/tc.rs:1376:13:\nassert_def_eq failed\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41034) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41033) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

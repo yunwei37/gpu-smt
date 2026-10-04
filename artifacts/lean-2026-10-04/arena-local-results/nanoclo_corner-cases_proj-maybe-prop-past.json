@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/proj-maybe-prop-past",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.008647016,
+  "cpu_time": 0.086500378,
+  "max_rss": 127213568,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_13' (40375) panicked at src/tc.rs:890:17:\ninfer_proj prop\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40361) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

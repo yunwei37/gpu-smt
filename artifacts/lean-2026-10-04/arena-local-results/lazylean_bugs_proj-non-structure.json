@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/proj-non-structure",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.015231024000000001,
+  "cpu_time": 0.010767217,
+  "max_rss": 21725184,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 4 declarations, 48 exprs (48 unique), 21 names in 0.000121066s\ndeclaration order verified in 4.96701e-06s\nenvironment built in 1.3381e-05s; checking with 4 worker processes\nFAIL bad (line 75): invalid projection Bad.0\nchecked 3 declarations, 1 failed, in 0.00344333s wall (1.88346e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

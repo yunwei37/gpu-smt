@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/ctor-num-fields",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.005764001,
+  "cpu_time": 0.016326779,
+  "max_rss": 22867968,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 465 parser entries \u2192 435 DAG entries, 133 OSNF-shifted, 413 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_9' (41074) panicked at src/inductive.rs:1308:25:\nassertion failed: old.aux_data_ck(new)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41064) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41063) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

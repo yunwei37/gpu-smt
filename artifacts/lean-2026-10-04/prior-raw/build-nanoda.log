@@ -1,0 +1,19 @@
+Building checker: nanoda (version: 4c544ed)
+  Fetching https://github.com/ammkrn/nanoda_lib at 4c544ed4099c8227f07d5de77ad1e69fb0740a27...
+  Building:
+    grep -q 'STACK_SIZE: usize = 16_777_216;' src/lib.rs || { echo "STACK_SIZE patch does not apply any more"; exit 1; }
+    sed -i 's/STACK_SIZE: usize = 16_777_216;/STACK_SIZE: usize = 268_435_456;/' src/lib.rs
+    cargo build --release
+    cat > config.json <<__END__
+     {
+       "use_stdin": true,
+       "nat_extension": true,
+       "string_extension": true,
+       "unpermitted_axiom_hard_error": false,
+       "unsafe_permit_all_axioms": true,
+       "num_threads": 4
+     }
+    __END__
+  Checker nanoda built successfully
+
+Results: 1 succeeded, 0 failed

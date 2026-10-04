@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/ctor-num-fields",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.011750666,
+  "cpu_time": 0.012140637000000001,
+  "max_rss": 21790720,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 25 declarations, 465 exprs (465 unique), 124 names in 0.000186236s\ndeclaration order verified in 7.422e-06s\nenvironment built in 1.6517e-05s; checking with 4 worker processes\nFAIL _private.Test.0.S (line 235): constructor field/parameter/index counts do not match: _private.Test.0.S.mk\nchecked 9 declarations, 1 failed, in 0.00243325s wall (1.95026e-06 core-hours over 4 workers); 2 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

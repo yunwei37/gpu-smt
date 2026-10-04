@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/nat-rec-rules",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.005453859,
+  "cpu_time": 0.0031156590000000002,
+  "max_rss": 2707456,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_0' (36272) panicked at src/inductive.rs:1330:21:\nassertion failed: old_r.aux_data_ck(new_r)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_3' (36275) panicked at src/tc.rs:955:71:\nassertion failed: self.def_eq(u, v)\n\nthread 'main' (36271) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

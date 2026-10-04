@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/nested-unused-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.009897145000000001,
+  "cpu_time": 0.089319212,
+  "max_rss": 152289280,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_15' (38300) panicked at src/tc.rs:841:9:\ninvalid projection\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_12' (38297) panicked at src/tc.rs:841:9:\ninvalid projection\n\nthread 'thread_5' (38290) panicked at src/tc.rs:841:9:\ninvalid projection\n\nthread 'thread_1' (38286) panicked at src/nbe_eval.rs:1196:26:\nnb_spine_type: projected a non-structure\n\nthread 'thread_8' (38293) panicked at src/nbe_eval.rs:1196:26:\nnb_spine_type: projected a non-structure\n\nthread 'main' (38284) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/rec-k-lie",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.028164050000000003,
+  "cpu_time": 0.010301003,
+  "max_rss": 21495808,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 5 declarations, 49 exprs (49 unique), 30 names in 0.000186637s\ndeclaration order verified in 4.142e-06s\nenvironment built in 1.8589e-05s; checking with 4 worker processes\nFAIL MyBool (line 35): recursor 'MyBool.rec': parameter/index/motive/minor/K data differs from the derived recursor\nchecked 0 declarations, 1 failed, in 0.00261325s wall (2.14629e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

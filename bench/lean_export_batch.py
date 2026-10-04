@@ -3,9 +3,11 @@
 
 The serving question for the Lean thread is: *can the runtime batch many
 independent Lean checks while preserving accept/reject semantics?* This harness
-runs a fixed job set of Lean export files (one declaration environment each)
+runs a fixed job set of Lean export files (one self-contained environment each)
 through a checker binary with a process pool at several widths, and reports
-makespan plus the accept/reject count.
+makespan, per-input decisions and dispatch-to-completion times. This is a fixed
+fixture throughput proxy; repeating fixtures does not create a real candidate
+stream and makespan/jobs is not request latency.
 
 It deliberately treats the checker as a black box, matching the
 ``backend-unmodified`` constraint: the same binary an application would invoke
@@ -103,7 +105,19 @@ def run_width(
         if accept_by_exit:
             accepted += int(r["returncode"] == 0)
         else:
-            accepted += int((accept_marker or "Accepted") in r["stdout"])
+            accepted += int(r["returncode"] == 0 and r["stdout"].startswith(accept_marker or "Accepted"))
+    for job_id, r in enumerate(results):
+        r["job_id"] = job_id
+        if r["timed_out"]:
+            r["decision"] = "timeout"
+        elif r["returncode"] == 0 and (accept_by_exit or r["stdout"].startswith(accept_marker or "Accepted")):
+            r["decision"] = "accepted"
+        elif r["returncode"] == 1:
+            r["decision"] = "rejected"
+        elif r["returncode"] == 2:
+            r["decision"] = "declined"
+        else:
+            r["decision"] = "error"
 
     return {
         "width": width,
@@ -112,6 +126,8 @@ def run_width(
         "throughput_jobs_per_s": len(files) / makespan if makespan > 0 else 0.0,
         "accepted": accepted,
         "seconds_per_job": makespan / len(files) if files else 0.0,
+        "amortized_ms_per_job": 1000 * makespan / len(files) if files else 0.0,
+        "records": results,
     }
 
 
@@ -138,7 +154,7 @@ def main() -> int:
         "--duplicate",
         type=int,
         default=1,
-        help="repeat the job set N times to model a stream of repeated candidates",
+        help="repeat a fixed fixture corpus N times as a throughput proxy",
     )
     ap.add_argument("--json", required=True)
     args = ap.parse_args()
@@ -147,6 +163,8 @@ def main() -> int:
     if not files:
         ap.error("no input files matched")
     widths = [int(w) for w in args.widths.split(",") if w.strip()]
+    if not widths or min(widths) < 1 or args.repeat < 1 or args.duplicate < 1:
+        ap.error("widths, repeat and duplicate must be positive")
 
     runs = []
     for width in widths:

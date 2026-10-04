@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/alg-conv-trans-quot",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.010613183,
+  "cpu_time": 0.009945767,
+  "max_rss": 22360064,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 6 declarations, 127 exprs (127 unique), 31 names in 9.6312e-05s\ndeclaration order verified in 3.112e-06s\nenvironment built in 9.769e-06s; checking with 4 worker processes\nFAIL trans (line 169): declaration type mismatch for 'trans'\n  inferred: ((P : Sort(0)) -> ((r : ((a._@._internal._hyg.0 : #0) -> ((a._@._internal._hyg.0 : #1) -> Sort(0)))) -> ((\u03b1 : Sort(1)) -> ((f : ((a : #2) -> #1)) -> ((h : ((x : #3) -> ((y : #4) -> ((a._@._internal._hyg.0 : ((#4 #1) #0)) -> (((Eq.{1} #4) (#3 #2)) (#3 #1)))))) -> ((q : ((Quot.{0} #4) #3)) -> ((z : #5) -> (((Eq.{1} #4) ((((((Quot.lift.{0, 1} #6) #5) #4) #3) #2) #1)) ((((((Quot.lift.{0, 1} #6) #5) #4) #3) #2) #1)))))))))\n  declared: ((P : Sort(0)) -> ((r : ((a._@._internal._hyg.0 : #0) -> ((a._@._internal._hyg.0 : #1) -> Sort(0)))) -> ((\u03b1 : Sort(1)) -> ((f : ((a : #2) -> #1)) -> ((h : ((x : #3) -> ((y : #4) -> ((a._@._internal._hyg.0 : ((#4 #1) #0)) -> (((Eq.{1} #4) (#3 #2)) (#3 #1)))))) -> ((q : ((Quot.{0} #4) #3)) -> ((z : #5) -> (((Eq.{1} #4) ((((((Quot.lift.{0, 1} #6) #5) #4) #3) #2) #1)) (#3 #0)))))))))\nchecked 5 declarations, 1 failed, in 0.00229421s wall (1.40414e-06 core-hours over 4 workers); 0 reduction steps; peak 21 MB in one worker\n",
+  "timeout": 3600
+}

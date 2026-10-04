@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/orphan-rec",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.008087518,
+  "cpu_time": 0.068971721,
+  "max_rss": 116580352,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_13' (38319) panicked at src/tc.rs:131:29:\nrecursor rogue has an empty `all_inductives` list; a recursor must be derived from an inductive declaration\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (38305) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

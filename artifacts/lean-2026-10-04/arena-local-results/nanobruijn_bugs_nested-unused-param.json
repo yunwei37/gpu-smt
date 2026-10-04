@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/nested-unused-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0075269180000000005,
+  "cpu_time": 0.030394291,
+  "max_rss": 38457344,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 826 parser entries \u2192 765 DAG entries, 232 OSNF-shifted, 733 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_11' (41316) panicked at src/tc.rs:778:21:\ninfer_proj prop\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_7' (41312) panicked at src/tc.rs:778:21:\ninfer_proj prop\n\nthread 'thread_5' (41310) panicked at src/tc.rs:778:21:\ninfer_proj prop\n  assert_def_eq FAILED at depth 0:\n    u = App(App(C(L)+65535,App(C(E)+65535,App(C(mk)+65535,App(C(mk)+65535,App(Lam(C(Nat)+65535,C(false)+65535)+65535,NatLit(78670)+65535)+65535)+65535)+65535)+65535)+65535,Proj(C.0,Proj(C.0,App(C(mk)+65535,App(C(mk)+65535,App(Lam(C(Nat)+65535,C(false)+65535)+65535,NatLit(78670)+65535)+65535)+65535)+65535)+65535)+65535) (shift=65535 nlbv=0)\n    v = App(App(C(L)+65535,App(C(E)+65535,App(C(mk)+65535,App(C(mk)+65535,App(Lam(C(Nat)+65535,C(true)+65535)+65535,NatLit(24083)+65535)+65535)+65535)+65535)+65535)+65535,Proj(C.0,Proj(C.0,App(C(mk)+65535,App(C(mk)+65535,App(Lam(C(Nat)+65535,C(true)+65535)+65535,NatLit(24083)+65535)+65535)+65535)+65535)+65535)+65535) (shift=65535 nlbv=0)\n    DIFF App at depth 0\n        DIFF App at depth 1\n            DIFF App at depth 2\n                DIFF App at depth 3\n                    DIFF App at depth 4\n                        DIFF App at depth 5\n                            DIFF Lam at depth 6\n                                LEAF DIFF at depth 7: C(false) vs C(true)\n                            LEAF DIFF at depth 6: NatLit(78670) vs NatLit(24083)\n        LEAF DIFF at depth 1: Proj(C.0,Proj(C.0,App(C(mk)+65535,App(C(mk)+65535,App(...+65535,...+65535)+65535)+65535)+65535)+65535) vs Proj(C.0,Proj(C.0,App(C(mk)+65535,App(C(mk)+65535,App(...+65535,...+65535)+65535)+65535)+65535)+65535)\n\nthread 'thread_16' (41321) panicked at src/tc.rs:1376:13:\nassert_def_eq failed\n\nthread 'main-worker' (41304) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41303) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

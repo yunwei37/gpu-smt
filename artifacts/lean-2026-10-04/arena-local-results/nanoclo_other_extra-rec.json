@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "other/extra-rec",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012044422,
+  "cpu_time": 0.07180237700000001,
+  "max_rss": 127561728,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_11' (39705) panicked at src/inductive.rs:173:9:\nfor inductive type False,\nexpected recursors [False.rec],\nwhile the export file contained recursors [False.rec, rogue]\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (39693) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

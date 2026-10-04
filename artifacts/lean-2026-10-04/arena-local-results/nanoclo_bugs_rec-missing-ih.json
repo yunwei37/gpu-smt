@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/rec-missing-ih",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012450228,
+  "cpu_time": 0.10769824800000001,
+  "max_rss": 169082880,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_5' (38437) panicked at src/tc.rs:816:17:\napplication type mismatch\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_3' (38435) panicked at src/inductive.rs:780:21:\nassertion failed: self.which_valid_ind_app(st, ctor_type_cursor).is_some()\n\nthread 'main' (38431) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

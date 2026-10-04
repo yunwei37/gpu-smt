@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "bugs/proj-of-imax-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.007268889000000001,
+  "cpu_time": 0.058304436,
+  "max_rss": 127111168,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_15' (38363) panicked at src/tc.rs:906:13:\ninfer_proj prop\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (38347) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

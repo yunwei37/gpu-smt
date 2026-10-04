@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/eta-ctor",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.027193518000000003,
+  "cpu_time": 0.02572145,
+  "max_rss": 70868992,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'etaCtor':\n(kernel) declaration type mismatch, 'etaCtor' has type\n  (x : True \u2192 T) \u2192 @Eq (True \u2192 T) x x\nbut it is expected to have type\n  (x : True \u2192 T) \u2192 @Eq (True \u2192 T) (T.mk (T.val (x True.intro))) x\n"
+}

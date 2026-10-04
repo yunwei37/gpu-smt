@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "bugs/level-imax-leq",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.027085454000000002,
+  "cpu_time": 0.025699092,
+  "max_rss": 71000064,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'down':\n(kernel) declaration type mismatch, 'down' has type\n  Type (imax u v) \u2192 Type (imax u v)\nbut it is expected to have type\n  Type (imax u v) \u2192 Sort (imax u v)\n"
+}

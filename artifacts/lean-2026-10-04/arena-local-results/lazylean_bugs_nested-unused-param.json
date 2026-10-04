@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/nested-unused-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.018414581000000003,
+  "cpu_time": 0.019626458,
+  "max_rss": 23597056,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 38 declarations, 826 exprs (826 unique), 208 names in 0.000313206s\ndeclaration order verified in 6.535e-06s\nenvironment built in 2.4941e-05s; checking with 4 worker processes\nFAIL e (line 1048): invalid projection C.0\nFAIL bad (line 1074): invalid projection C.0\nFAIL E (line 1036): invalid projection C.0\nchecked 34 declarations, 3 failed, in 0.00903264s wall (6.52365e-06 core-hours over 4 workers); 437 reduction steps; peak 22 MB in one worker\n",
+  "timeout": 3600
+}

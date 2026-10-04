@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/large-elim-prop-bool",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.011592900000000001,
+  "cpu_time": 0.012681264000000001,
+  "max_rss": 22208512,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 17 declarations, 318 exprs (318 unique), 95 names in 0.000187209s\ndeclaration order verified in 4.067e-06s\nenvironment built in 1.8356e-05s; checking with 4 worker processes\nFAIL NewBool (line 307): recursor 'NewBool.rec' should only eliminate into Prop\nchecked 13 declarations, 1 failed, in 0.00314713s wall (2.33703e-06 core-hours over 4 workers); 35 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

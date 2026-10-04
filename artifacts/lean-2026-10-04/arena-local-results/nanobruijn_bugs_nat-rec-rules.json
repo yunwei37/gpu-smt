@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/nat-rec-rules",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0033662510000000002,
+  "cpu_time": 0.00560695,
+  "max_rss": 7446528,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 92 parser entries \u2192 91 DAG entries, 12 OSNF-shifted, 87 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_0' (41275) panicked at src/inductive.rs:1346:21:\nassertion failed: old_r.aux_data_ck(new_r)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n  assert_def_eq FAILED at depth 0:\n    u = Lam(Pi(C(Nat)+65535,Sort(ExportFile@1)+65535)+65535,Lam(App(V0+0,C(zero)+65535)+0,Lam(Pi(C(Nat)+65535,Pi(App(V0+1,V0+0)+0,App(V0+1,App(C(succ)+65535,V0+0)+0)+1)+0)+1,Lam(C(Nat)+65535,V0+1)+1)+0)+0) (shift=65535 nlbv=0)\n    v = Lam(Pi(C(Nat)+65535,Sort(ExportFile@1)+65535)+65535,Lam(App(V0+0,C(zero)+65535)+0,Lam(Pi(C(Nat)+65535,Pi(App(V0+1,V0+0)+0,App(V0+1,App(C(succ)+65535,V0+0)+0)+1)+0)+1,Lam(C(Nat)+65535,App(App(V0+1,V0+0)+0,App(App(App(App(C(rec)+65535,V0+0)+1,V0+0)+1,V0+0)+1,V0+0)+0)+0)+0)+0)+0) (shift=65535 nlbv=0)\n    DIFF Lam at depth 0\n        DIFF Lam at depth 1\n            DIFF Lam at depth 2\n                DIFF Pi at depth 3\n                    DIFF Pi at depth 4\n                SHIFT DIFF: shift=1 vs shift=0\n                DIFF Lam at depth 3\n                    SHIFT DIFF: shift=2 vs shift=0\n                    LEAF DIFF at depth 4: V0 vs App(App(V0+1,V0+0)+0,App(App(App(App(...+65535,...+0)+1,V0+0)+1,V0+0)+1,V0+0)+0)\n\nthread 'thread_1' (41276) panicked at src/tc.rs:1376:13:\nassert_def_eq failed\n\nthread 'main-worker' (41274) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41273) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

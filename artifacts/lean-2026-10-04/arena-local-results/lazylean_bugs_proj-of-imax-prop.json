@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/proj-of-imax-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.01284857,
+  "cpu_time": 0.01224105,
+  "max_rss": 21647360,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 19 declarations, 217 exprs (217 unique), 80 names in 0.000200898s\ndeclaration order verified in 4.164e-06s\nenvironment built in 1.7907e-05s; checking with 4 worker processes\nFAIL imaxProjBool (line 245): invalid projection ImaxProp.0\nchecked 17 declarations, 1 failed, in 0.00340542s wall (2.14456e-06 core-hours over 4 workers); 7 reduction steps; peak 20 MB in one worker\n",
+  "timeout": 3600
+}

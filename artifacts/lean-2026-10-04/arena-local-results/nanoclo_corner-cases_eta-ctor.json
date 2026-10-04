@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/eta-ctor",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.007926016000000001,
+  "cpu_time": 0.066202482,
+  "max_rss": 135614464,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_10' (40169) panicked at src/tc.rs:374:71:\nassertion failed: self.def_eq(u, v)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40158) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

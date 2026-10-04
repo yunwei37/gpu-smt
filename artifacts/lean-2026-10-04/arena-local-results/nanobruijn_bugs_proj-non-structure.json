@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/proj-non-structure",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.004360317,
+  "cpu_time": 0.004917351,
+  "max_rss": 3096576,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 48 parser entries \u2192 46 DAG entries, 6 OSNF-shifted, 43 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_0' (41365) panicked at src/tc.rs:744:59:\ncalled `Option::unwrap()` on a `None` value\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41364) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41363) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

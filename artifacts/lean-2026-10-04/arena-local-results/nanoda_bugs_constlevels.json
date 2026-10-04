@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/constlevels",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.004427417,
+  "cpu_time": 0.002822896,
+  "max_rss": 2850816,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_2' (36136) panicked at src/tc.rs:955:71:\nassertion failed: self.def_eq(u, v)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (36132) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

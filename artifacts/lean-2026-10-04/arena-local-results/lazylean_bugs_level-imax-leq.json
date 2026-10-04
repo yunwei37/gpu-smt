@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/level-imax-leq",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.01338629,
+  "cpu_time": 0.010442387000000001,
+  "max_rss": 21659648,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 5 declarations, 59 exprs (59 unique), 22 names in 0.0005627s\ndeclaration order verified in 3.755e-06s\nenvironment built in 1.2016e-05s; checking with 4 worker processes\nFAIL False (line 69): recursor 'False.rec' elimination universe is named 'u_1', expected 'u'\nchecked 0 declarations, 1 failed, in 0.0022227s wall (1.55151e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

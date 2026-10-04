@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/subject-reduction-reduct",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.013789465,
+  "cpu_time": 0.142909603,
+  "max_rss": 186425344,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_15' (40493) panicked at src/tc.rs:816:17:\napplication type mismatch\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40477) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

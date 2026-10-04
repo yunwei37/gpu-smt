@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/proj-of-stuck-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.011304271000000001,
+  "cpu_time": 0.011048663,
+  "max_rss": 3182592,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_1' (36358) panicked at src/tc.rs:304:18:\ninfer_sort_of could not infer a sort\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'thread_3' (36360) panicked at src/tc.rs:955:71:\nassertion failed: self.def_eq(u, v)\n\nthread 'thread_0' (36357) panicked at src/tc.rs:304:18:\ninfer_sort_of could not infer a sort\n\nthread 'thread_2' (36359) panicked at src/tc.rs:285:18:\nensur_sort could not produce a sort\n\nthread 'main' (36356) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

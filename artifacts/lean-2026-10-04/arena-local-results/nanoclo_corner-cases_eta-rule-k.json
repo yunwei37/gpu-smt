@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/eta-rule-k",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.009491582,
+  "cpu_time": 0.09518475200000001,
+  "max_rss": 118628352,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_11' (40199) panicked at src/tc.rs:374:71:\nassertion failed: self.def_eq(u, v)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40187) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

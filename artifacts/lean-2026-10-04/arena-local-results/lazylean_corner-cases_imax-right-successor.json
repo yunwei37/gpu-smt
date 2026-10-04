@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/imax-right-successor",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.00929574,
+  "cpu_time": 0.008330164,
+  "max_rss": 21696512,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 2 declarations, 4 exprs (4 unique), 4 names in 7.6167e-05s\ndeclaration order verified in 1.837e-06s\nenvironment built in 1.763e-05s; checking with 4 worker processes\nFAIL imaxRightOne (line 11): declaration type mismatch for 'imaxRightOne'\n  inferred: Sort((imax u 1)+1)\n  declared: Sort((max u 1)+1)\nFAIL imaxRightSucc (line 21): declaration type mismatch for 'imaxRightSucc'\n  inferred: Sort((imax u v+1)+1)\n  declared: Sort((max u v+1)+1)\nchecked 0 declarations, 2 failed, in 0.00133527s wall (9.13416e-07 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

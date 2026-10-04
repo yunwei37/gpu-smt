@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/proj-of-subst-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012757068000000002,
+  "cpu_time": 0.054611013,
+  "max_rss": 67874816,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 4004 parser entries \u2192 3837 DAG entries, 1749 OSNF-shifted, 3082 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_15' (41470) panicked at src/tc.rs:1967:18:\nexpected a sort\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41454) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41453) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

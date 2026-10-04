@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "perf/refute-cheap-first",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.008759834000000001,
+  "cpu_time": 0.078250585,
+  "max_rss": 131256320,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_12' (39146) panicked at src/tc.rs:374:71:\nassertion failed: self.def_eq(u, v)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (39133) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 50
+}

@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/ctor-num-fields",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.004919551,
+  "cpu_time": 0.003648145,
+  "max_rss": 2859008,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_2' (36152) panicked at src/inductive.rs:1292:25:\nassertion failed: old.aux_data_ck(new)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (36149) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

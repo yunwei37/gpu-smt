@@ -1,0 +1,14 @@
+{
+  "checker": "nanoclo",
+  "test": "corner-cases/positivity-whnf",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.010973185,
+  "cpu_time": 0.098497035,
+  "max_rss": 152395776,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_16' (40320) panicked at src/inductive.rs:772:25:\nnon-positive occurrence\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (40303) panicked at src/tc.rs:245:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n",
+  "timeout": 3600
+}

@@ -1,0 +1,13 @@
+{
+  "checker": "nanoda",
+  "test": "bugs/proj-of-subst-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.0066604690000000005,
+  "cpu_time": 0.008788314,
+  "max_rss": 3571712,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "\nthread 'thread_1' (36377) panicked at src/tc.rs:1328:18:\nexpected a sort\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main' (36375) panicked at src/tc.rs:173:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n"
+}

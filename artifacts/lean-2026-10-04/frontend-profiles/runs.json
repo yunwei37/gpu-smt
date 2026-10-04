@@ -1,0 +1,78 @@
+[
+ {
+  "case": "magma-list-deep-n36",
+  "skip_kernel_tc": true,
+  "command": [
+   "taskset",
+   "-c",
+   "0-7",
+   "/usr/bin/time",
+   "-f",
+   "wall=%e user=%U sys=%S rss_kib=%M",
+   "/root/.elan/bin/lean",
+   "+leanprover/lean4:v4.34.1",
+   "/workspaces/repository/artifacts/lean-2026-10-04/frontend-profiles/magma_list_deep_n36_skip.lean"
+  ],
+  "source_sha256": "0fbbce7d11404967738d4e6317269a7f145414de900c727c2f0e21466a2b6d25",
+  "original_sha256": "8a1c5b6656318d5ef4b36df4cdd46d55d3ad2c5ae48760bd4039012642438288",
+  "returncode": 0,
+  "wall_s": 21.10423551099666
+ },
+ {
+  "case": "magma-list-deep-n36",
+  "skip_kernel_tc": false,
+  "command": [
+   "taskset",
+   "-c",
+   "0-7",
+   "/usr/bin/time",
+   "-f",
+   "wall=%e user=%U sys=%S rss_kib=%M",
+   "/root/.elan/bin/lean",
+   "+leanprover/lean4:v4.34.1",
+   "/workspaces/repository/artifacts/lean-2026-10-04/frontend-profiles/magma_list_deep_n36_check.lean"
+  ],
+  "source_sha256": "e6063471a22ad9b29b7786aa152e50154be4d24d2d23643a6725cd428fe03582",
+  "original_sha256": "8a1c5b6656318d5ef4b36df4cdd46d55d3ad2c5ae48760bd4039012642438288",
+  "returncode": 0,
+  "wall_s": 81.02339919200313
+ },
+ {
+  "case": "grind-ring-5",
+  "skip_kernel_tc": true,
+  "command": [
+   "taskset",
+   "-c",
+   "0-7",
+   "/usr/bin/time",
+   "-f",
+   "wall=%e user=%U sys=%S rss_kib=%M",
+   "/root/.elan/bin/lean",
+   "+leanprover/lean4:v4.34.1",
+   "/workspaces/repository/artifacts/lean-2026-10-04/frontend-profiles/grind_ring_5_skip.lean"
+  ],
+  "source_sha256": "a5789ff0e80e01f332ebe9cc2a8f1f1da9535f61ef11f8b1c10075276332f296",
+  "original_sha256": "2c63043ff996314f5190f5c7fbbe5a25296f01f9afeb6713bd285201d36e2592",
+  "returncode": 0,
+  "wall_s": 0.3031442600040464
+ },
+ {
+  "case": "grind-ring-5",
+  "skip_kernel_tc": false,
+  "command": [
+   "taskset",
+   "-c",
+   "0-7",
+   "/usr/bin/time",
+   "-f",
+   "wall=%e user=%U sys=%S rss_kib=%M",
+   "/root/.elan/bin/lean",
+   "+leanprover/lean4:v4.34.1",
+   "/workspaces/repository/artifacts/lean-2026-10-04/frontend-profiles/grind_ring_5_check.lean"
+  ],
+  "source_sha256": "187e58336af7c700cc569074fff8f3b4f77873ad7df62c3b7183543f36a8391d",
+  "original_sha256": "2c63043ff996314f5190f5c7fbbe5a25296f01f9afeb6713bd285201d36e2592",
+  "returncode": 0,
+  "wall_s": 0.8398334950034041
+ }
+]

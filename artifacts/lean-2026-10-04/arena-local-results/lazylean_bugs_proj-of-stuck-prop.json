@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/proj-of-stuck-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.023634985,
+  "cpu_time": 0.033693705000000004,
+  "max_rss": 25079808,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 120 declarations, 4367 exprs (4367 unique), 755 names in 0.000941381s\ndeclaration order verified in 3.0108e-05s\nenvironment built in 3.94e-05s; checking with 4 worker processes\nFAIL Native64ResultSortOwner (line 4727): type expected: ((((((((Native64ResultSortGate.rec.{2} $8) (fun (index : Bool) => (fun (index : Bool) => (fun (index : Bool) => (fun (index : Bool) => (fun (proof : (((((Native64ResultSortGate $8) #3) #2) #1) #0)) => Sort(1))))))) Sort(0)) (Native64SortGateB.0.3766726852 ((fun (salt : Nat) => $8) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $8) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $8) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $8) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) $9)\nFAIL Native64ResultSort.asProp (line 4735): application type mismatch in ((id.{1} Sort(0)) ((Native64ResultSortOwner $0) $2))\n  argument type: ((((((((Native64ResultSortGate.rec.{2} $0) (fun (index : Bool) => (fun (index : Bool) => (fun (index : Bool) => (fun (index : Bool) => (fun (proof : (((((Native64ResultSortGate $0) #3) #2) #1) #0)) => Sort(1))))))) Sort(0)) (Native64SortGateB.0.3766726852 ((fun (salt : Nat) => $0) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $0) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $0) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) (Native64SortGateA.1.2023879994 ((fun (salt : Nat) => $0) (((OfNat.ofNat.{0} Nat) 125330) (instOfNatNat 125330))))) $2)\n  expected: Sort(0)\nchecked 105 declarations, 2 failed, in 0.0111097s wall (9.74219e-06 core-hours over 4 workers); 1587 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}

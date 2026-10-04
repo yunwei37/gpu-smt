@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "corner-cases/alg-conv-trans-acc",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.013072909,
+  "cpu_time": 0.018705228,
+  "max_rss": 24375296,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 40 declarations, 920 exprs (920 unique), 200 names in 0.000264243s\ndeclaration order verified in 7.288e-06s\nenvironment built in 2.2758e-05s; checking with 4 worker processes\nFAIL trans (line 1176): declaration type mismatch for 'trans'\n  inferred: ((a : (((Acc.{1} Nat) (fun (x1._@.Test.1043551373._hygCtx._hyg.6 : Nat) => (fun (x2._@.Test.1043551373._hygCtx._hyg.6 : Nat) => ((((LT.lt.{0} Nat) instLTNat) #1) #0)))) (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1)))) -> (((Eq.{1} Bool) ((f (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1))) #0)) ((f (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1))) #0)))\n  declared: ((a : (((Acc.{1} Nat) (fun (x1._@.Test.1043551373._hygCtx._hyg.6 : Nat) => (fun (x2._@.Test.1043551373._hygCtx._hyg.6 : Nat) => ((((LT.lt.{0} Nat) instLTNat) #1) #0)))) (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1)))) -> (((Eq.{1} Bool) ((f (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1))) #0)) ((f (((OfNat.ofNat.{0} Nat) 0) (instOfNatNat 0))) ((((((Acc.inv.{1} Nat) (fun (x1._@.Test.1043551373._hygCtx._hyg.6 : Nat) => (fun (x2._@.Test.1043551373._hygCtx._hyg.6 : Nat) => ((((LT.lt.{0} Nat) instLTNat) #1) #0)))) (((OfNat.ofNat.{0} Nat) 1) (instOfNatNat 1))) (((OfNat.ofNat.{0} Nat) 0) (instOfNatNat 0))) #0) (Nat.lt_succ_self (((OfNat.ofNat.{0} Nat) 0) (instOfNatNat 0)))))))\nchecked 39 declarations, 1 failed, in 0.00407607s wall (3.83907e-06 core-hours over 4 workers); 488 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}

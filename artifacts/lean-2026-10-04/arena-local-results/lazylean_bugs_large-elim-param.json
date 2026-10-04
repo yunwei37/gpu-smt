@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/large-elim-param",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.012558462000000001,
+  "cpu_time": 0.010751489,
+  "max_rss": 21524480,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 5 declarations, 58 exprs (58 unique), 21 names in 0.000143268s\ndeclaration order verified in 4.681e-06s\nenvironment built in 1.2237e-05s; checking with 4 worker processes\nFAIL MyBool (line 86): recursor 'MyBool.rec' should only eliminate into Prop\nchecked 2 declarations, 1 failed, in 0.00197284s wall (1.40236e-06 core-hours over 4 workers); 0 reduction steps; peak 19 MB in one worker\n",
+  "timeout": 3600
+}

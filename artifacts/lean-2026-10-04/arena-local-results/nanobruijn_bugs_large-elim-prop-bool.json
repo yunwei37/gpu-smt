@@ -1,0 +1,14 @@
+{
+  "checker": "nanobruijn",
+  "test": "bugs/large-elim-prop-bool",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.005646862000000001,
+  "cpu_time": 0.018736827,
+  "max_rss": 27115520,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "ExprPtr parse: 318 parser entries \u2192 297 DAG entries, 95 OSNF-shifted, 280 live after compaction, 0 cores with bvar indices >= 64 (0 tail words)\n\nthread 'thread_7' (41162) panicked at src/expr.rs:905:9:\nassertion `left == right` failed\n  left: 1\n right: 0\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n\nthread 'main-worker' (41154) panicked at src/tc.rs:324:26:\nA thread in `check_all_declars` panicked while being joined: Any { .. }\n\nthread 'main' (41153) panicked at src/main.rs:11:20:\ncalled `Result::unwrap()` on an `Err` value: Any { .. }\n",
+  "timeout": 3600
+}

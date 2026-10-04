@@ -1,0 +1,13 @@
+{
+  "checker": "official",
+  "test": "corner-cases/alg-conv-trans-acc",
+  "status": "rejected",
+  "correctness": "either",
+  "exit_code": 1,
+  "wall_time": 0.029841379,
+  "cpu_time": 0.027975173000000002,
+  "max_rss": 72892416,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "uncaught exception: while replaying declaration 'trans':\n(kernel) declaration type mismatch, 'trans' has type\n  (a : @Acc Nat (fun x1 x2 => @LT.lt Nat instLTNat x1 x2) 1) \u2192 @Eq Bool (f 1 a) (f 1 a)\nbut it is expected to have type\n  (a : @Acc Nat (fun x1 x2 => @LT.lt Nat instLTNat x1 x2) 1) \u2192\n    @Eq Bool (f 1 a) (f 0 (@Acc.inv Nat (fun x1 x2 => @LT.lt Nat instLTNat x1 x2) 1 0 a (Nat.lt_succ_self 0)))\n"
+}

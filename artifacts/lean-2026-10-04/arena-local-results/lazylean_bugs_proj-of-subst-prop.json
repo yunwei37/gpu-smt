@@ -1,0 +1,14 @@
+{
+  "checker": "lazylean",
+  "test": "bugs/proj-of-subst-prop",
+  "status": "rejected",
+  "correctness": "correct",
+  "exit_code": 1,
+  "wall_time": 0.047370163,
+  "cpu_time": 0.03470397,
+  "max_rss": 24768512,
+  "instructions": 0,
+  "stdout": "",
+  "stderr": "loaded 113 declarations, 4004 exprs (4004 unique), 712 names in 0.000806398s\ndeclaration order verified in 4.3101e-05s\nenvironment built in 5.3607e-05s; checking with 4 worker processes\nFAIL PR14806Subst.observe (line 4827): type expected: (PR14806Subst.Owner PR14806Subst.witness)\nchecked 109 declarations, 1 failed, in 0.0211723s wall (1.64249e-05 core-hours over 4 workers); 2157 reduction steps; peak 23 MB in one worker\n",
+  "timeout": 3600
+}
