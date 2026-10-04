@@ -60,3 +60,8 @@ See:
 - [Research plan](docs/research-plan.md)
 - [Prior art and differentiation](docs/prior-art.md)
 - [Benchmark methodology](bench/README.md)
+
+Lean acceleration thread:
+
+- [Lean acceleration plan](docs/lean-acceleration-plan.md)
+- [Lean kernel stage split and checker comparison (2026-10-04)](results/2026-10-04-lean-kernel-stage-split.md)

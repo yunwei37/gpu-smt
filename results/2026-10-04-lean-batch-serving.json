@@ -1,0 +1,59 @@
+{
+ "checker": "_build/checkers/official/src/.lake/build/bin/kernel",
+ "inputs": [
+  "_build/tests/other/*.ndjson",
+  "_build/tests/bugs/*.ndjson",
+  "_build/tests/corner-cases/*.ndjson"
+ ],
+ "cores": "8-23",
+ "jobs": 920,
+ "accept_marker": "Accepted",
+ "accept_by_exit": false,
+ "runs": [
+  {
+   "width": 1,
+   "jobs": 920,
+   "makespan_s": 25.620431007999287,
+   "throughput_jobs_per_s": 35.90884164722892,
+   "accepted": 260,
+   "seconds_per_job": 0.027848294573912268,
+   "repeat": 0
+  },
+  {
+   "width": 4,
+   "jobs": 920,
+   "makespan_s": 6.014532135995978,
+   "throughput_jobs_per_s": 152.9628538342912,
+   "accepted": 260,
+   "seconds_per_job": 0.006537534930430411,
+   "repeat": 0
+  },
+  {
+   "width": 8,
+   "jobs": 920,
+   "makespan_s": 3.21452149200195,
+   "throughput_jobs_per_s": 286.2012284842555,
+   "accepted": 260,
+   "seconds_per_job": 0.0034940451000021193,
+   "repeat": 0
+  },
+  {
+   "width": 16,
+   "jobs": 920,
+   "makespan_s": 1.8564303259990993,
+   "throughput_jobs_per_s": 495.57475285525277,
+   "accepted": 260,
+   "seconds_per_job": 0.002017859049999021,
+   "repeat": 0
+  },
+  {
+   "width": 24,
+   "jobs": 920,
+   "makespan_s": 1.7766013689979445,
+   "throughput_jobs_per_s": 517.8426719995758,
+   "accepted": 260,
+   "seconds_per_job": 0.001931088444562983,
+   "repeat": 0
+  }
+ ]
+}

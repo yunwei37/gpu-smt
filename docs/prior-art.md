@@ -131,11 +131,29 @@ The research question is whether a transparent runtime can **recover incremental
 
 ## 8. Lean/checker optimization
 
-Lean kernel/checker performance work such as Lean Kernel Arena, LazyLean, Nanobruijn, and recent concurrent convertibility checking shows substantial performance headroom.
+Lean kernel/checker performance work — Lean Kernel Arena, LazyLean, Nanobruijn,
+Nanoda, Nanoclo, and concurrent convertibility checking — already shows
+substantial headroom. Our 2026-10-04 measurements on the arena confirm this:
+the best current alternative checkers (nanoclo, lazylean) reach **7.6×** the
+official kernel on kernel-bound tests by parallelizing across declarations, and
+kernel checking is 84–94% of real library check time
+(`results/2026-10-04-lean-kernel-stage-split.md`).
 
-This project initially avoids competing with those works on internal kernel algorithms.
+This shapes differentiation rather than eliminating it:
 
-Lean is instead a later test of whether reusable verification-state serving generalizes beyond SMT.
+- we do **not** claim novelty for a faster kernel algorithm or a faster
+  standalone checker;
+- the Lean thread here contributes (a) the stage-separated characterization
+  (parse/setup vs elaboration vs kernel checking) that most checker papers
+  collapse, and (b) the *serving* question: batch many independent checks
+  (agent candidate proofs, `decide` certificates) under latency/throughput SLOs.
+- GPU differentiation is specifically **data-parallel checking of many
+  independent declarations**, not an intra-kernel CUDA port and not the
+  STARK-certificate proving of `argumentcomputer/ix`, which is a different
+  proof system.
+
+Lean is therefore no longer only a later generalization test; it is an active
+second workload for the same reuse/serving abstraction.
 
 ## Proposed differentiation
 

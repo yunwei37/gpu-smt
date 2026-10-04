@@ -195,11 +195,40 @@ python3 bench/related_snapshot_bench.py \
 
 The manifest records upstream repository, revision, and path; third-party benchmark contents are not vendored into this repository.
 
-## Current preliminary results
+## Lean export batch serving
 
-See:
+The Lean acceleration thread treats a checker as a black box and asks whether
+many *independent* Lean checks can be batched (proof-search candidates, repeated
+similar goals):
+
+```bash
+python3 bench/lean_export_batch.py \
+  --checker /path/to/kernel \
+  --inputs '_build/tests/other/*.ndjson' \
+  --duplicate 20 \
+  --widths 1,4,8,16,24 \
+  --cores 8-23 \
+  --json results/lean-batch-serving.json
+```
+
+It reports makespan, jobs/s and accept/reject counts per pool width; the same
+binary an application would invoke is the one under test. `--duplicate` models
+a stream of repeated candidates while keeping the underlying job set fixed.
+
+## Current results
+
+SMT serving:
 
 - `results/2026-09-29-libz3-state-reuse.md`
 - `results/2026-09-29-preliminary-serving.md`
 
-The main unresolved experiment remains VeruSAGE-Bench. Synthetic and small upstream workloads establish mechanism headroom, not the end-to-end systems claim.
+Lean kernel acceleration:
+
+- `docs/lean-acceleration-plan.md`
+- `results/2026-10-04-lean-kernel-stage-split.md`
+- `results/2026-10-04-lean-batch-serving.json`
+
+The main unresolved SMT experiment remains VeruSAGE-Bench. Synthetic and small
+upstream workloads establish mechanism headroom, not the end-to-end systems
+claim.
+
