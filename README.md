@@ -10,6 +10,16 @@ The current research hypothesis is:
 
 ## Current status
 
+The user expanded this project on 2026-10-07 into a complete autonomous research
+and paper effort targeting OSDI-level quality. The sole current paper is
+[docs/paper/main.tex](docs/paper/main.tex), built with `make -C docs/paper`.
+The project is in BOOTSTRAP: its four RQs remain unanswered by final evidence
+and its scientific contract is not frozen. The existing outer hourly heartbeat
+resumes the same owning session; no second scheduler or Workspace is created.
+See [the research frontier](docs/idea-story.md) and
+[step 0001](docs/tmp/bootstrap/step-0001-20261007T212930+0000/step-report.md).
+Legacy `paper/` sources and the completed initial checkpoint remain preserved.
+
 Milestone M0 is implemented on the `research/verification-serving` branch:
 
 - research plan and prior-art map;
@@ -22,7 +32,10 @@ The current branch has real VeruSAGE traces, complete Mathlib proof/state-reuse
 measurements, and an executed RTX 5090 expression-DAG primitive. The VeruSAGE
 prefix pool changes `unsat`/`unknown` outcomes; it is a negative fidelity result,
 not a serving speedup. Mathlib replay uses the established community REPL. The
-GPU result covers metadata computation, not full proof checking.
+GPU result covers metadata computation, not full proof checking. The new
+[complete native branching discriminator](artifacts/native-branch-2026-10-07/README.md)
+rejects its library adapter against the original executable on five other
+query outcomes, even though all earlier31 pooling differences recover.
 
 The initial investigation/workspace/GPU-benchmark request is complete, including
 the temporary RTX 5090 Job cleanup receipt. Full GPU Lean checking and a novel
@@ -55,9 +68,14 @@ python3 tools/z3_capture.py -in
 
 The intended long-term integration is a drop-in solver shim or launcher, similar in deployment spirit to `ccache`/`sccache`, with a stateful verification-serving runtime underneath.
 
-## Research scope
+## Initial serving integration scope
 
-Hard constraints for the first system:
+The following constraints describe the initial serving prototype. The expanded
+Lean/SMT/GPU scientific scope and native-adapter qualification rules are recorded
+in [the current design frontier](docs/design.md); GPU exploration remains required
+on RTX 5090, with its usefulness determined by complete measurements.
+
+Original constraints for the first system:
 
 1. stock solver/checker backends;
 2. no application source changes for baseline integration;

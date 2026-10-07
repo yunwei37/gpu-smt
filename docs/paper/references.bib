@@ -1,0 +1,196 @@
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Lean REPL exposes persistent environment and proof-state identifiers, diagnostics and admissions. It supports backtracking and pickling relative to imported environments.
+% USED_FOR: Persistent Lean environments, backtracking, pickling, and admission diagnostics.
+@misc{repl,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean community REPL}, author={{Lean community}},
+ url={https://github.com/leanprover-community/repl}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/lean-snapshot-2605.25556.pdf
+% ABSTRACT: Captures elaborated Lean language-server proof state once and reuses it across parallel tactic branches, avoiding repeated import loading and theorem-body elaboration.
+% USED_FOR: Existing proof-state reuse and parallel tactic branching baseline.
+@misc{leanSnapshot,
+ title={Keep the Proof State Live: Snapshotting for Efficient Tactic Search in Lean 4},
+ author={Austin Shen and Yunong Shi},
+ doi={10.48550/arXiv.2605.25556},
+ url={https://arxiv.org/abs/2605.25556}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents native SMT command evaluation that retains state between calls, solver outcomes and artifact interfaces. The combined solver can change solving modes with incremental use.
+% USED_FOR: Native ordered SMT evaluation, requested artifacts, and Z3 combined-solver scope behavior.
+@misc{z3api,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Z3 C API}, author={{Z3 contributors}},
+ url={https://z3prover.github.io/api/html/group__capi.html}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents solver configuration including resource limits distinct from elapsed-time limits and optional artifact generation.
+% USED_FOR: Internal work limits and configured output support.
+@misc{z3params,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Z3 Guide: Parameters}, author={{Z3 contributors}},
+ url={https://microsoft.github.io/z3guide/programming/Parameters/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Describes Linux process duplication and copy-on-write memory, inherited file descriptions, reset process accounting, noninherited timers and restrictions after multithreaded fork.
+% USED_FOR: Process sharing, branch-owned communication and runtime/resource handling requirements.
+@misc{fork,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={fork(2) Linux manual page}, author={{Linux man-pages project}},
+ url={https://man7.org/linux/man-pages/man2/fork.2.html}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Runs alternative Lean kernel implementations on exported declarations, including library workloads, soundness regressions, corner cases and performance tests.
+% USED_FOR: Post-export checker workloads and benchmark boundary.
+@misc{leanArena,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean Kernel Arena}, author={{Lean contributors}},
+ url={https://github.com/leanprover/lean-kernel-arena}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Provides the community Lean 4 mathematical library and source development corpus.
+% USED_FOR: Source/library workload provenance, not generated-attempt locality.
+@misc{mathlib,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Mathlib}, author={{Lean community}},
+ url={https://github.com/leanprover-community/mathlib4}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Provides standalone proof tasks extracted from real Verus systems with source mappings and verified ground-truth solutions.
+% USED_FOR: Repository-derived systems verification task provenance; not a native candidate-stream trace.
+@misc{verusage,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={VeruSAGE-Bench}, author={{Microsoft Research}},
+ url={https://github.com/microsoft/verus-proof-synthesis/tree/cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1/benchmarks/VeruSAGE-Bench}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Lean kernel checker uses delayed substitutions and closures over interned environments; conversion and parser components derive from existing checkers.
+% USED_FOR: Existing delayed-substitution representation and alternative CPU checker.
+@misc{nanoclo,
+ note={Accessed 2026-10-07; year denotes access year. Checker modifications written by Claude, directed by Sebastian Graf; upstream components credited on the page},
+ title={Nanoclo: Lean Kernel Arena checker}, author={{Lean Kernel Arena}},
+ url={https://arena.lean-lang.org/checker/nanoclo/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Fortran translation of nanoclo stores kernel objects in parallel arrays referenced by integer identifiers, with immutable exported expressions and private worker contexts.
+% USED_FOR: Existing integer-indexed representation and alternative CPU checker.
+@misc{nanocloFortran,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Nanoclo-fortran: Lean Kernel Arena checker}, author={{Lean Kernel Arena}},
+ url={https://arena.lean-lang.org/checker/nanoclo-fortran/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Experimental CLI flags save full or import-only elaboration snapshots and reuse saved state up to syntactic differences on a later invocation.
+% USED_FOR: Native incremental elaboration snapshots baseline.
+@misc{leanIncremental,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean 4.32.0 release: incremental snapshots}, author={{Lean contributors}},
+ url={https://lean-lang.org/doc/reference/latest/releases/v4.32.0/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Serves parallel Lean REPL processes and reuses warmed import headers. Manager bounds pool size and retires exhausted workers using configured use and memory controls.
+% USED_FOR: Bounded warm service, environment reuse and worker retirement baseline.
+@misc{kimina,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Kimina Lean Server}, author={{Project Numina}},
+ url={https://github.com/project-numina/kimina-lean-server}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/boogie-cache-krml245.pdf
+% ABSTRACT: Instruments Boogie programs with cached verification information and dependency tracking to avoid rechecking unaffected program regions after changes.
+% USED_FOR: Established fine-grained verification-result caching.
+@inproceedings{boogieCache,
+ title={Fine-Grained Caching of Verification Results},
+ author={K. Rustan M. Leino and Valentin W{\"u}stholz},
+ booktitle={Computer Aided Verification (CAV), Part I}, pages={380--397},
+ doi={10.1007/978-3-319-21690-4_22},
+ url={https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/krml245.pdf}, year={2015}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/sock-atc18-oakes.pdf
+% ABSTRACT: Optimizes serverless container initialization and caches prepared interpreter/library state using generalized Zygotes to reduce provisioning costs.
+% USED_FOR: Prior prepared execution and memory-sharing mechanism.
+@inproceedings{sock,
+ title={SOCK: Rapid Task Provisioning with Serverless-Optimized Containers},
+ author={Edward Oakes and Leon Yang and Dennis Zhou and Kevin Houck and Tyler Harter and Andrea C. Arpaci-Dusseau and Remzi H. Arpaci-Dusseau},
+ booktitle={2018 USENIX Annual Technical Conference (USENIX ATC 18)},
+ pages={57--70}, publisher={USENIX Association},
+ url={https://www.usenix.org/conference/atc18/presentation/oakes}, year={2018}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/seuss-eurosys20.pdf
+% ABSTRACT: Deploys serverless functions from unikernel snapshots and shares pages across the software stack to avoid initialization and increase cached execution density.
+% USED_FOR: Prior prepared execution and page-sharing mechanism.
+@inproceedings{seuss,
+ title={SEUSS: Skip redundant paths to make serverless fast},
+ author={James Cadden and Thomas Unger and Yara Awad and Han Dong and Orran Krieger and Jonathan Appavoo},
+ booktitle={Proceedings of the Fifteenth European Conference on Computer Systems (EuroSys)},
+ doi={10.1145/3342195.3392698}, numpages={15},
+ url={https://handong32.github.io/docs/3342195.3392698.pdf}, year={2020}}
+
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/lean4-cade21.pdf
+% ABSTRACT: Describes Lean 4 extensible parsing, elaboration and proof automation, native compilation, and its trusted kernel architecture.
+% USED_FOR: Original Lean 4 frontend and kernel architecture.
+@inproceedings{lean4,
+ title={The Lean 4 Theorem Prover and Programming Language},
+ author={Leonardo de Moura and Sebastian Ullrich},
+ booktitle={Automated Deduction (CADE 28)}, year={2021}, pages={625--635},
+ doi={10.1007/978-3-030-79876-5_37},
+ url={https://lean-lang.org/papers/lean4.pdf}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/verus-oopsla2023.pdf
+% ABSTRACT: SMT-based Rust verifier uses linear ghost permissions and a mode system separating specification, proof and executable code.
+% USED_FOR: Original Verus architecture and systems tool provenance.
+@article{verus,
+ title={Verus: Verifying Rust Programs using Linear Ghost Types},
+ author={Andrea Lattuada and Travis Hance and Chanhee Cho and Matthias Brun and Isitha Subasinghe and Yi Zhou and Jon Howell and Bryan Parno and Chris Hawblitzel},
+ journal={Proceedings of the ACM on Programming Languages}, volume={7},
+ number={OOPSLA1}, articleno={85}, numpages={30}, year={2023},
+ doi={10.1145/3586037},
+ url={https://matthias-brun.ch/assets/publications/verus_oopsla2023.pdf}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/kimina-2504.21230.pdf
+% ABSTRACT: Parallel Lean REPL service uses LRU import-header reuse and client batch feedback for large-scale proof verification.
+% USED_FOR: Established parallel warm service and import reuse; retirement details come from the artifact.
+@inproceedings{kiminaPaper,
+ title={Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification},
+ author={Marco Dos Santos and Hugues de Saxcé and Haiming Wang and Ran Wang and Mantas Bakšys and Mert Ünsal and Junqi Liu and Zhengying Liu and Jia Li},
+ booktitle={Fifth Workshop on Mathematical Reasoning and AI (MATH-AI) at NeurIPS},
+ year={2025}, doi={10.48550/arXiv.2504.21230},
+ url={https://arxiv.org/abs/2504.21230}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents proc memory accounting including proportional set size and private/shared dirty pages.
+% USED_FOR: Proportional memory definition and measurement source.
+@misc{procMemory,
+ title={The /proc Filesystem}, author={{Linux kernel contributors}},
+ year={2026}, note={Accessed 2026-10-07},
+ url={https://docs.kernel.org/filesystems/proc.html}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/verusage-2512.18436.pdf
+% ABSTRACT: Studies agent proof generation on tasks extracted from real Verus Rust systems and introduces VeruSAGE-Bench.
+% USED_FOR: Original dataset construction and task provenance, not ordered native candidate traffic.
+@misc{verusagePaper,
+ title={VeruSAGE: A Study of Agent-Based Verification for Rust Systems},
+ author={Chenyuan Yang and Natalie Neamtu and Chris Hawblitzel and Jacob R. Lorch and Shan Lu},
+ year={2025}, doi={10.48550/arXiv.2512.18436},
+ url={https://arxiv.org/abs/2512.18436}}
