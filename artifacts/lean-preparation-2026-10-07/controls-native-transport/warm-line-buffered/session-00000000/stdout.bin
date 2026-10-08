@@ -1,0 +1,25 @@
+{"env": 0, "ast": []}
+
+{"sorries":
+ [{"proofState": 0,
+   "pos": {"line": 8, "column": 48},
+   "goal":
+   "a : ℝ\nha : 0 < a\n⊢ Tendsto (fun y => ∫ (x : ℝ) in -y..y, x * x.sin / (x ^ 2 + a ^ 2)) atTop (𝓝 (Real.pi * (-a).exp))",
+   "endPos": {"line": 8, "column": 53}}],
+ "messages":
+ [{"severity": "warning",
+   "pos": {"line": 6, "column": 8},
+   "endPos": {"line": 6, "column": 20},
+   "data": "declaration uses 'sorry'"}],
+ "env": 1,
+ "ast": []}
+
+{"messages":
+ [{"severity": "error",
+   "pos": {"line": 8, "column": 48},
+   "endPos": {"line": 8, "column": 63},
+   "data":
+   "type mismatch\n  0\nhas type\n  ℕ : Type\nbut is expected to have type\n  Tendsto (fun y => ∫ (x : ℝ) in -y..y, x * x.sin / (x ^ 2 + a ^ 2)) atTop (𝓝 (Real.pi * (-a).exp)) : Prop"}],
+ "env": 2,
+ "ast": []}
+

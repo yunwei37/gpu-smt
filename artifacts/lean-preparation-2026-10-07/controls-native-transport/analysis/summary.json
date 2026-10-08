@@ -1,0 +1,681 @@
+{
+  "fresh": {
+    "path": "/workspaces/repository/artifacts/lean-preparation-2026-10-07/controls-native-transport/fresh",
+    "codes_sha256": "8bca765bf9693aeabad218efa444075fe7d75c22402c3ec184bf238dd611ecd0",
+    "task_sample_grouping": null,
+    "events_sha256": "8d6003ac4dc4e65a91a7fc7d55508d62d311b75693da35dae9527f9d95c42e98",
+    "source_count": 4,
+    "event_counts": {
+      "run": 1,
+      "admitted": 4,
+      "launch_intent": 4,
+      "launched": 4,
+      "result": 4,
+      "shutdown": 1
+    },
+    "outcomes": {
+      "incomplete": 2,
+      "rejected": 2
+    },
+    "missing_result_indices": [],
+    "terminal_complete": true,
+    "observed_invocation_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "missing_observed_invocation_indices": [],
+    "whole_job_budget_exceeded_indices": [],
+    "integrity_issues": [],
+    "makespan_ns": 8519543552,
+    "timing_distributions": {
+      "all_candidates": {
+        "all": {
+          "invocation_elapsed_ns": {
+            "n": 4,
+            "min_ns": 2042491717,
+            "p50_ns": 2110715916.5,
+            "p95_ns": 2134246824.8,
+            "p99_ns": 2135736474.56,
+            "max_ns": 2136108887,
+            "mean_ns": 2100008109.25,
+            "sum_ns": 8400032437
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 4,
+            "min_ns": 2057876411,
+            "p50_ns": 2124878383.0,
+            "p95_ns": 2149804422.1,
+            "p99_ns": 2151706794.82,
+            "max_ns": 2152182388,
+            "mean_ns": 2114953891.25,
+            "sum_ns": 8459815565
+          }
+        },
+        "incomplete": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2097736694,
+            "p50_ns": 2110715916.5,
+            "p95_ns": 2122397216.75,
+            "p99_ns": 2123435554.55,
+            "max_ns": 2123695139,
+            "mean_ns": 2110715916.5,
+            "sum_ns": 4221431833
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2113427484,
+            "p50_ns": 2124878383.0,
+            "p95_ns": 2135184192.1,
+            "p99_ns": 2136100264.02,
+            "max_ns": 2136329282,
+            "mean_ns": 2124878383,
+            "sum_ns": 4249756766
+          }
+        },
+        "rejected": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2042491717,
+            "p50_ns": 2089300302.0,
+            "p95_ns": 2131428028.5,
+            "p99_ns": 2135172715.3,
+            "max_ns": 2136108887,
+            "mean_ns": 2089300302,
+            "sum_ns": 4178600604
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2057876411,
+            "p50_ns": 2105029399.5,
+            "p95_ns": 2147467089.15,
+            "p99_ns": 2151239328.23,
+            "max_ns": 2152182388,
+            "mean_ns": 2105029399.5,
+            "sum_ns": 4210058799
+          }
+        }
+      },
+      "all_native_calls_including_setup": {
+        "all": {
+          "invocation_elapsed_ns": {
+            "n": 4,
+            "min_ns": 2042491717,
+            "p50_ns": 2110715916.5,
+            "p95_ns": 2134246824.8,
+            "p99_ns": 2135736474.56,
+            "max_ns": 2136108887,
+            "mean_ns": 2100008109.25,
+            "sum_ns": 8400032437
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 4,
+            "min_ns": 2057876411,
+            "p50_ns": 2124878383.0,
+            "p95_ns": 2149804422.1,
+            "p99_ns": 2151706794.82,
+            "max_ns": 2152182388,
+            "mean_ns": 2114953891.25,
+            "sum_ns": 8459815565
+          }
+        },
+        "incomplete": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2097736694,
+            "p50_ns": 2110715916.5,
+            "p95_ns": 2122397216.75,
+            "p99_ns": 2123435554.55,
+            "max_ns": 2123695139,
+            "mean_ns": 2110715916.5,
+            "sum_ns": 4221431833
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2113427484,
+            "p50_ns": 2124878383.0,
+            "p95_ns": 2135184192.1,
+            "p99_ns": 2136100264.02,
+            "max_ns": 2136329282,
+            "mean_ns": 2124878383,
+            "sum_ns": 4249756766
+          }
+        },
+        "rejected": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2042491717,
+            "p50_ns": 2089300302.0,
+            "p95_ns": 2131428028.5,
+            "p99_ns": 2135172715.3,
+            "max_ns": 2136108887,
+            "mean_ns": 2089300302,
+            "sum_ns": 4178600604
+          },
+          "elapsed_ns": {
+            "n": 0
+          },
+          "capture_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2057876411,
+            "p50_ns": 2105029399.5,
+            "p95_ns": 2147467089.15,
+            "p99_ns": 2151239328.23,
+            "max_ns": 2152182388,
+            "mean_ns": 2105029399.5,
+            "sum_ns": 4210058799
+          }
+        }
+      },
+      "whole_jobs": {
+        "n": 0
+      },
+      "setup_calls": {
+        "n": 0
+      },
+      "session_lifetimes": {
+        "n": 0
+      },
+      "observed_event_gaps": {
+        "n": 17,
+        "min_ns": 2017663,
+        "p50_ns": 4154561.0,
+        "p95_ns": 2141060322.2,
+        "p99_ns": 2151593423.64,
+        "max_ns": 2154226699,
+        "mean_ns": 501149620.7058824,
+        "sum_ns": 8519543552
+      }
+    },
+    "run_provenance": {
+      "event": "run",
+      "sequence": 0,
+      "wall_ns": 1791417798262251744,
+      "monotonic_ns": 207065834051921,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+        "exe",
+        "repl"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "workers": 1,
+      "timeout_seconds": 300.0,
+      "codes_path": "/workspaces/repository/artifacts/lean-candidate-source-2026-10-07/native-transport-controls/to_inference_codes.json",
+      "codes_sha256": "8bca765bf9693aeabad218efa444075fe7d75c22402c3ec184bf238dd611ecd0",
+      "count": 4,
+      "provenance": {
+        "lake": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+          "sha256": "899fd2f5750e23629ad1f26541c8a0c37a8f8797f720e717f3f4d6c56c7c2f4a"
+        },
+        "capture": {
+          "path": "/workspaces/repository/bench/lean_capture_fresh.py",
+          "resolved": "/workspaces/repository/bench/lean_capture_fresh.py",
+          "sha256": "d828658cc5799a3c5667e5ba6e6a38f356bc9ac33dd0dab1b37ef4a1157041fe"
+        },
+        "official_step2": {
+          "path": "/workspaces/repository/artifacts/lean-candidate-source-2026-10-07/goedel/eval/step2_compile.py",
+          "resolved": "/workspaces/repository/artifacts/lean-candidate-source-2026-10-07/goedel/eval/step2_compile.py",
+          "sha256": "2817c684d9d1660226c992304ce088efa67f64715703c8b33dfa57c435606478"
+        },
+        "official_verifier": {
+          "path": "/workspaces/repository/artifacts/lean-candidate-source-2026-10-07/goedel/prover/lean/verifier.py",
+          "resolved": "/workspaces/repository/artifacts/lean-candidate-source-2026-10-07/goedel/prover/lean/verifier.py",
+          "sha256": "c6e53318a20510852ad9e94279841550c555fe28eee5f01fceec3fa7a33e1dba"
+        },
+        "toolchain": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain",
+          "sha256": "8e9c2404a988183c69147c0dd6ca5dd600b9fd32ffd82b02391a11dfc3a73673"
+        },
+        "manifest": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lake-manifest.json",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lake-manifest.json",
+          "sha256": "c7285ffc51ad07774783c905e51604b73c893a2d35aa54c39d17111121ee47e8"
+        },
+        "lakefile": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lakefile.lean",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lakefile.lean",
+          "sha256": "de3fcde86b50b3e099680c081607b7ec4a96962a3a3c3cd5f377eed4a2c71f9f"
+        },
+        "repl_binary": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/bin/repl",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/bin/repl",
+          "sha256": null
+        },
+        "package_repl_binary": {
+          "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+          "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+          "sha256": "f6a0201a2dc6b929a93b34e00e74e9c9888ba7f9a5a7b3c2ed0b89a199025c42"
+        }
+      },
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "platform": "Linux-7.3.0-070300rc3-generic-x86_64-with-glibc2.41",
+      "affinity": [
+        0
+      ],
+      "environment": {
+        "PATH": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin:/root/.grok/bin:/workspaces/.agent-state/codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/root/.grok/bin:/root/.grok/bin:/usr/local/cargo/bin:/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "LEAN_PATH": null,
+        "LEAN_SYSROOT": null,
+        "ELAN_HOME": null,
+        "ELAN_TOOLCHAIN": null,
+        "OMP_NUM_THREADS": null,
+        "MKL_NUM_THREADS": null,
+        "OPENBLAS_NUM_THREADS": null
+      },
+      "adaptation": "owned new-session process groups; no global monitor; disk raw output",
+      "completion_observation": "Linux pidfd exit readiness; no fixed process polling delay",
+      "timing_scope": "whole invocation; native import/elaboration/check stages not separated"
+    },
+    "setup_outcomes": {},
+    "retained_session_tails": [],
+    "observed_intervals": {
+      "first_monotonic_ns": 207065834051921,
+      "last_monotonic_ns": 207074353595473
+    },
+    "timing_scope": "run→shutdown makespan includes setup, capture, lifecycle and teardown; invocation scopes differ in transport/launch; no kernel-stage inference"
+  },
+  "warm": {
+    "path": "/workspaces/repository/artifacts/lean-preparation-2026-10-07/controls-native-transport/warm-line-buffered",
+    "codes_sha256": "8bca765bf9693aeabad218efa444075fe7d75c22402c3ec184bf238dd611ecd0",
+    "task_sample_grouping": {
+      "task_count": 2,
+      "samples_per_task": 2,
+      "unique_names": 1,
+      "duplicate_names": [
+        {
+          "name": "exercise_3_4",
+          "count": 2
+        }
+      ]
+    },
+    "events_sha256": "9f9597514d5530b1344e4d9297cf20f718fedaa57d04f3b40a6de864bd57daac",
+    "source_count": 4,
+    "event_counts": {
+      "run": 1,
+      "admitted": 4,
+      "whole_job_begin": 4,
+      "header_match": 4,
+      "launch_intent": 2,
+      "launched": 2,
+      "submission": 6,
+      "sent": 6,
+      "result": 6,
+      "root_cached": 2,
+      "whole_job_end": 4,
+      "replacement": 2,
+      "shutdown": 1
+    },
+    "outcomes": {
+      "incomplete": 2,
+      "rejected": 2
+    },
+    "missing_result_indices": [],
+    "terminal_complete": true,
+    "observed_invocation_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "missing_observed_invocation_indices": [],
+    "whole_job_budget_exceeded_indices": [],
+    "integrity_issues": [],
+    "makespan_ns": 4699767063,
+    "timing_distributions": {
+      "all_candidates": {
+        "all": {
+          "invocation_elapsed_ns": {
+            "n": 4,
+            "min_ns": 10723109,
+            "p50_ns": 19482352.0,
+            "p95_ns": 29620924.9,
+            "p99_ns": 29942384.98,
+            "max_ns": 30022750,
+            "mean_ns": 19927640.75,
+            "sum_ns": 79710563
+          },
+          "elapsed_ns": {
+            "n": 4,
+            "min_ns": 13900286,
+            "p50_ns": 24224345.0,
+            "p95_ns": 34546602.75,
+            "p99_ns": 34905884.55,
+            "max_ns": 34995705,
+            "mean_ns": 24336170.25,
+            "sum_ns": 97344681
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        },
+        "incomplete": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 11620788,
+            "p50_ns": 20821769.0,
+            "p95_ns": 29102651.9,
+            "p99_ns": 29838730.38,
+            "max_ns": 30022750,
+            "mean_ns": 20821769,
+            "sum_ns": 41643538
+          },
+          "elapsed_ns": {
+            "n": 2,
+            "min_ns": 16447000,
+            "p50_ns": 25721352.5,
+            "p95_ns": 34068269.75,
+            "p99_ns": 34810217.95,
+            "max_ns": 34995705,
+            "mean_ns": 25721352.5,
+            "sum_ns": 51442705
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        },
+        "rejected": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 10723109,
+            "p50_ns": 19033512.5,
+            "p95_ns": 26512875.65,
+            "p99_ns": 27177707.93,
+            "max_ns": 27343916,
+            "mean_ns": 19033512.5,
+            "sum_ns": 38067025
+          },
+          "elapsed_ns": {
+            "n": 2,
+            "min_ns": 13900286,
+            "p50_ns": 22950988.0,
+            "p95_ns": 31096619.8,
+            "p99_ns": 31820675.96,
+            "max_ns": 32001690,
+            "mean_ns": 22950988,
+            "sum_ns": 45901976
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        }
+      },
+      "all_native_calls_including_setup": {
+        "all": {
+          "invocation_elapsed_ns": {
+            "n": 6,
+            "min_ns": 10723109,
+            "p50_ns": 28683333.0,
+            "p95_ns": 2264632414.0,
+            "p99_ns": 2287488505.2,
+            "max_ns": 2293202528,
+            "mean_ns": 758639193.8333334,
+            "sum_ns": 4551835163
+          },
+          "elapsed_ns": {
+            "n": 6,
+            "min_ns": 13900286,
+            "p50_ns": 33498697.5,
+            "p95_ns": 2285096134.5,
+            "p99_ns": 2307277142.9,
+            "max_ns": 2312822395,
+            "mean_ns": 768680738.1666666,
+            "sum_ns": 4612084429
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        },
+        "complete": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 2178922072,
+            "p50_ns": 2236062300.0,
+            "p95_ns": 2287488505.2,
+            "p99_ns": 2292059723.44,
+            "max_ns": 2293202528,
+            "mean_ns": 2236062300,
+            "sum_ns": 4472124600
+          },
+          "elapsed_ns": {
+            "n": 2,
+            "min_ns": 2201917353,
+            "p50_ns": 2257369874.0,
+            "p95_ns": 2307277142.9,
+            "p99_ns": 2311713344.58,
+            "max_ns": 2312822395,
+            "mean_ns": 2257369874,
+            "sum_ns": 4514739748
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        },
+        "incomplete": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 11620788,
+            "p50_ns": 20821769.0,
+            "p95_ns": 29102651.9,
+            "p99_ns": 29838730.38,
+            "max_ns": 30022750,
+            "mean_ns": 20821769,
+            "sum_ns": 41643538
+          },
+          "elapsed_ns": {
+            "n": 2,
+            "min_ns": 16447000,
+            "p50_ns": 25721352.5,
+            "p95_ns": 34068269.75,
+            "p99_ns": 34810217.95,
+            "max_ns": 34995705,
+            "mean_ns": 25721352.5,
+            "sum_ns": 51442705
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        },
+        "rejected": {
+          "invocation_elapsed_ns": {
+            "n": 2,
+            "min_ns": 10723109,
+            "p50_ns": 19033512.5,
+            "p95_ns": 26512875.65,
+            "p99_ns": 27177707.93,
+            "max_ns": 27343916,
+            "mean_ns": 19033512.5,
+            "sum_ns": 38067025
+          },
+          "elapsed_ns": {
+            "n": 2,
+            "min_ns": 13900286,
+            "p50_ns": 22950988.0,
+            "p95_ns": 31096619.8,
+            "p99_ns": 31820675.96,
+            "max_ns": 32001690,
+            "mean_ns": 22950988,
+            "sum_ns": 45901976
+          },
+          "capture_elapsed_ns": {
+            "n": 0
+          }
+        }
+      },
+      "whole_jobs": {
+        "n": 4,
+        "min_ns": 19999935,
+        "p50_ns": 1145846927.0,
+        "p95_ns": 2342951309.05,
+        "p99_ns": 2355650044.21,
+        "max_ns": 2358824728,
+        "mean_ns": 1167629629.25,
+        "sum_ns": 4670518517
+      },
+      "setup_calls": {
+        "n": 2,
+        "min_ns": 2178922072,
+        "p50_ns": 2236062300.0,
+        "p95_ns": 2287488505.2,
+        "p99_ns": 2292059723.44,
+        "max_ns": 2293202528,
+        "mean_ns": 2236062300,
+        "sum_ns": 4472124600
+      },
+      "session_lifetimes": {
+        "n": 2,
+        "min_ns": 2302807847,
+        "p50_ns": 2341663225.0,
+        "p95_ns": 2376633065.2,
+        "p99_ns": 2379741495.44,
+        "max_ns": 2380518603,
+        "mean_ns": 2341663225,
+        "sum_ns": 4683326450
+      },
+      "observed_event_gaps": {
+        "n": 43,
+        "min_ns": 608770,
+        "p50_ns": 1401984.0,
+        "p95_ns": 34753992.199999996,
+        "p99_ns": 2267671193.3799996,
+        "max_ns": 2314083865,
+        "mean_ns": 109296908.44186047,
+        "sum_ns": 4699767063
+      }
+    },
+    "run_provenance": {
+      "event": "run",
+      "sequence": 0,
+      "wall_ns": 1791417934952454038,
+      "monotonic_ns": 207202524256127,
+      "command": [
+        "/usr/bin/stdbuf",
+        "-oL",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+        "exe",
+        "repl"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "timeout_seconds": 300.0,
+      "retire_after": 2,
+      "count": 4,
+      "codes_sha256": "8bca765bf9693aeabad218efa444075fe7d75c22402c3ec184bf238dd611ecd0",
+      "task_count": 2,
+      "samples_per_task": 2,
+      "duplicate_task_names": [
+        {
+          "name": "exercise_3_4",
+          "count": 2
+        }
+      ],
+      "tasks_sha256": "307dd521684a2c0912da2f4dae8f80a1d3dbe8127e02ea813cdba148b34f3669",
+      "affinity": [
+        0
+      ],
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "provenance": {
+        "/workspaces/repository/bench/lean_capture_warm.py": {
+          "bytes": 20607,
+          "sha256": "8d81cbcac508ff4424772911479782fecec65e09f3382da5211a4fef64999c60"
+        },
+        "/usr/bin/stdbuf": {
+          "bytes": 47528,
+          "sha256": "2ce167833ea6fd323fa3de2ef274aa2bbc33d4f4ba33787ce2e48b3dd6bf3aee"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake": {
+          "bytes": 6414272,
+          "sha256": "899fd2f5750e23629ad1f26541c8a0c37a8f8797f720e717f3f4d6c56c7c2f4a"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain": {
+          "bytes": 28,
+          "sha256": "8e9c2404a988183c69147c0dd6ca5dd600b9fd32ffd82b02391a11dfc3a73673"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lake-manifest.json": {
+          "bytes": 1551,
+          "sha256": "c7285ffc51ad07774783c905e51604b73c893a2d35aa54c39d17111121ee47e8"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/Main.lean": {
+          "bytes": 12954,
+          "sha256": "534ac2691f90d5a8145cbf4d0975a09b41088150faaa000d91210fd72c82caee"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/JSON.lean": {
+          "bytes": 5343,
+          "sha256": "973a7c357ec16fc24a61db40c3249315d6ee89a53d8579732b7a564ab976b512"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/Frontend.lean": {
+          "bytes": 2025,
+          "sha256": "5455af5b48e698322f3c165481ca8cc05981cb6b8ee089e8f87c2c7acc9668c9"
+        },
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl": {
+          "bytes": 95725520,
+          "sha256": "f6a0201a2dc6b929a93b34e00e74e9c9888ba7f9a5a7b3c2ed0b89a199025c42"
+        }
+      },
+      "stdout_buffering": {
+        "utility": "/usr/bin/stdbuf",
+        "utility_sha256": "2ce167833ea6fd323fa3de2ef274aa2bbc33d4f4ba33787ce2e48b3dd6bf3aee",
+        "mode": "line",
+        "argument": "-oL",
+        "overhead": "included in recorded complete clocks"
+      },
+      "environment": {
+        "PATH": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin:/root/.grok/bin:/workspaces/.agent-state/codex/packages/standalone/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:/root/.grok/bin:/root/.grok/bin:/usr/local/cargo/bin:/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "LEAN_PATH": null,
+        "LEAN_SYSROOT": null,
+        "ELAN_HOME": null,
+        "ELAN_TOOLCHAIN": null,
+        "OMP_NUM_THREADS": null
+      },
+      "timing_scope": "whole native calls plus captured setup/replacement; stages not separated",
+      "timeout_scope": "one absolute per-candidate deadline before header lookup/launch/replacement; shared by setup/body/fallback; owned cleanup may extend it",
+      "lifecycle": "one process; all observed original-header roots cached; retire count includes rootless fallbacks; entire cache reset",
+      "rootless_fallback": "no env command in current bounded worker; fresh native environment, warm process",
+      "stderr_scope": "full session raw bytes; per-response offsets are observation boundaries"
+    },
+    "setup_outcomes": {
+      "complete": 2
+    },
+    "retained_session_tails": [],
+    "observed_intervals": {
+      "first_monotonic_ns": 207202524256127,
+      "last_monotonic_ns": 207207224023190
+    },
+    "timing_scope": "run→shutdown makespan includes setup, capture, lifecycle and teardown; invocation scopes differ in transport/launch; no kernel-stage inference"
+  },
+  "input_records_equal": true,
+  "original_input_bytes_equal": true,
+  "comparison": {
+    "equal": 4
+  },
+  "exact_code_duplicates": {
+    "distinct_codes": 4,
+    "repeated_code_groups": 0,
+    "excess_records": 0
+  },
+  "observed_headers": {
+    "distinct_matching_headers": 2,
+    "exact_prefix_records": 4,
+    "ascii_eligible_records": 4
+  },
+  "comparison_policy": "all fields strict except nonnegative integer top-level env and per-sorry proofState handles; nested/unknown/malformed fields retained; no continued handles",
+  "official_interpretation": "original Goedel pass/complete rules, including message-only/nonzero-exit quirks, retained separately from strict system labels"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "0-3",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "build",
+    "Mathlib",
+    "repl"
+  ],
+  "exitcode": 0,
+  "timestamp": "2026-10-07T23:59:31.411670+00:00"
+}

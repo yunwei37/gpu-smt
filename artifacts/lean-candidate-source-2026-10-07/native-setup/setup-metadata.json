@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-10-08T00:00:59.806533+00:00",
+  "lean_version": "Lean (version 4.9.0-rc1, x86_64-unknown-linux-gnu, commit be6c4894e0a6, Release)",
+  "lake_version": "Lake version 5.0.0-be6c489 (Lean version 4.9.0-rc1)",
+  "mathlib_revision": "2f65ba7f1a9144b20c8e7358513548e317d26de1",
+  "dependencies": [
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "rev": "42b5dddbd6b2658fcfede9dad26cc47737edec2d",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "rev": "a7bfa63f5dddbcab2d4e0569c4cac74b2585e2c6",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "rev": "7e3bd939c6badfcb1e607c0fddb509548baafd05",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "rev": "e6b6247c61280c77ade6bbf0bc3c66a44fe2e0c5",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v0.0.36",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "rev": "2cf1030dc2ae6b3632c84a09350b675ef3e347d0",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph.git",
+      "type": "git",
+      "subDir": null,
+      "rev": "7983e959f8f4a79313215720de3ef1eca2d6d474",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/xinhjBrant/repl.git",
+      "type": "git",
+      "subDir": null,
+      "rev": "3334a97b268ecc67beb36a75787f7e831208a724",
+      "name": "REPL",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "deepseek",
+      "inherited": false,
+      "configFile": "lakefile.lean"
+    }
+  ],
+  "source_identities": {
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain": {
+      "sha256": "8e9c2404a988183c69147c0dd6ca5dd600b9fd32ffd82b02391a11dfc3a73673"
+    },
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lakefile.lean": {
+      "sha256": "de3fcde86b50b3e099680c081607b7ec4a96962a3a3c3cd5f377eed4a2c71f9f"
+    },
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/Main.lean": {
+      "sha256": "534ac2691f90d5a8145cbf4d0975a09b41088150faaa000d91210fd72c82caee"
+    },
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/ExtractData.lean": {
+      "sha256": "430a50bf94640f5a7bb3ce11b37cf7ef873a0d1c3457bb498da54dc0f7872422"
+    },
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/Snapshots.lean": {
+      "sha256": "8149b58d2013e6c346e10eb4393588a6afeb70475a5819ccf91b674d018ce78f"
+    },
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/REPL/Frontend.lean": {
+      "sha256": "5455af5b48e698322f3c165481ca8cc05981cb6b8ee089e8f87c2c7acc9668c9"
+    }
+  },
+  "adaptations": [
+    "Git dependencies downloaded from exact public source tarballs; preserved original complete manifest and local-path vendor manifest to prevent Lake Git materialization.",
+    "ProofWidgets v0.0.36 tag verified at e6b6247c61280c77ade6bbf0bc3c66a44fe2e0c5; extracted16JS assets only from official release after missing asset build failure.",
+    "No Lean, Mathlib, REPL source or options changed. Cache fork hashes unavailable; built exact library from source."
+  ],
+  "resource_policy": {
+    "affinity": "0-3",
+    "LEAN_NUM_THREADS": 4,
+    "initial_available_CPUs": 24,
+    "initial_available_memory_GiB": 115,
+    "initial_load_average": [
+      2.91,
+      3.62,
+      3.36
+    ]
+  },
+  "setup_only": true,
+  "model_inference": false,
+  "GPU_use": false,
+  "native_engagement": "Original miniF2F mathd_algebra_478 header+formal_statement with explicit incomplete sorry; raw response retained, not accepted proof or full candidate stream."
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "exercise_3_4",
+    "code": "import Mathlib\n\nopen Complex Filter Function Metric Finset\nopen scoped BigOperators Topology\n\ntheorem exercise_3_4 (a : ℝ) (ha : 0 < a) :\n    Tendsto (λ y => ∫ x in -y..y, x * Real.sin x / (x ^ 2 + a ^ 2))\n    atTop (𝓝 (Real.pi * (Real.exp (-a)))) := by sorry\n"
+  },
+  {
+    "name": "exercise_3_4",
+    "code": "import Mathlib\n\nopen Complex Filter Function Metric Finset\nopen scoped BigOperators Topology\n\ntheorem exercise_3_4 (a : ℝ) (ha : 0 < a) :\n    Tendsto (λ y => ∫ x in -y..y, x * Real.sin x / (x ^ 2 + a ^ 2))\n    atTop (𝓝 (Real.pi * (Real.exp (-a)))) := by exact (0 : Nat)\n"
+  },
+  {
+    "name": "exercise_3_4",
+    "code": "import Mathlib\n\nopen Real\nopen scoped BigOperators\n\ntheorem exercise_3_4 : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 := by sorry\n"
+  },
+  {
+    "name": "exercise_3_4",
+    "code": "import Mathlib\n\nopen Real\nopen scoped BigOperators\n\ntheorem exercise_3_4 : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 := by exact (0 : Nat)\n"
+  }
+]

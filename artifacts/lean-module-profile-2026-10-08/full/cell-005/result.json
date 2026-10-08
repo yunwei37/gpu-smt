@@ -1,0 +1,76 @@
+{
+  "index": 5,
+  "repeat": 1,
+  "module": "Mathlib/Data/Nat/Prime.lean",
+  "mode": "profile",
+  "status": "exited",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/time.txt",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-j1",
+    "--json",
+    "--profile",
+    "Mathlib/Data/Nat/Prime.lean"
+  ],
+  "native_command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-j1",
+    "--json",
+    "--profile",
+    "Mathlib/Data/Nat/Prime.lean"
+  ],
+  "returncode": 0,
+  "invocation_wall_ns": 2576165034,
+  "begin_ns": 209822740904194,
+  "end_ns": 209825317069228,
+  "error": null,
+  "load_before": {
+    "loadavg": "1.56 1.25 1.85 1/4722 47313",
+    "wall_ns": 1791420555165174706,
+    "monotonic_ns": 209822736970077
+  },
+  "load_after": {
+    "loadavg": "1.56 1.25 1.85 3/4725 47316",
+    "wall_ns": 1791420557758891418,
+    "monotonic_ns": 209825330687251
+  },
+  "source": {
+    "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+    "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+    "bytes": 36299,
+    "sha256": "77b8adfbb7aa7f26c57d665a884b762db17a5cc209f464c31714e3e417df3989"
+  },
+  "source_after": {
+    "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+    "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+    "bytes": 36299,
+    "sha256": "77b8adfbb7aa7f26c57d665a884b762db17a5cc209f464c31714e3e417df3989"
+  },
+  "files": {
+    "stdout.bin": {
+      "path": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/stdout.bin",
+      "resolved": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr.bin": {
+      "path": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/stderr.bin",
+      "resolved": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/stderr.bin",
+      "bytes": 1199,
+      "sha256": "153dea1bbcf7e58e03c56c6f4f05fc14194057877359cefa91017b3ed7236df4"
+    },
+    "time.txt": {
+      "path": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/time.txt",
+      "resolved": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/full/cell-005/time.txt",
+      "bytes": 941,
+      "sha256": "509b3796eef9b96314a6689a5420059d010e1c138d84021f2be335b4263c4bd4"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+{"cmd": "import Mathlib\n\nopen Complex Filter Function Metric Finset\nopen scoped BigOperators Topology\n\ntheorem exercise_3_4 (a : ℝ) (ha : 0 < a) :\n    Tendsto (λ y => ∫ x in -y..y, x * Real.sin x / (x ^ 2 + a ^ 2))\n    atTop (𝓝 (Real.pi * (Real.exp (-a)))) := by exact (0 : Nat)\n", "allTactics": false, "ast": false, "tactics": false, "premises": false}
+

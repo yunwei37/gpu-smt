@@ -1,0 +1,18 @@
+[
+  {
+    "name": "exercise_2_8_6",
+    "split": "test",
+    "informal_prefix": "/-- Prove that the center of the product of two groups is the product of their centers.-/\n",
+    "formal_statement": "noncomputable def exercise_2_8_6 {G H : Type*} [Group G] [Group H] :\n    center (G × H) ≃* (center G) × (center H) :=",
+    "goal": "G : Type u_1\nH : Type u_2\ninst✝¹ : Group G\ninst✝ : Group H\n⊢ ↥(center (G × H)) ≃* ↥(center G) × ↥(center H)",
+    "header": "import Mathlib\n\nopen Function Fintype Subgroup Ideal Polynomial Submodule Zsqrtd\nopen scoped BigOperators\n\n--center of (G × H) equivalent, preserves multiplication with (center G) × (center H)\n"
+  },
+  {
+    "name": "exercise_1_13b",
+    "split": "test",
+    "informal_prefix": "/-- Suppose that $f$ is holomorphic in an open set $\\Omega$. Prove that if $\\text{Im}(f)$ is constant, then $f$ is constant.-/\n",
+    "formal_statement": "theorem exercise_1_13b {f : ℂ → ℂ} (Ω : Set ℂ) (a b : Ω) (h : IsOpen Ω)\n  (hf : DifferentiableOn ℂ f Ω) (hc : ∃ (c : ℝ), ∀ z ∈ Ω, (f z).im = c) :\n  f a = f b :=",
+    "goal": "f : ℂ → ℂ\nΩ : Set ℂ\na b : ↑Ω\nh : IsOpen Ω\nhf : DifferentiableOn ℂ f Ω\nhc : ∃ c, ∀ z ∈ Ω, (f z).im = c\n⊢ f ↑a = f ↑b",
+    "header": "import Mathlib\n\nopen Complex Filter Function Metric Finset\nopen scoped BigOperators Topology\n\n"
+  }
+]

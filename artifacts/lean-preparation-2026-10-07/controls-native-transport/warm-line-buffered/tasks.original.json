@@ -1,0 +1,18 @@
+[
+  {
+    "name": "exercise_3_4",
+    "split": "test",
+    "informal_prefix": "/-- Show that $ \\int_{-\\infty}^{\\infty} \\frac{x \\sin x}{x^2 + a^2} dx = \\pi e^{-a}$ for $a > 0$.-/\n",
+    "formal_statement": "theorem exercise_3_4 (a : ℝ) (ha : 0 < a) :\n    Tendsto (λ y => ∫ x in -y..y, x * Real.sin x / (x ^ 2 + a ^ 2))\n    atTop (𝓝 (Real.pi * (Real.exp (-a)))) :=",
+    "goal": "a : ℝ\nha : 0 < a\n⊢ Tendsto (fun y => ∫ (x : ℝ) in -y..y, x * x.sin / (x ^ 2 + a ^ 2)) atTop (𝓝 (Real.pi * (-a).exp))",
+    "header": "import Mathlib\n\nopen Complex Filter Function Metric Finset\nopen scoped BigOperators Topology\n\n"
+  },
+  {
+    "name": "exercise_3_4",
+    "split": "test",
+    "informal_prefix": "/-- Show that the equation $3 x^{2}+2=y^{2}$ has no solution in integers.-/\n",
+    "formal_statement": "theorem exercise_3_4 : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 :=",
+    "goal": "⊢ ¬∃ x y, 3 * x ^ 2 + 2 = y ^ 2",
+    "header": "import Mathlib\n\nopen Real\nopen scoped BigOperators\n\n"
+  }
+]

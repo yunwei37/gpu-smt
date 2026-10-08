@@ -1,0 +1,75 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gpu-smt-candidate-5090-20261007
+  namespace: coder
+  annotations:
+    admission.yunwei37.com/approval-ref: docs/configuration-decisions/2026-10-07-gpu-smt-hourly-research.md
+    admission.yunwei37.com/user-words: "设置每小时定时任务, 持续推进, 要做到 OSDI 层次, 写论文, 设计完整的实验和 RQ, 跑完整的 research 流程循环"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gpu-smt-candidate-preflight
+    spec:
+      restartPolicy: Never
+      runtimeClassName: nvidia
+      nodeSelector:
+        kubernetes.io/arch: amd64
+        fleet.yunwei37.com/gpu: rtx5090
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                com.coder.workspace.id: 81668d0b-bcba-4058-a2e6-473350357c52
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - name: generation
+        image: lmsysorg/sglang@sha256:9ca30410d6280c09c8e6804525b8ba0ef598c456044e758819046f8ef3037020
+        workingDir: /workspaces/repository
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        command: [bash, -lc]
+        args:
+        - |
+          ulimit -c 0
+          receipt=artifacts/lean-generated-2026-10-07/runtime-20261007-1740
+          date -u > "$receipt/start.txt"
+          nvidia-smi --query-gpu=name,uuid,driver_version,memory.total,memory.used --format=csv > "$receipt/device.csv" 2>&1
+          df -h / /workspaces/repository/artifacts/lean-generated-2026-10-07 > "$receipt/filesystems.txt"
+          python3 -u bench/lean_generate_goedel_capture.py --input-path artifacts/lean-candidate-source-2026-10-07/preflight-minif2f.jsonl --split test --n 1 --model-cache /workspaces/.agent-state/gpu-smt-deps/hf-models --out artifacts/lean-generated-2026-10-07/preflight-minif2f > "$receipt/minif2f.log" 2>&1
+          result=$?
+          printf '%s\n' "$result" > "$receipt/minif2f.exit"
+          if [ "$result" -ne 0 ]; then tail -n 35 "$receipt/minif2f.log"; exit "$result"; fi
+          python3 -u bench/lean_generate_goedel_capture.py --input-path artifacts/lean-candidate-source-2026-10-07/preflight-proofnet.jsonl --split test --n 1 --model-cache /workspaces/.agent-state/gpu-smt-deps/hf-models --out artifacts/lean-generated-2026-10-07/preflight-proofnet > "$receipt/proofnet.log" 2>&1
+          result=$?
+          printf '%s\n' "$result" > "$receipt/proofnet.exit"
+          date -u > "$receipt/end.txt"
+          if [ "$result" -ne 0 ]; then tail -n 35 "$receipt/proofnet.log"; exit "$result"; fi
+          printf 'Both generation commands completed\n'
+        volumeMounts:
+        - name: workspace
+          mountPath: /workspaces/repository/bench/lean_generate_goedel_capture.py
+          subPath: repository/bench/lean_generate_goedel_capture.py
+          readOnly: true
+        - name: workspace
+          mountPath: /workspaces/repository/artifacts/lean-candidate-source-2026-10-07/preflight-minif2f.jsonl
+          subPath: repository/artifacts/lean-candidate-source-2026-10-07/preflight-minif2f.jsonl
+          readOnly: true
+        - name: workspace
+          mountPath: /workspaces/repository/artifacts/lean-candidate-source-2026-10-07/preflight-proofnet.jsonl
+          subPath: repository/artifacts/lean-candidate-source-2026-10-07/preflight-proofnet.jsonl
+          readOnly: true
+        - name: workspace
+          mountPath: /workspaces/repository/artifacts/lean-generated-2026-10-07
+          subPath: repository/artifacts/lean-generated-2026-10-07
+        - name: workspace
+          mountPath: /workspaces/.agent-state/gpu-smt-deps/hf-models
+          subPath: .agent-state/gpu-smt-deps/hf-models
+      volumes:
+      - name: workspace
+        persistentVolumeClaim:
+          claimName: coder-81668d0b-bcba-4058-a2e6-473350357c52-workspaces

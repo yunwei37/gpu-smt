@@ -1,0 +1,171 @@
+{
+  "input": "/workspaces/repository/artifacts/lean-module-profile-2026-10-08/preflight",
+  "events_sha256": "d7696067a4d6a2781243493eaa91deec1162ee8c1d267a2e020272edc81858a4",
+  "run_provenance": {
+    "event": "run",
+    "sequence": 0,
+    "wall_ns": 1791420499957061765,
+    "monotonic_ns": 209767528862568,
+    "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "preflight": true,
+    "repeats": 1,
+    "cells": [
+      {
+        "index": 0,
+        "repeat": 1,
+        "module": "Mathlib/Algebra/Group/Basic.lean",
+        "mode": "normal"
+      },
+      {
+        "index": 1,
+        "repeat": 1,
+        "module": "Mathlib/Algebra/Group/Basic.lean",
+        "mode": "profile"
+      }
+    ],
+    "sources": {
+      "Mathlib/Algebra/Group/Basic.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Algebra/Group/Basic.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Algebra/Group/Basic.lean",
+        "bytes": 53119,
+        "sha256": "d067271dcf505040c7dc194ce846066f88827bff413056ae09612935a1e0da81"
+      },
+      "Mathlib/Algebra/Polynomial/Basic.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Algebra/Polynomial/Basic.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Algebra/Polynomial/Basic.lean",
+        "bytes": 51298,
+        "sha256": "84ef8a8effe6ecaf4678f0283b84c2cd8da8e8d54c89f33641cd2d9aba30f35b"
+      },
+      "Mathlib/Data/Nat/Prime.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Data/Nat/Prime.lean",
+        "bytes": 36299,
+        "sha256": "77b8adfbb7aa7f26c57d665a884b762db17a5cc209f464c31714e3e417df3989"
+      },
+      "Mathlib/LinearAlgebra/FiniteDimensional.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/LinearAlgebra/FiniteDimensional.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/LinearAlgebra/FiniteDimensional.lean",
+        "bytes": 56500,
+        "sha256": "39c7daaa65a6251b1d84977cd69ccb2fc32c5e32c2f8f191fbe58c62392b1559"
+      },
+      "Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean",
+        "bytes": 58168,
+        "sha256": "5c5e52e4031d6d80145de54bbcae9377e435ce6bba1896441bc4c6c74981db73"
+      },
+      "Mathlib/MeasureTheory/Integral/IntervalIntegral.lean": {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/MeasureTheory/Integral/IntervalIntegral.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/Mathlib/MeasureTheory/Integral/IntervalIntegral.lean",
+        "bytes": 66759,
+        "sha256": "05d2e2b41640f0de50fb49879d8a45c5a699adccc042b33a2cefd0ff12824889"
+      }
+    },
+    "provenance": [
+      {
+        "path": "/workspaces/repository/bench/lean_profile_modules.py",
+        "resolved": "/workspaces/repository/bench/lean_profile_modules.py",
+        "bytes": 9592,
+        "sha256": "9d24976b448ef635ce480463b086dfb67bb9bc9cf6497d990aca5037d1a5cbae"
+      },
+      {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+        "bytes": 6414272,
+        "sha256": "899fd2f5750e23629ad1f26541c8a0c37a8f8797f720e717f3f4d6c56c7c2f4a"
+      },
+      {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "bytes": 6256,
+        "sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010"
+      },
+      {
+        "path": "/usr/bin/time",
+        "resolved": "/usr/bin/time",
+        "bytes": 27384,
+        "sha256": "efc0d1112e36ec76c14bf7508e287935cf1631d9d0d91fb532802d07aef51cea"
+      },
+      {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lean-toolchain",
+        "bytes": 28,
+        "sha256": "8e9c2404a988183c69147c0dd6ca5dd600b9fd32ffd82b02391a11dfc3a73673"
+      },
+      {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lake-manifest.json",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lake-manifest.json",
+        "bytes": 1551,
+        "sha256": "c7285ffc51ad07774783c905e51604b73c893a2d35aa54c39d17111121ee47e8"
+      },
+      {
+        "path": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lakefile.lean",
+        "resolved": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/lakefile.lean",
+        "bytes": 4044,
+        "sha256": "de3fcde86b50b3e099680c081607b7ec4a96962a3a3c3cd5f377eed4a2c71f9f"
+      }
+    ],
+    "environment": {
+      "PATH": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin:/bin:/usr/bin",
+      "XDG_CACHE_HOME": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/cache",
+      "LEAN_NUM_THREADS": "1",
+      "LC_ALL": "C",
+      "LEAN_PATH": null,
+      "LEAN_SYSROOT": null,
+      "ELAN_HOME": null,
+      "ELAN_TOOLCHAIN": null
+    },
+    "affinity": [
+      0
+    ],
+    "parent_affinity": [
+      0
+    ],
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "profile_threshold": "stock default100ms; short scopes still accumulate",
+    "checking": "ordinary default trust; no checking disable; no output emission flags",
+    "timing_scope": "whole time+lake+lean invocation; no kernel-stage partition"
+  },
+  "declared_cells": 2,
+  "retained_cells": 2,
+  "missing_indices": [],
+  "terminal_complete": true,
+  "outcomes": {
+    "completed_cli_no_reported_errors": 2
+  },
+  "issues": [],
+  "paired_by_module": {
+    "Mathlib/Algebra/Group/Basic.lean": {
+      "pairs": [
+        {
+          "module": "Mathlib/Algebra/Group/Basic.lean",
+          "repeat": 1,
+          "normal_index": 0,
+          "profile_index": 1,
+          "paired_complete": true,
+          "diagnostic_identity": true,
+          "stdout_bytes_identity": true,
+          "returncode_identity": true,
+          "normal_wall_ns": 3440295971,
+          "profile_wall_ns": 3581293684,
+          "profile_minus_normal_wall_ns": 140997713,
+          "profile_over_normal_wall_ratio": 1.0409841810671352,
+          "normal_outcome": "completed_cli_no_reported_errors",
+          "profile_outcome": "completed_cli_no_reported_errors"
+        }
+      ],
+      "wall_delta_ns": {
+        "n": 1,
+        "values": [
+          140997713
+        ],
+        "mean": 140997713,
+        "median": 140997713,
+        "min": 140997713,
+        "max": 140997713
+      }
+    }
+  },
+  "makespan_ns": 7066994147,
+  "interpretation": "profile categories are rounded exclusive same-thread elapsed scopes, potentially overlapping across threads; shares are accumulated-category descriptions, not CPU/exact wall fractions; type checking includes addDecl/auxiliary declarations; import loads compiled dependencies, not transitive proof rechecking"
+}

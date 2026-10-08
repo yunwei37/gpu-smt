@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "type": "path",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "dir": ".lake/packages/batteries"
+    },
+    {
+      "type": "path",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "dir": ".lake/packages/Qq"
+    },
+    {
+      "type": "path",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.toml",
+      "dir": ".lake/packages/aesop"
+    },
+    {
+      "type": "path",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "dir": ".lake/packages/proofwidgets"
+    },
+    {
+      "type": "path",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.toml",
+      "dir": ".lake/packages/Cli"
+    },
+    {
+      "type": "path",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.toml",
+      "dir": ".lake/packages/importGraph"
+    },
+    {
+      "type": "path",
+      "name": "REPL",
+      "manifestFile": "lake-manifest.json",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "dir": ".lake/packages/REPL"
+    }
+  ],
+  "name": "mathlib",
+  "lakeDir": ".lake"
+}

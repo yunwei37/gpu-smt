@@ -1,0 +1,3 @@
+# Native fallback transport controls
+
+Two original ProofNet task rows supply context metadata. For the first observed non-ASCII header row, artificial `by sorry` and `by exact (0 : Nat)` bodies qualify full-source rootless fallback. For the first test row, two literal None code-extraction failures qualify retention of identical failed inputs, not result caching. These are four constructed controls, NOT generated candidates, performance results or the integrated experiment's real preflight. The original task bytes/records remain in ../goedel/datasets/proofnet.jsonl. No native run is claimed by preparation.

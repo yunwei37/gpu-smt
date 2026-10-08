@@ -1,0 +1,21 @@
+{
+  "command": [
+    "bench/lean_generate_goedel_capture.py",
+    "--input-path",
+    "artifacts/lean-candidate-source-2026-10-07/goedel/datasets/minif2f.jsonl",
+    "--out",
+    "artifacts/lean-candidate-source-2026-10-07/minif2f-prepared2",
+    "--model-cache",
+    "/workspaces/.agent-state/gpu-smt-deps/model-cache",
+    "--prepare-only"
+  ],
+  "model": "Goedel-LM/Goedel-Prover-SFT",
+  "model_revision": "5b03a13d14265d438048ffd4620f28f637f85313",
+  "input_sha256": "d6654c88476ff14db19d57dea25bd955a240525fb52171e460f89d98f83d7dd5",
+  "script_sha256": "fa58d102353466ed2a993cb6754850ac9d1eec3327f0b0f98018722f4b26ee15",
+  "tasks": 244,
+  "samples_per_task": 32,
+  "seed": 1,
+  "policy_adaptation": "SGLang serial generation; no vLLM sample-identity claim",
+  "prepared_only": true
+}

@@ -1,0 +1,41 @@
+warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it
+import took 521ms
+aesop took 258ms
+interpretation of Mathlib.Prelude.Rename.initFn._@.Mathlib.Mathport.Rename._hyg.260._lambda_3 took 169ms
+aesop took 168ms
+aesop took 103ms
+elaboration took 207ms
+elaboration took 173ms
+elaboration took 172ms
+elaboration took 173ms
+elaboration took 174ms
+elaboration took 176ms
+elaboration took 174ms
+elaboration took 183ms
+elaboration took 174ms
+elaboration took 174ms
+elaboration took 178ms
+elaboration took 175ms
+cumulative profiling times:
+	aesop 614ms
+	attribute application 12.9ms
+	compilation 71.2ms
+	dsimp 1.88ms
+	elaboration 3.01s
+	import 521ms
+	initialization 23.2ms
+	interpretation 2.01s
+	linting 102ms
+	norm_num 362ms
+	parsing 57.5ms
+	ring 167ms
+	simp 633ms
+	tactic execution 499ms
+	type checking 402ms
+	typeclass inference 2.08s
