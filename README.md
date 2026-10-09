@@ -17,7 +17,7 @@ The project is in BOOTSTRAP: its four RQs remain unanswered by final evidence
 and its scientific contract is not frozen. The existing outer hourly heartbeat
 resumes the same owning session; no second scheduler or Workspace is created.
 See [the research frontier](docs/idea-story.md) and
-[step 0002](docs/tmp/bootstrap/step-0002-20261007T224656+0000/step-report.md).
+[step 0003](docs/tmp/bootstrap/step-0003-20261009T132427+0000/step-report.md).
 Legacy `paper/` sources and the completed initial checkpoint remain preserved.
 
 Milestone M0 is implemented on the `research/verification-serving` branch:
@@ -43,6 +43,14 @@ repetitions. It locates costly frontend/meta work at that boundary; profiler
 category shares are not CPU fractions or a GPU speedup ceiling. The approved
 real generated-candidate experiment still awaits the finite RTX 5090 Job;
 no generated output or runtime result is yet recorded.
+
+The [native constructor comparison](artifacts/native-frontend-2026-10-09/README.md)
+completes 156 original streams, four conditions and three repetitions. The lazy
+command frontend matches the same-source stock CLI's non-statistical responses;
+early manager creation changes six checks and requested responses in every pass.
+Release version metadata still differs explicitly. This is local causal evidence
+for interface construction, without a branching-safety or acceleration claim.
+Raw native outcomes and failed model readouts remain reproducible.
 
 The initial investigation/workspace/GPU-benchmark request is complete, including
 the temporary RTX 5090 Job cleanup receipt. Full GPU Lean checking and a novel

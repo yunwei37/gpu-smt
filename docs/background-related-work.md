@@ -1,6 +1,6 @@
 # Background And Related Work
 
-Last updated: 2026-10-08, step0002 complete source/profile frontier, incomplete generated-candidate capture.
+Last updated: 2026-10-09, step0003 complete supporting native-constructor frontier; authentic generated-candidate capture remains incomplete.
 Source/command: full research-literature-novelty loop; [node report](tmp/bootstrap/step-0001-20261007T212930+0000/literature-20261007T213700+0000/report.md).
 Completeness: finite bootstrap coverage complete for declared branches; novelty remains conditional. The step0001 native-interface discriminator completed with a negative qualification result. Eight primary PDFs were subsequently retained during citation verification; source availability alone does not establish runnable numerical baselines.
 
@@ -135,3 +135,7 @@ Snapshot-DSP full text; stock Lean PR #13965 and current snapshot implementation
 ## Dynamic elaborator work after normal-check profiling
 
 The complete supporting six-module normal-check profile selects frontend/meta work rather than trusted AddDecl-only processing at that local boundary. [Exact synthesis/cache source audit](tmp/bootstrap/step-0002-20261007T224656+0000/literature-20261007T225255+0000/lean-typeclass-boundary.md) shows existing tabled synthesis and Meta.State success/failure caches; native full snapshots can retain them, while ordinary command-level Meta invocations normally start empty. Local instances, mutable assignments, environment/options/limits and explicit defeq resets prevent printed-type or blanket closed-expression cache claims. Cost-weighted recurrence, native cache resets and dynamic independent work are unmeasured. These facts select a future discriminator, not a novel cache or GPU algorithm.
+
+## Native constructor evidence after the finite source question
+
+[Experiment004's completed causal comparison](tmp/bootstrap/step-0003-20261009T132427+0000/experiment-004/result-review.md) adds real evidence to the prior pinned Z3 source finding: same-executable early owned-manager creation changes six checks and requested responses, while lazy matches same-source stock output. The source control exposes release version metadata differences rather than silently defining parity. This is supporting native-interface evidence, not new process-cloning novelty or proof of sole API causality. Existing closest-work/baseline judgments remain; mandatory grounding is not rerun unchanged. Next scientific effort must resolve actual preparation/isolation/resource value against strong native/warm/cache reuse and real streams.
