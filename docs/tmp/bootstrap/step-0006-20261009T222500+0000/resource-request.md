@@ -1,0 +1,7 @@
+# Existing-PVC capacity requirement for authorized research
+
+2026-10-09T22:25:00+00:00. Outer resource coordination requested: expand the EXISTING owning sourcePVC `pvc-15127d26-3c24-40f5-ab48-556be201595e` from32GiB to64GiB through the normal supported storage path, preserving Workspace/Job/data. Root has not mutated infrastructure. No newWorkspace/checkouts/disk/device probing/otherowner interruption.
+
+Currentfree13,249,626,112bytes. Original pendingGPUrequest model Goedel-LM/Goedel-Prover-SFT at5b03a13d14265d438048ffd4620f28f637f85313 has13,829,175,234bytes publicfiles per exactHF API (threeweights13,820,763,168bytes plus tokenizer/config/other files); cache currently4KiB. Needed model assets alone exceedfree by579,549,122bytes, with additional cache/output/temp/Git/nativeLean resources required.64GiB provides normal research working room without deleting preserved rawdata or dependency history. Do not duplicate/change submittedJob, GPU hardware, readonly mounted generator/input or modelrevision.
+
+Root advances independent Lean4.21 setup on ephemeral/tmp with exact reconstruction records; new results/publicinputs stay on retained sourcePVC. ExistingPendingRTX5090 remains unassigned lastouterobservation18:23UTC; resource request is capacity evidence, not a terminal/runtime receipt. Original entrypoint remains in step0002/gpu-preflight-request.md. Confirm actual capacity through df before promoting downloaded dependencies to retained storage.

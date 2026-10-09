@@ -1,0 +1,3 @@
+["/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/lean", "-c", "/tmp/gpu-smt-lean421-native/LeanPreparedNative.c", "/workspaces/repository/bench/LeanPreparedNative.lean"]
+["g++", "-std=c++17", "-O2", "-fPIC", "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include", "-c", "/workspaces/repository/bench/lean_prepared_fork.cpp", "-o", "/tmp/gpu-smt-lean421-native/lean_prepared_fork.o"]
+["/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/leanc", "-O3", "-o", "/tmp/gpu-smt-lean421-native/LeanPreparedNative", "/tmp/gpu-smt-lean421-native/LeanPreparedNative.c", "/tmp/gpu-smt-lean421-native/lean_prepared_fork.o"]

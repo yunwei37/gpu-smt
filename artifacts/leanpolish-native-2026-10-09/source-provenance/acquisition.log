@@ -1,0 +1,14 @@
+fetch https://github.com/leanprover/lean4/releases/download/v4.21.0/lean-4.21.0-linux.zip
+fetch https://codeload.github.com/leanprover-community/mathlib4/tar.gz/308445d7985027f538e281e18df29ca16ede2ba3
+fetch https://codeload.github.com/leanprover-community/plausible/tar.gz/c4aa78186d388e50a436e8362b947bae125a2933
+Traceback (most recent call last):
+  File "/tmp/gpu-smt-lean421-native/acquire.py", line 23, in <module>
+    repo=pkg['url'].removeprefix('https://github.com/').removesuffix('.git');p=fetch('https://codeload.github.com/'+repo+'/tar.gz/'+pkg['rev'],root/(pkg['name']+'.tar.gz'));extract(p,root/'mathlib4/.lake/packages'/pkg['name'])
+                                                                                                                                                                             ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/gpu-smt-lean421-native/acquire.py", line 13, in extract
+    target.mkdir()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 724, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/plausible'

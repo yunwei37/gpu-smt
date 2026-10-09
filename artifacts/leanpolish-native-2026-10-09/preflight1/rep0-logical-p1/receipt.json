@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/artifacts/leanpolish-native-2026-10-09/preflight1/rep0-logical-p1/time.txt",
+    "taskset",
+    "-c",
+    "0",
+    "/tmp/gpu-smt-lean421-native/LeanPreparedNative",
+    "logical",
+    "1",
+    "/workspaces/repository/artifacts/leanpolish-native-2026-10-09/preflight1/rep0-logical-p1/native-input.jsonl",
+    "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux"
+  ],
+  "cwd": "/workspaces/repository/artifacts/leanpolish-native-2026-10-09/inputs-corrected/bases",
+  "LEAN_NUM_THREADS": "1",
+  "LEAN_PATH": "/tmp/gpu-smt-lean421-native/mathlib4/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/Qq/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/Cli/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/plausible/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/batteries/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/gpu-smt-lean421-native/mathlib4/.lake/packages/aesop/.lake/build/lib/lean",
+  "affinity": "0",
+  "start_utc": "2026-10-09T23:02:51.262675+00:00",
+  "expected_jobs": 4,
+  "native_sha256": "04adc3c14c64c3010b7948118731614874350c7235b60311340c9de0a162c8cd",
+  "source_jobs_sha256": "9205835860901ed50773b377f85061a201f895b8ffac37758051bbad492c4c20",
+  "exitcode": 0,
+  "finish_utc": "2026-10-09T23:02:51.759721+00:00",
+  "wall_ns": 454912213,
+  "owned_group_cleanup": false,
+  "observed_responses": 4
+}

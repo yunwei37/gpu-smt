@@ -1,0 +1,85 @@
+{
+  "commands": [
+    [
+      "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/lean",
+      "-c",
+      "/tmp/gpu-smt-lean421-native/variant5/LeanPreparedNative.c",
+      "/workspaces/repository/bench/LeanPreparedNative.lean"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-fPIC",
+      "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean_prepared_fork.cpp",
+      "-o",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_fork.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-fPIC",
+      "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean_prepared_threads.cpp",
+      "-o",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_threads.o"
+    ],
+    [
+      "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/clang",
+      "-x",
+      "c++",
+      "-std=c++17",
+      "-O2",
+      "-fPIC",
+      "-DLEAN_MULTI_THREAD",
+      "-isystem",
+      "/usr/include/c++/14",
+      "-isystem",
+      "/usr/include/x86_64-linux-gnu/c++/14",
+      "-isystem",
+      "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include/clang",
+      "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include",
+      "-I/tmp/gpu-smt-lean421-native/lean4-source/src",
+      "-I/tmp/gpu-smt-lean421-native/libuv-source/include",
+      "-c",
+      "/workspaces/repository/bench/lean_prepared_uv.cpp",
+      "-o",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_uv.o"
+    ],
+    [
+      "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/leanc",
+      "-O3",
+      "-rdynamic",
+      "-Wl,--wrap=initialize_libuv",
+      "-Wl,--wrap=pthread_create",
+      "-Wl,--wrap=pthread_detach",
+      "-Wl,--wrap=pthread_join",
+      "-o",
+      "/tmp/gpu-smt-lean421-native/variant5/LeanPreparedNative",
+      "/tmp/gpu-smt-lean421-native/variant5/LeanPreparedNative.c",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_fork.o",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_uv.o",
+      "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_threads.o"
+    ]
+  ],
+  "cwd": "/workspaces/repository",
+  "versions": {
+    "lean": "Lean (version 4.21.0, x86_64-unknown-linux-gnu, commit 6741444a63ee, Release)\n",
+    "g++": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "sha256": {
+    "/workspaces/repository/bench/LeanPreparedNative.lean": "00bc8a2b751ed4f042d9ced2fed5de4fb9b04229d97e457eb21012f252cfe51e",
+    "/workspaces/repository/bench/lean_prepared_fork.cpp": "657e0ad6749cc9b59dda100c66ef66abf253c6f006bcce75770eb86773d82911",
+    "/workspaces/repository/bench/lean_prepared_uv.cpp": "0875d1a5413713ed8442924fb653d3698a5becd157b28f11830979c9a0821d50",
+    "/workspaces/repository/bench/lean_prepared_threads.cpp": "fc21821fb54d3bafba7bddc75a20db17f7c9b9840f621eaa309231e960c134da",
+    "/tmp/gpu-smt-lean421-native/variant5/LeanPreparedNative.c": "50c274815eabfe989922ac05fa42f1274a6f905f8c95626c1d9865a85fc54979",
+    "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_fork.o": "20d6a8c30920052f10ed0b04bee97007d0afb81f457e8cea2b639047416d74d6",
+    "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_uv.o": "cfc05be1e53041a4b07fedf9cccf187c22e5fc93b41fbc862b5a777796d67e4c",
+    "/tmp/gpu-smt-lean421-native/variant5/lean_prepared_threads.o": "b8224b5f55d70d4914e539bd5cf0b39174f9dd43b5998e932a7d1b0882201d0b",
+    "/tmp/gpu-smt-lean421-native/variant5/LeanPreparedNative": "602ffc85c68849a82d71e60f51d859bac5d44b7af8c6d731f2622bcb09260f44"
+  }
+}

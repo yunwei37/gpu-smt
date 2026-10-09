@@ -1,0 +1,46 @@
+bench/LeanPreparedNative.lean:34:19: error: unknown identifier 'Parser.HeaderSyntax'
+bench/LeanPreparedNative.lean:45:2: error: type mismatch
+  finished.get
+has type
+  Unit : Type
+but is expected to have type
+  IO PUnit : Type
+bench/LeanPreparedNative.lean:48:13: error: invalid field 'size', the environment does not contain 'Lean.ConstMap.size'
+  state.env.toKernelEnv.constants
+has type
+  ConstMap
+bench/LeanPreparedNative.lean:48:13: error: invalid field 'size', the environment does not contain 'Lean.SMap.size'
+  state.env.toKernelEnv.constants
+has type
+  SMap Name ConstantInfo
+bench/LeanPreparedNative.lean:36:25: error: invalid field 'dropEnd', the environment does not contain 'String.dropEnd'
+  fileName
+has type
+  String
+bench/LeanPreparedNative.lean:91:24: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  started
+has type
+  Nat
+bench/LeanPreparedNative.lean:91:58: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  ended
+has type
+  Nat
+bench/LeanPreparedNative.lean:150:24: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  started
+has type
+  Nat
+bench/LeanPreparedNative.lean:150:63: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  preparedAt
+has type
+  Nat
+bench/LeanPreparedNative.lean:151:22: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  ended
+has type
+  Nat
+bench/LeanPreparedNative.lean:141:36: error: could not synthesize default value for parameter 'h' using tactics
+bench/LeanPreparedNative.lean:141:36: error: type mismatch
+  Nat.zero_lt_succ ?m.13807
+has type
+  0 < Nat.succ ?m.13807 : Prop
+but is expected to have type
+  pending.length > 0 : Prop

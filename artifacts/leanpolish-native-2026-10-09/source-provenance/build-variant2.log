@@ -1,0 +1,29 @@
+["/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/lean", "-c", "/tmp/gpu-smt-lean421-native/variant2/LeanPreparedNative.c", "/workspaces/repository/bench/LeanPreparedNative.lean"]
+["g++", "-std=c++17", "-O2", "-fPIC", "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include", "-c", "/workspaces/repository/bench/lean_prepared_fork.cpp", "-o", "/tmp/gpu-smt-lean421-native/variant2/lean_prepared_fork.o"]
+["/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/clang", "-x", "c++", "-std=c++17", "-O2", "-fPIC", "-DLEAN_MULTI_THREAD", "-isystem", "/usr/include/c++/14", "-isystem", "/usr/include/x86_64-linux-gnu/c++/14", "-isystem", "/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include/clang", "-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include", "-I/tmp/gpu-smt-lean421-native/lean4-source/src", "-I/tmp/gpu-smt-lean421-native/libuv-source/include", "-c", "/workspaces/repository/bench/lean_prepared_uv.cpp", "-o", "/tmp/gpu-smt-lean421-native/variant2/lean_prepared_uv.o"]
+/workspaces/repository/bench/lean_prepared_uv.cpp:26:5: error: use of undeclared identifier 'lean_initialize_thread'; did you mean 'lean::lean_initialize_thread'?
+   26 |     lean_initialize_thread();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+      |     lean::lean_initialize_thread
+/tmp/gpu-smt-lean421-native/lean4-source/src/runtime/thread.h:238:29: note: 'lean::lean_initialize_thread' declared here
+  238 | extern "C" LEAN_EXPORT void lean_initialize_thread();
+      |                             ^
+/workspaces/repository/bench/lean_prepared_uv.cpp:29:5: error: use of undeclared identifier 'lean_finalize_thread'; did you mean 'lean::lean_finalize_thread'?
+   29 |     lean_finalize_thread();
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     lean::lean_finalize_thread
+/tmp/gpu-smt-lean421-native/lean4-source/src/runtime/thread.h:239:29: note: 'lean::lean_finalize_thread' declared here
+  239 | extern "C" LEAN_EXPORT void lean_finalize_thread();
+      |                             ^
+2 errors generated.
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/build_lean_prepared_native.py", line 49, in <module>
+    main()
+    ~~~~^^
+  File "/workspaces/repository/bench/build_lean_prepared_native.py", line 38, in main
+    subprocess.run(command, cwd=repo, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/bin/clang', '-x', 'c++', '-std=c++17', '-O2', '-fPIC', '-DLEAN_MULTI_THREAD', '-isystem', '/usr/include/c++/14', '-isystem', '/usr/include/x86_64-linux-gnu/c++/14', '-isystem', '/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include/clang', '-I/tmp/gpu-smt-lean421-native/lean-4.21.0-linux/include', '-I/tmp/gpu-smt-lean421-native/lean4-source/src', '-I/tmp/gpu-smt-lean421-native/libuv-source/include', '-c', '/workspaces/repository/bench/lean_prepared_uv.cpp', '-o', '/tmp/gpu-smt-lean421-native/variant2/lean_prepared_uv.o']' returned non-zero exit status 1.
