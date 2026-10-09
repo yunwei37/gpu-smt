@@ -1,0 +1,7 @@
+/workspaces/repository/bench/native_z3_prepared.cpp: In lambda function:
+/workspaces/repository/bench/native_z3_prepared.cpp:119:13: warning: exception of type ‘z3_exception’ will be caught by earlier handler [-Wexceptions]
+  119 |             catch(z3_exception const& ex) { std::cerr << "ERROR: " << ex.what() << std::endl; _exit(ex.has_error_code()?ex.error_code():ERR_INTERNAL_FATAL); }
+      |             ^~~~~
+/workspaces/repository/bench/native_z3_prepared.cpp:118:15: note: for type ‘std::exception’
+  118 |             } catch(std::exception const& ex) { std::cerr << ex.what() << std::endl; _exit(3); }
+      |               ^~~~~

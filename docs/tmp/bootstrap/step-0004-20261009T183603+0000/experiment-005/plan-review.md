@@ -1,0 +1,43 @@
+# Experiment005 plan review
+
+## Round 1 — fresh scientific and executability review
+
+Verdict: **approve for real preflight and, if that path succeeds, the declared full matrix. No blocking scientific or executability defect found.** This is an admission of supporting local RQ2 evidence, not qualification of the whole service or a performance claim.
+
+Reviewed `docs/user-instruction.md` first, the complete research-experiment-design skill and its plan template, the current plan, `docs/idea-story.md`, `docs/evaluation.md`, the retained closest-work report, the actual wrapper/runner/analyzer and imported response observer/command splitter. Inspected retained branch provenance and real input bytes without executing native solver inputs. Inspected the pinned source provenance and native parser, shell frontend, and timer atfork code. No paper, Git, or experiment code edits were made.
+
+### Blocking findings
+
+None. Execution may expose a broken path or native discrepancy; neither is currently established by this read-only review. Those observations must retain their actual status rather than becoming a favorable exclusion.
+
+### Scientific admission and value
+
+The exact selected RQ is preserved. Experiment004 qualified a lazy *fresh* frontend against the same-source CLI; it did not execute a retained context across parser EOF, inherited suffixes, changed sibling order, or disposal. Experiment001's API construction failure cannot answer those questions for the newly qualified interface. Thus reuse or reanalysis of those runs cannot supply the absent events. A contrary response has a concrete consequence: reject the responsible interface/preparation boundary before resource comparisons. Positive evidence enables that boundary's later resource tests; cancellation races restrict coverage. These outcomes lead to different paper decisions.
+
+The declared supporting role is appropriate. Process memory separation by fork is established, and this experiment does not make that separation the contribution. Native response preservation under this particular command-context/parser/global-state path is not settled by the generic fork primitive. The stronger alternative is a real equal-resource comparison against bounded warm/native reuse. It needs this behavior boundary; qualification should remain a finite integrated supporting experiment rather than a succession of additional readiness reports. Neither success nor failure here closes RQ2 or directly falsifies the full central thesis. Existing Lean/SMT/GPU scope and stronger baseline families remain intact.
+
+### Comparisons, workloads, metrics and fairness
+
+The unchanged same-source CLI is the appropriate exact behavior oracle/reference for this scoped hypothesis. Its matched execution is necessary because published work cannot establish byte-level parity for this precise adapter and preparation boundary. Fresh normalized execution, split parsing, reverse order, and cancellation are interpretable interface/history/lifetime controls. The forward branch is the tested mechanism. No wider dataset or additional numerical baseline is required to answer this hypothesis.
+
+Original captured native queries supply independent reference bytes; the normalized full input and split inputs expose normalization separately. Read-only inspection confirms 156 repeat0 branch members in two retained provenance groups (106 and 50), prefix sizes 9,464 and 30 bytes, and the pre-output selection rule chooses 58 and 87. These are selected published-task native streams, not complete real historical candidate traffic or a representative preparation-cost distribution. The plan states that limitation and retains UNKNOWN/model-error behavior instead of treating it as successful verification.
+
+SMT-LIB commands/responses define the primary observable contract. Per-input check responses and exact requested non-statistical bytes, error/availability and exit identity are direct contract measurements, not a custom paper score. The imported observer uses existing requested markers and independently retained original command positions; it does not insert oracle commands or derive correctness from the proposed method. Complete response framing and raw stderr/exit comparisons prevent aggregate SAT counts from hiding changed requests. Statistics remain available but are excluded from identity only because they are varying diagnostic output. Native model shape/availability is not model soundness; no absent SAT/proof/core coverage is promised. Three whole repeats establish local repeat consistency, not population confidence intervals or speed distributions.
+
+### Executability and honest cancellation boundary
+
+The build command links the existing unchanged pinned native objects/library. The wrapper uses the source-native lazy command context and command installers, and fresh/split use the parser's interactive flag matching stock stdin. The source parser has a local parser lifetime around the retained owned context. Prepared parents are restricted to the actual retained no-check/no-finite-timer prefixes, and both preparation and each fork refuse multiple observed tasks. This is a reasonable restricted runtime condition, not an arbitrary fork-safety proof.
+
+The runner preserves all six conditions and alternates whole-condition order. Reverse mode reverses members before the wrapper launches them; siblings run sequentially. Normal cells retain output, raw cost and terminal status; parent or child failure becomes missing/nonterminal/error evidence. Completion and framing are distinct. The declared counts and commands agree with the runner. The preflight uses one real selected normal stream and the complete group's cancellation selection. No solver-input execution was performed during this review.
+
+Cancellation observes the first native SAT/UNSAT/UNKNOWN decision followed by an existing DONE marker, samples the actual child, attempts SIGKILL, drains the pipe, and wait4 reaps that exact child before normal siblings. The analyzer requires a raw native decision, marker engagement, kill return zero, and SIGKILL wait status; successful kill() alone is insufficient. Native work can finish before the sample/kill, and no favorable retry is promised. The limited claim is post-disposal response isolation at that recorded progress point, not interruption within solving. Parent-death kill and owned-child signal handling address the ordinary runner-interruption path. Sequential lifetimes do not support concurrent interference, service admission, or fleet-memory claims.
+
+### Optional findings and reporting cautions
+
+1. Call the same-source CLI a **behavior reference/control** consistently. The plan's phrase “one main behavior reference” is understandable, but the wider skill baseline rules explicitly classify fresh executable/driver equivalence as controls. This experiment has no competitive speed baseline and need not manufacture one.
+2. Before execution, the root revised cancellation from the first arbitrary DONE marker to the first native check decision followed by DONE. I inspected the actual revised C++ condition and analyzer: early statistics/version markers no longer trigger cancellation, and raw decision presence is required for landing. This strengthens native verification engagement without modifying inputs. Preserve the exact completed-check boundary in the cancellation table; killing after its response still does not establish interruption inside a solver check.
+3. The runner hashes executed code but does not itself copy code snapshots, although the plan promises unchanged executed-source snapshots. Archive those files as ordinary run artifacts when executing; hashes alone cannot reconstruct later modified local glue. This is a routine reproducibility task, not an independent experiment or control format.
+4. Add a rough expected elapsed/disk cost from existing matched native runs if readily available. There is no speed estimate required for the scientific conclusion, and the absence of that estimate does not invalidate this finite matrix.
+5. Report cancellation-attempt completion separately from normal-cell completion. The current summary counts cancellation rows and landed attempts, whereas `terminal_complete` concerns normal cells. Result review should verify six actual full-run cancellation cost rows and retain races/failures explicitly before claiming complete cancellation coverage.
+
+No optional item above demands more baseline systems, broader datasets, or a changed hypothesis. Keep the frozen correctness check and response observer during execution; any material repair must be recorded and affected comparisons rerun as the parent skill requires.
