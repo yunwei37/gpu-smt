@@ -1,0 +1,74 @@
+[
+  {
+    "label": "warm",
+    "scope": "native checkpoints on calling thread in child workers only; parent seed excluded; frontend background threads excluded from calling-thread CPU. Sum worker wall durations is not whole makespan; response serialization/witness construction occurs after final checkpoint. Panic/open work remains censored. Profile-only binaries.",
+    "completed_sequences": 7,
+    "unfinished_sequences": [
+      {
+        "key": [
+          10724,
+          5879
+        ],
+        "open_stages": [
+          "frontend_begin"
+        ]
+      }
+    ],
+    "regions": {
+      "frontend": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 6.102743178,
+        "summed_calling_thread_cpu_seconds": 0.001439035,
+        "median_wall_seconds": 0.193338029
+      },
+      "response_extraction": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 0.216796572,
+        "summed_calling_thread_cpu_seconds": 0.208646061,
+        "median_wall_seconds": 0.004419242
+      },
+      "sorries": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 0.015386756,
+        "summed_calling_thread_cpu_seconds": 0.008692067999999999,
+        "median_wall_seconds": 0.001129133
+      }
+    }
+  },
+  {
+    "label": "gated",
+    "scope": "native checkpoints on calling thread in child workers only; parent seed excluded; frontend background threads excluded from calling-thread CPU. Sum worker wall durations is not whole makespan; response serialization/witness construction occurs after final checkpoint. Panic/open work remains censored. Profile-only binaries.",
+    "completed_sequences": 7,
+    "unfinished_sequences": [
+      {
+        "key": [
+          10681,
+          5879
+        ],
+        "open_stages": [
+          "frontend_begin"
+        ]
+      }
+    ],
+    "regions": {
+      "frontend": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 6.00792657,
+        "summed_calling_thread_cpu_seconds": 0.001446587,
+        "median_wall_seconds": 0.177045694
+      },
+      "response_extraction": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 0.205988809,
+        "summed_calling_thread_cpu_seconds": 0.204243868,
+        "median_wall_seconds": 0.004214157
+      },
+      "sorries": {
+        "samples": 7,
+        "summed_worker_wall_seconds": 0.002610066,
+        "summed_calling_thread_cpu_seconds": 0.001200182,
+        "median_wall_seconds": 0.000128659
+      }
+    }
+  }
+]

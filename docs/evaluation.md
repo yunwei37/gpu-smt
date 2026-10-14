@@ -1,10 +1,12 @@
 # Evaluation
 
-Current phase: BOOTSTRAP, step0008, REVIEW_GATE after completed E029 and all12root writing rounds. All four RQs remain
-open; no frozen scientific contract, full WRITE/REVIEW closure, independent
-outer audit or completed application-step publication is claimed.
-[Current step and detailed history](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
-is authoritative. [Prior detailed evaluation](tmp/bootstrap/step-0007-20261010T000125+0000/archived-evaluation-before-direct-mini-20261014.md)
+Current phase: BOOTSTRAP, step0009 REVIEW_GATE after complete E030 acquisition
+and full12serial root writing rounds. All four RQs and the scientific
+contract remain open. Step0008 source/raw/paper/root audit were committed and
+pushed to main as a476e6da8298e04e699b4e02726b53ea1a2a439e; publication does
+not satisfy independent review or final-paper completeness.
+[Current step](tmp/bootstrap/step-0009-20261014T114438+0000/step-report.md) holds gate records.
+[Prior detailed evaluation](tmp/bootstrap/step-0007-20261010T000125+0000/archived-evaluation-before-direct-mini-20261014.md)
 is retained byte-for-byte.
 
 ## Objective and questions
@@ -233,3 +235,30 @@ lower is unreplicated and private memory is not comparable as COW mutation.
 All per-input basics match; native diagnostic metavariable IDs differ, preserved.
 Candidate closed; complete source/failed/fallback/observer/raw and analysis under
 experiment029. Driver terminal. Return to WRITE, all four RQs still open.
+
+## E030 complete response-path comparison (running)
+
+Root directly implements a necessary sorry-kind header precheck followed by the
+original complete Syntax predicate, preserving native traversal/goals/feedback.
+Same original5952ProofNet candidates and warm-pool host/runtime. First complete
+primary pair:303.124060s original,297.519943s gated (1.8488percent wall reduction).
+All basics and requested responses match. This one pair does not establish stable
+acceleration; opposite-order repetitions and separate profiles are still running.
+Plan, source, real preflight, failed build and first result preserved in
+artifacts/lean-parallel-verification-2026-10-12/experiment030/.
+Current official Lean4.35.0 remains unmeasured here; old4.9cohort results are
+same-version evidence, not current ecosystem superiority or systems novelty.
+
+E030all8cells/47616outcomes now complete with zero per-input basic differences
+across all8versus original native warm control. Three paired wall reductions
+1.848787%,2.312629%,0.724019% have descriptive mean1.628478%, not a CI.
+Complete matched timer subset5791sources: sorry CPU8.476280494original/
+0.663863863gated; response extraction20.169632959/12.296172330seconds.
+Calling-thread scopes exclude async frontend/serialization/auxiliary construction;
+interleaved or incomplete records remain censored, not reconstructed. Single
+PSSprofile7860678original/7728536gatedKiB is not replicated savings.
+Keep the small CPU precheck as an available stronger measured comparator; no GPU
+benefit, systems novelty or closed RQ follows. Complete result-review/analysis/raw
+are under experiment030. All12writing rounds compile to10pages and all10pages
+were inspected. Root review/outer self-audit are direct-only; independent audit
+remains unmet under the explicit no-delegation instruction.

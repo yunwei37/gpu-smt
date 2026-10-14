@@ -27,8 +27,11 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-BOOTSTRAP step0008 REVIEW_GATE after complete E029 and serial root WRITE, scientific contract unfrozen and all four
-RQs open. Initial Narrative and accepted evolution below remain intact.
+BOOTSTRAP step0009 REVIEW_GATE follows completed E029/step0008 main publication.
+E030 completes native response extraction against the established warm path:
+all8conditions return, with a small three-pair mean1.63percent wall reduction.
+Full root WRITE is complete; direct REVIEW retains the larger open evidence gaps.
+Scientific contract unfrozen and all four RQs open. Initial Narrative and accepted evolution below remain intact.
 The desktop root implements directly under the human request; the original
 native author session is retained/stopped, with no delegated new author.
 

@@ -11,7 +11,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Formal verification services check streams of program and proof candidates against formal specifications. Related candidates share libraries, declarations and accepted context.
+Formal verification services check streams of program and proof candidates against formal specifications, and related candidates share libraries, declarations and accepted context.
 Independent attempts trade repeated preparation against shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
 Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
 Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
@@ -35,7 +35,7 @@ We argue that reusable verification state should retain preparation while separa
 
 Realizing this separation requires runtime safety, faithful resource handling and bounded memory. A branch boundary must be quiescent and safe for the verifier runtime. Native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Preparation sharing must improve service capacity within a memory budget that bounds retained states. Together, these requirements connect compatibility to the service's resource frontier, the achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
 
-We present a verification service that retains immutable prepared states in a parent performing no candidate verification and executes disposable independent branches. Each branch owns its responses, mutable state, communication and cancellation. It inherits native resource state and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams with competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess the remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback included in complete verification costs. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
+We present a verification service whose parent retains immutable prepared states without performing candidate verification, while disposable independent branches execute the candidates. Each branch owns its responses, mutable state, communication and cancellation. It inherits native resource state and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams with competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess the remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback included in complete verification costs. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
 
 This paper makes four contributions.
 \begin{itemize}
@@ -248,7 +248,38 @@ The 5.52\% lower sampled PSS is a single comparison, not replicated memory
 evidence. One-second non-atomic sampling and competing mappings limit PSS
 interpretation. A shared heap also changes whether unchanged anonymous pages
 are counted as private, so private-page totals across these placements do not
-directly measure mutation. The complete workload, offered-load and resource
+directly measure mutation. \paragraph{Response extraction after warm preparation.}
+An optimization of response extraction yields a small complete verification improvement
+on the same retained ProofNet cohort. The producer REPL classifies explicit
+\texttt{sorry} nodes by printing an entire syntax node and comparing its
+string~\cite{repl}. We add a necessary check of the shortened parser-node kind
+before the unchanged full-string predicate. The native tree traversal,
+goal snapshots, diagnostic construction, enclosing frontend and kernel remain.
+
+Three alternating complete primary pairs use the same warm-pool host,
+prepared state, four permitted CPUs and native defaults.
+Original whole times are 303.124, 308.703 and 301.252 seconds, compared with
+297.520, 301.563 and 299.071 seconds with the precheck.
+The observed wall reductions are 1.85\%, 2.31\% and 0.72\%, with a descriptive
+mean of 1.63\%. This observed range is not a confidence interval.
+
+Each pair preserves all 5,952 basic outcomes. Requested responses are identical
+in two pairs; one source in the other pair has internal metavariable-number
+differences in diagnostic hints, which remain unnormalized.
+
+Separate profiles contain complete timer sequences in both methods for
+5,791 source indices. Over this subset, cumulative calling-thread CPU in sorry extraction
+falls from 8.476 to 0.664 seconds, and complete response extraction from
+20.170 to 12.296 seconds. Interleaved or incomplete records are censored.
+These region totals exclude asynchronous frontend threads and subsequent
+response serialization and construction of auxiliary declaration records. These totals are not
+fractions of corpus wall time. Single sampled PSS maxima are 7,860,678 KiB
+for the original method and 7,728,536 KiB with the precheck, which do not
+establish replicated memory savings. This optimization strengthens a CPU
+comparison on the measured cohort. It does not establish systems novelty
+or heterogeneous benefit.
+
+The complete workload, offered-load and resource
 matrix remains necessary to answer RQ3. RQ3 remains unanswered until
 branching is compared with the strongest competent services over the complete
 workload and resource matrix.

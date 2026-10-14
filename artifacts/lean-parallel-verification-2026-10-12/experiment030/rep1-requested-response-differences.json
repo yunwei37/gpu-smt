@@ -1,0 +1,182 @@
+[
+  {
+    "path": "response.messages[22].data",
+    "a": "Try this: refine Hyperreal.IsSt.le (fun δ => ?m.10882 δ) ?hsy ?hxy",
+    "b": "Try this: refine Hyperreal.IsSt.le (fun δ => ?m.10788 δ) ?hsy ?hxy"
+  },
+  {
+    "path": "response.messages[55].data",
+    "a": "Try this: refine le_imp_le_of_lt_imp_lt (fun a => ?m.37860 a) ?h",
+    "b": "Try this: refine le_imp_le_of_lt_imp_lt (fun a => ?m.37766 a) ?h"
+  },
+  {
+    "path": "response.messages[110].data",
+    "a": "Try this: refine StrictMono.maximal_of_maximal_image (fun ⦃a⦄ => ?m.56523) ?hmax ((∑ i : Fin n, a i * b i) ^ 2)",
+    "b": "Try this: refine StrictMono.maximal_of_maximal_image (fun ⦃a⦄ => ?m.56429) ?hmax ((∑ i : Fin n, a i * b i) ^ 2)"
+  },
+  {
+    "path": "response.messages[111].data",
+    "a": "Try this: refine StrictMono.minimal_of_minimal_image (fun ⦃a⦄ => ?m.58463) ?hmin\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)",
+    "b": "Try this: refine StrictMono.minimal_of_minimal_image (fun ⦃a⦄ => ?m.58369) ?hmin\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)"
+  },
+  {
+    "path": "response.messages[112].data",
+    "a": "Try this: refine StrictAnti.maximal_of_minimal_image (fun ⦃a⦄ => ?m.60152) ?hmin ((∑ i : Fin n, a i * b i) ^ 2)",
+    "b": "Try this: refine StrictAnti.maximal_of_minimal_image (fun ⦃a⦄ => ?m.60058) ?hmin ((∑ i : Fin n, a i * b i) ^ 2)"
+  },
+  {
+    "path": "response.messages[113].data",
+    "a": "Try this: refine (StrictMono.le_iff_le fun ⦃a⦄ => ?m.61984).mp ?a✝",
+    "b": "Try this: refine (StrictMono.le_iff_le fun ⦃a⦄ => ?m.61890).mp ?a✝"
+  },
+  {
+    "path": "response.messages[114].data",
+    "a": "Try this: refine (StrictAntiOn.le_iff_le (fun ⦃a⦄ => ?m.63948) ?ha ?hb).mp ?a✝",
+    "b": "Try this: refine (StrictAntiOn.le_iff_le (fun ⦃a⦄ => ?m.63854) ?ha ?hb).mp ?a✝"
+  },
+  {
+    "path": "response.messages[115].data",
+    "a": "Try this: refine (StrictMonoOn.le_iff_le (fun ⦃a⦄ => ?m.66300) ?ha ?hb).mp ?a✝",
+    "b": "Try this: refine (StrictMonoOn.le_iff_le (fun ⦃a⦄ => ?m.66206) ?ha ?hb).mp ?a✝"
+  },
+  {
+    "path": "response.messages[116].data",
+    "a": "Try this: refine StrictAnti.minimal_of_maximal_image (fun ⦃a⦄ => ?m.68643) ?hmax\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)",
+    "b": "Try this: refine StrictAnti.minimal_of_maximal_image (fun ⦃a⦄ => ?m.68549) ?hmax\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)"
+  },
+  {
+    "path": "response.messages[117].data",
+    "a": "Try this: refine (StrictAnti.le_iff_le fun ⦃a⦄ => ?m.70475).mp ?a✝",
+    "b": "Try this: refine (StrictAnti.le_iff_le fun ⦃a⦄ => ?m.70381).mp ?a✝"
+  },
+  {
+    "path": "response.messages[131].data",
+    "a": "Try this: refine StrictMono.minimal_preimage_bot (fun ⦃a⦄ => ?m.75385) ?h_bot\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)",
+    "b": "Try this: refine StrictMono.minimal_preimage_bot (fun ⦃a⦄ => ?m.75291) ?h_bot\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i)"
+  },
+  {
+    "path": "response.messages[132].data",
+    "a": "Try this: refine StrictMono.maximal_preimage_top (fun ⦃a⦄ => ?m.79432) ?h_top ((∑ i : Fin n, a i * b i) ^ 2)",
+    "b": "Try this: refine StrictMono.maximal_preimage_top (fun ⦃a⦄ => ?m.79338) ?h_top ((∑ i : Fin n, a i * b i) ^ 2)"
+  },
+  {
+    "path": "response.messages[175].data",
+    "a": "Try this: refine DirectedOn.is_top_of_is_max (fun x => ?m.90783 x) ?hm ?hmax ((∑ i : Fin n, a i * b i) ^ 2) ?a✝",
+    "b": "Try this: refine DirectedOn.is_top_of_is_max (fun x => ?m.90689 x) ?hm ?hmax ((∑ i : Fin n, a i * b i) ^ 2) ?a✝"
+  },
+  {
+    "path": "response.messages[176].data",
+    "a": "Try this: refine DirectedOn.is_bot_of_is_min (fun x => ?m.91133 x) ?hm ?hmin\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i) ?a✝",
+    "b": "Try this: refine DirectedOn.is_bot_of_is_min (fun x => ?m.91039 x) ?hm ?hmin\n  ((∑ i : Fin n, ↑↑i * a i ^ 2) * ∑ i : Fin n, b i ^ 2 / ↑↑i) ?a✝"
+  },
+  {
+    "path": "response.messages[184].data",
+    "a": "Try this: refine lowerBounds_le_upperBounds (fun ⦃a⦄ => ?m.91932) ?hb ?a✝",
+    "b": "Try this: refine lowerBounds_le_upperBounds (fun ⦃a⦄ => ?m.91838) ?hb ?a✝"
+  },
+  {
+    "path": "response.messages[199].data",
+    "a": "Try this: refine (AddLECancellable.add_le_add_iff_left fun ⦃b⦄ => ?m.95628).mp ?a✝",
+    "b": "Try this: refine (AddLECancellable.add_le_add_iff_left fun ⦃b⦄ => ?m.95534).mp ?a✝"
+  },
+  {
+    "path": "response.messages[214].data",
+    "a": "Try this: refine (AddLECancellable.add_le_add_iff_right fun ⦃b⦄ => ?m.98175).mp ?a✝",
+    "b": "Try this: refine (AddLECancellable.add_le_add_iff_right fun ⦃b⦄ => ?m.98081).mp ?a✝"
+  },
+  {
+    "path": "response.messages[282].data",
+    "a": "Try this: refine le_of_nsmul_le_nsmul_right (fun a => ?m.109258 a) ?a✝",
+    "b": "Try this: refine le_of_nsmul_le_nsmul_right (fun a => ?m.109164 a) ?a✝"
+  },
+  {
+    "path": "response.messages[284].data",
+    "a": "Try this: refine le_of_nsmul_le_nsmul (fun a => ?m.109505 a) ?a✝",
+    "b": "Try this: refine le_of_nsmul_le_nsmul (fun a => ?m.109411 a) ?a✝"
+  },
+  {
+    "path": "response.messages[308].data",
+    "a": "Try this: refine GaloisConnection.le_u (fun a => ?m.114423 a) ?a✝",
+    "b": "Try this: refine GaloisConnection.le_u (fun a => ?m.114329 a) ?a✝"
+  },
+  {
+    "path": "response.messages[310].data",
+    "a": "Try this: refine GaloisConnection.l_le (fun a => ?m.116890 a) ?a✝",
+    "b": "Try this: refine GaloisConnection.l_le (fun a => ?m.116796 a) ?a✝"
+  },
+  {
+    "path": "response.messages[312].data",
+    "a": "Try this: refine (GaloisConnection.le_iff_le fun a => ?m.119568 a).mp ?a✝",
+    "b": "Try this: refine (GaloisConnection.le_iff_le fun a => ?m.119474 a).mp ?a✝"
+  },
+  {
+    "path": "response.messages[313].data",
+    "a": "Try this: refine (GaloisConnection.le_iff_le fun a => ?m.119766 a).mpr ?a✝",
+    "b": "Try this: refine (GaloisConnection.le_iff_le fun a => ?m.119672 a).mpr ?a✝"
+  },
+  {
+    "path": "response.messages[384].data",
+    "a": "Try this: refine Mathlib.Tactic.IntervalCases.of_not_lt_left (fun a => ?m.147814 a) ?eq",
+    "b": "Try this: refine Mathlib.Tactic.IntervalCases.of_not_lt_left (fun a => ?m.147720 a) ?eq"
+  },
+  {
+    "path": "response.messages[386].data",
+    "a": "Try this: refine Mathlib.Tactic.IntervalCases.le_of_not_le_of_le (fun a => ?m.147985 a) ?h2",
+    "b": "Try this: refine Mathlib.Tactic.IntervalCases.le_of_not_le_of_le (fun a => ?m.147891 a) ?h2"
+  },
+  {
+    "path": "response.messages[388].data",
+    "a": "Try this: refine Mathlib.Tactic.IntervalCases.of_not_lt_right (fun a => ?m.148156 a) ?eq",
+    "b": "Try this: refine Mathlib.Tactic.IntervalCases.of_not_lt_right (fun a => ?m.148062 a) ?eq"
+  },
+  {
+    "path": "response.messages[402].data",
+    "a": "Try this: refine ge_of_tendsto_of_frequently (fun ⦃U⦄ => ?m.150391) ?h",
+    "b": "Try this: refine ge_of_tendsto_of_frequently (fun ⦃U⦄ => ?m.150297) ?h"
+  },
+  {
+    "path": "response.messages[403].data",
+    "a": "Try this: refine le_of_tendsto_of_frequently (fun ⦃U⦄ => ?m.150682) ?h",
+    "b": "Try this: refine le_of_tendsto_of_frequently (fun ⦃U⦄ => ?m.150588) ?h"
+  },
+  {
+    "path": "response.messages[409].data",
+    "a": "Try this: refine hasSum_mono (fun ⦃U⦄ => ?m.153262) ?hg ?h",
+    "b": "Try this: refine hasSum_mono (fun ⦃U⦄ => ?m.153168) ?hg ?h"
+  },
+  {
+    "path": "response.messages[410].data",
+    "a": "Try this: refine le_hasSum_of_le_sum (fun ⦃U⦄ => ?m.153469) ?h",
+    "b": "Try this: refine le_hasSum_of_le_sum (fun ⦃U⦄ => ?m.153375) ?h"
+  },
+  {
+    "path": "response.messages[411].data",
+    "a": "Try this: refine hasSum_le_of_sum_le (fun ⦃U⦄ => ?m.153740) ?h",
+    "b": "Try this: refine hasSum_le_of_sum_le (fun ⦃U⦄ => ?m.153646) ?h"
+  },
+  {
+    "path": "response.messages[413].data",
+    "a": "Try this: refine hasSum_le_inj ?e (fun ⦃a₁⦄ => ?m.154766) ?hs ?h ?hf ?hg",
+    "b": "Try this: refine hasSum_le_inj ?e (fun ⦃a₁⦄ => ?m.154672) ?hs ?h ?hf ?hg"
+  },
+  {
+    "path": "response.messages[414].data",
+    "a": "Try this: refine hasSum_le (fun i => ?m.155243 i) ?hf ?hg",
+    "b": "Try this: refine hasSum_le (fun i => ?m.155149 i) ?hf ?hg"
+  },
+  {
+    "path": "response.messages[440].data",
+    "a": "Try this: refine Finset.Colex.forall_le_mono (fun ⦃a⦄ => ?m.167155) ?ht ((∑ i : Fin n, a i * b i) ^ 2) ?a✝",
+    "b": "Try this: refine Finset.Colex.forall_le_mono (fun ⦃a⦄ => ?m.167061) ?ht ((∑ i : Fin n, a i * b i) ^ 2) ?a✝"
+  },
+  {
+    "path": "response.messages[442].data",
+    "a": "Try this: refine (LeftOrdContinuous.le_iff (fun ⦃s⦄ => ?m.170459) ?h).mp ?a✝",
+    "b": "Try this: refine (LeftOrdContinuous.le_iff (fun ⦃s⦄ => ?m.170365) ?h).mp ?a✝"
+  },
+  {
+    "path": "response.messages[443].data",
+    "a": "Try this: refine (RightOrdContinuous.le_iff (fun ⦃s⦄ => ?m.171168) ?h).mp ?a✝",
+    "b": "Try this: refine (RightOrdContinuous.le_iff (fun ⦃s⦄ => ?m.171074) ?h).mp ?a✝"
+  }
+]

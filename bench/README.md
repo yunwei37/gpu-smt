@@ -1,6 +1,22 @@
 # Benchmarks
 
-The benchmark layer is deliberately hypothesis-driven. Its first job is to determine whether cross-job state reuse exists in real verification workloads before implementing a large runtime or GPU backend.
+Lean is the current priority. The [evaluation authority](../docs/evaluation.md)
+records complete native verification comparisons, strong warm-state baselines,
+RTX5090 results and incomplete cohorts. Public ProofNet test candidates and
+miniF2F attempts are real workloads; historical synthetic fixtures and resident
+metadata tests below are supporting controls, not whole verification speedups.
+
+The current [E030 plan](../artifacts/lean-parallel-verification-2026-10-12/experiment030/plan.md)
+and acquisition compare native response extraction against the same-version
+warm pool over all5952retained ProofNet attempts. Repeated complete clocks,
+requested responses and separate resource/cost profiles decide its value.
+[Build commands and source](../artifacts/lean-parallel-verification-2026-10-12/experiment030/build.py)
+and [capture](../artifacts/lean-parallel-verification-2026-10-12/experiment030/run.py)
+are retained in the owning Workspace. [Complete results](../artifacts/lean-parallel-verification-2026-10-12/experiment030/result-review.md)
+show a small same-version CPU improvement. This experiment is not an OSDI
+contribution or a completed current-release comparison.
+
+The remaining sections document earlier benchmark entrypoints and their scope.
 
 ## 1. Synthetic prefix benchmark through the Z3 CLI
 
@@ -117,14 +133,10 @@ python3 bench/run_verus_trace.py ... --project IR
 
 ## Real workloads after Verus
 
-Priority order:
-
-1. Verus / VeruSAGE-Bench;
-2. Dafny / Boogie;
-3. Viper-family frontends;
-4. Kani / CBMC;
-5. Lean/Mathlib is active in parallel under the expanded user scope;
-6. SMT-COMP as an unrelated-query control.
+Lean/Mathlib is first under the current user instruction. Verus / VeruSAGE-Bench
+remains the systems-verification family in the full research scope; unrelated
+SMT-COMP queries are a control. Dafny/Boogie, Viper and Kani/CBMC are possible
+coverage extensions, not completed measured baselines.
 
 The first paper-quality experiment is **not** GPU performance. It is a workload study answering whether independent real verification jobs expose enough repeated context to justify cross-job state reuse.
 

@@ -1,0 +1,1 @@
+Root direct plan review: supporting RQ3 complete-service uncertainty admitted. Same original corpus/native outputs and strongest warm comparator; classification-only speed is insufficient. Full eight-cell matrix and source/response cost profiles required. User explicitly prohibits delegation; this review is not independent.

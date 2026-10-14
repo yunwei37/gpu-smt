@@ -10,53 +10,64 @@ The current research hypothesis is:
 
 ## Current status
 
-The user expanded this project on 2026-10-07 into a complete autonomous research
-and paper effort targeting OSDI-level quality. The sole current paper is
-[docs/paper/main.tex](docs/paper/main.tex), built with `make -C docs/paper`.
-The project is in BOOTSTRAP: its four RQs remain unanswered by final evidence
-and its scientific contract is not frozen. The existing outer hourly heartbeat
-resumes the same owning session; no second scheduler or Workspace is created.
-See [the research frontier](docs/idea-story.md) and
-[step 0003](docs/tmp/bootstrap/step-0003-20261009T132427+0000/step-report.md).
-Legacy `paper/` sources and the completed initial checkpoint remain preserved.
+This is an active Lean-first research prototype targeting OSDI-level quality.
+The project remains in BOOTSTRAP with four open RQs and an unfrozen scientific
+contract. The current paper is [docs/paper/main.tex](docs/paper/main.tex), built
+with `make -C docs/paper`. Research iterates directly on `main`; publication
+occurs at complete research-step boundaries. See the [evaluation authority](docs/evaluation.md) for the current step,
+[research narrative](docs/idea-story.md) and [evaluation frontier](docs/evaluation.md).
 
-Milestone M0 is implemented on the `research/verification-serving` branch:
+The main formal workloads contain all captured ProofNet test candidates
+(186 tasks × 32 = 5952 attempts) and miniF2F test candidates
+(244 tasks × 32 = 7808 attempts), including rejected, incomplete and operational
+outcomes. Statement-only tasks and supporting Mathlib subsets do not replace
+complete candidate verification. Lean4.9 and Lean4.21 evidence remain separate.
 
-- research plan and prior-art map;
-- streaming Z3 trace capture shim;
-- SMT-LIB trace/context analyzer;
-- synthetic cold-vs-incremental Z3 benchmark;
-- CI smoke tests with stock Z3.
+The latest completed source-native GPU comparison is **native6 on ProofNet**:
+all sixteen planned conditions completed, including three primary rotations
+against competent warm/snapshot CPU paths and separate resource profiles.
+The GPU method is slower than the fastest native CPU path in all three primary
+blocks. See [complete clocks, resource observations and scope](docs/evaluation.md#rq4-complete-native6-proofnet-comparison).
+Actual device work includes readback and enclosing native verification; this is
+not full GPU Lean kernel checking.
 
-The current branch has real VeruSAGE traces, complete Mathlib proof/state-reuse
-measurements, and an executed RTX 5090 expression-DAG primitive. The VeruSAGE
-prefix pool changes `unsat`/`unknown` outcomes; it is a negative fidelity result,
-not a serving speedup. Mathlib replay uses the established community REPL. The
-GPU result covers metadata computation, not full proof checking. The new
-[complete native branching discriminator](artifacts/native-branch-2026-10-07/README.md)
-rejects its library adapter against the original executable on five other
-query outcomes, even though all earlier31 pooling differences recover.
+The miniF2F acquisition failed in a host OOM before its GPU conditions ran.
+The failed/partial inputs, outputs and runtime evidence are preserved.
+[MiniF2F status and remaining coverage](docs/evaluation.md#rq4-complete-minif2f-continuation)
+distinguish this failure from a performance result. No blind rerun or omitted
+candidate turns it into a completed benchmark.
 
-The new [normal-check Mathlib profile](artifacts/lean-module-profile-2026-10-08/README.md)
-completes six full source modules, paired profiled/unprofiled paths and three
-repetitions. It locates costly frontend/meta work at that boundary; profiler
-category shares are not CPU fractions or a GPU speedup ceiling. The approved
-real generated-candidate experiment still awaits the finite RTX 5090 Job;
-no generated output or runtime result is yet recorded.
+[Complete E030 acquisition](artifacts/lean-parallel-verification-2026-10-12/experiment030/plan.md)
+is implemented and run directly by the desktop root. It measures complete native
+response extraction after warm preparation; it is a CPU comparison. All8conditions/47616outcomes now finish; the three complete primary pairs
+show a descriptive mean1.63percent wall reduction. The [complete review](artifacts/lean-parallel-verification-2026-10-12/experiment030/result-review.md)
+retains uncertainty, native response differences and censored profile records.
+This supporting CPU optimization does not establish the larger systems claim.
 
-The [native constructor comparison](artifacts/native-frontend-2026-10-09/README.md)
-completes 156 original streams, four conditions and three repetitions. The lazy
-command frontend matches the same-source stock CLI's non-statistical responses;
-early manager creation changes six checks and requested responses in every pass.
-Release version metadata still differs explicitly. This is local causal evidence
-for interface construction, without a branching-safety or acceleration claim.
-Raw native outcomes and failed model readouts remain reproducible.
+Earlier implementation versions remain historical evidence:
+[preparation-retention figures](artifacts/lean-gpu-checking-2026-10-13/experiment021/performance-figures-20261013T1555/README.md),
+[native4 GPU figures](artifacts/lean-gpu-checking-2026-10-13/experiment022/figures-proofnet-complete-20261013T2245/README.md),
+and [offered-load primary figures](artifacts/lean-service-lifecycle-2026-10-13/experiment023/figures-three-primary-20261013T2359/README.md).
+Their complete cells do not imply all promised matrices finished. Native4,
+native6 and component-only closure/metadata timings must not be combined into
+a hardware-only speedup claim. All original failures and partials remain.
 
-The initial investigation/workspace/GPU-benchmark request is complete, including
-the temporary RTX 5090 Job cleanup receipt. Full GPU Lean checking and a novel
-production SMT runtime remain undemonstrated. [Reproduction after container
-recovery](docs/reproduce-checkpoint.md) documents surviving inputs and rebuilding
-lost temporary dependencies, with an evidence-grounded next research direction.
+The project uses shared RTX5090 resources, which provide neither a fixed
+half-card nor performance isolation. No complete GPU Lean kernel or
+end-to-end GPU benefit is established.
+
+The full goal includes strong warm/cache/snapshot CPU competitors, equal-resource
+end-to-end latency, throughput and memory, necessary basic correctness and
+isolation, useful heterogeneous verification, realistic service traffic, SMT,
+source-grounded novelty and a complete paper. Fork/COW, worker pools, caches,
+flat arrays and metadata primitives are existing mechanisms rather than novelty
+claims. Passing tests or review does not establish OSDI acceptance.
+
+The initial SMT prototype remains available below: streaming Z3 trace capture,
+SMT-LIB context analysis and a synthetic cold/incremental benchmark. Retained
+real VeruSAGE/AutoVerus traces, native constructor qualification, prior GPU
+metadata experiments and recovery records remain linked from the research
+frontier and [reproduction guide](docs/reproduce-checkpoint.md).
 
 ## Quick start
 

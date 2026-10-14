@@ -1,0 +1,452 @@
+{
+  "completed_cells": 8,
+  "planned_cells": 8,
+  "complete": true,
+  "pairs": [
+    {
+      "rep": 0,
+      "warm_seconds": 303.124060412,
+      "gated_seconds": 297.519942761,
+      "gated_slowdown_percent": -1.8487868113745365,
+      "relative_wall_reduction_percent": 1.8487868113745316,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        257,
+        258,
+        265,
+        267,
+        375,
+        376,
+        1188,
+        1189,
+        1195,
+        1198,
+        2039,
+        2040,
+        2251,
+        2255,
+        2261,
+        2262,
+        2276,
+        2278,
+        3078,
+        3083,
+        3085,
+        3087,
+        4504,
+        4505,
+        5091,
+        5092,
+        5175,
+        5176,
+        5442,
+        5451,
+        5536,
+        5548,
+        5761,
+        5764,
+        5765,
+        5768,
+        5798,
+        5800,
+        5943,
+        5945
+      ],
+      "requested_response_difference_indices": [],
+      "fallback_count": 0
+    },
+    {
+      "rep": 1,
+      "warm_seconds": 308.702620185,
+      "gated_seconds": 301.563475098,
+      "gated_slowdown_percent": -2.3126286011831088,
+      "relative_wall_reduction_percent": 2.31262860118311,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        257,
+        259,
+        268,
+        275,
+        375,
+        385,
+        1188,
+        1189,
+        1968,
+        1971,
+        2039,
+        2040,
+        2211,
+        2212,
+        2260,
+        2268,
+        2928,
+        3078,
+        3081,
+        3082,
+        3085,
+        4504,
+        4505,
+        5090,
+        5091,
+        5152,
+        5153,
+        5538,
+        5547,
+        5764,
+        5765,
+        5800,
+        5805,
+        5935,
+        5943
+      ],
+      "requested_response_difference_indices": [
+        2928
+      ],
+      "fallback_count": 0
+    },
+    {
+      "rep": 2,
+      "warm_seconds": 301.25231858,
+      "gated_seconds": 299.071193826,
+      "gated_slowdown_percent": -0.7240192421691827,
+      "relative_wall_reduction_percent": 0.7240192421691785,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        257,
+        258,
+        267,
+        268,
+        375,
+        377,
+        1195,
+        1196,
+        1968,
+        1971,
+        1972,
+        1973,
+        2036,
+        2040,
+        2262,
+        2263,
+        2664,
+        2665,
+        2668,
+        2669,
+        3082,
+        3085,
+        4504,
+        4505,
+        5175,
+        5177,
+        5442,
+        5444,
+        5545,
+        5548,
+        5765,
+        5767
+      ],
+      "requested_response_difference_indices": [],
+      "fallback_count": 0
+    }
+  ],
+  "cells": {
+    "rep2-gated": {
+      "label": "rep2-gated",
+      "terminal": {
+        "method": "gated",
+        "profile": false,
+        "begin_ns": 411348664426965,
+        "end_ns": 411647735620791,
+        "whole_seconds": 299.071193826,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          5.66162109375,
+          7.04541015625,
+          7.068359375
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.0368284,
+        "p95": 0.723373754,
+        "p99": 2.95627289,
+        "max": 46.987110604
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep0-warm": {
+      "label": "rep0-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 409833850507989,
+        "end_ns": 410136974568401,
+        "whole_seconds": 303.124060412,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          5.490234375,
+          5.5908203125,
+          4.8193359375
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.0379171545,
+        "p95": 0.721256275,
+        "p99": 2.977542889,
+        "max": 47.272275596
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep1-gated": {
+      "label": "rep1-gated",
+      "terminal": {
+        "method": "gated",
+        "profile": false,
+        "begin_ns": 410435557885620,
+        "end_ns": 410737121360718,
+        "whole_seconds": 301.563475098,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          12.83642578125,
+          7.34765625,
+          5.728515625
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.036598883,
+        "p95": 0.732213014,
+        "p99": 2.979645598,
+        "max": 48.48401378
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep1-warm": {
+      "label": "rep1-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 410737647712061,
+        "end_ns": 411046350332246,
+        "whole_seconds": 308.702620185,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          6.81396484375,
+          8.59033203125,
+          6.953125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.038546815,
+        "p95": 0.744340816,
+        "p99": 3.02614241,
+        "max": 47.804564364
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "profile-gated": {
+      "label": "profile-gated",
+      "terminal": {
+        "method": "gated",
+        "profile": true,
+        "begin_ns": 411648265098239,
+        "end_ns": 411973898883574,
+        "whole_seconds": 325.633785335,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          8.9111328125,
+          9.99169921875,
+          8.564453125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.0702699685,
+        "p95": 0.879034097,
+        "p99": 3.065939594,
+        "max": 48.042299774
+      },
+      "fallback_latency_reconstruction": [],
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 411648266231479,
+        "end_monotonic_ns": 411973748574771,
+        "sample_interval_ns": 1000000000,
+        "samples": 315,
+        "incomplete_samples": 2,
+        "sampled_peak_total_pss_kib": 7728536,
+        "sampled_peak_total_private_kib": 5208724,
+        "whole_process_tree_cpu_seconds": 1228.4703500000003,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    },
+    "rep2-warm": {
+      "label": "rep2-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 411046880623780,
+        "end_ns": 411348132942360,
+        "whole_seconds": 301.25231858,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          5.89453125,
+          7.43798828125,
+          6.9892578125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.0377048915,
+        "p95": 0.724100727,
+        "p99": 2.980662568,
+        "max": 47.267241828
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep0-gated": {
+      "label": "rep0-gated",
+      "terminal": {
+        "method": "gated",
+        "profile": false,
+        "begin_ns": 410137511016903,
+        "end_ns": 410435030959664,
+        "whole_seconds": 297.519942761,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          5.26416015625,
+          5.251953125,
+          4.8740234375
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.036568223999999996,
+        "p95": 0.719546247,
+        "p99": 2.957020214,
+        "max": 47.207239087
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "profile-warm": {
+      "label": "profile-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": true,
+        "begin_ns": 411974495600069,
+        "end_ns": 412304834727858,
+        "whole_seconds": 330.339127789,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, native worker failure/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          14.12548828125,
+          12.21630859375,
+          9.8408203125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.07471976450000001,
+        "p95": 0.886697929,
+        "p99": 3.114744115,
+        "max": 50.337452146
+      },
+      "fallback_latency_reconstruction": [],
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 411974495843385,
+        "end_monotonic_ns": 412304686107021,
+        "sample_interval_ns": 1000000000,
+        "samples": 320,
+        "incomplete_samples": 1,
+        "sampled_peak_total_pss_kib": 7860678,
+        "sampled_peak_total_private_kib": 5256784,
+        "whole_process_tree_cpu_seconds": 1240.3448319999989,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    }
+  },
+  "scope": "complete native warm pool verification with candidate sorry-header gate; native response differences retained, not normalized",
+  "latency_note": "fallback rows reconstruct from original gated admission when present; whole clocks already include discarded work and fallback"
+}

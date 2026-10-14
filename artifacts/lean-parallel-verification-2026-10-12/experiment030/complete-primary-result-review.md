@@ -1,0 +1,5 @@
+# E030 complete primary results
+
+Three whole pairs return all5952original inputs per method. Relative reductions1.848787%,2.312629%,0.724019%; descriptive mean1.628478%, observed range0.724019–2.312629%, not a confidence interval. Basic outcomes match every input in allthreepairs. Requestedresponses match in pairs0/2; pair1source2928has36internal-metavariable-number-only diagnostic differences, retained unnormalized. Auxiliary witness/snapshot differences remain. No full artifact-byte/fault/cancellation fidelity or current-release superiority is inferred.
+
+Same primary implementation/CPU0–3/width4/native defaults and no timed instrumentation changes throughout. All6primarycells/35712outcomes complete; two full profiles are still running. Supporting CPU optimization may strengthen the measured native path but is not GPU acceleration or systems novelty. Whole reduction causality/costcoverage awaits profile interpretation; full WRITE/REVIEW/step publication awaits all8conditions. Root self-review, not independent audit. All4RQs remain open.
