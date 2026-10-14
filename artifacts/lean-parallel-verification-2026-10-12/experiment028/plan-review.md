@@ -1,0 +1,3 @@
+# Direct native-cache plan check
+
+Root verified original source0reject/257complete, actual hits/puts and intended warm-pool/fourworker readiness on the eight original qualification sources, including incomplete/operational cases. All basic outcomes match the complete native reference. Earlier plan text called this32source readiness; actual selected artifact has8and is recorded as8. The complete5952matrix is unchanged. No semantic oracle or threshold changes rescue a failing result. This is a CPUbaseline candidate with conservative native-state/result guards and scoped lifetime, not novelty/GPUacceleration. Hashes are provenance, not startup/download gates. No independent reviewer is claimed under human no-delegation.

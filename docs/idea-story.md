@@ -27,14 +27,80 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-Step0006 closes its admitted process-branch resource protocol after three failed qualification attempts, with0/18mainmatrix cells. Source-native full snapshot logical reuse now returns four real rejected edits matching stock diagnostics, but stopped runtime still has4/3TIDs and branches remain refused. No speedup, safety certificate or causal ownership assignment follows; allraw/partial/failures retained. The next empirical discriminator must measure consequential complete native preparation against strong logical reuse or introduce a genuinely new supported boundary. This is implementation routing within the unchanged ambitious thesis/fourRQ, not a narrative replacement or final evidence. [Active step0006](tmp/bootstrap/step-0006-20261009T222500+0000/step-report.md) owns review/writing/publication frontier.
+BOOTSTRAP step0007 REVIEW_GATE after complete E028 and serial root WRITE, scientific contract unfrozen and all four
+RQs open. Initial Narrative and accepted evolution below remain intact.
+The desktop root implements directly under the human request; the original
+native author session is retained/stopped, with no delegated new author.
 
-Step0005 adds a complete new whole-file campaign over3566 released AutoVerus saved attempts, including failures:21396 native invocations across direct/observed paths and three repeats. Its independent result review confirms10647 equal/0different/51unknown feedback pairs under the fixed oracle, with8370 complete first-flush observations. Live-task preparation CPU median15.314ms and PSS36955KiB are scoped observations, not resource savings or CPU upper bounds. Exact full-flush recurrence is zero under this replay's unique filenames;8367prefixes contain those namespaces, so absence of earlier shared preparation is not established. JSONsuccess differs from exit-based acceptance and retained parse failures remain unknown. This bounds a literal SMT sharing path without replacing the thesis. The next high-value uncertainty is consequential real Lean preparation and complete-verification cost against established native state reuse, with candidate isolation and matched resources retained. LeanPolish's pinned native source and released failed menu attempts supply a new conditional workload lead and strong saved-state/command-checkpoint/persistent-import competitor; menu goal closure alone does not check each enclosing declaration. Full-source/native-finalization qualification and exact toolchain/data correspondence must be resolved before a service claim. [Step0005](tmp/bootstrap/step-0005-20261009T194100+0000/step-report.md) has completed its full12round WRITE loop and independent REVIEW; no final RQ answer or contract freeze follows these supporting results.
+Native6 complete16ProofNet/95232source outcomes preserves all paired basic
+results, but GPU loses1.74%,3.64%,1.58% to fastest nativeCPU (mean2.32%).
+The full16miniF2F run failed in its native warm baseline: active source663
+allocated about95GiB and host global OOM killed the benchmark before GPU cells.
+The former Workspace Pod was then replaced by the same ReplicaSet/PVC; its
+deletion actor is unknown. Raw/partial/failed data and all original cohort scope
+are retained. Former CPU captures are interrupted, not active; E018 resumed after restoring its dependency alias, then root closed further
+repetitions of that invalid/slower version after complete first-primary review. No memory cap,
+source exclusion, blind mini retry or delegated author has been introduced.
 
-BOOTSTRAP step 0001 is complete, including its independent outer audit. Step0002 is complete with supporting normal-check profiling, full12round writing and independent outer audit. Step0003 completes its full experiment/writing/independent-audit cycle around a supporting CLI-owned construction-order comparison: lazy matches same-source native responses, while eager changes six checks and additional requested responses; release version metadata remains explicitly different. This supplies a matched-source fresh candidate, not branch safety or service novelty. Step0004 now completes the restricted native prepared-context boundary: complete responses match same-source original execution across split EOF, sequential forward/reverse siblings and actual post-check-progress disposal. This admits that concrete boundary for useful-preparation/equal-resource tests, not fullRQ2, concurrent safety or service novelty. The next decisive boundary is actual useful preparation and resource value against strong warm/native reuse; native model→verification capture resumes unchanged on actual GPU outputs. The RQ1 real-candidate experiment remains incomplete at REAL PREFLIGHT prerequisites after approved source/native-root cost planning; released stage logs are not complete native-call traffic. Exact Lean4.9/Mathlib/REPL build and incomplete setup engagement completed. Eight constructed native controls preserve strict response identity after a declared stdout-buffering repair; these are dependency checks, not generated streams or scientific cost results. Actual model completions require the requested normally assignedRTX5090; the submitted finite Job is last reportedPending/Insufficient GPU at2026-10-09T18:23Z; no allocation/runtime receipt exists yet. Mandatory literature grounding is complete and finds high overlap for preparation plus independent branches. Existing immutable logical roots, stock Lean incremental declaration-header/tactic reuse (in-memory and full disk snapshots), Snapshot-DSP and bounded Kimina/LeanTree services are direct competitors. Exact current stock source proves ordinary original-declaration finalization after changed-body reuse; old4.9 REPL goal closure alone cannot establish it. This clarifies the already accepted native-reuse family, without adopting a new thesis or claiming a numerical benefit. The completed native behavior discriminator rejects the stock-library command adapter against the original executable: five new differences persist in fresh, split and branch paths. No branch-induced difference is observed beyond the fresh-driver failure; original-interface branch qualification remains inconclusive. A complete36cell normal-check six-module profile is now independently reviewed: AddDecl is small among observed accumulated scopes, while frontend/meta work dominates locally. This motivates source-grounded dynamic synthesis/conversion profiling, not a universal GPU ceiling or an actual prepared-service result. The dynamic closure-graph GPU route remains a serious sibling. Scientific contract is not frozen; bare process branching is insufficient novelty.
+E026 complete native diagnostic5952source stream now matches all original basic
+outcomes. Common class/structure projection reports recur across distinct sources.
+Reused classified source deltas find most observed native WHNF-miss CPU has
+context flags. These are supporting selection evidence, not whole-time fractions,
+GPU eligibility or speedup. Current official dependency-aware instance caching
+is prior art and a necessary competing mechanism, not proposed novelty.
+
+E027 exact projection cost rejects per-operation projection offload as the next
+mechanism. E028 conservative closed-mode CPU cache completes all8cells and
+47616original outcomes. Its paired wall reductions7.39%,-0.06%,-1.03% do not
+establish stable acceleration; single-profile PSS differs0.85%, without replicated
+memory evidence. Current official WHNF already caches these eligible modes.
+The candidate is closed with code/raw retained. All12writing rounds are performed
+by root and compile to9pages; user forbids delegation, so self-review is explicit
+and no independent audit is claimed.
+
+Runtime11 first full paired block loses to strong native preparation/snapshot;
+the complete12ProofNet/12mini service matrix remains open. SMT E025 first
+stock/branch/logical trio preserves native artifacts but branch is24.8%slower
+thanstock and essentially tied with logical reuse; the full12condition matrix still requires recovery and completion.
+Complete externalCPU context22 now uses a charged native fallback for an
+unexportable prefix, all814original source outcomes matching stock; the original
+failed attempt and remaining192context-cell scope are preserved.
+
+These results bound current implementations, not the Initial Narrative or
+research ambition. Genericfork/cache/hostfiltering is prior art; no positive
+systems novelty, completeGPUkernel, cross-version tuning causality or venue
+acceptance follows. Full behavior/resource/load/scaling/placement/history/
+cancellation, both formal datasets, strongest competitors, closest work,
+paper/WRITE/reflection/independent audit/main completed-step publication remain.
+
+[Current complete evaluation](evaluation.md), [implementation](implementation.md)
+and [step report](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
+own current evidence. [Prior extended frontier](tmp/bootstrap/step-0007-20261010T000125+0000/archived-idea-frontier-before-direct-mini-20261014.md)
+preserves all historical intermediate details. No scientific-contract change
+or accepted idea-level change is made by this frontier clarification.
 
 ## Narrative evolution
 
 ### 2026-10-07: established native branching enters the competing position
 
 The Initial Narrative challenged warm mutable sessions/result caching as the competing answer. The immediately preceding narrative was that initial disposition. Root now rejects the exclusive mutable-session framing: Kimina reuses immutable roots with candidate pruning, stock Lean supports serialized incremental snapshots, and Snapshot-DSP shares prepared state across independent parallel tactics. The chosen comparison explicitly includes native logical/serialized branching and bounded warm/cache services. RQ meanings and Lean/SMT/GPU scope remain intact. This is stronger and more faithful than both initial and previous framing because acceleration must survive current native reuse, rather than a cold or accumulating worker strawman. Evidence: [complete literature report](tmp/bootstrap/step-0001-20261007T212930+0000/literature-20261007T213700+0000/report.md), primary code/papers in its canonical map, and root E5 disposition in the [step audit record](tmp/bootstrap/step-0001-20261007T212930+0000/step-report.md). No process-cloning novelty claim is accepted. Revisit before freeze if no behavior/resource advantage survives these strong alternatives or a safe native boundary fails. This evolution preserves the complete Initial Narrative above.
+
+Current E100 evidence bounds the current GPU fragment and finite-retirement gains; it does not alter the Initial Narrative or RQs. Complete CPU acquisition continues, useful GPU implementation and full service/SMT evidence remain open. No WRITE, final result review, outer audit, publication or acceptance has completed.
+
+
+E101 isolated explicit-continuation/closure implementation now has compiled CPU/PTX identities and complete373retained real-graph CPU error analysis:5330/14591exports,57wholegraphs,73/399exact matchednative locals. Oldeager analysis remains168exports/0wholegraphs/2locals. AllareCPU controls, notGPUperformance/coverage orfullkernelproof. PublicWHNF ispartial; nativeMeta bridge remains absent. OfficialCPU fallback/trustedmetadata remainrequired. Rootimplementsresidentactualdevicepathseparatelywithouttouchingfrozenacquisition orresettingE021'sthreeattempts. Mainformal/fullservice/SMT/fourRQ/paperambition remainsopen. [Implementation limits](../artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/report.md) and E101completecommands/raw preserveprovenance.
+
+
+E103 whole ProofNet WHNF diagnostic completed all5952 original sources, normalexit0/basic0differences,585.2256s. Raw and reconstruction are experiment015/whnf-full1/whole-counter-analysis.json. Four of five worker sessions have terminal counter dumps; the original operational worker is censored. Observed exclusiveCPU281.3783s in the cache-inadmissible/level-mvar union versus2.5654s cache-admissible cannot be whole CPU shares or GPU bounds: preparation inheritance, missing failed work, profiling overhead and duplicate rechecks remain. Native source proves cache-disabled modes can still be deterministic, so that union does not identify GPU support. E104/E105 classified repair completes all5952 original inputs/basic0differences,5951matched frontend intervals and one censored original5879, fresh whnf-classified-full1/reanalysis. Closed/no-custom scopes contribute97.5767s observed exclusiveCPU; the instances/cache-disabled/no-variable mask alone contributes82.9134s. This resolves the old overconservative cache-derived grouping, not actual GPU coverage or a whole CPU/GPU speedup bound. Native preparation inheritance, instrumentation/non-atomic deltas and failed/open work remain limits. A substantive native reduction/readback/provider integration is underway separately; its current compiled CPU/PTX controls are not device execution. Original queue41070/E015mini full5 child57992 on4–7, E01813440 and E0085450 remain protected. All8 E021 ProofNet CPU cells are complete; the original24 whole heterogeneous matrix remains incomplete. Native reduction/readback bridge implementation is isolated CPU control only until actual complete device integration and measurements.
+
+
+E107 implementation/evidence update changes noInitialNarrative/RQ/acceptedconcept. Native3's realGPUpreflight1 completes44basic-matched outcomes,16usefulnativeoperationreturns onincompleteProof2913, minizero. Wholeformal32conditioncomparison againststrongwarm/snapshot-cache isadmitted; all16ProofNetcellsrequested, mini16afterheavydependency, nofulldataorGPUgainyet. Complete373graphactualcomponentcost isnegative, retainedratherthanhidden. Offlineprimarymeans/resources are notofferedload/service evidence; theoriginalRQ3promise drivesactualstreaming-interfacequalification. Fullservice/SMT/fourRQ/novelty/paperambition stayslargerthannarrowbeta orCOWprimitive; fullwriting/auditsremainrequired.
+
+
+E110–E111 implementation/evidence update changes no Initial Narrative or accepted scientific concept. E022 full-cohort native3 CPU/GPU failures invalidate its performance comparisons; actual kernel-rejection exception ABI conflict is repaired in native4, all37 repair rows basic-match, old invalid/partial and valid stock data retained. Fresh matched final16 ProofNet request is ready. RQ3 implementation now separates real disposable candidate branches from unlimited warm sharing; full60-cell offered-load plan is independently reviewed and its first actual preflight started. No new performance/RQ/novelty conclusion follows. Complete main formal/service/SMT/GPU/writing/audits remain the target.
+
+
+E113 accepts AXLE as additional same-claim pressure for generic isolated preloaded Lean serving, with SOCK/SEUSS/native snapshots already covering reuse mechanisms. This changes the literature/evidence frontier, not the Initial Narrative, RQ meanings or ambitious full verification goal. Complete source-native resource/history/service evidence must establish any surviving distinction; the active E023 full capture and ready repaired E022 request have not yet done so. Current node and literature report preserve limitations and root disposition; no first-isolated-service or OSDI acceptance claim is introduced.
+
+
+E114 real complete5952-source service observations at one low-load pair show worse branch arrival latency than shared warm while whole time follows offered arrivals; strongest snapshot comparison and complete60-cell scope remain pending. Figures are staged raw-derived evidence, not final contribution/RQ results. This is an implementation/evidence boundary update, not a change to the Initial Narrative or full Lean/SMT/GPU service promise.

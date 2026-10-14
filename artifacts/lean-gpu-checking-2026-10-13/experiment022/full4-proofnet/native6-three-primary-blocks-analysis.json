@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-14T05:01:06.759154+00:00",
+  "pairs": [
+    {
+      "rep": 0,
+      "valid": true,
+      "whole_seconds": {
+        "warm": 310.47818003,
+        "snapshot-cache": 319.523948366,
+        "cpu": 319.50990404,
+        "gpu": 315.870382178
+      },
+      "fastest_cpu": "warm",
+      "gpu_slowdown_percent": 1.7367410964206798
+    },
+    {
+      "rep": 1,
+      "valid": true,
+      "whole_seconds": {
+        "warm": 311.544205422,
+        "snapshot-cache": 320.058833311,
+        "cpu": 326.852215703,
+        "gpu": 322.890819181
+      },
+      "fastest_cpu": "warm",
+      "gpu_slowdown_percent": 3.642055785833187
+    },
+    {
+      "rep": 2,
+      "valid": true,
+      "whole_seconds": {
+        "warm": 318.571668307,
+        "snapshot-cache": 331.711916454,
+        "cpu": 321.050247223,
+        "gpu": 323.607357837
+      },
+      "fastest_cpu": "warm",
+      "gpu_slowdown_percent": 1.5807085284015976
+    }
+  ],
+  "valid_complete_primary": true,
+  "mean_gpu_slowdown_percent": 2.3198351368851546,
+  "observed_range_percent": [
+    1.5807085284015976,
+    3.642055785833187
+  ],
+  "scope": "all12 primary ProofNet cells, no confidence interval/cross-version causal timing/GPUwholekernel novelty; mini and fullRQ not complete"
+}

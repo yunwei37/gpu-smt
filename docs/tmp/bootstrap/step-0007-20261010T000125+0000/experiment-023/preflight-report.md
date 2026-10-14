@@ -1,0 +1,9 @@
+# E023 real preflight1
+
+All six actual method/dataset cells and33 original outcomes completed with return0, complete sources and normal final EOF. Root recomputed native basic outcomes directly from saved ZIPs and compared with retained stock references: zero differences. ProofNet each5rejected/1complete/1incomplete/1original operational5879; mini each2complete/1rejected. These are qualification results, not whole performance.
+
+[Raw/recomputed analysis](/workspaces/repository/artifacts/lean-service-lifecycle-2026-10-13/experiment023/preflight1/root-analysis.json), [stock/lifecycle comparison](/workspaces/repository/artifacts/lean-service-lifecycle-2026-10-13/experiment023/preflight1/root-stock-lifecycle-comparison.json).
+
+Actual branch child starts8Proof/3mini versus unlimited warm2Proof/1mini, policies1/unlimited, responses observed before final graceful EOF, no final EOF failures. Success-cache hits0 in all6; repeated proof shape does not imply an exact header/code cache key. All candidate bodies/global indices/failure classes retained. Raw full-snapshot process events establish the stock native route. Readiness clocks remain in raw, with no acceleration interpretation.
+
+Root accepts necessary real source, stream and lifecycle readiness under independent plan-review1, then explicitly starts full-proofnet at19:21UTC/PID67766, rather than an automatic promotion. Frozen runner70f5be36678980de081b43f62b981630f1086f7f061f1d9b8f21bc6d0a4794df and runtime2 identities remain unchanged. Full30ProofNet+30mini cells/412800 outcomes and fresh independent result review are still required. E023review1/preflight1 are consumed once; unrelated previous experiment counters are unchanged. Full captured cells must also match the retained original stock source reference, since method-pair equality alone could conceal common failures.

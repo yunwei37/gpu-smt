@@ -1,0 +1,3 @@
+# Direct root plan check
+
+Exact-name tagging is borrowed read-only access to the pinned Expr/Name ABI before the existing native miss timer. No proof/solver operation is replaced. Original outcomes0rejected/257complete and native EOF were verified; named/contextual counters were emitted. Counter deltas and measurement overhead remain observational. All5952 original sources and one failed operational case must remain in the full run; no timed baseline/GPU speedup inference follows. Current official native caching is a competing mechanism. Human forbids delegation: this is self-review, not an independent audit.

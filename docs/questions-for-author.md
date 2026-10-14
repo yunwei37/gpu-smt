@@ -1,3 +1,15 @@
 # Questions for the author
 
-No research decision currently requires a human answer. The root chooses the mechanism, research questions and evaluation from primary sources and retained evidence. OSDI is the quality target, not an acceptance claim. RTX 5090 is the only authorized GPU family. The existing hourly outer heartbeat resumes this session; no second scheduler is needed.
+The root chooses research direction and implementation directly; no delegated
+author is running. All four RQs, Lean-first/RTX5090 and OSDI-quality target remain.
+
+## Temporary miniF2F native-memory budget
+Question sent2026-10-14: approve8GiB native-process budget uniformly for CPU/GPU
+methods in this temporary benchmark, record resource exhaustion on original
+inputs, rerun affected comparisons and restore unlimited default after testing?
+Why: actual native warm source663 allocated95GiB and triggered host global OOM.
+Default action: no cap or blind mini retry; preserve failed/partial evidence and
+continue native hotspot attribution on complete ProofNet.
+Authority: spark-manage AGENTS.md section2.3/8, exact new runtime cap approval.
+No answer yet; elapsed time is not authorization. Revisit when the human responds
+or a source-grounded repair avoids the allocation without changing the budget.

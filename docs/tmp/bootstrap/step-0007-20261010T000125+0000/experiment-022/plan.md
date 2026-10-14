@@ -1,0 +1,114 @@
+# Experiment022: complete native verification with dynamic GPU reduction
+
+## Research Question
+
+RQ4 exactly: **After preparation reuse, when does heterogeneous execution improve complete verification over the strongest measured CPU path?**
+
+The uncertainty is whether actual GPU beta/zeta reduction, returned as a native Expr during elaboration, improves complete verification after preparation reuse. The implementation handles a narrow class of operations, while the normal native verifier completes every proof and every unsupported operation. This is not a GPU whole-kernel implementation or a declaration-fragment benchmark. All other RQs, service-load/scaling, SMT, novelty and paper obligations remain open.
+
+## Paper-value admission
+
+This is a decisive main-formal comparison. Prior E021 external checking is about20% slower across three complete ProofNet pairs; its three actual preflight attempts produce zero useful device discharges. Complete real graph and native-work analyses identify a substantively different integration point: a real native reduction result rather than an external boolean. The new integration can establish an end-to-end heterogeneous benefit or an informative negative result against strong preparation/cache paths. Neither compilation nor operation support settles this question.
+
+The strongest reject argument is that unsupported work, packing, tiny operations, driver setup, transfers and native quotation swamp any useful computation, and a strong native CPU path wins. A positive result would justify deeper native integration and complete service evaluation; a negative or mixed result would reject this narrow GPU mechanism as a performance contribution and guide the next substantive route without hiding CPU-favoured outcomes. The full373 retained witness-graph device characterization has now actually completed: all saved CPU/device answer bytes match,5330 declarations/57 entire graphs are supported, but summed device launch/sync66.6508s exceeds same-algorithm CPU12.7706s. These frontend-free component clocks cannot be compared to complete source clocks. Repeating that unchanged characterization is dominated; the native whole-flow integration has greater paper decision value. Its completed request/source/raw history remain retained.
+
+Bare closure machinery, fork/COW, warm pools and caching are existing mechanisms. This experiment alone does not establish novelty or an OSDI-level contribution. E021's original24-cell scope, failed attempts and all raw results remain recorded; no counter is reset and no old CPU timing is reused as a new repetition.
+
+## Expected and alternative outcomes
+
+The current expectation is substantial decline/fallback and overhead, with a possible benefit only if sufficiently many useful native operations amortize device costs. CPU algorithm changes, worker lifecycle, cache differences, sharing and temporal load are competing explanations. GPU losing to either strong native path, zero actual supported GPU operations, or basic inconsistencies contradicts an acceleration claim. A CPU-control improvement alone is a CPU mechanism result.
+
+## Published precedent and real assets
+
+Use the official [miniF2F](https://github.com/openai/miniF2F) and [ProofNet](https://github.com/zhangir-azerbayev/ProofNet) problem lineage, the retained actual Lean4 ports/candidates and exact Lean4.9.0-rc1/Mathlib environment from E014/E021. Original ProofNet is Lean3; the retained port identity and adaptation are documented, not attributed to the original repository as a native Lean4 benchmark. Existing source manifests, task/sample records and input hashes are authoritative. No statements or candidates are regenerated, selected by success, or tuned from test outcomes.
+
+Reuse E020's real native warm capture and E021's full-snapshot plus success-only caller-cache capture, with their frozen helpers copied under experiment022/source1. Whole preparation and lifecycle comparisons follow the established system-level boundary, including the preparation/reuse concerns in [SOCK, USENIX ATC2018](https://www.usenix.org/conference/atc18/presentation/okes). No published speed figure is treated as a matched measurement here.
+
+Necessary new glue is the exact native cache-miss hook, CPU/CUDA packed reducer, native quotation, phase-aware resident Driver provider and raw acquisition/analysis. Native-bridge3/report.md and native-bridge2/report.md document support, exact source/build identities and deviations. The normal fallback/kernel checking remain, but this is a modified verifier; extra allocation, checking and cancellation latency are not claimed resource-limit transparent.
+
+## Comparison
+
+Four methods, identical original inputs and whole boundaries:
+
+1. **warm**: untouched E020 native prepared-root warm pool, original default native runtime, no elective retirement.
+2. **snapshot-cache**: untouched native full snapshot plus existing cross-worker success-only caller cache. This represents the competing isolation/cache path.
+3. **cpu**: native-bridge3 warm pool, retained host scratch and same packed reduction/quotation algorithm. This is a causal component control, not a strongest-official-baseline claim.
+4. **gpu**: the same bridge warm pool, actual RTX5090 Driver/PTX reduction and native readback, original CPU fallback and final native kernel.
+
+Both main baselines require new matched runs because resource mask, live competition, compiler and lifecycle differ from historical runs. A GPU claim must compare against the faster valid strong native baseline, not only cpu. The cpu/gpu difference separates placement from algorithm changes; all4 method clocks, basic outcomes, cache hits and replacement counts remain visible. No hidden online CPU replay is forced in gpu mode. No per-method tuning or test-set adaptation.
+
+All conditions allow CPUs17–20; actual affinity and worker count must be captured and matched. ProofNet uses4 frontend workers; miniF2F uses1, as required by the demonstrated memory footprint. Default native threads/options and original per-source300s timeout remain. One normal shared RTX5090 token is allocated to the finite GPU runtime, including idle baseline conditions when co-located; time-slicing is neither half-card allocation nor isolation. Preserve other owners and describe observed competition. No memory quota, whole-run deadline, alternate GPU or resource expansion is introduced.
+
+## Workloads and metrics
+
+All original5952 ProofNet and7808 miniF2F source attempts, including rejected, incomplete, duplicates and original operational failures. Each method processes the same order. Basic source classification is complete/rejected/incomplete/operational; original operational recovery is exposed separately. No diagnostic-string equality or additional checker self-proof campaign.
+
+Primary: complete whole makespan, terminal throughput and three paired repetitions, reporting means and observed ranges, not a fabricated confidence interval. Secondary: closed-loop per-source latency, worker/cache engagement, actual provider attempts/support/declines and one instrumented profile per method/dataset with treeCPU, sampledPSS/private memory and sampling limitations. Whole-card telemetry and explicit device allocation exclude any exact isolated VRAM-peak inference. Provider support is native-operation support, not full-proof GPU discharge.
+
+Whole time includes caller/native launch, preparation, packet construction, actual context/JIT, transfers, device execution, quotation, fallback, final checking, failed sources, outputs, worker replacement and final EOF. Experimental lossless archival after the measured terminal clock is storage housekeeping, disclosed separately from intrinsic verifier/output costs. Summed nested provider/CPU timers are not wall fractions.
+
+## Planned runs
+
+| Group | Workload | Methods | Repetitions | Cells | Outcomes |
+|---|---|---|---:|---:|---:|
+| primary | complete ProofNet5952 | warm/snapshot-cache/cpu/gpu |3|12|71424|
+| profile | complete ProofNet5952 | same4 |1|4|23808|
+| primary | complete miniF2F7808 | same4 |3|12|93696|
+| profile | complete miniF2F7808 | same4 |1|4|31232|
+| total | both original full populations | | |32|220160|
+
+Predetermined orders: rep0 warm,snapshot-cache,cpu,gpu; rep1 snapshot-cache,cpu,gpu,warm; rep2 cpu,gpu,warm,snapshot-cache. Profile order gpu,cpu,snapshot-cache,warm. These mitigate order effects without claiming perfect randomization/isolation. Candidate sampling/RNG is not restarted; original fixed captured candidates are the workload.
+
+## Execution and recovery
+
+Authoritative implementation: artifacts/lean-gpu-checking-2026-10-13/experiment022/run.py and analyze.py, source1 frozen original captures. New common binary native-bridge3/Lean49ClosureNativeV3 SHA2562eb2117b61ea9a3b2ebf46ca2cf52e5aba2a3b2d916a406ef39ebc68c6bc5de9; PTX native-bridge2/closure-native-packed-v2.ptx SHA2568170376865b53a2fea3e3344cc2e4204eeadd4ac9733885337b1898ee322fe4d.
+
+After fresh independent plan approval, real preflight1 uses the unchanged E021 preflight3 inputs: ProofNet indices0,1,3,4,257,2913,5879,5880 and mini0,1,723. The two mini successes are an identical proof shape, not two independent proofs. Execute `python3 .../experiment022/run.py preflight-cpu 1` for33 CPU method outcomes; request `preflight-gpu 1` for11 real device-method outcomes through the existing finite runtime owner. Global source indices must remain unchanged. These are disjoint legs of one new substantive native-integration preflight, not a reset of old E021's three attempts. There are at most3 genuine new preflight attempts under the owning skill. Device readiness requires actual RTX5090, positive gpu_calls and supported native readback, zero cpu-control calls, complete EOF and necessary basic consistency. CPU-only fallback or process exit0 cannot qualify useful GPU execution. No full auto-launch from Job construction or preflight exit0.
+
+Once genuinely qualified, `full-proofnet` executes16 complete cells; `full-minif2f` executes16. These are ordinary finite dataset acquisition commands, not another scheduler. The owner launches full mini only after the existing heavy-mini queue has actually finished, avoiding the known double-heavy-worker globalOOM. The full population remains required. ProofNet and small preflight can proceed within measured headroom without stopping existing E008/E018/E015 or another GPU owner.
+
+All outputs are fresh/exclusive under experiment022. Freeze the admitted execution sources/config and retain identities per cell. After-clock archive only complete own captures, verify CRC and exact member set before expanded-copy removal; preserve failed/partial/unique raw and cores. Current~0.43GB ownPVC free does not establish full fit. Repair genuine capacity/execution failures through existing lossless inactive-own-artifact paths; no timing stitching or deletion of unique data. Re-execute only affected invalid cells in fresh directories, preserving terminal valid cells and history. A failure is not a proof rejection. No completion inferred from a marker without all32 valid terminal cells, all220160 original outcome rows and actual device evidence.
+
+## Interpretation and required result review
+
+A positive result requires whole-flow improvement over the faster strong CPU competitor, positive real device support and valid complete/basic matched populations. If cpu explains the benefit or a strong CPU baseline wins, report that result without a GPU acceleration claim. Zero engagement is a mechanism failure, and partial GPU coverage plus overhead may be a useful negative conclusion; it does not complete all paper RQs. Sharing, temporal competition, operational differences or incomplete cells can make conclusions mixed/inconclusive; retain their limits rather than select favourable pairs.
+
+Target plots: all4 whole times/throughput with three-run ranges for both full datasets; separate profile resource/latency tradeoffs; device support/decline/failure breakdown beside the whole-flow result, not as a proxy headline. Complete-run fresh independent result review must inspect raw commands, actual masks, basic populations, mechanism engagement and scope before canonical paper claims. The broader EXPERIMENT completion, full12 serial WRITE, scientific contract audit, one fresh outer audit and coherent main commit/push remain required.
+
+
+## FULL RUN material repair — native4, 2026-10-13T18:49Z
+
+Actual full1-proofnet completed six whole cells and a partial seventh before the owning Job was stopped and collected. Three complete stock cells remain valid historical baseline observations; the three new CPU/GPU cells contain the same26 avoidable rejected→operational regressions and invalidate those paired performance comparisons. All originals, failed/partial records, clocks and final API/resource receipts remain intact. Original5879 is distinct. Full1 is never overwritten or combined into a repaired whole clock.
+
+Actual original769 LLDB shows the ordinary kernel-metavariables rejection throwing through SDK libc++ exception/unwind into newly linked GNU libstdc++ terminate. Native4 recompiles the unchanged bridge/provider against the SDK libc++15 ABI, removes GNU exception-runtime linkage, and relinks unchanged WHNF/helper/parent/SDK objects and PTX2. The source investigator independently inspected the exact stack/build/dependencies/hashes and found no concrete repair blocker. Root recomputed all26 affected sources plus original8ProofNet/3mini qualification rows: all37 basic outcomes match retained stock, all three captures return0. This is necessary systematic FULL RUN repair qualification, not another scientific experiment, a reset preflight count, a performance result or a broader correctness campaign. E022 plan-review1/preflight1 and E021's three attempts remain recorded unchanged. The hypothesis, populations, metrics, support, algorithms, limits and previous approved question are unchanged; unrelated plan rereview is not required for the linkage repair.
+
+Final executable: native-bridge4/Lean49ClosureNativeV4 SHA256876a22bd93925d4931d88fe3fe92e0b97c37399233b53de93d57656fc424ee36. All CPU/GPU final cells use this one binary; native3 is preserved as failed execution history. PTX8170376865b53a2fea3e3344cc2e4204eeadd4ac9733885337b1898ee322fe4d is unchanged. New acquisition run-native4.py SHA256a9c93a07c8d26bcd2629d1aa34e030df6fd06d7a1763386c63c1de383e1504f2 differs from frozen run.py only in the common binary path and exclusive full2 dataset output name. Original analyzer/source1/options/orders/resources/whole boundaries remain unchanged. No live or old execution source is patched.
+
+Root chooses a fresh matched full16 ProofNet block under the final runtime version, including its stock comparators. This is not mechanical baseline retesting: the interrupted block cannot provide the prescribed complete paired final-version repetitions/order/resource observations, and pairing repaired CPU/GPU clocks with pre-repair stock clocks would conflate execution epochs. The three valid historical stock cells remain available and are not labelled invalid or counted twice as final repetitions. The new full2-proofnet block is one replacement final comparison, not a new sample selected by outcome. Other16 mini cells follow the existing heavy queue's actual terminal status. Original32 cells/220160 final outcomes remain required.
+
+Concrete finite command: sh /workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/experiment022/gpu-runtime-source2/execute-full-proofnet.sh. Actual same-algorithm GPU qualification has already occurred with native3; the ABI-only repaired path has complete affected-source CPU qualification. The next actual GPU cells establish repaired-runtime full device/basic evidence, without repeating an unchanged small GPU preflight or automatically claiming benefit. Any new mismatch invalidates its comparison and is preserved; terminal native4 whole outputs, actual positive device support/readback, masks/resources, complete mini/full scope and fresh result review remain necessary. This request is not a launch/completion receipt.
+
+
+## Direct implementation: negative-only host admission before CUDA
+
+Root directly authored provider-v4/header-admission-v1 and native5 after complete native4 ProofNet16 negative result and raw attribution:~2.38Mdevicecalls/~2201supported, most decline4afterdevice. Static AST head traversal can prove a subset unsupported before upload/launch; demanded bound variables/uncertain/usableheads still use unchanged packeddevice/PTX/quotation. Let/metadata/application/lambda traversal does not evaluate candidate bodies, produce an accepted reduction or replace native final kernel checking. No supported CPU answer is secretly substituted for GPU work. Calls, host_declined and head_admission_ns are recorded; gpu_calls now measures actual launches after host rejection. CPU control packedalgorithm remains unchanged. Source5/newABIcompilation/linkboth0; oldversions/final16raw/partialfailures remain immutable.
+
+Question and fullcomparison remain unchangedRQ4; one implementation-detail iteration against quantified cost, not a smaller proxy. Positive or negative whole comparison against strongest warm/snapshot changes this tested route's decision; prefiltercounts alone are not a contribution. Exact full command sh /workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/experiment022/gpu-runtime-source3/execute-full-proofnet.sh selects original16ProofNet/95232outcomes, 3rotated primaries+4separate profiles, all5952original rows, unchanged4workers/options/cache/correctness/original300s/fullEOF/transfer/fallback boundaries and bothstockcompetitors. Allnewcells useCPUs0–3 because directLeanprefixfulluses17–20andold9–12; allnewmatchedcompetitors rerun, cross-epoch/mask percentages are not causal ratios. Native5/PTXdependency identities are ordinary provenance, no extra SHA startup gate. Mini/full32/RQs/scaling/cancellation/SMT/paper remain required.
+
+User forbids delegation; direct source self-review is labelled self-review and does not satisfy independent result/outer audit. Earlier independent baseline/protocol review remains historical; fresh independent closure cannot be fabricated. Exact negative admission is safe by inspection: no environment dereference is guessed; a bound variable returns uncertain; supported lambda/sort/forall/literal terminal never rejected; only unsupported demanded heads or applied terminalheads take original Lean fallback. Runtime actual device readbacks/fallback/full population still require completed raw evidence, not compile success. The finiteJob preserves normalsharedRTX5090/ownPVC/cachedimage, noB300/other-ownerchange/newWorkspace/scheduler/driver/hostinstall. Terminalreceipts/only-owncleanup are part of the benchmark.
+
+
+### Direct measured-bottleneck candidate: native6 — 2026-10-14T03:20:46.948294+00:00
+
+Native5 complete three-primary ProofNet evidence remains negative (4.41–5.84% slower than strongest same-block CPU). Original per-PID observed counters expose about15.1–15.3s packet construction for roughly2.38M refused operations and2214 actual launches per run. This supports one concrete changed acquisition: conservative borrowed-native-Expr head refusal before packet construction. The CPU algorithm, packet/reducer/PTX, native fallback/final checking, original source population and outcome accounting stay unchanged. Root directly built compiler/link0/0 and reviewed actual pinned constructor indices against original serialization. Root review is not an independent gate/audit. No proxy speedup, positive novelty or performance benefit is assumed.
+
+The hypothesis is that avoiding packet work changes complete source-verification cost enough to beat the fastest competent CPU baseline; disproval is no matched end-to-end improvement or unsupported-operation coverage alone. Same full4-method ×3 rotated primary repeats plus4 separate resource profiles, full5952ProofNet sources, CPU0–3/width4/defaultthreads/original300s allowance, actual shared RTX5090; fresh baselines, no timing stitch or test selection. All32 final two-cohort conditions remain the intended scope; original heavy mini dependency is still live. Existing native5 profiles finish and their terminal evidence/owned resource cleanup are retained before acquisition of this revised candidate. Actual implementation, build and source4/driver are now ready; no new finite GPU Job has been applied yet. Failure/partial/old-version data retained.
+
+
+### Direct complete miniF2F scheduling disposition — 2026-10-14T04:42:26.063706+00:00
+
+RQ4 remains verbatim: After preparation reuse, when does heterogeneous execution improve complete verification over the strongest measured CPU path? Complete ProofNet plus miniF2F coverage remains the original32condition promise; no corpus or metric is replaced. Current two complete native6ProofNet blocks still lose to strongest matched native CPU. Finish the declared native6fullversion and both formal cohorts before further narrow primitive retuning.
+
+The old requirement to wait for E015 instrumented heavy mini stage is retired as an unnecessary scheduling dependency. Live host memory134490546176B/available109249781760B, owning cgroupmemory.max=max/current31044796416B/oom0/oomkill0; the main mini comparison has only1frontendworker and inherits CPU0–3, while heavy1worker retains CPU4–7. Existing fullProofNetGPUJob finishes/cleans through its declared ownership path before the same finite RTX5090allocation is reused for complete mini. The active heavy profile continues untouched; no baseline/data/timeout/resource metric changes. This is scheduling against actual resource evidence, not an imposed CPU/memory quota, new controller or dataset completion gate. Concurrent load/card telemetry remains part of the receipts and interpretation; exclusive resources are not claimed.
+
+Reuse actual native6binary/frozenhelpers/defaultthreads/original300sallsourceallowance,7808originalminiF2Fattempts including failures, width1/same0–3affinity/all4methods,3rotatedprimaries+4separateprofiles=16cells/124928outcomes. Fresh warm and native snapshot/cache remain maincompetitors, optimized packed CPU remains placementcontrol, not main SOTA. Ordinary GPU time slicing with the other Workspace continues. Real command: same run-native6.py full-minif2f in a finite GPUJob using execute-full-minif2f.sh; actual creation/running/complete/cleanup are distinct facts. Prepared source only, not applied yet. Pre-existing qualification failures/attempts and complete partial inputs remain; no preflight counters reset or altered hypotheses. Full32cohort promise, remaining source-native/strongcompetitor/novelty/paper/independent audit obligations remain open. Rootdirectreview is not freshindependent plan/result audit.

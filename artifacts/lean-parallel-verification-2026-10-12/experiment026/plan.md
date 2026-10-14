@@ -1,0 +1,23 @@
+# RQ4: native hotspot attribution on the complete ProofNet stream
+
+## Research question and admission
+RQ4: After preparation reuse, when does heterogeneous execution improve complete verification over the strongest measured CPU path?
+
+This supporting experiment tests whether the measured simp/typeclass hotspots repeatedly unfold a small shared set of declarations/instances across real candidates. Current tiny beta-reduction GPU coverage loses against warm native CPU; E015's completed original profile has simp620.21s and typeclass363.88s versus type checking9.051s. These are cumulative rounded per-thread wall categories, not wall fractions. Existing WHNF counters conflate local metavariables/custom unfolding and do not identify the expensive declaration families. More adapter tuning or repeating the invalid E018 external checker is lower-value than locating a larger shareable/native computation. Positive concentration selects a specific common native workload and a residency/cache/batching comparison; diffuse or missing diagnostics reject that shortcut and require finer cost evidence. Counts alone cannot establish runtime savings or GPU superiority.
+
+## Official assets and comparison
+Use the original5952 ProofNet candidate sources and tasks in experiment014, pinned Lean4.9.0-rc1, existing Mathlib/REPL and the original snapshot frontend/owned runtime. Enable only Lean's built-in diagnostics option in initial command options. Leave diagnostics.threshold at its upstream default; source-level options remain honored. Reuse completed original E015 categories and native outcome controls instead of adding redundant baseline runs. This is an instrumented native control, not a new acceleration method or primary timing comparison. No frontend input is edited or dropped.
+
+The complete formal native6 CPU/GPU comparison remains unchanged; mini remains failed/pending resource-budget authorization. Kernel Arena's official corpora are a later kernel-only workload boundary, not a replacement for generated-source verification.
+
+## Metrics and limitations
+Measure official reports of unfolded declarations, unfolded instances, used instances and kernel unfolding when emitted, associated with original candidate indices. Report which sources emit no above-default-threshold report. The report threshold censors low-frequency counters; counts are not exclusive cost, cache hit rates, independent requests or GPU eligibility. Reuse original all5952 native outcomes as a population/control comparison, without claiming diagnostics preserve textual responses. One complete deterministic diagnostic stream is sufficient; no timing confidence interval or speedup claim follows. Expected cost is about20minutes from the existing single-worker instrumented stream, subject to real diagnostics overhead.
+
+## Execution and full matrix
+One setup build, one real original-candidate preflight, then all5952 candidates in original order with four native workers, unchanged300s candidate allowance and native default threads. Existing bench/lean_capture_snapshot.py is the acquisition path; no new research-control schema, scheduler or Workspace.
+Full command:
+python3 artifacts/lean-parallel-verification-2026-10-12/experiment015/recovery-source/lean_capture_snapshot.py --codes artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/codes.json --tasks artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/tasks.json --native artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches --lake /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake --sysroot /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux --workspace /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4 --lean-path <original resolved path> --mode full --retire-after 5952 --jobs 4 --timeout 300 --out artifacts/lean-parallel-verification-2026-10-12/experiment026/full-proofnet
+The actual argument array and resolved path are recorded in launch/build logs. Completion requires native terminal/exit, all5952 original source outcomes, and honest diagnostic coverage. Raw/partial/failed data are preserved. This experiment cannot close RQ4; it chooses a material implementation experiment.
+
+## Direct review and ownership
+Root reviewed scope, source identity, official option, threshold censoring, known complete controls, honest counts-versus-cost boundary and storage estimate. Human instruction forbids other Agents: no fresh independent reviewer is used or claimed. No semantic repair loop, memory cap, replacement agent, fullkernel/GPU claim or RQ/thesis change is introduced.

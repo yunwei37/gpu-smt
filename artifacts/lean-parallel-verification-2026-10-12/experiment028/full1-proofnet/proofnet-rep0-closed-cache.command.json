@@ -1,0 +1,68 @@
+{
+  "label": "proofnet-rep0-closed-cache",
+  "dataset": "proofnet",
+  "method": "warm",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/full1-proofnet/proofnet-rep0-closed-cache.process-time.txt",
+    "python3",
+    "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/experiment022/source1/lean_capture_prepared.py",
+    "--input",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/input.jsonl",
+    "--native",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/build/Lean49ClosedModeCache",
+    "--lake",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "--parent-preparation",
+    "header-cache",
+    "--native-runtime-default",
+    "--warm-pool",
+    "--retire-after",
+    "5952",
+    "--parent-seed-first-header",
+    "--workspace",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--sysroot",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "--lean-path",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "--jobs",
+    "4",
+    "--out",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/full1-proofnet/proofnet-rep0-closed-cache"
+  ],
+  "input": "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/input.jsonl",
+  "input_identity": {
+    "path": "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/input.jsonl",
+    "bytes": 10977293,
+    "sha256": "2c6ee33fe204d94937e751e96a1d041d14a96aa99169243a48575c52b0cd2301"
+  },
+  "binary": {
+    "path": "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/build/Lean49ClosedModeCache",
+    "bytes": 91880896,
+    "sha256": "efb2289d1e057dd857e9be8dde125cbce1be8a5153232bfb34704b5bc218840d"
+  },
+  "ptx": null,
+  "expected_attempts": 5952,
+  "cpu_set": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "worker_width": 4,
+  "profile": false,
+  "preflight": false,
+  "environment": {},
+  "runtime": "native default threads, unset LEAN_NUM_THREADS, original per-source 300s timeout, core0",
+  "whole_boundary": "caller/native launch, preparation, original input/failed/cache rows, frontend/final kernel, native provider/setup/transfer/fallback, output persistence, EOF/replacement; archive after clock",
+  "utc": "2026-10-14T08:16:16.735769+00:00",
+  "begin_ns": 397148735358413,
+  "host_load_begin": [
+    28.8681640625,
+    13.1162109375,
+    5.7392578125
+  ]
+}

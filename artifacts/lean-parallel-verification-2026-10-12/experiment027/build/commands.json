@@ -1,0 +1,40 @@
+{
+  "commands": [
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-c",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/WHNF.c",
+      "-o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/WHNF.o"
+    ],
+    [
+      "gcc",
+      "-std=c11",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+      "-c",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/named-timers.c",
+      "-o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/named-timers.o"
+    ],
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-rdynamic",
+      "-o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/Lean49NamedMissProfile",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/WHNF.o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/named-timers.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/native-whnf-development-20261013/classification-repair/lean49_classified_parent.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-stage-profile/build4/Lean49PreparedBranches.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/native-whnf-development-20261013/classification-bounded-output/lean_meta_whnf_bounded_profiler.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-object.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-thread.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib/libREPL.a"
+    ]
+  ],
+  "cwd": "/workspaces/repository"
+}

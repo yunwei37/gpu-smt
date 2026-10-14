@@ -1,0 +1,33 @@
+{
+  "commands": [
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-c",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches.c",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches.lean"
+    ],
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-c",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches.c",
+      "-o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches.o"
+    ],
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-rdynamic",
+      "-o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches",
+      "/workspaces/repository/artifacts/lean-service-lifecycle-2026-10-13/build1/parent.o",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-object.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-thread.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib/libREPL.a"
+    ]
+  ],
+  "cwd": "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics",
+  "LEAN_PATH": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+  "source_change": "official diagnostics true in initial native options; upstream reporting threshold unchanged; no input rewrite or runtime cap"
+}

@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-14T07:07:55.608237+00:00",
+  "pid": 6267,
+  "command": [
+    "python3",
+    "-u",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment015/recovery-source/lean_capture_snapshot.py",
+    "--codes",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/preflight-codes.json",
+    "--tasks",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/preflight-tasks.json",
+    "--native",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/build/Lean49NamedMissProfile",
+    "--lake",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "--sysroot",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "--workspace",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--lean-path",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "--mode",
+    "full",
+    "--retire-after",
+    "2",
+    "--jobs",
+    "1",
+    "--timeout",
+    "300",
+    "--out",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment027/preflight1"
+  ],
+  "env_changes": {
+    "GPU_SMT_NATIVE_PROFILER": "1",
+    "LEAN_NUM_THREADS": "unset/native default"
+  },
+  "source_indices": [
+    0,
+    257
+  ],
+  "owner": "root direct",
+  "role": "two original candidates; setup readiness only"
+}

@@ -1,0 +1,231 @@
+{
+  "pairs": 5951,
+  "missing_pairs": [
+    {
+      "index": 5879,
+      "reason": "no complete",
+      "member": "full-proofnet/worker-0002-session-00000000/stderr.bin"
+    }
+  ],
+  "bad_pairs": [],
+  "buckets": [
+    {
+      "group": "outParam",
+      "contextual": 0,
+      "success": 1,
+      "count": 267444,
+      "wall_ns": 914199304,
+      "inclusive_thread_cpu_ns": 889770230,
+      "exclusive_thread_cpu_ns": 889770230
+    },
+    {
+      "group": "Semiring.toNonUnitalSemiring",
+      "contextual": 0,
+      "success": 1,
+      "count": 270616,
+      "wall_ns": 12394453655,
+      "inclusive_thread_cpu_ns": 12333441546,
+      "exclusive_thread_cpu_ns": 858511568
+    },
+    {
+      "group": "NonUnitalSemiring.toNonUnitalNonAssocSemiring",
+      "contextual": 0,
+      "success": 1,
+      "count": 224374,
+      "wall_ns": 11077355158,
+      "inclusive_thread_cpu_ns": 11024216394,
+      "exclusive_thread_cpu_ns": 726578895
+    },
+    {
+      "group": "projection_expr",
+      "contextual": 0,
+      "success": 1,
+      "count": 5027280,
+      "wall_ns": 170653434715,
+      "inclusive_thread_cpu_ns": 169534696944,
+      "exclusive_thread_cpu_ns": 13700216578
+    },
+    {
+      "group": "Ring.toSemiring",
+      "contextual": 0,
+      "success": 1,
+      "count": 203830,
+      "wall_ns": 7529889808,
+      "inclusive_thread_cpu_ns": 7494914930,
+      "exclusive_thread_cpu_ns": 629978791
+    },
+    {
+      "group": "OfNat.ofNat",
+      "contextual": 1,
+      "success": 1,
+      "count": 93862,
+      "wall_ns": 1169108480,
+      "inclusive_thread_cpu_ns": 1155873143,
+      "exclusive_thread_cpu_ns": 337289009
+    },
+    {
+      "group": "projection_expr",
+      "contextual": 1,
+      "success": 1,
+      "count": 26867890,
+      "wall_ns": 223934104566,
+      "inclusive_thread_cpu_ns": 219581497756,
+      "exclusive_thread_cpu_ns": 30387275272
+    },
+    {
+      "group": "OfNat.ofNat",
+      "contextual": 0,
+      "success": 1,
+      "count": 156619,
+      "wall_ns": 739535098,
+      "inclusive_thread_cpu_ns": 734122675,
+      "exclusive_thread_cpu_ns": 357706717
+    },
+    {
+      "group": "other",
+      "contextual": 0,
+      "success": 1,
+      "count": 17681389,
+      "wall_ns": 169657357373,
+      "inclusive_thread_cpu_ns": 168301638802,
+      "exclusive_thread_cpu_ns": 45212404422
+    },
+    {
+      "group": "outParam",
+      "contextual": 1,
+      "success": 1,
+      "count": 1474542,
+      "wall_ns": 4778143654,
+      "inclusive_thread_cpu_ns": 4681082617,
+      "exclusive_thread_cpu_ns": 4672105434
+    },
+    {
+      "group": "other",
+      "contextual": 1,
+      "success": 1,
+      "count": 58436198,
+      "wall_ns": 281805725373,
+      "inclusive_thread_cpu_ns": 275887452371,
+      "exclusive_thread_cpu_ns": 126467606928
+    },
+    {
+      "group": "AddCommMonoid.toAddMonoid",
+      "contextual": 1,
+      "success": 1,
+      "count": 501280,
+      "wall_ns": 8117167659,
+      "inclusive_thread_cpu_ns": 8097439582,
+      "exclusive_thread_cpu_ns": 1475915000
+    },
+    {
+      "group": "CommRing.toRing",
+      "contextual": 0,
+      "success": 1,
+      "count": 304291,
+      "wall_ns": 4746200872,
+      "inclusive_thread_cpu_ns": 4710789007,
+      "exclusive_thread_cpu_ns": 944165942
+    },
+    {
+      "group": "AddCommMonoid.toAddMonoid",
+      "contextual": 0,
+      "success": 1,
+      "count": 70103,
+      "wall_ns": 6411459565,
+      "inclusive_thread_cpu_ns": 6371791215,
+      "exclusive_thread_cpu_ns": 239620566
+    },
+    {
+      "group": "Ring.toSemiring",
+      "contextual": 1,
+      "success": 1,
+      "count": 685720,
+      "wall_ns": 5504108669,
+      "inclusive_thread_cpu_ns": 5484275451,
+      "exclusive_thread_cpu_ns": 1754032926
+    },
+    {
+      "group": "Semiring.toNonUnitalSemiring",
+      "contextual": 1,
+      "success": 1,
+      "count": 689268,
+      "wall_ns": 8602349447,
+      "inclusive_thread_cpu_ns": 8556575181,
+      "exclusive_thread_cpu_ns": 1834298564
+    },
+    {
+      "group": "NonUnitalSemiring.toNonUnitalNonAssocSemiring",
+      "contextual": 1,
+      "success": 1,
+      "count": 369602,
+      "wall_ns": 6068233759,
+      "inclusive_thread_cpu_ns": 6028557703,
+      "exclusive_thread_cpu_ns": 1022262317
+    },
+    {
+      "group": "CommRing.toRing",
+      "contextual": 1,
+      "success": 1,
+      "count": 442781,
+      "wall_ns": 4225788106,
+      "inclusive_thread_cpu_ns": 4220871336,
+      "exclusive_thread_cpu_ns": 1168266857
+    }
+  ],
+  "by_group": {
+    "outParam": {
+      "count": 1741986,
+      "wall_ns": 5692342958,
+      "inclusive_thread_cpu_ns": 5570852847,
+      "exclusive_thread_cpu_ns": 5561875664
+    },
+    "Semiring.toNonUnitalSemiring": {
+      "count": 959884,
+      "wall_ns": 20996803102,
+      "inclusive_thread_cpu_ns": 20890016727,
+      "exclusive_thread_cpu_ns": 2692810132
+    },
+    "NonUnitalSemiring.toNonUnitalNonAssocSemiring": {
+      "count": 593976,
+      "wall_ns": 17145588917,
+      "inclusive_thread_cpu_ns": 17052774097,
+      "exclusive_thread_cpu_ns": 1748841212
+    },
+    "projection_expr": {
+      "count": 31895170,
+      "wall_ns": 394587539281,
+      "inclusive_thread_cpu_ns": 389116194700,
+      "exclusive_thread_cpu_ns": 44087491850
+    },
+    "Ring.toSemiring": {
+      "count": 889550,
+      "wall_ns": 13033998477,
+      "inclusive_thread_cpu_ns": 12979190381,
+      "exclusive_thread_cpu_ns": 2384011717
+    },
+    "OfNat.ofNat": {
+      "count": 250481,
+      "wall_ns": 1908643578,
+      "inclusive_thread_cpu_ns": 1889995818,
+      "exclusive_thread_cpu_ns": 694995726
+    },
+    "other": {
+      "count": 76117587,
+      "wall_ns": 451463082746,
+      "inclusive_thread_cpu_ns": 444189091173,
+      "exclusive_thread_cpu_ns": 171680011350
+    },
+    "AddCommMonoid.toAddMonoid": {
+      "count": 571383,
+      "wall_ns": 14528627224,
+      "inclusive_thread_cpu_ns": 14469230797,
+      "exclusive_thread_cpu_ns": 1715535566
+    },
+    "CommRing.toRing": {
+      "count": 747072,
+      "wall_ns": 8971988978,
+      "inclusive_thread_cpu_ns": 8931660343,
+      "exclusive_thread_cpu_ns": 2112432799
+    }
+  }
+}

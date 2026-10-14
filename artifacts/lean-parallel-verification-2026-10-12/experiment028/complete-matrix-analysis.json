@@ -1,0 +1,98 @@
+{
+  "pairs": [
+    {
+      "rep": 0,
+      "original_s": 320.210026106,
+      "cached_s": 296.560436688,
+      "wall_reduction_percent": 7.385649258268767,
+      "speedup": 1.0797462725713507,
+      "basic_differences": [],
+      "valid_complete": true
+    },
+    {
+      "rep": 1,
+      "original_s": 299.807612082,
+      "cached_s": 299.992668717,
+      "wall_reduction_percent": -0.0617251288967946,
+      "speedup": 0.9993831294751586,
+      "basic_differences": [],
+      "valid_complete": true
+    },
+    {
+      "rep": 2,
+      "original_s": 304.220265744,
+      "cached_s": 307.364079306,
+      "wall_reduction_percent": -1.0334004390902374,
+      "speedup": 0.98977169495831,
+      "basic_differences": [],
+      "valid_complete": true
+    }
+  ],
+  "profiles": {
+    "original-warm": {
+      "whole_s": 330.015651233,
+      "valid": true,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 398989561821486,
+        "end_monotonic_ns": 399319426471832,
+        "sample_interval_ns": 1000000000,
+        "samples": 324,
+        "incomplete_samples": 0,
+        "sampled_peak_total_pss_kib": 7864846,
+        "sampled_peak_total_private_kib": 5351808,
+        "whole_process_tree_cpu_seconds": 1234.3478209999998,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      },
+      "outcomes": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "malformed_native_response": 1
+      }
+    },
+    "closed-cache": {
+      "whole_s": 322.401119034,
+      "valid": true,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 398665460061019,
+        "end_monotonic_ns": 398987708098988,
+        "sample_interval_ns": 1000000000,
+        "samples": 317,
+        "incomplete_samples": 1,
+        "sampled_peak_total_pss_kib": 7798128,
+        "sampled_peak_total_private_kib": 5252744,
+        "whole_process_tree_cpu_seconds": 1230.021476,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      },
+      "outcomes": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "malformed_native_response": 1
+      }
+    }
+  },
+  "missing_cells": [],
+  "complete_planned_matrix": true,
+  "scope": "8cells x5952original sources; three rotated complete pairs plus two separate resource profiles",
+  "limitations": [
+    "whole primaries include normal output persistence/cleanup, archival after clock",
+    "three repetitions only, observed variation is not a robust population confidence interval",
+    "profile clocks are instrumented, not additional primary replicates",
+    "native kernel unchanged; auxiliary proof value hash differences remain visible",
+    "version4.9/published corpus only; official current WHNF already caches all eligible modes; no current-release/novelty/OSDI claim"
+  ],
+  "mean_wall_reduction_percent": 2.096841230093912,
+  "observed_effect_range_percent": [
+    -1.0334004390902374,
+    7.385649258268767
+  ],
+  "total_wall_reduction_percent": 2.1986459476017184,
+  "paired_log_speedup_t_interval_assuming_iid_normal": [
+    0.9079881497993619,
+    1.1507447201488714
+  ],
+  "interval_limit": "illustrative95percent t interval on3log ratios; iid/normal assumptions unverified, not evidence of a stable speedup"
+}

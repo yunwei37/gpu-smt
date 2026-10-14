@@ -1,0 +1,3 @@
+# Direct plan self-review
+
+Root checked unchanged original sources/default runtime, complete5952scope, officialdiagnostics/default threshold, existing native outcome controls and distinct-count-versus-cost interpretation. This is a supporting discriminator, not another timing/coverage proxy promoted to acceleration. Native snapshot reuse can replay diagnostics: reported sums are not actual invocation counts. Prettyprinted names can alias. All errors/missing reports remain visible. One real-source preflight succeeded with rejection0andacceptance257/EOF. Human forbids delegation: no independent plan reviewer is claimed.

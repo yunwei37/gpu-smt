@@ -1,0 +1,45 @@
+{
+  "commands": [
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/clang",
+      "-O3",
+      "-std=c++17",
+      "-nostdinc++",
+      "-isystem",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/libcxx-15.0.1.src/include",
+      "-isystem",
+      "/usr/lib/gcc/x86_64-linux-gnu/14/include",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/lean4-be6c4894e0a6/src",
+      "-pthread",
+      "-fPIC",
+      "-U__OPTIMIZE__",
+      "-DLEAN_MULTI_THREAD",
+      "-DLEAN_EXPORTING",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean-gpu/closure-native-provider-v5.cpp",
+      "-o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge6/closure-native-provider-v5-libcxx.o"
+    ],
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-rdynamic",
+      "-o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge6/Lean49ClosureNativeV6",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge2/WHNF.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge2/ClosureProviderHelpers.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge4/closure-native-bridge-v2-libcxx.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge6/closure-native-provider-v5-libcxx.o",
+      "/workspaces/repository/artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/native-bridge2/parent.o",
+      "/workspaces/repository/artifacts/lean-service-lifecycle-2026-10-13/build1/Lean49PreparedBranches.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-object.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean49-owned-runtime/build4/owned-thread.o",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib/libREPL.a",
+      "-ldl",
+      "-pthread"
+    ]
+  ],
+  "scope": "direct measured-bottleneck development; native conservative reject before packet; same CPU algorithm, ABI, device reducer, fallback and final native kernel; no verifier/device execution"
+}

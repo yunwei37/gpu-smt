@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-14T06:23:23.815126+00:00",
+  "pid": 5775,
+  "command": [
+    "python3",
+    "-u",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment015/recovery-source/lean_capture_snapshot.py",
+    "--codes",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/codes.json",
+    "--tasks",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment014/inputs/proofnet/tasks.json",
+    "--native",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/native-diagnostics/Lean49PreparedBranches",
+    "--lake",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "--sysroot",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "--workspace",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--lean-path",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "--mode",
+    "full",
+    "--retire-after",
+    "5952",
+    "--jobs",
+    "4",
+    "--timeout",
+    "300",
+    "--out",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/full-proofnet"
+  ],
+  "cpu_set": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "expected_original_sources": 5952,
+  "owner": "root direct",
+  "role": "complete native attribution supportingRQ4; no speedup/final timing claim",
+  "native_memory_budget": "unchanged unlimited; uniform temporarycap question still pending",
+  "report_threshold": "native upstreamdefault; censoring disclosed",
+  "preflight": [
+    {
+      "original_index": 0,
+      "status": "response",
+      "has_error": true,
+      "diagnostic_messages": 0
+    },
+    {
+      "original_index": 257,
+      "status": "response",
+      "has_error": false,
+      "diagnostic_messages": 1
+    }
+  ]
+}

@@ -11,7 +11,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Formal verification services check streams of program and proof candidates against formal specifications, sharing libraries, declarations and accepted context.
+Formal verification services check streams of program and proof candidates against formal specifications. Related candidates share libraries, declarations and accepted context.
 Independent attempts trade repeated preparation against shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
 Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
 Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
@@ -25,13 +25,13 @@ We compare complete verification in Lean and systems backed by satisfiability mo
 \section{Introduction}\label{sec:intro}
 Formal verification services check streams of program and proof candidates against formal specifications. Proof-generation systems submit related attempts that share libraries, declarations and accepted context. Services use proof assistants to construct and check proof terms, or verifiers to translate program obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
 
-Serving independent attempts trades repeated preparation against shared execution. Running a separate verifier for every candidate repeats imports and parsing and replicates resident objects, while retained workers and shared logical environments make resource growth, contention and cancellation depend on worker isolation. For example, concurrent attempts against one imported Lean context need both that context and independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
+Serving independent attempts trades repeated preparation against shared execution. A separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but resource growth, contention and cancellation depend on worker isolation. Concurrent attempts against one imported Lean context illustrate the tradeoff: they need the same context and independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
 
 This tradeoff depends on native execution history beyond visible formulas or declarations. Z3's combined solver can select a different solving path after an additional scope~\cite{z3api}, and earlier requests can alter heuristics and resource counters. A proof assistant likewise retains elaborator state and mutable runtime extensions beyond its immutable declaration environment~\cite{lean4,repl}. Reconstructing a logically equivalent context therefore requires a separate argument for observable verification behavior.
 
 Established reuse recovers preparation but leaves the value of independent native execution at matched resources unresolved. Result caches avoid repeating completed work~\cite{boogieCache}, while the community read--eval--print loop (REPL) supports persistent environments, backtracking and pickling~\cite{repl}. Recent Lean snapshotting retains elaborated proof state across parallel tactic branches~\cite{leanSnapshot}, and stock Lean saves incremental elaboration snapshots between invocations~\cite{leanIncremental}. Bounded warm services reuse environment roots and retire workers~\cite{kimina,kiminaPaper}. Against these native-reuse baselines, the matched comparison must establish whether separating preparation from candidate execution history improves complete verification, cancellation and total memory across service processes.
 
-We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime. Native preparation of a context precedes candidate evaluation and remains available to independent attempts. Each candidate inherits that state, so other candidates neither supply its solver history nor extend its lifetime. The value of this separation depends on context preparation cost, branch creation cost and the pages that each candidate modifies.
+We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime. A context is prepared before candidate evaluation, and that native state remains available to independent attempts. Each candidate inherits the prepared state, so other candidates neither supply its solver history nor extend its lifetime. The value of this separation depends on context preparation cost, branch creation cost and the pages that each candidate modifies.
 
 Realizing this separation requires runtime safety, faithful resource handling and bounded memory. A branch boundary must be quiescent and safe for the verifier runtime, and native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Preparation sharing must improve service capacity within a memory budget that bounds retained states. These requirements connect compatibility to the service's resource frontier, the achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
 
@@ -128,7 +128,7 @@ Candidate mutation should not force the service to retain the shared parent beyo
 The lifecycle separates retained preparation from speculative work. A cancelled or incomplete attempt cannot become a new prepared parent. Branch failure returns an explicit native or service failure and leaves other branches independent. The evaluation includes failed attempts and cancellation recovery rather than reporting only successful candidate throughput.
 
 \subsection{Bounded placement and execution}\label{sec:placement}
-The benefit of preparation sharing must offset the costs of retained memory and branch mutation. The service admits prepared states within a memory budget and accounts for proportional shared memory and private dirty pages. Proportional memory attributes each shared page across the processes sharing it~\cite{procMemory}, and fleet memory sums these attributed amounts across service processes. Placement favors states whose observed preparation work is reused often enough to offset the costs of creating and retaining those states. Branch concurrency is limited by CPU capacity and memory pressure, so copy-on-write sharing does not justify unlimited fan-out.
+The benefit of preparation sharing must offset the costs of retained memory and branch mutation. The service admits prepared states within a memory budget and accounts for proportional shared memory and private dirty pages. Proportional set size (PSS) attributes each shared page across the processes sharing it~\cite{procMemory}, and fleet memory sums these attributed amounts across service processes. Placement favors states whose observed preparation work is reused often enough to offset the costs of creating and retaining those states. Branch concurrency is limited by CPU capacity and memory pressure, so copy-on-write sharing does not justify unlimited fan-out.
 
 If candidates modify most retained pages, copy-on-write sharing can approach full replication. If preparation is cheap or locality is low, native execution avoids retention overhead. These cases test the same service tradeoff as workloads with substantial preparation sharing and define its measured operating range.
 
@@ -140,7 +140,7 @@ Supported device work preserves verifier semantics. Before a device operation is
 Unsupported work returns to CPU execution, whose cost remains in the complete verification measurement. Complete verification includes device initialization, representation construction, upload, download and queueing. We report operation speedups measured with data already on the device separately from complete checking.
 
 \section{Implementation}\label{sec:implementation}
-The implementation maps the design onto native verifier adapters, process branches and a bounded service. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
+The system implements the design through native verifier adapters, process branches and a bounded service. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
 
 \subsection{Native adapters}
 The native SMT command adapter is implemented in C++. It retains the command-line interface's command context and preserves the native order of configuration, manager creation and solver creation while evaluating original command sequences. It preserves options, scopes, checks and requested artifacts rather than reconstructing assertions through a different solver API.
@@ -205,7 +205,72 @@ We report latency distributions and completed throughput together with fleet pro
 \subsection{Heterogeneous execution}
 RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.
 
-We separate host representation construction, device setup, transfers, checking with data already on the device, synchronization and fallback. These complete CPU/device paths use the service accounting and matched workload boundary of RQ3, so improving a checking operation alone does not establish an improvement in the service frontier. The comparison includes tuned alternative CPU checkers with different parsing and reduction algorithms~\cite{nanoclo,nanocloFortran}. \missing{Cost coverage, amount of checking work simultaneously ready to execute, complete CPU/device comparisons and workload crossover.} RQ4 remains unanswered until measured complete boundaries establish a device benefit or a negative opportunity bound.
+We separate host representation construction, device setup, transfers, checking with data already on the device, synchronization and fallback. The complete CPU/device comparison uses the service accounting and matched workload boundary of RQ3. An improvement in a checking operation alone therefore does not establish an improvement in the service frontier. The comparison includes tuned alternative CPU checkers with different parsing and reduction algorithms~\cite{nanoclo,nanocloFortran}. \missing{Cost coverage, amount of checking work simultaneously ready to execute, complete CPU/device comparisons and workload crossover.}
+
+
+
+\paragraph{Complete source-native ProofNet comparison.}
+Three complete primary comparisons process the same 5,952 retained
+ProofNet-lineage~\cite{proofnetSource,goedelProofnet} Lean4 source attempts in original order, including failed
+attempts. Each method uses four frontend workers on the same four permitted
+CPUs, the retained Lean4.9.0-rc1/Mathlib environment, default native runtime
+threads and the original 300-second per-attempt allowance. The GPU method
+uses an RTX 5090 and includes conservative host admission, packet construction,
+device initialization, transfer, synchronization, CPU fallback, enclosing
+source verification and final native checking. Lossless experimental
+archival occurs after the measured final EOF. CPU affinity does not provide
+exclusive cores; GPU time slicing shares the device with another Workspace.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Whole corpus time (s) & Run 1 & Run 2 & Run 3 \\
+\midrule
+Native warm pool & 310.478 & 311.544 & 318.572 \\
+Native snapshot/cache & 319.524 & 320.059 & 331.712 \\
+Packed CPU control & 319.510 & 326.852 & 321.050 \\
+GPU provider & 315.870 & 322.891 & 323.607 \\
+\bottomrule
+\end{tabular}
+\caption{Complete source verification for 5,952 ProofNet-lineage attempts
+per condition. All twelve primary conditions finish with identical basic
+outcomes within each matched block. Four separate resource profiles also
+complete. The complete miniF2F cohort comparison is pending.}
+\label{tab:current-proofnet-gpu}
+\end{table}
+
+Table~\ref{tab:current-proofnet-gpu} rejects an end-to-end acceleration claim
+for this supported Meta reduction mechanism on the measured cohort.
+Relative to the faster native baseline in each block, GPU execution is
+1.74\%, 3.64\% and 1.58\% slower (mean 2.32\%; observed range, not a
+confidence interval). Every condition has 413 complete, 5,534 rejected,
+four incomplete and one retained operational outcome.
+The packed CPU version is a component control: its negative-admission
+placement differs from the GPU path, so their time difference cannot isolate
+device placement alone. The strongest native baseline grounds the
+end-to-end comparison.
+
+Native operation/readback logs establish actual GPU engagement, while
+unsupported work remains native. They do not establish full GPU kernel
+discharge. Missing terminal/interleaved records censor operation totals;
+nested provider timers are not exclusive fractions of whole corpus time.
+\missing{Final repeated miniF2F comparison, supported-work coverage and
+complete workload-bound interpretation.}
+
+Four separately instrumented complete conditions observe whole times of
+328.046 seconds for warm execution, 348.390 for snapshot/cache,
+338.670 for the packed CPU control and 342.949 for GPU execution.
+Their sampled fleet PSS maxima are respectively 5,289,626, 9,268,751,
+5,161,250 and 6,315,211 KiB. These are single instrumented conditions:
+one-second non-atomic sampling misses short-lived processes and peaks,
+and the sampling process contributes CPU overhead. These clocks do not
+replace the primary comparisons or establish replicated memory uncertainty;
+GPU context/driver memory and other owners are outside host-PSS figures.
+The remaining workload and strongest-checker comparisons remain necessary
+to answer RQ4 at its stated scope. RQ4 remains unanswered until measured
+complete boundaries establish a device benefit or a negative opportunity bound.
 
 \subsection{Limitations}
 The service applies at supported native boundaries and retains the verifier as the authority. Supported backend versions and mutable runtime extensions constrain deployment. Logical equivalence alone does not promise equal resource-bounded responses. Wall-time limits depend on machine load and execution speed, so the evaluation states their operational scope separately from deterministic work limits. Valid negative and mixed results bound the claimed operating range.

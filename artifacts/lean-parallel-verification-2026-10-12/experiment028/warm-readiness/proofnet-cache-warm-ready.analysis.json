@@ -1,0 +1,188 @@
+{
+  "label": "proofnet-cache-warm-ready",
+  "dataset": "proofnet",
+  "method": "warm",
+  "returncode": 0,
+  "expected": 8,
+  "returned": 8,
+  "missing_indices": [],
+  "extra_indices": [],
+  "source_issues": [],
+  "valid_complete": true,
+  "whole_seconds": 13.729106543,
+  "actual_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "workers": 4,
+  "terminal_attempts_per_second": 0.582703614029343,
+  "latency_seconds": {
+    "n": 8,
+    "median": 0.2235783715,
+    "p95": 4.822206888,
+    "p99": 4.822206888
+  },
+  "outcomes": {
+    "rejected": 5,
+    "complete": 1,
+    "malformed_native_response": 1,
+    "incomplete": 1
+  },
+  "basic_rows": {
+    "0": "rejected",
+    "3": "rejected",
+    "1": "rejected",
+    "257": "complete",
+    "4": "rejected",
+    "5880": "rejected",
+    "5879": "operational",
+    "2913": "incomplete"
+  },
+  "candidate_rows": {
+    "0": {
+      "outcome": "rejected",
+      "basic": "rejected",
+      "status": "response",
+      "ordinal": 0,
+      "seconds": 8.573160846,
+      "cached": false
+    },
+    "3": {
+      "outcome": "rejected",
+      "basic": "rejected",
+      "status": "response",
+      "ordinal": 2,
+      "seconds": 0.062907707,
+      "cached": false
+    },
+    "1": {
+      "outcome": "rejected",
+      "basic": "rejected",
+      "status": "response",
+      "ordinal": 1,
+      "seconds": 0.118288167,
+      "cached": false
+    },
+    "257": {
+      "outcome": "complete",
+      "basic": "complete",
+      "status": "response",
+      "ordinal": 4,
+      "seconds": 0.058498657,
+      "cached": false
+    },
+    "4": {
+      "outcome": "rejected",
+      "basic": "rejected",
+      "status": "response",
+      "ordinal": 3,
+      "seconds": 0.147369417,
+      "cached": false
+    },
+    "5880": {
+      "outcome": "rejected",
+      "basic": "rejected",
+      "status": "response",
+      "ordinal": 7,
+      "seconds": 0.299787326,
+      "cached": false
+    },
+    "5879": {
+      "outcome": "malformed_native_response",
+      "basic": "operational",
+      "status": "unknown",
+      "ordinal": 6,
+      "seconds": 3.81820712,
+      "cached": false
+    },
+    "2913": {
+      "outcome": "incomplete",
+      "basic": "incomplete",
+      "status": "response",
+      "ordinal": 5,
+      "seconds": 4.822206888,
+      "cached": false
+    }
+  },
+  "receipt": {
+    "warm_pool": true,
+    "response_boundary": "framed native response; worker remains alive",
+    "command": [
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/build/Lean49ClosedModeCache",
+      "warm-pool",
+      "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/warm-readiness/proofnet-cache-warm-ready/input.jsonl",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+      "4"
+    ],
+    "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "expected_inputs": 8,
+    "jobs": 4,
+    "native_sha256": "efb2289d1e057dd857e9be8dde125cbce1be8a5153232bfb34704b5bc218840d",
+    "input_sha256": "e6215974f86cdecbe18150ac20083faaade6a041c0da7944f7536016bc337797",
+    "affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "environment": {
+      "LEAN_SYSROOT": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+      "LEAN_NUM_THREADS": null,
+      "XDG_CACHE_HOME": null,
+      "GPU_SMT_CHECKPOINT_INDEX": null,
+      "GPU_SMT_CHECKPOINT_STAGE": null,
+      "GPU_SMT_PARENT_PREPARATION": "header-cache",
+      "GPU_SMT_WORKER_RETIRE_AFTER": "8",
+      "GPU_SMT_PARENT_SEED_FIRST_HEADER": "1",
+      "LEAN_PATH": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean"
+    },
+    "start_utc": "2026-10-14T08:03:57Z",
+    "role": "finite native acquisition; complete-command performance requires external driver clocks",
+    "candidate_latency_scope": "first candidate includes parent launch/preparation; later candidates native admission to parent terminal-message observation before payload decoding/persistence; not offered-load latency",
+    "returncode": 0,
+    "finish_utc": "2026-10-14T08:04:11Z",
+    "whole_process_elapsed_ns": 13653969977,
+    "terminal_records": 8,
+    "response_records": 7,
+    "cancelled": [],
+    "pending_markers": [],
+    "reason": "native_exit",
+    "error": null,
+    "active_children": {},
+    "unfinished_preparation": {},
+    "signals": [],
+    "load_average_end": [
+      0.69677734375,
+      0.6650390625,
+      0.86181640625
+    ]
+  },
+  "engagement": {
+    "success_cache_hits": 0,
+    "worker_starts": 4,
+    "worker_exits": 4,
+    "elective_retirements": 0,
+    "worker_policy": [
+      {
+        "event": "worker_policy",
+        "retire_after": 8,
+        "first_header_only": true
+      }
+    ]
+  },
+  "provider": {
+    "observed_processes": 0,
+    "terminal_processes": 0,
+    "censored_processes": [],
+    "cumulative_per_pid_maxima_sum": {},
+    "per_pid": [],
+    "driver_errors": [],
+    "actual_rtx5090_ready": false,
+    "device_operation_and_native_readback_observed": false,
+    "scope": "native provider operation/readback, not full kernel GPU discharge; original final native kernel and declined-operation fallback remain",
+    "memory_scope": "per-process explicit allocation maxima are not simultaneous VRAM peak; context/module/JIT/default stack/driver/other owners excluded"
+  },
+  "resources": null
+}

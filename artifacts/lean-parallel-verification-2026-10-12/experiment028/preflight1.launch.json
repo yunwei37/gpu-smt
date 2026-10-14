@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-14T07:55:45.383208+00:00",
+  "pid": 6718,
+  "command": [
+    "python3",
+    "-u",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment015/recovery-source/lean_capture_snapshot.py",
+    "--codes",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/preflight-codes.json",
+    "--tasks",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment026/preflight-tasks.json",
+    "--native",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/build/Lean49ClosedModeCache",
+    "--lake",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "--sysroot",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "--workspace",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--lean-path",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "--mode",
+    "full",
+    "--retire-after",
+    "2",
+    "--jobs",
+    "1",
+    "--timeout",
+    "300",
+    "--out",
+    "/workspaces/repository/artifacts/lean-parallel-verification-2026-10-12/experiment028/preflight1"
+  ],
+  "source_indices": [
+    0,
+    257
+  ],
+  "cpu_set": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "owner": "root direct",
+  "role": "actual original source behavior/engagement readiness; no result"
+}

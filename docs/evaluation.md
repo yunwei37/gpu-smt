@@ -1,57 +1,210 @@
-# Evaluation frontier
+# Evaluation
 
-Phase BOOTSTRAP, steps0001–0004 complete and pushed; step0005 experiment006 complete/reviewed; full12round writing/independent outer audit complete; published9e06634; step0003 includes the supporting native constructor comparison, full writing loop and independent whole-step audit. The approved real-candidate RQ1 experiment remains incomplete at its external model prerequisite. Scientific contract not frozen. No final experiment has yet answered an RQ. The complete evaluation promise is in [idea-story](idea-story.md); exact plans follow primary-source grounding.
+Current phase: BOOTSTRAP, step0007, REVIEW_GATE after completed E028 and all12root writing rounds. All four RQs remain
+open; no frozen scientific contract, full WRITE/REVIEW closure, independent
+outer audit or completed application-step publication is claimed.
+[Current step and detailed history](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
+is authoritative. [Prior detailed evaluation](tmp/bootstrap/step-0007-20261010T000125+0000/archived-evaluation-before-direct-mini-20261014.md)
+is retained byte-for-byte.
 
-| RQ | Status | Load-bearing uncertainty | Planned evidence |
-|---|---|---|---|
-| RQ1 | unanswered | Is expensive preparation shared in real attempt order, rather than in constructed fixtures? | Source-native Lean and Verus candidate streams; measured preparation costs and locality |
-| RQ2 | unanswered | Does native branching preserve observed decisions/artifacts and isolation? | Original executable versus matched native driver versus untouched suffix branches; complete controls and retained scope/history regressions |
-| RQ3 | unanswered | Does branching beat competent warm services under equal resources? | Full verification, bounded warm REPL/native workers with caches, load/concurrency/memory sweeps and lifecycle ablations |
-| RQ4 | unanswered | Is expensive remaining work wide enough for a device to change full verification? | Strong CPU checker profiling, matched CPU/device operations and complete fallback/transfer accounting on RTX 5090 |
+## Objective and questions
 
-## Preliminary evidence retained
+Lean-first complete verification acceleration, using RTX5090 and real ordered
+public proof/program attempts. Preserve every accepted, rejected, incomplete,
+failed and partial result. OSDI is a research target, not acceptance.
 
-- [Mathlib replay](../results/2026-10-04-lean-mathlib-state-reuse.md): 52 published proof contexts with variants; 1,404 decisions, three completed repeats, established REPL prefix reuse 14.56x cold corpus makespan. Not novel reuse or a real candidate stream; substantial system variability. Normal prefix RSS is below 1 GiB; 71.6 GiB belongs to fresh-environment retention, not competent bounded reuse.
-- [VeruSAGE](../results/2026-10-04-verusage-real-traces.md): 100 sampled published tasks; 57 successes, 37 pre-SMT failures, six SMT failures, 156 streams/440 queries. 6.51% aggregate ordered-prefix bytes and 1.82% cross-task exact duplicates. Prefix pool changes 31 query outcomes per pass and is invalid as transparent acceleration. Scope-only controls explain 29; prior history explains two. Warm reset parity in three complete runs does not erase the earlier partial mismatch.
-- [GPU](../results/2026-10-04-lean-gpu-dag.md): retained RTX 5090 native metadata pass, official-reference parity, resident 20.87x ratio. Full GPU checking is undemonstrated; host read/setup/transport and cached nature prevent extrapolation.
-- [Kernel comparisons](../results/2026-10-04-lean-kernel-stage-split.md): implementations differ in parsing, representation, reduction and parallelism; official parse-only is not a universal floor. Instructions/IPC do not establish a memory bottleneck.
+1. RQ1: How much expensive native preparation can real verification candidate
+   streams share across independent jobs?
+2. RQ2: Does branching from prepared native state preserve verifier responses
+   and requested artifacts while isolating candidates and cancellation?
+3. RQ3: How does prepared-state branching change end-to-end latency, throughput
+   and memory at equal resources compared with established warm-session reuse?
+4. RQ4: After preparation reuse, when does heterogeneous execution improve
+   complete verification over the strongest measured CPU path?
 
-These inspected data guide bootstrap and regressions. They are not relabelled as fresh final data. Legacy synthetic and small public BMC runs stay in their original artifacts.
+## RQ4: complete native6 ProofNet comparison
 
-## New supporting negative discriminator
+All16conditions, each5952original source attempts, complete/valid;95232
+outcomes. Three rotated primary repetitions plus four separate profiles.
+Each matched primary preserves identical basic outcomes and CPU0–3/width4.
+Warm native and native snapshot/cache are strong main competitors; the packed
+CPU version is a component control. GPU integrates a narrow native Meta
+beta/zeta reducer with readback, ordinary fallback and final native checking.
+It is neither full GPU kernel checking nor metadata-only verification.
 
-[Native branch result review](tmp/bootstrap/step-0001-20261007T212930+0000/experiment-001/result-review.md) verifies the complete 156-stream/four-path/three-repeat matrix: original executable has 434 UNSAT/6 UNKNOWN per pass; fresh, split and branch API each have 437 UNSAT/3 UNKNOWN. Five changed checks are disjoint from all previous 31 pooling regressions, which recover. Four streams additionally fail model requests. All 5,280 responses are retained; completion does not imply parity. The fresh driver already differs, so branch qualification against the original remains inconclusive. No performance, concurrent isolation, cancellation or final RQ answer is inferred. Raw input/output provenance is under artifacts/native-branch-2026-10-07.
+| Method, whole seconds | Rep0 | Rep1 | Rep2 |
+|---|---:|---:|---:|
+| native warm |310.478180|311.544205|318.571668|
+| native snapshot/cache |319.523948|320.058833|331.711916|
+| packed CPU control |319.509904|326.852216|321.050247|
+| GPU native6 |315.870382|322.890819|323.607358|
 
-## Research tree
+GPU loses to strongest native CPU by1.736741%,3.642056%,1.580709%;
+mean2.319835%, observed range1.580709–3.642056%, not a confidence interval.
+This rejects a speedup claim for this mechanism/cohort. Component CPU/GPU
+timing is not a hardware-only comparison: GPU has earlier negative head
+refusal. The headline comparison therefore uses strongest native CPU.
 
-The [experiment004 plan](tmp/bootstrap/step-0003-20261009T132427+0000/experiment-004/plan.md) and [independent result review](tmp/bootstrap/step-0003-20261009T132427+0000/experiment-004/result-review.md) complete the source-native construction-order discriminator under RQ2: 156 original streams, four conditions, three repetitions, 1,872 terminal cells/5,280 checks. Lazy CLI-owned frontend matches the unmodified same-source CLI on every non-statistical response. Both match the retained release's checks, reason/model/error responses, but all440 requested version frames per pass retain a build-hash suffix absent from the release; strict full release byte qualification does not pass. Eager creation changes six checks on28,46,49,73,90,103 and additional reason response116; seven streams differ, with four model errors/exit1 per pass. Counts434UNSAT/6UNKNOWN versus436UNSAT/4UNKNOWN hide opposite-direction changes and are not correctness/speed gains. Models are native artifacts after UNKNOWN, not satisfying-model proofs. All initial/failed model-shape analyses remain retained; repaired analysis on unchanged raw data agrees with independent raw review. [Raw, exact commands, snapshots and reproduction](../artifacts/native-frontend-2026-10-09/README.md) retain the complete run. This supports a local construction-order effect and a matched-source frontend candidate, not sole old-API attribution, branching safety, service speed or RQ closure. Next effort must test actual native preparation/branch isolation and equal-resource value, rather than repeat this factor run. Latest outer5090 observation2026-10-09T18:23Z remains Pending/unassigned; experiment002 preserves3consumed plan reviews/0actual integrated preflight attempts.
+One profile per method: warm328.046342/snapshot348.389767/CPU338.670063/
+GPU342.948856s. Sampled tree PSS maxima5289626/9268751/5161250/6315211KiB.
+Non-atomic one-second sampling misses short-lived/unsampled peaks; observer
+CPU is included, GPUcontext/driver and other owners are excluded. Profiles
+do not replace primary repetition uncertainty.
 
-H1, parent initial user goal: immutable native preparation plus disposable branches improves the equal-resource service frontier beyond bounded warm/cache services and native logical/serialized prepared-state reuse. Competitor H2: established services and native reuse capture the useful gains, and exact preparation sharing is too small or COW too costly. Falsifier: fair warm services match or beat branching on real streams, or exact native branching still changes protected behavior.
+Raw/recomputation:
+- artifacts/lean-gpu-checking-2026-10-13/experiment022/full4-proofnet/
+- native6-three-primary-blocks-analysis.json, per-cell source/terminal/basic
+  analysis and original complete ZIPs.
+- runtime-native6-full-20261014032048Z/terminal-{job,pod}-api.json,
+  terminal-container.log, full-proofnet-terminal-summary.json and outcome.json.
 
-H3, sibling: context-sensitive dynamic closure work admits consequential heterogeneous checking beyond fast CPU algorithms. Falsifier: little costly ready work/reuse or full-boundary device costs remove the gain. Current metadata run does not test H3.
+Actual finite Job/container succeed/exit0. Only owning Job/Pod deleted after
+terminal API/log collection; canonical results restored to normal directory.
+Both original Workspaces remain Running1/1/restart0.
 
-The API constructor branch is rejected for native-interface qualification. Reopen only after a source-backed explanation and an independently qualified interface. The next decisive candidate is source-native semantic branching plus real equal-resource attempts. Admission waits for closest-work and safe boundary feasibility; dependencies alone do not answer an RQ. Reopen rejected mechanisms only on changed workload, causal evidence or runtime capability, not a new run ID.
+## RQ4: complete miniF2F continuation
 
-Completed [step0002](tmp/bootstrap/step-0002-20261007T224656+0000/step-report.md): complete declared released AutoVerus main cohort retained but not admitted as complete native traffic. Official Lean source shows hidden internal candidates and duplicate AST elaboration; original test prompts are prepared (430 tasks, ProofNet test17 distinct headers). Supporting fresh/native-root cost plan is approved for real preflight: two separate dataset corpora,32samples/task,12final path/repetition cells. Source-audited duplicate names, timeout/timing and raw-oracle defects are repaired before any empirical run. Exact4.9 full-source dependencies and incomplete setup engagement completed. Two four-input constructed native control cohorts completed with strict response parity; their observed timings are dependency diagnostics, not generated-candidate performance evidence. The initial persistent stdout-buffering failure/partial run remains retained, and warm now uses recorded stock stdbuf -oL. The submitted two-completionRTX5090 Job is last externally reportedPending/unassigned at2026-10-09T18:23Z; actual allocation/runtime remains pending; no model generation or new GPU execution is claimed. Four RQs remain open; neither controls nor infrastructure readiness close them.
+The full native6 miniF2F Job failed in a lab global OOM at 05:28:38 UTC
+on 2026-10-14. Its native warm baseline returned663 candidates and launched
+source663 without a result; GPU conditions had not run. Kernel victim RSS was
+99,353,352 KiB. Scheduled Pod UID matches the kernel cgroup. This is failed
+acquisition, not miniF2F latency or a GPU-memory result. Original7808sources,
+16conditions/124928outcomes and complete32condition two-cohort scope remain
+required. Raw failure/API/events/kernel records are retained under the runtime.
 
-Current stock Lean source qualification: [complete proof/state boundary audit](tmp/bootstrap/step-0002-20261007T224656+0000/literature-20261007T225255+0000/lean-proof-state-boundary.md) establishes declaration-header and supported tactic reuse, native finalization and full child-snapshot serialization at4.34.1. Old4.9 goal-state reconstruction is weaker; that interface/version gap cannot establish novelty. Numerical service benefit, corpus migration and independent branch/cancellation behavior remain unmeasured. Root accepts these source facts as a stronger description of the existing native-reuse baseline family, with all RQ meanings and hypothesis scope preserved.
+The owning Workspace Pod was subsequently replaced by its existing ReplicaSet;
+same Workspace/PVC, deletion actor unknown. Old E015/R11/E008/SMT captures are
+interrupted, not active. Complete original cells survive. Available-memory
+snapshots did not bound this candidate. No memory cap/source exclusion or blind
+retry has been applied. E018 resumed after restoring its dependency alias, then was stopped after
+complete first-primary reanalysis found a slower path and five outcome mismatches. RTX5090 remains shared.
 
-Source-only process feasibility: [pinned runtime investigation](tmp/bootstrap/step-0002-20261007T224656+0000/literature-20261007T225255+0000/lean-runtime-branch-boundary.md) rejects one-worker/no-thread reasoning and identifies stock zero-manager inline execution with promise/cancellation/import/FFI/allocator obligations. Root retains it as a possible implementation hook, not RQ2 evidence or a qualified process branch. Actual native behavior and full resource benefit still require admitted complete experiments.
+Plan: tmp/bootstrap/step-0007-20261010T000125+0000/experiment-022/plan.md.
+Raw: runtime-native6-mini-20261014045320Z/output-root/full4-minif2f.
+No extra small adapter version is admitted before completing both cohorts.
 
-Parallel unaffected route while assignedGPU scheduling is pending: [experiment003](tmp/bootstrap/step-0002-20261007T224656+0000/experiment-003/plan.md), supportingRQ4 normal-check coarse profile of six complete purposive exactMathlib modules, paired native unprofiled/profiled paths, three repeats. The source-qualified official profiler measures accumulated same-thread-exclusive elapsed categories that may overlap across threads; it does not expose GPU operation width or an exact wall/CPU stage partition. Admission chooses between deeper kernel/dynamic profiling and frontend/preparation work without claiming fastestCPU/device superiority or replacing real-candidate capture. Status: COMPLETE approved36cell/18pair matrix plus separate successful2cell preflight, one fresh [result review](tmp/bootstrap/step-0002-20261007T224656+0000/experiment-003/result-review.md), root raw/source audit. All36 full native exits0 and paired empty LeanJSON diagnostics match; seven identical vendor-manifest Lake warnings remain in every stderr. Native AddDecl/type-checking scope is3.8–5.5% of observed accumulated categories, not wall/CPU time; typeclass inference reaches16.7–60.2% in these selected modules. Profile/normal whole-invocation ratios span1.008–1.079 with three paired repetitions, reflecting instrumentation plus system variability. [Complete raw/analysis/reproduction](../artifacts/lean-module-profile-2026-10-08/README.md) retain all sources, categories, resource receipts, executed code and load. Supporting local result points away from an AddDecl-only kernel target toward deeper frontend/meta work; no prepared-state measurement, strongestCPU comparison, no-sorry guarantee, universal device bound or RQ4 closure follows. The completed [exact synthesis/cache source action](tmp/bootstrap/step-0002-20261007T224656+0000/literature-20261007T225255+0000/lean-typeclass-boundary.md) finds existing tabled search and saved-Meta caches, fresh command-level state and deliberate context-dependent resets. Root rejects unsafe blanket cross-candidate caching; dynamic hit/miss/reset/context/cost recurrence remains a future discriminator.
+## RQ1/RQ3: deeper native preparation
 
-## Prepared native-context evidence
+Runtime11 shares imported search-index preparation once before native
+body-free theorem-prefix owners. Same full12ProofNet conditions/71424inputs
+and planned12mini/93696 remain in experiment024/shared-import-search.
+First complete matched block: prefix1819.027655s, prepared496.784868s,
+snapshot507.272168s, all basic/population valid. This implementation loses
+in that block; remaining repetitions/profiles were interrupted by Workspace replacement. No whole RQ answer.
 
-[Experiment005](tmp/bootstrap/step-0004-20261009T183603+0000/experiment-005/plan.md) and its [fresh result review](tmp/bootstrap/step-0004-20261009T183603+0000/experiment-005/result-review.md) complete156×6×3normal cells (2808/7920checks/39528frames), plus six actual SIGKILL/reap controls. Fresh normalized, split EOF, sequential forward/reverse branches and siblings after disposal preserve every non-statistical native requested response, stderr and exit against original same-source CLI. Per condition/repeat434UNSAT/6UNKNOWN and five native models afterUNKNOWN are observed; model validity/SAT/proof/core coverage is absent. Two prefixes are9464/30bytes, without verification; costs are diagnostic and do not establish useful preparation or service advantage. Cancel58 retains1/6/1of25check decisions;87'sonecheck is complete, so cancellation scope is after native progress, not in-solving. [Complete raw/reproduction](../artifacts/native-prepared-2026-10-09/README.md) preserves all cells and separate preflight. This removes a local boundary reject argument, not generic cloning novelty, concurrency safety, fullRQ2 or final evidence. Next discriminator is useful preparation/equal-resource service value with strongest warm/native reuse and real candidate streams, rather than another qualification run.
+Superseded runtime9/10 matrices remain incomplete; original complete/partial
+data and binaries are retained in verified lossless archives, never stitched
+as new timing. Source/build/regression/cost are dependencies, not contributions.
 
-## Completed saved-candidate cost discriminator
+E023 all30ProofNet/178560outcomes have prior independent raw review:
+disposable branches lose to strong warm/snapshot under higher load.
+Mini/full60 and scaling/placement/history/cancellation obligations remain.
+E020 all24ProofNet complete; mini24 remains in the existing CPU queue.
+Old finite retirement128/512 comparisons are explicit controls, not defaults.
 
-[Experiment006 plan](tmp/bootstrap/step-0005-20261009T194100+0000/experiment-006/plan.md), [complete result](tmp/bootstrap/step-0005-20261009T194100+0000/experiment-006/result-report.md) and [fresh result review](tmp/bootstrap/step-0005-20261009T194100+0000/experiment-006/result-review.md) complete the NEW3566×2×3 whole-source campaign (21396terminalcells, no operational timeout), not historical hidden AutoVerus/Houdini calls. Exact publisher Verus/Rust/Z3, allfourfolders/196producerlogs and source bytes retained. Per condition/pass190 exits0,3359 exits1,17 exits101; JSON success=true609 includes419 exit-one/verified-zero pre-SMT failures and is not acceptance. The fixed source-feedback oracle gives10647equal/0different/51unknown pairs; unknown cases retain empty stdout and matching raw diagnostic/exit, never reclassified as JSON parity or proof acceptance. Native solver transport was observed only in the capture path, so direct internal model/byte fidelity is unclaimed.
+## RQ3: real source-native SMT
 
-Each pass2789inputs generates2790calls (one input has two),777inputs no solver capture. All8370nativecalls supply complete original firstDONE/no-check snapshots. Live-TIDCPUmedian15.314ms and initialPSSmedian36955KiB are captured-condition observations; task CPU omits departed threads, process ticks quantize median to0, native smt-init excludes initialstartup. Whole captured/direct wall ratios1.094–1.114 include observer overhead and temporal/load variation; all costs and peak/live/fleet memory scopes remain distinct. No safe useful fork/service/equal-resource speedup follows.
+E025 first full trio,3566sources/method, is reconstructed with identical
+source/command/basic/native-status/requested-artifact records.
+Stock1233.396666s, branch1539.323528s, logical1541.669126s:
+branch24.803607%slower thanstock and only0.152147%better thanlogical,
+one block, no superiority or confidence interval.2789earlier-source terminal
+reuse sessions engage the mechanism; actual fork/translate counters absent.
+Eight primary cells completed; the ninth was interrupted by Workspace Pod replacement.
+The original12condition/42792outcome matrix is incomplete and no process remains active.
+Plan/report: experiment-025/direct-result-first-trio-20261014T0328.md.
+Raw: artifacts/autoverus-native-2026-10-09/experiment025/full1/.
 
-Literal full-flush keys have0earlier-candidate hits per pass, including exact source duplicates;8367of8370prefixes contain unique candidate namespaces. This scopes a negative result to exact first-flush input/argv identity under declared filenames and saved-corpus order. It cannot establish absence of earlier expensive library/frontend reuse or a generalSMT/Lean/GPU bound. Source duplicates228groups/323excess are separate from legal response-cache identity. Source/metric/correctness findings are independently reviewed; initial and portable analyses have byte-identical numeric JSON/CSV outputs, with original code/raw retained. Supporting RQ1 evidence, allfourRQopen; current next admission favors consequential original-state/full-declaration Lean preparation against existing native warm/cache reuse, rather than more cheap qualification fixtures. LeanPolish is a conditionally source-qualified real-attempt lead, not already per-candidate full-proof certification; Goedel/Pending5090 protocol remains additive and unchanged.
+## Supporting complete-source CPU checker
 
-## Step0006 native Lean boundary — closed preflight protocol
+E018 original192context-cell matrix,14913source edits per condition, was stopped
+after first-primary reanalysis found a slower path and outcome mismatches.
+Its known prefix export failure in Mathlib context22 was repaired before disposition. Its failed attempt
+remains intact. Direct acquisition repair falls back to unchanged native-full
+only for a known unexportable prefix before any candidate; all original814
+inputs complete, match stock, whole800.379800s includes failed prefix+fallback.
+No external support/acceleration is claimed for that context. Both phase
+CPU time files and continuous profile sampler require full accounting.
+Original same-binary completed cells remain; full matrix is incomplete.
+Raw/repair: artifacts/lean-cpu-checker-2026-10-13/experiment018/full1/.
+E019 failed/partial/device startup history remains, not a complete baseline.
 
-[Step0006](tmp/bootstrap/step-0006-20261009T222500+0000/step-report.md) and [exact raw/reproduction](../artifacts/leanpolish-native-2026-10-09/README.md) retain three terminal actualpreflights of the admitted complete native resource comparison. Deterministic24Mathlibcontexts/14913actual menu requests reconstructed using source-faithful publisher formatter; initialincorrect unexecuted construction retained separately. Finalexplicitruntimevariant enables native initializers and joins owned event/lthread lifetimes, without weakening one-TIDguard. Actual logicalP1/P4 each return4 rejected full-source responses matching stock diagnostics; original source checks complete. Fork refuses4/3remainingTIDs with0ownedunjoined records and0candidate responses; residualthreadownershipunknown. All3planreviews/3preflights consumed, mainmatrix0/18 and no paired performance evidence. Scoped dependency-only incomplete outcome, not RQ answer, branch safety, source-tactic semantic equivalence or acceleration. Full4RQ/strongnative/warm/cache/resource/GPU goals remainopen. Fresh independent result review confirms incomplete/inconclusive dependency-only evidence. Full12serial WRITE/cumulative meaning audit and ONEindependentouteraudit complete with9page PDF; publication follows. Nextscience favors actual complete native preparation/resource cost against logical reuse or a genuinely different qualified boundary; not a renamed fourthattempt.
+## Remaining evidence and publication
+
+Complete mini cohorts; strongest source-compatible reuse/checker competitors;
+native behavior/resource/cancellation/history; load/scaling/memory/placement;
+causal mechanism coverage; closest-work novelty; full paper/compile/WRITE/
+REVIEW/independent outer audit and completed-step main commit/push remain open.
+Native5/4 and earlier GPU versions are complete historical negative evidence;
+no cross-epoch causal tuning benefit or universal GPU impossibility is inferred.
+
+Storage preserves complete original bytes/modes through verified lossless
+inactive archives, with restoration receipts under experiment025. Active
+datasets/SDK/CLI/credentials/native6/runtime11/runtime2 and other owners remain.
+Future capacity is remeasured, not guaranteed by previous free-space values.
+
+## Native hotspot selection and E018 first complete primary
+
+All24contexts/14913original sources per E018 method: native32319.280591s,
+external-prefix51050.157265s (57.9557%slower), five accepted-to-rejected differences.
+One primary block/sums of context clocks at different times; no CI or final
+repeated service-throughput result. The external integration is invalid for a
+native-equivalent speedup claim. Further acquisition stopped through its own
+cleanup path; completed and partial raw remain. The192cell plan is incomplete.
+See experiment018/first-primary-result-disposition-20261014.md.
+
+E026 uses built-in native diagnostics over all5952 original ProofNet sources.
+It is supporting hotspot attribution after the completed E015 simp/typeclass
+categories, not another GPU speedup experiment. Default report threshold censors
+low-frequency counts; counts are not CPU costs/GPU eligibility. Build/preflight and complete5952source acquisition succeeded. Basic outcomes
+match the complete native control.4898sources emit diagnostics; outParam recurs
+in2970sources/2967distinct source strings, and Ring.toSemiring in1735/1732.
+These are source-coverage observations, not actual-work counts or measured
+projection costs; default threshold/name alias/snapshot replay are disclosed. Plan and raw under
+artifacts/lean-parallel-verification-2026-10-12/experiment026/.
+
+Reanalysis of original classified E015 counter snapshots pairs5951completed
+sources, retains one censored operational source and finds369.605477s observed
+exclusive native-miss CPU:97.576700s has none of the four recorded context flags;
+272.028777s has at least one. This is a miss-scope subset, not a whole-time/GPU
+ceiling. Joint masks/marginal overlap and zero-flag noneligibility are disclosed
+in experiment026/classified-source-delta-review.md. No new timing run was needed.
+
+## Exact projection cost and stronger CPU candidate
+
+E027 completed5952original sources with zero basic differences;5951source
+counter pairs and the original censored operational source. Observed exclusive
+miss CPU232.678006s: seven named families16.910503s (7.2688%), generic projection
+expressions44.087492s, other171.680011s. No whole-time/GPU ceiling follows.
+Per-operation projection offload is rejected as the next implementation. Raw
+standardZIP/parser/source/result review are under experiment027/.
+
+E028 implements conservative closed-term memoization in native reducible/instances
+modes, which the pinned4.9 native cache does not cache. Exact native
+configuration/environment/options scope, unchanged native mctx/environment and
+closed result guard; all other inputs use original native computation. It is a
+strongerCPUcandidate, not novelty. Build0/0/0/0; original0reject/257complete and
+actual cache hits observed. Intended warm-pool/fourworker readiness completed on the original8cases;
+all8full comparison cells completed. Final results and disposition follow below.
+No memory budget/cap/model/Workspace/scheduler change.
+
+E028 first complete5952source pair: original320.210026s, cached296.560437s,
+7.3856%whole wall reduction/1.0797x. All original outcomes match; two auxiliary
+proof value hashes differ with matching types/main theorem hashes. The complete
+3repetition/2resource-profile result is recorded below; no OSDI/RQ
+completion/GPUcomparison is claimed. Cache terminal observations show actual
+engagement; failed-process censoring/peak-entry nonpeak semantics disclosed.
+
+E028 all3primary pairs now complete: wall reductions7.3856%,-0.0617%,
+-1.0334%, zero basic differences on all5952sources. The first-pair improvement
+did not stably replicate; no proven end-to-end speedup. Two resource profiles
+also completed, with no mid-run implementation/baseline change. Current officialWHNF
+already caches eligible modes with configuration keys. Do not present this
+older-version CPUprototype as novel/current-release superiority. Details and
+uncertainty:experiment028/complete-primary-result-review.md.
+
+E028 complete8cell/47616outcome experiment returned: no stable paired wall
+acceleration; resource profiles PSS7864846original/7798128cachedKiB differ0.8483%
+in one sampled comparison. No replicated memory improvement established.
+Candidate closed with code/raw retained; official current unifiedWHNF cache
+already covers this mechanism. AllRQs open; expression/reflection next.
