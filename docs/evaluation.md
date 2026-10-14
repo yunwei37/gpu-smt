@@ -1,6 +1,6 @@
 # Evaluation
 
-Current phase: BOOTSTRAP, step0007, REVIEW_GATE after completed E028 and all12root writing rounds. All four RQs remain
+Current phase: BOOTSTRAP, step0008, REVIEW_GATE after completed E029 and all12root writing rounds. All four RQs remain
 open; no frozen scientific contract, full WRITE/REVIEW closure, independent
 outer audit or completed application-step publication is claimed.
 [Current step and detailed history](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
@@ -208,3 +208,28 @@ acceleration; resource profiles PSS7864846original/7798128cachedKiB differ0.8483
 in one sampled comparison. No replicated memory improvement established.
 Candidate closed with code/raw retained; official current unifiedWHNF cache
 already covers this mechanism. AllRQs open; expression/reflection next.
+
+## Step0008 / RQ3 shared-process placement
+
+Experiment029 is admitted as a decisive complete native parallel/resource comparison,
+not a GPU metadata proxy. All5952original sources against strongest warm4process pool;
+three alternating primary pairs plus2profiles. Same native boundaries/defaults/300s
+allowance andCPU0–3. [Plan](../artifacts/lean-parallel-verification-2026-10-12/experiment029/plan.md)
+and direct-only self-review are saved. Implementation/build/preflight pending; no run
+or performance outcome yet. Original full Lean/SMT/5090/four-RQ goal remains.
+
+Experiment029 complete3primary pairs now contradict faster shared-process verification:
+warm303.028963/303.825857/303.671271s, shared371.637252/360.690135/349.614219s,
+slowdowns22.6408/18.7161/15.1292percent. All5952per-input basics match in everypair.
+Shared panic retains13/14/13native fallback inputs/costs. Requested diagnostic hints
+have internal metavariable-number differences for2913 and some2928; no normalization
+or universal artifact transparency. Resource profiles still completing. Actual
+analysis reconstructs fallback admission-to-response from original shared admission,
+rather than reporting only the later fallback phase. Whole clocks were alreadycomplete.
+
+E029 all8cells/47616outcomes complete, root direct result review saved. No faster
+shared-process result:22.64/18.72/15.13percent slower. Single PSSprofile5.52percent
+lower is unreplicated and private memory is not comparable as COW mutation.
+All per-input basics match; native diagnostic metavariable IDs differ, preserved.
+Candidate closed; complete source/failed/fallback/observer/raw and analysis under
+experiment029. Driver terminal. Return to WRITE, all four RQs still open.

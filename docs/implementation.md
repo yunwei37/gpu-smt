@@ -143,3 +143,19 @@ Single-profile PSS7864846original/7798128cachedKiB differs0.8483%, which does
 not establish replicated memory savings. Two auxiliary proof value hashes differ, their types/main
 theorem hashes match; raw differences preserved and no byte/artifact universal
 transparency claimed. Native kernel still checks every declaration.
+
+## Shared-process native placement, closed
+bench/Lean49SharedFrontends.lean adds the unchanged seeded-stream transition
+as an exported function; bench/lean49_shared_frontends.cpp uses native lthread
+workers sharing a persistent prepared seed and worker-local updated snapshots.
+Same owned runtime objects as the original warm comparator. Native defaults,
+original300s input allowance and final kernel remain; no GPU discharge is claimed.
+Original link failures/native panic/preflight/raw are preserved in experiment029.
+After an actual shared-process failure, unreturned original inputs finish once
+through ordinary native warm execution; both phases are included in whole costs.
+All8cells/47616outcomes completed. Slowdowns15.13–22.64percent reject acceleration.
+Single profile5.52percent lower PSS is not replicated savings; opaque diagnostic
+IDs differ. No independent fault isolation or universal response-byte equality.
+Source/kernel/native SDK unchanged; inactive native6 binary is losslessly archived
+with its original mode/restore recipe. New paper compiles to10pages and all12root
+writing rounds/full-page inspection are complete; independent review unavailable.

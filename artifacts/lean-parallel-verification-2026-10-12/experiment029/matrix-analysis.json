@@ -1,0 +1,631 @@
+{
+  "completed_cells": 8,
+  "planned_cells": 8,
+  "complete": true,
+  "pairs": [
+    {
+      "rep": 0,
+      "warm_seconds": 303.02896264,
+      "shared_seconds": 371.637252149,
+      "shared_slowdown_percent": 22.6408356849068,
+      "relative_wall_reduction_percent": -22.640835684906808,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        265,
+        268,
+        1187,
+        1188,
+        1196,
+        1197,
+        1964,
+        1969,
+        1971,
+        1973,
+        2034,
+        2038,
+        2250,
+        2255,
+        2261,
+        2268,
+        2272,
+        2278,
+        2668,
+        2669,
+        2913,
+        2928,
+        3077,
+        3079,
+        3081,
+        3083,
+        5090,
+        5101,
+        5152,
+        5178,
+        5545,
+        5548,
+        5763,
+        5764,
+        5765,
+        5766,
+        5767,
+        5801,
+        5938,
+        5941,
+        5942,
+        5944
+      ],
+      "requested_response_difference_indices": [
+        2913,
+        2928
+      ],
+      "fallback_count": 13
+    },
+    {
+      "rep": 1,
+      "warm_seconds": 303.825857259,
+      "shared_seconds": 360.690134853,
+      "shared_slowdown_percent": 18.716075750434037,
+      "relative_wall_reduction_percent": -18.716075750434044,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        1186,
+        1188,
+        1965,
+        1970,
+        2032,
+        2038,
+        2211,
+        2212,
+        2250,
+        2253,
+        2265,
+        2266,
+        2276,
+        2278,
+        2665,
+        2666,
+        2668,
+        2669,
+        2913,
+        2928,
+        3081,
+        3084,
+        3086,
+        3089,
+        4699,
+        4700,
+        5095,
+        5174,
+        5180,
+        5538,
+        5548,
+        5763,
+        5764,
+        5766,
+        5768,
+        5801,
+        5810,
+        5938,
+        5940,
+        5941,
+        5943
+      ],
+      "requested_response_difference_indices": [
+        2913,
+        2928
+      ],
+      "fallback_count": 14
+    },
+    {
+      "rep": 2,
+      "warm_seconds": 303.671271335,
+      "shared_seconds": 349.614218975,
+      "shared_slowdown_percent": 15.129171567012435,
+      "relative_wall_reduction_percent": -15.129171567012436,
+      "basic_issues": [],
+      "raw_native_response_difference_indices": [
+        264,
+        267,
+        1187,
+        1189,
+        1193,
+        1196,
+        1969,
+        1970,
+        2034,
+        2039,
+        2181,
+        2182,
+        2209,
+        2211,
+        2212,
+        2214,
+        2253,
+        2255,
+        2261,
+        2264,
+        2276,
+        2278,
+        2657,
+        2658,
+        2668,
+        2669,
+        2913,
+        3076,
+        3079,
+        3081,
+        3086,
+        5092,
+        5100,
+        5176,
+        5178,
+        5442,
+        5443,
+        5500,
+        5548,
+        5764,
+        5767,
+        5799,
+        5801,
+        5938,
+        5941,
+        5942,
+        5943
+      ],
+      "requested_response_difference_indices": [
+        2913
+      ],
+      "fallback_count": 13
+    }
+  ],
+  "cells": {
+    "rep1-shared": {
+      "label": "rep1-shared",
+      "terminal": {
+        "method": "shared",
+        "profile": false,
+        "begin_ns": 405573552678202,
+        "end_ns": 405934242813055,
+        "whole_seconds": 360.690134853,
+        "returncode": 0,
+        "fallback_indices": [
+          5879,
+          5938,
+          5940,
+          5941,
+          5942,
+          5943,
+          5944,
+          5945,
+          5946,
+          5947,
+          5948,
+          5949,
+          5950,
+          5951
+        ],
+        "shared_returned": 5938,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          8.02392578125,
+          9.83251953125,
+          7.5732421875
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.044394514999999996,
+        "p95": 0.859654582,
+        "p99": 3.551987702,
+        "max": 51.998397811
+      },
+      "fallback_latency_reconstruction": [
+        {
+          "source_index": 5879,
+          "phase_local_seconds": 4.323336935,
+          "complete_seconds": 17.854733213
+        },
+        {
+          "source_index": 5938,
+          "phase_local_seconds": 0.437226681,
+          "complete_seconds": 9.507994899
+        },
+        {
+          "source_index": 5940,
+          "phase_local_seconds": 0.095080731,
+          "complete_seconds": 9.00675936
+        },
+        {
+          "source_index": 5941,
+          "phase_local_seconds": 0.587457618,
+          "complete_seconds": 9.521846518
+        }
+      ]
+    },
+    "rep0-warm": {
+      "label": "rep0-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 404897937784196,
+        "end_ns": 405200966746836,
+        "whole_seconds": 303.02896264,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          12.99853515625,
+          6.16015625,
+          3.7939453125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.038150381,
+        "p95": 0.734713941,
+        "p99": 2.993825539,
+        "max": 47.99054416
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep1-warm": {
+      "label": "rep1-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 405934665023447,
+        "end_ns": 406238490880706,
+        "whole_seconds": 303.825857259,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          8.197265625,
+          8.48291015625,
+          7.57373046875
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.03894342,
+        "p95": 0.723856521,
+        "p99": 2.998548274,
+        "max": 47.874334261
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "rep2-shared": {
+      "label": "rep2-shared",
+      "terminal": {
+        "method": "shared",
+        "profile": false,
+        "begin_ns": 406543214736457,
+        "end_ns": 406892828955432,
+        "whole_seconds": 349.614218975,
+        "returncode": 0,
+        "fallback_indices": [
+          5879,
+          5938,
+          5941,
+          5942,
+          5943,
+          5944,
+          5945,
+          5946,
+          5947,
+          5948,
+          5949,
+          5950,
+          5951
+        ],
+        "shared_returned": 5939,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          11.517578125,
+          8.6845703125,
+          7.91943359375
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.04216889,
+        "p95": 0.825713022,
+        "p99": 3.458287689,
+        "max": 51.017177793
+      },
+      "fallback_latency_reconstruction": [
+        {
+          "source_index": 5879,
+          "phase_local_seconds": 4.334447851,
+          "complete_seconds": 17.966360351
+        },
+        {
+          "source_index": 5938,
+          "phase_local_seconds": 0.446517741,
+          "complete_seconds": 9.692562745
+        },
+        {
+          "source_index": 5941,
+          "phase_local_seconds": 0.57291031,
+          "complete_seconds": 9.675507614
+        },
+        {
+          "source_index": 5942,
+          "phase_local_seconds": 0.427193619,
+          "complete_seconds": 9.549582163
+        }
+      ]
+    },
+    "rep2-warm": {
+      "label": "rep2-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": false,
+        "begin_ns": 406239017639923,
+        "end_ns": 406542688911258,
+        "whole_seconds": 303.671271335,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          8.1171875,
+          8.33203125,
+          7.7431640625
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.037979252000000005,
+        "p95": 0.73400975,
+        "p99": 2.995578221,
+        "max": 47.246582844
+      },
+      "fallback_latency_reconstruction": []
+    },
+    "profile-shared": {
+      "label": "profile-shared",
+      "terminal": {
+        "method": "shared",
+        "profile": true,
+        "begin_ns": 406893302783767,
+        "end_ns": 407262656697993,
+        "whole_seconds": 369.353914226,
+        "returncode": 0,
+        "fallback_indices": [
+          5879,
+          5926,
+          5931,
+          5933,
+          5934,
+          5935,
+          5936,
+          5937,
+          5938,
+          5939,
+          5940,
+          5941,
+          5942,
+          5943,
+          5944,
+          5945,
+          5946,
+          5947,
+          5948,
+          5949,
+          5950,
+          5951
+        ],
+        "shared_returned": 5930,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          10.3701171875,
+          9.54931640625,
+          8.57763671875
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.050482281500000004,
+        "p95": 0.883214508,
+        "p99": 3.59583397,
+        "max": 52.368301388
+      },
+      "fallback_latency_reconstruction": [
+        {
+          "source_index": 5879,
+          "phase_local_seconds": 4.324535586,
+          "complete_seconds": 18.241360317
+        },
+        {
+          "source_index": 5926,
+          "phase_local_seconds": 1.070592249,
+          "complete_seconds": 10.679933536
+        },
+        {
+          "source_index": 5931,
+          "phase_local_seconds": 0.654432369,
+          "complete_seconds": 10.032202814
+        },
+        {
+          "source_index": 5933,
+          "phase_local_seconds": 0.337066016,
+          "complete_seconds": 9.534492203
+        }
+      ],
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 406893306778493,
+        "end_monotonic_ns": 407262513119915,
+        "sample_interval_ns": 1000000000,
+        "samples": 356,
+        "incomplete_samples": 0,
+        "sampled_peak_total_pss_kib": 7156560,
+        "sampled_peak_total_private_kib": 7154588,
+        "whole_process_tree_cpu_seconds": 1369.8103800000008,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    },
+    "rep0-shared": {
+      "label": "rep0-shared",
+      "terminal": {
+        "method": "shared",
+        "profile": false,
+        "begin_ns": 405201496652943,
+        "end_ns": 405573133905092,
+        "whole_seconds": 371.637252149,
+        "returncode": 0,
+        "fallback_indices": [
+          5879,
+          5938,
+          5941,
+          5942,
+          5943,
+          5944,
+          5945,
+          5946,
+          5947,
+          5948,
+          5949,
+          5950,
+          5951
+        ],
+        "shared_returned": 5939,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          8.0400390625,
+          9.921875,
+          6.48095703125
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.047994499499999996,
+        "p95": 0.880898753,
+        "p99": 3.562936283,
+        "max": 51.566656182
+      },
+      "fallback_latency_reconstruction": [
+        {
+          "source_index": 5879,
+          "phase_local_seconds": 4.371447271,
+          "complete_seconds": 17.898430614
+        },
+        {
+          "source_index": 5938,
+          "phase_local_seconds": 0.432200769,
+          "complete_seconds": 9.553493449
+        },
+        {
+          "source_index": 5941,
+          "phase_local_seconds": 0.572015577,
+          "complete_seconds": 9.520858631
+        },
+        {
+          "source_index": 5942,
+          "phase_local_seconds": 0.409171363,
+          "complete_seconds": 9.381119253
+        }
+      ]
+    },
+    "profile-warm": {
+      "label": "profile-warm",
+      "terminal": {
+        "method": "warm",
+        "profile": true,
+        "begin_ns": 407263084247159,
+        "end_ns": 407604018443709,
+        "whole_seconds": 340.93419655,
+        "returncode": 0,
+        "fallback_indices": [],
+        "shared_returned": null,
+        "whole_boundary": "input persistence, native initialization/preparation/evaluation, actual failed shared work, native fallback/replacement, observer/output/EOF/cleanup; ZIP after clock",
+        "host_load_end": [
+          10.2412109375,
+          12.22705078125,
+          10.22900390625
+        ],
+        "expected_attempts": 5952
+      },
+      "returned": 5952,
+      "basic_counts": {
+        "rejected": 5534,
+        "complete": 413,
+        "incomplete": 4,
+        "operational": 1
+      },
+      "complete_native_latency_seconds": {
+        "median": 0.0808355475,
+        "p95": 0.920380248,
+        "p99": 3.289730385,
+        "max": 49.797304375
+      },
+      "fallback_latency_reconstruction": [],
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 407263084504303,
+        "end_monotonic_ns": 407603868488562,
+        "sample_interval_ns": 1000000000,
+        "samples": 330,
+        "incomplete_samples": 1,
+        "sampled_peak_total_pss_kib": 7574628,
+        "sampled_peak_total_private_kib": 5055292,
+        "whole_process_tree_cpu_seconds": 1258.8582839999995,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    }
+  },
+  "scope": "complete source verification and actual shared-failure native fallback; native response differences retained, not normalized",
+  "latency_note": "fallback rows reconstruct from original shared admission when present; whole clocks already include discarded work and fallback"
+}

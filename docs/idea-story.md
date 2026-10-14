@@ -27,7 +27,7 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-BOOTSTRAP step0007 REVIEW_GATE after complete E028 and serial root WRITE, scientific contract unfrozen and all four
+BOOTSTRAP step0008 REVIEW_GATE after complete E029 and serial root WRITE, scientific contract unfrozen and all four
 RQs open. Initial Narrative and accepted evolution below remain intact.
 The desktop root implements directly under the human request; the original
 native author session is retained/stopped, with no delegated new author.
@@ -78,6 +78,18 @@ and [step report](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
 own current evidence. [Prior extended frontier](tmp/bootstrap/step-0007-20261010T000125+0000/archived-idea-frontier-before-direct-mini-20261014.md)
 preserves all historical intermediate details. No scientific-contract change
 or accepted idea-level change is made by this frontier clarification.
+
+E029 shared-process native frontends completed all8conditions/47616outcomes.
+Three paired makespans are15.13–22.64percent slower than the strong COW warm pool.
+Basic outcomes match; diagnostic metavariable-number differences remain unnormalized.
+Shared Nat.pow panic invokes measured native fallback for unreturned inputs.
+Single sampled PSS is5.52percent lower, not replicated memory evidence; private
+pages across a single heap and COW processes do not isolate mutation. The candidate
+is closed. Root completed all12writing rounds,10page compile/render/visual inspection
+and direct reflection. This is not independent audit or completed four-RQ evidence.
+A source-grounded next candidate is expensive syntax-string classification in
+existing/current REPL sorry extraction; its cost and complete benefit are unmeasured.
+No source-only finding, ordinary threads, fork or AST matcher becomes the system thesis.
 
 ## Narrative evolution
 

@@ -16,7 +16,7 @@ Independent attempts trade repeated preparation against shared execution, whose 
 Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
 Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
 We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding attempts.
-Realizing this separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+This separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
 We present a verification service that retains immutable prepared states, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
 We compare complete verification in Lean and systems backed by satisfiability modulo theories (SMT) solvers on public candidate streams against competent bounded warm services and native logical or serialized prepared-state reuse, and assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.
 \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
@@ -33,7 +33,7 @@ Established reuse recovers preparation but leaves the value of independent nativ
 
 We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime. A context is prepared before candidate evaluation, and that native state remains available to independent attempts. Each candidate inherits the prepared state, so other candidates neither supply its solver history nor extend its lifetime. The value of this separation depends on context preparation cost, branch creation cost and the pages that each candidate modifies.
 
-Realizing this separation requires runtime safety, faithful resource handling and bounded memory. A branch boundary must be quiescent and safe for the verifier runtime, and native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Preparation sharing must improve service capacity within a memory budget that bounds retained states. These requirements connect compatibility to the service's resource frontier, the achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
+Realizing this separation requires runtime safety, faithful resource handling and bounded memory. A branch boundary must be quiescent and safe for the verifier runtime. Native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Preparation sharing must improve service capacity within a memory budget that bounds retained states. Together, these requirements connect compatibility to the service's resource frontier, the achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
 
 We present a verification service that retains immutable prepared states in a parent performing no candidate verification and executes disposable independent branches. Each branch owns its responses, mutable state, communication and cancellation. It inherits native resource state and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams with competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess the remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback included in complete verification costs. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
 
@@ -200,7 +200,58 @@ Lean controls cover complete acceptance, rejection, unresolved obligations and a
 \subsection{Latency, throughput and memory}
 RQ3 asks how prepared-state branching changes end-to-end latency, throughput and memory at equal resources compared with established warm-session reuse. We replay actual attempt streams over offered-load and concurrency sweeps, matching CPU and memory budgets across services. A single shared warm worker is not the sole comparison to many branch workers. We charge the measured service for creating and replacing prepared states and for cache costs.
 
-We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.} RQ3 remains unanswered until branching is compared with the strongest competent services over the complete workload and resource matrix.
+We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+
+\paragraph{Complete source-native placement comparison.}
+We compare a shared-process warm-worker alternative with the competent
+process-isolated warm pool on the retained 5,952 ProofNet-lineage
+source attempts~\cite{proofnetSource,goedelProofnet}. Both use the retained Lean environment and reuse native incremental snapshots,
+prepare the first imported environment and search index, and use four frontend
+workers on the same four permitted CPUs with default native runtime threads.
+The warm pool already shares its prepared roots through copy-on-write.
+The alternative shares one native heap and runtime while keeping each worker's
+candidate-updated root table separate. Complete clocks include initialization,
+preparation, source verification, response transport, actual failure recovery,
+output, EOF and cleanup.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Whole corpus time (s) & Run 1 & Run 2 & Run 3 \\
+\midrule
+Process-isolated warm pool & 303.029 & 303.826 & 303.671 \\
+Shared-process alternative & 371.637 & 360.690 & 349.614 \\
+\bottomrule
+\end{tabular}
+\caption{Complete native source verification for the shared-process placement
+and warm pool, each with 5,952 original attempts. The three primary pairs
+retain identical basic outcomes. Resource profiles are separate conditions.}
+\label{tab:shared-process}
+\end{table}
+
+Table~\ref{tab:shared-process} rejects an acceleration claim for this
+shared-process placement on the measured cohort. It is 22.64\%, 18.72\%
+and 15.13\% slower than the warm pool. Each condition returns 413 complete,
+5,534 rejected, four incomplete and one operational outcome. A native panic
+ends the shared process; the complete method checks every unreturned original
+candidate through the ordinary native warm path and charges both phases.
+The primary pairs recover 13, 14 and 13 candidates in this way.
+Internal metavariable numbers in diagnostic suggestions differ on two
+retained incomplete sources in some pairs. These responses remain unnormalized,
+so matched basic outcomes do not establish identical artifact bytes in general.
+
+Separate profiles observe sampled fleet PSS maxima of 7,156,560 KiB for the
+shared-process alternative and 7,574,628 KiB for the warm pool.
+The 5.52\% lower sampled PSS is a single comparison, not replicated memory
+evidence. One-second non-atomic sampling and competing mappings limit PSS
+interpretation. A shared heap also changes whether unchanged anonymous pages
+are counted as private, so private-page totals across these placements do not
+directly measure mutation. The complete workload, offered-load and resource
+matrix remains necessary to answer RQ3. RQ3 remains unanswered until
+branching is compared with the strongest competent services over the complete
+workload and resource matrix.
 
 \subsection{Heterogeneous execution}
 RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.
