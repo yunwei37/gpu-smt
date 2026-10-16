@@ -1,0 +1,35 @@
+--- main.tex
++++ main.tex
+@@ -180,7 +180,7 @@
+ We use complete ordered public proof and program attempts from multiple contexts in Lean and SMT-backed systems verification. Published proofs and deliberate invalid or incomplete variants provide behavior controls, while failed generated attempts remain part of the candidate-stream evaluation. These controls do not establish locality in generated candidate traffic. VeruSAGE provides real repository-level tasks~\cite{verusage,verusagePaper} for Verus~\cite{verus}, and Mathlib and the Lean Kernel Arena provide source/library and checker workloads~\cite{mathlib,leanArena}. \missing{Final source-native candidate-stream identities, versions, complete coverage and exclusions.}
+ 
+ \paragraph{Retained generated candidates and submission policy.}
+-The retained Goedel-Prover-SFT generation contains 32 candidates for each of
++The retained Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
+ 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks, for a total of 13,760 candidates.
+ Every selected candidate maps to its original task, model output, extracted
+ source and submission/response events in four RTX 5090 generation segments.
+--- main.tex
++++ main.tex
+@@ -181,7 +181,7 @@
+ 
+ \paragraph{Retained generated candidates and submission policy.}
+ The retained Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
+-244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks, for a total of 13,760 candidates.
++244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.
+ Every selected candidate maps to its original task, model output, extracted
+ source and submission/response events in four RTX 5090 generation segments.
+ Interrupted tails and 24 additional returned responses outside the complete
+--- main.tex
++++ main.tex
+@@ -186,8 +186,8 @@
+ source and submission/response events in four RTX 5090 generation segments.
+ Interrupted tails and 24 additional returned responses outside the complete
+ 32-candidate groups remain retained separately.
+-The adapted SGLang generator executes one request at a time. Official
+-Goedel inference instead batches model inputs through vLLM~\cite{goedelInference}.
++The adapted SGLang~\cite{sglangSource} generator executes one request at a time. Official
++Goedel inference instead batches model inputs through vLLM~\cite{goedelInference,vllmSource}.
+ These event clocks record candidate availability, rather than verifier-request
+ arrivals. The official next stage reads the completed code file and submits
+ all candidates as a batch~\cite{goedelCompile}.

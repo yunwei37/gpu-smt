@@ -1,0 +1,22 @@
+--- main.tex
++++ main.tex
+@@ -23,7 +23,7 @@
+ \end{abstract}
+ 
+ \section{Introduction}\label{sec:intro}
+-Formal verification services check streams of program and proof candidates against formal specifications. Proof-generation systems submit related attempts that share libraries, declarations and accepted context. Services check these attempts with proof assistants that construct and check proof terms, or with verifiers that translate program obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
++Formal verification services check streams of program and proof candidates against formal specifications. Proof-generation systems submit related attempts that share libraries, declarations and accepted context. Services use proof assistants to construct and check proof terms, or verifiers to translate program obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
+ 
+ Serving independent attempts requires balancing repeated preparation with shared execution. A separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but their resource growth, contention and cancellation behavior depend on worker isolation. For example, concurrent attempts against one imported Lean context need the same context but have independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
+ 
+--- main.tex
++++ main.tex
+@@ -17,7 +17,7 @@
+ Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
+ We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding attempts.
+ This separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+-We present a verification service that retains immutable prepared states, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
++Our verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+ Using public candidate streams from Lean and systems backed by satisfiability modulo theories (SMT) solvers, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.
+ \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
+ \end{abstract}

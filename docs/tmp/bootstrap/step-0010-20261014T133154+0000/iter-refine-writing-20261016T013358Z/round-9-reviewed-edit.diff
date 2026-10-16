@@ -1,0 +1,48 @@
+--- main.tex
++++ main.tex
+@@ -250,7 +250,7 @@
+ service executes 67 import headers and selects 29,683 started-REPL reuses.
+ The compiled route executes 60 headers and selects 29,690 reuses. All source
+ IDs are accounted for once. These counts confirm that the competent baseline
+-already reuses preparation. They do not measure its CPU or latency share.
++already reuses preparation, but do not measure its CPU or latency share.
+ Older preparation controls also include an explicit
+ \texttt{LibrarySearch} query for \texttt{True}. Their initialization intervals
+ therefore do not establish preparation demand derived from the candidate
+--- main.tex
++++ main.tex
+@@ -456,7 +456,7 @@
+ loading native-compiled Mathlib modules~\cite{lean4}.
+ Whole elapsed time is 32,945.98 versus 15,835.68 seconds, a 51.93\% reduction
+ (2.08$\times$ ratio) in this first complete pair.
+-Runtime import and library loading are charged. Software build is excluded.
++Runtime import and library loading are charged, while software build is excluded.
+ Native fields match on 29,725 sources after excluding the adapter timer.
+ 16 operational outcomes become complete and nine complete outcomes become
+ operational. No complete/rejected flip is observed, and failures remain charged.
+--- main.tex
++++ main.tex
+@@ -478,8 +478,8 @@
+ profiles remain. Its producer version and selective compiled closure differ
+ from the Goedel block above.
+ 
+-A further CPU comparison reuses resolved multiplication-theorem applications
+-within each nonlinear arithmetic preprocessing invocation.
++We also compare complete verification with and without reuse of resolved
++multiplication-theorem applications within each nonlinear arithmetic preprocessing invocation.
+ Against the same FarkasFast/native-hybrid route, three complete 29,750-source
+ pairs reduce whole elapsed time from 11,629.90 to 10,487.44 seconds,
+ 12,852.84 to 11,208.51 seconds and 14,753.25 to 12,483.33 seconds.
+--- main.tex
++++ main.tex
+@@ -628,8 +628,8 @@
+ and the sampling process contributes CPU overhead. These clocks do not
+ replace the primary comparisons or establish replicated memory uncertainty.
+ GPU context/driver memory and other owners are outside host-PSS figures.
+-The remaining workload and strongest-checker comparisons remain necessary
+-to answer RQ4 at its stated scope. RQ4 remains unanswered until measured
++Answering RQ4 at its stated scope requires the remaining workload and
++strongest-checker comparisons. RQ4 remains unanswered until measured
+ complete boundaries establish a device benefit or a negative opportunity bound.
+ 
+ \subsection{Limitations}

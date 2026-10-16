@@ -1,0 +1,78 @@
+--- main.tex
++++ main.tex
+@@ -446,37 +446,6 @@
+ Lean proof construction and checking. These are CPU competitors in the
+ heterogeneous comparison.
+ 
+-\paragraph{Complete original-path cost profile.}
+-A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources
+-and retains body profiles for 29,689 of them. All 61 sources without a body
+-profile have operational outcomes.
+-The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
+-have the largest recorded leaf-wall totals, followed by \texttt{simp}.
+-These thresholded trace weights measure wall intervals that can overlap across
+-threads and requests, rather than CPU fractions or device-eligible work.
+-The observation characterizes the original arithmetic route.
+-Residual costs after the strongest CPU route remain to be measured.
+-
+-\paragraph{Complete compiled-route CPU sampling.}
+-A separate instrumented compiled-route run returns all 29,750 sources and
+-retains 5,401,763 user-CPU samples with zero reported lost samples.
+-Exclusive sample counts and periods reconcile across flat and callchain
+-reports. Standard \texttt{perf} children weights include callees and
+-overlap~\cite{perfReport}.
+-Against all recorded user-CPU period, the displayed inclusive weights are
+-35.00\% for the Meta definitional-equality export,
+-16.96\% for a sparse-simplex certificate-oracle entry and
+-10.81\% for a typeclass-synthesis entry.
+-The first symbol is exported by a \texttt{MetaM} implementation in the
+-installed Lean4.27 source~\cite{lean427MetaDefEq}; it is not a pure C++ kernel
+-checking fraction. These entries cannot be added into disjoint phases.
+-Separately, reference-count decrement and small allocation account for
+-20.05\% of native exclusive recorded period; that pair is not an exhaustive
+-runtime category. Sampling, unknowns and callchain limits remain, and neither
+-view supplies whole-wall decomposition, a GPU ceiling or batching readiness.
+-This capture characterizes the compiled original arithmetic route; residual
+-costs after selecting a different strongest CPU composition remain open.
+-
+ \paragraph{Complete CPU compilation pair.}
+ A separate matched four-CPU block checks every one of the 29,750 released
+ GoedelWorkbook sources with the original GC service and the same service
+@@ -545,6 +514,37 @@
+ These complete comparisons preserve a competent CPU competitor; they do not
+ establish the globally strongest CPU path or heterogeneous acceleration.
+ 
++\paragraph{Complete original-path cost profile.}
++A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources
++and retains body profiles for 29,689 of them. All 61 sources without a body
++profile have operational outcomes.
++The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
++have the largest recorded leaf-wall totals, followed by \texttt{simp}.
++These thresholded trace weights measure wall intervals that can overlap across
++threads and requests, rather than CPU fractions or device-eligible work.
++The observation characterizes the original arithmetic route.
++Residual costs after the strongest CPU route remain to be measured.
++
++\paragraph{Complete compiled-route CPU sampling.}
++A separate instrumented compiled-route run returns all 29,750 sources and
++retains 5,401,763 user-CPU samples with zero reported lost samples.
++Exclusive sample counts and periods reconcile across flat and callchain
++reports. Standard \texttt{perf} children weights include callees and
++overlap~\cite{perfReport}.
++Against all recorded user-CPU period, the displayed inclusive weights are
++35.00\% for the Meta definitional-equality export,
++16.96\% for a sparse-simplex certificate-oracle entry and
++10.81\% for a typeclass-synthesis entry.
++The first symbol is exported by a \texttt{MetaM} implementation in the
++installed Lean4.27 source~\cite{lean427MetaDefEq}; it is not a pure C++ kernel
++checking fraction. These entries cannot be added into disjoint phases.
++Separately, reference-count decrement and small allocation account for
++20.05\% of native exclusive recorded period; that pair is not an exhaustive
++runtime category. Sampling, unknowns and callchain limits remain, and neither
++view supplies whole-wall decomposition, a GPU ceiling or batching readiness.
++This capture characterizes the compiled original arithmetic route; residual
++costs after selecting a different strongest CPU composition remain open.
++
+ \paragraph{Complete source-native ProofNet comparison.}
+ Three complete primary comparisons process the same 5,952 retained
+ ProofNet-lineage~\cite{proofnetSource,goedelProofnet} Lean4 source attempts in original order, including failed

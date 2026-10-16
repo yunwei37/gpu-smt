@@ -2655,3 +2655,24 @@ narrative status without changing the InitialNarrative/evolution/RQs. Canonical
 literature/paper integration belongs to the existing OMP owner; its completion
 and full fresh independent review are still pending. No background capture
 row-count poll is performed in this node.
+
+
+## WRITE publication: completed current draft and prior writing-node evidence
+
+Under the user's completed-work publication instruction, root publishes the
+existing validated current paper rather than withholding the previous finished
+writing node until the new OMP work completes. The source/bibliography remain
+unchanged in this publication node. CurrentPDF is15pages/193829bytes; source
+contains39citation keys with39bibliography entries, no unresolved local label
+references, and13explicit missing-result slots. PDFmtime follows unchangedTeX.
+Prior actual compile/render and the completed12round adapted root writing node
+remain evidence; these are not rebranded as independent review.
+
+The publication includes current source/PDF, authored figures/source/plotting
+and selected writing-node reports, own-paper diffs and diagnostics. Extracted
+full third-party paper text is not part of this authored-draft checkpoint.
+The original full research scope and open RQs remain. This publishes an
+incomplete research draft with explicit gaps, not final experiment completion,
+novelty proof, an accepted paper or an independent whole-paper verdict.
+OMP may continue its assigned paper/docs work from this published draft; root
+does not edit its future changes or resume the original native Codex author.

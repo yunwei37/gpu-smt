@@ -1,0 +1,435 @@
+diff --git a/docs/paper/main.tex b/docs/paper/main.tex
+index 9b9a248..81790dd 100644
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -12,30 +12,30 @@
+ \maketitle
+ \begin{abstract}
+ Formal verification services check streams of program and proof candidates against formal specifications, and related candidates share libraries, declarations and accepted context.
+-Independent attempts trade repeated preparation against shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
++Independent attempts require balancing repeated preparation with shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
+ Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
+ Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
+ We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding attempts.
+ This separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+ We present a verification service that retains immutable prepared states, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+-We compare complete verification in Lean and systems backed by satisfiability modulo theories (SMT) solvers on public candidate streams against competent bounded warm services and native logical or serialized prepared-state reuse, and assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.
++Using public candidate streams from Lean and systems backed by satisfiability modulo theories (SMT) solvers, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.
+ \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
+ \end{abstract}
+ 
+ \section{Introduction}\label{sec:intro}
+-Formal verification services check streams of program and proof candidates against formal specifications. Proof-generation systems submit related attempts that share libraries, declarations and accepted context. Services use proof assistants to construct and check proof terms, or verifiers to translate program obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
++Formal verification services check streams of program and proof candidates against formal specifications. Proof-generation systems submit related attempts that share libraries, declarations and accepted context. Services check these attempts with proof assistants that construct and check proof terms, or with verifiers that translate program obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
+ 
+-Serving independent attempts trades repeated preparation against shared execution. A separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but resource growth, contention and cancellation depend on worker isolation. Concurrent attempts against one imported Lean context illustrate the tradeoff: they need the same context and independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
++Serving independent attempts requires balancing repeated preparation with shared execution. A separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but their resource growth, contention and cancellation behavior depend on worker isolation. For example, concurrent attempts against one imported Lean context need the same context but have independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
+ 
+ This tradeoff depends on native execution history beyond visible formulas or declarations. Z3's combined solver can select a different solving path after an additional scope~\cite{z3api}, and earlier requests can alter heuristics and resource counters. A proof assistant likewise retains elaborator state and mutable runtime extensions beyond its immutable declaration environment~\cite{lean4,repl}. Reconstructing a logically equivalent context therefore requires a separate argument for observable verification behavior.
+ 
+-Established reuse recovers preparation but leaves the value of independent native execution at matched resources unresolved. Result caches avoid repeating completed work~\cite{boogieCache}, while the community read--eval--print loop (REPL) supports persistent environments, backtracking and pickling~\cite{repl}. Recent Lean snapshotting retains elaborated proof state across parallel tactic branches~\cite{leanSnapshot}, and stock Lean saves incremental elaboration snapshots between invocations~\cite{leanIncremental}. Bounded warm services reuse environment roots and retire workers~\cite{kimina,kiminaPaper}. Against these native-reuse baselines, the matched comparison must establish whether separating preparation from candidate execution history improves complete verification, cancellation and total memory across service processes.
++Established reuse recovers preparation but leaves the value of independent native execution at matched resources unresolved. Result caches avoid repeating completed work~\cite{boogieCache}, while the community read--eval--print loop (REPL) supports persistent environments, backtracking and pickling~\cite{repl}. Recent Lean snapshotting retains elaborated proof state across parallel tactic branches~\cite{leanSnapshot}, and stock Lean saves incremental elaboration snapshots between invocations~\cite{leanIncremental}. Bounded warm services reuse environment roots and retire workers~\cite{kimina,kiminaPaper}. Axle also serves preloaded Lean contexts in separate request processes~\cite{axle}. Against these native-reuse baselines, the matched comparison must establish whether separating preparation from candidate execution history improves complete verification, cancellation and total memory across service processes.
+ 
+ We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime. A context is prepared before candidate evaluation, and that native state remains available to independent attempts. Each candidate inherits the prepared state, so other candidates neither supply its solver history nor extend its lifetime. The value of this separation depends on context preparation cost, branch creation cost and the pages that each candidate modifies.
+ 
+ Realizing this separation requires runtime safety, faithful resource handling and bounded memory. A branch boundary must be quiescent and safe for the verifier runtime. Native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Preparation sharing must improve service capacity within a memory budget that bounds retained states. Together, these requirements connect compatibility to the service's resource frontier, the achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
+ 
+-We present a verification service whose parent retains immutable prepared states without performing candidate verification, while disposable independent branches execute the candidates. Each branch owns its responses, mutable state, communication and cancellation. It inherits native resource state and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams with competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess the remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback included in complete verification costs. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
++We present a verification service whose parent retains immutable prepared states and leaves candidate verification to disposable independent branches. Each branch owns its responses, mutable state, communication and cancellation, inherits native resource state, and receives separate service accounting. Supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes address runtime compatibility and memory use. Unsupported boundaries use native execution. We compare complete verification on public Lean and SMT-backed candidate streams with competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess the remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback included in complete verification costs. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
+ 
+ This paper makes four contributions.
+ \begin{itemize}
+@@ -179,6 +179,54 @@ The evaluation answers four research questions, each mapped to the design goals
+ \subsection{Experimental setup}
+ We use complete ordered public proof and program attempts from multiple contexts in Lean and SMT-backed systems verification. Published proofs and deliberate invalid or incomplete variants provide behavior controls, while failed generated attempts remain part of the candidate-stream evaluation. These controls do not establish locality in generated candidate traffic. VeruSAGE provides real repository-level tasks~\cite{verusage,verusagePaper} for Verus~\cite{verus}, and Mathlib and the Lean Kernel Arena provide source/library and checker workloads~\cite{mathlib,leanArena}. \missing{Final source-native candidate-stream identities, versions, complete coverage and exclusions.}
+ 
++\paragraph{Retained generated candidates and submission policy.}
++The retained Goedel-Prover-SFT generation contains 32 candidates for each of
++244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks: 13,760 candidates.
++Every selected candidate maps to its original task, model output, extracted
++source and submission/response events in four RTX 5090 generation segments.
++Interrupted tails and 24 additional returned responses outside the complete
++32-candidate groups remain retained separately.
++The adapted SGLang generator executes one request at a time; official
++Goedel inference instead batches model inputs through vLLM~\cite{goedelInference}.
++These event clocks record candidate availability, rather than verifier-request
++arrivals. The official next stage reads the completed code file and submits
++all candidates as a batch~\cite{goedelCompile}.
++Consequently, finite bulk verification and online offered-load replay have
++distinct submission policies. Our whole-source CPU comparisons load all inputs
++before service startup and use four outstanding HTTP requests; they are not
++exact reproductions of the official default 64-request scheduler.
++
++\paragraph{Version-aligned released proof workload.}
++We also characterize all 29,750 released GoedelWorkbook proof files migrated to
++Lean 4.27.0 and Mathlib revision a3a10db0~\cite{goedelWorkbook427}.
++We retain every published source file, including the publisher's migration
++errors and timeouts, in filename order. This release contains proof outputs,
++rather than every attempted generation or observed service arrival.
++Its competition-mathematics focus limits generalization to other Lean use.
++
++One complete native-compilation reference acquisition uses four outstanding
++HTTP requests, shared CPU eligibility 0--3, the pinned Kimina service, and its
++300-second request timeout and 12\,GiB per-process address-space allowance.
++It returns 27,319 complete, 2,376 rejected and 55 operational outcomes.
++The operational group contains 41 timeouts and 14 decoder failures; an
++individual native allocation-failure replay does not establish the cause
++of every decoder failure.
++Figure~\ref{fig:modern-reference-tail} separates these outcome populations.
++Completed proofs have median request latency 0.399 seconds, p95 3.324 seconds
++and a maximum of 272.692 seconds. These are closed-loop request durations,
++which overlap and do not decompose whole-corpus wall time or kernel CPU cost.
++
++\begin{figure}[t]
++\centering
++\includegraphics[width=\columnwidth]{figures/native-aot-reference-latency.pdf}
++\caption{Request-latency survival curves for one complete 29,750-source native
++CPU reference acquisition. Each curve is normalized within its indicated
++outcome population; both axes are logarithmic. Operational outcomes remain
++included. This single acquisition characterizes the workload tail and provides
++no between-run uncertainty, speedup or offered-load queueing result.}
++\label{fig:modern-reference-tail}
++\end{figure}
++
+ The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. The heterogeneous comparison uses the fastest runnable complete CPU checker at a matched boundary, in addition to official Lean. A kernel checker operates after export only when the measurement explicitly uses that boundary. \missing{Pinned strongest service artifacts and matched configuration.} Baselines receive the same candidate information, CPU capacity, memory budget and admission order.
+ 
+ We preserve all raw per-input outcomes. Lean outcomes include unfinished proof obligations and admissions as well as frontend diagnostics. A successful tactic screen requires the enclosing declaration or source checking stage before it counts as an accepted proof.
+@@ -190,6 +238,20 @@ We repeat whole comparisons with alternating condition order. Affinity specifies
+ \subsection{Preparation sharing}\label{sec:opportunity}
+ RQ1 asks how much expensive native preparation real verification candidate streams share across independent jobs. We preserve original attempt ordering and measure preparation CPU time and resident state available before each attempt. We separately analyze result reuse for exact duplicate attempts, sharing of ordered native prefixes and sharing of native environments. Sharing a native environment characterizes established reuse, while a supported process branch must also satisfy the preparation and boundary conditions in Section~\ref{sec:preparation}. The characterization includes failed and incomplete attempts, so locality is measured across all attempts rather than only successful proofs.
+ 
++A complete source-level characterization finds one original task header in
++the miniF2F pool and 17 in the ProofNet-lineage pool. Apart from extraction-failure
++strings, the pools contain zero and 121 repeated code occurrences, respectively.
++Header recurrence and source duplication do not measure native preparation
++CPU or memory. In the complete 29,750-source modern GC captures, the original
++service executes 67 import headers and selects 29,683 started-REPL reuses;
++the compiled route executes 60 headers and selects 29,690 reuses. All source
++IDs are accounted for once. These counts confirm that the competent baseline
++already reuses preparation; they do not measure its CPU or latency share.
++Older preparation controls also include an explicit
++\texttt{LibrarySearch} query for \texttt{True}; their initialization intervals
++therefore do not establish preparation demand derived from the candidate
++requests.
++
+ We compare original ordering with a control containing unrelated work and measure how preparation depth changes reusable work. Text bytes and declaration counts are descriptive inputs, while measured preparation cost determines the opportunity. \missing{Preparation-cost distributions, context reuse over time and aggregate achievable sharing with uncertainty.} RQ1 remains unanswered until these measurements of complete original candidate streams establish whether preparation sharing is consequential.
+ 
+ \subsection{Behavior and isolation}\label{sec:behavior-results}
+@@ -202,6 +264,92 @@ RQ3 asks how prepared-state branching changes end-to-end latency, throughput and
+ 
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+ 
++\paragraph{Complete native-stream service replay.}
++We replay all 5,952 retained ProofNet-lineage source attempts through a local
++native stream interface~\cite{proofnetSource,goedelProofnet}.
++The warm pool retains native workers across candidates, independent branches
++replace a worker after each uncached candidate, and snapshot/cache uses
++separately started native full-stream workers. All methods use the same
++success-only exact header/source cache policy, four worker slots and the same
++four permitted CPUs. They retain the Lean4.9.0-rc1/Mathlib environment,
++native runtime threads and original 300-second allowance from dispatch.
++Queue waiting does not consume that verifier allowance.
++
++This retained protocol also explicitly warms a library-search index with a
++\texttt{True} query before candidate checking. Its observed wall interval is
++6.69--6.93 seconds in the warm-pool and branch captures. The snapshot worker
++calls the same query without emitting a separate timer. These measurements
++therefore characterize this modified preparation protocol; they do not measure
++preparation demanded by the original requests or an untouched official service.
++No ablation isolates the query's effect on queueing or the method ratios.
++
++Each method receives the original source order at deterministic synthetic
++arrival rates of 6.52, 13.04 and 19.56 attempts per second. Method and rate
++orders rotate over three complete primary repetitions. Three separate resource
++profiles bring the complete ProofNet cohort to 30 conditions.
++Every condition returns 413 complete, 5,534 rejected, four incomplete and one
++operational outcome, matching the retained stock basic outcomes.
++Arrival latency starts at the scheduled arrival and ends at captured response,
++including release lag and pending-queue time. Whole-corpus clocks additionally
++include initialization and final drain and EOF.
++
++\begin{figure}[t]
++\centering
++\includegraphics[width=\columnwidth]{figures/proofnet-offered-arrival-p95.pdf}
++\caption{Arrival latency under synthetic load over 5,952 original ProofNet-lineage
++attempts per condition. Markers show all three whole-run p95 observations for
++each method and scheduled rate; lines join their arithmetic means, not pooled
++request percentiles or confidence intervals. All 27 primary conditions complete
++on the same four permitted CPUs. Independent branches have worse p95 latency
++at each tested rate. The separate profiles are excluded. This finite replay
++does not establish a production arrival trace or steady-state capacity.}
++\label{fig:proofnet-offered-arrival}
++\end{figure}
++
++Figure~\ref{fig:proofnet-offered-arrival} rejects faster service for this
++per-candidate branch implementation at the tested preparation boundary.
++At the highest rate, its p95 exceeds the warm pool's by more than seven times
++in each repetition. Low-rate whole times mostly follow the arrival schedule,
++so their similarity does not establish equal service capacity.
++At the two higher rates, branch mean waiting before dispatch is
++41.658--142.095 seconds, compared with 0.363--0.395 seconds after dispatch.
++Mean release lag stays below one millisecond. These means locate waiting
++within the measured implementation; they do not isolate process-cloning cost
++or identify CPU-time fractions.
++
++Separate profiles observe sampled PSS maxima of 2,764,774 KiB for branches,
++4,806,597 KiB for the warm pool and 8,857,235 KiB for snapshot/cache.
++The branch profile has incomplete observations in 187 of 633 samples.
++One-second non-atomic sampling misses short-lived processes and peaks, so
++these single profiles do not establish replicated memory savings or a complete
++memory frontier. The wider workload, context and resource comparisons remain open.
++
++\paragraph{Native SMT prefix comparison.}
++Three complete rotations check all 3,566 retained SMT-backed source candidates
++through stock native execution, prepared native branches and logical reuse.
++The matched conditions use the same three permitted CPUs and original native
++configuration, charging startup, transport, raw capture, archival and cleanup.
++Stock whole times are 1,561.1, 1,618.0 and 1,889.7 seconds; branch times are
++2,124.1, 2,231.5 and 2,434.8 seconds. Branches are 28.84--37.91\% slower and
++use 22.67--25.05\% more CPU in the recorded counter.
++This counter combines the acquisition process clock with
++\texttt{getrusage} child totals. Those totals depend on completed waits~\cite{getrusage};
++exhaustive descendant coverage is not established, so the ratios do not
++establish total process-tree CPU overhead.
++All 10,698 stock/branch source comparisons preserve native inputs, basic
++results, decision sequences and requested artifacts. Each branch condition
++engages 2,316 retained-parent hits and 473 misses, so this loss occurs with
++actual reuse. Branch/logical ordering varies, and logical-stream completeness
++annotations remain in two rotations. All three separate resource captures also
++complete, with matching native input, results and requested artifacts across
++each pairing. Their observed PSS maxima are 224,644 KiB for stock,
++783,477 KiB for branches and 791,914 KiB for logical reuse.
++Between 233 and 368 samples per method contain incomplete reads.
++These single non-atomic profiles do not establish replicated or exact memory
++bounds; they show no stock-relative memory saving that compensates for the
++measured time loss. The complete service frontier remains unfinished;
++this result rejects acceleration for the tested constructor and cohort.
++
+ \paragraph{Complete source-native placement comparison.}
+ We compare a shared-process warm-worker alternative with the competent
+ process-isolated warm pool on the retained 5,952 ProofNet-lineage
+@@ -209,15 +357,15 @@ source attempts~\cite{proofnetSource,goedelProofnet}. Both use the retained Lean
+ prepare the first imported environment and search index, and use four frontend
+ workers on the same four permitted CPUs with default native runtime threads.
+ The warm pool already shares its prepared roots through copy-on-write.
+-The alternative shares one native heap and runtime while keeping each worker's
+-candidate-updated root table separate. Complete clocks include initialization,
++The alternative shares one native heap and runtime while keeping each
++worker's root table separate as candidates update it. Complete clocks include initialization,
+ preparation, source verification, response transport, actual failure recovery,
+-output, EOF and cleanup.
++output, end of file (EOF) and cleanup.
+ 
+ \begin{table}[t]
+ \centering
+ \small
+-\begin{tabular}{lrrr}
++\begin{tabular}{@{}lrrr@{}}
+ \toprule
+ Whole corpus time (s) & Run 1 & Run 2 & Run 3 \\
+ \midrule
+@@ -291,16 +439,124 @@ We separate host representation construction, device setup, transfers, checking
+ 
+ 
+ 
++Within the arithmetic CPU family, existing Farkas~\cite{farkasSource}
++provides native exact certificate search and numeric hypothesis selection before
++stock proof reconstruction. Our HiGHS support-search adapter uses the established
++LP solver~\cite{highsSimplex}, followed by exact certificate repair and normal
++Lean proof construction and checking. These are CPU competitors in the
++heterogeneous comparison.
++
++\paragraph{Complete original-path cost profile.}
++A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources
++and retains body profiles for 29,689 of them. All 61 sources without a body
++profile have operational outcomes.
++The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
++have the largest recorded leaf-wall totals, followed by \texttt{simp}.
++These thresholded trace weights measure wall intervals that can overlap across
++threads and requests, rather than CPU fractions or device-eligible work.
++The observation characterizes the original arithmetic route.
++Residual costs after the strongest CPU route remain to be measured.
++
++\paragraph{Complete compiled-route CPU sampling.}
++A separate instrumented compiled-route run returns all 29,750 sources and
++retains 5,401,763 user-CPU samples with zero reported lost samples.
++Exclusive sample counts and periods reconcile across flat and callchain
++reports. Standard \texttt{perf} children weights include callees and
++overlap~\cite{perfReport}.
++Against all recorded user-CPU period, the displayed inclusive weights are
++35.00\% for the Meta definitional-equality export,
++16.96\% for a sparse-simplex certificate-oracle entry and
++10.81\% for a typeclass-synthesis entry.
++The first symbol is exported by a \texttt{MetaM} implementation in the
++installed Lean4.27 source~\cite{lean427MetaDefEq}; it is not a pure C++ kernel
++checking fraction. These entries cannot be added into disjoint phases.
++Separately, reference-count decrement and small allocation account for
++20.05\% of native exclusive recorded period; that pair is not an exhaustive
++runtime category. Sampling, unknowns and callchain limits remain, and neither
++view supplies whole-wall decomposition, a GPU ceiling or batching readiness.
++This capture characterizes the compiled original arithmetic route; residual
++costs after selecting a different strongest CPU composition remain open.
++
++\paragraph{Complete CPU compilation pair.}
++A separate matched four-CPU block checks every one of the 29,750 released
++GoedelWorkbook sources with the original GC service and the same service
++loading native-compiled Mathlib modules~\cite{lean4}.
++Whole elapsed time is 32,945.98 versus 15,835.68 seconds, a 51.93\% reduction
++(2.08$\times$ ratio) in this first complete pair.
++Runtime import and library loading are charged; software build is excluded.
++Native fields match on 29,725 sources after excluding the adapter timer;
++16 operational outcomes become complete and nine complete outcomes become
++operational. No complete/rejected flip is observed, and failures remain charged.
++Two alternating pairs and separate profiles remain outstanding.
++This observation strengthens an established CPU baseline; it does not establish
++a replicated final effect, a new compiler contribution or GPU acceleration.
++Clocks from other CPU or oracle blocks are not used as denominators.
++
++A separate producer-compatible Lean4.9 GC comparison processes all 7,808
++retained miniF2F source attempts per method with and without selective native
++Linarith compilation. Two complete pairs take 12,689.28 versus 11,723.45 seconds
++and 12,539.74 versus 11,192.98 seconds: 7.61\% and 10.74\% less whole elapsed.
++Request p99 instead rises from 247.85 to 275.35 seconds and from 251.14 to
++253.28 seconds. The complete count remains 3,008 in every condition.
++The second pair has two operational-to-rejected transitions and five other
++native diagnostic differences; remaining payloads match except the adapter
++timer. Faster whole execution therefore does not establish uniform tail
++latency, a final replicated effect or GPU benefit. The third pair and separate
++profiles remain. Its producer version and selective compiled closure differ
++from the Goedel block above.
++
++A further CPU comparison reuses resolved multiplication-theorem applications
++within each nonlinear arithmetic preprocessing invocation.
++Against the same FarkasFast/native-hybrid route, three complete 29,750-source
++pairs reduce whole elapsed time from 11,629.90 to 10,487.44 seconds,
++12,852.84 to 11,208.51 seconds and 14,753.25 to 12,483.33 seconds.
++The observed reductions are 9.82\%, 12.79\% and 15.39\%, with a descriptive mean
++of 12.67\%. This observed range is not a confidence interval.
++Closed-loop request p99 also falls in each pair: 10.56 to 10.09, 12.16 to
++10.73 and 14.45 to 12.00 seconds. These are response distributions within the
++measured blocks, not an offered-load capacity result.
++The third pair retains six operational/completion transitions and otherwise
++matching native payloads; no complete/rejected transition occurs.
++Two separate complete pairs retaining the original arithmetic oracle instead
++take 15,385.79 versus 15,475.96 seconds and 16,245.63 versus 15,415.52 seconds
++with reuse: 0.59\% longer, then 5.11\% lower. Their signs differ.
++The different blocks and shared background do not isolate a causal oracle
++interaction or establish a uniform original-route gain.
++The paired Fast/hybrid resource comparison, third original-oracle pair and its
++resource profiles remain outstanding. These observations concern an ordinary CPU optimization within
++its matched block; they do not establish the globally strongest CPU method,
++systems novelty or GPU acceleration.
++
++\paragraph{Complete native arithmetic primary series.}
++Three matched Goedel CPU pairs compare compiled Mathlib with the same service
++using the native exact arithmetic oracle. Reference whole times are
++10,531.82, 13,112.67 and 15,097.58 seconds; candidate times are
++11,030.02, 10,666.44 and 14,886.85 seconds.
++The candidate is 4.73\% slower, then 18.66\% and 1.40\% lower in elapsed time.
++The descriptive mean reduction of 5.11\% is not a confidence interval or a
++stable general advantage: pair signs differ and the same-code references drift.
++Each condition returns all 29,750 inputs. The third pair retains 13 native
++outcome differences, all involving an operational outcome, with no direct
++complete/rejected transition. Operational failures stay charged.
++All eight conditions, including the two separate resource profiles, now finish.
++In the single profile pair, observed sampled peak PSS rises from 6,561,664 to
++7,478,115 KiB. Incomplete, non-atomic sampling does not establish exact or
++replicated peaks; this pair shows no measured memory saving.
++These complete comparisons preserve a competent CPU competitor; they do not
++establish the globally strongest CPU path or heterogeneous acceleration.
++
+ \paragraph{Complete source-native ProofNet comparison.}
+ Three complete primary comparisons process the same 5,952 retained
+ ProofNet-lineage~\cite{proofnetSource,goedelProofnet} Lean4 source attempts in original order, including failed
+ attempts. Each method uses four frontend workers on the same four permitted
+ CPUs, the retained Lean4.9.0-rc1/Mathlib environment, default native runtime
+-threads and the original 300-second per-attempt allowance. The GPU method
++threads and the original 300-second per-attempt allowance.
++The native warm pool reuses prepared import headers. The native snapshot/cache
++condition retains full native snapshots and caches only complete results for
++exact matches of both import header and candidate source. The GPU method
+ uses an RTX 5090 and includes conservative host admission, packet construction,
+ device initialization, transfer, synchronization, CPU fallback, enclosing
+-source verification and final native checking. Lossless experimental
+-archival occurs after the measured final EOF. CPU affinity does not provide
++source verification and final native checking. Lossless archiving of experiment outputs occurs after the measured final EOF. CPU affinity does not provide
+ exclusive cores; GPU time slicing shares the device with another Workspace.
+ 
+ \begin{table}[t]
+@@ -319,27 +575,45 @@ GPU provider & 315.870 & 322.891 & 323.607 \\
+ \caption{Complete source verification for 5,952 ProofNet-lineage attempts
+ per condition. All twelve primary conditions finish with identical basic
+ outcomes within each matched block. Four separate resource profiles also
+-complete. The complete miniF2F cohort comparison is pending.}
++complete. No complete miniF2F GPU comparison is available.}
+ \label{tab:current-proofnet-gpu}
+ \end{table}
+ 
+ Table~\ref{tab:current-proofnet-gpu} rejects an end-to-end acceleration claim
+-for this supported Meta reduction mechanism on the measured cohort.
++for this supported expression reduction in Lean's Meta layer on the measured cohort.
+ Relative to the faster native baseline in each block, GPU execution is
+-1.74\%, 3.64\% and 1.58\% slower (mean 2.32\%; observed range, not a
+-confidence interval). Every condition has 413 complete, 5,534 rejected,
++1.74\%, 3.64\% and 1.58\% slower, with a mean of 2.32\%.
++These values describe the observed repetitions, not a confidence interval. Every condition has 413 complete, 5,534 rejected,
+ four incomplete and one retained operational outcome.
+-The packed CPU version is a component control: its negative-admission
+-placement differs from the GPU path, so their time difference cannot isolate
+-device placement alone. The strongest native baseline grounds the
++The packed CPU version is a component control. It rejects unsupported
++operations at a different point from the GPU path, so their time difference
++cannot isolate device placement alone. The strongest native baseline grounds the
+ end-to-end comparison.
+ 
+ Native operation/readback logs establish actual GPU engagement, while
+-unsupported work remains native. They do not establish full GPU kernel
+-discharge. Missing terminal/interleaved records censor operation totals;
+-nested provider timers are not exclusive fractions of whole corpus time.
+-\missing{Final repeated miniF2F comparison, supported-work coverage and
+-complete workload-bound interpretation.}
++unsupported work remains native. The implemented provider launches one CUDA
++thread for each supported beta/zeta reduction of a function application or let binding, then synchronizes before
++returning to Lean. It does not batch independent reductions or execute the
++complete Lean kernel on the device.
++
++Across each primary repetition, retained counters record 2,201 supported
++operations out of approximately 2.38 million provider calls (0.0925\%).
++This is coverage by call count, not the fraction of verification time that
++could be accelerated. Each GPU condition has one failed worker without
++terminal counters, so the totals are observed rather than exhaustive.
++Per-process cumulative maxima give summed provider wall times of
++3.169, 4.921 and 6.158 seconds, including initialization sums of
++1.326, 1.178 and 1.274 seconds. These timers include waits and overlap
++across workers; subtracting them from whole-corpus makespan would not
++identify the cause of the slowdown.
++
++This implementation adds host admission, packet preparation, transfers and
++synchronization while leaving most calls on the native path. The complete
++results reject an acceleration claim for this implementation on this cohort.
++They do not establish whether GPU sharing caused the slowdown; no matched
++co-tenant activity comparison isolates that effect.
++\missing{Complete miniF2F comparison, cost-weighted supported-work coverage
++and remaining strongest-checker comparisons.}
+ 
+ Four separately instrumented complete conditions observe whole times of
+ 328.046 seconds for warm execution, 348.390 for snapshot/cache,
+@@ -368,11 +642,17 @@ Persistent Lean environments and native proof-state snapshotting retain elaborat
+ 
+ LeanPolish already restores native tactic state, resumes unchanged commands from saved checkpoints and supports persistent import workers~\cite{leanpolishSource}. Its released proof-improvement attempts include failed alternatives, while menu screening and later source verification have different boundaries~\cite{leanpolishPaper}. These existing mechanisms strengthen the native-reuse comparison. Failure collection and saved-state execution are established baseline capabilities.
+ 
++Axle combines preloaded Mathlib with per-request processes~\cite{axle}.
++Its published normalized-sample comparison measures computation rather than
++the complete public service path. Isolated preloaded serving is therefore
++existing work, and our complete, unchanged-source behavior and resource
++comparison must establish any additional benefit.
++
+ \paragraph{Verification caching.}
+ Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. For session reuse, native SMT interfaces support incremental command histories and requested artifacts~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
+ 
+ \paragraph{Prepared execution.}
+-Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
++Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
+ 
+ \paragraph{Heterogeneous checking.}
+ GPU and CPU checker representations address different parts of verification. Nanoclo uses delayed substitutions, and nanoclo-fortran stores kernel objects in parallel arrays with integer identifiers~\cite{nanoclo,nanocloFortran}. These checkers are direct competitors to representation-only acceleration. Our heterogeneous evaluation asks about the expensive dynamic checking that remains and complete verification costs, rather than extrapolating from input graph width.

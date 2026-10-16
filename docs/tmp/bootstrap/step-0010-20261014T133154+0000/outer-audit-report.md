@@ -1654,3 +1654,13 @@ entry. External sources are primary, with explicit matched-baseline limitations.
 This root check does not substitute for the fresh independent opportunity/step
 or paper review. A separately launched OMP reviewer has no implementation role;
 no final verdict is yet claimed.
+
+
+## Current authored-draft publication check — root only
+
+Root checks existingPDF/source timing,15pages,39resolved citation keys and
+all local labels. All13result placeholders remain visible. No source or
+scientific-contract edit occurs in this publication node. Earlier adapted
+root writing rounds and actual rendering are preserved without an independent-
+review claim. Fresh OMP opportunity and complete step/paper audits remain
+pending. The user explicitly authorizes completed-work checkpoints onmain.

@@ -1,0 +1,80 @@
+--- main.tex
++++ main.tex
+@@ -205,8 +205,10 @@
+ Its competition-mathematics focus limits generalization to other Lean use.
+ 
+ One complete native-compilation reference acquisition uses four outstanding
+-HTTP requests, shared CPU eligibility 0--3, the pinned Kimina service, and its
++HTTP requests, shared CPU eligibility 0--3 and the pinned Kimina service with a
+ 300-second request timeout and 12\,GiB per-process address-space allowance.
++Candidate requests use its garbage-collection (GC) mode, which does not retain
++their command snapshots.
+ It returns 27,319 complete, 2,376 rejected and 55 operational outcomes.
+ The operational group contains 41 timeouts and 14 decoder failures. An
+ individual native allocation-failure replay does not establish the cause
+--- main.tex
++++ main.tex
+@@ -268,7 +268,7 @@
+ 
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+ 
+-\paragraph{Complete native-stream service replay.}
++\paragraph{Complete ProofNet service replay.}
+ We replay all 5,952 retained ProofNet-lineage source attempts through a local
+ native stream interface~\cite{proofnetSource,goedelProofnet}.
+ The warm pool retains native workers across candidates, independent branches
+--- main.tex
++++ main.tex
+@@ -295,7 +295,7 @@
+ operational outcome, matching the retained stock basic outcomes.
+ Arrival latency starts at the scheduled arrival and ends at captured response,
+ including release lag and pending-queue time. Whole-corpus clocks additionally
+-include initialization and final drain and EOF.
++include initialization, final drain and end of file (EOF).
+ 
+ \begin{figure}[t]
+ \centering
+--- main.tex
++++ main.tex
+@@ -354,7 +354,7 @@
+ measured time loss. The complete service frontier remains unfinished.
+ This result rejects acceleration for the tested constructor and cohort.
+ 
+-\paragraph{Complete source-native placement comparison.}
++\paragraph{Complete source verification across placements.}
+ We compare a shared-process warm-worker alternative with the competent
+ process-isolated warm pool on the retained 5,952 ProofNet-lineage
+ source attempts~\cite{proofnetSource,goedelProofnet}. Both use the retained Lean environment and reuse native incremental snapshots,
+--- main.tex
++++ main.tex
+@@ -364,7 +364,7 @@
+ The alternative shares one native heap and runtime while keeping each
+ worker's root table separate as candidates update it. Complete clocks include initialization,
+ preparation, source verification, response transport, actual failure recovery,
+-output, end of file (EOF) and cleanup.
++output, EOF and cleanup.
+ 
+ \begin{table}[t]
+ \centering
+--- main.tex
++++ main.tex
+@@ -536,7 +536,7 @@
+ reports. Standard \texttt{perf} children weights include callees and
+ overlap~\cite{perfReport}.
+ Against all recorded user-CPU period, the displayed inclusive weights are
+-35.00\% for the Meta definitional-equality export,
++35.00\% for the definitional-equality export in Lean's metaprogramming (Meta) layer,
+ 16.96\% for a sparse-simplex certificate-oracle entry and
+ 10.81\% for a typeclass-synthesis entry.
+ The first symbol is exported by a \texttt{MetaM} implementation in the
+--- main.tex
++++ main.tex
+@@ -549,7 +549,7 @@
+ This capture characterizes the compiled original arithmetic route. Residual
+ costs after selecting a different strongest CPU composition remain open.
+ 
+-\paragraph{Complete source-native ProofNet comparison.}
++\paragraph{Complete ProofNet source verification.}
+ Three complete primary comparisons process the same 5,952 retained
+ ProofNet-lineage~\cite{proofnetSource,goedelProofnet} Lean4 source attempts in original order, including failed
+ attempts. Each method uses four frontend workers on the same four permitted

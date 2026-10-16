@@ -1,0 +1,191 @@
+--- references.bib
++++ references.bib
+@@ -320,8 +320,8 @@
+   title = {{miniF2F}: A Cross-System Benchmark for Formal Olympiad-Level Mathematics},
+   booktitle = {International Conference on Learning Representations},
+   year = {2022},
+-  url = {https://arxiv.org/abs/2109.00110v2},
+-  note = {Primary author version revised 28 February 2022}
++  url = {https://openreview.net/forum?id=9ZPegFuFTFv},
++  note = {Published conference version; author preprint first appeared in 2021}
+ }
+ 
+ % REAL: yes
+--- references.bib
++++ references.bib
+@@ -332,8 +332,9 @@
+  author={{lucifer1004}},
+  title={{farkas}},
+  howpublished={Source repository},
++ year={2026},
+  url={https://github.com/lucifer1004/farkas/tree/5a38a7e8502213cb644faa2e11a15429f0cf0f9a},
+- note={Revision 5a38a7e; accessed 15 October 2026}}
++ note={Revision 5a38a7e; accessed 16 October 2026; year denotes access year, not publication date}}
+ 
+ % REAL: yes
+ % PRIMARY: official HiGHS preferred citation and publisher DOI metadata.
+--- references.bib
++++ references.bib
+@@ -363,8 +363,9 @@
+ @misc{perfReport,
+  author={{Linux perf contributors}},
+  title={{perf-report(1)}: Linux manual page},
++ year={2026},
+  url={https://man7.org/linux/man-pages/man1/perf-report.1.html},
+- note={Children and Overhead calculation; accessed 15 October 2026}}
++ note={Children and Overhead calculation; accessed 16 October 2026; year denotes access year, not publication date}}
+ 
+ % REAL: yes
+ % PRIMARY: actual installed v4.27.0 SDK source read at export/MetaM declaration.
+--- references.bib
++++ references.bib
+@@ -374,5 +374,6 @@
+ @misc{lean427MetaDefEq,
+  author={{Lean project contributors}},
+  title={{Lean 4.27.0}: Meta expression definitional equality source},
++ year={2026},
+  url={https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean},
+- note={Meta definitional equality implementation; version v4.27.0; accessed 15 October 2026}}
++ note={Meta definitional equality implementation; version v4.27.0; accessed 16 October 2026; year denotes access year, not publication date}}
+--- references.bib
++++ references.bib
+@@ -320,7 +320,7 @@
+   title = {{miniF2F}: A Cross-System Benchmark for Formal Olympiad-Level Mathematics},
+   booktitle = {International Conference on Learning Representations},
+   year = {2022},
+-  url = {https://openreview.net/forum?id=9ZPegFuFTFv},
++  url = {https://openreview.net/pdf?id=9ZPegFuFTFv},
+   note = {Published conference version; author preprint first appeared in 2021}
+ }
+ 
+--- references.bib
++++ references.bib
+@@ -320,7 +320,7 @@
+   title = {{miniF2F}: A Cross-System Benchmark for Formal Olympiad-Level Mathematics},
+   booktitle = {International Conference on Learning Representations},
+   year = {2022},
+-  url = {https://openreview.net/pdf?id=9ZPegFuFTFv},
++  url = {https://dblp.org/rec/conf/iclr/ZhengHP22.html},
+   note = {Published conference version; author preprint first appeared in 2021}
+ }
+ 
+--- references.bib
++++ references.bib
+@@ -377,3 +377,23 @@
+  year={2026},
+  url={https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean},
+  note={Meta definitional equality implementation; version v4.27.0; accessed 16 October 2026; year denotes access year, not publication date}}
++
++% REAL: yes
++% PDF: not available
++% ABSTRACT: Official SGLang repository describes the model inference and serving framework and its request interfaces.
++% USED_FOR: Identity of the inference framework used by our retained serial adaptation; no imported speedup.
++@misc{sglangSource,
++ title={{SGLang}: inference framework},
++ author={{SGLang contributors}},
++ year={2026}, note={Accessed 16 October 2026; year denotes access year},
++ url={https://github.com/sgl-project/sglang}}
++
++% REAL: yes
++% PDF: not available
++% ABSTRACT: Official vLLM repository documents the inference and serving library.
++% USED_FOR: Identity of the library in the published Goedel batched workflow; no imported performance result.
++@misc{vllmSource,
++ title={{vLLM}: inference and serving library},
++ author={{vLLM contributors}},
++ year={2026}, note={Accessed 16 October 2026; year denotes access year},
++ url={https://github.com/vllm-project/vllm}}
+--- references.bib
++++ references.bib
+@@ -315,6 +315,11 @@
+  year={2026},
+  note={Source revision d80349d93a80305765492014f0b395cec46e5023; accessed 2026-10-15; year denotes access year}}
+ 
++% VERIFIED: 2026-10-16
++% REAL: yes
++% PDF: docs/reference/minif2f-2109.00110v2.pdf
++% ABSTRACT: Introduces a cross-system formal Olympiad mathematics benchmark with 488 statements split equally between validation and test.
++% USED_FOR: Original miniF2F task provenance, not identity of our generated attempts or imported proving accuracy.
+ @inproceedings{minif2f,
+   author = {Kunhao Zheng and Jesse Michael Han and Stanislas Polu},
+   title = {{miniF2F}: A Cross-System Benchmark for Formal Olympiad-Level Mathematics},
+--- references.bib
++++ references.bib
+@@ -329,6 +329,9 @@
+   note = {Published conference version; author preprint first appeared in 2021}
+ }
+ 
++% VERIFIED: 2026-10-16
++% PDF: not available
++% ABSTRACT: Pinned source provides exact tiered-rational certificate search and a numeric support probe followed by stock Lean proof reconstruction.
+ % REAL: yes
+ % PRIMARY: pinned upstream README, retrieved 2026-10-15.
+ % USED_FOR: Existing native exact oracle and numeric-probe/restrict/stock-proof path.
+--- references.bib
++++ references.bib
+@@ -344,6 +344,9 @@
+  url={https://github.com/lucifer1004/farkas/tree/5a38a7e8502213cb644faa2e11a15429f0cf0f9a},
+  note={Revision 5a38a7e; accessed 16 October 2026; year denotes access year, not publication date}}
+ 
++% VERIFIED: 2026-10-16
++% PDF: docs/reference/highs-dual-simplex-2018.pdf
++% ABSTRACT: Develops parallel forms of the dual revised simplex method, including suboptimization and parallel work within iterations.
+ % REAL: yes
+ % PRIMARY: official HiGHS preferred citation and publisher DOI metadata.
+ % USED_FOR: Established numerical LP CPU competitor; no imported speedup claim.
+--- references.bib
++++ references.bib
+@@ -358,6 +358,9 @@
+  doi={10.1007/s12532-017-0130-5},
+  url={https://link.springer.com/article/10.1007/s12532-017-0130-5}}
+ 
++% VERIFIED: 2026-10-16
++% PDF: not available
++% ABSTRACT: Documents process/thread/waited-child usage and the conditions for child-resource accounting.
+ % REAL: yes
+ % PRIMARY: Linux man-pages API contract, directly checked 2026-10-15.
+ % USED_FOR: Child CPU accounting scope; no total-tree CPU guarantee.
+--- references.bib
++++ references.bib
+@@ -371,6 +371,9 @@
+  url={https://man7.org/linux/man-pages/man2/getrusage.2.html},
+  note={Accessed 15 October 2026; year denotes access year}}
+ 
++% VERIFIED: 2026-10-16
++% PDF: not available
++% ABSTRACT: Defines sampled event overhead and inclusive Children accounting, whose callchain weights overlap.
+ % REAL: yes
+ % PRIMARY: upstream perf manual, Children/Overhead calculation directly opened 2026-10-15.
+ % USED_FOR: Inclusive callchain accounting overlaps; no wall-time or GPU bound.
+--- references.bib
++++ references.bib
+@@ -384,6 +384,9 @@
+  url={https://man7.org/linux/man-pages/man1/perf-report.1.html},
+  note={Children and Overhead calculation; accessed 16 October 2026; year denotes access year, not publication date}}
+ 
++% VERIFIED: 2026-10-16
++% PDF: not available
++% ABSTRACT: Version-pinned source implements expression definitional equality in MetaM with metavariable contexts and exports lean_is_expr_def_eq.
+ % REAL: yes
+ % PRIMARY: actual installed v4.27.0 SDK source read at export/MetaM declaration.
+ % USED_FOR: lean_is_expr_def_eq belongs to Meta definitional equality, not pure kernel checking.
+--- references.bib
++++ references.bib
+@@ -398,6 +398,7 @@
+  url={https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean},
+  note={Meta definitional equality implementation; version v4.27.0; accessed 16 October 2026; year denotes access year, not publication date}}
+ 
++% VERIFIED: 2026-10-16
+ % REAL: yes
+ % PDF: not available
+ % ABSTRACT: Official SGLang repository describes the model inference and serving framework and its request interfaces.
+--- references.bib
++++ references.bib
+@@ -409,6 +409,7 @@
+  year={2026}, note={Accessed 16 October 2026; year denotes access year},
+  url={https://github.com/sgl-project/sglang}}
+ 
++% VERIFIED: 2026-10-16
+ % REAL: yes
+ % PDF: not available
+ % ABSTRACT: Official vLLM repository documents the inference and serving library.
