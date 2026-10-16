@@ -2676,3 +2676,35 @@ incomplete research draft with explicit gaps, not final experiment completion,
 novelty proof, an accepted paper or an independent whole-paper verdict.
 OMP may continue its assigned paper/docs work from this published draft; root
 does not edit its future changes or resume the original native Codex author.
+
+
+## Actual OMP coordinator length failure and same-session recovery
+
+The original OMP coordinator never dispatched a native task before returning
+a model stopReason=length. This is an observed truncation failure, not a timeout
+inferred from silence or a healthy research turn interrupted for advice.
+Root verifies the exact owned process/group and SIGINTs only that failed
+print-mode CLI. OriginalPID1988939 exits; no capture, other Workspace, source,
+credential or original Codex author is interrupted.
+
+Root resumes the SAME native OMP session01a143c7-009d-7160-97c1-287ed0f1cf65
+in native RPC mode,PID1993589. An ephemeral /tmp FIFO keeps native stdin open
+for the existing session; this is a transport, not a scheduler, persistent
+supervisor/service or competing checkout. No model, budget, quota, source or
+credential setting changes. Official current RPC documentation resolves at
+https://github.com/can1357/oh-my-pi/blob/main/docs/rpc.md; the older nested docs
+URL404s, so root uses the actual supported prompt/get_state protocol.
+
+Actual get_state proves the same session ID, settled/idle before the new
+prompt, and native task availability. The genuine updated user objective,
+published checkpoints, CPU-versus-GPU scope, source/cohort handoff and file
+partition are sent through prompt with followUp. Native response acknowledges
+success and agent_start follows. This proves restoration/admission/start,
+not consumption of every instruction or specialist task completion. Native
+task dispatch and final artifact results must still be checked.
+
+The separate fresh opportunity reviewerPID1991471 remains active with
+read-only scientific/code scope and sole write ownership of
+experiment-034/independent-opportunity-review.md. No final report exists at this
+node. It does not satisfy the complete step/paper independent audit by running.
+No fixed model roles or extra tools/step budgets are imposed on either session.

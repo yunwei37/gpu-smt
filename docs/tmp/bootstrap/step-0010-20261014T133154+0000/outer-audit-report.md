@@ -1664,3 +1664,16 @@ scientific-contract edit occurs in this publication node. Earlier adapted
 root writing rounds and actual rendering are preserved without an independent-
 review claim. Fresh OMP opportunity and complete step/paper audits remain
 pending. The user explicitly authorizes completed-work checkpoints onmain.
+
+
+## OMP recovery acceptance check — root observation, not independent review
+
+Root distinguishes actual native model length truncation from observational
+timeout. The original CLI is terminal before same-session RPC resume.
+get_state confirms exact retained session identity and available task tool;
+prompt acknowledgement plus agent_start proves the new request was admitted.
+No specialist dispatch/result or final scientific-review completion is claimed.
+Active native captures and the independent reviewer are preserved. FIFO cleanup
+belongs after this RPC owner terminates; do not close the control stdin while
+the restored session still needs it. No additional schedule/helper service is
+created. Public step records contain no credential or control-link values.
