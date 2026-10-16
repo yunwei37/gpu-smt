@@ -284,7 +284,38 @@ Older preparation controls also include an explicit
 therefore do not establish preparation demand derived from the candidate
 requests.
 
-We compare original ordering with a control containing unrelated work and measure how preparation depth changes reusable work. Text bytes and declaration counts are descriptive inputs, while measured preparation cost determines the opportunity. \missing{Preparation-cost distributions, context reuse over time and aggregate achievable sharing with uncertainty.} RQ1 remains unanswered until these measurements of complete original candidate streams establish whether preparation sharing is consequential.
+A separate request-driven observation measures all 5,952 ProofNet-lineage
+candidates on the producer-compatible Lean4.9 GC and selective native
+arithmetic service, without the injected search query. Stock header splitting
+maps 5,947 requests to one \texttt{import Mathlib} key and leaves five literal
+extraction-failure strings with empty headers. In each of three whole
+observations, the service performs five nonempty import preparations and
+5,942 started-worker reuses. Preparation consumes 12.31, 12.99 and 12.75
+observed native CPU seconds; the corresponding observed lifetime totals are
+1,522.98, 1,531.77 and 1,521.46 CPU seconds. Their ratios are 0.81--0.85\%
+of observed native CPU, not an exhaustive CPU fraction or an end-to-end
+speedup bound. Each observation returns 413 complete, 5,534 rejected, four
+incomplete and one operational outcome in 468.27, 470.37 and 465.68 seconds,
+respectively. The failed worker's unobserved CPU tail remains censored.
+Empty-header initialization can occur in its first body and is not claimed
+free. These observations do not establish consequential remaining import
+preparation cost after competent reuse on this cohort.
+
+A phase reanalysis of the complete SMT streams measures the cost paid to
+prepare a reusable parent. Each branch observation prepares 473 parents across
+136 prefix identities. Their cumulative CPU from process birth to readiness
+totals 7.568, 7.636 and 7.712 seconds, with per-parent medians of 14.9, 14.8
+and 15.2 milliseconds. Logical reuse totals 7.699, 7.571 and 7.537 seconds
+under the corresponding three primary observations. These counters include native
+initialization before parsing and exclude subsequent candidate suffixes,
+the Verus frontend, transport and service management. They are neither a
+whole-verification CPU fraction nor measured avoided work. In particular,
+2,316 parent hits do not imply 2,316 avoided expensive preparations: logical
+reuse still reparses and translates each candidate. This modest absolute
+readiness cost supplies no reason to reopen the slower process-branch
+constructor in Section~\ref{sec:service-results}.
+
+We compare original ordering with a control containing unrelated work and measure how preparation depth changes reusable work. Text bytes and declaration counts are descriptive inputs, while measured preparation cost determines the opportunity. \missing{Preparation-cost distributions across remaining contexts, context reuse over time and aggregate achievable sharing with uncertainty.} RQ1 remains unanswered until these measurements of complete original candidate streams establish whether preparation sharing is consequential.
 
 \subsection{Behavior and isolation}\label{sec:behavior-results}
 RQ2 asks whether branching from prepared native state preserves verifier responses and requested artifacts while isolating candidates and cancellation. We first compare fresh adapter execution with the original verifier, then execute untouched candidate suffixes from prepared states. We retain per-input decisions and artifacts for comparisons that vary preceding unrelated attempts, branch cancellation and resource-limit conditions. Completed attempts are compared for native responses and artifacts. Externally cancelled attempts are compared for progress at termination, cleanup and the independence of surviving attempts. Native scope and history controls distinguish changes in solver mode from cross-candidate interference.

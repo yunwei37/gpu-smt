@@ -1,0 +1,44 @@
+--- a/observe-native-service.executed.py
++++ b/observe-native-service.executed.py
+@@ -26,6 +26,7 @@
+ original_send=Repl.send_timeout
+ original_prep=Manager.prep
+ original_cleanup=Manager.cleanup
++original_close=Repl.close
+ async def start(self):
+  t=time.monotonic_ns()
+  try:await original_start(self)
+@@ -63,6 +64,14 @@
+        snippet_id=snippet_id,header=repl.header,reused_started=was_started,
+        started_ns=t,elapsed_ns=time.monotonic_ns()-t,cpu_before=before,cpu_after=cpu(repl),
+        error=error,header_response=None if response is None else response.model_dump(exclude_none=True))
++async def close(self):
++ t=time.monotonic_ns();before=cpu(self);error=None
++ try:return await original_close(self)
++ except BaseException as e:error=repr(e);raise
++ finally:
++  emit('native_close_terminal',uuid=self.uuid.hex,pid=self.proc.pid if self.proc else None,
++       started_ns=t,elapsed_ns=time.monotonic_ns()-t,cpu_before=before,error=error,
++       exit_code=self.proc.returncode if self.proc else None)
+ async def cleanup(self):
+  t=time.monotonic_ns()
+  await original_cleanup(self)
+@@ -75,7 +84,7 @@
+  await asyncio.gather(*stderr_tasks.values(),return_exceptions=True)
+  emit('manager_cleanup_terminal',elapsed_ns=time.monotonic_ns()-t,
+       workers=[{'uuid':k,'pid':r.proc.pid,'exit_code':r.proc.returncode} for k,r in workers.items()])
+-Repl.start=start;Repl.send_timeout=send;Manager.prep=prep;Manager.cleanup=cleanup
++Repl.start=start;Repl.send_timeout=send;Repl.close=close;Manager.prep=prep;Manager.cleanup=cleanup
+ from server.main import app
+ from server.__main__ import InterceptHandler
+ import uvicorn
+@@ -100,7 +109,8 @@
+ try:asyncio.run(main())
+ finally:
+  ru=resource.getrusage(resource.RUSAGE_CHILDREN);own=resource.getrusage(resource.RUSAGE_SELF)
+- emit('observer_terminal',waited_native_cpu={'user':ru.ru_utime,'system':ru.ru_stime},
++ emit('observer_terminal',reported_waited_child_cpu={'user':ru.ru_utime,'system':ru.ru_stime},
++      cpu_coverage_note='StockgroupSIGKILL may prevent lake from reaping native descendants; use retained process identity snapshots for observed nativeCPU, never treat this rusage as exhaustive nativeCPU.',
+       observer_cpu={'user':own.ru_utime,'system':own.ru_stime},
+       workers=[{'uuid':k,'pid':r.proc.pid,'exit_code':r.proc.returncode} for k,r in workers.items()])
+  for stream in outputs.values():stream.close()

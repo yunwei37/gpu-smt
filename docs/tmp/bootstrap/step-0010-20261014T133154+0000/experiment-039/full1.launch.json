@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-16T19:36:29.732639+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-u",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/capture-preparation.executed.py",
+    "full",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/full1"
+  ],
+  "source_observer": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/observe-native-service.executed.py",
+  "source_collector": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/capture-preparation.executed.py",
+  "scope": "one finite admitted3whole-corpus observation; original other acquisitions unchanged",
+  "actual_process_observation": {
+    "utc": "2026-10-16T19:42:02.022332+00:00",
+    "processes": [
+      {
+        "pid": 2072322,
+        "status": "Sl",
+        "command": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u /workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/capture-preparation.executed.py full /workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/full1"
+      },
+      {
+        "pid": 2072323,
+        "status": "Ssl",
+        "command": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u /workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/observe-native-service.executed.py /workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/full1/rep0"
+      }
+    ],
+    "scope": "actual owning collector/observer processes, not row-prefix performance"
+  }
+}

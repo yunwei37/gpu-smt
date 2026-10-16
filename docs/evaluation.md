@@ -1,7 +1,7 @@
 # Evaluation: current evidence and open questions
 
-Updated2026-10-16 from published maina654807 plus the completed Full/Fast
-primary-submatrix integration below. Step0010 is unfrozen BOOTSTRAP; all four
+Updated2026-10-16 from published main30c30c1 plus complete E039 paid-preparation
+evidence below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
 open. Publication of completed portions is not full step or research completion.
 
@@ -109,6 +109,18 @@ no independent preparation duration. Counts cannot establish saved cost or
 multi-context placement novelty.
 [Native reuse characterization](tmp/bootstrap/step-0010-20261014T133154+0000/native-warm-reuse-characterization-result-review.md).
 
+[E039 complete paid preparation](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result.md):
+3×5952unchanged ProofNet requests on existing GC49/native arithmetic,
+no injected search query. All3return413complete/5534rejected/4incomplete/1operational;
+whole468.269079/470.367285/465.677875s. Actual split gives5947Mathlib+5empty
+requests, with5paid imports/5942started-import reuses each. Prep observed
+CPU12.31/12.99/12.75s versus observed native lifetime1522.98/1531.77/1521.46s
+(0.808284/0.848039/0.838011%scoped ratios, not exhaustiveCPU/fullwall/GPU bounds).
+Source5879native panic/HTTP500 and missing failed-worker CPU tails remain.
+Empty-header bootstrap is deferred into first body; zero prep counter is not
+zero initialization cost. This supplies no consequential remaining import
+preparation argument for this exact competent-reuse cohort; broaderRQ1staysopen.
+
 E023completes30ProofNet service conditions/178560attempts. At synthetic19.56/s,
 branch arrivalp95 is7.08–8.44×warm, largely queue wait. Basic outcomes match;
 single incomplete/non-atomic memory profiles do not prove a frontier.
@@ -124,6 +136,17 @@ artifacts. Logical annotations leave10strict-complete of12acquired, not universa
 superiority. SampledPSS224644/783477/791914KiB stock/branch/logical gives no
 stock-relative saving. [Complete review](../artifacts/autoverus-native-2026-10-09/experiment025/full-registry-repaired1-result-review.md).
 Old31status-change epochs stay separate; this constructor is closed.
+
+Source-clock reanalysis of all8complete branch/logical phase streams measures
+473paid parents/136identities per condition. Branch readiness CPU sums
+7.568452/7.636342/7.711529s, medians14.893/14.826/15.224ms;
+logical sums7.699371/7.570595/7.536936s. Profiles remain separate.
+Counters are native-parent cumulative CPU from birth to first readiness,
+including initialization, excluding future suffix/frontend/service work.
+They are not complete CPU shares or counterfactual saved work; logical still
+reparses/translates each candidate. Thus2316hits do not establish expensive
+work avoided, and this modest absolute readiness cost does not reopen the
+closed slower constructor. [Paid preparation evidence/review](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result-review.md).
 
 Complete ProofNet GPU pairs lose1.74%/3.64%/1.58%;2201supported returns over
 ~2.38million calls is0.0925%COUNT,not CPUcoverage. Old~33%loss is a different

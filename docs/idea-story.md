@@ -109,6 +109,8 @@ Lean/SMT service and four-RQ evidence requirements.
 
 The [2026-10-16 full manuscript checkpoint](tmp/bootstrap/step-0010-20261014T133154+0000/iter-refine-writing-20261016T1745/round-11-meaning-preservation.md) integrates the published evidence and actual native-runtime alternative into the current paper. Process and runtime constructors, measured and finite-only versions, and strongest compatible baselines remain distinct. The full writing cycle and source-preservation audit do not establish new systems novelty, close an RQ or change this scientific contract. Current detailed data remain in [evaluation](evaluation.md).
 
+The complete [E039 paid-preparation characterization](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result.md) now measures actual request-driven import preparation on all5952ProofNet candidates×3 and reuses complete SMT phase costs. Observed import preparation is modest after competent reuse at this exact boundary; hits/header recurrence cannot establish expensive work saved. This is supporting RQ1 evidence, not a new scientific contract, a full-wall/GPU bound, complete RQ answer or reason to reopen closed fork variants. Broader contexts, strong native frontier and differentiated contribution remain open.
+
 ## Narrative evolution
 
 ### 2026-10-07: established native branching enters the competing position
