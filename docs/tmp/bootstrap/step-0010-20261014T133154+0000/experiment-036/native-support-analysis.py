@@ -4,7 +4,7 @@ import csv
 import json
 
 root = Path(__file__).resolve().parent
-for tag in ["prelude", "mathlib49-prefix", "v3-prelude", "v3-mathlib49-prefix"]:
+for tag in ["prelude", "mathlib49-prefix", "v3-prelude", "v3-mathlib49-prefix", "v3-official-init"]:
     rows = list(csv.DictReader((root / f"native-support-{tag}.csv").open()))
     assert [int(x["declaration_index"]) for x in rows] == list(range(len(rows)))
     bodies = [x for x in rows if x["kind"] != "native-only"]

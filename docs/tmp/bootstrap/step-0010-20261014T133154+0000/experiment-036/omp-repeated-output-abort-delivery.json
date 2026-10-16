@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-10-16T11:59:51.402794+00:00",
+  "reason": "confirmed same ! deltas on original native RPC streams plus multi-GB cumulative snapshot logs; resource fault, not tool/time budget; paper active stream untouched",
+  "deliveries": [
+    {
+      "role": "oss",
+      "request": {
+        "id": "e036-repeated-output-abort-oss",
+        "type": "abort"
+      },
+      "fifo": "/tmp/gpu-smt-omp-oss-20261016T091128Z.fifo",
+      "delivered_bytes": 58
+    },
+    {
+      "role": "experiments",
+      "request": {
+        "id": "e036-repeated-output-abort-experiments",
+        "type": "abort"
+      },
+      "fifo": "/tmp/gpu-smt-omp-experiments-20261016T091128Z.fifo",
+      "delivered_bytes": 66
+    }
+  ]
+}

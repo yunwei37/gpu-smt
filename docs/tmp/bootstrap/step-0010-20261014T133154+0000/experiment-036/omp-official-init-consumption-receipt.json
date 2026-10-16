@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-10-16T12:15:31.099972+00:00",
+  "author_receipts": [
+    {
+      "role": "oss",
+      "pid": 2020713,
+      "session_id": "01a143fb-0bea-72de-83aa-0fdb6120e726",
+      "prompt_acknowledged": true,
+      "agent_start_seen": true,
+      "assistant_start_seen": true,
+      "new_followup_in_native_journal": true,
+      "consumed": true,
+      "tail_event_types": [
+        "ready",
+        "extension_ui_request",
+        "advisor_cost_changed",
+        "available_commands_update",
+        "response",
+        "agent_start",
+        "turn_start",
+        "message_start",
+        "message_end",
+        "message_update",
+        "tool_execution_start",
+        "tool_execution_update",
+        "tool_execution_end",
+        "turn_end"
+      ],
+      "completed_artifact_validated": false
+    },
+    {
+      "role": "experiments",
+      "pid": 2020714,
+      "session_id": "01a143fb-0c0d-7696-9d3e-8ec95041c284",
+      "prompt_acknowledged": true,
+      "agent_start_seen": true,
+      "assistant_start_seen": false,
+      "new_followup_in_native_journal": true,
+      "consumed": false,
+      "tail_event_types": [
+        "ready",
+        "extension_ui_request",
+        "advisor_cost_changed",
+        "available_commands_update",
+        "response",
+        "agent_start",
+        "turn_start",
+        "message_start",
+        "message_end"
+      ],
+      "completed_artifact_validated": false
+    }
+  ],
+  "completed_artifact_note": "followup consumption/start not output validation; inspect requested return and changed files before publication",
+  "consumption_rule": "New followup is in original journal and a later assistant response begins. Agent-start/ack alone is delivery/context only."
+}

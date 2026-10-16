@@ -1759,3 +1759,11 @@ No GPU execution, native-check skipping, valid replacement qualification or comp
 ## Storage interpretation correction — root only
 
 Root checks actual device IDs and df rather than treating paths under one Workspace as one filesystem. Private /tmp dependencies are on existing overlay, not Longhorn project volume. No causal claim about the project growth or space recovery is made, no unnecessary cleanup or new volume occurs, and official input availability is kept separate from filesystem feasibility. Prior observed free-space values remain historical; source inspection is not a completed export or benchmark.
+
+## Formal full Init source/result audit — fresh reviewer plus root integration
+
+The independent reviewer directly counts actual full347555345B/6487065lines and59626CSV indices; kind, positive/reason and nonzero body clock joins reconcile. It reads pinned upstream generation/actual exporter/git/SDK identity, complete native outputs/resources and126failure repair, plus live compiled/canonical source equality. Root reads the full audit, reruns the retained offline arithmetic and preserves single-observation/PGO/cache/partial-positive/wall-CPU limits. A real official benchmark path and unfavorable unchanged-constructor opportunity are established; full device/corpus/gates/contribution remain unproven.
+
+## Original author RPC/log repair audit — root only
+
+Root distinguishes actual repeated-symbol/output-space fault from ordinary long reasoning, preserves the still-text-producing paper stream, and verifies nativeabort success/agent_end/isStreaming=false before idle CLI close. Closed telemetry is losslessly compressed and full bytes compared before duplicate removal; private journals/raw state stay private. Exact original session identity/model is verified after --resume, and high-level followUp delivery is recorded without claiming completion. No other active writer, source/capture, credential, provider-model setting, persistent service/storage boundary or goal is changed.

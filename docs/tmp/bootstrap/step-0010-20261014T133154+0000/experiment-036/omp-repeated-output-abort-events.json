@@ -1,0 +1,99 @@
+[
+  {
+    "role": "oss",
+    "events": [
+      {
+        "type": "message_end",
+        "role": "assistant",
+        "stopReason": "aborted"
+      },
+      {
+        "type": "turn_end",
+        "role": "assistant",
+        "stopReason": "aborted"
+      },
+      {
+        "type": "extension_ui_request",
+        "id": "15a872a11bac17ff",
+        "role": null,
+        "stopReason": null
+      },
+      {
+        "type": "agent_end",
+        "role": null,
+        "stopReason": null
+      },
+      {
+        "id": "e036-repeated-output-abort-oss",
+        "type": "response",
+        "command": "abort",
+        "success": true,
+        "role": null,
+        "stopReason": null,
+        "response_keys": [
+          "id",
+          "type",
+          "command",
+          "success"
+        ]
+      },
+      {
+        "type": "prompt_result",
+        "id": "execute-specialist-oss",
+        "role": null,
+        "stopReason": null
+      },
+      {
+        "type": "session_settled",
+        "role": null,
+        "stopReason": null
+      }
+    ]
+  },
+  {
+    "role": "experiments",
+    "events": [
+      {
+        "type": "message_end",
+        "role": "assistant",
+        "stopReason": "aborted"
+      },
+      {
+        "type": "turn_end",
+        "role": "assistant",
+        "stopReason": "aborted"
+      },
+      {
+        "type": "extension_ui_request",
+        "id": "15a872a11bcacb0f",
+        "role": null,
+        "stopReason": null
+      },
+      {
+        "type": "agent_end",
+        "role": null,
+        "stopReason": null
+      },
+      {
+        "id": "e036-repeated-output-abort-experiments",
+        "type": "response",
+        "command": "abort",
+        "success": true,
+        "role": null,
+        "stopReason": null,
+        "response_keys": [
+          "id",
+          "type",
+          "command",
+          "success"
+        ]
+      },
+      {
+        "type": "prompt_result",
+        "id": "execute-specialist-experiments",
+        "role": null,
+        "stopReason": null
+      }
+    ]
+  }
+]

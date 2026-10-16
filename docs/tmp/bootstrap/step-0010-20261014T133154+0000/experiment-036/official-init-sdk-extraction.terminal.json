@@ -1,0 +1,15 @@
+{
+  "start_utc": "2026-10-16T11:55:12.317554+00:00",
+  "end_utc": "2026-10-16T11:55:18.334045+00:00",
+  "command": [
+    "/tmp/gpu-smt-arena-native-stages-20261016/arena-python/bin/python",
+    "-c",
+    "from pathlib import Path\nimport tarfile,zstandard,json,time\np=Path('/tmp/gpu-smt-arena-native-stages-20261016')\nbegin=time.monotonic()\nwith (p/'lean-4.34.1-linux.tar.zst').open('rb') as raw:\n with zstandard.ZstdDecompressor().stream_reader(raw) as stream:\n  with tarfile.open(fileobj=stream,mode='r|') as tar:\n   tar.extractall(p,filter='data')\nprint('SDK extraction seconds',time.monotonic()-begin)\n"
+  ],
+  "exit": 0,
+  "sdk_version": {
+    "exit": 0,
+    "stdout": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)\n",
+    "stderr": ""
+  }
+}

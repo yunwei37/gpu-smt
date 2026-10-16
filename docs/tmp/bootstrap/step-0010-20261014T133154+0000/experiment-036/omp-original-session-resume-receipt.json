@@ -1,0 +1,52 @@
+[
+  {
+    "observed_utc": "2026-10-16T12:05:05.847176+00:00",
+    "role": "oss",
+    "old_pid": 1995050,
+    "pid": 2020713,
+    "command": [
+      "/root/.local/bin/omp",
+      "--cwd",
+      "/workspaces/repository",
+      "--resume",
+      "/workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-490Z_01a143fb-0bea-72de-83aa-0fdb6120e726.jsonl",
+      "--mode",
+      "rpc",
+      "--approval-mode",
+      "yolo",
+      "--auto-approve"
+    ],
+    "session_id": "01a143fb-0bea-72de-83aa-0fdb6120e726",
+    "session_file": "/workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-490Z_01a143fb-0bea-72de-83aa-0fdb6120e726.jsonl",
+    "fifo": "/tmp/gpu-smt-omp-oss-20261016T091128Z.fifo",
+    "stdout": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl",
+    "stderr": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.stderr",
+    "reason": "restore same terminal original author session after repeated-symbol output fault; cumulative raw telemetry is task-local on existing roomy overlay; native journals remain on original PVC",
+    "model_override": null
+  },
+  {
+    "observed_utc": "2026-10-16T12:05:05.849463+00:00",
+    "role": "experiments",
+    "old_pid": 1995052,
+    "pid": 2020714,
+    "command": [
+      "/root/.local/bin/omp",
+      "--cwd",
+      "/workspaces/repository",
+      "--resume",
+      "/workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-525Z_01a143fb-0c0d-7696-9d3e-8ec95041c284.jsonl",
+      "--mode",
+      "rpc",
+      "--approval-mode",
+      "yolo",
+      "--auto-approve"
+    ],
+    "session_id": "01a143fb-0c0d-7696-9d3e-8ec95041c284",
+    "session_file": "/workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-525Z_01a143fb-0c0d-7696-9d3e-8ec95041c284.jsonl",
+    "fifo": "/tmp/gpu-smt-omp-experiments-20261016T091128Z.fifo",
+    "stdout": "/tmp/gpu-smt-arena-native-stages-20261016/omp-experiments-original-session-resume-20261016T1203.jsonl",
+    "stderr": "/tmp/gpu-smt-arena-native-stages-20261016/omp-experiments-original-session-resume-20261016T1203.stderr",
+    "reason": "restore same terminal original author session after repeated-symbol output fault; cumulative raw telemetry is task-local on existing roomy overlay; native journals remain on original PVC",
+    "model_override": null
+  }
+]

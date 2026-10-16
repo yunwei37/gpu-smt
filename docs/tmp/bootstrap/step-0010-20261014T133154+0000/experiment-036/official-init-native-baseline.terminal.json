@@ -1,0 +1,24 @@
+{
+  "start_utc": "2026-10-16T11:59:14.473973+00:00",
+  "end_utc": "2026-10-16T11:59:16.723723+00:00",
+  "cwd": "/workspaces/repository",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/official-init-native-baseline.resources.txt",
+    "/workspaces/.agent-state/gpu-smt-deps/sokonanoda-7645b1e1fcac/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/arena-source/_build/tests/init.ndjson",
+  "input_bytes": 347555345,
+  "exit": 0,
+  "whole_seconds": 2.2497771859634668,
+  "scope": "one full official Init setup observation, no GPU/native-replacement or source-verification claim"
+}

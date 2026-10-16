@@ -1,0 +1,36 @@
+{
+  "input": "v3-official-init",
+  "declarations": 59626,
+  "bodies": 57544,
+  "host_positive": 23367,
+  "body_thread_cpu_s": 6.973006231,
+  "positive_body_thread_cpu_s": 0.337581756,
+  "positive_fraction_of_body_thread_cpu": 0.048412656581204194,
+  "positive_fraction_of_body_count": 0.40607187543445017,
+  "reasons": {
+    "0": 23367,
+    "9": 5913,
+    "1": 27378,
+    "3": 886
+  },
+  "reason_costs": {
+    "0": {
+      "count": 23367,
+      "body_thread_cpu_ns": 337581756
+    },
+    "9": {
+      "count": 5913,
+      "body_thread_cpu_ns": 1056839108
+    },
+    "1": {
+      "count": 27378,
+      "body_thread_cpu_ns": 5399984143
+    },
+    "3": {
+      "count": 886,
+      "body_thread_cpu_ns": 178601224
+    }
+  },
+  "max_steps": 171465,
+  "limits": "Host positives are unqualified prospective answers. Per-body thread CPU sums are not check wall removed, a strict Amdahl bound, source-verification gain, or GPU evidence."
+}
