@@ -3,6 +3,7 @@
 // arbitrary-FFI sandbox, native policy emulation or accepted performance result.
 #include "native-ref-branches.h"
 #include <atomic>
+#include <array>
 #include <condition_variable>
 #include <cstdint>
 #include <mutex>
@@ -17,6 +18,7 @@ namespace {
 struct Version {lean_object *original,*value;};
 struct Context {
  uint64_t id; bool enabled;
+ uint8_t owner_tag=0; // cache only; zero keeps the unbounded full-ID lookup
  std::string fallback;
  std::mutex mutex;
  std::condition_variable changed;
@@ -24,9 +26,12 @@ struct Context {
  std::vector<Version> held;
  std::atomic<uint64_t> tasks{0},scopes{0},ref_ops{0},thunk_ops{0},created_tasks{0};
 };
+struct Owner {uint64_t id;uint8_t tag;};
 struct Registry {
  std::mutex mutex;
- std::unordered_map<lean_object*,uint64_t> owners;
+ std::unordered_map<lean_object*,Owner> owners;
+ // A slot stays reserved for its context AND every still-live tagged ref.
+ std::array<uint64_t,256> tag_uses{};
  std::unordered_map<void*,Context*> tasks;
  std::atomic<uint64_t> next_id{1};
 };
@@ -35,8 +40,11 @@ thread_local Context* current=nullptr;
 thread_local bool bypass=false;
 struct Bypass {bool old;Bypass():old(bypass){bypass=true;}~Bypass(){bypass=old;}};
 bool owned_here(lean_object* ref,Context* ctx){
+ // Ref headers are initialized before publication and the tag is immutable.
+ // Tags cannot be reused while any ref carrying that tag survives.
+ if(ctx->owner_tag)return lean_ptr_other(ref)==ctx->owner_tag;
  auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
- auto it=g.owners.find(ref);return it!=g.owners.end()&&it->second==ctx->id;
+ auto it=g.owners.find(ref);return it!=g.owners.end()&&it->second.id==ctx->id;
 }
 lean_object* io_error(const char* message){
  return lean_io_result_mk_error(lean_mk_io_user_error(lean_mk_string(message)));
@@ -65,10 +73,19 @@ extern "C" lean_obj_res gpu_smt_emit_line(lean_obj_arg line,lean_obj_arg){
 extern "C" void gpu_smt_ref_created(lean_object* ref){
  if(bypass)return;
  auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
- g.owners[ref]=current?current->id:0;
+ uint8_t tag=current?current->owner_tag:0;
+ ref->m_other=tag;
+ g.owners[ref]=Owner{current?current->id:0,tag};
+ if(tag)++g.tag_uses[tag];
 }
 extern "C" void gpu_smt_ref_freed(lean_object* ref){
- auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);g.owners.erase(ref);
+ auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
+ auto found=g.owners.find(ref);
+ if(found==g.owners.end())return;
+ // Native deletion may already have overwritten the header's RC/list bytes.
+ // Use retained owner metadata, never a deallocated or rewritten header.
+ if(found->second.tag)--g.tag_uses[found->second.tag];
+ g.owners.erase(found);
 }
 extern "C" lean_object* gpu_smt_resolve_ref(lean_object* ref){
  Context* ctx=current;
@@ -148,14 +165,24 @@ extern "C" lean_obj_res gpu_smt_prepare_refs(lean_obj_arg){
  if(current)return io_error("prepare called within native branch");
  Bypass no_recursion;auto& g=registry();
  std::lock_guard<std::mutex> guard(g.mutex);
- for(auto& entry:g.owners)if(entry.second==0)lean_mark_mt(entry.first);
+ for(auto& entry:g.owners)if(entry.second.id==0)lean_mark_mt(entry.first);
  return lean_io_result_mk_ok(lean_box(0));
 }
 extern "C" lean_obj_res gpu_smt_branch_begin(uint8_t enabled,lean_obj_arg){
  if(current)return io_error("nested native branch setup is not implemented");
  auto* ctx=new Context;
  ctx->id=registry().next_id.fetch_add(1,std::memory_order_relaxed);
- ctx->enabled=enabled!=0;current=ctx;
+ ctx->enabled=enabled!=0;
+ if(ctx->enabled){
+  auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
+  for(size_t slot=1;slot<g.tag_uses.size();++slot){
+   if(g.tag_uses[slot]==0){
+    ctx->owner_tag=static_cast<uint8_t>(slot);++g.tag_uses[slot];break;
+   }
+  }
+ }
+ // Exhausted cache slots do not block or reject a branch: owner_tag remains0.
+ current=ctx;
  return lean_io_result_mk_ok(lean_box_uint64(reinterpret_cast<uintptr_t>(ctx)));
 }
 extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
@@ -169,13 +196,17 @@ extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
                               &&ctx->scopes.load(std::memory_order_acquire)==0;});
  }
  std::ostringstream out;
- out<<"{\"fallback\":"<<(ctx->fallback.empty()?"false":"true")<<",\"fallback_operation\":\""<<ctx->fallback<<"\",\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->refs.size()
+ out<<"{\"fallback\":"<<(ctx->fallback.empty()?"false":"true")<<",\"fallback_operation\":\""<<ctx->fallback<<"\",\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->refs.size()<<",\"owner_cache_tag\":"<<static_cast<unsigned>(ctx->owner_tag)
     <<",\"thunk_ops\":"<<ctx->thunk_ops.load()<<",\"thunk_versions\":"<<ctx->thunks.size()
     <<",\"descendant_tasks\":"<<ctx->created_tasks.load()
     <<",\"drain_seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count()<<"}";
  // The branch owner is released only after admitted descendants and scopes
  // finish. Keep original identities alive throughout to prevent address reuse.
  for(auto& version:ctx->held){lean_dec(version.value);lean_dec(version.original);}
+ if(ctx->owner_tag){
+  auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
+  --g.tag_uses[ctx->owner_tag]; // release context reservation AFTER clone cleanup
+ }
  delete ctx;
  return lean_io_result_mk_ok(lean_mk_string(out.str().c_str()));
 }

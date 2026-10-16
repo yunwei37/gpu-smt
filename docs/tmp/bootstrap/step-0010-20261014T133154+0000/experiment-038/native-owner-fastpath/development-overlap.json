@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-16T15:18:37.688870+00:00",
+  "active_capture": "/tmp/gpu-smt-e038-full-native-batch-20261016T150428Z",
+  "active_method_during_development": "rep1-stock",
+  "compiler_records": [
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/compact-shared.json",
+      "utc": "2026-10-16T15:14:29.274271+00:00",
+      "wall_ns": 848179562,
+      "compiler_cpu_seconds": 0.8478060000000002
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/compact-static.json",
+      "utc": "2026-10-16T15:14:28.343687+00:00",
+      "wall_ns": 930301721,
+      "compiler_cpu_seconds": 0.9298359999999998
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/compact-syntax.json",
+      "utc": "2026-10-16T15:10:16.837780+00:00",
+      "wall_ns": 646610740,
+      "compiler_cpu_seconds": 0.6461409999999999
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/helper-link.json",
+      "utc": "2026-10-16T15:14:27.230387+00:00",
+      "wall_ns": 1113052310,
+      "compiler_cpu_seconds": 1.118731
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/helper-syntax.json",
+      "utc": "2026-10-16T15:10:15.989492+00:00",
+      "wall_ns": 847924888,
+      "compiler_cpu_seconds": 0.837429
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/private-repl-link.json",
+      "utc": "2026-10-16T15:14:30.394977+00:00",
+      "wall_ns": 286952661,
+      "compiler_cpu_seconds": 0.7707940000000005
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/private-shared-link.json",
+      "utc": "2026-10-16T15:14:30.131196+00:00",
+      "wall_ns": 262866966,
+      "compiler_cpu_seconds": 0.7839720000000001
+    },
+    {
+      "receipt": "docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-owner-fastpath/runtime-archive.json",
+      "utc": "2026-10-16T15:14:30.123212+00:00",
+      "wall_ns": 7011750,
+      "compiler_cpu_seconds": 0.006696999999999592
+    }
+  ],
+  "total_compiler_cpu_seconds": 5.941406,
+  "one_native_check_start": "2026-10-16T15:15:48.164748+00:00",
+  "one_native_check_wall_ns": 8033772849,
+  "one_native_check_cpu": {
+    "collector": {
+      "user": 0.010206999999999966,
+      "system": 0.958678
+    },
+    "waited_children": {
+      "user": 5.93931,
+      "system": 1.8157169999999998
+    }
+  },
+  "scope": "finite developer co-run during first native stock cell; preserve this external-load provenance; do not infer prospective v2 speed or pretend exclusive benchmark CPUs; no frozen-v1 artifact modified"
+}

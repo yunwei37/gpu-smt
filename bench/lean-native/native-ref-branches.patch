@@ -406,3 +406,22 @@
      object_ref args(args_);
      object_ref stdio_cfg = cnstr_get_ref(args, 0);
      stdio stdin_mode  = static_cast<stdio>(cnstr_get_uint8(stdio_cfg.raw(), 0));
+--- a/src/runtime/compact.cpp
++++ b/src/runtime/compact.cpp
+@@ -243,6 +243,8 @@
+     if (c == g_null_offset)
+         return false;
+     object * r = copy_object(o);
++    // A serialized/copied ref has a new identity, not its source branch owner.
++    r->m_other = 0;
+     lean_to_ref(r)->m_value = c;
+     save_max_sharing(o, r, lean_object_byte_size(o));
+     return true;
+@@ -443,6 +445,7 @@
+ }
+ 
+ inline void compacted_region::fix_ref(object * o) {
++    o->m_other = 0;
+     lean_to_ref(o)->m_value = fix_object_ptr(lean_to_ref(o)->m_value);
+     move(sizeof(lean_ref_object));
+ }

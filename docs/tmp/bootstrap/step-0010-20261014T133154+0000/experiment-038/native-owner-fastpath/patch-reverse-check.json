@@ -1,0 +1,13 @@
+{
+  "command": [
+    "patch",
+    "--dry-run",
+    "-R",
+    "-p1",
+    "-i",
+    "/workspaces/repository/bench/lean-native/native-ref-branches.patch"
+  ],
+  "exit_code": 0,
+  "stdout": "checking file src/runtime/io.cpp\nchecking file src/runtime/object.cpp\nchecking file src/runtime/process.cpp\nchecking file src/runtime/compact.cpp\n",
+  "stderr": ""
+}
