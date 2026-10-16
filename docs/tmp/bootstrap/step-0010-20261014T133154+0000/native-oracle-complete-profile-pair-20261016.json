@@ -1,0 +1,277 @@
+{
+  "utc": "2026-10-16T01:00:22.005531+00:00",
+  "reference": {
+    "label": "goedel427-profile-aot",
+    "dataset": "goedel427",
+    "method": "aot",
+    "profile": true,
+    "valid_complete": true,
+    "returned": 29750,
+    "expected": 29750,
+    "whole_seconds": 15789.359399116,
+    "terminal_attempts_per_second": 1.8841803044691994,
+    "counts": {
+      "complete": 27319,
+      "rejected": 2376,
+      "operational": 55
+    },
+    "request_latency_seconds": {
+      "n": 29750,
+      "median": 0.714896477,
+      "p95": 5.620397004,
+      "p99": 18.47804622
+    },
+    "source_issues": [],
+    "server_returncode": -15,
+    "resources": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 513495270719305,
+      "end_monotonic_ns": 529284019661042,
+      "sample_interval_ns": 1000000000,
+      "samples": 7803,
+      "incomplete_samples": 38,
+      "sampled_peak_total_pss_kib": 6561664,
+      "sampled_peak_total_private_kib": 5430788,
+      "whole_process_tree_cpu_seconds": 11201.693599000004,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    }
+  },
+  "candidate": {
+    "label": "goedel427-profile-native",
+    "dataset": "goedel427",
+    "method": "native",
+    "profile": true,
+    "valid_complete": true,
+    "returned": 29750,
+    "expected": 29750,
+    "whole_seconds": 13623.063136141,
+    "terminal_attempts_per_second": 2.1837966764666463,
+    "counts": {
+      "complete": 27320,
+      "rejected": 2376,
+      "operational": 54
+    },
+    "request_latency_seconds": {
+      "n": 29750,
+      "median": 0.6827162529999999,
+      "p95": 4.230643741,
+      "p99": 12.728172942
+    },
+    "source_issues": [],
+    "server_returncode": -15,
+    "resources": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 529372472439620,
+      "end_monotonic_ns": 542994926540999,
+      "sample_interval_ns": 1000000000,
+      "samples": 6906,
+      "incomplete_samples": 37,
+      "sampled_peak_total_pss_kib": 7478115,
+      "sampled_peak_total_private_kib": 6345356,
+      "whole_process_tree_cpu_seconds": 11209.231334,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    }
+  },
+  "basic_differences": [
+    {
+      "source_index": 4596,
+      "reference": "complete",
+      "candidate": "operational"
+    },
+    {
+      "source_index": 4641,
+      "reference": "operational",
+      "candidate": "complete"
+    },
+    {
+      "source_index": 5612,
+      "reference": "operational",
+      "candidate": "complete"
+    },
+    {
+      "source_index": 16810,
+      "reference": "operational",
+      "candidate": "complete"
+    },
+    {
+      "source_index": 16833,
+      "reference": "complete",
+      "candidate": "operational"
+    }
+  ],
+  "native_difference_indices": [
+    4596,
+    4641,
+    5612,
+    16810,
+    16833
+  ],
+  "native_differences": [
+    {
+      "source_index": 4596,
+      "reference": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 23
+            },
+            "endPos": {
+              "line": 14,
+              "column": 30
+            },
+            "data": "This simp argument is unused:\n  pow_add\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_a\u0335d\u0335d\u0335,\u0335 \u0335p\u0335ow\u0335_\u0335o\u0335ne, pow_mul, mul_add, mul_one, mul_assoc, mul_comm, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 32
+            },
+            "endPos": {
+              "line": 14,
+              "column": 39
+            },
+            "data": "This simp argument is unused:\n  pow_one\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_add, pow_o\u0335n\u0335e\u0335,\u0335 \u0335p\u0335o\u0335w\u0335_\u0335mul, mul_add, mul_one, mul_assoc, mul_comm, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 41
+            },
+            "endPos": {
+              "line": 14,
+              "column": 48
+            },
+            "data": "This simp argument is unused:\n  pow_mul\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_add, pow_one, p\u0335o\u0335w\u0335_\u0335mul,\u0335 \u0335m\u0335u\u0335l\u0335_add, mul_one, mul_assoc, mul_comm, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 59
+            },
+            "endPos": {
+              "line": 14,
+              "column": 66
+            },
+            "data": "This simp argument is unused:\n  mul_one\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_add, pow_one, pow_mul, mul_add, mul_o\u0335n\u0335e\u0335,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335assoc, mul_comm, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 68
+            },
+            "endPos": {
+              "line": 14,
+              "column": 77
+            },
+            "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_add, pow_one, pow_mul, mul_add, mul_one, mul_a\u0335s\u0335s\u0335o\u0335c,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335c\u0335omm, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 14,
+              "column": 89
+            },
+            "endPos": {
+              "line": 14,
+              "column": 102
+            },
+            "data": "This simp argument is unused:\n  mul_left_comm\n\nHint: Omit it from the simp argument list.\n  simp only [add_comm, pow_add, pow_one, pow_mul, mul_add, mul_one, mul_assoc, mul_comm,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335l\u0335e\u0335f\u0335t\u0335_\u0335c\u0335o\u0335m\u0335m\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          }
+        ]
+      },
+      "candidate": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 4641,
+      "reference": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 78
+            },
+            "endPos": {
+              "line": 19,
+              "column": 81
+            },
+            "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 2
+            },
+            "endPos": {
+              "line": 19,
+              "column": 77
+            },
+            "data": "'(first\n  | rw [div_le_div_iff\u2080]\n  | rw [le_div_iff\u2080]\n  | rw [div_le_iff\u2080]\n  | skip)' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 5612,
+      "reference": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate": {}
+    },
+    {
+      "source_index": 16810,
+      "reference": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 16833,
+      "reference": {},
+      "candidate": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    }
+  ],
+  "scope": "Separate single resource-profile pair, not a fourth primary repetition. Exact source/row order and native fields excluding only documented adapter time; no failure filtering/normalization/retry. Non-atomic sampled PSS/private and getrusage counters, exhaustive CPU coverage unestablished."
+}

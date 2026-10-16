@@ -1,0 +1,3 @@
+# Root direct plan review
+The human instruction prohibits delegation. This is root self-review, not a fresh independent reviewer.
+The plan tests a measured residual mechanism using unchanged real source verification and a competent CPU oracle. Resolved theorem arguments are invocation-local; polymorphic relation and zero terms must enter the template key. Any unresolved template or binder layout uses the original mkAppM path. Native kernel checking and the existing stock tactic fallback remain. Source controls qualify execution only; final whole performance requires an admitted matched corpus comparison. This supporting discriminator is appropriate before proposing a GPU proof-construction kernel, whose dominant cost and data representation have not been demonstrated.

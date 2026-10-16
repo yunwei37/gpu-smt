@@ -1,0 +1,9 @@
+# Direct original-oracle qualification
+
+Root direct execution/self-review. Bothcomplete5source cells return3complete/1rejected/1operational, with allsource bytes/order and native HTTP fields matching after excluding only the backward adapter duration. OriginalProof05612 reaches the existing300s timeout inbothmethods; it is retained, not filtered or rerun with a looser cap. The other four originals include actual accepted and rejected nlinarith paths.
+
+Candidate product telemetry records18invocations,141template builds,6344reuses and6485product proofs. This establishes engagement of the same product builder with the stock arithmetic oracle, without FarkasFast/native daemon/HiGHS/GPU. Baseline andcandidate use the same9official full-library native DSOs; candidate adds only its3own dependencies. PrivateREPL/nativebuilds leave running acquisition versions untouched. The first missingSyntax namespace compile failure/source/log remains retained.
+
+Whole308.418/308.787s are separately instrumented, one-order qualification clocks dominated by a retained timeout. They are not primary performance, a speedup/slowdown conclusion or a gate based on a pilot win. This is valid dependency qualification only. Fulloriginal29,750source/threealternating pairs/twoprofiles comparison follows the admitted plan with freshmatched clocks. AllfourRQs/bothverification families/service/device/paper/independent audit remain open.
+
+Reproduce: run-stock-products.py preflight in the recordedowningWorkspace environment, then analyze-stock-products.py --preflight. Inputs, native responses, logs andresources are retained under stock-products-preflight1/cells; configuration/build commands/source snapshots are adjacent. Nativefield differences exclude only actual adaptertime, not errors/warnings/IDs. Rootselfreview is not independent audit.

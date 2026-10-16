@@ -1,0 +1,3 @@
+# Actual nativeoracle main-path qualification self-review
+
+BothactualmainHTTP routes return complete/rejected on2exactpublicsources with0nativefielddifferences excludingadapterduration, nooracleinputlogs inprimaryZIP. Earlier source-enabledprobe qualifies9nativecertificatecalls/nofallback onselectedrealmedian/heavyfiles; exactgetFileMapsource resolvesallassociation. Currentconfigguard usesofficialParser.Tactic.getConfigItems and delegatesallcustomcfg to originalelaborator, telemetry bypass is explicit. Source/import/daemon/transport/fallback/kernel costs included, additionalmodule is declaredport, notunmodifiedexecutable. No biasedprobe/fullcorpus speedupclaim orGPUeligibility. Rootself-review, noindependentfreshreview.

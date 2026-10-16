@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-16T06:12:33.325311+00:00",
+  "planned_profile_conditions": 3,
+  "complete_profile_conditions": 1,
+  "all_profile_conditions_complete": false,
+  "scope": "Separate full29750-source resource captures, checked by existing original-input/native loader. Unpaired first resource observation, sampled own-tree PSS/private and raw getrusage CPUcounter; observer overhead/sharedbackground/incomplete non-atomic samples retained. Not primary performance, exact peak/exhaustiveCPU, resource savings, causal ranking or GPU gain.",
+  "cells": {
+    "goedel427-profile-tiered": {
+      "label": "goedel427-profile-tiered",
+      "dataset": "goedel427",
+      "method": "tiered",
+      "profile": true,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 10902.364346805,
+      "terminal_attempts_per_second": 2.7287658945940847,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.489408584,
+        "p95": 3.111611552,
+        "p99": 9.685300478
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 551587011153712,
+        "end_monotonic_ns": 562488783308619,
+        "sample_interval_ns": 1000000000,
+        "samples": 5905,
+        "incomplete_samples": 28,
+        "sampled_peak_total_pss_kib": 7005488,
+        "sampled_peak_total_private_kib": 5690872,
+        "whole_process_tree_cpu_seconds": 10031.249405999999,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      },
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1969125,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+        "method": "tiered",
+        "affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8004"
+      }
+    }
+  }
+}

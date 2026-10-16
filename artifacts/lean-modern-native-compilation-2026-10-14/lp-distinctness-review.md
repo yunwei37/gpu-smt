@@ -1,0 +1,3 @@
+# Actual LP equality disposition
+
+All9captured LPs are distinct bothasordered protocolinputs andasconstraintmultisets withfixedvariableindices. Equaldimensions (8calls maxVar41/296hyps/1824nnz) do not establishduplicates. No certificatecache proposed/implemented from thatshape. Raw/certificates remain. InitialcallIDs areperREPL, and concurrentHTTPintervals cannotuniquelyassociate first2oraclecalls; source-text telemetry from nativegetFileMap.source nowqualifiesexactassociation. This is measurementrepair, notnewexperimentcontrol/GPU/cachecontribution. CurrentwholeGC/AOT/profilecollectors unchanged.

@@ -1,0 +1,3 @@
+# Root baseline-repair self-review
+
+Actual source/defaultrecipe/protocol evidence justifies repair. Newepoch preserves same source/version/options/resources and comparison hypothesis; no retrospective stronger claim for NoGC data. Nativegc feature has its published output contract and independent source; runtime preflight confirms bothactualroutes. Docker/source defaults differ, ported implementation and Python12GiB/300s are declared. No priorart functionality is proposednovelty. Fullmatrix/effect/strongestCPU selection still unproven; concurrentbackground/profileoverhead/censoring are explicit. Nativebatch remains a relevant strongestalternativemechanism, not settled by this AOTcomparison. This is rootself-review, notfreshindependentreview.

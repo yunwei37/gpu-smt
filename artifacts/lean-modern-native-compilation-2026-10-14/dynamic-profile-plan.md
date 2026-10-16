@@ -1,0 +1,23 @@
+# Native dynamic profiling folded into modern RQ4 CPU comparison
+
+Role: supporting diagnostic for selection of expensive modern remaining work, not an independent contribution, performance competitor or extra throughput claim. Modern full comparison measures warm/native-compiled elapsed effects; processCPU/PSS alone does not identify costly frontend/Meta/kernel work, and old4.9 measurements do not answer modern scope. Reuse official trace.profiler and Firefox.Profile.export instead of a new tiny GPU proxy.
+
+All29750original released files/errors, produceroptions and stock12GiB/300s/unlimited-use policy remain. Private original-CPU REPL enables official default10ms traceprofiler; file option overrides stay. Capture main command TraceState and native async snapshot traces via official getAll/export. Clear only emitted main trace carrier before storing command snapshot; environment/messages/InfoTree/async tasks remain. Official Firefox JSON uses source command as thread name and stderr sideband, collected by stock logging and existing losslessgzip.
+
+Profiling adds timing/serialization/task-join costs and may change operational resource outcomes; never substitute its wall times for primary comparisons. SDK Firefox threadCPUDelta is synthesized from trace wall intervals, not sampledCPU. Include thresholded/missing traces, async overlaps, unsupported/operational cases and output cost; do not sum inclusive nodes as exclusiveCPU or whole time.
+
+FiniteCPU12-15/private8003/width4 full-source profiling cell, alongside existing matched matrices. Shared memory/cache/I/O remain, no exclusivehardware/reservation/newservice/duty/Agent. All original files attempted, all failures/raw retained. Existing runner/runtime/input files untouched. Actual preflight uses exact Proof_00000/Proof_00004 through stockHTTP, readiness only; full uses existing nativeHTTP adapter as one folded diagnostic, not an independent experiment.
+Positive selection: repeated expensive trace classes choose deeper operations worth evaluating; traces do not prove GPUeligibility. Censored/empty capture means absence unproven; do not manufacture a signal with a tiny proxy. Root direct plan/build/run/self-review under no-delegation human instruction; independent review still unsatisfied.
+
+## Capture transport correction before real preflight
+Large Firefox JSON lines may exceed stock asyncio stderr reader framing. Store each official JSON losslessly gzip-compressed under the owning cell native-profiles/ on the same projectPVC, and emit only its path on stderr. Compression/IO are profileobserver costs, not primarytiming. No separate service/helper or storageboundary is added; all profile files enter the same retained lossless cellZIP. First stderr-only build/design retained; no preflight/runtime was executed with it.
+
+## Actual preflight1 failure and endpoint repair
+Profiler server retained its old8002 bind setting while the client used8003; existing original modernserver owns8002. The profiler server exited before readiness/any source result. Original failure logs/terminal remain; no existing server/owner was stopped. Correct both profiler server/client to its declared private8003 and retry the same2source controls as preflight2. Source/oracle/timeouts/profilecapture remain fixed.
+
+## Preflight2 capture defect and native snapshot correction
+All2source results match uninstrumented native fields, but body profiles contained only runFrontend. Official IO.processCommands discards its IncrementalState.initialSnap and returns the terminal command state; examining that terminal state misses earlier theorem traces. Reuse the same official IO.processCommandsIncrementally(...,none) path used internally, retain initialSnap only for official toSnapshotTree/getAll/export before returning the same4native results. No profiler threshold/source/oracle is weakened. Profile wrapper scope is command processing after processHeader, not import-inclusive or whole HTTP; primary whole clocks stay unchanged. Original empty files remain as failed capture evidence. Retry the same2controls as preflight3; do not start a flat-profile full run.
+
+## GC-compatible diagnostic epoch 2026-10-14T18:40:19.332922+00:00
+
+NoGC profiling prefix was stopped/preserved after actualbaseline protocoldefect. CurrentGC-compatible privatefork profiler reuses the exactsame officialsnapshot export/capture; bothbody payloads match uninstrumentedGC and all4profilefiles includeKernel/Meta/tacticclasses. Full29750-source diagnostic nowuses dynamic-profile-gc-full1/ atCPU12-15/8003/width4, distinct fromprimaryfull-gc1. Gzip/PSSobserver costs and thresholded wall/asynccoverage remain, noCPUfraction orGPUeligibility from readiness.

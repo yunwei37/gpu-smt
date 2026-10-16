@@ -1,0 +1,364 @@
+{
+  "utc": "2026-10-16T01:59:57.240993+00:00",
+  "planned_cells": 8,
+  "completed_valid_cells": 8,
+  "all_planned_complete": true,
+  "primary_pairs": [
+    {
+      "rep": 0,
+      "reference_seconds": 11629.897522532,
+      "candidate_seconds": 10487.442558836,
+      "wall_reduction_percent": 9.82343104470682,
+      "basic_differences": [
+        4074,
+        4118,
+        4717,
+        5051,
+        13882,
+        14007,
+        16810,
+        16947,
+        19502,
+        19521
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        4074,
+        4118,
+        4717,
+        5051,
+        13882,
+        14007,
+        16810,
+        16947,
+        19502,
+        19521
+      ],
+      "reference_throughput": 2.558062093183689,
+      "candidate_throughput": 2.8367259065399777,
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.513909406,
+        "p95": 3.411827644,
+        "p99": 10.559975378
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.4291574975,
+        "p95": 2.824867343,
+        "p99": 10.090239887
+      }
+    },
+    {
+      "rep": 1,
+      "reference_seconds": 12852.837867026,
+      "candidate_seconds": 11208.512640268,
+      "wall_reduction_percent": 12.793479881797332,
+      "basic_differences": [
+        4074,
+        4108,
+        4717,
+        4773,
+        16810,
+        16847,
+        19502,
+        19538,
+        27333,
+        27371,
+        29432
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        4074,
+        4108,
+        4717,
+        4773,
+        16810,
+        16847,
+        19502,
+        19538,
+        27333,
+        27371,
+        29432
+      ],
+      "reference_throughput": 2.3146639137434173,
+      "candidate_throughput": 2.6542326314661375,
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.5929980095,
+        "p95": 3.942976644,
+        "p99": 12.164433667
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.477195716,
+        "p95": 3.076597819,
+        "p99": 10.727102083
+      }
+    },
+    {
+      "rep": 2,
+      "reference_seconds": 14753.248824164,
+      "candidate_seconds": 12483.329660288,
+      "wall_reduction_percent": 15.38589358133886,
+      "basic_differences": [
+        9797,
+        16810,
+        16846,
+        19502,
+        19606,
+        26303
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        9797,
+        16810,
+        16846,
+        19502,
+        19606,
+        26303
+      ],
+      "reference_throughput": 2.0165049986327874,
+      "candidate_throughput": 2.3831782713101597,
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.7214421135,
+        "p95": 4.695406441,
+        "p99": 14.452226552
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.5693147000000001,
+        "p95": 3.565933025,
+        "p99": 11.997504343
+      }
+    }
+  ],
+  "mean_wall_reduction_percent": 12.667601502614337,
+  "observed_pair_range_percent": [
+    9.82343104470682,
+    15.38589358133886
+  ],
+  "cells": {
+    "goedel427-profile-fast-products": {
+      "label": "goedel427-profile-fast-products",
+      "dataset": "goedel427",
+      "method": "fast-products",
+      "profile": true,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 11437.335344066,
+      "terminal_attempts_per_second": 2.6011303424302503,
+      "counts": {
+        "complete": 27320,
+        "rejected": 2376,
+        "operational": 54
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.5022604245,
+        "p95": 3.161171359,
+        "p99": 10.942274441
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 534318035116475,
+        "end_monotonic_ns": 545754735317765,
+        "sample_interval_ns": 1000000000,
+        "samples": 6198,
+        "incomplete_samples": 34,
+        "sampled_peak_total_pss_kib": 6961995,
+        "sampled_peak_total_private_kib": 5682408,
+        "whole_process_tree_cpu_seconds": 13144.556625000005,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    },
+    "goedel427-profile-fast": {
+      "label": "goedel427-profile-fast",
+      "dataset": "goedel427",
+      "method": "fast",
+      "profile": true,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 13346.049945904,
+      "terminal_attempts_per_second": 2.2291239820461253,
+      "counts": {
+        "complete": 27321,
+        "rejected": 2376,
+        "operational": 53
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.6270953075000001,
+        "p95": 4.047207145,
+        "p99": 12.529231729
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 520920257275523,
+        "end_monotonic_ns": 534265302260132,
+        "sample_interval_ns": 1000000000,
+        "samples": 7051,
+        "incomplete_samples": 33,
+        "sampled_peak_total_pss_kib": 7674160,
+        "sampled_peak_total_private_kib": 6607444,
+        "whole_process_tree_cpu_seconds": 14949.057210000003,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      }
+    },
+    "goedel427-rep0-fast-products": {
+      "label": "goedel427-rep0-fast-products",
+      "dataset": "goedel427",
+      "method": "fast-products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 10487.442558836,
+      "terminal_attempts_per_second": 2.8367259065399777,
+      "counts": {
+        "complete": 27321,
+        "rejected": 2376,
+        "operational": 53
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.4291574975,
+        "p95": 2.824867343,
+        "p99": 10.090239887
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep0-fast": {
+      "label": "goedel427-rep0-fast",
+      "dataset": "goedel427",
+      "method": "fast",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 11629.897522532,
+      "terminal_attempts_per_second": 2.558062093183689,
+      "counts": {
+        "complete": 27322,
+        "rejected": 2375,
+        "operational": 53
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.513909406,
+        "p95": 3.411827644,
+        "p99": 10.559975378
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep1-fast-products": {
+      "label": "goedel427-rep1-fast-products",
+      "dataset": "goedel427",
+      "method": "fast-products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 11208.512640268,
+      "terminal_attempts_per_second": 2.6542326314661375,
+      "counts": {
+        "complete": 27320,
+        "rejected": 2376,
+        "operational": 54
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.477195716,
+        "p95": 3.076597819,
+        "p99": 10.727102083
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep1-fast": {
+      "label": "goedel427-rep1-fast",
+      "dataset": "goedel427",
+      "method": "fast",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 12852.837867026,
+      "terminal_attempts_per_second": 2.3146639137434173,
+      "counts": {
+        "complete": 27321,
+        "rejected": 2376,
+        "operational": 53
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.5929980095,
+        "p95": 3.942976644,
+        "p99": 12.164433667
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep2-fast-products": {
+      "label": "goedel427-rep2-fast-products",
+      "dataset": "goedel427",
+      "method": "fast-products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 12483.329660288,
+      "terminal_attempts_per_second": 2.3831782713101597,
+      "counts": {
+        "complete": 27321,
+        "rejected": 2376,
+        "operational": 53
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.5693147000000001,
+        "p95": 3.565933025,
+        "p99": 11.997504343
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep2-fast": {
+      "label": "goedel427-rep2-fast",
+      "dataset": "goedel427",
+      "method": "fast",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 14753.248824164,
+      "terminal_attempts_per_second": 2.0165049986327874,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.7214421135,
+        "p95": 4.695406441,
+        "p99": 14.452226552
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    }
+  },
+  "scope": "all29750original source bytes per cell, three alternating primary pairs; separate observer/resource profiles; shared background/defaultCPUeligibility; no partial clocks or across-affinity ratios. Native payload differences exclude only backward adapter duration, not diagnostic IDs. Entire matrix and result review required for full performance."
+}

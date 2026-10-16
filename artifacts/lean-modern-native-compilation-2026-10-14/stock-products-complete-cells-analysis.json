@@ -1,0 +1,416 @@
+{
+  "utc": "2026-10-16T06:25:36.643755+00:00",
+  "scope": "Original native arithmetic solver/configuration plus whole-library native compilation; candidate only replaces nlinarith product construction. Allsource bytes/native fields retained. Preflight is dependency engagement, not primary performance. Shared background; profiles separate; no partial clocks/cross-affinity or cross-version ratios.",
+  "preflight": false,
+  "completed_valid_cells": 6,
+  "planned_cells": 8,
+  "all_planned_complete": false,
+  "pairs": [
+    {
+      "rep": 0,
+      "reference_seconds": 15385.790012206,
+      "candidate_seconds": 15475.962494562,
+      "wall_reduction_percent": -0.5860763879167896,
+      "basic_differences": [
+        {
+          "source_index": 4580,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 4610,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4717,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4801,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 16810,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 16833,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 19502,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 19551,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 25179,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 25254,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 26303,
+          "reference": "complete",
+          "candidate": "operational"
+        }
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        4580,
+        4610,
+        4717,
+        4801,
+        16810,
+        16833,
+        19502,
+        19551,
+        25179,
+        25254,
+        26303
+      ],
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.6610587465,
+        "p95": 5.365522005,
+        "p99": 19.505093885
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.630592983,
+        "p95": 5.349706018,
+        "p99": 20.786821322
+      }
+    },
+    {
+      "rep": 1,
+      "reference_seconds": 16245.634151301,
+      "candidate_seconds": 15415.520172841,
+      "wall_reduction_percent": 5.109766542376071,
+      "basic_differences": [
+        {
+          "source_index": 2269,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 2364,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4580,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 4583,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4717,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4773,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 16810,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 16932,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 19479,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 26303,
+          "reference": "complete",
+          "candidate": "operational"
+        }
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        2269,
+        2364,
+        4580,
+        4583,
+        4717,
+        4773,
+        16810,
+        16932,
+        19479,
+        26303
+      ],
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.7151968755,
+        "p95": 5.738723384,
+        "p99": 20.945924395
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.6206099165,
+        "p95": 5.189586487,
+        "p99": 20.672659935
+      }
+    },
+    {
+      "rep": 2,
+      "reference_seconds": 14942.761836447,
+      "candidate_seconds": 12805.478076955,
+      "wall_reduction_percent": 14.30313741786967,
+      "basic_differences": [
+        {
+          "source_index": 4580,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 4644,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 4717,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 4773,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 8949,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 8959,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 16810,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 16862,
+          "reference": "complete",
+          "candidate": "operational"
+        },
+        {
+          "source_index": 19502,
+          "reference": "operational",
+          "candidate": "complete"
+        },
+        {
+          "source_index": 19538,
+          "reference": "complete",
+          "candidate": "operational"
+        }
+      ],
+      "native_payload_differences_excluding_only_adapter_time": [
+        4580,
+        4644,
+        4717,
+        4773,
+        8949,
+        8959,
+        16810,
+        16862,
+        19502,
+        19538
+      ],
+      "reference_request_latency": {
+        "n": 29750,
+        "median": 0.6349945509999999,
+        "p95": 5.162012997,
+        "p99": 18.550790521
+      },
+      "candidate_request_latency": {
+        "n": 29750,
+        "median": 0.4581740035,
+        "p95": 4.074569836,
+        "p99": 17.277954397
+      }
+    }
+  ],
+  "mean_wall_reduction_percent": 6.275609190776318,
+  "engagement": {},
+  "cells": {
+    "goedel427-rep0-products": {
+      "label": "goedel427-rep0-products",
+      "dataset": "goedel427",
+      "method": "products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 15475.962494562,
+      "terminal_attempts_per_second": 1.922336010471314,
+      "counts": {
+        "complete": 27318,
+        "rejected": 2376,
+        "operational": 56
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.630592983,
+        "p95": 5.349706018,
+        "p99": 20.786821322
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep0-stock": {
+      "label": "goedel427-rep0-stock",
+      "dataset": "goedel427",
+      "method": "stock",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 15385.790012206,
+      "terminal_attempts_per_second": 1.9336023679251082,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.6610587465,
+        "p95": 5.365522005,
+        "p99": 19.505093885
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep1-products": {
+      "label": "goedel427-rep1-products",
+      "dataset": "goedel427",
+      "method": "products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 15415.520172841,
+      "terminal_attempts_per_second": 1.929873248936058,
+      "counts": {
+        "complete": 27317,
+        "rejected": 2376,
+        "operational": 57
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.6206099165,
+        "p95": 5.189586487,
+        "p99": 20.672659935
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep1-stock": {
+      "label": "goedel427-rep1-stock",
+      "dataset": "goedel427",
+      "method": "stock",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 16245.634151301,
+      "terminal_attempts_per_second": 1.831261231351657,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.7151968755,
+        "p95": 5.738723384,
+        "p99": 20.945924395
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep2-products": {
+      "label": "goedel427-rep2-products",
+      "dataset": "goedel427",
+      "method": "products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 12805.478076955,
+      "terminal_attempts_per_second": 2.323224468560741,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.4581740035,
+        "p95": 4.074569836,
+        "p99": 17.277954397
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    "goedel427-rep2-stock": {
+      "label": "goedel427-rep2-stock",
+      "dataset": "goedel427",
+      "method": "stock",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 14942.761836447,
+      "terminal_attempts_per_second": 1.9909304802969259,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.6349945509999999,
+        "p95": 5.162012997,
+        "p99": 18.550790521
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    }
+  }
+}

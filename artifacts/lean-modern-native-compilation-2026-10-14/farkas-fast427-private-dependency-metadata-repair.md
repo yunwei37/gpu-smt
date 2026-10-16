@@ -1,0 +1,5 @@
+# Private dependency metadata repair
+
+The first allfour-method HTTP qualification failed before Lean header execution. Actual directlakeenvstderr namesprivateplausible dependency: couldnotresolveHEAD. Root'sprivatecopyexcluded.git metadata, butLake'sexistingpackagepathrequires it. No solver/verification/performance result fromattempt1. RootrestorespublicdependencyGitmetadata onlyinside theprivate/tmpdependencycopy fromexactretaineddependencyroots; noactiveMathlib/package source/cache/Git tree changed. Header failure raw/operational outcomes remain. Newattempt2uses distinctoutputs; no extra permissions/controller/policy/storage.
+
+Secondprivate-Lake-runtimeattemptstill fails beforeheader. Runtime nowuses the already-valid owningWorkspaceMathlib project/dependencies read-only, withonlynewprivateFarkasmodulebuildlib prepended toLEAN_PATH. This avoids the copiedPackageHEAD runtime dependency; privatecopies remain build-only. No activeMathlib source/cache/build/Gitmutation. First/second operationalcaptures remain. Third actualpublic-source attempt usesdistinctoutputs; noheaderfailuretiming interpreted asproofspeed.

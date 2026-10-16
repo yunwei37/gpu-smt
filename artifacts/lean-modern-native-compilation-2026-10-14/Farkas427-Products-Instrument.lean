@@ -1,0 +1,74 @@
+import Std.Sync.Mutex
+import Mathlib.Tactic.Linarith.Frontend
+import Farkas.Native
+import Farkas.Fast
+import Farkas.Products
+
+open Lean Elab Parser Tactic Meta Syntax
+open Mathlib.Tactic.Linarith
+
+namespace Farkas427
+initialize sink : Std.Mutex Unit ← Std.Mutex.new ()
+initialize sequence : IO.Ref Nat ← IO.mkRef 0
+
+private def emit (fields : List (String × String)) : IO Unit :=
+  sink.atomically do
+    if let some path ← IO.getEnv "FARKAS_CORPUS_FILE" then
+      let h ← IO.FS.Handle.mk path .append
+      h.putStrLn (Farkas.Telemetry.row fields)
+      h.flush
+
+private def loggedOracle (id : Nat) (source : String) (inner : CertificateOracle) : CertificateOracle where
+  produceCertificate hyps maxVar := do
+    let input := s!"\{\"maxVar\":{maxVar},\"hyps\":[{",".intercalate (hyps.map Farkas.Telemetry.compJson)}]}"
+    let start ← IO.monoNanosNow
+    try
+      let result ← inner.produceCertificate hyps maxVar
+      let stop ← IO.monoNanosNow
+      let cert := result.toList.map fun (i,c) => s!"[{i},{c}]"
+      emit [("call",toString id),("start_ns",toString start),("elapsed_ns",toString (stop-start)),
+        ("ok","true"),("source",Farkas.Telemetry.jstrEsc source),("lp",input),("cert",s!"[{",".intercalate cert}]")]
+      return result
+    catch e =>
+      let stop ← IO.monoNanosNow
+      emit [("call",toString id),("start_ns",toString start),("elapsed_ns",toString (stop-start)),
+        ("ok","false"),("source",Farkas.Telemetry.jstrEsc source),("lp",input),("error",Farkas.Telemetry.jstrEsc (← e.toMessageData.toString))]
+      throw e
+
+private def run (nlin onlyOn : Bool) (args : List Expr) (cfg : LinarithConfig) : TacticM Unit := do
+  let id ← sequence.modifyGet fun n => (n+1,n+1)
+  let telemetry := (← IO.getEnv "FARKAS_CORPUS_FILE").isSome
+  let source ← if telemetry then do pure (← getFileMap).source else pure ""
+  let saved ← saveState
+  let native := { cfg with oracle := if telemetry then loggedOracle id source Farkas.native else Farkas.native }
+  if (← IO.getEnv "FARKAS_USE_FAST") == some "1" then
+    if (← Farkas.Fast.tryFast nlin onlyOn args native id) then
+      emit [("call",toString id),("source",Farkas.Telemetry.jstrEsc source),("route","\"fast\"")]
+      return
+    saved.restore
+  try
+    commitIfNoEx do liftMetaFinishingTactic <| Mathlib.Tactic.Linarith.linarith onlyOn args native
+    emit [("call",toString id),("source",Farkas.Telemetry.jstrEsc source),("route","\"native\"")]
+  catch _ =>
+    saved.restore
+    emit [("call",toString id),("source",Farkas.Telemetry.jstrEsc source),("route","\"stock-fallback\"")]
+    commitIfNoEx do liftMetaFinishingTactic <| Mathlib.Tactic.Linarith.linarith onlyOn args cfg
+
+elab_rules : tactic
+  | `(tactic| linarith $[!%$bang]? $cfg:optConfig $[only%$o]? $[[$args,*]]?) => withMainContext do
+    if !(Lean.Parser.Tactic.getConfigItems cfg.raw).isEmpty then
+      throwUnsupportedSyntax
+    let args ← ((args.map (TSepArray.getElems)).getD {}).mapM (elabTermWithoutNewMVars `linarith)
+    let cfg := (← Mathlib.Tactic.elabLinarithConfig cfg).updateReducibility bang.isSome
+    run false o.isSome args.toList cfg
+
+elab_rules : tactic
+  | `(tactic| nlinarith $[!%$bang]? $cfg:optConfig $[only%$o]? $[[$args,*]]?) => withMainContext do
+    if !(Lean.Parser.Tactic.getConfigItems cfg.raw).isEmpty then
+      throwUnsupportedSyntax
+    let args ← ((args.map (TSepArray.getElems)).getD {}).mapM (elabTermWithoutNewMVars `nlinarith)
+    let cfg := (← Mathlib.Tactic.elabLinarithConfig cfg).updateReducibility bang.isSome
+    let products ← if (← IO.getEnv "FARKAS_USE_PRODUCTS") == some "1" then pure Farkas427.Products.extras else pure nlinarithExtras
+    let cfg := { cfg with preprocessors := cfg.preprocessors.concat products }
+    run true o.isSome args.toList cfg
+end Farkas427

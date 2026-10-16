@@ -1,0 +1,391 @@
+{
+  "utc": "2026-10-16T06:26:37.735313+00:00",
+  "cells": [
+    {
+      "label": "goedel427-rep2-stock",
+      "dataset": "goedel427",
+      "method": "stock",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 14942.761836447,
+      "terminal_attempts_per_second": 1.9909304802969259,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.6349945509999999,
+        "p95": 5.162012997,
+        "p99": 18.550790521
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    },
+    {
+      "label": "goedel427-rep2-products",
+      "dataset": "goedel427",
+      "method": "products",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 29750,
+      "expected": 29750,
+      "whole_seconds": 12805.478076955,
+      "terminal_attempts_per_second": 2.323224468560741,
+      "counts": {
+        "complete": 27319,
+        "rejected": 2376,
+        "operational": 55
+      },
+      "request_latency_seconds": {
+        "n": 29750,
+        "median": 0.4581740035,
+        "p95": 4.074569836,
+        "p99": 17.277954397
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+        "-m",
+        "server"
+      ],
+      "pid": 1951012,
+      "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+      "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+      "method": "stock",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+      "api": "/verify, four requests in flight, privatePort8011"
+    },
+    {
+      "command": [
+        "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+        "-m",
+        "server"
+      ],
+      "pid": 1968019,
+      "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+      "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+      "method": "products",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+      "api": "/verify, four requests in flight, privatePort8011"
+    }
+  ],
+  "commands_match_except_pid_method": true,
+  "basic_changes": [
+    {
+      "source_index": 4580,
+      "reference": "operational",
+      "candidate": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 14,
+              "column": 2
+            },
+            "endPos": {
+              "line": 14,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 4644,
+      "reference": "complete",
+      "candidate": "operational",
+      "reference_native": {},
+      "candidate_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      }
+    },
+    {
+      "source_index": 4717,
+      "reference": "operational",
+      "candidate": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 20,
+              "column": 2
+            },
+            "endPos": {
+              "line": 20,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 4773,
+      "reference": "complete",
+      "candidate": "operational",
+      "reference_native": {},
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 8949,
+      "reference": "complete",
+      "candidate": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 8959,
+      "reference": "operational",
+      "candidate": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 16810,
+      "reference": "operational",
+      "candidate": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 16862,
+      "reference": "complete",
+      "candidate": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 25,
+              "column": 2
+            },
+            "endPos": {
+              "line": 25,
+              "column": 6
+            },
+            "data": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 19502,
+      "reference": "operational",
+      "candidate": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 20,
+              "column": 2
+            },
+            "endPos": {
+              "line": 20,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 19538,
+      "reference": "complete",
+      "candidate": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 26,
+              "column": 78
+            },
+            "endPos": {
+              "line": 26,
+              "column": 81
+            },
+            "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 26,
+              "column": 2
+            },
+            "endPos": {
+              "line": 26,
+              "column": 77
+            },
+            "data": "'(first\n  | rw [div_le_div_iff\u2080]\n  | rw [le_div_iff\u2080]\n  | rw [div_le_iff\u2080]\n  | skip)' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    }
+  ],
+  "basic_transition_counts": {
+    "operational->complete": 5,
+    "complete->operational": 5
+  },
+  "native_difference_indices": [
+    4580,
+    4644,
+    4717,
+    4773,
+    8949,
+    8959,
+    16810,
+    16862,
+    19502,
+    19538
+  ],
+  "other_native_payloads_match": 29740,
+  "scope": "Full original third pair, only actual adapter time excluded. No failure/source normalization or causal oracle-interaction/global CPU/GPU claim."
+}

@@ -1,0 +1,3 @@
+# Actual modern HTTP/native preflight self-review
+
+Both methods returned both exact public files, preserving first authorok ascomplete and first authorerror asrejected. Basic and native payload differences (excluding only measured adapter duration) are retained in preflight-analysis.json. Source/library/build policy is fixed. This is readiness, not speed evidence, full author-status reproduction, or independent audit. Official4.27 native dependency loading is explicit because its Linux module dynlibs do not link transitive module imports; all529 official-built libraries are included. Original failures/build logs remain.
