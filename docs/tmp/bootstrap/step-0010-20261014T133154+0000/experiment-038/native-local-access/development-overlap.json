@@ -1,0 +1,41 @@
+{
+  "observed_utc": "2026-10-16T15:44:33.178291+00:00",
+  "active_frozen_v1_capture": "/tmp/gpu-smt-e038-full-native-batch-20261016T150428Z",
+  "development_builds": [
+    {
+      "utc": "2026-10-16T15:40:58.761768+00:00",
+      "completed_utc": "2026-10-16T15:40:59.900626+00:00",
+      "compiler_cpu_seconds": 1.137164,
+      "receipt": "helper-link.json"
+    },
+    {
+      "utc": "2026-10-16T15:40:59.901726+00:00",
+      "completed_utc": "2026-10-16T15:41:00.174910+00:00",
+      "compiler_cpu_seconds": 0.791727,
+      "receipt": "private-shared-link.json"
+    },
+    {
+      "utc": "2026-10-16T15:41:00.175875+00:00",
+      "completed_utc": "2026-10-16T15:41:00.470174+00:00",
+      "compiler_cpu_seconds": 0.8099619999999997,
+      "receipt": "private-repl-link.json"
+    }
+  ],
+  "compiler_cpu_seconds": 2.7388529999999998,
+  "original_native_validation": {
+    "launch_utc": "2026-10-16T15:41:23.377729+00:00",
+    "completed_utc": "2026-10-16T15:41:33.132259+00:00",
+    "receipt": "native-check1/terminal.json",
+    "cpu": {
+      "collector": {
+        "user": 0.013423000000000018,
+        "system": 0.7560229999999999
+      },
+      "waited_children": {
+        "user": 6.361668,
+        "system": 2.863491
+      }
+    }
+  },
+  "interpretation": "finite external CPU load overlapped frozen-v1 capture; no exclusivity, timing correction, candidate-version pooling or speed comparison asserted; retain with active cell interpretation"
+}

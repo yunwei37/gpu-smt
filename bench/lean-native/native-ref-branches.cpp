@@ -38,6 +38,25 @@ struct Registry {
 Registry& registry(){static Registry* value=new Registry;return *value;}
 thread_local Context* current=nullptr;
 thread_local bool bypass=false;
+// Counts follow the dynamically installed branch context. Flush before every
+// context switch; the branch lifetime already covers admitted tasks/scopes.
+thread_local uint64_t local_ref_ops=0,local_thunk_ops=0;
+void flush_local_ops(){
+ if(current){
+  current->ref_ops.fetch_add(local_ref_ops,std::memory_order_relaxed);
+  current->thunk_ops.fetch_add(local_thunk_ops,std::memory_order_relaxed);
+ }
+ local_ref_ops=0;local_thunk_ops=0;
+}
+struct LastVersion {
+ uint64_t context_id=0;
+ lean_object* original=nullptr;
+ lean_object* value=nullptr;
+};
+thread_local LastVersion last_ref,last_thunk;
+lean_object* remember(LastVersion& cache,Context* ctx,lean_object* original,lean_object* value){
+ cache={ctx->id,original,value};return value;
+}
 struct Bypass {bool old;Bypass():old(bypass){bypass=true;}~Bypass(){bypass=old;}};
 bool owned_here(lean_object* ref,Context* ctx){
  // Ref headers are initialized before publication and the tag is immutable.
@@ -90,10 +109,14 @@ extern "C" void gpu_smt_ref_freed(lean_object* ref){
 extern "C" lean_object* gpu_smt_resolve_ref(lean_object* ref){
  Context* ctx=current;
  if(!ctx||bypass||!ctx->enabled)return ref;
- ctx->ref_ops.fetch_add(1,std::memory_order_relaxed);
+ ++local_ref_ops;
  if(owned_here(ref,ctx))return ref;
+ // Originals and versions are retained until this unique context has drained.
+ // Cached pointer bits may survive cleanup, but never dereference them unless
+ // the live context ID and caller-provided original both match.
+ if(last_ref.context_id==ctx->id&&last_ref.original==ref)return last_ref.value;
  std::lock_guard<std::mutex> guard(ctx->mutex);
- auto it=ctx->refs.find(ref);if(it!=ctx->refs.end())return it->second;
+ auto it=ctx->refs.find(ref);if(it!=ctx->refs.end())return remember(last_ref,ctx,ref,it->second);
  Bypass no_recursion;
  // Use the native primitive to acquire an owned RC token. In particular,
  // persistent/MT cells require the runtime's atomic exchange protocol.
@@ -103,14 +126,15 @@ extern "C" lean_object* gpu_smt_resolve_ref(lean_object* ref){
  lean_inc(ref);
  ctx->held.push_back({ref,clone});
  ctx->refs.emplace(ref,clone);
- return clone;
+ return remember(last_ref,ctx,ref,clone);
 }
 extern "C" lean_object* gpu_smt_resolve_thunk(lean_object* thunk){
  Context* ctx=current;
  if(!ctx||bypass||!ctx->enabled)return thunk;
- ctx->thunk_ops.fetch_add(1,std::memory_order_relaxed);
+ ++local_thunk_ops;
+ if(last_thunk.context_id==ctx->id&&last_thunk.original==thunk)return last_thunk.value;
  std::lock_guard<std::mutex> guard(ctx->mutex);
- auto found=ctx->thunks.find(thunk);if(found!=ctx->thunks.end())return found->second;
+ auto found=ctx->thunks.find(thunk);if(found!=ctx->thunks.end())return remember(last_thunk,ctx,thunk,found->second);
  // The normal inline fast path already handles an evaluated prepared thunk.
  // An unresolved thunk is evaluated privately so its memoized result cannot
  // reflect the first candidate's versioned refs in another candidate.
@@ -125,7 +149,7 @@ extern "C" lean_object* gpu_smt_resolve_thunk(lean_object* thunk){
  lean_inc(thunk);
  ctx->held.push_back({thunk,clone});
  ctx->thunks.emplace(thunk,clone);
- return clone;
+ return remember(last_thunk,ctx,thunk,clone);
 }
 extern "C" void gpu_smt_task_created(void* task,int has_closure){
  if(!current||!has_closure)return; // unresolved promises are data, not running code
@@ -148,6 +172,7 @@ extern "C" void gpu_smt_task_retired(void* task){
  }
 }
 extern "C" void* gpu_smt_task_enter(void* task,void** saved){
+ flush_local_ops();
  *saved=current;auto& g=registry();
  std::lock_guard<std::mutex> guard(g.mutex);
  auto it=g.tasks.find(task);Context* ctx=it==g.tasks.end()?nullptr:it->second;
@@ -155,6 +180,7 @@ extern "C" void* gpu_smt_task_enter(void* task,void** saved){
  current=ctx;return ctx;
 }
 extern "C" void gpu_smt_task_leave(void* context,void* saved){
+ flush_local_ops();
  current=static_cast<Context*>(saved);
  auto* ctx=static_cast<Context*>(context);
  if(ctx){std::lock_guard<std::mutex> guard(ctx->mutex);ctx->scopes.fetch_sub(1,std::memory_order_release);ctx->changed.notify_all();}
@@ -188,6 +214,7 @@ extern "C" lean_obj_res gpu_smt_branch_begin(uint8_t enabled,lean_obj_arg){
 extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
  auto* ctx=reinterpret_cast<Context*>(static_cast<uintptr_t>(handle));
  if(current!=ctx)return io_error("native branch context mismatch");
+ flush_local_ops();
  current=nullptr;
  const auto start=std::chrono::steady_clock::now();
  {
