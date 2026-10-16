@@ -2779,3 +2779,8 @@ and canonical integration remain the assigned OMP work.
 ## Completed resource API publication dependency
 
 Tracked finite-capture scripts already import ResourceCapture from bench/lean_capture_warm.py, while its completed class addition remained dirty. Root reviews and publishes that existing addition, without changing the running collectors or measurement protocol. An actual import/process-tree smoke observes this controlled child, produces three samples with no incomplete reads, and records resource summary/CPU scope; disposable output is removed. [Receipt](resource-api-publication-smoke.json). This repairs public source availability, not a new experiment or performance claim. The experiment owner is notified through its same native session.
+
+
+## Measured source and implementation-documentation publication
+
+Root reconciles docs/implementation.md with completed main checkpoints, the later human OMP authorization, the unlinked E034 interface and its source/cost admission. Earlier dated records remain historical; full gates and independent review stay open. The measured source snapshot now publishes its actual source base/overlays, existing mapped source dependencies, original upstream notices and matching Apache-2.0 license text; no original-project license is selected. All45source-map entries exist at recorded sizes. The82selected paths total560307bytes and every implementation-document link resolves to an existing published-or-staged target. [Path/validation receipt](implementation-publication-paths.json). This changes public availability and documentation, not live source/libraries or measured performance. Fresh-machine reconstruction remains unvalidated.

@@ -1,161 +1,324 @@
-# Implementation
+# Implementation: actual current system and boundaries
 
-Root in this desktop chat directly implements, builds, executes and analyzes
-inside yunwei356/gpu-smt-dev,/workspaces/repository,main. No delegated author or
-replacement Workspace/session. Original native session is preserved and stopped
-by explicit human request. [Step report](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
-records source/build/run history. [Previous detailed implementation](tmp/bootstrap/step-0007-20261010T000125+0000/archived-implementation-before-direct-mini-20261014.md)
-is preserved byte-for-byte. Scientific contract/Initial Narrative/RQs unchanged.
+Updated 2026-10-16. Root develops/builds/tests/analyzes in the retained owning
+gpu-smt Workspace, /workspaces/repository on main. The original native Codex
+session remains retained/stopped. Human-authorized OMP specialists own separate
+OSS, literature/paper and evaluation/script files; root owns Lean/GPU implementation
+and validated integration. Dispatch is not completed author or review work. Detailed older
+implementation/build/failure history is preserved in
+[implementation history](tmp/bootstrap/step-0010-20261014T133154+0000/implementation-history-before-modern-frontier.md).
+The scientific story is BOOTSTRAP/unfrozen/allfourRQsopen, not a completed system
+or paper-acceptance claim. [Evaluation](evaluation.md) owns result scope.
 
-## Native GPU operation path
+## Producer-native modern Lean path
 
-Native6 provider is bench/lean-gpu/closure-native-provider-v5.cpp with
-closure-native-head-admission-v2.h. A conservative borrowed-native Expr walk
-refuses demanded unsupported heads before packet allocation in GPU mode.
-Uncertain bound-variable cases retain the original path. No arguments are
-evaluated and no successful CPU result substitutes for GPU output.
+Public GoedelWorkbook3c2afe6b has29750 released migrated proof files plus author
+statuses; it is not every original model rollout or a real arrival trace.
+Runtime pins are Lean4.27/db93fe16 and Mathliba3a10db0. Original source text/order
+and file maxHeartbeats0 remain; author initial autoImplicitfalse/maxHeartbeats800000
+are supplied at actual processInput. Earlier autoImplicittrue controls are retained
+as failed producer-configuration qualification.
 
-The source-native packet bridge/packed reducer/PTX/native quotation remain
-versioned. Device beta/zeta results return as native expressions during Meta
-normalization; unsupported operations use ordinary native execution.
-Enclosing source verification and original final native kernel are retained.
-CPU control preserves its packed algorithm and is not the strongest stock
-baseline. Earlier negative refusal placement differs acrossCPU/GPU, so only
-the untouched strong native competitors ground the headline performance claim.
+Pinned stock Kimina Python fb2393d supplies legacy/verify HTTP, normal replacement
+and unchanged defaults:12GiB addressspace/300s request timeout/maxpool23/unlimited
+reuse. The Docker-declared FrederickPu/repl ab025b4 GC backend is ported with current
+InfoTree helper/retiredfield adjustments. Every candidate uses original frontend/
+native proof construction/kernel; reused GC bodies omit body-state handles by
+upstream design. Community producers ignoring gc:true are a distinct NoGC epoch.
+[GC/source port](../artifacts/lean-modern-native-compilation-2026-10-14/stock-gc-source/).
 
-Build: artifacts/lean-gpu-checking-2026-10-13/closure-development-20261013/
-native-bridge6/build-command.json/build-receipt.json, compiler+linker0/0.
-Full ProofNet16conditions complete, slower2.32%mean than fastest nativeCPU.
-Full mini16 failed in host global OOM before GPU execution; the original32cohort scope remains. Exact versions,
-inputs, defaultthreads,300s allowance, launch/setup/transfer/fallback/output/
-EOF and after-clock lossless archival are recorded per condition.
+Official Lake native shared-module compilation supplies529library dependency
+closure for Mathlib/Linarith. The optional REPL loader calls Lean.loadDynlib before
+normal command processing; original core/source/options remain. Library mapping
+is engagement evidence only. Runtime charges import/load/HTTP/capture/replacement/
+shutdown; software build is excluded and versioned. Old4.9 compilation has a
+different681library closure and NoGC scope; no cross-version ratio is assumed.
 
-Current finite mini Job uses normal NVIDIA time slicing on RTX5090/lab,
-one shared token, existing ownPVC and immutable previously-tested Rust image.
-Read-only sparse source/SDK mounts and own writable output. No CPU/memory
-quota, stack override, different GPU, persistent service or new scheduler.
-The failed mini acquisition preserves available Job, event and kernel evidence.
-The former Pod is absent; no terminal container log is fabricated. A temporary
-process-memory budget remains an unanswered human question.
+## Actual import fault and private repair
 
-## Native prepared-prefix service
+The first full modern GC reference returned29750 but imports were lost for most
+bodies, so its apparent fast timing is invalid. Root preserved it and its candidate/
+profile partials, stopped only those owned affected collectors, and repaired
+actual header diagnostics in private copies. Producer4.27 processCommands terminal
+messages dropped processHeader errors; the frontend now preserves header messages.
+The isolated Python Manager returns native header errors as preparation failures
+and discards that worker rather than running a proof in an empty environment.
+Real success/error controls match and actual missing-Mathlib returns operational
+header failure. No additional policy/controller/hash gate is added.
+[Repair/qualification](../artifacts/lean-modern-native-compilation-2026-10-14/header-loss-repair-qualification.md).
 
-Runtime11 prepares the imported library-search index once in the post-import
-master, retains body-free target-prefix states in context owners and restores
-them before fresh candidate bodies/final checking. The native owned channel,
-thread/task/EOF/fallback behavior remains versioned, not arbitrary safe-fork
-or unlimited backend-transparency claims.
+Dependency/cache setup is not performed against an active Mathlib tree. Additional
+builds use private /tmp dependency copies. Copying dependencies without Git metadata
+broke a later private Lake runtime; both failures remain. Runtime now reads the
+already-valid stable project/dependencies plus private Farkas modules. No active
+library/source/cache was changed to repair that private test.
 
-Build/regression and all8original outcomes including the operational failure
-match stock; main full12ProofNet comparison was interrupted by Workspace Pod replacement. First full paired
-block is substantially slower than warm and snapshot. Superseded runtime9/10
-are incomplete archival history, not reusable fresh timings. Service/load/
-placement/history/cancellation and complete mini remain necessary.
+## Producer4.9 GC miniF2F baseline
 
-## Native SMT source integration
+A separate private port of the same Docker-selected published GC REPL runs the
+7808 original miniF2F test candidates on Lean4.9.0-rc1/be6c4894e0a6 and their
+original Mathlib/Aesop. Both methods use the same GC binary; the candidate loads
+the existing 681-library selective Linarith native closure. This is a distinct
+epoch from the older producer4.9 NoGC captures, not a cross-version comparison.
 
-E025 uses pinned original Verus33269 plus matching stockZ3.4.12.5 and isolated
-Rust1.76, genuine native branch and logical-copy translation. Its all3566
-sources per condition include no-SMT/multiple-SMT/syntax/failure cases.
-Complete source translation/solver interaction/transport/cleanup/archival
-remain in whole cost. Same original120s source allowance, CPU21–23,
-single enclosing worker, no result cache or whole-run deadline.
-First complete trio matches native decisions and requested artifacts but is
-slower thanstock; branch/logical are effectively tied in that block.
-Eight original full primary cells completed; the ninth was interrupted.
-Complete12matrix and resource/repetition analysis remain required.
+Root backports the actual producer4.9 environment/InfoTree/snapshot helpers and
+necessary version-specific tuple/context/array APIs, then carries the already
+qualified header-error propagation repair. Original source text is unchanged.
+The final qualified source archive and failed intermediate builds are retained;
+the initial build script alone is not the successful final source recipe.
+Both six-case qualifications have matching native/error/diagnostic fields,
+observed 12GiB native address-space defaults, library mapping and child cleanup.
+Original source663 returns an operational JSON-decode failure in both; the native
+cause is unproved. Qualification elapsed is not performance evidence.
 
-## Complete external CPU checker fallback repair
+The complete three-pair/two-profile CPU capture uses the current repaired
+Python backend, port8003, published 300s/12GiB/default23-pool/unlimited reuse and
+the same whole-boundary protocol as the modern acquisition. No source filtering,
+new GPU provider, custom8GiB cap or active4.27-library mutation is introduced.
+[Qualified source and actual full launch](tmp/bootstrap/step-0010-20261014T133154+0000/mini-gc49-qualified-full-launch.md),
+[commands and raw records](../artifacts/lean-native-compilation-2026-10-14/gc49/).
+The [offline completed-cell analyzer](../artifacts/lean-native-compilation-2026-10-14/gc49/analyze-completed-cells.py)
+reuses the existing GC native-response loader, reads only closed full cells and
+checks recorded command compatibility before paired summaries. Its initial
+execution exactly reproduces the retained reference. All three primary pairs
+now observe lower whole elapsed; request p99 worsens in the first two and falls
+in the third. The original resource profile now qualifies all7808sources, with
+106incomplete reads among7258samples; the compiled resource profile continues.
+This unpaired resource condition establishes no resource-saving ratio. [Current paired result](../artifacts/lean-native-compilation-2026-10-14/gc49/first-pair-result-review.md)
+retains native differences and measurement scope.
 
-bench/run_lean_complete_backend.py repairs only a known prefix-export failure
-before any candidate. Native4.21 exporter cannot represent a private compiled
-Option helper; the original8.122s failure/empty candidate output is preserved.
-The same unchanged native binary rechecks every source in native-full mode,
-with initial diagnostics/failure cost and fallback charged together.
-One resource sampler spans both processes. Original process-time.txt and
-native-fallback-process-time.txt are separate phase CPU measurements.
 
-Recovered context22 all814source outcomes match original native-full,
-complete whole800.379800s/EOF/exit0. Other unexplained failures remain visible.
-The first full24context/14913source comparison is57.96%slower and has five
-accepted-to-rejected differences. Further repetitions of this invalid integration
-were stopped by root; the192cell matrix remains incomplete, not silently reduced.
-No fallback is advertised as external checker support. Executed repair and actual
-launch/native-fallback/source records remain under experiment018/full1/.
+## Arithmetic oracle CPU frontier
 
-## Runtime and data ownership
+Immutable upstream Farkas5a38a7e native exact Rust daemon implements the existing
+CertificateOracle boundary. A producer427 adapter uses current tactic/namespace/
+configuration APIs, invokes unchanged native proof construction/checking and
+restores tactic state before full fallback. Every explicit/custom config delegates
+to the original elaborator; arbitrary user-selected oracle behavior is not overridden.
+[Full native integration](../artifacts/lean-modern-native-compilation-2026-10-14/native-oracle-full-plan.md).
 
-All development remains in the same owning Workspace, directly implemented by
-root. Native6 miniF2F failed with host global OOM before GPU conditions; native
-source663 was active without a response. Original partial streams and failed
-Job/API/events/kernel evidence survive. The former Workspace Pod disappeared
-and the same ReplicaSet created a new Pod with the retained PVC. All former
-in-memory captures are interrupted; their partial directories must be preserved.
-The deletion actor and exact pathological allocation mechanism remain unknown.
-E018 resumed on the new Pod after restoring its original /tmp SDK alias to the
-same retained SDK and preserving both interrupted and missing-alias attempts.
-No new quota, source exclusion, replacement author or Workspace was created.
+The same rebuilt Rust1.98.1 exactbinary/source/dependencylock supplies tiered and
+publishedFP64hybrid CPU modes. OfficialHiGHS1.15.1/defaultsolver in a separate
+Python dependencyvenv identifies certificate support; upstream exact_repair and
+verify_cert produce integer certificates. Numeric/unrepresentable/repair failures
+use full exactnative solve, then normal native tactic fallback. No float answer
+is accepted by Lean. Console output is suppressed only to preserve the existing
+one-JSON-line daemon protocol; no speculative solver-performance settings.
+[CPU frontend/whole comparison](../artifacts/lean-modern-native-compilation-2026-10-14/highs-native-cpu-plan.md).
 
-Verified lossless inactive archival preserves every original complete/failed/
-partial byte and mode, including entire old ZIP byte streams. Original restore
-recipes and checks remain under experiment025. Current dependencies, CLI,
-credentials, source inputs and active outputs are protected. Disk headroom is
-observed during acquisition; no new storage boundary is silently changed.
+Primary runs bypass input/source/certificate telemetry; separate profiles retain
+original normalized LPs and getFileMap.source for real source association.
+Local per-REPL call IDs are not global identifiers. Exact-source mapping found
+nine initial distinct LPs despite repeated matrix shapes. No shape-only result/
+certificate cache was created.
 
-## Publication and evidence scope
+Upstream FarkasFast is a closest CPU competitor, not a project contribution.
+Its numericprobe selects parent hypotheses, runs restricted stock proof-producing
+linarith/nlinarith, and falls back to the full native route. Producer427 port is
+compiled against private dependency copies. Root wraps it with saved/restored
+tactic state, preserves source text/kernel/options, and charges probe/restricted/
+fallback costs. Source-associated actual controls distinguish fast hits and full
+fallbacks; standalone fast telemetry cannot disambiguate concurrent local IDs.
+[Whole preprocessing comparison](../artifacts/lean-modern-native-compilation-2026-10-14/farkas-fast427-full-plan.md).
 
-Paper: docs/paper/main.tex, same four RQs and original complete research goal.
-Tectonic0.17.0 compiled the updated source successfully to a9page PDF.
-All9pages were rendered and visually inspected; source/compiler/logs/PNG
-receipts are retained in step0007. This remains an incomplete research draft. All12serial writing rounds now compile to9pages. Root reflection follows;
-independent review is unavailable under the explicit human no-delegation instruction.
-Direct self-review and source-native oracle comparison do not impersonate an
-independent reviewer. Application step0007 is not yet committed/pushed as
-complete; infrastructure receipts have separate main commits.
+## Diagnostic observer
 
-## Native hotspot attribution
+Private official traceprofiler uses processCommandsIncrementally's initial
+snapshot tree and Firefox.Profile.export. Terminal command state alone omits
+theorem traces. trace.profiler.output.pp supplies operation labels; an initially
+wrong prettyoption is retained as class-only data. Default10ms hides small/
+uninstrumented work; absent labels are unobserved, not zero time. Export/gzip/
+resource observer costs are included in diagnostic clocks and excluded from
+primary speed conclusions. Leafweights and synthetic threadCPUDelta are wall
+intervals, not sampledCPU; parallel work cannot be summed as makespan fractions.
+[Residual-stage evidence](../artifacts/lean-modern-native-compilation-2026-10-14/fast-native-stage2-observation.md).
 
-E026 enables only Lean built-in diagnostics in initial native command options.
-All5952 original ProofNet sources, four workers and original300s allowance are
-retained. Root compiled the helper, verified real source0/257 rejection/acceptance
-and processEOF, and launched the complete stream. Default report threshold and
-prettyprinted-name/snapshot-replay limitations are disclosed. This is supporting
-cost-selection evidence, not a GPU acceleration claim. Plan/build/source/raw
-records are under experiment026; no second author or scheduler is used.
+A separate full user-CPU sampling capture and its exclusive/inclusive reports
+now finish over all 29,750 sources. These sampled CPU weights are distinct
+from the wall-interval trace profiler above. Source attribution identifies
+Meta definitional equality separately from pure C++ kernel entries; nested
+Children weights overlap. [Complete sampling/source review](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/result-review.md).
 
-## Closed-mode CPU comparison candidate
+The current Meta operand observer privately relinks unchanged REPL objects
+with a wrapper over the actual exported equality entry. Borrowed cached Expr
+flags and per-thread shared aggregates preserve original argument ownership;
+no live binary, SDK or verifier state is replaced. Static-link wrapping may
+miss same-object and runtime-loaded DSO paths, and timed outer calls include
+instrumentation. The full29750-source capture now finishes:345thread files,
+three censored outer calls, and76.39%of observed completed outer threadCPU in
+entry classes carrying metavariables. This is not wholeCPU/GPU eligibility or
+a bound. [Full result/source decision](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/result-review.md).
+Neither counts nor timings are a GPU result. [Observer method and limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/plan.md).
 
-E028 adds a conservative native closed-term cache for reducible/instances
-transparency, absent from the pinned4.9 native WHNF cache. It does not replace
-the reducer or final native kernel. Excludes expression/level metavariables,
-free/loose bound variables and custom unfolding. Stores closed results only
-when native mctx/environment references stay unchanged; exact native config
-bytes enter the key, environment/options identity scopes lifetime, native thread
-finalizers retire cache references. Configuration layout is version-pinned,
-not a portable cross-version API. Current official native caching remains prior
-art. No arbitrary cache capacity, runtime memory cap or result cache added.
+## RTX5090 actual device boundary
 
-Build and both original/intended warm-pool readiness completed; original8case
-qualification outcomes match. All3rotated paired runs plus2profiles completed under experiment028/full1-proofnet.
-Paired wall reductions are7.3856%,-0.0617%,-1.0334%, with zero basic differences.
-The first improvement did not replicate; this cache candidate is closed.
-Single-profile PSS7864846original/7798128cachedKiB differs0.8483%, which does
-not establish replicated memory savings. Two auxiliary proof value hashes differ, their types/main
-theorem hashes match; raw differences preserved and no byte/artifact universal
-transparency claimed. Native kernel still checks every declaration.
+The current devcontainer has no CUDA device allocation; GPU experiments use the
+existing finite Kubernetes Job route, ownPVC and one shared NVIDIA resource on
+RTX5090. Native time-slicing publishes two allocations without fixed halfGPU
+capacity. Hardware feature selection is the real dependency; no B300, unrelated
+Workspace interruption, persistent service/scheduler or host driver change.
 
-## Shared-process native placement, closed
-bench/Lean49SharedFrontends.lean adds the unchanged seeded-stream transition
-as an exported function; bench/lean49_shared_frontends.cpp uses native lthread
-workers sharing a persistent prepared seed and worker-local updated snapshots.
-Same owned runtime objects as the original warm comparator. Native defaults,
-original300s input allowance and final kernel remain; no GPU discharge is claimed.
-Original link failures/native panic/preflight/raw are preserved in experiment029.
-After an actual shared-process failure, unreturned original inputs finish once
-through ordinary native warm execution; both phases are included in whole costs.
-All8cells/47616outcomes completed. Slowdowns15.13–22.64percent reject acceleration.
-Single profile5.52percent lower PSS is not replicated savings; opaque diagnostic
-IDs differ. No independent fault isolation or universal response-byte equality.
-Source/kernel/native SDK unchanged; inactive native6 binary is losslessly archived
-with its original mode/restore recipe. New paper compiles to10pages and all12root
-writing rounds/full-page inspection are complete; independent review unavailable.
+Native6 offloads a narrow beta/zeta operation with one CUDA thread and synchronization.
+Full ProofNet results show no acceleration; further scalar/synchronous-provider
+optimization of this version is closed. Wide contextual checking/fullkernel
+is unimplemented. The [negative-route disposition](tmp/bootstrap/step-0010-20261014T133154+0000/negative-routes-disposition-20261015.md)
+retains measured failures and their scope. Resident metadata-compute20.9x and warmREPL14.6x observations are
+scoped historical proxies, not fullverification gains. Native6 miniF2F source663
+failed with host global OOM beforeGPU conditions; partial/source/kernel/Job data
+remain. No unauthorized8GiB cap or blind retry was applied.
+
+A finite NVIDIA libcuopt-cu12 26.8.0 C API prototype performs actual LP support
+search plus upstream exactrepair/fallback. Forced PDLP, defaultconcurrent and CPU
+dual-simplex controls ran on the shared5090. Defaultconcurrent may finish onCPU;
+its success is notGPUgain. Allraw attempts/dependencies/driver/control certificates
+remain; the exactJob was deleted and the otherGPUWorkspace verifiedRunning.
+[Device method scope](../artifacts/lean-modern-native-compilation-2026-10-14/cuopt-lp-qualification-observation.md).
+
+## Native SMT implementation and resumed acquisition
+
+Pinned originalVerus33269/Rust1.76/Z34.12.5 use verbatim native command streams.
+The earlier-only finite service retains native prefix parents; branch inherits
+native namespace/parser/solver/history, while logical replay/translation reconstructs
+named target context and executes original suffixes. Singleworker/cores21–23,
+maxparents1/history0 and original120s are the declared experiment settings.
+Source-sort order is not historical generation/arrival order; unsupported cases
+use charged native fallback. Cancellation/resource/general safe-fork guarantees
+are not inferred from ordinary controls.
+
+OldE025 retains8complete3566-source primarycells, one1513-source partial, and
+missing profiles. The original/tmp nativeparent disappeared; root restores the
+exact recorded archivedownership-fixed binary to its declaredpath. Currentcapture
+removes forbidden SHAstartup/archive gates, retains digests asprovenance, and
+checks actual closedZIP/source bytes. Changed archivalcost requires fresh matched
+whole clocks. Six original successful/failing/syntax/no-SMT/multiple-SMT cases
+qualify allthree methods/native streams/artifacts/EOF; full-repaired1 now restores
+all3566×12conditions. No partial timing is stitched; oldsource/rawresults preserved.
+[Actual restoration and fresh scope](../artifacts/autoverus-native-2026-10-09/experiment025/forward-repair-readiness-observation.md).
+
+## Open implementation and publication boundary
+
+Prepared-state serving, independent cancellation, whole offeredload/concurrency/
+memory/placement/cross-context behavior and real both-family streams remain open.
+Modern native-compilation, HiGHS/preprocessing, original-oracle product and
+producer4.9 GC whole-source matrices remain incomplete. Native exact arithmetic
+and composed Fast/hybrid product comparisons each finish all eight conditions;
+the [evaluation authority](evaluation.md#complete-cpu-observations-and-active-formal-acquisitions)
+owns their outcome qualifications and current result scopes. The fresh repaired SMT matrix has completed
+its repeated source-cohort and resource comparisons; its final review closes
+that tested constructor. Complete service/RQ coverage remains open. Old
+response-extraction/cache/sharedprocess/externalchecker successes and failures
+retain their scoped evidence; no basic-outcome control substitutes for arbitrary
+artifact/state transparency. The sole current paper is docs/paper/main.tex,
+still an incomplete research draft. Completed prior source/PDF writing checks are
+not venue acceptance. Completed source/data/documentation checkpoints are published directly on main
+under the user instruction to preserve completed step work promptly. Step0010
+still has incomplete EXPERIMENT/WRITE/REVIEW coverage and independent audit.
+The later explicit parallel OMP authorization supersedes the earlier no-delegation
+restriction; no self-check is represented as independent review.
+
+Measured4.27 REPLvariants, product supportmodules and Rustoracle sources now
+have an exact [source snapshot/restore map](../artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/README.md).
+This preserves actual current sources/configs without touching live builds;
+fresh-machine reconstruction remains unvalidated and no finalversion is frozen.
+
+## Invocation-local product proof construction (2026-10-14T22:12:17.480016+00:00)
+
+Root implements Farkas427.Products using the pinned Mathlib preprocessor with
+resolved multiplication-theorem applications reused within one invocation.
+Declaration binder names identify a/b slots, including declarations whose
+instance arguments follow them; exact relation/zero terms identify the template.
+Unresolved layouts/arguments use mkAppM. Every original product pair and square
+fact remains, and final native proof construction/kernel checking are retained.
+The candidate composes with upstreamFarkasFast and nativeFP64hybrid; it does not
+cache verification results, remove hypotheses, or perform GPU work. Separate
+private package/dependencies avoid changing active acquisition code. The full8cell
+formal comparison completes all eight conditions, including three primary pairs
+and two separate resource profiles. The primary pairs have lower whole elapsed
+against the same Fast/hybrid route; native outcome differences and incomplete
+non-atomic resource samples remain. Distinct original-oracle repetitions have
+three complete primary pairs with mixed timing signs; two resource profiles remain.
+No final CPU ranking or new systems novelty is claimed.
+[Implementation and currentresult](../artifacts/lean-modern-native-compilation-2026-10-14/product-application-first-pair-result-review.md).
+
+## Logical parent hit repair (2026-10-15)
+
+The restored complete SMTcapture exposes a real logical-worker fault: afterone
+translated target, subsequent preparedprefix parsing reports unknownmodule
+rewriter and fallsback. Pinned Z34.12.5 gparams::reset frees region-backed
+module names while retaining registereddescriptor maps. The application now
+recreates the globalparameter registry through finalize/init before unchanged
+prefix replay in its serializedlogicalworker. Nativeparent source state,
+solveroptions/namespace/assertionguards and nativefallback remain.
+Actualoriginalsame-prefix sources7/8 nowbothengage; full8source×3method native
+controls match, with6reuse sessions/3hits perreuse method. The fresh3566×12matrix
+now completes42,792source executions. Actualreuse engages2,316hits percell;
+branching loses allthreeprimary stock comparisons and shows no observedstock-
+relative memory saving in the separate profiles. This acceleration constructor
+isclosed; [final result review](../artifacts/autoverus-native-2026-10-09/experiment025/full-registry-repaired1-result-review.md)
+retainsallqualifications. Oldfailed/baseline/rawdata remain.
+[Root diagnosis and qualification](../artifacts/autoverus-native-2026-10-09/experiment025/logical-hit-refusal-diagnosis-20261015/report.md).
+
+## Product construction with the original native arithmetic oracle
+
+Root adds ProductsOnly in the existing private4.27 package and a separate
+GC/native-loader REPL. The original nlinarith syntax/configuration elaboration
+and cfg.oracle are retained; only the appended nlinarithExtras implementation
+uses the same invocation-local product-application reuse. linarith is unchanged.
+No Farkas native daemon, Fast probe, HiGHS or GPU participates in this route.
+Both comparison methods load the same official whole-library native closure;
+candidate adds only Telemetry/Products/ProductsOnly and charges those imports.
+
+This directly tests the missing official-native denominator behind the first
+composed Fast whole-pair observation. Newmodule/nativeDSO and privateREPL builds
+succeed after one retained missing-Syntax namespace compile failure.
+Fiveoriginal controls complete inbothmethods with matchingnativefields and
+actual6344applicationreuses; the heavyProof05612 retains its original300s timeout.
+Freshfull29,750source/threepair/twoprofile acquisition isrunning. Build/controls
+are dependency work, not performance or RQevidence. Existing collectors keep
+their executed sources/libraries.
+[Source and comparison plan](../artifacts/lean-modern-native-compilation-2026-10-14/stock-products-plan.md).
+
+The three completed 29,750-source primary pairs have mixed timing signs:
+whole-time changes with reuse are +0.5861%, -5.1098% and -14.3031%. They use
+the same original native arithmetic oracle and compiled closure. The two
+resource conditions remain incomplete in the published completed-cell checkpoint;
+separate Fast/hybrid observations do not transfer automatically to this path. All native outcome changes remain in the [current paired result](../artifacts/lean-modern-native-compilation-2026-10-14/stock-products-first-pair-result-review.md).
+
+## Retained historical native build cache
+
+The inactive Lean 4.21 Mathlib .lake/build tree is now represented by a lossless
+archive at /workspaces/.agent-state/gpu-smt-deps/retained-build421-20261015.tar.gz
+on the same existing project PVC, outside Git. Its original Lean source, SDK,
+dependency packages, model files and experiment results remain in place.
+Both process-reference scans found no users of the old dependency root.
+All 45,938 regular files (5,136,037,492 content bytes), 1,921 directories, names,
+permissions, owners and modification times match before compaction; compressed
+copy bytes also match. This releases space for the actual full native CPU raw
+capture, without changing its versions, parameters or lifecycle.
+
+Before replaying a historical 4.21 recipe that requires those build outputs,
+restore the archive with:
+
+    tar -xzpf /workspaces/.agent-state/gpu-smt-deps/retained-build421-20261015.tar.gz -C /workspaces/.agent-state/gpu-smt-deps/lean421-native
+
+[Observed archive, checks and restoration receipt](tmp/bootstrap/step-0010-20261014T133154+0000/old-build421-retention-receipt-20261015.json)
+is the dated operation evidence. This is storage maintenance of inactive build
+output, not new experiment performance, a fresh rebuild or completed paper
+reproducibility validation.
+
+
+## Native Meta batch interface and current admission
+
+The source-native interface is available in [NativeMetaBatch.lean](../bench/lean-gpu/NativeMetaBatch.lean), [the native bridge](../bench/lean-gpu/meta-batch-native.c) and [the reproducible private builder](../bench/lean-gpu/build-native-meta-batch.py). It retains closed, different argument pairs of same-head applications and uses positively established answers only on native continuation. Unsupported/unlinked execution retains native fallback. This is an experimental interface: no GPU provider is linked, no device engagement is measured, and no GPU performance gain follows from its build or smoke controls.
+
+[Build and fallback evidence](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-034/implementation-status.md) includes a fresh private build and accepted/rejected native-output controls. [Cost admission](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-034/performance-ceiling-and-admission.md) keeps inclusive sampled CPU, instrumented outer-call CPU and whole elapsed time separate. The useful independent work fraction and batch readiness are unmeasured; the backend remains deferred.
+
+The implementation-owner [placement review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/native-argument-placement-review.md) finds that the offered collector precedes native quick equality, proof irrelevance, reduction and caches. Offered pairs can therefore add work the strong native baseline skips. A later hook alone would not establish a new system contribution.
+
+## Existing warm preparation and publication scope
+
+The complete instrumented Goedel capture associates 29,690 requests with an already-started worker and 60 with header preparation. Every source uses the same actual import header. The 60 requests' cumulative outside-body wall envelope is 286.899414s against a 22,762.528814s whole capture. This includes queue/launch/import/HTTP/logging; its 1.260402% normalization and 1.012765x fixed-other-work sensitivity are not observed speedups, pure import CPU or a strict counterfactual bound. [Same-capture analysis, complete outcomes and qualifications](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/preparation-cost-result-review.md).
+
+Further import-only tuning is not the current implementation target on that already-warm cohort. A differentiated mechanism for meaningful candidate-body work or demonstrably expensive deeper preparation, complete matched experiments and independent review remain open. The original four RQs and full research objective are retained.
+
+The existing [ResourceCapture API](../bench/lean_capture_warm.py) is now included with the collectors that import it. It samples the finite acquisition's own Linux process tree, records incomplete/non-atomic observations, and includes observer CPU in its summary. It does not promise unsampled peaks or fleet-wide memory savings. [Publication import/process-tree smoke](tmp/bootstrap/step-0010-20261014T133154+0000/resource-api-publication-smoke.json) validates the missing public dependency without changing active captures.

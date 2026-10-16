@@ -1709,3 +1709,8 @@ Root verifies hook/collector placement against the actual SDK and official match
 ## Resource API source availability — root validation only
 
 Root verifies the exact missing import dependency, parses/imports the real source, and exercises its actual own-child process-tree sampler. Three samples complete without read errors; no Lean workload or active acquisition is changed. This is root validation of existing implementation publication, not independent scientific review or fresh-machine full reproduction.
+
+
+## Measured source publication audit — root only
+
+Root checks45mapped source entries, JSON syntax, preserved source/license attribution and all direct links from the canonical implementation document. No missing direct link or source whitespace is found among82selected paths. The publication includes completed source/provenance and failure records, without staging docs/design.md or specialist files. No build/performance rerun, fresh-machine reproduction or independent-review pass is inferred from this publication check.

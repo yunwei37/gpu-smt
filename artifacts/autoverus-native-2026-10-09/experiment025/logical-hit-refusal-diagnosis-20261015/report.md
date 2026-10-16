@@ -1,0 +1,15 @@
+# Logical reuse hit refusal: direct original-stream diagnosis
+
+Root directly reproduces the first same-prefix miss/hit from completed E025 full-repaired1/rep0-logical: original sources7and8 with identical retained14551-byte prefix. With diagnostic-only stderr, logical accepts source7 and refuses source8. Native branch accepts both. Original rawstreams, diagnostic source/build, all failed build attempts and replay outputs are retained here. No small diagnostic duration is a performance result.
+
+The refusal is native prefix parsing: source8 fails with "invalid parameter, unknown module 'rewriter'". It has a source solver and target manager but no translated solver yet. Thus the failure occurs before translation/namespace qualification; accepting source8 by removing assertion guards would be the wrong repair.
+
+The pinned Z3 util/gparams.cpp imp::register_module and register_module_descr retain region-copied module keys. imp::reset resets that region and global/module parameter values while retaining descriptor maps and the modules-registered flag. Current logical worker calls reset before every candidate. The first replay succeeds, but a later replay sees the invalid registry. This explains the actual repeated-hit failure in the captured pair; full matrices separately establish473accepted and2316refused sessions per logical condition.
+
+A forward application-source repair recreates the global parameter registry with finalize/init before unchanged prefix replay on the serialized logical worker. It retains original native parameters, source bytes, target assertion/namespace guards, translation and fallback. This repair is not yet qualified or a performance improvement. The old ownership-fixed binary/capture/executed source remain unchanged; no active Lean process is touched.
+
+Current research interpretation: retain complete negative branch-versus-stock timing, but do not promote branch-versus-logical timing into a competent-baseline superiority claim. The original all-source performance comparison must be rerun on the repaired implementation if actual controls qualify. Root self-review only; no independent audit or RQ closure.
+
+## Actual repair qualification
+
+The corrected registry accepts both original same-prefix sources7/8 through logical reuse. The complete actual eight-source stock/branch/logical qualification (originalsix categories plus the captured hit pair) returns all24outcomes, matches all8source basic/native-artifact comparisons perpair, and completes6reuse sessions onbothmethods including3retained-parent hits, with onlythe first no-earlier-prefix stockfallback. Assertion/namespace checks remain intact. This establishes operational repair, not benchmark speed or arbitrarynative-state transparency. Rawcommands/results are in ../registry-repair-controls-20261015/ and registry-repaired-result.json. Failed headers/build attempts are retained. The full all3566×12matrix is admitted again on the same declaredprotocol with fresh matched clocks; oldrepaired1 remains a valid negative branch-versus-stock observation and a fallback-heavy/inconclusive logical comparison.

@@ -1,0 +1,46 @@
+✔ [2/22] Built REPL.Util.Pickle (315ms)
+✔ [3/22] Built REPL.Util.Pickle:c.o (219ms)
+✔ [4/22] Built REPL.Frontend (885ms)
+✔ [5/22] Built REPL.Lean.Environment (587ms)
+✔ [6/22] Built REPL.Lean.Environment:c.o (187ms)
+✔ [7/22] Built REPL.Util.Path (1.2s)
+✔ [8/22] Built REPL.Frontend:c.o (375ms)
+✔ [9/22] Built REPL.Lean.ContextInfo (1.3s)
+✔ [10/22] Built REPL.Util.Path:c.o (144ms)
+✔ [11/22] Built REPL.Lean.ContextInfo:c.o (58ms)
+⚠ [12/22] Built REPL.JSON (1.6s)
+warning: REPL/JSON.lean:86:32: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+✖ [13/22] Building REPL.Lean.InfoTree (1.7s)
+trace: .> LEAN_PATH=/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/.lake/build/lib/lean /tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean /tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/REPL/Lean/InfoTree.lean -o /tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/.lake/build/lib/lean/REPL/Lean/InfoTree.olean -i /tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/.lake/build/lib/lean/REPL/Lean/InfoTree.ilean -c /tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/.lake/build/ir/REPL/Lean/InfoTree.c --setup /tmp/gpu-smt-goedel427-20261014/repl-kimina-gc/.lake/build/ir/REPL/Lean/InfoTree.setup.json --json
+error: REPL/Lean/InfoTree.lean:66:4: Unknown constant `Lean.Elab.Info.ofOmissionInfo`
+
+Note: Inferred this name from the expected resulting type of `.ofOmissionInfo`:
+  Info
+error: REPL/Lean/InfoTree.lean:83:4: Unknown constant `Lean.Elab.Info.ofOmissionInfo`
+
+Note: Inferred this name from the expected resulting type of `.ofOmissionInfo`:
+  Info
+error: Lean exited with code 1
+⚠ [17/22] Built REPL.Snapshots (1.5s)
+warning: REPL/Snapshots.lean:163:67: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+warning: REPL/Snapshots.lean:167:83: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+✔ [20/22] Built REPL.Snapshots:c.o (887ms)
+✔ [21/22] Built REPL.JSON:c.o (1.1s)
+Some required targets logged failures:
+- REPL.Lean.InfoTree
+error: build failed
