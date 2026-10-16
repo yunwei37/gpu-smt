@@ -1,0 +1,3 @@
+# Actual strong native comparator source
+
+Copied byte-for-byte from the retained existing Kimina4.27 GC/header-repaired native build used by stock-native-batch1. This private dependency directory is an extracted/build tree, not a Git checkout; its revision cannot be discovered by git remote or git rev-parse. The original failed Git query did not establish a new source pin. Existing acquisition/build source provenance remains under artifacts/lean-modern-native-compilation-2026-10-14; this snapshot and actual-native-link.trace preserve the exact current source/build inputs. No additional download/hash acceptance gate is introduced.

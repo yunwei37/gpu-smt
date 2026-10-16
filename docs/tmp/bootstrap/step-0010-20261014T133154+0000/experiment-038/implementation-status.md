@@ -5,3 +5,5 @@ Unresolved in-flight prepared thunks currently retain native behavior and are NO
 Original SDK/native acquisition binaries and OMP author files remain untouched. The separate source patch targets upstream Lean4.27.0; both static and SYMBOLIC-loaded runtime paths require actual replacement/link engagement before any result claim.
 
 Actual limited caller/static+shared runtime engagement is now executed in setup3/4/5 and independently audited. Current v2 includes cleanup task scope; first access copies prepared cells. General effect/policy/fallback qualifications above remain unresolved. Full details and actual cost are in setup-result.md and root-disposition.md.
+
+Pipelined stateless candidate execution and listed-effect original-native replay now actually run, with a strong same-toolchain Kimina naive native-batch comparator. Native globals/other FFI, worker-death replay and actual full service request/policy/resource contract remain unqualified. See service-integration/result.md; no completed performance matrix or superiority is implied.

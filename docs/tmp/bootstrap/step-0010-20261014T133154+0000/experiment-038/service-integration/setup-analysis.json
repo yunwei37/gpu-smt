@@ -1,0 +1,400 @@
+{
+  "boundary": "four original sources, setup observations only; normalize only env handle metadata; no complete cohort/performance inference",
+  "rows": [
+    {
+      "proof_id": "Proof_00000",
+      "stock_diagnostics": {},
+      "native_private_diagnostics": {},
+      "native_shared_diagnostics": {},
+      "diagnostics_equal": true,
+      "private_fallback": false,
+      "private_ready_s": 3.381690202,
+      "private_released_s": 3.410485199,
+      "shared_ready_s": 2.782769588,
+      "shared_released_s": 2.782791341
+    },
+    {
+      "proof_id": "Proof_00001",
+      "stock_diagnostics": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 17,
+              "column": 51
+            },
+            "endPos": {
+              "line": 17,
+              "column": 60
+            },
+            "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp only [sq, mul_add, mul_comm, mul_left_comm, m\u0335u\u0335l\u0335_\u0335as\u0335s\u0335o\u0335c\u0335,\u0335 \u0335a\u0335dd_assoc, add_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 21,
+              "column": 6
+            },
+            "endPos": {
+              "line": 21,
+              "column": 25
+            },
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 23,
+              "column": 6
+            },
+            "endPos": {
+              "line": 23,
+              "column": 10
+            },
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 21,
+              "column": 6
+            },
+            "endPos": {
+              "line": 21,
+              "column": 25
+            },
+            "data": "'simp [Complex.I_sq]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 23,
+              "column": 6
+            },
+            "endPos": {
+              "line": 23,
+              "column": 10
+            },
+            "data": "'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          }
+        ]
+      },
+      "native_private_diagnostics": {
+        "messages": [
+          {
+            "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp only [sq, mul_add, mul_comm, mul_left_comm, m\u0335u\u0335l\u0335_\u0335as\u0335s\u0335o\u0335c\u0335,\u0335 \u0335a\u0335dd_assoc, add_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+            "endPos": {
+              "column": 60,
+              "line": 17
+            },
+            "pos": {
+              "column": 51,
+              "line": 17
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 25,
+              "line": 21
+            },
+            "pos": {
+              "column": 6,
+              "line": 21
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 10,
+              "line": 23
+            },
+            "pos": {
+              "column": 6,
+              "line": 23
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'simp [Complex.I_sq]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 25,
+              "line": 21
+            },
+            "pos": {
+              "column": 6,
+              "line": 21
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 10,
+              "line": 23
+            },
+            "pos": {
+              "column": 6,
+              "line": 23
+            },
+            "severity": "warning"
+          }
+        ]
+      },
+      "native_shared_diagnostics": {
+        "messages": [
+          {
+            "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp only [sq, mul_add, mul_comm, mul_left_comm, m\u0335u\u0335l\u0335_\u0335as\u0335s\u0335o\u0335c\u0335,\u0335 \u0335a\u0335dd_assoc, add_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+            "endPos": {
+              "column": 60,
+              "line": 17
+            },
+            "pos": {
+              "column": 51,
+              "line": 17
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 25,
+              "line": 21
+            },
+            "pos": {
+              "column": 6,
+              "line": 21
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 10,
+              "line": 23
+            },
+            "pos": {
+              "column": 6,
+              "line": 23
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'simp [Complex.I_sq]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 25,
+              "line": 21
+            },
+            "pos": {
+              "column": 6,
+              "line": 21
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 10,
+              "line": 23
+            },
+            "pos": {
+              "column": 6,
+              "line": 23
+            },
+            "severity": "warning"
+          }
+        ]
+      },
+      "diagnostics_equal": true,
+      "private_fallback": false,
+      "private_ready_s": 0.433008377,
+      "private_released_s": 0.434697592,
+      "shared_ready_s": 0.193988987,
+      "shared_released_s": 0.19403034
+    },
+    {
+      "proof_id": "Proof_00002",
+      "stock_diagnostics": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 53
+            },
+            "endPos": {
+              "line": 19,
+              "column": 69
+            },
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 72
+            },
+            "endPos": {
+              "line": 19,
+              "column": 76
+            },
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 53
+            },
+            "endPos": {
+              "line": 19,
+              "column": 69
+            },
+            "data": "'rw [div_le_iff\u2080]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 72
+            },
+            "endPos": {
+              "line": 19,
+              "column": 76
+            },
+            "data": "'skip' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+          }
+        ]
+      },
+      "native_private_diagnostics": {
+        "messages": [
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 69,
+              "line": 19
+            },
+            "pos": {
+              "column": 53,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 76,
+              "line": 19
+            },
+            "pos": {
+              "column": 72,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'rw [div_le_iff\u2080]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 69,
+              "line": 19
+            },
+            "pos": {
+              "column": 53,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'skip' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 76,
+              "line": 19
+            },
+            "pos": {
+              "column": 72,
+              "line": 19
+            },
+            "severity": "warning"
+          }
+        ]
+      },
+      "native_shared_diagnostics": {
+        "messages": [
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 69,
+              "line": 19
+            },
+            "pos": {
+              "column": 53,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+            "endPos": {
+              "column": 76,
+              "line": 19
+            },
+            "pos": {
+              "column": 72,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'rw [div_le_iff\u2080]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 69,
+              "line": 19
+            },
+            "pos": {
+              "column": 53,
+              "line": 19
+            },
+            "severity": "warning"
+          },
+          {
+            "data": "'skip' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "endPos": {
+              "column": 76,
+              "line": 19
+            },
+            "pos": {
+              "column": 72,
+              "line": 19
+            },
+            "severity": "warning"
+          }
+        ]
+      },
+      "diagnostics_equal": true,
+      "private_fallback": false,
+      "private_ready_s": 0.888181807,
+      "private_released_s": 0.892340857,
+      "shared_ready_s": 0.427310976,
+      "shared_released_s": 0.427328422
+    },
+    {
+      "proof_id": "Proof_00003",
+      "stock_diagnostics": {},
+      "native_private_diagnostics": {},
+      "native_shared_diagnostics": {},
+      "diagnostics_equal": true,
+      "private_fallback": false,
+      "private_ready_s": 1.253966939,
+      "private_released_s": 1.258140136,
+      "shared_ready_s": 0.764029485,
+      "shared_released_s": 0.764050422
+    }
+  ],
+  "whole_seconds": {
+    "concurrent3-native-private": 7.181928293,
+    "concurrent3-native-shared-control": 6.4333178,
+    "stock-native-batch1": 6.531248666
+  }
+}

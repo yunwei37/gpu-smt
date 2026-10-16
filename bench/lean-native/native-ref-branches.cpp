@@ -10,11 +10,14 @@
 #include <unordered_map>
 #include <vector>
 #include <chrono>
+#include <cstdio>
+#include <cstdlib>
 
 namespace {
 struct Version {lean_object *original,*value;};
 struct Context {
  uint64_t id; bool enabled;
+ std::string fallback;
  std::mutex mutex;
  std::condition_variable changed;
  std::unordered_map<lean_object*,lean_object*> refs,thunks;
@@ -40,6 +43,25 @@ lean_object* io_error(const char* message){
 }
 }
 
+extern "C" void gpu_smt_abort_fallback(const char* operation){
+ std::fprintf(stderr,"native_branch_fallback_process:%s\n",operation);
+ std::fflush(stderr);std::_Exit(70);
+}
+extern "C" int gpu_smt_branch_active(){return current&&current->enabled;}
+extern "C" void gpu_smt_note_fallback(const char* operation){
+ Context* ctx=current;if(!ctx||!ctx->enabled)return;
+ std::lock_guard<std::mutex> guard(ctx->mutex);
+ if(ctx->fallback.empty())ctx->fallback=operation;
+}
+extern "C" lean_object* gpu_smt_effect_error(const char* operation){
+ gpu_smt_note_fallback(operation);
+ return io_error("native branch requires original verifier fallback");
+}
+extern "C" lean_obj_res gpu_smt_emit_line(lean_obj_arg line,lean_obj_arg){
+ static std::mutex output;std::lock_guard<std::mutex> guard(output);
+ std::fputs(lean_string_cstr(line),stdout);std::fputc('\n',stdout);std::fflush(stdout);
+ lean_dec(line);return lean_io_result_mk_ok(lean_box(0));
+}
 extern "C" void gpu_smt_ref_created(lean_object* ref){
  if(bypass)return;
  auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
@@ -78,7 +100,7 @@ extern "C" lean_object* gpu_smt_resolve_thunk(lean_object* thunk){
  lean_object* value=lean_to_thunk(thunk)->m_value.load();
  if(value)return thunk;
  lean_object* closure=lean_to_thunk(thunk)->m_closure.load();
- if(!closure)return thunk; // unsupported in-flight prepared thunk: NOT qualified
+ if(!closure)gpu_smt_abort_fallback("in_flight_prepared_thunk");
  Bypass no_recursion;
  lean_inc(closure);
  lean_object* clone=lean_mk_thunk(closure);
@@ -147,7 +169,7 @@ extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
                               &&ctx->scopes.load(std::memory_order_acquire)==0;});
  }
  std::ostringstream out;
- out<<"{\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->refs.size()
+ out<<"{\"fallback\":"<<(ctx->fallback.empty()?"false":"true")<<",\"fallback_operation\":\""<<ctx->fallback<<"\",\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->refs.size()
     <<",\"thunk_ops\":"<<ctx->thunk_ops.load()<<",\"thunk_versions\":"<<ctx->thunks.size()
     <<",\"descendant_tasks\":"<<ctx->created_tasks.load()
     <<",\"drain_seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count()<<"}";

@@ -1,0 +1,52 @@
+[
+  {
+    "observed_ns": 590719976468153,
+    "response": {
+      "env": 0
+    }
+  },
+  {
+    "observed_ns": 590723974638207,
+    "response": {
+      "branch": {
+        "descendant_tasks": 34,
+        "drain_seconds": 2.1047e-05,
+        "fallback": true,
+        "fallback_operation": "lean_io_prim_handle_mk",
+        "ref_ops": 55228,
+        "ref_versions": 13,
+        "thunk_ops": 0,
+        "thunk_versions": 0
+      },
+      "completed_ns": 3998048442,
+      "custom_id": "native_io_fallback_control",
+      "discarded_response": {
+        "env": 1,
+        "messages": [
+          {
+            "data": "native branch requires original verifier fallback",
+            "endPos": {
+              "column": 5,
+              "line": 4
+            },
+            "pos": {
+              "column": 0,
+              "line": 4
+            },
+            "severity": "error"
+          }
+        ]
+      },
+      "fallback_result": {
+        "exit_code": 1,
+        "stderr": "uncaught exception: {\"message\": \"Could not parse JSON:\\noffset 1: unexpected end of input\"}\n",
+        "stdout": "{\"env\": 0}\n\n"
+      },
+      "internal_ready_ns": 239446144,
+      "released_ns": 239485161,
+      "response": {
+        "env": 0
+      }
+    }
+  }
+]

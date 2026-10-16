@@ -8,7 +8,183 @@
  #if defined(LEAN_WINDOWS)
  #include <icu.h>
  #include <windows.h>
-@@ -1392,6 +1393,7 @@
+@@ -370,6 +371,7 @@
+ 
+ /* IO.setAccessRights (filename : @& String) (mode : UInt32) : IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_chmod (b_obj_arg filename, uint32_t mode) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_chmod"); }
+     const char* fname = string_cstr(filename);
+     if (strlen(fname) != lean_string_size(filename) - 1) {
+         return mk_embedded_nul_error(filename);
+@@ -383,6 +385,7 @@
+ 
+ /* Handle.mk (filename : @& String) (mode : FS.Mode) : IO Handle */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_mk(b_obj_arg filename, uint8 mode) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_mk"); }
+     int flags = 0;
+ #ifdef LEAN_WINDOWS
+     // do not translate line endings
+@@ -432,6 +435,7 @@
+ 
+ /* Handle.lock : (@& Handle) → (exclusive : Bool) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_lock(b_obj_arg h, uint8_t x) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_lock"); }
+     OVERLAPPED o = {0};
+     HANDLE wh = win_handle(io_get_handle(h));
+     DWORD flags = x ? LOCKFILE_EXCLUSIVE_LOCK : 0;
+@@ -444,6 +448,7 @@
+ 
+ /* Handle.tryLock : (@& Handle) → (exclusive : Bool) → IO Bool */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_try_lock(b_obj_arg h, uint8_t x) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_try_lock"); }
+     OVERLAPPED o = {0};
+     HANDLE wh = win_handle(io_get_handle(h));
+     DWORD flags = (x ? LOCKFILE_EXCLUSIVE_LOCK : 0) | LOCKFILE_FAIL_IMMEDIATELY;
+@@ -460,6 +465,7 @@
+ 
+ /* Handle.unlock : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_unlock(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_unlock"); }
+     OVERLAPPED o = {0};
+     HANDLE wh = win_handle(io_get_handle(h));
+     if (UnlockFileEx(wh, 0, MAXDWORD, MAXDWORD, &o)) {
+@@ -478,6 +484,7 @@
+ 
+ /* Handle.lock : (@& Handle) → (exclusive : Bool) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_lock(b_obj_arg h, uint8_t x) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_lock"); }
+     FILE * fp = io_get_handle(h);
+     if (!flock(fileno(fp), x ? LOCK_EX : LOCK_SH)) {
+         return io_result_mk_ok(box(0));
+@@ -488,6 +495,7 @@
+ 
+ /* Handle.tryLock : (@& Handle) → (exclusive : Bool) → IO Bool */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_try_lock(b_obj_arg h, uint8_t x) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_try_lock"); }
+     FILE * fp = io_get_handle(h);
+     if (!flock(fileno(fp), (x ? LOCK_EX : LOCK_SH) | LOCK_NB)) {
+         return io_result_mk_ok(box(1));
+@@ -502,6 +510,7 @@
+ 
+ /* Handle.unlock : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_unlock(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_unlock"); }
+     FILE * fp = io_get_handle(h);
+     if (!flock(fileno(fp), LOCK_UN)) {
+         return io_result_mk_ok(box(0));
+@@ -548,6 +557,7 @@
+ 
+ /* Handle.flush : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_flush(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_flush"); }
+     FILE * fp = io_get_handle(h);
+     if (!std::fflush(fp)) {
+         return io_result_mk_ok(box(0));
+@@ -558,6 +568,7 @@
+ 
+ /* Handle.rewind : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_rewind(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_rewind"); }
+     FILE * fp = io_get_handle(h);
+     if (!std::fseek(fp, 0, SEEK_SET)) {
+         return io_result_mk_ok(box(0));
+@@ -568,6 +579,7 @@
+ 
+ /* Handle.truncate : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_truncate(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_truncate"); }
+     FILE * fp = io_get_handle(h);
+ #ifdef LEAN_WINDOWS
+     if (!_chsize_s(_fileno(fp), _ftelli64(fp))) {
+@@ -582,6 +594,7 @@
+ 
+ /* Handle.read : (@& Handle) → USize → IO ByteArray */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_read(b_obj_arg h, usize nbytes) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_read"); }
+     FILE * fp = io_get_handle(h);
+     obj_res res = lean_alloc_sarray(1, 0, nbytes);
+     usize n = std::fread(lean_sarray_cptr(res), 1, nbytes, fp);
+@@ -600,6 +613,7 @@
+ 
+ /* Handle.write : (@& Handle) → (@& ByteArray) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_write(b_obj_arg h, b_obj_arg buf) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_write"); }
+     FILE * fp = io_get_handle(h);
+     usize n = lean_sarray_size(buf);
+     usize m = std::fwrite(lean_sarray_cptr(buf), 1, n, fp);
+@@ -612,6 +626,7 @@
+ 
+ /* Handle.getLine : (@& Handle) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_get_line(b_obj_arg h) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_get_line"); }
+     FILE * fp = io_get_handle(h);
+ 
+     std::string result;
+@@ -636,6 +651,7 @@
+ 
+ /* Handle.putStr : (@& Handle) → (@& String) → IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_prim_handle_put_str(b_obj_arg h, b_obj_arg s) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_prim_handle_put_str"); }
+     FILE * fp = io_get_handle(h);
+     usize n = lean_string_size(s) - 1; // - 1 to ignore the terminal NULL byte.
+     usize m = std::fwrite(lean_string_cstr(s), 1, n, fp);
+@@ -1138,6 +1154,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_create_dir(b_obj_arg p) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_create_dir"); }
+     const char* str = string_cstr(p);
+     if (strlen(str) != lean_string_size(p) - 1) {
+         return mk_embedded_nul_error(p);
+@@ -1154,6 +1171,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_remove_dir(b_obj_arg p) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_remove_dir"); }
+     const char* str = string_cstr(p);
+     if (strlen(str) != lean_string_size(p) - 1) {
+         return mk_embedded_nul_error(p);
+@@ -1166,6 +1184,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_rename(b_obj_arg from, b_obj_arg to) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_rename"); }
+     const char* from_str = string_cstr(from);
+     if (strlen(from_str) != lean_string_size(from) - 1) {
+         return mk_embedded_nul_error(from);
+@@ -1198,6 +1217,7 @@
+ 
+ /* hardLink (orig link : @& FilePath) : IO Unit */
+ extern "C" LEAN_EXPORT obj_res lean_io_hard_link(b_obj_arg orig, b_obj_arg link) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_hard_link"); }
+     const char* orig_str = string_cstr(orig);
+     if (strlen(orig_str) != lean_string_size(orig) - 1) {
+         return mk_embedded_nul_error(orig);
+@@ -1218,6 +1238,7 @@
+ 
+ /* createTempFile : IO (Handle × FilePath) */
+ extern "C" LEAN_EXPORT obj_res lean_io_create_tempfile(lean_object * /* w */) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_create_tempfile"); }
+     char path[PATH_MAX];
+     size_t base_len = PATH_MAX;
+     int ret = uv_os_tmpdir(path, &base_len);
+@@ -1264,6 +1285,7 @@
+ 
+ /* createTempDir : IO FilePath */
+ extern "C" LEAN_EXPORT obj_res lean_io_create_tempdir(lean_object * /* w */) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_create_tempdir"); }
+     char path[PATH_MAX];
+     size_t base_len = PATH_MAX;
+     int ret = uv_os_tmpdir(path, &base_len);
+@@ -1308,6 +1330,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_remove_file(b_obj_arg filename) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_remove_file"); }
+     const char* fname = string_cstr(filename);
+     if (strlen(fname) != lean_string_size(filename) - 1) {
+         return mk_embedded_nul_error(filename);
+@@ -1392,6 +1415,7 @@
      lean_ref_object * o = (lean_ref_object*)lean_alloc_small_object(sizeof(lean_ref_object));
      lean_set_st_header((lean_object*)o, LeanRef, 0);
      o->m_value = a;
@@ -16,7 +192,7 @@
      return (lean_object*)o;
  }
  
-@@ -1413,6 +1415,7 @@
+@@ -1413,6 +1437,7 @@
  static inline bool ref_maybe_mt(b_obj_arg ref) { return lean_is_mt(ref) || lean_is_persistent(ref); }
  
  extern "C" LEAN_EXPORT obj_res lean_st_ref_get(b_obj_arg ref) {
@@ -24,7 +200,7 @@
      if (ref_maybe_mt(ref)) {
          atomic<object *> * val_addr = mt_ref_val_addr(ref);
          while (true) {
-@@ -1440,6 +1443,7 @@
+@@ -1440,6 +1465,7 @@
  }
  
  extern "C" LEAN_EXPORT obj_res lean_st_ref_take(b_obj_arg ref) {
@@ -32,7 +208,7 @@
      if (ref_maybe_mt(ref)) {
          atomic<object *> * val_addr = mt_ref_val_addr(ref);
          while (true) {
-@@ -1458,6 +1462,7 @@
+@@ -1458,6 +1484,7 @@
  static_assert(sizeof(atomic<unsigned short>) == sizeof(unsigned short), "`atomic<unsigned short>` and `unsigned short` must have the same size"); // NOLINT
  
  extern "C" LEAN_EXPORT obj_res lean_st_ref_set(b_obj_arg ref, obj_arg a) {
@@ -40,7 +216,7 @@
      if (ref_maybe_mt(ref)) {
          /* We must mark `a` as multi-threaded if `ref` is marked as multi-threaded.
             Reason: our runtime relies on the fact that a single-threaded object
-@@ -1477,6 +1482,7 @@
+@@ -1477,6 +1504,7 @@
  }
  
  extern "C" LEAN_EXPORT obj_res lean_st_ref_swap(b_obj_arg ref, obj_arg a) {
@@ -48,6 +224,27 @@
      if (ref_maybe_mt(ref)) {
          /* See io_ref_write */
          mark_mt(a);
+@@ -1560,10 +1588,12 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_exit(uint8_t code) {
++    if (gpu_smt_branch_active()) gpu_smt_abort_fallback("lean_io_exit");
+     exit(code);
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_force_exit(uint8_t code) {
++    if (gpu_smt_branch_active()) gpu_smt_abort_fallback("lean_io_force_exit");
+     std::_Exit((int)code);
+ }
+ 
+@@ -1573,6 +1603,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_runtime_mark_persistent(obj_arg a) {
++    if (gpu_smt_branch_active()) { gpu_smt_note_fallback("lean_runtime_mark_persistent"); return a; }
+     lean_mark_persistent(a);
+     return a;
+ }
 --- a/src/runtime/object.cpp
 +++ b/src/runtime/object.cpp
 @@ -10,6 +10,7 @@
@@ -111,3 +308,101 @@
              object * c = t->m_imp->m_closure;
              t->m_imp->m_closure = nullptr;
              lock.unlock();
+--- a/src/runtime/process.cpp
++++ b/src/runtime/process.cpp
+@@ -4,6 +4,7 @@
+ 
+ Author: Jared Roesch
+ */
++#include "native-ref-branches.h"
+ #include <string>
+ #include <fstream>
+ #include <iostream>
+@@ -73,6 +74,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_set_current_dir(b_obj_arg path) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_set_current_dir"); }
+     if (SetCurrentDirectory(string_cstr(path))) {
+         return io_result_mk_ok(box(0));
+     } else {
+@@ -89,6 +91,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_wait(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_wait"); }
+     HANDLE h = static_cast<HANDLE>(lean_get_external_data(cnstr_get(child, 3)));
+     DWORD exit_code;
+     if (WaitForSingleObject(h, INFINITE) == WAIT_FAILED) {
+@@ -101,6 +104,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_try_wait(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_try_wait"); }
+     HANDLE h = static_cast<HANDLE>(lean_get_external_data(cnstr_get(child, 3)));
+     DWORD exit_code;
+     DWORD ret = WaitForSingleObject(h, 0);
+@@ -117,6 +121,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_kill(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_kill"); }
+     HANDLE h = static_cast<HANDLE>(lean_get_external_data(cnstr_get(child, 3)));
+     if (!TerminateProcess(h, 1)) {
+         return io_result_mk_error((sstream() << GetLastError()).str());
+@@ -301,6 +306,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_take_stdin(b_obj_arg, obj_arg lchild) {
++    if (gpu_smt_branch_active()) { dec_ref(lchild); return gpu_smt_effect_error("lean_io_process_child_take_stdin"); }
+     object_ref child(lchild);
+     object_ref child2 = mk_cnstr(0, object_ref(box(0)), cnstr_get_ref(child, 1), cnstr_get_ref(child, 2), cnstr_get_ref(child, 3));
+     object_ref r = mk_cnstr(0, cnstr_get_ref(child, 0), child2);
+@@ -324,6 +330,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_set_current_dir(b_obj_arg path) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_set_current_dir"); }
+     if (!chdir(string_cstr(path))) {
+         return io_result_mk_ok(box(0));
+     } else {
+@@ -351,6 +358,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_wait(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_wait"); }
+     static_assert(sizeof(pid_t) == sizeof(uint32), "pid_t is expected to be a 32-bit type"); // NOLINT
+     pid_t pid = cnstr_get_uint32(child, 3 * sizeof(object *));
+     int status;
+@@ -367,6 +375,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_try_wait(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_try_wait"); }
+     static_assert(sizeof(pid_t) == sizeof(uint32), "pid_t is expected to be a 32-bit type"); // NOLINT
+     pid_t pid = cnstr_get_uint32(child, 3 * sizeof(object *));
+     int status;
+@@ -389,6 +398,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_kill(b_obj_arg, b_obj_arg child) {
++    if (gpu_smt_branch_active()) {  return gpu_smt_effect_error("lean_io_process_child_kill"); }
+     static_assert(sizeof(pid_t) == sizeof(uint32), "pid_t is expected to be a 32-bit type"); // NOLINT
+     pid_t pid = cnstr_get_uint32(child, 3 * sizeof(object *));
+     bool setsid = cnstr_get_uint8(child, 3 * sizeof(object *) + sizeof(pid_t));
+@@ -535,6 +545,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_child_take_stdin(b_obj_arg, obj_arg lchild) {
++    if (gpu_smt_branch_active()) { dec_ref(lchild); return gpu_smt_effect_error("lean_io_process_child_take_stdin"); }
+     object_ref child(lchild);
+     object_ref child2 = mk_cnstr(0, object_ref(box(0)), cnstr_get_ref(child, 1), cnstr_get_ref(child, 2), sizeof(pid_t));
+     cnstr_set_uint32(child2.raw(), 3 * sizeof(object *), cnstr_get_uint32(child.raw(), 3 * sizeof(object *)));
+@@ -550,6 +561,7 @@
+ extern "C" lean_object* lean_mk_io_error_other_error(uint32_t, lean_object*);
+ 
+ extern "C" LEAN_EXPORT obj_res lean_io_process_spawn(obj_arg args_) {
++    if (gpu_smt_branch_active()) { dec_ref(args_); return gpu_smt_effect_error("lean_io_process_spawn"); }
+     object_ref args(args_);
+     object_ref stdio_cfg = cnstr_get_ref(args, 0);
+     stdio stdin_mode  = static_cast<stdio>(cnstr_get_uint8(stdio_cfg.raw(), 0));
