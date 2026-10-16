@@ -1,0 +1,38 @@
+✔ [9/21] Built REPL.Lean.Environment
+✔ [10/21] Built REPL.Lean.Environment:c.o
+✔ [11/21] Built REPL.Lean.InfoTree
+✔ [12/21] Built REPL.Snapshots
+✔ [13/21] Built REPL.JSON
+✔ [14/21] Built REPL.Lean.InfoTree.ToJson
+✔ [15/21] Built REPL.Lean.InfoTree:c.o
+✔ [16/21] Built REPL.Lean.InfoTree.ToJson:c.o
+✔ [17/21] Built REPL.Snapshots:c.o
+✔ [18/21] Built REPL.JSON:c.o
+✖ [19/21] Building REPL.Main
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Main.lean -R ./././. -o ././.lake/build/lib/REPL/Main.olean -i ././.lake/build/lib/REPL/Main.ilean -c ././.lake/build/ir/REPL/Main.c --json
+error: ././././REPL/Main.lean:141:40: application type mismatch
+  Tactic.of goals tactic pos endPos
+argument
+  endPos
+has type
+  Nat : Type
+but is expected to have type
+  Position : Type
+error: ././././REPL/Main.lean:148:40: application type mismatch
+  Tactic.of goals tactic pos endPos
+argument
+  endPos
+has type
+  Nat : Type
+but is expected to have type
+  Position : Type
+error: ././././REPL/Main.lean:276:6: fields missing: 'tacticCache?'
+error: ././././REPL/Main.lean:302:2: 'toList' is not a field of structure 'Array'
+error: ././././REPL/Main.lean:351:2: invalid field 'bindM', the environment does not contain 'Array.bindM'
+  tasks
+has type
+  Array (Task (Except IO.Error (Array (CommandResponse ⊕ Error))))
+error: Lean exited with code 1
+Some builds logged failures:
+- REPL.Main
+error: build failed

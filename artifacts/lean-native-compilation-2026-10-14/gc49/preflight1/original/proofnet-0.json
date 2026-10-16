@@ -1,0 +1,53 @@
+{
+  "dataset": "proofnet",
+  "source_index": 0,
+  "basic": "rejected",
+  "elapsed_seconds": 58.241629287,
+  "stock_result": {
+    "id": "proofnet-0",
+    "time": 0.126316,
+    "error": null,
+    "response": {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 20,
+            "column": 9
+          },
+          "endPos": {
+            "line": 20,
+            "column": 16
+          },
+          "data": "ambiguous, possible interpretations \n  Finset.ext_iff : ?m.843 = ?m.844 ↔ ∀ (a : ?m.842), a ∈ ?m.843 ↔ a ∈ ?m.844\n  \n  Complex.ext_iff : ?m.845 = ?m.846 ↔ ?m.845.re = ?m.846.re ∧ ?m.845.im = ?m.846.im"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 20,
+            "column": 33
+          },
+          "endPos": {
+            "line": 20,
+            "column": 34
+          },
+          "data": "application type mismatch\n  hc (↑a) a\nargument\n  a\nhas type\n  ↑Ω : Type\nbut is expected to have type\n  ↑a ∈ Ω : Prop"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 20,
+            "column": 2
+          },
+          "endPos": {
+            "line": 20,
+            "column": 34
+          },
+          "data": "type mismatch\n  h✝\nhas type\n  True : Prop\nbut is expected to have type\n  f ↑a = f ↑b : Prop"
+        }
+      ]
+    },
+    "diagnostics": null
+  },
+  "loaded_libraries": []
+}

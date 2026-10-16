@@ -1,0 +1,82 @@
+✔ [1/21] Built REPL.Util.Pickle
+✖ [2/21] Building REPL.Lean.Environment
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Lean/Environment.lean -R ./././. -o ././.lake/build/lib/REPL/Lean/Environment.olean -i ././.lake/build/lib/REPL/Lean/Environment.ilean -c ././.lake/build/ir/REPL/Lean/Environment.c --json
+error: ././././REPL/Lean/Environment.lean:29:24: unknown identifier 'Std.HashMap.ofList'
+error: Lean exited with code 1
+✖ [4/21] Building REPL.JSON
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/JSON.lean -R ./././. -o ././.lake/build/lib/REPL/JSON.olean -i ././.lake/build/lib/REPL/JSON.ilean -c ././.lake/build/ir/REPL/JSON.c --json
+error: ././././REPL/JSON.lean:101:28: invalid dotted identifier notation, unknown identifier `List.flatten` from expected type
+  List (String × Json)
+error: ././././REPL/JSON.lean:150:28: invalid dotted identifier notation, unknown identifier `List.flatten` from expected type
+  List (String × Json)
+error: ././././REPL/JSON.lean:173:28: invalid dotted identifier notation, unknown identifier `List.flatten` from expected type
+  List (String × Json)
+error: Lean exited with code 1
+✔ [6/21] Built REPL.Frontend
+✔ [7/21] Built REPL.Util.Pickle:c.o
+✔ [8/21] Built REPL.Frontend:c.o
+✖ [9/21] Building REPL.Snapshots
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Snapshots.lean -R ./././. -o ././.lake/build/lib/REPL/Snapshots.olean -i ././.lake/build/lib/REPL/Snapshots.ilean -c ././.lake/build/ir/REPL/Snapshots.c --json
+error: ././././REPL/Snapshots.lean:86:51: unknown identifier 'Std.HashMap.ofList'
+error: ././././REPL/Snapshots.lean:288:43: unknown identifier 'Std.HashMap.ofList'
+error: ././././REPL/Snapshots.lean:290:29: unknown identifier 'Std.HashMap.ofList'
+error: Lean exited with code 1
+✔ [11/21] Built REPL.Lean.ContextInfo
+✔ [12/21] Built REPL.Lean.ContextInfo:c.o
+✔ [13/21] Built REPL.Util.Path
+✖ [14/21] Building REPL.Lean.InfoTree
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Lean/InfoTree.lean -R ./././. -o ././.lake/build/lib/REPL/Lean/InfoTree.olean -i ././.lake/build/lib/REPL/Lean/InfoTree.ilean -c ././.lake/build/ir/REPL/Lean/InfoTree.c --json
+error: ././././REPL/Lean/InfoTree.lean:56:4: invalid pattern, constructor or constant marked with '[match_pattern]' expected
+error: ././././REPL/Lean/InfoTree.lean:76:4: invalid pattern, constructor or constant marked with '[match_pattern]' expected
+error: ././././REPL/Lean/InfoTree.lean:129:78: invalid dotted identifier notation, unknown identifier `Lean.NameSet.merge` from expected type
+  NameSet → ?m.2122 → NameSet
+error: ././././REPL/Lean/InfoTree.lean:129:78: invalid dotted identifier notation, unknown identifier `Lean.RBTree.merge` from expected type
+  NameSet → ?m.2122 → NameSet
+error: ././././REPL/Lean/InfoTree.lean:129:78: invalid dotted identifier notation, unknown identifier `Lean.RBMap.merge` from expected type
+  NameSet → ?m.2122 → NameSet
+error: ././././REPL/Lean/InfoTree.lean:129:78: invalid dotted identifier notation, unknown identifier `Subtype.merge` from expected type
+  NameSet → ?m.2122 → NameSet
+error: ././././REPL/Lean/InfoTree.lean:131:39: invalid field 'merge', the environment does not contain 'Lean.NameSet.merge'
+  acc
+has type
+  NameSet
+error: ././././REPL/Lean/InfoTree.lean:131:39: invalid field 'merge', the environment does not contain 'Lean.RBTree.merge'
+  acc
+has type
+  RBTree Name Name.quickCmp
+error: ././././REPL/Lean/InfoTree.lean:131:39: invalid field 'merge', the environment does not contain 'Lean.RBMap.merge'
+  acc
+has type
+  RBMap Name Unit Name.quickCmp
+error: ././././REPL/Lean/InfoTree.lean:131:39: invalid field 'merge', the environment does not contain 'Subtype.merge'
+  acc
+has type
+  { t // RBNode.WellFormed Name.quickCmp t }
+error: ././././REPL/Lean/InfoTree.lean:147:18: invalid field 'flatten', the environment does not contain 'List.flatten'
+  List.map (filter p m) children.toList
+has type
+  List (List InfoTree)
+error: ././././REPL/Lean/InfoTree.lean:149:6: invalid field 'flatten', the environment does not contain 'List.flatten'
+  List.map (filter p m) children.toList
+has type
+  List (List InfoTree)
+error: ././././REPL/Lean/InfoTree.lean:173:39: invalid field 'flatMap', the environment does not contain 'List.flatMap'
+  ts.toList
+has type
+  List InfoTree
+error: ././././REPL/Lean/InfoTree.lean:191:13: invalid field 'flatMap', the environment does not contain 'List.flatMap'
+  ts.toList
+has type
+  List InfoTree
+error: ././././REPL/Lean/InfoTree.lean:213:11: invalid field 'flatMap', the environment does not contain 'List.flatMap'
+  ts.toList
+has type
+  List InfoTree
+error: Lean exited with code 1
+✔ [20/21] Built REPL.Util.Path:c.o
+Some builds logged failures:
+- REPL.Lean.Environment
+- REPL.JSON
+- REPL.Snapshots
+- REPL.Lean.InfoTree
+error: build failed

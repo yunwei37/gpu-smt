@@ -2813,3 +2813,8 @@ Fresh native Codex reviewer completes the full blind read → primary-source ver
 ## Original miniF2F acquisition complete:8/8cells
 
 At the completed-review checkpoint, root checks only original driver completion, finds miniGC finished and collects its whole original matrix once. [Final results](mini-finalization-20261016/result-review.md):8×7808=62464source attempts, three primary whole reductions7.611/10.740/16.964%, with worse first/second p99 and retained operational transitions. New separate profile pair shows only0.799%sampled PSS difference, not demonstrated memory saving;12basic transitions and very long HTTP tails remain. Unchanged offline analyzer exits0; original last-cell rawZIP, lightweight row/resources and actual capture-source dependency are published. Prior52cell snapshot stays dated; this adds one new published cell/7808rows. Fresh result review is in progress separately; no GPU gain, new contribution, full RQ answer or gate completion is claimed.
+
+
+## Fresh independent mini result disposition and full raw publication
+
+A fresh native Codex reviewer independently checks all62464raw responses and both resource streams. [Report](mini-finalization-20261016/independent-result-review.md) and [root disposition](mini-finalization-20261016/root-review-disposition.md) accept complete acquisition and supported narrow CPU timing, with changed native outcomes/mixed p99/severe last-profile tails and sampling limits. Root publishes all8original rawZIPs/terminals and existing completed source/build/failure/qualification/input records, rather than only the latest cell. No new acquisition or scientific contribution is inferred; matched future mechanism admission remains next.

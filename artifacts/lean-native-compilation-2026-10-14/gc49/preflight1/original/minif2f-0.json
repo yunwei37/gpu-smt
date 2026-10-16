@@ -1,0 +1,53 @@
+{
+  "dataset": "minif2f",
+  "source_index": 0,
+  "basic": "complete",
+  "elapsed_seconds": 3.260156666,
+  "stock_result": {
+    "id": "minif2f-0",
+    "time": 0.042843,
+    "error": null,
+    "response": {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 39
+          },
+          "endPos": {
+            "line": 9,
+            "column": 41
+          },
+          "data": "unused variable `h₀`\nnote: this linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 6
+          },
+          "endPos": {
+            "line": 22,
+            "column": 13
+          },
+          "data": "this tactic is never executed\nnote: this linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 24,
+            "column": 6
+          },
+          "endPos": {
+            "line": 24,
+            "column": 14
+          },
+          "data": "this tactic is never executed\nnote: this linter can be disabled with `set_option linter.unreachableTactic false`"
+        }
+      ]
+    },
+    "diagnostics": null
+  },
+  "loaded_libraries": []
+}

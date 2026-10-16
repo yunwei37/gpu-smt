@@ -1739,3 +1739,8 @@ Root reads allfour fresh reports, verifies13frozen files equal published9361cf4 
 ## Completed mini acquisition collection — root validation
 
 Original driver is no longer present and all8terminal/finalization markers exist. The unchanged analyzer verifies8complete cells; raw final archive CRC/input bytes and7808unique indices pass. All previously retained partial/mixed results remain. Root's complete analysis includes resource-sampling limits and12profile transitions, including rejected→operational and >1500sHTTP requests; no transparent-behavior or memory/GPU claim. Actual archived capture helper is published instead of assuming current bench code was measured. This is collection/publication, with independent result disposition still pending.
+
+
+## Fresh mini result review accepted — root integration
+
+Independent native reviewer covers all62464original responses, input/order/count/clock/classification/native-difference/resource checks and actual historical helper. Root reads the full report and verifies its separate validity/hypothesis/value/impact/next-decision judgments against actual final data. Descriptive CPU benefit is accepted without transparent-behavior, uniform-tail, memory/GPU/novelty or fullRQ claims. Full raw/code/failure provenance is published at the completed8cell boundary; earlier incomplete snapshots and all regressions remain. Whole-paper research goal stays active.
