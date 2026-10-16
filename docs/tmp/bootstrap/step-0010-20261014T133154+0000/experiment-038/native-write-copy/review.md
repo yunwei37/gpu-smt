@@ -1,0 +1,75 @@
+# E038 first-mutation ref copy: independent implementation review
+
+Observation: 2026-10-16. Owning Workspace /workspaces/repository, main e56c7b012da83434a20e840a1590853a56e959de plus the current native-write-copy diff. The reviewer read the complete docs/user-instruction.md, this node's plan.md, current native-ref-branches.cpp/.h/.patch, the parent-main implementation diff and the actual patch-applied Lean4.27 runtime ref primitives. Only this review.md is written. No implementation/Git/model change, workload/build, active-full-capture polling or experiment broadening was performed.
+
+## Scope and disposition
+
+The human goal remains Lean-first real verification acceleration with formal complete performance evidence, explicit failed results, literature novelty and proportionate correctness. The plan implements a missing E038 distinction: prepared refs remain shared base cells until the first destructive take/set/swap in a candidate; get must subsequently observe that candidate's stable private cell. Existing frozen-v1 results stay attached to their actual implementation.
+
+**No blocking delta-specific source defect found in the inspected ownership, publication, cache and drain paths.** No implementation repair is requested by this source review. This is a conditional source-level judgment, not arbitrary-FFI equivalence, dynamic coverage of every interleaving, measured speedup, a paper contribution or admission of another full matrix. Source-native build and finite client/witness receipts can be closed when root supplies their actual records.
+
+## Exact delta and native ABI
+
+The prior single resolver is split into internal resolve_ref(ref, mutation), a new gpu_smt_resolve_ref_read C hook and the existing mutation hook. In the patch-applied native io.cpp under /tmp/gpu-smt-native-write-copy-20261016/build/lean-private/src/runtime, lean_st_ref_get calls the read hook (1439-1440). lean_st_ref_take, lean_st_ref_set and lean_st_ref_swap still call the mutation hook (1467-1468,1486-1487,1506-1507). No LeanRef object layout, reference calling convention, value-field offset or native get/take/set/swap body is changed. lean_st_ref_ptr_eq retains original identity comparison.
+
+The root's branch-created ref ownership fast path is unchanged. Such owned refs return immediately; the delayed-copy map/cache concerns foreign/prepared refs only. The existing owner-tag slot reservations, compaction resets, full-ID fallback and native atomic RC/value semantics remain. Direct unsafe ShareCommon.Object.eq/hash can still observe m_other, and raw extension allocations/header manipulation, arbitrary globals and uninstrumented FFI remain unqualified as before.
+
+## First observation and first mutation lifetime
+
+Current cpp lines 127-134 install a map entry original -> original under ctx->mutex. On first insertion the context increments the original ref and stores {original, scalar0} in held. This is necessary even for a read-only key: the TLS cache cannot otherwise safely compare a recycled raw identity later in the same context. Repeated observations do not duplicate this ownership token.
+
+On the first destructive operation, while holding the same context mutex, the implementation obtains an owned native value token via lean_st_ref_get, constructs a new native ref, marks it MT, adds {scalar0, clone} to held and replaces the map value with that clone (135-145). Bypass prevents this internal acquisition/construction from recursively resolving the original again or being counted as an application ref access. Original and clone each have explicit independent retained tokens. The map value never changes again for that original/context.
+
+Subsequent destructive operations and reads use the same clone. Separate contexts have separate maps and cloned cells. The caller still passes its original borrowed ref identity; native get returns its usual owned value token, and native take/set/swap preserve their existing transfer/atomic exchange semantics on the resolved cell. The implementation does not substitute a borrowed value load for native acquisition.
+
+At endBranch, originals and clones are decremented only after root/admitted task scopes have drained. The two held entries do not double-decrement an original: one holds the original, the other holds only the clone. Releasing the original entry before the clone is safe under normal RC because the clone owns its value token; any value reachable from either cell has native owned references. Persistent originals remain persistent. Exceptions from C++ allocation or arbitrary unsafe cancellation are not newly qualified by this change.
+
+## Cache invalidation, publication and concurrency
+
+LastVersion now records a full context ID and generation in addition to original/value. It is thread-local, so no other thread reads or writes the cache record. Every cached original -> original entry was installed through the retained-key map path described above; every cached original -> clone entry refers to a clone held through branch drain. Cache values are not borrowed from an ephemeral caller.
+
+For a cached private clone (value != original), no generation check is needed: that original's map value is permanent after its first copy. For a cached base entry, only a read can return the original, and only when cached generation equals the current acquire-loaded ref_generation (122-125). A mutation never reuses a base cache hit; it acquires ctx->mutex and creates/fetches the authoritative clone.
+
+The first copy updates the map and increments ref_generation with release ordering while holding ctx->mutex. The remember() generation load also occurs while the same mutex is held on all ref map-hit/create paths. Therefore it cannot incorrectly stamp a stale base mapping with a later generation from another first-copy publisher: that publisher must acquire the same lock. Once a reader observes a changed generation, it locks, retrieves the authoritative current mapping and refreshes its TLS entry. A write to another prepared ref can invalidate this one-entry base cache unnecessarily, but that is a conservative performance miss rather than a false mapping.
+
+Concurrent get and first mutation can overlap: a get that resolved the original before publication may finish from the base while the write proceeds on the clone. That read can be ordered before the overlapping mutation; a task synchronized after a completed mutation cannot reuse the old generation under the native task/synchronization and atomic coherence assumptions. Publishing the clone before native set/take/swap is also safe: a concurrent operation may access its original initial value before the write's actual exchange, exactly as ordinary operations overlapping a write may do. The cache changes cell resolution, not native value-operation synchronization.
+
+Both original and cloned cells continue to use the native persistent/MT get exchange-and-owned-token protocol. Base get temporarily exchanges its pointer under the native protocol, so it is not a lock-free raw read of an RC-managed value. No ref header/value-field write is added by base-cache lookup. There is no new nested mutex in the hot cache hit; miss paths retain the existing context lock and ownership-registry behavior. The generation atomic does not acquire another mutex or invert the task-registry/context lock order.
+
+Cached pointer representations can survive context cleanup, but future contexts have different full IDs and a same-context observed original is held alive. Thus ordinary allocator address reuse cannot match a cache entry during that context. Full uint64 context-ID/generation wrap remains theoretical unhandled finite-counter behavior, not a concurrency quota or a newly tested guarantee.
+
+## Task lifetime and counter meaning
+
+The TLS ref_read_ops counter follows the already-reviewed flush paths at task_enter, task_leave and root branch_end. It increments only for admitted enabled non-bypass read-hook calls, and is flushed before scope release; root waits for both tasks and scopes to drain before reading totals. The context counters can lag while a thread is still inside a scope, but a normal fully drained end record includes the admitted TLS totals. The new non-atomic copied_refs and map size are modified under ctx->mutex and read after the same drain boundary. No unsynchronized live progress inspection of them is claimed.
+
+Metadata definitions changed materially and must remain source-versioned:
+- ref_ops counts all admitted non-bypass ref-hook accesses, including branch-local owner fast-path accesses.
+- ref_read_ops counts read-hook accesses, including owned local reads and reads resolving an already-copied cell. It is **not** a count of prepared-base reads or GPU-eligible work.
+- prepared_refs is the number of retained observed foreign/prepared keys, including both read-only and later-copied ones.
+- ref_versions is now copied_refs, the number of true first-mutation private cells. Prior eager-on-read versions used the same field name for their different mechanism, so cross-version totals must not be pooled.
+- For a normal terminal record, prepared_refs - ref_versions gives observed prepared keys never copied in that context; it does not indicate their paid CPU time or prove a speedup.
+
+No field here yields the missing end-to-end defeq/argument paid-time opportunity. Branch release/destruction and normal EOF still belong to full end-to-end accounting; drain_seconds alone remains insufficient. Finite native-client/witness checks will establish engagement only. A performance conclusion requires its actually versioned, complete matched workload, and this source review requests neither a new matrix nor an interruption of frozen-v1.
+
+## Closing: actual native build, original-source client and direct ref witness
+
+Root supplied complete receipts; the reviewer read them independently without starting a build, experiment, matrix or active-capture query.
+
+The native-write-copy clean build's outer terminal records exit_code 0, 2026-10-16T17:15:15.601851Z to 17:15:53.762689Z, wall 38.16086246503983 seconds and compiler/child CPU 40.502266 seconds. build.commands.jsonl contains 50 stages, every exit_code zero. The preserved built-source cpp/header/patch bytes independently equal the current implementation. Outputs are the separate /tmp/gpu-smt-native-write-copy-20261016/build plain/private artifacts. These finite build receipts do not change the version of the existing frozen-v1 capture.
+
+The client check uses the actual existing server.repl Repl native interface and unmodified original Proof_00000 plus Proof_00004, selected as one previously accepted and one previously native-rejected source. I independently compared both full archived original-inputs rows to formal input.jsonl indices 0 and 4: exact equality of the complete objects/source/metadata. Both submitted batch-command.json objects are native env0, mode naive, with exactly the same original command body after blanking only the two shared Mathlib/Aesop imports to preserve positions.
+
+I parsed both raw stdout gzip streams independently: each returns an env0 header and a two-element native array. The extracted response fields exactly equal each raw parsed native object. The complete plain and private arrays also compare equal without normalization: Proof_00000 returns {}, while Proof_00004 preserves all 14 messages, their severity, positions and full text (11 errors and 3 warnings). This is actual rejection preservation, not an error-free placeholder or equality of missing responses. Plain/private terminals both report complete, normal_eof true, exit_code 0 and both original rows. Their actual executable/library paths select the new build's plain/private directories. Plain runs 17:16:40.496253Z–17:16:48.517556Z; private runs 17:16:48.518194Z–17:16:56.274769Z.
+
+Private stderr metadata independently shows, in input order:
+- Proof_00000: prepared_refs 43, true ref_versions 4, ref_ops 8,905,059, ref_read_ops 6,511,326, descendant_tasks 244, owner_cache_tag 1.
+- Proof_00004: prepared_refs 45, true ref_versions 4, ref_ops 2,227,865, ref_read_ops 1,314,644, descendant_tasks 252, owner_cache_tag 2.
+- Both: one thunk version, fallback false, empty fallback operation, null discarded/replay result.
+
+Thus the intended read-observed/first-mutation distinction engaged on actual whole Lean sources. The 39/41 observed keys never copied in those branches are counts, not measured paid work, speedup or general service equivalence. Native task counts are actual scheduling observations, not fixed invariants.
+
+The initially generated REPL fixture routes did **not** establish their intended read/write control and remain failures. Attempt 1 terminates its transport normally but every read/write/base-after expression fails with Unknown identifier liftIO; its terminal state=complete denotes collection completion, not successful fixture execution. Attempt 2 retains failed-terminal JSONDecodeError plus native stderr: cannot evaluate the init declaration branchProbe in the same module. It produces only the header and no valid result array. Neither attempt is counted as a passing native write-copy witness.
+
+The replacement direct C control actually calls the rebuilt native ref primitives. I read native-ref-witness.c: it initializes runtime, creates/prepares an ordinary native root ref with value 0, performs one read-only branch, one branch reading 0 then setting/reading 7, checks root still 0 after cleanup, and checks another branch still sees 0. Each branch closes via the actual branch_end and each value operation uses lean_st_ref_get/set, not a substituted mock. Successful witness-native-command.json compiles against the matching SDK headers and the new private libleanshared/helper paths/rpath with -lm, then runs that executable; both exit_code 0. Raw stderr is empty and stdout records READ_ONLY: one observed prepared ref, zero copies; FIRST_WRITE: one observed ref, one copy, two reads; NEXT_BRANCH: one observed ref, zero copies; final values initial=0 private=7 root=0 next=0. The earlier missing stddef.h compile and missing ceilf/-lm link failures are separately retained and not silently recast as success.
+
+Final disposition: no material discrepancy found in the supplied successful build, exact accepted/rejected native results or direct ref witness. The direct witness is sequential and does not dynamically cover a second admitted task invalidating another task's TLS cache, every destructive primitive or arbitrary FFI. The source-level publication/lifetime analysis above remains the basis for those limited implementation assumptions; this closing does not request a broader campaign. These generated controls and two formal source engagement checks do not complete all-source qualification or provide a performance comparison. Build/client/control work overlaps the retained ongoing capture as disclosed; its timings are finite receipts, not speed evidence. No new full collector or interruption follows.

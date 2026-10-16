@@ -1,0 +1,32 @@
+2026-10-16 17:18:11.301 | INFO     | server.repl:start:171 - \[a69e4787] Started
+2026-10-16 17:18:11.302 | INFO     | server.repl:log_snippet:53 - \[a69e4787] Running snippet [bold magenta]original-header[/bold magenta]:
+2026-10-16 17:18:11.307 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 17:18:11.307 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 17:18:15.309 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+Traceback (most recent call last):
+  File "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-write-copy/read-write-witness-attempt2.executed.py", line 78, in <module>
+    try:asyncio.run(main())
+        ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-write-copy/read-write-witness-attempt2.executed.py", line 76, in main
+    for method in METHODS:results[method]=await check(method)
+                                          ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-write-copy/read-write-witness-attempt2.executed.py", line 54, in check
+    response=json.loads(await asyncio.wait_for(worker._read_response(),300))
+  File "/usr/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

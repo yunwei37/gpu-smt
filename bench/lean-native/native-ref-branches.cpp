@@ -24,7 +24,9 @@ struct Context {
  std::condition_variable changed;
  std::unordered_map<lean_object*,lean_object*> refs,thunks;
  std::vector<Version> held;
- std::atomic<uint64_t> tasks{0},scopes{0},ref_ops{0},thunk_ops{0},created_tasks{0};
+ std::atomic<uint64_t> ref_generation{0};
+ uint64_t copied_refs=0;
+ std::atomic<uint64_t> tasks{0},scopes{0},ref_ops{0},ref_read_ops{0},thunk_ops{0},created_tasks{0};
 };
 struct Owner {uint64_t id;uint8_t tag;};
 struct Registry {
@@ -40,22 +42,24 @@ thread_local Context* current=nullptr;
 thread_local bool bypass=false;
 // Counts follow the dynamically installed branch context. Flush before every
 // context switch; the branch lifetime already covers admitted tasks/scopes.
-thread_local uint64_t local_ref_ops=0,local_thunk_ops=0;
+thread_local uint64_t local_ref_ops=0,local_ref_read_ops=0,local_thunk_ops=0;
 void flush_local_ops(){
  if(current){
   current->ref_ops.fetch_add(local_ref_ops,std::memory_order_relaxed);
+  current->ref_read_ops.fetch_add(local_ref_read_ops,std::memory_order_relaxed);
   current->thunk_ops.fetch_add(local_thunk_ops,std::memory_order_relaxed);
  }
- local_ref_ops=0;local_thunk_ops=0;
+ local_ref_ops=0;local_ref_read_ops=0;local_thunk_ops=0;
 }
 struct LastVersion {
  uint64_t context_id=0;
  lean_object* original=nullptr;
  lean_object* value=nullptr;
+ uint64_t generation=0;
 };
 thread_local LastVersion last_ref,last_thunk;
 lean_object* remember(LastVersion& cache,Context* ctx,lean_object* original,lean_object* value){
- cache={ctx->id,original,value};return value;
+ cache={ctx->id,original,value,ctx->ref_generation.load(std::memory_order_relaxed)};return value;
 }
 struct Bypass {bool old;Bypass():old(bypass){bypass=true;}~Bypass(){bypass=old;}};
 bool owned_here(lean_object* ref,Context* ctx){
@@ -106,27 +110,47 @@ extern "C" void gpu_smt_ref_freed(lean_object* ref){
  if(found->second.tag)--g.tag_uses[found->second.tag];
  g.owners.erase(found);
 }
-extern "C" lean_object* gpu_smt_resolve_ref(lean_object* ref){
+namespace {
+lean_object* resolve_ref(lean_object* ref,bool mutation){
  Context* ctx=current;
  if(!ctx||bypass||!ctx->enabled)return ref;
  ++local_ref_ops;
+ if(!mutation)++local_ref_read_ops;
  if(owned_here(ref,ctx))return ref;
- // Originals and versions are retained until this unique context has drained.
- // Cached pointer bits may survive cleanup, but never dereference them unless
- // the live context ID and caller-provided original both match.
- if(last_ref.context_id==ctx->id&&last_ref.original==ref)return last_ref.value;
+ // Every map key is retained through branch drain, including a read-only key.
+ // This prevents an old base-read cache entry matching a recycled address.
+ if(last_ref.context_id==ctx->id&&last_ref.original==ref){
+  if(last_ref.value!=ref)return last_ref.value;
+  if(!mutation&&last_ref.generation==ctx->ref_generation.load(std::memory_order_acquire))
+   return ref;
+ }
  std::lock_guard<std::mutex> guard(ctx->mutex);
- auto it=ctx->refs.find(ref);if(it!=ctx->refs.end())return remember(last_ref,ctx,ref,it->second);
+ auto inserted=ctx->refs.emplace(ref,ref);
+ auto it=inserted.first;
+ if(inserted.second){
+  lean_inc(ref);
+  ctx->held.push_back({ref,lean_box(0)});
+ }
+ if(!mutation||it->second!=ref)return remember(last_ref,ctx,ref,it->second);
  Bypass no_recursion;
- // Use the native primitive to acquire an owned RC token. In particular,
- // persistent/MT cells require the runtime's atomic exchange protocol.
+ // Copy only before a destructive take/set/swap. Native get acquires an owned
+ // value token with the persistent/MT cell's atomic exchange protocol.
  lean_object* value=lean_st_ref_get(ref);
  lean_object* clone=lean_st_mk_ref(value);
  lean_mark_mt(clone);
- lean_inc(ref);
- ctx->held.push_back({ref,clone});
- ctx->refs.emplace(ref,clone);
+ ctx->held.push_back({lean_box(0),clone});
+ it->second=clone;
+ ++ctx->copied_refs;
+ // Publish a changed resolution before another task may reuse a cached base.
+ ctx->ref_generation.fetch_add(1,std::memory_order_release);
  return remember(last_ref,ctx,ref,clone);
+}
+}
+extern "C" lean_object* gpu_smt_resolve_ref_read(lean_object* ref){
+ return resolve_ref(ref,false);
+}
+extern "C" lean_object* gpu_smt_resolve_ref(lean_object* ref){
+ return resolve_ref(ref,true);
 }
 extern "C" lean_object* gpu_smt_resolve_thunk(lean_object* thunk){
  Context* ctx=current;
@@ -223,7 +247,7 @@ extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
                               &&ctx->scopes.load(std::memory_order_acquire)==0;});
  }
  std::ostringstream out;
- out<<"{\"fallback\":"<<(ctx->fallback.empty()?"false":"true")<<",\"fallback_operation\":\""<<ctx->fallback<<"\",\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->refs.size()<<",\"owner_cache_tag\":"<<static_cast<unsigned>(ctx->owner_tag)
+ out<<"{\"fallback\":"<<(ctx->fallback.empty()?"false":"true")<<",\"fallback_operation\":\""<<ctx->fallback<<"\",\"ref_ops\":"<<ctx->ref_ops.load()<<",\"ref_versions\":"<<ctx->copied_refs<<",\"prepared_refs\":"<<ctx->refs.size()<<",\"ref_read_ops\":"<<ctx->ref_read_ops.load()<<",\"owner_cache_tag\":"<<static_cast<unsigned>(ctx->owner_tag)
     <<",\"thunk_ops\":"<<ctx->thunk_ops.load()<<",\"thunk_versions\":"<<ctx->thunks.size()
     <<",\"descendant_tasks\":"<<ctx->created_tasks.load()
     <<",\"drain_seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count()<<"}";

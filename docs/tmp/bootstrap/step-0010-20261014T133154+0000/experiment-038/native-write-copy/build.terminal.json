@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "-u",
+    "/workspaces/repository/bench/lean-native/build-native-branches.py",
+    "--lean-source",
+    "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+    "--libcxx-headers",
+    "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+    "--mimalloc-source",
+    "/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3",
+    "--sysroot",
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+    "--output",
+    "/tmp/gpu-smt-native-write-copy-20261016/build"
+  ],
+  "start_utc": "2026-10-16T17:15:15.601851+00:00",
+  "end_utc": "2026-10-16T17:15:53.762689+00:00",
+  "wall_seconds": 38.16086246503983,
+  "waited_children_cpu_seconds": 40.502266,
+  "exit_code": 0,
+  "overlap": "finite development build; original frozen-v1 native capture unchanged"
+}

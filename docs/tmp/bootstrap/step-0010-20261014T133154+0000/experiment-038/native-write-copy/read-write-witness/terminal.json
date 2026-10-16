@@ -1,0 +1,90 @@
+{
+  "state": "complete",
+  "methods": {
+    "private": {
+      "state": "complete",
+      "start_utc": "2026-10-16T17:17:28.764148+00:00",
+      "end_utc": "2026-10-16T17:17:33.337087+00:00",
+      "exit_code": 0,
+      "normal_eof": true,
+      "rows": [
+        {
+          "proof_id": "read-before",
+          "source_index": 0,
+          "response": {
+            "messages": [
+              {
+                "data": "Unknown identifier `liftIO`",
+                "endPos": {
+                  "column": 20,
+                  "line": 4
+                },
+                "pos": {
+                  "column": 14,
+                  "line": 4
+                },
+                "severity": "error"
+              }
+            ]
+          }
+        },
+        {
+          "proof_id": "write-private",
+          "source_index": 1,
+          "response": {
+            "messages": [
+              {
+                "data": "Unknown identifier `liftIO`",
+                "endPos": {
+                  "column": 8,
+                  "line": 4
+                },
+                "pos": {
+                  "column": 2,
+                  "line": 4
+                },
+                "severity": "error"
+              },
+              {
+                "data": "Unknown identifier `liftIO`",
+                "endPos": {
+                  "column": 20,
+                  "line": 5
+                },
+                "pos": {
+                  "column": 14,
+                  "line": 5
+                },
+                "severity": "error"
+              }
+            ]
+          }
+        },
+        {
+          "proof_id": "read-other",
+          "source_index": 2,
+          "response": {
+            "messages": [
+              {
+                "data": "Unknown identifier `liftIO`",
+                "endPos": {
+                  "column": 20,
+                  "line": 4
+                },
+                "pos": {
+                  "column": 14,
+                  "line": 4
+                },
+                "severity": "error"
+              }
+            ]
+          }
+        }
+      ],
+      "whole_seconds": 4.572956393938512,
+      "native_executable": "/tmp/gpu-smt-native-write-copy-20261016/build/private/repl",
+      "library_path": "/tmp/gpu-smt-native-write-copy-20261016/build/private:/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib:/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib/lean:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/build/lib/lean:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/Cli/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/Qq/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/aesop/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/batteries/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/importGraph/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/plausible/.lake/build/lib:/tmp/gpu-smt-goedel427-20261014/mathlib4/.lake/packages/proofwidgets/.lake/build/lib"
+    }
+  },
+  "scope": "native first-write-copy actual batch engagement, no performance comparison"
+}

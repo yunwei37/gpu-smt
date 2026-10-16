@@ -1,0 +1,7 @@
+import Mathlib                                                                  
+import Aesop                                                                    
+initialize branchProbe : IO.Ref Nat ← IO.mkRef 0                                
+                                                                                
+run_cmd do                                                                      
+  let value ← liftIO branchProbe.get                                            
+  unless value == 0 do throwError "base ref changed"                            

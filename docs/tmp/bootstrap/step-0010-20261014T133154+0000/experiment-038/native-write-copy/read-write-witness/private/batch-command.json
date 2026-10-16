@@ -1,0 +1,9 @@
+{
+  "env": 0,
+  "cmds": [
+    "\n\nrun_cmd do\n  let value ← liftIO branchProbe.get\n  unless value == 0 do throwError \"base ref changed\"",
+    "\n\nrun_cmd do\n  liftIO (branchProbe.set 7)\n  let value ← liftIO branchProbe.get\n  unless value == 7 do throwError \"private write missing\"",
+    "\n\nrun_cmd do\n  let value ← liftIO branchProbe.get\n  unless value == 0 do throwError \"base ref changed\""
+  ],
+  "mode": "naive"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "label": "compile",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/clang",
+      "-isystem",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include/clang",
+      "-isystem",
+      "/usr/include/x86_64-linux-gnu",
+      "-isystem",
+      "/usr/include",
+      "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-write-copy/native-ref-witness.c",
+      "-L/tmp/gpu-smt-native-write-copy-20261016/build/private",
+      "-lleanshared",
+      "-lgpu_smt_ref_branches",
+      "-Wl,-rpath,/tmp/gpu-smt-native-write-copy-20261016/build/private",
+      "-o",
+      "/tmp/gpu-smt-native-write-copy-20261016/native-ref-witness"
+    ],
+    "exit_code": 1,
+    "utc": "2026-10-16T17:20:05.853260+00:00"
+  }
+]

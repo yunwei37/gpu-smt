@@ -8,6 +8,7 @@ void gpu_smt_abort_fallback(const char*);
 int gpu_smt_branch_active();
 void gpu_smt_note_fallback(const char*);
 lean_object* gpu_smt_effect_error(const char*);
+lean_object* gpu_smt_resolve_ref_read(lean_object*);
 lean_object* gpu_smt_resolve_ref(lean_object*);
 lean_object* gpu_smt_resolve_thunk(lean_object*);
 void gpu_smt_ref_created(lean_object*);
