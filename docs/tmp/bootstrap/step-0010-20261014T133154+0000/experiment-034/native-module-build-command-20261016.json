@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+    "--root=/workspaces/repository/bench/lean-gpu",
+    "-c",
+    "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.c",
+    "-o",
+    "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.olean",
+    "/workspaces/repository/bench/lean-gpu/NativeMetaBatch.lean"
+  ],
+  "cwd": "/workspaces/repository",
+  "returncode": 0,
+  "scope": "Private output; native argument collector and actual MetaM ABI only. No GPU result."
+}

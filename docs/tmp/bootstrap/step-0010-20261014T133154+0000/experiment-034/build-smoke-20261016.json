@@ -1,0 +1,71 @@
+{
+  "utc": "2026-10-16T08:21:20.174442+00:00",
+  "scope": "native interface/unlinked fallback smoke only; not GPU or formal benchmark evidence",
+  "initial_reader_failure": "line-by-line JSON skipped pretty multiline error response; preserved stdout confirms identical native results, read whole response without rerun",
+  "records": [
+    {
+      "source": "example : 1 + 1 = 2 := by decide",
+      "variant": "stock",
+      "response": {
+        "env": 0
+      },
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "source": "example : 1 + 1 = 2 := by decide",
+      "variant": "unlinked",
+      "response": {
+        "env": 0
+      },
+      "stderr": "{\"event\":\"native_meta_batch_finished\",\"mode\":\"gpu\",\"provider_linked\":false,\"frontiers\":0,\"equations\":0,\"positive_answers\":0,\"consumed_answers\":0}\n",
+      "returncode": 0
+    },
+    {
+      "source": "example : False := by trivial",
+      "variant": "stock",
+      "response": {
+        "messages": [
+          {
+            "severity": "error",
+            "pos": {
+              "line": 1,
+              "column": 22
+            },
+            "endPos": {
+              "line": 1,
+              "column": 29
+            },
+            "data": "Tactic `assumption` failed\n\n\u22a2 False"
+          }
+        ],
+        "env": 0
+      },
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "source": "example : False := by trivial",
+      "variant": "unlinked",
+      "response": {
+        "messages": [
+          {
+            "severity": "error",
+            "pos": {
+              "line": 1,
+              "column": 22
+            },
+            "endPos": {
+              "line": 1,
+              "column": 29
+            },
+            "data": "Tactic `assumption` failed\n\n\u22a2 False"
+          }
+        ],
+        "env": 0
+      },
+      "stderr": "{\"event\":\"native_meta_batch_finished\",\"mode\":\"gpu\",\"provider_linked\":false,\"frontiers\":0,\"equations\":0,\"positive_answers\":0,\"consumed_answers\":0}\n",
+      "returncode": 0
+    }
+  ]
+}

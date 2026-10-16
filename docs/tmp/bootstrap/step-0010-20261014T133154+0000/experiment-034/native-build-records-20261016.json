@@ -1,0 +1,193 @@
+[
+  {
+    "name": "compile-native-meta-module",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+      "--root=/workspaces/repository/bench/lean-gpu",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.olean",
+      "/workspaces/repository/bench/lean-gpu/NativeMetaBatch.lean"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile-native-meta-module-c",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/clang",
+      "-O3",
+      "-DNDEBUG",
+      "-fPIC",
+      "-I",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.o"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "compile-native-meta-module-leanc",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+      "-O3",
+      "-DNDEBUG",
+      "-fPIC",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.o"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile-meta-batch-hook-leanc",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c11",
+      "-fPIC",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "/workspaces/repository/bench/lean-gpu/meta-batch-native.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/meta-batch-native.o"
+    ],
+    "returncode": 1
+  },
+  {
+    "name": "compile-meta-batch-hook-system-cc",
+    "command": [
+      "cc",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c11",
+      "-fPIC",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean-gpu/meta-batch-native.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/meta-batch-native.o"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile-private-original-defeq-leanc",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+      "-O3",
+      "-DNDEBUG",
+      "-fPIC",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/ExprDefEq-original.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/ExprDefEq-original.o"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile-private-repl-main",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+      "--root=/tmp/gpu-smt-meta-batch-20261016/src",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/Main.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/lib/REPL/Main.olean",
+      "/tmp/gpu-smt-meta-batch-20261016/src/REPL/Main.lean"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile-private-repl-main-c-leanc",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+      "-O3",
+      "-DNDEBUG",
+      "-fPIC",
+      "-c",
+      "/tmp/gpu-smt-meta-batch-20261016/Main.c",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/Main.o"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "link-private-meta-batch",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/clang",
+      "-o",
+      "/tmp/gpu-smt-meta-batch-20261016/repl-meta-batch",
+      "/tmp/gpu-smt-meta-batch-20261016/NativeMetaBatch.o",
+      "/tmp/gpu-smt-meta-batch-20261016/meta-batch-native.o",
+      "/tmp/gpu-smt-meta-batch-20261016/ExprDefEq-original.o",
+      "/tmp/gpu-smt-meta-batch-20261016/Main.o",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/JSON.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Frontend.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Util/Path.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Lean/ContextInfo.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Util/Pickle.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Lean/Environment.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Lean/InfoTree.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Lean/InfoTree/ToJson.c.o.export",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-gc-header-repair/.lake/build/ir/REPL/Snapshots.c.o.export",
+      "-rdynamic",
+      "-L",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib/lean",
+      "--sysroot",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+      "-L",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib",
+      "-L",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib/glibc",
+      "-lc",
+      "-lc_nonshared",
+      "-Wl,--as-needed",
+      "-l:ld.so",
+      "-Wl,--no-as-needed",
+      "-lpthread_nonshared",
+      "-Wl,--as-needed",
+      "-Wl,-Bstatic",
+      "-lgmp",
+      "-lunwind",
+      "-luv",
+      "-Wl,-Bdynamic",
+      "-Wl,--no-as-needed",
+      "-fuse-ld=lld",
+      "-Wl,--start-group",
+      "-lleancpp",
+      "-lLean",
+      "-Wl,--end-group",
+      "-lStd",
+      "-Wl,--start-group",
+      "-lInit",
+      "-lleanrt",
+      "-Wl,--end-group",
+      "-Wl,-Bstatic",
+      "-lc++",
+      "-lc++abi",
+      "-Wl,-Bdynamic",
+      "-lLake",
+      "-Wl,--as-needed",
+      "-lgmp",
+      "-luv",
+      "-lpthread",
+      "-ldl",
+      "-lrt",
+      "-Wl,--no-as-needed",
+      "-lm",
+      "-ldl",
+      "-pthread"
+    ],
+    "returncode": 0
+  }
+]
