@@ -49,6 +49,9 @@ All CSVs, native stdout/stderr, exact terminal commands, /usr/bin/time outputs, 
 
 Reuse of the existing PGO profile emits retained CFG mismatches: up to8027counts in checker dispatch and72main counts discarded. Thread clock/atomic operations, diagnostic traversal, host workers and cache warming perturb the run. No matched uninstrumented support fraction, repeated estimate or rigorous Amdahl ceiling is claimed. The original-stage patch, binary copy and logs preserve the earlier measurement condition.
 
-At the later setup checkpoint the project volume has about7.58GiBfree, after private compilation dependencies. No all-three-corpus expansion is started, no active storage/capture state is deleted and no storage boundary changes. Original captures continue in their original processes; root checks only final completion at natural checkpoints and does not spend goal turns polling healthy row counts.
+At the later setup checkpoint the project volume has about7.58GiBfree. No all-three-corpus expansion is started, no active storage/capture state is deleted and no storage boundary changes. Original captures continue in their original processes; root checks only final completion at natural checkpoints and does not spend goal turns polling healthy row counts.
 
 [Fresh independent review](first-support-review.md) distinguishes revision-specific validation from future code and whole-paper claims. Root integration/disposition is a separate record. Native and analysis implementation/publication are root-owned; canonical README/docs/paper and specialist experiment-script authors retain their original OMP file scopes.
+
+
+A later [filesystem qualification](storage-filesystem-qualification.json) distinguishes the actual Longhorn project volume from the existing owning Workspace overlay /tmp. Private compilation resides on /tmp and is not established as the cause of project-volume growth. About317GBfree on that existing filesystem removes the project-volume-only capacity objection for regenerable official large inputs; it does not acquire/build those inputs or establish a completed official benchmark. No storage boundary or persistent configuration changes.

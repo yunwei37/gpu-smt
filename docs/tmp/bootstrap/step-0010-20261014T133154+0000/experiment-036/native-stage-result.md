@@ -16,3 +16,9 @@ No GPU is invoked, no native obligations are bypassed and no complete GPU prefli
 Storage: after private dependency build and bounded159MBinflation, project volume had8.621GiBfree at11:27Z. The three declared official large inputs sum8.955GB; they cannot be expanded together with current build/capture state. The small official suite deliberately omits files >10MB. No deletion of active state, retained source results, volume resize or new storage entity is performed.
 
 [Machine-readable arithmetic](native-stage-cost-analysis.json), [native observations](native-stage-observations.json), [build command](native-stage-build-command.json), [build terminal](native-stage-build-terminal.json), [compiler discovery repair](compiler-discovery-repair.md), [input provenance](native-stage-inputs.json), [official small-suite receipt](small-suite-download.json), [official GHA artifact discovery](official-run-artifact-discovery.json).
+
+## Later filesystem qualification
+
+At11:48:52Z root checks actual df/device identities: the project is the existing67.3GBLonghorn/workspacesvolume with7.13GBfree, while the owning Workspace /tmp lives on its existing overlay filesystem with317.03GBfree. Private native builds and the159MBinflation are on the latter, not the project volume. Thus cleaning those private build intermediates would not recover project space. None is deleted, and no active/original state changes.
+
+The earlier statement about fitting all8.955GBinputs on the project volume is a project-volume-only constraint, not a demonstrated benchmark blocker. Regenerable official input/build state may use the already-available owning Workspace /tmp without a new volume, Workspace, mount or storage configuration. Source/raw results and durable provenance remain in the project repository. [Actual filesystem receipt](storage-filesystem-qualification.json).
