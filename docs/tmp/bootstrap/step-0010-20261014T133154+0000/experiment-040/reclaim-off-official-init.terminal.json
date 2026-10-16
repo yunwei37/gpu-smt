@@ -1,0 +1,29 @@
+{
+  "start_utc": "2026-10-16T21:43:17.671806+00:00",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/reclaim-off-official-init.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "cwd": "/workspaces/repository",
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/arena-source/_build/tests/init.ndjson",
+  "input_bytes": 347555345,
+  "environment_overrides": {
+    "LD_LIBRARY_PATH": "/tmp/gpu-smt-reclaiming-native-20261016:",
+    "GPU_SMT_ARENA_TRACE": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/reclaim-off-official-init.csv",
+    "GPU_SMT_RECLAIM_OFF": "1"
+  },
+  "scope": "E040 complete official Init host setup, all native checks retained; no GPU or replacement verdict",
+  "end_utc": "2026-10-16T21:43:45.631760+00:00",
+  "exit": 0,
+  "whole_seconds": 27.95990780496504
+}

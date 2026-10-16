@@ -334,3 +334,7 @@ processes reaching normalEOF/exit0. [Commands, raw outputs and result scope](tmp
 This validates that base component with existing dependencies; other overlays,
 new-machine bootstrap, full service/corpus reproduction and independent audit
 remain open. Diagnostic elapsed times are not performance evidence.
+
+## Closed reclamation constructor
+
+The separate closure-reclaiming.cu/native adapter completes the full official Init on/off host setup. Actual recycling recovers some formerly capacity-failed work, but total diagnostic cost grows27.96→1052.33s and expensive bodies mostly move to the unchanged step limit. This constructor is closed without GPUport or tuning grid; all native checks remained enabled. [Complete result/source/raw and review limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md). No prospective positive is a qualified replacement or GPUgain.

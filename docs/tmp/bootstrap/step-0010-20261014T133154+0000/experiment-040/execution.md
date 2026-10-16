@@ -11,3 +11,7 @@ run-official-init.executed.py waits for this exact on condition, records origina
 Plan and result review are self-review under current no-delegation heartbeat. Full host result review, independent audit, GPU/full-corpus comparison and every original RQ remain open. Publication checkpoints only completed source/build/plan/launch/engagement artifacts; live output is not relabeled completed raw evidence or forced into a terminal status.
 
 Source-specific allocation/retry logic is fixed before run: capacity and semantic step/frame defaults unchanged; complete-step progress distinguishes a new operation from an unchanged failed retry. Correct handling of active roots/cache IDs remains part of qualification before any future native-body replacement. No result-based parameter change, new deadline, model migration or hardware reservation is made.
+
+## Terminal update — 2026-10-16T22:15Z
+
+The preceding text is the historical active observation. Both original conditions have now completed; no restart was used. On ends21:43:17.671491Z/1052.326556s, off ends21:43:45.631760Z/27.959908s, both exit0 and native-accept all59626declarations. Full rows/costs/reason transitions are reconstructed in [result](result.md). The complete host setup is adverse and this exact constructor is closed without a GPU port. Result review is root self-review, not independent audit. No earlier live prefix is relabeled a final GPU result.

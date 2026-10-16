@@ -111,6 +111,8 @@ The [2026-10-16 full manuscript checkpoint](tmp/bootstrap/step-0010-20261014T133
 
 The complete [E039 paid-preparation characterization](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result.md) now measures actual request-driven import preparation on all5952ProofNet candidates×3 and reuses complete SMT phase costs. Observed import preparation is modest after competent reuse at this exact boundary; hits/header recurrence cannot establish expensive work saved. This is supporting RQ1 evidence, not a new scientific contract, a full-wall/GPU bound, complete RQ answer or reason to reopen closed fork variants. Broader contexts, strong native frontier and differentiated contribution remain open.
 
+The complete [E040reclamation setup](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md) closes this concrete host constructor without a device port: prospective paid support improves, but complete overhead and expensive step-limit failures remain adverse. This is a dependency decision, not a new scientific claim or RQanswer; all native checks remain and independent audit is missing. Do not turn same-capacity GC into systems novelty or another tuning grid.
+
 ## Narrative evolution
 
 ### 2026-10-07: established native branching enters the competing position

@@ -1,7 +1,6 @@
 # Evaluation: current evidence and open questions
 
-Updated2026-10-16 from published main456cab1 plus the completed original
-Full/hybrid profile and active E040implementation below. Step0010 is unfrozen BOOTSTRAP; all four
+Updated2026-10-16 from published main3212a6a plus the completed E040host setup below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
 open. Publication of completed portions is not full step or research completion.
 
@@ -227,4 +226,4 @@ GPU conclusion is allowed; ordinary CPU/library/cache/COW work cannot fill the
 full systems contribution. All four RQs, final frozen-version experiments and
 paper acceptance remain open.
 
-[E040 active native development](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/plan.md) tests reclamation of dead runtime closure state at the same arena capacity, after the closed monotonic/canonical constructor. New native code builds and is actually loaded on the full official Init; host on/off collection remains incomplete, with no returned performance/coverage/GPU conclusion. This is integrated RQ4setup, self-reviewed under no-delegation instructions; no independent audit or full RQ closure is claimed.
+[E040 complete reclamation setup](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md) closes this constructor without GPU port: full official Init59626declarations, both native-accepted, on/off1052.326556/27.959908s with all native checks retained. Prospective host support rises25314→29366bodies,6.273223→13.722346%of fixed E036bodyCPU (cross-build descriptive weights, not removable wall/GPU bound). No prior positive is lost;16971formerly capacity-failed bodies hit unchanged step limits and carry58.846545%of that reference weight. Actual1034929collections/free-cell reuse do not fix the expensive-computation boundary. Complete raw/recomputation and explicitly non-independent self-review remain; no standalone research value, RQ closure, GPU gain or independent audit is claimed. Do not start another arena/cache/step grid or port this interpreter on count gains alone.
