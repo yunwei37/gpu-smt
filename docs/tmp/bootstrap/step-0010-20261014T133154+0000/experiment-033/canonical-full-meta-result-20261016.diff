@@ -1,0 +1,66 @@
+--- docs/implementation.md
++++ docs/implementation.md
+@@ -142,8 +142,11 @@
+ flags and per-thread shared aggregates preserve original argument ownership;
+ no live binary, SDK or verifier state is replaced. Static-link wrapping may
+ miss same-object and runtime-loaded DSO paths, and timed outer calls include
+-instrumentation. The full source capture is running; neither counts nor
+-timings are a GPU result. [Observer method and limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/plan.md).
++instrumentation. The full29750-source capture now finishes:345thread files,
++three censored outer calls, and76.39%of observed completed outer threadCPU in
++entry classes carrying metavariables. This is not wholeCPU/GPU eligibility or
++a bound. [Full result/source decision](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/result-review.md).
++Neither counts nor timings are a GPU result. [Observer method and limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/plan.md).
+ 
+ ## RTX5090 actual device boundary
+ 
+--- docs/evaluation.md
++++ docs/evaluation.md
+@@ -1,6 +1,6 @@
+ # Evaluation: current evidence and open questions
+ 
+-Current analyzed frontier: 2026-10-16T06:27:42.786878+00:00. Root implements, runs, analyzes and writes
++Current analyzed frontier: 2026-10-16T07:45:59.725269+00:00. Root implements, runs, analyzes and writes
+ in the retained gpu-smt Workspace on main. BOOTSTRAP remains unfrozen; all four
+ RQs and the full Lean-first/SMT/RTX5090/paper objective remain open.
+ Last published head is fe13c12; unfinished Step0010 is uncommitted/unpushed.
+@@ -190,21 +190,27 @@
+ Existing Meta caches and these scope limits do not justify blind generic caching.
+ [Complete screening](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/reuse-screening-result-review.md).
+ 
+-## Supporting Meta operand/cost inventory in progress
+-
+-E033's private static-link wrapper reads borrowed cachedExpr flags and records
+-outer-call instrumented threadCPU. The full29,750source acquisition remains
+-running. Same-object/private/runtime-loaded DSO entries may bypass observation;
+-flags/costs do not prove context independence or GPU eligibility. Three-source
+-preflight proves engagement only; its slowdown/coverage limits remain.
+-[Plan and ownership](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/plan.md),
+-[actual preflight](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/preflight-review.md).
+-No partial class distribution is a final result or GPU opportunity bound.
++## Complete supporting Meta operand/cost observation
++
++E033 returns all29750original source bytes/order/indices, driver0. Existing
++analysis qualifies345thread files with0parse/clock errors and no live observed
++native process. Three terminated outer calls/84nested entries remain censored.
++Of observed completed outer instrumented threadCPU,76.39%has expression or
++universe metavariable flags at entry;18.01%has no variable/level-parameter flags.
++These overlapping descriptors are not wholeCPU fractions, parallel readiness,
++GPU eligibility or an Amdahl bound. Static-link/DSO/observer bias remains.
++Existing full E032sampling places instantiate_mvars_fn::visit at1.93%Children;
++metavariable prevalence does not establish a costly substitution hotspot.
++[Full actual results, source and root decision](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-033/result-review.md)
++retain counters, incomplete work, source qualification and reader-path repair.
+ 
+ ## Next decision
+ 
+-Finish the existing admitted CPU/formal/Meta acquisitions and review whole
+-results before selecting a materially different expensive parallel GPU mechanism.
++Keep existing CPU/formal acquisitions running without another plain CPU tuning
++matrix. Main work is a real Lean/GPU implementation: qualify independent native
++normalization/comparison work and its state/representation boundary, then compare
++complete device cost to the same-algorithm and competent compiled CPU routes.
++The new full Meta observation is selection evidence, not an implemented mechanism.
+ Do not add another failed scalar/import/placement microvariant.
+ Complete actual preparation/service streams, equal-resource frontier,
+ native artifact/cancellation behavior, strong competitors in both families,

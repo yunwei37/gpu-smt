@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-15T21:05:59.225035+00:00",
+  "perf_returncode": 0,
+  "original_malformed_bytes": 71953780,
+  "child_stdout_bytes": 71953741,
+  "trailing_empty_gzip_bytes": 39,
+  "preserved_original": "/workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/goedel427-compiled-profile/inclusive-flat-subprocess-stdout-original.bin",
+  "preserved_original_direct_byte_comparison": true,
+  "recovered_output": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/inclusive-flat.tsv.gz",
+  "recovered_gzip_bytes": 779651,
+  "lossless_decompression_matches_exact_child_stdout": true,
+  "cause": "subprocess stdout used gzip.GzipFile.fileno(), bypassing compression; buffered empty gzip member appended after complete plaintext stdout.",
+  "recovery": "Preserved the entire original file, validated the empty trailing gzip member, gzip-compressed the exact preceding bytes with Python write().",
+  "scope": "Derived report packaging only; perf finished return0. No native/profile rerun, raw-sample modification, truncation of actual child stdout, filtering, collector or runtime change."
+}

@@ -1,0 +1,55 @@
+{
+  "label": "goedel427-compiled-profile",
+  "dataset": "goedel427",
+  "method": "compiled",
+  "profile": true,
+  "valid_complete": true,
+  "returned": 29750,
+  "expected": 29750,
+  "whole_seconds": 19542.261591159,
+  "terminal_attempts_per_second": 1.522341713686763,
+  "counts": {
+    "complete": 27318,
+    "rejected": 2376,
+    "operational": 56
+  },
+  "request_latency_seconds": {
+    "n": 29750,
+    "median": 0.8469132985,
+    "p95": 7.271132563,
+    "p99": 27.199499907
+  },
+  "source_issues": [],
+  "server_returncode": -15,
+  "resources": {
+    "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+    "begin_monotonic_ns": 492470054199429,
+    "end_monotonic_ns": 512011302531027,
+    "sample_interval_ns": 1000000000,
+    "samples": 9590,
+    "incomplete_samples": 30,
+    "sampled_peak_total_pss_kib": 6955610,
+    "sampled_peak_total_private_kib": 5944440,
+    "whole_process_tree_cpu_seconds": 19439.725954999998,
+    "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+  },
+  "command": {
+    "command": [
+      "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+      "-m",
+      "server"
+    ],
+    "pid": 1828338,
+    "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+    "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+    "method": "compiled",
+    "affinity": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+    "api": "/verify, four requests in flight, privatePort8012"
+  }
+}

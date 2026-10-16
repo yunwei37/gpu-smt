@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-10-15T16:27:51.735223+00:00",
+  "command": [
+    "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+    "report",
+    "--stdio",
+    "--children",
+    "--call-graph",
+    "none",
+    "--no-inline",
+    "--percent-limit",
+    "0",
+    "--show-nr-samples",
+    "--show-total-period",
+    "--field-separator",
+    "\t",
+    "--sort",
+    "comm,dso,symbol",
+    "-i",
+    "/tmp/gpu-smt-native-cpu-perf-20261015/raw-profiles/goedel427-compiled-profile/native-1828338-49247006.data"
+  ],
+  "report": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/inclusive-flat.tsv.gz",
+  "stderr": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/inclusive-flat.stderr.txt",
+  "scope": "Same closed full raw; standard perf inclusive/leaf display, no inline expansion; no new native experiment; inclusive fractions overlap.",
+  "returncode": 0,
+  "completed_utc": "2026-10-15T21:02:46.950916+00:00"
+}

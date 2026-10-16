@@ -1,0 +1,264 @@
+{
+  "observed_utc": "2026-10-15T10:13:02.435062+00:00",
+  "steps": [
+    {
+      "command": [
+        "apt-get",
+        "download",
+        "linux-perf=6.12.111-1"
+      ],
+      "returncode": 0,
+      "stdout": "Get:1 http://deb.debian.org/debian-security trixie-security/main amd64 linux-perf amd64 6.12.111-1 [4993 kB]\nFetched 4993 kB in 0s (11.4 MB/s)\n",
+      "stderr": "W: Download is performed unsandboxed as root as file '/tmp/gpu-smt-native-cpu-perf-20261015/linux-perf_6.12.111-1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/linux-perf_6.12.111-1_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ldd",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007888703a3000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000078886f90a000)\n\tlibopencsd_c_api.so.1 => not found\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000078886f8ea000)\n\tlibelf.so.1 => /lib/x86_64-linux-gnu/libelf.so.1 (0x000078886f8cc000)\n\tlibdebuginfod.so.1 => not found\n\tlibdw.so.1 => not found\n\tlibunwind-x86_64.so.8 => /lib/x86_64-linux-gnu/libunwind-x86_64.so.8 (0x000078886f8ab000)\n\tlibunwind.so.8 => /lib/x86_64-linux-gnu/libunwind.so.8 (0x000078886f88e000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x000078886f85d000)\n\tlibslang.so.2 => not found\n\tlibperl.so.5.40 => /lib/x86_64-linux-gnu/libperl.so.5.40 (0x000078886f492000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000078886f29e000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007888703a6000)\n\tlibpython3.13.so.1.0 => /lib/x86_64-linux-gnu/libpython3.13.so.1.0 (0x000078886eaff000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000078886e899000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000078886e7cf000)\n\tlibnuma.so.1 => /lib/x86_64-linux-gnu/libnuma.so.1 (0x000078886e7be000)\n\tlibbabeltrace-ctf.so.1 => not found\n\tlibtraceevent.so.1 => not found\n\tlibcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1 (0x000078886e782000)\n\tlibexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x000078886e754000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000078886e725000)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libopencsd1"
+      ],
+      "returncode": 0,
+      "stdout": "libopencsd1:\n  Installed: (none)\n  Candidate: 1.5.5-1\n  Version table:\n     1.5.5-1 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libopencsd1"
+      ],
+      "returncode": 0,
+      "stdout": "libopencsd1:\n  Installed: (none)\n  Candidate: 1.5.5-1\n  Version table:\n     1.5.5-1 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libdebuginfod1t64"
+      ],
+      "returncode": 0,
+      "stdout": "libdebuginfod1t64:\n  Installed: (none)\n  Candidate: 0.192-4\n  Version table:\n     0.192-4 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libdw1t64"
+      ],
+      "returncode": 0,
+      "stdout": "libdw1t64:\n  Installed: (none)\n  Candidate: 0.192-4\n  Version table:\n     0.192-4 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libslang2"
+      ],
+      "returncode": 0,
+      "stdout": "libslang2:\n  Installed: (none)\n  Candidate: 2.3.3-5+b2\n  Version table:\n     2.3.3-5+b2 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libbabeltrace1"
+      ],
+      "returncode": 0,
+      "stdout": "libbabeltrace1:\n  Installed: (none)\n  Candidate: 1.5.11-4+b2\n  Version table:\n     1.5.11-4+b2 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libtraceevent1"
+      ],
+      "returncode": 0,
+      "stdout": "libtraceevent1:\n  Installed: (none)\n  Candidate: 1:1.8.4-2\n  Version table:\n     1:1.8.4-2 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-get",
+        "download",
+        "libopencsd1=1.5.5-1",
+        "libdebuginfod1t64=0.192-4",
+        "libdw1t64=0.192-4",
+        "libslang2=2.3.3-5+b2",
+        "libbabeltrace1=1.5.11-4+b2",
+        "libtraceevent1=1:1.8.4-2"
+      ],
+      "returncode": 0,
+      "stdout": "Get:1 http://deb.debian.org/debian trixie/main amd64 libbabeltrace1 amd64 1.5.11-4+b2 [176 kB]\nGet:2 http://deb.debian.org/debian trixie/main amd64 libdebuginfod1t64 amd64 0.192-4 [32.4 kB]\nGet:3 http://deb.debian.org/debian trixie/main amd64 libdw1t64 amd64 0.192-4 [255 kB]\nGet:4 http://deb.debian.org/debian trixie/main amd64 libopencsd1 amd64 1.5.5-1 [197 kB]\nGet:5 http://deb.debian.org/debian trixie/main amd64 libtraceevent1 amd64 1:1.8.4-2 [57.3 kB]\nGet:6 http://deb.debian.org/debian trixie/main amd64 libslang2 amd64 2.3.3-5+b2 [549 kB]\nFetched 1267 kB in 0s (4828 kB/s)\n",
+      "stderr": "W: Download is performed unsandboxed as root as file '/tmp/gpu-smt-native-cpu-perf-20261015/libbabeltrace1_1.5.11-4+b2_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libopencsd1_1.5.5-1_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libdebuginfod1t64_0.192-4_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libdw1t64_0.192-4_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libslang2_2.3.3-5+b2_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libbabeltrace1_1.5.11-4+b2_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libtraceevent1_1%3a1.8.4-2_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ldd",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x00007b5fa941c000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007b5fa8983000)\n\tlibopencsd_c_api.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libopencsd_c_api.so.1 (0x00007b5fa8970000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007b5fa8950000)\n\tlibelf.so.1 => /lib/x86_64-linux-gnu/libelf.so.1 (0x00007b5fa8932000)\n\tlibdebuginfod.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libdebuginfod.so.1 (0x00007b5fa8923000)\n\tlibdw.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libdw.so.1 (0x00007b5fa8869000)\n\tlibunwind-x86_64.so.8 => /lib/x86_64-linux-gnu/libunwind-x86_64.so.8 (0x00007b5fa884a000)\n\tlibunwind.so.8 => /lib/x86_64-linux-gnu/libunwind.so.8 (0x00007b5fa882d000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007b5fa87fc000)\n\tlibslang.so.2 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libslang.so.2 (0x00007b5fa844a000)\n\tlibperl.so.5.40 => /lib/x86_64-linux-gnu/libperl.so.5.40 (0x00007b5fa8081000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007b5fa7e8d000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b5fa941f000)\n\tlibpython3.13.so.1.0 => /lib/x86_64-linux-gnu/libpython3.13.so.1.0 (0x00007b5fa76ee000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007b5fa7488000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007b5fa73be000)\n\tlibnuma.so.1 => /lib/x86_64-linux-gnu/libnuma.so.1 (0x00007b5fa73ad000)\n\tlibbabeltrace-ctf.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libbabeltrace-ctf.so.1 (0x00007b5fa7358000)\n\tlibtraceevent.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libtraceevent.so.1 (0x00007b5fa7337000)\n\tlibopencsd.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libopencsd.so.1 (0x00007b5fa7296000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007b5fa7269000)\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x00007b5fa717b000)\n\tlibjson-c.so.5 => not found\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x00007b5fa7168000)\n\tlibcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1 (0x00007b5fa712c000)\n\tlibexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x00007b5fa70fe000)\n\tlibbabeltrace.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libbabeltrace.so.1 (0x00007b5fa70ed000)\n\tlibuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x00007b5fa70e3000)\n\tlibglib-2.0.so.0 => /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x00007b5fa6f8a000)\n\tlibnghttp3.so.9 => /lib/x86_64-linux-gnu/libnghttp3.so.9 (0x00007b5fa6f60000)\n\tlibngtcp2_crypto_gnutls.so.8 => /lib/x86_64-linux-gnu/libngtcp2_crypto_gnutls.so.8 (0x00007b5fa6f54000)\n\tlibngtcp2.so.16 => /lib/x86_64-linux-gnu/libngtcp2.so.16 (0x00007b5fa6f07000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x00007b5fa6ed5000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007b5fa6ea2000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x00007b5fa6e84000)\n\tlibssh2.so.1 => /lib/x86_64-linux-gnu/libssh2.so.1 (0x00007b5fa6e3b000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x00007b5fa6e27000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007b5fa6dcf000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007b5fa6ba6000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007b5fa6b50000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x00007b5fa6aec000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x00007b5fa6adb000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x00007b5fa6acd000)\n\tlibatomic.so.1 => /lib/x86_64-linux-gnu/libatomic.so.1 (0x00007b5fa6ac1000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007b5fa6a12000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x00007b5fa682a000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007b5fa67df000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007b5fa6755000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007b5fa6119000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007b5fa5f78000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007b5fa5f62000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007b5fa5e8a000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007b5fa5e5c000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007b5fa5e54000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007b5fa5e46000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007b5fa5e2a000)\n\tlibssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x00007b5fa5d1c000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x00007b5fa5cf9000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007b5fa5cea000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007b5fa5ce3000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007b5fa5cd1000)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-cache",
+        "policy",
+        "libjson-c5"
+      ],
+      "returncode": 0,
+      "stdout": "libjson-c5:\n  Installed: (none)\n  Candidate: 0.18+ds-1\n  Version table:\n     0.18+ds-1 500\n        500 http://deb.debian.org/debian trixie/main amd64 Packages\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "apt-get",
+        "download",
+        "libjson-c5=0.18+ds-1"
+      ],
+      "returncode": 0,
+      "stdout": "Get:1 http://deb.debian.org/debian trixie/main amd64 libjson-c5 amd64 0.18+ds-1 [46.0 kB]\nFetched 46.0 kB in 0s (376 kB/s)\n",
+      "stderr": "W: Download is performed unsandboxed as root as file '/tmp/gpu-smt-native-cpu-perf-20261015/libjson-c5_0.18+ds-1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\n"
+    },
+    {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/libjson-c5_0.18+ds-1_amd64.deb",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ldd",
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf"
+      ],
+      "returncode": 0,
+      "stdout": "\tlinux-vdso.so.1 (0x000079358cd44000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x000079358c2ab000)\n\tlibopencsd_c_api.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libopencsd_c_api.so.1 (0x000079358c298000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x000079358c278000)\n\tlibelf.so.1 => /lib/x86_64-linux-gnu/libelf.so.1 (0x000079358c25a000)\n\tlibdebuginfod.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libdebuginfod.so.1 (0x000079358c24b000)\n\tlibdw.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libdw.so.1 (0x000079358c191000)\n\tlibunwind-x86_64.so.8 => /lib/x86_64-linux-gnu/libunwind-x86_64.so.8 (0x000079358c172000)\n\tlibunwind.so.8 => /lib/x86_64-linux-gnu/libunwind.so.8 (0x000079358c155000)\n\tliblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x000079358c124000)\n\tlibslang.so.2 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libslang.so.2 (0x000079358bd72000)\n\tlibperl.so.5.40 => /lib/x86_64-linux-gnu/libperl.so.5.40 (0x000079358b9a9000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000079358b7b5000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000079358cd47000)\n\tlibpython3.13.so.1.0 => /lib/x86_64-linux-gnu/libpython3.13.so.1.0 (0x000079358b016000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x000079358adb0000)\n\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x000079358ace6000)\n\tlibnuma.so.1 => /lib/x86_64-linux-gnu/libnuma.so.1 (0x000079358acd5000)\n\tlibbabeltrace-ctf.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libbabeltrace-ctf.so.1 (0x000079358ac80000)\n\tlibtraceevent.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libtraceevent.so.1 (0x000079358ac5f000)\n\tlibopencsd.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libopencsd.so.1 (0x000079358abbe000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x000079358ab91000)\n\tlibcurl-gnutls.so.4 => /lib/x86_64-linux-gnu/libcurl-gnutls.so.4 (0x000079358aaa3000)\n\tlibjson-c.so.5 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libjson-c.so.5 (0x000079358aa8f000)\n\tlibbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x000079358aa7c000)\n\tlibcrypt.so.1 => /lib/x86_64-linux-gnu/libcrypt.so.1 (0x000079358aa40000)\n\tlibexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x000079358aa12000)\n\tlibbabeltrace.so.1 => /tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/lib/x86_64-linux-gnu/libbabeltrace.so.1 (0x000079358aa01000)\n\tlibuuid.so.1 => /lib/x86_64-linux-gnu/libuuid.so.1 (0x000079358a9f7000)\n\tlibglib-2.0.so.0 => /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x000079358a89e000)\n\tlibnghttp3.so.9 => /lib/x86_64-linux-gnu/libnghttp3.so.9 (0x000079358a874000)\n\tlibngtcp2_crypto_gnutls.so.8 => /lib/x86_64-linux-gnu/libngtcp2_crypto_gnutls.so.8 (0x000079358a868000)\n\tlibngtcp2.so.16 => /lib/x86_64-linux-gnu/libngtcp2.so.16 (0x000079358a81b000)\n\tlibnghttp2.so.14 => /lib/x86_64-linux-gnu/libnghttp2.so.14 (0x000079358a7e9000)\n\tlibidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x000079358a7b6000)\n\tlibrtmp.so.1 => /lib/x86_64-linux-gnu/librtmp.so.1 (0x000079358a798000)\n\tlibssh2.so.1 => /lib/x86_64-linux-gnu/libssh2.so.1 (0x000079358a74f000)\n\tlibpsl.so.5 => /lib/x86_64-linux-gnu/libpsl.so.5 (0x000079358a73b000)\n\tlibnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x000079358a6e3000)\n\tlibgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x000079358a4ba000)\n\tlibgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x000079358a464000)\n\tlibldap.so.2 => /lib/x86_64-linux-gnu/libldap.so.2 (0x000079358a400000)\n\tliblber.so.2 => /lib/x86_64-linux-gnu/liblber.so.2 (0x000079358a3ef000)\n\tlibbrotlidec.so.1 => /lib/x86_64-linux-gnu/libbrotlidec.so.1 (0x000079358a3e1000)\n\tlibatomic.so.1 => /lib/x86_64-linux-gnu/libatomic.so.1 (0x000079358a3d5000)\n\tlibpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x000079358a326000)\n\tlibunistring.so.5 => /lib/x86_64-linux-gnu/libunistring.so.5 (0x000079358a13e000)\n\tlibhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x000079358a0f3000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x000079358a069000)\n\tlibcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x0000793589a2d000)\n\tlibp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x000079358988c000)\n\tlibtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x0000793589876000)\n\tlibkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x000079358979e000)\n\tlibk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x0000793589770000)\n\tlibcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x0000793589768000)\n\tlibkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x000079358975a000)\n\tlibsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x000079358973e000)\n\tlibssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x0000793589630000)\n\tlibbrotlicommon.so.1 => /lib/x86_64-linux-gnu/libbrotlicommon.so.1 (0x000079358960d000)\n\tlibffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007935895fe000)\n\tlibkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007935895f7000)\n\tlibresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007935895e5000)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+        "version",
+        "--build-options"
+      ],
+      "returncode": 0,
+      "stdout": "perf version 6.12.111\n                   aio: [ on  ]  # HAVE_AIO_SUPPORT\n                   bpf: [ on  ]  # HAVE_LIBBPF_SUPPORT\n         bpf_skeletons: [ OFF ]  # HAVE_BPF_SKEL\n            debuginfod: [ on  ]  # HAVE_DEBUGINFOD_SUPPORT\n                 dwarf: [ on  ]  # HAVE_DWARF_SUPPORT\n    dwarf_getlocations: [ on  ]  # HAVE_DWARF_GETLOCATIONS_SUPPORT\n          dwarf-unwind: [ on  ]  # HAVE_DWARF_UNWIND_SUPPORT\n              auxtrace: [ on  ]  # HAVE_AUXTRACE_SUPPORT\n              libaudit: [ OFF ]  # HAVE_LIBAUDIT_SUPPORT\n                libbfd: [ OFF ]  # HAVE_LIBBFD_SUPPORT\n           libcapstone: [ OFF ]  # HAVE_LIBCAPSTONE_SUPPORT\n             libcrypto: [ OFF ]  # HAVE_LIBCRYPTO_SUPPORT\n    libdw-dwarf-unwind: [ on  ]  # HAVE_DWARF_SUPPORT\n                libelf: [ on  ]  # HAVE_LIBELF_SUPPORT\n               libnuma: [ on  ]  # HAVE_LIBNUMA_SUPPORT\n            libopencsd: [ on  ]  # HAVE_CSTRACE_SUPPORT\n               libperl: [ on  ]  # HAVE_LIBPERL_SUPPORT\n               libpfm4: [ OFF ]  # HAVE_LIBPFM\n             libpython: [ on  ]  # HAVE_LIBPYTHON_SUPPORT\n              libslang: [ on  ]  # HAVE_SLANG_SUPPORT\n         libtraceevent: [ on  ]  # HAVE_LIBTRACEEVENT\n             libunwind: [ on  ]  # HAVE_LIBUNWIND_SUPPORT\n                  lzma: [ on  ]  # HAVE_LZMA_SUPPORT\nnuma_num_possible_cpus: [ on  ]  # HAVE_LIBNUMA_SUPPORT\n         syscall_table: [ on  ]  # HAVE_SYSCALL_TABLE_SUPPORT\n                  zlib: [ on  ]  # HAVE_ZLIB_SUPPORT\n                  zstd: [ on  ]  # HAVE_ZSTD_SUPPORT\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+        "stat",
+        "-e",
+        "cpu-clock:u",
+        "--",
+        "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)\n",
+      "stderr": "\n Performance counter stats for '/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean --version':\n\n             42.39 msec cpu-clock:u                      #    0.960 CPUs utilized             \n\n       0.044157914 seconds time elapsed\n\n       0.039261000 seconds user\n       0.005033000 seconds sys\n\n\n"
+    }
+  ],
+  "dependency_only_availability_probe": {
+    "returncode": 0,
+    "stdout": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)\n",
+    "stderr": "\n Performance counter stats for '/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean --version':\n\n             42.39 msec cpu-clock:u                      #    0.960 CPUs utilized             \n\n       0.044157914 seconds time elapsed\n\n       0.039261000 seconds user\n       0.005033000 seconds sys\n\n\n"
+  }
+}

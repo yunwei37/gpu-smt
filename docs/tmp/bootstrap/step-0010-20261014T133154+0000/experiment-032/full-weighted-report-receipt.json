@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-15T16:20:47.624201+00:00",
+  "report_command": [
+    "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+    "report",
+    "--stdio",
+    "--no-children",
+    "--call-graph",
+    "none",
+    "--percent-limit",
+    "0",
+    "--show-nr-samples",
+    "--show-total-period",
+    "--field-separator",
+    "\t",
+    "--sort",
+    "comm,pid,dso,symbol",
+    "-i",
+    "/tmp/gpu-smt-native-cpu-perf-20261015/raw-profiles/goedel427-compiled-profile/native-1828338-49247006.data"
+  ],
+  "report_returncode": 0,
+  "source_raw": "/tmp/gpu-smt-native-cpu-perf-20261015/raw-profiles/goedel427-compiled-profile/native-1828338-49247006.data",
+  "report": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/weighted-flat.tsv.gz",
+  "stderr": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/weighted-flat.stderr.txt",
+  "summary_returncode": 0,
+  "summary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/weighted.summary.json",
+  "source_qualification": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/full-source-qualification.json",
+  "completed_utc": "2026-10-15T16:20:54.095815+00:00"
+}

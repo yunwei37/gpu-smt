@@ -1,0 +1,76 @@
+{
+  "utc": "2026-10-16T02:27:02.079678+00:00",
+  "question": "Which import-entry weights are actually present in the complete competent warm compiled CPU capture?",
+  "input": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/native-cpu-sampling-full1/goedel427-compiled-profile-sampling/inclusive.symbol-rows.jsonl.gz",
+  "native_source_population": 29750,
+  "selected_exact_symbol_rows": [
+    {
+      "children_percent_display": 0.36,
+      "self_percent_display": 0.0,
+      "self_samples": 0,
+      "self_period": 0,
+      "comm": "native-repl",
+      "dso": "native-repl",
+      "symbol": "[.] l_Lean_importModules"
+    },
+    {
+      "children_percent_display": 0.36,
+      "self_percent_display": 0.0,
+      "self_samples": 0,
+      "self_period": 0,
+      "comm": "native-repl",
+      "dso": "native-repl",
+      "symbol": "[.] l_Lean_Elab_processHeaderCore"
+    },
+    {
+      "children_percent_display": 0.33,
+      "self_percent_display": 0.0,
+      "self_samples": 0,
+      "self_period": 0,
+      "comm": "native-repl",
+      "dso": "native-repl",
+      "symbol": "[.] l_Lean_finalizeImport"
+    },
+    {
+      "children_percent_display": 0.03,
+      "self_percent_display": 0.0,
+      "self_samples": 0,
+      "self_period": 0,
+      "comm": "native-repl",
+      "dso": "native-repl",
+      "symbol": "[.] l_Lean_importModulesCore"
+    }
+  ],
+  "denominator": "all recorded cpu-clock:u period 54563262080630; Children displays rounded, inclusive and overlapping",
+  "sources": [
+    {
+      "local_path": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/src/lean/Lean/Environment.lean",
+      "version": "v4.27.0",
+      "upstream_url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Environment.lean",
+      "lines": [
+        2316,
+        2327
+      ],
+      "excerpt": "def importModules (imports : Array Import) (opts : Options) (trustLevel : UInt32 := 0)\n    (plugins : Array System.FilePath := #[]) (leakEnv := false) (loadExts := false)\n    (level := OLeanLevel.private) (arts : NameMap ImportArtifacts := {})\n    : IO Environment := profileitIO \"import\" opts do\n  for imp in imports do\n    if imp.module matches .anonymous then\n      throw <| IO.userError \"import failed, trying to import module with anonymous name\"\n  withImporting do\n    plugins.forM Lean.loadPlugin\n    let (_, s) \u2190 importModulesCore (globalLevel := level) imports arts |>.run\n    finalizeImport (leakEnv := leakEnv) (loadExts := loadExts) (level := level)\n      s imports opts trustLevel",
+      "ordinary_primary_retrieval": {
+        "http_status": 200,
+        "matches_installed_source_bytes": true
+      }
+    },
+    {
+      "local_path": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/src/lean/Lean/Elab/Import.lean",
+      "version": "v4.27.0",
+      "upstream_url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Elab/Import.lean",
+      "lines": [
+        45,
+        69
+      ],
+      "excerpt": "def processHeaderCore\n    (startPos : String.Pos.Raw) (imports : Array Import) (isModule : Bool)\n    (opts : Options) (messages : MessageLog) (inputCtx : Parser.InputContext)\n    (trustLevel : UInt32 := 0) (plugins : Array System.FilePath := #[]) (leakEnv := false)\n    (mainModule := Name.anonymous) (package? : Option PkgId := none)\n    (arts : NameMap ImportArtifacts := {})\n    : IO (Environment \u00d7 MessageLog) := do\n  let level := if isModule then\n    if Elab.inServer.get opts then\n      .server\n    else\n      .exported\n  else\n    .private\n  let (env, messages) \u2190 try\n    let env \u2190\n      importModules (leakEnv := leakEnv) (loadExts := true) (level := level)\n        imports opts trustLevel plugins arts\n    pure (env, messages)\n  catch e =>\n    let env \u2190 mkEmptyEnvironment\n    let pos := inputCtx.fileMap.toPosition startPos\n    pure (env, messages.add { fileName := inputCtx.fileName, data := toString e, pos := pos })\n  let env := env.setMainModule mainModule |>.setModulePackage package?\n  return (env, messages)",
+      "ordinary_primary_retrieval": {
+        "http_status": 200,
+        "matches_installed_source_bytes": true
+      }
+    }
+  ],
+  "interpretation": "The measured importModules/processHeaderCore entries display0.36% on this complete warm compiled capture. This supports prioritizing residual candidate checking over another import-only optimization, alongside existing reuse counts. It is not total preparation CPU, elapsed I/O/load cost, missed-frame bound, cold-import saving, GPU opportunity/Amdahl bound, another route or all-RQ evidence. Initialization outside capture, dynamic/lazy loading and sampling/unwind/attach gaps remain."
+}

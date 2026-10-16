@@ -1,0 +1,177 @@
+{
+  "utc": "2026-10-15T15:22:07.579803+00:00",
+  "source_report": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted-flat.tsv.gz",
+  "exclusive_leaf_rows": 964,
+  "samples": 4038,
+  "summed_leaf_period": 40787878380,
+  "reported_event_period_approx": 40787878380,
+  "leaf_period_matches_reported_event_period": true,
+  "reported_samples_label": "Samples: 4K of event 'cpu-clock:u'",
+  "reported_lost_samples": "0",
+  "native_comm": "native-repl",
+  "native_samples": 3852,
+  "native_period": 38909090520,
+  "native_recorded_period_fraction": 0.9539375928677564,
+  "unknown_dso_period": 0,
+  "unknown_symbol_period": 1525252510,
+  "native_unknown_dso_period": 0,
+  "native_unknown_symbol_period": 969696960,
+  "by_comm": [
+    {
+      "name": "native-repl",
+      "samples": 3852,
+      "period": 38909090520,
+      "recorded_period_fraction": 0.9539375928677564
+    },
+    {
+      "name": "python",
+      "samples": 94,
+      "period": 949494940,
+      "recorded_period_fraction": 0.023278850916295196
+    },
+    {
+      "name": "lake",
+      "samples": 90,
+      "period": 909090900,
+      "recorded_period_fraction": 0.022288261515601784
+    },
+    {
+      "name": "git",
+      "samples": 2,
+      "period": 20202020,
+      "recorded_period_fraction": 0.0004952947003467063
+    }
+  ],
+  "by_tid_comm": [
+    {
+      "name": "1819077:native-repl",
+      "samples": 2131,
+      "period": 21525252310,
+      "recorded_period_fraction": 0.5277365032194156
+    },
+    {
+      "name": "1819059:native-repl",
+      "samples": 451,
+      "period": 4555555510,
+      "recorded_period_fraction": 0.11168895492818227
+    },
+    {
+      "name": "1818924:native-repl",
+      "samples": 405,
+      "period": 4090909050,
+      "recorded_period_fraction": 0.10029717682020803
+    },
+    {
+      "name": "1818927:native-repl",
+      "samples": 392,
+      "period": 3959595920,
+      "recorded_period_fraction": 0.09707776126795443
+    },
+    {
+      "name": "1818883:native-repl",
+      "samples": 391,
+      "period": 3949494910,
+      "recorded_period_fraction": 0.09683011391778108
+    },
+    {
+      "name": "1818784:python",
+      "samples": 94,
+      "period": 949494940,
+      "recorded_period_fraction": 0.023278850916295196
+    },
+    {
+      "name": "1819058:native-repl",
+      "samples": 81,
+      "period": 818181810,
+      "recorded_period_fraction": 0.020059435364041606
+    },
+    {
+      "name": "1818828:lake",
+      "samples": 32,
+      "period": 323232320,
+      "recorded_period_fraction": 0.0079247152055473
+    },
+    {
+      "name": "1818824:lake",
+      "samples": 30,
+      "period": 303030300,
+      "recorded_period_fraction": 0.007429420505200594
+    },
+    {
+      "name": "1818826:lake",
+      "samples": 28,
+      "period": 282828280,
+      "recorded_period_fraction": 0.006934125804853888
+    },
+    {
+      "name": "1818856:git",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00024764735017335313
+    },
+    {
+      "name": "1818911:git",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00024764735017335313
+    },
+    {
+      "name": "1819057:native-repl",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00024764735017335313
+    }
+  ],
+  "native_by_dso": [
+    {
+      "name": "native-repl",
+      "samples": 3076,
+      "period": 31070706760,
+      "recorded_period_fraction": 0.7985462097611631
+    },
+    {
+      "name": "libc.so.6",
+      "samples": 464,
+      "period": 4686868640,
+      "recorded_period_fraction": 0.12045690550363447
+    },
+    {
+      "name": "mathlib_Mathlib_Tactic_Linarith_Oracle_SimplexAlgorithm.so",
+      "samples": 241,
+      "period": 2434343410,
+      "recorded_period_fraction": 0.06256490134994808
+    },
+    {
+      "name": "ld-linux-x86-64.so.2",
+      "samples": 61,
+      "period": 616161610,
+      "recorded_period_fraction": 0.015835929387331256
+    },
+    {
+      "name": "libbatteries_Batteries.so",
+      "samples": 7,
+      "period": 70707070,
+      "recorded_period_fraction": 0.0018172377985462098
+    },
+    {
+      "name": "mathlib_Mathlib_Lean_Expr_Basic.so",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00025960539979231567
+    },
+    {
+      "name": "mathlib_Mathlib_Data_Ineq.so",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00025960539979231567
+    },
+    {
+      "name": "mathlib_Mathlib_Tactic_Linarith_Verification.so",
+      "samples": 1,
+      "period": 10101010,
+      "recorded_period_fraction": 0.00025960539979231567
+    }
+  ],
+  "native_symbol_rows": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted.native-symbols.jsonl.gz",
+  "scope": "Exclusive recorded user-CPU sample periods only. Unknowns remain in denominators; DSO and symbol unknown weights may overlap. The perf pid sort column contains task TIDs. TID/comm groups are not proof/source attribution or unique process lifetimes. Native includes runtime/library CPU, not only kernel checking. Sampling loss, attach gaps, startup and observer cost need the capture receipt. No inclusive callchain sum, whole-wall decomposition, GPU eligibility/Amdahl bound, speedup or corpus result from controls."
+}

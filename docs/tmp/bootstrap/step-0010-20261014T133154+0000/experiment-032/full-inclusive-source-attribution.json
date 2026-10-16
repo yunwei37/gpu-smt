@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-16T00:09:30.560564+00:00",
+  "local_source_reads": [
+    {
+      "actual_local_path": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/src/lean/Lean/Meta/ExprDefEq.lean",
+      "line_start": 2109,
+      "line_end": 2114,
+      "actual_excerpt": "@[export lean_is_expr_def_eq]\npartial def isExprDefEqAuxImpl (t : Expr) (s : Expr) : MetaM Bool := withIncRecDepth do\n  withTraceNodeBefore `Meta.isDefEq (return m!\"{t} =?= {s}\") do\n  checkSystem \"isDefEq\"\n  whenUndefDo (isDefEqQuick t s) do\n  whenUndefDo (isDefEqProofIrrel t s) do",
+      "upstream_source_pointer": "https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean#L2109"
+    },
+    {
+      "actual_local_path": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/src/lean/Lean/Meta/SynthInstance.lean",
+      "line_start": 783,
+      "line_end": 790,
+      "actual_excerpt": "def synthInstanceCore? (type : Expr) (maxResultSize? : Option Nat := none) : MetaM (Option Expr) := do\n  let opts \u2190 getOptions\n  let maxResultSize := maxResultSize?.getD (synthInstance.maxSize.get opts)\n  withTraceNode `Meta.synthInstance\n    (return m!\"{exceptOptionEmoji \u00b7} {\u2190 instantiateMVars type}\") do\n  withConfig (fun config => { config with isDefEqStuckEx := true, transparency := TransparencyMode.instances,\n                                          foApprox := true, ctxApprox := true, constApprox := false, univApprox := false }) do\n  withInTypeClassResolution do",
+      "upstream_source_pointer": "https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/SynthInstance.lean#L783"
+    },
+    {
+      "actual_local_path": "/tmp/gpu-smt-goedel427-20261014/mathlib4/Mathlib/Tactic/Linarith/Oracle/SimplexAlgorithm.lean",
+      "line_start": 46,
+      "line_end": 51,
+      "actual_excerpt": "/-- An oracle that uses the Simplex Algorithm. -/\ndef CertificateOracle.simplexAlgorithmSparse : CertificateOracle where\n  produceCertificate hyps maxVar := do\n    let (A, strictIndexes) := preprocess SparseMatrix hyps maxVar\n    let vec \u2190 findPositiveVector A strictIndexes\n    return postprocess vec",
+      "upstream_source_pointer": "https://github.com/leanprover-community/mathlib4/blob/a3a10db0e9d66acbebf76c5e6a135066525ac900/Mathlib/Tactic/Linarith/Oracle/SimplexAlgorithm.lean#L46"
+    }
+  ],
+  "external_primary_reads": [
+    {
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/kernel/type_checker.cpp",
+      "status": "opened; kernel inference and is_def_eq_core implementation verified",
+      "lines": [
+        253,
+        278,
+        978,
+        1053
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man1/perf-report.1.html",
+      "status": "opened; --children and overhead calculation verified; nested costs overlap"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Meta/ExprDefEq.lean",
+      "status": "web tool internal error; actual installed SDK source read succeeds, not represented as successful external read"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean",
+      "status": "web cache miss retained; not represented as successful web-tool read"
+    }
+  ],
+  "interpretation": "lean_is_expr_def_eq is exported from Lean.Meta.isExprDefEqAuxImpl : MetaM Bool; do not label its 35.00% inclusive weight pure C++ kernel checking. Named kernel rows do not establish total kernel cost. Existing Meta/instance caches are present; no blind cache or GPU variant is inferred.",
+  "ordinary_https_source_followup": {
+    "utc": "2026-10-16T00:19:01.433262+00:00",
+    "url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Meta/ExprDefEq.lean",
+    "access_method": "ordinary urllib HTTPS fallback after web cache misses",
+    "http_status": 200,
+    "bytes": 94626,
+    "matches_actual_installed_sdk_source_bytes": true
+  }
+}

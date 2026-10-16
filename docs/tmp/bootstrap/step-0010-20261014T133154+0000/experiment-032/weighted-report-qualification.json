@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-15T15:15:44.579289+00:00",
+  "role": "Offline reporting qualification only on the existing three-control complete perf recording; no new source execution or full-corpus cost result",
+  "source_raw": "/tmp/gpu-smt-native-cpu-perf-20261015/raw-profiles/profiled-controls3/native-1818784-49217544.data",
+  "command": [
+    "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+    "report",
+    "--stdio",
+    "--no-children",
+    "--call-graph",
+    "none",
+    "--percent-limit",
+    "0",
+    "--show-nr-samples",
+    "--show-total-period",
+    "--field-separator",
+    "\t",
+    "--sort",
+    "comm,pid,dso,symbol",
+    "-i",
+    "/tmp/gpu-smt-native-cpu-perf-20261015/raw-profiles/profiled-controls3/native-1818784-49217544.data"
+  ],
+  "returncode": 0,
+  "report": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted-flat.tsv.gz",
+  "stderr": "",
+  "summary_command": [
+    "python3",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/summarize-weighted-report.py",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted-flat.tsv.gz",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted"
+  ],
+  "summary_returncode": 0,
+  "summary": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-032/preflight3-weighted.summary.json",
+  "samples_reproduced": 4038,
+  "leaf_rows": 964,
+  "leaf_period_sum": 40787878380,
+  "period_sum_matches_header": true,
+  "comm_partition_and_native_dso_partition_match": true,
+  "completed_utc": "2026-10-15T15:22:07.588720+00:00",
+  "native_process_name_observation": {
+    "utc": "2026-10-15T15:21:05.551034+00:00",
+    "owned_native_pids": [
+      1915440,
+      1918778,
+      1918988,
+      1919169
+    ],
+    "thread_comm_names": {
+      "native-repl": 21
+    },
+    "scope": "Current executable-path matched workers only; not a sample-cost result"
+  },
+  "task_identifier_semantics": "Linux6.12 perf report pid sort field is command and task TID; output uses tid_comm names"
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "label": "child-dwarf",
+    "command": [
+      "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+      "record",
+      "-e",
+      "cpu-clock:u",
+      "-F",
+      "99",
+      "-z",
+      "--call-graph",
+      "dwarf",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/child-dwarf.data",
+      "--",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+      "--version"
+    ],
+    "returncode": 255,
+    "stdout": "",
+    "stderr": "Error:\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 2:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+    "raw_bytes": 0
+  },
+  {
+    "label": "child-user-dwarf",
+    "command": [
+      "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+      "record",
+      "-e",
+      "cpu-clock:u",
+      "-F",
+      "99",
+      "-z",
+      "--user-callchains",
+      "--call-graph",
+      "dwarf",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/child-user-dwarf.data",
+      "--",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)\n",
+    "stderr": "[ perf record: Woken up 1 times to write data ]\n[ perf record: Captured and wrote 0.005 MB /workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/child-user-dwarf.data, compressed (original 0.035 MB, ratio is 11.769) ]\n",
+    "raw_bytes": 31260
+  },
+  {
+    "label": "child-flat",
+    "command": [
+      "/tmp/gpu-smt-native-cpu-perf-20261015/runtime/usr/bin/perf",
+      "record",
+      "-e",
+      "cpu-clock:u",
+      "-F",
+      "99",
+      "-z",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/child-flat.data",
+      "--",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)\n",
+    "stderr": "[ perf record: Woken up 1 times to write data ]\n[ perf record: Captured and wrote 0.003 MB /workspaces/.agent-state/gpu-smt-deps/native-cpu-perf-20261015/child-flat.data, compressed (original 0.002 MB, ratio is 3.238) ]\n",
+    "raw_bytes": 28658
+  }
+]
