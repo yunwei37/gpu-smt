@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-16T17:02:18.392714+00:00",
+  "start_utc": "2026-10-16T17:02:09.164989+00:00",
+  "wall_seconds": 9.227714193053544,
+  "self_cpu_seconds": 9.227334,
+  "outputs": [
+    {
+      "target": "original-input.jsonl.gz",
+      "source": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/input.jsonl",
+      "original_bytes": 51694831,
+      "gzip_bytes": 9905654
+    },
+    {
+      "target": "oracle.raw.jsonl.gz",
+      "source_archive": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/product-application-full1/goedel427-profile-fast.zip",
+      "source_member": "goedel427-profile-fast/oracle.jsonl",
+      "original_bytes": 502329013,
+      "gzip_bytes": 49765977,
+      "scope": "all bytes, including metadata and malformed rows, copied without JSON decoding or editing"
+    }
+  ],
+  "role": "publish immutable raw closed-record bytes, no verifier run; original archive/input remain; no hash gate or cleaned trace",
+  "finite_overlap": "CPU/I/O development work during original native capture; not performance data"
+}
