@@ -1,0 +1,8 @@
+import pathlib,subprocess,json,datetime,time,resource
+n=pathlib.Path('/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/native-artifact-build-20261016T1615')
+cmd=['python3', '-u', '/workspaces/repository/bench/lean-native/build-native-branches.py', '--lean-source', '/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0', '--repl', '/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair', '--libcxx-headers', '/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include', '--mimalloc-source', '/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3', '--sysroot', '/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux', '--output', '/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build-attempt2']
+start=datetime.datetime.now(datetime.timezone.utc).isoformat();tick=time.monotonic()
+with (n/'build-attempt2.driver.log').open('wb') as log:
+ result=subprocess.run(cmd,cwd='/workspaces/repository',stdout=log,stderr=subprocess.STDOUT)
+ru=resource.getrusage(resource.RUSAGE_CHILDREN)
+(n/'build-attempt2.terminal.json').write_text(json.dumps({'command':cmd,'start_utc':start,'end_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'wall_seconds':time.monotonic()-tick,'waited_children_cpu_seconds':ru.ru_utime+ru.ru_stime,'exit_code':result.returncode,'overlap':'finite clean-source build overlapping original captures; no performance comparison'},indent=2)+'\n')

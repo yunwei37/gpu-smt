@@ -1,0 +1,188 @@
+{
+  "utc": "2026-10-16T16:26:57.193036+00:00",
+  "scope": "clean-source reproducibility/OSS delivery; not formal experiment or performance claim",
+  "source_entrypoint": "bench/lean-native/build-native-branches.py",
+  "build": {
+    "command": [
+      "python3",
+      "-u",
+      "/workspaces/repository/bench/lean-native/build-native-branches.py",
+      "--lean-source",
+      "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0",
+      "--repl",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+      "--libcxx-headers",
+      "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+      "--mimalloc-source",
+      "/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3",
+      "--sysroot",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+      "--output",
+      "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build-attempt2"
+    ],
+    "start_utc": "2026-10-16T16:23:12.693205+00:00",
+    "end_utc": "2026-10-16T16:23:50.095720+00:00",
+    "wall_seconds": 37.40251707599964,
+    "waited_children_cpu_seconds": 39.493967000000005,
+    "exit_code": 0,
+    "overlap": "finite clean-source build overlapping original captures; no performance comparison"
+  },
+  "successful_stages": 50,
+  "first_attempt_failure": [
+    {
+      "stage": "plain-platform.cpp",
+      "command": [
+        "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/clang",
+        "-x",
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-fPIC",
+        "-ftls-model=initial-exec",
+        "-nostdinc",
+        "-nostdinc++",
+        "-isystem",
+        "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+        "-isystem",
+        "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include/clang",
+        "-isystem",
+        "/usr/include/x86_64-linux-gnu",
+        "-isystem",
+        "/usr/include",
+        "-DLEAN_MULTI_THREAD",
+        "-DLEAN_USE_GMP",
+        "-DLEAN_EXPORTING",
+        "-DNDEBUG",
+        "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+        "-I/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0/src",
+        "-I/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build/implementation",
+        "-I/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3/include",
+        "-c",
+        "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0/src/runtime/platform.cpp",
+        "-o",
+        "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build/plain-objects/platform.cpp.o"
+      ],
+      "cwd": "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build",
+      "utc": "2026-10-16T16:18:45.320593+00:00",
+      "seconds": 0.47622131009120494,
+      "compiler_cpu_seconds": 0.47582800000000103,
+      "exit_code": 1
+    }
+  ],
+  "first_attempt_outer_exit": "not captured by original detached launcher; no inferred return code",
+  "single_original_checks": {
+    "private": {
+      "original_proof": "Proof_00000",
+      "exact_original_source": true,
+      "response": {},
+      "worker_terminal": {
+        "event": "worker_terminal",
+        "ns": 599235301435905,
+        "worker": 1,
+        "pid": 2051573,
+        "exit_code": 0,
+        "normal_eof": true,
+        "error": null
+      },
+      "terminal": {
+        "state": "complete",
+        "cells": 1,
+        "attempts": 1,
+        "results": [
+          {
+            "method": "private",
+            "rep": 1,
+            "state": "complete",
+            "expected": 1,
+            "attempts": 1,
+            "counts": {
+              "complete": 1
+            },
+            "whole_ns": 7323266016,
+            "cpu": {
+              "collector": {
+                "user": 0.006807999999999981,
+                "system": 0.539581
+              },
+              "waited_children": {
+                "user": 5.977462,
+                "system": 1.3148710000000001
+              }
+            },
+            "sampled_peak_fleet_pss_with_collector": 1469355008,
+            "sampled_peak_fleet_rss_with_collector": 7652065280,
+            "sampling_read_errors": 0,
+            "workers": 1,
+            "effective_RLIMIT_AS": -1,
+            "width": 1,
+            "normalization": "none; preserve complete parsed native JSON values",
+            "scope": "one original source native implementation validation during active original v1 capture; NO performance comparison"
+          }
+        ],
+        "utc": "2026-10-16T16:24:23.302329+00:00"
+      }
+    },
+    "stock": {
+      "original_proof": "Proof_00000",
+      "exact_original_source": true,
+      "response": {},
+      "worker_terminal": {
+        "event": "worker_terminal",
+        "ns": 599263042128114,
+        "worker": 1,
+        "pid": 2051648,
+        "exit_code": 0,
+        "normal_eof": true,
+        "error": null
+      },
+      "terminal": {
+        "state": "complete",
+        "cells": 1,
+        "attempts": 1,
+        "results": [
+          {
+            "method": "stock",
+            "rep": 1,
+            "state": "complete",
+            "expected": 1,
+            "attempts": 1,
+            "counts": {
+              "complete": 1
+            },
+            "whole_ns": 7108161048,
+            "cpu": {
+              "collector": {
+                "user": 0.010938000000000003,
+                "system": 0.546034
+              },
+              "waited_children": {
+                "user": 5.84216,
+                "system": 1.23206
+              }
+            },
+            "sampled_peak_fleet_pss_with_collector": 1488464896,
+            "sampled_peak_fleet_rss_with_collector": 7654014976,
+            "sampling_read_errors": 0,
+            "workers": 1,
+            "effective_RLIMIT_AS": -1,
+            "width": 1,
+            "normalization": "none; preserve complete parsed native JSON values",
+            "scope": "one original source native implementation validation during active original v1 capture; NO performance comparison"
+          }
+        ],
+        "utc": "2026-10-16T16:24:51.043014+00:00"
+      }
+    }
+  },
+  "frozen_original_capture": "v1 remains unchanged, no image replacement or pooled timings",
+  "project_disk": {
+    "total": 67318312960,
+    "used": 57078673408,
+    "free": 10222862336
+  },
+  "tmp_disk": {
+    "total": 1967846068224,
+    "used": 1658563375104,
+    "free": 289261940736
+  }
+}

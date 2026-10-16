@@ -1,0 +1,31 @@
+runtime-patch 0
+helper 0
+plain-debug.cpp 0
+plain-thread.cpp 0
+plain-mpz.cpp 0
+plain-utf8.cpp 0
+plain-object.cpp 0
+private-object.cpp 0
+plain-apply.cpp 0
+plain-exception.cpp 0
+plain-interrupt.cpp 0
+plain-memory.cpp 0
+plain-stackinfo.cpp 0
+plain-compact.cpp 0
+private-compact.cpp 0
+plain-init_module.cpp 0
+plain-io.cpp 0
+private-io.cpp 0
+plain-hash.cpp 0
+plain-byteslice.cpp 0
+plain-platform.cpp 1
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/build-native-branches.py", line 192, in <module>
+    main()
+    ~~~~^^
+  File "/workspaces/repository/bench/lean-native/build-native-branches.py", line 113, in main
+    run("plain-" + name, common + ["-c", source / "src/runtime" / name, "-o", obj])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/build-native-branches.py", line 86, in run
+    raise RuntimeError(f"{tag} failed; see {out / 'logs' / (tag + '.stderr')}")
+RuntimeError: plain-platform.cpp failed; see /tmp/gpu-smt-native-artifact-rebuild-20261016T1615/build/logs/plain-platform.cpp.stderr
