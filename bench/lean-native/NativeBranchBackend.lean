@@ -101,5 +101,6 @@ unsafe def run (_ : List String) : IO Unit := do
     if (json.getObjVal? "cmds").isOk then
       batch base enabled initial json
     else
-      emitLine (← execute base enabled initial query).compress
+      let result ← execute base enabled initial query
+      emitLine ((result.getObjVal? "response").toOption.getD Json.null).compress
 end NativeBranchBackend

@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-16T16:42:11.120959+00:00",
+  "role": "dependency/native client interoperability repair; not independent research result",
+  "before_official_client_analysis": [
+    {
+      "proof_id": "Proof_00000",
+      "official_client_outer": {
+        "status": "valid",
+        "time": 0.0
+      },
+      "official_client_nested_native": {
+        "status": "valid",
+        "time": 0.0
+      }
+    },
+    {
+      "proof_id": "Proof_00004",
+      "official_client_outer": {
+        "status": "valid",
+        "time": 0.0
+      },
+      "official_client_nested_native": {
+        "status": "lean_error",
+        "time": 0.0
+      }
+    }
+  ],
+  "after_official_client_analysis": [
+    {
+      "method": "plain",
+      "proof_id": "Proof_00000",
+      "exact_same_native_value_as_plain": true,
+      "official_client_analysis": {
+        "status": "valid",
+        "time": 0.0
+      }
+    },
+    {
+      "method": "plain",
+      "proof_id": "Proof_00004",
+      "exact_same_native_value_as_plain": true,
+      "official_client_analysis": {
+        "status": "lean_error",
+        "time": 0.0
+      }
+    },
+    {
+      "method": "private",
+      "proof_id": "Proof_00000",
+      "exact_same_native_value_as_plain": true,
+      "official_client_analysis": {
+        "status": "valid",
+        "time": 0.0
+      }
+    },
+    {
+      "method": "private",
+      "proof_id": "Proof_00004",
+      "exact_same_native_value_as_plain": true,
+      "official_client_analysis": {
+        "status": "lean_error",
+        "time": 0.0
+      }
+    }
+  ],
+  "build": {
+    "command": [
+      "python3",
+      "-u",
+      "/workspaces/repository/bench/lean-native/build-native-branches.py",
+      "--lean-source",
+      "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0",
+      "--repl",
+      "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+      "--libcxx-headers",
+      "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+      "--mimalloc-source",
+      "/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3",
+      "--sysroot",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+      "--output",
+      "/tmp/gpu-smt-native-command-protocol-20261016/build"
+    ],
+    "start_utc": "2026-10-16T16:37:17.337613+00:00",
+    "end_utc": "2026-10-16T16:37:54.172267+00:00",
+    "wall_seconds": 36.83464353100862,
+    "waited_children_cpu_seconds": 39.030859,
+    "exit_code": 0,
+    "overlap": "finite development build competes with original captures; no performance comparison"
+  },
+  "disk": {
+    "total": 67318312960,
+    "used": 57099911168,
+    "free": 10201624576
+  },
+  "research_phase": "BOOTSTRAP unfrozen; all RQs open"
+}

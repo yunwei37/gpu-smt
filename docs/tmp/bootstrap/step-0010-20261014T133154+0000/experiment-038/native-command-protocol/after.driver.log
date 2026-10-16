@@ -1,0 +1,148 @@
+2026-10-16 16:38:18.257 | INFO     | server.repl:start:171 - \[f0557388] Started
+2026-10-16 16:38:18.257 | INFO     | server.repl:log_snippet:53 - \[f0557388] Running snippet [bold magenta]original-header[/bold magenta]:
+import Mathlib                                                                  
+import Aesop                                                                    
+                                                                                
+2026-10-16 16:38:18.262 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:18.262 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:22.459 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+2026-10-16 16:38:22.459 | INFO     | server.repl:log_snippet:53 - \[f0557388] Running snippet [bold magenta]Proof_00000[/bold magenta]:
+                                                                                
+                                                                                
+                                                                                
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- prove that $a^{3}+b^{3}+c^{3}+{\frac {15\,abc}{4}} \geq \frac{1}{4}$ given   
+$a, b, c,$ are non-negative reals such that $a+b+c=1$ -/                        
+theorem lean_workbook_10009 (a b c: ℝ) (ha : a ≥ 0 ∧ b ≥ 0 ∧ c ≥ 0 ∧ a + b + c =
+1): a^3 + b^3 + c^3 + (15 * a * b * c)/4 ≥ 1/4  := by                           
+  /-                                                                            
+  Given non-negative real numbers \(a\), \(b\), and \(c\) such that \(a + b + c 
+= 1\), we need to prove that \(a^3 + b^3 + c^3 + \frac{15abc}{4} \geq           
+\frac{1}{4}\).                                                                  
+  1. **Case Analysis**: We analyze different cases based on the relationships   
+between \(a\), \(b\), and \(c\).                                                
+  2. **Non-negativity and Bounds**: Utilize the non-negativity of \(a\), \(b\), 
+and \(c\) and the fact that their sum is 1.                                     
+  3. **Simplification and Comparison**: Use algebraic simplification and        
+numerical comparison to show the inequality holds.                              
+  -/                                                                            
+  -- Consider different cases based on the relationships between a, b, and c    
+  cases' le_total a b with hab hab <;> cases' le_total b c with hbc hbc <;>     
+cases' le_total c a with hac hac <;>                                            
+  -- Use non-negativity of a, b, and c and their sum to prove the inequality    
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a + b + c)]                                                      
+                                                                                
+2026-10-16 16:38:22.462 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:22.462 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:25.654 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+2026-10-16 16:38:25.654 | INFO     | server.repl:log_snippet:53 - \[f0557388] Running snippet [bold magenta]Proof_00004[/bold magenta]:
+                                                                                
+                                                                                
+                                                                                
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- If $b \ge 1$ then $a \le 2b$ which implies $(a-b)(a-2b) \le 0$ -/            
+theorem lean_workbook_10014 : 1 ≤ b → a ≤ 2 * b → (a - b) * (a - 2 * b) ≤ 0  := 
+by                                                                              
+  /-                                                                            
+  Given \( b \ge 1 \), we need to show that \( a \le 2b \) implies \( (a - b)(a 
+- 2b) \le 0 \). This can be derived by analyzing the signs of the factors \( a -
+b \) and \( a - 2b \). Since \( b \ge 1 \), we have \( a \le 2b \). Therefore,  
+\( a - b \le b \le 2b \) and \( a - 2b \le 0 \). The product of a non-positive  
+number and a non-positive number is non-positive.                               
+  -/                                                                            
+  -- Introduce the assumptions \( b \ge 1 \) and \( a \le 2b \)                 
+  intro h₀ h₁                                                                   
+  -- Consider the cases where \( a \le 2b \) and \( b \ge 1 \)                  
+  cases' le_total a (2 * b) with h₂ h₂ <;>                                      
+  cases' le_total b 1 with h₃ h₃ <;>                                            
+  -- Simplify the expressions using the assumptions and properties of           
+multiplication                                                                  
+  simp_all [mul_comm, mul_left_comm, mul_assoc]                                 
+  <;>                                                                           
+  -- Use linear arithmetic to conclude the proof                                
+  nlinarith                                                                     
+                                                                                
+2026-10-16 16:38:25.657 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:25.657 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:26.166 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+2026-10-16 16:38:26.571 | INFO     | server.repl:start:171 - \[54911b7b] Started
+2026-10-16 16:38:26.571 | INFO     | server.repl:log_snippet:53 - \[54911b7b] Running snippet [bold magenta]original-header[/bold magenta]:
+import Mathlib                                                                  
+import Aesop                                                                    
+                                                                                
+2026-10-16 16:38:26.572 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:26.572 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:30.181 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+2026-10-16 16:38:30.181 | INFO     | server.repl:log_snippet:53 - \[54911b7b] Running snippet [bold magenta]Proof_00000[/bold magenta]:
+                                                                                
+                                                                                
+                                                                                
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- prove that $a^{3}+b^{3}+c^{3}+{\frac {15\,abc}{4}} \geq \frac{1}{4}$ given   
+$a, b, c,$ are non-negative reals such that $a+b+c=1$ -/                        
+theorem lean_workbook_10009 (a b c: ℝ) (ha : a ≥ 0 ∧ b ≥ 0 ∧ c ≥ 0 ∧ a + b + c =
+1): a^3 + b^3 + c^3 + (15 * a * b * c)/4 ≥ 1/4  := by                           
+  /-                                                                            
+  Given non-negative real numbers \(a\), \(b\), and \(c\) such that \(a + b + c 
+= 1\), we need to prove that \(a^3 + b^3 + c^3 + \frac{15abc}{4} \geq           
+\frac{1}{4}\).                                                                  
+  1. **Case Analysis**: We analyze different cases based on the relationships   
+between \(a\), \(b\), and \(c\).                                                
+  2. **Non-negativity and Bounds**: Utilize the non-negativity of \(a\), \(b\), 
+and \(c\) and the fact that their sum is 1.                                     
+  3. **Simplification and Comparison**: Use algebraic simplification and        
+numerical comparison to show the inequality holds.                              
+  -/                                                                            
+  -- Consider different cases based on the relationships between a, b, and c    
+  cases' le_total a b with hab hab <;> cases' le_total b c with hbc hbc <;>     
+cases' le_total c a with hac hac <;>                                            
+  -- Use non-negativity of a, b, and c and their sum to prove the inequality    
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a + b + c)]                                                      
+                                                                                
+2026-10-16 16:38:30.184 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:30.184 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:33.350 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r
+2026-10-16 16:38:33.351 | INFO     | server.repl:log_snippet:53 - \[54911b7b] Running snippet [bold magenta]Proof_00004[/bold magenta]:
+                                                                                
+                                                                                
+                                                                                
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- If $b \ge 1$ then $a \le 2b$ which implies $(a-b)(a-2b) \le 0$ -/            
+theorem lean_workbook_10014 : 1 ≤ b → a ≤ 2 * b → (a - b) * (a - 2 * b) ≤ 0  := 
+by                                                                              
+  /-                                                                            
+  Given \( b \ge 1 \), we need to show that \( a \le 2b \) implies \( (a - b)(a 
+- 2b) \le 0 \). This can be derived by analyzing the signs of the factors \( a -
+b \) and \( a - 2b \). Since \( b \ge 1 \), we have \( a \le 2b \). Therefore,  
+\( a - b \le b \le 2b \) and \( a - 2b \le 0 \). The product of a non-positive  
+number and a non-positive number is non-positive.                               
+  -/                                                                            
+  -- Introduce the assumptions \( b \ge 1 \) and \( a \le 2b \)                 
+  intro h₀ h₁                                                                   
+  -- Consider the cases where \( a \le 2b \) and \( b \ge 1 \)                  
+  cases' le_total a (2 * b) with h₂ h₂ <;>                                      
+  cases' le_total b 1 with h₃ h₃ <;>                                            
+  -- Simplify the expressions using the assumptions and properties of           
+multiplication                                                                  
+  simp_all [mul_comm, mul_left_comm, mul_assoc]                                 
+  <;>                                                                           
+  -- Use linear arithmetic to conclude the proof                                
+  nlinarith                                                                     
+                                                                                
+2026-10-16 16:38:33.353 | DEBUG    | server.repl:send:281 - Sending payload to REPL
+2026-10-16 16:38:33.353 | DEBUG    | server.repl:send:293 - Reading response from REPL stdout
+2026-10-16 16:38:33.879 | DEBUG    | server.repl:send:297 - Raw response from REPL: %r

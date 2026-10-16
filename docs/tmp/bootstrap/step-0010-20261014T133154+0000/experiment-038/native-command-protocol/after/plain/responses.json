@@ -1,0 +1,195 @@
+[
+  {
+    "proof_id": "Proof_00000",
+    "source_index": 0,
+    "response": {},
+    "client_seconds": 3.191214,
+    "diagnostics": {
+      "repl_uuid": "f0557388-5a51-468f-870c-fb9d52d38e56",
+      "cpu_max": 100.7468298739573,
+      "memory_max": 7542124544
+    }
+  },
+  {
+    "proof_id": "Proof_00004",
+    "source_index": 4,
+    "response": {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 34
+          },
+          "endPos": {
+            "line": 9,
+            "column": 35
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 38
+          },
+          "endPos": {
+            "line": 9,
+            "column": 39
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 46
+          },
+          "endPos": {
+            "line": 9,
+            "column": 47
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 51
+          },
+          "endPos": {
+            "line": 9,
+            "column": 52
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 55
+          },
+          "endPos": {
+            "line": 9,
+            "column": 56
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 61
+          },
+          "endPos": {
+            "line": 9,
+            "column": 62
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 69
+          },
+          "endPos": {
+            "line": 9,
+            "column": 70
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 16,
+            "column": 18
+          },
+          "endPos": {
+            "line": 16,
+            "column": 19
+          },
+          "data": "Unknown identifier `a`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 16,
+            "column": 25
+          },
+          "endPos": {
+            "line": 16,
+            "column": 26
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 17,
+            "column": 18
+          },
+          "endPos": {
+            "line": 17,
+            "column": 19
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 17,
+            "column": 18
+          },
+          "endPos": {
+            "line": 17,
+            "column": 19
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 12
+          },
+          "endPos": {
+            "line": 19,
+            "column": 20
+          },
+          "data": "This simp argument is unused:\n  mul_comm\n\nHint: Omit it from the simp argument list.\n  simp_all [̵m̵u̵l̵_̵c̵o̵m̵m̵,̵ ̵m̵u̵l̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵,̵[̲m̲u̲l̲_̲l̲e̲f̲t̲_̲c̲o̲m̲m̲,̲ mul_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 22
+          },
+          "endPos": {
+            "line": 19,
+            "column": 35
+          },
+          "data": "This simp argument is unused:\n  mul_left_comm\n\nHint: Omit it from the simp argument list.\n  simp_all [mul_comm, mul_l̵e̵f̵t̵_̵c̵o̵m̵m̵,̵ ̵m̵u̵l̵_̵assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 37
+          },
+          "endPos": {
+            "line": 19,
+            "column": 46
+          },
+          "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp_all [mul_comm, mul_left_comm,̵ ̵m̵u̵l̵_̵a̵s̵s̵o̵c̵]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    "client_seconds": 0.509174,
+    "diagnostics": {
+      "repl_uuid": "f0557388-5a51-468f-870c-fb9d52d38e56",
+      "cpu_max": 0.0,
+      "memory_max": 0
+    }
+  }
+]
