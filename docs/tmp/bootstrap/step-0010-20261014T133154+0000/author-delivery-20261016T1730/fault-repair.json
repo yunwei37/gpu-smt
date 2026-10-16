@@ -1,0 +1,104 @@
+[
+  {
+    "label": "oss",
+    "fault": "repeated single-symbol thinking deltas, no effective tool in observed active tail",
+    "confirmed": true,
+    "utc": "2026-10-16T17:28:45.646512+00:00",
+    "stdout": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl",
+    "offset": 3560614940,
+    "fifo": "/tmp/gpu-smt-omp-oss-20261016T091128Z.fifo",
+    "request": {
+      "id": "root-native-symbol-fault-abort-20261016T1730-oss",
+      "type": "abort"
+    },
+    "abort_acknowledgments": [
+      {
+        "success": true,
+        "command": "abort"
+      }
+    ],
+    "post_abort_offset": 3560635272,
+    "post_abort_request": {
+      "id": "root-post-abort-state-20261016T1730-oss",
+      "type": "get_state"
+    },
+    "post_abort_states": [
+      {
+        "isStreaming": false,
+        "isCompacting": false,
+        "queuedMessageCount": 2,
+        "hasPendingAsyncWork": false,
+        "isSettled": false,
+        "sessionId": "01a143fb-0bea-72de-83aa-0fdb6120e726"
+      }
+    ]
+  },
+  {
+    "label": "experiments",
+    "fault": "repeated single-symbol thinking deltas, no effective tool in observed active tail",
+    "confirmed": true,
+    "utc": "2026-10-16T17:28:45.655855+00:00",
+    "stdout": "/tmp/gpu-smt-arena-native-stages-20261016/omp-experiments-original-session-resume-20261016T1203.jsonl",
+    "offset": 4409682785,
+    "fifo": "/tmp/gpu-smt-omp-experiments-20261016T091128Z.fifo",
+    "request": {
+      "id": "root-native-symbol-fault-abort-20261016T1730-experiments",
+      "type": "abort"
+    },
+    "abort_acknowledgments": [
+      {
+        "success": true,
+        "command": "abort"
+      }
+    ],
+    "post_abort_offset": 4409760421,
+    "post_abort_request": {
+      "id": "root-post-abort-state-20261016T1730-experiments",
+      "type": "get_state"
+    },
+    "post_abort_states": [
+      {
+        "isStreaming": false,
+        "isCompacting": false,
+        "queuedMessageCount": 2,
+        "hasPendingAsyncWork": false,
+        "isSettled": false,
+        "sessionId": "01a143fb-0c0d-7696-9d3e-8ec95041c284"
+      }
+    ]
+  },
+  {
+    "label": "paper",
+    "fault": "repeated single-symbol thinking deltas, no effective tool in observed active tail",
+    "confirmed": true,
+    "utc": "2026-10-16T17:28:45.664816+00:00",
+    "stdout": "/workspaces/.agent-state/gpu-smt-omp-paper-20261016T091128Z.jsonl",
+    "offset": 3131472542,
+    "fifo": "/tmp/gpu-smt-omp-paper-20261016T091128Z.fifo",
+    "request": {
+      "id": "root-native-symbol-fault-abort-20261016T1730-paper",
+      "type": "abort"
+    },
+    "abort_acknowledgments": [
+      {
+        "success": true,
+        "command": "abort"
+      }
+    ],
+    "post_abort_offset": 3131571163,
+    "post_abort_request": {
+      "id": "root-post-abort-state-20261016T1730-paper",
+      "type": "get_state"
+    },
+    "post_abort_states": [
+      {
+        "isStreaming": false,
+        "isCompacting": false,
+        "queuedMessageCount": 2,
+        "hasPendingAsyncWork": false,
+        "isSettled": false,
+        "sessionId": "01a143fb-0c8c-7640-9e24-af31e4286b7d"
+      }
+    ]
+  }
+]
