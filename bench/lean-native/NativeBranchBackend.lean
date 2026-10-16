@@ -1,5 +1,5 @@
-/- Native candidate backend for the finite E038 service experiment.
-   Original REPL command/source response path; no general FFI isolation claim. -/
+/- Native stateless candidate backend using the stock Kimina BatchCommand protocol.
+   Branch metadata is separate from native responses; general FFI remains unqualified. -/
 import REPL.Main
 
 open Lean
@@ -9,9 +9,8 @@ namespace NativeBranchBackend
 @[extern "gpu_smt_branch_end"] opaque endBranch (handle : UInt64) : IO String
 @[extern "gpu_smt_emit_line"] opaque emitLine (line : String) : IO Unit
 
-unsafe def execute (base : REPL.State) (enabled : Bool) (header query : String) : IO Unit := do
+unsafe def execute (base : REPL.State) (enabled : Bool) (header query : String) : IO Json := do
   let json ← IO.ofExcept (Json.parse query)
-  let id := (json.getObjValAs? String "custom_id").toOption.getD ""
   let request ← IO.ofExcept (fromJson? json : Except String REPL.Command)
   let before ← IO.monoNanosNow
   let handle ← beginBranch enabled
@@ -49,12 +48,37 @@ unsafe def execute (base : REPL.State) (enabled : Bool) (header query : String) 
     | _, _ =>
       finalResponse := Json.mkObj [("error",toJson "original fallback path is not configured")]
   let completed ← IO.monoNanosNow
-  emitLine ((Json.mkObj [
-    ("custom_id",toJson id), ("response",finalResponse), ("branch",branch),
+  return Json.mkObj [
+    ("response",finalResponse), ("branch",branch),
     ("discarded_response",if needsFallback then response else Json.null),
     ("fallback_result",fallbackResult),("completed_ns",toJson (completed-before)),
-    ("internal_ready_ns",toJson (ready-before)),
-    ("released_ns",toJson (released-before))]).compress)
+    ("internal_ready_ns",toJson (ready-before)),("released_ns",toJson (released-before))]
+
+unsafe def batch (base : REPL.State) (enabled : Bool) (header : String)
+    (json : Json) : IO Unit := do
+  let request ← IO.ofExcept (fromJson? json : Except String REPL.BatchCommand)
+  unless request.env == some 0 && request.mode == some "naive" && request.timeout.isNone do
+    throw (IO.userError "this experiment supports the prepared env=0 naive batch without internal timeout")
+  let tasks ← request.cmds.mapM fun cmd => do
+    let command : REPL.Command := {
+      toCommandOptions := request.toCommandOptions, env := some 0, cmd, gc := some true }
+    IO.asTask (execute base enabled header (toJson command).compress)
+  let mut responses := #[]
+  let mut metadata := #[]
+  for task in tasks do
+    let result ← IO.ofExcept task.get
+    responses := responses.push ((result.getObjVal? "response").toOption.getD Json.null)
+    metadata := metadata.push (Json.mkObj [
+      ("branch",(result.getObjVal? "branch").toOption.getD Json.null),
+      ("completed_ns",(result.getObjVal? "completed_ns").toOption.getD Json.null),
+      ("internal_ready_ns",(result.getObjVal? "internal_ready_ns").toOption.getD Json.null),
+      ("released_ns",(result.getObjVal? "released_ns").toOption.getD Json.null),
+      ("discarded_response",(result.getObjVal? "discarded_response").toOption.getD Json.null),
+      ("fallback_result",(result.getObjVal? "fallback_result").toOption.getD Json.null)])
+  let err ← IO.getStderr
+  err.putStrLn ((Json.mkObj [("gpu_smt_batch",Json.arr metadata)]).compress)
+  err.flush
+  emitLine (Json.arr responses).compress
 
 @[export gpu_smt_native_backend]
 unsafe def run (_ : List String) : IO Unit := do
@@ -70,12 +94,12 @@ unsafe def run (_ : List String) : IO Unit := do
   let (response, base) ← (REPL.runCommand header).run {}
   prepareRefs
   emitLine (toJson response).compress
-  let mut tasks : Array (Task (Except IO.Error Unit)) := #[]
   repeat
     let query ← getLines
-    if query.isEmpty then break
-    let task ← IO.asTask (execute base enabled initial query)
-    tasks := tasks.push task
-  for task in tasks do
-    IO.ofExcept task.get
+    if query.trimAscii.toString.isEmpty then break
+    let json ← IO.ofExcept (Json.parse query)
+    if (json.getObjVal? "cmds").isOk then
+      batch base enabled initial json
+    else
+      emitLine (← execute base enabled initial query).compress
 end NativeBranchBackend

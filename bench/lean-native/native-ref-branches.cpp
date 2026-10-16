@@ -59,7 +59,7 @@ extern "C" lean_object* gpu_smt_effect_error(const char* operation){
 }
 extern "C" lean_obj_res gpu_smt_emit_line(lean_obj_arg line,lean_obj_arg){
  static std::mutex output;std::lock_guard<std::mutex> guard(output);
- std::fputs(lean_string_cstr(line),stdout);std::fputc('\n',stdout);std::fflush(stdout);
+ std::fputs(lean_string_cstr(line),stdout);std::fputs("\n\n",stdout);std::fflush(stdout);
  lean_dec(line);return lean_io_result_mk_ok(lean_box(0));
 }
 extern "C" void gpu_smt_ref_created(lean_object* ref){
