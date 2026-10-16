@@ -1,0 +1,58 @@
+✔ [2/22] Built REPL.Util.Pickle (284ms)
+✔ [3/22] Built REPL.Util.Pickle:c.o (136ms)
+✔ [4/22] Built REPL.Frontend (537ms)
+✔ [5/22] Built REPL.Lean.Environment (320ms)
+✔ [6/22] Built REPL.Lean.Environment:c.o (79ms)
+✔ [7/22] Built REPL.Frontend:c.o (229ms)
+✔ [8/22] Built REPL.Util.Path (848ms)
+✔ [9/22] Built REPL.Lean.ContextInfo (814ms)
+✔ [10/22] Built REPL.Lean.ContextInfo:c.o (63ms)
+✔ [11/22] Built REPL.Util.Path:c.o (98ms)
+⚠ [12/22] Built REPL.JSON (1.2s)
+warning: REPL/JSON.lean:86:32: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+✔ [13/22] Built REPL.Lean.InfoTree (1.3s)
+⚠ [14/22] Built REPL.Snapshots (1.2s)
+warning: REPL/Snapshots.lean:163:67: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+warning: REPL/Snapshots.lean:167:83: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+✔ [15/22] Built REPL.Lean.InfoTree.ToJson (1.1s)
+✔ [16/22] Built REPL.JSON:c.o (1.2s)
+✔ [17/22] Built REPL.Snapshots:c.o (924ms)
+✔ [18/22] Built REPL.Lean.InfoTree:c.o (1.2s)
+✔ [19/22] Built REPL.Lean.InfoTree.ToJson:c.o (333ms)
+⚠ [20/22] Built REPL.Main (1.8s)
+warning: REPL/Main.lean:138:47: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+warning: REPL/Main.lean:146:47: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+warning: REPL/Main.lean:413:10: `String.trim` has been deprecated: Use `String.trimAscii` instead
+
+Note: The updated constant has a different type:
+  String → String.Slice
+instead of
+  String → String
+✔ [21/22] Built REPL.Main:c.o (2.3s)
+✔ [22/22] Built repl:exe (1.1s)
+Build completed successfully (22 jobs).

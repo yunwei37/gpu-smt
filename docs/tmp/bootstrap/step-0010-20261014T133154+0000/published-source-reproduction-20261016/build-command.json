@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-10-16T10:10:31.876600+00:00",
+  "source_commit": "e163baf50600f5830eee2818afb4cc1de05befd6",
+  "source_files": [
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/LICENSE",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/README.md",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Frontend.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/JSON.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Lean/ContextInfo.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Lean/Environment.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Lean/InfoTree.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Lean/InfoTree/ToJson.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Main.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Snapshots.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Util/Path.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/REPL/Util/Pickle.lean",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/lake-manifest.json",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/lakefile.toml",
+    "artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/gc-repl/lean-toolchain"
+  ],
+  "source_materialization": "git show committed bytes into private build package; not a repository checkout or live source modification",
+  "build_directory": "/tmp/gpu-smt-published-gc-repl-20261016",
+  "sdk": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+  "command": [
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lake",
+    "build",
+    "repl"
+  ],
+  "scope": "same-Workspace committed-source reconstruction using existing pinned SDK; no Mathlib rebuild and no performance comparison"
+}

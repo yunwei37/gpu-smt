@@ -2784,3 +2784,8 @@ Tracked finite-capture scripts already import ResourceCapture from bench/lean_ca
 ## Measured source and implementation-documentation publication
 
 Root reconciles docs/implementation.md with completed main checkpoints, the later human OMP authorization, the unlinked E034 interface and its source/cost admission. Earlier dated records remain historical; full gates and independent review stay open. The measured source snapshot now publishes its actual source base/overlays, existing mapped source dependencies, original upstream notices and matching Apache-2.0 license text; no original-project license is selected. All45source-map entries exist at recorded sizes. The82selected paths total560307bytes and every implementation-document link resolves to an existing published-or-staged target. [Path/validation receipt](implementation-publication-paths.json). This changes public availability and documentation, not live source/libraries or measured performance. Fresh-machine reconstruction remains unvalidated.
+
+
+## Actual published-source baseline reconstruction
+
+Root materializes16GC-base files from published commit e163baf into a private build package and builds with the actual pinned4.27SDK. All22tasks succeed/exit0. Two exact original Goedel accepted/rejected controls run in both rebuilt and measured binaries, four exits0 with matching nativeJSON and correct control classes. [Full raw evidence and scope](published-source-reproduction-20261016/result-review.md). This improves baseline artifact reconstruction, not performance, GPU engagement, new-machine/all-overlay/full-service reproducibility or independent review. Active experiments and source packages remain untouched.

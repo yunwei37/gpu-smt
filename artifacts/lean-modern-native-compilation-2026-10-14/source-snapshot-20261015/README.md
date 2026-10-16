@@ -73,3 +73,14 @@ map distinguishes copied upstream source from project adaptations.
 [Publication provenance](publication-licenses-20261016.json) records the actual
 source access, including the missing REPL LICENSE probe. This preserves upstream
 notices; it does not select a license for original gpu-smt contributions.
+
+
+## Subsequent reconstruction check, 2026-10-16
+
+A later source-only materialization from main commit e163baf rebuilds the16-file
+gc-repl base successfully with the existing pinned4.27SDK (22build tasks, exit0).
+The original accepted/rejected Goedel controls have identical nativeJSON to the
+measured binary. [Actual reconstruction evidence](../../../docs/tmp/bootstrap/step-0010-20261014T133154+0000/published-source-reproduction-20261016/result-review.md)
+limits this result to that base and existing dependency environment. It does
+not supersede the earlier snapshot date or claim all overlays/new-machine/full
+service reproduction.

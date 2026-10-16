@@ -322,3 +322,15 @@ The complete instrumented Goedel capture associates 29,690 requests with an alre
 Further import-only tuning is not the current implementation target on that already-warm cohort. A differentiated mechanism for meaningful candidate-body work or demonstrably expensive deeper preparation, complete matched experiments and independent review remain open. The original four RQs and full research objective are retained.
 
 The existing [ResourceCapture API](../bench/lean_capture_warm.py) is now included with the collectors that import it. It samples the finite acquisition's own Linux process tree, records incomplete/non-atomic observations, and includes observer CPU in its summary. It does not promise unsampled peaks or fleet-wide memory savings. [Publication import/process-tree smoke](tmp/bootstrap/step-0010-20261014T133154+0000/resource-api-publication-smoke.json) validates the missing public dependency without changing active captures.
+
+
+## Published-source GC base reconstruction (2026-10-16)
+
+The16committed gc-repl source files now reconstruct into a fresh private build
+package with the existing pinned4.27SDK: lake build repl completes all22tasks,
+exit0. Exact original Goedel Proof_00000/Proof_00004 inputs produce matching
+accepted/rejected nativeJSON in the rebuilt and measured binaries, with allfour
+processes reaching normalEOF/exit0. [Commands, raw outputs and result scope](tmp/bootstrap/step-0010-20261014T133154+0000/published-source-reproduction-20261016/result-review.md).
+This validates that base component with existing dependencies; other overlays,
+new-machine bootstrap, full service/corpus reproduction and independent audit
+remain open. Diagnostic elapsed times are not performance evidence.

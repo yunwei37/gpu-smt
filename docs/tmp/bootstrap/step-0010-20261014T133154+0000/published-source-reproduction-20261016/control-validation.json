@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-10-16T10:14:07.453988+00:00",
+  "sdk_version": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+  "checks": [
+    {
+      "proof_id": "Proof_00000",
+      "expected": "complete",
+      "responses_equal": true,
+      "outcomes": [
+        {
+          "variant": "original",
+          "outcome": "complete",
+          "native_error": false,
+          "sorries": false
+        },
+        {
+          "variant": "published-rebuild",
+          "outcome": "complete",
+          "native_error": false,
+          "sorries": false
+        }
+      ]
+    },
+    {
+      "proof_id": "Proof_00004",
+      "expected": "rejected",
+      "responses_equal": true,
+      "outcomes": [
+        {
+          "variant": "original",
+          "outcome": "rejected",
+          "native_error": true,
+          "sorries": false
+        },
+        {
+          "variant": "published-rebuild",
+          "outcome": "rejected",
+          "native_error": true,
+          "sorries": false
+        }
+      ]
+    }
+  ],
+  "scope": "two original formal controls only; no full corpus, fresh-machine or performance claim"
+}

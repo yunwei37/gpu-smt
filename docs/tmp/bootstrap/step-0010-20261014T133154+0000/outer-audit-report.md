@@ -1714,3 +1714,8 @@ Root verifies the exact missing import dependency, parses/imports the real sourc
 ## Measured source publication audit — root only
 
 Root checks45mapped source entries, JSON syntax, preserved source/license attribution and all direct links from the canonical implementation document. No missing direct link or source whitespace is found among82selected paths. The publication includes completed source/provenance and failure records, without staging docs/design.md or specialist files. No build/performance rerun, fresh-machine reproduction or independent-review pass is inferred from this publication check.
+
+
+## Published-source reconstruction validation — root only
+
+Root verifies committed-byte materialization, actual build exit/binary, normal process completion and exact native response agreement for both original accepted/rejected controls. Both classes are present; equal failure-only behavior is not treated as success. The report retains warnings/raw inputs/outputs and limits claims to one base with existing pinned dependencies. Whole-paper and independent audits remain open.

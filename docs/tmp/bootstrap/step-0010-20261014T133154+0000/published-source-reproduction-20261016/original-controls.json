@@ -1,0 +1,27 @@
+[
+  {
+    "index": 0,
+    "proof_id": "Proof_00000",
+    "filename": "goedel-workbook-lean427-3c2afe6bfc6bdeca6b78d1f257468164bba56966/GoedelProofs/Proof_00000.lean",
+    "author": {
+      "proof_id": "Proof_00000",
+      "problem_id": "lean_workbook_10009",
+      "status": "ok",
+      "elapsed_s": 32.99
+    },
+    "code": "import Mathlib\nimport Aesop\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- prove that $a^{3}+b^{3}+c^{3}+{\\frac {15\\,abc}{4}} \\geq \\frac{1}{4}$ given $a, b, c,$ are non-negative reals such that $a+b+c=1$ -/\ntheorem lean_workbook_10009 (a b c: \u211d) (ha : a \u2265 0 \u2227 b \u2265 0 \u2227 c \u2265 0 \u2227 a + b + c = 1): a^3 + b^3 + c^3 + (15 * a * b * c)/4 \u2265 1/4  := by\n  /-\n  Given non-negative real numbers \\(a\\), \\(b\\), and \\(c\\) such that \\(a + b + c = 1\\), we need to prove that \\(a^3 + b^3 + c^3 + \\frac{15abc}{4} \\geq \\frac{1}{4}\\).\n  1. **Case Analysis**: We analyze different cases based on the relationships between \\(a\\), \\(b\\), and \\(c\\).\n  2. **Non-negativity and Bounds**: Utilize the non-negativity of \\(a\\), \\(b\\), and \\(c\\) and the fact that their sum is 1.\n  3. **Simplification and Comparison**: Use algebraic simplification and numerical comparison to show the inequality holds.\n  -/\n  -- Consider different cases based on the relationships between a, b, and c\n  cases' le_total a b with hab hab <;> cases' le_total b c with hbc hbc <;> cases' le_total c a with hac hac <;>\n  -- Use non-negativity of a, b, and c and their sum to prove the inequality\n  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),\n    sq_nonneg (a + b + c)]\n"
+  },
+  {
+    "index": 4,
+    "proof_id": "Proof_00004",
+    "filename": "goedel-workbook-lean427-3c2afe6bfc6bdeca6b78d1f257468164bba56966/GoedelProofs/Proof_00004.lean",
+    "author": {
+      "proof_id": "Proof_00004",
+      "problem_id": "lean_workbook_10014",
+      "status": "error",
+      "elapsed_s": 64.28,
+      "error": "error: GoedelMigration/Proof_00004.lean:9:34: Unknown identifier `b`"
+    },
+    "code": "import Mathlib\nimport Aesop\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- If $b \\ge 1$ then $a \\le 2b$ which implies $(a-b)(a-2b) \\le 0$ -/\ntheorem lean_workbook_10014 : 1 \u2264 b \u2192 a \u2264 2 * b \u2192 (a - b) * (a - 2 * b) \u2264 0  := by\n  /-\n  Given \\( b \\ge 1 \\), we need to show that \\( a \\le 2b \\) implies \\( (a - b)(a - 2b) \\le 0 \\). This can be derived by analyzing the signs of the factors \\( a - b \\) and \\( a - 2b \\). Since \\( b \\ge 1 \\), we have \\( a \\le 2b \\). Therefore, \\( a - b \\le b \\le 2b \\) and \\( a - 2b \\le 0 \\). The product of a non-positive number and a non-positive number is non-positive.\n  -/\n  -- Introduce the assumptions \\( b \\ge 1 \\) and \\( a \\le 2b \\)\n  intro h\u2080 h\u2081\n  -- Consider the cases where \\( a \\le 2b \\) and \\( b \\ge 1 \\)\n  cases' le_total a (2 * b) with h\u2082 h\u2082 <;>\n  cases' le_total b 1 with h\u2083 h\u2083 <;>\n  -- Simplify the expressions using the assumptions and properties of multiplication\n  simp_all [mul_comm, mul_left_comm, mul_assoc]\n  <;>\n  -- Use linear arithmetic to conclude the proof\n  nlinarith\n"
+  }
+]
