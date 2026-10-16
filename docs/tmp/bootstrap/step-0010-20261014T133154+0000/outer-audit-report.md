@@ -1689,3 +1689,13 @@ requests with nonoverlapping file scope; no completed implementation/review is
 claimed. Original coordinator session persistence is verified before retiring
 its idle CLI/FIFO. No background capture, original Codex session, other project,
 credential/model/configuration or GPU owner is changed.
+
+
+## Preparation/body cost reanalysis check — root only
+
+Root verifies source-defined body timer, all29750original rows,29694ordinary
+timer returns plus56unpartitioned operational cases, and complete60header-event
+association without negative residuals. Overlapping request sums are not
+makespan/CPU. The1.012765x arithmetic is explicitly conditional, not asserted as
+an observed gain or strict counterfactual bound. Instrumented source scope is
+retained. This root check does not satisfy independent result or paper review.

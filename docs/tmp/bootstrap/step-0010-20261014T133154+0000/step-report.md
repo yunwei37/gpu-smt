@@ -2741,3 +2741,31 @@ second coordinator writing alongside the specialists. Each specialist's active
 RPC stdin remains open for authorized follow-up. The earlier independent
 opportunity reviewer remains separate and active, with its own unique report.
 A complete fresh step/paper review still awaits actual author results.
+
+
+## EXPERIMENT admission support: same-capture residual preparation/body cost
+
+Root advances actual source/cost analysis while the authorized OMP specialists
+run, without polling native acquisition row counts. Current service source
+proves that legacy response.time is the candidate body's IO-response interval,
+after manager.prep. [Full result and decision](literature-20261016T0845/preparation-cost-result-review.md)
+join all29,750original rows to their native responses, retaining56operational
+requests without fabricated body partition and all60source-tagged header events.
+
+Normal-return29694requests have76,700.697044s reportedbody within77,517.488691s
+summedHTTPwall (98.946313%, NOT wholeCPU/makespan share). Operational56 retain
+13,414.170960s HTTPwall in the full90,931.659651s overlapping request sum.
+All60header cases have ordinary body timers; outside-body envelope is
+286.899414s within22,762.528814s whole capture. It includes launch/queue/import/
+HTTP/logging, so it is not pure preparationCPU or a causal saved-time metric.
+Normalizing gives1.260402%; fixed-other-work removal would be1.012765x, only a
+conditional sensitivity calculation. Four-inflight overlap, observer effects,
+current-source provenance and indirect timing remain limits.
+
+The result rejects more import-only cache/placement tuning as a headline on
+this already-warm cohort. It routes mainline opportunity to actual candidate
+body work or measured expensive deeper state, not ordinaryCPU compilation or
+an invented diverse-context workload. No originalRQ/scope is narrowed, no GPU
+backend/preflight/fullrun is claimed, and no figure/resultslot is filled with
+this conditional estimate. It is supporting admission evidence; fresh review
+and canonical integration remain the assigned OMP work.
