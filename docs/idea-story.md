@@ -27,72 +27,73 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-BOOTSTRAP step0009 REVIEW_GATE follows completed E029/step0008 main publication.
-E030 completes native response extraction against the established warm path:
-all8conditions return, with a small three-pair mean1.63percent wall reduction.
-Full root WRITE is complete; direct REVIEW retains the larger open evidence gaps.
-Scientific contract unfrozen and all four RQs open. Initial Narrative and accepted evolution below remain intact.
-The desktop root implements directly under the human request; the original
-native author session is retained/stopped, with no delegated new author.
+BOOTSTRAP step0010 remains unfrozen and all four RQs remain open. The complete
+Initial Narrative and accepted evolution below are preserved. Completed evidence
+and interface checkpoints are now published on main through6aebcfa, under the
+user's explicit request to stop withholding completed work until the whole
+research effort finishes. Publication is not an independent-review verdict,
+a final RQ answer or an OSDI acceptance claim.
 
-Native6 complete16ProofNet/95232source outcomes preserves all paired basic
-results, but GPU loses1.74%,3.64%,1.58% to fastest nativeCPU (mean2.32%).
-The full16miniF2F run failed in its native warm baseline: active source663
-allocated about95GiB and host global OOM killed the benchmark before GPU cells.
-The former Workspace Pod was then replaced by the same ReplicaSet/PVC; its
-deletion actor is unknown. Raw/partial/failed data and all original cohort scope
-are retained. Former CPU captures are interrupted, not active; E018 resumed after restoring its dependency alias, then root closed further
-repetitions of that invalid/slower version after complete first-primary review. No memory cap,
-source exclusion, blind mini retry or delegated author has been introduced.
+The user now authorizes parallel OMP work with file ownership: README, docs,
+paper and experiment scripts are delegated; the root owns Lean/GPU implementation,
+scientific disposition and final integration/publication. The original Codex
+author session remains retained/stopped. A focused independent opportunity
+review is separately dispatched without implementation ownership. Neither a
+live process nor an issued prompt establishes that specialist work or an audit
+has completed.
 
-E026 complete native diagnostic5952source stream now matches all original basic
-outcomes. Common class/structure projection reports recur across distinct sources.
-Reused classified source deltas find most observed native WHNF-miss CPU has
-context flags. These are supporting selection evidence, not whole-time fractions,
-GPU eligibility or speedup. Current official dependency-aware instance caching
-is prior art and a necessary competing mechanism, not proposed novelty.
+Completed negative implementations stay closed. Complete native6 ProofNet
+device comparisons, shared-process placement and repaired SMT prefix branching
+do not demonstrate their claimed acceleration. Their
+[published negative disposition](tmp/bootstrap/step-0010-20261014T133154+0000/negative-routes-disposition-20261015.md)
+retains the measurements and scope rather than continuing small variants.
+The original Lean/SMT/service/device research ambition is unchanged.
 
-E027 exact projection cost rejects per-operation projection offload as the next
-mechanism. E028 conservative closed-mode CPU cache completes all8cells and
-47616original outcomes. Its paired wall reductions7.39%,-0.06%,-1.03% do not
-establish stable acceleration; single-profile PSS differs0.85%, without replicated
-memory evidence. Current official WHNF already caches these eligible modes.
-The candidate is closed with code/raw retained. All12writing rounds are performed
-by root and compile to9pages; user forbids delegation, so self-review is explicit
-and no independent audit is claimed.
+Native compilation, native arithmetic and invocation-local product reuse supply
+competent CPU controls. They are not the proposed systems novelty. Completed
+CPU cells and per-input rows are now
+[published](tmp/bootstrap/step-0010-20261014T133154+0000/completed-cpu-cells-20261016/README.md);
+unfinished original acquisitions remain running without additional tuning grids.
+Their exact current results belong in evaluation, not this narrative.
 
-Runtime11 first full paired block loses to strong native preparation/snapshot;
-the complete12ProofNet/12mini service matrix remains open. SMT E025 first
-stock/branch/logical trio preserves native artifacts but branch is24.8%slower
-thanstock and essentially tied with logical reuse; the full12condition matrix still requires recovery and completion.
-Complete externalCPU context22 now uses a charged native fallback for an
-unexportable prefix, all814original source outcomes matching stock; the original
-failed attempt and remaining192context-cell scope are preserved.
+E033 completes all29,750 native sources and publishes its original capture,
+345 thread observations and analysis. Entry metavariable flags do not establish
+independent work or GPU coverage. E034's native batch interface builds and
+matches two accepted/rejected native fallback smoke cases, with provider
+unlinked and no device engagement. The
+[existing-data opportunity analysis](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-034/performance-ceiling-and-admission.md)
+distinguishes inclusive35% defeq CPU,23.16% argument-comparison CPU and a separate
+23.61% observer descriptor. Conditional1.067–1.090x calculations are sensitivity
+scenarios, not rigorous end-to-end bounds. The root suspends narrow GPU-backend
+implementation pending a credible independent-work and complete-cost opportunity.
 
-These results bound current implementations, not the Initial Narrative or
-research ambition. Genericfork/cache/hostfiltering is prior art; no positive
-systems novelty, completeGPUkernel, cross-version tuning causality or venue
-acceptance follows. Full behavior/resource/load/scaling/placement/history/
-cancellation, both formal datasets, strongest competitors, closest work,
-paper/WRITE/reflection/independent audit/main completed-step publication remain.
+A new [source/cohort admission review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/report.md)
+finds one actual import header across all29,750Goedel attempts; native logs
+partition them into29,690 started-worker reuses and60 header preparations.
+The mini cohort has7,790 matching imported headers and18 empty headers.
+Counts do not establish saved cost. Generic multi-context eviction/placement
+cannot be a measured new contribution on a single-root cohort; existing
+Kimina, native snapshots and AXLE already establish the individual mechanisms.
 
-[Current complete evaluation](evaluation.md), [implementation](implementation.md)
-and [step report](tmp/bootstrap/step-0007-20261010T000125+0000/step-report.md)
-own current evidence. [Prior extended frontier](tmp/bootstrap/step-0007-20261010T000125+0000/archived-idea-frontier-before-direct-mini-20261014.md)
-preserves all historical intermediate details. No scientific-contract change
-or accepted idea-level change is made by this frontier clarification.
+The four recovered serial generator-output segments cover all13,760 original
+ProofNet/miniF2F attempts, but official submission consumes a finished batch.
+These are not measured verifier arrivals or multi-producer feedback traffic.
+Preparation expense, equal-resource complete service frontiers, native artifact/
+history/cancellation behavior and strongest compatible competitors remain
+load-bearing evidence requirements. Existing services, caches and snapshots
+already provide the individual reuse mechanisms; no surviving novel system
+contribution has yet been demonstrated. Ordinary CPU gains cannot fill that gap.
 
-E029 shared-process native frontends completed all8conditions/47616outcomes.
-Three paired makespans are15.13–22.64percent slower than the strong COW warm pool.
-Basic outcomes match; diagnostic metavariable-number differences remain unnormalized.
-Shared Nat.pow panic invokes measured native fallback for unreturned inputs.
-Single sampled PSS is5.52percent lower, not replicated memory evidence; private
-pages across a single heap and COW processes do not isolate mutation. The candidate
-is closed. Root completed all12writing rounds,10page compile/render/visual inspection
-and direct reflection. This is not independent audit or completed four-RQ evidence.
-A source-grounded next candidate is expensive syntax-string classification in
-existing/current REPL sorry extraction; its cost and complete benefit are unmeasured.
-No source-only finding, ordinary threads, fork or AST matcher becomes the system thesis.
+Healthy acquisitions do not justify goal turns that only poll row counts.
+Advance substantive mainline work and collect each original acquisition on
+completion. The complete paper, causal ablations, limitations and fresh
+independent step/paper audits remain required. The
+[step report](tmp/bootstrap/step-0010-20261014T133154+0000/step-report.md),
+[implementation](implementation.md) and [evaluation](evaluation.md) own detailed
+evidence. The previous frontier is preserved in
+[the dated archive](tmp/bootstrap/step-0010-20261014T133154+0000/idea-frontier-before-published-checkpoints-20261016.md).
+This is a status and admission update; it changes no accepted thesis, RQ meaning,
+scope or evaluation promise.
 
 ## Narrative evolution
 

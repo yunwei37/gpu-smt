@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "python3",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/analyze-prepared-context-scope.py",
+      "--split-module",
+      "/tmp/gpu-smt-kimina-header-repair-20261014/server/split.py",
+      "--input",
+      "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/input.jsonl",
+      "--output",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/goedel-context-scope.json",
+      "--archive",
+      "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/meta-inventory/full1/goedel427-meta-inventory.zip"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "python3",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/analyze-prepared-context-scope.py",
+      "--split-module",
+      "/tmp/gpu-smt-kimina-header-repair-20261014/server/split.py",
+      "--input",
+      "/workspaces/repository/artifacts/lean-native-compilation-2026-10-14/gc49/input.jsonl",
+      "--output",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/mini-context-scope.json"
+    ],
+    "returncode": 0
+  }
+]

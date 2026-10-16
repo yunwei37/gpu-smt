@@ -1641,3 +1641,16 @@ The conditional8.26% product is not a rigorous end-to-end bound. Backend
 progression is suspended while contribution/complete-system work remains open.
 These checks are NOT an independent outer audit. The fresh OMP reviewer has
 not yet been dispatched or returned; do not relabel this report as completed.
+
+
+## 2026-10-16 source/cohort admission node: root check only
+
+Root verifies complete29,750/7,808input coverage and exact disjoint source-ID
+event partition from the original native archive. Count, sampledCPU and elapsed
+clocks remain distinct. The candidate rejected is generic multi-context
+import-cache novelty on the current cohorts; no originalRQ/scope is removed.
+InitialNarrative and accepted evolution remain byte-preserved against node
+entry. External sources are primary, with explicit matched-baseline limitations.
+This root check does not substitute for the fresh independent opportunity/step
+or paper review. A separately launched OMP reviewer has no implementation role;
+no final verdict is yet claimed.

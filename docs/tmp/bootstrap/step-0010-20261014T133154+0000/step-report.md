@@ -2628,3 +2628,30 @@ mainline work; collect the existing acquisitions once on their completion,
 rather than consuming continuation turns on unchanged row counts. No additional
 capture/scheduler/Workspace/helper/quota is introduced. Volume free bytes are
 recorded at publication; the snapshot adds about66MB, not all multi-GB archives.
+
+
+## EXPERIMENT / scientific admission: prepared-context source and full-cohort reuse
+
+Root reads all idea-story/InitialNarrative, current human instructions/paper/
+evaluation/map and the complete literature/experiment skills. A finite primary
+search verifies Kimina manager/header reuse, Snapshot-DSP state sharing, AXLE's
+environment/isolation/accounting scope and Spice's established system mechanism.
+[Detailed source/cohort node](literature-20261016T0845/report.md) records exact
+queries, sources, contradictions, scope and baseline handoff.
+
+Actual offline use of the measured Python service splitter covers all29,750
+Goedel and7,808mini inputs. One import header covers allGoedel; mini has7,790
+same-header and18empty-header cases. Original complete E033native logs yield a
+disjoint/exhaustive29,690 started-worker reuse/60header-command partition.
+No count is converted into savedCPU, critical-path coverage or a speedup bound.
+Initial wrong private-root and git-in-copied-tree reader failures are retained;
+no native run or input changed. No further provenance gate is introduced.
+
+This rejects a generic multiple-context cache/eviction headline on the present
+cohort, not the full system thesis. Do not manufacture header diversity or run
+another weak cache/CPU tuning grid. Full equal-resource service and credible
+independent-device opportunity remain load-bearing. Root updates current
+narrative status without changing the InitialNarrative/evolution/RQs. Canonical
+literature/paper integration belongs to the existing OMP owner; its completion
+and full fresh independent review are still pending. No background capture
+row-count poll is performed in this node.

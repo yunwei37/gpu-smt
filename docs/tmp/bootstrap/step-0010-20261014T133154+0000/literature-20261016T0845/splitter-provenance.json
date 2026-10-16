@@ -1,0 +1,52 @@
+{
+  "observed_utc": "2026-10-16T08:47:16.543951+00:00",
+  "actual_server_cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+  "actual_splitter": "/tmp/gpu-smt-kimina-header-repair-20261014/server/split.py",
+  "splitter_mtime_utc": "2026-10-11T05:46:02.529183+00:00",
+  "captured_command_archive": "artifacts/lean-native-compilation-2026-10-14/gc49/full1/minif2f-profile-original.zip",
+  "captured_command": {
+    "command": [
+      "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+      "-m",
+      "server"
+    ],
+    "pid": 1972040,
+    "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+    "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+    "method": "original",
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+    "api": "/verify, four requests in flight, privatePort8003"
+  },
+  "git_pin": "not independently resolved in this node; private server is a copied source tree without .git",
+  "initial_reader_failures": [
+    "guessed native REPL directory as Python server root; frozen command resolves actual server cwd",
+    "attempted git rev-parse in copied server tree; no repository there. No source/run/data was changed."
+  ],
+  "scope": "current actual source plus original recorded command/log evidence; no claim of proof of capture-time source immutability or native preparation timing"
+}
