@@ -1,0 +1,14 @@
+{
+  "command": [
+    "patch",
+    "--dry-run",
+    "-p1",
+    "-i",
+    "/workspaces/repository/bench/lean-gpu/arena-native-support.patch"
+  ],
+  "cwd": "/tmp/gpu-smt-arena-native-stages-20261016/patch-validation",
+  "exit": 0,
+  "stdout": "checking file src/lib.rs\nchecking file src/checker/infer.rs\nchecking file src/main.rs\n",
+  "stderr": "",
+  "whitespace_note": "Unified diff blank-context lines require one leading space and remain byte-preserved. Source/code checked separately; patch syntax/application validated against pinned upstream originals."
+}

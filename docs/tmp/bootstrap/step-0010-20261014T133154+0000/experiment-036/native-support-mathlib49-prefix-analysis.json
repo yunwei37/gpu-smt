@@ -1,0 +1,41 @@
+{
+  "input": "mathlib49-prefix",
+  "declarations": 29709,
+  "bodies": 27579,
+  "host_positive": 2888,
+  "body_thread_cpu_s": 2.073336152,
+  "positive_body_thread_cpu_s": 0.032142881,
+  "positive_fraction_of_body_thread_cpu": 0.015502976190809217,
+  "positive_fraction_of_body_count": 0.10471735740962326,
+  "reasons": {
+    "3": 21079,
+    "9": 3360,
+    "0": 2888,
+    "6": 245,
+    "1": 7
+  },
+  "reason_costs": {
+    "3": {
+      "count": 21079,
+      "body_thread_cpu_ns": 1736202653
+    },
+    "9": {
+      "count": 3360,
+      "body_thread_cpu_ns": 290092620
+    },
+    "0": {
+      "count": 2888,
+      "body_thread_cpu_ns": 32142881
+    },
+    "6": {
+      "count": 245,
+      "body_thread_cpu_ns": 11947448
+    },
+    "1": {
+      "count": 7,
+      "body_thread_cpu_ns": 2950550
+    }
+  },
+  "max_steps": 126670,
+  "limits": "Host positives are unqualified prospective answers. Per-body thread CPU sums are not check wall removed, a strict Amdahl bound, source-verification gain, or GPU evidence."
+}

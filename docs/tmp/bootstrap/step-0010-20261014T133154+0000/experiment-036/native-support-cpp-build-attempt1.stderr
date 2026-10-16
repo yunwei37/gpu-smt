@@ -1,0 +1,8 @@
+/workspaces/repository/bench/lean-gpu/arena-native-support.cpp: In function ‘uint64_t arena_thread_cpu_ns()’:
+/workspaces/repository/bench/lean-gpu/arena-native-support.cpp:11:67: error: ‘terminate’ is not a member of ‘std’
+   11 |     if (clock_gettime(CLOCK_THREAD_CPUTIME_ID, &value) != 0) std::terminate();
+      |                                                                   ^~~~~~~~~
+/workspaces/repository/bench/lean-gpu/arena-native-support.cpp:8:1: note: ‘std::terminate’ is defined in header ‘<exception>’; this is probably fixable by adding ‘#include <exception>’
+    7 | #include <vector>
+  +++ |+#include <exception>
+    8 | #include <time.h>

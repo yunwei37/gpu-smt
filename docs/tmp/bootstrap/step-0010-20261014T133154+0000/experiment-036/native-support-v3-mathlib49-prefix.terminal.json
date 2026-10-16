@@ -1,0 +1,23 @@
+{
+  "start_utc": "2026-10-16T11:42:02.143304+00:00",
+  "end_utc": "2026-10-16T11:42:06.035758+00:00",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/native-support-v3-mathlib49-prefix.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/retained-mathlib49-prefix.ndjson",
+  "input_bytes": 159423522,
+  "trace": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/native-support-v3-mathlib49-prefix.csv",
+  "exit": 0,
+  "whole_seconds": 3.892510154051706
+}

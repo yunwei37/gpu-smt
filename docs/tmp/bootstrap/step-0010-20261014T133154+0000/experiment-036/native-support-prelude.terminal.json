@@ -1,0 +1,23 @@
+{
+  "start_utc": "2026-10-16T11:37:48.551087+00:00",
+  "end_utc": "2026-10-16T11:37:48.595526+00:00",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/native-support-prelude.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "input": "/workspaces/.agent-state/gpu-smt-deps/arena-315f24d4/init-prelude.ndjson",
+  "input_bytes": 3741967,
+  "trace": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/native-support-prelude.csv",
+  "exit": 0,
+  "whole_seconds": 0.04449539096094668
+}

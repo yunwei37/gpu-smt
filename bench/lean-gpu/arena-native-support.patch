@@ -1,0 +1,60 @@
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -12,3 +12,5 @@
+ pub use outcome::{CheckError, Decline, Rejection};
+ 
+ pub(crate) const STACK_SIZE: usize = 2 * 1024 * 1024 * 1024;
++
++pub(crate) mod e036;
+--- a/src/checker/infer.rs
++++ b/src/checker/infer.rs
+@@ -481,10 +481,12 @@
+ 
+     pub(crate) fn check_def_like_v(&mut self, d: &Declar<'t>, val: ExprPtr<'t>) {
+         self.check_declar_info_v(d);
++        let e036_begin = crate::e036::body_begin();
+         let empty_env = self.empty_env();
+         let empty_ctx = self.empty_ctx();
+         let val_ty = self.infer_value(Check, 0, empty_env, empty_ctx, val);
+         let declared = self.eval(0, empty_env, d.info().ty);
+         ensure!(self.def_eq_at(0, val_ty, declared), "def_eq failed");
++        crate::e036::body_end(d.info().name.as_ref().decl_idx(), e036_begin);
+     }
+ }
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -101,6 +101,7 @@
+     let parse_only = cfg.parse_only;
+     let print_success_message = cfg.print_success_message;
+     let arena = Bump::new();
++    let native_parse_begin = std::time::Instant::now();
+     let (export_file, warned_axioms) = match cfg.to_export_file(&arena) {
+         Ok(parsed) => parsed,
+         Err(e) => {
+@@ -112,6 +113,7 @@
+             };
+         }
+     };
++    eprintln!("native_stage parse_wall_seconds {:.9}", native_parse_begin.elapsed().as_secs_f64());
+     if !warned_axioms.is_empty() {
+         eprintln!("warning: disallowed axioms: {}", warned_axioms.join(", "));
+     }
+@@ -119,7 +121,17 @@
+         println!("Parsed {} declarations", export_file.num_declars());
+         return EXIT_ACCEPT;
+     }
+-    match export_file.check_all_declars() {
++    export_file.e036_prepare_host_diagnostic();
++    let native_check_begin = std::time::Instant::now();
++    let native_check_result = export_file.check_all_declars();
++    eprintln!("native_stage check_wall_seconds {:.9}", native_check_begin.elapsed().as_secs_f64());
++    if let Some(path) = std::env::var_os("GPU_SMT_ARENA_TRACE") {
++        if let Err(error) = export_file.e036_write_diagnostic(std::path::Path::new(&path)) {
++            eprintln!("E036 failed to write diagnostic: {error}");
++            return EXIT_INTERNAL;
++        }
++    }
++    match native_check_result {
+         Ok(()) => {
+             if print_success_message {
+                 println!(
