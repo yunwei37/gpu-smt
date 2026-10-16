@@ -687,6 +687,11 @@ Separating preparation from candidate execution connects native behavior to serv
 Persistent Lean environments and native proof-state snapshotting retain elaborated context across attempts~\cite{repl,leanSnapshot}. Stock Lean also saves full elaboration or post-import snapshots~\cite{leanIncremental}, while Kimina provides bounded warm verification with environment reuse~\cite{kimina,kiminaPaper}. These mechanisms provide the direct comparison for preparation reuse. The service evaluates independent native execution, cancellation and bounded fleet resources in addition to logical environment branching. This distinction requires matched evidence, rather than a novelty claim for snapshots themselves.
 
 LeanPolish already restores native tactic state, resumes unchanged commands from saved checkpoints and supports persistent import workers~\cite{leanpolishSource}. Its released proof-improvement attempts include failed alternatives, while menu screening and later source verification have different boundaries~\cite{leanpolishPaper}. These existing mechanisms strengthen the native-reuse comparison. Failure collection and saved-state execution are established baseline capabilities.
+LeanTree factorizes proof states according to metavariable dependencies,
+supporting state reuse and parallel proof search~\cite{leantree}.
+Independent proof goals and reusable intermediate states are therefore
+established mechanisms; a new service must demonstrate its additional
+behavior and resource benefit.
 
 Axle combines preloaded Mathlib with per-request processes~\cite{axle}.
 Its published normalized-sample comparison measures computation rather than

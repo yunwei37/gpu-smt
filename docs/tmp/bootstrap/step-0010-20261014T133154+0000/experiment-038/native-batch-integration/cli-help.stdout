@@ -1,0 +1,67 @@
+usage: run-native-batch-comparison.py [-h] [--kimina KIMINA] [--frozen FROZEN]
+                                      [--sdk SDK] [--project PROJECT]
+                                      [--input INPUT] [--manifest MANIFEST]
+                                      --out OUT [--repetitions {1,2,3}]
+                                      [--width WIDTH] [--limit LIMIT]
+                                      [--header-timeout HEADER_TIMEOUT]
+                                      [--batch-timeout BATCH_TIMEOUT]
+                                      [--finalize-timeout FINALIZE_TIMEOUT]
+                                      [--sample-seconds SAMPLE_SECONDS]
+                                      [--orders ORDERS]
+                                      {preflight} ...
+
+E038 native batch comparison collector (stock / private / branch-off).
+
+Reusable CLI over the frozen Kimina 4.27 GC/header-repaired native REPLs. One
+prepared native worker per method/round replays the ORIGINAL source order in
+affinity-width batches of BatchCommand {env:0,mode:"naive",cmds:[...],gc:true}
+after the shared header command; every method sees one ordered native JSON
+array plus double-newline frame. All costs (header preparation, worker
+start/restart, native verification, fallback children, transport, parsing,
+final stdin EOF and process exit) are inside the measured cell.
+
+Provenance: derived from the root-executed one-off command
+docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-batch-integration/full-command.executed.py
+(verified native lifecycle: byte-level Repl._read_response, feed_data stdout
+tee so timeout/canceled partial reads stay gzip-captured, inherited RLIMIT_AS
+repair after the stock Kimina 12GiB thread-create failure, psutil process-tree
+PSS sampling, RUSAGE_CHILDREN accounting). This file adds CLI parameterization
+and finite preflight/validation modes; it does not change the native protocol.
+
+Disclosed policy deltas from stock Kimina defaults (same on ALL methods):
+- repl.max_memory_bytes = resource.getrlimit(RLIMIT_AS)[0] (currently -1,
+  i.e. workspace-unlimited address space) set BEFORE Repl.start, replacing the
+  nominal settings.max_repl_mem 12GiB per-worker cap. Evidence for the repair:
+  experiment-038/native-batch-integration/native-default-thread-failure-observation.json
+  (all methods exit 134 'failed to create thread' at ~12.879GB mapped AS).
+- stdout is teed at the StreamReader.feed_data boundary before the original
+  parser sees it; the parser itself is the unmodified upstream one.
+
+No new manifest, control plane, schema, scheduler, daemon, thread/worker/CPU
+tuning, memory quota, or per-proof deadline is introduced. Timeouts are the
+reused Kimina defaults: 60s header preparation, 300s batch-request boundary.
+
+positional arguments:
+  {preflight}
+    preflight           finite native preflight; no full matrix
+
+options:
+  -h, --help            show this help message and exit
+  --kimina KIMINA       kimina-server checkout providing server.repl/settings
+  --frozen FROZEN       frozen native root containing plain/ and private/
+                        repls
+  --sdk SDK             Lean 4.27 SDK root
+  --project PROJECT     mathlib4 project dir used as lake cwd
+  --input INPUT         original input.jsonl in preserved original order
+  --manifest MANIFEST   native-library.json describing
+                        load_manifest/library_paths
+  --out OUT             fresh output directory (not created)
+  --repetitions {1,2,3}
+                        whole-corpus method rotation repetitions
+  --width WIDTH         batch width override; 0 = actual CPU affinity size
+  --limit LIMIT         truncate corpus to first N sources (preflight)
+  --header-timeout HEADER_TIMEOUT
+  --batch-timeout BATCH_TIMEOUT
+  --finalize-timeout FINALIZE_TIMEOUT
+  --sample-seconds SAMPLE_SECONDS
+  --orders ORDERS       optional rotation orders as nested JSON list override

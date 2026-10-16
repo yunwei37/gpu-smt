@@ -338,3 +338,11 @@ remain open. Diagnostic elapsed times are not performance evidence.
 ## Closed reclamation constructor
 
 The separate closure-reclaiming.cu/native adapter completes the full official Init on/off host setup. Actual recycling recovers some formerly capacity-failed work, but total diagnostic cost grows27.96→1052.33s and expensive bodies mostly move to the unchanged step limit. This constructor is closed without GPUport or tuning grid; all native checks remained enabled. [Complete result/source/raw and review limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md). No prospective positive is a qualified replacement or GPUgain.
+
+## Native batch collector source
+
+[Public experimental collector](../bench/lean-native/run-native-batch-comparison.py) preserves the frozen-v1 native batch protocol. Root integrates the original author source and repairs argument decoding, failed-cell terminal persistence and preflight native-response comparison. [Source history, validation and limits](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-batch-integration/result.md) distinguish CLI import/help checks from actual native execution. With the retained input/Kimina/SDK/Mathlib/frozen plain-private artifacts in place, the existing matching Workspace Python can run:
+
+    /workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python bench/lean-native/run-native-batch-comparison.py --out /tmp/gpu-smt-native-comparison-replay
+
+That command starts a new full comparison; it is documented, not executed alongside the current acquisition. Its defaults reproduce eager-v1 composition, not the newer first-write implementation. This is source integration, not a fresh-machine bootstrap recipe or completed native benchmark validation.
