@@ -1,0 +1,9 @@
+# Full/Fast primary CPU comparison: complete-submatrix result integration
+
+Selected RQ4: After preparation reuse, when does heterogeneous execution improve complete verification over the strongest measured CPU path?
+
+This is supporting evidence within the existing independently reviewed16condition CPU-control experiment, not a new run, new hypothesis, new matrix or headline system. All12primary observations are now terminal; four separate resource profiles remain running/unresolved. The new last primary condition is integrated with the previously published11, while retaining full raw responses and all original attempts. Complete primary effects can inform whether Fast preprocessing or the numerical solver supplies a stronger within-block alternative; neither outcome alone answers RQ4 or establishes novel contribution. Do not rank unrelated affinity/composition epochs or promote CPU effects into GPU/system speedups.
+
+Reuse the original full plan, command, native comparison rule and source population. No preflight or collector is repeated. Existing unchanged analyzer code is redirected in memory to this result subtree, rather than overwriting OMP's reusable analysis/runner. An actual execution receipt records offline analysis background load. Publish only newly terminal raw data; all earlier raw sources stay linked to their permanent homes. This is a completed primary submatrix with unfinished resource scope, not final acceptance of the whole16condition experiment.
+
+Positive, adverse and mixed effects change the CPU-baseline interpretation; no stable Fast/solver winner must be invented. Report every observed primary value and response transition, retained source bytes/order, complete costs and whole-run uncertainty. A fresh result reviewer must recompute the new/all-primary effects and audit both comparator engagement and the declared incomplete scope before canonical numerical updates/publication.

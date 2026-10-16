@@ -1,0 +1,105 @@
+{
+  "utc": "2026-10-16T19:01:04.068909+00:00",
+  "actions": [
+    {
+      "pid": 2020713,
+      "fifo": "/tmp/gpu-smt-omp-oss-20261016T091128Z.fifo",
+      "stdout": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl",
+      "offset": 5209911932,
+      "fault_tail_counts": {
+        "exclamation_bytes": 256167,
+        "underscore_bytes": 22,
+        "tail_bytes": 262144
+      },
+      "request": {
+        "id": "root-disk-fault-abort-2020713-20261016T1901",
+        "type": "abort"
+      },
+      "abort_ack": [
+        {
+          "id": "root-disk-fault-abort-2020713-20261016T1901",
+          "type": "response",
+          "command": "abort",
+          "success": true
+        }
+      ],
+      "after_bytes": 5210039515,
+      "state_request": {
+        "id": "root-disk-fault-abort-2020713-20261016T1901-state",
+        "type": "get_state"
+      },
+      "state_offset": 5210039515,
+      "safe_state": [
+        {
+          "sessionId": "01a143fb-0bea-72de-83aa-0fdb6120e726",
+          "isStreaming": false,
+          "isCompacting": false,
+          "hasPendingAsyncWork": false,
+          "queuedMessageCount": 2
+        }
+      ],
+      "verified_bytes": 5210071495
+    },
+    {
+      "pid": 1995051,
+      "fifo": "/tmp/gpu-smt-omp-paper-20261016T091128Z.fifo",
+      "stdout": "/workspaces/.agent-state/gpu-smt-omp-paper-20261016T091128Z.jsonl",
+      "offset": 3850251977,
+      "fault_tail_counts": {
+        "exclamation_bytes": 255705,
+        "underscore_bytes": 22,
+        "tail_bytes": 262144
+      },
+      "request": {
+        "id": "root-disk-fault-abort-1995051-20261016T1901",
+        "type": "abort"
+      },
+      "abort_ack": [
+        {
+          "id": "root-disk-fault-abort-1995051-20261016T1901",
+          "type": "response",
+          "command": "abort",
+          "success": true
+        }
+      ],
+      "after_bytes": 3850321649,
+      "state_request": {
+        "id": "root-disk-fault-abort-1995051-20261016T1901-state",
+        "type": "get_state"
+      },
+      "state_offset": 3850321649,
+      "safe_state": [
+        {
+          "sessionId": "01a143fb-0c8c-7640-9e24-af31e4286b7d",
+          "isStreaming": false,
+          "isCompacting": false,
+          "hasPendingAsyncWork": false,
+          "queuedMessageCount": 3
+        }
+      ],
+      "verified_bytes": 3850354831
+    }
+  ],
+  "disposition": "Both active repeated-symbol generations are now confirmed isStreaming=false, isCompacting=false, hasPendingAsyncWork=false in the original sessions. Preserve RPC processes, pending queues, journals, stdout and model settings. Do not unlink/truncate/compress-replace an open owner stdout; this would not safely reclaim its active descriptor. No unrelated collector or native workload interrupted. Real fault is contained by native abort, with no new stop policy or model approval inferred.",
+  "final_growth_check": {
+    "utc": "2026-10-16T19:13:17.726047+00:00",
+    "observations": [
+      {
+        "pid": 2020713,
+        "bytes_at_confirmed_idle": 5210071495,
+        "current_bytes": 5210071495,
+        "unchanged": true,
+        "mtime_utc": "2026-10-16T19:01:16.268917+00:00"
+      },
+      {
+        "pid": 1995051,
+        "bytes_at_confirmed_idle": 3850354831,
+        "current_bytes": 3850354831,
+        "unchanged": true,
+        "mtime_utc": "2026-10-16T19:01:16.267917+00:00"
+      }
+    ],
+    "free_project_GiB": 8.07827377319336,
+    "reclaimed_bytes": 0
+  }
+}
