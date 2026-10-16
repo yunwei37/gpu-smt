@@ -2708,3 +2708,36 @@ read-only scientific/code scope and sole write ownership of
 experiment-034/independent-opportunity-review.md. No final report exists at this
 node. It does not satisfy the complete step/paper independent audit by running.
 No fixed model roles or extra tools/step budgets are imposed on either session.
+
+
+## Direct parallel OMP specialists after coordinator stream failure
+
+The restored coordinator's provider returns an actual OpenAI-completions stream
+stall error; its incomplete empty-argument bash call is explicitly not executed.
+Root aborts that faulty turn through nativeRPC and verifies isSettled=true /
+isStreaming=false before changing dispatch. This is not a timeout-based takeover
+of effective work. No native task or author write had occurred.
+
+Root directly dispatches the human-requested three OMP specialists using native
+RPC in the SAME /workspaces/repository checkout, with separate file ownership:
+- OSS entry/reproduction docs:PID1995050,
+  session01a143fb-0bea-72de-83aa-0fdb6120e726.
+- Literature/contribution/paper:PID1995051,
+  session01a143fb-0c8c-7640-9e24-af31e4286b7d.
+- Evaluation/experiment/ablation scripts:PID1995052,
+  session01a143fb-0c0d-7696-9d3e-8ec95041c284.
+
+All three distinct native sessions are verified; each prompt is acknowledged
+and agent_start observed. As of09:16Z no completed tool/artifact result is yet
+received; dispatch is not delivery. These are direct OMP CLI specialist sessions,
+not claimed as nonexistent coordinator task-tool calls. No model/config or
+budget override is applied. Root remains Lean/GPU implementation and final
+scientific/Git integrator; docs/design.md and original captures stay protected.
+
+The old coordinator is verified idle, then its now-unused CLI is retired and
+only its owned temporary FIFO removed. Its original session file/identity remain
+preserved for later normal continuation. This leaves no idle helper service or
+second coordinator writing alongside the specialists. Each specialist's active
+RPC stdin remains open for authorized follow-up. The earlier independent
+opportunity reviewer remains separate and active, with its own unique report.
+A complete fresh step/paper review still awaits actual author results.

@@ -1677,3 +1677,15 @@ Active native captures and the independent reviewer are preserved. FIFO cleanup
 belongs after this RPC owner terminates; do not close the control stdin while
 the restored session still needs it. No additional schedule/helper service is
 created. Public step records contain no credential or control-link values.
+
+
+## Direct specialist dispatch check — root observation only
+
+The coordinator's concrete provider stall and unexecuted tool call are recorded,
+rather than equating a live process with useful work. Native abort/get_state
+proves it idle before direct specialist dispatch. Three unique OMP session IDs,
+prompt acknowledgements and agent_start events establish independent author
+requests with nonoverlapping file scope; no completed implementation/review is
+claimed. Original coordinator session persistence is verified before retiring
+its idle CLI/FIFO. No background capture, original Codex session, other project,
+credential/model/configuration or GPU owner is changed.
