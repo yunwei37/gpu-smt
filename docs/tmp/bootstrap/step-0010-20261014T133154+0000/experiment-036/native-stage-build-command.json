@@ -1,0 +1,20 @@
+{
+  "begin_utc": "2026-10-16T11:25:47.269620+00:00",
+  "command": [
+    "/usr/local/cargo/bin/cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked"
+  ],
+  "cwd": "/tmp/gpu-smt-arena-native-stages-20261016/source",
+  "selected_env": {
+    "RUSTUP_HOME": "/usr/local/rustup",
+    "CARGO_HOME": "/usr/local/cargo",
+    "RUSTFLAGS": "-C target-cpu=native -Cprofile-use=/workspaces/.agent-state/gpu-smt-deps/sokonanoda-7645b1e1fcac/pgo/merged.profdata"
+  },
+  "source_url": "https://codeload.github.com/intgrah/sokonanoda/tar.gz/7645b1e1fcacfe410c99141f1234381d995b325d",
+  "source_archive_bytes": 109266,
+  "patch": "bench/lean-gpu/arena-stage-timing.patch",
+  "role": "same-process parse/check timing dependency; existing official Init.Prelude-trained PGO reused, no GPU backend"
+}

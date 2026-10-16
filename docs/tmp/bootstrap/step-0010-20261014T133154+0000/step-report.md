@@ -2818,3 +2818,8 @@ At the completed-review checkpoint, root checks only original driver completion,
 ## Fresh independent mini result disposition and full raw publication
 
 A fresh native Codex reviewer independently checks all62464raw responses and both resource streams. [Report](mini-finalization-20261016/independent-result-review.md) and [root disposition](mini-finalization-20261016/root-review-disposition.md) accept complete acquisition and supported narrow CPU timing, with changed native outcomes/mixed p99/severe last-profile tails and sampling limits. Root publishes all8original rawZIPs/terminals and existing completed source/build/failure/qualification/input records, rather than only the latest cell. No new acquisition or scientific contribution is inferred; matched future mechanism admission remains next.
+
+
+## E036 integrated native implementation setup: actual source build and cost
+
+Fresh independent plan review admits same-native cost/representation setup only, with GPU continuation conditional. Root records [disposition](experiment-036/root-plan-disposition.md). Root implements a minimal stage-timing patch on pinned official sokonanoda, actually builds the diagnostic PGO/native binary and executes both full and parse-only controls on official Prelude and retained Mathlib4.9prefix. [Raw results and interpretation](experiment-036/native-stage-result.md): prefix1.569244swhole/0.908618sparse/0.654685scheck,41.72%checkshare and conditional1.715847xzero-check-cost ceiling. Actual GPU-supported paid fraction, native bridge/device/fallback costs and fullcurrentcorpora remain unresolved. NoGPUbackend/preflight/fullresult/RQcompletion is claimed; no E035census/restartedcapture. Storage lifecycle remains material at8.621GiBfree.

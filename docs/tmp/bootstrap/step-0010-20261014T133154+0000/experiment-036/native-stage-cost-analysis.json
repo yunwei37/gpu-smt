@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-16T11:32:36.506859+00:00",
+  "method": "direct same-process native stages; one setup observation/input; conditional zero checking cost, fixed other costs",
+  "rows": [
+    {
+      "input": "official-init-prelude",
+      "whole_s": 0.03727972996421158,
+      "parse_s": 0.005710508,
+      "check_s": 0.01839651,
+      "check_over_whole": 0.49347219032060025,
+      "zero_check_cost_conditional_speedup": 1.9742252663934425
+    },
+    {
+      "input": "retained-mathlib49-prefix",
+      "whole_s": 1.5692444510059431,
+      "parse_s": 0.90861799,
+      "check_s": 0.654684683,
+      "check_over_whole": 0.4171973860288773,
+      "zero_check_cost_conditional_speedup": 1.7158467996328324
+    }
+  ],
+  "not_measured": [
+    "GPU-supported paid cost fraction",
+    "native bridge preparation and fallback",
+    "GPU initialization, transfers, device execution",
+    "whole-source Lean verification speedup",
+    "repeated performance or official full Mathlib4.34 corpus"
+  ]
+}

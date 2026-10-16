@@ -1,0 +1,122 @@
+[
+  {
+    "observed_utc": "2026-10-16T11:27:31.730702+00:00",
+    "label": "official-init-prelude",
+    "mode": "full",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/official-init-prelude-full.resources.txt",
+      "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+      "--stdin",
+      "--nat-extension",
+      "--string-extension",
+      "--axiom-allow-all",
+      "--threads",
+      "4",
+      "--print-success-message"
+    ],
+    "cwd": "/workspaces/repository",
+    "input": "/workspaces/.agent-state/gpu-smt-deps/arena-315f24d4/init-prelude.ndjson",
+    "input_bytes": 3741967,
+    "whole_seconds": 0.03727972996421158,
+    "exit": 0,
+    "native_same_process_phases": {
+      "parse_wall_seconds": 0.005710508,
+      "check_wall_seconds": 0.01839651
+    },
+    "stdout": "Checked 2106 declarations with no errors\n",
+    "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+  },
+  {
+    "observed_utc": "2026-10-16T11:27:31.768560+00:00",
+    "label": "official-init-prelude",
+    "mode": "parse-only",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/official-init-prelude-parse-only.resources.txt",
+      "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+      "--stdin",
+      "--nat-extension",
+      "--string-extension",
+      "--axiom-allow-all",
+      "--threads",
+      "4",
+      "--print-success-message",
+      "--parse-only"
+    ],
+    "cwd": "/workspaces/repository",
+    "input": "/workspaces/.agent-state/gpu-smt-deps/arena-315f24d4/init-prelude.ndjson",
+    "input_bytes": 3741967,
+    "whole_seconds": 0.008509520906955004,
+    "exit": 0,
+    "native_same_process_phases": {
+      "parse_wall_seconds": 0.005671599
+    },
+    "stdout": "Parsed 2106 declarations\n",
+    "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+  },
+  {
+    "observed_utc": "2026-10-16T11:27:31.777389+00:00",
+    "label": "retained-mathlib49-prefix",
+    "mode": "full",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/retained-mathlib49-prefix-full.resources.txt",
+      "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+      "--stdin",
+      "--nat-extension",
+      "--string-extension",
+      "--axiom-allow-all",
+      "--threads",
+      "4",
+      "--print-success-message"
+    ],
+    "cwd": "/workspaces/repository",
+    "input": "/tmp/gpu-smt-arena-native-stages-20261016/retained-mathlib49-prefix.ndjson",
+    "input_bytes": 159423522,
+    "whole_seconds": 1.5692444510059431,
+    "exit": 0,
+    "native_same_process_phases": {
+      "parse_wall_seconds": 0.90861799,
+      "check_wall_seconds": 0.654684683
+    },
+    "stdout": "Checked 29709 declarations with no errors\n",
+    "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+  },
+  {
+    "observed_utc": "2026-10-16T11:27:33.347008+00:00",
+    "label": "retained-mathlib49-prefix",
+    "mode": "parse-only",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "-o",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/retained-mathlib49-prefix-parse-only.resources.txt",
+      "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+      "--stdin",
+      "--nat-extension",
+      "--string-extension",
+      "--axiom-allow-all",
+      "--threads",
+      "4",
+      "--print-success-message",
+      "--parse-only"
+    ],
+    "cwd": "/workspaces/repository",
+    "input": "/tmp/gpu-smt-arena-native-stages-20261016/retained-mathlib49-prefix.ndjson",
+    "input_bytes": 159423522,
+    "whole_seconds": 0.9087759889662266,
+    "exit": 0,
+    "native_same_process_phases": {
+      "parse_wall_seconds": 0.904977503
+    },
+    "stdout": "Parsed 29709 declarations\n",
+    "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+  }
+]

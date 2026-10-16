@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-10-16T11:27:31.777389+00:00",
+  "label": "retained-mathlib49-prefix",
+  "mode": "full",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/retained-mathlib49-prefix-full.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "cwd": "/workspaces/repository",
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/retained-mathlib49-prefix.ndjson",
+  "input_bytes": 159423522,
+  "whole_seconds": 1.5692444510059431,
+  "exit": 0,
+  "native_same_process_phases": {
+    "parse_wall_seconds": 0.90861799,
+    "check_wall_seconds": 0.654684683
+  },
+  "stdout": "Checked 29709 declarations with no errors\n",
+  "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+}

@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-10-16T11:27:31.730702+00:00",
+  "label": "official-init-prelude",
+  "mode": "full",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-036/official-init-prelude-full.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "cwd": "/workspaces/repository",
+  "input": "/workspaces/.agent-state/gpu-smt-deps/arena-315f24d4/init-prelude.ndjson",
+  "input_bytes": 3741967,
+  "whole_seconds": 0.03727972996421158,
+  "exit": 0,
+  "native_same_process_phases": {
+    "parse_wall_seconds": 0.005710508,
+    "check_wall_seconds": 0.01839651
+  },
+  "stdout": "Checked 2106 declarations with no errors\n",
+  "scope": "one setup observation, not GPU/performance final, no cross-version/source-verification transfer"
+}

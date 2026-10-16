@@ -1744,3 +1744,8 @@ Original driver is no longer present and all8terminal/finalization markers exist
 ## Fresh mini result review accepted — root integration
 
 Independent native reviewer covers all62464original responses, input/order/count/clock/classification/native-difference/resource checks and actual historical helper. Root reads the full report and verifies its separate validity/hypothesis/value/impact/next-decision judgments against actual final data. Descriptive CPU benefit is accepted without transparent-behavior, uniform-tail, memory/GPU/novelty or fullRQ claims. Full raw/code/failure provenance is published at the completed8cell boundary; earlier incomplete snapshots and all regressions remain. Whole-paper research goal stays active.
+
+
+## E036 setup checkpoint — independent plan review and root implementation validation
+
+Reviewer writes only E036/plan-review.md and permits integrated setup, not backend/full execution. Root reads and disposes that review, verifies main and preserves original optimized binaries. Actual pinned-source diagnosticbuild exits0; four native controls exit0 with original parsed/accepted classes and exact inputs retained. Timing directly brackets same-process phases, not cross-parser subtraction. Source version/boundary, one-observation noise, changed-main PGO warning and storage limits remain explicit. Root's patch/build/arithmetic check is not an independent result audit or a full gate pass; GPU-supported cost and whole-paper contribution remain open.

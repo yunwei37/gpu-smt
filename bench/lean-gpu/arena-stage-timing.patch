@@ -1,0 +1,30 @@
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -101,6 +101,7 @@
+     let parse_only = cfg.parse_only;
+     let print_success_message = cfg.print_success_message;
+     let arena = Bump::new();
++    let native_parse_begin = std::time::Instant::now();
+     let (export_file, warned_axioms) = match cfg.to_export_file(&arena) {
+         Ok(parsed) => parsed,
+         Err(e) => {
+@@ -112,6 +113,7 @@
+             };
+         }
+     };
++    eprintln!("native_stage parse_wall_seconds {:.9}", native_parse_begin.elapsed().as_secs_f64());
+     if !warned_axioms.is_empty() {
+         eprintln!("warning: disallowed axioms: {}", warned_axioms.join(", "));
+     }
+@@ -119,7 +121,10 @@
+         println!("Parsed {} declarations", export_file.num_declars());
+         return EXIT_ACCEPT;
+     }
+-    match export_file.check_all_declars() {
++    let native_check_begin = std::time::Instant::now();
++    let native_check_result = export_file.check_all_declars();
++    eprintln!("native_stage check_wall_seconds {:.9}", native_check_begin.elapsed().as_secs_f64());
++    match native_check_result {
+         Ok(()) => {
+             if print_success_message {
+                 println!(

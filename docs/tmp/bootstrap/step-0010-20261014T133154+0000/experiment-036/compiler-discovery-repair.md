@@ -1,0 +1,3 @@
+# Task-local compiler discovery repair
+
+Initial rustc discovery found no default in the non-login root environment. The existing SDK is /usr/local/rustup/toolchains/1.98.1-x86_64-unknown-linux-gnu and existing recorded PGO build uses task-local RUSTUP_HOME=/usr/local/rustup and CARGO_HOME=/usr/local/cargo. Reuse those exact paths and explicit +1.98.1. No rustup default, install, model, persistent runtime or active source changes. Existing LLVM tools are absent but merged profile exists; reuse that recorded profile for the diagnostic binary, retaining any compiler profile warnings rather than treating it as a fresh official PGO reproduction.
