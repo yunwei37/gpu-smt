@@ -1,0 +1,18 @@
+usage: analyze_lean_whnf_profile.py [-h] --run RUN --label LABEL
+                                    --inputs INPUTS --reference REFERENCE
+                                    [--reference-label REFERENCE_LABEL]
+                                    --out OUT
+
+Read whole native WHNF captures without launching or changing a verifier.
+Terminal totals are process-local and may be inherited across preparation
+forks. Missing terminal dumps are censored, not zero. Never compute a GPU
+speedup bound.
+
+options:
+  -h, --help            show this help message and exit
+  --run RUN
+  --label LABEL
+  --inputs INPUTS
+  --reference REFERENCE
+  --reference-label REFERENCE_LABEL
+  --out OUT

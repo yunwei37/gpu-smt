@@ -1,0 +1,15 @@
+usage: analyze_lean_arithmetic_telemetry.py [-h] --telemetry TELEMETRY
+                                            --capture CAPTURE --out OUT
+
+Recompute observed arithmetic wall intervals and integer LP shapes. Reads a
+finished capture and its original JSONL. Does not launch Lean, choose inputs,
+weaken feedback comparison, estimate CPU time, or extrapolate GPU gains.
+Nested scopes are merged by session/request before aggregation; absent
+durations remain absent. Oracle and native-client LP rows are separate
+observation layers.
+
+options:
+  -h, --help            show this help message and exit
+  --telemetry TELEMETRY
+  --capture CAPTURE
+  --out OUT

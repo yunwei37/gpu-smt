@@ -1,0 +1,15 @@
+usage: analyze_lean_parallel_verification.py [-h] --run RUN --inputs INPUTS
+                                             --fresh FRESH --out OUT
+
+Recompute the declared whole-corpus branch/snapshot comparison. Reads original
+capture artifacts; never launches a verifier or changes a plan. Partial
+conditions have no whole-run rate. Resource profiles and uninstrumented
+performance remain separate. Missing candidate clocks are not inferred from
+native operation duration or attributed to a verifier stage.
+
+options:
+  -h, --help       show this help message and exit
+  --run RUN
+  --inputs INPUTS
+  --fresh FRESH
+  --out OUT

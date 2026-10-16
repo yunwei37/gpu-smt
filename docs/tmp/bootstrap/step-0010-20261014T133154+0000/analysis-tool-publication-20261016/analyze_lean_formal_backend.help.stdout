@@ -1,0 +1,17 @@
+usage: analyze_lean_formal_backend.py [-h] --experiment EXPERIMENT
+                                      [--preflight]
+                                      [--preflight-attempt PREFLIGHT_ATTEMPT]
+                                      --out OUT [--previous PREVIOUS]
+                                      [--run RUN]
+
+Recompute complete formal verification comparisons from retained raw captures.
+
+options:
+  -h, --help            show this help message and exit
+  --experiment EXPERIMENT
+  --preflight
+  --preflight-attempt PREFLIGHT_ATTEMPT
+  --out OUT
+  --previous PREVIOUS   retained whole cells from prior run directories;
+                        current terminal wins
+  --run RUN             current recovery CPU directory

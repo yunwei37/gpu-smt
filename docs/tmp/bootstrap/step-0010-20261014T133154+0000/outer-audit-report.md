@@ -1724,3 +1724,8 @@ Root verifies committed-byte materialization, actual build exit/binary, normal p
 ## Admission/protocol checks — independent plan review plus root integration
 
 The fresh plan reviewer writes only E035/plan-review.md. Root closes its standalone capture without execution, preserves the proposed hypothesis and does not turn rejection into a measured negative. Arena extraction covers18selected rows from one actual public snapshot; measured wall/virtual CPU are kept distinct, wrong-result timing is not promoted, published CPU differences are not treated as GPU gains, and unsupported cross-version/cross-boundary subtraction is rejected. This is new source/admission evidence, not complete EXPERIMENT/WRITE/REVIEW closure or a whole-paper independent audit.
+
+
+## Historical analyzer publication — root validation only
+
+Eleven exact checked script versions are stable during inspection and their real --help commands exit0. Two optional plotting CLI imports fail and remain explicitly unverified/unpublished; failures are retained. Publication does not relabel CLI availability as numerical reproduction, native/GPU performance or independent scientific audit. Specialist files and unrelated docs/design.md are preserved.

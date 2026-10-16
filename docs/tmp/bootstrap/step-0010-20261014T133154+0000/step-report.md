@@ -2798,3 +2798,8 @@ A fresh independent Codex plan reviewer, distinct from root and not OMP, reads t
 ## Formal complete-checker source/benchmark admission
 
 Root reuses the official running Arena snapshot315f24d4 and reads the pinned fastest valid-mathlib CPU path. [Source/protocol report](literature-20261016T1025/report.md) distinguishes measured wall, raw CPU and virtual instruction-derived CPU; retains the incorrect Fortran mathlib outcome; and identifies optimized parallel native declaration checking as an already-established competitor. Eighteen selected published rows/metadata and an executed offline extractor are retained. This supports a concrete complete post-export algorithm-admission boundary rather than another scalar/metadata route; no new GPU mechanism or run is claimed. Current4.34.1/export3.1.0 data do not transfer to4.27 source verification or revive invalidE018. AllfourRQs/originalscope remain open.
+
+
+## Historical analysis sources: completed publication checkpoint
+
+Root publishes eleven unchanged October11–13 analysis/archive scripts after actual syntax/import/CLI checks. [Report](analysis-tool-publication-20261016/report.md) and exact receipts retain both plotting-script failures caused by missing system matplotlib; those two files are excluded. No capture, GPU execution, numeric rerun, scientific RQ answer or gate completion is claimed. Full published-paper review proceeds independently.

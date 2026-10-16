@@ -1,0 +1,20 @@
+usage: analyze_lean_formal_fragment_coverage.py [-h] --archive ARCHIVE
+                                                --cpu-library CPU_LIBRARY
+                                                --source SOURCE
+                                                [--closure-adapter CLOSURE_ADAPTER]
+                                                --out OUT
+
+Error analysis of retained complete formal witnesses with the frozen CPU
+clone. This reuses an independently checked whole acquisition. It does not
+generate candidates, call CUDA, measure GPU performance, or accept any new
+proof.
+
+options:
+  -h, --help            show this help message and exit
+  --archive ARCHIVE
+  --cpu-library CPU_LIBRARY
+  --source SOURCE
+  --closure-adapter CLOSURE_ADAPTER
+                        isolated changed closure implementation; no CUDA
+                        execution
+  --out OUT

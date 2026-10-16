@@ -1,0 +1,16 @@
+usage: run_lean_closure_archive.py [-h] --archive ARCHIVE --tool TOOL
+                                   --cpu-library CPU_LIBRARY --ptx PTX
+                                   --out OUT
+
+Run a changed CUDA checker on every retained independently checked real graph.
+Development/error analysis only: source frontend outcomes come from the
+original whole acquisition. This cannot measure complete candidate
+verification speed.
+
+options:
+  -h, --help            show this help message and exit
+  --archive ARCHIVE
+  --tool TOOL
+  --cpu-library CPU_LIBRARY
+  --ptx PTX
+  --out OUT

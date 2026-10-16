@@ -1,0 +1,15 @@
+usage: analyze_lean_whnf_classified.py [-h] --run RUN [--label LABEL]
+                                       --inputs INPUTS --reference REFERENCE
+                                       --out OUT
+
+Reconstruct native classified WHNF source intervals from ordinary raw logs. No
+verifier launch. Missing begin/complete intervals remain censored. These
+instrumented calling-thread counters do not establish GPU support or speedup.
+
+options:
+  -h, --help            show this help message and exit
+  --run RUN
+  --label LABEL
+  --inputs INPUTS
+  --reference REFERENCE
+  --out OUT
