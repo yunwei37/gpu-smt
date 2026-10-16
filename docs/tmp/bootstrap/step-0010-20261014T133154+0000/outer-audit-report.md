@@ -1729,3 +1729,8 @@ The fresh plan reviewer writes only E035/plan-review.md. Root closes its standal
 ## Historical analyzer publication — root validation only
 
 Eleven exact checked script versions are stable during inspection and their real --help commands exit0. Two optional plotting CLI imports fail and remain explicitly unverified/unpublished; failures are retained. Publication does not relabel CLI availability as numerical reproduction, native/GPU performance or independent scientific audit. Specialist files and unrelated docs/design.md are preserved.
+
+
+## Published-version independent review acceptance — root integration
+
+Root reads allfour fresh reports, verifies13frozen files equal published9361cf4 and checks review sequencing/capability disclosure. Native reviewer identity, no-Git/no-native-rerun limits, actual52population audit, primary-source findings and unfinished-author exclusions are explicit. Root accepts scientific reject/incomplete without converting it into GPU impossibility or a smaller deliverable, and routes to consequential EXPERIMENT admission. This is a real independent full-paper assessment plus root integration, not full-step completion or acceptance. Historical source-only2c0b377 does not mutate the reviewed paper.

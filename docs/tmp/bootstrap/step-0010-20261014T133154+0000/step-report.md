@@ -2803,3 +2803,8 @@ Root reuses the official running Arena snapshot315f24d4 and reads the pinned fas
 ## Historical analysis sources: completed publication checkpoint
 
 Root publishes eleven unchanged October11–13 analysis/archive scripts after actual syntax/import/CLI checks. [Report](analysis-tool-publication-20261016/report.md) and exact receipts retain both plotting-script failures caused by missing system matplotlib; those two files are excluded. No capture, GPU execution, numeric rerun, scientific RQ answer or gate completion is claimed. Full published-paper review proceeds independently.
+
+
+## Independent full published-paper review complete
+
+Fresh native Codex reviewer completes the full blind read → primary-source verification → full reread → intent/cycle audit on immutable published9361cf4. [Four reports and root disposition](milestone-review-001/root-disposition.md) reject current OSDI readiness and route EXPERIMENT admission; allfourRQs/fullscope remain open. The reviewer independently checks all52publishedCPU populations/1393406rows and actual E034 unresolved-provider capability. Root audits provenance/procedure/arguments and spot-verifies closest-work sources; no new benchmark or GPU gain is claimed. Native steering handoffs preserve original OMP authors; delivery is not consumption. This completes review of that version, not the research goal or future author revisions.
