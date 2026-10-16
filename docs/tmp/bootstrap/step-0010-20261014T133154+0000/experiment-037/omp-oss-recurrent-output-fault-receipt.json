@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-16T12:43:42.569886+00:00",
+  "fault": "actual current resumed OSS thinking stream again repeats only bang characters, no new tool event in observed tail",
+  "action": "native abort and state request through existing FIFO; CLI/session/model/journal/dirty files retained, effective other writers untouched",
+  "delivery_events": [
+    {
+      "id": "e037-oss-repeated-output-abort",
+      "type": "response",
+      "success": true,
+      "command": "abort"
+    },
+    {
+      "id": "e037-oss-state-after-abort",
+      "type": "response",
+      "success": true,
+      "command": "get_state"
+    },
+    {
+      "state": {
+        "isStreaming": false,
+        "sessionId": "01a143fb-0bea-72de-83aa-0fdb6120e726"
+      }
+    }
+  ],
+  "log_start_offset": 100099560,
+  "raw_log": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl"
+}
