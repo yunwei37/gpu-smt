@@ -29,7 +29,7 @@ This section records the initial scientific disposition of the expanded research
 
 BOOTSTRAP step0010 remains unfrozen and all four RQs remain open. The complete
 Initial Narrative and accepted evolution below are preserved. Completed evidence
-and interface checkpoints are now published on main through6aebcfa, under the
+and interface checkpoints are now published on main, under the
 user's explicit request to stop withholding completed work until the whole
 research effort finishes. Publication is not an independent-review verdict,
 a final RQ answer or an OSDI acceptance claim.
@@ -94,6 +94,18 @@ evidence. The previous frontier is preserved in
 [the dated archive](tmp/bootstrap/step-0010-20261014T133154+0000/idea-frontier-before-published-checkpoints-20261016.md).
 This is a status and admission update; it changes no accepted thesis, RQ meaning,
 scope or evaluation promise.
+
+
+A fresh independent plan review closes the proposed standalone reached-argument
+CPU census before execution: its missing fraction alone would not admit a
+concrete independent algorithm or a differentiated system. [E035 disposition](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-035/disposition.md)
+preserves the uncertainty rather than inventing a negative cost bound.
+The [formal Arena protocol/source assessment](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T1025/report.md)
+identifies complete post-export declaration checking as a candidate device
+boundary with strong already-parallel CPU competitors. No algorithm, backend,
+new performance result or novel contribution is admitted by that observation.
+It neither transfers to source-verification clocks nor replaces the original
+Lean/SMT service and four-RQ evidence requirements.
 
 ## Narrative evolution
 

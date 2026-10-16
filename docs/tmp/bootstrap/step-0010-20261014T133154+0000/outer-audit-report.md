@@ -1719,3 +1719,8 @@ Root checks45mapped source entries, JSON syntax, preserved source/license attrib
 ## Published-source reconstruction validation — root only
 
 Root verifies committed-byte materialization, actual build exit/binary, normal process completion and exact native response agreement for both original accepted/rejected controls. Both classes are present; equal failure-only behavior is not treated as success. The report retains warnings/raw inputs/outputs and limits claims to one base with existing pinned dependencies. Whole-paper and independent audits remain open.
+
+
+## Admission/protocol checks — independent plan review plus root integration
+
+The fresh plan reviewer writes only E035/plan-review.md. Root closes its standalone capture without execution, preserves the proposed hypothesis and does not turn rejection into a measured negative. Arena extraction covers18selected rows from one actual public snapshot; measured wall/virtual CPU are kept distinct, wrong-result timing is not promoted, published CPU differences are not treated as GPU gains, and unsupported cross-version/cross-boundary subtraction is rejected. This is new source/admission evidence, not complete EXPERIMENT/WRITE/REVIEW closure or a whole-paper independent audit.

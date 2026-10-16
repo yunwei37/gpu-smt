@@ -2789,3 +2789,12 @@ Root reconciles docs/implementation.md with completed main checkpoints, the late
 ## Actual published-source baseline reconstruction
 
 Root materializes16GC-base files from published commit e163baf into a private build package and builds with the actual pinned4.27SDK. All22tasks succeed/exit0. Two exact original Goedel accepted/rejected controls run in both rebuilt and measured binaries, four exits0 with matching nativeJSON and correct control classes. [Full raw evidence and scope](published-source-reproduction-20261016/result-review.md). This improves baseline artifact reconstruction, not performance, GPU engagement, new-machine/all-overlay/full-service reproducibility or independent review. Active experiments and source packages remain untouched.
+
+
+## EXPERIMENT admission: E035 closed without running
+
+A fresh independent Codex plan reviewer, distinct from root and not OMP, reads the actual scientific contract, prior raw/observer/source methods and proposal. [Review](experiment-035/plan-review.md) rejects the standalone29,750-source child-cost observation as not tied to a consequential concrete mechanism decision, while recognizing that its number is genuinely missing. Root adopts that reason and [closes the proposal](experiment-035/disposition.md) without instrumentation/build/preflight/fullrun. No review-reset, replacement profiler or invented low-cost conclusion follows. This is an independent plan review only, not whole-step/paper audit or a new RQ result.
+
+## Formal complete-checker source/benchmark admission
+
+Root reuses the official running Arena snapshot315f24d4 and reads the pinned fastest valid-mathlib CPU path. [Source/protocol report](literature-20261016T1025/report.md) distinguishes measured wall, raw CPU and virtual instruction-derived CPU; retains the incorrect Fortran mathlib outcome; and identifies optimized parallel native declaration checking as an already-established competitor. Eighteen selected published rows/metadata and an executed offline extractor are retained. This supports a concrete complete post-export algorithm-admission boundary rather than another scalar/metadata route; no new GPU mechanism or run is claimed. Current4.34.1/export3.1.0 data do not transfer to4.27 source verification or revive invalidE018. AllfourRQs/originalscope remain open.

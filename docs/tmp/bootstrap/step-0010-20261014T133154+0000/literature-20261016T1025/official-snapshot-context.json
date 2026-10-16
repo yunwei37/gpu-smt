@@ -1,0 +1,177 @@
+{
+  "scope": "Third-party published snapshot extraction only; no project measurement, speedup, ranking across protocols or metric subtraction",
+  "source_url": "https://arena.lean-lang.org/results.json",
+  "source_meta": {
+    "timestamp": "2026-10-15 17:30:35 UTC",
+    "git_revision": "315f24d4cd90d70854df862597cc152c1b211898",
+    "git_revision_short": "315f24d4",
+    "github_url": "https://github.com/leanprover/lean-kernel-arena/commit/315f24d4cd90d70854df862597cc152c1b211898",
+    "github_action_url": "https://github.com/leanprover/lean-kernel-arena/actions/runs/38754739249",
+    "round": null,
+    "doi": null,
+    "zenodo_deposition": null,
+    "github_run_id": "38754739249"
+  },
+  "raw_snapshot": "/workspaces/.agent-state/gpu-smt-arena-results-20261016.json.gz",
+  "source_counts": {
+    "checkers": 27,
+    "tests": 234,
+    "results": 6318
+  },
+  "metric_notes": {
+    "wall_time": "published measured wall seconds; not the website virtual CPU column",
+    "cpu_time": "raw reported CPU-time field; not replaced by instruction-derived time",
+    "virtual_cpu_seconds_at_6Ginstr_s": "instructions divided by website fixed 6.0 Ginstr/s",
+    "max_rss": "published raw maximum RSS in bytes; not PSS or GPU memory"
+  },
+  "checkers": [
+    {
+      "name": "mathgraph",
+      "url": "https://github.com/metalogiclabs/mathgraph-lean-kernel",
+      "ref": "flash",
+      "rev": "78c7502bac8a5ba000057b3f083bc0595ac65750",
+      "version": "flash",
+      "threads": null,
+      "run": "target/release/sokonanoda config.json < \"$IN\" || exit 1\n",
+      "declines": [],
+      "published_build_uses_pgo": true,
+      "published_build_uses_native_target": true,
+      "configured_threads_from_command": 2,
+      "all_test_correctness_counts": {
+        "correct": 208,
+        "either": 24,
+        "error": 2
+      }
+    },
+    {
+      "name": "nanoclo-fortran",
+      "url": "https://github.com/kim-em/nanoclo-fortran",
+      "ref": "main",
+      "rev": "b3a13ef5f0ae98a56087bef11ee1ec80dde0ef30",
+      "version": "b3a13ef",
+      "threads": 4,
+      "run": "ulimit -s unlimited\nexport OMP_STACKSIZE=1G\nexec ./build/nanoclo-fortran --jobs=4 \"$IN\"\n",
+      "declines": [],
+      "published_build_uses_pgo": false,
+      "published_build_uses_native_target": false,
+      "configured_threads_from_command": 4,
+      "all_test_correctness_counts": {
+        "correct": 207,
+        "either": 24,
+        "error": 2,
+        "incorrect": 1
+      }
+    },
+    {
+      "name": "nanoclo",
+      "url": "https://github.com/sgraf812/nanoclo",
+      "ref": "main",
+      "rev": "a2aa37ebdb2e28b85c4f3681b0bd8564628ea4a4",
+      "version": "a2aa37e",
+      "threads": null,
+      "run": "target/release/nanoclo config.json < \"$IN\" || exit 1\n",
+      "declines": [],
+      "published_build_uses_pgo": false,
+      "published_build_uses_native_target": false,
+      "configured_threads_from_command": 4,
+      "all_test_correctness_counts": {
+        "correct": 208,
+        "either": 24,
+        "error": 2
+      }
+    },
+    {
+      "name": "official",
+      "url": null,
+      "ref": null,
+      "rev": null,
+      "version": "v4.34.1",
+      "threads": null,
+      "run": ".lake/build/bin/kernel \"$IN\"",
+      "declines": [],
+      "published_build_uses_pgo": false,
+      "published_build_uses_native_target": false,
+      "configured_threads_from_command": null,
+      "all_test_correctness_counts": {
+        "correct": 208,
+        "either": 24,
+        "error": 2
+      }
+    },
+    {
+      "name": "parse-only",
+      "url": null,
+      "ref": null,
+      "rev": null,
+      "version": "v4.34.1",
+      "threads": null,
+      "run": ".lake/build/bin/kernel --parse-only \"$IN\"",
+      "declines": [],
+      "published_build_uses_pgo": false,
+      "published_build_uses_native_target": false,
+      "configured_threads_from_command": null,
+      "all_test_correctness_counts": {
+        "incorrect": 66,
+        "correct": 142,
+        "either": 26
+      }
+    },
+    {
+      "name": "sokonanoda",
+      "url": "https://github.com/intgrah/sokonanoda",
+      "ref": "master",
+      "rev": "7645b1e1fcacfe410c99141f1234381d995b325d",
+      "version": "7645b1e",
+      "threads": null,
+      "run": "target/release/sokonanoda --stdin --nat-extension --string-extension --axiom-allow-all --threads 4 < \"$IN\"\n",
+      "declines": [],
+      "published_build_uses_pgo": true,
+      "published_build_uses_native_target": true,
+      "configured_threads_from_command": 4,
+      "all_test_correctness_counts": {
+        "correct": 206,
+        "either": 24,
+        "error": 2,
+        "declined": 2
+      }
+    }
+  ],
+  "tests": [
+    {
+      "name": "cslib",
+      "size": 2422584798,
+      "lines": 42689984,
+      "lean_version": "4.34.0",
+      "lean_githash": "293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+      "lean4export_version": "3.1.0",
+      "timeout": 1800,
+      "declaration_url": "https://github.com/leanprover/lean-kernel-arena/blob/315f24d4cd90d70854df862597cc152c1b211898/tests/cslib.yaml",
+      "source_url": "https://github.com/leanprover/cslib/tree/990e65a685bed413f43b139db900a36ad5322a10",
+      "outcome": "accept"
+    },
+    {
+      "name": "init",
+      "size": 347555345,
+      "lines": 6487065,
+      "lean_version": "4.34.1",
+      "lean_githash": "5045d0056413266e57c625dcd7c365b10e377c52",
+      "lean4export_version": "3.1.0",
+      "timeout": 500,
+      "declaration_url": "https://github.com/leanprover/lean-kernel-arena/blob/315f24d4cd90d70854df862597cc152c1b211898/tests/init.yaml",
+      "source_url": "https://github.com/leanprover/lean-kernel-arena/blob/315f24d4cd90d70854df862597cc152c1b211898/tests/init_module.lean",
+      "outcome": "accept"
+    },
+    {
+      "name": "mathlib",
+      "size": 6184415052,
+      "lines": 109790519,
+      "lean_version": "4.34.1",
+      "lean_githash": "5045d0056413266e57c625dcd7c365b10e377c52",
+      "lean4export_version": "3.1.0",
+      "timeout": 5680,
+      "declaration_url": "https://github.com/leanprover/lean-kernel-arena/blob/315f24d4cd90d70854df862597cc152c1b211898/tests/mathlib.yaml",
+      "source_url": "https://github.com/leanprover-community/mathlib4/tree/d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "outcome": "accept"
+    }
+  ]
+}
