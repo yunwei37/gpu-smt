@@ -1,0 +1,33 @@
+{
+  "start_utc": "2026-10-16T13:19:10.905046+00:00",
+  "end_utc": "2026-10-16T13:19:11.313739+00:00",
+  "command": [
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+    "-x",
+    "c++",
+    "-std=c++17",
+    "-O3",
+    "-fPIC",
+    "-stdlib=libc++",
+    "-fvisibility=default",
+    "-isystem",
+    "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+    "-DLEAN_MULTI_THREAD",
+    "-DLEAN_USE_GMP",
+    "-DLEAN_EXPORTING",
+    "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+    "-I/tmp/gpu-smt-native-ref-branches-20261016/lean4-4.27.0/src",
+    "-I/workspaces/repository/bench/lean-native",
+    "-shared",
+    "/workspaces/repository/bench/lean-native/native-ref-branches.cpp",
+    "-L/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib",
+    "-Wl,-rpath,/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib",
+    "-Wl,-soname,libgpu_smt_ref_branches.so",
+    "-o",
+    "/tmp/gpu-smt-native-ref-branches-20261016/libgpu_smt_ref_branches.so"
+  ],
+  "cwd": "/tmp/gpu-smt-native-ref-branches-20261016",
+  "exit": 1,
+  "whole_seconds": 0.4086969009367749,
+  "scope": "native dependency/runtime setup only, not verifier or performance result"
+}

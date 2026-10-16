@@ -1,0 +1,113 @@
+--- a/src/runtime/io.cpp
++++ b/src/runtime/io.cpp
+@@ -4,6 +4,7 @@
+ 
+ Authors: Leonardo de Moura, Sebastian Ullrich
+ */
++#include "native-ref-branches.h"
+ #if defined(LEAN_WINDOWS)
+ #include <icu.h>
+ #include <windows.h>
+@@ -1392,6 +1393,7 @@
+     lean_ref_object * o = (lean_ref_object*)lean_alloc_small_object(sizeof(lean_ref_object));
+     lean_set_st_header((lean_object*)o, LeanRef, 0);
+     o->m_value = a;
++    gpu_smt_ref_created((lean_object*)o);
+     return (lean_object*)o;
+ }
+ 
+@@ -1413,6 +1415,7 @@
+ static inline bool ref_maybe_mt(b_obj_arg ref) { return lean_is_mt(ref) || lean_is_persistent(ref); }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_st_ref_get(b_obj_arg ref) {
++    ref = gpu_smt_resolve_ref(ref);
+     if (ref_maybe_mt(ref)) {
+         atomic<object *> * val_addr = mt_ref_val_addr(ref);
+         while (true) {
+@@ -1440,6 +1443,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_st_ref_take(b_obj_arg ref) {
++    ref = gpu_smt_resolve_ref(ref);
+     if (ref_maybe_mt(ref)) {
+         atomic<object *> * val_addr = mt_ref_val_addr(ref);
+         while (true) {
+@@ -1458,6 +1462,7 @@
+ static_assert(sizeof(atomic<unsigned short>) == sizeof(unsigned short), "`atomic<unsigned short>` and `unsigned short` must have the same size"); // NOLINT
+ 
+ extern "C" LEAN_EXPORT obj_res lean_st_ref_set(b_obj_arg ref, obj_arg a) {
++    ref = gpu_smt_resolve_ref(ref);
+     if (ref_maybe_mt(ref)) {
+         /* We must mark `a` as multi-threaded if `ref` is marked as multi-threaded.
+            Reason: our runtime relies on the fact that a single-threaded object
+@@ -1477,6 +1482,7 @@
+ }
+ 
+ extern "C" LEAN_EXPORT obj_res lean_st_ref_swap(b_obj_arg ref, obj_arg a) {
++    ref = gpu_smt_resolve_ref(ref);
+     if (ref_maybe_mt(ref)) {
+         /* See io_ref_write */
+         mark_mt(a);
+--- a/src/runtime/object.cpp
++++ b/src/runtime/object.cpp
+@@ -10,6 +10,7 @@
+ #include <deque>
+ #include <cmath>
+ #include <lean/lean.h>
++#include "native-ref-branches.h"
+ #include "runtime/object.h"
+ #include "runtime/thread.h"
+ #include "runtime/utf8.h"
+@@ -372,6 +373,7 @@
+             lean_free_small_object(o);
+             break;
+         case LeanRef:
++            gpu_smt_ref_freed(o);
+             if (object * v = lean_to_ref(o)->m_value) dec(v, todo);
+             lean_free_small_object(o);
+             break;
+@@ -459,6 +461,7 @@
+ // Thunks
+ 
+ extern "C" LEAN_EXPORT b_obj_res lean_thunk_get_core(b_obj_arg t) {
++    t = gpu_smt_resolve_thunk(t);
+     object * c = lean_to_thunk(t)->m_closure.exchange(nullptr);
+     if (c != nullptr) {
+         /* Recall that a closure uses the standard calling convention.
+@@ -659,10 +662,12 @@
+     imp->m_canceled    = false;
+     imp->m_keep_alive  = keep_alive;
+     imp->m_deleted     = false;
++    gpu_smt_task_created(imp,c != nullptr);
+     return imp;
+ }
+ 
+ static void free_task_imp(lean_task_imp * imp) {
++    gpu_smt_task_retired(imp);
+     lean_free_small_object((lean_object*)imp);
+ }
+ 
+@@ -728,12 +733,15 @@
+     }
+ 
+     void deactivate_task_core(unique_lock<mutex> & lock, lean_task_object * t) {
++        // Retain the owner through dependent and closure destruction as well.
++        gpu_smt_task_scope branch_cleanup_scope(t->m_imp);
+         object * c              = t->m_imp->m_closure;
+         lean_task_object * it   = t->m_imp->m_head_dep;
+         t->m_imp->m_closure     = nullptr;
+         t->m_imp->m_head_dep    = nullptr;
+         t->m_imp->m_canceled    = true;
+         t->m_imp->m_deleted     = true;
++        gpu_smt_task_retired(t->m_imp);
+         lock.unlock();
+         while (it) {
+             lean_assert(it->m_imp->m_deleted);
+@@ -798,6 +806,7 @@
+         object * v = nullptr;
+         {
+             scoped_current_task_object scope_cur_task(t);
++            gpu_smt_task_scope branch_scope(t->m_imp);
+             object * c = t->m_imp->m_closure;
+             t->m_imp->m_closure = nullptr;
+             lock.unlock();

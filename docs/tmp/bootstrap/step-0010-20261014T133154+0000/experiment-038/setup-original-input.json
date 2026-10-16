@@ -1,0 +1,12 @@
+{
+  "index": 0,
+  "proof_id": "Proof_00000",
+  "filename": "goedel-workbook-lean427-3c2afe6bfc6bdeca6b78d1f257468164bba56966/GoedelProofs/Proof_00000.lean",
+  "author": {
+    "proof_id": "Proof_00000",
+    "problem_id": "lean_workbook_10009",
+    "status": "ok",
+    "elapsed_s": 32.99
+  },
+  "code": "import Mathlib\nimport Aesop\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- prove that $a^{3}+b^{3}+c^{3}+{\\frac {15\\,abc}{4}} \\geq \\frac{1}{4}$ given $a, b, c,$ are non-negative reals such that $a+b+c=1$ -/\ntheorem lean_workbook_10009 (a b c: \u211d) (ha : a \u2265 0 \u2227 b \u2265 0 \u2227 c \u2265 0 \u2227 a + b + c = 1): a^3 + b^3 + c^3 + (15 * a * b * c)/4 \u2265 1/4  := by\n  /-\n  Given non-negative real numbers \\(a\\), \\(b\\), and \\(c\\) such that \\(a + b + c = 1\\), we need to prove that \\(a^3 + b^3 + c^3 + \\frac{15abc}{4} \\geq \\frac{1}{4}\\).\n  1. **Case Analysis**: We analyze different cases based on the relationships between \\(a\\), \\(b\\), and \\(c\\).\n  2. **Non-negativity and Bounds**: Utilize the non-negativity of \\(a\\), \\(b\\), and \\(c\\) and the fact that their sum is 1.\n  3. **Simplification and Comparison**: Use algebraic simplification and numerical comparison to show the inequality holds.\n  -/\n  -- Consider different cases based on the relationships between a, b, and c\n  cases' le_total a b with hab hab <;> cases' le_total b c with hbc hbc <;> cases' le_total c a with hac hac <;>\n  -- Use non-negativity of a, b, and c and their sum to prove the inequality\n  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),\n    sq_nonneg (a + b + c)]\n"
+}

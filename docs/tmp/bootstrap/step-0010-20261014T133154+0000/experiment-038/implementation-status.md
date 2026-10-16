@@ -1,0 +1,7 @@
+# E038 native branch implementation status
+Experimental source/runtime integration, not a complete service or performance result.
+Root implements runtime-cell versions, unresolved-thunk versions, task admission/execution/retirement context and descendant lifetime retention. Actual io.cpp ownership operations remain authoritative; originals and private copies retain ownership. Native task map/bind/keep_alive/synchronous paths are covered through common scheduler allocation and execution, not only a thread-local enqueue hook.
+Unresolved in-flight prepared thunks currently retain native behavior and are NOT qualified as isolated. Arbitrary native globals, external effects, promise interactions, memory/time policies, unsupported-effect admission/fallback and complete caller behavior remain unimplemented/unqualified. No full cohort or GPU is admitted by the code.
+Original SDK/native acquisition binaries and OMP author files remain untouched. The separate source patch targets upstream Lean4.27.0; both static and SYMBOLIC-loaded runtime paths require actual replacement/link engagement before any result claim.
+
+Actual limited caller/static+shared runtime engagement is now executed in setup3/4/5 and independently audited. Current v2 includes cleanup task scope; first access copies prepared cells. General effect/policy/fallback qualifications above remain unresolved. Full details and actual cost are in setup-result.md and root-disposition.md.

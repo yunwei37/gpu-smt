@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-16T13:01:19.084999+00:00",
+  "source_url": "https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/runtime/object.cpp",
+  "source_bytes": 90914,
+  "sdk": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+  "executables": [
+    {
+      "path": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/lib/lean/libleanshared.so",
+      "dynamic_relevant": [
+        " 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/..:$ORIGIN]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libpthread.so.0]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [librt.so.1]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]",
+        " 0x000000000000001e (FLAGS)              SYMBOLIC STATIC_TLS"
+      ],
+      "reference_task_exports": [
+        "0000000009b48a20 T lean_st_mk_ref",
+        "0000000009b48a50 T lean_st_ref_get",
+        "0000000009b48bd0 T lean_st_ref_ptr_eq",
+        "0000000009b48b00 T lean_st_ref_set",
+        "0000000009b48b80 T lean_st_ref_swap",
+        "0000000009b48ad0 T lean_st_ref_take",
+        "0000000009b26480 T lean_task_bind_core",
+        "0000000009b260f0 T lean_task_spawn_core"
+      ]
+    },
+    {
+      "path": "/tmp/gpu-smt-goedel427-20261014/repl-producer-native/.lake/build/bin/repl",
+      "dynamic_relevant": [
+        " 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libpthread.so.0]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [librt.so.1]",
+        " 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]",
+        " 0x000000006ffffffb (FLAGS_1)            Flags: PIE"
+      ],
+      "reference_task_exports": [
+        "0000000009c38660 T lean_st_mk_ref",
+        "0000000009c38690 T lean_st_ref_get",
+        "0000000009c38810 T lean_st_ref_ptr_eq",
+        "0000000009c38740 T lean_st_ref_set",
+        "0000000009c387c0 T lean_st_ref_swap",
+        "0000000009c38710 T lean_st_ref_take",
+        "0000000009c160a0 T lean_task_bind_core",
+        "0000000009c15d10 T lean_task_spawn_core"
+      ]
+    }
+  ]
+}
