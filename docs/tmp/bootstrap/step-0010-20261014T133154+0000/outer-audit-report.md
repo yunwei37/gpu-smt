@@ -1767,3 +1767,13 @@ The independent reviewer directly counts actual full347555345B/6487065lines and5
 ## Original author RPC/log repair audit — root only
 
 Root distinguishes actual repeated-symbol/output-space fault from ordinary long reasoning, preserves the still-text-producing paper stream, and verifies nativeabort success/agent_end/isStreaming=false before idle CLI close. Closed telemetry is losslessly compressed and full bytes compared before duplicate removal; private journals/raw state stay private. Exact original session identity/model is verified after --resume, and high-level followUp delivery is recorded without claiming completion. No other active writer, source/capture, credential, provider-model setting, persistent service/storage boundary or goal is changed.
+
+
+### E037 setup admission audit, 2026-10-16
+Human record and complete original scope retained. Fresh plan reviewer checked original parser/checker caches, full prior 59,626-row paid-cost evidence and 4-/24-thread controls; root evaluates the findings rather than treating the review as authority. Admission covers substantive integration and actual host setup only. No fixed budget, added infrastructure, same-algorithm CPU-win requirement, third E036 follow-up, native replacement or GPU-full-run claim. Separate source variant preserves all published failures. Real execution, external full-matrix preflight and independent completed-result audit remain distinct unfinished work.
+
+
+### E037 result and completed-cell checkpoint audit
+Fresh result reviewer read the complete user record/Initial Narrative/RQ4 and actual source, recomputed every59,626-row frozen/on/off population, audited whole costs/commands/metadata and all-native engagement, and returned five explicit judgments. Root accepts negative mechanism boundary, retains GPU superiority as unmeasured, records corrections without altering original logs or re-reviewing unchanged evidence. No cheap positive count, cache/compilation novelty, strict wall ceiling or changed story is promoted. Full GPU matrix was never launched or claimed complete. The actual weak constructor is closed under evidence, not an invented quota.
+
+Two original terminal CPU profiles were recovered exactly once after collector exit. Each distinct source index/row population and compression byte-roundtrip was checked, with raw full archives retained. Their resources and commands accompany rows; source-attempt55cells/1,460,714rows excludes official declaration setup. No unfinished cell is counted. OMP writers and unrelated docs/design.md remain untouched. Working-tree/raw-data preservation and main publication follow the human checkpoint instruction; no infrastructure/runtime configuration was changed.

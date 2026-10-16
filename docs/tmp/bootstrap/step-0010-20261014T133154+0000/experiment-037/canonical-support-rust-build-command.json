@@ -1,0 +1,12 @@
+{
+  "start_utc": "2026-10-16T12:33:39.508142+00:00",
+  "cwd": "/tmp/gpu-smt-arena-native-stages-20261016/source",
+  "command": [
+    "/usr/local/cargo/bin/cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--locked"
+  ],
+  "RUSTFLAGS": "-C target-cpu=native -Cprofile-use=/workspaces/.agent-state/gpu-smt-deps/sokonanoda-7645b1e1fcac/pgo/merged.profdata -C link-arg=-L/tmp/gpu-smt-arena-native-stages-20261016 -C link-arg=-larena_canonical_support -C link-arg=-Wl,-rpath,/tmp/gpu-smt-arena-native-stages-20261016"
+}

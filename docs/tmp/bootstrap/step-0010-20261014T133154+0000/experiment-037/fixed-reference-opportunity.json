@@ -1,0 +1,60 @@
+{
+  "frozen": {
+    "body_positives": 23367,
+    "old_reference_positive_cpu_ns": 337581756,
+    "old_reference_body_cpu_ns": 6973006231,
+    "weighted_positive_fraction": 0.048412656581204194,
+    "body_reason_counts": {
+      "0": 23367,
+      "9": 5913,
+      "1": 27378,
+      "3": 886
+    },
+    "old_reference_reason_cpu_ns": {
+      "0": 337581756,
+      "9": 1056839108,
+      "1": 5399984143,
+      "3": 178601224
+    }
+  },
+  "canonical": {
+    "body_positives": 25314,
+    "old_reference_positive_cpu_ns": 437432238,
+    "old_reference_body_cpu_ns": 6973006231,
+    "weighted_positive_fraction": 0.0627322310505476,
+    "body_reason_counts": {
+      "0": 25314,
+      "9": 6508,
+      "1": 24788,
+      "3": 934
+    },
+    "old_reference_reason_cpu_ns": {
+      "0": 437432238,
+      "9": 1239933251,
+      "1": 5113536791,
+      "3": 182103951
+    }
+  },
+  "host_terms": {
+    "max": 65536,
+    "median": 12109.0,
+    "p95": 65536
+  },
+  "host_envs": {
+    "max": 33995,
+    "median": 1496.5,
+    "p95": 8638
+  },
+  "host_levels": {
+    "max": 148,
+    "median": 2.0,
+    "p95": 18
+  },
+  "host_frames": {
+    "max": 852,
+    "median": 38.0,
+    "p95": 172
+  },
+  "source_note": "Fixed prior E036 per-declaration body CPU attribution is descriptive reference, not marginal removable wall time. All native bodies still execute. Same-index/kind join asserted.",
+  "quantile_convention": "Median is statistics.median (mean of two middle values for even populations); p95 is sorted[floor(.95*n)], all body rows."
+}

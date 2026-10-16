@@ -1,0 +1,4 @@
+# Completed CPU profile publication
+One natural checkpoint found the retained CPU trio collector has exited and its acquisition-completed.md names all 12 solver conditions. The last two profiles each return all 29,750 attempts with no driver failure. Their source-associated rows, commands, terminal counts and resource series are published here; original full input/response/oracle archives remain unchanged.
+These two distinct cells add 59,500 attempts to the already published 53 unique source-attempt cells / 1,401,214 attempts: 55 unique cells / 1,460,714 attempts. The old immutable 52-cell publication and separate eighth mini cell are not rewritten. Official Init declaration rows and diagnostic controls are excluded from this population.
+A complete acquisition is not complete native-artifact equivalence, service/GPU superiority, a new contribution or a closed RQ. No acquisition was restarted or interrupted, and no waiting-row polling was used.

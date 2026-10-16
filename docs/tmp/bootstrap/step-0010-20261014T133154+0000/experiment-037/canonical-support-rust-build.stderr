@@ -1,0 +1,58 @@
+   Compiling sokonanoda v0.5.0 (/tmp/gpu-smt-arena-native-stages-20261016/source)
+warning: function `body_begin` is never used
+   --> src/e036.rs:100:15
+    |
+100 | pub(crate) fn body_begin() -> u64 {
+    |               ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `body_end` is never used
+   --> src/e036.rs:106:15
+    |
+106 | pub(crate) fn body_end(index: u32, begin: u64) {
+    |               ^^^^^^^^
+
+warning: function `arena_thread_cpu_ns` is never used
+  --> src/e036.rs:93:8
+   |
+93 |     fn arena_thread_cpu_ns() -> u64;
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RINvNtCsgxBkk5gSRhY_4core3ptr9drop_glueNtNtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parser6ParserEBH_ Hash = 477345293814914073 up to 0 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMNtNtCs4rRRRJnaTaN_10sokonanoda7checker2tcNtNtB4_7context10ExportFile17check_declar_with Hash = 286408456657122155 up to 8027 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser10do_nat_lit Hash = 426704508150704478 up to 100 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser10do_str_lit Hash = 337337755893478984 up to 76 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser14with_input_len Hash = 650402502986490621 up to 14 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser5do_pi Hash = 663626078445380080 up to 14630 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser6do_app Hash = 197311002351247856 up to 39812 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser6do_let Hash = 37714606027349971 up to 39 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser7do_bvar Hash = 287150331289276068 up to 47 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser7do_proj Hash = 134364824621343100 up to 308 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser7do_sort Hash = 1096215008559263053 up to 69 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser8do_const Hash = 1028710735379828749 up to 12679 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvMs2_NtNtCs4rRRRJnaTaN_10sokonanoda8frontend6parserNtB5_6Parser9do_lambda Hash = 663626078445380080 up to 17849 count discarded
+
+warning: sokonanoda.33d3780f5b65e3bb-cgu.0: function control flow change detected (hash mismatch) _RNvYNtNtNtNtCs9k3SxhrAWiO_3std3sys5stdio4unix6StderrNtNtBa_2io5Write9write_allCs4rRRRJnaTaN_10sokonanoda Hash = 303685789837555237 up to 0 count discarded
+
+warning: `sokonanoda` (lib) generated 17 warnings
+warning: sokonanoda.82acd3cabc828596-cgu.0: function control flow change detected (hash mismatch) _RINvNtCsgxBkk5gSRhY_4core3ptr9drop_glueINtNtB4_6result6ResultuNtNtNtB4_2io5error5ErrorEECsbdzZxKfTyEA_10sokonanoda Hash = 784007056844089447 up to 0 count discarded
+
+warning: sokonanoda.82acd3cabc828596-cgu.0: function control flow change detected (hash mismatch) _RINvNtCsgxBkk5gSRhY_4core3ptr9drop_glueNtNtNtCs4rRRRJnaTaN_10sokonanoda7checker7context10ExportFileECsbdzZxKfTyEA_10sokonanoda Hash = 250395593834312443 up to 14 count discarded
+
+warning: sokonanoda.82acd3cabc828596-cgu.0: function control flow change detected (hash mismatch) _RNvCsbdzZxKfTyEA_10sokonanoda4main Hash = 818753380401466214 up to 72 count discarded
+
+warning: `sokonanoda` (bin "sokonanoda") generated 3 warnings
+    Finished `release` profile [optimized] target(s) in 22.97s

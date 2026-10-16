@@ -1,0 +1,31 @@
+{
+  "start_utc": "2026-10-16T12:34:17.969850+00:00",
+  "end_utc": "2026-10-16T12:34:45.920819+00:00",
+  "cwd": "/workspaces/repository",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-037/canonical-fused-official-init.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/arena-source/_build/tests/init.ndjson",
+  "input_bytes": 347555345,
+  "exit": 0,
+  "whole_seconds": 27.95099748892244,
+  "scope": "E037 full official Init integrated host setup, no GPU/native replacement; exact canonical state plus parse-fused IR",
+  "environment_overrides": {
+    "GPU_SMT_ARENA_TRACE": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-037/canonical-fused-official-init.csv"
+  },
+  "environment_record_note": "Added explicit test-local overrides from actual driver after terminal collection; no other environment values disclosed.",
+  "explicitly_unset_for_launch": [
+    "GPU_SMT_CANONICAL_OFF"
+  ]
+}

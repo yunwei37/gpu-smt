@@ -1,0 +1,29 @@
+{
+  "start_utc": "2026-10-16T12:35:56.109938+00:00",
+  "end_utc": "2026-10-16T12:36:05.398180+00:00",
+  "cwd": "/workspaces/repository",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-037/canonical-off-fused-official-init.resources.txt",
+    "/tmp/gpu-smt-arena-native-stages-20261016/source/target/release/sokonanoda",
+    "--stdin",
+    "--nat-extension",
+    "--string-extension",
+    "--axiom-allow-all",
+    "--threads",
+    "4",
+    "--print-success-message"
+  ],
+  "input": "/tmp/gpu-smt-arena-native-stages-20261016/arena-source/_build/tests/init.ndjson",
+  "input_bytes": 347555345,
+  "exit": 0,
+  "whole_seconds": 9.288275339989923,
+  "scope": "E037 full official Init integrated host setup, no GPU/native replacement; canonical computation disabled with identical arrays allocated and same parse-fused IR; component ablation not a main baseline",
+  "environment_overrides": {
+    "GPU_SMT_ARENA_TRACE": "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-037/canonical-off-fused-official-init.csv",
+    "GPU_SMT_CANONICAL_OFF": "1"
+  },
+  "environment_record_note": "Added explicit test-local overrides from actual driver after terminal collection; no other environment values disclosed."
+}
