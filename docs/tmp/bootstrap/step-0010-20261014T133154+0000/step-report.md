@@ -2769,3 +2769,8 @@ an invented diverse-context workload. No originalRQ/scope is narrowed, no GPU
 backend/preflight/fullrun is claimed, and no figure/resultslot is filled with
 this conditional estimate. It is supporting admission evidence; fresh review
 and canonical integration remain the assigned OMP work.
+
+
+## Native frontier placement review — implementation owner
+
+[Source-grounded review](literature-20261016T0845/native-argument-placement-review.md) finds that the optional E034 collector is before native quick equality, proof irrelevance, weak-head reduction and the native defeq cache. Its offered arguments can include skipped proposition work and work after a native short circuit. Offered width therefore does not establish expensive comparisons replaced. The unlinked/default fallback remains unchanged; no GPU provider is added. The installed 4.27.0 source matches the official version by direct primary-source read. This is root implementation review, not the pending independent audit.

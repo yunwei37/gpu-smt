@@ -1699,3 +1699,8 @@ association without negative residuals. Overlapping request sums are not
 makespan/CPU. The1.012765x arithmetic is explicitly conditional, not asserted as
 an observed gain or strict counterfactual bound. Instrumented source scope is
 retained. This root check does not satisfy independent result or paper review.
+
+
+## Native placement source check — root only
+
+Root verifies hook/collector placement against the actual SDK and official matching source. The report distinguishes potential enabled-path speculative costs from the existing unlinked fallback, and broad sampled CPU from unmeasured useful offload coverage. No code/run/configuration is changed and no source count is treated as saved time. This is the implementation author own check, not independent review.
