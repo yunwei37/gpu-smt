@@ -1,0 +1,27 @@
+{
+  "population_per_condition": 29750,
+  "pairs": [
+    {
+      "reference_seconds": 32945.9791288,
+      "candidate_seconds": 15835.679100931,
+      "pair": 1
+    },
+    {
+      "reference_seconds": 38443.590120291,
+      "candidate_seconds": 18306.125912858,
+      "pair": 2
+    },
+    {
+      "reference_seconds": 32484.597840297,
+      "candidate_seconds": 13149.047982905,
+      "pair": 3
+    }
+  ],
+  "baseline": "same GC REPL with original library loading",
+  "candidate": "native shared-library loading; ordinary compilation, not system novelty",
+  "profiles": "excluded, two incomplete resource conditions are not extra primary repetitions",
+  "qualification": "Every actual primary pair is shown. Shared background, failures, service shutdown/EOF and capture costs remain charged. Observed differences/range are not confidence intervals, isolated causality or GPU benefit. Native outcomes are not asserted identical.",
+  "intended_print_width_bp": 243,
+  "canvas_width_inches": 3.375,
+  "minimum_font_pt": 7.5
+}

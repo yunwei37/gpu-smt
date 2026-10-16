@@ -1,0 +1,3342 @@
+{
+  "reference": "goedel427-rep2-original",
+  "candidate": "goedel427-rep2-compiled",
+  "reference_whole_seconds": 32484.597840297,
+  "candidate_whole_seconds": 13149.047982905,
+  "wall_reduction_percent": 59.52220788587488,
+  "reference_counts": {
+    "complete": 27316,
+    "rejected": 2376,
+    "operational": 58
+  },
+  "candidate_counts": {
+    "complete": 27319,
+    "rejected": 2376,
+    "operational": 55
+  },
+  "reference_request_latency_seconds": {
+    "n": 29750,
+    "median": 0.735317853,
+    "p95": 16.02352936,
+    "p99": 76.435077281
+  },
+  "candidate_request_latency_seconds": {
+    "n": 29750,
+    "median": 0.521893218,
+    "p95": 4.385423465,
+    "p99": 16.567240363
+  },
+  "basic_transitions": {
+    "complete->operational": 10,
+    "operational->complete": 13
+  },
+  "native_difference_count": 23,
+  "native_differences": [
+    {
+      "source_index": 2269,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 22,
+              "column": 2
+            },
+            "endPos": {
+              "line": 22,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 4106,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {},
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 4464,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 4
+            },
+            "endPos": {
+              "line": 19,
+              "column": 21
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "`Int.emod_add_ediv` has been deprecated: Use `Int.emod_add_mul_ediv` instead"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 19,
+              "column": 4
+            },
+            "endPos": {
+              "line": 19,
+              "column": 21
+            },
+            "data": "This simp argument is unused:\n  Int.emod_add_ediv\n\nHint: Omit it from the simp argument list.\n  simp only [Int.dvd_iff_emod_eq_zero, Int.add_emod, Int.mul_emod, pow_three,\n  ̲  ̲ ̲ ̲I̵n̵t̵.̵e̵m̵o̵d̵_̵e̵m̵o̵d̵,̵\n  ̵ ̵ ̵ ̵ ̵I̵n̵t̵.̵e̵m̵o̵d̵_̵a̵d̵d̵_̵e̵d̵i̵v̵]̵I̲n̲t̲.̲e̲m̲o̲d̲_̲e̲m̲o̲d̲]̲ at h\n  ̲  ̲ ̲ ̲ ̲ ̲⊢\n  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲-̲-̲ ̲P̲e̲r̲f̲o̲r̲m̲ ̲c̲a̲s̲e̲ ̲a̲n̲a̲l̲y̲s̲i̲s̲ ̲o̲n̲ ̲t̲h̲e̲ ̲p̲o̲s̲s̲i̲b̲l̲e̲ ̲v̲a̲l̲u̲e̲s̲ ̲o̲f̲ ̲a̲,̲ ̲b̲,̲ ̲a̲n̲d̲ ̲c̲ ̲m̲o̲d̲u̲l̲o̲ ̲6̲.̲\n  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 20
+            },
+            "endPos": {
+              "line": 31,
+              "column": 32
+            },
+            "data": "This simp argument is unused:\n  Int.add_emod\n\nHint: Omit it from the simp argument list.\n  simp [h₁, h₂, h₃, Int.a̵d̵d̵_̵e̵mo̵d̵,̵ ̵I̵n̵t̵.̵m̵ul_emod, pow_three, Int.emod_emod, Int.emod_add_ediv]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 34
+            },
+            "endPos": {
+              "line": 31,
+              "column": 46
+            },
+            "data": "This simp argument is unused:\n  Int.mul_emod\n\nHint: Omit it from the simp argument list.\n  simp [h₁, h₂, h₃, Int.add_emod, I̵n̵t̵.̵m̵u̵l̵_̵e̵m̵o̵d̵,̵ ̵pow_three, Int.emod_emod, Int.emod_add_ediv]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 48
+            },
+            "endPos": {
+              "line": 31,
+              "column": 57
+            },
+            "data": "This simp argument is unused:\n  pow_three\n\nHint: Omit it from the simp argument list.\n  simp [h₁, h₂, h₃, Int.add_emod, Int.mul_emod, p̵o̵w̵_̵t̵h̵r̵e̵e̵,̵ ̵Int.emod_emod, Int.emod_add_ediv]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 59
+            },
+            "endPos": {
+              "line": 31,
+              "column": 72
+            },
+            "data": "This simp argument is unused:\n  Int.emod_emod\n\nHint: Omit it from the simp argument list.\n  simp [h₁, h₂, h₃, Int.add_emod, Int.mul_emod, pow_three, Int.emod_e̵m̵o̵d̵,̵ ̵I̵n̵t̵.̵e̵m̵o̵d̵_̵add_ediv]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 31,
+              "column": 74
+            },
+            "endPos": {
+              "line": 31,
+              "column": 91
+            },
+            "data": "This simp argument is unused:\n  Int.emod_add_ediv\n\nHint: Omit it from the simp argument list.\n  simp [h₁, h₂, h₃, Int.add_emod, Int.mul_emod, pow_three, Int.emod_emod,̵ ̵I̵n̵t̵.̵e̵m̵o̵d̵_̵a̵d̵d̵_̵e̵d̵i̵v̵]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 4580,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 14,
+              "column": 2
+            },
+            "endPos": {
+              "line": 14,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 4717,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 20,
+              "column": 2
+            },
+            "endPos": {
+              "line": 20,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 4989,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 41
+            },
+            "endPos": {
+              "line": 9,
+              "column": 43
+            },
+            "data": "unused variable `ha`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 54
+            },
+            "endPos": {
+              "line": 9,
+              "column": 56
+            },
+            "data": "unused variable `hb`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 67
+            },
+            "endPos": {
+              "line": 9,
+              "column": 69
+            },
+            "data": "unused variable `hc`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 8949,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 9195,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 13882,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 22,
+              "column": 2
+            },
+            "endPos": {
+              "line": 22,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) r x"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 14569,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 15870,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 16810,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 17300,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 19124,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 24103,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 25327,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 47
+            },
+            "endPos": {
+              "line": 9,
+              "column": 49
+            },
+            "data": "unused variable `ha`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 60
+            },
+            "endPos": {
+              "line": 9,
+              "column": 62
+            },
+            "data": "unused variable `hb`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 73
+            },
+            "endPos": {
+              "line": 9,
+              "column": 75
+            },
+            "data": "unused variable `hc`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 86
+            },
+            "endPos": {
+              "line": 9,
+              "column": 88
+            },
+            "data": "unused variable `hd`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 27142,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 48
+            },
+            "endPos": {
+              "line": 9,
+              "column": 50
+            },
+            "data": "unused variable `ha`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 61
+            },
+            "endPos": {
+              "line": 9,
+              "column": 63
+            },
+            "data": "unused variable `hb`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 74
+            },
+            "endPos": {
+              "line": 9,
+              "column": 76
+            },
+            "data": "unused variable `hc`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 87
+            },
+            "endPos": {
+              "line": 9,
+              "column": 89
+            },
+            "data": "unused variable `hd`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 27333,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 21,
+              "column": 2
+            },
+            "endPos": {
+              "line": 21,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 27336,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      },
+      "candidate_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 9,
+              "column": 34
+            },
+            "endPos": {
+              "line": 9,
+              "column": 35
+            },
+            "data": "unused variable `n`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 20,
+              "column": 31
+            },
+            "endPos": {
+              "line": 20,
+              "column": 43
+            },
+            "data": "This simp argument is unused:\n  Nat.mul_comm\n\nHint: Omit it from the simp argument list.\n  simp [Finset.sum_range_succ,̵ ̵N̵a̵t̵.̵m̵u̵l̵_̵c̵o̵m̵m̵]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+          }
+        ]
+      }
+    },
+    {
+      "source_index": 28454,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "info",
+            "pos": {
+              "line": 18,
+              "column": 2
+            },
+            "endPos": {
+              "line": 18,
+              "column": 8
+            },
+            "data": "Try this:\n  [apply] exact Finset.sum_mul_sq_le_sq_mul_sq (Finset.range n) a b"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    },
+    {
+      "source_index": 29123,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 29309,
+      "reference_basic": "operational",
+      "candidate_basic": "complete",
+      "reference_native": {
+        "http_status": 200,
+        "error": "Lean REPL command timed out in 300.0 seconds"
+      },
+      "candidate_native": {}
+    },
+    {
+      "source_index": 29535,
+      "reference_basic": "complete",
+      "candidate_basic": "operational",
+      "reference_native": {
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 21,
+              "column": 2
+            },
+            "endPos": {
+              "line": 21,
+              "column": 5
+            },
+            "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 23,
+              "column": 2
+            },
+            "endPos": {
+              "line": 23,
+              "column": 5
+            },
+            "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+          },
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 25,
+              "column": 2
+            },
+            "endPos": {
+              "line": 25,
+              "column": 5
+            },
+            "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+          }
+        ]
+      },
+      "candidate_native": {
+        "http_status": 500,
+        "service_response": {
+          "detail": "JSON decode error"
+        }
+      }
+    }
+  ],
+  "reference_command": {
+    "command": [
+      "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+      "-m",
+      "server"
+    ],
+    "pid": 1962615,
+    "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+    "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+    "method": "original",
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+    "api": "/verify, four requests in flight, privatePort8002"
+  },
+  "candidate_command": {
+    "command": [
+      "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+      "-m",
+      "server"
+    ],
+    "pid": 2005814,
+    "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+    "backend": "Docker-declared Kimina GC fork ported to producer4.27; native-load only compiled; Python stock defaults",
+    "method": "compiled",
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+    "api": "/verify, four requests in flight, privatePort8002"
+  }
+}
