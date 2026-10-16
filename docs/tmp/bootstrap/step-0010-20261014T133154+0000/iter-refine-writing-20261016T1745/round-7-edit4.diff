@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -167,8 +167,8 @@
+ 
+ This reference overlay does not make arbitrary native globals, extensions,
+ external effects or foreign-function interfaces (FFI) private. Listed guarded
+-effects select native replay. Unsupported effects that terminate a worker retain
+-their operational outcomes. These mechanisms establish neither general process
++effects select native replay. When unsupported effects terminate a worker, the operational outcomes remain
++recorded. These mechanisms establish neither general process
+ equivalence nor completed cancellation qualification. The process constructor
+ in Figure~\ref{fig:architecture} and this runtime constructor have different
+ supported boundaries and isolation properties.

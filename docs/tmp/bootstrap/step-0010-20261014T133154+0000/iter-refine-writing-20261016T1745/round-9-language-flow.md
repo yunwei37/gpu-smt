@@ -1,0 +1,9 @@
+# Round9: flow and polish
+
+Fresh writing_round9 reads complete870line paper and full style SKILL. Parent current writing node, after actual R8compile. Must0. Should2: SMT negative conclusion follows the data too late; RQ3closure repeats full-matrix requirement. Consider3: explicit branch implementation p95subject, optimization-retains actor for extraction, remove status-like now from completed native arithmetic8conditions. All accepted.
+
+Six contextual edits move the exact scoped SMT rejection before its evidence (remove duplicate ending), merge RQ3closure with strongest-service/full-workload/offered-load/resource requirements all explicit, and apply3small actor/register fixes. No scientific restructure or new result. No numbers, citations, result slots, runtime/version/cancellation/native-response/sampling limits lost. Broad numeric-token check deliberately permits one removed3from the duplicate RQ3label; all measured quantities remain unchanged and citation groups exactly match entry. Contextual diff ordering records move versus deletion. Actual compile exit0,PDF['16']pages, underfull warnings retained. Completed 2026-10-16T18:29:31.702198+00:00. Next serial Round10citation gate.
+
+## Durable node metadata
+
+Parent: BOOTSTRAP step0010, docs/tmp/bootstrap/step-0010-20261014T133154+0000. Child: iter-refine-writing-20261016T1745/round-9. Source baseline e8fccb8 on main; actual files/sources above and in contextual diffs. Formal round-entry evidence anchor: 2026-10-16T18:26:45.942245+00:00; actual compiler-completion anchor: 2026-10-16T18:29:31.702198+00:00. These delimit sequencing, not reviewer-runtime performance. No source snapshot/stash or persistent research-control layer. User memory authority unchanged; own paper/report changes only, other authors files preserved. FullLean/SMT/RTX5090andall4RQscope remain. Next node follows its reported disposition; root publication occurs outside childskill.

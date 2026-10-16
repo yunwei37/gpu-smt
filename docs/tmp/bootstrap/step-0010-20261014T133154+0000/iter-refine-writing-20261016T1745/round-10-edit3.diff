@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -601,7 +601,7 @@
+ end-to-end comparison.
+ 
+ Native operation/readback logs establish actual GPU engagement, while
+-unsupported work remains native. The implemented provider launches one CUDA thread for each supported beta or
++unsupported work remains native. The implemented provider launches one CUDA thread~\cite{cudaProgrammingGuide} for each supported beta or
+ zeta reduction. These reductions substitute an argument into a function body
+ or a value into a let-bound expression. The provider then synchronizes before
+ returning to Lean. It does not batch independent reductions or execute the

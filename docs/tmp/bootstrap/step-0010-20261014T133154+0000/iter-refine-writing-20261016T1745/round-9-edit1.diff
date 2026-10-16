@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -384,6 +384,8 @@
+ memory frontier. The wider workload, context and resource comparisons remain open.
+ 
+ \paragraph{Native SMT prefix comparison.}
++The native SMT prefix comparison rejects acceleration for the tested constructor
++and cohort.
+ Three complete rotations check all 3,566 retained SMT-backed source candidates
+ through stock native execution, prepared native branches and logical reuse.
+ The matched conditions use the same three permitted CPUs and original native

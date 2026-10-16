@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -585,7 +585,7 @@
+ \end{table}
+ 
+ Table~\ref{tab:current-proofnet-gpu} rejects an end-to-end acceleration claim
+-for this supported expression reduction in Lean's Meta layer on the measured cohort.
++for this supported expression reduction in Lean's metaprogramming (Meta) layer on the measured cohort.
+ Relative to the faster native baseline in each block, GPU execution is
+ 1.74\%, 3.64\% and 1.58\% slower, with a mean of 2.32\%.
+ These values describe the observed repetitions, not a confidence interval. Every condition has 413 complete, 5,534 rejected,

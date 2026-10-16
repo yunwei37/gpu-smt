@@ -1,0 +1,26 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -353,17 +353,21 @@
+ Stock whole times are 1,561.1, 1,618.0 and 1,889.7 seconds. Branch times are
+ 2,124.1, 2,231.5 and 2,434.8 seconds. Branches are 28.84--37.91\% slower and
+ use 22.67--25.05\% more CPU in the recorded counter.
+-This counter combines the acquisition process clock with
++
++The recorded CPU counter combines the acquisition process clock with
+ \texttt{getrusage} child totals. Those totals depend on completed waits~\cite{getrusage}.
+ Exhaustive descendant coverage is not established, so the ratios do not
+ establish total process-tree CPU overhead.
++
+ All 10,698 stock/branch source comparisons preserve native inputs, basic
+ results, decision sequences and requested artifacts. Each branch condition
+ engages 2,316 retained-parent hits and 473 misses, so this loss occurs with
+ actual reuse. Branch/logical ordering varies, and logical-stream completeness
+ annotations remain in two rotations. All three separate resource captures also
+ complete, with matching native input, results and requested artifacts across
+-each pairing. Their observed PSS maxima are 224,644 KiB for stock,
++each pairing.
++
++Separate resource captures observe sampled PSS maxima of 224,644 KiB for stock,
+ 783,477 KiB for branches and 791,914 KiB for logical reuse.
+ Between 233 and 368 samples per method contain incomplete reads.
+ These single non-atomic profiles do not establish replicated or exact memory

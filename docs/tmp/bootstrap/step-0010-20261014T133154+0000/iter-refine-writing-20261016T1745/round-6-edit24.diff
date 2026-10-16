@@ -1,0 +1,14 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -480,9 +480,8 @@
+ differences in diagnostic hints, which remain unnormalized.
+ 
+ Separate profiles contain complete timer sequences in both methods for
+-5,791 source indices. Over this subset, cumulative calling-thread CPU in sorry extraction
+-falls from 8.476 to 0.664 seconds, and complete response extraction from
+-20.170 to 12.296 seconds. Interleaved or incomplete records are censored.
++5,791 source indices. Over this subset, cumulative calling-thread CPU falls from 8.476 to 0.664 seconds for sorry extraction
++and from 20.170 to 12.296 seconds for complete response extraction. Interleaved or incomplete records are censored.
+ These region totals exclude asynchronous frontend threads and subsequent
+ response serialization and construction of auxiliary declaration records. These totals are not
+ fractions of corpus wall time.

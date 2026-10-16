@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -805,7 +805,7 @@
+ competitor. The numerical paths do not establish a consistently faster
+ replacement. They do not rank different CPU compositions.
+ Native diagnostics also differ. One source changes from complete to rejected
+-under HiGHS in every trio, with a recursion-depth diagnostic; all failures
++under HiGHS in every trio, with a recursion-depth diagnostic. All failures
+ remain charged. All twelve conditions finish, including three separate resource
+ profiles. Their sampled peak fleet PSS is 7,005,488 KiB for tiered, 7,668,612 KiB
+ for hybrid and 8,723,814 KiB for HiGHS. The HiGHS capture has 1,448 incomplete

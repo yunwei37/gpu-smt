@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -611,7 +611,7 @@
+ comparison must establish any additional benefit.
+ 
+ \paragraph{Verification caching.}
+-Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. For session reuse, native SMT interfaces support incremental command histories and requested artifacts~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
++Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
+ 
+ \paragraph{Prepared execution.}
+ Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.

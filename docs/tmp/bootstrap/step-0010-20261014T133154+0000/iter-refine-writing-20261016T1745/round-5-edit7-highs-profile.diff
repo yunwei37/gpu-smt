@@ -1,0 +1,19 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -773,9 +773,13 @@
+ replacement. They do not rank different CPU compositions.
+ Native diagnostics also differ. One source changes from complete to rejected
+ under HiGHS in every trio, with a recursion-depth diagnostic; all failures
+-remain charged. All nine primary conditions finish, while the three separate
+-resource profiles remain outstanding. Shared background and the unfinished
+-resource comparison limit causal and global CPU conclusions.
++remain charged. All twelve conditions finish, including three separate resource
++profiles. Their sampled peak fleet PSS is 7,005,488 KiB for tiered, 7,668,612 KiB
++for hybrid and 8,723,814 KiB for HiGHS. The HiGHS capture has 1,448 incomplete
++samples out of 6,582. One-second non-atomic sampling and one profile per method
++do not establish replicated memory or CPU superiority. The recorded rusage
++counter includes observer, self and waited children, without validated exhaustive
++descendant coverage. Shared background limits causal and global CPU conclusions.
+ 
+ \paragraph{Complete original-path cost profile.}
+ A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources

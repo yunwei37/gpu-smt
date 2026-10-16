@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -644,6 +644,10 @@
+ Whole elapsed time is 32,945.98 versus 15,835.68 seconds in the first pair
+ and 38,443.59 versus 18,306.13 seconds in the reversed-order second pair.
+ These are reductions of 51.93\% and 52.38\%.
++The third pair takes 32,484.60 versus 13,149.05 seconds, a reduction of
++59.52\%. It retains 23 native/basic outcome changes: ten complete outcomes
++become operational and thirteen operational outcomes become complete.
++No direct complete/rejected transition is observed.
+ Runtime import and library loading are charged, while software build is excluded.
+ In the first pair, native fields match on 29,725 sources after excluding the
+ adapter timer. Sixteen operational outcomes become complete and nine complete

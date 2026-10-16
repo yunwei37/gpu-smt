@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -421,7 +421,9 @@
+ evidence. One-second non-atomic sampling and competing mappings limit PSS
+ interpretation. A shared heap also changes whether unchanged anonymous pages
+ are counted as private, so private-page totals across these placements do not
+-directly measure mutation. \paragraph{Response extraction after warm preparation.}
++directly measure mutation.
++
++\paragraph{Response extraction after warm preparation.}
+ An optimization of response extraction yields a small complete verification improvement
+ on the same retained ProofNet cohort. The producer REPL classifies explicit
+ \texttt{sorry} nodes by printing an entire syntax node and comparing its

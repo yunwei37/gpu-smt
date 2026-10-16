@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -392,7 +392,7 @@
+ use 22.67--25.05\% more CPU in the recorded counter.
+ 
+ The recorded CPU counter combines the acquisition process clock with
+-\texttt{getrusage} child totals. Those totals depend on completed waits~\cite{getrusage}.
++\texttt{getrusage} child totals, which depend on completed waits~\cite{getrusage}.
+ Exhaustive descendant coverage is not established, so the ratios do not
+ establish total process-tree CPU overhead.
+ 

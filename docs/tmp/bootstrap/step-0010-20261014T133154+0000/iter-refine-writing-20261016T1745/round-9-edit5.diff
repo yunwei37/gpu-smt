@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -467,8 +467,8 @@
+ on the same retained ProofNet cohort. The producer REPL classifies explicit
+ \texttt{sorry} nodes by printing an entire syntax node and comparing its
+ string~\cite{repl}. We add a necessary check of the shortened parser-node kind
+-before the unchanged full-string predicate. The native tree traversal,
+-goal snapshots, diagnostic construction, enclosing frontend and kernel remain.
++before the unchanged full-string predicate. The optimization retains the native tree traversal,
++goal snapshots, diagnostic construction, enclosing frontend and kernel.
+ 
+ Three alternating complete primary pairs use the same warm-pool host,
+ prepared state, four permitted CPUs and native defaults.

@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -249,7 +249,7 @@
+ not a complete performance result, and does not inherit the frozen version's
+ measurements. The native-batch experiment inherits the Workspace address-space
+ policy after all methods fail under the service's 12\,GiB policy. It therefore
+-does not establish deployed default-Kimina memory-policy equivalence.
++does not establish equivalence to the memory policy of a default Kimina deployment.
+ 
+ The heterogeneous comparison uses the fastest runnable complete CPU checker at a matched boundary, in addition to official Lean. A kernel checker operates after export only when the measurement explicitly uses that boundary. \missing{Pinned strongest service artifacts and matched configuration.}
+ 

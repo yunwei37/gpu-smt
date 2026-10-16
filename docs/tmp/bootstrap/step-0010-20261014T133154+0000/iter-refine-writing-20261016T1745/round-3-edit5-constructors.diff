@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -267,6 +267,10 @@
+ 
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+ 
++The comparisons below test distinct execution and placement mechanisms.
++Each result applies to its stated constructor and workload. The complete
++frontier comparison must also account for the full workload and resource matrix.
++
+ \paragraph{Single native-reference latency distribution.}
+ The GoedelWorkbook native-compilation reference uses the setup described above.
+ Figure~\ref{fig:modern-reference-tail} separates these outcome populations.

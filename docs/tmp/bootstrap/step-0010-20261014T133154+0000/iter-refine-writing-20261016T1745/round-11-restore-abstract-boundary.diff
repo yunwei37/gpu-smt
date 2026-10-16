@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -18,7 +18,7 @@
+ We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding alternative attempts.
+ Realizing this separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+ Our verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+-Using public Lean and satisfiability modulo theories (SMT)-backed candidate streams, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback charged.
++Using public Lean and satisfiability modulo theories (SMT)-backed candidate streams, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with setup, transfer and CPU fallback charged.
+ \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
+ \end{abstract}
+ 

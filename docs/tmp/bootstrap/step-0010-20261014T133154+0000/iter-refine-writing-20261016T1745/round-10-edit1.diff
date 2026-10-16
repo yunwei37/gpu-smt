@@ -1,0 +1,14 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -199,6 +199,11 @@
+ \subsection{Experimental setup}
+ We use complete ordered public proof and program attempts from multiple contexts in Lean and SMT-backed systems verification. Published proofs and deliberate invalid or incomplete variants provide behavior controls, while failed generated attempts remain part of the candidate-stream evaluation. These controls do not establish locality in generated candidate traffic. VeruSAGE provides real repository-level tasks~\cite{verusage,verusagePaper} for Verus~\cite{verus}, and Mathlib and the Lean Kernel Arena provide source/library and checker workloads~\cite{mathlib,leanArena}. \missing{Final source-native candidate-stream identities, versions, complete coverage and exclusions.}
+ 
++The SMT comparison replays 3,566 retained Rust candidates from the released
++AutoVerus artifact~\cite{autoverusArtifact} in source-sorted order. Saved outputs
++include intermediate and unsuccessful attempts. This order does not reconstruct
++historical verifier arrivals.
++
+ \paragraph{Retained generated candidates and submission policy.}
+ The retained Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
+ 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.

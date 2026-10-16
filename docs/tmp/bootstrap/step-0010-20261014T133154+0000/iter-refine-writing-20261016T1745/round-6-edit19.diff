@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -597,7 +597,7 @@
+ complete Lean kernel on the device.
+ 
+ Across each primary repetition, retained counters record 2,201 supported
+-operations out of approximately 2.38 million provider calls (0.0925\%).
++operations out of approximately 2.38 million provider calls, corresponding to 0.0925\%.
+ The percentage measures coverage by call count, not the fraction of verification time that
+ could be accelerated. Each GPU condition has one failed worker without
+ terminal counters, so the totals are observed rather than exhaustive.

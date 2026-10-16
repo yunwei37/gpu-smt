@@ -107,6 +107,8 @@ new performance result or novel contribution is admitted by that observation.
 It neither transfers to source-verification clocks nor replaces the original
 Lean/SMT service and four-RQ evidence requirements.
 
+The [2026-10-16 full manuscript checkpoint](tmp/bootstrap/step-0010-20261014T133154+0000/iter-refine-writing-20261016T1745/round-11-meaning-preservation.md) integrates the published evidence and actual native-runtime alternative into the current paper. Process and runtime constructors, measured and finite-only versions, and strongest compatible baselines remain distinct. The full writing cycle and source-preservation audit do not establish new systems novelty, close an RQ or change this scientific contract. Current detailed data remain in [evaluation](evaluation.md).
+
 ## Narrative evolution
 
 ### 2026-10-07: established native branching enters the competing position

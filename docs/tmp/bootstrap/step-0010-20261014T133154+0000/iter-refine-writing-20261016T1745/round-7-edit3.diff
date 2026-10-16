@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -143,7 +143,7 @@
+ \section{Implementation}\label{sec:implementation}
+ The implementation uses native verifier adapters with separate process-branch
+ and shared-runtime state-branch constructors in a bounded service. Their behavior
+-and performance results retain the boundary and runtime version actually measured. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
++and performance results apply to the boundary and runtime version measured. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
+ 
+ \subsection{Native adapters}
+ The native SMT command adapter is implemented in C++. It retains the command-line interface's command context and preserves the native order of configuration, manager creation and solver creation while evaluating original command sequences. It preserves options, scopes, checks and requested artifacts rather than reconstructing assertions through a different solver API.

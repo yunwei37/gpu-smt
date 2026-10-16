@@ -1,0 +1,15 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -511,6 +511,12 @@
+ proof construction and checking. These are CPU competitors in the
+ heterogeneous comparison.
+ 
++Here tiered denotes native exact certificate search, while hybrid denotes
++native double-precision (FP64) support search followed by exact repair.
++Fast/hybrid combines the upstream FarkasFast numeric probe and restricted
++stock proof construction with the native hybrid route and full native
++fallback~\cite{farkasSource}.
++
+ \paragraph{Matched CPU competitors and controls.}
+ Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
+ used to qualify CPU alternatives. Each comparison uses its own version,

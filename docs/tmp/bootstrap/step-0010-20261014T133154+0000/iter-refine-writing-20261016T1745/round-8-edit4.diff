@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -507,7 +507,7 @@
+ Within the arithmetic CPU family, existing Farkas~\cite{farkasSource}
+ provides native exact certificate search and numeric hypothesis selection before
+ stock proof reconstruction. Our HiGHS support-search adapter uses the established
+-LP solver~\cite{highsSimplex}, followed by exact certificate repair and Lean's standard
++linear programming (LP) solver~\cite{highsSimplex}, followed by exact certificate repair and Lean's standard
+ proof construction and checking. These are CPU competitors in the
+ heterogeneous comparison.
+ 

@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -107,7 +107,7 @@
+ \label{fig:architecture}
+ \end{figure}
+ 
+-Placement first chooses whether retaining preparation is worthwhile, and requests without a retained state use native execution. For a selected prepared state, boundary qualification separately determines whether branching is supported (Figure~\ref{fig:architecture}). The parent owns the immutable preparation, while each supported branch owns candidate mutation and its lifetime. Supported branches execute on CPU with supported device operations where available, while unsupported boundaries use native execution.
++Placement first chooses whether retaining preparation is worthwhile, and requests without a retained state use native execution. For a selected prepared state, boundary qualification separately determines whether branching is supported (Figure~\ref{fig:architecture}). The parent owns the immutable prepared state, while each supported branch owns candidate mutation and its lifetime. Supported branches execute on CPU with supported device operations where available, while unsupported boundaries use native execution.
+ 
+ \subsection{Preparation boundaries}\label{sec:preparation}
+ A shared parent must represent state that every assigned candidate has available. The service therefore matches the original ordered preparation and configuration, without replacing them with a set of assertions. A candidate suffix begins after this preparation and includes its original scopes and output requests. The parent retains accepted context in the original preparation, but contains no learned or elaborated state produced by candidate suffixes after the selected boundary.

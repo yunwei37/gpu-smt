@@ -1,0 +1,19 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -848,4 +848,16 @@
+ This capture characterizes the compiled original arithmetic route. Residual
+ costs after selecting a different strongest CPU composition remain open.
+ 
++\paragraph{Independent argument-comparison opportunity.}
++The same sampled capture displays 23.16\% inclusive CPU weight for argument
++comparison, including stateful work. A separate instrumented capture attributes
++23.608936\% of completed observed outer calling-thread CPU to entries without
++expression or universe metavariable flags. These quantities have different
++captures and scopes. Neither measures useful independent argument work or
++complete-verification critical-path coverage. Multiplying cross-capture
++fractions supplies only conditional CPU-bound sensitivity scenarios, not an
++end-to-end bound. The batch interface therefore has no admitted GPU provider.
++Another narrow backend requires evidence of useful independent work with
++complete setup, transfer and fallback costs.
++
+ \end{document}

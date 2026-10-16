@@ -1,0 +1,12 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -691,6 +691,9 @@
+ Closed-loop request p99 also falls in each pair, from 10.56 to 10.09, 12.16 to
+ 10.73 and 14.45 to 12.00 seconds. These are response distributions within the
+ measured blocks, not an offered-load capacity result.
++The first Fast/hybrid pair also retains one operational decoder failure that
++becomes native rejection. This differs from a direct complete/rejected transition
++and from the original-oracle product comparison below.
+ The third pair retains six operational/completion transitions and otherwise
+ matching native payloads. No complete/rejected transition occurs.
+ 

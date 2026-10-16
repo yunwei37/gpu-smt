@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -802,7 +802,7 @@
+ Relative to tiered, hybrid increases whole elapsed time by 10.61\%, 5.22\%
+ and 23.43\%. HiGHS takes 11.83\% longer, then 11.45\% lower elapsed,
+ then 21.47\% longer. These observations retain tiered as a necessary CPU
+-competitor; the numerical paths do not establish a consistently faster
++competitor. The numerical paths do not establish a consistently faster
+ replacement. They do not rank different CPU compositions.
+ Native diagnostics also differ. One source changes from complete to rejected
+ under HiGHS in every trio, with a recursion-depth diagnostic; all failures

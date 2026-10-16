@@ -1,0 +1,30 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -677,7 +677,8 @@
+ measured blocks, not an offered-load capacity result.
+ The third pair retains six operational/completion transitions and otherwise
+ matching native payloads. No complete/rejected transition occurs.
+-All three primary pairs retaining the original arithmetic oracle instead take
++
++With the original arithmetic oracle retained in both methods, all three primary pairs take
+ 15,385.79 versus 15,475.96 seconds, 16,245.63 versus 15,415.52 seconds, and
+ 14,942.76 versus 12,805.48 seconds with reuse. Whole time is 0.59\% longer, then
+ 5.11\% and 14.30\% lower; the descriptive mean reduction is 6.28\%, without a
+@@ -686,13 +687,14 @@
+ No complete/rejected transition occurs. Their timing signs differ.
+ The different blocks and shared background do not isolate a causal oracle
+ interaction or establish a uniform original-route gain.
+-The Fast/hybrid comparison now completes all eight conditions, including
+-two separate resource captures. Observed sampled peak PSS falls from
++
++Two separate Fast/hybrid resource captures complete the eight-condition comparison. Observed sampled peak PSS falls from
+ 7,674,160 to 6,961,995 KiB, with incomplete reads in 33 of 7,051 and 34 of
+ 6,198 non-atomic samples. These single profiles do not establish exact peaks
+ or replicated memory savings. Seven operational/completion transitions remain.
+ Two separate original-oracle resource profiles remain outstanding.
+-These observations concern an ordinary CPU optimization within its matched
++
++These CPU observations concern an ordinary optimization within its matched
+ block. They do not establish the globally strongest CPU method, systems novelty
+ or GPU acceleration.
+ 

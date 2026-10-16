@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -15,7 +15,7 @@
+ Independent attempts require balancing repeated preparation with shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
+ Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
+ Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
+-We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding attempts.
++We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding alternative attempts.
+ This separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+ Our verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+ Using public candidate streams from Lean and systems backed by satisfiability modulo theories (SMT) solvers, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.

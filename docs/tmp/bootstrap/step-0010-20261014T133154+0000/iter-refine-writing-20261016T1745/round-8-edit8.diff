@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -247,7 +247,7 @@
+ The frozen whole-corpus acquisition uses the earlier eager-copy runtime.
+ The subsequent first-write implementation has finite native engagement checks,
+ not a complete performance result, and does not inherit the frozen version's
+-measurements. The native-batch experiment inherits the Workspace address-space
++measurements. The native-batch experiment inherits the hosting environment's address-space
+ policy after all methods fail under the service's 12\,GiB policy. It therefore
+ does not establish equivalence to the memory policy of a default Kimina deployment.
+ 

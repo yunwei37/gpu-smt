@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -446,7 +446,9 @@
+ 20.170 to 12.296 seconds. Interleaved or incomplete records are censored.
+ These region totals exclude asynchronous frontend threads and subsequent
+ response serialization and construction of auxiliary declaration records. These totals are not
+-fractions of corpus wall time. Single sampled PSS maxima are 7,860,678 KiB
++fractions of corpus wall time.
++
++Separate resource profiles observe sampled fleet PSS maxima of 7,860,678 KiB
+ for the original method and 7,728,536 KiB with the precheck, which do not
+ establish replicated memory savings. This optimization strengthens a CPU
+ comparison on the measured cohort. It does not establish systems novelty

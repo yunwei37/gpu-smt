@@ -1,0 +1,50 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -213,21 +213,7 @@
+ The operational group contains 41 timeouts and 14 decoder failures. An
+ individual native allocation-failure replay does not establish the cause
+ of every decoder failure.
+-Figure~\ref{fig:modern-reference-tail} separates these outcome populations.
+-Completed proofs have median request latency 0.399 seconds, p95 3.324 seconds
+-and a maximum of 272.692 seconds. These are closed-loop request durations,
+-which overlap and do not decompose whole-corpus wall time or kernel CPU cost.
+-
+-\begin{figure}[t]
+-\centering
+-\includegraphics[width=\columnwidth]{figures/native-aot-reference-latency.pdf}
+-\caption{Request-latency survival curves for one complete 29,750-source native
+-CPU reference acquisition. Each curve is normalized within its indicated
+-outcome population. Both axes are logarithmic. Operational outcomes remain
+-included. This single acquisition characterizes the workload tail and provides
+-no between-run uncertainty, speedup or offered-load queueing result.}
+-\label{fig:modern-reference-tail}
+-\end{figure}
++
+ 
+ The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. Baselines receive the same candidate information, CPU capacity, memory budget and admission order.
+ 
+@@ -279,6 +265,24 @@
+ RQ3 asks how prepared-state branching changes end-to-end latency, throughput and memory at equal resources compared with established warm-session reuse. We replay actual attempt streams over offered-load and concurrency sweeps, matching CPU and memory budgets across services. A single shared warm worker is not the sole comparison to many branch workers. We charge the measured service for creating and replacing prepared states and for cache costs.
+ 
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
++
++\paragraph{Single native-reference latency distribution.}
++The GoedelWorkbook native-compilation reference uses the setup described above.
++Figure~\ref{fig:modern-reference-tail} separates these outcome populations.
++Completed proofs have median request latency 0.399 seconds, p95 3.324 seconds
++and a maximum of 272.692 seconds. These are closed-loop request durations,
++which overlap and do not decompose whole-corpus wall time or kernel CPU cost.
++
++\begin{figure}[t]
++\centering
++\includegraphics[width=\columnwidth]{figures/native-aot-reference-latency.pdf}
++\caption{Request-latency survival curves for one complete 29,750-source native
++CPU reference acquisition. Each curve is normalized within its indicated
++outcome population. Both axes are logarithmic. Operational outcomes remain
++included. This single acquisition characterizes the workload tail and provides
++no between-run uncertainty, speedup or offered-load queueing result.}
++\label{fig:modern-reference-tail}
++\end{figure}
+ 
+ \paragraph{Complete ProofNet service replay.}
+ We replay all 5,952 retained ProofNet-lineage source attempts through a local

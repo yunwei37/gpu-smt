@@ -1,0 +1,30 @@
+--- a/docs/paper/references.bib
++++ b/docs/paper/references.bib
+@@ -419,3 +419,27 @@
+  author={{vLLM contributors}},
+  year={2026}, note={Accessed 16 October 2026; year denotes access year},
+  url={https://github.com/vllm-project/vllm}}
++
++% VERIFIED: unverified
++% REAL: unverified
++% PDF: not available
++% ABSTRACT: Official artifact documentation identifies released AutoVerus generated proofs and intermediate attempts across four main benchmark directories.
++% USED_FOR: Origin of our retained AutoVerus source replay cohort; our acquisition supplies the 3566 count, not the upstream document.
++@misc{autoverusArtifact,
++ author={{Microsoft Research and AutoVerus contributors}},
++ title={{AutoVerus}: Artifact Evaluation},
++ year={2026},
++ url={https://raw.githubusercontent.com/microsoft/verus-proof-synthesis/cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1/README-artifact-evaluation.md},
++ note={Source revision cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1; accessed 16 October 2026; year denotes access year}}
++
++% VERIFIED: unverified
++% REAL: unverified
++% PDF: not available
++% ABSTRACT: Official CUDA C++ documentation explains kernels, host launches, thread execution configuration and synchronization.
++% USED_FOR: CUDA programming-model terminology only; our implementation and measurements establish engagement, coverage and performance.
++@misc{cudaProgrammingGuide,
++ author={{NVIDIA}},
++ title={{CUDA} Programming Guide: Intro to {CUDA C++}},
++ year={2026},
++ url={https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html},
++ note={Accessed 16 October 2026; year denotes access year, not a measured CUDA version}}

@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -372,8 +372,8 @@
+ 
+ Figure~\ref{fig:proofnet-offered-arrival} rejects a claim of faster service for this
+ per-candidate branch implementation at the tested preparation boundary.
+-At the highest rate, the branch implementation's p95 exceeds the warm pool's by more than seven times
+-in each repetition. Low-rate whole times mostly follow the arrival schedule,
++At the highest rate, the branch implementation's p95 is more than seven times
++the warm pool's in each repetition. Low-rate whole times mostly follow the arrival schedule,
+ so their similarity does not establish equal service capacity.
+ At the two higher rates, branch mean waiting before dispatch is
+ 41.658--142.095 seconds, compared with 0.363--0.395 seconds after dispatch.

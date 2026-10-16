@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -162,7 +162,7 @@
+ prepared reference cells use the retained base until a destructive operation
+ creates a private cell. Unresolved prepared thunks are evaluated privately.
+ Branch identity follows admitted native tasks, and branch release waits for
+-those tasks and their execution scopes before dropping retained identities and
++those tasks and their execution scopes before releasing retained identities and
+ private versions.
+ 
+ This reference overlay does not make arbitrary native globals, extensions,

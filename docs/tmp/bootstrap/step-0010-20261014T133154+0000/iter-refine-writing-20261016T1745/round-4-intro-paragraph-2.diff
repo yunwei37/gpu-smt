@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -25,7 +25,7 @@
+ \section{Introduction}\label{sec:intro}
+ Formal verification services check streams of program and proof candidates against formal specifications. Related attempts from proof-generation systems share libraries, declarations and accepted context. A proof assistant constructs and checks proof terms, while a program verifier translates obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} expose persistent environments for these workloads~\cite{repl}.
+ 
+-Serving independent attempts requires balancing repeated preparation with shared execution. A separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but their resource growth, contention and cancellation behavior depend on worker isolation. For example, concurrent attempts against one imported Lean context need the same context but have independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
++Serving independent attempts requires balancing repeated preparation with shared execution. Starting a separate verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but their resource growth, contention and cancellation behavior depend on worker isolation. Concurrent attempts against one imported Lean context, for example, need the same context but have independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
+ 
+ This tradeoff depends on native execution history beyond visible formulas or declarations. Z3's combined solver can select a different solving path after an additional scope~\cite{z3api}, and earlier requests can alter heuristics and resource counters. A proof assistant likewise retains elaborator state and mutable runtime extensions beyond its immutable declaration environment~\cite{lean4,repl}. Reconstructing a logically equivalent context therefore requires a separate argument for observable verification behavior.
+ 

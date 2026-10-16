@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -243,7 +243,7 @@
+ The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. Baselines receive the same candidate information, CPU capacity, memory budget and admission order.
+ 
+ For the matched Lean 4.27 native-batch comparison, the primary competitor is
+-the existing Kimina naive \texttt{BatchCommand} path, which runs native tasks
++the existing Kimina naive \texttt{BatchCommand} path~\cite{kimina}, which runs native tasks
+ from one prepared root. Disabling mutable-reference branching in the candidate method is a
+ separate component control. All methods return an ordered batch array after
+ its last member, so batch emission is not compared with streaming completion

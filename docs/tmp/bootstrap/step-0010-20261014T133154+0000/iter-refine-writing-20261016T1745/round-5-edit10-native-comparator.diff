@@ -1,0 +1,23 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -237,6 +237,20 @@
+ 
+ The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. Baselines receive the same candidate information, CPU capacity, memory budget and admission order.
+ 
++For the matched Lean 4.27 native-batch comparison, the primary competitor is
++the existing Kimina naive \texttt{BatchCommand} path, which runs native tasks
++from one prepared root. Disabling the candidate's reference branching is a
++separate component control. All methods return an ordered batch array after
++its last member, so batch emission is not compared with streaming completion
++as a latency advantage.
++
++The frozen whole-corpus acquisition uses the earlier eager-copy runtime.
++The subsequent first-write implementation has finite native engagement checks,
++not a complete performance result, and does not inherit the frozen version's
++measurements. The native-batch experiment inherits the Workspace address-space
++policy after all methods fail under the service's 12\,GiB policy. It therefore
++does not establish deployed default-Kimina memory-policy equivalence.
++
+ The heterogeneous comparison uses the fastest runnable complete CPU checker at a matched boundary, in addition to official Lean. A kernel checker operates after export only when the measurement explicitly uses that boundary. \missing{Pinned strongest service artifacts and matched configuration.}
+ 
+ We preserve all raw per-input outcomes. Lean outcomes include unfinished proof obligations and admissions as well as frontend diagnostics. A successful tactic screen requires the enclosing declaration or source checking stage before it counts as an accepted proof.

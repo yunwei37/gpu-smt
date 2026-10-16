@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -141,7 +141,9 @@
+ Unsupported work returns to CPU execution, whose cost remains in the complete verification measurement. Complete verification includes device initialization, representation construction, upload, download and queueing. We report operation speedups measured with data already on the device separately from complete checking.
+ 
+ \section{Implementation}\label{sec:implementation}
+-The system implements the design through native verifier adapters, process branches and a bounded service. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
++The implementation uses native verifier adapters with separate process-branch
++and shared-runtime state-branch constructors in a bounded service. Their behavior
++and performance results retain the boundary and runtime version actually measured. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
+ 
+ \subsection{Native adapters}
+ The native SMT command adapter is implemented in C++. It retains the command-line interface's command context and preserves the native order of configuration, manager creation and solver creation while evaluating original command sequences. It preserves options, scopes, checks and requested artifacts rather than reconstructing assertions through a different solver API.

@@ -1,0 +1,23 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -11,14 +11,14 @@
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+-Formal verification services check streams of program and proof candidates against formal specifications, and related candidates share libraries, declarations and accepted context.
+-Independent attempts require balancing repeated preparation with shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
+-Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, so this tradeoff requires a separate argument about observable verification behavior.
+-Established result caches, persistent environments, proof-state snapshots and bounded warm services recover substantial preparation reuse, while the value of independent native execution at equal resources remains unresolved.
++Formal verification services check related program and proof candidates that share libraries, declarations and accepted context.
++Serving independent attempts requires balancing repeated preparation with shared execution, whose resource growth, contention and cancellation depend on candidate isolation.
++Native execution history includes scope, heuristics, runtime objects and resource counters beyond the logical context, requiring a separate argument for observable verification behavior.
++Established result caches, persistent environments, proof-state snapshots and bounded warm services recover preparation reuse, while the value of independent native execution at matched resources remains unresolved.
+ We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding alternative attempts.
+-This separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
++Realizing this separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
+ Our verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+-Using public candidate streams from Lean and systems backed by satisfiability modulo theories (SMT) solvers, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with full setup, transfer and CPU fallback costs.
++Using public Lean and satisfiability modulo theories (SMT)-backed candidate streams, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking on an RTX 5090 with setup, transfer and CPU fallback charged.
+ \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
+ \end{abstract}
+ 

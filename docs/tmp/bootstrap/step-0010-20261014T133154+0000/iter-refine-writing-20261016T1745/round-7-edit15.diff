@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -818,7 +818,7 @@
+ and retains body profiles for 29,689 of them. All 61 sources without a body
+ profile have operational outcomes.
+ The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
+-have the largest recorded leaf-wall totals, followed by \texttt{simp}.
++have the largest recorded wall-time totals for leaf regions, followed by \texttt{simp}.
+ These thresholded trace weights measure wall intervals that can overlap across
+ threads and requests, rather than CPU fractions or device-eligible work.
+ The observation characterizes the original arithmetic route.

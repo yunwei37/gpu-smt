@@ -1,0 +1,15 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -494,10 +494,8 @@
+ comparison on the measured cohort. It does not establish systems novelty
+ or heterogeneous benefit.
+ 
+-The complete workload, offered-load and resource
+-matrix remains necessary to answer RQ3. RQ3 remains unanswered until
+-branching is compared with the strongest competent services over the complete
+-workload and resource matrix.
++RQ3 remains unanswered until branching is compared with the strongest
++competent services over the complete workload, offered-load and resource matrix.
+ 
+ \subsection{Heterogeneous execution}
+ RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.

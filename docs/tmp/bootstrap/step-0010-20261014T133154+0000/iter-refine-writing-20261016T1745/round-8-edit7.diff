@@ -1,0 +1,11 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -239,7 +239,7 @@
+ 
+ For the matched Lean 4.27 native-batch comparison, the primary competitor is
+ the existing Kimina naive \texttt{BatchCommand} path, which runs native tasks
+-from one prepared root. Disabling the candidate's reference branching is a
++from one prepared root. Disabling mutable-reference branching in the candidate method is a
+ separate component control. All methods return an ordered batch array after
+ its last member, so batch emission is not compared with streaming completion
+ as a latency advantage.

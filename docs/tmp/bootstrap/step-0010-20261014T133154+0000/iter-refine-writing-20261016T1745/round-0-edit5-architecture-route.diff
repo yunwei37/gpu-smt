@@ -1,0 +1,10 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -94,6 +94,7 @@
+ \node[stage,below=of response] (end) {End branch; release private state};
+ \draw[arrow] (input) -- (placement);
+ \draw[arrow] (placement) -- (boundary);
++\draw[arrow] (placement.east) -| node[pos=.25,above,font=\scriptsize] {not retained} (fallback.north);
+ \draw[arrow] (boundary) -- node[above,font=\scriptsize] {no} (fallback);
+ \draw[arrow] (boundary) -- node[right,font=\scriptsize] {yes} (parent);
+ \draw[arrow] (parent) -- (branches);

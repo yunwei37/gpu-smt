@@ -1,0 +1,26 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -156,6 +156,23 @@
+ 
+ For Lean, the adapter retains accepted context and keeps branch-local proof construction independent. It waits for source snapshots and the checked declaration environment before qualifying runtime quiescence, thread ownership and mutable extensions. Frontend completion alone does not establish that runtime workers, their finalizers and event loops have stopped. The adapter enables native process branching only after that separate runtime qualification.
+ 
++\subsection{Shared-runtime native state}
++The shared-runtime Lean constructor retains the prepared native command state
++while assigning each candidate a separate mutable-reference context. Reads of
++prepared reference cells use the retained base until a destructive operation
++creates a private cell. Unresolved prepared thunks are evaluated privately.
++Branch identity follows admitted native tasks, and branch release waits for
++those tasks and their execution scopes before dropping retained identities and
++private versions.
++
++This reference overlay does not make arbitrary native globals, extensions,
++external effects or foreign-function interfaces (FFI) private. Listed guarded
++effects select native replay. Unsupported effects that terminate a worker retain
++their operational outcomes. These mechanisms establish neither general process
++equivalence nor completed cancellation qualification. The process constructor
++in Figure~\ref{fig:architecture} and this runtime constructor have different
++supported boundaries and isolation properties.
++
+ \subsection{Process and resource handling}
+ Linux copy-on-write branches retain the parent address space, with candidate writes creating private pages~\cite{fork}. The parent stays quiescent and never executes candidate suffixes, while branch communication uses separate descriptors. The service reaps children after response, cancellation or failure and distinguishes native solver resource counters from service elapsed and CPU accounting.
+ 

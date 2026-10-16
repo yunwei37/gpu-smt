@@ -1,0 +1,25 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -261,9 +261,21 @@
+ \subsection{Behavior and isolation}\label{sec:behavior-results}
+ RQ2 asks whether branching from prepared native state preserves verifier responses and requested artifacts while isolating candidates and cancellation. We first compare fresh adapter execution with the original verifier, then execute untouched candidate suffixes from prepared states. We retain per-input decisions and artifacts for comparisons that vary preceding unrelated attempts, branch cancellation and resource-limit conditions. Completed attempts are compared for native responses and artifacts. Externally cancelled attempts are compared for progress at termination, cleanup and the independence of surviving attempts. Native scope and history controls distinguish changes in solver mode from cross-candidate interference.
+ 
++\paragraph{Observed behavior within the completed service comparisons.}
++The SMT comparisons in Section~\ref{sec:service-results} preserve native
++inputs, basic results, decision sequences and requested artifacts on their
++reported primary and resource conditions. The ProofNet service replay
++preserves basic outcome counts, whereas the shared-process placement retains
++diagnostic metavariable-number differences on incomplete sources.
++These are distinct constructors and comparison scopes: basic outcome agreement
++is not identical response bytes or general artifact fidelity.
++Section~\ref{sec:service-results} retains their timing and resource conditions.
++The remaining history, resource-limit and cancellation comparisons below
++still determine RQ2 at its full scope.
++
+ Lean controls cover complete acceptance, rejection, unresolved obligations and admissions. SMT controls cover SAT with model requests, UNSAT with supported proof/core requests, UNKNOWN and multi-check sessions. The original scope/history regression streams remain part of the causal test. \missing{Complete per-input comparisons, artifact validation, resource-limit outcomes and cancellation recovery.} RQ2 remains unanswered until every planned behavior comparison finishes with a recorded outcome, residual differences are explained and divergent paths remain excluded from qualified service comparisons.
+ 
+-\subsection{Latency, throughput and memory}
++\subsection{Latency, throughput and memory}\label{sec:service-results}
+ RQ3 asks how prepared-state branching changes end-to-end latency, throughput and memory at equal resources compared with established warm-session reuse. We replay actual attempt streams over offered-load and concurrency sweeps, matching CPU and memory budgets across services. A single shared warm worker is not the sole comparison to many branch workers. We charge the measured service for creating and replacing prepared states and for cache costs.
+ 
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}

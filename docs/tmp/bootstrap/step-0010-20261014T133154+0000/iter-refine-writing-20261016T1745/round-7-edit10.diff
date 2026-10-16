@@ -1,0 +1,13 @@
+--- a/docs/paper/main.tex
++++ b/docs/paper/main.tex
+@@ -645,8 +645,8 @@
+ Axle combines preloaded Mathlib with per-request processes~\cite{axle}.
+ Its published normalized-sample comparison measures computation rather than
+ the complete public service path. Isolated preloaded serving is therefore
+-existing work, and our complete, unchanged-source behavior and resource
+-comparison must establish any additional benefit.
++existing work, and our complete behavior and resource comparison with unchanged sources
++must establish any additional benefit.
+ 
+ \paragraph{Verification caching.}
+ Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
