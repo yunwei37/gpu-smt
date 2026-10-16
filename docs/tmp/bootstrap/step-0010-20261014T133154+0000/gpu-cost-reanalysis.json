@@ -1,0 +1,105 @@
+{
+  "utc": "2026-10-14T14:53:52.439359+00:00",
+  "rows": [
+    {
+      "rep": 0,
+      "warm_seconds": 310.47818003,
+      "gpu_seconds": 315.870382178,
+      "slowdown_percent": 1.7367410964206798,
+      "supported_call_percent": 0.09245242123692182,
+      "counters": {
+        "calls": 2380684,
+        "supported": 2201,
+        "declined": 2378483,
+        "cpu_calls": 0,
+        "gpu_calls": 2214,
+        "serialization_ns": 4037514,
+        "initialization_ns": 1325800500,
+        "allocation_upload_ns": 116197876,
+        "launch_sync_ns": 25868560,
+        "download_ns": 30963701,
+        "quotation_ns": 5698571,
+        "whole_provider_ns": 3169260745,
+        "host_growth_calls": 4,
+        "host_growth_ns": 387017
+      },
+      "additional_counters": {
+        "host_declined": 2378470,
+        "prepacking_declined": 2378470,
+        "head_admission_ns": 252380304
+      },
+      "censored_processes": [
+        5620
+      ],
+      "actual_rtx5090_ready": true,
+      "driver_errors": []
+    },
+    {
+      "rep": 1,
+      "warm_seconds": 311.544205422,
+      "gpu_seconds": 322.890819181,
+      "slowdown_percent": 3.642055785833187,
+      "supported_call_percent": 0.09247195906529798,
+      "counters": {
+        "calls": 2380181,
+        "supported": 2201,
+        "declined": 2377980,
+        "cpu_calls": 0,
+        "gpu_calls": 2214,
+        "serialization_ns": 4138742,
+        "initialization_ns": 1177848211,
+        "allocation_upload_ns": 1053103756,
+        "launch_sync_ns": 1291301911,
+        "download_ns": 30764727,
+        "quotation_ns": 5950081,
+        "whole_provider_ns": 4920788262,
+        "host_growth_calls": 4,
+        "host_growth_ns": 1147993
+      },
+      "additional_counters": {
+        "host_declined": 2377967,
+        "prepacking_declined": 2377967,
+        "head_admission_ns": 258201945
+      },
+      "censored_processes": [
+        11238
+      ],
+      "actual_rtx5090_ready": true,
+      "driver_errors": []
+    },
+    {
+      "rep": 2,
+      "warm_seconds": 318.571668307,
+      "gpu_seconds": 323.607357837,
+      "slowdown_percent": 1.5807085284015976,
+      "supported_call_percent": 0.0924523824025438,
+      "counters": {
+        "calls": 2380685,
+        "supported": 2201,
+        "declined": 2378484,
+        "cpu_calls": 0,
+        "gpu_calls": 2214,
+        "serialization_ns": 4223351,
+        "initialization_ns": 1273895232,
+        "allocation_upload_ns": 1650550986,
+        "launch_sync_ns": 1743789733,
+        "download_ns": 32065959,
+        "quotation_ns": 6205906,
+        "whole_provider_ns": 6157876135,
+        "host_growth_calls": 4,
+        "host_growth_ns": 1043651
+      },
+      "additional_counters": {
+        "host_declined": 2378471,
+        "prepacking_declined": 2378471,
+        "head_admission_ns": 265896255
+      },
+      "censored_processes": [
+        16838
+      ],
+      "actual_rtx5090_ready": true,
+      "driver_errors": []
+    }
+  ],
+  "scope": "Existing three complete native6 ProofNet primary GPU cells. Observed per-PID maxima; failed worker lacks final counters. Counts are not cost-weighted coverage; parallel summed provider wall is not makespan attribution. No new benchmark or contention estimate."
+}

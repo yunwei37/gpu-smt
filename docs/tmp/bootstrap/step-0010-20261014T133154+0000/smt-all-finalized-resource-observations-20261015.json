@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-15T11:30:14.917794+00:00",
+  "scope": "All3 profiles terminal; fullsource/nativeartifact comparison still running. Single non-atomic sampled profiles, no exact/replicated memory claim.",
+  "profiles": {
+    "stock": {
+      "whole_wall_s": 2070.136223865964,
+      "measured_owned_cpu_s": 1302.3847658959999,
+      "resources": {
+        "samples": 2034,
+        "incomplete": 233,
+        "issues": [],
+        "peak_observed": {
+          "pss_kib": 224644,
+          "private_kib": 222252,
+          "rss_kib": 263828
+        },
+        "limits": "One-second non-atomic tree; short-lived processes and unsampled peaks can be missed. Observer CPU separate."
+      }
+    },
+    "branch": {
+      "whole_wall_s": 2681.494969387015,
+      "measured_owned_cpu_s": 1589.3828562850013,
+      "resources": {
+        "samples": 2588,
+        "incomplete": 368,
+        "issues": [],
+        "peak_observed": {
+          "pss_kib": 783477,
+          "private_kib": 768636,
+          "rss_kib": 835460
+        },
+        "limits": "One-second non-atomic tree; short-lived processes and unsampled peaks can be missed. Observer CPU separate."
+      }
+    },
+    "logical": {
+      "whole_wall_s": 2378.402049937984,
+      "measured_owned_cpu_s": 1546.2998344359987,
+      "resources": {
+        "samples": 2303,
+        "incomplete": 313,
+        "issues": [],
+        "peak_observed": {
+          "pss_kib": 791914,
+          "private_kib": 788712,
+          "rss_kib": 863000
+        },
+        "limits": "One-second non-atomic tree; short-lived processes and unsampled peaks can be missed. Observer CPU separate."
+      }
+    }
+  }
+}
