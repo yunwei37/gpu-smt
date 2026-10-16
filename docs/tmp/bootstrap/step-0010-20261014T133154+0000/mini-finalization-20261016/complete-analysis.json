@@ -1,0 +1,687 @@
+{
+  "utc": "2026-10-16T10:57:48.830773+00:00",
+  "scope": "All original 7808 miniF2F source attempts, producer4.9 GC backend, selective native arithmetic compilation only in the candidate. Exact source bytes/order and native payloads use the existing loader; only adapter-inserted time is excluded from native comparison. Primary whole clocks include startup/import/loading, verification, HTTP/raw/logging, replacement and shutdown/EOF; build and ZIP are separate. Four closed-loop requests overlap. Shared background is not exclusive hardware; profiles are separate. No partial-clock gain, task pass@32, GPU benefit or final RQ/novelty claim.",
+  "completed_terminal_cells": 8,
+  "planned_cells": 8,
+  "completed_valid_cells": 8,
+  "all_planned_complete": true,
+  "primary_pairs": [
+    {
+      "rep": 0,
+      "commands_match_except_pid_method": true,
+      "reference_seconds": 12689.277611079,
+      "candidate_seconds": 11723.450893959,
+      "wall_reduction_percent": 7.6113609200001875,
+      "basic_differences": [
+        {
+          "source_index": 2325,
+          "reference": "operational",
+          "candidate": "rejected"
+        },
+        {
+          "source_index": 3209,
+          "reference": "operational",
+          "candidate": "rejected"
+        }
+      ],
+      "basic_transition_counts": {
+        "operational->rejected": 2
+      },
+      "native_payload_difference_indices": [
+        2325,
+        3209,
+        4993,
+        7205,
+        7212,
+        7213,
+        7216,
+        7218,
+        7226,
+        7231
+      ],
+      "reference_request_latency": {
+        "n": 7808,
+        "median": 0.444358621,
+        "p95": 12.852154549,
+        "p99": 247.849324991
+      },
+      "candidate_request_latency": {
+        "n": 7808,
+        "median": 0.4597176185,
+        "p95": 9.761435721,
+        "p99": 275.352912759
+      }
+    },
+    {
+      "rep": 1,
+      "commands_match_except_pid_method": true,
+      "reference_seconds": 12539.743054951,
+      "candidate_seconds": 11192.977850911,
+      "wall_reduction_percent": 10.739974480643477,
+      "basic_differences": [
+        {
+          "source_index": 2325,
+          "reference": "operational",
+          "candidate": "rejected"
+        },
+        {
+          "source_index": 3209,
+          "reference": "operational",
+          "candidate": "rejected"
+        }
+      ],
+      "basic_transition_counts": {
+        "operational->rejected": 2
+      },
+      "native_payload_difference_indices": [
+        2325,
+        3209,
+        7230,
+        7521,
+        7530,
+        7533,
+        7537
+      ],
+      "reference_request_latency": {
+        "n": 7808,
+        "median": 0.44544827,
+        "p95": 12.738322636,
+        "p99": 251.141015319
+      },
+      "candidate_request_latency": {
+        "n": 7808,
+        "median": 0.402207064,
+        "p95": 8.711796753,
+        "p99": 253.276302702
+      }
+    },
+    {
+      "rep": 2,
+      "commands_match_except_pid_method": true,
+      "reference_seconds": 11914.914090759,
+      "candidate_seconds": 9893.716240379,
+      "wall_reduction_percent": 16.9635956666075,
+      "basic_differences": [
+        {
+          "source_index": 2325,
+          "reference": "operational",
+          "candidate": "rejected"
+        },
+        {
+          "source_index": 3209,
+          "reference": "operational",
+          "candidate": "rejected"
+        },
+        {
+          "source_index": 4869,
+          "reference": "operational",
+          "candidate": "rejected"
+        }
+      ],
+      "basic_transition_counts": {
+        "operational->rejected": 3
+      },
+      "native_payload_difference_indices": [
+        2325,
+        3209,
+        4869,
+        7217
+      ],
+      "reference_request_latency": {
+        "n": 7808,
+        "median": 0.3990877605,
+        "p95": 11.960956896,
+        "p99": 224.267571889
+      },
+      "candidate_request_latency": {
+        "n": 7808,
+        "median": 0.3144075115,
+        "p95": 7.424169799,
+        "p99": 209.717643986
+      }
+    }
+  ],
+  "qualified_primary_pairs": 3,
+  "mean_wall_reduction_percent": 11.77164368908372,
+  "observed_range_percent": [
+    7.6113609200001875,
+    16.9635956666075
+  ],
+  "uncertainty": "Descriptive whole-pair range, not a confidence interval; three pairs and profiles are planned.",
+  "cells": {
+    "minif2f-profile-compiled": {
+      "label": "minif2f-profile-compiled",
+      "dataset": "minif2f",
+      "method": "compiled",
+      "profile": true,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 10590.304427555,
+      "terminal_attempts_per_second": 0.7372781446852746,
+      "counts": {
+        "complete": 3011,
+        "rejected": 4660,
+        "operational": 137
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.288971529,
+        "p95": 6.994611461,
+        "p99": 187.027784611
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 565902010968856,
+        "end_monotonic_ns": 576492231753365,
+        "sample_interval_ns": 1000000000,
+        "samples": 6994,
+        "incomplete_samples": 92,
+        "sampled_peak_total_pss_kib": 33843334,
+        "sampled_peak_total_private_kib": 30345756,
+        "whole_process_tree_cpu_seconds": 21417.50781999999,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      },
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1984056,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "compiled",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-profile-original": {
+      "label": "minif2f-profile-original",
+      "dataset": "minif2f",
+      "method": "original",
+      "profile": true,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 11667.404590308,
+      "terminal_attempts_per_second": 0.6692148146200424,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4657,
+        "operational": 143
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.355265734,
+        "p95": 10.978714741,
+        "p99": 222.847363013
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": {
+        "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+        "begin_monotonic_ns": 554227903770289,
+        "end_monotonic_ns": 565895227899524,
+        "sample_interval_ns": 1000000000,
+        "samples": 7258,
+        "incomplete_samples": 106,
+        "sampled_peak_total_pss_kib": 34116090,
+        "sampled_peak_total_private_kib": 30631608,
+        "whole_process_tree_cpu_seconds": 21837.747522,
+        "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+      },
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1972040,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "original",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep0-compiled": {
+      "label": "minif2f-rep0-compiled",
+      "dataset": "minif2f",
+      "method": "compiled",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 11723.450893959,
+      "terminal_attempts_per_second": 0.6660154992437765,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4659,
+        "operational": 141
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.4597176185,
+        "p95": 9.761435721,
+        "p99": 275.352912759
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1905055,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "compiled",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep0-original": {
+      "label": "minif2f-rep0-original",
+      "dataset": "minif2f",
+      "method": "original",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 12689.277611079,
+      "terminal_attempts_per_second": 0.6153226558131915,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4657,
+        "operational": 143
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.444358621,
+        "p95": 12.852154549,
+        "p99": 247.849324991
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1562427,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "original",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep1-compiled": {
+      "label": "minif2f-rep1-compiled",
+      "dataset": "minif2f",
+      "method": "compiled",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 11192.977850911,
+      "terminal_attempts_per_second": 0.6975802243157753,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4659,
+        "operational": 141
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.402207064,
+        "p95": 8.711796753,
+        "p99": 253.276302702
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1919196,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "compiled",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep1-original": {
+      "label": "minif2f-rep1-original",
+      "dataset": "minif2f",
+      "method": "original",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 12539.743054951,
+      "terminal_attempts_per_second": 0.6226602862422455,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4657,
+        "operational": 143
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.44544827,
+        "p95": 12.738322636,
+        "p99": 251.141015319
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1933388,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "original",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep2-compiled": {
+      "label": "minif2f-rep2-compiled",
+      "dataset": "minif2f",
+      "method": "compiled",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 9893.716240379,
+      "terminal_attempts_per_second": 0.7891877844781302,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4660,
+        "operational": 140
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.3144075115,
+        "p95": 7.424169799,
+        "p99": 209.717643986
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1961045,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "compiled",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    },
+    "minif2f-rep2-original": {
+      "label": "minif2f-rep2-original",
+      "dataset": "minif2f",
+      "method": "original",
+      "profile": false,
+      "valid_complete": true,
+      "returned": 7808,
+      "expected": 7808,
+      "whole_seconds": 11914.914090759,
+      "terminal_attempts_per_second": 0.6553131596690024,
+      "counts": {
+        "complete": 3008,
+        "rejected": 4657,
+        "operational": 143
+      },
+      "request_latency_seconds": {
+        "n": 7808,
+        "median": 0.3990877605,
+        "p95": 11.960956896,
+        "p99": 224.267571889
+      },
+      "source_issues": [],
+      "server_returncode": -15,
+      "resources": null,
+      "command": {
+        "command": [
+          "/tmp/gpu-smt-kimina-header-repair-20261014/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "pid": 1947586,
+        "cwd": "/tmp/gpu-smt-kimina-header-repair-20261014",
+        "backend": "Published Kimina GC path ported to producer4.9; selective native arithmetic only compiled; current Python stock defaults",
+        "method": "original",
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "stock_defaults": "12GiBaddressspace/maxpool23/maxuses-1/legacy300s; originalCORE0 inherited",
+        "api": "/verify, four requests in flight, privatePort8003"
+      }
+    }
+  }
+}

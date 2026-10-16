@@ -1,0 +1,138 @@
+{
+  "observed_utc": "2026-10-16T10:59:39.627776+00:00",
+  "conditions_complete": 8,
+  "source_attempts_per_condition": 7808,
+  "total_rows": 62464,
+  "profile_commands_match_except_pid_method": true,
+  "profile_basic_differences": [
+    {
+      "source_index": 2325,
+      "original": "operational",
+      "compiled": "rejected"
+    },
+    {
+      "source_index": 2507,
+      "original": "operational",
+      "compiled": "rejected"
+    },
+    {
+      "source_index": 2590,
+      "original": "rejected",
+      "compiled": "operational"
+    },
+    {
+      "source_index": 2591,
+      "original": "rejected",
+      "compiled": "operational"
+    },
+    {
+      "source_index": 2596,
+      "original": "rejected",
+      "compiled": "operational"
+    },
+    {
+      "source_index": 3077,
+      "original": "operational",
+      "compiled": "complete"
+    },
+    {
+      "source_index": 3086,
+      "original": "operational",
+      "compiled": "complete"
+    },
+    {
+      "source_index": 3095,
+      "original": "operational",
+      "compiled": "complete"
+    },
+    {
+      "source_index": 3209,
+      "original": "operational",
+      "compiled": "rejected"
+    },
+    {
+      "source_index": 4869,
+      "original": "operational",
+      "compiled": "rejected"
+    },
+    {
+      "source_index": 5001,
+      "original": "operational",
+      "compiled": "rejected"
+    },
+    {
+      "source_index": 5399,
+      "original": "operational",
+      "compiled": "rejected"
+    }
+  ],
+  "profile_transition_counts": {
+    "operational->rejected": 6,
+    "rejected->operational": 3,
+    "operational->complete": 3
+  },
+  "profile_native_payload_difference_indices": [
+    2325,
+    2507,
+    2590,
+    2591,
+    2596,
+    3077,
+    3086,
+    3095,
+    3209,
+    4869,
+    5001,
+    5399,
+    7202,
+    7217,
+    7224,
+    7230
+  ],
+  "profile_resources": {
+    "original": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 554227903770289,
+      "end_monotonic_ns": 565895227899524,
+      "sample_interval_ns": 1000000000,
+      "samples": 7258,
+      "incomplete_samples": 106,
+      "sampled_peak_total_pss_kib": 34116090,
+      "sampled_peak_total_private_kib": 30631608,
+      "whole_process_tree_cpu_seconds": 21837.747522,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    },
+    "compiled": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 565902010968856,
+      "end_monotonic_ns": 576492231753365,
+      "sample_interval_ns": 1000000000,
+      "samples": 6994,
+      "incomplete_samples": 92,
+      "sampled_peak_total_pss_kib": 33843334,
+      "sampled_peak_total_private_kib": 30345756,
+      "whole_process_tree_cpu_seconds": 21417.50781999999,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    }
+  },
+  "profile_descriptive_metrics": {
+    "sampled_peak_total_pss_kib": {
+      "original": 34116090,
+      "compiled": 33843334,
+      "compiled_reduction_percent": 0.7994937286189607
+    },
+    "sampled_peak_total_private_kib": {
+      "original": 30631608,
+      "compiled": 30345756,
+      "compiled_reduction_percent": 0.9331929293427854
+    },
+    "whole_process_tree_cpu_seconds": {
+      "original": 21837.747522,
+      "compiled": 21417.50781999999,
+      "compiled_reduction_percent": 1.9243729307550916
+    }
+  },
+  "profile_wall_reduction_percent": 9.231703198565144,
+  "raw_new_cell_archive": "/workspaces/repository/artifacts/lean-native-compilation-2026-10-14/gc49/full1/minif2f-profile-compiled.zip",
+  "limits": "one separately sampled profile pair, not primary repetition/significance; non-atomic incomplete PSS sampling; no causal/general memory saving, transparent all-outcome equivalence, task pass@32, GPU speedup or novel systems contribution"
+}

@@ -1734,3 +1734,8 @@ Eleven exact checked script versions are stable during inspection and their real
 ## Published-version independent review acceptance — root integration
 
 Root reads allfour fresh reports, verifies13frozen files equal published9361cf4 and checks review sequencing/capability disclosure. Native reviewer identity, no-Git/no-native-rerun limits, actual52population audit, primary-source findings and unfinished-author exclusions are explicit. Root accepts scientific reject/incomplete without converting it into GPU impossibility or a smaller deliverable, and routes to consequential EXPERIMENT admission. This is a real independent full-paper assessment plus root integration, not full-step completion or acceptance. Historical source-only2c0b377 does not mutate the reviewed paper.
+
+
+## Completed mini acquisition collection — root validation
+
+Original driver is no longer present and all8terminal/finalization markers exist. The unchanged analyzer verifies8complete cells; raw final archive CRC/input bytes and7808unique indices pass. All previously retained partial/mixed results remain. Root's complete analysis includes resource-sampling limits and12profile transitions, including rejected→operational and >1500sHTTP requests; no transparent-behavior or memory/GPU claim. Actual archived capture helper is published instead of assuming current bench code was measured. This is collection/publication, with independent result disposition still pending.
