@@ -1,0 +1,11 @@
+# Complete Full/hybrid resource capture
+
+One original, now-terminal resource profile of the existing Full/Fast×hybrid/HiGHS acquisition is preserved here. This is **not a new experiment, primary timing repetition or completed16condition matrix**. Twelve primary conditions remain complete; this adds one separate profile, with three profiles still pending at collection.
+
+All29,750original sources return once:27,320complete,2,376rejected,54operational. Whole12189.202965s includes original configured capture costs/terminate-wait; finalserver-15is not natural-task EOF. Input bytes/ordinal-source associations/counts are recomputed directly by root, and bytewise archive copies match the original103068500byte ZIP. This is root self-check, not independent result review of this new profile. The earlier independent review covers the original12primary conditions only.
+
+The original ZIP is losslessly split into four numbered parts to preserve every native response, source,631265062byteoracle stream, server logs and resource sample without placing a100MiB+single file in Git. Reconstruct outside any checkout by concatenating part-000throughpart-003in numeric order; it is an ordinary ZIP with original member paths. publication.json records the actual parts/lengths/source/archive observation, not scientific gate state. No extra digest/download gate is introduced.
+
+Raw summary:6,712non-atomic samples,27incomplete, configured interval1second, sampled fleetPSS maximum9,024,583KiB/private6,175,224KiB. Sample timestamps/scan overhead determine actual cadence; this is not an exact1Hz, simultaneous or exhaustive peak. The upstream field whole_process_tree_cpu_seconds=11957.620989includes the recorder's stated process counters/observer but has no established exhaustive-descendant coverage; do not infer total CPU or hardware superiority from its label.
+
+No second method's completed profile is present here, so no paired PSS/CPU saving, replicated uncertainty, global CPU rank, new mechanism or GPU claim follows. This lossless publication is the user's requested persistence of completed original data, not independent research progress or an invitation to start another grid. Original captures keep running unchanged.

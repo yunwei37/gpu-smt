@@ -1,7 +1,7 @@
 # Evaluation: current evidence and open questions
 
-Updated2026-10-16 from published main30c30c1 plus complete E039 paid-preparation
-evidence below. Step0010 is unfrozen BOOTSTRAP; all four
+Updated2026-10-16 from published main456cab1 plus the completed original
+Full/hybrid profile and active E040implementation below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
 open. Publication of completed portions is not full step or research completion.
 
@@ -54,14 +54,14 @@ The [earlier terminal integration](tmp/bootstrap/step-0010-20261014T133154+0000/
 owns all preceding source/raw/resource reviews.
 The [complete Full/Fast primary result](tmp/bootstrap/step-0010-20261014T133154+0000/cpu-fast-primary-complete-20261016T1900/result.md)
 adds exactly one newly terminal29,750source condition and reconciles all12primary
-conditions/357,000attempts; four separate profiles remain unfinished.
+conditions/357,000primaryattempts. One subsequent separate profile is now retained below; three profiles remain unfinished.
 
 | Matched comparison | Terminal scope and whole elapsed effects | Qualification |
 |---|---|---|
 |GC→native libraries,Goedel|6/8;51.934410%,52.381851%,59.522208%lower|All3primary pairs;2separate profiles unfinished|
 |Compiled Mathlib→native exact oracle|8/8;4.73%slower,18.66%/1.40%lower|Mixed signs|
 |Tiered→hybrid/HiGHS|12/12;hybrid10.612935%/5.224932%/23.432264%slower;HiGHS11.830231%slower/11.451553%lower/21.467193%slower|No universal solver winner|
-|Full/Fast×hybrid/HiGHS|12/16;all3four-method primary blocks complete|Four separate resource profiles unresolved|
+|Full/Fast×hybrid/HiGHS|13/16;all12primary plus1separateprofile complete|Three further resource profiles unresolved|
 |Fast/hybrid→product reuse|8/8;9.82%/12.79%/15.39%lower|Bounded composition|
 |Original solver→product reuse|8/8;0.586076%slower/5.109767%/14.303137%lower|Mixed signs|
 |GC→selective native arithmetic,miniF2F|8/8;7.61%/10.74%/16.96%lower|Earlier2p99worse|
@@ -80,6 +80,8 @@ no transparent substitution, global CPU
 ranking, new mechanism contribution or GPU inference follows. Do not add another
 mode grid. Three whole-run observations/ranges are descriptive, not confidence
 intervals; individual proofs and profiles are not extra timing repetitions.
+
+One original [Full/hybrid profile](tmp/bootstrap/step-0010-20261014T133154+0000/cpu-fast-primary-complete-20261016T1900/profile-full-hybrid/README.md) now completes29750sources, all raw103068500bytearchive preserved in ordered parts. It has27320complete/2376rejected/54operational,12189.202965s and sampledPSS9024583KiB/6712non-atomic samples,27incomplete. This single profile is neither an additional primary repetition nor a paired/replicated resource advantage. Its self-review is distinct from the earlier independent12primary review; no new experiment or CPU/GPU contribution follows.
 
 GC pair3 is32484.597840→13149.047983s;10complete→operational/13reverse,
 no complete/rejected flip. The three-pair
@@ -224,3 +226,5 @@ ablations, supported behavior and differentiated contribution. A useful negative
 GPU conclusion is allowed; ordinary CPU/library/cache/COW work cannot fill the
 full systems contribution. All four RQs, final frozen-version experiments and
 paper acceptance remain open.
+
+[E040 active native development](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/plan.md) tests reclamation of dead runtime closure state at the same arena capacity, after the closed monotonic/canonical constructor. New native code builds and is actually loaded on the full official Init; host on/off collection remains incomplete, with no returned performance/coverage/GPU conclusion. This is integrated RQ4setup, self-reviewed under no-delegation instructions; no independent audit or full RQ closure is claimed.

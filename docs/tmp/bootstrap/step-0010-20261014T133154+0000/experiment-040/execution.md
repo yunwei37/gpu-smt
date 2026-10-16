@@ -1,0 +1,13 @@
+# E040 active full official execution
+
+Root directly implemented and built the quiescent-step tracing/reuse native algorithm, preserving the closed E037sources and all existing native-service acquisitions. Actual C++build exits0 in1.326s. Source is bench/lean-gpu/closure-reclaiming.cu and arena-reclaiming-support.cpp; these are implementation/setup, not an asserted system contribution or GPU provider.
+
+The existing source-native sokonanoda Rust executable loads the new .so via its actual DT_RUNPATH/test-local LD_LIBRARY_PATH. Actual native process2083148maps five segments of that exact new library; the /usr/bin/time owner is2083147and finite driver2083141. These PIDs are observations, not restart targets or identity authorities. Use the unchanged existing run and its actual launch/terminal files; do not start another copy.
+
+Full original Init347555345bytes/59626declarations is the real engagement workload. Native parser has read all input and emitted6132277nodes/578levels/59626declarations/842rules,126843428packed bytes. Parse/fixup1.101522/0.022699s are one component observation on the unchanged parser, not an acceleration or complete cost. The four-thread host stage is still active at the21:33UTC observation, about4CPUcores/RSS~0.8GB, with no returned terminal verdict yet. This prolonged host cost is adverse evidence to retain; no all-source declaration support, removable time, GPU advantage or successful full preflight is inferred from mapped code/healthy CPU use.
+
+run-official-init.executed.py waits for this exact on condition, records originalstdout/stderr/full trace/resources/terminal and then executes the single planned no-reclamation control. Do not edit its live sources/library/executable or use goal turns to poll declaration/row counts. Original failed/partial output is retained if it fails. The real workload still runs all native checks; no partial positive answer replaces them.
+
+Plan and result review are self-review under current no-delegation heartbeat. Full host result review, independent audit, GPU/full-corpus comparison and every original RQ remain open. Publication checkpoints only completed source/build/plan/launch/engagement artifacts; live output is not relabeled completed raw evidence or forced into a terminal status.
+
+Source-specific allocation/retry logic is fixed before run: capacity and semantic step/frame defaults unchanged; complete-step progress distinguishes a new operation from an unchanged failed retry. Correct handling of active roots/cache IDs remains part of qualification before any future native-body replacement. No result-based parameter change, new deadline, model migration or hardware reservation is made.

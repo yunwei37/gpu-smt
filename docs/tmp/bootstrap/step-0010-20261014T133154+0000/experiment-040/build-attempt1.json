@@ -1,0 +1,20 @@
+{
+  "start_utc": "2026-10-16T21:24:53.648130+00:00",
+  "end_utc": "2026-10-16T21:24:54.974228+00:00",
+  "command": [
+    "g++",
+    "-O3",
+    "-std=c++17",
+    "-pthread",
+    "-fPIC",
+    "-shared",
+    "-x",
+    "c++",
+    "/workspaces/repository/bench/lean-gpu/arena-reclaiming-support.cpp",
+    "-o",
+    "/tmp/gpu-smt-reclaiming-native-20261016/libarena_canonical_support.so"
+  ],
+  "cwd": "/workspaces/repository",
+  "exit": 0,
+  "wall_seconds": 1.326117584016174
+}
