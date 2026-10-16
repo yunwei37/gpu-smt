@@ -52,6 +52,90 @@ def wire(code, env=None):
     return json.dumps(command, ensure_ascii=False).encode("utf-8") + b"\r\n\r\n"
 
 
+
+class ResourceCapture:
+    """Sample this finite acquisition's own process tree; Linux values in KiB.
+
+    Sampling is non-atomic and may miss peaks. PSS includes existing file-page
+    sharing with outsiders; it is not a claim of newly saved imported memory.
+    """
+    def __init__(self, folder):
+        import resource
+        self.resource = resource
+        self.stream = (folder / 'resources.jsonl').open('x')
+        self.folder = folder
+        self.begin = time.monotonic_ns()
+        self.next = 0
+        self.samples = 0
+        self.initial = [resource.getrusage(k) for k in [resource.RUSAGE_SELF, resource.RUSAGE_CHILDREN]]
+        self.peak_pss = 0
+        self.peak_private = 0
+        self.incomplete = 0
+        self.sample(force=True)
+
+    def sample(self, force=False):
+        now = time.monotonic_ns()
+        if not force and now < self.next:
+            return
+        self.next = now + 1_000_000_000
+        pending = [os.getpid()]
+        seen, observations, errors = set(), [], []
+        while pending:
+            pid = pending.pop()
+            if pid in seen:
+                continue
+            seen.add(pid)
+            root = Path('/proc') / str(pid)
+            try:
+                before = (root / 'stat').read_text()
+                fields = before[before.rfind(')') + 2:].split()
+                start = fields[19]
+                for task in (root / 'task').iterdir():
+                    try:
+                        pending.extend(int(x) for x in (task / 'children').read_text().split())
+                    except FileNotFoundError:
+                        pass
+                memory = {}
+                for line in (root / 'smaps_rollup').read_text().splitlines():
+                    key, sep, value = line.partition(':')
+                    if sep and key in ['Rss', 'Pss', 'Pss_Anon', 'Pss_File', 'Pss_Shmem',
+                                        'Private_Clean', 'Private_Dirty', 'Shared_Clean', 'Shared_Dirty']:
+                        memory[key] = int(value.split()[0])
+                after = (root / 'stat').read_text()
+                if after[after.rfind(')') + 2:].split()[19] != start:
+                    raise ValueError('process identity changed during observation')
+                observations.append(dict(pid=pid, start_ticks=int(start), ppid=int(fields[1]),
+                    live_cpu_ticks=int(fields[11]) + int(fields[12]), runtime_threads=int(fields[17]),
+                    allowed_cpus=sorted(os.sched_getaffinity(pid)), memory_kib=memory))
+            except (OSError, ValueError, IndexError) as error:
+                errors.append(dict(pid=pid, error=repr(error)))
+        totals = {key: sum(row['memory_kib'].get(key, 0) for row in observations)
+                  for key in ['Rss', 'Pss', 'Pss_Anon', 'Pss_File', 'Pss_Shmem',
+                              'Private_Clean', 'Private_Dirty', 'Shared_Clean', 'Shared_Dirty']}
+        self.peak_pss = max(self.peak_pss, totals['Pss'])
+        self.peak_private = max(self.peak_private, totals['Private_Clean'] + totals['Private_Dirty'])
+        self.samples += 1
+        self.incomplete += bool(errors)
+        self.stream.write(json.dumps(dict(monotonic_ns=now, observation_end_ns=time.monotonic_ns(),
+            processes=observations, errors=errors, total_kib=totals)) + '\n')
+        self.stream.flush()
+
+    def close(self):
+        self.sample(force=True)
+        final = [self.resource.getrusage(k) for k in [self.resource.RUSAGE_SELF, self.resource.RUSAGE_CHILDREN]]
+        cpu = sum((after.ru_utime + after.ru_stime) - (before.ru_utime + before.ru_stime)
+                  for before, after in zip(self.initial, final))
+        (self.folder / 'resources-summary.json').write_text(json.dumps(dict(
+            scope='own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee',
+            begin_monotonic_ns=self.begin, end_monotonic_ns=time.monotonic_ns(),
+            sample_interval_ns=1_000_000_000, samples=self.samples, incomplete_samples=self.incomplete,
+            sampled_peak_total_pss_kib=self.peak_pss, sampled_peak_total_private_kib=self.peak_private,
+            whole_process_tree_cpu_seconds=cpu,
+            memory_limits='non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors'
+        ), indent=2) + '\n')
+        self.stream.close()
+
+
 class Session:
     def __init__(self, folder, command, workspace, timeout, event, interrupted):
         self.folder, self.timeout = folder, timeout

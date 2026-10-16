@@ -1704,3 +1704,8 @@ retained. This root check does not satisfy independent result or paper review.
 ## Native placement source check — root only
 
 Root verifies hook/collector placement against the actual SDK and official matching source. The report distinguishes potential enabled-path speculative costs from the existing unlinked fallback, and broad sampled CPU from unmeasured useful offload coverage. No code/run/configuration is changed and no source count is treated as saved time. This is the implementation author own check, not independent review.
+
+
+## Resource API source availability — root validation only
+
+Root verifies the exact missing import dependency, parses/imports the real source, and exercises its actual own-child process-tree sampler. Three samples complete without read errors; no Lean workload or active acquisition is changed. This is root validation of existing implementation publication, not independent scientific review or fresh-machine full reproduction.

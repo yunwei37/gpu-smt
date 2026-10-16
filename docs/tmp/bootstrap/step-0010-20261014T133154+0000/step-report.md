@@ -2774,3 +2774,8 @@ and canonical integration remain the assigned OMP work.
 ## Native frontier placement review — implementation owner
 
 [Source-grounded review](literature-20261016T0845/native-argument-placement-review.md) finds that the optional E034 collector is before native quick equality, proof irrelevance, weak-head reduction and the native defeq cache. Its offered arguments can include skipped proposition work and work after a native short circuit. Offered width therefore does not establish expensive comparisons replaced. The unlinked/default fallback remains unchanged; no GPU provider is added. The installed 4.27.0 source matches the official version by direct primary-source read. This is root implementation review, not the pending independent audit.
+
+
+## Completed resource API publication dependency
+
+Tracked finite-capture scripts already import ResourceCapture from bench/lean_capture_warm.py, while its completed class addition remained dirty. Root reviews and publishes that existing addition, without changing the running collectors or measurement protocol. An actual import/process-tree smoke observes this controlled child, produces three samples with no incomplete reads, and records resource summary/CPU scope; disposable output is removed. [Receipt](resource-api-publication-smoke.json). This repairs public source availability, not a new experiment or performance claim. The experiment owner is notified through its same native session.

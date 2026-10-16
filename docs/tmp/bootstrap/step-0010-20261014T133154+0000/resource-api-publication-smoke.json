@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-10-16T10:04:14.644392+00:00",
+  "source": "bench/lean_capture_warm.py",
+  "scope": "import actual pending public ResourceCapture; sample only this disposable Python process and its controlled child; no Lean/GPU/background acquisition changed",
+  "child_observed": true,
+  "child_exit": 0,
+  "summary": {
+    "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+    "begin_monotonic_ns": 576426625800807,
+    "end_monotonic_ns": 576426643632623,
+    "sample_interval_ns": 1000000000,
+    "samples": 3,
+    "incomplete_samples": 0,
+    "sampled_peak_total_pss_kib": 15642,
+    "sampled_peak_total_private_kib": 13992,
+    "whole_process_tree_cpu_seconds": 0.017787,
+    "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+  },
+  "disposable_outputs_removed_on_exit": true
+}
