@@ -83,3 +83,44 @@ The OMP-owned run-native-batch-comparison.py did not yet exist when checked duri
 No new workload or baseline is requested. Once that implementation is inspected, the successful third preflight resolves the previously blocking path. Proceed to the declared rotated complete-corpus runs; do substantive mainline integration/writing while they execute and gather terminal records rather than spending goal turns polling healthy row counts. Keep binary/library variants frozen throughout a capture. If implementation is changed to reduce the observed hot-path overhead, record a new concrete method version and do not pool it with v1 as a repetition.
 
 The full comparison should decide whether this native-state isolation constructor delivers any useful joint outcome/time/CPU/PSS tradeoff beyond stock native batching. A complete adverse result should be recorded and the constructor closed without another narrow GPU kernel or unrelated tuning grid. A positive or mixed result still needs a defensible differentiation from existing services, caches and snapshots; ordinary native compilation is not that differentiation. All four RQs, broader Lean/SMT/GPU scope and full paper gates remain open.
+
+
+## Supplement: actual finite full execution command and opportunity correction
+
+This is an execution-source supplement to the same result audit, not a new plan-review round or experiment. Root supplied native-batch-integration/full-command.executed.py because the actual OMP reusable CLI delivery remains delayed. I read that entire command and the appended E038 ownership/protocol note. Root owns this one-off native command receipt while OMP retains its exclusive bench runner file; no OMP file is changed by this substitution.
+
+The source explicitly loads and asserts all 29,750 distinct original records and import headers; discovers actual affinity width; loops the three predeclared rotated method blocks; runs methods sequentially; preserves full parsed native payloads without normalization; and labels branch-off separately. It reuses original native Repl.start/_read_response with the recorded inherited-AS repair, the same frozen binaries/library composition, 60-second header/300-second array deadlines and no thread setting. Each failed current batch becomes operational rows; it is not silently retried, and the next original batch gets a fresh worker with preparation/replacement cost inside that cell's wall time. Normal completion closes stdin, drains remaining stdout and waits actual exit, while abnormal retirement uses the native owned-process failure close. Raw outputs and process/resource events use gzip in the caller's existing /tmp output directory. All nine complete cells are required for the full-matrix terminal receipt; an exception leaves explicit failed-terminal and completed-cell records.
+
+The resource differences from preflight are explicit rather than silently pooled: self RUSAGE is labeled collector; RUSAGE_CHILDREN is labeled waited_children; sampled fleet totals include the collector and each PID/create-time/PSS/RSS/VMS/CPU observation is retained. One-second sampled totals are not exact peak bounds. The command does not perform cross-method equality analysis itself; it preserves complete indexed responses for that analysis after terminal collection. Per-case classifications are secondary labels; claims must use the retained native payloads and operational losses, not count equivalence alone.
+
+Two related immediate source defects were sent directly to root before launch:
+1. exchange writes stdout.gz only after original _read_response returns a complete frame. That native function holds consumed lines locally; timeout/read exceptions lose those partial lines from the retained raw file, and abnormal retire initially did not drain stdout. Thus the initial source did not implement its promised partial-output preservation.
+2. original _read_response wraps readline errors in LeanError("Failed to read from REPL stdout"). The driver's outer string checks for underlying separator/line-limit text therefore do not detect that concrete framing obstruction, and could incorrectly continue predictable invalid batches instead of following the plan's common repair path.
+
+The minimal correction is on the same one-off command: tee bytes as the underlying native line reader consumes them, retain/drain the failure tail after owned cleanup, and retain/examine the underlying read exception rather than only the wrapper's text. No new preflight, quota, transport tuning, schema or correctness project is requested. Until the actual correction is inspected, the original finite-command source cannot be certified for all promised failure/raw-output handling; its successful normal path otherwise follows the fixed comparison. Root may implement this small execution repair immediately and then run the already admitted full comparison. This is not permission to change OMP ownership or silently pool changed method builds.
+
+### Corrected Meta denominator independently verified
+
+I also read E038/opportunity-denominator-correction.md/.json, the original E033/full-observed-category-groups-20261016.json and artifacts/lean-modern-native-compilation-2026-10-14/meta-inventory/meta-observer.c. Independent arithmetic gives:
+
+- outer no-metavariable CPU: 3,078,852,745,407 ns;
+- total observed outer CPU: 13,041,048,187,034 ns;
+- fraction: 0.23608936193243535 (23.60893619%);
+- no-metavariable outer entries: 208,151,681 / 293,112,273 = 0.7101431777986315 (71.01431778%).
+
+The actual wrapper clocks outer calls using CLOCK_THREAD_CPUTIME_ID and accumulates outer_cpu_ns only for timed completed outer returns; entered counters have a different denominator. The root forward correction is right: 23.61% is an instrumented observed outer calling-path thread-CPU descriptor, not a count fraction. Earlier wording in the project/this thread calling it a count fraction was incorrect and should be corrected forward without rewriting the raw evidence.
+
+The correction also correctly declines to multiply that observed denominator by another run's sampled inclusive defeq share as a measured end-to-end bound. It does not identify independent arguments, all native defeq work, full-wall critical-path cost, transfers or GPU readiness. The conditional no-mvar time budget is only inside this observed wrapped path. No new GPU implementation is justified by this denominator alone. This fixes a material explanation error while leaving raw data and the full research objective intact.
+
+
+### Execution-command correction inspected and closed
+
+I inspected the actual diff from retained, unexecuted full-command-before-raw-tee.py to full-command.executed.py and independently parsed the corrected source with Python ast.parse. The two reported execution defects are repaired on this same command:
+
+- Immediately after original Repl.start returns, already-buffered native stdout bytes are copied once, and the existing StreamReader.feed_data is wrapped to gzip-write every arriving raw byte before the original reader receives it. There is no await between initial-buffer capture and installing the wrapper. Original _read_response, blank-frame parsing and its actual line-buffer policy remain unchanged. Successful exchange no longer writes parsed frames a second time.
+- Normal and failure retirement start a stdout drain concurrently with process wait/native close. Bytes are already preserved at feed_data, including bytes a parser later consumes/discards; draining permits remaining output to reach EOF. An already-dead native process's ProcessLookupError is handled by awaiting its terminal process status.
+- The actual failure receipt now traverses cause/context links, with cycle protection, and persists their repr strings. A native readline line-limit failure wrapped by LeanError remains visible to the existing fatal-transport condition. Failed arrays remain operational and are not silently replaced by retries.
+
+No changed native method binary, input population, resource limit, timeout, outcome comparator or OMP-owned file is introduced by this repair. This is source inspection, not another empirical preflight and not a claim that every future operational fault is impossible. The remaining observed-path limitations and sampled resource caveats above still hold.
+
+**Execution-source disposition: no remaining immediate result-invalidating source blocker identified. The successful third native preflight and this corrected actual finite command support proceeding now to the already declared complete 29,750-source, three-method, three-rotated-block comparison.** Preserve this command/frozen v1 identity and its eventual raw/terminal records; do not spend another round repeating the same preflight or broadening correctness work. Full-run completion, native-value comparison and scientific outcome still depend on those real terminal results.
