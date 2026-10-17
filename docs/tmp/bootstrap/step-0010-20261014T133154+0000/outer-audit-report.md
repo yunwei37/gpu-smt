@@ -2154,3 +2154,13 @@ scope; no external-grandchild completeness or online-tail claim is made.
 Both four-source native equality comparisons use actual preserved records.
 No running collection is restarted and no incomplete timing receives a1.5x
 decision. Scientific gates and full experiment are unfinished.
+
+
+Paper synchronization self-audit: manuscript mechanisms match current source,
+and new counts match complete published parser records. No blocked/unfinished
+experiment becomes a result, no GPU use is fabricated, and one-per-branch
+certificate scope prevents a false single-check-per-source claim. Full native
+fallback and limited carriers are visible. Corrected SHRED wording avoids
+attributing our native executor performance to upstream. Main title/abstract/
+RQs remain fixed;18page build and four changed-region renders are real.
+The root performs both authoring and review, with no independence claim.

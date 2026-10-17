@@ -3490,3 +3490,25 @@ matrix driver2120113were verified live, with no new terminal receipts.
 Do not consume further goal rounds merely repeating this status; collect
 completed cells at their real terminal boundaries. WRITE/full REVIEW/final
 user1.5xdecision remain pending. This is root self-review.
+
+
+### Paper mechanism/protocol synchronization — 2026-10-17T04:30:01.896633+00:00
+
+The actual arithmetic and standard-prefix collectors remain live. During
+acquisition, root synchronizes docs/paper/main.tex with the implemented direct
+coefficient mechanism and the admitted complete-cost experiment. The added
+RQ1prefix counts are complete occurrence measurements, not claimed savedtime.
+The RQ4protocol retains the1000heavy-source enrichment, original source order,
+strong native fallback, three pairs and1.5xrule. Full results stay pending.
+
+Explicit implementation scope: Real/Rat export; Nat/Intfallback; one weighted
+certificate per contradiction branch, possibly two for equality; native
+enclosing declaration check; CPU-onlyprototype. The SHRED sentence is narrowed
+to native rooted-prefix profiling and closing-proof reuse after reading the
+pinned README/prefix.py, with our adapted executor distinguished.
+
+Tectonic produces18pages. Rendered pages5/8/11/12were inspected without
+clipping/overlap. Build and root style/evidence review are attached in
+artifacts/linarith-oracle-2026-10-17/paper-protocol-review/. This completes
+a finite writing synchronization node, not the full WRITE/REVIEWgate or
+independent audit. Original title/abstract/RQs remain unchanged.

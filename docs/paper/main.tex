@@ -156,6 +156,42 @@ For source verification backed by this SMT adapter, the measured interval also i
 
 For Lean, the adapter retains accepted context and keeps branch-local proof construction independent. It waits for source snapshots and the checked declaration environment before qualifying runtime quiescence, thread ownership and mutable extensions. Frontend completion alone does not establish that runtime workers, their finalizers and event loops have stopped. The adapter enables native process branching only after that separate runtime qualification.
 
+\subsection{Arithmetic certificate reuse}\label{sec:arithmetic-oracle}
+The arithmetic experiment tests whether reusing an external coefficient
+certificate removes work that remains after native compilation and warm
+environment reuse. FarkasFast selects hypotheses numerically and then invokes
+stock arithmetic on the selected subset~\cite{farkasSource}.
+That restricted invocation performs proof-producing normalization and another
+certificate search. Our experimental path instead returns the numerical
+certificate and constructs only the facts that it cites.
+
+For each contradiction branch, the Lean frontend collects the applicable
+assumptions and exports an arithmetic expression tree with stable identifiers
+for opaque atoms. A native untrusted process expands rational polynomials,
+generates nonlinear products and square facts, and performs support search
+with exact certificate repair. It returns nonnegative coefficients, equality
+orientations and the provenance of any selected product or square.
+Lean constructs those selected facts, forms their weighted sum and uses its
+native arithmetic discharger to check the resulting contradiction.
+The enclosing declaration still undergoes ordinary native checking.
+
+One certificate check here means one weighted contradiction per solved branch,
+not one check for an entire tactic or source. For example, an equality goal
+can require two contradiction branches. The external search does not return
+trusted Lean expressions or replace the kernel. Unsupported syntax, a missed
+certificate or failed reconstruction restores the saved tactic state and
+selects the same Fast/hybrid and product-reuse path as the comparator.
+All failed attempts and fallback work remain in whole-source timing.
+
+The current exporter directly handles real and rational arithmetic.
+Natural and integer arithmetic and unsupported normalization remain on the
+fallback path, so supported invocation counts alone cannot establish useful
+cost coverage. This prototype uses CPU native code. Batching products on
+an RTX 5090 remains conditional on measured eligible work and complete
+preparation, transfer and fallback costs. External arithmetic search and
+native certificate checking are established techniques~\cite{farkasSource,mathlib},
+so their presence alone does not establish systems novelty.
+
 \subsection{Shared-runtime native state}
 The shared-runtime Lean constructor retains the prepared native command state
 while assigning each candidate a separate mutable-reference context. Reads of
@@ -317,6 +353,37 @@ readiness cost supplies no reason to reopen the slower process-branch
 constructor in Section~\ref{sec:service-results}.
 
 We compare original ordering with a control containing unrelated work and measure how preparation depth changes reusable work. Text bytes and declaration counts are descriptive inputs, while measured preparation cost determines the opportunity. \missing{Preparation-cost distributions across remaining contexts, context reuse over time and aggregate achievable sharing with uncertainty.} RQ1 remains unanswered until these measurements of complete original candidate streams establish whether preparation sharing is consequential.
+
+\paragraph{Shared tactic-prefix opportunity.}
+We apply SHRED's native tactic parser~\cite{shred} to all retained miniF2F and
+ProofNet-lineage candidates, preserving their original groups of 32.
+Reuse keys include the task and the original statement because generated
+candidates can contain different statement text for the same task.
+The parser admits 7,672 of 7,808 miniF2F candidates and 5,717 of 5,952
+ProofNet-lineage candidates. The remaining 136 and 235 candidates require
+the original verification path because extraction or conservative native
+tactic splitting is unsupported.
+
+Within the eligible candidates, exact rooted edges include comments and
+whitespace between tactics. Only 8 of 29,669 miniF2F tactic occurrences and
+45 of 21,530 ProofNet-lineage occurrences repeat a preceding rooted edge,
+corresponding to 0.027\% and 0.209\%.
+Keys based on the parser's tactic-unit text omit inter-tactic trivia while
+retaining the tactic text itself. They expose 3,987 and 3,957 reusable
+occurrences, or 13.44\% and 18.38\%.
+These are occurrence counts rather than measured CPU coverage or time saved.
+
+A native execution comparison tests whether these counted repetitions save
+complete verification time. The adapted executor uses the pinned SHRED parser,
+retains native proof states within each task and checks each closed root with
+Lean's ordinary kernel. Unsupported or failed prefixes use the original
+command path. The reference executes original commands in a warm native
+in-process batch, and both methods use four-wide native work submission.
+Whole clocks include parsing, preparation, transport, native checking,
+fallback and process retirement. This adaptation is distinct from an
+end-to-end benchmark of the upstream SHRED service.
+\missing{Complete original-population prefix timing, per-source native
+agreement, operational outcomes and cost-weighted savings.}
 
 \subsection{Behavior and isolation}\label{sec:behavior-results}
 RQ2 asks whether branching from prepared native state preserves verifier responses and requested artifacts while isolating candidates and cancellation. We first compare fresh adapter execution with the original verifier, then execute untouched candidate suffixes from prepared states. We retain per-input decisions and artifacts for comparisons that vary preceding unrelated attempts, branch cancellation and resource-limit conditions. Completed attempts are compared for native responses and artifacts. Externally cancelled attempts are compared for progress at termination, cleanup and the independence of surviving attempts. Native scope and history controls distinguish changes in solver mode from cross-candidate interference.
@@ -557,6 +624,47 @@ Fast/hybrid combines the upstream FarkasFast numeric probe and restricted
 stock proof construction with the native hybrid route and full native
 fallback~\cite{farkasSource}.
 
+\paragraph{Bounded arithmetic mechanism comparison.}
+We select 1,000 original GoedelWorkbook sources with the largest recorded
+\texttt{linarith} leaf-wall totals and execute them in original filename
+order. The selection uses the complete 29,750-source profile in
+Appendix~\ref{app:cpu-controls}. Its overlapping trace weights rank an
+arithmetic-heavy opportunity cohort, rather than measuring CPU fractions
+or a representative population speedup.
+
+The primary comparison uses native-compiled Mathlib and warm Kimina
+in-process batches of four original candidates. Its CPU reference combines
+Fast/hybrid with invocation-local multiplication-theorem application reuse.
+The prototype in Section~\ref{sec:arithmetic-oracle} restores that same path
+on unsupported or unsuccessful direct attempts. Three whole-cohort paired
+repetitions alternate method order on the same permitted CPUs.
+Whole elapsed time includes preparation, export, external search, queueing,
+checking, fallback, capture and normal process retirement. Build time is
+excluded and versioned. Source identifiers and order must match the frozen
+input before a timing comparison is interpreted.
+
+A predeclared threshold requires more than $1.5\times$ complete-verification
+speedup with matching native outcomes. The primary ratio divides aggregate
+reference whole time by aggregate prototype whole time across all three
+pairs. If the prototype passes against Fast/hybrid, the remaining credible
+native arithmetic competitors determine whether it also beats the fastest
+valid baseline. An unsuccessful executable path or missing responses do not
+constitute a measured negative performance result. A completed loss limits
+this mechanism and cohort, rather than proving a general GPU impossibility.
+
+A separate diagnostic build attributes calling-thread CPU to preprocessing
+and linearization, nonlinear product generation, LP invocation and certificate
+reconstruction. The LP calling-thread counter excludes external solver CPU.
+Unattributed work remains separate, and concurrent invocation-wall sums are
+not divided by whole elapsed time as an acceleration bound.
+The first complete uninstrumented CPU reference returns 992 complete and
+8 rejected sources without operational failures in 2,282.741 seconds.
+The first reference uses the same executed Fast/product code as later pairs,
+but predates a repair to the then-unused prototype fallback in the common
+library. That build lineage remains explicit.
+\missing{All complete prototype pairs, strongest-baseline decision,
+full-cohort phase attribution, coverage and fallback costs.}
+
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
 used to qualify CPU alternatives. Each comparison uses its own version,
@@ -703,8 +811,8 @@ must establish any additional benefit.
 \paragraph{Verification caching.}
 Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
 
-SHRED implements exact tactic-prefix sharing and reuse of closing proofs keyed
-by elaborated context and target, with native proof checking and fallback~\cite{shred}.
+SHRED supplies exact rooted-prefix profiling and a closing-proof reuse prototype
+keyed by elaborated context and target, with native proof checking and fallback~\cite{shred}.
 Reusing expensive proof construction is therefore also established work.
 A distinct mechanism needs evidence beyond the presence of repeated tactics
 or a large acceleration for a selected cache hit.

@@ -54,3 +54,15 @@ Reuse the completed1000reference: its executed Fast/product code did not change;
 only the then-unused prototype fallback branch/common-library build changes.
 Document this first-pair lineage; later reference repetitions use the corrected
 common library. Full comparisons and diagnostics remain pending.
+
+
+## Qualified strong-baseline attribution update
+
+The pre-result diagnostic now instruments the actual Fast/hybrid/product-reuse
+path rather than repeating the stock-only stage pilot as its proxy.
+A separate native library passes full parsed-response agreement on four real
+mixed Real/Nat sources. The full strong diagnostic runs after primary timing;
+the stock pilot remains separately scoped historical evidence. Stage CPU uses
+the calling thread, excludes external LP-child CPU and retains residual work.
+Concurrent invocation-wall sums are not whole-elapsed fractions. This is an
+attribution correction, with no threshold, cohort or performance-trial change.
