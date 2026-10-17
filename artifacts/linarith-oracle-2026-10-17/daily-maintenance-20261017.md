@@ -46,3 +46,10 @@ new capture is launched by this maintenance. Completed phase diagnostics and
 closed timing drivers are now clearly separated from the unfinished prefix
 capture in the implementation and reproduction entrypoints. Historical recipes,
 raw failures, source snapshots and unrelated author files remain intact.
+
+
+## GPU-stage correction — 2026-10-17T21:58:31.301721+00:00
+
+CPU stage: 1.346679850013x; GPU stage in progress. Final continuation uses the better CPU/GPU oracle (>1.5x). Prior CPU-only closure and hourly deletion are superseded; historical data/receipts remain.
+Existing prefix capture is preserved; no minute polling or delegation.
+Complete all-branch attribution before admitting GPU implementation. Root self-review.

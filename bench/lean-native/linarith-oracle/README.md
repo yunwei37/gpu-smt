@@ -1,7 +1,7 @@
 # Native arithmetic oracle experiment
 
-Status: experimental. The arithmetic route is closed by its
-[completed continuation decision](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
+Status: experimental. CPU stage: 1.34668×; GPU stage: in progress. See the
+[CPU-stage result and open GPU decision](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
 All three primary pairs and both full phase diagnostics are complete; see the
 [strong-baseline analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/strong-result-review.md)
 and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
@@ -109,10 +109,11 @@ incomplete directories. The prefix matrix can reuse its existing closed real
 preflight receipt without an obsolete process ID. Both remain finite experiment
 drivers; no additional service or schedule is installed.
 
-The hourly research automation is deleted. Only the unfinished admitted prefix
-capture remains active; completed arithmetic timing and phase captures are not
-a queue to resume. Historical driver interfaces remain available for explicit
-reproduction of the retained evidence.
+The hourly research automation is active. Prefix captures continue in the
+background while the GPU-stage attribution and feasibility analysis proceed.
+The final >1.5× decision uses the better CPU/GPU oracle result. Completed CPU
+pairs remain preserved; they are not a queue to restart. All new captures use
+the upstream 48 GiB limit and retain resource failures.
 
 `analyze-oracle.py CELL` describes observed successful direct-check branches,
 fallback records, source-body groups and native polynomial/product/LP timers.

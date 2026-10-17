@@ -3777,3 +3777,10 @@ former next-research questions. The17October local maintenance reflection
 adds the actual closure and the pending prefix decision. No source, experiment
 parameter, scientific contract, Agent or schedule changes. Root self-review
 and scoped local-link checks; current exact-prefix acquisition continues.
+
+
+## GPU-stage correction — 2026-10-17T21:58:31.301721+00:00
+
+CPU stage: 1.346679850013x; GPU stage in progress. Final continuation uses the better CPU/GPU oracle (>1.5x). Prior CPU-only closure and hourly deletion are superseded; historical data/receipts remain.
+Existing prefix capture is preserved; no minute polling or delegation.
+Complete all-branch attribution before admitting GPU implementation. Root self-review.

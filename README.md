@@ -21,15 +21,15 @@ The completed primary arithmetic comparison follows the [bounded linarith/nlinar
 measurement, external untrusted polynomial/product/LP search, and one native
 coefficient-certificate check with fallback. Success requires **more than 1.5×
 end-to-end improvement over the fastest valid native baseline**, with matching
-verification outcomes. Otherwise the route is written up as negative and the
-hourly research automation is stopped. Preflight values are not full results.
+verification outcomes. The final decision uses the better of CPU and GPU oracle; GPU evaluation must
+finish before negative closure or stopping the hourly task. Preflight values are not full results.
 
 Three complete matched observations on the frozen1,000 sources give
 **1.34668×** in aggregate (**25.74%** less elapsed time), below the predeclared
 **more-than1.5×** continuation rule. Every cell returns992complete/8rejected,
 zerooperational, with matching source verdicts and the same88unused-variable
-warning differences. These are CPU-only results. The route is closed as the
-mainline and the hourly research automation has been deleted.
+warning differences. **CPU stage: 1.34668×; GPU stage: in progress.**
+The hourly research automation is active; this CPU result is not project closure.
 [Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
 retain every pair and the post-fault rebuild lineage. Both full1,000-source
 [phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)

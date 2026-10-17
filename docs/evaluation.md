@@ -374,15 +374,16 @@ wall correction. All primary whole clocks retain default common observation.
 Lean4.27/Mathlib/Farkas/nativeREPL/strong-profile/direct-oracle and4.9prefix dependencies are rebuilt from recorded sources in the same Workspace. New24-source full native responses match published same-method values exactly; fresh32-source prefix methods agree28complete/4rejected, normalexit, nooperational. Finite drivers now reuse closed pairs1/2 and only resume the interrupted thirdpair, then strong-stage diagnostic; full original prefix populations restart with separate post-fault clocks. Persistent raw paths, actual launch commands/PIDs, build failures/repairs and root self-review are retained under artifacts/linarith-oracle-2026-10-17/recovery-20261017/. These qualifications do not close the performance threshold or full gates.
 
 
-## Three matched arithmetic pairs close the continuation rule
+## Three matched arithmetic pairs complete the CPU stage
 
 Allsix1000source cells are complete with992complete/8rejected, zerooperational
 and identical per-source verdicts. Same-method full native JSON is unchanged
 across allthree repetitions; the same88unused-variable-warning differences
 remain between methods. Whole ratios1.347247100986/1.346608071383/1.346196506262;
 aggregate1.346679850013, reduction25.743301%. The strictmore-than1.5x
-rule fails. Conditional extra CPU competitors are not needed and not started.
-The gpu-smt-osdi hourly app heartbeat has been deleted with a deletedreceipt.
+target is not reached by the CPU stage. The final rule uses the better CPU/GPU
+oracle; GPU evaluation remains open. The hourly heartbeat is restored.
+The earlier deletion receipt is historical evidence of a premature action.
 Raw prototype3, allpair analysis and decision live under the canonical
 linarith-oracle artifact directory. Root self-review only.
 
@@ -466,3 +467,11 @@ The existing driver continues exact prefixes; other comparisons remain
 pending. No gain is inferred from the reference alone. Operational/semantic
 transitions must accompany any later timing ratio. Mainline1.34668xnegative
 closure/hourly deletion unchanged. Root self-review only.
+
+
+## User correction: GPU stage remains open (2026-10-17T21:58:14.235238+00:00)
+
+CPU stage: 1.346679850013x; GPU stage in progress. The final continuation criterion is more than 1.5x for the better of CPU oracle and GPU oracle against the matched strong native baseline. The previous CPU-only project closure and hourly deletion were premature and are superseded. Existing CPU results and historical action receipts remain preserved.
+All dated closure statements above are superseded interpretations, not a GPU
+impossibility result. All new captures retain upstream 48 GiB and resource failures.
+Prefix collection proceeds without blocking GPU work. Root self-review only.

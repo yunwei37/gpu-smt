@@ -192,3 +192,10 @@ scope/history regressions. These are dated planning questions. Current route
 decisions and unfinished captures are linked at the top of this page.
 Full GPU Lean checking and a novel production SMT runtime were not
 demonstrated by this historical checkpoint.
+
+
+## GPU-stage correction — 2026-10-17T21:58:31.301721+00:00
+
+CPU stage: 1.346679850013x; GPU stage in progress. Final continuation uses the better CPU/GPU oracle (>1.5x). Prior CPU-only closure and hourly deletion are superseded; historical data/receipts remain.
+Existing prefix capture is preserved; no minute polling or delegation.
+Complete all-branch attribution before admitting GPU implementation. Root self-review.
