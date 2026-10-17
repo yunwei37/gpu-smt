@@ -79,3 +79,16 @@ for measured overhead qualification, while retaining native checking, raw
 capture, rusage and normal retirement. Disabled memory metrics are null.
 The admitted primary comparisons retain the original default; the four-source
 observer-on/off control is not a correction to their whole clocks.
+
+
+After the recorded Pod replacement, `restore-native427.py` and
+`restore-prefix49.py` rebuild the pinned dependency closures from retained
+sources. They use the existing Workspace PVC and require the documented SDK
+archive decompressor and retained Rust toolchain. They do not start a capture.
+Read [actual recovery qualification](../../../artifacts/linarith-oracle-2026-10-17/recovery-20261017/self-review.md)
+before use; never rebuild libraries while a capture loads them.
+
+`run-matrix.py --resume-completed` reuses restored complete pairs and preserves
+incomplete directories. The prefix matrix can reuse its existing closed real
+preflight receipt without an obsolete process ID. Both remain finite experiment
+drivers; no additional service or schedule is installed.

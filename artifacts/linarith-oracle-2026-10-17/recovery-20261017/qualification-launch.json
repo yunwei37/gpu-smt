@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-17T06:32:17.333675+00:00",
+  "native_preflight_pid": 43336,
+  "prefix_restore_pid": 43337,
+  "native_preflight_command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/recovery-native-preflight24",
+    "--limit",
+    "24",
+    "--methods",
+    "fast-hybrid",
+    "oracle"
+  ],
+  "scope": "actual post-rebuild qualification only; no primary restarted yet"
+}

@@ -4,9 +4,11 @@ import json, os, select, subprocess, sys
 R=Path('/workspaces/repository')
 U=Path('/tmp/gpu-smt-linarith-oracle-20261017/prefix')
 def main():
-    pid=int(sys.argv[1])
+    pid=int(sys.argv[1]) if len(sys.argv)>1 else None
     path=U/'timeout-repair-real-preflight/batch/terminal.json'
     if not path.exists():
+        if pid is None:
+            raise RuntimeError("existing real preflight receipt or its actual live pid is required")
         fd=os.pidfd_open(pid)
         try:select.select([fd],[],[])
         finally:os.close(fd)

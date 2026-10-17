@@ -1,0 +1,67 @@
+{
+  "status": "built; real32-source matched qualification still required",
+  "shred_revision": "a6616e99534ce777dcebfd56566eaaffb63997a8",
+  "native_mathlib": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "build_scope": "retained owning-Workspace cache; source unchanged, native build products added",
+  "utc": "2026-10-17T06:32:38.864862+00:00",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "+Mathlib.Tactic.Linarith:dynlib"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "exit": 0
+    },
+    {
+      "command": [
+        "git",
+        "init",
+        "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/shred"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/memo-ozdincer/shred"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/shred",
+      "exit": 0
+    },
+    {
+      "command": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "origin",
+        "a6616e99534ce777dcebfd56566eaaffb63997a8"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/shred",
+      "exit": 0
+    },
+    {
+      "command": [
+        "git",
+        "checkout",
+        "--detach",
+        "FETCH_HEAD"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/shred",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-prefix-repl.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    }
+  ]
+}

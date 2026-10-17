@@ -1,0 +1,72 @@
+{
+  "status": "built; source-native matched preflight still required",
+  "sdk": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+  "mathlib_revision": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "native_libraries": 529,
+  "utc": "2026-10-17T06:31:49.400620+00:00",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "+Mathlib.Tactic.Linarith:dynlib"
+      ],
+      "cwd": "/tmp/gpu-smt-goedel427-20261014/mathlib4",
+      "exit": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Farkas.Fast",
+        "Farkas.Products"
+      ],
+      "cwd": "/tmp/gpu-smt-farkas-fast427-20261014/farkas427",
+      "exit": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "repl"
+      ],
+      "cwd": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+      "exit": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "fetch",
+        "--locked",
+        "--manifest-path",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native/Cargo.toml"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-stages.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-oracle.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-strong-profile.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    }
+  ]
+}

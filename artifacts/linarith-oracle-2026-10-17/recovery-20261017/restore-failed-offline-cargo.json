@@ -1,0 +1,51 @@
+{
+  "status": "failed, not performance evidence",
+  "error": "Traceback (most recent call last):\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/restore-native427.py\", line 106, in <module>\n    result = main()\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/restore-native427.py\", line 94, in main\n    run([\"python3\", str(R / \"bench/lean-native/linarith-oracle\" / name)])\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/restore-native427.py\", line 29, in run\n    proc.check_returncode()\n    ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.13/subprocess.py\", line 508, in check_returncode\n    raise CalledProcessError(self.returncode, self.args, self.stdout,\n                             self.stderr)\nsubprocess.CalledProcessError: Command '['python3', '/workspaces/repository/bench/lean-native/linarith-oracle/build-oracle.py']' returned non-zero exit status 1.\n",
+  "utc": "2026-10-17T06:30:23.937145+00:00",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "+Mathlib.Tactic.Linarith:dynlib"
+      ],
+      "cwd": "/tmp/gpu-smt-goedel427-20261014/mathlib4",
+      "exit": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Farkas.Fast",
+        "Farkas.Products"
+      ],
+      "cwd": "/tmp/gpu-smt-farkas-fast427-20261014/farkas427",
+      "exit": 0
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "repl"
+      ],
+      "cwd": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-stages.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0
+    },
+    {
+      "command": [
+        "python3",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/build-oracle.py"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 1
+    }
+  ]
+}

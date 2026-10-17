@@ -2,7 +2,7 @@
 Retain the already-running first pair. Use the existing collector receipts, not goal polling.
 """
 from pathlib import Path
-import json, os, select, signal, subprocess, sys
+import argparse, json, os, select, signal, subprocess, sys
 R=Path('/workspaces/repository')
 U=Path('/tmp/gpu-smt-linarith-oracle-20261017')
 OUT=U/'matched-top1000'
@@ -43,18 +43,36 @@ def stop_redundant_tail(pid):
       'Any started stock/HiGHS tail is partial and retained, not timing evidence. '
       'Only after a qualifying direct-vs-strong-baseline result are further competitors useful.\n')
 def run(label,methods,diagnostic=False):
+    output = OUT/label
+    if output.exists():
+        terminals = [output/("rep1-"+method)/"terminal.json" for method in methods]
+        if all(p.exists() and (lambda t: t["state"] == "complete" and t["attempts"] == 1000)(
+            json.loads(p.read_text())) for p in terminals):
+            print("PRESERVED_COMPLETE_CAPTURE", label, flush=True)
+            return
+        raise RuntimeError("preserve incomplete capture; use a separately recorded recovery directory: "+str(output))
     cmd=[str(PY),str(RUN),'--out',str(OUT/label),'--methods',*methods]
     if diagnostic:cmd.append('--diagnostic')
     with (OUT/(label+'.log')).open('wb') as log:
         subprocess.run(cmd,cwd=R,check=True,stdout=log,stderr=subprocess.STDOUT)
 def main():
-    pid=int(sys.argv[1])
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("first_pair_pid", nargs="?", type=int)
+    parser.add_argument("--resume-completed", action="store_true",
+                        help="reuse restored closed pairs after collector loss; never rerun complete cells")
+    args=parser.parse_args()
+    if not args.resume_completed and args.first_pair_pid is None:
+        parser.error("original first-pair pid or --resume-completed is required")
+    pid=args.first_pair_pid
     for method in ['fast-hybrid','oracle']:
         path=OUT/'primary1'/('rep1-'+method)/'terminal.json'
+        if args.resume_completed and not path.exists():
+            raise RuntimeError("resume requires the preserved completed first pair: "+str(path))
         wait_file(path,pid)
         cell=json.loads(path.read_text())
         if cell['state']!='complete' or cell['attempts']!=1000:raise RuntimeError('first native pair incomplete')
-    stop_redundant_tail(pid)
+    if not args.resume_completed:
+        stop_redundant_tail(pid)
     run('primary2',['oracle','fast-hybrid'])
     run('primary3',['fast-hybrid','oracle'])
     # Requested four-stage native diagnostic, separate from primary timing.
