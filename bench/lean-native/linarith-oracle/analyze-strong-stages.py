@@ -6,7 +6,7 @@ def rows(path):
         with gzip.open(path,'rt') as f:return [json.loads(l) for l in f]
     return [json.loads(l) for l in path.read_text().splitlines()]
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('cell',type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('cell',type=Path);p.add_argument('--identities',type=Path,help='actual live process identity receipt from this cell');a=p.parse_args()
     t=json.loads((a.cell/'terminal.json').read_text())
     path=next((a.cell/x for x in ['oracle.jsonl','oracle.jsonl.gz','stages.jsonl','stages.jsonl.gz'] if (a.cell/x).exists()),None)
     raw=rows(path);matched=[x for x in raw if x.get('ty')=='strong-arithmetic-stages']
@@ -28,6 +28,23 @@ def main():
                               'summed_invocation_wall_seconds':w,
                               'ratio_to_known_cpu_lower_bound':c/tree['known_pipeline_cpu_seconds_lower_bound'] if tree.get('available') else None}
     out['unattributed_pipeline_cpu_seconds']=cpu-sum(v['thread_cpu_seconds'] for v in out['phases'].values())
+    out['external_lp_service_sampled_cpu']=None
+    if a.identities is not None:
+        receipt=json.loads(a.identities.read_text())
+        processes=receipt.get('processes',[])
+        hits=[]
+        for sample in tree.get('sampled_children',[]):
+            for process in processes:
+                if (sample['pid']==process['pid'] and abs(sample['created']-process['created'])<.0001
+                        and Path(process.get('exe','')).name=='farkas-external-support'):
+                    hits.append(sample)
+        if hits:
+            service=sum(x['sampled_cpu_seconds'] for x in hits)
+            out['external_lp_service_sampled_cpu']={
+              'identity_receipt':str(a.identities),'processes':hits,
+              'cpu_seconds_lower_bound':service,
+              'ratio_to_known_cpu_lower_bound':service/tree['known_pipeline_cpu_seconds_lower_bound'],
+              'scope':'Actual distinct external numeric-service processes, deduplicated by pid/birth. Includes service parsing, serialization and exact repair, not only simplex. Sampled CPU misses final tails. This is a descriptive lower-bound counter ratio, not a pure LP algorithm fraction, complete wall fraction or GPU bound. Do not add this to overlapping pipeline rusage.'}
     out['scope']='Diagnostic build of Fast/hybrid and product reuse; source-associated native verdict comparison required. Thread CPU stage counters exclude external LP-child CPU; pipeline denominator includes observed collector and waited-child CPU, not exhaustive external descendants. Ratios to known CPU lower bounds remain descriptive counter ratios, not exact complete-verification phase fractions. LP round-trip wall includes queue, IPC and external solve but overlaps concurrent source work, so these wall sums are not whole-wall fractions or an end-to-end speedup upper bound. Preprocessing includes numeric parse/type reasoning and restricted native linearization, not a separate ring/defeq/typeclass partition. Failed pre-probe/setup/control and work outside arithmetic remain unattributed.'
     (a.cell/'stage-analysis.json').write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps({k:v for k,v in out.items() if k!='receipt'},indent=2))

@@ -107,3 +107,11 @@ unknown, never zero. Branch/fallback counts are not a mutually exclusive
 tactic-success rate or a GPU upper bound. The analyzer matches the retained
 actual73-check/1-fallback diagnostic fixture and all six published timing sums;
 that fixture is qualification only, not the pending1,000-source phase result.
+
+For a full strong-stage capture, `analyze-strong-stages.py CELL --identities
+RECEIPT.json` can associate sampled CPU with a numeric-service executable using
+its actual live PID and birth time. This includes service parsing/repair and
+does not identify pure simplex CPU. A missing identity match stays unavailable;
+older missing identities are not inferred retrospectively. The first full
+1,000-source strong capture and its actual identity receipt are under
+`artifacts/linarith-oracle-2026-10-17/native-stages/`.

@@ -3656,3 +3656,25 @@ adding nested parent/child wall timers, and reports source-body ambiguity.
 No native source/timing capture/parameter changed, no newexperiment was run,
 and this supporting analysis source does not close the full phase node or
 reopen the failed mainline. Root self-review; no independent audit.
+
+
+## Complete strongest-baseline1000-source phase node
+
+All1000native responses match the completed third reference,992complete/8rejected,
+zerooperational. Diagnostic whole2200.049s;6387arithmetical invocations.
+Calling-thread CPU: preprocessing+linearization321.230s, products278.159s,
+LPcaller8.691s, certificate reconstruction265.656s. Actual live pid/birth
+identity ties sampled976.250CPU s to the external numeric service, which includes
+parsing/serialization/exact repair as well as LP. Known CPUtree lower bound
+3157.147s exceeds recorded2181.726s; ratios to this incomplete observed reference
+are descriptive, not exactCPU or wall fractions. LProundtrip wall2512.402s
+overlaps and is not divided by whole to claim an acceleration bound. Selected
+1000cohort/strongFast composition is not the oldall29750LPmeasurement scope.
+
+Raw, identity receipt, reproducible analyzer/derivedbudget and root self-review
+are retained under the linarith-oracle artifact. The current analyzer's optional
+actual external-service attribution is exercised by this full realcapture.
+Targeted paper results slots receive the known baseline counts with exact scope;
+prototype successful/fallback coverage remains pending while its full diagnostic
+runs. Formal original-population prefix captures also remain pending. The
+already-closed1.34668xrule and deleted hourly automation are unchanged.

@@ -1,0 +1,26 @@
+{
+  "observed_whole_seconds": 2200.049494892,
+  "observed_cpu_reference_lower_bound_seconds": 3157.14693,
+  "buckets": {
+    "preprocess_and_linearize_cpu": 321.23032105200025,
+    "nonlinear_products_cpu": 278.15911059700005,
+    "lp_caller_cpu_plus_external_numeric_service_sampled_cpu": 984.940936538,
+    "certificate_cpu": 265.6555392630003,
+    "outside_recorded_phase_components_in_this_accounting": 1307.1610225499994
+  },
+  "native_outcomes": {
+    "sources": 1000,
+    "complete": 992,
+    "rejected": 8,
+    "operational": 0,
+    "full_native_response_differences_from_reference3": 0
+  },
+  "scope": "One strong-baseline diagnostic on frozen1000; CPU counter reference is an incomplete observed lower bound. External service includes parsing/serialization/repair. These are descriptive CPU-budget ratios, not exhaustive true CPU fractions, whole-wall fractions, causal savings or GPU/Amdahl bounds. Pipeline rusage and descendant samples overlap; no double-counted total.",
+  "ratios_to_observed_cpu_reference": {
+    "preprocess_and_linearize_cpu": 0.10174702925593655,
+    "nonlinear_products_cpu": 0.08810458200531074,
+    "lp_caller_cpu_plus_external_numeric_service_sampled_cpu": 0.3119718398845631,
+    "certificate_cpu": 0.0841441799045445,
+    "outside_recorded_phase_components_in_this_accounting": 0.4140323689496451
+  }
+}

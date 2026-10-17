@@ -712,7 +712,29 @@ Sampled baseline peak PSS is 8.725, 4.656 and 9.986 GB across the three pairs,
 while prototype peaks are 4.345, 4.355 and 9.127 GB.
 This variation and non-atomic one-second sampling do not establish stable
 or halved memory savings.
-\missing{Full-cohort phase attribution, coverage and fallback costs.}
+A separate full-cohort strong-baseline diagnostic preserves every native
+response and returns 992 complete and 8 rejected sources. Its 6,387 arithmetic
+invocation records attribute 321.23 calling-thread CPU seconds to preprocessing
+and linearization, 278.16 to nonlinear products and 265.66 to certificate
+reconstruction. The LP calling thread consumes 8.69 CPU seconds, while a
+live-identified external numeric service contributes at least 976.25 sampled
+CPU seconds. The service includes parsing, serialization and exact repair,
+not only simplex. These counters use the selected 1,000-source cohort and
+strong Fast/hybrid composition; they do not update fractions from an earlier
+29,750-source capture.
+
+The known process-tree CPU lower bound is 3,157.15 seconds, compared with
+2,181.73 recorded collector/waited-child seconds and 2,200.05 whole elapsed
+seconds. Relative to that incomplete observed CPU reference, preprocessing,
+products and certificate reconstruction are 10.17\%, 8.81\% and 8.41\%;
+the external service is 30.92\%. These descriptive counter ratios are not
+exact whole-verification CPU fractions. The cumulative LP roundtrip wall
+is 2,512.40 seconds, exceeding whole elapsed time because invocations overlap.
+No additive elapsed-time partition or GPU upper bound follows.
+Final source validation, other native work and observer costs remain outside
+the recorded arithmetic regions or in the residual accounting.
+\missing{Prototype full-cohort branch coverage, successful-path costs and
+unobserved fallback costs.}
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations

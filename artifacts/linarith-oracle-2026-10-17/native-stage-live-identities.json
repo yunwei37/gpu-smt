@@ -1,0 +1,55 @@
+{
+  "observed_utc": "2026-10-17T08:01:36.570615+00:00",
+  "processes": [
+    {
+      "pid": 44754,
+      "ppid": 43901,
+      "created": 1792222982.72,
+      "exe": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "argv": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py",
+        "--out",
+        "/tmp/gpu-smt-linarith-oracle-20261017/matched-top1000/native-stages",
+        "--methods",
+        "strong-profile",
+        "oracle",
+        "--diagnostic"
+      ]
+    },
+    {
+      "pid": 44755,
+      "ppid": 44754,
+      "created": 1792222983.34,
+      "exe": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/lean-4.27.0-linux/bin/lake",
+      "argv": [
+        "lake",
+        "env",
+        "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ]
+    },
+    {
+      "pid": 44782,
+      "ppid": 44755,
+      "created": 1792222983.8,
+      "exe": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+      "argv": [
+        "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ]
+    },
+    {
+      "pid": 44805,
+      "ppid": 44782,
+      "created": 1792222987.86,
+      "exe": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+      "argv": [
+        "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "--serve"
+      ]
+    }
+  ],
+  "active_cells": [
+    "rep1-strong-profile"
+  ],
+  "scope": "actual live identities for per-process sampled CPU interpretation; no pure LP algorithm or complete CPU fraction inference"
+}

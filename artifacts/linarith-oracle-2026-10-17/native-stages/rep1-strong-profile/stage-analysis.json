@@ -1,0 +1,107 @@
+{
+  "receipt": {
+    "method": "strong-profile",
+    "rep": 1,
+    "state": "complete",
+    "expected": 1000,
+    "attempts": 1000,
+    "counts": {
+      "complete": 992,
+      "rejected": 8
+    },
+    "whole_ns": 2200049494892,
+    "cpu": {
+      "collector": {
+        "user": 1.987688,
+        "system": 237.98924200000002
+      },
+      "waited_children": {
+        "user": 1922.829715,
+        "system": 18.919521
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 10424065024,
+    "sampled_peak_fleet_rss_with_collector": 11054727168,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": -1,
+    "width": 4,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+  },
+  "arithmetic_invocations": 6387,
+  "observed_pipeline_cpu_seconds": 2181.726166,
+  "process_tree_cpu": {
+    "available": true,
+    "resource_samples": 1956,
+    "collector_pid": 44754,
+    "sampled_children": [
+      {
+        "pid": 44755,
+        "created": 1792222983.34,
+        "sampled_cpu_seconds": 0.38
+      },
+      {
+        "pid": 44782,
+        "created": 1792222983.8,
+        "sampled_cpu_seconds": 1940.54
+      },
+      {
+        "pid": 44805,
+        "created": 1792222987.86,
+        "sampled_cpu_seconds": 976.25
+      }
+    ],
+    "sampled_child_cpu_seconds_lower_bound": 2917.17,
+    "waited_children_cpu_seconds": 1941.749236,
+    "sampled_tree_cpu_seconds_lower_bound": 3157.14693,
+    "recorded_collector_and_waited_cpu_seconds": 2181.726166,
+    "known_pipeline_cpu_seconds_lower_bound": 3157.14693,
+    "sampled_minus_waited_child_cpu_seconds": 975.420764,
+    "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+  },
+  "arithmetic_thread_cpu_seconds": 887.097205296,
+  "phases": {
+    "preprocess_and_linearize": {
+      "thread_cpu_seconds": 321.23032105200025,
+      "fraction_observed_pipeline_cpu": 0.14723677336691038,
+      "summed_invocation_wall_seconds": 324.19375288399897,
+      "ratio_to_known_cpu_lower_bound": 0.10174702925593655
+    },
+    "nonlinear_products": {
+      "thread_cpu_seconds": 278.15911059700005,
+      "fraction_observed_pipeline_cpu": 0.12749496931916984,
+      "summed_invocation_wall_seconds": 284.5197914219993,
+      "ratio_to_known_cpu_lower_bound": 0.08810458200531074
+    },
+    "lp_caller": {
+      "thread_cpu_seconds": 8.690936537999953,
+      "fraction_observed_pipeline_cpu": 0.003983513913633813,
+      "summed_invocation_wall_seconds": 2512.4023154139823,
+      "ratio_to_known_cpu_lower_bound": 0.0027527817775652125
+    },
+    "certificate": {
+      "thread_cpu_seconds": 265.6555392630003,
+      "fraction_observed_pipeline_cpu": 0.12176392409046274,
+      "summed_invocation_wall_seconds": 270.8691886949991,
+      "ratio_to_known_cpu_lower_bound": 0.0841441799045445
+    }
+  },
+  "unattributed_pipeline_cpu_seconds": 1307.9902585499995,
+  "external_lp_service_sampled_cpu": {
+    "identity_receipt": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/native-stage-live-identities.json",
+    "processes": [
+      {
+        "pid": 44805,
+        "created": 1792222987.86,
+        "sampled_cpu_seconds": 976.25
+      }
+    ],
+    "cpu_seconds_lower_bound": 976.25,
+    "ratio_to_known_cpu_lower_bound": 0.3092190581069979,
+    "scope": "Actual distinct external numeric-service processes, deduplicated by pid/birth. Includes service parsing, serialization and exact repair, not only simplex. Sampled CPU misses final tails. This is a descriptive lower-bound counter ratio, not a pure LP algorithm fraction, complete wall fraction or GPU bound. Do not add this to overlapping pipeline rusage."
+  },
+  "scope": "Diagnostic build of Fast/hybrid and product reuse; source-associated native verdict comparison required. Thread CPU stage counters exclude external LP-child CPU; pipeline denominator includes observed collector and waited-child CPU, not exhaustive external descendants. Ratios to known CPU lower bounds remain descriptive counter ratios, not exact complete-verification phase fractions. LP round-trip wall includes queue, IPC and external solve but overlaps concurrent source work, so these wall sums are not whole-wall fractions or an end-to-end speedup upper bound. Preprocessing includes numeric parse/type reasoning and restricted native linearization, not a separate ring/defeq/typeclass partition. Failed pre-probe/setup/control and work outside arithmetic remain unattributed."
+}
