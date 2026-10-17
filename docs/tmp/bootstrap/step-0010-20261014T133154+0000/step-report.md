@@ -3512,3 +3512,26 @@ clipping/overlap. Build and root style/evidence review are attached in
 artifacts/linarith-oracle-2026-10-17/paper-protocol-review/. This completes
 a finite writing synchronization node, not the full WRITE/REVIEWgate or
 independent audit. Original title/abstract/RQs remain unchanged.
+
+
+### First complete direct-oracle1000pair — 2026-10-17T04:38:22.137796+00:00
+
+EXPERIMENT_GATE remains active; root waits on the actual collector exit via
+pidfd, without consuming goal rounds to poll. It closes normally with1000
+returned sources. First paired whole clocks2282.741sreference/1694.375soracle,
+ratio1.347247x and25.77%reduction. This observation is below1.5x; the saved
+three-pair aggregate rule remains unchanged. Next reversed pair is already
+executing through the admitted finite driver.
+
+Allsource verdicts match,992complete/8rejected, zero operational.88accepted
+source payloads differ onlyunused-variable warning data/positions/counts.
+One direct field audit explains these differences; no suppression, rewrite,
+new correctness loop or independent-audit claim. Exact raw native payloads
+and one-second resources are archived inprimary1, with reference canonical.
+
+Observer cost312.54vs224.17CPU s remains in whole timing; native waited-child
+CPU2075.14vs1717.72s is observed, not exhaustive externalCPU. PSSsinglepeaks
+and batch tails retain sampling/offline scopes. Firstreference build/epoch
+lineage remains explicit. Supporting standard-population prefix runs and
+strong diagnostics are unfinished. WRITE updates just this completed result,
+leaving missing data explicit. No GPU execution or final route success/closure.

@@ -292,3 +292,21 @@ are not the1000source distribution or whole-wall upper bounds. The complete
 strong-baseline diagnostic is queued after primary timing. Exact raw counters,
 code/build failures and self-review are in
 artifacts/linarith-oracle-2026-10-17/strong-stage-preflight/.
+
+
+## First complete direct-certificate heavy-cohort pair
+
+The first1000source pair completes: Fast/hybrid2282.741330131s;
+direct oracle1694.374646240s. Reference/prototype ratio1.347247x,
+a25.77%elapsed reduction, below the predeclared1.5xthreshold.
+All1000source-level outcomes match (992complete/8rejected), zero operational;
+both native workers terminate normally.88complete-source native payloads
+differ only in unused-variable warnings/positions/counts. Raw responses remain
+unchanged. This is outcome agreement, not full-diagnostic transparency.
+The common one-second memory observer consumes312.54vs224.17collectorCPU s;
+the comparison includes that observer and does not isolate observer-free
+performance. Shared background and first-reference build/epoch differences
+remain explicit. Three paired observations, strong phase data and formal
+prefix captures remain pending. CPU-only, no GPU gain. Full source-associated
+raw evidence and root self-review are under
+artifacts/linarith-oracle-2026-10-17/primary1/.

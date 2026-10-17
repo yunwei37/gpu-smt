@@ -2164,3 +2164,14 @@ fallback and limited carriers are visible. Corrected SHRED wording avoids
 attributing our native executor performance to upstream. Main title/abstract/
 RQs remain fixed;18page build and four changed-region renders are real.
 The root performs both authoring and review, with no independence claim.
+
+
+First-pair self-audit: both closed raw streams account for exactly the frozen
+1000source ids/order. Complete/rejected decisions agree at every index,
+with native EOF/exit0 and zero operational.88full response differences are
+checked fieldwise and all reduce to unused-variable warnings, not normalized
+away in the retained artifacts. Ratio1.347247is a single observer-included
+whole comparison below the rule, not an aggregate decision, stable speedup,
+independent review or GPU benefit. No threshold/cohort/ordering change after
+the result. Common observer cost, incomplete samples, build lineage and
+background remain disclosed. Remaining pairs continue; no new mechanism/grid.

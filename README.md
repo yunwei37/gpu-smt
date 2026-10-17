@@ -24,11 +24,13 @@ end-to-end improvement over the fastest valid native baseline**, with matching
 verification outcomes. Otherwise the route is written up as negative and the
 hourly research automation is stopped. Preflight values are not full results.
 
-The first complete native Fast/hybrid reference is **2,282.741 s** for all
-1,000 sources (992 complete, 8 rejected, no operational failures).
-The corrected full oracle comparison is in progress; the
-[reference and qualification records](artifacts/linarith-oracle-2026-10-17/strong-native-reference/result-review.md)
-do not establish a speedup.
+The first complete 1,000-source pair takes **2,282.741 s** for Fast/hybrid
+and **1,694.375 s** for the direct oracle, an observed **1.347×** ratio.
+All source verdicts match (992 complete, 8 rejected, no operational failures),
+while 88 complete-source payloads differ in unused-variable warnings.
+This first pair misses 1.5×; the three-pair decision is pending.
+[Raw results and limitations](artifacts/linarith-oracle-2026-10-17/primary1/result-review.md)
+include the common observer and first-reference build lineage.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by

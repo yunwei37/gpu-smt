@@ -1,0 +1,30 @@
+{
+  "method": "oracle",
+  "rep": 1,
+  "state": "complete",
+  "expected": 1000,
+  "attempts": 1000,
+  "counts": {
+    "complete": 992,
+    "rejected": 8
+  },
+  "whole_ns": 1694374646240,
+  "cpu": {
+    "collector": {
+      "user": 2.0456450000000004,
+      "system": 222.128534
+    },
+    "waited_children": {
+      "user": 1697.754755,
+      "system": 19.966078
+    }
+  },
+  "sampled_peak_fleet_pss_with_collector": 4344808448,
+  "sampled_peak_fleet_rss_with_collector": 9978208256,
+  "sampling_read_errors": 3,
+  "workers": 1,
+  "effective_RLIMIT_AS": -1,
+  "width": 4,
+  "normalization": "none; preserve complete parsed native JSON values",
+  "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+}
