@@ -3239,3 +3239,33 @@ The CLI repairs are source integration with scoped import/parser validation, not
 ### Publication and routing
 
 Publish the coherent verified primary-source/citation update, public experimental collector/source-history/validation and current canonical/parent records onmain under the human's completed-portion instruction. Preserve other dirty README/background/design/prior-art/oldstep files and all active native acquisitions/original sessions. No new persistent infrastructure/runtime/model/permission entity or defaults change is applied. Route to the complete native mechanism/frontier and its actual terminal evidence; code packaging and literature alone are not the promised research contribution.
+
+## Persist completed native control and original profiles — 2026-10-17T00:11Z
+
+### EXPERIMENT_GATE: complete portions, no new run or partial-matrix verdict
+
+Root resumes from831f0df, reads latest gate/report state and current instruction, and checks exact retained E038owner/whole-terminal state once. The original one-off frozen-v1acquisition remains valid and running; no native Codex/OMPagent, alternate Workspace, duplicate sampler or parameter grid is started. AllfourRQs/full Lean-first/SMT/service/5090goal stay open. Source/model paths and running binaries are untouched.
+
+A complete rep1-stock cell is available, so root collects **the entire terminal cell** rather than polling live rows or withholding finished data. [Reconstruction/data](completed-native-and-profile-20261017T001153+0000/README.md) verifies all29750original IDs/order and native acquisition input bytes, preserves every terminal cell file and original launch, and reconstructs1240batches/41workers/40timeouts. Whole23292.792530s,26499complete/2291rejected/960operational.40batch deadlines each censor24responses; this is neither960invalid proofs nor proof that23peers per group had completed.40worker cleanup−9and finalnormalEOF0are explicit. Timeout-affected intervals sum12015.300889s, not a pure waiting/compute decomposition.
+
+Source inspection rules out a misleading baseline-failure story: although BatchCommandhas no gcfield, native runBatchVerify→batchVerifyParrallelNaive calls runCommandGCAuxdirectly with the prepared command state. The top-level ignored field does not establish accumulating snapshots or missing GC. The original native frontend autoImplicitfalse/maxHeartbeats800000options are present in the actual source. No unnecessary baseline repair/restart is made. The public CLI remains distinct from this actual one-off capture; current first-write and frozen eager-v1versions are not pooled.
+
+Sampled PSS6,453,678,080bytes/RSS12,577,226,752bytes include collector,20742non-atomic samples/no observed read errors. Actual collector20.484212user+2536.933355system and waited children763.274371user+21.421426system are limited scopes; killed/orphaned descendants need not be exhaustively included. No zero-error sampling guarantee, uninstrumented time, isolated observer overhead or subtraction-based speed is inferred. Substantial collector costs remain in measured whole time. A final native-only joint frontier/CPUclaim would require evidence beyond this instrumented cell; no new acquisition is manufactured to satisfy it during the active matrix.
+
+Two original profile conditions have also genuinely terminated: GC-original33689.491195s/all29750and Fast-hybrid11788.436963s/all29750. Root reconstructs exact inputs/IDsets/counts, every raw-response member and resource sample counts/errors/peaks. Complete44,162,098/91,831,505bytearchives are persisted as ordered32MiBparts, preserving all native/HTTP/oracle data, including the502MBFastoracle. Direct part byte equality is checked, without a new SHA gate or deletion of original archives. New resource data are one profile each, not primary repetitions or replicated resource superiority.
+
+Actual profile sample median start gaps1.786195/1.804981s and measured read/scheduling spans0.785638/0.803840s expose the configured1ssleep/actual-frequency distinction. These wall spans cannot be converted to CPU or subtracted as causal slowdown. A first offline wrapper omitted __file__ and failed before span-data access; the unchanged saved script is then invoked normally, exits0and records the actual command/stdout/stderr. No native run or result is altered by that wrapper fault.
+
+### WRITE_GATE: current evidence only
+
+Canonical evaluation updates actual GC7/8and Full/Fast14/16completion and links full data/qualifications. E038native result gains the completed control boundary. Stable paper wording already excludes separate resource profiles from primary timing comparisons, and one stock cell cannot fill a comparative result placeholder. No paper source/PDF edit or new compilation/rendering is warranted. No unchanged full writing cycle or paper result is claimed completed. Earlier genuine manuscript/citation reviews remain attributable.
+
+### REVIEW_GATE: root self-check and routing
+
+Root reconciles raw terminal/source/resource artifacts and scope against the current plan and user goal, then appends a self-check to the existing outer report. This is **not independent review**; no fresh plan/result/outer acceptance is fabricated under the no-delegation instruction. The complete nine-cell native relation and remaining original profiles are still incomplete. Keep the exact acquisition, collect each whole terminal once, and do not elevate completed portions into private/stock/GPU superiority or RQclosure.
+
+Scientific direction remains paid preparation and a differentiated complete native/service frontier beyond established reuse, with genuinely useful heterogeneous work. These completed raw portions provide needed experimental evidence/persistence, not a new systems contribution. Existing closed GPU/fork/census constructors stay closed; no renamed narrow kernel, cold-baseline win or ordinary CPUcompilation story substitutes for the original ambition. Complete causal/service/resource/supported-state evidence, final mechanism results, writing and independent audits remain open.
+
+### Publication boundary
+
+The user's completed-portion publication instruction applies despite the open parent step. Stage only the complete collected data/analysis, current evaluation, existing E038result and current two parent records. Preserve other dirty author paths, original live source/archives/sessions and infrastructure. No new persistent runtime, permission, model, deadline, quota or scheduler change. Verify actual main/forward commit/push/remote equality; this is not completed fullstep or research acceptance.

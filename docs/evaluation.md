@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open questions
 
-Updated2026-10-16 from published main3212a6a plus the completed E040host setup below. Step0010 is unfrozen BOOTSTRAP; all four
+Updated2026-10-17 from published main831f0df plus completed original native/profile portions below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
 open. Publication of completed portions is not full step or research completion.
 
@@ -57,10 +57,10 @@ conditions/357,000primaryattempts. One subsequent separate profile is now retain
 
 | Matched comparison | Terminal scope and whole elapsed effects | Qualification |
 |---|---|---|
-|GC→native libraries,Goedel|6/8;51.934410%,52.381851%,59.522208%lower|All3primary pairs;2separate profiles unfinished|
+|GC→native libraries,Goedel|7/8;51.934410%,52.381851%,59.522208%lower|All3primary pairs+original profile;compiled profile unfinished|
 |Compiled Mathlib→native exact oracle|8/8;4.73%slower,18.66%/1.40%lower|Mixed signs|
 |Tiered→hybrid/HiGHS|12/12;hybrid10.612935%/5.224932%/23.432264%slower;HiGHS11.830231%slower/11.451553%lower/21.467193%slower|No universal solver winner|
-|Full/Fast×hybrid/HiGHS|13/16;all12primary plus1separateprofile complete|Three further resource profiles unresolved|
+|Full/Fast×hybrid/HiGHS|14/16;all12primary plus2hybrid profiles complete|Two HiGHS resource profiles unresolved|
 |Fast/hybrid→product reuse|8/8;9.82%/12.79%/15.39%lower|Bounded composition|
 |Original solver→product reuse|8/8;0.586076%slower/5.109767%/14.303137%lower|Mixed signs|
 |GC→selective native arithmetic,miniF2F|8/8;7.61%/10.74%/16.96%lower|Earlier2p99worse|
@@ -229,3 +229,7 @@ paper acceptance remain open.
 [E040 complete reclamation setup](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md) closes this constructor without GPU port: full official Init59626declarations, both native-accepted, on/off1052.326556/27.959908s with all native checks retained. Prospective host support rises25314→29366bodies,6.273223→13.722346%of fixed E036bodyCPU (cross-build descriptive weights, not removable wall/GPU bound). No prior positive is lost;16971formerly capacity-failed bodies hit unchanged step limits and carry58.846545%of that reference weight. Actual1034929collections/free-cell reuse do not fix the expensive-computation boundary. Complete raw/recomputation and explicitly non-independent self-review remain; no standalone research value, RQ closure, GPU gain or independent audit is claimed. Do not start another arena/cache/step grid or port this interpreter on count gains alone.
 
 The [deeper-state source/workload handoff](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T231122+0000/report.md) verifies LeanTree's already-existing factorized intermediate-state reuse and current4.27source. Its published4.19proof-tree dataset is neither a current-version complete failed-search stream nor measured verifier arrivals. ReProver/RMaxTS logging code is not itself a released trace. These source findings rule out novelty by merely renaming independent goals/deeper snapshots; no new dataset census or duplicate native acquisition is admitted. The manuscript adds the prior-art citation without changing RQs/results/claims. Native batch CLI repair is dependency integration, not a new performance experiment.
+
+[Completed native control/profile portions](tmp/bootstrap/step-0010-20261014T133154+0000/completed-native-and-profile-20261017T001153+0000/README.md) preserve original E038stock rep1/all29750sources:23292.792530s,26499complete/2291rejected/960operational. Forty300s batch deadlines account for all960censored grouped responses, not960individually invalid proofs;40workers end−9and the final worker normalEOF0. This is one complete cell, not the completed nine-cell matrix or a method/GPUcomparison. All native raw/events/resources remain, with collector/waited-child CPU distinguished from exhaustive descendant cost. Native batch directly calls runCommandGCAux, so ignored top-level gcJSONdoes not make it a no-GC comparator.
+
+The same publication preserves completed GC-original/Fast-hybrid profiles (all29750each),33689.491195/11788.436963s, sampledPSS9540741/8675613KiB,18765/6466samples with28incomplete each. Configured1s sleep is not exact1Hz: median start gaps1.786195/1.804981s, observed read/scheduling spans0.785638/0.803840s. These are not isolated observerCPU or subtractable slowdown. All ZIP bytes, original500MB-class Fastoracle, source inputs and responses remain. Single profiles add no primary repetitions or replicated resource advantage; earlier primary conclusions stay unchanged.

@@ -1,0 +1,46 @@
+{
+  "scope": "One complete stock offline-batch cell of the ongoing nine-cell frozen-v1 matrix, no method comparison or new speedup. Public CLI did not execute this capture.",
+  "rows": 29750,
+  "counts": {
+    "complete": 26499,
+    "rejected": 2291,
+    "operational": 960
+  },
+  "whole_seconds": 23292.792529766,
+  "events": {
+    "worker_start": 41,
+    "header": 41,
+    "request": 1240,
+    "batch_terminal": 1240,
+    "batch_operational": 40,
+    "worker_terminal": 41
+  },
+  "batch_operational_errors": {
+    "TimeoutError() <- CancelledError()": 40
+  },
+  "timeout_affected_rows": 960,
+  "timeout_batches_seconds_sum": 12015.300889265,
+  "all_batches_seconds_sum": 23291.525911273,
+  "sample_count": 20742,
+  "incomplete_samples": 0,
+  "worker_exit_counts": {
+    "-9": 40,
+    "0": 1
+  },
+  "peak_fleet_pss_bytes_including_collector": 6453678080,
+  "peak_fleet_rss_bytes_including_collector": 12577226752,
+  "cpu": {
+    "collector": {
+      "user": 20.484212,
+      "system": 2536.9333549999997
+    },
+    "waited_children": {
+      "user": 763.274371,
+      "system": 21.421426
+    }
+  },
+  "cpu_scope": "Collector self plus waited-child rusage, not an exhaustive CPU sum of killed/orphaned descendants. Sampling non-atomic; no uninstrumented/native-only cost inferred.",
+  "input_id_order_checked": true,
+  "all_static_completed_cell_files_preserved": true,
+  "source_versions": "eager-on-read v1, not the later first-write implementation"
+}

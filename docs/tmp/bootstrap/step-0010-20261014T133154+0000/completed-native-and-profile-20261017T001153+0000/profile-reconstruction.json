@@ -1,0 +1,126 @@
+[
+  {
+    "label": "goedel427-profile-original",
+    "terminal": {
+      "label": "goedel427-profile-original",
+      "dataset": "goedel427",
+      "method": "original",
+      "profile": true,
+      "begin_ns": 590952881499612,
+      "end_ns": 624642372694185,
+      "whole_seconds": 33689.491194573,
+      "returned": 29750,
+      "expected": 29750,
+      "failure": null,
+      "server_returncode": -15,
+      "counts": {
+        "complete": 27310,
+        "rejected": 2376,
+        "operational": 64
+      },
+      "whole_boundary": "input persistence/serverstartup/import/preparation/nativeverification/HTTP/logging/rawcapture/replacement/shutdown/EOF, live gzip captureCPU included; ZIP after clock"
+    },
+    "resources": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 590953464926520,
+      "end_monotonic_ns": 624642372526501,
+      "sample_interval_ns": 1000000000,
+      "samples": 18765,
+      "incomplete_samples": 28,
+      "sampled_peak_total_pss_kib": 9540741,
+      "sampled_peak_total_private_kib": 6695940,
+      "whole_process_tree_cpu_seconds": 35628.438888,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    },
+    "publication": {
+      "label": "goedel427-profile-original",
+      "zip_bytes": 44162098,
+      "parts": [
+        {
+          "name": "goedel427-profile-original.zip.part-000",
+          "bytes": 33554432
+        },
+        {
+          "name": "goedel427-profile-original.zip.part-001",
+          "bytes": 10607666
+        }
+      ],
+      "input_bytes_equal": true,
+      "all_input_id_and_recorded_outcome_counts_reconciled": true,
+      "all_raw_response_members_present": true,
+      "resources_recomputed": true,
+      "actual_sample_gap_median_seconds": 1.7861949285,
+      "scope": "One separately profiled observation; no replicated resource advantage or exhaustive descendant CPU qualification."
+    },
+    "observed_scan_wall_span_seconds": {
+      "median": 0.785638127,
+      "sum": 14911.878868669,
+      "max": 3.028931781,
+      "scope": "Actual monotonic before/after non-atomic sample; wall scheduling/read span, not observer CPU or isolated slowdown."
+    }
+  },
+  {
+    "label": "goedel427-profile-fast-hybrid",
+    "terminal": {
+      "label": "goedel427-profile-fast-hybrid",
+      "dataset": "goedel427",
+      "method": "fast-hybrid",
+      "profile": true,
+      "begin_ns": 613522485573582,
+      "end_ns": 625310922536110,
+      "whole_seconds": 11788.436962528,
+      "returned": 29750,
+      "expected": 29750,
+      "failure": null,
+      "server_returncode": -15,
+      "counts": {
+        "complete": 27321,
+        "rejected": 2376,
+        "operational": 53
+      },
+      "whole_boundary": "input persistence/serverstartup/import/preparation/nativeverification/HTTP/logging/rawcapture/replacement/shutdown/EOF, live gzip captureCPU included; ZIP after clock"
+    },
+    "resources": {
+      "scope": "own finite acquisition and native descendants, including observer CPU; no unsampled peak/fleet guarantee",
+      "begin_monotonic_ns": 613523071139690,
+      "end_monotonic_ns": 625310922362647,
+      "sample_interval_ns": 1000000000,
+      "samples": 6466,
+      "incomplete_samples": 28,
+      "sampled_peak_total_pss_kib": 8675613,
+      "sampled_peak_total_private_kib": 5825472,
+      "whole_process_tree_cpu_seconds": 12944.634082,
+      "memory_limits": "non-atomic samples; shared file PSS depends on external mappers; disappearing processes retained as observation errors"
+    },
+    "publication": {
+      "label": "goedel427-profile-fast-hybrid",
+      "zip_bytes": 91831505,
+      "parts": [
+        {
+          "name": "goedel427-profile-fast-hybrid.zip.part-000",
+          "bytes": 33554432
+        },
+        {
+          "name": "goedel427-profile-fast-hybrid.zip.part-001",
+          "bytes": 33554432
+        },
+        {
+          "name": "goedel427-profile-fast-hybrid.zip.part-002",
+          "bytes": 24722641
+        }
+      ],
+      "input_bytes_equal": true,
+      "all_input_id_and_recorded_outcome_counts_reconciled": true,
+      "all_raw_response_members_present": true,
+      "resources_recomputed": true,
+      "actual_sample_gap_median_seconds": 1.804980983,
+      "scope": "One separately profiled observation; no replicated resource advantage or exhaustive descendant CPU qualification."
+    },
+    "observed_scan_wall_span_seconds": {
+      "median": 0.803839733,
+      "sum": 5318.752431457,
+      "max": 3.61482713,
+      "scope": "Actual monotonic before/after non-atomic sample; wall scheduling/read span, not observer CPU or isolated slowdown."
+    }
+  }
+]
