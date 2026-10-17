@@ -98,3 +98,12 @@ the more-than1.5xrule. The hourly app automation is deleted and this route is
 closed as mainline. See the [decision and retained raw results](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
 Only the already-requested full phase/prefix captures continue to finish the
 report; this guide is not authority to start a new variant or timing grid.
+
+`analyze-oracle.py CELL` describes observed successful direct-check branches,
+fallback records, source-body groups and native polynomial/product/LP timers.
+It preserves the distinction between nested roundtrip timers and calling-thread
+CPU. Failed/unsupported attempts lack these detailed timers; their cost is
+unknown, never zero. Branch/fallback counts are not a mutually exclusive
+tactic-success rate or a GPU upper bound. The analyzer matches the retained
+actual73-check/1-fallback diagnostic fixture and all six published timing sums;
+that fixture is qualification only, not the pending1,000-source phase result.

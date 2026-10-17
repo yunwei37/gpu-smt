@@ -3644,3 +3644,15 @@ experiment or paper gate. The already-started full strong-phase diagnostic
 and originalminiF2F/ProofNet prefix captures continue to finish their report.
 No new kernel, CPUvariant, agent, Workspace or optimization matrix is admitted.
 Allresults are CPU-only; no GPU contribution or general impossibility claimed.
+
+
+## Reproducible pending-phase analysis source, within the admitted experiment
+
+Root adds a diagnostic-only oracle analyzer while full captures run. Against
+the existing actual native preflight3 telemetry it reproduces73checked branch
+records,1fallback and allsix previously published timer sums, with no malformed
+lines. Its scope explicitly excludes failed/unsupported detailed costs, avoids
+adding nested parent/child wall timers, and reports source-body ambiguity.
+No native source/timing capture/parameter changed, no newexperiment was run,
+and this supporting analysis source does not close the full phase node or
+reopen the failed mainline. Root self-review; no independent audit.
