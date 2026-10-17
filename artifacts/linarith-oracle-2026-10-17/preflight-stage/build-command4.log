@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/build-stages.py", line 106, in <module>
+    call(['leanc','-O3','-shared','-fPIC',str(U/'Stages.c'),str(U/'clock.c'),*cs,'-o',str(U/'arithmetic.so')])
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/build-stages.py", line 103, in call
+    subprocess.run(cmd,cwd=U,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['leanc', '-O3', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/Stages.c', '/tmp/gpu-smt-linarith-oracle-20261017/clock.c', '/tmp/gpu-smt-farkas-fast427-20261014/farkas427/.lake/build/ir/Farkas/Platform.c', '/tmp/gpu-smt-farkas-fast427-20261014/farkas427/.lake/build/ir/Farkas/Telemetry.c', '/tmp/gpu-smt-farkas-fast427-20261014/farkas427/.lake/build/ir/Farkas/Native.c', '/tmp/gpu-smt-farkas-fast427-20261014/farkas427/.lake/build/ir/Farkas/Fast.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/arithmetic.so']' returned non-zero exit status 1.

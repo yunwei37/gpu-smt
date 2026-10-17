@@ -2098,3 +2098,8 @@ Evidence: source pins/tree/card observations support implementation/release/vers
 Efficiency: finite source loop closes with no admitted new experiment, not a pointless smoke or full matrix. Healthy originalCPUprocesses checked once; no row-wait loops, data/weight downloads or new model/server. Exact compiler source/logs and actual pages13/14visualQA support the small paper edit; no unchanged writing/milestone rerun.
 
 Maintenance/publication: publish the new dated related-work addition only, preserving the earlier unpublished consolidation in the working file. Other authors' dirty work, raw failures/states, closed routes and sole existing scheduler remain. Source/citation/evaluation/frontier records are current without promoting report production to scientific contribution. This node provides a paper decision (do not reinvent the implemented mechanism), not complete-system novelty, independent review, RQclosure or OSDIacceptance.
+
+
+## Arithmetic experiment restart self-audit — 2026-10-17
+
+New user experiment decision overrides earlier no-admitted-run status; old E038 remains closed. One root thread only, no active subagents or OMP. Original Workspace/main retained. Native preflight complete4/4 and parsed responses match; failed first profile preserved. Full stage acquisition is active, not completed evidence. Distinguish threadCPU, overlapping wall and full-run boundaries. Independent audit is absent by user instruction.

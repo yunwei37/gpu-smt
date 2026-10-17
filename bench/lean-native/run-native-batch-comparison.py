@@ -419,7 +419,7 @@ def main(argv=None) -> None:
     runner = Runner(args)
     if args.mode == 'preflight':
         cmd_preflight(runner, args)
-    else:
+    elif args.mode == 'run':
         runner.prepare_environment()
         with gzip.open(args.out / 'original-input.jsonl.gz', 'wb', compresslevel=1) as archive:
             with args.input.open('rb') as source:
@@ -429,7 +429,9 @@ def main(argv=None) -> None:
              'affinity': sorted(os.sched_getaffinity(0)), 'inherited_RLIMIT_AS': runner.inherited_as,
              'nominal_Kimina_max_repl_mem_MiB': runner.settings.max_repl_mem,
              'effective_policy': 'inherit Workspace AS for every native worker/replay child; not default12GiB Kimina policy',
-             'orders': runner.orders, 'header_timeout_seconds': args.header_timeout,
+             'frozen_paths': {'frozen_root': str(args.frozen), 'stock': str(args.frozen / 'plain' / 'repl'),
+             'candidate': str(args.frozen / 'private' / 'repl'), 'sdk': str(args.sdk)},
+             'header_timeout_seconds': args.header_timeout,
              'batch_and_normal_exit_timeout_seconds': args.batch_timeout,
              'sampling_seconds': args.sample_seconds, 'collector_source': str(Path(__file__))})
         dump(args.out / 'completed-cells.json', [])
