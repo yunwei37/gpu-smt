@@ -336,3 +336,12 @@ fractions; actual whole times and1.347247ratio do not change. Evidence and
 root source/identity limitations are underprimary1/cpu-accounting.json and
 cpu-accounting-review.md. A live second-pair identity snapshot is retained
 separately; no past process identity is falsely presented as current.
+
+
+The second direct-oracle cell completes all1000frozen sources in1755.729870s,
+with992complete/8rejected and no operational outcomes. All1000native payloads
+match prototype repeat1exactly. Its corresponding Fast/hybrid reference is
+still active, so no second paired speedup is computed from a different block.
+The1.347247first-pair ratio and three-pair decision remain unchanged. Raw
+closed second-cell evidence and self-review are underprimary2/. This is
+a repeated CPU prototype observation, not a GPU result or final gate decision.

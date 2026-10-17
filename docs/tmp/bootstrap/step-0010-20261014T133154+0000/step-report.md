@@ -3573,3 +3573,21 @@ receipt, while gone first-reference executables are not retrospectively
 invented. Root self-review. No new benchmark, parameter, mechanism or fullmatrix.
 Main acquisition/WRITEfull/REVIEWfull and the user's final threshold decision
 are still pending.
+
+
+### Second complete prototype cell — 2026-10-17T05:08:44.491816+00:00
+
+Real finite native acquisition closes1000source outcomes in1755.729870s,
+992complete/8rejected, no operational, normalEOF/exit0. Full native JSON
+equals prototype repeat1on every source. Root publishes only closed raw
+data underprimary2/rep1-oracle, plus source/identity/counter self-review.
+This is a complete method cell, not the paired second comparison.
+
+Second Fast/hybrid is now genuinely running through the same admitted finite
+driver. Its actual fresh worker/solver identities are saved; no restart or
+new matrix is needed. Its paired ratio remainsnull until its own terminal.
+Recorded2062.332CPU s and sampled2695.284CPU lower-bound accounting stay
+distinct; neither corrects whole wall. Alloriginal input/order/defaults and
+three-pair1.5rule remain. No GPU contribution or independent audit claimed.
+Commitcb24b76's GitHubbenchmark-smoke run39004511060completed successfully,
+covering SMT smoke/regression scope, not Lean performance or paper acceptance.

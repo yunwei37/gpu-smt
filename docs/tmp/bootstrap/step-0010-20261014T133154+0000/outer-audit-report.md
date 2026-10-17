@@ -2195,3 +2195,13 @@ are untouched. No LPalgorithm fraction, observer-free speedup, GPU bound or
 invented past process identity is asserted. Live second-pair names are observed
 now and timestamped. This source-evidence node changes interpretation, not the
 threshold or workload; it is not independent review.
+
+
+Second prototype self-audit: exact original1000ids/order and allnative JSON
+agree with the first prototype. Both source checks and normal process exit
+are observed. No incomplete paired reference is substituted or multiplied
+into a fake speedup. Corresponding reference worker is live with timestamped
+identities. Closed raw data/counters are preserved, including lower-bound CPU
+scope. This cell is progress, but full paired result/EXP/WRITE/REVIEWgate and
+finalthreshold remain incomplete. Root self-review only. Existing CI success
+is correctly restricted to its SMT smoke scope.

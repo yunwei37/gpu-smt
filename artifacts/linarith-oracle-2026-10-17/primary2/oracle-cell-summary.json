@@ -1,0 +1,61 @@
+{
+  "experiment_block": 2,
+  "source_count": 1000,
+  "method": "direct oracle",
+  "summary": {
+    "whole_seconds": 1755.729869925,
+    "cpu_seconds": 2062.331578,
+    "cpu_seconds_scope": "collector and waited-child rusage only; not exhaustive descendant CPU",
+    "peak_observed_pss_bytes_with_collector": 4355084288,
+    "counts": {
+      "complete": 992,
+      "rejected": 8
+    },
+    "workers": 1,
+    "batch_width": 4,
+    "process_tree_cpu": {
+      "available": true,
+      "resource_samples": 1512,
+      "collector_pid": 2121014,
+      "sampled_children": [
+        {
+          "pid": 2121015,
+          "created": 1792211730.11,
+          "sampled_cpu_seconds": 0.37
+        },
+        {
+          "pid": 2121042,
+          "created": 1792211730.55,
+          "sampled_cpu_seconds": 1819.66
+        },
+        {
+          "pid": 2121055,
+          "created": 1792211734.82,
+          "sampled_cpu_seconds": 244.35
+        },
+        {
+          "pid": 2121056,
+          "created": 1792211734.97,
+          "sampled_cpu_seconds": 389.59
+        }
+      ],
+      "sampled_child_cpu_seconds_lower_bound": 2453.9700000000003,
+      "waited_children_cpu_seconds": 1821.0173169999998,
+      "sampled_tree_cpu_seconds_lower_bound": 2695.2842610000002,
+      "recorded_collector_and_waited_cpu_seconds": 2062.331578,
+      "known_pipeline_cpu_seconds_lower_bound": 2695.2842610000002,
+      "sampled_minus_waited_child_cpu_seconds": 632.9526830000004,
+      "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+    },
+    "batches": 250,
+    "offline_batch_p50_seconds": 3.418941697,
+    "offline_batch_p95_seconds": 20.090273928,
+    "offline_batch_max_seconds": 117.465013555
+  },
+  "all_native_responses_equal_to_prototype_repeat1": true,
+  "prototype_repeat1_whole_seconds": 1694.37464624,
+  "repeat2_vs_repeat1_elapsed_increase_fraction": 0.03621113183035041,
+  "paired_fast_hybrid_reference_complete": false,
+  "paired_speedup": null,
+  "scope": "A closed prototype cell, not a complete second paired comparison. Do not divide by an older reference. All1000native payloads equal to repeat1; nativeEOF/exit0. Default observer1s, same native code/library/cohort/order. First-pair1.347247ratio and final three-pair1.5rule unchanged."
+}

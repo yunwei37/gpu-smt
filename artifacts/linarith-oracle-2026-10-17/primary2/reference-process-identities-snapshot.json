@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-17T05:07:03.943253+00:00",
+  "collector": 2121014,
+  "processes": [
+    {
+      "pid": 2121014,
+      "parent_pid": 2120113,
+      "name": "python",
+      "exe": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "start_ticks": 64310153
+    },
+    {
+      "pid": 2122458,
+      "parent_pid": 2121014,
+      "name": "lake",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lake",
+      "start_ticks": 64485784
+    },
+    {
+      "pid": 2122485,
+      "parent_pid": 2122458,
+      "name": "repl",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+      "start_ticks": 64485835
+    },
+    {
+      "pid": 2122500,
+      "parent_pid": 2122485,
+      "name": "farkas-external",
+      "exe": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+      "start_ticks": 64486290
+    }
+  ],
+  "scope": "Actual live reference2 identities after prototype2 normal exit; not a completed paired result."
+}
