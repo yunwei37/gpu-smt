@@ -3269,3 +3269,27 @@ Scientific direction remains paid preparation and a differentiated complete nati
 ### Publication boundary
 
 The user's completed-portion publication instruction applies despite the open parent step. Stage only the complete collected data/analysis, current evaluation, existing E038result and current two parent records. Preserve other dirty author paths, original live source/archives/sessions and infrastructure. No new persistent runtime, permission, model, deadline, quota or scheduler change. Verify actual main/forward commit/push/remote equality; this is not completed fullstep or research acceptance.
+
+## Resume2026-10-17T01:10Z — native local-ref lifetime
+
+### EXPERIMENT_GATE: existing E038 dependency and implementation feedback
+
+Root continues directly under the no-delegation heartbeat, loading the auto-research-orchestrator and experiment-design instructions and current user/questions records. No Codex/OMP resume, replacement checkout/Workspace or full duplicate acquisition. Current branch main; other authors' dirty CLI/docs and original captures are preserved. BOOTSTRAP, original fourRQs/Initial Narrative and full Lean-first/SMT/service/5090objective remain; RQ3 remains open.
+
+[Dependency plan and root plan self-review](experiment-038/native-local-ref-lifetime/plan.md) target a concrete remaining global mutex: registration/free of every tagged local ref. Exact matching Lean4.27 object.cpp preserves m_other in the64-bit deletion todo link, permitting atomic live-tag counts without per-object global registry insertion. Untagged/full-ID and32-bit recorded-metadata fallbacks remain, and existing task/context drain and first-write behavior are unchanged. This is supporting implementation engineering, not a separately admitted scientific experiment, new ownership contribution or GPUkernel.
+
+Clean-source public builder completes50stages,37.080692s/39.459631waited compilerCPU. Unchanged header/patch/Lean-backend snapshots match the prior first-write build byte for byte. Actual original accepted/rejected2-source batches return exactly matching native JSON and normalEOF0. A single native primitive witness preserves root/private state and exercises escaped owner tags1→other2→reused1 through actual constructor-queued deletion. This is proportionate finite qualification, not a race-freedom or arbitrary-FFI proof.
+
+After qualification root admits a finite implementation diagnostic using the existing source-native24-source preflight path: strongest fresh stock plus retained mutex lifetime plus atomic lifetime, reverse two orders,6cells. No workload/policy/native checker/observer replacement. Original acquisitions remain active, so timings are development feedback, not isolated final performance. Raw command/source/resource/output and interpretation remain under the same child node. Full comparative experiment/final version and independent review remain open.
+
+### Completed finite feedback and WRITE_GATE
+
+[Complete6-cell analysis/raw](experiment-038/native-local-ref-lifetime/result.md): all144native responses for the same24original sources match stock and all six processes reach normalEOF0. In stock/locked/atomic order the complete times are18.953335/21.398457/19.696858s; in reverse order they are19.537904/19.379376/19.366895s. Atomic versus stock is+3.923%/−0.875%, so no stable end-to-end win is established. Atomic versus mutex is−7.952%/−0.064%; variation/background prevent assigning a robust component effect from two orders. Direct collectorCPU1.75–2.11s remains charged, not subtracted. Raw PSS/childCPU/headers/native outputs/normal EOF and all build/control commands remain.
+
+Root updates current implementation/evaluation with this engineering boundary and reconciles stale current-frontier OMP ownership in idea-story/questions to the active no-delegation instruction. The entire Initial Narrative/evolution/RQs remain unchanged. Current manuscript already scopes first-write/native runtime as finite engagement and excludes intermediate diagnostics as final paper evidence; no paper numerical slot/novelty claim is filled, no unchanged full writing/refinement or compile/render is claimed. This is a targeted evidence/implementation update inside the still-open parent, not completion of a new WRITEcycle or fullstep.
+
+### REVIEW_GATE: self-check and next substantive work
+
+Root source/result review is explicitly not independent. Complete child diagnostic is valid within its finite engagement/overlap scope; full service advantage remains inconclusive and the full E038matrix/final frozen version is incomplete. A post-run comment removes an unverified32-bit header assertion; compiled built-source remains exact, with no changed executable statement or claim of32-bit qualification.
+
+The code removes a concrete lifetime mutex path but has no new service/paper contribution. Do not begin a tag/worker/cache grid or count this as a GPUacceleration; preserve the original full collector and collect actual terminal data, then decide the complete joint frontier. Continue substantive paid-body/native-service research, strongest-baseline differentiation, causal ablations and complete experiments; allfourRQs and independent audit remain open. User's completed-portion publication instruction authorizes committing/pushing this finished code/control/diagnostic boundary now without pretending the whole step is done. Other author CLI/docs, frozen binaries, original sessions and raw captures remain untouched. No new runtime/configuration/schedule/model/permission/storage delta.

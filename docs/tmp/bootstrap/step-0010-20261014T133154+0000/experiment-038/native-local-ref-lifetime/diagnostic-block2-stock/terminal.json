@@ -1,0 +1,883 @@
+{
+  "method": "stock",
+  "block": 2,
+  "binary": "/tmp/gpu-smt-native-local-ref-lifetime-20261017/build/plain/repl",
+  "width": 24,
+  "utc": "2026-10-17T01:21:24.333728+00:00",
+  "nominal_Kimina_max_repl_mem_MiB": 12288,
+  "effective_RLIMIT_AS": -1,
+  "original_ids": [
+    "Proof_00000",
+    "Proof_00001",
+    "Proof_00002",
+    "Proof_00003",
+    "Proof_00004",
+    "Proof_00005",
+    "Proof_00006",
+    "Proof_00007",
+    "Proof_00008",
+    "Proof_00009",
+    "Proof_00010",
+    "Proof_00011",
+    "Proof_00012",
+    "Proof_00013",
+    "Proof_00014",
+    "Proof_00015",
+    "Proof_00016",
+    "Proof_00017",
+    "Proof_00018",
+    "Proof_00019",
+    "Proof_00020",
+    "Proof_00021",
+    "Proof_00022",
+    "Proof_00023"
+  ],
+  "pid": 2108266,
+  "header_ns": 3923989789,
+  "header": {
+    "env": 0
+  },
+  "batch_ns": 15124901671,
+  "responses": [
+    {},
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 17,
+            "column": 51
+          },
+          "endPos": {
+            "line": 17,
+            "column": 60
+          },
+          "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp only [sq, mul_add, mul_comm, mul_left_comm, m\u0335u\u0335l\u0335_\u0335as\u0335s\u0335o\u0335c\u0335,\u0335 \u0335a\u0335dd_assoc, add_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 21,
+            "column": 6
+          },
+          "endPos": {
+            "line": 21,
+            "column": 25
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 23,
+            "column": 6
+          },
+          "endPos": {
+            "line": 23,
+            "column": 10
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 21,
+            "column": 6
+          },
+          "endPos": {
+            "line": 21,
+            "column": 25
+          },
+          "data": "'simp [Complex.I_sq]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 23,
+            "column": 6
+          },
+          "endPos": {
+            "line": 23,
+            "column": 10
+          },
+          "data": "'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 53
+          },
+          "endPos": {
+            "line": 19,
+            "column": 69
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 72
+          },
+          "endPos": {
+            "line": 19,
+            "column": 76
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 53
+          },
+          "endPos": {
+            "line": 19,
+            "column": 69
+          },
+          "data": "'rw [div_le_iff\u2080]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 72
+          },
+          "endPos": {
+            "line": 19,
+            "column": 76
+          },
+          "data": "'skip' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {},
+    {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 34
+          },
+          "endPos": {
+            "line": 9,
+            "column": 35
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 38
+          },
+          "endPos": {
+            "line": 9,
+            "column": 39
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 46
+          },
+          "endPos": {
+            "line": 9,
+            "column": 47
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 51
+          },
+          "endPos": {
+            "line": 9,
+            "column": 52
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 55
+          },
+          "endPos": {
+            "line": 9,
+            "column": 56
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 61
+          },
+          "endPos": {
+            "line": 9,
+            "column": 62
+          },
+          "data": "Unknown identifier `a`\n\nNote: It is not possible to treat `a` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 9,
+            "column": 69
+          },
+          "endPos": {
+            "line": 9,
+            "column": 70
+          },
+          "data": "Unknown identifier `b`\n\nNote: It is not possible to treat `b` as an implicitly bound variable here because the `autoImplicit` option is set to `false`."
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 16,
+            "column": 18
+          },
+          "endPos": {
+            "line": 16,
+            "column": 19
+          },
+          "data": "Unknown identifier `a`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 16,
+            "column": 25
+          },
+          "endPos": {
+            "line": 16,
+            "column": 26
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 17,
+            "column": 18
+          },
+          "endPos": {
+            "line": 17,
+            "column": 19
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 17,
+            "column": 18
+          },
+          "endPos": {
+            "line": 17,
+            "column": 19
+          },
+          "data": "Unknown identifier `b`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 12
+          },
+          "endPos": {
+            "line": 19,
+            "column": 20
+          },
+          "data": "This simp argument is unused:\n  mul_comm\n\nHint: Omit it from the simp argument list.\n  simp_all [\u0335m\u0335u\u0335l\u0335_\u0335c\u0335o\u0335m\u0335m\u0335,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335l\u0335e\u0335f\u0335t\u0335_\u0335c\u0335o\u0335m\u0335m\u0335,\u0335[\u0332m\u0332u\u0332l\u0332_\u0332l\u0332e\u0332f\u0332t\u0332_\u0332c\u0332o\u0332m\u0332m\u0332,\u0332 mul_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 22
+          },
+          "endPos": {
+            "line": 19,
+            "column": 35
+          },
+          "data": "This simp argument is unused:\n  mul_left_comm\n\nHint: Omit it from the simp argument list.\n  simp_all [mul_comm, mul_l\u0335e\u0335f\u0335t\u0335_\u0335c\u0335o\u0335m\u0335m\u0335,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 19,
+            "column": 37
+          },
+          "endPos": {
+            "line": 19,
+            "column": 46
+          },
+          "data": "This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  simp_all [mul_comm, mul_left_comm,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335a\u0335s\u0335s\u0335o\u0335c\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 41
+          },
+          "endPos": {
+            "line": 9,
+            "column": 43
+          },
+          "data": "unused variable `ha`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 54
+          },
+          "endPos": {
+            "line": 9,
+            "column": 56
+          },
+          "data": "unused variable `hb`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 67
+          },
+          "endPos": {
+            "line": 9,
+            "column": 69
+          },
+          "data": "unused variable `hc`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 32
+          },
+          "endPos": {
+            "line": 22,
+            "column": 45
+          },
+          "data": "This simp argument is unused:\n  abs_of_nonpos\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, a\u0335b\u0335s\u0335_\u0335o\u0335f\u0335_\u0335n\u0335o\u0335n\u0335p\u0335o\u0335s\u0335,\u0335 \u0335neg_mul, neg_neg, mul_neg, neg_add_rev]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 47
+          },
+          "endPos": {
+            "line": 22,
+            "column": 54
+          },
+          "data": "This simp argument is unused:\n  neg_mul\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_m\u0335u\u0335l\u0335,\u0335 \u0335neg_\u0335n\u0335e\u0335g\u0335, mul_neg, neg_add_rev]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 56
+          },
+          "endPos": {
+            "line": 22,
+            "column": 63
+          },
+          "data": "This simp argument is unused:\n  neg_neg\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_mul, n\u0335e\u0335g\u0335_\u0335n\u0335e\u0335g\u0335,\u0335 \u0335mul_neg, neg_add_rev]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 65
+          },
+          "endPos": {
+            "line": 22,
+            "column": 72
+          },
+          "data": "This simp argument is unused:\n  mul_neg\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_mul, neg_neg, m\u0335u\u0335l\u0335_\u0335neg,\u0335 \u0335n\u0335e\u0335g\u0335_add_rev]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 74
+          },
+          "endPos": {
+            "line": 22,
+            "column": 85
+          },
+          "data": "This simp argument is unused:\n  neg_add_rev\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_mul, neg_neg, mul_neg,\u0335 \u0335n\u0335e\u0335g\u0335_\u0335a\u0335d\u0335d\u0335_\u0335r\u0335e\u0335v\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 56
+          },
+          "endPos": {
+            "line": 9,
+            "column": 58
+          },
+          "data": "unused variable `h2`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 29,
+            "column": 6
+          },
+          "endPos": {
+            "line": 29,
+            "column": 87
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 30,
+            "column": 6
+          },
+          "endPos": {
+            "line": 30,
+            "column": 35
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 29,
+            "column": 6
+          },
+          "endPos": {
+            "line": 29,
+            "column": 87
+          },
+          "data": "'simp_all only [add_left_inj, add_right_inj, mul_one, mul_zero, mul_neg, mul_comm]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 30,
+            "column": 6
+          },
+          "endPos": {
+            "line": 30,
+            "column": 35
+          },
+          "data": "'nlinarith [sq_nonneg (a - b)]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {},
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 18,
+            "column": 47
+          },
+          "endPos": {
+            "line": 18,
+            "column": 61
+          },
+          "data": "This simp argument is unused:\n  neg_add_cancel\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, n\u0335e\u0335g\u0335_\u0335a\u0335d\u0335d\u0335_\u0335c\u0335a\u0335n\u0335c\u0335e\u0335l\u0335,\u0335 \u0335add_neg_cancel, add_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 18,
+            "column": 63
+          },
+          "endPos": {
+            "line": 18,
+            "column": 77
+          },
+          "data": "This simp argument is unused:\n  add_neg_cancel\n\nHint: Omit it from the simp argument list.\n  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_add_cancel, a\u0335d\u0335d\u0335_\u0335n\u0335e\u0335g\u0335_\u0335c\u0335a\u0335n\u0335c\u0335e\u0335l\u0335,\u0335 \u0335add_assoc]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    {},
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 30,
+            "column": 6
+          },
+          "endPos": {
+            "line": 30,
+            "column": 14
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 30,
+            "column": 6
+          },
+          "endPos": {
+            "line": 30,
+            "column": 14
+          },
+          "data": "'linarith' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 54
+          },
+          "endPos": {
+            "line": 9,
+            "column": 56
+          },
+          "data": "unused variable `hy`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 67
+          },
+          "endPos": {
+            "line": 9,
+            "column": 69
+          },
+          "data": "unused variable `hz`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 20,
+            "column": 6
+          },
+          "endPos": {
+            "line": 20,
+            "column": 14
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 6
+          },
+          "endPos": {
+            "line": 22,
+            "column": 15
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 20,
+            "column": 6
+          },
+          "endPos": {
+            "line": 20,
+            "column": 14
+          },
+          "data": "'linarith' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 6
+          },
+          "endPos": {
+            "line": 22,
+            "column": 15
+          },
+          "data": "'nlinarith' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 25,
+            "column": 12
+          },
+          "endPos": {
+            "line": 25,
+            "column": 21
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 78
+          },
+          "endPos": {
+            "line": 22,
+            "column": 81
+          },
+          "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 2
+          },
+          "endPos": {
+            "line": 22,
+            "column": 77
+          },
+          "data": "'(first\n  | rw [div_le_div_iff\u2080]\n  | rw [le_div_iff\u2080]\n  | rw [div_le_iff\u2080]\n  | skip)' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 25,
+            "column": 2
+          },
+          "endPos": {
+            "line": 25,
+            "column": 21
+          },
+          "data": "'all_goals nlinarith' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 25,
+            "column": 6
+          },
+          "endPos": {
+            "line": 25,
+            "column": 12
+          },
+          "data": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 25,
+            "column": 6
+          },
+          "endPos": {
+            "line": 25,
+            "column": 12
+          },
+          "data": "'decide' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 9,
+            "column": 49
+          },
+          "endPos": {
+            "line": 9,
+            "column": 51
+          },
+          "data": "unused variable `hf`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 78
+          },
+          "endPos": {
+            "line": 22,
+            "column": 81
+          },
+          "data": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 22,
+            "column": 2
+          },
+          "endPos": {
+            "line": 22,
+            "column": 77
+          },
+          "data": "'(first\n  | rw [div_le_div_iff\u2080]\n  | rw [le_div_iff\u2080]\n  | rw [div_le_iff\u2080]\n  | skip)' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 10,
+            "column": 3
+          },
+          "endPos": {
+            "line": 10,
+            "column": 5
+          },
+          "data": "unused variable `h\u2080`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 11,
+            "column": 3
+          },
+          "endPos": {
+            "line": 11,
+            "column": 5
+          },
+          "data": "unused variable `h\u2081`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`"
+        }
+      ]
+    },
+    {},
+    {
+      "messages": [
+        {
+          "severity": "info",
+          "pos": {
+            "line": 28,
+            "column": 68
+          },
+          "endPos": {
+            "line": 28,
+            "column": 72
+          },
+          "data": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+        },
+        {
+          "severity": "info",
+          "pos": {
+            "line": 29,
+            "column": 68
+          },
+          "endPos": {
+            "line": 29,
+            "column": 72
+          },
+          "data": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead."
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 14,
+            "column": 17
+          },
+          "endPos": {
+            "line": 14,
+            "column": 24
+          },
+          "data": "This simp argument is unused:\n  mul_add\n\nHint: Omit it from the simp argument list.\n  simp_all only [mul_a\u0335d\u0335d\u0335,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335sub, mul_one, mul_div_cancel_left, mul_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 14,
+            "column": 26
+          },
+          "endPos": {
+            "line": 14,
+            "column": 33
+          },
+          "data": "This simp argument is unused:\n  mul_sub\n\nHint: Omit it from the simp argument list.\n  simp_all only [mul_add, mul_s\u0335u\u0335b\u0335,\u0335 \u0335m\u0335u\u0335l\u0335_\u0335one, mul_div_cancel_left, mul_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        },
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 14,
+            "column": 44
+          },
+          "endPos": {
+            "line": 14,
+            "column": 63
+          },
+          "data": "This simp argument is unused:\n  mul_div_cancel_left\n\nHint: Omit it from the simp argument list.\n  simp_all only [mul_add, mul_sub, mul_one, m\u0335u\u0335l\u0335_\u0335d\u0335i\u0335v\u0335_\u0335c\u0335a\u0335n\u0335c\u0335e\u0335l\u0335_\u0335l\u0335e\u0335f\u0335t\u0335,\u0335 \u0335mul_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 50,
+            "column": 2
+          },
+          "endPos": {
+            "line": 50,
+            "column": 87
+          },
+          "data": "field_simp made no progress on goal"
+        }
+      ]
+    }
+  ],
+  "complete_array": true,
+  "normal_eof": true,
+  "exit_code": 0,
+  "collector_cpu_seconds": 1.9976759999999985,
+  "whole_ns": 19537904378,
+  "waited_tree_cpu_user": 37.96018999999998,
+  "waited_tree_cpu_system": 1.9078349999999986,
+  "sampled_peak_pss": 1902723072,
+  "sampled_peak_rss": 8056827904
+}

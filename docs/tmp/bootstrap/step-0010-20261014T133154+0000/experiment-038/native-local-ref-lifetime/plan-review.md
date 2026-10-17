@@ -1,0 +1,3 @@
+# Root source/plan review
+
+Dependency qualification, not an independently reviewed experiment. Source checks cover actual64-bit deletion byte preservation, context/task reservation ordering, escaped references, tag0/full-ID and32-bit fallback, and preparation of root refs. Avoid claiming causal lock attribution or speed from the finite overlapped run. The existing strongest source-native stock comparator and unchanged inputs/protocol are reused. No new scientific contract, workload or per-proof policy. Independent plan review is unavailable under the current no-delegation instruction and is not represented as passed.

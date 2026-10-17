@@ -33,7 +33,7 @@ struct Registry {
  std::mutex mutex;
  std::unordered_map<lean_object*,Owner> owners;
  // A slot stays reserved for its context AND every still-live tagged ref.
- std::array<uint64_t,256> tag_uses{};
+ std::array<std::atomic<uint64_t>,256> tag_uses{};
  std::unordered_map<void*,Context*> tasks;
  std::atomic<uint64_t> next_id{1};
 };
@@ -95,19 +95,34 @@ extern "C" lean_obj_res gpu_smt_emit_line(lean_obj_arg line,lean_obj_arg){
 }
 extern "C" void gpu_smt_ref_created(lean_object* ref){
  if(bypass)return;
- auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
+ auto& g=registry();
  uint8_t tag=current?current->owner_tag:0;
  ref->m_other=tag;
+ // The context reservation keeps this tag live until every creation finishes.
+ // 64-bit Lean deletion preserves m_other even on its intrusive todo list.
+ if(sizeof(void*)==8&&tag){
+  g.tag_uses[tag].fetch_add(1,std::memory_order_relaxed);
+  return;
+ }
+ std::lock_guard<std::mutex> guard(g.mutex);
  g.owners[ref]=Owner{current?current->id:0,tag};
- if(tag)++g.tag_uses[tag];
+ if(tag)g.tag_uses[tag].fetch_add(1,std::memory_order_relaxed);
 }
 extern "C" void gpu_smt_ref_freed(lean_object* ref){
- auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
+ auto& g=registry();
+ if(sizeof(void*)==8){
+  uint8_t tag=lean_ptr_other(ref);
+  if(tag){
+   g.tag_uses[tag].fetch_sub(1,std::memory_order_release);
+   return;
+  }
+ }
+ std::lock_guard<std::mutex> guard(g.mutex);
  auto found=g.owners.find(ref);
  if(found==g.owners.end())return;
- // Native deletion may already have overwritten the header's RC/list bytes.
- // Use retained owner metadata, never a deallocated or rewritten header.
- if(found->second.tag)--g.tag_uses[found->second.tag];
+ // Other layouts retain the existing full owner metadata path.
+ // Untagged refs also use this map, including prepared/root refs.
+ if(found->second.tag)g.tag_uses[found->second.tag].fetch_sub(1,std::memory_order_release);
  g.owners.erase(found);
 }
 namespace {
@@ -226,8 +241,9 @@ extern "C" lean_obj_res gpu_smt_branch_begin(uint8_t enabled,lean_obj_arg){
  if(ctx->enabled){
   auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
   for(size_t slot=1;slot<g.tag_uses.size();++slot){
-   if(g.tag_uses[slot]==0){
-    ctx->owner_tag=static_cast<uint8_t>(slot);++g.tag_uses[slot];break;
+   if(g.tag_uses[slot].load(std::memory_order_acquire)==0){
+    ctx->owner_tag=static_cast<uint8_t>(slot);
+    g.tag_uses[slot].fetch_add(1,std::memory_order_relaxed);break;
    }
   }
  }
@@ -256,7 +272,7 @@ extern "C" lean_obj_res gpu_smt_branch_end(uint64_t handle,lean_obj_arg){
  for(auto& version:ctx->held){lean_dec(version.value);lean_dec(version.original);}
  if(ctx->owner_tag){
   auto& g=registry();std::lock_guard<std::mutex> guard(g.mutex);
-  --g.tag_uses[ctx->owner_tag]; // release context reservation AFTER clone cleanup
+  g.tag_uses[ctx->owner_tag].fetch_sub(1,std::memory_order_release); // after clone cleanup
  }
  delete ctx;
  return lean_io_result_mk_ok(lean_mk_string(out.str().c_str()));

@@ -1,0 +1,89 @@
+/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0/src/runtime/object.cpp
+}
+
+static inline void lean_dealloc(lean_object * o, size_t sz) {
+#ifdef LEAN_SMALL_ALLOCATOR
+    dealloc(o, sz);
+#elif defined(LEAN_MIMALLOC)
+    mi_free_size(o, sz);
+#else
+    free_sized(o, sz);
+#endif
+}
+
+extern "C" LEAN_EXPORT void lean_free_object(lean_object * o) {
+    switch (lean_ptr_tag(o)) {
+    case LeanArray:       return lean_dealloc(o, lean_array_byte_size(o));
+    case LeanScalarArray: return lean_dealloc(o, lean_sarray_byte_size(o));
+    case LeanString:      return lean_dealloc(o, lean_string_byte_size(o));
+    case LeanClosure:     return lean_dealloc(o, lean_closure_byte_size(o));
+    case LeanMPZ:         to_mpz(o)->m_value.~mpz(); return lean_free_small_object(o);
+    default:              return lean_free_small_object(o);
+    }
+}
+
+static inline lean_object * get_next(lean_object * o) {
+    if (sizeof(void*) == 8) {
+        size_t header = ((size_t*)o)[0];
+        LEAN_BYTE(header, 7) = 0;
+        LEAN_BYTE(header, 6) = 0;
+        return (lean_object*)(header);
+    } else {
+        // 32-bit version
+        return ((lean_object**)o)[0];
+    }
+}
+
+static inline void set_next(lean_object * o, lean_object * n) {
+    if (sizeof(void*) == 8) {
+        size_t new_header = (size_t)n;
+        LEAN_BYTE(new_header, 7) = o->m_tag;
+        LEAN_BYTE(new_header, 6) = o->m_other;
+        ((size_t*)o)[0] = new_header;
+        lean_assert(get_next(o) == n);
+    } else {
+        // 32-bit version
+        ((lean_object**)o)[0] = n;
+    }
+}
+
+static inline void push_back(lean_object * & todo, lean_object * v) {
+    set_next(v, todo);
+    todo = v;
+}
+
+static inline lean_object * pop_back(lean_object * & todo) {
+    lean_object * r = todo;
+    todo = get_next(todo);
+    return r;
+}
+
+static inline void dec(lean_object * o, lean_object* & todo) {
+    if (lean_is_scalar(o))
+        return;
+    if (LEAN_LIKELY(o->m_rc > 1)) {
+        o->m_rc--;
+    } else if (o->m_rc == 1) {
+        push_back(todo, o);
+    } else if (o->m_rc == 0) {
+        return;
+    } else if (std::atomic_fetch_add_explicit(lean_get_rc_mt_addr(o), 1, std::memory_order_acq_rel) == -1) {
+        push_back(todo, o);
+    }
+}
+
+#ifdef LEAN_LAZY_RC
+LEAN_THREAD_PTR(object, g_to_free);
+#endif
+
+static void lean_del_core(object * o, object * & todo);
+
+extern "C" LEAN_EXPORT lean_object * lean_alloc_object(size_t sz) {
+#ifdef LEAN_LAZY_RC
+     if (g_to_free) {
+         object * o = pop_back(g_to_free);
+         lean_del_core(o, g_to_free);
+     }
+#endif
+#ifdef LEAN_SMALL_ALLOCATOR
+    return (lean_object*

@@ -2062,3 +2062,15 @@ Efficiency: actual whole terminals are collected once with full rows/resources/r
 Maintenance: archives are direct byte-equal ordered pieces of the complete original ZIPs; all raw source/response/oracle/failure evidence stays retained, with no extraSHA gate. Actual profilefrequency/read spans and observer/counter limitations are explicit. The offline __file__wrapperfailure is recorded; normal invocation of the unchanged analyzer exits0. No source/PDF change or repeated writing/visualQA is claimed for a docs/data update. Other owners' dirty files and original open output/state remain untouched. No persistent entity/configuration change is introduced.
 
 Self-check supports publication of these completed data portions only. Complete comparative experiment, final native/system claim, allfourRQs and independent audit remain open; root self-reflection does not satisfy their evidence requirements.
+
+## Root self-check: native local-ref lifetime — 2026-10-17T01:10Z resume
+
+**Root self-review, not independent audit.** Current user/heartbeat prohibits delegation and original-session resume. This missing independence is not passed by root writing more reports.
+
+Direction: complete Initial Narrative, original fourRQs and Lean-first/SMT/service/RTX5090objective are intact. Removing global per-object lifetime registration for tagged native refs is implementation engineering within E038, not native ownership/snapshot novelty or a GPUalgorithm. No final paper number, RQanswer, strong-service advantage or OSDIacceptance is asserted.
+
+Efficiency: root implements the actual source change while the original acquisition runs. The clean public builder/actual two-source accepted-rejected path, one escaped-ref queued-deletion witness and one reused finite6-cell performance diagnostic are complete. No duplicate full capture, model session or tuning grid. All144responses match/normalEOF0; this validates finite engagement only. Atomic versus stock changes direction across orders (+3.923%/−0.875%), so the performance hypothesis remains inconclusive. No selected positive order, observer-cost subtraction or partial-prefix generalization is allowed.
+
+Maintenance: current ownership paragraphs are reconciled to root-only rather than stale delegated status; Initial Narrative/evolution is preserved. Exact compiled source/50commands/build logs, script/inputs/native/CPU/memory/EOF outputs and recomputation remain. One post-run32-bit source-comment correction changes no executable statement and preserves the exact compiled snapshot.32-bit/arbitrary-FFI/fullcancellation/race qualification is not invented. Paper already states finite engagement and pending comparative evidence, so a fresh unchanged full writing/compile/render would add no result. Other dirty CLI/docs and original binaries/processes/captures/storage owners remain preserved.
+
+Publish this completed implementation/diagnostic portion under explicit human instruction. Parent gates/full experiment and allfourRQs remain open; future progress must establish a consequential complete frontier beyond ordinary CPU engineering.

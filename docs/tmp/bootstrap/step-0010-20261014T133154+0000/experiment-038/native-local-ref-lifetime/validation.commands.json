@@ -1,0 +1,49 @@
+[
+  {
+    "label": "witness-compile",
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/clang",
+      "-isystem",
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include/clang",
+      "-isystem",
+      "/usr/include/x86_64-linux-gnu",
+      "-isystem",
+      "/usr/include",
+      "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/native-ref-witness.c",
+      "-L/tmp/gpu-smt-native-local-ref-lifetime-20261017/build/private",
+      "-lleanshared",
+      "-lgpu_smt_ref_branches",
+      "-Wl,-rpath,/tmp/gpu-smt-native-local-ref-lifetime-20261017/build/private",
+      "-lm",
+      "-o",
+      "/tmp/gpu-smt-native-local-ref-lifetime-20261017/native-ref-witness"
+    ],
+    "exit_code": 0,
+    "start_utc": "2026-10-17T01:18:57.180146+00:00",
+    "end_utc": "2026-10-17T01:18:57.331573+00:00"
+  },
+  {
+    "label": "witness-run",
+    "command": [
+      "/tmp/gpu-smt-native-local-ref-lifetime-20261017/native-ref-witness"
+    ],
+    "exit_code": 0,
+    "start_utc": "2026-10-17T01:18:57.331810+00:00",
+    "end_utc": "2026-10-17T01:18:57.334375+00:00"
+  },
+  {
+    "label": "native-check",
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-u",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/native-check.executed.py",
+      "/tmp/gpu-smt-native-local-ref-lifetime-20261017/build",
+      "/workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/native-check",
+      "plain,private"
+    ],
+    "exit_code": 0,
+    "start_utc": "2026-10-17T01:18:57.334565+00:00",
+    "end_utc": "2026-10-17T01:19:12.349959+00:00"
+  }
+]

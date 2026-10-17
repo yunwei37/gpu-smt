@@ -1,0 +1,82 @@
+BLOCK 1 atomic_over_locked_whole 0.9204802659780532 atomic_over_stock_whole 1.039229101691791
+BLOCK 2 atomic_over_locked_whole 0.9993559974132116 atomic_over_stock_whole 0.9912473124705964
+{
+  "cells": [
+    {
+      "block": 1,
+      "method": "stock",
+      "whole_seconds": 18.953335303,
+      "batch_seconds": 14.675680939,
+      "waited_child_cpu_user_seconds": 37.202261,
+      "waited_child_cpu_system_seconds": 1.601662,
+      "collector_cpu_seconds": 1.754949,
+      "sampled_peak_pss_bytes": 1914633216
+    },
+    {
+      "block": 1,
+      "method": "locked",
+      "whole_seconds": 21.39845725,
+      "batch_seconds": 17.017482735,
+      "waited_child_cpu_user_seconds": 42.831101999999994,
+      "waited_child_cpu_system_seconds": 2.185301,
+      "collector_cpu_seconds": 2.1135279999999996,
+      "sampled_peak_pss_bytes": 1901352960
+    },
+    {
+      "block": 1,
+      "method": "atomic",
+      "whole_seconds": 19.696857621,
+      "batch_seconds": 15.1960949,
+      "waited_child_cpu_user_seconds": 39.594328000000004,
+      "waited_child_cpu_system_seconds": 2.0782939999999996,
+      "collector_cpu_seconds": 1.981468000000001,
+      "sampled_peak_pss_bytes": 1901749248
+    },
+    {
+      "block": 2,
+      "method": "stock",
+      "whole_seconds": 19.537904378,
+      "batch_seconds": 15.124901671,
+      "waited_child_cpu_user_seconds": 37.96018999999998,
+      "waited_child_cpu_system_seconds": 1.9078349999999986,
+      "collector_cpu_seconds": 1.9976759999999985,
+      "sampled_peak_pss_bytes": 1902723072
+    },
+    {
+      "block": 2,
+      "method": "locked",
+      "whole_seconds": 19.379375574,
+      "batch_seconds": 15.082652979,
+      "waited_child_cpu_user_seconds": 39.263971999999995,
+      "waited_child_cpu_system_seconds": 2.219563000000001,
+      "collector_cpu_seconds": 1.997102,
+      "sampled_peak_pss_bytes": 1909635072
+    },
+    {
+      "block": 2,
+      "method": "atomic",
+      "whole_seconds": 19.366895206,
+      "batch_seconds": 14.715500532,
+      "waited_child_cpu_user_seconds": 37.932530000000014,
+      "waited_child_cpu_system_seconds": 1.9931330000000003,
+      "collector_cpu_seconds": 1.8254169999999998,
+      "sampled_peak_pss_bytes": 1905111040
+    }
+  ],
+  "all_native_responses_equal": true,
+  "all_native_normal_eof_exit0": true,
+  "source_count_per_cell": 24,
+  "orders": [
+    [
+      "stock",
+      "locked",
+      "atomic"
+    ],
+    [
+      "atomic",
+      "locked",
+      "stock"
+    ]
+  ],
+  "scope": "finite overlapped original24source development diagnostic; neither isolated nor full-corpus paper result"
+}

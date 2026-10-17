@@ -1,8 +1,9 @@
 # Questions for the author
 
-The root retains scientific disposition and final integration. The user now
-authorizes parallel OMP subagents for open-source organization, contributions,
-experiments and independent audit; the root implements the GPU batch candidate.
+The root directly implements, runs experiments, analyzes and writes under the
+current heartbeat instruction prohibiting delegation or original-session resume.
+Earlier OMP files/sessions are preserved; the optional model-recovery question
+below is not approval to resume them. Root self-review is not independent audit.
 All four RQs, Lean-first/RTX5090 and OSDI-quality target remain.
 
 ## Temporary miniF2F native-memory budget

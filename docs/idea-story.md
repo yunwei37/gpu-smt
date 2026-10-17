@@ -34,13 +34,12 @@ user's explicit request to stop withholding completed work until the whole
 research effort finishes. Publication is not an independent-review verdict,
 a final RQ answer or an OSDI acceptance claim.
 
-The user now authorizes parallel OMP work with file ownership: README, docs,
-paper and experiment scripts are delegated; the root owns Lean/GPU implementation,
-scientific disposition and final integration/publication. The original Codex
-author session remains retained/stopped. A focused independent opportunity
-review is separately dispatched without implementation ownership. Neither a
-live process nor an issued prompt establishes that specialist work or an audit
-has completed.
+The current heartbeat requires the root to implement, execute, analyze and
+write directly, without delegation or native-session resume. Earlier OMP outputs
+and the original stopped Codex author session remain retained; pending optional
+model recovery is not authority to resume them. Root self-review cannot supply
+the missing independent plan/result/outer audits. Prior genuinely independent
+reports keep their original scope and attribution.
 
 Completed negative implementations stay closed. Complete native6 ProofNet
 device comparisons, shared-process placement and repaired SMT prefix branching

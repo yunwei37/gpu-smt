@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-u",
+    "/workspaces/repository/bench/lean-native/build-native-branches.py",
+    "--lean-source",
+    "/tmp/gpu-smt-native-artifact-rebuild-20261016T1615/inputs/lean4-4.27.0",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair",
+    "--libcxx-headers",
+    "/tmp/gpu-smt-native-ref-branches-20261016/libcxx-19.1.7.src/include",
+    "--mimalloc-source",
+    "/tmp/gpu-smt-native-ref-branches-20261016/mimalloc-2.2.3",
+    "--sysroot",
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux",
+    "--output",
+    "/tmp/gpu-smt-native-local-ref-lifetime-20261017/build"
+  ],
+  "utc": "2026-10-17T01:18:00.207298+00:00"
+}

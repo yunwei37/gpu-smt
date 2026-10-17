@@ -346,3 +346,7 @@ The separate closure-reclaiming.cu/native adapter completes the full official In
     /workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python bench/lean-native/run-native-batch-comparison.py --out /tmp/gpu-smt-native-comparison-replay
 
 That command starts a new full comparison; it is documented, not executed alongside the current acquisition. Its defaults reproduce eager-v1 composition, not the newer first-write implementation. This is source integration, not a fresh-machine bootstrap recipe or completed native benchmark validation.
+
+## Native local-ref lifetime implementation
+
+On the current64-bit native branch path, tagged local ref creation/free now uses existing per-tag live counts atomically and avoids the global per-object owner map. Root/prepared tag0 and fallback lookup remain; task drain, escaped refs, first-write versions and all native checks retain their existing behavior. No new size limit or service policy. [Exact source/build/control and finite diagnostic](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/result.md) preserve the actual build and all raw outputs. Two reversed24-source orders show atomic versus stock +3.923%/−0.875% whole time: no stable end-to-end win or standalone systems contribution. The older full eager-v1 capture is unchanged and cannot qualify this version.
