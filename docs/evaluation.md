@@ -434,3 +434,19 @@ Alloriginal candidates/order/timeout300remain. No customresourcevalue or quota
 is introduced. This is an operational/default repair, not a new scientific
 variant. Root self-review only; mainline1.34668xclosure/hourlydeletion unchanged.
 Fullprototype diagnostic and formal performance remain pending.
+
+
+## Full1000-source direct-oracle diagnostic closes
+
+Fresh diagnostic all1000source responses match primaryprototype3 exactly,
+992complete/8rejected, zerooperational; interrupted376rows remain separate.
+3597checkedbranch/2953fallback records; no malformed/missing-success-timer/
+unmatched-source records.759unique sourcesdirect,273fallback,32overlap.
+Successful-branch wall sums: export0.479359s, searchroundtrip379.951359s,
+certificatecheck233.328226s. Nested Rust linear0.289467s, products2.467595s,
+LP151.086483s; not additive to parent, not totalCPU/wholewall/GPUbounds.
+Failure/unsupported detailed costs remain unknown but are charged by the
+already-closed primary clocks. Pool/certificate sizes and unnormalized fallback
+errors are preserved. Root self-review only. Mainline1.34668xfailure and deleted
+hourly automation unchanged; original formal populations continue under the
+restored pinned upstream memorydefault, not the failedNoneoverride.

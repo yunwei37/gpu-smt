@@ -106,7 +106,9 @@ CPU. Failed/unsupported attempts lack these detailed timers; their cost is
 unknown, never zero. Branch/fallback counts are not a mutually exclusive
 tactic-success rate or a GPU upper bound. The analyzer matches the retained
 actual73-check/1-fallback diagnostic fixture and all six published timing sums;
-that fixture is qualification only, not the pending1,000-source phase result.
+that fixture is qualification only. The complete1,000-source prototype result
+and retained raw telemetry are now under the native-stages artifact; its full
+native responses match primary prototype3.
 
 For a full strong-stage capture, `analyze-strong-stages.py CELL --identities
 RECEIPT.json` can associate sampled CPU with a numeric-service executable using

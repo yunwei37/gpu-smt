@@ -1,0 +1,7100 @@
+{
+  "receipt": {
+    "method": "oracle",
+    "rep": 1,
+    "state": "complete",
+    "expected": 1000,
+    "attempts": 1000,
+    "counts": {
+      "complete": 992,
+      "rejected": 8
+    },
+    "whole_ns": 1794844035820,
+    "cpu": {
+      "collector": {
+        "user": 1.6120459999999999,
+        "system": 186.687455
+      },
+      "waited_children": {
+        "user": 1798.465669,
+        "system": 20.06777
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 9401990144,
+    "sampled_peak_fleet_rss_with_collector": 10029572096,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": -1,
+    "width": 4,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+  },
+  "telemetry_kinds": {
+    "direct-oracle-fallback": 2953,
+    "fast": 2953,
+    "direct-oracle": 3597,
+    "product-application": 2340
+  },
+  "successful_checked_branch_records": 3597,
+  "fallback_attempt_records": 2953,
+  "malformed_telemetry_lines": 0,
+  "success_records_without_complete_timer_fields": 0,
+  "input_body_groups": 1000,
+  "ambiguous_input_body_groups": 0,
+  "body_groups_with_observed_direct_check": 759,
+  "body_groups_with_observed_fallback": 273,
+  "body_groups_with_both": 32,
+  "unmatched_telemetry_body_groups": 0,
+  "fallback_errors": {
+    "expected array": 605,
+    "unsupported carrier": 2348
+  },
+  "successful_branch_wall_seconds": {
+    "export_ns": 0.479358725,
+    "search_roundtrip_ns": 379.951359028,
+    "check_ns": 233.32822571,
+    "linear_ns": 0.289467467,
+    "products_ns": 2.467594955,
+    "lp_ns": 151.08648318
+  },
+  "successful_branch_size_distributions": {
+    "facts": {
+      "observations": 3597,
+      "min": 5,
+      "median": 136,
+      "p95": 253,
+      "max": 946
+    },
+    "atoms": {
+      "observations": 3597,
+      "min": 3,
+      "median": 34,
+      "p95": 151,
+      "max": 521
+    },
+    "certificate_terms": {
+      "observations": 3597,
+      "min": 1,
+      "median": 4,
+      "p95": 30,
+      "max": 84
+    },
+    "selected_product_terms": {
+      "observations": 3597,
+      "min": 0,
+      "median": 0,
+      "p95": 26,
+      "max": 74
+    }
+  },
+  "body_group_source_ids": [
+    {
+      "proof_ids": [
+        "Proof_00009"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00027"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00069"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00088"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00165"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00170"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00214"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00297"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00308"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00323"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00328"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00364"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00375"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00401"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00455"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00487"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00496"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00526"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00538"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00549"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00555"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00579"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00592"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00619"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00621"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00635"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00638"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00680"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00710"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00715"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00794"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00834"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00859"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00889"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_00973"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_00975"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01032"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01047"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01048"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01071"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01076"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01097"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01128"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01153"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01196"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01208"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01256"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01273"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01305"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01307"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01340"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01349"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01358"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01408"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01430"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01536"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01539"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01546"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01648"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01681"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01705"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01740"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01755"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01768"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01771"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01819"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01845"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01877"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01897"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01952"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01966"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_01983"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_01984"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02014"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02056"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02074"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02163"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02182"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02208"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02268"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_02337"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02340"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02351"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02395"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_02421"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02433"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02487"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02498"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02530"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02534"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_02556"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02580"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02590"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02612"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02613"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02643"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02647"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02755"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02778"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02817"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02835"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02845"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02861"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02889"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02891"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_02917"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03021"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03024"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03038"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03039"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03086"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03101"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03146"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03165"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03182"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03196"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03228"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03234"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03256"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03289"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03314"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03341"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03370"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03385"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03386"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03387"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03418"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03432"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03444"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03462"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03511"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03551"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03605"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03608"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03637"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03641"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03682"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03694"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03704"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03709"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03746"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03772"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03778"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03859"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03878"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03913"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03926"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_03974"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_03980"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04013"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04038"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04101"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04130"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04137"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04156"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04190"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04230"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04277"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04294"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04305"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04350"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04351"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04408"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04471"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04476"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04516"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04521"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04539"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04642"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04644"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04702"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04782"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_04820"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04891"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04897"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04914"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04932"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_04975"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05085"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05105"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05156"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05197"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05207"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05213"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05285"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05334"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05374"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05390"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05423"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05483"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05523"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05611"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05651"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05700"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05736"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05760"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05761"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05786"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05793"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05795"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05797"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05811"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05833"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05853"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_05903"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05932"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_05957"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06004"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06106"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06227"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06255"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06265"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06280"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06283"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06300"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06309"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06312"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06391"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06423"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06491"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06510"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06514"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06524"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06555"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06569"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06632"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06654"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06665"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06736"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06747"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06748"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06770"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06794"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06815"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06849"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_06861"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06870"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06875"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06898"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06910"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06933"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06953"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06957"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_06980"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07004"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07040"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07069"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07081"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07122"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07138"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07163"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07183"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07186"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07201"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07202"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07206"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07229"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07309"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07331"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07374"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07383"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07401"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07427"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07430"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07503"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07507"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07543"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07579"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07581"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07599"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07627"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07654"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07657"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07764"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07788"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07794"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07850"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07856"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07917"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_07930"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_07932"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08025"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08081"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08086"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08095"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08103"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08148"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08162"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08185"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08212"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08232"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08337"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08390"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08404"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08433"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08452"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08475"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08486"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08491"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08518"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08521"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08532"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08545"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08637"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08668"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08683"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08739"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08743"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_08770"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08858"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08901"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_08943"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09007"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09013"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09021"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09022"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09091"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09130"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09141"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09145"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09212"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09232"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09241"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09249"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09294"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09319"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09351"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09362"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09372"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09390"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09421"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09429"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09474"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09475"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09483"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09503"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09518"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09534"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09546"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09559"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09626"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09663"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09667"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09720"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09732"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09734"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09743"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09838"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09862"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09865"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09906"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09950"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_09953"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_09956"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10002"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10022"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10031"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10044"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10075"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10132"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10136"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10138"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10195"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10213"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10346"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10348"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10356"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10360"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10394"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10437"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10461"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10490"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10505"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10515"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10598"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10638"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10673"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10703"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10713"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10724"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10784"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10793"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_10806"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10862"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10883"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10978"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_10996"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11010"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11081"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11092"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11122"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11133"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11151"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11178"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11208"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11275"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11300"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11303"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11339"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11364"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11378"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11381"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11421"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11428"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11455"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11495"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11593"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11602"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11644"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11672"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11691"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11719"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11721"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11756"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11792"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11816"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11818"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11881"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11891"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11932"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_11953"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11957"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_11989"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12007"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12008"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12026"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12134"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12154"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12175"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12210"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12236"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12250"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12264"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12282"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12303"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12307"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12388"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12402"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12412"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12445"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12462"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12474"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12560"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12607"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12643"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12656"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12689"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12711"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12718"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12745"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12771"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12801"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12831"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12851"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12854"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12858"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12878"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12912"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_12933"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_12955"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13002"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13024"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13068"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13081"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13112"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13113"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13116"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13126"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13140"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13171"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13230"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13240"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13243"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13363"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13484"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13536"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13581"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13596"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13598"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13675"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13684"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13754"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_13794"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13875"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13877"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13927"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13938"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13942"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_13971"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14090"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14172"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14209"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14212"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14239"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14302"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14317"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14318"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14320"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14505"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14569"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14607"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14680"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14694"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14721"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14737"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14827"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14864"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14880"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14885"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14941"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14944"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_14949"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14954"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_14960"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15022"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15037"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15064"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15076"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15224"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15300"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15347"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15358"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15362"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15394"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15416"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15432"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15437"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15487"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15632"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15678"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15720"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15783"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15788"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15819"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15847"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15848"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15900"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_15934"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_15939"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16033"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16178"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16181"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16183"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16213"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16313"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16324"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16422"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16426"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16530"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16540"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16586"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16606"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16617"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16634"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16636"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16684"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16743"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16859"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_16865"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_16937"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17006"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17038"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17050"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17073"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17092"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17093"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17096"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17112"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17113"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17115"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17144"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17148"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17197"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17203"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17236"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17240"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17303"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17318"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17319"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17321"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17335"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17354"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17389"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17412"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17511"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17542"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17546"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17631"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17716"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17778"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17802"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_17957"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_17985"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18023"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18069"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18090"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18157"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18246"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18279"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18295"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18357"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18371"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18391"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18394"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18409"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18426"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18435"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18439"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18440"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18455"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18488"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18573"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18581"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18606"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18617"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18628"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18629"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18655"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18659"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18723"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18732"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18866"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_18960"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_18979"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19008"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19035"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19071"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19092"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19107"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19150"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19183"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19219"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19237"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19265"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19293"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19303"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19358"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19374"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19433"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19485"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19487"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19511"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19538"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19573"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19582"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19605"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19636"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19655"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19663"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19685"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19734"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19746"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19833"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19868"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19916"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19917"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_19922"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19966"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_19985"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20001"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20057"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20132"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20141"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20164"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20217"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20243"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20283"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20284"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20296"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20329"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20359"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20388"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20399"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20414"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20418"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20453"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20462"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20500"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_20593"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20713"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20715"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20785"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20891"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20907"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20952"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20954"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_20997"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21003"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21019"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21038"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21105"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21128"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21165"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21177"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21180"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21198"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21226"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21228"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21263"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21291"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21322"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21328"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21332"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21336"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21502"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21519"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21522"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21549"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21553"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21585"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21619"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21683"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21685"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21710"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21740"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21767"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21773"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21784"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21832"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21861"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_21886"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21894"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_21926"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22022"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22067"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22100"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22113"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22143"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22220"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22264"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22313"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22344"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22351"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22353"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22375"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22399"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22444"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22449"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22476"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22564"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22579"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22611"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22619"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22632"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22635"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22682"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22686"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22768"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22802"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22862"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22866"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22907"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22911"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22941"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22958"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22969"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22979"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_22981"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_22998"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23002"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23065"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23113"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23151"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23235"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23325"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23352"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23357"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23383"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23389"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23390"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23407"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23410"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23432"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23466"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23483"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23488"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23514"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23560"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23569"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23622"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23635"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23671"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23673"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23697"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23713"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23756"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23840"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_23855"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23903"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23923"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23951"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23970"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_23995"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24032"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24035"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24080"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24085"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24097"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24113"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24146"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24147"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_24151"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24244"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24295"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24319"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24348"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24357"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_24364"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24388"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_24402"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24440"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24448"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24473"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24525"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24538"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24548"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24598"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24611"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24618"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24640"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24670"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24672"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24694"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_24698"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24754"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24781"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24789"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24795"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24828"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_24863"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24894"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_24925"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25008"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25038"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25043"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25044"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25084"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25125"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25126"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25129"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25137"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25196"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25205"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25206"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25243"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25247"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25252"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25253"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25297"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25337"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25351"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25393"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25395"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25403"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25435"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25515"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25527"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25556"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25577"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25583"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25597"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25610"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25639"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25649"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_25800"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_25967"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26036"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26037"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26065"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26092"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26120"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26122"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26127"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26130"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26131"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26146"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26179"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26205"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26285"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26305"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26333"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26401"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26428"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26489"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26492"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26606"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26628"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26633"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26651"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26716"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26718"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26813"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26814"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26945"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_26955"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_26966"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27010"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27043"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27060"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27067"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27149"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27233"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27255"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27258"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27296"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27321"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27366"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27377"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27389"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27403"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27406"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27461"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27486"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27568"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27573"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27582"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27584"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27604"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27626"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27628"
+      ],
+      "direct": true,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27674"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27699"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27733"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27761"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27801"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27812"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27836"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_27837"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27885"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27895"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27952"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27960"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_27965"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28040"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28113"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28142"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28157"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28158"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28199"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28234"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28363"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28396"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28426"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28427"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28436"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28437"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28501"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28558"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28572"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28580"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28596"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28710"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28731"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28738"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28753"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28756"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_28766"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28772"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28790"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28841"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28856"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28908"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28936"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28938"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_28957"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29007"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29020"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29060"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29089"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29100"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29127"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29141"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29148"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29163"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29180"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29215"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29220"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29222"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29247"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29262"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29263"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29273"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29331"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29354"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29443"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29444"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29461"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29502"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29517"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29533"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29549"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29592"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29621"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29680"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29688"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29713"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29732"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29737"
+      ],
+      "direct": false,
+      "fallback": true
+    },
+    {
+      "proof_ids": [
+        "Proof_29739"
+      ],
+      "direct": true,
+      "fallback": false
+    },
+    {
+      "proof_ids": [
+        "Proof_29742"
+      ],
+      "direct": true,
+      "fallback": false
+    }
+  ],
+  "scope": "Only observed checked contradiction branches have timers. A tactic can produce several branch checks and later fall back; record counts are not a mutually exclusive success rate. Source bodies identify groups, not individual repeated candidate instances. Failed/unsupported paths lack these timers and their cost is unknown, never zero. Rust linear/products/LP timers are nested inside Lean search roundtrip; do not add parent and child times. Serialized/overlapping invocation wall is not total CPU, a complete wall fraction, or an ideal GPU bound. Headline whole times already include all failed work and fallback. Native response agreement must be checked separately.",
+  "native_comparison": {
+    "sources": 1000,
+    "same_source_order": true,
+    "full_response_differences_from_primary3": []
+  }
+}

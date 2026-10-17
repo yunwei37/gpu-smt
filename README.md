@@ -31,9 +31,10 @@ zerooperational, with matching source verdicts and the same88unused-variable
 warning differences. These are CPU-only results. The route is closed as the
 mainline and the hourly research automation has been deleted.
 [Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
-retain every pair and the post-fault rebuild lineage. Already-requested full
-phase attribution and original-population prefix captures continue to finish
-the report; their completion is still pending.
+retain every pair and the post-fault rebuild lineage. Both full1,000-source
+[phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)
+are complete, with native responses matching their primary captures.
+Original-population prefix timing remains in progress.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by

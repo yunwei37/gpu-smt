@@ -381,7 +381,11 @@ command path. The reference executes original commands in a warm native
 in-process batch, and both methods use four-wide native work submission.
 Whole clocks include parsing, preparation, transport, native checking,
 fallback and process retirement. This adaptation is distinct from an
-end-to-end benchmark of the upstream SHRED service.
+end-to-end benchmark of the upstream SHRED service. All three formal methods
+inherit the pinned SHRED client's ordinary 48 GiB verifier address-space
+limit. Operational resource failures and replacement costs remain in the
+full-population report; this comparison does not reproduce a deployed
+Kimina server's separate memory policy.
 \missing{Complete original-population prefix timing, per-source native
 agreement, operational outcomes and cost-weighted savings.}
 
@@ -733,8 +737,27 @@ is 2,512.40 seconds, exceeding whole elapsed time because invocations overlap.
 No additive elapsed-time partition or GPU upper bound follows.
 Final source validation, other native work and observer costs remain outside
 the recorded arithmetic regions or in the residual accounting.
-\missing{Prototype full-cohort branch coverage, successful-path costs and
-unobserved fallback costs.}
+The full prototype diagnostic preserves every native response on the same
+1,000 sources. It records 3,597 successfully checked contradiction branches
+and 2,953 fallback attempts, with no malformed or unmatched telemetry.
+Of the 1,000 distinct source bodies, 759 have an observed direct check,
+273 have a fallback and 32 have both. Thus branch/fallback record counts
+are not a mutually exclusive tactic success rate. Failure labels are
+2,348 unsupported-carrier and 605 expected-array records; they remain
+unnormalized rather than assigning an unsupported solver-failure cause.
+
+On the observed successful branches, export sums to 0.48 seconds, the search
+roundtrip to 379.95 seconds and certificate checking to 233.33 seconds.
+Inside that roundtrip, native Rust linearization, numeric products and LP
+search sum to 0.29, 2.47 and 151.09 seconds respectively. Parent and nested
+timers must not be added. Median potential pools contain 136 facts, while
+certificates use a median of four terms; the observed maxima are 946 and
+84. These successful-path wall sums neither exhaust failed/unsupported
+work nor give whole-verification CPU shares or a GPU upper bound.
+All failed work and fallbacks are still charged by the complete primary
+clocks. The numeric product work already removed from Lean is small on
+these observed successful branches; no additional GPU measurement or
+new kernel is inferred from it.
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
