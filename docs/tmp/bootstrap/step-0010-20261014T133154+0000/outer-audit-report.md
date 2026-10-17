@@ -2132,3 +2132,15 @@ is excluded; complete CPU reference remains valid, source and build lineage
 explicit. Corrected direct/fallback Real/Nat engagement and native JSON parity
 are observed. Timeout recovery continues real later sources without raising
 limits or dropping failed rows. All decisions remain root self-review.
+
+
+Strong-stage self-audit: separate generated/exported instrumentation preserves
+the executed Fast/hybrid/products/fallback structure and passes full native
+JSON agreement on the real mixed-type4source qualification. No active primary
+library was overwritten. Native build's initial namespace error and correction
+are retained. Counters describe calling-thread CPU, include successful and
+failed native reconstruction, and leave external-child/remaining work
+unattributed. Different diagnostic affinity and tiny cohort prohibit a speedup
+claim or population-level attribution. Formal-prefix analysis checks original
+source identity and native outcomes; operational rows cannot become a false
+negative performance gate. All four RQs and final1.5xdecision remain pending.

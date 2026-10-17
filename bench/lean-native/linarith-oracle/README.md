@@ -32,8 +32,10 @@ Its native batch and proof-step waves use the same width4; closed roots are
 checked by Lean's kernel. Original unsupported/failed paths fall back.
 Timeouts remain300srequest boundaries and count as operational outcomes;
 process replacement invalidates all cached environment/proof-state ids.
-Forced-retirement CPU is explicitly censored. The first full-corpus timeout
-repair is undergoing real qualification; the prior full run is incomplete.
+Forced-retirement CPU is explicitly censored. The timeout repair was qualified on the actual failed batch: four retained
+operational outcomes followed by four completed sources after replacement.
+Recovered full original-population captures are running; the prior aborted
+full run remains incomplete.
 
 The current heavy-cohort continuation is `run-matrix.py EXISTING_PAIR_PID`.
 It preserves the already-running first pair and uses its closed receipts.
@@ -41,3 +43,23 @@ Read `artifacts/linarith-oracle-2026-10-17/matrix-launch.json` and actual
 processes before continuing; this is not a command to start another collector.
 Extra CPU competitors are conditional on passing the user's threshold against
 Fast/hybrid. `analyze-matrix.py RUN_DIR` reports pending values as null.
+
+
+build-strong-profile.py generates an instrumented copy of the existing
+Fast/hybrid implementation and a separate exported strong-profile.so.
+run-comparison.py --methods strong-profile --diagnostic selects it;
+ordinary primary methods do not import or load that diagnostic library.
+analyze-strong-stages.py CELL reports sequential stage thread CPU against
+the observed collector/waited-child CPU denominator, with residuals explicit.
+External LP-child CPU is not in the LP calling-thread counter. Invocation wall
+sums overlap across sources and cannot be whole-wall percentages.
+
+The real mixed Real/Nat diagnostic preflight matches full native JSON on all
+four sources. It is not representative of the 1,000-source distribution.
+The bounded continuation queues the full strong diagnostic after primary timing;
+it does not rerun the stock phase pilot as if it described Fast/hybrid.
+
+analyze-prefix-runs.py RUN_DIR compares every original source index between
+batch and each prefix method. It distinguishes pending, operational failures,
+verdict differences and observed versus validated whole-time ratios. A completed
+acquisition with timeout rows is not a successful verification comparison.

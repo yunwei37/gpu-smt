@@ -58,7 +58,7 @@ def main():
     run('primary2',['oracle','fast-hybrid'])
     run('primary3',['fast-hybrid','oracle'])
     # Requested four-stage native diagnostic, separate from primary timing.
-    run('native-stages',['profile','oracle'],True)
+    run('native-stages',['strong-profile','oracle'],True)
     times={}
     for method in ['fast-hybrid','oracle']:
         times[method]=sum(json.loads((OUT/('primary%d'%i)/('rep1-'+method)/'terminal.json').read_text())['whole_ns'] for i in [1,2,3])

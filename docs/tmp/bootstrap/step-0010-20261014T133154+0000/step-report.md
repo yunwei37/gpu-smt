@@ -3444,3 +3444,30 @@ Recovered original-population prefix runs now execute. Separate ProofNet
 four-source batch/exact/unit preflight has4rejections in each, zero per-source
 verdict differences and normal exit. No completed full-population comparison,
 1.5xpass, GPU acceleration or independent audit is claimed.
+
+
+### Qualified strong-baseline stage node
+
+EXPERIMENT_GATE still active. Complete native reference, strong fallback
+qualification, prefix recovery and implementation published4ea64ed onmain.
+A separate strong-profile native library now instruments the actual
+Fast/hybrid selection, numeric probe products/LP and restricted/fallback native
+reconstruction. Four original mixed Real/Nat sources produce identical complete
+native JSON,515arithmetic invocations, normal EOF/exit0. Its diagnostic
+53.854smeasurement usesCPU0–3, not the primary12–15set, and establishes no
+speed improvement. Stage counts and limits are archived understrong-stage-preflight.
+
+Preprocess+linearize26.483threadCPU s, products11.921s, LPcaller0.116s,
+certificate11.806s;103.475sobserved pipeline CPU includingcollector/waited
+children. External LP-childCPU and all other/unattributed work are not
+misallocated to a proposed mechanism. No summed overlapping wall/whole-wall
+division. Strong full1000diagnostic replaces the queued stock-only phase cell
+after primary timing. Only the waiting finite driver was replaced; the live
+valid oracle collector and both retained old CPU captures stay untouched.
+
+Prefix comparison analysis now requires every original source index, native
+verdict agreement and no operational outcomes for a validated timing claim.
+First32native pilot has zero source-verdict differences but loses elapsed time;
+full original populations remain active and unjudged. Daily reflection and
+entry docs are updated. WRITE_GATE cannot close on an incomplete prototype;
+REVIEW_GATE here is root self-review only, not independent audit.

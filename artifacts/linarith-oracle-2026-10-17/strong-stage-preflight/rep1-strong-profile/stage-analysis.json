@@ -1,0 +1,58 @@
+{
+  "receipt": {
+    "method": "strong-profile",
+    "rep": 1,
+    "state": "complete",
+    "expected": 4,
+    "attempts": 4,
+    "counts": {
+      "complete": 4
+    },
+    "whole_ns": 53854311062,
+    "cpu": {
+      "collector": {
+        "user": 0.04803299999999999,
+        "system": 5.048275
+      },
+      "waited_children": {
+        "user": 96.575279,
+        "system": 1.8035009999999998
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 3041457152,
+    "sampled_peak_fleet_rss_with_collector": 8909135872,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "effective_RLIMIT_AS": -1,
+    "width": 4,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 4 of 4 candidates"
+  },
+  "arithmetic_invocations": 515,
+  "observed_pipeline_cpu_seconds": 103.475088,
+  "arithmetic_thread_cpu_seconds": 50.757963189,
+  "phases": {
+    "preprocess_and_linearize": {
+      "thread_cpu_seconds": 26.482911676000015,
+      "fraction_observed_pipeline_cpu": 0.25593514523998295,
+      "summed_invocation_wall_seconds": 26.51310811800001
+    },
+    "nonlinear_products": {
+      "thread_cpu_seconds": 11.920856685999997,
+      "fraction_observed_pipeline_cpu": 0.11520508864897025,
+      "summed_invocation_wall_seconds": 12.159728475000005
+    },
+    "lp_caller": {
+      "thread_cpu_seconds": 0.11573529199999992,
+      "fraction_observed_pipeline_cpu": 0.0011184845960217973,
+      "summed_invocation_wall_seconds": 0.4520113829999998
+    },
+    "certificate": {
+      "thread_cpu_seconds": 11.806003967000011,
+      "fraction_observed_pipeline_cpu": 0.11409513338128315,
+      "summed_invocation_wall_seconds": 11.921056712000015
+    }
+  },
+  "unattributed_pipeline_cpu_seconds": 53.14958037899998,
+  "scope": "Diagnostic build of Fast/hybrid and product reuse; source-associated native verdict comparison required. Thread CPU stage counters exclude external LP-child CPU; pipeline denominator includes observed collector and waited-child CPU. LP round-trip wall includes queue, IPC and external solve but overlaps concurrent source work, so these wall sums are not whole-wall fractions or an end-to-end speedup upper bound. Preprocessing includes numeric parse/type reasoning and restricted native linearization, not a separate ring/defeq/typeclass partition. Failed pre-probe/setup/control and work outside arithmetic remain unattributed."
+}

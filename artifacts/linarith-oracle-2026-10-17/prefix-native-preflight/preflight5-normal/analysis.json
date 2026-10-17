@@ -1,0 +1,46 @@
+{
+  "root": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/preflight5-normal",
+  "comparisons": [
+    {
+      "method": "exact",
+      "state": "valid",
+      "sources": 32,
+      "operational_indices": {
+        "batch": [],
+        "exact": []
+      },
+      "verdict_differences": [],
+      "closed_prefix_without_native_kernel_receipt": [],
+      "batch_whole_seconds": 6.014851587,
+      "prefix_whole_seconds": 14.186462676,
+      "observed_batch_over_prefix_ratio": 0.4239852967135808,
+      "validated_whole_ratio": 0.4239852967135808,
+      "cpu_accounting_complete": true,
+      "native_parser_included_seconds": 7.845761114032939,
+      "fallbacks": 7,
+      "cached_lookups": 0,
+      "executed_prefix_nodes": 82
+    },
+    {
+      "method": "unit",
+      "state": "valid",
+      "sources": 32,
+      "operational_indices": {
+        "batch": [],
+        "unit": []
+      },
+      "verdict_differences": [],
+      "closed_prefix_without_native_kernel_receipt": [],
+      "batch_whole_seconds": 6.014851587,
+      "prefix_whole_seconds": 13.974745153,
+      "observed_batch_over_prefix_ratio": 0.4304086780222088,
+      "validated_whole_ratio": 0.4304086780222088,
+      "cpu_accounting_complete": true,
+      "native_parser_included_seconds": 7.876662760972977,
+      "fallbacks": 7,
+      "cached_lookups": 0,
+      "executed_prefix_nodes": 54
+    }
+  ],
+  "scope": "One offline capture/order of original task candidates, native in-process batch4 versus SHRED-parser-based prefix executor. Includes parse/preparation/IPC/fallback/kernel/retirement. Not an upstream whole-service SHRED benchmark, repeated-trial result, or GPU speedup. Forced-retirement CPU is censored; operational results remain unresolved."
+}

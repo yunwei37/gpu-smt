@@ -278,3 +278,17 @@ the timeout and restart. Forced retirement censors waited-child CPU, which
 is explicitly marked incomplete. Full original-population timing and native
 verdict comparison are still pending; parser-prefix occurrence counts are
 not end-to-end savings.
+
+
+A separate native diagnostic of the actual Fast/hybrid+product-reuse path now
+matches full native JSON on the same four mixed Real/Nat sources, including
+515 arithmetic invocations. It uses a separate diagnostic shared library and
+logical CPUs0–3, so its53.854swhole time is not a comparison with prior12–15
+timing. Calling-thread CPU fractions of observed pipeline CPU are25.59%
+preprocessing/linearization,11.52%products,0.112%LPcaller and11.41%
+certificate reconstruction/checking. LPcaller excludes external solver CPU;
+the remaining51.37%is explicitly unattributed. These four-source fractions
+are not the1000source distribution or whole-wall upper bounds. The complete
+strong-baseline diagnostic is queued after primary timing. Exact raw counters,
+code/build failures and self-review are in
+artifacts/linarith-oracle-2026-10-17/strong-stage-preflight/.

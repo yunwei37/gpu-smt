@@ -1,0 +1,14 @@
+/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.lean:289:22: warning: unused variable `cost`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.lean:340:2: error(lean.unknownIdentifier): Unknown identifier `Telemetry.emit`
+/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.lean:534:52: error(lean.unknownIdentifier): Unknown identifier `Telemetry.compJson`
+/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.lean:459:31: error(lean.unknownIdentifier): Unknown identifier `Telemetry.jstrEsc`
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/build-strong-profile.py", line 81, in <module>
+    subprocess.run(['lean','-o',str(U/'GpuArithmetic'/ (name+'.olean')),'-c',str(U/(name+'.c')),str(U/'GpuArithmetic'/(name+'.lean'))],env=env,cwd=U,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/FastProfile.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/FastProfile.lean']' returned non-zero exit status 1.
