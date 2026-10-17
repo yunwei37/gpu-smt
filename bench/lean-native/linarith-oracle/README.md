@@ -115,3 +115,11 @@ does not identify pure simplex CPU. A missing identity match stays unavailable;
 older missing identities are not inferred retrospectively. The first full
 1,000-source strong capture and its actual identity receipt are under
 `artifacts/linarith-oracle-2026-10-17/native-stages/`.
+
+The formal comparison now leaves pinned SHRED's48GiBverifier default intact;
+the unsafe localNoneoverride caused the retained
+[global-OOM attempt](../../../artifacts/linarith-oracle-2026-10-17/prefix-oom-20261017/result-review.md).
+This affects only the native verifier children in that benchmark. New captures
+record the actual client value and usefull-default-*names; old unlimited
+partial clocks/outcomes remain separate. Root/Agent/Workspace limits are not
+changed. Actual failed8and normal32-source qualification precede continuation.

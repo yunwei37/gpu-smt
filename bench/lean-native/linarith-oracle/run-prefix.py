@@ -54,7 +54,7 @@ def capture(ds,method,limit,out,start_index=0):
             mapped[i].update(ans)
     module=load_client()
     client=module.LeanRepl(MATH,executable=U/'repl-kernel/.lake/build/bin/repl',
-      timeout_seconds=300,memory_limit_bytes=None)
+      timeout_seconds=300)
     headers={};counts=collections.Counter();fallbacks=0;hits=0;nodes=0;forced_retirements=0
     def request(data):
         nonlocal forced_retirements
@@ -184,7 +184,8 @@ def capture(ds,method,limit,out,start_index=0):
         ru1=rusage()
         cpu=sum((b.ru_utime+b.ru_stime)-(a.ru_utime+a.ru_stime) for a,b in zip(ru0,ru1))
         result={'state':'complete' if sum(counts.values())==len(items) else 'failed','dataset':ds,'method':method,'expected':len(items),'returned':sum(counts.values()),'counts':dict(counts),
-           'whole_seconds':(time.monotonic_ns()-started)/1e9,'cpu_seconds':cpu,'normal_native_exit':normal_exit,'forced_native_retirements':forced_retirements,'cpu_accounting_complete':forced_retirements==0,
+           'whole_seconds':(time.monotonic_ns()-started)/1e9,'cpu_seconds':cpu,
+           'verifier_memory_limit_bytes':client.memory_limit_bytes,'verifier_memory_policy':'pinned upstream LeanRepl default; caller does not override','normal_native_exit':normal_exit,'forced_native_retirements':forced_retirements,'cpu_accounting_complete':forced_retirements==0,
            'native_parse_seconds':extract_seconds,'fallbacks':fallbacks,'executed_prefix_nodes':nodes,'cached_lookups':hits,
            'affinity':sorted(os.sched_getaffinity(0)),
            'scope':'offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending'}

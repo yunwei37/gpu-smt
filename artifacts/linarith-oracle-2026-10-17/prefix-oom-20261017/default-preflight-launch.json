@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-17T08:45:15.239398+00:00",
+  "pid": 4974,
+  "command": [
+    "python3",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py",
+    "--out",
+    "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/prefix/default-memory-failed-case-preflight",
+    "--dataset",
+    "minif2f",
+    "--methods",
+    "batch",
+    "--start",
+    "2400",
+    "--limit",
+    "8"
+  ],
+  "mutation": "remove None override; use upstream default discovered from pinned class",
+  "scope": "only actual failed4and next4; no full-prefix restart yet; no infrastructure/Agentquota change"
+}

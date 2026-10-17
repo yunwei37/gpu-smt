@@ -66,3 +66,22 @@ the stock pilot remains separately scoped historical evidence. Stage CPU uses
 the calling thread, excludes external LP-child CPU and retains residual work.
 Concurrent invocation-wall sums are not whole-elapsed fractions. This is an
 attribution correction, with no threshold, cohort or performance-trial change.
+
+
+## Actual-fault/default repair before valid full formal comparisons
+
+The unlimited formal-baseline capture triggered a global OOM at original
+miniF2F indices2400–2403. It is a failed/censored attempt, not a full comparison.
+Pinned SHRED's nativeclient already defaults to48GiBaddressspace, but the local
+caller passedNone. Remove that override for all formal methods; use the actual
+client property in terminal metadata rather than copying a setting. The root
+controller/Agent/Workspace limits stay unchanged. This restores a standard
+verifier default within the admitted benchmark, not an added custom resource
+policy or a new hypothesis.
+
+Actual failed8-source and normal32-source qualifications engage retirement,
+restart and ordinary native checking before fresh full-default-*captures.
+The three current normal methods reproduce their prior native results exactly.
+Keep every candidate/order/failure and the same300srequest boundary. Preserve
+old unlimited partials separately; no pre/post-fault clock splicing or filtered
+successful subset. The Goedel1000primary decision is unchanged and closed.

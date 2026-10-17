@@ -2282,3 +2282,24 @@ Targeted paper results slots receive the known baseline counts with exact scope;
 prototype successful/fallback coverage remains pending while its full diagnostic
 runs. Formal original-population prefix captures also remain pending. The
 already-closed1.34668xrule and deleted hourly automation are unchanged.
+
+
+## Confirmed own-prefix OOM, preserved partials and upstream-default repair
+
+The giant118739360KiBanonREPL belongs to this Workspace's formal-prefix baseline
+at actualminiF2F indices2400–2403; safe oracle diagnostic was a separate1.79GBPSS
+family. Root's earlier incomplete fault diagnosis repeated an unsafe unlimited
+capture and impacted the shared node. No power/reset, credentials, otherWorkspace
+or infrastructure mutation is used to contain it. Existing controller recovered
+the samePVC/Workspace; persistent raw data survives.
+
+The explicitNoneargument disabled SHRED's existing48GiBverifier default.
+It is removed uniformly for all formal methods; actual childlimits are recorded,
+with root/Agentunrestricted. Actual failed8cases now returncontrolledoperational
+outcomes with2retirements; separate original32source paths allmatchprior full
+results(28complete/4rejected), normalexit andnooperational. The oldunlimited
+capture is interrupted, never mixed into the fresh default-policy comparison.
+Alloriginal candidates/order/timeout300remain. No customresourcevalue or quota
+is introduced. This is an operational/default repair, not a new scientific
+variant. Root self-review only; mainline1.34668xclosure/hourlydeletion unchanged.
+Fullprototype diagnostic and formal performance remain pending.

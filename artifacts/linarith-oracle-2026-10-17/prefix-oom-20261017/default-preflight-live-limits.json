@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-17T08:45:54.541457+00:00",
+  "processes": [
+    {
+      "pid": 4974,
+      "exe": "/usr/bin/python3.13",
+      "limits": "Max address space         unlimited            unlimited            bytes     ",
+      "rss": 43991040,
+      "vms": 51331072
+    },
+    {
+      "pid": 4975,
+      "exe": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+      "limits": "Max address space         51539607552          51539607552          bytes     ",
+      "rss": 287494144,
+      "vms": 367415296
+    },
+    {
+      "pid": 4976,
+      "exe": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/prefix/repl-kernel/.lake/build/bin/repl",
+      "limits": "Max address space         51539607552          51539607552          bytes     ",
+      "rss": 13704691712,
+      "vms": 15920279552
+    }
+  ],
+  "scope": "root controller unrestricted; verifier inherited upstream default only"
+}

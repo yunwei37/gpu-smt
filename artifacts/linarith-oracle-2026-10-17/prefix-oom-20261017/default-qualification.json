@@ -1,0 +1,56 @@
+{
+  "utc": "2026-10-17T08:54:14.240563+00:00",
+  "failed_case": {
+    "state": "complete",
+    "dataset": "minif2f",
+    "method": "batch",
+    "expected": 8,
+    "returned": 8,
+    "counts": {
+      "operational": 8
+    },
+    "whole_seconds": 273.978813199,
+    "cpu_seconds": 346.049157,
+    "normal_native_exit": false,
+    "forced_native_retirements": 2,
+    "cpu_accounting_complete": false,
+    "native_parse_seconds": 0.0,
+    "fallbacks": 0,
+    "executed_prefix_nodes": 0,
+    "cached_lookups": 0,
+    "affinity": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"
+  },
+  "normal_original32": {
+    "batch": {
+      "sources": 32,
+      "counts": {
+        "complete": 28,
+        "rejected": 4
+      },
+      "full_result_differences_from_prior_same_method": []
+    },
+    "exact": {
+      "sources": 32,
+      "counts": {
+        "complete": 28,
+        "rejected": 4
+      },
+      "full_result_differences_from_prior_same_method": []
+    },
+    "unit": {
+      "sources": 32,
+      "counts": {
+        "complete": 28,
+        "rejected": 4
+      },
+      "full_result_differences_from_prior_same_method": []
+    }
+  },
+  "scope": "controlled actual failed-case/native successor-path qualification; no complete-population performance claim; upstream48GiBdefault and300srequest timeout, parent/Agentunrestricted"
+}
