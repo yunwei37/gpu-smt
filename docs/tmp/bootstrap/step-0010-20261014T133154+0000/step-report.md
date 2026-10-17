@@ -3591,3 +3591,22 @@ distinct; neither corrects whole wall. Alloriginal input/order/defaults and
 three-pair1.5rule remain. No GPU contribution or independent audit claimed.
 Commitcb24b76's GitHubbenchmark-smoke run39004511060completed successfully,
 covering SMT smoke/regression scope, not Lean performance or paper acceptance.
+
+
+### Second complete paired result — 2026-10-17T05:49:29.228670+00:00
+
+Root waits on the actual second collector exit with an existing pidfd/tool
+handle, without repeated goal-round status turns or new experiments.
+Reference2closes2364.280014s vsown prototype1755.729870s, ratio1.346608x.
+Firstpair1.347247x. All1000sources/order,992complete/8rejected, zerooperational
+and nativeEOF/exit0 match. Full native JSON matches across repeats of each
+method, hence the same88unused-variable-warning-only differences persist.
+Raw reference2is now published; earlier prototype-only status is updated only
+after its own reference terminal, preserving historical acquisition notes.
+
+Thirdpair is already executing through the existing driver. Both completed
+pairs are below1.5x, but the predeclared three-pair decision remains pending.
+No new CPUgrid, threshold change or GPUprovider. PSSbaseline8.725vs4.656GB
+variation prevents a replicated-memory claim; native CPUcounter scopes remain.
+Paper/README/evaluation receive the two observed pairs, with thirdpair blank.
+Root self-review; full EXP/WRITE/REVIEWgates remain unfinished.

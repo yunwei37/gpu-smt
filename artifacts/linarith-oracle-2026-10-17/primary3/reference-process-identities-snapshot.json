@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-17T05:55:39.403792+00:00",
+  "phase": "primary3 reference still running, not terminal; after transient node exec interruption",
+  "processes": [
+    {
+      "pid": 2120113,
+      "parent_pid": 1,
+      "name": "python3",
+      "exe": "/usr/bin/python3.13"
+    },
+    {
+      "pid": 2123628,
+      "parent_pid": 2120113,
+      "name": "python",
+      "exe": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python"
+    },
+    {
+      "pid": 2123629,
+      "parent_pid": 2123628,
+      "name": "lake",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lake"
+    },
+    {
+      "pid": 2123656,
+      "parent_pid": 2123629,
+      "name": "repl",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+    },
+    {
+      "pid": 2123675,
+      "parent_pid": 2123656,
+      "name": "farkas-external",
+      "exe": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support"
+    }
+  ]
+}

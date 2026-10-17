@@ -22,3 +22,11 @@ The main input, code/library, native limits and1sobserver stay unchanged.
 
 Root authored and reviewed; not an independent audit. Standard-population
 prefix execution and strong four-stage diagnostics remain unfinished.
+
+
+Update after the corresponding reference closes:2364.280014010s versus the
+above1755.729869925sprototype. Pairedratio1.346608071383, with all1000native
+outcomes matching and the same88unused-variable-warning-only differences as
+pair1. Source/native invariance across both repeats is observed directly.
+The original acquisition timing statement above is historical; now see
+comparison.json and result-review.md for the complete second pair.

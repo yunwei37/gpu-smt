@@ -345,3 +345,20 @@ still active, so no second paired speedup is computed from a different block.
 The1.347247first-pair ratio and three-pair decision remain unchanged. Raw
 closed second-cell evidence and self-review are underprimary2/. This is
 a repeated CPU prototype observation, not a GPU result or final gate decision.
+
+
+## Second complete direct-certificate pair
+
+Own reference2364.280014010s; own prototype1755.729869925s;
+ratio1.346608071383. Firstpair1.347247100986. Both return exactly the frozen
+1000sources with992complete/8rejected and zero operational; both normalexit0.
+Full native JSON is identical across reference repeats and prototype repeats,
+so the same88unused-variable-warning-only intermethod differences remain.
+The second pair is below1.5x, with thirdpair and finalrule still pending.
+Its source-associated raw data and review are underprimary2/.
+
+Sampled baseline peak PSS varies from8.725GBinpair1to4.656GBinpair2,
+while prototype peaks are4.345/4.355GB. Do not claim replicated halved memory.
+Second recorded collector/waitedCPU2512.606/2062.332s differs from sampled
+lower bounds3502.820/2695.284s; neither ratio is exact CPU reduction or a
+wall correction. All primary whole clocks retain default common observation.

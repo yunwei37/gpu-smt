@@ -2205,3 +2205,12 @@ identities. Closed raw data/counters are preserved, including lower-bound CPU
 scope. This cell is progress, but full paired result/EXP/WRITE/REVIEWgate and
 finalthreshold remain incomplete. Root self-review only. Existing CI success
 is correctly restricted to its SMT smoke scope.
+
+
+Second-pair self-audit: same-method full-native JSON agrees in both repeats,
+intermethod differences are the same88unused-variable warnings, and allfrozen
+source outcomes/normalexits are checked. Own paired clocks give1.346608x,
+with no cross-epoch denominator substitution or finalthree-pair decision.
+Substantial baselinePSSvariance is visible, so initial sampled memory reduction
+is not promoted to a repeatable benefit. Existing driver advances thirdpair
+without Agent dispatch/new grid. Root self-review only.

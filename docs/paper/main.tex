@@ -658,16 +658,37 @@ reconstruction. The LP calling-thread counter excludes external solver CPU.
 Unattributed work remains separate, and concurrent invocation-wall sums are
 not divided by whole elapsed time as an acceleration bound.
 
-One complete paired observation takes 2,282.741 seconds on the CPU reference
-and 1,694.375 seconds on the direct oracle, an observed ratio of $1.347$.
-All 1,000 source verdicts match, with 992 complete and 8 rejected outcomes
-and no operational failures. The complete native payload differs on
-88 accepted sources, solely in unused-variable warnings and their positions
-or counts. Raw responses remain unchanged, so outcome agreement does not
-establish diagnostic transparency. This observation misses the predeclared
-$1.5\times$ threshold, with the remaining repetitions still unresolved.
+Two complete paired observations give ratios of $1.347$ and $1.347$
+in Table~\ref{tab:arithmetic-direct-pairs}. Each method returns all 1,000
+source verdicts with 992 complete, 8 rejected and no operational failures.
+Full native JSON matches across repeats of each method.
+Between methods, the same 88 accepted sources differ solely in unused-variable
+warnings and their positions or counts. Raw responses remain unchanged,
+so outcome agreement does not establish diagnostic transparency.
+Both observations miss the predeclared $1.5\times$ threshold, with the
+third pair still unresolved.
 
-The common resource observer consumes 312.54 and 224.17 observed collector
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Whole cohort & Pair 1 & Pair 2 & Pair 3 \\
+\midrule
+Fast/hybrid CPU (s) & 2,282.741 & 2,364.280 & -- \\
+Direct oracle CPU (s) & 1,694.375 & 1,755.730 & -- \\
+Reference / prototype & 1.347 & 1.347 & -- \\
+\bottomrule
+\end{tabular}
+\caption{Complete native verification of the same enriched 1,000-source
+cohort per cell. The first two primary pairs finish in alternating method
+order, while the third is pending. Whole times include the common resource
+observer and normal retirement. These CPU-only observations neither establish
+a GPU benefit nor complete the predeclared three-pair decision.}
+\label{tab:arithmetic-direct-pairs}
+\end{table}
+
+In the first pair, the common resource observer consumes 312.54 and 224.17 observed collector
 CPU seconds in the two methods. Whole clocks include that observer, rather
 than measuring an observer-free verifier effect.
 The recorded collector and waited-child counters are not exhaustive.
@@ -683,6 +704,10 @@ or quantify method-specific observer effects.
 The first reference uses the same executed Fast/product code as later pairs,
 but predates a repair to the then-unused prototype fallback in the common
 library. That build lineage remains explicit.
+Sampled baseline peak PSS varies from 8.725 GB in the first pair to 4.656 GB
+in the second, while prototype peaks are 4.345 and 4.355 GB.
+This baseline variation and non-atomic one-second sampling do not establish
+replicated memory savings.
 \missing{Remaining paired observations, strongest-baseline decision,
 full-cohort phase attribution, coverage and fallback costs.}
 
