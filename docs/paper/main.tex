@@ -657,6 +657,7 @@ and linearization, nonlinear product generation, LP invocation and certificate
 reconstruction. The LP calling-thread counter excludes external solver CPU.
 Unattributed work remains separate, and concurrent invocation-wall sums are
 not divided by whole elapsed time as an acceleration bound.
+
 One complete paired observation takes 2,282.741 seconds on the CPU reference
 and 1,694.375 seconds on the direct oracle, an observed ratio of $1.347$.
 All 1,000 source verdicts match, with 992 complete and 8 rejected outcomes
@@ -665,9 +666,14 @@ and no operational failures. The complete native payload differs on
 or counts. Raw responses remain unchanged, so outcome agreement does not
 establish diagnostic transparency. This observation misses the predeclared
 $1.5\times$ threshold, with the remaining repetitions still unresolved.
+
 The common resource observer consumes 312.54 and 224.17 observed collector
 CPU seconds in the two methods. Whole clocks include that observer, rather
 than measuring an observer-free verifier effect.
+A four-source Fast/hybrid control takes 55.060 seconds with the observer and
+54.559 seconds without it, with identical native responses.
+This single fixed-order diagnostic does not correct the 1,000-source clocks
+or quantify method-specific observer effects.
 The first reference uses the same executed Fast/product code as later pairs,
 but predates a repair to the then-unused prototype fallback in the common
 library. That build lineage remains explicit.

@@ -3535,3 +3535,22 @@ and batch tails retain sampling/offline scopes. Firstreference build/epoch
 lineage remains explicit. Supporting standard-population prefix runs and
 strong diagnostics are unfinished. WRITE updates just this completed result,
 leaving missing data explicit. No GPU execution or final route success/closure.
+
+
+### Supporting observer-overhead node — 2026-10-17T04:45:26.134445+00:00
+
+Fulfills the already-admitted observer-overhead qualification, not a new
+mechanism or full-cohort run. Two4source native Fast/hybrid cells differ only
+in enabling the existing1sprocess-tree memory sampler. Default/main settings
+remain unchanged; source and native paths are unchanged. Four full native
+responses match exactly and both cells exit normally.
+On55.059846s, off54.558824s; collectorCPU5.274572vs0.071496s.
+A5.203076sCPU difference is not a0.501021selapsed difference.
+
+Disabled counters are explicitlynull and empty resource streams are verified,
+with native/raw/rusage/upstream worker monitors still enabled. One fixed-order
+mixed4source control does not quantify population or method-specific overhead,
+justify subtractingCPU from wall, correct the1000clocks or change1.5xrule.
+Main secondpair and standard populations stay active. This finite supporting
+measurement and source change are root-reviewed and preserved. Full gates and
+independent audit remain unfinished/unclaimed.

@@ -254,7 +254,7 @@ class Runner:
                 raw.write(data); raw.flush(); original_feed(data)
             reader.feed_data = capture_feed
             err_task = asyncio.create_task(stderr_drain(repl, workers))
-            sampler = asyncio.create_task(sampler_loop(repl, workers))
+            sampler = asyncio.create_task(sampler_loop(repl, workers)) if args.sample_seconds > 0 else None
             header = await exchange({'cmd': HEADER}, args.header_timeout)
             event('header', worker=workers, pid=repl.proc.pid,
                   elapsed_ns=time.monotonic_ns() - t, response=header)
@@ -314,9 +314,11 @@ class Runner:
             result = {'method': name, 'rep': rep, 'state': locals().get('status', 'failed'),
                       'expected': len(items), 'attempts': completed, 'counts': dict(counts),
                       'whole_ns': time.monotonic_ns() - started, 'cpu': cpu,
-                      'sampled_peak_fleet_pss_with_collector': peak_pss,
-                      'sampled_peak_fleet_rss_with_collector': peak_rss,
-                      'sampling_read_errors': sample_errors, 'workers': workers,
+                      'sampled_peak_fleet_pss_with_collector': peak_pss if args.sample_seconds > 0 else None,
+                      'sampled_peak_fleet_rss_with_collector': peak_rss if args.sample_seconds > 0 else None,
+                      'sampling_read_errors': sample_errors if args.sample_seconds > 0 else None, 'workers': workers,
+                      'resource_observer_enabled': args.sample_seconds > 0,
+                      'sampling_seconds': args.sample_seconds,
                       'effective_RLIMIT_AS': self.inherited_as[0], 'width': self.width,
                       'normalization': 'none; preserve complete parsed native JSON values',
                       'scope': 'one original-order offline native-batch grouped-array observation; '
@@ -393,7 +395,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument('--header-timeout', type=float, default=60)
     parser.add_argument('--batch-timeout', type=float, default=300)
     parser.add_argument('--finalize-timeout', type=float, default=300)
-    parser.add_argument('--sample-seconds', type=float, default=1)
+    parser.add_argument('--sample-seconds', type=float, default=1,
+                        help='process-tree memory observation interval; nonpositive disables this observer, not raw capture or native checks')
     parser.add_argument('--orders', type=json.loads, default=None,
                         help='optional rotation orders as nested JSON list override')
     sub = parser.add_subparsers(dest='mode')

@@ -2175,3 +2175,12 @@ whole comparison below the rule, not an aggregate decision, stable speedup,
 independent review or GPU benefit. No threshold/cohort/ordering change after
 the result. Common observer cost, incomplete samples, build lineage and
 background remain disclosed. Remaining pairs continue; no new mechanism/grid.
+
+
+Observer qualification self-audit: actual closed on/off raw streams preserve
+every original source id/order and fullnativeJSON4/4, with nativeEOF/exit0.
+Optional disabling changes no native checker, timeout, corpus, fallback or
+default. Null memory metrics do not masquerade as zero memory use. The
+on/off order and sample size prevent a general causal correction. Existing
+three-pair primary observer/threshold are unchanged; no new optimization
+variant, full cohort, GPU provider or Agent is started. Root self-review only.

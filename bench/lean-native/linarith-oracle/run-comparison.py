@@ -53,6 +53,7 @@ def main():
     p.add_argument('--affinity',type=int,nargs='+',default=[12,13,14,15])
     p.add_argument('--width',type=int,default=4)
     p.add_argument('--diagnostic',action='store_true')
+    p.add_argument('--sample-seconds',type=float,default=1,help='nonpositive disables process-tree memory observer for overhead qualification')
     p.add_argument('--reuse-reference',type=Path,default=None)
     opts=p.parse_args()
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
@@ -72,14 +73,14 @@ def main():
        manifest=config,kimina=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d'),
        sdk=T/'lean-4.27.0-linux',project=T/'mathlib4',frozen=U,width=opts.width,
        orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic,
-       header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=1)
+       header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=opts.sample_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     if opts.reuse_reference is not None:
         os.symlink(opts.reuse_reference.resolve(),args.out/'rep1-fast-hybrid',target_is_directory=True)
     runner=Runner(args);runner.prepare_environment()
     (args.out/'launch.json').write_text(json.dumps({'argv':sys.argv,'pid':os.getpid(),
       'affinity':sorted(os.sched_getaffinity(0)),'methods':opts.methods,'input':str(args.input),
-      'limit':opts.limit,'header':'import Mathlib;import Aesop;import GpuArithmetic.Stages',
+      'limit':opts.limit,'resource_observer_seconds':opts.sample_seconds,'header':'import Mathlib;import Aesop;import GpuArithmetic.Stages',
       'boundary':'existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF',
       'collector':str(P)},indent=2)+'\n')
     asyncio.run(runner.run())

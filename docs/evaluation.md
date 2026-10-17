@@ -310,3 +310,16 @@ remain explicit. Three paired observations, strong phase data and formal
 prefix captures remain pending. CPU-only, no GPU gain. Full source-associated
 raw evidence and root self-review are under
 artifacts/linarith-oracle-2026-10-17/primary1/.
+
+
+The predeclared observer-overhead qualification runs the same four actual
+Real/Nat sources on the native Fast/hybrid path with process-tree memory
+observation on then off. Complete native JSON matches on allfour sources.
+Whole55.059845604sfalls to54.558824251s, while collector CPU falls from
+5.274572to0.071496s. The0.501swall difference and5.203sCPU difference must
+not be conflated. One fixed-order tiny control under shared background cannot
+correct the1000source clocks or identify method-specific observer effects.
+Only the extra PSS/RSSsampler is disabled; original worker monitors, raw
+capture, native checks, rusage and retirement remain. Main/default1s sampling
+and1.5xdecision are unchanged. Raw data and root self-review are under
+artifacts/linarith-oracle-2026-10-17/observer-overhead/.

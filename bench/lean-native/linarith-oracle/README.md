@@ -70,3 +70,11 @@ against input-top1000.jsonl (override with --input for another admitted cohort).
 It reports every cell's whole wall, observed CPU, sampled PSS, native outcomes
 and deduplicated offline batch tails. The tails refer to whole grouped-array
 batches, never individual proof service latencies or online SLOs.
+
+
+The optional --sample-seconds control defaults to the original one-second
+process-tree memory observer. Nonpositive values disable only that observer
+for measured overhead qualification, while retaining native checking, raw
+capture, rusage and normal retirement. Disabled memory metrics are null.
+The admitted primary comparisons retain the original default; the four-source
+observer-on/off control is not a correction to their whole clocks.
