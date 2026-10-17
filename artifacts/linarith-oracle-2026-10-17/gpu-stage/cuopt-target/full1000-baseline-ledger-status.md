@@ -1,0 +1,1 @@
+The complete baseline numeric replay has13416 records, zero cert/error differences, two complete wait4 worker receipts totaling1027.769668 CPU seconds. Exact LP978.032160629s, FP40.014817410s; complete composition will be published separately from whole-verification clocks.

@@ -7,6 +7,9 @@ All three primary pairs and both full phase diagnostics are complete; see the
 and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
 These are CPU results. No production service or GPU acceleration is established.
 
+The current [GPU implementation status](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/implementation-status.md) records the robust CPU/GPU support-search preflight. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths; full-cohort GPU performance is still pending. The temporary upstream GPU target must be deleted after this finite evaluation.
+
+
 The already-admitted original-population prefix comparison remains unfinished.
 Its [launch receipt](../../../artifacts/linarith-oracle-2026-10-17/formal-default/launch.json)
 and actual live process identify the existing capture. The
