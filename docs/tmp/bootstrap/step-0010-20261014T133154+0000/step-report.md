@@ -3727,3 +3727,16 @@ markers remain explicit. No independent audit or paper acceptance is claimed.
 The ordinary48GiBformal-verifier policy and distinction from deployedKimina
 server policy are disclosed. Formal full-population timing remains pending;
 no primary optimization route, hourly automation or timing grid is reopened.
+
+
+## Canonical user-authority log repair
+
+The root gate-entry read found that docs/user-instruction.md ended before the
+human-authored bounded-oracle/strict1.5x/negative-wrap/no-delegation/daily-care
+message. That exact user message is now appended verbatim, without altering
+earlier entries or copying agent reports. The existing frozen plan, completed
+three-pair decision and deleted hourly automation already follow this message;
+no new research scope, variant or execution setting is introduced. This is
+a missing provenance repair, not another empirical result. Full formal-prefix
+comparison is still running in the same live driver5256; no restart is issued.
+Root self-review only.
