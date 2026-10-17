@@ -1,0 +1,12 @@
+['cargo', 'build', '--release', '--bin', 'arithmetic-costd', '--bin', 'farkas-costd']
+   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/native)
+    Finished `release` profile [optimized] target(s) in 2.77s
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostStages.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostStages.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostNative.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostNative.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostFast.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostFast.lean']
+/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostFast.lean:289:22: warning: unused variable `cost`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostBaseline.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostBaseline.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostOracle.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostOracle.lean']
+['leanc', '-O3', '-DLEAN_EXPORTING', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/CostOracle.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-profile.so']

@@ -141,3 +141,13 @@ E114 real complete5952-source service observations at one low-load pair show wor
 E038native runtime branching is now closed by explicit user instruction after no stable stock-relative gain in the final finite diagnostic. The known-slow eager-v1 capture is operator-stopped with all partial data retained. No full matrix may restart without a beneficial real matched preflight and complete-cost rationale. This closes an implementation constructor, not the original thesis or four RQs. [Disposition, GPU boundaries and next mainline](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
 
 The [new primary-source admission](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261017T0212/report.md) verifies that plain expensive closing-proof/tactic-prefix reuse is already implemented by SHRED, while learned GPU feedback changes exact-verdict semantics. No new mechanism/preflight/full matrix is admitted; source pins, upstream-only arithmetic and released-data exclusions remain explicit. This adds prior-art pressure without changing the Initial Narrative or four RQs.
+
+
+### 2026-10-17T22:16:14.732716+00:00 — CPU result does not resolve the GPU decision
+
+The user explicitly requires evaluating the better CPU/GPU arithmetic oracle
+before applying the >1.5x continuation criterion. The CPU stage is 1.34668x; GPU
+attribution/evaluation remains open. The premature CPU-only closure is corrected
+forward and the original hourly task restored. The [all-call GPU-stage plan](../artifacts/linarith-oracle-2026-10-17/gpu-stage/plan.md) and actual 1000-source
+diagnostic now advance RQ4; they do not change the Initial Narrative, four RQs,
+prior negative constructors or novelty requirements. Root self-review only.

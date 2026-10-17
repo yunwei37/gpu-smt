@@ -3784,3 +3784,13 @@ and scoped local-link checks; current exact-prefix acquisition continues.
 CPU stage: 1.346679850013x; GPU stage in progress. Final continuation uses the better CPU/GPU oracle (>1.5x). Prior CPU-only closure and hourly deletion are superseded; historical data/receipts remain.
 Existing prefix capture is preserved; no minute polling or delegation.
 Complete all-branch attribution before admitting GPU implementation. Root self-review.
+
+
+## GPU-stage EXPERIMENT_GATE — 2026-10-17T22:15:11.264437+00:00
+
+Node: all-call-attribution; state: qualified and full acquisition active.
+See artifacts/linarith-oracle-2026-10-17/gpu-stage/progress.md and plan.md.
+Root self-review: native equality qualified on 24 sources; all-call join and
+failed-check coverage qualified; startup/logging CPU and fallback product origin
+metadata remain explicit limitations. No WRITE/REVIEW completion is claimed.
+Original prefix capture preserved; observation waiter removed; no delegation.

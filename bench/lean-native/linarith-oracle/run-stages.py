@@ -35,6 +35,7 @@ def main():
     p.add_argument('--width',type=int,default=4)
     opts=p.parse_args()
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+    resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3))
     os.sched_setaffinity(0,{12,13,14,15})
     c=json.loads((R/'artifacts/lean-modern-native-compilation-2026-10-14/native-library.json').read_text())
     manifest=U/'native-load-with-arithmetic.txt'

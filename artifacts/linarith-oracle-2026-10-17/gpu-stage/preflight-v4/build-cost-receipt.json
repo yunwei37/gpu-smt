@@ -1,0 +1,90 @@
+{
+  "utc": "2026-10-17T22:09:43.184591+00:00",
+  "commands": [
+    {
+      "cmd": [
+        "cargo",
+        "build",
+        "--release",
+        "--bin",
+        "arithmetic-costd",
+        "--bin",
+        "farkas-costd"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/native"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostStages.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostStages.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostNative.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostFast.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostBaseline.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/GpuArithmetic/CostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    },
+    {
+      "cmd": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/CostOracle.c",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/cost-profile.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017"
+    }
+  ],
+  "diagnostic_only": true
+}

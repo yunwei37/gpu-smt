@@ -53,3 +53,15 @@ raw failures, source snapshots and unrelated author files remain intact.
 CPU stage: 1.346679850013x; GPU stage in progress. Final continuation uses the better CPU/GPU oracle (>1.5x). Prior CPU-only closure and hourly deletion are superseded; historical data/receipts remain.
 Existing prefix capture is preserved; no minute polling or delegation.
 Complete all-branch attribution before admitting GPU implementation. Root self-review.
+
+
+## Substantive progress reflection — 2026-10-17T22:15:11.264437+00:00
+
+The earlier CPU-only closure was premature. The decisive missing evidence is
+all-path numeric cost, not another narrow kernel. Measure all 1,000 direct and
+fallback calls, then compare an optimistic removable-cost bound with the 10.22134%
+extra oracle wall saving required by the primary CPU result. Distinguish queue
+occupancy from removable critical-path work. If admitted, test a complete GPU
+oracle with exact repair and native checking. The new diagnostic capture is
+actually launched; prefix is left in background. Public entrypoint documentation
+now links the active GPU plan and preserves all failure routes and raw records.

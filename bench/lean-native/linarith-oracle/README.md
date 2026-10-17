@@ -148,3 +148,19 @@ client-request intervals and failed-request roundtrip wall. Their fractions
 are emitted only after pairing and non-overlap checks; they are not native CPU
 or tactic/solver-stage fractions. Missing comparison cells remain pending.
 See the [complete miniF2F batch reference and limits](../../../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md).
+
+## GPU-stage all-call diagnostics
+
+The [frozen GPU-stage plan](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/plan.md)
+extends attribution to every direct/fallback numeric request. Build with
+build-cost.py after the existing build-stages/build-oracle/build-strong-profile
+dependencies. It creates cost-profile.so and two diagnostic binaries in the
+retained build tree, preserving primary binaries and active prefix files.
+
+run-comparison.py --cost-profile --methods fast-hybrid oracle --out OUTPUT
+uses the same frozen inputs, native worker and whole-clock boundary. New captures
+use 48 GiB RLIMIT_AS; allocation failures remain resource/operational outcomes.
+analyze-cost.py CELL joins per-call IDs and exact source bodies, separates
+FP search/exact LP/repair/protocol costs, records matrix sparsity, and reports
+overlap/batching and wave-based tails. These are diagnostics, not new primary
+speedups. Missing joins disable a claimed bound. Reuse no active capture directory.
