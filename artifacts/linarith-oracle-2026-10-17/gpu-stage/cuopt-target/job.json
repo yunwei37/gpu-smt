@@ -1,0 +1,47 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "name": "gpu-smt-cuopt-20261017",
+    "namespace": "coder",
+    "labels": {
+      "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+    },
+    "annotations": {
+      "admission.yunwei37.com/approval-ref": "gpu-smt/artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/contract.md",
+      "admission.yunwei37.com/user-words": "如果上限够得着 1.5×，就实现 GPU 批量 oracle：批量 LP 用 cuOpt batch/PDLP 或自写求解器，浮点解只用来找支持集，CPU 做精确修复，Lean 照旧检查证书，失败就回退强基线。"
+    }
+  },
+  "spec": {
+    "backoffLimit": 0,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+        }
+      },
+      "spec": {
+        "restartPolicy": "Never",
+        "nodeSelector": {
+          "fleet.yunwei37.com/gpu": "rtx5090"
+        },
+        "containers": [
+          {
+            "name": "cuopt",
+            "image": "nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734",
+            "command": [
+              "/bin/bash",
+              "-c",
+              "ulimit -c 0; ulimit -v 50331648; exec /opt/cuopt/entrypoint.sh proxy"
+            ],
+            "resources": {
+              "limits": {
+                "nvidia.com/gpu": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
