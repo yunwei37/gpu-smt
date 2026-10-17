@@ -3,6 +3,7 @@
   "summary": {
     "whole_seconds": 2282.741330131,
     "cpu_seconds": 2387.679575,
+    "cpu_seconds_scope": "collector and waited-child rusage only; not exhaustive descendant CPU",
     "peak_observed_pss_bytes_with_collector": 8724948992,
     "counts": {
       "complete": 992,
@@ -10,6 +11,35 @@
     },
     "workers": 1,
     "batch_width": 4,
+    "process_tree_cpu": {
+      "available": true,
+      "resource_samples": 1967,
+      "collector_pid": 2116820,
+      "sampled_children": [
+        {
+          "pid": 2116821,
+          "created": 1792206740.5,
+          "sampled_cpu_seconds": 0.38
+        },
+        {
+          "pid": 2116848,
+          "created": 1792206740.95,
+          "sampled_cpu_seconds": 2074.03
+        },
+        {
+          "pid": 2116860,
+          "created": 1792206745.43,
+          "sampled_cpu_seconds": 981.41
+        }
+      ],
+      "sampled_child_cpu_seconds_lower_bound": 3055.82,
+      "waited_children_cpu_seconds": 2075.141985,
+      "sampled_tree_cpu_seconds_lower_bound": 3368.35759,
+      "recorded_collector_and_waited_cpu_seconds": 2387.679575,
+      "known_pipeline_cpu_seconds_lower_bound": 3368.35759,
+      "sampled_minus_waited_child_cpu_seconds": 980.678015,
+      "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+    },
     "batches": 250,
     "offline_batch_p50_seconds": 5.477865328,
     "offline_batch_p95_seconds": 25.845076767,

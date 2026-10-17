@@ -2184,3 +2184,14 @@ default. Null memory metrics do not masquerade as zero memory use. The
 on/off order and sample size prevent a general causal correction. Existing
 three-pair primary observer/threshold are unchanged; no new optimization
 variant, full cohort, GPU provider or Agent is started. Root self-review only.
+
+
+CPU-accounting self-audit: actual closed samples contain more descendant self
+CPU than the waited-child counter. The revised analysis deduplicates identity,
+uses exact collector cellCPU and combines overlapping lower bounds bymaximum,
+not addition. Sampling/error/final-tail incompleteness stays explicit. Disabled
+observation gives unavailable, notzero. Recorded raw fields and primary clocks
+are untouched. No LPalgorithm fraction, observer-free speedup, GPU bound or
+invented past process identity is asserted. Live second-pair names are observed
+now and timestamped. This source-evidence node changes interpretation, not the
+threshold or workload; it is not independent review.

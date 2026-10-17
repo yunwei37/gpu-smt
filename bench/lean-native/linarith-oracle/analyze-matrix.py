@@ -7,6 +7,35 @@ def percentile(values,p):
     if not values:return None
     values=sorted(values)
     return values[max(0,math.ceil(p*len(values))-1)]
+def sampled_tree_cpu(path,terminal):
+    samples=path/'resources.jsonl.gz'
+    if not samples.exists():return {'available':False,'reason':'no resource stream'}
+    values=read(samples)
+    if not values:return {'available':False,'reason':'observer disabled or no samples'}
+    first=values[0]
+    if first['errors'] or not first['processes']:
+        return {'available':False,'reason':'initial collector identity not observed without errors'}
+    # The sampler explicitly visits its own collector before descendants.
+    root=first['processes'][0];rootkey=(root['pid'],root['created'])
+    maxima={}
+    for sample in values:
+        for proc in sample['processes']:
+            key=(proc['pid'],proc['created'])
+            maxima[key]=max(maxima.get(key,0),proc['user']+proc['system'])
+    children=[{'pid':pid,'created':birth,'sampled_cpu_seconds':cpu}
+              for (pid,birth),cpu in maxima.items() if (pid,birth)!=rootkey]
+    child_cpu=sum(x['sampled_cpu_seconds'] for x in children)
+    collector_cpu=sum(terminal['cpu']['collector'].values())
+    waited=sum(terminal['cpu']['waited_children'].values())
+    return {'available':True,'resource_samples':len(values),'collector_pid':root['pid'],
+      'sampled_children':children,
+      'sampled_child_cpu_seconds_lower_bound':child_cpu,
+      'waited_children_cpu_seconds':waited,
+      'sampled_tree_cpu_seconds_lower_bound':collector_cpu+child_cpu,
+      'recorded_collector_and_waited_cpu_seconds':collector_cpu+waited,
+      'known_pipeline_cpu_seconds_lower_bound':collector_cpu+max(child_cpu,waited),
+      'sampled_minus_waited_child_cpu_seconds':child_cpu-waited,
+      'scope':'Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged.'}
 def cell(path):
     if not (path/'terminal.json').exists():return None
     t=json.loads((path/'terminal.json').read_text())
@@ -23,8 +52,10 @@ def cell(path):
             'summary':{
               'whole_seconds':t['whole_ns']/1e9,
               'cpu_seconds':sum(v['user']+v['system'] for v in t['cpu'].values()),
+              'cpu_seconds_scope':'collector and waited-child rusage only; not exhaustive descendant CPU',
               'peak_observed_pss_bytes_with_collector':t['sampled_peak_fleet_pss_with_collector'],
               'counts':t['counts'],'workers':t['workers'],'batch_width':t['width'],
+              'process_tree_cpu':sampled_tree_cpu(path,t),
               'batches':len(batches),'offline_batch_p50_seconds':percentile(latencies,.5),
               'offline_batch_p95_seconds':percentile(latencies,.95),
               'offline_batch_max_seconds':max(latencies,default=None)}}

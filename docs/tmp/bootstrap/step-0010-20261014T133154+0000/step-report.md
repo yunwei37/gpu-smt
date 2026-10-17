@@ -3554,3 +3554,22 @@ justify subtractingCPU from wall, correct the1000clocks or change1.5xrule.
 Main secondpair and standard populations stay active. This finite supporting
 measurement and source change are root-reviewed and preserved. Full gates and
 independent audit remain unfinished/unclaimed.
+
+
+### Closed CPU accounting source node — 2026-10-17T04:54:48.972558+00:00
+
+Real analysis of immutable first-pair samples exposes a material denominator
+gap: recorded collector+waitedCPU2387.680/1941.895s versus sampled process-tree
+lower bounds3368.358/2577.754s. The helper deduplicates per-process selfCPU
+by pid/birth and adds exact collectorCPU, never child-accounting descendants
+or overlapping counters twice. Samples remain lower bounds and do not infer
+exact CPU savings, complete phase fractions, LPkernel cost or a GPU ceiling.
+The measured whole ratio1.347247and allnativeoutcomes stay unchanged.
+
+Reproducible matrix and strong-stage analysis now expose recorded/lower-bound
+scope. Existing four-source strong raw data is reanalyzed without a native
+rerun. The ongoing second pair has a freshly observed executable/parent/start
+receipt, while gone first-reference executables are not retrospectively
+invented. Root self-review. No new benchmark, parameter, mechanism or fullmatrix.
+Main acquisition/WRITEfull/REVIEWfull and the user's final threshold decision
+are still pending.

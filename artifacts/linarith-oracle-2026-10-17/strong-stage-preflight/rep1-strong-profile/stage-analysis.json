@@ -30,29 +30,62 @@
   },
   "arithmetic_invocations": 515,
   "observed_pipeline_cpu_seconds": 103.475088,
+  "process_tree_cpu": {
+    "available": true,
+    "resource_samples": 49,
+    "collector_pid": 2120006,
+    "sampled_children": [
+      {
+        "pid": 2120007,
+        "created": 1792210559.96,
+        "sampled_cpu_seconds": 0.30000000000000004
+      },
+      {
+        "pid": 2120034,
+        "created": 1792210560.32,
+        "sampled_cpu_seconds": 97.16
+      },
+      {
+        "pid": 2120051,
+        "created": 1792210563.72,
+        "sampled_cpu_seconds": 0.2
+      }
+    ],
+    "sampled_child_cpu_seconds_lower_bound": 97.66,
+    "waited_children_cpu_seconds": 98.37877999999999,
+    "sampled_tree_cpu_seconds_lower_bound": 102.75630799999999,
+    "recorded_collector_and_waited_cpu_seconds": 103.475088,
+    "known_pipeline_cpu_seconds_lower_bound": 103.475088,
+    "sampled_minus_waited_child_cpu_seconds": -0.7187799999999953,
+    "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+  },
   "arithmetic_thread_cpu_seconds": 50.757963189,
   "phases": {
     "preprocess_and_linearize": {
       "thread_cpu_seconds": 26.482911676000015,
       "fraction_observed_pipeline_cpu": 0.25593514523998295,
-      "summed_invocation_wall_seconds": 26.51310811800001
+      "summed_invocation_wall_seconds": 26.51310811800001,
+      "ratio_to_known_cpu_lower_bound": 0.25593514523998295
     },
     "nonlinear_products": {
       "thread_cpu_seconds": 11.920856685999997,
       "fraction_observed_pipeline_cpu": 0.11520508864897025,
-      "summed_invocation_wall_seconds": 12.159728475000005
+      "summed_invocation_wall_seconds": 12.159728475000005,
+      "ratio_to_known_cpu_lower_bound": 0.11520508864897025
     },
     "lp_caller": {
       "thread_cpu_seconds": 0.11573529199999992,
       "fraction_observed_pipeline_cpu": 0.0011184845960217973,
-      "summed_invocation_wall_seconds": 0.4520113829999998
+      "summed_invocation_wall_seconds": 0.4520113829999998,
+      "ratio_to_known_cpu_lower_bound": 0.0011184845960217973
     },
     "certificate": {
       "thread_cpu_seconds": 11.806003967000011,
       "fraction_observed_pipeline_cpu": 0.11409513338128315,
-      "summed_invocation_wall_seconds": 11.921056712000015
+      "summed_invocation_wall_seconds": 11.921056712000015,
+      "ratio_to_known_cpu_lower_bound": 0.11409513338128315
     }
   },
   "unattributed_pipeline_cpu_seconds": 53.14958037899998,
-  "scope": "Diagnostic build of Fast/hybrid and product reuse; source-associated native verdict comparison required. Thread CPU stage counters exclude external LP-child CPU; pipeline denominator includes observed collector and waited-child CPU. LP round-trip wall includes queue, IPC and external solve but overlaps concurrent source work, so these wall sums are not whole-wall fractions or an end-to-end speedup upper bound. Preprocessing includes numeric parse/type reasoning and restricted native linearization, not a separate ring/defeq/typeclass partition. Failed pre-probe/setup/control and work outside arithmetic remain unattributed."
+  "scope": "Diagnostic build of Fast/hybrid and product reuse; source-associated native verdict comparison required. Thread CPU stage counters exclude external LP-child CPU; pipeline denominator includes observed collector and waited-child CPU, not exhaustive external descendants. Ratios to known CPU lower bounds remain descriptive counter ratios, not exact complete-verification phase fractions. LP round-trip wall includes queue, IPC and external solve but overlaps concurrent source work, so these wall sums are not whole-wall fractions or an end-to-end speedup upper bound. Preprocessing includes numeric parse/type reasoning and restricted native linearization, not a separate ring/defeq/typeclass partition. Failed pre-probe/setup/control and work outside arithmetic remain unattributed."
 }

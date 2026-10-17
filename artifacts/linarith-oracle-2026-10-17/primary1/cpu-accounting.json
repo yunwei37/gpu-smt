@@ -1,0 +1,66 @@
+{
+  "reference": {
+    "available": true,
+    "resource_samples": 1967,
+    "collector_pid": 2116820,
+    "sampled_children": [
+      {
+        "pid": 2116821,
+        "created": 1792206740.5,
+        "sampled_cpu_seconds": 0.38
+      },
+      {
+        "pid": 2116848,
+        "created": 1792206740.95,
+        "sampled_cpu_seconds": 2074.03
+      },
+      {
+        "pid": 2116860,
+        "created": 1792206745.43,
+        "sampled_cpu_seconds": 981.41
+      }
+    ],
+    "sampled_child_cpu_seconds_lower_bound": 3055.82,
+    "waited_children_cpu_seconds": 2075.141985,
+    "sampled_tree_cpu_seconds_lower_bound": 3368.35759,
+    "recorded_collector_and_waited_cpu_seconds": 2387.679575,
+    "known_pipeline_cpu_seconds_lower_bound": 3368.35759,
+    "sampled_minus_waited_child_cpu_seconds": 980.678015,
+    "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+  },
+  "prototype": {
+    "available": true,
+    "resource_samples": 1469,
+    "collector_pid": 2119391,
+    "sampled_children": [
+      {
+        "pid": 2119408,
+        "created": 1792210035.02,
+        "sampled_cpu_seconds": 0.39
+      },
+      {
+        "pid": 2119435,
+        "created": 1792210035.49,
+        "sampled_cpu_seconds": 1714.21
+      },
+      {
+        "pid": 2119450,
+        "created": 1792210040.36,
+        "sampled_cpu_seconds": 253.62
+      },
+      {
+        "pid": 2119451,
+        "created": 1792210040.53,
+        "sampled_cpu_seconds": 385.36
+      }
+    ],
+    "sampled_child_cpu_seconds_lower_bound": 2353.58,
+    "waited_children_cpu_seconds": 1717.7208329999999,
+    "sampled_tree_cpu_seconds_lower_bound": 2577.754179,
+    "recorded_collector_and_waited_cpu_seconds": 1941.895012,
+    "known_pipeline_cpu_seconds_lower_bound": 2577.754179,
+    "sampled_minus_waited_child_cpu_seconds": 635.8591670000001,
+    "scope": "Each cell creates fresh workers. Per-process self user+system maxima deduplicated by pid/birth, plus exact collector rusage. Excludes children_user/system fields and does not double count ancestry. Sampled maxima miss unobserved processes/final tails and incomplete reads. Known lower bound takes the maximum of overlapping observed counters, never their sum. This is a lower bound, not exact total CPU, phase attribution, or a wall-time correction. Native outcomes and primary whole-time rule are unchanged."
+  },
+  "scope": "Root self-review of original closed process-resource streams. Lower bounds are not exact totals, phase fractions, CPU-reduction estimates or wall corrections. Native1.347247ratio and1.5decision rule unchanged."
+}

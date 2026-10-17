@@ -323,3 +323,16 @@ Only the extra PSS/RSSsampler is disabled; original worker monitors, raw
 capture, native checks, rusage and retirement remain. Main/default1s sampling
 and1.5xdecision are unchanged. Raw data and root self-review are under
 artifacts/linarith-oracle-2026-10-17/observer-overhead/.
+
+
+Reanalysis of the closed first-pair per-process CPU samples demonstrates
+non-exhaustive waited-child accounting. Deduplicated child self-CPU maxima,
+plus exact collectorCPU, give lower bounds3368.357590sreference and
+2577.754179sprototype, versus recorded collector/waited2387.679575s and
+1941.895012s. Do not sum overlapping counters or infer exact CPU reductions
+from their lower-bound ratio. Missing tail/process samples and incomplete reads
+remain. These quantities are not LP-algorithm attribution or complete phase
+fractions; actual whole times and1.347247ratio do not change. Evidence and
+root source/identity limitations are underprimary1/cpu-accounting.json and
+cpu-accounting-review.md. A live second-pair identity snapshot is retained
+separately; no past process identity is falsely presented as current.

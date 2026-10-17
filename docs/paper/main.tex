@@ -670,6 +670,12 @@ $1.5\times$ threshold, with the remaining repetitions still unresolved.
 The common resource observer consumes 312.54 and 224.17 observed collector
 CPU seconds in the two methods. Whole clocks include that observer, rather
 than measuring an observer-free verifier effect.
+The recorded collector and waited-child counters are not exhaustive.
+Deduplicated sampled descendant self-CPU maxima, plus collector CPU,
+give lower bounds of 3,368.36 and 2,577.75 CPU seconds for the two methods,
+above their recorded totals of 2,387.68 and 1,941.90 seconds.
+Sampling misses final tails and unseen processes, so these bounds neither
+determine exact CPU reductions nor replace the complete wall clocks.
 A four-source Fast/hybrid control takes 55.060 seconds with the observer and
 54.559 seconds without it, with identical native responses.
 This single fixed-order diagnostic does not correct the 1,000-source clocks

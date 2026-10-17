@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-17T04:52:20.831416+00:00",
+  "collector": 2121014,
+  "processes": [
+    {
+      "pid": 2121014,
+      "parent_pid": 2120113,
+      "name": "python",
+      "exe": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "start_ticks": 64310153
+    },
+    {
+      "pid": 2121015,
+      "parent_pid": 2121014,
+      "name": "lake",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lake",
+      "start_ticks": 64310211
+    },
+    {
+      "pid": 2121042,
+      "parent_pid": 2121015,
+      "name": "repl",
+      "exe": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+      "start_ticks": 64310255
+    },
+    {
+      "pid": 2121055,
+      "parent_pid": 2121042,
+      "name": "arithmetic-orac",
+      "exe": "/tmp/gpu-smt-linarith-oracle-20261017/arithmetic-oracled-product-sign-fixed",
+      "start_ticks": 64310682
+    },
+    {
+      "pid": 2121056,
+      "parent_pid": 2121042,
+      "name": "farkas-external",
+      "exe": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+      "start_ticks": 64310697
+    }
+  ],
+  "scope": "Actual live process identities for the ongoing second pair, not a completed result or a reconstructed past observation."
+}
