@@ -372,3 +372,22 @@ wall correction. All primary whole clocks retain default common observation.
 ## Actual pinned-dependency rebuild and resumed acquisition
 
 Lean4.27/Mathlib/Farkas/nativeREPL/strong-profile/direct-oracle and4.9prefix dependencies are rebuilt from recorded sources in the same Workspace. New24-source full native responses match published same-method values exactly; fresh32-source prefix methods agree28complete/4rejected, normalexit, nooperational. Finite drivers now reuse closed pairs1/2 and only resume the interrupted thirdpair, then strong-stage diagnostic; full original prefix populations restart with separate post-fault clocks. Persistent raw paths, actual launch commands/PIDs, build failures/repairs and root self-review are retained under artifacts/linarith-oracle-2026-10-17/recovery-20261017/. These qualifications do not close the performance threshold or full gates.
+
+
+## Three matched arithmetic pairs close the continuation rule
+
+Allsix1000source cells are complete with992complete/8rejected, zerooperational
+and identical per-source verdicts. Same-method full native JSON is unchanged
+across allthree repetitions; the same88unused-variable-warning differences
+remain between methods. Whole ratios1.347247100986/1.346608071383/1.346196506262;
+aggregate1.346679850013, reduction25.743301%. The strictmore-than1.5x
+rule fails. Conditional extra CPU competitors are not needed and not started.
+The gpu-smt-osdi hourly app heartbeat has been deleted with a deletedreceipt.
+Raw prototype3, allpair analysis and decision live under the canonical
+linarith-oracle artifact directory. Root self-review only.
+
+This closes the admitted mainline continuation decision, not every requested
+experiment or paper gate. The already-started full strong-phase diagnostic
+and originalminiF2F/ProofNet prefix captures continue to finish their report.
+No new kernel, CPUvariant, agent, Workspace or optimization matrix is admitted.
+Allresults are CPU-only; no GPU contribution or general impossibility claimed.

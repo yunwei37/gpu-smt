@@ -16,7 +16,7 @@ The native CPU branch-runtime and scalar GPU constructor routes are closed;
 their complete, failed and partial results remain in the
 [evaluation record](docs/evaluation.md). Research runs directly on `main`.
 
-The active experiment is a [bounded linarith/nlinarith oracle comparison](artifacts/linarith-oracle-2026-10-17/plan.md):
+The completed primary arithmetic comparison follows the [bounded linarith/nlinarith oracle protocol](artifacts/linarith-oracle-2026-10-17/plan.md):
 1,000 arithmetic-heavy original GoedelWorkbook candidates, native stage-cost
 measurement, external untrusted polynomial/product/LP search, and one native
 coefficient-certificate check with fallback. Success requires **more than 1.5×
@@ -24,19 +24,16 @@ end-to-end improvement over the fastest valid native baseline**, with matching
 verification outcomes. Otherwise the route is written up as negative and the
 hourly research automation is stopped. Preflight values are not full results.
 
-Two complete paired observations on the same 1,000 sources give **1.347×**
-each. Fast/hybrid takes **2,282.741 / 2,364.280 s**, and the direct oracle
-**1,694.375 / 1,755.730 s**. All source verdicts match (992 complete, 8 rejected,
-no operational failures), with the same 88 unused-variable-warning differences.
-Both pairs miss 1.5×; the third pair and final decision are pending.
-A shared-node/storage failure interrupted the third pair and full prefix
-capture; [recovery and data-loss scope](artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md)
-are explicit. Closed results remain published; fixed dependencies have been
-rebuilt and checked on 24 arithmetic and 32 prefix candidates. The interrupted
-third pair and full prefix captures have resumed in the same Workspace, with
-new raw files on its existing persistent volume.
-[Raw results and limitations](artifacts/linarith-oracle-2026-10-17/primary2/result-review.md)
-preserve observer cost, first-reference lineage and substantial sampled-memory variation.
+Three complete matched observations on the frozen1,000 sources give
+**1.34668×** in aggregate (**25.74%** less elapsed time), below the predeclared
+**more-than1.5×** continuation rule. Every cell returns992complete/8rejected,
+zerooperational, with matching source verdicts and the same88unused-variable
+warning differences. These are CPU-only results. The route is closed as the
+mainline and the hourly research automation has been deleted.
+[Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
+retain every pair and the post-fault rebuild lineage. Already-requested full
+phase attribution and original-population prefix captures continue to finish
+the report; their completion is still pending.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by

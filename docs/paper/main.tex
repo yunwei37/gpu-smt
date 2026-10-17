@@ -658,15 +658,17 @@ reconstruction. The LP calling-thread counter excludes external solver CPU.
 Unattributed work remains separate, and concurrent invocation-wall sums are
 not divided by whole elapsed time as an acceleration bound.
 
-Two complete paired observations give ratios of $1.347$ and $1.347$
+Three complete paired observations give ratios of $1.347$, $1.347$ and $1.346$
 in Table~\ref{tab:arithmetic-direct-pairs}. Each method returns all 1,000
 source verdicts with 992 complete, 8 rejected and no operational failures.
 Full native JSON matches across repeats of each method.
 Between methods, the same 88 accepted sources differ solely in unused-variable
 warnings and their positions or counts. Raw responses remain unchanged,
 so outcome agreement does not establish diagnostic transparency.
-Both observations miss the predeclared $1.5\times$ threshold, with the
-third pair still unresolved.
+The ratio of aggregate complete times is $1.34668$, a $25.74\%$ elapsed-time
+reduction. It misses the predeclared $1.5\times$ threshold against this native
+competitor, so a faster competing reference cannot make it pass.
+These CPU-only results establish no GPU acceleration.
 
 \begin{table}[t]
 \centering
@@ -675,16 +677,15 @@ third pair still unresolved.
 \toprule
 Whole cohort & Pair 1 & Pair 2 & Pair 3 \\
 \midrule
-Fast/hybrid CPU (s) & 2,282.741 & 2,364.280 & -- \\
-Direct oracle CPU (s) & 1,694.375 & 1,755.730 & -- \\
-Reference / prototype & 1.347 & 1.347 & -- \\
+Fast/hybrid CPU (s) & 2,282.741 & 2,364.280 & 2,325.932 \\
+Direct oracle CPU (s) & 1,694.375 & 1,755.730 & 1,727.780 \\
+Reference / prototype & 1.347 & 1.347 & 1.346 \\
 \bottomrule
 \end{tabular}
 \caption{Complete native verification of the same enriched 1,000-source
-cohort per cell. The first two primary pairs finish in alternating method
-order, while the third is pending. Whole times include the common resource
-observer and normal retirement. These CPU-only observations neither establish
-a GPU benefit nor complete the predeclared three-pair decision.}
+cohort per cell, with alternating method order. Whole times include the common
+resource observer and normal retirement. All three pairs fall below the
+predeclared continuation threshold. They establish no GPU benefit.}
 \label{tab:arithmetic-direct-pairs}
 \end{table}
 
@@ -704,12 +705,14 @@ or quantify method-specific observer effects.
 The first reference uses the same executed Fast/product code as later pairs,
 but predates a repair to the then-unused prototype fallback in the common
 library. That build lineage remains explicit.
-Sampled baseline peak PSS varies from 8.725 GB in the first pair to 4.656 GB
-in the second, while prototype peaks are 4.345 and 4.355 GB.
-This baseline variation and non-atomic one-second sampling do not establish
-replicated memory savings.
-\missing{Remaining paired observations, strongest-baseline decision,
-full-cohort phase attribution, coverage and fallback costs.}
+The interrupted third attempt has no recoverable complete raw result and is
+excluded. Its replacement uses rebuilt pinned dependencies after source-native
+qualification; every same-method native response matches the earlier repeats.
+Sampled baseline peak PSS is 8.725, 4.656 and 9.986 GB across the three pairs,
+while prototype peaks are 4.345, 4.355 and 9.127 GB.
+This variation and non-atomic one-second sampling do not establish stable
+or halved memory savings.
+\missing{Full-cohort phase attribution, coverage and fallback costs.}
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations

@@ -92,3 +92,9 @@ before use; never rebuild libraries while a capture loads them.
 incomplete directories. The prefix matrix can reuse its existing closed real
 preflight receipt without an obsolete process ID. Both remain finite experiment
 drivers; no additional service or schedule is installed.
+
+The three admitted primary pairs are now complete: aggregate1.34668x, below
+the more-than1.5xrule. The hourly app automation is deleted and this route is
+closed as mainline. See the [decision and retained raw results](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
+Only the already-requested full phase/prefix captures continue to finish the
+report; this guide is not authority to start a new variant or timing grid.
