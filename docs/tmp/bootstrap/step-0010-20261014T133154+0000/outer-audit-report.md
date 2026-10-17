@@ -2418,3 +2418,7 @@ to two native waves; costs retained. Numeric occupancy35.25% is not a critical
 path share. Conditional zero-work sensitivity does not rule out1.5x; GPU stage
 continues. R2 product/CPU-ledger native24+24 and numeric126 real checks qualify.
 All implementation and recheck performed by root; self-review only.
+
+
+## 2026-10-17T23:49Z root self-audit
+Verified exact full native JSON against the fixed same-method primary reference, complete numeric streams and explicit malformed-Lean-log limitation. Rejected treating replay CPU or first real GPU support as achieved acceleration. GPU execution remains open, current four pure-feasibility jobs cancelled on demonstrated head-of-line stall; failed/partial inputs preserved. No other Workspace was changed, no subagent/OMP used. WRITE/REVIEW remain incomplete; this is self-audit only.

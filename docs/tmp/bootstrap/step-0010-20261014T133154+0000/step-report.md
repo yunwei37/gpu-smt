@@ -3814,3 +3814,13 @@ to two native waves; costs retained. Numeric occupancy35.25% is not a critical
 path share. Conditional zero-work sensitivity does not rule out1.5x; GPU stage
 continues. R2 product/CPU-ledger native24+24 and numeric126 real checks qualify.
 All implementation and recheck performed by root; self-review only.
+
+
+## 2026-10-17T23:49Z — complete native baseline and numeric CPU ledger; GPU implementation active
+- EXPERIMENT_GATE / all-call cost attribution: complete1000 native baseline,992 complete/8 rejected, full parsed native results identical to primary3. All13414 LP calls preserved: FP40.164341418 CPU seconds, exact LP939.639026243, repair0.489420396. Original malformed ten-line Lean telemetry explicitly retained; complete Lean partition cannot be certified.
+- EXPERIMENT_GATE / oracle numeric replay:10259 records, zero certificate/error differences, complete wait4 worker receipts632.869840 CPU seconds. Numeric-only attribution, not whole-verification speedup.
+- EXPERIMENT_GATE / GPU mechanism: running upstream cuOpt26.10 on RTX5090 with48GiB cap. Initial missing-runtime launch and invalid HTTP NaN/pure-feasibility stalls retained. Root implements always-feasible phase-I and actual ready-queue block-diagonal support batches; no full GPU performance result yet. Existing prefix and baseline numeric replay preserved.
+- WRITE_GATE: targeted current-state documentation only; full writing/claim integration waits for valid GPU result. CPU1.34668x remains stage result, not final closure.
+- REVIEW_GATE: root self-review, not independent audit; formal GPU native agreement and paired end-to-end matrix pending.
+- User boundary remains best(CPU,GPU)>1.5x. Hourly automation active; no premature closure or minute-by-minute empty waits.
+Evidence: artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/ and full1000-oracle-numeric-replay/.

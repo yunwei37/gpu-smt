@@ -1,0 +1,108 @@
+{
+  "workers": [
+    {
+      "pid": 14632,
+      "service_kind": "direct",
+      "records_including_handshake": 4202,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 0.064653489,
+        "linear": 0.234666212,
+        "products": 3.093153925,
+        "matrix_pack": 0.688179198,
+        "lp_build": 0.208734641,
+        "fp_solve": 15.299071985,
+        "exact_lp": 222.740134427,
+        "exact_verify": 0.025172818,
+        "response_pack": 0.018712397,
+        "response_write": 0.014355727,
+        "exact_repair": 0.179875862
+      },
+      "session_other_cpu_seconds": 0.337401558,
+      "session_cpu_seconds": 242.904112239,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 0.021705132,
+      "diagnostic_write_cpu_seconds": 0.331995612,
+      "worker_total_cpu_seconds": 243.29489,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.037077017
+    },
+    {
+      "pid": 14665,
+      "service_kind": "fallback",
+      "records_including_handshake": 6050,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 1.730545748,
+        "response_write": 0.012098466,
+        "lp_build": 0.191482909,
+        "fp_solve": 18.830481971,
+        "exact_lp": 362.808723096,
+        "response_pack": 0.024240656,
+        "exact_repair": 0.065147895,
+        "exact_verify": 0.016395164
+      },
+      "session_other_cpu_seconds": 0.215320189,
+      "session_cpu_seconds": 383.894436094,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 0.02599379,
+      "diagnostic_write_cpu_seconds": 1.36760407,
+      "worker_total_cpu_seconds": 385.355694,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.067660046
+    },
+    {
+      "pid": 14711,
+      "service_kind": "direct",
+      "records_including_handshake": 2,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 4.4476e-05,
+        "linear": 0.00023715,
+        "products": 0.003171765,
+        "matrix_pack": 0.000731177,
+        "lp_build": 0.000228742,
+        "fp_solve": 0.00173789,
+        "exact_lp": 2.455542679,
+        "response_pack": 8.678e-06,
+        "response_write": 2.2127e-05
+      },
+      "session_other_cpu_seconds": 0.000562577,
+      "session_cpu_seconds": 2.462287261,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 1.4565e-05,
+      "diagnostic_write_cpu_seconds": 0.000283678,
+      "worker_total_cpu_seconds": 2.464023,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.001437496
+    },
+    {
+      "pid": 14714,
+      "service_kind": "fallback",
+      "records_including_handshake": 5,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 0.004601336,
+        "response_write": 3.5602e-05,
+        "lp_build": 0.000961721,
+        "fp_solve": 0.172485413,
+        "exact_lp": 1.571142087,
+        "response_pack": 1.747e-06
+      },
+      "session_other_cpu_seconds": 0.000709815,
+      "session_cpu_seconds": 1.749937721,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 7.0368e-05,
+      "diagnostic_write_cpu_seconds": 0.0036208,
+      "worker_total_cpu_seconds": 1.755233,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.001604111
+    }
+  ],
+  "all_worker_receipts_complete": true,
+  "scope": "wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."
+}
