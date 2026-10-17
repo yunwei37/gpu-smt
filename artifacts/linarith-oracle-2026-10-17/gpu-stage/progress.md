@@ -35,3 +35,16 @@ Current attribution limits:
   the threshold. Otherwise the GPU prototype remains admitted for real testing.
 
 No OSDI acceptance, independent audit, final GPU gain or impossibility is claimed.
+
+
+## Completed CPU competitor qualification — 2026-10-17T22:29:34.680446+00:00
+
+The existing pinned HiGHS path actually engages (230 calls,225 support repairs)
+and returns the same24complete verdicts. Whole36.834323s hybrid/53.655261s
+HiGHS in the matched finite qualification. No HiGHS full matrix follows. Native
+warning differences remain unnormalized. This does not resolve GPU feasibility.
+
+The numeric analysis now separates wall fields from CPU fields explicitly.
+Complete generated analysis arrays are losslessly compressed beside small
+readable summaries; all original raw capture files remain. Smoke CI39074378920
+passes e8c5c58, which is not a Lean/GPU performance validation.

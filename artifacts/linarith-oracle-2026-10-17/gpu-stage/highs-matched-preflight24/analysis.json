@@ -1,0 +1,104 @@
+{
+  "utc": "2026-10-17T22:28:35.514933+00:00",
+  "scope": "24-source finite overlapped matched qualification, affinity0-3, 48 GiB; not a final performance or full-population conclusion",
+  "cells": {
+    "rep1-fast-hybrid": {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 24,
+      "attempts": 24,
+      "counts": {
+        "complete": 24
+      },
+      "whole_ns": 36834322728,
+      "cpu": {
+        "collector": {
+          "user": 0.031179999999999986,
+          "system": 2.6829720000000004
+        },
+        "waited_children": {
+          "user": 35.837074,
+          "system": 1.401828
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 4193501184,
+      "sampled_peak_fleet_rss_with_collector": 7937757184,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 4,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+    },
+    "rep1-fast-highs": {
+      "method": "fast-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 24,
+      "attempts": 24,
+      "counts": {
+        "complete": 24
+      },
+      "whole_ns": 53655261139,
+      "cpu": {
+        "collector": {
+          "user": 0.07713199999999998,
+          "system": 4.053512
+        },
+        "waited_children": {
+          "user": 66.58706,
+          "system": 2.7509870000000003
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 5562838016,
+      "sampled_peak_fleet_rss_with_collector": 9310052352,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 4,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+    }
+  },
+  "full_native_equal": false,
+  "verdicts_equal": true,
+  "hybrid_over_highs_whole_ratio": 0.6864997382563574,
+  "HiGHS_engaged_requests": 230,
+  "HiGHS_errors": {},
+  "support_repaired_calls": 225,
+  "native_differences": [
+    {
+      "index": 16,
+      "changed_fields": [
+        "messages"
+      ],
+      "both_message_severities": {
+        "warning": 1
+      }
+    },
+    {
+      "index": 17,
+      "changed_fields": [
+        "messages"
+      ],
+      "both_message_severities": {
+        "warning": 4
+      }
+    },
+    {
+      "index": 19,
+      "changed_fields": [
+        "messages"
+      ],
+      "both_message_severities": {
+        "warning": 4
+      }
+    }
+  ],
+  "highs_slower_fraction": 0.4566647942793145
+}

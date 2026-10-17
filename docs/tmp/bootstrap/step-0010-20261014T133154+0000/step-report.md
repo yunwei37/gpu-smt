@@ -3794,3 +3794,12 @@ Root self-review: native equality qualified on 24 sources; all-call join and
 failed-check coverage qualified; startup/logging CPU and fallback product origin
 metadata remain explicit limitations. No WRITE/REVIEW completion is claimed.
 Original prefix capture preserved; observation waiter removed; no delegation.
+
+
+### GPU-stage independent work while capture runs
+
+Root restored and completed the pinned HiGHS comparator qualification; no
+benefit in matched24-source whole clocks, so no full CPU grid is launched.
+Raw evidence and source-response differences are gpu-stage/highs-matched-preflight24/.
+Analyzer CPU/wall units and product-provenance coverage are explicit; final
+1000-source attribution and GPU decision remain pending. Root self-review only.

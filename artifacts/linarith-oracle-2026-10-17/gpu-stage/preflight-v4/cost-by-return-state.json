@@ -1,0 +1,55 @@
+{
+  "scope": "24-source diagnostic only; not 1000-source distribution or a GPU bound",
+  "groups": {
+    "direct_no_certificate_or_error": {
+      "calls": 5,
+      "request_parse_cpu_seconds": 0.00015516699999999997,
+      "linear_cpu_seconds": 0.00061232,
+      "products_cpu_seconds": 0.011761652000000001,
+      "matrix_pack_cpu_seconds": 0.002596918,
+      "lp_build_cpu_seconds": 0.000875168,
+      "fp_solve_cpu_seconds": 0.050291912,
+      "exact_lp_cpu_seconds": 0.6567437030000001,
+      "response_pack_cpu_seconds": 2.0697999999999997e-05,
+      "response_write_cpu_seconds": 8.073099999999998e-05,
+      "protocol_dispatch_unattributed_cpu_seconds": 0.0009875650000000001
+    },
+    "fallback_no_certificate_or_error": {
+      "calls": 5,
+      "request_parse_cpu_seconds": 0.0077191099999999995,
+      "lp_build_cpu_seconds": 0.000909818,
+      "fp_solve_cpu_seconds": 0.05124622999999999,
+      "exact_lp_cpu_seconds": 3.105002381,
+      "response_pack_cpu_seconds": 2.531e-06,
+      "response_write_cpu_seconds": 5.0188e-05,
+      "protocol_dispatch_unattributed_cpu_seconds": 0.00113773
+    },
+    "fallback_certificate": {
+      "calls": 5,
+      "request_parse_cpu_seconds": 0.019715848,
+      "lp_build_cpu_seconds": 0.0025383420000000003,
+      "fp_solve_cpu_seconds": 0.145950098,
+      "exact_repair_cpu_seconds": 0.001023438,
+      "exact_verify_cpu_seconds": 0.000142681,
+      "response_pack_cpu_seconds": 0.000136076,
+      "response_write_cpu_seconds": 3.7065e-05,
+      "protocol_dispatch_unattributed_cpu_seconds": 0.002469015,
+      "exact_lp_cpu_seconds": 2.385304208
+    },
+    "direct_checked": {
+      "calls": 110,
+      "request_parse_cpu_seconds": 0.004303646000000003,
+      "linear_cpu_seconds": 0.00914788,
+      "products_cpu_seconds": 0.09541012999999998,
+      "matrix_pack_cpu_seconds": 0.023904572000000013,
+      "lp_build_cpu_seconds": 0.007659429999999999,
+      "fp_solve_cpu_seconds": 0.401031204,
+      "exact_lp_cpu_seconds": 3.2020677049999997,
+      "exact_verify_cpu_seconds": 0.0010396650000000002,
+      "response_pack_cpu_seconds": 0.0007539259999999998,
+      "response_write_cpu_seconds": 0.000838459,
+      "protocol_dispatch_unattributed_cpu_seconds": 0.011757167000000002,
+      "exact_repair_cpu_seconds": 0.006499761999999999
+    }
+  }
+}

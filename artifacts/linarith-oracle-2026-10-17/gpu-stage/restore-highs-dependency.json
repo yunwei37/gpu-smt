@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-17T22:21:10.620415+00:00",
+  "pid": 13307,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-m",
+    "pip",
+    "--python",
+    "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python",
+    "install",
+    "highspy==1.15.1"
+  ],
+  "version": "highspy1.15.1",
+  "alias": "/tmp/gpu-smt-highs-1.15.1-20261014",
+  "reason": "restore existing pinned CPU comparator after lost /tmp interpreter; no full matrix admitted",
+  "first_attempt": "stdlib venv ensurepip missing; reused existing pip with --python, no system package change"
+}
