@@ -1,0 +1,26 @@
+[2026-10-17 23:32:34.454] cuOpt gRPC Remote Solve Server
+[2026-10-17 23:32:34.454] ==============================
+[2026-10-17 23:32:34.454] Port: 5001
+[2026-10-17 23:32:34.454] Workers: 1
+[2026-10-17 23:32:34.456] [Server] Could not determine GPU count; workers will select devices at startup
+[2026-10-17 23:32:34.457] [Server] Result retrieval thread started
+[2026-10-17 23:32:34.457] [Server] Incumbent retrieval thread started
+[2026-10-17 23:32:34.457] [Server] Worker monitor thread started
+[2026-10-17 23:32:34.457] [Server] Session reaper thread started (timeout=300s)
+[2026-10-17 23:32:34.462] [gRPC Server] Listening on 0.0.0.0:5001
+[2026-10-17 23:32:34.462] [gRPC Server] Workers: 1
+[2026-10-17 23:32:34.462] [gRPC Server] Max message size: 268435456 bytes (256 MiB)
+[2026-10-17 23:32:34.462] [gRPC Server] Press Ctrl+C to shutdown
+[2026-10-17 23:32:34.519] [Worker 0] Started (PID: 15)
+[2026-10-17 23:32:34.519] [Worker 0] cudaGetDeviceCount failed (CUDA driver version is insufficient for CUDA runtime version)
+[2026-10-17 23:32:34.519] [Worker 0] GPU unhealthy during initialization; requesting server shutdown
+[2026-10-17 23:32:34.557] [Server] Worker 15 reported fatal GPU health failure; shutting down
+[2026-10-17 23:32:34.557] [Server] GPU health failure; shutting down
+[2026-10-17 23:32:34.557] [Server] Shutdown signal 15 received; cancelling jobs and killing workers
+[2026-10-17 23:32:34.557] [Server] Incumbent retrieval thread stopped
+[2026-10-17 23:32:34.558] [Server] Result retrieval thread stopped
+[2026-10-17 23:32:34.558] [Server] Shutting down...
+[2026-10-17 23:32:34.657] [Server] Worker monitor thread stopped
+[2026-10-17 23:32:35.457] [Server] Session reaper thread stopped
+[2026-10-17 23:32:35.457] [Server] Shutdown complete
+cuopt_grpc_server exited before opening port 5001

@@ -34,3 +34,6 @@ Cleanup: scripts/kubectl-home.ps1 -n coder delete job gpu-smt-cuopt-20261017. Ve
 - https://v1-36.docs.kubernetes.io/docs/tasks/configure-pod-container/resize-container-resources/
 
 Self-review: requested disposable benchmark authority under spark-manage AGENTS.md section8; not a persistent configuration delta. No independent audit.
+
+## First launch and repair
+The first Job omitted the existing NVIDIA runtimeClass and failed CUDA driver initialization before any numeric request. Driver/device allocation alone did not mount NVIDIA libraries. Other GPU Workspace verifies runtimeClassName=nvidia. Corrected the Job to that existing hardware execution path, retaining the same 48GiB cap, image, device allocation, and server defaults. Initial failure log is preserved. No result from this launch enters performance.
