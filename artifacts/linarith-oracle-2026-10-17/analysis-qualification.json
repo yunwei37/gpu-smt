@@ -1,0 +1,79 @@
+{
+  "corrected_fallback": {
+    "sources": 4,
+    "complete": true,
+    "same_original_source_order": true,
+    "matches_frozen_cohort": true,
+    "all_native_responses_observed": true,
+    "reference": {
+      "whole_seconds": 77.304383704,
+      "cpu_seconds": 151.72567500000002,
+      "peak_observed_pss_bytes_with_collector": 3514376192,
+      "counts": {
+        "complete": 4
+      },
+      "workers": 1,
+      "batch_width": 4,
+      "batches": 1,
+      "offline_batch_p50_seconds": 76.604831777,
+      "offline_batch_p95_seconds": 76.604831777,
+      "offline_batch_max_seconds": 76.604831777
+    },
+    "prototype": {
+      "whole_seconds": 78.353521728,
+      "cpu_seconds": 152.94673999999998,
+      "peak_observed_pss_bytes_with_collector": 3282358272,
+      "counts": {
+        "complete": 4
+      },
+      "workers": 1,
+      "batch_width": 4,
+      "batches": 1,
+      "offline_batch_p50_seconds": 77.665532164,
+      "offline_batch_p95_seconds": 77.665532164,
+      "offline_batch_max_seconds": 77.665532164
+    },
+    "baseline_over_oracle_whole_ratio": 0.986610199505237,
+    "verdict_differences": [],
+    "full_response_differences": []
+  },
+  "strong_profile": {
+    "sources": 4,
+    "complete": true,
+    "same_original_source_order": true,
+    "matches_frozen_cohort": true,
+    "all_native_responses_observed": true,
+    "reference": {
+      "whole_seconds": 77.304383704,
+      "cpu_seconds": 151.72567500000002,
+      "peak_observed_pss_bytes_with_collector": 3514376192,
+      "counts": {
+        "complete": 4
+      },
+      "workers": 1,
+      "batch_width": 4,
+      "batches": 1,
+      "offline_batch_p50_seconds": 76.604831777,
+      "offline_batch_p95_seconds": 76.604831777,
+      "offline_batch_max_seconds": 76.604831777
+    },
+    "prototype": {
+      "whole_seconds": 53.854311062,
+      "cpu_seconds": 103.475088,
+      "peak_observed_pss_bytes_with_collector": 3041457152,
+      "counts": {
+        "complete": 4
+      },
+      "workers": 1,
+      "batch_width": 4,
+      "batches": 1,
+      "offline_batch_p50_seconds": 53.306011094,
+      "offline_batch_p95_seconds": 53.306011094,
+      "offline_batch_max_seconds": 53.306011094
+    },
+    "baseline_over_oracle_whole_ratio": 1.43543538445795,
+    "verdict_differences": [],
+    "full_response_differences": []
+  },
+  "scope": "Root self-review with actual existing Real/Nat inputs and closed native responses. Different diagnostic affinity/epoch means profile whole ratio is not speed evidence. This is source/outcome validation and reproducible reporting, not a new experiment or independent audit."
+}

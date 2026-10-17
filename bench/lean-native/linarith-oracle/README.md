@@ -63,3 +63,10 @@ analyze-prefix-runs.py RUN_DIR compares every original source index between
 batch and each prefix method. It distinguishes pending, operational failures,
 verdict differences and observed versus validated whole-time ratios. A completed
 acquisition with timeout rows is not a successful verification comparison.
+
+
+The matched-cohort analysis also checks unique source ids and original order
+against input-top1000.jsonl (override with --input for another admitted cohort).
+It reports every cell's whole wall, observed CPU, sampled PSS, native outcomes
+and deduplicated offline batch tails. The tails refer to whole grouped-array
+batches, never individual proof service latencies or online SLOs.

@@ -2144,3 +2144,13 @@ unattributed. Different diagnostic affinity and tiny cohort prohibit a speedup
 claim or population-level attribution. Formal-prefix analysis checks original
 source identity and native outcomes; operational rows cannot become a false
 negative performance gate. All four RQs and final1.5xdecision remain pending.
+
+
+Closed-reference analysis self-audit: the resource/tail values are recomputed
+from the complete native receipt and original raw per-batch rows. Duplicate
+per-source copies of batch time are collapsed; source IDs/order match the
+frozen cohort exactly. Pipeline CPU retains its observed process-accounting
+scope; no external-grandchild completeness or online-tail claim is made.
+Both four-source native equality comparisons use actual preserved records.
+No running collection is restarted and no incomplete timing receives a1.5x
+decision. Scientific gates and full experiment are unfinished.

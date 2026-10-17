@@ -3471,3 +3471,22 @@ First32native pilot has zero source-verdict differences but loses elapsed time;
 full original populations remain active and unjudged. Daily reflection and
 entry docs are updated. WRITE_GATE cannot close on an incomplete prototype;
 REVIEW_GATE here is root self-review only, not independent audit.
+
+
+### Closed-reference resource analysis — 2026-10-17T04:24:21.689867+00:00
+
+EXPERIMENT_GATE remains active. This node analyzes existing closed1000source
+native evidence, with no new benchmark, agent, tuning variant or corpus change.
+Observed collector/waited-childCPU2387.680s; peak sampled PSS8,724,948,992bytes;
+250offline4source batches P50/P95/max5.478/25.845/111.772s. Exact summaries are
+preserved alongside raw data; batch tails are not per-source or online SLOs.
+
+Revised result analysis requires exact frozen source-order membership and
+unique ids before comparing complete whole times. Actual mixedReal/Nat4source
+oracle and strong-profile receipts validate source association and full native
+JSON equality. Incomplete main pairs remain pending/null. Active collectors
+2119391(main arithmetic) and2118565(formal prefix continuation) and waiting
+matrix driver2120113were verified live, with no new terminal receipts.
+Do not consume further goal rounds merely repeating this status; collect
+completed cells at their real terminal boundaries. WRITE/full REVIEW/final
+user1.5xdecision remain pending. This is root self-review.
