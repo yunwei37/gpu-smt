@@ -147,3 +147,24 @@ The complete supporting six-module normal-check profile selects frontend/meta wo
 [Complete primary search/contradiction report](tmp/bootstrap/step-0005-20261009T194100+0000/literature-20261009T202400+0000/report.md) verifies newly released [LeanPolish](https://arxiv.org/abs/2609.38384), a Sep2026 preprint rather than an accepted venue paper. Official complete-menu archives contain real failed/valid/skipped tactic outcomes, original source files and per-file logs with Lean4.21/Mathlib pins. These are proof-improvement attempts, not upstream prover traffic or demonstrated global arrivals. Publiccode70cda81 differs from manifest-generation97b93d7; historical code correspondence/actual licensed cohort still need qualification. Root independently retains exact publicsource/manifest and reads full relevant native routines; raw/source hashes are in currentstep. Existing TermElabM save/restore, command checkpoints and persistent import workers are competent native baseline mechanisms, not our contribution. Complete menu records omit skipped native calls, exact?/laterphasechecks and any unvisited budget-truncated sites; pool200char errors are not native authority. Strongest next acquisition route is native context reconstruction from original file/InfoTree and published pipeline capture, never printed-goal fabrication. Other failure-inclusive RL/prover releases lack enough native extraction/version/history evidence for immediate admission. AllfourRQ/native/warm/cache/device families remain unchanged; same-claim risk for generic branching stays high.
 
 Load-bearing source-boundary correction: the same report's follow-up audits pool emission. Menu valid means goal closure plus errors/leak/sorry screening, with NO per-candidate original declaration/kernel finalization; rejected_kernel is a broad tactic-screen label. Later selected joint edits receive command re-elaboration/optional fresh-file checking, which does not certify every alternative. Real tactic traffic is available, but fullverification experiments must retain original native contexts and actually finalize/check each claimed complete proof or use the official full-file edit path. Goal closure is not Lean acceptance; this restriction strengthens the earlier stock-snapshot/fullchecking requirement rather than narrowing the goal.
+
+## Current expensive-work admission — 2026-10-16 local / 2026-10-17 UTC
+
+The [source/coverage/decision node](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261017T0212/report.md)
+checks candidate proof-computation reuse after the user-directed E038closure.
+No new mechanism, native replay, model or full matrix is admitted.
+
+| Primary work | Verified mechanism or asset | Effect on our next decision |
+|---|---|---|
+| [SHRED a6616e9](https://github.com/memo-ozdincer/shred/tree/a6616e99534ce777dcebfd56566eaaffb63997a8) | Exact tactic prefixes and elaborated-context closing-proof reuse; pinned4.9rc1source and upstream representative CPU aggregates | Plain prefix/certificate reuse is already implemented prior art; upstream4096-pair3.24%CPU reduction and small diagnostic prefix opportunity are not our replay or wall speed |
+| [Learned Lean feedback](https://arxiv.org/abs/2610.21881) | GPU verdict/message prediction and approximate hybrid rewards; current repo announces executable code later | Its4.2xH100pipeline comparison does not establish exact native or5090acceleration; do not silently change verification into prediction |
+| [Public evaluation corpus](https://huggingface.co/datasets/EPFL-LARA/lean-evaluation-benchmark/tree/0bbf31331bd1c726f539b311cce8b058a821f15c) |68932deduplicated4.15programs/labels, with operational and precheck exclusions | Useful future source asset, not a complete arrival/cost/failure trace or an admitted new full benchmark |
+| [NanoProof](https://arxiv.org/abs/2610.11605) / LeanTree | Factorized search/interface and extracted Mathlib/DeepSeek proof trees | Strengthens existing same-mechanism comparison; extracted proofs do not supply complete failed search traffic |
+
+Root recomputes upstream published aggregates, not original private per-pair data or native runs.
+Selected per-hit maxima and enriched subsets are not whole-system results.
+A future distinct cache mechanism belongs within the existing competent warm/cache baseline family;
+citation alone settles generic novelty, so no redundant numerical rerun is needed now.
+No source establishes a surviving new high-value implementation here. Preserve allfourRQs/Initial Narrative,
+existing negatives and the full Lean/SMT/service/5090goal. Complete-evidence/contribution assessment continues
+without reviving E038/E040/scalarGPU or importing another repository's budgets, gates or hash checks.

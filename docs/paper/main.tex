@@ -703,11 +703,24 @@ must establish any additional benefit.
 \paragraph{Verification caching.}
 Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
 
+SHRED implements exact tactic-prefix sharing and reuse of closing proofs keyed
+by elaborated context and target, with native proof checking and fallback~\cite{shred}.
+Reusing expensive proof construction is therefore also established work.
+A distinct mechanism needs evidence beyond the presence of repeated tactics
+or a large acceleration for a selected cache hit.
+
 \paragraph{Prepared execution.}
 Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
 
 \paragraph{Heterogeneous checking.}
 GPU and CPU checker representations address different parts of verification. Nanoclo uses delayed substitutions, and nanoclo-fortran stores kernel objects in parallel arrays with integer identifiers~\cite{nanoclo,nanocloFortran}. These checkers are direct competitors to representation-only acceleration. Our heterogeneous evaluation asks about the expensive dynamic checking that remains and complete verification costs, rather than extrapolating from input graph width.
+
+
+Learned Lean feedback instead predicts verdicts and compiler messages on
+GPUs~\cite{learnedLeanFeedback}. Its throughput comparison has different output
+semantics from native verification, and its hybrid training rewards can use
+predictions for unfinished checks. This is complementary evidence about an
+accuracy--cost tradeoff, rather than exact native checking acceleration.
 
 \section{Conclusion}
 Native preparation and candidate execution history are separate resources in verification serving. Independent branches retain preparation while isolating candidate lifetimes, and their value depends on behavior fidelity and the equal-resource service frontier. \missing{Final findings answering all four RQs, including the measured heterogeneous scope.} The matched comparison determines whether branching supplies a systems benefit beyond existing warm reuse.

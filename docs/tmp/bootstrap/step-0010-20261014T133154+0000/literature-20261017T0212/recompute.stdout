@@ -1,0 +1,31 @@
+{
+  "upstream_revision": "a6616e99534ce777dcebfd56566eaaffb63997a8",
+  "scope": "recomputed published upstream aggregates only; no Lean replay, raw-pair replication, GPU execution or imported gate",
+  "representative": {
+    "proposals": 4096,
+    "verdict_agreements": 4096,
+    "baseline_cpu_seconds": 1492.629281490005,
+    "cached_cpu_seconds": 1444.2604100989965,
+    "cpu_saved_fraction": 0.032405147072235296,
+    "cpu_equivalent_ratio": 1.033490408691389
+  },
+  "rooted_prefix_diagnostic": {
+    "observed_cpu_denominator_seconds": 149227.48105422503,
+    "estimated_repeated_cpu_seconds": 5613.7822447244835,
+    "fraction": 0.03761895734663372,
+    "scope": "missing process-death CPU makes every fraction an upper estimate",
+    "registered_proposals": 308960,
+    "process_failures": 20
+  },
+  "enriched": {
+    "proposals": 992,
+    "verdict_disagreements": 2,
+    "cpu_saved_fraction": 0.19896628115780532,
+    "scope": "selected expensive group, incomplete enriched study; not a generalized valid win"
+  },
+  "rl_overlap": {
+    "proposals": 864,
+    "cpu_saved_fraction": 0.1389247283794791,
+    "scope": "existing overlap subset, not new held-out C1 execution"
+  }
+}
