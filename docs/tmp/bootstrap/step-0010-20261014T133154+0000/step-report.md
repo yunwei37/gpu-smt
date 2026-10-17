@@ -3620,3 +3620,8 @@ Root self-review; full EXP/WRITE/REVIEWgates remain unfinished.
 ## Actual pinned-dependency rebuild and resumed acquisition
 
 Lean4.27/Mathlib/Farkas/nativeREPL/strong-profile/direct-oracle and4.9prefix dependencies are rebuilt from recorded sources in the same Workspace. New24-source full native responses match published same-method values exactly; fresh32-source prefix methods agree28complete/4rejected, normalexit, nooperational. Finite drivers now reuse closed pairs1/2 and only resume the interrupted thirdpair, then strong-stage diagnostic; full original prefix populations restart with separate post-fault clocks. Persistent raw paths, actual launch commands/PIDs, build failures/repairs and root self-review are retained under artifacts/linarith-oracle-2026-10-17/recovery-20261017/. These qualifications do not close the performance threshold or full gates.
+
+
+## Recovered third native reference closes
+
+Actual1000source reference2325.931717792s,992complete/8rejected, zerooperational. All full native JSON matches reference2. Closed source-associated raw streams are retained underprimary3/rep1-fast-hybrid; paired prototype still executing. Three-pair/finalthreshold remains pending. Root self-review, no independent audit.
