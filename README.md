@@ -31,8 +31,10 @@ no operational failures), with the same 88 unused-variable-warning differences.
 Both pairs miss 1.5×; the third pair and final decision are pending.
 A shared-node/storage failure interrupted the third pair and full prefix
 capture; [recovery and data-loss scope](artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md)
-are explicit. Closed results remain published; missing dependencies are being
-restored in the same Workspace before the interrupted work resumes.
+are explicit. Closed results remain published; fixed dependencies have been
+rebuilt and checked on 24 arithmetic and 32 prefix candidates. The interrupted
+third pair and full prefix captures have resumed in the same Workspace, with
+new raw files on its existing persistent volume.
 [Raw results and limitations](artifacts/linarith-oracle-2026-10-17/primary2/result-review.md)
 preserve observer cost, first-reference lineage and substantial sampled-memory variation.
 

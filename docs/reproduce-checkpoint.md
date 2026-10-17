@@ -1,5 +1,14 @@
 # Reproduce the verification-acceleration checkpoint
 
+This page reproduces the historical 4 October checkpoint below. For the current
+bounded Lean4.27 arithmetic-oracle experiment, use the
+[implementation/build/recovery guide](../bench/lean-native/linarith-oracle/README.md)
+and [frozen1000-source protocol](../artifacts/linarith-oracle-2026-10-17/plan.md).
+Its actual post-rebuild native qualifications are retained separately; they are
+not full-population speedup results. Do not substitute this older checkpoint's
+baseline or metadata-GPU numbers for the current comparison.
+
+
 The measured checkpoint is `f989833` on `research/lean-acceleration`. Its sources,
 complete/partial results, proof contexts, packed GPU input, official reference
 and SMT traces are retained in this repository. No new measurements are needed
