@@ -362,3 +362,8 @@ while prototype peaks are4.345/4.355GB. Do not claim replicated halved memory.
 Second recorded collector/waitedCPU2512.606/2062.332s differs from sampled
 lower bounds3502.820/2695.284s; neither ratio is exact CPU reduction or a
 wall correction. All primary whole clocks retain default common observation.
+
+
+## Actual capture interruption and source-native recovery
+
+[Root self-review and retained loss/recovery record](../artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md). The owning Pod was replaced after node/volume errors, not by root. Two closed pairs remain published/readable; thirdpair and fullprefix are interrupted, not completed. Original /tmp partials were not recoverable. Pinned dependency restoration and subsequent capture paths use the same Workspace/PVC. No threshold, source, mechanism or audit scope changes. Full strong-stage attribution and finaldecision remain pending.

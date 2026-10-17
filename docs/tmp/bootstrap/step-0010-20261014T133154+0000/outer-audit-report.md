@@ -2214,3 +2214,8 @@ with no cross-epoch denominator substitution or finalthree-pair decision.
 Substantial baselinePSSvariance is visible, so initial sampled memory reduction
 is not promoted to a repeatable benefit. Existing driver advances thirdpair
 without Agent dispatch/new grid. Root self-review only.
+
+
+## Actual capture interruption and source-native recovery
+
+[Root self-review and retained loss/recovery record](../../../../artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md). The owning Pod was replaced after node/volume errors, not by root. Two closed pairs remain published/readable; thirdpair and fullprefix are interrupted, not completed. Original /tmp partials were not recoverable. Pinned dependency restoration and subsequent capture paths use the same Workspace/PVC. No threshold, source, mechanism or audit scope changes. Full strong-stage attribution and finaldecision remain pending.

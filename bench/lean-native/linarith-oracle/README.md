@@ -9,7 +9,7 @@ See the [predeclared decision rule](../../../artifacts/linarith-oracle-2026-10-1
 - `run-stages.py` / `run-comparison.py`: use the existing Kimina native batch collector; preserve all source outcomes, costs and raw streams.
 - `build-oracle.py`: rebuilds the native experiment from the retained sources and dependencies. No original repository or installed runtime is modified.
 
-The scripts currently use the retained owning-Workspace dependency paths (Lean4.27, matching Mathlib/Farkas/Kimina), not a portable installer. Their pinned versions and original build procedures live in the reproduction guide and `artifacts/lean-modern-native-compilation-2026-10-14/`. Build outputs and long-run raw files use `/tmp/gpu-smt-linarith-oracle-20261017/`; publish completed evidence back to `artifacts/linarith-oracle-2026-10-17/`.
+The scripts currently use the retained owning-Workspace dependency paths (Lean4.27, matching Mathlib/Farkas/Kimina), not a portable installer. Their pinned versions and original build procedures live in the reproduction guide and `artifacts/lean-modern-native-compilation-2026-10-14/`. The restored documented `/tmp/gpu-smt-linarith-oracle-20261017/` path resolves onto the existing Workspace PVC; its original ephemeral contents were lost during Pod replacement. Publish completed evidence back to `artifacts/linarith-oracle-2026-10-17/`.
 
 In the owning Workspace, with no active build using the same output filenames:
 
@@ -34,8 +34,9 @@ Timeouts remain300srequest boundaries and count as operational outcomes;
 process replacement invalidates all cached environment/proof-state ids.
 Forced-retirement CPU is explicitly censored. The timeout repair was qualified on the actual failed batch: four retained
 operational outcomes followed by four completed sources after replacement.
-Recovered full original-population captures are running; the prior aborted
-full run remains incomplete.
+The recovered full captures were interrupted by the shared-node/volume fault;
+see the [retained failure record](../../../artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md).
+Earlier completed and failed records remain; no lost partial is counted as complete.
 
 The current heavy-cohort continuation is `run-matrix.py EXISTING_PAIR_PID`.
 It preserves the already-running first pair and uses its closed receipts.

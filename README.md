@@ -29,6 +29,10 @@ each. Fast/hybrid takes **2,282.741 / 2,364.280 s**, and the direct oracle
 **1,694.375 / 1,755.730 s**. All source verdicts match (992 complete, 8 rejected,
 no operational failures), with the same 88 unused-variable-warning differences.
 Both pairs miss 1.5×; the third pair and final decision are pending.
+A shared-node/storage failure interrupted the third pair and full prefix
+capture; [recovery and data-loss scope](artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md)
+are explicit. Closed results remain published; missing dependencies are being
+restored in the same Workspace before the interrupted work resumes.
 [Raw results and limitations](artifacts/linarith-oracle-2026-10-17/primary2/result-review.md)
 preserve observer cost, first-reference lineage and substantial sampled-memory variation.
 

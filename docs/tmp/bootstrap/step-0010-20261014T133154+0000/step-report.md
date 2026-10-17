@@ -3610,3 +3610,8 @@ No new CPUgrid, threshold change or GPUprovider. PSSbaseline8.725vs4.656GB
 variation prevents a replicated-memory claim; native CPUcounter scopes remain.
 Paper/README/evaluation receive the two observed pairs, with thirdpair blank.
 Root self-review; full EXP/WRITE/REVIEWgates remain unfinished.
+
+
+## Actual capture interruption and source-native recovery
+
+[Root self-review and retained loss/recovery record](../../../../artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md). The owning Pod was replaced after node/volume errors, not by root. Two closed pairs remain published/readable; thirdpair and fullprefix are interrupted, not completed. Original /tmp partials were not recoverable. Pinned dependency restoration and subsequent capture paths use the same Workspace/PVC. No threshold, source, mechanism or audit scope changes. Full strong-stage attribution and finaldecision remain pending.
