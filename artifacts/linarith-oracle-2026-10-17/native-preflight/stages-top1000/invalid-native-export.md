@@ -1,0 +1,1 @@
+Stopped by root: custom C wrapper symbols were hidden, so Lean executed wrappers through bytecode. Mathlib was native but this is not the requested all-native instrumentation. All partial raw retained. Corrected build exports LEAN_EXPORTING and uses a distinct library filename; restart same frozen cohort. No performance conclusion.

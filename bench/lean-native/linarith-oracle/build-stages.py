@@ -104,5 +104,5 @@ with (U/'build.log').open('w') as log:
  call(['lean','-o',str(U/'GpuArithmetic/Stages.olean'),'-c',str(U/'Stages.c'),str(U/'GpuArithmetic/Stages.lean')])
  call(['cc','-O3','-fPIC','-I'+str(sdk/'include'),'-c',str(U/'clock.c'),'-o',str(U/'clock.o')])
  cs=[str(F/'.lake/build/ir/Farkas'/ (m+'.c')) for m in ['Platform','Telemetry','Native','Fast']]
- call(['leanc','-O3','-shared','-fPIC',str(U/'Stages.c'),str(U/'clock.o'),*cs,'-o',str(U/'arithmetic.so')])
-print(json.dumps({'built':str(U/'arithmetic.so')}),flush=True)
+ call(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',str(U/'Stages.c'),str(U/'clock.o'),*cs,'-o',str(U/'arithmetic-native.so')])
+print(json.dumps({'built':str(U/'arithmetic-native.so')}),flush=True)

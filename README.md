@@ -10,121 +10,53 @@ The current research hypothesis is:
 
 ## Current status
 
-This is an active Lean-first research prototype targeting OSDI-level quality.
-The project remains in BOOTSTRAP with four open RQs and an unfrozen scientific
-contract. The current paper is [docs/paper/main.tex](docs/paper/main.tex), built
-with `make -C docs/paper`. Research iterates directly on `main`; publication
-includes completed coherent portions as explicitly requested by the user. See the [evaluation authority](docs/evaluation.md) for the current step,
-[research narrative](docs/idea-story.md) and [evaluation frontier](docs/evaluation.md).
+Lean-first research prototype; all four RQs and the OSDI-quality systems goal
+remain open. There is **no demonstrated end-to-end GPU verification speedup**.
+The native CPU branch-runtime and scalar GPU constructor routes are closed;
+their complete, failed and partial results remain in the
+[evaluation record](docs/evaluation.md). Research runs directly on `main`.
 
-All work now runs in this Codex thread: implementation, experiments, scripts,
-documentation, manuscript and critical self-review. OMP and Codex subagents are
-stopped; their state/review records are retained. The native CPU mutable-state
-branch runtime is **closed** after no stable stock-relative advantage. Its old
-eager-v1 full acquisition is stopped with one complete control and12816partial
-candidate outcomes retained. No new full matrix runs before a substantive
-mechanism wins a real matched complete-cost preflight.
-[Closure, GPU conclusions, cleanup and next mainline](docs/tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
+The active experiment is a [bounded linarith/nlinarith oracle comparison](artifacts/linarith-oracle-2026-10-17/plan.md):
+1,000 arithmetic-heavy original GoedelWorkbook candidates, native stage-cost
+measurement, external untrusted polynomial/product/LP search, and one native
+coefficient-certificate check with fallback. Success requires **more than 1.5×
+end-to-end improvement over the fastest valid native baseline**, with matching
+verification outcomes. Otherwise the route is written up as negative and the
+hourly research automation is stopped. Preflight values are not full results.
 
-RTX5090 currently has no demonstrated end-to-end verification benefit in this
-system. Defeq1.067–1.090x is conditional sensitivity, not measured acceleration.
-Prospective declaration body-CPU coverage is14.53%on a retained prefix,4.84%on
-official full Init,6.27%after fused parsing and13.72%after reclamation; the last
-host constructor costs1052s and is closed. These are different qualified
-workload/build boundaries, not GPU speedups or fractions of total wall time.
-The next mainline is complete-workload evidence and a substantial paid-work
-opportunity beyond established native reuse, with no further small losing variants.
+A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
+and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by
+actual native execution comparisons. Prefix counts alone are not time savings.
+All implementation, execution, analysis, writing and self-review are performed
+in the owning thread; no OMP or subagents are used. Self-review is not an
+independent audit.
 
-The main formal workloads contain all captured ProofNet test candidates
-(186 tasks × 32 = 5952 attempts) and miniF2F test candidates
-(244 tasks × 32 = 7808 attempts), including rejected, incomplete and operational
-outcomes. Statement-only tasks and supporting Mathlib subsets do not replace
-complete candidate verification. Lean4.9 and Lean4.21 evidence remain separate.
-All 13,760 candidates retain source-associated generator output clocks in four
-segments. Those clocks do not measure verifier-request arrivals: the official
-next stage reads the completed file and submits a batch. Batch verification and
-online service traffic require their respective measurements.
-[Generator timing and consumer boundary](docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-031/result-review.md).
+| Workload | Retained input | Scope |
+|---|---|---|
+| GoedelWorkbook | 29,750 released source files, Lean 4.27 | Released candidate files, not a generator arrival trace |
+| miniF2F | 244 tasks × 32 candidates, Lean 4.9.0-rc1 | Includes rejected, incomplete and operational outcomes |
+| ProofNet | 186 tasks × 32 candidates, Lean 4.9.0-rc1 | Includes rejected, incomplete and operational outcomes |
+| AutoVerus / VeruSAGE | Original source runs and solver traces | SMT results remain separate from Lean results |
 
-The version-aligned Lean4.27 experiments also replay every released
-GoedelWorkbook source file, retaining published migration errors and timeouts.
-Native compilation, arithmetic-oracle CPU methods and product-application reuse
-are compared at the complete source-verification boundary. Current whole-pair
-observations and unfinished repetitions are distinguished in the
-[current evaluation](docs/evaluation.md#complete-cpu-observations-and-active-formal-acquisitions).
-These released proof outputs are not a complete generator or arrival trace.
-The three primary 29,750-source GC/native-compilation pairs are complete;
-remaining resource-profile work is distinguished from primary timing evidence. The Fast/hybrid
-comparison with invocation-local product reuse now completes all eight conditions,
-with lower whole times in all three primary pairs. The separate native exact
-arithmetic comparison also completes eight conditions, with mixed timing signs.
-These are matched CPU observations, not a global method ranking or GPU gain.
-[CPU pair figure](docs/paper/figures/cpu-paired-whole-time.pdf) and
-[current compilation review](artifacts/lean-modern-native-compilation-2026-10-14/gc2-first-pair-result-review.md)
-retain the exact values, native outcome changes and resource limitations.
+RTX 5090 is shared through NVIDIA time slicing; it is not partitioned into
+fixed half-cards. The current arithmetic prototype runs on CPU. A GPU path is
+added only if measured eligible work justifies it and all device costs are
+included. Native compilation, warm REPLs, caches, snapshots, tries and external
+arithmetic oracles are established techniques, not new contributions by
+themselves. Tests or reviews do not establish venue acceptance.
 
-The latest completed source-native GPU comparison is **native6 on ProofNet**:
-all sixteen planned conditions completed, including three primary rotations
-against competent warm/snapshot CPU paths and separate resource profiles.
-The GPU method is slower than the fastest native CPU path in all three primary
-blocks (1.74%, 3.64%, 1.58%). Further scalar/synchronous-provider tuning of this
-implementation is closed; the retained negative result guides a different
-mechanism rather than repeated variants. See [complete clocks, resource observations and scope](docs/evaluation.md#closed-optimization-branches-and-retained-failures).
-Actual device work includes readback and enclosing native verification; this is
-not full GPU Lean kernel checking.
+## Repository guide
 
-The miniF2F acquisition failed in a host OOM before its GPU conditions ran.
-The failed/partial inputs, outputs and runtime evidence are preserved.
-[MiniF2F status and remaining coverage](docs/evaluation.md#closed-optimization-branches-and-retained-failures)
-distinguish this failure from a performance result. No blind rerun or omitted
-candidate turns it into a completed benchmark. A separate producer-version
-Lean4.9 GC comparison uses all 7808 original miniF2F candidates under the
-published 12GiB/300s defaults. All three complete native-compilation pairs reduce
-whole elapsed by 7.61%/10.74%/16.96%. Request p99 worsens in the first two and
-falls in the third. These are CPU baseline observations, distinct from the
-failed GPU implementation. The original resource profile is complete; its
-compiled counterpart remains in progress, so no resource-saving ratio is established.
-[Complete miniF2F pair review](artifacts/lean-native-compilation-2026-10-14/gc49/first-pair-result-review.md).
-[Current miniF2F scope](docs/evaluation.md#complete-cpu-observations-and-active-formal-acquisitions).
+- [Evaluation and completed results](docs/evaluation.md): current evidence and limitations.
+- [Experiment implementation](bench/lean-native/linarith-oracle/README.md): build/run entry points and retained dependencies.
+- [Reproduction guide](docs/reproduce-checkpoint.md): historical commands, inputs and raw results.
+- [Research story](docs/idea-story.md), [design](docs/design.md) and [related work](docs/background-related-work.md).
+- [Paper source](docs/paper/main.tex): build with `make -C docs/paper` when `latexmk` is installed.
+- `bench/` and `tools/`: experiments and adapters; `artifacts/` and `results/`: retained evidence; `docs/paper/`: manuscript.
 
-[Complete E030 acquisition](artifacts/lean-parallel-verification-2026-10-12/experiment030/plan.md)
-is implemented and run directly by the desktop root. It measures complete native
-response extraction after warm preparation; it is a CPU comparison. All8conditions/47616outcomes now finish; the three complete primary pairs
-show a descriptive mean1.63percent wall reduction. The [complete review](artifacts/lean-parallel-verification-2026-10-12/experiment030/result-review.md)
-retains uncertainty, native response differences and censored profile records.
-This supporting CPU optimization does not establish the larger systems claim.
-
-Earlier implementation versions remain historical evidence:
-[preparation-retention figures](artifacts/lean-gpu-checking-2026-10-13/experiment021/performance-figures-20261013T1555/README.md),
-[native4 GPU figures](artifacts/lean-gpu-checking-2026-10-13/experiment022/figures-proofnet-complete-20261013T2245/README.md),
-and [offered-load primary figures](artifacts/lean-service-lifecycle-2026-10-13/experiment023/figures-three-primary-20261013T2359/README.md).
-Their complete cells do not imply all promised matrices finished. Native4,
-native6 and component-only closure/metadata timings must not be combined into
-a hardware-only speedup claim. All original failures and partials remain.
-
-The project uses shared RTX5090 resources, which provide neither a fixed
-half-card nor performance isolation. No complete GPU Lean kernel or
-end-to-end GPU benefit is established.
-
-The full goal includes strong warm/cache/snapshot CPU competitors, equal-resource
-end-to-end latency, throughput and memory, necessary basic correctness and
-isolation, useful heterogeneous verification, realistic service traffic, SMT,
-source-grounded novelty and a complete paper. Fork/COW, worker pools, caches,
-flat arrays and metadata primitives are existing mechanisms rather than novelty
-claims. Passing tests or review does not establish OSDI acceptance.
-
-The complete source-native AutoVerus comparison now contains 12 conditions and
-42,792 source executions. Native prefix branching is slower than stock in all
-three primary rotations (28.84%–37.91%, descriptive mean 34.27%).
-Separate sampled resource profiles show no stock-relative memory saving.
-This constructor is closed; all failures, qualification limits and original
-outputs remain in the [complete result review](artifacts/autoverus-native-2026-10-09/experiment025/full-registry-repaired1-result-review.md).
-
-The initial SMT prototype remains available below: streaming Z3 trace capture,
-SMT-LIB context analysis and a synthetic cold/incremental benchmark. Retained
-real VeruSAGE/AutoVerus traces, native constructor qualification, prior GPU
-metadata experiments and recovery records remain linked from the research
-frontier and [reproduction guide](docs/reproduce-checkpoint.md).
+The current Workspace also has Tectonic available; see the reproduction guide
+for the retained build environment. Historical failures are preserved and
+linked rather than removed during repository cleanup.
 
 ## Quick start
 

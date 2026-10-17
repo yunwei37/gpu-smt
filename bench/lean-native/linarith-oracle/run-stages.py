@@ -38,7 +38,7 @@ def main():
     os.sched_setaffinity(0,{16,17,18,19})
     c=json.loads((R/'artifacts/lean-modern-native-compilation-2026-10-14/native-library.json').read_text())
     manifest=U/'native-load-with-arithmetic.txt'
-    manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'arithmetic.so')+'\n')
+    manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'comparison-native.so')+'\n')
     c['load_manifest']=str(manifest)
     config=U/'native-library.json';config.write_text(json.dumps(c))
     paths=[str(U),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]

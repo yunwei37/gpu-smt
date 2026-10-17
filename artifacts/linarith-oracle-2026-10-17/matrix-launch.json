@@ -1,0 +1,28 @@
+{
+  "pid": 2116120,
+  "command": [
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-matrix.py"
+  ],
+  "scope": "new bounded top1000 direct arithmetic hypothesis only; not E038 or full29750 old matrix",
+  "orders": [
+    [
+      "fast-hybrid",
+      "oracle",
+      "native",
+      "fast-highs"
+    ],
+    [
+      "fast-highs",
+      "native",
+      "oracle",
+      "fast-hybrid"
+    ],
+    [
+      "oracle",
+      "fast-hybrid",
+      "fast-highs",
+      "native"
+    ]
+  ],
+  "state": "running; all timing/result/native-agreement reviews pending"
+}
