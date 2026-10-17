@@ -1,0 +1,33 @@
+[
+  {
+    "method": "stock",
+    "rep": 1,
+    "state": "complete",
+    "expected": 29750,
+    "attempts": 29750,
+    "counts": {
+      "complete": 26499,
+      "rejected": 2291,
+      "operational": 960
+    },
+    "whole_ns": 23292792529766,
+    "cpu": {
+      "collector": {
+        "user": 20.484212,
+        "system": 2536.9333549999997
+      },
+      "waited_children": {
+        "user": 763.274371,
+        "system": 21.421426
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 6453678080,
+    "sampled_peak_fleet_rss_with_collector": 12577226752,
+    "sampling_read_errors": 0,
+    "workers": 41,
+    "effective_RLIMIT_AS": -1,
+    "width": 24,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch whole-corpus observation; grouped array latency"
+  }
+]

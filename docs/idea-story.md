@@ -36,10 +36,10 @@ a final RQ answer or an OSDI acceptance claim.
 
 The current heartbeat requires the root to implement, execute, analyze and
 write directly, without delegation or native-session resume. Earlier OMP outputs
-and the original stopped Codex author session remain retained; pending optional
-model recovery is not authority to resume them. Root self-review cannot supply
-the missing independent plan/result/outer audits. Prior genuinely independent
-reports keep their original scope and attribution.
+and the original stopped Codex author session remain retained. The user cancels
+model recovery and all OMP/Codex subagents. All work and critical rechecks run in
+this thread; root self-review is not called independent audit. Prior genuinely
+independent reports keep their original scope and attribution.
 
 Completed negative implementations stay closed. Complete native6 ProofNet
 device comparisons, shared-process placement and repaired SMT prefix branching
@@ -137,3 +137,5 @@ E113 accepts AXLE as additional same-claim pressure for generic isolated preload
 
 
 E114 real complete5952-source service observations at one low-load pair show worse branch arrival latency than shared warm while whole time follows offered arrivals; strongest snapshot comparison and complete60-cell scope remain pending. Figures are staged raw-derived evidence, not final contribution/RQ results. This is an implementation/evidence boundary update, not a change to the Initial Narrative or full Lean/SMT/GPU service promise.
+
+E038native runtime branching is now closed by explicit user instruction after no stable stock-relative gain in the final finite diagnostic. The known-slow eager-v1 capture is operator-stopped with all partial data retained. No full matrix may restart without a beneficial real matched preflight and complete-cost rationale. This closes an implementation constructor, not the original thesis or four RQs. [Disposition, GPU boundaries and next mainline](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).

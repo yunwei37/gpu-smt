@@ -3293,3 +3293,29 @@ Root updates current implementation/evaluation with this engineering boundary an
 Root source/result review is explicitly not independent. Complete child diagnostic is valid within its finite engagement/overlap scope; full service advantage remains inconclusive and the full E038matrix/final frozen version is incomplete. A post-run comment removes an unverified32-bit header assertion; compiled built-source remains exact, with no changed executable statement or claim of32-bit qualification.
 
 The code removes a concrete lifetime mutex path but has no new service/paper contribution. Do not begin a tag/worker/cache grid or count this as a GPUacceleration; preserve the original full collector and collect actual terminal data, then decide the complete joint frontier. Continue substantive paid-body/native-service research, strongest-baseline differentiation, causal ablations and complete experiments; allfourRQs and independent audit remain open. User's completed-portion publication instruction authorizes committing/pushing this finished code/control/diagnostic boundary now without pretending the whole step is done. Other author CLI/docs, frozen binaries, original sessions and raw captures remain untouched. No new runtime/configuration/schedule/model/permission/storage delta.
+
+## User-directed closure — 2026-10-17UTC / 2026-10-16Los Angeles
+
+### EXPERIMENT_GATE: stop the unsuccessful route and retain evidence
+
+The latest user messages require sole-thread Codex work, stop all OMP/Codex children, cancel model migration, close E038 after the no-gain diagnostic and stop the known-slow older matrix. Root acts through the existing Workspace, without delegation/new session/checkout. [Complete closure/stop/cleanup/GPU report](route-closure-20261017T0127/result.md) is the current disposition, superseding earlier continuation instructions.
+
+Four still-live OMP roots and remaining child are terminated; old coordinator PIDs are already absent. Collaboration inventory has no running Codex child; completed/interrupted review outputs remain. Native v1 collector receives SIGINT and executes original cleanup, saving a failed/KeyboardInterrupt terminal. Root labels it operator-stopped rather than a spontaneous native failure. One complete stock cell is already public; all12816private parsed rows and24censored in-flight sources are preserved, with whole private raw files byte-equal. It is not a complete matrix or matched whole-corpus speed estimate.
+
+Four fault stdout files totaling22,827,852,295bytes are archived losslessly to293,506,432bytes, whole gzip EOF/CRC verified, then redundant originals removed after stopped-FD verification. All session state remains. Net21GiBremoved spans /tmpand the project volume; project free rises only from7.97to11.53GB. Root does not claim all reclaimed bytes came from the PVC. Other original healthy CPU acquisitions are untouched.
+
+E038 is closed: initial eager-v1 finite preflight was47.7%slower, and latest atomic lifetime24source two-order comparison has no stable stock advantage. No resume/full-matrix rerun before a substantive mechanism wins a real matched complete-cost preflight; no more small lock/cache/arena variants.
+
+### WRITE_GATE: factual closure and GPU boundaries
+
+Current README/evaluation/implementation/frontier/questions are updated and OMP model recovery cancelled. Paper method status says stopped/partial and runtime constructor closed; no prefix number becomes final paper evidence. make fails solely for missing latexmk; existing pinned Workspace Tectonic successfully compiles17pages. No install/config/build-system change or full unchanged writing cycle.
+
+Root source-checks GPU conclusions: E0341.067–1.090xconditional CPU sensitivity is not actual device speed or a rigorous whole-wall ceiling. V3retained-prefix14.53%, fullInit4.84%, canonical fused6.27%, reclamation13.72%are qualified body-thread CPU attributions at their actual workload/build boundaries. Reclamation1052.33sdoes not earn a GPUport. Native checks remain; prospective host positives are not qualified GPU/native replacement. Actual prior native6complete primary comparisons are negative.5090currently has no demonstrated beneficial complete-verifier role.
+
+### REVIEW_GATE: root audit and routing
+
+All future work and critical rechecks occur in this thread under the user's explicit no-Agent/subagent instruction. Root's audit checks the actual original outputs/stopped identities, bytes, counts, cost denominators and paper changes; it is labeled self-audit, never independent. Prior genuinely independent reports keep their attribution. No new delegated audit is pending as an execution prerequisite.
+
+The user-authorized heartbeat is updated in place at its existing hourly interval/thread/ACTIVEstate: no OMP/native resume/Codex children, cancelled model migration, E038closed, no new full matrix before beneficial real preflight and meaningful-change-only notifications. It may not resurrect the stopped route from old reports.
+
+Next mainline is complete formal benchmark/strong-baseline evidence, truthful manuscript closure and a substantial paid-work opportunity beyond existing Kimina/REPL/snapshot/LeanTree reuse. No surviving novel implementation is established; another small variant cannot fill that gap. Original Initial Narrative/fourRQs/Lean-SMT-service-5090goal remain. This requested lifecycle/closure boundary is complete; the larger OSDI-quality system/paper is not. Publish this coherent completed portion on main, preserve other unrelated dirty work and all original partials/session state.

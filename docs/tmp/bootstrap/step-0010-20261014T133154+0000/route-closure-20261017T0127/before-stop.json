@@ -1,0 +1,121 @@
+{
+  "utc": "2026-10-17T01:46:16.150755+00:00",
+  "roots": [
+    2020713,
+    2020714,
+    1995051,
+    2043071,
+    1993589,
+    1988939,
+    1991471,
+    2043473
+  ],
+  "processes": [
+    {
+      "pid": 1995051,
+      "ppid": 1,
+      "state": "S",
+      "cmd": "omp --cwd /workspaces/repository --mode rpc --approval-mode yolo --auto-approve ",
+      "start_ticks": "57326020"
+    },
+    {
+      "pid": 2020713,
+      "ppid": 1,
+      "state": "S",
+      "cmd": "/root/.local/bin/omp --cwd /workspaces/repository --resume /workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-490Z_01a143fb-0bea-72de-83aa-0fdb6120e726.jsonl --mode rpc --approval-mode yolo --auto-approve ",
+      "start_ticks": "58367784"
+    },
+    {
+      "pid": 2020714,
+      "ppid": 1,
+      "state": "S",
+      "cmd": "/root/.local/bin/omp --cwd /workspaces/repository --resume /workspaces/.agent-state/omp/agent/sessions/--workspaces-repository--/2026-10-16T09-11-28-525Z_01a143fb-0c0d-7696-9d3e-8ec95041c284.jsonl --mode rpc --approval-mode yolo --auto-approve ",
+      "start_ticks": "58367784"
+    },
+    {
+      "pid": 2043071,
+      "ppid": 1,
+      "state": "S",
+      "cmd": "omp --cwd /workspaces/repository --resume 01a14520-3f31-736f-9528-b0b209172494 --mode rpc --approval-mode yolo --auto-approve ",
+      "start_ticks": "59424971"
+    },
+    {
+      "pid": 2043473,
+      "ppid": 1,
+      "state": "S",
+      "cmd": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u /workspaces/repository/docs/tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-batch-integration/full-command.executed.py /tmp/gpu-smt-e038-full-native-batch-20261016T150428Z ",
+      "start_ticks": "59444081"
+    },
+    {
+      "pid": 2052472,
+      "ppid": 2020713,
+      "state": "S",
+      "cmd": "/usr/bin/python3 -u /tmp/omp-python-runner-0/runner-3lfu17szi4fd2.py ",
+      "start_ticks": "59977202"
+    },
+    {
+      "pid": 2109370,
+      "ppid": 2043473,
+      "state": "S",
+      "cmd": "lake env /tmp/gpu-smt-native-ref-branches-20261016/batch-frozen-v1/private/repl ",
+      "start_ticks": "63204602"
+    },
+    {
+      "pid": 2109397,
+      "ppid": 2109370,
+      "state": "S",
+      "cmd": "/tmp/gpu-smt-native-ref-branches-20261016/batch-frozen-v1/private/repl ",
+      "start_ticks": "63204641"
+    }
+  ],
+  "fd_outputs": [
+    {
+      "pid": 1995051,
+      "fd": "1",
+      "path": "/workspaces/.agent-state/gpu-smt-omp-paper-20261016T091128Z.jsonl",
+      "bytes": 3850354831
+    },
+    {
+      "pid": 1995051,
+      "fd": "5",
+      "path": "/workspaces/.agent-state/gpu-smt-omp-paper-20261016T091128Z.jsonl",
+      "bytes": 3850354831
+    },
+    {
+      "pid": 2020713,
+      "fd": "1",
+      "path": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl",
+      "bytes": 5210071495
+    },
+    {
+      "pid": 2020713,
+      "fd": "5",
+      "path": "/tmp/gpu-smt-arena-native-stages-20261016/omp-oss-original-session-resume-20261016T1203.jsonl",
+      "bytes": 5210071495
+    },
+    {
+      "pid": 2020714,
+      "fd": "1",
+      "path": "/tmp/gpu-smt-arena-native-stages-20261016/omp-experiments-original-session-resume-20261016T1203.jsonl",
+      "bytes": 8217730696
+    },
+    {
+      "pid": 2020714,
+      "fd": "5",
+      "path": "/tmp/gpu-smt-arena-native-stages-20261016/omp-experiments-original-session-resume-20261016T1203.jsonl",
+      "bytes": 8217730696
+    },
+    {
+      "pid": 2043071,
+      "fd": "1",
+      "path": "/tmp/gpu-smt-omp-e038-runner-20261016-rpc.stdout.jsonl",
+      "bytes": 5548925413
+    },
+    {
+      "pid": 2043071,
+      "fd": "5",
+      "path": "/tmp/gpu-smt-omp-e038-runner-20261016-rpc.stdout.jsonl",
+      "bytes": 5548925413
+    }
+  ]
+}

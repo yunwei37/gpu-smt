@@ -2,8 +2,8 @@
 
 The root directly implements, runs experiments, analyzes and writes under the
 current heartbeat instruction prohibiting delegation or original-session resume.
-Earlier OMP files/sessions are preserved; the optional model-recovery question
-below is not approval to resume them. Root self-review is not independent audit.
+Earlier OMP files/session state are preserved; the optional model-recovery
+proposal below is cancelled. No OMP or Codex subagent may be resumed. Root self-review is not independent audit.
 All four RQs, Lean-first/RTX5090 and OSDI-quality target remain.
 
 ## Temporary miniF2F native-memory budget
@@ -26,17 +26,15 @@ baseline acquisition, not a capped continuation of the old native6 matrix. No
 answer or permission is inferred. Revisit custom-policy comparisons only if they
 become necessary and the human supplies the exact requested approval.
 
-## Original OMP model recovery proposal
+## OMP model recovery — cancelled by the user
 
-Pending existing asynchronous question: switch the four original OMP sessions
-from fleet/local-large to fleet/zai/glm-5.3, preserving their session IDs,
-Workspace, files, goals and full permissions; no global default, scheduler,
-experiment or collector changes. Alternative choices were experiments/CLI only,
-or retain the current model. No answer is recorded; a preselected option and
-elapsed time are not approval. The owning infrastructure AGENTS.md section2.3
-requires current explicit approval for a model-runtime change.
-Actual repeated-symbol failures and native same-session repairs are retained in
-tmp/bootstrap/step-0010-20261014T133154+0000/author-delivery-20261016T1730/.
-Root continues authorized implementation and canonical/paper integration;
-research does not wait for this optional recovery choice. Revisit on the human
-answer or effective recovery of the original model.
+The user's current instruction cancels the zai/model migration proposal and all
+further OMP use, including coordinator/OSS/experiments/paper/CLI. The current
+Codex subagent inventory has no running child. No alternate Agent is started or
+resumed. Root owns source, experiments, scripts, documentation, manuscript and
+critical rechecks in this thread; rechecks remain self-review, not independent
+audit. Session directories and already-produced reviews are preserved.
+[Stop, cleanup and route-closure evidence](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
+
+The gateway model-priority change reported by the user is not a reason to resume
+or retarget OMP. No gateway or model setting is changed by this research action.

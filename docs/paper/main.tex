@@ -252,10 +252,11 @@ separate component control. All methods return an ordered batch array after
 its last member, so batch emission is not compared with streaming completion
 as a latency advantage.
 
-The frozen whole-corpus acquisition uses the earlier eager-copy runtime.
-The subsequent first-write implementation has finite native engagement checks,
-not a complete performance result, and does not inherit the frozen version's
-measurements. The native-batch experiment inherits the hosting environment's address-space
+The earlier eager-copy whole-corpus acquisition is stopped with its complete
+control and partial candidate data retained. The subsequent first-write runtime
+has finite native engagement and matched diagnostic checks, but no stable
+advantage over stock. This runtime constructor is closed; neither version
+provides a completed comparative performance result. The native-batch experiment inherits the hosting environment's address-space
 policy after all methods fail under the service's 12\,GiB policy. It therefore
 does not establish equivalence to the memory policy of a default Kimina deployment.
 

@@ -200,7 +200,7 @@ same4.27Kimina BatchCommand/asTask already shares one root and is the strongest
 matched comparator; ordinary native parallelism is not new. Newer Beam/leagent/
 AXLE/snapshots pressure novelty; unmatched versions are prior art, not numeric losses.
 
-Frozen-v1 acquisition is29750sources×stock/private/off×3rotated blocks,
+The stopped frozen-v1 acquisition planned29750sources×stock/private/off×3rotated blocks,
 ordered arrays emitted after the last member, widthfromactual affinity24.
 It is offline batching,not streaming offered-load capacity. After all methods'
 12GiBthread-allocation failure,all inherit Workspace unlimitedRLIMIT_AS;this is
@@ -214,7 +214,7 @@ two original accepted/rejected exact batch responses/normalEOF0 and native
 root0/private7/root0/next0 controls establish finite engagement only.
 43/45observed prepared refs produce4copies each. Failed controls/builds remain.
 [Current implementation](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-write-copy/result.md).
-The ongoing frozen-v1 capture uses older eager-copy code; no performance or
+The operator-stopped frozen-v1 capture uses older eager-copy code; no performance or
 arbitraryFFI/global/cancellation equivalence transfers to current first-write code.
 
 The [full12round manuscript checkpoint](tmp/bootstrap/step-0010-20261014T133154+0000/iter-refine-writing-20261016T1745/round-11-meaning-preservation.md)
@@ -235,3 +235,5 @@ The [deeper-state source/workload handoff](tmp/bootstrap/step-0010-20261014T1331
 The same publication preserves completed GC-original/Fast-hybrid profiles (all29750each),33689.491195/11788.436963s, sampledPSS9540741/8675613KiB,18765/6466samples with28incomplete each. Configured1s sleep is not exact1Hz: median start gaps1.786195/1.804981s, observed read/scheduling spans0.785638/0.803840s. These are not isolated observerCPU or subtractable slowdown. All ZIP bytes, original500MB-class Fastoracle, source inputs and responses remain. Single profiles add no primary repetitions or replicated resource advantage; earlier primary conclusions stay unchanged.
 
 [Native local-ref lifetime diagnostic](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/result.md) completes the public native build,2actual accepted/rejected input checks, escaped-tag deletion witness and6finite24-source cells. Stock/locked/atomic whole times are18.953335/21.398457/19.696858s in order1 and19.537904/19.379376/19.366895s in reverse order2. Atomic is3.923%slower/0.875%faster than stock; all native responses match with normalEOF0. This is overlapped development feedback with source-prefix selection/two-order limits, not a stable acceleration or full-corpus result. Collector CPU and all raw/resource/native data remain; no timing subtraction or memory superiority. RQ3/final native comparison and independent audits remain open; ordinary runtime-lock engineering does not supply novelty.
+
+Current disposition: E038native CPU runtime branching is closed by user instruction; its v1 collector and descendants are stopped with raw partial data preserved. No OMP, other Agent or Codex subagent is used; root performs and labels its own critical rechecks. [Closure, GPU cost boundaries and substantive next mainline](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
