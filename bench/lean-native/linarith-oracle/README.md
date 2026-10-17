@@ -164,3 +164,10 @@ analyze-cost.py CELL joins per-call IDs and exact source bodies, separates
 FP search/exact LP/repair/protocol costs, records matrix sparsity, and reports
 overlap/batching and wave-based tails. These are diagnostics, not new primary
 speedups. Missing joins disable a claimed bound. Reuse no active capture directory.
+
+Supplemental provenance/worker accounting can build into an explicit separate
+directory with build-cost.py --out BUILD_ROOT, then run-comparison.py
+--cost-profile --cost-root BUILD_ROOT. The builder reuses pinned base modules
+in the same Lean package root. Do not overwrite a loaded primary/diagnostic
+library. replay-numeric-cost.py replays closed per-process request streams and
+collects complete wait4 worker CPU; its elapsed time is not Lean/GPU performance.

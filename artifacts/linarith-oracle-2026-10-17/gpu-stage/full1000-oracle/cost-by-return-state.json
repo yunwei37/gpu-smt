@@ -1,0 +1,53 @@
+{
+  "direct_checked": {
+    "calls": 3597,
+    "request_parse": 0.1448540229999999,
+    "linear": 0.28462837299999966,
+    "products": 2.399892603000006,
+    "matrix_pack": 0.5954322949999993,
+    "lp_build": 0.19775573900000026,
+    "fp_solve": 10.588607469000012,
+    "exact_lp": 139.60222476599992,
+    "exact_verify": 0.029286670000000046,
+    "response_pack": 0.022662287000000007,
+    "response_write": 0.02688818000000002,
+    "protocol_dispatch_unattributed": 0.35121735299999907,
+    "exact_repair": 0.20799050700000044
+  },
+  "direct_no_certificate_or_error": {
+    "calls": 607,
+    "request_parse": 0.027675988000000023,
+    "linear": 0.06560270800000007,
+    "products": 0.972595062,
+    "matrix_pack": 0.219106156,
+    "lp_build": 0.07771658700000007,
+    "fp_solve": 4.648639505999998,
+    "exact_lp": 86.12941636600003,
+    "response_pack": 0.0020007239999999997,
+    "response_write": 0.005844505999999999,
+    "protocol_dispatch_unattributed": 0.09785674800000005,
+    "exact_repair": 0.003733361
+  },
+  "fallback_no_certificate_or_error": {
+    "calls": 613,
+    "request_parse": 0.6576946769999991,
+    "lp_build": 0.09475740099999996,
+    "fp_solve": 3.0783138849999996,
+    "exact_lp": 50.09539306600003,
+    "response_pack": 0.0003161299999999999,
+    "response_write": 0.005548686999999999,
+    "protocol_dispatch_unattributed": 0.10126350199999988
+  },
+  "fallback_certificate": {
+    "calls": 5440,
+    "request_parse": 1.6646678079999966,
+    "lp_build": 0.19592370000000023,
+    "fp_solve": 15.82344250099999,
+    "exact_repair": 0.13126010000000005,
+    "exact_verify": 0.02375774300000012,
+    "response_pack": 0.04375578300000018,
+    "response_write": 0.03152974499999996,
+    "protocol_dispatch_unattributed": 0.23141106699999892,
+    "exact_lp": 317.87417525500007
+  }
+}

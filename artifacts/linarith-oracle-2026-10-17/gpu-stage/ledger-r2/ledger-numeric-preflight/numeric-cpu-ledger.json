@@ -1,0 +1,59 @@
+{
+  "workers": [
+    {
+      "pid": 14309,
+      "service_kind": "direct",
+      "records_including_handshake": 115,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 0.00182673,
+        "linear": 0.0067959,
+        "products": 0.102054686,
+        "matrix_pack": 0.023040159,
+        "lp_build": 0.006438448,
+        "fp_solve": 0.453441524,
+        "exact_lp": 3.821064183,
+        "response_pack": 0.000635696,
+        "response_write": 0.000385418,
+        "exact_verify": 0.00090916,
+        "exact_repair": 0.005554574
+      },
+      "session_other_cpu_seconds": 0.009906371,
+      "session_cpu_seconds": 4.432052849,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 0.000693064,
+      "diagnostic_write_cpu_seconds": 0.009717388,
+      "worker_total_cpu_seconds": 4.445202,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": 0.0,
+      "startup_exit_and_other_cpu_seconds": 0.002738699
+    },
+    {
+      "pid": 14404,
+      "service_kind": "fallback",
+      "records_including_handshake": 11,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 0.023949425,
+        "response_write": 6.0954e-05,
+        "lp_build": 0.00226676,
+        "fp_solve": 0.198652127,
+        "exact_lp": 5.460435736,
+        "response_pack": 0.000136544,
+        "exact_repair": 0.001050121,
+        "exact_verify": 0.000137375
+      },
+      "session_other_cpu_seconds": 0.003278157,
+      "session_cpu_seconds": 5.689967199,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 0.000418084,
+      "diagnostic_write_cpu_seconds": 0.017548366,
+      "worker_total_cpu_seconds": 5.710387,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": 0.0,
+      "startup_exit_and_other_cpu_seconds": 0.002453351
+    }
+  ],
+  "all_worker_receipts_complete": true,
+  "scope": "wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."
+}

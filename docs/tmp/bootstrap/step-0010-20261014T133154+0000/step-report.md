@@ -3803,3 +3803,14 @@ benefit in matched24-source whole clocks, so no full CPU grid is launched.
 Raw evidence and source-response differences are gpu-stage/highs-matched-preflight24/.
 Analyzer CPU/wall units and product-provenance coverage are explicit; final
 1000-source attribution and GPU decision remain pending. Root self-review only.
+
+
+## Complete oracle attribution and GPU admission — 2026-10-17T23:19:08.063687+00:00
+
+EXPERIMENT_GATE node: all-call-attribution, oracle1000complete; reference1000
+and numeric waited-worker replay active. See gpu-stage/full1000-oracle/result-review.md.
+All1000same-method native JSON values match. Six unlabelled measured RPCs bind
+to two native waves; costs retained. Numeric occupancy35.25% is not a critical
+path share. Conditional zero-work sensitivity does not rule out1.5x; GPU stage
+continues. R2 product/CPU-ledger native24+24 and numeric126 real checks qualify.
+All implementation and recheck performed by root; self-review only.

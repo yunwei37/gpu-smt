@@ -1,0 +1,36 @@
+['cargo', 'build', '--release', '--bin', 'arithmetic-costd', '--bin', 'farkas-costd']
+   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/native)
+error: unknown start of token: \
+  --> src/bin/farkas-costd.rs:86:12
+   |
+86 | fn main() {\n    if farkas_core::cost::supervise("fallback"){return;}
+   |            ^
+
+error: unknown start of token: \
+   --> src/bin/farkas-costd.rs:107:40
+    |
+107 |     let mut lines=stdin.lock().lines();\n    loop { let Some(line)=farkas_core::cost::read_line(&mut lines) else{break};
+    |                                        ^
+
+error: expected one of `!`, `.`, `::`, `;`, `?`, `{`, `}`, or an operator, found keyword `if`
+  --> src/bin/farkas-costd.rs:86:18
+   |
+86 | fn main() {\n    if farkas_core::cost::supervise("fallback"){return;}
+   |                  ^^ expected one of 8 possible tokens
+   |
+help: there is a keyword `fn` with a similar name
+   |
+86 | fn main() {\fn    if farkas_core::cost::supervise("fallback"){return;}
+   |             +
+
+warning: unused imports: `BufRead` and `Write`
+  --> src/bin/farkas-costd.rs:21:15
+   |
+21 | use std::io::{BufRead, Write};
+   |               ^^^^^^^  ^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `farkas-core` (bin "farkas-costd") generated 1 warning
+error: could not compile `farkas-core` (bin "farkas-costd") due to 3 previous errors; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...

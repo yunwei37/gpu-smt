@@ -35,6 +35,39 @@ def outstanding(calls):
             "arrival_distinct_candidates":spread([p["distinct_sources"] for p in points]),
             "time_seconds_by_outstanding_calls":{str(k):v/1e9 for k,v in sorted(hist.items())},
             "scope":"Client exported-AST or LP request intervals, including mutex wait; direct AST requests need product/LP construction before actual device-ready LP. Sequential future branches are excluded."}
+def cpu_ledger(records):
+    requests=collections.defaultdict(list);ends={};exits={}
+    for x in records:
+        pid=x.get("pid")
+        if x.get("kind") in ["direct","fallback"]:requests[pid].append(x)
+        elif x.get("kind")=="worker-eof":ends[pid]=x
+        elif x.get("kind")=="process-exit":exits[pid]=x
+    workers=[]
+    for pid,rs in requests.items():
+        end=ends.get(pid);exit=exits.get(pid);phases=collections.Counter()
+        for rec in rs:
+            for e in rec.get("events",[]):
+                if "cpu_ns" in e:phases[e["stage"]]+=e["cpu_ns"]
+        session=sum(x["cpu_ns"] for x in rs)
+        row={"pid":pid,"service_kind":rs[0]["kind"],"records_including_handshake":len(rs),
+             "complete_worker_cpu_receipt":exit is not None,
+             "phase_cpu_seconds":{k:v/1e9 for k,v in phases.items()},
+             "session_other_cpu_seconds":(session-sum(phases.values()))/1e9,
+             "session_cpu_seconds":session/1e9}
+        if end:
+            row.update({"eof_counter_agrees":end["sessions"]==len(rs) and end["session_cpu_ns"]==session,
+                        "stdin_read_cpu_seconds":end["stdin_read_cpu_ns"]/1e9,
+                        "diagnostic_write_cpu_seconds":end["diagnostic_write_cpu_ns"]/1e9})
+        if exit:
+            total=(exit["user_us"]+exit["system_us"])*1000
+            row.update({"worker_total_cpu_seconds":total/1e9,"wait_status":exit["wait_status"],
+                        "supervisor_cpu_seconds_before_exit_receipt":exit["supervisor_cpu_ns"]/1e9 if "supervisor_cpu_ns" in exit else None})
+            if end:
+                row["startup_exit_and_other_cpu_seconds"]=(total-session-end["stdin_read_cpu_ns"]-end["diagnostic_write_cpu_ns"])/1e9
+        workers.append(row)
+    return {"workers":workers,"all_worker_receipts_complete":bool(workers) and all(x["complete_worker_cpu_receipt"] and x.get("eof_counter_agrees") for x in workers),
+            "scope":"wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."}
+
 def analyze(cell,inputs):
     terminal=json.loads((cell/"terminal.json").read_text())
     if terminal["state"]!="complete":raise ValueError("closed complete capture required")
@@ -43,7 +76,8 @@ def analyze(cell,inputs):
         assert x["code"].startswith(HEADER)
         body["\n\n"+x["code"][len(HEADER):]].append((i,x["proof_id"]))
     defects=collections.Counter();ambiguity=sum(len(v)>1 for v in body.values())
-    solver=list(stream(existing(cell,"solver-costs.jsonl")))
+    numeric_records=list(stream(existing(cell,"solver-costs.jsonl")))
+    solver=[x for x in numeric_records if x.get("kind") in ["direct","fallback"]]
     lean=list(stream(existing(cell,"oracle.jsonl")))
     clients={};checks={};stages=[];native_lp=[];lean_aggregate=collections.Counter()
     for e in lean:
@@ -61,6 +95,9 @@ def analyze(cell,inputs):
         elif kind=="cost-lp-input":native_lp.append(e)
     if sum(bool(e.get("accepted")) for e in checks.values()) != sum(e.get("ty")=="direct-oracle" for e in lean):
         defects["check_accept_count_inconsistent"]+=1
+    responses=list(stream(cell/"responses.jsonl.gz"));wave_rows=collections.defaultdict(list)
+    for response in responses:wave_rows[response["batch_offset"]].append(response)
+    wave_cpu=collections.defaultdict(collections.Counter);unlabelled=[];rust_eligible=[]
     calls=[];per=collections.defaultdict(lambda:{"phase_cpu":collections.Counter(),"phase_wall":collections.Counter(),"calls":0})
     totals=collections.defaultdict(collections.Counter);sizes=collections.defaultdict(list)
     eligible=[];generous=[];allphases=collections.defaultdict(list);clientseq=[];classifications=collections.Counter()
@@ -83,6 +120,12 @@ def analyze(cell,inputs):
             delta=parent["end_ns"]-parent["start_ns"]-(rec["end_ns"]-rec["start_ns"])
             totals[kind]["client_minus_service_wall_ns"]+=delta
             sizes[kind+"_client_residual_ns"].append(delta)
+        flags=req.get("product_columns")
+        if kind=="direct":flags=next((e["columns"] for e in rec["events"] if e.get("stage")=="product_columns"),None)
+        if isinstance(flags,list) and all(type(x) is bool for x in flags):
+            sizes[kind+"_product_columns"].append(sum(flags))
+            expected=next((e["cols"] for e in rec["events"] if e.get("stage")=="shape" and e.get("kind")=="certificate-unscaled"),None)
+            if expected is not None and len(flags)!=expected:defects["product_column_length_mismatch"]+=1
         phases=rec["events"];cpu=collections.Counter();wall=collections.Counter()
         for ev in phases:
             st=ev["stage"]
@@ -90,7 +133,7 @@ def analyze(cell,inputs):
                 cpu[st]+=ev["cpu_ns"];wall[st]+=ev["end_ns"]-ev["start_ns"]
                 allphases[st].append((ev["start_ns"],ev["end_ns"]))
                 if st in ["products","fp_solve","exact_lp"]:
-                    eligible.append((ev["start_ns"],ev["end_ns"]));generous.append((ev["start_ns"],ev["end_ns"]))
+                    eligible.append((ev["start_ns"],ev["end_ns"]));rust_eligible.append((ev["start_ns"],ev["end_ns"]));generous.append((ev["start_ns"],ev["end_ns"]))
             elif st=="shape":
                 for k in ["rows","cols","nnz"]:sizes[kind+"_"+ev["kind"]+"_"+k].append(ev[k])
             elif st=="products_count":
@@ -111,6 +154,17 @@ def analyze(cell,inputs):
         classifications[kind+"_"+state]+=1
         if index is not None:
             per[index]["calls"]+=1;per[index]["phase_cpu"].update(cpu);per[index]["phase_wall"].update(wall)
+        wave=None
+        if index is not None:
+            wave=next((x["batch_offset"] for x in responses if x["index"]==index),None)
+        else:
+            matches=[offset for offset,rs in wave_rows.items()
+                if rs[0]["admitted_ns"]<=rec["start_ns"] and rec["end_ns"]<=rs[0]["observed_ns"]]
+            wave=matches[0] if len(matches)==1 else None
+            unlabelled.append({"pid":rec["pid"],"kind":kind,"wave":wave,"cpu_seconds":rec["cpu_ns"]/1e9,
+                "candidate_indices":sorted(x["index"] for x in wave_rows.get(wave,[])),
+                "scope":"source and client ID absent; unique enclosing native wave only, no candidate identity invented"})
+        if wave is not None:wave_cpu[wave].update(cpu)
         calls.append({"index":index,"kind":kind,"call_id":cid,"state":state,"start_ns":rec["start_ns"],"end_ns":rec["end_ns"],
                       "phase_cpu_seconds":{k:v/1e9 for k,v in cpu.items()},"phase_wall_seconds":{k:v/1e9 for k,v in wall.items()}})
     defects["unmatched_client_calls"]=len(set(clients)-used)
@@ -122,6 +176,8 @@ def analyze(cell,inputs):
         if i is not None:
             per[i]["phase_cpu"]["lean_"+st]+=e["cpu_ns"]
             per[i]["phase_wall"]["lean_"+st]+=b-a
+            wave=next((x["batch_offset"] for x in responses if x["index"]==i),None)
+            if wave is not None:wave_cpu[wave]["lean_"+st]+=e["cpu_ns"]
         allphases["lean_"+st].append((a,b))
         if st=="lp":
             external=any(x.get("source")==e["source"] and a<=x["start_ns"]<=b for x in clients.values())
@@ -132,6 +188,8 @@ def analyze(cell,inputs):
         if i is not None:
             per[i]["phase_cpu"]["lean_direct_check"]+=e["cpu_ns"]
             per[i]["phase_wall"]["lean_direct_check"]+=e["end_ns"]-e["start_ns"]
+            wave=next((x["batch_offset"] for x in responses if x["index"]==i),None)
+            if wave is not None:wave_cpu[wave]["lean_direct_check"]+=e["cpu_ns"]
         allphases["lean_direct_check"].append((e["start_ns"],e["end_ns"]))
     responses=list(stream(cell/"responses.jsonl.gz"));waves=collections.defaultdict(list)
     for x in responses:waves[x["batch_offset"]].append(x)
@@ -140,25 +198,31 @@ def analyze(cell,inputs):
     for fraction in [.01,.1]:
         n=math.ceil(len(ordered)*fraction);selected=ordered[:n];inds={x["index"] for w in selected for x in w}
         cpu=collections.Counter()
-        for i in inds:cpu.update(per[i]["phase_cpu"])
+        for w in selected:cpu.update(wave_cpu[w[0]["batch_offset"]])
         tails[str(fraction)]={"waves":n,"candidates":len(inds),"indices":sorted(inds),
              "summed_wave_wall_seconds":sum(w[0]["batch_latency_ns"] for w in selected)/1e9,
              "component_cpu_seconds_not_additive_across_Lean_LP_and_service":{k:v/1e9 for k,v in cpu.items()},
              "scope":"Ranked complete four-source wave wall; individual-candidate wall is unavailable. Whole tied waves retained."}
     whole=terminal["whole_ns"];sum_eligible=sum(b-a for a,b in eligible);sum_generous=sum(b-a for a,b in generous)
     complete=not any(defects.values()) and not ambiguity
-    return {"terminal":terminal,"telemetry_defects":dict(defects),"ambiguous_source_groups":ambiguity,
-        "all_call_schema_complete":complete,"call_outcomes":dict(classifications),"internal_Lean_LP_invocations":internal,
+    return {"terminal":terminal,"numeric_worker_CPU_ledger":cpu_ledger(numeric_records),"telemetry_defects":dict(defects),"ambiguous_source_groups":ambiguity,
+        "all_call_schema_complete":complete,"unlabelled_requests_wave_binding":unlabelled,"call_outcomes":dict(classifications),"internal_Lean_LP_invocations":internal,
         "fallback_Lean_calling_thread_CPU_seconds":{k:v/1e9 for k,v in lean_aggregate.items()},
         "numeric_cpu_seconds_by_daemon":{k:{n.removesuffix("_ns"):v/1e9 for n,v in c.items() if n not in ["client_minus_service_wall_ns","total_service_wall_ns"]} for k,c in totals.items()},
         "numeric_wall_seconds_by_daemon":{k:{n.removesuffix("_ns"):c[n]/1e9 for n in ["client_minus_service_wall_ns","total_service_wall_ns"]} for k,c in totals.items()},
         "metadata_coverage":{"numeric_requests":len(calls),"direct_generated_product_count_records":len(sizes["direct_products"]),
-            "fallback_generated_product_origin_count":"unknown; do not interpret absence as zero",
+            "fallback_product_column_records":len(sizes["fallback_product_columns"]),
+            "fallback_missing_product_column_records":sum(x["kind"]=="fallback" for x in calls)-len(sizes["fallback_product_columns"]),
+            "product_scope":"Generated polynomial products for direct; mirrored probe products or generated-proof ancestry for native fallback. Unknown metadata is not zero.",
             "direct_FP_shape_records":len(sizes["direct_fp-scaled_rows"]),
             "fallback_FP_shape_records":len(sizes["fallback_fp-scaled_rows"])},
         "distributions":{k:spread(v) for k,v in sorted(sizes.items())},
         "observed_interval_union_seconds_by_phase":{k:union(v)/1e9 for k,v in allphases.items()},
         "accelerable_cost":{"whole_seconds":whole/1e9,"sum_interval_seconds":sum_eligible/1e9,
+          "numeric_only_sum_interval_seconds":sum(b-a for a,b in rust_eligible)/1e9,
+          "numeric_only_union_seconds":union(rust_eligible)/1e9,
+          "numeric_only_occupancy_fraction":union(rust_eligible)/whole,
+          "numeric_zero_cost_fixed_work_sensitivity_seconds":max(0,whole-sum(b-a for a,b in rust_eligible))/1e9,
           "observed_union_seconds":union(eligible)/1e9,"observed_union_fraction":union(eligible)/whole,
           "generous_sum_seconds_including_all_Lean_product_construction":sum_generous/1e9,
           "optimistic_zero_cost_elapsed_lower_bound_seconds":max(0,whole-sum_generous)/1e9 if complete else None,
@@ -168,7 +232,11 @@ def analyze(cell,inputs):
           "component_cpu_seconds":{k:n/1e9 for k,n in v["phase_cpu"].items()}} for i,v in sorted(per.items())],
         "scope":"Diagnostic capture, all success/fallback calls. Timers and JSON logging overhead are charged, not corrected away. Overlapping parent Lean LP CPU/service CPU are reported separately. Same-method native JSON agreement required separately. Root self-review."}
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path);p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path,nargs="?");p.add_argument("--numeric-log",type=Path);p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
+    if a.numeric_log:
+        result=cpu_ledger(list(stream(a.numeric_log)))
+        print(json.dumps(result,indent=2));return
+    if a.cell is None:p.error("cell or --numeric-log is required")
     result=analyze(a.cell,a.input)
     (a.cell/"cost-analysis.json").write_text(json.dumps(result,indent=2)+"\n")
     print(json.dumps({k:v for k,v in result.items() if k not in ["calls","per_source","distributions","tails"]},indent=2))

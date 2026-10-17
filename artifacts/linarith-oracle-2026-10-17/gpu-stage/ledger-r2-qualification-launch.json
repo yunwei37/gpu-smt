@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-17T22:45:34.674052+00:00",
+  "jobs": [
+    {
+      "name": "ledger-numeric-preflight",
+      "pid": 14306,
+      "argv": [
+        "python3",
+        "-u",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/replay-numeric-cost.py",
+        "--input-log",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/preflight-v4/rep1-oracle/solver-costs.jsonl.gz",
+        "--build-root",
+        "/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2",
+        "--out",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ledger-numeric-preflight"
+      ],
+      "log": "/tmp/gpu-smt-linarith-oracle-20261017/ledger-numeric-preflight.log"
+    },
+    {
+      "name": "ledger-native-preflight24",
+      "pid": 14307,
+      "argv": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "-u",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py",
+        "--out",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ledger-native-preflight24",
+        "--limit",
+        "24",
+        "--methods",
+        "oracle",
+        "fast-hybrid",
+        "--affinity",
+        "0",
+        "1",
+        "2",
+        "3",
+        "--cost-profile",
+        "--cost-root",
+        "/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2"
+      ],
+      "log": "/tmp/gpu-smt-linarith-oracle-20261017/ledger-native-preflight24.log"
+    }
+  ],
+  "scope": "supplemental same-algorithm CPU/provenance qualification, not primary performance; original full collector and prefix preserved"
+}

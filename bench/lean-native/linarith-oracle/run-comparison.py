@@ -19,11 +19,12 @@ source=source.replace("                    await retire(False)\n                
                         if 'std::bad_alloc' in diagnostic_stderr or 'Cannot allocate memory' in diagnostic_stderr:
                             failure += ' [resource_failure: inherited 48 GiB address-space ceiling]'
                 observed = time.monotonic_ns()''')
+source=source.replace("if header.get('env') != 0:", "if header.get('env') != 0 or any(m.get('severity') == 'error' for m in header.get('messages', [])):")
 exec(compile(source,str(P),'exec'),ns)
 Base=ns['Runner']
 class Runner(Base):
     def library_path(self, method):
-        return os.pathsep.join([str(U),str(self.args.sdk/'lib'),str(self.args.sdk/'lib/lean')]+self.config['library_paths'])
+        return os.pathsep.join(([str(self.args.cost_root)] if self.args.cost_profile else [])+[str(U),str(self.args.sdk/'lib'),str(self.args.sdk/'lib/lean')]+self.config['library_paths'])
     def repl_path(self, method):
         return T/'repl-kimina-native-gc-header-repair/.lake/build/bin/repl'
     async def cell(self, rep, name, **kwargs):
@@ -32,7 +33,7 @@ class Runner(Base):
         old=R/'artifacts/lean-modern-native-compilation-2026-10-14'
         os.environ['FARKAS_NATIVE_BIN']=str(old/'highs-certificate-oracle.py' if name=='fast-highs' else old/'farkas-external-support')
         if self.args.cost_profile:
-            os.environ['FARKAS_NATIVE_BIN']=str(U/'farkas-costd')
+            os.environ['FARKAS_NATIVE_BIN']=str(self.args.cost_root/'farkas-costd')
             os.environ['GPU_ARITHMETIC_STRONG_PROFILE']='1'
             cellname=kwargs.get('label') or ('rep%d-%s' % (rep,name))
             os.environ['FARKAS_COST_FILE']=str(self.args.out/cellname/'solver-costs.jsonl')
@@ -42,7 +43,7 @@ class Runner(Base):
             os.environ['GPU_ARITHMETIC_BASELINE']=name
             if name=='fast-hybrid':os.environ['FARKAS_EXTERNAL_CPU_HYBRID']='1'
         if name=='oracle':
-            os.environ['GPU_ARITHMETIC_ORACLE']=str(U/('arithmetic-costd' if self.args.cost_profile else 'arithmetic-oracled-product-sign-fixed'))
+            os.environ['GPU_ARITHMETIC_ORACLE']=str(self.args.cost_root/'arithmetic-costd') if self.args.cost_profile else str(U/'arithmetic-oracled-product-sign-fixed')
             os.environ['GPU_ARITHMETIC_BASELINE']='fast-hybrid'
             os.environ['FARKAS_EXTERNAL_CPU_HYBRID']='1'
         if name=='strong-profile':
@@ -68,6 +69,7 @@ def main():
     p.add_argument('--affinity',type=int,nargs='+',default=[12,13,14,15])
     p.add_argument('--width',type=int,default=4)
     p.add_argument('--diagnostic',action='store_true')
+    p.add_argument('--cost-root',type=Path,default=U,help='separate diagnostic build output; preserve an active capture')
     p.add_argument('--cost-profile',action='store_true',help='complete all-call Lean/Rust attribution; diagnostic, not a primary performance result')
     p.add_argument('--sample-seconds',type=float,default=1,help='nonpositive disables process-tree memory observer for overhead qualification')
     p.add_argument('--reuse-reference',type=Path,default=None)
@@ -87,17 +89,17 @@ def main():
     manifest=U/('strong-profile-native-load.txt' if 'strong-profile' in opts.methods else 'comparison-native-load.txt')
     manifest.write_text(Path(c['load_manifest']).read_text()+''.join(str(U/f)+'\n' for f in (['comparison-strong-fallback.so','strong-profile.so'] if 'strong-profile' in opts.methods else ['comparison-strong-fallback.so'])))
     if opts.cost_profile:
-        manifest=U/'cost-profile-native-load.txt'
-        manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'comparison-strong-fallback.so')+'\n'+str(U/'cost-profile.so')+'\n')
+        manifest=opts.cost_root/'cost-profile-native-load.txt'
+        manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'comparison-strong-fallback.so')+'\n'+str(opts.cost_root/'cost-profile.so')+'\n')
     c['load_manifest']=str(manifest)
-    config=U/('strong-profile-native-library.json' if 'strong-profile' in opts.methods else 'comparison-native-library.json');config.write_text(json.dumps(c))
-    paths=[str(U),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]
+    config=(opts.cost_root/'cost-profile-native-library.json') if opts.cost_profile else U/('strong-profile-native-library.json' if 'strong-profile' in opts.methods else 'comparison-native-library.json');config.write_text(json.dumps(c))
+    paths=([str(opts.cost_root)] if opts.cost_profile else [])+[str(U),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]
     paths += [str(q/'.lake/build/lib/lean') for q in (T/'mathlib4/.lake/packages').iterdir() if q.is_dir()]
     os.environ['LEAN_PATH']=os.pathsep.join(paths)
     args=argparse.Namespace(input=opts.input,limit=opts.limit,
        manifest=config,kimina=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d'),
        sdk=T/'lean-4.27.0-linux',project=T/'mathlib4',frozen=U,width=opts.width,
-       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,
+       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,cost_root=opts.cost_root,
        header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=opts.sample_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     if opts.reuse_reference is not None:
@@ -107,6 +109,6 @@ def main():
       'affinity':sorted(os.sched_getaffinity(0)),'methods':opts.methods,'input':str(args.input),
       'limit':opts.limit,'resource_observer_seconds':opts.sample_seconds,'header':'import Mathlib;import Aesop;import GpuArithmetic.Stages',
       'boundary':'existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF',
-      'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'collector':str(P)},indent=2)+'\n')
+      'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'cost_root':str(opts.cost_root),'collector':str(P)},indent=2)+'\n')
     asyncio.run(runner.run())
 if __name__=='__main__':main()

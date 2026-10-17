@@ -1,0 +1,276 @@
+{
+  "terminal": {
+    "method": "fast-hybrid",
+    "rep": 1,
+    "state": "complete",
+    "expected": 24,
+    "attempts": 24,
+    "counts": {
+      "complete": 24
+    },
+    "whole_ns": 37080163927,
+    "cpu": {
+      "collector": {
+        "user": 0.031320000000000014,
+        "system": 2.8074630000000003
+      },
+      "waited_children": {
+        "user": 36.238748,
+        "system": 1.43778
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 4316071936,
+    "sampled_peak_fleet_rss_with_collector": 8069115904,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 4,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+  },
+  "numeric_worker_CPU_ledger": {
+    "workers": [
+      {
+        "pid": 14576,
+        "service_kind": "fallback",
+        "records_including_handshake": 232,
+        "complete_worker_cpu_receipt": true,
+        "phase_cpu_seconds": {
+          "request_parse": 0.149721442,
+          "response_write": 0.001208071,
+          "lp_build": 0.014069838,
+          "fp_solve": 0.526706659,
+          "exact_lp": 15.643758751,
+          "response_pack": 0.002110281,
+          "exact_repair": 0.010937172,
+          "exact_verify": 0.001721361
+        },
+        "session_other_cpu_seconds": 0.013461431,
+        "session_cpu_seconds": 16.363695006,
+        "eof_counter_agrees": true,
+        "stdin_read_cpu_seconds": 0.006716208,
+        "diagnostic_write_cpu_seconds": 0.105235178,
+        "worker_total_cpu_seconds": 16.481567,
+        "wait_status": 0,
+        "supervisor_cpu_seconds_before_exit_receipt": null,
+        "startup_exit_and_other_cpu_seconds": 0.005920608
+      }
+    ],
+    "all_worker_receipts_complete": true,
+    "scope": "wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."
+  },
+  "telemetry_defects": {
+    "unmatched_client_calls": 0
+  },
+  "ambiguous_source_groups": 0,
+  "all_call_schema_complete": true,
+  "unlabelled_requests_wave_binding": [],
+  "call_outcomes": {
+    "fallback_no_certificate_or_error": 6,
+    "fallback_certificate": 225
+  },
+  "internal_Lean_LP_invocations": 0,
+  "fallback_Lean_calling_thread_CPU_seconds": {
+    "linearize": 1.421518474,
+    "products": 4.962091946,
+    "preprocess": 1.212172291,
+    "lp": 0.172942988,
+    "certificate": 4.441056197
+  },
+  "numeric_cpu_seconds_by_daemon": {
+    "fallback": {
+      "request_parse": 0.149719521,
+      "lp_build": 0.014069838,
+      "fp_solve": 0.526706659,
+      "exact_lp": 15.643758751,
+      "response_pack": 0.002110281,
+      "response_write": 0.001202555,
+      "protocol_dispatch_unattributed": 0.013454954,
+      "total_service_cpu": 16.363681092,
+      "exact_repair": 0.010937172,
+      "exact_verify": 0.001721361
+    }
+  },
+  "numeric_wall_seconds_by_daemon": {
+    "fallback": {
+      "client_minus_service_wall": 31.401177361,
+      "total_service_wall": 16.420166507
+    }
+  },
+  "metadata_coverage": {
+    "numeric_requests": 231,
+    "direct_generated_product_count_records": 0,
+    "fallback_product_column_records": 231,
+    "fallback_missing_product_column_records": 0,
+    "product_scope": "Generated polynomial products for direct; mirrored probe products or generated-proof ancestry for native fallback. Unknown metadata is not zero.",
+    "direct_FP_shape_records": 0,
+    "fallback_FP_shape_records": 231
+  },
+  "distributions": {
+    "direct_fp-scaled_rows": null,
+    "direct_products": null,
+    "fallback_client_residual_ns": {
+      "count": 231,
+      "min": -2609974,
+      "median": 394152,
+      "p90": 27397115,
+      "p95": 1182961890,
+      "p99": 2756284431,
+      "max": 3400485439
+    },
+    "fallback_fp-scaled_cols": {
+      "count": 231,
+      "min": 27,
+      "median": 189,
+      "p90": 275,
+      "p95": 324,
+      "p99": 527,
+      "max": 3160
+    },
+    "fallback_fp-scaled_nnz": {
+      "count": 231,
+      "min": 57,
+      "median": 890,
+      "p90": 1676,
+      "p95": 2405,
+      "p99": 4563,
+      "max": 21512
+    },
+    "fallback_fp-scaled_rows": {
+      "count": 231,
+      "min": 11,
+      "median": 36,
+      "p90": 71,
+      "p95": 82,
+      "p99": 118,
+      "max": 483
+    },
+    "fallback_product_columns": {
+      "count": 231,
+      "min": 20,
+      "median": 170,
+      "p90": 252,
+      "p95": 299,
+      "p99": 495,
+      "max": 3081
+    }
+  },
+  "observed_interval_union_seconds_by_phase": {
+    "request_parse": 0.14969601,
+    "lp_build": 0.014049906,
+    "fp_solve": 0.540335874,
+    "exact_lp": 15.662436927,
+    "response_pack": 0.002111744,
+    "response_write": 0.019189559,
+    "exact_repair": 0.010932567,
+    "exact_verify": 0.001718023,
+    "lean_products": 4.384551389,
+    "lean_lp": 16.655606547,
+    "lean_preprocess": 1.229623625,
+    "lean_linearize": 1.380338621,
+    "lean_certificate": 4.054660095
+  },
+  "accelerable_cost": {
+    "whole_seconds": 37.080163927,
+    "sum_interval_seconds": 16.202772801,
+    "numeric_only_sum_interval_seconds": 16.202772801,
+    "numeric_only_union_seconds": 16.202772801,
+    "numeric_only_occupancy_fraction": 0.43696605098344554,
+    "numeric_zero_cost_fixed_work_sensitivity_seconds": 20.877391126,
+    "observed_union_seconds": 16.202772801,
+    "observed_union_fraction": 0.43696605098344554,
+    "generous_sum_seconds_including_all_Lean_product_construction": 21.330502815,
+    "optimistic_zero_cost_elapsed_lower_bound_seconds": 15.749661112,
+    "scope": "Summed eligible interval wall deliberately overcounts overlap. Conditional on fixed certificates, fallback decisions and noneligible work. Only a fixed-work scheduling upper bound; union is observed occupancy, not critical-path saving. Generous bound additionally eliminates Lean product proof construction and internal exact LP, beyond a floating GPU's guarantee. No bound certified with missing attribution."
+  },
+  "batching": {
+    "arrival_outstanding_calls": {
+      "count": 231,
+      "min": 1,
+      "median": 1,
+      "p90": 2,
+      "p95": 3,
+      "p99": 4,
+      "max": 4
+    },
+    "arrival_distinct_candidates": {
+      "count": 231,
+      "min": 1,
+      "median": 1,
+      "p90": 2,
+      "p95": 3,
+      "p99": 4,
+      "max": 4
+    },
+    "time_seconds_by_outstanding_calls": {
+      "0": 15.443626687,
+      "1": 4.237988052,
+      "2": 1.827337293,
+      "3": 2.11346911,
+      "4": 8.397068475
+    },
+    "scope": "Client exported-AST or LP request intervals, including mutex wait; direct AST requests need product/LP construction before actual device-ready LP. Sequential future branches are excluded."
+  },
+  "tails": {
+    "0.01": {
+      "waves": 1,
+      "candidates": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "summed_wave_wall_seconds": 13.415979309,
+      "component_cpu_seconds_not_additive_across_Lean_LP_and_service": {
+        "request_parse": 0.067781629,
+        "lp_build": 0.005652267,
+        "fp_solve": 0.042939189,
+        "exact_lp": 1.22525845,
+        "response_pack": 0.000974968,
+        "response_write": 0.000751863,
+        "protocol_dispatch_unattributed": 0.005617456,
+        "exact_repair": 0.004863863,
+        "exact_verify": 0.000687441,
+        "lean_products": 1.518938965,
+        "lean_lp": 0.096953061,
+        "lean_preprocess": 0.1109397,
+        "lean_linearize": 0.5127,
+        "lean_certificate": 1.69398042
+      },
+      "scope": "Ranked complete four-source wave wall; individual-candidate wall is unavailable. Whole tied waves retained."
+    },
+    "0.1": {
+      "waves": 1,
+      "candidates": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "summed_wave_wall_seconds": 13.415979309,
+      "component_cpu_seconds_not_additive_across_Lean_LP_and_service": {
+        "request_parse": 0.067781629,
+        "lp_build": 0.005652267,
+        "fp_solve": 0.042939189,
+        "exact_lp": 1.22525845,
+        "response_pack": 0.000974968,
+        "response_write": 0.000751863,
+        "protocol_dispatch_unattributed": 0.005617456,
+        "exact_repair": 0.004863863,
+        "exact_verify": 0.000687441,
+        "lean_products": 1.518938965,
+        "lean_lp": 0.096953061,
+        "lean_preprocess": 0.1109397,
+        "lean_linearize": 0.5127,
+        "lean_certificate": 1.69398042
+      },
+      "scope": "Ranked complete four-source wave wall; individual-candidate wall is unavailable. Whole tied waves retained."
+    }
+  },
+  "scope": "Diagnostic capture, all success/fallback calls. Timers and JSON logging overhead are charged, not corrected away. Overlapping parent Lean LP CPU/service CPU are reported separately. Same-method native JSON agreement required separately. Root self-review.",
+  "full_derived_analysis_archive": "cost-analysis.full.json.gz"
+}

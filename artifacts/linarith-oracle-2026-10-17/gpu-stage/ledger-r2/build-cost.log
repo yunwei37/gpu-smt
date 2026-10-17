@@ -1,0 +1,13 @@
+['cargo', 'build', '--release', '--bin', 'arithmetic-costd', '--bin', 'farkas-costd']
+   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/native)
+    Finished `release` profile [optimized] target(s) in 2.60s
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostStages.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostStages.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostProducts.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostProducts.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostNative.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostNative.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostFast.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostFast.lean']
+/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostFast.lean:290:22: warning: unused variable `cost`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostBaseline.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostBaseline.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostOracle.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/GpuArithmetic/CostOracle.lean']
+['leanc', '-O3', '-DLEAN_EXPORTING', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/CostOracle.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2/cost-profile.so']
