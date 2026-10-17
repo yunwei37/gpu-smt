@@ -3765,3 +3765,15 @@ with no clipping/overlap. Prefix performance/agreement placeholders remain.
 The cell-summary analyzer is exercised on all7808actual rows and2085paired
 request intervals, with no pairing defects or overlaps. This is root self-review
 and actual-data validation, not an independent audit or completed comparison.
+
+
+## Current-entrypoint maintenance after completed captures
+
+The build guide still called the closed arithmetic driver the current
+continuation and described completed phase work as queued. These frontdoor
+statements are corrected against the published decision and full diagnostics.
+The4October reproduction page keeps its historical recipes while dating its
+former next-research questions. The17October local maintenance reflection
+adds the actual closure and the pending prefix decision. No source, experiment
+parameter, scientific contract, Agent or schedule changes. Root self-review
+and scoped local-link checks; current exact-prefix acquisition continues.

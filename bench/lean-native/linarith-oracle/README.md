@@ -1,7 +1,19 @@
 # Native arithmetic oracle experiment
 
-Status: experimental, not a production Lean service or demonstrated GPU speedup.
-See the [predeclared decision rule](../../../artifacts/linarith-oracle-2026-10-17/plan.md).
+Status: experimental. The arithmetic route is closed by its
+[completed continuation decision](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
+All three primary pairs and both full phase diagnostics are complete; see the
+[strong-baseline analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/strong-result-review.md)
+and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
+These are CPU results. No production service or GPU acceleration is established.
+
+The already-admitted original-population prefix comparison remains unfinished.
+Its [launch receipt](../../../artifacts/linarith-oracle-2026-10-17/formal-default/launch.json)
+and actual live process identify the existing capture. The
+[complete miniF2F batch reference](../../../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md)
+includes its operational failures. A reference alone is not a reuse speedup.
+The [predeclared protocol](../../../artifacts/linarith-oracle-2026-10-17/plan.md)
+retains the original decision rule.
 
 - `build-stages.py`: copies the pinned Mathlib control/reconstruction functions into an instrumented namespace, records sequential thread CPU and invocation wall, and builds native code. Original Mathlib is unchanged.
 - `Oracle.lean` / `oracle.rs`: one export of supported real/rational comparison expressions, native polynomial/product generation and LP, coefficient/provenance return, selected proof construction and one weighted contradiction check. Unsupported or failed cases restore state and run the original path.
@@ -11,7 +23,11 @@ See the [predeclared decision rule](../../../artifacts/linarith-oracle-2026-10-1
 
 The scripts currently use the retained owning-Workspace dependency paths (Lean4.27, matching Mathlib/Farkas/Kimina), not a portable installer. Their pinned versions and original build procedures live in the reproduction guide and `artifacts/lean-modern-native-compilation-2026-10-14/`. The restored documented `/tmp/gpu-smt-linarith-oracle-20261017/` path resolves onto the existing Workspace PVC; its original ephemeral contents were lost during Pod replacement. Publish completed evidence back to `artifacts/linarith-oracle-2026-10-17/`.
 
-In the owning Workspace, with no active build using the same output filenames:
+## Historical build and capture entrypoints
+
+The following recipe documents the completed arithmetic experiment. It is not
+the current work queue. Use the owning Workspace, with no active worker using
+the same libraries or build output filenames:
 
 ```bash
 python3 bench/lean-native/linarith-oracle/build-stages.py
@@ -34,12 +50,12 @@ Timeouts remain300srequest boundaries and count as operational outcomes;
 process replacement invalidates all cached environment/proof-state ids.
 Forced-retirement CPU is explicitly censored. The timeout repair was qualified on the actual failed batch: four retained
 operational outcomes followed by four completed sources after replacement.
-The recovered full captures were interrupted by the shared-node/volume fault;
+Earlier full attempts were interrupted by the shared-node/volume fault;
 see the [retained failure record](../../../artifacts/linarith-oracle-2026-10-17/interruption-20261017T0617.md).
 Earlier completed and failed records remain; no lost partial is counted as complete.
 
-The current heavy-cohort continuation is `run-matrix.py EXISTING_PAIR_PID`.
-It preserves the already-running first pair and uses its closed receipts.
+The historical heavy-cohort driver is `run-matrix.py EXISTING_PAIR_PID`.
+It preserved the first pair and reused its closed receipts.
 Read `artifacts/linarith-oracle-2026-10-17/matrix-launch.json` and actual
 processes before continuing; this is not a command to start another collector.
 Extra CPU competitors are conditional on passing the user's threshold against
@@ -57,8 +73,8 @@ sums overlap across sources and cannot be whole-wall percentages.
 
 The real mixed Real/Nat diagnostic preflight matches full native JSON on all
 four sources. It is not representative of the 1,000-source distribution.
-The bounded continuation queues the full strong diagnostic after primary timing;
-it does not rerun the stock phase pilot as if it described Fast/hybrid.
+The full strong diagnostic is complete and matches the third primary reference.
+The earlier stock phase pilot does not describe Fast/hybrid.
 
 analyze-prefix-runs.py RUN_DIR compares every original source index between
 batch and each prefix method. It distinguishes pending, operational failures,
@@ -93,11 +109,10 @@ incomplete directories. The prefix matrix can reuse its existing closed real
 preflight receipt without an obsolete process ID. Both remain finite experiment
 drivers; no additional service or schedule is installed.
 
-The three admitted primary pairs are now complete: aggregate1.34668x, below
-the more-than1.5xrule. The hourly app automation is deleted and this route is
-closed as mainline. See the [decision and retained raw results](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
-Only the already-requested full phase/prefix captures continue to finish the
-report; this guide is not authority to start a new variant or timing grid.
+The hourly research automation is deleted. Only the unfinished admitted prefix
+capture remains active; completed arithmetic timing and phase captures are not
+a queue to resume. Historical driver interfaces remain available for explicit
+reproduction of the retained evidence.
 
 `analyze-oracle.py CELL` describes observed successful direct-check branches,
 fallback records, source-body groups and native polynomial/product/LP timers.

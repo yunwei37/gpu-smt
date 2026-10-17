@@ -30,3 +30,19 @@ show saved end-to-end time. They are genuinely running on persistent storage.
 Report operational rows and all costs, not just successful/eligible prefixes.
 Current work is therefore acquisition and the declared result decision, with
 writing limited to factual status. Root self-review, no independent audit.
+
+## Update after completed captures — 2026-10-17T14:36:16.159829-07:00
+
+The [completed decision](decision-20261017.md) closes the arithmetic route.
+Further CUDA kernels or CPU parameter variants do not follow from the current
+evidence. The remaining useful question is actual prefix reuse against the
+warm native batch reference. The [complete reference](formal-default/minif2f/batch-result-review.md)
+shows why all source outcomes and failed-request costs must accompany timing.
+A shorter run could otherwise reflect different failure behavior.
+
+The next action is the already-running exact/unit and ProofNet acquisition,
+followed by original-index verdict and operational-transition comparison. No
+new capture is launched by this maintenance. Completed phase diagnostics and
+closed timing drivers are now clearly separated from the unfinished prefix
+capture in the implementation and reproduction entrypoints. Historical recipes,
+raw failures, source snapshots and unrelated author files remain intact.

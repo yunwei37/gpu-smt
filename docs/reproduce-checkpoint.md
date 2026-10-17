@@ -1,12 +1,15 @@
 # Reproduce the verification-acceleration checkpoint
 
-This page reproduces the historical 4 October checkpoint below. For the current
-bounded Lean4.27 arithmetic-oracle experiment, use the
+This page reproduces the historical 4 October checkpoint below. The later
+Lean4.27 arithmetic experiment has a
+[completed continuation decision](../artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
+and complete phase diagnostics. The original-population prefix comparison is
+still running. Use the
 [implementation/build/recovery guide](../bench/lean-native/linarith-oracle/README.md)
-and [frozen1000-source protocol](../artifacts/linarith-oracle-2026-10-17/plan.md).
-Its actual post-rebuild native qualifications are retained separately; they are
-not full-population speedup results. Do not substitute this older checkpoint's
-baseline or metadata-GPU numbers for the current comparison.
+for current status and the
+[frozen protocol](../artifacts/linarith-oracle-2026-10-17/plan.md) for its evidence
+contract. This older checkpoint's baseline and metadata-GPU timings describe
+their own narrower measurement boundaries.
 
 
 The measured checkpoint is `f989833` on `research/lean-acceleration`. Its sources,
@@ -182,11 +185,10 @@ failures or the prefix pool's SAT/UNSAT/UNKNOWN differences.
 
 ## Next research direction
 
-First measure real candidate streams against established warm Lean environment
-reuse, including incomplete proofs, memory growth and equal timing boundaries.
-Before expanding GPU work, profile a checker operation that can reuse the
-resident expression representation and contributes materially to checking.
-For SMT, use the retained 31 scope/history regressions to evaluate controlled
-snapshots or fallback with exact per-input UNKNOWN/artifact fidelity and
-version-aligned tasks. Full GPU Lean checking and a novel production SMT
-runtime have not been demonstrated by this completed benchmark checkpoint.
+At the 4 October checkpoint, the open questions concerned real candidate
+streams against warm Lean reuse, incomplete proofs and memory growth, material
+checker work after representation preparation, and the retained SMT
+scope/history regressions. These are dated planning questions. Current route
+decisions and unfinished captures are linked at the top of this page.
+Full GPU Lean checking and a novel production SMT runtime were not
+demonstrated by this historical checkpoint.
