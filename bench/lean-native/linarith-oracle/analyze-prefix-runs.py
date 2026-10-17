@@ -3,6 +3,31 @@ Operational outcomes and partial acquisition never establish semantic agreement.
 """
 from pathlib import Path
 import argparse,gzip,json
+def native_request_summary(path,whole_seconds):
+    log=path/'requests-responses.jsonl.gz'
+    if not log.exists():return None
+    counts={};elapsed={};start=None;last_end=None;defects=0;overlaps=0
+    with gzip.open(log,'rt') as f:
+        for line in f:
+            e=json.loads(line);kind=e['event']
+            if kind=='request':
+                if start is not None:defects+=1
+                start=e['start_ns']
+                if last_end is not None and start<last_end:overlaps+=1
+            elif kind in ('response','request_failure'):
+                counts[kind]=counts.get(kind,0)+1
+                elapsed[kind]=elapsed.get(kind,0)+e['wall_ns']/1e9
+                if start is None:defects+=1
+                else:last_end=start+e['wall_ns']
+                start=None
+            else:defects+=1
+    if start is not None:defects+=1
+    valid=defects==0 and overlaps==0 and sum(elapsed.values())<=whole_seconds
+    return {'terminal_event_counts':counts,'roundtrip_wall_seconds':elapsed,
+      'pairing_defects':defects,'overlapping_request_intervals':overlaps,
+      'serialized_intervals_validated':valid,
+      'failed_request_roundtrip_fraction_of_whole':elapsed.get('request_failure',0)/whole_seconds if valid else None,
+      'scope':'Sequential client request wall, including waiting. Not native CPU or additive internal tactic/solver stages. Failed-request cleanup outside the request interval remains in whole elapsed.'}
 def cell(path):
     receipt=path/'terminal.json'
     if not receipt.exists():return None
@@ -10,10 +35,11 @@ def cell(path):
     with gzip.open(path/'results.jsonl.gz','rt') as f:rows=[json.loads(x) for x in f]
     by={x['index']:x for x in rows}
     return {'terminal':t,'rows':by,
+      'native_request_summary':native_request_summary(path,t['whole_seconds']),
       'complete':t['state']=='complete' and len(rows)==len(by)==t['expected']}
 def analyze(root):
     cells={m:cell(root/m) for m in ['batch','exact','unit']}
-    out={'root':str(root),'comparisons':[]}
+    out={'root':str(root),'cells':{m:{'terminal':v['terminal'],'acquisition_complete':v['complete'],'native_request_summary':v['native_request_summary']} for m,v in cells.items() if v},'comparisons':[]}
     for method in ['exact','unit']:
         b=cells['batch'];c=cells[method]
         if not b or not c:

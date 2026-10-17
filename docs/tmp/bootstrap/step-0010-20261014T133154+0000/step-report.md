@@ -3740,3 +3740,28 @@ no new research scope, variant or execution setting is introduced. This is
 a missing provenance repair, not another empirical result. Full formal-prefix
 comparison is still running in the same live driver5256; no restart is issued.
 Root self-review only.
+
+
+## Full original miniF2F native-batch reference closes
+
+All7808original indices return once in order:2992complete/4497rejected/319
+operational,28673.003207251whole seconds.82forced retirements censorCPU.
+Complete raw native frames/responses and terminal receipt are retained under
+artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/. Sequential
+caller intervals validate without overlap/pairing defects:failed-request wall
+20672.973s(72.10%of whole), not solverCPU or internal arithmetic shares.
+60requesttimeouts/22read failures;21read-failure stderr records include
+std::bad_alloc, onecauseunknown. No source failure is discarded.
+The existing driver continues exact prefixes; other comparisons remain
+pending. No gain is inferred from the reference alone. Operational/semantic
+transitions must accompany any later timing ratio. Mainline1.34668xnegative
+closure/hourly deletion unchanged. Root self-review only.
+
+
+Targeted WRITE verification: the baseline results and operational limitations
+are reflected in the current paper without changing its scientific contract.
+Tectonic compiles the19-page draft; page8was rendered and visually reviewed,
+with no clipping/overlap. Prefix performance/agreement placeholders remain.
+The cell-summary analyzer is exercised on all7808actual rows and2085paired
+request intervals, with no pairing defects or overlaps. This is root self-review
+and actual-data validation, not an independent audit or completed comparison.

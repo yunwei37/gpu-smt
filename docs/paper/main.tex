@@ -386,6 +386,15 @@ inherit the pinned SHRED client's ordinary 48 GiB verifier address-space
 limit. Operational resource failures and replacement costs remain in the
 full-population report; this comparison does not reproduce a deployed
 Kimina server's separate memory policy.
+The complete miniF2F native-batch reference returns all 7,808 sources in
+28,673.00 seconds: 2,992 complete, 4,497 rejected and 319 operational outcomes.
+The 82 failed native requests occupy 20,672.97 seconds, or 72.10\% of whole
+elapsed time, in non-overlapping sequential client roundtrips. This is
+caller waiting/roundtrip wall, not native CPU or internal tactic work.
+Forced retirement censors CPU accounting, and 319 source verdicts remain
+operationally unknown. The pending prefix comparison must therefore report
+failure and verdict transitions alongside time; a time difference alone
+cannot establish savings in successful proof work.
 \missing{Complete original-population prefix timing, per-source native
 agreement, operational outcomes and cost-weighted savings.}
 

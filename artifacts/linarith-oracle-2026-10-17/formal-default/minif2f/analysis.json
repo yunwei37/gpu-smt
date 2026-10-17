@@ -1,0 +1,64 @@
+{
+  "root": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/formal-default/minif2f",
+  "cells": {
+    "batch": {
+      "terminal": {
+        "state": "complete",
+        "dataset": "minif2f",
+        "method": "batch",
+        "expected": 7808,
+        "returned": 7808,
+        "counts": {
+          "complete": 2992,
+          "rejected": 4497,
+          "operational": 319
+        },
+        "whole_seconds": 28673.003207251,
+        "cpu_seconds": 7110.958396,
+        "verifier_memory_limit_bytes": 51539607552,
+        "verifier_memory_policy": "pinned upstream LeanRepl default; caller does not override",
+        "normal_native_exit": true,
+        "forced_native_retirements": 82,
+        "cpu_accounting_complete": false,
+        "native_parse_seconds": 0.0,
+        "fallbacks": 0,
+        "executed_prefix_nodes": 0,
+        "cached_lookups": 0,
+        "affinity": [
+          20,
+          21,
+          22,
+          23
+        ],
+        "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"
+      },
+      "acquisition_complete": true,
+      "native_request_summary": {
+        "terminal_event_counts": {
+          "response": 2003,
+          "request_failure": 82
+        },
+        "roundtrip_wall_seconds": {
+          "response": 7998.279622034005,
+          "request_failure": 20672.973233287
+        },
+        "pairing_defects": 0,
+        "overlapping_request_intervals": 0,
+        "serialized_intervals_validated": true,
+        "failed_request_roundtrip_fraction_of_whole": 0.7209908597247705,
+        "scope": "Sequential client request wall, including waiting. Not native CPU or additive internal tactic/solver stages. Failed-request cleanup outside the request interval remains in whole elapsed."
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "method": "exact",
+      "state": "pending"
+    },
+    {
+      "method": "unit",
+      "state": "pending"
+    }
+  ],
+  "scope": "One offline capture/order of original task candidates, native in-process batch4 versus SHRED-parser-based prefix executor. Includes parse/preparation/IPC/fallback/kernel/retirement. Not an upstream whole-service SHRED benchmark, repeated-trial result, or GPU speedup. Forced-retirement CPU is censored; operational results remain unresolved."
+}

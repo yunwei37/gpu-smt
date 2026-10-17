@@ -125,3 +125,10 @@ This affects only the native verifier children in that benchmark. New captures
 record the actual client value and usefull-default-*names; old unlimited
 partial clocks/outcomes remain separate. Root/Agent/Workspace limits are not
 changed. Actual failed8and normal32-source qualification precede continuation.
+
+
+Completed-cell summaries from `analyze-prefix-runs.py` include paired sequential
+client-request intervals and failed-request roundtrip wall. Their fractions
+are emitted only after pairing and non-overlap checks; they are not native CPU
+or tactic/solver-stage fractions. Missing comparison cells remain pending.
+See the [complete miniF2F batch reference and limits](../../../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md).

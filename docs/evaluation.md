@@ -450,3 +450,19 @@ already-closed primary clocks. Pool/certificate sizes and unnormalized fallback
 errors are preserved. Root self-review only. Mainline1.34668xfailure and deleted
 hourly automation unchanged; original formal populations continue under the
 restored pinned upstream memorydefault, not the failedNoneoverride.
+
+
+## Full original miniF2F native-batch reference closes
+
+All7808original indices return once in order:2992complete/4497rejected/319
+operational,28673.003207251whole seconds.82forced retirements censorCPU.
+Complete raw native frames/responses and terminal receipt are retained under
+artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/. Sequential
+caller intervals validate without overlap/pairing defects:failed-request wall
+20672.973s(72.10%of whole), not solverCPU or internal arithmetic shares.
+60requesttimeouts/22read failures;21read-failure stderr records include
+std::bad_alloc, onecauseunknown. No source failure is discarded.
+The existing driver continues exact prefixes; other comparisons remain
+pending. No gain is inferred from the reference alone. Operational/semantic
+transitions must accompany any later timing ratio. Mainline1.34668xnegative
+closure/hourly deletion unchanged. Root self-review only.
