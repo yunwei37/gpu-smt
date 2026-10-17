@@ -3346,3 +3346,101 @@ Publish only this coherent completed literature/admission/manuscript addition un
 ## 2026-10-17 — user-authorized bounded arithmetic oracle experiment
 
 EXPERIMENT_GATE active: [predeclared plan](../../../../artifacts/linarith-oracle-2026-10-17/plan.md) and frozen top1000 original source selection published20f7916. Root-only execution. Four actual candidates pass native JSON agreement after retained external-symbol preflight failure repair. Full native-stage capture started; direct coefficient oracle implementation compiles and awaits matched preflight. WRITE/REVIEW must consume real results, not literature-only substitute. User rule: completed >1.5x end-to-end over fastest valid native baseline and matching outcomes to continue; otherwise negative wrap-up and delete hourly automation. Prefix experiment and daily OSS cleanup/reflection remain required.
+
+
+## 2026-10-17 — native arithmetic implementation and formal-prefix execution
+
+EXPERIMENT_GATE remains active. Source and completed evidence published931c161.
+The direct oracle exports supported real/rational expressions once, performs
+native polynomial/product/LP work, realizes selected proofs, and checks the
+coefficient certificate once. Corrected four-source native preflight has zero
+complete parsed-response differences against stock/Fast-hybrid/Fast-HiGHS:
+73/74arithmetic invocations check directly.38.743s still loses to the31.003s
+Fast-hybrid competitor in diagnostic blocks; no1.5x or GPU success.
+
+Earlier custom-wrapper percentages were interpreted; the retained erratum and
+native-exported capture supersede them. Native stock four-source CPU shares:
+preprocessing+linearization2.73%, nonlinear fact generation29.65%, LP32.17%,
+certificate construction/check2.49%; remainder is other source/control/kernel
+and collector work. These are process CPU fractions, not end-to-end wall
+fractions or strongest-Fast phase attribution. Full1000native matched timing
+and separate source-native attribution remain pending.
+
+The current primary matrix is actually executing on logical CPUs12–15.
+An earlier new-trial prefix sharing16–19with a retained capture was stopped
+and preserved as a co-run pilot; valid older captures8–11/16–19are untouched.
+No old E038 matrix resumed. Primary prototype timings disable diagnostics.
+One1000heavy-source cohort only; no new29750full population experiment.
+
+Supporting formal-prefix work: original7808miniF2F/5952ProofNet inputs and
+official SHRED parser outputs now published. Native-unit occurrence reuse is
+13.44%/18.38%when inter-tactic trivia is omitted, vs0.027%/0.209%for SHRED
+exact rooted edges. These are opportunities, not time saved. The32-source
+native execution preflight returns28complete/4rejected identically across
+batch/exact/unit, with normal native exit0; whole6.015/14.186/13.975s includes
+the7.85/7.88s parser starts. Full original-population executions are now running,
+separately on20–23. Adapted native batch/trie implementation is distinguished
+from upstream SHRED profiling; closed-root kernel checking and fallback are real.
+
+WRITE_GATE consumes completed qualified results only; current paper does not
+claim the new experiment succeeded. Daily README cleanup, local-link check and
+substantive-progress reflection were committed and their proposed experiments
+executed. REVIEW_GATE is root self-review; independent audit is absent by user
+instruction. All four RQs remain open; the user's >1.5x continue/otherwise
+negative-close-and-delete-hourly-duty decision awaits complete data.
+
+
+### Pre-result matrix consolidation
+
+The main baseline is Fast/hybrid+product reuse. The original queued broad CPU
+grid was canceled while preserving its currently running first paired native
+collector. Three paired repetitions plus requested phase diagnostics remain;
+stock/HiGHS timing competitors are only needed if the provisional aggregate
+speedup exceeds1.5x against Fast. Failing against this competent CPU competitor
+already implies failing against any faster competitor. Source and plan were
+changed before any full1000primary pair completed; threshold/input/native
+agreement requirements stay fixed. This avoids rerunning the old Full/Fast
+solver matrix. Ordinary experiment-process waiting consumes no goal rounds;
+inotify host instance exhaustion is recorded, host settings unchanged.
+
+Full miniF2F/ProofNet native prefix executions started after the32source
+normal-exit qualification; source/input/raw preflight and repro analysis are
+preserved. Current statuses must come from launch records/processes/terminal
+files. No new claim follows from a launch or an incomplete source prefix.
+
+
+### Native prefix full-run timeout / current repair
+
+The first native-batch miniF2F full run reached160persisted outcomes and raw
+successful responses through index171, then a real300srequest timeout aborted
+the old collector. Full source/response logs are retained. This is incomplete
+acquisition, not a completed negative experiment. The repaired collector
+persists requests before exchange, records operational outcomes and replaces
+failed native workers, clearing all stale environment/proof-state ids.
+No verifier deadline or input changed. A real replay172–179and its successor
+is currently qualifying that continuation; full recovered runs are queued
+behind it. Main1000source Fast/direct-oracle acquisition remains live.
+
+
+### First complete1000reference and corrected strong fallback
+
+The first real1000Fast/hybrid/product-reuse reference completed in2282.741s,
+992complete/8rejected, normal native exit0 and no operational rows. Raw data
+are in artifacts/linarith-oracle-2026-10-17/strong-native-reference/.
+The initial direct prototype used stock on unsupported/failure paths instead
+of the strong reference. Stop and retain that flawed partial, not the completed
+reference; no scientific negative conclusion from that implementation defect.
+
+Correct fallback is now the pre-existing Fast/hybrid/product route with the
+same native numeric flags. A real Real/Nat four-source pair returns identical
+native JSON;8direct checks and507strong fallbacks engage.77.304sreference vs
+78.354sprototype is preflight only, no gain. Corrected1000prototype is active;
+its complete reference bytes are reused with build/epoch lineage disclosed.
+
+The actual prefix timeout repair also passed: sources172–179produce4timeout
+operational outcomes followed by4complete after worker replacement,309.12s
+including the unchanged300sdeadline. CPU is censored for the forced retirement.
+Recovered original-population prefix runs now execute. Separate ProofNet
+four-source batch/exact/unit preflight has4rejections in each, zero per-source
+verdict differences and normal exit. No completed full-population comparison,
+1.5xpass, GPU acceleration or independent audit is claimed.

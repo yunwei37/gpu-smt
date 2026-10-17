@@ -28,7 +28,7 @@ with (U/'build-oracle.log').open('w') as log:
   run(['lean','-o',str(U/(module+'.olean')),'-c',str(U/(Path(module).name+'.c')),str(U/(module+'.lean'))])
  cs=[str(U/p) for p in ['Stages.c','clock.o','Products.c','Baseline.c','Oracle.c']]
  cs += [str(F/'.lake/build/ir/Farkas'/(m+'.c')) for m in ['Platform','Telemetry','Native','Fast']]
- run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*cs,'-o',str(U/'comparison-native.so')])
+ run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*cs,'-o',str(U/'comparison-strong-fallback.so')])
  core=U/'native'
  if not core.exists():
   shutil.copytree(R/'artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/external-support',core)

@@ -23,3 +23,21 @@ Use fresh output directories. A preflight is qualification, not a full speedup c
 Do not rebuild libraries that active experiment workers still use. Main performance
 trials disable diagnostic telemetry. Whole clocks include native preparation,
 packing/IPC, oracle work, checking, fallback and process retirement.
+
+
+Formal-prefix support uses `build-prefix-repl.py`, `run-prefix.py` and
+`analyze-prefix.py`. Source/input/parser evidence is under
+`artifacts/linarith-oracle-2026-10-17/prefix-opportunity/`.
+Its native batch and proof-step waves use the same width4; closed roots are
+checked by Lean's kernel. Original unsupported/failed paths fall back.
+Timeouts remain300srequest boundaries and count as operational outcomes;
+process replacement invalidates all cached environment/proof-state ids.
+Forced-retirement CPU is explicitly censored. The first full-corpus timeout
+repair is undergoing real qualification; the prior full run is incomplete.
+
+The current heavy-cohort continuation is `run-matrix.py EXISTING_PAIR_PID`.
+It preserves the already-running first pair and uses its closed receipts.
+Read `artifacts/linarith-oracle-2026-10-17/matrix-launch.json` and actual
+processes before continuing; this is not a command to start another collector.
+Extra CPU competitors are conditional on passing the user's threshold against
+Fast/hybrid. `analyze-matrix.py RUN_DIR` reports pending values as null.

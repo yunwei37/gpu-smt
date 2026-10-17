@@ -27,3 +27,5 @@ Current native stage CPU values are in native-stages-analysis.json. Earlier
 preflight-stage/analysis.json had native Mathlib but bytecode wrappers and is
 superseded for the native-instrumentation question. Full-result review and the
 user's >1.5x decision remain pending. No independent audit claimed.
+
+Scheduling consolidation before the first full heavy-cohort pair completed: see the plan amendment. Three Fast/hybrid/direct-oracle pairs are the mandatory primary comparison; other timing competitors are conditional on a provisional1.5xpass. The valid first collector was retained; only its outer queued-grid driver stopped. No live source acquisition was restarted for this consolidation.

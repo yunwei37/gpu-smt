@@ -1,0 +1,1 @@
+Invalid primary comparison constructor: unsupported/failed direct requests fell back to stock rather than the strong Fast/hybrid reference. Native proof checking/fallback remained, but runtime compared different fallback paths. Stopped partial prototype preserved; no1.5xnegative conclusion from it. Complete1000Fastreference remains valid and reused.

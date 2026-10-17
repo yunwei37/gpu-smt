@@ -1,0 +1,25 @@
+{
+  "state": "failed",
+  "dataset": "minif2f",
+  "method": "batch",
+  "expected": 7808,
+  "returned": 160,
+  "counts": {
+    "complete": 85,
+    "rejected": 75
+  },
+  "whole_seconds": 431.828849235,
+  "cpu_seconds": 0.38495999999999997,
+  "normal_native_exit": false,
+  "native_parse_seconds": 0.0,
+  "fallbacks": 0,
+  "executed_prefix_nodes": 0,
+  "cached_lookups": 0,
+  "affinity": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"
+}

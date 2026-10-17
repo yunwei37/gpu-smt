@@ -21,3 +21,36 @@ Supporting RQ1/RQ3 measurement: on original miniF2F (7,808 candidates, 244 tasks
 Plan review: root self-review only, per user prohibition of agents/OMP. Main risks: overlapping old wall traces, preprocessing duplicated by the prototype, numeric selection differing from proof semantics, changing source/timeouts, CPU-only gains mislabeled GPU gains, and biased top-1000 cohort. These are addressed by same-scope stage instrumentation, direct certificate reuse, native checking/fallback, paired boundaries and explicit scope. No independent audit is claimed.
 
 Daily requirement: review README/structure/dead links and preserve historical failure artifacts; write a dated substantive-progress reflection, then perform its proposed decisive action. This daily maintenance does not replace the experiment.
+
+
+## Preflight-driven plan consolidation, before any top1000 pair completed
+
+The main comparator is the already-qualified strongest Fast/hybrid plus product
+reuse CPU composition. Preserve the currently running first Fast/oracle pair
+without restarting it. Complete three reversed-order pairs and one separate
+native stock four-stage diagnostic. Extra stock/HiGHS timing cells are
+conditional on exceeding1.5x against Fast/hybrid: if the direct path already
+misses that comparison, an even faster baseline cannot make it pass, so
+repeating a Full/Fast×solver grid is unnecessary. Retain any unused partial
+controls from the earlier queued driver, explicitly excluded.
+
+Report every paired ratio plus the ratio of aggregate complete whole times;
+the aggregate ratio implements the user's1.5x threshold. If it passes against
+Fast/hybrid, run the remaining credible native competitors before claiming
+the fastest-baseline rule passes. Native per-source agreement, operational
+failures, resources and source scope still require root self-review. This
+does not change workload selection, verifier semantics or the threshold.
+
+
+## Strong-fallback repair, before a valid complete prototype cohort existed
+
+Code inspection found that the first prototype's failed/unsupported route used
+stock instead of the current Fast/hybrid/product baseline. Correct the fallback
+to that same strongest prequalified CPU path, including hybrid numeric flags.
+This is a constructor/comparator repair, not a new hypothesis or threshold.
+The actual Real/Nat preflight preserves all native JSON results and engages both
+routes. Keep all old partials as invalid for the intended primary comparison.
+Reuse the completed1000reference: its executed Fast/product code did not change;
+only the then-unused prototype fallback branch/common-library build changes.
+Document this first-pair lineage; later reference repetitions use the corrected
+common library. Full comparisons and diagnostics remain pending.

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 168, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 163, in main
+    os.sched_setaffinity(0,{24,25,26,27});resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument

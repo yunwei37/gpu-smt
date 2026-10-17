@@ -2103,3 +2103,32 @@ Maintenance/publication: publish the new dated related-work addition only, prese
 ## Arithmetic experiment restart self-audit — 2026-10-17
 
 New user experiment decision overrides earlier no-admitted-run status; old E038 remains closed. One root thread only, no active subagents or OMP. Original Workspace/main retained. Native preflight complete4/4 and parsed responses match; failed first profile preserved. Full stage acquisition is active, not completed evidence. Distinguish threadCPU, overlapping wall and full-run boundaries. Independent audit is absent by user instruction.
+
+
+## Native oracle / full-prefix launch self-audit — 2026-10-17
+
+Root alone implemented and executed. No live OMP, subagent or native Codex
+research session was launched. Main/source/Workspace and author-file boundaries
+held. Qualified preflight results and earlier extern/export/sign/protocol/
+affinity failures are preserved. No partial run is labeled complete; no
+occurrence ratio is called an end-to-end speedup; no CPU-only result is GPU
+acceleration. Existing normal native EOF boundaries were reused; prefix's first
+forced-retirement pilot is explicitly censored for CPU and superseded by a
+normal-exit pilot. Scientific acceptance/OSDI readiness is not established.
+The actual full collections and their result reviews remain unfinished.
+
+
+Prefix full-run qualification limitation: first miniF2F capture aborted at an
+expected native request timeout because collector recovery was missing. It
+must not support whole-population performance claims. Closed partial outputs
+and source association are retained; corrected recovery is being exercised on
+the actual failed batch, not a synthetic error fixture. No native timeouts,
+host limits, other Workspaces or retained original collectors changed.
+
+
+Strong-fallback self-audit: rejecting a mechanism on the old weak fallback
+would confound unsupported-case cost with the proposed mechanism. That partial
+is excluded; complete CPU reference remains valid, source and build lineage
+explicit. Corrected direct/fallback Real/Nat engagement and native JSON parity
+are observed. Timeout recovery continues real later sources without raising
+limits or dropping failed rows. All decisions remain root self-review.

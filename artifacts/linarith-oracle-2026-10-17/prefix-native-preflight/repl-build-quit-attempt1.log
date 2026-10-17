@@ -1,0 +1,7 @@
+✖ [21/23] Building REPL.Main
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Main.lean -R ./././. -o ././.lake/build/lib/REPL/Main.olean -i ././.lake/build/lib/REPL/Main.ilean -c ././.lake/build/ir/REPL/Main.c --json
+error: ././././REPL/Main.lean:384:22: unexpected identifier; expected 'then'
+error: Lean exited with code 1
+Some builds logged failures:
+- REPL.Main
+error: build failed

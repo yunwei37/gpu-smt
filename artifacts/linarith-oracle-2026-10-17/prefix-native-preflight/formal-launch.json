@@ -1,0 +1,20 @@
+{
+  "pid": 2117595,
+  "command": "from pathlib import Path\nimport subprocess\nr=Path('/workspaces/repository');u=Path('/tmp/gpu-smt-linarith-oracle-20261017/prefix')\nfor ds in ['minif2f','proofnet']:\n with (u/(ds+'-full.log')).open('wb') as f:\n  subprocess.run(['python3',str(r/'bench/lean-native/linarith-oracle/run-prefix.py'),'--out',str(u/('full-'+ds)),'--dataset',ds],cwd=r,stdout=f,stderr=subprocess.STDOUT,check=True)\nprint('Both original populations reached all declared native conditions; result review required.',flush=True)\n",
+  "affinity": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "populations": {
+    "minif2f": 7808,
+    "proofnet": 5952
+  },
+  "methods": [
+    "batch",
+    "exact",
+    "unit"
+  ],
+  "state": "launched; complete native outcome/timing review pending"
+}

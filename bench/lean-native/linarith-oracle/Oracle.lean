@@ -192,8 +192,7 @@ def run (nlin onlyOn : Bool) (args : List Expr) (cfg : LinarithConfig) : TacticM
     if (← IO.getEnv "FARKAS_CORPUS_FILE").isSome then
       Farkas.Telemetry.emit <| Farkas.Telemetry.row [("ty","\"direct-oracle-fallback\""),("source",Farkas.Telemetry.jstrEsc (← getFileMap).source),("error",Farkas.Telemetry.jstrEsc (← e.toMessageData.toString))]
     saved.restore
-    let cfg := if nlin then {cfg with preprocessors := cfg.preprocessors.concat nlinarithExtras} else cfg
-    commitIfNoEx do liftMetaFinishingTactic <| Mathlib.Tactic.Linarith.linarith onlyOn args cfg
+    throwUnsupportedSyntax
 
 elab_rules : tactic
   | `(tactic| linarith $[!%$bang]? $cfg:optConfig $[only%$o]? $[[$args,*]]?) => withMainContext do

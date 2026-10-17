@@ -1,0 +1,29 @@
+{"dataset": "minif2f", "method": "batch", "expected": 32, "returned": 0, "counts": {}, "whole_seconds": 3.292819727, "cpu_seconds": 3.274445, "native_parse_seconds": 0.0, "fallbacks": 0, "executed_prefix_nodes": 0, "cached_lookups": 0, "affinity": [20, 21, 22, 23], "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"}
+Traceback (most recent call last):
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/repl.py", line 256, in _read_response
+    self._buffer += os.read(self._master_fd, 1024 * 1024)
+                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 168, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 167, in main
+    for method in a.methods:capture(a.dataset,method,a.limit,a.out/method)
+                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 94, in capture
+    if method=='batch':answers=independent(group)
+                               ~~~~~~~~~~~^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 83, in independent
+    ans=request({'env':env,'cmds':[blank_header(x) for x in chunk],
+       'allTactics':False,'ast':False,'tactics':False,'premises':False})
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py", line 60, in request
+    res=client.request(data)
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/repl.py", line 277, in request
+    response = self._read_response(started + self.timeout_seconds)
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/repl.py", line 258, in _read_response
+    raise ReplError(f"failed reading Lean REPL: {error}") from error
+shred_native_repl.ReplError: failed reading Lean REPL: [Errno 5] Input/output error

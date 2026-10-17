@@ -239,3 +239,42 @@ The same publication preserves completed GC-original/Fast-hybrid profiles (all29
 Current disposition: E038native CPU runtime branching is closed by user instruction; its v1 collector and descendants are stopped with raw partial data preserved. No OMP, other Agent or Codex subagent is used; root performs and labels its own critical rechecks. [Closure, GPU cost boundaries and substantive next mainline](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
 
 The [new primary-source admission](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261017T0212/report.md) verifies that plain expensive closing-proof/tactic-prefix reuse is already implemented by SHRED, while learned GPU feedback changes exact-verdict semantics. No new mechanism/preflight/full matrix is admitted; source pins, upstream-only arithmetic and released-data exclusions remain explicit. This adds prior-art pressure without changing the Initial Narrative or four RQs.
+
+
+## Bounded arithmetic oracle / formal prefix experiment — 2026-10-17
+
+User-authorized [decision plan](../artifacts/linarith-oracle-2026-10-17/plan.md)
+and [native preflight](../artifacts/linarith-oracle-2026-10-17/native-preflight/result-review.md)
+test a new direct external certificate path on1000arithmetically heavy original
+Goedel sources. Four-source diagnostic preflight matches native parsed responses;
+73of74invocations use direct certificates, but38.743s loses to31.003sFast-hybrid.
+No new GPU code ran. Complete matched cohort timings and final1.5xdecision are
+pending. Native stock stage attribution must not be called strongest-Fast
+attribution; remaining source/kernel/collector work and concurrent wall limits
+remain explicit.
+
+The original13760miniF2F/ProofNet source inputs and
+[prefix opportunities](../artifacts/linarith-oracle-2026-10-17/prefix-opportunity/README.md)
+are preserved. [Normal-exit native pilot](../artifacts/linarith-oracle-2026-10-17/prefix-native-preflight/normal-retirement-result-review.md)
+has identical32source verdicts but no end-to-end win. Full native batch,
+SHRED exact-edge trie adaptation and native-unit trie comparisons are running.
+All reviews for this continuation are root self-review, not independent audit.
+
+The completed 1,000-source Fast/hybrid native reference is 2,282.741 s,
+with 992 complete and 8 rejected sources and no operational failures.
+The first direct prototype incorrectly fell back to stock arithmetic; its
+partial outputs are retained and excluded from the decision. The corrected
+prototype restores state and falls through to exactly the same Fast/hybrid
+and product-reuse handler as the reference. Four mixed Real/Nat sources
+match full native JSON (77.304 s reference; 78.354 s prototype), exercising
+8 direct checks and 507 strong-baseline fallbacks. This qualification has no
+speedup; the corrected full-cohort comparison remains in progress. These
+measurements use CPU native code, with no GPU benefit claimed.
+
+Prefix timeout recovery was tested on the actual failing miniF2F batch:
+four operational timeouts are preserved, and the next four sources complete
+after native-worker replacement. Whole time includes 309.120 s, including
+the timeout and restart. Forced retirement censors waited-child CPU, which
+is explicitly marked incomplete. Full original-population timing and native
+verdict comparison are still pending; parser-prefix occurrence counts are
+not end-to-end savings.

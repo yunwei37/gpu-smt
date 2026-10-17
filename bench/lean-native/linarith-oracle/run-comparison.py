@@ -26,7 +26,10 @@ class Runner(Base):
         if name.startswith('fast-'):
             os.environ['GPU_ARITHMETIC_BASELINE']=name
             if name=='fast-hybrid':os.environ['FARKAS_EXTERNAL_CPU_HYBRID']='1'
-        if name=='oracle':os.environ['GPU_ARITHMETIC_ORACLE']=str(U/'arithmetic-oracled-product-sign-fixed')
+        if name=='oracle':
+            os.environ['GPU_ARITHMETIC_ORACLE']=str(U/'arithmetic-oracled-product-sign-fixed')
+            os.environ['GPU_ARITHMETIC_BASELINE']='fast-hybrid'
+            os.environ['FARKAS_EXTERNAL_CPU_HYBRID']='1'
         if name=='profile':
             os.environ['GPU_ARITHMETIC_PROFILE']='1'
             cellname=kwargs.get('label') or ('rep%d-%s' % (rep,name))
@@ -42,26 +45,30 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--limit',type=int,default=0)
-    p.add_argument('--methods',nargs='+',choices=['native','profile','fast-hybrid','fast-highs','oracle'],default=['oracle','native','fast-hybrid','fast-highs'])
+    p.add_argument('--input',type=Path,default=A/'input-top1000.jsonl')
+    p.add_argument('--methods',nargs='+',choices=['native','profile','fast-hybrid','fast-highs','oracle'],default=['fast-hybrid','oracle'])
     p.add_argument('--width',type=int,default=4)
     p.add_argument('--diagnostic',action='store_true')
+    p.add_argument('--reuse-reference',type=Path,default=None)
     opts=p.parse_args()
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
-    os.sched_setaffinity(0,{16,17,18,19})
+    os.sched_setaffinity(0,{12,13,14,15})
     c=json.loads((R/'artifacts/lean-modern-native-compilation-2026-10-14/native-library.json').read_text())
     manifest=U/'comparison-native-load.txt'
-    manifest.write_text(Path(c['load_manifest']).read_text()+''.join(str(U/f)+'\n' for f in ['comparison-native.so']))
+    manifest.write_text(Path(c['load_manifest']).read_text()+''.join(str(U/f)+'\n' for f in ['comparison-strong-fallback.so']))
     c['load_manifest']=str(manifest)
     config=U/'comparison-native-library.json';config.write_text(json.dumps(c))
     paths=[str(U),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]
     paths += [str(q/'.lake/build/lib/lean') for q in (T/'mathlib4/.lake/packages').iterdir() if q.is_dir()]
     os.environ['LEAN_PATH']=os.pathsep.join(paths)
-    args=argparse.Namespace(input=A/'input-top1000.jsonl',limit=opts.limit,
+    args=argparse.Namespace(input=opts.input,limit=opts.limit,
        manifest=config,kimina=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d'),
        sdk=T/'lean-4.27.0-linux',project=T/'mathlib4',frozen=U,width=opts.width,
        orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic,
        header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=1)
     args.out.mkdir(parents=True,exist_ok=False)
+    if opts.reuse_reference is not None:
+        os.symlink(opts.reuse_reference.resolve(),args.out/'rep1-fast-hybrid',target_is_directory=True)
     runner=Runner(args);runner.prepare_environment()
     (args.out/'launch.json').write_text(json.dumps({'argv':sys.argv,'pid':os.getpid(),
       'affinity':sorted(os.sched_getaffinity(0)),'methods':opts.methods,'input':str(args.input),

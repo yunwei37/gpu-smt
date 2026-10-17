@@ -35,10 +35,10 @@ def main():
     p.add_argument('--width',type=int,default=4)
     opts=p.parse_args()
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
-    os.sched_setaffinity(0,{16,17,18,19})
+    os.sched_setaffinity(0,{12,13,14,15})
     c=json.loads((R/'artifacts/lean-modern-native-compilation-2026-10-14/native-library.json').read_text())
     manifest=U/'native-load-with-arithmetic.txt'
-    manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'comparison-native.so')+'\n')
+    manifest.write_text(Path(c['load_manifest']).read_text()+str(U/'comparison-strong-fallback.so')+'\n')
     c['load_manifest']=str(manifest)
     config=U/'native-library.json';config.write_text(json.dumps(c))
     paths=[str(U),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]

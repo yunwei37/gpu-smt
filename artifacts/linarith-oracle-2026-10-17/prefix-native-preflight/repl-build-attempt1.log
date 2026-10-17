@@ -1,0 +1,29 @@
+✔ [1/23] Built REPL.Util.Pickle
+✔ [2/23] Built REPL.Frontend
+✔ [3/23] Built REPL.Lean.Environment
+✔ [4/23] Built REPL.Util.Pickle:c.o
+✔ [5/23] Built REPL.Lean.Environment:c.o
+✔ [6/23] Built REPL.Util.Path
+✔ [7/23] Built REPL.Lean.ContextInfo
+✔ [8/23] Built REPL.Frontend:c.o
+✔ [9/23] Built REPL.Lean.InfoTree
+✔ [10/23] Built REPL.Util.Path:c.o
+✔ [11/23] Built REPL.Lean.ContextInfo:c.o
+✔ [12/23] Built REPL.JSON
+✖ [13/23] Building REPL.Snapshots
+trace: .> LEAN_PATH=././.lake/build/lib LD_LIBRARY_PATH=././.lake/build/lib /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean ././././REPL/Snapshots.lean -R ./././. -o ././.lake/build/lib/REPL/Snapshots.olean -i ././.lake/build/lib/REPL/Snapshots.ilean -c ././.lake/build/ir/REPL/Snapshots.c --json
+error: ././././REPL/Snapshots.lean:196:20: unknown identifier 'mkLambdaFVars'
+error: ././././REPL/Snapshots.lean:197:19: unknown identifier 'mkForallFVars'
+error: ././././REPL/Snapshots.lean:203:22: failed to synthesize
+  ToMessageData KernelException
+use `set_option diagnostics true` to get diagnostic information
+error: Lean exited with code 1
+✔ [15/23] Built REPL.Lean.InfoTree.ToJson
+✔ [16/23] Built REPL.Lean.InfoTree:c.o
+✔ [17/23] Built REPL.Lean.InfoTree.ToJson:c.o
+✔ [18/23] Built REPL.ExtractData
+✔ [21/23] Built REPL.JSON:c.o
+✔ [22/23] Built REPL.ExtractData:c.o
+Some builds logged failures:
+- REPL.Snapshots
+error: build failed

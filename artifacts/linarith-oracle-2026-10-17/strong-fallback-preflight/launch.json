@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/strong-fallback-preflight",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/strong-fallback-preflight-input.jsonl",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "--diagnostic"
+  ],
+  "pid": 2119076,
+  "affinity": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "methods": [
+    "fast-hybrid",
+    "oracle"
+  ],
+  "input": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/strong-fallback-preflight-input.jsonl",
+  "limit": 0,
+  "header": "import Mathlib;import Aesop;import GpuArithmetic.Stages",
+  "boundary": "existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF",
+  "collector": "/workspaces/repository/bench/lean-native/run-native-batch-comparison.py"
+}

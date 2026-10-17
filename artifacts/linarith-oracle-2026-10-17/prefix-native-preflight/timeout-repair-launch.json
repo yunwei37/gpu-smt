@@ -1,0 +1,18 @@
+{
+  "pid": 2118439,
+  "command": [
+    "python3",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-prefix.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/prefix/timeout-repair-real-preflight",
+    "--dataset",
+    "minif2f",
+    "--start",
+    "172",
+    "--limit",
+    "8",
+    "--methods",
+    "batch"
+  ],
+  "qualification": "replay actual failed batch and its successor; preserve300s request timeout; no agent/goal polling"
+}

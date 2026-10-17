@@ -1,0 +1,1 @@
+Root stopped only its new partial trial because verified existing collectors use16-19 and8-11. This pilot shared16-19. Source/partial streams retained; no primary speed claim. Restart same1000 source matrix on12-15, prefix side on20-23; old collectors untouched.

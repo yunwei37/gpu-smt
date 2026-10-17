@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-matrix.py", line 73, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-matrix.py", line 54, in main
+    wait_file(path,pid)
+    ~~~~~~~~~^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-matrix.py", line 20, in wait_file
+    if fd<0:raise OSError(ctypes.get_errno(),'inotify')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 24] inotify
