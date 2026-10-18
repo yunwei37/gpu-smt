@@ -4155,3 +4155,5 @@ and independent audit are not claimed; this thread's review is self-review.
 Hourly automation is preserved; goal remains active.
 
 Full GPU raw-proxy self-review refinement:2433records are accepted connections,1113have complete parsedCSR inputs;1320areJSONDecodeError/null-input records, not LP solves or native operational outcomes. Cancellation during frame write is plausible from the child-kill protocol, but raw frame/newline flags were not retained, so cause/source is not invented. Numeric response/batch counters retain their original scope. All parser/handler costs remain inside whole1020.12s. No full rerun or source protocol tuning is introduced for this accounting clarification.
+
+Publication reconciliation: the original corrected CPU collector's completed-pairs.json had appended pairs2/3 after the earlier ledger snapshot. It matches all three already-published pair results and aggregate6691.600731004/5164.851075278 (1.295603810x); the own completion receipt is now included. This is no new run or changed result. Other authors' dirty files remain untouched.
