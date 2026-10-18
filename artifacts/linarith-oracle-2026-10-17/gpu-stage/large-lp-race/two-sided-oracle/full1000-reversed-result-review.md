@@ -1,0 +1,23 @@
+# Reversed-order pair — root self-review
+
+Completed2026-10-18T11:24:57Z, unchanged two-sidedCPUoracle first, native second.
+Native 687.263046932s / oracle 447.309270379s =
+1.536438193x. All1000IDs/verdicts/non-messageJSONfields
+agree,992complete/8rejected/0operational,104message-onlydifferences.
+Allcandidate taskspansmap;memoryreaderrors native0/oracle92precludepeakranking.
+Wholeproxysetup,imports,checks,fallback,EOFandretirementarecharged,48GiB,
+CPU0–3,width8/eightoriginalcontiguousqueues. NoGPUwork.
+
+1,888races:393externalCPUpositive,281CPUpositive,339exactverifiedexternal
+negative,875CPUnegative. Native-selectedslowest1%overlappingtaskspans
+sum1026.710399188/775.179153668s andunions537.292632595/401.002515212s.
+Top10%sum2284.739416046/1461.482487383s,unions652.323820636/426.555279021s.
+Theseareoverlappingoccupancy/taskobservations,notisolatedsubsetgains.
+
+Togetherwiththefirst1.502158368xpair,thissupportsrepeatabilityacrossboth
+acquisitionorders,butnotaconfidenceintervalorall-workload/CPU-frontierclaim.
+Theoriginalplanrequires3primarypairsandaggregatewhole-timecriterion.
+Oneunchangednative-first/two-sided-secondthirdpairisthereforeadmitted.
+Noimplementationtuning,strongerCPUreferencechangesorGPUwarmupbetweenpairs.
+Do notstopafterselectingthebestpair. ExistingHiGHS/native-tieredandservice/
+cachealternativesstillneedapplicablecomparisonbeforeanOSDIsystemsclaim.

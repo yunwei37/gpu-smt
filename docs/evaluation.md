@@ -669,3 +669,17 @@ Memoryreaderrors0/147/107precludepeakranking. NoGPUorstableperformanceclaim.
 [Raw/cost/tails/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
 Oneunchanged reversed-order repeat(two-sidedfirst,nativesecond) is launched
 onCPU0-3with48GiB/eightqueues. Noimplementationmutationwhilecollecting.
+
+### 2026-10-18 — reversed CPU pair and rejected async-device candidate
+
+The unchanged reversedpaircloses: native687.263046932/two-sided447.309270379s
+=1.536438193x,all1000verdict/non-messageparity,992/8/0,104messagechanges.
+Bothprimaryordersnowabove1.5x;two-pairaggregate1.519180302x is descriptive.
+Theoriginalthree-pairprotocolisnotcomplete: thirdnative-firstpairrunning.
+RootimplementedindependentGPUgroup/streamprogress,but48GiBqualification
+returns31allocationOOM/zeroactualGPUkernels. Failed65.444552sclockisnotGPU
+performance. Noallocatorgrid/addressspacerelaxation/sourcepromotion/fullGPUrun.
+[Reversedresult](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md);
+[asyncfailure](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
+StrongCPUbaselineapplicability/broaderworkload/novelty/serviceandfourRQcoverage
+remainopen. Allreviewisrootself-review;goal/hourlynotclosed.

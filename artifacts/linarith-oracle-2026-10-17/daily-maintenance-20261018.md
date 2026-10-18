@@ -147,3 +147,12 @@ whetherthissmallmargin survives reversedacquisition, and whether the complete
 service beats prior warm/cache baselines. One unchanged reversedpair launched;
 noadditionalunprofitableGPU/kernelparametergrid. Do not treat established
 exactnegativecertificates asnewmathematics or CPUgainasdevicegain.
+
+11:22Z: actualGPUdispatchjoinfound8.91sproxyHOLwait. Independent-groupprivate
+candidatecompiledbutCUDAstream-orderedallocationreturns31OOMunder48GiB;
+zeroGPUkernels meansqualificationrejected,not a slowvalidGPUresult.
+Failuresretained,existingbackendunchanged. Do notspendnewfullrunsorblind
+allocator/buffer/threadgrids. The immediatelydecisiveworkisCPUreversal
+replication plusstrongservice/cachecomparison,and a viableGPUmechanism
+mustremoveHOLwithout violatingtheexistingaddressspaceceiling.
+CurrentREADMEhaszero brokenlocaltargetlinks.

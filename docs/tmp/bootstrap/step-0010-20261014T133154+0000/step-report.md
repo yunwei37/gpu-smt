@@ -4545,3 +4545,34 @@ Rootself-reviewacceptsdependencydiagnosis,notcausalsavings/kernel-timeclaim.
 NextGPUmechanismmustproveindependentinflightgroupsunder48GiB,equalCPUand
 fullretirement;noarbitraryparametergrid. Allanalysiscode/rawjoins published.
 ExistingCPUreplication/prefixpreserved;noagentrun/noGPUrouteclosure.
+
+### 2026-10-18 — independent GPU group implementation and rejected admission
+
+EXPERIMENT E1058 rootimplementsprivate independentdispatch/providergroups,
+CUDAstream-orderedallocation/copyandper-modelI/O,unchangednumericalkernel/
+CPUauthority. CUDA12.8sm120buildpasses. FirstentrypointNameErrorisrepaired
+withfailedsource/rawreceiptretained, --helpcheckscompletegeneratedrunner.
+Realoriginal64/capacity32/fourCPU/48GiBexecutionthenfinishesall63/1/0,
+allverdict/non-messageparity(5messages),but31allocationOOMrepliesand
+21zero-modelgroups: ZEROactualGPUkernels. 65.444552swholeiscostoffailed
+allocation/fallback,notasyncGPUperformance. CUDAglobaltimerprobesyieldno
+samples,soactualcross-groupoverlapunqualified. NoGPUsourcepromotion,
+noaddressspaceincrease,nofullmatrix. GenericOOMdoesnotidentifyphysical
+VRAM,exactfailingCUDAcallorpolicy/driverfault. Prototype+failurespreserved.
+JobUIDdeleted,labReady/otherWorkspaceRunning. ProtectedCPUpair/prefix
+preserved. WRITE localresult/provenance,REVIEWrootself-auditrejectsadmission,
+notGPUrouteclosure. NextcollectactualCPUreversedterminal,notwaitpoll.
+
+### 2026-10-18 — reversed primary closes, third predeclared pair starts
+
+E1056complete11:24:57Z: native687.263046932/dual447.309270379s=1.536438193x.
+All1000IDs/verdict/non-messageparity,992/8/0each,104message-onlydifferences.
+Alltaskspansmap;readerrors0/92. 339externalexactnegativewins/1888races.
+Firsttwoaggregate1.519180302x,descriptiveonly. Originalplanrequires3primary
+pairs,soE1059thirdunchangednative-first/dual-secondpairadmitted/launched
+11:28:24Z,pid243173,CPU0–3/48GiB/width8. Noimplementationmutationduringrun.
+Beforefinalstrongest-baselineclaim,qualifyothercredibleNativeHiGHS/tiered
+compositionsonthesameinterface;publishedall-workloadCPUdatawarnsagainst
+assuminghybridalwayswins. NoCPUfullmatrixornewGPUfullrunadmitted.
+WRITE README/paper/evaluation/latestnarrativeupdated;REVIEWrootself-audit.
+BroaderRQ/OSDI/systemnoveltynotresolvedbytwoCPUratios. Hourly/goalactive.

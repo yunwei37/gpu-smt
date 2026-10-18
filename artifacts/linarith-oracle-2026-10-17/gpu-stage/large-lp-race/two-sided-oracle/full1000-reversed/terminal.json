@@ -1,0 +1,75 @@
+{
+  "state": "complete",
+  "cells": 2,
+  "attempts": 2000,
+  "results": [
+    {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 1000,
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 447309270379,
+      "cpu": {
+        "collector": {
+          "user": 0.435072,
+          "system": 36.192342
+        },
+        "waited_children": {
+          "user": 1392.342299,
+          "system": 18.720283
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 9643304960,
+      "sampled_peak_fleet_rss_with_collector": 10313146368,
+      "sampling_read_errors": 92,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates",
+      "collector_whole_ns": 447223712635,
+      "backend_setup_cleanup_ns": 85557744,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    },
+    {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 1000,
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 687263046932,
+      "cpu": {
+        "collector": {
+          "user": 0.6851500000000001,
+          "system": 56.856818
+        },
+        "waited_children": {
+          "user": 1518.520399,
+          "system": 24.179926000000002
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 9827501056,
+      "sampled_peak_fleet_rss_with_collector": 11074641920,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+    }
+  ],
+  "utc": "2026-10-18T11:24:57.635932+00:00"
+}

@@ -15,20 +15,22 @@ verification acceleration, with all four RQs and the OSDI-quality systems
 objective retained. **GPU acceleration over the strongest CPU path is still
 unproven.** The latest complete 1,000-candidate comparison is:
 
-| Same native eight-queue interface | Whole elapsed | Native / candidate |
-|---|---:|---:|
-| Native compiled hybrid baseline | 681.24 s | 1 |
-| CPU HiGHS, positive certificates only | 472.09 s | 1.44305× |
-| CPU HiGHS, positive and negative certificates | 453.51 s | 1.50216× |
+| Complete CPU pair, same native eight-queue interface | Native | Two-sided oracle | Ratio |
+|---|---:|---:|---:|
+| Native first | 681.24 s | 453.51 s | 1.50216× |
+| Oracle first | 687.26 s | 447.31 s | 1.53644× |
 
-All cells return 992 complete / 8 rejected / zero operational outcomes, with
-matching verdicts and non-message native fields. Both oracle cells have the
-same 104 message-only differences. The best observation exceeds 1.5× by just
-**0.653 seconds** of candidate time. It is one fixed-order observation;
-an unchanged reversed-order replication is running. This is CPU performance,
-not a GPU or novelty claim. The previous positive-only full observation was
-1.49425×, demonstrating why replication matters.
-[Full raw data, tails and self-review](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
+Both pairs return 992 complete / 8 rejected / zero operational outcomes per
+method, with matching verdicts and non-message native fields and the same
+104 message-only source differences. In the first block, positive-only
+HiGHS takes472.09s(1.44305×); exact-verified negative certificates remove
+some expensive failed-search work. These are **CPU results**.
+The first pair's1.5×margin is just0.653s, so the original plan's third primary
+pair is running before the aggregate decision. Two observations across both
+orders are encouraging; they do not establish a confidence interval, service
+capacity, broader workload gain or systems novelty.
+[First full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md),
+[reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md).
 
 The [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
 uses 1,000 arithmetic-heavy released GoedelWorkbook candidates, four CPUs and
@@ -49,6 +51,13 @@ process batches of 2–4 LPs, but GPU remains 13.51% slower than the CPU oracle.
 This backend has no full-run admission. Established certificate checking and
 GPU simplex primitives alone do not establish our systems contribution.
 [Capacity result and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
+Retained model-level records expose up to8.91s of dispatch head-of-line delay.
+An independent-stream candidate was implemented and tested under48GiB, but
+its allocator returned31memory failures and executed zeroGPUkernels; it is
+rejected and left unpromoted. Its failed-allocation clock is not GPU
+performance, and does not close the GPU route.
+[Failure source, raw data and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
+
 
 
 The same-interface all-call profile is complete on its own clocks:

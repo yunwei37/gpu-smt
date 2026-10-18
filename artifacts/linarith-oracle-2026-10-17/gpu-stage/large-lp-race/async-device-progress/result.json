@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-18T11:25:05.620028+00:00",
+  "state": "rejected: CUDA stream-ordered allocation failed under required address-space limit",
+  "whole_seconds_with_host_proxy": 65.444552122,
+  "same_cohort_native_seconds": 72.79268296,
+  "native_outcome_differences": [],
+  "native_non_message_differences": [],
+  "actual_GPU_kernel_groups": 0,
+  "build_failed_out_of_memory": 31,
+  "required_RLIMIT_AS": 51539607552,
+  "lifecycle": {
+    "clientWrapperSeconds": 67.5363,
+    "retirementAndRestorationSeconds": 18.134020800000002,
+    "deleteExit": 0,
+    "end": "2026-10-18T11:22:19.7979768Z",
+    "labReady": "True",
+    "totalLifecycleSeconds": 95.3238069,
+    "scope": "Finite original-prefix64-source capacity32 qualification,actual CUDA batched phase-I simplex,stream-ordered allocator and independent in-flight groups,per-model cancellation,row11,minimum-ready2,one persistent batched GPU provider,same max32candidates and32contiguousnativequeues,all server/clientCPUs8--11,48GiB,no numeric warmup; actual launch groups and per-model retirement recorded; no independence audit; unchanged reversed CPU replication onCPUs0--3 and prefix preserved",
+    "start": "2026-10-18T11:20:44.4599221Z",
+    "startupToPodReadySeconds": 9.6517244,
+    "pod": "gpu-smt-cuopt-20261017-kz4jz",
+    "otherWorkspacePhase": "Running",
+    "jobUID": "8ad5cccb-1d19-4c96-8ee4-bb084011698a",
+    "qualifierExit": 0
+  },
+  "scope": "31 returned allocation failures; native exact fallback preserved all outcomes. Not useful GPU execution, a completed asynchronous GPU performance qualification, or GPU-route closure. Required 48GiB limit was never increased."
+}
