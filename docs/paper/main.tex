@@ -707,6 +707,31 @@ attributed entirely to the direct frontend or called a global CPU-frontier
 advantage. Generality beyond the selected arithmetic-heavy cohort remains open. The established certificate
 primitives do not alone establish the systems contribution.
 
+A stronger arithmetic composition adds the existing native integer solver
+omega to both frontends. One complete matched 1,000-source block takes
+454.82 seconds with native export, 388.17 seconds with direct export, and
+450.99 seconds with direct export but without omega. Direct export is
+$1.17172\times$ faster than the common-omega native path; adding omega to
+the direct path gives $1.16186\times$. Each condition retains all 992 complete
+and eight rejected outcomes with no non-message mismatch. Native versus
+direct has 73 message-only differences; observer errors are 80, 110 and 90
+in acquisition order. One fixed-order block establishes neither confidence
+nor a globally optimal CPU frontier. Stock solver selection is prior art.
+This control narrows the incremental frontend advantage and prevents reading
+the earlier $1.50862\times$ ratio as an improvement over this stronger native
+composition.
+
+A first within-proof batching adapter exports ready arithmetic goals
+sequentially, solves immutable requests in parallel, then checks certificates
+in the same Lean state. On 12 original sources, it forms two groups of 512
+problems and checks all 1,024 certificates. Sequential and batched whole times
+are 98.96 and 98.47 seconds. Both retain four complete and eight rejected
+outcomes; two sources have message-only differences. No parsed external
+large LP is associated with those groups, and grouped model shapes were not
+retained. This qualifies a CPU interface, not a useful performance gain or
+demonstrated GPU batch supply. Argument-bearing nonlinear tails remain
+outside this first adapter.
+
 \paragraph{Independent device groups.}
 A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device
 groups under the same 48\,GiB address-space ceiling. A repaired 64-source

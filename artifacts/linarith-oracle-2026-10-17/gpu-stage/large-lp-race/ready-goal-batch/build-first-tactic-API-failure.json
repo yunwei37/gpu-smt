@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-18T15:21:33.342636+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch/GpuArithmetic/GoalBatchOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch/GoalBatchOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch/GpuArithmetic/GoalBatchOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch",
+      "exit": 1,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch/GpuArithmetic/GoalBatchOracle.lean:162:17: warning: unused variable `nv`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-batch/GpuArithmetic/GoalBatchOracle.lean:226:35: error: Application type mismatch: The argument\n  p.goal.withContext (checkCertificate cfg p.goal p.carrier p.raw p.atoms cert)\nhas type\n  MetaM Unit\nbut is expected to have type\n  MVarId \u2192 MetaM Unit\nin the application\n  liftMetaFinishingTactic (p.goal.withContext (checkCertificate cfg p.goal p.carrier p.raw p.atoms cert))\n"
+    }
+  ]
+}

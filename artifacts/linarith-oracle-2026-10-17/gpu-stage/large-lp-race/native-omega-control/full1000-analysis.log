@@ -1,0 +1,79 @@
+{
+  "cells": {
+    "native-dual-omega": {
+      "whole_seconds": 454.821129795,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "effective_RLIMIT_AS": 51539607552,
+      "observer_errors": 80,
+      "omega_outcomes": {
+        "fallback": 48,
+        "checked": 2292
+      },
+      "omega_elapsed_sum_seconds": 29.763761317
+    },
+    "direct-dual-omega": {
+      "whole_seconds": 388.165315402,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "effective_RLIMIT_AS": 51539607552,
+      "observer_errors": 110,
+      "omega_outcomes": {
+        "fallback": 48,
+        "checked": 2292
+      },
+      "omega_elapsed_sum_seconds": 27.967442923
+    },
+    "direct-dual-off": {
+      "whole_seconds": 450.99213784,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "effective_RLIMIT_AS": 51539607552,
+      "observer_errors": 90,
+      "omega_outcomes": {},
+      "omega_elapsed_sum_seconds": 0.0
+    }
+  },
+  "native_on_over_direct_on": 1.17172017114401,
+  "direct_off_over_direct_on": 1.161855838080056,
+  "pairwise_diff_counts": {
+    "native-dual-omega": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 0
+    },
+    "direct-dual-omega": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 73
+    },
+    "direct-dual-off": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 73
+    }
+  },
+  "original_diff_counts": {
+    "native-dual-omega": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 61
+    },
+    "direct-dual-omega": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 104
+    },
+    "direct-dual-off": {
+      "verdict": 0,
+      "non_message": 0,
+      "full_JSON": 104
+    }
+  }
+}

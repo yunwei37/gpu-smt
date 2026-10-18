@@ -37,11 +37,18 @@ remain above1.5 and are not strict GPU bounds.
 A real10-source control uses stock Lean omega on bare discrete goals, preserving
 all8originalrejects and complete responses. Native+same-dualbackend54.49s becomes
 25.62s, with328nativecheckedgoals; direct+omega is25.76s. This is existing
-algorithmic capability and preflight only, not new contribution. Both frontend
-families receive omega in the admitted full1000 baseline/component comparison.
+algorithmic capability and preflight only, not new contribution. The complete1000 block gives454.82s native+omega,388.17s direct+omega,
+and450.99s direct-off. Direct versus common-omega native is1.172x, not1.5x.
+All992complete/8reject outcomes agree; this stronger control narrows the claim.
 [Source/preflight](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/README.md).
 The Initial Narrative, all4RQs and broad Lean/SMT/system/GPU objectives remain;
 none is closed by a selected preflight or ordinary native arithmetic gain.
+
+The ready-goal CPU adapter actually submits two512-problem groups and checks
+1024 certificates, but12-source whole time is98.96/98.47s and no parsed external
+large LP joins those groups. Useful GPU supply must be demonstrated on actual
+large nonlinear inputs, not inferred from arithmetic problem counts.
+[Interface qualification](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/result-review.md).
 
 
 ### 2026-10-18 — arithmetic evidence and unresolved system novelty

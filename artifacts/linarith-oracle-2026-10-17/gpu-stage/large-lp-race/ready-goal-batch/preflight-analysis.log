@@ -1,0 +1,52 @@
+{
+  "sequential": {
+    "whole_seconds": 98.964524752,
+    "counts": {
+      "complete": 4,
+      "rejected": 8
+    },
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "full_JSON_differences": [],
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552
+  },
+  "ready-batch": {
+    "whole_seconds": 98.469642394,
+    "counts": {
+      "complete": 4,
+      "rejected": 8
+    },
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "full_JSON_differences": [
+      "Proof_09145",
+      "Proof_24894"
+    ],
+    "observer_errors": 2,
+    "effective_RLIMIT_AS": 51539607552
+  },
+  "scope": "Real12-source CPU preflight, common omega,4CPU8--11/eightqueues/48GiB; arithmetic batch formation is not GPU performance.",
+  "batch_outcomes": {
+    "fallback": 1,
+    "checked": 2
+  },
+  "batch_sizes": [
+    512,
+    512
+  ],
+  "checked_problems": 1024,
+  "per_problem_native_fallback": 0,
+  "outer_fallbacks": [
+    {
+      "goals": 328,
+      "error": "unsupported carrier"
+    }
+  ],
+  "numerical_workers": [
+    4
+  ],
+  "parsed_external_LP_requests_in_ready_groups": 0,
+  "latency_reduction": 0.005000603592450359,
+  "limitation": "Only bare arithmetic tails covered. Initial grouped numerical replies/LP shapes are not retained; this count describes exported arithmetic problems, not large-GPU eligibility or device kernels. No GPU run or full-matrix admission."
+}
