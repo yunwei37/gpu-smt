@@ -4,6 +4,7 @@ use farkas_core::{types::parse_request,hybrid::produce_certificate_hybrid,race::
 fn main(){
  let gpu=std::env::args().nth(1).as_deref()==Some("--gpu");
  let mut line=String::new();std::io::BufReader::new(std::io::stdin()).read_line(&mut line).unwrap();
+ if let Ok(v)=serde_json::from_str(&line){farkas_core::race::set_context(&v);}
  let Some((m,hyps))=parse_request(&line)else{println!("{{\"error\":\"request\"}}");return};
  let cert=if gpu{race_gpu_hint(&hyps)}else{produce_certificate_hybrid(&hyps,m).0};
  let cert=cert.filter(|c|verify_cert(&hyps,c)).map(|c|c.into_iter().map(|(i,w)|serde_json::json!([i,w.to_string()])).collect::<Vec<_>>());

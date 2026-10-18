@@ -40,6 +40,27 @@ def cell(root,name,inputs):
  calls=rows(calls_path)if calls_path else[]
  batches={tuple(x['reply']['batch_ids']):x['reply']for x in calls if'batch_ids'in x['reply']}
  return {'terminal':terminal,'responses':responses,'byidx':byidx,'calls':calls,'batches':list(batches.values()),'missing_candidate_spans':missing,'unmatched_candidate_spans':unmatched}
+def gpu_job_evidence(root,name):
+ backend=root/('rep1-'+name+'-backend')
+ path=retained_file(backend,'support-calls.jsonl.batches')
+ if path is None:return {'available':False,'scope':'No job-event stream; received-result counters do not establish all submitted/cancelled GPU work.'}
+ events=rows(path)
+ submitted={x['job_id']:x for x in events if x['event']=='submit'}
+ results={x['job_id']:x for x in events if x['event']=='result'}
+ retired={x['job_id']:x for x in events if x['event']=='job_retired'}
+ cancelled={x['job_id']for x in events if x['event']in ['cancel_withdrawn_member','cancel_no_live_clients']}
+ return {'available':True,'submitted_jobs':len(submitted),'result_jobs':len(results),
+  'cancel_requested_jobs':len(cancelled),'client_retired_jobs':len(retired),
+  'submitted_batch_size_histogram':dict(collections.Counter(len(x['batch_ids'])for x in submitted.values())),
+  'submitted_distinct_source_histogram':dict(collections.Counter(str(x.get('batch_distinct_sources','unknown'))for x in submitted.values())),
+  'server_reported_result_solver_seconds':sum(x.get('batch_solver_seconds_shared')or 0 for x in results.values()),
+  'submitted_without_result_ids':sorted(set(submitted)-set(results)),
+  'submitted_without_client_retirement_ids':sorted(set(submitted)-set(retired)),
+  'summed_client_batch_retirement_wall_seconds':sum((x['end_ns']-x['batch_client_start_ns'])/1e9 for x in retired.values()),
+  'dispatcher_retirement':[x for x in events if x['event']=='dispatcher_retired'],
+  'cancelled_job_device_compute_seconds':None,
+  'scope':'All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero.'}
+
 def tail_summary(c,ids):
  spans=[c['byidx'][i]for i in ids if i in c['byidx']];times=[(x['end_ns']-x['start_ns'])/1e9 for x in spans]
  windows=[(x['start_ns'],x['end_ns'])for x in spans]
@@ -107,6 +128,7 @@ def main():
     without_messages=lambda v:{key:value for key,value in v.items()if key!='messages'}if isinstance(v,dict)else v
     if without_messages(x['response'])!=without_messages(y['response']):non_message.append(i)
   out['methods'][n]={'whole_seconds':c['terminal']['whole_ns']/1e9,'native_reference_ratio':ref['terminal']['whole_ns']/c['terminal']['whole_ns'],'counts':c['terminal']['counts'],'missing_candidate_span_indices':c['missing_candidate_spans'],'unmatched_candidate_spans':c['unmatched_candidate_spans'],'outcome_differences':verdict,'full_native_JSON_differences':changes,'non_message_differences':non_message,'backend_requests':len(c['calls']),'backend_errors':sum('error'in x['reply']for x in c['calls']),'GPU_batches':len(c['batches']),'GPU_batch_size_histogram':dict(collections.Counter(x['batch_size']for x in c['batches'])),'GPU_unique_batch_solver_seconds':sum(x.get('batch_solver_seconds_shared')or 0 for x in c['batches']),'candidate_service_seconds':spread([(x['end_ns']-x['start_ns'])/1e9 for x in c['byidx'].values()]),'terminal':c['terminal']}
+ for n in cells:out['methods'][n]['GPU_job_events']=gpu_job_evidence(a.root,n)
  for selected,refcell in cells.items():
   rank=sorted(refcell['byidx'],key=lambda i:refcell['byidx'][i]['end_ns']-refcell['byidx'][i]['start_ns'],reverse=True)
   out['tails'][selected]={}

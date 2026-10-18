@@ -264,3 +264,23 @@ Every large-LP loser is killed and waited; the GPU dispatcher is cancelled
 and joined before cell retirement. Qualification used width8 with shared
 CPU0--3 for client/server,48 GiB, RTX5090 and actual batches of at least2.
 See the [race protocol and results](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/plan.md).
+
+
+### Completed own-clock profile and full comparison
+
+The complete [corrected native/oracle profile](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md)
+retains all1,000 sources, successful and failed calls, and actual candidate tails.
+Native LP-only zero-cost sensitivity is1.93412x; this does not exclude1.5x.
+The full-data row gate is11, from median10, with7,201 small LPs using0.0218CPU s.
+
+In the current run-race.py entrypoint, fast-hybrid means the stronger native
+BatchBaseline with concurrent daemon reuse and the unchanged pinned CPU
+hybrid. In older run-batch.py records it means the serial native client;
+do not pool these conditions. run-native-pooled.py qualifies this native-only
+control without the AST oracle. oracle-hint is the CPU AST-oracle candidate,
+and oracle-gpu adds the external GPU race. Full width8 CPU0--3 cells run
+sequentially. The [full protocol](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-plan.md)
+records48GiB, source-labelled batches, cancellation/rebatch, all costs and
+the finite GPU lifecycle dependency. No numerical warmup is performed.
+Cancelled jobs' unknown device compute is not zero; job-event accounting
+retains submit/cancel/retire separately from delivered solve-time results.

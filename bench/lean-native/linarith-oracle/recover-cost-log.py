@@ -13,6 +13,24 @@ with(gzip.open(a.input,'rt')if a.input.suffix=='.gz'else a.input.open())as src,a
   if pending is None:pending=(no,line);continue
   prior,first=pending
   if no!=prior+1:raise ValueError('nonadjacent corruption')
+  # Complete adjacent JSON objects with displaced newline delimiters have
+  # an unambiguous token sequence even when writer ownership is ambiguous.
+  tokens=[];pos=0
+  try:
+   while pos<len(first):
+    while pos<len(first) and first[pos].isspace():pos+=1
+    if pos==len(first):break
+    obj,end=decoder.raw_decode(first,pos)
+    if not isinstance(obj,dict) or "ty" not in obj:raise ValueError("not telemetry")
+    tokens.append((pos,end,first[pos:end],obj));pos=end
+  except (json.JSONDecodeError,ValueError):tokens=[]
+  if len(tokens)==2 and not line.strip() and tokens[0][0]==0 and tokens[0][1]==tokens[1][0] and first[tokens[-1][1]:]=="\n" and line=="\n":
+   derived="".join(t[2]+"\n" for t in tokens)
+   inverse=derived.splitlines()[0]+derived.splitlines()[1]+"\n\n"
+   assert inverse==first+line and len(derived.encode())==len((first+line).encode())
+   out.write(derived);count+=2
+   ledger.append({"physical_lines":[prior,no],"mode":"complete_JSON_tokens_with_displaced_newline","JSON_end_offsets":[t[1]for t in tokens],"record_types":[t[3]["ty"]for t in tokens],"record_order":"physical JSON start offset","inverse_equals_original":True,"UTF8_byte_length_preserved":True})
+   pending=None;continue
   matches=[]
   for m in re.finditer(r'\{"',first):
    start=m.start()

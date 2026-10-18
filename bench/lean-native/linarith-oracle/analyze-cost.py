@@ -68,7 +68,7 @@ def cpu_ledger(records):
     return {"workers":workers,"all_worker_receipts_complete":bool(workers) and all(x["complete_worker_cpu_receipt"] and x.get("eof_counter_agrees") for x in workers),
             "scope":"wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."}
 
-def analyze(cell,inputs):
+def analyze(cell,inputs,lean_log=None):
     terminal=json.loads((cell/"terminal.json").read_text())
     if terminal["state"]!="complete":raise ValueError("closed complete capture required")
     xs=list(stream(inputs));body=collections.defaultdict(list)
@@ -78,7 +78,7 @@ def analyze(cell,inputs):
     defects=collections.Counter();ambiguity=sum(len(v)>1 for v in body.values())
     numeric_records=list(stream(existing(cell,"solver-costs.jsonl")))
     solver=[x for x in numeric_records if x.get("kind") in ["direct","fallback"]]
-    lean=list(stream(existing(cell,"oracle.jsonl")))
+    lean=list(stream(lean_log or existing(cell,"oracle.jsonl")))
     clients={};checks={};stages=[];native_lp=[];lean_aggregate=collections.Counter()
     for e in lean:
         kind=e.get("ty")
@@ -232,6 +232,21 @@ def analyze(cell,inputs):
           "component_cpu_seconds":{k:n/1e9 for k,n in v["phase_cpu"].items()},
           "component_summed_wall_seconds":{k:n/1e9 for k,n in v["phase_wall"].items()}} for i,v in sorted(per.items())],
         "scope":"Diagnostic capture, all success/fallback calls. Timers and JSON logging overhead are charged, not corrected away. Overlapping parent Lean LP CPU/service CPU are reported separately. Same-method native JSON agreement required separately. Root self-review."}
+def call_outcome_costs(analysis):
+    groups={}
+    for call in analysis["calls"]:
+        key=call["kind"]+"_"+call["state"]
+        g=groups.setdefault(key,{"calls":0,"cpu":collections.Counter(),"wall":collections.Counter(),"service_intervals":[]})
+        g["calls"]+=1
+        g["cpu"].update(call["phase_cpu_seconds"])
+        g["wall"].update(call["phase_wall_seconds"])
+        g["service_intervals"].append((call["start_ns"],call["end_ns"]))
+    return {key:{"calls":g["calls"],"component_cpu_seconds":dict(g["cpu"]),
+        "component_summed_wall_seconds":dict(g["wall"]),
+        "service_observed_union_seconds":union(g["service_intervals"])/1e9,
+        "scope":"Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."}
+        for key,g in groups.items()}
+
 def zero_cost_summary(analysis, native_seconds=None):
     """Algebra on this closed capture's own clocks; never relabel historical data."""
     a=analysis["accelerable_cost"];t=a["whole_seconds"]
@@ -281,14 +296,16 @@ def source_tails(analysis,cell,inputs):
         "scope":"Ranked actual candidate service intervals, original population including failures. CPU and wall components include overlapping parent Lean LP and numeric child LP; they must not be summed as disjoint whole-wall fractions."}
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path,nargs="?");p.add_argument("--numeric-log",type=Path);p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path,nargs="?");p.add_argument("--numeric-log",type=Path);p.add_argument("--lean-log",type=Path,help="Explicit derived telemetry log; retain raw and recovery provenance");p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
     if a.numeric_log:
         result=cpu_ledger(list(stream(a.numeric_log)))
         print(json.dumps(result,indent=2));return
     if a.cell is None:p.error("cell or --numeric-log is required")
-    result=analyze(a.cell,a.input)
+    result=analyze(a.cell,a.input,a.lean_log)
+    result["lean_log_used"]=str(a.lean_log or existing(a.cell,"oracle.jsonl"))
     native=a.cell.parent/"rep1-fast-hybrid"/"terminal.json"
     nt=json.loads(native.read_text())["whole_ns"]/1e9 if native.exists() else None
+    result["call_outcome_costs"]=call_outcome_costs(result)
     result["own_clock_zero_cost_summary"]=zero_cost_summary(result,nt)
     result["individual_candidate_tails"]=source_tails(result,a.cell,a.input)
     (a.cell/"cost-analysis.json").write_text(json.dumps(result,indent=2)+"\n")

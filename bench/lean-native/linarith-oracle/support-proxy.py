@@ -28,13 +28,16 @@ class GPUCall:
   with lock:
    if self.fd is not None:os.close(self.fd);self.fd=None
 def cancel_abandoned():
- # Cancel a joint solve only when no original client still owns its result.
- with lock:jobs=[j for j,items in pending_gpu.items()if all(x.cancelled.is_set()for x in items)]
+ # A withdrawn LP must stop its GPU work even when other batch members live.
+ # cuOpt cancels whole jobs; live members are requeued after that job retires.
+ with lock:
+  jobs=[j for j,items in pending_gpu.items()if j not in cancelling and any(x.cancelled.is_set()for x in items)]
+  cancelling.update(jobs)
  for job in jobs:
   channel=grpc.insecure_channel(a.host+':5001')
   try:
    reply=rpc.CuOptRemoteServiceStub(channel).CancelJob(service_pb.CancelRequest(job_id=job))
-   append_record(a.log+'.batches',{'event':'cancel_no_live_clients','job_id':job,'monotonic_ns':time.monotonic_ns(),'reply':str(reply)})
+   append_record(a.log+'.batches',{'event':'cancel_withdrawn_member','job_id':job,'monotonic_ns':time.monotonic_ns(),'reply':str(reply)})
   except Exception as e:append_record(a.log+'.batches',{'event':'cancel_error','job_id':job,'error':str(e)})
   finally:channel.close()
 def solve_highs(q):
@@ -70,7 +73,7 @@ def solve_gpu_batch(items):
   request=core_pb.SolveLPRequest(header=core_pb.RequestHeader(version=1,problem_category=data_pb.LP),problem=model,settings=settings)
   job=stub.SubmitJob(service_pb.SubmitJobRequest(lp_request=request)).job_id
   with lock:pending_gpu[job]=items
-  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'rows':len(rhs),'cols':base,'nnz':len(values),'formulation':'phase_I_artificial_slack','settings':{'method':'PDLP','crossover':True,'first_primal_feasible':False}})
+  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'rows':len(rhs),'cols':base,'nnz':len(values),'formulation':'phase_I_artificial_slack','settings':{'method':'PDLP','crossover':True,'first_primal_feasible':False}})
   cancel_abandoned()
   status=stub.WaitForCompletion(service_pb.WaitRequest(job_id=job))
   response=stub.GetResult(service_pb.GetResultRequest(job_id=job));sol=response.lp_solution
@@ -78,14 +81,19 @@ def solve_gpu_batch(items):
   # Termination status is not proof authority. Any finite hint must still pass
   # unchanged exact repair/verification and Lean checking, otherwise fallback.
   usable=len(point)==base and all(math.isfinite(x)for x in point)
-  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'phase1_objective':sol.primal_objective}
+  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'phase1_objective':sol.primal_objective}
   append_record(a.log+'.batches',dict(common,event='result'))
   return [dict(common,primal=point[start:start+n]if usable else None)for start,n in slices]
  finally:
   if job:
-   with lock:pending_gpu.pop(job,None)
-   try:stub.DeleteResult(service_pb.DeleteRequest(job_id=job))
-   except Exception:pass
+   with lock:pending_gpu.pop(job,None);cancelling.discard(job)
+   deleted=False;deletion_error=None
+   try:stub.DeleteResult(service_pb.DeleteRequest(job_id=job));deleted=True
+   except Exception as e:deletion_error=type(e).__name__+': '+str(e)
+   append_record(a.log+'.batches',{'event':'job_retired','job_id':job,
+     'batch_client_start_ns':begin,'end_ns':time.monotonic_ns(),
+     'delete_result_acknowledged':deleted,'deletion_error':deletion_error,
+     'scope':'Client-observed batch/RPC/result-retirement wall, not device kernel time.'})
   channel.close()
 def gpu_dispatch():
  items=[]
@@ -105,11 +113,25 @@ def gpu_dispatch():
     'batch_size':len(items),'minimum_ready':a.min_batch,
     'scope':'Only simultaneously live device-ready requests; CPU shadows remain active.'})
   try:answers=solve_gpu_batch(items)
-  except Exception as e:answers=[{'primal':None,'error':type(e).__name__+': '+str(e)}for _ in items]
-  for item,answer in zip(items,answers):item.deliver(answer)
+  except Exception as e:
+   if any(item.cancelled.is_set()for item in items) and not stopping.is_set():
+    # The joint solve was cancelled because one CPU shadow won. Preserve all
+    # still-live clients and rebuild their GPU batch; do not fail their CPU path.
+    live=[item for item in items if not item.cancelled.is_set()]
+    append_record(a.log+'.batches',{'event':'requeue_after_member_cancel','monotonic_ns':time.monotonic_ns(),'live_ids':[item.q['request_id']for item in live],'error':type(e).__name__+': '+str(e)})
+    for item in live:gpu_queue.put(item)
+    items=[];continue
+   answers=[{'primal':None,'error':type(e).__name__+': '+str(e)}for _ in items]
+  if any(item.cancelled.is_set()for item in items) and not stopping.is_set() and not any(answer.get('primal') is not None for answer in answers):
+   live=[item for item in items if not item.cancelled.is_set()]
+   append_record(a.log+'.batches',{'event':'requeue_after_member_cancel_result','monotonic_ns':time.monotonic_ns(),'live_ids':[item.q['request_id']for item in live]})
+   for item in live:gpu_queue.put(item)
+   items=[];continue
+  for item,answer in zip(items,answers):
+   if not item.cancelled.is_set():item.deliver(answer)
   items=[]
 if a.backend=='cuopt':
- gpu_queue=queue.Queue();pending_gpu={};stopping=threading.Event()
+ gpu_queue=queue.Queue();pending_gpu={};cancelling=set();stopping=threading.Event()
  dispatcher=threading.Thread(target=gpu_dispatch,daemon=False);dispatcher.start()
 def stop_proxy(signum,frame):
  if a.backend=='cuopt':

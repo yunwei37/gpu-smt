@@ -1,0 +1,104 @@
+{
+  "whole-lp-qualification24-gpu": {
+    "available": true,
+    "submitted_jobs": 5,
+    "result_jobs": 5,
+    "cancel_requested_jobs": 0,
+    "client_retired_jobs": 0,
+    "submitted_batch_size_histogram": {
+      "2": 5
+    },
+    "submitted_distinct_source_histogram": {
+      "unknown": 5
+    },
+    "server_reported_result_solver_seconds": 0.872,
+    "submitted_without_result_ids": [],
+    "submitted_without_client_retirement_ids": [
+      "149edd1f-fad2-48b9-843c-b4b79344f5f9",
+      "469d30ae-301b-4330-80f7-046a5e068112",
+      "65ac84b6-3377-486b-86dd-6a45e54c8d20",
+      "c20fcadc-6d4c-4965-b848-78cfc256cd6a",
+      "f6b643c5-24ad-4006-9c61-81eb952e4df2"
+    ],
+    "summed_client_batch_retirement_wall_seconds": 0,
+    "dispatcher_retirement": [],
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  },
+  "pooled/qualification24-gpu": {
+    "available": true,
+    "submitted_jobs": 4,
+    "result_jobs": 2,
+    "cancel_requested_jobs": 2,
+    "client_retired_jobs": 0,
+    "submitted_batch_size_histogram": {
+      "2": 4
+    },
+    "submitted_distinct_source_histogram": {
+      "unknown": 4
+    },
+    "server_reported_result_solver_seconds": 0.724,
+    "submitted_without_result_ids": [
+      "07773880-9ce0-4c68-803b-c7d7681d1ec9",
+      "fefb48a9-8a8d-4c9a-9ac7-535594ea9e21"
+    ],
+    "submitted_without_client_retirement_ids": [
+      "07773880-9ce0-4c68-803b-c7d7681d1ec9",
+      "5498fcb7-7f19-4090-8499-cac4da6aec98",
+      "5b5757f6-684f-4f84-9335-06bf87c81e81",
+      "fefb48a9-8a8d-4c9a-9ac7-535594ea9e21"
+    ],
+    "summed_client_batch_retirement_wall_seconds": 0,
+    "dispatcher_retirement": [
+      {
+        "event": "dispatcher_retired",
+        "monotonic_ns": 729809502229536,
+        "pending_jobs": 0
+      }
+    ],
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  },
+  "labelled-functional": {
+    "available": true,
+    "submitted_jobs": 7,
+    "result_jobs": 0,
+    "cancel_requested_jobs": 7,
+    "client_retired_jobs": 0,
+    "submitted_batch_size_histogram": {
+      "2": 7
+    },
+    "submitted_distinct_source_histogram": {
+      "2": 7
+    },
+    "server_reported_result_solver_seconds": 0,
+    "submitted_without_result_ids": [
+      "0c8d5220-93b1-442f-bbf8-e5073a929a9b",
+      "0e1ca0a2-bb6b-4563-83dc-8887633e6339",
+      "19bddd0c-83ca-461d-a263-99049e58ed33",
+      "703cc9a0-5e3d-4575-85a5-e6d57c41ce9b",
+      "87fde2e8-b834-4d51-b04d-28cd1267055f",
+      "9c8bd56c-3e69-4ec6-9f2d-0c94a4886fa4",
+      "c8d15bc8-9cc1-4f0d-b1c7-9adad9bccf00"
+    ],
+    "submitted_without_client_retirement_ids": [
+      "0c8d5220-93b1-442f-bbf8-e5073a929a9b",
+      "0e1ca0a2-bb6b-4563-83dc-8887633e6339",
+      "19bddd0c-83ca-461d-a263-99049e58ed33",
+      "703cc9a0-5e3d-4575-85a5-e6d57c41ce9b",
+      "87fde2e8-b834-4d51-b04d-28cd1267055f",
+      "9c8bd56c-3e69-4ec6-9f2d-0c94a4886fa4",
+      "c8d15bc8-9cc1-4f0d-b1c7-9adad9bccf00"
+    ],
+    "summed_client_batch_retirement_wall_seconds": 0,
+    "dispatcher_retirement": [
+      {
+        "event": "dispatcher_retired",
+        "monotonic_ns": 730481789348086,
+        "pending_jobs": 0
+      }
+    ],
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  }
+}

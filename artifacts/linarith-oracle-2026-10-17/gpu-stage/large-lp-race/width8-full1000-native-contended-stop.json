@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-18T04:52:26.536314+00:00",
+  "pid": 135575,
+  "start_ticks": "73008412",
+  "cmd": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python /workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py --out /tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/width8-full1000-native --methods fast-hybrid --width 8 --affinity 0 1 2 3 ",
+  "owned_descendants": [
+    {
+      "pid": 135575,
+      "ppid": 1,
+      "start_ticks": "73008412",
+      "cmd": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python /workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py --out /tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/width8-full1000-native --methods fast-hybrid --width 8 --affinity 0 1 2 3 "
+    },
+    {
+      "pid": 135576,
+      "ppid": 135575,
+      "start_ticks": "73008459",
+      "cmd": "lake env /tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/repl-candidate-timing "
+    },
+    {
+      "pid": 135603,
+      "ppid": 135576,
+      "start_ticks": "73008492",
+      "cmd": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/repl-candidate-timing "
+    },
+    {
+      "pid": 135626,
+      "ppid": 135603,
+      "start_ticks": "73008818",
+      "cmd": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support --serve "
+    }
+  ],
+  "reason": "Own source-labelled GPU24 qualifier overlapped this pilot on CPU0--3 from2026-10-18T04:51:18.989Z to04:51:59.521Z. Exclude entire pilot from primary ratios. Raw partial data preserved; normal async cancellation/retirement requested. Original CPU12--15 pairs and profile4--7 are untouched.",
+  "signal": "SIGINT to verified owning collector, allowing its existing finally/retire path"
+}

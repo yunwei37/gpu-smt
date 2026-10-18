@@ -199,7 +199,7 @@ s=s.replace('    let .ok j := Json.parse answer | throwError "invalid oracle res
       let cpu ← GpuArithmetic.CostStages.threadCpuNs
       Farkas.Telemetry.emit <| Farkas.Telemetry.row [("ty","\\"cost-direct-check\\""),("source",Farkas.Telemetry.jstrEsc (← getFileMap).source),("call_id",toString exported),("start_ns",toString checkStart),("end_ns",toString finish),("cpu_ns",toString (cpu.toNat-checkCpu.toNat)),("accepted",if (← ok.get) then "true" else "false")]''')
 (U/'GpuArithmetic/CostOracle.lean').write_text(s)
-for name in ['CostStages','CostFast','CostBaseline','CostNative','CostOracle']:
+for name in ['CostStages','CostProducts','CostFast','CostBaseline','CostNative','CostOracle']:
  p=U/'GpuArithmetic'/(name+'.lean')
  text=p.read_text().replace('Farkas.Telemetry.emit','GpuArithmetic.CostTelemetry.emit')
  p.write_text('import GpuArithmetic.CostTelemetry\n'+text)

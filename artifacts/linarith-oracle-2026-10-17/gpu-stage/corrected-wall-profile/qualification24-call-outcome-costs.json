@@ -1,0 +1,162 @@
+{
+  "fast-hybrid": {
+    "fallback_no_certificate_or_error": {
+      "calls": 6,
+      "component_cpu_seconds": {
+        "request_parse": 0.006756081,
+        "lp_build": 0.000900502,
+        "fp_solve": 0.038179216,
+        "exact_lp": 2.503331283,
+        "response_pack": 1.719e-06,
+        "response_write": 5.8082e-05,
+        "protocol_dispatch_unattributed": 0.00094258
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.006760773,
+        "lp_build": 0.0008997,
+        "fp_solve": 0.043800238000000005,
+        "exact_lp": 2.504508361,
+        "response_pack": 1.787e-06,
+        "response_write": 0.004548656000000001
+      },
+      "service_observed_union_seconds": 2.56427317,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    },
+    "fallback_certificate": {
+      "calls": 225,
+      "component_cpu_seconds": {
+        "request_parse": 0.14668131499999998,
+        "lp_build": 0.013337248000000001,
+        "fp_solve": 0.483667886,
+        "exact_repair": 0.011804996000000002,
+        "exact_verify": 0.0016932980000000002,
+        "response_pack": 0.002148980000000001,
+        "response_write": 0.0013018069999999997,
+        "protocol_dispatch_unattributed": 0.012982897999999998,
+        "exact_lp": 13.129127861999999
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.146654858,
+        "lp_build": 0.013318884000000007,
+        "fp_solve": 0.4864868450000001,
+        "exact_repair": 0.011804634999999996,
+        "exact_verify": 0.001689999,
+        "response_pack": 0.0021486919999999994,
+        "response_write": 0.016856859,
+        "exact_lp": 13.130429219
+      },
+      "service_observed_union_seconds": 13.841208888,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    }
+  },
+  "oracle": {
+    "direct_no_certificate_or_error": {
+      "calls": 5,
+      "component_cpu_seconds": {
+        "request_parse": 0.000115848,
+        "linear": 0.000513362,
+        "products": 0.010796069,
+        "matrix_pack": 0.0020340140000000002,
+        "lp_build": 0.000822233,
+        "fp_solve": 0.042057082999999995,
+        "exact_lp": 0.53415234,
+        "response_pack": 1.287e-05,
+        "response_write": 3.674099999999999e-05,
+        "protocol_dispatch_unattributed": 0.0009752980000000001
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.000115682,
+        "linear": 0.00051313,
+        "products": 0.010796078999999998,
+        "matrix_pack": 0.002033703,
+        "lp_build": 0.000821972,
+        "fp_solve": 0.042057096999999995,
+        "exact_lp": 0.534168784,
+        "response_pack": 1.4114e-05,
+        "response_write": 3.6707e-05
+      },
+      "service_observed_union_seconds": 0.596281322,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    },
+    "fallback_no_certificate_or_error": {
+      "calls": 5,
+      "component_cpu_seconds": {
+        "request_parse": 0.007266788,
+        "lp_build": 0.000796484,
+        "fp_solve": 0.038870802999999995,
+        "exact_lp": 2.504835692,
+        "response_pack": 1.5869999999999998e-06,
+        "response_write": 4.0541000000000004e-05,
+        "protocol_dispatch_unattributed": 0.0008518359999999999
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.007265608999999999,
+        "lp_build": 0.000795796,
+        "fp_solve": 0.041672689,
+        "exact_lp": 2.504963182,
+        "response_pack": 1.676e-06,
+        "response_write": 4.0709e-05
+      },
+      "service_observed_union_seconds": 2.564007826,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    },
+    "fallback_certificate": {
+      "calls": 5,
+      "component_cpu_seconds": {
+        "request_parse": 0.018462601,
+        "lp_build": 0.001955319,
+        "fp_solve": 0.122448341,
+        "exact_repair": 0.000795525,
+        "exact_verify": 0.000106012,
+        "response_pack": 0.000108714,
+        "response_write": 3.6156e-05,
+        "protocol_dispatch_unattributed": 0.002363021,
+        "exact_lp": 1.826739962
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.018467803,
+        "lp_build": 0.00195444,
+        "fp_solve": 0.12246976400000001,
+        "exact_repair": 0.000795249,
+        "exact_verify": 0.000105782,
+        "response_pack": 0.00010864,
+        "response_write": 0.00047935,
+        "exact_lp": 1.826891954
+      },
+      "service_observed_union_seconds": 1.973640748,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    },
+    "direct_checked": {
+      "calls": 110,
+      "component_cpu_seconds": {
+        "request_parse": 0.004021299000000001,
+        "linear": 0.008455319000000006,
+        "products": 0.09048199299999997,
+        "matrix_pack": 0.020039433000000002,
+        "lp_build": 0.006285018,
+        "fp_solve": 0.32452270499999997,
+        "exact_lp": 2.727868085,
+        "exact_verify": 0.0007083430000000002,
+        "response_pack": 0.0006192630000000001,
+        "response_write": 0.000676168,
+        "protocol_dispatch_unattributed": 0.009137803,
+        "exact_repair": 0.005415000000000001
+      },
+      "component_summed_wall_seconds": {
+        "request_parse": 0.004016342999999999,
+        "linear": 0.008449454999999996,
+        "products": 0.09049875400000003,
+        "matrix_pack": 0.020037680000000006,
+        "lp_build": 0.006280799,
+        "fp_solve": 0.33593300399999987,
+        "exact_lp": 2.72808516,
+        "exact_verify": 0.0007092500000000001,
+        "response_pack": 0.000623441,
+        "response_write": 0.0034769529999999996,
+        "exact_repair": 0.0054142190000000005
+      },
+      "service_observed_union_seconds": 3.220053545,
+      "scope": "Includes failed/no-certificate calls. Exact search is separated from FP, repair and protocol; child CPU/parent Lean intervals must not be added as disjoint wall."
+    }
+  }
+}

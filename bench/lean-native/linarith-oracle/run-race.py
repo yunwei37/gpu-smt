@@ -22,4 +22,13 @@ assert needle in source;source=source.replace(needle,insert.replace('\n',r'\n')+
 source=source.replace("argv+=['--host',os.environ['GPU_SMT_CUOPT_HOST']","argv+=['--min-batch','2','--host',os.environ['GPU_SMT_CUOPT_HOST']",1)
 if not os.environ.get('GPU_ARITHMETIC_RACE_MIN_ROWS'):
     raise RuntimeError('Set GPU_ARITHMETIC_RACE_MIN_ROWS from the retained native LP row distribution')
+# Match the GPU/CPU candidates against the same native daemon concurrency.
+old=r"{'fast-hybrid':'import GpuArithmetic.Baseline\\n',"
+new=r"{'fast-hybrid':'import GpuArithmetic.BatchBaseline\\n',"
+assert old in source
+source=source.replace(old,new,1)
+needle=r"\n        if name.startswith('fast-'):"+chr(34)+")"
+replacement=r"\n        if name.startswith('fast-'):\n            os.environ['GPU_ARITHMETIC_BATCH']='1'"+chr(34)+")"
+assert needle in source
+source=source.replace(needle,replacement,1)
 exec(compile(source,str(p),'exec'),{'__name__':'__main__','__file__':str(p)})

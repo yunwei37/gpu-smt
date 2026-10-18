@@ -11,7 +11,7 @@ The current research hypothesis is:
 ## Current status
 
 Lean-first research prototype; all four RQs and the OSDI-quality systems goal
-remain open. There is **no demonstrated end-to-end GPU verification speedup**.
+remain open. There is **no demonstrated GPU advantage over the fastest valid CPU verification path**.
 The native CPU branch-runtime and scalar GPU constructor routes are closed;
 their complete, failed and partial results remain in the
 [evaluation record](docs/evaluation.md). Research runs directly on `main`.
@@ -55,6 +55,15 @@ both with matching native outcomes. These small qualification timings are not
 a full-population speedup or final threshold decision. The corrected-family
 1,000-source wall profile is collecting; GPU remains under evaluation.
 [Race code, raw qualification and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/pooled/result-review.md).
+
+The complete corrected-family1,000-source profile gives an LP-only conditional
+zero-cost sensitivity of **1.93412x**, so it does not rule out1.5x.
+The CPU-oracle numeric-product/all-LP sensitivity is **2.24363x** relative
+to its matched native diagnostic. These use their own captured clocks and
+are not measured GPU speedups. A stronger native-pool baseline and CPU oracle
+are now measured at width8/CPU0--3; the full GPU cell follows them sequentially.
+[Complete profile](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md)
+and [full comparison protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-plan.md).
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by

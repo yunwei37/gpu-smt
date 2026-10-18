@@ -3990,3 +3990,52 @@ Historical1.34668x is separate. The corrected series is complete; do not resume
 or duplicate its collectors. GPU remains open: completed own-clock native LP
 deletion sensitivity1.93412x does not exclude1.5x. Stronger pooled width8
 native/CPU oracle is running on CPU0--3 and the admitted GPU full cell follows.
+
+
+### 2026-10-18 — complete own-clock LP opportunity and full race admission
+
+Corrected-family CPU4--7,width4,48GiB profiles close: native1774.239197591 s,
+oracle1342.059889496 s; each992/8/0. All native JSON agrees with the corrected
+primary; oracle has the same88 warning-only changes. Native13230 LP calls
+and oracle10251 calls have complete source/call/shape/product metadata;
+worker wait4 CPU receipts and actual candidate1%/10% tails are complete.
+Three native and one oracle complete-JSON delimiter interleavings are exactly
+recovered, with originals, inverse receipts and compiled sources preserved.
+
+Native all-LP summed wall856.902708356 s gives the conditional fixed-work
+zero-LP sensitivity1.934120x. Oracle all-LP plus numeric products551.271193961 s
+gives2.243632x relative to its own matched native diagnostic. These do NOT
+exclude1.5x, so GPU cannot be closed. Historical2234.69 s primary has no phases;
+none of these clocks is relabelled or divided by that historical denominator.
+The native product timer mixes proof construction and cannot all be claimed
+as GPU-ready work.
+
+The full gate is median10+1=11 rows.7201 smaller native LPs use0.021797926 CPU s;
+6029 larger ones853.110977904 CPU s. Native pooled24-source control improves
+40.9865→30.9095 s at CPU8--11, same outcomes/non-message fields; this is a
+stronger baseline, not GPU contribution. Current run-race fast-hybrid now
+selects BatchBaseline with concurrent native handles and the original CPU
+hybrid; oracle-hint is its CPU AST-oracle candidate. Do not confuse these
+labels with older run-batch serial-native captures.
+
+Strong pooled-native/CPU-oracle full original1000,width8,CPU0--3,48GiB launched
+05:24:38Z (launch receipt in large-lp-race). Existing full GPU lifecycle waits
+for that actual OS process to exit, then starts one finite5090 Job and the
+matched GPU cell, with source-labelled requests, immediate member-withdrawal
+cancellation and rebatching. Full GPU entrypoint/lifecycle are prepared in
+the repo; actual queue ownership is recorded separately after launch.
+No GPU resource is held during the CPU dependency wait.
+
+Source-labelled hardware functional check proves seven actual two-source
+batches,58 labelled LP races, member cancellation/requeue and dispatcher
+retirement. Its timing and the overlapping native pilot are excluded.
+The own contended pilot was stopped through normal async cleanup and all
+verified descendants retired. A fresh serial-native width8 control completes
+1600.626538715 s and remains a separate control; stronger pool trial is the
+main comparison. No other Workspace was changed. Root is the only running
+agent; old completed/interrupted reviews are preserved.
+
+EXPERIMENT_GATE remains active for full pooled CPU/GPU results. WRITE_GATE
+and whole-paper REVIEW_GATE remain incomplete; all review here is self-review.
+Hourly gpu-smt-osdi remains ACTIVE with unchanged hourly frequency and updated
+user criterion. No subagents, OMP or native Codex research sessions are used.

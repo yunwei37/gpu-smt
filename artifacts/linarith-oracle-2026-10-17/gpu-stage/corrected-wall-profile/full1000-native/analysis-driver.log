@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/analyze-cost.py", line 312, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/analyze-cost.py", line 304, in main
+    result=analyze(a.cell,a.input)
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/analyze-cost.py", line 81, in analyze
+    lean=list(stream(existing(cell,"oracle.jsonl")))
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/analyze-cost.py", line 8, in stream
+    for line in f:yield json.loads(line)
+                        ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 348, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 1300 (char 1299)

@@ -23,8 +23,10 @@ s=s.replace(signature,signature+'\n'+entry,1)
 (core/'src/race.rs').write_text(s+'\n'+(D/'race-support.rs').read_text())
 (core/'src/lib.rs').write_text((snap/'src/lib.rs').read_text()+'\npub mod race;\n')
 s=(D/'oracle.rs').read_text().replace('hybrid::produce_certificate_hybrid','race::produce_certificate_hint as produce_certificate_hybrid')
+s=s.replace('fn solve(v:Value)->Result<Value,String>{','fn solve(v:Value)->Result<Value,String>{\n farkas_core::race::set_context(&v);')
 (core/'src/bin/arithmetic-batchd.rs').write_text(s)
 s=(R/'artifacts/lean-modern-native-compilation-2026-10-14/Farkas-external-support-oracled.rs').read_text().replace('hybrid::{exact_repair, produce_certificate_hybrid}','race::{exact_repair, produce_certificate_hybrid}')
+s=s.replace('fn respond(line: &str) -> String {','fn respond(line: &str) -> String {\n if let Ok(v)=serde_json::from_str(line){farkas_core::race::set_context(&v);}')
 (core/'src/bin/farkas-batchd.rs').write_text(s)
 shutil.copyfile(D/'race-worker.rs',core/'src/bin/farkas-race-worker.rs')
 # Keep the established line protocol, but borrow independent daemon handles.
@@ -74,6 +76,13 @@ private def {query} (request : String) : IO String := do
   begin=text.index('private def '+query)
   end=text.index('\n/--',begin) if native else text.index('private def atom',begin)
   text=text[:begin]+pool+'\n'+text[end:]
+ if name=='BatchNative':
+  text=text.replace('    let req := requestLine hyps maxVar',"""    let base := requestLine hyps maxVar
+    let callId ← IO.monoNanosNow
+    let req := "{\\"source\\":" ++ Farkas.Telemetry.jstrEsc (← getFileMap).source ++ ",\\"call_id\\":" ++ toString callId ++ "," ++ (base.drop 1).toString""")
+ if name=='BatchOracle':
+  text=text.replace('    let answer ← query request',"""    let request := "{\\"source\\":" ++ Farkas.Telemetry.jstrEsc (← getFileMap).source ++ ",\\"call_id\\":" ++ toString exported ++ "," ++ (request.drop 1).toString
+    let answer ← query request""")
  (U/'GpuArithmetic'/(name+'.lean')).write_text(text)
 env=dict(os.environ);env['PATH']='/usr/local/cargo/bin:'+env['PATH']
 env['CARGO_HOME']='/usr/local/cargo';env['RUSTUP_HOME']='/usr/local/rustup'

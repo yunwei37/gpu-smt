@@ -105,3 +105,23 @@ are explicitly missing after Windowsargument overflow; existingstdin transport
 is forward-fixed without restarting a failed experiment or touching the other
 Workspace. Paper21pages compiles and updatedpage13 is visuallychecked. This is
 targeted factualwriting/self-review, not fullWRITE or independent audit.
+
+
+### Evening update: how to obtain substantial progress
+
+The complete corrected trace establishes a consequential LP target, so a
+single-request PDLP loss is not a reason to stop GPU. The practical next step
+is the frozen full original1000, equal-resource comparison against a native
+pool that also removes the serialization bottleneck. Ordinary native pooling
+must not be called GPU novelty. Do not open more tiny tuning variants while
+this admitted full comparison is live. Use failed/successful LP costs, actual
+two-source membership and cancelled/rebuilt job costs to explain its result.
+
+The per-query spawn integration cost was measured and removed by reusing the
+existing daemon protocol. A source-label check briefly overlapped an own
+native pilot; both timing observations are explicitly excluded and the pilot
+was rerun. That correction is recorded instead of hiding the noise. Front
+doors and step records point to complete raw data; inactive failed routes
+remain retained, not rewritten into successes. Root-only execution and
+self-review are explicit. Full paper gates, broader workloads and novelty
+remain unfinished.

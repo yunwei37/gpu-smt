@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-18T05:24:38.790898+00:00",
+  "pid": 136808,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/width8-full1000-pooled-cpu",
+    "--methods",
+    "fast-hybrid",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "GPU_ARITHMETIC_RACE_MIN_ROWS": 11,
+  "native_baseline": "same pinned native hybrid and baseline tactics, concurrent borrowed daemon handles, no direct AST oracle",
+  "cpu_oracle": "same pooled protocol, no GPU; original CPU hybrid on every eligible large LP",
+  "scope": "full original1000, width8, CPU0--3,48GiB; strong native pool versus CPU oracle, GPU will follow same concurrency/resources; prior contended pilot excluded"
+}

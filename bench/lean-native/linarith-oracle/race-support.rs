@@ -10,6 +10,12 @@ use std::process::{Child,Command,Stdio};
 unsafe extern "C" {fn poll(fds:*mut PollFd,n:usize,timeout:i32)->i32;
  fn prctl(option:i32,arg:usize,...)->i32;fn getppid()->i32;}
 type Certificate=Vec<(usize,BigInt)>;
+thread_local!{static CONTEXT:std::cell::RefCell<serde_json::Value>=const{std::cell::RefCell::new(serde_json::Value::Null)};}
+pub fn set_context(v:&serde_json::Value){
+ CONTEXT.with(|c|*c.borrow_mut()=serde_json::json!({"source":v.get("source"),"call_id":v.get("call_id")}));
+}
+fn context()->serde_json::Value{CONTEXT.with(|c|c.borrow().clone())}
+
 struct OwnedWorker {child:Child}
 impl OwnedWorker {
  fn finish(&mut self)->serde_json::Value{
@@ -28,7 +34,7 @@ fn wire(hyps:&[Hyp],max_var:usize)->String{
   match h.ineq{Ineq::Lt=>"lt",Ineq::Le=>"le",Ineq::Eq=>"eq"},
   h.coeffs.iter().map(|(i,c)|serde_json::json!([i,c.to_string().parse::<serde_json::Number>().expect("exact integer")])).collect::<Vec<_>>()
  ])).collect();
- serde_json::json!({"maxVar":max_var,"hyps":rows}).to_string()
+ serde_json::json!({"maxVar":max_var,"hyps":rows,"source":context()["source"],"call_id":context()["call_id"]}).to_string()
 }
 fn spawn_worker(mode:&str,request:&str)->std::io::Result<OwnedWorker>{
  let path=std::env::var("GPU_ARITHMETIC_RACE_WORKER")
@@ -83,7 +89,7 @@ pub fn race_gpu_hint(hyps:&[Hyp])->Option<Certificate>{
   for(j,&a)in row.iter().enumerate(){if a!=0.0{indices.push(j);values.push(a);}}
   offsets.push(indices.len());
  }
- let msg=serde_json::json!({"offsets":offsets,"indices":indices,"values":values,"rhs":lp.b,"ncols":lp.ncols});
+ let msg=serde_json::json!({"offsets":offsets,"indices":indices,"values":values,"rhs":lp.b,"ncols":lp.ncols,"source":context()["source"],"call_id":context()["call_id"]});
  let mut sock=std::os::unix::net::UnixStream::connect(std::env::var("GPU_ARITHMETIC_SUPPORT_SOCKET").ok()?).ok()?;
  writeln!(sock,"{msg}").ok()?;sock.flush().ok()?;
  let mut reply=String::new();std::io::BufReader::new(sock).read_line(&mut reply).ok()?;
@@ -136,7 +142,7 @@ fn race_search(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
  // Includes kill + wait; EOF cancels abandoned GPU jobs.
  let whole_ns=start.elapsed().as_nanos();
  race_log(serde_json::json!({"ty":"lp-race","pid":std::process::id(),"cpu_pid":cpu_pid,"gpu_pid":gpu_pid,
-  "rows":rows,"cols":hyps.len(),"winner":winner,"decision_ns":decision_ns,"whole_ns":whole_ns,
+  "source":context()["source"],"call_id":context()["call_id"],"rows":rows,"cols":hyps.len(),"winner":winner,"decision_ns":decision_ns,"whole_ns":whole_ns,
   "retirement_ns":whole_ns-decision_ns,"cpu_exit":cpu_exit,"gpu_exit":gpu_exit}));
  if winner=="failed"{crate::hybrid::produce_certificate_hybrid(hyps,max_var).0}else{answer}
 }
