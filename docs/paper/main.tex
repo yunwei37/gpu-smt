@@ -800,6 +800,64 @@ GPU result or a scheduler-independent Amdahl bound. Current product and
 small-LP regions are not exhaustively attributed by these records.
 It does not justify closing the GPU direction.
 
+\paragraph{Natural-power representation.}
+Preserving literal natural-exponent polynomial relations in the direct export
+reduces complete verification time on the predeclared arithmetic-heavy cohort.
+The exact rational expansion runs outside Lean; native certificate checking
+remains authoritative. The previous export treated powers above two as opaque.
+An admission preflight on all 111 sources with prior negative-LP/fallback
+evidence takes 63.96 seconds for the previous direct path and 41.30 seconds for
+the new path, with 109 complete and two rejected outcomes. This affected subset
+is separate from the subsequent complete original 1,000-source comparison.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Composition & Whole seconds \\
+\midrule
+Compiled Fast/hybrid control &629.48\\
+Native frontend + dual backend &475.81\\
+Previous direct export &404.97\\
+Natural-power direct export &350.68\\
+\bottomrule
+\end{tabular}
+\caption{One complete original 1,000-source block with official omega,
+eight queues, four CPUs and a 48\,GiB address-space limit. All return
+992 complete and eight rejected sources. The compiled control is an adapted
+frontend, not pristine stock Mathlib.}
+\label{tab:power-export}
+\end{table}
+
+The new path runs first, followed by previous direct export, native export
+with the same dual backend, and the compiled Fast/hybrid control.
+Table~\ref{tab:power-export} gives whole times including preparation,
+search, checking, fallback and retirement.
+The ratios are $1.79502\times$ relative to the compiled control,
+$1.35681\times$ relative to the already-our-dual-backend native frontend,
+and $1.15481\times$ relative to previous direct export. The total improvement
+therefore includes the numerical portfolio and direct proof path, not only
+exponent coverage or ordinary compilation.
+
+All four conditions have identical per-source verdicts and non-message fields.
+Relative to the compiled control, message-only differences are 108, 104 and 70;
+observer read errors are 55, 104, 109 and zero in acquisition order.
+The control uses common product-application reuse and an upstream native
+numerical executable. Normal output omits heavy diagnostic records but retains
+compiled cost hooks. Other CPU-eligible work shares the host, so a single block
+establishes neither confidence nor global optimality.
+
+For the same control-ranked slowest 1\% sources, overlapping service-span sums
+are 738.19 seconds for the compiled control, 400.42 for previous direct export
+and 397.37 for the new path. Some of the hardest proof tails therefore remain
+largely unchanged. The corresponding slowest 10\% sums are 2,001.51,
+1,182.14 and 1,001.16 seconds, not whole-run elapsed time.
+The earlier complete 29,750-source acquisition remains on its frozen older
+build and does not generalize this new implementation.
+This evidence supports an arithmetic implementation improvement, not a new
+solver, demonstrated GPU benefit or the complete service contribution.
+
 \paragraph{Current common-omega accounting.}
 A later diagnostic holds omega and the two-sided backend common to both
 frontends. It completes all 1,000 sources in 475.97 seconds with native export

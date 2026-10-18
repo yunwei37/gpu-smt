@@ -43,14 +43,17 @@ for native checking. Failed hints retain native fallback. The original complete
 it is not a completed comparison against every newer CPU composition.
 
 Current implementation work targets failed arithmetic export and repeated
-fallback. The old direct frontend treated powers above2 as opaque atoms.
-A compact natural-power AST now preserves their polynomial relations outside
-Lean; Lean retains the certificate check. On all111previously affected original
-candidates, olddirect63.96s becomes41.30s (1.54886×), with matching verdicts and
-non-message fields. **This is an affected-subset preflight, not the full1,000
-threshold or a GPU result.** The complete original1,000-source Power/direct/
-native-dual/stock-native block is running with equal resources.
-[Source, qualification, raw results and full plan](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/README.md).
+fallback. Compact natural-power AST nodes preserve polynomial relations outside
+Lean; Lean retains the certificate check. The complete original1,000-source
+block takes629.48s for the adapted compiled Fast/hybrid control,475.81s for
+native+ourdualbackend,404.97s for olddirect and **350.68s for Power**.
+That is **1.79502×** over the first control and1.35681× over the already-our-
+dual-backend native frontend; the power extension alone gives1.15481× over
+olddirect. All return992complete/8reject/0operational with matching verdicts
+and non-message fields. Warning/observer differences remain.
+**One fixed-order/shared-host block is not a stable or globally optimal result,
+a GPU gain or an OSDI contribution.**
+[Complete source, composition, raw results and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/full1000-result-review.md).
 
 An existing ready-goal adapter also exposes argument-bearing nonlinear goals
 to immutable batches; its15-source qualification forms1050problems,

@@ -332,3 +332,13 @@ implementation/frontier and links full evidence. The next decision depends
 on full-cohort cost and tails, not another unprofitable LPkernel or prefixcache
 grid. Staticprefix13.44%/18.38%edge reuse is distinguished from actual time.
 All remaining writer code is frozen; no background-wait loop.
+
+
+## Complete main result and strongest-baseline next step
+Allfouroriginal1000conditionsclosed:629.48/475.81/404.97/350.68s,992complete8reject
+each. Newdirectexportimprovementis1.15481overpreviousdirect,whiletotalnative
+controlratiois1.79502; no conflation or GPUclaim. README/currentstory/papertable
+nowshowthiscompleteboundary. Nexttestmustchallengebaselinechoiceandrepeatwhole
+observations,notpromotetheoneblockasOSDIcontribution. Defaulttieredvsnativehybrid
+onactualcompletedreferenceheavy-tail sources is a stronger falsifier than more
+smallLPkernels. Ready-goalPower has itsownfunctional/preflight evidence.

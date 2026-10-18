@@ -27,6 +27,16 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — full natural-power comparison closes
+One original1000block,8queues/4CPU4--7/48GiB/officialomega:
+adaptedcompiledFast/hybrid629.48s,native+ourdual475.81s,olddirect404.97s,
+Power350.68s. Ratios1.79502/1.35681/1.15481usedistinctreferences.
+All992complete8reject0op,0verdict/nonmessage differences;warning/observer
+differencesretained. Thetotalisnotallpowerextensionandnotastable/globalCPU/
+GPU/OSDIcontributionclaim. All4RQs/InitialNarrativeremain. Original29750build
+doesnotgeneralizethenewimplementation. [Fulldata](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/full1000-result-review.md).
+
+
 ### 2026-10-18 — representation mechanism produces a real preflight gain
 Literal natural-power export replaces opaque-power atoms before untrusted
 polynomial search, retaining native Lean certificate checking. All111affected
