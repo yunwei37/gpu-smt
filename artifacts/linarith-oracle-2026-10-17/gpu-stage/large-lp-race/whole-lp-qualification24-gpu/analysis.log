@@ -1,0 +1,244 @@
+{
+  "count": 24,
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 31.486097491,
+      "native_reference_ratio": 1.0,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [],
+      "non_message_differences": [],
+      "backend_requests": 0,
+      "backend_errors": 0,
+      "GPU_batches": 0,
+      "GPU_batch_size_histogram": {},
+      "GPU_unique_batch_solver_seconds": 0,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 1.849941303,
+        "median": 6.139616444,
+        "p90": 7.762848288,
+        "p99": 9.415488718,
+        "max": 10.854068478
+      },
+      "terminal": {
+        "method": "fast-hybrid",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 31486097491,
+        "cpu": {
+          "collector": {
+            "user": 0.03981899999999999,
+            "system": 2.310096
+          },
+          "waited_children": {
+            "user": 34.853934,
+            "system": 1.703442
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 4068397056,
+        "sampled_peak_fleet_rss_with_collector": 8231161856,
+        "sampling_read_errors": 0,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+      }
+    },
+    "oracle": {
+      "whole_seconds": 22.051807059,
+      "native_reference_ratio": 1.42782391514484,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ],
+      "non_message_differences": [],
+      "backend_requests": 0,
+      "backend_errors": 0,
+      "GPU_batches": 0,
+      "GPU_batch_size_histogram": {},
+      "GPU_unique_batch_solver_seconds": 0,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 0.429749987,
+        "median": 1.670102998,
+        "p90": 3.653898777,
+        "p99": 5.900579666,
+        "max": 8.693900403
+      },
+      "terminal": {
+        "method": "oracle",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 22051807059,
+        "cpu": {
+          "collector": {
+            "user": 0.013774999999999982,
+            "system": 1.8934869999999995
+          },
+          "waited_children": {
+            "user": 32.39894399999999,
+            "system": 1.5714860000000002
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 4237975552,
+        "sampled_peak_fleet_rss_with_collector": 8199421952,
+        "sampling_read_errors": 3,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+      }
+    },
+    "oracle-hint": {
+      "whole_seconds": 27.78042302,
+      "native_reference_ratio": 1.1333915782467447,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ],
+      "non_message_differences": [],
+      "backend_requests": 0,
+      "backend_errors": 0,
+      "GPU_batches": 0,
+      "GPU_batch_size_histogram": {},
+      "GPU_unique_batch_solver_seconds": 0,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 0.866201559,
+        "median": 1.92748933,
+        "p90": 3.755259143,
+        "p99": 6.537943187,
+        "max": 13.596553393
+      },
+      "terminal": {
+        "method": "oracle-hint",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 27780423020,
+        "cpu": {
+          "collector": {
+            "user": 0.018208000000000002,
+            "system": 2.046148
+          },
+          "waited_children": {
+            "user": 40.298302,
+            "system": 10.439431
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 3473519616,
+        "sampled_peak_fleet_rss_with_collector": 8262799360,
+        "sampling_read_errors": 8,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+      }
+    },
+    "oracle-gpu": {
+      "whole_seconds": 29.371985627,
+      "native_reference_ratio": 1.0719771516589813,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ],
+      "non_message_differences": [],
+      "backend_requests": 32,
+      "backend_errors": 17,
+      "GPU_batches": 5,
+      "GPU_batch_size_histogram": {
+        "2": 5
+      },
+      "GPU_unique_batch_solver_seconds": 0.872,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 0.755193651,
+        "median": 2.107784111,
+        "p90": 4.124502367,
+        "p99": 6.650180275,
+        "max": 14.594835069
+      },
+      "terminal": {
+        "method": "oracle-gpu",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 29371985627,
+        "cpu": {
+          "collector": {
+            "user": 0.019884000000000013,
+            "system": 2.205584
+          },
+          "waited_children": {
+            "user": 41.781012,
+            "system": 11.296679
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 3375386624,
+        "sampled_peak_fleet_rss_with_collector": 8185982976,
+        "sampling_read_errors": 19,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates",
+        "collector_whole_ns": 29284381856,
+        "backend_setup_cleanup_ns": 87603771,
+        "gpu_target_boundary": "Warm upstream cuOpt server; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently."
+      }
+    }
+  },
+  "scope": "Root self-review. Closed real native cells, exact IDs and actual per-candidate spans. No GPU claim from numeric-only replay."
+}

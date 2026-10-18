@@ -1,0 +1,26 @@
+{
+  "pid": 131944,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/qualification24-cpu",
+    "--limit",
+    "24",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "utc": "2026-10-18T04:27:58.179826+00:00",
+  "GPU_ARITHMETIC_RACE_MIN_ROWS": 37,
+  "shape_scope": "median corrected-family 24-source native LP rows + 1; provisional until full shape capture; frozen for this qualification",
+  "methods": "native, original CPU oracle, CPU-only same-large-LP exact-search ablation; no GPU allocation"
+}

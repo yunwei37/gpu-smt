@@ -1,0 +1,60 @@
+{
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 31.486097491,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": []
+    },
+    "oracle": {
+      "whole_seconds": 22.051807059,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ]
+    },
+    "oracle-hint": {
+      "whole_seconds": 27.78042302,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ]
+    },
+    "oracle-gpu": {
+      "whole_seconds": 29.371985627,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ]
+    }
+  },
+  "races": 58,
+  "race_winners": {
+    "cpu": 45,
+    "cpu-no-certificate": 8,
+    "gpu": 5
+  },
+  "GPU_batch_sizes": {
+    "2": 5
+  },
+  "all_submitted_GPU_jobs_have_result_before_proxy_exit": true,
+  "scope": "24-source qualification only, not full original1000 or route closure"
+}

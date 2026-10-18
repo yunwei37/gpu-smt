@@ -1,0 +1,25 @@
+{
+  "pid": 132875,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/whole-lp-qualification24-cpu",
+    "--limit",
+    "24",
+    "--methods",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/qualification24-cpu/rep1-fast-hybrid"
+  ],
+  "utc": "2026-10-18T04:32:01.985334+00:00",
+  "min_rows": 37,
+  "scope": "CPU-only whole-LP racing mechanism ablation, original hybrid before any LP search, exact same width8 CPU0--3 population as frozen native/original CPU controls"
+}

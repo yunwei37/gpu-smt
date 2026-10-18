@@ -1,0 +1,256 @@
+[
+  {
+    "request_call_id": 728945454341952,
+    "source": "\n\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- Let $a,b,c \\geq 0$ and $a^3+b^3+c^3+3abc=6$ . Prove that: $ a^2+b^2+c^2 \\geq 3 $ -/\ntheorem lean_workbook_10090 (a b c : \u211d) (h : a \u2265 0 \u2227 b \u2265 0 \u2227 c \u2265 0 \u2227 a^3+b^3+c^3+3*a*b*c=6) :\n  a^2+b^2+c^2 \u2265 3  := by\n  /-\n  Given \\(a, b, c \\geq 0\\) and \\(a^3 + b^3 + c^3 + 3abc = 6\\), we need to prove that \\(a^2 + b^2 + c^2 \\geq 3\\).\n  1. Consider the expressions \\((a + b + c)^2\\), \\((a - b)^2\\), \\((a - c)^2\\), \\((b - c)^2\\), \\((a - 1)^2\\), \\((b - 1)^2\\), and \\((c - 1)^2\\). Each of these expressions is a square, hence non-negative.\n  2. Using the non-negativity of squares, we can derive inequalities that involve \\(a, b, c\\) and constants.\n  3. By combining these inequalities, we can show that \\(a^2 + b^2 + c^2 \\geq 3\\).\n  -/\n  -- Use non-linear arithmetic to handle the inequalities derived from the squares.\n  nlinarith [sq_nonneg (a + b + c), sq_nonneg (a - b), sq_nonneg (a - c), sq_nonneg (b - c),\n    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]\n",
+    "cert_exists": false,
+    "exit": 0,
+    "reply": {
+      "cert": null
+    }
+  },
+  {
+    "request_call_id": 728954825178600,
+    "source": "\n\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- Let a,b,c be non-negative real numbers with sum 2. Prove that: $ 24(a^2+b^2+c^2)+(a^2+b^2+c^2)^2 \\le 48+8(a^3+b^3+c^3)$ -/\ntheorem lean_workbook_10895 (a b c : \u211d) (ha : 0 \u2264 a) (hb : 0 \u2264 b) (hc : 0 \u2264 c) (habc : a + b + c = 2) : 24 * (a ^ 2 + b ^ 2 + c ^ 2) + (a ^ 2 + b ^ 2 + c ^ 2) ^ 2 \u2264 48 + 8 * (a ^ 3 + b ^ 3 + c ^ 3)  := by\n  /-\n  Given non-negative real numbers \\(a\\), \\(b\\), and \\(c\\) with sum 2, we need to prove that:\n  \\[ 24(a^2 + b^2 + c^2) + (a^2 + b^2 + c^2)^2 \\leq 48 + 8(a^3 + b^3 + c^3) \\]\n  To prove this inequality, we use the non-linear arithmetic (nlinarith) tactic, which automatically handles inequalities involving polynomials. We provide several non-negative expressions to ensure the tactic can correctly deduce the inequality.\n  -/\n  -- Use non-linear arithmetic to handle the inequality involving polynomials.\n  -- We provide several non-negative expressions to ensure the tactic can correctly deduce the inequality.\n  nlinarith [sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1),\n    mul_nonneg ha hb, mul_nonneg hb hc, mul_nonneg hc ha,\n    sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a)]\n",
+    "cert_exists": false,
+    "exit": 0,
+    "reply": {
+      "cert": null
+    }
+  },
+  {
+    "request_call_id": 728945483727395,
+    "source": "\n\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- For $ a,b,c\\geq 0$ prove that $8+2(a^2+b^2+c^2)+abc\\geq 5(a+b+c) $ . -/\ntheorem lean_workbook_10303 (a b c : \u211d) (ha : a \u2265 0) (hb : b \u2265 0) (hc : c \u2265 0) : 8 + 2 * (a ^ 2 + b ^ 2 + c ^ 2) + a * b * c \u2265 5 * (a + b + c)  := by\n  /-\n  We need to prove that for non-negative real numbers \\(a\\), \\(b\\), and \\(c\\), the inequality \\(8 + 2(a^2 + b^2 + c^2) + abc \\geq 5(a + b + c)\\) holds. This can be shown using non-linear arithmetic by considering the non-negativity of squares and other expressions.\n  -/\n  -- Use non-linear arithmetic to prove the inequality by considering the non-negativity of squares and other expressions.\n  nlinarith [sq_nonneg (a + b + c - 3), sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1),\n    mul_nonneg ha hb, mul_nonneg hb hc, mul_nonneg hc ha, sq_nonneg (a - b), sq_nonneg (b - c),\n    sq_nonneg (c - a), sq_nonneg (a * b - 1), sq_nonneg (b * c - 1), sq_nonneg (c * a - 1)]\n",
+    "cert_exists": true,
+    "exit": 0,
+    "reply": {
+      "cert": [
+        [
+          1,
+          "58"
+        ],
+        [
+          7,
+          "75"
+        ],
+        [
+          11,
+          "73"
+        ],
+        [
+          14,
+          "43"
+        ],
+        [
+          45,
+          "56"
+        ],
+        [
+          46,
+          "56"
+        ],
+        [
+          54,
+          "40"
+        ],
+        [
+          62,
+          "40"
+        ],
+        [
+          64,
+          "4"
+        ],
+        [
+          82,
+          "33"
+        ],
+        [
+          85,
+          "35"
+        ],
+        [
+          122,
+          "35"
+        ],
+        [
+          130,
+          "76"
+        ],
+        [
+          144,
+          "76"
+        ],
+        [
+          162,
+          "34"
+        ],
+        [
+          214,
+          "66"
+        ],
+        [
+          215,
+          "66"
+        ],
+        [
+          221,
+          "34"
+        ]
+      ]
+    }
+  },
+  {
+    "request_call_id": 728945615120593,
+    "source": "\n\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- Let $a,b,c \\geq 0$ and $a^3+b^3+c^3+3abc=6$ . Prove that: $ a^2+b^2+c^2 \\geq 3 $ -/\ntheorem lean_workbook_10090 (a b c : \u211d) (h : a \u2265 0 \u2227 b \u2265 0 \u2227 c \u2265 0 \u2227 a^3+b^3+c^3+3*a*b*c=6) :\n  a^2+b^2+c^2 \u2265 3  := by\n  /-\n  Given \\(a, b, c \\geq 0\\) and \\(a^3 + b^3 + c^3 + 3abc = 6\\), we need to prove that \\(a^2 + b^2 + c^2 \\geq 3\\).\n  1. Consider the expressions \\((a + b + c)^2\\), \\((a - b)^2\\), \\((a - c)^2\\), \\((b - c)^2\\), \\((a - 1)^2\\), \\((b - 1)^2\\), and \\((c - 1)^2\\). Each of these expressions is a square, hence non-negative.\n  2. Using the non-negativity of squares, we can derive inequalities that involve \\(a, b, c\\) and constants.\n  3. By combining these inequalities, we can show that \\(a^2 + b^2 + c^2 \\geq 3\\).\n  -/\n  -- Use non-linear arithmetic to handle the inequalities derived from the squares.\n  nlinarith [sq_nonneg (a + b + c), sq_nonneg (a - b), sq_nonneg (a - c), sq_nonneg (b - c),\n    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]\n",
+    "cert_exists": true,
+    "exit": 0,
+    "reply": {
+      "cert": [
+        [
+          14,
+          "264"
+        ],
+        [
+          16,
+          "351"
+        ],
+        [
+          24,
+          "27"
+        ],
+        [
+          31,
+          "18"
+        ],
+        [
+          32,
+          "18"
+        ],
+        [
+          34,
+          "36"
+        ],
+        [
+          35,
+          "36"
+        ],
+        [
+          37,
+          "12"
+        ],
+        [
+          47,
+          "9"
+        ],
+        [
+          51,
+          "18"
+        ],
+        [
+          59,
+          "30"
+        ],
+        [
+          69,
+          "9"
+        ],
+        [
+          72,
+          "18"
+        ],
+        [
+          80,
+          "30"
+        ],
+        [
+          82,
+          "18"
+        ],
+        [
+          91,
+          "18"
+        ],
+        [
+          94,
+          "60"
+        ],
+        [
+          97,
+          "84"
+        ],
+        [
+          101,
+          "4"
+        ],
+        [
+          102,
+          "19"
+        ],
+        [
+          114,
+          "60"
+        ],
+        [
+          117,
+          "84"
+        ],
+        [
+          120,
+          "4"
+        ],
+        [
+          121,
+          "19"
+        ],
+        [
+          133,
+          "60"
+        ],
+        [
+          136,
+          "120"
+        ],
+        [
+          138,
+          "4"
+        ],
+        [
+          139,
+          "19"
+        ],
+        [
+          155,
+          "4"
+        ],
+        [
+          156,
+          "31"
+        ],
+        [
+          171,
+          "18"
+        ],
+        [
+          186,
+          "18"
+        ],
+        [
+          187,
+          "18"
+        ],
+        [
+          214,
+          "156"
+        ],
+        [
+          226,
+          "120"
+        ],
+        [
+          237,
+          "84"
+        ]
+      ]
+    }
+  }
+]

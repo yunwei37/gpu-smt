@@ -1,9 +1,10 @@
 """Finite-run numeric support backend; every hint still passes exact repair/Lean."""
 import argparse,json,os,resource,socket,socketserver,threading,time,sys,math,queue,signal,select
 p=argparse.ArgumentParser(description=__doc__)
-p.add_argument('--backend',choices=['highs','cuopt'],required=True)
+p.add_argument('--min-batch',type=int,default=1,help='Ready requests required before GPU launch; racing CPU owners can cancel while a partial batch waits.');p.add_argument('--backend',choices=['highs','cuopt'],required=True)
 p.add_argument('--socket',required=True);p.add_argument('--log',required=True)
 p.add_argument('--host');p.add_argument('--proto-root');a=p.parse_args()
+if a.min_batch<1:p.error('--min-batch must be positive')
 resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3))
 resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 if a.backend=='cuopt':
@@ -87,16 +88,25 @@ def solve_gpu_batch(items):
    except Exception:pass
   channel.close()
 def gpu_dispatch():
+ items=[]
  while True:
-  items=[gpu_queue.get()]
+  item=gpu_queue.get()  # Arrival or cancellation wakeup; no polling/timer.
+  if item is not None:items.append(item)
   while True:
-   try:items.append(gpu_queue.get_nowait())
+   try:
+    item=gpu_queue.get_nowait()
+    if item is not None:items.append(item)
    except queue.Empty:break
   items=[x for x in items if not x.cancelled.is_set()]
-  if not items:continue
+  if len(items)<a.min_batch:continue
+  ready=time.monotonic_ns()
+  append_record(a.log+'.batches',{'event':'batch_ready','monotonic_ns':ready,
+    'batch_size':len(items),'minimum_ready':a.min_batch,
+    'scope':'Only simultaneously live device-ready requests; CPU shadows remain active.'})
   try:answers=solve_gpu_batch(items)
   except Exception as e:answers=[{'primal':None,'error':type(e).__name__+': '+str(e)}for _ in items]
   for item,answer in zip(items,answers):item.deliver(answer)
+  items=[]
 if a.backend=='cuopt':
  gpu_queue=queue.Queue();pending_gpu={}
  threading.Thread(target=gpu_dispatch,daemon=True).start()
@@ -124,7 +134,7 @@ class Handler(socketserver.StreamRequestHandler):
       os.eventfd_read(item.fd);reply=item.result;break
      if self.connection in ready:
       # One request/response per native child. EOF means its candidate expired.
-      gone=True;item.cancelled.set();cancel_abandoned()
+      gone=True;item.cancelled.set();gpu_queue.put(None);cancel_abandoned()
       reply={'primal':None,'state':'client_disconnected'};break
   except Exception as e:reply={'primal':None,'error':type(e).__name__+': '+str(e)}
   finally:

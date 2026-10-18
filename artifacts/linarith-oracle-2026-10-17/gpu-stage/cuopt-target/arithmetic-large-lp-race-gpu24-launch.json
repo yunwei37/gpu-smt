@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-18T04:33:14Z",
+  "pid": 133382,
+  "start_ticks": "72936620",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/whole-lp-qualification24-gpu",
+    "--limit",
+    "24",
+    "--methods",
+    "oracle-gpu",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/qualification24-cpu/rep1-fast-hybrid"
+  ],
+  "host": "10.42.1.71",
+  "min_rows": 37,
+  "minimum_live_GPU_batch": 2,
+  "RLIMIT_AS": 51539607552,
+  "scope": "real24 sources; corrected family; width8; CPU/GPU sameLP race before search; all server/client CPUs0--3; no numeric warmup"
+}

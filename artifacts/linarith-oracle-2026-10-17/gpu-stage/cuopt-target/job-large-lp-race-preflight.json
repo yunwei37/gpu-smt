@@ -1,0 +1,48 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "name": "gpu-smt-cuopt-20261017",
+    "namespace": "coder",
+    "labels": {
+      "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+    },
+    "annotations": {
+      "admission.yunwei37.com/approval-ref": "gpu-smt/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/plan.md",
+      "admission.yunwei37.com/user-words": "\u522b\u8ba9\u75c5\u6001 LP \u5361\u4f4f\u6574\u6761\u8def\u5f84\uff1a\u53ea\u628a\u5927 LP \u9001 GPU\uff08\u6309\u884c\u6570\u6392\u5728\u524d\u4e00\u534a\u7684\u5c0f LP \u5408\u8ba1\u624d 0.02 CPU \u79d2\uff09\uff0c\u540c\u65f6\u8ba9 CPU \u5e76\u884c\u6c42\u89e3\u540c\u4e00\u4e2a LP\uff0c\u8c01\u5148\u7ed9\u51fa\u53ef\u7cbe\u786e\u4fee\u590d\u7684\u652f\u6301\u96c6\u5c31\u7528\u8c01\uff0c\u53e6\u4e00\u4e2a\u7acb\u5373\u53d6\u6d88\u3002"
+    }
+  },
+  "spec": {
+    "backoffLimit": 0,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+        }
+      },
+      "spec": {
+        "restartPolicy": "Never",
+        "nodeSelector": {
+          "fleet.yunwei37.com/gpu": "rtx5090"
+        },
+        "containers": [
+          {
+            "name": "cuopt",
+            "image": "nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734",
+            "command": [
+              "/bin/bash",
+              "-c",
+              "ulimit -c 0; ulimit -v 50331648; exec python3 -c 'import os; os.sched_setaffinity(0,{0,1,2,3}); print(\"benchmark_cpu_affinity\",sorted(os.sched_getaffinity(0)),flush=True); os.execv(\"/opt/cuopt/entrypoint.sh\",[\"/opt/cuopt/entrypoint.sh\",\"proxy\"])'"
+            ],
+            "resources": {
+              "limits": {
+                "nvidia.com/gpu": 1
+              }
+            }
+          }
+        ],
+        "runtimeClassName": "nvidia"
+      }
+    }
+  }
+}
