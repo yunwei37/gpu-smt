@@ -1,0 +1,3 @@
+# Ready-goal additive device preflight
+E1070/RQ4, root only. [Plan](plan.md), [shared-source build](build.py), [receipt](build-receipt.json), [three-contender race](race.rs), [CPU driver](run-cpu.py), [device runner](run-device.py), [finite lifecycle](lifecycle.ps1).
+Status: implementation compiles; fresh native+CPU15-source acquisition running. No GPU run/result yet. Same original input,4CPU8--11/eightqueues/48GiB. Existing request-sizedVMM provider, no new kernel or tuning. Native andHiGHS remain CPU competitors when GPU is added. Independent review and a performance claim are not supplied by this build.

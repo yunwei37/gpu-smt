@@ -1,0 +1,369 @@
+{
+  "sequential": {
+    "whole_seconds": 84.058571283,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "full_JSON_differences": [],
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552
+  },
+  "ready-batch": {
+    "whole_seconds": 79.769110644,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "full_JSON_differences": [
+      "Proof_00009",
+      "Proof_06106",
+      "Proof_09145",
+      "Proof_16213",
+      "Proof_20500",
+      "Proof_24894"
+    ],
+    "observer_errors": 8,
+    "effective_RLIMIT_AS": 51539607552
+  },
+  "scope": "Real15 original-source CPU preflight with per-goal original arguments, common omega,4CPU8--11/eightqueues/48GiB; not GPU performance.",
+  "batch_outcomes": {
+    "checked": 6,
+    "fallback": 1
+  },
+  "batch_sizes": [
+    8,
+    8,
+    8,
+    2,
+    512,
+    512
+  ],
+  "checked_problems": 1040,
+  "per_problem_native_fallback": 10,
+  "outer_fallbacks": [
+    {
+      "goals": 328,
+      "models": 0,
+      "error": "unsupported carrier"
+    }
+  ],
+  "numerical_workers": [
+    4
+  ],
+  "groups": [
+    {
+      "group": 0,
+      "requests": 8,
+      "numeric_workers_peak": 4,
+      "coefficient_variables_rows": {
+        "count": 8,
+        "min": 42,
+        "p50": 42,
+        "p90": 42,
+        "max": 42
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 8,
+        "min": 167,
+        "p50": 167,
+        "p90": 167,
+        "max": 167
+      },
+      "coefficient_nonzeros": {
+        "count": 8,
+        "min": 945,
+        "p50": 945,
+        "p90": 945,
+        "max": 945
+      },
+      "product_facts": {
+        "count": 8,
+        "min": 120,
+        "p50": 120,
+        "p90": 120,
+        "max": 120
+      },
+      "numeric_certificate_replies": 8,
+      "numeric_failed_replies": 0,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.211778444,
+      "parsed_external_LP_calls": 2,
+      "actual_external_rows": {
+        "count": 2,
+        "min": 43,
+        "p50": 43,
+        "p90": 43,
+        "max": 43
+      },
+      "actual_external_cols": {
+        "count": 2,
+        "min": 167,
+        "p50": 167,
+        "p90": 167,
+        "max": 167
+      }
+    },
+    {
+      "group": 1,
+      "requests": 8,
+      "numeric_workers_peak": 4,
+      "coefficient_variables_rows": {
+        "count": 8,
+        "min": 60,
+        "p50": 60,
+        "p90": 60,
+        "max": 60
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 8,
+        "min": 189,
+        "p50": 189,
+        "p90": 189,
+        "max": 189
+      },
+      "coefficient_nonzeros": {
+        "count": 8,
+        "min": 908,
+        "p50": 908,
+        "p90": 908,
+        "max": 908
+      },
+      "product_facts": {
+        "count": 8,
+        "min": 153,
+        "p50": 153,
+        "p90": 153,
+        "max": 153
+      },
+      "numeric_certificate_replies": 8,
+      "numeric_failed_replies": 0,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.01129545,
+      "parsed_external_LP_calls": 0,
+      "actual_external_rows": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      },
+      "actual_external_cols": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      }
+    },
+    {
+      "group": 2,
+      "requests": 8,
+      "numeric_workers_peak": 4,
+      "coefficient_variables_rows": {
+        "count": 8,
+        "min": 53,
+        "p50": 53,
+        "p90": 53,
+        "max": 53
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 8,
+        "min": 561,
+        "p50": 561,
+        "p90": 561,
+        "max": 561
+      },
+      "coefficient_nonzeros": {
+        "count": 8,
+        "min": 2636,
+        "p50": 2636,
+        "p90": 2636,
+        "max": 2636
+      },
+      "product_facts": {
+        "count": 8,
+        "min": 528,
+        "p50": 528,
+        "p90": 528,
+        "max": 528
+      },
+      "numeric_certificate_replies": 0,
+      "numeric_failed_replies": 8,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.199752529,
+      "parsed_external_LP_calls": 0,
+      "actual_external_rows": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      },
+      "actual_external_cols": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      }
+    },
+    {
+      "group": 3,
+      "requests": 2,
+      "numeric_workers_peak": 2,
+      "coefficient_variables_rows": {
+        "count": 2,
+        "min": 276,
+        "p50": 276,
+        "p90": 276,
+        "max": 276
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 2,
+        "min": 210,
+        "p50": 210,
+        "p90": 210,
+        "max": 210
+      },
+      "coefficient_nonzeros": {
+        "count": 2,
+        "min": 325,
+        "p50": 325,
+        "p90": 351,
+        "max": 351
+      },
+      "product_facts": {
+        "count": 2,
+        "min": 190,
+        "p50": 190,
+        "p90": 190,
+        "max": 190
+      },
+      "numeric_certificate_replies": 0,
+      "numeric_failed_replies": 2,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.013403921,
+      "parsed_external_LP_calls": 0,
+      "actual_external_rows": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      },
+      "actual_external_cols": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      }
+    },
+    {
+      "group": 4,
+      "requests": 512,
+      "numeric_workers_peak": 4,
+      "coefficient_variables_rows": {
+        "count": 512,
+        "min": 4,
+        "p50": 4,
+        "p90": 4,
+        "max": 4
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 512,
+        "min": 11,
+        "p50": 11,
+        "p90": 11,
+        "max": 11
+      },
+      "coefficient_nonzeros": {
+        "count": 512,
+        "min": 16,
+        "p50": 19,
+        "p90": 19,
+        "max": 19
+      },
+      "product_facts": {
+        "count": 512,
+        "min": 0,
+        "p50": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "numeric_certificate_replies": 512,
+      "numeric_failed_replies": 0,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.005966484,
+      "parsed_external_LP_calls": 0,
+      "actual_external_rows": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      },
+      "actual_external_cols": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      }
+    },
+    {
+      "group": 5,
+      "requests": 512,
+      "numeric_workers_peak": 4,
+      "coefficient_variables_rows": {
+        "count": 512,
+        "min": 4,
+        "p50": 4,
+        "p90": 4,
+        "max": 4
+      },
+      "coefficient_hypotheses_columns": {
+        "count": 512,
+        "min": 11,
+        "p50": 11,
+        "p90": 11,
+        "max": 11
+      },
+      "coefficient_nonzeros": {
+        "count": 512,
+        "min": 16,
+        "p50": 19,
+        "p90": 19,
+        "max": 19
+      },
+      "product_facts": {
+        "count": 512,
+        "min": 0,
+        "p50": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "numeric_certificate_replies": 512,
+      "numeric_failed_replies": 0,
+      "numeric_lp_region_elapsed_sum_NOT_pure_solver_seconds": 0.003117132,
+      "parsed_external_LP_calls": 0,
+      "actual_external_rows": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      },
+      "actual_external_cols": {
+        "count": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "max": null
+      }
+    }
+  ],
+  "parsed_external_LP_requests_in_ready_groups": 2,
+  "latency_reduction": 0.051029425952990426,
+  "limitation": "One selected mechanism preflight, no confidence or corpus speedup. Exact coefficient-space dimensions differ from actual external models. LP-region timers include repair/race/retirement and are not pure floating solve. No GPU run."
+}

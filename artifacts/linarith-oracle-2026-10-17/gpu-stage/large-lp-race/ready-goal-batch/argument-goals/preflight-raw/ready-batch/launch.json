@@ -1,0 +1,50 @@
+{
+  "argv": [
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/run-goals.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/preflight-ready-batch",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/preflight-input.jsonl",
+    "--limit",
+    "0",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+    "--methods",
+    "oracle-highs"
+  ],
+  "pid": 357541,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "methods": [
+    "oracle-highs"
+  ],
+  "input": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/preflight-input.jsonl",
+  "limit": 0,
+  "resource_observer_seconds": 1,
+  "header": "per-method arithmetic family selected by Runner.cell; common Mathlib/Aesop imports",
+  "boundary": "existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF",
+  "native_buckets": 8,
+  "array_observation_deadline_seconds": null,
+  "repl_override": "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+  "numeric_replay_bin": null,
+  "numeric_replay_data": null,
+  "effective_RLIMIT_AS": [
+    51539607552,
+    51539607552
+  ],
+  "cost_profile": false,
+  "cost_root": "/tmp/gpu-smt-linarith-oracle-20261017",
+  "collector": "/workspaces/repository/bench/lean-native/run-native-batch-comparison.py"
+}

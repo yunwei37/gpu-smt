@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-18T15:54:44.913346+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/GpuArithmetic/GoalBatchArgs.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/GoalBatchArgs.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/GpuArithmetic/GoalBatchArgs.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerAstControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/GoalBatchArgs.c",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/batch-oracle.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked",
+        "--bin",
+        "arithmetic-batchd"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/ready-goal-arguments/numeric-source",
+      "exit": 0,
+      "output": "   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/ready-goal-arguments/numeric-source)\n    Finished `release` profile [optimized] target(s) in 1.19s\n"
+    }
+  ]
+}
