@@ -4410,3 +4410,17 @@ asnovelty. REVIEW isrootself-review;independent/fullmilestoneauditsandall
 fourRQcoverage remain incomplete. NoAgent/subagent/OMP. Activegoal/hourly
 remainunchanged;prefixcapturepreserved. NextdecisiveGPUchoice musttarget
 FP-failed moderateLPswithstrongCPUnumericalcontrol,noparametergrid.
+
+
+### 2026-10-18 — exact-LP head CPU admission and actual GPU allocation failure
+EXPERIMENT selects native exact-LP CPU head10,not whole-task/Nat tails.
+Fresh native74.445,CPU37.540,HiGHS18.130s,all10complete/verdict/non-message
+parity. HiGHS2resource-readerrors and8abortedJSONframes disclosed;external
+worker gpu label is CPUHiGHS,notGPU. Fresh full1000three-cell CPU comparison
+starts09:39:15Z,pid168041,CPUs0-3,48GiB,eightnativequeues. No wait polling.
+Actual Barrier/original-feasibility/independent qualification40.056s has20jobs,
+peak4RPCs,all20retired,zeroGPUcertificatewins. Eightreturnedworker-death
+results and repeatedcudaMallocerror2 invalidate normalperformance inference.
+TemporaryJobUIDdeleted;otherWorkspaceRunning/labReady. Failure retained.
+WRITE recordsactualresult and scopes;REVIEW rootself-review,not independent.
+Repairallocationfault beforefurtherGPU performance. No routeclosure.

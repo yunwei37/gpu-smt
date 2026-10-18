@@ -1,0 +1,104 @@
+{
+  "state": "complete",
+  "cells": 3,
+  "attempts": 30,
+  "results": [
+    {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 10,
+      "attempts": 10,
+      "counts": {
+        "complete": 10
+      },
+      "whole_ns": 74444597310,
+      "cpu": {
+        "collector": {
+          "user": 0.10637999999999997,
+          "system": 7.3500749999999995
+        },
+        "waited_children": {
+          "user": 21.369525,
+          "system": 1.958362
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 7590638592,
+      "sampled_peak_fleet_rss_with_collector": 8240046080,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates"
+    },
+    {
+      "method": "oracle-hint",
+      "rep": 1,
+      "state": "complete",
+      "expected": 10,
+      "attempts": 10,
+      "counts": {
+        "complete": 10
+      },
+      "whole_ns": 37540061162,
+      "cpu": {
+        "collector": {
+          "user": 0.04874900000000004,
+          "system": 3.9004459999999996
+        },
+        "waited_children": {
+          "user": 22.746045,
+          "system": 2.211786
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 7724547072,
+      "sampled_peak_fleet_rss_with_collector": 8377610240,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates"
+    },
+    {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 10,
+      "attempts": 10,
+      "counts": {
+        "complete": 10
+      },
+      "whole_ns": 18129769163,
+      "cpu": {
+        "collector": {
+          "user": 0.03186,
+          "system": 1.7257730000000002
+        },
+        "waited_children": {
+          "user": 25.343497000000006,
+          "system": 2.1990749999999997
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 7931483136,
+      "sampled_peak_fleet_rss_with_collector": 8577347584,
+      "sampling_read_errors": 2,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates",
+      "collector_whole_ns": 17920593126,
+      "backend_setup_cleanup_ns": 209176037,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    }
+  ],
+  "utc": "2026-10-18T09:37:24.294829+00:00"
+}

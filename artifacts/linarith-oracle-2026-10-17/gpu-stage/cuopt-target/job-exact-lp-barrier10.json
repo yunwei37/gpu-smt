@@ -1,0 +1,54 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "name": "gpu-smt-cuopt-20261017",
+    "namespace": "coder",
+    "labels": {
+      "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+    },
+    "annotations": {
+      "admission.yunwei37.com/approval-ref": "gpu-smt/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/exact-lp-barrier/plan.md",
+      "admission.yunwei37.com/user-words": "让批量真正形成：在总资源相同的前提下让多个候选并发跑，把同一时刻的 LP 合并成一批送 GPU，并在相同并发度下和强基线、CPU oracle 对比。"
+    }
+  },
+  "spec": {
+    "backoffLimit": 0,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+        }
+      },
+      "spec": {
+        "restartPolicy": "Never",
+        "nodeSelector": {
+          "fleet.yunwei37.com/gpu": "rtx5090"
+        },
+        "containers": [
+          {
+            "name": "cuopt",
+            "image": "nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734",
+            "command": [
+              "/bin/bash",
+              "-c",
+              "ulimit -c 0; ulimit -v 50331648; exec python3 -c 'import os; os.sched_setaffinity(0,{8,9,10,11}); print(\"benchmark_cpu_affinity\",sorted(os.sched_getaffinity(0)),flush=True); os.execv(\"/opt/cuopt/entrypoint.sh\",[\"/opt/cuopt/entrypoint.sh\",\"proxy\"])'"
+            ],
+            "resources": {
+              "limits": {
+                "nvidia.com/gpu": 1
+              }
+            },
+            "env": [
+              {
+                "name": "CUOPT_GRPC_ARGS",
+                "value": "--workers 8"
+              }
+            ]
+          }
+        ],
+        "runtimeClassName": "nvidia"
+      }
+    }
+  }
+}

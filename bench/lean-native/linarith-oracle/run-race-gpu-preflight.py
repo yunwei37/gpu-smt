@@ -17,6 +17,8 @@ parser.add_argument('--reference',type=Path,default=Path('/tmp/gpu-smt-linarith-
 parser.add_argument('--cpu-qualification',type=Path)
 parser.add_argument('--native-buckets',action='store_true')
 parser.add_argument('--independent-jobs',action='store_true')
+parser.add_argument('--original-feasibility',action='store_true')
+parser.add_argument('--lp-method',choices=['PDLP','Barrier'],default='PDLP')
 parser.add_argument('--repl',type=Path)
 args=parser.parse_args();U=args.root
 out=args.out or U/'labelled-qualification24-gpu'
@@ -31,6 +33,8 @@ grpc.channel_ready_future(channel).result(timeout=60);channel.close()
 env=dict(os.environ);env['GPU_SMT_CUOPT_HOST']=args.host
 env['GPU_ARITHMETIC_RACE_MIN_ROWS']=str(args.min_rows);env['GPU_ARITHMETIC_RACE_ROOT']=str(U)
 if args.independent_jobs:env['GPU_ARITHMETIC_GPU_INDEPENDENT_JOBS']='1'
+env['GPU_ARITHMETIC_GPU_LP_METHOD']=args.lp_method
+if args.original_feasibility:env['GPU_ARITHMETIC_GPU_ORIGINAL_FEASIBILITY']='1'
 env['GPU_ARITHMETIC_GPU_MIN_READY']=str(args.minimum_ready)
 cmd=['/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python',str(D/'run-race.py'),
  '--out',str(out),'--limit',str(args.limit),'--methods','oracle-gpu','--width','8',
@@ -44,7 +48,7 @@ with (U/(args.label+'-driver.log')).open('w')as log:
  p=subprocess.Popen(cmd,cwd=R,env=env,stdout=log,stderr=subprocess.STDOUT)
  receipt={'utc':time.strftime('%FT%TZ',time.gmtime()),'pid':p.pid,
   'start_ticks':Path('/proc',str(p.pid),'stat').read_text().split()[21],
-  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,
+  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,'lp_method':args.lp_method,'original_feasibility':args.original_feasibility,
   'RLIMIT_AS':48*1024**3,'affinity':args.affinity,'build':build,
   'scope':'Declared finite source cohort; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt'}
  (A/('arithmetic-'+args.label+'-launch.json')).write_text(json.dumps(receipt,indent=2)+'\n')

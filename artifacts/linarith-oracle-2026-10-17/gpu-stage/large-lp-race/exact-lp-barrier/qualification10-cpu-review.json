@@ -1,0 +1,42 @@
+{
+  "oracle-hint": {
+    "verdict_mismatches": 0,
+    "non_message_mismatches": [],
+    "message_only_changes": [
+      "Proof_01755",
+      "Proof_15934"
+    ]
+  },
+  "oracle-highs": {
+    "verdict_mismatches": 0,
+    "non_message_mismatches": [],
+    "message_only_changes": [
+      "Proof_01755"
+    ]
+  },
+  "highs": {
+    "races": 34,
+    "winners": {
+      "gpu": 8,
+      "cpu-no-certificate": 10,
+      "cpu": 16
+    },
+    "backend": "CPU HiGHS; legacy race winner gpu means external numerical hint, not device work",
+    "support_calls": 31,
+    "errors": {
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 18250 (char 18249)": 1,
+      "JSONDecodeError: Expecting value: line 1 column 18537 (char 18536)": 1,
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 1064 (char 1063)": 1,
+      "JSONDecodeError: Expecting value: line 1 column 19222 (char 19221)": 1,
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 5304 (char 5303)": 1,
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 465 (char 464)": 1,
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 16474 (char 16473)": 1,
+      "JSONDecodeError: Expecting ',' delimiter: line 1 column 1924 (char 1923)": 1
+    },
+    "states": {
+      "Optimal": 17,
+      "Infeasible": 6,
+      "null": 8
+    }
+  }
+}

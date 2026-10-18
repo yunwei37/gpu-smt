@@ -3,8 +3,11 @@ import argparse,json,os,resource,socket,socketserver,threading,time,sys,math,que
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--min-batch',type=int,default=1,help='Ready requests required before GPU launch; racing CPU owners can cancel while a partial batch waits.');p.add_argument('--backend',choices=['highs','cuopt'],required=True)
 p.add_argument('--socket',required=True);p.add_argument('--log',required=True)
+p.add_argument('--original-feasibility',action='store_true',help='Independent LP jobs only: omit phase-I artificial slack variables.')
+p.add_argument('--lp-method',choices=['PDLP','Barrier'],default='PDLP',help='Explicit GPU algorithm; Concurrent can include a CPU simplex winner.')
 p.add_argument('--independent-jobs',action='store_true',help='Dispatch simultaneously ready LPs as independently cancellable concurrent cuOpt jobs, not a fused model.');p.add_argument('--host');p.add_argument('--proto-root');a=p.parse_args()
 if a.min_batch<1:p.error('--min-batch must be positive')
+if a.original_feasibility and not a.independent_jobs:p.error('original feasibility requires independent jobs')
 resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3))
 resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 if a.backend=='cuopt':
@@ -54,26 +57,29 @@ def solve_highs(q):
  point=h.getSolution().col_value if h.getModelStatus()==highspy.HighsModelStatus.kOptimal else None
  return {'primal':point,'state':state,'engine':'HiGHS','solver_seconds':h.getRunTime(),'build_ns':packed-t,'call_ns':done-packed}
 def solve_gpu_batch(items,group=None):
- # Phase I keeps no-certificate systems feasible. Keep the measured PDLP+
- # crossover mechanism, with corrected client lifetime and header composition.
+ # Joint jobs retain phase I so one infeasible member cannot poison siblings.
+ # Independently cancellable jobs solve the original feasibility LP directly.
+ phase1=not a.original_feasibility
+ formulation='phase_I_artificial_slack' if phase1 else 'original_feasibility'
  values=[];indices=[];offsets=[0];rhs=[];slices=[];objective=[];base=0
  for item in items:
   q=item.q;n=q['ncols'];r=len(q['rhs']);slices.append((base,n))
   for row in range(r):
    for k in range(q['offsets'][row],q['offsets'][row+1]):
     indices.append(base+q['indices'][k]);values.append(q['values'][k])
-   indices.extend([base+n+2*row,base+n+2*row+1]);values.extend([1.,-1.])
+   if phase1:
+    indices.extend([base+n+2*row,base+n+2*row+1]);values.extend([1.,-1.])
    offsets.append(len(values))
-  rhs.extend(q['rhs']);objective.extend([0.]*n+[1.]*(2*r));base+=n+2*r
+  rhs.extend(q['rhs']);objective.extend([0.]*n+([1.]*(2*r) if phase1 else []));base+=n+(2*r if phase1 else 0)
  channel=grpc.insecure_channel(a.host+':5001');stub=rpc.CuOptRemoteServiceStub(channel)
  job=None;begin=time.monotonic_ns()
  try:
   model=data_pb.OptimizationProblem(A_values=values,A_indices=indices,A_offsets=offsets,c=objective,b=rhs,variable_lower_bounds=[0.]*base,variable_upper_bounds=[float('inf')]*base,constraint_lower_bounds=rhs,constraint_upper_bounds=rhs,row_types=b'E'*len(rhs),objective_scaling_factor=1.)
-  settings=data_pb.PDLPSolverSettings(method=data_pb.PDLP,crossover=True)
+  settings=data_pb.PDLPSolverSettings(method=getattr(data_pb,a.lp_method),crossover=True)
   request=core_pb.SolveLPRequest(header=core_pb.RequestHeader(version=1,problem_category=data_pb.LP),problem=model,settings=settings)
   job=stub.SubmitJob(service_pb.SubmitJobRequest(lp_request=request)).job_id
   with lock:pending_gpu[job]=items
-  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'rows':len(rhs),'cols':base,'nnz':len(values),'dispatch_group':group,'formulation':'phase_I_artificial_slack','settings':{'method':'PDLP','crossover':True,'first_primal_feasible':False}})
+  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'rows':len(rhs),'cols':base,'nnz':len(values),'dispatch_group':group,'formulation':formulation,'settings':{'method':a.lp_method,'crossover':True,'first_primal_feasible':False}})
   cancel_abandoned()
   status=stub.WaitForCompletion(service_pb.WaitRequest(job_id=job))
   response=stub.GetResult(service_pb.GetResultRequest(job_id=job));sol=response.lp_solution
@@ -81,7 +87,7 @@ def solve_gpu_batch(items,group=None):
   # Termination status is not proof authority. Any finite hint must still pass
   # unchanged exact repair/verification and Lean checking, otherwise fallback.
   usable=len(point)==base and all(math.isfinite(x)for x in point)
-  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'phase1_objective':sol.primal_objective}
+  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_call_ids':[x.q.get('call_id')for x in items],'batch_distinct_sources':len(set(x.q['source']for x in items))if all(isinstance(x.q.get('source'),str)for x in items)else None,'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'phase1_objective':sol.primal_objective if phase1 else None,'objective':sol.primal_objective,'formulation':formulation,'requested_method':a.lp_method}
   append_record(a.log+'.batches',dict(common,event='result'))
   return [dict(common,primal=point[start:start+n]if usable else None)for start,n in slices]
  finally:
@@ -193,6 +199,6 @@ class Server(socketserver.ThreadingUnixStreamServer):
  daemon_threads=False
 if os.path.exists(a.socket):raise RuntimeError('socket already exists: '+a.socket)
 with Server(a.socket,Handler)as server:
- print(json.dumps({'ready':True,'pid':os.getpid(),'backend':a.backend,'socket':a.socket,'independent_jobs':a.independent_jobs,'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
+ print(json.dumps({'ready':True,'pid':os.getpid(),'backend':a.backend,'socket':a.socket,'independent_jobs':a.independent_jobs,'lp_method':a.lp_method,'formulation':('original_feasibility' if a.original_feasibility else 'phase_I_artificial_slack'),'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
  try:server.serve_forever()
  finally:os.unlink(a.socket)

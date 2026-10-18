@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-18T09:39:15.451359+00:00",
+  "pid": 168041,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/exact-lp-barrier/full1000-cpu",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+    "--limit",
+    "1000",
+    "--methods",
+    "fast-hybrid",
+    "oracle-hint",
+    "oracle-highs",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl"
+  ],
+  "root": "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-fp-first",
+  "min_rows": 11
+}

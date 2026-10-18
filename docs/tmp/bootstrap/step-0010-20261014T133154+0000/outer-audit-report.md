@@ -2947,3 +2947,10 @@ ThisisnotreopeningE038runtimebranching,alteringtheworkloadpopulationor
 claimingnewpreprocessingnovelty. Noindependentexecutororreviewerisused.
 GPUcontinuationwillneedstrongCPUsolvercontrolsandcompletecosts,before
 anotherfullvariantmatrix;alloriginalRQ/papertargetsremainunresolved.
+
+
+### Exact-LP head boundary self-audit
+ActualCPUpreflight admitsfull1000HiGHS alternative;selected10 speedup isnot
+fullcohortdata. TheGPUpath reachedBarrier butCUDAallocationfailures masked
+bynativefallback preventcalling40.056s healthyGPUperformance. Alljobsretired
+andfailurebytesretained. FullCPUpairactive;originalgoal/hourly/allRQspreserved.
