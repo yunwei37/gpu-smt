@@ -626,3 +626,18 @@ unsupported sources but takes158.015s versus currentCPU143.751s/native144.555s.
 Alltenverdicts/non-message fields agree,and24Real/Rat regression sources pass.
 It remains an archived negative implementation rather than the default or a
 new full matrix. [Raw/source/reproduction/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/nat-int-oracle/result-review.md).
+
+
+## 2026-10-18 complete stronger CPU alternative
+
+Native691.095897040/FP-firstCPU529.171190393/CPUHiGHS462.504846990s onoriginal1000,
+eightnativequeues,CPU0-3,48GiB. All992/8/0,allverdict/non-messageparity;
+88/104warningchanges. HiGHS150samplingreaderrors;memoryaggregateincomplete.
+Ratio1.49424574x,1.77425s short of>1.5x inthissinglepair,no stablethresholdclaim.
+[Complete raw,source task tails and self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/exact-lp-barrier/full1000-cpu/result-review.md).
+1,888races:393CPUHiGHScertwins,281exactCPUcertwins,1214exactCPUnegative.
+HiGHSonly7.295s cumulativeLPwall;exactnegative race decisions177.756s cumulative.
+Neither sumis a wholewallpartitionorGPUbound. Success-only hints cannotstop
+negativeexactsearch;any dualinfeasibilityhintmustbe repairedandcheckedexactly.
+GPUfirst/scaledactualdevicebatches37.979/32.719sonselected10vsHiGHS18.130,
+not admittedfullGPUgainsorGPUrouteclosure. AllfournativeRQ/noveltygoalsremain.

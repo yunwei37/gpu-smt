@@ -2963,3 +2963,10 @@ Neither32.719sselectedGPUclocknor18.130sselectedHiGHSclockisfullcohortdata;
 newfullCPUoracle529.171sdoesnottransferoldwaveGPU/Amdahldenominators.
 NoCPU-onlyclosureorfalseindependentaudit. Remainingnumerical/fullcohort/
 noveltygapsretained. ProtectedprefixandhealthyfullCPUcapturearenotrestarted.
+
+
+### Strongest CPU fullcell self-audit
+Complete native/CPU/HiGHSwholeclocksandall3000outcomeschecked. Reported
+1.49425xdidnotroundupto1.5x. LegacygpulabelinHiGHSracesiscorrectlyCPU.
+455abortedframesarenotLPsolves;150readerrorslimitmemory. Tailintervals
+overlap. Newnegativebranchopportunityisaboundedhypothesis,notresults.

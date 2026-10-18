@@ -32,6 +32,15 @@ GPU route closure requires applicable evidence that the zero-GPU-cost opportunit
 cannot reach that target; a slow implementation alone is insufficient.
 The hourly research task remains active.
 
+The latest complete 1,000-source comparison is native **691.10 s**, CPU oracle
+**529.17 s**, and CPU HiGHS oracle **462.50 s** (**1.49425x**). Every cell has
+992 accepted/8 rejected sources with matching verdicts and non-message fields;
+HiGHS has104 warning-only differences. This one pair is1.77s short of1.5x,
+not a stable threshold decision. Real device-batched LP kernels now run on5090,
+but their selected preflight is slower than the stronger HiGHS alternative.
+[Full data and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/exact-lp-barrier/full1000-cpu/result-review.md).
+
+
 The same-interface all-call profile is complete on its own clocks:
 native691.20s/CPUoracle545.05s. Numeric products and LP search occupy a
 411.68s interval union(75.53%of the oracle clock),with substantial overlap.

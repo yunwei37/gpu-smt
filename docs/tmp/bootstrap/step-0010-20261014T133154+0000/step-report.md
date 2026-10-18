@@ -4437,3 +4437,14 @@ Currentfreshfullnative691.096/FPfirstCPU529.171s,1000each992/8/0,88warning-only
 changes;HiGHSfullcellstillactive. Dailyreflection/source/rawpublished.
 WRITE recordsboundedmechanism/performance/selfreview;REVIEW rootself-audit,
 noAgent/independentclaim. AllRQ/novelty/fullpaperremainopen;goal/hourlyactive.
+
+
+### Complete HiGHS fullcohort result
+EXPERIMENT all3x1000close10:07:18Z. Native691.095897/CPU529.171190/
+HiGHS462.504847s=1.49424574x. Each992/8/0,allnon-message/verdictparity,
+88/104warnings,alltaskspan IDsmap. HiGHS150resourceobservererrors disclosed.
+1888races include1214negativeexactdecisions,summed177.756s,whileHiGHS
+LPsolverwall only7.295s. Thischangesnextmechanismchoice:negativecertificate
+search/validation,instead ofstillassuming a faster positiveLPkernelisneeded.
+WRITE README/evaluation/resultreviewupdate;REVIEW selfaudit,onepairnotstable
+1.5xdecision,noGPUimpossibility/noveltyclaim. Allraw andfailurespublished.
