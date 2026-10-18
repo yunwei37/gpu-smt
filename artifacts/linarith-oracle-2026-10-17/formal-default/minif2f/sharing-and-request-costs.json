@@ -1,0 +1,150 @@
+{
+  "sources": 7808,
+  "original32candidateblocks": 244,
+  "group_scope": "Retained original contiguous32candidate blocks. Input adapter retains index/header/code, not explicit task IDs; root keys use exact header and statement, without assuming every block is one semantically identical task.",
+  "static_scope": "Parsed edge occurrences minus unique prefixes under exact header/statement roots. Ignores native preparation failure, early rejection, RPC/retirement costs and state liveness. Not CPU or end-to-end time saved.",
+  "methods": {
+    "exact": {
+      "statically_eligible_sources": 7672,
+      "sources_with_nonempty_parsed_units": 7672,
+      "sources_with_any_shared_prefix": 13,
+      "parsed_edge_occurrences": 29669,
+      "distinct_prefix_nodes": 29661,
+      "potential_reused_edge_occurrences": 8,
+      "potential_edge_reuse_fraction": 0.00026964171357308977,
+      "candidate_shared_prefix_depth_fraction_distribution": {
+        "count": 7672,
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "max": 0.5
+      },
+      "distinct_exact_roots_per32block": {
+        "count": 244,
+        "min": 1,
+        "p50": 1,
+        "p90": 1,
+        "max": 1
+      },
+      "measured_cached_lookups": 7,
+      "measured_executed_nodes": 21588,
+      "measured_fallbacks": 4945,
+      "whole_seconds": 41738.632061801,
+      "serialized_client_clock_costs": {
+        "header_prepare": {
+          "requests": 108,
+          "completed_response_wall_seconds": 304.0063228759999,
+          "failed_request_wall_seconds": 0.0
+        },
+        "root_prepare": {
+          "requests": 244,
+          "completed_response_wall_seconds": 4.743681565000001,
+          "failed_request_wall_seconds": 0.0
+        },
+        "prefix_step": {
+          "requests": 6107,
+          "completed_response_wall_seconds": 5990.6357892749975,
+          "failed_request_wall_seconds": 7433.851272594001
+        },
+        "source_fallback_batch": {
+          "requests": 1277,
+          "completed_response_wall_seconds": 6341.774043977998,
+          "failed_request_wall_seconds": 20868.93114142999
+        },
+        "snapshot_clear": {
+          "requests": 218,
+          "completed_response_wall_seconds": 21.00210042100001,
+          "failed_request_wall_seconds": 0.0
+        },
+        "source_or_other_command": {
+          "requests": 48,
+          "completed_response_wall_seconds": 159.79506974200004,
+          "failed_request_wall_seconds": 600.033343246
+        },
+        "quit": {
+          "requests": 1,
+          "completed_response_wall_seconds": 0.000862524,
+          "failed_request_wall_seconds": 0.0
+        }
+      },
+      "cost_scope": "Nonoverlapping sequential client intervals, per analyze-prefix-runs.py validation. Includes waiting, not internal/native CPU; unrecorded parser/setup/cleanup remains in whole clock. Grouping is request shape, not inferred solver work.",
+      "all_prefix_step_intervals_zero_fixed_path_model": {
+        "deleted_seconds": 13424.487061868998,
+        "remaining_whole_seconds": 28314.144999932003,
+        "batch_over_remaining_ratio": 1.0126741671810984,
+        "scope": "Delete ALL prefix-step request intervals including waiting/failure, keep other costs and fallback path fixed. Conditional sensitivity, not valid measured speedup or universal upper bound."
+      }
+    },
+    "unit": {
+      "statically_eligible_sources": 7672,
+      "sources_with_nonempty_parsed_units": 7672,
+      "sources_with_any_shared_prefix": 2605,
+      "parsed_edge_occurrences": 29669,
+      "distinct_prefix_nodes": 25682,
+      "potential_reused_edge_occurrences": 3987,
+      "potential_edge_reuse_fraction": 0.1343826890019886,
+      "candidate_shared_prefix_depth_fraction_distribution": {
+        "count": 7672,
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.5,
+        "max": 1.0
+      },
+      "distinct_exact_roots_per32block": {
+        "count": 244,
+        "min": 1,
+        "p50": 1,
+        "p90": 1,
+        "max": 1
+      },
+      "measured_cached_lookups": 3711,
+      "measured_executed_nodes": 17924,
+      "measured_fallbacks": 4948,
+      "whole_seconds": 40943.769169679,
+      "serialized_client_clock_costs": {
+        "header_prepare": {
+          "requests": 108,
+          "completed_response_wall_seconds": 296.2589172389999,
+          "failed_request_wall_seconds": 0.0
+        },
+        "root_prepare": {
+          "requests": 244,
+          "completed_response_wall_seconds": 4.658713741999999,
+          "failed_request_wall_seconds": 0.0
+        },
+        "prefix_step": {
+          "requests": 5276,
+          "completed_response_wall_seconds": 5387.233990680982,
+          "failed_request_wall_seconds": 7417.547359687
+        },
+        "source_fallback_batch": {
+          "requests": 1278,
+          "completed_response_wall_seconds": 6228.165280694989,
+          "failed_request_wall_seconds": 20817.783129969
+        },
+        "snapshot_clear": {
+          "requests": 218,
+          "completed_response_wall_seconds": 19.370508546000003,
+          "failed_request_wall_seconds": 0.0
+        },
+        "source_or_other_command": {
+          "requests": 48,
+          "completed_response_wall_seconds": 159.16803853799993,
+          "failed_request_wall_seconds": 600.0340831240001
+        },
+        "quit": {
+          "requests": 1,
+          "completed_response_wall_seconds": 0.000494696,
+          "failed_request_wall_seconds": 0.0
+        }
+      },
+      "cost_scope": "Nonoverlapping sequential client intervals, per analyze-prefix-runs.py validation. Includes waiting, not internal/native CPU; unrecorded parser/setup/cleanup remains in whole clock. Grouping is request shape, not inferred solver work.",
+      "all_prefix_step_intervals_zero_fixed_path_model": {
+        "deleted_seconds": 12804.781350367983,
+        "remaining_whole_seconds": 28138.987819311016,
+        "batch_over_remaining_ratio": 1.0189777752977136,
+        "scope": "Delete ALL prefix-step request intervals including waiting/failure, keep other costs and fallback path fixed. Conditional sensitivity, not valid measured speedup or universal upper bound."
+      }
+    }
+  }
+}
