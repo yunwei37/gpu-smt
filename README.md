@@ -19,18 +19,22 @@ unproven.** The latest complete 1,000-candidate comparison is:
 |---|---:|---:|---:|
 | Native first | 681.24 s | 453.51 s | 1.50216× |
 | Oracle first | 687.26 s | 447.31 s | 1.53644× |
+| Native first, third pair | 691.36 s | 464.58 s | 1.48814× |
 
-Both pairs return 992 complete / 8 rejected / zero operational outcomes per
+All three pairs return 992 complete / 8 rejected / zero operational outcomes per
 method, with matching verdicts and non-message native fields and the same
 104 message-only source differences. In the first block, positive-only
 HiGHS takes472.09s(1.44305×); exact-verified negative certificates remove
 some expensive failed-search work. These are **CPU results**.
-The first pair's1.5×margin is just0.653s, so the original plan's third primary
-pair is running before the aggregate decision. Two observations across both
-orders are encouraging; they do not establish a confidence interval, service
-capacity, broader workload gain or systems novelty.
+The predeclared aggregate whole-time ratio is **1.50862×**
+(2,059.87/1,365.40s), meeting the local1.5×continuation criterion.
+The third pair is below1.5× and is retained. This is an enriched arithmetic-heavy
+subset, not a confidence interval, full-population/service-capacity result
+or systems novelty. A complete native-frontend/same-numeric-backend ablation
+is running to isolate direct certificate export from backend substitution.
 [First full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md),
-[reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md).
+[reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md),
+[all three pairs and aggregate](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/three-pair-result.json).
 
 The [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
 uses 1,000 arithmetic-heavy released GoedelWorkbook candidates, four CPUs and

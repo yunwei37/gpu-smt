@@ -29,15 +29,17 @@ This section records the initial scientific disposition of the expanded research
 
 ### 2026-10-18 — arithmetic evidence and unresolved system novelty
 
-Two complete frozen two-sided CPU-oracle pairs use the upstream native
-eight-queue interface. Native/oracle whole clocks are681.243557/453.509810s
-and687.263047/447.309270s, ratios1.50216x and1.53644x, acquired in opposite
-orders. All1,000sourceverdicts andnon-messageJSONfields agree inbothpairs
-(992complete/8rejected/0operational),with104message-onlydifferences.
-The original three-primary-pair aggregate protocol is not yet complete:
-the final native-first/two-sided-second pair is running. Other credible native
-solver compositions are being qualified at this same interface, because
-earlier all-workload evidence does not show hybrid always wins.
+Three complete frozen two-sided CPU-oracle pairs use the upstream native
+eight-queue interface. Native/oracle whole clocks are681.243557/453.509810s,
+687.263047/447.309270s and691.359191/464.579050s. Ratios1.50216x,1.53644x
+and1.48814x include a subthreshold observation. The predeclared aggregate
+ratio2059.865795/1365.398131=1.50862x meets the local arithmetic-heavy-cohort
+continuation criterion, not a confidence/globalworkload/systemnoveltyclaim.
+All1,000sourceverdicts/non-messageJSONfields agree inallpairs,992/8/0,
+with104message-onlydifferences. Native tiered/HiGHSfirst64controls are slower
+than hybrid in their matched block; no global solver ranking follows.
+A complete native-frontend/same-dual-backend component ablation is now running
+to isolate direct export from backend substitution.
 [Complete first and reversed data](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
 
 Real5090device-batched simplex executes with per-model cancellation and

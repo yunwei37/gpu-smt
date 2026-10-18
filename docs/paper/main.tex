@@ -1111,9 +1111,17 @@ reversed-order repetition takes 687.26 seconds for native and 447.31 seconds
 for the two-sided oracle, or $1.53644\times$. It retains all 992 complete
 and eight rejected outcomes, matching non-message fields and the same
 104 message-only differences; the oracle has 92 observer read errors.
-Both acquisition orders therefore show an observed ratio above $1.5\times$.
-The predeclared third pair and aggregate whole-time decision remain pending;
-two observations do not establish a confidence interval or broader workload gain. The established certificate
+The third native-first pair takes 691.36 versus 464.58 seconds,
+or $1.48814\times$, below the threshold. All outcomes and non-message fields
+again match, with the same 104 message-only differences and 105 observer
+read errors in the oracle cell. Across all three predeclared pairs,
+native and candidate whole times sum to 2,059.87 and 1,365.40 seconds:
+the aggregate ratio is $1.50862\times$. This meets the local continuation
+criterion on the enriched arithmetic-heavy cohort, while preserving the
+subthreshold observation. It is not a confidence interval, full-population
+or globally strongest-CPU result. A complete native-frontend control with
+the same two-sided numerical backend is in progress to isolate the
+direct-export contribution from solver-backend substitution. The established certificate
 primitives do not alone establish the systems contribution.
 
 \paragraph{Matched CPU competitors and controls.}

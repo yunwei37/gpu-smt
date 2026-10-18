@@ -683,3 +683,18 @@ performance. Noallocatorgrid/addressspacerelaxation/sourcepromotion/fullGPUrun.
 [asyncfailure](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
 StrongCPUbaselineapplicability/broaderworkload/novelty/serviceandfourRQcoverage
 remainopen. Allreviewisrootself-review;goal/hourlynotclosed.
+
+### 2026-10-18 11:47Z — three frozen CPU primary pairs complete
+
+Native/candidate:681.243556612/453.509810469,687.263046932/447.309270379,
+691.359191064/464.579050137s. Ratios1.502158368,1.536438193,1.488141127.
+Aggregate2059.865794608/1365.398130985=1.508619170x,usingallthreepredeclared
+pairs,includingthirdbelowthreshold. All992complete/8rejected/0operational,
+allsourceverdict/non-messageparity,104message-onlydifferences each.
+Observerreaderrorsnative0,oracle107/92/105limitmemoryclaims.
+
+Thelocalarithmetic-heavy-cohortaggregatecriterionpasses; continue research,
+notGPU/new-system/venueacceptance. Fullnativefrontend/same-dual-backend
+componentablationstartedafteractualthirdexit,withreal farkas-batchd processes
+ownedbydriver257239onCPU0–3 andnoASTdaemon inthatengagementsnapshot.
+Thisisthenextdecisivecontributiontest,notanotherfullsolvergrid.

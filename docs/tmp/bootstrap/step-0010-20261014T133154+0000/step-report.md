@@ -4601,3 +4601,19 @@ Termcount/provenancenodeSpearmanCPU0.913/0.921,observationalonly.
 NorescalingtoHiGHSdualprimary,noGPUportfolioornewcachegridfromcorrelation.
 WRITE currentfrontierconsolidatesstalesnapshot/runningtext,preservesInitial
 Narrative,allRQs,andupdatesexistingdailyreflection; REVIEWrootself-audit.
+
+### 2026-10-18 — E1059 completes primary series, E1060 full ablation executes
+
+Thirdpairclosed11:47:40Z: N691.359191/C464.579050s=1.488141127xbelow1.5.
+All1000source/non-messageparity,992/8/0,104messages,alltaskspansmap.
+Oracle105observerreaderrors. Three-pairtotalN2059.865795/C1365.398131s
+=1.508619170x;localpredeclaredaggregatecriterionpasses,nobest-pairselection.
+Do notclaimconfidence/fullpopulation/GPU/OSDInoveltyfromthisseries.
+Allrawmessages/tails/racesandnegativeoutcomesarepublished.
+Deferredfullcomponentdriver257239startedonlyafter243173actualexit.
+Liveancestryguardfindsnative farkas-batchd servicesonCPU0–3belongingto
+componentdriver, no arithmetic-batchd inthatcapture. Per-methodnativeimport
+selectionandactualengagementarethereforebothverified. Fullablationactive,
+noprimarysource/harness/binarymutation. Prefixdriverpreserved.
+WRITE updatespaper/README/frontier/evaluation;REVIEWselfauditacceptslocal
+seriescompletiononly. FullWRITE/phasefreeze/fourRQ/globalnoveltyopen.

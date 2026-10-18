@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-18T11:52:55.045551+00:00",
+  "state": "three predeclared primary pairs complete",
+  "pairs": [
+    {
+      "pair": 1,
+      "artifact": "full1000-two-sided",
+      "order": "native first",
+      "native_seconds": 681.243556612,
+      "candidate_seconds": 453.509810469,
+      "ratio": 1.5021583676602006,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "message_only_source_changes": 104,
+      "candidate_observer_read_errors": 107
+    },
+    {
+      "pair": 2,
+      "artifact": "full1000-reversed",
+      "order": "oracle first",
+      "native_seconds": 687.263046932,
+      "candidate_seconds": 447.309270379,
+      "ratio": 1.5364381926394906,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "message_only_source_changes": 104,
+      "candidate_observer_read_errors": 92
+    },
+    {
+      "pair": 3,
+      "artifact": "full1000-third",
+      "order": "native first",
+      "native_seconds": 691.359191064,
+      "candidate_seconds": 464.579050137,
+      "ratio": 1.4881411265964848,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "message_only_source_changes": 104,
+      "candidate_observer_read_errors": 105
+    }
+  ],
+  "aggregate_native_seconds": 2059.865794608,
+  "aggregate_candidate_seconds": 1365.398130985,
+  "aggregate_whole_time_ratio": 1.508619169649815,
+  "aggregate_candidate_margin_seconds_vs_1_5": 7.845732086999988,
+  "decision": "Exceeds predeclared aggregate1.5x criterion on this enriched1000-source cohort versus matched native Fast/hybrid. Continue research; no GPU/novelty/stable-all-workload claim.",
+  "scope": "Same4CPUs0\u20133,width8/eightupstreamcontiguousqueues,48GiB,all native preparation/fallback/retirement. Not the fastest possible CPU, complete-workload benefit or confidence interval. Third pair below1.5x is retained, not dropped."
+}
