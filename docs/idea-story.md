@@ -27,6 +27,23 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — current residual and native arithmetic pressure
+The complete current-build1000 diagnostic retains all13230/10251native/oracle
+numerical requests and matched native-ranked tails. Direct numeric search in
+the native slowest1% sums only1.20s; wider fixed-path zero-envelope sensitivities
+remain above1.5 and are not strict GPU bounds.
+[Complete current accounting](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/full1000-result-review.md).
+
+A real10-source control uses stock Lean omega on bare discrete goals, preserving
+all8originalrejects and complete responses. Native+same-dualbackend54.49s becomes
+25.62s, with328nativecheckedgoals; direct+omega is25.76s. This is existing
+algorithmic capability and preflight only, not new contribution. Both frontend
+families receive omega in the admitted full1000 baseline/component comparison.
+[Source/preflight](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/README.md).
+The Initial Narrative, all4RQs and broad Lean/SMT/system/GPU objectives remain;
+none is closed by a selected preflight or ordinary native arithmetic gain.
+
+
 ### 2026-10-18 — arithmetic evidence and unresolved system novelty
 
 Request-sized VMM now qualifies actual independent GPU groups under48GiB.

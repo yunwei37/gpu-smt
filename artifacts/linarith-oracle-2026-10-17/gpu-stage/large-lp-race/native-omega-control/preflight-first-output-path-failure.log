@@ -1,0 +1,21 @@
+{"label": "native-dual-off", "utc": "2026-10-18T14:58:22.814722+00:00", "argv": ["/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python", "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/run-control.py", "--out", "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/preflight-native-dual-off", "--input", "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/preflight-input.jsonl", "--limit", "0", "--width", "8", "--affinity", "4", "5", "6", "7", "--native-buckets", "--repl", "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl", "--methods", "oracle-highs"]}
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/run-control.py", line 21, in <module>
+    exec(compile(source,str(D/'run-race.py'),'exec'),{'__name__':'__main__','__file__':str(D/'run-race.py')})
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py", line 52, in <module>
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py", line 36, in <module>
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py", line 200, in <module>
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/run-comparison.py", line 190, in main
+  File "/usr/lib/python3.13/pathlib/_local.py", line 724, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/preflight-native-dual-off'
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/preflight-driver.py", line 13, in <module>
+    subprocess.run(cmd,cwd=R,env=env,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python', '/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/run-control.py', '--out', '/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/preflight-native-dual-off', '--input', '/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/preflight-input.jsonl', '--limit', '0', '--width', '8', '--affinity', '4', '5', '6', '7', '--native-buckets', '--repl', '/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl', '--methods', 'oracle-highs']' returned non-zero exit status 1.

@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-18T14:54:59.740067+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/GpuArithmetic/IntegerControl.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/GpuArithmetic/IntegerControl.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/GpuArithmetic/IntegerAstControl.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerAstControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/GpuArithmetic/IntegerAstControl.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/BatchOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/IntegerAstControl.c",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/native-omega-control/batch-oracle.so"
+      ],
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "source_scope": "unchanged retained four Batch generatedC files plus two new official-omega control modules"
+}

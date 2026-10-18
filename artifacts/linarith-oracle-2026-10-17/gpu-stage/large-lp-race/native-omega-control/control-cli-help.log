@@ -1,0 +1,38 @@
+usage: run-control.py [-h] --out OUT [--limit LIMIT] [--input INPUT]
+                      [--methods {fast-hybrid,oracle,oracle-hint,oracle-highs,oracle-gpu} [{fast-hybrid,oracle,oracle-hint,oracle-highs,oracle-gpu} ...]]
+                      [--affinity AFFINITY [AFFINITY ...]] [--width WIDTH]
+                      [--diagnostic] [--cost-root COST_ROOT] [--cost-profile]
+                      [--sample-seconds SAMPLE_SECONDS]
+                      [--reuse-reference REUSE_REFERENCE] [--native-buckets]
+                      [--repl REPL_OVERRIDE]
+                      [--numeric-replay-bin NUMERIC_REPLAY_BIN]
+
+Native warm-batch arithmetic direct-certificate comparison using the existing
+Kimina collector.
+
+options:
+  -h, --help            show this help message and exit
+  --out OUT
+  --limit LIMIT
+  --input INPUT
+  --methods {fast-hybrid,oracle,oracle-hint,oracle-highs,oracle-gpu} [{fast-hybrid,oracle,oracle-hint,oracle-highs,oracle-gpu} ...]
+  --affinity AFFINITY [AFFINITY ...]
+  --width WIDTH
+  --diagnostic
+  --cost-root COST_ROOT
+                        separate diagnostic build output; preserve an active
+                        capture
+  --cost-profile        complete all-call Lean/Rust attribution; diagnostic,
+                        not a primary performance result
+  --sample-seconds SAMPLE_SECONDS
+                        nonpositive disables process-tree memory observer for
+                        overhead qualification
+  --reuse-reference REUSE_REFERENCE
+  --native-buckets      One upstream parrallel array with width sequential
+                        lanes; retain native heartbeat defaults, no artificial
+                        array-wide observation deadline
+  --repl REPL_OVERRIDE  Explicit matching native telemetry executable for both
+                        compared modes
+  --numeric-replay-bin NUMERIC_REPLAY_BIN
+                        Diagnostic fixed-certificate numerical omission
+                        control, not a deployable verifier
