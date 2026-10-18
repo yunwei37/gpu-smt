@@ -77,8 +77,12 @@ The original7,808-source miniF2F prefix captures are complete:
 batch28,673.00s, exact-text41,738.63s and unit-text40,943.77s.
 Unit reuse has3711cache lookups, but operational outcomes differ from batch
 and complete CPU accounting is censored. These are descriptive elapsed
-observations, **not validated speedups**. ProofNet continues in the original
-driver. This is the project's SHRED-parser-based native executor, not a full
+observations, **not validated speedups**. The original5,952-source ProofNet
+capture also closes: batch1,127.28s/exact2,502.01s/unit2,479.03s.
+Unit3853cachelookups still provide no validated elapsed benefit; four incomplete
+batch sources become complete and operational differences remain.
+[Complete ProofNet raw data and limitations](artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md).
+These are the project's SHRED-parser-based native executor, not a full
 upstream SHRED/Kimina service comparison.
 [Complete prefix outcomes and raw data](artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).
 

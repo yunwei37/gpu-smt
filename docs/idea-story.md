@@ -27,6 +27,16 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — original ProofNet prefix population closes
+All5952originals/186candidateblocks complete. Nativebatch1127.28s,
+exact2502.01s/unit2479.03s; unit3853cachelookups,9716executednodes.
+All413native-complete survive, but4batch-incomplete becomecomplete and
+operationaltransitions/censoredCPU precludeavalidatedspeedratio.
+No prefixwriterwaitingremains. This is actualnegativeevidenceforcurrentexecutor,
+notanupstreamwholeSHRED/KiminaservicecomparisonorwholeRQclosure.
+[CompleteProofNet evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md).
+
+
 ### 2026-10-18 — cancelled work and current conditional budget
 The current common-omega component diagnostic closes all1000 originals:
 475.97s native/406.46s direct,992complete8reject in each. PID-specificwait4

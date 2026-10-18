@@ -312,3 +312,12 @@ search. A concrete next mechanism must remove some of that work, preserve native
 verification, and beat the same strong baseline including packing/retirement.
 Another LP parameter grid or ordinary cache-hit census is not substantive
 progress. The broader GPU direction remains open under the user's criterion.
+
+
+## ProofNet completion and implementation progress
+Collected all closed5952-source prefix data at once after driver retirement,
+including transition/failure-wall evidence. README removes the obsolete
+ProofNet-running statement. Literal-power representation implemented/compiled
+and real111affected-original preflight launched; this tests avoidable fallback
+instead of another LPkernel. Sourcepowercorrelation is an admission clue,
+not yet causality or gain. No activeprefixwaiting or replacementrunner.

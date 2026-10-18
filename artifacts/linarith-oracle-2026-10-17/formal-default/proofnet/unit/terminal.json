@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "dataset": "proofnet",
+  "method": "unit",
+  "expected": 5952,
+  "returned": 5952,
+  "counts": {
+    "rejected": 5531,
+    "complete": 417,
+    "operational": 4
+  },
+  "whole_seconds": 2479.034701545,
+  "cpu_seconds": 1170.4431009999996,
+  "verifier_memory_limit_bytes": 51539607552,
+  "verifier_memory_policy": "pinned upstream LeanRepl default; caller does not override",
+  "normal_native_exit": true,
+  "forced_native_retirements": 4,
+  "cpu_accounting_complete": false,
+  "native_parse_seconds": 9.364549671066925,
+  "fallbacks": 5581,
+  "executed_prefix_nodes": 9716,
+  "cached_lookups": 3853,
+  "affinity": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"
+}
