@@ -3387,3 +3387,17 @@ Efficiency: full service1,000x3 is now an actual admitted next acquisition,
 not more readiness reports or solver/kernel grids. Canonical evaluation
 is bounded and points to complete byte-equal prior history. Independent
 review remains unavailable under user instruction; this is root self-audit.
+
+## Source-joined E1080 regression analysis — root self-audit
+Direction: all4RQs/InitialNarrative/Lean+SMT scope and unclosed broad GPU
+question preserved. The supporting arithmetic result still does not establish
+the central native-state systems contribution. Root is the sole executor;
+this audit is not independent.
+Efficiency: reuse closes a specific attribution question without waiting on
+live captures or starting another acquisition. Evidence weakens a blanket
+slow-HiGHS explanation, but does not identify current fallback/checking cost.
+No new GPU tuning or retrospective source routing is warranted from it.
+Maintenance: current evaluation and paper carry the same exclusions; raw
+and failed captures and unrelated author changes stay untouched. Actual
+closed records reconcile across all1000source IDs and original aggregate.
+The current full matrices retain their scope and resources.

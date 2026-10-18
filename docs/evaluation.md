@@ -63,6 +63,13 @@ regress in every earlier instrumented observation. Current medians are
 and overlap. Whole gain does not establish a per-candidate latency guarantee,
 isolated CPU savings or the cause of regressions.
 
+[Source-joined regression costs](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/regression-cost-result-review.md)
+show82of169current regressions, including20of63persistent ones, have no
+recorded large numeric race. Completed HiGHS solver time in the169is1.622s;
+native/cancelled/small paths and Lean stages are outside that counter.
+This does not establish all-LP cost or fallback causality. It provides no
+evidence for attributing every regression to a pathological external LP.
+
 [Three earlier instrumented observations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md)
 have native/direct629.48/350.68,615.33/348.91,637.27/356.54s; ratio of sums1.78205x.
 They retain diagnostic construction and sampling on CPU4--7.

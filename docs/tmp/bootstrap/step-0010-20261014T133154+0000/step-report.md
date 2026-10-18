@@ -5212,3 +5212,23 @@ blocks with frozen corrected source, eightSDKrequests/fourCPU20--23/48GiB.
 Warm and complete lifecycle clocks stay separate; failed original attempts
 and archived raw stay. This is supporting official-service transfer evidence,
 not new native-state/solver novelty, GPU success or all4RQ closure.
+
+## E1080 source-joined regression costs
+EXPERIMENT_GATE reuses the closed1000source arrays and all numeric/backend
+records to test the pathological-external-LP explanation for regressions.
+All1000sources enter;906races/560models/1812reaped children reconcile with
+the original complete analysis.82of169regressions have no recorded race,
+including20of63persistent IDs. Completed HiGHS solver time among all169
+is1.622s, excluding cancelled/native/small paths and uncaptured Lean work.
+This is supporting engagement evidence, not an all-LP/GPU bound or cause.
+
+WRITE_GATE adds the factual source-level scope to the existing RQ4 result.
+No narrative/RQ change or new full writing milestone is claimed.
+REVIEW_GATE root self-review checks original source joins, all failures,
+child receipts and overlap/CPU/solver distinctions. No answer-aware routing
+or additional narrow LP variant is admitted. The full current Goedel/formal/
+official HTTP captures remain the meaningful next measurements. The
+historical2234.69source still has no phase timestamps to reconstruct.
+[Reproducer, all-source output and self-review](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/regression-cost-result-review.md).
+
+The factual insertion compiles (Tectonic exit0); actual pages14--15 are rendered and root visually checks the paragraph/figure layout. No full writing or independent audit milestone is claimed.

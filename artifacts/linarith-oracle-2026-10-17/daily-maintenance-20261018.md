@@ -428,3 +428,13 @@ rotated blocks. A negative result bounds transfer honestly; it does not
 magically replace the native-state novelty/Lean+SMT requirements.
 Upkeep: canonical evaluation now corrects stale public qualification,
 ProofNet and prefix live-status wording and links the single integrated plan.
+
+## Current evidence against another LP-only detour
+The repaired officialHTTP64preflight qualified and its full1000three-block
+comparison is now acquiring. Source-joining the closed1000regressions finds
+82of169without a recorded large numeric race,20of63persistent IDs included.
+This does not identify uncaptured Lean work, but it defeats treating all
+regressions as a few slow completed HiGHS calls. Substantive progress now
+means the complete strongest-service/population results and a cost-supported
+mechanism explanation; no new narrow LP/GPU tuning follows this analysis.
+The canonical ledger and the paper link the same raw reproducer and limits.
