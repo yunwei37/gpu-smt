@@ -1,5 +1,6 @@
 //! Diagnostic-only intervals. No certificate or solver decision is changed.
-use std::{cell::RefCell,io::Write};
+use std::{cell::RefCell,io::Write,os::fd::AsRawFd};
+unsafe extern "C"{fn flock(fd:i32,operation:i32)->i32;}
 use serde_json::{Value,json};
 #[repr(C)]struct Ts{sec:i64,nsec:i64}
 unsafe extern "C"{fn clock_gettime(id:i32,t:*mut Ts)->i32;}
@@ -52,7 +53,10 @@ fn append_record(record:&Value){
  let before=ns(3);
  if let Ok(path)=std::env::var("FARKAS_COST_FILE"){
   let mut f=std::fs::OpenOptions::new().create(true).append(true).open(path).expect("cost log open");
-  let mut bytes=serde_json::to_vec(record).unwrap();bytes.push(b'\n');f.write_all(&bytes).expect("cost log write");
+  let mut bytes=serde_json::to_vec(record).unwrap();bytes.push(b'\n');
+  assert_eq!(unsafe{flock(f.as_raw_fd(),2)},0,"cost log lock");
+  f.write_all(&bytes).expect("cost log write");
+  assert_eq!(unsafe{flock(f.as_raw_fd(),8)},0,"cost log unlock");
  }
  LOG_CPU.with(|x|x.set(x.get()+ns(3)-before));
 }

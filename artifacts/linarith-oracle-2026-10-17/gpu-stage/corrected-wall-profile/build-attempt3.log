@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/build-cost.py", line 219, in <module>
+    run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c')) for n in names],str(U/'cost-emit.c'),'-o',str(U/'cost-profile.so')])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/build-cost.py", line 213, in run
+    subprocess.run(cmd,cwd=cwd,env=env,check=True,stdout=log,stderr=subprocess.STDOUT)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['leanc', '-O3', '-DLEAN_EXPORTING', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-profile.so']' returned non-zero exit status 1.

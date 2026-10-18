@@ -1,0 +1,46 @@
+['cargo', 'build', '--offline', '--release', '--bin', 'arithmetic-costd', '--bin', 'farkas-costd']
+   Compiling autocfg v1.5.1
+   Compiling crossbeam-utils v0.8.21
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.9
+   Compiling cc v1.2.65
+   Compiling serde_core v1.0.228
+   Compiling num-traits v0.2.19
+   Compiling rustversion v1.0.22
+   Compiling zmij v1.0.21
+   Compiling crossbeam-epoch v0.9.18
+   Compiling rayon-core v1.13.0
+   Compiling crossbeam-deque v0.8.6
+   Compiling num-modular v0.6.4
+   Compiling dashu-int v0.4.3
+   Compiling num-integer v0.1.46
+   Compiling serde_json v1.0.150
+   Compiling libmimalloc-sys v0.1.49
+   Compiling num-bigint v0.4.8
+   Compiling num-order v1.2.0
+   Compiling cfg-if v1.0.4
+   Compiling either v1.16.0
+   Compiling dashu-base v0.4.3
+   Compiling static_assertions v1.1.0
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.2
+   Compiling mimalloc v0.1.52
+   Compiling rayon v1.12.0
+   Compiling num-rational v0.4.2
+   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/corrected-wall-cost/cost-native)
+    Finished `release` profile [optimized] target(s) in 8.12s
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostTelemetry.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostTelemetry.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostStages.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostStages.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostProducts.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostProducts.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostNative.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostNative.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.lean']
+/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostBaseline.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostBaseline.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostOracle.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostOracle.lean']
+['leanc', '-O3', '-DLEAN_EXPORTING', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-profile.so']
+/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c:3:10: fatal error: 'stdlib.h' file not found
+    3 | #include <stdlib.h>
+      |          ^~~~~~~~~~
+1 error generated.

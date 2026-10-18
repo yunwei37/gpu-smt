@@ -1,0 +1,22 @@
+['cargo', 'build', '--offline', '--release', '--bin', 'arithmetic-costd', '--bin', 'farkas-costd']
+   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/corrected-wall-cost/cost-native)
+    Finished `release` profile [optimized] target(s) in 2.55s
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostTelemetry.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostTelemetry.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostStages.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostStages.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostProducts.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostProducts.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostNative.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostNative.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.lean']
+/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostBaseline.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostBaseline.lean']
+['lean', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostOracle.olean', '-c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/GpuArithmetic/CostOracle.lean']
+['leanc', '-O3', '-DLEAN_EXPORTING', '-shared', '-fPIC', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c', '-o', '/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-profile.so']
+/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c:21:18: error: unknown type name 'ssize_t'; did you mean 'size_t'?
+   21 |     while(left) {ssize_t n=write(fd,text,left);
+      |                  ^~~~~~~
+      |                  size_t
+/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/lean-4.27.0-linux/include/clang/__stddef_size_t.h:18:23: note: 'size_t' declared here
+   18 | typedef __SIZE_TYPE__ size_t;
+      |                       ^
+1 error generated.

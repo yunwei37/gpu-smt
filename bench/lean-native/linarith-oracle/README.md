@@ -238,3 +238,15 @@ nativeCommandBatch discards candidate-returned state; width4 and state cleanup
 are documented separately from the upstream full-service claim.
 Actual fullminiF2F reference and32-source regression are published under
 formal-default/minif2f/.
+
+
+### Corrected-family wall attribution
+
+Build with python3 build-cost.py --out /tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost,
+then use the retained Kimina Python interpreter with run-corrected-cost.py
+--out <new-output> --cost-profile --cost-root <build-output>
+--methods fast-hybrid oracle.
+This selects only the matching diagnostic arithmetic family, serializes complete
+telemetry rows and builds into its own directory. Profile clocks have their own
+denominators; they cannot be relabelled as an earlier uninstrumented primary.
+See [qualification and full launch](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/result-review.md).

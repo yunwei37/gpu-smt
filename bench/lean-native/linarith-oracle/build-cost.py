@@ -2,7 +2,9 @@
 The original primary binaries and active Lean 4.9 prefix process are untouched.
 """
 from pathlib import Path
-import os,shutil,subprocess,json,datetime,argparse
+import os,shutil,subprocess,json,datetime,argparse,resource
+resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3))
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 R=Path('/workspaces/repository');D=R/'bench/lean-native/linarith-oracle'
 BASE=Path('/tmp/gpu-smt-linarith-oracle-20261017')
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--out',type=Path,default=BASE)
@@ -14,8 +16,12 @@ for src in (BASE/'GpuArithmetic').iterdir():
   if not dst.exists():dst.symlink_to(src.resolve())
 T=Path('/tmp/gpu-smt-goedel427-20261014')
 F=Path('/tmp/gpu-smt-farkas-fast427-20261014/farkas427')
-core=BASE/'native'; snap=R/'artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/external-support'
-# Reuse the existing build tree, generate from retained immutable original inputs.
+snap=R/'artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/external-support'
+# A private build directory prevents mutating an active primary's build tree.
+core=U/'cost-native'
+if not core.exists():shutil.copytree(snap,core)
+(core/'src/bin').mkdir(exist_ok=True)
+# Generate exclusively from retained immutable inputs, not another run's edits.
 for name in ['lib.rs','hybrid.rs']:
  s=(snap/'src'/name).read_text()
  if name=='lib.rs':s+='\npub mod cost;\n'
@@ -64,6 +70,41 @@ s=s.replace('produce_certificate_tiered(&hyps,max_var)','farkas_core::cost::time
 s=s.replace('        let answer = std::panic::catch_unwind','        farkas_core::cost::begin();let wall=farkas_core::cost::ns(1);let cpu=farkas_core::cost::ns(3);\n        let answer = std::panic::catch_unwind')
 s=s.replace('        writeln!(out, "{}", answer).expect("stdout write");\n        out.flush().expect("stdout flush");','        farkas_core::cost::timed("response_write",||{writeln!(out, "{}", answer).expect("stdout write");out.flush().expect("stdout flush");});\n        farkas_core::cost::finish("fallback",&line,&answer,wall,cpu);')
 (core/'src/bin/farkas-costd.rs').write_text(s)
+# One append operation under an OS lock prevents large JSON row interleaving.
+(U/'GpuArithmetic/CostTelemetry.lean').write_text("""import Farkas.Telemetry
+namespace GpuArithmetic.CostTelemetry
+@[extern "gpu_smt_cost_emit"] opaque emit (s : String) : IO Unit
+end GpuArithmetic.CostTelemetry
+""")
+(U/'cost-emit.c').write_text(r"""
+#include <lean/lean.h>
+extern char *getenv(const char *);
+extern int open(const char *, int, ...);
+extern long write(int, const void *, unsigned long);
+extern int flock(int, int);
+extern int close(int);
+extern void abort(void);
+extern void perror(const char *);
+#define O_WRONLY 1
+#define O_CREAT 64
+#define O_APPEND 1024
+#define LOCK_EX 2
+#define LOCK_UN 8
+LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s, lean_obj_arg world) {
+  const char *path=getenv("FARKAS_CORPUS_FILE");
+  if (path) {
+    int fd=open(path,O_WRONLY|O_CREAT|O_APPEND,0644);
+    if(fd<0 || flock(fd,LOCK_EX)<0) {perror("cost telemetry open/lock");abort();}
+    const char *text=lean_string_cstr(s);size_t left=lean_string_size(s)-1;
+    while(left) {long n=write(fd,text,left);
+      if(n<=0){perror("cost telemetry write");abort();}text+=n;left-=n;}
+    if(write(fd,"\n",1)!=1){perror("cost telemetry newline");abort();}
+    flock(fd,LOCK_UN);close(fd);
+  }
+  return lean_io_result_mk_ok(lean_box(0));
+}
+""")
+
 # Preserve a separate timed Mathlib implementation for all fallback stages.
 s=(BASE/'GpuArithmetic/Stages.lean').read_text().replace('GpuArithmetic.Stages','GpuArithmetic.CostStages')
 s=s.replace('abbrev Costs := Std.HashMap String (Nat × Nat)', '''structure Costs where
@@ -158,6 +199,10 @@ s=s.replace('    let .ok j := Json.parse answer | throwError "invalid oracle res
       let cpu ← GpuArithmetic.CostStages.threadCpuNs
       Farkas.Telemetry.emit <| Farkas.Telemetry.row [("ty","\\"cost-direct-check\\""),("source",Farkas.Telemetry.jstrEsc (← getFileMap).source),("call_id",toString exported),("start_ns",toString checkStart),("end_ns",toString finish),("cpu_ns",toString (cpu.toNat-checkCpu.toNat)),("accepted",if (← ok.get) then "true" else "false")]''')
 (U/'GpuArithmetic/CostOracle.lean').write_text(s)
+for name in ['CostStages','CostFast','CostBaseline','CostNative','CostOracle']:
+ p=U/'GpuArithmetic'/(name+'.lean')
+ text=p.read_text().replace('Farkas.Telemetry.emit','GpuArithmetic.CostTelemetry.emit')
+ p.write_text('import GpuArithmetic.CostTelemetry\n'+text)
 env=dict(os.environ);env['PATH']=str(T/'lean-4.27.0-linux/bin')+':/usr/local/cargo/bin:'+env['PATH']
 env['CARGO_HOME']='/usr/local/cargo';env['RUSTUP_HOME']='/usr/local/rustup'
 env['LEAN_PATH']=':'.join([str(U),str(BASE),str(F/'.lake/build/lib/lean'),str(T/'mathlib4/.lake/build/lib/lean')]+[str(p/'.lake/build/lib/lean') for p in (T/'mathlib4/.lake/packages').iterdir() if p.is_dir()])
@@ -166,11 +211,11 @@ with (U/'build-cost.log').open('w') as log:
  def run(cmd,cwd=U):
   records.append({'cmd':cmd,'cwd':str(cwd)});log.write(repr(cmd)+'\n');log.flush()
   subprocess.run(cmd,cwd=cwd,env=env,check=True,stdout=log,stderr=subprocess.STDOUT)
- run(['cargo','build','--release','--bin','arithmetic-costd','--bin','farkas-costd'],core)
+ run(['cargo','build','--offline','--release','--bin','arithmetic-costd','--bin','farkas-costd'],core)
  for name in ['arithmetic-costd','farkas-costd']:shutil.copy2(core/'target/release'/name,U/name)
- names=['CostStages','CostProducts','CostNative','CostFast','CostBaseline','CostOracle']
+ names=['CostTelemetry','CostStages','CostProducts','CostNative','CostFast','CostBaseline','CostOracle']
  for name in names:
   run(['lean','-o',str(U/'GpuArithmetic'/(name+'.olean')),'-c',str(U/(name+'.c')),str(U/'GpuArithmetic'/(name+'.lean'))])
- run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c')) for n in names],'-o',str(U/'cost-profile.so')])
+ run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c')) for n in names],str(U/'cost-emit.c'),'-o',str(U/'cost-profile.so')])
 (U/'build-cost-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commands':records,'diagnostic_only':True},indent=2)+'\n')
 print('BUILT cost-profile.so and both cost daemons',flush=True)

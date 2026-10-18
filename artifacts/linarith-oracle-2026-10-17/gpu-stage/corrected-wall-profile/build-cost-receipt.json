@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-18T04:27:31.461162+00:00",
+  "build_source": "/workspaces/repository/bench/lean-native/linarith-oracle/build-cost.py",
+  "rust_and_Lean_modules_compiled": true,
+  "link_repair_argv": [
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+    "-O3",
+    "-DLEAN_EXPORTING",
+    "-shared",
+    "-fPIC",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostTelemetry.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostStages.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostProducts.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostNative.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostFast.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostBaseline.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/CostOracle.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-emit.c",
+    "-o",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/cost-profile.so"
+  ],
+  "repair_log": "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/link-repair.log",
+  "repair_exit_confirmed_so_present": true,
+  "scope": "diagnostic build; two initial build faults and compiler repair retained"
+}

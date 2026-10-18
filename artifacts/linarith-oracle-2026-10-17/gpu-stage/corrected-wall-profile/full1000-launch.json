@@ -1,0 +1,22 @@
+{
+  "pid": 132120,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-corrected-cost.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/full1000",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "--cost-profile",
+    "--cost-root",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost",
+    "--affinity",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "utc": "2026-10-18T04:28:37.677775+00:00",
+  "scope": "corrected arithmetic family; own wall denominator; CPU4--7 instead of active paired CPU12--15; no cross-run rescaling; original1000,width4,48GiB"
+}

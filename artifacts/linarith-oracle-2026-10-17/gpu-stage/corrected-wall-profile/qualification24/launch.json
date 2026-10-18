@@ -1,0 +1,43 @@
+{
+  "argv": [
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-corrected-cost.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost/qualification24",
+    "--limit",
+    "24",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "--cost-profile",
+    "--cost-root",
+    "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost",
+    "--affinity",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "pid": 131685,
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "methods": [
+    "fast-hybrid",
+    "oracle"
+  ],
+  "input": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+  "limit": 24,
+  "resource_observer_seconds": 1,
+  "header": "per-method arithmetic family selected by Runner.cell; common Mathlib/Aesop imports",
+  "boundary": "existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF",
+  "effective_RLIMIT_AS": [
+    51539607552,
+    51539607552
+  ],
+  "cost_profile": true,
+  "cost_root": "/tmp/gpu-smt-linarith-oracle-20261017/corrected-wall-cost",
+  "collector": "/workspaces/repository/bench/lean-native/run-native-batch-comparison.py"
+}
