@@ -4705,3 +4705,30 @@ existing carrier-specific certificate assembly. No unmatched-version performance
 claim or new proof-primitive novelty follows; source receipt and applicability
 note are retained in existing literature node. No new benchmark or service is
 admitted by the literature follow-up.
+
+### 2026-10-18 — E1058 request-sized VMM actually executes independent groups
+
+Root continues the independent-group implementation using official driver VMM,
+allocating actual LP buffer sizes rounded to discovered required granularity.
+No CUDA pool/arena-size/thread/tolerance grid, no48GiBrelaxation or newservice.
+CUDA12.8/sm120build succeeds in owningWS; all numerical kernel lines unchanged.
+Real original64/capacity32/fourCPU8–11 execution launches21nonemptygroups/
+40LPmodels,device timestamps show23cross-group model-pair overlaps and peak
+3distinctgroups/4blocks. In-band post-clientprobe reports0allocations/0livebytes,
+peak69,206,016bytes. Prior pool failures remain retained and unexplained.
+
+Warm pipeline42.826916620s includesproxy setup/retirement; collector-onlyprinted
+42.789580769s is not the whole clock. All64verdict/non-messageparity,63/1/0,
+5messagechanges/36observerreaderrors. First device attribution is39/40models:
+one group completes between model scan and completionquery, causinggeneric
+no_hint withoutfinalread. Preserve first source/raw; one explicit final-drain
+repair is implemented and receives same64qualification, not numerical tuning.
+Fresh native/CPUcontrols close71.640609056/37.779115328s, all63/1/0/native
+non-messageparity, CPU6messages/7observererrors. GPU still slower; no fullGPU
+matrix admission. Source/closed raw/analysis/failedhistoricalattempts published.
+
+Job0e6b6a55-b0ff-45ae-93c5-24b50c7665d1deleted,otherWSRunning/labReady,
+lifecycle63.2284356s. Functional outcome passed-restored, performance unresolved.
+This is actual GPU group progress, not OSDI novelty or routeclosure. Mainfull
+277984 and prefix5256 confirmedlive at13:05Z; their active sources untouched.
+WRITE local provenance; REVIEW rootself-audit, no independent review claimed.

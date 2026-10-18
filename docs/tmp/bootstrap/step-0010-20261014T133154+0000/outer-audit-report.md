@@ -3087,3 +3087,14 @@ attribution and is not a global GPU bound; no route closure follows.
 Current full-workload and prefix writers preserved. Completed evidence
 published without waiting for the whole research project. Independent review,
 global CPU frontier, full WRITE and all four RQ answers remain incomplete.
+
+### E1058 VMM implementation and actual device progress — root self-audit
+
+First successful independent-group mechanism has40realmodels/21groups, actual
+cross-group device lifetimes, allgroupsretired and0liveallocation in APIprobe.
+One model lacks final device sample, not invented. Exact native verification
+source/resultfidelity holds but message-onlydifferences retained. LaterfreshCPU
+37.779s remains faster thanGPU42.827s; no fullGPUadmission. Wholeproxyboundary,
+coldlifecycle and memoryobservererrors distinguished. The final-drain repair
+qualifies once with samecohort, no buffer/pool/kernelparametergrid. Work is all
+rootthread, mainexistingWS only. GPU route and allfourRQs remain open.

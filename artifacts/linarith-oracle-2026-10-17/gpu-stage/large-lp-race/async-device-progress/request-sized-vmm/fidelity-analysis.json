@@ -1,0 +1,53 @@
+{
+  "count": 64,
+  "native_seconds": 72.79268296,
+  "previous_CPU_oracle_seconds": 39.662807654,
+  "current_GPU_seconds": 42.82691662,
+  "outcome_differences": [],
+  "JSON_differences": [
+    16,
+    23,
+    51,
+    59,
+    62
+  ],
+  "non_message_differences": [],
+  "missing_spans": [],
+  "unmatched_spans": [],
+  "terminal": {
+    "method": "oracle-gpu",
+    "rep": 1,
+    "state": "complete",
+    "expected": 64,
+    "attempts": 64,
+    "counts": {
+      "complete": 63,
+      "rejected": 1
+    },
+    "whole_ns": 42826916620,
+    "cpu": {
+      "collector": {
+        "user": 0.061892,
+        "system": 3.804331
+      },
+      "waited_children": {
+        "user": 100.924102,
+        "system": 4.544217
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 5768947712,
+    "sampled_peak_fleet_rss_with_collector": 9577619456,
+    "sampling_read_errors": 36,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 32,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+    "collector_whole_ns": 42789580769,
+    "backend_setup_cleanup_ns": 37335851,
+    "gpu_target_boundary": "Warm finite CUDA simplex provider; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently."
+  },
+  "scope": "Same retained original first64/capacity32/fourCPUs8--11/48GiB and existing CPU/native control block. New GPU acquired later; source parity is exact, prior CPU time alone does not establish contemporaneous performance."
+}
