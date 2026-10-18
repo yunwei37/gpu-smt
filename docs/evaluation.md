@@ -111,6 +111,15 @@ population result. It admits the now-running3rotated1000source blocks.
 [Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
+The existing default-tiered reference is now checked on the same Goedel
+input rather than importing an older epoch's baseline ranking. The matched
+[first-64 control](../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/preflight-result-review.md)
+returns identical statuses/non-message fields in hybrid, default tiered and
+Power, with six message-only source differences versus Power. All conditions
+retire normally at four CPUs/48 GiB. The complete original 1,000-source
+default-tiered/Power pair is acquiring separately; preflight timings do not
+establish its final ratio or a strongest-CPU result.
+
 [The complete official DSV2/Farkas reference-corpus comparison](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md)
 contains all 438 different-prover proof outputs in three alternating pairs.
 Both methods use the same retained Lean 4.27 environment; the adapted

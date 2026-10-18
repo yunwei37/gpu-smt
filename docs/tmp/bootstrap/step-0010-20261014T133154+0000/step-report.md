@@ -5364,3 +5364,41 @@ Goedel, version-aligned miniF2F and original HTTP captures remain the next
 decisive experiments, rather than another narrow kernel/cache variation.
 [Complete DSV2 result](../../../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md);
 [first HTTP block](../../../../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md).
+
+## Strong-reference omission and exact DSV2 race attribution
+
+EXPERIMENT_GATE identifies a baseline gap: original Goedel uses hybrid,
+whereas the completed DSV2 comparison uses the default tiered exact helper.
+The historical whole-population tiered result is faster than historical
+hybrid, but its four-queue/12 GiB/older closure cannot rescale the new eight-
+queue/48 GiB HTTP measurement. The existing default engine is therefore a
+necessary control, not another invented solver variant.
+
+An actual first-64 comparison starts through the unchanged public HTTP
+driver, sequential hybrid/native then default-tiered/native and Power,
+same originals and four CPUs16–19/48 GiB. All existing captures remain.
+A complete default-tiered/Power original1000pair is admitted only after
+functional parity/no operational failure. This is not an attempt to select
+a weak denominator to protect the continuation criterion.
+
+Separately, every closed DSV2 numeric race is joined by exact proof-body
+equality to original IDs: all579rows map uniquely,193races on37of438sources
+in each repetition. The two largest native-body sources remain160–227s,
+while their recorded race-wall sums are only0.034–0.325s per run.
+Source syntax suggests enumeration/case splitting as leads, not measured
+tactic-time attribution. Small/native LPs and Lean work are still unprofiled.
+The public projection emits no original proof payload, retains all438IDs,
+and does not relabel concurrent body/race sums as an Amdahl/GPU fraction.
+This changes the next experiment away from another narrow large-LP kernel.
+[Source join and scope](../../../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md#exact-source-attribution-of-the-recorded-numerical-races);
+[default-reference protocol](../../../../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/plan.md).
+
+The actual first64 engine preflight now closes: hybrid83.768273 s,
+default tiered99.500920 s, Power42.757498 s whole. All63valid/1Leanerror,
+zerooperational,0status/non-message mismatch and six message-only IDs versus
+Power in both references. All24/24/28owned descendants join. Eight sampled
+tiered helper PIDs match the terminal receipt with the hybrid flag absent;
+one substring observer false match is retained/excluded. Fully closed raw
+text is losslessly archived. The complete original1000 default-tiered/Power
+pair actually starts as PID581754, same8sources/fourCPU16–19/48GiB.
+No small-cohort ratio is promoted to the full matrix or an RQ answer.

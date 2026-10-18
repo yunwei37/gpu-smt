@@ -92,3 +92,14 @@ requires Matplotlib and reads the full published HTTP timing projection.
 All438sources per cell, including Lean errors, appear in the plot/CSV.
 Completed HTTP attempt latency excludes waiting before SDK dispatch; it is
 not a CPU/LP profile or a removable whole-wall fraction.
+
+## Where the recorded numerical work occurs
+
+All 579 recorded large-race rows map uniquely to original source IDs:
+193 races on 37 sources in every repetition. The two largest native-body
+sources remain multi-minute under Power, while their recorded large-race
+wall sums are below 0.33 s and 0.04 s, respectively. These spans have distinct
+boundaries; unrecorded small/native LP and Lean work are not zero.
+[Exact join, data and interpretation](result-review.md#exact-source-attribution-of-the-recorded-numerical-races)
+retain all 438 sources. This is diagnostic evidence against another narrow
+large-LP detour, not an all-LP/GPU upper bound.

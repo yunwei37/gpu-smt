@@ -3465,3 +3465,17 @@ The original source/request payloads remain under the official recipe path.
 Targeted paper insertion compiles and rendered pages 15–16 are visually
 checked. Only root self-review has run; unrelated author changes remain
 unstaged. No Agent/subagent/OMP, new service, checkout or scheduler is used.
+
+## Existing default-reference control — root self-audit
+
+Direction: test a known stronger reference risk before extending the
+selected-Goedel headline. Historical tiered clocks cannot be mixed with
+the current HTTP clocks. Source-attributed DSV2 race spans do not justify
+another large-LP microvariant or universal GPU rejection.
+Efficiency: use now-free four-CPU eligibility from the finished DSV2 run
+for a necessary existing-method control, preserving all active owners and
+their source/library settings. No new infrastructure or Agent is created.
+Validity: the exact DSV2 body join maps every actual race uniquely, retains
+all sources and emits no source payload. Recorded races are not all LP or
+CPU. Default-reference preflight is not a full-population result; full
+admission requires actual returned outcomes. Review is self-audit only.

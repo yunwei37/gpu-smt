@@ -477,3 +477,18 @@ raw text is losslessly compressed with byte-equal recovery and unchanged
 analysis; active data are preserved. Paper changes retain the original
 systems thesis and four RQs. Available disk is about 1.31 GiB, so no new
 full capture or model download is introduced. No data deletion is used.
+
+## Use the strongest actual existing method
+
+The current Goedel hybrid reference and DSV2 default tiered reference differ.
+Historical tiered is faster in a different old configuration, so comparing
+new headline clocks only to hybrid leaves a genuine baseline question.
+A matched first64 control now qualifies all methods with identical statuses/
+non-message fields, and a complete original1000 default-tiered/Power pair
+starts. This is the next useful test, not another invented LP parameter.
+
+The exact DSV2 source join also locates all579 recorded large races on the
+same37 sources per run. The two multi-minute tails spend only subsecond
+recorded race-wall totals. Remaining small/native LP/Lean work is unprofiled;
+source syntax alone does not authorize another speculative cache/kernel.
+Public analysis emits IDs/counters rather than original proof payloads.

@@ -1,0 +1,71 @@
+{
+  "scope": "First64 functional existing-method preflight, not full1000 result; shared host/root analysis co-tenancy",
+  "conditions": {
+    "hybrid": {
+      "state": "complete",
+      "whole_lifecycle_seconds": 83.768273306,
+      "warm_verify_seconds": 70.559471666,
+      "counts": {
+        "valid": 63,
+        "lean_error": 1
+      },
+      "joined_owned_descendants": 24,
+      "native_engine": "hybrid",
+      "native_hybrid_override": "1"
+    },
+    "tiered": {
+      "state": "complete",
+      "whole_lifecycle_seconds": 99.500920193,
+      "warm_verify_seconds": 85.746280993,
+      "counts": {
+        "valid": 63,
+        "lean_error": 1
+      },
+      "joined_owned_descendants": 24,
+      "native_engine": "tiered",
+      "native_hybrid_override": null
+    },
+    "power": {
+      "state": "complete",
+      "whole_lifecycle_seconds": 42.757497865,
+      "warm_verify_seconds": 28.884555796,
+      "counts": {
+        "valid": 63,
+        "lean_error": 1
+      },
+      "joined_owned_descendants": 28,
+      "native_engine": null,
+      "native_hybrid_override": "1"
+    }
+  },
+  "comparisons": {
+    "hybrid": {
+      "status_differences": [],
+      "non_message_differences": [],
+      "raw_response_difference_IDs": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619",
+        "Proof_01349",
+        "Proof_01681",
+        "Proof_01755"
+      ],
+      "whole_control_over_power": 1.9591481608789412,
+      "warm_control_over_power": 2.4428096510928943
+    },
+    "tiered": {
+      "status_differences": [],
+      "non_message_differences": [],
+      "raw_response_difference_IDs": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619",
+        "Proof_01349",
+        "Proof_01681",
+        "Proof_01755"
+      ],
+      "whole_control_over_power": 2.3270987583781992,
+      "warm_control_over_power": 2.968585759067631
+    }
+  }
+}

@@ -104,3 +104,33 @@ HTTP/body boundaries, retained errors/tails and figure/source consistency.
 The figure is rendered and visually inspected. This is self-review only;
 no subagent, OMP, independent audit, full writing-cycle milestone,
 all-RQ answer or OSDI acceptance is claimed.
+
+## Exact source attribution of the recorded numerical races
+
+A follow-up joins every recorded race tag by exact equality to the retained
+original proof body, after the two checked common imports are removed.
+All 579 race rows map uniquely: each of the three observations has 193 races
+on the same 37 of 438 source IDs. No source or failed race is dropped.
+[Source-level output](source-engagement.json) contains only IDs, counters and
+timings; [the analyzer](analyze-engagement.py) reads the private original
+inputs and raw logs without republishing their proof payloads.
+
+The two largest native-body sources remain large under Power:
+
+| Source | Native body across three runs s | Power body across three runs s | Recorded large races per run | Recorded race-wall sums across three runs s |
+|---|---|---|---:|---|
+| valid/imo_1977_p5.lean | 215.863 / 217.843 / 226.927 | 211.893 / 211.784 / 214.153 | 8 | 0.325 / 0.270 / 0.321 |
+| valid/imo_1966_p5.lean | 170.866 / 174.633 / 178.624 | 160.640 / 166.992 / 163.726 | 3 | 0.035 / 0.034 / 0.038 |
+
+Thus the recorded large numerical races do not explain these multi-minute
+body spans. Source inspection shows interval-case enumeration in the first
+proof and repeated case splitting/simplification in the second. That syntax
+is a diagnostic lead, not a measured tactic-time decomposition. Small/native
+LPs, Lean reconstruction and unrecorded work remain unprofiled here.
+
+The other 401 sources have no recorded large race, not zero arithmetic work.
+Their body sums still change between methods. Source-level membership and
+concurrent wall sums cannot be substituted for an LP/GPU fraction or a
+whole-lifecycle Amdahl bound. This evidence argues against spending the next
+experiment on another large-LP microvariant; it does not prove that all GPU
+designs or other system mechanisms are impossible.
