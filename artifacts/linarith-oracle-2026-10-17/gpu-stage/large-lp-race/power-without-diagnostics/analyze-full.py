@@ -63,6 +63,17 @@ def main():
   for n in[10,100]:
    for name,ids in[("current-native-ranked",ranked[:n]),("fixed-E1074-native-ranked",first["native_ranked_matched_tails"][str(n)]["proof_ids"])]:
     result["matched_tails"][name+"-"+str(n)]={"proof_ids":ids,"summed_service_seconds":{label:sum(tm[k]for k in ids)for label,tm in times.items()},"meaning":"same IDs in both modes; overlapping service spans, not whole wall or CPU"}
+ if set(times)=={"native","power"}:
+  previous=json.loads((A.parent/"power-whole-repetitions/service-span-analysis.json").read_text())
+  prior_common=[x["proof_id"]for x in previous["same_source_slower_in_all_three_observations"]]
+  assert len(prior_common)==len(set(prior_common))and set(prior_common)<=set(times["native"])
+  slower=sorted((k for k in times["native"]if times["power"][k]>times["native"][k]),key=lambda k:-(times["power"][k]-times["native"][k]))
+  result["observed_candidate_regressions"]={
+    "current_slower_sources":[{"proof_id":k,"native_seconds":times["native"][k],"power_seconds":times["power"][k]}for k in slower],
+    "current_slower_count":len(slower),
+    "prior_common_count":len(prior_common),
+    "prior_common_still_slower_IDs":[k for k in prior_common if k in slower],
+    "scope":"All original1000 including rejected candidates. Source service spans include scheduling/waiting. Prior three observations use another affinity and diagnostic build; direction consistency by source ID is descriptive, not a causal diagnostic-overhead ablation, isolated CPU cost, new independent repetition or per-candidate guarantee."}
  p=A/("full1000-result.json"if result["state"]=="complete"else"full1000-partial-result.json")
  p.write_text(json.dumps(result,indent=2)+"\n")
  print(json.dumps({"state":result["state"],"conditions":{k:{"whole_seconds":v["terminal"]["whole_ns"]/1e9,"counts":v["terminal"]["counts"]}for k,v in result["conditions"].items()},"native_over_power":result.get("native_over_power"),"fidelity":{k:len(v)for k,v in result.get("fidelity",{}).items()},"matched_tails":result.get("matched_tails")},indent=2))

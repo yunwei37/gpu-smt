@@ -5125,3 +5125,17 @@ Complete rebuilt699module closure and real64source qualification are active.
 All failed attempts retained, no new measured speed ratio, all active capture
 libraries untouched. This node is an executable-artifact dependency, not an
 admitted new research hypothesis or a completed full writing/review loop.
+
+## Current1000 candidate-regression secondary analysis
+RQ3latency promise remains open at full-service scope. Existing complete
+E1080source spans show169direct regressions;63of70earlier consistently
+slower IDs remain slower. Current medians2.729/1.559s and p99 44.212/31.821s
+improve descriptively while those regressions stay in all1000results.
+This changes the permissible interpretation of the1.70059x whole ratio:
+no per-candidate guarantee or isolated diagnostic-cause claim. Existing
+analyzer/result/review extended; no new acquisition or method/tuning branch.
+All user scope,4RQs and raw failures preserved. Root self-review only.
+
+The factual regression paragraph compiles with Tectonic; actual changed
+page14 is rendered and root visually checks layout. No new whole-paper
+writing-loop, independent review or RQ completion is claimed.

@@ -871,6 +871,11 @@ with 108 message differences. This single fixed-order observation uses CPU
 with the three instrumented blocks. Candidate, RPC and backend recording
 remain charged; the comparison is not entirely instrumentation-free and
 does not demonstrate GPU benefit or generalization to all Goedel sources.
+Direct source service spans are longer for 169 candidates, including 63 of
+the 70 source IDs that regress in all three earlier observations. All remain
+in the result. Different affinity and shared-host intervals prevent using
+this ID consistency to isolate diagnostic overhead or the cause of slowdown.
+
 
 \begin{figure*}[t]
 \centering

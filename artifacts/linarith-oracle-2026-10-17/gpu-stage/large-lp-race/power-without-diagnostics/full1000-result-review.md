@@ -39,3 +39,18 @@ Goedel coverage with the frozen implementation, not another local kernel or
 solver grid. It does not establish global workload generalization, a fastest-
 CPU theorem, novel systems contribution, independent audit or OSDI acceptance.
 All four original RQs and Lean/SMT/GPU objectives remain. Root self-review only.
+
+## Current candidate regressions and previous-source comparison
+The corrected pair's median source service spans are2.72867/1.55929s,
+p90 10.04414/5.21128s and p99 44.21183/31.82140s for native/direct.
+Still169of the original1000sources have longer direct spans, including63
+of the70IDs that regress in every earlier instrumented observation.
+All169IDs and both current spans remain in full1000-result.json; no
+slow source is excluded or answer-aware routed. This rules out describing
+the whole-cohort1.70059x as a per-candidate latency guarantee.
+
+Cross-epoch ID direction is descriptive. The earlier observations use CPU4--7,
+the current pair8--11, on a shared host. Those differences prevent treating
+this as an isolated causal experiment on diagnostic overhead. Service spans
+include waiting and overlap; no pure CPU attribution or strict Amdahl ceiling
+is derived. No additional acquisition or parameter grid is started.

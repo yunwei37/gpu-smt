@@ -2528,5 +2528,922 @@
       },
       "meaning": "same IDs in both modes; overlapping service spans, not whole wall or CPU"
     }
+  },
+  "observed_candidate_regressions": {
+    "current_slower_sources": [
+      {
+        "proof_id": "Proof_03101",
+        "native_seconds": 32.403751358,
+        "power_seconds": 44.78571286
+      },
+      {
+        "proof_id": "Proof_09503",
+        "native_seconds": 24.153649722,
+        "power_seconds": 34.895693426
+      },
+      {
+        "proof_id": "Proof_08103",
+        "native_seconds": 2.049713572,
+        "power_seconds": 9.354919956
+      },
+      {
+        "proof_id": "Proof_04013",
+        "native_seconds": 2.02844999,
+        "power_seconds": 8.419191369
+      },
+      {
+        "proof_id": "Proof_15819",
+        "native_seconds": 27.507478243,
+        "power_seconds": 33.733233208
+      },
+      {
+        "proof_id": "Proof_21619",
+        "native_seconds": 104.668610561,
+        "power_seconds": 110.252298943
+      },
+      {
+        "proof_id": "Proof_04190",
+        "native_seconds": 1.421719895,
+        "power_seconds": 6.969168118
+      },
+      {
+        "proof_id": "Proof_02778",
+        "native_seconds": 7.279163482,
+        "power_seconds": 11.298213393
+      },
+      {
+        "proof_id": "Proof_17389",
+        "native_seconds": 4.6097697,
+        "power_seconds": 7.851502453
+      },
+      {
+        "proof_id": "Proof_23002",
+        "native_seconds": 17.6021068,
+        "power_seconds": 20.702621694
+      },
+      {
+        "proof_id": "Proof_05793",
+        "native_seconds": 5.017239588,
+        "power_seconds": 7.778715836
+      },
+      {
+        "proof_id": "Proof_06510",
+        "native_seconds": 3.944822242,
+        "power_seconds": 5.557250777
+      },
+      {
+        "proof_id": "Proof_21519",
+        "native_seconds": 0.549952863,
+        "power_seconds": 2.155815405
+      },
+      {
+        "proof_id": "Proof_03444",
+        "native_seconds": 52.075662046,
+        "power_seconds": 53.671953403
+      },
+      {
+        "proof_id": "Proof_27626",
+        "native_seconds": 4.769148928,
+        "power_seconds": 6.32588723
+      },
+      {
+        "proof_id": "Proof_11151",
+        "native_seconds": 1.682683678,
+        "power_seconds": 3.238901711
+      },
+      {
+        "proof_id": "Proof_07788",
+        "native_seconds": 1.45963468,
+        "power_seconds": 2.996617781
+      },
+      {
+        "proof_id": "Proof_12643",
+        "native_seconds": 2.625527563,
+        "power_seconds": 4.065189969
+      },
+      {
+        "proof_id": "Proof_09950",
+        "native_seconds": 0.675577333,
+        "power_seconds": 2.077704842
+      },
+      {
+        "proof_id": "Proof_01740",
+        "native_seconds": 2.764392402,
+        "power_seconds": 4.141770623
+      },
+      {
+        "proof_id": "Proof_21549",
+        "native_seconds": 0.943079462,
+        "power_seconds": 2.299954202
+      },
+      {
+        "proof_id": "Proof_08739",
+        "native_seconds": 11.86226772,
+        "power_seconds": 13.17114341
+      },
+      {
+        "proof_id": "Proof_28501",
+        "native_seconds": 1.904069464,
+        "power_seconds": 3.199397927
+      },
+      {
+        "proof_id": "Proof_12412",
+        "native_seconds": 2.591720294,
+        "power_seconds": 3.870992666
+      },
+      {
+        "proof_id": "Proof_13243",
+        "native_seconds": 1.195076775,
+        "power_seconds": 2.455192476
+      },
+      {
+        "proof_id": "Proof_09091",
+        "native_seconds": 3.961880193,
+        "power_seconds": 5.211282688
+      },
+      {
+        "proof_id": "Proof_14954",
+        "native_seconds": 15.368199845,
+        "power_seconds": 16.613232584
+      },
+      {
+        "proof_id": "Proof_03196",
+        "native_seconds": 2.529910357,
+        "power_seconds": 3.716803907
+      },
+      {
+        "proof_id": "Proof_23390",
+        "native_seconds": 4.782615557,
+        "power_seconds": 5.96514147
+      },
+      {
+        "proof_id": "Proof_23713",
+        "native_seconds": 5.209899196,
+        "power_seconds": 6.382311384
+      },
+      {
+        "proof_id": "Proof_13596",
+        "native_seconds": 6.20320049,
+        "power_seconds": 7.360429468
+      },
+      {
+        "proof_id": "Proof_14239",
+        "native_seconds": 3.551721761,
+        "power_seconds": 4.679852217
+      },
+      {
+        "proof_id": "Proof_26401",
+        "native_seconds": 4.416719066,
+        "power_seconds": 5.540340646
+      },
+      {
+        "proof_id": "Proof_26146",
+        "native_seconds": 2.705484986,
+        "power_seconds": 3.809187349
+      },
+      {
+        "proof_id": "Proof_28234",
+        "native_seconds": 3.417625946,
+        "power_seconds": 4.512763252
+      },
+      {
+        "proof_id": "Proof_09534",
+        "native_seconds": 2.448225811,
+        "power_seconds": 3.495289823
+      },
+      {
+        "proof_id": "Proof_11364",
+        "native_seconds": 1.629372712,
+        "power_seconds": 2.673063157
+      },
+      {
+        "proof_id": "Proof_19573",
+        "native_seconds": 3.881133791,
+        "power_seconds": 4.888032484
+      },
+      {
+        "proof_id": "Proof_20284",
+        "native_seconds": 3.212101353,
+        "power_seconds": 4.218242324
+      },
+      {
+        "proof_id": "Proof_10031",
+        "native_seconds": 43.688534419,
+        "power_seconds": 44.66393227
+      },
+      {
+        "proof_id": "Proof_29273",
+        "native_seconds": 1.355696661,
+        "power_seconds": 2.286008614
+      },
+      {
+        "proof_id": "Proof_26955",
+        "native_seconds": 1.258402607,
+        "power_seconds": 2.178637189
+      },
+      {
+        "proof_id": "Proof_28841",
+        "native_seconds": 2.696112747,
+        "power_seconds": 3.600957975
+      },
+      {
+        "proof_id": "Proof_11792",
+        "native_seconds": 3.933160886,
+        "power_seconds": 4.836247794
+      },
+      {
+        "proof_id": "Proof_04975",
+        "native_seconds": 1.986621027,
+        "power_seconds": 2.883403043
+      },
+      {
+        "proof_id": "Proof_23673",
+        "native_seconds": 2.312574424,
+        "power_seconds": 3.172869704
+      },
+      {
+        "proof_id": "Proof_03021",
+        "native_seconds": 4.403646876,
+        "power_seconds": 5.262568053
+      },
+      {
+        "proof_id": "Proof_15720",
+        "native_seconds": 5.970205175,
+        "power_seconds": 6.820277589
+      },
+      {
+        "proof_id": "Proof_16636",
+        "native_seconds": 1.460014422,
+        "power_seconds": 2.254952829
+      },
+      {
+        "proof_id": "Proof_27952",
+        "native_seconds": 2.712935391,
+        "power_seconds": 3.495737692
+      },
+      {
+        "proof_id": "Proof_29247",
+        "native_seconds": 0.657595475,
+        "power_seconds": 1.380801024
+      },
+      {
+        "proof_id": "Proof_06004",
+        "native_seconds": 2.228674589,
+        "power_seconds": 2.914301335
+      },
+      {
+        "proof_id": "Proof_16606",
+        "native_seconds": 1.566766558,
+        "power_seconds": 2.239415259
+      },
+      {
+        "proof_id": "Proof_29262",
+        "native_seconds": 2.035629005,
+        "power_seconds": 2.700024884
+      },
+      {
+        "proof_id": "Proof_02647",
+        "native_seconds": 1.281134558,
+        "power_seconds": 1.939403416
+      },
+      {
+        "proof_id": "Proof_21336",
+        "native_seconds": 1.350987807,
+        "power_seconds": 2.008578136
+      },
+      {
+        "proof_id": "Proof_01681",
+        "native_seconds": 1.170535162,
+        "power_seconds": 1.8149761
+      },
+      {
+        "proof_id": "Proof_29688",
+        "native_seconds": 1.288020648,
+        "power_seconds": 1.921384066
+      },
+      {
+        "proof_id": "Proof_04914",
+        "native_seconds": 11.03602625,
+        "power_seconds": 11.666036806
+      },
+      {
+        "proof_id": "Proof_20399",
+        "native_seconds": 12.340128473,
+        "power_seconds": 12.944259397
+      },
+      {
+        "proof_id": "Proof_28738",
+        "native_seconds": 1.37262124,
+        "power_seconds": 1.970383937
+      },
+      {
+        "proof_id": "Proof_05797",
+        "native_seconds": 0.943411401,
+        "power_seconds": 1.537651125
+      },
+      {
+        "proof_id": "Proof_23622",
+        "native_seconds": 2.489652684,
+        "power_seconds": 3.073138921
+      },
+      {
+        "proof_id": "Proof_27885",
+        "native_seconds": 0.601009414,
+        "power_seconds": 1.180506536
+      },
+      {
+        "proof_id": "Proof_05523",
+        "native_seconds": 1.144843736,
+        "power_seconds": 1.723828443
+      },
+      {
+        "proof_id": "Proof_03039",
+        "native_seconds": 1.379901257,
+        "power_seconds": 1.956492066
+      },
+      {
+        "proof_id": "Proof_27377",
+        "native_seconds": 1.552221196,
+        "power_seconds": 2.127134906
+      },
+      {
+        "proof_id": "Proof_27960",
+        "native_seconds": 2.25267144,
+        "power_seconds": 2.822729556
+      },
+      {
+        "proof_id": "Proof_02530",
+        "native_seconds": 1.733220738,
+        "power_seconds": 2.301497135
+      },
+      {
+        "proof_id": "Proof_07081",
+        "native_seconds": 1.014165906,
+        "power_seconds": 1.581351022
+      },
+      {
+        "proof_id": "Proof_14318",
+        "native_seconds": 2.466688351,
+        "power_seconds": 3.021652827
+      },
+      {
+        "proof_id": "Proof_29737",
+        "native_seconds": 1.344011075,
+        "power_seconds": 1.896558556
+      },
+      {
+        "proof_id": "Proof_04130",
+        "native_seconds": 1.134622297,
+        "power_seconds": 1.684535543
+      },
+      {
+        "proof_id": "Proof_27895",
+        "native_seconds": 2.778628141,
+        "power_seconds": 3.313338589
+      },
+      {
+        "proof_id": "Proof_29502",
+        "native_seconds": 3.915731035,
+        "power_seconds": 4.425015667
+      },
+      {
+        "proof_id": "Proof_23569",
+        "native_seconds": 1.571677362,
+        "power_seconds": 2.060851606
+      },
+      {
+        "proof_id": "Proof_27233",
+        "native_seconds": 1.956435432,
+        "power_seconds": 2.422403396
+      },
+      {
+        "proof_id": "Proof_17354",
+        "native_seconds": 1.715637511,
+        "power_seconds": 2.175922688
+      },
+      {
+        "proof_id": "Proof_02835",
+        "native_seconds": 0.564122161,
+        "power_seconds": 1.017087171
+      },
+      {
+        "proof_id": "Proof_13126",
+        "native_seconds": 2.052689114,
+        "power_seconds": 2.501643596
+      },
+      {
+        "proof_id": "Proof_02861",
+        "native_seconds": 0.391244481,
+        "power_seconds": 0.828878272
+      },
+      {
+        "proof_id": "Proof_12745",
+        "native_seconds": 4.17249637,
+        "power_seconds": 4.60413931
+      },
+      {
+        "proof_id": "Proof_13230",
+        "native_seconds": 1.105275768,
+        "power_seconds": 1.535961838
+      },
+      {
+        "proof_id": "Proof_09862",
+        "native_seconds": 0.887391815,
+        "power_seconds": 1.317528618
+      },
+      {
+        "proof_id": "Proof_19511",
+        "native_seconds": 30.522752853,
+        "power_seconds": 30.946405299
+      },
+      {
+        "proof_id": "Proof_09372",
+        "native_seconds": 2.257045206,
+        "power_seconds": 2.677932972
+      },
+      {
+        "proof_id": "Proof_24640",
+        "native_seconds": 1.026851563,
+        "power_seconds": 1.430886657
+      },
+      {
+        "proof_id": "Proof_16634",
+        "native_seconds": 1.537684075,
+        "power_seconds": 1.940687069
+      },
+      {
+        "proof_id": "Proof_25206",
+        "native_seconds": 0.835161158,
+        "power_seconds": 1.2350077
+      },
+      {
+        "proof_id": "Proof_19485",
+        "native_seconds": 2.130404307,
+        "power_seconds": 2.525294187
+      },
+      {
+        "proof_id": "Proof_24548",
+        "native_seconds": 1.64863893,
+        "power_seconds": 2.030246246
+      },
+      {
+        "proof_id": "Proof_28710",
+        "native_seconds": 2.906218201,
+        "power_seconds": 3.279075554
+      },
+      {
+        "proof_id": "Proof_02643",
+        "native_seconds": 0.999872105,
+        "power_seconds": 1.359432246
+      },
+      {
+        "proof_id": "Proof_02845",
+        "native_seconds": 0.621776143,
+        "power_seconds": 0.974897142
+      },
+      {
+        "proof_id": "Proof_18606",
+        "native_seconds": 0.476026912,
+        "power_seconds": 0.828199865
+      },
+      {
+        "proof_id": "Proof_12445",
+        "native_seconds": 1.486005577,
+        "power_seconds": 1.834779056
+      },
+      {
+        "proof_id": "Proof_00297",
+        "native_seconds": 1.376177839,
+        "power_seconds": 1.717622594
+      },
+      {
+        "proof_id": "Proof_20593",
+        "native_seconds": 1.275760694,
+        "power_seconds": 1.612854957
+      },
+      {
+        "proof_id": "Proof_19374",
+        "native_seconds": 2.082689116,
+        "power_seconds": 2.408657375
+      },
+      {
+        "proof_id": "Proof_24698",
+        "native_seconds": 2.494684978,
+        "power_seconds": 2.809904085
+      },
+      {
+        "proof_id": "Proof_12303",
+        "native_seconds": 0.691183389,
+        "power_seconds": 1.0011657
+      },
+      {
+        "proof_id": "Proof_27604",
+        "native_seconds": 2.538592273,
+        "power_seconds": 2.845450687
+      },
+      {
+        "proof_id": "Proof_04891",
+        "native_seconds": 1.580595377,
+        "power_seconds": 1.881818876
+      },
+      {
+        "proof_id": "Proof_10724",
+        "native_seconds": 1.237463013,
+        "power_seconds": 1.538283778
+      },
+      {
+        "proof_id": "Proof_04702",
+        "native_seconds": 0.449022466,
+        "power_seconds": 0.738837685
+      },
+      {
+        "proof_id": "Proof_23113",
+        "native_seconds": 1.157442491,
+        "power_seconds": 1.446817153
+      },
+      {
+        "proof_id": "Proof_28856",
+        "native_seconds": 3.514904649,
+        "power_seconds": 3.799129512
+      },
+      {
+        "proof_id": "Proof_13938",
+        "native_seconds": 2.536247121,
+        "power_seconds": 2.820179798
+      },
+      {
+        "proof_id": "Proof_13484",
+        "native_seconds": 4.215663734,
+        "power_seconds": 4.496397701
+      },
+      {
+        "proof_id": "Proof_02421",
+        "native_seconds": 1.351071578,
+        "power_seconds": 1.624067261
+      },
+      {
+        "proof_id": "Proof_02580",
+        "native_seconds": 1.562849431,
+        "power_seconds": 1.830463269
+      },
+      {
+        "proof_id": "Proof_10638",
+        "native_seconds": 1.727340746,
+        "power_seconds": 1.990829068
+      },
+      {
+        "proof_id": "Proof_24146",
+        "native_seconds": 2.842312703,
+        "power_seconds": 3.105549538
+      },
+      {
+        "proof_id": "Proof_18391",
+        "native_seconds": 2.299096641,
+        "power_seconds": 2.556669821
+      },
+      {
+        "proof_id": "Proof_20414",
+        "native_seconds": 1.709940219,
+        "power_seconds": 1.965702279
+      },
+      {
+        "proof_id": "Proof_06569",
+        "native_seconds": 2.314961239,
+        "power_seconds": 2.569999386
+      },
+      {
+        "proof_id": "Proof_08943",
+        "native_seconds": 3.833084372,
+        "power_seconds": 4.085692093
+      },
+      {
+        "proof_id": "Proof_15487",
+        "native_seconds": 2.046288121,
+        "power_seconds": 2.298465571
+      },
+      {
+        "proof_id": "Proof_23756",
+        "native_seconds": 2.111628814,
+        "power_seconds": 2.354952627
+      },
+      {
+        "proof_id": "Proof_15037",
+        "native_seconds": 1.048232111,
+        "power_seconds": 1.287930406
+      },
+      {
+        "proof_id": "Proof_03086",
+        "native_seconds": 1.022864153,
+        "power_seconds": 1.262556459
+      },
+      {
+        "proof_id": "Proof_29549",
+        "native_seconds": 0.572778783,
+        "power_seconds": 0.807232152
+      },
+      {
+        "proof_id": "Proof_00621",
+        "native_seconds": 2.433035976,
+        "power_seconds": 2.656567178
+      },
+      {
+        "proof_id": "Proof_02891",
+        "native_seconds": 1.095764377,
+        "power_seconds": 1.292670749
+      },
+      {
+        "proof_id": "Proof_28772",
+        "native_seconds": 1.821195219,
+        "power_seconds": 2.017531155
+      },
+      {
+        "proof_id": "Proof_17546",
+        "native_seconds": 1.200265611,
+        "power_seconds": 1.383181958
+      },
+      {
+        "proof_id": "Proof_17093",
+        "native_seconds": 1.169979584,
+        "power_seconds": 1.340504844
+      },
+      {
+        "proof_id": "Proof_07309",
+        "native_seconds": 1.28290564,
+        "power_seconds": 1.448310065
+      },
+      {
+        "proof_id": "Proof_08433",
+        "native_seconds": 1.460263117,
+        "power_seconds": 1.615274438
+      },
+      {
+        "proof_id": "Proof_03165",
+        "native_seconds": 0.4744711,
+        "power_seconds": 0.626179144
+      },
+      {
+        "proof_id": "Proof_05700",
+        "native_seconds": 1.270155732,
+        "power_seconds": 1.421766917
+      },
+      {
+        "proof_id": "Proof_21767",
+        "native_seconds": 1.273053914,
+        "power_seconds": 1.415024786
+      },
+      {
+        "proof_id": "Proof_27149",
+        "native_seconds": 0.649654043,
+        "power_seconds": 0.789651833
+      },
+      {
+        "proof_id": "Proof_17778",
+        "native_seconds": 1.260969316,
+        "power_seconds": 1.399992306
+      },
+      {
+        "proof_id": "Proof_18426",
+        "native_seconds": 0.817106502,
+        "power_seconds": 0.95277379
+      },
+      {
+        "proof_id": "Proof_20001",
+        "native_seconds": 1.922428676,
+        "power_seconds": 2.056516665
+      },
+      {
+        "proof_id": "Proof_09130",
+        "native_seconds": 1.232723138,
+        "power_seconds": 1.363946009
+      },
+      {
+        "proof_id": "Proof_16422",
+        "native_seconds": 0.931610318,
+        "power_seconds": 1.062590432
+      },
+      {
+        "proof_id": "Proof_09667",
+        "native_seconds": 0.756970725,
+        "power_seconds": 0.878329034
+      },
+      {
+        "proof_id": "Proof_26633",
+        "native_seconds": 1.556622062,
+        "power_seconds": 1.667873555
+      },
+      {
+        "proof_id": "Proof_01768",
+        "native_seconds": 0.988072273,
+        "power_seconds": 1.098191476
+      },
+      {
+        "proof_id": "Proof_18157",
+        "native_seconds": 3.721729986,
+        "power_seconds": 3.827026936
+      },
+      {
+        "proof_id": "Proof_10213",
+        "native_seconds": 0.544121335,
+        "power_seconds": 0.649233118
+      },
+      {
+        "proof_id": "Proof_03182",
+        "native_seconds": 0.81756224,
+        "power_seconds": 0.918510993
+      },
+      {
+        "proof_id": "Proof_09518",
+        "native_seconds": 0.77975858,
+        "power_seconds": 0.876432108
+      },
+      {
+        "proof_id": "Proof_07430",
+        "native_seconds": 4.242628889,
+        "power_seconds": 4.33929632
+      },
+      {
+        "proof_id": "Proof_10996",
+        "native_seconds": 0.894186713,
+        "power_seconds": 0.989225544
+      },
+      {
+        "proof_id": "Proof_13794",
+        "native_seconds": 0.925973512,
+        "power_seconds": 1.008605195
+      },
+      {
+        "proof_id": "Proof_08148",
+        "native_seconds": 0.815745239,
+        "power_seconds": 0.895375861
+      },
+      {
+        "proof_id": "Proof_17321",
+        "native_seconds": 2.193422756,
+        "power_seconds": 2.272562581
+      },
+      {
+        "proof_id": "Proof_18090",
+        "native_seconds": 0.617470464,
+        "power_seconds": 0.681401334
+      },
+      {
+        "proof_id": "Proof_17631",
+        "native_seconds": 1.570783628,
+        "power_seconds": 1.634550183
+      },
+      {
+        "proof_id": "Proof_14209",
+        "native_seconds": 1.226960949,
+        "power_seconds": 1.290654948
+      },
+      {
+        "proof_id": "Proof_00487",
+        "native_seconds": 1.773030129,
+        "power_seconds": 1.832470394
+      },
+      {
+        "proof_id": "Proof_08545",
+        "native_seconds": 4.124401633,
+        "power_seconds": 4.182514548
+      },
+      {
+        "proof_id": "Proof_04156",
+        "native_seconds": 0.825057976,
+        "power_seconds": 0.880663941
+      },
+      {
+        "proof_id": "Proof_12210",
+        "native_seconds": 1.647438816,
+        "power_seconds": 1.701895181
+      },
+      {
+        "proof_id": "Proof_24085",
+        "native_seconds": 1.328349481,
+        "power_seconds": 1.379501934
+      },
+      {
+        "proof_id": "Proof_23951",
+        "native_seconds": 0.858671792,
+        "power_seconds": 0.908003219
+      },
+      {
+        "proof_id": "Proof_12771",
+        "native_seconds": 13.79632588,
+        "power_seconds": 13.833278748
+      },
+      {
+        "proof_id": "Proof_17236",
+        "native_seconds": 0.942496902,
+        "power_seconds": 0.975697078
+      },
+      {
+        "proof_id": "Proof_28753",
+        "native_seconds": 3.949645529,
+        "power_seconds": 3.982149172
+      },
+      {
+        "proof_id": "Proof_25403",
+        "native_seconds": 0.641170568,
+        "power_seconds": 0.666942661
+      },
+      {
+        "proof_id": "Proof_00579",
+        "native_seconds": 2.245521749,
+        "power_seconds": 2.270133867
+      },
+      {
+        "proof_id": "Proof_18723",
+        "native_seconds": 1.147953088,
+        "power_seconds": 1.164613892
+      },
+      {
+        "proof_id": "Proof_21894",
+        "native_seconds": 0.66291111,
+        "power_seconds": 0.67608981
+      },
+      {
+        "proof_id": "Proof_05833",
+        "native_seconds": 0.781590526,
+        "power_seconds": 0.785953687
+      },
+      {
+        "proof_id": "Proof_19008",
+        "native_seconds": 0.80013805,
+        "power_seconds": 0.802871443
+      },
+      {
+        "proof_id": "Proof_24032",
+        "native_seconds": 1.043969674,
+        "power_seconds": 1.045206601
+      }
+    ],
+    "current_slower_count": 169,
+    "prior_common_count": 70,
+    "prior_common_still_slower_IDs": [
+      "Proof_09503",
+      "Proof_03101",
+      "Proof_04190",
+      "Proof_02778",
+      "Proof_03444",
+      "Proof_23390",
+      "Proof_23002",
+      "Proof_17389",
+      "Proof_23622",
+      "Proof_12643",
+      "Proof_05793",
+      "Proof_28501",
+      "Proof_21519",
+      "Proof_20284",
+      "Proof_23713",
+      "Proof_07788",
+      "Proof_13596",
+      "Proof_27233",
+      "Proof_26146",
+      "Proof_27960",
+      "Proof_12412",
+      "Proof_27952",
+      "Proof_08943",
+      "Proof_21549",
+      "Proof_04975",
+      "Proof_27885",
+      "Proof_01740",
+      "Proof_29502",
+      "Proof_26633",
+      "Proof_13126",
+      "Proof_28841",
+      "Proof_02421",
+      "Proof_11151",
+      "Proof_29247",
+      "Proof_29273",
+      "Proof_11792",
+      "Proof_09534",
+      "Proof_13243",
+      "Proof_05797",
+      "Proof_18606",
+      "Proof_15487",
+      "Proof_13230",
+      "Proof_16636",
+      "Proof_20593",
+      "Proof_03196",
+      "Proof_23113",
+      "Proof_28738",
+      "Proof_24640",
+      "Proof_09667",
+      "Proof_12303",
+      "Proof_04130",
+      "Proof_15037",
+      "Proof_18391",
+      "Proof_10996",
+      "Proof_00487",
+      "Proof_17236",
+      "Proof_02861",
+      "Proof_14318",
+      "Proof_07081",
+      "Proof_10638",
+      "Proof_03165",
+      "Proof_10213",
+      "Proof_25403"
+    ],
+    "scope": "All original1000 including rejected candidates. Source service spans include scheduling/waiting. Prior three observations use another affinity and diagnostic build; direction consistency by source ID is descriptive, not a causal diagnostic-overhead ablation, isolated CPU cost, new independent repetition or per-candidate guarantee."
   }
 }

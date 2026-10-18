@@ -24,6 +24,10 @@ Goedel candidates**, selected before the implementation's measurements:
 This is **1.70059×**, or 41.20% lower elapsed time. Both conditions return
 992 complete and eight rejected sources, with matching per-source verdicts
 and non-message fields. All 108 message differences are retained.
+Direct source service spans are longer for169candidates, including63of the
+70IDs that regress in all three earlier instrumented observations. All
+remain in the result. Whole-corpus improvement coexists with these regressions;
+source spans include waiting and do not establish per-candidate guarantees.
 
 Both use eight queues, four CPUs (8–11), a 48 GiB address-space limit and the
 same original input order. Preparation, parsing, numerical search, native

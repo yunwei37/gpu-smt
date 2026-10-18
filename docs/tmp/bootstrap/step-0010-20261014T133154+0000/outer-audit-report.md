@@ -3329,3 +3329,10 @@ Package-load failure prevents a functional-reproduction pass. Public docs
 say pending; proof success is not inferred from compilation. No delegated
 review, novel LP primitive, replaced active binary or widened performance
 claim. Original dirty author files and live capture logs stay unstaged.
+
+## Current1000 regression self-audit
+Root joins all1000unique actual source IDs in both corrected conditions and
+the70previous consistent-regression IDs. All169and63retained, no subset
+filter/extra timing repetition. Cross-affinity consistency is descriptive;
+no pureLP/CPU/causal-Amdahl claim. Whole810.713/476.726s and exact verdict/
+non-message comparison remain unchanged. README/paper scope follows data.
