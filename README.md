@@ -34,7 +34,7 @@ The hourly research automation is active; this CPU result is not project closure
 retain every pair and the post-fault rebuild lineage. Both full1,000-source
 [phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)
 are complete, with native responses matching their primary captures.
-Original-population prefix timing remains in progress.
+The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). Matched CPU controls remain in progress. A direct-feasibility GPU repair failed real numeric qualification and is not admitted to another full run. Original-population prefix timing remains in progress.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by
@@ -51,9 +51,10 @@ independent audit.
 | AutoVerus / VeruSAGE | Original source runs and solver traces | SMT results remain separate from Lean results |
 
 RTX 5090 is shared through NVIDIA time slicing; it is not partitioned into
-fixed half-cards. The current arithmetic prototype runs on CPU. A GPU path is
-added only if measured eligible work justifies it and all device costs are
-included. Native compilation, warm REPLs, caches, snapshots, tries and external
+fixed half-cards. The arithmetic prototype has CPU and experimental GPU LP-support paths.
+Product expansion, exact repair and Lean checking currently run on CPU.
+Measured whole costs include preparation, pack/transfer/queueing, fallback
+and retirement; a warm upstream GPU server has separately reported cold costs. Native compilation, warm REPLs, caches, snapshots, tries and external
 arithmetic oracles are established techniques, not new contributions by
 themselves. Tests or reviews do not establish venue acceptance.
 

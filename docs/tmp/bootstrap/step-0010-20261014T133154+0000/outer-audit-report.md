@@ -2429,3 +2429,6 @@ Cross-checked closed native24 full responses, source IDs, true candidate spans, 
 
 ## 2026-10-18T00:50Z root self-audit
 Checked1000closedGPUresponseIDs, terminalcounts984/8/8,1854numericrequests/1835uniquebatches, two missingtaskendindices335/759 andall8outcomedifferences againsthistoricalnative. No matchedfinalratio invented whileCPUcontrolsrunning. Archivedactualtargetdeletionreceipt; otherWorkspaceandlabrestored. Forwardcorrected genericiterationinterpretation with22.86MactualPDLPloops and0.00scrossover. Directionunchanged; cancellation/formulation repair only, no newpaper claim or subagent. Self-review is notindependentaudit.
+
+## 2026-10-18T01:00Z root self-audit
+ReviewedrecordedPDLPsettings, actual82x152inputjob, four300.10sfailures/twopositive andone0.445sreturn. AllremainingqualifierfamilyPIDsretired; noCPU/prefixownerstopped. Cleanupreceiptdelete0,otherWorkspaceRunning/labReady. Eightnumericcallsare not eightcompletednativecases. Rejectrepairbeforefullloop; no arbitrarynewlimit orhardwarechange. CurrentCPUfullcontrolsnotfinished, so no finalbest-methodratio orprojectclosure. Self-reviewonly; noindependentreviewer/subagent. READMEanddailynowdescribemeasuredfailure ratherthanCPU-onlyimplementation. Direction/fourRQsscopeunchanged.

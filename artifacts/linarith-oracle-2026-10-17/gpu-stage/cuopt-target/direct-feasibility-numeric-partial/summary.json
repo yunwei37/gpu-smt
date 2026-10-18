@@ -1,0 +1,127 @@
+{
+  "captured_numeric_requests": 8,
+  "call_states": {
+    "client_disconnected": 7,
+    "PDLP_OPTIMAL": 1
+  },
+  "batch_events": {
+    "submit": 3,
+    "cancel_no_live_clients": 6,
+    "result": 1
+  },
+  "batches": [
+    {
+      "event": "submit",
+      "job_id": "9116cb93-5bfd-4541-8f8f-2bbf7d1a2465",
+      "start_ns": 716157417341556,
+      "batch_ids": [
+        2
+      ],
+      "rows": 82,
+      "cols": 152,
+      "nnz": 968,
+      "formulation": "original_equalities_zero_objective",
+      "settings": {
+        "method": "PDLP",
+        "detect_infeasibility": true,
+        "first_primal_feasible": true,
+        "crossover": false
+      }
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "9116cb93-5bfd-4541-8f8f-2bbf7d1a2465",
+      "monotonic_ns": 716457507403699,
+      "reply": "message: \"Job cancelled successfully\"\njob_status: CANCELLED\n"
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "9116cb93-5bfd-4541-8f8f-2bbf7d1a2465",
+      "monotonic_ns": 716457507896520,
+      "reply": "message: \"Job already cancelled\"\njob_status: CANCELLED\n"
+    },
+    {
+      "event": "submit",
+      "job_id": "00740f79-15a6-4f98-b180-d0bc858cf7d4",
+      "start_ns": 716457516829908,
+      "batch_ids": [
+        6
+      ],
+      "rows": 36,
+      "cols": 189,
+      "nnz": 932,
+      "formulation": "original_equalities_zero_objective",
+      "settings": {
+        "method": "PDLP",
+        "detect_infeasibility": true,
+        "first_primal_feasible": true,
+        "crossover": false
+      }
+    },
+    {
+      "job_id": "00740f79-15a6-4f98-b180-d0bc858cf7d4",
+      "state": "PDLP_OPTIMAL",
+      "engine": 1,
+      "generic_iterations": 420,
+      "message": "",
+      "rpc_status": 0,
+      "batch_ids": [
+        6
+      ],
+      "batch_size": 1,
+      "batch_rows": 36,
+      "batch_columns": 189,
+      "batch_nnz": 932,
+      "batch_solver_seconds_shared": 0.153437671,
+      "batch_start_ns": 716457516829908,
+      "batch_end_ns": 716457946887801,
+      "primal_objective": 0.0,
+      "event": "result"
+    },
+    {
+      "event": "submit",
+      "job_id": "0a8fdcfb-6713-4234-8e19-4a1c697c31b2",
+      "start_ns": 716457948980854,
+      "batch_ids": [
+        5,
+        7,
+        8
+      ],
+      "rows": 267,
+      "cols": 587,
+      "nnz": 3471,
+      "formulation": "original_equalities_zero_objective",
+      "settings": {
+        "method": "PDLP",
+        "detect_infeasibility": true,
+        "first_primal_feasible": true,
+        "crossover": false
+      }
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "0a8fdcfb-6713-4234-8e19-4a1c697c31b2",
+      "monotonic_ns": 716551114725076,
+      "reply": "message: \"Job cancelled successfully\"\njob_status: CANCELLED\n"
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "0a8fdcfb-6713-4234-8e19-4a1c697c31b2",
+      "monotonic_ns": 716551114903536,
+      "reply": "message: \"Job already cancelled\"\njob_status: CANCELLED\n"
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "0a8fdcfb-6713-4234-8e19-4a1c697c31b2",
+      "monotonic_ns": 716551114867933,
+      "reply": "message: \"Job already cancelled\"\njob_status: CANCELLED\n"
+    },
+    {
+      "event": "cancel_no_live_clients",
+      "job_id": "0a8fdcfb-6713-4234-8e19-4a1c697c31b2",
+      "monotonic_ns": 716551115345858,
+      "reply": "message: \"Job already cancelled\"\njob_status: CANCELLED\n"
+    }
+  ],
+  "scope": "Failed partial real qualification; standalone numeric outputs do not establish Lean verdict parity or acceleration"
+}

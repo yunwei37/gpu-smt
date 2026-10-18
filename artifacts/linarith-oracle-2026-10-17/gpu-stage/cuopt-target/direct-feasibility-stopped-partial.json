@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-18T00:59:39.112232+00:00",
+  "reason": "Four of first four real qualification requests hit unchanged300s baseline timeout, including two originally positive certificate cases. Reject repair before full admission; stop remaining partial probe, preserve raw; no CPU/prefix capture stopped.",
+  "original_plan": 8,
+  "observed_closed_cases": [
+    {
+      "index": 0,
+      "seconds": 300.101095947,
+      "original_cert_nonnull": true,
+      "returncode": -9
+    },
+    {
+      "index": 3,
+      "seconds": 300.101738887,
+      "original_cert_nonnull": true,
+      "returncode": -9
+    },
+    {
+      "index": 2,
+      "seconds": 300.102281564,
+      "original_cert_nonnull": false,
+      "returncode": -9
+    },
+    {
+      "index": 1,
+      "seconds": 300.105348343,
+      "original_cert_nonnull": false,
+      "returncode": -9
+    },
+    {
+      "index": 5,
+      "seconds": 0.445473731,
+      "original_cert_nonnull": true,
+      "returncode": 0
+    }
+  ],
+  "process_family": [
+    {
+      "pid": 81265,
+      "ppid": 0,
+      "start_ticks": "71615705",
+      "executable": "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python"
+    },
+    {
+      "pid": 81296,
+      "ppid": 81265,
+      "start_ticks": "71615732",
+      "executable": "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python"
+    },
+    {
+      "pid": 86731,
+      "ppid": 81265,
+      "start_ticks": "71645750",
+      "executable": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/arithmetic-batchd"
+    },
+    {
+      "pid": 86733,
+      "ppid": 81265,
+      "start_ticks": "71645750",
+      "executable": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/arithmetic-batchd"
+    },
+    {
+      "pid": 86734,
+      "ppid": 81265,
+      "start_ticks": "71645750",
+      "executable": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/arithmetic-batchd"
+    }
+  ],
+  "scope": "Stopped failed partial qualification, not completed8-case or native performance evidence; no success or negative-universal-GPU claim"
+}

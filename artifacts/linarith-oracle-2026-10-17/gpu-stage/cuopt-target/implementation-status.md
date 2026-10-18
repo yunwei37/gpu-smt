@@ -25,3 +25,6 @@ A fresh24-source native GPU preflight is active against the already-complete sam
 
 ## Completed phase-I full capture, 2026-10-18
 The preceding pending/preflight descriptions are historical. First full1000GPUattempts finished3374.147306631s with8operationalfailures; the target was retired and CPU controls continue. [Completed result](../full1000-phase1/result-review.md). Generic iteration fields were not PDLP loop counters: actual late-job trace reaches22.86Mloops/443.789s then crossover0.00s. The next draft uses originalfeasibility, upstream infeasibility detection/firstprimalfeasible and defaultcrossoverfalse; it is not installed in the frozen trial and not yet qualified. FinalGPUdecisionremainsopen.
+
+## Direct-feasibility repair rejected, 2026-10-18
+Current source is retained experimental failure code, not an admitted final GPUvariant. First four archivedrealrequests alltimeout300.10s, includingtwopositive. Rootstoppedremainingpartialprobe, preserved8numericrecords/5closedcaseobservations, anddeletedtarget. No native24/newfull1000starts. [Failure andlimits](direct-feasibility-result-review.md). MatchedCPUcontrolscontinue; finalbestCPU/GPUdispositionpending.
