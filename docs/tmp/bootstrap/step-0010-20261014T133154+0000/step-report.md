@@ -3833,3 +3833,9 @@ Evidence: artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/ and 
 - WRITE_GATE: targeted phase-I protocol/caption/current-status update only;20-page manuscript compiles and changed page inspected.22 changed local Markdown links resolve. CPU-stage vs final CPU/GPU decision remains explicit. Full writing gate is not claimed.
 - REVIEW_GATE: targeted claim/resource self-review flags unproved RQ1--RQ3, unknown native products, external GPU-server CPU scope and broad design-vs-evidence gap. Raw solved_by=Unset retained; no independent audit or OSDI acceptance claimed. Full result review awaits actual fixed1000 terminal.
 Evidence: gpu-stage/cuopt-target/full1000-launch.json, full1000-plan.md, qualification/phase1-preflight-paired-analysis.json, pre-result-claim-self-audit.md; full1000-baseline-numeric-replay/; full1000-baseline/stages-after-lossless-recovery.md.
+
+
+## 2026-10-18T00:25:19.645783+00:00 — real GPU full-run timeout retained
+During the running fixed1000 GPU cell, wave332--335 exceeds the inherited300s batch timeout and all four outcomes are operational. Archived same-source native/CPU-oracle waves complete near19--20s. Fifty-six backend calls overlap the failed wave; modest43x146/816-nonzero LPs report39.8s despite5 PDLP iterations. Full cuOpt solve includes presolve/crossover and is not a pure GPU-kernel timer. No unsupported single-stage cause is asserted.
+Raw failed-wave responses and overlapping backend calls are retained under gpu-stage/cuopt-target/failed-wave332/. A later separate snapshot has only cuOpt as a compute process and an idle GPU, which does not prove absence of past interference.
+The current GPU capture is not yet a successful parity result and no final ratio is promoted. The requested1000-source run and subsequent CPU controls continue unchanged. Root-only self-review, no new kernel/tolerance/concurrency grid, no premature CPU-only closure.
