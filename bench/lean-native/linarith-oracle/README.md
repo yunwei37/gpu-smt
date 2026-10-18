@@ -27,8 +27,9 @@ retains the original decision rule.
 
 The [source reproduction component](reproduction/README.md) now contains the
 complete measured Rust/Lean bodies, license/provenance, locked numerical
-dependencies and a separate caller-selected build. Numerical build/tests pass;
-real Lean-load qualification is still in progress, with failures retained.
+dependencies and a separate caller-selected build. Numerical build/tests and the complete64-source public CLI qualification pass:
+63complete/1rejected with all reference classifications preserved. Failed
+build/load attempts remain retained; this is not a new benchmark timing.
 The historical capture scripts below remain frozen and Workspace-specific.
 
 The scripts currently use the retained owning-Workspace dependency paths (Lean4.27, matching Mathlib/Farkas/Kimina), not a portable installer. Their pinned versions and original build procedures live in the reproduction guide and `artifacts/lean-modern-native-compilation-2026-10-14/`. The restored documented `/tmp/gpu-smt-linarith-oracle-20261017/` path resolves onto the existing Workspace PVC; its original ephemeral contents were lost during Pod replacement. Publish completed evidence back to `artifacts/linarith-oracle-2026-10-17/`.

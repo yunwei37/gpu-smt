@@ -403,3 +403,14 @@ and measured CPU support are packaged with locked dependencies/provenance.
 The actual source build exposed a host-shim compiler issue and is repaired
 separately; no active measured libraries are rebuilt. Successful packaging
 will be functional reproduction, not another timing result or novelty claim.
+
+## Public artifact boundary closed
+The complete source build and64real-source CLI checks now pass (63complete,
+1same rejection). Root README links the normal caller-selected build;
+historical capture entrypoints stay separate. Actual package ABI failures
+and forward fixes remain. This makes the implementation inspectable and
+buildable, not novel by itself. The current corrected pair still has169
+candidate regressions,63persistent across earlier observations, despite
+whole1.70059x. The next consequential decision remains complete population
+coverage and a mechanism-level explanation against existing services/oracles,
+not another small solver or buffer variant.

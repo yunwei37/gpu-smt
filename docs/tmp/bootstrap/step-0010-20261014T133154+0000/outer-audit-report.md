@@ -3336,3 +3336,11 @@ the70previous consistent-regression IDs. All169and63retained, no subset
 filter/extra timing repetition. Cross-affinity consistency is descriptive;
 no pureLP/CPU/causal-Amdahl claim. Whole810.713/476.726s and exact verdict/
 non-message comparison remain unchanged. README/paper scope follows data.
+
+### Portable source final root self-audit
+Read final build metadata, all64row outcomes, original source ordering,
+actual rejection diagnostics, sorry warnings and support/race records.
+Every source classification matches; raw diagnostics/failed backend rows
+remain. Exact toolchain/module setup, source bodies and separate build root
+are traceable. No native cache overwrite, moved cohort, timing promotion,
+delegate, hiddenGPUuse or independent-audit claim. Public docs agree.

@@ -15,13 +15,13 @@ performance measurement. No GPU benefit or production-service claim follows.
 See [source provenance](PROVENANCE.md) and the
 [measured result](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md).
 
-Packaging qualification: all three numerical executables build and the four
-existing numerical tests pass. The first real Lean load exposed a missing
-package-symbol prefix in regenerated dependency code. The builder now
-discovers package names from Lake's manifest and supplies Lean module setup;
-the complete rebuild and64-source functional qualification are in progress.
-See [build and qualification evidence](../../../../docs/tmp/bootstrap/step-0010-20261014T133154+0000/portable-source-20261018/plan.md).
-No successful full functional reproduction is claimed yet.
+Qualification: all three numerical executables build and the four existing
+numerical tests pass. The complete source build compiles699native dependency
+libraries and15local Lean modules. The public CLI checks the same first64
+real selected Goedel sources:63complete and1rejected, matching every reference
+source classification. Failed build/load attempts remain documented.
+[Functional results and exact scope](../../../../docs/tmp/bootstrap/step-0010-20261014T133154+0000/portable-source-20261018/result-review.md).
+This is separate from warm benchmark timing and full REPL payload comparison.
 
 ## Build
 
@@ -69,5 +69,5 @@ HiGHS and exact rational repair, with Lean checking the resulting proof.
 This package does not recreate a frozen benchmark's machine state, CPU
 placement, warm REPL, input grouping, native reference binary, or clocks.
 Use the linked experiment's input, paired protocol and whole-time boundaries
-for a performance replication. The public build has a separate real-source qualification in progress;
+for a performance replication. The public build has a separate64-source functional qualification;
 it is not substituted into active captures.

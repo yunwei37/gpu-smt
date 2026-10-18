@@ -5139,3 +5139,15 @@ All user scope,4RQs and raw failures preserved. Root self-review only.
 The factual regression paragraph compiles with Tectonic; actual changed
 page14 is rendered and root visually checks layout. No new whole-paper
 writing-loop, independent review or RQ completion is claimed.
+
+### Portable source qualification completes
+Actual public builder completes699native dependencies/15local modules/
+3Rust executables. All64real source CLI checks return63complete1reject,
+same per-source classifications as the frozen reference, no sorry warnings.
+31fully parsed HiGHS LPs and34race receipts prove actual engagement;
+all64support retirements,3backend error records and original failed build
+attempts retained. LegacyGPUlabels meanCPUHiGHS. This is functional
+qualification with standalone setup, not a new speed ratio or identical
+REPL payload proof. Public source README now reflects the complete boundary.
+Full currentGoedel/miniF2F remain actual active captures. Root-only self-review;
+all4RQs/system novelty/strictGPUbound remain open. No full lifecycle promotion.

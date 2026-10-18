@@ -134,6 +134,7 @@ remain in [the evaluation ledger](docs/evaluation.md).
 - [Current evaluation and original evidence](docs/evaluation.md).
 - [Arithmetic implementation and experiment commands](bench/lean-native/linarith-oracle/README.md).
 - [Current measured Lean source and build](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/README.md).
+- [Portable arithmetic source build and64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).
 - [Retained-environment reproduction guide](docs/reproduce-checkpoint.md).
 - [Research story](docs/idea-story.md), [design](docs/design.md) and [related work](docs/background-related-work.md).
 - [Paper source](docs/paper/main.tex) and [current PDF](docs/paper/main.pdf).
@@ -141,8 +142,8 @@ remain in [the evaluation ledger](docs/evaluation.md).
   source snapshots, raw data and reviews; `docs/paper/`: manuscript.
 
 Current run records identify the exact retained SDK, native libraries and
-numeric binaries. Portable source/build packaging is still being consolidated;
-the Workspace-specific command paths are not a universal installation recipe.
+numeric binaries. The separate arithmetic source build passes64real-source functional checks;
+the historical Workspace-specific capture paths are not a universal installation recipe.
 
 All implementation, experiments and review run in this thread. Reviews are
 **self-review**, not independent audit. Tests and measurements do not establish
