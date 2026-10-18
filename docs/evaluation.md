@@ -570,3 +570,7 @@ No newGPU/kernel/solvervariant,activecapturechange orindependentreviewer.
 
 ## Full pooled CPU comparison (2026-10-18)
 Strong pooled-native1237.37044s vs CPU AST oracle1037.84920s, ratio1.192244919x; each992/8/0, all native verdict/non-message fields agree,88 warnings. This is one width8/CPU0–3 pair under48GiB. GPU full started06:02UTC and remains pending. The separate width4 cost profile cannot be rescaled to this stronger denominator. [Complete results, raw outcomes, task tails and limits](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-cpu/result-review.md).
+
+
+## Complete pooled large-LP GPU race (2026-10-18)
+Same original1000,width8,CPU0–3,48GiB: native1237.37044s,CPUoracle1037.84920s,GPUwarm1020.12139s; full GPU lifecycle1036.25251s. Ratios native/GPU1.212963915warm,1.194081973cold. Each992/8/0; verdict/non-message parity; GPU98warning-only changes.384real2–5source batches,311cancelled/73result/all384retired;4656races90GPUcertwins. One observation does not prove stable GPU benefit or impossibility. GPU sampling203proc-read errors; cancelled device timeunknown. [Full result, heavy tails and limits](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md). Strong pooled own-clock profile now active; private FP-first24hardware qualification follows the retired original Job, ondisjointCPU8–11.

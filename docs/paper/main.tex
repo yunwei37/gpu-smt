@@ -962,13 +962,43 @@ hybrid; only an exactly repaired coefficient certificate can win.
 It cancels and reaps the other numerical child, and batches at least two
 live requests from concurrent candidates. Withdrawal cancels a shared job
 and requeues its surviving members while their CPU shadows continue.
-Small hardware qualification verifies actual two-source batches and native
-outcome agreement. The full matched 1,000-source GPU cell is running;
-its whole and cold-lifecycle results are pending.
+The full matched 1,000-source GPU cell takes 1,020.12 seconds with a
+prepared upstream server, or $1.21296\times$ relative to the pooled native
+reference. Its complete cold lifecycle takes 1,036.25 seconds, giving
+$1.19408\times$. The warm observation is 1.71\% below the CPU oracle;
+the cold lifecycle is only 0.15\% below it. This is one full observation,
+not replicated evidence of a stable GPU advantage, and does not meet
+the $1.5\times$ target. Every source verdict and non-message native field
+matches; the GPU has 98 warning-only response changes and zero operational
+failures.
+
+The GPU submits 384 actual cross-candidate jobs: 358 pairs, 20 triples,
+four groups of four and two groups of five. Of these, 311 are cancelled
+after member withdrawal and 73 return results; all 384 retire.
+There are 4,656 labelled numerical races, with 3,352 CPU-certificate wins,
+1,214 CPU-no-certificate completions and 90 exactly repaired GPU wins.
+Cancellation can therefore consume batch work even when the native
+verification result remains unchanged.
+Completed jobs report 18.399 server solver seconds; device compute for
+cancelled jobs is unknown and is not counted as zero.
+The 83.90 seconds of summed client batch/retirement intervals include RPC,
+overlap and cancellation, rather than measuring device-kernel time.
+
+For the same ten sources selected as the slowest 1\% on the native reference,
+summed command-service spans are 505.97 seconds native, 389.99 seconds CPU
+oracle and 391.76 seconds GPU. For the slowest 10\%, the corresponding sums
+are 1,266.45, 948.40 and 927.69 seconds. These spans overlap and are not
+whole-cohort clocks; GPU does not improve the CPU oracle on the 1\% group.
+GPU resource sampling has 203 process-read errors during child exit;
+its sampled memory peaks exclude the separate server and support no
+resource-superiority claim.
+
 Child creation, communication, contention and cancellation can make a race
 slower than its CPU shadow; the design alone supplies no worst-case
-no-slowdown guarantee. Negative route closure requires applicable evidence
-that GPU cannot push the best valid overall result beyond $1.5\times$.
+no-slowdown guarantee. The stronger pooled family's own width-eight
+cost capture is running with separate diagnostic clocks.
+Negative route closure requires applicable evidence that GPU cannot
+push the best valid overall result beyond $1.5\times$.
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations

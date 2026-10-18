@@ -12,8 +12,9 @@ The current research hypothesis is:
 
 Lean-first research prototype on main. The goal is useful end-to-end
 verification acceleration, with all four RQs and the OSDI-quality systems
-objective retained. **No GPU advantage over the fastest valid CPU path has
-been demonstrated.**
+objective retained. **The first full GPU race is 1.7% faster than the CPU oracle with a warm
+server, and 0.15% faster when its cold lifecycle is charged; this single
+observation does not establish stable GPU benefit.**
 
 The current [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
 checks the same 1,000 arithmetic-heavy released GoedelWorkbook candidates.
@@ -26,7 +27,8 @@ The hourly research task remains active.
 
 | Complete comparison | Native / CPU oracle elapsed | Ratio | Scope |
 |---|---:|---:|---|
-| Current pooled daemon baseline | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, width8, same4CPUs,48GiB |
+| Current pooled daemon baseline / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, width8, same4CPUs,48GiB |
+| Current pooled baseline / GPU race | 1,237.37 / 1,020.12 s | 1.21296× | Warm server; full GPU lifecycle1,036.25s gives1.19408× |
 | Corrected serial-family baseline | 6,691.60 / 5,164.85 s | 1.29560× | Three full pairs, each with its own matched reference |
 | Historical CPU stage | See retained record | 1.34668× | Earlier unbounded-address-space epoch; not pooled with current data |
 
@@ -37,20 +39,26 @@ operational outcomes. Source verdicts and non-message native payloads agree;
 [corrected three-pair series](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/three-pair-result.json),
 [historical record](artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
 
-The full GPU comparison started at **2026-10-18 06:02 UTC** on the same sources,
-candidate concurrency and CPU eligibility. Only LPs with at least11rows are
-eligible; each races CPU numerical search against GPU support search, with
-exact CPU repair, native Lean checking and cancellation/reaping of the loser.
-At least two live requests form a GPU batch. Whole and cold-lifecycle results
-are pending. [Mechanism and full protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-plan.md).
+The full GPU comparison is complete on the same sources, candidate concurrency
+and CPU eligibility: 992complete/8rejected/zerooperational outcomes, matching
+native source verdicts and non-message payloads. Only LPs with at least11rows
+are eligible; CPU and GPU race with exact repair and native checking.
+There are **384 real cross-candidate batches of2–5requests**, of which311are
+cancelled after a member withdraws and73return results. All384retire.
+This result remains below1.5× and is not GPU route closure.
+[Complete GPU results, heavy tails and raw/lifecycle evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md).
+
+A private CPU FP-first, exact-fallback racing mechanism is in24source hardware
+qualification: it targets cancellation of batches containing LPs that CPU
+solves cheaply. It is not yet a full-cohort result.
 
 A complete separate width4 wall-cost diagnostic gives a **conditional1.93412×**
 zero-LP-cost sensitivity, or **2.24363×** when deleting all CPU-oracle numeric
 products and LP search relative to its own native reference. These are
 optimistic fixed-other-work calculations, not GPU speedups or universal bounds,
 and cannot be rescaled to the faster pooled-native clock. The stronger pooled
-family's own cost diagnostic has passed real24-source qualification and will
-run after the current GPU lifecycle retires.
+family's own cost diagnostic has passed real24-source qualification and
+started after the completed GPU lifecycle retired.
 [Complete profile and denominator limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md),
 [pooled diagnostic protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/plan.md).
 

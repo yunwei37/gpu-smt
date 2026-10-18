@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-18T06:20:58.184726+00:00",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-u",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-corrected-cost.py",
+    "--cost-profile",
+    "--cost-root",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/full1000",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "after_GPU_cleanup": {
+    "clientWrapperSeconds": 1022.1180082000001,
+    "start": "2026-10-18T06:02:37.9526188Z",
+    "totalLifecycleSeconds": 1036.2525086,
+    "otherWorkspacePhase": "Running",
+    "qualifierExit": 0,
+    "scope": "Finite large-LP CPU/GPU race original1000, width8, minimum2-live-LP GPU batch; all server/client CPUs0--3,48GiB, no numeric warmup; prefix capture preserved",
+    "end": "2026-10-18T06:19:54.2185717Z",
+    "jobUID": "4cd54c4f-da3c-470b-a67c-2795277d4b5d",
+    "labReady": "True",
+    "deleteExit": 0,
+    "startupToPodReadySeconds": 5.8002015,
+    "pod": "gpu-smt-cuopt-20261017-q5gbs",
+    "retirementAndRestorationSeconds": 8.330505899999935
+  },
+  "scope": "own pooled-family diagnostic; same original1000,width8,CPU0\u20133,48GiB; no primary overlap"
+}

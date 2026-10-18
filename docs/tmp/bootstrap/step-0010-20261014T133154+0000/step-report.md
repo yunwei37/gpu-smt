@@ -4099,3 +4099,37 @@ explicit protocol epochs and canonical raw links; historical failed data are
 not deleted. Daily reflection links the actual next cost/performance decision.
 All review is root self-review, no independent-audit claim. GPU route/hourly
 task remain open.
+
+
+### 2026-10-18 — complete original1000 GPU race and actual next captures
+EXPERIMENT result: native1237.370439599s,CPUoracle1037.849203905s,
+GPUwarm1020.121393778s; native/GPU1.212963915x. Cold full lifecycle
+1036.2525086s gives1.194081973x. Each992/8/0; source verdicts/non-message
+payloads all agree. GPU98response changes are individually confirmed
+warning-only on accepted sources, CPU88. Every source task span is present.
+
+384submitted GPU jobs are all real2–5source batches;311member-cancelled,
+73result,384retired,pending0.4656races,3352CPUcert/1214CPU-no-cert/90GPUcert.
+Server18.399solver seconds covers returned jobs only; cancelled device time
+remainsunknown.1320proxy errors are numeric cancellation/failure replies,
+not native operational outcomes. GPU resource sampling203proc-read errors
+limits sampled memory/CPU attribution. Same native-selected1%task spans:
+505.97native,389.99CPU,391.76GPU seconds; GPU does not improve CPU on that tail.
+
+The original finite GPU Job retired at06:19:54Z,deleteExit0,labReadyTrue,
+otherWorkspaceRunning. Full raw/native/shape/race/batch/lifecycle evidence
+is archived in large-lp-race/full1000-gpu plus cuopt-target. Default analyzer
+no longer joins historical stacked-header phase costs to current primary
+cells; explicitly requested historical attachment is separately scoped.
+
+Pooled own-clock full diagnostic actually started06:20:58Z after the real
+cleanup receipt,original1000,width8,CPU0–3,48GiB. The private FP-first
+hardware qualification follows onCPU8–11 using the same existing target
+lifecycle; no concurrent duplicate GPU Job or primary CPUset overlap.
+Current matched result remains below1.5x but does not establish impossibility;
+GPU route/hourly task stay open. No new full variant matrix is admitted yet.
+
+WRITE: targeted result/limit propagation to README and paper. Paper compile
+passes with zeroOverfull boxes. Full paper milestone/write loop incomplete.
+REVIEW: root source/outcome/message/cost/batch/retirement self-review only,
+not independent audit. Frozen RQs/claim/venue ambition unchanged.

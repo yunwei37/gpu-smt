@@ -113,10 +113,10 @@ def phase_profile_tail(profile,ids):
     }
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('root',type=Path);p.add_argument('--input',type=Path,default=Path('/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl'));p.add_argument('--limit',type=int,default=0);p.add_argument('--methods',nargs='+',default=['fast-hybrid','oracle-highs','oracle-gpu']);a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('root',type=Path);p.add_argument('--input',type=Path,default=Path('/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl'));p.add_argument('--limit',type=int,default=0);p.add_argument('--methods',nargs='+',default=['fast-hybrid','oracle-highs','oracle-gpu']);p.add_argument('--historical-phase-profile',action='store_true',help='Explicitly attach the old stacked-header profile; never current cell attribution');a=p.parse_args()
  inputs=rows(a.input)
  if a.limit:inputs=inputs[:a.limit]
- phase_profile=load_phase_profile(inputs)
+ phase_profile=load_phase_profile(inputs) if a.historical_phase_profile else None
  cells={n:cell(a.root,n,inputs)for n in a.methods};ref=cells['fast-hybrid'];out={'count':len(inputs),'methods':{},'tails':{},'scope':'Root self-review. Closed real native cells, exact IDs and actual per-candidate spans. No GPU claim from numeric-only replay.'}
  for n,c in cells.items():
   changes=[];verdict=[];non_message=[]

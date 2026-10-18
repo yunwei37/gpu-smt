@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-18T06:02:44Z",
+  "pid": 138135,
+  "start_ticks": "73473627",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/width8-full1000-gpu",
+    "--methods",
+    "oracle-gpu",
+    "--width",
+    "8",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/width8-full1000-pooled-cpu/rep1-fast-hybrid"
+  ],
+  "host": "10.42.1.136",
+  "min_rows": 11,
+  "minimum_live_GPU_batch": 2,
+  "RLIMIT_AS": 51539607552,
+  "scope": "full original1000 sources; strong pooled native/CPU reference; corrected family; width8; CPU/GPU sameLP race before search; all server/client CPUs0--3; no numeric warmup"
+}
