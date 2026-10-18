@@ -1,0 +1,74 @@
+{
+  "utc": "2026-10-18T17:48:39.556301+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/GpuArithmetic/PowerOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/PowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/GpuArithmetic/PowerOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/power-export",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/GpuArithmetic/IntegerPowerOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/IntegerPowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/GpuArithmetic/IntegerPowerOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/power-export",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/IntegerCostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/PowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/IntegerPowerOracle.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/cost-emit.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/clock.o",
+        "-L/usr/lib/x86_64-linux-gnu",
+        "-lz",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-export/batch-oracle.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/power-export",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked",
+        "--bin",
+        "arithmetic-batchd"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/power-export/native",
+      "exit": 0,
+      "output": "   Compiling crossbeam-utils v0.8.21\n   Compiling autocfg v1.5.1\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v2.0.1\n   Compiling rayon-core v1.13.0\n   Compiling cc v1.2.65\n   Compiling serde_core v1.0.228\n   Compiling num-traits v0.2.19\n   Compiling rustversion v1.0.22\n   Compiling crossbeam-epoch v0.9.18\n   Compiling zmij v1.0.21\n   Compiling crossbeam-deque v0.8.6\n   Compiling num-modular v0.6.4\n   Compiling num-integer v0.1.46\n   Compiling serde_json v1.0.150\n   Compiling dashu-int v0.4.3\n   Compiling num-bigint v0.4.8\n   Compiling libmimalloc-sys v0.1.49\n   Compiling num-order v1.2.0\n   Compiling cfg-if v1.0.4\n   Compiling memchr v2.8.2\n   Compiling static_assertions v1.1.0\n   Compiling either v1.16.0\n   Compiling itoa v1.0.18\n   Compiling dashu-base v0.4.3\n   Compiling mimalloc v0.1.52\n   Compiling rayon v1.12.0\n   Compiling num-rational v0.4.2\n   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/power-export/native)\n    Finished `release` profile [optimized] target(s) in 8.50s\n"
+    }
+  ]
+}
