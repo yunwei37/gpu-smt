@@ -1,18 +1,72 @@
-# Reproduce the verification-acceleration checkpoint
+# Reproduce retained verification experiments
 
-This page reproduces the historical 4 October checkpoint below. The later
-Lean4.27 arithmetic experiment has a
-[completed continuation decision](../artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
-and complete phase diagnostics. The original-population prefix comparison is
-still running. Use the
-[implementation/build/recovery guide](../bench/lean-native/linarith-oracle/README.md)
-for current status and the
-[frozen protocol](../artifacts/linarith-oracle-2026-10-17/plan.md) for its evidence
-contract. This older checkpoint's baseline and metadata-GPU timings describe
-their own narrower measurement boundaries.
+The current Lean4.27 arithmetic experiment retains the
+[CPU-stage result and open final CPU/GPU decision](../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
+The first complete GPU variant attempted all1000sources with8operational
+failures; its direct-feasibility repair failed real qualification. Existing
+matched CPU controls and the original-population prefix comparison continue.
+Use the [implementation guide](../bench/lean-native/linarith-oracle/README.md)
+for current status and the [fixed protocol](../artifacts/linarith-oracle-2026-10-17/plan.md)
+for the measurement boundary. There is no demonstrated end-to-end GPU gain.
 
+## Current arithmetic phase analysis from public files
 
-The measured checkpoint is `f989833` on `research/lean-acceleration`. Its sources,
+Run from this repository's root with Python3. This recomputes the complete native
+phase analysis from published compressed raw files, including the five uniquely
+recoverable writer splices. It needs no Lean installation, GPU, private Workspace
+state, model, network download or additional Python package. Outputs stay in an
+OS temporary directory and are removed afterwards; allow roughly300MB temporary
+disk and a few GiB memory.
+
+~~~bash
+python3 - <<'PY'
+from pathlib import Path
+import gzip, json, shutil, subprocess, tempfile
+
+root = Path.cwd()
+artifact = root / 'artifacts/linarith-oracle-2026-10-17'
+raw = artifact / 'gpu-stage/full1000-baseline'
+bench = root / 'bench/lean-native/linarith-oracle'
+with tempfile.TemporaryDirectory(prefix='gpu-smt-public-cost-replay-') as name:
+    cell = Path(name)
+    for filename in ['solver-costs.jsonl.gz', 'responses.jsonl.gz']:
+        shutil.copyfile(raw / filename, cell / filename)
+    (cell / 'terminal.json').write_bytes(
+        gzip.decompress((raw / 'terminal.json.gz').read_bytes()))
+    subprocess.run([
+        'python3', str(bench / 'recover-cost-log.py'),
+        str(raw / 'oracle.jsonl.gz'), str(cell / 'oracle.jsonl'),
+        str(cell / 'recovery.json')], check=True)
+    subprocess.run([
+        'python3', str(bench / 'analyze-cost.py'), str(cell),
+        '--input', str(artifact / 'input-top1000.jsonl')], check=True)
+    actual = json.loads((cell / 'cost-analysis.json').read_text())
+    with gzip.open(raw / 'recovered-cost-analysis.json.gz', 'rt') as stream:
+        expected = json.load(stream)
+    assert actual == expected, 'Derived analysis differs from published result'
+    print('All derived fields match:', len(actual['calls']), 'LP requests;',
+          len(actual['per_source']), 'source profiles')
+PY
+~~~
+
+The [actual replay receipt](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/public-replay-receipt.json)
+records134640recovered Lean records,13414numeric requests and1000source profiles,
+with all derived JSON fields matching. The retained raw log remains unchanged.
+Four numeric calls still lack individual source IDs; reproducing the result
+does not remove that limitation. Phase CPU, overlapping timeline occupancy and
+conditional zero-work sensitivities retain their separate meanings.
+
+This is offline data reproduction, not a fresh verification benchmark, a GPU
+speedup or independent audit. To rerun verification, use the pinned native
+build/runtime guide above; its private build paths and external dependencies
+remain separate from this public-file analysis.
+
+## Historical 4 October checkpoint
+
+The sections below reproduce the older checkpoint. Its baseline and
+metadata-GPU primitive timings describe their own narrower boundaries.
+
+The measured checkpoint is `f989833`, historically recorded on `research/lean-acceleration`; this is provenance, not an instruction to switch the current `main` checkout. Its sources,
 complete/partial results, proof contexts, packed GPU input, official reference
 and SMT traces are retained in this repository. No new measurements are needed
 to read or review those results. Hashes record provenance; these instructions
