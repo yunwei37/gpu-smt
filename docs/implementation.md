@@ -1,10 +1,11 @@
 # Implementation: actual current system and boundaries
 
-Updated 2026-10-16. Root develops/builds/tests/analyzes in the retained owning
+Updated 2026-10-17. Root develops/builds/tests/analyzes in the retained owning
 gpu-smt Workspace, /workspaces/repository on main. The original native Codex
-session remains retained/stopped. Human-authorized OMP specialists own separate
-OSS, literature/paper and evaluation/script files; root owns Lean/GPU implementation
-and validated integration. Dispatch is not completed author or review work. Detailed older
+session remains retained/stopped. The user now requires this root thread alone to implement, run experiments,
+analyze, document, write and review. No OMP, other Agent, native-session resume or
+Codex subagent is permitted. Existing session state and earlier review records
+are preserved. Current rechecks are self-review, not independent audit. Detailed older
 implementation/build/failure history is preserved in
 [implementation history](tmp/bootstrap/step-0010-20261014T133154+0000/implementation-history-before-modern-frontier.md).
 The scientific story is BOOTSTRAP/unfrozen/allfourRQsopen, not a completed system
@@ -352,3 +353,6 @@ That historical command starts a new full comparison; the route is now closed an
 On the current64-bit native branch path, tagged local ref creation/free now uses existing per-tag live counts atomically and avoids the global per-object owner map. Root/prepared tag0 and fallback lookup remain; task drain, escaped refs, first-write versions and all native checks retain their existing behavior. No new size limit or service policy. [Exact source/build/control and finite diagnostic](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-038/native-local-ref-lifetime/result.md) preserve the actual build and all raw outputs. Two reversed24-source orders show atomic versus stock +3.923%/−0.875% whole time: no stable end-to-end win or standalone systems contribution. The older full eager-v1 capture is unchanged and cannot qualify this version.
 
 Current disposition: E038native CPU runtime branching is closed by user instruction; its v1 collector and descendants are stopped with raw partial data preserved. No OMP, other Agent or Codex subagent is used; root performs and labels its own critical rechecks. [Closure, GPU cost boundaries and substantive next mainline](tmp/bootstrap/step-0010-20261014T133154+0000/route-closure-20261017T0127/result.md).
+
+## First full GPU arithmetic oracle, 2026-10-17
+The phase-I PDLP support variant completes1000attempts in3374.147306631s, with984complete/8rejected/8operational. Actual numeric batching is1816singleton/19pairs; no large-batch native benefit is established. Its upstream target is retired and otherWorkspace restored. The requested same-plan robust CPU/native controls remain active. [Results and failure scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). A real444s PDLP convergence/expired-owner defect motivates direct original feasibility and cancellation repair, subject to difficult-LP and native preflight; no new full run yet. CPU-stage1.34668x/finalGPUdecision remain open.

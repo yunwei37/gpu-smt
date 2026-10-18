@@ -475,3 +475,6 @@ CPU stage: 1.346679850013x; GPU stage in progress. The final continuation criter
 All dated closure statements above are superseded interpretations, not a GPU
 impossibility result. All new captures retain upstream 48 GiB and resource failures.
 Prefix collection proceeds without blocking GPU work. Root self-review only.
+
+## First fixed1000 GPU variant completed, 2026-10-18Z
+Phase-I PDLP/crossover:3374.147306631s,984complete/8rejected/8operational; all1000attempts retained, two task-end clocks censored. Actual GPU batches1816singletons/19pairs, unique solver time1129.332s, max443.788s. All8operational outcomes differ from historical native; no successful parity/speedup claim. Same-plan HiGHS/native controls continue; no new fullmatrix launched. [Full record](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). Temporary upstreamJobdeleted, otherGPUWorkspaceRunning/labReady. Measured convergence and stale-owner work justify one direct-feasibility/cancellation repair before real preflight. CPU-stage1.34668x and final best(CPU,GPU)>1.5x remain unresolved; hourly andgoalactive. Root self-review only.

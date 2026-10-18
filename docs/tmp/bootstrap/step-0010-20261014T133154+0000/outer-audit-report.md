@@ -2426,3 +2426,6 @@ Verified exact full native JSON against the fixed same-method primary reference,
 
 ## 2026-10-18T00:12Z root self-audit
 Cross-checked closed native24 full responses, source IDs, true candidate spans, complete numeric wait4 receipts and exact lossless log reconstruction. Rejected using native24 singleton demand as a claim of effective native GPU batching, using RPC solved_by=Unset as attribution, or calling GPU/client resource accounting an equal-resource frontier. Existing source/GPU Workspace and prefix preserved. Root-only development and review; no subagent/OMP or independent-audit claim. Pending fixed1000 driver18460 is the next decisive result, not a reason to poll empty progress or close from CPU alone.
+
+## 2026-10-18T00:50Z root self-audit
+Checked1000closedGPUresponseIDs, terminalcounts984/8/8,1854numericrequests/1835uniquebatches, two missingtaskendindices335/759 andall8outcomedifferences againsthistoricalnative. No matchedfinalratio invented whileCPUcontrolsrunning. Archivedactualtargetdeletionreceipt; otherWorkspaceandlabrestored. Forwardcorrected genericiterationinterpretation with22.86MactualPDLPloops and0.00scrossover. Directionunchanged; cancellation/formulation repair only, no newpaper claim or subagent. Self-review is notindependentaudit.

@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-18T00:48:03.0779420Z",
+  "event": {
+    "event": "gpu-cell-terminal",
+    "utc": "2026-10-17T17:47:44.189048-07:00",
+    "driver_pid": 18460,
+    "start_ticks": "71246143",
+    "terminal": {
+      "method": "oracle-gpu",
+      "rep": 1,
+      "state": "complete",
+      "expected": 1000,
+      "attempts": 1000,
+      "counts": {
+        "complete": 984,
+        "rejected": 8,
+        "operational": 8
+      },
+      "whole_ns": 3374147306631,
+      "cpu": {
+        "collector": {
+          "user": 3.238843,
+          "system": 366.64706299999995
+        },
+        "waited_children": {
+          "user": 432.497073,
+          "system": 163.30924
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 8771552256,
+      "sampled_peak_fleet_rss_with_collector": 9412689920,
+      "sampling_read_errors": 592,
+      "workers": 3,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 4,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates",
+      "collector_whole_ns": 3374022273006,
+      "backend_setup_cleanup_ns": 125033625,
+      "gpu_target_boundary": "Warm upstream cuOpt server; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently."
+    },
+    "scope": "one-shot native filesystem/pidfd completion event; no timer polling"
+  },
+  "originalJobUid": "c2051e4e-e179-4579-b25e-f0ad2fc5ee0e",
+  "podUid": "720f70a2-92c7-4bcb-b017-f72b687aa266",
+  "counterExit": 0,
+  "counterText": "{\"utc\": \"2026-10-18T00:47:48Z\", \"cpu_stat\": \"usage_usec 1464649456\\nuser_usec 1436107962\\nsystem_usec 28541494\\nnice_usec 0\\ncore_sched.force_idle_usec 0\\nnr_periods 0\\nnr_throttled 0\\nthrottled_usec 0\\nnr_bursts 0\\nburst_usec 0\\n\", \"memory_current\": \"823468032\\n\", \"memory_peak\": \"842924032\\n\", \"entry_limits\": \"Limit                     Soft Limit           Hard Limit           Units     \\nMax cpu time              unlimited            unlimited            seconds   \\nMax file size             unlimited            unlimited            bytes     \\nMax data size             unlimited            unlimited            bytes     \\nMax stack size            8388608              unlimited            bytes     \\nMax core file size        0                    0                    bytes     \\nMax resident set          unlimited            unlimited            bytes     \\nMax processes             unlimited            unlimited            processes \\nMax open files            1048576              1048576              files     \\nMax locked memory         8388608              8388608              bytes     \\nMax address space         51539607552          51539607552          bytes     \\nMax file locks            unlimited            unlimited            locks     \\nMax pending signals       476275               476275               signals   \\nMax msgqueue size         819200               819200               bytes     \\nMax nice priority         0                    0                    \\nMax realtime priority     0                    0                    \\nMax realtime timeout      unlimited            unlimited            us        \\n\", \"scope\": \"whole target-container cumulative counters including qualifications, failures and diagnostics; upper bound for this GPU cell, not exact per-cell CPU\"}",
+  "logExit": 0,
+  "deleteExit": 0,
+  "deleteSeconds": 1.2556728,
+  "remainingTestPods": 0,
+  "otherGpuWorkspacePhase": "Running",
+  "labReady": "True",
+  "scope": "Finite test cleanup through owning kubectl path; CPU controls continue; no service/schedule retained"
+}
