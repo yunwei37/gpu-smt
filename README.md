@@ -75,11 +75,22 @@ This backend has no full-run admission. Established certificate checking and
 GPU simplex primitives alone do not establish our systems contribution.
 [Capacity result and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
 Retained model-level records expose up to8.91s of dispatch head-of-line delay.
-An independent-stream candidate was implemented and tested under48GiB, but
-its allocator returned31memory failures and executed zeroGPUkernels; it is
-rejected and left unpromoted. Its failed-allocation clock is not GPU
-performance, and does not close the GPU route.
-[Failure source, raw data and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
+Independent groups now execute under48GiB using request-sized driver VMM:
+20actual groups/36LPs in the repaired original64 trial, with complete device
+samples, up to four distinct groups overlapping, and zero live allocations
+after completion. GPU takes43.07s versus fresh CPU37.78s, **14.00%slower**;
+this is not admitted for a full GPU matrix. Earlier pool failures remain
+[retained](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
+[Actual device progress, raw data and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/request-sized-vmm/final-drain/result-review.md).
+
+That GPU composition kept the native hybrid CPU contender but replaced the
+CPU oracle's HiGHS contender. It therefore did not preserve the strongest CPU
+portfolio when adding GPU work. The corrected same-resource preflight retains both CPU contenders and adds
+GPU speculation, selecting first exactly verified evidence. CPU takes **38.02s**,
+CPU+GPU **39.33s**, or **3.43%more elapsed**, with identical full responses.
+HiGHS wins46races, native21, GPU1exact-negative. Actual GPU work and complete
+retirement are verified, but this condition has no full-run admission.
+[Corrected composition, raw data and self-review](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).
 
 
 

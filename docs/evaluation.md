@@ -747,3 +747,39 @@ admission; no worker-count grid or source reselection follows. Fixed-duration
 modeling had suggested10.7%less candidate-window time on the full capture,
 which is expressly not a measured gain. Static optimality remains unproven.
 [Plan, source, raw qualification and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md).
+
+## Independent GPU groups and strong-CPU portfolio correction — 2026-10-18
+
+Request-sized CUDA driver VMM succeeds where both prior pool implementations
+failed under48GiB. Repaired original64/capacity32/fourCPU8–11 qualification
+executes20nonemptygroups/36models,36device samples,29cross-group overlapping
+model pairs, peak4distinct groups/5LPblocklifetimes. All groups retire;
+in-band finalprobe0allocations/0bytes, peak60,817,408devicebytes. Device timers
+measure block lifetimes including scheduling/stalls, not pure arithmetic work.
+
+Fresh native71.640609056s/CPU37.779115328s versus GPU43.069316313s:
+GPU takes14.003%more elapsed than CPU. Every64nativeverdict/non-messagefield
+agrees,63/1/0, GPU5message-onlychanges/28observererrors. Warm totals charge
+host proxy setup and retirement; cold lifecycle69.5804864s is separate.
+[Source, all models, raw result and self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/request-sized-vmm/final-drain/result-review.md).
+
+The same-payload diagnosis exposes an important composition limitation:
+the GPU condition replaces the CPU HiGHS contender, retaining only native
+hybrid as its CPU shadow. One163x435LP takes0.001639s HiGHS search in its CPU
+record but the GPU block lasts about9.78s until native negative-search wins.
+That comparison is descriptive across sequential acquisitions, not isolated
+causal timing. The condition is a valid alternate solver composition, but
+does not implement additive GPU work over the strongest CPU portfolio.
+
+E1065 preserves native hybrid AND CPU HiGHS, adds the same GPU implementation,
+and selects first exact-verified evidence, with distinct winner labels.
+Both numeric conditions use one private Rust build and unchanged Lean modules.
+Same-source64/equalfourCPU/48GiB preflight closes CPU38.022009755s versus
+CPU+GPU39.326831541s,3.432%more elapsed. Their full native responses agree.
+Every68race has a strongCPUchild and no spawn/wait/kill error. HiGHS selects
+30positive/16exact-negative, native1positive/20no-certificate, GPU1exact-negative.
+Six real GPU groups/nine models have complete device samples and full retirement.
+Peak two groups overlap; final provider has zero allocations. This functional
+correction still does not earn full performance admission. No strict
+no-slowdown claim is made: extra processes/repair/contention remain charged.
+[Corrected protocol, closed raw and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).

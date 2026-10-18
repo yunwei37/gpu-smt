@@ -4732,3 +4732,46 @@ lifecycle63.2284356s. Functional outcome passed-restored, performance unresolved
 This is actual GPU group progress, not OSDI novelty or routeclosure. Mainfull
 277984 and prefix5256 confirmedlive at13:05Z; their active sources untouched.
 WRITE local provenance; REVIEW rootself-audit, no independent review claimed.
+
+### 2026-10-18 — final-drain complete, E1065 corrects CPU/GPU composition
+
+E1058finaldrainactual64 closes: GPU43.069316313s vs freshnative71.640609056/
+CPU37.779115328s,14.003%slowerthanCPU. Allsource/non-messageparity,63/1/0,
+5messagechanges/28observererrors.20groups/36models,36/36device samples,
+29cross-group overlaps,peak4groups/5blocks,allretired,0allocations/0bytes,
+peak60,817,408bytes. FiniteJobac4201b9...deleted,otherWSRunning/labReady,
+coldlifecycle69.5804864s. No fullGPUadmission or globalGPUclosure.
+
+Same-payload analysis findsHiGHS0.001639s vs GPU9.78s block lifetime on163x435LP.
+The GPU condition keptnativehybridbutREMOVEDtheHiGHSCPUcontender fromthe
+strong CPUportfolio. This was a validalternatecomposition,butdidnotpreserve
+theuser's intendedstrongCPUinsurance. E1065rootcorrectscomposition:retain
+nativehybrid+CPUHiGHS, add GPU, selectfirstexactverifiedpositive/negative
+evidence,logseparatewinners,cancel/waitalllosers. OneprivateRustbuild uses
+unchangedLeanmodules/kernel/VMM, allnormalcosts/equal4CPUs/width32/48GiB.
+Buildrelease/offline/locked andgeneratedCLIhelp succeed. CPUpreflight282763
+actuallyfinishedbeforetheGPUbenchmarkstarts; no CPUbudgetoverlap. GPU
+qualificationruns through the same finitebenchmark lifecycle, not a newservice.
+WRITE README/evaluation/paper/frontier/dailyreflection updated; REVIEWselfaudit.
+No newfullGPUmatrix withoutrealCPUadvantageandactualGPUcontribution.
+
+E1065actual64result:privateCPU38.022009755s / keepCPU+GPU39.326831541s,
+3.432%MOREelapsed. Native71.640609056s is reused unchanged recentreference.
+Allnativeverdict/non-messageparity,63/1/0;CPUandGPUFULLresponsesidentical,
+6message-onlychangesvsnative,13/14observererrors. All68racesreallyspawnthird
+strongCPUchild,0spawn/wait/killerrors. HiGHS30positive+16negative,native1positive
++20no-certificate,GPU1negative,0GPUpositive. Actual6groups/9models,9/9timers,
+allretired,0allocations/0bytes,peak46,137,344bytes. Job789dd9c6...deleted,
+otherWSRunning/labReady,coldlifecycle60.321191s. First-validsupport doesNOT
+guaranteeno slowdown;GPUselectionisnotcausalsavedtime. Functionalpassed-restored,
+performanceadmissionfails. No fullunprofitableGPUmatrixornewparametergrid.
+EarlierGPUsubstitutionremainsvalidalternatecomposition,butnoCPUretentionclaim.
+OverallGPUroute/allRQscannotclosefromthisonecandidate. Allraw/sourcepublished.
+
+Validation/publication: revised paper compiles with existingTectonic0.17, page17
+rendered/visuallychecked within columns. README/evaluation/frontier local links
+have zero missing targets. At13:38Z, actual /proc277984full29750driver and5256
+prefixdriver both remain live; no full-generalization cell terminal yet.
+Volume2,567,884,800freebytes. Healthy acquisitions preserved, not restarted,
+clock-spliced, truncated or polled in empty goal turns. New GPUJobs all removed.
+FullWRITE/milestone/independent-review completion is not claimed.

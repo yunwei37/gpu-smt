@@ -1,0 +1,63 @@
+{
+  "scope": "Root self-review. Device globaltimer sampled inside LP blocks in the actual common CUDA context. Overlapping lifetimes from distinct groups verify independent in-flight progress, not pure ALU work or portable CUDA event timing. Missing model samples stay explicit.",
+  "provider_launch_records": 6,
+  "actual_kernel_groups": 6,
+  "actual_models": 9,
+  "actual_group_size_histogram": {
+    "1": 3,
+    "2": 3
+  },
+  "zero_model_groups": 0,
+  "all_launch_groups_retired": true,
+  "model_states_with_device_samples": {
+    "cancelled": 6,
+    "phase_I_no_hint": 2,
+    "numerical_no_hint": 1
+  },
+  "timer_samples": 9,
+  "models_without_device_sample": [],
+  "device_maximum_overlapping_LP_block_lifetimes": 3,
+  "device_maximum_overlapping_distinct_groups": 2,
+  "cross_group_overlapping_model_pairs": 3,
+  "overlap_pairs": [
+    {
+      "left": "283700:8",
+      "right": "283700:5",
+      "left_group": 761615383360338,
+      "right_group": 761615143460382,
+      "overlap_globaltimer_ticks": 480
+    },
+    {
+      "left": "283700:42",
+      "right": "283700:39",
+      "left_group": 761627595054539,
+      "right_group": 761626482297146,
+      "overlap_globaltimer_ticks": 512
+    },
+    {
+      "left": "283700:43",
+      "right": "283700:39",
+      "left_group": 761627595054539,
+      "right_group": 761626482297146,
+      "overlap_globaltimer_ticks": 544
+    }
+  ],
+  "provider_retirement_probe": {
+    "ready": true,
+    "pid": 1,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "RLIMIT_AS": [
+      51539607552,
+      51539607552
+    ],
+    "engine": "CUDA batched phase-I simplex",
+    "live_allocations": 0,
+    "live_device_bytes": 0,
+    "peak_device_bytes": 46137344
+  }
+}

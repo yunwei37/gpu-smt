@@ -3098,3 +3098,14 @@ source/resultfidelity holds but message-onlydifferences retained. LaterfreshCPU
 coldlifecycle and memoryobservererrors distinguished. The final-drain repair
 qualifies once with samecohort, no buffer/pool/kernelparametergrid. Work is all
 rootthread, mainexistingWS only. GPU route and allfourRQs remain open.
+
+### E1058 final drain and E1065 strongest-CPU retention — root self-audit
+
+VMMfinal-drain samples36/36models; first40modelattempt39samples remains scoped.
+E1065retainsbothCPUcontenders in all68races, no spawn/wait/kill failures; exact
+negativeGPUevidence selected once, CPUwins67. FullCPU/GPUresponsesagree. Both
+hostproxy costs are added to authoritative39.326832s, notcollector39.190143s.
+CPU38.022010s is the sameprivatebuild/eligibility, so actual3.432%loss remains.
+ColdGPUlifecycle/observerlimits/native-reference reuse are explicit. Allactual
+9GPUmodels/groups retire andin-bandallocationcountszero. Nofulladmission,
+globalGPUimpossibility orindependentauditclaim. Originalfull/prefixpreserved.

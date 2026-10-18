@@ -230,3 +230,31 @@ Follow-through: current README/evaluation/paper now link the closed failed
 scheduler control and current-clock extraction; earlier models are labeled as
 models. Original full29,750 and prefix captures stay frozen. No polling-only
 waits, allocator/buffer/thread grid, delegation or false independent audit.
+
+### 13:25Z — actual GPU progress and the decisive remaining correction
+
+Root implements request-sized driver VMM, executes overlapping GPU groups
+under48GiB, and fixes one lost final model read. Repaired64 trial has36/36device
+samples, peak4groups, no live allocations, yet GPU43.07s versus CPU37.78s.
+Thus fixing allocation and group-level concurrency alone has not made GPU win.
+
+The important remaining defect is composition: GPU had replaced HiGHS, leaving
+a weaker native CPU shadow. Same163x435LP is millisecond-scale in HiGHS but
+persists seconds on GPU until the native search finishes. This directly changes
+the next action: preserve native hybrid and HiGHS, then add GPU and count
+which exact certificate wins. Root private Rust build succeeds; same64/equal
+resources preflight runs. Both proxy lifecycles, contention and exact repair
+remain charged. No performance guarantee from first-winner logic alone, no
+CPU gains relabeled as GPU, no further kernel/allocator/grid work. Full29,750
+and prefix collectors remain unchanged; daily README and paper now describe
+actual functional progress and the remaining comparison accurately.
+
+13:31Z follow-through: corrected additive portfolio actually closes. Same private
+CPU38.022010s versus keepCPU+GPU39.326832s,3.432%more elapsed. Full responses
+identical;68races include all strongCPUchildren, HiGHS46/native21/GPU1selected
+negative evidence, no child retirement errors. All9GPUmodels retire. This is
+an integration correction with evidence, not a new systems contribution or
+a global GPU-negative theorem. No full matrix or more variants of this kernel
+follow a failed preflight. The next decisive boundary remains complete original
+workload/component generality and a mechanism that addresses remaining expensive
+proof work against established CPU services/checkers; preserve healthy captures.

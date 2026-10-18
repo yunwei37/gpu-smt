@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-18T13:29:15.165745+00:00",
+  "pid": 282763,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/run-qualification.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/strong-cpu-gpu-portfolio/qualification64-cpu",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/input-first64.jsonl",
+    "--limit",
+    "64",
+    "--methods",
+    "oracle-highs",
+    "--width",
+    "32",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/async-device-progress/request-sized-vmm/fresh-cpu-reference64/rep1-fast-hybrid"
+  ],
+  "native_reference_reused": "unchanged native executable/body/source; recent actual71.640609s64sources",
+  "equal_private_numeric_build": true
+}

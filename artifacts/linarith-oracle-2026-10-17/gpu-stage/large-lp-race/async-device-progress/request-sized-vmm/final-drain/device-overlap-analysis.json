@@ -1,0 +1,246 @@
+{
+  "scope": "Root self-review. Device globaltimer sampled inside LP blocks in the actual common CUDA context. Overlapping lifetimes from distinct groups verify independent in-flight progress, not pure ALU work or portable CUDA event timing. Missing model samples stay explicit.",
+  "provider_launch_records": 20,
+  "actual_kernel_groups": 20,
+  "actual_models": 36,
+  "actual_group_size_histogram": {
+    "1": 4,
+    "2": 16
+  },
+  "zero_model_groups": 0,
+  "all_launch_groups_retired": true,
+  "model_states_with_device_samples": {
+    "cancelled": 11,
+    "phase_I_feasible": 11,
+    "phase_I_no_hint": 8,
+    "numerical_no_hint": 6
+  },
+  "timer_samples": 36,
+  "models_without_device_sample": [],
+  "device_maximum_overlapping_LP_block_lifetimes": 5,
+  "device_maximum_overlapping_distinct_groups": 4,
+  "cross_group_overlapping_model_pairs": 29,
+  "overlap_pairs": [
+    {
+      "left": "281466:1",
+      "right": "281466:7",
+      "left_group": 760952936826205,
+      "right_group": 760953371453687,
+      "overlap_globaltimer_ticks": 544
+    },
+    {
+      "left": "281466:1",
+      "right": "281466:5",
+      "left_group": 760952936826205,
+      "right_group": 760953168277617,
+      "overlap_globaltimer_ticks": 544
+    },
+    {
+      "left": "281466:1",
+      "right": "281466:6",
+      "left_group": 760952936826205,
+      "right_group": 760953168277617,
+      "overlap_globaltimer_ticks": 544
+    },
+    {
+      "left": "281466:1",
+      "right": "281466:9",
+      "left_group": 760952936826205,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 544
+    },
+    {
+      "left": "281466:7",
+      "right": "281466:5",
+      "left_group": 760953371453687,
+      "right_group": 760953168277617,
+      "overlap_globaltimer_ticks": 5123840
+    },
+    {
+      "left": "281466:7",
+      "right": "281466:6",
+      "left_group": 760953371453687,
+      "right_group": 760953168277617,
+      "overlap_globaltimer_ticks": 5123616
+    },
+    {
+      "left": "281466:7",
+      "right": "281466:9",
+      "left_group": 760953371453687,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 3447264
+    },
+    {
+      "left": "281466:5",
+      "right": "281466:9",
+      "left_group": 760953168277617,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 11884672
+    },
+    {
+      "left": "281466:6",
+      "right": "281466:9",
+      "left_group": 760953168277617,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 18008832
+    },
+    {
+      "left": "281466:13",
+      "right": "281466:9",
+      "left_group": 760954494708521,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 20967328
+    },
+    {
+      "left": "281466:12",
+      "right": "281466:9",
+      "left_group": 760954494708521,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 32137792
+    },
+    {
+      "left": "281466:17",
+      "right": "281466:9",
+      "left_group": 760955348848473,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 288
+    },
+    {
+      "left": "281466:16",
+      "right": "281466:9",
+      "left_group": 760955348848473,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 1780576
+    },
+    {
+      "left": "281466:23",
+      "right": "281466:9",
+      "left_group": 760957235025170,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 7061088
+    },
+    {
+      "left": "281466:22",
+      "right": "281466:9",
+      "left_group": 760957235025170,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 20060256
+    },
+    {
+      "left": "281466:27",
+      "right": "281466:9",
+      "left_group": 760957635634625,
+      "right_group": 760953651262385,
+      "overlap_globaltimer_ticks": 173414336
+    },
+    {
+      "left": "281466:9",
+      "right": "281466:26",
+      "left_group": 760953651262385,
+      "right_group": 760957635634625,
+      "overlap_globaltimer_ticks": 980652480
+    },
+    {
+      "left": "281466:31",
+      "right": "281466:26",
+      "left_group": 760958986739802,
+      "right_group": 760957635634625,
+      "overlap_globaltimer_ticks": 7636960
+    },
+    {
+      "left": "281466:30",
+      "right": "281466:26",
+      "left_group": 760958986739802,
+      "right_group": 760957635634625,
+      "overlap_globaltimer_ticks": 54194912
+    },
+    {
+      "left": "281466:35",
+      "right": "281466:26",
+      "left_group": 760961895502497,
+      "right_group": 760957635634625,
+      "overlap_globaltimer_ticks": 10634880
+    },
+    {
+      "left": "281466:34",
+      "right": "281466:26",
+      "left_group": 760961895502497,
+      "right_group": 760957635634625,
+      "overlap_globaltimer_ticks": 34830048
+    },
+    {
+      "left": "281466:46",
+      "right": "281466:44",
+      "left_group": 760968495246525,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 33759872
+    },
+    {
+      "left": "281466:47",
+      "right": "281466:44",
+      "left_group": 760968495246525,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 48925952
+    },
+    {
+      "left": "281466:52",
+      "right": "281466:44",
+      "left_group": 760971865810232,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 8921632
+    },
+    {
+      "left": "281466:53",
+      "right": "281466:44",
+      "left_group": 760971865810232,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 71765312
+    },
+    {
+      "left": "281466:55",
+      "right": "281466:44",
+      "left_group": 760972276106841,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 5945024
+    },
+    {
+      "left": "281466:54",
+      "right": "281466:44",
+      "left_group": 760972276106841,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 43859584
+    },
+    {
+      "left": "281466:58",
+      "right": "281466:44",
+      "left_group": 760975628987117,
+      "right_group": 760968212926772,
+      "overlap_globaltimer_ticks": 1394592
+    },
+    {
+      "left": "281466:44",
+      "right": "281466:57",
+      "left_group": 760968212926772,
+      "right_group": 760975628987117,
+      "overlap_globaltimer_ticks": 2347100576
+    }
+  ],
+  "provider_retirement_probe": {
+    "ready": true,
+    "pid": 1,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "RLIMIT_AS": [
+      51539607552,
+      51539607552
+    ],
+    "engine": "CUDA batched phase-I simplex",
+    "live_allocations": 0,
+    "live_device_bytes": 0,
+    "peak_device_bytes": 60817408
+  }
+}

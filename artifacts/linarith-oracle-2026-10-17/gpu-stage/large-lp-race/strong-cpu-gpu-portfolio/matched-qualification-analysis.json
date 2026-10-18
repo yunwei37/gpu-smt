@@ -1,0 +1,151 @@
+{
+  "scope": "Original first64, capacity32, fourCPU8--11,48GiB. Same native sources/checker. Sequential acquisitions, GPU server cold lifecycle separate, not full1000/whole-population threshold evidence. Root self-review.",
+  "count": 64,
+  "methods": {
+    "native": {
+      "whole_seconds": 71.640609056,
+      "outcome_differences": [],
+      "JSON_differences": [],
+      "non_message_differences": [],
+      "missing_spans": [],
+      "unmatched_spans": [],
+      "terminal": {
+        "method": "fast-hybrid",
+        "rep": 1,
+        "state": "complete",
+        "expected": 64,
+        "attempts": 64,
+        "counts": {
+          "complete": 63,
+          "rejected": 1
+        },
+        "whole_ns": 71640609056,
+        "cpu": {
+          "collector": {
+            "user": 0.136171,
+            "system": 6.470443
+          },
+          "waited_children": {
+            "user": 110.735132,
+            "system": 3.915428
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 5383240704,
+        "sampled_peak_fleet_rss_with_collector": 9172963328,
+        "sampling_read_errors": 0,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 32,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+      }
+    },
+    "CPU_oracle": {
+      "whole_seconds": 38.022009755,
+      "outcome_differences": [],
+      "JSON_differences": [
+        16,
+        19,
+        23,
+        51,
+        59,
+        62
+      ],
+      "non_message_differences": [],
+      "missing_spans": [],
+      "unmatched_spans": [],
+      "terminal": {
+        "method": "oracle-highs",
+        "rep": 1,
+        "state": "complete",
+        "expected": 64,
+        "attempts": 64,
+        "counts": {
+          "complete": 63,
+          "rejected": 1
+        },
+        "whole_ns": 38022009755,
+        "cpu": {
+          "collector": {
+            "user": 0.05517500000000003,
+            "system": 3.513488
+          },
+          "waited_children": {
+            "user": 103.324325,
+            "system": 4.018366
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 5859689472,
+        "sampled_peak_fleet_rss_with_collector": 9656664064,
+        "sampling_read_errors": 13,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 32,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+        "collector_whole_ns": 37922793177,
+        "backend_setup_cleanup_ns": 99216578,
+        "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+      }
+    },
+    "GPU_oracle": {
+      "whole_seconds": 39.326831541,
+      "outcome_differences": [],
+      "JSON_differences": [
+        16,
+        19,
+        23,
+        51,
+        59,
+        62
+      ],
+      "non_message_differences": [],
+      "missing_spans": [],
+      "unmatched_spans": [],
+      "terminal": {
+        "method": "oracle-gpu",
+        "rep": 1,
+        "state": "complete",
+        "expected": 64,
+        "attempts": 64,
+        "counts": {
+          "complete": 63,
+          "rejected": 1
+        },
+        "whole_ns": 39326831541,
+        "cpu": {
+          "collector": {
+            "user": 0.06517200000000001,
+            "system": 3.61482
+          },
+          "waited_children": {
+            "user": 107.344784,
+            "system": 4.076919
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 5926122496,
+        "sampled_peak_fleet_rss_with_collector": 9717911552,
+        "sampling_read_errors": 14,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 32,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+        "collector_whole_ns": 39190142603,
+        "backend_setup_cleanup_ns": 39281162,
+        "gpu_target_boundary": "Warm finite CUDA simplex provider; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently.",
+        "retained_strong_cpu_proxy_setup_cleanup_ns": 97407776,
+        "portfolio_boundary": "Keep native hybrid and CPU HiGHS contenders, add CUDA; exact repair and parent recheck, cancellation/wait and BOTH host proxy lifecycles charged. Four CPUs and same source concurrency. GPU context cold lifecycle separate."
+      }
+    }
+  },
+  "native_over_CPU": 1.8841878563922851,
+  "native_over_GPU_warm": 1.821672538793557,
+  "GPU_over_CPU": 1.0343175385627377
+}

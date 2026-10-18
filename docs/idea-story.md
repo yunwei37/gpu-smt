@@ -29,6 +29,16 @@ This section records the initial scientific disposition of the expanded research
 
 ### 2026-10-18 — arithmetic evidence and unresolved system novelty
 
+Request-sized VMM now qualifies actual independent GPU groups under48GiB.
+The final-drain64 run executes20groups/36models with complete device samples
+and no live allocations, but43.069316s still loses to fresh CPU37.779115s.
+The GPU composition had replaced CPU HiGHS instead of retaining it as a
+contender. The corrected real control preserves both native hybrid and HiGHS while
+adding GPU: CPU38.022010s versus CPU+GPU39.326832s on the same64sources, identical
+full responses. HiGHS46/native21/GPU1exact-negative selections show CPU dominance.
+There is no full admission, kernel/allocator grid or systems-novelty claim. Source and results remain
+[scoped](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/request-sized-vmm/final-drain/result-review.md).
+
 A later source-native queue-control preflight finds no promotion-worthy benefit:
 same binary/body/eight workers, static54.811967s versusFIFO58.321468s on the
 original first64, identical full native responses. Its full matrix is rejected.
