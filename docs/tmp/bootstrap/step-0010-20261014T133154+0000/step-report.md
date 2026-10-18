@@ -4342,3 +4342,32 @@ WRITE propagates this baseline distinction to README,evaluation,paper and
 the daily reflection. REVIEW is root self-review,not independent audit.
 Sourcecde662a benchmark-smokeCI isactually completed/success,run39110354163.
 All healthycaptures preserved; no waitinggoalrounds or otherexecutors.
+
+
+### 2026-10-18 — complete strongest CPU pair and actual profile-launch repair
+EXPERIMENT: the complete full1000upstream8queue native/CPUoracle pair is
+685.730742286/537.312851014s,ratio1.276222486x. Each992complete/8rejected/
+0operational;all1000IDs/taskspansmap,allverdict/non-messagefieldsagree,
+88acceptedwarningchanges. Bothobservershavezeroreaderrors. Native-selected
+1%tasksum1030.22→744.45s,unions547.19→450.13s;10%sum2298.45→1712.81,
+unions652.80→504.44s. Overlap isdisclosed,not awhole-timepartition.
+This stronger existingCPUinterface mustbe used before further GPUclaims.
+
+The initial same-protocol cost qualifier isinvalid: root omitted the existing
+GPU_ARITHMETIC_RACE_MIN_ROWS. Pooled backend panics25/33times and Leanfallback
+masksthem;all24sourceoutcomesalonewouldhavefalselyqualifiedtiming.
+Allraw retained asinvalid. Actuallaunchfixpassesrow11 and validates that
+requiredexistinginput before collection. Correctedqualifier30.181711/
+22.545494s,24/24sameverdict/non-message;231/125numericcalls,complete
+source/shape/productschema,zeroerrors/stderr/unmatched/ambiguouscalls,
+all4/5workerscompleteEOF/wait4CPU/exit0. The apparentbadqualification
+slowdown isnot calledinstrumentationoverhead.
+The requested fullsame-protocol own-clock native/CPUprofile starts08:28:53Z,
+PID164489,CPU0–3,max8tasks,48GiB,afteractualcompleteprimarypairtermination.
+No activeownerduplicate/Agent/GPU/newmatrix iscreated.
+WRITE updatesfullpair README/evaluation/paper and dailyreflection;oldwave
+Amdahl/answerawareclocks are explicitlyinapplicable tothenewstrongestdenominator.
+REVIEW rootself-review includesnumericfailuresandworkerreceipts,notjust
+nativeverdicts. No independent audit,1.5xclaim orGPUrouteclosure.
+
+Final PDF recheck caught doubled LaTeX backslashes in the newly inserted multiplication/spacing commands. Fixed forward in source, rebuilt and checked rendered numerical text; result values and raw measurements unchanged. This is a local expression repair,not a scientific-contract change.

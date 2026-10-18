@@ -15,7 +15,7 @@ original bytes. This recovers 1,471,750,144 bytes, bringing the project volume's
 free space to about 4.10 GB at that observation. Published raw archives and
 active collectors are preserved. The compression receipt names both paths.
 
-Paper source compiles to 22 pages with no overfull boxes. Rendered pages 15–16
+Paper source compiles with no overfull boxes; the latest result additions are rendered and checked. The earlier version was 22 pages with no overfull boxes. Rendered pages 15–16
 are visually inspected for the four-region table, LP distribution figure and
 known-answer result. This is targeted validation, not completion of full
 writing refinement or a paper acceptance review.
@@ -66,4 +66,16 @@ capture is preserved on its own CPUs. These are real experiments rather than
 repeated health polling. Full RQ coverage, a supported systems contribution
 and the paper's complete research process remain unfinished.
 
-The full source-native queue reference has now closed at 685.73 seconds with exact complete native JSON parity, versus the older 1,237.37-second wave reference. The paired CPU oracle is pending. This stronger baseline invalidates transferring the earlier wave-only opportunity denominator; any subsequent attribution must use the queue protocol and its own clocks. Published source commit cde662a also passes benchmark-smoke CI: https://github.com/yunwei37/gpu-smt/actions/runs/39110354163 .
+The full source-native queue reference has now closed at 685.73 seconds with exact complete native JSON parity, versus the older 1,237.37-second wave reference. The matched CPU oracle completes in537.31seconds(1.27622x),with the same992complete/eightrejected outcomes and88warning-only changes. This stronger baseline invalidates transferring the earlier wave-only opportunity denominator; any subsequent attribution must use the queue protocol and its own clocks. Published source commit cde662a also passes benchmark-smoke CI: https://github.com/yunwei37/gpu-smt/actions/runs/39110354163 .
+
+
+The first queue-profile qualification is explicitly invalid: the root omitted
+the existing row11 environment parameter and numerical panics were masked by
+Lean fallback. Raw failure data are preserved. Required-input validation and
+the corrected launch remove the fault:24native/24oracle results match primary
+verdicts,231/125calls have complete metadata,all4/5workers have complete EOF
+and wait4receipts,and no numerical error or stderr remains. The new full
+own-clock queue profile starts08:28:53UTC on CPUs0–3 after actual primary
+pair completion. It is a diagnostic for the user's Amdahl question,not another
+GPU variant or an achieved speedup. The invalid clocks are not published as
+an instrumentation-overhead conclusion.

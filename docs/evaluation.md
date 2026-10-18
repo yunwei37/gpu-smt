@@ -602,3 +602,7 @@ Sameoriginal24native8queue:max8tasks,CPU8–11,48GiB. IndependentGPUjobs23.53628
 
 ## Native queue reference and immediate-admission tail diagnostic (2026-10-18)
 The full1000source native8queue reference closes685.730742286s,992/8/0,exact full nativeJSON parity with the earlier wave reference. Matched CPUoracle remainsactive; old wave GPU ratios do not establish gainoverthis strongerCPU interface. [Closedreference](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/native-reference-review.md). Tail10native206.6833/CPU173.2623/GPUwarm170.2565/cold191.4692s,all10same verdict/non-message fields. SixsingleLPjobs,oneat a time; oneGPUcertwin,noactualbatching,allretired. NofullGPUvariant admitted fromthis single selectedtail point. [Raw/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/native-tail10-result-review.md).
+
+
+## Complete stronger native queue CPU pair (2026-10-18)
+Original1000,max8tasks,CPUs0–3,48GiB: native685.730742286s,CPUoracle537.312851014s(1.276222486x). Both992/8/0,exactverdict/non-messageparity,88acceptedwarningchanges,alltaskspansmapped. Onepair,notrepeatability. The earlierwaveGPU/omissionratioscannotbetransferredtothisreference. [Complete raw/tails/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/result-review.md). Newqueueprofilequalificationwithoutrow11isinvalidduetocaughtnumericalpanics;rawpreservedandrequiredinputrepairedbeforecorrectedqualification.

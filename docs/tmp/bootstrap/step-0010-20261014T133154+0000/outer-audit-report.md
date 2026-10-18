@@ -2909,3 +2909,19 @@ uses this queue protocol. Their denominators cannot bespliced into685.731s.
 This changes the observed strongestbaseline frontier withoutchanging any
 RQ,InitialNarrative,OSDItarget or closedconstructor disposition. Root
 self-review only; no independent audit/acceptance claim.
+
+
+### 2026-10-18 — self-audit of complete queue pair and corrected instrumentation
+Readall2000nativeJSONrows,joinedexactIDs/orderandcheckedsourceoutcomes,
+non-messagepayloads,warning-onlyacceptedchangesand1000taskspanspermethod.
+Primary685.731/537.313s iscomplete andunaffectedbythelaterdiagnosticfault.
+ThefirstdiagnosticdidnotpassqualificationdespiteacceptedLeanoutputs:
+rawstderrandnumericalanswerrecordsprove25/33internalpanicsfromamissing
+existingrowgate. Thefailureisa rootlaunchererror,not evidenceofGPU
+impossibility,nativecorrectnessfailureorprofilerperformanceoverhead.
+Retainedrawfailureandfixedrequired-inputvalidation;correctedactual24
+checksservicestatus,allmetadataandEOF/wait4/exitreceiptsalongwithnative
+verdicts. Newfulldiagnosticstartfollowstheactualprimaryownertermination.
+No oldwave/numericreplayclockisdividedintothis newstrongnative reference.
+Scientificscope/RQs remainunmodified;newdataarebaselinesandattribution,
+notplainbatchingnovelty. Self-reviewonly,nooutsideexecutor/auditor.

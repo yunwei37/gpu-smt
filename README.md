@@ -12,13 +12,13 @@ The current research hypothesis is:
 
 Lean-first research prototype on main. The goal is useful end-to-end
 verification acceleration, with all four RQs and the OSDI-quality systems
-objective retained. **The first full GPU race is 1.7% faster than the CPU oracle with a warm
-server, and 0.15% faster when its cold lifecycle is charged; this single
-observation does not establish stable GPU benefit.**
+objective retained. **No end-to-end GPU gain over the strongest available CPU interface has
+been demonstrated.** The current native eight-queue/CPU-oracle pair is
+685.73/537.31seconds,or1.27622×,on all1,000sources with matched native verdicts.
 
 The stronger upstream eight-queue native interface now completes all1,000
 sources in **685.73s**,with exact native response parity versus the older
-1,237.37s eight-item-wave reference. Its matched CPU oracle cell is pending.
+1,237.37s eight-item-wave reference. Its matched CPU oracle completes in537.31s(1.27622×).
 The older GPU ratio below is scoped to waves and does not show acceleration
 over this stronger CPU interface.
 [Closed reference and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/native-reference-review.md).
@@ -32,10 +32,11 @@ GPU route closure requires applicable evidence that the zero-GPU-cost opportunit
 cannot reach that target; a slow implementation alone is insufficient.
 The hourly research task remains active.
 
-| Complete comparison | Native / CPU oracle elapsed | Ratio | Scope |
+| Complete comparison | Native / candidate elapsed | Ratio | Scope |
 |---|---:|---:|---|
-| Current pooled daemon baseline / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, eight-item waves, same4CPUs,48GiB |
-| Current pooled baseline / GPU race | 1,237.37 / 1,020.12 s | 1.21296× | Warm server; full GPU lifecycle1,036.25s gives1.19408× |
+| Native eight queues / CPU oracle | 685.73 / 537.31 s | 1.27622× | One full pair, max8candidates, same4CPUs,48GiB |
+| Earlier pooled eight-item waves / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, eight-item waves, same4CPUs,48GiB |
+| Earlier pooled eight-item waves / GPU race | 1,237.37 / 1,020.12 s | 1.21296× | Warm server; full GPU lifecycle1,036.25s gives1.19408× |
 | Corrected serial-family baseline | 6,691.60 / 5,164.85 s | 1.29560× | Three full pairs, each with its own matched reference |
 | Historical CPU stage | See retained record | 1.34668× | Earlier unbounded-address-space epoch; not pooled with current data |
 

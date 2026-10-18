@@ -330,3 +330,14 @@ admission control. These are concurrent single-model jobs,not fusedGPUbatches;
 record server workers,CPUaffinity,coldstartup andretirement separately.
 The defaultjointmodel path andCPUoracle are unchanged.
 [Plan, actual24results and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/result-review.md).
+
+
+### Pooled all-call profile input
+
+A pooled run-corrected-cost.py --cost-profile run requires the existing
+GPU_ARITHMETIC_RACE_MIN_ROWS from its matched primary. The current comparison
+uses11. The launcher rejects a missing value before collection because the
+numerical backend previously panicked and Lean fallback masked that fault.
+Native verdict parity alone does not validate timing attribution. Retain
+stderr, service errors, all-call metadata and worker EOF/wait4 receipts.
+[Queue profile plan and retained repair](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/plan.md).
