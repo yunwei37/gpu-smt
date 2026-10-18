@@ -1,0 +1,1 @@
+Root local evidence integration: replace only unit-prefix pending status with closed7808-source data and retain ProofNet/fullservice/operational/repetition gaps. Exact RQs and InitialNarrative unchanged. ActualTectonic compile succeeds; page9 rendered/visually checked without clipping/overlap. This is a local update, not another full12-round writing cycle or independent audit.

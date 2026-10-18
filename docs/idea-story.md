@@ -27,6 +27,16 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — complete miniF2F prefix evidence
+The unchanged original7808-source unit-prefix capture closes:3711cachehits,
+40943.77s versus28673.00s nativebatch. Exactprefix hasonly7hits/41738.63s.
+All2992native-complete sources staycomplete, but batch319versusprefix326
+operational outcomes preclude a validated speedratio. Cachehits alone have
+not delivered useful whole-validation benefit. ProofNetcontinues; this is
+our SHRED-parser-based executor, not a fullupstreamservice benchmark.
+[Completeclosedunit evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).
+
+
 ### 2026-10-18 — current residual and native arithmetic pressure
 The complete current-build1000 diagnostic retains all13230/10251native/oracle
 numerical requests and matched native-ranked tails. Direct numeric search in
