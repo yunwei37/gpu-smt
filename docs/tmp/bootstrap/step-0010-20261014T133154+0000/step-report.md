@@ -3980,3 +3980,13 @@ and all original complete-source identities agree. Unit-text collection and
 original ProofNet driver continue. Paper source/PDF updated and changed page9
 visually checked; targeted self-review only. Main GPU wall-profile/race work
 continues independently.
+
+
+### 2026-10-18 — all three corrected CPU pairs close
+
+Native totals6691.600731004s versus CPU oracle5164.851075278s; ratio1.295603810x.
+Every cell992/8/0, matching source outcomes/non-message JSON, same88 warnings.
+Historical1.34668x is separate. The corrected series is complete; do not resume
+or duplicate its collectors. GPU remains open: completed own-clock native LP
+deletion sensitivity1.93412x does not exclude1.5x. Stronger pooled width8
+native/CPU oracle is running on CPU0--3 and the admitted GPU full cell follows.

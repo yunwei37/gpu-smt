@@ -1,0 +1,1 @@
+The standalone driver receipt was replaced by the collector launch copy. This file preserves the original JSON launch value from the retained controller log; it is not an invented replacement or byte copy from Git.
