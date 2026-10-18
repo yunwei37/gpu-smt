@@ -1,0 +1,8 @@
+# FP-first hardware qualification — root self-review
+Real original24sources,width8,CPU8–11 for all server/client numerical work,48GiB; same fresh pooled native and CPU reference. Native 30.531879599s; CPUoracle 27.654410813s; GPUwarm 28.051908324s. All24complete, source verdict/non-message native JSON agrees, 2 message-only changes retained. GPU/CPU warm ratio0.985829930x; cold GPU lifecycle44.237873700s. This preflight shows no GPU benefit and does not admit a new full1000 FP-first matrix under the user's preflight requirement.
+
+The mechanism executes 21 exact-fallback LP races, winners{'cpu-no-certificate': 10, 'cpu': 10, 'gpu': 1}; submittedGPUjobs7, resultjobs1, cancelled6, clientretired7. See result-summary.json and full source-labelled events for actual batch sizes and source cardinalities. It removes many FP-completable races, but this24source measurement does not establish an end-to-end gain. Cancelled device compute remains unknown.
+
+This target starts only after original full GPU lifecycle retires; the concurrent own-clock diagnostic usesCPUs0–3 and this qualification uses8–11. The same finiteJob is deleted withdeleteExit0; labReady=True,otherWorkspaceRunning. GPU sampled resources have2proc-read errors; no resource improvement claim. Exact server/client affinity and raw logs are preserved in../../cuopt-target/.
+
+This is a rejected implementation qualification, not a negative result for the full GPU route or its Amdahl opportunity. No additional variants/tuning grid or full run is started from this result. Next load-bearing evidence is the already-running own-clock profile of the strongest pooled native/CPUoracle family, not a minute wait loop. Root self-review only; no OMP, otherAgent, subagent or independent-review claim.

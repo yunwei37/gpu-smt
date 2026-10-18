@@ -1,0 +1,33 @@
+{
+  "seconds": {
+    "fast-hybrid": 30.531879599,
+    "oracle-hint": 27.654410813,
+    "oracle-gpu": 28.051908324
+  },
+  "GPU_warm_vs_CPU": 0.9858299297713048,
+  "warning_changes": 2,
+  "race_count": 21,
+  "winners": {
+    "cpu-no-certificate": 10,
+    "cpu": 10,
+    "gpu": 1
+  },
+  "GPU_jobs": {
+    "available": true,
+    "submitted_jobs": 7,
+    "result_jobs": 1,
+    "cancel_requested_jobs": 6,
+    "client_retired_jobs": 7,
+    "submitted_batch_size_histogram": {
+      "2": 7
+    },
+    "submitted_distinct_source_histogram": {
+      "2": 7
+    },
+    "server_reported_result_solver_seconds": 0.257,
+    "summed_client_batch_retirement_wall_seconds": 2.3786720409999997,
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  },
+  "disposition": "native qualification passes; no useful paired GPU benefit in this24source preflight, so no additional full1000 FP-first matrix admitted; this variant result cannot close GPU route"
+}

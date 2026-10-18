@@ -574,3 +574,7 @@ Strong pooled-native1237.37044s vs CPU AST oracle1037.84920s, ratio1.192244919x;
 
 ## Complete pooled large-LP GPU race (2026-10-18)
 Same original1000,width8,CPU0–3,48GiB: native1237.37044s,CPUoracle1037.84920s,GPUwarm1020.12139s; full GPU lifecycle1036.25251s. Ratios native/GPU1.212963915warm,1.194081973cold. Each992/8/0; verdict/non-message parity; GPU98warning-only changes.384real2–5source batches,311cancelled/73result/all384retired;4656races90GPUcertwins. One observation does not prove stable GPU benefit or impossibility. GPU sampling203proc-read errors; cancelled device timeunknown. [Full result, heavy tails and limits](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md). Strong pooled own-clock profile now active; private FP-first24hardware qualification follows the retired original Job, ondisjointCPU8–11.
+
+
+## FP-first exact-fallback hardware qualification (2026-10-18)
+Native30.53188s,CPUoracle27.65441s,GPU28.05191s onthe same24,width8,CPU8–11,48GiB. All24complete, verdict/non-message parity,2warning changes.21races(10CPUcert/10CPU-no-cert/1GPUcert),7actualtwo-source GPUbatches(1result/6cancelled/all7retired). No useful GPU benefit; no full1000matrix admitted for this variant. GPUroute is notclosed. [Raw/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/GPU-result-review.md).

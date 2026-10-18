@@ -4133,3 +4133,23 @@ WRITE: targeted result/limit propagation to README and paper. Paper compile
 passes with zeroOverfull boxes. Full paper milestone/write loop incomplete.
 REVIEW: root source/outcome/message/cost/batch/retirement self-review only,
 not independent audit. Frozen RQs/claim/venue ambition unchanged.
+
+
+### 2026-10-18 — FP-first hardware preflight closes; no new full variant matrix
+CPU27.654410813s versus GPU28.051908324s, native30.531879599s;
+all24complete, exact source verdict/non-message parity,2message-only changes.
+21eligible exact-fallback races,10CPUcert/10CPU-no-cert/1GPUcert;7actual
+two-sourceGPUjobs,1result/6cancelled/7retired. Cold lifecycle44.2378737s.
+The finiteJob was deleted;labReadyTrue,otherWorkspaceRunning. It shows no
+paired GPU benefit, so no further full1000FP-first run is admitted.
+This rejects this qualification, not the GPU route or its zero-cost opportunity.
+No new parameter grid or unqualified full collection is started.
+
+Current decisive capture is the strongest pooled-family full native/oracle
+own-clock diagnostic already active onCPU0–3,width8,48GiB. Root will collect
+and analyze it at actual termination; no minute goal polling/waits.
+Original prefix capture remains preserved. Main remains current, all prior
+raw/failed/partial outputs retained. Targeted paper result page15 was rendered
+and visually inspected after c10a8e4;22pages,zeroOverfull. Full-paper milestone
+and independent audit are not claimed; this thread's review is self-review.
+Hourly automation is preserved; goal remains active.

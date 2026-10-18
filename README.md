@@ -48,9 +48,11 @@ cancelled after a member withdraws and73return results. All384retire.
 This result remains below1.5× and is not GPU route closure.
 [Complete GPU results, heavy tails and raw/lifecycle evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md).
 
-A private CPU FP-first, exact-fallback racing mechanism is in24source hardware
-qualification: it targets cancellation of batches containing LPs that CPU
-solves cheaply. It is not yet a full-cohort result.
+The private CPU FP-first, exact-fallback mechanism completes hardware
+qualification: CPU27.65s versus GPU28.05s, all24sources accepted with matching
+native verdicts. It shows no useful GPU benefit, so no full matrix is admitted
+for that variant. This is not a GPU-route impossibility result.
+[Qualification and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/GPU-result-review.md).
 
 A complete separate width4 wall-cost diagnostic gives a **conditional1.93412×**
 zero-LP-cost sensitivity, or **2.24363×** when deleting all CPU-oracle numeric
