@@ -3249,3 +3249,15 @@ the prior source-native rule and preserves original None records. Actual
 repaired source responses are observed. Whole-population results remain open;
 no ratios from partial cells. Frozen Goedel repetitions/original29750 writers
 are untouched. No new GPU route closure, service/scheduler, delegate or checkout.
+
+## E1077 terminal root self-audit — not independent
+Recomputed all six complete cells,1000original IDs each,992complete8rejected,
+no verdict/non-message mismatches,108message deltas/block. Firstblock actual
+four-condition order and backend-inclusive clocks retained; sum ratio1.78205
+is descriptive. Fixed first-native tails and observer failures retained.
+Same frozen numeric/native libraries, no GPU work. Important limitation:
+eager diagnostic computation remains despite no output; repetition does not
+establish uninstrumented production performance. README/paper now say so.
+Tectonic success and page14 visual check passed. No all-RQ closure or OSDI/
+independent-audit claim. Next actions remain full formal generalization and
+the admitted diagnostic-overhead repair; no polling-only continuation.

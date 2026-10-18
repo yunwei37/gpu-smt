@@ -846,9 +846,20 @@ All four conditions have identical per-source verdicts and non-message fields.
 Relative to the compiled control, message-only differences are 108, 104 and 70;
 observer read errors are 55, 104, 109 and zero in acquisition order.
 The control uses common product-application reuse and an upstream native
-numerical executable. Normal output omits heavy diagnostic records but retains
-compiled cost hooks. Other CPU-eligible work shares the host, so a single block
-establishes neither confidence nor global optimality.
+numerical executable. Normal output omits writing heavy diagnostic records,
+but the retained cost hooks still construct diagnostic JSON and read stage
+clocks. These are instrumented-build observations, not measurements with all
+diagnostic cost removed. Other CPU-eligible work shares the host.
+
+Two subsequent complete observations alternate native--direct and direct--native
+order. Native/direct whole times are 615.33/348.91 and 637.27/356.54 seconds,
+with ratios $1.76357\\times$ and $1.78738\\times$. All per-source verdicts and
+non-message fields match in each observation; each retains 108 message
+differences. Across the three complete observations, the ratio of whole-time
+sums is $1.78205\\times$. The range is descriptive, not a confidence interval.
+Repetition preserves the diagnostic-cost limitation rather than eliminating it;
+a matched comparison with eager diagnostic operations removed remains pending.
+No GPU gain or globally fastest CPU result follows.
 
 For the same control-ranked slowest 1\% sources, overlapping service-span sums
 are 738.19 seconds for the compiled control, 400.42 for previous direct export

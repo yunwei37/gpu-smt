@@ -1,5 +1,14 @@
 # Evaluation: current evidence and open questions
 
+### Repeated instrumented arithmetic comparison
+[All three whole observations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md)
+close with native/direct629.48/350.68,615.33/348.91,637.27/356.54s;
+whole-sum1.78205x,all992complete8reject,zero verdict/non-message deltas.
+These retain eager diagnostic JSON/stage clocks and the resource observer.
+Do not call them uninstrumented production measurements. The same-algorithm
+reduced-diagnostic correction is in qualification; no new GPU result follows.
+
+
 ### Actual formal-version oracle integration — 2026-10-18
 [Lean4.9 adapter and actual qualification](../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/result-review.md):
 all64originals44complete20reject in stock/native-preprocessing/direct conditions,

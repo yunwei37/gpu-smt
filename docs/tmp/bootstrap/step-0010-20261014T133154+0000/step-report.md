@@ -4967,3 +4967,29 @@ has no result to fill. REVIEW_GATE root self-check verifies original population,
 all-failure retention and actual repaired execution, not receipt-only launch.
 No independent review or RQ closure claimed. Continue useful analysis/implementation
 while this finite capture runs; no polling-only goal turn.
+
+## E1077 complete repeated whole observations
+All4new cells close once; root losslessly archives raw data and recomputes
+all3whole observations including original E1074. Native/direct times are
+629.483426/350.683824,615.334831/348.913597,637.265747/356.536732s.
+Ratios1.795017/1.763574/1.787378, whole-sum1.782050129; all992complete8reject,
+no per-source verdict/non-message difference,108message differences each.
+Firstblock's intervening ablations remain explicit. Same fixed first-native
+1%/10%IDs, all warnings/observer failures/raw are retained.
+This answers order/repetition uncertainty only for the actual common
+instrumented build, not production/globalCPU/GPU/systemnovelty.
+
+WRITE_GATE propagates the three full observations and diagnostic-cost caveat
+to the existing evaluation paragraph, README and result review; all4RQs and
+InitialNarrative remain unchanged. Paper compiles with Tectonic and page14
+renders without clipping/overlap. Existing underfull warnings retained.
+No full writing loop or milestone review: unchanged scientific contract and
+full-RQ/production/formal evidence incomplete; user prioritizes actual work.
+
+REVIEW_GATE root self-review checks full population, normal captures, no
+partial ratios/tail reranking, actual backend setup/retirement, message/observer
+limits and instrumented-build scope. Source inspection newly establishes
+eager JSON/metadata/clock cost despite output suppression. E1080 addresses
+that actual measurement threat using unchanged algorithms/numeric binaries;
+the six old cells stay preserved and are not renamed uninstrumented.
+[Complete result/raw/reproducer](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md).

@@ -55,6 +55,22 @@ and non-message fields. Warning/observer differences remain.
 a GPU gain or an OSDI contribution.**
 [Complete source, composition, raw results and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/full1000-result-review.md).
 
+Two alternating repetitions now close: 615.33/348.91 s and 637.27/356.54 s
+for the compiled control/direct path. Across all three whole observations,
+the sum ratio is **1.78205×**, with all verdicts and non-message fields matching.
+These are **instrumented-build results**: disabling diagnostic output still
+constructs diagnostic JSON and reads stage clocks. A same-algorithm comparison
+with those operations removed is being qualified. The existing timings are
+not a zero-instrumentation production claim.
+[Every repetition and fixed-tail results](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md).
+
+The oracle also runs in the formal datasets' unchanged Lean4.9 environment.
+A selected64-source integration check has identical full responses in all three
+modes and88direct native certificate checks, including6nonlinear requests.
+The complete7,808miniF2F/5,952ProofNet comparison is acquiring; the selected
+check supplies no population speedup.
+[Formal adapter and full-population protocol](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).
+
 An existing ready-goal adapter also exposes argument-bearing nonlinear goals
 to immutable batches; its15-source qualification forms1050problems,
 1040native checks and10fallbacks. These are exported problems, not proof of

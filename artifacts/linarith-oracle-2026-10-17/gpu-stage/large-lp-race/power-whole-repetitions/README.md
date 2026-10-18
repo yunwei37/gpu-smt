@@ -1,7 +1,7 @@
-# Whole Power/native-control repetitions
-[Predeclared plan](plan.md), [self-review](plan-review.md).
-Twofurtheroriginal1000pairs runinopposingorders againstthe measuredcompiled
-Fast/hybridcontrol, afterthenative-default-tailfalsifiercompletedwithoutgain.
-Same8queues/4CPU4--7/48GiB/officialomega/frozencode. Launchisnotcompletion.
-FirstE1074blockanditscomponentcontrolsremainseparate/provenancepreserved.
-NoGPU/OSDI/confidence/independentauditclaim. Rootonly.
+# Complete whole-cohort repetitions
+
+[Plan](plan.md), [source/launch](driver.py), [all raw results](raw/),
+[reproducible analysis](analyze.py), [result and limitations](result-review.md).
+All three whole observations preserve 992 complete/eight rejected originals and
+all non-message fields. Their sum ratio is 1.78205x in the common instrumented
+build. This does not establish uninstrumented production or GPU performance.
