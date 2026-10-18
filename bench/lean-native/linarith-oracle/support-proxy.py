@@ -246,6 +246,6 @@ class Server(socketserver.ThreadingUnixStreamServer):
  daemon_threads=False
 if os.path.exists(a.socket):raise RuntimeError('socket already exists: '+a.socket)
 with Server(a.socket,Handler)as server:
- print(json.dumps({'ready':True,'pid':os.getpid(),'backend':('device-batched-simplex'if a.cuda_host else a.backend),'socket':a.socket,'independent_jobs':a.independent_jobs,'lp_method':a.lp_method,'formulation':('original_feasibility' if a.original_feasibility else 'phase_I_artificial_slack'),'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
+ print(json.dumps({'ready':True,'pid':os.getpid(),'backend':('device-batched-simplex'if a.cuda_host else a.backend),'socket':a.socket,'independent_jobs':a.independent_jobs,'lp_method':('device_phase_I_simplex'if a.cuda_host else a.lp_method),'formulation':('phase_I_nonnegative_artificial_basis'if a.cuda_host else 'original_feasibility' if a.original_feasibility else 'phase_I_artificial_slack'),'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
  try:server.serve_forever()
  finally:os.unlink(a.socket)

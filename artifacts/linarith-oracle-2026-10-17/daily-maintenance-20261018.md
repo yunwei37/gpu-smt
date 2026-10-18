@@ -103,3 +103,20 @@ basic support,with exact CPU repair and the same Lean check,has more decision
 value than another thread/cache/precision grid. A strong CPU numerical
 baseline must accompany it; simply choosing a different established solver
 willnotbe claimed as systems novelty.
+
+
+Follow-through:the complete own-clock profile and Nat/Int negative attempt are
+pushed728952c. Exact-LP-head10 finds a stronger CPUHiGHS control18.13s vs74.44s
+native;fresh full1000three-cell capture runs automatically,not idle waiting.
+Barrier encounters reproduced async allocation failure under48GiB;two failed
+finite loader repairs are retained and not applied as services. A substantive
+legacy-allocation device-batched phase-I solver is compiled/run on5090:five
+actual2/3-source CUDA launches,independent model cancellation,one exact checked
+GPUcertificate,all launchesretired. Its37.98sselectedpreflight trails18.13sHiGHS,
+so no full unprofitable candidate matrix is started. The observed numerical
+weakness is degeneracy/scaling (up to16745pivots),notmissingbatching alone.
+The next single numerical repair is row/column equilibration plus reduced-cost
+pricing on the same10;no parameter grid/new cohort. Full CPU results,not another
+report,will decide whether the stronger published numerical baseline clears1.5x.
+The remaining mainline gap is a real system contribution surviving strongest
+native/HiGHS and completedGPU comparisons;these controls do not create novelty.

@@ -47,3 +47,14 @@ CPU HiGHS may independently improve the full cohort but is prior-art baseline,
 not a novel systems contribution. The selected10 diagnostic is inspected and
 not final/repeated evidence. This implementation tests a different mechanism
 from per-job cuOpt launching,rather than another narrowkernel proxy.
+
+## Observed numerical algorithm repair
+The first real five-batch preflight reaches up to16,745Bland pivots beforeCPU
+cancellation and three numerical declines,while CPUHiGHS is18.13s vsGPU37.98s.
+Before any full run,apply standard row/column infinity-norm equilibration and
+largest-negative-reduced-cost pricing (lowest-index ties),then unscale hints.
+This changes the floating numerical search,not native acceptance. It directly
+addresses observed degeneracy/conditioning;no tolerance/iteration/time grid
+or additional workload selection is admitted. CPU cancellation remains the
+termination boundary for a cycling numerical attempt. Retain original source
+and results separately,and rerun the same selected10only once for this repair.

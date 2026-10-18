@@ -1,0 +1,24 @@
+{
+  "pid": 183274,
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/workspaces/.agent-state/gpu-smt-deps/cuda-12.8-minimal/sdk/bin/nvcc",
+    "-ccbin",
+    "/usr/bin/g++-14",
+    "--allow-unsupported-compiler",
+    "-std=c++17",
+    "-O3",
+    "--cudart",
+    "shared",
+    "-shared",
+    "-Xcompiler",
+    "-fPIC",
+    "-gencode",
+    "arch=compute_120,code=sm_120",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/device-batched-simplex.cu",
+    "-o",
+    "/tmp/gpu-smt-linarith-oracle-20261017/device-batched-simplex/device-batched-simplex.so"
+  ]
+}

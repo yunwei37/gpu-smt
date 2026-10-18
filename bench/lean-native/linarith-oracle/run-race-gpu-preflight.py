@@ -56,7 +56,7 @@ with (U/(args.label+'-driver.log')).open('w')as log:
  p=subprocess.Popen(cmd,cwd=R,env=env,stdout=log,stderr=subprocess.STDOUT)
  receipt={'utc':time.strftime('%FT%TZ',time.gmtime()),'pid':p.pid,
   'start_ticks':Path('/proc',str(p.pid),'stat').read_text().split()[21],
-  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,'lp_method':args.lp_method,'original_feasibility':args.original_feasibility,'device_simplex':args.device_simplex,
+  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,'lp_method':('device_phase_I_simplex'if args.device_simplex else args.lp_method),'original_feasibility':args.original_feasibility,'device_simplex':args.device_simplex,
   'RLIMIT_AS':48*1024**3,'affinity':args.affinity,'build':build,
   'scope':'Declared finite source cohort; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt'}
  (A/('arithmetic-'+args.label+'-launch.json')).write_text(json.dumps(receipt,indent=2)+'\n')

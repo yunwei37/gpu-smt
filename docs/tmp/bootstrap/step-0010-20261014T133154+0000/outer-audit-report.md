@@ -2954,3 +2954,12 @@ ActualCPUpreflight admitsfull1000HiGHS alternative;selected10 speedup isnot
 fullcohortdata. TheGPUpath reachedBarrier butCUDAallocationfailures masked
 bynativefallback preventcalling40.056s healthyGPUperformance. Alljobsretired
 andfailurebytesretained. FullCPUpairactive;originalgoal/hourly/allRQspreserved.
+
+
+### Device batching self-audit
+Realdevicekernelgroupsandpermodelcancellationareprovedbyactuallaunches,
+notRPCpeakcounts. Nativeverdict/non-messageparityandkernelretirementcomplete.
+Neither32.719sselectedGPUclocknor18.130sselectedHiGHSclockisfullcohortdata;
+newfullCPUoracle529.171sdoesnottransferoldwaveGPU/Amdahldenominators.
+NoCPU-onlyclosureorfalseindependentaudit. Remainingnumerical/fullcohort/
+noveltygapsretained. ProtectedprefixandhealthyfullCPUcapturearenotrestarted.

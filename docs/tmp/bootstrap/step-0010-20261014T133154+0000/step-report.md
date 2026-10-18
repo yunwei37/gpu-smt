@@ -4424,3 +4424,16 @@ results and repeatedcudaMallocerror2 invalidate normalperformance inference.
 TemporaryJobUIDdeleted;otherWorkspaceRunning/labReady. Failure retained.
 WRITE recordsactualresult and scopes;REVIEW rootself-review,not independent.
 Repairallocationfault beforefurtherGPU performance. No routeclosure.
+
+
+### 2026-10-18 — actual cancellable device batching,not a cuOpt job wrapper
+EXPERIMENT rootimplementsCUDAphase-I LPsupport inownWorkspace,nvcc12.8sm120,
+legacyallocation48GiB,firstandscaledactualsame10sourcecaptures. First37.979s,
+5real2/3-sourcebatches,1exactcheckedGPUwin. Scaled32.719s,6real2-sourcebatches,
+2exactcheckedGPUwins,all10verdict/non-messageparity,all6groupsretired/pending0.
+OneLPcancelswithoutdiscardingsiblings. Numericaldegeneracyremains12435pivots;
+CPUHiGHS18.130sstronger,sono fullunprofitableGPUmatrix. ThisisnotGPUclosure.
+Currentfreshfullnative691.096/FPfirstCPU529.171s,1000each992/8/0,88warning-only
+changes;HiGHSfullcellstillactive. Dailyreflection/source/rawpublished.
+WRITE recordsboundedmechanism/performance/selfreview;REVIEW rootself-audit,
+noAgent/independentclaim. AllRQ/novelty/fullpaperremainopen;goal/hourlyactive.
