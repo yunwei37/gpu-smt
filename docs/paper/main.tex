@@ -1074,6 +1074,24 @@ The upstream queue API is a baseline correction, not our systems contribution.
 Negative route closure requires applicable evidence that GPU cannot
 push the best valid overall result beyond $1.5\times$.
 
+A fresh full-cohort comparison adds HiGHS support search with the
+same exact CPU shadow and native eight-queue interface. Native, CPU-only and
+HiGHS paths take 691.10, 529.17 and 462.50 seconds, respectively. The best
+observed ratio is $1.49425\times$, short of $1.5\times$ by 1.77 seconds in
+this single pair. Each returns 992 complete and eight rejected sources;
+verdicts and non-message response fields agree, with 104 warning-only source
+changes for HiGHS. The HiGHS cell has 150 process-observer read errors, so
+its sampled memory peak is incomplete. Native-selected slowest 10\% task
+spans sum to 2,313.71 versus 1,502.73 seconds; their occupied unions are
+656.44 and 439.78 seconds, not independent-subset speedups.
+This stronger published solver is a competing CPU mechanism, not our systems
+novelty. Its LP calls sum to only 7.30 seconds of overlapping wall time,
+while 1,214 exact no-certificate race decisions sum to 177.76 seconds.
+Neither sum is a disjoint whole-wall share. The result motivates examining
+the cost of establishing failed searches as well as successful supports;
+it does not establish a below-$1.5\times$ GPU ceiling or repeated threshold
+performance.
+
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
 used to qualify CPU alternatives. Each comparison uses its own version,
