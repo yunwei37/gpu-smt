@@ -1,0 +1,9 @@
+{
+  "lossless_gzip_container_added_to_misnamed_plain_JSON_files": [
+    "invalid-stale-library-attempt/raw/cpu/rep1-oracle-highs-backend/support-calls.jsonl.gz",
+    "invalid-stale-library-attempt/raw/gpu/rep1-oracle-gpu-backend/support-calls.jsonl.gz",
+    "raw/cpu/rep1-oracle-highs-backend/support-calls.jsonl.gz",
+    "raw/gpu/rep1-oracle-gpu-backend/support-calls.jsonl.gz"
+  ],
+  "reason": "custom device-progress proxy writes plain JSON regardless of suffix; copied wrapper had renamed its output .gz. Raw source bytes preserved by gzip decompression; no JSON/content normalization or timing rerun. Future runner keeps original .jsonl name."
+}

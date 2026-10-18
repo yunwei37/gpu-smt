@@ -1,0 +1,47 @@
+{
+  "launched_groups": 2,
+  "group_sizes": [
+    1,
+    2
+  ],
+  "distinct_candidate_sources_by_group": [
+    1,
+    2
+  ],
+  "models": 3,
+  "model_states": {
+    "cancelled": 3
+  },
+  "model_iterations": [
+    0,
+    0,
+    92
+  ],
+  "device_timed_models": 3,
+  "summed_model_build_seconds_NOT_pure_GPU": 0.61431014,
+  "retired_groups": 2,
+  "provider_probe": {
+    "ready": true,
+    "pid": 1,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "RLIMIT_AS": [
+      51539607552,
+      51539607552
+    ],
+    "engine": "CUDA batched phase-I simplex",
+    "live_allocations": 0,
+    "live_device_bytes": 0,
+    "peak_device_bytes": 23068672
+  },
+  "GPU_proxy_connections": 50,
+  "GPU_parsed_models": 19,
+  "strong_CPU_proxy_connections": 44,
+  "strong_CPU_parsed_models": 14,
+  "restoration": "passed-restored at finite lifecycle boundary; no demonstrated useful GPU acceleration",
+  "scope": "Actual device progress and native/HiGHS retention are separate. No selected GPU evidence in this real run. Cancelled calls are not zero CPU work; model build includes allocation/copy/context. Device timer clock is not spliced into host elapsed. Cold lifecycle separately reported."
+}

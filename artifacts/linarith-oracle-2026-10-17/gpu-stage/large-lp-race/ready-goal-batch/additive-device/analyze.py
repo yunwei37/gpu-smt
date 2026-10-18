@@ -28,9 +28,10 @@ for label in ['cpu','gpu']:
  out[label]['goal_batch_outcomes']=dict(collections.Counter(x['outcome']for x in ev))
  out[label]['checked_problems']=sum(x['checked']for x in ev if x['outcome']=='checked')
  out[label]['native_problem_fallbacks']=sum(x['fallback']for x in ev if x['outcome']=='checked')
+out['additive_comparison_valid']=(out['GPU_portfolio']['missing_strong_CPU']==0 and not out['GPU_portfolio']['spawn_errors'] and not out['GPU_portfolio']['retirement_errors'])
 out['CPU_vs_native']=out['native']['whole_seconds']/out['cpu']['whole_seconds']
-out['GPU_vs_native']=out['native']['whole_seconds']/out['gpu']['whole_seconds']
-out['GPU_elapsed_change_vs_CPU']=out['gpu']['whole_seconds']/out['cpu']['whole_seconds']-1
+out['GPU_vs_native']=out['native']['whole_seconds']/out['gpu']['whole_seconds']if out['additive_comparison_valid']else None
+out['GPU_elapsed_change_vs_CPU']=out['gpu']['whole_seconds']/out['cpu']['whole_seconds']-1 if out['additive_comparison_valid']else None
 out['scope']='One selected15-source/eightqueue/fourCPU8--11/48GiB warm-pipeline pair; common omega and ready-goal arguments, same private numerical build. Device cold lifecycle separate. Not1000/fullpopulation, confidence, GPU impossibility or novelty. Root self-review.'
 (A/'matched-analysis.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(out,indent=2))

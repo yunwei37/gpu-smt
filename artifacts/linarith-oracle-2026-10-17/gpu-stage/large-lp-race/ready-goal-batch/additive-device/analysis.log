@@ -1,0 +1,82 @@
+{
+  "native": {
+    "whole_seconds": 116.985124583,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": []
+  },
+  "cpu": {
+    "whole_seconds": 79.930974878,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 4,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": [
+      "Proof_00009",
+      "Proof_06106",
+      "Proof_09145",
+      "Proof_16213",
+      "Proof_20500",
+      "Proof_24894"
+    ],
+    "goal_batch_outcomes": {
+      "checked": 6,
+      "fallback": 1
+    },
+    "checked_problems": 1040,
+    "native_problem_fallbacks": 10
+  },
+  "gpu": {
+    "whole_seconds": 79.593183595,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": [
+      "Proof_00009",
+      "Proof_06106",
+      "Proof_09145",
+      "Proof_16213",
+      "Proof_20500",
+      "Proof_24894"
+    ],
+    "goal_batch_outcomes": {
+      "checked": 6,
+      "fallback": 1
+    },
+    "checked_problems": 1040,
+    "native_problem_fallbacks": 10
+  },
+  "CPU_GPU_full_JSON_differences": [],
+  "GPU_portfolio": {
+    "races": 56,
+    "winners": {
+      "cpu-highs": 5,
+      "cpu-no-certificate": 44,
+      "cpu-highs-infeasible": 6,
+      "cpu": 1
+    },
+    "missing_strong_CPU": 0,
+    "spawn_errors": [],
+    "retirement_errors": []
+  },
+  "additive_comparison_valid": true,
+  "CPU_vs_native": 1.4635768519220036,
+  "GPU_vs_native": 1.4697882318448805,
+  "GPU_elapsed_change_vs_CPU": -0.004226037321771403,
+  "scope": "One selected15-source/eightqueue/fourCPU8--11/48GiB warm-pipeline pair; common omega and ready-goal arguments, same private numerical build. Device cold lifecycle separate. Not1000/fullpopulation, confidence, GPU impossibility or novelty. Root self-review."
+}

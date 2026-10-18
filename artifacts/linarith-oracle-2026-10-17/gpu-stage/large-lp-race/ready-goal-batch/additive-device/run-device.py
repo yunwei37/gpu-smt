@@ -7,7 +7,7 @@ assert source.count(needle)==1
 # The assembled run-batch program executes a fully expanded comparison source.
 batch_exec="exec(compile(s,str(p),'exec'),{'__name__':'__main__','__file__':str(p),'BATCH':BATCH})"
 newclass=(A/'Runner-source.py').read_text()
-transforms=[('GpuArithmetic.BatchBaseline','GpuArithmetic.IntegerControl'),('GpuArithmetic.BatchOracle','GpuArithmetic.GoalBatchArgs'),("out/'support-calls.jsonl'","out/'support-calls.jsonl.gz'")]
+transforms=[('GpuArithmetic.BatchBaseline','GpuArithmetic.IntegerControl'),('GpuArithmetic.BatchOracle','GpuArithmetic.GoalBatchArgs')]
 prefix=''
 for old,new in transforms:prefix+="assert "+repr(old)+" in s\ns=s.replace("+repr(old)+","+repr(new)+")\n"
 replacement=prefix+"s=s.replace('def main():',"+repr(newclass+"def main():")+",1)\n"+batch_exec

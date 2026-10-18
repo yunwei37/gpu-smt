@@ -1,0 +1,177 @@
+{
+  "launched_groups": 2,
+  "group_sizes": [
+    1,
+    2
+  ],
+  "distinct_candidate_sources_by_group": [
+    1,
+    2
+  ],
+  "models": 3,
+  "model_states": {
+    "cancelled": 3
+  },
+  "model_iterations": [
+    0,
+    0,
+    92
+  ],
+  "device_timed_models": 3,
+  "summed_model_build_seconds_NOT_pure_GPU": 0.61431014,
+  "device_timer_intervals": [
+    [
+      1792339957944955808,
+      1792339957944956320
+    ],
+    [
+      1792339967574897152,
+      1792339967574897760
+    ],
+    [
+      1792339967574896960,
+      1792339967584275200
+    ]
+  ],
+  "retired_groups": 2,
+  "provider_probe": {
+    "ready": true,
+    "pid": 1,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "RLIMIT_AS": [
+      51539607552,
+      51539607552
+    ],
+    "engine": "CUDA batched phase-I simplex",
+    "live_allocations": 0,
+    "live_device_bytes": 0,
+    "peak_device_bytes": 23068672
+  },
+  "GPU_proxy_connections": 50,
+  "GPU_parsed_models": 19,
+  "strong_CPU_proxy_connections": 44,
+  "strong_CPU_parsed_models": 14,
+  "GPU_actual_matrix_shapes": [
+    {
+      "rows": 43,
+      "cols": 252,
+      "nnz": 1072,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 103,
+      "cols": 335,
+      "nnz": 1514,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 43,
+      "cols": 167,
+      "nnz": 948,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 43,
+      "cols": 167,
+      "nnz": 948,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 103,
+      "cols": 335,
+      "nnz": 1506,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 103,
+      "cols": 335,
+      "nnz": 1514,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 119,
+      "cols": 362,
+      "nnz": 1633,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 119,
+      "cols": 362,
+      "nnz": 1625,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 119,
+      "cols": 362,
+      "nnz": 1625,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 136,
+      "cols": 390,
+      "nnz": 1756,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 65,
+      "cols": 189,
+      "nnz": 906,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 156,
+      "cols": 347,
+      "nnz": 1599,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 156,
+      "cols": 347,
+      "nnz": 1599,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 80,
+      "cols": 299,
+      "nnz": 1888,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 111,
+      "cols": 299,
+      "nnz": 2040,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 156,
+      "cols": 524,
+      "nnz": 2724,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 80,
+      "cols": 405,
+      "nnz": 2796,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 50,
+      "cols": 231,
+      "nnz": 2848,
+      "reply_state": "client_disconnected"
+    },
+    {
+      "rows": 50,
+      "cols": 231,
+      "nnz": 2889,
+      "reply_state": "client_disconnected"
+    }
+  ],
+  "restoration": "passed-restored at finite lifecycle boundary; no demonstrated useful GPU acceleration",
+  "scope": "Actual device progress and native/HiGHS retention are separate. No selected GPU evidence in this real run. Cancelled calls are not zero CPU work; model build includes allocation/copy/context. Device timer clock is not spliced into host elapsed. Cold lifecycle separately reported."
+}

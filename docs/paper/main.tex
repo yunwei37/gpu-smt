@@ -729,16 +729,21 @@ This control narrows the incremental frontend advantage and prevents reading
 the earlier $1.50862\times$ ratio as an improvement over this stronger native
 composition.
 
-A first within-proof batching adapter exports ready arithmetic goals
-sequentially, solves immutable requests in parallel, then checks certificates
-in the same Lean state. On 12 original sources, it forms two groups of 512
-problems and checks all 1,024 certificates. Sequential and batched whole times
-are 98.96 and 98.47 seconds. Both retain four complete and eight rejected
-outcomes; two sources have message-only differences. No parsed external
-large LP is associated with those groups, and grouped model shapes were not
-retained. This qualifies a CPU interface, not a useful performance gain or
-demonstrated GPU batch supply. Argument-bearing nonlinear tails remain
-outside this first adapter.
+A ready-goal adapter exports arithmetic goals sequentially, solves immutable
+requests in parallel, then checks certificates in the same Lean state. It
+elaborates original arguments per goal and retains native fallback. A selected
+15-source qualification forms 1,050 problems: two groups of 512 small linear
+problems and four smaller nonlinear groups. It checks 1,040 certificates
+and falls back on ten. Exported problem counts are distinct from device-ready
+LPs. The fresh matched native, CPU and additive GPU conditions take 116.99,
+79.93 and 79.59 seconds, respectively, with seven complete and eight rejected
+outcomes in each. Full CPU/GPU responses agree; six message-only differences
+from native remain. All 56 races retain native and HiGHS competitors.
+Two device groups launch three models, including a two-candidate group;
+all retire. No GPU answer wins. The 0.42\% elapsed difference in one selected
+preflight therefore establishes no useful GPU benefit or full-matrix
+admission. The first stale-library integration attempt is retained separately,
+rather than included as a valid additive comparison.
 
 \paragraph{Independent device groups.}
 A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device

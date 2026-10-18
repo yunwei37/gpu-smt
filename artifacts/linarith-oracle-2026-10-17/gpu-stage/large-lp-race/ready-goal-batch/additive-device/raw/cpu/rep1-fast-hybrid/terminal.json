@@ -1,0 +1,32 @@
+{
+  "method": "fast-hybrid",
+  "rep": 1,
+  "state": "complete",
+  "expected": 15,
+  "attempts": 15,
+  "counts": {
+    "complete": 7,
+    "rejected": 8
+  },
+  "whole_ns": 116985124583,
+  "cpu": {
+    "collector": {
+      "user": 0.13854199999999994,
+      "system": 13.689803000000001
+    },
+    "waited_children": {
+      "user": 272.327553,
+      "system": 4.770555
+    }
+  },
+  "sampled_peak_fleet_pss_with_collector": 7498232832,
+  "sampled_peak_fleet_rss_with_collector": 11254865920,
+  "sampling_read_errors": 0,
+  "workers": 1,
+  "resource_observer_enabled": true,
+  "sampling_seconds": 1,
+  "effective_RLIMIT_AS": 51539607552,
+  "width": 8,
+  "normalization": "none; preserve complete parsed native JSON values",
+  "scope": "one original-order offline native-batch grouped-array observation; corpus 15 of 15 candidates"
+}

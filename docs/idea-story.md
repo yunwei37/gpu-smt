@@ -37,6 +37,17 @@ our SHRED-parser-based executor, not a fullupstreamservice benchmark.
 [Completeclosedunit evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).
 
 
+### 2026-10-18 — actual ready-goal GPU qualification
+Argument-faithful batches expose1050immutable problems on15originals.
+Freshnative116.99s/CPU79.93s/CPU+GPU79.59s:all56racesretainnative+HiGHS,
+but noGPUanswerwins. Actual2groups/3devicemodels include across-candidate
+batch, allretired. One0.42%elapseddifference is not demonstratedGPUbenefit.
+The firststale-librarycomposition wasinvalidandretained; defaultprivate
+Cargo rebuild plusfreshpair suppliesactualvalidruntimeevidence.
+[Closedqualification](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md).
+No newfullGPUmatrix orsmallvariantgrid; broaderopportunity/exclusion,
+systemsnovelty andstrongfullworkloadcomparisons remainopen.
+
 ### 2026-10-18 — current residual and native arithmetic pressure
 The complete current-build1000 diagnostic retains all13230/10251native/oracle
 numerical requests and matched native-ranked tails. Direct numeric search in

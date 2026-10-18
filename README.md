@@ -10,162 +10,80 @@ The current research hypothesis is:
 
 ## Current status
 
-Lean-first research prototype on main. The goal is useful end-to-end
-verification acceleration, with all four RQs and the OSDI-quality systems
-objective retained. **GPU acceleration over the strongest CPU path is still
-unproven.** The latest complete 1,000-candidate comparison is:
+Lean-first research prototype on main. All four research questions and the
+OSDI-quality systems objective remain open. **Useful GPU acceleration beyond
+the strongest measured CPU composition has not been demonstrated.**
 
-| Complete CPU pair, same native eight-queue interface | Native | Two-sided oracle | Ratio |
-|---|---:|---:|---:|
-| Native first | 681.24 s | 453.51 s | 1.50216× |
-| Oracle first | 687.26 s | 447.31 s | 1.53644× |
-| Native first, third pair | 691.36 s | 464.58 s | 1.48814× |
+The strongest completed native-arithmetic control uses stock Lean omega in
+both frontends, with the same two-sided numerical backend, eight candidate
+queues, four CPUs and48GiB:
 
-All three pairs return 992 complete / 8 rejected / zero operational outcomes per
-method, with matching verdicts and non-message native fields and the same
-104 message-only source differences. In the first block, positive-only
-HiGHS takes472.09s(1.44305×); exact-verified negative certificates remove
-some expensive failed-search work. These are **CPU results**.
-The predeclared aggregate whole-time ratio is **1.50862×**
-(2,059.87/1,365.40s), meeting the local1.5×continuation criterion.
-The third pair is below1.5× and is retained. This is an enriched arithmetic-heavy
-subset, not a confidence interval, full-population/service-capacity result
-or systems novelty. The complete component ablation takes **518.50s** with native preprocessing
-and the same two-sided numeric backend, versus464.58s with direct export:
-only **1.11607×** additional end-to-end gain (10.40%lesselapsed).
-Much of the total improvement is backend engineering. The1.50862×score
-must not be presented as gain over every constructed CPU competitor or as
-systems novelty. The complete29,750sourcegenerality block is now admitted
-through a real transport/logging preflight.
-[First full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md),
-[reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md),
-[all three pairs and aggregate](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/three-pair-result.json).
+| Complete original1,000-source control | Whole time |
+|---|---:|
+| Native frontend + omega |454.82s|
+| Direct frontend + omega |388.17s|
+| Direct frontend without omega |450.99s|
 
-A source-native scheduling control tests whether fixed queue tails weaken
-that reference. On the original first64, the same binary takes **54.81s**
-with static queues and **58.32s** with FIFO workers, with identical full native
-responses and equal eight-worker/four-CPU resources. The slower variant is
-not admitted for a full matrix.
-[Closed control and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md).
+Direct export gives **1.17172×** over this common-omega native path. Each returns
+992complete/8reject/0operational with matching verdicts and non-message fields;
+warning differences and observer failures are retained. This is one fixed-order
+block, not confidence, a globally optimal CPU frontier or a novel solver.
+[Source, complete data and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/full1000-result-review.md).
 
-Current CPU-oracle numeric work also differs greatly from the old baseline.
-In the third1,000-source pair, parsed HiGHS searches sum to9.25wall seconds;
-the complete speculative stages include exact work and overlap. A fixed-lane
-model deleting all recorded race work gives1.53475× versus its native reference.
-**This does not rule out1.5× GPU performance and is not a strict Amdahl bound.**
-[Own-clock analysis and missing coverage](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-third/current-race-budget-review.md).
+The earlier three predeclared native/oracle pairs aggregate **1.50862×** against
+their original reference; one pair is below1.5×. That result remains valid at
+its declared scope, but must not be called an advantage over the stronger
+composition above or an OSDI-level systems contribution.
+[All original pairs](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/three-pair-result.json).
 
-The [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
-uses 1,000 arithmetic-heavy released GoedelWorkbook candidates, four CPUs and
-48 GiB. An untrusted external oracle proposes certificates; exact arithmetic
-validates numerical hints and Lean checks proof certificates. Failed hints
-retain native fallback. The native reference uses the upstream eight
-contiguous queues, not the older eight-item-wave interface.
+An untrusted external arithmetic oracle exports assumptions once, constructs
+products and searches for coefficients outside Lean, then returns a certificate
+for native checking. Failed hints retain native fallback. The original complete
+29,750-source generalization acquisition is running on its frozen earlier build;
+it is not a completed comparison against every newer CPU composition.
 
-Final continuation uses the better valid CPU/GPU result relative to its own
-strong native reference. GPU route closure requires applicable evidence
-that the zero-GPU-cost opportunity cannot reach 1.5×; one slow implementation
-is insufficient. The hourly research task remains active.
+Current work exposes already-ready proof goals to the numerical batch interface.
+Original argument-bearing nonlinear goals now form real groups, with1050problems,
+1040native certificate checks and10fallbacks in a15-source qualification.
+Whole84.06s sequential/79.77s batch is selected CPU evidence, not a GPU result.
+Full immutable requests/replies and actual LP shapes distinguish exported problems
+from floating-service work.
+[Implementation and real qualification](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/README.md).
 
-RTX 5090 now runs genuinely batched, individually cancellable LP kernels.
-At the matched 32-candidate/four-CPU capacity preflight, native/CPU/GPU
-take 72.79/39.66/45.02 s on the original first64 sources. Ten actual kernels
-process batches of 2–4 LPs, but GPU remains 13.51% slower than the CPU oracle.
-This backend has no full-run admission. Established certificate checking and
-GPU simplex primitives alone do not establish our systems contribution.
-[Capacity result and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
-Retained model-level records expose up to8.91s of dispatch head-of-line delay.
-Independent groups now execute under48GiB using request-sized driver VMM:
-20actual groups/36LPs in the repaired original64 trial, with complete device
-samples, up to four distinct groups overlapping, and zero live allocations
-after completion. GPU takes43.07s versus fresh CPU37.78s, **14.00%slower**;
-this is not admitted for a full GPU matrix. Earlier pool failures remain
-[retained](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
-[Actual device progress, raw data and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/request-sized-vmm/final-drain/result-review.md).
+RTX5090 executes independently cancellable LP groups using request-sized CUDA
+VMM. The last valid additive portfolio retains native hybrid and CPU HiGHS:
+38.02s CPU versus39.33s CPU+GPU on64 originals, **3.43%more elapsed**.
+[Valid device composition and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).
+The ready-goal additive trial on15 originals gives116.99s native/79.93s CPU/
+79.59s CPU+GPU. All56races retainHiGHS; noGPUanswerwins. Actualtwo groups/
+three device models retire, including one cross-candidate group, but the0.42%
+elapsed difference doesnot establish device benefit or admit a fullmatrix.
+The first stale-library attempt is retained separately; the valid trial uses
+the default private Cargo build and fresh CPU/reference capture.
+[Ready-goal device evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md).
 
-That GPU composition kept the native hybrid CPU contender but replaced the
-CPU oracle's HiGHS contender. It therefore did not preserve the strongest CPU
-portfolio when adding GPU work. The corrected same-resource preflight retains both CPU contenders and adds
-GPU speculation, selecting first exactly verified evidence. CPU takes **38.02s**,
-CPU+GPU **39.33s**, or **3.43%more elapsed**, with identical full responses.
-HiGHS wins46races, native21, GPU1exact-negative. Actual GPU work and complete
-retirement are verified, but this condition has no full-run admission.
-[Corrected composition, raw data and self-review](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).
+Current complete phase accounting includes successful and failed oracle calls,
+products, proof checks, model shapes and matched source tails. Its fixed-path
+zero-cost envelopes do **not** establish a scheduler-independent Amdahl bound.
+A losing backend is not proof that all GPU approaches are impossible.
+Final continuation uses the better valid CPU/GPU result against its own strong
+reference; broad GPU closure requires applicable exclusion evidence.
+[Own-clock accounting and gaps](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/full1000-result-review.md).
 
+The original7,808-source miniF2F prefix captures are complete:
+batch28,673.00s, exact-text41,738.63s and unit-text40,943.77s.
+Unit reuse has3711cache lookups, but operational outcomes differ from batch
+and complete CPU accounting is censored. These are descriptive elapsed
+observations, **not validated speedups**. ProofNet continues in the original
+driver. This is the project's SHRED-parser-based native executor, not a full
+upstream SHRED/Kimina service comparison.
+[Complete prefix outcomes and raw data](artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).
 
-
-The same-interface all-call profile is complete on its own clocks:
-native691.20s/CPUoracle545.05s. Numeric products and LP search occupy a
-411.68s interval union(75.53%of the oracle clock),with substantial overlap.
-Deleting all those occupied instants gives an intentionally optimistic5.18×
-model,not an achieved GPU result or scheduler-independent bound; it doesnot
-justify GPU route closure.
-[Complete attribution and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/full1000-result-review.md).
-
-
-| Complete comparison | Native / candidate elapsed | Ratio | Scope |
-|---|---:|---:|---|
-| Native eight queues / CPU oracle | 685.73 / 537.31 s | 1.27622× | One full pair, max8candidates, same4CPUs,48GiB |
-| Earlier pooled eight-item waves / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, eight-item waves, same4CPUs,48GiB |
-| Earlier pooled eight-item waves / GPU race | 1,237.37 / 1,020.12 s | 1.21296× | Warm server; full GPU lifecycle1,036.25s gives1.19408× |
-| Corrected serial-family baseline | 6,691.60 / 5,164.85 s | 1.29560× | Three full pairs, each with its own matched reference |
-| Historical CPU stage | See retained record | 1.34668× | Earlier unbounded-address-space epoch; not pooled with current data |
-
-Every cell in these CPU comparisons returns 992 complete / 8 rejected / zero
-operational outcomes. Source verdicts and non-message native payloads agree;
-88 source responses differ only in warnings.
-[Current complete pair and raw/tail data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-cpu/result-review.md),
-[corrected three-pair series](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/three-pair-result.json),
-[historical record](artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
-
-The full GPU comparison is complete on the same sources, candidate concurrency
-and CPU eligibility: 992complete/8rejected/zerooperational outcomes, matching
-native source verdicts and non-message payloads. Only LPs with at least11rows
-are eligible; CPU and GPU race with exact repair and native checking.
-There are **384 real cross-candidate batches of2–5requests**, of which311are
-cancelled after a member withdraws and73return results. All384retire.
-This result remains below1.5× and is not GPU route closure.
-[Complete GPU results, heavy tails and raw/lifecycle evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md).
-
-The private CPU FP-first, exact-fallback mechanism completes hardware
-qualification: CPU27.65s versus GPU28.05s, all24sources accepted with matching
-native verdicts. It shows no useful GPU benefit, so no full matrix is admitted
-for that variant. This is not a GPU-route impossibility result.
-[Qualification and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/GPU-result-review.md).
-
-A complete separate width4 wall-cost diagnostic gives a **conditional1.93412×**
-zero-LP-cost sensitivity, or **2.24363×** when deleting all CPU-oracle numeric
-products and LP search relative to its own native reference. These are
-optimistic fixed-other-work calculations, not GPU speedups or universal bounds,
-and cannot be rescaled to the faster pooled-native clock. The stronger pooled
-family's own complete diagnostic is summarized below.
-[Complete profile and denominator limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md),
-[pooled diagnostic protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/plan.md).
-
-The matched pooled-family cost profile is complete: native **1,245.96s**,
-CPU oracle **1,072.37s**, with all native responses matching their respective
-primary captures. Exported numeric product/LP invocation wall sums to607.39s,
-while its interval union is439.54s. The optimistic fixed-work deletion
-sensitivity is **2.67957×** relative to this profile's own native reference;
-overlapping sums and occupancy are not actual time saved.
-This does not prove a below1.5× ceiling.
-[Complete costs, failures, shapes and source tails](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-paired-result-review.md).
-
-A fixed-coefficient omission control passes24-source qualification with zero
-misses and is now collecting all1,000sources against a fresh native reference.
-It uses recorded answers, retains full Lean checking, and is excluded from
-the CPU/GPU continuation result. A source-native8queue submission control
-also passes24-source CPU qualification at the same maximum8candidates/4CPUs;
-it tests the barrier created by waiting for each eight-item array.
-[Common submission protocol and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/plan.md).
-
-A supporting SHRED-parser experiment measures proof-prefix sharing on the
-original miniF2F and ProofNet candidates against native batch execution.
-Counts are not saved verification time. Completed, failed and partial work,
-including rejected GPU integrations and closed CPU-runtime/constructor routes,
-remain in the [evaluation record](docs/evaluation.md).
-All work and review run in this thread; no OMP or subagents are used.
-Reviews are **self-review**, not independent audit.
+All work and review run in this thread, with no OMP or subagents. Reviews are
+**self-review**, not independent audit. Original, failed and partial results,
+closed routes, exact protocols and historical clocks remain in
+[the evaluation ledger](docs/evaluation.md); the current paper is in
+[docs/paper](docs/paper/). No paper acceptance or submission readiness is claimed.
 
 | Workload | Retained input | Scope |
 |---|---|---|

@@ -1,0 +1,13 @@
+{"event":"batch_ready","monotonic_ns":771330988132410,"batch_size":2,"minimum_ready":2,"scope":"Only simultaneously live device-ready requests; CPU shadows remain active."}
+{"event":"device_submit","batch_id":771330988415656,"batch_size":2,"keys":["364310:4","364310:5"],"call_ids":[771330655129762,771330778212619],"distinct_sources":1,"monotonic_ns":771330988415656}
+{"event":"model_cancel","keys":["364310:4"],"reply":{"cancelled":["364310:4"]},"monotonic_ns":771330999889319}
+{"event":"model_cancel","keys":["364310:5"],"reply":{"cancelled":["364310:5"]},"monotonic_ns":771331025694251}
+{"event":"device_kernel_retired","keys":["364310:4","364310:5"],"monotonic_ns":771331590191807}
+{"event":"device_batch_retired","batch_id":771330988415656,"keys":["364310:4","364310:5"],"monotonic_ns":771331601596791}
+{"event":"batch_ready","monotonic_ns":771341190028353,"batch_size":2,"minimum_ready":2,"scope":"Only simultaneously live device-ready requests; CPU shadows remain active."}
+{"event":"device_submit","batch_id":771341190837983,"batch_size":2,"keys":["364310:40","364310:39"],"call_ids":[771341128128526,771340942938595],"distinct_sources":2,"monotonic_ns":771341190837983}
+{"event":"model_cancel","keys":["364310:39"],"reply":{"cancelled":["364310:39"]},"monotonic_ns":771341219520693}
+{"event":"model_cancel","keys":["364310:40"],"reply":{"cancelled":["364310:40"]},"monotonic_ns":771341229185426}
+{"event":"device_kernel_retired","keys":["364310:40","364310:39"],"monotonic_ns":771341229907278}
+{"event":"device_batch_retired","batch_id":771341190837983,"keys":["364310:40","364310:39"],"monotonic_ns":771341230253208}
+{"event":"dispatcher_retired","monotonic_ns":771404815913059,"pending_jobs":0,"pending_device_models":0}
