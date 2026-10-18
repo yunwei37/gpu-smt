@@ -94,6 +94,11 @@ pub fn race_gpu_hint(hyps:&[Hyp])->Option<Certificate>{
  writeln!(sock,"{msg}").ok()?;sock.flush().ok()?;
  let mut reply=String::new();std::io::BufReader::new(sock).read_line(&mut reply).ok()?;
  let reply:serde_json::Value=serde_json::from_str(&reply).ok()?;
+ if let Some(values)=reply.get("dual_ray").and_then(|v|v.as_array()).and_then(|xs|xs.iter().map(|x|x.as_f64()).collect::<Option<Vec<_>>>()){
+  if let Some(ray)=repair_negative_ray(hyps,&values){
+   NEGATIVE_CERTIFICATE.with(|c|*c.borrow_mut()=Some(ray));return None;
+  }
+ }
  let mu:Vec<f64>=reply.get("primal")?.as_array()?.iter().map(|x|x.as_f64()).collect::<Option<_>>()?;
  if mu.len()!=hyps.len()||mu.iter().any(|x|!x.is_finite()){return None}
  let mut tried=Vec::new();
@@ -132,6 +137,7 @@ fn race_search(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
    live[i]=false;
    let result=result.ok().filter(|n|*n>0).and_then(|_|checked_reply(&line,hyps));
    if let Some(Some(cert))=result{answer=Some(cert);winner=if i==0{"cpu"}else{"gpu"};break}
+   if i==1 && matches!(result,Some(None)) && checked_negative_reply(&line,hyps){winner="external-infeasible";break}
    if i==0 && matches!(result,Some(None)){winner="cpu-no-certificate";break}
   }
   if winner!="failed"{break}
@@ -145,4 +151,62 @@ fn race_search(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
   "source":context()["source"],"call_id":context()["call_id"],"rows":rows,"cols":hyps.len(),"winner":winner,"decision_ns":decision_ns,"whole_ns":whole_ns,
   "retirement_ns":whole_ns-decision_ns,"cpu_exit":cpu_exit,"gpu_exit":gpu_exit}));
  if winner=="failed"{crate::hybrid::produce_certificate_hybrid(hyps,max_var).0}else{answer}
+}
+
+
+// Two-sided oracle capability. A negative search answer needs an exact dual
+// certificate for the same scaled LP,never a floating solver status.
+thread_local!{static NEGATIVE_CERTIFICATE:std::cell::RefCell<Option<Vec<BigRational>>>=const{std::cell::RefCell::new(None)};}
+pub fn take_negative_certificate()->Option<Vec<String>>{
+ NEGATIVE_CERTIFICATE.with(|c|c.borrow_mut().take().map(|v|v.into_iter().map(|x|x.to_string()).collect()))
+}
+fn verify_negative_certificate(hyps:&[Hyp],ray:&[BigRational])->bool{
+ let mut atoms:Vec<usize>=hyps.iter().flat_map(|h|h.coeffs.iter().map(|(i,_)|*i)).collect();
+ atoms.sort_unstable();atoms.dedup();
+ if ray.len()!=atoms.len()+1||!ray[atoms.len()].is_negative(){return false}
+ let row:HashMap<usize,usize>=atoms.iter().enumerate().map(|(i,v)|(*v,i)).collect();
+ for h in hyps{
+  let scale=h.coeffs.iter().map(|(_,c)|c.abs()).max().filter(|x|!x.is_zero()).unwrap_or_else(BigInt::one);
+  let mut sum=BigRational::zero();
+  for(v,c)in &h.coeffs{sum+=&ray[row[v]]*BigRational::from_integer(c.clone());}
+  if h.ineq==Ineq::Lt{sum+=&ray[atoms.len()]*BigRational::from_integer(scale);}
+  if sum.is_negative(){return false}
+ }
+ true
+}
+fn repair_negative_ray(hyps:&[Hyp],values:&[f64])->Option<Vec<BigRational>>{
+ let norm=*values.last()?;
+ if norm==0.||!norm.is_finite()||values.iter().any(|x|!x.is_finite()){return None}
+ let mut ray=values.iter().map(|x|{
+  approximate_ray_coordinate(-x/norm)
+ }).collect::<Option<Vec<_>>>()?;
+ *ray.last_mut()?=-BigRational::one();
+ if verify_negative_certificate(hyps,&ray){Some(ray)}else{None}
+}
+fn checked_negative_reply(line:&str,hyps:&[Hyp])->bool{
+ use std::str::FromStr;
+ let Ok(v)=serde_json::from_str::<serde_json::Value>(line)else{return false};
+ let Some(xs)=v.get("infeasible_certificate").and_then(|v|v.as_array())else{return false};
+ let ray=xs.iter().map(|x|BigRational::from_str(x.as_str()?).ok()).collect::<Option<Vec<_>>>();
+ ray.is_some_and(|ray|verify_negative_certificate(hyps,&ray))
+}
+
+// Solver rays contain numerical noise. Reconstruct a nearby simple rational;
+// every resulting coefficient is subsequently checked with original BigInts.
+fn approximate_ray_coordinate(x:f64)->Option<BigRational>{
+ if !x.is_finite(){return None}
+ let sign=if x<0.{-1}else{1};let target=x.abs();let mut z=target;
+ let(mut p0,mut p1,mut q0,mut q1)=(0i64,1i64,1i64,0i64);
+ loop{
+  let whole=z.floor();if whole>=i64::MAX as f64{return None}
+  let a=whole as i64;
+  let p=a.checked_mul(p1)?.checked_add(p0)?;
+  let q=a.checked_mul(q1)?.checked_add(q0)?;
+  if q==0{return None}
+  let remainder=z-whole;
+  if (p as f64/q as f64-target).abs()<=1e-9*(1.+target)||remainder==0.{
+   return Some(BigRational::new(BigInt::from(p)*BigInt::from(sign),BigInt::from(q)))
+  }
+  p0=p1;p1=p;q0=q1;q1=q;z=1./remainder;
+ }
 }

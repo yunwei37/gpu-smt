@@ -4,6 +4,7 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--min-batch',type=int,default=1,help='Ready requests required before GPU launch; racing CPU owners can cancel while a partial batch waits.');p.add_argument('--backend',choices=['highs','cuopt'],required=True)
 p.add_argument('--socket',required=True);p.add_argument('--log',required=True)
 p.add_argument('--original-feasibility',action='store_true',help='Independent LP jobs only: omit phase-I artificial slack variables.')
+p.add_argument('--negative-certificates',action='store_true',help='Return untrusted dual ray for exact infeasibility-certificate validation.')
 p.add_argument('--cuda-host',help='Finite device-batched simplex provider; bypass cuOpt per-job launch.')
 p.add_argument('--lp-method',choices=['PDLP','Barrier'],default='PDLP',help='Explicit GPU algorithm; Concurrent can include a CPU simplex winner.')
 p.add_argument('--independent-jobs',action='store_true',help='Dispatch simultaneously ready LPs as independently cancellable concurrent cuOpt jobs, not a fused model.');p.add_argument('--host');p.add_argument('--proto-root');a=p.parse_args()
@@ -65,10 +66,15 @@ def solve_highs(q):
  lp.a_matrix_.start_=np.array(q['offsets'],dtype=np.int32)
  lp.a_matrix_.index_=np.array(q['indices'],dtype=np.int32);lp.a_matrix_.value_=np.array(q['values'])
  h=highspy.Highs();h.setOptionValue('output_flag',False);h.passModel(lp)
- packed=time.monotonic_ns();h.run();done=time.monotonic_ns()
+ packed=time.monotonic_ns();h.run()
+ dual=None
+ if a.negative_certificates and h.getModelStatus()==highspy.HighsModelStatus.kInfeasible:
+  ray_status,has_ray,ray=h.getDualRay()
+  if has_ray:dual=list(ray)
+ done=time.monotonic_ns()
  state=h.modelStatusToString(h.getModelStatus())
  point=h.getSolution().col_value if h.getModelStatus()==highspy.HighsModelStatus.kOptimal else None
- return {'primal':point,'state':state,'engine':'HiGHS','solver_seconds':h.getRunTime(),'build_ns':packed-t,'call_ns':done-packed}
+ return {'primal':point,'dual_ray':dual,'state':state,'engine':'HiGHS','solver_seconds':h.getRunTime(),'build_ns':packed-t,'call_ns':done-packed}
 def solve_gpu_batch(items,group=None):
  # Joint jobs retain phase I so one infeasible member cannot poison siblings.
  # Independently cancellable jobs solve the original feasibility LP directly.
@@ -120,7 +126,7 @@ def solve_cuda_batch(items):
  with lock:pending_cuda.update(by_key)
  try:
   with socket.create_connection((a.cuda_host,5001))as channel:
-   channel.sendall((json.dumps({"requests":[dict(x.q,key=k)for k,x in by_key.items()]},separators=(',',':'))+'\n').encode())
+   channel.sendall((json.dumps({"requests":[dict(x.q,key=k,want_dual=a.negative_certificates)for k,x in by_key.items()]},separators=(',',':'))+'\n').encode())
    append_record(a.log+'.batches',{'event':'device_submit','batch_id':begin,'batch_size':len(items),'keys':keys,'call_ids':[x.q.get('call_id')for x in items],'distinct_sources':len(set(x.q.get('source')for x in items)),'monotonic_ns':begin})
    cancel_abandoned()
    with channel.makefile('rb')as stream:

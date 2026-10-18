@@ -1,0 +1,34 @@
+{
+  "method": "oracle-gpu",
+  "rep": 1,
+  "state": "complete",
+  "expected": 10,
+  "attempts": 10,
+  "counts": {
+    "complete": 10
+  },
+  "whole_ns": 42582336650,
+  "cpu": {
+    "collector": {
+      "user": 0.08724399999999999,
+      "system": 4.676966999999999
+    },
+    "waited_children": {
+      "user": 47.602274,
+      "system": 2.18672
+    }
+  },
+  "sampled_peak_fleet_pss_with_collector": 8048515072,
+  "sampled_peak_fleet_rss_with_collector": 8723582976,
+  "sampling_read_errors": 42,
+  "workers": 1,
+  "resource_observer_enabled": true,
+  "sampling_seconds": 1,
+  "effective_RLIMIT_AS": 51539607552,
+  "width": 8,
+  "normalization": "none; preserve complete parsed native JSON values",
+  "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates",
+  "collector_whole_ns": 42544589940,
+  "backend_setup_cleanup_ns": 37746710,
+  "gpu_target_boundary": "Warm finite CUDA simplex provider; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently."
+}

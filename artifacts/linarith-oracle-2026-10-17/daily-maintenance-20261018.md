@@ -120,3 +120,13 @@ pricing on the same10;no parameter grid/new cohort. Full CPU results,not another
 report,will decide whether the stronger published numerical baseline clears1.5x.
 The remaining mainline gap is a real system contribution surviving strongest
 native/HiGHS and completedGPU comparisons;these controls do not create novelty.
+
+
+Nextactualstepcompleted:the fullCPUtriple closes691.10/529.17/462.50s,ratio1.49425x.
+Itsremainingnegativeexactraces177.756sleadstoimplementedtwo-sidedcertificates.
+Afteronefailedreconstructionrepair,110negativecertificatesvalidateonreal10,
+newCPU28.60vsoldoracle40.85s(nativematches28.58). GPUnegativevariantreallyruns
+18negative+2positivecertwinsbut42.58s,slowerthantheCPUdualcontrol. Newfull1000
+CPUtriple193488nowexecutes;no polling-onlygoalturns ornewunprofitableGPUmatrix.
+Remainingpaperdecisionisfullgain/noveltyafterthisstrongerbaseline,notmoreLP
+kernelflags. Allreviewisself-review andallfouroriginalRQspreserved.

@@ -10,6 +10,7 @@ lib.simplex_launch.argtypes=[ctypes.POINTER(P),I];lib.simplex_launch.restype=P
 for name in ["simplex_state","simplex_iterations","simplex_done"]:
  f=getattr(lib,name);f.argtypes=[P];f.restype=I
 lib.simplex_values.argtypes=[P];lib.simplex_values.restype=ctypes.POINTER(D)
+lib.simplex_dual_values.argtypes=[P];lib.simplex_dual_values.restype=ctypes.POINTER(D)
 for name in ["simplex_cancel","simplex_model_free","simplex_batch_free"]:
  f=getattr(lib,name);f.argtypes=[P];f.restype=None
 lock=threading.Lock();log_lock=threading.Lock();pending=queue.Queue();states={};early_cancel=set();stopping=threading.Event()
@@ -108,6 +109,8 @@ try:
         "state":{1:"phase_I_feasible",2:"phase_I_no_hint",3:"cancelled",4:"numerical_no_hint"}.get(state,str(state)),
         "iterations":lib.simplex_iterations(s["handle"]),"engine":"CUDA batched phase-I simplex",
         "batch_id":begin,"batch_size":len(handles),"build_ns":s["build_ns"],"monotonic_ns":time.monotonic_ns()}
+       if state==2 and q.get("want_dual"):
+        dual=lib.simplex_dual_values(s["handle"]);reply["dual_ray"]=[dual[i]for i in range(len(q["rhs"]))]
        finish(s,reply);log(dict(reply,key=q["key"],primal=None))
      done=lib.simplex_done(batch)
      if done:

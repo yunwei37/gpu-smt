@@ -34,6 +34,8 @@ if os.environ.get('GPU_SMT_CUDA_BATCH_HOST'):
     source=source.replace("'--proto-root',str(BATCH/'cuopt-grpc')", "'--cuda-host',os.environ['GPU_SMT_CUDA_BATCH_HOST'],'--proto-root',str(BATCH/'cuopt-grpc')",1)
 if os.environ.get('GPU_SMT_CUDA_BATCH_HOST'):
     source=source.replace('Warm upstream cuOpt server','Warm finite CUDA simplex provider')
+if os.environ.get('GPU_ARITHMETIC_NEGATIVE_CERTIFICATES')=='1':
+    source=source.replace("'--backend',backend,", "'--negative-certificates','--backend',backend,",1)
 if not os.environ.get('GPU_ARITHMETIC_RACE_MIN_ROWS'):
     raise RuntimeError('Set GPU_ARITHMETIC_RACE_MIN_ROWS from the retained native LP row distribution')
 # Match the GPU/CPU candidates against the same native daemon concurrency.

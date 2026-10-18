@@ -8,7 +8,7 @@
 #include <string>
 #include <atomic>
 struct Model {int m,n,stride;double* t;int* basis;volatile int* ctl;double* out;};
-struct Owned {Model gpu;int* ctl;double* out;std::vector<double> scales;bool unscaled=false;};
+struct Owned {Model gpu;int* ctl;double* out;std::vector<double> scales,row_scales;bool unscaled=false,dual_unscaled=false;};
 struct Batch {Model* models;cudaEvent_t done;cudaStream_t stream;};
 static thread_local std::string error_text;
 static bool ok(cudaError_t e){if(e==cudaSuccess)return true;error_text=cudaGetErrorString(e);return false;}
@@ -70,6 +70,7 @@ __global__ void phase_one(Model* models){
   for(int i=tid;i<a.m;i+=blockDim.x)if(a.basis[i]<a.n)
    a.out[a.basis[i]]=a.t[i*a.stride+cols];
  }
+ if(finish==2)for(int i=tid;i<a.m;i+=blockDim.x)a.out[a.n+i]=objective[a.n+i]-1.;
  __syncthreads();
  if(!tid){__threadfence_system();a.ctl[1]=finish;}
 }
@@ -81,10 +82,10 @@ extern "C" void* simplex_model(int m,int n,const int* offsets,const int* indices
  if(m<=0||n<=0){error_text="empty model";return nullptr;}
  auto a=new Owned{};a->gpu.m=m;a->gpu.n=n;a->gpu.stride=n+m+1;
  std::vector<double> t(static_cast<size_t>(m+1)*a->gpu.stride,0.);
- std::vector<int> basis(m);
+ std::vector<int> basis(m);a->row_scales.resize(m,1.);
  int last=n+m;
  for(int i=0;i<m;i++){
-  double sign=rhs[i]<0?-1.:1.;
+  double sign=rhs[i]<0?-1.:1.;a->row_scales[i]=sign;
   for(int k=offsets[i];k<offsets[i+1];k++){
    if(indices[k]<0||indices[k]>=n||!std::isfinite(values[k])){
     error_text="invalid coefficient";destroy(a);return nullptr;
@@ -99,6 +100,7 @@ extern "C" void* simplex_model(int m,int n,const int* offsets,const int* indices
   double scale=std::fabs(t[i*a->gpu.stride+last]);
   for(int j=0;j<n;j++)scale=std::max(scale,std::fabs(t[i*a->gpu.stride+j]));
   if(scale>0.){
+   a->row_scales[i]/=scale;
    for(int j=0;j<n;j++)t[i*a->gpu.stride+j]/=scale;
    t[i*a->gpu.stride+last]/=scale;
   }
@@ -115,7 +117,7 @@ extern "C" void* simplex_model(int m,int n,const int* offsets,const int* indices
  if(!ok(cudaMalloc(&a->gpu.t,t.size()*sizeof(double)))||
     !ok(cudaMalloc(&a->gpu.basis,m*sizeof(int)))||
     !ok(cudaHostAlloc(&a->ctl,3*sizeof(int),cudaHostAllocMapped))||
-    !ok(cudaHostAlloc(&a->out,n*sizeof(double),cudaHostAllocMapped))){destroy(a);return nullptr;}
+    !ok(cudaHostAlloc(&a->out,(n+m)*sizeof(double),cudaHostAllocMapped))){destroy(a);return nullptr;}
  a->ctl[0]=a->ctl[1]=a->ctl[2]=0;
  int* dc=nullptr;double* dout=nullptr;
  if(!ok(cudaHostGetDevicePointer(&dc,a->ctl,0))||!ok(cudaHostGetDevicePointer(&dout,a->out,0))||
@@ -141,6 +143,7 @@ extern "C" void* simplex_launch(void** handles,int count){
 extern "C" int simplex_state(void* h){auto a=static_cast<Owned*>(h);int v=*reinterpret_cast<volatile int*>(a->ctl+1);std::atomic_thread_fence(std::memory_order_acquire);return v;}
 extern "C" int simplex_iterations(void* h){return *reinterpret_cast<volatile int*>(static_cast<Owned*>(h)->ctl+2);}
 extern "C" double* simplex_values(void* h){auto a=static_cast<Owned*>(h);if(!a->unscaled){for(int j=0;j<a->gpu.n;j++)a->out[j]*=a->scales[j];a->unscaled=true;}return a->out;}
+extern "C" double* simplex_dual_values(void* h){auto a=static_cast<Owned*>(h);if(!a->dual_unscaled){for(int i=0;i<a->gpu.m;i++)a->out[a->gpu.n+i]*=a->row_scales[i];a->dual_unscaled=true;}return a->out+a->gpu.n;}
 extern "C" void simplex_cancel(void* h){auto a=static_cast<Owned*>(h);*reinterpret_cast<volatile int*>(a->ctl)=1;std::atomic_thread_fence(std::memory_order_seq_cst);}
 extern "C" int simplex_done(void* h){auto e=cudaEventQuery(static_cast<Batch*>(h)->done);if(e==cudaSuccess)return 1;if(e==cudaErrorNotReady)return 0;ok(e);return -1;}
 extern "C" void simplex_batch_free(void* h){auto b=static_cast<Batch*>(h);cudaEventSynchronize(b->done);cudaFree(b->models);cudaEventDestroy(b->done);cudaStreamDestroy(b->stream);delete b;}

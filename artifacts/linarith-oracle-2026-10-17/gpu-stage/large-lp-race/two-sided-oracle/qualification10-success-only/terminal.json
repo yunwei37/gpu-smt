@@ -1,0 +1,73 @@
+{
+  "state": "complete",
+  "cells": 2,
+  "attempts": 20,
+  "results": [
+    {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 10,
+      "attempts": 10,
+      "counts": {
+        "complete": 10
+      },
+      "whole_ns": 28575873638,
+      "cpu": {
+        "collector": {
+          "user": 0.042825999999999975,
+          "system": 3.283789
+        },
+        "waited_children": {
+          "user": 45.858087,
+          "system": 1.987919
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 7888425984,
+      "sampled_peak_fleet_rss_with_collector": 8538451968,
+      "sampling_read_errors": 8,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates"
+    },
+    {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 10,
+      "attempts": 10,
+      "counts": {
+        "complete": 10
+      },
+      "whole_ns": 40942765564,
+      "cpu": {
+        "collector": {
+          "user": 0.09486399999999995,
+          "system": 4.553378
+        },
+        "waited_children": {
+          "user": 51.150459,
+          "system": 2.1520540000000006
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 8251411456,
+      "sampled_peak_fleet_rss_with_collector": 8922107904,
+      "sampling_read_errors": 32,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates",
+      "collector_whole_ns": 40845483924,
+      "backend_setup_cleanup_ns": 97281640,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    }
+  ],
+  "utc": "2026-10-18T10:22:14.018442+00:00"
+}

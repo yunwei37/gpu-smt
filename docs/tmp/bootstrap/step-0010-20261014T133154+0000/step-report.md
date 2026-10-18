@@ -4448,3 +4448,22 @@ LPsolverwall only7.295s. Thischangesnextmechanismchoice:negativecertificate
 search/validation,instead ofstillassuming a faster positiveLPkernelisneeded.
 WRITE README/evaluation/resultreviewupdate;REVIEW selfaudit,onepairnotstable
 1.5xdecision,noGPUimpossibility/noveltyclaim. Allraw andfailurespublished.
+
+
+### 2026-10-18 — two-sided oracle executes,fullcohort admitted
+EXPERIMENT currentHiGHS1888races expose1214negativeexactdecisions177.756s.
+Rootimplementsdualrationalcertificatevalidationinworkerandparent,original
+scaledmatrix/constantatom/strictnormalization preserved. Firstreal10attempt
+128rays/0verifiedfailsnumericalreconstruction. Continuedfractionrepairchecks
+exactoriginalBigIntsandgets110negativecertwins/168races. Same10native28.576,
+successCPU40.845,newCPU28.602s,allnativeverdict/non-messageparity. Selected
+mode matchesnativeandimprovesexistingoracle29.97%;not fullclaim/noveltheorem.
+GPUvariantactuallyruns48GiB5090same10,42.582s,18negative+2positiveGPUcertwins,
+118negative+30positiveCPUwins. AllGPUkernels/contextretiredandJobUIDdeleted;
+labReady/otherWorkspaceRunning. SlowerthanCPUdual,notadmittedfullGPUmatrix.
+Fresh unchangedfull1000native/successHiGHS/dualHiGHSdriver193488nowactive
+onCPU0-3,root/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle,from
+full1000-driver.py. Freeze these published binaries/harness untilcaptureends.
+Protectedprefixdriver5256remainsindependent. NoAgent/subagent/OMP/native
+session. WRITE qualification/data/planupdates;REVIEW selfaudit,allfourRQ/
+novelty/thresholdrepeatabilityopen. GPUroute/hourly/goalnotclosed.
