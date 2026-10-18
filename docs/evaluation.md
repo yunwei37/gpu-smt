@@ -698,3 +698,24 @@ notGPU/new-system/venueacceptance. Fullnativefrontend/same-dual-backend
 componentablationstartedafteractualthirdexit,withreal farkas-batchd processes
 ownedbydriver257239onCPU0–3 andnoASTdaemon inthatengagementsnapshot.
 Thisisthenextdecisivecontributiontest,notanotherfullsolvergrid.
+
+### 2026-10-18 — complete component result and full-workload admission
+
+SameblocknativeFast/hybrid691.359191s,ASTdual464.579050s,nativefrontend/
+dualbackend518.504231s. All1000verdict/non-messageparity,992/8/0;native-dual
+has62message-onlychanges/88observerreaderrors. Nativebackendcomponent1.33337x,
+ASTadditional1.11607x(10.40%lesselapsed),not1.5x. ChangedLPinputs/proofs/
+fallbackmeanthisisnotapureproof-constructiontimer. Donotattributealltotal
+speedup todeferredproofs orclaimglobalsystemsnovelty.
+
+Nextfull29,750original-sourceblock isadmittedwiththeexistingnativehybrid,
+nativefrontend+dualbackend,andAST+dualbackend,ononeCPU0–3/width8/48GiBblock.
+First24realoriginal-sourcetransport/loggingqualificationmustactuallycomplete.
+SupportJSONlogginguseslosslessstreaminggziptostaywithintheactual2.8GiBfree
+projectvolume;allnormalcompression/flushoverheadcharged,no newquota/helper.
+NoGPUclaimedintheCPUgeneralityexperiment.
+
+TheoneGPUdiscovered-capacitypoolrepairalsoreturns31OOMs,nowpinnedto
+cudaMemPoolCreatebeforeLPbuffers;zeroactualkernels. Nofurtherallocator
+parametergridorfullGPUcapturefromthiscandidate;oldlegacybackendpreserved,
+overallGPUroute/hourlygoalnotclosed.

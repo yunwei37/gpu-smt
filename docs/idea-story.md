@@ -38,8 +38,12 @@ continuation criterion, not a confidence/globalworkload/systemnoveltyclaim.
 All1,000sourceverdicts/non-messageJSONfields agree inallpairs,992/8/0,
 with104message-onlydifferences. Native tiered/HiGHSfirst64controls are slower
 than hybrid in their matched block; no global solver ranking follows.
-A complete native-frontend/same-dual-backend component ablation is now running
-to isolate direct export from backend substitution.
+The complete native-frontend/same-dual-backend ablation is518.504231s versus
+AST464.579050s, only1.11607xadditionalfrontendgain(10.40%lowerelapsed).
+Backendengineeringexplainssubstantialtotalgain. ActualnativeFarkasdaemon
+ancestryandall1000nativeverdict/non-messageparityareverified. Thefull
+29,750original-sourcecomponentblockisadmittedafter24-sourceI/Opreflight,
+notanewsolver/kernelgrid.
 [Complete first and reversed data](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
 
 Real5090device-batched simplex executes with per-model cancellation and
@@ -222,3 +226,24 @@ performance. Noallocatorgrid/addressspacerelaxation/sourcepromotion/fullGPUrun.
 [asyncfailure](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
 StrongCPUbaselineapplicability/broaderworkload/novelty/serviceandfourRQcoverage
 remainopen. Allreviewisrootself-review;goal/hourlynotclosed.
+
+### 2026-10-18 — complete component result and full-workload admission
+
+SameblocknativeFast/hybrid691.359191s,ASTdual464.579050s,nativefrontend/
+dualbackend518.504231s. All1000verdict/non-messageparity,992/8/0;native-dual
+has62message-onlychanges/88observerreaderrors. Nativebackendcomponent1.33337x,
+ASTadditional1.11607x(10.40%lesselapsed),not1.5x. ChangedLPinputs/proofs/
+fallbackmeanthisisnotapureproof-constructiontimer. Donotattributealltotal
+speedup todeferredproofs orclaimglobalsystemsnovelty.
+
+Nextfull29,750original-sourceblock isadmittedwiththeexistingnativehybrid,
+nativefrontend+dualbackend,andAST+dualbackend,ononeCPU0–3/width8/48GiBblock.
+First24realoriginal-sourcetransport/loggingqualificationmustactuallycomplete.
+SupportJSONlogginguseslosslessstreaminggziptostaywithintheactual2.8GiBfree
+projectvolume;allnormalcompression/flushoverheadcharged,no newquota/helper.
+NoGPUclaimedintheCPUgeneralityexperiment.
+
+TheoneGPUdiscovered-capacitypoolrepairalsoreturns31OOMs,nowpinnedto
+cudaMemPoolCreatebeforeLPbuffers;zeroactualkernels. Nofurtherallocator
+parametergridorfullGPUcapturefromthiscandidate;oldlegacybackendpreserved,
+overallGPUroute/hourlygoalnotclosed.

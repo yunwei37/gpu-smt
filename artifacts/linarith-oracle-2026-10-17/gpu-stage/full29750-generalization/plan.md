@@ -1,0 +1,50 @@
+# Generality of the complete verification pipeline, original29,750sources
+
+RQ4andbroader-serviceevidence. The enriched1,000sourceAST-oracleprimaryseries
+passes its originalaggregatecriterion1.508619170x againstnativeFast/hybrid,
+but onepairis1.48814x. The fullnativefrontend/same-dual-backendablation is
+518.504231025s vs AST464.579050137s,only1.116073208xadditionalfront-endgain.
+Backendsubstitutionexplainssubstantialtotalgain;ordinarysolverprimitives
+arenotnew systemswork. The nextpaper-valuequestioniswhetherbothbenefits
+generalize beyond an arithmetic-heavy selection, not another narrowkernel.
+
+Useall29,750originalreleasedGoedelWorkbook4.27source records from the
+existinginput.jsonl, unchangedorder/headers/limits. Verifyallprior1,000are
+exactoriginalrecords;no syntheticreplacementornewdownload. Threecomponent
+cells inoneblock:
+1 existingnativeFast/hybrid, poolednativeeightqueues;
+2 samenativeproof-producingfrontend withourFP-first/CPUHiGHStwo-sidedbackend;
+3 ASTexport/directselectedproofconstruction withthesamenumericbackend.
+This is onegenerality/componentexperiment,notFull/Fast×solver/threadgrids.
+Oneobservationpercell doesnotestablishreplicatedstabilityornewOSDIcontribution.
+
+AllmethodsCPU0–3,width8/eightupstreamcontiguousqueues,48GiBaddressspace,
+sameLean4.27nativeMathlib/heartbeat/imports. NoGPUclaimedinthisCPUblock.
+Includeallnativepreparation/export/IPC/proofs/fallback/EOF/retirement.
+Keepoperational/failed/partial sources and all messages, compareIDs/verdicts/
+non-messageJSONand1%/10%tails onactualcompletedcells. DonotpoololdHTTP,
+earlierunbounded-memoryorselected-cohortclocks. Preserveprefixcapture20–23.
+
+First actual24original-source transport/logging preflight onall3components,
+thenfullblockonlyifcomplete/nativeoutcomefidelityandbothnumericproxiesengage.
+Thisqualifieslarge-runtransport/configuration,notaperformancethresholdtest.
+Themechanismalreadyhasimprovedreal1,000/64-sourcepreflights. Invalidentry/
+import-routingattempts remain preserved separately,neverbaselineevidence.
+
+Projectvolume63GiBhasabout2.8GiBfree. SupportcallsrepeatfullJSONarrays/source;
+thereforethisblockusesexisting--logpathending.jsonl.gz. Theproxyappends
+losslessgzipmembersunderitsexistinglock,readablebythestandardretained-file
+analyzer. Allotherlogicalrecordsareunchanged;defaultplainloggingremains
+unchangedforhistoricalreproduction. Thisaddressesactualdiskcapacity,not
+a newresearchquotaorretainedhelper. CompressionCPU/flushischargedinthe
+sameend-to-endpipeline;per-calltimersprecedingappenddoNOTincludeappend/
+compression,so theyarenotadisjointwholeCPU/wallpartition. NativeRust
+race/candidatelogsarekept;allraw/faileddataremainsavailable. No background
+compressor, watcher, scheduler,WorkspaceorAgentiscreated.
+
+Classifythecompletecomponentsbeforedecidingthepaper'scentralclaim.
+IfCPUimprovementisbackendengineeringormatchespriorservices/cache/snapshots,
+donotrenameitOSDInovelty. ExistingfourRQs/Lean/SMT/GPUgoalremainopen.
+GPUcandidateswithoutusefulpreflightarenotadmittedfullcapture; overallGPU
+routeclosurestillrequiresapplicableopportunityevidence,userhourlytaskstays.
+Root execution and self-reviewonly.

@@ -341,3 +341,22 @@ numerical backend previously panicked and Lean fallback masked that fault.
 Native verdict parity alone does not validate timing attribution. Retain
 stderr, service errors, all-call metadata and worker EOF/wait4 receipts.
 [Queue profile plan and retained repair](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/plan.md).
+
+### Original-workload component block and bounded log storage
+
+The [full29,750-source protocol](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full29750-generalization/plan.md)
+compares original native Fast/hybrid, native frontend with the two-sided
+CPU backend, and the direct frontend with that same backend. Its actual
+24-source admission and per-component entrypoints are retained beside the plan.
+The full source records remain unchanged and the selected1,000are an exact
+subset; the block does not transfer selected-cohort ratios.
+
+support-proxy.py accepts its existing --log path ending .gz for lossless
+streamed multi-member gzip; other paths retain plain JSONL. Default gzip
+settings and the existing append lock apply, with compression/flush charged
+to whole verification time. Per-call timers precede log append and do not
+include its CPU time. This avoids retaining a large repeated-matrix JSON
+file on the nearly full project volume. No background compression helper,
+data deletion, extra research quota or retained service is required.
+Do not change an active block's binary tree, common collector or proxy;
+publish closed cells at their actual termination.

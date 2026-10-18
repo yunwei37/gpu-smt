@@ -30,8 +30,13 @@ The predeclared aggregate whole-time ratio is **1.50862×**
 (2,059.87/1,365.40s), meeting the local1.5×continuation criterion.
 The third pair is below1.5× and is retained. This is an enriched arithmetic-heavy
 subset, not a confidence interval, full-population/service-capacity result
-or systems novelty. A complete native-frontend/same-numeric-backend ablation
-is running to isolate direct certificate export from backend substitution.
+or systems novelty. The complete component ablation takes **518.50s** with native preprocessing
+and the same two-sided numeric backend, versus464.58s with direct export:
+only **1.11607×** additional end-to-end gain (10.40%lesselapsed).
+Much of the total improvement is backend engineering. The1.50862×score
+must not be presented as gain over every constructed CPU competitor or as
+systems novelty. The complete29,750sourcegenerality block is now admitted
+through a real transport/logging preflight.
 [First full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md),
 [reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md),
 [all three pairs and aggregate](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/three-pair-result.json).

@@ -4617,3 +4617,40 @@ selectionandactualengagementarethereforebothverified. Fullablationactive,
 noprimarysource/harness/binarymutation. Prefixdriverpreserved.
 WRITE updatespaper/README/frontier/evaluation;REVIEWselfauditacceptslocal
 seriescompletiononly. FullWRITE/phasefreeze/fourRQ/globalnoveltyopen.
+
+### 2026-10-18 — full component comparison, GPU pool failure, original-workload execution
+
+E1060fullnativefrontend+dualbackendcloses11:56:19Z,518.504231s vs sameblock
+oldnative691.359191 andASTdual464.579050. All1000IDs/verdict/non-message
+parity,992/8/0,62message-onlychanges/88observerreaderrors. Actualnative
+Farkasdaemonengagementverifiedbyancestry. Nativebackendalone1.33337x;
+ASTadditional1.11607x. Do notcredit1.5xentirelytofrontendorclaimpurephase
+causality:LPs/proofs/fallbackchange. Rootself-reviewacceptscomponentfacts,
+rejectsglobalCPUfrontier/OSDInoveltyshortcut.
+
+E1058repair:oneprocesspoolmaximumderivedfromdiscoveredGPUphysicaltotal,
+notguess/tuninggrid. Same48GiBreal64trialstill31OOMsatcudaMemPoolCreate
+beforeLPbuffers,21zeromodelgroups/zeroGPUkernels. 63.671673sfailedfallback
+isnotusefulGPUperformance. JobUIDdeleted/labReady/otherWorkspaceRunning.
+Defaultandrepairsource/rawfailuresretained,legacyfunctionalbackendunchanged.
+Nootherallocator/buffergridorfullGPUfromthisvariant;GPUrouteoverallopen.
+
+E1062admitshighvaluegeneralityonALL29,750originalGoedelrecords(51,694,831bytes,
+29,750uniqueIDs,prior1000exactoriginalrecords). Threecomponentcells,not
+Full/Fast×solvermatrix: oldnative, nativefrontend+dual, ASTfrontend+dual.
+Rootdriver277984executesreal24sourceI/O/engagementpreflightfirst,thenfull
+blockonlywithnativeverdict/non-messagefidelity. CPU0–3/8queues/48GiB,
+allnormalcosts/failedsources,protectedprefix20–23. Streaminggziponexisting
+logpathprotectsactual2.8GiBfreevolume,loselessmultiplememberreaderchecked;
+no newflag/quota/compressordaemon. Per-calltimerspreappendexcludecompression,
+wholepipelinechargesit. Source/defaultplainhistoricalbehaviorpreserved.
+WRITE paper/README/evaluation updated,fullWRITEloopnotcompleted.
+REVIEWrootself-audit,allRQ/systemnovelty/fullstandardresultstillopen.
+
+E1062actualpreflightclosed12:14:26Z:all3x24sources22complete/2rejected/0operational,
+source/verdict/non-messagefidelity,realparsednumericLPsinbothgzipstreams.
+Full29,750nativecellreallylaunched12:14:26.97Zunder277984;remainingtwo
+componentcellsareinthissamefiniteexistingdriver,notnewduty/Agententities.
+Activebinarytree/commoncollector/proxyarefrozenuntilblockexits. Source/
+plans/rawclosedpreflightplusallfailurespublishednow;donotwaitforhourslong
+fullcapturetohidecompletedwork. No goalturnpolling;prefixcontinuespreserved.

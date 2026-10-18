@@ -1,5 +1,5 @@
 """Finite-run numeric support backend; every hint still passes exact repair/Lean."""
-import argparse,json,os,resource,socket,socketserver,threading,time,sys,math,queue,signal,select
+import argparse,gzip,json,os,resource,socket,socketserver,threading,time,sys,math,queue,signal,select
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--min-batch',type=int,default=1,help='Ready requests required before GPU launch; racing CPU owners can cancel while a partial batch waits.');p.add_argument('--backend',choices=['highs','cuopt'],required=True)
 p.add_argument('--socket',required=True);p.add_argument('--log',required=True)
@@ -20,7 +20,7 @@ elif a.backend=='highs':
 lock=threading.Lock();active=0;seq=0;pending_cuda={};cuda_cancelling=set()
 def append_record(path,record):
  with lock:
-  with open(path,'a')as f:f.write(json.dumps(record,separators=(',',':'))+'\n')
+  with(gzip.open(path,'at')if path.endswith('.gz')else open(path,'a'))as f:f.write(json.dumps(record,separators=(',',':'))+'\n')
 class GPUCall:
  def __init__(self,q):
   self.q=q;self.result={};self.cancelled=threading.Event()

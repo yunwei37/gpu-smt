@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-18T11:55:46.426214+00:00",
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/workspaces/.agent-state/gpu-smt-deps/cuda-12.8-minimal/sdk/bin/nvcc",
+    "-ccbin",
+    "/usr/bin/g++-14",
+    "--allow-unsupported-compiler",
+    "-std=c++17",
+    "-O3",
+    "--cudart",
+    "shared",
+    "-shared",
+    "-Xcompiler",
+    "-fPIC",
+    "-gencode",
+    "arch=compute_120,code=sm_120",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/device-bounded-pool/device-batched-simplex.cu",
+    "-o",
+    "/tmp/gpu-smt-linarith-oracle-20261017/async-device-bounded-pool/simplex-device-pool.so"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}
