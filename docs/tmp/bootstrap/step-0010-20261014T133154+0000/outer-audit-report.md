@@ -3344,3 +3344,16 @@ Every source classification matches; raw diagnostics/failed backend rows
 remain. Exact toolchain/module setup, source bodies and separate build root
 are traceable. No native cache overwrite, moved cohort, timing promotion,
 delegate, hiddenGPUuse or independent-audit claim. Public docs agree.
+
+## E1082 admission and execution root self-audit
+Direction: current original system/service thesis and all4RQs preserved.
+This is supporting benchmark transfer evidence, not new snapshot/solver
+novelty or a second scientific contract. Plans use official application/
+client and actual unchanged corpus, strongest credible CPU controls,
+same resources, preparation/retirement costs and retained operationals.
+Efficiency: current isolated1.70059x cannot settle full-service applicability;
+another narrow GPU/LP variant is less decisive. No universal bound invented
+from CPU sums or unavailable historical timestamps. Prior captures stay
+active. Maintenance: canonical frontier fixes stale qualification/ProofNet
+statuses; author dirty files are untouched. Independent audit absent by
+explicit user direction. Actual preflight remains incomplete, not a result.

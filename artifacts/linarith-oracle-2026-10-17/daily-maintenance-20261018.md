@@ -414,3 +414,17 @@ candidate regressions,63persistent across earlier observations, despite
 whole1.70059x. The next consequential decision remains complete population
 coverage and a mechanism-level explanation against existing services/oracles,
 not another small solver or buffer variant.
+
+## Substantive progress after source qualification: full service boundary
+The current bottleneck in the paper argument is transfer beyond a custom
+source-native collector, not another literal-power or LP microvariant.
+A1.70059xcohort result can disappear under the official warm manager,
+parallel process placement, HTTP/GC, memory monitoring and retirement.
+The promising next test uses unchanged Kimina application/SDK with stock,
+the actual stronger CPU algorithm and the current oracle at equal8source
+concurrency/fourCPU. It is now running the same first64real inputs, with
+all costs/outcomes recorded. Only qualified benefit admits complete1000
+rotated blocks. A negative result bounds transfer honestly; it does not
+magically replace the native-state novelty/Lean+SMT requirements.
+Upkeep: canonical evaluation now corrects stale public qualification,
+ProofNet and prefix live-status wording and links the single integrated plan.

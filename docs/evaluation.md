@@ -7,6 +7,8 @@ zero verdict/non-message differences,108message differences. Same8queues/
 fourCPU8--11/48GiB/officialomega; optional observer off. Remaining RPC/candidate/
 omega/backend recording charged. Distinct from E1077's4--7instrumented3blocks;
 no cross-protocol pooling or newGPU result. Whole-Goedel coverage remains open.
+Current source spans regress for169candidates, including63of70previously
+persistent IDs; all remain in the result. Whole gain is not a per-source guarantee.
 
 
 ### Repeated instrumented arithmetic comparison
@@ -15,7 +17,7 @@ close with native/direct629.48/350.68,615.33/348.91,637.27/356.54s;
 whole-sum1.78205x,all992complete8reject,zero verdict/non-message deltas.
 These retain eager diagnostic JSON/stage clocks and the resource observer.
 Do not call them uninstrumented production measurements. The same-algorithm
-reduced-diagnostic correction is in qualification; no new GPU result follows.
+reduced-diagnostic correction is complete above; no new GPU result follows.
 
 
 ### Actual formal-version oracle integration — 2026-10-18
@@ -24,9 +26,26 @@ all64originals44complete20reject in stock/native-preprocessing/direct conditions
 normalquit/48GiB and identical full responses. Actual88direct native-checked
 certificates (6nonlinear),88native-only searches/44tactics. Selected group clocks
 are not general performance; same-backend native is a component, not the
-unported4.27 Fast frontend or strongest whole service. Complete original
-miniF2F/ProofNet oracle population evaluation follows; all4RQs/GPU remain open.
+unported4.27 Fast frontend or strongest whole service. The full4.9ProofNet component comparison is complete: stock1151.883s,
+native1160.922s/direct1178.934s, all5952sources and matching
+413complete5523reject12operational4incomplete. Direct is2.35%slower.
+The module-loaded stock path elaborates explicit arguments before fallback;
+it is not pristine Mathlib. miniF2F continues; all4RQs/GPU remain open.
+[Closed ProofNet component evidence](../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md).
 
+
+### Official Kimina HTTP comparison admitted — 2026-10-18
+RQ4supporting strongest-service comparison tests whether current arithmetic
+gain survives the actual upstream HTTP/manager/SDK path. Existing native-array
+collectors cannot answer it. Upstreamfb2393de server sources are unchanged;
+the same declared matching4.27kernel/GC/native-loader REPL is used in all
+conditions. Stock compiled Mathlib, prior strong Fast/hybrid+omega, and current
+Power oracle;8outstanding sources/fourCPU20--23/48GiB, original1000cohort.
+The first64real-source preflight is actually running; no speed result or full
+matrix admission follows yet. Three rotated1000source blocks follow only if
+the real comparison qualifies and shows benefit under the user's direction.
+No new state-branching mechanism or GPU success is claimed.
+[Integrated plan and source-native execution](../artifacts/linarith-oracle-2026-10-17/kimina-http/plan.md).
 
 Updated2026-10-17 from published main831f0df plus completed original native/profile portions below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
@@ -48,8 +67,10 @@ there are326 versus319 operational sources, with5 operational→rejected and
 elapsed increase is not a validated speed ratio because operational outcomes
 remain unresolved and forced-retirement CPU is censored.
 [Full source transitions and raw record](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/exact-result-review.md).
-The existing unit-text/ProofNet work continues; GPU arithmetic is a separate
-ongoing experiment and is not closed by this supporting result.
+The unit-text and ProofNet prefix captures also complete with retained
+operational differences and no validated whole-speed benefit. Their current
+linked dispositions supersede the earlier live-status wording. GPU arithmetic
+is separate and is not closed by these supporting results.
 
 ## Research questions and decisive frontier
 

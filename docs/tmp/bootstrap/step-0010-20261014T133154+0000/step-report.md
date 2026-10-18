@@ -5151,3 +5151,24 @@ qualification with standalone setup, not a new speed ratio or identical
 REPL payload proof. Public source README now reflects the complete boundary.
 Full currentGoedel/miniF2F remain actual active captures. Root-only self-review;
 all4RQs/system novelty/strictGPUbound remain open. No full lifecycle promotion.
+
+## E1082 official Kimina HTTP arithmetic comparison
+EXPERIMENT_GATE selects unchangedRQ4's strongest-CPU/service requirement.
+Historical2234.69did not collect full phase stamps; existing own-clock
+component sensitivities cannot reconstruct them or prove universal GPU
+impossibility. No redundant quotient or losing LP kernel is started.
+The highest-value executable discriminator is the current arithmetic
+composition through the official HTTP manager/SDK, replacing neither
+workload nor scientific contract. Existing native-array/proxy data cannot
+settle this equal-boundary service transfer.
+
+Actual upstreamfb2393de main/repl/manager/router/settings bodies match.
+Same retained4.27kernel/GC-header/native-loader REPL in all conditions,
+original selected1000, stock/nativeFast+omega/Power,8source concurrency/
+fourCPU20--23/48GiB. Default pooling/GC/logging/monitoring and SDK remain.
+Private finite HTTP endpoints only, no infrastructure/service deployment.
+First64real sources have started; actual warm/API responses observed.
+No completed preflight ratio or full admission yet. Plans/raw/command below.
+Root self-review under user prohibition of all agents, no independent audit.
+All4RQs, original narrative, Lean/SMT and OSDItarget unchanged.
+[Integrated plan](../../../../artifacts/linarith-oracle-2026-10-17/kimina-http/plan.md).
