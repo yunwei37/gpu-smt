@@ -16,7 +16,7 @@ the same newprivatecrate/defaulttarget, no sharedCargo cache from oldfailure.
 Retainallrequests/replies/modeldimensions/actualparsedLPjoins/nativechecks/
 fallback and wholeclock includingpreparation/export/queue/check/retirement.
 Functionalpreflight doesnotadmitfullGPUmatrix orclaimnovelty. Afterexactscope
-checks, admitatmostoneapplicableadditiveGPUqualificationonlyifnewactual
+checks, admitanapplicableadditiveGPUqualificationonlyifnewactual
 eligibleLPsupplysupportsit. Ifthereisnonewusefulsupply/CPUbenefit, keepnegative,
 notanotherparametergrid. Original1.5whole-systemcriterion unchanged.
 

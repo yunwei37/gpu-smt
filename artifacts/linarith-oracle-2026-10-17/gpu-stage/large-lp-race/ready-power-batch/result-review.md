@@ -2,7 +2,7 @@
 
 All15 original argument-bearing sources,8queues/fourCPU8--11/48GiB/officialomega,
 currentPower representation and same dual CPUportfolio. Sequential76.385584635s,
-ready74.758397014s:1.02176596x in one selected observation, not confidence or
+ready74.758397014s:1.02176595x in one selected observation, not confidence or
 the full1000criterion. Both7complete8reject0op, verdict/nonmessagefields match.
 Sixmessage-only differences and0/6observer errors remain.
 
@@ -19,7 +19,7 @@ can stop other requests before parsing. Exported models are not device models.
 Numerical product/LP elapsed sums are0.097252682/1.957127589seconds, including
 overlap/waiting; not CPU or whole fractions. The entire1050ready-worker lifetime
 union is1.737701039seconds. Erasing all those intervals with remaining observed
-paths/costs fixed models only1.023795x over this ready CPUclock. It also erases
+paths/costs fixed models only1.023797x over this ready CPUclock. It also erases
 packing/repair/retirement within workers and is intentionally generous.
 It excludes scalar calls outside these groups and hostparser/transport/native
 checks; it is **not** an overallGPU Amdahl bound or a GPU-route closure.
