@@ -1,0 +1,38 @@
+{
+  "same_frozen_numerical_binaries": {
+    "arithmetic-batchd": {
+      "resolved": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/power-export/arithmetic-batchd",
+      "device": 2096,
+      "inode": 3024620,
+      "bytes": 1659832
+    },
+    "farkas-batchd": {
+      "resolved": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/power-export/farkas-batchd",
+      "device": 2096,
+      "inode": 3024201,
+      "bytes": 1521536
+    },
+    "farkas-race-worker": {
+      "resolved": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/power-export/farkas-race-worker",
+      "device": 2096,
+      "inode": 3024202,
+      "bytes": 1450352
+    }
+  },
+  "actual_native_libraries": {
+    "retained-power-native-load.txt": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/power-export/batch-oracle.so"
+    ],
+    "retained-native-native-load.txt": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/power-export/batch-oracle.so"
+    ],
+    "reduced-power-native-load.txt": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/batch-oracle.so"
+    ],
+    "reduced-native-native-load.txt": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/batch-oracle.so"
+    ]
+  },
+  "algorithm_change": "none; telemetry construction/tagging/timing removed, candidate/RPC/omega/backend records remain",
+  "root_review": "self-review, no independent auditor"
+}

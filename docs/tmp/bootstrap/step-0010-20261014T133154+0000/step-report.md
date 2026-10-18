@@ -4993,3 +4993,28 @@ eager JSON/metadata/clock cost despite output suppression. E1080 addresses
 that actual measurement threat using unchanged algorithms/numeric binaries;
 the six old cells stay preserved and are not renamed uninstrumented.
 [Complete result/raw/reproducer](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md).
+
+## E1080 — actual diagnostic-cost correction qualified; full pair acquiring
+RQ4 preserved. Source inspection proves eager row construction, stage clocks
+and LP/product diagnostic tagging in the common Cost build. Disabling the sink
+does not suppress argument evaluation. Existing results stay instrumented,
+not invalidated or silently renamed production measurements.
+
+Root compiles a private same-algorithm Lean build removing those diagnostics,
+using exactly the frozen E1074 numeric binaries. Actual selected native-load
+manifests and canonical binary identity retained. Original64 in all four
+retained/reduced × native/Power cells finish63complete1reject; no verdict or
+non-message differences, and each same-frontend diagnostic removal changes
+no full response. Native66.895342/67.079242s and Power37.528247/36.952555s
+show no demonstrated large systematic overhead from this one order.
+Do not imply diagnostic removal explains the whole1.78x or is a contribution.
+All four disable the optional observer,8queues/fourCPU8--11/48GiB/officialomega.
+Candidate/RPC/omega/backend records remain, so not entirely uninstrumented.
+
+The reduced-build full original1000 native/Power pair is genuinely acquiring,
+not a parameter grid. Full formal capture and old29750 writer preserved.
+WRITE_GATE keeps the published paper's explicit pending diagnostic correction;
+no unfinished ratio propagated. REVIEW_GATE root self-review checks algorithm
+preservation, actual native load, raw/all-failure fidelity and scoped clocks.
+Independent audit absent by user instruction; all4RQs/openGPU/InitialNarrative
+remain. [Source/build/qualification/launch](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/README.md).

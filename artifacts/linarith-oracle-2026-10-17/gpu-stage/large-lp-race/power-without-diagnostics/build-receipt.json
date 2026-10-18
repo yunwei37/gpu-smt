@@ -1,0 +1,165 @@
+{
+  "utc": "2026-10-18T19:31:14.250550+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostTelemetry.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostTelemetry.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostStages.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostStages.lean"
+      ],
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostStages.lean:247:10: warning: unused variable `fields`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostProducts.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostProducts.lean"
+      ],
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostProducts.lean:101:8: warning: unused variable `st`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostNative.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean"
+      ],
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:343:22: warning: unused variable `fields`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:430:28: warning: unused variable `callId`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:430:35: warning: unused variable `t0`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:529:10: warning: unused variable `tOracle`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostFast.lean:545:14: warning: unused variable `t1`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostBaseline.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostOracle.lean"
+      ],
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/CostOracle.lean:196:8: warning: unused variable `e`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerCostControl.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerCostControl.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerCostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerCostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerCostOracle.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/PowerOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/PowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/PowerOracle.lean"
+      ],
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/PowerOracle.lean:195:8: warning: unused variable `e`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerPowerOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerPowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/GpuArithmetic/IntegerPowerOracle.lean"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerCostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/PowerOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/IntegerPowerOracle.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/cost-emit.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/clock.o",
+        "-L/usr/lib/x86_64-linux-gnu",
+        "-lz",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/power-without-diagnostics/batch-oracle.so"
+      ],
+      "exit": 0,
+      "output": ""
+    }
+  ]
+}

@@ -3261,3 +3261,12 @@ establish uninstrumented production performance. README/paper now say so.
 Tectonic success and page14 visual check passed. No all-RQ closure or OSDI/
 independent-audit claim. Next actions remain full formal generalization and
 the admitted diagnostic-overhead repair; no polling-only continuation.
+
+## E1080 qualification root self-audit — not independent
+Actual four finite cells/64originals complete,63complete1reject each, no verdict/
+non-message differences and no full-response difference within either frontend
+after diagnostic removal. Private native manifests choose the intended build;
+numeric binaries are the same underlying files. No large overhead claim from
+the small/noisy single-order deltas. Remaining instrumentation and disabled
+observer are explicit. Full corrected pair is open, no partial promotion.
+Frozen original captures/formal sources/author WIP preserved, no agents.

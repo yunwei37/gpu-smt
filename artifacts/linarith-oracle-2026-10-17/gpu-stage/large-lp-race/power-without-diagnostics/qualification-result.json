@@ -1,0 +1,184 @@
+{
+  "state": "complete",
+  "qualified": true,
+  "conditions": {
+    "retained-native": {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 66895341678,
+      "cpu": {
+        "collector": {
+          "user": 0.06779199999999996,
+          "system": 0.05484599999999999
+        },
+        "waited_children": {
+          "user": 103.873198,
+          "system": 3.154117
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": null,
+      "sampled_peak_fleet_rss_with_collector": null,
+      "sampling_read_errors": null,
+      "workers": 1,
+      "resource_observer_enabled": false,
+      "sampling_seconds": 0.0,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+    },
+    "reduced-native": {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 67079242181,
+      "cpu": {
+        "collector": {
+          "user": 0.07905899999999999,
+          "system": 0.037489999999999996
+        },
+        "waited_children": {
+          "user": 103.887358,
+          "system": 3.229983
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": null,
+      "sampled_peak_fleet_rss_with_collector": null,
+      "sampling_read_errors": null,
+      "workers": 1,
+      "resource_observer_enabled": false,
+      "sampling_seconds": 0.0,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+    },
+    "reduced-power": {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 36952554749,
+      "cpu": {
+        "collector": {
+          "user": 0.028071999999999986,
+          "system": 0.03225700000000001
+        },
+        "waited_children": {
+          "user": 91.053161,
+          "system": 2.830485
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": null,
+      "sampled_peak_fleet_rss_with_collector": null,
+      "sampling_read_errors": null,
+      "workers": 1,
+      "resource_observer_enabled": false,
+      "sampling_seconds": 0.0,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+      "collector_whole_ns": 36851725105,
+      "backend_setup_cleanup_ns": 100829644,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    },
+    "retained-power": {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 37528247108,
+      "cpu": {
+        "collector": {
+          "user": 0.03305900000000006,
+          "system": 0.029602000000000003
+        },
+        "waited_children": {
+          "user": 91.435432,
+          "system": 2.8681669999999997
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": null,
+      "sampled_peak_fleet_rss_with_collector": null,
+      "sampling_read_errors": null,
+      "workers": 1,
+      "resource_observer_enabled": false,
+      "sampling_seconds": 0.0,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+      "collector_whole_ns": 37399264214,
+      "backend_setup_cleanup_ns": 128982894,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    }
+  },
+  "fidelity": {
+    "retained-native": {
+      "verdict": [],
+      "non_message": [],
+      "messages": []
+    },
+    "reduced-native": {
+      "verdict": [],
+      "non_message": [],
+      "messages": []
+    },
+    "reduced-power": {
+      "verdict": [],
+      "non_message": [],
+      "messages": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619",
+        "Proof_01349",
+        "Proof_01681",
+        "Proof_01755"
+      ]
+    },
+    "retained-power": {
+      "verdict": [],
+      "non_message": [],
+      "messages": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619",
+        "Proof_01349",
+        "Proof_01681",
+        "Proof_01755"
+      ]
+    }
+  },
+  "same_frontend_diagnostic_removal_comparison": {
+    "native": {
+      "full_response_difference_IDs": []
+    },
+    "power": {
+      "full_response_difference_IDs": []
+    }
+  }
+}

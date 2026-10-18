@@ -366,3 +366,14 @@ receipt. An absent population benefit will limit the mechanism honestly.
 Keep the alternating original1000 repetitions frozen; do not open a solver grid.
 Upkeep: new adapter/source/build/result links live together under one artifact
 directory; no duplicate baseline source clone or new service/schedule is added.
+
+## Measurement reflection and executable follow-through
+A sink returning immediately still pays for eager JSON construction and stage
+clocks. Source inspection makes this a real production-measurement concern,
+but the actual64 A/B shows no demonstrated large systematic overhead; do not
+turn that concern into an invented explanation. The concrete follow-through is
+one same-algorithm full native/direct pair with those diagnostics removed.
+The strongest useful next decision is its complete matched ratio plus full
+formal population generality, not another kernel or solver parameter grid.
+README and paper label the completed1.782x as the actual instrumented result.
+Local links in root README and new formal adapter/protocol pages all resolve.
