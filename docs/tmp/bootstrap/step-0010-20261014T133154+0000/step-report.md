@@ -4467,3 +4467,48 @@ full1000-driver.py. Freeze these published binaries/harness untilcaptureends.
 Protectedprefixdriver5256remainsindependent. NoAgent/subagent/OMP/native
 session. WRITE qualification/data/planupdates;REVIEW selfaudit,allfourRQ/
 novelty/thresholdrepeatabilityopen. GPUroute/hourly/goalnotclosed.
+
+### 2026-10-18 — novelty source loop and equal-resource capacity evidence
+
+Previousgoalturn:progress,with source/realCPU/GPUpreflights/fullCPUpublication.
+Entry:readcurrentuserinstructions/InitialNarrative/fourRQs/paper and research
+skills;live193488/193489andprefix5256preserved. PhaseBOOTSTRAP remainsunfrozen.
+
+EXPERIMENT L1052 askswhetherexternalpositive/negativeLPcertificates or one
+CUDAblockperLP isnew. [Primarysource loop](literature-20261018T1036/report.md)
+verifiesMathlib/Farkas,AAAI2025verifiedLPcheckingandICPE2019batchedsimplex.
+Rootrejectsfirst-oracle/first-dual/first-batchclaims. Thiscontradictsunearned
+primitive-noveltyclaims,not theuser'sbroaderOSDIgoal. The originalpublicBLPG
+sourceAPIreturns404;nosubstituteforkiscalledofficial. Backgroundcanonical
+update stagesonlyroot's18appendedlines,preservingallotherauthorWIP.
+
+EXPERIMENT E1053 testsone candidatecapacity32pointatfixedfourCPU/48GiB,
+not anE038threadoptimization/grid. Originalfirst64,native72.792683/
+CPUdualHiGHS39.662808/GPUdual45.022186s. Every63complete/1rejected/0operational,
+all64verdict/non-messageparity,6/5warnings. GPU10realgroups(7pairs,2fours,
+1triple),25models,allretired;6positive+2negativeGPUcertwins. GPU13.51%slower
+thanCPU;no fullGPUadmission/noadditionalcapacitygrid. JobUIDdeleted,
+labReady/otherWorkspaceRunning. CPU18/GPU32readerrorslimitmemoryclaims.
+[Raw/fullselfreview](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
+
+EXPERIMENT E1054 reusescompleteownclockprofilewithoutnewcapture:exactordered
+numericalkeysrepeat4150/13230nativeand2589/10251oracle afterpriorcompletion,
+includingcrosscandidategroups. ObservedLPsearchCPUonthosehits132.870/75.227s.
+Nosemanticanswerdifferences;oracle timingfieldsdifferonly. Thismotivates a
+strong ordinarynumerical-cachealternative and warnsagainstmanufacturedbatch
+supply;it isnot cacheperformanceorremovablewall. Analyze-query-reuse.py
+reproducesrawcounts. Thisisbaselineevidence,not a newcachecontribution.
+
+WRITE partial,targetedprior-art/citation/frontierpass:twoverifiedbibliography
+entries,paperRelatedwork,idea-storyfrontier andexistingbackgroundmap.
+PapercompileswithzeroOverfullboxes. Thisisnota completedfullBOOTSTRAP
+iter-refine-writingloop;WRITEexitandphasefreezeremainpending.
+REVIEW rootself-auditonly. Directionremains fullprepared-stateverification/
+Lean-SMT/fourRQ/OSDI,not a smallLPkernelstudy. Rankedopenobjections:
+(1)systemsnoveltybeyondtheseestablishedprimitives;(2)fullCPUdualresultand
+repeatability;(3)strongservice/cache/snapshotcomparisonsandallRQcoverage;
+(4)applicableGPUopportunitybound/finalheterogeneousscope. None invalidates
+these completed localnodes,whichretainproperdenominators/rawfailures.
+Next:preservefull1000driver193488fromtwo-sided-oracle/full1000-driver.py;
+collectonlyonactualterminal,anduseitsstrongCPUresultforthe nextRQdecision.
+NoAgent/OMP/native-sessionresume,goal/hourlyunchanged.

@@ -27,6 +27,32 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — strongest arithmetic alternative and unresolved system novelty
+
+The latest closed original1000-source pair is native691.095897/CPU-only529.171190/
+CPUHiGHS462.504847s,ratio1.49424574x,all992complete/8rejected/0operational with
+native verdict/non-message parity. This one pair is not a stable1.5x decision.
+The current-family diagnostic has its own691.204649/545.050104s clocks;
+its optimistic occupied-union deletion is not an applicable below1.5x proof.
+Older wave8 GPU ratios below remain scoped historical evidence.
+
+Real5090device-batched simplex now executes with independent per-model
+cancellation and exact positive/negative checking,but its inspected10-source
+GPUqualifications trail the stronger CPUalternatives. The newly implemented
+CPUnegative certificates eliminate110exact fallback searches in one selected
+diagnostic,not a full-cohort or novelty result. The admitted fresh1000CPU
+comparison is active. A matched32queue capacity preflight investigates actual
+GPUwork availability at equalCPU/memory;it changes no deployment setting.
+
+The [primary-source review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261018T1036/report.md)
+rejects first-externaloracle,firstdualcertificate andfirstbatchedLPprimitive
+claims. Established exactLPchecking/Farkas and ICPE2019GPUbatching cover those
+mechanisms. A differentiated systems result beyond strongnative/CPU/cache/
+snapshot alternatives remains unproven. This evidence update preserves the
+complete Initial Narrative,allfourRQs,Lean/SMT scope and OSDItarget;it doesnot
+replace the service-state thesis with solver substitution or mark anyRQclosed.
+
+
 ### 2026-10-18 — current arithmetic/GPU evidence
 The complete original1000wave8 comparison is native1237.37s,CPUoracle1037.85s,
 GPUwarm1020.12s; its fresh-server full lifecycle is1036.25s. All992/8/0,

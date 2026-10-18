@@ -641,3 +641,19 @@ Neither sumis a wholewallpartitionorGPUbound. Success-only hints cannotstop
 negativeexactsearch;any dualinfeasibilityhintmustbe repairedandcheckedexactly.
 GPUfirst/scaledactualdevicebatches37.979/32.719sonselected10vsHiGHS18.130,
 not admittedfullGPUgainsorGPUrouteclosure. AllfournativeRQ/noveltygoalsremain.
+
+
+## Equal-resource32queue capacity and exact-query reuse
+
+The originalfirst64-source preflight at32nativequeues,fourCPU8-11and48GiB
+closes native72.792682960/CPUdual39.662807654/GPUdual45.022186258s. All63
+complete/1rejected/0operational,verdict/non-messageparity,6/5warnings.
+ActualGPUgroups:7pairs,2fours,1triple;all25models/groupsretired. CPU18/GPU32
+observerreaderrorslimitmemory. ColdGPU62.9692604s. No fullGPUadmission or
+universalGPUclosure follows. [Raw/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
+
+The earlier complete own-clock diagnostic has4150/13230native and2589/10251
+oracle identical numerical requests after priorcompletion. Their observed
+LPsearchCPU132.870/75.227s isnot removablewholewall or measuredcachespeedup.
+Non-timing answers agree. This identifies a stronger ordinarycachealternative
+and limits syntheticbatchsupply claims. [Analysis and scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/exact-query-reuse-review.md).

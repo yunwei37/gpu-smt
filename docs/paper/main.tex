@@ -1256,6 +1256,19 @@ semantics from native verification, and its hybrid training rewards can use
 predictions for unfinished checks. This is complementary evidence about an
 accuracy--cost tradeoff, rather than exact native checking acceleration.
 
+
+\paragraph{Certified arithmetic and batched linear programs.}
+Mathlib and Farkas already separate arithmetic certificate search from native
+proof construction~\cite{farkasSource}. Exact certification of external linear
+programming results, including infeasibility and unboundedness, is also
+established~\cite{verifiedLP2025}. Gurung and Ray assign a CUDA block to each
+linear program and evaluate both batch supply and complete application
+performance~\cite{batchedLPGPU2019}. These precedents cover the numerical
+primitives used in our heterogeneous prototypes. Their presence alone cannot
+establish a new verification service or predict a gain under limited
+concurrent request supply. Our comparison charges proof construction, exact
+repair, failed searches and independent cancellation at matched resources.
+
 \section{Conclusion}
 Native preparation and candidate execution history are separate resources in verification serving. Independent branches retain preparation while isolating candidate lifetimes, and their value depends on behavior fidelity and the equal-resource service frontier. \missing{Final findings answering all four RQs, including the measured heterogeneous scope.} The matched comparison determines whether branching supplies a systems benefit beyond existing warm reuse.
 

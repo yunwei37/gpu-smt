@@ -492,3 +492,39 @@
   howpublished = {\url{https://docs.nvidia.com/cuopt/user-guide/latest/convex-features.html}},
   note = {Version 26.10. Accessed 2026-10-17}
 }
+
+
+% VERIFIED: 2026-10-18
+% PDF: https://research.spec.org/icpe_proceedings/2019/proceedings/p59.pdf
+% ABSTRACT: Established CUDA batched simplex with one block per LP and application-level evaluation.
+% REAL: yes
+% PRIMARY: Official ICPE2019 proceedings PDF, pages59-66; DOI printed on first page.
+% USED_FOR: GPU batching is prior art; batch supply and complete application costs matter.
+@inproceedings{batchedLPGPU2019,
+ author={Amit Gurung and Rajarshi Ray},
+ title={Simultaneous Solving of Batched Linear Programs on a {GPU}},
+ booktitle={Proceedings of the Tenth ACM/SPEC International Conference on Performance Engineering},
+ year={2019},
+ pages={59--66},
+ publisher={ACM},
+ doi={10.1145/3297663.3310308},
+ url={https://research.spec.org/icpe_proceedings/2019/proceedings/p59.pdf}
+}
+
+% VERIFIED: 2026-10-18
+% PDF: https://ojs.aaai.org/index.php/AAAI/article/download/34868/37023
+% ABSTRACT: Verified approximate policy iteration includes LP solution certification and formally establishes infeasibility/unboundedness certificates.
+% REAL: yes
+% PRIMARY: AAAI2025 official proceedings page and full paper, section on LP certification.
+% USED_FOR: Exact dual/Farkas certification is established,not a new theorem or checker architecture here.
+@article{verifiedLP2025,
+ author={Maximilian Sch{\"a}ffeler and Mohammad Abdulaziz},
+ title={Formally Verified Approximate Policy Iteration},
+ journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+ volume={39},
+ number={25},
+ year={2025},
+ pages={26659--26667},
+ doi={10.1609/aaai.v39i25.34868},
+ url={https://ojs.aaai.org/index.php/AAAI/article/view/34868}
+}

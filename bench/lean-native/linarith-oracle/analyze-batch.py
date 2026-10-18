@@ -40,11 +40,34 @@ def cell(root,name,inputs):
  calls=rows(calls_path)if calls_path else[]
  batches={tuple(x['reply']['batch_ids']):x['reply']for x in calls if'batch_ids'in x['reply']}
  return {'terminal':terminal,'responses':responses,'byidx':byidx,'calls':calls,'batches':list(batches.values()),'missing_candidate_spans':missing,'unmatched_candidate_spans':unmatched}
-def gpu_job_evidence(root,name):
+def gpu_job_evidence(root,name,server_log=None):
  backend=root/('rep1-'+name+'-backend')
  path=retained_file(backend,'support-calls.jsonl.batches')
  if path is None:return {'available':False,'scope':'No job-event stream; received-result counters do not establish all submitted/cancelled GPU work.'}
  events=rows(path)
+ if any(x.get('event')=='device_submit'for x in events):
+  submitted={x['batch_id']:x for x in events if x.get('event')=='device_submit'}
+  retired={x['batch_id']:x for x in events if x.get('event')=='device_batch_retired'}
+  out={'available':True,'backend':'device-batched-simplex','client_submitted_groups':len(submitted),
+   'client_retired_groups':len(retired),'client_groups_without_retirement':sorted(set(submitted)-set(retired)),
+   'client_submitted_size_histogram':dict(collections.Counter(x['batch_size']for x in submitted.values())),
+   'model_cancel_requests':sum(x.get('event')=='model_cancel'for x in events),
+   'dispatcher_retirement':[x for x in events if x.get('event')=='dispatcher_retired'],
+   'actual_device_kernel_groups':None,
+   'scope':'Client groups include models withdrawn before device allocation. Actual CUDA engagement needs provider kernel-state records. Host retirement is not device-compute time; context destruction belongs to the separate Job lifecycle receipt.'}
+  if server_log:
+   with(gzip.open(server_log,'rt')if server_log.suffix=='.gz'else server_log.open())as stream:
+    server=[json.loads(l)for l in stream if l.startswith('{')]
+   states=[x for x in server if x.get('state')in['phase_I_feasible','phase_I_no_hint','cancelled','numerical_no_hint']and'batch_id'in x]
+   actual={x['batch_id']for x in states}
+   launched={x['batch_id']:x for x in server if x.get('event')=='launch'and x['batch_id']in actual}
+   closed={x['batch_id']for x in server if x.get('event')=='batch_retired'}
+   out.update({'provider_log':str(server_log),'actual_device_kernel_groups':len(actual),
+    'actual_device_group_size_histogram':dict(collections.Counter(x['batch_size']for x in launched.values())),
+    'actual_device_distinct_source_histogram':dict(collections.Counter(x['distinct_sources']for x in launched.values())),
+    'actual_device_models':len(states),'device_model_state_histogram':dict(collections.Counter(x['state']for x in states)),
+    'actual_device_groups_without_retirement':sorted(actual-closed),'device_compute_seconds':None})
+  return out
  submitted={x['job_id']:x for x in events if x['event']=='submit'}
  results={x['job_id']:x for x in events if x['event']=='result'}
  retired={x['job_id']:x for x in events if x['event']=='job_retired'}
@@ -113,7 +136,7 @@ def phase_profile_tail(profile,ids):
     }
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('root',type=Path);p.add_argument('--input',type=Path,default=Path('/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl'));p.add_argument('--limit',type=int,default=0);p.add_argument('--methods',nargs='+',default=['fast-hybrid','oracle-highs','oracle-gpu']);p.add_argument('--historical-phase-profile',action='store_true',help='Explicitly attach the old stacked-header profile; never current cell attribution');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('root',type=Path);p.add_argument('--input',type=Path,default=Path('/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl'));p.add_argument('--limit',type=int,default=0);p.add_argument('--methods',nargs='+',default=['fast-hybrid','oracle-highs','oracle-gpu']);p.add_argument('--historical-phase-profile',action='store_true',help='Explicitly attach the old stacked-header profile; never current cell attribution');p.add_argument('--device-server-log',type=Path,help='Actual CUDA provider states distinguish launched kernels from queued client groups');a=p.parse_args()
  inputs=rows(a.input)
  if a.limit:inputs=inputs[:a.limit]
  phase_profile=load_phase_profile(inputs) if a.historical_phase_profile else None
@@ -128,7 +151,7 @@ def main():
     without_messages=lambda v:{key:value for key,value in v.items()if key!='messages'}if isinstance(v,dict)else v
     if without_messages(x['response'])!=without_messages(y['response']):non_message.append(i)
   out['methods'][n]={'whole_seconds':c['terminal']['whole_ns']/1e9,'native_reference_ratio':ref['terminal']['whole_ns']/c['terminal']['whole_ns'],'counts':c['terminal']['counts'],'missing_candidate_span_indices':c['missing_candidate_spans'],'unmatched_candidate_spans':c['unmatched_candidate_spans'],'outcome_differences':verdict,'full_native_JSON_differences':changes,'non_message_differences':non_message,'backend_requests':len(c['calls']),'backend_request_counter_scope':'Accepted connection records, including unparsed/aborted input; not all are LP solves.','backend_complete_parsed_requests':sum(isinstance(x.get('input'),dict)for x in c['calls']),'backend_errors':sum('error'in x['reply']for x in c['calls']),'GPU_batches':len(c['batches']),'GPU_batch_size_histogram':dict(collections.Counter(x['batch_size']for x in c['batches'])),'GPU_unique_batch_solver_seconds':sum(x.get('batch_solver_seconds_shared')or 0 for x in c['batches']),'candidate_service_seconds':spread([(x['end_ns']-x['start_ns'])/1e9 for x in c['byidx'].values()]),'terminal':c['terminal']}
- for n in cells:out['methods'][n]['GPU_job_events']=gpu_job_evidence(a.root,n)
+ for n in cells:out['methods'][n]['GPU_job_events']=gpu_job_evidence(a.root,n,a.device_server_log if n=='oracle-gpu'else None)
  for selected,refcell in cells.items():
   rank=sorted(refcell['byidx'],key=lambda i:refcell['byidx'][i]['end_ns']-refcell['byidx'][i]['start_ns'],reverse=True)
   out['tails'][selected]={}

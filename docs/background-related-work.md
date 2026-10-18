@@ -168,3 +168,21 @@ citation alone settles generic novelty, so no redundant numerical rerun is neede
 No source establishes a surviving new high-value implementation here. Preserve allfourRQs/Initial Narrative,
 existing negatives and the full Lean/SMT/service/5090goal. Complete-evidence/contribution assessment continues
 without reviving E038/E040/scalarGPU or importing another repository's budgets, gates or hash checks.
+
+
+## 2026-10-18: arithmetic certificate and GPU batching overlap
+
+Exact dual/Farkas certificates for infeasibility are established prior art:
+[Schaeffeler and Abdulaziz, AAAI 2025](https://ojs.aaai.org/index.php/AAAI/article/view/34868)
+and its [verified LP checker](https://github.com/schaeffm/fmdp_isabelle).
+Generic external arithmetic search plus Lean proof reconstruction already
+exists in Mathlib and [Farkas](https://github.com/lucifer1004/farkas).
+[ICPE 2019](https://doi.org/10.1145/3297663.3310308) already maps one CUDA
+block to each LP in a batch. These primitives cannot establish our novelty.
+
+The surviving RQ4 hypothesis concerns complete verification at equal resources:
+actual request supply, exact positive/negative termination, independent
+cancellation and full setup/fallback costs must beat the strongest CPU path.
+A matched 32-candidate-queue capacity preflight tests that uncertainty.
+This does not replace the original native-state/service RQs or claim their
+completion. [Primary-source review and baseline handoff](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261018T1036/report.md).
