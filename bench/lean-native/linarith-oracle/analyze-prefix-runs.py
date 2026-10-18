@@ -2,7 +2,7 @@
 Operational outcomes and partial acquisition never establish semantic agreement.
 """
 from pathlib import Path
-import argparse,gzip,json
+import argparse,collections,gzip,json
 def native_request_summary(path,whole_seconds):
     log=path/'requests-responses.jsonl.gz'
     if not log.exists():return None
@@ -28,6 +28,33 @@ def native_request_summary(path,whole_seconds):
       'serialized_intervals_validated':valid,
       'failed_request_roundtrip_fraction_of_whole':elapsed.get('request_failure',0)/whole_seconds if valid else None,
       'scope':'Sequential client request wall, including waiting. Not native CPU or additive internal tactic/solver stages. Failed-request cleanup outside the request interval remains in whole elapsed.'}
+def outcome_population(rows):
+    outcomes=collections.Counter(x['outcome'] for x in rows.values())
+    failure_types=collections.Counter(
+        x.get('response',{}).get('transport_failure','unspecified')
+        for x in rows.values() if x['outcome']=='operational')
+    groups=collections.defaultdict(list)
+    for index,row in rows.items():groups[index//32].append(row)
+    return {
+        'source_outcome_counts':dict(outcomes),
+        'operational_source_failure_types':dict(failure_types),
+        'original_32_candidate_groups_observed':len(groups),
+        'full_32_source_groups':sum(len(g)==32 for g in groups.values()),
+        'groups_with_native_complete_source':sum(any(x['outcome']=='complete' for x in g) for g in groups.values()),
+        'groups_with_operational_source':sum(any(x['outcome']=='operational' for x in g) for g in groups.values()),
+        'scope':'Native source outcomes in preserved original 32-candidate blocks. A native-complete source is not an independently established original-task solution or benchmark pass@32. Operational outcomes are unknown, not logical rejections.'
+    }
+def outcome_transitions(baseline,candidate):
+    shared=sorted(baseline.keys() & candidate.keys())
+    counts=collections.Counter((baseline[i]['outcome'],candidate[i]['outcome']) for i in shared)
+    return {
+        'compared_sources':len(shared),
+        'transitions':[{'native_batch':a,'prefix':b,'sources':n} for (a,b),n in sorted(counts.items())],
+        'native_complete_to_other_indices':[i for i in shared if baseline[i]['outcome']=='complete' and candidate[i]['outcome']!='complete'],
+        'other_to_prefix_complete_indices':[i for i in shared if baseline[i]['outcome']!='complete' and candidate[i]['outcome']=='complete'],
+        'both_operational_indices':[i for i in shared if baseline[i]['outcome']==candidate[i]['outcome']=='operational'],
+        'scope':'Source-associated transitions, not diagnostic transparency or proof of native behavior for operational requests. The original validity rule and whole clocks are unchanged.'
+    }
 def cell(path):
     receipt=path/'terminal.json'
     if not receipt.exists():return None
@@ -36,10 +63,11 @@ def cell(path):
     by={x['index']:x for x in rows}
     return {'terminal':t,'rows':by,
       'native_request_summary':native_request_summary(path,t['whole_seconds']),
+      'outcome_population':outcome_population(by),
       'complete':t['state']=='complete' and len(rows)==len(by)==t['expected']}
 def analyze(root):
     cells={m:cell(root/m) for m in ['batch','exact','unit']}
-    out={'root':str(root),'cells':{m:{'terminal':v['terminal'],'acquisition_complete':v['complete'],'native_request_summary':v['native_request_summary']} for m,v in cells.items() if v},'comparisons':[]}
+    out={'root':str(root),'cells':{m:{'terminal':v['terminal'],'acquisition_complete':v['complete'],'native_request_summary':v['native_request_summary'],'outcome_population':v['outcome_population']} for m,v in cells.items() if v},'comparisons':[]}
     for method in ['exact','unit']:
         b=cells['batch'];c=cells[method]
         if not b or not c:
@@ -56,6 +84,7 @@ def analyze(root):
         out['comparisons'].append({'method':method,
           'state':'pending' if not full else ('valid' if valid else 'operational_or_verdict_mismatch'),
           'sources':len(b['rows'].keys() & c['rows'].keys()),
+          'source_outcome_transitions':outcome_transitions(b['rows'],c['rows']),
           'operational_indices':ops,'verdict_differences':sorted(diffs),
           'closed_prefix_without_native_kernel_receipt':unchecked,
           'batch_whole_seconds':bt['whole_seconds'],'prefix_whole_seconds':ct['whole_seconds'],

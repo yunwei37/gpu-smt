@@ -3897,3 +3897,18 @@ showownJob/Podgone,otherWorkspaceRunning/labReady,all53sampledsourcePIDsgone.
 InrunserverthreadsnapshotconfirmsCPU0--3,oom0. Kubernetesstart-to-kill events
 span642s, not an exactcoldlifecycleclock. No independentreviewer/OSDIclaim.
 [Realresult and limitations](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
+
+### Formal source transitions and honest implementation scope
+EXPERIMENTsupportnode: actualcomplete7808-source reference is stratified into
+244original32-sourceblocks, with319operational sources in30blocks. Source
+acceptance is not tasksolve/pass@32. Offlineprefixanalyzer adds per-source
+transition matrices while retaining all oldclocks/validity/pending states.
+Actual32-source48GiBregression verifies all oldfields unchanged and28/4native
+outcomes inbothprefixmethods. Sourceaudit confirmsnativebatch discards
+candidate-returnedstate anduseswidth4; no deliberateenvironmentaccumulation.
+No activecapture/runtime changed. WRITE: paper corrects achieved-versus-proposed
+service language usingexisting negativeconstructor evidence, without changing
+title/thesis/fourRQs or prematurely closing1.5decision. Proposedplacement and
+fullservicefrontier remain unestablished. REVIEW: root self-review, not an
+independent audit or completed12-roundWRITE. CPUcontroller126551/child126552
+andprefix5256 were actuallylive atentry andremainpreserved. No newagents/grid.

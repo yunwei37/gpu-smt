@@ -42,3 +42,29 @@ Reproduce caller accounting with analyze-prefix-runs.py on this directory.
 Its added cell summaries are exercised on this actual full capture; missing
 comparison cells remain pending, never fabricated. This is root self-review,
 not independent audit, submission readiness or OSDI acceptance.
+
+## Original-source population and future paired transitions
+The complete7,808 rows cover all244 original32-candidate blocks. Native outcomes
+remain2,992complete/4,497rejected/319operational. Of the319operational sources,
+234areReplTimeout and85ReplError. Thirty originaltaskblocks contain at least
+oneoperationalsource;141contain at leastonenative-complete source.
+These taskblock counts are not independently verified original-task solve
+accuracy or pass@32. [Recomputable counts](outcome-population.json).
+
+The offline analyzer now reports explicit source-associated outcome transition
+counts and complete-to-other/other-to-complete/both-operational indices for
+closed prefix pairs. Existing whole clocks, validity rules, kernel receipts
+and pending status remain unchanged. The new path is exercised on the actual
+earlier48GiB32-source qualification: exact andunit both retain28complete/
+4rejected withno transitions; every oldderivedfield remains equal.
+[Actual-data regression](outcome-transition-regression.json).
+It does not read a live partialgzip or modify any capture.
+
+Source audit confirms the nativeCommandBatch implementation executes each
+unchanged source against the same initial state and discards each candidate's
+returned command state. The baseline is not deliberately retaining every
+candidate's environment to manufacture a prefix-GC gain. Both methods use
+nativewidth4; prefix snapshots are cleared per32-source group.
+This is the project-native adaptation of warm in-process batch andSHREDparser
+interfaces, not an upstream wholeKimina/SHREDservice performance result.
+[Executed builder source](../../../../bench/lean-native/linarith-oracle/build-prefix-repl.py).

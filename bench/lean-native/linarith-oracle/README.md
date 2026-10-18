@@ -229,3 +229,12 @@ are preserved. Backendstdout and exact lifecycle stopwatches are explicitly
 missing after a Windows archive-argument overflow; fresh cluster checks confirm
 ownJob/Podgone, otherGPUWorkspaceRunning/labReady, sampledsourcePIDsallgone.
 No CPU-only threshold closure follows while the corrected CPU series runs.
+
+The formal-prefix analyzer reports original32-candidate-block outcome counts
+and source-associated transitions for each closed pair. It keeps operational
+results unknown and retains its existing validated-whole-ratio rule.
+Native-complete source counts are not benchmark pass@32. The implementation's
+nativeCommandBatch discards candidate-returned state; width4 and state cleanup
+are documented separately from the upstream full-service claim.
+Actual fullminiF2F reference and32-source regression are published under
+formal-default/minif2f/.

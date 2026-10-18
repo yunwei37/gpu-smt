@@ -1,0 +1,53 @@
+{
+  "real_capture": "artifacts/linarith-oracle-2026-10-17/prefix-oom-20261017/default-normal-preflight32",
+  "all_prior_fields_equal": true,
+  "comparisons": [
+    {
+      "method": "exact",
+      "state": "valid",
+      "source_outcome_transitions": {
+        "compared_sources": 32,
+        "transitions": [
+          {
+            "native_batch": "complete",
+            "prefix": "complete",
+            "sources": 28
+          },
+          {
+            "native_batch": "rejected",
+            "prefix": "rejected",
+            "sources": 4
+          }
+        ],
+        "native_complete_to_other_indices": [],
+        "other_to_prefix_complete_indices": [],
+        "both_operational_indices": [],
+        "scope": "Source-associated transitions, not diagnostic transparency or proof of native behavior for operational requests. The original validity rule and whole clocks are unchanged."
+      }
+    },
+    {
+      "method": "unit",
+      "state": "valid",
+      "source_outcome_transitions": {
+        "compared_sources": 32,
+        "transitions": [
+          {
+            "native_batch": "complete",
+            "prefix": "complete",
+            "sources": 28
+          },
+          {
+            "native_batch": "rejected",
+            "prefix": "rejected",
+            "sources": 4
+          }
+        ],
+        "native_complete_to_other_indices": [],
+        "other_to_prefix_complete_indices": [],
+        "both_operational_indices": [],
+        "scope": "Source-associated transitions, not diagnostic transparency or proof of native behavior for operational requests. The original validity rule and whole clocks are unchanged."
+      }
+    }
+  ],
+  "scope": "Actual completed earlier32-source48GiB native qualification. No new capture/performance claim, no change to the prior zero-operational/outcome/kernel validity rule."
+}

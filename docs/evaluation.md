@@ -531,3 +531,16 @@ showownJob/Podgone,otherWorkspaceRunning/labReady,all53sampledsourcePIDsgone.
 InrunserverthreadsnapshotconfirmsCPU0--3,oom0. Kubernetesstart-to-kill events
 span642s, not an exactcoldlifecycleclock. No independentreviewer/OSDIclaim.
 [Realresult and limitations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
+
+## Formal-prefix outcome population and fair interpretation
+The closedminiF2F nativebatch reference spans all244original32-candidate blocks.
+Its319operational sources are234timeouts/85readerrors, concentrated in30blocks;
+141blocks contain at leastonenative-complete source. This is source outcome
+accounting, not independently established tasksolve accuracy. The analyzer
+adds source-associated transition matrices for eventual completeprefixpairs,
+without relaxing its existing operational/verdict/kernel validity rule.
+A real earlier32-source48GiBcapture preserves every oldderivedfield and
+28complete/4rejected in both exact/unit conditions. Full comparisons remain
+pending. Sourceaudit confirms batchcandidate returnedstates are discarded,
+not intentionally accumulated to weaken warmreuse. [Result and raw evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md).
+No activecapture orruntimeparameter changes.

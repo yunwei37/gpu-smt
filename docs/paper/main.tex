@@ -17,7 +17,7 @@ Native execution history includes scope, heuristics, runtime objects and resourc
 Established result caches, persistent environments, proof-state snapshots and bounded warm services recover preparation reuse, while the value of independent native execution at matched resources remains unresolved.
 We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime from preceding alternative attempts.
 Realizing this separation requires supported quiescent runtime boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
-Our verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
+The proposed verification service retains immutable prepared states in a parent, executes disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
 Using public Lean and satisfiability modulo theories (SMT)-backed candidate streams, we compare complete verification against competent bounded warm services and native logical or serialized prepared-state reuse, then assess remaining heterogeneous checking after preparation reuse on an RTX 5090 with setup, transfer and CPU fallback charged.
 \missing{End-to-end latency, throughput, memory and behavior results against the strongest matched services, including the measured scope of device benefit.}
 \end{abstract}
@@ -35,9 +35,9 @@ We argue that reusable verification state should retain preparation while separa
 
 Realizing this separation requires runtime safety, faithful resource handling and bounded memory. The branch boundary must be quiescent and safe for the verifier runtime. Native configuration and resource accounting must remain faithful when process creation changes timers or descriptors~\cite{fork}. Sharing must also improve service capacity within a memory budget that bounds retained states. These requirements connect compatibility to the service's resource frontier, which comprises achievable combinations of latency, throughput and memory use at matched CPU capacity and memory limits.
 
-We present a verification service whose parent retains immutable prepared states for disposable independent candidate branches. Each branch owns its responses, mutable state, communication and cancellation, inherits native resource state, and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams against competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess remaining heterogeneous checking on an RTX 5090, charging setup, transfer and CPU fallback to complete verification. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
+We study a verification-service design whose parent retains immutable prepared states for disposable independent candidate branches. Each branch owns its responses, mutable state, communication and cancellation, inherits native resource state, and receives separate service accounting. The service addresses runtime compatibility and memory use through supported quiescent boundaries, untouched candidate operations after preparation and bounded prepared-state lifetimes, and uses native execution for unsupported boundaries. We compare complete verification on public Lean and SMT-backed candidate streams against competent bounded warm services and native logical or serialized prepared-state reuse. After preparation reuse, we assess remaining heterogeneous checking on an RTX 5090, charging setup, transfer and CPU fallback to complete verification. \missing{Matched behavior results and end-to-end latency/throughput/memory findings, including the measured scope of device benefit.}
 
-This paper makes four contributions.
+The evaluation tests four intended contributions; completed evidence and missing results are distinguished in Section~\ref{sec:evaluation}.
 \begin{itemize}
 \item A characterization of sharing expensive preparation in actual ordered verification attempts (Section~\ref{sec:opportunity}).
 \item A native branching design and an argument about observable behavior separating preparation from candidate interference (Section~\ref{sec:design}).
@@ -141,9 +141,12 @@ Supported device work preserves verifier semantics. Before a device operation is
 Unsupported work returns to CPU execution, whose cost remains in the complete verification measurement. Complete verification includes device initialization, representation construction, upload, download and queueing. We report operation speedups measured with data already on the device separately from complete checking.
 
 \section{Implementation}\label{sec:implementation}
-The implementation uses native verifier adapters with separate process-branch
-and shared-runtime state-branch constructors in a bounded service. Their behavior
-and performance results apply to the boundary and runtime version measured. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
+The artifact contains native verifier adapters with separate experimental
+process-branch and shared-runtime state-branch constructors. These components
+do not yet establish the complete bounded service proposed in
+Section~\ref{sec:design}. Completed branch constructors have not demonstrated
+an improved equal-resource service frontier. Their behavior and performance
+results apply to the boundary and runtime version measured. The SMT adapter retains Z3's native command context across native parser invocations to evaluate ordered session state~\cite{z3api}. The Lean adapter uses the runtime boundary that prepares imports and accepted proof context before a candidate. For each verifier, qualification first compares fresh adapter execution with the original interface and then compares prepared branches with that reference. We measure reuse after these comparisons.
 
 \subsection{Native adapters}
 The native SMT command adapter is implemented in C++. It retains the command-line interface's command context and preserves the native order of configuration, manager creation and solver creation while evaluating original command sequences. It preserves options, scopes, checks and requested artifacts rather than reconstructing assertions through a different solver API.
@@ -216,7 +219,7 @@ Cancellation instrumentation records the native progress reached before terminat
 
 Qualification of supported boundaries covers native resource controls affected by process creation. Claims about wall-time outcomes are limited to the measured operational scope described in Section~\ref{sec:behavior} and the evaluation limitations, rather than following from inherited counters alone.
 
-The service bounds prepared-state retention and branch concurrency using the preparation-reuse criterion in Section~\ref{sec:placement}. Instrumentation records parent and child proportional memory, private dirty memory and process lifetimes. This accounting distinguishes shared preparation from full worker replication and includes replacement costs.
+The design requires bounded prepared-state retention and branch concurrency using the preparation-reuse criterion in Section~\ref{sec:placement}. Prototype instrumentation records parent and child proportional memory, private dirty memory and process lifetimes; these counters alone do not establish the proposed placement policy or a complete service frontier. This accounting distinguishes shared preparation from full worker replication and includes replacement costs.
 
 \subsection{Device path}
 The device path uses an allocated RTX 5090 through NVIDIA's container runtime~\cite{nvidiaContainerToolkit}. During device qualification, a CPU reference and GPU implementation consume the same identified input and preserve output identity for each supported checking operation. Required online checks follow Section~\ref{sec:device}. Native artifact fidelity follows Section~\ref{sec:behavior}, and complete verification includes CPU fallback and device/runtime costs. For checker representation, existing techniques include expression layouts with integer identifiers and delayed substitution~\cite{nanoclo,nanocloFortran}, so their use does not establish a new checking algorithm.
@@ -224,7 +227,7 @@ The device path uses an allocated RTX 5090 through NVIDIA's container runtime~\c
 The Linux implementation integrates native SMT session evaluation in C++, Lean context reuse and matched CPU/device execution through these adapters.
 
 \section{Evaluation}\label{sec:evaluation}
-The evaluation answers four research questions, each mapped to the design goals and contribution it tests. RQ1 tests the sharing opportunity characterized by the first contribution. RQ2 tests behavior preservation and isolation, the first two design goals, while RQ3 tests the third goal, the equal-resource service frontier. RQ4 tests whether heterogeneous execution improves that frontier for complete verification after reuse.
+The evaluation examines four research questions, each mapped to the design goals and contribution it tests. RQ1 tests the sharing opportunity characterized by the first contribution. RQ2 tests behavior preservation and isolation, the first two design goals, while RQ3 tests the third goal, the equal-resource service frontier. RQ4 tests whether heterogeneous execution improves that frontier for complete verification after reuse.
 \begin{description}
 \item[RQ1] How much expensive native preparation can real verification candidate streams share across independent jobs?
 \item[RQ2] Does branching from prepared native state preserve verifier responses and requested artifacts while isolating candidates and cancellation?
