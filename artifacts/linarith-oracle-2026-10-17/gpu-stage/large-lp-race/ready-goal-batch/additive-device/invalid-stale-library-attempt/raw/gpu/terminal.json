@@ -1,0 +1,45 @@
+{
+  "state": "complete",
+  "cells": 1,
+  "attempts": 15,
+  "results": [
+    {
+      "method": "oracle-gpu",
+      "rep": 1,
+      "state": "complete",
+      "expected": 15,
+      "attempts": 15,
+      "counts": {
+        "complete": 7,
+        "rejected": 8
+      },
+      "whole_ns": 78533142917,
+      "cpu": {
+        "collector": {
+          "user": 0.14114,
+          "system": 9.009017
+        },
+        "waited_children": {
+          "user": 195.961954,
+          "system": 3.000111
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 6152822784,
+      "sampled_peak_fleet_rss_with_collector": 9927622656,
+      "sampling_read_errors": 2,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 15 of 15 candidates",
+      "collector_whole_ns": 78397351191,
+      "backend_setup_cleanup_ns": 39240540,
+      "gpu_target_boundary": "Warm finite CUDA simplex provider; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently.",
+      "retained_strong_cpu_proxy_setup_cleanup_ns": 96551186,
+      "portfolio_boundary": "Keep native hybrid and CPU HiGHS contenders, add CUDA; exact repair and parent recheck, cancellation/wait and BOTH host proxy lifecycles charged. Four CPUs and same source concurrency. GPU context cold lifecycle separate."
+    }
+  ],
+  "utc": "2026-10-18T16:04:27.744998+00:00"
+}

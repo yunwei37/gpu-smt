@@ -7,7 +7,7 @@ q=json.loads((Q/'preflight-analysis.json').read_text())
 assert q['parsed_external_LP_requests_in_ready_groups']>0
 assert not q['ready-batch']['verdict_differences'] and not q['ready-batch']['non_message_differences']
 assert json.loads((A/'build-receipt.json').read_text())['exit']==0
-out=U/'qualification15-cpu'
+out=U/'qualification15-cpu-rebuilt'
 env=dict(os.environ,GPU_ARITHMETIC_RACE_ROOT=str(U),GPU_ARITHMETIC_RACE_MIN_ROWS='11',GPU_ARITHMETIC_NEGATIVE_CERTIFICATES='1',
 GPU_SMT_NATIVE_OMEGA_CONTROL='1',GPU_SMT_OMEGA_CONTROL_LOG=str(out/'omega-calls.jsonl'),
 GPU_ARITHMETIC_GOAL_BATCH='1',GPU_SMT_GOAL_BATCH_LOG=str(out/'goal-batches.jsonl'),GPU_SMT_GOAL_BATCH_EXCHANGE_LOG=str(out/'batch-exchanges.jsonl'))

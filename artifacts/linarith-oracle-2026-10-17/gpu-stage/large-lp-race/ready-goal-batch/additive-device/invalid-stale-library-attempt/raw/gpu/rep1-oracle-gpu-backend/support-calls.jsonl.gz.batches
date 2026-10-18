@@ -1,0 +1,15 @@
+{"event":"batch_ready","monotonic_ns":770766937756602,"batch_size":2,"minimum_ready":2,"scope":"Only simultaneously live device-ready requests; CPU shadows remain active."}
+{"event":"device_submit","batch_id":770766941889709,"batch_size":2,"keys":["358663:5","358663:4"],"call_ids":[770766571375668,770766732272797],"distinct_sources":1,"monotonic_ns":770766941889709}
+{"event":"model_cancel","keys":["358663:4"],"reply":{"cancelled":["358663:4"]},"monotonic_ns":770767046606179}
+{"event":"model_cancel","keys":["358663:5"],"reply":{"cancelled":["358663:5"]},"monotonic_ns":770767100123517}
+{"event":"device_kernel_retired","keys":["358663:5","358663:4"],"monotonic_ns":770767714746121}
+{"event":"device_batch_retired","batch_id":770766941889709,"keys":["358663:5","358663:4"],"monotonic_ns":770767727818049}
+{"event":"batch_ready","monotonic_ns":770776622921053,"batch_size":2,"minimum_ready":2,"scope":"Only simultaneously live device-ready requests; CPU shadows remain active."}
+{"event":"device_submit","batch_id":770776624062164,"batch_size":2,"keys":["358663:33","358663:34"],"call_ids":[770776142831996,770776594013159],"distinct_sources":2,"monotonic_ns":770776624062164}
+{"event":"device_kernel_retired","keys":["358663:33","358663:34"],"monotonic_ns":770776704300802}
+{"event":"device_batch_retired","batch_id":770776624062164,"keys":["358663:33","358663:34"],"monotonic_ns":770776704762065}
+{"event":"batch_ready","monotonic_ns":770777557169321,"batch_size":2,"minimum_ready":2,"scope":"Only simultaneously live device-ready requests; CPU shadows remain active."}
+{"event":"device_submit","batch_id":770777558062379,"batch_size":2,"keys":["358663:36","358663:37"],"call_ids":[770777405599520,770777287948932],"distinct_sources":2,"monotonic_ns":770777558062379}
+{"event":"device_kernel_retired","keys":["358663:36","358663:37"],"monotonic_ns":770777626630003}
+{"event":"device_batch_retired","batch_id":770777558062379,"keys":["358663:36","358663:37"],"monotonic_ns":770777627154913}
+{"event":"dispatcher_retired","monotonic_ns":770839722983266,"pending_jobs":0,"pending_device_models":0}

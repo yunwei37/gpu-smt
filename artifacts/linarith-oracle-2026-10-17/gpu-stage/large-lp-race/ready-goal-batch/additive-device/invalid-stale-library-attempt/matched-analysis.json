@@ -1,0 +1,80 @@
+{
+  "native": {
+    "whole_seconds": 117.083858829,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": []
+  },
+  "cpu": {
+    "whole_seconds": 78.692682057,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 0,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": [
+      "Proof_00009",
+      "Proof_06106",
+      "Proof_09145",
+      "Proof_16213",
+      "Proof_20500",
+      "Proof_24894"
+    ],
+    "goal_batch_outcomes": {
+      "checked": 6,
+      "fallback": 1
+    },
+    "checked_problems": 1040,
+    "native_problem_fallbacks": 10
+  },
+  "gpu": {
+    "whole_seconds": 78.533142917,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_errors": 2,
+    "effective_RLIMIT_AS": 51539607552,
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": [
+      "Proof_00009",
+      "Proof_06106",
+      "Proof_09145",
+      "Proof_16213",
+      "Proof_20500",
+      "Proof_24894"
+    ],
+    "goal_batch_outcomes": {
+      "checked": 6,
+      "fallback": 1
+    },
+    "checked_problems": 1040,
+    "native_problem_fallbacks": 10
+  },
+  "CPU_GPU_full_JSON_differences": [],
+  "GPU_portfolio": {
+    "races": 56,
+    "winners": {
+      "cpu-no-certificate": 48,
+      "cpu": 6,
+      "external-infeasible": 2
+    },
+    "missing_strong_CPU": 56,
+    "spawn_errors": [],
+    "retirement_errors": []
+  },
+  "CPU_vs_native": 1.4878620955401145,
+  "GPU_vs_native": 1.4908846695813947,
+  "GPU_elapsed_change_vs_CPU": -0.002027369455833705,
+  "scope": "One selected15-source/eightqueue/fourCPU8--11/48GiB warm-pipeline pair; common omega and ready-goal arguments, same private numerical build. Device cold lifecycle separate. Not1000/fullpopulation, confidence, GPU impossibility or novelty. Root self-review."
+}

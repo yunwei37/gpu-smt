@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-18T16:07:52.803365+00:00",
+  "observations": [
+    {
+      "name": "arithmetic-batchd",
+      "new_strong_CPU_socket_literal": true,
+      "cpu_highs_mode_literal": true,
+      "contiguous_JSON_field_marker_present": false
+    },
+    {
+      "name": "farkas-batchd",
+      "new_strong_CPU_socket_literal": true,
+      "cpu_highs_mode_literal": true,
+      "contiguous_JSON_field_marker_present": false
+    }
+  ],
+  "scope": "Diagnostic only; compiler can construct JSON key literals without contiguous strings. Actual contender-presence proof comes from race telemetry in the real GPU run, not strings or build success."
+}
