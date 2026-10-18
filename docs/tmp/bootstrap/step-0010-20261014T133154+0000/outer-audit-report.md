@@ -2499,3 +2499,11 @@ title/thesis/fourRQs or prematurely closing1.5decision. Proposedplacement and
 fullservicefrontier remain unestablished. REVIEW: root self-review, not an
 independent audit or completed12-roundWRITE. CPUcontroller126551/child126552
 andprefix5256 were actuallylive atentry andremainpreserved. No newagents/grid.
+
+### First corrected native cell publication
+Thefirst1000-source reference closes2234.689173920s,992complete/8rejected,
+48GiB andmatched IDs/order. Closedraw is copied/published now atpair1;
+pairedoracle/remainingpairscontinue underoriginalcontroller. No pairedratio
+orcausalheadergain isclaimed fromthiscell. Userpublicationboundary honored
+withoutwaitingforthewholethreepairseries. Rootself-review; no newcapture,
+runtimechange orAgent.
