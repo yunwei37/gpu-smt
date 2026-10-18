@@ -24,3 +24,5 @@ Report eachreference explicitly. Fullblock is one observation, notconfidence,
 globalCPUoptimality or blanketGPUclosure. Selected111 ratio neverreplaces
 originalwhole-systemthreshold. Retainallfailed/partialraw.
 Allrootthreadonly; self-review, notindependentaudit.
+
+Executed frontend/counter details and legacy label clarification: [condition composition](condition-composition.md). This documents the unchanged already-frozen source; no capture mutation.

@@ -30,3 +30,5 @@ Same8queues/fourCPU4--7/48GiB,officialomega,originalinputorder,allcostsretained.
 Private code/binaries are frozen until the four-condition block finishes.
 Allwork/rootselfreview only; no independent audit, OSDIreadiness or broadGPU
 closure. Hourly task and original full29750acquisition preserved.
+
+The closed same-block olddirect cell is now retained separately: [component pair](full1000-direct-power-result.json). It does not complete the four-condition native-reference result. See [actual composition](condition-composition.md).

@@ -63,6 +63,69 @@
       "peak_distinct_candidates_with_parsed_service": 2,
       "GPU_supply_scope": "Actual parsed service lifetimes include building/queueing/solving/extracting, not simultaneouslyGPU-ready work. AST products/Lean proof work are not separated by this normal capture; do not claim a complete pure-LP Amdahl bound.",
       "numeric_scope": "No numeric records in stock-native is unprofiled upstream path, not zero CPU. Child totals overlap solver/repair and include killed work; serviceCPU is separate. Candidate-service spans overlap and do not sum to whole elapsed."
+    },
+    "direct": {
+      "whole_seconds": 404.972264413,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "observer_read_errors": 104,
+      "cpu": {
+        "collector": {
+          "user": 0.491247,
+          "system": 35.408441
+        },
+        "waited_children": {
+          "user": 1260.049073,
+          "system": 23.216106
+        }
+      },
+      "numeric_races_observed": 1888,
+      "race_winners_legacy": {
+        "gpu": 470,
+        "external-infeasible": 374,
+        "cpu-no-certificate": 840,
+        "cpu": 204
+      },
+      "reaped_numeric_children": 3776,
+      "cancelled_numeric_children": 2382,
+      "numeric_child_total_CPU_seconds": 71.934881,
+      "cancelled_numeric_child_CPU_seconds": 49.946746,
+      "external_records": 1642,
+      "actual_parsed_external_models": 1084,
+      "actual_external_shapes": {
+        "rows": {
+          "n": 1084,
+          "min": 16,
+          "p50": 82,
+          "p90": 156,
+          "p99": 310,
+          "max": 730
+        },
+        "cols": {
+          "n": 1084,
+          "min": 44,
+          "p50": 230,
+          "p90": 435,
+          "p99": 861,
+          "max": 2628
+        },
+        "nnz": {
+          "n": 1084,
+          "min": 68,
+          "p50": 1713,
+          "p90": 3794,
+          "p99": 7477,
+          "max": 17569
+        }
+      },
+      "external_service_process_CPU_seconds": 39.246314,
+      "parsed_models_missing_source_join": 0,
+      "cross_candidate_parsed_service_overlap_seconds": 0.887879268,
+      "peak_distinct_candidates_with_parsed_service": 2,
+      "GPU_supply_scope": "Actual parsed service lifetimes include building/queueing/solving/extracting, not simultaneouslyGPU-ready work. AST products/Lean proof work are not separated by this normal capture; do not claim a complete pure-LP Amdahl bound.",
+      "numeric_scope": "No numeric records in stock-native is unprofiled upstream path, not zero CPU. Child totals overlap solver/repair and include killed work; serviceCPU is separate. Candidate-service spans overlap and do not sum to whole elapsed."
     }
   },
   "reference_ratios": null,
