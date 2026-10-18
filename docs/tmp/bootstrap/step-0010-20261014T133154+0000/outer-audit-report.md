@@ -3322,3 +3322,10 @@ Root checks all114/69race receipts including cancelled-child CPU,26/59
 backend connections and parsed-model distinction. No missing small LP or
 fallback time is zero-filled. No categorical GPU closure or causal slowdown
 claim follows. The executable derivation reproduces the record.
+
+## Portable-source boundary root self-audit
+Copied bodies/manifest provenance and native numeric build/tests validated.
+Package-load failure prevents a functional-reproduction pass. Public docs
+say pending; proof success is not inferred from compilation. No delegated
+review, novel LP primitive, replaced active binary or widened performance
+claim. Original dirty author files and live capture logs stay unstaged.

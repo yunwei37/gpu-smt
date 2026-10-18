@@ -25,6 +25,12 @@ retains the original decision rule.
 - `run-stages.py` / `run-comparison.py`: use the existing Kimina native batch collector; preserve all source outcomes, costs and raw streams.
 - `build-oracle.py`: rebuilds the native experiment from the retained sources and dependencies. No original repository or installed runtime is modified.
 
+The [source reproduction component](reproduction/README.md) now contains the
+complete measured Rust/Lean bodies, license/provenance, locked numerical
+dependencies and a separate caller-selected build. Numerical build/tests pass;
+real Lean-load qualification is still in progress, with failures retained.
+The historical capture scripts below remain frozen and Workspace-specific.
+
 The scripts currently use the retained owning-Workspace dependency paths (Lean4.27, matching Mathlib/Farkas/Kimina), not a portable installer. Their pinned versions and original build procedures live in the reproduction guide and `artifacts/lean-modern-native-compilation-2026-10-14/`. The restored documented `/tmp/gpu-smt-linarith-oracle-20261017/` path resolves onto the existing Workspace PVC; its original ephemeral contents were lost during Pod replacement. Publish completed evidence back to `artifacts/linarith-oracle-2026-10-17/`.
 
 ## Historical build and capture entrypoints

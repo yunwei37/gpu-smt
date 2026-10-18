@@ -1,0 +1,49 @@
+[
+  {
+    "command": [
+      "cc",
+      "-O3",
+      "-fPIC",
+      "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/c/clock.c",
+      "-o",
+      "/tmp/gpu-smt-shim-6g7gzri4/clock.o"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "cc",
+      "-O3",
+      "-fPIC",
+      "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+      "-c",
+      "/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/c/cost-emit.c",
+      "-o",
+      "/tmp/gpu-smt-shim-6g7gzri4/cost-emit.o"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+      "-O3",
+      "-DLEAN_EXPORTING",
+      "-shared",
+      "-fPIC",
+      "/tmp/gpu-smt-shim-6g7gzri4/clock.o",
+      "/tmp/gpu-smt-shim-6g7gzri4/cost-emit.o",
+      "-lz",
+      "-o",
+      "/tmp/gpu-smt-shim-6g7gzri4/shims.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "argv": [
+      "cargo",
+      "build",
+      "--release",
+      "--locked",
+      "--manifest-path",
+      "/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native/Cargo.toml",
+      "--target-dir",
+      "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-target"
+    ],
+    "returncode": 0,
+    "whole_seconds": 11.376879115006886,
+    "output": "   Compiling crossbeam-utils v0.8.21\n   Compiling autocfg v1.5.1\n   Compiling shlex v2.0.1\n   Compiling find-msvc-tools v0.1.9\n   Compiling cc v1.2.65\n   Compiling zmij v1.0.21\n   Compiling rustversion v1.0.22\n   Compiling num-traits v0.2.19\n   Compiling rayon-core v1.13.0\n   Compiling crossbeam-epoch v0.9.18\n   Compiling serde_core v1.0.228\n   Compiling crossbeam-deque v0.8.6\n   Compiling num-modular v0.6.4\n   Compiling num-integer v0.1.46\n   Compiling serde_json v1.0.150\n   Compiling dashu-int v0.4.3\n   Compiling libmimalloc-sys v0.1.49\n   Compiling num-bigint v0.4.8\n   Compiling num-order v1.2.0\n   Compiling itoa v1.0.18\n   Compiling static_assertions v1.1.0\n   Compiling dashu-base v0.4.3\n   Compiling either v1.16.0\n   Compiling memchr v2.8.2\n   Compiling cfg-if v1.0.4\n   Compiling mimalloc v0.1.52\n   Compiling rayon v1.12.0\n   Compiling num-rational v0.4.2\n   Compiling farkas-core v0.1.0 (/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native)\n    Finished `release` profile [optimized] target(s) in 11.36s\n"
+  },
+  {
+    "argv": [
+      "cargo",
+      "test",
+      "--locked",
+      "--lib",
+      "--manifest-path",
+      "/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native/Cargo.toml",
+      "--target-dir",
+      "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-target"
+    ],
+    "returncode": 0,
+    "whole_seconds": 4.622092004981823,
+    "output": "   Compiling crossbeam-utils v0.8.21\n   Compiling autocfg v1.5.1\n   Compiling shlex v2.0.1\n   Compiling find-msvc-tools v0.1.9\n   Compiling cc v1.2.65\n   Compiling rustversion v1.0.22\n   Compiling num-traits v0.2.19\n   Compiling serde_core v1.0.228\n   Compiling crossbeam-epoch v0.9.18\n   Compiling zmij v1.0.21\n   Compiling rayon-core v1.13.0\n   Compiling crossbeam-deque v0.8.6\n   Compiling dashu-int v0.4.3\n   Compiling serde_json v1.0.150\n   Compiling num-modular v0.6.4\n   Compiling num-integer v0.1.46\n   Compiling libmimalloc-sys v0.1.49\n   Compiling num-bigint v0.4.8\n   Compiling num-order v1.2.0\n   Compiling itoa v1.0.18\n   Compiling static_assertions v1.1.0\n   Compiling cfg-if v1.0.4\n   Compiling either v1.16.0\n   Compiling memchr v2.8.2\n   Compiling dashu-base v0.4.3\n   Compiling rayon v1.12.0\n   Compiling mimalloc v0.1.52\n   Compiling num-rational v0.4.2\n   Compiling farkas-core v0.1.0 (/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.59s\n     Running unittests src/lib.rs (/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-target/debug/deps/farkas_core-2a901fe09edc397b)\n\nrunning 4 tests\ntest rat::tests::i128_min_never_enters_m_tier ... ok\ntest rat::tests::canonical_form_invariants ... ok\ntest rat::tests::overflow_promotes_then_demotes ... ok\ntest rat::tests::arithmetic_matches_bigrational_across_tiers ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s\n\n"
+  }
+]

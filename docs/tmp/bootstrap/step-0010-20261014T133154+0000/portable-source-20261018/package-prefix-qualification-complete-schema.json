@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/lean",
+    "--root=/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+    "--setup=/tmp/lean-package-fxf3xrgs/setup.json",
+    "-DautoImplicit=false",
+    "-DmaxSynthPendingDepth=3",
+    "-Dpp.unicode.fun=true",
+    "-c",
+    "/tmp/lean-package-fxf3xrgs/DirectoryDependency.c",
+    "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4/Mathlib/Tactic/Linter/DirectoryDependency.lean"
+  ],
+  "returncode": 0,
+  "output": "",
+  "correct_definition": false
+}

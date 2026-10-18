@@ -5115,3 +5115,13 @@ fractions or GPU bounds. Malformed partial-request records25/59 stay
 visible, without inventing exact cause joins. Companion analyzer reproduces
 the retained JSON exactly. This is a secondary interpretation of already
 closed evidence, not another acquisition or a new research contribution.
+
+## Portable-source dependency boundary (functional qualification pending)
+Root publishes complete measured source bodies and provenance under the
+existing bench component. Fresh locked Rust release and4existing tests pass;
+15local Lean modules typecheck. Real first load exposes package ABI mismatch;
+actual serializer/Lake identity evidence supplies the forward repair.
+Complete rebuilt699module closure and real64source qualification are active.
+All failed attempts retained, no new measured speed ratio, all active capture
+libraries untouched. This node is an executable-artifact dependency, not an
+admitted new research hypothesis or a completed full writing/review loop.
