@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-10-18T02:23:00Z",
+  "pod": "gpu-smt-cuopt-20261017-dflcf",
+  "pod_uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea",
+  "job_absent": true,
+  "pod_absent": true,
+  "other_workspace_phase": "Running",
+  "lab_Ready": "True",
+  "verification": "Fresh kubectl Job/Pod absence and otherWorkspace/lab queries after original lifecycle deletion; matching lab CRI sandbox and own pod-log directory are also absent. Exact original finally-receipt was not successfully archived.",
+  "container_start_event_utc": "2026-10-18T02:08:51Z",
+  "container_killing_event_utc": "2026-10-18T02:19:33Z",
+  "container_start_to_killing_event_seconds": 642,
+  "native_wrapper_seconds": 630.960831972,
+  "client_cell_seconds": 630.366653972,
+  "sampled_source_processes": 53,
+  "sampled_source_processes_alive_after_exit": [],
+  "archive_failure": "Windows ssh command argument length exceeded when archiving the uncompressed base64 backend stdout after deletion. Native raw results and complete client numeric calls/batch events remain retained. GPU backend stdout and exact stopwatch startup/retirement fields could not be recovered after node log/CRI removal; no invented reconstruction.",
+  "cost_scope": "642s is coarse start-to-kill event span, not exact whole cold lifecycle. Exact readiness/retirement timers lost; do not silently report them as zero or call this an isolated cold performance result.",
+  "outcome": "failed-restored; experiment performance/parity failure, resource cleanup freshly verified",
+  "self_review_only": true
+}

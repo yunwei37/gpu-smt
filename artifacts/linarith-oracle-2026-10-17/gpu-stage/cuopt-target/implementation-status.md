@@ -1,5 +1,5 @@
 # Robust GPU support-search prototype
-CPU stage remains 1.34668x; GPU stage in progress. Final decision is best(CPU, GPU)>1.5x on the frozen 1000 sources. No CPU-only project closure.
+Historical CPU stage remains1.34668x. Admitted GPU mechanisms have completed without a valid speedup; corrected CPU pairs remain active. Final decision is best(CPU, GPU)>1.5x on the frozen 1000 sources. No CPU-only project closure.
 
 The initial GPU target omitted NVIDIA runtimeClass and failed before requests; the corrected upstream target initializes CUDA device0/RTX5090 with the same 48GiB cap. The HTTP proxy returned a NaN serialization error for the first real LP and hung on a later retrieval; the invalid attempt was stopped, its remote request cancelled, and evidence retained. It is not performance evidence.
 
@@ -41,3 +41,15 @@ support subject to exactrepair/Leanchecking. Original-feasibility remains closed
 uses client plus server CPUeligibility0--3 for fair capacity, a fresh server
 without syntheticwarmup, and separate startup/retirement accounting. Existing
 legacyfull controls are now closed and their raw data preserved. Prefix collection remains unchanged. CorrectedGPU24 and three corrected fullCPU pairs are active; no correctedGPUresult yet.
+
+## Terminal corrected GPU qualification, 2026-10-18T02:19Z
+Family-only imports and owner cancellation still take630.367s for24attempts,
+16complete/8operational vs46.054s/24complete reference. Actual104singleton
+GPUbatches/106calls engage the backend, two abandonedjobs cancel; no newfullGPU
+matrix or numericgrid follows. All serverthreads actuallypermitCPU0--3.
+[Full raw native review](../header-correction-preflight24/result-review.md).
+GPUstdout/exactlifecycle stopwatches are missing from a Windowsarchiveoverflow;
+clientmodels/replies/batchevents/Leanresponses remain complete. Fresh cleanup
+confirms no ownJob/Pod/sourcechildren, otherGPUWorkspaceRunning/labReady.
+ThethreecorrectedCPUfullpairs now determine remaining matchedbestvalid threshold.
+No independent audit or paper acceptance is claimed.

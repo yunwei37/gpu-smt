@@ -1,13 +1,13 @@
 # Native arithmetic oracle experiment
 
-Status: experimental. CPU stage: 1.34668×; GPU stage: in progress. See the
+Status: experimental. Historical CPU stage: 1.34668×; admitted GPU variants have completed without a valid speedup. Corrected full CPU pairs are active. See the
 [CPU-stage result and open GPU decision](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
 All three primary pairs and both full phase diagnostics are complete; see the
 [strong-baseline analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/strong-result-review.md)
 and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
 These are CPU results. No production service or GPU acceleration is established.
 
-The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. The frozen same-plan CPU controls are complete: native 2,331.39 s and robust HiGHS 2,363.00 s, each with 992 complete and 8 rejected outcomes. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; the original CPU oracle passed real clean-header qualification and its three matched full pairs are active. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; those two earlier GPU target instances were deleted. A new finite instance runs the corrected-family preflight. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
+The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. The frozen same-plan CPU controls are complete: native 2,331.39 s and robust HiGHS 2,363.00 s, each with 992 complete and 8 rejected outcomes. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; the original CPU oracle passed real clean-header qualification and its three matched full pairs are active. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; those two earlier GPU target instances were deleted. The subsequent corrected-family instance has also been deleted after failed native qualification. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
 
 
 The already-admitted original-population prefix comparison remains unfinished.
@@ -218,3 +218,14 @@ CPUs0--3 between its client and numeric server. No numeric warmup is hidden;
 cold startup and retirement are reported separately from the warm-service
 cell clock. These are experimental, owning-Workspace commands, not a portable
 installer or a completed GPU acceleration result.
+
+## Corrected GPU qualification disposition
+The corrected header plus owner cancellation returns16complete/8operational
+on24sources in630.367s, vs clean native46.054s/24complete. Actual106supportcalls
+produce104completedGPUbatches (all singletons) andtwo expired-owner cancellations.
+The variant is not admitted to another fullGPU matrix. Its raw Lean/numeric/
+batch events and [result review](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md)
+are preserved. Backendstdout and exact lifecycle stopwatches are explicitly
+missing after a Windows archive-argument overflow; fresh cluster checks confirm
+ownJob/Podgone, otherGPUWorkspaceRunning/labReady, sampledsourcePIDsallgone.
+No CPU-only threshold closure follows while the corrected CPU series runs.

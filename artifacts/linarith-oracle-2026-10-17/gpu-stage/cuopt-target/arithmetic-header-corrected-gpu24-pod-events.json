@@ -1,0 +1,170 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-10-18T02:08:51.120974Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "gpu-smt-cuopt-20261017-dflcf",
+        "namespace": "coder",
+        "resourceVersion": "31585120",
+        "uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned coder/gpu-smt-cuopt-20261017-dflcf to lab",
+      "metadata": {
+        "creationTimestamp": "2026-10-18T02:08:51Z",
+        "name": "gpu-smt-cuopt-20261017-dflcf.18df7da694306cbd",
+        "namespace": "coder",
+        "resourceVersion": "31585125",
+        "uid": "a7998d56-442f-4b36-ab26-977a4ec59863"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-g10",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-10-18T02:08:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{cuopt}",
+        "kind": "Pod",
+        "name": "gpu-smt-cuopt-20261017-dflcf",
+        "namespace": "coder",
+        "resourceVersion": "31585123",
+        "uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-10-18T02:08:51Z",
+      "message": "Container image \"nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-10-18T02:08:51Z",
+        "name": "gpu-smt-cuopt-20261017-dflcf.18df7da6b28e24a7",
+        "namespace": "coder",
+        "resourceVersion": "31585134",
+        "uid": "93ae82f1-13ff-4dde-b842-6f5b85defec1"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "lab",
+      "source": {
+        "component": "kubelet",
+        "host": "lab"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-10-18T02:08:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{cuopt}",
+        "kind": "Pod",
+        "name": "gpu-smt-cuopt-20261017-dflcf",
+        "namespace": "coder",
+        "resourceVersion": "31585123",
+        "uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-10-18T02:08:51Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-10-18T02:08:51Z",
+        "name": "gpu-smt-cuopt-20261017-dflcf.18df7da6b43553e4",
+        "namespace": "coder",
+        "resourceVersion": "31585136",
+        "uid": "143d221e-dfb3-4af9-8f4c-3cd0938da3ec"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "lab",
+      "source": {
+        "component": "kubelet",
+        "host": "lab"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-10-18T02:08:51Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{cuopt}",
+        "kind": "Pod",
+        "name": "gpu-smt-cuopt-20261017-dflcf",
+        "namespace": "coder",
+        "resourceVersion": "31585123",
+        "uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-10-18T02:08:51Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-10-18T02:08:51Z",
+        "name": "gpu-smt-cuopt-20261017-dflcf.18df7da6c61319b0",
+        "namespace": "coder",
+        "resourceVersion": "31585139",
+        "uid": "5ca31e09-fa96-4410-980e-85a125a1fc6b"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "lab",
+      "source": {
+        "component": "kubelet",
+        "host": "lab"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-10-18T02:19:33Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{cuopt}",
+        "kind": "Pod",
+        "name": "gpu-smt-cuopt-20261017-dflcf",
+        "namespace": "coder",
+        "resourceVersion": "31585123",
+        "uid": "a21c7544-2ab9-4ba3-b700-d197baebdbea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-10-18T02:19:33Z",
+      "message": "Stopping container cuopt",
+      "metadata": {
+        "creationTimestamp": "2026-10-18T02:19:33Z",
+        "name": "gpu-smt-cuopt-20261017-dflcf.18df7e3c357602bc",
+        "namespace": "coder",
+        "resourceVersion": "31589862",
+        "uid": "5c1e806a-9ea0-4969-8179-e254c5f56621"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "lab",
+      "source": {
+        "component": "kubelet",
+        "host": "lab"
+      },
+      "type": "Normal"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

@@ -77,3 +77,31 @@ The first full GPU variant is now a measured failure, not merely active work:337
 
 ## Public reproducibility delivery
 The current reconstruction/phase-analysis commands are now runnable from published compressed data with Python only; exact documented entrypoint was executed, recovering134640records/13414LPs/1000sourceprofiles and matching everyderivedfield. No privateSDK/GPU/network required for datareplay. The reproductionguide now starts with current arithmetic data, marks the older branch as historical provenance, and keeps original captures unchanged. This removes a real external-reader dependency gap; it is not counted as new speedup evidence. Remaining mainline dependency is the already-running matched CPU controls and finalbest-method decision, not another GPU parameter variation.
+
+## Corrected GPU qualification and next substantive action
+The first full controls now close with native2331.39s/robustHiGHS2363.00s/
+GPU3374.15s, withGPU8operationalchanges. Actual lookup then reveals a real
+integration defect: failed batch elaborators can retry legacy handlers from
+stacked imports. Family-only qualification repairs that fault rather than
+pretend the earlier version was already the strongest clean comparison.
+Clean native24 is46.05s and originalCPUoracle37.51s; slowerHiGHS/hint-only
+ablation receive no further full run. CorrectedGPU24stillneeds630.37s and
+loses8responses. Two abandonedjobs cancel, but request convergence remains a
+blocking cost. No new solver, tolerance, queue or kernel variant follows.
+
+The remaining decisive arithmetic action is the already-launched three
+alternating clean-headerCPU pairs on the same1000sources with48GiB. Finish
+them, audit the whole aggregate and outcomes, then apply the user's better
+validCPU/GPU>1.5x rule. Do not relabel old1.34668x clocks under this new header/
+memory protocol or choose the fastest partialrepeat. The GPU evaluation of
+these admitted mechanisms is complete without proven verification gain.
+No inference that all futureGPULean architectures are impossible.
+
+OSS upkeep: currentREADME/experimententrypoints now distinguish completed
+GPU failures, active correctedCPU captures, historicalprotocols and pending
+prefix experiments. The quickstart calls the intendedfamily launcher.
+All native/numeric/batchraw are retained. GPUstdout/exactlifecycle stopwatches
+are explicitly missing after Windowsargument overflow; existingstdin transport
+is forward-fixed without restarting a failed experiment or touching the other
+Workspace. Paper21pages compiles and updatedpage13 is visuallychecked. This is
+targeted factualwriting/self-review, not fullWRITE or independent audit.

@@ -515,3 +515,19 @@ Prefix20--23 andGPU24on0--3continue; sharedmemory/I/Olimits remain.
 SlowerrealHiGHS/hint-onlyvariants excludedfromnewfullruns. Historical1.34668x
 remains measuredhistory; corrected48GiB/intendedheaderaggregate pending.
 [Plan and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/plan.md).
+
+### Corrected GPU qualification closes failed-restored
+The real24-source family-only/owner-cancelledphase-I path closes630.367s,
+16complete/8operational vsnative46.054s/24complete. Actual106supportcalls yield
+104completedsingletonbatches andtwoexpired-owner cancellations. No corrected
+fullGPUmatrix or newparametergrid is admitted. Original1000GPUloss remains
+version-scoped evidence. ThreecorrectedCPUfullpairs remainactive; finalbetter
+validCPU/GPU threshold awaits their aggregate, no fastestpartialselection.
+EXPERIMENT realnegativequalification is complete; WRITE updatesactualstatus,
+hardware/cost limits andnumeric tailattribution. REVIEW/rootself-audit notes
+Windowscommandargumentoverflow aftertargetdeletion:GPUstdout andexactreadiness/
+retirementtimers lost,notzero. ClientLean/numeric/batchrawretained. Freshqueries
+showownJob/Podgone,otherWorkspaceRunning/labReady,all53sampledsourcePIDsgone.
+InrunserverthreadsnapshotconfirmsCPU0--3,oom0. Kubernetesstart-to-kill events
+span642s, not an exactcoldlifecycleclock. No independentreviewer/OSDIclaim.
+[Realresult and limitations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
