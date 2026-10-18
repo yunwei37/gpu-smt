@@ -1,0 +1,64 @@
+[
+  {
+    "method": "fast-hybrid",
+    "rep": 1,
+    "state": "complete",
+    "expected": 24,
+    "attempts": 24,
+    "counts": {
+      "complete": 24
+    },
+    "whole_ns": 25754497774,
+    "cpu": {
+      "collector": {
+        "user": 0.03644499999999995,
+        "system": 2.546637
+      },
+      "waited_children": {
+        "user": 48.355012,
+        "system": 1.882383
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 4417102848,
+    "sampled_peak_fleet_rss_with_collector": 8175050752,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 8,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+  },
+  {
+    "method": "oracle-hint",
+    "rep": 1,
+    "state": "complete",
+    "expected": 24,
+    "attempts": 24,
+    "counts": {
+      "complete": 24
+    },
+    "whole_ns": 23549924098,
+    "cpu": {
+      "collector": {
+        "user": 0.04578899999999997,
+        "system": 2.4078939999999998
+      },
+      "waited_children": {
+        "user": 43.09966299999999,
+        "system": 2.1434990000000003
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 4651032576,
+    "sampled_peak_fleet_rss_with_collector": 8409853952,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 8,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+  }
+]

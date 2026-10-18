@@ -305,3 +305,17 @@ variant; every certificate still passes exact repair/verification and Lean.
 The original24source CPU qualification and hardware plan are under
 artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/.
 No full-population benefit is established by qualification.
+
+### Fixed-certificate numerical-omission control
+numeric-replay.rs is a diagnostic adapter against the existing Farkas line
+protocol. It reads actual request/answer records from GPU_ARITHMETIC_REPLAY_DATA
+and still sends only coefficient certificates to the normal Lean checker.
+Compile it with the pinned Farkas dependency tree's cargo build --release
+--offline --bin numeric-replay after placing the source under src/bin/.
+run-race.py --numeric-replay-bin PATH enables this explicitly; ordinary runs
+do not replay. The launch receipt records the executable/data and the collector
+retains replay-calls.jsonl with load, hit/miss and CPU/wall counters.
+Both native and AST/fallback answers must come from the completed same-cohort
+cost capture. Source identities stay in the key; old timing fields are removed.
+This answer-aware control is excluded from the CPU/GPU continuation threshold.
+Full preflight/raw instructions are under gpu-stage/pooled-wall-profile/.

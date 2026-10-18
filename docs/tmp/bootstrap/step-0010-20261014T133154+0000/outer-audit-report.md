@@ -2744,3 +2744,51 @@ Hourly automation is preserved; goal remains active.
 Full GPU raw-proxy self-review refinement:2433records are accepted connections,1113have complete parsedCSR inputs;1320areJSONDecodeError/null-input records, not LP solves or native operational outcomes. Cancellation during frame write is plausible from the child-kill protocol, but raw frame/newline flags were not retained, so cause/source is not invented. Numeric response/batch counters retain their original scope. All parser/handler costs remain inside whole1020.12s. No full rerun or source protocol tuning is introduced for this accounting clarification.
 
 Publication reconciliation: the original corrected CPU collector's completed-pairs.json had appended pairs2/3 after the earlier ledger snapshot. It matches all three already-published pair results and aggregate6691.600731004/5164.851075278 (1.295603810x); the own completion receipt is now included. This is no new run or changed result. Other authors' dirty files remain untouched.
+
+
+### 2026-10-18 — pooled native profile closes; fixed-answer omission preflight
+Prior goal turn classification: progress (full1000GPU/native/CPU outcomes,
+real batches, cold lifecycle and failedFP-first qualifier published).
+Current real profile process157563 remains live for its oracle half; no
+restart or duplicate capture.
+
+Native full1000own-clock1245.961262403s,992/8/0,all1000native responseJSON
+matches primary exactly. Scalar observation timing fields naturally differ.
+13230labelled numerical calls,all schema/shape/product/source metadata
+complete,all numerical workers have EOF/wait4receipts. LP32.777680865FP+
+824.564908949exactCPU seconds. Pure numericLP summed wall1012.100729727s
+(81.2305%) vs union600.017430350s(48.15699%). Summed fixed-work deletion
+multiple5.327796222x,LP+internal/product generous sum5.397983439x;
+these overlap and do not prove below1.5x. All Lean preprocessing,
+linearization,products,checkers plus protocol/repair/failure CPU and actual
+source1%/10% components are retained,not cast as disjoint wall shares.
+Native raw/derived data are losslessly archived; no log recovery needed.
+
+A supporting fixed-coefficient numerical omission control addresses the gap
+between summed/union intervals and actual removable wall. Its real24source
+preflight uses the existing native collector and source-identified actual
+numerical replies; zero certificate conflicts and all356non-handshake
+lookups hit. Fresh native30.870553768s,omitted-native25.754497774s,
+omitted-ASToracle23.549924098s;24complete each,native response/non-message
+parity,2oraclewarning changes. All Lean checking still executes; old timing
+fields are dropped. Known-answer control is not a deployable method or a
+candidate for the best-CPU/GPU1.5x decision. This is dependency evidence,
+not a new RQanswer. Source/preflight/raw/protocol are preserved. Full control
+requires the current actual oracle capture to finish first,with its own
+complete actual request/answer data. No GPU solver variant/full matrix opens.
+
+Source/schedule self-review also finds the collector emits125arrays of8 and
+waits for the whole array before replenishing. Actual candidate-slot occupancy
+across those task windows is30.6067%,not CPUidle or a reclamation measure.
+The captured-duration rolling8simulation is explicitly non-executed and
+ignores changed contention. Upstream REPL already supports fixed sequential
+buckets in one array; source-native fair qualification may test this without
+new kernel/task constructor/protocol. It is an opportunity to strengthen
+the common baseline,not a novel system contribution or measured speedup.
+
+EXPERIMENT_GATE remains active for the native/oracle paired profile.
+WRITE does not promote the incomplete paired diagnostic or cache preflight
+to reader-facing final results;README links actual frontier/raw data.
+REVIEW remains root self-review under user prohibition of all delegation.
+No independent audit,full writing completion,OSDI acceptance or project
+closure is claimed. Four RQs/Initial Narrative unchanged; hourly/goal active.

@@ -1,0 +1,47 @@
+{
+  "methods": {
+    "actual-native": {
+      "whole_seconds": 30.870553768,
+      "ratio_vs_actual_native": 1.0,
+      "counts": {
+        "complete": 24
+      },
+      "native_message_changes": [],
+      "native_non_message_differences": [],
+      "misses": 0,
+      "replayed_calls": 0,
+      "setup_CPU_seconds": 0.0,
+      "lookup_response_CPU_seconds": 0.0
+    },
+    "fixed-certificate-native": {
+      "whole_seconds": 25.754497774,
+      "ratio_vs_actual_native": 1.1986470883219793,
+      "counts": {
+        "complete": 24
+      },
+      "native_message_changes": [],
+      "native_non_message_differences": [],
+      "misses": 0,
+      "replayed_calls": 231,
+      "setup_CPU_seconds": 0.682203163,
+      "lookup_response_CPU_seconds": 0.113414262
+    },
+    "fixed-certificate-oracle": {
+      "whole_seconds": 23.549924098,
+      "ratio_vs_actual_native": 1.3108557649500752,
+      "counts": {
+        "complete": 24
+      },
+      "native_message_changes": [
+        16,
+        23
+      ],
+      "native_non_message_differences": [],
+      "misses": 0,
+      "replayed_calls": 125,
+      "setup_CPU_seconds": 0.817836611,
+      "lookup_response_CPU_seconds": 0.034524292
+    }
+  },
+  "scope": "complete actual24source preflight; dataset-aware fixed coefficient control, never a deployable speedup/continuation candidate"
+}

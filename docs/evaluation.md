@@ -578,3 +578,7 @@ Same original1000,width8,CPU0–3,48GiB: native1237.37044s,CPUoracle1037.84920s,
 
 ## FP-first exact-fallback hardware qualification (2026-10-18)
 Native30.53188s,CPUoracle27.65441s,GPU28.05191s onthe same24,width8,CPU8–11,48GiB. All24complete, verdict/non-message parity,2warning changes.21races(10CPUcert/10CPU-no-cert/1GPUcert),7actualtwo-source GPUbatches(1result/6cancelled/all7retired). No useful GPU benefit; no full1000matrix admitted for this variant. GPUroute is notclosed. [Raw/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/GPU-result-review.md).
+
+
+## Strong pooled native wall profile and omission control (2026-10-18)
+Native half1245.961262403s,992/8/0,all1000native responseJSON exactlymatches primary.13230all-labelled calls; pureLPsum1012.100729727wall s vs600.017430350s union. Overlap prevents treating either as causal saving; no below1.5x bound. Oracle half active. [Native raw/stages/tails/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-native-result-review.md). A same-source fixed-coefficient omission diagnostic qualifies on24sources with zero misses,known-answer control only and excluded from continuation results. [Plan](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/fixed-certificate-control-plan.md),[preflight](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/fixed-certificate-control/result-review.md).

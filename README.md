@@ -64,6 +64,16 @@ started after the completed GPU lifecycle retired.
 [Complete profile and denominator limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md),
 [pooled diagnostic protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/plan.md).
 
+The pooled native half now closes at **1,245.96s** with exactly matching
+native responses on all1,000sources. Numeric LP summed wall is1,012.10s;
+its interval union is600.02s. Overlapping sums are not removable wall time,
+and neither calculation excludes1.5×. The paired CPU-oracle profile continues.
+[Complete native cost evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-native-result-review.md).
+A fixed-coefficient omission control passes24real-source qualification with
+zero lookup misses; it is a diagnostic using known answers and is excluded
+from the CPU/GPU continuation result.
+
+
 A supporting SHRED-parser experiment measures proof-prefix sharing on the
 original miniF2F and ProofNet candidates against native batch execution.
 Counts are not saved verification time. Completed, failed and partial work,

@@ -59,6 +59,13 @@ class Runner(Base):
         if self.args.diagnostic:
             cellname=kwargs.get('label') or ('rep%d-%s' % (rep,name))
             os.environ['FARKAS_CORPUS_FILE']=str(self.args.out/cellname/'oracle.jsonl')
+        if getattr(self.args,'numeric_replay_bin',None) is not None:
+            replay=str(self.args.numeric_replay_bin.resolve())
+            os.environ['FARKAS_NATIVE_BIN']=replay
+            if name in ['oracle','oracle-hint']:
+                os.environ['GPU_ARITHMETIC_ORACLE']=replay
+            cellname=kwargs.get('label') or ('rep%d-%s' % (rep,name))
+            os.environ['GPU_ARITHMETIC_REPLAY_LOG']=str(self.args.out/cellname/'replay-calls.jsonl')
         return await super().cell(rep,name,**kwargs)
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -73,7 +80,13 @@ def main():
     p.add_argument('--cost-profile',action='store_true',help='complete all-call Lean/Rust attribution; diagnostic, not a primary performance result')
     p.add_argument('--sample-seconds',type=float,default=1,help='nonpositive disables process-tree memory observer for overhead qualification')
     p.add_argument('--reuse-reference',type=Path,default=None)
+    p.add_argument('--numeric-replay-bin',type=Path,help='Diagnostic fixed-certificate numerical omission control, not a deployable verifier')
     opts=p.parse_args()
+    if opts.numeric_replay_bin is not None:
+        if opts.cost_profile or any(m not in ['fast-hybrid','oracle','oracle-hint']for m in opts.methods):
+            p.error('fixed-certificate diagnostic supports only native/CPU oracle, without phase instrumentation')
+        if not os.environ.get('GPU_ARITHMETIC_REPLAY_DATA'):
+            p.error('fixed-certificate diagnostic requires actual request/answer data')
     if opts.cost_profile and any(m not in ['fast-hybrid','oracle'] for m in opts.methods):
         p.error('--cost-profile supports only the matched fast-hybrid and oracle paths')
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
@@ -99,7 +112,7 @@ def main():
     args=argparse.Namespace(input=opts.input,limit=opts.limit,
        manifest=config,kimina=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d'),
        sdk=T/'lean-4.27.0-linux',project=T/'mathlib4',frozen=U,width=opts.width,
-       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,cost_root=opts.cost_root,
+       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,cost_root=opts.cost_root,numeric_replay_bin=opts.numeric_replay_bin,
        header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=opts.sample_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     if opts.reuse_reference is not None:
@@ -109,6 +122,6 @@ def main():
       'affinity':sorted(os.sched_getaffinity(0)),'methods':opts.methods,'input':str(args.input),
       'limit':opts.limit,'resource_observer_seconds':opts.sample_seconds,'header':'import Mathlib;import Aesop;import GpuArithmetic.Stages',
       'boundary':'existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF',
-      'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'cost_root':str(opts.cost_root),'collector':str(P)},indent=2)+'\n')
+      'numeric_replay_bin':str(opts.numeric_replay_bin) if opts.numeric_replay_bin else None,'numeric_replay_data':os.environ.get('GPU_ARITHMETIC_REPLAY_DATA') if opts.numeric_replay_bin else None,'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'cost_root':str(opts.cost_root),'collector':str(P)},indent=2)+'\n')
     asyncio.run(runner.run())
 if __name__=='__main__':main()
