@@ -17,6 +17,7 @@ parser.add_argument('--reference',type=Path,default=Path('/tmp/gpu-smt-linarith-
 parser.add_argument('--cpu-qualification',type=Path)
 parser.add_argument('--native-buckets',action='store_true')
 parser.add_argument('--independent-jobs',action='store_true')
+parser.add_argument('--device-simplex',action='store_true')
 parser.add_argument('--original-feasibility',action='store_true')
 parser.add_argument('--lp-method',choices=['PDLP','Barrier'],default='PDLP')
 parser.add_argument('--repl',type=Path)
@@ -28,9 +29,16 @@ os.sched_setaffinity(0,set(args.affinity))
 cpu_root=args.cpu_qualification or U/'qualification24-cpu'
 cpu=json.loads((cpu_root/'rep1-oracle-hint/terminal.json').read_text())
 assert cpu['state']=='complete' and cpu['attempts']==args.limit and not cpu['counts'].get('operational',0),'Matching CPU qualification must close before GPU launch'
-channel=grpc.insecure_channel(args.host+':5001')
-grpc.channel_ready_future(channel).result(timeout=60);channel.close()
+if args.device_simplex:
+ import socket
+ with socket.create_connection((args.host,5001))as connection:
+  connection.sendall(b'{"ping":true}\n')
+  with connection.makefile('rb')as stream:assert json.loads(stream.readline())['ready']
+else:
+ channel=grpc.insecure_channel(args.host+':5001')
+ grpc.channel_ready_future(channel).result(timeout=60);channel.close()
 env=dict(os.environ);env['GPU_SMT_CUOPT_HOST']=args.host
+if args.device_simplex:env['GPU_SMT_CUDA_BATCH_HOST']=args.host
 env['GPU_ARITHMETIC_RACE_MIN_ROWS']=str(args.min_rows);env['GPU_ARITHMETIC_RACE_ROOT']=str(U)
 if args.independent_jobs:env['GPU_ARITHMETIC_GPU_INDEPENDENT_JOBS']='1'
 env['GPU_ARITHMETIC_GPU_LP_METHOD']=args.lp_method
@@ -48,7 +56,7 @@ with (U/(args.label+'-driver.log')).open('w')as log:
  p=subprocess.Popen(cmd,cwd=R,env=env,stdout=log,stderr=subprocess.STDOUT)
  receipt={'utc':time.strftime('%FT%TZ',time.gmtime()),'pid':p.pid,
   'start_ticks':Path('/proc',str(p.pid),'stat').read_text().split()[21],
-  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,'lp_method':args.lp_method,'original_feasibility':args.original_feasibility,
+  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,'lp_method':args.lp_method,'original_feasibility':args.original_feasibility,'device_simplex':args.device_simplex,
   'RLIMIT_AS':48*1024**3,'affinity':args.affinity,'build':build,
   'scope':'Declared finite source cohort; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt'}
  (A/('arithmetic-'+args.label+'-launch.json')).write_text(json.dumps(receipt,indent=2)+'\n')

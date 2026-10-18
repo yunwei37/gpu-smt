@@ -1,0 +1,36 @@
+[
+  {
+    "method": "oracle-gpu",
+    "rep": 1,
+    "state": "complete",
+    "expected": 10,
+    "attempts": 10,
+    "counts": {
+      "complete": 10
+    },
+    "whole_ns": 37979239485,
+    "cpu": {
+      "collector": {
+        "user": 0.08640200000000003,
+        "system": 3.9729789999999996
+      },
+      "waited_children": {
+        "user": 23.755755,
+        "system": 2.190605
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 4574679040,
+    "sampled_peak_fleet_rss_with_collector": 8358637568,
+    "sampling_read_errors": 8,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 8,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 10 of 10 candidates",
+    "collector_whole_ns": 37941859953,
+    "backend_setup_cleanup_ns": 37379532,
+    "gpu_target_boundary": "Warm upstream cuOpt server; per-cell host proxy setup/retirement included. Server cold startup/image pull reported separately, not amortized silently."
+  }
+]

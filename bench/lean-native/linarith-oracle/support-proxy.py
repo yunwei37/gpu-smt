@@ -4,18 +4,19 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--min-batch',type=int,default=1,help='Ready requests required before GPU launch; racing CPU owners can cancel while a partial batch waits.');p.add_argument('--backend',choices=['highs','cuopt'],required=True)
 p.add_argument('--socket',required=True);p.add_argument('--log',required=True)
 p.add_argument('--original-feasibility',action='store_true',help='Independent LP jobs only: omit phase-I artificial slack variables.')
+p.add_argument('--cuda-host',help='Finite device-batched simplex provider; bypass cuOpt per-job launch.')
 p.add_argument('--lp-method',choices=['PDLP','Barrier'],default='PDLP',help='Explicit GPU algorithm; Concurrent can include a CPU simplex winner.')
 p.add_argument('--independent-jobs',action='store_true',help='Dispatch simultaneously ready LPs as independently cancellable concurrent cuOpt jobs, not a fused model.');p.add_argument('--host');p.add_argument('--proto-root');a=p.parse_args()
 if a.min_batch<1:p.error('--min-batch must be positive')
 if a.original_feasibility and not a.independent_jobs:p.error('original feasibility requires independent jobs')
 resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3))
 resource.setrlimit(resource.RLIMIT_CORE,(0,0))
-if a.backend=='cuopt':
+if a.backend=='cuopt' and not a.cuda_host:
  sys.path.insert(0,a.proto_root)
  import grpc,cuopt_remote_data_pb2 as data_pb,cuopt_remote_pb2 as core_pb,cuopt_remote_service_pb2 as service_pb,cuopt_remote_service_pb2_grpc as rpc
-else:
+elif a.backend=='highs':
  import numpy as np,highspy
-lock=threading.Lock();active=0;seq=0
+lock=threading.Lock();active=0;seq=0;pending_cuda={};cuda_cancelling=set()
 def append_record(path,record):
  with lock:
   with open(path,'a')as f:f.write(json.dumps(record,separators=(',',':'))+'\n')
@@ -31,6 +32,18 @@ class GPUCall:
   with lock:
    if self.fd is not None:os.close(self.fd);self.fd=None
 def cancel_abandoned():
+ if a.cuda_host:
+  with lock:
+   keys=[key for key,item in pending_cuda.items()if item.cancelled.is_set()and key not in cuda_cancelling]
+   cuda_cancelling.update(keys)
+  if keys:
+   try:
+    with socket.create_connection((a.cuda_host,5001))as channel:
+     channel.sendall((json.dumps({'cancel':keys})+'\n').encode())
+     with channel.makefile('rb')as stream:reply=json.loads(stream.readline())
+    append_record(a.log+'.batches',{'event':'model_cancel','keys':keys,'reply':reply,'monotonic_ns':time.monotonic_ns()})
+   except Exception as e:append_record(a.log+'.batches',{'event':'cancel_error','keys':keys,'error':repr(e)})
+  return
  # A withdrawn LP must stop its GPU work even when other batch members live.
  # cuOpt cancels whole jobs; live members are requeued after that job retires.
  with lock:
@@ -101,6 +114,37 @@ def solve_gpu_batch(items,group=None):
      'delete_result_acknowledged':deleted,'deletion_error':deletion_error,
      'scope':'Client-observed batch/RPC/result-retirement wall, not device kernel time.'})
   channel.close()
+def solve_cuda_batch(items):
+ begin=time.monotonic_ns();keys=[str(os.getpid())+":"+str(x.q["request_id"])for x in items]
+ by_key=dict(zip(keys,items));retired=set()
+ with lock:pending_cuda.update(by_key)
+ try:
+  with socket.create_connection((a.cuda_host,5001))as channel:
+   channel.sendall((json.dumps({"requests":[dict(x.q,key=k)for k,x in by_key.items()]},separators=(',',':'))+'\n').encode())
+   append_record(a.log+'.batches',{'event':'device_submit','batch_id':begin,'batch_size':len(items),'keys':keys,'call_ids':[x.q.get('call_id')for x in items],'distinct_sources':len(set(x.q.get('source')for x in items)),'monotonic_ns':begin})
+   cancel_abandoned()
+   with channel.makefile('rb')as stream:
+    while len(retired)<len(keys):
+     line=stream.readline()
+     if not line:raise RuntimeError('device provider closed before kernel retirement')
+     reply=json.loads(line)
+     if reply.get('event')=='retired':
+      retired.update(reply['keys'])
+      append_record(a.log+'.batches',dict(reply,event='device_kernel_retired'))
+     else:
+      key=reply.get('key')
+      if key not in by_key:raise RuntimeError('unmatched device reply: '+repr(reply))
+      item=by_key[key]
+      if not item.cancelled.is_set():item.deliver(reply)
+   append_record(a.log+'.batches',{'event':'device_batch_retired','batch_id':begin,'keys':keys,'monotonic_ns':time.monotonic_ns()})
+ except Exception as e:
+  for item in items:
+   if not item.cancelled.is_set():item.deliver({'primal':None,'error':repr(e)})
+  append_record(a.log+'.batches',{'event':'device_error','error':repr(e),'keys':keys})
+ finally:
+  with lock:
+   for key in keys:pending_cuda.pop(key,None);cuda_cancelling.discard(key)
+
 def solve_gpu_independent(item,group):
  # Each model owns one cancellable server worker/job. A withdrawn CPU shadow
  # cannot discard another model's progress. This is parallel job admission,
@@ -127,6 +171,8 @@ def gpu_dispatch():
   append_record(a.log+'.batches',{'event':'batch_ready','monotonic_ns':ready,
     'batch_size':len(items),'minimum_ready':a.min_batch,
     'scope':'Only simultaneously live device-ready requests; CPU shadows remain active.'})
+  if a.cuda_host:
+   solve_cuda_batch(items);items=[];continue
   if a.independent_jobs:
    group={'id':ready,'request_ids':[x.q['request_id']for x in items],
      'distinct_sources':len(set(x.q['source']for x in items)),
@@ -159,12 +205,13 @@ if a.backend=='cuopt':
 def stop_proxy(signum,frame):
  if a.backend=='cuopt':
   with lock:
+   for item in pending_cuda.values():item.cancelled.set()
    for items in pending_gpu.values():
     for item in items:item.cancelled.set()
   stopping.set();gpu_queue.put(None);cancel_abandoned()
   dispatcher.join() # WaitForCompletion + DeleteResult return before cell retirement.
   for worker in independent_threads:worker.join() # No live RPC jobs at cell retirement.
-  append_record(a.log+'.batches',{'event':'dispatcher_retired','monotonic_ns':time.monotonic_ns(),'pending_jobs':len(pending_gpu)})
+  append_record(a.log+'.batches',{'event':'dispatcher_retired','monotonic_ns':time.monotonic_ns(),'pending_jobs':len(pending_gpu),'pending_device_models':len(pending_cuda)})
  raise SystemExit(128+signum)
 signal.signal(signal.SIGTERM,stop_proxy)
 class Handler(socketserver.StreamRequestHandler):
@@ -199,6 +246,6 @@ class Server(socketserver.ThreadingUnixStreamServer):
  daemon_threads=False
 if os.path.exists(a.socket):raise RuntimeError('socket already exists: '+a.socket)
 with Server(a.socket,Handler)as server:
- print(json.dumps({'ready':True,'pid':os.getpid(),'backend':a.backend,'socket':a.socket,'independent_jobs':a.independent_jobs,'lp_method':a.lp_method,'formulation':('original_feasibility' if a.original_feasibility else 'phase_I_artificial_slack'),'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
+ print(json.dumps({'ready':True,'pid':os.getpid(),'backend':('device-batched-simplex'if a.cuda_host else a.backend),'socket':a.socket,'independent_jobs':a.independent_jobs,'lp_method':a.lp_method,'formulation':('original_feasibility' if a.original_feasibility else 'phase_I_artificial_slack'),'minimum_ready':a.min_batch,'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}),flush=True)
  try:server.serve_forever()
  finally:os.unlink(a.socket)
