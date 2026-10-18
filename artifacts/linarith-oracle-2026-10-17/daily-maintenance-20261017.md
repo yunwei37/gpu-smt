@@ -65,3 +65,9 @@ occupancy from removable critical-path work. If admitted, test a complete GPU
 oracle with exact repair and native checking. The new diagnostic capture is
 actually launched; prefix is left in background. Public entrypoint documentation
 now links the active GPU plan and preserves all failure routes and raw records.
+
+
+## Progress thinking after real GPU admission
+The earlier narrow GPU routes targeted small CPU fractions. Complete numeric ledgers now identify expensive exact LP fallback, not support repair, as the removable work. A real bottleneck then appeared: pure feasibility PDLP can monopolize one server worker on a no-certificate LP and block independent candidates. Phase-I makes every search problem feasible and actual ready-queue batching avoids artificial delay; numeric qualification demonstrates real batches, but the native24 preflight still emits singleton requests and GPU is slower than robust HiGHS. Therefore the decisive action is the already-launched fixed1000 CPU/GPU/native comparison, with actual candidate tails and all fallback/retirement costs. Do not start another tuning grid or substitute more reports for that measurement. Retain a negative result if the final best oracle misses1.5x; preserve the user's GPU-first completion rule until it is measured.
+
+Daily OSS upkeep: replaced stale GPU progress text that called a completed capture running, linked canonical raw/CPU ledger/qualification/launch evidence, and documented the experimental source entrypoints in the arithmetic README. No source relocation, new scheduler or unrelated cleanup.

@@ -8,7 +8,7 @@ GPU is slower than the robust CPU control on24 but beats the native reference; f
 
 ## Workload and methods
 Use unchanged input-top1000.jsonl, original source bodies/order, native Lean4.27/Mathlib pinned, Kimina warm batch width4, one worker, CPUs12–15,48GiB RLIMIT_AS and zero core. Existing Lean4.9 prefix remains on20–23. Numeric diagnostic replay has finished, so no further CPU replay competes.
-Order: fast-hybrid native baseline, oracle-highs robust CPU support, oracle-gpu phase-I cuOpt PDLP support. A winning/threshold-ambiguous result requires reverse-order confirmation; do not promote a single order as robust improvement.
+Order, fixed before launch: oracle-gpu phase-I cuOpt PDLP support, oracle-highs robust CPU support, fast-hybrid native baseline. GPU runs first so its finite device allocation can be removed while CPU controls finish, and the requested GPU data arrives first. This replaces the unlaunched baseline-first ordering; no measured full-cell result has been selected or omitted. A winning/threshold-ambiguous result requires reverse-order confirmation; do not promote a single order as robust improvement.
 
 The original cheap CPU FP filter remains. Robust CPU uses HiGHS1.15.1 on the original scaled equality LP. GPU uses an always-feasible phase-I extension with nonnegative +/- artificial slack per row and minimum total slack. Ready queued independent LPs form a block-diagonal GPU problem; no artificial waiting timer. Both are untrusted support hints, repaired/verified exactly on CPU and checked by Lean. Direct misses use strong native fallback; native fallback misses still use exact tiered search. Do not weaken CPU control by forcing artificial-slack work.
 

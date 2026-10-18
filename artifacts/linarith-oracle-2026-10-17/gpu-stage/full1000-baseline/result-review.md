@@ -8,3 +8,6 @@ Ten interleaved malformed Lean JSON lines (five pairs) prevent a certified compl
 The separate completed oracle numeric replay has10259 records incl handshakes, zero cert/error differences, and four complete wait4 worker CPU receipts totaling632.869840 seconds. It measures numeric composition only, not Lean/GPU acceleration. GPU admission remains open from the complete oracle capture's conditional sensitivity, not a claim of achieved speedup.
 
 Self-review only. Raw, failed and partial data retained. This is attribution evidence, not an independent audit or project closure.
+
+## Derived recovery update
+The raw ten-line interleaving was subsequently recovered by five uniquely invertible splices without changing the original. See stages-after-lossless-recovery.md and recovery-provenance.json for the now-readable full stage accounting and remaining four missing source/client IDs. The earlier corruption observation is preserved as history, not rewritten.\n

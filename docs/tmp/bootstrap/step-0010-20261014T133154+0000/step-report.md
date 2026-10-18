@@ -3824,3 +3824,12 @@ All implementation and recheck performed by root; self-review only.
 - REVIEW_GATE: root self-review, not independent audit; formal GPU native agreement and paired end-to-end matrix pending.
 - User boundary remains best(CPU,GPU)>1.5x. Hourly automation active; no premature closure or minute-by-minute empty waits.
 Evidence: artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/ and full1000-oracle-numeric-replay/.
+
+
+## 2026-10-18T00:12Z — phase-I GPU qualified and fixed1000 trial launched
+- EXPERIMENT_GATE: native24/HiGHS24/GPU24 all complete with zero verdict differences and warning-only JSON differences at16/19/23. Including host lifecycle:50.576581135/41.104748206/46.497715329 seconds. Native GPU25 requests are25 singleton batches; numeric qualification demonstrates actual ready-queue batches1/3/1/3 without delay. GPU is not promoted from a numeric-only replay.
+- EXPERIMENT_GATE: current fixed1000 driver18460/start_ticks71246143 launched2026-10-17T23:51:29Z, GPU first then HiGHS/native controls. All48GiB. Existing prefix5256 preserved. No minute wait loops. Remove disposable cuOpt target at actual GPU terminal while CPU controls proceed.
+- EXPERIMENT_GATE: complete native numeric wait4 ledger13416 records, zero cert/error differences,1027.769668 CPU seconds. LP1018.046978039, repair0.369147372. Five uniquely invertible log splices expose all134640 Lean records; four numeric source IDs remain unknown. Native stage CPU/occupancy are distinct, nonadditive scopes. Largest1% LP calls consume63.13% of LP CPU; largest10%99.73%, not equivalent to end-to-end candidate tails.
+- WRITE_GATE: targeted phase-I protocol/caption/current-status update only;20-page manuscript compiles and changed page inspected.22 changed local Markdown links resolve. CPU-stage vs final CPU/GPU decision remains explicit. Full writing gate is not claimed.
+- REVIEW_GATE: targeted claim/resource self-review flags unproved RQ1--RQ3, unknown native products, external GPU-server CPU scope and broad design-vs-evidence gap. Raw solved_by=Unset retained; no independent audit or OSDI acceptance claimed. Full result review awaits actual fixed1000 terminal.
+Evidence: gpu-stage/cuopt-target/full1000-launch.json, full1000-plan.md, qualification/phase1-preflight-paired-analysis.json, pre-result-claim-self-audit.md; full1000-baseline-numeric-replay/; full1000-baseline/stages-after-lossless-recovery.md.

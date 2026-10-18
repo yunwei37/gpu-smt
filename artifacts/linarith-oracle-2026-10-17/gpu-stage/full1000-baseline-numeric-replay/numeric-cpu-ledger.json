@@ -1,0 +1,54 @@
+{
+  "workers": [
+    {
+      "pid": 15071,
+      "service_kind": "fallback",
+      "records_including_handshake": 13411,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 4.440997006,
+        "response_write": 0.032429387,
+        "lp_build": 0.502183017,
+        "fp_solve": 39.843207325,
+        "exact_lp": 976.554684765,
+        "response_pack": 0.088929501,
+        "exact_repair": 0.369147372,
+        "exact_verify": 0.074128308
+      },
+      "session_other_cpu_seconds": 0.530622476,
+      "session_cpu_seconds": 1022.436329157,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 0.06712197,
+      "diagnostic_write_cpu_seconds": 3.43943564,
+      "worker_total_cpu_seconds": 1026.108982,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.166095233
+    },
+    {
+      "pid": 18236,
+      "service_kind": "fallback",
+      "records_including_handshake": 5,
+      "complete_worker_cpu_receipt": true,
+      "phase_cpu_seconds": {
+        "request_parse": 0.004607784,
+        "response_write": 3.2927e-05,
+        "lp_build": 0.000981257,
+        "fp_solve": 0.171610085,
+        "exact_lp": 1.477475864,
+        "response_pack": 2.179e-06
+      },
+      "session_other_cpu_seconds": 0.000704201,
+      "session_cpu_seconds": 1.655414297,
+      "eof_counter_agrees": true,
+      "stdin_read_cpu_seconds": 6.4343e-05,
+      "diagnostic_write_cpu_seconds": 0.003577956,
+      "worker_total_cpu_seconds": 1.660686,
+      "wait_status": 0,
+      "supervisor_cpu_seconds_before_exit_receipt": null,
+      "startup_exit_and_other_cpu_seconds": 0.001629404
+    }
+  ],
+  "all_worker_receipts_complete": true,
+  "scope": "wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."
+}

@@ -2422,3 +2422,7 @@ All implementation and recheck performed by root; self-review only.
 
 ## 2026-10-17T23:49Z root self-audit
 Verified exact full native JSON against the fixed same-method primary reference, complete numeric streams and explicit malformed-Lean-log limitation. Rejected treating replay CPU or first real GPU support as achieved acceleration. GPU execution remains open, current four pure-feasibility jobs cancelled on demonstrated head-of-line stall; failed/partial inputs preserved. No other Workspace was changed, no subagent/OMP used. WRITE/REVIEW remain incomplete; this is self-audit only.
+
+
+## 2026-10-18T00:12Z root self-audit
+Cross-checked closed native24 full responses, source IDs, true candidate spans, complete numeric wait4 receipts and exact lossless log reconstruction. Rejected using native24 singleton demand as a claim of effective native GPU batching, using RPC solved_by=Unset as attribution, or calling GPU/client resource accounting an equal-resource frontier. Existing source/GPU Workspace and prefix preserved. Root-only development and review; no subagent/OMP or independent-audit claim. Pending fixed1000 driver18460 is the next decisive result, not a reason to poll empty progress or close from CPU alone.

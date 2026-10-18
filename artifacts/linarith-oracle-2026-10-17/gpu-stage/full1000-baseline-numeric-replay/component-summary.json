@@ -1,0 +1,27 @@
+{
+  "complete_worker_CPU_seconds": 1027.769668,
+  "LP_search_CPU_seconds": 1018.046978039,
+  "exact_repair_CPU_seconds": 0.369147372,
+  "exact_verification_CPU_seconds": 0.074128308,
+  "LP_build_CPU_seconds": 0.503164274,
+  "request_parse_response_pack_write_CPU_seconds": 4.566998784,
+  "other_CPU_seconds": {
+    "session_other_cpu_seconds": 0.531326677,
+    "stdin_read_cpu_seconds": 0.067186313,
+    "diagnostic_write_cpu_seconds": 3.443013596,
+    "startup_exit_and_other_cpu_seconds": 0.167724637
+  },
+  "phase_CPU_seconds": {
+    "request_parse": 4.44560479,
+    "response_write": 0.032462314,
+    "lp_build": 0.503164274,
+    "fp_solve": 40.01481741,
+    "exact_lp": 978.032160629,
+    "response_pack": 0.08893168,
+    "exact_repair": 0.369147372,
+    "exact_verify": 0.074128308
+  },
+  "records": 13416,
+  "certificate_error_differences": 0,
+  "scope": "Same per-process request order, original hybrid setting,48GiB, all original numeric requests. Complete wait4 worker CPU through actual exit; no sampled-denominator inference. Replayed numeric CPU composition cannot partition an older sampled976+ observation or substitute Lean end-to-end wall."
+}

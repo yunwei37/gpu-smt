@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-17T23:32:16.959737+00:00",
+  "pid": 15068,
+  "argv": [
+    "/workspaces/repository/bench/lean-native/linarith-oracle/replay-numeric-cost.py",
+    "--input-log",
+    "/tmp/gpu-smt-linarith-oracle-20261017/gpu-cost-full1000/rep1-fast-hybrid/solver-costs.jsonl",
+    "--build-root",
+    "/tmp/gpu-smt-linarith-oracle-20261017/cost-ledger-r2",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/ledger-numeric-full1000-baseline"
+  ],
+  "input_log": "/tmp/gpu-smt-linarith-oracle-20261017/gpu-cost-full1000/rep1-fast-hybrid/solver-costs.jsonl",
+  "process_streams": 2,
+  "source_records": 13416,
+  "native_engine": "same hybrid as closed oracle/fast-hybrid inputs",
+  "RLIMIT_AS": [
+    51539607552,
+    51539607552
+  ],
+  "scope": "same per-process numeric request order, no Lean work; numeric CPU composition only, not whole-verification/GPU speedup"
+}

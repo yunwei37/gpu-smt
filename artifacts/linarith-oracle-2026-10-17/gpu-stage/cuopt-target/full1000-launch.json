@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-17T23:51:29.438767+00:00",
+  "pid": 18460,
+  "start_ticks": "71246143",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/full1000-phase1",
+    "--methods",
+    "oracle-gpu",
+    "oracle-highs",
+    "fast-hybrid"
+  ],
+  "log": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/full1000-phase1.log",
+  "source_commit": "1ce9e09f1fd5c9fb52ab6492a7fe56c046fb1183",
+  "prelaunch_plan_delta": "GPU-first before any full-cell result; finite device allocation can be removed after GPU terminal while CPU controls finish",
+  "GPU_host": "10.42.1.92:5001",
+  "GPU_job": "coder/gpu-smt-cuopt-20261017",
+  "GPU_image": "nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734",
+  "input": "artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+  "count": 1000,
+  "48GiB_RLIMIT_AS": 51539607552,
+  "root_only": true,
+  "prefix_pid_preserved": 5256,
+  "out": "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/full1000-phase1"
+}

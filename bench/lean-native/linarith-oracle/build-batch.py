@@ -39,7 +39,7 @@ s=(D/'Baseline.lean').read_text().replace('import Farkas.Fast','import GpuArithm
 s=s.replace('IO.getEnv "GPU_ARITHMETIC_BASELINE"','IO.getEnv "GPU_ARITHMETIC_BATCH"')
 (U/'GpuArithmetic/BatchBaseline.lean').write_text(s)
 
-# Direct oracle has explicit lifecycle; fallback retains the existing strong daemon for now.
+# Direct and native fallback queries both wait through each child process exit.
 s=(D/'Oracle.lean').read_text().replace('namespace GpuArithmetic.Oracle','namespace GpuArithmetic.BatchOracle').replace('end GpuArithmetic.Oracle','end GpuArithmetic.BatchOracle')
 a=s.index('private abbrev Child');b=s.index('private def atom',a)
 s=s[:a]+'''private def query (request : String) : IO String := do

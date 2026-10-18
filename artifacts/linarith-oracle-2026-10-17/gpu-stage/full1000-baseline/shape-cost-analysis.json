@@ -1,0 +1,568 @@
+{
+  "count": 13414,
+  "LP_CPU_seconds": 979.803367661,
+  "shape_quartiles": {
+    "rows": [
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 0.008275545,
+        "LP_CPU_fraction": 8.446128348951784e-06,
+        "certificates": 3353,
+        "quartile": 1,
+        "shape_min": 2,
+        "shape_max": 4
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 0.013008101,
+        "LP_CPU_fraction": 1.3276236262642284e-05,
+        "certificates": 3354,
+        "quartile": 2,
+        "shape_min": 4,
+        "shape_max": 10
+      },
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 213.355336629,
+        "LP_CPU_fraction": 0.2177532183200439,
+        "certificates": 3281,
+        "quartile": 3,
+        "shape_min": 10,
+        "shape_max": 47
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 766.426747386,
+        "LP_CPU_fraction": 0.7822250593153445,
+        "certificates": 2776,
+        "quartile": 4,
+        "shape_min": 47,
+        "shape_max": 888
+      }
+    ],
+    "cols": [
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 0.00904921,
+        "LP_CPU_fraction": 9.235740862579803e-06,
+        "certificates": 3353,
+        "quartile": 1,
+        "shape_min": 2,
+        "shape_max": 11
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 0.011681514,
+        "LP_CPU_fraction": 1.1922304398571592e-05,
+        "certificates": 3354,
+        "quartile": 2,
+        "shape_min": 11,
+        "shape_max": 20
+      },
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 50.630719006,
+        "LP_CPU_fraction": 0.05167436720172369,
+        "certificates": 3246,
+        "quartile": 3,
+        "shape_min": 20,
+        "shape_max": 189
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 929.151917931,
+        "LP_CPU_fraction": 0.948304474753015,
+        "certificates": 2811,
+        "quartile": 4,
+        "shape_min": 189,
+        "shape_max": 3160
+      }
+    ],
+    "nnz": [
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 0.008802901,
+        "LP_CPU_fraction": 8.984354708857968e-06,
+        "certificates": 3353,
+        "quartile": 1,
+        "shape_min": 3,
+        "shape_max": 21
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 0.013001181,
+        "LP_CPU_fraction": 1.3269173621067048e-05,
+        "certificates": 3350,
+        "quartile": 2,
+        "shape_min": 21,
+        "shape_max": 74
+      },
+      {
+        "calls": 3353,
+        "LP_CPU_seconds": 5.329615581,
+        "LP_CPU_fraction": 0.0054394746506362095,
+        "certificates": 3215,
+        "quartile": 3,
+        "shape_min": 74,
+        "shape_max": 933
+      },
+      {
+        "calls": 3354,
+        "LP_CPU_seconds": 974.451947998,
+        "LP_CPU_fraction": 0.9945382718210338,
+        "certificates": 2846,
+        "quartile": 4,
+        "shape_min": 933,
+        "shape_max": 26044
+      }
+    ]
+  },
+  "LP_call_tail": {
+    "0.01": {
+      "calls": 135,
+      "LP_CPU_seconds": 618.551076346,
+      "LP_CPU_fraction": 0.6313012352903149,
+      "certificates": 130,
+      "most_expensive": [
+        {
+          "start_ns": 709013076605968,
+          "pid": 14264,
+          "call_id": 709013075452819,
+          "shape": {
+            "cols": 561,
+            "kind": "fp-scaled",
+            "nnz": 6503,
+            "rows": 149,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 38.729273696999996,
+          "exact_CPU_seconds": 38.537028918,
+          "certificate": true
+        },
+        {
+          "start_ns": 708412706792057,
+          "pid": 14264,
+          "call_id": 708412705919639,
+          "shape": {
+            "cols": 820,
+            "kind": "fp-scaled",
+            "nnz": 6447,
+            "rows": 34,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 24.652806514,
+          "exact_CPU_seconds": 24.568565793,
+          "certificate": true
+        },
+        {
+          "start_ns": 708472055534151,
+          "pid": 14264,
+          "call_id": 708471944070925,
+          "shape": {
+            "cols": 495,
+            "kind": "fp-scaled",
+            "nnz": 3390,
+            "rows": 84,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 23.43729052,
+          "exact_CPU_seconds": 23.35757267,
+          "certificate": true
+        },
+        {
+          "start_ns": 709654998858703,
+          "pid": 14264,
+          "call_id": 709654998526984,
+          "shape": {
+            "cols": 230,
+            "kind": "fp-scaled",
+            "nnz": 1844,
+            "rows": 71,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 20.412098525,
+          "exact_CPU_seconds": 20.386636886,
+          "certificate": true
+        },
+        {
+          "start_ns": 709526357422661,
+          "pid": 14264,
+          "call_id": 709526357068588,
+          "shape": {
+            "cols": 405,
+            "kind": "fp-scaled",
+            "nnz": 1533,
+            "rows": 118,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.999627199,
+          "exact_CPU_seconds": 16.903193576,
+          "certificate": true
+        },
+        {
+          "start_ns": 708858774675294,
+          "pid": 14264,
+          "call_id": 708858774135034,
+          "shape": {
+            "cols": 231,
+            "kind": "fp-scaled",
+            "nnz": 2889,
+            "rows": 50,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.938612609,
+          "exact_CPU_seconds": 16.937937593,
+          "certificate": true
+        },
+        {
+          "start_ns": 708535843048589,
+          "pid": 14264,
+          "call_id": 708535842684539,
+          "shape": {
+            "cols": 405,
+            "kind": "fp-scaled",
+            "nnz": 1785,
+            "rows": 133,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.80121777,
+          "exact_CPU_seconds": 16.681144791,
+          "certificate": true
+        },
+        {
+          "start_ns": 708973782451603,
+          "pid": 14264,
+          "call_id": 708967695479529,
+          "shape": {
+            "cols": 629,
+            "kind": "fp-scaled",
+            "nnz": 8991,
+            "rows": 163,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 10.045684892999999,
+          "exact_CPU_seconds": 9.810327797,
+          "certificate": true
+        },
+        {
+          "start_ns": 710477282580261,
+          "pid": 14264,
+          "call_id": 710477279129594,
+          "shape": {
+            "cols": 2628,
+            "kind": "fp-scaled",
+            "nnz": 17472,
+            "rows": 16,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 10.044382456,
+          "exact_CPU_seconds": 10.040654702,
+          "certificate": true
+        },
+        {
+          "start_ns": 709752195660346,
+          "pid": 14264,
+          "call_id": 709752183170994,
+          "shape": {
+            "cols": 702,
+            "kind": "fp-scaled",
+            "nnz": 5769,
+            "rows": 90,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 9.880109313,
+          "exact_CPU_seconds": 9.740522699,
+          "certificate": true
+        }
+      ]
+    },
+    "0.1": {
+      "calls": 1342,
+      "LP_CPU_seconds": 977.146784695,
+      "LP_CPU_fraction": 0.997288657037032,
+      "certificates": 975,
+      "most_expensive": [
+        {
+          "start_ns": 709013076605968,
+          "pid": 14264,
+          "call_id": 709013075452819,
+          "shape": {
+            "cols": 561,
+            "kind": "fp-scaled",
+            "nnz": 6503,
+            "rows": 149,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 38.729273696999996,
+          "exact_CPU_seconds": 38.537028918,
+          "certificate": true
+        },
+        {
+          "start_ns": 708412706792057,
+          "pid": 14264,
+          "call_id": 708412705919639,
+          "shape": {
+            "cols": 820,
+            "kind": "fp-scaled",
+            "nnz": 6447,
+            "rows": 34,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 24.652806514,
+          "exact_CPU_seconds": 24.568565793,
+          "certificate": true
+        },
+        {
+          "start_ns": 708472055534151,
+          "pid": 14264,
+          "call_id": 708471944070925,
+          "shape": {
+            "cols": 495,
+            "kind": "fp-scaled",
+            "nnz": 3390,
+            "rows": 84,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 23.43729052,
+          "exact_CPU_seconds": 23.35757267,
+          "certificate": true
+        },
+        {
+          "start_ns": 709654998858703,
+          "pid": 14264,
+          "call_id": 709654998526984,
+          "shape": {
+            "cols": 230,
+            "kind": "fp-scaled",
+            "nnz": 1844,
+            "rows": 71,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 20.412098525,
+          "exact_CPU_seconds": 20.386636886,
+          "certificate": true
+        },
+        {
+          "start_ns": 709526357422661,
+          "pid": 14264,
+          "call_id": 709526357068588,
+          "shape": {
+            "cols": 405,
+            "kind": "fp-scaled",
+            "nnz": 1533,
+            "rows": 118,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.999627199,
+          "exact_CPU_seconds": 16.903193576,
+          "certificate": true
+        },
+        {
+          "start_ns": 708858774675294,
+          "pid": 14264,
+          "call_id": 708858774135034,
+          "shape": {
+            "cols": 231,
+            "kind": "fp-scaled",
+            "nnz": 2889,
+            "rows": 50,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.938612609,
+          "exact_CPU_seconds": 16.937937593,
+          "certificate": true
+        },
+        {
+          "start_ns": 708535843048589,
+          "pid": 14264,
+          "call_id": 708535842684539,
+          "shape": {
+            "cols": 405,
+            "kind": "fp-scaled",
+            "nnz": 1785,
+            "rows": 133,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 16.80121777,
+          "exact_CPU_seconds": 16.681144791,
+          "certificate": true
+        },
+        {
+          "start_ns": 708973782451603,
+          "pid": 14264,
+          "call_id": 708967695479529,
+          "shape": {
+            "cols": 629,
+            "kind": "fp-scaled",
+            "nnz": 8991,
+            "rows": 163,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 10.045684892999999,
+          "exact_CPU_seconds": 9.810327797,
+          "certificate": true
+        },
+        {
+          "start_ns": 710477282580261,
+          "pid": 14264,
+          "call_id": 710477279129594,
+          "shape": {
+            "cols": 2628,
+            "kind": "fp-scaled",
+            "nnz": 17472,
+            "rows": 16,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 10.044382456,
+          "exact_CPU_seconds": 10.040654702,
+          "certificate": true
+        },
+        {
+          "start_ns": 709752195660346,
+          "pid": 14264,
+          "call_id": 709752183170994,
+          "shape": {
+            "cols": 702,
+            "kind": "fp-scaled",
+            "nnz": 5769,
+            "rows": 90,
+            "stage": "shape"
+          },
+          "LP_CPU_seconds": 9.880109313,
+          "exact_CPU_seconds": 9.740522699,
+          "certificate": true
+        }
+      ]
+    }
+  },
+  "candidate_LP_CPU_tail": {
+    "0.01": {
+      "candidate_count": 10,
+      "indices": [
+        310,
+        37,
+        62,
+        537,
+        208,
+        456,
+        86,
+        435,
+        897,
+        283
+      ],
+      "LP_CPU_seconds": 196.554268757,
+      "LP_CPU_fraction": 0.20060583097016396,
+      "selection": "LP calling-thread CPU only; not full candidate latency"
+    },
+    "0.1": {
+      "candidate_count": 100,
+      "indices": [
+        310,
+        37,
+        62,
+        537,
+        208,
+        456,
+        86,
+        435,
+        897,
+        283,
+        573,
+        454,
+        267,
+        922,
+        716,
+        163,
+        541,
+        919,
+        924,
+        464,
+        282,
+        331,
+        214,
+        647,
+        691,
+        892,
+        971,
+        422,
+        196,
+        634,
+        626,
+        74,
+        584,
+        49,
+        736,
+        108,
+        564,
+        19,
+        617,
+        755,
+        806,
+        600,
+        934,
+        704,
+        112,
+        268,
+        107,
+        719,
+        433,
+        56,
+        775,
+        655,
+        991,
+        445,
+        798,
+        238,
+        182,
+        22,
+        820,
+        124,
+        925,
+        195,
+        171,
+        923,
+        136,
+        403,
+        36,
+        972,
+        33,
+        373,
+        955,
+        364,
+        676,
+        68,
+        792,
+        372,
+        651,
+        828,
+        516,
+        497,
+        126,
+        35,
+        609,
+        377,
+        343,
+        904,
+        44,
+        344,
+        966,
+        446,
+        164,
+        585,
+        174,
+        252,
+        58,
+        697,
+        350,
+        734,
+        713,
+        251
+      ],
+      "LP_CPU_seconds": 609.274969047,
+      "LP_CPU_fraction": 0.6218339201073267,
+      "selection": "LP calling-thread CPU only; not full candidate latency"
+    }
+  },
+  "scope": "Calling-thread CPU cost concentration on a closed native baseline capture. Shape quartiles have equal call counts, not equal CPU. Candidate LP-CPU ranking is not end-to-end wall tail ranking. Four unknown source IDs remain explicit.",
+  "unknown_source_LP_CPU_seconds": 1.663605249
+}

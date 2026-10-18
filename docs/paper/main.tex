@@ -684,6 +684,20 @@ The final criterion uses the better CPU or GPU oracle result; GPU-stage
 attribution and evaluation remain in progress. These CPU-only results establish
 neither GPU acceleration nor GPU impossibility and do not close the project.
 
+The admitted GPU follow-up changes the external support-search mechanism using cuOpt PDLP~\cite{nvidia-cuopt-2026},
+while retaining CPU exact repair and Lean proof reconstruction.
+A pure feasibility PDLP request can occupy the single GPU worker on a
+no-certificate instance and delay independent requests.
+The current formulation instead adds positive and negative artificial slack
+to each equality row and minimizes total slack. This phase-I problem is
+always feasible; its floating solution only selects a support.
+Already-waiting independent requests form a block-diagonal problem without
+a batching delay. Every selected coefficient certificate still undergoes
+exact CPU repair and verification, followed by Lean checking; a miss uses
+the native fallback. The fixed-cohort GPU comparison is in progress,
+so this mechanism description establishes no end-to-end GPU benefit.
+
+
 \begin{table}[t]
 \centering
 \small
@@ -698,8 +712,8 @@ Reference / prototype & 1.347 & 1.347 & 1.346 \\
 \end{tabular}
 \caption{Complete native verification of the same enriched 1,000-source
 cohort per cell, with alternating method order. Whole times include the common
-resource observer and normal retirement. All three pairs fall below the
-predeclared continuation threshold. They establish no GPU benefit.}
+resource observer and normal retirement. These CPU-stage pairs fall below $1.5\times$; the final CPU/GPU
+comparison remains open. They establish no GPU benefit.}
 \label{tab:arithmetic-direct-pairs}
 \end{table}
 
