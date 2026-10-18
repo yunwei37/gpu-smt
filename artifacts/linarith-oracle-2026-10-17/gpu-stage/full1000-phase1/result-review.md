@@ -56,3 +56,13 @@ Four source-unlabelled numeric calls can add up to1.664LP CPU seconds to
 the top100; they do not intersect the top10. The diagnostic predates family-only
 headers. These are workload-composition counters, not measured primary
 critical-path fractions or same-run GPU savings.
+
+## Heavy convergence is not exclusively no-certificate work
+All21 batches above10solver-seconds return PDLP_OPTIMAL. Their reported
+phase-I objectives range from-6.66e-16 to4.09e-6; the444-second batch reports
+3.53e-12. These floating values do not prove original feasibility, but the
+measured tail cannot simply be described as solving only no-certificate
+instances. [Actual tail objectives/shapes](solver-heavy-tail-floating-objectives.json).
+The physical work is the measured convergence/queueing of small sparse
+systems, not a demonstrated large-device throughput advantage. No new
+numeric parameter search follows from this additional attribution.

@@ -32,13 +32,14 @@ warning differences. **CPU stage: 1.34668×; GPU stage: in progress.**
 These historical CPU pairs inherited unbounded address space. Current captures
 use 48 GiB and keep their clocks separate. Header inspection also found stacked
 old/new arithmetic elaborators in the GPU integration; a correction passes real
-24-source CPU qualification, while its full comparison remains pending.
+24-source CPU qualification. Three alternating full CPU pairs now measure the
+corrected headers under 48 GiB; the corrected GPU preflight runs separately.
 The hourly research automation is active; this CPU result is not project closure.
 [Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
 retain every pair and the post-fault rebuild lineage. Both full1,000-source
 [phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)
 are complete, with native responses matching their primary captures.
-The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). Matched CPU controls remain in progress. A direct-feasibility GPU repair failed real numeric qualification and is not admitted to another full run. Original-population prefix timing remains in progress.
+The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight and original-population prefix timing are in progress.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by

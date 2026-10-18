@@ -5,7 +5,7 @@ The initial GPU target omitted NVIDIA runtimeClass and failed before requests; t
 
 The current backend uses official pinned protobuf definitions and blocking WaitForCompletion/GetResult/DeleteResult on gRPC5001, without HTTP result polling. No cuOpt GPU package is installed in the source Workspace. The first real scaled certificate LP (73 rows,231 columns,1385 nonzeros) returns PDLP_OPTIMAL,66 iterations,0.104 seconds reported solver time; exact Rust repair/verification accepts its returned support. This is interface/mechanism qualification, not end-to-end acceleration.
 
-Implementation: cheap pinned CPU FP search remains a fast filter. At an exact-search fallback, robust support search uses either matched HiGHS1.15.1 or GPU cuOpt PDLP with crossover and infeasibility detection. Direct AST mode can decline to strong Lean fallback; the native fallback retains exact tiered search on all misses. GPU floating values never establish a proof. Both CPU and GPU variants use the same policy. Independent candidate calls can issue concurrent numeric jobs; there is no artificial batch waiting. The upstream single-GPU server's actual overlap/queueing must be measured, not presumed.
+Implementation: cheap pinned CPU FP search remains a fast filter. At an exact-search fallback, robust support search uses either matched HiGHS1.15.1 or GPU cuOpt PDLP with crossover. The later separately failed direct-feasibility model enabled infeasibility detection. Direct AST mode can decline to strong Lean fallback; the native fallback retains exact tiered search on all misses. GPU floating values never establish a proof. Both CPU and GPU variants use the same policy. Independent candidate calls can issue concurrent numeric jobs; there is no artificial batch waiting. The upstream single-GPU server's actual overlap/queueing must be measured, not presumed.
 
 New Lean modules clone the pinned native/Fast/cached-product route into an experiment namespace, use per-call child lifecycles and wait through actual exit, and keep the selected certificate Lean check. The old primary binaries/data and running Lean4.9 prefix experiment are retained.
 
@@ -40,4 +40,4 @@ support subject to exactrepair/Leanchecking. Original-feasibility remains closed
 [Corrected GPU preflight plan](arithmetic-header-corrected-gpu-preflight-plan.md)
 uses client plus server CPUeligibility0--3 for fair capacity, a fresh server
 without syntheticwarmup, and separate startup/retirement accounting. Existing
-legacyfull andprefix remain unchanged. No correctedGPUresult yet.
+legacyfull controls are now closed and their raw data preserved. Prefix collection remains unchanged. CorrectedGPU24 and three corrected fullCPU pairs are active; no correctedGPUresult yet.

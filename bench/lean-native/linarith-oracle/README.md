@@ -7,7 +7,7 @@ All three primary pairs and both full phase diagnostics are complete; see the
 and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
 These are CPU results. No production service or GPU acceleration is established.
 
-The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. Same-plan CPU controls continue on the frozen implementation. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; no corrected full-performance run is yet admitted. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; both temporary GPU targets are deleted. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
+The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. The frozen same-plan CPU controls are complete: native 2,331.39 s and robust HiGHS 2,363.00 s, each with 992 complete and 8 rejected outcomes. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; the original CPU oracle passed real clean-header qualification and its three matched full pairs are active. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; those two earlier GPU target instances were deleted. A new finite instance runs the corrected-family preflight. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
 
 
 The already-admitted original-population prefix comparison remains unfinished.
@@ -35,7 +35,7 @@ the same libraries or build output filenames:
 ```bash
 python3 bench/lean-native/linarith-oracle/build-stages.py
 python3 bench/lean-native/linarith-oracle/build-oracle.py
-/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python   bench/lean-native/linarith-oracle/run-comparison.py   --out /tmp/gpu-smt-linarith-oracle-20261017/new-preflight   --limit 24 --methods fast-hybrid oracle
+/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python   bench/lean-native/linarith-oracle/run-batch.py   --out /tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/new-preflight   --limit 24 --methods fast-hybrid oracle
 ```
 
 Use fresh output directories. A preflight is qualification, not a full speedup claim.
@@ -201,3 +201,20 @@ No numerical solver parameter grid or fresh full matrix is admitted from the
 failed formulation. Corrected-header HiGHS has no qualification benefit and
 receives no new full run. Read actual corrected GPU qualification before
 choosing the final full method set.
+
+## Current matched captures
+The corrected-family complete CPU comparison uses only native fast/hybrid and
+the original CPU oracle: [plan, exact command and self-review](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/plan.md).
+Three pairs alternate order under 48 GiB on the unchanged 1,000-source cohort.
+The controller collects a pair only after actual native process exit.
+Do not reuse the historical unbounded-AS 1.34668x as this block's result.
+
+The CPU-only batch bridge ablation is named oracle-hint: it keeps the cheap
+floating hint and native fallback, omitting the external support socket.
+Its real24-source preflight takes52.189s vs native46.054s, with fullJSONagreement.
+It receives no new full matrix, as does slower clean-header HiGHS.
+GPU preflight uses phase-I PDLP/crossover with owner cancellation and shares
+CPUs0--3 between its client and numeric server. No numeric warmup is hidden;
+cold startup and retirement are reported separately from the warm-service
+cell clock. These are experimental, owning-Workspace commands, not a portable
+installer or a completed GPU acceleration result.
