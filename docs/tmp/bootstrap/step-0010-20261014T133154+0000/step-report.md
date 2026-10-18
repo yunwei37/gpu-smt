@@ -3870,3 +3870,14 @@ shared5090 andoldextra-serverCPUscope. No abstract/RQ/thesischange, no fullWRITE
 realoutcomes, completecounter/replaynumbers andscope; historicalrawunchanged,
 unknownproductancestry/4sourcelabels/twoGPUtaskendsremainunknown. No independent
 reviewer permitted byuser. Final1.5xbestvalidCPU/GPU/hourly/goalremainopen.
+
+### Corrected complete CPU series starts, 2026-10-18T02:12Z
+After real24-source benefit and actualclosure ofoldcontrols, root starts three
+alternating family-only native/originalCPUoracle pairs on unchanged1000sources,
+CPU12--15,width4,48GiB,zero cores,upstream300s boundaries/common1sobserver.
+One finite nativecontroller waits onactualchildexit, analyzes/copies aclosedpair
+once andadvances. No otherAgent,newnumericmethod,minuteGoalwait orautomaticGit.
+Prefix20--23 andGPU24on0--3continue; sharedmemory/I/Olimits remain.
+SlowerrealHiGHS/hint-onlyvariants excludedfromnewfullruns. Historical1.34668x
+remains measuredhistory; corrected48GiB/intendedheaderaggregate pending.
+[Plan and root self-review](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/plan.md).
