@@ -1,0 +1,72 @@
+$gpuSmtOriginalJob=./scripts/kubectl-home.ps1 -n coder get job gpu-smt-cuopt-20261017 -o json | ConvertFrom-Json
+if ($LASTEXITCODE -ne 0) { throw "Cannot identify original GPU benchmark Job" }
+$gpuSmtOriginalUid=$gpuSmtOriginalJob.metadata.uid
+$gpuSmtWaitCode=@'
+import os,ctypes,select,struct,json,datetime,resource
+from pathlib import Path
+resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+os.sched_setaffinity(0,{4,5,6,7})
+pid=18460;ticks="71246143"
+cell=Path("/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/full1000-phase1/rep1-oracle-gpu")
+def final():
+ try:
+  x=json.loads((cell/"terminal.json").read_text())
+  if "backend_setup_cleanup_ns"in x:return x
+ except (FileNotFoundError,json.JSONDecodeError):pass
+def emit(event):
+ print(json.dumps({"event":event,"utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"driver_pid":pid,"start_ticks":ticks,"terminal":final(),"scope":"one-shot native filesystem/pidfd completion event; no timer polling"}),flush=True)
+done=final()
+if done:emit("gpu-cell-terminal")
+else:
+ try:
+  current=Path("/proc/"+str(pid)+"/stat").read_text().split()[21]
+ except FileNotFoundError:current=None
+ if current is None:emit("driver-exited")
+ elif current!=ticks:raise RuntimeError("driver PID reused; no cleanup authorization inferred")
+ else:
+  import fcntl,signal
+  fd=os.open(cell,os.O_RDONLY|os.O_CLOEXEC)
+  rfd,wfd=os.pipe2(os.O_NONBLOCK|os.O_CLOEXEC)
+  signal.signal(signal.SIGIO,lambda signum,frame:None)
+  old_wakeup=signal.set_wakeup_fd(wfd)
+  fcntl.fcntl(fd,fcntl.F_NOTIFY,fcntl.DN_MODIFY|fcntl.DN_CREATE|fcntl.DN_RENAME|fcntl.DN_MULTISHOT)
+  pfd=os.pidfd_open(pid)
+  try:
+   while True:
+    if final():emit("gpu-cell-terminal");break
+    readable,_,_=select.select([rfd,pfd],[],[])
+    if pfd in readable:emit("driver-exited");break
+    if rfd in readable:
+     try:os.read(rfd,65536)
+     except BlockingIOError:pass
+     if final():emit("gpu-cell-terminal");break
+  finally:
+   fcntl.fcntl(fd,fcntl.F_NOTIFY,0)
+   signal.set_wakeup_fd(old_wakeup)
+   os.close(fd);os.close(pfd);os.close(rfd);os.close(wfd)
+
+'@
+$gpuSmtWait64=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($gpuSmtWaitCode))
+$gpuSmtEventLines=./scripts/kubectl-home.ps1 -n coder exec coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-btpq6 -c dev '--' python3 -u -c 'import base64,sys;exec(base64.b64decode(sys.argv[1]))' $gpuSmtWait64
+if ($LASTEXITCODE -ne 0) { throw "Completion event failed; preserve GPU target for inspection" }
+$gpuSmtEvent=($gpuSmtEventLines -join [Environment]::NewLine) | ConvertFrom-Json
+if ($gpuSmtEvent.event -notin @("gpu-cell-terminal","driver-exited")) { throw "Unexpected completion event" }
+$gpuSmtNowJob=./scripts/kubectl-home.ps1 -n coder get job gpu-smt-cuopt-20261017 -o json | ConvertFrom-Json
+if ($LASTEXITCODE -ne 0 -or $gpuSmtNowJob.metadata.uid -ne $gpuSmtOriginalUid) { throw "GPU Job identity changed; do not delete it" }
+$gpuSmtGpuPod=(./scripts/kubectl-home.ps1 -n coder get pods -l job-name=gpu-smt-cuopt-20261017 -o json | ConvertFrom-Json).items[0]
+$gpuSmtCounterLines=./scripts/kubectl-home.ps1 -n coder exec $gpuSmtGpuPod.metadata.name -c cuopt '--' python3 -c 'import pathlib,json,time; p=pathlib.Path("/sys/fs/cgroup"); print(json.dumps({"utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"cpu_stat":(p/"cpu.stat").read_text(),"memory_current":(p/"memory.current").read_text(),"memory_peak":(p/"memory.peak").read_text(),"entry_limits":pathlib.Path("/proc/1/limits").read_text(),"scope":"whole target-container cumulative counters including qualifications, failures and diagnostics; upper bound for this GPU cell, not exact per-cell CPU"}))'
+$gpuSmtCounterStatus=$LASTEXITCODE
+$gpuSmtCounterText=$gpuSmtCounterLines -join [Environment]::NewLine
+./scripts/kubectl-home.ps1 -n coder logs job/gpu-smt-cuopt-20261017 --timestamps |
+ ./scripts/kubectl-home.ps1 -n coder exec -i coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-btpq6 -c dev '--' python3 -c 'import sys,gzip,shutil,os; p="/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/full1000-backend.log.gz"; f=gzip.open(p,"wb"); shutil.copyfileobj(sys.stdin.buffer,f); f.close(); print("Archived backend compressed bytes",os.path.getsize(p))'
+$gpuSmtLogStatus=$LASTEXITCODE
+$gpuSmtDeleteClock=[Diagnostics.Stopwatch]::StartNew()
+./scripts/kubectl-home.ps1 -n coder delete job gpu-smt-cuopt-20261017
+$gpuSmtDeleteStatus=$LASTEXITCODE
+$gpuSmtDeleteClock.Stop()
+$gpuSmtRemaining=(./scripts/kubectl-home.ps1 -n coder get pods -l job-name=gpu-smt-cuopt-20261017 -o json | ConvertFrom-Json).items.Count
+$gpuSmtOther=./scripts/kubectl-home.ps1 -n coder get pod coder-eb48d962-76f4-4ff7-bac5-7bc62ec2ada3-5c8bb655f6-khnns -o json | ConvertFrom-Json
+$gpuSmtNode=./scripts/kubectl-home.ps1 get node lab -o json | ConvertFrom-Json
+$gpuSmtReceipt=[ordered]@{utc=[DateTime]::UtcNow.ToString("o");event=$gpuSmtEvent;originalJobUid=$gpuSmtOriginalUid;podUid=$gpuSmtGpuPod.metadata.uid;counterExit=$gpuSmtCounterStatus;counterText=$gpuSmtCounterText;logExit=$gpuSmtLogStatus;deleteExit=$gpuSmtDeleteStatus;deleteSeconds=$gpuSmtDeleteClock.Elapsed.TotalSeconds;remainingTestPods=$gpuSmtRemaining;otherGpuWorkspacePhase=$gpuSmtOther.status.phase;labReady=($gpuSmtNode.status.conditions | Where-Object type -eq Ready).status;scope="Finite test cleanup through owning kubectl path; CPU controls continue; no service/schedule retained"}
+$gpuSmtReceipt64=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($gpuSmtReceipt | ConvertTo-Json -Depth 18)))
+./scripts/kubectl-home.ps1 -n coder exec coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-btpq6 -c dev '--' python3 -c 'import sys,base64,pathlib; pathlib.Path("/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/full1000-cleanup-receipt.json").write_bytes(base64.b64decode(sys.argv[1])); print("GPU cleanup receipt saved; CPU controls retained")' $gpuSmtReceipt64

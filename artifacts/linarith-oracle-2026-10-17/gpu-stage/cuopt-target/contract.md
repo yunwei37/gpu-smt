@@ -37,3 +37,8 @@ Self-review: requested disposable benchmark authority under spark-manage AGENTS.
 
 ## First launch and repair
 The first Job omitted the existing NVIDIA runtimeClass and failed CUDA driver initialization before any numeric request. Driver/device allocation alone did not mount NVIDIA libraries. Other GPU Workspace verifies runtimeClassName=nvidia. Corrected the Job to that existing hardware execution path, retaining the same 48GiB cap, image, device allocation, and server defaults. Initial failure log is preserved. No result from this launch enters performance.
+
+## Finite completion cleanup
+An inotify/pidfd one-shot completion wait watches only the current GPU cell and exact driver18460/start_ticks71246143. On final host-proxy retirement or driver exit, the owning Windows kubectl path archives backend logs/cgroup counters and deletes only the original Job UID, then verifies the existing other GPU Workspace and lab readiness. CPU controls continue. There is no timer polling, extra schedule, persistent helper or Agent. Exact inline command retained in finite-cleanup-command.ps1.txt; receipt records actual result.
+
+The first completion waiter could not allocate an inotify instance (EMFILE); it exited before any mutation. The one-shot wait now uses existing Linux dnotify/SIGIO plus pidfd, retaining event-driven cleanup and system defaults. No notification limits or kernel parameters were changed.
