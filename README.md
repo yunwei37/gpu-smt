@@ -28,7 +28,7 @@ Three complete matched observations on the frozen1,000 sources give
 **1.34668×** in aggregate (**25.74%** less elapsed time), below the predeclared
 **more-than1.5×** continuation rule. Every cell returns992complete/8rejected,
 zerooperational, with matching source verdicts and the same88unused-variable
-warning differences. **Historical CPU stage: 1.34668×. The admitted GPU variants have completed without a verification speedup; corrected CPU pairs are still running.**
+warning differences. **Historical CPU stage: 1.34668×. Single-request GPU PDLP variants failed; the GPU route remains under evaluation, alongside corrected CPU pairs.**
 These historical CPU pairs inherited unbounded address space. Current captures
 use 48 GiB and keep their clocks separate. Header inspection also found stacked
 old/new arithmetic elaborators in the GPU integration; a correction passes real
@@ -46,7 +46,7 @@ responses differ only in warnings. Two more alternating pairs remain.
 [First complete corrected pair](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).
 This is not the final three-pair threshold decision.
 
-The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight takes 630.37 seconds for 24 attempts, with 16 complete and 8 operational outcomes; it is not admitted to a new full GPU matrix. Original-population prefix timing and the corrected CPU pairs continue. The final best-valid-CPU/GPU 1.5x decision remains open.
+The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight takes 630.37 seconds for 24 attempts, with 16 complete and 8 operational outcomes; this rejects that integration, not the GPU route. Corrected-family wall profiling, size-gated CPU/GPU racing and matched-concurrency batching are the next admitted work. Original-population prefix timing and the corrected CPU pairs continue. The final best-valid-CPU/GPU 1.5x decision remains open. GPU route closure requires a measured, applicable zero-GPU-cost bound below 1.5x; prior profile clocks must not be rescaled to the corrected 2,234.69 s native run.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F
 and 5,952 ProofNet candidates using SHRED's official Lean parser, followed by
