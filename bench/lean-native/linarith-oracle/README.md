@@ -250,3 +250,17 @@ This selects only the matching diagnostic arithmetic family, serializes complete
 telemetry rows and builds into its own directory. Profile clocks have their own
 denominators; they cannot be relabelled as an earlier uninstrumented primary.
 See [qualification and full launch](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/result-review.md).
+
+
+### Large-LP racing
+
+Build with python3 build-race.py in the owning Workspace. The current private
+output is race-oracle-pooled. Run run-race.py with explicit
+GPU_ARITHMETIC_RACE_MIN_ROWS from the retained LP distribution; the24-source
+qualification used37. The inherited method name oracle-hint means the
+CPU-only large-LP ablation here; oracle-gpu enables the GPU competitor.
+The mutex covers only borrowing/returning independent native daemon handles.
+Every large-LP loser is killed and waited; the GPU dispatcher is cancelled
+and joined before cell retirement. Qualification used width8 with shared
+CPU0--3 for client/server,48 GiB, RTX5090 and actual batches of at least2.
+See the [race protocol and results](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/plan.md).

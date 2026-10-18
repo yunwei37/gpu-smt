@@ -57,3 +57,21 @@ decides performance feasibility. CPU/GPU contention and cancellation can
 make racing slower, so no 'never slower' guarantee is assumed. The final1.5x
 criterion applies to the better valid CPU/GPU result. No independent review
 has occurred, and no OSDI acceptance claim is made.
+
+## Native protocol reuse after first completed qualification
+
+The first real GPU run formed five size2 batches with matching outcomes, but
+per-query spawn from the large Lean process incurred about10--11 s of child
+system CPU. Replace only that integration with an idle-list of independent
+existing daemon handles. Borrow/return holds a mutex briefly; all solving and
+line I/O occur outside it. There is no global solver mutex, extra thread pool,
+fixed daemon cap or persistent external service. Idle handles exist only for
+this native REPL and close on its process exit. Failed handles are killed and
+waited, not returned. CPU-only and GPU variants share these exact Lean modules.
+
+Use a separate pooled build root; preserve all first-version code/raw results.
+Repeat real24-source CPU/GPU qualification at the same width8,CPU0--3,48GiB,
+row eligibility37 and GPU minimum2. The proxy now joins the GPU dispatcher after
+cancelling abandoned work, so WaitForCompletion and result deletion finish
+before cell retirement. First-version all5 jobs already had result records
+before retirement; this repair addresses future in-flight cancellation cases.

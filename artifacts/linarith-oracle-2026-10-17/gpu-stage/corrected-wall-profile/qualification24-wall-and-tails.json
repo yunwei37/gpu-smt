@@ -1,0 +1,240 @@
+{
+  "fast-hybrid": {
+    "own_clock_zero_cost_summary": {
+      "capture_whole_seconds": 36.648442563,
+      "matched_native_profile_seconds": 36.648442563,
+      "full_source_attribution_complete": true,
+      "LP_and_numeric_product_zero": {
+        "removed_summed_wall_seconds": 16.165224663,
+        "removed_sum_over_whole": 0.4410889940332769,
+        "remaining_fixed_work_seconds": 20.483217900000003,
+        "same_method_optimistic_multiple": 1.7891936092228944,
+        "matched_native_over_remaining": 1.7891936092228944,
+        "unbounded_when_zero_remaining": false
+      },
+      "generous_all_product_construction_zero": {
+        "removed_summed_wall_seconds": 21.171471945,
+        "removed_sum_over_whole": 0.5776909048346454,
+        "remaining_fixed_work_seconds": 15.476970618000003,
+        "same_method_optimistic_multiple": 2.3679338461996684,
+        "matched_native_over_remaining": 2.3679338461996684,
+        "unbounded_when_zero_remaining": false
+      },
+      "numeric_LP_product_observed_union_fraction": 0.44108899403327695,
+      "threshold_rule": "A multiple at or above1.5, unbounded deletion, or incomplete/inapplicable attribution cannot close the GPU route.",
+      "scope": "Conditional fixed-work zero-cost sensitivity, not a measured GPU speedup or universal scheduler theorem. Summed wall intervals overcount overlap. Generous deletion also removes Lean product-proof construction. Fixed certificates/fallback/noneligible work are assumed. Observed union is occupancy, not removable critical-path wall. Profile and reference must share this corrected family/configuration; historical2234.69 is never substituted."
+    },
+    "individual_candidate_tails": {
+      "available": true,
+      "missing_candidate_indices": [],
+      "tails": {
+        "0.01": {
+          "indices": [
+            3
+          ],
+          "proof_ids": [
+            "Proof_00088"
+          ],
+          "summed_candidate_wall_seconds": 9.303527124,
+          "component_cpu_seconds": {
+            "request_parse": 0.055026545,
+            "lp_build": 0.004139468,
+            "fp_solve": 0.009337685,
+            "exact_repair": 0.001869708,
+            "exact_verify": 0.000352735,
+            "response_pack": 0.000742658,
+            "response_write": 0.000719907,
+            "protocol_dispatch_unattributed": 0.004470202,
+            "lean_products": 1.001278361,
+            "lean_lp": 0.054588057,
+            "lean_preprocess": 0.080140035,
+            "lean_linearize": 0.344002013,
+            "lean_certificate": 0.721270126
+          },
+          "component_summed_wall_seconds": {
+            "request_parse": 0.055012243,
+            "lp_build": 0.004130312,
+            "fp_solve": 0.009335567,
+            "exact_repair": 0.001866956,
+            "exact_verify": 0.000352022,
+            "response_pack": 0.0007427,
+            "response_write": 0.000722345,
+            "lean_products": 1.001449398,
+            "lean_lp": 0.1599433,
+            "lean_preprocess": 0.080381812,
+            "lean_linearize": 0.344179145,
+            "lean_certificate": 0.721428408
+          }
+        },
+        "0.1": {
+          "indices": [
+            3,
+            0,
+            19
+          ],
+          "proof_ids": [
+            "Proof_00088",
+            "Proof_00009",
+            "Proof_00549"
+          ],
+          "summed_candidate_wall_seconds": 20.467360619,
+          "component_cpu_seconds": {
+            "request_parse": 0.070104098,
+            "lp_build": 0.005620488,
+            "fp_solve": 0.143203332,
+            "exact_repair": 0.004839978,
+            "exact_verify": 0.000643535,
+            "response_pack": 0.00101036,
+            "response_write": 0.000823565,
+            "protocol_dispatch_unattributed": 0.005716876,
+            "lean_products": 1.495392329,
+            "lean_lp": 0.069828899,
+            "lean_preprocess": 0.107740501,
+            "lean_linearize": 0.513713364,
+            "lean_certificate": 1.5758931459999999,
+            "exact_lp": 4.304883321
+          },
+          "component_summed_wall_seconds": {
+            "request_parse": 0.070086544,
+            "lp_build": 0.0056093739999999994,
+            "fp_solve": 0.148943812,
+            "exact_repair": 0.004836625,
+            "exact_verify": 0.000642221,
+            "response_pack": 0.001010328,
+            "response_write": 0.000826414,
+            "lean_products": 1.503518056,
+            "lean_lp": 6.330590035,
+            "lean_preprocess": 0.108028196,
+            "lean_linearize": 0.519703505,
+            "lean_certificate": 1.5767319880000001,
+            "exact_lp": 4.305152742
+          }
+        }
+      },
+      "scope": "Ranked actual candidate service intervals, original population including failures. CPU and wall components include overlapping parent Lean LP and numeric child LP; they must not be summed as disjoint whole-wall fractions."
+    }
+  },
+  "oracle": {
+    "own_clock_zero_cost_summary": {
+      "capture_whole_seconds": 27.148719011,
+      "matched_native_profile_seconds": 36.648442563,
+      "full_source_attribution_complete": true,
+      "LP_and_numeric_product_zero": {
+        "removed_summed_wall_seconds": 8.237536467,
+        "removed_sum_over_whole": 0.30342265738808344,
+        "remaining_fixed_work_seconds": 18.911182544,
+        "same_method_optimistic_multiple": 1.4355907647675659,
+        "matched_native_over_remaining": 1.9379244252828363,
+        "unbounded_when_zero_remaining": false
+      },
+      "generous_all_product_construction_zero": {
+        "removed_summed_wall_seconds": 9.151029849,
+        "removed_sum_over_whole": 0.33707041003637134,
+        "remaining_fixed_work_seconds": 17.997689162,
+        "same_method_optimistic_multiple": 1.5084558226686857,
+        "matched_native_over_remaining": 2.036286005004402,
+        "unbounded_when_zero_remaining": false
+      },
+      "numeric_LP_product_observed_union_fraction": 0.3015178744781035,
+      "threshold_rule": "A multiple at or above1.5, unbounded deletion, or incomplete/inapplicable attribution cannot close the GPU route.",
+      "scope": "Conditional fixed-work zero-cost sensitivity, not a measured GPU speedup or universal scheduler theorem. Summed wall intervals overcount overlap. Generous deletion also removes Lean product-proof construction. Fixed certificates/fallback/noneligible work are assumed. Observed union is occupancy, not removable critical-path wall. Profile and reference must share this corrected family/configuration; historical2234.69 is never substituted."
+    },
+    "individual_candidate_tails": {
+      "available": true,
+      "missing_candidate_indices": [],
+      "tails": {
+        "0.01": {
+          "indices": [
+            3
+          ],
+          "proof_ids": [
+            "Proof_00088"
+          ],
+          "summed_candidate_wall_seconds": 8.108699785,
+          "component_cpu_seconds": {
+            "request_parse": 0.002547717,
+            "linear": 0.004782998,
+            "products": 0.046293049,
+            "matrix_pack": 0.010270006,
+            "lp_build": 0.002747058,
+            "fp_solve": 0.00817128,
+            "exact_repair": 0.000807356,
+            "exact_verify": 0.000152179,
+            "response_pack": 0.000233126,
+            "response_write": 0.000404422,
+            "protocol_dispatch_unattributed": 0.004145791,
+            "exact_lp": 0.00127085,
+            "lean_direct_check": 0.87475242
+          },
+          "component_summed_wall_seconds": {
+            "request_parse": 0.002544239,
+            "linear": 0.004780037,
+            "products": 0.046290438,
+            "matrix_pack": 0.010268878,
+            "lp_build": 0.002745212,
+            "fp_solve": 0.008170053,
+            "exact_repair": 0.000808045,
+            "exact_verify": 0.000152823,
+            "response_pack": 0.000235297,
+            "response_write": 0.000401836,
+            "exact_lp": 0.00127087,
+            "lean_direct_check": 0.874881505
+          }
+        },
+        "0.1": {
+          "indices": [
+            3,
+            19,
+            0
+          ],
+          "proof_ids": [
+            "Proof_00088",
+            "Proof_00549",
+            "Proof_00009"
+          ],
+          "summed_candidate_wall_seconds": 19.075763132,
+          "component_cpu_seconds": {
+            "request_parse": 0.0072139710000000004,
+            "linear": 0.005376944,
+            "products": 0.053350204000000005,
+            "matrix_pack": 0.011745854,
+            "lp_build": 0.0037057590000000003,
+            "fp_solve": 0.18454031299999998,
+            "exact_repair": 0.002000652,
+            "exact_verify": 0.000308399,
+            "response_pack": 0.000369898,
+            "response_write": 0.000477299,
+            "protocol_dispatch_unattributed": 0.0056151149999999995,
+            "exact_lp": 4.853014948,
+            "lean_direct_check": 1.94466155,
+            "lean_products": 0.12107887,
+            "lean_lp": 0.00324523,
+            "lean_preprocess": 0.004757924,
+            "lean_linearize": 0.042519818,
+            "lean_certificate": 0.078535172
+          },
+          "component_summed_wall_seconds": {
+            "request_parse": 0.0072095629999999996,
+            "linear": 0.005373377,
+            "products": 0.053347213000000004,
+            "matrix_pack": 0.011744586,
+            "lp_build": 0.003702947,
+            "fp_solve": 0.18455511400000002,
+            "exact_repair": 0.002001054,
+            "exact_verify": 0.000308812,
+            "response_pack": 0.00037281,
+            "response_write": 0.000474817,
+            "exact_lp": 4.853317977,
+            "lean_direct_check": 1.961576407,
+            "lean_products": 0.121094132,
+            "lean_lp": 4.436624601,
+            "lean_preprocess": 0.004762043,
+            "lean_linearize": 0.042524937,
+            "lean_certificate": 0.078538962
+          }
+        }
+      },
+      "scope": "Ranked actual candidate service intervals, original population including failures. CPU and wall components include overlapping parent Lean LP and numeric child LP; they must not be summed as disjoint whole-wall fractions."
+    }
+  }
+}

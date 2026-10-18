@@ -2517,3 +2517,39 @@ methods withoverlap/oldprofilescopes. Completepairraw ispublished; reversed
 pair2auto-startsunderunchangedcontroller. Thisisnotfinalthree-pair orOSDIresult.
 No newGPU/kernel/solvervariant,activecapturechange orindependentreviewer.
 [Completepair self-review](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).
+
+
+## Owning-thread outer self-audit, 2026-10-18 — GPU continuation, complete real race qualification
+
+User's latest criterion supersedes the broad GPU stop wording in033a418.
+GPU route remains open until an applicable corrected-family zero-cost ceiling
+excludes1.5x, or the admitted evaluation is complete. Historical2234.69 s
+primary had no phase instrumentation and must not receive relabelled old clocks.
+
+EXPERIMENT_GATE: active. Corrected CPU pair2 closes at2234.142870456 s native
+versus1751.171954856 s oracle (1.275798681x),992/8/0 with no non-message changes.
+Pair3 remains active and preserved. Corrected native/oracle24-source profiling
+passes exact full-JSON parity, complete231 native/125 oracle request attribution,
+about2.6% observed instrumentation overhead. Full original1000 profile launched
+2026-10-18T04:28:37Z, PID132120, CPU4--7, own wall denominator,48GiB.
+
+Actual large-LP CPU/GPU racing before either LP search and minimum2-live-request
+block-diagonal batches run successfully on RTX5090 at width8,CPU0--3,48GiB.
+First version:58 races,5 GPU wins,5 batches of2; all24 native results agree,
+GPU29.371985627 s versus fastest CPU22.051807059 s. Pooled native protocol
+qualification removes repeated Lean-side spawn cost; complete raw results
+and generated Lean sources are in large-lp-race/pooled. These remain24-source
+qualification, not full-population speedups or final route closure.
+Simultaneous LP batches are measured; original-source membership is not yet
+logged, so exact cross-candidate batching attribution remains unknown.
+
+WRITE_GATE: partial. README/paper current disposition corrected in680107c;
+full writing loop not complete. REVIEW_GATE: root self-review only; no agents,
+OMP, delegated execution, or independent-review claim. Full paper milestone
+review is not complete. Original prefix background capture remains preserved.
+
+Next inner work: finish corrected-family native/oracle wall attribution and
+its own zero-cost analysis, add source/call batch attribution, qualify the
+pooled race integration, then perform admitted matched full original1000 CPU/
+GPU comparisons if the ceiling does not exclude1.5x. Do not wait-minute poll
+or resume the retired CPU runtime/constructor routes.

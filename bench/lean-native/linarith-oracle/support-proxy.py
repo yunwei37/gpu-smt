@@ -89,8 +89,9 @@ def solve_gpu_batch(items):
   channel.close()
 def gpu_dispatch():
  items=[]
- while True:
+ while not stopping.is_set():
   item=gpu_queue.get()  # Arrival or cancellation wakeup; no polling/timer.
+  if stopping.is_set():break
   if item is not None:items.append(item)
   while True:
    try:
@@ -108,14 +109,16 @@ def gpu_dispatch():
   for item,answer in zip(items,answers):item.deliver(answer)
   items=[]
 if a.backend=='cuopt':
- gpu_queue=queue.Queue();pending_gpu={}
- threading.Thread(target=gpu_dispatch,daemon=True).start()
+ gpu_queue=queue.Queue();pending_gpu={};stopping=threading.Event()
+ dispatcher=threading.Thread(target=gpu_dispatch,daemon=False);dispatcher.start()
 def stop_proxy(signum,frame):
  if a.backend=='cuopt':
   with lock:
    for items in pending_gpu.values():
     for item in items:item.cancelled.set()
-  cancel_abandoned()
+  stopping.set();gpu_queue.put(None);cancel_abandoned()
+  dispatcher.join() # WaitForCompletion + DeleteResult return before cell retirement.
+  append_record(a.log+'.batches',{'event':'dispatcher_retired','monotonic_ns':time.monotonic_ns(),'pending_jobs':len(pending_gpu)})
  raise SystemExit(128+signum)
 signal.signal(signal.SIGTERM,stop_proxy)
 class Handler(socketserver.StreamRequestHandler):

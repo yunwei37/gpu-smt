@@ -229,8 +229,57 @@ def analyze(cell,inputs):
           "scope":"Summed eligible interval wall deliberately overcounts overlap. Conditional on fixed certificates, fallback decisions and noneligible work. Only a fixed-work scheduling upper bound; union is observed occupancy, not critical-path saving. Generous bound additionally eliminates Lean product proof construction and internal exact LP, beyond a floating GPU's guarantee. No bound certified with missing attribution."},
         "batching":outstanding(clientseq),"tails":tails,"calls":calls,
         "per_source":[{"index":i,"proof_id":xs[i]["proof_id"],"calls":v["calls"],
-          "component_cpu_seconds":{k:n/1e9 for k,n in v["phase_cpu"].items()}} for i,v in sorted(per.items())],
+          "component_cpu_seconds":{k:n/1e9 for k,n in v["phase_cpu"].items()},
+          "component_summed_wall_seconds":{k:n/1e9 for k,n in v["phase_wall"].items()}} for i,v in sorted(per.items())],
         "scope":"Diagnostic capture, all success/fallback calls. Timers and JSON logging overhead are charged, not corrected away. Overlapping parent Lean LP CPU/service CPU are reported separately. Same-method native JSON agreement required separately. Root self-review."}
+def zero_cost_summary(analysis, native_seconds=None):
+    """Algebra on this closed capture's own clocks; never relabel historical data."""
+    a=analysis["accelerable_cost"];t=a["whole_seconds"]
+    valid=analysis["all_call_schema_complete"]
+    def row(cost):
+        remaining=max(0,t-cost)
+        return {"removed_summed_wall_seconds":cost,"removed_sum_over_whole":cost/t,
+                "remaining_fixed_work_seconds":remaining,
+                "same_method_optimistic_multiple":t/remaining if valid and remaining else None,
+                "matched_native_over_remaining":native_seconds/remaining if valid and remaining and native_seconds is not None else None,
+                "unbounded_when_zero_remaining":bool(valid and not remaining)}
+    return {"capture_whole_seconds":t,"matched_native_profile_seconds":native_seconds,
+        "full_source_attribution_complete":valid,
+        "LP_and_numeric_product_zero":row(a["sum_interval_seconds"]),
+        "generous_all_product_construction_zero":row(a["generous_sum_seconds_including_all_Lean_product_construction"]),
+        "numeric_LP_product_observed_union_fraction":a["numeric_only_occupancy_fraction"],
+        "threshold_rule":"A multiple at or above1.5, unbounded deletion, or incomplete/inapplicable attribution cannot close the GPU route.",
+        "scope":"Conditional fixed-work zero-cost sensitivity, not a measured GPU speedup or universal scheduler theorem. Summed wall intervals overcount overlap. Generous deletion also removes Lean product-proof construction. Fixed certificates/fallback/noneligible work are assumed. Observed union is occupancy, not removable critical-path wall. Profile and reference must share this corrected family/configuration; historical2234.69 is never substituted."}
+
+def source_tails(analysis,cell,inputs):
+    """Use actual individual candidate intervals, not the older wave proxy."""
+    p=existing(cell,"candidate-times.jsonl")
+    if p is None:return {"available":False,"reason":"capture predates native candidate intervals"}
+    rows=list(stream(inputs));by_source={}
+    for i,x in enumerate(rows):
+        body="\n\n"+x["code"][len(HEADER):]
+        by_source.setdefault(body,[]).append(i)
+    spans={}
+    for span in stream(p):
+        ids=by_source.get(span["source"],[])
+        if len(ids)==1:
+            if ids[0] in spans:raise ValueError("duplicate individual candidate span")
+            spans[ids[0]]=span
+    response_indices={x["index"]for x in stream(cell/"responses.jsonl.gz")}
+    rank=sorted(spans,key=lambda i:spans[i]["end_ns"]-spans[i]["start_ns"],reverse=True)
+    costs={x["index"]:x for x in analysis["per_source"]}
+    tails={}
+    for fraction in [.01,.1]:
+        ids=rank[:math.ceil(len(response_indices)*fraction)];cpu=collections.Counter();wall=collections.Counter()
+        for i in ids:
+            cpu.update(costs.get(i,{}).get("component_cpu_seconds",{}))
+            wall.update(costs.get(i,{}).get("component_summed_wall_seconds",{}))
+        tails[str(fraction)]={"indices":ids,"proof_ids":[rows[i]["proof_id"]for i in ids],
+            "summed_candidate_wall_seconds":sum((spans[i]["end_ns"]-spans[i]["start_ns"])/1e9 for i in ids),
+            "component_cpu_seconds":dict(cpu),"component_summed_wall_seconds":dict(wall)}
+    return {"available":True,"missing_candidate_indices":sorted(response_indices-set(spans)),"tails":tails,
+        "scope":"Ranked actual candidate service intervals, original population including failures. CPU and wall components include overlapping parent Lean LP and numeric child LP; they must not be summed as disjoint whole-wall fractions."}
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path,nargs="?");p.add_argument("--numeric-log",type=Path);p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
     if a.numeric_log:
@@ -238,6 +287,10 @@ def main():
         print(json.dumps(result,indent=2));return
     if a.cell is None:p.error("cell or --numeric-log is required")
     result=analyze(a.cell,a.input)
+    native=a.cell.parent/"rep1-fast-hybrid"/"terminal.json"
+    nt=json.loads(native.read_text())["whole_ns"]/1e9 if native.exists() else None
+    result["own_clock_zero_cost_summary"]=zero_cost_summary(result,nt)
+    result["individual_candidate_tails"]=source_tails(result,a.cell,a.input)
     (a.cell/"cost-analysis.json").write_text(json.dumps(result,indent=2)+"\n")
     print(json.dumps({k:v for k,v in result.items() if k not in ["calls","per_source","distributions","tails"]},indent=2))
 if __name__=="__main__":main()

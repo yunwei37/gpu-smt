@@ -11,7 +11,7 @@ Full responses and candidate tails are retained in paired-analysis.json.
 58 actual large-LP races: CPU certificates45, CPU no-certificate8, GPU exactly
 repaired certificate5. There are five **actual two-request GPU batches**;
 all five submitted jobs have completed result records before proxy exit.
-This confirms a working jointly submitted cross-candidate mechanism, not merely
+This confirms working jointly submitted LP batches, not merely
 a concurrency flag. It does not establish throughput or end-to-end gain:
 the GPU path is slower than the fastest CPU oracle in this qualification.
 
