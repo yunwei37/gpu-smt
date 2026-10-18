@@ -4914,3 +4914,32 @@ WRITEplan/source/readme;REVIEWrootselfonlyacceptsnecessarywhole-repetitionvalida
 
 ### Measurement-context / next-node checkpoint — 2026-10-18T19:01:56.202415+00:00
 Paper/READMEseparateearlierdirect406.46diagnostic/capacitymodelsfromnewPower350.68normal-output result; no629/350Amdahlrescaling. SetupcorrectsCPUaffinitiesbyphase(earlier12--15,current4--7,ready8--11,prefix20--23). Tectoniccompilepassed,localclarificationnotnewwriting-round/globalreviewclaim. Dailynextmeaningfulworkversion-alignedformal-candidateoracleportabilityduringactualreps,notfakenumericgeneralization. ExistingauthorWIPunchanged,all4RQs/InitialNarrative/goal/hourlyactive.
+
+## E1078 — actual formal SDK oracle adapter closes (root only)
+EXPERIMENT_GATE entry rereads verbatim user-instruction/questions/InitialNarrative;
+RQ4 remains heterogeneous complete verification after reuse, all4RQs open.
+Paper-value: remove the actual-version generalization blocker while E1077
+alternating repetitions collect, not another narrow LP/kernel variant.
+Technical integration belongs to the existing oracle experiment and has no
+standalone scientific value.
+
+Root implements FormalOracle49 using unchanged4.9.0-rc1 SDK/native Mathlib,
+mutex-protected pooled child RPC, exact polynomial backend and native proof
+reconstruction. Native-preprocessing/same-backend component and upstream-stock
+modes share the same compiled module. Unsupported paths restore proof state and
+fallback. Failed builds retained. E1078 selected two actual complete32candidate
+groups before adapter timing,64sources total44complete20reject, all3conditions
+normalquit/48GiB, every full JSON identical. Direct88native-checked certs,
+6nonlinear requests; native88searches/44successful tactic runs. All execution,
+source checks and review performed by root; no delegation/independent audit.
+
+WRITE_GATE targeted expression check: this dependency provides no paper timing
+claim, so existing manuscript metrics/RQs/InitialNarrative remain unchanged.
+Record concrete implementation/generalization limits in evaluation and artifact;
+do not insert build chronology into reader-facing paper. Full writing refinement
+and milestone review skipped: unchanged paper/full RQ evidence incomplete and
+user directs implementation/performance progress, not repeated polishing.
+REVIEW_GATE self-review verifies actual interposition rather than bare response
+parity, raw/no-source-rewrite/selected scope, all3complete cells and no GPU
+inference. Technical result admits the complete original formal populations.
+[Plan/source/result](../../../../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).

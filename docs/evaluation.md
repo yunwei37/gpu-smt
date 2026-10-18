@@ -1,5 +1,15 @@
 # Evaluation: current evidence and open questions
 
+### Actual formal-version oracle integration — 2026-10-18
+[Lean4.9 adapter and actual qualification](../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/result-review.md):
+all64originals44complete20reject in stock/native-preprocessing/direct conditions,
+normalquit/48GiB and identical full responses. Actual88direct native-checked
+certificates (6nonlinear),88native-only searches/44tactics. Selected group clocks
+are not general performance; same-backend native is a component, not the
+unported4.27 Fast frontend or strongest whole service. Complete original
+miniF2F/ProofNet oracle population evaluation follows; all4RQs/GPU remain open.
+
+
 Updated2026-10-17 from published main831f0df plus completed original native/profile portions below. Step0010 is unfrozen BOOTSTRAP; all four
 RQs and the complete Lean-first/SMT/service/RTX5090/OSDI-quality objective remain
 open. Publication of completed portions is not full step or research completion.

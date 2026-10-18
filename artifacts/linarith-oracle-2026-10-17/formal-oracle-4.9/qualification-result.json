@@ -1,0 +1,117 @@
+{
+  "state": "complete",
+  "scope": "selected real64 engagement; not population speed, transparent substitution, GPU evaluation or independent audit",
+  "conditions": {
+    "stock": {
+      "terminal": {
+        "state": "complete",
+        "mode": "stock",
+        "expected": 64,
+        "returned": 64,
+        "counts": {
+          "complete": 44,
+          "rejected": 20
+        },
+        "whole_seconds": 12.859284732,
+        "normal_native_exit": true,
+        "error": null,
+        "affinity": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "memory_limit_bytes": 51539607552,
+        "scope": "selected actual formal64; technical engagement only; includes trace and CPU support setup"
+      },
+      "events": {},
+      "numerical_requests": 0,
+      "nonlinear_request_count": null,
+      "direct_export_sum_seconds": 0.0,
+      "search_sum_seconds": 0.0,
+      "native_check_sum_seconds": 0.0
+    },
+    "native": {
+      "terminal": {
+        "state": "complete",
+        "mode": "native",
+        "expected": 64,
+        "returned": 64,
+        "counts": {
+          "complete": 44,
+          "rejected": 20
+        },
+        "whole_seconds": 12.836004266,
+        "normal_native_exit": true,
+        "error": null,
+        "affinity": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "memory_limit_bytes": 51539607552,
+        "scope": "selected actual formal64; technical engagement only; includes trace and CPU support setup"
+      },
+      "events": {
+        "native-search": 88,
+        "native-tactic-checked": 44
+      },
+      "numerical_requests": 88,
+      "nonlinear_request_count": null,
+      "direct_export_sum_seconds": 0.0,
+      "search_sum_seconds": 0.133852663,
+      "native_check_sum_seconds": 0.0
+    },
+    "direct": {
+      "terminal": {
+        "state": "complete",
+        "mode": "direct",
+        "expected": 64,
+        "returned": 64,
+        "counts": {
+          "complete": 44,
+          "rejected": 20
+        },
+        "whole_seconds": 12.851854175,
+        "normal_native_exit": true,
+        "error": null,
+        "affinity": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "memory_limit_bytes": 51539607552,
+        "scope": "selected actual formal64; technical engagement only; includes trace and CPU support setup"
+      },
+      "events": {
+        "checked": 88
+      },
+      "numerical_requests": 88,
+      "nonlinear_request_count": 6,
+      "direct_export_sum_seconds": 0.051652315,
+      "search_sum_seconds": 0.161898664,
+      "native_check_sum_seconds": 2.55886934
+    }
+  },
+  "fidelity": {
+    "stock": {
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": []
+    },
+    "native": {
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": []
+    },
+    "direct": {
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": []
+    }
+  },
+  "engaged": true,
+  "qualified": true
+}

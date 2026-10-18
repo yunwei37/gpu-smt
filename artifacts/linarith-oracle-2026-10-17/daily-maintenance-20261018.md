@@ -354,3 +354,15 @@ substitutionordefault-corpuschangeswouldnotbeageneralizationresult.
 README/paperexplicitlyseparateolder406.46sdiagnosticfromnew350.68snormal-output
 candidateandcorrectphase-specificCPUaffinities. No waiting-onlygoalturns,
 noadditionalGPUclaim,all4RQs/novelty/fullserviceevidence remainopen.
+
+## Substantive progress reflection after formal-version port
+The main uncertainty has moved beyond whether Power speeds the selected
+Goedel cohort: the actual formal datasets use another SDK and mostly short or
+invalid proofs, so the same1.795x cannot be transferred. The promising next
+action is the complete unchanged populations with a same-backend native
+component, preserving all rejection/resource outcomes and charging warm setup.
+E1078 now supplies real native interception/checks, not a library-load-only
+receipt. An absent population benefit will limit the mechanism honestly.
+Keep the alternating original1000 repetitions frozen; do not open a solver grid.
+Upkeep: new adapter/source/build/result links live together under one artifact
+directory; no duplicate baseline source clone or new service/schedule is added.

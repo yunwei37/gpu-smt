@@ -1,0 +1,27 @@
+{
+  "commands": [
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-o",
+      "FormalOracle49.olean",
+      "-c",
+      "FormalOracle49.c",
+      "FormalOracle49.lean"
+    ],
+    [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "-o",
+      "libFormalOracle49.so",
+      "FormalOracle49.c",
+      "-L/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib",
+      "-Wl,--no-as-needed",
+      "-l:libMathlib-Tactic-Linarith-1.so"
+    ]
+  ],
+  "sdk": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib",
+  "lean_path": "/tmp/gpu-smt-linarith-oracle-20261017/formal-oracle-4.9:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib"
+}

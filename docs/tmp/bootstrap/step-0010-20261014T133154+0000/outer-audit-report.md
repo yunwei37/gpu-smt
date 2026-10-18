@@ -3232,3 +3232,12 @@ WRITEplan/source/readme;REVIEWrootselfonlyacceptsnecessarywhole-repetitionvalida
 
 ### Measurement-context / next-node checkpoint — 2026-10-18T19:01:56.202415+00:00
 Paper/READMEseparateearlierdirect406.46diagnostic/capacitymodelsfromnewPower350.68normal-output result; no629/350Amdahlrescaling. SetupcorrectsCPUaffinitiesbyphase(earlier12--15,current4--7,ready8--11,prefix20--23). Tectoniccompilepassed,localclarificationnotnewwriting-round/globalreviewclaim. Dailynextmeaningfulworkversion-alignedformal-candidateoracleportabilityduringactualreps,notfakenumericgeneralization. ExistingauthorWIPunchanged,all4RQs/InitialNarrative/goal/hourlyactive.
+
+## E1078 root self-audit (not independent)
+Checked actual SDK-native linkage, matching raw64 responses,88direct checked
+events/6nonlinear requests versus88native requests, normal exits/48GiB and
+selected-group bias. No general speedup or GPU benefit follows. Native4.9 Fast
+frontend remains unported; same-backend mode is a component, not a renamed
+strongest baseline. All4RQs/InitialNarrative and user betterCPU/GPU criterion
+remain. Next action is the admitted complete-population falsifier while main
+repetitions run. No OMP/Agent/subagent/native-session launch; root owns all.
