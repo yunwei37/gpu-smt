@@ -2432,3 +2432,6 @@ Checked1000closedGPUresponseIDs, terminalcounts984/8/8,1854numericrequests/1835u
 
 ## 2026-10-18T01:00Z root self-audit
 ReviewedrecordedPDLPsettings, actual82x152inputjob, four300.10sfailures/twopositive andone0.445sreturn. AllremainingqualifierfamilyPIDsretired; noCPU/prefixownerstopped. Cleanupreceiptdelete0,otherWorkspaceRunning/labReady. Eightnumericcallsare not eightcompletednativecases. Rejectrepairbeforefullloop; no arbitrarynewlimit orhardwarechange. CurrentCPUfullcontrolsnotfinished, so no finalbest-methodratio orprojectclosure. Self-reviewonly; noindependentreviewer/subagent. READMEanddailynowdescribemeasuredfailure ratherthanCPU-onlyimplementation. Direction/fourRQsscopeunchanged.
+
+## Root self-audit: actual candidate phase linkage
+Checked1000sourceproofIDs/sourcebodies, realGPUtop10/100CPUvectors, incompleteGPUrankingandfourunlabelledsourcebounds. Partial24/alteredsourceinputsrefuseprofilejoin. Closedreal24methodmetricsandalltailclocksunchanged. No claimthatCPU/wallratiosare1.5xGPUboundsorprimarysame-runphasefractions. Baseline-selectedcandidatecompositionawaitsactualprimarynativecompletion. Userrequestedheavy-tailanalysisispartiallyfilled, not falselydeclaredcomplete. Self-reviewonly,noadditionalAgent.

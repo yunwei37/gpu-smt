@@ -85,11 +85,15 @@ verdict differences and observed versus validated whole-time ratios. A completed
 acquisition with timeout rows is not a successful verification comparison.
 
 
-The matched-cohort analysis also checks unique source ids and original order
-against input-top1000.jsonl (override with --input for another admitted cohort).
-It reports every cell's whole wall, observed CPU, sampled PSS, native outcomes
-and deduplicated offline batch tails. The tails refer to whole grouped-array
-batches, never individual proof service latencies or online SLOs.
+The historical analyze-matrix.py checks unique source ids/order against
+input-top1000.jsonl and reports whole clocks, observed CPU, sampled PSS, native
+outcomes and deduplicated grouped-array wave tails. Those are not individual
+proof latencies or online SLOs. The newer analyze-batch.py uses actual per-task
+entry/return timestamps, retaining missing ends as censored. For the exact full
+original1000-source cohort it also joins the complete native baseline phase
+profile to each method-selected top1%/10% candidate set. These are separate
+diagnostic CPU counters, not GPU measured phases or percentages of primary wall.
+[Real joins, uncertainty and regression](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/candidate-phase-link-result-review.md).
 
 
 The optional --sample-seconds control defaults to the original one-second

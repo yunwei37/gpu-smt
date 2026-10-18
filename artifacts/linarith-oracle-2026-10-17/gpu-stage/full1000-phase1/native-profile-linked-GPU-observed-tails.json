@@ -1,0 +1,82 @@
+{
+  ".01": {
+    "profile": "artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/recovered-cost-analysis.json.gz",
+    "selection": "Real candidate task-wall ranking from the named primary method; phase counters from the separate complete native baseline profile, joined by original index and proof_id.",
+    "matched_sources": 10,
+    "missing_profile_indices": [],
+    "native_profile_component_CPU_seconds": {
+      "request_parse": 0.717254447,
+      "lp_build": 0.080500448,
+      "fp_solve": 0.198626297,
+      "exact_repair": 0.10694916400000003,
+      "exact_verify": 0.018489184,
+      "response_pack": 0.041690751,
+      "response_write": 0.037826604,
+      "protocol_dispatch_unattributed": 0.13847353299999998,
+      "exact_lp": 19.146034437,
+      "lean_products": 57.034629926,
+      "lean_lp": 1.0702050399999998,
+      "lean_preprocess": 157.32371579800002,
+      "lean_linearize": 26.741522729000003,
+      "lean_certificate": 80.90341182899999
+    },
+    "native_profile_external_LP_CPU_seconds": 19.344660734,
+    "native_profile_preprocess_linearize_CPU_seconds": 184.06523852700002,
+    "native_profile_product_proof_CPU_seconds": 57.034629926,
+    "native_profile_certificate_CPU_seconds": 80.90341182899999,
+    "unlabelled_profile_call_count": 4,
+    "unlabelled_calls_may_intersect_selected_sources": false,
+    "conservative_unassigned_component_CPU_upper_addition": {},
+    "profile_whole_seconds": 2319.668326413,
+    "scope": "Cross-capture native workload composition, not measured GPU-stage CPU or primary per-source elapsed decomposition. Do not divide CPU counters by primary wall, sum parent/child phases as disjoint elapsed, or call these counters causal GPU savings. Missing labels are bounded, never assigned to an invented candidate.",
+    "selection_censored": true,
+    "selection_missing_task_end_indices": [
+      335,
+      759
+    ]
+  },
+  ".10": {
+    "profile": "artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/recovered-cost-analysis.json.gz",
+    "selection": "Real candidate task-wall ranking from the named primary method; phase counters from the separate complete native baseline profile, joined by original index and proof_id.",
+    "matched_sources": 100,
+    "missing_profile_indices": [],
+    "native_profile_component_CPU_seconds": {
+      "request_parse": 2.5042347940000003,
+      "lp_build": 0.29074607399999997,
+      "fp_solve": 7.299201009999998,
+      "exact_repair": 0.20745359400000005,
+      "exact_verify": 0.038006287000000014,
+      "response_pack": 0.06758684999999999,
+      "response_write": 0.055360674999999984,
+      "protocol_dispatch_unattributed": 0.3490388020000001,
+      "exact_lp": 149.83306418499998,
+      "lean_products": 134.81889034000002,
+      "lean_lp": 7.250530546,
+      "lean_preprocess": 185.78259688600008,
+      "lean_linearize": 64.50299961600001,
+      "lean_certificate": 133.36340360900002
+    },
+    "native_profile_external_LP_CPU_seconds": 157.13226519499997,
+    "native_profile_preprocess_linearize_CPU_seconds": 250.2855965020001,
+    "native_profile_product_proof_CPU_seconds": 134.81889034000002,
+    "native_profile_certificate_CPU_seconds": 133.36340360900002,
+    "unlabelled_profile_call_count": 4,
+    "unlabelled_calls_may_intersect_selected_sources": true,
+    "conservative_unassigned_component_CPU_upper_addition": {
+      "request_parse": 0.00523226,
+      "lp_build": 0.001099035,
+      "fp_solve": 0.173357092,
+      "exact_lp": 1.490248157,
+      "response_pack": 1.982e-06,
+      "response_write": 3.9256000000000005e-05,
+      "protocol_dispatch_unattributed": 0.000727863
+    },
+    "profile_whole_seconds": 2319.668326413,
+    "scope": "Cross-capture native workload composition, not measured GPU-stage CPU or primary per-source elapsed decomposition. Do not divide CPU counters by primary wall, sum parent/child phases as disjoint elapsed, or call these counters causal GPU savings. Missing labels are bounded, never assigned to an invented candidate.",
+    "selection_censored": true,
+    "selection_missing_task_end_indices": [
+      335,
+      759
+    ]
+  }
+}
