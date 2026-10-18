@@ -29,6 +29,20 @@ This section records the initial scientific disposition of the expanded research
 
 ### 2026-10-18 — arithmetic evidence and unresolved system novelty
 
+A later source-native queue-control preflight finds no promotion-worthy benefit:
+same binary/body/eight workers, static54.811967s versusFIFO58.321468s on the
+original first64, identical full native responses. Its full matrix is rejected.
+This does not prove static scheduling globally optimal. Analysis of the current
+third CPU-oracle acquisition finds only9.250981s summed parsed external HiGHS
+search, while complete races include exact work and overlap. Fixed-lane deletion
+of all recorded races models1.53475x versus that pair's native reference; missing
+current product/small-LP regions and changed scheduling prevent a strict GPU
+ceiling. No GPU route closure follows. Existing full29,750 acquisition stays
+frozen and active.
+[Source/control](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md);
+[current numeric scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-third/current-race-budget-review.md).
+
+
 Three complete frozen two-sided CPU-oracle pairs use the upstream native
 eight-queue interface. Native/oracle whole clocks are681.243557/453.509810s,
 687.263047/447.309270s and691.359191/464.579050s. Ratios1.50216x,1.53644x

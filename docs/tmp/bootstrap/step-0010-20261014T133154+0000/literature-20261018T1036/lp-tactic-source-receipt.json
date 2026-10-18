@@ -1,0 +1,284 @@
+{
+  "observed_at": "2026-10-18T13:03:27.382101+00:00",
+  "repository": "https://github.com/leanprover/lp-tactic",
+  "commit": "86634295a1fa2b45110a680215e208b16f40cd33",
+  "commit_date": "2026-08-26T13:00:43Z",
+  "files": {
+    "lean-toolchain": {
+      "url": "https://github.com/leanprover/lp-tactic/blob/86634295a1fa2b45110a680215e208b16f40cd33/lean-toolchain",
+      "line_count": 1,
+      "excerpts": [
+        {
+          "line": 1,
+          "text": "leanprover/lean4:v4.33.1"
+        }
+      ]
+    },
+    "lakefile.lean": {
+      "url": "https://github.com/leanprover/lp-tactic/blob/86634295a1fa2b45110a680215e208b16f40cd33/lakefile.lean",
+      "line_count": 46,
+      "excerpts": [
+        {
+          "line": 1,
+          "text": "import Lake"
+        },
+        {
+          "line": 2,
+          "text": "open Lake DSL"
+        },
+        {
+          "line": 3,
+          "text": ""
+        },
+        {
+          "line": 4,
+          "text": "/-! # `LPTactic` build configuration"
+        },
+        {
+          "line": 5,
+          "text": ""
+        },
+        {
+          "line": 6,
+          "text": "  The `by lp` and `maximize` tactics, plus the `LPBackend` registry"
+        },
+        {
+          "line": 7,
+          "text": "  (`registerBackend`, `resolveBackend`, `availableBackends`), the"
+        },
+        {
+          "line": 8,
+          "text": "  default-backend dispatcher (`LP.dispatchSolveExact`), and"
+        },
+        {
+          "line": 9,
+          "text": "  the backend-pluggable verified-solve driver (`solveVerifiedWith`)."
+        },
+        {
+          "line": 10,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "text": "  **No FFI dependency.** All solver calls go through `LPBackend`"
+        },
+        {
+          "line": 12,
+          "text": "  values fetched from the registry. A consumer who wants to verify"
+        },
+        {
+          "line": 13,
+          "text": "  externally-produced certificates without ever building SoPlex"
+        },
+        {
+          "line": 14,
+          "text": "  depends on this package directly (plus `lp-verify`), with no"
+        },
+        {
+          "line": 15,
+          "text": "  native deps in the dependency graph."
+        },
+        {
+          "line": 16,
+          "text": "-/"
+        },
+        {
+          "line": 17,
+          "text": ""
+        },
+        {
+          "line": 18,
+          "text": "require LPCore from git \"https://github.com/leanprover/lp-core\" @ \"8b6d241bc84e54357aa6628f1b18ff795d53de7e\""
+        },
+        {
+          "line": 19,
+          "text": ""
+        },
+        {
+          "line": 20,
+          "text": "require LPVerify from git \"https://github.com/leanprover/lp-verify\" @ \"1131b0a11c683d4833cd735c83157a32952ad3aa\""
+        },
+        {
+          "line": 21,
+          "text": ""
+        },
+        {
+          "line": 22,
+          "text": "package LPTactic"
+        },
+        {
+          "line": 23,
+          "text": ""
+        },
+        {
+          "line": 24,
+          "text": "@[default_target]"
+        },
+        {
+          "line": 25,
+          "text": "lean_lib LPTactic where"
+        },
+        {
+          "line": 26,
+          "text": "  roots := #[`LPTactic]"
+        },
+        {
+          "line": 27,
+          "text": "  globs := #[`LPTactic, `LPTactic.Basic, `LPTactic.Registry, `LPTactic.LP,"
+        },
+        {
+          "line": 28,
+          "text": "             `LPTactic.LP.+, `LPTactic.Q]"
+        },
+        {
+          "line": 29,
+          "text": ""
+        },
+        {
+          "line": 30,
+          "text": "/-- Behavioral tests for the registry. Build via"
+        },
+        {
+          "line": 31,
+          "text": "    `lake build LPTacticTest` or run via `lake test`. -/"
+        },
+        {
+          "line": 32,
+          "text": "lean_lib LPTacticTest where"
+        }
+      ]
+    },
+    "LPTactic/LP/CarrierCertificate.lean": {
+      "url": "https://github.com/leanprover/lp-tactic/blob/86634295a1fa2b45110a680215e208b16f40cd33/LPTactic/LP/CarrierCertificate.lean",
+      "line_count": 496,
+      "excerpts": [
+        {
+          "line": 67,
+          "text": "@[inline] def mkAdd (m : CarrierMethods) (a b : Expr) : Expr := mkApp2 m.addFn a b"
+        },
+        {
+          "line": 68,
+          "text": "@[inline] def mkMul (m : CarrierMethods) (a b : Expr) : Expr := mkApp2 m.mulFn a b"
+        },
+        {
+          "line": 69,
+          "text": "@[inline] def mkSub (m : CarrierMethods) (a b : Expr) : Expr := mkApp2 m.subFn a b"
+        },
+        {
+          "line": 70,
+          "text": "@[inline] def mkNeg (m : CarrierMethods) (a : Expr) : Expr := mkApp m.negFn a"
+        },
+        {
+          "line": 73,
+          "text": "def render (m : CarrierMethods) (L : LinExpr) : Expr := Id.run do"
+        },
+        {
+          "line": 83,
+          "text": "def normalizeAtom (m : CarrierMethods) (e : Expr) : MetaM (LinExpr \u00d7 Expr \u00d7 Expr) := do"
+        },
+        {
+          "line": 92,
+          "text": "def precomputeSpine (m : CarrierMethods) (L : LinExpr) :"
+        },
+        {
+          "line": 112,
+          "text": "partial def proveMerge (m : CarrierMethods) (vidx : VarIdx) (La Lb : LinExpr) :"
+        },
+        {
+          "line": 178,
+          "text": "partial def proveSmul (m : CarrierMethods) (kE : Expr) (kVal : Rat) (La : LinExpr) :"
+        },
+        {
+          "line": 205,
+          "text": "partial def proveNeg (m : CarrierMethods) (La : LinExpr) : MetaM (LinExpr \u00d7 Expr \u00d7 Expr) := do"
+        },
+        {
+          "line": 236,
+          "text": "def rawColumnFVarId? (e : Expr) : MetaM (Option FVarId) := do"
+        },
+        {
+          "line": 244,
+          "text": "partial def normalizeR (m : CarrierMethods) (vidx : VarIdx) (e : Expr) :"
+        },
+        {
+          "line": 410,
+          "text": "partial def normalizeScalar? (m : CarrierMethods) (vidx : VarIdx) (e : Expr) :"
+        },
+        {
+          "line": 437,
+          "text": "def proveCertificateIdentity (m : CarrierMethods) (vars : Array FVarId) (lhsId : Expr)"
+        },
+        {
+          "line": 450,
+          "text": "rendered via `m.mkLit`. Sign facts are decided on the carrier with EXPLICIT"
+        },
+        {
+          "line": 451,
+          "text": "implicit args (no per-row typeclass inference); decide types built from the"
+        },
+        {
+          "line": 455,
+          "text": "def buildWeightedSumDecide (m : CarrierMethods) (leFn ltFn : Expr)"
+        }
+      ]
+    },
+    "LPTactic/LP/Atomic.lean": {
+      "url": "https://github.com/leanprover/lp-tactic/blob/86634295a1fa2b45110a680215e208b16f40cd33/LPTactic/LP/Atomic.lean",
+      "line_count": 451,
+      "excerpts": [
+        {
+          "line": 32,
+          "text": "def detectCarrierKind (carrier : Expr) : MetaM CarrierKind := do"
+        },
+        {
+          "line": 64,
+          "text": "def mkCarrierOps (carrier : Expr) : MetaM CarrierOps := do"
+        },
+        {
+          "line": 144,
+          "text": "def natNonnegRows (vars : Array FVarId) (atoms : AtomTable) : MetaM (Array Row) :="
+        },
+        {
+          "line": 161,
+          "text": "`Int.natCast_nonneg`, `OrderedRing.natCast_nonneg`); `subNonposName` is the carrier's"
+        },
+        {
+          "line": 163,
+          "text": "def castNonnegRows (vars : Array FVarId) (atoms : AtomTable)"
+        },
+        {
+          "line": 202,
+          "text": "def mkEntailEnv (rows : Array Row) (vars : Array FVarId) (lhs rhs : Expr)"
+        },
+        {
+          "line": 233,
+          "text": "      -- `OrderedRing.natCast_nonneg` \u2014 we pin only `R` and unify the result against `e`,"
+        },
+        {
+          "line": 245,
+          "text": "        let proof \u2190 mkAppOptM ``Lean.Grind.OrderedRing.natCast_nonneg"
+        },
+        {
+          "line": 258,
+          "text": "def proveEntailedCore (env : EntailEnv) (strict : Bool) (swap : Bool := false) :"
+        },
+        {
+          "line": 276,
+          "text": "     (if strict then decide (0 < objLin.const) else decide (0 \u2264 objLin.const)))"
+        },
+        {
+          "line": 357,
+          "text": "def proveEntailed (rows : Array Row) (strict : Bool)"
+        },
+        {
+          "line": 363,
+          "text": "def relCarrier? (type : Expr) : Option Expr :="
+        },
+        {
+          "line": 377,
+          "text": "def solveAtomic (g : MVarId) : TacticM Unit := do"
+        }
+      ]
+    }
+  }
+}

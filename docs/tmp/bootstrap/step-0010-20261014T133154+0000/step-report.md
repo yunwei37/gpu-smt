@@ -4672,3 +4672,36 @@ Full1000componentcontrolonlyifrealpreflightshowsbenefitandper-sourcefidelity.
 Source/schedulingmodel/plan/selfreviewpublishedascompletedimplementationstep.
 WRITE localprovenance,REVIEWrootself-review;notindependentaudit. NoGPUclosure,
 allfourRQs/strongestbaseline/systemnoveltyremainopen. Existingfull/prefixkept.
+
+### 2026-10-18 — E1063 closes; E1064 current-clock numeric-budget analysis
+
+EXPERIMENT E1063 actually closes both original64 cells: static54.811967251s,
+FIFO58.321468348s,6.403%MORE elapsed. Full JSON/verdict/source agreement,
+63/1/0each,64exact span joins/peak8/observererrors0. Per predeclared plan,
+reject full1000 admission, no retuning or cohort reselection. Source/body/native
+imports unchanged; all failed builds and closed acquisition raw retained.
+
+E1064 reuses current third full1000 pair, not old diagnostic headers/counters.
+1888unique source/call races all join, whole-duration sum101.540133s includes
+launch/exact repair/cancel/wait. 935parsedHiGHScalls sum9.250981solverWALLseconds,
+467aborted/unparsed connections retained. Current critical lane14.109277s
+complete race work. Fixing outside durations/gaps/assignments and deleting all
+recorded races models450.469773swhole /1.53475xversusnative, NOT strict bound
+or measuredGPUgain. Products/small-LP/schedulingcoveragemissing. Pureparsed
+HiGHSsearchdeletionmodels1.49419x,butthisnarrowmodelcannotcloseGPUroute.
+No new full matrix or kernel from this analysis. Full29750 still nonterminal
+at12:59Z, no active runtime mutation or repeated polling. Prefix preserved.
+
+WRITE currentREADME/frontier/evaluation/paper/dailyreflection updated, full
+writing loop/milestone review not claimed. REVIEW root self-audit accepts scoped
+facts and rejects fixed-duration-model-as-Amdahl-proof. All4RQs/novelty/general
+service evidence open. Goal/hourly remain active; no delegation/native resume.
+
+Validation for this boundary: updated paper compiles successfully with existing
+Tectonic0.17; new page17 rendered and visually inspected within column margins.
+README/evaluation/idea-story local target checks have zero broken links.
+Primary-source competitor follow-up records lp-tactic8663429, Lean4.33.1 and
+existing carrier-specific certificate assembly. No unmatched-version performance
+claim or new proof-primitive novelty follows; source receipt and applicability
+note are retained in existing literature node. No new benchmark or service is
+admitted by the literature follow-up.

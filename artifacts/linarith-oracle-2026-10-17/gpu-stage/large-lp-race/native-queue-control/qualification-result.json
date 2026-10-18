@@ -1,0 +1,96 @@
+{
+  "scope": "Matched native static versus dynamic scheduler, same private binary/source body, original input order and width8. Root self-review. Short preflight is not a paper performance result.",
+  "count": 64,
+  "static": {
+    "whole_seconds": 54.811967251,
+    "counts": {
+      "complete": 63,
+      "rejected": 1
+    },
+    "peak_active_candidates": 8,
+    "missing_spans": [],
+    "unmatched_spans": [],
+    "terminal": {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 54811967251,
+      "cpu": {
+        "collector": {
+          "user": 0.06200800000000001,
+          "system": 4.234824
+        },
+        "waited_children": {
+          "user": 70.298122,
+          "system": 2.508172
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 4624518144,
+      "sampled_peak_fleet_rss_with_collector": 8346308608,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+    }
+  },
+  "dynamic": {
+    "whole_seconds": 58.321468348,
+    "counts": {
+      "complete": 63,
+      "rejected": 1
+    },
+    "peak_active_candidates": 8,
+    "missing_spans": [],
+    "unmatched_spans": [],
+    "terminal": {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 58321468348,
+      "cpu": {
+        "collector": {
+          "user": 0.05656100000000003,
+          "system": 4.537087
+        },
+        "waited_children": {
+          "user": 71.705454,
+          "system": 2.689082
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 4706142208,
+      "sampled_peak_fleet_rss_with_collector": 8427802624,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+    }
+  },
+  "native_static_over_dynamic": 0.939824884448055,
+  "fidelity": {
+    "outcome_differences": [],
+    "JSON_differences": [],
+    "non_message_differences": []
+  },
+  "functional_pass": true,
+  "preflight_benefit": false
+}

@@ -3074,3 +3074,16 @@ static dispatch; newmodehas8workers andordered response promises. Build errors
 preserved and repaired within private outputs. Currentfull29750/common sources
 notchanged. Actual64qualificationpending;nofull1000untilbeneficialfidelity
 preflight. This boundary is not a new paper contribution or independent audit.
+
+### E1063 result and E1064 budget self-audit — 2026-10-18
+
+Root self-review only. All64 qualification responses including messages match;
+dynamic is slower, so no full admission. Do not promote the FIFO model or
+assume static queues optimal. Current1000 race keys/source timing join exactly.
+External label 'gpu' is CPU HiGHS in this cell. Parsed solver timers are wall,
+not CPU; raced launch/repair/wait sums are not disjoint elapsed. The1.53475x
+zero-race fixed-lane sensitivity omits exhaustive current product/small-LP
+attribution and is not a global GPU bound; no route closure follows.
+Current full-workload and prefix writers preserved. Completed evidence
+published without waiting for the whole research project. Independent review,
+global CPU frontier, full WRITE and all four RQ answers remain incomplete.

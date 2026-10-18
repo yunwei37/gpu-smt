@@ -1,0 +1,50 @@
+{
+  "argv": [
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-queue-control/qualification64-static",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/input-first64.jsonl",
+    "--limit",
+    "64",
+    "--width",
+    "8",
+    "--affinity",
+    "4",
+    "5",
+    "6",
+    "7",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-queue-control/repl",
+    "--methods",
+    "fast-hybrid"
+  ],
+  "pid": 279301,
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "methods": [
+    "fast-hybrid"
+  ],
+  "input": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/input-first64.jsonl",
+  "limit": 64,
+  "resource_observer_seconds": 1,
+  "header": "per-method arithmetic family selected by Runner.cell; common Mathlib/Aesop imports",
+  "boundary": "existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF",
+  "native_buckets": 8,
+  "array_observation_deadline_seconds": null,
+  "repl_override": "/tmp/gpu-smt-linarith-oracle-20261017/native-queue-control/repl",
+  "numeric_replay_bin": null,
+  "numeric_replay_data": null,
+  "effective_RLIMIT_AS": [
+    51539607552,
+    51539607552
+  ],
+  "cost_profile": false,
+  "cost_root": "/tmp/gpu-smt-linarith-oracle-20261017",
+  "collector": "/workspaces/repository/bench/lean-native/run-native-batch-comparison.py"
+}

@@ -1,0 +1,126 @@
+{
+  "scope": "CURRENT completed full1000 third CPU-oracle, original sources/four CPUs/eight fixed native lanes/48GiB. No counters transferred from the older stacked-header or hybrid diagnostic acquisitions. CPU external solver labels are legacy names, not CUDA.",
+  "threshold_1_5_candidate_whole_seconds": 460.90612737600003,
+  "current_third_pair_shortfall_seconds": 3.6729227609999953,
+  "count": 1000,
+  "native_whole_seconds": 691.359191064,
+  "CPU_oracle_whole_seconds": 464.579050137,
+  "actual_native_over_CPU_oracle": 1.4881411265964848,
+  "race_calls": 1888,
+  "race_keys_unique": true,
+  "race_calls_per_winner": {
+    "gpu": {
+      "count": 399,
+      "decision_seconds": 21.966662212999996,
+      "whole_seconds": 22.81278560900001,
+      "retirement_seconds": 0.846123396
+    },
+    "cpu": {
+      "count": 275,
+      "decision_seconds": 5.956353355999998,
+      "whole_seconds": 6.431884759,
+      "retirement_seconds": 0.47553140299999963
+    },
+    "external-infeasible": {
+      "count": 335,
+      "decision_seconds": 15.105505472999992,
+      "whole_seconds": 16.094348260999993,
+      "retirement_seconds": 0.9888427879999993
+    },
+    "cpu-no-certificate": {
+      "count": 879,
+      "decision_seconds": 54.676343924000065,
+      "whole_seconds": 56.201114373000024,
+      "retirement_seconds": 1.5247704490000002
+    }
+  },
+  "race_whole_sum_seconds": 101.540133002,
+  "race_sum_divided_by_whole": 0.21856373629430076,
+  "race_scope": "Full speculative numeric stage: worker launch, CPU hybrid versus CPU HiGHS, exact positive/negative repair/check, cancellation and wait. Not pure LP work and not a disjoint whole-pipeline wall share. Small ineligible LPs and product expansion have no complete current-phase attribution here.",
+  "parsed_external_HiGHS_calls": 935,
+  "unparsed_or_aborted_connections": 467,
+  "external_HiGHS_observed_totals": {
+    "solver_seconds": 9.250980854034424,
+    "build_ns": 613799433,
+    "call_ns": 10126051631,
+    "thread_cpu_ns": 6153121071
+  },
+  "external_HiGHS_connection_interval_union_seconds": 26.613638757,
+  "external_HiGHS_interval_union_divided_by_whole": 0.05728549048682218,
+  "external_scope": "solver_seconds is per-call solver WALL, summed across calls; not CPU work or removable end-to-end time. Parsed calls omit workers cancelled before full JSON reception, retained as unparsed/aborted connections, not invented LP outcomes. Connection union includes receiving/build/serialization; it is not GPU-replaceable wall.",
+  "source_race_budget_exceeds_candidate_span": [],
+  "zero_race_fixed_lane_model": {
+    "lanes": [
+      {
+        "lane": 0,
+        "observed_last_end_seconds": 387.564199357,
+        "race_whole_sum_seconds": 11.37039143,
+        "modeled_last_end_after_zero_races_seconds": 376.193807927,
+        "external_HiGHS_solver_wall_sum_seconds": 0.7964966297149658,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 386.76770272728504
+      },
+      {
+        "lane": 1,
+        "observed_last_end_seconds": 349.78451493,
+        "race_whole_sum_seconds": 9.964121953,
+        "modeled_last_end_after_zero_races_seconds": 339.820392977,
+        "external_HiGHS_solver_wall_sum_seconds": 1.3000009059906006,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 348.4845140240094
+      },
+      {
+        "lane": 2,
+        "observed_last_end_seconds": 460.437240691,
+        "race_whole_sum_seconds": 14.109276663000001,
+        "modeled_last_end_after_zero_races_seconds": 446.327964028,
+        "external_HiGHS_solver_wall_sum_seconds": 1.8820514678955078,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 458.5551892231045
+      },
+      {
+        "lane": 3,
+        "observed_last_end_seconds": 314.121418378,
+        "race_whole_sum_seconds": 9.460493222,
+        "modeled_last_end_after_zero_races_seconds": 304.66092515599996,
+        "external_HiGHS_solver_wall_sum_seconds": 1.0614707469940186,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 313.05994763100597
+      },
+      {
+        "lane": 4,
+        "observed_last_end_seconds": 352.675047262,
+        "race_whole_sum_seconds": 9.292536672999999,
+        "modeled_last_end_after_zero_races_seconds": 343.38251058900005,
+        "external_HiGHS_solver_wall_sum_seconds": 1.0733983516693115,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 351.6016489103307
+      },
+      {
+        "lane": 5,
+        "observed_last_end_seconds": 416.629398083,
+        "race_whole_sum_seconds": 20.547338577,
+        "modeled_last_end_after_zero_races_seconds": 396.082059506,
+        "external_HiGHS_solver_wall_sum_seconds": 0.9532721042633057,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 415.6761259787367
+      },
+      {
+        "lane": 6,
+        "observed_last_end_seconds": 383.307521024,
+        "race_whole_sum_seconds": 16.027704911,
+        "modeled_last_end_after_zero_races_seconds": 367.279816113,
+        "external_HiGHS_solver_wall_sum_seconds": 0.8202848434448242,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 382.48723618055516
+      },
+      {
+        "lane": 7,
+        "observed_last_end_seconds": 271.470749187,
+        "race_whole_sum_seconds": 10.768269573,
+        "modeled_last_end_after_zero_races_seconds": 260.702479614,
+        "external_HiGHS_solver_wall_sum_seconds": 1.3640058040618896,
+        "modeled_last_end_after_zero_HiGHS_search_seconds": 270.10674338293813
+      }
+    ],
+    "modeled_whole_seconds": 450.469773474,
+    "modeled_native_over_oracle": 1.5347515677517563,
+    "modeled_oracle_acceleration": 1.0313212506006562,
+    "zero_external_HiGHS_search_only_modeled_whole_seconds": 462.6969986691045,
+    "zero_external_HiGHS_search_only_modeled_native_ratio": 1.494194241701624,
+    "assumptions": "Delete ENTIRE recorded race stage, including non-GPU repair/launch/retirement; preserve observed lane assignments, all outside-race durations and gaps. Contention/durations can change. Source keys join exactly but no absolute race-start/end interval trace exists. Not measured performance, scheduler-independent bound, or a proof allowing GPU route closure. Missing product/small-LP phase attribution prevents exhaustive replacement coverage."
+  }
+}

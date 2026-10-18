@@ -719,3 +719,31 @@ TheoneGPUdiscovered-capacitypoolrepairalsoreturns31OOMs,nowpinnedto
 cudaMemPoolCreatebeforeLPbuffers;zeroactualkernels. Nofurtherallocator
 parametergridorfullGPUcapturefromthiscandidate;oldlegacybackendpreserved,
 overallGPUroute/hourlygoalnotclosed.
+
+## Current residual numeric work and native scheduling control — 2026-10-18
+
+The third two-sided CPU pair has its own native691.359191s/oracle464.579050s
+clock. Its1,888 source-matched numerical races sum to101.540133s, including
+exact repair, launch and retirement. This is not a disjoint whole-wall share.
+The935 parsed external HiGHS searches sum to9.250981 wall seconds, with467
+additional unparsed/aborted connections retained. Legacy external winner label
+'gpu' in this cell means CPU HiGHS, not CUDA.
+
+The observed critical lane contains14.109277s of full race work. Deleting all
+such work while fixing other durations/gaps models450.469773s overall:
+1.03132x beyond current oracle,1.53475x versus its native reference. Deleting
+only parsed HiGHS search models1.49419x versus native. Neither sensitivity is a
+scheduler-independent bound; products/small-LP attribution and scheduling
+changes remain uncovered. It therefore does not justify GPU-route closure.
+[Reproducible extraction, raw joins and assumptions](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-third/current-race-budget-review.md).
+
+A real source-native scheduler preflight tests the apparent fixed-lane tail.
+The same private native binary/body, original first64, eight workers, four CPUs
+and48GiB take54.811967s for static queues versus58.321468s for FIFO workers.
+All63complete/1rejected/0operational outcomes and full JSON responses agree;
+both peak at8 active candidates with complete timing joins and zero observer
+read errors. FIFO is6.403%slower here. Its plan therefore rejects full1,000
+admission; no worker-count grid or source reselection follows. Fixed-duration
+modeling had suggested10.7%less candidate-window time on the full capture,
+which is expressly not a measured gain. Static optimality remains unproven.
+[Plan, source, raw qualification and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md).

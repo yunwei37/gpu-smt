@@ -206,3 +206,27 @@ Full29750nativecellhasstarted;three-componentdriver277984ownsCPU0–3
 andfrozenruntime,protectedprefix20–23stillseparate. Theproject'srealnext
 acceptanceboundaryiscompletewhole-workload/componentdata,notactivity.
 ExistinghourlyautomationconfirmedACTIVE/FREQ=HOURLY;INTERVAL=1unchanged.
+
+### 13:00Z — substantive-progress reflection and execution
+
+Current risk: marginal1.50862x arithmetic-heavy aggregate is easy to overstate;
+solver/backend selection and fixed native queues are competing explanations.
+Root implemented a private source-native FIFO control, actually ran the original
+64 sources, and rejected full admission after54.81s static versus58.32s FIFO,
+all full JSON responses identical. No replacement cohort, worker grid or E038
+runtime branching revival. Source/compiler failures and closed raw data retained.
+
+The more promising decision is now complete original-workload generality and
+remaining *proof* cost, rather than another tiny floating LP kernel. Current
+third CPU-oracle logs contain only9.25s cumulative parsed HiGHS search; full
+numeric race stages sum101.54s but only14.11s occur along the final fixed lane.
+Even deleting all recorded race stages models only1.0313x extra oracle gain,
+yet1.53475x versus native, so it cannot close GPU under the user's rule.
+Missing current product/small-LP attribution and scheduling changes remain
+explicit. New GPU work must change consequential residual work and beat this
+stronger CPU path in real end-to-end preflight before any full matrix.
+
+Follow-through: current README/evaluation/paper now link the closed failed
+scheduler control and current-clock extraction; earlier models are labeled as
+models. Original full29,750 and prefix captures stay frozen. No polling-only
+waits, allocator/buffer/thread grid, delegation or false independent audit.

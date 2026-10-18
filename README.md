@@ -41,6 +41,20 @@ through a real transport/logging preflight.
 [reversed full result](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-reversed-result-review.md),
 [all three pairs and aggregate](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/three-pair-result.json).
 
+A source-native scheduling control tests whether fixed queue tails weaken
+that reference. On the original first64, the same binary takes **54.81s**
+with static queues and **58.32s** with FIFO workers, with identical full native
+responses and equal eight-worker/four-CPU resources. The slower variant is
+not admitted for a full matrix.
+[Closed control and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md).
+
+Current CPU-oracle numeric work also differs greatly from the old baseline.
+In the third1,000-source pair, parsed HiGHS searches sum to9.25wall seconds;
+the complete speculative stages include exact work and overlap. A fixed-lane
+model deleting all recorded race work gives1.53475× versus its native reference.
+**This does not rule out1.5× GPU performance and is not a strict Amdahl bound.**
+[Own-clock analysis and missing coverage](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-third/current-race-budget-review.md).
+
 The [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
 uses 1,000 arithmetic-heavy released GoedelWorkbook candidates, four CPUs and
 48 GiB. An untrusted external oracle proposes certificates; exact arithmetic

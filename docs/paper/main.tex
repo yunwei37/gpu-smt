@@ -1132,6 +1132,28 @@ attributed entirely to the direct frontend or called a global CPU-frontier
 advantage. Generality beyond the selected arithmetic-heavy cohort remains open. The established certificate
 primitives do not alone establish the systems contribution.
 
+\paragraph{Remaining numerical work.}
+The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
+numerical races. Their durations sum to 101.54 seconds, including launch,
+exact repair, cancellation and retirement. The 935 parsed external HiGHS
+searches sum to 9.25 wall seconds; 467 additional connections are unparsed
+or aborted. These are not disjoint pipeline fractions.
+The observed critical lane contains 14.11 seconds of complete race work.
+Deleting all recorded race work while preserving other observed durations,
+gaps and lane assignments models a 450.47-second pipeline, or
+$1.53475\times$ relative to that pair's native reference.
+This is an intentionally optimistic fixed-lane sensitivity, not a measured
+GPU result or a scheduler-independent Amdahl bound. Current product and
+small-LP regions are not exhaustively attributed by these records.
+It does not justify closing the GPU direction.
+
+A source-native scheduling qualification uses the same private native binary
+and verification body for eight static lanes or eight FIFO workers.
+On the original first 64 sources, they take 54.81 and 58.32 seconds with equal
+four-CPU eligibility and the 48\,GiB address-space ceiling. All source verdicts
+and full native responses agree. The FIFO candidate is not admitted for a
+full matrix; this preflight does not establish global scheduler optimality.
+
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
 used to qualify CPU alternatives. Each comparison uses its own version,
