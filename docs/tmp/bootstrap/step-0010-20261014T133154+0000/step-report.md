@@ -5272,3 +5272,42 @@ The old actual closedHTTPanalysis remains byte-identical under default
 arguments after the analyzer's affinity generalization. Public438input
 preparation reproduces the live input bytes. Tectonic compiles the targeted
 prior-art citation; actual page23is rendered and root visually checks layout.
+
+## DSV2 first complete paired cohort and HTTP/body attribution
+EXPERIMENT_GATE closes the first original438source native→Power pair:
+416.194170/390.832999whole,402.847026/377.164251warm,1.064890/1.068094.
+Both263valid175Leanerror,0operational, exact source-status/non-message parity.
+One source has warning-only differences. The three-pair matrix is incomplete.
+This modest observation does not generalize the selected-Goedel1.700586gain;
+different interfaces/engines/CPU epochs preclude a single-factor attribution.
+
+Actual closedHTTPtraces join438requests/438successful attempts in each
+condition, every finalSDKresult, all source IDs and normal retirement.
+Body wall includes GC/IPC and ends at stdout reply, not per-source retirement.
+Native/Power body sums2297.284640/2080.403132and outer-attempt-minus-body
+sums111.043576/138.529352overlap: no whole-wall/LP/Amdahl deletion fraction.
+Matched first-native1%/10%tailIDs and all164slowerPowerbody sources retained.
+Actual193numeric races/32parsedCPUHiGHSmodels/386reaped children and all
+non-model records stay distinct from accepted Lean certificates or GPU work.
+
+WRITE_GATE updates only canonical live evidence scope and corrects a
+terminology defect: pinnedSHREDdeclares CLI profiling/pairedcertificate
+execution, not an HTTP replacement service. Existing root prefix timings
+remain an adapted algorithm/executor comparison, not upstream throughput.
+No SHREDdeployment or unrelated baseline run is admitted to fill that
+nonexistent interface. The current officialKiminaHTTPmatrix remains the
+actual matched-service experiment. No partial matrix ratio enters final
+reader-facing performance results; all4RQs/InitialNarrative remain.
+
+REVIEW_GATE root self-review checks timer source definitions, all438joins,
+retry/error visibility, overlapping wall/CPU distinctions, matched tails,
+native engine/version scope, warning deltas and actual reaping. Raw source/
+HTTP payloads remain in the recorded Workspace path; complete returned
+outcomes/receipts and immutable first-pair metrics are published. No
+independent audit, all-RQ answer, broad GPU closure or OSDIacceptance claimed.
+[Closed first pair and reproducer](../../../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/first-pair-result-review.md).
+
+Targeted source-interface terminology compiles with Tectonic(exit0), and
+actual pages8--9are rendered/visually checked. Root build/analysis co-tenancy
+is disclosed; no exclusive-resource or fleet-PSS claim is inferred from
+affinity/per-process48GiB. This is not a new full writing/review milestone.

@@ -449,3 +449,13 @@ This can distinguish Goedel-specific gains from cross-producer transfer;
 it cannot supply the missing systems novelty or an independent task domain.
 README documents the actual acquisition and existing HTTP path, with no
 original proof/request payloads copied into Git and no new infrastructure.
+
+## First real transfer observation changes the next question
+The first438source official-HTTPpair is1.06489x, far below the selected
+Goedel1.70059x headline at a different protocol/engine/CPU boundary.
+The useful next decision is the complete fixed matrix, not a new solver
+variant selected to rescue that headline. Actual source tails and timer
+definitions must drive any subsequent mechanism; overlapping body/HTTP
+sums cannot answer missing pureLP or historical Amdahl questions.
+Upkeep corrects SHRED from an assumed HTTP service to its declared CLI/
+paired-certificate workflow while retaining the earlier executor limits.

@@ -16,6 +16,10 @@ retirement. This is not a population performance result.
 [actual full launch](full-launch.json) and
 [executed source](kimina-http-executed.py) retain the protocol.
 The complete438three-pair comparison is acquiring.
+The [first complete pair](first-pair-result-review.md) takes416.194/390.833s,
+native/Power, with263valid175Leanerror in both and one warning-only difference.
+This is not the completed three-pair aggregate. [Closed returned records](closed-cells/)
+and source-level HTTP/body/numerical accounting preserve the actual scope.
 
 Both methods use the same existing4.27environment and compiled native
 dependencies. The reference is adapted Farkas probe/restrict plus the
@@ -54,6 +58,7 @@ python bench/lean-native/linarith-oracle/kimina-http.py \
   --repetitions 3
 python3 artifacts/linarith-oracle-2026-10-17/kimina-http/analyze.py \
   /path/to/new-raw-output --affinity 16 17 18 19
+python3 bench/lean-native/linarith-oracle/analyze-http-boundaries.py /path/to/new-raw-output
 ```
 
 The Python running the comparison needs the actual Kimina SDK/server and

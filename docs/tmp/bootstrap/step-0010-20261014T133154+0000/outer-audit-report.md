@@ -3420,3 +3420,22 @@ payloads outside Git with the existing Workspace's raw evidence. The public
 driver's default behavior is preserved, and already-loaded active captures
 and native builds are unchanged. User work remains unstaged. Review is self-
 audit, not independent review or completion of all paper gates.
+
+## First DSV2 paired observation and SHRED interface — root self-audit
+Direction: first full438pair supplies modest transfer evidence, not universal
+1.7x, a new system contribution or original-RQ closure. The overall CPU/GPU
+continuation criterion remains on the original1000; no negative GPU closure
+or scheduler deletion follows. All source failures remain.
+Efficiency: actual completed paired data change the permitted generality
+claim. The same traces resolve HTTP/body boundaries without another
+acquisition, while source inspection prevents spending compute or creating
+a deployment for an undeclared SHRED HTTP interface.
+Validity: all438IDs/statuses/non-message fields agree, warning delta exposed,
+no observed failed/extra/unansweredHTTPattempt, normal retirement, matched
+native-ranked tails and recorded counter scope. Body elapsed is neither
+pureCPU nor allLP time; no historical2234.69fraction is reconstructed.
+Maintenance: full original returned responses and static terminal records
+are published losslessly, source payloads/privateHTTP remain at their raw
+paths. Code/canonical docs distinguish incomplete three-pair matrix from
+one completed pair and preserve unrelated author changes. Review remains
+self-audit under the user's root-only instruction.

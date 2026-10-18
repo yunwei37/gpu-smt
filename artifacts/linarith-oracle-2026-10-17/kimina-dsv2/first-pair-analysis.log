@@ -1,0 +1,35 @@
+{
+  "state": "partial",
+  "conditions": {
+    "full438/rep1-native": {
+      "state": "complete",
+      "counts": {
+        "valid": 263,
+        "lean_error": 175
+      },
+      "whole": 416.194170356
+    },
+    "full438/rep1-power": {
+      "state": "complete",
+      "counts": {
+        "valid": 263,
+        "lean_error": 175
+      },
+      "whole": 390.832999448
+    }
+  },
+  "comparisons": {
+    "full438/rep1-native-vs-power": {
+      "control_cell": "full438/rep1-native",
+      "power_cell": "full438/rep1-power",
+      "status_differences": [],
+      "non_message_differences": [],
+      "raw_response_difference_IDs": [
+        "test/imo_1983_p6.lean"
+      ],
+      "operational": [],
+      "whole_control_over_power": 1.0648900449650343,
+      "warm_control_over_power": 1.0680944020674994
+    }
+  }
+}

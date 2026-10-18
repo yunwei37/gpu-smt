@@ -118,6 +118,15 @@ selects upstream default tiered search. First16preflight has10valid/6Leanerror
 and identical full responses. Full438three alternating pairs are acquiring.
 This does not reproduce upstream4.31timings or establish a population gain.
 
+[The first complete438pair](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/first-pair-result-review.md)
+now takes416.194/390.833s whole and402.847/377.164s warmed, native/Power.
+Both263valid175Leanerror/zerooperational, matching source statuses and
+non-message fields with one warning-only difference. This is one of three
+planned pairs, not the final aggregate. HTTP/body timing preserves all438IDs,
+eight-request overlap, complete retries/error accounting and fixed native tails.
+These foreground wall spans include native GC/IPC and do not supply missing
+pure-LP CPU or the historical2234.69Amdahl profile.
+
 ## Prefix/preparation evidence and previous controls
 
 Complete [miniF2F exact](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/exact-result-review.md)
@@ -129,7 +138,11 @@ Complete [ProofNet prefix](../artifacts/linarith-oracle-2026-10-17/formal-defaul
 takes1127.28s batch versus2502.01/2479.03s exact/unit.
 All413native-complete survive; incomplete/operational changes preclude a
 validated transparent speed ratio. Its18.38%edge potential is not CPU saving.
-These source-native executors use SHRED's parser, not the entire upstream service.
+These source-native executors use SHRED's parser, not its complete published
+workflow. At the pinned revision SHRED exposes CLI profiling and paired
+closing-certificate execution; a standalone HTTP replacement service is not
+its declared interface. Earlier prefix timings do not characterize that
+separate certificate executor or the official Kimina HTTP service.
 
 [Paid preparation](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result-review.md)
 is modest after competent warm reuse at the measured boundaries:
