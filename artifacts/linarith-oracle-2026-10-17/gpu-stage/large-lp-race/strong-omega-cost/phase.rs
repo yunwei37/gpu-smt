@@ -15,7 +15,7 @@ fn ns(clock:i32)->u128{let mut t=TimeSpec{sec:0,nsec:0};assert_eq!(unsafe{clock_
 fn log(path:&str,row:serde_json::Value){
  let mut f=std::fs::OpenOptions::new().create(true).append(true).open(path).expect("phase log");
  assert_eq!(unsafe{flock(f.as_raw_fd(),2)},0);
- writeln!(f,"{row}").expect("phase append");assert_eq!(unsafe{flock(f.as_raw_fd(),8)},0);
+ let line=format!("{row}\n");f.write_all(line.as_bytes()).expect("phase append");assert_eq!(unsafe{flock(f.as_raw_fd(),8)},0);
 }
 static SEQ:AtomicU64=AtomicU64::new(0);
 pub struct Guard{data:Option<(String,serde_json::Value)>}

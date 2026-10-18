@@ -1,0 +1,180 @@
+{
+  "terminal": {
+    "method": "oracle-highs",
+    "rep": 1,
+    "state": "complete",
+    "expected": 1000,
+    "attempts": 1000,
+    "counts": {
+      "complete": 992,
+      "rejected": 8
+    },
+    "whole_ns": 406461143583,
+    "cpu": {
+      "collector": {
+        "user": 0.5077579999999999,
+        "system": 34.784395
+      },
+      "waited_children": {
+        "user": 1261.435414,
+        "system": 23.67985
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 6514774016,
+    "sampled_peak_fleet_rss_with_collector": 10274426880,
+    "sampling_read_errors": 92,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 8,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates",
+    "collector_whole_ns": 406373704842,
+    "backend_setup_cleanup_ns": 87438741,
+    "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+  },
+  "complete_source_spans": 1000,
+  "request_outcomes": {
+    "direct_certificate": 3597,
+    "direct_no_certificate_or_error": 605,
+    "native_no_certificate_or_error": 609,
+    "native_certificate": 856,
+    "direct_Lean_accepted": 3597,
+    "direct_Lean_fallback": 605
+  },
+  "data_quality_defects": {},
+  "source_less_auxiliary_rows": {
+    "fast": 661,
+    "product-application": 744
+  },
+  "coefficient_space_sizes": {
+    "direct_rows": {
+      "count": 4202,
+      "min": 5,
+      "p50": 43,
+      "p90": 137,
+      "p99": 255,
+      "max": 730
+    },
+    "direct_cols": {
+      "count": 4202,
+      "min": 5,
+      "p50": 167,
+      "p90": 253,
+      "p99": 465,
+      "max": 946
+    },
+    "direct_nnz": {
+      "count": 4202,
+      "min": 11,
+      "p50": 892,
+      "p90": 1752,
+      "p99": 3471,
+      "max": 14272
+    },
+    "direct_generated_products": {
+      "count": 4202,
+      "min": 0,
+      "p50": 120,
+      "p90": 210,
+      "p99": 406,
+      "max": 903
+    },
+    "direct_product_columns": {
+      "count": 4202,
+      "min": 0,
+      "p50": 149,
+      "p90": 231,
+      "p99": 435,
+      "max": 903
+    },
+    "native_rows": {
+      "count": 1465,
+      "min": 13,
+      "p50": 73,
+      "p90": 153,
+      "p99": 296,
+      "max": 730
+    },
+    "native_cols": {
+      "count": 1465,
+      "min": 35,
+      "p50": 240,
+      "p90": 524,
+      "p99": 1770,
+      "max": 3160
+    },
+    "native_nnz": {
+      "count": 1465,
+      "min": 68,
+      "p50": 1538,
+      "p90": 4104,
+      "p99": 11034,
+      "max": 26044
+    },
+    "native_product_columns": {
+      "count": 1465,
+      "min": 27,
+      "p50": 217,
+      "p90": 492,
+      "p99": 1711,
+      "max": 3081
+    }
+  },
+  "Lean_exclusive_calling_thread_CPU_seconds": {
+    "direct_certificate_check": 183.166803832,
+    "products": 66.812167007,
+    "lp": 5.634983143,
+    "preprocess": 13.066571774,
+    "linearize": 39.785951057,
+    "certificate": 42.680681162
+  },
+  "phase_elapsed_occupied_seconds_NOT_additive": {
+    "direct_roundtrip": 89.439677234,
+    "direct_certificate_check": 253.46211886,
+    "products": 125.576082037,
+    "native_roundtrip": 82.608857352,
+    "lp": 88.416982567,
+    "preprocess": 28.964615269,
+    "linearize": 76.736516735,
+    "certificate": 83.584247595
+  },
+  "numeric_reply_elapsed_sums_seconds_NOT_CPU": {
+    "direct": {
+      "certificate_roundtrip_ns": 44.676195865,
+      "certificate_linear_ns": 0.255136948,
+      "certificate_products_ns": 2.761839426,
+      "certificate_lp_ns": 32.530606621,
+      "no_certificate_or_error_roundtrip_ns": 59.017342978,
+      "no_certificate_or_error_linear_ns": 0.060638159,
+      "no_certificate_or_error_products_ns": 1.221737709,
+      "no_certificate_or_error_lp_ns": 55.985541862
+    },
+    "native": {
+      "no_certificate_or_error_roundtrip_ns": 44.16778283,
+      "certificate_roundtrip_ns": 49.70549208
+    }
+  },
+  "request_availability": {
+    "peak_distinct_candidates": 5,
+    "cross_candidate_request_overlap_seconds": 35.668130308,
+    "wall_seconds_by_outstanding_requests": {
+      "0": 247.883758371,
+      "1": 118.483776687,
+      "2": 28.822280263,
+      "3": 6.026157302,
+      "4": 0.738459081,
+      "5": 0.081233662
+    },
+    "scope": "Exported request lifetimes include IPC/lock/wait; not instantaneous GPU-ready LPs or batch speedup."
+  },
+  "limitations": [
+    "reply lp_ns includes complete numeric search/race, not pure floating solve",
+    "cancelled child internal CPU unknown",
+    "exact coefficient-space shapes are not scaled floating solver shapes",
+    "calling-thread CPU excludes worker child CPU; cannot add to roundtrip as exclusive whole cost",
+    "diagnostic scan/logging/gzip charged; not a new primary performance result"
+  ]
+}
+MODEL {"occupied_union_seconds": 232.574452004, "whole_seconds": 406.461143583, "occupied_union_fraction": 0.572193568009553, "fixed_lane_model_whole_seconds": 358.929864593, "critical_lane": 2, "scope": "Deletes all Lean products/LP stages and complete numerical roundtrips, including non-GPU IPC/repair/queue/retirement. Fixed source path, candidate durations outside these windows, inter-command gaps and static lane assignments. Not a scheduler-independent or support-changing GPU upper bound."}

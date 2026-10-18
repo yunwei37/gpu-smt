@@ -27,6 +27,19 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — cancelled work and current conditional budget
+The current common-omega component diagnostic closes all1000 originals:
+475.97s native/406.46s direct,992complete8reject in each. PID-specificwait4
+retains cancelled CPU. Perfect numerical-work removal gives a conditional
+1.46068x capacity bound against this already-oracle-containing native control;
+deleting all Lean product proofs too gives1.53960x. Same-IR checked-negative
+fallback products tighten that favorable model to1.51182x, still above1.5.
+This does not close GPU or redefine the original whole-system reference.
+Next work targets representation/fallback and proof-producing preprocessing,
+not another narrow LP kernel. All4RQs and InitialNarrative remain open.
+[Reproducible full accounting](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/full1000-result-review.md).
+
+
 ### 2026-10-18 — complete miniF2F prefix evidence
 The unchanged original7808-source unit-prefix capture closes:3711cachehits,
 40943.77s versus28673.00s nativebatch. Exactprefix hasonly7hits/41738.63s.

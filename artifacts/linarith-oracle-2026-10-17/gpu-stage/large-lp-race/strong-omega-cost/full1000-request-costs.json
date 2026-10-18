@@ -1,0 +1,325 @@
+{
+  "scope": "Completed exclusive CPU and completed solver wall only; unknown killed work stays separately bounded in complete-budget. Summed solver wall is not whole verification wall. Tail IDs fixed by native service rank; no causal wall-fraction claim.",
+  "methods": {
+    "native": {
+      "request_counts": {
+        "native_certificate": 8006,
+        "native_no_certificate_or_error": 634
+      },
+      "completed_exclusive_CPU_seconds_by_request_result": {
+        "native_certificate": {
+          "lp_float_pack": 1.285905730999995,
+          "lp_float_solve": 36.37333134200018,
+          "exact_repair": 1.1836194410000047,
+          "exact_certificate_verify": 0.48384389899999963,
+          "child_parse": 1.1023535740000003,
+          "external_transport": 4.486261770999995,
+          "external_hint_total": 0.42197043200000034,
+          "child_request_total": 0.11940869800000004,
+          "race_total": 2.224586145,
+          "lp_exact_solve": 2.223239899999999
+        },
+        "native_no_certificate_or_error": {
+          "lp_float_pack": 0.3631917969999995,
+          "lp_float_solve": 3.713594677000002,
+          "child_parse": 0.4631693580000001,
+          "lp_exact_solve": 12.207579846999996,
+          "child_request_total": 0.08014365799999996,
+          "race_total": 1.0693642650000017,
+          "external_transport": 0.8349464679999997,
+          "exact_negative_verify": 0.42053861000000003,
+          "exact_negative_repair": 0.014775406000000005,
+          "external_hint_total": 0.09967448899999999
+        }
+      },
+      "completed_scope_wall_seconds_NONADDITIVE_by_request_result": {
+        "native_certificate": {
+          "lp_float_pack": 1.9680466889999955,
+          "lp_float_solve": 68.7190798880005,
+          "child_parse": 1.6564766780000009,
+          "external_transport": 37.990885781,
+          "exact_repair": 1.774326594999998,
+          "exact_certificate_verify": 0.6008058070000006,
+          "external_hint_total": 39.806271870000025,
+          "child_request_total": 45.07158379299991,
+          "race_total": 57.41837911599994,
+          "lp_exact_solve": 3.315025043999998
+        },
+        "native_no_certificate_or_error": {
+          "lp_float_pack": 0.511886782,
+          "lp_float_solve": 6.982186823999993,
+          "child_parse": 0.6862028149999985,
+          "lp_exact_solve": 18.86639149199999,
+          "child_request_total": 29.547534033,
+          "race_total": 34.598535813,
+          "external_transport": 8.120977015999998,
+          "exact_negative_verify": 0.425062342,
+          "exact_negative_repair": 0.23664811800000018,
+          "external_hint_total": 8.4757103
+        }
+      },
+      "actual_external_parsed_model_shapes": {
+        "rows": {
+          "n": 1175,
+          "min": 16,
+          "p50": 73,
+          "p90": 130,
+          "p99": 249,
+          "max": 523
+        },
+        "cols": {
+          "n": 1175,
+          "min": 51,
+          "p50": 252,
+          "p90": 464,
+          "p99": 861,
+          "max": 2628
+        },
+        "nnz": {
+          "n": 1175,
+          "min": 239,
+          "p50": 1938,
+          "p90": 4134,
+          "p99": 7635,
+          "max": 17569
+        }
+      },
+      "external_records": 1495,
+      "parsed_model_records": 1175,
+      "cross_candidate_parsed_service_overlap_seconds": 1.821347382,
+      "peak_distinct_candidates_with_parsed_service_requests": 3,
+      "overlap_warning": "Lifetime includes build/queue/solve/extract; does not establish simultaneously GPU-ready LPs.",
+      "native_ranked_matched_tails": {
+        "10": {
+          "completed_numeric_exclusive_CPU_seconds": {
+            "lp_float_pack": 0.24447974700000016,
+            "lp_float_solve": 0.28216695400000047,
+            "child_parse": 0.05868096899999999,
+            "lp_exact_solve": 0.08763067100000001,
+            "child_request_total": 0.015057630999999991,
+            "race_total": 0.16005993100000004,
+            "exact_repair": 0.0924152990000001,
+            "exact_certificate_verify": 0.11852978100000026
+          }
+        },
+        "100": {
+          "completed_numeric_exclusive_CPU_seconds": {
+            "lp_float_pack": 0.7026717989999997,
+            "lp_float_solve": 7.156731830000008,
+            "exact_repair": 0.5449406520000014,
+            "exact_certificate_verify": 0.24964639300000005,
+            "child_parse": 0.4408880569999999,
+            "lp_exact_solve": 7.576453066000008,
+            "child_request_total": 0.08666700699999998,
+            "race_total": 1.055217086000001,
+            "external_transport": 1.0663479190000007,
+            "external_hint_total": 0.12076736599999993,
+            "exact_negative_verify": 0.17972107200000006,
+            "exact_negative_repair": 0.0054918269999999995
+          }
+        }
+      }
+    },
+    "direct": {
+      "request_counts": {
+        "direct_certificate": 3597,
+        "direct_no_certificate_or_error": 605,
+        "native_no_certificate_or_error": 609,
+        "native_certificate": 856
+      },
+      "completed_exclusive_CPU_seconds_by_request_result": {
+        "direct_certificate": {
+          "AST_linearize": 0.3374223060000002,
+          "AST_products": 2.304983550000001,
+          "AST_coefficient_pack": 0.5775375410000003,
+          "lp_float_pack": 0.3724671159999993,
+          "lp_float_solve": 9.999833780999971,
+          "child_parse": 0.24075904800000017,
+          "external_transport": 0.9707329440000008,
+          "exact_repair": 0.4160386469999998,
+          "exact_certificate_verify": 0.19823084499999988,
+          "external_hint_total": 0.11969661600000003,
+          "child_request_total": 0.03211292399999999,
+          "race_total": 0.52724954,
+          "AST_search_wrapper": 0.36946129099999947,
+          "AST_request_total": 0.583166569999999,
+          "lp_exact_solve": 0.083100758
+        },
+        "direct_no_certificate_or_error": {
+          "AST_linearize": 0.07476904099999998,
+          "AST_products": 0.9185818990000003,
+          "AST_coefficient_pack": 0.20026293000000014,
+          "lp_float_pack": 0.3478523639999999,
+          "lp_float_solve": 5.423302023999992,
+          "child_parse": 0.44407398799999936,
+          "external_transport": 0.8188055380000002,
+          "exact_negative_verify": 0.3984581259999998,
+          "exact_negative_repair": 0.014889526000000005,
+          "external_hint_total": 0.09995467100000002,
+          "child_request_total": 0.07597160299999993,
+          "race_total": 1.0277304979999993,
+          "AST_search_wrapper": 0.08398649600000008,
+          "AST_request_total": 0.08866546799999987,
+          "lp_exact_solve": 21.794073624,
+          "exact_repair": 0.005292173
+        },
+        "native_no_certificate_or_error": {
+          "lp_float_pack": 0.3604604830000001,
+          "lp_float_solve": 3.746298188999999,
+          "child_parse": 0.4465687210000004,
+          "lp_exact_solve": 12.17982812099999,
+          "child_request_total": 0.07787594499999995,
+          "race_total": 1.033699107000001,
+          "external_transport": 0.805155049,
+          "exact_negative_verify": 0.39618466600000024,
+          "exact_negative_repair": 0.01406798399999999,
+          "external_hint_total": 0.0931179899999999
+        },
+        "native_certificate": {
+          "lp_float_pack": 0.3333883920000003,
+          "lp_float_solve": 14.51672117999999,
+          "child_parse": 0.4327091430000002,
+          "external_transport": 1.6135112530000004,
+          "exact_repair": 0.36108759700000015,
+          "exact_certificate_verify": 0.07589584600000002,
+          "external_hint_total": 0.12940237599999996,
+          "child_request_total": 0.05164692500000002,
+          "race_total": 0.859628945,
+          "lp_exact_solve": 2.0798945409999994
+        }
+      },
+      "completed_scope_wall_seconds_NONADDITIVE_by_request_result": {
+        "direct_certificate": {
+          "AST_linearize": 0.3568736229999988,
+          "AST_products": 2.674809253999994,
+          "AST_coefficient_pack": 0.6923607480000008,
+          "lp_float_pack": 0.4930443319999996,
+          "lp_float_solve": 19.194866580000024,
+          "child_parse": 0.34608073700000036,
+          "external_transport": 9.488482224999993,
+          "exact_repair": 0.6671323259999983,
+          "exact_certificate_verify": 0.26959740500000073,
+          "external_hint_total": 9.944799256000007,
+          "child_request_total": 10.704900255000004,
+          "race_total": 14.403463502999994,
+          "AST_search_wrapper": 32.61348961500002,
+          "AST_request_total": 37.32014418499993,
+          "lp_exact_solve": 0.21418121800000003
+        },
+        "direct_no_certificate_or_error": {
+          "AST_linearize": 0.075683044,
+          "AST_products": 1.1956697760000004,
+          "AST_coefficient_pack": 0.38968468899999975,
+          "lp_float_pack": 0.5543032979999992,
+          "lp_float_solve": 9.850910295999986,
+          "child_parse": 0.6747903500000002,
+          "external_transport": 8.163382044000004,
+          "exact_negative_verify": 0.4242098209999999,
+          "exact_negative_repair": 0.2302429679999999,
+          "external_hint_total": 8.510414204000002,
+          "child_request_total": 43.10551644299997,
+          "race_total": 48.52855398800004,
+          "AST_search_wrapper": 56.00680115799996,
+          "AST_request_total": 57.79987800900002,
+          "lp_exact_solve": 31.872085787000007,
+          "exact_repair": 0.013703362
+        },
+        "native_no_certificate_or_error": {
+          "lp_float_pack": 0.4853741759999995,
+          "lp_float_solve": 7.002926672999995,
+          "child_parse": 0.6745915610000005,
+          "lp_exact_solve": 21.058230355000013,
+          "child_request_total": 31.69010637699997,
+          "race_total": 36.757923973999986,
+          "external_transport": 8.000122688000001,
+          "exact_negative_verify": 0.41836409900000004,
+          "exact_negative_repair": 0.23283631099999996,
+          "external_hint_total": 8.209287155
+        },
+        "native_certificate": {
+          "lp_float_pack": 0.5655966380000004,
+          "lp_float_solve": 26.073066151999985,
+          "child_parse": 0.7412379310000006,
+          "external_transport": 12.224278400000001,
+          "exact_repair": 0.6324417640000002,
+          "exact_certificate_verify": 0.09528459800000028,
+          "external_hint_total": 13.023701122999999,
+          "child_request_total": 16.848060646999993,
+          "race_total": 20.911912390000026,
+          "lp_exact_solve": 3.0589952819999993
+        }
+      },
+      "actual_external_parsed_model_shapes": {
+        "rows": {
+          "n": 1085,
+          "min": 16,
+          "p50": 82,
+          "p90": 156,
+          "p99": 310,
+          "max": 730
+        },
+        "cols": {
+          "n": 1085,
+          "min": 69,
+          "p50": 230,
+          "p90": 435,
+          "p99": 861,
+          "max": 2628
+        },
+        "nnz": {
+          "n": 1085,
+          "min": 344,
+          "p50": 1705,
+          "p90": 3738,
+          "p99": 7477,
+          "max": 17569
+        }
+      },
+      "external_records": 1653,
+      "parsed_model_records": 1085,
+      "cross_candidate_parsed_service_overlap_seconds": 1.141409928,
+      "peak_distinct_candidates_with_parsed_service_requests": 3,
+      "overlap_warning": "Lifetime includes build/queue/solve/extract; does not establish simultaneously GPU-ready LPs.",
+      "native_ranked_matched_tails": {
+        "10": {
+          "completed_numeric_exclusive_CPU_seconds": {
+            "AST_linearize": 0.11733979700000004,
+            "AST_products": 0.24359567699999982,
+            "AST_coefficient_pack": 0.10104817499999982,
+            "lp_float_pack": 0.19884905400000025,
+            "lp_float_solve": 0.3385760030000001,
+            "child_parse": 0.12352502500000001,
+            "lp_exact_solve": 0.18715925399999994,
+            "child_request_total": 0.030533311,
+            "race_total": 0.32433056500000007,
+            "AST_search_wrapper": 0.14331756599999973,
+            "AST_request_total": 0.212494962,
+            "exact_repair": 0.04609330099999995,
+            "exact_certificate_verify": 0.06139884499999992
+          }
+        },
+        "100": {
+          "completed_numeric_exclusive_CPU_seconds": {
+            "AST_linearize": 0.23279620200000029,
+            "AST_products": 1.2992587269999987,
+            "AST_coefficient_pack": 0.34859748,
+            "lp_float_pack": 0.6425443969999979,
+            "lp_float_solve": 6.352085589000026,
+            "exact_repair": 0.38696921200000056,
+            "exact_certificate_verify": 0.14110314500000012,
+            "AST_search_wrapper": 0.2573388530000003,
+            "AST_request_total": 0.38997758699999974,
+            "child_parse": 0.5661033890000001,
+            "external_transport": 1.060092746,
+            "external_hint_total": 0.12414943600000009,
+            "child_request_total": 0.11797593200000002,
+            "race_total": 1.3828215920000002,
+            "lp_exact_solve": 14.609863668999989,
+            "exact_negative_verify": 0.32090116199999996,
+            "exact_negative_repair": 0.010497283999999997
+          }
+        }
+      }
+    }
+  }
+}

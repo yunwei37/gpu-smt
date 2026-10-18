@@ -1,0 +1,483 @@
+{
+  "scope": "Same-dual-backend native-frontend vs direct-frontend diagnostic, official omega on both, four CPU/eight queues. Native reference already includes our numerical oracle: a component control, not the original stock/native whole-system criterion. No GPU measurement here.",
+  "assumptions": [
+    "All remaining work, representation, proof path and effective CPU rate fixed.",
+    "Remove all collector CPU, even work that might not disappear in a faster run.",
+    "Count sampled per-process self CPU only; replace all sampled leaf CPU by exact wait4 totals.",
+    "Give GPU all completed floating/exact LP CPU, AST products, every unassigned killed-worker CPU second, and ALL HiGHS process CPU including startup/bookkeeping. Packing, IPC and exact repair otherwise remain.",
+    "Compute-only capacity models retain Lean proof-producing products. Separate favorable variant deletes all those products too, without claiming this is feasible.",
+    "Four CPU capacity is ideal, ignoring contention and queue/transfer/cancellation overhead. Instrumentation remains; no universal bound on a redesigned system."
+  ],
+  "native": {
+    "observed_whole_seconds": 475.968475283,
+    "noncollector_CPU_work_seconds_lower": 1668.9530630000002,
+    "compute_only_model": {
+      "GPU_removable_CPU_seconds_generous_upper": 122.538302757,
+      "mandatory_CPU_seconds_lower": 1546.4147602430003,
+      "ideal_four_CPU_wall_seconds_lower": 386.60369006075007,
+      "native_component_reference_speedup_upper": 1.2311534719397204
+    },
+    "all_Lean_product_proofs_deleted_model": {
+      "GPU_removable_CPU_seconds_generous_upper": 301.086779913,
+      "mandatory_CPU_seconds_lower": 1367.8662830870003,
+      "ideal_four_CPU_wall_seconds_lower": 341.96657077175007,
+      "native_component_reference_speedup_upper": 1.3918567367822956
+    },
+    "wide_elapsed_union_seconds": 327.625615356,
+    "wide_elapsed_union_fraction": 0.6883346951942589,
+    "wide_fixed_lane_model_wall_seconds": 411.97713080799997,
+    "wide_fixed_lane_native_component_speedup": 1.1553274191445906,
+    "wide_window_warning": "Includes entire numerical RPC/wait and Lean product construction. Overlapping union is not additive removable critical-path time; fixed lanes/gaps/proof path are assumptions.",
+    "numeric_CPU": {
+      "CPU_seconds_exclusive_completed_phases": {
+        "lp_float_pack": 1.649097528,
+        "lp_float_solve": 40.086926019,
+        "child_parse": 1.565522932,
+        "external_transport": 5.321208239,
+        "exact_repair": 1.183619441,
+        "exact_certificate_verify": 0.483843899,
+        "external_hint_total": 0.521644921,
+        "child_request_total": 0.199552356,
+        "race_total": 3.29395041,
+        "lp_exact_solve": 14.430819747,
+        "exact_negative_verify": 0.42053861,
+        "exact_negative_repair": 0.014775406
+      },
+      "reaped_children": 3326,
+      "cancelled_children": 1960,
+      "reaped_child_total_CPU_seconds": 54.073063,
+      "cancelled_child_total_CPU_seconds": 40.959283,
+      "reaped_unassigned_CPU_seconds_upper_for_any_unmeasured_phase": 24.694021991,
+      "negative_usage_minus_phase_quantization_differences": []
+    },
+    "service_CPU": {
+      "completed_stage_thread_CPU_seconds": {
+        "highs_build": 0.678596779,
+        "highs_solve": 2.467345045,
+        "highs_extract": 0.364824796
+      },
+      "phase_events": 7051,
+      "unclosed_scopes": 0,
+      "retirement_records": [
+        {
+          "event": "process_retired",
+          "pid": 367458,
+          "wall_ns": 774059558656847,
+          "process_user_seconds": 38.332195,
+          "process_system_seconds": 4.99434,
+          "scope": "All process threads. Subtracting overlapping per-request process timers is invalid; difference from summed caller-thread phaseCPU is unassigned internal/startup/bookkeeping CPU."
+        }
+      ],
+      "whole_service_process_CPU_seconds": 43.326535,
+      "scope": "Caller-thread stageCPU excludes internal HiGHS pool threads. Whole processCPU includes them plus startup/bookkeeping. Concurrent processCPU interval differences are not per-request CPU.",
+      "unassigned_process_CPU_seconds": 39.81576838
+    },
+    "LP_and_product_shapes": {
+      "native_rows": {
+        "count": 8640,
+        "min": 2,
+        "p50": 37,
+        "p90": 114,
+        "p99": 221,
+        "max": 888
+      },
+      "native_cols": {
+        "count": 8640,
+        "min": 2,
+        "p50": 136,
+        "p90": 321,
+        "p99": 630,
+        "max": 3160
+      },
+      "native_nnz": {
+        "count": 8640,
+        "min": 3,
+        "p50": 746,
+        "p90": 2328,
+        "p99": 5627,
+        "max": 26044
+      },
+      "native_product_columns": {
+        "count": 8640,
+        "min": 0,
+        "p50": 120,
+        "p90": 296,
+        "p99": 595,
+        "max": 3081
+      }
+    },
+    "request_overlap": {
+      "peak_distinct_candidates": 5,
+      "cross_candidate_request_overlap_seconds": 30.597214153,
+      "wall_seconds_by_outstanding_requests": {
+        "0": 321.196461587,
+        "1": 119.917596104,
+        "2": 26.25522443,
+        "3": 3.731848899,
+        "4": 0.546630332,
+        "5": 0.063510492
+      },
+      "scope": "Exported request lifetimes include IPC/lock/wait; not instantaneous GPU-ready LPs or batch speedup."
+    }
+  },
+  "direct": {
+    "observed_whole_seconds": 406.461143583,
+    "noncollector_CPU_work_seconds_lower": 1438.843462,
+    "compute_only_model": {
+      "GPU_removable_CPU_seconds_generous_upper": 135.430601712,
+      "mandatory_CPU_seconds_lower": 1303.412860288,
+      "ideal_four_CPU_wall_seconds_lower": 325.853215072,
+      "native_component_reference_speedup_upper": 1.460683685989812
+    },
+    "all_Lean_product_proofs_deleted_model": {
+      "GPU_removable_CPU_seconds_generous_upper": 202.242768719,
+      "mandatory_CPU_seconds_lower": 1236.600693281,
+      "ideal_four_CPU_wall_seconds_lower": 309.15017332025,
+      "native_component_reference_speedup_upper": 1.5396028091174387
+    },
+    "wide_elapsed_union_seconds": 232.574452004,
+    "wide_elapsed_union_fraction": 0.572193568009553,
+    "wide_fixed_lane_model_wall_seconds": 358.929864593,
+    "wide_fixed_lane_native_component_speedup": 1.3260765465217366,
+    "wide_window_warning": "Includes entire numerical RPC/wait and Lean product construction. Overlapping union is not additive removable critical-path time; fixed lanes/gaps/proof path are assumptions.",
+    "numeric_CPU": {
+      "CPU_seconds_exclusive_completed_phases": {
+        "AST_linearize": 0.412191347,
+        "AST_products": 3.223565449,
+        "AST_coefficient_pack": 0.777800471,
+        "lp_float_pack": 1.414168355,
+        "lp_float_solve": 33.686155174,
+        "child_parse": 1.5641109,
+        "external_transport": 4.208204784,
+        "exact_repair": 0.782418417,
+        "exact_certificate_verify": 0.274126691,
+        "external_hint_total": 0.442171653,
+        "child_request_total": 0.237607397,
+        "race_total": 3.44830809,
+        "AST_search_wrapper": 0.453447787,
+        "AST_request_total": 0.671832038,
+        "exact_negative_verify": 0.794642792,
+        "exact_negative_repair": 0.02895751,
+        "lp_exact_solve": 36.136897044
+      },
+      "reaped_children": 3776,
+      "cancelled_children": 2296,
+      "reaped_child_total_CPU_seconds": 72.883462,
+      "cancelled_child_total_CPU_seconds": 59.687778,
+      "reaped_unassigned_CPU_seconds_upper_for_any_unmeasured_phase": 23.358800045,
+      "negative_usage_minus_phase_quantization_differences": []
+    },
+    "service_CPU": {
+      "completed_stage_thread_CPU_seconds": {
+        "highs_build": 0.593892357,
+        "highs_solve": 1.985980955,
+        "highs_extract": 0.641504272
+      },
+      "phase_events": 6511,
+      "unclosed_scopes": 0,
+      "retirement_records": [
+        {
+          "event": "process_retired",
+          "pid": 385455,
+          "wall_ns": 774466625095721,
+          "process_user_seconds": 34.605721,
+          "process_system_seconds": 4.419463,
+          "scope": "All process threads. Subtracting overlapping per-request process timers is invalid; difference from summed caller-thread phaseCPU is unassigned internal/startup/bookkeeping CPU."
+        }
+      ],
+      "whole_service_process_CPU_seconds": 39.025184,
+      "scope": "Caller-thread stageCPU excludes internal HiGHS pool threads. Whole processCPU includes them plus startup/bookkeeping. Concurrent processCPU interval differences are not per-request CPU.",
+      "unassigned_process_CPU_seconds": 35.803806416
+    },
+    "LP_and_product_shapes": {
+      "direct_rows": {
+        "count": 4202,
+        "min": 5,
+        "p50": 43,
+        "p90": 137,
+        "p99": 255,
+        "max": 730
+      },
+      "direct_cols": {
+        "count": 4202,
+        "min": 5,
+        "p50": 167,
+        "p90": 253,
+        "p99": 465,
+        "max": 946
+      },
+      "direct_nnz": {
+        "count": 4202,
+        "min": 11,
+        "p50": 892,
+        "p90": 1752,
+        "p99": 3471,
+        "max": 14272
+      },
+      "direct_generated_products": {
+        "count": 4202,
+        "min": 0,
+        "p50": 120,
+        "p90": 210,
+        "p99": 406,
+        "max": 903
+      },
+      "direct_product_columns": {
+        "count": 4202,
+        "min": 0,
+        "p50": 149,
+        "p90": 231,
+        "p99": 435,
+        "max": 903
+      },
+      "native_rows": {
+        "count": 1465,
+        "min": 13,
+        "p50": 73,
+        "p90": 153,
+        "p99": 296,
+        "max": 730
+      },
+      "native_cols": {
+        "count": 1465,
+        "min": 35,
+        "p50": 240,
+        "p90": 524,
+        "p99": 1770,
+        "max": 3160
+      },
+      "native_nnz": {
+        "count": 1465,
+        "min": 68,
+        "p50": 1538,
+        "p90": 4104,
+        "p99": 11034,
+        "max": 26044
+      },
+      "native_product_columns": {
+        "count": 1465,
+        "min": 27,
+        "p50": 217,
+        "p90": 492,
+        "p99": 1711,
+        "max": 3081
+      }
+    },
+    "request_overlap": {
+      "peak_distinct_candidates": 5,
+      "cross_candidate_request_overlap_seconds": 35.668130308,
+      "wall_seconds_by_outstanding_requests": {
+        "0": 247.883758371,
+        "1": 118.483776687,
+        "2": 28.822280263,
+        "3": 6.026157302,
+        "4": 0.738459081,
+        "5": 0.081233662
+      },
+      "scope": "Exported request lifetimes include IPC/lock/wait; not instantaneous GPU-ready LPs or batch speedup."
+    },
+    "additional_CPU_work_removal_needed_after_perfect_numerics_for_1_5x": 34.163592866666704,
+    "same_IR_negative_fallback_products_preserved_model": {
+      "GPU_removable_CPU_seconds_generous_upper": 179.52154305300002,
+      "mandatory_CPU_seconds_lower": 1259.321918947,
+      "ideal_four_CPU_wall_seconds_lower": 314.83047973675,
+      "native_component_reference_speedup_upper": 1.5118246355339793
+    }
+  },
+  "native_ranked_matched_tails": {
+    "10": {
+      "rank": "native service wall, fixed IDs for both methods",
+      "proof_ids": [
+        "Proof_09145",
+        "Proof_24894",
+        "Proof_21619",
+        "Proof_16178",
+        "Proof_29533",
+        "Proof_03444",
+        "Proof_03101",
+        "Proof_01771",
+        "Proof_10031",
+        "Proof_17319"
+      ],
+      "native": {
+        "summed_service_seconds_NOT_whole": 660.70296667,
+        "Lean_exclusive_calling_thread_CPU_seconds": {
+          "lp": 1.390548449,
+          "preprocess": 43.934738075,
+          "linearize": 22.616397607,
+          "certificate": 27.007415706000003,
+          "products": 9.596797586000001
+        },
+        "RPC_elapsed_sums_NOT_CPU": {
+          "native_certificate_roundtrip_ns": 6.155101062000001,
+          "native_no_certificate_or_error_roundtrip_ns": 1.934271951
+        }
+      },
+      "direct": {
+        "summed_service_seconds_NOT_whole": 509.931125639,
+        "Lean_exclusive_calling_thread_CPU_seconds": {
+          "direct_certificate_check": 16.483954485,
+          "products": 6.986672007999999,
+          "lp": 0.403111306,
+          "preprocess": 1.62266165,
+          "linearize": 15.889169384999999,
+          "certificate": 2.186478314
+        },
+        "RPC_elapsed_sums_NOT_CPU": {
+          "direct_certificate_roundtrip_ns": 3.5740347900000002,
+          "direct_certificate_linear_ns": 0.07680206500000002,
+          "direct_certificate_products_ns": 0.17682997,
+          "direct_certificate_lp_ns": 0.324230969,
+          "direct_no_certificate_or_error_roundtrip_ns": 2.025881328,
+          "direct_no_certificate_or_error_linear_ns": 0.007115498,
+          "direct_no_certificate_or_error_products_ns": 0.10685848,
+          "direct_no_certificate_or_error_lp_ns": 1.649298125,
+          "native_no_certificate_or_error_roundtrip_ns": 2.0355152839999997,
+          "native_certificate_roundtrip_ns": 0.617854665
+        }
+      }
+    },
+    "100": {
+      "rank": "native service wall, fixed IDs for both methods",
+      "proof_ids": [
+        "Proof_09145",
+        "Proof_24894",
+        "Proof_21619",
+        "Proof_16178",
+        "Proof_29533",
+        "Proof_03444",
+        "Proof_03101",
+        "Proof_01771",
+        "Proof_10031",
+        "Proof_17319",
+        "Proof_19511",
+        "Proof_09503",
+        "Proof_09007",
+        "Proof_00088",
+        "Proof_03228",
+        "Proof_15819",
+        "Proof_29180",
+        "Proof_23235",
+        "Proof_20500",
+        "Proof_04101",
+        "Proof_05105",
+        "Proof_16033",
+        "Proof_23002",
+        "Proof_22264",
+        "Proof_17802",
+        "Proof_23923",
+        "Proof_12933",
+        "Proof_06106",
+        "Proof_14944",
+        "Proof_12771",
+        "Proof_16213",
+        "Proof_16530",
+        "Proof_14954",
+        "Proof_15900",
+        "Proof_04914",
+        "Proof_28437",
+        "Proof_25205",
+        "Proof_25038",
+        "Proof_20399",
+        "Proof_08739",
+        "Proof_12307",
+        "Proof_00009",
+        "Proof_05374",
+        "Proof_13002",
+        "Proof_29443",
+        "Proof_00170",
+        "Proof_24440",
+        "Proof_12711",
+        "Proof_00710",
+        "Proof_11953",
+        "Proof_23352",
+        "Proof_27801",
+        "Proof_24097",
+        "Proof_14880",
+        "Proof_15783",
+        "Proof_24538",
+        "Proof_06280",
+        "Proof_01408",
+        "Proof_02498",
+        "Proof_15224",
+        "Proof_02340",
+        "Proof_06898",
+        "Proof_01358",
+        "Proof_10978",
+        "Proof_07206",
+        "Proof_10437",
+        "Proof_00328",
+        "Proof_02778",
+        "Proof_08103",
+        "Proof_27626",
+        "Proof_14212",
+        "Proof_17412",
+        "Proof_27733",
+        "Proof_19917",
+        "Proof_29127",
+        "Proof_24113",
+        "Proof_26628",
+        "Proof_27628",
+        "Proof_15720",
+        "Proof_06748",
+        "Proof_21502",
+        "Proof_07930",
+        "Proof_04516",
+        "Proof_22344",
+        "Proof_10806",
+        "Proof_24348",
+        "Proof_02590",
+        "Proof_06736",
+        "Proof_23466",
+        "Proof_04013",
+        "Proof_11593",
+        "Proof_20785",
+        "Proof_21336",
+        "Proof_01273",
+        "Proof_15064",
+        "Proof_03694",
+        "Proof_19573",
+        "Proof_12851",
+        "Proof_01819",
+        "Proof_23151"
+      ],
+      "native": {
+        "summed_service_seconds_NOT_whole": 1491.219806652,
+        "Lean_exclusive_calling_thread_CPU_seconds": {
+          "lp": 6.948724540000001,
+          "preprocess": 59.295136502,
+          "linearize": 42.92099694699997,
+          "certificate": 75.84726767400001,
+          "products": 69.12731051499992
+        },
+        "RPC_elapsed_sums_NOT_CPU": {
+          "native_certificate_roundtrip_ns": 38.685160802000006,
+          "native_no_certificate_or_error_roundtrip_ns": 17.723314010000003
+        }
+      },
+      "direct": {
+        "summed_service_seconds_NOT_whole": 1278.955655818,
+        "Lean_exclusive_calling_thread_CPU_seconds": {
+          "direct_certificate_check": 63.31001261100001,
+          "products": 31.16183699799999,
+          "lp": 4.365013531999999,
+          "preprocess": 6.687654176000001,
+          "linearize": 25.89517014000001,
+          "certificate": 16.609169810999997
+        },
+        "RPC_elapsed_sums_NOT_CPU": {
+          "direct_certificate_roundtrip_ns": 10.913969709999998,
+          "direct_certificate_linear_ns": 0.14705190999999998,
+          "direct_certificate_products_ns": 0.9984609580000005,
+          "direct_certificate_lp_ns": 4.281341222999999,
+          "direct_no_certificate_or_error_roundtrip_ns": 21.708380916,
+          "direct_no_certificate_or_error_linear_ns": 0.028042536000000003,
+          "direct_no_certificate_or_error_products_ns": 0.4674231589999999,
+          "direct_no_certificate_or_error_lp_ns": 20.345755313999994,
+          "native_no_certificate_or_error_roundtrip_ns": 19.952113159999996,
+          "native_certificate_roundtrip_ns": 16.017397980000002
+        }
+      }
+    }
+  }
+}

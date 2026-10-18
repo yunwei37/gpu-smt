@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-request-costs.py", line 58, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-request-costs.py", line 32, in main
+    shape={k:dist([x[k]for x in service if k in x])for k in ["rows","cols","nnz"]}
+             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-request-costs.py", line 7, in dist
+    xs=sorted(xs)
+TypeError: '<' not supported between instances of 'NoneType' and 'int'

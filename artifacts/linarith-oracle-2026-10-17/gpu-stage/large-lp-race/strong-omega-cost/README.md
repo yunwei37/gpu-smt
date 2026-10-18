@@ -4,4 +4,13 @@ The current complete1000-source control is native+omega/same-dualbackend versus 
 
 Build in the owning Workspace with python3 build.py after the pinned Lean4.27/Mathlib dependencies exist. The crate uses its normal private target. The original qualification-driver.py includes a historical fast-hybrid control; [routing correction](reference-routing-correction.md) excludes that denominator. qualify-native-dual.py exercises the proper same-backend native frontend. Actual current qualification has3351joinedrequests,15unchangedsourceoutcomes/fullJSON, completechild/serviceaccounting and one0.55%observercomparison.
 
-Status: complete original1000-source diagnostic admitted and launched using full1000-driver.py. Launch is not completion. Keep common source/binary/wrappers frozen until both captures finish. [Raw qualification](qualification-raw/). Analysis figures are CPU-time/interval observations, not primary performance, whole-wall saved fractions or automatically strict Amdahlbounds. All work/reviews by this thread.
+Status: both complete original1,000-source diagnostic cells closed:
+475.968475283s native /406.461143583s direct, each992complete/8reject/0operational,
+65message-only differences, no verdict or non-message mismatch.
+[Complete results, cost table, conditional bounds and limitations](full1000-result-review.md),
+[reproducible budget](full1000-complete-budget.json), [full raw](full1000-raw/).
+Perfect numerical-work removal gives a conditional1.46068x component-reference
+capacity ratio; deleting all Lean products too gives1.53960x. These do not
+justify overall GPU closure or change the original whole-system criterion.
+The forward logger fix is unmeasured; measured source and partial logs retained.
+All work/reviews by this thread, self-review only.

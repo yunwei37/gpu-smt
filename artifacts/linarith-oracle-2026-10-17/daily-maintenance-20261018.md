@@ -301,3 +301,14 @@ RootimplementsnativeCPU/floatLP/exactLP/repair/packing/transport/verificationthr
 Actual15 originals88.678187s native/61.746984s direct, each7complete8reject0op/fullJSONidentical. Freshnormaldirect61.409034s versusdiag0.5503%higher(oneobservation,notconfidence/newprimarygain).3351requests45787events22785completed/217unfinishedscopes. Native/direct64/112reapedchildren,47/92cancelled,allwait4CPU;2.289116/2.474933childCPU,0.483879/2.196955cancelledCPU. Unassigned0.416403/0.537043CPUsecondsretainedasupperresidual. HiGHS0.626289/0.765215all-processCPUdistinctfromcallerphases;remainingstartup/internal/bookkeepingnotdeclaredzero. Allfidelityrecords andrawgzipcompleteEOFverified.
 Admitoneactualfulloriginal1000native/directdiagnosticpairwithsame8queues/4CPU4--7/48GiB/currentdualbackend+omega;actualdriver367456started, firstnativecellrunning. Freezecommonprivatecode/wrappers/binariesuntilbothfinish. Ownclock/fullcost/tailsnotrescaledfrom2234.69orE1066historicaldenominators. NoGPUkernel/matrix/routeclosure/primaryperformanceclaim. CurrentE1067tailIDsalsoretainedformechanismselection; repeatedcase/simpworkdominatesseveralremaininghardsources. Nextindependentworktestscompetingreusebaselines, notmorefloatingkernelvariants. Existingfull29750driver277984/prefix5256confirmedlive, untouched.
 EXPERIMENT_GATEqualificationcomplete/fullrunning;WRITEartifactREADME/methodnotes,fullpaperintegrationawaitscompletepair;REVIEWrootselfreviewacceptsscope/fidelity/instrumentationadmission,rejectsinitialreferenceanduniversalAmdahlclaim. All4RQ/InitialNarrative/main/RTX5090-onlygoalkept;noOMP/subagents/nativeagentlaunched, independentreviewnotclaimed.
+
+
+## Completed current budget and progress decision
+Published full common-omega CPU accounting, cancelled worker evidence, retained
+partial logger records and conditional bounds in strong-omega-cost. README
+replaces the older incomplete cost-accounting pointer with completed evidence.
+The bottleneck is now representation/fallback/proof work as well as numerical
+search. A concrete next mechanism must remove some of that work, preserve native
+verification, and beat the same strong baseline including packing/retirement.
+Another LP parameter grid or ordinary cache-hit census is not substantive
+progress. The broader GPU direction remains open under the user's criterion.

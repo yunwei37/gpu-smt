@@ -2,11 +2,43 @@
 from pathlib import Path
 import json,gzip,collections,argparse,resource,os,importlib.util
 A=Path(__file__).resolve().parent
+class Parts(__import__('io').RawIOBase):
+ def __init__(self,paths):super().__init__();self.paths=iter(paths);self.current=None
+ def readable(self):return True
+ def readinto(self,b):
+  while True:
+   if self.current is None:
+    try:self.current=open(next(self.paths),'rb')
+    except StopIteration:return 0
+   n=self.current.readinto(b)
+   if n:return n
+   self.current.close();self.current=None
+ def close(self):
+  if self.current:self.current.close()
+  super().close()
+RECOVERY=[]
 def rows(p):
- if not p.exists()and p.with_name(p.name+'.gz').exists():p=p.with_name(p.name+'.gz')
- if not p.exists():return []
- data=gzip.decompress(p.read_bytes())if p.read_bytes().startswith(b'\x1f\x8b')else p.read_bytes()
- return [json.loads(l)for l in data.decode().splitlines()if l.strip()]
+ import io
+ if not p.exists()and not list(p.parent.glob(p.name+'.part*')):
+  alternate=p.with_name(p.name+'.gz')
+  if alternate.exists()or list(alternate.parent.glob(alternate.name+'.part*')):p=alternate
+ parts=sorted(p.parent.glob(p.name+'.part*'))
+ if p.exists():
+  with p.open('rb')as f:zipped=f.read(2)==b'\x1f\x8b'
+  f=gzip.open(p,'rt')if zipped else p.open()
+ elif parts:f=io.TextIOWrapper(gzip.GzipFile(fileobj=io.BufferedReader(Parts(parts)),mode='rb'))
+ else:return
+ with f:
+  for n,line in enumerate(f,1):
+   if not line.strip():continue
+   try:yield json.loads(line)
+   except json.JSONDecodeError:
+    if not p.name.startswith('numeric-phases.jsonl'):raise
+    # Known flat schema only. Preserve all truncated fragments and recover intact objects.
+    for fragment in line.split('{')[1:]:
+     raw='{'+fragment
+     try:yield json.loads(raw)
+     except json.JSONDecodeError as e:RECOVERY.append({'path':str(p),'line':n,'error':str(e),'raw_fragment':raw})
 def exclusive(events):
  opened={};stack=collections.defaultdict(list);done={};children=collections.Counter();defects=[]
  for x in events:
@@ -88,7 +120,7 @@ def analyze(run,input_path,native_cell=None,direct_cell=None):
  services={}
  for method,cell in layouts:
   p=cell.parent/(cell.name+'-backend')/'support-calls.jsonl.gz.phases'
-  ev=rows(p);closed,unclosed,errors=exclusive(ev);assert not errors,errors
+  ev=list(rows(p));closed,unclosed,errors=exclusive(ev);assert not errors,errors
   totals=collections.Counter()
   for x in closed:totals[x['stage']]+=x['exclusive_cpu_ns']
   ends=[x for x in ev if x.get('event')=='process_retired']
@@ -98,9 +130,10 @@ def analyze(run,input_path,native_cell=None,direct_cell=None):
    'scope':'Caller-thread stageCPU excludes internal HiGHS pool threads. Whole processCPU includes them plus startup/bookkeeping. Concurrent processCPU interval differences are not per-request CPU.'}
   if ends:services[method]['unassigned_process_CPU_seconds']=services[method]['whole_service_process_CPU_seconds']-sum(totals.values())/1e9
  return {'methods':by_method,'fidelity':fidelity,'numeric_requests':len(call_map),'phase_events':len(events),
- 'completed_scopes':len(completed),'unclosed_scopes':len(open_stages),'source_less_auxiliary_stage_counts':dict(source_less),
+ 'completed_scopes':len(completed),'unclosed_scopes':len(open_stages),'unclosed_scope_records':open_stages,'source_less_auxiliary_stage_counts':dict(source_less),
  'numeric_CPU':summary,'external_service_CPU':services,'workers':workers,
  'per_call_completed_exclusive_CPU_ns':{str(k):dict(v)for k,v in call_cpu.items()},
+ 'retained_partial_numeric_append_fragments':RECOVERY,
  'scope':('Current same-dualbackend native/direct strong-omega diagnostic. 'if native_cell else'Historical-fast-hybrid/direct qualification, not current strongest reference. ')+'ScalarAST path,equal8queues/4CPU4--7/48GiB.No GPU run. Completed exclusive phaseCPU is not whole-clock fraction; cancelled child residual bounds include startup/logger/unfinished work. These do not by themselves establish a scheduler-independent wall Amdahl upper bound. Root self-review.'}
 def main():
  p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--input',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--native-cell',type=Path);p.add_argument('--direct-cell',type=Path);a=p.parse_args()

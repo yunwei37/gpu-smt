@@ -784,6 +784,45 @@ GPU result or a scheduler-independent Amdahl bound. Current product and
 small-LP regions are not exhaustively attributed by these records.
 It does not justify closing the GPU direction.
 
+\paragraph{Current common-omega accounting.}
+A later diagnostic holds omega and the two-sided backend common to both
+frontends. It completes all 1,000 sources in 475.97 seconds with native export
+and 406.46 seconds with direct export, each with 992 complete and eight rejected
+outcomes. Verdicts and non-message fields agree; 65 message-only differences
+and 94/92 observer read errors remain. These instrumented clocks are not added
+to the primary timing pairs. This native frontend already includes our
+numerical oracle: it is a component control, not the original stock denominator.
+
+PID-specific child resource receipts retain cancelled work. The direct cell
+records 33.69 and 36.14 CPU seconds of completed floating and exact LP solving,
+3.22 seconds of external product generation, and59.69 seconds in cancelled
+children, overlapping the completed phase totals. Unassigned child CPU is
+23.36 seconds. HiGHS uses39.03 process CPU seconds; its unassigned internal
+threads, startup and bookkeeping are not declared pure LP.
+Direct Lean certificate checks still use 183.17 calling-thread CPU seconds;
+native fallback product proofs use 66.81 seconds.
+
+An explicitly conditional four-CPU capacity model excludes collector work,
+replaces sampled leaf CPU by exact child totals, and credits all numerical
+solving, external products, unknown child CPU and the entire HiGHS process to
+GPU-removable work. Remaining direct CPU work is at least 1,303.41 seconds,
+or 325.85 seconds at ideal capacity: at most$1.46068\times$ relative to this
+native component control. Deleting all Lean fallback product proofs as well
+raises the favorable ratio to$1.53960\times$.
+Recorded exact-checked negative LP answers precede 199 direct failures;
+196 have unambiguous fallback stages containing 22.72 product CPU seconds.
+Preserving those products under the same IR and fallback protocol gives
+$1.51182\times$. Negative answers concern the exported LP, not falsity of
+the Lean goal. These models hold remaining work, proof paths, representation
+and CPU rate fixed and retain diagnostic overhead. They neither exclude
+redesigned systems nor justify overall GPU closure.
+
+Sixteen interrupted numeric log fragments are retained. Reconstruction recovers
+intact following records only under the captured flat schema; unfinished
+phase CPU remains bounded by child resource receipts. The forward logger
+repair was not measured in this pair. Raw data, matched tails, reconstruction
+and model scripts are retained in the artifact; all review here is self-review.
+
 \paragraph{Current full phase capture.}
 A separate current-build diagnostic pair covers all 1,000 sources and
 13,230 native versus 10,251 oracle numerical requests, including failed

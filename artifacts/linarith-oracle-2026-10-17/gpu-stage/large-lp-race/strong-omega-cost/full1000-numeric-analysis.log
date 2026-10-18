@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-numeric-phases.py", line 133, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-numeric-phases.py", line 131, in main
+    result=analyze(a.run,a.input,a.native_cell,a.direct_cell);a.out.write_text(json.dumps(result,indent=2)+'\n')
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-numeric-phases.py", line 76, in analyze
+    events=[x for path in event_paths for x in rows(path)]
+                                               ~~~~^^^^^^
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/analyze-numeric-phases.py", line 32, in rows
+    if line.strip():yield json.loads(line)
+                          ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ':' delimiter: line 1 column 54 (char 53)
