@@ -5082,3 +5082,17 @@ HEAD verifies unchanged meaning. REVIEW_GATE root self-review checks actual
 launch/resource/source counts, no new infrastructure/delegate/checkout or
 cross-epoch pooling. Independent audit absent by user instruction.
 [Plan, self-review and finite execution](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md).
+
+## E1079 complete ProofNet component boundary
+EXPERIMENT_GATE all5952originals finish in allthree4.9conditions:
+stock1151.883129s/native1160.922450s/direct1178.934375s. Everycondition
+413complete5523reject12operational4incomplete, exact source-verdict and
+non-message parity; warning deltas4/5retained. No speedup generalization:
+direct2.35%slower. Module-loaded stock elaborates explicit arguments before
+mode rejection; native component is not whole4.27Fast. No pristine-frontend
+or globalCPU claim. Original failures/forced retirements retained.
+WRITE_GATE stable closed dataset extraction/result review and current README
+scope, without relabeling active miniF2F as complete. REVIEW_GATE root
+self-review verifies arrays/allIDs/counts/clocks, baseline source limitation,
+all failure rows and no inference from diagnostic CPU to wall. Independent
+audit absent; all4RQs remain open. Portable source build proceeds separately.

@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "dataset": "proofnet",
+  "mode": "direct",
+  "expected": 5952,
+  "returned": 5952,
+  "counts": {
+    "rejected": 5523,
+    "complete": 413,
+    "operational": 12,
+    "incomplete": 4
+  },
+  "whole_seconds": 1178.934375398,
+  "normal_native_exit": true,
+  "forced_native_retirements": 3,
+  "CPU": {
+    "collector": 1.7941060000000006,
+    "waited_children": 1869.7478150000006
+  },
+  "CPU_scope": "self+waited children, not exhaustive descendant CPU; forced retirements may censor tails",
+  "error": null,
+  "affinity": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "memory_limit_bytes": 51539607552,
+  "scope": "full original population, selected extra module in all modes, one fixed-order shared-host block, no GPU work"
+}

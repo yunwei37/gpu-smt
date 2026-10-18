@@ -1,6 +1,6 @@
 # Native arithmetic oracle experiment
 
-Status: experimental. Historical CPU stage: 1.34668×; admitted GPU variants have completed without a valid speedup. Corrected full CPU pairs are active. See the
+Status: experimental. The latest corrected selected1,000-source CPU pair is1.70059×; admitted GPU variants have completed without an additional valid speedup. Full current Goedel and miniF2F captures are active; ProofNet is complete without a component gain. See the
 [CPU-stage result and open GPU decision](../../../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
 All three primary pairs and both full phase diagnostics are complete; see the
 [strong-baseline analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/strong-result-review.md)
@@ -10,11 +10,12 @@ These are CPU results. No production service or GPU acceleration is established.
 The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. The frozen same-plan CPU controls are complete: native 2,331.39 s and robust HiGHS 2,363.00 s, each with 992 complete and 8 rejected outcomes. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; the original CPU oracle passed real clean-header qualification and its three matched full pairs are active. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; those two earlier GPU target instances were deleted. The subsequent corrected-family instance has also been deleted after failed native qualification. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
 
 
-The already-admitted original-population prefix comparison remains unfinished.
-Its [launch receipt](../../../artifacts/linarith-oracle-2026-10-17/formal-default/launch.json)
-and actual live process identify the existing capture. The
-[complete miniF2F batch reference](../../../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md)
-includes its operational failures. A reference alone is not a reuse speedup.
+The original-population prefix comparisons are complete with retained
+operational differences and no validated transparent speedup.
+The current arithmetic adapter comparison is separate: the
+[closed5,952-source ProofNet component result](../../../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md)
+has matching outcomes but direct is2.35%slower. Its module-loaded stock
+condition and partial frontend port are explicitly scoped. miniF2F continues.
 The [predeclared protocol](../../../artifacts/linarith-oracle-2026-10-17/plan.md)
 retains the original decision rule.
 

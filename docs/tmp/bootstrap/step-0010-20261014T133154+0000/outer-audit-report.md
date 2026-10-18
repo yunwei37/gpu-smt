@@ -3300,3 +3300,11 @@ Actual firstcell is live. Existing old29750/formal writers preserved.
 No whole-corpus result, new GPU benefit or systemsnovelty inferred from launch.
 README consolidates old epochs and explicit provenance; InitialNarrative/allRQ
 meanings unchanged. Root performs every action; no delegated reviewer.
+
+## E1079 ProofNet boundary audit (root self-audit)
+Read all three complete5952source result arrays and actual terminals.
+All413completed IDs survive;12op/4incomplete IDs match. Closed raw only
+staged; live miniF2F/driver log not staged. No delegated audit. Timing is
+one shared-host fixed-order module-loaded component observation, not
+pristine-stock or whole-service evidence. Negative component generalization
+retained; no project closure or automation deletion.

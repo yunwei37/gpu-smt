@@ -64,8 +64,11 @@ The selected 1,000-source result does not establish whole-population speed.
 The oracle now runs in the formal datasets' unchanged Lean 4.9 environment.
 An actual 64-source integration check produces identical complete responses
 in stock, native-preprocessing and direct modes, with 88 direct native
-certificate checks including six nonlinear requests. The complete original
-miniF2F/ProofNet comparison is acquiring.
+certificate checks including six nonlinear requests. The complete ProofNet comparison returns matching outcomes on all5,952
+originals: stock1151.88s, native1160.92s and direct1178.93s. Direct is2.35%
+slower in this component experiment; its module-loaded stock condition is
+not pristine Mathlib. miniF2F continues acquiring.
+[Closed ProofNet evidence and baseline limitations](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md).
 [Adapter, qualification and full-population protocol](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).
 The native-only mode is a component control, not the fully ported 4.27 Fast
 frontend or an entire upstream Kimina service.
