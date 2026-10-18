@@ -1,5 +1,14 @@
 # Evaluation: current evidence and open questions
 
+### Complete reduced-diagnostic arithmetic pair
+[Original1000 native/direct](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md)
+closes810.713059/476.725600s,1.700586x. All992complete8reject0operational,
+zero verdict/non-message differences,108message differences. Same8queues/
+fourCPU8--11/48GiB/officialomega; optional observer off. Remaining RPC/candidate/
+omega/backend recording charged. Distinct from E1077's4--7instrumented3blocks;
+no cross-protocol pooling or newGPU result. Whole-Goedel coverage remains open.
+
+
 ### Repeated instrumented arithmetic comparison
 [All three whole observations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md)
 close with native/direct629.48/350.68,615.33/348.91,637.27/356.54s;

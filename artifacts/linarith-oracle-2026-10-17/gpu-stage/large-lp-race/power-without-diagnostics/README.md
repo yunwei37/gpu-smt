@@ -10,5 +10,7 @@ native certificate checking, exact repair, numeric binaries and fallback.
 It is not entirely instrumentation-free and not a new contribution.
 
 All64 qualification verdicts/non-message fields agree across four cells.
-The corrected original1000 native/direct pair is running; no full result yet.
+The complete original1000 native/direct pair is 810.71/476.73s (1.70059x),
+with all verdicts/non-message fields preserved. See [full results](full1000-result-review.md).
+One fixed-order shared-host observation is not a global performance claim.
 Do not rebuild this private library while that capture is active.

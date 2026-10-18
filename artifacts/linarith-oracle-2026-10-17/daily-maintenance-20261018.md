@@ -377,3 +377,16 @@ The strongest useful next decision is its complete matched ratio plus full
 formal population generality, not another kernel or solver parameter grid.
 README and paper label the completed1.782x as the actual instrumented result.
 Local links in root README and new formal adapter/protocol pages all resolve.
+
+## Substantive next decision after corrected1.70059x
+The1000candidate continuation criterion is met after removing eager diagnostic
+work, but that cohort was selected by arithmetic cost. The useful next action
+is the frozen implementation on every original Goedel source and both formal
+populations; more small GPU or solver variants cannot answer generalization.
+The complete whole-Goedel matrix is now started. During acquisition, public
+source/build portability is the next practical gap to close: retained private
+binaries and Workspace-specific paths alone are not an open-source artifact.
+Upkeep: README now170lines, current result first, older epochs linked instead
+of competing as current headlines. All local README/newprotocol links resolve.
+Closed duplicate text reclamation retains byte-identical tracked raw archives
+and frees about50MiB logically; source/session/binaries remain.

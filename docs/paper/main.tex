@@ -853,13 +853,24 @@ diagnostic cost removed. Other CPU-eligible work shares the host.
 
 Two subsequent complete observations alternate native--direct and direct--native
 order. Native/direct whole times are 615.33/348.91 and 637.27/356.54 seconds,
-with ratios $1.76357\\times$ and $1.78738\\times$. All per-source verdicts and
+with ratios $1.76357\times$ and $1.78738\times$. All per-source verdicts and
 non-message fields match in each observation; each retains 108 message
 differences. Across the three complete observations, the ratio of whole-time
-sums is $1.78205\\times$. The range is descriptive, not a confidence interval.
+sums is $1.78205\times$. The range is descriptive, not a confidence interval.
 Repetition preserves the diagnostic-cost limitation rather than eliminating it;
-a matched comparison with eager diagnostic operations removed remains pending.
+the matched reduced-diagnostic comparison below evaluates this limitation.
 No GPU gain or globally fastest CPU result follows.
+
+A subsequent same-algorithm comparison removes eager Lean diagnostic rows,
+stage timers and product tagging, and disables the optional process observer
+in both conditions. Native/direct whole times are 810.71/476.73 seconds on
+the same original 1,000 sources, or $1.70059\times$. Both retain 992 complete
+and eight rejected outcomes, matching all verdicts and non-message fields,
+with 108 message differences. This single fixed-order observation uses CPU
+8--11 rather than the earlier CPU 4--7, so its absolute clocks are not pooled
+with the three instrumented blocks. Candidate, RPC and backend recording
+remain charged; the comparison is not entirely instrumentation-free and
+does not demonstrate GPU benefit or generalization to all Goedel sources.
 
 \begin{figure*}[t]
 \centering

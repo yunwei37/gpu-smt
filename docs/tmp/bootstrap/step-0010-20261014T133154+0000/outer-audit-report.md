@@ -3279,3 +3279,24 @@ not exhaustive utilization. Existing instrumented scope unchanged.
 Matplotlib figure source/outputs retained; Tectonic and rendered page15 pass.
 No new experiment, tuning grid, benchmark subset, RQ closure or independent
 reviewer. Actual novel systems contribution remains unproved.
+
+## E1080 terminal root self-audit — not independent
+All2000original-source responses account for both complete cells;992complete/
+8reject each,0verdict/non-message differences,108message-only deltas.
+Fixed candidate/resource/normal retirement/backend boundaries verified.
+1.70059x exceeds the original selected-cohort continuation criterion; it is
+not over every newly invented ablation or an all-Goedel/globalGPU result.
+8--11affinity and observer-off protocol remain separate from E1077.
+All algorithms/numeric binaries/checks unchanged except diagnostics, whose
+large effect was not established by the qualification. No causal overclaim.
+Full-source generalization and systems novelty remain open. Root only.
+
+## E1081 launch root self-audit — not independent
+All29750unique original IDs confirmed against canonical input; no arithmetic/
+success/time filtering. Existing corrected implementation qualifies on the
+predeclared1000cohort, not a new easier subset. Threepairs+two separate profiles
+are one complete generalization/resource experiment; no component-grid padding.
+Actual firstcell is live. Existing old29750/formal writers preserved.
+No whole-corpus result, new GPU benefit or systemsnovelty inferred from launch.
+README consolidates old epochs and explicit provenance; InitialNarrative/allRQ
+meanings unchanged. Root performs every action; no delegated reviewer.

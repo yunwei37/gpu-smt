@@ -27,6 +27,19 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — reduced-diagnostic criterion and full-population evaluation
+The corrected original1000 native/direct pair is810.71/476.73s,1.70059x,
+with992complete8reject and matching verdict/non-message fields. It uses
+CPU8--11/observeroff and is not pooled with earlier instrumented4--7blocks.
+This meets the user's selected-cohort continuation criterion, without proving
+whole-Goedel speed, globalCPUoptimality, GPU gain or new systems contribution.
+The same frozen implementation's complete29750source matrix and unchanged
+formal populations are now acquiring. The earlier29750writer stays distinct.
+[Current result and scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md);
+[whole-population protocol](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md).
+InitialNarrative/all4RQs/Lean+SMT/OSDItarget remain unchanged.
+
+
 ### 2026-10-18 — full natural-power comparison closes
 One original1000block,8queues/4CPU4--7/48GiB/officialomega:
 adaptedcompiledFast/hybrid629.48s,native+ourdual475.81s,olddirect404.97s,

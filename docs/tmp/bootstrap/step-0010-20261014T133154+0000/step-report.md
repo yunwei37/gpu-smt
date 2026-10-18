@@ -5041,3 +5041,44 @@ repetitions, no pure-LP/Amdahl or causal CPU explanation from these data.
 Review remains non-independent. E1080 pair and complete formal populations
 continue; closed native/stock cells are not promoted to complete comparisons.
 [Raw-derived source, figure and limitations](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/service-span-result-review.md).
+
+## E1080 full corrected pair closes
+EXPERIMENT_GATE all original1000sources finish in both reduced-diagnostic
+conditions. Native810.713058860s/direct476.725600020s,1.7005863726x;
+all992complete8reject0op, no per-source verdict/non-message differences,
+108message-only deltas retained.8queues/fourCPU8--11/48GiB/officialomega,
+observer off in both and frozen numerical binaries; remaining correlation/
+candidate/backend records remain, so not wholly uninstrumented.
+Different affinity/shared-host interval prevents combining with E1077 or
+ascribing absolute differences to diagnostic removal alone.
+Current/fixed first-native1%/10% tails, cancelled worker work and all raw retained.
+
+WRITE_GATE promotes only this completed result to current documentation and
+existing evaluation paragraph, with one-pair/affinity/remaining-instrumentation/
+noGPU caveats. All4RQs/InitialNarrative preserved. REVIEW_GATE root self-review
+checks complete raw array IDs, same algorithms/binaries/native load/flags,
+no partial or cross-protocol ratio, all failures and exact field comparison.
+The original1000criterion exceeds1.5 in this corrected CPU protocol. Next:
+full original Goedel coverage using the frozen build and complete formal
+populations, not another narrow tuning variant. Independent audit absent.
+[Complete result/raw/reproducer](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md).
+
+## E1081 complete original Goedel population admitted and started
+The E1080 corrected1000pair1.700586x with full verdict/non-message parity
+meets the user's continuation criterion. Root admits a full generalization
+experiment, not a new kernel/solver/grid: all29750originalsources, same frozen
+reduced-diagnostic library/numerical binaries,8queues/fourCPU8--11/48GiB.
+Three whole native/direct pairs alternate; two separate default-observer
+memory profiles follow and are not counted as timing repetitions.
+All sources/failures retained. The older healthy29750writer is a separate
+version, stays active and cannot supply this implementation's result.
+
+Actual finite driver starts the first native whole cell. Full formal capture
+continues separately. WRITE_GATE current frontier/README distinguish measured
+1000result, instrumented historical pairs, queued full coverage and novelty
+gaps. README is consolidated to170lines with resolving local links; original
+history/raw remain in the ledger. InitialNarrative prefix byte equality to
+HEAD verifies unchanged meaning. REVIEW_GATE root self-review checks actual
+launch/resource/source counts, no new infrastructure/delegate/checkout or
+cross-epoch pooling. Independent audit absent by user instruction.
+[Plan, self-review and finite execution](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md).
