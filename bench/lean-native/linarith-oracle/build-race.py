@@ -5,6 +5,7 @@ R=Path('/workspaces/repository');D=R/'bench/lean-native/linarith-oracle'
 BASE=Path('/tmp/gpu-smt-linarith-oracle-20261017')
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--out',type=Path,default=BASE/'race-oracle-pooled')
+parser.add_argument('--oracle-source',type=Path,default=D/'Oracle.lean',help='Adapter source; use a retained experiment source to reproduce a non-default candidate')
 parser.add_argument('--fp-first',action='store_true',help='Let CPU FP/repair complete before racing only exact-fallback LPs')
 args=parser.parse_args()
 U=args.out;U.mkdir(exist_ok=True);(U/'GpuArithmetic').mkdir(exist_ok=True)
@@ -56,6 +57,14 @@ for name in ['repl-candidate-timing','cuopt-grpc']:
  if not dst.exists():dst.symlink_to((BASE/'batch-oracle'/name).resolve())
 for name in ['BatchNative','BatchFast','BatchBaseline','BatchOracle']:
  text=(BASE/'batch-oracle/GpuArithmetic'/(name+'.lean')).read_text()
+ if name=='BatchOracle':
+  # Compile the checked-in adapter, not a stale OS-temp source snapshot.
+  text=args.oracle_source.read_text().replace('import Farkas.Native','import GpuArithmetic.BatchBaseline')
+  text=text.replace('GpuArithmetic.Oracle','GpuArithmetic.BatchOracle')
+  text=text.replace('IO.getEnv "GPU_ARITHMETIC_ORACLE").isNone','IO.getEnv "GPU_ARITHMETIC_BATCH").isNone',1)
+  begin=text.index('private abbrev Child :=')
+  query=text.index('private def query')
+  text=text[:begin]+text[query:]
  if name in ['BatchNative','BatchOracle']:
   native=name=='BatchNative'
   alias='DaemonProc' if native else 'Child'
@@ -113,5 +122,5 @@ with (U/'build-lean.log').open('w')as log:
  for name in ['BatchNative','BatchFast','BatchBaseline','BatchOracle']:
   subprocess.run(['lean','-o',str(U/'GpuArithmetic'/(name+'.olean')),'-c',str(U/(name+'.c')),str(U/'GpuArithmetic'/(name+'.lean'))],cwd=U,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
  subprocess.run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c'))for n in ['BatchNative','BatchFast','BatchBaseline','BatchOracle']],'-o',str(U/'batch-oracle.so')],cwd=U,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
-(U/'build-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':cmd,'source':str(snap),'private_build':str(core),'FP_first':args.fp_first,'boundary':'original FP-first/exact-fallback dispatch'if args.fp_first else'eligible LP race before all search'},indent=2)+'\n')
+(U/'build-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':cmd,'source':str(snap),'oracle_source':str(args.oracle_source.resolve()),'private_build':str(core),'FP_first':args.fp_first,'boundary':'original FP-first/exact-fallback dispatch'if args.fp_first else'eligible LP race before all search'},indent=2)+'\n')
 print('BUILT',U)

@@ -1,0 +1,168 @@
+{
+  "scope": "Complete current-queue diagnostic. CPU exact-search intervals mark where cheap floating search had failed and a model exists; CSR/network/real GPU readiness is not included. Overlap is potential availability,not achieved GPU batching.",
+  "methods": {
+    "fast-hybrid": {
+      "all_exact_calls": 1636,
+      "all_exact_CPU_seconds": 826.612525625,
+      "large_FP_failed_exact_calls": 1636,
+      "large_exact_CPU_seconds": 826.612525625,
+      "large_exact_wall_union_seconds": 534.379209723,
+      "large_exact_outcomes": {
+        "certificate": 996,
+        "no_certificate": 640
+      },
+      "potential_outstanding": {
+        "arrival_outstanding_calls": {
+          "count": 1636,
+          "min": 1,
+          "median": 3,
+          "p90": 5,
+          "p95": 5,
+          "p99": 6,
+          "max": 7
+        },
+        "arrival_distinct_candidates": {
+          "count": 1636,
+          "min": 1,
+          "median": 3,
+          "p90": 5,
+          "p95": 5,
+          "p99": 6,
+          "max": 7
+        },
+        "time_seconds_by_outstanding_calls": {
+          "0": 152.263582015,
+          "1": 153.089698823,
+          "2": 158.264938385,
+          "3": 118.287604249,
+          "4": 70.373138116,
+          "5": 26.788455616,
+          "6": 6.92507548,
+          "7": 0.650299054
+        },
+        "scope": "Client exported-AST or LP request intervals, including mutex wait; direct AST requests need product/LP construction before actual device-ready LP. Sequential future branches are excluded."
+      },
+      "seconds_with_two_or_more_exact_searches": 381.2895109,
+      "LP_rows": {
+        "count": 1636,
+        "min": 15,
+        "median": 73,
+        "p90": 153,
+        "p99": 282,
+        "max": 730
+      },
+      "LP_columns": {
+        "count": 1636,
+        "min": 35,
+        "median": 240,
+        "p90": 434,
+        "p99": 780,
+        "max": 2628
+      },
+      "LP_nnz": {
+        "count": 1636,
+        "min": 68,
+        "median": 1633,
+        "p90": 3715,
+        "p99": 7014,
+        "max": 17569
+      },
+      "top10_exact_CPU_indices": [
+        310,
+        37,
+        62,
+        537,
+        208,
+        86,
+        456,
+        897,
+        435,
+        283
+      ],
+      "any_overlapping_exact_calls_from_same_source": false,
+      "seconds_with_two_or_more_distinct_sources": 381.2895108999999
+    },
+    "oracle": {
+      "all_exact_calls": 1888,
+      "all_exact_CPU_seconds": 518.393022903,
+      "large_FP_failed_exact_calls": 1888,
+      "large_exact_CPU_seconds": 518.393022903,
+      "large_exact_wall_union_seconds": 398.457090051,
+      "large_exact_outcomes": {
+        "certificate": 674,
+        "no_certificate": 1214
+      },
+      "potential_outstanding": {
+        "arrival_outstanding_calls": {
+          "count": 1888,
+          "min": 1,
+          "median": 2,
+          "p90": 4,
+          "p95": 4,
+          "p99": 5,
+          "max": 8
+        },
+        "arrival_distinct_candidates": {
+          "count": 1888,
+          "min": 1,
+          "median": 2,
+          "p90": 4,
+          "p95": 4,
+          "p99": 5,
+          "max": 8
+        },
+        "time_seconds_by_outstanding_calls": {
+          "0": 141.971579878,
+          "1": 177.053366662,
+          "2": 120.96535462,
+          "3": 66.718268115,
+          "4": 23.008774771,
+          "5": 5.519981533,
+          "6": 1.022690047,
+          "7": 3.238198116,
+          "8": 0.930456187
+        },
+        "scope": "Client exported-AST or LP request intervals, including mutex wait; direct AST requests need product/LP construction before actual device-ready LP. Sequential future branches are excluded."
+      },
+      "seconds_with_two_or_more_exact_searches": 221.403723389,
+      "LP_rows": {
+        "count": 1888,
+        "min": 15,
+        "median": 82,
+        "p90": 163,
+        "p99": 323,
+        "max": 730
+      },
+      "LP_columns": {
+        "count": 1888,
+        "min": 35,
+        "median": 230,
+        "p90": 405,
+        "p99": 741,
+        "max": 2628
+      },
+      "LP_nnz": {
+        "count": 1888,
+        "min": 68,
+        "median": 1514,
+        "p90": 3070,
+        "p99": 6967,
+        "max": 17569
+      },
+      "top10_exact_CPU_indices": [
+        643,
+        37,
+        208,
+        716,
+        897,
+        283,
+        573,
+        655,
+        179,
+        919
+      ],
+      "any_overlapping_exact_calls_from_same_source": false,
+      "seconds_with_two_or_more_distinct_sources": 221.40372338900016
+    }
+  }
+}

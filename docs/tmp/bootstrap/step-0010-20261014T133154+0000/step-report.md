@@ -4371,3 +4371,42 @@ REVIEW rootself-review includesnumericfailuresandworkerreceipts,notjust
 nativeverdicts. No independent audit,1.5xclaim orGPUrouteclosure.
 
 Final PDF recheck caught doubled LaTeX backslashes in the newly inserted multiplication/spacing commands. Fixed forward in source, rebuilt and checked rendered numerical text; result values and raw measurements unchanged. This is a local expression repair,not a scientific-contract change.
+
+
+### 2026-10-18 — complete current-family opportunity and executed coverage hypothesis
+Previous goal turn is progress:four pushed boundaries and actualfullprimary/
+GPUqualifications,not a wait. This continuation closes both all-call queue
+diagnostic cells691.204649455/545.050104294s,each992/8/0. EveryresponseJSON
+matches its correspondingprimary. All13230/10251calls source/shape/product
+metadata andallworkerEOF/wait4/exit receipts complete;no serviceerrors.
+Raw numericCPUevents contain exact verification nested in responsepacking.
+The derived analyzer now subtracts direct children before phaseCPU sums;
+12590native calls containnestedtimers,0.03769CPUseconds were doublecounted.
+Two naive residuals were negative;no rawrecord/clock/LPwall/outcome changes.
+Initialderivation andexamplesretained;all exclusiveCPUresiduals reconcile.
+
+EXPERIMENT: numeric-only intervals sum833.985s>545.050s elapsed;union411.683s
+is75.5313%. Anoptimistic fixed-timeline uniondeletion yields5.182737xusing
+ownnative691.205s,not a scheduler theorem or measuredGPUgain. No below1.5x
+ceiling is established. Failed-direct/fallback LPcosts76.601/44.279CPU seconds
+areincluded. Exactfallback1888calls use518.393CPU seconds,allrows>=15,
+median82rows/230cols/1514nnz;different-source searchesoverlap221.404s.
+That is potentialreadiness,not achievedGPUbatching or transfer-freework.
+
+Executed a larger observed oraclecoverage hypothesis:2348unsupportedcarrier
+eventsacross10sources,fiveinnativetop10. ReusedMathlibNat→Int/strengthening
+andretaineddivision semantics,exactrepair/checking/fallback. Buildandactual
+old/new10plus24Real/Rat qualification complete. Native144.555/currentCPU
+143.751/newCPU158.015s;all10verdict/non-messageparity. New1778directsuccess
+events and618no-certfallbacks;successfulchecksum88.451wallseconds vs1.878
+numericroundtrip,withfailed-branch timingexplicitlyunknown. Real24allpass.
+Candidateisnegativeforperformance,nofullmatrix;source/rawretainedand
+qualifieddefaultrestoredthroughordinaryeditingofthisthread'sownWIP.
+Canonicalbuildernowreadsmaintainedadapterorexplicitartifactsource.
+
+WRITE updatescurrentprofiletable/LPfigure,paperlimits,README/evaluationand
+dailyreflection. Itdoesnotlegitimizeordinarypreprocessors/solverselection
+asnovelty. REVIEW isrootself-review;independent/fullmilestoneauditsandall
+fourRQcoverage remain incomplete. NoAgent/subagent/OMP. Activegoal/hourly
+remainunchanged;prefixcapturepreserved. NextdecisiveGPUchoice musttarget
+FP-failed moderateLPswithstrongCPUnumericalcontrol,noparametergrid.

@@ -35,6 +35,19 @@ def outstanding(calls):
             "arrival_distinct_candidates":spread([p["distinct_sources"] for p in points]),
             "time_seconds_by_outstanding_calls":{str(k):v/1e9 for k,v in sorted(hist.items())},
             "scope":"Client exported-AST or LP request intervals, including mutex wait; direct AST requests need product/LP construction before actual device-ready LP. Sequential future branches are excluded."}
+def exclusive_phase_cpu(events):
+    """Rust timers append after return; subtract direct nested children."""
+    timed=[(i,e)for i,e in enumerate(events)if "cpu_ns"in e and "end_ns"in e]
+    parents={}
+    for i,e in timed:
+        enclosing=[(j,p)for j,p in timed if j>i and
+            p["start_ns"]<=e["start_ns"] and e["end_ns"]<=p["end_ns"]]
+        if enclosing:
+            parents[i]=min(enclosing,key=lambda q:(q[1]["end_ns"]-q[1]["start_ns"],q[0]))[0]
+    exclusive={i:e["cpu_ns"]for i,e in timed}
+    for child,parent in parents.items():exclusive[parent]-=events[child]["cpu_ns"]
+    return exclusive,parents
+
 def cpu_ledger(records):
     requests=collections.defaultdict(list);ends={};exits={}
     for x in records:
@@ -46,8 +59,8 @@ def cpu_ledger(records):
     for pid,rs in requests.items():
         end=ends.get(pid);exit=exits.get(pid);phases=collections.Counter()
         for rec in rs:
-            for e in rec.get("events",[]):
-                if "cpu_ns" in e:phases[e["stage"]]+=e["cpu_ns"]
+            events=rec.get("events",[]);exclusive,_=exclusive_phase_cpu(events)
+            for i,cpu in exclusive.items():phases[events[i]["stage"]]+=cpu
         session=sum(x["cpu_ns"] for x in rs)
         row={"pid":pid,"service_kind":rs[0]["kind"],"records_including_handshake":len(rs),
              "complete_worker_cpu_receipt":exit is not None,
@@ -66,7 +79,7 @@ def cpu_ledger(records):
                 row["startup_exit_and_other_cpu_seconds"]=(total-session-end["stdin_read_cpu_ns"]-end["diagnostic_write_cpu_ns"])/1e9
         workers.append(row)
     return {"workers":workers,"all_worker_receipts_complete":bool(workers) and all(x["complete_worker_cpu_receipt"] and x.get("eof_counter_agrees") for x in workers),
-            "scope":"wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."}
+            "phase_cpu_accounting":"Exclusive within each synchronous Rust request; directly nested child CPU is subtracted from its parent. Raw intervals remain retained.","scope":"wait4 measures complete worker user+system CPU through actual exit, including diagnostics; no sampling denominator. Request timers are disjoint calling-thread CPU. Remaining CPU includes startup/EOF/exit, instrumentation and any other worker threads. Supervisor CPU before receipt is separate. Missing receipts remain censored. This is numeric-service CPU accounting, not a whole-verification wall fraction."}
 
 def analyze(cell,inputs,lean_log=None):
     terminal=json.loads((cell/"terminal.json").read_text())
@@ -127,10 +140,12 @@ def analyze(cell,inputs,lean_log=None):
             expected=next((e["cols"] for e in rec["events"] if e.get("stage")=="shape" and e.get("kind")=="certificate-unscaled"),None)
             if expected is not None and len(flags)!=expected:defects["product_column_length_mismatch"]+=1
         phases=rec["events"];cpu=collections.Counter();wall=collections.Counter()
-        for ev in phases:
+        phase_cpu,parent_links=exclusive_phase_cpu(phases)
+        if any(v<0 for v in phase_cpu.values()):defects["negative_exclusive_phase_cpu"]+=1
+        for phase_index,ev in enumerate(phases):
             st=ev["stage"]
             if "end_ns" in ev:
-                cpu[st]+=ev["cpu_ns"];wall[st]+=ev["end_ns"]-ev["start_ns"]
+                cpu[st]+=phase_cpu[phase_index];wall[st]+=ev["end_ns"]-ev["start_ns"]
                 allphases[st].append((ev["start_ns"],ev["end_ns"]))
                 if st in ["products","fp_solve","exact_lp"]:
                     eligible.append((ev["start_ns"],ev["end_ns"]));rust_eligible.append((ev["start_ns"],ev["end_ns"]));generous.append((ev["start_ns"],ev["end_ns"]))
@@ -206,7 +221,7 @@ def analyze(cell,inputs,lean_log=None):
     whole=terminal["whole_ns"];sum_eligible=sum(b-a for a,b in eligible);sum_generous=sum(b-a for a,b in generous)
     complete=not any(defects.values()) and not ambiguity
     return {"terminal":terminal,"numeric_worker_CPU_ledger":cpu_ledger(numeric_records),"telemetry_defects":dict(defects),"ambiguous_source_groups":ambiguity,
-        "all_call_schema_complete":complete,"unlabelled_requests_wave_binding":unlabelled,"call_outcomes":dict(classifications),"internal_Lean_LP_invocations":internal,
+        "all_call_schema_complete":complete,"numeric_phase_cpu_accounting":"Exclusive parent/child CPU within a synchronous numeric request. Phase wall fields retain raw inclusive intervals and may overlap.","unlabelled_requests_wave_binding":unlabelled,"call_outcomes":dict(classifications),"internal_Lean_LP_invocations":internal,
         "fallback_Lean_calling_thread_CPU_seconds":{k:v/1e9 for k,v in lean_aggregate.items()},
         "numeric_cpu_seconds_by_daemon":{k:{n.removesuffix("_ns"):v/1e9 for n,v in c.items() if n not in ["client_minus_service_wall_ns","total_service_wall_ns"]} for k,c in totals.items()},
         "numeric_wall_seconds_by_daemon":{k:{n.removesuffix("_ns"):c[n]/1e9 for n in ["client_minus_service_wall_ns","total_service_wall_ns"]} for k,c in totals.items()},
@@ -263,6 +278,11 @@ def zero_cost_summary(analysis, native_seconds=None):
         "LP_and_numeric_product_zero":row(a["sum_interval_seconds"]),
         "generous_all_product_construction_zero":row(a["generous_sum_seconds_including_all_Lean_product_construction"]),
         "numeric_LP_product_observed_union_fraction":a["numeric_only_occupancy_fraction"],
+        "occupied_union_deletion_model":{
+            "observed_numeric_occupied_seconds":a["numeric_only_union_seconds"],
+            "nonoccupied_elapsed_seconds":t-a["numeric_only_union_seconds"],
+            "matched_native_over_nonoccupied":native_seconds/(t-a["numeric_only_union_seconds"]) if valid and native_seconds is not None and t>a["numeric_only_union_seconds"] else None,
+            "scope":"Optimistic fixed-timeline compression deleting every instant with any eligible numeric work, including concurrent non-GPU work. Not a scheduler-invariant upper bound, a measured speedup or proof that all occupied wall is removable."},
         "threshold_rule":"A multiple at or above1.5, unbounded deletion, or incomplete/inapplicable attribution cannot close the GPU route.",
         "scope":"Conditional fixed-work zero-cost sensitivity, not a measured GPU speedup or universal scheduler theorem. Summed wall intervals overcount overlap. Generous deletion also removes Lean product-proof construction. Fixed certificates/fallback/noneligible work are assumed. Observed union is occupancy, not removable critical-path wall. Profile and reference must share this corrected family/configuration; historical2234.69 is never substituted."}
 
@@ -295,6 +315,38 @@ def source_tails(analysis,cell,inputs):
     return {"available":True,"missing_candidate_indices":sorted(response_indices-set(spans)),"tails":tails,
         "scope":"Ranked actual candidate service intervals, original population including failures. CPU and wall components include overlapping parent Lean LP and numeric child LP; they must not be summed as disjoint whole-wall fractions."}
 
+def direct_fallback_causes(cell,inputs,lean_log=None):
+    """Describe observed adapter events; do not infer removable wall cost."""
+    path=lean_log or existing(cell,"oracle.jsonl")
+    if path is None:return {"available":False,"reason":"No direct-adapter event stream"}
+    source_ids={}
+    data=list(stream(inputs))
+    for i,row in enumerate(data):
+        source_ids.setdefault(chr(10)*2+row["code"][len(HEADER):],[]).append(i)
+    errors=collections.Counter();by_index={};checks=collections.Counter()
+    successes=0;queries=collections.Counter();unmapped=0
+    for event in stream(path):
+        kind=event.get("ty")
+        if kind=="direct-oracle-fallback":
+            error=event.get("error","missing error");errors[error]+=1
+            ids=source_ids.get(event.get("source"),[])
+            if len(ids)==1:
+                by_index.setdefault(ids[0],collections.Counter())[error]+=1
+            else:unmapped+=1
+        elif kind=="cost-direct-check":
+            checks[str(event["accepted"]).lower()]+=1
+        elif kind=="cost-direct-roundtrip":
+            answer=event.get("answer",{})
+            queries["coefficient_array" if isinstance(answer.get("cert"),list) else "no_coefficient_array"]+=1
+        elif kind=="direct-oracle":successes+=1
+    return {"available":True,"fallback_events":sum(errors.values()),
+        "fallback_errors":dict(errors),"unmapped_fallback_events":unmapped,
+        "direct_check_events":dict(checks),"direct_success_events":successes,
+        "direct_numerical_reply_events":dict(queries),
+        "per_source":[{"index":i,"proof_id":data[i]["proof_id"],"fallback_errors":dict(c)}
+            for i,c in sorted(by_index.items())],
+        "scope":"Observed direct-adapter events on the named capture. Recursive/equality branches may emit several records per tactic. Counts are not distinct candidates, total tactic invocations, removable CPU/wall time or a causal fallback-to-LP attribution. Pre-export errors lack a numeric call ID."}
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("cell",type=Path,nargs="?");p.add_argument("--numeric-log",type=Path);p.add_argument("--lean-log",type=Path,help="Explicit derived telemetry log; retain raw and recovery provenance");p.add_argument("--input",type=Path,default=INPUT);a=p.parse_args()
     if a.numeric_log:
@@ -308,6 +360,7 @@ def main():
     result["call_outcome_costs"]=call_outcome_costs(result)
     result["own_clock_zero_cost_summary"]=zero_cost_summary(result,nt)
     result["individual_candidate_tails"]=source_tails(result,a.cell,a.input)
+    result["direct_fallback_causes"]=direct_fallback_causes(a.cell,a.input,a.lean_log)
     (a.cell/"cost-analysis.json").write_text(json.dumps(result,indent=2)+"\n")
     print(json.dumps({k:v for k,v in result.items() if k not in ["calls","per_source","distributions","tails"]},indent=2))
 if __name__=="__main__":main()

@@ -1,0 +1,90 @@
+{
+  "scope": "Declared ten-source domain-coverage preflight with diagnostics,not a final representative score. Reviews are same-thread self-review.",
+  "conditions": {
+    "qualification10-old/rep1-oracle-hint": {
+      "whole_seconds": 143.750716129,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_response_differences": [],
+      "event_counts": {
+        "direct-oracle-fallback": 2348,
+        "fast": 2348,
+        "product-application": 1701
+      },
+      "fallback_errors": {
+        "unsupported carrier": 2348
+      },
+      "summed_successful_branch_wall_seconds": {},
+      "scope": "Success/failed events can include recursive equality subgoals; event counts are not unique source or whole-tactic counts. Failed numerical timing is not recorded by this uninstrumented adapter."
+    },
+    "qualification10-old/rep1-fast-hybrid": {
+      "whole_seconds": 144.555359582,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_response_differences": [],
+      "event_counts": {
+        "fast": 2348,
+        "product-application": 1701
+      },
+      "fallback_errors": {},
+      "summed_successful_branch_wall_seconds": {},
+      "scope": "Success/failed events can include recursive equality subgoals; event counts are not unique source or whole-tactic counts. Failed numerical timing is not recorded by this uninstrumented adapter."
+    },
+    "qualification10-new/rep1-oracle-hint": {
+      "whole_seconds": 158.015169893,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_response_differences": [],
+      "event_counts": {
+        "direct-oracle": 1778,
+        "direct-oracle-fallback": 618,
+        "fast": 618,
+        "product-application": 617
+      },
+      "fallback_errors": {
+        "expected array": 618
+      },
+      "summed_successful_branch_wall_seconds": {
+        "export_ns": 0.18813418400000012,
+        "search_roundtrip_ns": 1.8779009829999964,
+        "check_ns": 88.45051579800011,
+        "successful_oracle_linear_ns": 0.07327097999999982,
+        "successful_oracle_products_ns": 0.09033568900000015,
+        "successful_oracle_lp_ns": 0.3481706350000006
+      },
+      "scope": "Success/failed events can include recursive equality subgoals; event counts are not unique source or whole-tactic counts. Failed numerical timing is not recorded by this uninstrumented adapter."
+    },
+    "qualification10-new/rep1-fast-hybrid": {
+      "whole_seconds": 144.555359582,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_response_differences": [],
+      "event_counts": {
+        "fast": 2348,
+        "product-application": 1701
+      },
+      "fallback_errors": {},
+      "summed_successful_branch_wall_seconds": {},
+      "scope": "Success/failed events can include recursive equality subgoals; event counts are not unique source or whole-tactic counts. Failed numerical timing is not recorded by this uninstrumented adapter."
+    }
+  },
+  "Real_Rat_regression": {
+    "native_seconds": 30.13252673,
+    "oracle_seconds": 22.91247044,
+    "count": 24,
+    "verdict_non_message_parity": true,
+    "scope": "Actual fresh native/candidate same-interface qualification; no full-cohort continuation claim."
+  }
+}

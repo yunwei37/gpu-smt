@@ -79,3 +79,27 @@ own-clock queue profile starts08:28:53UTC on CPUs0–3 after actual primary
 pair completion. It is a diagnostic for the user's Amdahl question,not another
 GPU variant or an achieved speedup. The invalid clocks are not published as
 an instrumentation-overhead conclusion.
+
+
+## Follow-through after the completed queue profile
+The full matched queue attribution completes at691.20native/545.05oracle
+seconds with exact primary response parity and complete all-call/worker
+receipts. Its LP interval union75.53%cannotbe substituted for causal saving.
+An optimistic union-deletion model5.18x remains above the user's threshold,
+so negative GPU closure remains unsupported.
+
+The trace-driven Nat/Int coverage hypothesis is implemented and tested,
+rather than left as a proposal. It eliminates unsupported-type errors and
+passes alltennative outcomes,but158.02seconds is worse than143.75seconds.
+The full source and negative records remain reproducible; it doesnot replace
+the default and no full matrix opens. Successful-branch LPsearch is small
+beside observed Lean checking,so type support alone is not the bottleneck fix.
+
+The next GPU admission should target the actualhard numerical work:518.39CPU
+seconds in1,888FP-failed moderate LPs,not the whole-verification Nat tails.
+The exact-stage median is82rows/230columns and different-source searches
+overlap for221.40seconds. A solver/formulation suited to finding a feasible
+basic support,with exact CPU repair and the same Lean check,has more decision
+value than another thread/cache/precision grid. A strong CPU numerical
+baseline must accompany it; simply choosing a different established solver
+willnotbe claimed as systems novelty.

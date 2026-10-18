@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-18T08:44:38Z",
+  "pid": 165685,
+  "start_ticks": "74445001",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/nat-int-oracle/qualification10-old",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/nat-int-oracle/input-unsupported10.jsonl",
+    "--limit",
+    "10",
+    "--methods",
+    "fast-hybrid",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--native-buckets",
+    "--diagnostic",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl"
+  ],
+  "GPU_ARITHMETIC_RACE_ROOT": "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled",
+  "GPU_ARITHMETIC_RACE_MIN_ROWS": 11,
+  "scope": "Actual native/currentCPU qualification on all10previousunsupported sources,diagnostic clocks;CPU8\u201311,48GiB; candidatebuild4\u20137 and activeprofiler0\u20133 preserved."
+}

@@ -606,3 +606,23 @@ The full1000source native8queue reference closes685.730742286s,992/8/0,exact ful
 
 ## Complete stronger native queue CPU pair (2026-10-18)
 Original1000,max8tasks,CPUs0–3,48GiB: native685.730742286s,CPUoracle537.312851014s(1.276222486x). Both992/8/0,exactverdict/non-messageparity,88acceptedwarningchanges,alltaskspansmapped. Onepair,notrepeatability. The earlierwaveGPU/omissionratioscannotbetransferredtothisreference. [Complete raw/tails/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/result-review.md). Newqueueprofilequalificationwithoutrow11isinvalidduetocaughtnumericalpanics;rawpreservedandrequiredinputrepairedbeforecorrectedqualification.
+
+
+## Complete queue-family attribution and domain-coverage negative result
+The same-protocol diagnostic closes native691.204649455/CPUoracle545.050104294s,
+each992/8/0,with exact complete nativeJSON parity to its corresponding primary.
+All13230/10251numeric calls and workerCPU/EOF/exit receipts are complete;
+no service errors. Rust nested verification/response-pack CPU is accounted
+exclusively; raw clocks and LP/product wall are unchanged.
+Numeric-product+LP wall sums833.985s on545.050s elapsed; its411.683s union is
+75.5313%. The optimistic occupied-timeline deletion gives5.182737x using this
+diagnostic's691.205snative reference,not an achievable or universal bound.
+Exactfallback1888calls use518.393CPU seconds; median82rows/230columns,
+with221.404seconds of overlapping different-source exact searches.
+[Full raw,methods and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/full1000-result-review.md).
+
+A proof-producing Nat/Int adapter succeeds functionally on the ten observed
+unsupported sources but takes158.015s versus currentCPU143.751s/native144.555s.
+Alltenverdicts/non-message fields agree,and24Real/Rat regression sources pass.
+It remains an archived negative implementation rather than the default or a
+new full matrix. [Raw/source/reproduction/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/nat-int-oracle/result-review.md).

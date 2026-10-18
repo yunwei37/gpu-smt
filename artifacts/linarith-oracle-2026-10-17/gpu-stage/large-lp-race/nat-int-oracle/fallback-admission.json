@@ -1,0 +1,57 @@
+{
+  "source_profile_scope": "Complete old eight-item-wave oracle own-clock profile, not the active queue profile. Counts are observed adapter attempts, not time or distinct input candidates.",
+  "fallback_reasons": {
+    "expected array": 605,
+    "unsupported carrier": 2348
+  },
+  "unsupported_indices": [
+    107,
+    111,
+    128,
+    335,
+    356,
+    450,
+    710,
+    759,
+    833,
+    924
+  ],
+  "unsupported_proof_ids": [
+    "Proof_03024",
+    "Proof_03101",
+    "Proof_03444",
+    "Proof_09503",
+    "Proof_10031",
+    "Proof_12771",
+    "Proof_21619",
+    "Proof_23002",
+    "Proof_25038",
+    "Proof_27801"
+  ],
+  "per_source_unsupported": {
+    "107": 1,
+    "111": 328,
+    "128": 178,
+    "335": 24,
+    "356": 545,
+    "450": 696,
+    "710": 545,
+    "759": 24,
+    "833": 6,
+    "924": 1
+  },
+  "current_queue_observation": {
+    "fast-hybrid": {
+      "sum_overlapping_candidate_service_seconds": 604.161248063,
+      "candidate_interval_union_seconds": 515.279802763,
+      "whole_seconds": 685.730742286,
+      "scope": "Source identity join only. Occupancy and overlapping task sums are not removable critical-path cost or predicted savings."
+    },
+    "oracle-hint": {
+      "sum_overlapping_candidate_service_seconds": 542.7180863,
+      "candidate_interval_union_seconds": 377.554802194,
+      "whole_seconds": 537.312851014,
+      "scope": "Source identity join only. Occupancy and overlapping task sums are not removable critical-path cost or predicted savings."
+    }
+  }
+}

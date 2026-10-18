@@ -1,9 +1,5 @@
 {
-  "utc": "2026-10-18T08:28:53Z",
-  "pid": 164489,
-  "start_ticks": "74350524",
   "argv": [
-    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
     "/workspaces/repository/bench/lean-native/linarith-oracle/run-corrected-cost.py",
     "--cost-profile",
     "--cost-root",
@@ -24,9 +20,32 @@
     "--repl",
     "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl"
   ],
-  "GPU_ARITHMETIC_RACE_MIN_ROWS": 11,
-  "RLIMIT_AS": 51539607552,
-  "head_before_local_required_input_repair": "44d43738082828f22c8812ff08b18b928bbefc21",
-  "actual_source_snapshot": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/source",
-  "scope": "User-requested full own-clock all-call profile under the now-strongest common native8queue protocol; after actual closure of primaryCPU pair; noGPU/Agent/scheduler."
+  "pid": 164489,
+  "affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "methods": [
+    "fast-hybrid",
+    "oracle"
+  ],
+  "input": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+  "limit": 0,
+  "resource_observer_seconds": 1,
+  "header": "per-method arithmetic family selected by Runner.cell; common Mathlib/Aesop imports",
+  "boundary": "existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF",
+  "native_buckets": 8,
+  "array_observation_deadline_seconds": null,
+  "repl_override": "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+  "numeric_replay_bin": null,
+  "numeric_replay_data": null,
+  "effective_RLIMIT_AS": [
+    51539607552,
+    51539607552
+  ],
+  "cost_profile": true,
+  "cost_root": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost",
+  "collector": "/workspaces/repository/bench/lean-native/run-native-batch-comparison.py"
 }

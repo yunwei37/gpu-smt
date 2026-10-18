@@ -1,0 +1,158 @@
+{
+  "calls_with_nested_timers": 12590,
+  "nested_child_events": 12590,
+  "old_negative_residual_calls": [
+    {
+      "pid": 164560,
+      "call_id": 743794742010942,
+      "old_residual_cpu_ns": -286259,
+      "parent_cpu_ns": 382880,
+      "events": [
+        {
+          "cpu_ns": 15484,
+          "end_ns": 743794742090598,
+          "stage": "request_parse",
+          "start_ns": 743794742075186
+        },
+        {
+          "cpu_ns": 18704,
+          "end_ns": 743794742112390,
+          "stage": "request_parse",
+          "start_ns": 743794742093728
+        },
+        {
+          "cpu_ns": 7385,
+          "end_ns": 743794742120898,
+          "stage": "request_parse",
+          "start_ns": 743794742113499
+        },
+        {
+          "cols": 8,
+          "kind": "fp-scaled",
+          "nnz": 9,
+          "rows": 2,
+          "stage": "shape"
+        },
+        {
+          "cpu_ns": 3779,
+          "end_ns": 743794742128013,
+          "stage": "lp_build",
+          "start_ns": 743794742124219
+        },
+        {
+          "cpu_ns": 1386,
+          "end_ns": 743794742130596,
+          "stage": "fp_solve",
+          "start_ns": 743794742129180
+        },
+        {
+          "cpu_ns": 9261,
+          "end_ns": 743794742140919,
+          "stage": "exact_repair",
+          "start_ns": 743794742131787
+        },
+        {
+          "cpu_ns": 1183,
+          "end_ns": 743794742143182,
+          "stage": "exact_verify",
+          "start_ns": 743794742142001
+        },
+        {
+          "cpu_ns": 301505,
+          "end_ns": 743794742446098,
+          "stage": "exact_verify",
+          "start_ns": 743794742144647
+        },
+        {
+          "cpu_ns": 306440,
+          "end_ns": 743794742450787,
+          "stage": "response_pack",
+          "start_ns": 743794742144317
+        },
+        {
+          "cpu_ns": 4012,
+          "end_ns": 743794742456874,
+          "stage": "response_write",
+          "start_ns": 743794742452789
+        }
+      ]
+    },
+    {
+      "pid": 164553,
+      "call_id": 743929479867387,
+      "old_residual_cpu_ns": -2671,
+      "parent_cpu_ns": 165205,
+      "events": [
+        {
+          "cpu_ns": 65827,
+          "end_ns": 743929482568122,
+          "stage": "request_parse",
+          "start_ns": 743929482502350
+        },
+        {
+          "cpu_ns": 23173,
+          "end_ns": 743929482594293,
+          "stage": "request_parse",
+          "start_ns": 743929482571143
+        },
+        {
+          "cpu_ns": 11496,
+          "end_ns": 743929482607123,
+          "stage": "request_parse",
+          "start_ns": 743929482595663
+        },
+        {
+          "cols": 11,
+          "kind": "fp-scaled",
+          "nnz": 21,
+          "rows": 5,
+          "stage": "shape"
+        },
+        {
+          "cpu_ns": 5516,
+          "end_ns": 743929482615647,
+          "stage": "lp_build",
+          "start_ns": 743929482610160
+        },
+        {
+          "cpu_ns": 2946,
+          "end_ns": 743929482619759,
+          "stage": "fp_solve",
+          "start_ns": 743929482616802
+        },
+        {
+          "cpu_ns": 10140,
+          "end_ns": 743929482631251,
+          "stage": "exact_repair",
+          "start_ns": 743929482621153
+        },
+        {
+          "cpu_ns": 1548,
+          "end_ns": 743929482633738,
+          "stage": "exact_verify",
+          "start_ns": 743929482632192
+        },
+        {
+          "cpu_ns": 17428,
+          "end_ns": 743929482652299,
+          "stage": "exact_verify",
+          "start_ns": 743929482634892
+        },
+        {
+          "cpu_ns": 21772,
+          "end_ns": 743929482656401,
+          "stage": "response_pack",
+          "start_ns": 743929482634634
+        },
+        {
+          "cpu_ns": 8030,
+          "end_ns": 743929482666302,
+          "stage": "response_write",
+          "start_ns": 743929482658289
+        }
+      ]
+    }
+  ],
+  "subtracted_nested_CPU_seconds": 0.037691512999999933,
+  "scope": "Raw synchronous Rust timer tree: exact verification can be nested in response packing. Derived exclusive CPU subtracts direct children; raw intervals, elapsed clocks, source labels, LP/product wall and outcomes stay unchanged. No negative residual is clamped or discarded."
+}

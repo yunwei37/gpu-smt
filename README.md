@@ -32,6 +32,15 @@ GPU route closure requires applicable evidence that the zero-GPU-cost opportunit
 cannot reach that target; a slow implementation alone is insufficient.
 The hourly research task remains active.
 
+The same-interface all-call profile is complete on its own clocks:
+native691.20s/CPUoracle545.05s. Numeric products and LP search occupy a
+411.68s interval union(75.53%of the oracle clock),with substantial overlap.
+Deleting all those occupied instants gives an intentionally optimistic5.18×
+model,not an achieved GPU result or scheduler-independent bound; it doesnot
+justify GPU route closure.
+[Complete attribution and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/full1000-result-review.md).
+
+
 | Complete comparison | Native / candidate elapsed | Ratio | Scope |
 |---|---:|---:|---|
 | Native eight queues / CPU oracle | 685.73 / 537.31 s | 1.27622× | One full pair, max8candidates, same4CPUs,48GiB |

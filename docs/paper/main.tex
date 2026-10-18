@@ -904,26 +904,25 @@ clocks. The numeric product work already removed from Lean is small on
 these observed successful branches; no additional GPU measurement or
 new kernel is inferred from it.
 
-\paragraph{Complete matched pooled-family wall-cost profile.}
+\paragraph{Complete matched queue-family wall-cost profile.}
 A complete diagnostic repeats the same 1,000 sources, corrected family
-headers, eight-item waves, four CPUs 0--3 and 48\,GiB allowance.
-Its own native and CPU-oracle clocks are 1,245.96 and 1,072.37 seconds.
-Each returns 992 complete and eight rejected sources without operational
-outcomes; all native response JSON values exactly match their corresponding
-noninstrumented primary. These diagnostic clocks remain separate from the
-primary performance clocks below and from the earlier width-four capture.
+headers, upstream eight sequential queues, four CPUs 0--3 and
+48\,GiB allowance. Its own native and CPU-oracle clocks are 691.20 and
+545.05 seconds. Each returns 992 complete and eight rejected sources without
+operational outcomes; every native response JSON value exactly matches its
+corresponding noninstrumented primary. These clocks remain separate from
+the primary 685.73/537.31-second pair and earlier wave-only captures.
 
 All 13,230 native and 10,251 CPU-oracle numerical calls carry source,
 invocation and matrix/product metadata, including failed searches and
 fallbacks. The CPU oracle has 3,597 checked direct certificates, 605 direct
 failures, 5,440 fallback certificates and 609 fallback failures.
 The four observed native arithmetic regions appear in
-Table~\ref{tab:arithmetic-current-stages}. The wall occupancies overlap across
-concurrent candidates and are not four disjoint fractions of elapsed time.
-Other frontend, export, kernel, observation and retirement work remains
-charged to the whole clock. Ring, defeq and typeclass work stays inside the
-corresponding Lean preprocessing and proof-construction regions;
-the product timer includes building Lean proofs, not just numeric expansion.
+Table~\ref{tab:arithmetic-current-stages}. Wall occupancies overlap across
+concurrent candidates. Other frontend, export, kernel, observation and
+retirement work remains charged to the whole clock. Ring, defeq and
+typeclass work stays inside the corresponding Lean preprocessing and
+proof-construction regions; product timing includes building Lean proofs.
 
 \begin{table}[t]
 \centering
@@ -932,45 +931,56 @@ the product timer includes building Lean proofs, not just numeric expansion.
 \toprule
 Native arithmetic region & CPU (s) & \shortstack{Wall\\occupied (\%)} \\
 \midrule
-Hypothesis preprocessing/linearization & 234.05 & 21.60 \\
-Nonlinear product proof construction & 201.97 & 17.87 \\
-Exported numeric FP/exact LP search & 857.34 & 48.16 \\
-Lean certificate construction/checking & 197.15 & 18.53 \\
+Hypothesis preprocessing/linearization & 250.70 & 52.40 \\
+Nonlinear product proof construction & 211.56 & 48.50 \\
+Exported numeric FP/exact LP search & 859.53 & 78.77 \\
+Lean certificate construction/checking & 208.57 & 47.13 \\
 \bottomrule
 \end{tabular}
-\caption{Complete pooled native diagnostic on 1,000 sources.
+\caption{Complete native eight-queue diagnostic on 1,000 sources.
 CPU counters come from the relevant Lean calling threads or numerical
-children. Each wall occupancy is the union of that region's intervals
-divided by the diagnostic's own 1,245.96-second clock.
+children. Each wall occupancy is the region's interval union divided by
+the diagnostic's own 691.20-second clock.
 Regions overlap and neither column is a disjoint whole-wall partition.}
 \label{tab:arithmetic-current-stages}
 \end{table}
 
-The CPU-oracle numerical services consume 552.04 CPU seconds:
-544.13 in floating-point and exact LP search, 3.11 in numeric product
-generation, 0.26 in exact repair and 0.04 in exact coefficient verification;
-parsing, packing, linearization, response and dispatch account for the
-remainder. Failed direct branches alone consume 76.32 LP CPU seconds and
-failed fallback branches 44.02 seconds. These failures remain included
-rather than inferred from successful certificate checks.
+The CPU-oracle numerical services consume 554.83 CPU seconds:
+546.83 in floating-point and exact LP search, 3.13 in numeric product
+generation, 0.26 in exact repair and 0.04 in exact coefficient verification.
+Parsing, packing, linearization, response and dispatch account for the
+remainder. Rust phase CPU is made exclusive for nested timers; raw wall
+intervals retain their observed overlap.
+Failed direct branches alone consume 76.60 LP CPU seconds and failed
+fallback branches 44.28 seconds.
 
-All exported numeric products and LP search sum to 607.39 seconds of
-invocation wall, 56.64\% of the CPU-oracle own clock. Deleting that entire
-overlapping sum while fixing other work, certificates and fallback choices
-leaves 464.98 seconds, giving
-$1245.96/(1072.37-607.39)=2.67957\times$ relative to this diagnostic's
-matched native reference. Freeing the native internal LP calls as well gives
-the more generous $2.69705\times$ sensitivity.
-These are optimistic fixed-work calculations, not measured GPU acceleration
-or universal scheduler bounds. The exported numerical interval union is
-439.54 seconds, 40.99\% of elapsed; occupancy is not removable critical-path
-time. Neither calculation establishes a below-$1.5\times$ ceiling.
-No old primary clock is substituted into these denominators.
+All exported numeric products and LP search sum to 833.99 interval seconds
+on the 545.05-second oracle clock. Overlap makes this exceed whole elapsed
+time, so subtracting that sum provides no useful finite ceiling.
+Their union is 411.68 seconds, 75.53\% of that same clock. An optimistic
+fixed-timeline compression deleting every occupied instant leaves
+133.37 seconds and gives $691.20/133.37=5.18274\times$ against the
+matched diagnostic native reference. This also deletes concurrent
+non-GPU work; it is neither a scheduler-invariant bound nor measured GPU
+acceleration. Neither calculation establishes a below-$1.5\times$ ceiling.
+
+The cheap floating search fails on 1,888 oracle calls, which then consume
+518.39 CPU seconds in exact search. Their median dimensions are
+82 rows and 230 columns. Exact searches from at least two distinct
+candidates overlap for 221.40 seconds. These are observed CPU-search
+availability intervals; a GPU still owes model preparation, transfer,
+queueing, repair and cancellation.
+
+Type coverage also matters. The direct adapter accepts real and rational
+carriers; 2,348 unsupported-carrier fallback events occur on ten natural-
+or integer-source candidates. Native fallback processes those sources in
+the same cohort. Event counts include recursive tactic branches and are
+not distinct proof counts or predicted savings.
 
 Figure~\ref{fig:lp-size-cost} reports the native LP-size distribution.
 The retained 11-row gate was chosen from an earlier complete native capture
 and is unchanged here. The new capture confirms that the 7,201 smaller
-calls account for only 0.02108 seconds of numeric LP-search CPU.
+calls account for only 0.02463 seconds of numeric LP-search CPU.
 The other 6,029 calls contain almost all numeric search work.
 
 \begin{figure}[t]
@@ -980,7 +990,7 @@ The other 6,029 calls contain almost all numeric search work.
 (13,230 calls). The solid curve weights calls equally; the dashed curve
 weights floating-point and exact LP-search CPU.
 Calls below the retained 11-row gate are 54.43\% of calls but only
-0.00246\% of LP-search CPU. This single-capture distribution is neither
+0.00287\% of LP-search CPU. This single-capture distribution is neither
 a confidence interval nor a GPU speedup estimate.}
 \label{fig:lp-size-cost}
 \end{figure}
