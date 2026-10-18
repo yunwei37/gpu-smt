@@ -42,13 +42,21 @@ for native checking. Failed hints retain native fallback. The original complete
 29,750-source generalization acquisition is running on its frozen earlier build;
 it is not a completed comparison against every newer CPU composition.
 
-Current work exposes already-ready proof goals to the numerical batch interface.
-Original argument-bearing nonlinear goals now form real groups, with1050problems,
-1040native certificate checks and10fallbacks in a15-source qualification.
-Whole84.06s sequential/79.77s batch is selected CPU evidence, not a GPU result.
-Full immutable requests/replies and actual LP shapes distinguish exported problems
-from floating-service work.
-[Implementation and real qualification](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/README.md).
+Current implementation work targets failed arithmetic export and repeated
+fallback. The old direct frontend treated powers above2 as opaque atoms.
+A compact natural-power AST now preserves their polynomial relations outside
+Lean; Lean retains the certificate check. On all111previously affected original
+candidates, olddirect63.96s becomes41.30s (1.54886×), with matching verdicts and
+non-message fields. **This is an affected-subset preflight, not the full1,000
+threshold or a GPU result.** The complete original1,000-source Power/direct/
+native-dual/stock-native block is running with equal resources.
+[Source, qualification, raw results and full plan](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/README.md).
+
+An existing ready-goal adapter also exposes argument-bearing nonlinear goals
+to immutable batches; its15-source qualification forms1050problems,
+1040native checks and10fallbacks. These are exported problems, not proof of
+device-ready batch supply or GPU benefit.
+[Ready-goal implementation and qualification](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/argument-goals/README.md).
 
 RTX5090 executes independently cancellable LP groups using request-sized CUDA
 VMM. The last valid additive portfolio retains native hybrid and CPU HiGHS:
@@ -82,6 +90,9 @@ capture also closes: batch1,127.28s/exact2,502.01s/unit2,479.03s.
 Unit3853cachelookups still provide no validated elapsed benefit; four incomplete
 batch sources become complete and operational differences remain.
 [Complete ProofNet raw data and limitations](artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md).
+Parsed unit-prefix potential is13.44%/18.38%of tactic edges for miniF2F/ProofNet,
+which is not a time saving; costly prefix attempts often precede native fallback.
+[Parsed sharing and actual request costs](artifacts/linarith-oracle-2026-10-17/formal-default/sharing-result-review.md).
 These are the project's SHRED-parser-based native executor, not a full
 upstream SHRED/Kimina service comparison.
 [Complete prefix outcomes and raw data](artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).

@@ -321,3 +321,14 @@ ProofNet-running statement. Literal-power representation implemented/compiled
 and real111affected-original preflight launched; this tests avoidable fallback
 instead of another LPkernel. Sourcepowercorrelation is an admission clue,
 not yet causality or gain. No activeprefixwaiting or replacementrunner.
+
+
+## Today's concrete mechanism and next acceptance boundary
+The implemented literal-power AST has a real affected111-source whole-clock
+gain63.96→41.30s, matching verdict/nonmessage fields. All1000originals are now
+being measured in the declared four-condition block; no selected-subset score
+is promoted into the original1.5criterion. README now leads with this actual
+implementation/frontier and links full evidence. The next decision depends
+on full-cohort cost and tails, not another unprofitable LPkernel or prefixcache
+grid. Staticprefix13.44%/18.38%edge reuse is distinguished from actual time.
+All remaining writer code is frozen; no background-wait loop.

@@ -27,6 +27,17 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — representation mechanism produces a real preflight gain
+Literal natural-power export replaces opaque-power atoms before untrusted
+polynomial search, retaining native Lean certificate checking. All111affected
+originals: olddirect63.96s/new41.30s,1.54886x; native component59.27s,
+all109complete2reject0op, noverdict/nonmessagechanges,6Powerwarningchanges.
+Numericalraces593→176, notdevicebenefit. This selectedsubset doesnot satisfy
+thefull1000criterion. The completeoriginal1000Power/direct/native-dual/stock-native
+normal block is nowrunning, with equal8queues/4CPU4--7/48GiB/officialomega.
+[Source, fulladmission and exactevidence](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/README.md).
+
+
 ### 2026-10-18 — original ProofNet prefix population closes
 All5952originals/186candidateblocks complete. Nativebatch1127.28s,
 exact2502.01s/unit2479.03s; unit3853cachelookups,9716executednodes.

@@ -1,7 +1,7 @@
 # Complete parsed prefix sharing and request-clock costs
 
 This analysis uses both completed original-population captures, not another
-experiment or a new whole-service claim. [Reproduce](../../../../bench/lean-native/linarith-oracle/analyze-prefix-sharing.py)
+experiment or a new whole-service claim. [Reproduce](../../../bench/lean-native/linarith-oracle/analyze-prefix-sharing.py)
 using the retained native-parser records and input order. Native units define
 edges; roots are exact header/statement pairs and reuse stays within original
 32-candidate blocks. No declaration-name/semantic normalization is invented.
