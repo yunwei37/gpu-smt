@@ -2740,3 +2740,5 @@ raw/failed/partial outputs retained. Targeted paper result page15 was rendered
 and visually inspected after c10a8e4;22pages,zeroOverfull. Full-paper milestone
 and independent audit are not claimed; this thread's review is self-review.
 Hourly automation is preserved; goal remains active.
+
+Full GPU raw-proxy self-review refinement:2433records are accepted connections,1113have complete parsedCSR inputs;1320areJSONDecodeError/null-input records, not LP solves or native operational outcomes. Cancellation during frame write is plausible from the child-kill protocol, but raw frame/newline flags were not retained, so cause/source is not invented. Numeric response/batch counters retain their original scope. All parser/handler costs remain inside whole1020.12s. No full rerun or source protocol tuning is introduced for this accounting clarification.
