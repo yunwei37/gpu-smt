@@ -1,8 +1,12 @@
 # Literal natural-power export
-RQ4/E1073. [Mechanism plan](plan.md), [self-review](plan-review.md),
-[admission evidence](admission-evidence.json), [implementation](PowerOracle.lean),
-[untrusted exact AST expansion](arithmetic-batchd.rs), [build](build-receipt.json).
-Both new Lean modules/native library/Rust AST executable compile successfully.
-Matched original111-source native/direct/power normal preflight is launched;
-launch is not completion or benefit. All48GiB,8queues/4CPU4--7,officialomega.
-Existing search/repair/native checker/fallback remain. No GPU/fullmatrix claim.
+RQ4/E1073--E1074. [Mechanism plan](plan.md), [self-review](plan-review.md),
+[implementation](PowerOracle.lean), [exact AST expansion](arithmetic-batchd.rs).
+All111affectedoriginal preflight closes: native59.27s/direct63.96s/Power41.30s,
+each109complete2reject0op,0verdict/nonmessage differences,6Powerwarningchanges.
+Power gives1.54886x overolddirect onthissubset; notthefull1000criterion/GPUresult.
+Races593→176; legacygpuwinnerlabelisCPUHiGHS.
+[Full qualification/raw](qualification-result-review.md).
+A [complete original1000four-condition block](full1000-plan.md) is launched,
+Power/direct/native-dual/stock-native, same8queues/4CPU4--7/48GiB/officialomega.
+Launch isnotcompletion. Shared/privatecodefrozenuntilallfourcellsfinish.
+Noactualdevicework,newsolverparameterorfullGPUmatrix.

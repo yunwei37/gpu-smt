@@ -1,0 +1,70 @@
+{
+  "scope": "All111 E1071 checked-negative/fallback affected originals in original order. Normal observation,8queues/fourCPU4--7/48GiB,officialomega,same dual numerical backend; native is already-oracle-containing component control. Not full1000 continuation score or GPU result.",
+  "methods": {
+    "native": {
+      "whole_seconds": 59.27189287,
+      "counts": {
+        "complete": 109,
+        "rejected": 2
+      },
+      "observer_read_errors": 34,
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": [],
+      "numerical_races": 362,
+      "race_winners": {
+        "cpu-no-certificate": 89,
+        "external-infeasible": 148,
+        "gpu": 117,
+        "cpu": 8
+      }
+    },
+    "direct": {
+      "whole_seconds": 63.963849695,
+      "counts": {
+        "complete": 109,
+        "rejected": 2
+      },
+      "observer_read_errors": 42,
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": [],
+      "numerical_races": 593,
+      "race_winners": {
+        "external-infeasible": 326,
+        "cpu-no-certificate": 146,
+        "cpu": 9,
+        "gpu": 112
+      }
+    },
+    "power": {
+      "whole_seconds": 41.297383151,
+      "counts": {
+        "complete": 109,
+        "rejected": 2
+      },
+      "observer_read_errors": 11,
+      "verdict_differences": [],
+      "non_message_differences": [],
+      "message_only_difference_IDs": [
+        "Proof_09362",
+        "Proof_12656",
+        "Proof_14864",
+        "Proof_16313",
+        "Proof_19487",
+        "Proof_23840"
+      ],
+      "numerical_races": 176,
+      "race_winners": {
+        "gpu": 59,
+        "external-infeasible": 68,
+        "cpu": 9,
+        "cpu-no-certificate": 40
+      }
+    }
+  },
+  "direct_over_power_ratio": 1.548859632609703,
+  "native_component_over_power_ratio": 1.4352457310255688,
+  "preflight_fidelity_qualified": true,
+  "complete1000_admission": true
+}
