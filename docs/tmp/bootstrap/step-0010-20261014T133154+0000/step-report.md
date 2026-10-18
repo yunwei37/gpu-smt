@@ -4315,3 +4315,30 @@ devicecompute;unparsedframescannotbeassignedtosources.Nospeed/novelty
 claimfromahealthyGPUprocess.AllfourRQs/ambition/hourly/goalremainopen.
 
 Paper validation: Tectonic succeeds at22pages withzeroOverfull. Rendered and visually inspectedpages15–16: nativefourregiontable,LP-sizeCDF/caption andknown-answercontroltext arelegible; removedanavoidableone-wordcontinuationbyshorteningtheexistingcross-datasetreference sentence,withoutchangingmeaning.Fullwritingrefinement/milestonereview remainsincomplete.
+
+
+### 2026-10-18 — immediate-admission heavy-tail qualifier and stronger reference
+EXPERIMENT: the fixed ten-source native/CPU pair closes at206.683302312/
+173.262311239s. Immediate independent GPU admission closes170.256469474s
+warm,191.4691713s complete cold lifecycle. Allten sources complete with
+native verdict/non-message parity and the same one warning-only source.
+Six single-LP jobs,three results/three cancellations/allretired,dispatcher0;
+RPC peak1,so no cross-candidate batching or CUDAconcurrency claim.
+197races select194CPUcert,twoCPU-no-cert,oneGPUcert; summed overlapping
+decision6.287659498s isnot a whole partition or the earlier source37cost.
+Warm1.735% lower than CPU becomes10.508% higher withcoldcost; one selected
+tail point doesnot admit another fullGPUvariant matrix.
+Actual JobUID deleted,labReady,otherWorkspaceRunning;four sampler errors
+and omitted aggregate server memory remain explicit limits.
+
+The full1000source native8queue reference closes685.730742286s,992/8/0,
+exact complete nativeJSON parity withthe earlier1237.370439599swave reference.
+CPUoracle counterpart isstill collecting and not declared complete.
+This is a stronger existing CPUinterface and therefore material evidence
+against transferring old GPU/wave ratios or old opportunity clocks. The
+earlier 1.599756xanswer-aware control remains wave-only,not a currentqueue
+ceiling or validaccelerationresult. No new systems contribution is claimed.
+WRITE propagates this baseline distinction to README,evaluation,paper and
+the daily reflection. REVIEW is root self-review,not independent audit.
+Sourcecde662a benchmark-smokeCI isactually completed/success,run39110354163.
+All healthycaptures preserved; no waitinggoalrounds or otherexecutors.

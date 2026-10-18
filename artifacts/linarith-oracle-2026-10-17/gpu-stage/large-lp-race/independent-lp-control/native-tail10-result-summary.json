@@ -1,0 +1,79 @@
+{
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 206.683302312,
+      "native_reference_ratio": 1.0,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": []
+    },
+    "oracle-hint": {
+      "whole_seconds": 173.262311239,
+      "native_reference_ratio": 1.1928924463376152,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        1
+      ]
+    },
+    "oracle-gpu": {
+      "whole_seconds": 170.256469474,
+      "native_reference_ratio": 1.21395270881946,
+      "counts": {
+        "complete": 10
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        1
+      ]
+    }
+  },
+  "dispatch_groups": 6,
+  "group_sizes": {
+    "1": 6
+  },
+  "client_RPC_job_peak": 1,
+  "race_winners": {
+    "cpu": 194,
+    "cpu-no-certificate": 2,
+    "gpu": 1
+  },
+  "job_events": {
+    "available": true,
+    "submitted_jobs": 6,
+    "result_jobs": 3,
+    "cancel_requested_jobs": 3,
+    "client_retired_jobs": 6,
+    "submitted_batch_size_histogram": {
+      "1": 6
+    },
+    "submitted_distinct_source_histogram": {
+      "1": 6
+    },
+    "server_reported_result_solver_seconds": 0.666,
+    "submitted_without_result_ids": [
+      "1f29bc31-4453-41ad-ad1f-41657f208b5a",
+      "8b5a8532-7dda-4bb9-88c7-c6bbf4db068a",
+      "e04bfeb2-bd38-4fbf-928d-c8516f7686f5"
+    ],
+    "submitted_without_client_retirement_ids": [],
+    "summed_client_batch_retirement_wall_seconds": 2.07773528,
+    "dispatcher_retirement": [
+      {
+        "event": "dispatcher_retired",
+        "monotonic_ns": 742635282485233,
+        "pending_jobs": 0
+      }
+    ],
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  },
+  "scope": "Purposely selected native-heavy10,not representative final performance; independent jobs are not fused batches or measured simultaneous CUDA kernels."
+}

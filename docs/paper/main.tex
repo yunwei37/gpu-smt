@@ -1052,8 +1052,15 @@ This answer-aware diagnostic is excluded from valid CPU/GPU speedup scores.
 It retains process setup, lookup and IPC and is not a strict zero-cost
 upper bound. Its result therefore neither establishes achievable GPU
 acceleration nor supports a below-$1.5\\times$ impossibility claim.
+A subsequent native-only cell uses the upstream eight sequential queues
+on the same 1,000 sources, at most eight candidate tasks, four CPUs 0--3
+and 48\\,GiB. It completes in 685.73 seconds with identical complete
+native response JSON to the earlier wave reference. Its matched CPU-oracle
+cell is still collecting. The wave GPU ratio and answer-aware control above
+cannot be transferred to this stronger CPU submission interface.
+The upstream queue API is a baseline correction, not our systems contribution.
 Negative route closure requires applicable evidence that GPU cannot
-push the best valid overall result beyond $1.5\times$.
+push the best valid overall result beyond $1.5\\times$.
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations

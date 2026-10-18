@@ -1,12 +1,69 @@
 # Daily repository maintenance and research reflection — 2026-10-18 local
 
 ## Repository maintenance
-Current main keeps source,benchmarks,raw artifacts and docs/paper in their existing homes. README now distinguishes current full performance clocks, paired diagnostic clocks and answer-aware omission controls; older failed records remain linked instead of being deleted. The published LP figure is regenerated from the latest complete pooled native capture with its CSV/data source and correct unchanged gate provenance. Source-native submission options reuse the existing collector/API; no new service,Workspace,scheduler,model,credential or storage setting is introduced. Other authors' dirty files remain untouched. The single hourly gpu-smt-osdi remains active; noAgent/subagent/OMP.
+
+Source, benchmarks, raw artifacts and docs/paper retain their existing homes.
+README and evaluation distinguish current primary performance, paired
+diagnostics and answer-aware controls. The complete LP figure has its CSV,
+source and unchanged gate provenance. New collector options use the existing
+native API and existing finite GPU lifecycle. Historical failures and other
+authors' work remain preserved.
+
+Ten closed runtime logs are losslessly compressed after checking that no
+process has them open. Their retained gzip contents are compared with the
+original bytes. This recovers 1,471,750,144 bytes, bringing the project volume's
+free space to about 4.10 GB at that observation. Published raw archives and
+active collectors are preserved. The compression receipt names both paths.
+
+Paper source compiles to 22 pages with no overfull boxes. Rendered pages 15–16
+are visually inspected for the four-region table, LP distribution figure and
+known-answer result. This is targeted validation, not completion of full
+writing refinement or a paper acceptance review.
+
+No new Workspace, scheduler, persistent GPU server, model, credential or
+storage setting is introduced. The one hourly task remains active. All work
+is by this root thread; reviews are self-review.
 
 ## How to make substantive progress
-The blocking uncertainty is the gap between abundant summed LP wall and the small actual GPU effect,not another correctness or narrow-kernel exercise. The complete current-family profile finds607.39summed numeric-product/LP seconds in1072.37elapsed CPU-oracle seconds, but439.54seconds of interval union; neither is a causal subtraction. Meanwhile the collector artificially waits for each8source array, and actual task-slot occupancy is only30.61%in the native capture. CPU-only numerical improvement or generic batching alone does not establish systems novelty.
 
-The most promising next steps are the already-running full fixed-coefficient omission control to measure remaining native work, and the real source-native8queue qualification at the same8candidate/4CPU eligibility to test the wave barrier. Both can change the next implementation decision. The omission control is answer-aware and excluded from legitimate CPU/GPU performance claims. The queue path must benefit its native/CPU controls and pass matching GPU qualification before another full variant comparison. If it does not, retain its negative evidence and do not open a parameter grid. An actual GPU route closure still needs applicable opportunity evidence under the user's1.5x criterion.
+The central uncertainty is why numerical search has substantial removable
+cost but current GPU execution changes whole verification time very little.
+The full answer-aware control now takes 767.62 seconds versus fresh native
+1,228.00 seconds: 1.600x with Lean checking retained. It cannot count as valid
+acceleration, but it prevents a premature below-1.5x impossibility claim.
+An actual solver has little remaining room for search, transfer and scheduling.
+
+More batching alone is insufficient. The original joint-model GPU run cancels
+311 of 384 batches. Independent cancellation removes that coupling, yet the
+24-source GPU qualifier remains slightly slower than CPU oracle. The next
+causal question is precise: source 37 waits 22.548 seconds for a second GPU
+request and never gets submitted. That source is absent from the first
+24-source qualification. Test the already-frozen native slowest ten with
+immediate independent admission and fresh matching CPU/native references.
+A negative result rejects this integration without pretending to prove all
+GPU designs impossible. Do not replace this question with a solver flag grid.
+
+The common baseline also matters. Native eight-queue submission is already
+upstream; it is not our contribution. Its real CPU qualification improves
+27.22 to 23.48 seconds. A full matched native/CPU run through that interface is
+now needed before any new representative GPU claim. Generic batching, caches,
+ordinary native compilation and an external arithmetic oracle do not by
+themselves establish new systems novelty.
 
 ## Actions implementing this reflection
-The current paired native/oracle diagnostic is complete with exact per-primary native responses. Full omission data contain16015source-identified request keys with no conflicting coefficient answers; its fresh-native/control sequence is running onCPU0–3. The native/CPU source-native queue qualifier completes all24sources onCPU8–11,maximum8timed candidates: native30.48→29.55s,CPUoracle27.22→23.48s. Hardware qualification is next under the same protocol and total CPU eligibility. These are real runs and supporting controls,not new paper contributions or anOSDI acceptance claim.
+
+The complete own-clock profile and full known-answer control are in main.
+The eight-queue GPU qualifier and independent-cancellation qualifier are
+complete with raw native responses, task spans, job cancellation/retirement
+and cold lifecycle receipts. Both GPU Jobs are deleted with lab Ready and the
+other Workspace Running.
+
+The full 1,000-source native/CPU queue comparison starts at 07:59:10 UTC on
+CPUs 0–3. The frozen ten-source tail native/CPU comparison completes with
+206.68 and 173.26 seconds. Its matching immediate-admission GPU qualification
+completes in 170.26 warm seconds after its 08:11:32 UTC start on CPUs 8–11. Its complete cold lifecycle is 191.47 seconds; all ten native verdicts match, all six single-LP jobs retire, and the Job is deleted. RPC peak is one, so no actual cross-candidate batching is claimed for that tail capture. The original prefix
+capture is preserved on its own CPUs. These are real experiments rather than
+repeated health polling. Full RQ coverage, a supported systems contribution
+and the paper's complete research process remain unfinished.
+
+The full source-native queue reference has now closed at 685.73 seconds with exact complete native JSON parity, versus the older 1,237.37-second wave reference. The paired CPU oracle is pending. This stronger baseline invalidates transferring the earlier wave-only opportunity denominator; any subsequent attribution must use the queue protocol and its own clocks. Published source commit cde662a also passes benchmark-smoke CI: https://github.com/yunwei37/gpu-smt/actions/runs/39110354163 .

@@ -2891,3 +2891,21 @@ thattailquestion.Newten-sourceinputisfrozenfrompriornativeobservation
 inoriginalorder,withsameCPU/resourcesandnativeproofauthority.NewfullGPU
 matrixremainsunadmitted;noCPU-onlyprematureprojectclosure.Same-thread
 self-reviewonly;otherAgent/subagent/OMPnotused.
+
+
+### 2026-10-18 — self-audit of heavy-tail and stronger native reference
+Joined allten IDs in the original native-selected order; outcome/non-message
+comparisons have zero differences. One warning-only acceptedsource matches
+betweenCPUandGPU. Counted six single-model jobs and actual RPCpeak1 rather
+than calling ready groups fused batches. Each jobretirement is acknowledged;
+cold191.469s includes startup/client/retirement,not silentlyamortized.
+One selectedtail point with warm1.735%variation doesnot establish a useful
+representativeGPUadvance or authorize a new fullvariant matrix.
+Copied onlytheclosed1000nativecell;compared every full responseJSON with
+the priornative reference and confirmed exactparity/992complete/8rejected.
+The matching CPUcell remainsactive. Its CPUeligibility/protocol areidentical
+to this newreference,but neither priorwaveGPU nor recordedanswercontrol
+uses this queue protocol. Their denominators cannot bespliced into685.731s.
+This changes the observed strongestbaseline frontier withoutchanging any
+RQ,InitialNarrative,OSDItarget or closedconstructor disposition. Root
+self-review only; no independent audit/acceptance claim.

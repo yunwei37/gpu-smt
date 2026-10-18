@@ -16,6 +16,13 @@ objective retained. **The first full GPU race is 1.7% faster than the CPU oracle
 server, and 0.15% faster when its cold lifecycle is charged; this single
 observation does not establish stable GPU benefit.**
 
+The stronger upstream eight-queue native interface now completes all1,000
+sources in **685.73s**,with exact native response parity versus the older
+1,237.37s eight-item-wave reference. Its matched CPU oracle cell is pending.
+The older GPU ratio below is scoped to waves and does not show acceleration
+over this stronger CPU interface.
+[Closed reference and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/native-reference-review.md).
+
 The current [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
 checks the same 1,000 arithmetic-heavy released GoedelWorkbook candidates.
 An untrusted external oracle proposes coefficient certificates; Lean checks
@@ -107,7 +114,7 @@ A complete known-answer numerical omission control returns actual recorded
 coefficients while Lean still checks every proof: fresh native1,228.00s,
 native omission866.84s,AST omission767.62s(1.600×),all1,000source verdicts
 preserved with zero lookup misses. **This is a diagnostic,not a valid CPU/GPU
-speedup.** It prevents a premature below1.5× impossibility claim.
+speedup.** It does not establish a below1.5× bound for that wave protocol and cannot be transferred to the stronger native-queue reference.
 [Raw control and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/fixed-certificate-control/full1000-result-review.md).
 
 ## Repository guide
