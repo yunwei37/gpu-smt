@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-18T05:59:08.185585+00:00",
+  "pid": 137424,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/highs-portfolio-qualification24",
+    "--limit",
+    "24",
+    "--methods",
+    "oracle-hint",
+    "oracle-highs",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/native-pool-control24-pooled/rep1-fast-hybrid"
+  ],
+  "scope": "strongest alternative CPU numerical-solver control: CPU hybrid AST oracle versus CPU hybrid/HiGHS portfolio, same pooled native reference, real24,width8,CPU8--11,48GiB,row11; no GPU allocation or CUDA call; the legacy race winner label gpu means external numeric child here and is not GPU attribution",
+  "reason": "test whether any oracle gain comes from a better numerical solver rather than GPU hardware; part of baseline qualification, not a parameter grid or new CPU-runtime route"
+}

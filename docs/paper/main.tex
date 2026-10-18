@@ -750,12 +750,14 @@ CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
 outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
 These observations remain specific to the stacked headers; the corrected
 comparison and final best-CPU-or-GPU threshold decision remain open.
-The first complete corrected-family CPU pair under 48\,GiB takes
-2,234.69 seconds for the native reference and 1,717.80 seconds for the
-direct oracle, a $1.30091\times$ ratio. Both return 992 complete and
-8 rejected sources without operational outcomes. The same 88 source payloads
-differ only in warning diagnostics. Two further alternating pairs are active,
-so this observation is not the final aggregate threshold result.
+All three corrected-family CPU pairs under 48\,GiB are complete.
+Native clocks are 2,234.69, 2,234.14 and 2,222.77 seconds; direct-oracle
+clocks are 1,717.80, 1,751.17 and 1,695.88 seconds.
+The aggregate ratio is $1.29560\times$ (6,691.60/5,164.85 seconds).
+Every cell returns 992 complete and 8 rejected sources without operational
+outcomes, with the same 88 warning-only changes. These clocks remain separate
+from the historical unbounded-address-space pairs in
+Table~\ref{tab:arithmetic-direct-pairs}.
 A family-only header and owner-cancellation qualification subsequently
 returns 16 complete and 8 operational outcomes on 24 real sources in
 630.37 seconds, against 46.05 seconds and 24 complete outcomes for the
@@ -763,7 +765,7 @@ corrected native reference. Its 106 support calls produce 104 completed
 singleton GPU batches and two expired-owner cancellations.
 All observed server threads share CPUs 0--3 with that preflight's client.
 This variant fails native qualification and is not admitted to another
-full GPU comparison. The corrected CPU paired series remains active.
+full GPU comparison. The corrected CPU paired series is complete; heterogeneous execution remains open.
 A Windows archive-argument overflow loses the preflight server stdout and
 exact provisioning/retirement stopwatches; client models, numeric replies,
 batch events and native responses remain retained. The cached-container
@@ -786,7 +788,7 @@ Reference / prototype & 1.347 & 1.347 & 1.346 \\
 \end{tabular}
 \caption{Complete native verification of the same enriched 1,000-source
 cohort per cell, with alternating method order. Whole times include the common
-resource observer and normal retirement. These CPU-stage pairs fall below $1.5\times$; the final CPU/GPU
+resource observer and normal retirement. These historical, unbounded-address-space CPU-stage pairs fall below $1.5\times$; the final CPU/GPU
 comparison remains open. They establish no GPU benefit.}
 \label{tab:arithmetic-direct-pairs}
 \end{table}
@@ -901,6 +903,72 @@ All failed work and fallbacks are still charged by the complete primary
 clocks. The numeric product work already removed from Lean is small on
 these observed successful branches; no additional GPU measurement or
 new kernel is inferred from it.
+
+\paragraph{Complete corrected-family wall-cost profile.}
+A separate complete diagnostic on the same 1,000 sources, width four and
+CPUs 4--7, records its own native and CPU-oracle clocks:
+1,774.24 and 1,342.06 seconds, respectively. Each returns 992 complete
+and 8 rejected sources with no operational outcomes. All 13,230 native
+and 10,251 oracle LP calls carry source, invocation and matrix-size metadata;
+failed searches and fallback calls remain included.
+Native LP search occupies 856.90 seconds of summed invocation wall,
+or 48.30\% of the native whole clock. Under fixed other work and with
+overlap conservatively charged, setting that cost to zero gives
+$1774.24/(1774.24-856.90)=1.93412\times$.
+This is an optimistic conditional sensitivity, not measured GPU acceleration
+or a theorem about a different scheduler.
+For the CPU oracle, all LP calls and numeric product expansion sum to
+551.27 seconds, giving a $2.24363\times$ zero-cost sensitivity relative
+to that diagnostic's matched native reference.
+The additional native product timer includes Lean proof construction and
+cannot all be classified as GPU-replaceable numeric work.
+Neither calculation excludes the $1.5\times$ target for its own capture;
+neither is rescaled to the earlier 2,234.69-second primary run.
+
+Figure~\ref{fig:lp-size-cost} shows why request size is used for GPU eligibility.
+The 7,201 calls with fewer than 11 rows account for only 0.0218 seconds
+of numeric LP-search CPU. The other 6,029 calls account for 853.11 seconds.
+These CPU totals characterize the size distribution, not disjoint whole-wall
+fractions. The gate is derived once from this complete native capture
+(median row count 10), rather than selected by GPU timing.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/linarith-lp-size/lp-size-cost.pdf}
+\caption{LP-size distribution in one complete corrected-family native
+diagnostic (13,230 calls). The solid curve weights calls equally; the dashed
+curve weights measured numeric floating-point and exact LP-search CPU.
+Calls below 11 rows are 54.43\% of calls but only 0.00256\% of LP-search CPU.
+The curves describe this single capture; they are not confidence intervals
+or GPU speedup estimates.}
+\label{fig:lp-size-cost}
+\end{figure}
+
+\paragraph{Concurrent native and heterogeneous comparison.}
+At width eight and the same CPUs 0--3, the stronger native reference reuses
+independent native numerical-daemon handles with no LP search under the
+handle-list mutex. It takes 1,237.37 seconds for all 1,000 sources.
+The CPU AST oracle takes 1,037.85 seconds, a $1.19224\times$ ratio.
+Both return 992 complete and 8 rejected sources, with matching verdicts and
+non-message native responses; 88 source payloads differ only in warnings.
+A serial-native control takes 1,600.63 seconds and is not used as the
+strongest reference.
+These are one full paired observation, not replicated estimates.
+The width-four diagnostic above does not provide a zero-cost bound for
+this faster pooled reference.
+
+The GPU implementation races each eligible LP against the original CPU
+hybrid; only an exactly repaired coefficient certificate can win.
+It cancels and reaps the other numerical child, and batches at least two
+live requests from concurrent candidates. Withdrawal cancels a shared job
+and requeues its surviving members while their CPU shadows continue.
+Small hardware qualification verifies actual two-source batches and native
+outcome agreement. The full matched 1,000-source GPU cell is running;
+its whole and cold-lifecycle results are pending.
+Child creation, communication, contention and cancellation can make a race
+slower than its CPU shadow; the design alone supplies no worst-case
+no-slowdown guarantee. Negative route closure requires applicable evidence
+that GPU cannot push the best valid overall result beyond $1.5\times$.
 
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
@@ -1286,15 +1354,5 @@ end-to-end bound. The batch interface therefore has no admitted GPU provider.
 Another narrow backend requires evidence of useful independent work with
 complete setup, transfer and fallback costs.
 
-
-% GPU continuation correction 2026-10-18
-\paragraph{Current GPU disposition.}
-The failed single-request PDLP integrations bound those integrations, not the GPU route.
-The corrected native run of 2,234.69 seconds did not collect full phase intervals;
-earlier diagnostic intervals cannot be relabelled as its wall profile.
-A corrected-family phase capture, size-gated CPU/GPU racing, and
-matched-concurrency batching remain under evaluation.
-Negative route closure requires an applicable measured zero-cost bound below
-the predeclared $1.5\times$ threshold.
 
 \end{document}

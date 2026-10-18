@@ -32,36 +32,40 @@ warning differences. **Historical CPU stage: 1.34668×. Single-request GPU PDLP 
 These historical CPU pairs inherited unbounded address space. Current captures
 use 48 GiB and keep their clocks separate. Header inspection also found stacked
 old/new arithmetic elaborators in the GPU integration; a correction passes real
-24-source CPU qualification. Three alternating full CPU pairs now measure the
+24-source CPU qualification. Three alternating full CPU pairs measure the
 corrected headers under 48 GiB; the corrected GPU preflight has now failed with 8 operational outcomes.
 The hourly research automation is active; this CPU result is not project closure.
 [Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
 retain every pair and the post-fault rebuild lineage. Both full1,000-source
 [phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)
 are complete, with native responses matching their primary captures.
-The first corrected-family, 48 GiB CPU pair is complete: native **2,234.69 s**
-versus direct oracle **1,717.80 s**, or **1.30091x**. Both return 992 complete
-and 8 rejected sources with no operational failure; 88 accepted-source
-responses differ only in warnings. The second corrected pair is also complete: native2,234.14 s versus oracle1,751.17 s (1.27580x), with the same992/8/0 outcomes; the final alternating pair remains.
-[First complete corrected pair](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).
-This is not the final three-pair threshold decision.
+All three corrected-family CPU pairs under 48 GiB are complete: native
+**6,691.60 s** total versus CPU oracle **5,164.85 s**, or **1.29560×**.
+Every cell returns 992 complete / 8 rejected / zero operational outcomes;
+the same 88 responses differ only in warnings.
+[Complete corrected series](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/three-pair-result.json).
+This result remains separate from the historical 1.34668× epoch.
 
-The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight takes 630.37 seconds for 24 attempts, with 16 complete and 8 operational outcomes; this rejects that integration, not the GPU route. Corrected-family wall profiling, size-gated CPU/GPU racing and matched-concurrency batching are the next admitted work. Original-population prefix timing and the corrected CPU pairs continue. The final best-valid-CPU/GPU 1.5x decision remains open. GPU route closure requires a measured, applicable zero-GPU-cost bound below 1.5x; prior profile clocks must not be rescaled to the corrected 2,234.69 s native run.
+The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight takes 630.37 seconds for 24 attempts, with 16 complete and 8 operational outcomes; this rejects that integration, not the GPU route. Corrected-family wall profiling and size-gated, concurrent CPU/GPU racing are now implemented. Original-population prefix timing continues. The final best-valid-CPU/GPU 1.5x decision remains open. GPU route closure requires a measured, applicable zero-GPU-cost bound below 1.5x; prior profile clocks must not be rescaled to the corrected 2,234.69 s native run.
 
 Large-LP CPU/GPU racing and real minimum-two-request batches are now
 implemented and qualified on24 sources. Reusing independent native daemon
 handles removes the repeated process-start cost: CPU-only21.12 s and GPU21.55 s,
 both with matching native outcomes. These small qualification timings are not
 a full-population speedup or final threshold decision. The corrected-family
-1,000-source wall profile is collecting; GPU remains under evaluation.
+1,000-source wall profile is complete; GPU remains under evaluation.
 [Race code, raw qualification and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/pooled/result-review.md).
 
 The complete corrected-family1,000-source profile gives an LP-only conditional
 zero-cost sensitivity of **1.93412x**, so it does not rule out1.5x.
 The CPU-oracle numeric-product/all-LP sensitivity is **2.24363x** relative
 to its matched native diagnostic. These use their own captured clocks and
-are not measured GPU speedups. A stronger native-pool baseline and CPU oracle
-are now measured at width8/CPU0--3; the full GPU cell follows them sequentially.
+are not measured GPU speedups. The stronger width-8 native-pool reference completes in **1,237.37 s** and
+CPU oracle in **1,037.85 s** (**1.19224×**), with matching 992/8/0 outcomes.
+The full GPU cell started at 06:02 UTC on the same CPU0–3 eligibility and
+original 1,000 sources. Its result remains pending. The width-4 profile's
+sensitivity cannot be rescaled to this faster pooled-native denominator.
+[Complete pooled CPU pair](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-cpu/result-review.md).
 [Complete profile](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md)
 and [full comparison protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-plan.md).
 

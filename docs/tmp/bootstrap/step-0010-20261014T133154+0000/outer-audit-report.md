@@ -2626,3 +2626,33 @@ EXPERIMENT_GATE remains active for full pooled CPU/GPU results. WRITE_GATE
 and whole-paper REVIEW_GATE remain incomplete; all review here is self-review.
 Hourly gpu-smt-osdi remains ACTIVE with unchanged hourly frequency and updated
 user criterion. No subagents, OMP or native Codex research sessions are used.
+
+
+### 2026-10-18T06:15Z — full pooled CPU pair and targeted paper propagation
+The stronger pooled-native width8/CPU0–3 reference closes at1237.370439599s;
+CPU AST oracle at1037.849203905s, ratio1.192244919x. Each992/8/0, zero
+verdict/non-message differences and88 warning-only source changes; all1000
+task spans retained. Serial-native clean1600.626538715s is retained separately,
+not selected as the faster baseline. One pair does not imply replication.
+Actual top1%/10% source rankings and per-method task intervals are archived.
+Their legacy phase attachment is explicitly historical and is not promoted
+to a current pooled decomposition.
+
+The finite lifecycle consumed the CPU process exit and actually started GPU
+full1000 at06:02:44Z; width8,CPU0–3,48GiB,minrows11,minbatch2. No duplicate
+writer/collector/agent was started. A supporting CPU-only HiGHS24 qualification
+closes27.4791→25.8360s, all24complete; legacy external-child label 'gpu' is
+explicitly CPU HiGHS in this control, not physical GPU. This is not a full
+result or algorithm-attribution claim.
+
+WRITE_GATE targeted propagation updates corrected CPU three-pair aggregate,
+own-clock profile and measured row-size distribution, stronger pooled baseline
+and pending GPU. The row CDF is computed from13230actual native LP records and
+LPsearchCPU, not whole wall; single-capture/no-CI scope is explicit. The obsolete
+trailing GPU-status paragraph is replaced at the relevant arithmetic result.
+No title/abstract/RQ/contribution/narrative meaning changes. Full writing loop
+and whole-paper milestone review remain incomplete. All checks are root
+self-review; no independent-audit claim. Current profile1.93412x is conditional
+and not portable to the faster pooled denominator; no negative route closure.
+
+Targeted validation: paper compiles to22 pages, no Overfull boxes; changed pages14/15 inspected, including grayscale figure4. A first annotation crossed its eligibility line and was moved below the CDF. Figure axes are final-column size3.375in with8pt text; exported PDF/CSV and one-capture metric scope retained. No full-paper milestone or independent-review claim.

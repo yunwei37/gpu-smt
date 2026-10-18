@@ -566,3 +566,7 @@ methods withoverlap/oldprofilescopes. Completepairraw ispublished; reversed
 pair2auto-startsunderunchangedcontroller. Thisisnotfinalthree-pair orOSDIresult.
 No newGPU/kernel/solvervariant,activecapturechange orindependentreviewer.
 [Completepair self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).
+
+
+## Full pooled CPU comparison (2026-10-18)
+Strong pooled-native1237.37044s vs CPU AST oracle1037.84920s, ratio1.192244919x; each992/8/0, all native verdict/non-message fields agree,88 warnings. This is one width8/CPU0–3 pair under48GiB. GPU full started06:02UTC and remains pending. The separate width4 cost profile cannot be rescaled to this stronger denominator. [Complete results, raw outcomes, task tails and limits](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-cpu/result-review.md).
