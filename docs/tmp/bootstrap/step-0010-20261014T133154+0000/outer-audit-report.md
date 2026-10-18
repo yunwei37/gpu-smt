@@ -2438,3 +2438,22 @@ Checked1000sourceproofIDs/sourcebodies, realGPUtop10/100CPUvectors, incompleteGP
 
 ## Root self-audit: public-data reproducibility
 Executedfrompublishedcompressedrawalone andcomparedentirederivedJSON, not justheadlinevalues.134640Leanrecords,5invertiblesplices,13414numericcallsand1000sourcesmatch. Exacthere-docexits0; tempcleanupverifiedandrawunchanged. Fourmissinglabels/product-provenanceunknownsnotremovedbyreplay. Dedicatedphysicalcores0--3stillsharememory/I/Owithactivecaptures; no isolationclaim. This is self-reviewandartifactreproducibility, not RQperformance progress orindependentaudit. ExistingCPUcomparisonisstillthenextperformance decision.
+
+## Root self-audit: completed control block and header correction
+User intent checked: deliver real GPU evaluation before final closure, use the
+better validCPU/GPU result, preserve48GiB failures, no Agents/OMP/subagents,
+no minute goal polling, publish meaningful steps. The original full comparison
+is now closed and archived by its existing one-shot pidfd collector. It loses
+and GPU has eight operational changes; no speedup or correctness equivalence is
+invented. New import lookup reveals real failure backtracking into legacy
+handlers; family-only correction is necessary experiment repair, not a numeric
+tuning grid. Real24CPU preflight gives originaloracle benefit; slower HiGHS and
+hint-only ablation are excluded from new full captures, with raw retained.
+CorrectedGPUpreflight is active; no outcome prejudged.
+Targeted paper writing check follows paper-writing-style: must-fix stale status,
+wrong denominator/resource scope and partial counters corrected; no cosmetic
+rewrite of scientific contract. Tectonic compile and targeted visual checks
+are recorded, not a full12roundWRITE or whole-paper acceptance review.
+Independent audit remains missing because all reviews must stay in root.
+Next decisive work is corrected native/GPU qualification and matched full
+comparison, never another provenance-only loop or CPU-only premature closure.

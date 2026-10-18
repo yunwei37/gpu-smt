@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-18T02:08:57Z",
+  "pid": 124920,
+  "start_ticks": "72070969",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/header-clean-gpu24",
+    "--input",
+    "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/direct-feasibility-native24-input.jsonl",
+    "--methods",
+    "oracle-gpu",
+    "--affinity",
+    "0",
+    "1",
+    "2",
+    "3",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/header-clean24/rep1-fast-hybrid"
+  ],
+  "host": "10.42.1.200",
+  "RLIMIT_AS": 51539607552,
+  "scope": "real24sources, corrected arithmetic import family, phase-I PDLP/crossover plus owner cancellation, no numerical warmup"
+}

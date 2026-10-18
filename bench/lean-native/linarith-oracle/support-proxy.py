@@ -50,33 +50,34 @@ def solve_highs(q):
  point=h.getSolution().col_value if h.getModelStatus()==highspy.HighsModelStatus.kOptimal else None
  return {'primal':point,'state':state,'engine':'HiGHS','solver_seconds':h.getRunTime(),'build_ns':packed-t,'call_ns':done-packed}
 def solve_gpu_batch(items):
- # Original certificate feasibility systems, with zero objective. No artificial
- # slack: first-primal-feasible on phase I would accept a trivial slack point.
- values=[];indices=[];offsets=[0];rhs=[];slices=[];base=0
+ # Phase I keeps no-certificate systems feasible. Keep the measured PDLP+
+ # crossover mechanism, with corrected client lifetime and header composition.
+ values=[];indices=[];offsets=[0];rhs=[];slices=[];objective=[];base=0
  for item in items:
   q=item.q;n=q['ncols'];r=len(q['rhs']);slices.append((base,n))
   for row in range(r):
    for k in range(q['offsets'][row],q['offsets'][row+1]):
     indices.append(base+q['indices'][k]);values.append(q['values'][k])
+   indices.extend([base+n+2*row,base+n+2*row+1]);values.extend([1.,-1.])
    offsets.append(len(values))
-  rhs.extend(q['rhs']);base+=n
+  rhs.extend(q['rhs']);objective.extend([0.]*n+[1.]*(2*r));base+=n+2*r
  channel=grpc.insecure_channel(a.host+':5001');stub=rpc.CuOptRemoteServiceStub(channel)
  job=None;begin=time.monotonic_ns()
  try:
-  model=data_pb.OptimizationProblem(A_values=values,A_indices=indices,A_offsets=offsets,c=[0.]*base,b=rhs,variable_lower_bounds=[0.]*base,variable_upper_bounds=[float('inf')]*base,constraint_lower_bounds=rhs,constraint_upper_bounds=rhs,row_types=b'E'*len(rhs),objective_scaling_factor=1.)
-  settings=data_pb.PDLPSolverSettings(method=data_pb.PDLP,detect_infeasibility=True,first_primal_feasible=True)
+  model=data_pb.OptimizationProblem(A_values=values,A_indices=indices,A_offsets=offsets,c=objective,b=rhs,variable_lower_bounds=[0.]*base,variable_upper_bounds=[float('inf')]*base,constraint_lower_bounds=rhs,constraint_upper_bounds=rhs,row_types=b'E'*len(rhs),objective_scaling_factor=1.)
+  settings=data_pb.PDLPSolverSettings(method=data_pb.PDLP,crossover=True)
   request=core_pb.SolveLPRequest(header=core_pb.RequestHeader(version=1,problem_category=data_pb.LP),problem=model,settings=settings)
   job=stub.SubmitJob(service_pb.SubmitJobRequest(lp_request=request)).job_id
   with lock:pending_gpu[job]=items
-  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'rows':len(rhs),'cols':base,'nnz':len(values),'formulation':'original_equalities_zero_objective','settings':{'method':'PDLP','detect_infeasibility':True,'first_primal_feasible':True,'crossover':False}})
+  append_record(a.log+'.batches',{'event':'submit','job_id':job,'start_ns':begin,'batch_ids':[x.q['request_id']for x in items],'rows':len(rhs),'cols':base,'nnz':len(values),'formulation':'phase_I_artificial_slack','settings':{'method':'PDLP','crossover':True,'first_primal_feasible':False}})
   cancel_abandoned()
   status=stub.WaitForCompletion(service_pb.WaitRequest(job_id=job))
   response=stub.GetResult(service_pb.GetResultRequest(job_id=job));sol=response.lp_solution
   point=list(sol.primal_solution)
-  # A floating hint never proves feasibility. Exact CPU repair/check and Lean
-  # decide acceptance, including dense/inaccurate/infeasible solver output.
+  # Termination status is not proof authority. Any finite hint must still pass
+  # unchanged exact repair/verification and Lean checking, otherwise fallback.
   usable=len(point)==base and all(math.isfinite(x)for x in point)
-  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'primal_objective':sol.primal_objective}
+  common={'job_id':job,'state':data_pb.PDLPTerminationStatus.Name(sol.lp_termination_status),'engine':sol.solved_by,'generic_iterations':sol.nb_iterations,'message':response.error_message or sol.error_message,'rpc_status':response.status,'batch_ids':[x.q['request_id']for x in items],'batch_size':len(items),'batch_rows':len(rhs),'batch_columns':base,'batch_nnz':len(values),'batch_solver_seconds_shared':sol.solve_time,'batch_start_ns':begin,'batch_end_ns':time.monotonic_ns(),'phase1_objective':sol.primal_objective}
   append_record(a.log+'.batches',dict(common,event='result'))
   return [dict(common,primal=point[start:start+n]if usable else None)for start,n in slices]
  finally:

@@ -1,0 +1,16 @@
+# Correct arithmetic elaborator composition before further performance claims
+2026-10-18. Root implementation and self-review. This is a concrete integration fault, not an unproductive solver/kernel/tolerance variant.
+
+## Evidence and scope
+Actual Lean4.27 environment lookup lists six elaborators for each linarith/nlinarith syntax kind: BatchOracle, BatchBaseline, legacyOracle, legacyBaseline, Stages, stockMathlib. SDK Lean/Elab/Tactic/Basic.lean handles ordinary elaborator failure by restoring state and trying the next entry. The new methods set both the batch flag and the legacy oracle binary variable, enabling duplicate old attempts after new failures. Inactive entries also elaborate arguments before their run guard. Current CPU capture has persistent legacy arithmetic/farkas children, consistent with those reachable legacy paths. This does not prove that every tactic duplicates work or erase the separately measured PDLP444s negative-instance cost.
+
+The measured first fullGPU/activeCPUcontrols are retained as their exact stacked-header implementation. Do not hot-change them, treat their header as the leanest reference, or use this artifact to claim universal GPU impossibility. Original1.34668x CPU pairs also include inactive header handlers and unboundedAS; they stay historical measured results, not invented current48GiB/clean-header comparisons.
+
+## Implemented correction and actual native inspection
+run-batch.py now selects one family per method: Baseline+stock for fast-hybrid; Oracle+Baseline+stock for originalCPUoracle; BatchOracle+BatchBaseline+stock for robustCPU/GPU. Legacy diagnostic mode retains its previous imports and scope. Per-invocation manifests/configs and per-process short Unix socket names avoid writing active capture files or colliding with the original highs.sock. Mapped binaries/libraries are unchanged.
+Actual Lean import inspection confirms2/3/3 respective elaborators, with no legacy family in clean batch. Launcher source generation/--help passes. This is engagement evidence, not a speedup.
+
+## Real preflight before any new full capture
+Use24unchanged real sources, originalindices0--15,332--335,756--759, same as declared repair subset. CPU0--3, width4,48GiB,300s originalrequest/finalization defaults,1sobserver; existingmaincapture12--15 andprefix20--23continue. Sharedmemory/I/Oremainlimitation. Run the old stacked-header native control first using an exact measured launcher copy with only private output-config filenames, then clean fast-hybrid, clean originalCPUoracle and clean robustHiGHS. No GPU service is started: original-feasibility PDLP failed independent numeric qualification and stays closed.
+
+Retain every outcome/full response, clean-family metadata, whole startup/pack/IPC/fallback/check/retirement and per-cell proxy lifecycle. A new full comparison is conditional on the intended CPUcandidate showing real benefit over the clean competent reference with matching outcomes and full cost. Reducing the reference's inactive-handler overhead alone is not candidate success. No thread/buffer/tolerance grid. If no candidate benefits, preserve that negative qualification and decide the remaining scope from evidence rather than launch another full matrix. Review real results before making any final threshold or project-closure decision.

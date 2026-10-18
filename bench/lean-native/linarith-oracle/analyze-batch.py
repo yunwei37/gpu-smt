@@ -4,6 +4,8 @@ import argparse,collections,gzip,json,math
 HEADER='import Mathlib\nimport Aesop\n'
 def rows(p):
  with(gzip.open(p,'rt')if p.suffix=='.gz'else p.open())as f:return [json.loads(l)for l in f]
+def retained_file(root,name):
+ return next((p for p in [root/name,root/(name+'.gz')]if p.exists()),None)
 def intervals_union(xs):
  end=None;total=0
  for a,b in sorted(xs):
@@ -22,7 +24,7 @@ def cell(root,name,inputs):
  for i,x in enumerate(inputs):
   assert x['code'].startswith(HEADER)
   mapping['\n\n'+x['code'][len(HEADER):]].append(i)
- timing=rows(p/'candidate-times.jsonl')
+ timing=rows(retained_file(p,'candidate-times.jsonl'))
  duplicate_sources={k:len(v)for k,v in mapping.items()if len(v)>1}
  byidx={};unmatched=[]
  for x in timing:
@@ -34,7 +36,8 @@ def cell(root,name,inputs):
  missing=sorted(set(range(len(inputs)))-set(byidx))
  backend=root/('rep1-'+name+'-backend')
  if(backend/'terminal.json').exists():terminal=json.loads((backend/'terminal.json').read_text())
- calls=rows(backend/'support-calls.jsonl')if(backend/'support-calls.jsonl').exists()else[]
+ calls_path=retained_file(backend,'support-calls.jsonl')
+ calls=rows(calls_path)if calls_path else[]
  batches={tuple(x['reply']['batch_ids']):x['reply']for x in calls if'batch_ids'in x['reply']}
  return {'terminal':terminal,'responses':responses,'byidx':byidx,'calls':calls,'batches':list(batches.values()),'missing_candidate_spans':missing,'unmatched_candidate_spans':unmatched}
 def tail_summary(c,ids):
@@ -84,7 +87,8 @@ def phase_profile_tail(profile,ids):
         'unlabelled_calls_may_intersect_selected_sources':intersects,
         'conservative_unassigned_component_CPU_upper_addition':dict(unknown)if intersects else{},
         'profile_whole_seconds':profile['raw']['terminal']['whole_ns']/1e9,
-        'scope':'Cross-capture native workload composition, not measured GPU-stage CPU or primary per-source elapsed decomposition. Do not divide CPU counters by primary wall, sum parent/child phases as disjoint elapsed, or call these counters causal GPU savings. Missing labels are bounded, never assigned to an invented candidate.'
+        'profile_predates_arithmetic_header_correction':True,
+        'scope':'Earlier diagnostic-header workload composition, not a clean-header phase decomposition, measured GPU-stage CPU or primary per-source elapsed decomposition. Do not divide CPU counters by primary wall, sum parent/child phases as disjoint elapsed, or call these counters causal GPU savings. Missing labels are bounded, never assigned to an invented candidate.'
     }
 
 def main():

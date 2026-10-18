@@ -28,3 +28,16 @@ The preceding pending/preflight descriptions are historical. First full1000GPUat
 
 ## Direct-feasibility repair rejected, 2026-10-18
 Current source is retained experimental failure code, not an admitted final GPUvariant. First four archivedrealrequests alltimeout300.10s, includingtwopositive. Rootstoppedremainingpartialprobe, preserved8numericrecords/5closedcaseobservations, anddeletedtarget. No native24/newfull1000starts. [Failure andlimits](direct-feasibility-result-review.md). MatchedCPUcontrolscontinue; finalbestCPU/GPUdispositionpending.
+
+## Current corrected-header qualification
+Actual module lookup exposed stacked legacy/new elaborators, and a source-only
+launcher correction now selects a single intended family. Native24 qualification
+preserves complete full responses with native46.054s, originalCPUoracle37.513s,
+robustHiGHS56.828s. No newHiGHSfull is admitted. Current backend restores the
+measured phase-I/crossover model with the owner-EOF cancellation already written,
+records full matrices/jobIDs and treats any finite primal only as an untrusted
+support subject to exactrepair/Leanchecking. Original-feasibility remains closed.
+[Corrected GPU preflight plan](arithmetic-header-corrected-gpu-preflight-plan.md)
+uses client plus server CPUeligibility0--3 for fair capacity, a fresh server
+without syntheticwarmup, and separate startup/retirement accounting. Existing
+legacyfull andprefix remain unchanged. No correctedGPUresult yet.

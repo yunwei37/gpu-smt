@@ -356,3 +356,15 @@ Current disposition: E038native CPU runtime branching is closed by user instruct
 
 ## First full GPU arithmetic oracle, 2026-10-17
 The phase-I PDLP support variant completes1000attempts in3374.147306631s, with984complete/8rejected/8operational. Actual numeric batching is1816singleton/19pairs; no large-batch native benefit is established. Its upstream target is retired and otherWorkspace restored. The requested same-plan robust CPU/native controls remain active. [Results and failure scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). A real444s PDLP convergence/expired-owner defect motivates direct original feasibility and cancellation repair, subject to difficult-LP and native preflight; no new full run yet. CPU-stage1.34668x/finalGPUdecision remain open.
+
+## Arithmetic family isolation and native qualification
+run-batch.py selects the intended family at the native collector header:
+Baseline+stock for fast-hybrid, Oracle+Baseline+stock for originalCPUoracle,
+and BatchOracle+BatchBaseline+stock for robustCPU/GPU. Actual Lean lookup
+confirms2/3/3 handlers respectively; prior six-handler imports allowed failed
+work to retry old implementations. Diagnostic imports remain version-scoped.
+Invocation-local config/manifests/shortUnixsockets avoid overwriting a live run.
+The phase-I PDLP variant now retains owner-EOF cancellation and treats a finite
+floating support only as an exact-repair hint. The separately failed original
+feasibility model remains closed. [Real native preflight and limits](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
+Original full controls have now closed; no process or partial results erased.

@@ -487,3 +487,20 @@ The closed-cell analyzer now joins actual per-candidate top1%/10% selections to 
 
 ## Public raw analysis reproduces completely
 Using published gzipraw only, existingrecovery/analyzers rebuild134640Leanrecords/13414LPcalls/1000sourceprofiles with everyderivedJSONfieldexactlymatching. Exact documentedcommand testedexit0, temporaryoutputsremoved, no privateSDK/GPU/network needed. [Receipt](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/public-replay-receipt.json), [readerentrypoint](reproduce-checkpoint.md). This closes a reproducibility gap, not a new RQperformance result; unknownproduct-originmetadata and4source-labelgaps remain. Backgroundanalysisaffinity0--3duringnativecontrols12--15sharesmemory/I/O; no interference-free claim.
+
+## Closed full controls and corrected arithmetic integration
+The original stacked-header full1000 block is complete: native2331.394867909s,
+robustHiGHS2363.001837636s andGPU3374.147306631s. CPU preserves992/8/0 outcomes;
+GPU984/8/8 fails parity. Baseline-selected top1%/10% are linked to actual command
+spans and separate diagnostic component counters, including censoredGPU335 and
+four unlabelled LP bounds. [Full self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md).
+These measured versions have stacked legacy/new arithmetic elaborators; actual
+SDK lookup/backtracking explains the integration correction. A family-only
+24-source preflight gives native46.054s/originalCPUoracle37.513s/
+robustHiGHS56.828s/CPU-onlybatchbridge52.189s, allfullnativeJSONidentical.
+Only originalCPUoracle qualifies for a new complete CPU comparison.
+Corrected GPU24 is active with the measured phase-I model, owner-EOF
+cancellation and server/clientCPU0--3,48GiB. No arbitrary solver grid or
+additional fullGPU run is admitted before that real qualification.
+Historical1.34668x is not relabelled clean-header/48GiB. Finalbest(CPU,GPU)>1.5x
+decision, hourly and goal remain open; self-review, no independent audit.

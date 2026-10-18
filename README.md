@@ -29,6 +29,10 @@ Three complete matched observations on the frozen1,000 sources give
 **more-than1.5×** continuation rule. Every cell returns992complete/8rejected,
 zerooperational, with matching source verdicts and the same88unused-variable
 warning differences. **CPU stage: 1.34668×; GPU stage: in progress.**
+These historical CPU pairs inherited unbounded address space. Current captures
+use 48 GiB and keep their clocks separate. Header inspection also found stacked
+old/new arithmetic elaborators in the GPU integration; a correction passes real
+24-source CPU qualification, while its full comparison remains pending.
 The hourly research automation is active; this CPU result is not project closure.
 [Decision, raw data and limits](artifacts/linarith-oracle-2026-10-17/decision-20261017.md)
 retain every pair and the post-fault rebuild lineage. Both full1,000-source

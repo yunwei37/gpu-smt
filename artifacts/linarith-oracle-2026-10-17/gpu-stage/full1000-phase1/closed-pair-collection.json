@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-18T02:05:59.217866+00:00",
+  "event": "original_driver_exit",
+  "driver_pid": 18460,
+  "start_ticks": "71246143",
+  "closed": {
+    "oracle-gpu": {
+      "state": "complete",
+      "attempts": 1000,
+      "counts": {
+        "complete": 984,
+        "rejected": 8,
+        "operational": 8
+      },
+      "whole_ns": 3374147306631
+    },
+    "oracle-highs": {
+      "state": "complete",
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 2363001837636
+    },
+    "fast-hybrid": {
+      "state": "complete",
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 2331394867909
+    }
+  },
+  "analysis_exit": 0,
+  "scope": "single pidfd-triggered offline collection; no Agent, polling timer or automatic git"
+}

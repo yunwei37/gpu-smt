@@ -3854,3 +3854,19 @@ EXPERIMENTanalysislinksrealcandidatewallrankings(notLPcalls/waves)toexistingcomp
 
 ### Published-data reproduction executes successfully
 EXPERIMENTartifactnode:publishedgziprawrecoveryandanalysisreproduceall134640Leanrecords/13414LPs/1000sourceprofiles; fullresultJSONequalsretainedderiveddata. No privatenativetoolchain/raw/GPU/network. Exactnewguidecommandexecutedexit0andtempsremoved. [Receipt](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/public-replay-receipt.json). WRITEupdatescurrentreproductionguidefirst,oldbranchmarkedhistorical,nochangespaperclaim. REVIEWrootself-auditchecksrawunchanged/unknownprovenancepreserved anddeclaresbackgroundmemory/I/Oco-run; no newverificationresultorindependent audit. Originalnative/prefixcapturescontinue. NoGPUreopen, newbenchmarkgrid ornewhelperentity.
+
+### Corrected-family qualification and closed full controls, 2026-10-18
+EXPERIMENT: originalstacked full1000 controlsclose on actualdriverexit;
+native2331.395s/HiGHS2363.002s/GPU3374.147s withGPU8operationalchanges.
+Actualnative-selectedtails and priorprofilejoins are retained withCPU/wall/
+censorshiplimits. Real24family-onlyCPUqualification returnsfullJSONagreement,
+originaloracle37.513s vsnative46.054s; HiGHS56.828s andCPU-onlybridge52.189s
+receive no newfullmatrix. CorrectedGPU24 executes phase-I+ownerEOFcancellation
+with matchedserver/clientCPUeligibility0--3 and48GiB,no numericwarmup.
+WRITE: targeted paper/evaluation/setup correction replaces staleGPUinprogress
+and incomplete sampled-onlyphaseclaim, recordsunboundedhistoricalprimaries,
+shared5090 andoldextra-serverCPUscope. No abstract/RQ/thesischange, no fullWRITE
+12rounds claimed. REVIEW: root self-review ofactualSDKhandlerlookup,
+realoutcomes, completecounter/replaynumbers andscope; historicalrawunchanged,
+unknownproductancestry/4sourcelabels/twoGPUtaskendsremainunknown. No independent
+reviewer permitted byuser. Final1.5xbestvalidCPU/GPU/hourly/goalremainopen.

@@ -1,0 +1,49 @@
+{
+  "finished_steps": [
+    {
+      "step": 0,
+      "argv": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/run-batch-stacked-control.py",
+        "--out",
+        "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/header-stacked24",
+        "--input",
+        "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/direct-feasibility-native24-input.jsonl",
+        "--methods",
+        "fast-hybrid",
+        "--affinity",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "start": "2026-10-18T01:42:11.552980+00:00",
+      "end": "2026-10-18T01:43:00.318844+00:00",
+      "exit": 0
+    },
+    {
+      "step": 1,
+      "argv": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "/workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py",
+        "--out",
+        "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/header-clean24",
+        "--input",
+        "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/direct-feasibility-native24-input.jsonl",
+        "--methods",
+        "fast-hybrid",
+        "oracle",
+        "oracle-highs",
+        "--affinity",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "start": "2026-10-18T01:43:00.319141+00:00",
+      "end": "2026-10-18T01:45:21.320422+00:00",
+      "exit": 0
+    }
+  ],
+  "all_planned_complete": true
+}

@@ -7,7 +7,7 @@ All three primary pairs and both full phase diagnostics are complete; see the
 and [prototype analysis](../../../artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md).
 These are CPU results. No production service or GPU acceleration is established.
 
-The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. Same-plan CPU controls continue on the frozen implementation. Current support-proxy.py is the retained direct-feasibility/owner-cancellation repair that failed real numeric qualification; it is not admitted to a full-performance run. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; both temporary GPU targets are deleted. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
+The [first complete GPU capture](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md) records3,374.15seconds and8operational failures on all1,000attempts; its GPU target is retired. Same-plan CPU controls continue on the frozen implementation. The direct-feasibility repair failed numeric qualification and remains archived. Current source restores the measured phase-I model with owner cancellation for the necessary clean-header qualification; no corrected full-performance run is yet admitted. Historical phase-I source is retained by commit1ce9e09. The build-batch.py, build-grpc-client.py, support-proxy.py, build-candidate-timing.py and run-batch.py entrypoints are experimental integration paths. [Repair plan and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-preflight-plan.md). No fresh full1000 is started from this failed repair; both temporary GPU targets are deleted. [Failed repair and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target/direct-feasibility-result-review.md).
 
 
 The already-admitted original-population prefix comparison remains unfinished.
@@ -178,3 +178,26 @@ directory with build-cost.py --out BUILD_ROOT, then run-comparison.py
 in the same Lean package root. Do not overwrite a loaded primary/diagnostic
 library. replay-numeric-cost.py replays closed per-process request streams and
 collects complete wait4 worker CPU; its elapsed time is not Lean/GPU performance.
+
+## Arithmetic header correction
+The measured integration imported legacy and batch tactic elaborators together,
+which allowed repeated work after a failed elaborator. run-batch.py now selects
+Baseline for the native control, Baseline+Oracle for the originalCPUoracle, and
+BatchOracle with its own BatchBaseline for robust support. Actual native handler
+inspection and24real-source full-response qualification are retained in
+[the correction record](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
+Legacy diagnostic imports remain separately scoped; their phase vectors do not
+become a clean-header primary phase decomposition.
+
+Manifest/config filenames are invocation-specific and Unix sockets include
+the process identity, so a qualification cannot replace an active capture's
+inputs. Mapped native binaries remain unchanged. HistoricalCPUprimary receipts
+record unboundedAS, while new runs inherit48GiB. No old data is relabelled.
+
+Current support-proxy.py retains phase-I PDLP/crossover with owner-EOF
+cancellation for corrected-header qualification. The failed original-feasibility
+version remains in commitb80c8bb and its artifacts, not an active candidate.
+No numerical solver parameter grid or fresh full matrix is admitted from the
+failed formulation. Corrected-header HiGHS has no qualification benefit and
+receives no new full run. Read actual corrected GPU qualification before
+choosing the final full method set.

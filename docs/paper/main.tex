@@ -279,7 +279,7 @@ individual native allocation-failure replay does not establish the cause
 of every decoder failure.
 
 
-The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. Baselines receive the same candidate information, CPU capacity, memory budget and admission order.
+The main service competitors are bounded warm services with their existing cache and environment mechanisms, and native logical or serialized prepared-state reuse~\cite{kimina,repl,leanIncremental}. Existing REPL environment backtracking and native logical proof-state branching remain baseline implementations. Fresh native execution supplies the behavior reference and a preparation control. Matched frontier comparisons require the same candidate information, CPU capacity, memory budget and admission order. The GPU arithmetic follow-up below has additional server CPU resources and does not establish that frontier.
 
 For the matched Lean 4.27 native-batch comparison, the primary competitor is
 the existing Kimina naive \texttt{BatchCommand} path~\cite{kimina}, which runs native tasks
@@ -303,6 +303,20 @@ We preserve all raw per-input outcomes. Lean outcomes include unfinished proof o
 Primary metrics are end-to-end candidate latency distributions, completed attempts per second, corpus makespan, CPU time and fleet proportional memory. Queueing, preparation, parsing, elaboration, proof construction, checking, transport, setup and teardown are included where they occur. Throughput cost per completed job is distinguished from request latency.
 
 We repeat whole comparisons with alternating condition order. Affinity specifies permitted CPUs but alone does not provide CPU isolation~\cite{cpuAffinity}, so we record affinity with topology and observations of competing work. \missing{Hardware, topology, software versions, repetitions, observed load, uncertainty and measurement details.}
+
+
+For the bounded arithmetic comparison, the host is an Intel Core Ultra 9 285K
+with 24 physical cores and no SMT siblings in the observed topology.
+Native clients use CPUs 12--15, while a retained prefix capture uses 20--23.
+Affinity does not reserve memory bandwidth or isolate other work.
+The arithmetic runtime is Lean 4.27.0 with Mathlib a3a10db0, and the robust
+support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
+The RTX 5090 is shared through device-plugin time slicing with another
+Workspace, without a fixed half-device allocation.
+The external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
+so this follow-up does not establish the equal-resource frontier of RQ3. Client CPU and memory observations also exclude the external
+server. Server counters include the qualification window and do not provide
+exact per-cell accounting.
 
 \subsection{Preparation sharing}\label{sec:opportunity}
 RQ1 asks how much expensive native preparation real verification candidate streams share across independent jobs. We preserve original attempt ordering and measure preparation CPU time and resident state available before each attempt. We separately analyze result reuse for exact duplicate attempts, sharing of ordered native prefixes and sharing of native environments. Sharing a native environment characterizes established reuse, while a supported process branch must also satisfy the preparation and boundary conditions in Section~\ref{sec:preparation}. The characterization includes failed and incomplete attempts, so locality is measured across all attempts rather than only successful proofs.
@@ -651,15 +665,18 @@ Fast/hybrid with invocation-local multiplication-theorem application reuse.
 The prototype in Section~\ref{sec:arithmetic-oracle} restores that same path
 on unsupported or unsuccessful direct attempts. Three whole-cohort paired
 repetitions alternate method order on the same permitted CPUs.
+The three CPU primary pairs inherit an unlimited address-space policy in both
+methods. The post-fault GPU and CPU-support comparison instead applies 48\,GiB
+uniformly and retains resource failures. Clocks remain within their own
+measurement block, without mixing denominators across these policies.
 Whole elapsed time includes preparation, export, external search, queueing,
 checking, fallback, capture and normal process retirement. Build time is
 excluded and versioned. Source identifiers and order must match the frozen
 input before a timing comparison is interpreted.
 
 A predeclared threshold requires more than $1.5\times$ complete-verification
-speedup with matching native outcomes. The primary ratio divides aggregate
-reference whole time by aggregate prototype whole time across all three
-pairs. If the prototype passes against Fast/hybrid, the remaining credible
+speedup with matching native outcomes. For the CPU primary series, the ratio divides aggregate reference whole
+time by aggregate prototype whole time across all three pairs. If the prototype passes against Fast/hybrid, the remaining credible
 native arithmetic competitors determine whether it also beats the fastest
 valid baseline. An unsuccessful executable path or missing responses do not
 constitute a measured negative performance result. A completed loss limits
@@ -680,22 +697,47 @@ warnings and their positions or counts. Raw responses remain unchanged,
 so outcome agreement does not establish diagnostic transparency.
 The ratio of aggregate complete times is $1.34668$, a $25.74\%$ elapsed-time
 reduction. This completes the CPU stage below the $1.5\times$ target.
-The final criterion uses the better CPU or GPU oracle result; GPU-stage
-attribution and evaluation remain in progress. These CPU-only results establish
+The final criterion uses the better valid CPU or GPU oracle result, and the
+complete CPU/GPU comparison remains in progress. These CPU-only results establish
 neither GPU acceleration nor GPU impossibility and do not close the project.
 
-The admitted GPU follow-up changes the external support-search mechanism using cuOpt PDLP~\cite{nvidia-cuopt-2026},
-while retaining CPU exact repair and Lean proof reconstruction.
-A pure feasibility PDLP request can occupy the single GPU worker on a
-no-certificate instance and delay independent requests.
-The current formulation instead adds positive and negative artificial slack
-to each equality row and minimizes total slack. This phase-I problem is
-always feasible; its floating solution only selects a support.
+The GPU follow-up changes external support search using cuOpt
+PDLP~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof
+reconstruction. Its measured variant adds positive and negative artificial
+slack to each equality row and minimizes total slack, making the numerical
+problem feasible. The floating solution supplies an untrusted support.
 Already-waiting independent requests form a block-diagonal problem without
-a batching delay. Every selected coefficient certificate still undergoes
-exact CPU repair and verification, followed by Lean checking; a miss uses
-the native fallback. The fixed-cohort GPU comparison is in progress,
-so this mechanism description establishes no end-to-end GPU benefit.
+a batching delay. CPU code repairs and verifies a coefficient certificate
+from the floating support before Lean reconstructs and checks the proof.
+A miss uses native fallback. Whole clocks include the host proxy lifecycle and requests
+to a warm numeric server. We report cold server provisioning and image
+loading separately from this warm-service comparison.
+
+Header composition remains a protocol qualification for these observations.
+The historical CPU series imports conditional profiling and oracle handlers.
+The first GPU integration imports both the legacy and batch arithmetic
+families. Lean can try the legacy elaborator after a new elaborator fails,
+adding repeated work beyond the intended direct attempt and native fallback.
+The reported clocks describe these headers. A family-only header correction
+requires qualification before the results can be used as the final comparison
+against the leanest competent CPU reference.
+
+The first fixed-cohort GPU run attempts all 1,000 sources in 3,374.15 seconds
+and returns 984 complete, 8 rejected and 8 operational outcomes.
+The two expired four-source request waves prevent matching verification
+outcomes, so this run supplies no qualified acceleration result.
+Feasibility alone does not ensure prompt convergence. One numerical job
+takes about 444 seconds and completes 296 seconds after its owner wave expires.
+The corresponding support request has 26 rows, 96 columns and 500 nonzeros,
+before artificial slack is added.
+The completed requests form 1,835 GPU batches from 1,854 support calls,
+with 1,816 singletons and 19 pairs.
+This serving policy yields little multirequest batching on the measured demand.
+The same-plan native reference completes in 2,331.39 seconds and the robust
+CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
+outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
+These observations remain specific to the stacked headers; the corrected
+comparison and final best-CPU-or-GPU threshold decision remain open.
 
 
 \begin{table}[t]
@@ -740,27 +782,72 @@ Sampled baseline peak PSS is 8.725, 4.656 and 9.986 GB across the three pairs,
 while prototype peaks are 4.345, 4.355 and 9.127 GB.
 This variation and non-atomic one-second sampling do not establish stable
 or halved memory savings.
-A separate full-cohort strong-baseline diagnostic preserves every native
-response and returns 992 complete and 8 rejected sources. Its 6,387 arithmetic
-invocation records attribute 321.23 calling-thread CPU seconds to preprocessing
-and linearization, 278.16 to nonlinear products and 265.66 to certificate
-reconstruction. The LP calling thread consumes 8.69 CPU seconds, while a
-live-identified external numeric service contributes at least 976.25 sampled
-CPU seconds. The service includes parsing, serialization and exact repair,
-not only simplex. These counters use the selected 1,000-source cohort and
-strong Fast/hybrid composition; they do not update fractions from an earlier
-29,750-source capture.
+The complete all-call diagnostic separates numerical search from native proof
+work without treating overlapping wall intervals as a disjoint partition.
+It returns the same 992 complete and 8 rejected native responses as the primary
+reference, with no operational outcome. All 13,414 numeric requests are retained.
+Table~\ref{tab:arithmetic-complete-phases} reports calling-thread CPU for
+preprocessing, nonlinear product proof generation, the Lean LP caller,
+external numerical search and certificate construction.
+Final source validation, collector work and other uninstrumented operations
+remain charged by whole elapsed time.
 
-The known process-tree CPU lower bound is 3,157.15 seconds, compared with
-2,181.73 recorded collector/waited-child seconds and 2,200.05 whole elapsed
-seconds. Relative to that incomplete observed CPU reference, preprocessing,
-products and certificate reconstruction are 10.17\%, 8.81\% and 8.41\%;
-the external service is 30.92\%. These descriptive counter ratios are not
-exact whole-verification CPU fractions. The cumulative LP roundtrip wall
-is 2,512.40 seconds, exceeding whole elapsed time because invocations overlap.
-No additive elapsed-time partition or GPU upper bound follows.
-Final source validation, other native work and observer costs remain outside
-the recorded arithmetic regions or in the residual accounting.
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Native diagnostic region & Recorded CPU (s) \\
+\midrule
+Preprocessing and linearization & 331.667 \\
+Nonlinear product proof generation & 288.030 \\
+Lean LP caller & 9.837 \\
+External numerical LP search & 979.803 \\
+Certificate construction/checking & 275.211 \\
+\bottomrule
+\end{tabular}
+\caption{Complete selected 1,000-source native diagnostic.
+Calling-thread CPU in distinct processes is separate from elapsed time,
+and these counters are not an exhaustive whole-pipeline CPU partition.}
+\label{tab:arithmetic-complete-phases}
+\end{table}
+
+External LP search occupies 42.28\% of the 2,319.668-second diagnostic timeline.
+This phase-specific interval union is occupancy, not removable critical-path
+time. The Lean LP interval also includes external waiting, so adding their
+wall intervals would count the same wait twice.
+The direct-oracle diagnostic retains all 10,257 numeric requests, including
+failed direct searches and native fallbacks. Its LP search consumes 627.840 CPU
+seconds and numeric product generation 3.372 CPU seconds.
+The numeric-work interval union occupies 35.25\% of its 1,744.056-second
+timeline. Freezing certificates, fallback choices and all other work while
+removing the 631.870-second numeric interval sum gives a conditional
+1,112.186-second sensitivity. Changing solver supports can change proof and
+fallback work, so this calculation is neither achieved acceleration nor a
+certified end-to-end bound.
+
+A separate numeric-only replay accounts for complete worker CPU through
+actual exit. Replaying the native baseline's 13,414 requests and two
+handshakes finds no certificate or error difference and consumes
+1,027.770 CPU seconds. LP search accounts for 1,018.047 seconds, comprising
+40.015 FP64 and 978.032 exact-search seconds.
+Request parsing and response packing/writing consume 4.567 seconds, LP
+construction 0.503, exact repair 0.369 and exact verification 0.074.
+The remaining 4.209 seconds include diagnostic writes, input reading, process
+startup/exit and other worker work. This complete numeric-service composition
+does not retroactively partition an earlier sampled 976-second service
+observation or replace Lean end-to-end wall time.
+
+Every native request records its matrix shape, with median 10 rows, 20 columns
+and 74 nonzeros. The 99th percentiles are 183, 552 and 4,648, respectively.
+Four requests lack individual source labels, so global costs retain them
+while candidate-specific attribution remains bounded.
+Generated-product ancestry was not recorded for this native request stream
+and remains unknown rather than zero.
+The 288 seconds of Lean product proof construction and 3.372 seconds of direct
+numeric product generation represent different work. The measured GPU LP
+backend does not replace native product proof construction.
+
 The full prototype diagnostic preserves every native response on the same
 1,000 sources. It records 3,597 successfully checked contradiction branches
 and 2,953 fallback attempts, with no malformed or unmatched telemetry.
