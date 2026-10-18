@@ -1,0 +1,1 @@
+The first private build stopped before measurement: Lean resolved CostFast.lean through a retained-source symlink outside the private root. Copied the unchanged source bytes into the private root, preserving all frozen originals. The dependent qualification correctly refused to run. Failure receipts retained; this changes no verification algorithm or limits.

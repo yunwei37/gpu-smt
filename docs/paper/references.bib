@@ -485,6 +485,11 @@
  note={Preprint, version 1; prediction-based evaluation, not exact native verdict execution}}
 
 
+% VERIFIED: 2026-10-18; mandatory checker passed this entry, official documentation read.
+% REAL: yes
+% PDF: not available, official software documentation
+% ABSTRACT: Documents numerical LP methods, GPU PDLP, batching interfaces, and solver-only time accounting.
+% USED_FOR: Identity and numerical-search boundary of the measured cuOpt backend; no native Lean acceptance or imported speedup.
 @misc{nvidia-cuopt-2026,
   author = {{NVIDIA}},
   title = {{cuOpt}: Convex Optimization Features},
@@ -527,4 +532,17 @@
  pages={26659--26667},
  doi={10.1609/aaai.v39i25.34868},
  url={https://ojs.aaai.org/index.php/AAAI/article/view/34868}
+}
+
+% VERIFIED: 2026-10-18; mandatory checker passed this entry, official driver API read.
+% REAL: yes
+% PDF: not available, official driver API documentation
+% ABSTRACT: Documents reservation, physical allocation, mapping, access rights and release for driver-managed CUDA virtual memory.
+% USED_FOR: Existing allocation API used by our request-sized device implementation, not a new memory-management contribution.
+@misc{cudaVMM,
+ author={{NVIDIA}},
+ title={{CUDA} Driver API: Virtual Memory Management},
+ year={2026},
+ url={https://docs.nvidia.com/cuda/cuda-driver-api/cuda_driver_api/group__CUDA__VA.html},
+ note={Accessed 18 October 2026; year denotes access year, not installed driver version}
 }

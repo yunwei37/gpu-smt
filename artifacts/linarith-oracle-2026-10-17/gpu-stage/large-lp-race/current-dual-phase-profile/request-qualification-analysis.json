@@ -1,0 +1,70 @@
+{
+  "scope": "Original64, width8, four CPUs4--7,48GiB. Diagnostic telemetry, not a primary timing score. Current CPU-oracle private build; no altered search or candidate checking.",
+  "methods": {
+    "fast-hybrid": {
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "reference_full_JSON_and_verdict_differences": [],
+      "whole_seconds": 54.768639645,
+      "spans": 64,
+      "native_requests": 444,
+      "auxiliary_source_less_rows": 428,
+      "direct_requests": 0,
+      "direct_cert_null": 0,
+      "direct_checks_accepted": 0,
+      "all_request_and_source_IDs_joined": true,
+      "telemetry_types": {
+        "cost-stage": 3319,
+        "cost-native-roundtrip": 444,
+        "cost-lp-input": 224,
+        "fast": 221,
+        "strong-arithmetic-stages": 221,
+        "product-application": 207
+      },
+      "native_exact_shapes": "rows=maxVar+2; cols=len(hyps); nnz=nonzero exact coefficients plus strictness coefficient. These are unscaled certificate-space dimensions, not float-solver model dimensions.",
+      "diagnostic_gzip_bytes": 4297643,
+      "observer_read_errors": 0
+    },
+    "oracle-highs": {
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "reference_full_JSON_and_verdict_differences": [],
+      "whole_seconds": 28.742139309,
+      "spans": 64,
+      "native_requests": 37,
+      "auxiliary_source_less_rows": 37,
+      "direct_requests": 221,
+      "direct_cert_null": 18,
+      "direct_checks_accepted": 203,
+      "all_request_and_source_IDs_joined": true,
+      "telemetry_types": {
+        "cost-direct-roundtrip": 221,
+        "cost-direct-check": 221,
+        "direct-oracle": 203,
+        "direct-oracle-fallback": 18,
+        "cost-stage": 294,
+        "cost-native-roundtrip": 37,
+        "fast": 18,
+        "product-application": 19,
+        "cost-lp-input": 20,
+        "strong-arithmetic-stages": 18
+      },
+      "native_exact_shapes": "rows=maxVar+2; cols=len(hyps); nnz=nonzero exact coefficients plus strictness coefficient. These are unscaled certificate-space dimensions, not float-solver model dimensions.",
+      "diagnostic_gzip_bytes": 1169288,
+      "observer_read_errors": 4
+    }
+  },
+  "normal_CPU_whole_seconds": 28.765036926,
+  "profile_CPU_over_normal": 0.9992039774863176,
+  "full1000_diagnostic_admitted": true,
+  "limitations": [
+    "sequential single short overhead comparison is not an unbiased overhead estimate",
+    "native fallback LP worker internal cancelled compute remains opaque; roundtrip includes communication/exact repair/wait",
+    "a phase occupancy union is not an independently eliminable whole-wall fraction",
+    "numerical metadata scan and lossless gzip I/O charged to diagnostic whole clock; not included in published primary ratios"
+  ]
+}

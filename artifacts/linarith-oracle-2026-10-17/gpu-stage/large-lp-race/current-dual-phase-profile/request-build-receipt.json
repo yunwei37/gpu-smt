@@ -1,0 +1,95 @@
+{
+  "utc": "2026-10-18T14:03:42.612669+00:00",
+  "commands": [
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostNative.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostFast.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile",
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostBaseline.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/GpuArithmetic/CostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "cmd": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/CostOracle.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/cost-emit.c",
+        "-L/usr/lib/x86_64-linux-gnu",
+        "-lz",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/batch-oracle.so"
+      ],
+      "cwd": "/workspaces/repository",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "cmd": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked",
+        "--bin",
+        "arithmetic-batchd"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/numeric-source",
+      "exit": 0,
+      "output": "   Compiling crossbeam-utils v0.8.21\n   Compiling autocfg v1.5.1\n   Compiling shlex v2.0.1\n   Compiling find-msvc-tools v0.1.9\n   Compiling cc v1.2.65\n   Compiling zmij v1.0.21\n   Compiling rayon-core v1.13.0\n   Compiling num-traits v0.2.19\n   Compiling serde_core v1.0.228\n   Compiling rustversion v1.0.22\n   Compiling crossbeam-epoch v0.9.18\n   Compiling num-modular v0.6.4\n   Compiling num-integer v0.1.46\n   Compiling crossbeam-deque v0.8.6\n   Compiling libmimalloc-sys v0.1.49\n   Compiling serde_json v1.0.150\n   Compiling dashu-int v0.4.3\n   Compiling num-order v1.2.0\n   Compiling num-bigint v0.4.8\n   Compiling memchr v2.8.2\n   Compiling itoa v1.0.18\n   Compiling dashu-base v0.4.3\n   Compiling either v1.16.0\n   Compiling cfg-if v1.0.4\n   Compiling static_assertions v1.1.0\n   Compiling rayon v1.12.0\n   Compiling mimalloc v0.1.52\n   Compiling num-rational v0.4.2\n   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/current-dual-phase-profile/numeric-source)\n    Finished `release` profile [optimized] target(s) in 8.25s\n"
+    }
+  ]
+}

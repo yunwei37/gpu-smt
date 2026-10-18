@@ -1,0 +1,75 @@
+{
+  "state": "complete",
+  "cells": 2,
+  "attempts": 128,
+  "results": [
+    {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 53140828253,
+      "cpu": {
+        "collector": {
+          "user": 0.058055999999999996,
+          "system": 4.264458
+        },
+        "waited_children": {
+          "user": 74.898228,
+          "system": 2.868383
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 4602900480,
+      "sampled_peak_fleet_rss_with_collector": 8378609664,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates"
+    },
+    {
+      "method": "oracle-highs",
+      "rep": 1,
+      "state": "complete",
+      "expected": 64,
+      "attempts": 64,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "whole_ns": 30283086922,
+      "cpu": {
+        "collector": {
+          "user": 0.027249999999999996,
+          "system": 2.4846250000000003
+        },
+        "waited_children": {
+          "user": 70.45714399999999,
+          "system": 2.5942389999999995
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 5175089152,
+      "sampled_peak_fleet_rss_with_collector": 8901513216,
+      "sampling_read_errors": 6,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 8,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 64 of 64 candidates",
+      "collector_whole_ns": 30198135754,
+      "backend_setup_cleanup_ns": 84951168,
+      "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+    }
+  ],
+  "utc": "2026-10-18T13:51:14.783832+00:00"
+}

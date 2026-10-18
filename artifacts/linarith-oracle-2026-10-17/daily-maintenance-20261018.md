@@ -258,3 +258,8 @@ a global GPU-negative theorem. No full matrix or more variants of this kernel
 follow a failed preflight. The next decisive boundary remains complete original
 workload/component generality and a mechanism that addresses remaining expensive
 proof work against established CPU services/checkers; preserve healthy captures.
+
+### 14:18Z — act on the current accounting gap
+Substantive progress requires using the current strong CPU path's own evidence, not another slow GPU variant or historical solver totals. Root adds request-complete phase telemetry, actually qualifies the original64 with exact responses, then launches one full1000 diagnostic pair. Success/failure/fallback and coefficient-space LP sizes are retained. Next decision uses current whole-clock phase/critical-path evidence together with complete original-population generalization. Missing cancelled-child CPU and scheduling/support changes remain explicit rather than treated as zero or a strict bound.
+
+Daily presentation follow-through: current-result and historical-result order clarified in the paper, all four RQs preserved, full12 writing rounds performed by root,48 bibliography entries pass mechanical checking, and PDF recompiles/visually checked. The new phase-profile README distinguishes closed preflight from running acquisition. No runtime cleanup of active data, other-author WIP or original sessions. These changes do not manufacture a systems contribution.

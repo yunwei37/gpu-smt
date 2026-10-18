@@ -1,0 +1,74 @@
+{
+  "scope": "Actual original64 diagnostic qualification, fixed width8/fourCPU4--7/48GiB. Diagnostic CPU phases, not a primary performance score. Native fidelity reference is same source/checker from earlier capacity32; elapsed clocks are not compared across widths.",
+  "methods": {
+    "native": {
+      "whole_seconds": 53.140828253,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "verdict_differences": [],
+      "JSON_differences": [],
+      "non_message_differences": [],
+      "missing_spans": [],
+      "unmatched_spans": [],
+      "gzip_rows": 4636,
+      "telemetry_types": {
+        "cost-stage": 3319,
+        "cost-native-roundtrip": 444,
+        "cost-lp-input": 224,
+        "fast": 221,
+        "strong-arithmetic-stages": 221,
+        "product-application": 207
+      },
+      "stage_counts": {
+        "products": 413,
+        "lp": 445,
+        "preprocess": 1568,
+        "linearize": 672,
+        "certificate": 221
+      },
+      "compressed_bytes": 3574086,
+      "direct_checks_accepted": 0,
+      "CPU_numeric_parsed_calls": 0
+    },
+    "CPU_oracle": {
+      "whole_seconds": 30.283086922,
+      "counts": {
+        "complete": 63,
+        "rejected": 1
+      },
+      "verdict_differences": [],
+      "JSON_differences": [],
+      "non_message_differences": [],
+      "missing_spans": [],
+      "unmatched_spans": [],
+      "gzip_rows": 1069,
+      "telemetry_types": {
+        "cost-direct-roundtrip": 221,
+        "cost-direct-check": 221,
+        "direct-oracle": 203,
+        "direct-oracle-fallback": 18,
+        "cost-stage": 294,
+        "cost-native-roundtrip": 37,
+        "fast": 18,
+        "product-application": 19,
+        "cost-lp-input": 20,
+        "strong-arithmetic-stages": 18
+      },
+      "stage_counts": {
+        "products": 38,
+        "lp": 38,
+        "preprocess": 140,
+        "linearize": 60,
+        "certificate": 18
+      },
+      "compressed_bytes": 945329,
+      "direct_checks_accepted": 203,
+      "CPU_numeric_parsed_calls": 50
+    }
+  },
+  "normal_CPU_whole_seconds": 28.765036926,
+  "profile_CPU_over_normal": 1.052774136876837,
+  "admitted": true
+}

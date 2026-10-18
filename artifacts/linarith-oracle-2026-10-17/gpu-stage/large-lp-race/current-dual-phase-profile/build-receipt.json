@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "4-7",
+    "/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/bin/leanc",
+    "-O3",
+    "-DLEAN_EXPORTING",
+    "-shared",
+    "-fPIC",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostTelemetry.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostStages.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostProducts.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostNative.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostFast.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostBaseline.c",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostOracle.c",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/cost-emit.c",
+    "-L/usr/lib/x86_64-linux-gnu",
+    "-lz",
+    "-o",
+    "/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile/batch-oracle.so"
+  ],
+  "exit": 0,
+  "output": "",
+  "unchanged_generated_Lean_C": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost",
+  "compiled_Lean_modules": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic",
+  "current_numeric_binaries": "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle"
+}

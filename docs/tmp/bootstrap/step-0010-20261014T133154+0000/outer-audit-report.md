@@ -3109,3 +3109,8 @@ CPU38.022010s is the sameprivatebuild/eligibility, so actual3.432%loss remains.
 ColdGPUlifecycle/observerlimits/native-reference reuse are explicit. Allactual
 9GPUmodels/groups retire andin-bandallocationcountszero. Nofulladmission,
 globalGPUimpossibility orindependentauditclaim. Originalfull/prefixpreserved.
+
+### E1066 root outer self-audit — 2026-10-18
+All new work belongs to the existing Workspace/main and root thread. Private builds do not overwrite original/current full-capture binaries. The dependency driver correctly refused the first failed build. Repaired actual qualification has all source/result fidelity and request coverage; source-less auxiliary records are disclosed. Metadata is unscaled exact coefficient shape, reply phase timers are elapsed, and cancelled subprocess CPU remains unknown. Full diagnostic admission does not create a primary speedup claim or new GPU matrix.
+
+Full writing cycle has12 actual sequential compile receipts and before/after diffs. Final restoration preserves original lifetime wording, explicit after-preparation-reuse and proposed-service status. Exact RQs, placeholders, figures, tables, labels and numeric multiset checked against entry revision. Bibliographic annotations are the sole verification authority; raw checker logs are run evidence. No fresh comprehensive scholarly-currentness/retraction audit or independent review is claimed. All4RQ missing evidence and stronger-reference/novelty limitations remain. A writing-cycle completion does not mean full-paper research acceptance.
