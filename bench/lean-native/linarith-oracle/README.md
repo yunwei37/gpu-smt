@@ -319,3 +319,14 @@ Both native and AST/fallback answers must come from the completed same-cohort
 cost capture. Source identities stay in the key; old timing fields are removed.
 This answer-aware control is excluded from the CPU/GPU continuation threshold.
 Full preflight/raw instructions are under gpu-stage/pooled-wall-profile/.
+
+
+### Independent cancellation diagnostic
+
+The opt-in environment variable GPU_ARITHMETIC_GPU_INDEPENDENT_JOBS=1
+dispatches simultaneously ready LPs as independently cancellable cuOpt jobs.
+GPU_ARITHMETIC_GPU_MIN_READY defaults to2; it is1only in the declared heavy-tail
+admission control. These are concurrent single-model jobs,not fusedGPUbatches;
+record server workers,CPUaffinity,coldstartup andretirement separately.
+The defaultjointmodel path andCPUoracle are unchanged.
+[Plan, actual24results and limits](../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/result-review.md).

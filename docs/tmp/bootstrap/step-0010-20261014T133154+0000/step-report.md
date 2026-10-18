@@ -4272,3 +4272,46 @@ same-resource CPU/GPU comparison, raw connection-vs-LP distinction and no
 inferred impossibility. The Amdahl frontier remains open. Next check targets
 independent LP scheduling/cancellation in the pinned official API, not another
 PDLP parameter grid. Full numerical-omission and prefix collectors preserved.
+
+
+### 2026-10-18 — full numerical omission control closes
+EXPERIMENT: freshnative1228.003518661s,nativefixedcoeff866.840126954s,
+ASTfixedcoeff767.619109591s. All1000each,992/8/0,verdict/non-messageparity;
+nativeallJSONsame,AST88acceptedwarningchanges.Native13230/AST10251labelled
+nonhandshakecalls,zero misses. SetupCPU32.493/36.491 andlookupCPU3.599/1.852
+remaininthe wholeclock alongwithIPC/nativeproofchecking. ActualAST1.599756x
+knownanswercontrolcannotbe counted asvalidCPU/GPUgain,butpreventsclosing
+the routeusing an allegedbelow1.5x numericalceiling. Native1.41664xcontrol
+isnottheASTmechanism'sceiling. Cachedata/source/rawallretained.
+WRITE: propagatesonlythis completedcontrolandlimits toREADME/evaluation/paper,
+withoutnewnovelty/OSDI/RQclaims. REVIEW remainsrootself-review.
+The admitted source-native8queuefullnative+CPUcomparison starts07:59:10Z,
+PID162666,CPU0–3,48GiB,afteractualearliersequencecompletion; nofullnewGPU
+variant matrixfromanadversequalification. Strongestcommonbaselineisrequired.
+Completedownprofile runtime logsarelosslesslycompressedaftercheckingtheyare
+closed/unopened;rawobservationsandpublishedarchivespreserved,freebytes
+increaseby1471750144to4100435968. Activeprefixandcapturesarenotchanged.
+
+
+### 2026-10-18 — independent LP cancellation implementation and qualifier
+EXPERIMENT: officialpinned26.10server/RPCsource confirmwhole-jobCancelkills
+worker,localBatchSolverunsindependentLPthreadsandnoper-modelcancelis
+exposedintheinspectedPython/Csurface. Implementedopt-inindependentRPCjobs
+and8serverworkerswithinunchanged4CPUs,one5090,48GiB. Actual24max8queue
+reference29.5517,CPU23.4758,GPU23.5363s;all24complete/verdict/non-message
+equal. Six2sourceadmissiongroups→12singleLPjobs,5result/7cancel/all12retired;
+threecancelledjobsleavesiblingresultalive.FourGPUcertificatewins.
+Thisisconcurrentjobs,nofusedbatch/simultaneousCUDAkernelclaim. Fullcold
+40.8742s,Jobdeleted/labReady/otherWorkspaceRunning.No fullmatrixadmitted.
+Actualoriginalfulltracecontainsasource37parsedLP with22.548sproxywait
+andnoGPUsubmit.Thefirst24containsnoneofthenative-selectedslowest10.
+Adeclaredtail10preflightpreservesoriginalorder/freshmatchednativeCPUrefs,
+thenimmediateindependentadmission,notanotherPDLPparametergrid.CPUhalf
+starts08:03:22Z,PID162812,on8–11disjointfromactivefullcommonbaseline0–3.
+WRITE: documentsmechanism/flags,negativequalifierandraw/limits.
+REVIEWrootself-review:runtime8workersconfirmed,allclient/serverCPUeligibility
+8–11,perjobretirementandwarning-onlychangeschecked.Proxylifetimesarenot
+devicecompute;unparsedframescannotbeassignedtosources.Nospeed/novelty
+claimfromahealthyGPUprocess.AllfourRQs/ambition/hourly/goalremainopen.
+
+Paper validation: Tectonic succeeds at22pages withzeroOverfull. Rendered and visually inspectedpages15–16: nativefourregiontable,LP-sizeCDF/caption andknown-answercontroltext arelegible; removedanavoidableone-wordcontinuationbyshorteningtheexistingcross-datasetreference sentence,withoutchangingmeaning.Fullwritingrefinement/milestonereview remainsincomplete.

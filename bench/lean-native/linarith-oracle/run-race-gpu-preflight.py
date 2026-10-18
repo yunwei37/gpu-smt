@@ -1,10 +1,13 @@
-"""Execute a real24-source race qualification against one existing finite GPU Job."""
+"""Execute a matched finite source race qualification against an existing GPU Job."""
 import os,sys,json,time,subprocess,resource,argparse
 from pathlib import Path
 import grpc
 R=Path('/workspaces/repository');D=R/'bench/lean-native/linarith-oracle'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('host')
+parser.add_argument('--input',type=Path)
+parser.add_argument('--limit',type=int,default=24)
+parser.add_argument('--minimum-ready',type=int,default=2)
 parser.add_argument('--root',type=Path,default=Path('/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled'))
 parser.add_argument('--affinity',type=int,nargs='+',default=[0,1,2,3])
 parser.add_argument('--min-rows',type=int,default=37)
@@ -13,6 +16,7 @@ parser.add_argument('--out',type=Path)
 parser.add_argument('--reference',type=Path,default=Path('/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/qualification24-cpu/rep1-fast-hybrid'))
 parser.add_argument('--cpu-qualification',type=Path)
 parser.add_argument('--native-buckets',action='store_true')
+parser.add_argument('--independent-jobs',action='store_true')
 parser.add_argument('--repl',type=Path)
 args=parser.parse_args();U=args.root
 out=args.out or U/'labelled-qualification24-gpu'
@@ -21,14 +25,17 @@ resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3));resource.setrlimi
 os.sched_setaffinity(0,set(args.affinity))
 cpu_root=args.cpu_qualification or U/'qualification24-cpu'
 cpu=json.loads((cpu_root/'rep1-oracle-hint/terminal.json').read_text())
-assert cpu['state']=='complete' and cpu['counts']=={'complete':24},'CPU qualification must close before GPU launch'
+assert cpu['state']=='complete' and cpu['attempts']==args.limit and not cpu['counts'].get('operational',0),'Matching CPU qualification must close before GPU launch'
 channel=grpc.insecure_channel(args.host+':5001')
 grpc.channel_ready_future(channel).result(timeout=60);channel.close()
 env=dict(os.environ);env['GPU_SMT_CUOPT_HOST']=args.host
 env['GPU_ARITHMETIC_RACE_MIN_ROWS']=str(args.min_rows);env['GPU_ARITHMETIC_RACE_ROOT']=str(U)
+if args.independent_jobs:env['GPU_ARITHMETIC_GPU_INDEPENDENT_JOBS']='1'
+env['GPU_ARITHMETIC_GPU_MIN_READY']=str(args.minimum_ready)
 cmd=['/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python',str(D/'run-race.py'),
- '--out',str(out),'--limit','24','--methods','oracle-gpu','--width','8',
+ '--out',str(out),'--limit',str(args.limit),'--methods','oracle-gpu','--width','8',
  '--affinity',*[str(x)for x in args.affinity],'--reuse-reference',str(args.reference)]
+if args.input:cmd+=['--input',str(args.input)]
 if args.native_buckets:cmd+=['--native-buckets']
 if args.repl:cmd+=['--repl',str(args.repl)]
 build=json.loads((U/'build-receipt.json').read_text())
@@ -37,9 +44,9 @@ with (U/(args.label+'-driver.log')).open('w')as log:
  p=subprocess.Popen(cmd,cwd=R,env=env,stdout=log,stderr=subprocess.STDOUT)
  receipt={'utc':time.strftime('%FT%TZ',time.gmtime()),'pid':p.pid,
   'start_ticks':Path('/proc',str(p.pid),'stat').read_text().split()[21],
-  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':2,
+  'argv':cmd,'host':args.host,'min_rows':args.min_rows,'minimum_live_GPU_batch':args.minimum_ready,'independent_jobs':args.independent_jobs,
   'RLIMIT_AS':48*1024**3,'affinity':args.affinity,'build':build,
-  'scope':'real24 sources; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt'}
+  'scope':'Declared finite source cohort; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt'}
  (A/('arithmetic-'+args.label+'-launch.json')).write_text(json.dumps(receipt,indent=2)+'\n')
  print(json.dumps(receipt),flush=True);code=p.wait()
 result={'exit':code,'wrapper_whole_ns':time.monotonic_ns()-start,'utc':time.strftime('%FT%TZ',time.gmtime())}

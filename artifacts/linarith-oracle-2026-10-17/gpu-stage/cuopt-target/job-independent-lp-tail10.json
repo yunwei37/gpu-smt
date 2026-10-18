@@ -1,0 +1,54 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "name": "gpu-smt-cuopt-20261017",
+    "namespace": "coder",
+    "labels": {
+      "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+    },
+    "annotations": {
+      "admission.yunwei37.com/approval-ref": "gpu-smt/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/tail-admission-plan.md",
+      "admission.yunwei37.com/user-words": "\u8ba9\u6279\u91cf\u771f\u6b63\u5f62\u6210\uff1a\u5728\u603b\u8d44\u6e90\u76f8\u540c\u7684\u524d\u63d0\u4e0b\u8ba9\u591a\u4e2a\u5019\u9009\u5e76\u53d1\u8dd1\uff0c\u628a\u540c\u4e00\u65f6\u523b\u7684 LP \u5408\u5e76\u6210\u4e00\u6279\u9001 GPU\uff0c\u5e76\u5728\u76f8\u540c\u5e76\u53d1\u5ea6\u4e0b\u548c\u5f3a\u57fa\u7ebf\u3001CPU oracle \u5bf9\u6bd4\u3002"
+    }
+  },
+  "spec": {
+    "backoffLimit": 0,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app.kubernetes.io/name": "gpu-smt-cuopt-benchmark"
+        }
+      },
+      "spec": {
+        "restartPolicy": "Never",
+        "nodeSelector": {
+          "fleet.yunwei37.com/gpu": "rtx5090"
+        },
+        "containers": [
+          {
+            "name": "cuopt",
+            "image": "nvidia/cuopt@sha256:ed854f295ebc2323beee947cd3ade3cbab1aae6c559694983666ce4369365734",
+            "command": [
+              "/bin/bash",
+              "-c",
+              "ulimit -c 0; ulimit -v 50331648; exec python3 -c 'import os; os.sched_setaffinity(0,{8,9,10,11}); print(\"benchmark_cpu_affinity\",sorted(os.sched_getaffinity(0)),flush=True); os.execv(\"/opt/cuopt/entrypoint.sh\",[\"/opt/cuopt/entrypoint.sh\",\"proxy\"])'"
+            ],
+            "resources": {
+              "limits": {
+                "nvidia.com/gpu": 1
+              }
+            },
+            "env": [
+              {
+                "name": "CUOPT_GRPC_ARGS",
+                "value": "--workers 8"
+              }
+            ]
+          }
+        ],
+        "runtimeClassName": "nvidia"
+      }
+    }
+  }
+}

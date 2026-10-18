@@ -103,6 +103,13 @@ separately. Native compilation, warm REPLs, caches, snapshots, tries and externa
 arithmetic oracles are established techniques, not new contributions by themselves.
 Tests or reviews do not establish venue acceptance.
 
+A complete known-answer numerical omission control returns actual recorded
+coefficients while Lean still checks every proof: fresh native1,228.00s,
+native omission866.84s,AST omission767.62s(1.600×),all1,000source verdicts
+preserved with zero lookup misses. **This is a diagnostic,not a valid CPU/GPU
+speedup.** It prevents a premature below1.5× impossibility claim.
+[Raw control and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/fixed-certificate-control/full1000-result-review.md).
+
 ## Repository guide
 
 - [Evaluation and completed results](docs/evaluation.md): current evidence and limitations.

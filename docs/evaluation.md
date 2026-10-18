@@ -590,3 +590,11 @@ Both native1245.961262403s/CPUoracle1072.374382485s complete with992/8/0 and exa
 
 ## Upstream eight-queue hardware qualification (2026-10-18)
 Same24,max8candidates,CPU8–11,48GiB: native29.551738559s,CPUoracle23.475818756s,GPUwarm23.857266664s. All24complete,verdict/non-message parity,threeGPUwarning changes. Nine real two-source GPUjobs,tworesults/sevencancelled/allnineretired. GPU1.625%slowerthanCPU inonequalification; nofull1000 variant admitted,noGPUrouteclosure. Cold lifecycle40.0839035s,Jobdeleted,labReady,otherWorkspaceRunning. [Raw and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/GPU-result-review.md).
+
+
+## Complete answer-aware numerical omission control (2026-10-18)
+Fresh native1228.003518661s,nativefixedcoefficients866.840126954s(1.416643601x),ASTfixedcoefficients767.619109591s(1.599756316x). All1000each,992/8/0,exactverdict/non-messageparity;AST88warning-only changes.Native13230/AST10251numericalcalls,zero misses. Knownanswers,setup/lookup/IPC/nativechecking remain; excluded from valid CPU/GPU performance. This doesnotprove a below1.5xbound;actualsearch/transfer/scheduling mustfit a narrow gap. [Complete raw and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/fixed-certificate-control/full1000-result-review.md).
+
+
+## Independent LP cancellation qualifier (2026-10-18)
+Sameoriginal24native8queue:max8tasks,CPU8–11,48GiB. IndependentGPUjobs23.536287725s vsCPU23.475818756s,native29.551738559s;all24complete,verdict/non-messageparity. Sixreal2sourceadmissiongroupsbecome12singleLPjobs,notfusedbatches. Fivefinish,sevencancel,all12retire;threegroupsretainasiblingsresultafteranothermembercancels. NoCPUtimebenefit,nofullnewGPUmatrix,noGPUclosure. Adeclarednative-selectedtail10controltestsactual22.548sunsubmittedLPwaiting,not another solverparametergrid. [Raw/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/result-review.md).

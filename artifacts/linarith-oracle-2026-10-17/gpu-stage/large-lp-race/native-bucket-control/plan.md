@@ -24,3 +24,21 @@ Positive: strengthen all methods' common protocol and evaluate genuine GPU batch
 Root self-review: real upstream API, same max8candidates/4CPUs/48GiB and shared prepared native root; changed array observation boundary is disclosed. Neither generic batching nor source instrumentation is novelty. No independent reviewer,Agent,OMP or subagent is used.
 
 Record time:2026-10-18UTC. User-authorized scope:「让批量真正形成：在总资源相同的前提下让多个候选并发跑，把同一时刻的 LP 合并成一批送 GPU，并在相同并发度下和强基线、CPU oracle 对比。」Native/CPU preflight is complete; the next finite existingRTX5090target usesall server/clientCPUs8–11 and retains its own UID-checked deletion/otherWorkspace restoration receipt.
+
+
+## Full CPU/native admission after the real qualification —2026-10-18T08:00UTC
+Actual24results are native29.552versus30.483wave seconds; CPUoracle23.476
+versus27.223wave seconds,all24same outcomes/native non-message payload.
+This admits one full original1000native+CPUoracle comparison through the
+same upstream8queueAPI,not a fullnewGPUvariant. The earlier full8item-wave
+benchmark is weaker than an available source-native submission protocol.
+This comparison is necessary to fix the strongest common baseline before
+attributing any further gain toGPU. Unchanged private timingREPL,maximum8
+candidates,4eligibleCPUs0–3,48GiB,originalsourceorder/noarrayclientdeadline,
+same root preparation,default whole-LP CPUoracle. Profile/answer-omission
+processes have actuallyclosed beforelaunch. No freshmatrix/concurrencygrid,
+noCPU/GPUclaim from preliminary24results. A complete full response/timing/
+retirement record is required; close on all planned2000observations,not on
+processhealth. GPU24qualifier's negative result remains negative; it is not
+grounds to close theGPUroute. Independent-cancellation24also remains a
+separate supporting mechanismqualification until real results justifyfull.

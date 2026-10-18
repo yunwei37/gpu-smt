@@ -20,7 +20,11 @@ insert="""        os.environ['GPU_ARITHMETIC_RACE_WORKER']=str(BATCH/'farkas-rac
 """
 # This inserts text inside run-batch's generated Runner, not outside its source.
 assert needle in source;source=source.replace(needle,insert.replace('\n',r'\n')+needle,1)
-source=source.replace("argv+=['--host',os.environ['GPU_SMT_CUOPT_HOST']","argv+=['--min-batch','2','--host',os.environ['GPU_SMT_CUOPT_HOST']",1)
+minimum_ready=int(os.environ.get('GPU_ARITHMETIC_GPU_MIN_READY','2'))
+if minimum_ready<1:raise ValueError('minimum ready requests must be positive')
+source=source.replace("argv+=['--host',os.environ['GPU_SMT_CUOPT_HOST']", "argv+=['--min-batch',"+repr(str(minimum_ready))+",'--host',os.environ['GPU_SMT_CUOPT_HOST']",1)
+if os.environ.get('GPU_ARITHMETIC_GPU_INDEPENDENT_JOBS')=='1':
+    source=source.replace("argv+=['--min-batch'", "argv+=['--independent-jobs','--min-batch'",1)
 if not os.environ.get('GPU_ARITHMETIC_RACE_MIN_ROWS'):
     raise RuntimeError('Set GPU_ARITHMETIC_RACE_MIN_ROWS from the retained native LP row distribution')
 # Match the GPU/CPU candidates against the same native daemon concurrency.

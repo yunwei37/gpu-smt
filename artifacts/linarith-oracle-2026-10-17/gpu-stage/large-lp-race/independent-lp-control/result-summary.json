@@ -1,0 +1,73 @@
+{
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 29.551738559,
+      "native_reference_ratio": 1.0,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": []
+    },
+    "oracle-hint": {
+      "whole_seconds": 23.475818756,
+      "native_reference_ratio": 1.2588160977962528,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ]
+    },
+    "oracle-gpu": {
+      "whole_seconds": 23.536287725,
+      "native_reference_ratio": 1.2555819721565713,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        19,
+        23
+      ]
+    }
+  },
+  "GPU_elapsed_increase_over_CPU_percent": 0.2575798085191261,
+  "independent_dispatch_groups": 6,
+  "group_size_histogram": {
+    "2": 6
+  },
+  "group_client_RPC_intersection_seconds": [
+    0.051806146,
+    0.117615484,
+    0.331766556,
+    0.126281086,
+    0.442034217,
+    0.05491458
+  ],
+  "groups_with_cancelled_member_and_completed_sibling": 3,
+  "single_LP_jobs": 12,
+  "jobs_result": 5,
+  "jobs_cancelled": 7,
+  "jobs_retired": 12,
+  "all_delete_acknowledged": true,
+  "proxy_connections": 48,
+  "proxy_parsed_requests": 15,
+  "proxy_states": {
+    "JSONDecodeError": 33,
+    "client_disconnected": 10,
+    "PDLP_OPTIMAL": 5
+  },
+  "race_winners": {
+    "cpu": 111,
+    "cpu-no-certificate": 10,
+    "gpu": 4
+  },
+  "scope": "CPU/GPU races unchanged. Actual independent RPC job overlap, not measured simultaneous CUDA kernels or a fused GPU batch. Self-review only."
+}

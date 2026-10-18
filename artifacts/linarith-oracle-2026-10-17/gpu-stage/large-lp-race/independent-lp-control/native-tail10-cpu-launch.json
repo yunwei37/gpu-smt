@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-18T08:03:22Z",
+  "pid": 162812,
+  "start_ticks": "74197454",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/independent-lp-control/native-tail10-cpu",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/independent-lp-control/input-native-tail10.jsonl",
+    "--limit",
+    "10",
+    "--methods",
+    "fast-hybrid",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl"
+  ],
+  "indices": [
+    37,
+    62,
+    111,
+    128,
+    310,
+    319,
+    356,
+    450,
+    710,
+    830
+  ],
+  "scope": "Purposefully selected heavy-tail10 finite qualification,not representative full data;CPU8\u201311,48GiB,source-native8queues, max8commands."
+}

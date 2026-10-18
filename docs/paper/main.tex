@@ -1038,8 +1038,20 @@ Child creation, communication, contention and cancellation can make a race
 slower than its CPU shadow; the design alone supplies no worst-case
 no-slowdown guarantee. The paired cost capture above uses its own clocks. The eight-item-wave
 submission here is not a continuously replenished serving frontier;
-queue scheduling and fixed-certificate numerical omission remain separate
-controls for interpreting the measured opportunity.
+queue scheduling remains a separate control for the common baseline.
+A full known-answer diagnostic on the same 1,000 sources has a fresh native
+clock of 1,228.00 seconds. Returning actual recorded coefficient answers
+while retaining Lean checking takes 866.84 seconds through the native path
+and 767.62 seconds through the AST-oracle path
+($1.417\\times$ and $1.600\\times$, respectively).
+Every cell returns 992 complete and eight rejected sources with identical
+verdicts and non-message payloads; all 13,230 native and 10,251 AST
+numerical calls hit the recorded answers.
+The AST control has 88 accepted-source warning-only changes.
+This answer-aware diagnostic is excluded from valid CPU/GPU speedup scores.
+It retains process setup, lookup and IPC and is not a strict zero-cost
+upper bound. Its result therefore neither establishes achievable GPU
+acceleration nor supports a below-$1.5\\times$ impossibility claim.
 Negative route closure requires applicable evidence that GPU cannot
 push the best valid overall result beyond $1.5\times$.
 
@@ -1050,8 +1062,7 @@ paired reference and CPU eligibility. Full clocks, native outcome changes,
 resource observations and sampling limitations remain in
 Appendix~\ref{app:cpu-controls}. These supporting controls strengthen the
 CPU baselines used for comparison. They do not make ordinary compilation or invocation-local reuse
-the system contribution. The Goedel4.27 and miniF2F4.9 clocks cannot serve as reference
-measurements for the following ProofNet comparison.
+the system contribution. The ProofNet measurements below use their own reference.
 
 \begin{table}[t]
 \centering
