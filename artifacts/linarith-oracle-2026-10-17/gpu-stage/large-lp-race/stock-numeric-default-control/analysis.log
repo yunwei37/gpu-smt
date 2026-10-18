@@ -1,0 +1,35 @@
+{
+  "default-tiered": {
+    "whole_seconds": 88.594756499,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_read_errors": 0,
+    "route": {
+      "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+      "hybrid_override": null,
+      "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+    }
+  },
+  "hybrid": {
+    "whole_seconds": 87.767444935,
+    "counts": {
+      "complete": 7,
+      "rejected": 8
+    },
+    "observer_read_errors": 0,
+    "route": {
+      "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+      "hybrid_override": "1",
+      "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+    }
+  },
+  "fidelity": {
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": []
+  },
+  "default_elapsed_increase_fraction": 0.009426178061953339,
+  "scope": "One selected15-original native control, officialomega,eightqueues,fourCPU4--7,48GiB. Historical raw collector method name fast-hybrid does not identify actual engine; inspect actual late route receipt/source. Parent environment at worker creation captured; not an independent child-environment audit. No new solver or parameter sweep; no global-optimality/inconclusive-margin claim."
+}
