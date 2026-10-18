@@ -11,6 +11,18 @@ file. [Step/audits](tmp/bootstrap/step-0010-20261014T133154+0000/step-report.md)
 own the full chronological record. Counts below are analyzed terminal evidence;
 actual live status comes from processes and terminal records, never this file.
 
+## Latest complete exact-prefix evidence
+
+On all7,808 miniF2F candidates, exact-text prefix takes41,738.63 s versus
+native-batch28,673.00 s. All2,992 complete source identities are preserved;
+there are326 versus319 operational sources, with5 operational→rejected and
+12 rejected→operational changes. Seven cache lookups execute. The raw45.57%
+elapsed increase is not a validated speed ratio because operational outcomes
+remain unresolved and forced-retirement CPU is censored.
+[Full source transitions and raw record](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/exact-result-review.md).
+The existing unit-text/ProofNet work continues; GPU arithmetic is a separate
+ongoing experiment and is not closed by this supporting result.
+
 ## Research questions and decisive frontier
 
 | RQ | Current evidence | Still required |

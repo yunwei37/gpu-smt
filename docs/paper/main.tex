@@ -409,11 +409,20 @@ The 82 failed native requests occupy 20,672.97 seconds, or 72.10\% of whole
 elapsed time, in non-overlapping sequential client roundtrips. This is
 caller waiting/roundtrip wall, not native CPU or internal tactic work.
 Forced retirement censors CPU accounting, and 319 source verdicts remain
-operationally unknown. The pending prefix comparison must therefore report
-failure and verdict transitions alongside time; a time difference alone
-cannot establish savings in successful proof work.
-\missing{Complete original-population prefix timing, per-source native
-agreement, operational outcomes and cost-weighted savings.}
+operationally unknown.
+The complete exact-text prefix capture takes 41,738.63 seconds, with
+2,992 complete, 4,490 rejected and 326 operational sources.
+All 2,992 native-complete sources remain complete; no new source becomes
+complete. Five operational sources become rejected and twelve rejected
+sources become operational, while 314 remain operational.
+The executor records seven cache lookups, 21,588 prefix nodes and 4,945
+original-source fallbacks; its included native parser cost is 10.13 seconds.
+The raw elapsed time is 45.57\% longer than batch execution, but unresolved
+operational outcomes and 109 forced retirements prevent a validated
+speed ratio or complete CPU accounting. This does not establish savings in
+successful proof work or characterize the upstream SHRED service.
+\missing{Original-population unit-text and ProofNet prefix timing,
+per-source native agreement, operational outcomes and cost-weighted savings.}
 
 \subsection{Behavior and isolation}\label{sec:behavior-results}
 RQ2 asks whether branching from prepared native state preserves verifier responses and requested artifacts while isolating candidates and cancellation. We first compare fresh adapter execution with the original verifier, then execute untouched candidate suffixes from prepared states. We retain per-input decisions and artifacts for comparisons that vary preceding unrelated attempts, branch cancellation and resource-limit conditions. Completed attempts are compared for native responses and artifacts. Externally cancelled attempts are compared for progress at termination, cleanup and the independence of surviving attempts. Native scope and history controls distinguish changes in solver mode from cross-candidate interference.

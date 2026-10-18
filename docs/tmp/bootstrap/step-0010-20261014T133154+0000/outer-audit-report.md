@@ -2553,3 +2553,17 @@ its own zero-cost analysis, add source/call batch attribution, qualify the
 pooled race integration, then perform admitted matched full original1000 CPU/
 GPU comparisons if the ceiling does not exclude1.5x. Do not wait-minute poll
 or resume the retired CPU runtime/constructor routes.
+
+
+### 2026-10-18 — original miniF2F exact-text prefix condition closes
+
+7,808 original sources,41,738.632061801 s exact prefix vs28,673.003207251 s
+native batch. Source transitions:2992 complete→complete,4485 rejected→rejected,
+314 operational→operational,5 operational→rejected,12 rejected→operational.
+7cache lookups,21588nodes,4945fallbacks. No validated speed ratio because
+operational outcomes remain and forced-retirement CPU is censored. Raw45.57%
+longer elapsed is recorded with that limitation. Native kernel receipt check
+and all original complete-source identities agree. Unit-text collection and
+original ProofNet driver continue. Paper source/PDF updated and changed page9
+visually checked; targeted self-review only. Main GPU wall-profile/race work
+continues independently.

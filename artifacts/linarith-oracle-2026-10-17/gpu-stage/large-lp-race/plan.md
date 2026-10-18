@@ -2,7 +2,7 @@
 
 2026-10-18 UTC. Owning Codex thread executes and self-reviews all work.
 The user explicitly requested large-LP CPU/GPU racing and genuine concurrent
-batches. This is the next decisive RQ3 mechanism, not a new research direction.
+batches. This is the next decisive RQ4 heterogeneous-execution mechanism, with matched RQ3 service costs, not a new research direction.
 
 Hypothesis: replacing serial GPU waiting with speculation can exploit GPU LP
 parallelism while the original CPU hybrid continues to solve the same LP.

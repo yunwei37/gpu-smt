@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "dataset": "minif2f",
+  "method": "exact",
+  "expected": 7808,
+  "returned": 7808,
+  "counts": {
+    "complete": 2992,
+    "rejected": 4490,
+    "operational": 326
+  },
+  "whole_seconds": 41738.632061801,
+  "cpu_seconds": 7080.984456,
+  "verifier_memory_limit_bytes": 51539607552,
+  "verifier_memory_policy": "pinned upstream LeanRepl default; caller does not override",
+  "normal_native_exit": true,
+  "forced_native_retirements": 109,
+  "cpu_accounting_complete": false,
+  "native_parse_seconds": 10.127055477001704,
+  "fallbacks": 4945,
+  "executed_prefix_nodes": 21588,
+  "cached_lookups": 7,
+  "affinity": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "scope": "offline native batch width4 versus native prefix waves width4; all parse/preparation/IPC/kernel/fallback/cleanup included; source verdict comparison pending"
+}
