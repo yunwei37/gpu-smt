@@ -39,6 +39,13 @@ The hourly research automation is active; this CPU result is not project closure
 retain every pair and the post-fault rebuild lineage. Both full1,000-source
 [phase diagnostics](artifacts/linarith-oracle-2026-10-17/native-stages/oracle-result-review.md)
 are complete, with native responses matching their primary captures.
+The first corrected-family, 48 GiB CPU pair is complete: native **2,234.69 s**
+versus direct oracle **1,717.80 s**, or **1.30091x**. Both return 992 complete
+and 8 rejected sources with no operational failure; 88 accepted-source
+responses differ only in warnings. Two more alternating pairs remain.
+[First complete corrected pair](artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).
+This is not the final three-pair threshold decision.
+
 The first full GPU variant attempts all1,000sources in3,374.15seconds, with984complete/8rejected/8operational; it has no successful parity or acceleration result. [Complete raw GPU record](artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-phase1/result-review.md). The same-plan native control completes in 2,331.39 seconds and the robust CPU support control in 2,363.00 seconds. These observations retain the old stacked headers. A direct-feasibility GPU repair failed real numeric qualification and remains closed. The corrected-family GPU preflight takes 630.37 seconds for 24 attempts, with 16 complete and 8 operational outcomes; it is not admitted to a new full GPU matrix. Original-population prefix timing and the corrected CPU pairs continue. The final best-valid-CPU/GPU 1.5x decision remains open.
 
 A supporting experiment measures shared proof prefixes on all 7,808 miniF2F

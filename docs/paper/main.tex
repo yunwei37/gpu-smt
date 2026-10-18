@@ -741,6 +741,12 @@ CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
 outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
 These observations remain specific to the stacked headers; the corrected
 comparison and final best-CPU-or-GPU threshold decision remain open.
+The first complete corrected-family CPU pair under 48\,GiB takes
+2,234.69 seconds for the native reference and 1,717.80 seconds for the
+direct oracle, a $1.30091\\times$ ratio. Both return 992 complete and
+8 rejected sources without operational outcomes. The same 88 source payloads
+differ only in warning diagnostics. Two further alternating pairs are active,
+so this observation is not the final aggregate threshold result.
 A family-only header and owner-cancellation qualification subsequently
 returns 16 complete and 8 operational outcomes on 24 real sources in
 630.37 seconds, against 46.05 seconds and 24 complete outcomes for the
