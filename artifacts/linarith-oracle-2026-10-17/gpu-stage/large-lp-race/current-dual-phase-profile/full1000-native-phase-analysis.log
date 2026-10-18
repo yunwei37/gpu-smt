@@ -1,0 +1,123 @@
+{
+  "terminal": {
+    "method": "fast-hybrid",
+    "rep": 1,
+    "state": "complete",
+    "expected": 1000,
+    "attempts": 1000,
+    "counts": {
+      "complete": 992,
+      "rejected": 8
+    },
+    "whole_ns": 705408609038,
+    "cpu": {
+      "collector": {
+        "user": 0.7807370000000001,
+        "system": 59.895472
+      },
+      "waited_children": {
+        "user": 1550.16542,
+        "system": 26.682264
+      }
+    },
+    "sampled_peak_fleet_pss_with_collector": 7985944576,
+    "sampled_peak_fleet_rss_with_collector": 11769413632,
+    "sampling_read_errors": 0,
+    "workers": 1,
+    "resource_observer_enabled": true,
+    "sampling_seconds": 1,
+    "effective_RLIMIT_AS": 51539607552,
+    "width": 8,
+    "normalization": "none; preserve complete parsed native JSON values",
+    "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+  },
+  "complete_source_spans": 1000,
+  "request_outcomes": {
+    "native_certificate": 12590,
+    "native_no_certificate_or_error": 640
+  },
+  "data_quality_defects": {},
+  "source_less_auxiliary_rows": {
+    "product-application": 4656,
+    "fast": 6381
+  },
+  "coefficient_space_sizes": {
+    "native_rows": {
+      "count": 13230,
+      "min": 2,
+      "p50": 10,
+      "p90": 84,
+      "p99": 187,
+      "max": 888
+    },
+    "native_cols": {
+      "count": 13230,
+      "min": 2,
+      "p50": 20,
+      "p90": 267,
+      "p99": 557,
+      "max": 3160
+    },
+    "native_nnz": {
+      "count": 13230,
+      "min": 3,
+      "p50": 74,
+      "p90": 1778,
+      "p99": 4679,
+      "max": 26044
+    },
+    "native_product_columns": {
+      "count": 13230,
+      "min": 0,
+      "p50": 14,
+      "p90": 244,
+      "p99": 524,
+      "max": 3081
+    }
+  },
+  "Lean_exclusive_calling_thread_CPU_seconds": {
+    "products": 211.643826119,
+    "lp": 12.295064783,
+    "preprocess": 162.193076389,
+    "linearize": 87.667158132,
+    "certificate": 208.287601121
+  },
+  "phase_elapsed_occupied_seconds_NOT_additive": {
+    "products": 334.028405079,
+    "native_roundtrip": 543.737223017,
+    "lp": 545.841183081,
+    "preprocess": 254.778175491,
+    "linearize": 171.930726789,
+    "certificate": 330.336948667
+  },
+  "numeric_reply_elapsed_sums_seconds_NOT_CPU": {
+    "native": {
+      "certificate_roundtrip_ns": 1302.580335956,
+      "no_certificate_or_error_roundtrip_ns": 76.123154327
+    }
+  },
+  "request_availability": {
+    "peak_distinct_candidates": 8,
+    "cross_candidate_request_overlap_seconds": 392.151428859,
+    "wall_seconds_by_outstanding_requests": {
+      "0": 157.495855994,
+      "1": 151.585794158,
+      "2": 145.620169246,
+      "3": 125.83207589,
+      "4": 68.553317233,
+      "5": 33.314310128,
+      "6": 14.39111625,
+      "7": 4.273908005,
+      "8": 0.166532107
+    },
+    "scope": "Exported request lifetimes include IPC/lock/wait; not instantaneous GPU-ready LPs or batch speedup."
+  },
+  "limitations": [
+    "reply lp_ns includes complete numeric search/race, not pure floating solve",
+    "cancelled child internal CPU unknown",
+    "exact coefficient-space shapes are not scaled floating solver shapes",
+    "calling-thread CPU excludes worker child CPU; cannot add to roundtrip as exclusive whole cost",
+    "diagnostic scan/logging/gzip charged; not a new primary performance result"
+  ]
+}
+MODEL {"occupied_union_seconds": 605.285547542, "whole_seconds": 705.408609038, "occupied_union_fraction": 0.8580637375087572, "fixed_lane_model_whole_seconds": 447.594680742, "critical_lane": 2, "scope": "Deletes all Lean products/LP stages and complete numerical roundtrips, including non-GPU IPC/repair/queue/retirement. Fixed source path, candidate durations outside these windows, inter-command gaps and static lane assignments. Not a scheduler-independent or support-changing GPU upper bound."}

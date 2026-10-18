@@ -783,3 +783,5 @@ Peak two groups overlap; final provider has zero allocations. This functional
 correction still does not earn full performance admission. No strict
 no-slowdown claim is made: extra processes/repair/contention remain charged.
 [Corrected protocol, closed raw and root self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).
+
+Current-build arithmetic phase accounting and heavy-tail comparison are now complete for the selected thousand-source diagnostic pair: [raw data, reproducer and scoped result](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/full1000-result-review.md). This diagnostic is separate from primary performance pairs. Its broad fixed-path zero-cost models do not establish GPU impossibility; complete original-population and matched native-frontend evidence remain pending.

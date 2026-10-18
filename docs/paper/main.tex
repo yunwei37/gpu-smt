@@ -746,6 +746,51 @@ GPU result or a scheduler-independent Amdahl bound. Current product and
 small-LP regions are not exhaustively attributed by these records.
 It does not justify closing the GPU direction.
 
+\paragraph{Current full phase capture.}
+A separate current-build diagnostic pair covers all 1,000 sources and
+13,230 native versus 10,251 oracle numerical requests, including failed
+branches. Native and CPU-oracle whole times are 705.41 and 459.32 seconds,
+with metadata scans and gzip I/O charged. Both retain 992 complete and eight
+rejected sources with matching verdicts and non-message fields and
+104 message-only differences between methods. Relative to its retained
+CPU reference, the diagnostic changes one unused-variable warning.
+The instrumented observation is not added to the three primary pairs.
+
+All direct-oracle numerical-search timers sum to 29.85 seconds on successful
+branches and 51.98 seconds on failed branches, with 3.72 seconds of numerical
+products. Native fallback adds 92.03 seconds of cumulative roundtrip time.
+These elapsed timers include overlapping requests, and search regions also
+include race bookkeeping and retirement. The 935 parsed HiGHS models sum to
+9.34 seconds of solver elapsed time, with 448 additional aborted or unparsed
+connections. Pure cancelled-worker and exact-repair CPU remain unseparated.
+
+The parsed floating models have median dimensions of 82 rows, 230 columns
+and 1,752 nonzeros. Only 93 of these models overlap another candidate's
+request lifetime in the observed acquisition, with at most three candidates
+and 0.94 seconds of overlap. Wider exported-request lifetimes include
+communication and waiting, so they do not establish device-ready batch supply.
+Queueing or scheduling changes must pay their own costs.
+
+Deleting all recorded Lean product/LP stages and complete numeric roundtrips
+occupies 85.81\% of the native timeline and 58.76\% of the CPU-oracle timeline.
+At fixed source paths, other durations, gaps and static queues, these
+optimistic deletions model native-relative ratios of $1.57600\times$ and
+$1.75786\times$, respectively. The envelope also deletes non-GPU work,
+including product proofs, communication, repair and retirement. Neither
+model is a strict scheduler-independent Amdahl bound or a GPU result,
+and neither establishes the below-$1.5\times$ closure condition.
+
+For the same sources ranked as the native slowest 1\%, summed source-service
+spans change from 1,044.86 to 790.86 seconds. They overlap and are not
+whole-cohort elapsed times. On these sources, the CPU oracle's direct
+numerical-search timers sum to only 1.20 seconds, while recorded fallback
+preprocessing and linearization consume 101.27 calling-thread CPU seconds
+and direct plus native certificate checks consume 56.09 CPU seconds.
+Direct AST export is not included in those fallback-stage counters.
+The corresponding slowest-10\% source-span sums are 2,319.47 and
+1,484.35 seconds. The remaining heavy tail therefore requires examining
+proof and frontend work beyond the parsed floating solver.
+
 A source-native scheduling qualification uses the same private native binary
 and verification body for eight static lanes or eight FIFO workers.
 On the original first 64 sources, they take 54.81 and 58.32 seconds with equal

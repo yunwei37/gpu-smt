@@ -1,2 +1,2 @@
 
-Current two-sided CPU/native phase attribution: [request-complete qualification and full diagnostic](gpu-stage/large-lp-race/current-dual-phase-profile/README.md). Closed64-source raw and source-level coverage are published; the full1000 diagnostic is in progress and supplies no primary timing or GPU-impossibility conclusion yet.
+Current two-sided CPU/native phase attribution: [request-complete qualification and full diagnostic](gpu-stage/large-lp-race/current-dual-phase-profile/README.md). Closed64-source and full1000 raw, request/phase coverage, matched native-ranked tails and numerical model-supply observations are published. Own-clock zero-envelope models remain above1.5 and are explicitly not strict Amdahl bounds; GPU research remains open.

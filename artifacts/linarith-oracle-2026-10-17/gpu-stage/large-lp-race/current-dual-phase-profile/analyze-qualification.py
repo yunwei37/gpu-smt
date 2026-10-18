@@ -4,12 +4,12 @@ R=Path('/workspaces/repository');A=R/'artifacts/linarith-oracle-2026-10-17/gpu-s
 U=Path('/tmp/gpu-smt-linarith-oracle-20261017/current-dual-phase-profile')
 def rows(p):
  with (gzip.open(p,'rt')if str(p).endswith('.gz')else open(p))as f:return[json.loads(l)for l in f]
-q=U/'qualification64-with-requests'
+q=A/'qualification-raw/qualification64-with-requests'
 result={'scope':'Original64, width8, four CPUs4--7,48GiB. Diagnostic telemetry, not a primary timing score. Current CPU-oracle private build; no altered search or candidate checking.'}
 m={}
 for method in ['fast-hybrid','oracle-highs']:
  d=q/('rep1-'+method);rs=rows(d/'responses.jsonl.gz');ts=rows(d/'candidate-times.jsonl');cost=rows(d/'lean-costs.jsonl.gz')
- ref=U/('qualification64-profile/rep1-fast-hybrid'if method=='fast-hybrid'else'qualification64-normal/rep1-oracle-highs')
+ ref=A/'qualification-raw'/('qualification64-profile/rep1-fast-hybrid'if method=='fast-hybrid'else'qualification64-normal/rep1-oracle-highs')
  rr=rows(ref/'responses.jsonl.gz')
  by={x['proof_id']:x for x in rs};rb={x['proof_id']:x for x in rr}
  differences=[k for k in by if by[k]['response']!=rb[k]['response']or by[k]['outcome']!=rb[k]['outcome']]
@@ -35,7 +35,7 @@ for method in ['fast-hybrid','oracle-highs']:
  'all_request_and_source_IDs_joined':True,'telemetry_types':dict(collections.Counter(x['ty']for x in cost)),
  'native_exact_shapes':'rows=maxVar+2; cols=len(hyps); nnz=nonzero exact coefficients plus strictness coefficient. These are unscaled certificate-space dimensions, not float-solver model dimensions.',
  'diagnostic_gzip_bytes':(d/'lean-costs.jsonl.gz').stat().st_size,'observer_read_errors':term['sampling_read_errors']}
-normal=json.loads((U/'qualification64-normal/terminal.json').read_text())['results'][0]['whole_ns']/1e9
+normal=json.loads((A/'qualification-raw/qualification64-normal/terminal.json').read_text())['results'][0]['whole_ns']/1e9
 result.update(methods=m,normal_CPU_whole_seconds=normal,profile_CPU_over_normal=m['oracle-highs']['whole_seconds']/normal,
  full1000_diagnostic_admitted=True,limitations=['sequential single short overhead comparison is not an unbiased overhead estimate',
  'native fallback LP worker internal cancelled compute remains opaque; roundtrip includes communication/exact repair/wait',
