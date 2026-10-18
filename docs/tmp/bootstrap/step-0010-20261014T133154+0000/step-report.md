@@ -4254,3 +4254,21 @@ review remain incomplete. REVIEW is root self-review only; no independent
 audit/acceptance claim. Hourly/goal remainactive,no delegation.
 
 Publication check repaired the figure CSV export's CRLF line endings flagged bygit diff--check. Numeric rows are unchanged; the generator now emitsLF. No capture/runtime/algorithm changes or new tests/settings are introduced. Full known-answer cache data are losslessly archived,with explicit exclusion from legitimate CPU/GPU speedup scores.
+
+
+### 2026-10-18 — source-native queue GPU qualification closes
+EXPERIMENT: same24/max8/CPU8–11/48GiB GPU23.857266664s versus CPU23.475818756s
+and native29.551738559s.24/24complete, native verdict/non-message equality,
+three GPU warning changes; all task timings,actual max8. Nine real cross-source
+pairs,two returned/seven cancelled/allretired;125races select112CPUcert,
+10CPU-no-cert,3GPUcert. Parsed15requests distinct from56connections/41aborted
+parse records. Cancelled device compute unknown. Actual pinned server banner
+26.10.00; full cold lifecycle40.0839s,deleted,labReady/otherWorkspaceRunning.
+No new full variant matrix admitted from an adverse GPU qualification.
+WRITE: current evaluation no longer says the already-closed cells are pending;
+complete raw qualification and interpretation are retained.
+REVIEW: root self-review confirms source order, actual task concurrency,
+same-resource CPU/GPU comparison, raw connection-vs-LP distinction and no
+inferred impossibility. The Amdahl frontier remains open. Next check targets
+independent LP scheduling/cancellation in the pinned official API, not another
+PDLP parameter grid. Full numerical-omission and prefix collectors preserved.

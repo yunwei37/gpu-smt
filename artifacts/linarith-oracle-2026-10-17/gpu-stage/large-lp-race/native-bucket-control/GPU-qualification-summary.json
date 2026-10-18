@@ -1,0 +1,89 @@
+{
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 29.551738559,
+      "native_reference_ratio": 1.0,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": []
+    },
+    "oracle-hint": {
+      "whole_seconds": 23.475818756,
+      "native_reference_ratio": 1.2588160977962528,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ]
+    },
+    "oracle-gpu": {
+      "whole_seconds": 23.857266664,
+      "native_reference_ratio": 1.2386892000328273,
+      "counts": {
+        "complete": 24
+      },
+      "outcome_differences": [],
+      "non_message_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        19,
+        23
+      ]
+    }
+  },
+  "CPU_over_GPU_ratio": 0.9840112485067035,
+  "GPU_elapsed_increase_over_CPU_percent": 1.624854544860166,
+  "candidate_peaks": {
+    "fast-hybrid": 8,
+    "oracle-hint": 8,
+    "oracle-gpu": 8
+  },
+  "GPU_job_events": {
+    "available": true,
+    "submitted_jobs": 9,
+    "result_jobs": 2,
+    "cancel_requested_jobs": 7,
+    "client_retired_jobs": 9,
+    "submitted_batch_size_histogram": {
+      "2": 9
+    },
+    "submitted_distinct_source_histogram": {
+      "2": 9
+    },
+    "server_reported_result_solver_seconds": 0.362,
+    "submitted_without_result_ids": [
+      "30502c16-7496-47c4-af42-9b817bfafc4f",
+      "313361d7-d205-4e1f-bfd2-4307a76aa842",
+      "3df0fe9b-af3f-4a54-8425-4f6d7ea395fd",
+      "4e09d916-d649-420b-b10c-65839f67f8e8",
+      "68bb481a-c1eb-497d-a04f-b5b6a2a19220",
+      "6f09ab41-b0de-4d87-af7d-bb7df20ac984",
+      "e6c954a3-8bac-4f6a-9929-20528484218b"
+    ],
+    "submitted_without_client_retirement_ids": [],
+    "summed_client_batch_retirement_wall_seconds": 1.966839662,
+    "dispatcher_retirement": [
+      {
+        "event": "dispatcher_retired",
+        "monotonic_ns": 740314953196767,
+        "pending_jobs": 0
+      }
+    ],
+    "cancelled_job_device_compute_seconds": null,
+    "scope": "All submitted jobs, including discarded/cancelled batches. Server solve_time exists only for result records. Client batch/RPC/retirement wall is not device compute or a disjoint portion of native whole wall. Unknown cancelled device time is not zero."
+  },
+  "race_winners": {
+    "cpu": 112,
+    "cpu-no-certificate": 10,
+    "gpu": 3
+  },
+  "summed_overlapping_race_decision_seconds": 12.352334634,
+  "summed_overlapping_race_retirement_seconds": 0.102193656
+}

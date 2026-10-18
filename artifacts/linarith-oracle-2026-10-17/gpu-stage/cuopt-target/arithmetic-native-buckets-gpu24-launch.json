@@ -1,0 +1,55 @@
+{
+  "utc": "2026-10-18T07:35:18Z",
+  "pid": 161140,
+  "start_ticks": "74029053",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-bucket-control/bucket8-qualification24-gpu",
+    "--limit",
+    "24",
+    "--methods",
+    "oracle-gpu",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-bucket-control/bucket8-qualification24-cpu/rep1-fast-hybrid",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl"
+  ],
+  "host": "10.42.1.205",
+  "min_rows": 11,
+  "minimum_live_GPU_batch": 2,
+  "RLIMIT_AS": 51539607552,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "build": {
+    "utc": "2026-10-18T04:44:18.773612+00:00",
+    "argv": [
+      "cargo",
+      "build",
+      "--release",
+      "--offline",
+      "--bin",
+      "arithmetic-batchd",
+      "--bin",
+      "farkas-batchd",
+      "--bin",
+      "farkas-race-worker"
+    ],
+    "source": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/external-support",
+    "private_build": "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled/native"
+  },
+  "scope": "real24 sources; corrected family; width8; sameLP CPU/GPU race; no numeric warmup; dispatch follows retained build receipt"
+}

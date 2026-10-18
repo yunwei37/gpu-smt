@@ -2841,3 +2841,18 @@ review remain incomplete. REVIEW is root self-review only; no independent
 audit/acceptance claim. Hourly/goal remainactive,no delegation.
 
 Publication check repaired the figure CSV export's CRLF line endings flagged bygit diff--check. Numeric rows are unchanged; the generator now emitsLF. No capture/runtime/algorithm changes or new tests/settings are introduced. Full known-answer cache data are losslessly archived,with explicit exclusion from legitimate CPU/GPU speedup scores.
+
+
+### 2026-10-18 — self-audit of native-queue GPU qualifier
+Recomputed each closed cell from native terminal and response JSON; asserted
+24 exact source IDs, no verdict/non-message differences, and peak timed
+concurrency no greater than8. Recounted all submitted/result/cancel/retirement
+job IDs independently of delivered hint counts. The protocol changes the
+array-level deadline and queue arrangement, so it is not a timeout-equivalence
+or GPU-novelty result. Warm23.857s excludes cold server startup; whole lifecycle
+40.084s is separately retained. Seven GPU sampler read errors and unobserved
+cancelled device CPU/GPU work remain limits. Qualification fails the GPU-benefit
+precondition for a new full variant, but cannot close the route under the
+user's only-if-Amdahl instruction. No other writer or Agent is used; this is
+same-thread self-review, not independent audit. Original four RQs/Initial
+Narrative, hourly cadence and active goal remain unchanged.
