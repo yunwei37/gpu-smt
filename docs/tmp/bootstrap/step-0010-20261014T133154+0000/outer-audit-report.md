@@ -3375,3 +3375,15 @@ workload, concurrency or scientific expected answer changes. Closed raw
 archival roundtrips byte-equal; no live log is compressed. Pending methods
 cannot support a performance claim. User forbidden independent review remains
 absent, no false independence asserted.
+
+### E1082 preflight/full admission self-audit
+Direction: all4RQ and original Lean/SMT/system/device target preserved.
+Validity: actual original64IDs, officialSDKclassification and native response
+payloads align; raw warnings, complete setup/retirement and limits remain.
+The only reused controls are unchanged valid preflight2stock/native; the
+zero-inputfailedPower is not counted as a valid method clock. Source/clock
+provenance is explicit, no false new repetitions or cross-epoch denominator.
+Efficiency: full service1,000x3 is now an actual admitted next acquisition,
+not more readiness reports or solver/kernel grids. Canonical evaluation
+is bounded and points to complete byte-equal prior history. Independent
+review remains unavailable under user instruction; this is root self-audit.

@@ -5194,3 +5194,21 @@ fresh preflight2. Its stock condition now closes216.998374s total,
 203.771438s warmed verification,63/1,16owned descendants joined and zero
 remaining. This is only one control, not a method comparison or population
 result. Native/Power continue. Original raw/failure/executed source preserved.
+
+### E1082 repaired preflight closes and full matrix starts
+Power startup initially resolves the declared virtualenv Python symlink to
+systemPython, causing missingNumPy before any candidate/server starts.
+Forward repair preserves executable invocation path, without package/source/
+memory/protocol changes. Only that affected cell reruns; valid stock/native
+controls remain explicit. One repaired fixed-order64source comparison:
+stock216.998374s/native82.459450s/Power40.417330s cold, warmed203.771438/
+69.341886/27.248822s. Everycondition63valid1Leanerror, nooperational,
+status/non-messageparity;17/6rawmessagechanges retained. All16/24/27owned
+descendants joined; none remains. Exact upstream server+SDKsource verified.
+No selected preflight ratio enters final paper performance.
+
+Actual full1000driver554087 starts the admitted3rotated stock/native/Power
+blocks with frozen corrected source, eightSDKrequests/fourCPU20--23/48GiB.
+Warm and complete lifecycle clocks stay separate; failed original attempts
+and archived raw stay. This is supporting official-service transfer evidence,
+not new native-state/solver novelty, GPU success or all4RQ closure.

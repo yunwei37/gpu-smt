@@ -173,7 +173,10 @@ if __name__=="__main__":
     parser.add_argument("--methods",nargs="+",choices=["stock","native","power"],default=["stock","native","power"])
     args=parser.parse_args()
     for name in["kimina","build","build_source","repl","reference","support_python","input","out"]:
-        setattr(args,name,getattr(args,name).resolve())
+        # Preserve a virtual environment's invocation path: resolving bin/python
+        # to its system symlink target loses NumPy/highspy from that environment.
+        value=getattr(args,name)
+        setattr(args,name,value.absolute()if name=="support_python"else value.resolve())
     os.sched_setaffinity(0,{20,21,22,23})
     resource.setrlimit(resource.RLIMIT_AS,(51539607552,51539607552))
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))

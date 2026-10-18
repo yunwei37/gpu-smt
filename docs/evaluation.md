@@ -96,11 +96,12 @@ The [official Kimina HTTP plan](../artifacts/linarith-oracle-2026-10-17/kimina-h
 tests transfer beyond native-array collection. Unchanged upstream application/
 SDK fb2393de, same declared4.27kernel/GC/native-loader REPL, compiled stock,
 strong Fast/hybrid+omega and current Power at8source concurrency/fourCPU20--23.
-A real first64preflight is underway. The initial stock verification returns
-63valid/1Lean error, but its cold clock ends before every worker retires;
-that attempt is retained incomplete and the measurement is repaired.
-No completed three-method speed result or full matrix admission is claimed.
-Three rotated1000source blocks require qualified beneficial preflight.
+The repaired first64preflight closes stock216.998s/native82.459s/Power40.417s
+complete lifecycles, each63valid/1Leanerror with matching status/non-message
+responses. Two failed dependency attempts remain; Power's valid run replaces
+only its zero-input startup failure. This is one selected preflight, not a
+population result. It admits the now-running3rotated1000source blocks.
+[Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
 ## Prefix/preparation evidence and previous controls
