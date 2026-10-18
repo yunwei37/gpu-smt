@@ -40,3 +40,5 @@ under power-export/full1000-raw, and analyze.py recomputes each result.
 Current review is root self-review only. All four RQs, formal-set generalization,
 stronger service baselines, differentiated systems contribution and GPU
 interpretation remain open. No scheduler or healthy writer is stopped.
+
+[Full-source span distributions, retained regressions and CPU-accounting limits](service-span-result-review.md) provide a secondary reanalysis of the same closed observations.

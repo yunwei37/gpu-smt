@@ -5,3 +5,5 @@
 All three whole observations preserve 992 complete/eight rejected originals and
 all non-message fields. Their sum ratio is 1.78205x in the common instrumented
 build. This does not establish uninstrumented production or GPU performance.
+
+[Per-source distributions and slower cases](service-span-result-review.md) include the three-panel CDF and distinguish elapsed gain from incomplete CPU accounting.

@@ -3270,3 +3270,12 @@ numeric binaries are the same underlying files. No large overhead claim from
 the small/noisy single-order deltas. Remaining instrumentation and disabled
 observer are explicit. Full corrected pair is open, no partial promotion.
 Frozen original captures/formal sources/author WIP preserved, no agents.
+
+## E1077 distribution self-audit — not independent
+Checked all1000sources in each of6closed streams, fixed input/source alignment,
+all70repeat-sign regression IDs retained and exact interval-sweep consistency.
+Candidate waiting spans are not CPU/GPU-ready work; incomplete charged CPU is
+not exhaustive utilization. Existing instrumented scope unchanged.
+Matplotlib figure source/outputs retained; Tectonic and rendered page15 pass.
+No new experiment, tuning grid, benchmark subset, RQ closure or independent
+reviewer. Actual novel systems contribution remains unproved.

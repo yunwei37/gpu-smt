@@ -1,0 +1,1474 @@
+{
+  "scope": "secondary reuse of complete actual instrumented captures; not a new experiment, zero-instrumentation speedup, new GPU bound or independent audit",
+  "blocks": [
+    {
+      "block": 1,
+      "native": {
+        "whole_seconds": 629.483425563,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 4232.96347837,
+          "p50": 2.197096024,
+          "p90": 7.915695486,
+          "p99": 33.689454687,
+          "max": 178.517058254
+        },
+        "candidate_envelope_seconds": 625.348666101,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.001595009,
+          "1": 48.83557857900001,
+          "2": 7.269400788,
+          "3": 33.321072526,
+          "4": 4.630343205,
+          "5": 56.97249424800002,
+          "6": 3.0803935159999996,
+          "7": 22.142630358999995,
+          "8": 449.0951578709996
+        },
+        "single_active_seconds": 48.83557857900001,
+        "zero_active_seconds": 0.001595009,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1439.861851,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "power": {
+        "whole_seconds": 350.683823831,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 2262.126524701,
+          "p50": 1.155912216,
+          "p90": 3.752742998,
+          "p99": 23.165190805,
+          "max": 110.91221708
+        },
+        "candidate_envelope_seconds": 346.350814324,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.0015634390000000002,
+          "1": 23.522151593,
+          "2": 22.362270272999996,
+          "3": 10.759360591000002,
+          "4": 11.160733766999996,
+          "5": 18.777867688999997,
+          "6": 26.229282467999994,
+          "7": 2.606893564,
+          "8": 230.93069094000015
+        },
+        "single_active_seconds": 23.522151593,
+        "zero_active_seconds": 0.0015634390000000002,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1187.4708540000001,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "whole_ratio": 1.7950170004601007,
+      "charged_CPU_ratio": 1.2125450036519378,
+      "source_service_span_sum_ratio": 1.8712319722830262,
+      "source_regression_counts": {
+        "power_slower": 131,
+        "power_faster": 869,
+        "meaning": "service-span observations with waiting and interference; not isolated per-source CPU or confidence"
+      }
+    },
+    {
+      "block": 2,
+      "native": {
+        "whole_seconds": 615.334830539,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 4109.305265017,
+          "p50": 2.118532541,
+          "p90": 7.66906015,
+          "p99": 32.05838334,
+          "max": 163.364936137
+        },
+        "candidate_envelope_seconds": 611.311477087,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.0015893129999999998,
+          "1": 55.60722548,
+          "2": 1.962180752,
+          "3": 28.742272510999996,
+          "4": 16.458682482000004,
+          "5": 39.774982077,
+          "6": 14.668322129000002,
+          "7": 21.942491330999996,
+          "8": 432.15373101200015
+        },
+        "single_active_seconds": 55.60722548,
+        "zero_active_seconds": 0.0015893129999999998,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1383.079851,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "power": {
+        "whole_seconds": 348.913596688,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 2258.370966649,
+          "p50": 1.154780908,
+          "p90": 3.752196147,
+          "p99": 23.125708878,
+          "max": 115.048667226
+        },
+        "candidate_envelope_seconds": 344.738360213,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.0015934319999999997,
+          "1": 21.462597496999997,
+          "2": 26.113821878,
+          "3": 4.782176048,
+          "4": 14.806367146000005,
+          "5": 18.531289963000006,
+          "6": 25.838373340000004,
+          "7": 2.195088459,
+          "8": 231.00705244999975
+        },
+        "single_active_seconds": 21.462597496999997,
+        "zero_active_seconds": 0.0015934319999999997,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1187.3312019999998,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "whole_ratio": 1.7635736651708502,
+      "charged_CPU_ratio": 1.1648644023422203,
+      "source_service_span_sum_ratio": 1.8195882455549102,
+      "source_regression_counts": {
+        "power_slower": 164,
+        "power_faster": 836,
+        "meaning": "service-span observations with waiting and interference; not isolated per-source CPU or confidence"
+      }
+    },
+    {
+      "block": 3,
+      "native": {
+        "whole_seconds": 637.265747157,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 4234.51035346,
+          "p50": 2.209394244,
+          "p90": 7.652790213,
+          "p99": 32.9488259,
+          "max": 172.402413111
+        },
+        "candidate_envelope_seconds": 633.142069738,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.0016511490000000002,
+          "1": 60.45632288599999,
+          "2": 6.918793427999999,
+          "3": 26.300911150000005,
+          "4": 10.428627872999998,
+          "5": 49.61201082699999,
+          "6": 18.206054983999998,
+          "7": 7.4387647910000005,
+          "8": 453.7789326499997
+        },
+        "single_active_seconds": 60.45632288599999,
+        "zero_active_seconds": 0.0016511490000000002,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1450.1556950000002,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "power": {
+        "whole_seconds": 356.536732302,
+        "span_distribution_seconds": {
+          "n": 1000,
+          "sum_seconds": 2295.774827622,
+          "p50": 1.187087182,
+          "p90": 3.837079279,
+          "p99": 23.932953044,
+          "max": 110.874461612
+        },
+        "candidate_envelope_seconds": 352.31902422,
+        "wall_seconds_by_active_source_spans": {
+          "0": 0.001543858,
+          "1": 25.373411702,
+          "2": 26.334256282,
+          "3": 3.1800677559999992,
+          "4": 15.134814674000001,
+          "5": 18.26616031,
+          "6": 26.11189761599999,
+          "7": 3.6837220300000006,
+          "8": 234.23314999199988
+        },
+        "single_active_seconds": 25.373411702,
+        "zero_active_seconds": 0.001543858,
+        "peak_active_source_spans": 8,
+        "charged_self_waited_child_CPU_seconds": 1205.665261,
+        "charged_CPU_scope": "collector plus waited children, not exhaustive descendant CPU or scheduler utilization",
+        "span_scope": "native source service intervals including waiting; envelope excludes earlier preparation/later retirement. Zero source spans need not mean idle CPU; overlap is not concurrentlyGPU-ready LPs."
+      },
+      "whole_ratio": 1.7873775390335152,
+      "charged_CPU_ratio": 1.2027846715905337,
+      "source_service_span_sum_ratio": 1.8444798255089212,
+      "source_regression_counts": {
+        "power_slower": 156,
+        "power_faster": 844,
+        "meaning": "service-span observations with waiting and interference; not isolated per-source CPU or confidence"
+      }
+    }
+  ],
+  "same_source_slower_in_all_three_observations": [
+    {
+      "proof_id": "Proof_09503",
+      "observations": [
+        {
+          "native": 20.572483703,
+          "power": 26.057538424
+        },
+        {
+          "native": 18.744526643,
+          "power": 25.358542699
+        },
+        {
+          "native": 18.985685295,
+          "power": 25.766907397
+        }
+      ],
+      "summed_service_delta_seconds": 18.880292879000002
+    },
+    {
+      "proof_id": "Proof_03101",
+      "observations": [
+        {
+          "native": 29.829400405,
+          "power": 31.645378025
+        },
+        {
+          "native": 26.374895376,
+          "power": 34.015407364
+        },
+        {
+          "native": 29.328837912,
+          "power": 33.817424579
+        }
+      ],
+      "summed_service_delta_seconds": 13.945076274999991
+    },
+    {
+      "proof_id": "Proof_04190",
+      "observations": [
+        {
+          "native": 0.826197852,
+          "power": 5.169974079
+        },
+        {
+          "native": 0.825317233,
+          "power": 4.031495921
+        },
+        {
+          "native": 0.753283831,
+          "power": 5.445759139
+        }
+      ],
+      "summed_service_delta_seconds": 12.242430223
+    },
+    {
+      "proof_id": "Proof_02778",
+      "observations": [
+        {
+          "native": 5.831671016,
+          "power": 8.945330873
+        },
+        {
+          "native": 6.401894444,
+          "power": 9.875692243
+        },
+        {
+          "native": 6.550324364,
+          "power": 9.425275144
+        }
+      ],
+      "summed_service_delta_seconds": 9.462408436
+    },
+    {
+      "proof_id": "Proof_24618",
+      "observations": [
+        {
+          "native": 0.963677549,
+          "power": 3.472265543
+        },
+        {
+          "native": 1.060841058,
+          "power": 4.028203075
+        },
+        {
+          "native": 1.227918741,
+          "power": 4.531248751
+        }
+      ],
+      "summed_service_delta_seconds": 8.779280021
+    },
+    {
+      "proof_id": "Proof_03444",
+      "observations": [
+        {
+          "native": 43.314480636,
+          "power": 43.375943965
+        },
+        {
+          "native": 40.303751731,
+          "power": 42.459831445
+        },
+        {
+          "native": 40.486832285,
+          "power": 43.749758309
+        }
+      ],
+      "summed_service_delta_seconds": 5.480469067000001
+    },
+    {
+      "proof_id": "Proof_23390",
+      "observations": [
+        {
+          "native": 3.077853163,
+          "power": 5.653994713
+        },
+        {
+          "native": 3.087136731,
+          "power": 4.520605259
+        },
+        {
+          "native": 3.128629229,
+          "power": 4.485897139
+        }
+      ],
+      "summed_service_delta_seconds": 5.366877988000001
+    },
+    {
+      "proof_id": "Proof_23002",
+      "observations": [
+        {
+          "native": 14.031956249,
+          "power": 15.633012097
+        },
+        {
+          "native": 13.200049537,
+          "power": 14.561301983
+        },
+        {
+          "native": 13.154799623,
+          "power": 15.349080667
+        }
+      ],
+      "summed_service_delta_seconds": 5.156589338
+    },
+    {
+      "proof_id": "Proof_17389",
+      "observations": [
+        {
+          "native": 3.122364597,
+          "power": 4.7817221
+        },
+        {
+          "native": 4.054203828,
+          "power": 4.693172849
+        },
+        {
+          "native": 3.68989391,
+          "power": 5.27989409
+        }
+      ],
+      "summed_service_delta_seconds": 3.8883267039999994
+    },
+    {
+      "proof_id": "Proof_23622",
+      "observations": [
+        {
+          "native": 1.593628543,
+          "power": 3.447403988
+        },
+        {
+          "native": 2.108907346,
+          "power": 3.060779182
+        },
+        {
+          "native": 2.369364148,
+          "power": 3.119588418
+        }
+      ],
+      "summed_service_delta_seconds": 3.5558715510000005
+    },
+    {
+      "proof_id": "Proof_12643",
+      "observations": [
+        {
+          "native": 2.392079147,
+          "power": 3.026845167
+        },
+        {
+          "native": 1.838437213,
+          "power": 3.064598678
+        },
+        {
+          "native": 1.929272533,
+          "power": 3.577816844
+        }
+      ],
+      "summed_service_delta_seconds": 3.5094717959999997
+    },
+    {
+      "proof_id": "Proof_05793",
+      "observations": [
+        {
+          "native": 3.579126607,
+          "power": 5.42053882
+        },
+        {
+          "native": 3.467324613,
+          "power": 4.37925789
+        },
+        {
+          "native": 4.088906154,
+          "power": 4.72688786
+        }
+      ],
+      "summed_service_delta_seconds": 3.3913271959999993
+    },
+    {
+      "proof_id": "Proof_28501",
+      "observations": [
+        {
+          "native": 1.160794485,
+          "power": 2.259232468
+        },
+        {
+          "native": 1.587622458,
+          "power": 1.964396432
+        },
+        {
+          "native": 1.340074248,
+          "power": 3.060383005
+        }
+      ],
+      "summed_service_delta_seconds": 3.1955207139999997
+    },
+    {
+      "proof_id": "Proof_21519",
+      "observations": [
+        {
+          "native": 0.440207844,
+          "power": 1.626729342
+        },
+        {
+          "native": 0.518779328,
+          "power": 1.155668765
+        },
+        {
+          "native": 0.395104174,
+          "power": 1.502577886
+        }
+      ],
+      "summed_service_delta_seconds": 2.9308846469999996
+    },
+    {
+      "proof_id": "Proof_20284",
+      "observations": [
+        {
+          "native": 2.252152495,
+          "power": 2.419679678
+        },
+        {
+          "native": 2.610299886,
+          "power": 3.914338879
+        },
+        {
+          "native": 2.590502912,
+          "power": 3.920388298
+        }
+      ],
+      "summed_service_delta_seconds": 2.801451562000001
+    },
+    {
+      "proof_id": "Proof_23713",
+      "observations": [
+        {
+          "native": 4.990435119,
+          "power": 5.164013731
+        },
+        {
+          "native": 3.561444476,
+          "power": 5.280965817
+        },
+        {
+          "native": 4.952585512,
+          "power": 5.844706341
+        }
+      ],
+      "summed_service_delta_seconds": 2.7852207820000006
+    },
+    {
+      "proof_id": "Proof_07788",
+      "observations": [
+        {
+          "native": 1.057878009,
+          "power": 1.815118425
+        },
+        {
+          "native": 0.733684855,
+          "power": 2.022567596
+        },
+        {
+          "native": 1.072143398,
+          "power": 1.55376375
+        }
+      ],
+      "summed_service_delta_seconds": 2.5277435090000004
+    },
+    {
+      "proof_id": "Proof_13596",
+      "observations": [
+        {
+          "native": 4.218474376,
+          "power": 4.896999567
+        },
+        {
+          "native": 4.734023889,
+          "power": 6.121427521
+        },
+        {
+          "native": 4.134656382,
+          "power": 4.566022801
+        }
+      ],
+      "summed_service_delta_seconds": 2.497295242
+    },
+    {
+      "proof_id": "Proof_27233",
+      "observations": [
+        {
+          "native": 1.609465178,
+          "power": 2.465211907
+        },
+        {
+          "native": 1.109788544,
+          "power": 2.00849898
+        },
+        {
+          "native": 1.332534407,
+          "power": 2.022847502
+        }
+      ],
+      "summed_service_delta_seconds": 2.4447702600000003
+    },
+    {
+      "proof_id": "Proof_26146",
+      "observations": [
+        {
+          "native": 1.737435721,
+          "power": 2.652103297
+        },
+        {
+          "native": 1.847780475,
+          "power": 2.652267283
+        },
+        {
+          "native": 2.101942027,
+          "power": 2.764728179
+        }
+      ],
+      "summed_service_delta_seconds": 2.381940536
+    },
+    {
+      "proof_id": "Proof_27960",
+      "observations": [
+        {
+          "native": 1.472794879,
+          "power": 2.646072306
+        },
+        {
+          "native": 1.678847095,
+          "power": 2.256091266
+        },
+        {
+          "native": 1.996124837,
+          "power": 2.454133386
+        }
+      ],
+      "summed_service_delta_seconds": 2.2085301470000003
+    },
+    {
+      "proof_id": "Proof_12412",
+      "observations": [
+        {
+          "native": 2.550305363,
+          "power": 3.16614404
+        },
+        {
+          "native": 2.484942826,
+          "power": 2.930715525
+        },
+        {
+          "native": 1.74687419,
+          "power": 2.748806311
+        }
+      ],
+      "summed_service_delta_seconds": 2.0635434969999995
+    },
+    {
+      "proof_id": "Proof_27952",
+      "observations": [
+        {
+          "native": 2.476564328,
+          "power": 2.483159827
+        },
+        {
+          "native": 2.517690369,
+          "power": 3.556089671
+        },
+        {
+          "native": 2.298531878,
+          "power": 3.289486202
+        }
+      ],
+      "summed_service_delta_seconds": 2.0359491250000006
+    },
+    {
+      "proof_id": "Proof_08943",
+      "observations": [
+        {
+          "native": 2.743937596,
+          "power": 3.629805038
+        },
+        {
+          "native": 2.736520508,
+          "power": 3.478372054
+        },
+        {
+          "native": 2.715443814,
+          "power": 3.12183956
+        }
+      ],
+      "summed_service_delta_seconds": 2.0341147340000005
+    },
+    {
+      "proof_id": "Proof_21549",
+      "observations": [
+        {
+          "native": 0.734577153,
+          "power": 1.27965729
+        },
+        {
+          "native": 0.926652872,
+          "power": 1.341770551
+        },
+        {
+          "native": 0.635775134,
+          "power": 1.692296528
+        }
+      ],
+      "summed_service_delta_seconds": 2.0167192099999998
+    },
+    {
+      "proof_id": "Proof_04975",
+      "observations": [
+        {
+          "native": 1.578078664,
+          "power": 2.073859414
+        },
+        {
+          "native": 1.448681648,
+          "power": 2.086493344
+        },
+        {
+          "native": 1.345136797,
+          "power": 2.214806718
+        }
+      ],
+      "summed_service_delta_seconds": 2.0032623670000005
+    },
+    {
+      "proof_id": "Proof_27885",
+      "observations": [
+        {
+          "native": 0.354904667,
+          "power": 1.361613383
+        },
+        {
+          "native": 0.591420685,
+          "power": 0.968926032
+        },
+        {
+          "native": 0.533897701,
+          "power": 0.954740109
+        }
+      ],
+      "summed_service_delta_seconds": 1.8050564709999999
+    },
+    {
+      "proof_id": "Proof_01740",
+      "observations": [
+        {
+          "native": 2.294430603,
+          "power": 2.752978046
+        },
+        {
+          "native": 2.630531953,
+          "power": 3.236742651
+        },
+        {
+          "native": 2.47154299,
+          "power": 3.152135746
+        }
+      ],
+      "summed_service_delta_seconds": 1.7453508969999998
+    },
+    {
+      "proof_id": "Proof_29502",
+      "observations": [
+        {
+          "native": 2.31461977,
+          "power": 2.703942905
+        },
+        {
+          "native": 2.014732918,
+          "power": 3.266542947
+        },
+        {
+          "native": 3.496400108,
+          "power": 3.581753483
+        }
+      ],
+      "summed_service_delta_seconds": 1.7264865389999997
+    },
+    {
+      "proof_id": "Proof_26633",
+      "observations": [
+        {
+          "native": 1.307352511,
+          "power": 1.835086816
+        },
+        {
+          "native": 1.038701992,
+          "power": 1.843527819
+        },
+        {
+          "native": 1.182991398,
+          "power": 1.57494876
+        }
+      ],
+      "summed_service_delta_seconds": 1.724517494
+    },
+    {
+      "proof_id": "Proof_13126",
+      "observations": [
+        {
+          "native": 1.744344457,
+          "power": 1.995600325
+        },
+        {
+          "native": 1.296414999,
+          "power": 2.160158674
+        },
+        {
+          "native": 1.461581437,
+          "power": 2.044276982
+        }
+      ],
+      "summed_service_delta_seconds": 1.697695088
+    },
+    {
+      "proof_id": "Proof_28841",
+      "observations": [
+        {
+          "native": 1.853447314,
+          "power": 2.846236847
+        },
+        {
+          "native": 2.038780306,
+          "power": 2.513318877
+        },
+        {
+          "native": 2.289677786,
+          "power": 2.506640195
+        }
+      ],
+      "summed_service_delta_seconds": 1.6842905130000003
+    },
+    {
+      "proof_id": "Proof_02421",
+      "observations": [
+        {
+          "native": 0.681533463,
+          "power": 1.325003004
+        },
+        {
+          "native": 0.826952973,
+          "power": 0.948873141
+        },
+        {
+          "native": 0.914421247,
+          "power": 1.801669372
+        }
+      ],
+      "summed_service_delta_seconds": 1.652637834
+    },
+    {
+      "proof_id": "Proof_11151",
+      "observations": [
+        {
+          "native": 1.334380923,
+          "power": 2.073892441
+        },
+        {
+          "native": 1.71350093,
+          "power": 1.839428402
+        },
+        {
+          "native": 1.285704536,
+          "power": 2.015392311
+        }
+      ],
+      "summed_service_delta_seconds": 1.5951267649999998
+    },
+    {
+      "proof_id": "Proof_29247",
+      "observations": [
+        {
+          "native": 0.515125997,
+          "power": 1.188551229
+        },
+        {
+          "native": 0.263401973,
+          "power": 0.526727927
+        },
+        {
+          "native": 0.457842538,
+          "power": 1.058323443
+        }
+      ],
+      "summed_service_delta_seconds": 1.537232091
+    },
+    {
+      "proof_id": "Proof_29273",
+      "observations": [
+        {
+          "native": 0.962805364,
+          "power": 1.669477727
+        },
+        {
+          "native": 1.568082332,
+          "power": 1.661492463
+        },
+        {
+          "native": 1.004932487,
+          "power": 1.690579746
+        }
+      ],
+      "summed_service_delta_seconds": 1.4857297530000002
+    },
+    {
+      "proof_id": "Proof_11792",
+      "observations": [
+        {
+          "native": 3.323828172,
+          "power": 4.255090001
+        },
+        {
+          "native": 3.144688889,
+          "power": 3.608853761
+        },
+        {
+          "native": 3.63750421,
+          "power": 3.71420767
+        }
+      ],
+      "summed_service_delta_seconds": 1.4721301610000004
+    },
+    {
+      "proof_id": "Proof_09534",
+      "observations": [
+        {
+          "native": 2.054977776,
+          "power": 2.489230054
+        },
+        {
+          "native": 1.970288415,
+          "power": 2.477493827
+        },
+        {
+          "native": 1.860686212,
+          "power": 2.235849083
+        }
+      ],
+      "summed_service_delta_seconds": 1.3166205610000004
+    },
+    {
+      "proof_id": "Proof_13243",
+      "observations": [
+        {
+          "native": 1.468192279,
+          "power": 1.61664153
+        },
+        {
+          "native": 1.223698125,
+          "power": 1.552771472
+        },
+        {
+          "native": 1.09201875,
+          "power": 1.810947755
+        }
+      ],
+      "summed_service_delta_seconds": 1.196451603
+    },
+    {
+      "proof_id": "Proof_05797",
+      "observations": [
+        {
+          "native": 0.663743481,
+          "power": 1.129000937
+        },
+        {
+          "native": 0.732935993,
+          "power": 1.29739427
+        },
+        {
+          "native": 0.992758788,
+          "power": 1.119331416
+        }
+      ],
+      "summed_service_delta_seconds": 1.156288361
+    },
+    {
+      "proof_id": "Proof_18606",
+      "observations": [
+        {
+          "native": 0.377729125,
+          "power": 0.836260792
+        },
+        {
+          "native": 0.387563088,
+          "power": 0.868924259
+        },
+        {
+          "native": 0.606444848,
+          "power": 0.761028969
+        }
+      ],
+      "summed_service_delta_seconds": 1.094476959
+    },
+    {
+      "proof_id": "Proof_15487",
+      "observations": [
+        {
+          "native": 1.331873414,
+          "power": 1.530598624
+        },
+        {
+          "native": 1.31014405,
+          "power": 1.874376304
+        },
+        {
+          "native": 1.569802994,
+          "power": 1.872914666
+        }
+      ],
+      "summed_service_delta_seconds": 1.0660691360000003
+    },
+    {
+      "proof_id": "Proof_13230",
+      "observations": [
+        {
+          "native": 0.773165065,
+          "power": 1.057688784
+        },
+        {
+          "native": 0.751737555,
+          "power": 1.051514339
+        },
+        {
+          "native": 0.804532616,
+          "power": 1.221879665
+        }
+      ],
+      "summed_service_delta_seconds": 1.0016475519999997
+    },
+    {
+      "proof_id": "Proof_16636",
+      "observations": [
+        {
+          "native": 1.373703825,
+          "power": 1.571212983
+        },
+        {
+          "native": 1.550414019,
+          "power": 1.919262992
+        },
+        {
+          "native": 1.049342061,
+          "power": 1.404105645
+        }
+      ],
+      "summed_service_delta_seconds": 0.921121715
+    },
+    {
+      "proof_id": "Proof_20593",
+      "observations": [
+        {
+          "native": 0.807263808,
+          "power": 1.147969504
+        },
+        {
+          "native": 0.708647537,
+          "power": 0.936379899
+        },
+        {
+          "native": 0.82884156,
+          "power": 1.153116479
+        }
+      ],
+      "summed_service_delta_seconds": 0.8927129769999999
+    },
+    {
+      "proof_id": "Proof_03196",
+      "observations": [
+        {
+          "native": 1.928455002,
+          "power": 2.262319438
+        },
+        {
+          "native": 1.786784968,
+          "power": 2.218738143
+        },
+        {
+          "native": 2.174593098,
+          "power": 2.2705595
+        }
+      ],
+      "summed_service_delta_seconds": 0.8617840130000001
+    },
+    {
+      "proof_id": "Proof_23113",
+      "observations": [
+        {
+          "native": 1.152368731,
+          "power": 1.15714171
+        },
+        {
+          "native": 0.650672544,
+          "power": 1.413812917
+        },
+        {
+          "native": 1.021126289,
+          "power": 1.099084613
+        }
+      ],
+      "summed_service_delta_seconds": 0.8458716760000003
+    },
+    {
+      "proof_id": "Proof_00973",
+      "observations": [
+        {
+          "native": 0.852875346,
+          "power": 0.93019967
+        },
+        {
+          "native": 0.639703417,
+          "power": 1.170707495
+        },
+        {
+          "native": 0.756114286,
+          "power": 0.975460145
+        }
+      ],
+      "summed_service_delta_seconds": 0.8276742610000001
+    },
+    {
+      "proof_id": "Proof_28738",
+      "observations": [
+        {
+          "native": 0.996085401,
+          "power": 1.345947487
+        },
+        {
+          "native": 1.383448918,
+          "power": 1.392846363
+        },
+        {
+          "native": 1.077318834,
+          "power": 1.529330542
+        }
+      ],
+      "summed_service_delta_seconds": 0.8112712390000003
+    },
+    {
+      "proof_id": "Proof_24640",
+      "observations": [
+        {
+          "native": 0.707234414,
+          "power": 1.096691557
+        },
+        {
+          "native": 0.739655859,
+          "power": 0.846844376
+        },
+        {
+          "native": 1.026914595,
+          "power": 1.29717117
+        }
+      ],
+      "summed_service_delta_seconds": 0.7669022349999999
+    },
+    {
+      "proof_id": "Proof_09667",
+      "observations": [
+        {
+          "native": 0.504494537,
+          "power": 0.710848002
+        },
+        {
+          "native": 0.510898612,
+          "power": 0.845735017
+        },
+        {
+          "native": 0.498773975,
+          "power": 0.677259284
+        }
+      ],
+      "summed_service_delta_seconds": 0.719675179
+    },
+    {
+      "proof_id": "Proof_12303",
+      "observations": [
+        {
+          "native": 0.651661823,
+          "power": 0.877401708
+        },
+        {
+          "native": 0.633148854,
+          "power": 0.831704601
+        },
+        {
+          "native": 0.643421348,
+          "power": 0.922558982
+        }
+      ],
+      "summed_service_delta_seconds": 0.703433266
+    },
+    {
+      "proof_id": "Proof_04130",
+      "observations": [
+        {
+          "native": 1.065702463,
+          "power": 1.203472509
+        },
+        {
+          "native": 1.106961621,
+          "power": 1.144878605
+        },
+        {
+          "native": 0.777926815,
+          "power": 1.304887494
+        }
+      ],
+      "summed_service_delta_seconds": 0.7026477089999998
+    },
+    {
+      "proof_id": "Proof_15037",
+      "observations": [
+        {
+          "native": 0.701018806,
+          "power": 0.802191281
+        },
+        {
+          "native": 0.647422819,
+          "power": 0.992024498
+        },
+        {
+          "native": 0.756385968,
+          "power": 0.974832612
+        }
+      ],
+      "summed_service_delta_seconds": 0.6642207980000001
+    },
+    {
+      "proof_id": "Proof_18391",
+      "observations": [
+        {
+          "native": 1.544735784,
+          "power": 1.80744616
+        },
+        {
+          "native": 1.869894571,
+          "power": 1.976744382
+        },
+        {
+          "native": 1.695599237,
+          "power": 1.938076472
+        }
+      ],
+      "summed_service_delta_seconds": 0.6120374220000002
+    },
+    {
+      "proof_id": "Proof_10996",
+      "observations": [
+        {
+          "native": 0.775791264,
+          "power": 0.910801214
+        },
+        {
+          "native": 0.6938959,
+          "power": 0.801515366
+        },
+        {
+          "native": 0.526613793,
+          "power": 0.855495511
+        }
+      ],
+      "summed_service_delta_seconds": 0.571511134
+    },
+    {
+      "proof_id": "Proof_00487",
+      "observations": [
+        {
+          "native": 1.234035557,
+          "power": 1.295183235
+        },
+        {
+          "native": 1.249353756,
+          "power": 1.367476588
+        },
+        {
+          "native": 1.05381809,
+          "power": 1.438170553
+        }
+      ],
+      "summed_service_delta_seconds": 0.563622973
+    },
+    {
+      "proof_id": "Proof_17236",
+      "observations": [
+        {
+          "native": 0.800918822,
+          "power": 0.917159641
+        },
+        {
+          "native": 0.731084196,
+          "power": 0.817159484
+        },
+        {
+          "native": 0.569363173,
+          "power": 0.909215539
+        }
+      ],
+      "summed_service_delta_seconds": 0.5421684730000002
+    },
+    {
+      "proof_id": "Proof_02861",
+      "observations": [
+        {
+          "native": 0.31941526,
+          "power": 0.408872742
+        },
+        {
+          "native": 0.62283998,
+          "power": 0.825261804
+        },
+        {
+          "native": 0.337026664,
+          "power": 0.570778152
+        }
+      ],
+      "summed_service_delta_seconds": 0.5256307940000002
+    },
+    {
+      "proof_id": "Proof_14318",
+      "observations": [
+        {
+          "native": 1.562580564,
+          "power": 1.656452859
+        },
+        {
+          "native": 1.545028851,
+          "power": 1.941687583
+        },
+        {
+          "native": 2.236596605,
+          "power": 2.270620916
+        }
+      ],
+      "summed_service_delta_seconds": 0.5245553380000001
+    },
+    {
+      "proof_id": "Proof_07081",
+      "observations": [
+        {
+          "native": 0.933400313,
+          "power": 1.027338682
+        },
+        {
+          "native": 0.955078614,
+          "power": 1.183267984
+        },
+        {
+          "native": 0.782915899,
+          "power": 0.962611175
+        }
+      ],
+      "summed_service_delta_seconds": 0.5018230149999998
+    },
+    {
+      "proof_id": "Proof_08486",
+      "observations": [
+        {
+          "native": 0.976848226,
+          "power": 1.114758874
+        },
+        {
+          "native": 1.081895846,
+          "power": 1.108916265
+        },
+        {
+          "native": 1.15003151,
+          "power": 1.446434911
+        }
+      ],
+      "summed_service_delta_seconds": 0.461334468
+    },
+    {
+      "proof_id": "Proof_10638",
+      "observations": [
+        {
+          "native": 1.279563869,
+          "power": 1.414183973
+        },
+        {
+          "native": 1.114188129,
+          "power": 1.258543617
+        },
+        {
+          "native": 1.230623119,
+          "power": 1.371174913
+        }
+      ],
+      "summed_service_delta_seconds": 0.41952738599999995
+    },
+    {
+      "proof_id": "Proof_09249",
+      "observations": [
+        {
+          "native": 0.604687889,
+          "power": 0.908512906
+        },
+        {
+          "native": 0.690167427,
+          "power": 0.737938234
+        },
+        {
+          "native": 0.992909786,
+          "power": 1.056280694
+        }
+      ],
+      "summed_service_delta_seconds": 0.414966732
+    },
+    {
+      "proof_id": "Proof_12250",
+      "observations": [
+        {
+          "native": 1.904375471,
+          "power": 1.957824062
+        },
+        {
+          "native": 2.083257817,
+          "power": 2.15033378
+        },
+        {
+          "native": 2.215428058,
+          "power": 2.329208043
+        }
+      ],
+      "summed_service_delta_seconds": 0.23430453900000003
+    },
+    {
+      "proof_id": "Proof_10490",
+      "observations": [
+        {
+          "native": 0.259517996,
+          "power": 0.286849229
+        },
+        {
+          "native": 0.256886443,
+          "power": 0.398375739
+        },
+        {
+          "native": 0.265725831,
+          "power": 0.295615687
+        }
+      ],
+      "summed_service_delta_seconds": 0.198710385
+    },
+    {
+      "proof_id": "Proof_03165",
+      "observations": [
+        {
+          "native": 0.333949444,
+          "power": 0.346463942
+        },
+        {
+          "native": 0.384326028,
+          "power": 0.464838148
+        },
+        {
+          "native": 0.385852334,
+          "power": 0.489615238
+        }
+      ],
+      "summed_service_delta_seconds": 0.19678952200000005
+    },
+    {
+      "proof_id": "Proof_15632",
+      "observations": [
+        {
+          "native": 1.047121767,
+          "power": 1.085149228
+        },
+        {
+          "native": 1.018993395,
+          "power": 1.112836283
+        },
+        {
+          "native": 1.016272552,
+          "power": 1.041382873
+        }
+      ],
+      "summed_service_delta_seconds": 0.15698067000000004
+    },
+    {
+      "proof_id": "Proof_10213",
+      "observations": [
+        {
+          "native": 0.393486797,
+          "power": 0.447499867
+        },
+        {
+          "native": 0.394888168,
+          "power": 0.456154211
+        },
+        {
+          "native": 0.428537197,
+          "power": 0.454604414
+        }
+      ],
+      "summed_service_delta_seconds": 0.14134633000000002
+    },
+    {
+      "proof_id": "Proof_25403",
+      "observations": [
+        {
+          "native": 0.483589696,
+          "power": 0.492352067
+        },
+        {
+          "native": 0.504554561,
+          "power": 0.511412336
+        },
+        {
+          "native": 0.475941617,
+          "power": 0.478360905
+        }
+      ],
+      "summed_service_delta_seconds": 0.018039434000000076
+    }
+  ]
+}

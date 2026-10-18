@@ -5018,3 +5018,26 @@ no unfinished ratio propagated. REVIEW_GATE root self-review checks algorithm
 preservation, actual native load, raw/all-failure fidelity and scoped clocks.
 Independent audit absent by user instruction; all4RQs/openGPU/InitialNarrative
 remain. [Source/build/qualification/launch](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/README.md).
+
+## E1077 secondary full-source distribution analysis
+EXPERIMENT_GATE reuses the six completed actual captures without another
+acquisition. RQ4 unchanged; this addresses whether whole-cohort improvement
+hides broad candidate regressions or is mislabeled CPU-work reduction.
+All1000sources per observation, including8rejects, enter each CDF. Medians
+2.12--2.21s versus1.15--1.19s and p99 32.06--33.69s versus23.13--23.93s
+show distribution-wide improvement in these instrumented observations.
+Still131/164/156source spans regress per block,70sameIDs regress in all3;
+none omitted/answer-aware rerouted. Collected CPU ratios1.16--1.21 differ
+from elapsed1.76--1.80 and are not exhaustive descendants/utilization/energy.
+Both reach8overlapping source spans; this does not establish8ready GPU LPs.
+
+WRITE_GATE adds the standard Matplotlib3.11.2 three-panel CDF and scoped
+regression/CPU paragraph to existing RQ4 evaluation. Full paper compiles;
+rendered page15 shows figure/caption/columns without overlap or clipping.
+All4RQs/InitialNarrative/central contract and experiment scopes unchanged.
+REVIEW_GATE root self-review verifies sourceID alignment/all six raw populations,
+interval-sweep totals equal source-span sums, no pooling into extra whole-run
+repetitions, no pure-LP/Amdahl or causal CPU explanation from these data.
+Review remains non-independent. E1080 pair and complete formal populations
+continue; closed native/stock cells are not promoted to complete comparisons.
+[Raw-derived source, figure and limitations](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/service-span-result-review.md).

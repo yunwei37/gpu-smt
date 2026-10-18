@@ -861,6 +861,27 @@ Repetition preserves the diagnostic-cost limitation rather than eliminating it;
 a matched comparison with eager diagnostic operations removed remains pending.
 No GPU gain or globally fastest CPU result follows.
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.98\textwidth]{../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/candidate-service-cdf.pdf}
+\caption{Candidate service-span distributions in the three complete
+instrumented-build observations. Each panel contains all 1,000 original
+candidates, including rejected inputs. Spans include waiting and overlap;
+they are neither isolated CPU time nor whole-run repetitions.}
+\label{fig:power-service-cdf}
+\end{figure*}
+
+Figure~\ref{fig:power-service-cdf} shows improvement across the distribution:
+median service spans are 2.12--2.21 seconds for the compiled control and
+1.15--1.19 seconds for direct export; p99 spans are 32.06--33.69 and
+23.13--23.93 seconds, respectively. Nevertheless, 131, 164 and 156 candidates
+have longer direct spans in the three observations, with 70 source IDs longer
+in all three. No candidate is excluded on this basis. Scheduling and waiting
+contribute to these spans. The corresponding collected self-plus-waited-child
+CPU ratios are only 1.16--1.21, and that accounting is not exhaustive for all
+descendants. The elapsed improvement must therefore not be relabeled an equal
+CPU-work or energy reduction.
+
 For the same control-ranked slowest 1\% sources, overlapping service-span sums
 are 738.19 seconds for the compiled control, 400.42 for previous direct export
 and 397.37 for the new path. Some of the hardest proof tails therefore remain
