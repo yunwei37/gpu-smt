@@ -5172,3 +5172,25 @@ No completed preflight ratio or full admission yet. Plans/raw/command below.
 Root self-review under user prohibition of all agents, no independent audit.
 All4RQs, original narrative, Lean/SMT and OSDItarget unchanged.
 [Integrated plan](../../../../artifacts/linarith-oracle-2026-10-17/kimina-http/plan.md).
+
+### Canonical evaluation housekeeping while real HTTP preflight runs
+The current ledger had grown past70kB with chronological live-status and
+superseded-closure prose. Root reads its original content, preserves all
+bytes in a lossless gzip archive and links the readable original commit.
+The current evaluation is consolidated to a bounded RQ/workload/current-
+evidence/open-requirements frontier. No source/raw result/failed attempt or
+InitialNarrative is deleted or rewritten. Historical protocols remain
+separate; no unfinished matrix or conditional GPU ceiling is promoted.
+All local current-ledger links resolve. This is maintenance, not new research.
+
+### E1082 first real path and lifecycle metric repair
+Original HTTPstock64returns63valid/1Leanerror, but immediate post-parent
+observation finds3retiring descendants, so its cold metric is incomplete.
+All3are subsequently actually gone; no generic process killer is introduced.
+The source-native upstream posts close tasks asynchronously. Forward repair
+joins the recorded process objects under the existing300s finalization
+allowance, then ends the cold clock. Affected three-way preflight reruns in
+fresh preflight2. Its stock condition now closes216.998374s total,
+203.771438s warmed verification,63/1,16owned descendants joined and zero
+remaining. This is only one control, not a method comparison or population
+result. Native/Power continue. Original raw/failure/executed source preserved.

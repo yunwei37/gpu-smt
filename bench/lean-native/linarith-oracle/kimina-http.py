@@ -47,7 +47,7 @@ async def cell(args, method, out, items, build):
     events=(out/"http.jsonl").open("w")
     def record(row):
         events.write(json.dumps(row,ensure_ascii=False,separators=(",",":"))+"\n"); events.flush()
-    backend=server=client=None; streams=[]; owned=[]
+    backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
     result=dict(state="failed",method=method,expected=len(items),
         affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
         scope="Official Kimina HTTP/SDK replay; same adapted4.27REPL/native closure; CPU-only, root self-review.")
@@ -111,10 +111,15 @@ async def cell(args, method, out, items, build):
                         row["cpu_affinity"]=proc.cpu_affinity()
                         row["address_limit"]=[s for s in Path("/proc",str(proc.pid),"limits").read_text().splitlines()if s.startswith("Max address space")]
                     except (OSError,psutil.Error): pass
-                    owned.append(row)
+                    owned.append(row); owned_processes.append(proc)
             except psutil.Error: pass
             if server.poll() is None: server.terminate()
             result["server_exit"]=await asyncio.to_thread(server.wait)
+            # The application posts asynchronous worker-close tasks. Join their
+            # actual processes before the cold lifecycle clock ends.
+            # Reuse this capture family's300s finalization allowance.
+            gone, pending=await asyncio.to_thread(psutil.wait_procs,owned_processes,timeout=300)
+            result["joined_owned_descendants"]=len(gone)
             remaining=[]
             for row in owned:
                 try:

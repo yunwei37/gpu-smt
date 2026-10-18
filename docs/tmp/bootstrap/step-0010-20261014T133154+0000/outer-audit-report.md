@@ -3357,3 +3357,21 @@ from CPU sums or unavailable historical timestamps. Prior captures stay
 active. Maintenance: canonical frontier fixes stale qualification/ProofNet
 statuses; author dirty files are untouched. Independent audit absent by
 explicit user direction. Actual preflight remains incomplete, not a result.
+
+### Evaluation consolidation self-audit
+Direction and all4RQ meanings/evaluation promise remain explicit. Original
+ledger archive roundtrips byte-equal; readable commit preserves its original
+relative links. Current CPU, formal, service, prefix, GPU, SMT and closed-route
+scopes remain, with open requirements. The constructor closures and prior
+failed/partial/proxy evidence remain discoverable. No author WIP or paper
+scientific contract is modified. Cleanup avoids repeated stale-status reads,
+not an artificial research result.
+
+### E1082 metric repair self-audit
+Actual first-control outputs and all PID identities remain. The early clock
+is not repaired retroactively or paired with later methods. The affected
+preflight repeats under one corrected join boundary; no verifier, SDK,
+workload, concurrency or scientific expected answer changes. Closed raw
+archival roundtrips byte-equal; no live log is compressed. Pending methods
+cannot support a performance claim. User forbidden independent review remains
+absent, no false independence asserted.
