@@ -4530,3 +4530,18 @@ EXPERIMENT E1056 admittedunchangedreversedtwo-sided/nativerepeatfromthat
 proxy/binarymutationduringcapture. Protectedprefix5256preserved. NoGPUmatrix
 orparametergrid. WRITE currentREADME/idea/evaluation/paperupdated; fullWRITE
 gateunfinished. REVIEW self-auditonly. Hourly/goalremainactive/allfourRQsopen.
+
+### 2026-10-18 — real device pipeline attribution
+
+EXPERIMENT E1057 joins25/25provider models bycall_id/key toclosedcapacity32
+rawrecords;49exactnumericalpayload/sourcepairs matchCPU. Proxywaitmedian
+0.561439s/max8.913590s versus dispatch/providerbeginmedian0.011706s.
+Singleproxy solve_cuda_batch andsingleproviderowner waitforentiregroup
+retirement. Cancelled66k/41k-pivotmodelsleavegroupsoccupied4.15/8.78safter
+firstsiblingresult. Per-modelcancelthereforedoesnotremovegroupHOLblocking.
+Only8/68nativeGPUcertwins; CPUHiGHS52parsedLPs sum1.316882solverseconds.
+No currentLeancertificateorCUDAeventattributionisavailable;declaredunknown.
+Rootself-reviewacceptsdependencydiagnosis,notcausalsavings/kernel-timeclaim.
+NextGPUmechanismmustproveindependentinflightgroupsunder48GiB,equalCPUand
+fullretirement;noarbitraryparametergrid. Allanalysiscode/rawjoins published.
+ExistingCPUreplication/prefixpreserved;noagentrun/noGPUrouteclosure.
