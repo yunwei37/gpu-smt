@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-18T11:41:15.973751+00:00",
+  "pid": 248249,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-solver-frontier/native-preprocess-dual/run-qualification.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/native-preprocess-dual64",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/input-first64.jsonl",
+    "--limit",
+    "64",
+    "--width",
+    "8",
+    "--affinity",
+    "4",
+    "5",
+    "6",
+    "7",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+    "--methods",
+    "oracle-highs",
+    "--reuse-reference",
+    "/tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/qualification64/rep1-fast-hybrid"
+  ],
+  "env": {
+    "GPU_ARITHMETIC_RACE_ROOT": "/tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle",
+    "GPU_ARITHMETIC_RACE_MIN_ROWS": "11",
+    "GPU_ARITHMETIC_NEGATIVE_CERTIFICATES": "1"
+  },
+  "stdout": "/tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/native-preprocess-dual64-driver.log"
+}

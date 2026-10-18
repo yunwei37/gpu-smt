@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-18T11:41:18.974747+00:00",
+  "pgrp": 248249,
+  "processes": [
+    {
+      "pid": 248249,
+      "cmdline": "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python /workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-solver-frontier/native-preprocess-dual/run-qualification.py --out /tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/native-preprocess-dual64 --input /workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/input-first64.jsonl --limit 64 --width 8 --affinity 4 5 6 7 --native-buckets --repl /tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl --methods oracle-highs --reuse-reference /tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/qualification64/rep1-fast-hybrid "
+    },
+    {
+      "pid": 248263,
+      "cmdline": "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python /workspaces/repository/bench/lean-native/linarith-oracle/support-proxy.py --negative-certificates --backend highs --socket /tmp/gpu-smt-linarith-oracle-20261017/two-sided-oracle/support-248249-1-highs.sock --log /tmp/gpu-smt-linarith-oracle-20261017/native-solver-frontier/native-preprocess-dual64/rep1-oracle-highs-backend/support-calls.jsonl "
+    }
+  ]
+}

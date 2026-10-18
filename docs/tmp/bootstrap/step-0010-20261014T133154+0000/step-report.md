@@ -4576,3 +4576,28 @@ compositionsonthesameinterface;publishedall-workloadCPUdatawarnsagainst
 assuminghybridalwayswins. NoCPUfullmatrixornewGPUfullrunadmitted.
 WRITE README/paper/evaluation/latestnarrativeupdated;REVIEWrootself-audit.
 BroaderRQ/OSDI/systemnoveltynotresolvedbytwoCPUratios. Hourly/goalactive.
+
+### 2026-10-18 — strong native controls and backend/frontend ablation
+
+EXPERIMENT E1060 first64CPU4–7/width8/48GiBclosed: hybrid53.896806/
+tiered66.834398/nativeHiGHS61.856690s. All63/1/0andverdict/nonmessageparity;
+tieredfullJSONsame,HiGHS6messages. Noautomatic1k/29k solvergrid.
+A moredecisivecomponentablation keepsouridenticaltwo-sidednumericbackend
+butrestoresnativeFast/productproof-producingpreprocessing. Firstwrapper
+incorrectlychangedglobaldefaultimportwhileper-methodoverridekeptAST:
+29.13sINVALIDforthisablation,source/rawpreserved. Scopeduniqueper-method
+importreplacementrepairsit. Qualified64nativefrontend+dual34.431647s,
+allparity,3messagechanges/4readerrors. One1kcomponentcelladmittedfromreal
+1.56533xpreflight,notnewsolveroptimization. Deferreddriver257239usespidfd
+toawaitthirdprimary243173actualexit,thenCPU0–3/same1000/eightqueues/48GiB,
+reusesthird'sfreshnativeandprecedingASTdual. No goalpolling/helpermonitor.
+Actualdaemonengagementsnapshotwasemptyafterearlystartup/completion;
+sourceimportselectionischecked,fullruntimeengagementrequiresverification.
+
+EXPERIMENT E1061 joins4202/4202same-callprofilecheckstocertificates:
+3597returned/accepted,605none,nojoinloss. Acceptedcheck172.600callingthread
+CPUseconds,273.744occupiedwalluniononown545.050diagnosticclock.
+Termcount/provenancenodeSpearmanCPU0.913/0.921,observationalonly.
+NorescalingtoHiGHSdualprimary,noGPUportfolioornewcachegridfromcorrelation.
+WRITE currentfrontierconsolidatesstalesnapshot/runningtext,preservesInitial
+Narrative,allRQs,andupdatesexistingdailyreflection; REVIEWrootself-audit.

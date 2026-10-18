@@ -156,3 +156,11 @@ allocator/buffer/threadgrids. The immediatelydecisiveworkisCPUreversal
 replication plusstrongservice/cachecomparison,and a viableGPUmechanism
 mustremoveHOLwithout violatingtheexistingaddressspaceceiling.
 CurrentREADMEhaszero brokenlocaltargetlinks.
+
+11:31–11:44Z: strongerbaselinequalificationclosed64hybrid/tiered/HiGHS:
+53.90/66.83/61.86s,allverdictparity. Nativefrontend+same dualnumericbackend
+34.43s isadmittedforonecompletecomponentablationafterthirdprimaryexits.
+This directlytests whetherCPUgainisfrontendmaterializationorbysolverselection.
+Profilejoinalsofindscertificatecomplexity/checkCPUcorrelation,notproof of
+anewmethod. Currentidea-storyfrontierconsolidated;InitialNarrativepreserved.
+Do notclaimglobalstrongestCPU/noveltyfromtwoheavycohortpairs.

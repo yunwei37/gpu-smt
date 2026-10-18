@@ -27,51 +27,46 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-### 2026-10-18 — strongest arithmetic alternative and unresolved system novelty
+### 2026-10-18 — arithmetic evidence and unresolved system novelty
 
-The latest closed original1000-source pair is native691.095897/CPU-only529.171190/
-CPUHiGHS462.504847s,ratio1.49424574x,all992complete/8rejected/0operational with
-native verdict/non-message parity. This one pair is not a stable1.5x decision.
-The current-family diagnostic has its own691.204649/545.050104s clocks;
-its optimistic occupied-union deletion is not an applicable below1.5x proof.
-Older wave8 GPU ratios below remain scoped historical evidence.
+Two complete frozen two-sided CPU-oracle pairs use the upstream native
+eight-queue interface. Native/oracle whole clocks are681.243557/453.509810s
+and687.263047/447.309270s, ratios1.50216x and1.53644x, acquired in opposite
+orders. All1,000sourceverdicts andnon-messageJSONfields agree inbothpairs
+(992complete/8rejected/0operational),with104message-onlydifferences.
+The original three-primary-pair aggregate protocol is not yet complete:
+the final native-first/two-sided-second pair is running. Other credible native
+solver compositions are being qualified at this same interface, because
+earlier all-workload evidence does not show hybrid always wins.
+[Complete first and reversed data](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
 
-Real5090device-batched simplex now executes with independent per-model
-cancellation and exact positive/negative checking,but its inspected10-source
-GPUqualifications trail the stronger CPUalternatives. The newly implemented
-CPUnegative certificates eliminate110exact fallback searches in one selected
-diagnostic,not a full-cohort or novelty result. The admitted fresh1000CPU
-comparison is active. A matched32queue capacity preflight investigates actual
-GPUwork availability at equalCPU/memory;it changes no deployment setting.
+Real5090device-batched simplex executes with per-model cancellation and
+exact positive/negative certificate validation. In the matched32candidate/
+four-CPU64source trial, CPU39.662808/GPU45.022186s,ten actual2–4modelgroups.
+Retained records expose up to8.91s proxy head-of-line delay despite individual
+results. Root implemented independent in-flight groups, but stream-ordered
+allocation qualification failsunder48GiB (31OOMreturns/zeroGPUkernels).
+That private candidate is not promoted. This is not a GPU-route impossibility
+result; no full unprofitable GPU matrix or allocator/tuning grid is running.
+[Pipeline diagnosis](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/device-pipeline-review.md);
+[failed implementation retained](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
+
+The completed same-interface all-call diagnostic has its own native691.204649/
+CPUoracle545.050104s clocks. Deleting a411.683390s occupied numeric interval
+union gives an intentionally optimistic fixed-timeline5.18274x sensitivity;
+it is not a scheduler-independent bound or a basis for below1.5x closure.
+Older wave8 GPU ratios and answer-aware omission clocks remain historical,
+scoped evidence. The omission control is complete and excluded from legitimate
+CPU/GPU continuation scores; it cannot be transferred to a different interface.
 
 The [primary-source review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261018T1036/report.md)
-rejects first-externaloracle,firstdualcertificate andfirstbatchedLPprimitive
-claims. Established exactLPchecking/Farkas and ICPE2019GPUbatching cover those
-mechanisms. A differentiated systems result beyond strongnative/CPU/cache/
-snapshot alternatives remains unproven. This evidence update preserves the
-complete Initial Narrative,allfourRQs,Lean/SMT scope and OSDItarget;it doesnot
-replace the service-state thesis with solver substitution or mark anyRQclosed.
-
-
-### 2026-10-18 — current arithmetic/GPU evidence
-The complete original1000wave8 comparison is native1237.37s,CPUoracle1037.85s,
-GPUwarm1020.12s; its fresh-server full lifecycle is1036.25s. All992/8/0,
-native verdict/non-message parity. This is one supported RQ4 observation,
-not a stable GPU advantage or new systems contribution.
-[Complete result](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md).
-
-The strongest matched pooled-family cost profile now closes both native1245.96s
-andCPUoracle1072.37s with identical per-primary native responses. Its
-exported-numeric zero-cost sensitivity2.67957x is an overlapping-sum,
-fixed-work calculation; it does not prove a below1.5x ceiling.
-[Own clocks,failed work,shapes and tails](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-paired-result-review.md).
-The answer-aware omission control is running to calibrate actual remaining
-work and is excluded from legitimate CPU/GPU continuation scores.
-Source-native8queue submission is separately qualified on24sources to
-strengthen all methods' common baseline; ordinary batching/caching is prior
-art and receives no novelty claim. All four RQs and the original Lean/SMT/
-service/paper goal stay open. Root self-review only under the user's explicit
-prohibition of all otherAgents,subagents andOMP.
+rejects first-external-oracle, first-dual-certificate and first-batched-LP
+primitive claims. Established Farkas/exactLPchecking and ICPE2019GPUbatching
+cover those primitives. A differentiated systems result beyond strong native,
+CPU, cache and snapshot alternatives remains unproven. This current evidence
+preserves the complete Initial Narrative, allfourRQs,Lean/SMTscope andOSDItarget;
+it neither replaces the service-state thesis with solver substitution nor
+marks anyRQclosed. All execution/review is by this root thread; noAgent/OMP.
 
 
 BOOTSTRAP step0010 remains unfrozen and all four RQs remain open. The complete
