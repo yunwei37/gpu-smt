@@ -8,7 +8,8 @@ from pathlib import Path
 import os
 D=Path(__file__).resolve().parent
 p=D/'run-batch.py';source=p.read_text()
-source=source.replace("BATCH=Path('/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle')","BATCH=Path('/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled')",1)
+root=Path(os.environ.get('GPU_ARITHMETIC_RACE_ROOT','/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-pooled'))
+source=source.replace("BATCH=Path('/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle')","BATCH=Path("+repr(str(root))+")",1)
 needle="        if name not in ['oracle-highs','oracle-gpu']:"
 insert="""        os.environ['GPU_ARITHMETIC_RACE_WORKER']=str(BATCH/'farkas-race-worker')
         os.environ['GPU_ARITHMETIC_RACE_LOG']=str(self.args.out/(kwargs.get('label') or ('rep%d-%s' % (rep,name)))/'lp-races.jsonl')

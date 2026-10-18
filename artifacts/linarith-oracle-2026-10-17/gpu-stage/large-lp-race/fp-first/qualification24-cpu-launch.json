@@ -1,0 +1,25 @@
+{
+  "pid": 158536,
+  "utc": "2026-10-18T06:23:56.455601+00:00",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-u",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-race.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-fp-first/qualification24-cpu",
+    "--limit",
+    "24",
+    "--methods",
+    "fast-hybrid",
+    "oracle-hint",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11"
+  ],
+  "root": "/tmp/gpu-smt-linarith-oracle-20261017/race-oracle-fp-first",
+  "scope": "FP-first prototype CPU-only preflight with fresh pooled native reference; no GPU"
+}

@@ -1,0 +1,12 @@
+# FP-first exact-fallback dispatch — RQ4, root plan/self-review
+This algorithm-detail qualification follows the completed corrected-family native trace, not a parameter grid or a replacement research claim. The active full GPU collector is frozen and unchanged.
+
+## Question and mechanism
+Row filtering removes54.43% of native calls but still exposes4393large FP-completable calls (2.352FP CPU seconds) beside1636large exact-fallback calls (820.477exactCPU seconds). The running whole-LP GPU race also exhibits repeated member-withdrawal cancellation. A partial observation at06:19UTC has384submitted batches,311member cancellations and73results; these incomplete counters establish mechanism engagement only, not elapsed/full performance.
+
+Try CPU FP search and exact repair first. Only an eligible LP that still needs exact fallback launches the concurrent GPU support search and CPU exact engine. CPU-only ablation runs the same FP-first/exact fallback; GPU child still returns only untrusted coefficients, then CPU exact repair and native Lean checking. The CPU child starts directly in exact mode to avoid repeating the completed FP search. Small direct FP misses keep the existing decline-to-native behavior. Native reference remains the strongest independent-daemon pool. Row11 eligibility and minimum2live-request batches remain unchanged; no timeouts, iteration budgets, concurrent-width grid or approximate-verification shortcut is added.
+
+## Qualification and decision
+Build into a separate private directory; do not rebuild active binaries or run a second GPU target concurrently. First qualify CPU candidate native verdict/non-message agreement on original24sources,width8,48GiB; compilation/smoke is not a speedup. After the existing full GPU Job retires, qualify hardware on the same24sources with CPU and GPU numerical workers sharing the same4CPU eligibility, true batches and complete cancellation/retirement accounting. Do not overlap any primary or own-clock diagnostic onCPU0–3. Use a disjoint4CPU qualification block if the own-clock profile has started. Preserve all partial/failed data.
+
+A full original1000 paired run is admitted only after the mechanism works and matching preflight shows useful benefit. An unsuccessful variant does not prove the GPU route impossible. The final more-than1.5x criterion and applicable Amdahl-only negative route closure remain unchanged. No project closure or automation deletion follows this plan. Root alone implements/reviews; self-review is not independent audit.

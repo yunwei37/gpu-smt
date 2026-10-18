@@ -1,9 +1,13 @@
 """Build cancellable large-LP speculation separately from active captures."""
 from pathlib import Path
-import os,resource,shutil,subprocess,json,datetime
+import os,resource,shutil,subprocess,json,datetime,argparse
 R=Path('/workspaces/repository');D=R/'bench/lean-native/linarith-oracle'
 BASE=Path('/tmp/gpu-smt-linarith-oracle-20261017')
-U=BASE/'race-oracle-pooled';U.mkdir(exist_ok=True);(U/'GpuArithmetic').mkdir(exist_ok=True)
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--out',type=Path,default=BASE/'race-oracle-pooled')
+parser.add_argument('--fp-first',action='store_true',help='Let CPU FP/repair complete before racing only exact-fallback LPs')
+args=parser.parse_args()
+U=args.out;U.mkdir(exist_ok=True);(U/'GpuArithmetic').mkdir(exist_ok=True)
 resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 snap=R/'artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/external-support'
 core=U/'native'
@@ -19,8 +23,20 @@ entry='''    if race_eligible(hyps) {
 '''
 signature=') -> (Option<Vec<(usize, BigInt)>>, Route) {'
 assert signature in s
-s=s.replace(signature,signature+'\n'+entry,1)
-(core/'src/race.rs').write_text(s+'\n'+(D/'race-support.rs').read_text())
+if not args.fp_first:s=s.replace(signature,signature+'\n'+entry,1)
+support=(D/'race-support.rs').read_text()
+if args.fp_first:
+ old='fn robust_fallback(hyps:&[Hyp],max_var:usize)->Option<Certificate>{\n cpu_or_decline(hyps,max_var)\n}'
+ new='''fn robust_fallback(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
+ if race_eligible(hyps){
+  if std::env::var_os("GPU_ARITHMETIC_RACE_CPU_ONLY").is_some(){
+   produce_certificate_tiered(hyps,max_var)
+  }else{race_search(hyps,max_var)}
+ }else{cpu_or_decline(hyps,max_var)}
+}'''
+ assert old in support
+ support=support.replace(old,new,1).replace('spawn_worker("--cpu",&request)','spawn_worker("--cpu-exact",&request)',1)
+(core/'src/race.rs').write_text(s+'\n'+support)
 (core/'src/lib.rs').write_text((snap/'src/lib.rs').read_text()+'\npub mod race;\n')
 s=(D/'oracle.rs').read_text().replace('hybrid::produce_certificate_hybrid','race::produce_certificate_hint as produce_certificate_hybrid')
 s=s.replace('fn solve(v:Value)->Result<Value,String>{','fn solve(v:Value)->Result<Value,String>{\n farkas_core::race::set_context(&v);')
@@ -97,5 +113,5 @@ with (U/'build-lean.log').open('w')as log:
  for name in ['BatchNative','BatchFast','BatchBaseline','BatchOracle']:
   subprocess.run(['lean','-o',str(U/'GpuArithmetic'/(name+'.olean')),'-c',str(U/(name+'.c')),str(U/'GpuArithmetic'/(name+'.lean'))],cwd=U,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
  subprocess.run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c'))for n in ['BatchNative','BatchFast','BatchBaseline','BatchOracle']],'-o',str(U/'batch-oracle.so')],cwd=U,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
-(U/'build-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':cmd,'source':str(snap),'private_build':str(core)},indent=2)+'\n')
+(U/'build-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':cmd,'source':str(snap),'private_build':str(core),'FP_first':args.fp_first,'boundary':'original FP-first/exact-fallback dispatch'if args.fp_first else'eligible LP race before all search'},indent=2)+'\n')
 print('BUILT',U)

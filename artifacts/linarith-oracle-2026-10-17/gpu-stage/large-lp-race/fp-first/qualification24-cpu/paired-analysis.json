@@ -1,0 +1,335 @@
+{
+  "count": 24,
+  "methods": {
+    "fast-hybrid": {
+      "whole_seconds": 30.531879599,
+      "native_reference_ratio": 1.0,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [],
+      "non_message_differences": [],
+      "backend_requests": 0,
+      "backend_errors": 0,
+      "GPU_batches": 0,
+      "GPU_batch_size_histogram": {},
+      "GPU_unique_batch_solver_seconds": 0,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 0.75223112,
+        "median": 3.281435294,
+        "p90": 5.735830746,
+        "p99": 7.458163882,
+        "max": 13.654461103
+      },
+      "terminal": {
+        "method": "fast-hybrid",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 30531879599,
+        "cpu": {
+          "collector": {
+            "user": 0.04806900000000003,
+            "system": 3.044391
+          },
+          "waited_children": {
+            "user": 47.940649,
+            "system": 2.101936
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 4461452288,
+        "sampled_peak_fleet_rss_with_collector": 8212848640,
+        "sampling_read_errors": 0,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+      },
+      "GPU_job_events": {
+        "available": false,
+        "scope": "No job-event stream; received-result counters do not establish all submitted/cancelled GPU work."
+      }
+    },
+    "oracle-hint": {
+      "whole_seconds": 27.654410813,
+      "native_reference_ratio": 1.1040509886635277,
+      "counts": {
+        "complete": 24
+      },
+      "missing_candidate_span_indices": [],
+      "unmatched_candidate_spans": [],
+      "outcome_differences": [],
+      "full_native_JSON_differences": [
+        16,
+        23
+      ],
+      "non_message_differences": [],
+      "backend_requests": 0,
+      "backend_errors": 0,
+      "GPU_batches": 0,
+      "GPU_batch_size_histogram": {},
+      "GPU_unique_batch_solver_seconds": 0,
+      "candidate_service_seconds": {
+        "count": 24,
+        "min": 0.626450483,
+        "median": 1.920597878,
+        "p90": 4.021336714,
+        "p99": 7.393114477,
+        "max": 11.639814121
+      },
+      "terminal": {
+        "method": "oracle-hint",
+        "rep": 1,
+        "state": "complete",
+        "expected": 24,
+        "attempts": 24,
+        "counts": {
+          "complete": 24
+        },
+        "whole_ns": 27654410813,
+        "cpu": {
+          "collector": {
+            "user": 0.039795000000000025,
+            "system": 3.1720879999999996
+          },
+          "waited_children": {
+            "user": 41.611219,
+            "system": 2.0250879999999998
+          }
+        },
+        "sampled_peak_fleet_pss_with_collector": 4868202496,
+        "sampled_peak_fleet_rss_with_collector": 8626839552,
+        "sampling_read_errors": 6,
+        "workers": 1,
+        "resource_observer_enabled": true,
+        "sampling_seconds": 1,
+        "effective_RLIMIT_AS": 51539607552,
+        "width": 8,
+        "normalization": "none; preserve complete parsed native JSON values",
+        "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates"
+      },
+      "GPU_job_events": {
+        "available": false,
+        "scope": "No job-event stream; received-result counters do not establish all submitted/cancelled GPU work."
+      }
+    }
+  },
+  "tails": {
+    "fast-hybrid": {
+      "0.01": {
+        "selected_on": "fast-hybrid",
+        "complete_selection_coverage": true,
+        "selection_missing_indices": [],
+        "indices": [
+          3
+        ],
+        "proof_ids": [
+          "Proof_00088"
+        ],
+        "methods": {
+          "fast-hybrid": {
+            "candidate_count": 1,
+            "observed_spans": 1,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 1,
+              "min": 13.654461103,
+              "median": 13.654461103,
+              "p90": 13.654461103,
+              "p99": 13.654461103,
+              "max": 13.654461103
+            },
+            "sum_overlapping_service_seconds": 13.654461103,
+            "occupied_interval_union_seconds": 13.654461103,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          },
+          "oracle-hint": {
+            "candidate_count": 1,
+            "observed_spans": 1,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 1,
+              "min": 11.639814121,
+              "median": 11.639814121,
+              "p90": 11.639814121,
+              "p99": 11.639814121,
+              "max": 11.639814121
+            },
+            "sum_overlapping_service_seconds": 11.639814121,
+            "occupied_interval_union_seconds": 11.639814121,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          }
+        },
+        "native_baseline_phase_profile": null
+      },
+      "0.1": {
+        "selected_on": "fast-hybrid",
+        "complete_selection_coverage": true,
+        "selection_missing_indices": [],
+        "indices": [
+          3,
+          19,
+          0
+        ],
+        "proof_ids": [
+          "Proof_00088",
+          "Proof_00549",
+          "Proof_00009"
+        ],
+        "methods": {
+          "fast-hybrid": {
+            "candidate_count": 3,
+            "observed_spans": 3,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 3,
+              "min": 7.148771275,
+              "median": 7.458163882,
+              "p90": 7.458163882,
+              "p99": 7.458163882,
+              "max": 13.654461103
+            },
+            "sum_overlapping_service_seconds": 28.261396259999998,
+            "occupied_interval_union_seconds": 21.112974509,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          },
+          "oracle-hint": {
+            "candidate_count": 3,
+            "observed_spans": 3,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 3,
+              "min": 6.677367071,
+              "median": 7.393114477,
+              "p90": 7.393114477,
+              "p99": 7.393114477,
+              "max": 11.639814121
+            },
+            "sum_overlapping_service_seconds": 25.710295669,
+            "occupied_interval_union_seconds": 19.033312417,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          }
+        },
+        "native_baseline_phase_profile": null
+      }
+    },
+    "oracle-hint": {
+      "0.01": {
+        "selected_on": "oracle-hint",
+        "complete_selection_coverage": true,
+        "selection_missing_indices": [],
+        "indices": [
+          3
+        ],
+        "proof_ids": [
+          "Proof_00088"
+        ],
+        "methods": {
+          "fast-hybrid": {
+            "candidate_count": 1,
+            "observed_spans": 1,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 1,
+              "min": 13.654461103,
+              "median": 13.654461103,
+              "p90": 13.654461103,
+              "p99": 13.654461103,
+              "max": 13.654461103
+            },
+            "sum_overlapping_service_seconds": 13.654461103,
+            "occupied_interval_union_seconds": 13.654461103,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          },
+          "oracle-hint": {
+            "candidate_count": 1,
+            "observed_spans": 1,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 1,
+              "min": 11.639814121,
+              "median": 11.639814121,
+              "p90": 11.639814121,
+              "p99": 11.639814121,
+              "max": 11.639814121
+            },
+            "sum_overlapping_service_seconds": 11.639814121,
+            "occupied_interval_union_seconds": 11.639814121,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          }
+        },
+        "native_baseline_phase_profile": null
+      },
+      "0.1": {
+        "selected_on": "oracle-hint",
+        "complete_selection_coverage": true,
+        "selection_missing_indices": [],
+        "indices": [
+          3,
+          19,
+          0
+        ],
+        "proof_ids": [
+          "Proof_00088",
+          "Proof_00549",
+          "Proof_00009"
+        ],
+        "methods": {
+          "fast-hybrid": {
+            "candidate_count": 3,
+            "observed_spans": 3,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 3,
+              "min": 7.148771275,
+              "median": 7.458163882,
+              "p90": 7.458163882,
+              "p99": 7.458163882,
+              "max": 13.654461103
+            },
+            "sum_overlapping_service_seconds": 28.261396259999998,
+            "occupied_interval_union_seconds": 21.112974509,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          },
+          "oracle-hint": {
+            "candidate_count": 3,
+            "observed_spans": 3,
+            "missing_span_indices": [],
+            "service_span_seconds": {
+              "count": 3,
+              "min": 6.677367071,
+              "median": 7.393114477,
+              "p90": 7.393114477,
+              "p99": 7.393114477,
+              "max": 11.639814121
+            },
+            "sum_overlapping_service_seconds": 25.710295669,
+            "occupied_interval_union_seconds": 19.033312417,
+            "backend_calls_overlapping_selected_service_intervals": 0,
+            "scope": "Actual command task entry to return, not asynchronous reclamation attribution. Whole cell includes final retirement. Interval union is occupancy, not a removable critical-path cost; backend overlap is group-level evidence, never uniquely assigned to a candidate without an ID."
+          }
+        },
+        "native_baseline_phase_profile": null
+      }
+    }
+  },
+  "scope": "Root self-review. Closed real native cells, exact IDs and actual per-candidate spans. No GPU claim from numeric-only replay."
+}

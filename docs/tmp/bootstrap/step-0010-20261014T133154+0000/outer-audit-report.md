@@ -2660,3 +2660,29 @@ Targeted validation: paper compiles to22 pages, no Overfull boxes; changed pages
 
 ### 2026-10-18 — strongest pooled-family diagnostic qualification
 build-cost --pooled generates independent native/AST daemon pools from the retained qualified source; direct numerical fallback matches the row11 CPU-hint dispatch. Separate private binaries preserve the active GPU cell. Initial duplicate Child compile failure is retained and repaired. Real24-source,width8,CPU8–11 qualification returns24complete each, exact native/non-message parity (0native/2oracle warning-only changes); all-call analysis must complete before full admission. Full profile is admitted only sequentially after actual GPU lifecycle retirement, onCPU0–3,width8,48GiB, with its own diagnostic clocks and explicit nonportable sensitivity. This is RQ4 cost evidence, not another speed-variant grid. Root self-review only. Native offline FP/exact concentration finding is descriptive, not a measured proposed dispatch result.
+
+
+### 2026-10-18 — FP-first exact-fallback mechanism admitted to hardware qualification
+The completed native trace shows4393large FP-only calls taking2.352FP CPU s,
+versus1636large exact-fallback calls taking820.477exactCPU s. A partial current
+GPU batch-event observation has384submitted/311member-cancelled/73result
+jobs; this is incomplete mechanism evidence, never a complete speed claim.
+The private FP-first implementation moves racing to exact fallback, with a
+CPU exact-only shadow to avoid repeated FP search. Default whole-LP build
+and active GPU binaries are preserved. Real24source CPU qualification,
+width8/CPU8–11,48GiB: pooled native30.531879599s,CPUoracle27.654410813s;
+24complete each, no verdict/non-message changes,2warnings.
+Failed initial Rust crate-path build retained; corrected build/real execution
+succeed. This does not admit full1000 or prove GPU benefit.
+
+A finite hardware qualification is prepared for the same24,width8,CPU8–11
+server/client eligibility,row11,minbatch2, only after the current full GPU
+Job's actual cleanup receipt verifies deletion and restoration. The pooled
+own-clock diagnostic separately waits for that same real retirement, then
+runs CPU0–3; no primary CPU eligibility overlaps. These are finite benchmark
+sequences, not new recurring automation/agents/Workspaces. No shadow Agent.
+README's current-status section is condensed around current complete results,
+explicit protocol epochs and canonical raw links; historical failed data are
+not deleted. Daily reflection links the actual next cost/performance decision.
+All review is root self-review, no independent-audit claim. GPU route/hourly
+task remain open.

@@ -295,3 +295,13 @@ Qualify the original first24sources before the full fixed1000; do not overlap
 the primary'sCPU0–3. These captures have their own diagnostic denominators
 and cannot replace primary performance clocks. The source and complete
 qualification are retained in artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/.
+
+### FP-first exact-fallback qualification
+build-race.py --fp-first --out DIRECTORY builds a private alternative that
+runs FP support+exact repair before racing only exact-fallback LPs. Default
+build output and dispatch remain unchanged. Set GPU_ARITHMETIC_RACE_ROOT to
+that DIRECTORY when using run-race.py. The CPU child uses --cpu-exact in this
+variant; every certificate still passes exact repair/verification and Lean.
+The original24source CPU qualification and hardware plan are under
+artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/fp-first/.
+No full-population benefit is established by qualification.
