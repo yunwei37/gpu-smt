@@ -20,12 +20,24 @@ source=source.replace("                    await retire(False)\n                
                             failure += ' [resource_failure: inherited 48 GiB address-space ceiling]'
                 observed = time.monotonic_ns()''')
 source=source.replace("if header.get('env') != 0:", "if header.get('env') != 0 or any(m.get('severity') == 'error' for m in header.get('messages', [])):")
+# Upstream buckets are sequential lanes within one array. The current width
+# remains the number of concurrently active lanes, not an extra CPU budget.
+source=source.replace(
+    "            for offset in range(0, len(items), self.width):",
+    "            submission_width = len(items) if getattr(args,'native_buckets',False) else self.width\n            for offset in range(0, len(items), submission_width):",1)
+source=source.replace("batch = items[offset:offset + self.width]","batch = items[offset:offset + submission_width]",1)
+source=source.replace(
+    "                    event('request', worker=workers, offset=offset, count=len(batch),",
+    "                    if getattr(args,'native_buckets',False):\n                        request.update(mode='parrallel',buckets=self.width)\n                    event('request', worker=workers, offset=offset, count=len(batch),",1)
+source=source.replace("response = await exchange(request, args.batch_timeout)",
+    "response = await exchange(request, None if getattr(args,'native_buckets',False) else args.batch_timeout)",1)
 exec(compile(source,str(P),'exec'),ns)
 Base=ns['Runner']
 class Runner(Base):
     def library_path(self, method):
         return os.pathsep.join(([str(self.args.cost_root)] if self.args.cost_profile else [])+[str(U),str(self.args.sdk/'lib'),str(self.args.sdk/'lib/lean')]+self.config['library_paths'])
     def repl_path(self, method):
+        if getattr(self.args,'repl_override',None) is not None:return self.args.repl_override
         return T/'repl-kimina-native-gc-header-repair/.lake/build/bin/repl'
     async def cell(self, rep, name, **kwargs):
         for key in ['GPU_ARITHMETIC_BASELINE','GPU_ARITHMETIC_ORACLE','FARKAS_EXTERNAL_CPU_HYBRID','GPU_ARITHMETIC_STRONG_PROFILE']:
@@ -80,6 +92,8 @@ def main():
     p.add_argument('--cost-profile',action='store_true',help='complete all-call Lean/Rust attribution; diagnostic, not a primary performance result')
     p.add_argument('--sample-seconds',type=float,default=1,help='nonpositive disables process-tree memory observer for overhead qualification')
     p.add_argument('--reuse-reference',type=Path,default=None)
+    p.add_argument('--native-buckets',action='store_true',help='One upstream parrallel array with width sequential lanes; retain native heartbeat defaults, no artificial array-wide observation deadline')
+    p.add_argument('--repl',dest='repl_override',type=Path,help='Explicit matching native telemetry executable for both compared modes')
     p.add_argument('--numeric-replay-bin',type=Path,help='Diagnostic fixed-certificate numerical omission control, not a deployable verifier')
     opts=p.parse_args()
     if opts.numeric_replay_bin is not None:
@@ -112,7 +126,7 @@ def main():
     args=argparse.Namespace(input=opts.input,limit=opts.limit,
        manifest=config,kimina=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d'),
        sdk=T/'lean-4.27.0-linux',project=T/'mathlib4',frozen=U,width=opts.width,
-       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,cost_root=opts.cost_root,numeric_replay_bin=opts.numeric_replay_bin,
+       orders=[opts.methods],repetitions=1,out=opts.out,diagnostic=opts.diagnostic or opts.cost_profile,cost_profile=opts.cost_profile,cost_root=opts.cost_root,numeric_replay_bin=opts.numeric_replay_bin,native_buckets=opts.native_buckets,repl_override=opts.repl_override,
        header_timeout=60,batch_timeout=300,finalize_timeout=300,sample_seconds=opts.sample_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     if opts.reuse_reference is not None:
@@ -122,6 +136,6 @@ def main():
       'affinity':sorted(os.sched_getaffinity(0)),'methods':opts.methods,'input':str(args.input),
       'limit':opts.limit,'resource_observer_seconds':opts.sample_seconds,'header':'import Mathlib;import Aesop;import GpuArithmetic.Stages',
       'boundary':'existing native batch collector, same imports; original source bodies; stages use sequential thread CPU and invocation wall; whole includes start/preparation/queue/native/fallback/EOF',
-      'numeric_replay_bin':str(opts.numeric_replay_bin) if opts.numeric_replay_bin else None,'numeric_replay_data':os.environ.get('GPU_ARITHMETIC_REPLAY_DATA') if opts.numeric_replay_bin else None,'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'cost_root':str(opts.cost_root),'collector':str(P)},indent=2)+'\n')
+      'native_buckets':opts.width if opts.native_buckets else None,'array_observation_deadline_seconds':None if opts.native_buckets else 300,'repl_override':str(opts.repl_override)if opts.repl_override else None,'numeric_replay_bin':str(opts.numeric_replay_bin) if opts.numeric_replay_bin else None,'numeric_replay_data':os.environ.get('GPU_ARITHMETIC_REPLAY_DATA') if opts.numeric_replay_bin else None,'effective_RLIMIT_AS':list(resource.getrlimit(resource.RLIMIT_AS)),'cost_profile':opts.cost_profile,'cost_root':str(opts.cost_root),'collector':str(P)},indent=2)+'\n')
     asyncio.run(runner.run())
 if __name__=='__main__':main()

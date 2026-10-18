@@ -11,12 +11,16 @@ parser.add_argument('--min-rows',type=int,default=37)
 parser.add_argument('--label',default='labelled-large-lp-race-gpu24')
 parser.add_argument('--out',type=Path)
 parser.add_argument('--reference',type=Path,default=Path('/tmp/gpu-smt-linarith-oracle-20261017/race-oracle/qualification24-cpu/rep1-fast-hybrid'))
+parser.add_argument('--cpu-qualification',type=Path)
+parser.add_argument('--native-buckets',action='store_true')
+parser.add_argument('--repl',type=Path)
 args=parser.parse_args();U=args.root
 out=args.out or U/'labelled-qualification24-gpu'
 A=R/'artifacts/linarith-oracle-2026-10-17/gpu-stage/cuopt-target'
 resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 os.sched_setaffinity(0,set(args.affinity))
-cpu=json.loads((U/'qualification24-cpu/rep1-oracle-hint/terminal.json').read_text())
+cpu_root=args.cpu_qualification or U/'qualification24-cpu'
+cpu=json.loads((cpu_root/'rep1-oracle-hint/terminal.json').read_text())
 assert cpu['state']=='complete' and cpu['counts']=={'complete':24},'CPU qualification must close before GPU launch'
 channel=grpc.insecure_channel(args.host+':5001')
 grpc.channel_ready_future(channel).result(timeout=60);channel.close()
@@ -25,6 +29,8 @@ env['GPU_ARITHMETIC_RACE_MIN_ROWS']=str(args.min_rows);env['GPU_ARITHMETIC_RACE_
 cmd=['/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python',str(D/'run-race.py'),
  '--out',str(out),'--limit','24','--methods','oracle-gpu','--width','8',
  '--affinity',*[str(x)for x in args.affinity],'--reuse-reference',str(args.reference)]
+if args.native_buckets:cmd+=['--native-buckets']
+if args.repl:cmd+=['--repl',str(args.repl)]
 build=json.loads((U/'build-receipt.json').read_text())
 start=time.monotonic_ns()
 with (U/(args.label+'-driver.log')).open('w')as log:

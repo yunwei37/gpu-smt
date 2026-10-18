@@ -27,7 +27,7 @@ The hourly research task remains active.
 
 | Complete comparison | Native / CPU oracle elapsed | Ratio | Scope |
 |---|---:|---:|---|
-| Current pooled daemon baseline / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, width8, same4CPUs,48GiB |
+| Current pooled daemon baseline / CPU oracle | 1,237.37 / 1,037.85 s | 1.19224× | One full pair, eight-item waves, same4CPUs,48GiB |
 | Current pooled baseline / GPU race | 1,237.37 / 1,020.12 s | 1.21296× | Warm server; full GPU lifecycle1,036.25s gives1.19408× |
 | Corrected serial-family baseline | 6,691.60 / 5,164.85 s | 1.29560× | Three full pairs, each with its own matched reference |
 | Historical CPU stage | See retained record | 1.34668× | Earlier unbounded-address-space epoch; not pooled with current data |
@@ -59,20 +59,26 @@ zero-LP-cost sensitivity, or **2.24363×** when deleting all CPU-oracle numeric
 products and LP search relative to its own native reference. These are
 optimistic fixed-other-work calculations, not GPU speedups or universal bounds,
 and cannot be rescaled to the faster pooled-native clock. The stronger pooled
-family's own cost diagnostic has passed real24-source qualification and
-started after the completed GPU lifecycle retired.
+family's own complete diagnostic is summarized below.
 [Complete profile and denominator limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/corrected-wall-profile/full1000-result-review.md),
 [pooled diagnostic protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/plan.md).
 
-The pooled native half now closes at **1,245.96s** with exactly matching
-native responses on all1,000sources. Numeric LP summed wall is1,012.10s;
-its interval union is600.02s. Overlapping sums are not removable wall time,
-and neither calculation excludes1.5×. The paired CPU-oracle profile continues.
-[Complete native cost evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-native-result-review.md).
-A fixed-coefficient omission control passes24real-source qualification with
-zero lookup misses; it is a diagnostic using known answers and is excluded
-from the CPU/GPU continuation result.
+The matched pooled-family cost profile is complete: native **1,245.96s**,
+CPU oracle **1,072.37s**, with all native responses matching their respective
+primary captures. Exported numeric product/LP invocation wall sums to607.39s,
+while its interval union is439.54s. The optimistic fixed-work deletion
+sensitivity is **2.67957×** relative to this profile's own native reference;
+overlapping sums and occupancy are not actual time saved.
+This does not prove a below1.5× ceiling.
+[Complete costs, failures, shapes and source tails](artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-paired-result-review.md).
 
+A fixed-coefficient omission control passes24-source qualification with zero
+misses and is now collecting all1,000sources against a fresh native reference.
+It uses recorded answers, retains full Lean checking, and is excluded from
+the CPU/GPU continuation result. A source-native8queue submission control
+also passes24-source CPU qualification at the same maximum8candidates/4CPUs;
+it tests the barrier created by waiting for each eight-item array.
+[Common submission protocol and limits](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/plan.md).
 
 A supporting SHRED-parser experiment measures proof-prefix sharing on the
 original miniF2F and ProofNet candidates against native batch execution.

@@ -1,0 +1,59 @@
+{
+  "methods": {
+    "wave8": {
+      "fast-hybrid": {
+        "whole_seconds": 30.483053785,
+        "counts": {
+          "complete": 24
+        },
+        "native_message_changes": [],
+        "native_non_message_differences": [],
+        "candidate_timing_count": 24,
+        "peak_timed_candidate_concurrency": 8,
+        "sampling_read_errors": 0
+      },
+      "oracle-hint": {
+        "whole_seconds": 27.222929571,
+        "counts": {
+          "complete": 24
+        },
+        "native_message_changes": [
+          16,
+          23
+        ],
+        "native_non_message_differences": [],
+        "candidate_timing_count": 24,
+        "peak_timed_candidate_concurrency": 8,
+        "sampling_read_errors": 0
+      }
+    },
+    "bucket8": {
+      "fast-hybrid": {
+        "whole_seconds": 29.551738559,
+        "counts": {
+          "complete": 24
+        },
+        "native_message_changes": [],
+        "native_non_message_differences": [],
+        "candidate_timing_count": 24,
+        "peak_timed_candidate_concurrency": 8,
+        "sampling_read_errors": 6
+      },
+      "oracle-hint": {
+        "whole_seconds": 23.475818756,
+        "counts": {
+          "complete": 24
+        },
+        "native_message_changes": [
+          16,
+          23
+        ],
+        "native_non_message_differences": [],
+        "candidate_timing_count": 24,
+        "peak_timed_candidate_concurrency": 8,
+        "sampling_read_errors": 0
+      }
+    }
+  },
+  "scope": "real24sources,same4CPU8\u201311,sameprivate telemetry binary,max8candidate queues,wave vsupstreamsequential buckets; one qualifier notfull1000orfrontier"
+}

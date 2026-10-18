@@ -32,7 +32,7 @@ def main():
         records.append({"LP_rows":rows,"calls":b["calls"],"LP_search_CPU_seconds":b["cpu_seconds"],
                         "cumulative_call_percent":yc[-1],"cumulative_LP_CPU_percent":yt[-1]})
     with(args.out/"lp-size-cost.csv").open("w",newline="")as stream:
-        writer=csv.DictWriter(stream,fieldnames=list(records[0]));writer.writeheader();writer.writerows(records)
+        writer=csv.DictWriter(stream,fieldnames=list(records[0]),lineterminator="\n");writer.writeheader();writer.writerows(records)
     small_calls=sum(v["calls"]for r,v in bins.items()if r<args.threshold)
     small_cpu=sum(v["cpu_seconds"]for r,v in bins.items()if r<args.threshold)
     summary={"input":str(args.input),"calls":count,"LP_search_CPU_seconds":cpu,

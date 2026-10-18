@@ -4205,3 +4205,52 @@ to reader-facing final results;README links actual frontier/raw data.
 REVIEW remains root self-review under user prohibition of all delegation.
 No independent audit,full writing completion,OSDI acceptance or project
 closure is claimed. Four RQs/Initial Narrative unchanged; hourly/goal active.
+
+
+### 2026-10-18 — complete own-clock pair; native queue qualification
+EXPERIMENT: pooled-family native1245.961262403s andCPUoracle1072.374382485s
+are complete,each992/8/0. Every raw native response equals the corresponding
+primary,including the oracle's existing diagnostics.13230native/10251oracle
+calls have full source/shape/product metadata,all EOF/wait4ledgers,
+no ambiguous/unmatched calls. Direct/fallback success andfailure costs and
+native-selected cross-method1%/10%tables are archived.
+
+Exported numericLP/products sum607.389419503wall seconds(56.6397%oracleown),
+union439.539173307s(40.9875%). Fixed-other-work subtraction relative to the
+matched1245.96snative gives2.679573237x; adding internalLP yields2.6970482x.
+These overlap and do not prove a below1.5x ceiling. No cross-denominator
+use of historical2234.69orwidth4clocks. Native four region union shares
+21.60/17.87/48.16/18.53%are explicitly overlapping,not a four-way wall
+partition. CPU service includes failed branches,protocol andexact repair
+separately. No unknown work is calledzero.
+
+The full fixed-coefficient omission sequence actually starts07:07:16Z,
+PID160351,onCPU0–3,width8,48GiB after actual profile termination.
+16015source-identified numerical keys,zero conflicting answers; three
+conditions are fresh actualnative then native/AST omission controls.
+Source/launch/data receipt frozen. Known-answer omission is excluded from
+the final best-CPU/GPU result and cannot alone closeGPU.
+
+Source-native queue real24qualification closes allfourcells onCPU8–11,
+same private telemetry-onlyREPLandmaximum8timed candidates:
+wave native30.48305/CPU27.22293s;8queues native29.55174/CPU23.47582s.
+All24complete,zero verdict/non-message changes,2oraclewarnings; alltimings
+present. Nativequeue sampler6transientreaderrors discloses incomplete peaks.
+The only native source delta adds the existing per-candidate timer to the
+upstream sequential queue iteration. Both algorithms/GC/kernel stay native.
+One-array queue observation has no300sarray-wide client deadline; native
+retained heartbeat behavior is unchanged. No timeout-equivalence claim.
+Matching GPU24qualification is prepared,row11,minbatch2,same4CPUs8–11,
+using the existing whole-LP race. No GPU solver parameter grid or unqualified
+new full variant run opens.
+
+WRITE targeted result/limit propagation updates current own-clock profile,
+the four observed native regions, LPfigureCSV/PDF and fixed gate provenance.
+The old width4raw remains preserved. Paper compiles22pages withzeroOverfull;
+Initial Narrative,four RQ meanings and contribution claims are preserved.
+Daily2026-10-18OSS/current-frontier cleanup and substantive-next-step reflection
+are written. Other authors' dirty files are untouched. Full writing/milestone
+review remain incomplete. REVIEW is root self-review only; no independent
+audit/acceptance claim. Hourly/goal remainactive,no delegation.
+
+Publication check repaired the figure CSV export's CRLF line endings flagged bygit diff--check. Numeric rows are unchanged; the generator now emitsLF. No capture/runtime/algorithm changes or new tests/settings are introduced. Full known-answer cache data are losslessly archived,with explicit exclusion from legitimate CPU/GPU speedup scores.

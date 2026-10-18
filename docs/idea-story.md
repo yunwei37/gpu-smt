@@ -27,6 +27,27 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — current arithmetic/GPU evidence
+The complete original1000wave8 comparison is native1237.37s,CPUoracle1037.85s,
+GPUwarm1020.12s; its fresh-server full lifecycle is1036.25s. All992/8/0,
+native verdict/non-message parity. This is one supported RQ4 observation,
+not a stable GPU advantage or new systems contribution.
+[Complete result](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/full1000-gpu/result-review.md).
+
+The strongest matched pooled-family cost profile now closes both native1245.96s
+andCPUoracle1072.37s with identical per-primary native responses. Its
+exported-numeric zero-cost sensitivity2.67957x is an overlapping-sum,
+fixed-work calculation; it does not prove a below1.5x ceiling.
+[Own clocks,failed work,shapes and tails](../artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/full1000-paired-result-review.md).
+The answer-aware omission control is running to calibrate actual remaining
+work and is excluded from legitimate CPU/GPU continuation scores.
+Source-native8queue submission is separately qualified on24sources to
+strengthen all methods' common baseline; ordinary batching/caching is prior
+art and receives no novelty claim. All four RQs and the original Lean/SMT/
+service/paper goal stay open. Root self-review only under the user's explicit
+prohibition of all otherAgents,subagents andOMP.
+
+
 BOOTSTRAP step0010 remains unfrozen and all four RQs remain open. The complete
 Initial Narrative and accepted evolution below are preserved. Completed evidence
 and interface checkpoints are now published on main, under the
@@ -85,8 +106,9 @@ contribution has yet been demonstrated. Ordinary CPU gains cannot fill that gap.
 
 Healthy acquisitions do not justify goal turns that only poll row counts.
 Advance substantive mainline work and collect each original acquisition on
-completion. The complete paper, causal ablations, limitations and fresh
-independent step/paper audits remain required. The
+completion. The complete paper, causal ablations, limitations and current-thread
+step/paper self-audits remain unfinished. No independent audit is claimed
+under the user's current prohibition of all other executors. The
 [step report](tmp/bootstrap/step-0010-20261014T133154+0000/step-report.md),
 [implementation](implementation.md) and [evaluation](evaluation.md) own detailed
 evidence. The previous frontier is preserved in
