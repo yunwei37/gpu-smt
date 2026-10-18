@@ -903,6 +903,24 @@ build and does not generalize this new implementation.
 This evidence supports an arithmetic implementation improvement, not a new
 solver, demonstrated GPU benefit or the complete service contribution.
 
+\paragraph{Formal population generalization.}
+A separate version-aligned component comparison processes every original
+ProofNet candidate in Lean 4.9.0-rc1. Module-loaded stock fallback, native
+preprocessing with external search, and direct certificate checking take
+1,151.88, 1,160.92 and 1,178.93 seconds, respectively, in one fixed-order
+shared-host block. All three retain 413 complete, 5,523 rejected, 12
+operational and four incomplete outcomes, with matching per-source verdicts
+and non-message fields; four and five warning differences remain in the
+native and direct modes. Direct execution is 2.35\% slower than the
+module-loaded control, so the selected Goedel result does not generalize
+to this ProofNet component. The native mode is not the full Lean 4.27 Fast
+frontend. The stock control imports the same adapter, whose explicit
+argument elaboration precedes mode rejection; it is therefore not pristine
+Mathlib. All three failed REPL requests per condition and their retirements
+remain charged. This is neither a whole-service comparison nor GPU evidence;
+the complete miniF2F arithmetic comparison remains pending.
+
+
 \paragraph{Current common-omega accounting.}
 A separate diagnostic of the earlier direct representation, before literal-power
 export, holds omega and the two-sided backend common to both frontends. It completes all 1,000 sources in 475.97 seconds with native export

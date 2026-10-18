@@ -3308,3 +3308,11 @@ staged; live miniF2F/driver log not staged. No delegated audit. Timing is
 one shared-host fixed-order module-loaded component observation, not
 pristine-stock or whole-service evidence. Negative component generalization
 retained; no project closure or automation deletion.
+
+### E1079 factual paper delta self-audit
+Root matches every new clock/count/baseline caveat to the stable closed
+ProofNet extraction. No strongest-pristine-stock/GPU/generalization benefit
+is asserted. Figure discussion remains with its Goedel source population;
+new formal paragraph has its own scope. Source and rendered PDF validated;
+existing TeX warnings retained. Full lifecycle gates and independent audit
+are not promoted by this delta.

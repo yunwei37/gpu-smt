@@ -390,3 +390,16 @@ Upkeep: README now170lines, current result first, older epochs linked instead
 of competing as current headlines. All local README/newprotocol links resolve.
 Closed duplicate text reclamation retains byte-identical tracked raw archives
 and frees about50MiB logically; source/session/binaries remain.
+
+## Closed ProofNet result and public reproduction follow-through
+The completed4.9ProofNet component is2.35%slower with all5952source outcomes
+matching. This falsifies transferring the selected-Goedel gain to this
+formal population. Its module-loaded stock path is not pristine Mathlib;
+do not quietly upgrade that control into the strongest unmodified service.
+The consequential next evidence is the frozen full current Goedel capture
+and remaining miniF2F matrix, with all operational outcomes preserved.
+Public buildability is being closed in parallel: complete Rust/Lean source
+and measured CPU support are packaged with locked dependencies/provenance.
+The actual source build exposed a host-shim compiler issue and is repaired
+separately; no active measured libraries are rebuilt. Successful packaging
+will be functional reproduction, not another timing result or novelty claim.

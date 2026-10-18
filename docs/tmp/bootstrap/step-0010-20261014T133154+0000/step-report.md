@@ -5096,3 +5096,12 @@ scope, without relabeling active miniF2F as complete. REVIEW_GATE root
 self-review verifies arrays/allIDs/counts/clocks, baseline source limitation,
 all failure rows and no inference from diagnostic CPU to wall. Independent
 audit absent; all4RQs remain open. Portable source build proceeds separately.
+
+### E1079 paper evidence insertion
+The completed negative ProofNet generalization and module-loaded stock
+limitation now enter the existing evaluation, after the Goedel distribution
+discussion. Tectonic0.17.0 compiles; actual pages14--15 are rendered and
+page15 visually inspected without overlap/clipping. This factual integration
+does not claim completion of all12writing rounds or whole-paper independent
+review. All4RQs/novelty/complete service scope stay open. Daily reflection
+now prioritizes the frozen full-source captures and executable reproduction.
