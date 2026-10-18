@@ -41,6 +41,10 @@ async def cell(args, method, out, items, build):
             GPU_ARITHMETIC_RACE_WORKER=str(args.build/"farkas-race-worker"),
             GPU_ARITHMETIC_RACE_MIN_ROWS="11", GPU_ARITHMETIC_NEGATIVE_CERTIFICATES="1",
             GPU_ARITHMETIC_RACE_LOG=str(out/"lp-races.jsonl"))
+    # The default retains the original selected-Goedel comparison. A matched
+    # existing-method control may select the upstream helper's tiered default.
+    if method == "native" and args.native_engine == "tiered":
+        env.pop("FARKAS_EXTERNAL_CPU_HYBRID", None)
     with socket.socket() as address:
         address.bind(("127.0.0.1",0)); port=address.getsockname()[1]
     env["LEAN_SERVER_PORT"]=str(port)
@@ -50,6 +54,9 @@ async def cell(args, method, out, items, build):
     backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
     result=dict(state="failed",method=method,expected=len(items),
         affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
+        native_engine=args.native_engine if method == "native" else None,
+        native_helper=str(env["FARKAS_NATIVE_BIN"]),
+        native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
         scope="Official Kimina HTTP/SDK replay; same adapted4.27REPL/native closure; CPU-only, root self-review.")
     try:
         if method=="power":
@@ -171,13 +178,17 @@ if __name__=="__main__":
     parser.add_argument("--limit",type=int,default=0)
     parser.add_argument("--repetitions",type=int,default=1)
     parser.add_argument("--methods",nargs="+",choices=["stock","native","power"],default=["stock","native","power"])
+    parser.add_argument("--native-engine", choices=["hybrid", "tiered"], default="hybrid",
+                        help="Existing native-reference engine; does not change Power's numerical portfolio")
+    parser.add_argument("--affinity", type=int, nargs="+", default=[20,21,22,23],
+                        help="Equal CPU eligibility for every condition in this finite comparison")
     args=parser.parse_args()
     for name in["kimina","build","build_source","repl","reference","support_python","input","out"]:
         # Preserve a virtual environment's invocation path: resolving bin/python
         # to its system symlink target loses NumPy/highspy from that environment.
         value=getattr(args,name)
         setattr(args,name,value.absolute()if name=="support_python"else value.resolve())
-    os.sched_setaffinity(0,{20,21,22,23})
+    os.sched_setaffinity(0,set(args.affinity))
     resource.setrlimit(resource.RLIMIT_AS,(51539607552,51539607552))
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
     sys.path.insert(0,str(args.kimina)); sys.path.insert(0,str(args.kimina/"client"))

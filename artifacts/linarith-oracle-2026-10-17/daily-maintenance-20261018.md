@@ -438,3 +438,14 @@ regressions as a few slow completed HiGHS calls. Substantive progress now
 means the complete strongest-service/population results and a cost-supported
 mechanism explanation; no new narrow LP/GPU tuning follows this analysis.
 The canonical ledger and the paper link the same raw reproducer and limits.
+
+## Follow-through on the closest-method workload
+The producer-output gap now has a real test, not only a proposed follow-up.
+The official Farkas recipe acquires all438DSV2proofs, both methods qualify
+on the first16with identical full responses, and three whole alternating
+pairs are running. The native comparator uses the default tiered exact
+engine, verified in8actual helpers rather than only a parent-setting record.
+This can distinguish Goedel-specific gains from cross-producer transfer;
+it cannot supply the missing systems novelty or an independent task domain.
+README documents the actual acquisition and existing HTTP path, with no
+original proof/request payloads copied into Git and no new infrastructure.

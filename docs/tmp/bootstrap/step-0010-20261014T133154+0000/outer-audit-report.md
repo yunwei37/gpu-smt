@@ -3401,3 +3401,22 @@ Maintenance: current evaluation and paper carry the same exclusions; raw
 and failed captures and unrelated author changes stay untouched. Actual
 closed records reconcile across all1000source IDs and original aggregate.
 The current full matrices retain their scope and resources.
+
+## DSV2 reference-corpus boundary — root self-audit
+Direction: this is supporting unchangedRQ4 transfer evidence; it cannot
+replace the native-state/Lean+SMT systems contribution. Actual published
+closest-work sources pressure generic oracle novelty without silently
+changing the narrative. All four RQs remain open.
+Efficiency: a published reference corpus tests a genuinely different producer
+distribution at a matched warm service boundary. The original tiered baseline
+is measured rather than assuming the old hybrid override is globally best.
+No redundant stock row or small solver/GPU parameter grid is added.
+Validity: all438source paths are retained; first16matches complete responses,
+both48GiB/fourCPU, all owned descendants retired. Actual native-child flags
+match tiered selection. Original4.31numbers are not mixed with4.27clocks.
+The new full438matrix has only started; no preflight ratio is promoted.
+Maintenance: input preparation is reproducible and leaves original source
+payloads outside Git with the existing Workspace's raw evidence. The public
+driver's default behavior is preserved, and already-loaded active captures
+and native builds are unchanged. User work remains unstaged. Review is self-
+audit, not independent review or completion of all paper gates.

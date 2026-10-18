@@ -111,6 +111,13 @@ population result. It admits the now-running3rotated1000source blocks.
 [Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
+[The official DSV2/Farkas reference corpus](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/README.md)
+adds438different-prover proof outputs on overlapping miniF2F tasks.
+Both methods use the same4.27environment; the adapted native reference
+selects upstream default tiered search. First16preflight has10valid/6Leanerror
+and identical full responses. Full438three alternating pairs are acquiring.
+This does not reproduce upstream4.31timings or establish a population gain.
+
 ## Prefix/preparation evidence and previous controls
 
 Complete [miniF2F exact](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/exact-result-review.md)

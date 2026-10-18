@@ -1623,7 +1623,10 @@ accuracy--cost tradeoff, rather than exact native checking acceleration.
 
 \paragraph{Certified arithmetic and batched linear programs.}
 Mathlib and Farkas already separate arithmetic certificate search from native
-proof construction~\cite{farkasSource}. Exact certification of external linear
+proof construction~\cite{farkasSource}. Veriphy exports Lean goals and hypotheses
+to an external Sage oracle and checks the emitted proof, including rational
+LP and nonlinear arithmetic facilities~\cite{veriphySource}. These systems
+already cover the general export--search--check principle. Exact certification of external linear
 programming results, including infeasibility and unboundedness, is also
 established~\cite{verifiedLP2025}. Gurung and Ray assign a CUDA block to each
 linear program and evaluate both batch supply and complete application

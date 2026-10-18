@@ -1,0 +1,33 @@
+{
+  "state": "closed-observed-cells",
+  "conditions": {
+    "preflight16/rep1-native": {
+      "state": "complete",
+      "counts": {
+        "valid": 10,
+        "lean_error": 6
+      },
+      "whole": 43.535444528
+    },
+    "preflight16/rep1-power": {
+      "state": "complete",
+      "counts": {
+        "valid": 10,
+        "lean_error": 6
+      },
+      "whole": 42.743641247
+    }
+  },
+  "comparisons": {
+    "preflight16/rep1-native-vs-power": {
+      "control_cell": "preflight16/rep1-native",
+      "power_cell": "preflight16/rep1-power",
+      "status_differences": [],
+      "non_message_differences": [],
+      "raw_response_difference_IDs": [],
+      "operational": [],
+      "whole_control_over_power": 1.0185244695561722,
+      "warm_control_over_power": 1.0251307455476302
+    }
+  }
+}

@@ -5232,3 +5232,43 @@ historical2234.69source still has no phase timestamps to reconstruct.
 [Reproducer, all-source output and self-review](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/regression-cost-result-review.md).
 
 The factual insertion compiles (Tectonic exit0); actual pages14--15 are rendered and root visually checks the paragraph/figure layout. No full writing or independent audit milestone is claimed.
+
+## Official DSV2 reference-corpus transfer admitted and preflight qualified
+EXPERIMENT_GATE selects unchangedRQ4's workload/strong-CPU uncertainty.
+Current Goedel gains and the negative mostly-rejected ProofNet component do
+not settle different-prover completed proofs. The published Farkas recipe
+acquires438official DSV2 miniF2F sources; all original imports are Mathlib/
+Aesop, original bodies remain outside checkout and none is excluded.
+This is producer-output transfer on overlapping tasks, not a new theorem
+domain/held-out benchmark or a new scientific contract.
+
+The existing official HTTP adapter gains explicit native-engine and CPU
+eligibility selections; its existing defaults remain. No library, running
+worker or existing loaded protocol is modified. Native selects upstream
+tiered default without the historical hybrid flag; actual full-run observation
+finds8REPLs/8helpers with that flag absent,4CPU16--19/48GiB.
+Power uses the frozen current public build/CPU portfolio, not a device.
+
+Actual16source preflight closes10valid6Leanerror in each method with identical
+fullSDKresponses and zero operational. All24/27owned descendants join.
+Seven real numeric races engage; no completed HiGHS model or device benefit
+is inferred. The matching public input adapter reproduces all438live inputs.
+The complete438three alternating pairs genuinely start in the existing
+Workspace. Original proofs/raw HTTP payloads stay in agent-state under the
+official source recipe's non-redistribution approach; full returned outcomes,
+metadata/reproducer and all failures remain linked/preserved.
+
+WRITE_GATE preserves4RQs/InitialNarrative and adds only live evidence scope.
+Primary Veriphy documentation also establishes overlap with generic external
+goal export, numeric search and Lean proof checking; that primitive is not
+promoted as new systems novelty. No full writing milestone is claimed.
+REVIEW_GATE root self-review checks source counts, public default-engine
+semantics, actual child flags, fixed4.27versus published4.31scope, parity,
+normal retirement and no partial performance promotion. No Agent/subagent/
+OMP, new checkout/service/scheduler or empirical GPU closure is used.
+[Plan/raw/source/preflight](../../../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/README.md).
+
+The old actual closedHTTPanalysis remains byte-identical under default
+arguments after the analyzer's affinity generalization. Public438input
+preparation reproduces the live input bytes. Tectonic compiles the targeted
+prior-art citation; actual page23is rendered and root visually checks layout.

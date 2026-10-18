@@ -1,0 +1,8 @@
++ curl -fSL --retry 3 -o /tmp/farkas-corpus-1mpj9nfp/solutions.zip https://github.com/deepseek-ai/DeepSeek-Prover-V2/raw/main/minif2f-solutions.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  445k  100  445k    0     0   831k      0 --:--:-- --:--:-- --:--:--  831k
++ unzip -q /tmp/farkas-corpus-1mpj9nfp/solutions.zip -d /workspaces/.agent-state/gpu-smt-dsv2-20261018/original
+acquired 438 .lean files -> /workspaces/.agent-state/gpu-smt-dsv2-20261018/original
+NOTE: redistribution license unclear — keep these files local (the directory is gitignored); ship statistics, not payloads.

@@ -14,7 +14,7 @@ def quantiles(xs):
     return dict(n=len(xs),**{name:xs[max(0,math.ceil(q*len(xs))-1)]for name,q in[
         ("p50",.5),("p90",.9),("p99",.99),("max",1)]})if xs else dict(n=0)
 
-def analyze(root, extra_roots=()):
+def analyze(root, extra_roots=(), expected_affinity=(20,21,22,23)):
     roots=[root,*extra_roots]
     ids=json.loads((root/"source-ids.json").read_text())
     for other in roots:
@@ -33,7 +33,7 @@ def analyze(root, extra_roots=()):
         data=load_rows(directory/"results.jsonl")
         assert len(data)==len(ids)and[x["proof_id"]for x in data]==ids
         assert dict(collections.Counter(x["status"]for x in data))==t["counts"]
-        assert t["memory_limit_bytes"]==51539607552 and t["affinity"]==[20,21,22,23]
+        assert t["memory_limit_bytes"]==51539607552 and t["affinity"]==list(expected_affinity)
         events=load_rows(directory/"http.jsonl");spans=[];failed_http=[]
         for event in events:
             if event["event"]!="response":continue
@@ -73,5 +73,10 @@ def analyze(root, extra_roots=()):
     print(json.dumps(dict(state=result["state"],conditions={k:{"state":v["terminal"]["state"],"counts":v["terminal"].get("counts"),"whole":v["terminal"]["whole_lifecycle_seconds"]}for k,v in result["conditions"].items()},comparisons=result["comparisons"]),indent=2))
 
 if __name__=="__main__":
-    import sys
-    analyze(Path(sys.argv[1]),[Path(p)for p in sys.argv[2:]])
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("root", type=Path)
+    parser.add_argument("extra_roots", nargs="*", type=Path)
+    parser.add_argument("--affinity", type=int, nargs="+", default=[20,21,22,23])
+    args=parser.parse_args()
+    analyze(args.root, args.extra_roots, args.affinity)
