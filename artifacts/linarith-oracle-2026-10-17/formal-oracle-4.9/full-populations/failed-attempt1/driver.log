@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/driver.py", line 78, in run
+    assert x["code"].startswith(h)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+AssertionError
+{"state": "failed", "dataset": "proofnet", "mode": "stock", "expected": 5952, "returned": 0, "counts": {}, "whole_seconds": 4.079365655, "normal_native_exit": false, "forced_native_retirements": 0, "CPU": {"collector": 0.012380000000000002, "waited_children": 0.497081}, "CPU_scope": "self+waited children, not exhaustive descendant CPU; forced retirements may censor tails", "error": "AssertionError()", "affinity": [12, 13, 14, 15], "memory_limit_bytes": 51539607552, "scope": "full original population, selected extra module in all modes, one fixed-order shared-host block, no GPU work"}
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/driver.py", line 118, in <module>
+    for mode in["stock","native","direct"]:results.append(run(ds,mode,items))
+                                                          ~~~^^^^^^^^^^^^^^^
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/driver.py", line 111, in run
+    if terminal["state"]!="complete":raise RuntimeError("incomplete full cell")
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: incomplete full cell

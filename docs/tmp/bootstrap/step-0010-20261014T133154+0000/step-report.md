@@ -4943,3 +4943,27 @@ REVIEW_GATE self-review verifies actual interposition rather than bare response
 parity, raw/no-source-rewrite/selected scope, all3complete cells and no GPU
 inference. Technical result admits the complete original formal populations.
 [Plan/source/result](../../../../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).
+
+## E1079 — complete formal populations admitted and acquiring
+EXPERIMENT_GATE continues the same RQ4 generalization question. E1078 proves
+actual interposition, all64full responses and native proof reconstruction.
+The complete original5952ProofNet and7808miniF2F, all outcomes, are admitted
+in stock/native-preprocessing/direct modes. Same SDK/native library/fourCPU
+12--15, warm four-command batches, upstream48GiB/300s, shared background;
+no heavy oracle trace in any full cell. Native-only is a component control,
+not a final global-fastest-CPU label. Existing prefix runs do not measure the
+new oracle, so this full comparison adds nonredundant generalization evidence.
+
+An original None placeholder exposed a collector assertion before any source
+returned. Preserve that failed cell/executed driver, then use the already
+established run-prefix.py unchanged full-command fallback for nonmatching
+headers in all3modes. Five original ProofNet placeholders remain, not removed
+or rewritten. The repaired capture genuinely returns original sources;
+no partial ratio is promoted. Source/code/memory/defaults are fixed during
+the admitted capture. [Plan, source and launch](../../../../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/README.md).
+
+WRITE_GATE check retains current paper/scientific contract; incomplete capture
+has no result to fill. REVIEW_GATE root self-check verifies original population,
+all-failure retention and actual repaired execution, not receipt-only launch.
+No independent review or RQ closure claimed. Continue useful analysis/implementation
+while this finite capture runs; no polling-only goal turn.

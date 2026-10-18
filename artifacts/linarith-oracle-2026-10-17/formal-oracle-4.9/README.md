@@ -12,3 +12,7 @@ Reproduce: pinned Kimina venv Python build.py, then qualify.py; private build
 directory and exact dependencies are recorded in build-receipt.json.
 All64 responses are identical across modes; actual native/direct engagement
 is88requests each. Selected clocks are not full-population performance.
+
+
+The [complete original populations](full-populations/README.md) are now being
+evaluated. Their unfinished cells do not extend the Goedel speedup claim.

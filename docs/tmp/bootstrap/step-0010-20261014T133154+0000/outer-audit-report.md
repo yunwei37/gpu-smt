@@ -3241,3 +3241,11 @@ frontend remains unported; same-backend mode is a component, not a renamed
 strongest baseline. All4RQs/InitialNarrative and user betterCPU/GPU criterion
 remain. Next action is the admitted complete-population falsifier while main
 repetitions run. No OMP/Agent/subagent/native-session launch; root owns all.
+
+## E1079 launch self-audit (not independent)
+Verified the admitted actual formal SDK/data and all-outcome comparison.
+Initial zero-source failure is preserved; repaired unmatched-header handling is
+the prior source-native rule and preserves original None records. Actual
+repaired source responses are observed. Whole-population results remain open;
+no ratios from partial cells. Frozen Goedel repetitions/original29750 writers
+are untouched. No new GPU route closure, service/scheduler, delegate or checkout.
