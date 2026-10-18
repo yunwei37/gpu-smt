@@ -111,21 +111,32 @@ population result. It admits the now-running3rotated1000source blocks.
 [Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
-[The official DSV2/Farkas reference corpus](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/README.md)
-adds438different-prover proof outputs on overlapping miniF2F tasks.
-Both methods use the same4.27environment; the adapted native reference
-selects upstream default tiered search. First16preflight has10valid/6Leanerror
-and identical full responses. Full438three alternating pairs are acquiring.
-This does not reproduce upstream4.31timings or establish a population gain.
+[The complete official DSV2/Farkas reference-corpus comparison](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md)
+contains all 438 different-prover proof outputs in three alternating pairs.
+Both methods use the same retained Lean 4.27 environment; the adapted
+compiled reference selects upstream default tiered exact search.
+Aggregate whole time is 1264.966/1194.906 s native/Power, **1.058632×**;
+warm time is 1223.849/1153.172 s, **1.061289×**. Each cell returns
+263 valid, 175 Lean errors and zero operational failures. Source statuses
+and non-message fields agree across all six cells, with one warning-only
+difference between methods. Individual whole ratios span 1.049900–1.064890,
+an observed range rather than a confidence interval.
+All sources appear in the HTTP/body projection and latency figure, including
+Lean errors. Completed HTTP attempt latency excludes pre-dispatch SDK waiting;
+SDK body wall includes GC/IPC and concurrent sums overlap. These are not
+pure-LP CPU or removable whole-wall fractions. This is producer-output
+transfer on overlapping miniF2F tasks, not upstream 4.31 replication or
+evidence that all proofs inherit the selected Goedel gain.
+The historical 2234.69 s run still lacks complete matched phase stamps.
 
-[The first complete438pair](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/first-pair-result-review.md)
-now takes416.194/390.833s whole and402.847/377.164s warmed, native/Power.
-Both263valid175Leanerror/zerooperational, matching source statuses and
-non-message fields with one warning-only difference. This is one of three
-planned pairs, not the final aggregate. HTTP/body timing preserves all438IDs,
-eight-request overlap, complete retries/error accounting and fixed native tails.
-These foreground wall spans include native GC/IPC and do not supply missing
-pure-LP CPU or the historical2234.69Amdahl profile.
+The separate Goedel HTTP matrix has closed its first three-method block:
+stock 2888.759 s, adapted strong native 857.111 s, Power 534.483 s.
+Its scoped native/Power whole ratio is 1.603628×. All methods return the same
+992 valid and eight rejected originals; message differences are retained.
+The [checkpoint](../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md)
+preserves the completed raw cells. The original three-block matrix continues;
+this first block is not promoted as the final aggregate.
+
 
 ## Prefix/preparation evidence and previous controls
 

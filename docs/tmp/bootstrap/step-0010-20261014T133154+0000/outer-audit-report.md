@@ -3439,3 +3439,29 @@ are published losslessly, source payloads/privateHTTP remain at their raw
 paths. Code/canonical docs distinguish incomplete three-pair matrix from
 one completed pair and preserve unrelated author changes. Review remains
 self-audit under the user's root-only instruction.
+
+## Complete DSV2 transfer matrix and HTTP checkpoint — root self-audit
+
+Direction: modest complete different-prover gain changes generality claims,
+while the selected-Goedel continuation criterion remains satisfied by its
+own corrected result. No original RQ or target is replaced, and neither
+GPU nor the hourly task is closed. New systems novelty remains unproved.
+
+Efficiency: publish completed boundaries now rather than spend goal rounds
+waiting. Reuse actual completed traces for timing distributions and preserve
+the original other collectors. A speculative context-cache variant is not
+started from source inspection without a weighted missing-work case.
+
+Validity: six planned DSV2 cells contain every ID and reproduce exact ratios,
+status/non-message parity and the single warning-only difference. All three
+first-block Goedel conditions retain their failures and message differences.
+Partial Goedel replication is explicitly separate from complete DSV2.
+All owned descendants join; raw text archival is lossless and analyzer
+equivalent. HTTP/body sums are overlapping wall, not pure solver CPU.
+
+Maintenance: complete returned records and standard plot/source are in the
+owning repository; daily canonical status and full result links are updated.
+The original source/request payloads remain under the official recipe path.
+Targeted paper insertion compiles and rendered pages 15–16 are visually
+checked. Only root self-review has run; unrelated author changes remain
+unstaged. No Agent/subagent/OMP, new service, checkout or scheduler is used.

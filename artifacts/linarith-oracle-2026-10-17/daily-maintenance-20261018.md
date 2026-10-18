@@ -459,3 +459,21 @@ definitions must drive any subsequent mechanism; overlapping body/HTTP
 sums cannot answer missing pureLP or historical Amdahl questions.
 Upkeep corrects SHRED from an assumed HTTP service to its declared CLI/
 paired-certificate workflow while retaining the earlier executor limits.
+
+## Complete transfer evidence and substantive next work
+
+The complete official DSV2 HTTP matrix yields only 1.058632x, despite the
+larger selected-Goedel result. The first original Goedel HTTP block yields
+1.603628x against strong native, but its other predeclared blocks still run.
+Substantive progress requires a finished population/service comparison and
+a cost-supported account of where the arithmetic representation helps or
+fails. Another cache based only on full-context key inspection lacks that
+account; no speculative implementation is started.
+
+Daily upkeep updates README, canonical evaluation and the current idea
+frontier, publishes all six DSV2 returns/receipts and reproducible scientific
+latency plots, and keeps historical partial reports labeled. Closed Goedel
+raw text is losslessly compressed with byte-equal recovery and unchanged
+analysis; active data are preserved. Paper changes retain the original
+systems thesis and four RQs. Available disk is about 1.31 GiB, so no new
+full capture or model download is introduced. No data deletion is used.

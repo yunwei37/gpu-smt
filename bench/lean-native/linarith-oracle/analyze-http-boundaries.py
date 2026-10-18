@@ -51,7 +51,7 @@ def intervals_summary(intervals):
 
 def numeric_engagement(directory):
     race_path = directory / "lp-races.jsonl"
-    if not race_path.exists():
+    if not race_path.exists() and not race_path.with_name(race_path.name + ".gz").exists():
         return {"scope": "No numerical race file; unobserved native/small LP work is not zero."}
     race_rows = rows(race_path)
     model_rows = rows(directory / "support-calls.jsonl.gz")

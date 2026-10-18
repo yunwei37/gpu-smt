@@ -5311,3 +5311,56 @@ Targeted source-interface terminology compiles with Tectonic(exit0), and
 actual pages8--9are rendered/visually checked. Root build/analysis co-tenancy
 is disclosed; no exclusive-resource or fleet-PSS claim is inferred from
 affinity/per-process48GiB. This is not a new full writing/review milestone.
+
+## Complete DSV2 matrix and first Goedel HTTP block — 2026-10-18
+
+EXPERIMENT_GATE finishes the predeclared DSV2 matrix: three alternating
+pairs, all 438 official proof outputs per cell, 2,628 source-runs overall.
+Native/Power whole sums 1264.966009/1194.906142 s give 1.058632x and 5.54%
+less elapsed; warm sums give 1.061289x. Each cell returns 263 valid and
+175 Lean errors, zero operational results; all statuses/non-message fields
+agree across six cells, with one source's seven/six warnings between methods.
+This is modest producer-output transfer on overlapping miniF2F tasks,
+not universal 1.7x, a new task domain or a device result.
+
+The original Goedel HTTP protocol separately closes its first three-method
+block: stock/native/Power 2888.758596/857.111232/534.482689 s whole,
+2875.631435/843.241425/520.280558 s warm. Its strong-native/Power ratio is
+1.603628x whole. All three retain 992 valid/eight rejected originals with
+matching per-source statuses/non-message fields; 255/108 message-only
+differences remain. The original three rotated blocks continue; this first
+block does not become a complete matrix or a final paper aggregate.
+
+All six DSV2 cells and all three Goedel cells join their owned descendants.
+Only closed rep1 Goedel raw text is gzip archived after measurement:
+12 files, byte-equal roundtrip and identical derived SDK/HTTP/numeric metrics
+before/after archival. Active cells and original collectors stay unchanged.
+Complete DSV2 returned data, receipts, timing projection, standard three-panel
+CDF and a public-data-only reproducer are saved. Source/request payloads
+remain at the official acquisition path, not redistributed without clarity.
+
+WRITE_GATE updates the current README/evaluation frontier and only the
+completed DSV2 result in the existing RQ4 paper. All four RQs, Initial
+Narrative and Lean/SMT systems target remain. Tectonic exits zero; actual
+pages 15–16 are rendered and root visually checks numerical paragraph,
+three panels, axes, caption and surrounding layout. Known underfull-box
+warnings remain; no new full writing-cycle milestone is claimed.
+
+REVIEW_GATE root self-review reruns the public SDK-data analyzer and obtains
+the same complete summary; all three modified/new Python sources parse.
+All HTTP attempts, rejected sources, fixed native tails, body/HTTP overlap
+and solver-counter limits are exposed. Six cells are not 2,628 independent
+whole-run observations. Short root analysis/build co-tenancy and per-process
+48 GiB are disclosed. There is no all-LP fraction or historical 2234.69 s
+profile reconstruction, universal GPU closure, independent audit or
+OSDI acceptance claim.
+
+Opportunity disposition: full-context certificate-key source inspection
+alone does not attribute expensive missed reuse to irrelevant assumptions.
+Ordinary weaker-context theorem application is prior capability. No new
+context-cache prototype or full run is admitted without weighted evidence;
+this is an unproven opportunity, not a proof of impossibility. Full current
+Goedel, version-aligned miniF2F and original HTTP captures remain the next
+decisive experiments, rather than another narrow kernel/cache variation.
+[Complete DSV2 result](../../../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md);
+[first HTTP block](../../../../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md).

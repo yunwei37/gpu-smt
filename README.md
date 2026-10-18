@@ -52,6 +52,21 @@ service spans in all three observations. Those regressions remain in the data.
 Service spans include waiting and cannot be relabeled CPU work.
 [Distributions, figure and retained regressions](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/service-span-result-review.md).
 
+A complete three-pair check of **438 official DeepSeek-Prover-V2 proof
+outputs** through the unchanged Kimina HTTP app/SDK gives **1.05863×**
+aggregate whole-lifecycle speedup (5.54% less elapsed). Each of six cells
+returns 263 valid and 175 Lean-error results, with matching verdicts and
+non-message fields and one warning-only source difference between methods.
+This modest transfer uses overlapping miniF2F tasks and an adapted Lean 4.27
+default-exact reference; it is neither a new theorem domain nor a GPU gain.
+[All three pairs, returned records and latency distributions](artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md).
+
+The original Goedel cohort's separate official HTTP comparison has closed
+its first stock/native/Power block: 2888.76/857.11/534.48 seconds, respectively.
+Power is 1.60363× faster than the strong native reference in that block.
+The original three-block matrix continues; this is not its final aggregate.
+[Scoped checkpoint and raw data](artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md).
+
 ## Complete workloads and scope
 
 | Workload | Retained input | Native environment |

@@ -1,0 +1,163 @@
+{
+  "dataset": "All438official DeepSeek-Prover-V2 miniF2F proof outputs in retained4.27environment",
+  "completed_observations": 6,
+  "source_runs": 2628,
+  "pairs": [
+    {
+      "rep": 1,
+      "order": [
+        "native",
+        "power"
+      ],
+      "native_whole_seconds": 416.194170356,
+      "power_whole_seconds": 390.832999448,
+      "native_warm_seconds": 402.847025591,
+      "power_warm_seconds": 377.16425141,
+      "native_over_power_whole": 1.0648900449650343,
+      "native_over_power_warm": 1.0680944020674994,
+      "response_differences": [
+        {
+          "proof_id": "test/imo_1983_p6.lean",
+          "native_status": "valid",
+          "power_status": "valid",
+          "native_message_severities": {
+            "warning": 7
+          },
+          "power_message_severities": {
+            "warning": 6
+          }
+        }
+      ]
+    },
+    {
+      "rep": 2,
+      "order": [
+        "power",
+        "native"
+      ],
+      "native_whole_seconds": 418.045479336,
+      "power_whole_seconds": 398.176589733,
+      "native_warm_seconds": 404.314460152,
+      "power_warm_seconds": 384.401363842,
+      "native_over_power_whole": 1.0498996930390188,
+      "native_over_power_warm": 1.0518028763243015,
+      "response_differences": [
+        {
+          "proof_id": "test/imo_1983_p6.lean",
+          "native_status": "valid",
+          "power_status": "valid",
+          "native_message_severities": {
+            "warning": 7
+          },
+          "power_message_severities": {
+            "warning": 6
+          }
+        }
+      ]
+    },
+    {
+      "rep": 3,
+      "order": [
+        "native",
+        "power"
+      ],
+      "native_whole_seconds": 430.726359121,
+      "power_whole_seconds": 405.896552926,
+      "native_warm_seconds": 416.687098118,
+      "power_warm_seconds": 391.606108688,
+      "native_over_power_whole": 1.0611727446710462,
+      "native_over_power_warm": 1.0640464713740778,
+      "response_differences": [
+        {
+          "proof_id": "test/imo_1983_p6.lean",
+          "native_status": "valid",
+          "power_status": "valid",
+          "native_message_severities": {
+            "warning": 7
+          },
+          "power_message_severities": {
+            "warning": 6
+          }
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "native_whole_seconds": 1264.966008813,
+    "power_whole_seconds": 1194.906142107,
+    "native_warm_seconds": 1223.848583861,
+    "power_warm_seconds": 1153.17172394,
+    "native_over_power_whole": 1.0586321086127,
+    "native_over_power_warm": 1.0612891024413267,
+    "whole_elapsed_reduction_fraction": 0.055384782055718285,
+    "pair_whole_ratio_range": [
+      1.0498996930390188,
+      1.0648900449650343
+    ]
+  },
+  "counts": {
+    "rep1-native": {
+      "valid": 263,
+      "lean_error": 175
+    },
+    "rep1-power": {
+      "valid": 263,
+      "lean_error": 175
+    },
+    "rep2-native": {
+      "valid": 263,
+      "lean_error": 175
+    },
+    "rep2-power": {
+      "valid": 263,
+      "lean_error": 175
+    },
+    "rep3-native": {
+      "valid": 263,
+      "lean_error": 175
+    },
+    "rep3-power": {
+      "valid": 263,
+      "lean_error": 175
+    }
+  },
+  "cross_observation_fidelity_vs_first_native": {
+    "rep1-native": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "rep1-power": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": [
+        "test/imo_1983_p6.lean"
+      ]
+    },
+    "rep2-native": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "rep2-power": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": [
+        "test/imo_1983_p6.lean"
+      ]
+    },
+    "rep3-native": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "rep3-power": {
+      "status_difference_IDs": [],
+      "non_message_difference_IDs": [],
+      "raw_response_difference_IDs": [
+        "test/imo_1983_p6.lean"
+      ]
+    }
+  },
+  "scope": "Complete predeclared three-pair descriptive result; shared host and short root analysis/build co-tenancy, equal CPU eligibility rather than exclusive resources.48GiB is per-process address space, not aggregate fleet memory. No confidence interval, pure CPU/LP fraction, GPU benefit,4.31replication, universal acceleration or systems novelty follows. Root self-review only."
+}

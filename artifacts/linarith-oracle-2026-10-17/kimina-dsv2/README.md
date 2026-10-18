@@ -1,7 +1,7 @@
 # Official DSV2 proof corpus through Kimina HTTP
 
 This tests current CPU-oracle transfer to Farkas' published reference corpus,
-not another GPU kernel or a new underlying theorem benchmark. All438official
+not another GPU kernel or a new underlying theorem benchmark. All 438 official
 DeepSeek-Prover-V2 miniF2F proof files are acquired through the pinned
 [Farkas recipe](https://raw.githubusercontent.com/lucifer1004/farkas/5a38a7e8502213cb644faa2e11a15429f0cf0f9a/docs/corpus.md).
 Original payloads and raw HTTP request logs remain in the owning Workspace:
@@ -15,11 +15,16 @@ retirement. This is not a population performance result.
 [preflight result](preflight-result-review.md),
 [actual full launch](full-launch.json) and
 [executed source](kimina-http-executed.py) retain the protocol.
-The complete438three-pair comparison is acquiring.
-The [first complete pair](first-pair-result-review.md) takes416.194/390.833s,
-native/Power, with263valid175Leanerror in both and one warning-only difference.
-This is not the completed three-pair aggregate. [Closed returned records](closed-cells/)
-and source-level HTTP/body/numerical accounting preserve the actual scope.
+All three 438-source alternating pairs are complete. Aggregate whole time is
+1264.966s native versus1194.906s Power: **1.058632x**, or **5.54% less elapsed**.
+The warmed ratio is 1.061289x. Each cell returns 263 valid/175 Lean errors,
+zero operational results, matching statuses/non-message fields and one
+warning-only source difference. This is a modest different-prover transfer,
+not a general 1.7x or a GPU result.
+[Complete result and self-review](result-review.md),
+[returned records](closed-cells/) and [all-source latency figure](completed-http-cdf.pdf)
+retain all six observations. The [first-pair report](first-pair-result-review.md)
+remains a historical checkpoint.
 
 Both methods use the same existing4.27environment and compiled native
 dependencies. The reference is adapted Farkas probe/restrict plus the
@@ -72,3 +77,18 @@ For complete publication, preserve all six planned cells, every original
 source ID/status, warm/lifecycle clocks, failures and actual retirement.
 The current analyzer's closed-observed-cells status is not by itself proof
 that the entire declared matrix finished. All reviews here are root self-review.
+
+## Reproduce the published result without private source payloads
+
+```sh
+python3 artifacts/linarith-oracle-2026-10-17/kimina-dsv2/analyze-full.py \
+  artifacts/linarith-oracle-2026-10-17/kimina-dsv2/closed-cells \
+  --out /path/to/summary.json
+python3 artifacts/linarith-oracle-2026-10-17/kimina-dsv2/plot-cdf.py
+```
+
+The first command uses only published SDK returns and receipts. The plot
+requires Matplotlib and reads the full published HTTP timing projection.
+All438sources per cell, including Lean errors, appear in the plot/CSV.
+Completed HTTP attempt latency excludes waiting before SDK dispatch; it is
+not a CPU/LP profile or a removable whole-wall fraction.

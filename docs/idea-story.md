@@ -27,6 +27,20 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — complete different-prover HTTP transfer
+
+All 438 official DSV2 proof outputs finish three alternating native/Power
+pairs through official Kimina HTTP: aggregate whole 1264.966/1194.906 s,
+1.058632x (5.54% less elapsed). All six cells retain 263 valid/175 Lean errors,
+matching verdict/non-message fields and one warning-only source difference.
+The modest transfer does not generalize the selected Goedel 1.70059x to all
+proofs. Tasks overlap miniF2F; no GPU or new systems mechanism is established.
+The separate Goedel HTTP first block is 857.11/534.48 s native/Power;
+its original three-block matrix and full populations continue.
+[Complete DSV2 result](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md).
+Initial Narrative, all four RQs, Lean/SMT scope and OSDI target remain unchanged.
+
+
 ### 2026-10-18 — reduced-diagnostic criterion and full-population evaluation
 The corrected original1000 native/direct pair is810.71/476.73s,1.70059x,
 with992complete8reject and matching verdict/non-message fields. It uses

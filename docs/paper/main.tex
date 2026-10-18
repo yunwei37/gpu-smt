@@ -932,6 +932,43 @@ remain charged. This is neither a whole-service comparison nor GPU evidence;
 the complete miniF2F arithmetic comparison remains pending.
 
 
+\paragraph{Different-prover transfer through an existing service.}
+All 438 official DeepSeek-Prover-V2 miniF2F proof outputs finish three
+alternating native/Power pairs through the unchanged Kimina HTTP application
+and SDK. The adapted compiled reference uses the upstream helper's default
+tiered exact search; both use the same retained Lean 4.27 dependencies and
+official omega. Aggregate whole lifecycle time is 1,264.966 seconds native
+versus 1,194.906 seconds Power: $1.058632\times$, or 5.54\% less elapsed.
+The corresponding warmed ratio is $1.061289\times$; individual whole ratios
+range from $1.049900\times$ to $1.064890\times$. This range is descriptive,
+not a confidence interval. Each cell returns 263 valid and 175 Lean-error
+results, with no operational failure. Every source verdict and non-message
+field agrees across all six cells. One source has seven versus six warnings
+between methods; the full responses remain in the artifact.
+
+Eight outstanding sources share four eligible CPUs and a 48\,GiB
+per-process address-space limit. Whole clocks include preparation, parsing,
+search, native checking, fallback, queueing and owned-process retirement.
+The host is shared, including short root analysis/build work on those CPUs;
+affinity is not an exclusive resource reservation or aggregate memory bound.
+This is different-prover output transfer on overlapping miniF2F tasks, not a
+new theorem domain, an unmodified Lean 4.31 Farkas replication, or GPU
+acceleration. The modest gain does not extend the selected Goedel cohort's
+larger improvement to arbitrary Lean proofs.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.98\textwidth]{../../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/completed-http-cdf.pdf}
+\caption{Completed HTTP-attempt latency for all 438 DSV2 sources in each of
+three alternating pairs, including the 175 Lean-error results per cell.
+Attempt latency excludes SDK semaphore waiting before dispatch; whole and
+warm sweep clocks include collective queue costs. The populations are
+source latencies within three paired runs, not independent whole-run trials.
+Neither the distributions nor overlapping body spans measure pure solver
+CPU or an Amdahl-removable fraction.}
+\label{fig:dsv2-http-cdf}
+\end{figure*}
+
 \paragraph{Current common-omega accounting.}
 A separate diagnostic of the earlier direct representation, before literal-power
 export, holds omega and the two-sided backend common to both frontends. It completes all 1,000 sources in 475.97 seconds with native export
