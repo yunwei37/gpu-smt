@@ -3316,3 +3316,9 @@ is asserted. Figure discussion remains with its Goedel source population;
 new formal paragraph has its own scope. Source and rendered PDF validated;
 existing TeX warnings retained. Full lifecycle gates and independent audit
 are not promoted by this delta.
+
+### E1079 numeric engagement self-audit
+Root checks all114/69race receipts including cancelled-child CPU,26/59
+backend connections and parsed-model distinction. No missing small LP or
+fallback time is zero-filled. No categorical GPU closure or causal slowdown
+claim follows. The executable derivation reproduces the record.

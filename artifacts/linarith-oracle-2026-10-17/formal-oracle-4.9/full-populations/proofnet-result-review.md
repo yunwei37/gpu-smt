@@ -46,3 +46,20 @@ are under proofnet/{stock,native,direct}. proofnet-result.json is a stable
 closed-dataset extraction from analyze.py; miniF2F remains independently
 active, not a completed six-cell matrix. No new measurement was launched
 from this result and no active writer or frozen library was changed.
+
+## Observed numeric engagement
+
+The native/direct conditions log69/114eligible large-LP races, all labeled
+cpu-no-certificate. Their summed decision-plus-retirement spans are
+0.190229/0.344858s. The CPU HiGHS support process records26/59connections,
+of which only1/0contain a fully parsed LP. All69/114support children are
+reaped with SIGKILL. Malformed JSON records25/59are retained: withdrawing
+writers can leave partial requests, but missing call IDs prevent an exact
+cause join. These are not silently recounted as completed LP solves.
+
+The threshold is11rows. Small direct problems, Lean export/check and
+unprofiled native fallback are outside these counters. Summed overlapping
+race spans are not a whole-wall fraction or strict GPU upper bound.
+There is no observed selected HiGHS winner in these large-LP records.
+This limits a device-batching opportunity claim for this component; it
+does not prove a universal bound or explain every second of total slowdown.

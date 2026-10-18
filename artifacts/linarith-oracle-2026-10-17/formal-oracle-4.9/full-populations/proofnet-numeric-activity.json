@@ -1,0 +1,29 @@
+{
+  "native": {
+    "logged_eligible_races": 69,
+    "winner_labels": {
+      "cpu-no-certificate": 69
+    },
+    "summed_decision_and_retirement_seconds": 0.190228872,
+    "summed_reaped_child_cpu_seconds": 0.247597,
+    "killed_support_children": 69,
+    "backend_connections": 26,
+    "fully_parsed_models": 1,
+    "JSON_decode_error_records": 25,
+    "child_wait_or_kill_errors": []
+  },
+  "direct": {
+    "logged_eligible_races": 114,
+    "winner_labels": {
+      "cpu-no-certificate": 114
+    },
+    "summed_decision_and_retirement_seconds": 0.344858102,
+    "summed_reaped_child_cpu_seconds": 0.405842,
+    "killed_support_children": 114,
+    "backend_connections": 59,
+    "fully_parsed_models": 0,
+    "JSON_decode_error_records": 59,
+    "child_wait_or_kill_errors": []
+  },
+  "scope": "Observed race-eligible LPs (row threshold11), legacy gpu label is CPU HiGHS. Excludes small direct problems, Lean export/check and unprofiled native fallback. Summed overlapping spans are not fractions of whole wall or Amdahl bounds. A killed writer can leave truncated JSON; individual malformed connections lack IDs, so no exact cause join is claimed."
+}

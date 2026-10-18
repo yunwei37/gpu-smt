@@ -5105,3 +5105,13 @@ page15 visually inspected without overlap/clipping. This factual integration
 does not claim completion of all12writing rounds or whole-paper independent
 review. All4RQs/novelty/complete service scope stay open. Daily reflection
 now prioritizes the frozen full-source captures and executable reproduction.
+
+### E1079 observed numeric engagement, not a GPU ceiling
+Closed large-LP records contain69/114races, allcpu-no-certificate.
+Every HiGHS contender is cancelled/reaped; only1/0fully parsed support
+models are observed. Decision+retirement sums0.190/0.345s exclude small
+direct problems, Lean work and native fallback; they cannot be whole-wall
+fractions or GPU bounds. Malformed partial-request records25/59 stay
+visible, without inventing exact cause joins. Companion analyzer reproduces
+the retained JSON exactly. This is a secondary interpretation of already
+closed evidence, not another acquisition or a new research contribution.
