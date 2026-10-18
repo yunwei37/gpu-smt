@@ -310,7 +310,9 @@ We repeat whole comparisons with alternating condition order. Affinity specifies
 
 For the bounded arithmetic comparison, the host is an Intel Core Ultra 9 285K
 with 24 physical cores and no SMT siblings in the observed topology.
-Native clients use CPUs 12--15, while a retained prefix capture uses 20--23.
+Earlier arithmetic clients use CPUs 12--15. The current complete common-omega
+and natural-power blocks use 4--7; ready-goal qualifications use 8--11, and
+the retained prefix captures use 20--23.
 Affinity does not reserve memory bandwidth or isolate other work.
 The arithmetic runtime is Lean 4.27.0 with Mathlib a3a10db0, and the robust
 support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
@@ -859,8 +861,8 @@ This evidence supports an arithmetic implementation improvement, not a new
 solver, demonstrated GPU benefit or the complete service contribution.
 
 \paragraph{Current common-omega accounting.}
-A later diagnostic holds omega and the two-sided backend common to both
-frontends. It completes all 1,000 sources in 475.97 seconds with native export
+A separate diagnostic of the earlier direct representation, before literal-power
+export, holds omega and the two-sided backend common to both frontends. It completes all 1,000 sources in 475.97 seconds with native export
 and 406.46 seconds with direct export, each with 992 complete and eight rejected
 outcomes. Verdicts and non-message fields agree; 65 message-only differences
 and 94/92 observer read errors remain. These instrumented clocks are not added
@@ -897,7 +899,7 @@ phase CPU remains bounded by child resource receipts. The forward logger
 repair was not measured in this pair. Raw data, matched tails, reconstruction
 and model scripts are retained in the artifact; all review here is self-review.
 
-\paragraph{Current full phase capture.}
+\paragraph{Earlier direct-export phase capture.}
 A separate current-build diagnostic pair covers all 1,000 sources and
 13,230 native versus 10,251 oracle numerical requests, including failed
 branches. Native and CPU-oracle whole times are 705.41 and 459.32 seconds,

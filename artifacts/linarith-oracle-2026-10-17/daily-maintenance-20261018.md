@@ -342,3 +342,15 @@ nowshowthiscompleteboundary. Nexttestmustchallengebaselinechoiceandrepeatwhole
 observations,notpromotetheoneblockasOSDIcontribution. Defaulttieredvsnativehybrid
 onactualcompletedreferenceheavy-tail sources is a stronger falsifier than more
 smallLPkernels. Ready-goalPower has itsownfunctional/preflight evidence.
+
+
+## Strong-baseline challenge closed; validation continues
+The actualnative-taildefault control is109.46/108.11s versushybrid108.02/106.69s,
+all10completeandnativefieldsconsistent. Itdoesnotjustifyanotherfullenginegrid.
+Twofurtherwhole1000native/Powerpairsareactuallyrunninginopposingorders, after
+thecompletedfour-conditionblock. Nextindependentpaper-valuedworkis version-
+alignedoracleportabilitytotheactualformal-candidate environments; cross-version
+substitutionordefault-corpuschangeswouldnotbeageneralizationresult.
+README/paperexplicitlyseparateolder406.46sdiagnosticfromnew350.68snormal-output
+candidateandcorrectphase-specificCPUaffinities. No waiting-onlygoalturns,
+noadditionalGPUclaim,all4RQs/novelty/fullserviceevidence remainopen.

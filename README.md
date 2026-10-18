@@ -73,13 +73,14 @@ The first stale-library attempt is retained separately; the valid trial uses
 the default private Cargo build and fresh CPU/reference capture.
 [Ready-goal device evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md).
 
-Complete common-omega phase accounting now includes cancelled workers and
-HiGHS internal-process CPU: diagnostic475.97s native/406.46s direct, each
+A separate common-omega diagnostic of the earlier direct representation includes
+cancelled workers and HiGHS internal-process CPU: diagnostic475.97s native/406.46s direct, each
 992complete/8reject, no verdict or non-message mismatch. Its native frontend
 already includes our numerical oracle, so this is a component control.
 A generous fixed-work four-CPU model gives1.46068× if numerical solving and
 external products are free, or1.53960× if Lean product proofs are free too.
-These conditional models do **not** prove all GPU designs impossible.
+These conditional models do **not** prove all GPU designs impossible and are
+not rescaled onto the newer350.68s/629.48s comparison.
 Final continuation retains the original whole-system criterion; the hourly
 research task remains active.
 [Complete own-clock accounting, raw data and assumptions](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/full1000-result-review.md).

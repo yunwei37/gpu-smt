@@ -14,3 +14,5 @@ capacity ratio; deleting all Lean products too gives1.53960x. These do not
 justify overall GPU closure or change the original whole-system criterion.
 The forward logger fix is unmeasured; measured source and partial logs retained.
 All work/reviews by this thread, self-review only.
+
+This is the earlier direct representation before literal-power export. Its diagnostic clocks/models are not the newer Power350.68s/nativecontrol629.48s result; [newer complete measurement](../power-export/full1000-result-review.md). Historical raw and model arithmetic remain unchanged.
