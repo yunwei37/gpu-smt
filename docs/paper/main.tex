@@ -1092,6 +1092,24 @@ the cost of establishing failed searches as well as successful supports;
 it does not establish a below-$1.5\times$ GPU ceiling or repeated threshold
 performance.
 
+
+A subsequent full-cohort comparison adds exact checking of external
+infeasibility certificates. With a fresh native reference, native,
+positive-only HiGHS and two-sided HiGHS take 681.24, 472.09 and
+453.51 seconds. The two-sided ratio is $1.50216\times$, exceeding
+the $1.5\times$ boundary by only 0.653 seconds of candidate elapsed time.
+All cells retain 992 complete and eight rejected sources with matching
+verdicts and non-message fields; both HiGHS conditions have the same
+104 message-only differences. Of 1,888 two-sided races, 334 return an
+exact-verified external negative certificate. This avoids some expensive
+exact no-certificate searches while preserving exact fallback when numerical
+reconstruction fails. It is a CPU observation, not GPU acceleration.
+The success-only and two-sided cells have 147 and 107 observer read errors,
+respectively. Shared background, a single fixed acquisition order and the
+small threshold margin preclude a stable threshold claim; an unchanged
+reversed-order replication is pending. The established certificate
+primitives do not alone establish the systems contribution.
+
 \paragraph{Matched CPU competitors and controls.}
 Table~\ref{tab:cpu-control-summary} summarizes the complete primary observations
 used to qualify CPU alternatives. Each comparison uses its own version,

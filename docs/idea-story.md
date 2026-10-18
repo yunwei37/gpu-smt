@@ -199,3 +199,15 @@ attribution/evaluation remains open. The premature CPU-only closure is corrected
 forward and the original hourly task restored. The [all-call GPU-stage plan](../artifacts/linarith-oracle-2026-10-17/gpu-stage/plan.md) and actual 1000-source
 diagnostic now advance RQ4; they do not change the Initial Narrative, four RQs,
 prior negative constructors or novelty requirements. Root self-review only.
+
+### 2026-10-18 latest arithmetic evidence
+
+The fresh full1,000native/positive-onlyCPU/two-sidedCPU clocks are
+681.24/472.09/453.51seconds. The best CPU observation is1.50216x, only
+0.653candidate seconds beyond1.5x. Native verdict/non-message parity holds
+for all1,000, with104message-onlychanges. This motivates an unchanged
+reversed-order replication rather than a stable performance or GPU claim.
+The original system narrative and four RQs remain open: numerical certificate
+primitives and one-block-per-LP batching already exist. A meaningful system
+must still outperform competent warm/service/cache alternatives at matched
+resources and demonstrate the broader workload and lifecycle claims.

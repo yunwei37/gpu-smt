@@ -139,3 +139,11 @@ No continuedcapacitygridorfullunprofitableGPUrun. Existingtracesalsoexpose
 exactnumericalqueryreuse,whichmustbeconsideredasCPUcompetition,notnovelty.
 Remaininghighest-valueactionisclosedfullCPUdualevidencefollowedbyreal
 system/servicecomparison;morelabelsorordinarykernelvariantsdonotfillthatgap.
+
+11:06Z: closedfullCPUdualdata published; README currentstatusconsolidatedto
+onecoherentfreshcomparison, preserving scoped historical tables/artifacts.
+Best1.50216xisjust0.653saboveboundary. Substantiveprogressrequireschecking
+whetherthissmallmargin survives reversedacquisition, and whether the complete
+service beats prior warm/cache baselines. One unchanged reversedpair launched;
+noadditionalunprofitableGPU/kernelparametergrid. Do not treat established
+exactnegativecertificates asnewmathematics or CPUgainasdevicegain.

@@ -4512,3 +4512,21 @@ these completed localnodes,whichretainproperdenominators/rawfailures.
 Next:preservefull1000driver193488fromtwo-sided-oracle/full1000-driver.py;
 collectonlyonactualterminal,anduseitsstrongCPUresultforthe nextRQdecision.
 NoAgent/OMP/native-sessionresume,goal/hourlyunchanged.
+
+### 2026-10-18 — complete two-sided CPU experiment, numeric threshold only
+
+EXPERIMENT E1055 full3x1000closed10:58:26Z; all992/8/0,allIDs/verdict/nonmessage
+match,104message-onlychangesforbothCPUoracles. Fresh native681.243557/
+success-only472.085856/two-sided453.509810s=1.502158368x; thresholdmargin
+0.652560606s. 334exactnegativecertwins/1888races,negativeCPUdecisioncumulative
+181.976→56.739splus15.135sexternalnegative; not disjointwall.
+LPsolverwall6.067→9.166scumulative; rawfailures/interruptedframespreserved.
+Memoryreaderrors0/147/107, no peakranking. Bothfullpairedanalyses include
+allsource/taskIDsandtoptails. Rootself-review acceptsnumeric/parityevidence,
+rejectsstability/novelty/GPUclaims. Wholeproxysetupandretirementarecharged.
+
+EXPERIMENT E1056 admittedunchangedreversedtwo-sided/nativerepeatfromthat
+0.653smargin; driver226561launch11:06:02Z,CPU0–3,width8,48GiB. Noimplementation/
+proxy/binarymutationduringcapture. Protectedprefix5256preserved. NoGPUmatrix
+orparametergrid. WRITE currentREADME/idea/evaluation/paperupdated; fullWRITE
+gateunfinished. REVIEW self-auditonly. Hourly/goalremainactive/allfourRQsopen.

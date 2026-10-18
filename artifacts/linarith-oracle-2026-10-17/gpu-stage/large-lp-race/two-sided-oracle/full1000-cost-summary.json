@@ -1,0 +1,52 @@
+{
+  "native_seconds": 681.243556612,
+  "success_only_seconds": 472.085856153,
+  "two_sided_seconds": 453.509810469,
+  "two_sided_ratio": 1.5021583676602006,
+  "threshold_candidate_seconds": 454.1623710746667,
+  "threshold_margin_seconds": 0.6525606056666788,
+  "costs": {
+    "full1000-success-only": {
+      "races": {
+        "gpu": 402,
+        "cpu-no-certificate": 1214,
+        "cpu": 272
+      },
+      "race_count": 1888,
+      "decision_seconds_by_winner": {
+        "gpu": 22.453676,
+        "cpu-no-certificate": 181.975656482,
+        "cpu": 6.196018523
+      },
+      "retirement_seconds_sum": 3.240090454,
+      "connections": 1384,
+      "parsed_LPs": 930,
+      "HiGHS_solver_seconds_sum": 6.066718578338623,
+      "HiGHS_build_seconds_sum": 0.676897993,
+      "dual_ray_responses": 0,
+      "scope": "CPU-only HiGHS proxy. Legacy winner gpu denotes external CPU worker. Summed concurrent decisions/LP wall are not disjoint cell wall."
+    },
+    "full1000-two-sided": {
+      "races": {
+        "gpu": 400,
+        "cpu": 274,
+        "external-infeasible": 334,
+        "cpu-no-certificate": 880
+      },
+      "race_count": 1888,
+      "decision_seconds_by_winner": {
+        "gpu": 21.968118697,
+        "cpu": 6.137557384,
+        "external-infeasible": 15.134823761,
+        "cpu-no-certificate": 56.738566399
+      },
+      "retirement_seconds_sum": 3.638607235,
+      "connections": 1395,
+      "parsed_LPs": 942,
+      "HiGHS_solver_seconds_sum": 9.166370868682861,
+      "HiGHS_build_seconds_sum": 0.582239223,
+      "dual_ray_responses": 479,
+      "scope": "CPU-only HiGHS proxy. Legacy winner gpu denotes external CPU worker. Summed concurrent decisions/LP wall are not disjoint cell wall."
+    }
+  }
+}

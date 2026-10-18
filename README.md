@@ -12,33 +12,43 @@ The current research hypothesis is:
 
 Lean-first research prototype on main. The goal is useful end-to-end
 verification acceleration, with all four RQs and the OSDI-quality systems
-objective retained. **No end-to-end GPU gain over the strongest available CPU interface has
-been demonstrated.** The current native eight-queue/CPU-oracle pair is
-685.73/537.31seconds,or1.27622×,on all1,000sources with matched native verdicts.
+objective retained. **GPU acceleration over the strongest CPU path is still
+unproven.** The latest complete 1,000-candidate comparison is:
 
-The stronger upstream eight-queue native interface now completes all1,000
-sources in **685.73s**,with exact native response parity versus the older
-1,237.37s eight-item-wave reference. Its matched CPU oracle completes in537.31s(1.27622×).
-The older GPU ratio below is scoped to waves and does not show acceleration
-over this stronger CPU interface.
-[Closed reference and raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/full1000-cpu/native-reference-review.md).
+| Same native eight-queue interface | Whole elapsed | Native / candidate |
+|---|---:|---:|
+| Native compiled hybrid baseline | 681.24 s | 1 |
+| CPU HiGHS, positive certificates only | 472.09 s | 1.44305× |
+| CPU HiGHS, positive and negative certificates | 453.51 s | 1.50216× |
 
-The current [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
-checks the same 1,000 arithmetic-heavy released GoedelWorkbook candidates.
-An untrusted external oracle proposes coefficient certificates; Lean checks
-them and falls back on failure. Final continuation requires **more than 1.5×**
-over the strongest matched native baseline, using the better valid CPU/GPU result.
-GPU route closure requires applicable evidence that the zero-GPU-cost opportunity
-cannot reach that target; a slow implementation alone is insufficient.
-The hourly research task remains active.
+All cells return 992 complete / 8 rejected / zero operational outcomes, with
+matching verdicts and non-message native fields. Both oracle cells have the
+same 104 message-only differences. The best observation exceeds 1.5× by just
+**0.653 seconds** of candidate time. It is one fixed-order observation;
+an unchanged reversed-order replication is running. This is CPU performance,
+not a GPU or novelty claim. The previous positive-only full observation was
+1.49425×, demonstrating why replication matters.
+[Full raw data, tails and self-review](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
 
-The latest complete 1,000-source comparison is native **691.10 s**, CPU oracle
-**529.17 s**, and CPU HiGHS oracle **462.50 s** (**1.49425x**). Every cell has
-992 accepted/8 rejected sources with matching verdicts and non-message fields;
-HiGHS has104 warning-only differences. This one pair is1.77s short of1.5x,
-not a stable threshold decision. Real device-batched LP kernels now run on5090,
-but their selected preflight is slower than the stronger HiGHS alternative.
-[Full data and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/exact-lp-barrier/full1000-cpu/result-review.md).
+The [linarith/nlinarith experiment](artifacts/linarith-oracle-2026-10-17/plan.md)
+uses 1,000 arithmetic-heavy released GoedelWorkbook candidates, four CPUs and
+48 GiB. An untrusted external oracle proposes certificates; exact arithmetic
+validates numerical hints and Lean checks proof certificates. Failed hints
+retain native fallback. The native reference uses the upstream eight
+contiguous queues, not the older eight-item-wave interface.
+
+Final continuation uses the better valid CPU/GPU result relative to its own
+strong native reference. GPU route closure requires applicable evidence
+that the zero-GPU-cost opportunity cannot reach 1.5×; one slow implementation
+is insufficient. The hourly research task remains active.
+
+RTX 5090 now runs genuinely batched, individually cancellable LP kernels.
+At the matched 32-candidate/four-CPU capacity preflight, native/CPU/GPU
+take 72.79/39.66/45.02 s on the original first64 sources. Ten actual kernels
+process batches of 2–4 LPs, but GPU remains 13.51% slower than the CPU oracle.
+This backend has no full-run admission. Established certificate checking and
+GPU simplex primitives alone do not establish our systems contribution.
+[Capacity result and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/result-review.md).
 
 
 The same-interface all-call profile is complete on its own clocks:

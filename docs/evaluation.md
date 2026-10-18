@@ -657,3 +657,15 @@ oracle identical numerical requests after priorcompletion. Their observed
 LPsearchCPU132.870/75.227s isnot removablewholewall or measuredcachespeedup.
 Non-timing answers agree. This identifies a stronger ordinarycachealternative
 and limits syntheticbatchsupply claims. [Analysis and scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-bucket-control/queue-wall-profile/exact-query-reuse-review.md).
+
+### 2026-10-18 — full two-sided CPU result and replication
+
+Fresh native681.243556612 / positive-onlyHiGHS472.085856153 /
+two-sidedHiGHS453.509810469s, ratios1.443050131/1.502158368.
+All3x1000 have992complete/8rejected/0operational; IDs/verdict/non-message
+payloads match, both104message-onlydifferences. Negative exact certificates
+win334/1888races, but the1.5xmargin is only0.652560606candidate seconds.
+Memoryreaderrors0/147/107precludepeakranking. NoGPUorstableperformanceclaim.
+[Raw/cost/tails/self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
+Oneunchanged reversed-order repeat(two-sidedfirst,nativesecond) is launched
+onCPU0-3with48GiB/eightqueues. Noimplementationmutationwhilecollecting.
