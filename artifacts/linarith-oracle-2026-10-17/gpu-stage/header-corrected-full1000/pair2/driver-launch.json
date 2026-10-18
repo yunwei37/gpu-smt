@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-18T03:18:25Z",
+  "pid": 128920,
+  "start_ticks": "72487764",
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-batch.py",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/batch-oracle/header-corrected-full1000-pair2",
+    "--methods",
+    "oracle",
+    "fast-hybrid",
+    "--affinity",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "RLIMIT_AS": 51539607552,
+  "order": [
+    "oracle",
+    "fast-hybrid"
+  ]
+}
