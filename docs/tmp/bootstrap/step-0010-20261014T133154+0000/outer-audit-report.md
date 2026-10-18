@@ -3198,3 +3198,6 @@ REVIEWrootselfonly,noOMP/subagents/independentaudit/readinessclaim. E1074fullcan
 ### E1074 complete direct/Power component pair — 2026-10-18T18:18:04.793203+00:00
 Olddirect404.972264413s/Power350.683823831s,ratio1.154807370,both992complete8reject0op;source-associatedverdict/nonmessagedifferences0/0,message-only13,observer104/55. Closedrawpublishedwithoutwaitingremainingfullblock. Thisisonefull1000componentpair,NOToriginalnative-reference1.5criterionorconfidence.
 Read-onlysourceauditclarifiesstock-nativelegacylabel:adaptedcompiledCostBaseline/Fastwithcommonproductapplicationreuse,officialomega,upstreamnative numericalhelperandstockMathlibfallback;notunmodifiedstockfrontend. Normaloutputdisablesheavy--diagnosticloggingbutcompiledCosthooksremain. Actualfrozencodeunchanged,allmethodlabels/rawpreserved,condition-composition.mdlinked. Finalnativecontrols/tails/all4RQstillopen;driver419185continues,noearlyGPUclosure/hourlystop.
+
+### E1074 second component pair closed — 2026-10-18T18:28:16.063695+00:00
+Native-dual475.809698406s/Power350.683823831s,componentratio1.356805379,both992complete8reject0op,verdict/nonmessage0/0,message-only77,nativeobserver109. Native-dualisalreadyourdualbackendcomponent,notstockcontrol;upstreamnumericalnative-controlstillrunning. Rawlossless/selfreaderretained,no1.5whole-system/GPUnoveltyclaim. Allcodefrozen.
