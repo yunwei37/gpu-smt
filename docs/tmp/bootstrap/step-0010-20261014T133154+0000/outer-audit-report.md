@@ -3064,3 +3064,13 @@ andbothnumericproxiesengage. Fullfirstcell'slaunchisrecorded,notcompletion.
 Freezecommonruntimefilesforfuturereadsofthissequentialdriver;sourcechanges
 couldotherwisepollutelatercells. Protectedprefixuntouched. Nofullgenerality/
 CI/noveltyclaimyet. AutomationliveACTIVEhourlyverifiedlocally,notchanged.
+
+### E1063 admission and implementation self-audit — 2026-10-18
+
+Root only. Admit scheduling-confounder control underRQ4 because the empirical
+fixed-lane tail can materially change a marginal1.50862x aggregate conclusion.
+Do not report modeled10.7%asperformance. Diff keeps old body/state/imports and
+static dispatch; newmodehas8workers andordered response promises. Build errors
+preserved and repaired within private outputs. Currentfull29750/common sources
+notchanged. Actual64qualificationpending;nofull1000untilbeneficialfidelity
+preflight. This boundary is not a new paper contribution or independent audit.

@@ -1,0 +1,21 @@
+{"event": "build", "trace": "lib/lean/REPL/Main.trace", "argv": ["LEAN_PATH=/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/lib/lean", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/lean-4.27.0-linux/bin/lean", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/REPL/Main.lean", "-o", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/lib/lean/REPL/Main.olean", "-i", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/lib/lean/REPL/Main.ilean", "-c", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/ir/REPL/Main.c", "--setup", "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/ir/REPL/Main.setup.json", "--json"]}
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/build.py", line 23, in <module>
+    start=time.monotonic();p=subprocess.run(args,cwd=T,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+                             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1972, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'LEAN_PATH=/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-bucket-candidate-timing/.lake/build/lib/lean'

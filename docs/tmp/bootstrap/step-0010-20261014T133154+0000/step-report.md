@@ -4654,3 +4654,21 @@ componentcellsareinthissamefiniteexistingdriver,notnewduty/Agententities.
 Activebinarytree/commoncollector/proxyarefrozenuntilblockexits. Source/
 plans/rawclosedpreflightplusallfailurespublishednow;donotwaitforhourslong
 fullcapturetohidecompletedwork. No goalturnpolling;prefixcontinuespreserved.
+
+### 2026-10-18 — E1063 native queue confounder admitted and implemented
+
+RQ4 strongest-reference uncertainty: full third native1000 has eight fixed
+contiguous lanes, exact intervals/no lane overlap,82.28%candidate-slot occupancy
+and74.96swithoneactivecandidate. Fixed-duration FIFOmodel predicts10.7%
+shorterwindow, NOTactualgain/Amdahlbound. Root admits one native scheduling
+control, noE038runtimebranching or concurrency/solver/buffergrid. PrivateMain
+addsFIFOeightworkerpolicy withunchangednativebody/timeout/sourceorder/outputs;
+samebinaryretainsstaticpolicy. Originalfull29750collector/binaries stayfrozen.
+TracebuildwrapperfirstfailedbeforeLean(envassignmentasexecutable), thenLean
+typeerrorsrepairedwithoriginalfailedsource/diagnosticsretained. Finalthree
+Lean/clang/linkstages succeedwithalloutputsprivate. Actualfirst64staticthen
+dynamicqualificationlaunched279300CPU4–7/48GiB/width8,notafullmatrix.
+Full1000componentcontrolonlyifrealpreflightshowsbenefitandper-sourcefidelity.
+Source/schedulingmodel/plan/selfreviewpublishedascompletedimplementationstep.
+WRITE localprovenance,REVIEWrootself-review;notindependentaudit. NoGPUclosure,
+allfourRQs/strongestbaseline/systemnoveltyremainopen. Existingfull/prefixkept.

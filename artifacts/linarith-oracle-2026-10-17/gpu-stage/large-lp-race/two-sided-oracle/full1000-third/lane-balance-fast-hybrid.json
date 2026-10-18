@@ -1,0 +1,109 @@
+{
+  "scope": "Complete native candidate intervals, actual fixed contiguous upstream lanes. FIFO model preserves input order, width and each observed task duration. Durations depend on contention; modeled wall is illustrative, NOT measured speedup, causal savings, an Amdahl bound or an admission to change a running capture.",
+  "count": 1000,
+  "width": 8,
+  "method": "fast-hybrid",
+  "whole_seconds": 691.359191064,
+  "observed_candidate_window_seconds": 687.34002861,
+  "maximum_observed_active_candidates": 8,
+  "active_candidate_occupied_seconds": {
+    "0": 0.0015216580000000002,
+    "1": 74.95987109299999,
+    "2": 9.795203122,
+    "3": 20.479088959000002,
+    "4": 33.305815329,
+    "5": 25.265779602,
+    "6": 25.182256872,
+    "7": 29.336817451,
+    "8": 469.0136745240004
+  },
+  "slot_occupancy_fraction_in_window": 0.8227551457082379,
+  "reported_process_CPU_seconds": 1618.232551,
+  "reported_CPU_divided_by_four_core_whole": 0.5851634620310552,
+  "CPU_scope": "Reported collector+waited-children accounting, not proven exhaustive descendant or physical idle-time measurement. Four CPUs are the declared cohort condition, not a hardware utilization counter.",
+  "lane_summaries": [
+    {
+      "lane": 0,
+      "first_index": 0,
+      "past_last_index": 125,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 612.36074183,
+      "first_start_seconds": 0.0,
+      "last_end_seconds": 612.379367824,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 1,
+      "first_index": 125,
+      "past_last_index": 250,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 523.506541881,
+      "first_start_seconds": 0.000243507,
+      "last_end_seconds": 523.537474424,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 2,
+      "first_index": 250,
+      "past_last_index": 375,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 687.3181419169999,
+      "first_start_seconds": 0.000410599,
+      "last_end_seconds": 687.34002861,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 3,
+      "first_index": 375,
+      "past_last_index": 500,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 498.342593363,
+      "first_start_seconds": 0.00059885,
+      "last_end_seconds": 498.36536323,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 4,
+      "first_index": 500,
+      "past_last_index": 625,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 548.771471186,
+      "first_start_seconds": 0.000756654,
+      "last_end_seconds": 548.802268484,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 5,
+      "first_index": 625,
+      "past_last_index": 750,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 602.5731343479999,
+      "first_start_seconds": 0.000764235,
+      "last_end_seconds": 602.585552557,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 6,
+      "first_index": 750,
+      "past_last_index": 875,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 582.084197772,
+      "first_start_seconds": 0.00115808,
+      "last_end_seconds": 582.10953918,
+      "same_lane_overlaps": []
+    },
+    {
+      "lane": 7,
+      "first_index": 875,
+      "past_last_index": 1000,
+      "candidate_count": 125,
+      "task_span_sum_seconds": 469.143540824,
+      "first_start_seconds": 0.000916862,
+      "last_end_seconds": 469.167545069,
+      "same_lane_overlaps": []
+    }
+  ],
+  "FIFO_fixed_duration_model_window_seconds": 621.0745820279998,
+  "FIFO_fixed_duration_model_whole_seconds": 625.0937444819998,
+  "FIFO_fixed_duration_model_window_ratio": 1.1066948294126338
+}
