@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "g++",
+    "-std=c++17",
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/exact-lp-barrier/cuda-async-allocation-fallback.cpp",
+    "-o",
+    "/tmp/gpu-smt-linarith-oracle-20261017/exact-lp-barrier/cuda-async-allocation-fallback.so",
+    "-ldl",
+    "-pthread"
+  ],
+  "bytes": 17632,
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "reason": "Observed async4096failure with legacy4096success under unchanged48GiB; safe stream-ordered legacy fallback; all cost measured"
+}

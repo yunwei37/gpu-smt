@@ -1,0 +1,9 @@
+job.batch/gpu-smt-cuopt-20261017 created
+pod/gpu-smt-cuopt-20261017-dg97g condition met
+[{"label": "entry", "status": ["VmSize:\t   27468 kB", "VmRSS:\t   17076 kB"], "RLIMIT_AS": [51539607552, 51539607552]}, {"cudaMemGetInfo": 0, "free": 20353122304, "total": 33711521792}, {"label": "cuda_initialized", "status": ["VmSize:\t14138080 kB", "VmRSS:\t  118184 kB"], "RLIMIT_AS": [51539607552, 51539607552]}, {"cudaMalloc4096": 0}, {"cudaStreamCreate": 0}, {"cudaMallocAsync4096": 2}, {"label": "after_async", "status": ["VmSize:\t14138080 kB", "VmRSS:\t  118344 kB"], "RLIMIT_AS": [51539607552, 51539607552]}]
+NVIDIA GeForce RTX 5090, 12237 MiB, 32607 MiB
+{"event": "submitted", "job": "020e61ad-91e8-469a-a7a5-caf84c6608de"}
+{"status": 2, "message": "Worker process died unexpectedly", "engine": 0, "termination": 0, "primal_length": 0, "solver_seconds": 0.0, "whole_ns": 291257075}
+job.batch "gpu-smt-cuopt-20261017" deleted from coder namespace
+pod/gpu-smt-cuopt-20261017-dg97g condition met
+{"startupToPodReadySeconds":6.6155346,"start":"2026-10-18T09:50:38.7593638Z","pod":"gpu-smt-cuopt-20261017-dg97g","deleteExit":0,"end":"2026-10-18T09:51:00.0403708Z","scope":"Finite FP-failed native-exact-LP-head10 qualification,original-feasibility Barrier+crossover,row11,immediateadmission1,eight server workers,same max8candidates,all server/clientCPUs8--11,48GiB,no numeric warmup; no fused batch or simultaneous device-kernel claim; full numerical omissionCPUs0--3 and prefix preserved","jobUID":"efc6a7c1-10d5-43d6-8e9a-f647ced8c28a","otherWorkspacePhase":"Running","totalLifecycleSeconds":21.2691346,"labReady":"True","retirementAndRestorationSeconds":9.177803599999999,"qualifierExit":0,"clientWrapperSeconds":5.474237799999999}

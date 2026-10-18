@@ -1,0 +1,20 @@
+import ctypes,ctypes.util,glob,json,os,resource,pathlib
+resource.setrlimit(resource.RLIMIT_AS,(48*1024**3,48*1024**3));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+os.sched_setaffinity(0,{8,9,10,11})
+names=glob.glob('/usr/local/cuda*/lib64/libcudart.so*')+glob.glob('/usr/local/lib/python*/dist-packages/nvidia/cuda_runtime/lib/libcudart.so*')+glob.glob('/opt/conda/lib/python*/site-packages/nvidia/cuda_runtime/lib/libcudart.so*')
+name=ctypes.util.find_library('cudart')or(next(iter(names))if names else 'libcudart.so')
+c=ctypes.CDLL(name,mode=ctypes.RTLD_GLOBAL)
+async_lib=c if os.environ.get('GPU_SMT_DRIVER_FALLBACK') else (ctypes.CDLL(None) if os.environ.get('LD_PRELOAD') else c)
+p=ctypes.c_void_p();s=ctypes.c_void_p();free=ctypes.c_size_t();total=ctypes.c_size_t()
+def state(label):return {'label':label,'status':[x for x in pathlib.Path('/proc/self/status').read_text().splitlines()if x.startswith(('VmSize:','VmRSS:'))],'RLIMIT_AS':resource.getrlimit(resource.RLIMIT_AS)}
+out=[state('entry')]
+out.append({'cudaMemGetInfo':c.cudaMemGetInfo(ctypes.byref(free),ctypes.byref(total)),'free':free.value,'total':total.value})
+out.append(state('cuda_initialized'))
+code=c.cudaMalloc(ctypes.byref(p),ctypes.c_size_t(4096));out.append({'cudaMalloc4096':code})
+if not code:c.cudaFree(p)
+code=c.cudaStreamCreate(ctypes.byref(s));out.append({'cudaStreamCreate':code})
+code=async_lib.cudaMallocAsync(ctypes.byref(p),ctypes.c_size_t(4096),s);out.append({'cudaMallocAsync4096':code})
+if not code:async_lib.cudaFreeAsync(p,s);c.cudaStreamSynchronize(s)
+out.append(state('after_async'))
+c.cudaStreamDestroy(s)
+print(json.dumps(out),flush=True)
