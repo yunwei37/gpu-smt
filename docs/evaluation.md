@@ -544,3 +544,13 @@ A real earlier32-source48GiBcapture preserves every oldderivedfield and
 pending. Sourceaudit confirms batchcandidate returnedstates are discarded,
 not intentionally accumulated to weaken warmreuse. [Result and raw evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/batch-result-review.md).
 No activecapture orruntimeparameter changes.
+
+### First corrected complete arithmetic pair
+Pair1closes2234.689173920s native and1717.795438421s oracle,
+1.300905290547x. Both992complete/8rejected/0operational; nooutcome ornon-message
+difference,88accepted-sourcewarning-only differences. Actualcandidatep99
+38.314→23.828s; alltaskspanspresent, top1%/10% reported underbothselection
+methods withoverlap/oldprofilescopes. Completepairraw ispublished; reversed
+pair2auto-startsunderunchangedcontroller. Thisisnotfinalthree-pair orOSDIresult.
+No newGPU/kernel/solvervariant,activecapturechange orindependentreviewer.
+[Completepair self-review](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-corrected-full1000/pair1/result-review.md).

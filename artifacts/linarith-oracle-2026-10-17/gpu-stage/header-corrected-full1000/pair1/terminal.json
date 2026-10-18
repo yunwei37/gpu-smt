@@ -1,0 +1,72 @@
+{
+  "state": "complete",
+  "cells": 2,
+  "attempts": 2000,
+  "results": [
+    {
+      "method": "fast-hybrid",
+      "rep": 1,
+      "state": "complete",
+      "expected": 1000,
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 2234689173920,
+      "cpu": {
+        "collector": {
+          "user": 1.950545,
+          "system": 242.367412
+        },
+        "waited_children": {
+          "user": 1973.885068,
+          "system": 17.202945
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 10011461632,
+      "sampled_peak_fleet_rss_with_collector": 10642292736,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 4,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+    },
+    {
+      "method": "oracle",
+      "rep": 1,
+      "state": "complete",
+      "expected": 1000,
+      "attempts": 1000,
+      "counts": {
+        "complete": 992,
+        "rejected": 8
+      },
+      "whole_ns": 1717795438421,
+      "cpu": {
+        "collector": {
+          "user": 1.6420540000000003,
+          "system": 190.322685
+        },
+        "waited_children": {
+          "user": 1747.7599380000001,
+          "system": 16.962426
+        }
+      },
+      "sampled_peak_fleet_pss_with_collector": 9178824704,
+      "sampled_peak_fleet_rss_with_collector": 9811808256,
+      "sampling_read_errors": 0,
+      "workers": 1,
+      "resource_observer_enabled": true,
+      "sampling_seconds": 1,
+      "effective_RLIMIT_AS": 51539607552,
+      "width": 4,
+      "normalization": "none; preserve complete parsed native JSON values",
+      "scope": "one original-order offline native-batch grouped-array observation; corpus 1000 of 1000 candidates"
+    }
+  ],
+  "utc": "2026-10-18T03:18:25.162144+00:00"
+}
