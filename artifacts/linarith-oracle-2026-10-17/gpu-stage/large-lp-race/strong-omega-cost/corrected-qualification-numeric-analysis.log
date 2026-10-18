@@ -1,0 +1,130 @@
+{
+  "methods": {
+    "native": {
+      "whole_seconds": 88.678186533,
+      "counts": {
+        "complete": 7,
+        "rejected": 8
+      },
+      "observer_errors": 0,
+      "RLIMIT_AS": 51539607552
+    },
+    "direct": {
+      "whole_seconds": 61.746983788,
+      "counts": {
+        "complete": 7,
+        "rejected": 8
+      },
+      "observer_errors": 9,
+      "RLIMIT_AS": 51539607552
+    }
+  },
+  "fidelity": {
+    "verdict_differences": [],
+    "non_message_differences": [],
+    "message_only_difference_IDs": []
+  },
+  "numeric_requests": 3351,
+  "phase_events": 45787,
+  "completed_scopes": 22785,
+  "unclosed_scopes": 217,
+  "source_less_auxiliary_stage_counts": {},
+  "numeric_CPU": {
+    "native": {
+      "CPU_seconds_exclusive_completed_phases": {
+        "lp_float_pack": 0.143105715,
+        "lp_float_solve": 0.346323178,
+        "exact_repair": 0.23625607,
+        "exact_certificate_verify": 0.09164119,
+        "child_parse": 0.02943825,
+        "lp_exact_solve": 1.57494155,
+        "child_request_total": 0.004189749,
+        "race_total": 0.058454617,
+        "external_transport": 0.035185274,
+        "external_hint_total": 0.003331633,
+        "exact_negative_verify": 0.010127369,
+        "exact_negative_repair": 0.000299274
+      },
+      "reaped_children": 64,
+      "cancelled_children": 47,
+      "reaped_child_total_CPU_seconds": 2.289116,
+      "cancelled_child_total_CPU_seconds": 0.483879,
+      "reaped_unassigned_CPU_seconds_upper_for_any_unmeasured_phase": 0.416403436,
+      "negative_usage_minus_phase_quantization_differences": []
+    },
+    "direct": {
+      "CPU_seconds_exclusive_completed_phases": {
+        "AST_linearize": 0.083185467,
+        "AST_products": 0.104375365,
+        "AST_coefficient_pack": 0.046013423,
+        "lp_float_pack": 0.058783903,
+        "lp_float_solve": 0.30908542,
+        "child_parse": 0.047042817,
+        "external_transport": 0.044365771,
+        "exact_repair": 0.177154575,
+        "exact_certificate_verify": 0.043744749,
+        "external_hint_total": 0.004215802,
+        "child_request_total": 0.007226138,
+        "race_total": 0.101597202,
+        "AST_search_wrapper": 0.102933148,
+        "AST_request_total": 0.168974963,
+        "lp_exact_solve": 1.62031488,
+        "exact_negative_verify": 0.013693061,
+        "exact_negative_repair": 0.00040318
+      },
+      "reaped_children": 112,
+      "cancelled_children": 92,
+      "reaped_child_total_CPU_seconds": 2.474933,
+      "cancelled_child_total_CPU_seconds": 2.196955,
+      "reaped_unassigned_CPU_seconds_upper_for_any_unmeasured_phase": 0.537043139,
+      "negative_usage_minus_phase_quantization_differences": []
+    }
+  },
+  "external_service_CPU": {
+    "native": {
+      "completed_stage_thread_CPU_seconds": {
+        "highs_build": 0.004752403,
+        "highs_solve": 0.018556728,
+        "highs_extract": 0.00544604
+      },
+      "phase_events": 49,
+      "unclosed_scopes": 0,
+      "retirement_records": [
+        {
+          "event": "process_retired",
+          "pid": 367165,
+          "wall_ns": 773398340140828,
+          "process_user_seconds": 0.566106,
+          "process_system_seconds": 0.060183,
+          "scope": "All process threads. Subtracting overlapping per-request process timers is invalid; difference from summed caller-thread phaseCPU is unassigned internal/startup/bookkeeping CPU."
+        }
+      ],
+      "whole_service_process_CPU_seconds": 0.626289,
+      "scope": "Caller-thread stageCPU excludes internal HiGHS pool threads. Whole processCPU includes them plus startup/bookkeeping. Concurrent processCPU interval differences are not per-request CPU.",
+      "unassigned_process_CPU_seconds": 0.597533829
+    },
+    "direct": {
+      "completed_stage_thread_CPU_seconds": {
+        "highs_build": 0.007296033,
+        "highs_solve": 0.025566258,
+        "highs_extract": 0.009297936
+      },
+      "phase_events": 79,
+      "unclosed_scopes": 0,
+      "retirement_records": [
+        {
+          "event": "process_retired",
+          "pid": 366687,
+          "wall_ns": 772978556809452,
+          "process_user_seconds": 0.679191,
+          "process_system_seconds": 0.08602399999999999,
+          "scope": "All process threads. Subtracting overlapping per-request process timers is invalid; difference from summed caller-thread phaseCPU is unassigned internal/startup/bookkeeping CPU."
+        }
+      ],
+      "whole_service_process_CPU_seconds": 0.765215,
+      "scope": "Caller-thread stageCPU excludes internal HiGHS pool threads. Whole processCPU includes them plus startup/bookkeeping. Concurrent processCPU interval differences are not per-request CPU.",
+      "unassigned_process_CPU_seconds": 0.723054773
+    }
+  },
+  "scope": "Current same-dualbackend native/direct strong-omega diagnostic. ScalarAST path,equal8queues/4CPU4--7/48GiB.No GPU run. Completed exclusive phaseCPU is not whole-clock fraction; cancelled child residual bounds include startup/logger/unfinished work. These do not by themselves establish a scheduler-independent wall Amdahl upper bound. Root self-review."
+}

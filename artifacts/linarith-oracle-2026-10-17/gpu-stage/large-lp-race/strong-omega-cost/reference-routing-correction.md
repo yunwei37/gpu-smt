@@ -1,0 +1,6 @@
+# Strong-reference routing correction before full admission
+The initial qualification fast-hybrid condition uses the historical farkas-external-support executable selected by run-comparison.py; it is not the native-frontend + two-sided backend condition of E1067(454.82s). Its2202Lean request records and zero newly instrumented numeric events reveal the mismatch. It remains a real historical-method qualification, but cannot supply the requested current strongest reference or complete native numerical accounting. No full capture has been admitted from it.
+
+Use oracle-highs in BOTH conditions to select the same current dual numeric binary/proxy, with only the imported frontend switched to IntegerCostControl(native) or IntegerCostOracle(direct). Direct condition already exercises this path; preserve/reuse its closed qualification without rewriting/restarting it. Acquire the corrected native frontend qualification, then only the complete matched native/direct pair. The earlier direct numeric/child/service records remain useful but do not promote the old native denominator.
+
+Root implementation/routing error, self-detected from actual missing native event coverage before full launch. All originals/failedwrapper/build/oldreference records retained. Not a new solver, tuning grid, result-normalization or GPUrouteclosure.

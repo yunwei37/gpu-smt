@@ -1,0 +1,182 @@
+{
+  "utc": "2026-10-18T16:32:14.700065+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostTelemetry.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostTelemetry.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostStages.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostStages.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostProducts.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostProducts.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostNative.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostBaseline.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostControl.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostControl.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "cc",
+        "-O3",
+        "-fPIC",
+        "-I/tmp/gpu-smt-goedel427-20261014/lean-4.27.0-linux/include",
+        "-c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/clock.c",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/clock.o"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostOracle.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/cost-emit.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/clock.o",
+        "-L/usr/lib/x86_64-linux-gnu",
+        "-lz",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/batch-oracle.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked",
+        "--bin",
+        "arithmetic-batchd",
+        "--bin",
+        "farkas-batchd",
+        "--bin",
+        "farkas-race-worker"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/native",
+      "exit": 0,
+      "output": "   Compiling autocfg v1.5.1\n   Compiling crossbeam-utils v0.8.21\n   Compiling shlex v2.0.1\n   Compiling find-msvc-tools v0.1.9\n   Compiling cc v1.2.65\n   Compiling rayon-core v1.13.0\n   Compiling zmij v1.0.21\n   Compiling num-traits v0.2.19\n   Compiling rustversion v1.0.22\n   Compiling crossbeam-epoch v0.9.18\n   Compiling serde_core v1.0.228\n   Compiling crossbeam-deque v0.8.6\n   Compiling num-integer v0.1.46\n   Compiling serde_json v1.0.150\n   Compiling num-modular v0.6.4\n   Compiling dashu-int v0.4.3\n   Compiling num-bigint v0.4.8\n   Compiling libmimalloc-sys v0.1.49\n   Compiling num-order v1.2.0\n   Compiling cfg-if v1.0.4\n   Compiling either v1.16.0\n   Compiling memchr v2.8.2\n   Compiling static_assertions v1.1.0\n   Compiling itoa v1.0.18\n   Compiling dashu-base v0.4.3\n   Compiling mimalloc v0.1.52\n   Compiling rayon v1.12.0\n   Compiling num-rational v0.4.2\n   Compiling farkas-core v0.1.0 (/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/strong-omega-cost/native)\n    Finished `release` profile [optimized] target(s) in 8.52s\n"
+    }
+  ]
+}

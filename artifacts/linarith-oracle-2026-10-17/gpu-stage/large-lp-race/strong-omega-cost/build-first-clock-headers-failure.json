@@ -1,0 +1,149 @@
+{
+  "utc": "2026-10-18T16:30:12.878410+00:00",
+  "commands": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostTelemetry.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostTelemetry.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostStages.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostStages.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostProducts.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostProducts.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostNative.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostFast.lean:291:22: warning: unused variable `cost`\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n"
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostBaseline.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/CostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostControl.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostControl.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/GpuArithmetic/IntegerCostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostControl.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/IntegerCostOracle.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/cost-emit.c",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/clock.c",
+        "-L/usr/lib/x86_64-linux-gnu",
+        "-lz",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost/batch-oracle.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/strong-omega-cost",
+      "exit": 1,
+      "output": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/clock.c:2:10: fatal error: 'time.h' file not found\n    2 | #include <time.h>\n      |          ^~~~~~~~\n1 error generated.\n"
+    }
+  ]
+}
