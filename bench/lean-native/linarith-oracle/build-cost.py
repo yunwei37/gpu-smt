@@ -8,7 +8,9 @@ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 R=Path('/workspaces/repository');D=R/'bench/lean-native/linarith-oracle'
 BASE=Path('/tmp/gpu-smt-linarith-oracle-20261017')
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--out',type=Path,default=BASE)
-U=parser.parse_args().out;U.mkdir(parents=True,exist_ok=True);(U/'GpuArithmetic').mkdir(exist_ok=True)
+parser.add_argument('--pooled',action='store_true',help='Match the independent native/AST daemon pools of the width-8 primary')
+args=parser.parse_args()
+U=args.out;U.mkdir(parents=True,exist_ok=True);(U/'GpuArithmetic').mkdir(exist_ok=True)
 # Lean resolves a namespace in its first package root; reuse base module files.
 for src in (BASE/'GpuArithmetic').iterdir():
  if src.is_file() and not src.name.startswith('Cost'):
@@ -34,6 +36,23 @@ for name in ['lib.rs','hybrid.rs']:
    ('produce_certificate_tiered(hyps, max_var)','crate::cost::timed("exact_lp", || produce_certificate_tiered(hyps, max_var))')]:
    assert old in s,old;s=s.replace(old,new)
   s=s.replace('    Some(FpLp {','    crate::cost::shape(nrows,n,a.iter().filter(|v| **v != 0.0).count(),"fp-scaled");\n    Some(FpLp {',1)
+ if args.pooled and name=='hybrid.rs':
+  # Same CPU-only large-LP mechanism: the AST path declines small FP misses;
+  # ordinary native fallback still runs the exact engine.
+  s=s.replace('crate::cost::timed("exact_lp", || produce_certificate_tiered(hyps, max_var))',
+              'crate::cost::timed("exact_lp", || cost_cpu_fallback(hyps, max_var))')
+  s+='''\nthread_local!{static COST_HINT_ONLY:std::cell::Cell<bool>=const{std::cell::Cell::new(false)};}
+pub fn produce_certificate_hint(hyps:&[Hyp],max_var:usize)->(Option<Vec<(usize,BigInt)>>,Route){
+ COST_HINT_ONLY.with(|x|x.set(true));let result=produce_certificate_hybrid(hyps,max_var);
+ COST_HINT_ONLY.with(|x|x.set(false));result
+}
+fn cost_cpu_fallback(hyps:&[Hyp],max_var:usize)->Option<Vec<(usize,BigInt)>>{
+ let atoms:std::collections::BTreeSet<_>=hyps.iter().flat_map(|h|h.coeffs.iter().map(|(i,_)|*i)).collect();
+ let minimum=std::env::var("GPU_ARITHMETIC_RACE_MIN_ROWS").ok().and_then(|s|s.parse::<usize>().ok()).expect("pooled profile requires declared row gate");
+ if COST_HINT_ONLY.with(|x|x.get())&&atoms.len()+1<minimum {None}
+ else{produce_certificate_tiered(hyps,max_var)}
+}
+'''
  (core/'src'/name).write_text(s)
 shutil.copyfile(D/'cost.rs',core/'src/cost.rs')
 # Direct AST oracle: intervals emitted even for cert:null, parse failure or panic.
@@ -52,6 +71,8 @@ s=s.replace('serde_json::from_str(&line).map_err','farkas_core::cost::timed("req
 s=s.replace(' let answer=std::panic::catch_unwind', ' farkas_core::cost::begin();let wall=farkas_core::cost::ns(1);let cpu=farkas_core::cost::ns(3);\n let answer=std::panic::catch_unwind')
 s=s.replace(' writeln!(out,"{}",v).unwrap();out.flush().unwrap();',' let answer=farkas_core::cost::timed("response_pack",||v.to_string());\n farkas_core::cost::timed("response_write",||{writeln!(out,"{}",answer).unwrap();out.flush().unwrap();});\n farkas_core::cost::finish("direct",&line,&answer,wall,cpu);')
 s=s.replace(' farkas_core::cost::hyps(&hyps);',' farkas_core::cost::metadata(serde_json::json!({"stage":"product_columns","columns":origins.iter().map(|(origin,_)|origin[0]=="mul").collect::<Vec<_>>() }));\n farkas_core::cost::hyps(&hyps);')
+if args.pooled:
+ s=s.replace('hybrid::produce_certificate_hybrid','hybrid::produce_certificate_hint as produce_certificate_hybrid')
 (core/'src/bin/arithmetic-costd.rs').write_text(s)
 # Strong native fallback service, same algorithms/protocol; all calls captured.
 s=(R/'artifacts/lean-modern-native-compilation-2026-10-14/Farkas-external-support-oracled.rs').read_text()
@@ -199,6 +220,20 @@ s=s.replace('    let .ok j := Json.parse answer | throwError "invalid oracle res
       let cpu ← GpuArithmetic.CostStages.threadCpuNs
       Farkas.Telemetry.emit <| Farkas.Telemetry.row [("ty","\\"cost-direct-check\\""),("source",Farkas.Telemetry.jstrEsc (← getFileMap).source),("call_id",toString exported),("start_ns",toString checkStart),("end_ns",toString finish),("cpu_ns",toString (cpu.toNat-checkCpu.toNat)),("accepted",if (← ok.get) then "true" else "false")]''')
 (U/'GpuArithmetic/CostOracle.lean').write_text(s)
+if args.pooled:
+ # Use the retained actually-qualified pool implementation, not an active binary.
+ snapshot=R/'artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/labelled-functional/lean-source'
+ for name,original,query,stop in [
+  ('CostNative','BatchNative','queryDaemon','/--'),
+  ('CostOracle','BatchOracle','query','private def atom')]:
+  target=U/'GpuArithmetic'/(name+'.lean');text=target.read_text()
+  actual=(snapshot/(original+'.lean')).read_text()
+  begin=actual.index('initialize idleDaemons')
+  finish=actual.index(stop,begin)
+  pool=actual[begin:finish]
+  begin=text.index('private def '+query)
+  finish=text.index('\n/--',begin) if name=='CostNative' else text.index('private def atom',begin)
+  target.write_text(text[:begin]+pool+'\n'+text[finish:])
 for name in ['CostStages','CostProducts','CostFast','CostBaseline','CostNative','CostOracle']:
  p=U/'GpuArithmetic'/(name+'.lean')
  text=p.read_text().replace('Farkas.Telemetry.emit','GpuArithmetic.CostTelemetry.emit')
@@ -217,5 +252,5 @@ with (U/'build-cost.log').open('w') as log:
  for name in names:
   run(['lean','-o',str(U/'GpuArithmetic'/(name+'.olean')),'-c',str(U/(name+'.c')),str(U/'GpuArithmetic'/(name+'.lean'))])
  run(['leanc','-O3','-DLEAN_EXPORTING','-shared','-fPIC',*[str(U/(n+'.c')) for n in names],str(U/'cost-emit.c'),'-o',str(U/'cost-profile.so')])
-(U/'build-cost-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commands':records,'diagnostic_only':True},indent=2)+'\n')
+(U/'build-cost-receipt.json').write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commands':records,'diagnostic_only':True,'pooled':args.pooled,'scope':'own diagnostic clocks; no primary elapsed substitution'},indent=2)+'\n')
 print('BUILT cost-profile.so and both cost daemons',flush=True)

@@ -1,0 +1,36 @@
+{
+  "scope": "Offline analysis of completed corrected width4 native profile; no current pooled/GPU timing inference. FP-only means no exact_lp event, not a hypothetical tested dispatch result.",
+  "groups": {
+    "large-exact_fallback": {
+      "calls": 1636,
+      "request_parse_CPU_seconds": 1.7696616459999934,
+      "lp_build_CPU_seconds": 0.20671190400000006,
+      "fp_solve_CPU_seconds": 30.282033381000044,
+      "exact_lp_CPU_seconds": 820.4769262370011,
+      "response_pack_CPU_seconds": 0.02699361800000003,
+      "response_write_CPU_seconds": 0.009945566000000019,
+      "exact_verify_CPU_seconds": 0.01612699600000001,
+      "exact_repair_CPU_seconds": 0.023721612
+    },
+    "large-FP_only": {
+      "calls": 4393,
+      "request_parse_CPU_seconds": 2.9112841109999996,
+      "lp_build_CPU_seconds": 0.29936154800000003,
+      "fp_solve_CPU_seconds": 2.352018286000003,
+      "exact_repair_CPU_seconds": 0.28111812100000066,
+      "exact_verify_CPU_seconds": 0.03340709099999997,
+      "response_pack_CPU_seconds": 0.03720964100000001,
+      "response_write_CPU_seconds": 0.02101454000000003
+    },
+    "small-FP_only": {
+      "calls": 7201,
+      "request_parse_CPU_seconds": 0.506945928999998,
+      "lp_build_CPU_seconds": 0.04716993700000006,
+      "fp_solve_CPU_seconds": 0.021797926000000044,
+      "exact_repair_CPU_seconds": 0.08220098900000013,
+      "exact_verify_CPU_seconds": 0.01435839900000006,
+      "response_pack_CPU_seconds": 0.03537652900000011,
+      "response_write_CPU_seconds": 0.038084428999999906
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "pid": 151218,
+  "argv": [
+    "python3",
+    "-u",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/build-cost.py",
+    "--pooled",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+  ],
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "purpose": "Own pooled-family native/AST cost attribution; separate binaries, no mutation of active GPU primary",
+  "RLIMIT_AS": 51539607552
+}

@@ -2656,3 +2656,7 @@ self-review; no independent-audit claim. Current profile1.93412x is conditional
 and not portable to the faster pooled denominator; no negative route closure.
 
 Targeted validation: paper compiles to22 pages, no Overfull boxes; changed pages14/15 inspected, including grayscale figure4. A first annotation crossed its eligibility line and was moved below the CDF. Figure axes are final-column size3.375in with8pt text; exported PDF/CSV and one-capture metric scope retained. No full-paper milestone or independent-review claim.
+
+
+### 2026-10-18 — strongest pooled-family diagnostic qualification
+build-cost --pooled generates independent native/AST daemon pools from the retained qualified source; direct numerical fallback matches the row11 CPU-hint dispatch. Separate private binaries preserve the active GPU cell. Initial duplicate Child compile failure is retained and repaired. Real24-source,width8,CPU8–11 qualification returns24complete each, exact native/non-message parity (0native/2oracle warning-only changes); all-call analysis must complete before full admission. Full profile is admitted only sequentially after actual GPU lifecycle retirement, onCPU0–3,width8,48GiB, with its own diagnostic clocks and explicit nonportable sensitivity. This is RQ4 cost evidence, not another speed-variant grid. Root self-review only. Native offline FP/exact concentration finding is descriptive, not a measured proposed dispatch result.

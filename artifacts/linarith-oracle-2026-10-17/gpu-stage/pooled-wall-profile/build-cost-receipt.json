@@ -1,0 +1,118 @@
+{
+  "utc": "2026-10-18T06:16:20.319186+00:00",
+  "commands": [
+    {
+      "cmd": [
+        "cargo",
+        "build",
+        "--offline",
+        "--release",
+        "--bin",
+        "arithmetic-costd",
+        "--bin",
+        "farkas-costd"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/cost-native"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostTelemetry.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostTelemetry.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostStages.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostStages.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostProducts.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostProducts.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostNative.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostNative.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostFast.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostFast.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostBaseline.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostBaseline.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostOracle.olean",
+        "-c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/GpuArithmetic/CostOracle.lean"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    },
+    {
+      "cmd": [
+        "leanc",
+        "-O3",
+        "-DLEAN_EXPORTING",
+        "-shared",
+        "-fPIC",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostTelemetry.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostStages.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostProducts.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostNative.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostFast.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostBaseline.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/CostOracle.c",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/cost-emit.c",
+        "-o",
+        "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/cost-profile.so"
+      ],
+      "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost"
+    }
+  ],
+  "diagnostic_only": true,
+  "pooled": true,
+  "scope": "own diagnostic clocks; no primary elapsed substitution"
+}

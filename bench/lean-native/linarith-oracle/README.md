@@ -284,3 +284,14 @@ records48GiB, source-labelled batches, cancellation/rebatch, all costs and
 the finite GPU lifecycle dependency. No numerical warmup is performed.
 Cancelled jobs' unknown device compute is not zero; job-event accounting
 retains submit/cancel/retire separately from delivered solve-time results.
+
+### Pooled-family cost diagnostic
+For the stronger native daemon pool, build separate diagnostic output:
+python3 build-cost.py --pooled --out /tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost
+Run run-corrected-cost.py with --cost-profile --cost-root set to that directory,
+--methods fast-hybrid oracle, and the primary's width/CPU eligibility.
+Set GPU_ARITHMETIC_RACE_MIN_ROWS=11 from the retained complete row distribution.
+Qualify the original first24sources before the full fixed1000; do not overlap
+the primary'sCPU0–3. These captures have their own diagnostic denominators
+and cannot replace primary performance clocks. The source and complete
+qualification are retained in artifacts/linarith-oracle-2026-10-17/gpu-stage/pooled-wall-profile/.

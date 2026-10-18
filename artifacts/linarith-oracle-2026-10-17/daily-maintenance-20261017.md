@@ -125,3 +125,7 @@ doors and step records point to complete raw data; inactive failed routes
 remain retained, not rewritten into successes. Root-only execution and
 self-review are explicit. Full paper gates, broader workloads and novelty
 remain unfinished.
+
+
+### Evening continuation: measure the strongest denominator
+Full pooled CPU comparison is now1237.37→1037.85s (1.19224x), committed. The cancellation-capable full GPU cell is live; do not hot-edit it or wait-minute poll. The earlier width4 diagnostic cannot supply the faster pooled reference's bound. The next decisive step is the pooled-family own-clock profile after GPU retirement; its24-source parity/telemetry qualification has passed. Existing native trace also shows4393large FP-only calls vs1636large exact-fallback calls, suggesting that GPU contention/cancellation should be analyzed by solver path as well as row count. No new dispatch variant has been measured. README and paper now point to complete current evidence; old failed/raw files remain linked. Thinking must lead to this actual cost/result decision, not another literature-only loop.

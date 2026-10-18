@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-18T06:16:45.209383+00:00",
+  "pid": 153985,
+  "argv": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-u",
+    "/workspaces/repository/bench/lean-native/linarith-oracle/run-corrected-cost.py",
+    "--cost-profile",
+    "--cost-root",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost",
+    "--out",
+    "/tmp/gpu-smt-linarith-oracle-20261017/pooled-wall-cost/qualification24",
+    "--limit",
+    "24",
+    "--methods",
+    "fast-hybrid",
+    "oracle",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11"
+  ],
+  "purpose": "qualify actual pooled-family diagnostic and row11 CPU-hint semantics; not a primary performance cell",
+  "full_after": "GPU lifecycle fully retired; no sameCPU overlap"
+}
