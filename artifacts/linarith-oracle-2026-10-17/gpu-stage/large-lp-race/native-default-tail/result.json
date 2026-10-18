@@ -1,0 +1,83 @@
+{
+  "state": "complete",
+  "scope": "Native-reference slowest1%,10originals in original order,2opposingorders,8queues/fourCPU4--7/48GiB/officialomega/frozenCostfrontend. Upstreamdefaulttiered vs explicit hybrid only. Tailqualification, not whole1000baseline winner/confidence/novelty.",
+  "cells": {
+    "pair1-default-tiered": {
+      "whole_seconds": 109.455748165,
+      "counts": {
+        "complete": 10
+      },
+      "observer_errors": 0,
+      "verdict_differences_from_full_reference": [],
+      "non_message_differences_from_full_reference": [],
+      "message_only_difference_IDs_from_full_reference": [],
+      "engine_parent_receipt": {
+        "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "hybrid_override": null,
+        "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+      }
+    },
+    "pair1-hybrid": {
+      "whole_seconds": 108.016608926,
+      "counts": {
+        "complete": 10
+      },
+      "observer_errors": 0,
+      "verdict_differences_from_full_reference": [],
+      "non_message_differences_from_full_reference": [],
+      "message_only_difference_IDs_from_full_reference": [],
+      "engine_parent_receipt": {
+        "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "hybrid_override": "1",
+        "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+      }
+    },
+    "pair2-default-tiered": {
+      "whole_seconds": 108.107455941,
+      "counts": {
+        "complete": 10
+      },
+      "observer_errors": 0,
+      "verdict_differences_from_full_reference": [],
+      "non_message_differences_from_full_reference": [],
+      "message_only_difference_IDs_from_full_reference": [],
+      "engine_parent_receipt": {
+        "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "hybrid_override": null,
+        "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+      }
+    },
+    "pair2-hybrid": {
+      "whole_seconds": 106.692108592,
+      "counts": {
+        "complete": 10
+      },
+      "observer_errors": 0,
+      "verdict_differences_from_full_reference": [],
+      "non_message_differences_from_full_reference": [],
+      "message_only_difference_IDs_from_full_reference": [],
+      "engine_parent_receipt": {
+        "native_binary": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "hybrid_override": "1",
+        "scope": "Actual inherited environment immediately before native worker creation; source selects tiered when override absent."
+      }
+    }
+  },
+  "pairs": [
+    {
+      "pair": 1,
+      "default_seconds": 109.455748165,
+      "hybrid_seconds": 108.016608926,
+      "hybrid_over_default_ratio": 0.9868518623907211
+    },
+    {
+      "pair": 2,
+      "default_seconds": 108.107455941,
+      "hybrid_seconds": 106.692108592,
+      "hybrid_over_default_ratio": 0.9869079580434079
+    }
+  ],
+  "consistent_default_improvement": false,
+  "fidelity_qualified": true,
+  "qualification_note": "Actual child environment receipts, where sampled, strengthen the parent route receipt. Missing child snapshots are not invented. This reader does not establish complete upstream byteidentity or a stable engine winner."
+}

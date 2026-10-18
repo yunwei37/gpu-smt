@@ -1,7 +1,5 @@
 # Native default-engine heavy-tail control
-[Actualsource selection](selection.json), [plan](plan.md), [rootself-review](plan-review.md).
-Defaulttiered/hybrid on the completed1000nativecontrol'sslowest1%, originalorder,
-twoopposingpairs,eightqueues/fourCPU4--7/48GiB/officialomega.
-Currentfrozencompiledfrontend reused; onlyupstreamengineoverrideabsent/vs1.
-Realpreflightgain required beforeanotherfullenginecomparison. Launchisnotresult.
-Rootthreadalone;self-reviewonly. NoGPU/agentdelegation.
+[Completed result](result-review.md), [allrawanalysis](result.json), [source](selection.json).
+Twoopposing10-sourcepairs:default109.46/108.11s,hybrid108.02/106.69s.
+Allcomplete10/10,0verdict/nonmessage differences. No defaultpreflightgain,
+nofull defaultenginecomparisonadmitted. GlobalCPUoptimalitynotclaimed.
