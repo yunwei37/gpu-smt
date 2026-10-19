@@ -1,0 +1,140 @@
+{
+  "scope": "Closed source-native HTTP integration comparison; opaque env handles and all messages remain visible. Not snapshot/protocol transparency or a full population claim unless all original IDs are independently verified.",
+  "source_count": 50,
+  "conditions": {
+    "native": {
+      "counts": {
+        "valid": 28,
+        "lean_error": 22
+      },
+      "whole_lifecycle_seconds": 18.461334136,
+      "whole_with_input_preparation_seconds": 19.004177644,
+      "warm_verify_seconds": 3.846376321,
+      "input_preparation_seconds": 0.09067309,
+      "joined_owned_descendants": 8,
+      "lean_version": "v4.9.0-rc1",
+      "native_verification_counts": {
+        "complete": 28,
+        "rejected": 22
+      }
+    },
+    "shred": {
+      "counts": {
+        "valid": 28,
+        "lean_error": 22
+      },
+      "whole_lifecycle_seconds": 7.162085564,
+      "whole_with_input_preparation_seconds": 13.991188931,
+      "warm_verify_seconds": 3.849361936,
+      "input_preparation_seconds": 6.828572511,
+      "joined_owned_descendants": 8,
+      "lean_version": "v4.9.0-rc1",
+      "native_verification_counts": {
+        "complete": 28,
+        "rejected": 22
+      }
+    }
+  },
+  "status_differences": [],
+  "native_verification_differences": [],
+  "non_message_differences": [
+    {
+      "proof_id": "minif2f-26",
+      "fields": {
+        "env": [
+          13,
+          17
+        ]
+      }
+    },
+    {
+      "proof_id": "minif2f-27",
+      "fields": {
+        "env": [
+          17,
+          13
+        ]
+      }
+    },
+    {
+      "proof_id": "minif2f-28",
+      "fields": {
+        "env": [
+          14,
+          18
+        ]
+      }
+    },
+    {
+      "proof_id": "minif2f-29",
+      "fields": {
+        "env": [
+          18,
+          14
+        ]
+      }
+    },
+    {
+      "proof_id": "minif2f-30",
+      "fields": {
+        "env": [
+          15,
+          19
+        ]
+      }
+    },
+    {
+      "proof_id": "minif2f-31",
+      "fields": {
+        "env": [
+          16,
+          20
+        ]
+      }
+    }
+  ],
+  "raw_response_difference_IDs": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-16",
+    "minif2f-17",
+    "minif2f-18",
+    "minif2f-19",
+    "minif2f-20",
+    "minif2f-21",
+    "minif2f-23",
+    "minif2f-24",
+    "minif2f-25",
+    "minif2f-26",
+    "minif2f-27",
+    "minif2f-28",
+    "minif2f-29",
+    "minif2f-30",
+    "minif2f-31"
+  ],
+  "cached_message_events": {
+    "miss": 23,
+    "capture": 22,
+    "hit": 3
+  },
+  "non_message_difference_fields": [
+    "env"
+  ],
+  "operational_statuses": {
+    "native": {},
+    "shred": {}
+  }
+}

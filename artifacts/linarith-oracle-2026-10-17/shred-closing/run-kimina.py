@@ -167,7 +167,9 @@ if __name__ == "__main__":
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--datasets", nargs="+", choices=["minif2f","proofnet"], default=["minif2f","proofnet"])
     parser.add_argument("--full", action="store_true", help="Both methods process every original source without qualification selection")
+    parser.add_argument("--concurrency", type=int, default=8, help="Same source concurrency for both methods; default retains earlier captures")
     options = parser.parse_args()
+    args.concurrency = options.concurrency
     A = options.out
     A.mkdir(parents=True, exist_ok=False)
     raise SystemExit(asyncio.run(main(options.datasets, full=options.full)))

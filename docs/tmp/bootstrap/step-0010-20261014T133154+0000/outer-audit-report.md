@@ -3573,3 +3573,36 @@ resolve, Python analysis/plot code executes, whitespace checks pass.
 Tectonic exits0; actual PDFpages15/16and the completeCDFare rendered and
 visually checked, with readable labels/third-epoch caveat and no clipping.
 No full writing/independent milestone is implied by this targeted update.
+
+
+## miniF2F aggregate OOM recovery — root self-audit
+
+Material fault found, not another unchanged polling result. Eight native
+heaps sum114.95GiB below individual48GiB limits, explaining why serializing
+experiment families was insufficient. Kernel globalOOM/group kill is actual;
+do not misattribute it to an individual candidate reaching48GiB, a container
+limit, node reboot or GPU. Selected source-to-PID identity is unobserved.
+
+The repair changes only finite benchmark width equally in both methods.
+Default8and all host/server/native settings remain. The scientific resource
+point changes explicitly; previous eight-source ProofNet/Goedel clocks cannot
+be used as two-source denominators. Partial/retry data are retained.
+No completion is inferred from process launch or smoke. This is necessary
+dependency work for the requested full baseline, not systems contribution.
+Self-review only, no delegation or independent-audit claim.
+
+
+Actual-outcome check: parameter reaches source_concurrency2 in both terminal
+receipts;50real originals return matching28complete/22rejected with completed
+retirement. The driver starts the full pair only after these results.
+Qualification timings are not promoted. Full outputs and live logs stay
+unstaged; only closed preflight/static source, raw failure and launch evidence
+are published. Canonical paper still truthfully marks miniF2F incomplete.
+
+
+Independent-of-configuration trace check: closed real preflight HTTP
+intervals peak at2completed-attempt overlap in each method, with no
+unanswered/non200attempt. The two-source field is thus observed as well
+as declared. Six non-message/30raw response differences are retained;
+native verification outcome IDs match. Kernel summedRSS is not PSS or
+unique physical memory; globalOOM and exact victimgroup are actual.

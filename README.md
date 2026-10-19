@@ -166,8 +166,12 @@ sorry-bearing incomplete responses with cache-hit messages. SDK valid counts
 417/437 therefore are not verified-proof counts. This is no matched transparent
 speedup and no whole-family impossibility result.
 [Full raw comparison, costs and self-review](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
-The miniF2F pair requires fresh outputs after Workspace container interruptions;
-original partial data remain. Completed ProofNet is not rerun.
+The miniF2F eight-source capture exhausts host memory despite each process
+staying below 48 GiB. Recovery compares both methods at two outstanding
+sources, the same four CPUs and 48 GiB per process; original partial data
+remain, and these new clocks stay separate from the eight-source point.
+[Failure evidence and recovery plan](artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/plan.md).
+Completed ProofNet is not rerun.
 
 Warm REPLs, caches, snapshots, native compilation, batched LPs and external
 certificate oracles are established techniques. They are not individual

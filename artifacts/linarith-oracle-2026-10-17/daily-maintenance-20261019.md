@@ -46,3 +46,14 @@ error-work pilot offers a concrete stronger-baseline check, not a contribution.
 Use full-source outcomes/costs to determine whether native prepared work,
 failed continuation or arithmetic dominates; repeated syntax/hits alone
 cannot select a major mechanism. Keep negativeProofNet and modestDSV2visible.
+
+
+03:47Zreflection: the immediate obstacle is aggregate native memory, not a
+new solver parameter. Eight processes collectively use114.95GiB while each
+is below48GiB; restarting this point again wastes complete captures and
+can pressure co-tenants. Repair the finite paired benchmark at two original
+sources in flight, keeping per-process48GiB and four CPUs. Verify the
+actual source path and outcomes, then finish the full original pair. Do
+not convert this capacity failure into a generic cache/GPU impossibility
+claim or invent a persistent scheduler. README/evaluation now point to the
+actual failure/repair instead of stale healthy-writer statements.

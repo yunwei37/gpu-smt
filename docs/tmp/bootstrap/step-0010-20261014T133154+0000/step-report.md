@@ -5569,3 +5569,50 @@ resolve, Python analysis/plot code executes, whitespace checks pass.
 Tectonic exits0; actual PDFpages15/16and the completeCDFare rendered and
 visually checked, with readable labels/third-epoch caveat and no clipping.
 No full writing/independent milestone is implied by this targeted update.
+
+
+## 2026-10-19T03:47Z — actual miniF2F aggregate OOM and resource-point repair
+
+EXPERIMENT_GATE resumes from latest report; first read confirms all old
+writers absent rather than assuming healthy continuation. Actual Kubernetes
+lastState is OOMKilled137 at03:13:21Z, restart count2. Authenticated host
+kernel journal reports global_oom at03:13:19Z and eight REPL anonymous RSS
+totals114.954662GiB; no individual48GiB violation. Existing oom.group kills
+the entire Workspace container, interrupting the finite continuation.
+The raw capture contains2428requested IDs/2420responded IDs including
+warm preparation, eight pending sources; it is not a complete method.
+
+The earlier serialization of experiments did not solve within-service
+aggregate footprint. Root records the error and exact impact in the owning
+infrastructure incident log, committed/pushed03bd8433, before another
+capture attempt. No host/cgroup/credential/Workspace/service setting changes.
+
+Supporting RQ3experiment repair chooses a feasible new point: two outstanding
+sources and warm workers per header in BOTH native/SHRED methods, same
+fourCPU4–7,48GiB, native libraries, upstream300s timeout, original7808order
+and ordinary fallback. Existing source-width default8 is preserved through
+an optional benchmark argument, not a new quota or policy. Old eight-source
+clocks stay separate and partial failures remain. Actual first32plus18None
+source qualification must return all50with native outcomes preserved;
+only then run the whole pair. Source snapshots, launch and raw receipts
+identify what really ran. Other existing source-array captures remain in
+the same finite sequential batch after this pair; no Agent/new scheduler.
+
+WRITE_GATE updates current frontiers to describe this failure and changed
+resource point; it adds no new performance value or novelty claim.
+REVIEW_GATE is root self-review: direct kernel/PID/group evidence, observed
+HTTP identities, preserved partials, unchanged per-process limit, equal
+within-pair resources and public default compatibility. The OOM victim's
+current source is unknown; pending IDs are not asserted as exact PID
+attribution. GPU/Amdahl and all original RQs/OSDItarget remain unresolved.
+
+
+Actual repaired preflight closes at03:54:55Z:50original sources per method,
+28complete/22rejected/zeroincomplete/operational, identical outcome IDs.
+Both terminals record source_concurrency2, affinity4–7 and48GiB; owned
+descendants retire. Whole19.004178/13.991189s are qualification clocks only.
+The full7808-source pair starts once in fresh outputs. Native environment/
+message differences remain exposed. Syntax and changed canonical-link checks
+run; default8remains source-compatible. No new full performance data yet.
+The current paper's incomplete-miniF2F statement remains true; no result slot,
+RQ, narrative or numerical conclusion is changed by this dependency repair.

@@ -1,0 +1,2043 @@
+{
+  "scope": "Closed50-source qualification only, actual HTTP overlap; no full-population speed claim.",
+  "conditions": {
+    "native": {
+      "terminal": {
+        "state": "complete",
+        "method": "stock",
+        "expected": 50,
+        "source_concurrency": 2,
+        "affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "memory_limit_bytes": 51539607552,
+        "native_engine": null,
+        "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "native_hybrid_override": null,
+        "lean_version": "v4.9.0-rc1",
+        "native_library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+        "scope": "Existing SHRED module/wrapper integrated with official Kimina HTTP; real parser/preparation costs charged. One fixed-order shared-host block, native verification comparison only; env/message differences exposed. Root self-review, not a new cache/system.",
+        "returned": 50,
+        "counts": {
+          "valid": 28,
+          "lean_error": 22
+        },
+        "server_ready_seconds": 1.786418237,
+        "preparation_seconds": 14.301351885,
+        "warm_verify_seconds": 3.846376321,
+        "server_exit": -15,
+        "joined_owned_descendants": 8,
+        "owned_descendants_before_shutdown": [
+          {
+            "pid": 5214,
+            "birth": 1792382064.4,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5215,
+            "birth": 1792382064.41,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5221,
+            "birth": 1792382079.37,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5222,
+            "birth": 1792382079.38,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5223,
+            "birth": 1792382079.5,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5224,
+            "birth": 1792382079.5,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5217,
+            "birth": 1792382065.23,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5216,
+            "birth": 1792382065.23,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          }
+        ],
+        "owned_live_descendants_after_shutdown": [],
+        "whole_lifecycle_seconds": 18.461334136,
+        "waited_child_cpu_seconds": 1.2663280000000001,
+        "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+        "effective_test_settings": {
+          "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+          "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+          "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+          "LEAN_SERVER_MAX_REPL_MEM": "48G",
+          "LEAN_SERVER_HOST": "127.0.0.1",
+          "LEAN_SERVER_PORT": "46949",
+          "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so"
+        },
+        "condition": "native",
+        "dataset": "minif2f",
+        "input_preparation_seconds": 0.09067309,
+        "whole_with_input_preparation_seconds": 19.004177644,
+        "full_original_population": false
+      },
+      "numeric_engagement": {
+        "scope": "No numerical race file; unobserved native/small LP work is not zero."
+      },
+      "source_count": 50,
+      "recorded_requests": 50,
+      "completed_HTTP_attempts": 50,
+      "exactly_one_recorded_request_per_source": true,
+      "unanswered_recorded_requests": {},
+      "non_200_attempts": [],
+      "exactly_one_matching_final_attempt_per_source": true,
+      "HTTP_interval_accounting": {
+        "occupied_seconds": 3.84586877,
+        "integrated_attempt_seconds": 7.668512496,
+        "max_completed_attempt_overlap": 2
+      },
+      "HTTP_envelope_seconds": 3.84586877,
+      "warm_clock_minus_HTTP_envelope_seconds": 0.000507551000000106,
+      "SDK_body_seconds_sum_NOT_CPU_or_whole_wall": 3.600587,
+      "SDK_body_seconds": {
+        "n": 50,
+        "p50": 0.026025,
+        "p90": 0.284789,
+        "p99": 0.418751,
+        "max": 0.418751
+      },
+      "HTTP_attempt_seconds": {
+        "n": 50,
+        "p50": 0.108876166,
+        "p90": 0.311540026,
+        "p99": 0.514872642,
+        "max": 0.514872642
+      },
+      "matched_attempt_outside_body_seconds": {
+        "n": 50,
+        "p50": 0.089891854,
+        "p90": 0.10645882899999999,
+        "p99": 0.10777846799999996,
+        "max": 0.10777846799999996
+      },
+      "matched_attempt_outside_body_seconds_sum_NOT_removable_wall": 4.067925496,
+      "own_body_ranked_tails": {
+        "slowest_1_percent": {
+          "sources": [
+            {
+              "proof_id": "minif2f-723",
+              "status": "lean_error",
+              "reported_body_seconds": 0.418751
+            }
+          ],
+          "body_seconds_sum_NOT_whole_wall": 0.418751
+        },
+        "slowest_10_percent": {
+          "sources": [
+            {
+              "proof_id": "minif2f-723",
+              "status": "lean_error",
+              "reported_body_seconds": 0.418751
+            },
+            {
+              "proof_id": "minif2f-1434",
+              "status": "lean_error",
+              "reported_body_seconds": 0.408131
+            },
+            {
+              "proof_id": "minif2f-3",
+              "status": "valid",
+              "reported_body_seconds": 0.320107
+            },
+            {
+              "proof_id": "minif2f-6",
+              "status": "valid",
+              "reported_body_seconds": 0.3053
+            },
+            {
+              "proof_id": "minif2f-8",
+              "status": "valid",
+              "reported_body_seconds": 0.291049
+            }
+          ],
+          "body_seconds_sum_NOT_whole_wall": 1.743338
+        }
+      },
+      "per_source": [
+        {
+          "proof_id": "minif2f-723",
+          "status": "lean_error",
+          "reported_body_seconds": 0.418751
+        },
+        {
+          "proof_id": "minif2f-1434",
+          "status": "lean_error",
+          "reported_body_seconds": 0.408131
+        },
+        {
+          "proof_id": "minif2f-3",
+          "status": "valid",
+          "reported_body_seconds": 0.320107
+        },
+        {
+          "proof_id": "minif2f-6",
+          "status": "valid",
+          "reported_body_seconds": 0.3053
+        },
+        {
+          "proof_id": "minif2f-8",
+          "status": "valid",
+          "reported_body_seconds": 0.291049
+        },
+        {
+          "proof_id": "minif2f-22",
+          "status": "valid",
+          "reported_body_seconds": 0.284789
+        },
+        {
+          "proof_id": "minif2f-29",
+          "status": "valid",
+          "reported_body_seconds": 0.242757
+        },
+        {
+          "proof_id": "minif2f-16",
+          "status": "valid",
+          "reported_body_seconds": 0.133692
+        },
+        {
+          "proof_id": "minif2f-4",
+          "status": "valid",
+          "reported_body_seconds": 0.105509
+        },
+        {
+          "proof_id": "minif2f-17",
+          "status": "valid",
+          "reported_body_seconds": 0.082527
+        },
+        {
+          "proof_id": "minif2f-20",
+          "status": "valid",
+          "reported_body_seconds": 0.079423
+        },
+        {
+          "proof_id": "minif2f-18",
+          "status": "valid",
+          "reported_body_seconds": 0.074936
+        },
+        {
+          "proof_id": "minif2f-19",
+          "status": "valid",
+          "reported_body_seconds": 0.074194
+        },
+        {
+          "proof_id": "minif2f-7",
+          "status": "valid",
+          "reported_body_seconds": 0.074038
+        },
+        {
+          "proof_id": "minif2f-31",
+          "status": "valid",
+          "reported_body_seconds": 0.074032
+        },
+        {
+          "proof_id": "minif2f-25",
+          "status": "valid",
+          "reported_body_seconds": 0.073352
+        },
+        {
+          "proof_id": "minif2f-5",
+          "status": "lean_error",
+          "reported_body_seconds": 0.059415
+        },
+        {
+          "proof_id": "minif2f-15",
+          "status": "valid",
+          "reported_body_seconds": 0.048019
+        },
+        {
+          "proof_id": "minif2f-10",
+          "status": "lean_error",
+          "reported_body_seconds": 0.046572
+        },
+        {
+          "proof_id": "minif2f-14",
+          "status": "valid",
+          "reported_body_seconds": 0.041836
+        },
+        {
+          "proof_id": "minif2f-9",
+          "status": "valid",
+          "reported_body_seconds": 0.041307
+        },
+        {
+          "proof_id": "minif2f-30",
+          "status": "valid",
+          "reported_body_seconds": 0.036604
+        },
+        {
+          "proof_id": "minif2f-12",
+          "status": "valid",
+          "reported_body_seconds": 0.033337
+        },
+        {
+          "proof_id": "minif2f-21",
+          "status": "valid",
+          "reported_body_seconds": 0.026695
+        },
+        {
+          "proof_id": "minif2f-0",
+          "status": "valid",
+          "reported_body_seconds": 0.026056
+        },
+        {
+          "proof_id": "minif2f-1",
+          "status": "valid",
+          "reported_body_seconds": 0.026025
+        },
+        {
+          "proof_id": "minif2f-26",
+          "status": "valid",
+          "reported_body_seconds": 0.025733
+        },
+        {
+          "proof_id": "minif2f-2",
+          "status": "valid",
+          "reported_body_seconds": 0.024674
+        },
+        {
+          "proof_id": "minif2f-23",
+          "status": "valid",
+          "reported_body_seconds": 0.023143
+        },
+        {
+          "proof_id": "minif2f-24",
+          "status": "valid",
+          "reported_body_seconds": 0.022857
+        },
+        {
+          "proof_id": "minif2f-11",
+          "status": "valid",
+          "reported_body_seconds": 0.022688
+        },
+        {
+          "proof_id": "minif2f-27",
+          "status": "valid",
+          "reported_body_seconds": 0.022636
+        },
+        {
+          "proof_id": "minif2f-28",
+          "status": "lean_error",
+          "reported_body_seconds": 0.013267
+        },
+        {
+          "proof_id": "minif2f-13",
+          "status": "lean_error",
+          "reported_body_seconds": 0.010611
+        },
+        {
+          "proof_id": "minif2f-7206",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000586
+        },
+        {
+          "proof_id": "minif2f-2135",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000573
+        },
+        {
+          "proof_id": "minif2f-1877",
+          "status": "lean_error",
+          "reported_body_seconds": 0.00047
+        },
+        {
+          "proof_id": "minif2f-5794",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000463
+        },
+        {
+          "proof_id": "minif2f-3641",
+          "status": "lean_error",
+          "reported_body_seconds": 0.00045
+        },
+        {
+          "proof_id": "minif2f-4975",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000449
+        },
+        {
+          "proof_id": "minif2f-4758",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000437
+        },
+        {
+          "proof_id": "minif2f-2120",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000434
+        },
+        {
+          "proof_id": "minif2f-5800",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000408
+        },
+        {
+          "proof_id": "minif2f-4969",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000394
+        },
+        {
+          "proof_id": "minif2f-4114",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000368
+        },
+        {
+          "proof_id": "minif2f-5814",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000355
+        },
+        {
+          "proof_id": "minif2f-3832",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000318
+        },
+        {
+          "proof_id": "minif2f-5818",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000306
+        },
+        {
+          "proof_id": "minif2f-3643",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000257
+        },
+        {
+          "proof_id": "minif2f-5821",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000257
+        }
+      ],
+      "completed_attempts": [
+        {
+          "proof_id": "minif2f-0",
+          "HTTP_status": 200,
+          "start_ns": 813448905027509,
+          "end_ns": 813449021464654,
+          "HTTP_attempt_seconds": 0.116437145,
+          "reported_body_seconds": 0.026056,
+          "outside_body_seconds": 0.09038114500000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1",
+          "HTTP_status": 200,
+          "start_ns": 813448905244955,
+          "end_ns": 813449022074702,
+          "HTTP_attempt_seconds": 0.116829747,
+          "reported_body_seconds": 0.026025,
+          "outside_body_seconds": 0.09080474699999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2",
+          "HTTP_status": 200,
+          "start_ns": 813449021860754,
+          "end_ns": 813449136426608,
+          "HTTP_attempt_seconds": 0.114565854,
+          "reported_body_seconds": 0.024674,
+          "outside_body_seconds": 0.089891854,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4",
+          "HTTP_status": 200,
+          "start_ns": 813449136795026,
+          "end_ns": 813449346068614,
+          "HTTP_attempt_seconds": 0.209273588,
+          "reported_body_seconds": 0.105509,
+          "outside_body_seconds": 0.103764588,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3",
+          "HTTP_status": 200,
+          "start_ns": 813449022368312,
+          "end_ns": 813449442076480,
+          "HTTP_attempt_seconds": 0.419708168,
+          "reported_body_seconds": 0.320107,
+          "outside_body_seconds": 0.09960116800000002,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5",
+          "HTTP_status": 200,
+          "start_ns": 813449346420987,
+          "end_ns": 813449455431785,
+          "HTTP_attempt_seconds": 0.109010798,
+          "reported_body_seconds": 0.059415,
+          "outside_body_seconds": 0.049595798,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-7",
+          "HTTP_status": 200,
+          "start_ns": 813449455743532,
+          "end_ns": 813449564382360,
+          "HTTP_attempt_seconds": 0.108638828,
+          "reported_body_seconds": 0.074038,
+          "outside_body_seconds": 0.034600828,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-6",
+          "HTTP_status": 200,
+          "start_ns": 813449442440965,
+          "end_ns": 813449855519433,
+          "HTTP_attempt_seconds": 0.413078468,
+          "reported_body_seconds": 0.3053,
+          "outside_body_seconds": 0.10777846799999996,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-8",
+          "HTTP_status": 200,
+          "start_ns": 813449564744696,
+          "end_ns": 813449876284722,
+          "HTTP_attempt_seconds": 0.311540026,
+          "reported_body_seconds": 0.291049,
+          "outside_body_seconds": 0.020491026000000023,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-9",
+          "HTTP_status": 200,
+          "start_ns": 813449855867721,
+          "end_ns": 813449964846979,
+          "HTTP_attempt_seconds": 0.108979258,
+          "reported_body_seconds": 0.041307,
+          "outside_body_seconds": 0.06767225799999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-10",
+          "HTTP_status": 200,
+          "start_ns": 813449876617766,
+          "end_ns": 813449985425560,
+          "HTTP_attempt_seconds": 0.108807794,
+          "reported_body_seconds": 0.046572,
+          "outside_body_seconds": 0.062235794,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-11",
+          "HTTP_status": 200,
+          "start_ns": 813449965197757,
+          "end_ns": 813450074167968,
+          "HTTP_attempt_seconds": 0.108970211,
+          "reported_body_seconds": 0.022688,
+          "outside_body_seconds": 0.086282211,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-12",
+          "HTTP_status": 200,
+          "start_ns": 813449985712848,
+          "end_ns": 813450094833008,
+          "HTTP_attempt_seconds": 0.10912016,
+          "reported_body_seconds": 0.033337,
+          "outside_body_seconds": 0.07578315999999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-13",
+          "HTTP_status": 200,
+          "start_ns": 813450074530294,
+          "end_ns": 813450184274308,
+          "HTTP_attempt_seconds": 0.109744014,
+          "reported_body_seconds": 0.010611,
+          "outside_body_seconds": 0.099133014,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-14",
+          "HTTP_status": 200,
+          "start_ns": 813450095179005,
+          "end_ns": 813450203773713,
+          "HTTP_attempt_seconds": 0.108594708,
+          "reported_body_seconds": 0.041836,
+          "outside_body_seconds": 0.066758708,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-15",
+          "HTTP_status": 200,
+          "start_ns": 813450184631866,
+          "end_ns": 813450293839704,
+          "HTTP_attempt_seconds": 0.109207838,
+          "reported_body_seconds": 0.048019,
+          "outside_body_seconds": 0.061188838,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-17",
+          "HTTP_status": 200,
+          "start_ns": 813450294180482,
+          "end_ns": 813450402749187,
+          "HTTP_attempt_seconds": 0.108568705,
+          "reported_body_seconds": 0.082527,
+          "outside_body_seconds": 0.026041705,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-16",
+          "HTTP_status": 200,
+          "start_ns": 813450204059059,
+          "end_ns": 813450413713671,
+          "HTTP_attempt_seconds": 0.209654612,
+          "reported_body_seconds": 0.133692,
+          "outside_body_seconds": 0.07596261199999998,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-18",
+          "HTTP_status": 200,
+          "start_ns": 813450403116334,
+          "end_ns": 813450512954583,
+          "HTTP_attempt_seconds": 0.109838249,
+          "reported_body_seconds": 0.074936,
+          "outside_body_seconds": 0.034902248999999996,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-19",
+          "HTTP_status": 200,
+          "start_ns": 813450414063381,
+          "end_ns": 813450522082895,
+          "HTTP_attempt_seconds": 0.108019514,
+          "reported_body_seconds": 0.074194,
+          "outside_body_seconds": 0.033825514,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-20",
+          "HTTP_status": 200,
+          "start_ns": 813450513320259,
+          "end_ns": 813450621967304,
+          "HTTP_attempt_seconds": 0.108647045,
+          "reported_body_seconds": 0.079423,
+          "outside_body_seconds": 0.029224045000000004,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-21",
+          "HTTP_status": 200,
+          "start_ns": 813450522356298,
+          "end_ns": 813450630049443,
+          "HTTP_attempt_seconds": 0.107693145,
+          "reported_body_seconds": 0.026695,
+          "outside_body_seconds": 0.08099814500000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-23",
+          "HTTP_status": 200,
+          "start_ns": 813450630290362,
+          "end_ns": 813450739853882,
+          "HTTP_attempt_seconds": 0.10956352,
+          "reported_body_seconds": 0.023143,
+          "outside_body_seconds": 0.08642052,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-24",
+          "HTTP_status": 200,
+          "start_ns": 813450740256955,
+          "end_ns": 813450849389204,
+          "HTTP_attempt_seconds": 0.109132249,
+          "reported_body_seconds": 0.022857,
+          "outside_body_seconds": 0.086275249,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-22",
+          "HTTP_status": 200,
+          "start_ns": 813450622332524,
+          "end_ns": 813450933273662,
+          "HTTP_attempt_seconds": 0.310941138,
+          "reported_body_seconds": 0.284789,
+          "outside_body_seconds": 0.02615213799999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-25",
+          "HTTP_status": 200,
+          "start_ns": 813450849755889,
+          "end_ns": 813450958407865,
+          "HTTP_attempt_seconds": 0.108651976,
+          "reported_body_seconds": 0.073352,
+          "outside_body_seconds": 0.035299976,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-26",
+          "HTTP_status": 200,
+          "start_ns": 813450933634264,
+          "end_ns": 813451042623748,
+          "HTTP_attempt_seconds": 0.108989484,
+          "reported_body_seconds": 0.025733,
+          "outside_body_seconds": 0.08325648399999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-27",
+          "HTTP_status": 200,
+          "start_ns": 813450958722679,
+          "end_ns": 813451067829632,
+          "HTTP_attempt_seconds": 0.109106953,
+          "reported_body_seconds": 0.022636,
+          "outside_body_seconds": 0.086470953,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-28",
+          "HTTP_status": 200,
+          "start_ns": 813451042994296,
+          "end_ns": 813451152791174,
+          "HTTP_attempt_seconds": 0.109796878,
+          "reported_body_seconds": 0.013267,
+          "outside_body_seconds": 0.096529878,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-30",
+          "HTTP_status": 200,
+          "start_ns": 813451153162580,
+          "end_ns": 813451263072582,
+          "HTTP_attempt_seconds": 0.109910002,
+          "reported_body_seconds": 0.036604,
+          "outside_body_seconds": 0.07330600200000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-31",
+          "HTTP_status": 200,
+          "start_ns": 813451263449372,
+          "end_ns": 813451372325538,
+          "HTTP_attempt_seconds": 0.108876166,
+          "reported_body_seconds": 0.074032,
+          "outside_body_seconds": 0.034844165999999996,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-29",
+          "HTTP_status": 200,
+          "start_ns": 813451068159314,
+          "end_ns": 813451382779899,
+          "HTTP_attempt_seconds": 0.314620585,
+          "reported_body_seconds": 0.242757,
+          "outside_body_seconds": 0.07186358500000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-723",
+          "HTTP_status": 200,
+          "start_ns": 813451372681118,
+          "end_ns": 813451887553760,
+          "HTTP_attempt_seconds": 0.514872642,
+          "reported_body_seconds": 0.418751,
+          "outside_body_seconds": 0.09612164200000006,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1434",
+          "HTTP_status": 200,
+          "start_ns": 813451383044901,
+          "end_ns": 813451896562339,
+          "HTTP_attempt_seconds": 0.513517438,
+          "reported_body_seconds": 0.408131,
+          "outside_body_seconds": 0.10538643800000003,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1877",
+          "HTTP_status": 200,
+          "start_ns": 813451887879191,
+          "end_ns": 813451995011882,
+          "HTTP_attempt_seconds": 0.107132691,
+          "reported_body_seconds": 0.00047,
+          "outside_body_seconds": 0.106662691,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2120",
+          "HTTP_status": 200,
+          "start_ns": 813451896781209,
+          "end_ns": 813452003135308,
+          "HTTP_attempt_seconds": 0.106354099,
+          "reported_body_seconds": 0.000434,
+          "outside_body_seconds": 0.10592009899999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2135",
+          "HTTP_status": 200,
+          "start_ns": 813451995303440,
+          "end_ns": 813452101753884,
+          "HTTP_attempt_seconds": 0.106450444,
+          "reported_body_seconds": 0.000573,
+          "outside_body_seconds": 0.105877444,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3641",
+          "HTTP_status": 200,
+          "start_ns": 813452003352703,
+          "end_ns": 813452109216321,
+          "HTTP_attempt_seconds": 0.105863618,
+          "reported_body_seconds": 0.00045,
+          "outside_body_seconds": 0.105413618,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3643",
+          "HTTP_status": 200,
+          "start_ns": 813452102096711,
+          "end_ns": 813452207937008,
+          "HTTP_attempt_seconds": 0.105840297,
+          "reported_body_seconds": 0.000257,
+          "outside_body_seconds": 0.105583297,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3832",
+          "HTTP_status": 200,
+          "start_ns": 813452109464221,
+          "end_ns": 813452216185256,
+          "HTTP_attempt_seconds": 0.106721035,
+          "reported_body_seconds": 0.000318,
+          "outside_body_seconds": 0.106403035,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4114",
+          "HTTP_status": 200,
+          "start_ns": 813452208215831,
+          "end_ns": 813452315430538,
+          "HTTP_attempt_seconds": 0.107214707,
+          "reported_body_seconds": 0.000368,
+          "outside_body_seconds": 0.10684670700000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4758",
+          "HTTP_status": 200,
+          "start_ns": 813452216402186,
+          "end_ns": 813452323298015,
+          "HTTP_attempt_seconds": 0.106895829,
+          "reported_body_seconds": 0.000437,
+          "outside_body_seconds": 0.10645882899999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4969",
+          "HTTP_status": 200,
+          "start_ns": 813452315681557,
+          "end_ns": 813452422388459,
+          "HTTP_attempt_seconds": 0.106706902,
+          "reported_body_seconds": 0.000394,
+          "outside_body_seconds": 0.106312902,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4975",
+          "HTTP_status": 200,
+          "start_ns": 813452323545519,
+          "end_ns": 813452430766450,
+          "HTTP_attempt_seconds": 0.107220931,
+          "reported_body_seconds": 0.000449,
+          "outside_body_seconds": 0.106771931,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5794",
+          "HTTP_status": 200,
+          "start_ns": 813452422721044,
+          "end_ns": 813452529438826,
+          "HTTP_attempt_seconds": 0.106717782,
+          "reported_body_seconds": 0.000463,
+          "outside_body_seconds": 0.10625478199999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5800",
+          "HTTP_status": 200,
+          "start_ns": 813452430996733,
+          "end_ns": 813452538030588,
+          "HTTP_attempt_seconds": 0.107033855,
+          "reported_body_seconds": 0.000408,
+          "outside_body_seconds": 0.10662585499999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5814",
+          "HTTP_status": 200,
+          "start_ns": 813452529767539,
+          "end_ns": 813452636537903,
+          "HTTP_attempt_seconds": 0.106770364,
+          "reported_body_seconds": 0.000355,
+          "outside_body_seconds": 0.10641536400000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5818",
+          "HTTP_status": 200,
+          "start_ns": 813452538264525,
+          "end_ns": 813452644637043,
+          "HTTP_attempt_seconds": 0.106372518,
+          "reported_body_seconds": 0.000306,
+          "outside_body_seconds": 0.106066518,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5821",
+          "HTTP_status": 200,
+          "start_ns": 813452636864358,
+          "end_ns": 813452743150081,
+          "HTTP_attempt_seconds": 0.106285723,
+          "reported_body_seconds": 0.000257,
+          "outside_body_seconds": 0.106028723,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-7206",
+          "HTTP_status": 200,
+          "start_ns": 813452644871484,
+          "end_ns": 813452750896279,
+          "HTTP_attempt_seconds": 0.106024795,
+          "reported_body_seconds": 0.000586,
+          "outside_body_seconds": 0.105438795,
+          "matches_final_SDK_result": true
+        }
+      ]
+    },
+    "shred": {
+      "terminal": {
+        "state": "complete",
+        "method": "stock",
+        "expected": 50,
+        "source_concurrency": 2,
+        "affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "memory_limit_bytes": 51539607552,
+        "native_engine": null,
+        "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "native_hybrid_override": null,
+        "lean_version": "v4.9.0-rc1",
+        "native_library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+        "scope": "Existing SHRED module/wrapper integrated with official Kimina HTTP; real parser/preparation costs charged. One fixed-order shared-host block, native verification comparison only; env/message differences exposed. Root self-review, not a new cache/system.",
+        "returned": 50,
+        "counts": {
+          "valid": 28,
+          "lean_error": 22
+        },
+        "server_ready_seconds": 0.642743381,
+        "preparation_seconds": 2.984842792,
+        "warm_verify_seconds": 3.849361936,
+        "server_exit": -15,
+        "joined_owned_descendants": 8,
+        "owned_descendants_before_shutdown": [
+          {
+            "pid": 5234,
+            "birth": 1792382088.55,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5235,
+            "birth": 1792382088.55,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5238,
+            "birth": 1792382093.34,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5239,
+            "birth": 1792382093.36,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5241,
+            "birth": 1792382093.49,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5240,
+            "birth": 1792382093.47,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5237,
+            "birth": 1792382088.68,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          },
+          {
+            "pid": 5236,
+            "birth": 1792382088.68,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "address_limit": [
+              "Max address space         51539607552          51539607552          bytes     "
+            ]
+          }
+        ],
+        "owned_live_descendants_after_shutdown": [],
+        "whole_lifecycle_seconds": 7.162085564,
+        "waited_child_cpu_seconds": 1.1289780000000005,
+        "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+        "effective_test_settings": {
+          "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+          "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+          "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+          "LEAN_SERVER_MAX_REPL_MEM": "48G",
+          "LEAN_SERVER_HOST": "127.0.0.1",
+          "LEAN_SERVER_PORT": "37941",
+          "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so"
+        },
+        "condition": "shred",
+        "dataset": "minif2f",
+        "input_preparation_seconds": 6.828572511,
+        "whole_with_input_preparation_seconds": 13.991188931,
+        "full_original_population": false
+      },
+      "numeric_engagement": {
+        "scope": "No numerical race file; unobserved native/small LP work is not zero."
+      },
+      "source_count": 50,
+      "recorded_requests": 50,
+      "completed_HTTP_attempts": 50,
+      "exactly_one_recorded_request_per_source": true,
+      "unanswered_recorded_requests": {},
+      "non_200_attempts": [],
+      "exactly_one_matching_final_attempt_per_source": true,
+      "HTTP_interval_accounting": {
+        "occupied_seconds": 3.848872642,
+        "integrated_attempt_seconds": 7.662095002,
+        "max_completed_attempt_overlap": 2
+      },
+      "HTTP_envelope_seconds": 3.848872642,
+      "warm_clock_minus_HTTP_envelope_seconds": 0.0004892940000003065,
+      "SDK_body_seconds_sum_NOT_CPU_or_whole_wall": 3.504584,
+      "SDK_body_seconds": {
+        "n": 50,
+        "p50": 0.026181,
+        "p90": 0.284706,
+        "p99": 0.417461,
+        "max": 0.417461
+      },
+      "HTTP_attempt_seconds": {
+        "n": 50,
+        "p50": 0.108589687,
+        "p90": 0.312016746,
+        "p99": 0.513065351,
+        "max": 0.513065351
+      },
+      "matched_attempt_outside_body_seconds": {
+        "n": 50,
+        "p50": 0.088404077,
+        "p90": 0.106333729,
+        "p99": 0.10683079899999999,
+        "max": 0.10683079899999999
+      },
+      "matched_attempt_outside_body_seconds_sum_NOT_removable_wall": 4.157511002,
+      "own_body_ranked_tails": {
+        "slowest_1_percent": {
+          "sources": [
+            {
+              "proof_id": "minif2f-723",
+              "status": "lean_error",
+              "reported_body_seconds": 0.417461
+            }
+          ],
+          "body_seconds_sum_NOT_whole_wall": 0.417461
+        },
+        "slowest_10_percent": {
+          "sources": [
+            {
+              "proof_id": "minif2f-723",
+              "status": "lean_error",
+              "reported_body_seconds": 0.417461
+            },
+            {
+              "proof_id": "minif2f-1434",
+              "status": "lean_error",
+              "reported_body_seconds": 0.412156
+            },
+            {
+              "proof_id": "minif2f-3",
+              "status": "valid",
+              "reported_body_seconds": 0.320841
+            },
+            {
+              "proof_id": "minif2f-6",
+              "status": "valid",
+              "reported_body_seconds": 0.305794
+            },
+            {
+              "proof_id": "minif2f-8",
+              "status": "valid",
+              "reported_body_seconds": 0.290626
+            }
+          ],
+          "body_seconds_sum_NOT_whole_wall": 1.7468780000000002
+        }
+      },
+      "per_source": [
+        {
+          "proof_id": "minif2f-723",
+          "status": "lean_error",
+          "reported_body_seconds": 0.417461
+        },
+        {
+          "proof_id": "minif2f-1434",
+          "status": "lean_error",
+          "reported_body_seconds": 0.412156
+        },
+        {
+          "proof_id": "minif2f-3",
+          "status": "valid",
+          "reported_body_seconds": 0.320841
+        },
+        {
+          "proof_id": "minif2f-6",
+          "status": "valid",
+          "reported_body_seconds": 0.305794
+        },
+        {
+          "proof_id": "minif2f-8",
+          "status": "valid",
+          "reported_body_seconds": 0.290626
+        },
+        {
+          "proof_id": "minif2f-22",
+          "status": "valid",
+          "reported_body_seconds": 0.284706
+        },
+        {
+          "proof_id": "minif2f-29",
+          "status": "valid",
+          "reported_body_seconds": 0.244917
+        },
+        {
+          "proof_id": "minif2f-16",
+          "status": "valid",
+          "reported_body_seconds": 0.136321
+        },
+        {
+          "proof_id": "minif2f-4",
+          "status": "valid",
+          "reported_body_seconds": 0.104576
+        },
+        {
+          "proof_id": "minif2f-17",
+          "status": "valid",
+          "reported_body_seconds": 0.085743
+        },
+        {
+          "proof_id": "minif2f-20",
+          "status": "valid",
+          "reported_body_seconds": 0.080537
+        },
+        {
+          "proof_id": "minif2f-7",
+          "status": "valid",
+          "reported_body_seconds": 0.076736
+        },
+        {
+          "proof_id": "minif2f-19",
+          "status": "valid",
+          "reported_body_seconds": 0.074697
+        },
+        {
+          "proof_id": "minif2f-5",
+          "status": "lean_error",
+          "reported_body_seconds": 0.060217
+        },
+        {
+          "proof_id": "minif2f-15",
+          "status": "valid",
+          "reported_body_seconds": 0.050119
+        },
+        {
+          "proof_id": "minif2f-10",
+          "status": "lean_error",
+          "reported_body_seconds": 0.048117
+        },
+        {
+          "proof_id": "minif2f-9",
+          "status": "valid",
+          "reported_body_seconds": 0.044052
+        },
+        {
+          "proof_id": "minif2f-14",
+          "status": "valid",
+          "reported_body_seconds": 0.04313
+        },
+        {
+          "proof_id": "minif2f-30",
+          "status": "valid",
+          "reported_body_seconds": 0.039013
+        },
+        {
+          "proof_id": "minif2f-12",
+          "status": "valid",
+          "reported_body_seconds": 0.034989
+        },
+        {
+          "proof_id": "minif2f-31",
+          "status": "valid",
+          "reported_body_seconds": 0.030693
+        },
+        {
+          "proof_id": "minif2f-18",
+          "status": "valid",
+          "reported_body_seconds": 0.030463
+        },
+        {
+          "proof_id": "minif2f-25",
+          "status": "valid",
+          "reported_body_seconds": 0.030461
+        },
+        {
+          "proof_id": "minif2f-21",
+          "status": "valid",
+          "reported_body_seconds": 0.027707
+        },
+        {
+          "proof_id": "minif2f-2",
+          "status": "valid",
+          "reported_body_seconds": 0.026878
+        },
+        {
+          "proof_id": "minif2f-1",
+          "status": "valid",
+          "reported_body_seconds": 0.026181
+        },
+        {
+          "proof_id": "minif2f-0",
+          "status": "valid",
+          "reported_body_seconds": 0.02561
+        },
+        {
+          "proof_id": "minif2f-23",
+          "status": "valid",
+          "reported_body_seconds": 0.024891
+        },
+        {
+          "proof_id": "minif2f-24",
+          "status": "valid",
+          "reported_body_seconds": 0.024622
+        },
+        {
+          "proof_id": "minif2f-26",
+          "status": "valid",
+          "reported_body_seconds": 0.024307
+        },
+        {
+          "proof_id": "minif2f-27",
+          "status": "valid",
+          "reported_body_seconds": 0.024003
+        },
+        {
+          "proof_id": "minif2f-11",
+          "status": "valid",
+          "reported_body_seconds": 0.022747
+        },
+        {
+          "proof_id": "minif2f-28",
+          "status": "lean_error",
+          "reported_body_seconds": 0.013511
+        },
+        {
+          "proof_id": "minif2f-13",
+          "status": "lean_error",
+          "reported_body_seconds": 0.010469
+        },
+        {
+          "proof_id": "minif2f-1877",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000587
+        },
+        {
+          "proof_id": "minif2f-5800",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000575
+        },
+        {
+          "proof_id": "minif2f-5821",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000551
+        },
+        {
+          "proof_id": "minif2f-3641",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000504
+        },
+        {
+          "proof_id": "minif2f-4114",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000494
+        },
+        {
+          "proof_id": "minif2f-2120",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000477
+        },
+        {
+          "proof_id": "minif2f-2135",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000476
+        },
+        {
+          "proof_id": "minif2f-5794",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000463
+        },
+        {
+          "proof_id": "minif2f-3643",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000447
+        },
+        {
+          "proof_id": "minif2f-3832",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000447
+        },
+        {
+          "proof_id": "minif2f-4969",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000438
+        },
+        {
+          "proof_id": "minif2f-4758",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000415
+        },
+        {
+          "proof_id": "minif2f-5814",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000368
+        },
+        {
+          "proof_id": "minif2f-5818",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000366
+        },
+        {
+          "proof_id": "minif2f-7206",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000343
+        },
+        {
+          "proof_id": "minif2f-4975",
+          "status": "lean_error",
+          "reported_body_seconds": 0.000342
+        }
+      ],
+      "completed_attempts": [
+        {
+          "proof_id": "minif2f-0",
+          "HTTP_status": 200,
+          "start_ns": 813462881763361,
+          "end_ns": 813462997465903,
+          "HTTP_attempt_seconds": 0.115702542,
+          "reported_body_seconds": 0.02561,
+          "outside_body_seconds": 0.090092542,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1",
+          "HTTP_status": 200,
+          "start_ns": 813462881972441,
+          "end_ns": 813462998031977,
+          "HTTP_attempt_seconds": 0.116059536,
+          "reported_body_seconds": 0.026181,
+          "outside_body_seconds": 0.08987853600000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2",
+          "HTTP_status": 200,
+          "start_ns": 813462997831901,
+          "end_ns": 813463113113978,
+          "HTTP_attempt_seconds": 0.115282077,
+          "reported_body_seconds": 0.026878,
+          "outside_body_seconds": 0.088404077,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4",
+          "HTTP_status": 200,
+          "start_ns": 813463113491352,
+          "end_ns": 813463322906550,
+          "HTTP_attempt_seconds": 0.209415198,
+          "reported_body_seconds": 0.104576,
+          "outside_body_seconds": 0.104839198,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3",
+          "HTTP_status": 200,
+          "start_ns": 813462998322067,
+          "end_ns": 813463416175994,
+          "HTTP_attempt_seconds": 0.417853927,
+          "reported_body_seconds": 0.320841,
+          "outside_body_seconds": 0.09701292700000003,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5",
+          "HTTP_status": 200,
+          "start_ns": 813463323280145,
+          "end_ns": 813463432940857,
+          "HTTP_attempt_seconds": 0.109660712,
+          "reported_body_seconds": 0.060217,
+          "outside_body_seconds": 0.049443711999999994,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-7",
+          "HTTP_status": 200,
+          "start_ns": 813463433237172,
+          "end_ns": 813463541729629,
+          "HTTP_attempt_seconds": 0.108492457,
+          "reported_body_seconds": 0.076736,
+          "outside_body_seconds": 0.031756457,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-6",
+          "HTTP_status": 200,
+          "start_ns": 813463416558424,
+          "end_ns": 813463827772087,
+          "HTTP_attempt_seconds": 0.411213663,
+          "reported_body_seconds": 0.305794,
+          "outside_body_seconds": 0.105419663,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-8",
+          "HTTP_status": 200,
+          "start_ns": 813463542108837,
+          "end_ns": 813463854538609,
+          "HTTP_attempt_seconds": 0.312429772,
+          "reported_body_seconds": 0.290626,
+          "outside_body_seconds": 0.021803772,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-9",
+          "HTTP_status": 200,
+          "start_ns": 813463828140616,
+          "end_ns": 813463936677299,
+          "HTTP_attempt_seconds": 0.108536683,
+          "reported_body_seconds": 0.044052,
+          "outside_body_seconds": 0.06448468299999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-10",
+          "HTTP_status": 200,
+          "start_ns": 813463854882739,
+          "end_ns": 813463966061456,
+          "HTTP_attempt_seconds": 0.111178717,
+          "reported_body_seconds": 0.048117,
+          "outside_body_seconds": 0.06306171699999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-11",
+          "HTTP_status": 200,
+          "start_ns": 813463937047170,
+          "end_ns": 813464045679783,
+          "HTTP_attempt_seconds": 0.108632613,
+          "reported_body_seconds": 0.022747,
+          "outside_body_seconds": 0.085885613,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-12",
+          "HTTP_status": 200,
+          "start_ns": 813463966355428,
+          "end_ns": 813464076247551,
+          "HTTP_attempt_seconds": 0.109892123,
+          "reported_body_seconds": 0.034989,
+          "outside_body_seconds": 0.07490312299999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-13",
+          "HTTP_status": 200,
+          "start_ns": 813464046033444,
+          "end_ns": 813464154623131,
+          "HTTP_attempt_seconds": 0.108589687,
+          "reported_body_seconds": 0.010469,
+          "outside_body_seconds": 0.09812068700000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-14",
+          "HTTP_status": 200,
+          "start_ns": 813464076534905,
+          "end_ns": 813464184950028,
+          "HTTP_attempt_seconds": 0.108415123,
+          "reported_body_seconds": 0.04313,
+          "outside_body_seconds": 0.065285123,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-15",
+          "HTTP_status": 200,
+          "start_ns": 813464154950522,
+          "end_ns": 813464263390504,
+          "HTTP_attempt_seconds": 0.108439982,
+          "reported_body_seconds": 0.050119,
+          "outside_body_seconds": 0.05832098200000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-17",
+          "HTTP_status": 200,
+          "start_ns": 813464263763367,
+          "end_ns": 813464372715389,
+          "HTTP_attempt_seconds": 0.108952022,
+          "reported_body_seconds": 0.085743,
+          "outside_body_seconds": 0.023209021999999996,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-16",
+          "HTTP_status": 200,
+          "start_ns": 813464185299285,
+          "end_ns": 813464395715410,
+          "HTTP_attempt_seconds": 0.210416125,
+          "reported_body_seconds": 0.136321,
+          "outside_body_seconds": 0.07409512500000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-18",
+          "HTTP_status": 200,
+          "start_ns": 813464373087006,
+          "end_ns": 813464482170334,
+          "HTTP_attempt_seconds": 0.109083328,
+          "reported_body_seconds": 0.030463,
+          "outside_body_seconds": 0.07862032799999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-19",
+          "HTTP_status": 200,
+          "start_ns": 813464396021227,
+          "end_ns": 813464504583813,
+          "HTTP_attempt_seconds": 0.108562586,
+          "reported_body_seconds": 0.074697,
+          "outside_body_seconds": 0.033865586,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-20",
+          "HTTP_status": 200,
+          "start_ns": 813464482511994,
+          "end_ns": 813464590973933,
+          "HTTP_attempt_seconds": 0.108461939,
+          "reported_body_seconds": 0.080537,
+          "outside_body_seconds": 0.027924938999999996,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-21",
+          "HTTP_status": 200,
+          "start_ns": 813464504872103,
+          "end_ns": 813464613701382,
+          "HTTP_attempt_seconds": 0.108829279,
+          "reported_body_seconds": 0.027707,
+          "outside_body_seconds": 0.081122279,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-23",
+          "HTTP_status": 200,
+          "start_ns": 813464614021832,
+          "end_ns": 813464724388625,
+          "HTTP_attempt_seconds": 0.110366793,
+          "reported_body_seconds": 0.024891,
+          "outside_body_seconds": 0.08547579300000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-24",
+          "HTTP_status": 200,
+          "start_ns": 813464724792214,
+          "end_ns": 813464834751891,
+          "HTTP_attempt_seconds": 0.109959677,
+          "reported_body_seconds": 0.024622,
+          "outside_body_seconds": 0.085337677,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-22",
+          "HTTP_status": 200,
+          "start_ns": 813464591354136,
+          "end_ns": 813464903370882,
+          "HTTP_attempt_seconds": 0.312016746,
+          "reported_body_seconds": 0.284706,
+          "outside_body_seconds": 0.027310745999999997,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-25",
+          "HTTP_status": 200,
+          "start_ns": 813464835144648,
+          "end_ns": 813464944048284,
+          "HTTP_attempt_seconds": 0.108903636,
+          "reported_body_seconds": 0.030461,
+          "outside_body_seconds": 0.078442636,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-26",
+          "HTTP_status": 200,
+          "start_ns": 813464903715361,
+          "end_ns": 813465012499670,
+          "HTTP_attempt_seconds": 0.108784309,
+          "reported_body_seconds": 0.024307,
+          "outside_body_seconds": 0.084477309,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-27",
+          "HTTP_status": 200,
+          "start_ns": 813464944398205,
+          "end_ns": 813465052212838,
+          "HTTP_attempt_seconds": 0.107814633,
+          "reported_body_seconds": 0.024003,
+          "outside_body_seconds": 0.08381163300000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-28",
+          "HTTP_status": 200,
+          "start_ns": 813465012871793,
+          "end_ns": 813465121440971,
+          "HTTP_attempt_seconds": 0.108569178,
+          "reported_body_seconds": 0.013511,
+          "outside_body_seconds": 0.09505817800000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-30",
+          "HTTP_status": 200,
+          "start_ns": 813465121812100,
+          "end_ns": 813465232223809,
+          "HTTP_attempt_seconds": 0.110411709,
+          "reported_body_seconds": 0.039013,
+          "outside_body_seconds": 0.071398709,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-31",
+          "HTTP_status": 200,
+          "start_ns": 813465232608107,
+          "end_ns": 813465341701665,
+          "HTTP_attempt_seconds": 0.109093558,
+          "reported_body_seconds": 0.030693,
+          "outside_body_seconds": 0.078400558,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-29",
+          "HTTP_status": 200,
+          "start_ns": 813465052574738,
+          "end_ns": 813465363930170,
+          "HTTP_attempt_seconds": 0.311355432,
+          "reported_body_seconds": 0.244917,
+          "outside_body_seconds": 0.06643843199999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-723",
+          "HTTP_status": 200,
+          "start_ns": 813465342060438,
+          "end_ns": 813465855125789,
+          "HTTP_attempt_seconds": 0.513065351,
+          "reported_body_seconds": 0.417461,
+          "outside_body_seconds": 0.09560435099999992,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1434",
+          "HTTP_status": 200,
+          "start_ns": 813465364233337,
+          "end_ns": 813465874896079,
+          "HTTP_attempt_seconds": 0.510662742,
+          "reported_body_seconds": 0.412156,
+          "outside_body_seconds": 0.09850674199999992,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-1877",
+          "HTTP_status": 200,
+          "start_ns": 813465855462274,
+          "end_ns": 813465962183754,
+          "HTTP_attempt_seconds": 0.10672148,
+          "reported_body_seconds": 0.000587,
+          "outside_body_seconds": 0.10613447999999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2120",
+          "HTTP_status": 200,
+          "start_ns": 813465875182347,
+          "end_ns": 813465981395395,
+          "HTTP_attempt_seconds": 0.106213048,
+          "reported_body_seconds": 0.000477,
+          "outside_body_seconds": 0.105736048,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-2135",
+          "HTTP_status": 200,
+          "start_ns": 813465962524655,
+          "end_ns": 813466069831454,
+          "HTTP_attempt_seconds": 0.107306799,
+          "reported_body_seconds": 0.000476,
+          "outside_body_seconds": 0.10683079899999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3641",
+          "HTTP_status": 200,
+          "start_ns": 813465981719695,
+          "end_ns": 813466088874540,
+          "HTTP_attempt_seconds": 0.107154845,
+          "reported_body_seconds": 0.000504,
+          "outside_body_seconds": 0.106650845,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3643",
+          "HTTP_status": 200,
+          "start_ns": 813466070175592,
+          "end_ns": 813466176650172,
+          "HTTP_attempt_seconds": 0.10647458,
+          "reported_body_seconds": 0.000447,
+          "outside_body_seconds": 0.10602758,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-3832",
+          "HTTP_status": 200,
+          "start_ns": 813466089194885,
+          "end_ns": 813466196059739,
+          "HTTP_attempt_seconds": 0.106864854,
+          "reported_body_seconds": 0.000447,
+          "outside_body_seconds": 0.10641785399999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4114",
+          "HTTP_status": 200,
+          "start_ns": 813466176978927,
+          "end_ns": 813466283875685,
+          "HTTP_attempt_seconds": 0.106896758,
+          "reported_body_seconds": 0.000494,
+          "outside_body_seconds": 0.106402758,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4758",
+          "HTTP_status": 200,
+          "start_ns": 813466196313091,
+          "end_ns": 813466303027149,
+          "HTTP_attempt_seconds": 0.106714058,
+          "reported_body_seconds": 0.000415,
+          "outside_body_seconds": 0.106299058,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4969",
+          "HTTP_status": 200,
+          "start_ns": 813466284208731,
+          "end_ns": 813466390795547,
+          "HTTP_attempt_seconds": 0.106586816,
+          "reported_body_seconds": 0.000438,
+          "outside_body_seconds": 0.10614881600000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-4975",
+          "HTTP_status": 200,
+          "start_ns": 813466303385928,
+          "end_ns": 813466410061657,
+          "HTTP_attempt_seconds": 0.106675729,
+          "reported_body_seconds": 0.000342,
+          "outside_body_seconds": 0.106333729,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5794",
+          "HTTP_status": 200,
+          "start_ns": 813466391141130,
+          "end_ns": 813466497628860,
+          "HTTP_attempt_seconds": 0.10648773,
+          "reported_body_seconds": 0.000463,
+          "outside_body_seconds": 0.10602473,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5800",
+          "HTTP_status": 200,
+          "start_ns": 813466410402177,
+          "end_ns": 813466517257826,
+          "HTTP_attempt_seconds": 0.106855649,
+          "reported_body_seconds": 0.000575,
+          "outside_body_seconds": 0.10628064899999999,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5814",
+          "HTTP_status": 200,
+          "start_ns": 813466497956664,
+          "end_ns": 813466604987797,
+          "HTTP_attempt_seconds": 0.107031133,
+          "reported_body_seconds": 0.000368,
+          "outside_body_seconds": 0.10666313300000001,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5818",
+          "HTTP_status": 200,
+          "start_ns": 813466517492845,
+          "end_ns": 813466623757867,
+          "HTTP_attempt_seconds": 0.106265022,
+          "reported_body_seconds": 0.000366,
+          "outside_body_seconds": 0.105899022,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-5821",
+          "HTTP_status": 200,
+          "start_ns": 813466605333856,
+          "end_ns": 813466711475040,
+          "HTTP_attempt_seconds": 0.106141184,
+          "reported_body_seconds": 0.000551,
+          "outside_body_seconds": 0.105590184,
+          "matches_final_SDK_result": true
+        },
+        {
+          "proof_id": "minif2f-7206",
+          "HTTP_status": 200,
+          "start_ns": 813466624034541,
+          "end_ns": 813466730636003,
+          "HTTP_attempt_seconds": 0.106601462,
+          "reported_body_seconds": 0.000343,
+          "outside_body_seconds": 0.106258462,
+          "matches_final_SDK_result": true
+        }
+      ]
+    }
+  }
+}

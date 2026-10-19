@@ -200,6 +200,25 @@ simultaneous restart or a new quota.
 [Recovery evidence](../artifacts/linarith-oracle-2026-10-17/workspace-interruption-20261019/README.md).
 No full speed or new contribution is inferred from hit counts or partial data.
 
+The miniF2F eight-source HTTP capture suffers a further verified global OOM
+at 2026-10-19T03:13:19Z. Kernel records eight substantial REPLs totaling
+120,538,700 KiB (114.95 GiB) anonymous RSS; every recorded individual
+process remains below the required 48 GiB address-space ceiling.
+Existing container OOM-group behavior kills the whole experiment group.
+The incomplete attempt retains 2,428 distinct requested IDs, 2,420 IDs
+with responses and eight pending sources, including warm preparation.
+These are partial observations, not a completed corpus result.
+
+The [recovery plan and kernel evidence](../artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/plan.md)
+restart the same original native/SHRED comparison at **two outstanding
+sources in both methods**, four CPUs 4–7 and 48 GiB per process.
+This is a new resource point; no eight-source or pre/post-OOM timings are
+pooled. The official service, native code, source order and timeout stay the
+same. Only the finite capture's request/warm width changes; default width
+eight and all server/host settings remain. Matched real-source preflight
+precedes the full 7,808-source pair. Full results remain pending.
+The infrastructure incident is recorded in server-manage commit03bd8433.
+
 ## Prefix/preparation evidence and previous controls
 
 Complete [miniF2F exact](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/exact-result-review.md)

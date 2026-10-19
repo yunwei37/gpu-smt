@@ -1,0 +1,33 @@
+Oct 19 03:13:19 lab kernel: coder invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=1000
+Oct 19 03:13:19 lab kernel:  oom_kill_process.cold+0xb/0xb4
+Oct 19 03:13:19 lab kernel:  __alloc_pages_may_oom+0x10a/0x1e0
+Oct 19 03:13:19 lab kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+Oct 19 03:13:19 lab kernel: [ 264664]   990 264664     4491      879        1      878         0    77824      261          -900 systemd-oomd
+Oct 19 03:13:19 lab kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=cri-containerd-1797c3e41846c40594f7cdbe9606d0057e3ef12e32068fb005fe82dcdf659112.scope,mems_allowed=0,global_oom,task_memcg=/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podc2392a42_e9ff_4b4c_941f_63c6d929728b.slice/cri-containerd-bac6242b18d0e3ad1f5abbb0ec05d4326c5dd78374abceb8f350d5cace26aefa.scope,task=repl,pid=2365456,uid=0
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2365456 (repl) total-vm:36060412kB, anon-rss:31868228kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:115116kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Tasks in /kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podc2392a42_e9ff_4b4c_941f_63c6d929728b.slice/cri-containerd-bac6242b18d0e3ad1f5abbb0ec05d4326c5dd78374abceb8f350d5cace26aefa.scope are going to be killed due to memory.oom.group set
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2053641 (coder) total-vm:1317916kB, anon-rss:9184kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:228kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2066455 (coder) total-vm:1387260kB, anon-rss:22288kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:368kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2168055 (python) total-vm:20396kB, anon-rss:5328kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:80kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2314341 (python) total-vm:127864kB, anon-rss:98144kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:284kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2314372 (python) total-vm:568996kB, anon-rss:87628kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:336kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2346010 (lake) total-vm:358804kB, anon-rss:38600kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5164kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2346061 (repl) total-vm:234156kB, anon-rss:31128kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:2288kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2365438 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5172kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2365456 (repl) total-vm:36060412kB, anon-rss:31868228kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:115116kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2368561 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5156kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2368582 (repl) total-vm:22590928kB, anon-rss:18605296kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:88764kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2379673 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5152kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2379695 (repl) total-vm:29431032kB, anon-rss:25446652kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:102156kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2382186 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5160kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2382203 (repl) total-vm:4693668kB, anon-rss:714892kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:53732kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2382461 (lake) total-vm:358804kB, anon-rss:38600kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5164kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2382495 (repl) total-vm:12311804kB, anon-rss:8287736kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:68648kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2383246 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5160kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2383324 (repl) total-vm:28333628kB, anon-rss:24223728kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:99992kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2386147 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5160kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2386152 (repl) total-vm:15096484kB, anon-rss:11120584kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:74104kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2386161 (lake) total-vm:358804kB, anon-rss:38596kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:5164kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2386163 (repl) total-vm:4242120kB, anon-rss:271584kB, file-rss:8kB, shmem-rss:0kB, UID:0 pgtables:52864kB oom_score_adj:1000
+Oct 19 03:13:19 lab kernel: Out of memory: Killed process 2066457 (coder) total-vm:1387260kB, anon-rss:22288kB, file-rss:16kB, shmem-rss:0kB, UID:0 pgtables:368kB oom_score_adj:1000
+Oct 19 03:13:21 lab kernel: oom_reaper: reaped process 2383324 (repl), now anon-rss:0kB, file-rss:0kB, shmem-rss:0kB

@@ -68,3 +68,16 @@ incomplete outcomes; SDKvalid must not be counted as verified proofs.
 [All outcomes](proofnet-full-comparison.json) and
 [cost-weighted events](proofnet-cache-costs.json) preserve every failure.
 The full miniF2F comparison continues; there is no whole-family gain claim.
+
+
+## miniF2F memory recovery
+
+The eight-source full miniF2F native condition is interrupted by actual
+host global OOM at03:13:19Z, with eight REPLs totaling114.95GiB anonymousRSS.
+All remain below48GiB individual address-space limits. Partial HTTP/server
+bytes, kernel receipt and pending source IDs are preserved in
+[memory recovery](memory-recovery-20261019/plan.md).
+The new matched native/SHRED point uses --concurrency 2, fourCPU4–7,
+48GiB per process and unchanged original7808sources. It does not complete
+or inherit the failed eight-source observation. The default remains8;
+no upstream app/manager or infrastructure setting is patched.

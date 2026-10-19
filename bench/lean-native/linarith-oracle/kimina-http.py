@@ -25,6 +25,8 @@ async def cell(args, method, out, items, build):
         LEAN_SERVER_PROJECT_DIR=build["mathlib"], LEAN_SERVER_REPL_PATH=str(args.repl),
         LEAN_SERVER_LEAN_VERSION=lean_version, LEAN_SERVER_MAX_REPL_MEM="48G",
         LEAN_SERVER_HOST="127.0.0.1", FARKAS_NATIVE_BIN=str(args.reference))
+    concurrency = getattr(args, "concurrency", 8)
+    if concurrency < 1: raise ValueError("Source concurrency must be positive")
     original = "import Mathlib\nimport Aesop\n"
     target = {"stock":"", "native":"GpuArithmetic.IntegerCostControl",
               "power":"GpuArithmetic.IntegerPowerOracle"}[method]
@@ -56,7 +58,7 @@ async def cell(args, method, out, items, build):
         events.write(json.dumps(row,ensure_ascii=False,separators=(",",":"))+"\n"); events.flush()
     backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
     result=dict(state="failed",method=method,expected=len(items),
-        affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
+        source_concurrency=concurrency,affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
         native_engine=args.native_engine if method == "native" else None,
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
@@ -98,13 +100,13 @@ async def cell(args, method, out, items, build):
                 request=response.request.content.decode(),body=response.content.decode()))
         client.session.event_hooks={"request":[on_request],"response":[on_response]}
         warm_snippets=[Snippet(id="warm-"+str(i),code=header+"\n#check Nat")
-            for i,header in enumerate(header for header in headers for _ in range(8))]
+            for i,header in enumerate(header for header in headers for _ in range(concurrency))]
         if warm_snippets:
             warm=await client.check(warm_snippets,
-                timeout=300,batch_size=1,max_workers=8,reuse=True,show_progress=False)
+                timeout=300,batch_size=1,max_workers=concurrency,reuse=True,show_progress=False)
             if any(x.analyze().status.value!="valid"for x in warm.results): raise RuntimeError("Warm preparation failed")
         verify_start=time.monotonic_ns()
-        replies=await client.check(snippets,timeout=300,batch_size=1,max_workers=8,reuse=True,show_progress=False)
+        replies=await client.check(snippets,timeout=300,batch_size=1,max_workers=concurrency,reuse=True,show_progress=False)
         verify_end=time.monotonic_ns()
         rows=[dict(proof_id=x.id,status=x.analyze().status.value,result=x.model_dump(exclude_none=True))for x in replies.results]
         assert len(rows)==len(items)and[x["proof_id"]for x in rows]==[x["proof_id"]for x in items]
@@ -189,6 +191,8 @@ if __name__=="__main__":
                         help="Existing native-reference engine; does not change Power's numerical portfolio")
     parser.add_argument("--affinity", type=int, nargs="+", default=[20,21,22,23],
                         help="Equal CPU eligibility for every condition in this finite comparison")
+    parser.add_argument("--concurrency", type=int, default=8,
+                        help="Outstanding original sources and warm workers per header; compare methods at the same value")
     args=parser.parse_args()
     for name in["kimina","build","build_source","repl","reference","support_python","input","out"]:
         # Preserve a virtual environment's invocation path: resolving bin/python
