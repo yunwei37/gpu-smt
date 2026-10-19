@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-19T07:17:40.589653+00:00",
+  "processes": [
+    {
+      "pid": 6643,
+      "birth": 1792390380.2,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "-u",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/continuation-executed.py"
+      ],
+      "rss": 20221952
+    },
+    {
+      "pid": 7145,
+      "birth": 1792392044.71,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "-u",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/run-kimina.py",
+        "--datasets",
+        "minif2f",
+        "--concurrency",
+        "2",
+        "--out",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/full-population",
+        "--full"
+      ],
+      "rss": 114155520
+    },
+    {
+      "pid": 7147,
+      "birth": 1792392045.16,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "-m",
+        "server"
+      ],
+      "rss": 111411200
+    },
+    {
+      "pid": 7285,
+      "birth": 1792393076.3,
+      "command": [
+        "lake",
+        "env",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 288120832
+    },
+    {
+      "pid": 7460,
+      "birth": 1792393271.48,
+      "command": [
+        "lake",
+        "env",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 288067584
+    },
+    {
+      "pid": 7538,
+      "birth": 1792393992.1,
+      "command": [
+        "lake",
+        "env",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 287883264
+    },
+    {
+      "pid": 7539,
+      "birth": 1792393992.23,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 17550995456
+    },
+    {
+      "pid": 7461,
+      "birth": 1792393271.62,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 176148480
+    },
+    {
+      "pid": 7286,
+      "birth": 1792393076.43,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "rss": 19210543104
+    }
+  ],
+  "scope": "Stop only verified gpu-smt finite capture tree for newly authorized aggregate48GiB experiment point; preserve partials."
+}
