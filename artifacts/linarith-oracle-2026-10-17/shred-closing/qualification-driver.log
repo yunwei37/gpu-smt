@@ -1,0 +1,45 @@
+{
+  "analysis": "closing-certificate-prevalence-theorem-v1",
+  "artifact": {
+    "path": "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/qualification-pairs.jsonl.gz",
+    "sha256": "bac918b79a2d2da5200249dcd80f30822719a499be3d4179692349244db422d2"
+  },
+  "command": "lean-prefix run-certificate-prevalence-theorem --input-artifact /workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/prepared-mini32.jsonl.gz --theorem minif2f-original-block-0 --lean-workspace /workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4 --artifact /workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/qualification-pairs.jsonl.gz --output /workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/qualification-official-report.json --repl-executable /tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+  "configuration": {
+    "memory_limit_bytes": 51539607552,
+    "proposal_order": "candidate_index_ascending",
+    "same_initialized_environment_per_proposal": true,
+    "timeout_seconds": 300.0
+  },
+  "counts": {
+    "baseline_resets": 1,
+    "cached_resets": 1,
+    "proposals": 32,
+    "verdict_agreements": 32,
+    "verdict_disagreements": 0
+  },
+  "hardware": {
+    "hostname": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-btpq6"
+  },
+  "inputs": {
+    "prepared_artifact_sha256": "56822f91e636025192589379cfe54784c332d9a7a0a7da34f7fb9fde0ac88c38"
+  },
+  "revisions": {
+    "lean_workspace_git": {
+      "archive_revision": "2f65ba7f1a9144b20c8e7358513548e317d26de1",
+      "evidence": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/setup-metadata.json",
+      "kind": "retained_source_archive",
+      "lean_version": "Lean (version 4.9.0-rc1, x86_64-unknown-linux-gnu, commit be6c4894e0a6, Release)",
+      "scope": "Archive provenance; no live Git checkout or fabricated Git state."
+    },
+    "project_git": {
+      "commit": "ff8b0dddfe8c402aba4d5f05c91538a14413bbbe",
+      "dirty": true
+    }
+  },
+  "stratum": "first_original_block",
+  "theorem_name": "minif2f-original-block-0",
+  "timing": {
+    "worker_wall_seconds": 10.570750193088315
+  }
+}

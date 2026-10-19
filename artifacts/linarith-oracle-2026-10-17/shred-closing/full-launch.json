@@ -1,0 +1,18 @@
+{
+  "pid": 591788,
+  "utc": "2026-10-19T00:09:48.985535+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-u",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/run-kimina.py",
+    "--out",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/full-populations",
+    "--datasets",
+    "proofnet",
+    "minif2f",
+    "--full"
+  ],
+  "expected_sources_each_method": 13760,
+  "expected_source_runs": 27520,
+  "scope": "Requested existing-method baseline, one fixed-order full native/SHRED HTTP pair per dataset; real preprocessing charged, no performance promise/Agent/new scheduler."
+}

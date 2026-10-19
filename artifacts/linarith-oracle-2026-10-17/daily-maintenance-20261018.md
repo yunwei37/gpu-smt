@@ -492,3 +492,31 @@ same37 sources per run. The two multi-minute tails spend only subsecond
 recorded race-wall totals. Remaining small/native LP/Lean work is unprofiled;
 source syntax alone does not authorize another speculative cache/kernel.
 Public analysis emits IDs/counters rather than original proof payloads.
+
+## Executable closest-method baseline, not another cache proposal
+
+The complete default-tiered original1000 control closes at1018.23/492.98s,
+2.065455x native/Power. Its reference is slower in these observations than
+the separate hybrid controls; a larger ratio is not a reason to replace
+the faster headline denominator or pool CPU epochs.
+
+SHRED's actual official cache module/CLI now runs against the retained
+matching4.9SDK. First32returns28complete each and fourhits. Metadata-only
+archive reporting and an avoidable Python filename collision are repaired
+immediately with failed attempts preserved. Matched official-HTTP
+qualification preserves every verdict on miniF2F50/positive ProofNet68;
+opaque env/message differences stay exposed. Real preparation is about7s,
+so these tiny cached batches are slower, not claimed as gains.
+
+Substantive next work is the requested complete closest-method service
+baseline, now actually running all13760originals twice. This determines
+whether published certificate reuse already covers expensive native work
+under a real worker pool, charging parsing/fallback and retaining failures.
+It cannot be replaced by hit-rate projections or another speculative cache.
+Native-state novelty, memory/arrival scaling and original four RQs remain.
+
+Daily upkeep updates the single canonical evidence frontier and relevant
+paper paragraph, exposes actual executed sources and raw response
+differences, and requires fresh output directories for public recipes.
+Closed-cell lossless archival conserves the near-full volume without
+touching active writers. No agent, alternate checkout or scheduler is used.

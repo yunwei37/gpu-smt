@@ -13,7 +13,7 @@ answers are still open.
 
 ## Current result
 
-The latest complete comparison uses the original **1,000 arithmetic-heavy
+The corrected native-array comparison uses the original **1,000 arithmetic-heavy
 Goedel candidates**, selected before the implementation's measurements:
 
 | Composition | Complete whole time |
@@ -66,6 +66,16 @@ its first stock/native/Power block: 2888.76/857.11/534.48 seconds, respectively.
 Power is 1.60363× faster than the strong native reference in that block.
 The original three-block matrix continues; this is not its final aggregate.
 [Scoped checkpoint and raw data](artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md).
+
+A separate complete default-tiered/Power control on the same 1,000 inputs
+takes **1018.23/492.98 s**. Its 2.06546× ratio is against a slower measured
+reference and does not replace the faster hybrid comparison above.
+[Complete default-engine control](artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md).
+
+The existing SHRED closing-certificate executor now has real native and
+HTTP qualifications. Its complete formal-population service comparison is
+running; early cache hits are not a new system contribution or a full speed
+result. [Baseline source, failures and scope](artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
 
 ## Complete workloads and scope
 

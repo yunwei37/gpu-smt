@@ -27,6 +27,24 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
+### 2026-10-18 — default-reference control and actual prior-cache execution
+
+The complete original1000 default-tiered/Power HTTP pair is1018.23/492.98s,
+2.065455x against that alternative reference. It does not replace the faster
+measured hybrid headline or establish global CPU optimality. All992/8
+verdicts and non-message fields match;112message-only differences remain.
+
+The actual upstream SHRED closing executor qualifies on the original first32,
+and its HTTP integration preserves every verdict on miniF2F50/ProofNet68.
+Opaque env/messages differ; about7s preparation makes these tiny batches
+slower. The user-requested complete existing-method HTTP comparison now runs
+all5952ProofNet and7808miniF2F twice, with all preprocessing/fallback charged.
+This is prior-method evidence, not a new cache contribution. Original
+Initial Narrative, all4RQs, Lean/SMT scope and systems-novelty target remain.
+[Default control](../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md);
+[SHRED baseline](../artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
+
+
 ### 2026-10-18 — complete different-prover HTTP transfer
 
 All 438 official DSV2 proof outputs finish three alternating native/Power

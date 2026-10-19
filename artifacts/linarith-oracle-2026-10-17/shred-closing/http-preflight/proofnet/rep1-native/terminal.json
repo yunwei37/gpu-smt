@@ -1,0 +1,475 @@
+{
+  "state": "complete",
+  "method": "stock",
+  "expected": 36,
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "memory_limit_bytes": 51539607552,
+  "native_engine": null,
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": null,
+  "lean_version": "v4.9.0-rc1",
+  "native_library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+  "scope": "Existing SHRED module/last-tactic wrapper integrated with official Kimina HTTP; all real parser/preparation costs charged. Root self-review, not a new cache/system or full-workload result.",
+  "returned": 36,
+  "counts": {
+    "lean_error": 36
+  },
+  "server_ready_seconds": 0.643553331,
+  "preparation_seconds": 5.992611528,
+  "warm_verify_seconds": 1.610638538,
+  "server_exit": -15,
+  "joined_owned_descendants": 26,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 585811,
+      "birth": 1792367992.18,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585823,
+      "birth": 1792367992.18,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585824,
+      "birth": 1792367992.19,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585825,
+      "birth": 1792367992.19,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585826,
+      "birth": 1792367992.2,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585827,
+      "birth": 1792367992.22,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585828,
+      "birth": 1792367992.24,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585829,
+      "birth": 1792367992.27,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585899,
+      "birth": 1792367998.08,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585901,
+      "birth": 1792367998.39,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585902,
+      "birth": 1792367998.45,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585903,
+      "birth": 1792367998.46,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585904,
+      "birth": 1792367998.49,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585925,
+      "birth": 1792367998.72,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585924,
+      "birth": 1792367998.67,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585905,
+      "birth": 1792367998.6,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585923,
+      "birth": 1792367998.65,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585900,
+      "birth": 1792367998.28,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585833,
+      "birth": 1792367992.51,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585837,
+      "birth": 1792367992.64,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585834,
+      "birth": 1792367992.53,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585835,
+      "birth": 1792367992.54,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585836,
+      "birth": 1792367992.54,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585830,
+      "birth": 1792367992.39,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585831,
+      "birth": 1792367992.44,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 585832,
+      "birth": 1792367992.44,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "whole_lifecycle_seconds": 8.013008985,
+  "waited_child_cpu_seconds": 1.264266999999999,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+    "LEAN_SERVER_MAX_REPL_MEM": "48G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "43767",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so"
+  },
+  "condition": "native",
+  "dataset": "proofnet",
+  "input_preparation_seconds": 0.072703114,
+  "whole_with_input_preparation_seconds": 8.086167842
+}

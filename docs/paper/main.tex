@@ -932,6 +932,21 @@ remain charged. This is neither a whole-service comparison nor GPU evidence;
 the complete miniF2F arithmetic comparison remains pending.
 
 
+\paragraph{Existing default-engine control.}
+A complete original 1,000-source pair also checks the reference helper's
+default tiered exact engine rather than assuming hybrid is globally best.
+The adapted compiled tiered reference takes 1,018.229 seconds and Power
+492.981 seconds over the full HTTP lifecycle, a $2.065455\times$ ratio;
+the warm clocks are 1,004.574 and 479.541 seconds. Both retain 992 complete
+and eight rejected originals, zero operational failures, and identical
+per-source verdicts and non-message fields; 112 message-only differences
+remain. All owned descendants retire. This is one fixed-order shared-host
+observation with eight outstanding sources and four eligible CPUs 16--19.
+It closes the missing default-engine control but does not replace the faster
+measured hybrid reference to inflate the primary gain. Different CPU epochs
+are not pooled, and neither global CPU optimality nor GPU acceleration
+follows from this alternative-reference result.
+
 \paragraph{Different-prover transfer through an existing service.}
 All 438 official DeepSeek-Prover-V2 miniF2F proof outputs finish three
 alternating native/Power pairs through the unchanged Kimina HTTP application

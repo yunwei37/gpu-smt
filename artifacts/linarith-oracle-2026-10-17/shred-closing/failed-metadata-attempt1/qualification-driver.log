@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/qualify.py", line 102, in <module>
+    exit_code = official_cli(arguments)
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/cli.py", line 406, in main
+    report = run_certificate_prevalence_theorem(
+        args.input_artifact,
+    ...<5 lines>...
+        repl_executable=args.repl_executable,
+    )
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/certificate_prevalence.py", line 410, in run_certificate_prevalence_theorem
+    "lean_workspace_git": _git_state(lean_workspace.resolve()),
+                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/profile.py", line 275, in _git_state
+    "commit": _capture(["git", "rev-parse", "HEAD"], cwd=path),
+              ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/gpu-smt-primary-opportunities-20261017/shred/src/lean_prefix/profile.py", line 262, in _capture
+    result = subprocess.run(
+        command,
+    ...<4 lines>...
+        text=True,
+    )
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128.

@@ -111,14 +111,14 @@ population result. It admits the now-running3rotated1000source blocks.
 [Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
-The existing default-tiered reference is now checked on the same Goedel
-input rather than importing an older epoch's baseline ranking. The matched
-[first-64 control](../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/preflight-result-review.md)
-returns identical statuses/non-message fields in hybrid, default tiered and
-Power, with six message-only source differences versus Power. All conditions
-retire normally at four CPUs/48 GiB. The complete original 1,000-source
-default-tiered/Power pair is acquiring separately; preflight timings do not
-establish its final ratio or a strongest-CPU result.
+The [complete default-tiered Goedel control](../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md)
+now returns all 1,000 originals: 1018.229 s native versus 492.981 s Power,
+2.065455× whole; 1004.574/479.541 s warm, 2.094865×. Both return
+992 valid/eight rejected, zero operational failures, matching per-source
+statuses/non-message fields and 112 message-only differences. All descendants
+retire. This single shared-host four-CPU16–19 epoch closes the default-engine
+omission. It does not replace the faster measured hybrid comparison to
+inflate the headline, pool epochs or establish global CPU optimality.
 
 [The complete official DSV2/Farkas reference-corpus comparison](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md)
 contains all 438 different-prover proof outputs in three alternating pairs.
@@ -146,6 +146,18 @@ The [checkpoint](../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block
 preserves the completed raw cells. The original three-block matrix continues;
 this first block is not promoted as the final aggregate.
 
+
+The [official SHRED closing-certificate executor](../artifacts/linarith-oracle-2026-10-17/shred-closing/README.md)
+is now actually qualified: first original miniF2F32, 28 complete/four
+rejected in both modes, four hits and zero timeouts/process errors.
+The matched service integration additionally preserves all statuses on
+miniF2F50 and a positive-control ProofNet68 cohort. These are functional
+subsets; opaque env handles/cache messages differ. Native parsing costs
+roughly7s and makes SHRED slower in those tiny batches when charged.
+The complete requested native/SHRED official-HTTP baseline is now acquiring
+all5952 ProofNet and7808 miniF2F originals, including charged preprocessing,
+unsupported fallback and retirement. No full speed or new contribution is
+inferred from hit counts or standalone CLI source sums.
 
 ## Prefix/preparation evidence and previous controls
 

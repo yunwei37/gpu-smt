@@ -3479,3 +3479,30 @@ Validity: the exact DSV2 body join maps every actual race uniquely, retains
 all sources and emits no source payload. Recorded races are not all LP or
 CPU. Default-reference preflight is not a full-population result; full
 admission requires actual returned outcomes. Review is self-audit only.
+
+## Complete default reference and executable SHRED baseline — root self-audit
+
+Direction: close a real strongest-reference gap without headline inflation.
+The default2.065455ratio is against a slower measured method; faster hybrid
+comparisons remain distinct. The official closing-certificate method is
+actually executed, not inferred from prefix-parser use or README claims.
+No four-RQ/system goal is replaced by generic certificate caching.
+
+Efficiency: reuse existing checkout/SDK/module/data, compile only the missing
+module, and repair two real wrapper faults immediately. Both failed attempts
+and completed data remain. The full requested native/SHRED HTTP comparison
+runs while the original captures continue; no polling-only wait is used.
+
+Validity: exact original first32 source reconstruction, matching archive
+provenance, real native and HTTP successes/failures, actual cache events and
+charged preprocessing are established. All opaque env/message differences
+are exposed; verdict agreement does not prove snapshot/API transparency.
+Small preflight costs are not turned into whole-population ratios.
+Old/missing pure-LP phases and historical2234.69s are not reconstructed.
+
+Maintenance: fresh output arguments prevent overwriting evidence. Only
+closed raw text is losslessly archived, no active data/author file is moved.
+Executed code snapshots distinguish prior loaded source from later generic
+SDK/context support. Paper insertion compiles and actual page15is inspected.
+Self-audit only; all remaining novelty/memory/full-population/RQ obligations
+stay open, and no Agent, extra checkout or scheduler is used.

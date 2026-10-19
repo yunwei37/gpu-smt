@@ -5402,3 +5402,55 @@ one substring observer false match is retained/excluded. Fully closed raw
 text is losslessly archived. The complete original1000 default-tiered/Power
 pair actually starts as PID581754, same8sources/fourCPU16–19/48GiB.
 No small-cohort ratio is promoted to the full matrix or an RQ answer.
+
+## Default reference closes; official SHRED baseline becomes executable
+
+EXPERIMENT_GATE finishes the complete original1000 default-tiered/Power
+HTTP pair: 1018.229307/492.980567 s whole (2.065455x),1004.574446/
+479.541460 s warm (2.094865x). Both992valid/8Leanerror/0operational,
+all statuses/non-message fields agree;112message-only IDs remain.
+Native24/Power32observed owned descendants join, no survivors. All closed
+raw bytes are losslessly archived and both analyzers work on the archives.
+The slower default-reference ratio does not replace the faster measured
+hybrid headline or pool different CPU epochs. No universal CPU/GPU bound.
+
+The previously unbuilt official SHRED module compiles unchanged against
+the matching retained4.9SDK/Mathlib archive. The original first32 CLI pair
+completes28accepted/fourrejected in each mode, zero timeout/process error,
+fourhits. Reporter metadata then fails because SDK source is an archive,
+not Git. Preserve all native pairs/wire/error; repair only archive metadata
+discovery and re-run the complete first32. Repaired CLI exits0 with same
+outcomes/hits. All32raw replies differ;31env handles differ due event-query
+history. This is verification agreement, not API/state transparency.
+
+Actual HTTP integration initially fails before any native cell because the
+new name http.py shadows stdlib http. Preserve the zero-condition attempt
+and rename to run-kimina.py. No other collector is interrupted. Real HTTP
+qualification then closes miniF2F50 and positive-control ProofNet68:
+28/22 and12/56valid/rejected respectively, exact per-ID verdict agreement,
+no operational failure. Env differences11/16and all messages are exposed.
+Native/SHRED whole-with-preparation8.4322/15.0785s and8.5297/15.2003s:
+roughly7s real preprocessing is charged, so small cohorts are slower.
+Observed HTTP cache hits1/0are not replaced by standalone CLI's4.
+
+The shared capture discovers actual compiler version/native-library receipt
+and supports original stock source contexts including missing-source
+placeholders. Original4.27single-header selection is preserved; active
+loaded code/libraries are not hot-changed. Only necessary test-local input/output selections are added; no persistent
+configuration, resource quota, service, Workspace or Agent is introduced.
+
+The complete user-requested prior-method baseline actually starts PID591788:
+all5952ProofNet then7808miniF2F originals, native→SHRED at8outstanding/
+fourCPU4–7/48GiB,27,520source-runs. All preprocessing, fallback and actual
+retirement remain charged. Complete-cell archival preserves raw bytes and
+limits uncompressed accumulation; active files are untouched. This is a
+required existing-method baseline, not another tuning grid or new cache.
+
+WRITE_GATE updates canonical evidence and adds only the completed default
+reference result to RQ4. Tectonic exits0; actual page15is rendered/visually
+checked. The SHRED pilot is not inserted as final population performance.
+All4RQs/InitialNarrative/Lean+SMT/OSDItarget remain, with systems novelty open.
+REVIEW_GATE is root self-review only; actual source reconstruction, version,
+context preservation, outcomes, env/message differences, clock/resource
+scope, preserved failures, source snapshots and completed retirement checked.
+No independent audit/full writing milestone or acceptance is claimed.

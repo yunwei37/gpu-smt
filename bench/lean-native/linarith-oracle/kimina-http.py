@@ -1,5 +1,5 @@
 """Finite official Kimina HTTP/SDK arithmetic comparison; no upstream patch."""
-import argparse, asyncio, collections, json, os, resource, socket, subprocess, sys, time, traceback, tempfile
+import argparse, asyncio, collections, json, os, re, resource, socket, subprocess, sys, time, traceback, tempfile
 from pathlib import Path
 import psutil
 
@@ -9,6 +9,9 @@ async def cell(args, method, out, items, build):
     out.mkdir(parents=True, exist_ok=False)
     start = time.monotonic_ns()
     before = resource.getrusage(resource.RUSAGE_CHILDREN)
+    version_output = subprocess.check_output([str(Path(build["sdk"])/"bin/lean"), "--version"], text=True)
+    lean_version = "v" + re.search(r"version\s+([^, )]+)", version_output).group(1)
+    native_library = str(build.get("native_library", args.build/"native-load.txt"))
     env = dict(os.environ)
     for key in ["GPU_ARITHMETIC_ORACLE", "GPU_ARITHMETIC_PROFILE", "GPU_ARITHMETIC_BASELINE",
                 "GPU_ARITHMETIC_STRONG_PROFILE", "FARKAS_CORPUS_FILE", "FARKAS_COST_FILE",
@@ -18,20 +21,20 @@ async def cell(args, method, out, items, build):
     env.update(PATH=str(Path(build["sdk"])/"bin")+os.pathsep+env["PATH"],
         LEAN_PATH=build["lean_path"], LEAN_SRC_PATH=build["lean_src_path"],
         LD_LIBRARY_PATH=os.pathsep.join(build["library_paths"]+[env.get("LD_LIBRARY_PATH","")]),
-        LEAN_SERVER_NATIVE_DYNLIB=str(args.build/"native-load.txt"),
+        LEAN_SERVER_NATIVE_DYNLIB=native_library,
         LEAN_SERVER_PROJECT_DIR=build["mathlib"], LEAN_SERVER_REPL_PATH=str(args.repl),
-        LEAN_SERVER_LEAN_VERSION="v4.27.0", LEAN_SERVER_MAX_REPL_MEM="48G",
+        LEAN_SERVER_LEAN_VERSION=lean_version, LEAN_SERVER_MAX_REPL_MEM="48G",
         LEAN_SERVER_HOST="127.0.0.1", FARKAS_NATIVE_BIN=str(args.reference))
     original = "import Mathlib\nimport Aesop\n"
     target = {"stock":"", "native":"GpuArithmetic.IntegerCostControl",
               "power":"GpuArithmetic.IntegerPowerOracle"}[method]
     snippets=[]
     for row in items:
-        code=row["code"]; assert code.startswith(original)
+        code=row["code"]
+        if target: assert code.startswith(original)
         if target: code=original+"import "+target+"\n"+code[len(original):]
         snippets.append(Snippet(id=row["proof_id"],code=code))
-    headers={split_snippet(s.code).header for s in snippets}; assert len(headers)==1
-    header=next(iter(headers))
+    headers=sorted({split_snippet(s.code).header for s in snippets if split_snippet(s.code).header.strip()})
     if method!="stock":
         env.update(FARKAS_EXTERNAL_CPU_HYBRID="1", GPU_ARITHMETIC_STRONG_PROFILE="1",
                    GPU_SMT_NATIVE_OMEGA_CONTROL="1")
@@ -57,7 +60,8 @@ async def cell(args, method, out, items, build):
         native_engine=args.native_engine if method == "native" else None,
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
-        scope="Official Kimina HTTP/SDK replay; same adapted4.27REPL/native closure; CPU-only, root self-review.")
+        lean_version=lean_version, native_library=native_library,
+        scope="Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.")
     try:
         if method=="power":
             socket_dir=tempfile.TemporaryDirectory(prefix="kimina-oracle-")
@@ -93,9 +97,12 @@ async def cell(args, method, out, items, build):
                 end_ns=time.monotonic_ns(),status=response.status_code,
                 request=response.request.content.decode(),body=response.content.decode()))
         client.session.event_hooks={"request":[on_request],"response":[on_response]}
-        warm=await client.check([Snippet(id="warm-"+str(i),code=header+"\n#check Nat")for i in range(8)],
-            timeout=300,batch_size=1,max_workers=8,reuse=True,show_progress=False)
-        if any(x.analyze().status.value!="valid"for x in warm.results): raise RuntimeError("Warm preparation failed")
+        warm_snippets=[Snippet(id="warm-"+str(i),code=header+"\n#check Nat")
+            for i,header in enumerate(header for header in headers for _ in range(8))]
+        if warm_snippets:
+            warm=await client.check(warm_snippets,
+                timeout=300,batch_size=1,max_workers=8,reuse=True,show_progress=False)
+            if any(x.analyze().status.value!="valid"for x in warm.results): raise RuntimeError("Warm preparation failed")
         verify_start=time.monotonic_ns()
         replies=await client.check(snippets,timeout=300,batch_size=1,max_workers=8,reuse=True,show_progress=False)
         verify_end=time.monotonic_ns()
