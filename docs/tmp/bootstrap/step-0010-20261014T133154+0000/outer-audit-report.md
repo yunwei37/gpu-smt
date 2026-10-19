@@ -3533,3 +3533,11 @@ recorded, never promoted as performance. Twenty-four real original sources
 qualify after path repair, not merely process liveness. The completed457pilot
 has one operational-to-rejection change and cannot claim full-outcome parity.
 No body-wall sums become CPU/Amdahl limits. CompiledPDFpage15 actually checked.
+
+
+Retained-state continuation audit: only unfinished cells/datasets appear
+in the finite recovery batch. No healthy writer is duplicated; all original
+writers were gone after OOM. Existing complete cells remain separate and
+no pre/post-OOM wall clocks are concatenated. Publication f6f1a5d is verified
+on origin/main. Follow-up recovery metadata is a separate forward-only
+commit; active raw logs are excluded from staging.

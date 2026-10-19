@@ -44,3 +44,16 @@ native small-batch success after restoration. Preserve48GiB and resource
 failures. Recover one existing capture at a time, keeping within-cell
 resources unchanged, rather than immediately repeating aggregate failure.
 No global scheduler, quota, service or persistent resource mutation.
+
+
+## Actual repaired continuation
+
+Real24-source recovery passes before full work resumes. A finite sequential
+batch first finishes only missing rep3stock/native HTTP cells, then restores
+miniF2F native/SHRED pair, current whole-Goedel matrix, formal miniF2F
+component and older separately-scoped whole-Goedel block. Same original
+within-cell resources, fresh method clocks; no completed ProofNet or valid
+Goedel HTTP cell is repeated. The seven pre-interruption HTTP cells remain
+distinct from new-epoch cells; no uninterrupted final aggregate is asserted.
+Source snapshots and exact commands are published; a process start is not
+an assertion that any pending experiment has completed.

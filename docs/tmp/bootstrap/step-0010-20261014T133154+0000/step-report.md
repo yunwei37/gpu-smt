@@ -5510,3 +5510,13 @@ Tectonic completes main.pdf; actual page15 is rendered and visually inspected,
 with readable two-column new prior-method paragraph and no clipping.
 Cost analyzer exactly reproduces stored5952-source event JSON; Python syntax
 and changed-file whitespace checks pass. All review remains root self-review.
+
+
+Publication receipt: f6f1a5d is pushed to origin/main, preserving the full
+ProofNet pair, diagnostic pilot, invalid startup captures and actual
+recovery. Repaired finite sequential continuation now starts the missing
+rep3HTTP stock/native cells in a fresh output epoch; the old seven closed
+cells are not rerun. Remaining previously-admitted unfinished datasets follow
+one child experiment at a time after actual completion. Within-cell CPU,
+queue width and48GiB remain unchanged. Exact executed snapshots and launch
+receipt are preserved; no completion claim follows from launch.
