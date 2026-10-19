@@ -3630,3 +3630,12 @@ rather than an Agent or new scheduler. Complete existing matrices remain
 the decisive next acquisition. Daily upkeep removes stale status duplication.
 Compilation is skipped because no paper source changed. Unrelated author
 dirty files remain unstaged; only closed/static own artifacts are published.
+
+06:16Z actual forward-progress receipt: previously pending source2518returns
+HTTP200 in54.759256s, preserving Lean rejection messages. Its681-byte body
+is retained as one closed response extracted from the active qualification.
+It is not an accepted proof, a real >64KiB frame, a corpus speed result or
+completion of both54-source methods. Large-frame qualification is still
+the separate200050-byte protocol check. No broad causal or parity claim is
+inferred. Temporary py-spy installation is removed after stack preservation;
+the application venv has no added diagnostic dependency.

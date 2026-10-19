@@ -62,3 +62,12 @@ reported separately. The full pair, not this selected cohort, determines
 RQ3 performance/applicability. All four RQs, the original CPU/GPU criterion,
 GPU/Amdahl limitations and systems novelty remain unchanged.
 Reviews are root self-review under the user's explicit single-thread rule.
+
+Actual native qualification checkpoint06:16Z: the previously pending
+source2518returns HTTP200 after54.759256s, with its original Lean rejection
+messages (not a completed proof). The681-byte response is retained in
+[source2518-returned-http.json.gz](source2518-returned-http.json.gz) with its
+[receipt](source2518-return-receipt.json). This single completed response
+demonstrates actual forward progress past that pending source; it does not
+prove a large real reply was exercised or complete the54-source paired check.
+The200050-byte framing claim remains the separate protocol test only.

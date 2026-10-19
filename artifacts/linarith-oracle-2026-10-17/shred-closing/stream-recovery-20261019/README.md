@@ -33,3 +33,12 @@ Workspace. It writes a fresh real-preflight directory and refuses overwrites.
 Its terminal files, rather than a live PID or this README, establish completion.
 The frozen executed snapshots and original sources make the declared mutation
 reviewable; no dependency installer, persistent helper or new service is added.
+
+Actual native qualification checkpoint06:16Z: the previously pending
+source2518returns HTTP200 after54.759256s, with its original Lean rejection
+messages (not a completed proof). The681-byte response is retained in
+[source2518-returned-http.json.gz](source2518-returned-http.json.gz) with its
+[receipt](source2518-return-receipt.json). This single completed response
+demonstrates actual forward progress past that pending source; it does not
+prove a large real reply was exercised or complete the54-source paired check.
+The200050-byte framing claim remains the separate protocol test only.

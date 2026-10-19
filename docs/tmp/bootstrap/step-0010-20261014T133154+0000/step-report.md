@@ -5658,3 +5658,12 @@ baseline epoch. The dependency repair has zero independent research value.
 All four RQs, CPU/GPU criterion and missing systems novelty remain open.
 Next action remains EXPERIMENT_GATE complete actual requested populations,
 not a new kernel/parameter grid, cache claim or documentation substitute.
+
+06:16Z actual forward-progress receipt: previously pending source2518returns
+HTTP200 in54.759256s, preserving Lean rejection messages. Its681-byte body
+is retained as one closed response extracted from the active qualification.
+It is not an accepted proof, a real >64KiB frame, a corpus speed result or
+completion of both54-source methods. Large-frame qualification is still
+the separate200050-byte protocol check. No broad causal or parity claim is
+inferred. Temporary py-spy installation is removed after stack preservation;
+the application venv has no added diagnostic dependency.
