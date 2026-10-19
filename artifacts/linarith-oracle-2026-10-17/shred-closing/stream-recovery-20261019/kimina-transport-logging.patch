@@ -1,0 +1,69 @@
+--- a/server/repl.py
++++ b/server/repl.py
+@@ -76,6 +76,7 @@
+ 
+         self.proc: Process | None = None
+         self.error_file = tempfile.TemporaryFile("w+")
++        self._stdout_pending = b""
+         self.max_memory_bytes = max_repl_mem * 1024 * 1024
+         self.max_repl_uses = max_repl_uses
+ 
+@@ -328,13 +329,28 @@
+             raise ReplError("REPL process not started or stdout pipe not initialized")
+ 
+         lines: list[bytes] = []
++        pending = bytearray(self._stdout_pending)
++        self._stdout_pending = b""
++        scanned = 0
+         try:
+             while True:
+-                chunk = await self.proc.stdout.readline()
+-                # EOF or blank line as terminator
+-                if not chunk or not chunk.strip():
++                end = pending.find(b"\n", scanned)
++                if end < 0:
++                    scanned = len(pending)
++                    chunk = await self.proc.stdout.read(64 * 1024)
++                    if not chunk:
++                        if pending.strip():
++                            lines.append(bytes(pending))
++                        break
++                    pending.extend(chunk)
++                    continue
++                line = bytes(pending[: end + 1])
++                del pending[: end + 1]
++                scanned = 0
++                if not line.strip():
++                    self._stdout_pending = bytes(pending)
+                     break
+-                lines.append(chunk)
++                lines.append(line)
+         except Exception as e:
+             logger.error("Failed to read from REPL stdout: %s", e)
+             raise LeanError("Failed to read from REPL stdout")
+--- a/server/logger.py
++++ b/server/logger.py
+@@ -4,6 +4,7 @@
+ from loguru import logger
+ from rich.console import Console
+ from rich.logging import RichHandler
++from rich.highlighter import NullHighlighter
+ from rich.traceback import install
+ 
+ from .settings import Environment, settings
+@@ -28,6 +29,7 @@
+                     markup=True,
+                     show_level=True,
+                     rich_tracebacks=True,
++                    highlighter=NullHighlighter(),
+                 ),
+                 colorize=True,
+                 level=settings.log_level,
+@@ -43,6 +45,7 @@
+                 markup=True,
+                 show_level=True,
+                 rich_tracebacks=True,
++                highlighter=NullHighlighter(),
+             ),
+             colorize=True,
+             level=settings.log_level,

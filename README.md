@@ -61,21 +61,15 @@ This modest transfer uses overlapping miniF2F tasks and an adapted Lean 4.27
 default-exact reference; it is neither a new theorem domain nor a GPU gain.
 [All three pairs, returned records and latency distributions](artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md).
 
-The original Goedel cohort's separate official HTTP comparison has closed
-its first stock/native/Power block: 2888.76/857.11/534.48 seconds, respectively.
-Power is 1.60363× faster than the strong native reference in that block.
-The original three-block matrix continues; this is not its final aggregate.
-[Scoped checkpoint and raw data](artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md).
-
 A separate complete default-tiered/Power control on the same 1,000 inputs
 takes **1018.23/492.98 s**. Its 2.06546× ratio is against a slower measured
 reference and does not replace the faster hybrid comparison above.
 [Complete default-engine control](artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md).
 
-The existing SHRED closing-certificate executor now has real native and
-HTTP qualifications. Its complete formal-population service comparison is
-running; early cache hits are not a new system contribution or a full speed
-result. [Baseline source, failures and scope](artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
+The existing SHRED closing-certificate executor has a completed ProofNet
+service comparison; the miniF2F pair remains incomplete. Its outcomes and
+limitations are reported below.
+[Baseline source, failures and scope](artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
 
 ## Complete workloads and scope
 
@@ -172,6 +166,12 @@ sources, the same four CPUs and 48 GiB per process; original partial data
 remain, and these new clocks stay separate from the eight-source point.
 [Failure evidence and recovery plan](artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/plan.md).
 Completed ProofNet is not rerun.
+The subsequent two-source capture also encounters a service logging stall
+and the default asyncio read-line limit. A declared Kimina transport/logging
+patch preserves response framing and disables heuristic regex highlighting.
+Fresh qualification and captures use that same patch in both arms; they
+remain separate from prior unchanged-application measurements.
+[Fault evidence, exact patch and ongoing real-source qualification](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md).
 
 Warm REPLs, caches, snapshots, native compilation, batched LPs and external
 certificate oracles are established techniques. They are not individual

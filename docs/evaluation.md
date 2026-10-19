@@ -107,7 +107,7 @@ The repaired first64preflight closes stock216.998s/native82.459s/Power40.417s
 complete lifecycles, each63valid/1Leanerror with matching status/non-message
 responses. Two failed dependency attempts remain; Power's valid run replaces
 only its zero-input startup failure. This is one selected preflight, not a
-population result. It admits the now-running3rotated1000source blocks.
+population result. The completed3rotated1000source blocks are reported below.
 [Preflight and repair scopes](../artifacts/linarith-oracle-2026-10-17/kimina-http/preflight-result-review.md).
 This is not a new prepared-state mechanism or a GPU result.
 
@@ -218,6 +218,26 @@ same. Only the finite capture's request/warm width changes; default width
 eight and all server/host settings remain. Matched real-source preflight
 precedes the full 7,808-source pair. Full results remain pending.
 The infrastructure incident is recorded in server-manage commit03bd8433.
+
+
+The subsequent two-source service capture is interrupted by an observed
+Rich regex-highlighting stall on the Python event-loop thread, not another
+inferred global OOM. Its raw log separately records214LimitOverrunError
+occurrences from default asyncio.readline limits. The
+[declared transport/logging repair](../artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md)
+changes only long-line framing and heuristic highlighting in the retained
+Kimina application. Exact before/after sources, patch, license, real stack,
+retired owner processes and closed partial bytes remain. The protocol test
+preserves a200050-byte reply and following frames at the unchanged64KiB
+default limit; that is dependency qualification, not a verification speedup.
+Actual54-source native/SHRED qualification includes previous HTTP failures
+and source2518. At this checkpoint it has no completed paired terminal:
+two heavy sources still produce HTTP500/empty native responses and retries,
+with cause unassigned. These are not quietly relabeled Lean rejections.
+Fresh full captures must declare the same repaired application in both arms;
+old and new application epochs are not pooled. The finite continuation joins
+the existing qualification through pidfd, without goal polling or duplicate
+acquisition; only actual qualified outputs admit the full pair.
 
 ## Prefix/preparation evidence and previous controls
 

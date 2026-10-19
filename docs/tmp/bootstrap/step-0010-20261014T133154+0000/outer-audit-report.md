@@ -3606,3 +3606,27 @@ unanswered/non200attempt. The two-source field is thus observed as well
 as declared. Six non-message/30raw response differences are retained;
 native verification outcome IDs match. Kernel summedRSS is not PSS or
 unique physical memory; globalOOM and exact victimgroup are actual.
+
+## 2026-10-19 service repair — root self-audit
+
+Direction: original four RQs and Lean-first/SMT/5090/system objective remain.
+A dependency failure is not a scientific negative, GPU impossibility or
+novelty claim. No independent reviewer is used under explicit user rules.
+
+Validity: a real repeated stack proves event-loop regex work; old log proves
+the separate asyncio long-line fault. The patch is reviewed directly against
+retained before bytes; exact following frames survive, logs retain content.
+Actual54source qualification remains incomplete at this checkpoint, with
+HTTP500 failures retained and cause unassigned. No selected-clock promotion,
+response-transparency claim or whole-population completion is made.
+Both future methods receive the same declared application patch. Historical
+unchanged-application cells remain separate and original raw bytes survive.
+No process launch is accepted as completion.
+
+Efficiency: terminate a confirmed stalled owner only; no OOM retry at the
+known eight-source point, no duplicate healthy capture, no goal-wait loop.
+One finite pidfd join continues the admitted comparison after qualification,
+rather than an Agent or new scheduler. Complete existing matrices remain
+the decisive next acquisition. Daily upkeep removes stale status duplication.
+Compilation is skipped because no paper source changed. Unrelated author
+dirty files remain unstaged; only closed/static own artifacts are published.

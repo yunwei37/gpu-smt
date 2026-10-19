@@ -1,0 +1,93 @@
+[
+  {
+    "pid": 5186,
+    "birth": 1792382061.89,
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-u",
+      "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/recovery-executed.py"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 5243,
+    "birth": 1792382095.11,
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-u",
+      "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/run-kimina.py",
+      "--datasets",
+      "minif2f",
+      "--concurrency",
+      "2",
+      "--out",
+      "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/full-population",
+      "--full"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 5246,
+    "birth": 1792382095.47,
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-m",
+      "server"
+    ],
+    "status": "running"
+  },
+  {
+    "pid": 5614,
+    "birth": 1792383333.37,
+    "command": [
+      "lake",
+      "env",
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 6269,
+    "birth": 1792388702.14,
+    "command": [
+      "lake",
+      "env",
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 6290,
+    "birth": 1792388887.63,
+    "command": [
+      "lake",
+      "env",
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 6291,
+    "birth": 1792388887.77,
+    "command": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 6270,
+    "birth": 1792388702.28,
+    "command": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  },
+  {
+    "pid": 5615,
+    "birth": 1792383333.5,
+    "command": [
+      "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+    ],
+    "status": "sleeping"
+  }
+]

@@ -5616,3 +5616,45 @@ message differences remain exposed. Syntax and changed canonical-link checks
 run; default8remains source-compatible. No new full performance data yet.
 The current paper's incomplete-miniF2F statement remains true; no result slot,
 RQ, narrative or numerical conclusion is changed by this dependency repair.
+
+## 2026-10-19T05:54Z heartbeat — service framing/logging fault and declared repair
+
+EXPERIMENT_GATE resumes the supporting RQ3 full miniF2F baseline. First live
+check finds an actual stall, not unchanged healthy progress: Lean children
+wait for input while two read-only host stack samples put the active GIL
+thread in Rich.highlight_regex through response logging before REPL release.
+The same closed log has214LimitOverrunError occurrences. The exact unhealthy
+owner tree (nine PID/birth/commands) is stopped; zero survivors recorded.
+No healthy unrelated collector, Workspace or service is interrupted.
+All partial HTTP/server bytes are losslessly compressed and preserved.
+
+The dependency repair preserves message content and native computation:
+Rich NullHighlighter replaces only heuristic regex highlighting; stdout
+chunk framing preserves >64KiB lines, subsequent coalesced frames and EOF.
+The default StreamReader65536 limit remains. Actual protocol test preserves
+200050reply bytes and all following frames. Before/executed sources, exact
+patch, archive pin, package versions and upstreamMITlicense are retained.
+This is a new declared application epoch, not unchanged upstream performance.
+
+The54-source real native/SHRED qualification includes first32/allNone,
+three earlier HTTP-failure IDs and actual stalled2518. Existing300s/retries,
+two sources/fourCPU4–7/48GiB remain. It is active, with earlier-failing
+heavy579/663 still returningHTTP500/empty native replies; resource cause is
+not assigned without evidence. Full outcomes and retirement must be consumed,
+not assumed from the protocol check. One finite ordinary continuation joins
+the already-running qualification usingpidfd (no minute polling), then runs
+the existing whole7808pair and unfinished CPU matrices sequentially only if
+the actual qualifier closes and source2518returns. No Agent/scheduler starts.
+
+WRITE_GATE performs targeted factual README/evaluation/daily maintenance.
+It removes stale first-block/running statements and distinguishes completed
+ProofNet from incomplete miniF2F and the repaired-application epoch.
+Paper result slots/RQs/InitialNarrative remain unchanged; paper compilation
+is not rerun for unchanged LaTeX. No full writing or milestone is claimed.
+
+REVIEW_GATE root self-review only: exact fault stacks/partial bytes, patch
+framing semantics, unchanged per-process/resource protocol and faithful
+baseline epoch. The dependency repair has zero independent research value.
+All four RQs, CPU/GPU criterion and missing systems novelty remain open.
+Next action remains EXPERIMENT_GATE complete actual requested populations,
+not a new kernel/parameter grid, cache claim or documentation substitute.

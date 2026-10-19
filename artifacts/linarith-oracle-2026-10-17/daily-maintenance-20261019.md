@@ -57,3 +57,20 @@ actual source path and outcomes, then finish the full original pair. Do
 not convert this capacity failure into a generic cache/GPU impossibility
 claim or invent a persistent scheduler. README/evaluation now point to the
 actual failure/repair instead of stale healthy-writer statements.
+
+06:15Z upkeep removes the obsolete first-block/ongoing-Goedel statements
+from README and points to completed nine-cell data. SHRED status now separates
+completed ProofNet from incomplete miniF2F, and names the new declared
+application patch instead of implying unchanged upstream code.
+
+Substantive-progress reflection: another report or kernel variant cannot
+answer the open systems questions. The current runnable bottleneck is an
+actual upstream service stall: asynchronous request timeouts cannot progress
+while synchronous regex formatting owns the event loop. Repair that measured
+failure and long-line framing, retain the selected diagnostic's resource/
+operational failures, and finish the already admitted standard-workload
+comparisons. The54-source check has zero independent research value; its
+purpose is to unblock complete equal-resource evidence. No stronger novelty
+claim follows. A finite existing-work sequence joins the actual qualification
+without polling and continues only after real terminal/retirement records;
+the root thread retains all scientific and implementation responsibility.
