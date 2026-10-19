@@ -1,0 +1,29 @@
+{
+  "pid": 5117,
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/run-power.py",
+    "--out",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/workspace-interruption-20261019/repair-preflight24",
+    "--input",
+    "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/input.jsonl",
+    "--limit",
+    "24",
+    "--width",
+    "8",
+    "--affinity",
+    "8",
+    "9",
+    "10",
+    "11",
+    "--sample-seconds",
+    "0",
+    "--native-buckets",
+    "--repl",
+    "/tmp/gpu-smt-goedel427-20261014/repl-bucket-candidate-timing/.lake/build/bin/repl",
+    "--methods",
+    "fast-hybrid",
+    "oracle-highs"
+  ],
+  "utc": "2026-10-19T01:50:25.950282+00:00"
+}

@@ -149,6 +149,17 @@ native outcomes and resource failures differ.
 This is a source-native executor using SHRED's parser, not a complete upstream
 SHRED/Kimina service comparison.
 
+The complete as-integrated SHRED/Kimina HTTP ProofNet comparison now covers
+all **5,952 originals**. Native takes **356.37 s**, SHRED **373.22 s** including
+preparation, **4.73% more elapsed time** in one shared-host fixed-order pair.
+Both have 413 genuine completions, but twenty native rejections become
+sorry-bearing incomplete responses with cache-hit messages. SDK valid counts
+417/437 therefore are not verified-proof counts. This is no matched transparent
+speedup and no whole-family impossibility result.
+[Full raw comparison, costs and self-review](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
+The miniF2F pair requires fresh outputs after Workspace container interruptions;
+original partial data remain. Completed ProofNet is not rerun.
+
 Warm REPLs, caches, snapshots, native compilation, batched LPs and external
 certificate oracles are established techniques. They are not individual
 novelty claims here. Known failures, earlier clocks and closed constructors

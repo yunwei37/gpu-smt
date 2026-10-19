@@ -5462,3 +5462,51 @@ sorry-bearing responses; derived native outcomes are413complete/5534reject/
 of silently treating SDKvalid as complete. Source5879has three actualHTTP500
 JSON-decode failures, not proven memory exhaustion. All raw attempts remain.
 Cached capture continues; no partial ratio or old-epoch speed claim follows.
+
+
+## 2026-10-19 — complete SHRED ProofNet control and actual interruption recovery
+
+EXPERIMENT_GATE retains original four RQs and user continuation/GPU rules.
+The prior-method pair closes11,904source-runs, native356.367363s versus
+SHRED373.219730s,4.7289%more elapsed,413same genuinely complete IDs.
+Twenty rejected-to-incomplete cache-hit responses remain exposed.
+The new cache-cost analyzer retains all-event and complete-source views;
+overlapping wall, hash equality and missing failures are not a new bound.
+No crossworker cache is admitted from counts. Existing-error-at-entry is
+a narrow real preflight, not asserted novelty or restored E038 tuning.
+
+A real exec502 reveals replacement of the owning Pod; all old collectors
+are gone, PVC/data survive, node/SSH/k3s/GPU are healthy without host reboot.
+Restore only lost temporary dependency aliases; preserve all interrupted
+partial bytes and complete cells. Restart miniF2F pair with fresh full
+clocks, not completed ProofNet. Error-work control starts once, not twice.
+Recovery provenance and lossless dead-writer archival remain in artifacts.
+
+WRITE_GATE inserts only completed prior-method data/limitations into paper
+and canonical README/evaluation. No title, RQ, Initial Narrative or systems
+scope changes. REVIEW_GATE self-audit checks actual raw source outcomes,
+whole preparation/retirement clocks, failed HTTP attempts, cache-cost
+limitations and interruption boundaries. This is root self-review only.
+Remaining RQ/generalization/novelty promises and hourly task stay open.
+
+
+Follow-up actual boundaries: replacement container is itself OOMKilled
+at01:20:25Z. All resumed collectors disappear; no aggregate48GiB guarantee
+was implied. Goedel restored matrices also expose missing Farkas alias and
+all-operational startup records, invalid for performance despite terminal
+accounting complete. Restore the retained alias and actually qualify first24
+original sources in both methods,22complete/2same rejects with non-message
+parity. All failure epochs stay preserved. Recovery now resumes existing
+unfinished methods one at a time, preserving within-cell CPU/width/48GiB.
+
+The457-source error-work pilot completes before the second interruption:
+119.999495/63.221143s charged native/guard,413samecomplete and4sameincomplete.
+Eleven actual prior-error skips are observed; source5879changes operational
+to rejected. Not full native outcome parity, representative population speed,
+GPU gain or a new contribution. The pilot engages, but full expansion follows
+completion of existing source-service comparisons; no extra tuning grid.
+
+Tectonic completes main.pdf; actual page15 is rendered and visually inspected,
+with readable two-column new prior-method paragraph and no clipping.
+Cost analyzer exactly reproduces stored5952-source event JSON; Python syntax
+and changed-file whitespace checks pass. All review remains root self-review.

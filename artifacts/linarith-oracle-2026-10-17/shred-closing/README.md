@@ -58,3 +58,13 @@ archival support; its exact source file was not separately snapshotted.
 Its actual commands, all original requests/replies and resource receipts
 are preserved. Current preflight mode retains the same positive-control
 selection and upstream wrapper semantics.
+
+## Complete ProofNet result
+
+The [full 5,952-source HTTP pair](proofnet-full-result-review.md) is closed:
+native356.37s, SHRED373.22s,4.73% more elapsed in this observation.
+Both genuinely complete413sources. SHRED changes20rejections to sorry-bearing
+incomplete outcomes; SDKvalid must not be counted as verified proofs.
+[All outcomes](proofnet-full-comparison.json) and
+[cost-weighted events](proofnet-cache-costs.json) preserve every failure.
+The full miniF2F comparison continues; there is no whole-family gain claim.

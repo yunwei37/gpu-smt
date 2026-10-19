@@ -1,0 +1,35 @@
+{
+  "method": "oracle-highs",
+  "rep": 1,
+  "state": "complete",
+  "expected": 24,
+  "attempts": 24,
+  "counts": {
+    "complete": 22,
+    "rejected": 2
+  },
+  "whole_ns": 12624030467,
+  "cpu": {
+    "collector": {
+      "user": 0.00867299999999993,
+      "system": 0.010915000000000008
+    },
+    "waited_children": {
+      "user": 20.295802000000002,
+      "system": 1.8513329999999995
+    }
+  },
+  "sampled_peak_fleet_pss_with_collector": null,
+  "sampled_peak_fleet_rss_with_collector": null,
+  "sampling_read_errors": null,
+  "workers": 1,
+  "resource_observer_enabled": false,
+  "sampling_seconds": 0.0,
+  "effective_RLIMIT_AS": 51539607552,
+  "width": 8,
+  "normalization": "none; preserve complete parsed native JSON values",
+  "scope": "one original-order offline native-batch grouped-array observation; corpus 24 of 24 candidates",
+  "collector_whole_ns": 12401279646,
+  "backend_setup_cleanup_ns": 222750821,
+  "gpu_target_boundary": "CPU HiGHS numeric support; per-cell proxy setup/retirement included; no GPU server or GPU work."
+}

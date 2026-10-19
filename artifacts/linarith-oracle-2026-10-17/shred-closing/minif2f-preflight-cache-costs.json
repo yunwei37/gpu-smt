@@ -1,0 +1,735 @@
+{
+  "scope": "All observed event wall timers, not CPU. Failed/thrown generators without terminal events are unmeasured. Hash grouping is a hypothetical bucket relaxation, not structural-key/proof compatibility, scheduling gain or a whole-wall/GPU Amdahl bound. Rejected/incomplete captures remain exposed. Root self-review.",
+  "sources": 50,
+  "event_counts": {
+    "miss": 25,
+    "capture": 24,
+    "hit": 1
+  },
+  "hit_outcomes": {
+    "complete": 1
+  },
+  "observed_wall_timer_sums_seconds": {
+    "key_ns": 0.017143575,
+    "lookup_ns": 0.008870117,
+    "generator_ns": 0.866855584,
+    "capture_ns": 0.005191371,
+    "application_ns": 0.000197697
+  },
+  "captures_from_noncomplete_sources": 0,
+  "all_captures": {
+    "capture_occurrences": 24,
+    "distinct_hash_buckets": 21,
+    "repeated_capture_hash_buckets": 1,
+    "repeated_capture_occurrences": 4,
+    "hash_relaxed_redundant_generator_wall_seconds": 0.24507399500000002,
+    "largest_repeated_buckets": [
+      {
+        "key": "10349177133937177840",
+        "captured_generator_wall_seconds_sum": 0.310590613,
+        "captures": [
+          {
+            "proof_id": "minif2f-7",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.065516618,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-18",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.07396016,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-19",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.098847663,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-31",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.072266172,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          }
+        ]
+      }
+    ]
+  },
+  "both_sources_complete_captures": {
+    "capture_occurrences": 24,
+    "distinct_hash_buckets": 21,
+    "repeated_capture_hash_buckets": 1,
+    "repeated_capture_occurrences": 4,
+    "hash_relaxed_redundant_generator_wall_seconds": 0.24507399500000002,
+    "largest_repeated_buckets": [
+      {
+        "key": "10349177133937177840",
+        "captured_generator_wall_seconds_sum": 0.310590613,
+        "captures": [
+          {
+            "proof_id": "minif2f-7",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.065516618,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-18",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.07396016,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-19",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.098847663,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          },
+          {
+            "proof_id": "minif2f-31",
+            "key": 10349177133937177840,
+            "generator_seconds": 0.072266172,
+            "native_outcome": "complete",
+            "cached_outcome": "complete"
+          }
+        ]
+      }
+    ]
+  },
+  "all_source_events": [
+    {
+      "proof_id": "minif2f-0",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 2650472464886872388,
+          "key_ns": 626205,
+          "lookup_ns": 177902
+        },
+        {
+          "event": "capture",
+          "key": 2650472464886872388,
+          "generator_ns": 8788526,
+          "capture_ns": 168212
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-1",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 3561333967155607221,
+          "key_ns": 593363,
+          "lookup_ns": 176644
+        },
+        {
+          "event": "capture",
+          "key": 3561333967155607221,
+          "generator_ns": 8653929,
+          "capture_ns": 157167
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-2",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 1800297964836884617,
+          "key_ns": 622838,
+          "lookup_ns": 181529
+        },
+        {
+          "event": "capture",
+          "key": 1800297964836884617,
+          "generator_ns": 7757625,
+          "capture_ns": 183762
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-3",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 3727387007817903534,
+          "key_ns": 563413,
+          "lookup_ns": 174577
+        },
+        {
+          "event": "capture",
+          "key": 3727387007817903534,
+          "generator_ns": 54807183,
+          "capture_ns": 327064
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-4",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": [
+        {
+          "event": "miss",
+          "key": 16018719552922165308,
+          "key_ns": 590655,
+          "lookup_ns": 4239953
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-6",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 5405161699557227293,
+          "key_ns": 533415,
+          "lookup_ns": 174889
+        },
+        {
+          "event": "capture",
+          "key": 5405161699557227293,
+          "generator_ns": 51329314,
+          "capture_ns": 329765
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-7",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10349177133937177840,
+          "key_ns": 522146,
+          "lookup_ns": 169009
+        },
+        {
+          "event": "capture",
+          "key": 10349177133937177840,
+          "generator_ns": 65516618,
+          "capture_ns": 278783
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-8",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 5082274042250663974,
+          "key_ns": 486034,
+          "lookup_ns": 178112
+        },
+        {
+          "event": "capture",
+          "key": 5082274042250663974,
+          "generator_ns": 55551636,
+          "capture_ns": 283140
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-9",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 2364262646529786816,
+          "key_ns": 507207,
+          "lookup_ns": 183685
+        },
+        {
+          "event": "capture",
+          "key": 2364262646529786816,
+          "generator_ns": 7091846,
+          "capture_ns": 176852
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-10",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-11",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-12",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 15531142456855751849,
+          "key_ns": 546197,
+          "lookup_ns": 181436
+        },
+        {
+          "event": "capture",
+          "key": 15531142456855751849,
+          "generator_ns": 34958944,
+          "capture_ns": 183683
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-13",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-14",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 4778654762287664674,
+          "key_ns": 439128,
+          "lookup_ns": 171102
+        },
+        {
+          "event": "capture",
+          "key": 4778654762287664674,
+          "generator_ns": 37267527,
+          "capture_ns": 163957
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-15",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10757944522819665554,
+          "key_ns": 602638,
+          "lookup_ns": 195235
+        },
+        {
+          "event": "capture",
+          "key": 10757944522819665554,
+          "generator_ns": 16991605,
+          "capture_ns": 148576
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-16",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 12958993400754375591,
+          "key_ns": 3403195,
+          "lookup_ns": 199762
+        },
+        {
+          "event": "capture",
+          "key": 12958993400754375591,
+          "generator_ns": 12855942,
+          "capture_ns": 195785
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-17",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10955370663367223385,
+          "key_ns": 556711,
+          "lookup_ns": 172996
+        },
+        {
+          "event": "capture",
+          "key": 10955370663367223385,
+          "generator_ns": 89591218,
+          "capture_ns": 240035
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-18",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10349177133937177840,
+          "key_ns": 485660,
+          "lookup_ns": 172953
+        },
+        {
+          "event": "capture",
+          "key": 10349177133937177840,
+          "generator_ns": 73960160,
+          "capture_ns": 280118
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-19",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10349177133937177840,
+          "key_ns": 510596,
+          "lookup_ns": 171056
+        },
+        {
+          "event": "capture",
+          "key": 10349177133937177840,
+          "generator_ns": 98847663,
+          "capture_ns": 284619
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-20",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 9093513593005138647,
+          "key_ns": 564448,
+          "lookup_ns": 176839
+        },
+        {
+          "event": "capture",
+          "key": 9093513593005138647,
+          "generator_ns": 54445873,
+          "capture_ns": 261967
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-21",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 772295517476947157,
+          "key_ns": 550988,
+          "lookup_ns": 177007
+        },
+        {
+          "event": "capture",
+          "key": 772295517476947157,
+          "generator_ns": 9712055,
+          "capture_ns": 170698
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-22",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-23",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 2928678254873445816,
+          "key_ns": 555328,
+          "lookup_ns": 171456
+        },
+        {
+          "event": "capture",
+          "key": 2928678254873445816,
+          "generator_ns": 8686568,
+          "capture_ns": 165544
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-24",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 17573316369659816438,
+          "key_ns": 547358,
+          "lookup_ns": 198375
+        },
+        {
+          "event": "capture",
+          "key": 17573316369659816438,
+          "generator_ns": 8327961,
+          "capture_ns": 161184
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-25",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "hit",
+          "key": 10349177133937177840,
+          "key_ns": 501165,
+          "lookup_ns": 145915,
+          "application_ns": 197697
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-26",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10388998216025173447,
+          "key_ns": 559119,
+          "lookup_ns": 193133
+        },
+        {
+          "event": "capture",
+          "key": 10388998216025173447,
+          "generator_ns": 8478455,
+          "capture_ns": 162084
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-27",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 8835492921675901816,
+          "key_ns": 441610,
+          "lookup_ns": 162110
+        },
+        {
+          "event": "capture",
+          "key": 8835492921675901816,
+          "generator_ns": 8771980,
+          "capture_ns": 190237
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-28",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-29",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 1903702889491307323,
+          "key_ns": 540232,
+          "lookup_ns": 184519
+        },
+        {
+          "event": "capture",
+          "key": 1903702889491307323,
+          "generator_ns": 33111878,
+          "capture_ns": 209144
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-30",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 11280753462150702049,
+          "key_ns": 679168,
+          "lookup_ns": 181169
+        },
+        {
+          "event": "capture",
+          "key": 11280753462150702049,
+          "generator_ns": 39084906,
+          "capture_ns": 184328
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-31",
+      "native_outcome": "complete",
+      "cached_outcome": "complete",
+      "events": [
+        {
+          "event": "miss",
+          "key": 10349177133937177840,
+          "key_ns": 614758,
+          "lookup_ns": 358754
+        },
+        {
+          "event": "capture",
+          "key": 10349177133937177840,
+          "generator_ns": 72266172,
+          "capture_ns": 284667
+        }
+      ]
+    },
+    {
+      "proof_id": "minif2f-723",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-1434",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-1877",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-2120",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-2135",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-3641",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-3643",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-3832",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-4114",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-4758",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-4969",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-4975",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5794",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5800",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5814",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5818",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-5821",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    },
+    {
+      "proof_id": "minif2f-7206",
+      "native_outcome": "rejected",
+      "cached_outcome": "rejected",
+      "events": []
+    }
+  ]
+}

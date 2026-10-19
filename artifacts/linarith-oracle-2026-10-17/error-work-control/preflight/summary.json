@@ -1,0 +1,39 @@
+{
+  "sources": 457,
+  "coverage": {
+    "True": 407,
+    "False": 50
+  },
+  "native_outcomes": {
+    "rejected": 39,
+    "complete": 413,
+    "incomplete": 4,
+    "operational": 1
+  },
+  "guard_outcomes": {
+    "rejected": 40,
+    "complete": 413,
+    "incomplete": 4
+  },
+  "skipped_sources": 11,
+  "outcome_changes": [
+    {
+      "proof_id": "proofnet-5879",
+      "native_outcome": "operational",
+      "guard_outcome": "rejected",
+      "SDK_body_seconds": {
+        "native": 0.0,
+        "guard": 1.828728
+      },
+      "guard_messages": [
+        "ERROR_WORK_CONTROL prior_errors=true skipped=true elapsed_ns=56646"
+      ],
+      "skipped": true
+    }
+  ],
+  "whole_seconds": {
+    "native": 119.999494802,
+    "guard": 63.221143044
+  },
+  "scope": "457-source diagnostic, one fixed-order epoch before OOMKilled; complete method retirement. Operational outcome differs on one source. Not population performance, strict full-response transparency, a GPU result or novelty."
+}

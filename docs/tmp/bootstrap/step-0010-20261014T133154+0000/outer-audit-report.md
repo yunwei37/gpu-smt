@@ -3506,3 +3506,30 @@ Executed code snapshots distinguish prior loaded source from later generic
 SDK/context support. Paper insertion compiles and actual page15is inspected.
 Self-audit only; all remaining novelty/memory/full-population/RQ obligations
 stay open, and no Agent, extra checkout or scheduler is used.
+
+
+## 2026-10-19 — complete prior-method control and recovery self-audit
+
+Direction unchanged: negative as-integrated SHRED ProofNet data constrain
+baseline claims, not the OSDI systems objective or GPU feasibility.
+SDK valid is not silently treated as complete; all twenty changed outcomes,
+one shared operational ID and opaque reply differences remain visible.
+Counts/cumulative wall/hashes are not converted to an Amdahl bound.
+
+Efficiency: analyze one newly closed full pair, do not poll or rerun it.
+A meaningful Pod replacement is repaired through existing Workspace paths;
+lost aliases are restored, original partial cells retained, fresh clocks
+separate. No host reboot/configuration/new entity/agent is introduced.
+The diagnostic checks whether expensive failed work was already doomed;
+ultimately failing sources alone do not prove that ordering.
+
+Maintenance: canonical result and raw reproduction links updated. This is
+self-audit, with no independent reviewer or full-paper milestone claimed.
+
+
+Correction to live-state interpretation: first recovery is not delivery.
+A second actualOOMKilled and an independent missingFarkasheader fault are
+recorded, never promoted as performance. Twenty-four real original sources
+qualify after path repair, not merely process liveness. The completed457pilot
+has one operational-to-rejection change and cannot claim full-outcome parity.
+No body-wall sums become CPU/Amdahl limits. CompiledPDFpage15 actually checked.

@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open requirements
 
-Updated2026-10-18. BOOTSTRAP remains unfrozen. All four RQs and the
+Updated2026-10-19. BOOTSTRAP remains unfrozen. All four RQs and the
 Lean-first/SMT/RTX5090/OSDI-quality objective remain open. Source/code
 qualification and publication are not new scientific contributions or
 submission readiness.
@@ -154,10 +154,42 @@ The matched service integration additionally preserves all statuses on
 miniF2F50 and a positive-control ProofNet68 cohort. These are functional
 subsets; opaque env handles/cache messages differ. Native parsing costs
 roughly7s and makes SHRED slower in those tiny batches when charged.
-The complete requested native/SHRED official-HTTP baseline is now acquiring
-all5952 ProofNet and7808 miniF2F originals, including charged preprocessing,
-unsupported fallback and retirement. No full speed or new contribution is
-inferred from hit counts or standalone CLI source sums.
+The [complete ProofNet official-HTTP pair](../artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md)
+returns all5952originals in each method: native356.367363s, SHRED373.219730s,
+including preprocessing and retirement,4.7289%more elapsed.
+Both genuinely complete413same sources; outcomes are5534/5514rejected,
+4/24incomplete and1/1operational. Twenty rejected-to-incomplete changes
+all carry cache-hit messages. Raw SDK valid417/437 is not a complete-proof
+count. Both source5879failures preserve three HTTP500JSON-decode attempts.
+All owned descendants retire;5743opaque-env and5946raw-reply differences remain.
+This as-integrated prior-method control is not protocol-transparent reuse,
+a global CPU optimum or a whole-family negative conclusion.
+
+Cost-weighted recorded generation sums801.745555s wall across overlapping
+requests, not removable CPU/whole wall;1333of1653captures come from ultimately
+noncomplete sources. Hash-bucket repeated-generation proxy64.676644s
+shrinks to6.031379s when restricted to sources complete in both methods.
+Both views remain; hashes, missing failed-generator timings and overlap
+preclude a scheduling/Amdahl bound. Counts alone do not admit a new cache.
+A [457-source existing-error pilot](../artifacts/linarith-oracle-2026-10-17/error-work-control/preflight-result-review.md)
+closes119.999495/63.221143s native/guard. Eleven actual prior-error skips,
+413samecomplete/4sameincomplete; one operational-to-rejected change remains.
+This selected diagnostic is not representative population speed or novelty.
+
+On2026-10-19the Workspace Pod was replaced, interrupting all original
+collectors. Node/SSH/k3s-agent/5090 remain healthy; the retained PVC and
+completed cells survive. Lost temporary aliases are restored to their
+existing retained dependency trees. Original unfinished cells remain
+interrupted partials, never spliced into complete wall clocks. The miniF2F
+HTTP pair recovery uses fresh outputs; completed ProofNet is not rerun.
+A second container OOMKilled at01:20Z interrupts the first recovery; Goedel
+also exposes a missing Farkas alias. Both faults and invalid all-operational
+startup captures remain. The alias is repaired and real24-source native/
+oracle qualification passes22complete/2same rejects. Recover unfinished
+collectors sequentially with unchanged within-cell resources, not another
+simultaneous restart or a new quota.
+[Recovery evidence](../artifacts/linarith-oracle-2026-10-17/workspace-interruption-20261019/README.md).
+No full speed or new contribution is inferred from hit counts or partial data.
 
 ## Prefix/preparation evidence and previous controls
 

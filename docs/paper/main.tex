@@ -914,6 +914,24 @@ build and does not generalize this new implementation.
 This evidence supports an arithmetic implementation improvement, not a new
 solver, demonstrated GPU benefit or the complete service contribution.
 
+\paragraph{Existing closing-certificate reuse.}
+We also integrate SHRED's unchanged closing-certificate module and wrapper
+with the official Kimina HTTP application~\cite{shred}. On all 5,952 original
+ProofNet candidates, native verification takes 356.37 seconds and this
+integration takes 373.22 seconds, including actual input preparation and
+process retirement: 4.73\% more elapsed time in one fixed-order shared-host
+pair. Both methods genuinely complete the same 413 sources. Native outcomes
+are 5,534 rejected, four incomplete and one operational failure; reuse
+returns 5,514 rejected, 24 incomplete and one operational failure.
+The twenty changed sources carry cache-hit messages and sorry warnings;
+SDK valid counts of 417 and 437 are therefore not complete-proof counts.
+Opaque environment handles and messages also differ. Eight outstanding
+sources share four eligible CPUs and the same 48 GiB per-process limit.
+This is an as-integrated existing-method control, not a deployment of an
+upstream HTTP service supplied by SHRED or a matched transparent speedup.
+The separate full miniF2F pair remains incomplete after a Workspace
+interruption; its partial timings are not promoted to population results.
+
 \paragraph{Formal population generalization.}
 A separate version-aligned component comparison processes every original
 ProofNet candidate in Lean 4.9.0-rc1. Module-loaded stock fallback, native
