@@ -31,3 +31,18 @@ Paper compiles and actual page15is inspected. Second actualOOMKilled plus
 missingFarkaspath invalidate first resumed Goedel matrices; real24sources
 pass after repair. Resume existing missing cells sequentially, preserving
 within-cell resources and all failed/partial epochs.
+
+
+At02:50Zthe original officialHTTPmatrix reaches9/9valid cells. All9000source
+records, including errors/tails/message differences, are analyzed and linked
+fromREADME/evaluation; mixed restart epochs prevent an uninterrupted3pair
+aggregate. Firsttwo intact native/Powerpairs sum1.683831×, supporting selected
+CPU arithmetic service transfer, not a new systems insight.
+
+Substantive-next-step reflection: novelty and workload generality remain
+the bottleneck. Finish actual miniF2F prior-method comparison and wholeGoedel
+methods already running/queued before inventing cache/GPU variants. The
+error-work pilot offers a concrete stronger-baseline check, not a contribution.
+Use full-source outcomes/costs to determine whether native prepared work,
+failed continuation or arithmetic dominates; repeated syntax/hits alone
+cannot select a major mechanism. Keep negativeProofNet and modestDSV2visible.

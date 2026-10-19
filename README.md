@@ -108,6 +108,15 @@ it cannot generalize the current natural-power implementation.
 The [current whole-Goedel protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md)
 extends the corrected comparison to all originals, without another solver grid.
 
+The official Kimina HTTP comparison now closes all **nine planned
+1,000-source cells**. The first two intact strong-native/Power pairs are
+857.11/534.48 and 812.07/456.82 seconds, a ratio of summed whole times
+**1.68383×**. Every cell returns 992 complete/eight rejected/zero operational;
+all per-source verdicts and non-message fields agree, with 108 message
+differences per pair. The third pair spans a container restart and is
+reported separately. Power has 152–245 longer individual body spans per pair.
+[Complete matrix, raw records, tails and restart limits](artifacts/linarith-oracle-2026-10-17/kimina-http/full-matrix-result-review.md).
+
 ## What the GPU measurements show
 
 **No useful extra end-to-end GPU acceleration over the strongest measured CPU

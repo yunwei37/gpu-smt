@@ -138,13 +138,22 @@ transfer on overlapping miniF2F tasks, not upstream 4.31 replication or
 evidence that all proofs inherit the selected Goedel gain.
 The historical 2234.69 s run still lacks complete matched phase stamps.
 
-The separate Goedel HTTP matrix has closed its first three-method block:
-stock 2888.759 s, adapted strong native 857.111 s, Power 534.483 s.
-Its scoped native/Power whole ratio is 1.603628×. All methods return the same
-992 valid and eight rejected originals; message differences are retained.
-The [checkpoint](../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md)
-preserves the completed raw cells. The original three-block matrix continues;
-this first block is not promoted as the final aggregate.
+The [complete original Goedel HTTP matrix](../artifacts/linarith-oracle-2026-10-17/kimina-http/full-matrix-result-review.md)
+now contains all nine1000-source cells. Strong-native/Power whole times are
+857.111/534.483s and812.073/456.819s for the first two intact pairs:
+1.603628× and1.777670×; ratio of sums1.683831×, warm1.702017×.
+Every cell has992genuinecomplete/eight rejected/zero operational, with exact
+per-source verdict/non-message parity and108message differences per pair.
+Third-pair Power491.129s precedes container interruption, while stock2564.311s
+and native773.372s are recovered; expose its descriptive1.574682ratio
+without an uninterrupted three-repeat aggregate or new confidence interval.
+PublicCSVcontains9000source observations; the CDFincludes all6000strong-native/
+Power observations. Power body spans regress for208/152/245sources.
+Native-ranked slowest1%body sums are993.892/650.805,949.659/562.366 and
+901.897/595.935s, native/Power, overlapping spans rather than whole-wall
+savings. All48GiB/CPU/retirement receipts and raw messages remain.
+The [first-block checkpoint](../artifacts/linarith-oracle-2026-10-17/kimina-http/first-block-result-review.md)
+remains historical. This closes acquisition, not GPU/novelty/all-RQ evidence.
 
 
 The [official SHRED closing-certificate executor](../artifacts/linarith-oracle-2026-10-17/shred-closing/README.md)

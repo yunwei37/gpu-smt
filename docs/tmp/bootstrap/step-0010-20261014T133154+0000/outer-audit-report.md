@@ -3541,3 +3541,35 @@ writers were gone after OOM. Existing complete cells remain separate and
 no pre/post-OOM wall clocks are concatenated. Publication f6f1a5d is verified
 on origin/main. Follow-up recovery metadata is a separate forward-only
 commit; active raw logs are excluded from staging.
+
+
+## Complete nine-cell official-service matrix — root self-audit
+
+Direction: empirical transfer of the selected CPU arithmetic composition
+through a real upstream service, not a replacement of four-RQ systems
+contribution by compilation. Negative/marginal other-workload results remain.
+No new device gain or strictGPUbound is inferred from numeric counters.
+
+Validity: independently rejoin every1000ID in every cell, actual valid/reject/
+sorry outcomes, matched HTTP finals and resources. All9000source-runs and
+raw108message differences per native/Powerpair remain. Firsttwo intact
+pairs are distinct from mixed-epoch third; only firsttwo sum ratio is used
+as intact-pair summary. Sharedhost/affinity/48GiB are not exclusivity,
+aggregate cap or a confidence interval. Every owned descendant retires.
+
+Efficiency: consume newly finished methods once, no repeat of closedcells.
+Reuse public complete-cell boundary analyzer and officialSDK/raw records;
+all-sourceCSVand figure expose regressions rather than a best-case subset.
+Only closed raw bytes archived with lossless roundtrip receipts; current
+miniF2F writer and author dirty paths untouched. This is self-audit, not
+independent review or a complete writing/research milestone.
+
+
+Validation receipt: full result reproduces identically after closed-cell
+gzip archival. Native error/sorry fields independently reproduce992complete/
+8rejected for allninecells; native empty success dictionaries remain valid.
+Allnine have identical source-outcome sets. Changed canonical local links
+resolve, Python analysis/plot code executes, whitespace checks pass.
+Tectonic exits0; actual PDFpages15/16and the completeCDFare rendered and
+visually checked, with readable labels/third-epoch caveat and no clipping.
+No full writing/independent milestone is implied by this targeted update.

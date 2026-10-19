@@ -5520,3 +5520,52 @@ cells are not rerun. Remaining previously-admitted unfinished datasets follow
 one child experiment at a time after actual completion. Within-cell CPU,
 queue width and48GiB remain unchanged. Exact executed snapshots and launch
 receipt are preserved; no completion claim follows from launch.
+
+
+## 2026-10-19T02:50Z — all nine original Goedel HTTP cells close
+
+EXPERIMENT_GATE entry rereads verbatim user instructions/author questions.
+Original four RQs, Lean+SMT,5090,original1000CPU/GPUcontinuation criterion,
+root-only execution and no arbitrary GPU-impossibility conclusion hold.
+Exactly the nine predeclared cells now return all1000originals each,
+992complete/eightreject/zerooperational/noincomplete, zero unanswered or
+non200attempts, one matched final response per source. Native/Power source
+verdict/non-message agreement holds across all three,108message differences
+each retained. All16/24/32owned descendants join, no survivor.
+
+Firsttwo intact pairs are857.111232/534.482689s and812.072845/456.818713s,
+1.603628/1.777670×; ratio of summed whole clocks1.683831×, warm1.702017×.
+Rep3Power491.128563s precedes restart; recoveredstock2564.310885s/native
+773.371512s complete afterOOM with changed co-tenancy. The descriptive
+1.574682× remains separate; no uninterrupted three-repeat aggregate or
+confidence interval. Seven original cells and two recovered cells selected
+explicitly; original interrupted/all-operational startup attempts excluded
+from performance and retained, rather than silently dropped.
+
+Resultreview closes the requested official-service matrix and reinforces
+selected arithmetic CPU applicability. It is supporting RQ4evidence, not new
+systems novelty, whole29750generalization orGPU acceleration. All9000source
+latencies remainCSV; three-panel strong-controlCDFhas all6000including48errors.
+Native-ranked slowest1%/10%and152–245individual body regressions remain.
+Spans overlap, exclude pre-dispatch wait, notCPU/wholewall. Native incomplete
+warnings independently checked; SDKvalid not blindly equated to complete.
+906recordedlarge races perPowerpair and partialsolver sums do not repair
+historical2234.69missingphases or yield an all-LP/GPUbound.
+
+WRITE_GATE targeted factual result/figure insertion, README/evaluation and
+daily frontier update. No InitialNarrative/title/RQ/researchclaim change.
+REVIEW_GATE rootself-audit only: allnine raw source populations, failures,
+lifecycle/resource receipts, restart distinction, latency tails and faithful
+figure/citation/terminology scope. MiniF2F is a healthy existing writer;
+not restarted or polled while analysis proceeds. Full paper/independent
+audit/OSDIacceptance and allRQs remain unresolved.
+
+
+Validation receipt: full result reproduces identically after closed-cell
+gzip archival. Native error/sorry fields independently reproduce992complete/
+8rejected for allninecells; native empty success dictionaries remain valid.
+Allnine have identical source-outcome sets. Changed canonical local links
+resolve, Python analysis/plot code executes, whitespace checks pass.
+Tectonic exits0; actual PDFpages15/16and the completeCDFare rendered and
+visually checked, with readable labels/third-epoch caveat and no clipping.
+No full writing/independent milestone is implied by this targeted update.
