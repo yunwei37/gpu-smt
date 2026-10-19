@@ -3694,3 +3694,28 @@ untouched. The hourly task's instruction now preserves this user resource
 change, without changing schedule, model or research objective. Current
 complete raw qualifier data are staged; active full logs are excluded.
 Root self-review is not independent audit or paper completion.
+
+## Complete native7808cell — root self-audit
+
+Direction unchanged: a completed standard-workload baseline is supporting
+comparison evidence, not a new system, GPU result, RQ closure or acceptance.
+The same original IDs/bytes, native warnings/sorries, timeouts and allocation
+failures remain. RealHTTP200responses are not equated with valid proofs.
+No old48GiB/eight-source or differently compiled observation is a denominator.
+
+Validity:3015complete/4675reject/71timeout/47resource independently reproduce;
+all7808realHTTPattempts complete once. Actual47bad_allocexits/24GiBlimits,
+18985samples/47.535389GiB/max2native and owned retirement are checked.
+Nominal1s sampling has actual1.057852smaxgap, not a hard kernel RSS quota.
+Timeout-dominated tails remain, and overlapping spans/partialchildCPU are
+not used as all-LP attribution or Amdahl work. All data remain reproducible.
+
+Efficiency: consume the newly closed cell once, publish immediately and leave
+the healthy active SHRED method alone. No full-pair ratio/extra repeats,
+unnecessary compilation, new controller or parameter grid. Publication stages
+only closed/static own paths and preserves unrelated author files. Self-audit
+only, no independent review or complete paper milestone is claimed.
+
+Author-note maintenance removes a stale current48GiB-per-process statement,
+preserving historical facts and linking the latest aggregate point. This is
+a forward factual correction, not an added rule or safety permission flow.

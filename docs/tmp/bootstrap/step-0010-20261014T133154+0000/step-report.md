@@ -5756,3 +5756,36 @@ REVIEW_GATE root self-audit checks actual source/outcome/kill/RSS/limits/reap,
 own-only scope, byte-preserved raw data, public reanalysis and faithful source
 snapshots. Research novelty/GPU/all-RQs remain unresolved. Continue actual
 full comparison; no delegate/new Workspace/policy/service is created.
+
+## 2026-10-19T13:05Z — consume complete native7808baseline, preserve active SHRED
+
+EXPERIMENT_GATE actual native terminal closes all7808original IDs, not a
+partial prefix. Native message/sorry analysis confirms3015complete,
+4675rejected,71timeout,47resource_failure, zeroincomplete. Every real source
+has oneHTTP200attempt;2warm attempts yield7810responses total, no unanswered
+or retry. All47resource exits134/std::bad_allocretainstderr and per-source
+errors. Final two descendants retire. Whole18987.741491s remains a single
+native baseline, with no pair speedup/cross-resource inference.
+
+18985RSSsamples reproduce47.535389GiB peak, max2native/actual24GiBlimits,
+zeroaggregatekills/errors, maxsamplinggap1.057852s. Public streaming analysis
+and all-source CSV retain p50/p90/p99HTTP0.212351/1.857351/246.356705s and all
+native-ranked tails. Slowest79sources include71timeouts; sums overlap and
+are not CPU/LP/removable wall. This does not fill old2234.69missing phases,
+prove a GPU bound or identify already-visible-error causality.
+
+WRITE_GATE current README/evaluation/daily status moves native to complete,
+SHRED remains active. The paper's full-pair placeholder/incomplete statement
+remains valid; no unsupported ratio or narrative edit/compile is added.
+REVIEW_GATE root self-audit of exact original IDs, all failures/messages,
+native completion classification, HTTPmatching/resource/lifecycle evidence,
+tail denominator, actual patched source/resource point and public reproduction.
+Closed raw files only are published; active SHRED is not moved/staged or
+restarted. One group remains, no other full acquisition/Agent starts.
+Next action remains complete actual matched baseline comparison.
+
+Gate-entry maintenance also corrects the stale resolved-memory author note:
+the historical48GiB-per-process repair no longer overrides the latest exact
+aggregate-budget prompt. It now links the current resource authority instead
+of repeating an obsolete all-new-captures instruction. No new author question,
+rule, parameter or experiment is introduced.

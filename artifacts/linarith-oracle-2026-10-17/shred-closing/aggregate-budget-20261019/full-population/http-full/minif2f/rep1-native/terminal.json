@@ -1,0 +1,101 @@
+{
+  "state": "complete",
+  "method": "stock",
+  "expected": 7808,
+  "source_concurrency": 2,
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "native_engine": null,
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": null,
+  "lean_version": "v4.9.0-rc1",
+  "native_library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+  "scope": "Existing SHRED module/wrapper integrated with official Kimina HTTP; real parser/preparation costs charged. One fixed-order shared-host block, native verification comparison only; env/message differences exposed. Root self-review, not a new cache/system.",
+  "returned": 7808,
+  "counts": {
+    "valid": 3015,
+    "lean_error": 4675,
+    "timeout_error": 71,
+    "resource_failure": 47
+  },
+  "server_ready_seconds": 0.709601184,
+  "preparation_seconds": 3.054898365,
+  "warm_verify_seconds": 18984.048870388,
+  "server_exit": -15,
+  "joined_owned_descendants": 2,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 10387,
+      "birth": 1792413903.28,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 10388,
+      "birth": 1792413903.41,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "memory_watchdog": {
+    "root_pid": 7760,
+    "root_birth": 1792394746.43,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 18985,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 51040735232,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+  },
+  "whole_lifecycle_seconds": 18987.625263937,
+  "waited_child_cpu_seconds": 7631.674626,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "60673",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  },
+  "condition": "native",
+  "dataset": "minif2f",
+  "input_preparation_seconds": 0.092255723,
+  "whole_with_input_preparation_seconds": 18987.741490934,
+  "full_original_population": true
+}

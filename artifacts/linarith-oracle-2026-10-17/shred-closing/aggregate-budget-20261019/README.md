@@ -13,7 +13,9 @@ directory preserves the completed qualification and actual kill-branch evidence.
 show both24-source arms return17complete/4rejected/3resource failures;
 root RSS peaks46.384/46.173GiB, at most2native workers. The safe real fault
 injection kills the largest two owned workers with exact source attribution.
-One fresh full7808pair is now running; no full result is claimed.
+The [complete native7808cell](native-cell-result-review.md) now returns
+3015complete/4675rejected/71timeout/47resource failures. SHRED is still
+acquiring; no paired speed result is claimed.
 
 ## Implementation checkpoint
 
@@ -24,3 +26,5 @@ qualification is closed; its actual records admit the single fresh full run.
 The user-approved point uses [public watchdog](../../../../bench/lean-native/linarith-oracle/memory_budget.py)
 and the [declared retained-dependency patch](kimina-aggregate-budget.patch).
 Executed source snapshots preserve what the running driver actually loaded.
+
+The [streaming native-cell analysis](analyze-native-cell.py) emits [all-source latencies](native-full-source-latencies.csv) and [closed-cell accounting](native-full-analysis.json).

@@ -26,7 +26,13 @@ threshold fault injection succeeds. The [closed24-source paired qualification](.
 returns17complete/4rejected/3resource_failure in each arm, matching IDs;
 actual std::bad_alloc exits identify the three24GiB failures. Sampled total
 RSS peaks46.384377/46.173225GiB, max2native workers, no owned survivors.
-One fresh full7808pair starts after this qualification; no full result yet.
+The [complete new native7808cell](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/native-cell-result-review.md)
+now returns3015complete/4675rejected/71timeout/47resource_failure;18987.741491s
+whole, RSSpeak47.535389GiB/max2native/zeroaggregatekills, all retired.
+All real sources have oneHTTP200attempt; that is not proof acceptance.
+The paired SHRED arm is still active, so no speed ratio is available.
+Slowest79sources include71timeouts; cumulative HTTP spans are overlapping,
+not tactic CPU, removable wall time or an historical2234.69phase bound.
 This changes the experiment resource point, not earlier raw data/clocks.
 No Workspace/host/other-project configuration changes.
 

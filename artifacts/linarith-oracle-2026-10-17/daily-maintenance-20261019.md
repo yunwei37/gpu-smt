@@ -105,3 +105,17 @@ Fresh full7808pair now runs once with this budget; no unsafe old queue
 resumes. Reflection's next action is therefore actual full-source acquisition,
 not another safety smoke or parameter grid. Publication includes closed raw
 resource/exit/native records and analysis, while current full streams stay live.
+
+13:05Z consumes the first complete native7808cell at the new resource point.
+All-source native outcomes/attempt latencies, failures,1%/10%tails and actual
+RSS/address limits are published; active SHRED remains untouched. Current
+frontiers distinguish a closed baseline from an incomplete comparison.
+
+Substantive-progress reflection:71of the79slowestnative requests time out,
+and47resource aborts remain. The experiment must retain all sources and native
+ranked tails; successful-only latency would miss much observed work. But an
+eventual failure does not prove an earlier visible error or reusable prefix
+could avoid it. The existing error-work pilot is a stronger-baseline control,
+not new novelty. Finish the matched SHRED arm, then use complete joined costs
+and outcomes to choose the next causal control. No new kernel/parameter grid,
+cross-resource denominator or invented GPU upper bound follows from this cell.

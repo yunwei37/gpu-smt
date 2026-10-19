@@ -20,6 +20,9 @@ the largest owned REPL on excess, retaining its candidate as a resource failure.
 The older per-worker48GiB miniF2F capture is stopped and retained as partial.
 [Exact implementation, real qualification and limits](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
 New resource-point results remain separate from the historical measurements below.
+The first complete native miniF2F cell returns all7,808sources:3,015complete,
+4,675rejected,71timeouts and47resource failures; SHRED acquisition continues.
+[Closed native baseline, all-source latency and memory evidence](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/native-cell-result-review.md).
 
 ## Current result
 

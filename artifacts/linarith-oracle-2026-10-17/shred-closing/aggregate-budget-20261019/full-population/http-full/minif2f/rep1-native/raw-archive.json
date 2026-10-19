@@ -1,0 +1,40 @@
+{
+  "scope": "Lossless archival only after complete measured lifecycle; active files untouched. Export cost is separate from verification clocks.",
+  "files": [
+    {
+      "source": "http.jsonl",
+      "archive": "http.jsonl.gz",
+      "raw_bytes": 49592227,
+      "archive_bytes": 4843380,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "process-exits.jsonl",
+      "archive": "process-exits.jsonl.gz",
+      "raw_bytes": 49017,
+      "archive_bytes": 1215,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "results.jsonl",
+      "archive": "results.jsonl.gz",
+      "raw_bytes": 16553627,
+      "archive_bytes": 1193325,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "server.log",
+      "archive": "server.log.gz",
+      "raw_bytes": 91564354,
+      "archive_bytes": 7230435,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "memory-rss.jsonl",
+      "archive": "memory-rss.jsonl.gz",
+      "raw_bytes": 29682561,
+      "archive_bytes": 962763,
+      "byte_equal_roundtrip": true
+    }
+  ]
+}

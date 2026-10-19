@@ -6,13 +6,14 @@ Earlier OMP files/session state are preserved; the optional model-recovery
 proposal below is cancelled. No OMP or Codex subagent may be resumed. Root self-review is not independent audit.
 All four RQs, Lean-first/RTX5090 and OSDI-quality target remain.
 
-## Native memory budget — resolved by source-default repair
-The earlier custom8GiB proposal was never applied. The user confirmed the
-upstream48GiB repair (da8ebb9) and explicitly requires that limit for all new
-captures, retaining over-limit candidates as resource failures. The unsafe
-None override and failed/partial unlimited captures remain archived separately;
-they are not spliced into the current formal comparison. No authorization
-question remains. [Failure and repair evidence](../artifacts/linarith-oracle-2026-10-17/prefix-oom-20261017/).
+## Native memory budget — resolved by the latest user requirement
+
+The earlier8GiBproposal was never applied. The upstream48GiB-per-process
+repair is historical, not authority to override the later aggregate-budget
+instruction. New captures follow the [current resource point](evaluation.md#current-resource-point)
+and its actual qualification/limits; older results preserve their own resource
+points and raw failures. The exact latest user words remain in user-instruction.md.
+No authorization question remains, and no obsolete unbudgeted queue resumes.
 
 ## OMP model recovery — cancelled by the user
 
