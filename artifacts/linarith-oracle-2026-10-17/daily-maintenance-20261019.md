@@ -97,3 +97,11 @@ qualification and only then the single wholeminiF2Fpair. This is required
 execution repair, not a new research contribution. Preserve unknown failure
 causes and separate old/new resource denominators. Other CPU matrices need
 the same aggregate accounting before their obsolete queues can run again.
+
+07:32Z actual24source qualification closes: both17complete/4reject/3resource,
+real24GiBstd::bad_allocexits retained, RSSpeaks46.384/46.173GiB, max2live
+natives. Low-threshold actual watchdog kills largest native/source0and1.
+Fresh full7808pair now runs once with this budget; no unsafe old queue
+resumes. Reflection's next action is therefore actual full-source acquisition,
+not another safety smoke or parameter grid. Publication includes closed raw
+resource/exit/native records and analysis, while current full streams stay live.

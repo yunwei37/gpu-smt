@@ -22,8 +22,11 @@ for new runs: [aggregate budget and qualification](../artifacts/linarith-oracle-
 The sole old full collector is stopped. New acquisition uses total owned
 RSS48GiB, at most2actual live REPLs and24GiB each, with one-second parent RSS
 watchdog and explicit candidate-attributed resource failures. Real lowered-
-threshold fault injection succeeds;24normal real-source paired qualification
-is still running. One full acquisition follows only after qualification.
+threshold fault injection succeeds. The [closed24-source paired qualification](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/result-review.md)
+returns17complete/4rejected/3resource_failure in each arm, matching IDs;
+actual std::bad_alloc exits identify the three24GiB failures. Sampled total
+RSS peaks46.384377/46.173225GiB, max2native workers, no owned survivors.
+One fresh full7808pair starts after this qualification; no full result yet.
 This changes the experiment resource point, not earlier raw data/clocks.
 No Workspace/host/other-project configuration changes.
 

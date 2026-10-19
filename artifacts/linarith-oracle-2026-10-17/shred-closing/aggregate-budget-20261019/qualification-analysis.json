@@ -1,0 +1,200 @@
+{
+  "scope": "User-requested memory qualification only; normal24vs24 and separate real2 low-threshold fault injection. Not a performance or full-corpus result.",
+  "conditions": {
+    "fault-injection-real2": {
+      "returned": 2,
+      "counts": {
+        "resource_failure": 2
+      },
+      "watchdog": {
+        "root_pid": 7760,
+        "root_birth": 1792394746.43,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 67108864,
+        "per_second": true,
+        "samples": 3,
+        "kills": 2,
+        "peak_sampled_owned_rss_bytes": 4099465216,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "whole_with_input_preparation_seconds": 2.542114699,
+      "actual_native_limit_lines": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ],
+      "kills": [
+        {
+          "owner_pid": 7767,
+          "owner_birth": 1792394747.39,
+          "victim_pid": 7770,
+          "victim_birth": 1792394747.53,
+          "victim_rss_bytes": 72667136,
+          "total_rss_bytes": 910110720,
+          "budget_bytes": 51539607552,
+          "effective_threshold_bytes": 67108864,
+          "source_id": "minif2f-0",
+          "snippet_id": "minif2f-0-header",
+          "phase": "header",
+          "time_ns": 826119740315172,
+          "reason": "aggregate_rss_exceeded",
+          "largest_native_repl_selected": true
+        },
+        {
+          "owner_pid": 7768,
+          "owner_birth": 1792394747.4,
+          "victim_pid": 7769,
+          "victim_birth": 1792394747.53,
+          "victim_rss_bytes": 3620171776,
+          "total_rss_bytes": 4099465216,
+          "budget_bytes": 51539607552,
+          "effective_threshold_bytes": 67108864,
+          "source_id": "minif2f-1",
+          "snippet_id": "minif2f-1-header",
+          "phase": "header",
+          "time_ns": 826120740269228,
+          "reason": "aggregate_rss_exceeded",
+          "largest_native_repl_selected": true
+        }
+      ],
+      "resource_failures": [
+        {
+          "proof_id": "minif2f-0",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: aggregate RSS watchdog: {\"owner_pid\":7767,\"owner_birth\":1792394747.39,\"victim_pid\":7770,\"victim_birth\":1792394747.53,\"victim_rss_bytes\":72667136,\"total_rss_bytes\":910110720,\"budget_bytes\":51539607552,\"effective_threshold_bytes\":67108864,\"source_id\":\"minif2f-0\",\"snippet_id\":\"minif2f-0-header\",\"phase\":\"header\",\"time_ns\":826119740315172,\"reason\":\"aggregate_rss_exceeded\",\"largest_native_repl_selected\":true}"
+        },
+        {
+          "proof_id": "minif2f-1",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: aggregate RSS watchdog: {\"owner_pid\":7768,\"owner_birth\":1792394747.4,\"victim_pid\":7769,\"victim_birth\":1792394747.53,\"victim_rss_bytes\":3620171776,\"total_rss_bytes\":4099465216,\"budget_bytes\":51539607552,\"effective_threshold_bytes\":67108864,\"source_id\":\"minif2f-1\",\"snippet_id\":\"minif2f-1-header\",\"phase\":\"header\",\"time_ns\":826120740269228,\"reason\":\"aggregate_rss_exceeded\",\"largest_native_repl_selected\":true}"
+        }
+      ],
+      "maximum_sample_gap_seconds": 0.999985274
+    },
+    "rep1-native": {
+      "returned": 24,
+      "counts": {
+        "valid": 17,
+        "lean_error": 4,
+        "resource_failure": 3
+      },
+      "watchdog": {
+        "root_pid": 7760,
+        "root_birth": 1792394746.43,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 169,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 49804845056,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "whole_with_input_preparation_seconds": 168.248510775,
+      "actual_native_limit_lines": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ],
+      "kills": [],
+      "resource_failures": [
+        {
+          "proof_id": "minif2f-579",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        },
+        {
+          "proof_id": "minif2f-663",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        },
+        {
+          "proof_id": "minif2f-664",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        }
+      ],
+      "maximum_sample_gap_seconds": 1.000886243
+    },
+    "rep1-shred": {
+      "returned": 24,
+      "counts": {
+        "valid": 17,
+        "lean_error": 4,
+        "resource_failure": 3
+      },
+      "watchdog": {
+        "root_pid": 7760,
+        "root_birth": 1792394746.43,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 164,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 49578123264,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "whole_with_input_preparation_seconds": 174.116742812,
+      "actual_native_limit_lines": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ],
+      "kills": [],
+      "resource_failures": [
+        {
+          "proof_id": "minif2f-579",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        },
+        {
+          "proof_id": "minif2f-663",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        },
+        {
+          "proof_id": "minif2f-664",
+          "sdk_status": "server_error",
+          "original_error": "resource_failure: native allocation failure under configured address-space limit: warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it\nwarning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it\nlibc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc\n"
+        }
+      ],
+      "maximum_sample_gap_seconds": 1.00095398
+    }
+  },
+  "status_difference_IDs": [],
+  "native_outcome_counts": {
+    "native": {
+      "complete": 17,
+      "rejected": 4,
+      "resource_failure": 3
+    },
+    "shred": {
+      "complete": 17,
+      "rejected": 4,
+      "resource_failure": 3
+    }
+  },
+  "native_outcome_difference_IDs": [],
+  "native_response_difference_IDs": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-16",
+    "minif2f-17",
+    "minif2f-18",
+    "minif2f-19",
+    "minif2f-2518"
+  ],
+  "top_level_error_difference_IDs": []
+}

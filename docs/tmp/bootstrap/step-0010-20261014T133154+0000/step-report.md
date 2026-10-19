@@ -5728,3 +5728,31 @@ or claim; unchanged LaTeX is not recompiled. REVIEW_GATE root self-review
 of actual fault records, ownership/identity, resource lifetime, attribution and
 fairly matched resource point. Sampling limitation is explicit; no kernel-hard
 RSS guarantee, independent reviewer or new research contribution is claimed.
+
+## 2026-10-19T07:32Z — actual budget qualification completes, full pair starts
+
+EXPERIMENT_GATE closes the requested real24native/SHRED resource test.
+Both methods have17complete/4rejected/3resource_failure, all IDs/status/native
+outcomes match. Native message/sorry classifier independently checks complete
+counts. Actual process exits134/std::bad_alloc on579/663/664are retained,
+mapped to configured24GiB limit, not inferred globalOOM. Twenty-one response
+differences remain; no full API transparency claim. Sampled total-tree RSS
+peaks49804845056/49578123264bytes (46.384/46.173GiB), max2native; real /proc
+limits24GiB, sampling gaps at most1.000954s, all descendants retired. Earlier
+two-source low-threshold actual kills retain largest-victim/source evidence.
+
+All outcomes, per-second process lists, exits, requests and actual source
+snapshots are recomputable. Safe fault injection and normal condition remain
+separate. Full7808miniF2Fpair starts once at07:31:31Zafter qualification, with
+one root/server/twoREPLtree; no method completion inferred from startup.
+No obsolete48GiB-per-worker batch resumes. The existing hourly task prompt
+now carries the latest user aggregate requirement, unchanged frequency/goal.
+The24-source whole clocks do not become a speed result or cross-resource
+denominator. Sampling is not a kernel-enforced hard RSS ceiling.
+
+WRITE_GATE current-frontier and daily records switch normal qualification to
+complete and whole population to running. No new paper number/RQ/claim.
+REVIEW_GATE root self-audit checks actual source/outcome/kill/RSS/limits/reap,
+own-only scope, byte-preserved raw data, public reanalysis and faithful source
+snapshots. Research novelty/GPU/all-RQs remain unresolved. Continue actual
+full comparison; no delegate/new Workspace/policy/service is created.

@@ -3676,3 +3676,21 @@ Guard sampling counts shared RSS conservatively; subsecond overshoot remains
 possible. Old clocks/semantic outcomes are not rewritten. The single normal
 qualifier and then full pair are serial, while unsafe old queues stay stopped.
 Reviews are self-review; no new Agent, service, Workspace or quota is used.
+
+## Complete aggregate-budget qualification — root self-audit
+
+Direction is unchanged; resource repair is dependency-only. Actual native
+messages confirm17complete/4reject in each arm, with three real bad_alloc
+resource failures instead of generic failed retries. Source membership,
+unchanged native inputs, same24GiB/2-worker/48GiBpoint and raw warnings/errors
+remain explicit. Per-second sums include full owned process tree, sampled
+peaks below48GiB and max2natives; no claim of a kernel hard quota/subsecond
+guarantee. Real injected kills hit the largest owned native and map actual
+source/PID/birth, with both responses resource failures and all reaped.
+
+Only one actual full7808group follows, old owner/queue stayed stopped.
+Other Workspace quotas/permissions and all unrelated dirty author files stay
+untouched. The hourly task's instruction now preserves this user resource
+change, without changing schedule, model or research objective. Current
+complete raw qualifier data are staged; active full logs are excluded.
+Root self-review is not independent audit or paper completion.
