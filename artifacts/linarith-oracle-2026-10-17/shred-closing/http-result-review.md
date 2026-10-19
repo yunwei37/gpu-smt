@@ -73,3 +73,20 @@ differences, real cache events, SDK/native library/resources, charged parser
 cost, original contexts and actual retirement. Reviews remain self-review;
 no subagent/OMP, independent audit, GPU closure, all-RQ completion or new
 cache contribution is claimed.
+
+## First full native condition closes — no paired conclusion yet
+
+All 5,952 ProofNet sources return in the native condition. SDK labels are
+417 valid, 5,534 Lean errors and one server error. The native message/sorry
+check gives **413 complete, 5,534 rejected, four incomplete and one
+operational**, not 417 complete. The SDK treats the four sorry-bearing
+responses as valid; raw SDK labels remain intact and derived analysis
+exposes native outcomes separately. Earlier functional subsets contain
+no such incomplete cases; their per-source agreement still holds.
+
+The incomplete IDs are 2913, 2928, 2933 and 2934. Source5879 has three
+recorded HTTP500 JSON-decode errors followed by the SDK's retry failure.
+It is counted as an operational failure; memory exhaustion is not inferred.
+The complete wrapper clock is356.367363s and warm sweep349.794376s.
+All observed owned processes retire. The cached condition remains active;
+this single native condition is not a speed ratio or final full experiment.

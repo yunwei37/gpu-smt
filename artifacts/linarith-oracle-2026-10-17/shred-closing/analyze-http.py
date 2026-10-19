@@ -12,6 +12,19 @@ def rows(path):
     with (gzip.open(path, "rt") if path.suffix == ".gz" else path.open()) as stream:
         return [json.loads(line) for line in stream]
 
+def verification_outcome(row):
+    response = row["result"].get("response", {})
+    if row["status"] not in ("valid", "lean_error", "sorry"):
+        return "operational"
+    if response.get("message") or response.get("error"):
+        return "operational"
+    if any(message.get("severity") == "error" for message in response.get("messages", [])):
+        return "rejected"
+    if response.get("sorries") or any("sorry" in message.get("data", "")
+            for message in response.get("messages", []) if message.get("severity") == "warning"):
+        return "incomplete"
+    return "complete"
+
 def analyze(root):
     data = {}
     terms = {}
@@ -30,7 +43,7 @@ def analyze(root):
     ids = [row["proof_id"] for row in data["native"]]
     assert ids == [row["proof_id"] for row in data["shred"]]
     result = dict(scope="Closed source-native HTTP integration comparison; opaque env handles and all messages remain visible. Not snapshot/protocol transparency or a full population claim unless all original IDs are independently verified.",
-        source_count=len(ids), conditions={}, status_differences=[],
+        source_count=len(ids), conditions={}, status_differences=[], native_verification_differences=[],
         non_message_differences=[], raw_response_difference_IDs=[],
         cached_message_events={})
     for method, term in terms.items():
@@ -38,9 +51,14 @@ def analyze(root):
             "counts", "whole_lifecycle_seconds", "whole_with_input_preparation_seconds",
             "warm_verify_seconds", "input_preparation_seconds", "joined_owned_descendants",
             "lean_version"]}
+        result["conditions"][method]["native_verification_counts"] = dict(
+            collections.Counter(verification_outcome(row) for row in data[method]))
     events = collections.Counter()
     for base, cache in zip(data["native"], data["shred"]):
         ident = base["proof_id"]
+        if verification_outcome(base) != verification_outcome(cache):
+            result["native_verification_differences"].append(dict(proof_id=ident,
+                native=verification_outcome(base), shred=verification_outcome(cache)))
         if base["status"] != cache["status"]:
             result["status_differences"].append(dict(proof_id=ident,
                 native=base["status"], shred=cache["status"]))

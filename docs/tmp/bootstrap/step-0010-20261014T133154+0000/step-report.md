@@ -5454,3 +5454,11 @@ REVIEW_GATE is root self-review only; actual source reconstruction, version,
 context preservation, outcomes, env/message differences, clock/resource
 scope, preserved failures, source snapshots and completed retirement checked.
 No independent audit/full writing milestone or acceptance is claimed.
+
+The first full SHRED-baseline native ProofNet condition now closes all5952:
+356.367363s complete wrapper,349.794376s warm. SDK417valid includes four
+sorry-bearing responses; derived native outcomes are413complete/5534reject/
+4incomplete/1operational. Analysis now retains both classifications instead
+of silently treating SDKvalid as complete. Source5879has three actualHTTP500
+JSON-decode failures, not proven memory exhaustion. All raw attempts remain.
+Cached capture continues; no partial ratio or old-epoch speed claim follows.

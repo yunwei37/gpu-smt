@@ -1,0 +1,31 @@
+{
+  "scope": "First completed full native condition only; SHRED comparison continues. SDK labels are retained, and native incomplete outcomes are classified separately. No paired speed claim.",
+  "expected_sources": 5952,
+  "returned": 5952,
+  "SDK_counts": {
+    "lean_error": 5534,
+    "valid": 417,
+    "server_error": 1
+  },
+  "native_verification_counts": {
+    "rejected": 5534,
+    "complete": 413,
+    "incomplete": 4,
+    "operational": 1
+  },
+  "incomplete_IDs": [
+    "proofnet-2913",
+    "proofnet-2928",
+    "proofnet-2933",
+    "proofnet-2934"
+  ],
+  "operational_IDs": [
+    "proofnet-5879"
+  ],
+  "operational_evidence": {
+    "proofnet-5879": "Three recorded HTTP500 replies: JSON decode error, then SDK Request failed after3retries. Underlying native failure not attributed to memory without evidence."
+  },
+  "whole_with_input_preparation_seconds": 356.367362816,
+  "warm_verify_seconds": 349.794376498,
+  "owned_live_descendants_after_shutdown": []
+}
