@@ -10,3 +10,13 @@ The new requested point is at most two live native workers, each24GiB,
 with a whole-owned-tree48GiB RSS watchdog sampling once per second. This
 directory will preserve real qualification and fault-injection evidence.
 No new full result or working watchdog is claimed before actual execution.
+
+## Implementation checkpoint
+
+The [implementation self-review](implementation-review.md) records the actual
+completed two-candidate real fault injection, including largest-victim choice,
+source attribution and resource_failure responses. Normal24-source paired
+qualification is active; only its actual closed records can admit the full run.
+The user-approved point uses [public watchdog](../../../../bench/lean-native/linarith-oracle/memory_budget.py)
+and the [declared retained-dependency patch](kimina-aggregate-budget.patch).
+Executed source snapshots preserve what the running driver actually loaded.

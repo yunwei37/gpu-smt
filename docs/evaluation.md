@@ -15,6 +15,18 @@ retain their dates and do not override current evidence.
 and [outer self-audit](tmp/bootstrap/step-0010-20261014T133154+0000/outer-audit-report.md)
 link original raw, failed, partial and superseded results.
 
+## Current resource point
+
+The latest user instruction replaces the earlier48GiB-per-worker policy
+for new runs: [aggregate budget and qualification](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
+The sole old full collector is stopped. New acquisition uses total owned
+RSS48GiB, at most2actual live REPLs and24GiB each, with one-second parent RSS
+watchdog and explicit candidate-attributed resource failures. Real lowered-
+threshold fault injection succeeds;24normal real-source paired qualification
+is still running. One full acquisition follows only after qualification.
+This changes the experiment resource point, not earlier raw data/clocks.
+No Workspace/host/other-project configuration changes.
+
 ## Fixed research questions
 
 | RQ, unchanged from the Initial Narrative | Evidence and unresolved promise |

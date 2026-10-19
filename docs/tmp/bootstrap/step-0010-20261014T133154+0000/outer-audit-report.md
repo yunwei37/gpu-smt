@@ -3659,3 +3659,20 @@ healthy full7808acquisition and its sequential continuation. No wait loop,
 repeat qualifier, new solver variant or documentation-as-novelty claim.
 Maintenance: current README/evaluation separate completed qualifier from
 incomplete full pair; older timestamped snapshots remain truthful history.
+
+## Aggregate budget implementation — root self-audit
+
+Authority: exact current user explicitly requests the budget/watchdog and
+overrides old48GiB-per-worker captures. No extra approval or independent
+executor is needed. Stop only verified own owner tree, preserve old partials.
+A source request count does not bound cached live REPLs, so the actual
+lifetime semaphore and pool maximum are reviewed in executed native startup/
+retirement paths. Real /proc and sampling evidence engage2/24GiB.
+
+The actual lowered-threshold test proves largest-owned-REPL selection,
+source/PID/birth mapping and resource_failure instead of proof/rejection.
+It does not simulate a real48GiB overshoot or imply a complete24-source result.
+Guard sampling counts shared RSS conservatively; subsecond overshoot remains
+possible. Old clocks/semantic outcomes are not rewritten. The single normal
+qualifier and then full pair are serial, while unsafe old queues stay stopped.
+Reviews are self-review; no new Agent, service, Workspace or quota is used.

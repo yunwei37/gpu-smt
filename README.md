@@ -11,6 +11,16 @@ candidate execution. [The initial narrative and four research questions](docs/id
 remain intact. The OSDI-quality systems contribution and all four final RQ
 answers are still open.
 
+## Current collection resources
+
+New runs use the user-requested **48 GiB total owned-process RSS budget**,
+at most **two live REPLs**, each with a **24 GiB address-space limit**.
+A parent-process watchdog samples the full owned tree every second and kills
+the largest owned REPL on excess, retaining its candidate as a resource failure.
+The older per-worker48GiB miniF2F capture is stopped and retained as partial.
+[Exact implementation, real qualification and limits](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
+New resource-point results remain separate from the historical measurements below.
+
 ## Current result
 
 The corrected native-array comparison uses the original **1,000 arithmetic-heavy

@@ -5696,3 +5696,35 @@ self-audit verifies exact source sets/resources/lifecycle/attempts/failures,
 byte-equal analysis reproduction and no selected-cohort speed claim. Dependency
 repair is complete; next action remains full requested experiment acquisition.
 No delegate/Agent, new service, scheduler, checkout or policy is introduced.
+
+## 2026-10-19 user-directed aggregate48GiB change — implementation boundary
+
+EXPERIMENT_GATE: latest exact user prompt overrides older per-process48GiB
+instructions. Stop the verified sole old finite experiment tree (nine owned
+processes,38047547392RSSbytes, zero survivors), preserve interrupted original
+data and commit/push18028fc. No foreign process/quota/permission changes.
+Actual old service has3retained REPLs despite2client submissions; the old
+resource point is not safe to resume.
+
+Implement public one-second parent-tree RSS watchdog,2actual native lifetime
+slots and24GiB native address-space limits in both service arms. Structured
+native allocation failures/watchdog notices return explicit resource_failure,
+with original SDK status/exit/stdout/stderr retained and exact source activity.
+Old unprotected native-array continuation is stopped and will not restart.
+The existing hourly prompt is updated to this latest user requirement,
+preserving its frequency, goal, root-thread-only and quiet notification intent.
+
+Actual fault injection executes original candidates0/1 at a64MiB test threshold,
+without allocating48GiB. Both native workers are the largest in their sample
+when killed, both source IDs match returned resource_failure, HTTP200no
+retry, all retired. Root-wide sampled peak4099465216bytes, max2live natives
+and actual24GiB /proc limits. Normal24source native/SHRED qualification is
+still running at the real48GiB threshold; full capture is not yet admitted.
+This is resource dependency evidence, not a speed result or new RQ answer.
+
+WRITE_GATE: current README/evaluation/reproduction points to the new resource
+boundary while prior historical clocks remain intact. Paper has no new result
+or claim; unchanged LaTeX is not recompiled. REVIEW_GATE root self-review
+of actual fault records, ownership/identity, resource lifetime, attribution and
+fairly matched resource point. Sampling limitation is explicit; no kernel-hard
+RSS guarantee, independent reviewer or new research contribution is claimed.

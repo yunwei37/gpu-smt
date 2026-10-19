@@ -1,0 +1,237 @@
+--- a/server/repl.py
++++ b/server/repl.py
+@@ -21,6 +21,7 @@
+ from loguru import logger
+ from rich.syntax import Syntax
+ 
++from . import benchmark_memory
+ from .db import db
+ from .errors import LeanError, ReplError
+ from .logger import console
+@@ -130,6 +131,10 @@
+ 
+     async def start(self) -> None:
+         # TODO: try/catch this bit and raise as REPL startup error.
++        if self.proc is not None:
++            await self.close()
++        self._stdout_pending = b""
++        self._budget_exit_stderr = ""
+         self._loop = asyncio.get_running_loop()
+ 
+         def _preexec() -> None:
+@@ -147,17 +152,22 @@
+ 
+             os.setsid()
+ 
+-        self.proc = await asyncio.create_subprocess_exec(
+-            "lake",
+-            "env",
+-            settings.repl_path,
+-            cwd=settings.project_dir,
+-            env=os.environ,
+-            stdin=asyncio.subprocess.PIPE,
+-            stdout=asyncio.subprocess.PIPE,
+-            stderr=asyncio.subprocess.PIPE,
+-            preexec_fn=_preexec,
+-        )
++        await benchmark_memory.acquire(self)
++        try:
++            self.proc = await asyncio.create_subprocess_exec(
++                "lake",
++                "env",
++                settings.repl_path,
++                cwd=settings.project_dir,
++                env=os.environ,
++                stdin=asyncio.subprocess.PIPE,
++                stdout=asyncio.subprocess.PIPE,
++                stderr=asyncio.subprocess.PIPE,
++                preexec_fn=_preexec,
++            )
++        except BaseException:
++            benchmark_memory.release(self)
++            raise
+ 
+         self._ps_proc = psutil.Process(self.proc.pid)
+         now = self._loop.time()
+@@ -237,6 +247,8 @@
+         except ReplError as e:
+             logger.exception("REPL error: %s", e)
+             raise e
++        finally:
++            benchmark_memory.activity(self, None, "idle")
+ 
+         return ReplResponse(
+             id=snippet.id,
+@@ -251,6 +263,7 @@
+         is_header: bool = False,
+         infotree: Infotree | None = None,
+     ) -> tuple[CommandResponse | Error, float, Diagnostics]:
++        benchmark_memory.activity(self, snippet.id, "header" if is_header else "body")
+         await log_snippet(self.uuid, snippet.id, snippet.code)
+ 
+         self._cpu_max = 0.0
+@@ -293,6 +306,9 @@
+ 
+         logger.debug("Reading response from REPL stdout")
+         raw = await self._read_response()
++        if not raw:
++            await benchmark_memory.capture_exit(self)
++            raise ReplError("Lean process exited without a response")
+         elapsed = loop.time() - start
+ 
+         logger.debug("Raw response from REPL: %r", raw)
+@@ -357,22 +373,31 @@
+         return b"".join(lines)
+ 
+     async def close(self) -> None:
+-        if self.proc:
+-            self.last_check_at = datetime.now()
+-            assert self.proc.stdin is not None, "stdin pipe not initialized"
+-            self.proc.stdin.close()
+-            os.killpg(os.getpgid(self.proc.pid), signal.SIGKILL)
+-            await self.proc.wait()
+-            if self._cpu_task:
+-                self._cpu_task.cancel()
+-            if self._mem_task:
+-                self._mem_task.cancel()
+-
+-            if db.connected:
+-                await prisma.repl.update(
+-                    where={"uuid": str(self.uuid)},
+-                    data={"status": ReplStatus.STOPPED},  # type: ignore
+-                )
++        if not hasattr(self, "_close_lock"):
++            self._close_lock = asyncio.Lock()
++        async with self._close_lock:
++            try:
++                if self.proc:
++                    self.last_check_at = datetime.now()
++                    if self.proc.stdin is not None:
++                        self.proc.stdin.close()
++                    try:
++                        os.killpg(os.getpgid(self.proc.pid), signal.SIGKILL)
++                    except ProcessLookupError:
++                        pass
++                    await self.proc.wait()
++                    tasks = [task for task in (self._cpu_task, self._mem_task) if task]
++                    for task in tasks:
++                        task.cancel()
++                    if tasks:
++                        await asyncio.gather(*tasks, return_exceptions=True)
++                    if db.connected:
++                        await prisma.repl.update(
++                            where={"uuid": str(self.uuid)}, data={"status": ReplStatus.STOPPED}
++                        )
++            finally:
++                benchmark_memory.activity(self, None, "closed")
++                benchmark_memory.release(self)
+ 
+ 
+ async def close_verbose(repl: Repl) -> None:
+--- a/server/routers/check.py
++++ b/server/routers/check.py
+@@ -7,6 +7,7 @@
+ from kimina_client.models import CheckResponse, CommandResponse, Pos
+ from loguru import logger
+ 
++from .. import benchmark_memory
+ from ..auth import require_key
+ from ..db import db
+ from ..errors import NoAvailableReplError
+@@ -114,7 +115,10 @@
+                 )
+             except Exception as e:
+                 logger.error("REPL prep failed")
+-                await manager.destroy_repl(repl)
++                resource_error = benchmark_memory.resource_error(repl)
++                await manager.destroy_repl(repl)
++                if resource_error:
++                    return ReplResponse(id=snippet.id, error="resource_failure: " + resource_error)
+                 raise HTTPException(500, str(e)) from e
+ 
+             try:
+@@ -155,7 +159,10 @@
+                 return resp
+             except Exception as e:
+                 logger.exception("Snippet execution failed")
+-                await manager.destroy_repl(repl)
++                resource_error = benchmark_memory.resource_error(repl)
++                await manager.destroy_repl(repl)
++                if resource_error:
++                    return ReplResponse(id=snippet.id, error="resource_failure: " + resource_error)
+                 raise HTTPException(500, str(e)) from e
+             else:
+                 logger.info(
+--- /dev/null
++++ b/server/benchmark_memory.py
+@@ -0,0 +1,70 @@
++"""Finite benchmark-only live-worker accounting and resource attribution."""
++import asyncio
++import json
++import os
++from pathlib import Path
++import time
++import psutil
++
++DIRECTORY = os.environ.get("GPU_SMT_MEMORY_DIRECTORY")
++_slots = None
++
++async def acquire(repl):
++    global _slots
++    if not DIRECTORY:
++        return
++    if _slots is None:
++        _slots = asyncio.Semaphore(int(os.environ["LEAN_SERVER_MAX_REPLS"]))
++    await _slots.acquire()
++    repl._budget_slot = True
++
++def release(repl):
++    if getattr(repl, "_budget_slot", False):
++        repl._budget_slot = False
++        _slots.release()
++
++def activity(repl, snippet_id, phase):
++    if not DIRECTORY or repl.proc is None:
++        return
++    path = Path(DIRECTORY) / "activity" / (str(repl.proc.pid) + ".json")
++    path.parent.mkdir(exist_ok=True)
++    try:
++        birth = psutil.Process(repl.proc.pid).create_time()
++    except psutil.NoSuchProcess:
++        birth = getattr(repl, "_budget_birth", None)
++    if birth is None:
++        return
++    repl._budget_birth = birth
++    source_id = snippet_id.removesuffix("-header") if snippet_id else None
++    data = dict(pid=repl.proc.pid, birth=birth, snippet_id=snippet_id,
++                source_id=source_id, phase=phase, time_ns=time.monotonic_ns())
++    temporary = path.with_suffix(".new")
++    temporary.write_text(json.dumps(data))
++    temporary.replace(path)
++
++async def capture_exit(repl):
++    if not DIRECTORY or repl.proc is None:
++        return
++    await repl.proc.wait()
++    stderr = await repl.proc.stderr.read() if repl.proc.stderr else b""
++    repl._budget_exit_stderr = stderr.decode(errors="replace")
++    path = Path(DIRECTORY) / "process-exits.jsonl"
++    with path.open("a") as stream:
++        stream.write(json.dumps(dict(pid=repl.proc.pid,
++            birth=getattr(repl, "_budget_birth", None),
++            returncode=repl.proc.returncode, stderr=repl._budget_exit_stderr)) + "\n")
++
++def resource_error(repl):
++    if not DIRECTORY or repl.proc is None:
++        return None
++    path = Path(DIRECTORY) / "kills" / (str(repl.proc.pid) + ".json")
++    if path.exists():
++        row = json.loads(path.read_text())
++        if row["owner_birth"] == getattr(repl, "_budget_birth", None):
++            return "aggregate RSS watchdog: " + json.dumps(row, separators=(",", ":"))
++    text = getattr(repl, "_budget_exit_stderr", "")
++    markers = ["out of memory", "std::bad_alloc", "cannot allocate memory",
++               "memory allocation failed", "failed to allocate", "virtual memory exhausted"]
++    if any(marker in text.lower() for marker in markers):
++        return "native allocation failure under configured address-space limit: " + text
++    return None

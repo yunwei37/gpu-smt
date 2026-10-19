@@ -1,7 +1,13 @@
-"""Finite official Kimina HTTP/SDK arithmetic comparison; no upstream patch."""
+"""Finite Kimina HTTP/SDK comparison with declared experiment resource accounting."""
 import argparse, asyncio, collections, json, os, re, resource, socket, subprocess, sys, time, traceback, tempfile
 from pathlib import Path
 import psutil
+import importlib.util
+
+_memory_spec = importlib.util.spec_from_file_location("capture_memory_budget", Path(__file__).with_name("memory_budget.py"))
+_memory = importlib.util.module_from_spec(_memory_spec)
+_memory_spec.loader.exec_module(_memory)
+
 
 async def cell(args, method, out, items, build):
     from kimina_client import AsyncKiminaClient, Snippet
@@ -25,8 +31,20 @@ async def cell(args, method, out, items, build):
         LEAN_SERVER_PROJECT_DIR=build["mathlib"], LEAN_SERVER_REPL_PATH=str(args.repl),
         LEAN_SERVER_LEAN_VERSION=lean_version, LEAN_SERVER_MAX_REPL_MEM="48G",
         LEAN_SERVER_HOST="127.0.0.1", FARKAS_NATIVE_BIN=str(args.reference))
-    concurrency = getattr(args, "concurrency", 8)
-    if concurrency < 1: raise ValueError("Source concurrency must be positive")
+    concurrency = getattr(args, "concurrency", 2)
+    total_memory_gib = getattr(args, "total_memory_gib", 48)
+    per_repl_gib = getattr(args, "per_repl_gib", 24)
+    if concurrency < 1 or per_repl_gib < 1:
+        raise ValueError("Source concurrency and per-REPL memory must be positive")
+    if total_memory_gib > 48 or total_memory_gib < 1 or concurrency * per_repl_gib > total_memory_gib:
+        raise ValueError("Requested owned aggregate <=48GiB and concurrency * per-REPL limit must fit it")
+    threshold = getattr(args, "watchdog_test_threshold_bytes", 0) or total_memory_gib * 1024**3
+    if threshold > total_memory_gib * 1024**3 or threshold <= 0:
+        raise ValueError("Watchdog threshold must fit the requested aggregate")
+    env.update(LEAN_SERVER_MAX_REPL_MEM=str(per_repl_gib)+"G",
+        LEAN_SERVER_MAX_REPLS=str(concurrency), GPU_SMT_MEMORY_DIRECTORY=str(out))
+    guard = _memory.MemoryWatchdog(int(os.environ.get("GPU_SMT_MEMORY_ROOT_PID", os.getpid())),
+        total_memory_gib * 1024**3, threshold, concurrency, args.repl, out)
     original = "import Mathlib\nimport Aesop\n"
     target = {"stock":"", "native":"GpuArithmetic.IntegerCostControl",
               "power":"GpuArithmetic.IntegerPowerOracle"}[method]
@@ -59,6 +77,9 @@ async def cell(args, method, out, items, build):
     backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
     result=dict(state="failed",method=method,expected=len(items),
         source_concurrency=concurrency,affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
+        aggregate_memory_budget_bytes=total_memory_gib * 1024**3,
+        per_native_repl_address_limit_bytes=per_repl_gib * 1024**3,
+        maximum_live_native_repls=concurrency,
         native_engine=args.native_engine if method == "native" else None,
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
@@ -78,6 +99,8 @@ async def cell(args, method, out, items, build):
         logs=(out/"server.log").open("w"); streams.append(logs)
         server=subprocess.Popen([sys.executable,"-m","server"],cwd=args.kimina,env=env,
             stdout=logs,stderr=subprocess.STDOUT,start_new_session=True)
+        guard.on_error = server.terminate
+        guard.start()
         import httpx
         async with httpx.AsyncClient() as health:
             while True:
@@ -101,14 +124,18 @@ async def cell(args, method, out, items, build):
         client.session.event_hooks={"request":[on_request],"response":[on_response]}
         warm_snippets=[Snippet(id="warm-"+str(i),code=header+"\n#check Nat")
             for i,header in enumerate(header for header in headers for _ in range(concurrency))]
-        if warm_snippets:
+        if warm_snippets and not getattr(args, "skip_warm", False):
             warm=await client.check(warm_snippets,
                 timeout=300,batch_size=1,max_workers=concurrency,reuse=True,show_progress=False)
             if any(x.analyze().status.value!="valid"for x in warm.results): raise RuntimeError("Warm preparation failed")
         verify_start=time.monotonic_ns()
         replies=await client.check(snippets,timeout=300,batch_size=1,max_workers=concurrency,reuse=True,show_progress=False)
         verify_end=time.monotonic_ns()
-        rows=[dict(proof_id=x.id,status=x.analyze().status.value,result=x.model_dump(exclude_none=True))for x in replies.results]
+        rows=[dict(proof_id=x.id,
+            status="resource_failure" if (x.error or "").startswith("resource_failure:") else x.analyze().status.value,
+            sdk_status=x.analyze().status.value, result=x.model_dump(exclude_none=True))for x in replies.results]
+        if guard.error:
+            raise RuntimeError("RSS monitoring failed: " + guard.error)
         assert len(rows)==len(items)and[x["proof_id"]for x in rows]==[x["proof_id"]for x in items]
         with(out/"results.jsonl").open("w")as f:
             for row in rows: f.write(json.dumps(row,ensure_ascii=False)+"\n")
@@ -151,6 +178,9 @@ async def cell(args, method, out, items, build):
             if backend.poll() is None: backend.terminate()
             result["backend_exit"]=await asyncio.to_thread(backend.wait)
             backend.stdout.close(); socket_dir.cleanup()
+        if guard.thread.ident is not None:
+            guard.stop()
+        result["memory_watchdog"] = guard.summary()
         for stream in streams: stream.close()
         events.close()
         finish=time.monotonic_ns()
@@ -160,7 +190,7 @@ async def cell(args, method, out, items, build):
         result["cpu_scope"]="Not validated exhaustive descendant CPU; no pure solver attribution."
         result["effective_test_settings"]={k:env[k]for k in["LEAN_SERVER_PROJECT_DIR",
             "LEAN_SERVER_REPL_PATH","LEAN_SERVER_LEAN_VERSION","LEAN_SERVER_MAX_REPL_MEM",
-            "LEAN_SERVER_HOST","LEAN_SERVER_PORT","LEAN_SERVER_NATIVE_DYNLIB"]}
+            "LEAN_SERVER_HOST","LEAN_SERVER_PORT","LEAN_SERVER_NATIVE_DYNLIB","LEAN_SERVER_MAX_REPLS"]}
         (out/"terminal.json").write_text(json.dumps(result,indent=2)+"\n")
     print(json.dumps({k:v for k,v in result.items()if k not in[
         "effective_test_settings","owned_descendants_before_shutdown"]}),flush=True)
@@ -191,8 +221,14 @@ if __name__=="__main__":
                         help="Existing native-reference engine; does not change Power's numerical portfolio")
     parser.add_argument("--affinity", type=int, nargs="+", default=[20,21,22,23],
                         help="Equal CPU eligibility for every condition in this finite comparison")
-    parser.add_argument("--concurrency", type=int, default=8,
+    parser.add_argument("--concurrency", type=int, default=2,
                         help="Outstanding original sources and warm workers per header; compare methods at the same value")
+    parser.add_argument("--total-memory-gib", type=int, default=48)
+    parser.add_argument("--per-repl-gib", type=int, default=24)
+    parser.add_argument("--watchdog-test-threshold-bytes", type=int, default=0,
+                        help="Lowered fault-injection threshold only; never a performance condition")
+    parser.add_argument("--skip-warm", action="store_true",
+                        help="Fault-injection engagement without warm-only victim attribution")
     args=parser.parse_args()
     for name in["kimina","build","build_source","repl","reference","support_python","input","out"]:
         # Preserve a virtual environment's invocation path: resolving bin/python

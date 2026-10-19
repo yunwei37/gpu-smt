@@ -167,9 +167,13 @@ if __name__ == "__main__":
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--datasets", nargs="+", choices=["minif2f","proofnet"], default=["minif2f","proofnet"])
     parser.add_argument("--full", action="store_true", help="Both methods process every original source without qualification selection")
-    parser.add_argument("--concurrency", type=int, default=8, help="Same source concurrency for both methods; default retains earlier captures")
+    parser.add_argument("--concurrency", type=int, default=2, help="Matched source and live native-worker count within aggregate48GiB")
+    parser.add_argument("--per-repl-gib", type=int, default=24)
+    parser.add_argument("--total-memory-gib", type=int, default=48)
     options = parser.parse_args()
     args.concurrency = options.concurrency
+    args.per_repl_gib = options.per_repl_gib
+    args.total_memory_gib = options.total_memory_gib
     A = options.out
     A.mkdir(parents=True, exist_ok=False)
     raise SystemExit(asyncio.run(main(options.datasets, full=options.full)))

@@ -368,3 +368,22 @@ file on the nearly full project volume. No background compression helper,
 data deletion, extra research quota or retained service is required.
 Do not change an active block's binary tree, common collector or proxy;
 publish closed cells at their actual termination.
+
+## Current aggregate-memory capture point
+
+New official-HTTP captures default to two source/native-worker slots and
+24GiB per native REPL inside a48GiB owned-process RSS budget. The parent
+watchdog samples once a second, includes controller/server/backend/REPL RSS,
+and records candidate-attributed resource failures before terminating the
+largest owned native group on excess. Configurations whose count times
+per-worker limit exceeds the aggregate are rejected. These are the current
+user-requested resource settings; older recorded benchmarks keep their
+original clocks and must not be mixed with the new point.
+
+The owning retained Kimina dependency needs the declared live-worker/
+resource-attribution patch in
+artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/.
+This is a finite benchmark modification, not an upstream unmodified service
+or a Workspace quota. The watchdog is sampled and cannot promise zero
+subsecond RSS overshoot. Lowered-threshold fault injection is qualification
+only and excluded from performance results.

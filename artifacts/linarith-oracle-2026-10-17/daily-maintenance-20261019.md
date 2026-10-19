@@ -83,3 +83,17 @@ complete generality evidence and a consequential reusable native cost; this
 selected dependency check does not create it. Continue the already running
 whole population and subsequent corrected29750comparison before proposing
 another local mechanism from hit counts or smoke timings.
+
+New urgent user decision replaces per-worker48GiB with a total48GiB point.
+The prior two-client service retained3native workers; old collector is stopped
+and partials preserved. New actual2-worker lifetime slots/24GiB limits plus
+whole-owned-tree sampled watchdog are implemented and real kill/attribution
+tested. Current docs point to the explicit new point; historical clocks remain.
+
+Substantive-progress reflection: repeat host pressure destroys experiments
+and can affect co-tenants, so source submission concurrency cannot stand in
+for native lifetime/RSS accounting. Finish the24-real-source paired resource
+qualification and only then the single wholeminiF2Fpair. This is required
+execution repair, not a new research contribution. Preserve unknown failure
+causes and separate old/new resource denominators. Other CPU matrices need
+the same aggregate accounting before their obsolete queues can run again.
