@@ -171,7 +171,7 @@ and the default asyncio read-line limit. A declared Kimina transport/logging
 patch preserves response framing and disables heuristic regex highlighting.
 Fresh qualification and captures use that same patch in both arms; they
 remain separate from prior unchanged-application measurements.
-[Fault evidence, exact patch and ongoing real-source qualification](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md).
+[Fault evidence, exact patch and closed real-source qualification](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md).
 
 Warm REPLs, caches, snapshots, native compilation, batched LPs and external
 certificate oracles are established techniques. They are not individual

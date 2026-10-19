@@ -1,8 +1,11 @@
 # Declared Kimina transport and logging repair
 
 This directory preserves an actual interrupted miniF2F collector and the
-minimal application repair used by subsequent fresh captures. It does not
-claim a Lean/GPU speedup or an unchanged upstream application.
+minimal application repair used by subsequent fresh captures. The54-source
+paired qualification has closed; [raw analysis and self-review](result-review.md)
+retain28complete/23rejected/3operational in each arm. The full7808-source
+pair starts at06:40Zand remains incomplete. This is not a Lean/GPU speedup
+or an unchanged upstream application.
 
 * [Plan and source/metric scope](plan.md)
 * [Root plan self-review](plan-review.md)

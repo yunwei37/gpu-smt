@@ -5667,3 +5667,32 @@ completion of both54-source methods. Large-frame qualification is still
 the separate200050-byte protocol check. No broad causal or parity claim is
 inferred. Temporary py-spy installation is removed after stack preservation;
 the application venv has no added diagnostic dependency.
+
+## 2026-10-19T06:57Z — consume closed real54-source qualification
+
+EXPERIMENT_GATE resumes the same supporting RQ3 baseline comparison. Actual
+both-method terminals close before this wake, not merely healthy process
+state. Reused public outcome analyzer and HTTP attempt join confirm all54IDs:
+28complete/23rejected/3operational, no per-ID status or native-outcome change.
+579/663/664remainHTTP500operational failures in both arms after three attempts;
+their resource cause is unknown. Source2518returnsHTTP200both. All two-owned
+descendants retire per method, observed attempt overlap2and no unanswered
+attempt. Real reply bodies906/1267bytes do not qualify the >64KiB case; retain
+that distinction from the separate200050-byte protocol test. Sixteen opaque
+env and32raw response differences remain; no transparent-API claim.
+
+Original-source qualification selects known failing/heavy inputs, so its
+1078.424663/1107.424454s whole clocks are dependency observations only, not
+population ratios or research progress. Actual full7808pair starts once at
+06:40:44Zin fresh outputs, same declared patched app/two sources/CPU4–7/48GiB.
+Do not repeat it or splice prepatch/partial clocks. Existing unfinished
+matrices stay sequential. Complete/failed raw qualification bytes, native
+responses, parser costs and public reproducible analysis are now published.
+
+WRITE_GATE factual current-frontier update only: pending54becomes closed;
+fullminiF2F remains incomplete, paper statements and all four RQs unchanged.
+No LaTeX change or unnecessary compile/full writing loop. REVIEW_GATE root
+self-audit verifies exact source sets/resources/lifecycle/attempts/failures,
+byte-equal analysis reproduction and no selected-cohort speed claim. Dependency
+repair is complete; next action remains full requested experiment acquisition.
+No delegate/Agent, new service, scheduler, checkout or policy is introduced.

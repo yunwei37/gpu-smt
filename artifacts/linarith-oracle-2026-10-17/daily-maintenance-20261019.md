@@ -74,3 +74,12 @@ purpose is to unblock complete equal-resource evidence. No stronger novelty
 claim follows. A finite existing-work sequence joins the actual qualification
 without polling and continues only after real terminal/retirement records;
 the root thread retains all scientific and implementation responsibility.
+
+06:57Z checkpoint consumes the closed54-source repair qualifier once, preserves
+three operational failures in both arms, publishes exact raw/reproduction,
+and updates stale pending status. The full7808pair has actually started
+without another wake or polling loop. The substantive bottleneck remains
+complete generality evidence and a consequential reusable native cost; this
+selected dependency check does not create it. Continue the already running
+whole population and subsequent corrected29750comparison before proposing
+another local mechanism from hit counts or smoke timings.

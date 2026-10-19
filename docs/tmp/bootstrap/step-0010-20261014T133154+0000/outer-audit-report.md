@@ -3639,3 +3639,23 @@ completion of both54-source methods. Large-frame qualification is still
 the separate200050-byte protocol check. No broad causal or parity claim is
 inferred. Temporary py-spy installation is removed after stack preservation;
 the application venv has no added diagnostic dependency.
+
+## Closed repaired qualification — root self-audit
+
+Both actual terminal/retirement records and all54returned outcomes are read,
+not inferred from the continuation log. SDKvalid is checked by the existing
+native-message classifier; three server-error IDs retain failed retries.
+Sixty-two matched attempts per method show actual concurrency2and no
+unanswered request. Real <2KiB responses are not misrepresented as the
+large-frame test, and no global memory cause is invented from empty output.
+Native/SHRED opaque env differences remain. The exact public analysis
+reproduces byte-for-byte from preserved raw gzip. Current full output is
+active and excluded from staging. Root self-review only, not independent.
+
+Direction: no RQ/CPU-GPU criterion/system contribution is changed. This is
+necessary baseline dependency evidence, zero standalone research value.
+Efficiency: consume closed data once, publish immediately, preserve actual
+healthy full7808acquisition and its sequential continuation. No wait loop,
+repeat qualifier, new solver variant or documentation-as-novelty claim.
+Maintenance: current README/evaluation separate completed qualifier from
+incomplete full pair; older timestamped snapshots remain truthful history.

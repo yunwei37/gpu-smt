@@ -230,14 +230,18 @@ Kimina application. Exact before/after sources, patch, license, real stack,
 retired owner processes and closed partial bytes remain. The protocol test
 preserves a200050-byte reply and following frames at the unchanged64KiB
 default limit; that is dependency qualification, not a verification speedup.
-Actual54-source native/SHRED qualification includes previous HTTP failures
-and source2518. At this checkpoint it has no completed paired terminal:
-two heavy sources still produce HTTP500/empty native responses and retries,
-with cause unassigned. These are not quietly relabeled Lean rejections.
-Fresh full captures must declare the same repaired application in both arms;
-old and new application epochs are not pooled. The finite continuation joins
-the existing qualification through pidfd, without goal polling or duplicate
-acquisition; only actual qualified outputs admit the full pair.
+The [closed54-source paired qualification](../artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/result-review.md)
+includes previous HTTP failures and source2518. Both return28complete/
+23rejected/3operational, zero status/outcome differences;16opaque-env and32raw
+reply differences remain. The same three failed IDs each retain threeHTTP500
+attempts; causes remain unassigned, not relabeled ordinary Lean rejection.
+Each has62HTTPrequests/62responses, observed overlap2and no line-limit error,
+with all owned descendants retired. Largest real replies906/1267bytes do
+not themselves test the >64KiB frame. The whole7808-source pair starts once
+at06:40Zin fresh outputs using the same repaired application in both arms;
+old/new epochs are not pooled. Its acquisition remains incomplete. The finite
+sequence joins actual qualification via pidfd without goal polling, then
+continues admitted unfinished methods; no new Agent or scheduler is used.
 
 ## Prefix/preparation evidence and previous controls
 

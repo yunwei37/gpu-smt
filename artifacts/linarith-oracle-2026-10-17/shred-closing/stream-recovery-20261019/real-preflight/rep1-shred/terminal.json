@@ -1,0 +1,83 @@
+{
+  "state": "complete",
+  "method": "stock",
+  "expected": 54,
+  "source_concurrency": 2,
+  "affinity": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "memory_limit_bytes": 51539607552,
+  "native_engine": null,
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": null,
+  "lean_version": "v4.9.0-rc1",
+  "native_library": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+  "scope": "Real-source dependency repair qualification, not corpus performance or unchanged upstream application. Root self-review.",
+  "returned": 54,
+  "counts": {
+    "valid": 28,
+    "lean_error": 23,
+    "server_error": 3
+  },
+  "server_ready_seconds": 0.748042052,
+  "preparation_seconds": 3.095251344,
+  "warm_verify_seconds": 1092.615659169,
+  "server_exit": -15,
+  "joined_owned_descendants": 2,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 7084,
+      "birth": 1792391505.09,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    },
+    {
+      "pid": 7085,
+      "birth": 1792391505.22,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "address_limit": [
+        "Max address space         51539607552          51539607552          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "whole_lifecycle_seconds": 1095.923146847,
+  "waited_child_cpu_seconds": 1703.4153970000002,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+    "LEAN_SERVER_MAX_REPL_MEM": "48G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "53751",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-native-mathlib-20261014/.lake/build/lib/libMathlib-Tactic-Linarith-1.so"
+  },
+  "condition": "shred",
+  "dataset": "minif2f",
+  "input_preparation_seconds": 11.500872375,
+  "whole_with_input_preparation_seconds": 1107.424453894,
+  "application_repairs": "Declared kimina-transport-logging.patch; large-line framing and NullHighlighter, same native solver/48GiB/source width2."
+}
