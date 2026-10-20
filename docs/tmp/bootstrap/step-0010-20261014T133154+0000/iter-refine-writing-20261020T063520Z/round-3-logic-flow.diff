@@ -1,0 +1,19 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -463,6 +463,7 @@
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+ 
+ The comparisons below test distinct execution and placement mechanisms.
++They determine which implementations improve or worsen the measured service conditions; they do not combine into one implemented branching system.
+ Each result applies to its stated constructor and workload. The complete
+ frontier comparison must also account for the full workload and resource matrix.
+ 
+@@ -963,6 +964,8 @@
+ It does not justify closing the GPU direction.
+ 
+ Earlier arithmetic versions, complete phase captures and the supported-expression GPU control remain in Appendix~\ref{app:arithmetic-history}; the supporting CPU comparisons remain in Appendix~\ref{app:cpu-controls}. These observations constrain their own mechanisms and do not supply a current GPU impossibility bound.
++
++The arithmetic CPU gains establish a stronger comparator, not a benefit from heterogeneous execution. The completed device qualifications have not established a useful additional gain over their matched CPU portfolios. Neither those observations nor the conditional cost models establish a general GPU impossibility bound.
+ 
+ Answering RQ4 at its stated scope requires the remaining workload and
+ strongest-checker comparisons. RQ4 remains unanswered until measured

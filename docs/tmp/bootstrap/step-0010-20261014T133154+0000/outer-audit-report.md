@@ -3850,3 +3850,11 @@ watchdog data and two native descendants. No run-code mutation, new full
 group, solver variant, duplicate Agent or live-log publication. Author dirty
 work stays untouched. No paper number changes, independent review or project
 completion is claimed.
+
+
+## Full serial writing refinement — root self-audit
+Direction: Initial Narrative, title/thesis, all four exact RQs and Lean/SMT/GPU/systems scope remain. This is paper clarity and artifact upkeep, not new research evidence or a surrogate OSDI contribution. Missing results and complete service novelty remain explicit.
+
+Source fidelity: historical negative results, partial/failure conditions and conditional bounds are relocated intact. Final original-number/citation inventories have no removals; source refs/figure files resolve. Two introduced meaning changes are actually restored in round eleven. Bibliography repair records access year, not invented publication, and uses immutable artifact/source evidence. Mechanical verification passes51entries; no independently refreshed every-paper/retraction audit is claimed.
+
+Execution: all twelve reports/diffs/builds exist, all30renderedpages reviewed, excessive final-submission length remains open. Every review is root self-review. No subagent/OMP/native-session start, alternative checkout or milestone acceptance claim. Exact healthy full driver/two24GiBworkers/fresh watchdog are preserved; no second full group, runtime policy change or active-log staging. Author changes remain unstaged. The next decisive empirical boundary is still completion of the retained matrix.

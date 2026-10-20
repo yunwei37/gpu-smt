@@ -1,0 +1,40 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -12,7 +12,7 @@
+ \maketitle
+ \begin{abstract}
+ Formal verification services check related program and proof candidates that share libraries, declarations and accepted context.
+-Serving independent attempts requires balancing preparation reuse with independent candidate lifetimes, whose isolation determines resource growth, contention and cancellation.
++Serving independent attempts requires balancing preparation reuse with candidate isolation because shared execution couples resource growth, contention and cancellation to worker isolation.
+ Native execution history extends beyond logical context to scope, heuristics, runtime objects and resource counters, so reconstructed context needs a separate argument about observable behavior.
+ Established caches, persistent environments, proof-state snapshots and bounded warm services recover preparation reuse, leaving unresolved the additional value of independent native execution at matched resources.
+ We argue that reusable state should retain preparation while separating each candidate's execution history and lifetime from preceding alternatives.
+@@ -170,7 +170,7 @@
+ certificate and constructs only the facts that it cites.
+ 
+ For each contradiction branch, the Lean frontend collects the applicable
+-assumptions and exports an arithmetic expression tree (AST) with stable identifiers
++assumptions and exports an arithmetic expression tree, an abstract syntax tree (AST), with stable identifiers
+ for opaque atoms. A native untrusted process expands rational polynomials,
+ generates nonlinear products and square facts, and performs support search
+ with exact certificate repair. It returns nonnegative coefficients, equality
+@@ -403,8 +403,8 @@
+ pair. Both methods genuinely complete the same 413 sources. Native outcomes
+ are 5,534 rejected, four incomplete and one operational failure; reuse
+ returns 5,514 rejected, 24 incomplete and one operational failure.
+-The twenty changed sources carry cache-hit messages and sorry warnings;
+-The software development kit (SDK) valid counts of 417 and 437 are therefore not complete-proof counts.
++The twenty changed sources carry cache-hit messages and sorry warnings.
++The software development kit (SDK) reports valid counts of 417 and 437, which are therefore not complete-proof counts.
+ Opaque environment handles and messages also differ. Eight outstanding
+ sources share four eligible CPUs and the same 48 GiB per-process limit.
+ This is an as-integrated existing-method control, not a deployment of an
+@@ -1271,7 +1271,7 @@
+ command path. The reference executes original commands in a warm native
+ in-process batch, and both methods use four-wide native work submission.
+ Whole clocks include parsing, preparation, transport, native checking,
+-fallback and process retirement. These charged costs make this adaptation distinct from an
++fallback and process retirement. This adaptation is distinct from an
+ end-to-end execution of the published SHRED workflow. All three formal methods
+ inherit the pinned SHRED client's ordinary 48 GiB verifier address-space
+ limit. Operational resource failures and replacement costs remain in the

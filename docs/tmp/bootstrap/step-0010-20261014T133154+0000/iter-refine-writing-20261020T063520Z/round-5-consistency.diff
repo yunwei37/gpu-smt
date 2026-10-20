@@ -1,0 +1,38 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -312,7 +312,7 @@
+ 
+ For the bounded arithmetic comparison, the host is an Intel Core Ultra 9 285K
+ with 24 physical cores and no SMT siblings in the observed topology.
+-Earlier arithmetic clients use CPUs 12--15. The current complete common-omega
++Earlier arithmetic clients use CPUs 12--15. The complete instrumented common-omega
+ and natural-power blocks use 4--7; ready-goal qualifications use 8--11, and
+ the retained prefix captures use 20--23.
+ Affinity does not reserve memory bandwidth or isolate other work.
+@@ -320,6 +320,8 @@
+ support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
+ The RTX 5090 is shared through device-plugin time slicing with another
+ Workspace, without a fixed half-device allocation.
++The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit; an independent parent samples total owned-process RSS every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed; the six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
++
+ The earlier external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
+ so that follow-up does not establish the equal-resource frontier of RQ3. Its client CPU and memory observations also exclude the external
+ server. Server counters include the qualification window and do not provide
+@@ -1380,7 +1382,7 @@
+ composition.
+ 
+ 
+-\paragraph{Current common-omega accounting.}
++\paragraph{Common-omega phase accounting.}
+ A separate diagnostic of the earlier direct representation, before literal-power
+ export, holds omega and the two-sided backend common to both frontends. It completes all 1,000 sources in 475.97 seconds with native export
+ and 406.46 seconds with direct export, each with 992 complete and eight rejected
+@@ -1420,7 +1422,7 @@
+ and model scripts are retained in the artifact; all review here is self-review.
+ 
+ \paragraph{Earlier direct-export phase capture.}
+-A separate current-build diagnostic pair covers all 1,000 sources and
++A separate diagnostic of the earlier direct-export build covers all 1,000 sources and
+ 13,230 native versus 10,251 oracle numerical requests, including failed
+ branches. Native and CPU-oracle whole times are 705.41 and 459.32 seconds,
+ with metadata scans and gzip I/O charged. Both retain 992 complete and eight

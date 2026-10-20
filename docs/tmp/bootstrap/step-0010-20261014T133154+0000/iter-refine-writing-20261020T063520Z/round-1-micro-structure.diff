@@ -1,0 +1,143 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -246,7 +246,7 @@
+ historical verifier arrivals.
+ 
+ \paragraph{Retained generated candidates and submission policy.}
+-The retained Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
++The retained generated-candidate workload groups alternative proofs by task. The Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
+ 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.
+ Every selected candidate maps to its original task, model output, extracted
+ source and submission/response events in four RTX 5090 generation segments.
+@@ -672,67 +672,11 @@
+ proof construction and checking. These are CPU competitors in the
+ heterogeneous comparison.
+ 
+-Here tiered denotes native exact certificate search, while hybrid denotes
++The CPU comparisons establish the reference for the device experiments. Here tiered denotes native exact certificate search, while hybrid denotes
+ native double-precision (FP64) support search followed by exact repair.
+ Fast/hybrid combines the upstream FarkasFast numeric probe and restricted
+ stock proof construction with the native hybrid route and full native
+ fallback~\cite{farkasSource}.
+-
+-\paragraph{Ready-goal device qualification.}
+-A ready-goal adapter exports arithmetic goals sequentially, solves immutable
+-requests in parallel, then checks certificates in the same Lean state. It
+-elaborates original arguments per goal and retains native fallback. A selected
+-15-source qualification forms 1,050 problems: two groups of 512 small linear
+-problems and four smaller nonlinear groups. It checks 1,040 certificates
+-and falls back on ten. Exported problem counts are distinct from device-ready
+-LPs. The fresh matched native, CPU and additive GPU conditions take 116.99,
+-79.93 and 79.59 seconds, respectively, with seven complete and eight rejected
+-outcomes in each. Full CPU/GPU responses agree; six message-only differences
+-from native remain. All 56 races retain native and HiGHS competitors.
+-Two device groups launch three models, including a two-candidate group;
+-all retire. No GPU answer wins. The 0.42\% elapsed difference in one selected
+-preflight therefore establishes no useful GPU benefit or full-matrix
+-admission. The first stale-library integration attempt is retained separately,
+-rather than included as a valid additive comparison.
+-
+-\paragraph{Independent device groups.}
+-A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device
+-groups under the same 48\,GiB address-space ceiling. A repaired 64-source
+-qualification executes 20 nonempty groups and 36 LP models, with complete
+-device-timer samples, at most four overlapping groups, and no live allocations
+-at the final provider probe. Whole warm-pipeline time is 43.07 seconds,
+-versus 37.78 seconds for a fresh CPU oracle and 71.64 seconds for native.
+-All verdicts and non-message fields agree. The GPU condition is 14.00\%
+-slower than CPU. This preflight does not admit a full GPU matrix.
+-Its composition retains native hybrid but replaces the external HiGHS
+-contender. It therefore does not establish the effect of adding GPU work
+-while preserving the strongest measured CPU portfolio. Extra contender,
+-transport, exact repair and retirement costs must be included in that comparison.
+-
+-A corrected additive portfolio keeps native hybrid and CPU HiGHS while adding
+-the same GPU implementation. On the original 64 sources, the same private
+-numerical build takes 38.02 seconds without GPU and 39.33 seconds with GPU,
+-or 3.43\% more elapsed. Full CPU/GPU native responses agree. Of 68 races,
+-HiGHS wins 46, native search 21 and an exact-checked GPU negative certificate
+-is selected once. Six real GPU groups with nine models retire completely.
+-These observations retain the stronger CPU competitors but do not establish
+-a device benefit or admit a full matrix. They also show why racing cannot
+-guarantee zero slowdown when host overhead and contention remain.
+-
+-\paragraph{Remaining numerical work.}
+-The remaining GPU opportunity depends on numerical work in the current CPU path, including unsuccessful searches and retirement. The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
+-numerical races. Their durations sum to 101.54 seconds, including launch,
+-exact repair, cancellation and retirement. The 935 parsed external HiGHS
+-searches sum to 9.25 wall seconds, while 467 additional connections are unparsed
+-or aborted. These are not disjoint pipeline fractions.
+-The observed critical lane, the static candidate queue finishing last, contains 14.11 seconds of complete race work.
+-Deleting all recorded race work while preserving other observed durations,
+-gaps and lane assignments models a 450.47-second pipeline, or
+-$1.53475\times$ relative to that pair's native reference.
+-This is an intentionally optimistic fixed-lane sensitivity, not a measured
+-GPU result or a scheduler-independent Amdahl bound. Current product and
+-small-LP regions are not exhaustively attributed by these records.
+-It does not justify closing the GPU direction.
+ 
+ \paragraph{Natural-power representation.}
+ Preserving literal natural-exponent polynomial relations in the direct export
+@@ -959,6 +903,62 @@
+ CPU or an Amdahl-removable fraction.}
+ \label{fig:dsv2-http-cdf}
+ \end{figure*}
++
++\paragraph{Ready-goal device qualification.}
++A ready-goal adapter exports arithmetic goals sequentially, solves immutable
++requests in parallel, then checks certificates in the same Lean state. It
++elaborates original arguments per goal and retains native fallback. A selected
++15-source qualification forms 1,050 problems: two groups of 512 small linear
++problems and four smaller nonlinear groups. It checks 1,040 certificates
++and falls back on ten. Exported problem counts are distinct from device-ready
++LPs. The fresh matched native, CPU and additive GPU conditions take 116.99,
++79.93 and 79.59 seconds, respectively, with seven complete and eight rejected
++outcomes in each. Full CPU/GPU responses agree; six message-only differences
++from native remain. All 56 races retain native and HiGHS competitors.
++Two device groups launch three models, including a two-candidate group;
++all retire. No GPU answer wins. The 0.42\% elapsed difference in one selected
++preflight therefore establishes no useful GPU benefit or full-matrix
++admission. The first stale-library integration attempt is retained separately,
++rather than included as a valid additive comparison.
++
++\paragraph{Independent device groups.}
++A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device
++groups under the same 48\,GiB address-space ceiling. A repaired 64-source
++qualification executes 20 nonempty groups and 36 LP models, with complete
++device-timer samples, at most four overlapping groups, and no live allocations
++at the final provider probe. Whole warm-pipeline time is 43.07 seconds,
++versus 37.78 seconds for a fresh CPU oracle and 71.64 seconds for native.
++All verdicts and non-message fields agree. The GPU condition is 14.00\%
++slower than CPU. This preflight does not admit a full GPU matrix.
++Its composition retains native hybrid but replaces the external HiGHS
++contender. It therefore does not establish the effect of adding GPU work
++while preserving the strongest measured CPU portfolio. Extra contender,
++transport, exact repair and retirement costs must be included in that comparison.
++
++A corrected additive portfolio keeps native hybrid and CPU HiGHS while adding
++the same GPU implementation. On the original 64 sources, the same private
++numerical build takes 38.02 seconds without GPU and 39.33 seconds with GPU,
++or 3.43\% more elapsed. Full CPU/GPU native responses agree. Of 68 races,
++HiGHS wins 46, native search 21 and an exact-checked GPU negative certificate
++is selected once. Six real GPU groups with nine models retire completely.
++These observations retain the stronger CPU competitors but do not establish
++a device benefit or admit a full matrix. They also show why racing cannot
++guarantee zero slowdown when host overhead and contention remain.
++
++\paragraph{Remaining numerical work.}
++The remaining GPU opportunity depends on numerical work in the current CPU path, including unsuccessful searches and retirement. The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
++numerical races. Their durations sum to 101.54 seconds, including launch,
++exact repair, cancellation and retirement. The 935 parsed external HiGHS
++searches sum to 9.25 wall seconds, while 467 additional connections are unparsed
++or aborted. These are not disjoint pipeline fractions.
++The observed critical lane, the static candidate queue finishing last, contains 14.11 seconds of complete race work.
++Deleting all recorded race work while preserving other observed durations,
++gaps and lane assignments models a 450.47-second pipeline, or
++$1.53475\times$ relative to that pair's native reference.
++This is an intentionally optimistic fixed-lane sensitivity, not a measured
++GPU result or a scheduler-independent Amdahl bound. Current product and
++small-LP regions are not exhaustively attributed by these records.
++It does not justify closing the GPU direction.
+ 
+ Earlier arithmetic versions, complete phase captures and the supported-expression GPU control remain in Appendix~\ref{app:arithmetic-history}; the supporting CPU comparisons remain in Appendix~\ref{app:cpu-controls}. These observations constrain their own mechanisms and do not supply a current GPU impossibility bound.
+ 

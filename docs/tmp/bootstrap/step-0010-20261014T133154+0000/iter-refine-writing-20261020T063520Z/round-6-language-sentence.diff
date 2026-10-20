@@ -1,0 +1,38 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -165,7 +165,7 @@
+ environment reuse. FarkasFast selects hypotheses numerically and then invokes
+ stock arithmetic on the selected subset~\cite{farkasSource}.
+ That restricted invocation can repeat proof-producing normalization and
+-certificate search; its source does not establish a fixed count of completed
++certificate search. Its source does not establish a fixed count of completed
+ oracle invocations. Our experimental path instead returns the numerical
+ certificate and constructs only the facts that it cites.
+ 
+@@ -320,7 +320,7 @@
+ support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
+ The RTX 5090 is shared through device-plugin time slicing with another
+ Workspace, without a fixed half-device allocation.
+-The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit; an independent parent samples total owned-process RSS every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed; the six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
++The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process RSS every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
+ 
+ The earlier external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
+ so that follow-up does not establish the equal-resource frontier of RQ3. Its client CPU and memory observations also exclude the external
+@@ -465,7 +465,7 @@
+ We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
+ 
+ The comparisons below test distinct execution and placement mechanisms.
+-They determine which implementations improve or worsen the measured service conditions; they do not combine into one implemented branching system.
++These comparisons identify improvements and losses under their measured service conditions. They do not combine into one implemented branching system.
+ Each result applies to its stated constructor and workload. The complete
+ frontier comparison must also account for the full workload and resource matrix.
+ 
+@@ -685,7 +685,7 @@
+ \paragraph{Natural-power representation.}
+ Preserving literal natural-exponent polynomial relations in the direct export
+ reduces complete verification time on the predeclared arithmetic-heavy cohort.
+-The exact rational expansion runs outside Lean; native certificate checking
++The exact rational expansion runs outside Lean, while native certificate checking
+ remains authoritative. The previous export treated powers above two as opaque.
+ An admission preflight on all 111 sources with prior negative-LP/fallback
+ evidence takes 63.96 seconds for the previous direct path and 41.30 seconds for

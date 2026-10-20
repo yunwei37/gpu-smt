@@ -1,0 +1,47 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -170,7 +170,7 @@
+ certificate and constructs only the facts that it cites.
+ 
+ For each contradiction branch, the Lean frontend collects the applicable
+-assumptions and exports an arithmetic expression tree with stable identifiers
++assumptions and exports an arithmetic expression tree (AST) with stable identifiers
+ for opaque atoms. A native untrusted process expands rational polynomials,
+ generates nonlinear products and square facts, and performs support search
+ with exact certificate repair. It returns nonnegative coefficients, equality
+@@ -320,7 +320,7 @@
+ support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
+ The RTX 5090 is shared through device-plugin time slicing with another
+ Workspace, without a fixed half-device allocation.
+-The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process RSS every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
++The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process resident set size (RSS) every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
+ 
+ The earlier external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
+ so that follow-up does not establish the equal-resource frontier of RQ3. Its client CPU and memory observations also exclude the external
+@@ -404,7 +404,7 @@
+ are 5,534 rejected, four incomplete and one operational failure; reuse
+ returns 5,514 rejected, 24 incomplete and one operational failure.
+ The twenty changed sources carry cache-hit messages and sorry warnings;
+-SDK valid counts of 417 and 437 are therefore not complete-proof counts.
++The software development kit (SDK) valid counts of 417 and 437 are therefore not complete-proof counts.
+ Opaque environment handles and messages also differ. Eight outstanding
+ sources share four eligible CPUs and the same 48 GiB per-process limit.
+ This is an as-integrated existing-method control, not a deployment of an
+@@ -757,7 +757,7 @@
+ and eight rejected outcomes, matching all verdicts and non-message fields,
+ with 108 message differences. This single fixed-order observation uses CPU
+ 8--11 rather than the earlier CPU 4--7, so its absolute clocks are not pooled
+-with the three instrumented blocks. Candidate, RPC and backend recording
++with the three instrumented blocks. Candidate, remote procedure call (RPC) and backend recording
+ remain charged; the comparison is not entirely instrumentation-free and
+ does not demonstrate GPU benefit or generalization to all Goedel sources.
+ Direct source service spans are longer for 169 candidates, including 63 of
+@@ -824,7 +824,7 @@
+ 45.74/29.67 seconds, but 208, 152 and 245 sources have longer Power body
+ spans. The first two native-ranked slowest ten-source sums are
+ 993.89/650.80 and 949.66/562.37 seconds. These concurrent body spans include
+-GC and IPC and are not removable whole time. This is service transfer of
++GC and interprocess communication (IPC) and are not removable whole time. This is service transfer of
+ the selected CPU arithmetic composition, not GPU benefit or a new
+ prepared-state mechanism.
+ 

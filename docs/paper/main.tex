@@ -14,7 +14,7 @@
 Formal verification services check related program and proof candidates that share libraries, declarations and accepted context.
 Serving independent attempts requires balancing preparation reuse with candidate isolation because shared execution couples resource growth, contention and cancellation to worker isolation.
 Native execution history extends beyond logical context to scope, heuristics, runtime objects and resource counters, so reconstructed context needs a separate argument about observable behavior.
-Established caches, persistent environments, proof-state snapshots and bounded warm services recover preparation reuse, leaving unresolved the value of independent native execution at matched resources.
+Established caches, persistent environments, proof-state snapshots and bounded warm services recover preparation reuse, leaving unresolved the additional value of independent native execution at matched resources.
 We argue that reusable state should retain preparation while separating each candidate's execution history and lifetime from preceding alternatives.
 This separation requires supported quiescent boundaries, faithful native configuration and resource handling, and bounded memory as candidates modify branch-local state.
 We study a proposed verification-service design that retains immutable prepared states in a parent, runs disposable independent branches with inherited native resource state and separate service accounting, and uses native execution for unsupported boundaries.
@@ -25,11 +25,11 @@ Using public Lean and satisfiability modulo theories (SMT)-backed candidate stre
 \section{Introduction}\label{sec:intro}
 Formal verification services check streams of program and proof candidates against formal specifications. Related attempts from proof-generation systems share libraries, declarations and accepted context. Proof assistants construct and check proof terms, while program verifiers translate obligations into requests to satisfiability modulo theories (SMT) solvers. Community tools for Lean~\cite{lean4} serve these workloads through persistent environments~\cite{repl}.
 
-Independent attempts require a service to balance preparation reuse with candidate isolation. Starting a verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but worker isolation determines their resource growth, contention and cancellation behavior. Concurrent attempts against one imported Lean context need the same context while retaining independent lifetimes. Cancelling one attempt must release its speculative work without ending the others.
+Independent attempts require a service to balance preparation reuse with candidate isolation. Concurrent attempts against one imported Lean context need the same context while retaining independent lifetimes. Starting a verifier for each candidate repeats imports and parsing and replicates resident objects. Retained workers and shared logical environments avoid that repetition, but worker isolation determines their resource growth, contention and cancellation behavior. Cancelling one attempt must release its speculative work without ending the others.
 
 Native execution history makes this balance depend on more than the visible formulas or declarations. In Z3's combined solver, an additional scope can change the selected solving path~\cite{z3api}, while earlier requests can alter heuristics and resource counters. Proof assistants also retain elaborator state and mutable runtime extensions beyond the immutable declaration environment~\cite{lean4,repl}. Reconstructing a logically equivalent context therefore requires a separate argument about observable verification behavior.
 
-Established reuse recovers preparation, but its value relative to independent native execution at matched resources remains unresolved. Result caches avoid repeating completed work~\cite{boogieCache}, and the community read--eval--print loop (REPL) provides persistent environments, backtracking and pickling~\cite{repl}. Lean snapshotting retains elaborated proof state across parallel tactic branches~\cite{leanSnapshot}, and stock Lean saves incremental elaboration snapshots between invocations~\cite{leanIncremental}. Bounded warm services reuse environment roots and retire workers~\cite{kimina,kiminaPaper}, while Axle serves preloaded Lean contexts in separate request processes~\cite{axle}. Comparing against these native-reuse baselines must establish whether separating preparation from candidate execution history improves complete verification, cancellation and total memory across service processes.
+Established reuse recovers preparation, but the additional value of independent native execution at matched resources remains unresolved. Result caches avoid repeating completed work~\cite{boogieCache}, and the community read--eval--print loop (REPL) provides persistent environments, backtracking and pickling~\cite{repl}. Lean snapshotting retains elaborated proof state across parallel tactic branches~\cite{leanSnapshot}, and stock Lean saves incremental elaboration snapshots between invocations~\cite{leanIncremental}. Bounded warm services reuse environment roots and retire workers~\cite{kimina,kiminaPaper}, while Axle serves preloaded Lean contexts in separate request processes~\cite{axle}. Comparing against these native-reuse baselines must establish whether separating preparation from candidate execution history improves complete verification, cancellation and total memory across service processes.
 
 We argue that reusable verification state should retain preparation while separating each candidate's execution history and lifetime. Preparing context before candidate evaluation makes that native state available to independent attempts. Each candidate inherits the prepared state, so preceding alternatives neither supply its solver history nor extend its lifetime. The benefit depends on the costs of preparation and branch creation and on the pages each candidate modifies.
 
@@ -165,12 +165,12 @@ certificate removes work that remains after native compilation and warm
 environment reuse. FarkasFast selects hypotheses numerically and then invokes
 stock arithmetic on the selected subset~\cite{farkasSource}.
 That restricted invocation can repeat proof-producing normalization and
-certificate search; its source does not establish a fixed count of completed
+certificate search. Its source does not establish a fixed count of completed
 oracle invocations. Our experimental path instead returns the numerical
 certificate and constructs only the facts that it cites.
 
 For each contradiction branch, the Lean frontend collects the applicable
-assumptions and exports an arithmetic expression tree with stable identifiers
+assumptions and exports an arithmetic expression tree, an abstract syntax tree (AST), with stable identifiers
 for opaque atoms. A native untrusted process expands rational polynomials,
 generates nonlinear products and square facts, and performs support search
 with exact certificate repair. It returns nonnegative coefficients, equality
@@ -185,7 +185,7 @@ can require two contradiction branches. The external search does not return
 trusted Lean expressions or replace the kernel. Unsupported syntax, a missed
 certificate or failed reconstruction restores the saved tactic state and
 selects the same Fast/hybrid and product-reuse path as the comparator.
-All failed attempts and fallback work remain in whole-source timing.
+All failed attempts and fallback work remain in complete source-verification timing.
 
 The current exporter directly handles real and rational arithmetic.
 Natural and integer arithmetic and unsupported normalization remain on the
@@ -246,7 +246,7 @@ include intermediate and unsuccessful attempts. This order does not reconstruct
 historical verifier arrivals.
 
 \paragraph{Retained generated candidates and submission policy.}
-The retained Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
+The retained generated-candidate workload groups alternative proofs by task. The Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.
 Every selected candidate maps to its original task, model output, extracted
 source and submission/response events in four RTX 5090 generation segments.
@@ -312,7 +312,7 @@ We repeat whole comparisons with alternating condition order. Affinity specifies
 
 For the bounded arithmetic comparison, the host is an Intel Core Ultra 9 285K
 with 24 physical cores and no SMT siblings in the observed topology.
-Earlier arithmetic clients use CPUs 12--15. The current complete common-omega
+Both arithmetic frontends use Lean's existing integer arithmetic tactic omega~\cite{lean427OmegaSource}. Earlier arithmetic clients use CPUs 12--15. The complete instrumented common-omega
 and natural-power blocks use 4--7; ready-goal qualifications use 8--11, and
 the retained prefix captures use 20--23.
 Affinity does not reserve memory bandwidth or isolate other work.
@@ -320,6 +320,8 @@ The arithmetic runtime is Lean 4.27.0 with Mathlib a3a10db0, and the robust
 support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
 The RTX 5090 is shared through device-plugin time slicing with another
 Workspace, without a fixed half-device allocation.
+The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process resident set size (RSS) every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
+
 The earlier external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
 so that follow-up does not establish the equal-resource frontier of RQ3. Its client CPU and memory observations also exclude the external
 server. Server counters include the qualification window and do not provide
@@ -392,61 +394,48 @@ retaining the tactic text itself. They expose 3,987 and 3,957 reusable
 occurrences, or 13.44\% and 18.38\%.
 These are occurrence counts rather than measured CPU coverage or time saved.
 
-A native execution comparison tests whether these counted repetitions save
-complete verification time. The adapted executor uses the pinned SHRED parser,
-retains native proof states within each task and checks each closed root with
-Lean's ordinary kernel. Unsupported or failed prefixes use the original
-command path. The reference executes original commands in a warm native
-in-process batch, and both methods use four-wide native work submission.
-Whole clocks include parsing, preparation, transport, native checking,
-fallback and process retirement. This adaptation is distinct from an
-end-to-end execution of the published SHRED workflow. All three formal methods
-inherit the pinned SHRED client's ordinary 48 GiB verifier address-space
-limit. Operational resource failures and replacement costs remain in the
-full-population report. This comparison does not reproduce a deployed
-Kimina server's separate memory policy.
-The complete miniF2F native-batch reference returns all 7,808 sources in
-28,673.00 seconds: 2,992 complete, 4,497 rejected and 319 operational outcomes.
-The 82 failed native requests occupy 20,672.97 seconds, or 72.10\% of whole
-elapsed time, in non-overlapping sequential client roundtrips. This is
-caller waiting/roundtrip wall, not native CPU or internal tactic work.
-Forced retirement censors CPU accounting, and 319 source verdicts remain
-operationally unknown.
-The complete exact-text prefix capture takes 41,738.63 seconds, with
-2,992 complete, 4,490 rejected and 326 operational sources.
-All 2,992 native-complete sources remain complete, and no new source becomes
-complete. Five operational sources become rejected and twelve rejected
-sources become operational, while 314 remain operational.
-The executor records seven cache lookups, 21,588 prefix nodes and 4,945
-original-source fallbacks. Its included native parser cost is 10.13 seconds.
-The raw elapsed time is 45.57\% longer than batch execution, but unresolved
-operational outcomes and 109 forced retirements prevent a validated
-speed ratio or complete CPU accounting. This does not establish savings in
-successful proof work or characterize the upstream closing-certificate executor.
-The complete unit-text prefix condition takes 40,943.77 seconds, with the
-same 2,992 complete, 4,490 rejected and 326 operational outcomes as exact-text
-prefixes. It records 3,711 cached lookups, 17,924 executed prefix nodes and
-4,948 source fallbacks. All native-complete sources remain complete with a
-native kernel receipt, but the same twelve rejection-to-operational and five
-operational-to-rejection transitions preclude a validated batch-relative
-speed ratio. The 109 forced retirements censor CPU accounting. More cache
-hits therefore do not establish useful end-to-end savings on this capture.
-The complete original ProofNet prefix acquisition covers5,952 sources in
-186 original32-candidate blocks. Native batch takes1,127.28 seconds
-(413 complete,5,526 rejected,nine operational,four incomplete);
-exact prefixes take2,502.01 seconds and unit prefixes2,479.03 seconds
-(each417 complete,5,531 rejected,four operational).
-All413 native-complete sources remain complete with native kernel receipts.
-Four incomplete sources become complete; eight operational sources become
-rejected and three rejections become operational. These differences preclude
-a validated speed ratio. Exact and unit execution record37 and3,853 cached
-lookups,13,525 and9,716 executed nodes, and5,580/5,581 fallbacks, respectively.
-Their four failed native request intervals occupy609.15/610.31 seconds;
-batch failure intervals occupy13.86 seconds. These are caller roundtrip wall,
-not internal tactic CPU. Forced retirements censor complete CPU accounting.
-Reuse counters therefore do not establish useful whole-verification savings.
-This remains an offline executor comparison, not the complete upstream SHRED workflow
-or Kimina HTTP service.
+\paragraph{Existing closing-certificate reuse.}
+We also integrate SHRED's unchanged closing-certificate module and wrapper
+with the official Kimina HTTP application~\cite{shred}. On all 5,952 original
+ProofNet candidates, native verification takes 356.37 seconds and this
+integration takes 373.22 seconds, including actual input preparation and
+process retirement: 4.73\% more elapsed time in one fixed-order shared-host
+pair. Both methods genuinely complete the same 413 sources. Native outcomes
+are 5,534 rejected, four incomplete and one operational failure; reuse
+returns 5,514 rejected, 24 incomplete and one operational failure.
+The twenty changed sources carry cache-hit messages and sorry warnings.
+The software development kit (SDK) reports valid counts of 417 and 437, which are therefore not complete-proof counts.
+Opaque environment handles and messages also differ. Eight outstanding
+sources share four eligible CPUs and the same 48 GiB per-process limit.
+This is an as-integrated existing-method control, not a deployment of an
+upstream HTTP service supplied by SHRED or a matched transparent speedup.
+A separate complete miniF2F pair uses two live REPLs, each limited to 24 GiB,
+with a 48 GiB total owned-process RSS watchdog in both methods.
+All 7,808 original candidates take 18,987.74 seconds natively and
+19,235.45 seconds with reuse: 1.30\% more elapsed time. Genuine completions
+decrease from 3,015 to 3,010. Eleven native rejections instead return
+sorry-bearing incomplete results after cache hits; five native successes
+report a kernel unknown-constant error for \texttt{\_auxLemma.1}, also after
+hits. The SDK's 3,021 valid reuse results therefore do not establish more
+complete proofs. Both methods retain the same 118 operational-failure IDs,
+with timeout/resource classifications of 71/47 and 68/50. Native outcomes
+are not preserved by this integration. This is one shared-host observation
+at the stated resource point, not a general rejection of prefix reuse.
+Figure~\ref{fig:minif2f-shred-http-cdf} retains all source latencies.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-http-cdf.pdf}
+\caption{Complete miniF2F native/reuse HTTP latency: all 7,808 inputs per
+method, including errors, timeouts and resource failures (left); the same
+781 native-ranked slowest inputs (right). Two live REPLs share four eligible
+CPUs and a total 48 GiB RSS budget. HTTP spans exclude SDK predispatch and
+global input preparation, which whole-flow clocks charge. This fixed-order,
+shared-host pair has changed proof outcomes as described in the text.}
+\label{fig:minif2f-shred-http-cdf}
+\end{figure*}
+
+Earlier parser-based execution comparisons appear in Appendix~\ref{app:prefix-history}. They retain changed outcomes and operational failures rather than supplying a validated speedup.
 \missing{Complete operational adjudication, repeated observations,
 cost-weighted savings and claim-matched upstream workflow/service comparisons.}
 
@@ -476,6 +465,7 @@ RQ3 asks how prepared-state branching changes end-to-end latency, throughput and
 We report latency distributions and completed throughput together with fleet proportional memory and CPU work. The causal comparison includes startup-only branches, deeper prepared prefixes and independent warm workers. Ablations remove prefix preparation, vary preparation depth and replace placement with ordinary bounded retention. Private dirty pages and branch lifetime explain whether sharing or simple warm startup drives the observed gain. \missing{Matched frontier plots, tail latency, memory, cancellation cost and mechanism ablations.}
 
 The comparisons below test distinct execution and placement mechanisms.
+These comparisons identify improvements and losses under their measured service conditions. They do not combine into one implemented branching system.
 Each result applies to its stated constructor and workload. The complete
 frontier comparison must also account for the full workload and resource matrix.
 
@@ -685,130 +675,18 @@ linear programming (LP) solver~\cite{highsSimplex}, followed by exact certificat
 proof construction and checking. These are CPU competitors in the
 heterogeneous comparison.
 
-Here tiered denotes native exact certificate search, while hybrid denotes
+The CPU comparisons establish the reference for the device experiments. Here tiered denotes native exact certificate search, while hybrid denotes
 native double-precision (FP64) support search followed by exact repair.
 Fast/hybrid combines the upstream FarkasFast numeric probe and restricted
 stock proof construction with the native hybrid route and full native
 fallback~\cite{farkasSource}.
 
-\paragraph{Current matched arithmetic results.}
-The latest CPU comparison tests whether reusing both successful and unsuccessful numerical search results avoids repeated exact search. This full-cohort comparison adds exact checking of external
-infeasibility certificates. A negative certificate establishes infeasibility of
-the coefficient-search problem, rather than rejection of the Lean source. With a fresh native reference, native,
-positive-only HiGHS and two-sided HiGHS take 681.24, 472.09 and
-453.51 seconds. The two-sided ratio is $1.50216\times$, exceeding
-the $1.5\times$ boundary by only 0.653 seconds of candidate elapsed time.
-All cells retain 992 complete and eight rejected sources with matching
-verdicts and non-message fields. Both HiGHS conditions have the same
-104 message-only differences. Of 1,888 two-sided races, 334 return an
-exact-verified external negative certificate. This avoids some expensive
-exact no-certificate searches while preserving exact fallback when numerical
-reconstruction fails. It is a CPU observation, not GPU acceleration.
-The success-only and two-sided cells have 147 and 107 observer read errors,
-respectively. Shared background, a single fixed acquisition order and the
-small threshold margin preclude a stable threshold claim. An unchanged
-reversed-order repetition takes 687.26 seconds for native and 447.31 seconds
-for the two-sided oracle, or $1.53644\times$. It retains all 992 complete
-and eight rejected outcomes, matching non-message fields and the same
-104 message-only differences. The oracle has 92 observer read errors.
-
-The third native-first pair takes 691.36 versus 464.58 seconds,
-or $1.48814\times$, below the threshold. All outcomes and non-message fields
-again match, with the same 104 message-only differences and 105 observer
-read errors in the oracle cell. Across all three predeclared pairs,
-native and candidate whole times sum to 2,059.87 and 1,365.40 seconds:
-the aggregate ratio is $1.50862\times$. This meets the local continuation
-criterion on the enriched arithmetic-heavy cohort, while preserving the
-subthreshold observation. It is not a confidence interval, full-population
-or globally strongest-CPU result.
-
-A complete native-frontend control with the same two-sided numerical
-backend takes 518.50 seconds in this block. Direct export therefore gives
-only $1.11607\times$ additional speedup, or 10.40\% less elapsed time.
-The native-frontend control alone is $1.33337\times$ faster than the original
-Fast/hybrid reference. It retains all verdicts and non-message fields,
-with 62 message-only changes and 88 observer read errors. Frontend choice
-also changes LP inputs, proofs and fallback, so this is an end-to-end
-component comparison rather than a pure proof-construction timer.
-The aggregate improvement over the original reference must not be
-attributed entirely to the direct frontend or called a global CPU-frontier
-advantage. Generality beyond the selected arithmetic-heavy cohort remains open. The established certificate
-primitives do not alone establish the systems contribution.
-
-A stronger arithmetic composition adds the existing native integer solver
-omega to both frontends. One complete matched 1,000-source block takes
-454.82 seconds with native export, 388.17 seconds with direct export, and
-450.99 seconds with direct export but without omega. Direct export is
-$1.17172\times$ faster than the common-omega native path; adding omega to
-the direct path gives $1.16186\times$. Each condition retains all 992 complete
-and eight rejected outcomes with no non-message mismatch. Native versus
-direct has 73 message-only differences; observer errors are 80, 110 and 90
-in acquisition order. One fixed-order block establishes neither confidence
-nor a globally optimal CPU frontier. Stock solver selection is prior art.
-This control narrows the incremental frontend advantage and prevents reading
-the earlier $1.50862\times$ ratio as an improvement over this stronger native
-composition.
-
-A ready-goal adapter exports arithmetic goals sequentially, solves immutable
-requests in parallel, then checks certificates in the same Lean state. It
-elaborates original arguments per goal and retains native fallback. A selected
-15-source qualification forms 1,050 problems: two groups of 512 small linear
-problems and four smaller nonlinear groups. It checks 1,040 certificates
-and falls back on ten. Exported problem counts are distinct from device-ready
-LPs. The fresh matched native, CPU and additive GPU conditions take 116.99,
-79.93 and 79.59 seconds, respectively, with seven complete and eight rejected
-outcomes in each. Full CPU/GPU responses agree; six message-only differences
-from native remain. All 56 races retain native and HiGHS competitors.
-Two device groups launch three models, including a two-candidate group;
-all retire. No GPU answer wins. The 0.42\% elapsed difference in one selected
-preflight therefore establishes no useful GPU benefit or full-matrix
-admission. The first stale-library integration attempt is retained separately,
-rather than included as a valid additive comparison.
-
-\paragraph{Independent device groups.}
-A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device
-groups under the same 48\,GiB address-space ceiling. A repaired 64-source
-qualification executes 20 nonempty groups and 36 LP models, with complete
-device-timer samples, at most four overlapping groups, and no live allocations
-at the final provider probe. Whole warm-pipeline time is 43.07 seconds,
-versus 37.78 seconds for a fresh CPU oracle and 71.64 seconds for native.
-All verdicts and non-message fields agree. The GPU condition is 14.00\%
-slower than CPU. This preflight does not admit a full GPU matrix.
-Its composition retains native hybrid but replaces the external HiGHS
-contender. It therefore does not establish the effect of adding GPU work
-while preserving the strongest measured CPU portfolio. Extra contender,
-transport, exact repair and retirement costs must be included in that comparison.
-
-A corrected additive portfolio keeps native hybrid and CPU HiGHS while adding
-the same GPU implementation. On the original 64 sources, the same private
-numerical build takes 38.02 seconds without GPU and 39.33 seconds with GPU,
-or 3.43\% more elapsed. Full CPU/GPU native responses agree. Of 68 races,
-HiGHS wins 46, native search 21 and an exact-checked GPU negative certificate
-is selected once. Six real GPU groups with nine models retire completely.
-These observations retain the stronger CPU competitors but do not establish
-a device benefit or admit a full matrix. They also show why racing cannot
-guarantee zero slowdown when host overhead and contention remain.
-
-\paragraph{Remaining numerical work.}
-The remaining GPU opportunity depends on numerical work in the current CPU path, including unsuccessful searches and retirement. The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
-numerical races. Their durations sum to 101.54 seconds, including launch,
-exact repair, cancellation and retirement. The 935 parsed external HiGHS
-searches sum to 9.25 wall seconds, while 467 additional connections are unparsed
-or aborted. These are not disjoint pipeline fractions.
-The observed critical lane, the static candidate queue finishing last, contains 14.11 seconds of complete race work.
-Deleting all recorded race work while preserving other observed durations,
-gaps and lane assignments models a 450.47-second pipeline, or
-$1.53475\times$ relative to that pair's native reference.
-This is an intentionally optimistic fixed-lane sensitivity, not a measured
-GPU result or a scheduler-independent Amdahl bound. Current product and
-small-LP regions are not exhaustively attributed by these records.
-It does not justify closing the GPU direction.
-
+\subsubsection{Arithmetic representation and service transfer}
 \paragraph{Natural-power representation.}
 Preserving literal natural-exponent polynomial relations in the direct export
 reduces complete verification time on the predeclared arithmetic-heavy cohort.
-The exact rational expansion runs outside Lean; native certificate checking
-remains authoritative. The previous export treated powers above two as opaque.
+The previous export treated powers above two as opaque. The new representation retains those relations for exact rational expansion outside Lean, while native certificate checking
+remains authoritative.
 An admission preflight on all 111 sources with prior negative-LP/fallback
 evidence takes 63.96 seconds for the previous direct path and 41.30 seconds for
 the new path, with 109 complete and two rejected outcomes. This affected subset
@@ -839,7 +717,7 @@ with the same dual backend, and the compiled Fast/hybrid control.
 Table~\ref{tab:power-export} gives whole times including preparation,
 search, checking, fallback and retirement.
 The ratios are $1.79502\times$ relative to the compiled control,
-$1.35681\times$ relative to the already-our-dual-backend native frontend,
+$1.35681\times$ relative to the native frontend with the same dual backend,
 and $1.15481\times$ relative to previous direct export. The total improvement
 therefore includes the numerical portfolio and direct proof path, not only
 exponent coverage or ordinary compilation.
@@ -879,7 +757,7 @@ the same original 1,000 sources, or $1.70059\times$. Both retain 992 complete
 and eight rejected outcomes, matching all verdicts and non-message fields,
 with 108 message differences. This single fixed-order observation uses CPU
 8--11 rather than the earlier CPU 4--7, so its absolute clocks are not pooled
-with the three instrumented blocks. Candidate, RPC and backend recording
+with the three instrumented blocks. Candidate, remote procedure call (RPC) and backend recording
 remain charged; the comparison is not entirely instrumentation-free and
 does not demonstrate GPU benefit or generalization to all Goedel sources.
 Direct source service spans are longer for 169 candidates, including 63 of
@@ -920,8 +798,8 @@ are 738.19 seconds for the compiled control, 400.42 for previous direct export
 and 397.37 for the new path. Some of the hardest proof tails therefore remain
 largely unchanged. The corresponding slowest 10\% sums are 2,001.51,
 1,182.14 and 1,001.16 seconds, not whole-run elapsed time.
-The earlier complete 29,750-source acquisition remains on its frozen older
-build and does not generalize this new implementation.
+The earlier complete 29,750-source acquisition uses its frozen older
+build, so it does not establish generalization of this new implementation.
 This evidence supports an arithmetic implementation improvement, not a new
 solver, demonstrated GPU benefit or the complete service contribution.
 
@@ -946,7 +824,7 @@ sources. Native/Power SDK body p99 values are 49.22/33.82, 48.69/27.26 and
 45.74/29.67 seconds, but 208, 152 and 245 sources have longer Power body
 spans. The first two native-ranked slowest ten-source sums are
 993.89/650.80 and 949.66/562.37 seconds. These concurrent body spans include
-GC and IPC and are not removable whole time. This is service transfer of
+GC and interprocess communication (IPC) and are not removable whole time. This is service transfer of
 the selected CPU arithmetic composition, not GPU benefit or a new
 prepared-state mechanism.
 
@@ -960,48 +838,7 @@ container restart epochs and is not an uninterrupted repetition.}
 \label{fig:goedel-http-cdf}
 \end{figure*}
 
-\paragraph{Existing closing-certificate reuse.}
-We also integrate SHRED's unchanged closing-certificate module and wrapper
-with the official Kimina HTTP application~\cite{shred}. On all 5,952 original
-ProofNet candidates, native verification takes 356.37 seconds and this
-integration takes 373.22 seconds, including actual input preparation and
-process retirement: 4.73\% more elapsed time in one fixed-order shared-host
-pair. Both methods genuinely complete the same 413 sources. Native outcomes
-are 5,534 rejected, four incomplete and one operational failure; reuse
-returns 5,514 rejected, 24 incomplete and one operational failure.
-The twenty changed sources carry cache-hit messages and sorry warnings;
-SDK valid counts of 417 and 437 are therefore not complete-proof counts.
-Opaque environment handles and messages also differ. Eight outstanding
-sources share four eligible CPUs and the same 48 GiB per-process limit.
-This is an as-integrated existing-method control, not a deployment of an
-upstream HTTP service supplied by SHRED or a matched transparent speedup.
-A separate complete miniF2F pair uses two live REPLs, each limited to 24 GiB,
-with a 48 GiB total owned-process RSS watchdog in both methods.
-All 7,808 original candidates take 18,987.74 seconds natively and
-19,235.45 seconds with reuse: 1.30\% more elapsed time. Genuine completions
-decrease from 3,015 to 3,010. Eleven native rejections instead return
-sorry-bearing incomplete results after cache hits; five native successes
-report a kernel unknown-constant error for \texttt{\_auxLemma.1}, also after
-hits. The SDK's 3,021 valid reuse results therefore do not establish more
-complete proofs. Both methods retain the same 118 operational-failure IDs,
-with timeout/resource classifications of 71/47 and 68/50. Native outcomes
-are not preserved by this integration. This is one shared-host observation
-at the stated resource point, not a general rejection of prefix reuse.
-Figure~\ref{fig:minif2f-shred-http-cdf} retains all source latencies.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-http-cdf.pdf}
-\caption{Complete miniF2F native/reuse HTTP latency: all 7,808 inputs per
-method, including errors, timeouts and resource failures (left); the same
-781 native-ranked slowest inputs (right). Two live REPLs share four eligible
-CPUs and a total 48 GiB RSS budget. HTTP spans exclude SDK predispatch and
-global input preparation, which whole-flow clocks charge. This fixed-order,
-shared-host pair has changed proof outcomes as described in the text.}
-\label{fig:minif2f-shred-http-cdf}
-\end{figure*}
-
-\paragraph{Formal population generalization.}
+\paragraph{Version-aligned ProofNet generalization.}
 A separate version-aligned component comparison processes every original
 ProofNet candidate in Lean 4.9.0-rc1. Module-loaded stock fallback, native
 preprocessing with external search, and direct certificate checking take
@@ -1071,7 +908,481 @@ CPU or an Amdahl-removable fraction.}
 \label{fig:dsv2-http-cdf}
 \end{figure*}
 
-\paragraph{Current common-omega accounting.}
+\subsubsection{Device qualification and residual opportunity}
+\paragraph{Ready-goal device qualification.}
+A ready-goal adapter exports arithmetic goals sequentially, solves immutable
+requests in parallel, then checks certificates in the same Lean state. It
+elaborates original arguments per goal and retains native fallback. A selected
+15-source qualification forms 1,050 problems: two groups of 512 small linear
+problems and four smaller nonlinear groups. It checks 1,040 certificates
+and falls back on ten. Exported problem counts are distinct from device-ready
+LPs. The fresh matched native, CPU and additive GPU conditions take 116.99,
+79.93 and 79.59 seconds, respectively, with seven complete and eight rejected
+outcomes in each. Full CPU/GPU responses agree; six message-only differences
+from native remain. All 56 races retain native and HiGHS competitors.
+Two device groups launch three models, including a two-candidate group;
+all retire. No GPU answer wins. The 0.42\% elapsed difference in one selected
+preflight therefore establishes no useful GPU benefit or full-matrix
+admission. The first stale-library integration attempt is retained separately,
+rather than included as a valid additive comparison.
+
+\paragraph{Independent device groups.}
+A request-sized CUDA virtual-memory implementation uses the existing driver allocation API~\cite{cudaVMM} to execute overlapping device
+groups under the same 48\,GiB address-space ceiling. A repaired 64-source
+qualification executes 20 nonempty groups and 36 LP models, with complete
+device-timer samples, at most four overlapping groups, and no live allocations
+at the final provider probe. Whole warm-pipeline time is 43.07 seconds,
+versus 37.78 seconds for a fresh CPU oracle and 71.64 seconds for native.
+All verdicts and non-message fields agree. The GPU condition is 14.00\%
+slower than CPU. This preflight does not admit a full GPU matrix.
+Its composition retains native hybrid but replaces the external HiGHS
+contender. It therefore does not establish the effect of adding GPU work
+while preserving the strongest measured CPU portfolio. Extra contender,
+transport, exact repair and retirement costs must be included in that comparison.
+
+A corrected additive portfolio keeps native hybrid and CPU HiGHS while adding
+the same GPU implementation. On the original 64 sources, the same private
+numerical build takes 38.02 seconds without GPU and 39.33 seconds with GPU,
+or 3.43\% more elapsed. Full CPU/GPU native responses agree. Of 68 races,
+HiGHS wins 46, native search 21 and an exact-checked GPU negative certificate
+is selected once. Six real GPU groups with nine models retire completely.
+These observations retain the stronger CPU competitors but do not establish
+a device benefit or admit a full matrix. They also show why racing cannot
+guarantee zero slowdown when host overhead and contention remain.
+
+\paragraph{Remaining numerical work.}
+The remaining GPU opportunity depends on numerical work in the current CPU path, including unsuccessful searches and retirement. The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
+numerical races. Their durations sum to 101.54 seconds, including launch,
+exact repair, cancellation and retirement. The 935 parsed external HiGHS
+searches sum to 9.25 wall seconds, while 467 additional connections are unparsed
+or aborted. These are not disjoint pipeline fractions.
+The observed critical lane, the static candidate queue finishing last, contains 14.11 seconds of complete race work.
+Deleting all recorded race work while preserving other observed durations,
+gaps and lane assignments models a 450.47-second pipeline, or
+$1.53475\times$ relative to that pair's native reference.
+This is an intentionally optimistic fixed-lane sensitivity, not a measured
+GPU result or a scheduler-independent Amdahl bound. Current product and
+small-LP regions are not exhaustively attributed by these records.
+It does not justify closing the GPU direction.
+
+Earlier arithmetic versions, complete phase captures and the supported-expression GPU control remain in Appendix~\ref{app:arithmetic-history}; the supporting CPU comparisons remain in Appendix~\ref{app:cpu-controls}. These observations constrain their own mechanisms and do not supply a current GPU impossibility bound.
+
+The arithmetic CPU gains establish a stronger comparator, not a benefit from heterogeneous execution. The completed device qualifications have not established a useful additional gain over their matched CPU portfolios. Neither those observations nor the conditional cost models establish a general GPU impossibility bound.
+
+Answering RQ4 at its stated scope requires the remaining workload and
+strongest-checker comparisons. RQ4 remains unanswered until measured
+complete boundaries establish a device benefit or a negative opportunity bound.
+
+\subsection{Limitations}
+The service applies at supported native boundaries and retains the verifier as the authority. Supported backend versions and mutable runtime extensions constrain deployment. Logical equivalence alone does not promise equal resource-bounded responses. Wall-time limits depend on machine load and execution speed, so the evaluation states their operational scope separately from deterministic work limits. Valid negative and mixed results bound the claimed operating range.
+
+Public generated attempts are replay workloads, whose arrivals can differ from a deployed multi-user service. Fixed published proof corpora remain useful controls but do not establish real candidate fan-out. Full GPU Lean checking is a distinct result from acceleration of a metadata primitive, and GPU certificate proving is a distinct workload from ordinary proof checking.
+
+\section{Discussion}
+Separating preparation from candidate execution connects native behavior to service resource use. Sharing preparation can reduce replication, while each candidate's mutation and lifetime determine how much of that sharing survives. The matched comparison therefore accounts for behavior, cancellation and fleet memory together, rather than treating retained context alone as the service benefit. Extending the service to another verifier requires a supported runtime boundary and qualification against its original interface.
+
+\section{Related work}
+\paragraph{Persistent verification state.}
+Persistent Lean environments and native proof-state snapshotting retain elaborated context across attempts~\cite{repl,leanSnapshot}. Stock Lean also saves full elaboration or post-import snapshots~\cite{leanIncremental}, while Kimina provides bounded warm verification with environment reuse~\cite{kimina,kiminaPaper}. These mechanisms provide the direct comparison for preparation reuse. The service evaluates independent native execution, cancellation and bounded fleet resources in addition to logical environment branching. This distinction requires matched evidence, rather than a novelty claim for snapshots themselves.
+
+LeanPolish already restores native tactic state, resumes unchanged commands from saved checkpoints and supports persistent import workers~\cite{leanpolishSource}. Its released proof-improvement attempts include failed alternatives, while menu screening and later source verification have different boundaries~\cite{leanpolishPaper}. These existing mechanisms strengthen the native-reuse comparison. Failure collection and saved-state execution are established baseline capabilities.
+LeanTree factorizes proof states according to metavariable dependencies,
+supporting state reuse and parallel proof search~\cite{leantree}.
+Independent proof goals and reusable intermediate states are therefore
+established mechanisms. A new service must demonstrate its additional
+behavior and resource benefit.
+
+Axle combines preloaded Mathlib with per-request processes~\cite{axle}.
+Its published normalized-sample comparison measures computation rather than
+the complete public service path. Isolated preloaded serving is therefore
+existing work, and our complete behavior and resource comparison with unchanged sources
+must establish any additional benefit.
+
+\paragraph{Verification caching.}
+Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
+
+SHRED supplies exact rooted-prefix profiling and a closing-proof reuse prototype
+keyed by elaborated context and target, with native proof checking and fallback~\cite{shred}.
+Reusing expensive proof construction is therefore also established work.
+A distinct mechanism needs evidence beyond the presence of repeated tactics
+or a large acceleration for a selected cache hit.
+
+\paragraph{Prepared execution.}
+Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
+
+\paragraph{Heterogeneous checking.}
+GPU and CPU checker representations address different parts of verification. Nanoclo uses delayed substitutions, and nanoclo-fortran stores kernel objects in parallel arrays with integer identifiers~\cite{nanoclo,nanocloFortran}. These checkers are direct competitors to representation-only acceleration. Our heterogeneous evaluation asks about the expensive dynamic checking that remains and complete verification costs, rather than extrapolating from input graph width.
+
+
+Learned Lean feedback instead predicts verdicts and compiler messages on
+GPUs~\cite{learnedLeanFeedback}. Its throughput comparison has different output
+semantics from native verification, and its hybrid training rewards can use
+predictions for unfinished checks. This is complementary evidence about an
+accuracy--cost tradeoff, rather than exact native checking acceleration.
+
+
+\paragraph{Certified arithmetic and batched linear programs.}
+Mathlib and Farkas already separate arithmetic certificate search from native
+proof construction~\cite{farkasSource}. Veriphy exports Lean goals and hypotheses
+to an external Sage oracle and checks the emitted proof, including rational
+LP and nonlinear arithmetic facilities~\cite{veriphySource}. These systems
+already cover the general export--search--check principle.
+The LP tactic family also reconstructs external dual coefficients into
+kernel-checked proofs over its supported arithmetic fragment~\cite{lpTacticSource}.
+Direct certificate reconstruction alone therefore does not distinguish our system.
+Exact certification of external linear
+programming results, including infeasibility and unboundedness, is also
+established~\cite{verifiedLP2025}. Gurung and Ray assign a CUDA block to each
+linear program and evaluate both batch supply and complete application
+performance~\cite{batchedLPGPU2019}. These precedents cover the numerical
+primitives used in our heterogeneous prototypes. Their presence alone cannot
+establish a new verification service or predict a gain under limited
+concurrent request supply. Our comparison charges proof construction, exact
+repair, failed searches and independent cancellation at matched resources.
+
+\section{Conclusion}
+Native preparation and candidate execution history are separate resources in verification serving. Independent branches retain preparation while isolating candidate lifetimes, and their value depends on behavior fidelity and the equal-resource service frontier. \missing{Final findings answering all four RQs, including the measured heterogeneous scope.} The matched comparison determines whether branching supplies a systems benefit beyond existing warm reuse.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\appendix
+\section{Matched CPU comparisons}\label{app:cpu-controls}
+These supporting comparisons preserve each workload, paired reference, resource
+configuration, native outcome exception and sampling limitation. Their separate
+blocks do not establish a global CPU ranking or a heterogeneous speedup.
+
+\paragraph{Complete CPU compilation pairs.}
+A separate matched four-CPU block checks every one of the 29,750 released
+GoedelWorkbook sources with the original GC service and the same service
+loading native-compiled Mathlib modules~\cite{lean4}.
+Whole elapsed time is 32,945.98 versus 15,835.68 seconds in the first pair
+and 38,443.59 versus 18,306.13 seconds in the reversed-order second pair.
+These are reductions of 51.93\% and 52.38\%.
+The third pair takes 32,484.60 versus 13,149.05 seconds, a reduction of
+59.52\%. The third pair retains 23 native/basic outcome changes, with ten complete outcomes
+becoming operational and thirteen operational outcomes becoming complete.
+No direct complete/rejected transition is observed.
+Runtime import and library loading are charged, while software build is excluded.
+In the first pair, native fields match on 29,725 sources after excluding the
+adapter timer. Sixteen operational outcomes become complete and nine complete
+outcomes become operational. The second pair has 21 operational-to-complete
+transitions and 12 reverse transitions. One additional source is operational
+in both but changes from a decoder failure to a timeout. The other 29,716
+native payloads match except the adapter timer.
+No complete/rejected flip is observed, and failures remain charged.
+All three primary pairs finish, while the two separate resource profiles remain
+unfinished. These paired observations strengthen an established CPU baseline.
+The three observations do not establish a confidence interval or an isolated
+causal effect under the shared background, a new compiler contribution or GPU acceleration.
+Clocks from other CPU or oracle blocks are not used as denominators.
+
+A separate producer-compatible Lean4.9 GC comparison processes all 7,808
+retained miniF2F source attempts per method with and without selective native
+Linarith compilation~\cite{mathlib}. All three primary pairs finish, taking 12,689.28 versus
+11,723.45 seconds, 12,539.74 versus 11,192.98 seconds, and 11,914.91 versus
+9,893.72 seconds. Whole elapsed reductions are 7.61\%, 10.74\% and 16.96\%.
+Their descriptive mean is 11.77\%, without a confidence interval.
+Request p99 rises from 247.85 to 275.35 seconds and from 251.14 to 253.28 seconds
+in the first two pairs, but falls from 224.27 to 209.72 seconds in the third.
+The complete count remains 3,008 in all six conditions.
+The second pair has two operational-to-rejected transitions and five other
+native diagnostic differences. The third has three such transitions and one
+operational diagnostic difference. Remaining payloads match except the adapter
+timer. Lower whole-corpus elapsed time therefore does not establish uniform tail latency,
+transparent native responses or GPU benefit. The two separate resource conditions
+also finish, completing the eight-condition acquisition. Their completion does
+not establish replicated memory savings. The miniF2F comparison uses a different producer version and selective compiled closure from the
+Goedel block above.
+
+\paragraph{Multiplication-theorem application reuse.}
+We also compare complete verification with and without reuse of resolved
+multiplication-theorem applications within each nonlinear arithmetic preprocessing invocation.
+Against the same FarkasFast/native-hybrid route, three complete 29,750-source
+pairs reduce whole elapsed time from 11,629.90 to 10,487.44 seconds,
+12,852.84 to 11,208.51 seconds and 14,753.25 to 12,483.33 seconds.
+The observed reductions are 9.82\%, 12.79\% and 15.39\%, with a descriptive mean
+of 12.67\%. This observed range is not a confidence interval.
+Closed-loop request p99 also falls in each pair, from 10.56 to 10.09, 12.16 to
+10.73 and 14.45 to 12.00 seconds. These are response distributions within the
+measured blocks, not an offered-load capacity result.
+The first Fast/hybrid pair also retains one operational decoder failure that
+becomes native rejection. This differs from a direct complete/rejected transition
+and from the original-oracle product comparison below.
+The third pair retains six operational/completion transitions and otherwise
+matching native payloads. No complete/rejected transition occurs.
+
+With the original arithmetic oracle retained in both methods, all three primary pairs take
+15,385.79 versus 15,475.96 seconds, 16,245.63 versus 15,415.52 seconds, and
+14,942.76 versus 12,805.48 seconds with reuse. Whole time is 0.59\% longer, then
+5.11\% and 14.30\% lower. The descriptive mean reduction is 6.28\%, without a
+confidence interval. The third pair has five operational-to-complete and five
+reverse transitions. Other native payloads match except the adapter timer.
+No complete/rejected transition occurs. The original-oracle pairs differ in the direction of their elapsed-time changes.
+The different blocks and shared background do not isolate a causal oracle
+interaction or establish a uniform original-route gain.
+
+Two separate Fast/hybrid resource captures complete the eight-condition comparison. Observed sampled peak PSS falls from
+7,674,160 to 6,961,995 KiB, with incomplete reads in 33 of 7,051 and 34 of
+6,198 non-atomic samples. These single profiles do not establish exact peaks
+or replicated memory savings. Seven operational/completion transitions remain.
+Both original-oracle resource profiles finish, completing the eight-condition
+comparison. Their sampled peak fleet PSS rises from 7,486,707 to 8,005,904 KiB.
+These single non-atomic profiles do not establish exact peaks or replicated
+memory savings.
+
+These CPU observations concern an ordinary optimization within its matched
+block. They do not establish the globally strongest CPU method, systems novelty
+or GPU acceleration.
+
+\paragraph{Complete native arithmetic primary series.}
+Three matched Goedel CPU pairs compare compiled Mathlib with the same service
+using the native exact arithmetic oracle. Reference whole times are
+10,531.82, 13,112.67 and 15,097.58 seconds. Candidate times are
+11,030.02, 10,666.44 and 14,886.85 seconds.
+The candidate takes 4.73\% longer, then 18.66\% and 1.40\% less time.
+The descriptive mean reduction of 5.11\% is not a confidence interval or a
+stable general advantage. The direction of the timing change differs across pairs, and reference times vary even with the same code.
+Each condition returns all 29,750 inputs. The third pair retains 13 native
+outcome differences, all involving an operational outcome, with no direct
+complete/rejected transition. Operational failures stay charged.
+All eight conditions, including the two separate resource profiles, finish.
+In the single profile pair, observed sampled peak PSS rises from 6,561,664 to
+7,478,115 KiB. Incomplete, non-atomic sampling does not establish exact or
+replicated peaks. This pair shows no measured memory saving.
+These complete comparisons preserve a competent CPU competitor. They do not
+establish the globally strongest CPU path or heterogeneous acceleration.
+
+For the Fast/hybrid product-reuse and native exact-oracle comparisons, we
+divide each candidate's whole time by its own paired reference time. A ratio below one means lower elapsed
+time. Figure~\ref{fig:cpu-paired-whole-time} displays all three primary
+observations per comparison. Fast/hybrid product reuse has the same direction in every
+pair, while the native exact oracle has both increases and reductions in elapsed time. The rows use
+different references and CPU eligibility, so they do not rank methods across
+comparisons.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/cpu-paired-whole-time.pdf}
+\caption{Whole-time ratios for two complete CPU comparisons, each processing
+all 29,750 GoedelWorkbook sources per condition. Each marker is one complete
+primary pair normalized to its own reference. The dashed line is parity.
+All three observations show between-pair variation, not confidence intervals.
+The ratio axis zooms around parity to make that variation visible.
+Fast/hybrid product reuse uses shared CPU eligibility 0--23, and the native exact oracle
+uses 0--3. Different references and eligibility prevent cross-row ranking.
+Separate resource profiles are excluded and operational failures remain charged.
+Fast/hybrid product reuse is consistently faster in these pairs, while the oracle comparison is mixed.}
+\label{fig:cpu-paired-whole-time}
+\end{figure}
+
+\paragraph{Numerical support search and exact arithmetic.}
+Three balanced primary trios compare tiered exact arithmetic, native FP64
+hybrid search and HiGHS support search with exact repair over all 29,750
+sources per method. They use the same native-compiled library closure,
+four outstanding requests and shared CPU eligibility 4--7.
+Relative to tiered, hybrid increases whole elapsed time by 10.61\%, 5.22\%
+and 23.43\%. HiGHS takes 11.83\% longer, then 11.45\% less time,
+then 21.47\% longer. These observations retain tiered as a necessary CPU
+competitor. The numerical paths do not establish a consistently faster
+replacement. They do not rank different CPU compositions.
+Native diagnostics also differ. One source changes from complete to rejected
+under HiGHS in every trio, with a recursion-depth diagnostic. All failures
+remain charged. All twelve conditions finish, including three separate resource
+profiles. Their sampled peak fleet PSS is 7,005,488 KiB for tiered, 7,668,612 KiB
+for hybrid and 8,723,814 KiB for HiGHS. The HiGHS capture has 1,448 incomplete
+samples out of 6,582. One-second non-atomic sampling and one profile per method
+do not establish replicated memory or CPU superiority. The recorded rusage
+counter includes observer, self and waited children, without validated exhaustive
+descendant coverage. Shared background limits causal and global CPU conclusions.
+
+\paragraph{Full and restricted numerical preprocessing.}
+Three rotated four-method blocks complete all 29,750 sources per condition,
+comparing Full and Fast preprocessing with native hybrid and HiGHS support
+search. All twelve primary conditions use shared CPU eligibility 16--19 and
+four outstanding HTTP requests; separate resource profiles are excluded from these primary timing comparisons.
+Fast changes whole elapsed time by $-4.52\%$, $+8.50\%$ and $-5.07\%$
+relative to Full with hybrid, and by $+7.87\%$, $+6.12\%$ and $-4.44\%$
+with HiGHS. It does not show a stable benefit across these observations.
+HiGHS takes 10.47\%, 25.14\% and 12.01\% longer than hybrid under Full,
+and 24.80\%, 22.39\% and 12.76\% longer under Fast.
+Basic outcomes differ for 9--15 sources per paired comparison.
+Each HiGHS/hybrid pair includes the same complete-to-rejected source with
+a recursion-depth diagnostic; operational failures and all diagnostics remain
+charged. These are matched composition-specific elapsed observations, not
+transparent replacements, confidence intervals, a global CPU ranking or GPU
+evidence. Shared background and sequential acquisition remain limitations.
+
+\paragraph{Complete original-path cost profile.}
+A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources
+and retains body profiles for 29,689 of them. All 61 sources without a body
+profile have operational outcomes.
+The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
+have the largest recorded wall-time totals for leaf regions, followed by \texttt{simp}.
+These thresholded trace weights measure wall intervals that can overlap across
+threads and requests, rather than CPU fractions or device-eligible work.
+The observation characterizes the original arithmetic route.
+Residual costs after the strongest CPU route remain to be measured.
+
+\paragraph{Complete compiled-route CPU sampling.}
+A separate instrumented compiled-route run returns all 29,750 sources and
+retains 5,401,763 user-CPU samples with zero reported lost samples.
+Exclusive sample counts and periods reconcile across flat and callchain
+reports. Standard \texttt{perf} children weights include callees and
+overlap~\cite{perfReport}.
+The native \texttt{importModules} entry displays 0.36\% against all recorded
+user-CPU period. This entry does not cover all preparation, initialization or
+elapsed I/O, and does not bound cold-to-warm savings.
+Against the same recorded user-CPU period, the displayed inclusive weights are
+35.00\% for the definitional-equality export in Lean's Meta layer,
+16.96\% for a sparse-simplex certificate-oracle entry and
+10.81\% for a typeclass-synthesis entry.
+The first symbol is exported by a \texttt{MetaM} implementation in the
+installed Lean4.27 source~\cite{lean427MetaDefEq}. It is not a pure C++ kernel
+checking fraction. These entries cannot be summed as disjoint phases.
+Separately, reference-count decrement and small allocation account for
+20.05\% of native exclusive recorded period. That pair is not an exhaustive
+runtime category. Sampling, unknowns and callchain limits remain, and neither
+view supplies a decomposition of complete-verification wall time, a GPU ceiling or batching readiness.
+This capture characterizes the compiled original arithmetic route. Residual
+costs after selecting a different strongest CPU composition remain open.
+
+\paragraph{Independent argument-comparison opportunity.}
+The same sampled capture displays 23.16\% inclusive CPU weight for argument
+comparison, including stateful work. A separate instrumented capture attributes
+23.608936\% of completed observed outer calling-thread CPU to entries without
+expression or universe metavariable flags. These quantities have different
+captures and scopes. Neither measures useful independent argument work or
+complete-verification critical-path coverage. Multiplying cross-capture
+fractions supplies only conditional CPU-bound sensitivity scenarios, not an
+end-to-end bound. The batch interface therefore has no admitted GPU provider.
+Another narrow backend requires evidence of useful independent work with
+complete setup, transfer and fallback costs.
+
+
+
+\section{Historical tactic-prefix execution}\label{app:prefix-history}
+These completed comparisons use their original executor and resource conditions. They do not replace the later closing-certificate service comparison in Section~\ref{sec:opportunity}.
+
+A native execution comparison tests whether these counted repetitions save
+complete verification time. The adapted executor uses the pinned SHRED parser,
+retains native proof states within each task and checks each closed root with
+Lean's ordinary kernel. Unsupported or failed prefixes use the original
+command path. The reference executes original commands in a warm native
+in-process batch, and both methods use four-wide native work submission.
+Whole clocks include parsing, preparation, transport, native checking,
+fallback and process retirement. This adaptation is distinct from an
+end-to-end execution of the published SHRED workflow. All three formal methods
+inherit the pinned SHRED client's ordinary 48 GiB verifier address-space
+limit. Operational resource failures and replacement costs remain in the
+full-population report. This comparison does not reproduce a deployed
+Kimina server's separate memory policy.
+The complete miniF2F native-batch reference returns all 7,808 sources in
+28,673.00 seconds: 2,992 complete, 4,497 rejected and 319 operational outcomes.
+The 82 failed native requests occupy 20,672.97 seconds, or 72.10\% of whole
+elapsed time, in non-overlapping sequential client roundtrips. This is
+caller waiting/roundtrip wall, not native CPU or internal tactic work.
+Forced retirement censors CPU accounting, and 319 source verdicts remain
+operationally unknown.
+The complete exact-text prefix capture takes 41,738.63 seconds, with
+2,992 complete, 4,490 rejected and 326 operational sources.
+All 2,992 native-complete sources remain complete, and no new source becomes
+complete. Five operational sources become rejected and twelve rejected
+sources become operational, while 314 remain operational.
+The executor records seven cache lookups, 21,588 prefix nodes and 4,945
+original-source fallbacks. Its included native parser cost is 10.13 seconds.
+The raw elapsed time is 45.57\% longer than batch execution, but unresolved
+operational outcomes and 109 forced retirements prevent a validated
+speed ratio or complete CPU accounting. This does not establish savings in
+successful proof work or characterize the upstream closing-certificate executor.
+The complete unit-text prefix condition takes 40,943.77 seconds, with the
+same 2,992 complete, 4,490 rejected and 326 operational outcomes as exact-text
+prefixes. It records 3,711 cached lookups, 17,924 executed prefix nodes and
+4,948 source fallbacks. All native-complete sources remain complete with a
+native kernel receipt, but the same twelve rejection-to-operational and five
+operational-to-rejection transitions preclude a validated batch-relative
+speed ratio. The 109 forced retirements censor CPU accounting. More cache
+hits therefore do not establish useful end-to-end savings on this capture.
+The complete original ProofNet prefix acquisition covers 5,952 sources in
+186 original 32-candidate blocks. Native batch takes 1,127.28 seconds
+(413 complete,5,526 rejected,nine operational,four incomplete);
+exact prefixes take 2,502.01 seconds and unit prefixes 2,479.03 seconds
+(each417 complete,5,531 rejected,four operational).
+All413 native-complete sources remain complete with native kernel receipts.
+Four incomplete sources become complete; eight operational sources become
+rejected and three rejections become operational. These differences preclude
+a validated speed ratio. Exact and unit execution record 37 and 3,853 cached
+lookups, 13,525 and 9,716 executed nodes, and5,580/5,581 fallbacks, respectively.
+Their four failed native request intervals occupy 609.15/610.31 seconds;
+batch failure intervals occupy 13.86 seconds. These are caller roundtrip wall,
+not internal tactic CPU. Forced retirements censor complete CPU accounting.
+Reuse counters therefore do not establish useful whole-verification savings.
+This remains an offline executor comparison, not the complete upstream SHRED workflow
+or Kimina HTTP service.
+
+\section{Arithmetic controls and phase observations}\label{app:arithmetic-history}
+These supporting observations preserve earlier implementations, their own denominators, all failures and measured limitations. They are not interchangeable with the current natural-power composition.
+
+\paragraph{Current matched arithmetic results.}
+A two-sided CPU comparison tests whether reusing both successful and unsuccessful numerical search results avoids repeated exact search. This full-cohort comparison adds exact checking of external
+infeasibility certificates. A negative certificate establishes infeasibility of
+the coefficient-search problem, rather than rejection of the Lean source. With a fresh native reference, native,
+positive-only HiGHS and two-sided HiGHS take 681.24, 472.09 and
+453.51 seconds. The two-sided ratio is $1.50216\times$, exceeding
+the $1.5\times$ boundary by only 0.653 seconds of candidate elapsed time.
+All cells retain 992 complete and eight rejected sources with matching
+verdicts and non-message fields. Both HiGHS conditions have the same
+104 message-only differences. Of 1,888 two-sided races, 334 return an
+exact-verified external negative certificate. This avoids some expensive
+exact no-certificate searches while preserving exact fallback when numerical
+reconstruction fails. It is a CPU observation, not GPU acceleration.
+The success-only and two-sided cells have 147 and 107 observer read errors,
+respectively. Shared background, a single fixed acquisition order and the
+small threshold margin preclude a stable threshold claim. An unchanged
+reversed-order repetition takes 687.26 seconds for native and 447.31 seconds
+for the two-sided oracle, or $1.53644\times$. It retains all 992 complete
+and eight rejected outcomes, matching non-message fields and the same
+104 message-only differences. The oracle has 92 observer read errors.
+
+The third native-first pair takes 691.36 versus 464.58 seconds,
+or $1.48814\times$, below the threshold. All outcomes and non-message fields
+again match, with the same 104 message-only differences and 105 observer
+read errors in the oracle cell. Across all three predeclared pairs,
+native and candidate whole times sum to 2,059.87 and 1,365.40 seconds:
+the aggregate ratio is $1.50862\times$. This meets the local continuation
+criterion on the enriched arithmetic-heavy cohort, while preserving the
+subthreshold observation. It is not a confidence interval, full-population
+or globally strongest-CPU result.
+
+A complete native-frontend control with the same two-sided numerical
+backend takes 518.50 seconds in this block. Direct export therefore gives
+only $1.11607\times$ additional speedup, or 10.40\% less elapsed time.
+The native-frontend control alone is $1.33337\times$ faster than the original
+Fast/hybrid reference. It retains all verdicts and non-message fields,
+with 62 message-only changes and 88 observer read errors. Frontend choice
+also changes LP inputs, proofs and fallback, so this is an end-to-end
+component comparison rather than a pure proof-construction timer.
+The aggregate improvement over the original reference must not be
+attributed entirely to the direct frontend or called a global CPU-frontier
+advantage. Generality beyond the selected arithmetic-heavy cohort remains open. The established certificate
+primitives do not alone establish the systems contribution.
+
+A stronger arithmetic composition adds the existing native integer solver
+omega to both frontends. One complete matched 1,000-source block takes
+454.82 seconds with native export, 388.17 seconds with direct export, and
+450.99 seconds with direct export but without omega. Direct export is
+$1.17172\times$ faster than the common-omega native path; adding omega to
+the direct path gives $1.16186\times$. Each condition retains all 992 complete
+and eight rejected outcomes with no non-message mismatch. Native versus
+direct has 73 message-only differences; observer errors are 80, 110 and 90
+in acquisition order. One fixed-order block establishes neither confidence
+nor a globally optimal CPU frontier. Stock solver selection is prior art.
+This control narrows the incremental frontend advantage and prevents reading
+the earlier $1.50862\times$ ratio as an improvement over this stronger native
+composition.
+
+
+\paragraph{Common-omega phase accounting.}
 A separate diagnostic of the earlier direct representation, before literal-power
 export, holds omega and the two-sided backend common to both frontends. It completes all 1,000 sources in 475.97 seconds with native export
 and 406.46 seconds with direct export, each with 992 complete and eight rejected
@@ -1111,7 +1422,7 @@ repair was not measured in this pair. Raw data, matched tails, reconstruction
 and model scripts are retained in the artifact; all review here is self-review.
 
 \paragraph{Earlier direct-export phase capture.}
-A separate current-build diagnostic pair covers all 1,000 sources and
+A separate diagnostic of the earlier direct-export build covers all 1,000 sources and
 13,230 native versus 10,251 oracle numerical requests, including failed
 branches. Native and CPU-oracle whole times are 705.41 and 459.32 seconds,
 with metadata scans and gzip I/O charged. Both retain 992 complete and eight
@@ -1155,12 +1466,13 @@ The corresponding slowest-10\% source-span sums are 2,319.47 and
 1,484.35 seconds. The remaining heavy tail therefore requires examining
 proof and frontend work beyond the parsed floating solver.
 
-A source-native scheduling qualification uses the same private native binary
+A scheduling qualification using original source proofs uses the same private native binary
 and verification body for eight static lanes or eight FIFO workers.
 On the original first 64 sources, they take 54.81 and 58.32 seconds with equal
 four-CPU eligibility and the 48\,GiB address-space ceiling. All source verdicts
 and full native responses agree. The FIFO candidate is not admitted for a
 full matrix. This preflight does not establish global scheduler optimality.
+
 
 \paragraph{Earlier arithmetic acquisition and controls.}
 The following comparisons describe earlier implementations and resource policies. Their clocks are not interchangeable with the current two-sided comparison above.
@@ -1216,7 +1528,7 @@ complete CPU/GPU comparison remains in progress. These historical CPU-only resul
 neither GPU acceleration nor GPU impossibility and do not close the project.
 
 The GPU follow-up changes external support search using cuOpt
-PDLP~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof
+primal-dual hybrid-gradient LP search (PDLP)~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof
 reconstruction. Its measured variant adds positive and negative artificial
 slack to each equality row and minimizes total slack, making the numerical
 problem feasible. The floating solution supplies an untrusted support.
@@ -1247,7 +1559,7 @@ before artificial slack is added.
 The completed requests form 1,835 GPU batches from 1,854 support calls,
 with 1,816 singletons and 19 pairs.
 This serving policy yields little multirequest batching on the measured demand.
-The same-plan native reference completes in 2,331.39 seconds and the robust
+The native reference under the same plan completes in 2,331.39 seconds and the robust
 CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
 outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
 These observations remain specific to the stacked headers; the corrected
@@ -1707,296 +2019,6 @@ One-second non-atomic sampling misses short-lived processes and peaks,
 and the sampling process contributes CPU overhead. These clocks do not
 replace the primary comparisons or establish replicated memory uncertainty.
 GPU context and driver memory, as well as other owners' memory, are outside host-PSS figures.
-
-Answering RQ4 at its stated scope requires the remaining workload and
-strongest-checker comparisons. RQ4 remains unanswered until measured
-complete boundaries establish a device benefit or a negative opportunity bound.
-
-\subsection{Limitations}
-The service applies at supported native boundaries and retains the verifier as the authority. Supported backend versions and mutable runtime extensions constrain deployment. Logical equivalence alone does not promise equal resource-bounded responses. Wall-time limits depend on machine load and execution speed, so the evaluation states their operational scope separately from deterministic work limits. Valid negative and mixed results bound the claimed operating range.
-
-Public generated attempts are replay workloads, whose arrivals can differ from a deployed multi-user service. Fixed published proof corpora remain useful controls but do not establish real candidate fan-out. Full GPU Lean checking is a distinct result from acceleration of a metadata primitive, and GPU certificate proving is a distinct workload from ordinary proof checking.
-
-\section{Discussion}
-Separating preparation from candidate execution connects native behavior to service resource use. Sharing preparation can reduce replication, while each candidate's mutation and lifetime determine how much of that sharing survives. The matched comparison therefore accounts for behavior, cancellation and fleet memory together, rather than treating retained context alone as the service benefit. Extending the service to another verifier requires a supported runtime boundary and qualification against its original interface.
-
-\section{Related work}
-\paragraph{Persistent verification state.}
-Persistent Lean environments and native proof-state snapshotting retain elaborated context across attempts~\cite{repl,leanSnapshot}. Stock Lean also saves full elaboration or post-import snapshots~\cite{leanIncremental}, while Kimina provides bounded warm verification with environment reuse~\cite{kimina,kiminaPaper}. These mechanisms provide the direct comparison for preparation reuse. The service evaluates independent native execution, cancellation and bounded fleet resources in addition to logical environment branching. This distinction requires matched evidence, rather than a novelty claim for snapshots themselves.
-
-LeanPolish already restores native tactic state, resumes unchanged commands from saved checkpoints and supports persistent import workers~\cite{leanpolishSource}. Its released proof-improvement attempts include failed alternatives, while menu screening and later source verification have different boundaries~\cite{leanpolishPaper}. These existing mechanisms strengthen the native-reuse comparison. Failure collection and saved-state execution are established baseline capabilities.
-LeanTree factorizes proof states according to metavariable dependencies,
-supporting state reuse and parallel proof search~\cite{leantree}.
-Independent proof goals and reusable intermediate states are therefore
-established mechanisms. A new service must demonstrate its additional
-behavior and resource benefit.
-
-Axle combines preloaded Mathlib with per-request processes~\cite{axle}.
-Its published normalized-sample comparison measures computation rather than
-the complete public service path. Isolated preloaded serving is therefore
-existing work, and our complete behavior and resource comparison with unchanged sources
-must establish any additional benefit.
-
-\paragraph{Verification caching.}
-Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
-
-SHRED supplies exact rooted-prefix profiling and a closing-proof reuse prototype
-keyed by elaborated context and target, with native proof checking and fallback~\cite{shred}.
-Reusing expensive proof construction is therefore also established work.
-A distinct mechanism needs evidence beyond the presence of repeated tactics
-or a large acceleration for a selected cache hit.
-
-\paragraph{Prepared execution.}
-Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
-
-\paragraph{Heterogeneous checking.}
-GPU and CPU checker representations address different parts of verification. Nanoclo uses delayed substitutions, and nanoclo-fortran stores kernel objects in parallel arrays with integer identifiers~\cite{nanoclo,nanocloFortran}. These checkers are direct competitors to representation-only acceleration. Our heterogeneous evaluation asks about the expensive dynamic checking that remains and complete verification costs, rather than extrapolating from input graph width.
-
-
-Learned Lean feedback instead predicts verdicts and compiler messages on
-GPUs~\cite{learnedLeanFeedback}. Its throughput comparison has different output
-semantics from native verification, and its hybrid training rewards can use
-predictions for unfinished checks. This is complementary evidence about an
-accuracy--cost tradeoff, rather than exact native checking acceleration.
-
-
-\paragraph{Certified arithmetic and batched linear programs.}
-Mathlib and Farkas already separate arithmetic certificate search from native
-proof construction~\cite{farkasSource}. Veriphy exports Lean goals and hypotheses
-to an external Sage oracle and checks the emitted proof, including rational
-LP and nonlinear arithmetic facilities~\cite{veriphySource}. These systems
-already cover the general export--search--check principle.
-The LP tactic family also reconstructs external dual coefficients into
-kernel-checked proofs over its supported arithmetic fragment~\cite{lpTacticSource}.
-Direct certificate reconstruction alone therefore does not distinguish our system.
-Exact certification of external linear
-programming results, including infeasibility and unboundedness, is also
-established~\cite{verifiedLP2025}. Gurung and Ray assign a CUDA block to each
-linear program and evaluate both batch supply and complete application
-performance~\cite{batchedLPGPU2019}. These precedents cover the numerical
-primitives used in our heterogeneous prototypes. Their presence alone cannot
-establish a new verification service or predict a gain under limited
-concurrent request supply. Our comparison charges proof construction, exact
-repair, failed searches and independent cancellation at matched resources.
-
-\section{Conclusion}
-Native preparation and candidate execution history are separate resources in verification serving. Independent branches retain preparation while isolating candidate lifetimes, and their value depends on behavior fidelity and the equal-resource service frontier. \missing{Final findings answering all four RQs, including the measured heterogeneous scope.} The matched comparison determines whether branching supplies a systems benefit beyond existing warm reuse.
-
-\bibliographystyle{plain}
-\bibliography{references}
-
-\appendix
-\section{Matched CPU comparisons}\label{app:cpu-controls}
-These supporting comparisons preserve each workload, paired reference, resource
-configuration, native outcome exception and sampling limitation. Their separate
-blocks do not establish a global CPU ranking or a heterogeneous speedup.
-
-\paragraph{Complete CPU compilation pairs.}
-A separate matched four-CPU block checks every one of the 29,750 released
-GoedelWorkbook sources with the original GC service and the same service
-loading native-compiled Mathlib modules~\cite{lean4}.
-Whole elapsed time is 32,945.98 versus 15,835.68 seconds in the first pair
-and 38,443.59 versus 18,306.13 seconds in the reversed-order second pair.
-These are reductions of 51.93\% and 52.38\%.
-The third pair takes 32,484.60 versus 13,149.05 seconds, a reduction of
-59.52\%. The third pair retains 23 native/basic outcome changes, with ten complete outcomes
-becoming operational and thirteen operational outcomes becoming complete.
-No direct complete/rejected transition is observed.
-Runtime import and library loading are charged, while software build is excluded.
-In the first pair, native fields match on 29,725 sources after excluding the
-adapter timer. Sixteen operational outcomes become complete and nine complete
-outcomes become operational. The second pair has 21 operational-to-complete
-transitions and 12 reverse transitions. One additional source is operational
-in both but changes from a decoder failure to a timeout. The other 29,716
-native payloads match except the adapter timer.
-No complete/rejected flip is observed, and failures remain charged.
-All three primary pairs finish, while the two separate resource profiles remain
-unfinished. These paired observations strengthen an established CPU baseline.
-The three observations do not establish a confidence interval or an isolated
-causal effect under the shared background, a new compiler contribution or GPU acceleration.
-Clocks from other CPU or oracle blocks are not used as denominators.
-
-A separate producer-compatible Lean4.9 GC comparison processes all 7,808
-retained miniF2F source attempts per method with and without selective native
-Linarith compilation~\cite{mathlib}. All three primary pairs finish, taking 12,689.28 versus
-11,723.45 seconds, 12,539.74 versus 11,192.98 seconds, and 11,914.91 versus
-9,893.72 seconds. Whole elapsed reductions are 7.61\%, 10.74\% and 16.96\%.
-Their descriptive mean is 11.77\%, without a confidence interval.
-Request p99 rises from 247.85 to 275.35 seconds and from 251.14 to 253.28 seconds
-in the first two pairs, but falls from 224.27 to 209.72 seconds in the third.
-The complete count remains 3,008 in all six conditions.
-The second pair has two operational-to-rejected transitions and five other
-native diagnostic differences. The third has three such transitions and one
-operational diagnostic difference. Remaining payloads match except the adapter
-timer. Lower whole-corpus elapsed time therefore does not establish uniform tail latency,
-transparent native responses or GPU benefit. The two separate resource conditions
-also finish, completing the eight-condition acquisition. Their completion does
-not establish replicated memory savings. The miniF2F comparison uses a different producer version and selective compiled closure from the
-Goedel block above.
-
-\paragraph{Multiplication-theorem application reuse.}
-We also compare complete verification with and without reuse of resolved
-multiplication-theorem applications within each nonlinear arithmetic preprocessing invocation.
-Against the same FarkasFast/native-hybrid route, three complete 29,750-source
-pairs reduce whole elapsed time from 11,629.90 to 10,487.44 seconds,
-12,852.84 to 11,208.51 seconds and 14,753.25 to 12,483.33 seconds.
-The observed reductions are 9.82\%, 12.79\% and 15.39\%, with a descriptive mean
-of 12.67\%. This observed range is not a confidence interval.
-Closed-loop request p99 also falls in each pair, from 10.56 to 10.09, 12.16 to
-10.73 and 14.45 to 12.00 seconds. These are response distributions within the
-measured blocks, not an offered-load capacity result.
-The first Fast/hybrid pair also retains one operational decoder failure that
-becomes native rejection. This differs from a direct complete/rejected transition
-and from the original-oracle product comparison below.
-The third pair retains six operational/completion transitions and otherwise
-matching native payloads. No complete/rejected transition occurs.
-
-With the original arithmetic oracle retained in both methods, all three primary pairs take
-15,385.79 versus 15,475.96 seconds, 16,245.63 versus 15,415.52 seconds, and
-14,942.76 versus 12,805.48 seconds with reuse. Whole time is 0.59\% longer, then
-5.11\% and 14.30\% lower. The descriptive mean reduction is 6.28\%, without a
-confidence interval. The third pair has five operational-to-complete and five
-reverse transitions. Other native payloads match except the adapter timer.
-No complete/rejected transition occurs. The original-oracle pairs differ in the direction of their elapsed-time changes.
-The different blocks and shared background do not isolate a causal oracle
-interaction or establish a uniform original-route gain.
-
-Two separate Fast/hybrid resource captures complete the eight-condition comparison. Observed sampled peak PSS falls from
-7,674,160 to 6,961,995 KiB, with incomplete reads in 33 of 7,051 and 34 of
-6,198 non-atomic samples. These single profiles do not establish exact peaks
-or replicated memory savings. Seven operational/completion transitions remain.
-Both original-oracle resource profiles finish, completing the eight-condition
-comparison. Their sampled peak fleet PSS rises from 7,486,707 to 8,005,904 KiB.
-These single non-atomic profiles do not establish exact peaks or replicated
-memory savings.
-
-These CPU observations concern an ordinary optimization within its matched
-block. They do not establish the globally strongest CPU method, systems novelty
-or GPU acceleration.
-
-\paragraph{Complete native arithmetic primary series.}
-Three matched Goedel CPU pairs compare compiled Mathlib with the same service
-using the native exact arithmetic oracle. Reference whole times are
-10,531.82, 13,112.67 and 15,097.58 seconds. Candidate times are
-11,030.02, 10,666.44 and 14,886.85 seconds.
-The candidate takes 4.73\% longer, then 18.66\% and 1.40\% less time.
-The descriptive mean reduction of 5.11\% is not a confidence interval or a
-stable general advantage. The direction of the timing change differs across pairs, and reference times vary even with the same code.
-Each condition returns all 29,750 inputs. The third pair retains 13 native
-outcome differences, all involving an operational outcome, with no direct
-complete/rejected transition. Operational failures stay charged.
-All eight conditions, including the two separate resource profiles, finish.
-In the single profile pair, observed sampled peak PSS rises from 6,561,664 to
-7,478,115 KiB. Incomplete, non-atomic sampling does not establish exact or
-replicated peaks. This pair shows no measured memory saving.
-These complete comparisons preserve a competent CPU competitor. They do not
-establish the globally strongest CPU path or heterogeneous acceleration.
-
-For the Fast/hybrid product-reuse and native exact-oracle comparisons, we
-divide each candidate's whole time by its own paired reference time. A ratio below one means lower elapsed
-time. Figure~\ref{fig:cpu-paired-whole-time} displays all three primary
-observations per comparison. Fast/hybrid product reuse has the same direction in every
-pair, while the native exact oracle has both increases and reductions in elapsed time. The rows use
-different references and CPU eligibility, so they do not rank methods across
-comparisons.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figures/cpu-paired-whole-time.pdf}
-\caption{Whole-time ratios for two complete CPU comparisons, each processing
-all 29,750 GoedelWorkbook sources per condition. Each marker is one complete
-primary pair normalized to its own reference. The dashed line is parity.
-All three observations show between-pair variation, not confidence intervals.
-The ratio axis zooms around parity to make that variation visible.
-Fast/hybrid product reuse uses shared CPU eligibility 0--23, and the native exact oracle
-uses 0--3. Different references and eligibility prevent cross-row ranking.
-Separate resource profiles are excluded and operational failures remain charged.
-Fast/hybrid product reuse is consistently faster in these pairs, while the oracle comparison is mixed.}
-\label{fig:cpu-paired-whole-time}
-\end{figure}
-
-\paragraph{Numerical support search and exact arithmetic.}
-Three balanced primary trios compare tiered exact arithmetic, native FP64
-hybrid search and HiGHS support search with exact repair over all 29,750
-sources per method. They use the same native-compiled library closure,
-four outstanding requests and shared CPU eligibility 4--7.
-Relative to tiered, hybrid increases whole elapsed time by 10.61\%, 5.22\%
-and 23.43\%. HiGHS takes 11.83\% longer, then 11.45\% less time,
-then 21.47\% longer. These observations retain tiered as a necessary CPU
-competitor. The numerical paths do not establish a consistently faster
-replacement. They do not rank different CPU compositions.
-Native diagnostics also differ. One source changes from complete to rejected
-under HiGHS in every trio, with a recursion-depth diagnostic. All failures
-remain charged. All twelve conditions finish, including three separate resource
-profiles. Their sampled peak fleet PSS is 7,005,488 KiB for tiered, 7,668,612 KiB
-for hybrid and 8,723,814 KiB for HiGHS. The HiGHS capture has 1,448 incomplete
-samples out of 6,582. One-second non-atomic sampling and one profile per method
-do not establish replicated memory or CPU superiority. The recorded rusage
-counter includes observer, self and waited children, without validated exhaustive
-descendant coverage. Shared background limits causal and global CPU conclusions.
-
-\paragraph{Full and restricted numerical preprocessing.}
-Three rotated four-method blocks complete all 29,750 sources per condition,
-comparing Full and Fast preprocessing with native hybrid and HiGHS support
-search. All twelve primary conditions use shared CPU eligibility 16--19 and
-four outstanding HTTP requests; separate resource profiles are excluded from these primary timing comparisons.
-Fast changes whole elapsed time by $-4.52\%$, $+8.50\%$ and $-5.07\%$
-relative to Full with hybrid, and by $+7.87\%$, $+6.12\%$ and $-4.44\%$
-with HiGHS. It does not show a stable benefit across these observations.
-HiGHS takes 10.47\%, 25.14\% and 12.01\% longer than hybrid under Full,
-and 24.80\%, 22.39\% and 12.76\% longer under Fast.
-Basic outcomes differ for 9--15 sources per paired comparison.
-Each HiGHS/hybrid pair includes the same complete-to-rejected source with
-a recursion-depth diagnostic; operational failures and all diagnostics remain
-charged. These are matched composition-specific elapsed observations, not
-transparent replacements, confidence intervals, a global CPU ranking or GPU
-evidence. Shared background and sequential acquisition remain limitations.
-
-\paragraph{Complete original-path cost profile.}
-A separate instrumented capture returns all 29,750 GoedelWorkbook4.27 sources
-and retains body profiles for 29,689 of them. All 61 sources without a body
-profile have operational outcomes.
-The arithmetic prover \texttt{linarith}~\cite{mathlib} and its detailed regions
-have the largest recorded wall-time totals for leaf regions, followed by \texttt{simp}.
-These thresholded trace weights measure wall intervals that can overlap across
-threads and requests, rather than CPU fractions or device-eligible work.
-The observation characterizes the original arithmetic route.
-Residual costs after the strongest CPU route remain to be measured.
-
-\paragraph{Complete compiled-route CPU sampling.}
-A separate instrumented compiled-route run returns all 29,750 sources and
-retains 5,401,763 user-CPU samples with zero reported lost samples.
-Exclusive sample counts and periods reconcile across flat and callchain
-reports. Standard \texttt{perf} children weights include callees and
-overlap~\cite{perfReport}.
-The native \texttt{importModules} entry displays 0.36\% against all recorded
-user-CPU period. This entry does not cover all preparation, initialization or
-elapsed I/O, and does not bound cold-to-warm savings.
-Against the same recorded user-CPU period, the displayed inclusive weights are
-35.00\% for the definitional-equality export in Lean's Meta layer,
-16.96\% for a sparse-simplex certificate-oracle entry and
-10.81\% for a typeclass-synthesis entry.
-The first symbol is exported by a \texttt{MetaM} implementation in the
-installed Lean4.27 source~\cite{lean427MetaDefEq}. It is not a pure C++ kernel
-checking fraction. These entries cannot be summed as disjoint phases.
-Separately, reference-count decrement and small allocation account for
-20.05\% of native exclusive recorded period. That pair is not an exhaustive
-runtime category. Sampling, unknowns and callchain limits remain, and neither
-view supplies a decomposition of complete-verification wall time, a GPU ceiling or batching readiness.
-This capture characterizes the compiled original arithmetic route. Residual
-costs after selecting a different strongest CPU composition remain open.
-
-\paragraph{Independent argument-comparison opportunity.}
-The same sampled capture displays 23.16\% inclusive CPU weight for argument
-comparison, including stateful work. A separate instrumented capture attributes
-23.608936\% of completed observed outer calling-thread CPU to entries without
-expression or universe metavariable flags. These quantities have different
-captures and scopes. Neither measures useful independent argument work or
-complete-verification critical-path coverage. Multiplying cross-capture
-fractions supplies only conditional CPU-bound sensitivity scenarios, not an
-end-to-end bound. The batch interface therefore has no admitted GPU provider.
-Another narrow backend requires evidence of useful independent work with
-complete setup, transfer and fallback costs.
 
 
 \end{document}

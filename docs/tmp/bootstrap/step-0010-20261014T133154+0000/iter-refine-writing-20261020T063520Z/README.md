@@ -1,0 +1,15 @@
+# Complete serial writing refinement — root self-review
+
+Entry clean-paper revision c66d2ef38675d71747194336df032773589a4b98; all twelve round reports, actual per-round diffs and compile logs are retained here. Full source and reference context were read before edits. The user prohibits subagents/OMP/other agents, so all reviews are by this thread and explicitly self-review. No independent audit is claimed.
+
+The main text now groups preparation/prefix reuse under RQ1 and the current arithmetic reference plus device qualifications under RQ4. Historical parser-only prefix execution, obsolete arithmetic versions, phase models and expression-provider GPU controls remain intact in appendices. All original numeric strings, citation commands, native-response exceptions, failed paths, resource limits and conditional-bound qualifications remain. The four exact RQs, Initial Narrative, title, thesis and Lean/SMT scope are unchanged.
+
+The new source2/live2/24GiB-per-REPL/48GiB-total sampled-watchdog point is described from the published plan and real24 data. Its full29750 capture is still acquiring; no population result is inserted. The selected CPU result is not relabeled a GPU or full systems contribution.
+
+Citation gate actually checks all51 entries: zero errors/warnings after correcting Veriphy's missing access-only year, completing Veriphy/LP artifact annotations and adding an official versioned omega source citation. The failed first check and initial paper-separator failure remain. Verification annotations are the sole citation ledger; this report records actions, not a duplicate citation database.
+
+Round eleven restores two subtle introduced meaning changes: an unsupported causal transition for the adapted SHRED executor and the abstract's worker-isolation statement. It also repairs the AST expansion and introduced SDK grammar. The final baseline audit has no removed original numeric string/citation and exact RQ identity. Eight referenced figure files resolve; labels are unique and all source cross-references resolve. Current PDF is30pages including references and appendices. All pages were rendered and visually inspected through four retained contact sheets; no overlap/clipping or unresolved marker was seen. Existing underfull warnings and excessive final-submission length remain. No submission-readiness or accept/reject milestone review is claimed.
+
+The exact existing driver PID18077/birth1792474505.8 remains live at publication check, with two24GiB-limited REPLs, a fresh parent-watchdog sample and about15.71GiB total owned RSS. No full terminal cell exists yet. Active logs, experiment code/dependencies and author dirty paths are preserved. No additional full group, Lean build, agent, scheduler or Workspace starts.
+
+Next empirical boundary remains completion of the already-admitted full source pair/matrix. Read terminal cells once through its published analyzer; retain every failed/partial/source record. Complete RQ answers, novel systems mechanism, equal-resource frontier, GPU opportunity and independent evidence are still missing. Writing makes those obligations visible rather than satisfying them.

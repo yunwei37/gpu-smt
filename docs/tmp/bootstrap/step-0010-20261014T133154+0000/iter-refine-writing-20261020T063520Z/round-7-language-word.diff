@@ -1,0 +1,73 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -185,7 +185,7 @@
+ trusted Lean expressions or replace the kernel. Unsupported syntax, a missed
+ certificate or failed reconstruction restores the saved tactic state and
+ selects the same Fast/hybrid and product-reuse path as the comparator.
+-All failed attempts and fallback work remain in whole-source timing.
++All failed attempts and fallback work remain in complete source-verification timing.
+ 
+ The current exporter directly handles real and rational arithmetic.
+ Natural and integer arithmetic and unsupported normalization remain on the
+@@ -717,7 +717,7 @@
+ Table~\ref{tab:power-export} gives whole times including preparation,
+ search, checking, fallback and retirement.
+ The ratios are $1.79502\times$ relative to the compiled control,
+-$1.35681\times$ relative to the already-our-dual-backend native frontend,
++$1.35681\times$ relative to the native frontend with the same dual backend,
+ and $1.15481\times$ relative to previous direct export. The total improvement
+ therefore includes the numerical portfolio and direct proof path, not only
+ exponent coverage or ordinary compilation.
+@@ -1303,18 +1303,18 @@
+ operational-to-rejection transitions preclude a validated batch-relative
+ speed ratio. The 109 forced retirements censor CPU accounting. More cache
+ hits therefore do not establish useful end-to-end savings on this capture.
+-The complete original ProofNet prefix acquisition covers5,952 sources in
+-186 original32-candidate blocks. Native batch takes1,127.28 seconds
++The complete original ProofNet prefix acquisition covers 5,952 sources in
++186 original 32-candidate blocks. Native batch takes 1,127.28 seconds
+ (413 complete,5,526 rejected,nine operational,four incomplete);
+-exact prefixes take2,502.01 seconds and unit prefixes2,479.03 seconds
++exact prefixes take 2,502.01 seconds and unit prefixes 2,479.03 seconds
+ (each417 complete,5,531 rejected,four operational).
+ All413 native-complete sources remain complete with native kernel receipts.
+ Four incomplete sources become complete; eight operational sources become
+ rejected and three rejections become operational. These differences preclude
+-a validated speed ratio. Exact and unit execution record37 and3,853 cached
+-lookups,13,525 and9,716 executed nodes, and5,580/5,581 fallbacks, respectively.
+-Their four failed native request intervals occupy609.15/610.31 seconds;
+-batch failure intervals occupy13.86 seconds. These are caller roundtrip wall,
++a validated speed ratio. Exact and unit execution record 37 and 3,853 cached
++lookups, 13,525 and 9,716 executed nodes, and5,580/5,581 fallbacks, respectively.
++Their four failed native request intervals occupy 609.15/610.31 seconds;
++batch failure intervals occupy 13.86 seconds. These are caller roundtrip wall,
+ not internal tactic CPU. Forced retirements censor complete CPU accounting.
+ Reuse counters therefore do not establish useful whole-verification savings.
+ This remains an offline executor comparison, not the complete upstream SHRED workflow
+@@ -1324,7 +1324,7 @@
+ These supporting observations preserve earlier implementations, their own denominators, all failures and measured limitations. They are not interchangeable with the current natural-power composition.
+ 
+ \paragraph{Current matched arithmetic results.}
+-The latest CPU comparison tests whether reusing both successful and unsuccessful numerical search results avoids repeated exact search. This full-cohort comparison adds exact checking of external
++A two-sided CPU comparison tests whether reusing both successful and unsuccessful numerical search results avoids repeated exact search. This full-cohort comparison adds exact checking of external
+ infeasibility certificates. A negative certificate establishes infeasibility of
+ the coefficient-search problem, rather than rejection of the Lean source. With a fresh native reference, native,
+ positive-only HiGHS and two-sided HiGHS take 681.24, 472.09 and
+@@ -1466,7 +1466,7 @@
+ 1,484.35 seconds. The remaining heavy tail therefore requires examining
+ proof and frontend work beyond the parsed floating solver.
+ 
+-A source-native scheduling qualification uses the same private native binary
++A scheduling qualification using original source proofs uses the same private native binary
+ and verification body for eight static lanes or eight FIFO workers.
+ On the original first 64 sources, they take 54.81 and 58.32 seconds with equal
+ four-CPU eligibility and the 48\,GiB address-space ceiling. All source verdicts
+@@ -1559,7 +1559,7 @@
+ The completed requests form 1,835 GPU batches from 1,854 support calls,
+ with 1,816 singletons and 19 pairs.
+ This serving policy yields little multirequest batching on the measured demand.
+-The same-plan native reference completes in 2,331.39 seconds and the robust
++The native reference under the same plan completes in 2,331.39 seconds and the robust
+ CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
+ outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
+ These observations remain specific to the stacked headers; the corrected

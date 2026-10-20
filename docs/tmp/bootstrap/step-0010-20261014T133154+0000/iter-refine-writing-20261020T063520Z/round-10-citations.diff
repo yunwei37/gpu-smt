@@ -1,0 +1,20 @@
+--- round-entry/main.tex
++++ round-exit/main.tex
+@@ -312,7 +312,7 @@
+ 
+ For the bounded arithmetic comparison, the host is an Intel Core Ultra 9 285K
+ with 24 physical cores and no SMT siblings in the observed topology.
+-Earlier arithmetic clients use CPUs 12--15. The complete instrumented common-omega
++Both arithmetic frontends use Lean's existing integer arithmetic tactic omega~\cite{lean427OmegaSource}. Earlier arithmetic clients use CPUs 12--15. The complete instrumented common-omega
+ and natural-power blocks use 4--7; ready-goal qualifications use 8--11, and
+ the retained prefix captures use 20--23.
+ Affinity does not reserve memory bandwidth or isolate other work.
+@@ -1528,7 +1528,7 @@
+ neither GPU acceleration nor GPU impossibility and do not close the project.
+ 
+ The GPU follow-up changes external support search using cuOpt
+-PDLP~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof
++primal-dual hybrid-gradient LP search (PDLP)~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof
+ reconstruction. Its measured variant adds positive and negative artificial
+ slack to each equality row and minimizes total slack, making the numerical
+ problem feasible. The floating solution supplies an untrusted support.

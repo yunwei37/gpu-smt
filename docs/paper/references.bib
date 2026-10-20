@@ -547,15 +547,25 @@
  note={Accessed 18 October 2026; year denotes access year, not installed driver version}
 }
 
+% VERIFIED: 2026-10-20; mandatory checker passed after access-year correction, primary documentation read.
+% REAL: yes
+% PDF: not available, software documentation
+% ABSTRACT: Exports Lean goals and hypotheses to an untrusted Sage oracle and checks emitted proof text natively; includes rational LP and nonlinear arithmetic tools.
+% USED_FOR: Existing export/search/check architecture, not a measured competitor or imported performance result.
 @misc{veriphySource,
   author = {{Veriphy contributors}},
   title = {Veriphy},
-  howpublished = {\url{https://georgedouzas.github.io/veriphy/}},
-  note = {Project documentation, accessed October 18, 2026}
+  year = {2026},
+  url = {https://georgedouzas.github.io/veriphy/},
+  note = {Software documentation, accessed 20 October 2026; year denotes access year, not publication date}
 }
 
 
-% VERIFIED: 2026-10-19, official pinned artifact and source-level comparison.
+% VERIFIED: 2026-10-19; mandatory checker passed this entry 2026-10-20, pinned primary source reread.
+% REAL: yes
+% PDF: not available, software artifact
+% ABSTRACT: Linear-rational-arithmetic tactics reconstruct external dual coefficients into native kernel-checked proofs over supported carriers.
+% USED_FOR: Direct-certificate reconstruction precedent, not a new benchmark execution or imported speedup.
 @misc{lpTacticSource,
  author={{Leanprover contributors}},
  title={{LPTactic}},
@@ -563,3 +573,16 @@
  year={2026},
  url={https://github.com/leanprover/lp-tactic/tree/86634295a1fa2b45110a680215e208b16f40cd33},
  note={Revision 8663429; accessed 19 October 2026; year denotes access year, not publication date}}
+
+
+% VERIFIED: 2026-10-20; mandatory checker passed, official pinned source read.
+% REAL: yes
+% PDF: not available, official versioned source documentation
+% ABSTRACT: Documents Lean's omega tactic, natural/integer preprocessing, native contradiction proof construction and supported elimination procedure.
+% USED_FOR: Identity of the existing integer arithmetic baseline component, not a novel solver or performance claim.
+@misc{lean427OmegaSource,
+ author={{Lean project contributors}},
+ title={{Lean}: omega tactic source documentation},
+ year={2026},
+ url={https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Elab/Tactic/Omega.lean},
+ note={Version v4.27.0; accessed 20 October 2026; year denotes access year, not publication date}}
