@@ -44,6 +44,17 @@ not tactic CPU, removable wall time or an historical2234.69phase bound.
 This changes the experiment resource point, not earlier raw data/clocks.
 No Workspace/host/other-project configuration changes.
 
+The [corrected arithmetic generalization](../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
+now uses this same total48GiB/live2/native24GiB point through the official
+HTTP service, with fourCPU8–11and the stronger hybrid/omega reference.
+Its actual24original preflight returns24genuine completions in each method,
+no native/SDK/non-message changes and3message differences. Whole68.841713/
+28.317001s and warm35.171606/21.440753s admit engagement, not a population
+claim; asymmetric preparation is explicit. The fresh full29,750group is
+running serially: three alternating native/Powerpairs, all failures retained.
+No unsafe old8worker/per-worker48GiB queue resumes, and no new GPU benefit
+or original1,000criterion change is claimed.
+
 ## Fixed research questions
 
 | RQ, unchanged from the Initial Narrative | Evidence and unresolved promise |

@@ -139,3 +139,11 @@ lost genuine outcomes does a new serial full block start. All six declared
 cells retain outcomes, failures, preparation, service and retirement costs;
 RSS sampling stays on in both, separate from historical8queue/48worker data.
 No new RQ, novelty claim, CPU/GPU criterion, service or agent is introduced.
+
+
+The selected next action is now executed: the real24arithmetic preflight
+closes with24complete in each arm and no changed native outcomes; whole
+68.84/28.32s and warm35.17/21.44s carry asymmetric preparation. The single
+full29,750three-pair group starts from published9af64db through the existing
+budgeted official service. Only two live REPLs,24GiB each,total48GiB remain.
+Static plan/qualification are published; active full logs stay unstaged.

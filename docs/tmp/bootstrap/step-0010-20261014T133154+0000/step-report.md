@@ -5858,3 +5858,16 @@ Next action executes only the declared three alternating whole29750pairs,
 sequentially, without unsafe old queues. Shared released-input staging cost
 is recorded separately from each method's actual capture lifecycle, whose
 snippet preparation/import/wait/native/oracle/fallback/retirement remain charged.
+
+
+### Actual full continuation after publication
+
+The closed preflight/plan is committed and pushed as9af64db. Only after root
+result review, one fresh finite full driver executes the six whole29750cells.
+The full-launch receipt identifies original command/source commit/root.
+Actual first real-source HTTP responses and RSSsamples show engagement.
+Shared input materialization has its own receipt, outside method lifecycles;
+no old queue or other full group is live. Active files remain unstaged.
+The complete miniF2F baseline/raw/paper is already pushed as860d6b0;
+the generated29-pagepaperPDF is included in9af64db. Full-result inference waits
+for all declared cells and native outcomes, without polling-only goal turns.

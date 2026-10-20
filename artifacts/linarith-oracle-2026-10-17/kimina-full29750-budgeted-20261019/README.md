@@ -18,3 +18,9 @@ Executed preflight sources, all raw/failed outcomes and lossless byte-roundtrip
 receipts remain. A full timing conclusion requires all six final cells plus
 native outcome and lifecycle review. CPU-only composition, not a GPU result
 or new cache/service. Root self-review, no independent audit.
+
+The full stage started2026-10-20T05:42Zfrom published source9af64db.
+[Actual launch receipt](full-launch.json) identifies the sole finite driver.
+First native real-source HTTP attempts and one-second total-tree RSS records
+are observed, rather than inferring execution from a process start alone.
+No whole-population performance result is available until the matrix closes.
