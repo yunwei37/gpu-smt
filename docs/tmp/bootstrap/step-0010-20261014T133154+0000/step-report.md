@@ -5824,3 +5824,37 @@ Next admitted experiment is corrected arithmetic generalization on all29750
 through the already-budgeted official service; it has a separate Markdown
 plan/review and actual24real-source preflight, not a new losing solver grid.
 The old unsafe/incomplete queues remain stopped and no delegate is created.
+
+
+## 2026-10-20T05:40Z — corrected arithmetic new-budget preflight closes
+
+EXPERIMENT_GATE admits the existing corrected arithmetic composition's
+whole-population service generalization under RQ4.
+[Plan/root review and actual preflight](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
+retain all four RQs and strong compiled Fast/hybrid/officialomega reference.
+The old29750native-array/eight-worker matrix stays interrupted, not resumed or
+silently marked complete. New mandatory monitor/resource point is declared.
+
+The actual first24original IDs from the previously selected1,000engage4.27
+native checking and CPU numerical support. Both24genuinely complete;
+0native/SDK/non-message deltas,3raw-message differences. Whole native68.841713/
+Power28.317001s, warm35.171606/21.440753s. Asymmetric preparation33.204167/
+6.385697s prevents treating the tiny2.431109x whole result as generalization.
+This actual preflight satisfies the stated admission; no losing parameter
+variant or further artificial test is selected. Peak total ownedRSS14.994846/
+14.839890GB(decimal), max2native, actual24GiBlimits, zero kills/monitor errors,
+all method/native/numerical processes retired. Raw samples and byte-archives
+are retained; root analysis reproduces source/HTTP/outcome/lifecycle evidence.
+
+WRITE_GATE: publish the plan, executed preflight, result self-review and public
+reanalysis. Paper scientific claim remains unchanged; the newly compiled PDF
+from the closed miniF2F comparison is published alongside its source.
+No24-source timing is promoted to paper population evidence.
+
+REVIEW_GATE: root self-audit, no independent reviewer. Same algorithm,
+headers/source-native IDs, stronger hybrid baseline, fourCPU8–11/source2/
+live2/24GiB/48GiBtotal in both arms. No hidden GPU or changed1,000criterion.
+Next action executes only the declared three alternating whole29750pairs,
+sequentially, without unsafe old queues. Shared released-input staging cost
+is recorded separately from each method's actual capture lifecycle, whose
+snippet preparation/import/wait/native/oracle/fallback/retirement remain charged.

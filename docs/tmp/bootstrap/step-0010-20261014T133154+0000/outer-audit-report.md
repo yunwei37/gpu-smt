@@ -3741,3 +3741,21 @@ compiles and affected pages render. No published compatibility artifact is
 silently repaired or repeated to seek a better result. No publication of
 active capture logs. Unrelated author dirty paths remain unstaged.
 Self-review cannot satisfy independent audit; no external audit claimed.
+
+
+## Corrected arithmetic new-budget admission — root self-audit
+
+Direction unchanged: this tests whole-population applicability of an already
+observed corrected composition; it is not a new scientific contract, ordinary
+compilation contribution, GPU gain or closing of prepared-state isolation.
+All real24proofs/outcomes are independently read within the root thread.
+Actual2.431109whole/1.640409warm ratios carry asymmetric preparation and
+a deliberately heavy selected subset; they establish admission only.
+
+The original29,750population and six-cell official-service matrix are declared
+before full execution. All outcomes/resources/tails must be consumed on
+completion. No old8-worker/per-worker48queue or extra monitor-off profile
+continues. Streamed byte-equal archival retains raw failed/partial files.
+Memory guard includes the finite parent and numerical backend, with actual
+2native and24GiBlimits; sampling cannot be represented as a hard RSS quota.
+Original author dirty paths remain unstaged. Self-review is not independent.
