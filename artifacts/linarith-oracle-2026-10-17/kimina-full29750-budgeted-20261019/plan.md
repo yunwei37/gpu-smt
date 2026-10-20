@@ -89,3 +89,6 @@ finite group for an evidence-based repair. Resource-limited individual
 candidates remain in the full population as resource_failure. No blind rerun
 or accepted-zero-input cell becomes a timing result.
 All analysis/review is by this root thread and labeled self-review.
+
+## Operational recovery,2026-10-20
+The original first native cell stops on project-volume ENOSPC and is preserved as full.partial-enospc-20261020T0840, not a complete measurement. Repair23acf72 guarantees the monitor error-write path calls its abort callback and cancels/reaps the owned capture on monitor failure. Actual /dev/full/source-native probes and final24positive qualification complete at the same resources. The arithmetic algorithm, original population/order, six-cell plan and clocks are unchanged. The same finite protocol restarts08:59Z; its actual launch/health receipts identify the new PID/birth. Failed partial clocks are not spliced into the new population. No unsafe old queue or second full group resumes.

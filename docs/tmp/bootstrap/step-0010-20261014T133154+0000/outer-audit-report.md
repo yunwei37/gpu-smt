@@ -3866,3 +3866,7 @@ Direction unchanged: this restores the admitted full population experiment, not 
 Fault evidence: actual zero space and25%inodeusage, orphan temporary pack/no owner/byte-equal retained copy, unchanged Git refs and connectivity. Temporary Git-maintenance suppression is command-local, with no persisted settings. Closed historical archives preserve exact bytes and remain local; manifests do not pretend remote publication. Only owned finite-capture PIDs/births are stopped.
 
 Repair evidence: actual old-vs-fixed/dev/full callback regression, actual two-REPL original-source native/Power cancellation/retirement, then final24positive current-source qualification. Same limits and algorithms; failures are operational outcomes, not proof rejection. Normal clocks are not new population scores. Raw malformed tails and all29,750partial-source membership retained. No independent audit or milestone success. No second full group, Workspace or permission/quota change.
+
+
+## Actual recovery handoff — root self-audit
+Published repair23acf72 is consumed by a newly observed instance of the same retained finite protocol, not an Agent handoff or a replacement Workspace. Original IDs/order/method/CPU/concurrency/24GiB/48GiB/six-cell plan remain. Exact PID/birth and fresh owned-tree watchdog evidence establish real startup, not completion. Old partials and missing coverage stay explicit. Only static launch/health and status records are published; active full data remain unstaged. No completed performance result, GPUbound, independent audit or goal completion is inferred.

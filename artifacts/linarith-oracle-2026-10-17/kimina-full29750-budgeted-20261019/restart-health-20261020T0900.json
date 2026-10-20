@@ -1,0 +1,128 @@
+{
+  "utc": "2026-10-20T08:59:47.276243+00:00",
+  "root_pid": 23039,
+  "root_birth": 1792486754.32,
+  "native_REPLs": [
+    {
+      "pid": 23105,
+      "birth": 1792486757.3,
+      "RSS_bytes": 6317633536
+    },
+    {
+      "pid": 23104,
+      "birth": 1792486757.3,
+      "RSS_bytes": 6308122624
+    }
+  ],
+  "last_parent_watchdog_sample": {
+    "time_ns": 918159085334475,
+    "total_rss_bytes": 14683164672,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "native_repl_count": 2,
+    "processes": [
+      {
+        "pid": 23039,
+        "birth": 1792486754.32,
+        "ppid": 1,
+        "rss": 334520320,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-u",
+          "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/run.py",
+          "--stage",
+          "full"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 23045,
+        "birth": 1792486756.07,
+        "ppid": 23039,
+        "rss": 107307008,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 23050,
+        "birth": 1792486756.84,
+        "ppid": 23045,
+        "rss": 806608896,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 23053,
+        "birth": 1792486756.85,
+        "ppid": 23045,
+        "rss": 806805504,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 23105,
+        "birth": 1792486757.3,
+        "ppid": 23053,
+        "rss": 6294278144,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 23104,
+        "birth": 1792486757.3,
+        "ppid": 23050,
+        "rss": 6308016128,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 23116,
+        "birth": 1792486762.05,
+        "ppid": 23104,
+        "rss": 8278016,
+        "command": [
+          "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+          "--serve"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 23117,
+        "birth": 1792486762.44,
+        "ppid": 23105,
+        "rss": 17350656,
+        "command": [
+          "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+          "--serve"
+        ],
+        "native_repl": false
+      }
+    ]
+  },
+  "watchdog_file_age_seconds": 0.19175100326538086,
+  "free_bytes": 2403684352,
+  "terminal_full_cells": [],
+  "scope": "One actual restored finite capture; sampled startup health, not completed source matrix or permanent hard RSS guarantee."
+}
