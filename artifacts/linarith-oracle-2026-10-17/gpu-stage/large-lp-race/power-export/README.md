@@ -9,3 +9,10 @@ One fixed-order/shared-host normal-output observation with compiledCosthooks,
 not pristine-stock/globalCPUoptimality/GPUbenefit or OSDIreadiness.
 [All111affected-original admission](qualification-result-review.md).
 Original whole-system criterion and all4RQs remain; hourlyresearchactive.
+
+
+[Source-attributed work counts and limits](mechanism-result-review.md) now join
+all1,000 originals to the closed component block. Recorded large-LP races fall
+1,888→906on222IDs, including139outside the earlier111fallback set. The actual
+rows>=11recording guard prevents calling these all-LP counts or a GPU bound.
+[Reanalysis](analyze-mechanism.py), [all-source CSV](source-mechanism.csv).

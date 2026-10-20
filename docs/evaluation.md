@@ -55,6 +55,16 @@ running serially: three alternating native/Powerpairs, all failures retained.
 No unsafe old8worker/per-worker48GiB queue resumes, and no new GPU benefit
 or original1,000criterion change is claimed.
 
+The [closed four-way arithmetic source attribution](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/mechanism-result-review.md)
+finds1,888old-direct/906Powerrecorded large-LP races, falling on222original
+sources with no increases. Prior111fallback sources contribute593/176;
+remaining889contribute1295/730. Every race joins exactly to an original body.
+This historical block supports less recorded large-path work, not total LP
+counts: the actual guard only races rows>=11and smaller problems use another
+CPU path. It cannot partition whole time, prove a GPU bound, or serve as the
+current reduced-diagnostic/new-resource causal ablation. All1,000failures,
+source regressions and observer errors remain. No new collector is started.
+
 ## Fixed research questions
 
 | RQ, unchanged from the Initial Narrative | Evidence and unresolved promise |

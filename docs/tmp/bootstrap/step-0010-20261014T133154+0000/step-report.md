@@ -5871,3 +5871,38 @@ no old queue or other full group is live. Active files remain unstaged.
 The complete miniF2F baseline/raw/paper is already pushed as860d6b0;
 the generated29-pagepaperPDF is included in9af64db. Full-result inference waits
 for all declared cells and native outcomes, without polling-only goal turns.
+
+
+## 2026-10-20T06:05:58.046569+00:00 — source-attributed arithmetic component evidence
+
+Previous goal turn is a verified wait, not a new research result. This turn
+does not poll the active full driver again or launch another collection.
+EXPERIMENT_GATE reuses the complete E1074four-way1,000source matrix under RQ4.
+The fixed earlier111fallback set and all889other originals are included,
+with exact-body joins for every race. Recorded olddirect1888/Power906races
+decrease on222IDs, increase on none. The111subset gives593/176;889gives1295/730.
+The thirteen thousand/all-call assumptions are not imported into these clocks.
+
+Source inspection of both retained executed numerical code and the public
+reproduction verifies rows>=11race selection and cpu_or_declinebelow it.
+Therefore this supports less recorded large-path work, not total LP halving,
+eliminated all-call preprocessing or a strict GPU bound. Exactly12of222sources
+with fewer races still have longer Power spans; all344longer-span sources
+remain. All992complete/8reject native outcomes and source/message/observer
+qualifications of the original complete block remain unchanged.
+[Plan, code, data and result self-review](../../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/mechanism-result-review.md).
+
+WRITE_GATE adds this scoped mechanism evidence only to the existing paper
+paragraph and current evaluation/index. Tectonic completes main.pdf; compile
+log retained. No new figure, RQ, contribution, title or story change. Original
+Initial Narrative and current user/author instructions are checked.
+Daily upkeep also removes a stale current OMP-authorization assertion from
+implementation.md; the actual current rule is root-only. Author dirty work
+and all historical raw/failed records remain.
+
+REVIEW_GATE root self-audit accepts exact source/counter evidence and rejects
+all-LP/Amdahl/causal-wall/GPU/independent-audit extrapolations. The final
+reduced-diagnostic/new-resource causal ablation is not filled by this earlier
+block. Continue the already-running full29750six-cell official-service group,
+rather than another narrow kernel, solver grid or repeat of settled controls.
+No delegate, new scheduler, Workspace, parameter or extra full collection.

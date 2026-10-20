@@ -147,3 +147,20 @@ closes with24complete in each arm and no changed native outcomes; whole
 full29,750three-pair group starts from published9af64db through the existing
 budgeted official service. Only two live REPLs,24GiB each,total48GiB remain.
 Static plan/qualification are published; active full logs stay unstaged.
+
+
+## Work-count attribution while the full population executes
+
+Reanalysis of the closed four-way1,000source block shows fewer recorded large
+LP races(1888→906on222IDs), but the actual rows>=11gate leaves small-path
+solves uncounted. This changes the defensible attribution: representation
+reduces recorded large-path pressure, not demonstrably half of all LP work.
+Do not spend another iteration accelerating a narrow LP race on the assumption
+that those counts cover the full verifier. The existing full population
+experiment remains the highest-value active work; no second capture starts.
+
+README links the public source-level analyzer/CSV/review, evaluation/paper
+record the scoped finding, and an obsolete current OMP-delegation sentence in
+implementation.md is corrected to the latest root-only instruction. Original
+records and author dirty files are retained. This is factual upkeep and
+supporting analysis, not new systems novelty or all-RQ completion.

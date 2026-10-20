@@ -214,8 +214,10 @@ still an incomplete research draft. Completed prior source/PDF writing checks ar
 not venue acceptance. Completed source/data/documentation checkpoints are published directly on main
 under the user instruction to preserve completed step work promptly. Step0010
 still has incomplete EXPERIMENT/WRITE/REVIEW coverage and independent audit.
-The later explicit parallel OMP authorization supersedes the earlier no-delegation
-restriction; no self-check is represented as independent review.
+The latest explicit root-thread-only instruction supersedes the earlier
+parallel OMP authorization: no OMP, subagent or native research session is
+started or resumed. All current rechecks are root self-review, not independent
+audit; preserved earlier reviews retain their original scope.
 
 Measured4.27 REPLvariants, product supportmodules and Rustoracle sources now
 have an exact [source snapshot/restore map](../artifacts/lean-modern-native-compilation-2026-10-14/source-snapshot-20261015/README.md).

@@ -3759,3 +3759,23 @@ continues. Streamed byte-equal archival retains raw failed/partial files.
 Memory guard includes the finite parent and numerical backend, with actual
 2native and24GiBlimits; sampling cannot be represented as a hard RSS quota.
 Original author dirty paths remain unstaged. Self-review is not independent.
+
+
+## Source-attributed arithmetic reanalysis — root self-audit
+
+Direction: unchanged all four RQs, Lean/SMT/system/GPU scope and original
+narrative. Supporting work-count evidence cannot substitute for the missing
+OSDI systems mechanism, complete service generality or independent audit.
+
+Validity: every retained race maps exactly to one original source, the fixed
+111subset predates the new capture, all1,000IDs and failed proofs remain.
+Source inspection finds a real observation boundary at11rows. The result is
+explicitly recorded large-path pressure, not all solves or a counterfactual
+wall/GPU fraction. Cross-epoch current-build timing attribution is rejected;
+the historical observer errors and fixed-order shared-host limitations remain.
+
+Efficiency: analyze already complete data while the sole healthy full run
+continues. No experiment restart or polling-only goal turn. Public analyzer,
+CSV and raw references reproduce counts; paper factual update compiles.
+Maintenance corrects one stale delegation claim without changing real
+runtime behavior or author dirty files. All review is root self-review only.
