@@ -19,6 +19,17 @@ retain their dates and do not override current evidence.
 and [outer self-audit](tmp/bootstrap/step-0010-20261014T133154+0000/outer-audit-report.md)
 link original raw, failed, partial and superseded results.
 
+## Existing in-process parallelism is already a comparator
+
+The [bounded source admission](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261020T1118Z/report.md) confirms that the retained native REPL
+already shares a prepared command state across parallel candidate tasks,
+and earlier arithmetic native-array drivers use that interface. The official
+HTTP snippet/worker pool is a distinct boundary. Reimplementing generic
+in-process task/state sharing is not an admitted new contribution or GPU
+route; no new performance capture follows. E023's ProofNet30cells are already
+reviewed, while its mini block remains absent. The current29750group remains
+the sole full capture; no historical unsafe collector is resumed.
+
 ## Current resource point
 
 The latest user instruction replaces the earlier48GiB-per-worker policy

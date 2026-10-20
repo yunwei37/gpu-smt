@@ -6044,3 +6044,29 @@ WRITE_GATE updates the current operational frontier and daily record, leaving pa
 
 ## 2026-10-20T09:00:34.183263+00:00 — same admitted population actually restored
 Repair/code/partial boundary23acf72 is pushed. The original finite six-cell protocol restarts2026-10-20T08:59:14Z, PID23039/birth1792486754.32, from unchanged main in the owning Workspace. Actual process and fresh independent budget samples establish two live24GiB-allowed REPLs and owned RSSbelow48GiB; no full terminal exists. [Launch and observed health](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-restart-20261020T0859.json). About2.40GBremain, with closed-cell lossless archival retained and command-local publication maintenance suppression. No second group, new Agent or active-file staging. The original partial10,816responses stay separate and no ratio is claimed. Next empirical boundary is the first actual full terminal and then the declared paired matrix, not periodic empty waits.
+
+## 2026-10-20T11:18Z — reject redundant in-process concurrency before implementation
+The previous goal turn produced no new empirical result. A bounded root
+source investigation asks whether shared-environment candidate concurrency
+is missing. EXPERIMENT_GATE compares the actual native REPL and native-array
+drivers, pinned official HTTP route, versioned Lean parallel API and primary
+Snapshot-DSP source. [Detailed evidence and disposition](literature-20261020T1118Z/report.md).
+The proposed primitive already exists in the baseline; reject a duplicate
+implementation rather than add another unsuccessful variant. This source
+admission does not answer an RQ or count as a new performance result.
+
+The original E023ProofNet30cells are already reviewed; actual mini full block
+is absent. No uncollected complete60-cell result is invented and no old
+unbudgeted queue restarts. At11:17:53Z, the sole existing driver23039/birth
+1792486754.32 remains live with fresh independent budget logging/no terminal.
+
+WRITE_GATE is targeted current-frontier documentation within the still-open
+experiment, not a new completed scientific step or a repeat of the completed
+12-round writing cycle. Current paper already states native in-process batch;
+no mechanism/number/claim/narrative changes or unchanged TeX compilation.
+REVIEW_GATE root self-audit checks source boundaries and existing review scope;
+all four RQs/Initial Narrative/Lean+SMT/5090/OSDI objective remain intact.
+No external auditor/Agent or source/binary mutation. This support boundary
+is committed/pushed under the user's completed-part publication requirement.
+Next empirical dependency remains the actual frozen full population, not
+another poll-only or same-source-question loop.
