@@ -184,3 +184,23 @@ edited entry documents resolve. This is usability/engineering evidence,
 not a fresh benchmark, pristine-upstream validation, independent audit or
 whole fresh-machine reproduction. The public build/check commands are
 explicitly not advertised as installing the benchmark RSSwatchdog.
+
+
+## Source-level baseline and contribution pressure
+
+The unchanged upstream Farkas HEAD is verified from primary commit metadata;
+its numeric probe/restricted proof construction pre-exists this work.
+The local direct reconstruction and literal-power handling have an actual
+implementation delta, but generic external certificates/deferred proof
+construction are prior mechanisms; direct Real/Rat coverage is not a strict
+superset of the upstream probe. Published4.31times cannot be substituted for
+the measured4.27adaptation. Official LP tactic source adds a direct-certificate
+precedent, citation-only rather than another weak numerical baseline.
+
+The current bottleneck to an OSDIpaper is not another LPmicrovariant: the
+consequential differentiated system mechanism and full service/RQevidence
+are still missing. The best immediate action remains the running full
+original-population comparison, with this source-level baseline contract
+fixed and all outcomes included. A positive result would extend applicability,
+not automatically supply systems novelty. No dependency upgrade, extra
+full run, new story or reduced research goal is introduced.

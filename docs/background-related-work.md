@@ -186,3 +186,15 @@ cancellation and full setup/fallback costs must beat the strongest CPU path.
 A matched 32-candidate-queue capacity preflight tests that uncertainty.
 This does not replace the original native-state/service RQs or claim their
 completion. [Primary-source review and baseline handoff](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261018T1036/report.md).
+
+
+## 2026-10-19: exact arithmetic source comparison
+
+The [source-level follow-up](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261020T061754Z/report.md) verifies the unchanged Farkas
+upstream pin, the actual local reconstruction path, type/fast-path coverage
+and the official LP tactic's direct-certificate precedent. Generic external
+search and delayed native proof construction remain high-overlap prior
+mechanisms. The measured4.27adaptation is not an unchanged upstream4.31
+replication. Keep the current full-population experiment and original systems
+goal; do not promote a local CPU composition into the missing systems novelty.
+No additional numerical main baseline or new acquisition is admitted.

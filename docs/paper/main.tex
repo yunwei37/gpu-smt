@@ -164,8 +164,9 @@ The arithmetic experiment tests whether reusing an external coefficient
 certificate removes work that remains after native compilation and warm
 environment reuse. FarkasFast selects hypotheses numerically and then invokes
 stock arithmetic on the selected subset~\cite{farkasSource}.
-That restricted invocation performs proof-producing normalization and another
-certificate search. Our experimental path instead returns the numerical
+That restricted invocation can repeat proof-producing normalization and
+certificate search; its source does not establish a fixed count of completed
+oracle invocations. Our experimental path instead returns the numerical
 certificate and constructs only the facts that it cites.
 
 For each contradiction branch, the Lean frontend collects the applicable
@@ -189,7 +190,8 @@ All failed attempts and fallback work remain in whole-source timing.
 The current exporter directly handles real and rational arithmetic.
 Natural and integer arithmetic and unsupported normalization remain on the
 fallback path, so supported invocation counts alone cannot establish useful
-cost coverage. This prototype uses CPU native code. Batching products on
+cost coverage. Literal-power handling in this direct path is not a strict
+type-coverage superset of the upstream numeric probe. This prototype uses CPU native code. Batching products on
 an RTX 5090 remains conditional on measured eligible work and complete
 preparation, transfer and fallback costs. External arithmetic search and
 native certificate checking are established techniques~\cite{farkasSource,mathlib},
@@ -1763,7 +1765,11 @@ Mathlib and Farkas already separate arithmetic certificate search from native
 proof construction~\cite{farkasSource}. Veriphy exports Lean goals and hypotheses
 to an external Sage oracle and checks the emitted proof, including rational
 LP and nonlinear arithmetic facilities~\cite{veriphySource}. These systems
-already cover the general export--search--check principle. Exact certification of external linear
+already cover the general export--search--check principle.
+The LP tactic family also reconstructs external dual coefficients into
+kernel-checked proofs over its supported arithmetic fragment~\cite{lpTacticSource}.
+Direct certificate reconstruction alone therefore does not distinguish our system.
+Exact certification of external linear
 programming results, including infeasibility and unboundedness, is also
 established~\cite{verifiedLP2025}. Gurung and Ray assign a CUDA block to each
 linear program and evaluate both batch supply and complete application

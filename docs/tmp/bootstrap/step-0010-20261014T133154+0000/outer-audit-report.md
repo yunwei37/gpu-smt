@@ -3802,3 +3802,25 @@ Agent change, profile grid or test-only research result. Exact live driver
 identity and fresh owned-tree watchdog sample confirm preservation at the
 publication boundary. Stage only completed own docs/receipt/archive, leaving
 active logs and unrelated author files alone. Root self-review, not independent.
+
+
+## Arithmetic source-comparison update — root self-audit
+
+Direction: user Lean-first/SMT/GPU/OSDIgoal and Initial Narrative are preserved.
+High-overlap generic mechanisms are rejected as standalone contributions;
+the source check does not replace the systems target with an easier CPU claim.
+The sole full population experiment remains the chosen next empirical decision.
+
+Source fidelity: immutable primary code/toolchain paths and current commit
+metadata distinguish the measured adaptation from upstream release clocks.
+Local carrier and branch behavior come from actual published local code.
+Another direct-certificate tactic is precedent, not a fabricated failing
+benchmark. Searching guessed404paths is transparently corrected through the
+upstream documented layout; secondary summaries are not used for conclusions.
+
+No measured cost or GPUbound is inferred from source syntax. The restricted
+stock call does not establish a fixed number of completed oracle invocations,
+so an unconditional repeated-search count is not claimed. New paper citation resolves and main.pdf compiles. The canonical
+addition uses partial-index staging so pre-existing author work remains
+unstaged; other dirty paths and the active capture are preserved. All review
+is root self-review. Independent audit and complete research remain missing.

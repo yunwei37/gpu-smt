@@ -5944,3 +5944,39 @@ are read from the live process table; the independent budget sample is fresh
 (under3seconds), with two native REPLs and totalRSSbelow48GiB. No terminal
 cell has been inferred from launch, and active full files remain unstaged.
 Continue the existing matrix rather than restart or create a duplicate.
+
+
+## 2026-10-20T06:18:55.481506+00:00 — exact arithmetic prior-source and comparison boundary
+
+Previous turn is artifact/engineering progress, not a new empirical result.
+EXPERIMENT_GATE's bounded source-verification node supports RQ4attribution
+while the admitted whole population runs. Primary Farkas5a38a7eREADME/Fast/
+protocol/toolchain, measured MathlibFrontend and official LP tactic8663429
+source are inspected; direct primary source paths repair initial404guesses,
+not an inference that unavailable guesses mean no prior mechanism.
+GitHub commit metadata confirms the currently unchanged Farkas HEAD.
+[Queries, source findings, coverage/contradiction review and experiment handoff](literature-20261020T061754Z/report.md).
+
+External search/native checking and lazy proof work overlap prior designs.
+The concrete local implementation returns coefficient/origin descriptions
+to reconstruct selected facts rather than only choosing a restricted native
+run. Its direct carrier restriction prevents a strict coverage-superset claim.
+That restricted run can repeat search, but the source establishes a stock
+call rather than a fixed count of completed oracle invocations. This source fact corrects the
+paper's previous unconditional wording. Baseline4.27and upstream4.31remain
+distinct. No additional runtime/numerical baseline is admitted.
+
+WRITE_GATE updates a compact canonical source pointer, public provenance,
+the existing method/related-work factual wording and one pinned LP artifact
+citation. Tectonic compiles main.pdf with existing underfull warnings; no
+scientific title/thesis/RQ/scope/InitialNarrative changes or whole-paper
+milestone claim. Own background addition is partially staged from HEADbase
+plus our section; all existing author dirty changes stay outside the commit.
+
+REVIEW_GATE root self-audit rejects first-oracle/first-deferred-construction/
+strict-superset/unchanged-upstream and systems-novelty extrapolations.
+Existing selected-cohort gains and all failed GPU/constructor data remain;
+the current full29750plan is retained and not restarted. No upgrade,
+delegation, new Workspace/service/scheduler, strict GPU bound or research
+goal closure. This is source/baseline evidence, not new performance evidence,
+independent audit or OSDIreadiness. Original four RQs remain open.

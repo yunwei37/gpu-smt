@@ -19,3 +19,13 @@ snapshots remain under artifacts/. Package compilation is performed separately
 from every active capture, and successful packaging does not establish a new
 performance result. Some legacy variable/log names say GPU even for a CPU
 HiGHS support process; the configured provider determines actual device use.
+
+
+## Scope of the local change
+
+The [source-level comparison](../../../../docs/tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261020T061754Z/report.md) distinguishes the inherited
+numerical/proof mechanisms from this local composition. Direct reconstruction
+is not the first external-certificate or deferred-proof design; direct Real/Rat
+handling plus native fallback is not a strict coverage superset of the pinned
+competitor. The measured4.27adaptation is distinct from unchanged upstream4.31.
+The existing full population capture and native check path are not modified.

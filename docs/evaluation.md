@@ -63,7 +63,10 @@ This historical block supports less recorded large-path work, not total LP
 counts: the actual guard only races rows>=11and smaller problems use another
 CPU path. It cannot partition whole time, prove a GPU bound, or serve as the
 current reduced-diagnostic/new-resource causal ablation. All1,000failures,
-source regressions and observer errors remain. No new collector is started.
+source regressions and observer errors remain. No new collector is started. A [pinned primary-source comparison](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261020T061754Z/report.md)
+checks the inherited mechanisms and the actual coverage/version differences;
+it does not replace the current population experiment or establish new
+systems novelty.
 
 ## Fixed research questions
 
