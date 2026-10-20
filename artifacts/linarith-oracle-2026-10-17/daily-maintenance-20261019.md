@@ -204,3 +204,16 @@ original-population comparison, with this source-level baseline contract
 fixed and all outcomes included. A positive result would extend applicability,
 not automatically supply systems novelty. No dependency upgrade, extra
 full run, new story or reduced research goal is introduced.
+
+
+## Current full-matrix analysis implementation
+
+The existing six-cell analysis is now executable against closed data. Real
+arithmetic qualification reproduces all24IDs and native/warning/RSS/clocks;
+existing allocation failures, actual killed candidates, full-population
+timeouts/sorries and historical three-attempt HTTPerrors exercise reader
+branches without another benchmark. This is readiness, not an extra measured
+speedup. The pipeline retains every failed source, missing terminal and
+censored HTTPend, and includes retry gaps instead of taking only the last
+attempt. The current first full cell is still acquiring under the existing
+guard; no second group or current source/library change is introduced.

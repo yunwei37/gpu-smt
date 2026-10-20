@@ -3824,3 +3824,29 @@ so an unconditional repeated-search count is not claimed. New paper citation res
 addition uses partial-index staging so pre-existing author work remains
 unstaged; other dirty paths and the active capture are preserved. All review
 is root self-review. Independent audit and complete research remain missing.
+
+
+## Current full-matrix analyzer — root self-audit
+
+Direction unchanged: source-native full29750generalization and the broader
+Lean/SMT/system/GPU/RQgoal are preserved. Analysis readiness does not answer
+the research question or supply the missing system contribution.
+
+Real validation covers previously closed arithmetic successes, native rejects,
+allocation failures, actual largest-victim injections, sorry-bearing results,
+timeouts and HTTP500retries. It is read-only data execution, not another
+capture. The shared existing classifier is explicitly not an independent
+audit. SDKvalid and HTTP200are not treated as proof acceptance.
+
+Whole-time aggregate uses every planned complete cell, not a favorable prefix;
+failed/missing cells remain explicit. Source HTTPenvelopes retain retry gaps,
+censored ends stay unavailable and all source IDs stay in CSVoutputs.
+Concurrent tails are not CPU or removable wall. Per-second RSS/actual limits/
+kill notices and observed EOFexits retain their own coverage limits, without
+a kernel-hard-quota guarantee or a fabricated all-child CPU total.
+
+The original full driver is actually live at this boundary, with fresh owned
+watchdog data and two native descendants. No run-code mutation, new full
+group, solver variant, duplicate Agent or live-log publication. Author dirty
+work stays untouched. No paper number changes, independent review or project
+completion is claimed.

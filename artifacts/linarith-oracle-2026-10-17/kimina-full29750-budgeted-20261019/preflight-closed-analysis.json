@@ -1,0 +1,637 @@
+{
+  "scope": "Closed original-source arithmetic HTTP comparison at source2/live2/native24GiB/aggregate48GiB/fourCPU8-11. Root self-review; no GPU, independent audit or OSDI acceptance.",
+  "stage": "preflight",
+  "expected_sources_per_cell": 24,
+  "expected_cells": 2,
+  "conditions": {
+    "rep1-native": {
+      "observation": "complete",
+      "terminal": {
+        "state": "complete",
+        "method": "native",
+        "expected": 24,
+        "source_concurrency": 2,
+        "affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "memory_limit_bytes": 51539607552,
+        "aggregate_memory_budget_bytes": 51539607552,
+        "per_native_repl_address_limit_bytes": 25769803776,
+        "maximum_live_native_repls": 2,
+        "native_engine": "hybrid",
+        "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "native_hybrid_override": "1",
+        "lean_version": "v4.27.0",
+        "native_library": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+        "scope": "Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.",
+        "returned": 24,
+        "counts": {
+          "valid": 24
+        },
+        "server_ready_seconds": 1.037601035,
+        "preparation_seconds": 33.204167326,
+        "warm_verify_seconds": 35.171606268,
+        "server_exit": -15,
+        "joined_owned_descendants": 6,
+        "owned_descendants_before_shutdown": [
+          {
+            "pid": 17438,
+            "birth": 1792474283.36,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17439,
+            "birth": 1792474283.37,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17494,
+            "birth": 1792474286.97,
+            "command": [
+              "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17531,
+            "birth": 1792474315.85,
+            "command": [
+              "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+              "--serve"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17493,
+            "birth": 1792474286.97,
+            "command": [
+              "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17530,
+            "birth": 1792474315.64,
+            "command": [
+              "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+              "--serve"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          }
+        ],
+        "owned_live_descendants_after_shutdown": [],
+        "memory_watchdog": {
+          "root_pid": 17429,
+          "root_birth": 1792474281.72,
+          "budget_bytes": 51539607552,
+          "effective_threshold_bytes": 51539607552,
+          "per_second": true,
+          "samples": 69,
+          "kills": 0,
+          "peak_sampled_owned_rss_bytes": 14994845696,
+          "peak_sampled_native_repl_count": 2,
+          "error": null,
+          "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+        },
+        "whole_lifecycle_seconds": 68.841713014,
+        "waited_child_cpu_seconds": 1.691199,
+        "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+        "effective_test_settings": {
+          "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+          "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+          "LEAN_SERVER_LEAN_VERSION": "v4.27.0",
+          "LEAN_SERVER_MAX_REPL_MEM": "24G",
+          "LEAN_SERVER_HOST": "127.0.0.1",
+          "LEAN_SERVER_PORT": "36247",
+          "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+          "LEAN_SERVER_MAX_REPLS": "2"
+        }
+      },
+      "native_outcomes": {
+        "complete": 24
+      },
+      "missing_native_response_IDs": [],
+      "resource_accounting": {
+        "samples": 69,
+        "peak_sampled_owned_RSS_bytes": 14994845696,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.000393948,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "observed_native_EOF_exits": {
+        "records": 0,
+        "returncodes": {},
+        "bad_alloc_stderr_records": 0,
+        "scope": "Observed no-response EOF diagnostics only, not exhaustive normal/cancelled descendant exit accounting."
+      },
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 26
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 24,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {},
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [],
+        "HTTP_source_envelope_seconds": {
+          "observed": 24,
+          "p50": 2.0292480425,
+          "p90": 5.819017845499999,
+          "p99": 11.252760019319998,
+          "max": 12.7396019
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      },
+      "HTTP_attempts": {
+        "warm-0": 1,
+        "warm-1": 1,
+        "Proof_00009": 1,
+        "Proof_00027": 1,
+        "Proof_00069": 1,
+        "Proof_00088": 1,
+        "Proof_00165": 1,
+        "Proof_00170": 1,
+        "Proof_00214": 1,
+        "Proof_00297": 1,
+        "Proof_00308": 1,
+        "Proof_00323": 1,
+        "Proof_00328": 1,
+        "Proof_00364": 1,
+        "Proof_00375": 1,
+        "Proof_00401": 1,
+        "Proof_00455": 1,
+        "Proof_00487": 1,
+        "Proof_00496": 1,
+        "Proof_00526": 1,
+        "Proof_00538": 1,
+        "Proof_00549": 1,
+        "Proof_00555": 1,
+        "Proof_00579": 1,
+        "Proof_00592": 1,
+        "Proof_00619": 1
+      },
+      "HTTP_attempt_sums_seconds": {
+        "warm-1": 31.956542518,
+        "warm-0": 32.159743554,
+        "Proof_00027": 1.226202322,
+        "Proof_00069": 2.030052096,
+        "Proof_00009": 6.275071984,
+        "Proof_00165": 2.131021388,
+        "Proof_00170": 4.760639773,
+        "Proof_00214": 0.820319657,
+        "Proof_00297": 0.721308601,
+        "Proof_00088": 12.7396019,
+        "Proof_00308": 1.325191967,
+        "Proof_00323": 1.020368626,
+        "Proof_00328": 3.745988873,
+        "Proof_00364": 2.938711983,
+        "Proof_00375": 1.021207737,
+        "Proof_00455": 2.434084295,
+        "Proof_00401": 3.644130697,
+        "Proof_00487": 0.718282525,
+        "Proof_00496": 0.524042782,
+        "Proof_00526": 1.07413672,
+        "Proof_00538": 2.028443989,
+        "Proof_00555": 2.937187967,
+        "Proof_00579": 1.326063456,
+        "Proof_00549": 6.272608448,
+        "Proof_00619": 1.12060247,
+        "Proof_00592": 4.751481318
+      }
+    },
+    "rep1-power": {
+      "observation": "complete",
+      "terminal": {
+        "state": "complete",
+        "method": "power",
+        "expected": 24,
+        "source_concurrency": 2,
+        "affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "memory_limit_bytes": 51539607552,
+        "aggregate_memory_budget_bytes": 51539607552,
+        "per_native_repl_address_limit_bytes": 25769803776,
+        "maximum_live_native_repls": 2,
+        "native_engine": null,
+        "native_helper": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/farkas-batchd",
+        "native_hybrid_override": "1",
+        "lean_version": "v4.27.0",
+        "native_library": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+        "scope": "Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.",
+        "returned": 24,
+        "counts": {
+          "valid": 24
+        },
+        "server_ready_seconds": 1.005775148,
+        "preparation_seconds": 6.385696508,
+        "warm_verify_seconds": 21.440752872,
+        "server_exit": -15,
+        "joined_owned_descendants": 7,
+        "owned_descendants_before_shutdown": [
+          {
+            "pid": 17687,
+            "birth": 1792474352.18,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17690,
+            "birth": 1792474352.18,
+            "command": [
+              "lake",
+              "env"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17741,
+            "birth": 1792474352.66,
+            "command": [
+              "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17755,
+            "birth": 1792474357.88,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/arithmetic-batchd"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17841,
+            "birth": 1792474368.19,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/farkas-batchd",
+              "--serve"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17742,
+            "birth": 1792474352.66,
+            "command": [
+              "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          },
+          {
+            "pid": 17754,
+            "birth": 1792474357.65,
+            "command": [
+              "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/arithmetic-batchd"
+            ],
+            "cpu_affinity": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "address_limit": [
+              "Max address space         25769803776          25769803776          bytes     "
+            ]
+          }
+        ],
+        "owned_live_descendants_after_shutdown": [],
+        "backend_exit": 143,
+        "memory_watchdog": {
+          "root_pid": 17429,
+          "root_birth": 1792474281.72,
+          "budget_bytes": 51539607552,
+          "effective_threshold_bytes": 51539607552,
+          "per_second": true,
+          "samples": 29,
+          "kills": 0,
+          "peak_sampled_owned_rss_bytes": 14839889920,
+          "peak_sampled_native_repl_count": 2,
+          "error": null,
+          "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+        },
+        "whole_lifecycle_seconds": 28.317000938,
+        "waited_child_cpu_seconds": 2.0906810000000005,
+        "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+        "effective_test_settings": {
+          "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+          "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+          "LEAN_SERVER_LEAN_VERSION": "v4.27.0",
+          "LEAN_SERVER_MAX_REPL_MEM": "24G",
+          "LEAN_SERVER_HOST": "127.0.0.1",
+          "LEAN_SERVER_PORT": "52465",
+          "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+          "LEAN_SERVER_MAX_REPLS": "2"
+        }
+      },
+      "native_outcomes": {
+        "complete": 24
+      },
+      "missing_native_response_IDs": [],
+      "resource_accounting": {
+        "samples": 29,
+        "peak_sampled_owned_RSS_bytes": 14839889920,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.000406016,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "observed_native_EOF_exits": {
+        "records": 0,
+        "returncodes": {},
+        "bad_alloc_stderr_records": 0,
+        "scope": "Observed no-response EOF diagnostics only, not exhaustive normal/cancelled descendant exit accounting."
+      },
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 26
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 24,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {},
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [],
+        "HTTP_source_envelope_seconds": {
+          "observed": 24,
+          "p50": 0.970547002,
+          "p90": 3.047212188,
+          "p99": 10.04840658357,
+          "max": 11.114518026
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      },
+      "HTTP_attempts": {
+        "warm-0": 1,
+        "warm-1": 1,
+        "Proof_00009": 1,
+        "Proof_00027": 1,
+        "Proof_00069": 1,
+        "Proof_00088": 1,
+        "Proof_00165": 1,
+        "Proof_00170": 1,
+        "Proof_00214": 1,
+        "Proof_00297": 1,
+        "Proof_00308": 1,
+        "Proof_00323": 1,
+        "Proof_00328": 1,
+        "Proof_00364": 1,
+        "Proof_00375": 1,
+        "Proof_00401": 1,
+        "Proof_00455": 1,
+        "Proof_00487": 1,
+        "Proof_00496": 1,
+        "Proof_00526": 1,
+        "Proof_00538": 1,
+        "Proof_00549": 1,
+        "Proof_00555": 1,
+        "Proof_00579": 1,
+        "Proof_00592": 1,
+        "Proof_00619": 1
+      },
+      "HTTP_attempt_sums_seconds": {
+        "warm-0": 5.37274634,
+        "warm-1": 5.372679288,
+        "Proof_00027": 0.824073917,
+        "Proof_00069": 0.819138839,
+        "Proof_00009": 6.479250885,
+        "Proof_00165": 0.819437941,
+        "Proof_00170": 3.137508636,
+        "Proof_00214": 1.020032659,
+        "Proof_00297": 0.921061345,
+        "Proof_00088": 11.114518026,
+        "Proof_00308": 0.518660884,
+        "Proof_00323": 0.514456447,
+        "Proof_00364": 1.121230506,
+        "Proof_00375": 0.616740627,
+        "Proof_00328": 2.836520476,
+        "Proof_00455": 0.518472246,
+        "Proof_00401": 1.423956248,
+        "Proof_00496": 0.317116981,
+        "Proof_00487": 1.021732552,
+        "Proof_00526": 0.918706555,
+        "Proof_00549": 0.515599224,
+        "Proof_00538": 1.327089797,
+        "Proof_00579": 1.22187083,
+        "Proof_00555": 2.835654486,
+        "Proof_00592": 1.225044882,
+        "Proof_00619": 0.413640228
+      }
+    }
+  },
+  "pairs": {
+    "1": {
+      "order": [
+        "native",
+        "power"
+      ],
+      "whole_native_over_power_observed": 2.431108900435069,
+      "warm_native_over_power_observed": 1.640409106805734,
+      "native_outcome_differences": [],
+      "recorded_status_differences": [],
+      "SDK_status_differences": [],
+      "SDK_error_text_difference_IDs": [],
+      "non_timing_result_difference_IDs": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619"
+      ],
+      "non_message_differences": [],
+      "raw_response_difference_IDs": [
+        "Proof_00496",
+        "Proof_00549",
+        "Proof_00619"
+      ],
+      "matched_native_ranked_HTTP_tails": {
+        "0.01": {
+          "source_IDs": [
+            "Proof_00088"
+          ],
+          "overlapping_envelope_sums_seconds": {
+            "native": 12.7396019,
+            "power": 11.114518026
+          },
+          "outcomes": {
+            "native": {
+              "complete": 1
+            },
+            "power": {
+              "complete": 1
+            }
+          },
+          "scope": "Same native-ranked IDs; overlapping wall envelopes, not CPU, isolated-subset performance or removable critical path."
+        },
+        "0.1": {
+          "source_IDs": [
+            "Proof_00088",
+            "Proof_00009",
+            "Proof_00549"
+          ],
+          "overlapping_envelope_sums_seconds": {
+            "native": 25.287282332,
+            "power": 18.109368135
+          },
+          "outcomes": {
+            "native": {
+              "complete": 3
+            },
+            "power": {
+              "complete": 3
+            }
+          },
+          "scope": "Same native-ranked IDs; overlapping wall envelopes, not CPU, isolated-subset performance or removable critical path."
+        }
+      },
+      "scope": "Observed complete-pair clocks; changed outcomes or resources are reported, never silently certified as a transparent speedup.",
+      "longer_Power_HTTP_source_envelope_IDs": [
+        "Proof_00009",
+        "Proof_00214",
+        "Proof_00297",
+        "Proof_00487"
+      ]
+    }
+  },
+  "all_planned_cells_terminal_complete": true,
+  "population_scope": "Real24preflight engagement only, not full-population performance.",
+  "whole_ratio_of_complete_sums_observed": 2.431108900435069,
+  "aggregate_scope": "All declared cells only; no confidence interval from three shared-host runs. Raw native outcome/field differences still determine interpretation.",
+  "shared_input_materialization": null
+}

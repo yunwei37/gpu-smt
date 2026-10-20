@@ -5980,3 +5980,44 @@ the current full29750plan is retained and not restarted. No upgrade,
 delegation, new Workspace/service/scheduler, strict GPU bound or research
 goal closure. This is source/baseline evidence, not new performance evidence,
 independent audit or OSDIreadiness. Original four RQs remain open.
+
+
+## 2026-10-20T06:31:00.977224+00:00 — current matrix analysis is executable on real closed data
+
+Previous goal turn is source/paper progress, not a new timing result.
+EXPERIMENT_GATE's existing full29750group continues, unchanged. This node
+implements the analysis already required by its plan; independent research
+value is dependency-only, not a new experiment or performance result.
+
+The [closed-cell analyzer](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/analyze.py)
+joins every original input/ID, all6planned cells, native outcomes, recorded
+resource statuses, SDKstatus/error/payload differences, whole and warm clocks,
+same-native-ranked1%/10%tails, source regressions and actual monitor/lifecycle
+records. It emits individual complete-cell and matched-source CSVs, including
+failures. Missing/failed terminals remain visible; no all-cell aggregate
+appears before all planned cells complete. Changed outputs are not silently
+certified as a transparent speedup.
+
+Actual real24preflightdata reproduce24complete in each method,0status/native/
+nonmessage differences and3raw-message deltas, same2.431108900435069whole
+ratio and RSSpeaks as the published reader. Actual17complete/4reject/3resource
+qualification and2real injected kill results validate failure reading; the
+closed7808native/reuse rows exercise71/68timeouts and11sorry-bearing incomplete.
+These use existing real data, not fixtures, reruns or new performance claims.
+The historical54sourcequalifier also validates3retried error IDs per method,
+each3HTTP500attempts, with first-to-last HTTPenvelopes including about3seconds
+of interattempt gaps. Its different resource point is never mixed into new
+whole clocks. [Root result self-review and exact outputs](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/analysis-result-review.md).
+
+WRITE_GATE updates the experiment's own reproduction/analysis description.
+No new paper result is inserted and no paper source changes, so no redundant
+compilation. REVIEW_GATE root self-audit checks actual closed records, source
+membership, failures/censoring/retries, native/SDKdistinction, observed resource
+overshoot/limits/sample gaps and incomplete waited-child CPUscope. Three
+shared-host runs are not a confidence interval or an all-LP GPUbound.
+Legacy classifier reuse and this root review are not independent audit.
+
+The exact existing full driver is revalidated by live PID/birth and its two
+native descendants; the watchdog sample is fresh under3seconds, owned RSS
+under48GiB. No terminal full cell is inferred from launch, no active raw
+file/source is staged, and no second group/Agent/service is started.

@@ -1,0 +1,324 @@
+{
+  "scope": "Reanalysis of real closed data only; no source, benchmark, synthetic fixture or active capture is run.",
+  "controls": {
+    "rep1-native": {
+      "actual_native_outcomes": {
+        "complete": 17,
+        "rejected": 4,
+        "resource_failure": 3
+      },
+      "resource_accounting": {
+        "samples": 169,
+        "peak_sampled_owned_RSS_bytes": 49804845056,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.000886243,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 26
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 24,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {},
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [],
+        "HTTP_source_envelope_seconds": {
+          "observed": 24,
+          "p50": 0.1111167265,
+          "p90": 73.34532499609999,
+          "p99": 83.16698225651,
+          "max": 83.169453414
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      }
+    },
+    "rep1-shred": {
+      "actual_native_outcomes": {
+        "complete": 17,
+        "rejected": 4,
+        "resource_failure": 3
+      },
+      "resource_accounting": {
+        "samples": 164,
+        "peak_sampled_owned_RSS_bytes": 49578123264,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.00095398,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 26
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 24,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {},
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [],
+        "HTTP_source_envelope_seconds": {
+          "observed": 24,
+          "p50": 0.1128167295,
+          "p90": 72.33056325309998,
+          "p99": 81.95788473924,
+          "max": 82.748940831
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      }
+    },
+    "fault-injection-real2": {
+      "actual_native_outcomes": {
+        "resource_failure": 2
+      },
+      "resource_accounting": {
+        "samples": 3,
+        "peak_sampled_owned_RSS_bytes": 4099465216,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 67108864,
+        "fault_injection": true,
+        "maximum_sample_gap_seconds": 0.999985274,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 3,
+        "watchdog_kills": [
+          {
+            "owner_pid": 7767,
+            "owner_birth": 1792394747.39,
+            "victim_pid": 7770,
+            "victim_birth": 1792394747.53,
+            "victim_rss_bytes": 72667136,
+            "total_rss_bytes": 910110720,
+            "budget_bytes": 51539607552,
+            "effective_threshold_bytes": 67108864,
+            "source_id": "minif2f-0",
+            "snippet_id": "minif2f-0-header",
+            "phase": "header",
+            "time_ns": 826119740315172,
+            "reason": "aggregate_rss_exceeded",
+            "largest_native_repl_selected": true,
+            "observed_largest_native": true,
+            "attributed_to_original_source": true
+          },
+          {
+            "owner_pid": 7768,
+            "owner_birth": 1792394747.4,
+            "victim_pid": 7769,
+            "victim_birth": 1792394747.53,
+            "victim_rss_bytes": 3620171776,
+            "total_rss_bytes": 4099465216,
+            "budget_bytes": 51539607552,
+            "effective_threshold_bytes": 67108864,
+            "source_id": "minif2f-1",
+            "snippet_id": "minif2f-1-header",
+            "phase": "header",
+            "time_ns": 826120740269228,
+            "reason": "aggregate_rss_exceeded",
+            "largest_native_repl_selected": true,
+            "observed_largest_native": true,
+            "attributed_to_original_source": true
+          }
+        ],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 2
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 2,
+        "warm_attempts": 0,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {},
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [],
+        "HTTP_source_envelope_seconds": {
+          "observed": 2,
+          "p50": 0.9930572805,
+          "p90": 1.4366824921,
+          "p99": 1.53649816471,
+          "max": 1.547588795
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      }
+    }
+  },
+  "matches_previous_published_preflight_analysis": {
+    "whole_ratio": true,
+    "native_counts": true,
+    "raw_message_difference_IDs": true,
+    "RSS_peaks": true
+  },
+  "closed_full_miniF2F_classification": {
+    "native": {
+      "sources": 7808,
+      "actual_native_outcomes": {
+        "complete": 3015,
+        "rejected": 4675,
+        "timeout": 71,
+        "resource_failure": 47
+      },
+      "scope": "Classification-only replay of preserved real data, including sorry, timeouts and resource failures; not another timing acquisition."
+    },
+    "shred": {
+      "sources": 7808,
+      "actual_native_outcomes": {
+        "complete": 3010,
+        "rejected": 4669,
+        "timeout": 68,
+        "resource_failure": 50,
+        "incomplete": 11
+      },
+      "scope": "Classification-only replay of preserved real data, including sorry, timeouts and resource failures; not another timing acquisition."
+    }
+  },
+  "CSV_coverage": {
+    "preflight_complete_cell_rows": 48,
+    "preflight_paired_source_rows": 24
+  },
+  "review_scope": "Root self-review and shared legacy classifier only; no independent reviewer or audit.",
+  "historical_real54_retry_accounting": {
+    "native": {
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 53,
+          "500": 9
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 60,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {
+          "minif2f-579": 3,
+          "minif2f-663": 3,
+          "minif2f-664": 3
+        },
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [
+          "minif2f-579",
+          "minif2f-663",
+          "minif2f-664"
+        ],
+        "HTTP_source_envelope_seconds": {
+          "observed": 54,
+          "p50": 0.108620675,
+          "p90": 0.3846927586000003,
+          "p99": 539.27036900639,
+          "max": 539.362096391
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      },
+      "retried_source_costs": {
+        "minif2f-579": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 539.189025854,
+          "summed_HTTP_attempt_seconds": 536.173811397,
+          "observed_interattempt_gap_seconds": 3.0152144569999564
+        },
+        "minif2f-663": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 539.362096391,
+          "summed_HTTP_attempt_seconds": 536.358859751,
+          "observed_interattempt_gap_seconds": 3.0032366400000683
+        },
+        "minif2f-664": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 533.481529865,
+          "summed_HTTP_attempt_seconds": 530.477570561,
+          "observed_interattempt_gap_seconds": 3.0039593039999772
+        }
+      },
+      "scope": "Existing54-source historical transport qualification, different old memory point. Read-only retry-path validation, no timing denominator transferred."
+    },
+    "shred": {
+      "HTTP": {
+        "recorded_HTTP_statuses": {
+          "200": 53,
+          "500": 9
+        },
+        "maximum_open_trace_requests": 2,
+        "maximum_inflight_HTTP_requests": 2,
+        "real_source_attempts": 60,
+        "warm_attempts": 2,
+        "missing_request_IDs": [],
+        "unanswered_request_IDs": [],
+        "retry_IDs": {
+          "minif2f-579": 3,
+          "minif2f-663": 3,
+          "minif2f-664": 3
+        },
+        "HTTP_envelope_censored_IDs": [],
+        "final_HTTP200_payload_mismatch_IDs": [],
+        "SDK_results_without_recorded_HTTP200_payload_IDs": [
+          "minif2f-579",
+          "minif2f-663",
+          "minif2f-664"
+        ],
+        "HTTP_source_envelope_seconds": {
+          "observed": 54,
+          "p50": 0.108632528,
+          "p90": 0.4154922423,
+          "p99": 549.65648447805,
+          "max": 550.805016269
+        },
+        "scope": "First recorded HTTP request to final recorded response for each source, including inter-attempt retry gaps. Excludes SDK waiting before the first request and final process retirement; whole clocks include them. Missing network response ends stay censored. Concurrent source spans overlap, not CPU/removable wall or Amdahl."
+      },
+      "retried_source_costs": {
+        "minif2f-579": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 548.637975154,
+          "summed_HTTP_attempt_seconds": 545.627143829,
+          "observed_interattempt_gap_seconds": 3.010831324999913
+        },
+        "minif2f-663": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 550.805016269,
+          "summed_HTTP_attempt_seconds": 547.800940046,
+          "observed_interattempt_gap_seconds": 3.00407622299997
+        },
+        "minif2f-664": {
+          "attempts": 3,
+          "first_to_last_HTTP_seconds": 541.517197248,
+          "summed_HTTP_attempt_seconds": 538.513418141,
+          "observed_interattempt_gap_seconds": 3.003779107000014
+        }
+      },
+      "scope": "Existing54-source historical transport qualification, different old memory point. Read-only retry-path validation, no timing denominator transferred."
+    }
+  }
+}

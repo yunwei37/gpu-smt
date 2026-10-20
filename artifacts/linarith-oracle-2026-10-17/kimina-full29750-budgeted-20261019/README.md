@@ -24,3 +24,15 @@ The full stage started2026-10-20T05:35:05.809668+00:00from published source9af64
 First native real-source HTTP attempts and one-second total-tree RSS records
 are observed, rather than inferring execution from a process start alone.
 No whole-population performance result is available until the matrix closes.
+
+
+## Analyze closed cells
+
+Run python3 analyze.py --stage full after completed cells are available.
+It preserves all six planned positions and failed/missing terminals; an
+aggregate is produced only for the complete matrix. Closed sources are
+exported both individually and as matched pairs, with all outcome/HTTP/
+resource differences, same-native-ranked tails and repeated regressions.
+The --stage preflight invocation has actually reproduced the closed24pair;
+[qualification and real failure coverage](analysis-result-review.md) links
+all derived output. This is analysis readiness, not a new full result.
