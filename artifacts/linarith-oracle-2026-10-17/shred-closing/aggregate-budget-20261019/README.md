@@ -14,8 +14,11 @@ show both24-source arms return17complete/4rejected/3resource failures;
 root RSS peaks46.384/46.173GiB, at most2native workers. The safe real fault
 injection kills the largest two owned workers with exact source attribution.
 The [complete native7808cell](native-cell-result-review.md) now returns
-3015complete/4675rejected/71timeout/47resource failures. SHRED is still
-acquiring; no paired speed result is claimed.
+3015complete/4675rejected/71timeout/47resource failures.
+The [complete pair](full-pair-result-review.md) is now closed: SHRED takes
+1.30% more elapsed and returns3010genuine completions plus11sorry-bearing
+incomplete results;5native successes become cached unknown-constant errors.
+This as-integrated existing-method control has no outcome-preserving benefit.
 
 ## Implementation checkpoint
 

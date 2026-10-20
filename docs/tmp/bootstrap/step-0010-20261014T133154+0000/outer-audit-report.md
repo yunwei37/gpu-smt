@@ -3719,3 +3719,25 @@ only, no independent review or complete paper milestone is claimed.
 Author-note maintenance removes a stale current48GiB-per-process statement,
 preserving historical facts and linking the latest aggregate point. This is
 a forward factual correction, not an added rule or safety permission flow.
+
+
+## Closed full miniF2F pair — root self-audit
+
+Direction: all four RQs, original Lean/SMT scope, meaningful systems
+contribution and CPU/GPU decision remain unchanged. The negative prefix result
+does not close the project or prove GPU impossibility. Integration scope,
+resource-point differences and raw outcomes are explicit.
+
+Validity: count actual complete proofs instead of trusting3021SDKvalid.
+Check all16native-outcome deltas, actual unchanged raw source token absence,
+cached errors/warnings, same118operationalIDs and failure-type flips.
+Every one of7808source attempts remains, as do message/env differences,
+allocation exits and overlapping tails. Whole clocks include actual source
+preparation and native process retirement. RSS is sampled, not a hard cap.
+
+Maintenance/efficiency: stale running placeholders are corrected, public
+closed gzip/CSV/figures are joined by a single reanalysis script, paper
+compiles and affected pages render. No published compatibility artifact is
+silently repaired or repeated to seek a better result. No publication of
+active capture logs. Unrelated author dirty paths remain unstaged.
+Self-review cannot satisfy independent audit; no external audit claimed.

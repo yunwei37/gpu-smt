@@ -5789,3 +5789,38 @@ the historical48GiB-per-process repair no longer overrides the latest exact
 aggregate-budget prompt. It now links the current resource authority instead
 of repeating an obsolete all-new-captures instruction. No new author question,
 rule, parameter or experiment is introduced.
+
+
+## 2026-10-20T05:35Z — full miniF2F prefix baseline closes
+
+EXPERIMENT_GATE: consume the finished paired7808originals, every result and
+lifecycle once. [Full result self-review](../../../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md)
+reproduces native18987.741491/SHRED19235.453028s,1.304587%more elapsed for reuse.
+Actual complete counts3015/3010,11sorry-bearing incomplete cache hits and
+5native successes changing to cached unknown_auxLemma.1errors remain visible.
+No newly genuine completed proof is gained. The sixteen changed raw originals
+contain no literal sorry/admit. These are as-integrated artifact observations,
+not a claim of unsound native Lean or all-family impossibility.
+
+47/50actual134/std::bad_allocexits, all118operationalIDs,21SDKstatuschanges,
+4104opaque-env differences and all source spans/tails remain. There are
+7810matchedHTTP200attempts each including2warm, no retries/unanswered.
+Both final trees retire. ActualRSSpeaks47.535389/47.581348GiB/max2live,
+zeroaggregatekills/errors and maximum1.057852/1.010624ssamplinggaps.
+Archived raw byte lengths are revalidated; no partial/failed source filtering.
+
+WRITE_GATE: replace stale running placeholders in README/evaluation/artifact
+index/daily and the existing paper paragraph, retaining separate resource
+denominators. Add reproducible all-source/matched-tail CDF and CSV. Tectonic
+completes29pages; root visually inspects figure plus rendered pages15and17.
+No abstract, thesis, RQ, title, scope or contribution rewrite. Initial
+Narrative remains intact; full-paper milestone prerequisites remain unmet.
+The exact instructions and resolved author questions are reread.
+
+REVIEW_GATE: root self-audit only, explicitly not independent. Completed
+standard-workload existing-method evidence is genuine paper decision value
+and bounds the current integration. It is not a novel system or GPU result.
+Next admitted experiment is corrected arithmetic generalization on all29750
+through the already-budgeted official service; it has a separate Markdown
+plan/review and actual24real-source preflight, not a new losing solver grid.
+The old unsafe/incomplete queues remain stopped and no delegate is created.

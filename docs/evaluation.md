@@ -30,7 +30,15 @@ The [complete new native7808cell](../artifacts/linarith-oracle-2026-10-17/shred-
 now returns3015complete/4675rejected/71timeout/47resource_failure;18987.741491s
 whole, RSSpeak47.535389GiB/max2native/zeroaggregatekills, all retired.
 All real sources have oneHTTP200attempt; that is not proof acceptance.
-The paired SHRED arm is still active, so no speed ratio is available.
+The [closed full pair](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md)
+takes18987.741491/19235.453028s, or1.304587% more elapsed for SHRED.
+SHRED returns3010complete/4669reject/11sorry-bearing incomplete/68timeout/
+50resource failures;5native successes become cache-hit unknown-constant
+errors and11rejections become cache-hit incomplete results. SDK3021valid
+is not complete proof count. All16original changed sources contain no literal
+sorry/admit. No outcome-transparent benefit is observed. Both actual trees
+retire; SHRED peak47.581348GiB/max2native/zeroaggregatekills, actual50bad_alloc.
+Full all-source CSV/CDF and same-native-ranked1%/10% tails retain failures.
 Slowest79sources include71timeouts; cumulative HTTP spans are overlapping,
 not tactic CPU, removable wall time or an historical2234.69phase bound.
 This changes the experiment resource point, not earlier raw data/clocks.

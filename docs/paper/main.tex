@@ -964,8 +964,31 @@ Opaque environment handles and messages also differ. Eight outstanding
 sources share four eligible CPUs and the same 48 GiB per-process limit.
 This is an as-integrated existing-method control, not a deployment of an
 upstream HTTP service supplied by SHRED or a matched transparent speedup.
-The separate full miniF2F pair remains incomplete after a Workspace
-interruption; its partial timings are not promoted to population results.
+A separate complete miniF2F pair uses two live REPLs, each limited to 24 GiB,
+with a 48 GiB total owned-process RSS watchdog in both methods.
+All 7,808 original candidates take 18,987.74 seconds natively and
+19,235.45 seconds with reuse: 1.30\% more elapsed time. Genuine completions
+decrease from 3,015 to 3,010. Eleven native rejections instead return
+sorry-bearing incomplete results after cache hits; five native successes
+report a kernel unknown-constant error for \texttt{\_auxLemma.1}, also after
+hits. The SDK's 3,021 valid reuse results therefore do not establish more
+complete proofs. Both methods retain the same 118 operational-failure IDs,
+with timeout/resource classifications of 71/47 and 68/50. Native outcomes
+are not preserved by this integration. This is one shared-host observation
+at the stated resource point, not a general rejection of prefix reuse.
+Figure~\ref{fig:minif2f-shred-http-cdf} retains all source latencies.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-http-cdf.pdf}
+\caption{Complete miniF2F native/reuse HTTP latency: all 7,808 inputs per
+method, including errors, timeouts and resource failures (left); the same
+781 native-ranked slowest inputs (right). Two live REPLs share four eligible
+CPUs and a total 48 GiB RSS budget. HTTP spans exclude SDK predispatch and
+global input preparation, which whole-flow clocks charge. This fixed-order,
+shared-host pair has changed proof outcomes as described in the text.}
+\label{fig:minif2f-shred-http-cdf}
+\end{figure*}
 
 \paragraph{Formal population generalization.}
 A separate version-aligned component comparison processes every original

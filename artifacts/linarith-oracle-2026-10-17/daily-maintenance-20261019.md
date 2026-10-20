@@ -119,3 +119,23 @@ could avoid it. The existing error-work pilot is a stronger-baseline control,
 not new novelty. Finish the matched SHRED arm, then use complete joined costs
 and outcomes to choose the next causal control. No new kernel/parameter grid,
 cross-resource denominator or invented GPU upper bound follows from this cell.
+
+
+## 22:21 PDT — close the full prefix baseline and choose the next result
+
+The completed miniF2F native/SHRED pair now replaces the stale running
+placeholder in README, evaluation and paper. Raw closed files, every failure,
+all-source latency CSV and CDF remain linked. There is no reason to repeat
+this cache configuration or investigate its compatibility issue indefinitely.
+
+Substantive progress is still blocked by arithmetic generalization: the
+corrected selected1,000 result cannot stand for all29,750 originals. The
+highest-value next action is the existing corrected native-versus-Power
+official HTTP protocol on that original population at the current2x24GiB/
+48GiB total point, following a matched24-source real preflight. This tests
+the actual system applicability promise rather than another narrow kernel.
+Only if the preflight engages both methods and improves whole time without
+lost genuine outcomes does a new serial full block start. All six declared
+cells retain outcomes, failures, preparation, service and retirement costs;
+RSS sampling stays on in both, separate from historical8queue/48worker data.
+No new RQ, novelty claim, CPU/GPU criterion, service or agent is introduced.
