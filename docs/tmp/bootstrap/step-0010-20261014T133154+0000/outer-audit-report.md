@@ -3779,3 +3779,26 @@ continues. No experiment restart or polling-only goal turn. Public analyzer,
 CSV and raw references reproduce counts; paper factual update compiles.
 Maintenance corrects one stale delegation claim without changing real
 runtime behavior or author dirty files. All review is root self-review only.
+
+
+## Reproduction entrypoint maintenance — root self-audit
+
+Direction: no scientific narrative, RQ, criterion, experiment target or
+algorithm changed. This is the user's OSSartifact requirement, not independent
+research evidence or an OSDIcontribution. Paper is unchanged and not needlessly
+rebuilt. Current resource authority replaces contradictory current-use advice;
+old instructions/data remain explicitly historical and byte-preserved.
+
+Validity: actual ordered patch replay starts from recorded pre-repair files,
+not a claimed arbitrary latest upstream checkout. Four resulting source files
+equal the preserved executed copies and parse; only source reconstruction is
+established. Three existing CLIhelpcommands exit0without build/Lean execution.
+64edited-document local links/anchors resolve, not an external HTTPaudit or
+a fresh-machine runtime reproduction. Source staging and caller-supplied
+native reference/runtime boundaries remain explicit.
+
+Efficiency: no duplicate full capture, active mutation, worker restart, model/
+Agent change, profile grid or test-only research result. Exact live driver
+identity and fresh owned-tree watchdog sample confirm preservation at the
+publication boundary. Stage only completed own docs/receipt/archive, leaving
+active logs and unrelated author files alone. Root self-review, not independent.

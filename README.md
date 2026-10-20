@@ -83,9 +83,9 @@ takes **1018.23/492.98 s**. Its 2.06546× ratio is against a slower measured
 reference and does not replace the faster hybrid comparison above.
 [Complete default-engine control](artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md).
 
-The existing SHRED closing-certificate executor has a completed ProofNet
-service comparison; the miniF2F pair remains incomplete. Its outcomes and
-limitations are reported below.
+The existing SHRED closing-certificate executor now has complete ProofNet and
+miniF2F service comparisons. Neither integration demonstrates an
+outcome-preserving whole-flow speedup; the exact scopes are reported below.
 [Baseline source, failures and scope](artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
 
 ## Complete workloads and scope
@@ -107,7 +107,8 @@ in stock, native-preprocessing and direct modes, with 88 direct native
 certificate checks including six nonlinear requests. The complete ProofNet comparison returns matching outcomes on all5,952
 originals: stock1151.88s, native1160.92s and direct1178.93s. Direct is2.35%
 slower in this component experiment; its module-loaded stock condition is
-not pristine Mathlib. miniF2F continues acquiring.
+not pristine Mathlib. The older miniF2F component matrix remains incomplete;
+its unbudgeted queue is stopped.
 [Closed ProofNet evidence and baseline limitations](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md).
 [Adapter, qualification and full-population protocol](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).
 The native-only mode is a component control, not the fully ported 4.27 Fast
@@ -116,8 +117,10 @@ frontend or an entire upstream Kimina service.
 An earlier full 29,750-source acquisition uses a frozen older oracle build;
 it cannot generalize the current natural-power implementation.
 [Earlier implementation and capture scope](artifacts/linarith-oracle-2026-10-17/gpu-stage/full29750-generalization/).
-The [current whole-Goedel protocol](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md)
-extends the corrected comparison to all originals, without another solver grid.
+The [current whole-Goedel protocol](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/plan.md)
+extends the corrected comparison through the protected official HTTP service
+to all originals, without another solver grid. Older interrupted native-array
+plans remain historical; their unsafe queues are not resumed.
 
 The official Kimina HTTP comparison now closes all **nine planned
 1,000-source cells**. The first two intact strong-native/Power pairs are
@@ -177,18 +180,17 @@ sorry-bearing incomplete responses with cache-hit messages. SDK valid counts
 417/437 therefore are not verified-proof counts. This is no matched transparent
 speedup and no whole-family impossibility result.
 [Full raw comparison, costs and self-review](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
-The miniF2F eight-source capture exhausts host memory despite each process
-staying below 48 GiB. Recovery compares both methods at two outstanding
-sources, the same four CPUs and 48 GiB per process; original partial data
-remain, and these new clocks stay separate from the eight-source point.
-[Failure evidence and recovery plan](artifacts/linarith-oracle-2026-10-17/shred-closing/memory-recovery-20261019/plan.md).
-Completed ProofNet is not rerun.
-The subsequent two-source capture also encounters a service logging stall
-and the default asyncio read-line limit. A declared Kimina transport/logging
-patch preserves response framing and disables heuristic regex highlighting.
-Fresh qualification and captures use that same patch in both arms; they
-remain separate from prior unchanged-application measurements.
-[Fault evidence, exact patch and closed real-source qualification](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md).
+The complete miniF2F pair is summarized at the top of this README.
+[Its full result](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md)
+retains the changed native outcomes, all failures, latency and memory records.
+
+Earlier eight-source and per-worker48GiB captures are stopped partial attempts.
+Both final methods include the declared Kimina transport/logging and live-worker
+resource-attribution repairs. Their clocks are separate from earlier
+unchanged-application observations and different resource points.
+[Repair provenance](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md)
+and [ordered patch/reproduction instructions](docs/reproduce-checkpoint.md#current-official-http-comparison)
+retain the failures and exact adaptations. Completed ProofNet is not rerun.
 
 Warm REPLs, caches, snapshots, native compilation, batched LPs and external
 certificate oracles are established techniques. They are not individual

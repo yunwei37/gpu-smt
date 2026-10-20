@@ -1,0 +1,403 @@
+{
+  "utc": "2026-10-20T06:08:55.907697+00:00",
+  "scope": "Actual source-only replay of published patches in a temporary fixture in the owning Workspace. No live dependency, verifier or capture modified; not a functional benchmark.",
+  "commands": [
+    {
+      "command": [
+        "patch",
+        "--batch",
+        "--forward",
+        "-p1",
+        "-d",
+        "/tmp/gpu-smt-published-kimina-patches-yocsurfi",
+        "-i",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/kimina-transport-logging.patch"
+      ],
+      "returncode": 0,
+      "stdout": "patching file server/repl.py\npatching file server/logger.py\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "patch",
+        "--batch",
+        "--forward",
+        "-p1",
+        "-d",
+        "/tmp/gpu-smt-published-kimina-patches-yocsurfi",
+        "-i",
+        "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/kimina-aggregate-budget.patch"
+      ],
+      "returncode": 0,
+      "stdout": "patching file server/repl.py\npatching file server/routers/check.py\npatching file server/benchmark_memory.py\n",
+      "stderr": ""
+    }
+  ],
+  "matches": {
+    "server/repl.py": {
+      "byte_equal_to_executed_snapshot": true,
+      "snapshot": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/executed-repl.py",
+      "python_syntax_valid": true
+    },
+    "server/routers/check.py": {
+      "byte_equal_to_executed_snapshot": true,
+      "snapshot": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/executed-routers-check.py",
+      "python_syntax_valid": true
+    },
+    "server/benchmark_memory.py": {
+      "byte_equal_to_executed_snapshot": true,
+      "snapshot": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/executed-benchmark_memory.py",
+      "python_syntax_valid": true
+    },
+    "server/logger.py": {
+      "byte_equal_to_executed_snapshot": true,
+      "snapshot": "artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/logger-executed.py",
+      "python_syntax_valid": true
+    }
+  },
+  "temporary_fixture_removed": true,
+  "changed_document_local_links": [
+    {
+      "document": "README.md",
+      "target": "docs/idea-story.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/service-span-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/full29750-generalization/",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/plan.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/kimina-http/full-matrix-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/full1000-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/formal-default/sharing-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/reproduce-checkpoint.md#current-official-http-comparison",
+      "exists": true,
+      "anchor_exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evaluation.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/evaluation.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "bench/lean-native/linarith-oracle/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "bench/lean-native/linarith-oracle/reproduction/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/reproduce-checkpoint.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/idea-story.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/design.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/background-related-work.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/paper/main.tex",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/paper/main.pdf",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/research-plan.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "bench/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "results/2026-10-04-verusage-real-traces.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../docs/evaluation.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "reproduction/README.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "kimina-http.py",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../docs/reproduce-checkpoint.md#current-official-http-comparison",
+      "exists": true,
+      "anchor_exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../docs/evaluation.md#current-resource-point",
+      "exists": true,
+      "anchor_exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/kimina-http/full-matrix-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/full1000-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/mechanism-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md",
+      "exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../docs/reproduce-checkpoint.md#earlier-arithmetic-phase-analysis-from-public-files",
+      "exists": true,
+      "anchor_exists": true
+    },
+    {
+      "document": "bench/lean-native/linarith-oracle/README.md",
+      "target": "../../../artifacts/linarith-oracle-2026-10-17/arithmetic-entrypoints-through-20261019.md.gz",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../bench/lean-native/linarith-oracle/reproduction/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../bench/lean-native/linarith-oracle/kimina-http.py",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../artifacts/linarith-oracle-2026-10-17/daily-maintenance-20261019-kimina-patch-replay.json",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "evaluation.md#current-resource-point",
+      "exists": true,
+      "anchor_exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/reproduce-checkpoint.md",
+      "target": "../artifacts/linarith-oracle-2026-10-17/gpu-stage/full1000-baseline/public-replay-receipt.json",
+      "exists": true
+    }
+  ],
+  "cli_help_checks": [
+    {
+      "command": "kimina venv Python bench/lean-native/linarith-oracle/kimina-http.py --help",
+      "returncode": 0,
+      "scope": "Actual retained CLI help invocation; no verifier, build, service or benchmark starts."
+    },
+    {
+      "command": "kimina venv Python bench/lean-native/linarith-oracle/reproduction/build.py --help",
+      "returncode": 0,
+      "scope": "Actual retained CLI help invocation; no verifier, build, service or benchmark starts."
+    },
+    {
+      "command": "kimina venv Python bench/lean-native/linarith-oracle/reproduction/check.py --help",
+      "returncode": 0,
+      "scope": "Actual retained CLI help invocation; no verifier, build, service or benchmark starts."
+    }
+  ]
+}

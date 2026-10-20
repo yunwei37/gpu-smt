@@ -5906,3 +5906,41 @@ reduced-diagnostic/new-resource causal ablation is not filled by this earlier
 block. Continue the already-running full29750six-cell official-service group,
 rather than another narrow kernel, solver grid or repeat of settled controls.
 No delegate, new scheduler, Workspace, parameter or extra full collection.
+
+
+## 2026-10-20T06:12:37.432446+00:00 — current reproducibility boundary and repository upkeep
+
+The previous goal turn is progress: it publishes the complete source-attributed
+component reanalysis as782f026. This turn addresses the requested OSSdeliverable
+while the one full population capture continues, without a second collection.
+
+EXPERIMENT_GATE's existing full29750group is preserved. This dependency work
+adds zero independent research result: the public patch sequence is actually
+replayed in an OS-temp fixture populated from the recorded before-sources.
+Both patch commands return0, and final server/repl.py,server/logger.py,
+server/routers/check.py and server/benchmark_memory.py match published executed
+snapshots byte-for-byte with valid Python syntax. This is a tested source
+reconstruction, not an assertion about arbitrary upstream or runtime parity.
+[Actual receipt](../../../../artifacts/linarith-oracle-2026-10-17/daily-maintenance-20261019-kimina-patch-replay.json).
+
+WRITE_GATE/maintenance: replace the389line mixed current/historical bench
+guide with77line navigation, preserving every original byte in an archive
+and the pinned Git copy. Document the existing officialHTTPCLI, dependency
+patch order, exact required caller paths/input form, and current resource
+authority. Correct stale rootREADMEclaims of incomplete SHRED and active
+unbudgeted formal acquisition. The historical small componentcheck is not
+presented as an aggregate-watchdog-protected full benchmark. All64local
+links/anchors resolve, and three actual CLI --helpinvocations exit0without
+starting a verifier. No paper scientific text/figure changes;782f026compiled
+paper remains current, so no redundant compilation is performed.
+
+REVIEW_GATE root self-review only. This improves a required artifact usability
+boundary, not systems novelty, a new speedup, full RQanswer or independent
+audit. New-machine complete runtime reproduction remains unverified. No
+credentials, policies, templates, quotas, services or source-library changes.
+
+At this boundary the exact existing full driver PID/birth and native children
+are read from the live process table; the independent budget sample is fresh
+(under3seconds), with two native REPLs and totalRSSbelow48GiB. No terminal
+cell has been inferred from launch, and active full files remain unstaged.
+Continue the existing matrix rather than restart or create a duplicate.

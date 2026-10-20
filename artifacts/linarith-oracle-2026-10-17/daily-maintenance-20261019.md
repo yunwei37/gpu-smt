@@ -164,3 +164,23 @@ record the scoped finding, and an obsolete current OMP-delegation sentence in
 implementation.md is corrected to the latest root-only instruction. Original
 records and author dirty files are retained. This is factual upkeep and
 supporting analysis, not new systems novelty or all-RQ completion.
+
+
+## Reproduction entrypoints and stale instruction cleanup
+
+The arithmetic bench index shrinks from389to77lines, with the previous bytes
+losslessly archived and a readable pinned Git copy. It now routes build/check,
+protected officialHTTPreplay and historical diagnostics separately, linking
+the current evaluation/resource authority instead of stale per-worker48GiB
+instructions. Root README corrects the completed miniF2FSHREDstatus and marks
+the older unbudgeted formal component queue stopped/incomplete. Historical
+data and script sources are retained; no live dependency or run is edited.
+
+The existing build/check/HTTP --helpinterfaces all execute with exit0.
+A source-only temporary fixture actually applies both published Kimina patches
+in order; all four patched files exactly match the executed snapshots and
+parse as Python. The fixture is removed. All64local links/anchors in the three
+edited entry documents resolve. This is usability/engineering evidence,
+not a fresh benchmark, pristine-upstream validation, independent audit or
+whole fresh-machine reproduction. The public build/check commands are
+explicitly not advertised as installing the benchmark RSSwatchdog.

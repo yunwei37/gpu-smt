@@ -1,15 +1,88 @@
 # Reproduce retained verification experiments
 
-The current Lean4.27 arithmetic experiment retains the
-[CPU-stage result and open final CPU/GPU decision](../artifacts/linarith-oracle-2026-10-17/decision-20261017.md).
-The first complete GPU variant attempted all1000sources with8operational
-failures; its direct-feasibility repair failed real qualification. Existing
-matched CPU controls and the original-population prefix comparison continue.
-Use the [implementation guide](../bench/lean-native/linarith-oracle/README.md)
-for current status and the [fixed protocol](../artifacts/linarith-oracle-2026-10-17/plan.md)
-for the measurement boundary. There is no demonstrated end-to-end GPU gain.
+The [current evaluation](evaluation.md) owns results, open requirements and
+the current research resource point. [Buildable arithmetic source](../bench/lean-native/linarith-oracle/reproduction/README.md)
+has a real functional qualification; [the current whole-population service plan](../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
+defines the active comparison. Historical receipts are evidence, not commands
+to restart interrupted collectors. No useful extra end-to-end GPU gain has
+been demonstrated over the strongest measured CPU composition.
 
-## Current arithmetic phase analysis from public files
+## Current official HTTP comparison
+
+The [existing capture CLI](../bench/lean-native/linarith-oracle/kimina-http.py)
+needs the retained Kimina app and SDK Python environment, the arithmetic
+build.json/native libraries, a compatible native-loader REPL, the measured
+strong native-reference executable, and a Python environment with NumPy and
+highspy1.15.1for the CPU support process. The build metadata records its own
+Lean/Mathlib paths; do not replace them with a different cached version.
+This is the declared source-native comparison, not arbitrary Lean input
+support or a single-command fresh-machine installer.
+
+### Dependency source and patches
+
+The recorded Kimina archive pin is fb2393d, without Git metadata in the
+retained dependency. The source before the declared repair and executed
+snapshots are preserved. Apply the patches below in order only to those
+matching before-sources in a separate, unused dependency copy. The current
+running dependency already has them; do not patch it or apply them twice.
+
+    cd "$KIMINA"
+    patch --batch --forward -p1 < "$REPOSITORY/artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/kimina-transport-logging.patch"
+    patch --batch --forward -p1 < "$REPOSITORY/artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/kimina-aggregate-budget.patch"
+
+The first patch preserves blank-line-framed responses beyond the default
+asyncio line size and removes costly automatic regex highlighting. The second
+tracks actual live REPL lifetimes, source ownership, resource exits and reap.
+The independent parent watchdog is in the public capture's memory_budget.py.
+
+[Actual two-patch replay](../artifacts/linarith-oracle-2026-10-17/daily-maintenance-20261019-kimina-patch-replay.json)
+starts from the published before-sources in a temporary owning-Workspace
+fixture. Both commands return0and all four resulting source files match the
+executed snapshots byte-for-byte, with valid Python syntax. The fixture is
+removed. This proves the published patch sequence reconstructs those sources,
+not that an arbitrary latest upstream installation or a new native benchmark
+has been qualified.
+
+### Replay original source records
+
+Use original JSONL records with proof_id and code. The frozen Goedel adapter
+expects the code's common Mathlib/Aesop imports, adding the declared native
+or Power module while preserving theorem bodies. Example input is the
+[original selected1,000](../artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl).
+The released29,750source set and exact IDs are linked by the current full plan;
+the different Lean4.9formal workload uses its separate recorded adapter.
+
+From the research repository root, with the chosen paths supplied by the
+caller, the existing matched native/Power interface is:
+
+    "$KIMINA/.venv/bin/python" bench/lean-native/linarith-oracle/kimina-http.py \
+      --kimina "$KIMINA" --build "$BUILD" \
+      --build-source bench/lean-native/linarith-oracle/reproduction \
+      --repl "$NATIVE_REPL" --reference "$NATIVE_REFERENCE" \
+      --support-python "$SUPPORT_PYTHON" --input "$INPUT" --out "$NEW_OUTPUT" \
+      --methods native power --repetitions 3 --affinity 8 9 10 11
+
+The affinity shown is the current measured point; another host needs eligible
+CPUs and must report its different point. The CLI's resource defaults and
+[current resource authority](evaluation.md#current-resource-point) are used;
+do not substitute an older per-worker48GiB or observer-off recipe.
+Only one full collection runs at once. Output must be new. A real small
+qualification precedes a full population run; --helpalone is not qualification.
+
+The current three-alternating-pair driver adds byte-equal compression only
+after each measured lifecycle closes. Its
+[plan and executed preflight](../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
+are the authority for that exact matrix. Warm service, whole lifecycle,
+shared released-input staging and archived export costs are separate.
+SDKvalid, HTTP200and a live process are not genuine complete-proof counts.
+Retain all original IDs, native messages, failures, memory samples and
+retirement before interpreting a speed ratio.
+
+The three build/check/HTTP --helpinterfaces execute successfully in the
+retained environment. A fresh-machine full end-to-end reproduction remains
+unvalidated. These usability and patch checks add no new benchmark result.
+
+## Earlier arithmetic phase analysis from public files
 
 Run from this repository's root with Python3. This recomputes the complete native
 phase analysis from published compressed raw files, including the five uniquely
