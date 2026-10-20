@@ -398,3 +398,16 @@ The [paper](paper/main.tex), manuscript PDF, scope limitations and current
 step remain unfinished at the complete scientific objective.
 All current implementation/review is by this thread. Self-review does not
 substitute for independent audit or establish venue acceptance.
+
+## Further GPU source eligibility,2026-10-20
+
+The [bounded SAT-certificate/asset check](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261020T1130Z/report.md)
+identifies an existing possible ParaFROST DRAT→LRAT→native Lean checking path,
+but no working adapter or own-clock opportunity. Current Goedel sources have
+no explicit bv_decide token; that lexical result does not exclude indirect
+calls or close GPU. A complete500record inspection of the released software-
+verification benchmark finds23roots/19declared toolchains and3reference
+proof token matches, not500GPU targets or generated candidate attempts.
+No replacement mainline, extra capture, model evaluation or infrastructure
+change is admitted. The running original29750protocol and original criterion
+remain unchanged; the paper gains no new performance claim.

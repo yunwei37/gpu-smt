@@ -6070,3 +6070,27 @@ No external auditor/Agent or source/binary mutation. This support boundary
 is committed/pushed under the user's completed-part publication requirement.
 Next empirical dependency remains the actual frozen full population, not
 another poll-only or same-source-question loop.
+
+## 2026-10-20 — bounded proof-certificate and workload source eligibility
+EXPERIMENT_GATE follows the residual GPU question without a new narrow LP
+variant or duplicate Lean capture. [Source/asset node](literature-20261020T1130Z/report.md)
+checks the real4.27external solver and LRAT paths, pinned ParaFROST/drat-trim,
+published certified-GPU prior work and original official real-world cases.
+It analyzes all500released VeriSoftBench records plus both original Goedel
+populations. Raw-derived per-task IDs/context/toolchains and actual script
+are retained. The format chain is possible in source but unimplemented and
+unmeasured; static presence is not an Amdahl input. The new corpus is not a
+drop-in generated attempt stream, uses19toolchain strings, and contains only
+3reference proof token matches. Reject immediate promotion to another mainline
+or toy-GPU/full matrix. No empirical Lean/GPU acquisition is started.
+
+The public component README already discloses functional-only and missing
+watchdog scope; no speculative configuration/source fix is made. WRITE_GATE
+records eligibility in current evaluation only; original idea/RQs/paper
+claims/values are unchanged and no unchanged paper build/full writing cycle
+is fabricated. REVIEW_GATE root self-audit distinguishes existing primitives,
+possible compatibility, lexical source facts, real native cost and executed
+proofs. The actual current full matrix remains the empirical dependency,
+not replaced by this supporting source node. Publish this coherent eligibility
+boundary under the user's completed-part instruction. No independent audit,
+new resource/provider/entity or GPU closure is claimed.

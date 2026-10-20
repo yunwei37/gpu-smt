@@ -1,0 +1,74 @@
+{
+  "scope": "Root source-asset self-review only. Lexical mentions include comments/strings and do not establish execution, checked proofs, stage cost or GPU coverage. Ground-truth proofs are not generated candidate attempts.",
+  "source_pin": "8f5e8b36ab5fbdec6fd8d8f4ee0580d29647097a",
+  "upstream_bytes": 9215308,
+  "tasks": 500,
+  "repositories": {
+    "ArkLib": 60,
+    "capless-lean": 60,
+    "clean": 59,
+    "splean": 24,
+    "CvxLean": 9,
+    "pcf-lean": 7,
+    "TTBFL": 22,
+    "loom": 24,
+    "formal-snarks-project": 2,
+    "FVIntmax": 21,
+    "IntroEffects": 3,
+    "iris-lean": 24,
+    "juvix-lean": 20,
+    "LeanExprEvaluator": 6,
+    "lean-formal-reasoning-program": 20,
+    "lean-hoare": 4,
+    "lean-mlir": 59,
+    "Lentil": 1,
+    "LeroyCompilerVerificationCourse": 19,
+    "VCV-io": 24,
+    "veil": 6,
+    "verified-compiler": 6,
+    "wadray_verification": 20
+  },
+  "task_toolchains": {
+    "leanprover/lean4:v4.22.0": 60,
+    "leanprover/lean4:v4.21.0": 60,
+    "leanprover/lean4:v4.24.0": 71,
+    "leanprover/lean4:v4.11.0": 24,
+    "leanprover/lean4:v4.8.0-rc1": 9,
+    "leanprover/lean4:v4.8.0": 7,
+    "leanprover/lean4:v4.13.0": 22,
+    "leanprover/lean4:v4.23.0": 24,
+    "leanprover/lean4:v4.10.0-rc2": 2,
+    "leanprover/lean4:v4.14.0-rc2": 21,
+    "leanprover/lean4:v4.26.0": 27,
+    "leanprover/lean4:v4.19.0-rc2": 20,
+    "leanprover/lean4:v4.9.0-rc2": 40,
+    "leanprover/lean4:v4.22.0-rc2": 4,
+    "leanprover/lean4:nightly-2025-11-30": 59,
+    "leanprover/lean4:v4.20.0": 1,
+    "leanprover/lean4:v4.23.0-rc2": 19,
+    "leanprover/lean4:v4.24.0-rc1": 24,
+    "leanprover/lean4:v4.18.0": 6
+  },
+  "ground_truth_token_task_ids": [
+    125,
+    322,
+    350
+  ],
+  "complete_record_token_task_ids": [
+    125,
+    322,
+    350
+  ],
+  "retained_datasets": {
+    "original29750": {
+      "source": "artifacts/lean-modern-native-compilation-2026-10-14/input.jsonl",
+      "rows": 29750,
+      "explicit_token_source_ids": []
+    },
+    "selected1000": {
+      "source": "artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+      "rows": 1000,
+      "explicit_token_source_ids": []
+    }
+  }
+}
