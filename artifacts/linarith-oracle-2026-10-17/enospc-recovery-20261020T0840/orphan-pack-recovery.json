@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-20T08:42:52.937424+00:00",
+  "fault": "project PVC ENOSPC; required memory log could not flush",
+  "inodes": "not exhausted (25% used)",
+  "cause_evidence": "1,075,576,832-byte orphan Git temporary pack appeared at07:49Z after prior push; no live Git process or open FD owned it at recovery",
+  "temporary_pack_source": "/workspaces/repository/.git/objects/pack/tmp_pack_LFvthM",
+  "preserved_exact_copy": "/tmp/gpu-smt-enospc-20261020T0840/tmp_pack_LFvthM",
+  "bytes": 1075576832,
+  "byte_equal_roundtrip": true,
+  "space_after_bytes": 1076117504,
+  "scope": "Only this Workspace orphan temporary pack relocated losslessly; no named Git pack, ref, commit, raw result or other Workspace touched."
+}

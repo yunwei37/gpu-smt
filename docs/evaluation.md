@@ -1,5 +1,9 @@
 # Evaluation: current evidence and open requirements
 
+## 2026-10-20 — output-volume failure and qualified recovery
+The current all29,750first native cell is interrupted by ENOSPC;10,816original responses, failures, raw truncated tails and all source IDs remain as partial evidence, with no valid whole-cell ratio or later monitor-coverage claim. The owned tree is stopped; orphan Git-pack and closed-raw lossless recovery plus actual monitor-failure/native24qualification complete. [Recovery, evidence and scope](../artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/README.md). Resume the same sole full protocol after the repair boundary; old unsafe queues stay stopped. The earlier complete miniF2F/SHRED pair remains published and unchanged.
+
+
 Updated2026-10-19. BOOTSTRAP remains unfrozen. All four RQs and the
 Lean-first/SMT/RTX5090/OSDI-quality objective remain open. Source/code
 qualification and publication are not new scientific contributions or

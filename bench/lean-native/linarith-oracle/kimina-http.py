@@ -99,7 +99,20 @@ async def cell(args, method, out, items, build):
         logs=(out/"server.log").open("w"); streams.append(logs)
         server=subprocess.Popen([sys.executable,"-m","server"],cwd=args.kimina,env=env,
             stdout=logs,stderr=subprocess.STDOUT,start_new_session=True)
-        guard.on_error = server.terminate
+        owner_loop = asyncio.get_running_loop()
+        owner_task = asyncio.current_task()
+        def stop_on_monitor_failure():
+            # No native checking may survive loss of the required monitor.
+            for proc in reversed(guard.owned()):
+                if proc.pid in {os.getpid(), guard.root.pid}:
+                    continue
+                try:
+                    proc.kill()
+                except psutil.NoSuchProcess:
+                    pass
+            # Abort the finite group rather than retry every queued HTTP request.
+            owner_loop.call_soon_threadsafe(owner_task.cancel)
+        guard.on_error = stop_on_monitor_failure
         guard.start()
         import httpx
         async with httpx.AsyncClient() as health:
@@ -142,6 +155,10 @@ async def cell(args, method, out, items, build):
         result.update(state="complete",returned=len(rows),counts=dict(collections.Counter(x["status"]for x in rows)),
             server_ready_seconds=(ready_ns-start)/1e9,preparation_seconds=(verify_start-start)/1e9,
             warm_verify_seconds=(verify_end-verify_start)/1e9)
+    except asyncio.CancelledError:
+        if guard.error:
+            result.update(state="monitoring_failed", error=guard.error)
+        raise
     except Exception:
         result["error"]=traceback.format_exc()
     finally:

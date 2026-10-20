@@ -1,0 +1,135 @@
+{
+  "observed_UTC": "2026-10-20T08:47:05.328080+00:00",
+  "state": "interrupted_partial_not_a_performance_result",
+  "original_driver_pid": 18077,
+  "original_driver_birth": 1792474505.8,
+  "termination_UTC": "2026-10-20T08:40:27.985728+00:00",
+  "same_birth_owned_survivors_after_stop": [],
+  "raw_records": {
+    "http.jsonl": 21639,
+    "memory-rss.jsonl": 8072
+  },
+  "malformed_or_truncated_lines": {
+    "http.jsonl": 1,
+    "memory-rss.jsonl": 1
+  },
+  "distinct_original_HTTP200_source_IDs": 10816,
+  "first_HTTP_event": {
+    "event": "request",
+    "start_ns": 905880335635703
+  },
+  "last_HTTP_event": {
+    "event": "request",
+    "start_ns": 913951219033557
+  },
+  "last_successful_memory_sample": {
+    "time_ns": 913951761669609,
+    "total_rss_bytes": 16109547520,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "native_repl_count": 2,
+    "processes": [
+      {
+        "pid": 18077,
+        "birth": 1792474505.8,
+        "ppid": 1,
+        "rss": 364236800,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-u",
+          "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/run.py",
+          "--stage",
+          "full"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 18082,
+        "birth": 1792474507.57,
+        "ppid": 18077,
+        "rss": 125546496,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 20719,
+        "birth": 1792481286.37,
+        "ppid": 18082,
+        "rss": 829030400,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 20746,
+        "birth": 1792481287.17,
+        "ppid": 20719,
+        "rss": 7315644416,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 20756,
+        "birth": 1792481337.7,
+        "ppid": 20746,
+        "rss": 15880192,
+        "command": [
+          "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+          "--serve"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 21334,
+        "birth": 1792482547.42,
+        "ppid": 18082,
+        "rss": 827052032,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 21364,
+        "birth": 1792482547.94,
+        "ppid": 21334,
+        "rss": 6618779648,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 21418,
+        "birth": 1792482553.05,
+        "ppid": 21364,
+        "rss": 13377536,
+        "command": [
+          "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+          "--serve"
+        ],
+        "native_repl": false
+      }
+    ]
+  },
+  "recorded_peak_owned_RSS_bytes_before_log_loss": 20457914368,
+  "last_memory_sample_approx_UTC_from_current_monotonic_anchor": "2026-10-20T07:49:39.762089+00:00",
+  "coverage_limit": "Watchdog write failed and its error-record write bypassed the stop callback. Unobserved interval is not safe-coverage evidence; completed HTTP200 is not a genuine-proof count. No full/native-vs-Power ratio exists. Raw partial/truncated bytes retained."
+}

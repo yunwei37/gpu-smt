@@ -1,0 +1,71 @@
+{
+  "state": "monitoring_failed",
+  "method": "native",
+  "expected": 2,
+  "source_concurrency": 2,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "native_engine": "hybrid",
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": "1",
+  "lean_version": "v4.27.0",
+  "native_library": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+  "scope": "Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.",
+  "error": "Traceback (most recent call last):\n  File \"/workspaces/repository/artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/verify-real-capture-output-failure.py\", line 33, in sample\n    full.flush()\n    ~~~~~~~~~~^^\nOSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 112, in run\n    self.sample(stream)\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/workspaces/repository/artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/verify-real-capture-output-failure.py\", line 31, in sample\n    with open(\"/dev/full\",\"wb\")as full:\n         ~~~~^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n",
+  "server_exit": -9,
+  "joined_owned_descendants": 1,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 22325,
+      "birth": 1792486316.59,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "memory_watchdog": {
+    "root_pid": 22316,
+    "root_birth": 1792486315.56,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 7,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 14282817536,
+    "peak_sampled_native_repl_count": 2,
+    "error": "Traceback (most recent call last):\n  File \"/workspaces/repository/artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/verify-real-capture-output-failure.py\", line 33, in sample\n    full.flush()\n    ~~~~~~~~~~^^\nOSError: [Errno 28] No space left on device\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 112, in run\n    self.sample(stream)\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/workspaces/repository/artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/verify-real-capture-output-failure.py\", line 31, in sample\n    with open(\"/dev/full\",\"wb\")as full:\n         ~~~~^^^^^^^^^^^^^^^^^^\nOSError: [Errno 28] No space left on device\n",
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+  },
+  "whole_lifecycle_seconds": 6.099324945,
+  "waited_child_cpu_seconds": 0.819138,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.27.0",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "48635",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-load.txt",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  }
+}

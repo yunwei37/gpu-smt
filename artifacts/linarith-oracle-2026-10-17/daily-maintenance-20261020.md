@@ -16,3 +16,7 @@ Validation follows the already implemented whole-matrix reader: original IDs/ord
 
 ## Action following the reflection
 Preserved the sole healthy full capture and made its current resource and unresolved-population status explicit in the paper. Completed the source-preserving paper restructure and citation repairs instead of a second experiment or waiting loop. At the next actual terminal boundary consume the closed cell, preserve/publish it, and use the complete matrix to choose the next mechanism experiment. No empty minute-by-minute goal waits.
+
+
+## 08:40Z actual fault changes the immediate action
+A1.076GBorphan Git temporary pack fills the project volume, and an error-write failure exposes a real monitor stop-callback defect. Stop only the owned acquisition, preserve every partial byte/outcome and restore safe execution before research timing continues. Closed historical data are losslessly archived rather than deleted; original author files and state remain. Actual/dev/full plus source-native cancellation and final24positive replay validate the fix. Command-local Git-maintenance suppression prevents this bounded publication from recreating the same disk pressure; no persistent configuration changes. The next substantive step is again the same whole population, with the interrupted cell excluded from complete timing—not more paper polishing or a narrow kernel.

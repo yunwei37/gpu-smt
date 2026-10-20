@@ -1,0 +1,160 @@
+{
+  "state": "complete",
+  "method": "native",
+  "expected": 24,
+  "source_concurrency": 2,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "native_engine": "hybrid",
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": "1",
+  "lean_version": "v4.27.0",
+  "native_library": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/portable-source-build/native-load.txt",
+  "scope": "Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.",
+  "returned": 24,
+  "counts": {
+    "valid": 24
+  },
+  "server_ready_seconds": 0.796872476,
+  "preparation_seconds": 5.673330448,
+  "warm_verify_seconds": 32.111507805,
+  "server_exit": -15,
+  "joined_owned_descendants": 6,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 22499,
+      "birth": 1792486393.6,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 22502,
+      "birth": 1792486393.6,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 22554,
+      "birth": 1792486394.06,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 22567,
+      "birth": 1792486398.77,
+      "command": [
+        "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "--serve"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 22553,
+      "birth": 1792486394.06,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 22566,
+      "birth": 1792486398.57,
+      "command": [
+        "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+        "--serve"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "memory_watchdog": {
+    "root_pid": 22486,
+    "root_birth": 1792486392.55,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 39,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 14627856384,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+  },
+  "whole_lifecycle_seconds": 38.247544155,
+  "waited_child_cpu_seconds": 1.358914,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.27.0",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "60733",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/portable-source-build/native-load.txt",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  }
+}

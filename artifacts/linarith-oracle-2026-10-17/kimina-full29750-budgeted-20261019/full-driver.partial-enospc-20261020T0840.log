@@ -1,0 +1,58 @@
+{"utc": "2026-10-20T05:35:07.030751+00:00", "event": "cell_start", "stage": "full", "method": "native", "rep": 1, "sources": 29750, "free_bytes": 1209720832}
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Exception in thread capture-rss-watchdog:
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 112, in run
+    self.sample(stream)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 104, in sample
+    stream.flush()
+    ~~~~~~~~~~~~^^
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 109, in run
+    with (self.out / "memory-rss.jsonl").open("w") as stream:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 116, in run
+    (self.out / "memory-watchdog-error.txt").write_text(self.error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 557, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised OSError: [Errno 28] No space left on device.
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised OSError: [Errno 28] No space left on devic

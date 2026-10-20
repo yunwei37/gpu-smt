@@ -113,10 +113,16 @@ class MemoryWatchdog:
                     self.stop_event.wait(max(0, 1 - (time.monotonic() - started)))
         except Exception:
             self.error = traceback.format_exc()
-            (self.out / "memory-watchdog-error.txt").write_text(self.error)
-            # Monitoring failure stops this server, never lets acquisition continue unprotected.
-            if self.on_error is not None:
-                self.on_error()
+            try:
+                (self.out / "memory-watchdog-error.txt").write_text(self.error)
+            except OSError:
+                # A full output volume can fail both the sample and its error record.
+                # Keep the original failure in memory for the terminal record.
+                pass
+            finally:
+                # Failure to record the error must not bypass stopping acquisition.
+                if self.on_error is not None:
+                    self.on_error()
 
     def stop(self):
         self.stop_event.set()

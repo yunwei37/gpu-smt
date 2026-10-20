@@ -3858,3 +3858,11 @@ Direction: Initial Narrative, title/thesis, all four exact RQs and Lean/SMT/GPU/
 Source fidelity: historical negative results, partial/failure conditions and conditional bounds are relocated intact. Final original-number/citation inventories have no removals; source refs/figure files resolve. Two introduced meaning changes are actually restored in round eleven. Bibliography repair records access year, not invented publication, and uses immutable artifact/source evidence. Mechanical verification passes51entries; no independently refreshed every-paper/retraction audit is claimed.
 
 Execution: all twelve reports/diffs/builds exist, all30renderedpages reviewed, excessive final-submission length remains open. Every review is root self-review. No subagent/OMP/native-session start, alternative checkout or milestone acceptance claim. Exact healthy full driver/two24GiBworkers/fresh watchdog are preserved; no second full group, runtime policy change or active-log staging. Author changes remain unstaged. The next decisive empirical boundary is still completion of the retained matrix.
+
+
+## Output-ENOSPC recovery — root self-audit
+Direction unchanged: this restores the admitted full population experiment, not a new scientific route. Prior healthy receipt is timestamp-limited. The interrupted first cell has no complete timing/ratio and no claimed monitor coverage after its last intact record.
+
+Fault evidence: actual zero space and25%inodeusage, orphan temporary pack/no owner/byte-equal retained copy, unchanged Git refs and connectivity. Temporary Git-maintenance suppression is command-local, with no persisted settings. Closed historical archives preserve exact bytes and remain local; manifests do not pretend remote publication. Only owned finite-capture PIDs/births are stopped.
+
+Repair evidence: actual old-vs-fixed/dev/full callback regression, actual two-REPL original-source native/Power cancellation/retirement, then final24positive current-source qualification. Same limits and algorithms; failures are operational outcomes, not proof rejection. Normal clocks are not new population scores. Raw malformed tails and all29,750partial-source membership retained. No independent audit or milestone success. No second full group, Workspace or permission/quota change.

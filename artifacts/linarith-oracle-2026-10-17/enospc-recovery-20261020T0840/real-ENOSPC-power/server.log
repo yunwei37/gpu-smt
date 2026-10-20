@@ -1,0 +1,153 @@
+INFO     Started server process [22403]                         __init__.py:1737
+INFO     Waiting for application startup.                       __init__.py:1737
+INFO     Running Kimina Lean Server 'v2.0.0' in dev mode with Lean    main.py:30
+         version: 'v4.27.0'                                                     
+INFO     REPL manager initialized with: MAX_REPLS=2,               manager.py:36
+         MAX_REPL_USES=-1, MAX_REPL_MEM=24576 MB                                
+INFO     Application startup complete.                          __init__.py:1737
+INFO     Uvicorn running on http://127.0.0.1:43943 (Press       __init__.py:1737
+         CTRL+C to quit)                                                        
+INFO     → request                                                   main.py:113
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:51826 - "GET /health HTTP/1.1" 200           __init__.py:1737
+INFO     Try me with:                                                 main.py:56
+           curl --request POST \                                                
+             --url http://localhost:8000/api/check \                            
+             --header 'Content-Type: application/json' \                        
+             --data                                                             
+         '{"snippets":[{"id":"check-nat-test","code":"#check Nat"}]}'           
+         | jq                                                                   
+                                                                                
+INFO     → request                                                   main.py:113
+INFO     → request                                                   main.py:113
+INFO     # Free = 0 | # Busy = 0 | # Max = 2                       manager.py:87
+INFO     # Free = 0 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [43f26d9b] Started                                          repl.py:182
+INFO     [43f26d9b] Running snippet warm-0-header:                    repl.py:54
+import Mathlib                                                                  
+import Aesop                                                                    
+import GpuArithmetic.IntegerPowerOracle                                         
+INFO     [74fbad03] Started                                          repl.py:182
+INFO     [74fbad03] Running snippet warm-1-header:                    repl.py:54
+import Mathlib                                                                  
+import Aesop                                                                    
+import GpuArithmetic.IntegerPowerOracle                                         
+INFO     [43f26d9b] Running snippet warm-0:                           repl.py:54
+#check Nat                                                                      
+INFO     [74fbad03] Running snippet warm-1:                           repl.py:54
+#check Nat                                                                      
+INFO     [43f26d9b] Response for warm-0 body →                      check.py:168
+         {                                                                      
+           "id": "warm-0",                                                      
+           "time": 0.003212,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "info",                                            
+                 "pos": {                                                       
+                   "line": 4,                                                   
+                   "column": 0                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 4,                                                   
+                   "column": 6                                                  
+                 },                                                             
+                 "data": "Nat : Type"                                           
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "43f26d9b-0a53-448d-ad6d-5127954749a1",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [43f26d9b] Released!                                     manager.py:165
+INFO     [74fbad03] Response for warm-1 body →                      check.py:168
+         {                                                                      
+           "id": "warm-1",                                                      
+           "time": 0.002689,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "info",                                            
+                 "pos": {                                                       
+                   "line": 4,                                                   
+                   "column": 0                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 4,                                                   
+                   "column": 6                                                  
+                 },                                                             
+                 "data": "Nat : Type"                                           
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "74fbad03-c3c0-4d16-b490-c705de7d3ad2",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [74fbad03] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:51846 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:51840 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     → request                                                   main.py:113
+INFO     # Free = 2 | # Busy = 0 | # Max = 2                       manager.py:87
+INFO     [43f26d9b] Reusing (started) REPL for Proof_00009         manager.py:98
+INFO     [43f26d9b] Running snippet Proof_00009:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c$ be real numbers such that $a^{2}+b^{2}+c^{2}=3$ \nShow:          
+$|a|+|b|+|c|-abc\leq 4$ -/                                                      
+theorem lean_workbook_10036 (a b c : ℝ) (h : a^2 + b^2 + c^2 = 3) : |a| + |b| + 
+|c| - a * b * c ≤ 4  := by                                                      
+  /-                                                                            
+  Given real numbers \(a, b, c\) such that \(a^2 + b^2 + c^2 = 3\), we need to  
+show that \(|a| + |b| + |c| - abc \leq 4\). We will consider different cases    
+based on the signs of \(a, b, c\) and use the given condition to derive the     
+inequality.                                                                     
+  -/                                                                            
+  -- Consider different cases based on the signs of a, b, and c                 
+  cases' le_total 0 a with ha ha <;>                                            
+  cases' le_total 0 b with hb hb <;>                                            
+  cases' le_total 0 c with hc hc <;>                                            
+  -- Simplify the absolute values based on the signs                            
+  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_add_cancel, add_neg_cancel,  
+add_assoc] <;>                                                                  
+  -- Use linear arithmetic to prove the inequality in each case                 
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a), h,        
+sq_nonneg (a + b), sq_nonneg (b + c), sq_nonneg (c + a)]                        
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [74fbad03] Reusing (started) REPL for Proof_00027         manager.py:98
+INFO     [74fbad03] Running snippet Proof_00027:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c \geq 0$ and $a^3+b^3+c^3+3abc=6$ . Prove that: $ a^2+b^2+c^2 \geq 
+3 $ -/                                                                          
+theorem lean_workbook_10090 (a b c : ℝ) (h : a ≥ 0 ∧ b ≥ 0 ∧ c ≥ 0 ∧            
+a^3+b^3+c^3+3*a*b*c=6) :                                                        
+  a^2+b^2+c^2 ≥ 3  := by                                                        
+  /-                                                                            
+  Given \(a, b, c \geq 0\) and \(a^3 + b^3 + c^3 + 3abc = 6\), we need to prove 
+that \(a^2 + b^2 + c^2 \geq 3\).                                                
+  1. Consider the expressions \((a + b + c)^2\), \((a - b)^2\), \((a - c)^2\),  
+\((b - c)^2\), \((a - 1)^2\), \((b - 1)^2\), and \((c - 1)^2\). Each of these   
+expressions is a square, hence non-negative.                                    
+  2. Using the non-negativity of squares, we can derive inequalities that       
+involve \(a, b, c\) and constants.                                              
+  3. By combining these inequalities, we can show that \(a^2 + b^2 + c^2 \geq   
+3\).                                                                            
+  -/                                                                            
+  -- Use non-linear arithmetic to handle the inequalities derived from the      
+squares.                                                                        
+  nlinarith [sq_nonneg (a + b + c), sq_nonneg (a - b), sq_nonneg (a - c),       
+sq_nonneg (b - c),                                                              
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]                    

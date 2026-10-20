@@ -1,0 +1,116 @@
+{
+  "qualification24": {
+    "original_source_count": 24,
+    "native_outcomes": {
+      "native": {
+        "complete": 24
+      },
+      "power": {
+        "complete": 24
+      }
+    },
+    "native_outcome_difference_IDs": [],
+    "nonmessage_difference_IDs": [],
+    "message_difference_IDs": [
+      "Proof_00496",
+      "Proof_00549",
+      "Proof_00619"
+    ],
+    "resources": {
+      "native": {
+        "samples": 39,
+        "peak_sampled_owned_RSS_bytes": 14562967552,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.000408172,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "power": {
+        "samples": 25,
+        "peak_sampled_owned_RSS_bytes": 14888849408,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.000813697,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      }
+    },
+    "whole_lifecycle_seconds": {
+      "native": 38.809712941,
+      "power": 24.816084125
+    },
+    "scope": "Recovery qualification, not a full population result or new GPU/performance claim. Blocks remain separate; no pooling."
+  },
+  "qualification24-final": {
+    "original_source_count": 24,
+    "native_outcomes": {
+      "native": {
+        "complete": 24
+      },
+      "power": {
+        "complete": 24
+      }
+    },
+    "native_outcome_difference_IDs": [],
+    "nonmessage_difference_IDs": [],
+    "message_difference_IDs": [
+      "Proof_00496",
+      "Proof_00549",
+      "Proof_00619"
+    ],
+    "resources": {
+      "native": {
+        "samples": 39,
+        "peak_sampled_owned_RSS_bytes": 14627856384,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.00042646,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      },
+      "power": {
+        "samples": 25,
+        "peak_sampled_owned_RSS_bytes": 14706393088,
+        "maximum_live_native_REPLs": 2,
+        "effective_threshold_bytes": 51539607552,
+        "fault_injection": false,
+        "maximum_sample_gap_seconds": 1.010066932,
+        "actual_native_address_limit_lines": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ],
+        "over_threshold_samples": 0,
+        "watchdog_kills": [],
+        "monitor_error": null,
+        "source_attribution_issues": [],
+        "scope": "Conservative sum of owned process RSS, sampled non-atomically. Not kernel-hard RSS enforcement or PSS; overshoot remains visible."
+      }
+    },
+    "whole_lifecycle_seconds": {
+      "native": 38.247544155,
+      "power": 24.907521973
+    },
+    "scope": "Recovery qualification, not a full population result or new GPU/performance claim. Blocks remain separate; no pooling."
+  }
+}

@@ -1,0 +1,1357 @@
+INFO     Started server process [22585]                         __init__.py:1737
+INFO     Waiting for application startup.                       __init__.py:1737
+INFO     Running Kimina Lean Server 'v2.0.0' in dev mode with Lean    main.py:30
+         version: 'v4.27.0'                                                     
+INFO     REPL manager initialized with: MAX_REPLS=2,               manager.py:36
+         MAX_REPL_USES=-1, MAX_REPL_MEM=24576 MB                                
+INFO     Application startup complete.                          __init__.py:1737
+INFO     Uvicorn running on http://127.0.0.1:55387 (Press       __init__.py:1737
+         CTRL+C to quit)                                                        
+INFO     → request                                                   main.py:113
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43184 - "GET /health HTTP/1.1" 200           __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     → request                                                   main.py:113
+INFO     # Free = 0 | # Busy = 0 | # Max = 2                       manager.py:87
+INFO     # Free = 0 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Started                                          repl.py:182
+INFO     [3e9b41a5] Running snippet warm-0-header:                    repl.py:54
+import Mathlib                                                                  
+import Aesop                                                                    
+import GpuArithmetic.IntegerPowerOracle                                         
+INFO     [94f95967] Started                                          repl.py:182
+INFO     [94f95967] Running snippet warm-1-header:                    repl.py:54
+import Mathlib                                                                  
+import Aesop                                                                    
+import GpuArithmetic.IntegerPowerOracle                                         
+INFO     Try me with:                                                 main.py:56
+           curl --request POST \                                                
+             --url http://localhost:8000/api/check \                            
+             --header 'Content-Type: application/json' \                        
+             --data                                                             
+         '{"snippets":[{"id":"check-nat-test","code":"#check Nat"}]}'           
+         | jq                                                                   
+                                                                                
+INFO     [3e9b41a5] Running snippet warm-0:                           repl.py:54
+#check Nat                                                                      
+INFO     [94f95967] Running snippet warm-1:                           repl.py:54
+#check Nat                                                                      
+INFO     [3e9b41a5] Response for warm-0 body →                      check.py:168
+         {                                                                      
+           "id": "warm-0",                                                      
+           "time": 0.002898,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "info",                                            
+                 "pos": {                                                       
+                   "line": 4,                                                   
+                   "column": 0                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 4,                                                   
+                   "column": 6                                                  
+                 },                                                             
+                 "data": "Nat : Type"                                           
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     [94f95967] Response for warm-1 body →                      check.py:168
+         {                                                                      
+           "id": "warm-1",                                                      
+           "time": 0.00247,                                                     
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "info",                                            
+                 "pos": {                                                       
+                   "line": 4,                                                   
+                   "column": 0                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 4,                                                   
+                   "column": 6                                                  
+                 },                                                             
+                 "data": "Nat : Type"                                           
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     → request                                                   main.py:113
+INFO     # Free = 2 | # Busy = 0 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00009         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00009:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c$ be real numbers such that $a^{2}+b^{2}+c^{2}=3$ \nShow:          
+$|a|+|b|+|c|-abc\leq 4$ -/                                                      
+theorem lean_workbook_10036 (a b c : ℝ) (h : a^2 + b^2 + c^2 = 3) : |a| + |b| + 
+|c| - a * b * c ≤ 4  := by                                                      
+  /-                                                                            
+  Given real numbers \(a, b, c\) such that \(a^2 + b^2 + c^2 = 3\), we need to  
+show that \(|a| + |b| + |c| - abc \leq 4\). We will consider different cases    
+based on the signs of \(a, b, c\) and use the given condition to derive the     
+inequality.                                                                     
+  -/                                                                            
+  -- Consider different cases based on the signs of a, b, and c                 
+  cases' le_total 0 a with ha ha <;>                                            
+  cases' le_total 0 b with hb hb <;>                                            
+  cases' le_total 0 c with hc hc <;>                                            
+  -- Simplify the absolute values based on the signs                            
+  simp_all only [abs_of_nonneg, abs_of_nonpos, neg_add_cancel, add_neg_cancel,  
+add_assoc] <;>                                                                  
+  -- Use linear arithmetic to prove the inequality in each case                 
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a), h,        
+sq_nonneg (a + b), sq_nonneg (b + c), sq_nonneg (c + a)]                        
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00027         manager.py:98
+INFO     [94f95967] Running snippet Proof_00027:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c \geq 0$ and $a^3+b^3+c^3+3abc=6$ . Prove that: $ a^2+b^2+c^2 \geq 
+3 $ -/                                                                          
+theorem lean_workbook_10090 (a b c : ℝ) (h : a ≥ 0 ∧ b ≥ 0 ∧ c ≥ 0 ∧            
+a^3+b^3+c^3+3*a*b*c=6) :                                                        
+  a^2+b^2+c^2 ≥ 3  := by                                                        
+  /-                                                                            
+  Given \(a, b, c \geq 0\) and \(a^3 + b^3 + c^3 + 3abc = 6\), we need to prove 
+that \(a^2 + b^2 + c^2 \geq 3\).                                                
+  1. Consider the expressions \((a + b + c)^2\), \((a - b)^2\), \((a - c)^2\),  
+\((b - c)^2\), \((a - 1)^2\), \((b - 1)^2\), and \((c - 1)^2\). Each of these   
+expressions is a square, hence non-negative.                                    
+  2. Using the non-negativity of squares, we can derive inequalities that       
+involve \(a, b, c\) and constants.                                              
+  3. By combining these inequalities, we can show that \(a^2 + b^2 + c^2 \geq   
+3\).                                                                            
+  -/                                                                            
+  -- Use non-linear arithmetic to handle the inequalities derived from the      
+squares.                                                                        
+  nlinarith [sq_nonneg (a + b + c), sq_nonneg (a - b), sq_nonneg (a - c),       
+sq_nonneg (b - c),                                                              
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]                    
+INFO     [94f95967] Response for Proof_00027 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00027",                                                 
+           "time": 0.585454,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 94.87006530051251,                                      
+             "memory_max": 7062282240.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00069         manager.py:98
+INFO     [94f95967] Running snippet Proof_00069:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- For $ a,b,c\geq 0$ prove that $8+2(a^2+b^2+c^2)+abc\geq 5(a+b+c) $ . -/      
+theorem lean_workbook_10303 (a b c : ℝ) (ha : a ≥ 0) (hb : b ≥ 0) (hc : c ≥ 0) :
+8 + 2 * (a ^ 2 + b ^ 2 + c ^ 2) + a * b * c ≥ 5 * (a + b + c)  := by            
+  /-                                                                            
+  We need to prove that for non-negative real numbers \(a\), \(b\), and \(c\),  
+the inequality \(8 + 2(a^2 + b^2 + c^2) + abc \geq 5(a + b + c)\) holds. This   
+can be shown using non-linear arithmetic by considering the non-negativity of   
+squares and other expressions.                                                  
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality by considering the       
+non-negativity of squares and other expressions.                                
+  nlinarith [sq_nonneg (a + b + c - 3), sq_nonneg (a - 1), sq_nonneg (b - 1),   
+sq_nonneg (c - 1),                                                              
+    mul_nonneg ha hb, mul_nonneg hb hc, mul_nonneg hc ha, sq_nonneg (a - b),    
+sq_nonneg (b - c),                                                              
+    sq_nonneg (c - a), sq_nonneg (a * b - 1), sq_nonneg (b * c - 1), sq_nonneg  
+(c * a - 1)]                                                                    
+INFO     [94f95967] Response for Proof_00069 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00069",                                                 
+           "time": 0.613158,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00088         manager.py:98
+INFO     [94f95967] Running snippet Proof_00088:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,\ b,\ c$ be real numbers such that                                    
+$|a-1|+|b-1|+|c-1|+|a+1|+|b+1|+|c+1|=12$ . Prove that : $a^2+b^2+c^2\geq 12$ .  
+When does equality hold? -/                                                     
+theorem lean_workbook_1036 (a b c : ℝ) (h : abs (a - 1) + abs (b - 1) + abs (c -
+1) + abs (a + 1) + abs (b + 1) + abs (c + 1) = 12) : a ^ 2 + b ^ 2 + c ^ 2 ≥ 12 
+:= by                                                                           
+  /-                                                                            
+  Given real numbers \(a\), \(b\), and \(c\) such that \(|a-1| + |b-1| + |c-1| +
+|a+1| + |b+1| + |c+1| = 12\), we need to prove that \(a^2 + b^2 + c^2 \geq 12\).
+  To prove this, we consider the cases where each of \(a-1\), \(b-1\), \(c-1\), 
+\(a+1\), \(b+1\), and \(c+1\) are non-negative or non-positive. By analyzing    
+these cases, we can simplify the absolute values and use algebraic manipulations
+to show that the sum of the squares of \(a\), \(b\), and \(c\) is at least 12.  
+  -/                                                                            
+  -- Consider the cases where each of the expressions is non-negative or        
+non-positive.                                                                   
+  cases' le_total 0 (a - 1) with h₀ h₀ <;>                                      
+    cases' le_total 0 (b - 1) with h₁ h₁ <;>                                    
+      cases' le_total 0 (c - 1) with h₂ h₂ <;>                                  
+        cases' le_total 0 (a + 1) with h₃ h₃ <;>                                
+          cases' le_total 0 (b + 1) with h₄ h₄ <;>                              
+            cases' le_total 0 (c + 1) with h₅ h₅ <;>                            
+              -- Simplify the absolute values based on the non-negativity or    
+non-positivity.                                                                 
+              simp_all only [abs_of_nonneg, abs_of_nonpos, sub_nonneg,          
+sub_nonpos] <;>                                                                 
+                -- Use algebraic manipulations and inequalities to show the     
+desired result.                                                                 
+                nlinarith [sq_nonneg (a - b), sq_nonneg (a - c), sq_nonneg (b - 
+c),                                                                             
+                  sq_nonneg (a + b), sq_nonneg (a + c), sq_nonneg (b + c)]      
+INFO     [3e9b41a5] Response for Proof_00009 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00009",                                                 
+           "time": 5.275656,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 19,                                                  
+                   "column": 47                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 19,                                                  
+                   "column": 61                                                 
+                 },                                                             
+                 "data": "This simp argument is unused:\n                       
+         neg_add_cancel\n\nHint: Omit it from the simp argument                 
+         list.\n  simp_all only \n\nNote: This linter can be                    
+         disabled with `set_option linter.unusedSimpArgs false`"                
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 19,                                                  
+                   "column": 63                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 19,                                                  
+                   "column": 77                                                 
+                 },                                                             
+                 "data": "This simp argument is unused:\n                       
+         add_neg_cancel\n\nHint: Omit it from the simp argument                 
+         list.\n  simp_all only \n\nNote: This linter can be                    
+         disabled with `set_option linter.unusedSimpArgs false`"                
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 99.85287626793144,                                      
+             "memory_max": 7319674880.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00165         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00165:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let be given $a,b,c\geq 0$ . Prove that $2(a^2+b^2+c^2)+abc+8\geq 5(a+b+c)$  
+-/                                                                              
+theorem lean_workbook_10705 (a b c : ℝ) (ha : a ≥ 0) (hb : b ≥ 0) (hc : c ≥ 0) :
+2 * (a ^ 2 + b ^ 2 + c ^ 2) + a * b * c + 8 ≥ 5 * (a + b + c)  := by            
+  /-                                                                            
+  We need to prove that for non-negative real numbers \(a\), \(b\), and \(c\),  
+the inequality \(2(a^2 + b^2 + c^2) + abc + 8 \geq 5(a + b + c)\) holds. This   
+can be shown using non-linear arithmetic (nlinarith) by considering the         
+non-negativity of various squared terms and products.                           
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality by considering the       
+non-negativity of various squared terms and products.                           
+  nlinarith [sq_nonneg (a + b + c - 3), sq_nonneg (a - 1), sq_nonneg (b - 1),   
+sq_nonneg (c - 1),                                                              
+    mul_nonneg ha hb, mul_nonneg hb hc, mul_nonneg ha hc, sq_nonneg (a - b),    
+sq_nonneg (b - c),                                                              
+    sq_nonneg (c - a), sq_nonneg (a * b - 1), sq_nonneg (b * c - 1), sq_nonneg  
+(c * a - 1)]                                                                    
+INFO     [3e9b41a5] Response for Proof_00165 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00165",                                                 
+           "time": 0.711113,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00170         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00170:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $ x$ , $ y$ , and $ z$ be non-negative real numbers satisfying $ x + y + 
+z = 1$ . Show that $ x^2 y + y^2 z + z^2 x +xyz\leq \frac {4}{27}$ -/           
+theorem lean_workbook_10718 (x y z : ℝ) (hx: x ≥ 0 ∧ y ≥ 0 ∧ z ≥ 0) (h : x + y +
+z = 1) : x^2*y + y^2*z + z^2*x + x*y*z ≤ 4/27  := by                            
+  /-                                                                            
+  Given non-negative real numbers \( x \), \( y \), and \( z \) such that \( x +
+y + z = 1 \), we aim to show that \( x^2 y + y^2 z + z^2 x + xyz \leq           
+\frac{4}{27} \).                                                                
+  1. **Case Analysis**: We consider different cases based on the relationships  
+between \( x \), \( y \), and \( z \). These cases are derived from the         
+inequalities \( x \leq y \leq z \), \( x \leq z \leq y \), \( y \leq x \leq z   
+\), \( y \leq z \leq x \), \( z \leq x \leq y \), and \( z \leq y \leq x \).    
+  2. **Non-negativity and Bounds**: Utilize the non-negativity of \( x \), \( y 
+\), and \( z \) and the fact that their sum is 1 to apply algebraic             
+manipulations and inequalities.                                                 
+  3. **Inequality Application**: Apply the inequality \( x^2 y + y^2 z + z^2 x +
+xyz \leq \frac{4}{27} \) by leveraging the non-negativity of squares and the    
+given sum constraints.                                                          
+  -/                                                                            
+  -- Consider different cases based on the relationships between x, y, and z.   
+  cases' le_total x y with hxy hxy <;>                                          
+  cases' le_total y z with hyz hyz <;>                                          
+  cases' le_total z x with hzx hzx <;>                                          
+  -- Use non-negativity and bounds to apply algebraic inequalities.             
+  nlinarith [sq_nonneg (x + y + z), sq_nonneg (x - y), sq_nonneg (y - z),       
+sq_nonneg (z - x),                                                              
+    sq_nonneg (x - 1 / 3), sq_nonneg (y - 1 / 3), sq_nonneg (z - 1 / 3)]        
+INFO     [3e9b41a5] Response for Proof_00170 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00170",                                                 
+           "time": 2.489622,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 100.78711282387751,                                     
+             "memory_max": 7283228672.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00214         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00214:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let a,b,c be non-negative real numbers with sum 2. Prove that: $             
+24(a^2+b^2+c^2)+(a^2+b^2+c^2)^2 \le 48+8(a^3+b^3+c^3)$ -/                       
+theorem lean_workbook_10895 (a b c : ℝ) (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c)  
+(habc : a + b + c = 2) : 24 * (a ^ 2 + b ^ 2 + c ^ 2) + (a ^ 2 + b ^ 2 + c ^ 2) 
+^ 2 ≤ 48 + 8 * (a ^ 3 + b ^ 3 + c ^ 3)  := by                                   
+  /-                                                                            
+  Given non-negative real numbers \(a\), \(b\), and \(c\) with sum 2, we need to
+prove that:                                                                     
+  \[ 24(a^2 + b^2 + c^2) + (a^2 + b^2 + c^2)^2 \leq 48 + 8(a^3 + b^3 + c^3) \]  
+  To prove this inequality, we use the non-linear arithmetic (nlinarith) tactic,
+which automatically handles inequalities involving polynomials. We provide      
+several non-negative expressions to ensure the tactic can correctly deduce the  
+inequality.                                                                     
+  -/                                                                            
+  -- Use non-linear arithmetic to handle the inequality involving polynomials.  
+  -- We provide several non-negative expressions to ensure the tactic can       
+correctly deduce the inequality.                                                
+  nlinarith [sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1),           
+    mul_nonneg ha hb, mul_nonneg hb hc, mul_nonneg hc ha,                       
+    sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a)]                    
+INFO     [3e9b41a5] Response for Proof_00214 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00214",                                                 
+           "time": 0.807765,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 91.86425183516003,                                      
+             "memory_max": 7211188224.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00297         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00297:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove that $ \frac{1}{x} + \frac{1}{y} + \frac{1}{z} + \frac{1}{w} \le \frac 
+{4}{ \sqrt [3] {2} } $ given $x,y,z,w > 1 $ are positive reals such that $(x^3  
+-1 )(y^3 -1 )(z^3 -1 )(w^3 -1 )=1 $. -/                                         
+theorem lean_workbook_11254 (x y z w : ℝ) (hx : x > 1) (hy : y > 1) (hz : z > 1)
+(hw : w > 1)(habc : (x^3 - 1) * (y^3 - 1) * (z^3 - 1) * (w^3 - 1) = 1) : 1/x +  
+1/y + 1/z + 1/w ≤ 4 / (2^(1/3))  := by                                          
+  /-                                                                            
+  Given positive real numbers \( x, y, z, w > 1 \) such that \( (x^3 - 1)(y^3 - 
+1)(z^3 - 1)(w^3 - 1) = 1 \), we need to prove that:                             
+  \[                                                                            
+  \frac{1}{x} + \frac{1}{y} + \frac{1}{z} + \frac{1}{w} \leq                    
+\frac{4}{\sqrt[3]{2}}                                                           
+  \]                                                                            
+  First, we simplify the expression by clearing denominators using the fact that
+\( x, y, z, w > 1 \). This allows us to rewrite the inequality in a more        
+manageable form. We then use algebraic manipulations and the given condition \( 
+(x^3 - 1)(y^3 - 1)(z^3 - 1)(w^3 - 1) = 1 \) to bound the sum of the reciprocals.
+Finally, we apply non-linear arithmetic to verify the inequality.               
+  -/                                                                            
+  -- Simplify the expression by clearing denominators using the fact that x, y, 
+z, w > 1.                                                                       
+  field_simp [hx, hy, hz, hw]                                                   
+  -- Rewrite the inequality in a more manageable form.                          
+  (first | rw [div_le_div_iff₀] | rw [le_div_iff₀] | rw [div_le_iff₀] | skip)   
+<;>                                                                             
+    ring_nf                                                                     
+  -- Use non-linear arithmetic to verify the inequality.                        
+  try nlinarith [sq_nonneg (x + y + z + w), sq_nonneg (x - y), sq_nonneg (x -   
+z), sq_nonneg (x - w),                                                          
+    sq_nonneg (y - z), sq_nonneg (y - w), sq_nonneg (z - w),                    
+    mul_pos (sub_pos.mpr hx) (sub_pos.mpr hy),                                  
+    mul_pos (sub_pos.mpr hx) (sub_pos.mpr hz),                                  
+    mul_pos (sub_pos.mpr hx) (sub_pos.mpr hw),                                  
+    mul_pos (sub_pos.mpr hy) (sub_pos.mpr hz),                                  
+    mul_pos (sub_pos.mpr hy) (sub_pos.mpr hw),                                  
+    mul_pos (sub_pos.mpr hz) (sub_pos.mpr hw)]                                  
+INFO     [3e9b41a5] Response for Proof_00297 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00297",                                                 
+           "time": 0.829749,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 94                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 98                                                 
+                 },                                                             
+                 "data": "unused variable `habc`\n\nNote: This                  
+         linter can be disabled with `set_option                                
+         linter.unusedVariables false`"                                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 21,                                                  
+                   "column": 78                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 21,                                                  
+                   "column": 81                                                 
+                 },                                                             
+                 "data": "Used `tac1 <;> tac2` where `(tac1; tac2)`             
+         would suffice\n\nNote: This linter can be disabled with                
+         `set_option linter.unnecessarySeqFocus false`"                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 21,                                                  
+                   "column": 2                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 21,                                                  
+                   "column": 77                                                 
+                 },                                                             
+                 "data": "'(first\n  | rw \n  | rw \n  | rw \n  |               
+         skip)' tactic does nothing\n\nNote: This linter can be                 
+         disabled with `set_option linter.unusedTactic false`"                  
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 84.85888958724435,                                      
+             "memory_max": 7218638848.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00308         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00308:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove true for all $x\in\Re$ in the following equation - \n $ x^6-6x+5\geq 0 
+$ -/                                                                            
+theorem lean_workbook_11293 (x : ℝ) : x^6-6*x+5 ≥ 0  := by                      
+  /-                                                                            
+  To prove that \( x^6 - 6x + 5 \geq 0 \) for all \( x \in \mathbb{R} \), we can
+use the non-linear arithmetic (nlinarith) tactic in Lean4. This tactic is       
+designed to handle inequalities involving polynomials and can automatically     
+deduce the non-negativity of the given expression by considering the            
+non-negativity of certain squares. Specifically, we will use the fact that the  
+square of any real number is non-negative, and combine these facts to establish 
+the desired inequality.                                                         
+  -/                                                                            
+  -- Use the nlinarith tactic to prove the inequality.                          
+  -- The nlinarith tactic will consider the non-negativity of certain squares to
+deduce the result.                                                              
+  nlinarith [sq_nonneg (x^2 - 1), sq_nonneg (x^3 - 1), sq_nonneg (x^2 - 2),     
+sq_nonneg (x - 1),                                                              
+    sq_nonneg (x + 1), sq_nonneg (x^3 - 2), sq_nonneg (x^2 - 3), sq_nonneg (x - 
+2),                                                                             
+    sq_nonneg (x + 2), sq_nonneg (x^3 - 3), sq_nonneg (x^2 - 4), sq_nonneg (x - 
+3),                                                                             
+    sq_nonneg (x + 3), sq_nonneg (x^3 - 4), sq_nonneg (x^2 - 5), sq_nonneg (x - 
+4),                                                                             
+    sq_nonneg (x + 4), sq_nonneg (x^3 - 5), sq_nonneg (x^2 - 6), sq_nonneg (x - 
+5),                                                                             
+    sq_nonneg (x + 5), sq_nonneg (x^3 - 6), sq_nonneg (x^2 - 7), sq_nonneg (x - 
+6),                                                                             
+    sq_nonneg (x + 6), sq_nonneg (x^3 - 7), sq_nonneg (x^2 - 8), sq_nonneg (x - 
+7),                                                                             
+    sq_nonneg (x + 7), sq_nonneg (x^3 - 8), sq_nonneg (x^2 - 9), sq_nonneg (x - 
+8),                                                                             
+    sq_nonneg (x + 8), sq_nonneg (x^3 - 9), sq_nonneg (x^2 - 10), sq_nonneg (x -
+9),                                                                             
+    sq_nonneg (x + 9), sq_nonneg (x^3 - 10)]                                    
+INFO     [3e9b41a5] Response for Proof_00308 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00308",                                                 
+           "time": 0.396905,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00323         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00323:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- a,b,c>0; \ \ \ a^2+b^2+c^2=3 . Prove that $ a^4+b^4+c^4+(a+b)(b+c)(c+a)\ge   
+4abc+ 7 $ -/                                                                    
+theorem lean_workbook_11332 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)  
+(habc : a * b * c = 1) (h : a^2 + b^2 + c^2 = 3) : a^4 + b^4 + c^4 + (a + b) *  
+(b + c) * (c + a) ≥ 4 * a * b * c + 7  := by                                    
+  /-                                                                            
+  Given \(a, b, c > 0\) and \(a^2 + b^2 + c^2 = 3\), we need to prove that:     
+  \[ a^4 + b^4 + c^4 + (a + b)(b + c)(c + a) \ge 4abc + 7 \]                    
+  To prove this, we use the non-negativity of squares and some algebraic        
+manipulations. Specifically, we consider the non-negativity of various          
+expressions involving \(a, b,\) and \(c\). By leveraging the properties of      
+non-negative numbers and the given conditions, we can establish the desired     
+inequality.                                                                     
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality.                         
+  -- We consider the non-negativity of various squares and other expressions.   
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a + b), sq_nonneg (b + c), sq_nonneg (c + a),                    
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]                    
+INFO     [3e9b41a5] Response for Proof_00323 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00323",                                                 
+           "time": 0.405663,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 87.88253787340071,                                      
+             "memory_max": 7232352256.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00328         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00328:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove that: $x^2y+y^2z+z^2x\leq \frac{4}{27}$ given $x, y, z \geq 0$ and     
+$x+y+z=1$. -/                                                                   
+theorem lean_workbook_11347 (x y z : ℝ) (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z)  
+(h : x + y + z = 1) : x^2*y + y^2*z + z^2*x ≤ 4 / 27  := by                     
+  /-                                                                            
+  Given \( x, y, z \geq 0 \) and \( x + y + z = 1 \), we need to prove that \(  
+x^2 y + y^2 z + z^2 x \leq \frac{4}{27} \).                                     
+  1. **Case Analysis**: We consider different cases based on the relationships  
+between \( x, y, \) and \( z \).                                                
+  2. **Nonlinear Arithmetic**: For each case, we use nonlinear arithmetic to    
+derive the desired inequality.                                                  
+  -/                                                                            
+  -- Consider different cases based on the relationships between x, y, and z.   
+  cases' le_total x y with hxy hxy <;>                                          
+  cases' le_total y z with hyz hyz <;>                                          
+  cases' le_total z x with hzx hzx <;>                                          
+  -- Use nonlinear arithmetic to derive the inequality for each case.           
+  nlinarith [sq_nonneg (x - 1 / 3), sq_nonneg (y - 1 / 3), sq_nonneg (z - 1 /   
+3),                                                                             
+    sq_nonneg (x - y), sq_nonneg (y - z), sq_nonneg (z - x)]                    
+INFO     [94f95967] Response for Proof_00088 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00088",                                                 
+           "time": 10.186096,                                                   
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 100.84579638732394,                                     
+             "memory_max": 7215304704.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00364         manager.py:98
+INFO     [94f95967] Running snippet Proof_00364:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $x,y$ and $z$ be positive real numbers such that $x^2+y^2+z^2=1$ . Prove 
+that $x+y+z-\frac{9}{7}xyz\le \frac{6}{7}\sqrt{3}.$ -/                          
+theorem lean_workbook_1148 (x y z : ℝ) (hx : 0 < x) (hy : 0 < y) (hz : 0 < z) (h
+: x^2 + y^2 + z^2 = 1) : x + y + z - (9/7)*x*y*z ≤ (6/7)*Real.sqrt 3  := by     
+  /-                                                                            
+  Given positive real numbers \( x, y, z \) such that \( x^2 + y^2 + z^2 = 1 \),
+we need to prove that:                                                          
+  \[ x + y + z - \frac{9}{7}xyz \leq \frac{6}{7} \sqrt{3}. \]                   
+  To prove this, we use the non-linear arithmetic (nlinarith) tactic, which     
+simplifies the expression by applying known inequalities and properties of real 
+numbers. Specifically, we use the fact that the square root of 3 is non-negative
+and the non-negativity of squares, which helps in bounding the expression.      
+  -/                                                                            
+  -- Use non-linear arithmetic to simplify and bound the expression.            
+  -- We provide known inequalities and properties of real numbers to help       
+nlinarith.                                                                      
+  nlinarith [sq_nonneg (x + y + z), sq_nonneg (x - y), sq_nonneg (x - z),       
+sq_nonneg (y - z),                                                              
+    Real.sqrt_nonneg 3, sq_sqrt (show 0 ≤ 3 by norm_num),                       
+    sq_nonneg (x - Real.sqrt 3 / 3), sq_nonneg (y - Real.sqrt 3 / 3), sq_nonneg 
+(z - Real.sqrt 3 / 3)]                                                          
+INFO     [94f95967] Response for Proof_00364 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00364",                                                 
+           "time": 0.90892,                                                     
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 94.8383276730423,                                       
+             "memory_max": 7138873344.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00375         manager.py:98
+INFO     [94f95967] Running snippet Proof_00375:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove that: $a^2 b^2 c^2 + a^2 + b^2 + c^2 + 2 \ge 2\left( {ab + bc + ca}    
+\right),\forall a,b,c \in \left[ {0, + \infty } \right)$ -/                     
+theorem lean_workbook_11522 : ∀ a b c : ℝ, a ∈ Set.Ici 0 ∧ b ∈ Set.Ici 0 ∧ c ∈  
+Set.Ici 0 → a^2 * b^2 * c^2 + a^2 + b^2 + c^2 + 2 ≥ 2 * (a * b + b * c + c * a) 
+:= by                                                                           
+  /-                                                                            
+  We need to prove that for all \(a, b, c \in [0, +\infty)\), the inequality    
+\(a^2 b^2 c^2 + a^2 + b^2 + c^2 + 2 \ge 2(ab + bc + ca)\) holds. This can be    
+shown using non-linear arithmetic (nlinarith) by considering the non-negativity 
+of squares. Specifically, we use the fact that the square of any real number is 
+non-negative to establish the inequality.                                       
+  -/                                                                            
+  -- Introduce the variables a, b, c and the hypothesis habc that a, b, c are in
+the interval [0, +∞)                                                            
+  intro a b c habc                                                              
+  -- Use non-linear arithmetic to prove the inequality                          
+  -- We provide lemmas about the non-negativity of squares to help nlinarith    
+  nlinarith [sq_nonneg (a * b * c - 1), sq_nonneg (a * b - 1), sq_nonneg (b * c 
+- 1), sq_nonneg (c * a - 1),                                                    
+    sq_nonneg (a * b * c), sq_nonneg (a * b), sq_nonneg (b * c), sq_nonneg (c * 
+a), sq_nonneg (a * b * c - a),                                                  
+    sq_nonneg (a * b * c - b), sq_nonneg (a * b * c - c), sq_nonneg (a - b),    
+sq_nonneg (b - c), sq_nonneg (c - a)]                                           
+INFO     [94f95967] Response for Proof_00375 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00375",                                                 
+           "time": 0.510055,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00401         manager.py:98
+INFO     [94f95967] Running snippet Proof_00401:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove that if $a,b,c,d>0$ and $abcd=2$ , then                                
+$a^2+b^2+c^2+d^2+ab+ac+ad+bc+bd+cd>14$ . -/                                     
+theorem lean_workbook_11626 (a b c d : ℝ) (hab : a > 0 ∧ b > 0 ∧ c > 0 ∧ d > 0 ∧
+a * b * c * d = 2) : a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 + a * b + a * c + a * d + b *
+c + b * d + c * d > 14  := by                                                   
+  /-                                                                            
+  Given \(a, b, c, d > 0\) and \(abcd = 2\), we need to prove that:             
+  \[ a^2 + b^2 + c^2 + d^2 + ab + ac + ad + bc + bd + cd > 14 \]                
+  To prove this, we use the non-negativity of squares and the fact that all     
+terms are positive. By considering the squares of the differences between each  
+pair of variables, we can derive the desired inequality.                        
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality.                         
+  -- We use the non-negativity of squares of differences between each pair of   
+variables.                                                                      
+  nlinarith [sq_nonneg (a - b), sq_nonneg (a - c), sq_nonneg (a - d), sq_nonneg 
+(b - c), sq_nonneg (b - d), sq_nonneg (c - d),                                  
+    mul_pos hab.1 hab.2.1, mul_pos hab.1 hab.2.2.1, mul_pos hab.1 hab.2.2.2.1,  
+mul_pos hab.2.1 hab.2.2.1, mul_pos hab.2.1 hab.2.2.2.1,                         
+    mul_pos hab.2.2.1 hab.2.2.2.1]                                              
+INFO     [3e9b41a5] Response for Proof_00328 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00328",                                                 
+           "time": 2.404725,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 99.89962704505744,                                      
+             "memory_max": 7324106752.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00455         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00455:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Given the conditions $a+b+c = 1$ and $a, b, c \in \mathbb{R^+}$, prove that  
+$(1+a)(1+b)(1+c) \geq 8(1-a)(1-b)(1-c)$. -/                                     
+theorem lean_workbook_11890 (a b c : ℝ) (habc : a + b + c = 1) (ha : 0 < a) (hb 
+: 0 < b) (hc : 0 < c) :  (1 + a) * (1 + b) * (1 + c) ≥ 8 * (1 - a) * (1 - b) *  
+(1 - c)  := by                                                                  
+  /-                                                                            
+  Given the conditions \(a + b + c = 1\) and \(a, b, c \in \mathbb{R}^+\), we   
+need to prove that \((1 + a)(1 + b)(1 + c) \geq 8(1 - a)(1 - b)(1 - c)\).       
+  1. Since \(a, b, c > 0\) and \(a + b + c = 1\), we can use the fact that the  
+product of positive numbers is non-negative.                                    
+  2. We use the non-negativity of squares and the properties of real numbers to 
+establish the inequality.                                                       
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality.                         
+  -- We provide the non-negativity of various expressions involving a, b, and c.
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a), sq_nonneg 
+(a + b), sq_nonneg (b + c), sq_nonneg (c + a),                                  
+    sq_nonneg (a - 1 / 2), sq_nonneg (b - 1 / 2), sq_nonneg (c - 1 / 2),        
+sq_nonneg (a + 1 / 2), sq_nonneg (b + 1 / 2), sq_nonneg (c + 1 / 2)]            
+INFO     [94f95967] Response for Proof_00401 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00401",                                                 
+           "time": 1.168302,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 96.85648677480427,                                      
+             "memory_max": 7167737856.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     [3e9b41a5] Response for Proof_00455 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00455",                                                 
+           "time": 0.446396,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 97.8534376617692,                                       
+             "memory_max": 7256023040.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 2 | # Busy = 0 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00487         manager.py:98
+INFO     [94f95967] Running snippet Proof_00487:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c> 0$ and $a+b+c=ab+bc+ca .$ Prove that \n                          
+$$a(a^2+b^2)+b(b^2+c^2)+c(c^2+a^2) \geq 6$$ -/                                  
+theorem lean_workbook_12039 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)  
+(hab : a + b + c = a * b + b * c + c * a) : a * (a ^ 2 + b ^ 2) + b * (b ^ 2 + c
+^ 2) + c * (c ^ 2 + a ^ 2) ≥ 6  := by                                           
+  /-                                                                            
+  Given \(a, b, c > 0\) and \(a + b + c = ab + bc + ca\), we need to prove that:
+  \[ a(a^2 + b^2) + b(b^2 + c^2) + c(c^2 + a^2) \geq 6 \]                       
+  To prove this, we use the non-negativity of squares. Specifically, we consider
+the squares of the differences \(a - b\), \(b - c\), and \(c - a\). Since these 
+squares are non-negative, we can derive the desired inequality by summing these 
+expressions and simplifying.                                                    
+  -/                                                                            
+  -- Use the non-negativity of squares to derive the inequality.                
+  -- Specifically, consider the squares of (a - b), (b - c), and (c - a).       
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]                    
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00496         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00496:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove these inequalities:\n\n1) $ 2(a + b + c)\le{a^2(b + c) + b^2(a + c) +  
+c^2(a + b)}$ \nif $ a,b,c > 0$ and $ abc = 1.$ \n\n2) $ a^2 + b^2 + ab + \sqrt  
+{4 - a^2}\cdot\sqrt {9 - b^2}\ge4$ \nif $ 0\le{a}\le2,0\le{b}\le3.$ \n\n3) $ x >
+\sqrt {x - 1} + \sqrt {x(\sqrt {x} - 1)}$ \nif $ x\ge1.$ \n\nThank you in       
+advance -/                                                                      
+theorem lean_workbook_12056 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)  
+(habc : a * b * c = 1) : 2 * (a + b + c) ≤ a^2 * (b + c) + b^2 * (a + c) + c^2 *
+(a + b)  := by                                                                  
+  /-                                                                            
+  Given \( a, b, c > 0 \) and \( abc = 1 \), we need to prove the inequality:   
+  \[ 2(a + b + c) \leq a^2(b + c) + b^2(a + c) + c^2(a + b) \]                  
+  To prove this, we use the non-negativity of squares. Specifically, we consider
+the squares of the differences \( (a - b) \), \( (b - c) \), \( (c - a) \), \(  
+(a - 1) \), \( (b - 1) \), and \( (c - 1) \). These squares are non-negative,   
+and their sum can be used to derive the desired inequality.                     
+  -/                                                                            
+  -- Use the non-negativity of squares to derive the inequality.                
+  -- Specifically, consider the squares of the differences (a - b), (b - c), (c 
+- a), (a - 1), (b - 1), and (c - 1).                                            
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a), sq_nonneg 
+(a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1),                                  
+    mul_pos ha hb, mul_pos hb hc, mul_pos hc ha, habc, sq_nonneg (a * b - 1),   
+sq_nonneg (b * c - 1), sq_nonneg (c * a - 1)]                                   
+INFO     [3e9b41a5] Response for Proof_00496 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00496",                                                 
+           "time": 0.233813,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 67                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 69                                                 
+                 },                                                             
+                 "data": "unused variable `hc`\n\nNote: This linter             
+         can be disabled with `set_option linter.unusedVariables                
+         false`"                                                                
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00526         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00526:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- If $a,b,c\ge 0$, $a^2 +b^2+c^2+2abc=5$, prove that $abc+a+b+c+ab+bc+ca\le 7$.
+-/                                                                              
+theorem lean_workbook_12233 (a b c : ℝ) (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c)  
+(hab : 0 ≤ a + b) (hbc : 0 ≤ b + c) (hca : 0 ≤ a + c) (habc : 0 ≤ a + b + c) (h 
+: a^2 + b^2 + c^2 + 2 * a * b * c = 5) :                                        
+  a * b * c + a + b + c + a * b + b * c + c * a ≤ 7  := by                      
+  /-                                                                            
+  Given \(a, b, c \ge 0\) and \(a^2 + b^2 + c^2 + 2abc = 5\), we need to prove  
+that \(abc + a + b + c + ab + bc + ca \le 7\).                                  
+  First, we use the given equation \(a^2 + b^2 + c^2 + 2abc = 5\). We will use  
+non-linear arithmetic to show that the expression \(abc + a + b + c + ab + bc + 
+ca\) is bounded above by 7.                                                     
+  -/                                                                            
+  -- Use non-linear arithmetic to prove the inequality.                         
+  nlinarith [sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1), mul_nonneg
+ha hb, mul_nonneg hb hc, mul_nonneg hc ha,                                      
+    mul_self_nonneg (a - b), mul_self_nonneg (b - c), mul_self_nonneg (c - a)]  
+INFO     [94f95967] Response for Proof_00487 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00487",                                                 
+           "time": 0.700911,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00538         manager.py:98
+INFO     [94f95967] Running snippet Proof_00538:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- For $a,b,c,d \in \mathbb{R}$ such that $ a^2+b^2+c^2+d^2=1 $ Prove that $    
+a(1+d-a)+b(1+d-b)+c(1+d-c)-d-1 \leq 0 $ -/                                      
+theorem lean_workbook_12296 (a b c d : ℝ) (h : a^2 + b^2 + c^2 + d^2 = 1) :     
+  a * (1 + d - a) + b * (1 + d - b) + c * (1 + d - c) - d - 1 ≤ 0  := by        
+  /-                                                                            
+  Given \(a, b, c, d \in \mathbb{R}\) such that \(a^2 + b^2 + c^2 + d^2 = 1\),  
+we need to prove that \(a(1 + d - a) + b(1 + d - b) + c(1 + d - c) - d - 1 \leq 
+0\).                                                                            
+  To prove this, we use the non-negative property of squares. Specifically, we  
+consider the squares of the expressions involving \(a, b, c, d\) and use the    
+fact that these squares are non-negative to derive the desired inequality.      
+  -/                                                                            
+  -- Use the non-negative property of squares to prove the inequality.          
+  -- Specifically, consider the squares of the expressions involving a, b, c, d.
+  nlinarith [sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1), sq_nonneg 
+(d - 1),                                                                        
+    sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a), sq_nonneg (a + b - 
+1),                                                                             
+    sq_nonneg (b + c - 1), sq_nonneg (c + a - 1), sq_nonneg (d + 1 - 1)]        
+INFO     [3e9b41a5] Response for Proof_00526 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00526",                                                 
+           "time": 0.64978,                                                     
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 80                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 83                                                 
+                 },                                                             
+                 "data": "unused variable `hab`\n\nNote: This                   
+         linter can be disabled with `set_option                                
+         linter.unusedVariables false`"                                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 98                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 101                                                
+                 },                                                             
+                 "data": "unused variable `hbc`\n\nNote: This                   
+         linter can be disabled with `set_option                                
+         linter.unusedVariables false`"                                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 116                                                
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 119                                                
+                 },                                                             
+                 "data": "unused variable `hca`\n\nNote: This                   
+         linter can be disabled with `set_option                                
+         linter.unusedVariables false`"                                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 134                                                
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 138                                                
+                 },                                                             
+                 "data": "unused variable `habc`\n\nNote: This                  
+         linter can be disabled with `set_option                                
+         linter.unusedVariables false`"                                         
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 83.88631710055586,                                      
+             "memory_max": 7250079744.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00549         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00549:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- If the positive real numbers $w,x,y,z$ satisfy $w+x+y+z=6$ and               
+$w^2+x^2+y^2+z^2=12$ . Prove that $w^3+x^3+y^3+z^3\leq 30$. -/                  
+theorem lean_workbook_12328 (w x y z : ℝ) (hw : w > 0) (hx : x > 0) (hy : y > 0)
+(hz : z > 0) (hwxyz : w + x + y + z = 6) (hw2x2y2z2 : w^2 + x^2 + y^2 + z^2 =   
+12) : w^3 + x^3 + y^3 + z^3 ≤ 30  := by                                         
+  /-                                                                            
+  Given positive real numbers \( w, x, y, z \) such that \( w + x + y + z = 6 \)
+and \( w^2 + x^2 + y^2 + z^2 = 12 \), we need to prove that \( w^3 + x^3 + y^3 +
+z^3 \leq 30 \).                                                                 
+  To prove this, we use the non-linear arithmetic (nlinarith) tactic, which can 
+handle inequalities involving squares and sums. Specifically, we use the fact   
+that the square of any real number is non-negative, which helps in bounding the 
+sum of cubes.                                                                   
+  -/                                                                            
+  -- Use non-linear arithmetic to handle the inequalities involving squares and 
+sums.                                                                           
+  -- The `sq_nonneg` lemmas ensure that the squares of the differences are      
+non-negative, which helps in bounding the sum of cubes.                         
+  nlinarith [sq_nonneg (w - 1), sq_nonneg (x - 1), sq_nonneg (y - 1), sq_nonneg 
+(z - 1),                                                                        
+    sq_nonneg (w - 2), sq_nonneg (x - 2), sq_nonneg (y - 2), sq_nonneg (z - 2), 
+    sq_nonneg (w - 3), sq_nonneg (x - 3), sq_nonneg (y - 3), sq_nonneg (z - 3)] 
+INFO     [3e9b41a5] Response for Proof_00549 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00549",                                                 
+           "time": 0.487054,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [3e9b41a5] Reusing (started) REPL for Proof_00555         manager.py:98
+INFO     [3e9b41a5] Running snippet Proof_00555:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $a,b,c \in \mathbb{R^{+}}$ such that $a+b+c=3$ .Prove the inequality     
+$a^2b+b^2c+c^2a+abc\le 4.$ -/                                                   
+theorem lean_workbook_12355 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)  
+(habc : a + b + c = 3) : a^2 * b + b^2 * c + c^2 * a + a * b * c ≤ 4  := by     
+  /-                                                                            
+  Given \(a, b, c \in \mathbb{R}^+\) such that \(a + b + c = 3\), we need to    
+prove the inequality \(a^2b + b^2c + c^2a + abc \leq 4\).                       
+  1. **Case Analysis**: We perform a case analysis on the relationships between 
+\(a, b,\) and \(c\).                                                            
+  2. **Nonlinear Arithmetic**: Using non-linear arithmetic, we derive the       
+necessary inequalities to satisfy the given conditions.                         
+  -/                                                                            
+  -- Perform case analysis on the relationships between a, b, and c.            
+  cases' le_total a b with h h <;>                                              
+  cases' le_total b c with h' h' <;>                                            
+  cases' le_total c a with h'' h'' <;>                                          
+  -- Use non-linear arithmetic to derive the necessary inequalities.            
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1)]                    
+INFO     [94f95967] Response for Proof_00538 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00538",                                                 
+           "time": 1.102871,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 90.87886301229405,                                      
+             "memory_max": 7176364032.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00579         manager.py:98
+INFO     [94f95967] Running snippet Proof_00579:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Determine if the inequality $2a^{2} + 2b^{2} + 2c^{2} + 9abc \geq 4a + 4b +  
+4c + ab + bc + ca$ holds true for all $a, b, c$ such that $abc = 1$. -/         
+theorem lean_workbook_12435 : ∀ a b c : ℝ, a * b * c = 1 → 2 * a ^ 2 + 2 * b ^ 2
++ 2 * c ^ 2 + 9 * a * b * c ≥ 4 * a + 4 * b + 4 * c + a * b + b * c + c * a  := 
+by                                                                              
+  /-                                                                            
+  We need to determine if the inequality \(2a^2 + 2b^2 + 2c^2 + 9abc \geq 4a +  
+4b + 4c + ab + bc + ca\) holds for all \(a, b, c\) such that \(abc = 1\). We    
+will use the non-linear arithmetic (nlinarith) tactic to verify this inequality.
+The tactic will check the inequality by considering the non-negativity of       
+various squared terms involving \(a, b, c\) and their products.                 
+  -/                                                                            
+  -- Introduce the variables a, b, c and the hypothesis h that abc = 1.         
+  intro a b c h                                                                 
+  -- Use nlinarith to verify the inequality by considering the non-negativity of
+various squared terms.                                                          
+  nlinarith [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a),           
+    sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (c - 1),                    
+    sq_nonneg (a + b), sq_nonneg (b + c), sq_nonneg (c + a),                    
+    sq_nonneg (a + 1), sq_nonneg (b + 1), sq_nonneg (c + 1)]                    
+INFO     [94f95967] Response for Proof_00579 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00579",                                                 
+           "time": 0.983022,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 97.8814216572673,                                       
+             "memory_max": 7216377856.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00592         manager.py:98
+INFO     [94f95967] Running snippet Proof_00592:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Prove that $ab+ac+ad+bc+bd+cd-abc-abd-acd-bcd <= \frac{5}{16}$ given $a, b,  
+c, d$ are positive real numbers such that $a + b + c + d = 1$. -/               
+theorem lean_workbook_12487 (a b c d : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)
+(hd : 0 < d) (hab : a + b + c + d = 1) : a * b + a * c + a * d + b * c + b * d +
+c * d - a * b * c - a * b * d - a * c * d - b * c * d ≤ 5 / 16  := by           
+  /-                                                                            
+  Given positive real numbers \(a, b, c, d\) such that \(a + b + c + d = 1\), we
+need to prove that:                                                             
+  \[ ab + ac + ad + bc + bd + cd - abc - abd - acd - bcd \leq \frac{5}{16} \]   
+  To prove this, we use the non-linear arithmetic (nlinarith) tactic, which     
+simplifies the expression by considering the non-negativity of squares and other
+algebraic properties.                                                           
+  -/                                                                            
+  -- Use non-linear arithmetic to simplify the expression by considering the    
+non-negativity of squares and other algebraic properties.                       
+  nlinarith [sq_nonneg (a - 1 / 4), sq_nonneg (b - 1 / 4), sq_nonneg (c - 1 /   
+4), sq_nonneg (d - 1 / 4),                                                      
+    sq_nonneg (a - b), sq_nonneg (a - c), sq_nonneg (a - d), sq_nonneg (b - c), 
+sq_nonneg (b - d),                                                              
+    sq_nonneg (c - d)]                                                          
+INFO     [94f95967] Response for Proof_00592 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00592",                                                 
+           "time": 1.020247,                                                    
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 96.84849950530332,                                      
+             "memory_max": 7241195520.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     → request                                                   main.py:113
+INFO     # Free = 1 | # Busy = 1 | # Max = 2                       manager.py:87
+INFO     [94f95967] Reusing (started) REPL for Proof_00619         manager.py:98
+INFO     [94f95967] Running snippet Proof_00619:                      repl.py:54
+set_option maxHeartbeats 0                                                      
+                                                                                
+open BigOperators Real Nat Topology Rat                                         
+                                                                                
+/- Let $x,y,z>0,x^2+y^2+z^2+xyz=4$ ,prove that: $2.\frac{1}{y}+\frac{1}{x} \geq 
+1+z$ -/                                                                         
+theorem lean_workbook_1259 (x y z : ℝ) (hx : 0 < x) (hy : 0 < y) (hz : 0 < z) (h
+: x^2 + y^2 + z^2 + x * y * z = 4) : 2 / y + 1 / x ≥ 1 + z  := by               
+  /-                                                                            
+  Given \( x, y, z > 0 \) and \( x^2 + y^2 + z^2 + xyz = 4 \), we need to prove 
+that \( 2 \cdot \frac{1}{y} + \frac{1}{x} \geq 1 + z \).                        
+  1. Start by simplifying the expression using algebraic identities.            
+  2. Use the fact that \( x, y, z > 0 \) to clear denominators by multiplying   
+through by \( xyz \).                                                           
+  3. Apply the non-negativity of squares to derive inequalities that can be     
+combined to prove the desired result.                                           
+  -/                                                                            
+  -- Simplify the expression by clearing denominators using the fact that x, y, 
+z are positive.                                                                 
+  field_simp [hx, hy, hz, h]                                                    
+  -- Use the non-negativity of squares to derive useful inequalities.           
+  (first | rw [div_le_div_iff₀] | rw [le_div_iff₀] | rw [div_le_iff₀] | skip)   
+<;>                                                                             
+    nlinarith [sq_nonneg (x + y + z), sq_nonneg (x - y), sq_nonneg (y - z),     
+sq_nonneg (z - x),                                                              
+    sq_nonneg (x + y - 2), sq_nonneg (y + z - 2), sq_nonneg (z + x - 2)]        
+INFO     [3e9b41a5] Response for Proof_00555 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00555",                                                 
+           "time": 2.5159,                                                      
+           "response": {},                                                      
+           "diagnostics": {                                                     
+             "repl_uuid": "3e9b41a5-90e1-4416-9c26-5d983cdb7b95",               
+             "cpu_max": 99.84328418343684,                                      
+             "memory_max": 7259693056.0                                         
+           }                                                                    
+         }                                                                      
+INFO     [3e9b41a5] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43190 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     [94f95967] Response for Proof_00619 body →                 check.py:168
+         {                                                                      
+           "id": "Proof_00619",                                                 
+           "time": 0.333538,                                                    
+           "response": {                                                        
+             "messages": [                                                      
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 10,                                                  
+                   "column": 66                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 10,                                                  
+                   "column": 68                                                 
+                 },                                                             
+                 "data": "unused variable `hz`\n\nNote: This linter             
+         can be disabled with `set_option linter.unusedVariables                
+         false`"                                                                
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 20,                                                  
+                   "column": 78                                                 
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 20,                                                  
+                   "column": 81                                                 
+                 },                                                             
+                 "data": "Used `tac1 <;> tac2` where `(tac1; tac2)`             
+         would suffice\n\nNote: This linter can be disabled with                
+         `set_option linter.unnecessarySeqFocus false`"                         
+               },                                                               
+               {                                                                
+                 "severity": "warning",                                         
+                 "pos": {                                                       
+                   "line": 20,                                                  
+                   "column": 2                                                  
+                 },                                                             
+                 "endPos": {                                                    
+                   "line": 20,                                                  
+                   "column": 77                                                 
+                 },                                                             
+                 "data": "'(first\n  | rw \n  | rw \n  | rw \n  |               
+         skip)' tactic does nothing\n\nNote: This linter can be                 
+         disabled with `set_option linter.unusedTactic false`"                  
+               }                                                                
+             ]                                                                  
+           },                                                                   
+           "diagnostics": {                                                     
+             "repl_uuid": "94f95967-a750-4607-80c3-5ad5fcf53133",               
+             "cpu_max": 0.0,                                                    
+             "memory_max": 0.0                                                  
+           }                                                                    
+         }                                                                      
+INFO     [94f95967] Released!                                     manager.py:165
+INFO     ← response                                                  main.py:115
+INFO     127.0.0.1:43192 - "POST /api/check HTTP/1.1" 200       __init__.py:1737
+INFO     Shutting down                                          __init__.py:1737
+INFO     Waiting for application shutdown.                      __init__.py:1737
+INFO     Cleaning up REPL manager...                              manager.py:179
+INFO     REPL manager cleaned up!                                 manager.py:188
+INFO     Disconnected from database                                   main.py:75
+INFO     Closing REPL 3e9b41a5                                       repl.py:405
+INFO     Closing REPL 94f95967                                       repl.py:405
+INFO     Application shutdown complete.                         __init__.py:1737
+INFO     Finished server process [22585]                        __init__.py:1737

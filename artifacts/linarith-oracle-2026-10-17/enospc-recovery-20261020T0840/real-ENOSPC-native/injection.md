@@ -1,0 +1,1 @@
+The error-record path was a temporary symlink to /dev/full during the real source-native I/O-failure probe. Its failed writes produced no file bytes. The fixture symlink is removed after completion; terminal.json retains the original sampling error and fault-result.json retains actual task cancellation/retirement evidence.

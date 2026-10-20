@@ -1,0 +1,37 @@
+{
+  "scope": "Actual /dev/full flush/error-record failures plus real owned child termination; not Lean workload qualification or performance.",
+  "observations": [
+    {
+      "version": "published_before_fix",
+      "both_sample_and_error_record_ENOSPC": false,
+      "real_errno28_in_original_error": true,
+      "stop_callback_executed": true,
+      "real_child_exitcode": -15,
+      "escaped_error": null
+    },
+    {
+      "version": "published_before_fix",
+      "both_sample_and_error_record_ENOSPC": true,
+      "real_errno28_in_original_error": true,
+      "stop_callback_executed": false,
+      "real_child_exitcode": -15,
+      "escaped_error": "[Errno 28] No space left on device"
+    },
+    {
+      "version": "fixed",
+      "both_sample_and_error_record_ENOSPC": false,
+      "real_errno28_in_original_error": true,
+      "stop_callback_executed": true,
+      "real_child_exitcode": -15,
+      "escaped_error": null
+    },
+    {
+      "version": "fixed",
+      "both_sample_and_error_record_ENOSPC": true,
+      "real_errno28_in_original_error": true,
+      "stop_callback_executed": true,
+      "real_child_exitcode": -15,
+      "escaped_error": null
+    }
+  ]
+}
