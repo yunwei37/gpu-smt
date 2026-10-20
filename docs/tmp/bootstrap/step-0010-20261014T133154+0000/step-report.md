@@ -5791,7 +5791,7 @@ of repeating an obsolete all-new-captures instruction. No new author question,
 rule, parameter or experiment is introduced.
 
 
-## 2026-10-20T05:35Z — full miniF2F prefix baseline closes
+## 2026-10-20T05:32:12Z — publish the closed full miniF2F prefix baseline
 
 EXPERIMENT_GATE: consume the finished paired7808originals, every result and
 lifecycle once. [Full result self-review](../../../../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md)
@@ -5826,7 +5826,7 @@ plan/review and actual24real-source preflight, not a new losing solver grid.
 The old unsafe/incomplete queues remain stopped and no delegate is created.
 
 
-## 2026-10-20T05:40Z — corrected arithmetic new-budget preflight closes
+## 2026-10-20T05:32:59Z — corrected arithmetic new-budget preflight closes
 
 EXPERIMENT_GATE admits the existing corrected arithmetic composition's
 whole-population service generalization under RQ4.
