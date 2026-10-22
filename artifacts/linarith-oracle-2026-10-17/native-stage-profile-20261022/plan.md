@@ -33,3 +33,24 @@ Positive engagement permits only a same-plan own-denominator diagnostic on
 the original1000after cost/coverage review; weak or uncovered preflight
 requires repair/explicit missing evidence, not a fabricated bound.
 No GPU/project closure, Agent, new service/schedule or independent audit.
+
+## Qualified follow-through: native helper partition
+
+The complete1000pair does not exclude1.5x and reveals999.36s accumulated
+LPwrapper wall. Reuse existing native phase guards and original frozen hybrid
+algorithm rather than substitute the race solver. Opt-in reference diagnostic
+mode selects hybrid::exact_repair/produce_certificate_hybrid in the existing
+daemon; default race mode is untouched. Numeric phase records have a
+source-owned outer request and inner FPpacking/solve,exactrepair/verification,
+exactfallback spans. Nested stages are unioned/exclusively attributed, never
+summed as independent removed work. PureLP omits IPC, repair and proof checks.
+Core source equality after removing guard/provenance-only changes is recorded.
+
+One sequential native build under the existing sampled48GiB parent monitor
+and24GiB compilerAS begins only after both1000cells retire. Real24on/off
+plus rejected8 must match original reference raw responses and show paired
+phase/source/call coverage before any further1000 diagnostic. Off/on uses
+its own helper/clock and is not silently equated to the frozen binary.
+Record instrumentation overhead, parse/context/logging, shape gaps and
+potential stock fallback missing coverage. No new solver tuning/service,
+second full group, GPUclosure, experiment budget or outside agent.

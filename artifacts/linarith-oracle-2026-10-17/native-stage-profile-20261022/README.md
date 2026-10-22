@@ -35,3 +35,9 @@ pair:1448.917480465/1450.783580374s,992complete/8reject and identical raw
 responses. LPwrapper999.359174s/products234.128256s are overlapping wrapper
 costs, not a strict GPU ceiling. GPU route remains open; pure native LP/helper
 partition is the next empirical boundary. Both cells retired without leftovers.
+
+[Native-helper real qualification](reference-result-review.md) now separates
+FP solve and expensive exact fallback under the frozen hybrid algorithm;
+[core comparison](native-helper-algorithm-comparison.json) and all actual
+24/8closed raw records are retained. Next original1000own-clock helper profile
+is admitted after identical native outcomes/rawresponses and full retirement.

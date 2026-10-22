@@ -396,3 +396,9 @@ uses an IO.Ref to survive Lean transactional state restoration. The same
 native probe/restricted/full/fallback algorithm and existing frozen build
 remain. Default-off branches have real24qualification, not a zero-cost claim.
 [Actual data, failed first tag, scope and command](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/preflight-result-review.md).
+
+The opt-in GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC=1 mode of the existing native
+daemon selects the frozen hybrid/repair functions for phase attribution;
+default race behavior is unchanged. Existing numeric phase guards gain a
+source-owned outer request. [Real24/8qualification](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-result-review.md)
+retains algorithm-source comparison, exact fallback scope and observer costs.

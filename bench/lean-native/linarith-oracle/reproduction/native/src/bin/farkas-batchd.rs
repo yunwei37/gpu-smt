@@ -17,6 +17,7 @@
 
 use farkas_core::tiered::produce_certificate_tiered;
 use farkas_core::race::{exact_repair, produce_certificate_hybrid};
+// Diagnostic reference keeps the frozen hybrid algorithm; default race mode is unchanged.
 use farkas_core::types::parse_request;
 use farkas_core::verify::verify_cert;
 use std::io::{BufRead, Write};
@@ -43,6 +44,8 @@ fn respond(line: &str) -> String {
     {
         return handshake();
     }
+    let reference_diagnostic = std::env::var("GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC").ok().as_deref() == Some("1");
+    let _reference_phase = reference_diagnostic.then(|| farkas_core::phase::Guard::new("native_reference_request"));
     match parse_request(line) {
         None => "{\"error\":\"bad request\"}".to_string(),
         Some((max_var, _)) if max_var > MAX_VAR_CAP => {
@@ -62,11 +65,12 @@ fn respond(line: &str) -> String {
             let support = request.as_ref().and_then(|v| v.get("support")).and_then(|v| v.as_array())
                 .and_then(|xs| xs.iter().map(|x| x.as_u64().map(|x| x as usize)).collect::<Option<Vec<_>>>());
             let repaired = support.as_ref().filter(|xs| xs.iter().all(|&j| j < hyps.len()))
-                .and_then(|xs| exact_repair(&hyps,xs)).filter(|c| verify_cert(&hyps,c));
+                .and_then(|xs| if reference_diagnostic { farkas_core::hybrid::exact_repair(&hyps,xs) } else { exact_repair(&hyps,xs) }).filter(|c| verify_cert(&hyps,c));
             let hybrid = std::env::var("FARKAS_EXTERNAL_CPU_HYBRID").ok().as_deref() == Some("1");
             let support_repaired = repaired.is_some();
             let answer = repaired.or_else(|| if hybrid {
-                produce_certificate_hybrid(&hyps,max_var).0
+                if reference_diagnostic { farkas_core::hybrid::produce_certificate_hybrid(&hyps,max_var).0 }
+                else { produce_certificate_hybrid(&hyps,max_var).0 }
             } else { produce_certificate_tiered(&hyps,max_var) });
             match answer {
             Some(cert) if verify_cert(&hyps, &cert) => {

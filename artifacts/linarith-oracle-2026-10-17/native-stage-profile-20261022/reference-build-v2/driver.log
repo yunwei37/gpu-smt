@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/build-reference-helper.py", line 28, in <module>
+    if z.returncode:raise RuntimeError((z.stdout+z.stderr)[-5000:])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: error: no matching package named `dashu-int` found
+location searched: crates.io index
+required by package `farkas-core v0.1.0 (/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native)`
+note: offline mode (via `--offline`) can sometimes cause surprising resolution failures
+help: if this error is too confusing you may wish to retry without `--offline`
+

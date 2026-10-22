@@ -41,7 +41,7 @@ linearization. Slowest10% (100IDs,98complete/2reject) has1322.364939/
 ranked IDs, not isolated tail clocks or a GPU tail improvement.
 
 All failures and raw outputs/memory are preserved. Native/profile sampled
-peak RSS15.431337/15.575276GiB,max2liveREPLs,0watchdog kills/errors,no
+peak RSS15.431351/15.575275GiB,max2liveREPLs,0watchdog kills/errors,no
 owned live descendants after cleanup. The monitor samples every second;
 it is not a kernel-hard RSS quota. Closed plain logs are losslessly gzipped
 with byte-equal roundtrip receipts; existing compressed stage logs are kept.

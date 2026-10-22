@@ -24,8 +24,10 @@ impl Guard{
  pub fn new(stage:&'static str)->Self{
   let Ok(path)=std::env::var("GPU_ARITHMETIC_NUMERIC_PHASE_LOG")else{return Self{data:None}};
   let wall=ns(1);let cpu=ns(3);
-  let row=serde_json::json!({"event":"begin","pid":std::process::id(),"tid":unsafe{gettid()},"id":SEQ.fetch_add(1,Ordering::Relaxed),
-   "stage":stage,"call_id":crate::race::context()["call_id"],"wall_ns":wall,"thread_cpu_ns":cpu});
+  let context=crate::race::context();
+  let mut row=serde_json::json!({"event":"begin","pid":std::process::id(),"tid":unsafe{gettid()},"id":SEQ.fetch_add(1,Ordering::Relaxed),
+   "stage":stage,"call_id":context["call_id"],"wall_ns":wall,"thread_cpu_ns":cpu});
+  if stage=="native_reference_request"{row["source"]=context["source"].clone();}
   log(&path,row.clone());Self{data:Some((path,row))}
  }
 }

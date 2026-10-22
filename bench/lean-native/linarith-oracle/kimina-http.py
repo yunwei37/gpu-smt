@@ -23,7 +23,8 @@ async def cell(args, method, out, items, build):
                 "GPU_ARITHMETIC_STRONG_PROFILE", "FARKAS_CORPUS_FILE", "FARKAS_COST_FILE",
                 "GPU_ARITHMETIC_NUMERIC_PHASE_LOG", "GPU_ARITHMETIC_RACE_CPU_ONLY",
                 "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING",
-                "GPU_ARITHMETIC_COST_TIMING", "GPU_SMT_OMEGA_CONTROL_LOG"]:
+                "GPU_ARITHMETIC_COST_TIMING", "GPU_SMT_OMEGA_CONTROL_LOG",
+                "GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC"]:
         env.pop(key, None)
     env.update(PATH=str(Path(build["sdk"])/"bin")+os.pathsep+env["PATH"],
         LEAN_PATH=build["lean_path"], LEAN_SRC_PATH=build["lean_src_path"],
@@ -65,6 +66,16 @@ async def cell(args, method, out, items, build):
         env.update(GPU_ARITHMETIC_COST_TIMING="1",
                    FARKAS_COST_FILE=str(out/"native-stages.jsonl.gz"),
                    GPU_SMT_OMEGA_CONTROL_LOG=str(out/"omega-control.jsonl"))
+    reference_diagnostic = bool(getattr(args, "reference_diagnostic", False))
+    reference_phases = bool(getattr(args, "reference_phases", False))
+    if reference_diagnostic:
+        if method != "native":
+            raise ValueError("Reference algorithm diagnostic is native-only")
+        env["GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC"] = "1"
+    if reference_phases:
+        if not reference_diagnostic:
+            raise ValueError("Reference phase attribution requires reference algorithm mode")
+        env["GPU_ARITHMETIC_NUMERIC_PHASE_LOG"] = str(out/"native-helper-phases.jsonl")
     if method=="power":
         env.update(FARKAS_NATIVE_BIN=str(args.build/"farkas-batchd"),
             GPU_ARITHMETIC_BATCH="1", GPU_ARITHMETIC_ORACLE=str(args.build/"arithmetic-batchd"),
@@ -91,6 +102,8 @@ async def cell(args, method, out, items, build):
         cost_timing_effective=env.get("GPU_ARITHMETIC_COST_TIMING") == "1",
         cost_timing_log=env.get("FARKAS_COST_FILE"),
         omega_control_log=env.get("GPU_SMT_OMEGA_CONTROL_LOG"),
+        reference_diagnostic=reference_diagnostic, reference_phases=reference_phases,
+        reference_phase_log=env.get("GPU_ARITHMETIC_NUMERIC_PHASE_LOG"),
         native_engine=args.native_engine if method == "native" else None,
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
