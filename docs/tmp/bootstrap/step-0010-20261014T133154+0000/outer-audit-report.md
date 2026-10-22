@@ -3958,3 +3958,6 @@ analysis files are published; activefullrawuntouched. Scientificcontract and
 all4RQremain. Analyzerreadiness/startup are dependencies, not headline
 researchresults. Continuefromrealcompletion, preservefailed/partialcells,
 and do notresumeanothercaptureorAgent. Allauditisself-review.
+
+## 2026-10-22T09:05:55.770661+00:00 — complete own-clock native profile, root self-audit
+Recomputed both closed cells:1000uniqueIDs each, identical native outcomes and raw responses, original8failures preserved. Actual terminal/HTTP/resource checks pass; stage intervals remain within own requests. Inspecting per-source/global overlap rejects additive-wall Amdahl claims. Profile/frozen +0.128793% is one fixed-order/shared-host engagement, not zero-overhead proof. Native LPwrapper vs pure solver and omitted stock/omega/elaboration remain explicit. No strict bound/closure is manufactured; original4RQ/CPU-GPUcriterion and mainline unchanged. All raw closed bytes preserved. No independent reader was used under root-only authority.

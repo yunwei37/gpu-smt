@@ -26,3 +26,12 @@ remain, with1sparent watchdog, individual resource_failure and final reaping.
 
 Full numeric/native shape coverage and GPU contribution remain open.
 All review is self-review by the root thread. No OMP/subagent/original session.
+
+## Complete original1000 result
+
+[Root result review](full-result-review.md), [derived analysis](full-analysis.json)
+and [all source costs](full-source-costs.csv) retain the same-resource own-clock
+pair:1448.917480465/1450.783580374s,992complete/8reject and identical raw
+responses. LPwrapper999.359174s/products234.128256s are overlapping wrapper
+costs, not a strict GPU ceiling. GPU route remains open; pure native LP/helper
+partition is the next empirical boundary. Both cells retired without leftovers.

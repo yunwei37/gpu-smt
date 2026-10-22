@@ -197,3 +197,7 @@ The original1,000diagnostic actually starts2026-10-22T08:15:23Z fromdf26c55:
 Only this one finite group runs. First native source responses and fresh
 owned-tree RSS/max2liveREPLs are observed; the profile pair is not complete.
 Active logs stay unstaged. A complete own-denominator result is still required.
+
+### Native original1000 own-clock phase boundary (2026-10-22)
+
+[Complete protected diagnostic](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/full-result-review.md): frozen1448.917480465s/profile1450.783580374s, all992complete/8reject and fullrawresponses identical. LPwrapper999.359174s, products234.128256s, certificate229.327302s, preprocess105.789579s, linearize107.055237s are accumulated, overlapping stage wall. LP includes IPC/exactrepair/fallback; no pureGPU fraction or strictAmdahl ceiling is inferred. Profile/globalproduct-LPoccupation66.596722% is not removable criticalpath. All sources have arithmetic and/or omega records, but omitted internal work remains unknown. Peak15.575276GiB,max2,0monitorfailures/kills,fully retired. ContinueGPU; next resolve pure-native LP/helper costs using the same algorithm and real qualification.
