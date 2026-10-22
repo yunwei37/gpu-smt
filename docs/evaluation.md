@@ -154,6 +154,14 @@ finds a possible unimplemented DRAT/LRAT/native-check path,not measured
 GPU opportunity.500software-verification records have19toolchains and only
 3explicit reference bv_decide matches;not500GPU-ready attempt streams.
 
+[Closed numerical-path reanalysis](../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/recorded-numerical-result-review.md)
+finds3,041/3,026/3,175decoded HiGHS requests, with known solver timer
+sums15.662/16.096/16.155s and only3/2/2source-owned cross-candidate service
+overlaps. Another2,577/2,615/2,479connections fail JSON decoding and lack
+source/shape ownership;they are not solved LPs or known-zero cost.
+These are completed recorded CPU-path costs,not all native/product/LP
+coverage or a strictAmdahlceiling;no GPU batch/result is inferred.
+
 ## Next decisive work and scientific limits
 
 Use existing full raw evidence to locate remaining expensive work and missing

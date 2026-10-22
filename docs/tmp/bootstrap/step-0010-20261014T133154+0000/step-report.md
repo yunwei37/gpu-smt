@@ -6135,3 +6135,16 @@ audit interpretations. Mainline objective remains the original ambitious
 system, not ordinary CPU compilation. No independent/milestone paper review
 is claimed while all original RQs remain open. No other author's files,
 Workspace/resources, source experiment, scheduler or original session change.
+
+## 2026-10-22T06:56:59.745203+00:00 — existing full CPU numerical-cost follow-through
+EXPERIMENT_GATE remains within the original GPUcost question and reuses all
+three closed population cells. [Numerical result self-review](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/recorded-numerical-result-review.md) separates decoded completed LPs, unknown input/shape connections, caller-thread versus processCPU and exact source-owned service overlap. Known completed HiGHS timer15.662/16.096/16.155s and decoded cross-source overlap3/2/2give no large ready batch. There are2,577/2,615/2,479decode failures with unavailable inputs, not solved LPs or zero unknown CPU. Actual readline/exception source supports cancellation-truncation as a possible cause only, not a universal diagnosis or protocol bug warranting speculative repair.
+
+WRITE_GATE updates only the cost frontier/daily follow-through. Paper already
+states missing all-product/all-LP own-clock coverage, so no unchanged paper
+rebuild or whole writing cycle is fabricated. REVIEW_GATE root self-audit
+checks source joins, phase pairs, unknown denominators and boundary between CPU
+service overlap and GPUbatches. This is supporting evidence for the existing
+RQ4experiment, not another headline, independent audit, strictGPUbound or
+closure. No new capture or process/resources/agent; next missing native/product
+attribution remains explicit. Original scientific contract and criterion hold.

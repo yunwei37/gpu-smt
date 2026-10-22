@@ -3927,3 +3927,14 @@ compiles/rendered/visually inspected;numeric/RQ/reference scope checked.
 No new source claim/independent audit/contribution acceptance. New cost work
 must use all-path ownership/own-clock evidence before admitting another
 mechanism. Self-review and residual outside-audit limitation are explicit.
+
+## 2026-10-22T06:56:59.745203+00:00 — recorded numerical-cost root self-audit
+Direction unchanged. Complete all3closed CPU numerical logs show tiny recorded
+HiGHSsolve cost and only3/2/2decoded source-owned overlaps. Unknown inputs/
+JSONerrors remain explicitly unassigned, not converted to solvedLPs/GPUbatch
+statistics. Phasepair/sourcejoin checks pass. This does not time native/
+cancelled/small/product paths or establish the user-required strictceiling.
+No new kernel, collector, unsupported cancellation diagnosis or GPU/project
+closure. Maintenance propagates current coverage only; paper unchanged.
+Efficiency is reanalysis of existing full data, not a waiting/provenance loop.
+All audit is root self-review with outside-audit limitation retained.

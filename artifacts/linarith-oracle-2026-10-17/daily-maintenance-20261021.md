@@ -53,3 +53,12 @@ solver-only interval remains a component result until its unobserved paths
 are included. The final better-valid-CPU/GPU1.5×criterion is unchanged; this
 CPU population result is not authority for GPU closure or hourly-task deletion.
 No full writing/review loop is repeated to stand in for missing system evidence.
+
+## Follow-through after publication
+The root actually analyzes all three closed numerical service logs and phase
+files, joins every decoded request to its original source and distinguishes
+undecoded connections. Known solver time is15.7–16.2s and source-owned
+cross-candidate overlaps3/2/2, not a large ready batch. Thousands of unknown
+partial/decode records stay unknown. This is a supporting cost boundary,
+not exhaustive all-LP attribution or a reason to close GPU. The analysis is
+published instead of starting another unsupported kernel or full matrix.
