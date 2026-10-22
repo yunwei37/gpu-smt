@@ -21,7 +21,8 @@ def union(xs):
   elif b>end:total+=b-end;end=b
  return total/1e9
 full='full'in sys.argv[1:]
-labels=['reference-full1000']if full else ['reference-frozen24','reference-off24','reference-on24','reference-rejected8']
+shapes='shapes'in sys.argv[1:]
+labels=['reference-full1000']if full else ['reference-shapes24','reference-shapes-rejected8']if shapes else ['reference-frozen24','reference-off24','reference-on24','reference-rejected8']
 reject={'Proof_00710','Proof_12175','Proof_15022','Proof_15224','Proof_16530','Proof_17093','Proof_20359','Proof_25649'}
 expected={label:(ids if full else [i for i in ids if i in reject]if label.endswith('rejected8')else ids[:24])for label in labels}
 cells={};data={};lat={}
@@ -32,7 +33,7 @@ for label in labels:
 reference_label='full-frozen'if full else 'reference-frozen24'
 reference_ids=ids if full else ids[:24]
 ref_t,ref_data,ref_lat=F['closed_cell'](O/reference_label,reference_ids)
-_,negative_data,_=F['closed_cell'](O/'full-frozen',ids)
+_,negative_data,all_ref_lat=F['closed_cell'](O/'full-frozen',ids)
 out={'scope':'Own-clock native reference helper diagnostic; root self-review; no GPU execution or strict upper bound.','conditions':cells,'comparisons':{},'profiles':{}}
 for label in labels:
  ref=negative_data if label.endswith('rejected8')else ref_data
@@ -40,8 +41,9 @@ for label in labels:
   'native_outcome_difference_IDs':[i for i in expected[label]if F['native_outcome'](data[label][i])!=F['native_outcome'](ref[i])],
   'raw_response_difference_IDs':[i for i in expected[label]if data[label][i]['result'].get('response')!=ref[i]['result'].get('response')]}
  if not cells[label]['terminal'].get('reference_phases'):continue
- spans=[];pending={};invalid=[];source_map={};pairs=collections.defaultdict(list)
+ spans=[];pending={};invalid=[];source_map={};pairs=collections.defaultdict(list);matrices=[]
  for x in rows(O/label/'native-helper-phases.jsonl'):
+  if x['event']=='matrix':matrices.append(x);continue
   key=(x['pid'],x['tid'],x['id'])
   if x['event']=='begin':
    if key in pending:raise AssertionError('duplicate begin')
@@ -77,6 +79,29 @@ for label in labels:
    if v['stage']=='exact_repair':
     checks=[z for z in nested if z['stage']=='exact_certificate_verify'and v['a']<=z['a']<=z['b']<=v['b']]
     repair_exclusive+=(v['b']-v['a'])/1e9-union([(z['a'],z['b'])for z in checks])
+ def distribution(values):
+  values=sorted(values)
+  return dict(count=len(values),median=values[len(values)//2]if values else None,p90=values[min(len(values)-1,math.ceil(.9*len(values))-1)]if values else None,p99=values[min(len(values)-1,math.ceil(.99*len(values))-1)]if values else None,max=max(values)if values else None)
+ matrix_unknown=[v for v in matrices if source_map.get((v['pid'],v['call_id']))is None]
+ windows=[]
+ for v in matrices:
+  key=(v['pid'],v['call_id']);rq=requests.get(key)
+  if rq is not None:
+   assert rq['a']<=v['wall_ns']<=rq['b']
+   windows.append((v['wall_ns'],rq['b'],source_map[key],key))
+ overlaps=[];active=[];max_ready=0
+ for a,b,i,key in sorted(windows):
+  active=[x for x in active if x[1]>a]
+  overlaps.extend(dict(first_source=x[2],second_source=i,overlap_seconds=(min(x[1],b)-a)/1e9)for x in active if x[2]!=i)
+  active.append((a,b,i,key));max_ready=max(max_ready,len(active))
+ ranked_tails={}
+ for fraction in(.01,.1):
+  tail_ids=sorted(expected[label],key=lambda i:ref_lat.get(i,all_ref_lat[i]),reverse=True)[:math.ceil(len(expected[label])*fraction)]
+  tt=collections.defaultdict(lambda:[0.,0.,0])
+  for i in tail_ids:
+   for stage,v in sourcecost[i].items():
+    for j in range(3):tt[stage][j]+=v[j]
+  ranked_tails[str(fraction)]=dict(IDs=tail_ids,stage_CPU_wall_count=dict(tt))
  whole=cells[label]['terminal']['whole_lifecycle_seconds']
  out['profiles'][label]=dict(stage_CPU_wall_count=dict(totals),pending_begin_events=list(pending.values()),unmatched_end_events=invalid,
   source_owned_requests=len(requests),profiled_sources=len(sourcecost),unknown_phase_records=len(unknown),phase_records_outside_own_request=len(outside),
@@ -84,14 +109,24 @@ for label in labels:
   exact_repair_wall_excluding_nested_verify_seconds=repair_exclusive,
   request_wall_outside_recorded_inner_stage_union_seconds=residual,own_whole_seconds=whole,
   per_source_stages={i:dict(v)for i,v in sourcecost.items()},
+  frozen_ranked_tails=ranked_tails,
+  actual_FP_matrix_shapes={k:distribution([x[k]for x in matrices])for k in('rows','cols','nnz')},
+  actual_FP_matrix_count=len(matrices),unknown_matrix_sources=len(matrix_unknown),
+  requests_without_packed_FP_matrix=len(requests)-len(matrices),
+  matrix_ready_until_native_answer_cross_source_overlap_pairs=overlaps,
+  maximum_simultaneously_open_matrix_windows=max_ready,
   limitations=['Nested stage sums overlap; exact repair exclusive subtracts nested verification only.',
    'Whole/request wall includes preparation, packing, communication, logging, cancellation and cleanup; no historical rescaling.',
    'Request guard starts after initial context JSON parse and ends before stdout flush; residual is not all IPC.',
    'Non-helper/stock calls, omega and hard-death missing events are not silently pure LP or zero.',
    'Exact fallback includes matrix construction, coefficient conversion and rational cleanup, not only pivot loops.',
-   'No LP shapes are emitted here; no GPU batches or theorem-level speedups are inferred.'])
-name='reference-full-analysis.json'if full else 'reference-preflight-analysis.json'
+   'Shapes include the actual FP normalization row and accumulated matrix nonzeros, not maxVar/tableau dimensions or wire terms.',
+   'Exact fallback shape and per-call nonlinear product provenance remain unavailable.',
+   'Matrix-ready until native-answer overlap is only a hypothetical race window; it includes repair and is not a GPU queue/batch.'])
+name='reference-full-analysis.json'if full else 'reference-shapes-analysis.json'if shapes else 'reference-preflight-analysis.json'
 (O/name).write_text(json.dumps(out,indent=2)+'\n')
 compact={k:v for k,v in out.items()if k!='conditions'}
-for v in compact['profiles'].values():v.pop('per_source_stages',None)
+for v in compact['profiles'].values():
+ v.pop('per_source_stages',None);v.pop('frozen_ranked_tails',None)
+ ov=v.pop('matrix_ready_until_native_answer_cross_source_overlap_pairs',[]);v['hypothetical_cross_source_overlap_pair_count']=len(ov)
 print(json.dumps(compact,indent=2))

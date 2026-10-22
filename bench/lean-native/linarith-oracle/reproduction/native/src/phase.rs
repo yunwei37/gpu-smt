@@ -37,3 +37,13 @@ impl Drop for Guard{
  }}
 }
 pub fn cpu_ns(t:&TimeVal)->u128{t.sec as u128*1_000_000_000+t.usec as u128*1000}
+
+// Actual packed FP64 matrix after duplicate-column accumulation and normalization.
+// Count only when the existing optional phase log is enabled; charge it to packing.
+pub fn matrix(stage:&'static str, rows:usize, cols:usize, values:&[f64]){
+ let Ok(path)=std::env::var("GPU_ARITHMETIC_NUMERIC_PHASE_LOG")else{return};
+ let context=crate::race::context();
+ log(&path,serde_json::json!({"event":"matrix","pid":std::process::id(),"tid":unsafe{gettid()},
+  "stage":stage,"call_id":context["call_id"],"rows":rows,"cols":cols,
+  "nnz":values.iter().filter(|&&x|x!=0.0).count(),"wall_ns":ns(1)}));
+}

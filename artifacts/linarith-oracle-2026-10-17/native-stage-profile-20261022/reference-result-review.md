@@ -47,3 +47,30 @@ denominator to rescale phases into. Every full outcome/rawresponse, failures,
 matched frozen-ranked tails, source/call intervals and all resource/cleanup
 costs must be checked. Preserve missing stock/omega/elaboration and shapes.
 No strict Amdahl/GPU/project closure or independent audit is claimed.
+
+## Exact packed matrix dimensions, before the single full helper capture
+
+The final diagnostic additionally emits actual packedFP rows/columns/nnz
+after coefficient accumulation and the normalization row. Counting is only
+under the existing phase-log flag and charged to packing/whole time; it does
+not call wire-term counts or maxVar the actual matrix shape. Original core
+algorithm comparison is refreshed with only the explicit diagnostic matrix
+call excluded, never numerical operations.
+
+A fresh separatev4binary and real24+8qualification preserve all verdicts and
+complete raw responses,0unmatched phases/unknown matrix sources, no leaks or
+monitor errors/kills. All231/102native requests have packedFP shapes here.
+24whole39.044342458s, FP0.673143s/exactfallback18.487147s;8whole19.899706409s,
+FP0.252129s/exactfallback1.657006s.24median shape36rows/189columns/890nnz,
+max483/3160/21512. Rejected8median46/167/776,max156/650/3226. Per-call nonlinear
+product provenance and exactfallback tableau shapes remain unknown.
+
+The24cell has52cross-source pairs overlapping between matrix-ready and native
+answer (max2open); rejected8has11. These are hypothetical CPU/GPU race
+windows that include repair, not recorded GPUbatches or freely usable GPU
+inputs. No batch speedup is inferred. The closed shape-aware reader retains
+individual phase attribution, matched tails, source joins and all raw logs.
+
+This finite addition avoids repeating the original1000diagnostic to recover
+missing actual shapes later. No new solver tuning or full matrix; proceed
+with the predeclared one1000same-resource own-clock capture.

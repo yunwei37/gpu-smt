@@ -2,8 +2,8 @@ from pathlib import Path
 import os,resource,importlib.util,subprocess,json,datetime,shutil
 R=Path('/workspaces/repository');O=R/'artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022'
 B=R/'bench/lean-native/linarith-oracle/reproduction/native'
-out=Path('/tmp/gpu-smt-native-reference-profile-20261022-v3');out.mkdir(exist_ok=False)
-logs=O/'reference-build-v3';logs.mkdir(exist_ok=False)
+out=Path('/tmp/gpu-smt-native-reference-profile-20261022-v4');out.mkdir(exist_ok=False)
+logs=O/'reference-build-v4';logs.mkdir(exist_ok=False)
 os.sched_setaffinity(0,{8,9,10,11})
 resource.setrlimit(resource.RLIMIT_AS,(24*1024**3,24*1024**3))
 resource.setrlimit(resource.RLIMIT_CORE,(0,0))

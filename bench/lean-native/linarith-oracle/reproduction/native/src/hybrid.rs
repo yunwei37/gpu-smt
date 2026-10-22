@@ -163,6 +163,7 @@ fn build_fp_lp(hyps: &[Hyp]) -> Option<FpLp> {
     }
     let mut b = vec![0.0f64; nrows];
     b[norm] = 1.0;
+    crate::phase::matrix("lp_float_matrix", nrows, n, &a);
     Some(FpLp {
         nrows,
         ncols: n,
