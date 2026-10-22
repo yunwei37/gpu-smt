@@ -3949,3 +3949,12 @@ Allnativeoutputs/resourcesunchangedatthisqualificationpoint;2actualREPLs/
 24GiBeach/48GiBtotal, no monitorfailureorownedleftovers. Concurrentoverbroad
 wrapperoccupancydoesnotproveGPUimpossibility. Original1000diagnosticisnext;
 notanotherwhole29750matrix. Allreviewisself-review,notindependentaudit.
+
+## 2026-10-22T08:21:40.029846+00:00 — original1000diagnostic startup, root self-audit
+Verified root-owned PID/birth, realoriginal requests and fresh aggregateRSS,
+not just successfulPopen. Safe2×24GiB/max48GiBsampledpointunchanged; no complete
+result, fixedpointbenchmarkratio orGPUceiling. Only closed launch/source/
+analysis files are published; activefullrawuntouched. Scientificcontract and
+all4RQremain. Analyzerreadiness/startup are dependencies, not headline
+researchresults. Continuefromrealcompletion, preservefailed/partialcells,
+and do notresumeanothercaptureorAgent. Allauditisself-review.

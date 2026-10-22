@@ -191,3 +191,9 @@ are not pure solver time or removable critical-path fractions.
 The original1,000own-denominator diagnostic is admitted only after this
 qualification, with source2/live2/24each/48totalRSS/fourCPU8–11unchanged.
 No full-population/GPU result or strictceiling is supplied by the preflight.
+
+The original1,000diagnostic actually starts2026-10-22T08:15:23Z fromdf26c55:
+[launch and first real requests](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/README.md).
+Only this one finite group runs. First native source responses and fresh
+owned-tree RSS/max2liveREPLs are observed; the profile pair is not complete.
+Active logs stay unstaged. A complete own-denominator result is still required.

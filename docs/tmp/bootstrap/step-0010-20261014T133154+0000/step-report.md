@@ -6173,3 +6173,23 @@ termelaboration/omega/configured/indirect/hard-killpaths prevent a strictceiling
 NoGPU/projectclosure/newAgent/Workspace/service/scheduler. This completed
 qualification boundary is committed/pushed before the predeclared original1000
 frozen/profilediagnosticpair, with the same safe resources and own denominators.
+
+## 2026-10-22T08:21:40.029846+00:00 — qualified original1000diagnostic actually started
+df26c55qualification/source/failedrawboundary is actually pushed. The sole
+finite frozen-native/profile-on pair starts08:15:23Z, PID213244/birth1792656923.12,
+with unchanged original1000/order and source2/live2/24each/total48sampledRSS/
+fourCPU8–11. [Actual launch/start evidence](../../../../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/README.md).
+At08:19:04Z actual133real-sourceHTTPrequests are observed and fresh watchdog
+sampleage0.031s,totalownedRSS14.667GB,max2liveREPLs; no terminal yet.
+No fullphase result, GPUexecution or speedup is inferred from startup.
+No other fullgroup, original unsafe collector or Agent is resumed.
+
+The closed-pair analysis is prepared separately; active files are not read as
+complete or staged. It retains every original/native failure, profile/native
+status differences, source attribution, bounds/clock checks, ownprofile
+denominator and same-frozen-ranked1%/10%tails. Missing paths remain unknown;
+concurrentenvelope sensitivity is not a strictAmdahlceiling. WRITE_GATE updates
+only activefrontier/detailed diagnostic, not unchangedpaperclaims or a new
+fullwriting/buildcycle. REVIEW_GATE root self-audit preserves all4RQ and
+originalCPU/GPUcriterion, no independent audit/OSDIclaim. Next empirical
+boundary is actual completepair; no minute-by-minute empty waits.
