@@ -3967,3 +3967,6 @@ Source comparison and releasebuild confirm opt-in reference hybrid uses frozen c
 
 ## 2026-10-22T09:19:34.394662+00:00 — shaped native diagnostic self-review
 Actualmatrixcounts include normalization and duplicate accumulation; no wirecount/maxVar substitutes. Defaultdisabled path adds no matrixcountscan. Qualified24/8samefullresponses, allnumeric/sourcejoins, actualownedbudget/retirement checked. No countofCPUoverlap claimedasGPUbatch. Finalv4binaryisolatedfromfrozenpaths; finite1000ownclockadmission holds. Noagents/independence/closure.
+
+## 2026-10-22T09:22:53.744281+00:00 — root startup/closed-reader audit
+Single owned parent/source2/live2/fourCPU resource receipt and v4referencehelper actualexecution checked; startupnotdelivery. New reader refuses nonterminalcapture and joins Lean/helper ownclock; no historicalphaserescaling, no unknownworkzero. Rawactive files remain unstaged. Completedparts/sourceaudits remain onmain; nextboundary is actualterminal1000result, no repeatedminutechecks.

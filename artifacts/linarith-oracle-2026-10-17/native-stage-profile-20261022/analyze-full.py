@@ -1,6 +1,6 @@
 """Analyze only the complete original1000 diagnostic pair; no cross-run phase rescaling."""
 from pathlib import Path
-import json,gzip,runpy,collections,math,csv
+import json,gzip,runpy,collections,math,csv,sys
 O=Path(__file__).resolve().parent;R=O.parents[2]
 F=runpy.run_path(str(O.parent/'kimina-full29750-budgeted-20261019/analyze.py'))
 H=F['H']
@@ -23,14 +23,16 @@ for a in items:bybody[body(a['code'])].append(a['proof_id'])
 def ident(source):
  matches=bybody.get(body(source),[])
  return matches[0]if len(matches)==1 else None
-labels=['full-frozen','full-profile-v2']
+profile_label=sys.argv[1]if len(sys.argv)>1 else 'full-profile-v2'
+assert profile_label in('full-profile-v2','reference-full1000')
+labels=['full-frozen',profile_label]
 for label in labels:
  p=O/label/'terminal.json'
  if not p.exists()or json.loads(p.read_text())['state']!='complete':
   raise SystemExit('Both original1000cells must be terminal complete; no live file or partial prefix is analyzed.')
 cells={};data={};lat={}
 for label in labels:cells[label],data[label],lat[label]=F['closed_cell'](O/label,expected)
-profile=O/'full-profile-v2';terminal=cells['full-profile-v2']['terminal']
+profile=O/profile_label;terminal=cells[profile_label]['terminal']
 intervals=collections.defaultdict(list);stages=collections.defaultdict(lambda:[0.,0.]);source_events=collections.Counter()
 source_stages=collections.defaultdict(lambda:collections.defaultdict(lambda:[0.,0.]));outcomes=collections.Counter();unknown=[]
 http={};pending={}
@@ -95,8 +97,8 @@ out=dict(scope='Complete original1000 native-algorithm diagnostic. Root self-rev
  'Term elaboration, omega, configured or indirect stock calls and finally lost to hard death are not exhaustively covered.',
  'Concurrent phase/HTTP sums are not isolated CPU or removable wall.',
  'Single fixed-order/shared-host pair does not establish zero overhead or GPU acceleration.'])
-(O/'full-analysis.json').write_text(json.dumps(out,indent=2)+'\n')
-with(O/'full-source-costs.csv').open('w',newline='')as z:
+(O/('full-analysis.json'if profile_label=='full-profile-v2'else 'reference-stage-analysis.json')).write_text(json.dumps(out,indent=2)+'\n')
+with(O/('full-source-costs.csv'if profile_label=='full-profile-v2'else 'reference-stage-source-costs.csv')).open('w',newline='')as z:
  w=csv.writer(z);w.writerow(['proof_id','frozen_outcome','profile_outcome','frozen_HTTP_seconds','profile_HTTP_seconds','profile_events','omega_events','product_LP_interval_union_seconds','profile_stage_CPU_wall_seconds'])
  for i in expected:w.writerow([i,F['native_outcome'](data[labels[0]][i]),F['native_outcome'](data[labels[1]][i]),lat[labels[0]][i],lat[labels[1]][i],source_events[i],omega[i],union(intervals[i])if i in source_events else None,json.dumps(dict(source_stages[i]))])
 print(json.dumps({k:v for k,v in out.items()if k not in('conditions','native_ranked_matched_tails','limitations','sensitivity_scope')},indent=2))

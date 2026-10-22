@@ -41,3 +41,18 @@ FP solve and expensive exact fallback under the frozen hybrid algorithm;
 [core comparison](native-helper-algorithm-comparison.json) and all actual
 24/8closed raw records are retained. Next original1000own-clock helper profile
 is admitted after identical native outcomes/rawresponses and full retirement.
+
+## Active same-clock native-helper1000 follow-through
+
+Qualifiedv4 starts2026-10-22T09:19:36Z,PID215215/birth1792660776.18,
+one group/source2/live2/24each/48total sampledRSS/fourCPU8–11.
+[Launch](reference-full-launch.json) and
+[startup/resource receipt](reference-full-start-observation.json) are static
+observations, not full results. Active raw files are deliberately not staged.
+After terminal completion run analyze-reference-combined.py once: it checks
+both own-clock Lean/native stages, exact FPmatrix shapes, matched tails and
+native helper requests inside their own LeanLP wrappers; no old timing
+rescale or additive-overlap GPU ceiling. Preserve stock/omega/product-provenance
+gaps. Then review outcomes/allrawresponses, resources, tails and decisive GPU
+support-search opportunity; continue GPU unless an applicable bound excludes
+the original1.5xcriterion. No minute polling or second full group.
