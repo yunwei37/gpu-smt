@@ -203,7 +203,7 @@ memory/placement/cross-context behavior and real both-family streams remain open
 Modern native-compilation, HiGHS/preprocessing, original-oracle product and
 producer4.9 GC whole-source matrices remain incomplete. Native exact arithmetic
 and composed Fast/hybrid product comparisons each finish all eight conditions;
-the [evaluation authority](evaluation.md#complete-cpu-observations-and-active-formal-acquisitions)
+the [evaluation authority](evaluation.md#current-arithmetic-result)
 owns their outcome qualifications and current result scopes. The fresh repaired SMT matrix has completed
 its repeated source-cohort and resource comparisons; its final review closes
 that tested constructor. Complete service/RQ coverage remains open. Old

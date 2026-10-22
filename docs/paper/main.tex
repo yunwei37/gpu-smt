@@ -320,7 +320,7 @@ The arithmetic runtime is Lean 4.27.0 with Mathlib a3a10db0, and the robust
 support controls use HiGHS 1.15.1 and cuOpt 26.10.0 with CUDA 12.9.
 The RTX 5090 is shared through device-plugin time slicing with another
 Workspace, without a fixed half-device allocation.
-The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process resident set size (RSS) every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is still collecting and supplies no completed population ratio. Its clocks remain separate from the earlier resource points.
+The new full-population arithmetic protocol uses two source requests and at most two live REPLs, including warm, starting and retiring processes. Each REPL has a 24\,GiB address-space limit. An independent parent samples total owned-process resident set size (RSS) every second against a 48\,GiB budget and records any largest-REPL termination as a resource failure. This sampled response is not a kernel-enforced RSS ceiling. All methods share four eligible CPUs 8--11. The real 24-source preflight has completed. The six-cell comparison over all 29,750 original sources is complete. Its observed whole-time ratio is $1.10627\times$, with two native rejection-to-completion changes per pair; the full outcomes and resource point are reported below. Its clocks remain separate from the earlier resource points.
 
 The earlier external cuOpt server can execute on CPUs 0--23 while clients use 12--15,
 so that follow-up does not establish the equal-resource frontier of RQ3. Its client CPU and memory observations also exclude the external
@@ -802,6 +802,61 @@ The earlier complete 29,750-source acquisition uses its frozen older
 build, so it does not establish generalization of this new implementation.
 This evidence supports an arithmetic implementation improvement, not a new
 solver, demonstrated GPU benefit or the complete service contribution.
+
+\paragraph{Complete original population.}
+The new six-cell service comparison returns all 29,750 original sources in
+every cell at source concurrency two, at most two live REPLs, 24\,GiB per
+REPL, 48\,GiB aggregate sampled RSS and four CPUs 8--11.
+Table~\ref{tab:full-goedel-power} reports all three alternating pairs.
+The ratio of summed whole times is $1.10627\times$, or 9.61\% less elapsed.
+Preparation, imports, SDK waiting, fallback and process retirement are charged.
+Shared input materialization costs 0.330 seconds separately.
+This complete population supports a modest CPU composition improvement;
+the selected heavy-cohort magnitude does not transfer to all originals.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+Pair & Native (s) & CPU oracle (s) & Ratio \\
+\midrule
+1 &18,584.96&16,661.35&1.11545\\
+2 &18,478.26&16,912.11&1.09260\\
+3 &18,608.55&16,750.33&1.11094\\
+\bottomrule
+\end{tabular}
+\caption{Complete current-resource Goedel population. Every cell returns
+29,750 sources; orders are native--oracle, oracle--native and
+native--oracle. Two native rejections become oracle completions in each
+pair. Ratios are descriptive observations with changed tactic coverage,
+not transparent outcome equivalence or a GPU result.}
+\label{tab:full-goedel-power}
+\end{table}
+
+Each native cell has 27,334 complete, 2,376 rejected and 40 timeout outcomes;
+the oracle has 27,336 complete, 2,374 rejected and the same 40 timeouts.
+The only changed source IDs, Proof\_20758 and Proof\_29379, have native
+\texttt{linarith} search failures but complete through the oracle path with
+native checking. Both released originals already record arithmetic-search
+failure. No source is removed, and no resource failure or sorry-bearing
+incomplete result occurs. These outcomes prevent an unchanged-output claim.
+Maximum sampled total RSS is 21.17\,GiB, with at most two live REPLs,
+no watchdog kill or monitor error, and no owned descendant left at retirement.
+
+Within the same full cells, the original selected 1,000 IDs have overlapping
+HTTP-envelope-sum ratios of 1.75--1.83, while the remaining 28,750 have
+1.06--1.08. This is a within-population comparison, not a new subset
+lifecycle measurement or a pooling of historical clocks.
+The same-native-ranked slowest 1\% have envelope-sum ratios of only
+1.024--1.038; the slowest 10\% have 1.083--1.104.
+The 40 timeouts contribute about 12,002 overlapping HTTP seconds per cell.
+The oracle has longer envelopes on 4,106 IDs in all three pairs.
+These spans include queueing and overlap, so they neither identify removable
+CPU work nor establish a GPU Amdahl ceiling.
+Three shared-host observations are not a confidence interval.
+No GPU executes in this matrix; the missing all-product/all-LP strong-baseline
+wall attribution and the original GPU continuation question remain open.
 
 \paragraph{Official service transfer.}
 The complete three-method, three-block original Goedel HTTP acquisition

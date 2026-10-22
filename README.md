@@ -28,7 +28,21 @@ become kernel unknown-constant errors after cache hits. This integration has
 neither an outcome-preserving speedup nor a new systems contribution.
 [Complete paired results, all failures and resource evidence](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
 
-## Current result
+## Current result: complete Goedel population
+
+All **29,750 originals** return in each of three alternating pairs through the
+official Kimina HTTP/SDK path. Native/CPU oracle whole times are
+18,584.96/16,661.35, 18,478.26/16,912.11 and 18,608.55/16,750.33 seconds.
+The ratio of summed times is **1.10627×**, or **9.61% less elapsed**.
+
+Two native arithmetic-search failures become Lean-checked completions in every
+pair; this is an observed comparison with changed tactic coverage, not fully
+unchanged output. The same 40 timeouts remain. Every cell stays at max two live
+REPLs, with sampled total RSS at most 21.17 GiB, no watchdog kill/error and no
+owned survivor. **This is CPU-only and does not establish a GPU upper bound.**
+[Full raw results, outcome changes, tails, memory and self-review](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
+
+## Selected arithmetic-heavy result
 
 The corrected native-array comparison uses the original **1,000 arithmetic-heavy
 Goedel candidates**, selected before the implementation's measurements:

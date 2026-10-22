@@ -3914,3 +3914,16 @@ remain, with overlapping-clock caveats. Prior interrupted run not pooled.
 The canonical paper/frontier write is still next in this same continuation.
 No foreign dirty file, other Workspace, resource setting, Agent, independent
 review or GPU/project closure. Original research contract remains open.
+
+## 2026-10-22T06:51:08.625642+00:00 — targeted paper/frontier propagation, root self-audit
+Direction: original narrative/fourRQ/usercriterion/Lean+SMT/5090/OSDIobjective
+remain. Accepted new evidence is complete CPU population1.106271×with explicit
+two changed outcomes; not selected1,000generalization orGPUbenefit.
+Efficiency: fullraw is consumed and published rather than waiting; no new
+collector/kernel/grid. The existing12-round cycle is not repeated for final
+result slots. Maintenance: README/evaluation updated, exact oldfrontierbytes
+archived, actual broken link repaired,100localtargets resolve,31-pagePDF
+compiles/rendered/visually inspected;numeric/RQ/reference scope checked.
+No new source claim/independent audit/contribution acceptance. New cost work
+must use all-path ownership/own-clock evidence before admitting another
+mechanism. Self-review and residual outside-audit limitation are explicit.
