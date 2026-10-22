@@ -1,0 +1,138 @@
+diff --git a/bench/lean-native/linarith-oracle/kimina-http.py b/bench/lean-native/linarith-oracle/kimina-http.py
+index 77318c8..bad8d78 100644
+--- a/bench/lean-native/linarith-oracle/kimina-http.py
++++ b/bench/lean-native/linarith-oracle/kimina-http.py
+@@ -22,7 +22,8 @@ async def cell(args, method, out, items, build):
+     for key in ["GPU_ARITHMETIC_ORACLE", "GPU_ARITHMETIC_PROFILE", "GPU_ARITHMETIC_BASELINE",
+                 "GPU_ARITHMETIC_STRONG_PROFILE", "FARKAS_CORPUS_FILE", "FARKAS_COST_FILE",
+                 "GPU_ARITHMETIC_NUMERIC_PHASE_LOG", "GPU_ARITHMETIC_RACE_CPU_ONLY",
+-                "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING"]:
++                "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING",
++                "GPU_ARITHMETIC_COST_TIMING"]:
+         env.pop(key, None)
+     env.update(PATH=str(Path(build["sdk"])/"bin")+os.pathsep+env["PATH"],
+         LEAN_PATH=build["lean_path"], LEAN_SRC_PATH=build["lean_src_path"],
+@@ -58,6 +59,12 @@ async def cell(args, method, out, items, build):
+     if method!="stock":
+         env.update(FARKAS_EXTERNAL_CPU_HYBRID="1", GPU_ARITHMETIC_STRONG_PROFILE="1",
+                    GPU_SMT_NATIVE_OMEGA_CONTROL="1")
++    if getattr(args, "cost_timing", False):
++        if method != "native":
++            raise ValueError("This diagnostic partitions the native comparator only")
++        env.update(GPU_ARITHMETIC_COST_TIMING="1",
++                   FARKAS_COST_FILE=str(out/"native-stages.jsonl.gz"),
++                   GPU_SMT_OMEGA_CONTROL_LOG=str(out/"omega-control.jsonl"))
+     if method=="power":
+         env.update(FARKAS_NATIVE_BIN=str(args.build/"farkas-batchd"),
+             GPU_ARITHMETIC_BATCH="1", GPU_ARITHMETIC_ORACLE=str(args.build/"arithmetic-batchd"),
+diff --git a/bench/lean-native/linarith-oracle/reproduction/c/cost-emit.c b/bench/lean-native/linarith-oracle/reproduction/c/cost-emit.c
+index d23bd66..849bf4c 100644
+--- a/bench/lean-native/linarith-oracle/reproduction/c/cost-emit.c
++++ b/bench/lean-native/linarith-oracle/reproduction/c/cost-emit.c
+@@ -16,8 +16,7 @@ extern int gzclose(gzFile);
+ #define O_APPEND 1024
+ #define LOCK_EX 2
+ #define LOCK_UN 8
+-LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
+- const char *path=getenv("FARKAS_CORPUS_FILE");
++static lean_obj_res emit_path(b_lean_obj_arg s,const char *path){
+  if(path){
+   int fd=open(path,O_WRONLY|O_CREAT|O_APPEND,0644);
+   if(fd<0||flock(fd,LOCK_EX)<0){perror("cost telemetry lock");abort();}
+@@ -39,3 +38,10 @@ LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
+  }
+  return lean_io_result_mk_ok(lean_box(0));
+ }
++
++LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
++ return emit_path(s,getenv("FARKAS_CORPUS_FILE"));
++}
++LEAN_EXPORT lean_obj_res gpu_smt_stage_emit(b_lean_obj_arg s,lean_obj_arg world){
++ return emit_path(s,getenv("FARKAS_COST_FILE"));
++}
+diff --git a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostBaseline.lean b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostBaseline.lean
+index f1d6144..2272834 100644
+--- a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostBaseline.lean
++++ b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostBaseline.lean
+@@ -7,8 +7,19 @@ open Lean Meta Elab Tactic Mathlib.Tactic.Linarith
+ namespace GpuArithmetic.CostBaseline
+ def run (nlin onlyOn : Bool) (args : List Expr) (cfg : LinarithConfig) : TacticM Unit := do
+   if (← IO.getEnv "GPU_ARITHMETIC_STRONG_PROFILE").isNone then throwUnsupportedSyntax
+-  let cost ← IO.mkRef ({} : GpuArithmetic.CostStages.Costs)
+-  runInstrumented cost nlin onlyOn args cfg
++  let enabled := (← IO.getEnv "GPU_ARITHMETIC_COST_TIMING") == some "1"
++  let cost ← IO.mkRef ({ profile := enabled } : GpuArithmetic.CostStages.Costs)
++  if !enabled then
++    runInstrumented cost nlin onlyOn args cfg
++  else
++    let start ← IO.monoNanosNow
++    let source := (← getFileMap).source
++    let mut outcome := "failed"
++    try
++      runInstrumented cost nlin onlyOn args cfg
++      outcome := "returned"
++    finally
++      GpuArithmetic.CostStages.emitProfile cost source start (← IO.monoNanosNow) outcome
+ 
+ where
+  runInstrumented (cost : IO.Ref GpuArithmetic.CostStages.Costs)
+diff --git a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostStages.lean b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostStages.lean
+index 0140f4b..df39114 100644
+--- a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostStages.lean
++++ b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostStages.lean
+@@ -7,6 +7,8 @@ open Lean Meta Elab Tactic Mathlib.Tactic.Linarith
+ namespace GpuArithmetic.CostStages
+ @[extern "gpu_smt_thread_cpu_ns"] opaque threadCpuNs : IO UInt64
+ structure Costs where
++  profile : Bool := false
++  spans : Array (String × Nat × Nat) := #[]
+   times : Std.HashMap String (Nat × Nat) := {}
+   products : Std.HashSet Expr := {}
+ def Costs.getD (s : Costs) (key : String) (fallback : Nat × Nat) : Nat × Nat :=
+@@ -17,7 +19,35 @@ def Costs.toList (s : Costs) : List (String × (Nat × Nat)) := s.times.toList
+ def registerProducts (_ref : IO.Ref Costs) (_proofs : List Expr) : IO Unit := pure ()
+ def productColumns (_ref : IO.Ref Costs) (_inputs : List Expr) : IO String := pure "null"
+ 
+-def timed (_ref : IO.Ref Costs) (_name : String) (act : MetaM α) : MetaM α := act
++/-- Opt-in diagnostic intervals include failed attempts via finally.
++The LP interval is the complete oracle wrapper, not pure solver time. -/
++def timed (ref : IO.Ref Costs) (name : String) (act : MetaM α) : MetaM α := do
++  unless (← ref.get).profile do return ← act
++  let start ← IO.monoNanosNow
++  let cpu ← threadCpuNs
++  try act
++  finally
++    let finish ← IO.monoNanosNow
++    let cpuEnd ← threadCpuNs
++    ref.modify fun state =>
++      let old := state.getD name (0, 0)
++      { state with
++        times := state.times.insert name
++          (old.1 + cpuEnd.toNat - cpu.toNat, old.2 + finish - start)
++        spans := state.spans.push (name, start, finish) }
++
++def emitProfile (cost : IO.Ref Costs) (source : String) (start finish : Nat)
++    (outcome : String) : IO Unit := do
++  let state ← cost.get
++  unless state.profile do return
++  let spans := state.spans.map fun (name, a, b) =>
++    Json.arr #[toJson name, toJson a, toJson b]
++  let stages := Json.mkObj <| state.toList.map fun (name, (cpu, wall)) =>
++    (name, Json.arr #[toJson cpu, toJson wall])
++  GpuArithmetic.CostTelemetry.emitStage <| (Json.mkObj [
++    ("ty", toJson "native-arithmetic-profile"), ("source", toJson source),
++    ("start_ns", toJson start), ("end_ns", toJson finish),
++    ("outcome", toJson outcome), ("stages", stages), ("spans", Json.arr spans)]).compress
+ 
+ def proveFalseByLinarith (cost : IO.Ref Costs) (transparency : TransparencyMode) (oracle : CertificateOracle)
+     (discharger : TacticM Unit) : MVarId → List Expr → MetaM (Expr × List Nat)
+diff --git a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostTelemetry.lean b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostTelemetry.lean
+index e831b12..da8ece5 100644
+--- a/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostTelemetry.lean
++++ b/bench/lean-native/linarith-oracle/reproduction/lean/GpuArithmetic/CostTelemetry.lean
+@@ -2,4 +2,5 @@
+ import Farkas.Telemetry
+ namespace GpuArithmetic.CostTelemetry
+ @[extern "gpu_smt_cost_emit"] opaque emit (s : String) : IO Unit
++@[extern "gpu_smt_stage_emit"] opaque emitStage (s : String) : IO Unit
+ end GpuArithmetic.CostTelemetry

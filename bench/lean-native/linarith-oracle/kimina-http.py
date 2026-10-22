@@ -22,7 +22,8 @@ async def cell(args, method, out, items, build):
     for key in ["GPU_ARITHMETIC_ORACLE", "GPU_ARITHMETIC_PROFILE", "GPU_ARITHMETIC_BASELINE",
                 "GPU_ARITHMETIC_STRONG_PROFILE", "FARKAS_CORPUS_FILE", "FARKAS_COST_FILE",
                 "GPU_ARITHMETIC_NUMERIC_PHASE_LOG", "GPU_ARITHMETIC_RACE_CPU_ONLY",
-                "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING"]:
+                "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING",
+                "GPU_ARITHMETIC_COST_TIMING", "GPU_SMT_OMEGA_CONTROL_LOG"]:
         env.pop(key, None)
     env.update(PATH=str(Path(build["sdk"])/"bin")+os.pathsep+env["PATH"],
         LEAN_PATH=build["lean_path"], LEAN_SRC_PATH=build["lean_src_path"],
@@ -58,6 +59,12 @@ async def cell(args, method, out, items, build):
     if method!="stock":
         env.update(FARKAS_EXTERNAL_CPU_HYBRID="1", GPU_ARITHMETIC_STRONG_PROFILE="1",
                    GPU_SMT_NATIVE_OMEGA_CONTROL="1")
+    if getattr(args, "cost_timing", False):
+        if method != "native":
+            raise ValueError("This diagnostic partitions the native comparator only")
+        env.update(GPU_ARITHMETIC_COST_TIMING="1",
+                   FARKAS_COST_FILE=str(out/"native-stages.jsonl.gz"),
+                   GPU_SMT_OMEGA_CONTROL_LOG=str(out/"omega-control.jsonl"))
     if method=="power":
         env.update(FARKAS_NATIVE_BIN=str(args.build/"farkas-batchd"),
             GPU_ARITHMETIC_BATCH="1", GPU_ARITHMETIC_ORACLE=str(args.build/"arithmetic-batchd"),
@@ -80,6 +87,10 @@ async def cell(args, method, out, items, build):
         aggregate_memory_budget_bytes=total_memory_gib * 1024**3,
         per_native_repl_address_limit_bytes=per_repl_gib * 1024**3,
         maximum_live_native_repls=concurrency,
+        cost_timing_requested=bool(getattr(args, "cost_timing", False)),
+        cost_timing_effective=env.get("GPU_ARITHMETIC_COST_TIMING") == "1",
+        cost_timing_log=env.get("FARKAS_COST_FILE"),
+        omega_control_log=env.get("GPU_SMT_OMEGA_CONTROL_LOG"),
         native_engine=args.native_engine if method == "native" else None,
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),

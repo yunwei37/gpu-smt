@@ -7,8 +7,20 @@ open Lean Meta Elab Tactic Mathlib.Tactic.Linarith
 namespace GpuArithmetic.CostBaseline
 def run (nlin onlyOn : Bool) (args : List Expr) (cfg : LinarithConfig) : TacticM Unit := do
   if (← IO.getEnv "GPU_ARITHMETIC_STRONG_PROFILE").isNone then throwUnsupportedSyntax
-  let cost ← IO.mkRef ({} : GpuArithmetic.CostStages.Costs)
-  runInstrumented cost nlin onlyOn args cfg
+  let enabled := (← IO.getEnv "GPU_ARITHMETIC_COST_TIMING") == some "1"
+  let cost ← IO.mkRef ({ profile := enabled } : GpuArithmetic.CostStages.Costs)
+  if !enabled then
+    runInstrumented cost nlin onlyOn args cfg
+  else
+    let start ← IO.monoNanosNow
+    let source := (← getFileMap).source
+    let returned ← IO.mkRef false
+    try
+      runInstrumented cost nlin onlyOn args cfg
+      returned.set true
+    finally
+      GpuArithmetic.CostStages.emitProfile cost source start (← IO.monoNanosNow)
+        (if (← returned.get) then "returned" else "failed")
 
 where
  runInstrumented (cost : IO.Ref GpuArithmetic.CostStages.Costs)

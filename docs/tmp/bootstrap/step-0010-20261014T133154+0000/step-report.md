@@ -6148,3 +6148,28 @@ service overlap and GPUbatches. This is supporting evidence for the existing
 RQ4experiment, not another headline, independent audit, strictGPUbound or
 closure. No new capture or process/resources/agent; next missing native/product
 attribution remains explicit. Original scientific contract and criterion hold.
+
+## 2026-10-22T08:13:46.145948+00:00 — native own-clock hook implementation and real qualification
+EXPERIMENT_GATE resumes the original GPUcost task. Actual source has timed
+hooks reduced to no-ops, so no retrospective all-LP profile is invented.
+[Root plan/admission and real result](../../../../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/preflight-result-review.md) documents the opt-in native wrapper timings, own intervals, source joins and limits. Fifteen custom modules build against unchanged frozen dependencies under sampled48GiBowned-tree budget/24GiBcompilerAS, original/v1binaries preserved. One initial directory-order setup failure precedes anycompiler and remainsraw.
+
+Actual frozen/off/on24outcomes and raw responses match; whole39.369/39.757/
+39.089s are fixed-order/shared-host engagement, not proof of zero overhead.
+The initial return tag is false for all115events because Lean finally restores
+transactional local state. Preserveit, repaironlythat flag with localIO.Ref,
+buildfreshv2andverify24positive plus all8originalrejected. V2has115returned
+events for24and49returned/2failed pipelines for rejected8, actual matching
+nativeoutcomes and intervals/source attribution. No candidate success is
+inferred from a pipeline return. Allownedchildren retire,max2native/no monitor
+error/kill, profilepositivepeakabout13.5GiB. [Derived reader output](../../../../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/preflight-analysis.json).
+
+WRITE_GATE links the diagnostic scope/current implementation and real local
+Oct22dailyreflection. Paper scientific claims/numbers/RQs unchanged; no repeat
+fullwriting/buildforan unchanged paper. REVIEW_GATE root self-audit separates
+LPinvocation envelope from pureLP, native product proofs from GPUarithmetic,
+and occupied concurrent intervals from removablecriticalpath. Explicit omitted
+termelaboration/omega/configured/indirect/hard-killpaths prevent a strictceiling.
+NoGPU/projectclosure/newAgent/Workspace/service/scheduler. This completed
+qualification boundary is committed/pushed before the predeclared original1000
+frozen/profilediagnosticpair, with the same safe resources and own denominators.

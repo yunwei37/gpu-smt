@@ -7,6 +7,8 @@ open Lean Meta Elab Tactic Mathlib.Tactic.Linarith
 namespace GpuArithmetic.CostStages
 @[extern "gpu_smt_thread_cpu_ns"] opaque threadCpuNs : IO UInt64
 structure Costs where
+  profile : Bool := false
+  spans : Array (String × Nat × Nat) := #[]
   times : Std.HashMap String (Nat × Nat) := {}
   products : Std.HashSet Expr := {}
 def Costs.getD (s : Costs) (key : String) (fallback : Nat × Nat) : Nat × Nat :=
@@ -17,7 +19,35 @@ def Costs.toList (s : Costs) : List (String × (Nat × Nat)) := s.times.toList
 def registerProducts (_ref : IO.Ref Costs) (_proofs : List Expr) : IO Unit := pure ()
 def productColumns (_ref : IO.Ref Costs) (_inputs : List Expr) : IO String := pure "null"
 
-def timed (_ref : IO.Ref Costs) (_name : String) (act : MetaM α) : MetaM α := act
+/-- Opt-in diagnostic intervals include failed attempts via finally.
+The LP interval is the complete oracle wrapper, not pure solver time. -/
+def timed (ref : IO.Ref Costs) (name : String) (act : MetaM α) : MetaM α := do
+  unless (← ref.get).profile do return ← act
+  let start ← IO.monoNanosNow
+  let cpu ← threadCpuNs
+  try act
+  finally
+    let finish ← IO.monoNanosNow
+    let cpuEnd ← threadCpuNs
+    ref.modify fun state =>
+      let old := state.getD name (0, 0)
+      { state with
+        times := state.times.insert name
+          (old.1 + cpuEnd.toNat - cpu.toNat, old.2 + finish - start)
+        spans := state.spans.push (name, start, finish) }
+
+def emitProfile (cost : IO.Ref Costs) (source : String) (start finish : Nat)
+    (outcome : String) : IO Unit := do
+  let state ← cost.get
+  unless state.profile do return
+  let spans := state.spans.map fun (name, a, b) =>
+    Json.arr #[toJson name, toJson a, toJson b]
+  let stages := Json.mkObj <| state.toList.map fun (name, (cpu, wall)) =>
+    (name, Json.arr #[toJson cpu, toJson wall])
+  GpuArithmetic.CostTelemetry.emitStage <| (Json.mkObj [
+    ("ty", toJson "native-arithmetic-profile"), ("source", toJson source),
+    ("start_ns", toJson start), ("end_ns", toJson finish),
+    ("outcome", toJson outcome), ("stages", stages), ("spans", Json.arr spans)]).compress
 
 def proveFalseByLinarith (cost : IO.Ref Costs) (transparency : TransparencyMode) (oracle : CertificateOracle)
     (discharger : TacticM Unit) : MVarId → List Expr → MetaM (Expr × List Nat)

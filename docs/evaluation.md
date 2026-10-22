@@ -177,3 +177,17 @@ certificate checking alone are not the missing novel OSDI system contribution.
 The E038 runtime, narrow metadata/defeq/declaration and slower SMT constructor
 routes remain closed with failures retained. No new claim/route is silently
 substituted. Self-review is not independent audit.
+
+## Native-stage diagnostic qualification,2026-10-22
+
+[Real frozen/off/on/rejected qualification](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/preflight-result-review.md)
+restores opt-in timings because the reduced-diagnostic stage hooks were no-ops.
+All24positive outcomes/raw responses match the frozen native build; all8
+original rejections persist. The initial return-tag defect is retained and
+repaired;v2records115returned events on24and49returned/2failed on rejected8.
+Whole clocks39.369/39.757/39.089(initialtag)/38.660s are diagnostic engagement,
+not proven zero overhead. Native LP envelopes19.316s/products6.829s in24
+are not pure solver time or removable critical-path fractions.
+The original1,000own-denominator diagnostic is admitted only after this
+qualification, with source2/live2/24each/48totalRSS/fourCPU8–11unchanged.
+No full-population/GPU result or strictceiling is supplied by the preflight.

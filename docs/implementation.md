@@ -386,3 +386,13 @@ showownJob/Podgone,otherWorkspaceRunning/labReady,all53sampledsourcePIDsgone.
 InrunserverthreadsnapshotconfirmsCPU0--3,oom0. Kubernetesstart-to-kill events
 span642s, not an exactcoldlifecycleclock. No independentreviewer/OSDIclaim.
 [Realresult and limitations](../artifacts/linarith-oracle-2026-10-17/gpu-stage/header-correction-preflight24/result-review.md).
+
+## Opt-in native-stage measurement,2026-10-22
+CostStages now retains per-invocation CPU/wall aggregates and intervals only
+when GPU_ARITHMETIC_COST_TIMING=1. The native service diagnostic writes
+FARKAS_COST_FILE through the existing cost emitter, independently of heavy
+corpus telemetry. Timed finally paths include failed attempts; the return tag
+uses an IO.Ref to survive Lean transactional state restoration. The same
+native probe/restricted/full/fallback algorithm and existing frozen build
+remain. Default-off branches have real24qualification, not a zero-cost claim.
+[Actual data, failed first tag, scope and command](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/preflight-result-review.md).

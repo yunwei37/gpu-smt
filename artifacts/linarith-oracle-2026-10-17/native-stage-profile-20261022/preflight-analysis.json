@@ -1,0 +1,265 @@
+{
+  "scope": "Real qualification and observed diagnostic costs, root self-review. No population/GPU bound or zero-overhead claim.",
+  "cells": {
+    "frozen": {
+      "whole_seconds": 39.36918187,
+      "warm_seconds": 32.811940454,
+      "native_outcomes": {
+        "complete": 24
+      },
+      "resource": {
+        "root_pid": 212370,
+        "root_birth": 1792655929.42,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 40,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 14547357696,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      }
+    },
+    "diagnostic-off": {
+      "whole_seconds": 39.757321473,
+      "warm_seconds": 33.591338269,
+      "native_outcomes": {
+        "complete": 24
+      },
+      "resource": {
+        "root_pid": 212370,
+        "root_birth": 1792655929.42,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 40,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 14556536832,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "native_outcome_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "diagnostic-on": {
+      "whole_seconds": 39.089489775,
+      "warm_seconds": 32.711361804,
+      "native_outcomes": {
+        "complete": 24
+      },
+      "resource": {
+        "root_pid": 212370,
+        "root_birth": 1792655929.42,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 40,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 14534586368,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "stage_events": 115,
+      "event_outcomes": {
+        "failed": 115
+      },
+      "profiled_original_sources": 24,
+      "unattributed_event_indices": [],
+      "stages_CPU_wall_seconds": {
+        "certificate": [
+          6.115327273,
+          6.11573007
+        ],
+        "linearize": [
+          1.9698539760000007,
+          1.9699007930000003
+        ],
+        "lp": [
+          0.19838450799999993,
+          19.328293039000002
+        ],
+        "preprocess": [
+          1.6301106239999994,
+          1.6304108590000002
+        ],
+        "products": [
+          6.868307707000001,
+          6.868796408999998
+        ]
+      },
+      "product_LP_per_source_union_seconds": {
+        "Proof_00027": 0.177045696,
+        "Proof_00009": 0.604360096,
+        "Proof_00069": 1.512203444,
+        "Proof_00165": 1.510871453,
+        "Proof_00170": 0.998678449,
+        "Proof_00088": 1.536682462,
+        "Proof_00214": 0.173147536,
+        "Proof_00297": 0.069084888,
+        "Proof_00308": 0.745248558,
+        "Proof_00323": 0.15083867,
+        "Proof_00328": 0.79353366,
+        "Proof_00364": 1.738817921,
+        "Proof_00375": 0.470420583,
+        "Proof_00455": 1.8137612,
+        "Proof_00401": 2.29368771,
+        "Proof_00487": 0.103481065,
+        "Proof_00496": 0.122055631,
+        "Proof_00526": 0.10930609,
+        "Proof_00538": 0.914825294,
+        "Proof_00555": 0.505183482,
+        "Proof_00579": 0.119703409,
+        "Proof_00549": 5.489995164,
+        "Proof_00619": 0.104568003,
+        "Proof_00592": 4.139588984
+      },
+      "product_LP_global_union_seconds": 21.783942116,
+      "interval_scope": "Observed timed-wrapper intervals, not pure LP/product arithmetic or removable critical-path wall. Preprocess total includes legacy manual parse timing absent from spans. Term elaboration, omega, configured/uninstrumented paths and hard-killed finally records are not covered.",
+      "native_outcome_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "diagnostic-on-v2": {
+      "whole_seconds": 38.660213023,
+      "warm_seconds": 32.409110126,
+      "native_outcomes": {
+        "complete": 24
+      },
+      "resource": {
+        "root_pid": 212860,
+        "root_birth": 1792656269.09,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 39,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 14522179584,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "stage_events": 115,
+      "event_outcomes": {
+        "returned": 115
+      },
+      "profiled_original_sources": 24,
+      "unattributed_event_indices": [],
+      "stages_CPU_wall_seconds": {
+        "certificate": [
+          6.052334135000003,
+          6.052780717000001
+        ],
+        "linearize": [
+          1.9274345779999997,
+          1.9275282120000001
+        ],
+        "lp": [
+          0.19628175999999997,
+          19.316295902999997
+        ],
+        "preprocess": [
+          1.640672038,
+          1.6409363079999995
+        ],
+        "products": [
+          6.828642178000002,
+          6.829245370000001
+        ]
+      },
+      "product_LP_per_source_union_seconds": {
+        "Proof_00027": 0.175983844,
+        "Proof_00009": 0.597036649,
+        "Proof_00069": 1.506693065,
+        "Proof_00165": 1.508542281,
+        "Proof_00170": 1.001547612,
+        "Proof_00088": 1.517614106,
+        "Proof_00214": 0.168775009,
+        "Proof_00297": 0.068909214,
+        "Proof_00308": 0.74563268,
+        "Proof_00323": 0.147904438,
+        "Proof_00328": 0.797198224,
+        "Proof_00364": 1.740384007,
+        "Proof_00375": 0.461674372,
+        "Proof_00401": 2.2977287,
+        "Proof_00455": 1.814673827,
+        "Proof_00487": 0.102808825,
+        "Proof_00496": 0.121962885,
+        "Proof_00526": 0.109174673,
+        "Proof_00538": 0.912533071,
+        "Proof_00555": 0.503174111,
+        "Proof_00579": 0.11938365,
+        "Proof_00549": 5.485822731,
+        "Proof_00619": 0.103508068,
+        "Proof_00592": 4.136875231
+      },
+      "product_LP_global_union_seconds": 21.737641207,
+      "interval_scope": "Observed timed-wrapper intervals, not pure LP/product arithmetic or removable critical-path wall. Preprocess total includes legacy manual parse timing absent from spans. Term elaboration, omega, configured/uninstrumented paths and hard-killed finally records are not covered.",
+      "native_outcome_difference_IDs": [],
+      "raw_response_difference_IDs": []
+    },
+    "diagnostic-rejected-v2": {
+      "whole_seconds": 19.946062573,
+      "warm_seconds": 13.69038488,
+      "native_outcomes": {
+        "rejected": 8
+      },
+      "resource": {
+        "root_pid": 212961,
+        "root_birth": 1792656376.31,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 20,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 14439084032,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting."
+      },
+      "stage_events": 51,
+      "event_outcomes": {
+        "returned": 49,
+        "failed": 2
+      },
+      "profiled_original_sources": 8,
+      "unattributed_event_indices": [],
+      "stages_CPU_wall_seconds": {
+        "certificate": [
+          2.109451956,
+          2.1095338800000007
+        ],
+        "linearize": [
+          1.4370964190000002,
+          1.4371258149999995
+        ],
+        "lp": [
+          4.419213662,
+          6.495722227000001
+        ],
+        "preprocess": [
+          0.7860867029999998,
+          0.7861754330000001
+        ],
+        "products": [
+          4.341728454999999,
+          4.342070736000001
+        ]
+      },
+      "product_LP_per_source_union_seconds": {
+        "Proof_12175": 0.474565503,
+        "Proof_15022": 0.23070124,
+        "Proof_15224": 1.038431938,
+        "Proof_00710": 3.664109058,
+        "Proof_16530": 4.057439781,
+        "Proof_17093": 0.07485807,
+        "Proof_20359": 0.217843474,
+        "Proof_25649": 1.079843899
+      },
+      "product_LP_global_union_seconds": 8.716764497,
+      "interval_scope": "Observed timed-wrapper intervals, not pure LP/product arithmetic or removable critical-path wall. Preprocess total includes legacy manual parse timing absent from spans. Term elaboration, omega, configured/uninstrumented paths and hard-killed finally records are not covered.",
+      "matched_frozen_population_outcomes": true
+    }
+  }
+}

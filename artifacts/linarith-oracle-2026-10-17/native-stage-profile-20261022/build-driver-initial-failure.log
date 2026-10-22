@@ -1,0 +1,11 @@
+
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/build-incremental.py", line 15, in <module>
+    guard=budget.MemoryWatchdog(os.getpid(),48*1024**3,48*1024**3,2,repl,O/'build')
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 23, in __init__
+    (self.out / "kills").mkdir()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 724, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/repository/artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/build/kills'

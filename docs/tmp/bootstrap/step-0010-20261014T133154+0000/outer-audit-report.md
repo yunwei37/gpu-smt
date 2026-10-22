@@ -3938,3 +3938,14 @@ No new kernel, collector, unsupported cancellation diagnosis or GPU/project
 closure. Maintenance propagates current coverage only; paper unchanged.
 Efficiency is reanalysis of existing full data, not a waiting/provenance loop.
 All audit is root self-review with outside-audit limitation retained.
+
+## 2026-10-22T08:13:46.145948+00:00 — native profile qualification, root self-audit
+Direction: same4RQ/Lean+SMT/RTX5090/OSDIscope and better-validCPU/GPUcriterion.
+Efficiency: implement the actually erased timing fields rather than rescale
+oldlogs; reuseexistingdependencies/finitecapture/watchdog, no performancegrid.
+Actualsourceandreal24/8replays validatebothreturnedandthrowingpaths, while
+retainingthewrongv1tagandsetupfailure. Observednearbyclocksarenotzerooverhead.
+Allnativeoutputs/resourcesunchangedatthisqualificationpoint;2actualREPLs/
+24GiBeach/48GiBtotal, no monitorfailureorownedleftovers. Concurrentoverbroad
+wrapperoccupancydoesnotproveGPUimpossibility. Original1000diagnosticisnext;
+notanotherwhole29750matrix. Allreviewisself-review,notindependentaudit.

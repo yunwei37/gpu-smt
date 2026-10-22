@@ -16,8 +16,7 @@ extern int gzclose(gzFile);
 #define O_APPEND 1024
 #define LOCK_EX 2
 #define LOCK_UN 8
-LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
- const char *path=getenv("FARKAS_CORPUS_FILE");
+static lean_obj_res emit_path(b_lean_obj_arg s,const char *path){
  if(path){
   int fd=open(path,O_WRONLY|O_CREAT|O_APPEND,0644);
   if(fd<0||flock(fd,LOCK_EX)<0){perror("cost telemetry lock");abort();}
@@ -38,4 +37,11 @@ LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
   flock(fd,LOCK_UN);close(fd);
  }
  return lean_io_result_mk_ok(lean_box(0));
+}
+
+LEAN_EXPORT lean_obj_res gpu_smt_cost_emit(b_lean_obj_arg s,lean_obj_arg world){
+ return emit_path(s,getenv("FARKAS_CORPUS_FILE"));
+}
+LEAN_EXPORT lean_obj_res gpu_smt_stage_emit(b_lean_obj_arg s,lean_obj_arg world){
+ return emit_path(s,getenv("FARKAS_COST_FILE"));
 }
