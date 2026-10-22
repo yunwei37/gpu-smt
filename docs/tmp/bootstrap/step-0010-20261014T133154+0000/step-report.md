@@ -6094,3 +6094,17 @@ proofs. The actual current full matrix remains the empirical dependency,
 not replaced by this supporting source node. Publish this coherent eligibility
 boundary under the user's completed-part instruction. No independent audit,
 new resource/provider/entity or GPU closure is claimed.
+
+## 2026-10-22T06:42:45.088004+00:00 — complete protected whole-population arithmetic result
+EXPERIMENT_GATE resumes the actual closed six-cell matrix, not a healthy process
+poll. The driver completed2026-10-21T14:26:07Z. [Full root result review](../../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md) retains all178,500source observations, 40same-timeout IDs, all failures, memory and cancellation/retirement evidence. The whole-sum ratio is1.106271×, with two repeated native rejection→Power completion changes, not transparent output equivalence. Root second-reader recomputation agrees. Peak sampled total RSS21.167GiB/max2live/zero monitor errors or kills/no descendants left. Earlier ENOSPC partial stays separate.
+
+This is decisive RQ4 population-boundary evidence: selected-heavy benefit does
+not imply1.7×across originals, and the slowest1% hardly moves. No GPU executes;
+overlapping HTTP or incomplete child CPU is not a strictGPUbound. Original
+criterion/RQs/narrative remain unchanged; no GPU closure or task deletion.
+WRITE_GATE first publishes complete raw/results and self-review at this step
+boundary; current paper/frontier update follows immediately. REVIEW_GATE root
+self-audit checks all original IDs, clocks, outcome changes, all actual resource
+traces, strongest measured comparator scope and shared-host/repetition limits.
+Self-review is not independent audit, contribution acceptance or completion.

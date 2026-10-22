@@ -1,0 +1,33 @@
+{
+  "scope": "Closed lifecycle only; byte-equal lossless archival outside method clocks.",
+  "files": [
+    {
+      "source": "http.jsonl",
+      "archive": "http.jsonl.gz",
+      "raw_bytes": 127144763,
+      "archive_bytes": 18930048,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "results.jsonl",
+      "archive": "results.jsonl.gz",
+      "raw_bytes": 22587510,
+      "archive_bytes": 2112530,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "server.log",
+      "archive": "server.log.gz",
+      "raw_bytes": 201550922,
+      "archive_bytes": 24433159,
+      "byte_equal_roundtrip": true
+    },
+    {
+      "source": "memory-rss.jsonl",
+      "archive": "memory-rss.jsonl.gz",
+      "raw_bytes": 37795741,
+      "archive_bytes": 1343791,
+      "byte_equal_roundtrip": true
+    }
+  ]
+}

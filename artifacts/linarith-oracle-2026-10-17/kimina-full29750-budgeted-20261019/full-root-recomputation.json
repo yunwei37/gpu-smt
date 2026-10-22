@@ -1,0 +1,271 @@
+{
+  "scope": "Root self-review from closed raw files and existing CSV. No new experiment, no independent audit, no GPU bound. Stratum spans overlap and are not isolated clocks.",
+  "cells": {
+    "rep1-native": {
+      "whole_seconds": 18584.956958748,
+      "raw_status_counts": {
+        "valid": 27334,
+        "lean_error": 2376,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 21.16677474975586,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    },
+    "rep1-power": {
+      "whole_seconds": 16661.346488891,
+      "raw_status_counts": {
+        "valid": 27336,
+        "lean_error": 2374,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 20.754566192626953,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    },
+    "rep2-native": {
+      "whole_seconds": 18478.255152131,
+      "raw_status_counts": {
+        "valid": 27334,
+        "lean_error": 2376,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 20.253055572509766,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    },
+    "rep2-power": {
+      "whole_seconds": 16912.113809261,
+      "raw_status_counts": {
+        "valid": 27336,
+        "lean_error": 2374,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 21.03036117553711,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    },
+    "rep3-native": {
+      "whole_seconds": 18608.553655983,
+      "raw_status_counts": {
+        "valid": 27334,
+        "lean_error": 2376,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 20.442588806152344,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    },
+    "rep3-power": {
+      "whole_seconds": 16750.329667838,
+      "raw_status_counts": {
+        "valid": 27336,
+        "lean_error": 2374,
+        "timeout_error": 40
+      },
+      "peak_sampled_RSS_GiB": 19.81136703491211,
+      "max_live_REPL": 2,
+      "kills": 0,
+      "monitor_error": null
+    }
+  },
+  "pairs": {
+    "1": {
+      "whole_ratio": 1.1154534821744193,
+      "changed_IDs": [
+        "Proof_20758",
+        "Proof_29379"
+      ],
+      "strata": {
+        "original_selected_1000": {
+          "sources": 1000,
+          "native_overlapping_HTTP_seconds": 2739.606991065,
+          "power_overlapping_HTTP_seconds": 1499.95156546,
+          "ratio_of_envelope_sums": 1.826463636660712
+        },
+        "remaining_28750": {
+          "sources": 28750,
+          "native_overlapping_HTTP_seconds": 34400.799522931,
+          "power_overlapping_HTTP_seconds": 31792.989382266,
+          "ratio_of_envelope_sums": 1.0820246913339842
+        },
+        "all_timeout_sources": {
+          "sources": 40,
+          "native_overlapping_HTTP_seconds": 12002.425802276,
+          "power_overlapping_HTTP_seconds": 12002.123192036,
+          "ratio_of_envelope_sums": 1.0000252130589862
+        },
+        "same_complete_sources": {
+          "sources": 27334,
+          "native_overlapping_HTTP_seconds": 23544.625726841,
+          "power_overlapping_HTTP_seconds": 19734.512458334,
+          "ratio_of_envelope_sums": 1.1930685278671767
+        }
+      },
+      "tails": {
+        "0.01": {
+          "sources": 298,
+          "native_overlapping_HTTP_seconds": 19303.980735213,
+          "power_overlapping_HTTP_seconds": 18602.869058125,
+          "ratio": 1.0376883627411106
+        },
+        "0.1": {
+          "sources": 2975,
+          "native_overlapping_HTTP_seconds": 25930.300748423,
+          "power_overlapping_HTTP_seconds": 23492.902136155,
+          "ratio": 1.1037504263262947
+        }
+      }
+    },
+    "2": {
+      "whole_ratio": 1.0926047069297977,
+      "changed_IDs": [
+        "Proof_20758",
+        "Proof_29379"
+      ],
+      "strata": {
+        "original_selected_1000": {
+          "sources": 1000,
+          "native_overlapping_HTTP_seconds": 2711.640193112,
+          "power_overlapping_HTTP_seconds": 1553.344803111,
+          "ratio_of_envelope_sums": 1.7456782213975899
+        },
+        "remaining_28750": {
+          "sources": 28750,
+          "native_overlapping_HTTP_seconds": 34215.240838521,
+          "power_overlapping_HTTP_seconds": 32240.665004795,
+          "ratio_of_envelope_sums": 1.0612448854089185
+        },
+        "all_timeout_sources": {
+          "sources": 40,
+          "native_overlapping_HTTP_seconds": 12002.316093346,
+          "power_overlapping_HTTP_seconds": 12002.525465230001,
+          "ratio_of_envelope_sums": 0.9999825560141816
+        },
+        "same_complete_sources": {
+          "sources": 27334,
+          "native_overlapping_HTTP_seconds": 23339.773116399,
+          "power_overlapping_HTTP_seconds": 20194.05198365,
+          "ratio_of_envelope_sums": 1.1557746377644227
+        }
+      },
+      "tails": {
+        "0.01": {
+          "sources": 298,
+          "native_overlapping_HTTP_seconds": 19217.210259309,
+          "power_overlapping_HTTP_seconds": 18767.82454432,
+          "ratio": 1.023944475499959
+        },
+        "0.1": {
+          "sources": 2975,
+          "native_overlapping_HTTP_seconds": 25771.43523508,
+          "power_overlapping_HTTP_seconds": 23796.047656591,
+          "ratio": 1.0830132636728798
+        }
+      }
+    },
+    "3": {
+      "whole_ratio": 1.1109365621449794,
+      "changed_IDs": [
+        "Proof_20758",
+        "Proof_29379"
+      ],
+      "strata": {
+        "original_selected_1000": {
+          "sources": 1000,
+          "native_overlapping_HTTP_seconds": 2727.916586552,
+          "power_overlapping_HTTP_seconds": 1535.790274688,
+          "ratio_of_envelope_sums": 1.7762298873172535
+        },
+        "remaining_28750": {
+          "sources": 28750,
+          "native_overlapping_HTTP_seconds": 34459.379984887,
+          "power_overlapping_HTTP_seconds": 31934.616746749998,
+          "ratio_of_envelope_sums": 1.0790603894876536
+        },
+        "all_timeout_sources": {
+          "sources": 40,
+          "native_overlapping_HTTP_seconds": 12002.308434849001,
+          "power_overlapping_HTTP_seconds": 12002.238342521,
+          "ratio_of_envelope_sums": 1.0000058399380183
+        },
+        "same_complete_sources": {
+          "sources": 27334,
+          "native_overlapping_HTTP_seconds": 23584.75276934,
+          "power_overlapping_HTTP_seconds": 19906.703489234,
+          "ratio_of_envelope_sums": 1.1847643574987277
+        }
+      },
+      "tails": {
+        "0.01": {
+          "sources": 298,
+          "native_overlapping_HTTP_seconds": 19298.487928154,
+          "power_overlapping_HTTP_seconds": 18670.331474344,
+          "ratio": 1.0336446331803584
+        },
+        "0.1": {
+          "sources": 2975,
+          "native_overlapping_HTTP_seconds": 25935.991085352,
+          "power_overlapping_HTTP_seconds": 23647.154643335998,
+          "ratio": 1.0967911986257095
+        }
+      }
+    }
+  },
+  "selected_sources": 1000,
+  "identical_timeout_IDs_all_six_cells": [
+    "Proof_00206",
+    "Proof_01894",
+    "Proof_02363",
+    "Proof_02863",
+    "Proof_02989",
+    "Proof_03098",
+    "Proof_03157",
+    "Proof_05440",
+    "Proof_05650",
+    "Proof_05653",
+    "Proof_06100",
+    "Proof_06223",
+    "Proof_06710",
+    "Proof_08406",
+    "Proof_08861",
+    "Proof_08911",
+    "Proof_08945",
+    "Proof_09144",
+    "Proof_09282",
+    "Proof_10621",
+    "Proof_10777",
+    "Proof_11341",
+    "Proof_16469",
+    "Proof_17601",
+    "Proof_18300",
+    "Proof_19207",
+    "Proof_19785",
+    "Proof_20474",
+    "Proof_21028",
+    "Proof_21622",
+    "Proof_22603",
+    "Proof_22714",
+    "Proof_23285",
+    "Proof_23564",
+    "Proof_23598",
+    "Proof_23781",
+    "Proof_25332",
+    "Proof_27711",
+    "Proof_28931",
+    "Proof_29131"
+  ],
+  "whole_clock_sums": {
+    "native": 55671.765766862,
+    "power": 50323.78996599
+  },
+  "ratio_of_whole_sums": 1.1062713242481597,
+  "elapsed_reduction_percent": 9.60626221784998,
+  "persistent_HTTP_regression_sources": 4106,
+  "all_rows": 178500
+}

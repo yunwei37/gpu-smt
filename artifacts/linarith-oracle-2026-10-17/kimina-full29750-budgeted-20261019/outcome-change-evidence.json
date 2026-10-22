@@ -1,0 +1,259 @@
+{
+  "scope": "Actual original released source plus returned diagnostics, all three observations. Rejection-to-completion is a tactic coverage change, not transparent outcome equivalence or a proved new theorem/solver algorithm.",
+  "sources": [
+    {
+      "index": 20758,
+      "proof_id": "Proof_20758",
+      "filename": "goedel-workbook-lean427-3c2afe6bfc6bdeca6b78d1f257468164bba56966/GoedelProofs/Proof_20758.lean",
+      "author": {
+        "proof_id": "Proof_20758",
+        "problem_id": "lean_workbook_plus_45475",
+        "status": "error",
+        "elapsed_s": 17.58,
+        "error": "GoedelMigration/Proof_20758.lean:25:2: error: linarith failed to find a contradiction"
+      },
+      "code": "import Mathlib\nimport Aesop\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- Let $a,b>0 $ and $ \\frac{ a^3}{b}+\\frac{ 2b }{a}=3 .$ Prove that\\n\\n $$a^2+ab+b^2\\leq 3$$ -/\ntheorem lean_workbook_plus_45475 (a b : ℝ) (ha : 0 < a) (hb : 0 < b) (hab : a * b = 1) (h : a^3 / b + 2 * b / a = 3) : a^2 + a * b + b^2 ≤ 3   := by\n  /-\n  Given \\( a, b > 0 \\) and \\( \\frac{a^3}{b} + \\frac{2b}{a} = 3 \\), we need to prove that \\( a^2 + ab + b^2 \\leq 3 \\).\n  First, we simplify the given equation \\( \\frac{a^3}{b} + \\frac{2b}{a} = 3 \\). By clearing the denominators, we get:\n  \\[ a^4 + 2b^2 = 3ab \\]\n  Next, we use the fact that \\( a \\cdot b = 1 \\) (since both \\( a \\) and \\( b \\) are positive). Substituting \\( ab = 1 \\) into the equation, we obtain:\n  \\[ a^4 + 2b^2 = 3 \\]\n  We need to show that \\( a^2 + ab + b^2 \\leq 3 \\). To do this, we consider the non-negativity of the squares of \\( a - b \\), \\( a + b \\), and \\( a + b - 2 \\):\n  \\[ (a - b)^2 \\geq 0 \\]\n  \\[ (a + b)^2 \\geq 0 \\]\n  \\[ (a + b - 2)^2 \\geq 0 \\]\n  By expanding these squares and summing them up, we can derive the desired inequality.\n  -/\n  -- Simplify the given equation by clearing the denominators using field_simp.\n  field_simp [ha, hb, hab, mul_comm] at h ⊢\n  -- Use nlinarith to handle the non-negativity of the squares of (a - b), (a + b), and (a + b - 2).\n  nlinarith [sq_nonneg (a - b), sq_nonneg (a + b), sq_nonneg (a + b - 2)]\n"
+    },
+    {
+      "index": 29379,
+      "proof_id": "Proof_29379",
+      "filename": "goedel-workbook-lean427-3c2afe6bfc6bdeca6b78d1f257468164bba56966/GoedelProofs/Proof_29379.lean",
+      "author": {
+        "proof_id": "Proof_29379",
+        "problem_id": "lean_workbook_plus_8440",
+        "status": "error",
+        "elapsed_s": 20.0,
+        "error": "GoedelMigration/Proof_29379.lean:20:2: error: linarith failed to find a contradiction"
+      },
+      "code": "import Mathlib\nimport Aesop\n\nset_option maxHeartbeats 0\n\nopen BigOperators Real Nat Topology Rat\n\n/- Let $a,b,c>0$ and $ a+3b+c=1.$ Prove that \\n $$ (\\frac{1}{a}-a^2)(\\frac{1}{b}-b^2)(\\frac{1}{c}-c^2)>74$$ -/\ntheorem lean_workbook_plus_8440 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) (habc : a * b * c = 1) (hab : a + 3 * b + c = 1) : (1 / a - a ^ 2) * (1 / b - b ^ 2) * (1 / c - c ^ 2) > 74   := by\n  /-\n  Given \\( a, b, c > 0 \\) and \\( a + 3b + c = 1 \\), we need to prove that:\n  \\[\n  \\left( \\frac{1}{a} - a^2 \\right) \\left( \\frac{1}{b} - b^2 \\right) \\left( \\frac{1}{c} - c^2 \\right) > 74\n  \\]\n  First, we simplify the expression by clearing denominators using the fact that \\( a \\cdot b \\cdot c = 1 \\). This allows us to rewrite the inequality in a more manageable form. We then use algebraic manipulations and inequalities to show that the left-hand side of the inequality is indeed greater than 74.\n  -/\n  -- Clear denominators by multiplying through by \\( a \\cdot b \\cdot c \\) and simplify using \\( a \\cdot b \\cdot c = 1 \\).\n  field_simp [habc, mul_comm, mul_left_comm, mul_assoc]\n  -- Use \\( a + 3b + c = 1 \\) to bound the terms.\n  nlinarith [ha, hb, hc, sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a)]\n"
+    }
+  ],
+  "raw_records": {
+    "Proof_20758": {
+      "1": {
+        "native": {
+          "proof_id": "Proof_20758",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.416788,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 26,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 26,
+                    "column": 73
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b : ℝ\nha : 0 < a\nhb : 0 < b\nhab : a * b = 1\nh : a ^ 4 + b ^ 2 * 2 = a * b * 3\na✝ : 3 < a * (a + b) + b ^ 2\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_20758",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.198829,
+            "response": {}
+          }
+        }
+      },
+      "2": {
+        "native": {
+          "proof_id": "Proof_20758",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.421283,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 26,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 26,
+                    "column": 73
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b : ℝ\nha : 0 < a\nhb : 0 < b\nhab : a * b = 1\nh : a ^ 4 + b ^ 2 * 2 = a * b * 3\na✝ : 3 < a * (a + b) + b ^ 2\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_20758",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.20586,
+            "response": {}
+          }
+        }
+      },
+      "3": {
+        "native": {
+          "proof_id": "Proof_20758",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.425701,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 26,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 26,
+                    "column": 73
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b : ℝ\nha : 0 < a\nhb : 0 < b\nhab : a * b = 1\nh : a ^ 4 + b ^ 2 * 2 = a * b * 3\na✝ : 3 < a * (a + b) + b ^ 2\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_20758",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_20758",
+            "time": 0.194923,
+            "response": {}
+          }
+        }
+      }
+    },
+    "Proof_29379": {
+      "1": {
+        "native": {
+          "proof_id": "Proof_29379",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.574696,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 21,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 21,
+                    "column": 81
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b c : ℝ\nha : 0 < a\nhb : 0 < b\nhc : 0 < c\nhabc : a * b * c = 1\nhab : a + 3 * b + c = 1\na✝ : (1 - a ^ 3) * (1 - b ^ 3) * (1 - c ^ 3) ≤ 74 * a * b * c\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_29379",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.321265,
+            "response": {}
+          }
+        }
+      },
+      "2": {
+        "native": {
+          "proof_id": "Proof_29379",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.575908,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 21,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 21,
+                    "column": 81
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b c : ℝ\nha : 0 < a\nhb : 0 < b\nhc : 0 < c\nhabc : a * b * c = 1\nhab : a + 3 * b + c = 1\na✝ : (1 - a ^ 3) * (1 - b ^ 3) * (1 - c ^ 3) ≤ 74 * a * b * c\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_29379",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.321125,
+            "response": {}
+          }
+        }
+      },
+      "3": {
+        "native": {
+          "proof_id": "Proof_29379",
+          "status": "lean_error",
+          "sdk_status": "lean_error",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.58223,
+            "response": {
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 21,
+                    "column": 2
+                  },
+                  "endPos": {
+                    "line": 21,
+                    "column": 81
+                  },
+                  "data": "linarith failed to find a contradiction\ncase h\na b c : ℝ\nha : 0 < a\nhb : 0 < b\nhc : 0 < c\nhabc : a * b * c = 1\nhab : a + 3 * b + c = 1\na✝ : (1 - a ^ 3) * (1 - b ^ 3) * (1 - c ^ 3) ≤ 74 * a * b * c\n⊢ False\nfailed"
+                }
+              ]
+            }
+          }
+        },
+        "power": {
+          "proof_id": "Proof_29379",
+          "status": "valid",
+          "sdk_status": "valid",
+          "result": {
+            "id": "Proof_29379",
+            "time": 0.306476,
+            "response": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -3902,3 +3902,15 @@ measured acceleration. Public reproduction has no demonstrated gap, so avoid
 speculative code/config edits. Current collection/libraries, other authors,
 provider resources, model services and paper claims are unchanged. Review is
 self-review; missing independent audit and final RQ evidence remain explicit.
+
+## 2026-10-22T06:42:45.088004+00:00 — closed full arithmetic matrix, root self-audit
+All six29,750source terminals are actually complete, rather than inferred from
+PID disappearance. Recomputed whole sums55,671.765767/50,323.789966s yield1.106271×.
+Two failures become native-checked completions; all40timeouts persist. The
+comparison is descriptive with changed tactic coverage, not unchanged verdicts.
+All raw results, failure/memory traces and IDs are retained; no survivors,
+monitor errors or budget kills. Same-native tails and persistent regressions
+remain, with overlapping-clock caveats. Prior interrupted run not pooled.
+The canonical paper/frontier write is still next in this same continuation.
+No foreign dirty file, other Workspace, resource setting, Agent, independent
+review or GPU/project closure. Original research contract remains open.
