@@ -609,10 +609,15 @@ fn race_search(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
  let _phase=crate::phase::Guard::new("race_total");
  let rows=rows_of(hyps);let start=std::time::Instant::now();let request=wire(hyps,max_var);
  let Ok(cpu)=spawn_worker("--cpu",&request)else{return crate::hybrid::produce_certificate_hybrid(hyps,max_var).0};
- let Ok(gpu)=spawn_worker("--gpu",&request)else{return crate::hybrid::produce_certificate_hybrid(hyps,max_var).0};
- let mut workers=vec![cpu,gpu];let mut labels=vec!["cpu","gpu"];
+ let retain_highs=std::env::var_os("GPU_ARITHMETIC_STRONG_CPU_SOCKET").is_some();
+ let device_eligible=std::env::var("GPU_ARITHMETIC_DEVICE_MIN_ROWS").ok()
+  .and_then(|x|x.parse::<usize>().ok()).is_none_or(|minimum|rows>=minimum);
+ let second_mode=if retain_highs&&!device_eligible{"--cpu-highs"}else{"--gpu"};
+ let second_label=if second_mode=="--cpu-highs"{"cpu-highs"}else{"gpu"};
+ let Ok(gpu)=spawn_worker(second_mode,&request)else{return crate::hybrid::produce_certificate_hybrid(hyps,max_var).0};
+ let mut workers=vec![cpu,gpu];let mut labels=vec!["cpu",second_label];
  let mut strong_cpu_spawn_error=None;
- if std::env::var_os("GPU_ARITHMETIC_STRONG_CPU_SOCKET").is_some(){
+ if retain_highs&&device_eligible{
   match spawn_worker("--cpu-highs",&request){
    Ok(worker)=>{workers.push(worker);labels.push("cpu-highs");}
    Err(error)=>strong_cpu_spawn_error=Some(error.to_string())
@@ -638,8 +643,9 @@ fn race_search(hyps:&[Hyp],max_var:usize)->Option<Certificate>{
  let decision_ns=start.elapsed().as_nanos();let pids:Vec<_>=workers.iter().map(|w|w.child.id()).collect();
  drop(streams);let exits:Vec<_>=workers.iter_mut().map(OwnedWorker::finish).collect();
  let whole_ns=start.elapsed().as_nanos();
- race_log(serde_json::json!({"ty":"lp-race","pid":std::process::id(),"cpu_pid":pids[0],"gpu_pid":pids[1],
-  "strong_cpu_pid":pids.get(2),"strong_cpu_spawn_error":strong_cpu_spawn_error,
+ race_log(serde_json::json!({"ty":"lp-race","pid":std::process::id(),"cpu_pid":pids[0],"gpu_pid":if second_label=="gpu"{Some(pids[1])}else{None},
+  "second_child_role":second_label,"device_eligible":device_eligible,
+  "strong_cpu_pid":pids.get(2).copied().or_else(||if second_label=="cpu-highs"{Some(pids[1])}else{None}),"strong_cpu_spawn_error":strong_cpu_spawn_error,
   "source":context()["source"],"call_id":context()["call_id"],"rows":rows,"cols":hyps.len(),
   "winner":winner,"decision_ns":decision_ns,"whole_ns":whole_ns,"retirement_ns":whole_ns-decision_ns,
   "cpu_exit":exits[0],"gpu_exit":exits[1],"strong_cpu_exit":exits.get(2)}));

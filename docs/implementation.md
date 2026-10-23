@@ -402,3 +402,10 @@ daemon selects the frozen hybrid/repair functions for phase attribution;
 default race behavior is unchanged. Existing numeric phase guards gain a
 source-owned outer request. [Real24/8qualification](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-result-review.md)
 retains algorithm-source comparison, exact fallback scope and observer costs.
+
+The current additiveGPU Kimina capture preserves native and CPUHiGHS
+contenders. Its parent RSS sampler also reads the exact-owned finite CUDA
+provider, validates PID/startticks/CPUaffinity and sums both owned trees under
+48GiB; unknown provider memory aborts acquisition. Devicecutoff38rows does
+not remove the existing small-LPHiGHS contender. [Actual24source qualification](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/result-review.md)
+records defaultreadydispatch, singletonkernels, allCPUwins and completecleanup.

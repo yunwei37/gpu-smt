@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-23T06:26:08.278749+00:00",
+  "command": [
+    "cargo",
+    "+1.98.1",
+    "build",
+    "--release",
+    "--bin",
+    "farkas-batchd",
+    "--bin",
+    "farkas-race-worker",
+    "--bin",
+    "arithmetic-batchd",
+    "--target-dir",
+    "/tmp/gpu-smt-linarith-oracle-20261017/portable-source-build/native-target"
+  ],
+  "returncode": 0,
+  "source": "/workspaces/repository/bench/lean-native/linarith-oracle/reproduction/native",
+  "output": "/tmp/gpu-smt-current-budget-gpu-20261023"
+}

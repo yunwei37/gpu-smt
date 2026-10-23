@@ -27,6 +27,8 @@ class MemoryWatchdog:
         self.samples = self.kills = self.peak_rss = self.peak_repls = 0
         self.error = None
         self.on_error = None
+        self.extra_memory = None
+        self.peak_extra_rss = 0
 
     def start(self):
         self.thread.start()
@@ -59,13 +61,19 @@ class MemoryWatchdog:
                     native_repl=bool(cmd and Path(cmd[0]).name == self.repl_name)))
             except psutil.NoSuchProcess:
                 continue
-        total = sum(p["rss"] for p in processes)
+        extra = self.extra_memory() if self.extra_memory is not None else None
+        extra_rss = extra["rss_bytes"] if extra is not None else 0
+        if not isinstance(extra_rss, int) or extra_rss < 0:
+            raise RuntimeError("Invalid owned GPU provider RSS sample")
+        self.peak_extra_rss = max(self.peak_extra_rss, extra_rss)
+        total = sum(p["rss"] for p in processes) + extra_rss
         repls = [p for p in processes if p["native_repl"]]
         self.peak_rss = max(self.peak_rss, total)
         self.peak_repls = max(self.peak_repls, len(repls))
         row = dict(time_ns=time.monotonic_ns(), total_rss_bytes=total,
             budget_bytes=self.budget, effective_threshold_bytes=self.threshold,
-            native_repl_count=len(repls), processes=processes)
+            native_repl_count=len(repls), processes=processes,
+            external_owned_provider=extra)
         # Actual limits are recorded from native processes, not inferred from configuration.
         for repl in repls:
             try:
@@ -73,6 +81,8 @@ class MemoryWatchdog:
                                         if line.startswith("Max address space")]
             except FileNotFoundError:
                 pass
+        if total > self.threshold and not repls:
+            raise RuntimeError("Owned aggregate exceeds budget with no live REPL victim")
         if total > self.threshold and repls:
             victim = max(repls, key=lambda p: p["rss"])
             try:
@@ -133,4 +143,5 @@ class MemoryWatchdog:
             effective_threshold_bytes=self.threshold, per_second=True,
             samples=self.samples, kills=self.kills, peak_sampled_owned_rss_bytes=self.peak_rss,
             peak_sampled_native_repl_count=self.peak_repls, error=self.error,
-            scope="Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting.")
+            peak_external_owned_provider_rss_bytes=self.peak_extra_rss,
+            scope="Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples.")

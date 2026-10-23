@@ -24,7 +24,7 @@ async def cell(args, method, out, items, build):
                 "GPU_ARITHMETIC_NUMERIC_PHASE_LOG", "GPU_ARITHMETIC_RACE_CPU_ONLY",
                 "GPU_ARITHMETIC_STRONG_CPU_SOCKET", "GPU_SMT_CANDIDATE_TIMING",
                 "GPU_ARITHMETIC_COST_TIMING", "GPU_SMT_OMEGA_CONTROL_LOG",
-                "GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC"]:
+                "GPU_ARITHMETIC_REFERENCE_DIAGNOSTIC", "GPU_ARITHMETIC_DEVICE_MIN_ROWS"]:
         env.pop(key, None)
     env.update(PATH=str(Path(build["sdk"])/"bin")+os.pathsep+env["PATH"],
         LEAN_PATH=build["lean_path"], LEAN_SRC_PATH=build["lean_src_path"],
@@ -49,7 +49,7 @@ async def cell(args, method, out, items, build):
         total_memory_gib * 1024**3, threshold, concurrency, args.repl, out)
     original = "import Mathlib\nimport Aesop\n"
     target = {"stock":"", "native":"GpuArithmetic.IntegerCostControl",
-              "power":"GpuArithmetic.IntegerPowerOracle"}[method]
+              "power":"GpuArithmetic.IntegerPowerOracle", "gpu":"GpuArithmetic.IntegerPowerOracle"}[method]
     snippets=[]
     for row in items:
         code=row["code"]
@@ -76,12 +76,30 @@ async def cell(args, method, out, items, build):
         if not reference_diagnostic:
             raise ValueError("Reference phase attribution requires reference algorithm mode")
         env["GPU_ARITHMETIC_NUMERIC_PHASE_LOG"] = str(out/"native-helper-phases.jsonl")
-    if method=="power":
+    if method in ("power", "gpu"):
         env.update(FARKAS_NATIVE_BIN=str(args.build/"farkas-batchd"),
             GPU_ARITHMETIC_BATCH="1", GPU_ARITHMETIC_ORACLE=str(args.build/"arithmetic-batchd"),
             GPU_ARITHMETIC_RACE_WORKER=str(args.build/"farkas-race-worker"),
             GPU_ARITHMETIC_RACE_MIN_ROWS="11", GPU_ARITHMETIC_NEGATIVE_CERTIFICATES="1",
             GPU_ARITHMETIC_RACE_LOG=str(out/"lp-races.jsonl"))
+    if method == "gpu":
+        env["GPU_ARITHMETIC_DEVICE_MIN_ROWS"] = str(args.device_min_rows)
+        host = args.gpu_host
+        provider_identity = None
+        def sample_provider():
+            nonlocal provider_identity
+            with socket.create_connection((host, 5001), timeout=1) as connection:
+                connection.sendall(b'{"memory":true}\n')
+                with connection.makefile("rb") as stream:
+                    value = json.loads(stream.readline())
+            identity = (value["root_pid"], value["root_start_ticks"])
+            if provider_identity is None:
+                provider_identity = identity
+            if identity != provider_identity or value["affinity"] != sorted(os.sched_getaffinity(0)):
+                raise RuntimeError("GPU provider identity/CPU eligibility changed")
+            return value
+        guard.extra_memory = sample_provider
+        sample_provider()  # Establish exact owned provider before any REPL starts.
     # The default retains the original selected-Goedel comparison. A matched
     # existing-method control may select the upstream helper's tiered default.
     if method == "native" and args.native_engine == "tiered":
@@ -92,7 +110,7 @@ async def cell(args, method, out, items, build):
     events=(out/"http.jsonl").open("w")
     def record(row):
         events.write(json.dumps(row,ensure_ascii=False,separators=(",",":"))+"\n"); events.flush()
-    backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
+    backend=extra_backend=server=client=None; streams=[]; owned=[]; owned_processes=[]
     result=dict(state="failed",method=method,expected=len(items),
         source_concurrency=concurrency,affinity=sorted(os.sched_getaffinity(0)),memory_limit_bytes=resource.getrlimit(resource.RLIMIT_AS)[0],
         aggregate_memory_budget_bytes=total_memory_gib * 1024**3,
@@ -108,15 +126,32 @@ async def cell(args, method, out, items, build):
         native_helper=str(env["FARKAS_NATIVE_BIN"]),
         native_hybrid_override=env.get("FARKAS_EXTERNAL_CPU_HYBRID"),
         lean_version=lean_version, native_library=native_library,
-        scope="Official Kimina HTTP/SDK replay; recorded SDK/REPL/native closure; CPU-only, root self-review.")
+        scope="Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.",
+        GPU_enabled=(method == "gpu"), GPU_provider=getattr(args,"gpu_host",None) if method == "gpu" else None,
+        GPU_minimum_rows=getattr(args,"device_min_rows",None) if method == "gpu" else None,
+        retained_strong_CPU=(method == "gpu"))
     try:
-        if method=="power":
+        if method in ("power", "gpu"):
             socket_dir=tempfile.TemporaryDirectory(prefix="kimina-oracle-")
             env["GPU_ARITHMETIC_SUPPORT_SOCKET"]=str(Path(socket_dir.name)/"support.sock")
             errors=(out/"support-stderr.log").open("w"); streams.append(errors)
             command=[str(args.support_python),str(args.build_source/"support-proxy.py"),
                 "--backend","highs","--negative-certificates","--socket",env["GPU_ARITHMETIC_SUPPORT_SOCKET"],
                 "--log",str(out/"support-calls.jsonl.gz")]
+            if method == "gpu":
+                env["GPU_ARITHMETIC_STRONG_CPU_SOCKET"] = str(Path(socket_dir.name)/"cpu-highs.sock")
+                cpu_errors=(out/"retained-cpu-stderr.log").open("w"); streams.append(cpu_errors)
+                cpu_command=[str(args.support_python),str(Path(__file__).with_name("support-proxy.py")),
+                    "--backend","highs","--negative-certificates","--socket",env["GPU_ARITHMETIC_STRONG_CPU_SOCKET"],
+                    "--log",str(out/"retained-cpu-calls.jsonl.gz")]
+                extra_backend=subprocess.Popen(cpu_command,env=env,stdout=subprocess.PIPE,stderr=cpu_errors,text=True)
+                cpu_ready=extra_backend.stdout.readline(); (out/"retained-cpu-start.json").write_text(cpu_ready)
+                if not cpu_ready or not json.loads(cpu_ready).get("ready"):
+                    raise RuntimeError("Retained CPU HiGHS startup failed")
+                command=[str(args.support_python),str(Path(__file__).with_name("support-proxy.py")),
+                    "--backend","cuopt","--cuda-host",args.gpu_host,
+                    "--negative-certificates","--socket",env["GPU_ARITHMETIC_SUPPORT_SOCKET"],
+                    "--log",str(out/"support-calls.jsonl.gz")]
             backend=subprocess.Popen(command,env=env,stdout=subprocess.PIPE,stderr=errors,text=True)
             ready=backend.stdout.readline(); (out/"support-start.json").write_text(ready)
             if not ready or not json.loads(ready).get("ready"): raise RuntimeError("CPU support startup failed")
@@ -215,6 +250,10 @@ async def cell(args, method, out, items, build):
             result["owned_live_descendants_after_shutdown"]=remaining
             if remaining:
                 result["state"]="retirement_incomplete"
+        if extra_backend is not None:
+            if extra_backend.poll() is None: extra_backend.terminate()
+            result["retained_CPU_backend_exit"]=await asyncio.to_thread(extra_backend.wait)
+            extra_backend.stdout.close()
         if backend is not None:
             if backend.poll() is None: backend.terminate()
             result["backend_exit"]=await asyncio.to_thread(backend.wait)
@@ -257,7 +296,9 @@ if __name__=="__main__":
         parser.add_argument("--"+name,type=Path,required=True)
     parser.add_argument("--limit",type=int,default=0)
     parser.add_argument("--repetitions",type=int,default=1)
-    parser.add_argument("--methods",nargs="+",choices=["stock","native","power"],default=["stock","native","power"])
+    parser.add_argument("--methods",nargs="+",choices=["stock","native","power","gpu"],default=["stock","native","power"])
+    parser.add_argument("--gpu-host")
+    parser.add_argument("--device-min-rows",type=int,default=38)
     parser.add_argument("--native-engine", choices=["hybrid", "tiered"], default="hybrid",
                         help="Existing native-reference engine; does not change Power's numerical portfolio")
     parser.add_argument("--affinity", type=int, nargs="+", default=[20,21,22,23],
