@@ -34,6 +34,25 @@ All496 groups retire. Actual model states:404 cancelled,15 phase-I feasible,
 accepted certificates: the original exact support/negative checks and Lean
 proof checking remain. No minimum-batch wait or CPU delay is added.
 
+## Why no true batches were formed
+
+The existing CUDA proxy calls solve_cuda_batch synchronously from gpu_dispatch
+and waits through kernel retirement before dispatching another group. The
+provider supports concurrent request handlers, but the proxy does not submit
+a second group while the first remains active. The closed trace confirms
+496 submission/retirement pairs and zero overlapping submitted groups.
+
+This serialization is not by itself a measured large opportunity: among505
+decoded proxy inputs, only5 source-owned requests arrive while a previous
+group remains unretired;4 finish their CPU race before that prior group
+retires. All5 actual source/call IDs and timings are in the canonical analysis.
+Another192 proxy connection records have incomplete/undecodable JSON input.
+They remain unattributed here; they are neither GPU-solved LPs nor evidence
+that all possible batch windows have been enumerated. The906 race records
+and actual CUDA launch source joins are a separate, known population.
+No zero-cost asynchronous dispatch speedup or strict GPU bound follows.
+The healthy frozen matrix is not changed to try another dispatch variant.
+
 ## Resource and provenance self-check
 
 Source commit695c2b485b2f7ab32579b0f93e5058195e5a84fb; same original1000/order,

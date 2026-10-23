@@ -85,6 +85,31 @@ device=dict(launch_events=len(launches),launches=sum(x['batch_size']>0 for x in 
  verified_cross_source_multi_model_launches=sum(x['distinct_sources']>1 and x['batch_id']not in unknown_launches for x in launches),
  unknown_source_call_launch_IDs=unknown_launches,
  unretired_launch_IDs=[x['batch_id']for x in launches if x['batch_id']not in retired])
+# Proxy dispatch blocks until the previous submitted group has retired.
+# Count only decoded, source-owned arrivals; malformed/cancelled inputs stay unknown.
+batch_events=list(rows(O/(prefix+'gpu'+('-ready'if ready else''))/'support-calls.jsonl.gz.batches'))
+submits={x['batch_id']:x for x in batch_events if x.get('event')=='device_submit'}
+group_retire={x['batch_id']:x for x in batch_events if x.get('event')=='device_batch_retired'}
+by_request={x['id']:x for x in proxy_calls if x.get('input')}
+arrivals=[];submitted_spans=[]
+for group,b in submits.items():
+ if group not in group_retire:continue
+ end=group_retire[group]['monotonic_ns'];submitted_spans.append((b['monotonic_ns'],end))
+ sources={by_request[int(k.split(':')[-1])]['input']['source']for k in b['keys']}
+ for x in proxy_calls:
+  q=x.get('input')
+  if q and q['source']not in sources and b['monotonic_ns']<=x['start_ns']<end:
+   arrivals.append(dict(call_id=q['call_id'],source_ID=bybody.get(body(q['source'])),prior_group=group,
+    finished_before_prior_retirement=x['end_ns']<=end,
+    arrival_to_prior_retirement_ns=end-x['start_ns'],proxy_ns=x['end_ns']-x['start_ns']))
+ordered=sorted(submitted_spans)
+dispatch=dict(proxy_records=len(proxy_calls),decoded_proxy_records=len(by_request),
+ undecoded_proxy_records=sum(not x.get('input')for x in proxy_calls),
+ undecoded_errors=dict(collections.Counter(str(x.get('reply',{}).get('error'))for x in proxy_calls if not x.get('input'))),
+ submitted_groups=len(submits),missing_retire_group_IDs=sorted(set(submits)-set(group_retire)),
+ overlapping_submitted_group_pairs=sum(b[0]<a[1]for a,b in zip(ordered,ordered[1:])),
+ source_owned_arrivals_during_prior_group_retirement=arrivals,
+ limitations='Only decoded inputs are source-attributed; queued-before-submission/undecoded work is not reconstructed. Fixed-trace overlaps are not counterfactual speedup or strict Amdahl.')
 gpu_winning_sources=collections.defaultdict(set)
 for x in gpu_races:
  i=bybody.get(body(x['source']))
@@ -95,7 +120,7 @@ out=dict(scope=('Closed GPU cell only; CPU/native controls still pending, no pai
  retained_CPU_or_retirement_errors=errors,GPU_race_winners=dict(collections.Counter(x['winner']for x in gpu_races)),GPU_winning_source_IDs={k:sorted(v)for k,v in gpu_winning_sources.items()},
  actual_GPU_child_races=sum(x.get('gpu_pid')is not None for x in gpu_races),
  small_LP_retained_CPU_only_races=sum(x.get('second_child_role')=='cpu-highs'for x in gpu_races),
- lifecycle=life,provider_retirement_probe=probe,device_engagement=device,native_ranked_tails=tail,
+ lifecycle=life,provider_retirement_probe=probe,device_engagement=device,dispatch_serialization=dispatch,native_ranked_tails=tail,
  GPU_over_CPU_whole=None if phase else cells['gpu']['terminal']['whole_lifecycle_seconds']/cells['power']['terminal']['whole_lifecycle_seconds'],
  limitations=['Fresh one fixed-order/shared-host observation, not confidence or global optimum.',
  'Original source outcomes/native JSON govern; CPU/GPU contention and startup can lose.',

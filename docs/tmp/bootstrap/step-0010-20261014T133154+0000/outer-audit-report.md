@@ -3982,3 +3982,6 @@ Actual1000GPUcell/rootpid/frozen695c2b4 and source-ownedproviderRSS are observed
 
 ## 2026-10-23T07:22:31.140105+00:00 — root GPU cell closure self-audit
 Only closedGPUcell published: actual488models (8emptyevents excluded), allsingleton/nofalsebatchclaim. Exact-positive6/exact-negative4racewins donotconstitutecohortspeedup. 763wholeownlocal+providerRSS arithmetic/sourceidentitychecks pass,max2/24each/48sampled, noerrorsorleftovers. Closedbytearchivesroundtripandreaderreplaypass; .gzreaderfixaffectsonlyanalysis. Native/CPUcontrolsnotcomplete, noexistingclocksubstitution orheadlineclaim. Onlyownpaths/closedrawstage; allforeignauthorfilesandactiveCPUsuntouched. Originaldirection/4RQs unchanged, rootselfreviewnotindependent.
+
+### 2026-10-23T07:26:39.413952+00:00
+Root dispatch self-audit distinguishes906knownnumericraces/knownactualCUDAmodelsfrom505decodedproxyinputsand192unknownconnectioninputs. Serializationisverifiedsourcebehavior,butitsremovalhasnomeasuredcohortbenefit;5decodedoverlapsarenotcompleteall-pathbatchwindows. AllcurrentCPUcontrolscontinueuntouched.
