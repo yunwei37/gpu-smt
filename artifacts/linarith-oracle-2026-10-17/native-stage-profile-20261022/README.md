@@ -56,3 +56,14 @@ rescale or additive-overlap GPU ceiling. Preserve stock/omega/product-provenance
 gaps. Then review outcomes/allrawresponses, resources, tails and decisive GPU
 support-search opportunity; continue GPU unless an applicable bound excludes
 the original1.5xcriterion. No minute polling or second full group.
+
+## Native-helper1000 complete
+
+[Complete result and self-review](reference-full-result-review.md),
+[own-clock combined analysis](reference-combined-analysis.json),
+[helper phases/shapes/tails](reference-full-analysis.json) and
+[size eligibility](reference-full-size-eligibility.json) replace the pending
+status above. Whole1380.322631s; all1000fullresponses match frozen native.
+951.845679s of exactfallback versus39.935943s FPsolve identifies the target;
+no strictGPUimpossibility bound or device gain follows. Allraw and memory
+are closed/retired and preserved.

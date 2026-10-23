@@ -30,3 +30,12 @@ control but do not prove zero overhead. The next original1,000pair must
 retain its own denominators, safe resources, full failure/tail distribution
 and uncovered paths. It is a diagnostic, not new solver throughput.
 No scope change or strictGPUceiling follows from a sum of concurrent spans.
+
+## Evening follow-through (2026-10-23 UTC, still Oct22 local)
+The admitted1000helper capture is complete. Source-call data finds951.85s
+exactfallback versus39.94sFPsolve, rather than a missing-timing excuse.
+Archive the staleGPUprogress verbatim and replace it with current complete
+results/next GPU execution; preserve historicalraw and authorfiles. The next
+substantive discriminator is whether the existing GPUsupport race avoids
+costly fallback over strongHiGHS at current safe resources. More profiling,
+paper rewriting or a tinyFPkernel alone will not settle that decision.

@@ -1,0 +1,17 @@
+{
+  "scope": "Complete same native helper diagnostic. Median-row split eligibility, not GPU speedup.",
+  "parts": {
+    "rows_lt38": {
+      "calls": 4330,
+      "FP_wall": 1.099153905,
+      "exact_fallback_calls": 187,
+      "exact_fallback_wall": 50.095157467
+    },
+    "rows_ge38": {
+      "calls": 4316,
+      "FP_wall": 38.836788865,
+      "exact_fallback_calls": 1449,
+      "exact_fallback_wall": 901.75052113
+    }
+  }
+}

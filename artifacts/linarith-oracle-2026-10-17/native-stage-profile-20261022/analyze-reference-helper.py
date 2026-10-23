@@ -99,12 +99,12 @@ for label in labels:
   tail_ids=sorted(expected[label],key=lambda i:ref_lat.get(i,all_ref_lat[i]),reverse=True)[:math.ceil(len(expected[label])*fraction)]
   tt=collections.defaultdict(lambda:[0.,0.,0])
   for i in tail_ids:
-   for stage,v in sourcecost[i].items():
+   for stage,v in sourcecost.get(i,{}).items():
     for j in range(3):tt[stage][j]+=v[j]
   ranked_tails[str(fraction)]=dict(IDs=tail_ids,stage_CPU_wall_count=dict(tt))
  whole=cells[label]['terminal']['whole_lifecycle_seconds']
  out['profiles'][label]=dict(stage_CPU_wall_count=dict(totals),pending_begin_events=list(pending.values()),unmatched_end_events=invalid,
-  source_owned_requests=len(requests),profiled_sources=len(sourcecost),unknown_phase_records=len(unknown),phase_records_outside_own_request=len(outside),
+  source_owned_requests=len(requests),profiled_sources=len({source_map[k]for k in requests if source_map.get(k)is not None}),unknown_phase_records=len(unknown),phase_records_outside_own_request=len(outside),
   FP_solver_plus_exact_fallback_envelope_CPU_seconds=pure_cpu,FP_solver_plus_exact_fallback_envelope_accumulated_wall_seconds=pure_wall,
   exact_repair_wall_excluding_nested_verify_seconds=repair_exclusive,
   request_wall_outside_recorded_inner_stage_union_seconds=residual,own_whole_seconds=whole,

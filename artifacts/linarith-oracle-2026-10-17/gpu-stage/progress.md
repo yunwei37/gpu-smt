@@ -1,24 +1,40 @@
-# GPU oracle evaluation in progress
-CPU primary remains1.34668x; final criterion is best(CPU,GPU)>1.5x against the strong matched native baseline. Hourly gpu-smt-osdi and the research goal remain active. Root thread alone implements, runs and reviews.
+# Current GPU oracle research frontier
 
-## Completed attribution
-The old oracle/strong all-call diagnostic is complete, not running:
-- [oracle1000 review](full1000-oracle/result-review.md), full native JSON agreement, all direct/fallback LP costs and conditional GPU sensitivity;
-- [baseline1000 review](full1000-baseline/result-review.md), full native JSON agreement, complete numeric stream and explicit ten-line malformed Lean telemetry limitation;
-- [oracle complete numeric CPU ledger](full1000-oracle-numeric-replay/numeric-cpu-ledger.json);
-- [baseline complete numeric CPU ledger](full1000-baseline-numeric-replay/result-review.md).
-Complete numeric replays have zero certificate/error differences and actual wait4 receipts. Their process CPU composition is separate from whole-verification wall and does not partition an older sampled976+ denominator.
+Root thread only; main; RTX5090. Prior pending process descriptions are
+[losslessly archived](progress-before-20261023.md.gz), not current health.
+The original4RQs and better-valid-CPU/GPU1.5x criterion remain unchanged.
 
-## Current experiment
-The [qualified GPU mechanism](cuopt-target/implementation-status.md) uses actual RTX5090 cuOpt PDLP, CPU exact support repair and unchanged Lean certificate reconstruction/fallback. Pure feasibility stalls and HTTP NaN serialization failures are preserved; phase-I ready-queue block-diagonal batching replaces that invalid integration.
+## Published complete CPU boundaries
+Selected original1000 native/CPU composition810.71/476.73s=1.70059x is its
+historical8queue resource point. Full29750at current2live/24each/48aggregate
+gives1.10627x across three pairs, with2outcome changes and40retainedtimeouts.
+Neither is GPU acceleration, transparent output equivalence across the full
+population, global optimum or OSDI novelty acceptance.
+[Whole population](../kimina-full29750-budgeted-20261019/full-result-review.md).
 
-The [24-source analysis](cuopt-target/qualification/phase1-preflight-paired-analysis.json) reports exact current lifecycle costs, warning-only native differences, backend engagement and candidate spans. These are preflight observations, not the final1000 result or proof of OSDI-level contribution.
+## Complete same-clock native numerical attribution
+[Original1000result](../native-stage-profile-20261022/reference-full-result-review.md):
+1380.322631s whole;992complete/8reject and fullresponses identical to frozen
+native.8646source-ownedLPs:39.935943sFPsolve and1636exactfallbacks951.845679s.
+Products225.613134s; exact repair0.599694s. Everyhelperrequest is inside its
+own LeanLP wrapper; no unknown/unpaired source/call events.
+Actual median FProws37/columns136/nnz727,3102hypothetical cross-source
+matrix-ready→answer overlap pairs,max2. Those are not GPUbatches.
+Concurrent sums/occupied unions do not establish a strict Amdahl ceiling.
+The result does not exclude1.5x; GPUroute remains open.
 
-The [fixed1000 plan](cuopt-target/full1000-plan.md) and [launch receipt](cuopt-target/full1000-launch.json) identify the current driver18460 and output batch-oracle/full1000-phase1. Order is GPU, robust HiGHS CPU control, strong native baseline. This finite complete comparison is running; do not infer the1.5x outcome from partial rows. Remove the disposable upstream GPU Job after its cell finishes while CPU controls proceed. All new captures keep48GiB.
+## Device evidence and next execution
+Existing [full earlier GPU matrix](large-lp-race/full1000-gpu/result-review.md)
+has actual cross-candidate cuOpt batches, but below1.5x and a different
+historical resource point. The later [additive64composition](large-lp-race/strong-cpu-gpu-portfolio/result-review.md)
+preserves native+HiGHS and adds GPU, but costs3.43%more elapsed.
+No GPUwin or general impossibility is inferred.
 
-## Remaining limits
-Historical four-source wave timings cannot become individual candidate times. The new actual per-source job side channel supplies candidate service spans; whole cells also include final retirement. Tail analysis must retain overlap and cannot assign shared cleanup to a source without evidence.
-Direct generated-product counts are explicit; old native fallback product provenance remains unknown where not recorded. R2 metadata is qualified separately and is not retroactively invented.
-An interval union is occupancy, not a critical-path saving. A conditional optimistic removal sensitivity neither proves GPU acceleration nor excludes route changes.
-
-The valid original prefix driver5256 continues; there is no minute watcher or empty goal polling. Failed/partial data and other authors' files are preserved. No independent audit, OSDI acceptance, final GPU speedup or impossibility is claimed.
+Next test avoidance of expensive exactfallback in the existing additive
+large-LP competition at the current resource point. Keep both CPU contenders
+until an exact-repaired GPUcertificate wins; cancel/reap losers. Include
+preparation, transport, queue, repair/check, cancellation, cleanup and the
+device provider's host memory/CPU in actual equal-resource accounting.
+One fullgroup only,48GiBaggregate sampledRSS,max2REPLs24GiBeach/fourCPUs.
+Do not restore unsafe8-worker captures, start another agent or new scheduler.
+All reviews remain self-review; no finishedpaper/OSDIacceptance claim.

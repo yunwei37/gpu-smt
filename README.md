@@ -42,6 +42,16 @@ REPLs, with sampled total RSS at most 21.17 GiB, no watchdog kill/error and no
 owned survivor. **This is CPU-only and does not establish a GPU upper bound.**
 [Full raw results, outcome changes, tails, memory and self-review](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
 
+## Current GPU opportunity
+
+The complete same-clock native diagnostic on the original1,000heavy inputs
+finds39.94s in floating LP solves versus951.85s in1,636exact fallbacks,
+within its own1380.32s whole lifecycle. Allfullresponses match the native
+reference. GPU support search must avoid expensive fallback; merely speeding
+the floating kernel targets a small part. Concurrent phase sums are not an
+Amdahl ceiling. [Full attribution, shapes, tails and resource evidence](artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md).
+No useful additional GPU gain has yet been established.
+
 ## Selected arithmetic-heavy result
 
 The corrected native-array comparison uses the original **1,000 arithmetic-heavy

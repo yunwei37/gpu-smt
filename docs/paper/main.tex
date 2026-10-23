@@ -1005,6 +1005,31 @@ These observations retain the stronger CPU competitors but do not establish
 a device benefit or admit a full matrix. They also show why racing cannot
 guarantee zero slowdown when host overhead and contention remain.
 
+\paragraph{Current native search attribution.}
+A complete diagnostic over the original 1,000 heavy candidates uses two live
+REPLs, 24\,GiB per REPL, a 48\,GiB aggregate sampled RSS budget and four CPUs
+8--11. Its own complete lifecycle is 1,380.32 seconds. All 992 complete and
+eight rejected responses match the frozen native reference in full.
+The 8,646 source-owned native LP requests contain 39.94 accumulated wall
+seconds of floating-point solve and 951.85 seconds in 1,636 exact fallbacks.
+Positive support repair totals 0.60 seconds. Exact fallback includes matrix
+construction, coefficient conversion and rational cleanup. Nonlinear product
+generation totals 225.61 seconds; these concurrent phase sums are not disjoint
+fractions of whole elapsed time.
+
+Actual packed matrices have median 37 rows, 136 columns and 727 nonzeros;
+the maxima are 888, 3,160 and 26,044. The trace contains 3,102 cross-source
+matrix-ready-to-answer overlap pairs, with at most two open requests.
+These are hypothetical race windows, not GPU batches. The native-ranked
+slowest 1\% includes only nine exact fallbacks, but they occupy 108.36
+accumulated seconds. The result motivates avoiding expensive exact fallback
+with support search rather than porting only the cheap floating-point stage.
+Missing stock, outer elaboration and product-provenance coverage, overlapping
+intervals and instrumentation prevent a scheduler-independent GPU ceiling.
+Peak sampled owned RSS is 15.55\,GiB, with no watchdog error or termination
+and no owned descendant after retirement. This is a CPU diagnostic, not
+GPU acceleration or an independent audit.
+
 \paragraph{Remaining numerical work.}
 The remaining GPU opportunity depends on numerical work in the current CPU path, including unsuccessful searches and retirement. The third two-sided CPU-oracle capture contains 1,888 uniquely source-matched
 numerical races. Their durations sum to 101.54 seconds, including launch,

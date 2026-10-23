@@ -3970,3 +3970,6 @@ Actualmatrixcounts include normalization and duplicate accumulation; no wirecoun
 
 ## 2026-10-22T09:22:53.744281+00:00 — root startup/closed-reader audit
 Single owned parent/source2/live2/fourCPU resource receipt and v4referencehelper actualexecution checked; startupnotdelivery. New reader refuses nonterminalcapture and joins Lean/helper ownclock; no historicalphaserescaling, no unknownworkzero. Rawactive files remain unstaged. Completedparts/sourceaudits remain onmain; nextboundary is actualterminal1000result, no repeatedminutechecks.
+
+## 2026-10-23T06:15:56.258562+00:00 — complete native/helper own-clock self-audit
+Recompute1000ID/fullresponseparity and995actualhelpersources from8646pairedrequests/matrices. Correct derivedtaildefaultdictcount only; rawunchanged. FullrequestinsideLeanLP validationpasses; allphasepairsandshapessourced. CumulativeLP/CPU/tailspansnotcohortwall; exactfallbackincludespacking/coefficientcleanup; no strictboundfromoverlap.95.97%ofFP+fallbackwallisexactfallback, supportingGPUavoidanceexperiment not tinyFPport. Allactualresource/cancellation/retirementrecordsclosedandrawpreserved. Targetsystem/RQ1–4andoriginalCPU/GPUcriterionunchanged; reviewselfperformednotindependent.

@@ -1,0 +1,103 @@
+{
+  "scope": "Complete original1000 own-instrumented-clock composition; root self-review. Not a GPU measurement or strict impossibility bound.",
+  "own_profile_whole_seconds": 1380.322630987,
+  "native_outcome_difference_IDs": [],
+  "raw_response_difference_IDs": [],
+  "stage_CPU_wall_seconds": {
+    "certificate": [
+      220.85569797899987,
+      220.89643430900014
+    ],
+    "linearize": [
+      104.18557467299998,
+      104.19832644799997
+    ],
+    "lp": [
+      8.750058271000016,
+      1013.9942579980005
+    ],
+    "preprocess": [
+      99.85677123499983,
+      99.87571819600028
+    ],
+    "products": [
+      225.5773009749996,
+      225.6131339239998
+    ]
+  },
+  "helper_stage_CPU_wall_count": {
+    "lp_float_pack": [
+      1.1107248710000024,
+      1.4984510910000004,
+      8646
+    ],
+    "lp_float_solve": [
+      39.911513330000055,
+      39.93594277000001,
+      8646
+    ],
+    "lp_exact_solve": [
+      951.6805326490005,
+      951.8456785970004,
+      1636
+    ],
+    "native_reference_request": [
+      999.3971502349995,
+      1000.1265164070037,
+      8646
+    ],
+    "exact_repair": [
+      0.5753320199999996,
+      0.5996943430000001,
+      7061
+    ],
+    "exact_certificate_verify": [
+      0.4460712239999987,
+      0.4534814180000022,
+      15016
+    ]
+  },
+  "paired_helper_request_source_count": 995,
+  "pending_helper_requests": [],
+  "unknown_helper_requests": 0,
+  "helper_requests_not_contained_in_own_Lean_LP": [],
+  "helper_request_per_source_interval_union_sum_seconds": 1000.126516407,
+  "LPwrapper_wall_not_covered_by_native_helper_request_seconds": 13.867741591000481,
+  "products_plus_FP_or_exact_fallback_envelope_accumulated_wall_seconds": 1217.3947552910024,
+  "product_LP_global_occupied_seconds": 956.066424559,
+  "observed_LP_wrapper_wall_over_own_whole": 0.7346067037044403,
+  "observed_product_wall_over_own_whole": 0.1634495652387262,
+  "actual_FP_matrix_shapes": {
+    "rows": {
+      "count": 8646,
+      "median": 37,
+      "p90": 114,
+      "p99": 218,
+      "max": 888
+    },
+    "cols": {
+      "count": 8646,
+      "median": 136,
+      "p90": 309,
+      "p99": 630,
+      "max": 3160
+    },
+    "nnz": {
+      "count": 8646,
+      "median": 727,
+      "p90": 2309,
+      "p99": 5603,
+      "max": 26044
+    }
+  },
+  "hypothetical_matrix_ready_to_answer_overlap_pair_count": 3102,
+  "maximum_simultaneously_open_matrix_windows": 2,
+  "coverage_limits": [
+    "Accumulated concurrent wall fractions are not additive removable critical path.",
+    "Exact fallback includes matrix construction, coefficient conversion and rational cleanup.",
+    "Uncovered LPwrapper wall includes Lean packing/IPC/stock fallback/queueing; it is not measured communication alone.",
+    "Outer elaboration,omega,configured/indirect stock paths and hard-death omissions remain unknown.",
+    "Per-call nonlinear product provenance and exact-tableau shapes unavailable; no missing input becomes zero.",
+    "Fixed-order/shared-host instrumentation controls are reported separately; no old denominator rescaling."
+  ]
+}
