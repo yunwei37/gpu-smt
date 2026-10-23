@@ -38,3 +38,7 @@ device provider's host memory/CPU in actual equal-resource accounting.
 One fullgroup only,48GiBaggregate sampledRSS,max2REPLs24GiBeach/fourCPUs.
 Do not restore unsafe8-worker captures, start another agent or new scheduler.
 All reviews remain self-review; no finishedpaper/OSDIacceptance claim.
+
+## 2026-10-23T07:22:31.139966+00:00 — current GPU cell closed; controls running
+
+Original1000 GPU cell:992complete/8reject,762.439983s whole; provider cold797.608028s.488 actual singleton CUDA models,6 positive/4 exact-negative GPU race wins; zero multi-source batches. Peak combined ownRSS14.968GiB/max2/no monitor errors or survivors. Provider retired/UIDdeleted before CPU controls. No paired speedup yet. [Closed root result](../current-budget-gpu-20261023/gpu-phase-result-review.md). Same running matrix continues; no extra acquisition.

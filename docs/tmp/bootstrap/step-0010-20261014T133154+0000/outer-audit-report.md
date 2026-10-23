@@ -3979,3 +3979,6 @@ Current24responses and everyRSSsample recomputed, source2/maxlive2/24GiBeach/48a
 
 ## 2026-10-23T07:12:20.625536+00:00 — root full-matrix startup self-audit
 Actual1000GPUcell/rootpid/frozen695c2b4 and source-ownedproviderRSS are observed, not inferred fromJobReady. Fullcomparisonnotterminal. No activefilesstaged; sourceanalysiseditsaffectonlyfutureclosedreader, not runningbinary/capture. PlannedUIDretirementbeforeCPUs keepsonegroup/current48GiBpoint. Singletonpreflightisnottruebatchclaim; unknownsourcejoinswouldpreventverifiedGPUbatchcredit. Noindependentreview orOSDIacceptanceclaimed.
+
+## 2026-10-23T07:22:31.140105+00:00 — root GPU cell closure self-audit
+Only closedGPUcell published: actual488models (8emptyevents excluded), allsingleton/nofalsebatchclaim. Exact-positive6/exact-negative4racewins donotconstitutecohortspeedup. 763wholeownlocal+providerRSS arithmetic/sourceidentitychecks pass,max2/24each/48sampled, noerrorsorleftovers. Closedbytearchivesroundtripandreaderreplaypass; .gzreaderfixaffectsonlyanalysis. Native/CPUcontrolsnotcomplete, noexistingclocksubstitution orheadlineclaim. Onlyownpaths/closedrawstage; allforeignauthorfilesandactiveCPUsuntouched. Originaldirection/4RQs unchanged, rootselfreviewnotindependent.
