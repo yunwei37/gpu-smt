@@ -34,6 +34,7 @@ for method in['native','power','gpu']:
  if method=='gpu':assert peer_samples==cells[method]['terminal']['memory_watchdog']['samples']and len(identities)==1
  memory[method]=dict(provider_sample_count=peer_samples,provider_identities=list(identities),peak_provider_RSS_bytes=peak_peer,
   arithmetic_checked='Every total equals local own RSS plus exact-owned provider tree RSS; no GPU-Pod host memory exclusion.')
+assert len(bybody)==len(items), 'Ambiguous source bodies require explicit attribution'
 native=data['native'];changes={}
 for method in['power','gpu']:
  changes[method]=dict(native_verdict_difference_IDs=[i for i in ids if F['native_outcome'](native[i])!=F['native_outcome'](data[method][i])],
@@ -46,6 +47,8 @@ for x in gpu_races:
  if i is None:unknown.append(x['call_id'])
  else:race_sources.append(i)
  if x.get('strong_cpu_spawn_error')or not x.get('strong_cpu_pid'):errors.append(x)
+ if x.get('second_child_role')=='cpu-highs':
+  assert x['gpu_exit']['pid']==x['strong_cpu_pid']
  for k in['cpu_exit','gpu_exit','strong_cpu_exit']:
   v=x.get(k)
   if v and(v.get('kill_error')or v.get('wait_error')):errors.append(x)
@@ -56,13 +59,33 @@ for f in[.01,.1]:
 lifecycle=O/('gpu-full-lifecycle.json'if full else'gpu-lifecycle.json')
 life=json.loads(lifecycle.read_text())if lifecycle.exists()else None
 probe=json.loads(life['providerProbe'])if life and life.get('providerProbe')else None
+provider_path=O/('gpu-full-provider.log.gz'if full else'gpu-provider.log.gz')
+provider_events=[]
+if provider_path.exists():
+ for line in gzip.decompress(provider_path.read_bytes()).decode().splitlines():
+  if line.startswith('{'):provider_events.append(json.loads(line))
+launches=[x for x in provider_events if x.get('event')=='launch']
+retired={x['batch_id']for x in provider_events if x.get('event')=='batch_retired'}
+proxy_calls=list(rows(O/(prefix+'gpu'+('-ready'if ready else''))/'support-calls.jsonl.gz'))
+call_sources=collections.defaultdict(set)
+for x in proxy_calls:
+ if x.get('input'):call_sources[x['input']['call_id']].add(x['input']['source'])
+unknown_launches=[]
+for x in launches:
+ if any(len(call_sources[c])!=1 for c in x['call_ids']):unknown_launches.append(x['batch_id']);continue
+ assert len({next(iter(call_sources[c]))for c in x['call_ids']})==x['distinct_sources']
+device=dict(launches=len(launches),models=sum(x['batch_size']for x in launches),
+ batch_sizes=dict(collections.Counter(str(x['batch_size'])for x in launches)),
+ verified_cross_source_multi_model_launches=sum(x['distinct_sources']>1 and x['batch_id']not in unknown_launches for x in launches),
+ unknown_source_call_launch_IDs=unknown_launches,
+ unretired_launch_IDs=[x['batch_id']for x in launches if x['batch_id']not in retired])
 out=dict(scope='Complete matched current-resource original candidate service observation, root self-review; preflight is not full result.'if not full else'Complete matched original1000 same-resource observation, root self-review.',
  conditions=cells,response_changes=changes,CPU_GPU_fullresponse_difference_IDs=[i for i in ids if data['power'][i]['result'].get('response')!=data['gpu'][i]['result'].get('response')],
  aggregate_provider_memory=memory,GPU_races=len(gpu_races),actual_race_source_count=len(set(race_sources)),unknown_race_source_calls=unknown,
  retained_CPU_or_retirement_errors=errors,GPU_race_winners=dict(collections.Counter(x['winner']for x in gpu_races)),
  actual_GPU_child_races=sum(x.get('gpu_pid')is not None for x in gpu_races),
  small_LP_retained_CPU_only_races=sum(x.get('second_child_role')=='cpu-highs'for x in gpu_races),
- lifecycle=life,provider_retirement_probe=probe,native_ranked_tails=tail,
+ lifecycle=life,provider_retirement_probe=probe,device_engagement=device,native_ranked_tails=tail,
  GPU_over_CPU_whole=cells['gpu']['terminal']['whole_lifecycle_seconds']/cells['power']['terminal']['whole_lifecycle_seconds'],
  limitations=['Fresh one fixed-order/shared-host observation, not confidence or global optimum.',
  'Original source outcomes/native JSON govern; CPU/GPU contention and startup can lose.',

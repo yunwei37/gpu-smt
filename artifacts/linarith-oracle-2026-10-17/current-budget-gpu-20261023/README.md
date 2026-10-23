@@ -21,3 +21,15 @@ Allthreecellclocks, rawfailures and fixednative-rankedtails are retained;
 actual groups/members/sourceownership decide truebatching. No partialprefix,
 kernel-only speed, historicaldenominator, independent audit or OSDIacceptance
 is claimed. One fullgroup only; no new agent or scheduler.
+
+## Full matrix actually started
+
+[Actual startup/resource receipt](full-launch.json): GPUcell starts2026-10-23
+07:02:49UTC, rootPID224887, frozen implementation695c2b4. Original1000inputs;
+GPUprovider and every local child included in the same48GiBsum, max2REPLs24each,
+fourCPUs8–11. The single finite lifecycle then UID-deletes the GPUprovider
+before launching cleanPower/native controls. Startupisnotpairedresults.
+Active raw files remain unstaged; do not duplicate this healthy matrix.
+The closed reader also validates everyactualCUDAgroup/sourcecall/retirement;
+legacy smallCPU-only second-child exit stays in gpu_exit with its explicit
+cpu-highs role and actual strongCPU PID, not a GPUresult.

@@ -1,0 +1,202 @@
+{
+  "utc": "2026-10-23T07:07:59.227531+00:00",
+  "scope": "Single startup/resource observation, not a full result.",
+  "source_commit": "695c2b485b2f7ab32579b0f93e5058195e5a84fb",
+  "matrix_order": [
+    "gpu",
+    "provider retirement and UID deletion",
+    "power",
+    "native"
+  ],
+  "controller_session": 16323,
+  "parent_pid": 224887,
+  "parent_birth": 1792738969.04,
+  "source_count": 1000,
+  "original_HTTP_requests_started": 373,
+  "last_owned_memory_sample": {
+    "time_ns": 1170650513252882,
+    "total_rss_bytes": 15457890304,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "native_repl_count": 2,
+    "processes": [
+      {
+        "pid": 224887,
+        "birth": 1792738969.04,
+        "ppid": 0,
+        "rss": 67231744,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-u",
+          "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/run-full.py",
+          "10.42.1.115"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224896,
+        "birth": 1792738969.34,
+        "ppid": 224887,
+        "rss": 41512960,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python",
+          "/workspaces/repository/bench/lean-native/linarith-oracle/support-proxy.py",
+          "--backend",
+          "highs",
+          "--negative-certificates",
+          "--socket",
+          "/tmp/kimina-oracle-9r9e96a2/cpu-highs.sock",
+          "--log",
+          "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full1000-gpu/retained-cpu-calls.jsonl.gz"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224900,
+        "birth": 1792738969.42,
+        "ppid": 224887,
+        "rss": 17408000,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python",
+          "/workspaces/repository/bench/lean-native/linarith-oracle/support-proxy.py",
+          "--backend",
+          "cuopt",
+          "--cuda-host",
+          "10.42.1.115",
+          "--negative-certificates",
+          "--socket",
+          "/tmp/kimina-oracle-9r9e96a2/support.sock",
+          "--log",
+          "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full1000-gpu/support-calls.jsonl.gz"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224902,
+        "birth": 1792738969.45,
+        "ppid": 224887,
+        "rss": 107507712,
+        "command": [
+          "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+          "-m",
+          "server"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224907,
+        "birth": 1792738970.22,
+        "ppid": 224902,
+        "rss": 798470144,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224910,
+        "birth": 1792738970.23,
+        "ppid": 224902,
+        "rss": 797319168,
+        "command": [
+          "lake",
+          "env",
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224962,
+        "birth": 1792738970.69,
+        "ppid": 224910,
+        "rss": 6577057792,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 224961,
+        "birth": 1792738970.69,
+        "ppid": 224907,
+        "rss": 6874308608,
+        "command": [
+          "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+        ],
+        "native_repl": true,
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 224974,
+        "birth": 1792738975.39,
+        "ppid": 224962,
+        "rss": 9072640,
+        "command": [
+          "/tmp/gpu-smt-current-budget-gpu-20261023/arithmetic-batchd"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 224972,
+        "birth": 1792738975.19,
+        "ppid": 224961,
+        "rss": 9809920,
+        "command": [
+          "/tmp/gpu-smt-current-budget-gpu-20261023/arithmetic-batchd"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 225058,
+        "birth": 1792738984.12,
+        "ppid": 224962,
+        "rss": 12595200,
+        "command": [
+          "/tmp/gpu-smt-current-budget-gpu-20261023/farkas-batchd",
+          "--serve"
+        ],
+        "native_repl": false
+      },
+      {
+        "pid": 225335,
+        "birth": 1792739003.47,
+        "ppid": 224961,
+        "rss": 10719232,
+        "command": [
+          "/tmp/gpu-smt-current-budget-gpu-20261023/farkas-batchd",
+          "--serve"
+        ],
+        "native_repl": false
+      }
+    ],
+    "external_owned_provider": {
+      "ready": true,
+      "root_pid": 1,
+      "root_start_ticks": 117032656,
+      "rss_bytes": 134877184,
+      "processes": [
+        {
+          "pid": 1,
+          "ppid": 0,
+          "start_ticks": 117032656,
+          "rss_bytes": 134877184
+        }
+      ],
+      "time_ns": 1170650512939335,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "terminal_present": false
+}

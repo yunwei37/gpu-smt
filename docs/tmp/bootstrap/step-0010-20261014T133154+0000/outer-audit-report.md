@@ -3976,3 +3976,6 @@ Recompute1000ID/fullresponseparity and995actualhelpersources from8646pairedreque
 
 ## 2026-10-23T06:54:27.386816+00:00 — root additiveGPUqualification self-audit
 Current24responses and everyRSSsample recomputed, source2/maxlive2/24GiBeach/48aggregateincludesprovider. NativeandHiGHSremainthroughGPUexactrepair; smallLPstillgetsHiGHSinstead of losingCPUcoverage atdevicecutoff. Minimum2overridemeasuredstarvation, removeonlythatnondefaultwait. Actual10singletonkernelsnotcalledtruebatches, allCPUwinsdo notsupportGPUgain; cold55.12snotwarm26.71s. Rootadmits original1000samecohortmatrix for fullscope/longtail, no parametergrid/partialresult/strictbound. Original4RQ/thesis/OSDItargetunchanged; independentreviewnotclaimedunderrootonlyinstruction.
+
+## 2026-10-23T07:12:20.625536+00:00 — root full-matrix startup self-audit
+Actual1000GPUcell/rootpid/frozen695c2b4 and source-ownedproviderRSS are observed, not inferred fromJobReady. Fullcomparisonnotterminal. No activefilesstaged; sourceanalysiseditsaffectonlyfutureclosedreader, not runningbinary/capture. PlannedUIDretirementbeforeCPUs keepsonegroup/current48GiBpoint. Singletonpreflightisnottruebatchclaim; unknownsourcejoinswouldpreventverifiedGPUbatchcredit. Noindependentreview orOSDIacceptanceclaimed.
