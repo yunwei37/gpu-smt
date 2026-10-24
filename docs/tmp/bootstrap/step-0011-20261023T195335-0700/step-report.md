@@ -47,3 +47,39 @@ backtracking. Noexternalmethodmode/integration isexecuted. Admitonefull
 7808typedgoalobservation asfirstrequestedcoverage measurement, originalorder/
 alloutcomes/300stimeouts/same2REPL/4CPU; freeze its ownsource/worker/binaries.
 No furtherfullmatrix or GPUperformancepromotion until exactcoverageevidence.
+
+## Own full observation launch and offline measurement boundary
+
+Actual full7808own-method observation launched2026-10-24T03:14:59Z,
+PID255332/birth124305929; preparation12.487153seconds, frozen sourceb44f1f9.
+All7808original IDs, originalorder,300snative timeout and48GiBtotal/2×24GiB/
+fourCPU remain. One full group only; no new comparator mode or GPU acquisition.
+Closedlaunch receipt is retained; live logs/source snapshot remain unstaged
+until terminal collection. No repeated waits or healthy-run restart.
+
+EXPERIMENT_GATE adds vectorized finite-grid proposals plus exact checking
+and a full/explicitpartial analyzer. Closed32qualification still0witness.
+Reviewed early prefix261entries/123supported/0witness is diagnostic only.
+[Source/limits](../../../../artifacts/arithmetic-counterexample-2026-10-23/goal-measurement-review.md).
+NativeGT/GE aliases were missing; nextsource corrects operand order but is
+not compiled/qualified while the active binary is frozen.
+
+WRITE_GATE updates README/current implementation to the user's own method,
+preserving prior results and allfourRQ. Fullfalse-goal coverage, GPUexecution
+and pairedbenefit remain pending. REVIEW_GATE rootselfaudit finds no basis
+to promote no-witness from one prefix to a negative project result.
+
+Daily maintenance/reflection: README now distinguishes current own-method
+measurement from historical competitors. Preserve raw/foreign files and
+active logging. The main obstacle is unknown false-goal prevalence, not slow
+grid evaluation: the closed13entry CPU proposal pass takes0.030789s but
+finds0witness. Best next action is complete real coverage including failures/
+timeouts, then qualify ordinary comparison aliases before deciding GPU
+promotion. Validate by exact witnesses tied to actual entries and the
+eventual same-candidate outcome/time comparison, not source mentions or
+more LP variants. Do not start a GPU performance claim without that evidence.
+
+The existing hourly automation prompt was updated to this explicit user
+direction only; local TOML verifies ACTIVE, unchanged hourly frequency,
+same id/name and targetthread01a10386-4d61-7421-b782-d0a389f58783.
+No additional schedule, Agent or research runner was created.

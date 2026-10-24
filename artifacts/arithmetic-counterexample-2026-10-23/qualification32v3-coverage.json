@@ -1,0 +1,112 @@
+{
+  "scope": "Real first32qualification only",
+  "observed_entries": 13,
+  "observed_source_count": 13,
+  "supported_entries": 13,
+  "supported_source_count": 13,
+  "unsupported_reasons": {},
+  "witness_entries": 0,
+  "witness_source_count": 0,
+  "witness_source_IDs": [],
+  "witnesses": [],
+  "witness_current_statuses": {},
+  "historical_failure_witness_IDs": [],
+  "historical_failure_witness_HTTP_sum_seconds": 0,
+  "historical_witness_timeouts": [],
+  "proposal_errors": [],
+  "analysis_seconds": 0.010138300014659762,
+  "point_count": 4096,
+  "seed": 0,
+  "limitations": [
+    "No witness is unknown, not validity or falsity proof.",
+    "Historical request spans overlap and are associations, not savedwholewall or currentprofilefractions.",
+    "A witness in an acceptedcandidate may be an abandonedfalsebranch; failonlythat tactic, neverkillthewholecandidate.",
+    "Unsupported terms/fullcontext conditions retain nativefallback. GPU is not running in this census."
+  ],
+  "expected_sources": 32,
+  "source_class_counts": {
+    "no_observed_entry": 19,
+    "supported_no_witness": 13
+  },
+  "source_partitions": {
+    "current_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.07086,
+        "historical_HTTP_sum_seconds": 0.327445095
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 1,
+        "observed_entries": 1,
+        "supported_entries": 1,
+        "historical_body_sum_seconds": 0.058415,
+        "historical_HTTP_sum_seconds": 0.108366896
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 16,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.798998,
+        "historical_HTTP_sum_seconds": 2.084046506
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 12,
+        "observed_entries": 12,
+        "supported_entries": 12,
+        "historical_body_sum_seconds": 1.841014,
+        "historical_HTTP_sum_seconds": 2.426142315
+      }
+    ],
+    "historical_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.07086,
+        "historical_HTTP_sum_seconds": 0.327445095
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 1,
+        "observed_entries": 1,
+        "supported_entries": 1,
+        "historical_body_sum_seconds": 0.058415,
+        "historical_HTTP_sum_seconds": 0.108366896
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 16,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.798998,
+        "historical_HTTP_sum_seconds": 2.084046506
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 12,
+        "observed_entries": 12,
+        "supported_entries": 12,
+        "historical_body_sum_seconds": 1.841014,
+        "historical_HTTP_sum_seconds": 2.426142315
+      }
+    ]
+  },
+  "exporter_sum_seconds": 0.020322819,
+  "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-source-coverage.csv"
+}

@@ -18,3 +18,15 @@ Nat/Intdivision unsupportedratherthanrationalized, natural subtractiontruncated,
 unknownterms/metavariables fall back. Initialnarrowcohort0witness result
 doesnotanswerfullfailurefraction. Onlyonecompleteown7808observation admitted.
 No newcompetitorreplication orpaperacceptanceclaim. Closedraw/failures kept.
+
+## Full-observation launch/offline measurement self-audit
+
+Root checked real PID/birth, immutable active worker/source copies, closed
+launch receipt, nativeGT/GE source and actual unsupported reasons.
+A full observation is live; it is not coverage completion or device benefit.
+Only closed measurement code/qualification/start receipts and a clearly
+partial prefix are eligible for this boundary's Git commit. Active logs and
+foreign dirty files are excluded. Alias source is explicitly unqualified.
+README/frontier preserves previous evidence and fourRQ, no independent-review
+or accepted-set-invariance claim. No new external reproduction, secondfull
+capture, subagent orGPUJob. Existinghourlyschedule unchanged.

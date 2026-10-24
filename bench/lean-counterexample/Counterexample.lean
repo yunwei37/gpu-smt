@@ -80,6 +80,12 @@ private partial def proposition (vars : IO.Ref (Array (Expr × String))) (e : Ex
   | (``LE.le, #[_,inst,a,b]) =>
     if inst.hasFVar then throwError "local order instance"
     return arr "le" [← term vars a, ← term vars b]
+  | (``GT.gt, #[_,inst,a,b]) =>
+    if inst.hasFVar then throwError "local order instance"
+    return arr "lt" [← term vars b, ← term vars a]
+  | (``GE.ge, #[_,inst,a,b]) =>
+    if inst.hasFVar then throwError "local order instance"
+    return arr "le" [← term vars b, ← term vars a]
   | (name,_) => throwError "unsupported proposition {name}: {e}"
 
 private def exportGoal : TacticM Json := withMainContext do

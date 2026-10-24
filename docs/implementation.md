@@ -419,3 +419,23 @@ delay or resource change. The real24-source×3qualification retains native+
 HiGHS and alloutcomes, but produces7singletoncancelledmodels/noactualoverlap/
 noGPUwins, so nofullvariant is admitted. [Source, failedsetup, allraw and
 self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/admission-async-20261024/result-review.md).
+
+## Own arithmetic counterexample observation
+
+Our Lean4.9 wrapper exports actual tactic goals and complete supported
+ordinary propositional contexts, including type/domain constraints and lets.
+A native parser wraps only original arithmetic tactic syntax spans. Only
+Lean's recursion-placeholder auxDecl is excluded and explicitly logged;
+unsupported assumptions/opaque terms cause full native fallback.
+
+The frozen first observation and closed32qualification use the exact source
+under [arithmetic counterexample artifacts](../artifacts/arithmetic-counterexample-2026-10-23/).
+The current source adds GT/GE comparison-alias coverage, but that repair
+awaits compilation/qualification after the active run retires. Do not mix
+its promised coverage with the frozen capture.
+
+The CPU vectorized point proposer is measurement tooling, not a GPU result.
+Exact rational/integer reconstruction checks all assumptions and a false
+goal. Failure affects one tactic; native surrounding alternatives remain.
+No false-goal coverage or unchanged final acceptance set is inferred from
+compilation or an ordinary failed proof.

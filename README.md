@@ -1,8 +1,9 @@
 # gpu-smt
 
 A research prototype for accelerating native Lean and SMT verification.
-The current implementation moves arithmetic search outside Lean and returns
-certificates for native checking, with fallback for unsupported cases.
+Existing arithmetic implementations move search outside Lean and return
+certificates for native checking. The current experiment measures whether
+exact-checked arithmetic counterexamples can avoid costly failed searches.
 Lean has priority; RTX 5090 is the only GPU target.
 
 The broader research hypothesis is that related verification jobs can share
@@ -10,6 +11,24 @@ expensive prepared state while preserving native behavior and independent
 candidate execution. [The initial narrative and four research questions](docs/idea-story.md)
 remain intact. The OSDI-quality systems contribution and all four final RQ
 answers are still open.
+
+## Current work: arithmetic counterexamples
+
+Following the latest user decision, existing SHRED, Kimina and Farkas
+comparisons are retained; no further reproduction or integration is planned.
+Our next method samples arithmetic assignments on RTX5090, verifies proposed
+counterexamples exactly on CPU, and rejects only the current false arithmetic
+tactic before native search. Unsupported goals or no exact witness retain
+the native path. Enclosing proof alternatives must still run.
+
+The own goal exporter, native syntax wrapper and exact checker are implemented.
+A real32-candidate off/observation qualification preserves all28complete and
+fourrejected outcomes; its13arithmetic entries yield no witness in4096points.
+The complete original7808-source **observation** is running under the budget
+below. Full false-goal coverage, GPU implementation and end-to-end benefit
+are **not established**. [Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
+[qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
+and [current measurement limits](artifacts/arithmetic-counterexample-2026-10-23/goal-measurement-review.md).
 
 ## Current collection resources
 
