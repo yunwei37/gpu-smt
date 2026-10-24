@@ -824,6 +824,14 @@ Earlier arithmetic versions, complete phase captures and the supported-expressio
 The arithmetic CPU gains establish a stronger comparator, not a benefit from heterogeneous execution. The completed device qualifications have not established a useful additional gain over their matched CPU portfolios. Neither those observations nor the conditional cost models establish a general GPU impossibility bound.
 
 \subsubsection{Arithmetic counterexample screening}
+Testing intermediate goals and using counterexamples to guide backtracking
+are established techniques~\cite{acl2Testing}; Lean also has goal-testing
+support~\cite{plausibleSource}. Formal counterexample generation can instead
+produce Lean proofs of refutation~\cite{learningToDisprove}. Our external
+numeric witness check does not produce such a proof term. The question
+evaluated here is whether device screening reduces complete candidate cost
+while retaining native proof acceptance.
+
 Arithmetic search failures can consume substantial time even when they
 produce no proof. Our alternative device path screens a supported arithmetic
 goal before \texttt{linarith} or \texttt{nlinarith} searches for a certificate.

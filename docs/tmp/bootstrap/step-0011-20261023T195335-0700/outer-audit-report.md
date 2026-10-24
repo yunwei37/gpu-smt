@@ -209,3 +209,26 @@ The first32have no timeout/resourcefailures or witness, so the corresponding
 new output branches remain unvalidated on actualfull results. One memory
 sample is not a fullpeak. No additionalREPL/Agent/GPU/originalrunrestart occurs,
 and this dependency does not close anRQ or independentaudit requirement.
+
+## Citation update / daily repository self-audit
+
+Root checks the3newentries against actual mechanical output and primary
+source abstracts/intros/pinnedcode. The cited Learning-toDisprove document
+labels itself rejectedfromICLR2026; no acceptedvenue or inaccessibleOpenReview
+decision is invented. Existing51annotations/dates are preserved; only3newitems
+receive current verification dates. Bibannotations are the singleverification
+truth; no separate citationledger is created. Local referencePDF copies remain
+available without claiming they are included in the publiccommit.
+
+The newparagraph attributes priorideas and explicitly separates externalnumeric
+witnesschecking from nativeformal refutation. FourRQstrings/allresultnumbers/
+15missingresultslots stay fixed. Compilation succeeds to32pages; existing
+underfull warnings and unavailable visualrendering remain, so this is not a
+submission-readiness or independentreview verdict. A precompile directory
+initialization failure is retained rather than hidden.
+
+README's old327lines are preserved byte-for-byte; the shorter134linefrontier
+keeps headlinepositive/negative outcomes and links complete historicalraw.
+Checkedlocaltargets resolve. Dailyreflection returns execution to the missing
+whole-flow experiment and rejects more narrowqualification loops. No other
+session's dirtyfiles, originalcapture, resourcecontract or scheduler is changed.

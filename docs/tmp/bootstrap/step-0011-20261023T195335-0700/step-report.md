@@ -407,3 +407,54 @@ overlapping spans into Amdahl or using observation-ranked tails as baseline
 paired tails. Timeout/resource/witness branches are not empirically exercised
 by the closed32input; completeactualdata remain required. Return to the
 existing complete experiment, not more narrow qualification or newmatrix.
+
+## Counterexample citations and 2026-10-24 local daily upkeep
+
+WRITE_GATE closes the earlier literature node's citation obligation with three
+directly attributed statements: ACL2testing/backtracking, official LeanPlausible
+goaltesting and formal Leanrefutation. The canonical bibliography adds
+acl2Testing/plausibleSource/learningToDisprove with full annotations. Actual
+incremental verify_bib.py execution checks those3newentries:0errors/0warnings;
+the existing51entries retain their original dates, not a fabricated fresh
+whole-bibliography check. Primary abstracts/intros and pinned source align with
+the added statements. Both academic PDFs are downloaded as local research
+copies; stable primaryURLs remain canonical and PDFs are not bundled here.
+
+The primary arXivv2 PDF of Learning toDisprove explicitly labels itself
+Rejected fromICLR2026. The citation is a preprint, not an acceptedconference
+paper. OpenReview forumaccess returns a browser challenge; no forumdecision
+or laterpublication is inferred. The source's declaredCCBY4.0 is annotated.
+No new externalmethod reproduction or numeric comparison is introduced.
+
+Tectonic compiles the current paper successfully to32pages, with no undefined
+references/citations or overfullwarnings. All4RQstrings, resultnumbers and
+15missingresultslots remain unchanged. [Actual checker/download/build receipts](../../../../artifacts/arithmetic-counterexample-2026-10-23/paper-counterexample-citations-20261024T0702/).
+The firstcontroller attempt fails before compiler invocation because its
+memory-output parent was not created; the rawfailure and corrected retry are
+retained. Jointcompile samples see max2nativeREPLs/9.160GB/0kills/errors,
+not a completeRSSpeak/hardquota or new proof result.
+
+Daily OSS upkeep: rootREADME had grown to327lines of mixed current state and
+historicaliterations. Preserve its exact complete priorbytes in
+[the dated archive](readme-history-through-20261024T0707.md.gz), then shorten the
+publicfrontier to134lines: method/status/resources, headlinecomplete results,
+realworkloads, reproduction/source/raw links and paperlimitations. No original
+result or authorfile is deleted. AlllocalMarkdowntargets in rootREADME and
+the own-methodREADME resolve; no new config, directories of source/builds,
+externalmethod, toolinstallation or persistenthelper is introduced.
+
+Daily substantial-progress reflection: the important uncertainty is still
+whether refuted goals cover expensive failedcandidates, rather than whether
+point evaluation works. Known sampled witnesses are cheap and cover no
+observedtimeout. The highest-value next action is complete original census
+collection with its own failure/cost denominator, then the already-built
+native24/off-on and completepaired test. Validate acceptedoutcomes and whole
+cold/warm costs including export/queue/fallback/cleanup; retain failures and
+negative findings. More point-only checks, fine kernel timings or sampling
+variants would not answer this question and are not scheduled. The full
+Lean/SMT/OSDIsystems objective and all4RQs remain open.
+
+REVIEW_GATE rootselfaudit checks primaryclaimalignment, unchangedscientific
+contract, numbers/missingdata, archiveequivalence and localentrylinks.
+No independentaudit, newfullwritingcycle, completecoverage or GPUbenefit is
+claimed. Return to the active full experiment, not further citation-onlywork.

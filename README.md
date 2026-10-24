@@ -1,327 +1,134 @@
 # gpu-smt
 
 A research prototype for accelerating native Lean and SMT verification.
-Existing arithmetic implementations move search outside Lean and return
-certificates for native checking. The current experiment measures whether
-exact-checked arithmetic counterexamples can avoid costly failed searches.
 Lean has priority; RTX 5090 is the only GPU target.
 
-The broader research hypothesis is that related verification jobs can share
-expensive prepared state while preserving native behavior and independent
-candidate execution. [The initial narrative and four research questions](docs/idea-story.md)
+The broader hypothesis is that related verification jobs can share expensive
+prepared state while preserving native behavior and independent candidate
+execution. [The initial narrative and four research questions](docs/idea-story.md)
 remain intact. The OSDI-quality systems contribution and all four final RQ
 answers are still open.
 
 ## Current work: arithmetic counterexamples
 
-Existing SHRED, Kimina and Farkas comparisons are retained; no further
-reproduction or integration is planned. Our own method proposes arithmetic
-counterexamples on RTX5090, checks them exactly on CPU, and fails only the
-current false arithmetic tactic. Unsupported contexts or no exact witness
-retain native execution and enclosing proof alternatives.
+Our method proposes numeric counterexamples on RTX 5090, checks them exactly
+on CPU, and fails only the current false arithmetic tactic. Unsupported
+contexts or no exact witness retain native execution and enclosing proof
+alternatives. Existing SHRED, Kimina and Farkas comparisons are retained;
+no further reproduction or integration is planned.
 
-The real GPU point qualifier returns all **474 captured entries** and the
-same **two CPU-exact-checked witnesses**, with no invalid returned points.
-Its complete finite cold Job lifecycle is **30.75 s**; this is offline
-functional qualification, **not end-to-end proof acceleration**.
-[Actual device data, phases, memory limits and retirement](artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
-
-A larger immutable partial snapshot finds **13 exact witnesses in 11 of
-1,758 observed candidates**. All 11 currently end in ordinary Lean errors,
-and none is a timeout. This does not establish the full false-goal fraction
-or saved wall time. [Coverage and cost limits](artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
-
-The complete original **7,808-source observation is still running**.
+The complete original **7,808-source miniF2F observation is still running**.
 Full false-goal/timeout coverage, native off/on acceptance consistency and
-end-to-end benefit remain open. The initial 32-source off/observation
-qualification preserves 28 complete and four rejected results.
-[Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
-[Lean qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
-and [source](bench/lean-counterexample/README.md).
+end-to-end benefit remain open. The initial off/observation check on 32 sources
+preserves 28 complete and four rejected outcomes.
 
-## Current collection resources
+A fixed partial snapshot finds **13 exact witnesses in 11 of 1,758 observed
+candidates**. All 11 end in ordinary Lean errors, none in a timeout. This
+does not establish the full false-goal fraction or saved wall time.
+[Coverage and cost limits](artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
+
+Actual RTX 5090 qualification processes 474 retained goals with the same two
+CPU-exact witnesses and no invalid returned points. A subsequent persistent
+worker check handles 84 closed goals on CPU and 390 device requests, with both
+workers/provider exiting with code 0 and the owned Job gone. These are **functional
+checks, not end-to-end proof acceleration or actual candidate batching**.
+[Device qualification](artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md),
+[worker-stream qualification and retained failure](artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md).
+
+[Current plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
+[Lean qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md),
+[implementation and commands](bench/lean-counterexample/README.md).
+
+## Collection resources
 
 New runs use the user-requested **48 GiB total owned-process RSS budget**,
-at most **two live REPLs**, each with a **24 GiB address-space limit**.
-A parent-process watchdog samples the full owned tree every second and kills
-the largest owned REPL on excess, retaining its candidate as a resource failure.
-The older per-worker48GiB miniF2F capture is stopped and retained as partial.
-[Exact implementation, real qualification and limits](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
-New resource-point results remain separate from the historical measurements below.
-The complete miniF2F comparison returns all **7,808 sources per method**.
-Native takes **18,987.74 s**; the existing SHRED integration takes **19,235.45 s**
-(1.30% more elapsed). Genuine completions are **3,015 versus 3,010**;
-the latter also has 11 sorry-bearing incomplete results. Five native successes
-become kernel unknown-constant errors after cache hits. This integration has
-neither an outcome-preserving speedup nor a new systems contribution.
-[Complete paired results, all failures and resource evidence](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
+at most **two live REPLs**, each with a **24 GiB address-space limit**, and
+CPU eligibility on CPUs 8–11. A parent watchdog samples the owned tree every second,
+kills the largest owned REPL on excess and records its candidate as a resource
+failure. This is a sampled response, not a kernel hard RSS quota.
+RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
+partitions. Only one full acquisition group runs at a time.
 
-## Completed Goedel population comparison
+[Implementation, real qualification and limits](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
+Older unbudgeted captures and captures with 48 GiB per worker are stopped partial records;
+their results are not pooled with this resource point.
 
-All **29,750 originals** return in each of three alternating pairs through the
-official Kimina HTTP/SDK path. Native/CPU oracle whole times are
-18,584.96/16,661.35, 18,478.26/16,912.11 and 18,608.55/16,750.33 seconds.
-The ratio of summed times is **1.10627×**, or **9.61% less elapsed**.
+## Completed measurements
 
-Two native arithmetic-search failures become Lean-checked completions in every
-pair; this is an observed comparison with changed tactic coverage, not fully
-unchanged output. The same 40 timeouts remain. Every cell stays at max two live
-REPLs, with sampled total RSS at most 21.17 GiB, no watchdog kill/error and no
-owned survivor. **This is CPU-only and does not establish a GPU upper bound.**
-[Full raw results, outcome changes, tails, memory and self-review](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
+**No useful extra end-to-end GPU acceleration over the strongest measured CPU
+composition has been demonstrated.** Selected-cohort improvements do not
+establish whole-population performance or a new systems contribution.
 
-## Completed heavy-cohort comparison
+| Completed comparison | Whole elapsed | Scope and result |
+|---|---|---|
+| 29,750 Goedel originals, three native/CPU pairs|18,584.96/16,661.35;18,478.26/16,912.11;18,608.55/16,750.33s|CPU-only aggregate 1.10627×, 9.61% less elapsed; two additional checked completions and the same 40 timeouts|
+| 1,000 selected heavy originals: native / CPU / CPU+GPU|1,376.24 /769.12 /762.44s|1.789× CPU and 1.805× CPU+GPU versus native; 992 complete and eight rejected throughout|
+| Same GPU condition including cold provider lifecycle|797.61s|3.70% more elapsed than CPU; no established useful extra GPU gain|
+| 7,808 miniF2F originals: native / retained SHRED integration|18,987.74 /19,235.45s|3,015 versus 3,010 genuine completions; five regressions and 11 sorry-bearing incomplete results retained|
+| 5,952 ProofNet originals: native / retained SHRED integration|356.37 /373.22s|413 genuine completions each; 20 native rejections become sorry-bearing incomplete responses|
 
-The same current resource point completes all original1,000 heavy candidates:
+All outcomes, resource failures, latency tails and baseline limitations remain:
 
-| Method | Whole elapsed | Native / method |
-|---|---:|---:|
-| Compiled native hybrid | 1,376.24 s | 1.000× |
-| CPU certificate oracle | 769.12 s | 1.789× |
-| CPU oracle with GPU | 762.44 s | 1.805× |
-| GPU condition including cold provider lifecycle | 797.61 s | 1.725× |
+- [Complete Goedel population](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
+- [Matched heavy-cohort CPU/GPU results](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
+- [Complete miniF2F comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
+- [Complete ProofNet comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
+- [Current evaluation, earlier experiments and open requirements](docs/evaluation.md).
 
-Every method returns992 complete/eight rejected, with matching verdicts and
-non-message fields. CPU/GPU full responses agree. The GPU cell is0.87% less
-elapsed than CPU in one fixed-order observation, while its complete cold
-lifecycle is3.70% more elapsed. Neither is established useful extra device
-acceleration. The local1.5× continuation criterion is met, but the selected
-cohort is not the whole population or a demonstrated new systems contribution.
+The same-clock native profile on the 1,000 heavy inputs finds 39.94 s in floating
+LP solves and 951.85 s in 1,636 exact fallbacks within its own 1,380.32 s lifecycle.
+Concurrent phase sums are not an Amdahl ceiling. A faster narrow LP kernel
+alone therefore does not establish whole-verifier benefit.
+[Attribution, shapes and tails](artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md).
 
-Actual GPU work is488 singleton LP models with6 positive/4 exact-negative
-race wins and no cross-source multi-model batch. Complete failures, same-native
-ranked tails, source-level regressions and aggregate memory are retained.
-[Complete matched data, protocol and self-review](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
+Warm REPLs, caches, snapshots, native compilation, batched LPs, external
+certificate oracles and counterexample testing are prior techniques, not
+individual novelty claims. The remaining scientific question concerns useful
+whole-flow savings beyond competent native execution.
 
-## Retained LP measurements
-
-The complete same-clock native diagnostic on the original1,000heavy inputs
-finds39.94s in floating LP solves versus951.85s in1,636exact fallbacks,
-within its own1380.32s whole lifecycle. Allfullresponses match the native
-reference. GPU support search must avoid expensive fallback; merely speeding
-the floating kernel targets a small part. Concurrent phase sums are not an
-Amdahl ceiling. [Full attribution, shapes, tails and resource evidence](artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md).
-No useful additional GPU gain has yet been established.
-
-## Historical selected arithmetic-heavy result
-
-The corrected native-array comparison uses the original **1,000 arithmetic-heavy
-Goedel candidates**, selected before the implementation's measurements:
-
-| Composition | Complete whole time |
-|---|---:|
-| Adapted compiled Fast/hybrid + official omega | 810.71 s |
-| Direct natural-power oracle + official omega | 476.73 s |
-
-This is **1.70059×**, or 41.20% lower elapsed time. Both conditions return
-992 complete and eight rejected sources, with matching per-source verdicts
-and non-message fields. All 108 message differences are retained.
-Direct source service spans are longer for169candidates, including63of the
-70IDs that regress in all three earlier instrumented observations. All
-remain in the result. Whole-corpus improvement coexists with these regressions;
-source spans include waiting and do not establish per-candidate guarantees.
-
-Both use eight queues, four CPUs (8–11), a 48 GiB address-space limit and the
-same original input order. Preparation, parsing, numerical search, native
-checking, fallback, queueing and retirement are charged. Eager Lean diagnostic
-rows, stage clocks and product tagging are removed; the optional process-tree
-observer is off in both. Candidate, RPC, omega and backend records remain,
-so this is not entirely instrumentation-free.
-
-The control includes common product-application reuse and is an adapted
-frontend, not pristine stock Mathlib. The proposed composition includes the
-numerical portfolio and direct proof path; the result is not attributable to
-power coverage or ordinary compilation alone. This is one fixed-order,
-shared-host observation, not a global CPU optimum or a GPU gain.
-[Complete source, protocol, raw data and limitations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md).
-
-Three earlier observations of the instrumented build aggregate **1.78205×**.
-They use a different affinity and retain diagnostic computation, so their
-absolute clocks are not pooled with the comparison above.
-[All three observations](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/result-review.md).
-Their complete candidate distributions improve, but 70 source IDs have longer
-service spans in all three observations. Those regressions remain in the data.
-Service spans include waiting and cannot be relabeled CPU work.
-[Distributions, figure and retained regressions](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-whole-repetitions/service-span-result-review.md).
-
-A complete three-pair check of **438 official DeepSeek-Prover-V2 proof
-outputs** through the unchanged Kimina HTTP app/SDK gives **1.05863×**
-aggregate whole-lifecycle speedup (5.54% less elapsed). Each of six cells
-returns 263 valid and 175 Lean-error results, with matching verdicts and
-non-message fields and one warning-only source difference between methods.
-This modest transfer uses overlapping miniF2F tasks and an adapted Lean 4.27
-default-exact reference; it is neither a new theorem domain nor a GPU gain.
-[All three pairs, returned records and latency distributions](artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md).
-
-A separate complete default-tiered/Power control on the same 1,000 inputs
-takes **1018.23/492.98 s**. Its 2.06546× ratio is against a slower measured
-reference and does not replace the faster hybrid comparison above.
-[Complete default-engine control](artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md).
-
-The existing SHRED closing-certificate executor now has complete ProofNet and
-miniF2F service comparisons. Neither integration demonstrates an
-outcome-preserving whole-flow speedup; the exact scopes are reported below.
-[Baseline source, failures and scope](artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
-
-## Complete workloads and scope
+## Workloads and reproduction
 
 | Workload | Retained input | Native environment |
 |---|---|---|
-| GoedelWorkbook | 29,750 released original source files | Lean 4.27 |
-| miniF2F | 244 tasks × 32 candidates = 7,808 | Lean 4.9.0-rc1 |
-| ProofNet | 186 tasks × 32 candidates = 5,952 | Lean 4.9.0-rc1 |
-| AutoVerus / VeruSAGE | Original source runs and solver traces | Version-aligned native SMT execution |
+|GoedelWorkbook| 29,750 released original source files|Lean 4.27|
+|miniF2F|244 tasks × 32 candidates = 7,808|Lean 4.9.0-rc1|
+|ProofNet|186 tasks × 32 candidates = 5,952|Lean 4.9.0-rc1|
+|AutoVerus / VeruSAGE|Original source runs and solver traces|Version-aligned native SMT execution|
 
+Released candidate files are replay workloads, not generator arrival traces.
 All populations retain accepted, rejected, incomplete and resource-failure
-outcomes. Released candidate files are not a generator arrival trace.
-The selected 1,000-source result does not establish whole-population speed.
+outcomes. Current run records identify actual SDKs, native libraries and
+numerical binaries; historical Workspace paths are not a universal installer.
 
-The oracle now runs in the formal datasets' unchanged Lean 4.9 environment.
-An actual 64-source integration check produces identical complete responses
-in stock, native-preprocessing and direct modes, with 88 direct native
-certificate checks including six nonlinear requests. The complete ProofNet comparison returns matching outcomes on all5,952
-originals: stock1151.88s, native1160.92s and direct1178.93s. Direct is2.35%
-slower in this component experiment; its module-loaded stock condition is
-not pristine Mathlib. The older miniF2F component matrix remains incomplete;
-its unbudgeted queue is stopped.
-[Closed ProofNet evidence and baseline limitations](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/full-populations/proofnet-result-review.md).
-[Adapter, qualification and full-population protocol](artifacts/linarith-oracle-2026-10-17/formal-oracle-4.9/README.md).
-The native-only mode is a component control, not the fully ported 4.27 Fast
-frontend or an entire upstream Kimina service.
-
-An earlier full 29,750-source acquisition uses a frozen older oracle build;
-it cannot generalize the current natural-power implementation.
-[Earlier implementation and capture scope](artifacts/linarith-oracle-2026-10-17/gpu-stage/full29750-generalization/).
-The [current whole-Goedel protocol](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/plan.md)
-extends the corrected comparison through the protected official HTTP service
-to all originals, without another solver grid. Older interrupted native-array
-plans remain historical; their unsafe queues are not resumed.
-
-The official Kimina HTTP comparison now closes all **nine planned
-1,000-source cells**. The first two intact strong-native/Power pairs are
-857.11/534.48 and 812.07/456.82 seconds, a ratio of summed whole times
-**1.68383×**. Every cell returns 992 complete/eight rejected/zero operational;
-all per-source verdicts and non-message fields agree, with 108 message
-differences per pair. The third pair spans a container restart and is
-reported separately. Power has 152–245 longer individual body spans per pair.
-[Complete matrix, raw records, tails and restart limits](artifacts/linarith-oracle-2026-10-17/kimina-http/full-matrix-result-review.md).
-
-## What the GPU measurements show
-
-**No useful extra end-to-end GPU acceleration over the strongest measured CPU
-composition has been demonstrated.**
-
-RTX 5090 executes independently cancellable LP groups using request-sized CUDA
-VMM. A valid additive portfolio retains native hybrid and CPU HiGHS while
-adding GPU support: 38.02 s CPU versus 39.33 s CPU+GPU on the same 64 originals,
-about 3.43% more elapsed time.
-[Actual device composition and lifecycle](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-cpu-gpu-portfolio/result-review.md).
-
-A ready-goal trial gives 79.93 s CPU and 79.59 s CPU+GPU on 15 originals, but
-no GPU answer wins. Two actual groups contain three device models, including
-a cross-candidate group; that small elapsed difference does not demonstrate
-device benefit.
-[Ready-goal device evidence](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md).
-
-An earlier representation has detailed own-clock numerical/CPU accounting.
-Its conditional bounds do not prove all GPU designs impossible and are not
-transferred to the current implementation.
-[Accounting, assumptions and retained raw data](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/full1000-result-review.md).
-The GPU route remains open. An LP count, a narrow kernel speedup, a live server
-or overlapping candidate spans alone does not establish whole-verifier benefit.
-
-The 5090 is shared through NVIDIA time slicing, without fixed half-card
-partitions. Current product expansion, exact repair and Lean checking run on
-CPU. Device preparation, transfer, batching, fallback and retirement belong
-in the end-to-end comparison.
-
-## Preparation and prefix reuse
-
-Complete original miniF2F/ProofNet prefix experiments are retained. Parsed
-unit-prefix potential is 13.44%/18.38% of tactic edges, not time saved.
-The current prefix executor has no validated whole-verification speedup;
-native outcomes and resource failures differ.
-[Sharing and actual request costs](artifacts/linarith-oracle-2026-10-17/formal-default/sharing-result-review.md),
-[miniF2F results](artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md),
-[ProofNet results](artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md).
-This is a source-native executor using SHRED's parser, not a complete upstream
-SHRED/Kimina service comparison.
-
-The complete as-integrated SHRED/Kimina HTTP ProofNet comparison now covers
-all **5,952 originals**. Native takes **356.37 s**, SHRED **373.22 s** including
-preparation, **4.73% more elapsed time** in one shared-host fixed-order pair.
-Both have 413 genuine completions, but twenty native rejections become
-sorry-bearing incomplete responses with cache-hit messages. SDK valid counts
-417/437 therefore are not verified-proof counts. This is no matched transparent
-speedup and no whole-family impossibility result.
-[Full raw comparison, costs and self-review](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
-The complete miniF2F pair is summarized at the top of this README.
-[Its full result](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md)
-retains the changed native outcomes, all failures, latency and memory records.
-
-Earlier eight-source and per-worker48GiB captures are stopped partial attempts.
-Both final methods include the declared Kimina transport/logging and live-worker
-resource-attribution repairs. Their clocks are separate from earlier
-unchanged-application observations and different resource points.
-[Repair provenance](artifacts/linarith-oracle-2026-10-17/shred-closing/stream-recovery-20261019/README.md)
-and [ordered patch/reproduction instructions](docs/reproduce-checkpoint.md#current-official-http-comparison)
-retain the failures and exact adaptations. Completed ProofNet is not rerun.
-
-Warm REPLs, caches, snapshots, native compilation, batched LPs and external
-certificate oracles are established techniques. They are not individual
-novelty claims here. Known failures, earlier clocks and closed constructors
-remain in [the evaluation ledger](docs/evaluation.md).
-
-## Repository guide
-
-- [Current evaluation and original evidence](docs/evaluation.md).
+- [Current counterexample source and execution instructions](bench/lean-counterexample/README.md).
 - [Arithmetic implementation and experiment commands](bench/lean-native/linarith-oracle/README.md).
-- [Current measured Lean source and build](artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/README.md).
-- [Portable arithmetic source build and64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).
+- [Portable arithmetic source build and 64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).
 - [Retained-environment reproduction guide](docs/reproduce-checkpoint.md).
-- [Research story](docs/idea-story.md), [design](docs/design.md) and [related work](docs/background-related-work.md).
+- [Benchmark methodology](bench/README.md).
+- [Real SMT replay and limitations](results/2026-10-04-verusage-real-traces.md).
+
+For an existing captured SMT trace directory:
+
+    python3 tools/analyze_smt_trace.py traces --json trace-analysis.json
+
+Initial synthetic-prefix commands and the complete previous README remain in
+the [dated historical archive](docs/tmp/bootstrap/step-0011-20261023T195335-0700/readme-history-through-20261024T0707.md.gz).
+Synthetic controls are not the real-workload evidence.
+
+## Repository and paper
+
+- `bench/` and `tools/`: experiments and adapters.
+- `artifacts/` and `results/`: source snapshots, raw data and self-reviews.
+- [Research narrative and fixed RQs](docs/idea-story.md),
+  [design](docs/design.md), [related work](docs/background-related-work.md).
 - [Paper source](docs/paper/main.tex) and [current PDF](docs/paper/main.pdf).
-- `bench/` and `tools/`: experiments and adapters; `artifacts/` and `results/`:
-  source snapshots, raw data and reviews; `docs/paper/`: manuscript.
 
-Current run records identify the exact retained SDK, native libraries and
-numeric binaries. The separate arithmetic source build passes64real-source functional checks;
-the historical Workspace-specific capture paths are not a universal installation recipe.
-
-The current manuscript has completed a
+The manuscript has completed a
 [12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
-Historical controls remain in appendices, every numerical value and all four
-RQs are retained, and missing results remain explicit. The compiled draft is
-32 pages including appendices; this is not a submission-ready result.
+Its current citation update retains all numerical results, four RQs and
+15 missing result slots. The compiled draft is 32 pages including appendices;
+it is not submission-ready.
 
 All implementation, experiments and review run in this thread. Reviews are
-**self-review**, not independent audit. Tests and measurements do not establish
-venue acceptance or submission readiness.
-
-## Initial SMT tools
-
-With Z3 installed:
-
-```bash
-python3 bench/synthetic_prefix_bench.py \
-  --queries 32 \
-  --prefix-constraints 512 \
-  --dump-dir traces \
-  --json result.json
-
-python3 tools/analyze_smt_trace.py traces \
-  --json trace-analysis.json
-```
-
-Capture a real interactive Z3 client:
-
-```bash
-GPU_SMT_REAL_Z3=/usr/bin/z3 \
-GPU_SMT_TRACE_DIR=$PWD/traces \
-python3 tools/z3_capture.py -in
-```
-
-[Initial research plan](docs/research-plan.md),
-[benchmark methodology](bench/README.md) and
-[real SMT replay](results/2026-10-04-verusage-real-traces.md)
-retain the earlier serving prototype and its limitations.
+**self-review**, not independent audit. Tests, measurements and a compiled
+paper do not establish venue acceptance.

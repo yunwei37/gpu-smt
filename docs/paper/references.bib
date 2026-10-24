@@ -586,3 +586,43 @@
  year={2026},
  url={https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Elab/Tactic/Omega.lean},
  note={Version v4.27.0; accessed 20 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: docs/reference/2011-chamarthi-testing-proving.pdf
+% PDF_STORAGE: Local research copy; not bundled in this commit. The stable primary source URL below is canonical.
+% ABSTRACT: Integrates counterexample testing with proof-generated subgoals and uses refuted generalizations to guide backtracking in ACL2s.
+% USED_FOR: Prior art for testing intermediate goals and counterexample-guided backtracking, not our measured Lean or GPU performance.
+@article{acl2Testing,
+ author={Harsh Raju Chamarthi and Peter C. Dillinger and Matt Kaufmann and Panagiotis Manolios},
+ title={Integrating Testing and Interactive Theorem Proving},
+ journal={Electronic Proceedings in Theoretical Computer Science},
+ volume={70}, pages={4--19}, year={2011},
+ doi={10.4204/EPTCS.70.1}, url={https://arxiv.org/abs/1105.4394}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: not available, official software source
+% ABSTRACT: Tests Lean goals by sampling local variables and rejecting samples that violate hypotheses; finite testing success is not a proof.
+% USED_FOR: Existing Lean goal-testing mechanism, cited without installation or a numerical comparison.
+@misc{plausibleSource,
+ author={{Lean prover community}},
+ title={Plausible: Tactic source},
+ year={2026},
+ url={https://github.com/leanprover-community/plausible/blob/fb13df72ecefd8ddbf9291021d7f33a8673eb57b/Plausible/Tactic.lean},
+ note={Revision fb13df72; accessed 24 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: docs/reference/2026-li-learning-to-disprove-v2.pdf
+% PDF_STORAGE: Local research copy; not bundled in this commit. The stable primary source URL below is canonical.
+% ABSTRACT: Generates counterexamples together with Lean proof obligations using hypothesis-removal tasks and learned reasoning models.
+% LICENSE: https://creativecommons.org/licenses/by/4.0/ for the cited arXiv v2 document.
+% NOTE: The primary arXiv v2 PDF labels itself Rejected from ICLR 2026; cited as a preprint, not an accepted conference paper. OpenReview forum access returned a browser challenge.
+% USED_FOR: Formal Lean refutation precedent and the distinction from our externally checked numeric witness.
+@misc{learningToDisprove,
+ author={Zenan Li and Zhaoyu Li and Kaiyu Yang and Xiaoxing Ma and Zhendong Su},
+ title={Learning to Disprove: Formal Counterexample Generation with Large Language Models},
+ year={2026}, doi={10.48550/arXiv.2603.19514},
+ url={https://arxiv.org/abs/2603.19514v2},
+ note={Version 2, revised 14 October 2026; preprint}}
