@@ -1,7 +1,7 @@
 """Typed actual-goal coverage. Partial mode is a labelled diagnostic only."""
 from pathlib import Path
 import argparse,collections,csv,gzip,json,time
-from point_proposals import find
+from point_proposals import inspect
 R=Path('/workspaces/repository');A=R/'artifacts/arithmetic-counterexample-2026-10-23'
 def load_rows(p):
  if p.exists():
@@ -20,9 +20,11 @@ def main():
  results={x['proof_id']:x for x in load_rows(directory/'results.jsonl')}if (terminal.exists()or(directory/'results.jsonl').exists())else{}
  with(A/'failure-source-costs.csv').open()as f:costs={x['proof_id']:x for x in csv.DictReader(f)}
  rows=list(load_rows(directory/'goals.jsonl'));supported=[x for x in rows if x['payload']['supported']]
- witnesses=[];unknown=[];started=time.monotonic()
+ witnesses=[];unknown=[];sampling=[];started=time.monotonic()
  for x in supported:
-  try:w=find(x['payload']['ast'])
+  try:
+   w,diagnostic=inspect(x['payload']['ast'])
+   sampling.append(dict(source_id=x['source_id'],entry_ns=x['entry_ns'],**diagnostic))
   except Exception as ex:unknown.append(dict(source_id=x['source_id'],entry_ns=x['entry_ns'],error=repr(ex)));continue
   if w:witnesses.append(dict(source_id=x['source_id'],entry_ns=x['entry_ns'],witness=w,ast=x['payload']['ast']))
  ids=sorted({x['source_id']for x in witnesses})
@@ -81,6 +83,17 @@ def main():
   writer=csv.DictWriter(f,fieldnames=list(ledger[0]),lineterminator='\n')
   writer.writeheader();writer.writerows(ledger)
  out['source_ledger']=str(dest_csv.relative_to(R))
+ sample_dest=A/(prefix+'-sampling-diagnostics.jsonl')
+ with sample_dest.open('w')as f:
+  for diagnostic in sampling:f.write(json.dumps(diagnostic,separators=(',',':'))+'\n')
+ out['sampling_diagnostics']=str(sample_dest.relative_to(R))
+ out['sampling_summary']=dict(entries=len(sampling),
+  zero_float_feasible_entries=sum(x['float_all_hypotheses_points']==0 for x in sampling),
+  zero_float_feasible_historical_failed_entries=sum(x['float_all_hypotheses_points']==0 and costs[x['source_id']]['failed']=='True'for x in sampling),
+  float_counterexample_proposals=sum(x['float_counterexample_proposals']for x in sampling),
+  exact_candidates_checked=sum(x['exact_candidates_checked']for x in sampling),
+  note='Counts of numeric proposals, not exact feasible-point coverage or proof of absence.')
+
  dest=A/('qualification32v3-coverage.json'if args.qualification else'partial-coverage.json'if args.partial else'full-coverage.json')
  dest.write_text(json.dumps(out,indent=2)+'\n')
  print(json.dumps({k:v for k,v in out.items()if k not in['witnesses','unsupported_reasons','limitations']},indent=2))

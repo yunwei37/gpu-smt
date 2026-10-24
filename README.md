@@ -22,11 +22,16 @@ tactic before native search. Unsupported goals or no exact witness retain
 the native path. Enclosing proof alternatives must still run.
 
 The own goal exporter, native syntax wrapper and exact checker are implemented.
-A real32-candidate off/observation qualification preserves all28complete and
-fourrejected outcomes; its13arithmetic entries yield no witness in4096points.
-The complete original7808-source **observation** is running under the budget
+A qualification on 32 real candidates with the hook off or observing preserves
+all 28 complete and four rejected outcomes; its 13 arithmetic entries yield
+no witness in 4,096 points. The complete original 7,808-source **observation**
+is running under the budget
 below. Full false-goal coverage, GPU implementation and end-to-end benefit
-are **not established**. [Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
+are **not established**. The first partial observation contains two
+CPU-exact-checked false intermediate goals, both associated with cheap
+historically failed requests; no timeout benefit is observed yet.
+[First witnesses and limits](artifacts/arithmetic-counterexample-2026-10-23/first-witness-review.md).
+[Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
 [qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
 and [current measurement limits](artifacts/arithmetic-counterexample-2026-10-23/goal-measurement-review.md).
 

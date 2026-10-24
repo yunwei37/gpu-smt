@@ -30,3 +30,14 @@ foreign dirty files are excluded. Alias source is explicitly unqualified.
 README/frontier preserves previous evidence and fourRQ, no independent-review
 or accepted-set-invariance claim. No new external reproduction, secondfull
 capture, subagent orGPUJob. Existinghourlyschedule unchanged.
+
+## First-witness self-audit
+
+Raw actual entry records and exact witness coordinates survive separately
+from the active log. Both hypotheses and false conclusions check exactly;
+source379also has an obvious625/7versus625/14difference, and source802a
+Nat witnessa=1,b=3,c=4. These are false intermediate goals only. Both old
+sources failed but are cheap; no claimed speedup, timeout improvement or
+full-population false fraction follows. Float feasibility diagnostics expose
+sampling weakness rather than relabel unknown as true. Resource parameters,
+frozen active source, fourRQ and no-delegation instruction are unchanged.

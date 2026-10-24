@@ -49,16 +49,30 @@ def exact_point(ast,pool,indices,index):
   for j,e in recipe(ast):x[j]=value(e,x)
   if old==x:break
  return x
-def find(ast,count=4096):
+def inspect(ast,count=4096):
  pool,indices,points=samples(ast,count)
- mask=np.ones(count,dtype=bool)
+ mask=np.all(np.isfinite(points),axis=1)
  with np.errstate(all='ignore'):
-  for h in ast['hypotheses']:mask&=eval_array(h,points)
+  for j,d in enumerate(ast['variables']):
+   if d['domain']in['nat','int']:mask&=points[:,j]==np.floor(points[:,j])
+   if d['domain']=='nat':mask&=points[:,j]>=0
+  domain_points=int(np.count_nonzero(mask))
+  hypothesis_pass_counts=[]
+  for h in ast['hypotheses']:
+   mask&=eval_array(h,points)
+   hypothesis_pass_counts.append(int(np.count_nonzero(mask)))
+  feasible=int(np.count_nonzero(mask))
   mask&=np.logical_not(eval_array(ast['goal'],points))
-  mask&=np.all(np.isfinite(points),axis=1)
+ diagnostic=dict(points=count,variables=len(ast['variables']),
+  finite_domain_proposals=domain_points,float_hypothesis_prefix_pass_counts=hypothesis_pass_counts,
+  float_all_hypotheses_points=feasible,
+  float_counterexample_proposals=int(np.count_nonzero(mask)),exact_candidates_checked=0,
+  note='Float proposal counts only; neither feasible nor counterexample until CPU exact checking.')
  for index in np.flatnonzero(mask):
-  exact=exact_point(ast,pool,indices,int(index))
+  exact=exact_point(ast,pool,indices,int(index));diagnostic['exact_candidates_checked']+=1
   if verify(ast,exact):
    return dict(point_index=int(index),point=[[str(v.numerator),str(v.denominator)]for v in exact],
-    point_count=count,CPU_exact_checked=True)
- return None
+    point_count=count,CPU_exact_checked=True),diagnostic
+ return None,diagnostic
+def find(ast,count=4096):
+ return inspect(ast,count)[0]

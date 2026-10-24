@@ -14,7 +14,7 @@
   "historical_failure_witness_HTTP_sum_seconds": 0,
   "historical_witness_timeouts": [],
   "proposal_errors": [],
-  "analysis_seconds": 0.010138300014659762,
+  "analysis_seconds": 0.00974812894128263,
   "point_count": 4096,
   "seed": 0,
   "limitations": [
@@ -108,5 +108,14 @@
   },
   "exporter_sum_seconds": 0.020322819,
   "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
-  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-source-coverage.csv"
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-source-coverage.csv",
+  "sampling_diagnostics": "artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-sampling-diagnostics.jsonl",
+  "sampling_summary": {
+    "entries": 13,
+    "zero_float_feasible_entries": 0,
+    "zero_float_feasible_historical_failed_entries": 0,
+    "float_counterexample_proposals": 0,
+    "exact_candidates_checked": 0,
+    "note": "Counts of numeric proposals, not exact feasible-point coverage or proof of absence."
+  }
 }

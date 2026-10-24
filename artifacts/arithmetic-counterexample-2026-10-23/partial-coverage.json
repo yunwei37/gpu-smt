@@ -1,11 +1,11 @@
 {
   "scope": "PARTIAL_PREFIX_DIAGNOSTIC, not a fullcoverage result",
-  "observed_entries": 261,
-  "observed_source_count": 125,
-  "supported_entries": 123,
-  "supported_source_count": 75,
+  "observed_entries": 839,
+  "observed_source_count": 363,
+  "supported_entries": 474,
+  "supported_source_count": 169,
   "unsupported_reasons": {
-    "nonconstant or zero division": 20,
+    "nonconstant or zero division": 28,
     "local h0 detail=false aux=false value=false: nonconstant or zero division": 70,
     "unsupported proposition GT.gt: x > 0": 1,
     "unsupported proposition GT.gt: y > 0": 1,
@@ -19,7 +19,7 @@
     "unsupported proposition GT.gt: x * y > 1": 1,
     "unsupported proposition GT.gt: y * z > 1": 1,
     "unsupported arithmetic head Inv.inv": 2,
-    "local h\u2082 detail=false aux=false value=false: nonconstant or zero division": 1,
+    "local h\u2082 detail=false aux=false value=false: nonconstant or zero division": 6,
     "local b_expr detail=false aux=false value=false: nonconstant or zero division": 1,
     "local h\u2081 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), y x = \u2211 i \u2208 Finset.range k, (a i + x).cos / 2 ^ i": 4,
     "unsupported arithmetic head Real.pi": 3,
@@ -29,18 +29,531 @@
     "unsupported arithmetic head sorryAx": 5,
     "unsupported arithmetic head DFunLike.coe": 1,
     "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 18 \u2223 3740 + n": 1,
-    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 18 \u2223 374 * 10 + n": 1
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 18 \u2223 374 * 10 + n": 1,
+    "local h\u2080 detail=false aux=false value=false: nonconstant or zero division": 15,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head Inv.inv": 16,
+    "local h\u2083 detail=false aux=false value=false: nonconstant or zero division": 3,
+    "local h\u2084 detail=false aux=false value=false: nonconstant or zero division": 1,
+    "unsupported arithmetic head abs": 10,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head abs": 2,
+    "unsupported arithmetic head [anonymous]": 33,
+    "unsupported proposition GT.gt: f (n + 1) > n": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115), 0 < f n": 3,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.log": 5,
+    "unsupported arithmetic head HMod.hMod": 6,
+    "unsupported proposition GE.ge: n \u2265 16 ^ 4": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.logb": 4,
+    "local h\u2081 detail=false aux=false value=false: nonconstant or zero division": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition GT.gt: n > 0": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 59,
+    "unsupported arithmetic head Real.sqrt": 11,
+    "unsupported arithmetic type": 30,
+    "unsupported arithmetic head Real.cos": 11,
+    "unsupported arithmetic head Real.sin": 1
   },
-  "witness_entries": 0,
-  "witness_source_count": 0,
-  "witness_source_IDs": [],
-  "witnesses": [],
-  "witness_current_statuses": {},
-  "historical_failure_witness_IDs": [],
-  "historical_failure_witness_HTTP_sum_seconds": 0,
+  "witness_entries": 2,
+  "witness_source_count": 2,
+  "witness_source_IDs": [
+    "minif2f-379",
+    "minif2f-802"
+  ],
+  "witnesses": [
+    {
+      "source_id": "minif2f-379",
+      "entry_ns": 1243471049960266,
+      "witness": {
+        "point_index": 7,
+        "point": [
+          [
+            "625",
+            "7"
+          ],
+          [
+            "25",
+            "1"
+          ],
+          [
+            "250",
+            "7"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "x",
+            "domain": "real"
+          },
+          {
+            "name": "z",
+            "domain": "real"
+          },
+          {
+            "name": "y",
+            "domain": "real"
+          }
+        ],
+        "hypotheses": [
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "q",
+              "0",
+              "1"
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "5",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "q",
+                "7",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "10",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "q",
+              "0",
+              "1"
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              0
+            ],
+            [
+              "*",
+              [
+                "*",
+                [
+                  "q",
+                  "5",
+                  "1"
+                ],
+                [
+                  "v",
+                  2
+                ]
+              ],
+              [
+                "q",
+                "1",
+                "2"
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "*",
+              [
+                "*",
+                [
+                  "q",
+                  "10",
+                  "1"
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "q",
+                "1",
+                "7"
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "*",
+            [
+              "*",
+              [
+                "q",
+                "25",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "q",
+              "1",
+              "14"
+            ]
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_algebra_33"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-802",
+      "entry_ns": 1243918182648202,
+      "witness": {
+        "point_index": 7,
+        "point": [
+          [
+            "3",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              0
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                1
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              1
+            ],
+            [
+              "q",
+              "1",
+              "1"
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "2",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    }
+  ],
+  "witness_current_statuses": {
+    "no_final_current_response_yet": 2
+  },
+  "historical_failure_witness_IDs": [
+    "minif2f-379",
+    "minif2f-802"
+  ],
+  "historical_failure_witness_HTTP_sum_seconds": 3.0529110669999997,
   "historical_witness_timeouts": [],
   "proposal_errors": [],
-  "analysis_seconds": 0.0358572609256953,
+  "analysis_seconds": 0.3181685181334615,
   "point_count": 4096,
   "seed": 0,
   "limitations": [
@@ -48,5 +561,156 @@
     "Historical request spans overlap and are associations, not savedwholewall or currentprofilefractions.",
     "A witness in an acceptedcandidate may be an abandonedfalsebranch; failonlythat tactic, neverkillthewholecandidate.",
     "Unsupported terms/fullcontext conditions retain nativefallback. GPU is not running in this census."
-  ]
+  ],
+  "expected_sources": 7808,
+  "source_class_counts": {
+    "no_observed_entry": 7445,
+    "supported_no_witness": 167,
+    "unsupported_only": 194,
+    "exact_witness": 2
+  },
+  "source_partitions": {
+    "current_status": [
+      {
+        "status": "not_returned",
+        "observation_class": "exact_witness",
+        "sources": 2,
+        "observed_entries": 8,
+        "supported_entries": 7,
+        "historical_body_sum_seconds": 2.922152,
+        "historical_HTTP_sum_seconds": 3.0529110669999997
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "no_observed_entry",
+        "sources": 7445,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 32055.982561,
+        "historical_HTTP_sum_seconds": 37153.927416507
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "supported_no_witness",
+        "sources": 167,
+        "observed_entries": 474,
+        "supported_entries": 467,
+        "historical_body_sum_seconds": 375.762792,
+        "historical_HTTP_sum_seconds": 385.61843762999996
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "unsupported_only",
+        "sources": 194,
+        "observed_entries": 357,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 169.404857,
+        "historical_HTTP_sum_seconds": 264.531995667
+      }
+    ],
+    "historical_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "exact_witness",
+        "sources": 2,
+        "observed_entries": 8,
+        "supported_entries": 7,
+        "historical_body_sum_seconds": 2.922152,
+        "historical_HTTP_sum_seconds": 3.0529110669999997
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 4443,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 6684.540078,
+        "historical_HTTP_sum_seconds": 7182.478727464
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 40,
+        "observed_entries": 113,
+        "supported_entries": 106,
+        "historical_body_sum_seconds": 18.400926000000002,
+        "historical_HTTP_sum_seconds": 20.85048035
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "unsupported_only",
+        "sources": 190,
+        "observed_entries": 351,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 167.998,
+        "historical_HTTP_sum_seconds": 184.689718811
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "no_observed_entry",
+        "sources": 46,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 4321.086786485
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "unsupported_only",
+        "sources": 1,
+        "observed_entries": 1,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 78.302711187
+      },
+      {
+        "status": "timeout_error",
+        "observation_class": "no_observed_entry",
+        "sources": 71,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 21300.0,
+        "historical_HTTP_sum_seconds": 21351.629652192998
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 2885,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 4071.442483,
+        "historical_HTTP_sum_seconds": 4298.732250365
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 127,
+        "observed_entries": 361,
+        "supported_entries": 361,
+        "historical_body_sum_seconds": 357.361866,
+        "historical_HTTP_sum_seconds": 364.76795727999996
+      },
+      {
+        "status": "valid",
+        "observation_class": "unsupported_only",
+        "sources": 3,
+        "observed_entries": 5,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 1.406857,
+        "historical_HTTP_sum_seconds": 1.5395656690000001
+      }
+    ]
+  },
+  "exporter_sum_seconds": 1.303710264,
+  "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/partial-source-coverage.csv",
+  "sampling_diagnostics": "artifacts/arithmetic-counterexample-2026-10-23/partial-sampling-diagnostics.jsonl",
+  "sampling_summary": {
+    "entries": 474,
+    "zero_float_feasible_entries": 281,
+    "zero_float_feasible_historical_failed_entries": 75,
+    "float_counterexample_proposals": 7917,
+    "exact_candidates_checked": 5770,
+    "note": "Counts of numeric proposals, not exact feasible-point coverage or proof of absence."
+  }
 }

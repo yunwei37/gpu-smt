@@ -52,3 +52,10 @@ arithmetic tactic may fail early; outer alternatives must continue.
 No GPU prototype or off/on speedup is admitted yet. Next decision is complete
 actual-goal coverage, especially failed/timeout sources. Root self-review,
 not an independent audit.
+
+## Later diagnostic snapshot
+
+The later839entry snapshot finds the first two exact witnesses; the earlier
+261entry zero-witness snapshot remains in Git history. The unchanged closed32
+qualification still finds0. [Witnesses, cost and sampling limits](first-witness-review.md)
+supersedes only the ongoing prefix observation, not any full-result claim.

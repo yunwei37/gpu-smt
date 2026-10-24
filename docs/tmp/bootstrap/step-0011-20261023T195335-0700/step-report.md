@@ -83,3 +83,23 @@ The existing hourly automation prompt was updated to this explicit user
 direction only; local TOML verifies ACTIVE, unchanged hourly frequency,
 same id/name and targetthread01a10386-4d61-7421-b782-d0a389f58783.
 No additional schedule, Agent or research runner was created.
+
+## First exact witnesses and finite-grid coverage
+
+EXPERIMENT_GATE adds sampling-quality counts to the same offline pass and
+a per-source all7808denominator ledger. Snapshot839entries/474supported
+contains two exact witnesses from minif2f-379 and minif2f-802. Root rechecks
+all typed hypotheses and false goals; both historical outcomes are Lean
+errors, neither is a timeout. Combined historical body2.922152s/HTTP3.052911s
+are overlapping associations, not saved elapsed.281supportedentries have
+zero float-feasible proposals; no-witness remains unknown, especially under
+exact equalities. [Result and disposition](../../../../artifacts/arithmetic-counterexample-2026-10-23/first-witness-review.md)
+links raw query snapshots, exact points and all sampled diagnostics.
+Active complete observation remains unchanged; no repeated waiting.
+
+WRITE_GATE preserves the actual current frontier and scopes these as first
+witnesses, not full coverage or GPU performance. REVIEW_GATE rootselfaudit
+checks both examples arithmetically, confirms Nat truncated subtraction and
+the distinction between false intermediate goal and failed whole proof.
+No premature direction closure, new competitor or independent-audit claim.
+Next decision remains complete coverage of costly failed/timeout cases.
