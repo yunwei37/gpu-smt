@@ -29,3 +29,13 @@ real concurrency on original sources. Do not manufacture progress with a
 solver/tolerance grid, another whole-population replication or weak baseline.
 A functional admission repair is dependency work until an end-to-end comparison
 can change the RQ4 decision. It is not the missing OSDI contribution by itself.
+
+
+## Admission-repair follow-through
+
+Removed the actual single-flight CUDA submission dependency and completed real
+first24native/CPU/GPU qualification with exact parity and fullteardown. There
+is still no measured concurrent numerical work or GPU benefit on thisprefix;
+do not run another fullvariant from threadedcode alone. Retained the own
+initial output-path setup failure. The next experiment needs a real supply/
+mechanism discriminator from fulltraces, not more tuning or report counts.

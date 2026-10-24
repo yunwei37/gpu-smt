@@ -1,0 +1,189 @@
+{
+  "state": "complete",
+  "method": "gpu",
+  "expected": 24,
+  "source_concurrency": 2,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "cost_timing_requested": false,
+  "cost_timing_effective": false,
+  "cost_timing_log": null,
+  "omega_control_log": null,
+  "reference_diagnostic": false,
+  "reference_phases": false,
+  "reference_phase_log": null,
+  "native_engine": null,
+  "native_helper": "/tmp/gpu-smt-current-budget-gpu-20261023/farkas-batchd",
+  "native_hybrid_override": "1",
+  "lean_version": "v4.27.0",
+  "native_library": "/tmp/gpu-smt-current-budget-gpu-20261023/native-load.txt",
+  "scope": "Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.",
+  "GPU_enabled": true,
+  "GPU_provider": "10.42.1.247",
+  "GPU_minimum_rows": 38,
+  "retained_strong_CPU": true,
+  "returned": 24,
+  "counts": {
+    "valid": 24
+  },
+  "server_ready_seconds": 0.916348091,
+  "preparation_seconds": 8.203984366,
+  "warm_verify_seconds": 20.963846535,
+  "server_exit": -15,
+  "joined_owned_descendants": 7,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 253605,
+      "birth": 1792807403.97,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253608,
+      "birth": 1792807403.97,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253662,
+      "birth": 1792807404.51,
+      "command": [
+        "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253673,
+      "birth": 1792807411.56,
+      "command": [
+        "/tmp/gpu-smt-current-budget-gpu-20261023/arithmetic-batchd"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253771,
+      "birth": 1792807422.41,
+      "command": [
+        "/tmp/gpu-smt-current-budget-gpu-20261023/farkas-batchd",
+        "--serve"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253659,
+      "birth": 1792807404.5,
+      "command": [
+        "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 253672,
+      "birth": 1792807411.35,
+      "command": [
+        "/tmp/gpu-smt-current-budget-gpu-20261023/arithmetic-batchd"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "retained_CPU_backend_exit": 143,
+  "backend_exit": 143,
+  "memory_watchdog": {
+    "root_pid": 253585,
+    "root_birth": 1792807402.8,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 30,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 15470309376,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 125181952,
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "whole_lifecycle_seconds": 29.670818859,
+  "waited_child_cpu_seconds": 2.068553,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/goedel427/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-goedel427-20261014/repl-kimina-native-gc-header-repair/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.27.0",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "46633",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-current-budget-gpu-20261023/native-load.txt",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  }
+}

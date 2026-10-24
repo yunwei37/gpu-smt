@@ -26,12 +26,14 @@ do not establish a strict Amdahlceiling. Current CPUHiGHSalready removes much
 native fallback, so the1.8×selectedcohort improvement is not GPUcontribution.
 [Native attribution](../native-stage-profile-20261022/reference-full-result-review.md).
 
-The existing CUDA proxy blocks new submission until prior kernel retirement.
-Only5decodedsource-ownedarrivals occur during priorretirement;192undecoded
-connections stayunknown. Qualify removing that single-flight admission
-dependency with bothCPUcontenders and fullretirement retained, withoutchanging
-resources or numerical algorithm. Do not assume free racing/asynchrony or
-admit another fullvariant without a useful real discriminator.
+The single-flight CUDA admission dependency is removed using existing
+non-daemon worker/shutdown joins. Real first24×3 qualification preserves all
+outcomes and resources, but GPU29.670819vsCPU25.757304s and seven singleton
+cancelledmodels show no actual crosssource hardware/submission overlap.
+[Closed dependency qualification](../current-budget-gpu-20261023/admission-async-20261024/result-review.md).
+No further fullvariant is admitted from this result. No fullcollector remains
+active. Select the next decisive mechanism using existingfullsource-owned
+ready-work/race evidence rather than another kernel/solver/batch-wait grid.
 
 ## Scope that remains open
 

@@ -409,3 +409,13 @@ provider, validates PID/startticks/CPUaffinity and sums both owned trees under
 48GiB; unknown provider memory aborts acquisition. Devicecutoff38rows does
 not remove the existing small-LPHiGHS contender. [Actual24source qualification](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/result-review.md)
 records defaultreadydispatch, singletonkernels, allCPUwins and completecleanup.
+
+
+### CUDA admission repair,2026-10-24
+The supportproxy now dispatches ready CUDA groups in non-daemon workers and
+joins those existing worker handles during shutdown, preserving each RPC
+through actual kernel retirement. It adds no global solve lock, batching
+delay or resource change. The real24-source×3qualification retains native+
+HiGHS and alloutcomes, but produces7singletoncancelledmodels/noactualoverlap/
+noGPUwins, so nofullvariant is admitted. [Source, failedsetup, allraw and
+self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/admission-async-20261024/result-review.md).

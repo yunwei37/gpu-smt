@@ -178,7 +178,12 @@ def gpu_dispatch():
     'batch_size':len(items),'minimum_ready':a.min_batch,
     'scope':'Only simultaneously live device-ready requests; CPU shadows remain active.'})
   if a.cuda_host:
-   solve_cuda_batch(items);items=[];continue
+   # Submission must not wait for another group's kernel retirement.
+   # Each non-daemon worker still owns its RPC through actual retirement,
+   # and stop_proxy joins all of them before reporting cell completion.
+   worker=threading.Thread(target=solve_cuda_batch,args=(items,),daemon=False)
+   independent_threads.append(worker);worker.start()
+   items=[];continue
   if a.independent_jobs:
    group={'id':ready,'request_ids':[x.q['request_id']for x in items],
      'distinct_sources':len(set(x.q['source']for x in items)),
