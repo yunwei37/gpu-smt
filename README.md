@@ -31,6 +31,10 @@ are **not established**. The first partial observation contains two
 CPU-exact-checked false intermediate goals, both associated with cheap
 historically failed requests; no timeout benefit is observed yet.
 [First witnesses and limits](artifacts/arithmetic-counterexample-2026-10-23/first-witness-review.md).
+The batched point-evaluator prototype now compiles for RTX5090. A CPU-side
+check on 474 captured entries has identical proposal masks and recovers both
+exact witnesses; device execution and Lean integration remain pending.
+[Prototype source and qualification scope](bench/lean-counterexample/README.md).
 [Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
 [qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
 and [current measurement limits](artifacts/arithmetic-counterexample-2026-10-23/goal-measurement-review.md).

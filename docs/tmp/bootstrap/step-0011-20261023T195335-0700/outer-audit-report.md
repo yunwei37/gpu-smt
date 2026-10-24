@@ -41,3 +41,13 @@ sources failed but are cheap; no claimed speedup, timeout improvement or
 full-population false fraction follows. Float feasibility diagnostics expose
 sampling weakness rather than relabel unknown as true. Resource parameters,
 frozen active source, fourRQ and no-delegation instruction are unchanged.
+
+## Batch-evaluator compile/CPU qualification self-audit
+
+Root confirms real NVCC exit0 and recorded PTX, all474retained query identities,
+zero masks differing across1,941,504CPU point evaluations, and two exact
+witnesses. First failed output-wrapper source/log is preserved. No device
+execution, hardware speedup or online cross-candidate batch is inferred.
+Current full observation binaries/workers are unchanged; no new external
+baseline, GPU Job or Agent is launched. Hardware and whole-flow integration
+remain missing evidence, so RQ4 and the full research objective stay open.

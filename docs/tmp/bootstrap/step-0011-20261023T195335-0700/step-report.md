@@ -103,3 +103,23 @@ checks both examples arithmetically, confirms Nat truncated subtraction and
 the distinction between false intermediate goal and failed whole proof.
 No premature direction closure, new competitor or independent-audit claim.
 Next decision remains complete coverage of costly failed/timeout cases.
+
+## Own batch point evaluator — completed compile/CPU-functional boundary
+
+EXPERIMENT_GATE prepares our GPU prototype while full observation continues.
+The first actual witnesses admit functional implementation, not performance
+promotion. Our fixed CUDA stack interpreter packs real programs/domains/grid
+points, with CPU rational reconstruction and exact checking outside the device.
+ExistingCUDA12.8 compiles compute_120 PTX successfully; no device is used.
+A complete CPU functional replay on474retained entries/1,941,504points
+has0proposal-mask differences and the same2exact witnesses as the nested
+evaluator. First driver dictionary failure/source and repaired successful
+qualification remain separate. [Evidence and review](../../../../artifacts/arithmetic-counterexample-2026-10-23/point-prototype-review.md).
+
+WRITE_GATE documents actual implementation and clearly leaves device launch,
+transport/Lean integration, false-goal full coverage and pairedbenefit open.
+REVIEW_GATE rootselfaudit checks source/entry mapping, typed exact boundary,
+fallback stack limits and CUDA context/memory cleanup. This is not independent
+audit or GPU performance. No secondfull capture, activebinary rebuild,
+external reproduction orGPUJob is started. Next hardware step waits for the
+current complete observation boundary; root continues implementation itself.

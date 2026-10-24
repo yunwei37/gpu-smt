@@ -439,3 +439,10 @@ Exact rational/integer reconstruction checks all assumptions and a false
 goal. Failure affects one tactic; native surrounding alternatives remain.
 No false-goal coverage or unchanged final acceptance set is inferred from
 compilation or an ordinary failed proof.
+
+The own batched CUDA point evaluator is now implemented and compiled for
+RTX5090. It interprets packed arithmetic programs across point/goal dimensions
+and returns floating proposal masks. CPU bytecode qualification on474real
+entries matches the nested evaluator and recovers both exact witnesses.
+This has not run on a GPU and is not yet connected to the Lean worker.
+[Source and actual qualification](../bench/lean-counterexample/README.md).

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-counterexample/qualify-points.py", line 67, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-counterexample/qualify-points.py", line 46, in main
+    by_entry=[dict(source_id=a['source_id'],entry_ns=a['entry_ns'],
+              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     same_exact_witness_presence=a['exact_counterexample']==b['exact_counterexample'],
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     reference_exact_counterexample=b['exact_counterexample'],**a)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'source_id'

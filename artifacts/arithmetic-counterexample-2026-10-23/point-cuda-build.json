@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/cuda-12.8-minimal/sdk/bin/nvcc",
+    "--ptx",
+    "-arch=compute_120",
+    "-std=c++17",
+    "/tmp/gpu-smt-arithmetic-points-20261024/points.cu",
+    "-o",
+    "/tmp/gpu-smt-arithmetic-points-20261024/points.ptx"
+  ],
+  "exit": 0,
+  "seconds": 0.5278707819525152,
+  "peak_child_RSS_KiB": 99676,
+  "scope": "CPU compilation only. No GPU execution or verifier binary changed.",
+  "ptx_bytes": 8447
+}
