@@ -8,8 +8,8 @@ $ErrorActionPreference='Stop'
 $gpuRoot='/workspaces/repository'
 $gpuArc="$gpuRoot/artifacts/arithmetic-counterexample-2026-10-23"
 $gpuBench="$gpuRoot/bench/lean-counterexample"
-$gpuCheck='import pathlib,json,sys;p=pathlib.Path("/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/full-observe/verification/terminal.json");assert p.exists() and json.loads(p.read_text())["state"]=="complete","Original full observation is still active";assert not pathlib.Path(sys.argv[1]).exists(),"Preserve existing output"'
-./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' python3 -c $gpuCheck $Out
+$gpuCheck='import pathlib,json,sys;p=pathlib.Path("/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/full-observe/verification/terminal.json");assert sys.argv[2]!="lean24" or (p.exists() and json.loads(p.read_text())["state"]=="complete"),"Original full observation is still active";assert not pathlib.Path(sys.argv[1]).exists(),"Preserve existing output"'
+./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' python3 -c $gpuCheck $Out $Phase
 if($LASTEXITCODE -ne 0){throw 'Keep the current acquisition and existing outputs'}
 $gpuSpecText=./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' cat "$gpuArc/point-job.json"
 if($LASTEXITCODE -ne 0){throw 'Cannot read the owned finite benchmark specification'}
@@ -50,7 +50,7 @@ try {
   }
   if(!$gpuReady){Start-Sleep -Milliseconds 1000}
  } until($gpuReady)
- if($gpuReady.backend -ne 'device' -or $gpuReady.device -notmatch 'RTX 5090'){throw 'Provider did not establish the requested GPU backend'}
+ if($gpuReady.backend -ne 'device'){throw 'Provider did not establish the requested backend API'}
  if($gpuPod.spec.nodeName -ne $gpuSourceNode){throw 'GPU/Workspace are on different hosts; the same-CPU resource point is not established'}
  $gpuStartup=$gpuClock.Elapsed.TotalSeconds
  $gpuIP=$gpuPod.status.podIP
@@ -99,7 +99,7 @@ try {
   if($LASTEXITCODE -ne 0){throw 'Final Job absence is unverified'}
   $gpuRemains=[bool]$gpuLeftJob
  } catch {$gpuCleanup.Add($_.Exception.Message)}
- $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToProviderReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own point-screening finite qualification, no online speedup claim; existing 48GiB aggregate resource contract'}
+ $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToAPIReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own finite qualification; CUDA initializes on first monitored batch; no online speedup claim; joint48GiB contract'}
  $gpuPayload=@{receipt=$gpuReceipt;providerLog=$gpuLog;job=$gpuSpec}|ConvertTo-Json -Depth 18 -Compress
  $gpuWrite='import pathlib,json,gzip,sys;x=json.load(sys.stdin);p=pathlib.Path(sys.argv[1]);p.mkdir(parents=True,exist_ok=True);(p/"lifecycle.json").write_text(json.dumps(x["receipt"],indent=2)+chr(10));(p/"job.json").write_text(json.dumps(x["job"],indent=2)+chr(10));(p/"provider.log.gz").write_bytes(gzip.compress(x["providerLog"].encode(),mtime=0));print(json.dumps(x["receipt"]))'
  $gpuPayload|./scripts/kubectl-home.ps1 -n coder exec -i $SourcePod -c dev '--' python3 -c $gpuWrite $Out

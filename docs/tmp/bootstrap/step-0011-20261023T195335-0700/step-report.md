@@ -177,3 +177,24 @@ WRITE_GATE documents actual protocol/time-location scope and pending hardware.
 REVIEW_GATE rootselfaudit rejects offlinebatch/CPU clocks as GPU or criticalpath
 evidence, and keeps allfourRQ/overallgoalopen. No new Agent, external-method
 reproduction, service, schedule, resource policy or concurrent full group.
+
+## Joint memory / earlier short point qualification admission
+
+EXPERIMENT_GATE root corrects an unnecessary ordering restriction: a short
+point-only GPU functional check creates no REPL or secondfull acquisition,
+so it need not wait for the complete observation if one monitor covers both
+owned local trees and the provider. Lean24/full pairs still wait. The existing
+watchdog now includes a retained root only after exact PID/start validation;
+largest-REPL notices use the original activity/kill directory. Budget/maxlive
+REPL settings remain48GiB/2×24GiB. Active loaded collector/source stay frozen.
+
+Read-only qualification sees2actual24GiBREPLs, rejects wrongbirth, verifies
+original activity attribution and killsnone. Real474-entryCPU-reference
+joint qualification recovers2witnesses/noinvalidpoints/errors, with jointpeak
+11,083,833,344bytes/max2REPLs/0kills/errors. GPU context allocation is now lazy,
+after the client begins monitoring; APIready is not deviceready, and first
+initialization remains charged. [Root disposition and qualification](../../../../artifacts/arithmetic-counterexample-2026-10-23/joint-memory-and-point-admission.md).
+WRITE_GATE scopes these operational facts, no GPU or wholeperformance result.
+REVIEW_GATE rootselfaudit preserves allRQ and the single fullcapture, admits
+only the actual short devicepoint check next, and retains its coexecution
+window rather than call the ongoing observation a clean performance run.

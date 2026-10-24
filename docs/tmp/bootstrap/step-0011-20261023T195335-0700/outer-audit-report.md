@@ -73,3 +73,14 @@ PowerShell syntax is checked; hardware/image/native behavior is still open.
 The transient management call did not execute its command and did not stop
 the original live capture. Root used existing management recovery paths;
 all detailed infrastructure facts have their owning incident home.
+
+## Joint resource admission self-audit
+
+Root checks actual PID/birth registration, two live24GiBREPL limits, original
+source activity/kill paths and joint474entryCPU-reference execution. No resource
+policy or full-concurrency setting changes; no injected kill or activecollector
+restart. The earlier mandatoryfullcompletion for point-only qualification was
+a root implementation restriction, not a user requirement; it is removed while
+native24/full serialization remains. CUDA lazy initialization places large
+allocation after monitoring starts and keeps setup charged. Device evidence
+is still pending; source/CPU results alone are not a GPU result.

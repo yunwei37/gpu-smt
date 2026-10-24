@@ -58,12 +58,12 @@ def main():
  def stop(*_):stopping.set()
  signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)
  setup_started=time.monotonic_ns()
- manager=Device(args.ptx)if args.backend=='device'else contextlib.nullcontext(None)
- with manager as device:
+ device=None
+ with contextlib.ExitStack()as lifetime:
   server=Server(('0.0.0.0',args.port),Handler)
   thread=threading.Thread(target=server.serve_forever,daemon=False);thread.start()
   log(dict(event='ready',backend=args.backend,pid=os.getpid(),port=server.server_address[1],
-   device=device.name if device else None,provider_setup_ns=time.monotonic_ns()-setup_started,owned_memory=owned_memory()))
+   device=device.name if device else None,cuda_initialized=False,provider_setup_ns=time.monotonic_ns()-setup_started,owned_memory=owned_memory()))
   try:
    while not stopping.is_set():
     try:first=pending.get(timeout=.1)
@@ -74,8 +74,12 @@ def main():
      except queue.Empty:break
     entries=[t['entry']for t in tickets];began=time.monotonic_ns()
     try:
-     batch=pack(entries);packed=time.monotonic_ns()
-     if device:timing=device.evaluate(batch);masks=batch['hits']
+     initialized=time.monotonic_ns();initialize_ns=0
+     if args.backend=='device'and device is None:
+      device=lifetime.enter_context(Device(args.ptx));initialize_ns=time.monotonic_ns()-initialized
+      log(dict(event='device_ready',device=device.name,initialize_ns=initialize_ns))
+     pack_started=time.monotonic_ns();batch=pack(entries);packed=time.monotonic_ns()
+     if device:timing=device.evaluate(batch);timing['initialize_ns']=initialize_ns;masks=batch['hits']
      else:timing=dict(backend='CPU_REFERENCE_NOT_GPU');masks=reference_masks(batch)
      evaluated=time.monotonic_ns()
      verified=exact_results(batch,masks);checked=time.monotonic_ns()
@@ -84,11 +88,11 @@ def main():
        candidate_point=result['witness']['point']if result['witness']else None,
        point_index=result['witness']['point_index']if result['witness']else None,
        backend=args.backend,timing=dict(queue_ns=began-ticket['received_ns'],
-        shared_batch_pack_ns=packed-began,shared_batch_exact_check_ns=checked-evaluated,
+        shared_batch_pack_ns=packed-pack_started,shared_batch_exact_check_ns=checked-evaluated,
         batch_size=len(tickets),**timing)))
      log(dict(event='batch_retired',backend=args.backend,batch_size=len(tickets),
       entries=[dict(source_id=e['source_id'],entry_ns=e['entry_ns'])for e in entries],
-      distinct_sources=len({e['source_id']for e in entries}),pack_ns=packed-began,
+      distinct_sources=len({e['source_id']for e in entries}),pack_ns=packed-pack_started,
       exact_check_ns=checked-evaluated,whole_batch_ns=checked-began,
       numeric_proposal_points=int((masks!=0).sum()),exact_candidates_checked=sum(x['exact_candidates_checked']for x in verified),
       witness_entries=sum(x['exact_counterexample']for x in verified),device=timing))

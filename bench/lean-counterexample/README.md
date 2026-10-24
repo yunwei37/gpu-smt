@@ -92,3 +92,8 @@ qualify-remote-points.py validates a remote backend's real goal responses,
 CPU exact points and owned memory. Device mode requires original observation
 completion. The alternative24-source qualifier also checks native children
 have retired. [Executed CPU records and pending device boundary](../../artifacts/arithmetic-counterexample-2026-10-23/batch-and-device-preparation-review.md).
+
+The point provider initializes CUDA lazily on its first monitored request.
+API readiness alone is not device execution. A joint monitor may include
+the retained original capture PID/birth and the provider while keeping
+48 GiB total and max two actual REPLs. [Qualification and admission](../../artifacts/arithmetic-counterexample-2026-10-23/joint-memory-and-point-admission.md).

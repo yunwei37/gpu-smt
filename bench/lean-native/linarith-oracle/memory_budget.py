@@ -20,6 +20,8 @@ class MemoryWatchdog:
         self.max_repls = max_repls
         self.repl_name = Path(repl_path).name
         self.out = Path(out)
+        self.trees = {self.root.pid: (self.birth, self.out)}
+        self.origins = {self.root.pid: self.out}
         (self.out / "kills").mkdir()
         (self.out / "activity").mkdir()
         self.stop_event = threading.Event()
@@ -33,13 +35,29 @@ class MemoryWatchdog:
     def start(self):
         self.thread.start()
 
+    def include_owned_tree(self, pid, start_ticks, out):
+        # The caller supplies its own retained launch identity, never a GPU hint.
+        proc = psutil.Process(pid)
+        stat = Path("/proc", str(pid), "stat").read_text()
+        if int(stat[stat.rfind(")") + 2:].split()[19]) != int(start_ticks):
+            raise RuntimeError("Owned capture PID identity changed")
+        origin = Path(out)
+        if not (origin / "activity").is_dir() or not (origin / "kills").is_dir():
+            raise RuntimeError("Owned capture activity directory missing")
+        self.trees[pid] = (proc.create_time(), origin)
+        self.known[pid] = proc.create_time()
+        self.origins[pid] = origin
+
     def owned(self):
-        try:
-            if self.root.create_time() == self.birth:
-                for proc in [self.root] + self.root.children(recursive=True):
-                    self.known[proc.pid] = proc.create_time()
-        except psutil.NoSuchProcess:
-            pass
+        for pid, (birth, origin) in list(self.trees.items()):
+            try:
+                root = psutil.Process(pid)
+                if root.create_time() == birth:
+                    for proc in [root] + root.children(recursive=True):
+                        self.known[proc.pid] = proc.create_time()
+                        self.origins[proc.pid] = origin
+            except psutil.NoSuchProcess:
+                pass
         result = []
         for pid, birth in list(self.known.items()):
             try:
@@ -68,6 +86,8 @@ class MemoryWatchdog:
         self.peak_extra_rss = max(self.peak_extra_rss, extra_rss)
         total = sum(p["rss"] for p in processes) + extra_rss
         repls = [p for p in processes if p["native_repl"]]
+        if len(repls) > self.max_repls:
+            raise RuntimeError("Actual live REPL count exceeds the declared resource point")
         self.peak_rss = max(self.peak_rss, total)
         self.peak_repls = max(self.peak_repls, len(repls))
         row = dict(time_ns=time.monotonic_ns(), total_rss_bytes=total,
@@ -92,7 +112,8 @@ class MemoryWatchdog:
                     assert group in self.known and group != os.getpgrp()
                     owner = psutil.Process(group)
                     assert owner.create_time() == self.known[group]
-                    activity_path = self.out / "activity" / (str(group) + ".json")
+                    origin = self.origins.get(group, self.out)
+                    activity_path = origin / "activity" / (str(group) + ".json")
                     activity = json.loads(activity_path.read_text()) if activity_path.exists() else {}
                     notice = dict(owner_pid=group, owner_birth=owner.create_time(),
                         victim_pid=proc.pid, victim_birth=victim["birth"], victim_rss_bytes=victim["rss"],
@@ -101,8 +122,8 @@ class MemoryWatchdog:
                         source_id=activity.get("source_id"), snippet_id=activity.get("snippet_id"),
                         phase=activity.get("phase"), time_ns=time.monotonic_ns(),
                         reason="aggregate_rss_exceeded", largest_native_repl_selected=True)
-                    path = self.out / "kills" / (str(group) + ".json")
-                    temporary = path.with_suffix(".new")
+                    path = origin / "kills" / (str(group) + ".json")
+                    temporary = path.with_suffix(".new." + str(os.getpid()))
                     temporary.write_text(json.dumps(notice))
                     temporary.replace(path)
                     os.killpg(group, signal.SIGKILL)
@@ -144,4 +165,5 @@ class MemoryWatchdog:
             samples=self.samples, kills=self.kills, peak_sampled_owned_rss_bytes=self.peak_rss,
             peak_sampled_native_repl_count=self.peak_repls, error=self.error,
             peak_external_owned_provider_rss_bytes=self.peak_extra_rss,
+            included_owned_roots=[dict(pid=pid,birth=birth,out=str(out)) for pid,(birth,out) in self.trees.items()],
             scope="Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples.")
