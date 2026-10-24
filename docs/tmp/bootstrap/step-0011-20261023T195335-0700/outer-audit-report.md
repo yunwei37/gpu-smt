@@ -386,3 +386,18 @@ REVIEW_GATE rootselfreview keeps algorithm/workloads/resourcepoint unchanged.
 Admit only completeGPUfromzero against the alreadycompleted unchanged
 native7808baseline; originalpartialGPUdata isneverspliced or discarded.
 Coldaccounting distinguishes GPU-only receipt from combinedpair clock.
+
+
+## FullGPU rerun is live after recovery
+The existing finite lifecycle now observes detachedPID266824/birth129072263
+in native-gpu-full-repair-20261024T1635; originalfullnativeoff is reused
+unchanged. ActualGPUrequest responses have begun, with joint48GiB/max2/
+24GiBeach/CPUs8–11 guard active. Localobserver session74779 owns provider
+retirement after the matching durable clientexit. Launch/runtime source/
+build and durablestdout remain in the owningWorkspace, no secondfullgroup.
+[Launch receipt](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-repair-20261024T1635.launch.json)
+is processprovenance, not an experimentalresult or controlcontract.
+Repair637c9c8and failedattempt39c45d2are pushed. Do not restart this healthy
+client on a transport-observation timeout; collect completeGPU/cleanup once
+finished and analyze against the retained nativeoff, keeping failedattempt
+costs and host/run-order limitations explicit.
