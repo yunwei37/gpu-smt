@@ -333,3 +333,12 @@ returns19valid/5Leanerrors inbothcells,17actual5090requests,2exactwitnesses,
 0fallbackerrors/acceptancechanges, completechild/device/Jobretirement.
 All17batches are singletons. Smallwarm4.342/4.220s clocks are not a speedup
 result. The fulloriginal7808native/off versus GPU/on pair is admitted next.
+
+
+[Fulltimeoutapplicability](../artifacts/arithmetic-counterexample-2026-10-23/timeout-population-analysis-20261024T0918/result-review.md)
+groups78timeoutsinto26tasks. All39supportedentries from17Natfactorization
+timeouts admit no counterexample over their complete retaineddomain.
+945closedentries fromoneothertimeout consistof944falsecontexts/1truegoal.
+984of1020supportedtimeoutentries arethereforeinapplicable to refutation;
+thisentrycountisdominatedbyonecandidate, not awalltimebound. Theother36
+variableentries andmissing/unsupportedcontexts remainunknown.

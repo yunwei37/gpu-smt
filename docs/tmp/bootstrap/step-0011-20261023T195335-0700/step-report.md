@@ -592,3 +592,22 @@ provider lifecycle; preserve it until client completion and provider/context/
 exactUIDJobretirement. No completepairedoutcome or speedup is claimed yet.
 Censusboundaryb0368f3 and preflightboundaryc818f37 both pushedtoorigin/main.
 Do not restart this healthycapture or minute-poll it in goalturns.
+
+
+## Complete timeout applicability rather than entry-count proxies
+EXPERIMENT_GATE reuses closed7808data, no new acquisition. [All78timeouts/
+26tasknames](../../../../artifacts/arithmetic-counterexample-2026-10-23/timeout-population-analysis-20261024T0918/result-review.md)
+show35noentry/13unsupportedonly/30supportedwithoutwitness.
+All39supportedentries from17factorizationtimeouts have no counterexample
+over their explicit completeNatdomain; another945closedentries in one
+timeout contain944falsecontexts/1truegoal.984of1020supportedtimeoutentries
+thus cannotbeearlyrefuted, a countdominatedbyonecandidate ratherthan a
+costbound. Other36variableentries andmissingcontexts remainunknown.
+25witnesssources cover15actualtasks; no independentcandidate/problem
+denominator substitution.18unparsedtheoremnames remainexplicit.
+WRITE_GATE adds the source-supported applicability explanation to current
+paper/evaluation withoutnewclaims, tasksolverorstorychange. REVIEW_GATE
+rootselfreview checks explicitdomains/metadata/unknowns and prohibits
+wholewall/Amdahlinference. The1.132sanalysis coexecuted with nativeoff;
+jointRSS/max2/48GiBproviderwatchdog isrecorded, not isolatedbenchmark.
+The currentfullpairPID262956remainslive, and no newqualifier isadmitted.
