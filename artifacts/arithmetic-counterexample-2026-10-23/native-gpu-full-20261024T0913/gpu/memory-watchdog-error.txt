@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 143, in run
+    self.sample(stream)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py", line 82, in sample
+    extra = self.extra_memory() if self.extra_memory is not None else None
+            ~~~~~~~~~~~~~~~~~^^
+  File "/workspaces/repository/bench/lean-counterexample/worker.py", line 82, in sample
+    with connection.makefile('r')as stream:result=json.loads(stream.readline())
+                                                             ~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer

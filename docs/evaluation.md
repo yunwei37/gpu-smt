@@ -342,3 +342,10 @@ timeouts admit no counterexample over their complete retaineddomain.
 984of1020supportedtimeoutentries arethereforeinapplicable to refutation;
 thisentrycountisdominatedbyonecandidate, not awalltimebound. Theother36
 variableentries andmissing/unsupportedcontexts remainunknown.
+
+
+The firstfullownscreeningpair suffered a control-lifecycle failure:
+nativeoff7808complete/21693.761299439s; GPUonly2214sources returned
+beforeproviderRSSconnectionreset. No fullratio isadmissible.
+[Failure/raw/cleanup and repair route](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/failure-result-review.md).
+Keepnativebaseline; repairobserver-loss handling before completeGPUrerun.

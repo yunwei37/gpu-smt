@@ -1,0 +1,72 @@
+{
+  "state": "monitoring_failed",
+  "method": "stock",
+  "expected": 7808,
+  "source_concurrency": 2,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "cost_timing_requested": false,
+  "cost_timing_effective": false,
+  "cost_timing_log": null,
+  "omega_control_log": null,
+  "reference_diagnostic": false,
+  "reference_phases": false,
+  "reference_phase_log": null,
+  "native_engine": null,
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": null,
+  "lean_version": "v4.9.0-rc1",
+  "native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so",
+  "scope": "Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.",
+  "GPU_enabled": false,
+  "GPU_provider": null,
+  "GPU_minimum_rows": null,
+  "retained_strong_CPU": false,
+  "error": "Traceback (most recent call last):\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 143, in run\n    self.sample(stream)\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 82, in sample\n    extra = self.extra_memory() if self.extra_memory is not None else None\n            ~~~~~~~~~~~~~~~~~^^\n  File \"/workspaces/repository/bench/lean-counterexample/worker.py\", line 82, in sample\n    with connection.makefile('r')as stream:result=json.loads(stream.readline())\n                                                             ~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.13/socket.py\", line 719, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nConnectionResetError: [Errno 104] Connection reset by peer\n",
+  "server_exit": -9,
+  "joined_owned_descendants": 0,
+  "owned_descendants_before_shutdown": [],
+  "owned_live_descendants_after_shutdown": [],
+  "memory_watchdog": {
+    "root_pid": 262956,
+    "root_birth": 1792833125.27,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 3523,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 47398014976,
+    "peak_sampled_native_repl_count": 2,
+    "error": "Traceback (most recent call last):\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 143, in run\n    self.sample(stream)\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/workspaces/repository/bench/lean-native/linarith-oracle/memory_budget.py\", line 82, in sample\n    extra = self.extra_memory() if self.extra_memory is not None else None\n            ~~~~~~~~~~~~~~~~~^^\n  File \"/workspaces/repository/bench/lean-counterexample/worker.py\", line 82, in sample\n    with connection.makefile('r')as stream:result=json.loads(stream.readline())\n                                                             ~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.13/socket.py\", line 719, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nConnectionResetError: [Errno 104] Connection reset by peer\n",
+    "peak_external_owned_provider_rss_bytes": 173154304,
+    "included_owned_roots": [
+      {
+        "pid": 262956,
+        "birth": 1792833125.27,
+        "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/gpu"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "whole_lifecycle_seconds": 3523.732424266,
+  "waited_child_cpu_seconds": 682.2699620000003,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "50719",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  }
+}

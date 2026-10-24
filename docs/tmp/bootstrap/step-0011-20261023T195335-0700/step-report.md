@@ -611,3 +611,18 @@ rootselfreview checks explicitdomains/metadata/unknowns and prohibits
 wholewall/Amdahlinference. The1.132sanalysis coexecuted with nativeoff;
 jointRSS/max2/48GiBproviderwatchdog isrecorded, not isolatedbenchmark.
 The currentfullpairPID262956remainslive, and no newqualifier isadmitted.
+
+
+## Fullpair runtimefailure, completebaseline retained
+EXPERIMENT_GATE collects the originalfullattempt only after actualtermination.
+[Closednative/incompleteGPUfailure review](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/failure-result-review.md)
+retains native7808/21693.761299439s and GPU2214answered sources,
+then memoryRPCreset/monitoring_failed. FullGPUresult/ratio isabsent.
+ObservedSSHreset caused submittedclient replay/FileExistsError; unconditional
+finallyproviderstop didnotwaitfororiginalclientownership/termination.
+Providerretired0/Jobgone/noownedREPLsurvivors. Initiatingnetworkcauseunknown.
+WRITE_GATE records operationalfailure/currentfrontier only, nointermediate
+failure inpaper/no prematureGPUclosure. REVIEW_GATE rootselfreview
+preserves raw/partial/resource outcomes and admits only the existing lifecycle
+repair, real24check and completeGPU-only rerun against unchanged completed
+nativeoff. All4RQ/goal/resources/algorithm/input remainunchanged.
