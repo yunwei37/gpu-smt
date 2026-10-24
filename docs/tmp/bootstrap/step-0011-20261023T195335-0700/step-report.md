@@ -678,3 +678,18 @@ Historicalraw/reports remainexplicitlyannotated, not erased orreclassified.
 REVIEW_GATE rootselfreview flags priorqualificationinsufficiency, all4RQ/
 goalunchanged, noindependentaudit. FreshfullGPU fromzero follows against
 thecompleted unchangednativebaseline, withreparse/preparationfullycharged.
+
+
+## Corrected-layout completeGPU run is active
+The single completeGPU rerun now uses native-gpu-full-layout-fixed-20261024T1650,
+actualPID267453/birth129177203. Actualoriginalcandidate
+GPUresponses have begun after charged fullnative-parser preparation/reparse.
+The retained untouchednative7808baseline isreused; inputorder, native library,
+2liveREPLs/24GiBeach/48GiBjoint/CPUs8–11/300stimeouts unchanged.
+[Stable launch receipt](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650.launch.json)
+and durablestdout are in theexistingWorkspace. Localobserver94127watches
+thatidentity and maycleanup provider only after its durableexit/retirement.
+Preparation4272wrapped/13sourcefallbacks is versioned, not mixed with old
+brokenwrapper coverage. No otherfullgroup, partialsplicing, performance/
+accepted-set claim or projectclosure. Collect actualcompletion and provider
+cleanup before analyzing native-rankedfailed/timeout/tail outcomes.
