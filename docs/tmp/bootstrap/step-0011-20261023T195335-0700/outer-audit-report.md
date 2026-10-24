@@ -51,3 +51,13 @@ execution, hardware speedup or online cross-candidate batch is inferred.
 Current full observation binaries/workers are unchanged; no new external
 baseline, GPU Job or Agent is launched. Hardware and whole-flow integration
 remain missing evidence, so RQ4 and the full research objective stay open.
+
+## Provider/worker interface self-audit
+
+Root inspected all protocol outputs and closed-endpoint fallback, source/entry
+matching, provider identity/RSS/affinity and actual process exits. This is
+CPU-reference transport, not GPU or Lean execution. Generic capture change is
+only7optional-memory-callback lines; no legacy algorithm mode is enabled.
+Retirement is logged after context-manager exit in current source, but real
+CUDA retirement still needs hardware evidence. The active observation is
+unmodified and all4RQ/overallresearch requirements remain open.

@@ -446,3 +446,13 @@ and returns floating proposal masks. CPU bytecode qualification on474real
 entries matches the nested evaluator and recovers both exact witnesses.
 This has not run on a GPU and is not yet connected to the Lean worker.
 [Source and actual qualification](../bench/lean-counterexample/README.md).
+
+The finite point-provider/worker RPC path is implemented. The provider's host
+CPU checks numeric hints and the standard-library worker independently checks
+the returned rational point/context and ownership before tactic failure.
+Actual CPU-reference socket qualification confirms two witnesses, one
+nonrefuted correct goal, closed-endpoint fallback and child retirement.
+Provider hostRSS/birth/backend/affinity connects to the existing aggregate
+watchdog through an optional capture callback. It does not select the old LP
+GPU mode. Native off/on replay and real device execution remain pending.
+[Protocol, original records and limitations](../artifacts/arithmetic-counterexample-2026-10-23/point-protocol-review.md).

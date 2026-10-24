@@ -1,0 +1,80 @@
+[
+  {
+    "source_id": "minif2f-379",
+    "entry_ns": 1243471049960266,
+    "exact_counterexample": true,
+    "gpu_rpc_ns": 10272663,
+    "provider": {
+      "queue_ns": 48126,
+      "shared_batch_pack_ns": 8139823,
+      "shared_batch_exact_check_ns": 141107,
+      "batch_size": 1,
+      "backend": "CPU_REFERENCE_NOT_GPU"
+    },
+    "provider_backend": "cpu-reference",
+    "witness": {
+      "point": [
+        [
+          "625",
+          "7"
+        ],
+        [
+          "25",
+          "1"
+        ],
+        [
+          "250",
+          "7"
+        ]
+      ],
+      "point_index": 7
+    },
+    "cpu_exact_recheck_ns": 63140
+  },
+  {
+    "source_id": "minif2f-802",
+    "entry_ns": 1243918182648202,
+    "exact_counterexample": true,
+    "gpu_rpc_ns": 1661818,
+    "provider": {
+      "queue_ns": 32404,
+      "shared_batch_pack_ns": 577410,
+      "shared_batch_exact_check_ns": 119186,
+      "batch_size": 1,
+      "backend": "CPU_REFERENCE_NOT_GPU"
+    },
+    "provider_backend": "cpu-reference",
+    "witness": {
+      "point": [
+        [
+          "3",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "4",
+          "1"
+        ]
+      ],
+      "point_index": 7
+    },
+    "cpu_exact_recheck_ns": 68371
+  },
+  {
+    "source_id": "minif2f-4",
+    "entry_ns": 1243079040344519,
+    "exact_counterexample": false,
+    "gpu_rpc_ns": 981858,
+    "provider": {
+      "queue_ns": 25767,
+      "shared_batch_pack_ns": 410313,
+      "shared_batch_exact_check_ns": 11176,
+      "batch_size": 1,
+      "backend": "CPU_REFERENCE_NOT_GPU"
+    },
+    "provider_backend": "cpu-reference"
+  }
+]

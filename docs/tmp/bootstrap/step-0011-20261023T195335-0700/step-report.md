@@ -123,3 +123,27 @@ fallback stack limits and CUDA context/memory cleanup. This is not independent
 audit or GPU performance. No secondfull capture, activebinary rebuild,
 external reproduction orGPUJob is started. Next hardware step waits for the
 current complete observation boundary; root continues implementation itself.
+
+## Own point-provider/worker protocol boundary
+
+EXPERIMENT_GATE implements the finite typed-point provider and standard-library
+worker RPC/exact recheck. Real CPU-reference transport confirms two retained
+witnesses, one correct-goal control, closed-endpoint fallback and exit0/reaped
+children. Final0.671982squalification and38,961,152byteproviderRSS are not GPU
+timings or Lean acceptance equivalence. All three tiny development revisions,
+source/entry identities and original responses remain.
+[Full protocol result](../../../../artifacts/arithmetic-counterexample-2026-10-23/point-protocol-review.md).
+
+A generic optional external-memory callback in existing capture transport
+includes the own provider without enabling legacy LP algorithms. Real sampler
+calls verify provider PID/birth/backend/CPU eligibility. Budget/maxREPLs stay
+48GiB/2×24GiB. Active full capture uses its already-loaded prior function and
+frozen original worker unchanged. The post-observation24source own off/on
+runner is prepared and syntax-checked, not executed; it cannot start until
+the original full observation is complete.
+
+WRITE_GATE records implementation and actual CPU-reference scope. REVIEW_GATE
+rootselfaudit checks enqueue-only locking, ownership/exact-point boundary,
+fallback and post-context retirement markers. Hardware cleanup, native branch
+behavior and whole off/on costs remain unverified. No new Agent, external
+comparison, GPU Job or concurrent full collection.

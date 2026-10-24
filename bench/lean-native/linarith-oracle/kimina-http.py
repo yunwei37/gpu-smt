@@ -100,6 +100,13 @@ async def cell(args, method, out, items, build):
             return value
         guard.extra_memory = sample_provider
         sample_provider()  # Establish exact owned provider before any REPL starts.
+    # Own arithmetic screening reuses only this capture/transport boundary.
+    external_sampler = getattr(args, "external_memory_sampler", None)
+    if external_sampler is not None:
+        if guard.extra_memory is not None:
+            raise ValueError("One owned provider sampler per capture")
+        guard.extra_memory = external_sampler
+        external_sampler()  # Validate provider ownership before any REPL starts.
     # The default retains the original selected-Goedel comparison. A matched
     # existing-method control may select the upstream helper's tiered default.
     if method == "native" and args.native_engine == "tiered":

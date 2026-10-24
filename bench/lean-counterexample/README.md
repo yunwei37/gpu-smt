@@ -46,3 +46,31 @@ Offline replay batches must not be called concurrent online candidate batches.
 Errors, unsupported contexts and no exact witness must retain native fallback.
 The source's pending GT/GE extraction repair is not part of the active
 frozen observation; its own qualification remains pending.
+
+## Finite provider and worker interface
+
+point-provider.py is the temporary benchmark endpoint for a device backend;
+its cpu-reference backend is only our functional/algorithm control. The worker
+uses GPU_SMT_CEX_GPU_HOST and optional GPU_SMT_CEX_GPU_PORT (default5001).
+Returned points and source/entry identity are checked; provider claims are
+never sufficient. The exact point is checked again by the worker before the
+Lean wrapper may fail the current arithmetic tactic.
+
+CPU-reference socket qualification returns two checked witnesses and leaves
+the correct-goal control unrefuted. Endpoint closure falls back; all children
+retire. [Actual protocol and memory evidence](../../artifacts/arithmetic-counterexample-2026-10-23/point-protocol-review.md).
+
+The provider exposes owned RSS/birth/backend/affinity for the existing
+aggregate watchdog. The optional capture callback includes it without enabling
+the old LP method. It does not change the memory budget or other Workspaces.
+
+qualify-screening.py is prepared for the post-observation24-source off/on
+qualification, including actual witness sources. It is not yet executed.
+No persistent endpoint, Service, additional scheduler or Agent is created.
+
+To repeat only the closed CPU socket qualification in a new output directory:
+
+    python bench/lean-counterexample/qualify-protocol.py --out /tmp/own-point-protocol
+
+This starts and retires its own short CPU-reference process on an OS-assigned
+port. It does not use CUDA or execute a Lean candidate.

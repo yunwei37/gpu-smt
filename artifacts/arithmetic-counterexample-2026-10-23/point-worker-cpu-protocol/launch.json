@@ -1,0 +1,40 @@
+{
+  "provider_pid": 256480,
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/highs-1.15.1/bin/python",
+    "-u",
+    "/workspaces/repository/bench/lean-counterexample/point-provider.py",
+    "--backend",
+    "cpu-reference",
+    "--port",
+    "0"
+  ],
+  "ready": {
+    "event": "ready",
+    "backend": "cpu-reference",
+    "pid": 256480,
+    "port": 35939,
+    "device": null,
+    "owned_memory": {
+      "ready": true,
+      "root_pid": 256480,
+      "root_start_ticks": 124624843,
+      "rss_bytes": 31121408,
+      "processes": [
+        {
+          "pid": 256480,
+          "ppid": 256479,
+          "start_ticks": 124624843,
+          "rss_bytes": 31121408
+        }
+      ],
+      "time_ns": 1246248517524513,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  }
+}
