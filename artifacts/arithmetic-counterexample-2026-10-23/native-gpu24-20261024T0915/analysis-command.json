@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "/workspaces/repository/bench/lean-counterexample/analyze-screening.py",
+    "--off",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/off",
+    "--on",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/gpu",
+    "--out",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/analysis",
+    "--lifecycle",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/lifecycle.json",
+    "--preparation",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/summary.json"
+  ],
+  "exit": 0
+}

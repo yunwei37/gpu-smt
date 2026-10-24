@@ -563,3 +563,17 @@ README and currentpaper, retaining all originalRQ and missingpairedresult.
 REVIEW_GATE is rootselfreview: denominator/currentclocks/exactcontext/
 rawfailures/resources/childretirement checked; no independent audit claimed.
 The already-admitted native24/fullpair follows, not more sampling variants.
+
+
+## Actual native/GPU24 preflight and full-run admission
+EXPERIMENT_GATE executes the already-admitted ownmethod preflight after
+completecensusretirement. [Closed native/GPU24 self-review](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/result-review.md)
+finds19valid/5Leanerrorsunchanged,17actual5090requests/2exactwitnesses,
+0fallbackerrors, allchildren/provider/Jobretired, joint48GiB/max2unchanged.
+All17devicebatches are singleton; no batching/performanceclaim from this
+smallcase. WRITE_GATE records actualpreflight facts, no finalRQanswer.
+REVIEW_GATE rootselfreview admits the existing full7808off/on comparison.
+Fulloffusesuntouchedoriginals; onpaysownpreparation/export/provider/exact/
+fallback/cleanup. Fixedoff-firstorder/hostloadvariance remain limitations.
+No externalmethod expansion, newnarrowqualifier, independentaudit or GPU
+benefit is claimed. The fullpair is now the concrete next execution.

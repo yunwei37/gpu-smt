@@ -309,8 +309,8 @@ with nativefallback and all48GiBresourceconstraints. ExistingfullminiF2F
 census4793non-complete/7808sources consumes87.660953%of cumulativeHTTPenvelopes,
 not wholewall.51of71timeouts mentionarithmetic;2024printactual linarithfailure.
 These are notfalse-goalcounts. [All-source costs and limits](../artifacts/arithmetic-counterexample-2026-10-23/failure-cost-review.md).
-Nextnative-extraction measurement must separateexactwitness/no-witness/
-unsupported and preserveacceptedcandidate/tacticalternative behavior.
+The completed own extraction below separates exactwitness/no-witness/
+unsupported while retaining native candidate/tacticalternative behavior.
 
 
 ## Complete own7808 arithmetic-goal census,2026-10-24UTC
@@ -326,3 +326,10 @@ Whole20903.803838s including input preparation; peak46.648457GiB/max2,
 0watchdogerrors/kills, allchildrenretired; source24GiBeach/48total/CPUs8–11.
 This census challenges first-recipe applicability to expensive failures,
 not globalGPUimpossibility. Existingnative24 and fullownoff/on remain next.
+
+
+[Actualnative/GPU24preflight](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/result-review.md)
+returns19valid/5Leanerrors inbothcells,17actual5090requests,2exactwitnesses,
+0fallbackerrors/acceptancechanges, completechild/device/Jobretirement.
+All17batches are singletons. Smallwarm4.342/4.220s clocks are not a speedup
+result. The fulloriginal7808native/off versus GPU/on pair is admitted next.
