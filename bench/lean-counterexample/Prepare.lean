@@ -13,7 +13,7 @@ private partial def positions (s : Syntax) : Array Json := Id.run do
   return out
 
 def main : IO Unit := do
-  let env ← importModules #[{module := `Mathlib}] {}
+  let env ← importModules #[{module := `Mathlib}, {module := `Counterexample}] {}
   let input ← IO.getStdin
   let output ← IO.getStdout
   repeat

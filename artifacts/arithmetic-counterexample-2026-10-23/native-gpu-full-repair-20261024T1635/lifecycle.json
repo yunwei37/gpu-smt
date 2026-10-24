@@ -1,0 +1,70 @@
+{
+  "pod": "gpu-smt-cuopt-20261017-275cz",
+  "podUID": "9fc74255-39d4-4f8c-94a3-6795a798a692",
+  "clientTerminalVerified": true,
+  "ownJobRemains": false,
+  "providerExit": 0,
+  "jobUID": "2aef2977-bea8-46a5-babc-f767a4be484e",
+  "completeColdLifecycleSeconds": 506.7484077,
+  "sourcePod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+  "scope": "Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract",
+  "reusedOff": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off",
+  "workerStream": false,
+  "clientExit": 1,
+  "phase": "lean-full",
+  "cleanupErrors": [],
+  "sourceNode": "lab",
+  "providerReady": {
+    "event": "ready",
+    "backend": "device",
+    "pid": 1,
+    "port": 5001,
+    "device": null,
+    "cuda_initialized": false,
+    "provider_setup_ns": 905242,
+    "owned_memory": {
+      "ready": true,
+      "root_pid": 1,
+      "root_start_ticks": 129071358,
+      "rss_bytes": 31809536,
+      "processes": [
+        {
+          "pid": 1,
+          "ppid": 0,
+          "start_ticks": 129071358,
+          "rss_bytes": 31809536
+        }
+      ],
+      "time_ns": 1290713805316207,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "startupToAPIReadySeconds": 9.9715105,
+  "utc": "2026-10-24T16:37:26.4021900Z",
+  "clientLaunch": {
+    "pid": 266824,
+    "start_ticks": 129072263,
+    "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-repair-20261024T1635",
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "/workspaces/repository/bench/lean-counterexample/qualify-screening.py",
+      "--host",
+      "10.42.1.173",
+      "--backend",
+      "device",
+      "--out",
+      "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-repair-20261024T1635",
+      "--full",
+      "--reuse-off",
+      "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off"
+    ]
+  },
+  "retirementSeconds": 15.464687700000013,
+  "clientWrapperSeconds": 481.3105966,
+  "sourcePodUID": "c2392a42-e9ff-4b4c-941f-63c6d929728b"
+}

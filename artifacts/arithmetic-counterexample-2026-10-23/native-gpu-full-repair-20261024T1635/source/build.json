@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-24T05:39:56.648861+00:00",
+  "started_utc": "2026-10-24T05:39:47.238756+00:00",
+  "build": "/tmp/gpu-smt-counterexample-next-20261024",
+  "sdk": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "lean_path": "/tmp/gpu-smt-counterexample-next-20261024:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib",
+  "library": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-o",
+        "Counterexample.olean",
+        "-c",
+        "Counterexample.c",
+        "Counterexample.lean"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-o",
+        "Prepare.olean",
+        "-c",
+        "Prepare.c",
+        "Prepare.lean"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O3",
+        "-shared",
+        "-fPIC",
+        "-o",
+        "libCounterexample.so",
+        "Counterexample.c",
+        "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+        "-Wl,--no-as-needed",
+        "-l:libMathlib-Tactic-Linarith-1.so"
+      ],
+      "exit": 0
+    }
+  ],
+  "base_commit": "0ea7d32e8effdd64397f23cd2d3778fa82dfd8c7",
+  "working_source_status": " M bench/lean-counterexample/build.py\n",
+  "scope": "Own source build only; no new verification REPL and no active binary replacement. Native runtime qualification pending."
+}

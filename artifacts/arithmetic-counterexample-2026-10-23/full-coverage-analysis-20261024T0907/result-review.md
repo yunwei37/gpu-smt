@@ -23,3 +23,7 @@ Root self-review checks full population, current clock joins, exact/non-witness 
 
 ## Next action
 Run the existing real24-source native/GPU screening qualification, verify actual device dispatch, outcomes, resource costs and cleanup; then the already-admitted complete original7808 off/on pair. No new external baseline or parameter/grid/kernel study. GPU screening must earn a whole-workload benefit; cheap exact witnesses alone cannot establish it.
+
+
+## Subsequent native comparison,2026-10-24UTC
+The later untouched native7808baseline reveals109native-valid sources rejected by the frozen wrapper with parser errors; the previous24control used rewritten inputs on bothsides and did not detect this. Allnumeric observations above remain raw facts about that version, not validated original-source acceptance/coverage. Currentpaper removes these provisional population conclusions pending corrected native-layout-preserving preparation and a fresh fullGPUcomparison. No failure data is erased or reclassified.

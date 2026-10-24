@@ -401,3 +401,24 @@ Repair637c9c8and failedattempt39c45d2are pushed. Do not restart this healthy
 client on a transport-observation timeout; collect completeGPU/cleanup once
 finished and analyze against the retained nativeoff, keeping failedattempt
 costs and host/run-order limitations explicit.
+
+
+## Demonstrated original-source regression repaired
+EXPERIMENT_GATE compares actualuntouchednative7808 with frozenobserver and
+finds109native-valid parserrejections. CurrentGPUrerun reproduces289/290/291;
+rootcancels theknowninvalidvariant, retainingraw/exit/providercleanup.
+[Diagnosis/repair and realqualification](../../../../artifacts/arithmetic-counterexample-2026-10-23/layout-regression-20261024T1644/result-review.md)
+finds first-line wrapperprefix withoutcontinuationtranslation and flawed
+earlierpreflightusingrewritteninputs onbothsides. Repair preservesrelative
+layout, leavesmultilinequotedtextnative and reparses with nativeLeanparser.
+Everyoff nowusesuntouchedoriginals. GPU/checker/library/resourcepointunchanged.
+Actual24 including3regressions:19valid/5errorsboth, regained3positives,
+18deviceRPCs/2witnesses,0fallbackerrors, allchildren/provider/Jobretired.
+Full7808preparation:4272wrapped/8578tactics,13exactsourcefallbacks;109known
+regressions107parse/2nativefallback, not109freshproofchecks.
+WRITE_GATE removes provisionalwholepopulationcensus claims fromcurrentpaper
+rather than presents an invalidinstrumentedversion asfinalevidence.
+Historicalraw/reports remainexplicitlyannotated, not erased orreclassified.
+REVIEW_GATE rootselfreview flags priorqualificationinsufficiency, all4RQ/
+goalunchanged, noindependentaudit. FreshfullGPU fromzero follows against
+thecompleted unchangednativebaseline, withreparse/preparationfullycharged.

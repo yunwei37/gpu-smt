@@ -871,29 +871,9 @@ comparison charges source preparation, export, point construction, transfers,
 queueing, exact checks, fallback and process retirement. We report failed
 requests and timeouts separately because finding cheap counterexamples does
 not establish savings on the expensive failures.
-The complete observation covers 7,808 original miniF2F candidates.
-It records 15,372 arithmetic entries; 8,407 entries from 1,485 candidates
-have supported contexts. Fixed 4,096-point proposals followed by exact checks
-find 30 refuted intermediate goals in 25 candidates, all of which return
-Lean errors. Those candidates account for 33.435 seconds of the failed
-requests' 35,613.994 cumulative HTTP seconds. The spans overlap and include
-observation overhead; they do not measure saved wall time.
-None of the 78 timed-out requests yields a witness. This first sampling
-recipe therefore reaches inexpensive failures rather than the costly
-timeouts; unsupported goals and finite searches without a witness remain
-unknown. Device execution and its full off/on costs require the paired run.
-The 78 timeouts span 26 theorem statements, rather than 78 independent
-problems. One timeout supplies 945 closed arithmetic entries: 944 have
-inconsistent assumptions and one has a true conclusion.
-In another 17 timeouts from a natural-number factorization problem, all
-39 supported entries retain assumptions whose complete domain consists
-of two assignments; both satisfy the captured implications.
-These specific checks exclude counterexamples at 984 of the 1,020 supported
-timeout entries. The count is dominated by one candidate and is not a
-fraction of avoidable time; the remaining contexts retain unknown status.
 The paired comparison also checks accepted proof outcomes and native
 diagnostics separately, as required by Section~\ref{sec:behavior}.
-\missing{Matched original miniF2F native
+\missing{Complete original miniF2F false-goal coverage and matched native
 versus GPU-screening results, including accepted-set changes, failure and
 timeout costs, fixed baseline-ranked tails and complete cold lifecycle.}
 

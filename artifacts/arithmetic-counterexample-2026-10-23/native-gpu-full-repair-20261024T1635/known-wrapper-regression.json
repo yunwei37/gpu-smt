@@ -1,0 +1,90 @@
+{
+  "reason": "Untouched-native valid sources now fail with unexpected-token parser errors in the same wrapper; this is invalid outcome parity, not GPU speed.",
+  "actual_current_responses": [
+    {
+      "source_id": "minif2f-289",
+      "body": {
+        "results": [
+          {
+            "id": "minif2f-289",
+            "time": 0.052231,
+            "response": {
+              "env": 46,
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 21,
+                    "column": 11
+                  },
+                  "endPos": {
+                    "line": 21,
+                    "column": 13
+                  },
+                  "data": "unexpected token '('; expected ']'"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-290",
+      "body": {
+        "results": [
+          {
+            "id": "minif2f-290",
+            "time": 0.064978,
+            "response": {
+              "env": 47,
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 23,
+                    "column": 11
+                  },
+                  "endPos": {
+                    "line": 23,
+                    "column": 14
+                  },
+                  "data": "unexpected identifier; expected ']'"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-291",
+      "body": {
+        "results": [
+          {
+            "id": "minif2f-291",
+            "time": 0.051612,
+            "response": {
+              "env": 48,
+              "messages": [
+                {
+                  "severity": "error",
+                  "pos": {
+                    "line": 22,
+                    "column": 11
+                  },
+                  "endPos": {
+                    "line": 22,
+                    "column": 13
+                  },
+                  "data": "unexpected token '('; expected ']'"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "action": "SIGINT to exact owned finite client, allowing capture cleanup and durable exit; retain all partial raw."
+}

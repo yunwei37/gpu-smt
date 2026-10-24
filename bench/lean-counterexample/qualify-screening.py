@@ -31,7 +31,7 @@ async def main():
  built_source=Path(json.loads((A/'build.json').read_text())['build'])/'Counterexample.lean'
  source_matches_build=built_source.read_bytes()==(B/'Counterexample.lean').read_bytes()
  if not source_matches_build:raise RuntimeError('Build the current exporter before screening; do not label old binaries as the current source')
- wanted=[379,802]+list(range(22))
+ wanted=[379,802,289,290,291]+list(range(19))
  with gzip.open(R/'artifacts/linarith-oracle-2026-10-17/prefix-opportunity/minif2f-input.jsonl.gz','rt')as f:
   originals=[json.loads(line)for line in f]
  selected=originals if args.full else[originals[i]for i in wanted]
@@ -70,14 +70,14 @@ async def main():
  for mode in (['gpu']if reused_off else['off','gpu']):
   out=args.out/mode
   os.environ.update(GPU_SMT_CEX_MODE=mode,GPU_SMT_CEX_LOG=str(out/'goals.jsonl'))
-  items=original_snippets if args.full and mode=='off'else snippets
+  items=original_snippets if mode=='off'else snippets
   result=await capture['cell'](settings,'stock',out,items,build)
   result.update(own_mode=mode,provider_backend=args.backend,point_screening_device_requested=(mode=='gpu'and args.backend=='device'),scope=('One full original7808 matched pair; root review required, fixed off-first order.'if args.full else'24 actual source qualification, not complete benchmark or speedup.'))
   (out/'terminal.json').write_text(json.dumps(result,indent=2)+'\n')
   cells.append(result)
   if result['state']!='complete' or result['returned']!=len(selected):raise RuntimeError('Preserve partial qualification')
   if result['memory_watchdog']['error']or result['owned_live_descendants_after_shutdown']:raise RuntimeError('Resource monitoring/child retirement incomplete')
- summary=dict(reused_off_directory=str(args.reuse_off)if args.reuse_off else None,full_population=args.full,native_off_uses_untouched_originals=args.full,source_ids=[x['proof_id']for x in snippets],source_matches_build=source_matches_build,
+ summary=dict(reused_off_directory=str(args.reuse_off)if args.reuse_off else None,full_population=args.full,native_off_uses_untouched_originals=True,source_ids=[x['proof_id']for x in snippets],source_matches_build=source_matches_build,
   preparation_seconds=preparation_seconds,provider_identity=provider,
   cells=[dict(mode=x['own_mode'],state=x['state'],returned=x['returned'])for x in cells],
   scope='Own off/on original candidates. Qualification is not performance evidence; a full pair additionally requires per-source outcomes, complete cold provider costs, failure/timeout/tail analysis and self-review.')

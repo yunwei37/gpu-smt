@@ -1,0 +1,128 @@
+{
+  "scope": "One closed own off/on pair; fixed order, root self-review required. Acceptance means the recorded SDK status valid.",
+  "source_count": 24,
+  "off_mode": "off",
+  "on_mode": "gpu",
+  "acceptance_changed_sources": [],
+  "status_changes": [],
+  "groups": {
+    "all_sources": {
+      "sources": 24,
+      "off_counts": {
+        "lean_error": 5,
+        "valid": 19
+      },
+      "on_counts": {
+        "lean_error": 5,
+        "valid": 19
+      },
+      "off_HTTP_sum_seconds": 12.075995731999999,
+      "on_HTTP_sum_seconds": 34.774419696,
+      "off_reported_body_sum_seconds": 10.379085,
+      "on_reported_body_sum_seconds": 10.075894
+    },
+    "baseline_failed": {
+      "sources": 5,
+      "off_counts": {
+        "lean_error": 5
+      },
+      "on_counts": {
+        "lean_error": 5
+      },
+      "off_HTTP_sum_seconds": 4.814647463,
+      "on_HTTP_sum_seconds": 10.052501743999999,
+      "off_reported_body_sum_seconds": 4.4843090000000005,
+      "on_reported_body_sum_seconds": 4.042711
+    },
+    "baseline_timeout": {
+      "sources": 0,
+      "off_counts": {},
+      "on_counts": {},
+      "off_HTTP_sum_seconds": 0,
+      "on_HTTP_sum_seconds": 0,
+      "off_reported_body_sum_seconds": 0,
+      "on_reported_body_sum_seconds": 0
+    },
+    "baseline_slowest_1_percent": {
+      "sources": 1,
+      "off_counts": {
+        "lean_error": 1
+      },
+      "on_counts": {
+        "lean_error": 1
+      },
+      "off_HTTP_sum_seconds": 3.660461936,
+      "on_HTTP_sum_seconds": 2.847056018,
+      "off_reported_body_sum_seconds": 3.601475,
+      "on_reported_body_sum_seconds": 2.804287
+    },
+    "baseline_slowest_10_percent": {
+      "sources": 3,
+      "off_counts": {
+        "lean_error": 1,
+        "valid": 2
+      },
+      "on_counts": {
+        "lean_error": 1,
+        "valid": 2
+      },
+      "off_HTTP_sum_seconds": 6.30854102,
+      "on_HTTP_sum_seconds": 5.500821807,
+      "off_reported_body_sum_seconds": 6.093536,
+      "on_reported_body_sum_seconds": 5.2912420000000004
+    }
+  },
+  "screening": {
+    "entries": 19,
+    "cpu_closed_entries": 0,
+    "supported_entries": 18,
+    "exact_refuted_entries": 2,
+    "exact_refuted_sources": [
+      "minif2f-379",
+      "minif2f-802"
+    ],
+    "fallback_errors": {},
+    "returned_point_recheck_failures": 0,
+    "provider_backends": {
+      "device": 18
+    }
+  },
+  "off_warm_verify_seconds": 6.098255427,
+  "on_warm_verify_seconds": 17.49491447,
+  "warm_whole_group_ratio": 0.34857303460712485,
+  "off_native_lifecycle_seconds": 10.245006637,
+  "on_native_lifecycle_seconds": 24.463160223,
+  "native_lifecycle_ratio": 0.4187932607074925,
+  "resource_point": {
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2
+  },
+  "limitations": [
+    "Qualification is not full benchmark evidence. No inference of acceleration if the on mode is observe.",
+    "HTTP and reported-body sums overlap across candidates: they are cumulative outcome-conditioned costs, not whole elapsed savings.",
+    "Tail cohorts are fixed by baseline HTTP time, then compared on identical IDs; timeouts and resource failures remain.",
+    "One off-first pair does not quantify run-order/host-load variance; existing captures are not rescaled.",
+    "Native cell lifecycle excludes provider creation/retirement and own input parsing; cold decomposition requires the controller receipt.",
+    "Opaque environment handles/error messages may differ; the reported accepted-set/status check is not full response equivalence."
+  ],
+  "cold_time_accounting": {
+    "combined_pair_controller_seconds": 77.2039632,
+    "provider_creation_to_API_seconds": 8.9261524,
+    "provider_retirement_seconds": 15.942303500000001,
+    "shared_input_preparation_seconds": 14.600798286963254,
+    "native_with_own_preparation_seconds": 24.845804923963254,
+    "on_controller_residual_seconds": 66.958956563,
+    "reused_off_directory": null,
+    "native_original_lifecycle_seconds": 10.245006637,
+    "native_over_on_cold_ratio": 0.15300427549764353,
+    "note": "Controller residual removes the measured native off cell from the combined pair clock; it includes input preparation, GPU path, API/controller overhead and provider retirement. It is an explicit cold accounting convention, not an isolated second run."
+  }
+}

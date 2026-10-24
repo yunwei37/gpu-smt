@@ -302,50 +302,39 @@ retirement, while192undecodedconnections remainunknown. No strictceiling follows
 
 
 ## Current user-directed arithmetic counterexample measurement
-Furtherexternal-methodreproduction/integration is stopped byuserdecision.
-Existingcomparisonsremain. [Own-method plan](../artifacts/arithmetic-counterexample-2026-10-23/plan.md)
-tests GPUproposed/CPUexactchecked counterexamples at actualarithmeticgoals,
-with nativefallback and all48GiBresourceconstraints. ExistingfullminiF2F
-census4793non-complete/7808sources consumes87.660953%of cumulativeHTTPenvelopes,
-not wholewall.51of71timeouts mentionarithmetic;2024printactual linarithfailure.
-These are notfalse-goalcounts. [All-source costs and limits](../artifacts/arithmetic-counterexample-2026-10-23/failure-cost-review.md).
-The completed own extraction below separates exactwitness/no-witness/
-unsupported while retaining native candidate/tacticalternative behavior.
 
+Further external-method reproduction/integration is stopped by userdecision.
+[Ownmethod plan](../artifacts/arithmetic-counterexample-2026-10-23/plan.md)
+tests GPUproposed/CPUexactchecked refutation of intermediate arithmeticgoals,
+nativefallback and untouched-original outcome parity. Failure is not falsity;
+a refuted branch is not a false originaltheorem. All4RQ remainopen.
 
-## Complete own7808 arithmetic-goal census,2026-10-24UTC
-[Closed census and self-review](../artifacts/arithmetic-counterexample-2026-10-23/full-coverage-analysis-20261024T0907/result-review.md)
-reports15372entries/3701sources;8407supportedentries/1485sources.
-Fixed4096-point seed0 proposals plus exact checks refute30intermediate goals
-in25sources, allLeanerrors, out of4903failed requests. Their current overlapping
-HTTPsums33.435316s/35613.993576s (0.093883%) do not establish savedwalltime.
-Zero of78timeouts and zero observation-ranked slowest1% have a witness.
-No-witness/unsupported/unobserved remain unknown. All7808returned:
-2905SDKvalid/4782Leanerror/78timeout/43resourcefailure.
-Whole20903.803838s including input preparation; peak46.648457GiB/max2,
-0watchdogerrors/kills, allchildrenretired; source24GiBeach/48total/CPUs8–11.
-This census challenges first-recipe applicability to expensive failures,
-not globalGPUimpossibility. Existingnative24 and fullownoff/on remain next.
+The untouched native7808baseline iscomplete:3014SDKvalid/4669Leanerrors/
+83timeouts/42resourcefailures, whole21693.761299439s, same2actualREPLs/
+24GiBeach/48GiBaggregate/CPUs8–11. Keep allresourcefailures andtimeoutcosts.
+[Originalfullattempt/native and failedGPUraw](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/failure-result-review.md)
+retains2214GPUresponses beforethe demonstrated control-transport cleanup
+failure. Detached single-client observation repair isqualified;
+[actual24/replay/cleanup](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/result-review.md).
 
+A later actualcomparison finds109nativeaccepted sources rejected byold
+source-wrapperparsererrors. Oldcensus/timeoutpartition numbers therefore
+describe thatinstrumentedversion, not finaloriginalsourcecoverage.
+Currentpaper withdraws provisionalpopulationconclusions; raw andhistory
+remain. [Original109losses, layoutrepair and realqualification](../artifacts/arithmetic-counterexample-2026-10-23/layout-regression-20261024T1644/result-review.md)
+preserves them, the intentionallycancelled invalidrerun and allcleanupreceipts.
 
-[Actualnative/GPU24preflight](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-20261024T0915/result-review.md)
-returns19valid/5Leanerrors inbothcells,17actual5090requests,2exactwitnesses,
-0fallbackerrors/acceptancechanges, completechild/device/Jobretirement.
-All17batches are singletons. Smallwarm4.342/4.220s clocks are not a speedup
-result. The fulloriginal7808native/off versus GPU/on pair is admitted next.
+Repairedpreparation preservesLeanlayout, reparseswithnativeparser and falls
+back toexactoriginalsource. Full7808preparation wraps4272sources/8578tactics;
+13transformedparsefailures retainoriginals. Real24 usesuntouchedoff:
+19valid/5errorsboth, threeactuallyregressedpositives restored,
+18deviceRPCs/2exactwitnesses,0fallbackerrors, allchildren/provider/Jobretired.
+These are qualificationfacts, not completespeedup or independentaudit.
 
-
-[Fulltimeoutapplicability](../artifacts/arithmetic-counterexample-2026-10-23/timeout-population-analysis-20261024T0918/result-review.md)
-groups78timeoutsinto26tasks. All39supportedentries from17Natfactorization
-timeouts admit no counterexample over their complete retaineddomain.
-945closedentries fromoneothertimeout consistof944falsecontexts/1truegoal.
-984of1020supportedtimeoutentries arethereforeinapplicable to refutation;
-thisentrycountisdominatedbyonecandidate, not awalltimebound. Theother36
-variableentries andmissing/unsupportedcontexts remainunknown.
-
-
-The firstfullownscreeningpair suffered a control-lifecycle failure:
-nativeoff7808complete/21693.761299439s; GPUonly2214sources returned
-beforeproviderRSSconnectionreset. No fullratio isadmissible.
-[Failure/raw/cleanup and repair route](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/failure-result-review.md).
-Keepnativebaseline; repairobserver-loss handling before completeGPUrerun.
+Next is the corrected completeGPUrun fromzero against retaineduntouched
+nativebaseline. No partial GPUsplicing, oldobserverdenominator, algorithm/
+resourcevariation or extrapolated performanceclaim. Charge own preparation/
+reparse/device/queue/exact/fallback/cancellation/cleanup, and report native-
+ranked tails, failedrequests, timeout and every outcomechange.
+[Priorcounterexample chronology](tmp/bootstrap/step-0011-20261023T195335-0700/evaluation-counterexample-history-20261024T1650.md.gz)
+is retainedasdatedhistory, not freshlyvalidated currentstate.

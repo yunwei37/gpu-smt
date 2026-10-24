@@ -1,0 +1,11 @@
+{
+  "scope": "Actual full untouched-native versus frozen wrapped observation; not a performance comparison.",
+  "native_valid": 3014,
+  "wrapped_observation_valid": 2905,
+  "lost_native_valid": 109,
+  "gained_valid": 0,
+  "failure": "Added first-line wrapper prefix shifted the original tactic column without shifting continuation lines; Lean layout-sensitive multiline lists then fail to parse.",
+  "preflight_defect": "Earlier native24 off and on both used rewritten sources, hiding a source-rewriting regression.",
+  "repair": "Uniform internal layout translation, native parser recheck/fallback, and untouched-original off in all real qualifications.",
+  "exact_checker_or_GPU_kernel_changed": false
+}

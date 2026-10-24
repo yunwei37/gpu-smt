@@ -1,0 +1,70 @@
+{"state": "complete", "method": "stock", "expected": 24, "source_concurrency": 2, "affinity": [8, 9, 10, 11], "memory_limit_bytes": 51539607552, "aggregate_memory_budget_bytes": 51539607552, "per_native_repl_address_limit_bytes": 25769803776, "maximum_live_native_repls": 2, "cost_timing_requested": false, "cost_timing_effective": false, "cost_timing_log": null, "omega_control_log": null, "reference_diagnostic": false, "reference_phases": false, "reference_phase_log": null, "native_engine": null, "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support", "native_hybrid_override": null, "lean_version": "v4.9.0-rc1", "native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so", "scope": "Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.", "GPU_enabled": false, "GPU_provider": null, "GPU_minimum_rows": null, "retained_strong_CPU": false, "returned": 24, "counts": {"lean_error": 5, "valid": 19}, "server_ready_seconds": 0.78636071, "preparation_seconds": 3.843475421, "warm_verify_seconds": 6.098255427, "server_exit": -15, "joined_owned_descendants": 4, "owned_live_descendants_after_shutdown": [], "memory_watchdog": {"root_pid": 267197, "root_birth": 1792860055.39, "budget_bytes": 51539607552, "effective_threshold_bytes": 51539607552, "per_second": true, "samples": 11, "kills": 0, "peak_sampled_owned_rss_bytes": 8170639360, "peak_sampled_native_repl_count": 2, "error": null, "peak_external_owned_provider_rss_bytes": 31780864, "included_owned_roots": [{"pid": 267197, "birth": 1792860055.39, "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-layout-repair-20261024T1641/off"}], "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."}, "whole_lifecycle_seconds": 10.245006637, "waited_child_cpu_seconds": 1.1244620000000003, "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution."}
+{"state": "complete", "method": "stock", "expected": 24, "source_concurrency": 2, "affinity": [8, 9, 10, 11], "memory_limit_bytes": 51539607552, "aggregate_memory_budget_bytes": 51539607552, "per_native_repl_address_limit_bytes": 25769803776, "maximum_live_native_repls": 2, "cost_timing_requested": false, "cost_timing_effective": false, "cost_timing_log": null, "omega_control_log": null, "reference_diagnostic": false, "reference_phases": false, "reference_phase_log": null, "native_engine": null, "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support", "native_hybrid_override": null, "lean_version": "v4.9.0-rc1", "native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so", "scope": "Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.", "GPU_enabled": false, "GPU_provider": null, "GPU_minimum_rows": null, "retained_strong_CPU": false, "returned": 24, "counts": {"lean_error": 5, "valid": 19}, "server_ready_seconds": 0.750701576, "preparation_seconds": 6.638968332, "warm_verify_seconds": 17.49491447, "server_exit": -15, "joined_owned_descendants": 6, "owned_live_descendants_after_shutdown": [], "memory_watchdog": {"root_pid": 267197, "root_birth": 1792860055.39, "budget_bytes": 51539607552, "effective_threshold_bytes": 51539607552, "per_second": true, "samples": 25, "kills": 0, "peak_sampled_owned_rss_bytes": 8574877696, "peak_sampled_native_repl_count": 2, "error": null, "peak_external_owned_provider_rss_bytes": 171786240, "included_owned_roots": [{"pid": 267197, "birth": 1792860055.39, "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-layout-repair-20261024T1641/gpu"}], "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."}, "whole_lifecycle_seconds": 24.463160223, "waited_child_cpu_seconds": 3.0663959999999992, "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution."}
+{
+  "reused_off_directory": null,
+  "full_population": false,
+  "native_off_uses_untouched_originals": true,
+  "source_ids": [
+    "minif2f-379",
+    "minif2f-802",
+    "minif2f-289",
+    "minif2f-290",
+    "minif2f-291",
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-4",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-16",
+    "minif2f-17",
+    "minif2f-18"
+  ],
+  "source_matches_build": true,
+  "preparation_seconds": 14.600798286963254,
+  "provider_identity": {
+    "ready": true,
+    "root_pid": 1,
+    "root_start_ticks": 129141946,
+    "rss_bytes": 31543296,
+    "processes": [
+      {
+        "pid": 1,
+        "ppid": 0,
+        "start_ticks": 129141946,
+        "rss_bytes": 31543296
+      }
+    ],
+    "time_ns": 1291427467789825,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "backend": "device"
+  },
+  "cells": [
+    {
+      "mode": "off",
+      "state": "complete",
+      "returned": 24
+    },
+    {
+      "mode": "gpu",
+      "state": "complete",
+      "returned": 24
+    }
+  ],
+  "scope": "Own off/on original candidates. Qualification is not performance evidence; a full pair additionally requires per-source outcomes, complete cold provider costs, failure/timeout/tail analysis and self-review."
+}
