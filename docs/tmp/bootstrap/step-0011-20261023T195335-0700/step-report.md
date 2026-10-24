@@ -482,3 +482,44 @@ WRITE_GATE updates current README/evaluation scope without inserting partial
 numbers into finalpaper results. REVIEW_GATE is rootselfaudit only. Root
 retains the approved completecensus/native24/fullpair and allfourRQ, rather
 than expands operators/grids or claims a generalGPUnegative.
+
+## Reproducible cohort-cost figure from complete existing data
+
+EXPERIMENT_GATE does not admit another acquisition: all six current-resource
+Goedel CPUcells already completed. Reuse their original paired CSV, original
+selected1000IDs, six retired/complete terminals and retained second-reader sums.
+The new Python/Matplotlib figure recomputes all12points and checks counts/
+resource settings/sums, rather than types numbers into a drawing.
+[Script and figure](../../../paper/figures/plot-full-goedel-cohort-costs.py)
+uses only existing data, with no solver, device or verificationREPL.
+The strong contrast is relative within-cohort request cost, not a new speedup.
+
+WRITE_GATE retains the exact whole-lifecycle table and adds Figure5 for a
+distinct task: selected1000/remaining28750/native-ranked slowest1%/40timeouts.
+All three raw pair observations are shown, not confidence intervals.
+CPU/native envelope-sum ratios are about0.55–0.57,0.92–0.94,0.96–0.98 and1.00,
+respectively. Those ratios characterize relative effects, not the share of
+total savings attributable to a group. The metric is defined before its source
+reference and the caption states overlapping cohorts/intervals, zoomedaxis
+and no GPU work. All original table values and15missingresultslots remain.
+
+Actual plot-PDFMediaBox243×194.4bp matches3.375inch printedcolumn width;
+minimum text7.5pt, distinct pairmarkers and lightgrid preserve readability.
+The firstPNG inspection finds0.95/1.00ticklabels touching; the final script
+uses0.90instead and keeps every data value unchanged. Initialimage/source are
+retained as visualrepair evidence, not a failed experiment.
+
+Tectonic compiles the current32page paper with no undefinedreferences/citations
+or overfullwarning. Figure5 is on page13. Read-only exportedPDF inspection with
+bundledPDFium5.14.0 renders thatpage in color and grayscale and verifies legible
+labels, separatedticks/markers and intact margins/caption/table. Source edits,
+plotting and compilation stay in the owningWorkspace; localWindows only
+views an exportedcopy outside experiment clocks. It is not a fresh visual
+review of all32pages. The firstviewer text-printencoding failure is retained.
+
+[Actual plot/build/visual records](../../../../artifacts/arithmetic-counterexample-2026-10-23/full-cohort-figure-20261024T0725/)
+include command/exit, jointmemory, source-data paths and finalpageimages.
+REVIEW_GATE rootselfaudit confirms no denominator/history pooling, failure
+exclusion, independent review or confidence/GPUclaim. This is presentation of
+an already-completed population boundary, not new experimental performance.
+The decisive own counterexample census/native24/fullpair remains pending.

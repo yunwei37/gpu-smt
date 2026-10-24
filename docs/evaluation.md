@@ -4,6 +4,14 @@ Updated2026-10-24UTC for the new point qualifier; older captures retain their ow
 Lean-first/SMT/RTX5090 and OSDI-quality target remain open. This root thread
 performs all work and self-review; no independent audit is claimed.
 
+The [paper cohort figure](paper/figures/full-goedel-cohort-costs.pdf) now
+plots all three paired CPU/native ratios of cumulative HTTP request spans
+for selected1000/remaining28750/native slowest1%/timeouts within those same
+six cells. Relative gains are largest in the selected group; this does not
+attribute most total savings to it. Cohorts can overlap, and these are neither
+whole clocks nor GPU/CPU fractions. [Reproducible plot source](paper/figures/plot-full-goedel-cohort-costs.py)
+reloads the existing paired CSV and checks its sums against retained recomputation.
+
 The six-cell original Goedel population is **complete**, not still collecting.
 The full driver ends2026-10-21T14:26:07Z; all raw/result/memory evidence is
 published in a4c4b67. [Complete review and exact files](../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).

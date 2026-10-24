@@ -1,0 +1,112 @@
+{
+  "input": "artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-paired-sources.csv",
+  "selected_input": "artifacts/linarith-oracle-2026-10-17/input-top1000.jsonl",
+  "checked_against": "artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-root-recomputation.json",
+  "series": [
+    {
+      "pair": 1,
+      "cohort": "Selected 1,000",
+      "sources": 1000,
+      "native_envelope_sum_seconds": 2739.606991065,
+      "CPU_oracle_envelope_sum_seconds": 1499.95156546,
+      "CPU_over_native": 0.5475061095813988
+    },
+    {
+      "pair": 1,
+      "cohort": "Other 28,750",
+      "sources": 28750,
+      "native_envelope_sum_seconds": 34400.799522931,
+      "CPU_oracle_envelope_sum_seconds": 31792.989382266,
+      "CPU_over_native": 0.9241933275729048
+    },
+    {
+      "pair": 1,
+      "cohort": "Slowest 1% (298)",
+      "sources": 298,
+      "native_envelope_sum_seconds": 19303.980735213,
+      "CPU_oracle_envelope_sum_seconds": 18602.869058125,
+      "CPU_over_native": 0.9636804612113459
+    },
+    {
+      "pair": 1,
+      "cohort": "Timeouts (40)",
+      "sources": 40,
+      "native_envelope_sum_seconds": 12002.425802276,
+      "CPU_oracle_envelope_sum_seconds": 12002.123192036,
+      "CPU_over_native": 0.9999747875766961
+    },
+    {
+      "pair": 2,
+      "cohort": "Selected 1,000",
+      "sources": 1000,
+      "native_envelope_sum_seconds": 2711.640193112,
+      "CPU_oracle_envelope_sum_seconds": 1553.344803111,
+      "CPU_over_native": 0.5728432581345948
+    },
+    {
+      "pair": 2,
+      "cohort": "Other 28,750",
+      "sources": 28750,
+      "native_envelope_sum_seconds": 34215.240838521,
+      "CPU_oracle_envelope_sum_seconds": 32240.665004795,
+      "CPU_over_native": 0.9422895824978985
+    },
+    {
+      "pair": 2,
+      "cohort": "Slowest 1% (298)",
+      "sources": 298,
+      "native_envelope_sum_seconds": 19217.210259309,
+      "CPU_oracle_envelope_sum_seconds": 18767.82454432,
+      "CPU_over_native": 0.9766154551610158
+    },
+    {
+      "pair": 2,
+      "cohort": "Timeouts (40)",
+      "sources": 40,
+      "native_envelope_sum_seconds": 12002.316093346,
+      "CPU_oracle_envelope_sum_seconds": 12002.525465230001,
+      "CPU_over_native": 1.0000174442901164
+    },
+    {
+      "pair": 3,
+      "cohort": "Selected 1,000",
+      "sources": 1000,
+      "native_envelope_sum_seconds": 2727.916586552,
+      "CPU_oracle_envelope_sum_seconds": 1535.790274688,
+      "CPU_over_native": 0.5629901890179092
+    },
+    {
+      "pair": 3,
+      "cohort": "Other 28,750",
+      "sources": 28750,
+      "native_envelope_sum_seconds": 34459.379984887,
+      "CPU_oracle_envelope_sum_seconds": 31934.616746749998,
+      "CPU_over_native": 0.926732191953416
+    },
+    {
+      "pair": 3,
+      "cohort": "Slowest 1% (298)",
+      "sources": 298,
+      "native_envelope_sum_seconds": 19298.487928154,
+      "CPU_oracle_envelope_sum_seconds": 18670.331474344,
+      "CPU_over_native": 0.9674504833669583
+    },
+    {
+      "pair": 3,
+      "cohort": "Timeouts (40)",
+      "sources": 40,
+      "native_envelope_sum_seconds": 12002.308434849001,
+      "CPU_oracle_envelope_sum_seconds": 12002.238342521,
+      "CPU_over_native": 0.9999941600960863
+    }
+  ],
+  "source_population_per_condition": 29750,
+  "paired_repetitions": 3,
+  "scope": "Same six closed CPU-only cells. Cohorts can overlap. Each native-ranked tail is fixed within its pair before looking up CPU costs. All failures remain. The plotted sum ratio is not whole lifecycle, CPU work, an Amdahl bound or GPU performance.",
+  "canvas_inches": [
+    3.375,
+    2.7
+  ],
+  "minimum_text_points": 7.5,
+  "points_show": "Three raw paired observations, not confidence intervals."
+}

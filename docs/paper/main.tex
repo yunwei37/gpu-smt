@@ -732,6 +732,11 @@ incomplete result occurs. These outcomes prevent an unchanged-output claim.
 Maximum sampled total RSS is 21.17\,GiB, with at most two live REPLs,
 no watchdog kill or monitor error, and no owned descendant left at retirement.
 
+For each candidate cohort, we sum HTTP request envelopes separately for the
+CPU oracle and native hybrid. Figure~\ref{fig:full-goedel-cohort-costs}
+divides the CPU sum by the native sum; values below one favor the oracle.
+The reciprocal ratios below use the same paired source IDs.
+
 Within the same full cells, the original selected 1,000 IDs have overlapping
 HTTP-envelope-sum ratios of 1.75--1.83, while the remaining 28,750 have
 1.06--1.08. This is a within-population comparison, not a new subset
@@ -746,6 +751,19 @@ Three shared-host observations are not a confidence interval.
 No GPU executes in this matrix. The separate native cost diagnostic below
 partitions observed arithmetic work, but it does not turn these source spans
 into a scheduler-independent GPU ceiling.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/full-goedel-cohort-costs.pdf}
+\caption{CPU/native ratios of summed HTTP request envelopes within source
+cohorts from the three complete 29,750-source pairs. Symbols identify pairs;
+cohort rows overlap. The slowest 1\% is selected by each pair's native times.
+The horizontal axis is zoomed around parity; lower is faster. The selected
+cohort benefits most, while timeouts and the hardest tail barely change.
+Envelopes overlap in wall time, so their sums are neither complete elapsed
+time nor removable CPU work. No GPU executes in these cells.}
+\label{fig:full-goedel-cohort-costs}
+\end{figure}
 
 \paragraph{Version-aligned ProofNet generalization.}
 A separate version-aligned component comparison processes every original

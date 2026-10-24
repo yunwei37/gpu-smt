@@ -73,7 +73,7 @@ establish whole-population performance or a new systems contribution.
 
 All outcomes, resource failures, latency tails and baseline limitations remain:
 
-- [Complete Goedel population](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
+- [Complete Goedel population](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md), [cohort cost figure](docs/paper/figures/full-goedel-cohort-costs.pdf).
 - [Matched heavy-cohort CPU/GPU results](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
 - [Complete miniF2F comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
 - [Complete ProofNet comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).

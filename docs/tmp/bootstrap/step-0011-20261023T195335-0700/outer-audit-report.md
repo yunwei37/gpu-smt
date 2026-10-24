@@ -249,3 +249,29 @@ wholeelapsed/Amdahl and no timeout is included. The finitepartialpositives
 are not a representative failurepopulation or a completedGPU comparison.
 No otherAgent, newbenchmark, REPL or device operation is used; allreviewis
 self-review. Originaloverallgoal and decisivefullpair stay open.
+
+## Complete-population cohort figure self-audit
+
+Root independently reloads the existing paired CSV and selectedIDs in the plot
+script, checks all6terminal resources/retirement/counts and compares all12sum
+pairs with retained recomputation. No live input or historical selected-cohort
+lifecycle enters the plot. The timeout and native-ranked groups overlap;
+each pair fixes its tail by nativeHTTPtime. All outcomes remain included,
+including the two native rejection-to-completion differences per pair.
+
+The figure uses CPU/native cumulativeHTTP ratios; the adjacent table uses
+native/CPU whole-lifecycle ratios. Definitions, reciprocal direction and
+scope are explicit. The figure demonstrates relative heterogeneity, not
+a total-savings attribution, CPU-work share, strictAmdahl bound or devicegain.
+Three symbols percohort are rawpaired observations, not confidenceintervals.
+
+Root visually checks the corrected standaloneplot and actualpage13 at native
+columnscale in bothcolor andgrayscale. Initialtickoverlap is corrected without
+smallerfonts/datachanges. The32page compile has no undefinedreferences or
+overfullboxes; fullpaper visual rereview/submissionreadiness remain unclaimed.
+Read-only Windowsviewing is outside the benchmark; all source/build/plot work
+occurs in the sameWorkspace under jointmemory monitoring. The firstviewer
+encodingfailure has no experimental/source effect and is retained.
+
+No new proof run, competitor replication, Agent, configuration or goal
+completion is claimed. Return to actual census/native24/fullpaired evidence.
