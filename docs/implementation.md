@@ -463,3 +463,11 @@ fixed baseline-ranked1%/10%tails, while keeping cumulative HTTP/body spans
 separate from complete group clocks. Provider startup/retirement is only
 available after lifecycle closure. The first escaped-newline analysis failure
 and corrected real-data execution are retained.
+
+
+The current worker handles fully supported closed arithmetic onCPU with one
+exact evaluation. Actual snapshot replay covers2349entries/27sources with
+no false return or providerRPC;2333contexts contain a false hypothesis and
+16have true hypotheses/true goal. This avoids identical numeric point copies,
+not native proof work or a new solver. Frozen full observation remains on its
+old source; complete native24/off-on qualification is still pending.

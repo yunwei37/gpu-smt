@@ -1,0 +1,114 @@
+{
+  "scope": "Partial immutable actual-goal/current-HTTP census, not complete7808coverage or performance.",
+  "source_snapshot": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543",
+  "response_attempts": 4048,
+  "unique_returned_sources": 4048,
+  "status_counts": {
+    "valid": 1541,
+    "lean_error": 2446,
+    "timeout_error": 19,
+    "resource_failure": 42
+  },
+  "partitions": [
+    {
+      "status": "lean_error",
+      "coverage": "no_observed_entry",
+      "response_attempts": 1298,
+      "HTTP_sum_seconds": 1382.566040366,
+      "entries": 0,
+      "supported_entries": 0
+    },
+    {
+      "status": "lean_error",
+      "coverage": "supported_entry",
+      "response_attempts": 268,
+      "HTTP_sum_seconds": 248.046747863,
+      "entries": 766,
+      "supported_entries": 638
+    },
+    {
+      "status": "lean_error",
+      "coverage": "unsupported_only",
+      "response_attempts": 880,
+      "HTTP_sum_seconds": 2058.876149397,
+      "entries": 3966,
+      "supported_entries": 0
+    },
+    {
+      "status": "resource_failure",
+      "coverage": "no_observed_entry",
+      "response_attempts": 41,
+      "HTTP_sum_seconds": 3860.868681126,
+      "entries": 0,
+      "supported_entries": 0
+    },
+    {
+      "status": "resource_failure",
+      "coverage": "unsupported_only",
+      "response_attempts": 1,
+      "HTTP_sum_seconds": 92.303717648,
+      "entries": 1,
+      "supported_entries": 0
+    },
+    {
+      "status": "timeout_error",
+      "coverage": "no_observed_entry",
+      "response_attempts": 13,
+      "HTTP_sum_seconds": 3903.656217914,
+      "entries": 0,
+      "supported_entries": 0
+    },
+    {
+      "status": "timeout_error",
+      "coverage": "supported_entry",
+      "response_attempts": 1,
+      "HTTP_sum_seconds": 300.029167839,
+      "entries": 948,
+      "supported_entries": 948
+    },
+    {
+      "status": "timeout_error",
+      "coverage": "unsupported_only",
+      "response_attempts": 5,
+      "HTTP_sum_seconds": 1503.903716564,
+      "entries": 13,
+      "supported_entries": 0
+    },
+    {
+      "status": "valid",
+      "coverage": "no_observed_entry",
+      "response_attempts": 940,
+      "HTTP_sum_seconds": 722.611088231,
+      "entries": 0,
+      "supported_entries": 0
+    },
+    {
+      "status": "valid",
+      "coverage": "supported_entry",
+      "response_attempts": 456,
+      "HTTP_sum_seconds": 3208.852858702,
+      "entries": 4365,
+      "supported_entries": 4335
+    },
+    {
+      "status": "valid",
+      "coverage": "unsupported_only",
+      "response_attempts": 145,
+      "HTTP_sum_seconds": 288.56656623,
+      "entries": 260,
+      "supported_entries": 0
+    }
+  ],
+  "repeated_response_sources": {},
+  "unmatched_response_results": [],
+  "closed_exact_control": {
+    "entries": 2349,
+    "source_count": 27,
+    "exact_counterexamples": 0,
+    "false_hypothesis_contexts": 2333,
+    "true_hypothesis_and_true_goal": 16,
+    "no_provider_RPC": true,
+    "control_wall_seconds": 0.084486114,
+    "note": "One exact evaluation for a fully supported closed goal; no GPU or Lean execution in this replay."
+  }
+}

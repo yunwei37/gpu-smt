@@ -277,3 +277,31 @@ external replication, Agent or independentaudit is claimed. Joint monitors
 retain max2REPLs/0kills/errors. Next scientific evidence is still complete
 falsegoal/cost coverage followed by native24and complete pairedmeasurement,
 not more narrowkernel or ready-only checks.
+
+## Failed-request coverage and closed-goal dispatch boundary
+
+EXPERIMENT_GATE reuses the immutable snapshot to locate arithmetic hook
+entries within4048actual returned HTTP responses. It exposes a material
+coverage gap:19timeouts split13noentry/5unsupported/1supported, and42resource
+failures split41noentry/1unsupported. The one supportedtimeout has948entries,
+945closed branch contexts; all have no exact counterexample. Cumulative
+supported-entry failedHTTP is548.076/13350.250s,4.105%of overlapping spans,
+not a criticalpath/Amdahl bound. [Full source/cost result and root disposition](../../../../artifacts/arithmetic-counterexample-2026-10-23/failure-entry-costs-20261024T0602/result-review.md).
+
+Root implements direct exactCPUevaluation for closed supported ASTs rather
+than send4096identical points toGPU. Real2349entry/27source replay produces
+0refutations,2333falsehypothesiscontexts/16true-goal contexts,0network calls/
+fallbackerrors and full agreement with exact verification. The control's
+0.084486s is not proof performance. Allnonclosed/unsupported/native paths and
+the active observer's frozen worker remain unchanged. Joint monitoring
+retains max2REPLs/48GiB/0kills/errors, no newfullcapture or deviceJob.
+
+WRITE_GATE updates current evaluation, implementation and source instructions
+with coverage and CPUclosed handling. No new paperperformance number, final
+RQanswer or claim of removing the main timeout cost is admitted.
+REVIEW_GATE selfaudit distinguishes failedproof from falsegoal, closed
+inconsistent context from a refuting point, cumulative cost from whole
+elapsed, current responses from whole-run retirement, and directCPUconstant
+evaluation from GPUwork. No independentAgent/reviewer. Next remains actual
+fullclosure/native24/fullpaired measurement; no speculative operator/hook
+expansion or second fullrun starts.

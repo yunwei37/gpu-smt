@@ -126,3 +126,18 @@ succeeds under joint memory monitoring. Existing underfull warnings remain,
 and full12round writing refinement/independent audit were not completed.
 This is explicitly root self-review. No scope narrowing, paper acceptance or
 whole-performance claim is introduced.
+
+## Failed-request cost and closed arithmetic self-audit
+
+Root verifies actual nativeSDK statuses for4048retained single-source HTTP
+responses, exactsame-clock entry mapping, timeout/resource denominators and
+the absence of repeated/missing results. Most observed expensivefailures do
+not reach the supported point evaluator. Partial/cumulative overlap limits
+prevent a global Amdahl or GPUimpossibility claim.
+
+Workerchange dispatches only fullysupported zero-variable ASTs to one exact
+CPUevaluation, preserving complete hypotheses and ordinary tactic failure/
+nativefallback. Real2349entry replay agrees with exactsemantics, without
+a provider endpoint ornetworkcall. This is not nativewhole-proof qualification
+or a reported speedup. Active code remains frozen, originalresources remain,
+and allresearchrequirements remain incomplete.

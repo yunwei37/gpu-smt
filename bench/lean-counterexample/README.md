@@ -24,6 +24,9 @@ batching, native proof equivalence or end-to-end acceleration.
   the native recursive placeholder is excluded and logged.
 - worker.py checks exact rational/integer points and source/entry ownership.
   Errors or no witness keep native fallback and enclosing proof alternatives.
+  Fully supported closed goals are evaluated once exactly onCPU, so GPU work
+  is reserved for numeric points with variables. This has real-entry functional
+  qualification, while native off/on behavior remains pending.
 - point_proposals.py constructs the finite rational grid and sampling recipes.
 - gpu_points.py / points.cu pack/evaluate goal programs. A fixed kernel is
   reused; floating masks alone never authorize rejection.
@@ -35,6 +38,8 @@ batching, native proof equivalence or end-to-end acceleration.
 - qualify-screening.py runs the pending native24 qualification, then accepts
   --full for an original7808off/on pair. Full off uses untouched original
   Lean sources; on pays native parser/export preparation and GPU screening.
+- analyze-failure-entry-costs.py joins actual request cost to supported,
+  unsupported and missing hook entries, and replays closed exact contexts.
 - analyze-screening.py reports paired statuses/acceptance changes, failures,
   timeouts, fixed baseline1%/10%tails and separate warm/cold cost accounting.
   Its closed32observation replay validates analysis only, not GPU benefit.

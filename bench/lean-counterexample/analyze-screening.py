@@ -53,7 +53,7 @@ def main():
   'baseline_slowest_1_percent':group(ranked[:math.ceil(len(a)*.01)]),
   'baseline_slowest_10_percent':group(ranked[:math.ceil(len(a)*.1)])}
  entries=list(rows(args.on/'goals.jsonl'))if(args.on/'goals.jsonl').exists()or(args.on/'goals.jsonl.gz').exists()else[]
- screening=dict(entries=len(entries),supported_entries=sum(x['payload']['supported']for x in entries),
+ screening=dict(entries=len(entries),cpu_closed_entries=sum(x.get('answer',{}).get('evaluation_backend')=='cpu_closed'for x in entries),supported_entries=sum(x['payload']['supported']for x in entries),
   exact_refuted_entries=sum(bool(x.get('answer',{}).get('exact_counterexample'))for x in entries),
   exact_refuted_sources=sorted({x['source_id']for x in entries if x.get('answer',{}).get('exact_counterexample')}),
   fallback_errors=dict(collections.Counter(x['answer']['fallback_error']for x in entries if x.get('answer',{}).get('fallback_error'))),

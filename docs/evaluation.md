@@ -34,6 +34,16 @@ Known witnesses therefore do not yet cover the expensive timeout population.
 remains unknown. [Actual snapshot, joins and interpretation](../artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
 No partial source fraction or overlapping response tail is a whole-wall benefit.
 
+The same snapshot's4048returnedHTTP responses include19timeouts and42resource
+failures. Timeout entrycoverage is13none/5unsupported/1supported; resource
+failures are41none/1unsupported/0supported. The single supportedtimeout has
+948entries,945closed. Failed-response HTTPspans with a supportedentry total
+548.076s of13350.250s failedspans,4.105%of cumulative overlapping intervals,
+not an Amdahl or eliminated-work bound. [Exact cost/coverage census and root
+disposition](../artifacts/arithmetic-counterexample-2026-10-23/failure-entry-costs-20261024T0602/result-review.md).
+The future worker evaluates2349closed supported entries directly onCPU,
+avoiding identical GPUgrid copies. Real data replay is functional only.
+
 The complete own7808source goal observation remains active, with the original
 PID/birth and frozen source. Full false-goal/cost/timeout coverage and native
 off/on outcomes are pending. No further external-system reproduction starts.

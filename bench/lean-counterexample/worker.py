@@ -116,7 +116,14 @@ def screen_gpu(q):
 
 def answer(q):
  try:
-  if q['payload']['supported']and q['mode']=='gpu':return screen_gpu(q)
+  if q['payload']['supported']and q['mode']=='gpu':
+   ast=q['payload']['ast']
+   if not ast['variables']:
+    exact=verify(ast,[])
+    result=dict(exact_counterexample=exact,evaluation_backend='cpu_closed')
+    if exact:result['witness']=dict(point=[],point_index=0,points_tested=1)
+    return result
+   return screen_gpu(q)
   if q['payload']['supported']and q['mode']=='cpu':
    witness=search(q['payload']['ast'])
    if witness:return dict(exact_counterexample=True,witness=witness)
