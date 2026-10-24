@@ -25,6 +25,15 @@ retain gates, failed routes and scope.
 
 ## Current own-method frontier
 
+[Three costly factorization timeouts](../artifacts/arithmetic-counterexample-2026-10-23/timeout-factorization-20261024T0805/result-review.md)
+record300srequest limits but9captured true arithmetic obligations. Their full
+Natcontext retains m,n>1/m*n=2005; its only models(5,401)/(401,5)satisfy
+all9goals. A soundcounterexample screen cannot reject at those hooks.
+Nestedinterval_cases is visible in source, not a dynamicphase attribution.
+This one-task subset is neither fullprevalence nor a globalGPU/Amdahlbound,
+and does not replace the approved fullcensus/native24/pairedtest.
+
+
 [Original-statement interpretation of the13known witnesses](../artifacts/arithmetic-counterexample-2026-10-23/witness-origins-20261024T0715/result-review.md)
 finds11candidate sources but5underlying tasks. None of these points refutes
 its original theorem:10satisfy its assumptions/conclusion,3fail an original

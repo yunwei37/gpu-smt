@@ -275,3 +275,19 @@ encodingfailure has no experimental/source effect and is retained.
 
 No new proof run, competitor replication, Agent, configuration or goal
 completion is claimed. Return to actual census/native24/fullpaired evidence.
+
+## Costly timeout applicability self-audit
+
+Root verifies all9capturedNatcontexts explicitly retain m,n>1 and product2005.
+Positive naturals boundm by2005, so the completeintegerdivisor set is precisely
+(5,401)/(401,5); everyextraassumption and goal holds at both points. This
+supports no counterexample at the captured hooks for these records, not
+universalvalidity of othergoals or a generatedLeanproof. Three nativeSDK
+responses are actual300stimeouts, not inferred failures from source mentions.
+
+The nearly300safterlastobserverreply has no dynamicexit marker. Sourcecase
+enumeration is a plausiblecostexplanation, not measuredbranchcount/phaseCPU.
+CumulativeHTTPintervals overlap. One-task chosenexamples are not a random
+failurepopulation, wholeGPUopportunity estimate or a reason to close the route.
+No activefile/resource/scheduler/Agent or nativeimplementation is changed.
+Allreviewremains rootself-review; decisivecompleteevidence stays open.

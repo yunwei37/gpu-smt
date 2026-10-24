@@ -1,0 +1,54 @@
+{
+  "scope": "Three returned timeout requests from a fixed subset of the ongoing observation; source/AST analysis only.",
+  "requests": [
+    {
+      "source_id": "minif2f-7200",
+      "status": "timeout_error",
+      "reported_request_seconds": 300.0,
+      "HTTP_seconds": 300.009982802,
+      "captured_goal_entries": 2,
+      "HTTP_after_last_observer_worker_reply_seconds": 299.825561419,
+      "original_contains_nested_interval_cases": true
+    },
+    {
+      "source_id": "minif2f-7205",
+      "status": "timeout_error",
+      "reported_request_seconds": 300.0,
+      "HTTP_seconds": 300.021576618,
+      "captured_goal_entries": 3,
+      "HTTP_after_last_observer_worker_reply_seconds": 299.68491221,
+      "original_contains_nested_interval_cases": true
+    },
+    {
+      "source_id": "minif2f-7210",
+      "status": "timeout_error",
+      "reported_request_seconds": 300.0,
+      "HTTP_seconds": 303.564660984,
+      "captured_goal_entries": 4,
+      "HTTP_after_last_observer_worker_reply_seconds": 299.667673935,
+      "original_contains_nested_interval_cases": true
+    }
+  ],
+  "captured_goal_entries": 9,
+  "all9captured_goals_have_no_counterexample_in_complete_context_domain": true,
+  "complete_original_feasible_assignments": [
+    {
+      "m": 5,
+      "n": 401
+    },
+    {
+      "m": 401,
+      "n": 5
+    }
+  ],
+  "original_conclusion_holds_on_all_original_models": true,
+  "total_HTTP_sum_seconds": 903.596220404,
+  "boundaries": [
+    "The finite-domain argument is specific to the observed Nat factorization assumptions, not a generic Lean validity checker or formal Lean proof certificate.",
+    "True observed arithmetic obligations cannot be rejected by a sound counterexample proposal/recheck at those hook points, irrespective of GPU point throughput.",
+    "This does not certify every later unobserved proof obligation or prove every timeout in the population has a true target.",
+    "Nested interval_cases is visible in source, but no dynamic exit/phase timing is collected here: the last-hook-to-response interval can include that last arithmetic search and later work.",
+    "HTTP request intervals overlap and include waiting/transport; their sum is not whole elapsed, CPU work or a global GPU Amdahl bound.",
+    "No new solver, native proof run, device run, runtime optimization or externally reproduced method is introduced. The live observer is unchanged."
+  ]
+}

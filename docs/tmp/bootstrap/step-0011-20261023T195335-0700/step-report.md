@@ -523,3 +523,27 @@ REVIEW_GATE rootselfaudit confirms no denominator/history pooling, failure
 exclusion, independent review or confidence/GPUclaim. This is presentation of
 an already-completed population boundary, not new experimental performance.
 The decisive own counterexample census/native24/fullpair remains pending.
+
+## Counterexample applicability in three real300stimeouts
+
+EXPERIMENT_GATE reuses alreadyreturned sources7200/7205/7210 from one
+factorization task. [Actual originalsource/AST/HTTP and exactfinite-domainanalysis](../../../../artifacts/arithmetic-counterexample-2026-10-23/timeout-factorization-20261024T0805/result-review.md)
+retains3nativeSDKtimeout_error records/300sreportedlimit,9supported goalentries
+and completebasepremises. Integerfactor enumeration admits only(5,401)/(401,5);
+both satisfy every captured context and target. Those9obligations cannot be
+refuted by a soundcounterexample screen, independently of kernel throughput.
+This is supporting applicability evidence forRQ4, not a newsolver/run.
+
+The source includes nestedinterval_cases. Almost300sremain after the final
+observerworkerreply, but no tactic-exit profile exists, so no attribution of
+allremainingtime to interval_cases or the lastnlinarith is claimed.
+Cumulative903.596sHTTPoverlaps; it is not wholeCPU/wall or anAmdahlbound.
+The three chosenexamples share one task and do not supply wholefalsegoalrate.
+Jointsample24.265GB/max2REPLs/0kills/errors; activecapture untouched.
+
+WRITE_GATE records the boundary incurrentREADME/evaluation, without replacing
+finalpaper result slots by a selectedcase study. REVIEW_GATE rootselfaudit
+checks capturedpremises/domains/exactcompletefeasibleset, actualnativeSDK
+statuses and sameclockentry/requestjoins. No independentproof/audit,
+globalGPUclosure, newfactorizationbaseline or samplingvariant is admitted.
+The fullcensus/native24/completepair remains the next decisive work.
