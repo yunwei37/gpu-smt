@@ -1,0 +1,13 @@
+Counterexample.lean:23:15: warning: `Lean.Meta.getLocalDecl` has been deprecated, use `Lean.FVarId.getDecl` instead
+Counterexample.lean:58:25: error: invalid field 'back!', the environment does not contain 'Array.back!'
+  args
+has type
+  Array Expr
+Counterexample.lean:87:9: error: unexpected token 'variables'; expected '_', identifier or term
+Counterexample.lean:87:10: warning: 'variables' has been replaced by 'variable' in lean 4
+Counterexample.lean:87:20: error: unexpected token ':'; expected command
+Counterexample.lean:92:4: warning: 'variables' has been replaced by 'variable' in lean 4
+Counterexample.lean:92:14: error: unexpected token ':='; expected command
+Counterexample.lean:93:43: warning: 'variables' has been replaced by 'variable' in lean 4
+Counterexample.lean:93:52: error: unexpected token ')'; expected command
+Counterexample.lean:106:68: error: unexpected identifier; expected '}'

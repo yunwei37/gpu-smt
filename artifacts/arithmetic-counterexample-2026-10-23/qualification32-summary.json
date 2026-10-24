@@ -1,0 +1,316 @@
+[
+  {
+    "state": "complete",
+    "method": "stock",
+    "expected": 32,
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "memory_limit_bytes": 51539607552,
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2,
+    "cost_timing_requested": false,
+    "cost_timing_effective": false,
+    "cost_timing_log": null,
+    "omega_control_log": null,
+    "reference_diagnostic": false,
+    "reference_phases": false,
+    "reference_phase_log": null,
+    "native_engine": null,
+    "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+    "native_hybrid_override": null,
+    "lean_version": "v4.9.0-rc1",
+    "native_library": "/tmp/gpu-smt-counterexample-20261023/libCounterexample.so",
+    "scope": "Own counterexample hook off/observation only; no new competitor integration; real originalfirst32; root self-review.",
+    "GPU_enabled": false,
+    "GPU_provider": null,
+    "GPU_minimum_rows": null,
+    "retained_strong_CPU": false,
+    "returned": 32,
+    "counts": {
+      "valid": 28,
+      "lean_error": 4
+    },
+    "server_ready_seconds": 0.785071203,
+    "preparation_seconds": 4.160773264,
+    "warm_verify_seconds": 3.193327879,
+    "server_exit": -15,
+    "joined_owned_descendants": 4,
+    "owned_descendants_before_shutdown": [
+      {
+        "pid": 254976,
+        "birth": 1792810961.25,
+        "command": [
+          "lake",
+          "env"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254977,
+        "birth": 1792810961.28,
+        "command": [
+          "lake",
+          "env"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254979,
+        "birth": 1792810961.46,
+        "command": [
+          "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254978,
+        "birth": 1792810961.46,
+        "command": [
+          "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      }
+    ],
+    "owned_live_descendants_after_shutdown": [],
+    "memory_watchdog": {
+      "root_pid": 254969,
+      "root_birth": 1792810960.22,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 8,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8085397504,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 0,
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    },
+    "whole_lifecycle_seconds": 7.632794862,
+    "waited_child_cpu_seconds": 1.182493,
+    "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+    "effective_test_settings": {
+      "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+      "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+      "LEAN_SERVER_MAX_REPL_MEM": "24G",
+      "LEAN_SERVER_HOST": "127.0.0.1",
+      "LEAN_SERVER_PORT": "37623",
+      "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-counterexample-20261023/libCounterexample.so",
+      "LEAN_SERVER_MAX_REPLS": "2"
+    },
+    "own_method_mode": "off"
+  },
+  {
+    "state": "complete",
+    "method": "stock",
+    "expected": 32,
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "memory_limit_bytes": 51539607552,
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2,
+    "cost_timing_requested": false,
+    "cost_timing_effective": false,
+    "cost_timing_log": null,
+    "omega_control_log": null,
+    "reference_diagnostic": false,
+    "reference_phases": false,
+    "reference_phase_log": null,
+    "native_engine": null,
+    "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+    "native_hybrid_override": null,
+    "lean_version": "v4.9.0-rc1",
+    "native_library": "/tmp/gpu-smt-counterexample-20261023/libCounterexample.so",
+    "scope": "Own counterexample hook off/observation only; no new competitor integration; real originalfirst32; root self-review.",
+    "GPU_enabled": false,
+    "GPU_provider": null,
+    "GPU_minimum_rows": null,
+    "retained_strong_CPU": false,
+    "returned": 32,
+    "counts": {
+      "valid": 28,
+      "lean_error": 4
+    },
+    "server_ready_seconds": 0.750083339,
+    "preparation_seconds": 3.60442294,
+    "warm_verify_seconds": 3.223739915,
+    "server_exit": -15,
+    "joined_owned_descendants": 6,
+    "owned_descendants_before_shutdown": [
+      {
+        "pid": 254988,
+        "birth": 1792810968.85,
+        "command": [
+          "lake",
+          "env"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254989,
+        "birth": 1792810968.86,
+        "command": [
+          "lake",
+          "env"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254990,
+        "birth": 1792810969.01,
+        "command": [
+          "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254992,
+        "birth": 1792810971.96,
+        "command": [
+          "/usr/bin/python3",
+          "/workspaces/repository/bench/lean-counterexample/worker.py"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254991,
+        "birth": 1792810969.01,
+        "command": [
+          "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      },
+      {
+        "pid": 254993,
+        "birth": 1792810972.2,
+        "command": [
+          "/usr/bin/python3",
+          "/workspaces/repository/bench/lean-counterexample/worker.py"
+        ],
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "address_limit": [
+          "Max address space         25769803776          25769803776          bytes     "
+        ]
+      }
+    ],
+    "owned_live_descendants_after_shutdown": [],
+    "memory_watchdog": {
+      "root_pid": 254969,
+      "root_birth": 1792810960.22,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 8,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8108228608,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 0,
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    },
+    "whole_lifecycle_seconds": 7.065762957,
+    "waited_child_cpu_seconds": 1.181867,
+    "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+    "effective_test_settings": {
+      "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+      "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+      "LEAN_SERVER_MAX_REPL_MEM": "24G",
+      "LEAN_SERVER_HOST": "127.0.0.1",
+      "LEAN_SERVER_PORT": "32787",
+      "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-counterexample-20261023/libCounterexample.so",
+      "LEAN_SERVER_MAX_REPLS": "2"
+    },
+    "own_method_mode": "observe"
+  }
+]
