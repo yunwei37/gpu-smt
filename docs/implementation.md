@@ -426,7 +426,8 @@ The native syntax wrapper exports actual tactic goals and complete supported
 ordinary contexts, including types/domains and lets. Only the native recursive
 placeholder auxDecl is excluded/logged. Unsupported expressions keep native
 fallback. The frozen original7808source observer is still running; current
-GT/GE source extensions are not silently attributed to that old build.
+GT/GE extensions now compile in separate private outputs, while their native
+runtime qualification remains pending. They are not attributed to the old build.
 
 The fixed CUDA stack interpreter now executes on RTX5090: an offline474entry
 qualification yields the same2exact witnesses without invalid points/errors.
@@ -447,3 +448,18 @@ includes controller overhead; its RSS is only sampled during the client
 window and must not be called a complete cold peak. Full native acceptance/
 fallback/backtracking and end-to-end benefit remain unverified.
 [Source and retained qualifications](../bench/lean-counterexample/README.md).
+
+
+The own native runner now supports the complete original7808off/on pair
+after actual observation closure and native24result review. Full off uses
+untouched original Lean sources; on pays source-native wrapping/import and
+GPU screening. Both cells retain original300stimeouts and the same native
+resource point. This path is implemented, not executed or qualified yet.
+
+The paired analyzer is exercised on existing32off/observe data, recovering
+28valid/4Lean errors with0status/acceptance changes. This is analysis
+validation, not another benchmark. It reports baseline-failed/timeouts and
+fixed baseline-ranked1%/10%tails, while keeping cumulative HTTP/body spans
+separate from complete group clocks. Provider startup/retirement is only
+available after lifecycle closure. The first escaped-newline analysis failure
+and corrected real-data execution are retained.

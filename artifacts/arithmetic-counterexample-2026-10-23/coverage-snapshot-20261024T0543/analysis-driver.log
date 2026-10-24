@@ -1,0 +1,205 @@
+{
+  "scope": "PARTIAL_PREFIX_DIAGNOSTIC, not a fullcoverage result",
+  "input_goals": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/goals.jsonl",
+  "observed_entries": 10325,
+  "observed_source_count": 1758,
+  "supported_entries": 5923,
+  "supported_source_count": 726,
+  "witness_entries": 13,
+  "witness_source_count": 11,
+  "witness_source_IDs": [
+    "minif2f-2323",
+    "minif2f-2982",
+    "minif2f-2988",
+    "minif2f-2993",
+    "minif2f-379",
+    "minif2f-802",
+    "minif2f-812",
+    "minif2f-813",
+    "minif2f-814",
+    "minif2f-815",
+    "minif2f-938"
+  ],
+  "witness_current_statuses": {
+    "no_final_current_response_yet": 11
+  },
+  "historical_failure_witness_IDs": [
+    "minif2f-2323",
+    "minif2f-2982",
+    "minif2f-2988",
+    "minif2f-2993",
+    "minif2f-379",
+    "minif2f-802",
+    "minif2f-812",
+    "minif2f-813",
+    "minif2f-814",
+    "minif2f-815",
+    "minif2f-938"
+  ],
+  "historical_failure_witness_HTTP_sum_seconds": 15.156438371,
+  "historical_witness_timeouts": [],
+  "proposal_errors": [],
+  "analysis_seconds": 2.7541777649894357,
+  "point_count": 4096,
+  "seed": 0,
+  "expected_sources": 7808,
+  "source_class_counts": {
+    "no_observed_entry": 6050,
+    "unsupported_only": 1032,
+    "supported_no_witness": 715,
+    "exact_witness": 11
+  },
+  "source_partitions": {
+    "current_status": [
+      {
+        "status": "not_returned",
+        "observation_class": "exact_witness",
+        "sources": 11,
+        "observed_entries": 41,
+        "supported_entries": 40,
+        "historical_body_sum_seconds": 14.386867,
+        "historical_HTTP_sum_seconds": 15.156438371
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "no_observed_entry",
+        "sources": 6050,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 26768.572231,
+        "historical_HTTP_sum_seconds": 31458.510948685
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "supported_no_witness",
+        "sources": 715,
+        "observed_entries": 6040,
+        "supported_entries": 5883,
+        "historical_body_sum_seconds": 2778.520786,
+        "historical_HTTP_sum_seconds": 2829.0600774179998
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "unsupported_only",
+        "sources": 1032,
+        "observed_entries": 4244,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 3042.592478,
+        "historical_HTTP_sum_seconds": 3504.403296397
+      }
+    ],
+    "historical_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "exact_witness",
+        "sources": 11,
+        "observed_entries": 41,
+        "supported_entries": 40,
+        "historical_body_sum_seconds": 14.386867,
+        "historical_HTTP_sum_seconds": 15.156438371
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3560,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 4682.29774,
+        "historical_HTTP_sum_seconds": 5091.002829957
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 223,
+        "observed_entries": 667,
+        "supported_entries": 540,
+        "historical_body_sum_seconds": 231.981898,
+        "historical_HTTP_sum_seconds": 248.962257652
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "unsupported_only",
+        "sources": 881,
+        "observed_entries": 3975,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 1945.194651,
+        "historical_HTTP_sum_seconds": 2035.950311712
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "no_observed_entry",
+        "sources": 45,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 4037.087970603
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "unsupported_only",
+        "sources": 2,
+        "observed_entries": 3,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 362.301527069
+      },
+      {
+        "status": "timeout_error",
+        "observation_class": "no_observed_entry",
+        "sources": 68,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 20400.0,
+        "historical_HTTP_sum_seconds": 20451.450268057
+      },
+      {
+        "status": "timeout_error",
+        "observation_class": "unsupported_only",
+        "sources": 3,
+        "observed_entries": 5,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 900.0,
+        "historical_HTTP_sum_seconds": 900.179384136
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 2377,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 1686.274491,
+        "historical_HTTP_sum_seconds": 1878.969880068
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 492,
+        "observed_entries": 5373,
+        "supported_entries": 5343,
+        "historical_body_sum_seconds": 2546.538888,
+        "historical_HTTP_sum_seconds": 2580.097819766
+      },
+      {
+        "status": "valid",
+        "observation_class": "unsupported_only",
+        "sources": 146,
+        "observed_entries": 261,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 197.397827,
+        "historical_HTTP_sum_seconds": 205.97207348
+      }
+    ]
+  },
+  "exporter_sum_seconds": 14.805162978,
+  "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/partial-source-coverage.csv",
+  "sampling_diagnostics": "artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/partial-sampling-diagnostics.jsonl",
+  "sampling_summary": {
+    "entries": 5923,
+    "zero_float_feasible_entries": 4996,
+    "zero_float_feasible_historical_failed_entries": 336,
+    "float_counterexample_proposals": 11043,
+    "exact_candidates_checked": 5781,
+    "note": "Counts of numeric proposals, not exact feasible-point coverage or proof of absence."
+  }
+}

@@ -26,6 +26,14 @@ sample is not a complete cold-lifecycle RSS peak. Actual context closure,
 process exit0 and UID-owned Job absence are recorded.
 [Full functional result and raw evidence](../artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
 
+The larger immutable partial snapshot contains10325entries/1758sources,
+5923supportedentries/726sources and13exactwitnesses in11sources. All11current
+HTTP outcomes are Lean errors, with0timeouts and request spans0.316–5.974s.
+Known witnesses therefore do not yet cover the expensive timeout population.
+4996supportedentries have zero float-feasible grid proposals; no-witness
+remains unknown. [Actual snapshot, joins and interpretation](../artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
+No partial source fraction or overlapping response tail is a whole-wall benefit.
+
 The complete own7808source goal observation remains active, with the original
 PID/birth and frozen source. Full false-goal/cost/timeout coverage and native
 off/on outcomes are pending. No further external-system reproduction starts.

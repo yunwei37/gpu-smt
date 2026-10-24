@@ -1,0 +1,3073 @@
+{
+  "scope": "PARTIAL_PREFIX_DIAGNOSTIC, not a fullcoverage result",
+  "input_goals": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/goals.jsonl",
+  "observed_entries": 10325,
+  "observed_source_count": 1758,
+  "supported_entries": 5923,
+  "supported_source_count": 726,
+  "unsupported_reasons": {
+    "nonconstant or zero division": 446,
+    "local h0 detail=false aux=false value=false: nonconstant or zero division": 70,
+    "unsupported proposition GT.gt: x > 0": 1,
+    "unsupported proposition GT.gt: y > 0": 3,
+    "unsupported proposition GT.gt: z > 0": 1,
+    "unsupported proposition GT.gt: w > 0": 1,
+    "unsupported arithmetic head Real.log": 26,
+    "unsupported proposition GT.gt: x > 1": 2,
+    "unsupported proposition GT.gt: y > 1": 2,
+    "unsupported proposition GT.gt: z > 1": 2,
+    "unsupported proposition GT.gt: x * z > 1": 1,
+    "unsupported proposition GT.gt: x * y > 1": 1,
+    "unsupported proposition GT.gt: y * z > 1": 1,
+    "unsupported arithmetic head Inv.inv": 23,
+    "local h\u2082 detail=false aux=false value=false: nonconstant or zero division": 20,
+    "local b_expr detail=false aux=false value=false: nonconstant or zero division": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), y x = \u2211 i \u2208 Finset.range k, (a i + x).cos / 2 ^ i": 4,
+    "unsupported arithmetic head Real.pi": 3,
+    "unsupported arithmetic head Nat.floor": 1,
+    "unsupported proposition Exists: \u2203 t, m - n = \u2191t * \u03c0": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d),\n  y x = \u2211 x_1 \u2208 Finset.range k, ((a x_1).cos * x.cos - (a x_1).sin * x.sin) / 2 ^ x_1": 1,
+    "unsupported arithmetic head sorryAx": 9,
+    "unsupported arithmetic head DFunLike.coe": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 18 \u2223 3740 + n": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 18 \u2223 374 * 10 + n": 1,
+    "local h\u2080 detail=false aux=false value=false: nonconstant or zero division": 21,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head Inv.inv": 17,
+    "local h\u2083 detail=false aux=false value=false: nonconstant or zero division": 3,
+    "local h\u2084 detail=false aux=false value=false: nonconstant or zero division": 1,
+    "unsupported arithmetic head abs": 55,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head abs": 2,
+    "unsupported arithmetic head [anonymous]": 112,
+    "unsupported proposition GT.gt: f (n + 1) > n": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115), 0 < f n": 3,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.log": 7,
+    "unsupported arithmetic head HMod.hMod": 16,
+    "unsupported proposition GE.ge: n \u2265 16 ^ 4": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.logb": 6,
+    "local h\u2081 detail=false aux=false value=false: nonconstant or zero division": 58,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition GT.gt: n > 0": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 122,
+    "unsupported arithmetic head Real.sqrt": 195,
+    "unsupported arithmetic type": 112,
+    "unsupported arithmetic head Real.cos": 11,
+    "unsupported arithmetic head Real.sin": 1,
+    "unsupported proposition GE.ge: a \u2265 1": 2,
+    "unsupported proposition GE.ge: b \u2265 1": 2,
+    "unsupported proposition GE.ge: c \u2265 1": 2,
+    "unsupported arithmetic head Rat.den": 15,
+    "unsupported arithmetic head Rat.num": 2,
+    "unsupported proposition GE.ge: \u2191b \u2265 0": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 7,
+    "local h\u2082 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 79,
+    "no goals to be solved": 6,
+    "unassigned proposition metavariable": 9,
+    "local h\u2081 detail=false aux=false value=false: unsupported exponent": 107,
+    "unsupported exponent": 63,
+    "unsupported proposition GT.gt: x > 27": 2,
+    "unsupported proposition GT.gt: y > 2": 3,
+    "unsupported proposition GT.gt: x > 16": 1,
+    "unsupported proposition GT.gt: y > 3": 1,
+    "unsupported proposition GT.gt: x > 3": 1,
+    "unsupported proposition GE.ge: x \u2265 1": 1,
+    "unsupported proposition GE.ge: y \u2265 1": 1,
+    "unsupported proposition GE.ge: x \u2265 28": 2,
+    "unsupported proposition GE.ge: y \u2265 28": 2,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head Nat.gcd": 75,
+    "unsupported proposition GE.ge: m + n \u2265 60": 8,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head HMod.hMod": 2,
+    "local h\u2082 detail=false aux=false value=false: unsupported arithmetic head [anonymous]": 4,
+    "local this detail=false aux=false value=false: unsupported arithmetic head [anonymous]": 2,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (t : \u211d), f t = t ^ 4": 60,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115),\n  n \u2208 S \u2194 2010 \u2264 n \u2227 n \u2264 2019 \u2227 \u2203 m, m.divisors.card = 4 \u2227 \u2211 p \u2208 m.divisors, p = n": 1,
+    "unsupported proposition GE.ge: n \u2265 2010": 1,
+    "unsupported arithmetic head Int.floor": 3,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Int.floor": 2,
+    "local this detail=false aux=false value=false: unsupported proposition GE.ge: (a - 1) ^ 2 \u2265 0": 5,
+    "local h detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), x ^ 2 \u2265 0": 3,
+    "unsupported proposition GE.ge: x ^ 2 \u2265 0": 2,
+    "unsupported proposition GE.ge: (a - 1) ^ 2 \u2265 0": 4,
+    "local h detail=false aux=false value=false: unsupported proposition GE.ge: (a - 1) ^ 2 \u2265 0": 3,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition GE.ge: (a - 1) ^ 2 \u2265 0": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition GE.ge: (a - 1) ^ 2 \u2265 0": 2,
+    "local this detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (a : \u211d), 0 \u2264 a ^ 2": 1,
+    "local this detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), x ^ 2 \u2265 0": 1,
+    "unsupported proposition GE.ge: a ^ 2 - 2 * a + 1 \u2265 0": 2,
+    "unsupported proposition GE.ge: a ^ 2 + 1 \u2265 2 * a": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition GE.ge: a ^ 2 - 2 * a + 1 \u2265 0": 1,
+    "unsupported arithmetic head Rat.cast": 3,
+    "local h\u2083 detail=false aux=false value=false: unsupported arithmetic head Rat.cast": 89,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), f x = 5 * x + 4": 3,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), f x = 4 + x * 5": 1,
+    "unsupported arithmetic head PNat.val": 3,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head HMod.hMod": 25,
+    "unsupported arithmetic head Finset.sum": 57,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition Nat: \u2115": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: (p - 1) * (q - 1) * (r - 1) \u2223 p * q * r - 1": 65,
+    "unsupported proposition GE.ge: p \u2265 2": 7,
+    "unsupported proposition GE.ge: q \u2265 2": 5,
+    "unsupported proposition GE.ge: r \u2265 2": 5,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: (p - 1) * ((q - 1) * (r - 1)) \u2223 p * (q * r) - 1": 6,
+    "unsupported proposition GE.ge: q \u2265 4": 2,
+    "unsupported proposition GE.ge: r \u2265 8": 2,
+    "local h\u2082 detail=false aux=false value=false: unsupported proposition Dvd.dvd: (p - 1) * (q - 1) * (r - 1) \u2223 p * q * r - 1": 3,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), f x = x * 2 + -3": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), f x = 2 * x - 3": 2,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), f x = x * 2 - 3": 1,
+    "local h\u2085 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 24,
+    "unsupported arithmetic head NNReal.toReal": 6,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic type": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), x \u2208 S \u2194 (x + 3) ^ 2 = 121": 66,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), x \u2208 S \u2194 x * x + (x * 3 + (x * 3 + 3 * 3)) = 121": 5,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 11 \u2223 20 * 100 + 10 * n + 7": 1,
+    "unsupported proposition GE.ge: n \u2265 10": 1,
+    "unsupported proposition GE.ge: t ^ 3 \u2265 n": 1,
+    "unsupported proposition GE.ge: x ^ 2 \u2265 n": 1,
+    "local this detail=false aux=false value=false: unsupported proposition GE.ge: n \u2265 10": 1,
+    "unsupported proposition GE.ge: x \u2265 8": 1,
+    "local h\u2083 detail=false aux=false value=false: unsupported proposition GE.ge: x \u2265 8": 1,
+    "unsupported proposition GE.ge: t \u2265 4": 2,
+    "unsupported proposition GE.ge: x \u2265 4": 1,
+    "local hx' detail=false aux=false value=false: unsupported proposition GE.ge: x \u2265 4": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115), n \u2208 S \u2194 0 < n \u2227 (\u2191n + 1000) / 70 = \u2191\u230a\u221a\u2191n\u230b": 8,
+    "unsupported arithmetic head Nat.sqrt": 2,
+    "unsupported proposition GE.ge: \u221a\u2191n \u2265 14": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Nat.ofDigits": 1857,
+    "unsupported arithmetic head Nat.lcm": 1,
+    "unsupported proposition GE.ge: a * b \u2265 108": 1,
+    "unsupported proposition GE.ge: a * b + b * c + c * a \u2265 3": 1,
+    "local h\u2088 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 1,
+    "local this detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 9,
+    "unsupported arithmetic head Complex.re": 8,
+    "unsupported arithmetic head Complex.im": 6,
+    "unsupported arithmetic head Finset.prod": 2,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Irreducible: Irreducible (2 ^ 0 - 1)": 1,
+    "unsupported proposition Irreducible: Irreducible (n + 1 + 1)": 2,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Irreducible: Irreducible (2 ^ n - 1)": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Nat.Prime: Nat.Prime 2": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Nat.Prime: (2 ^ n - 1).Prime": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition Even: Even n": 17,
+    "unsupported division": 40,
+    "unsupported proposition GE.ge: n \u2265 2": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition Dvd.dvd: 2 \u2223 n": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported exponent": 27,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head Nat.succ": 3,
+    "unsupported arithmetic head Nat.succ": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported arithmetic head [anonymous]": 1,
+    "unsupported proposition GE.ge: 19 + 3 * y \u2265 0": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition Nat.Prime: p.Prime": 7,
+    "local h\u2081 detail=false aux=false value=false: unsupported arithmetic head Inv.inv": 3,
+    "local h\u2084 detail=false aux=false value=false: unsupported division": 1,
+    "unsupported proposition GT.gt: \u221a(3 - x) - \u221a(x + 1) > 1 / 2": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2124), n \u2208 S \u2194 |n - 2| \u2264 5 + 6 / 10": 37,
+    "local h\u2084 detail=false aux=false value=false: unsupported exponent": 23,
+    "local h\u2084 detail=false aux=false value=false: unsupported arithmetic head Real.sqrt": 12,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u211d), 10 * x ^ 2 - x - 24 = (\u2191a * x - 8) * (\u2191b * x + 3)": 32,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (k : \u2115), 2 \u2264 k \u2192 0 < \u221a\u2191k": 1,
+    "unsupported proposition Nat: \u2115": 1,
+    "local h\u2080 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (x : \u2115), p x = x ^ 2 - x + 41": 8,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115), (6 * n + k).gcd (6 * n + 3) = 1": 4,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition [anonymous]: \u2200 (n : \u2115), (6 * n + 4).gcd (6 * n + 3) = 1": 1,
+    "local h\u2083 detail=false aux=false value=false: unsupported arithmetic head [anonymous]": 1,
+    "unsupported arithmetic head OfScientific.ofScientific": 2,
+    "local h\u2083 detail=false aux=false value=false: unsupported arithmetic head Sub.sub": 1,
+    "unsupported proposition GE.ge: 1 + |a + b| \u2265 1": 1,
+    "unsupported proposition GE.ge: 1 + |a| \u2265 1": 1,
+    "unsupported proposition GE.ge: 1 + |b| \u2265 1": 1,
+    "local h\u2081 detail=false aux=false value=false: unsupported proposition Odd: Odd a": 5,
+    "local ha\u2081 detail=false aux=false value=false: unsupported proposition Odd: Odd a": 1,
+    "unsupported proposition Nat.Prime: (a * b + c * d).Prime": 5,
+    "unsupported proposition GT.gt: a * b + c * d > 1": 1,
+    "local h detail=false aux=false value=false: unsupported proposition Nat.Prime: (a * b + c * d).Prime": 1,
+    "unsupported proposition Irreducible: Irreducible (a * b + c * d)": 1
+  },
+  "witness_entries": 13,
+  "witness_source_count": 11,
+  "witness_source_IDs": [
+    "minif2f-2323",
+    "minif2f-2982",
+    "minif2f-2988",
+    "minif2f-2993",
+    "minif2f-379",
+    "minif2f-802",
+    "minif2f-812",
+    "minif2f-813",
+    "minif2f-814",
+    "minif2f-815",
+    "minif2f-938"
+  ],
+  "witnesses": [
+    {
+      "source_id": "minif2f-379",
+      "entry_ns": 1243471049960266,
+      "witness": {
+        "point_index": 7,
+        "point": [
+          [
+            "625",
+            "7"
+          ],
+          [
+            "25",
+            "1"
+          ],
+          [
+            "250",
+            "7"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "x",
+            "domain": "real"
+          },
+          {
+            "name": "z",
+            "domain": "real"
+          },
+          {
+            "name": "y",
+            "domain": "real"
+          }
+        ],
+        "hypotheses": [
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "q",
+              "0",
+              "1"
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "5",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "q",
+                "7",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "10",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "q",
+              "0",
+              "1"
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              0
+            ],
+            [
+              "*",
+              [
+                "*",
+                [
+                  "q",
+                  "5",
+                  "1"
+                ],
+                [
+                  "v",
+                  2
+                ]
+              ],
+              [
+                "q",
+                "1",
+                "2"
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "*",
+              [
+                "*",
+                [
+                  "q",
+                  "10",
+                  "1"
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "q",
+                "1",
+                "7"
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "*",
+            [
+              "*",
+              [
+                "q",
+                "25",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "q",
+              "1",
+              "14"
+            ]
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_algebra_33"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-802",
+      "entry_ns": 1243918182648202,
+      "witness": {
+        "point_index": 7,
+        "point": [
+          [
+            "3",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              0
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                1
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              1
+            ],
+            [
+              "q",
+              "1",
+              "1"
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "2",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-812",
+      "entry_ns": 1243972588487576,
+      "witness": {
+        "point_index": 17,
+        "point": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "3",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-813",
+      "entry_ns": 1243974380112778,
+      "witness": {
+        "point_index": 82,
+        "point": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "2",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-814",
+      "entry_ns": 1243980179059328,
+      "witness": {
+        "point_index": 86,
+        "point": [
+          [
+            "3",
+            "1"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              0
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                1
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "q",
+              "4",
+              "1"
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "*",
+                [
+                  "q",
+                  "11",
+                  "1"
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "q",
+              "8",
+              "1"
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "6",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-815",
+      "entry_ns": 1243984507625331,
+      "witness": {
+        "point_index": 1,
+        "point": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "le",
+              [
+                "q",
+                "1",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "le",
+              [
+                "v",
+                2
+              ],
+              [
+                "q",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              0
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "ne",
+            [
+              "v",
+              1
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "v",
+              2
+            ]
+          ],
+          [
+            "eq",
+            [
+              "nat_sub",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "2",
+                "1"
+              ],
+              [
+                "v",
+                2
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "v",
+                2
+              ],
+              [
+                "v",
+                1
+              ]
+            ],
+            [
+              "+",
+              [
+                "+",
+                [
+                  "*",
+                  [
+                    "q",
+                    "10",
+                    "1"
+                  ],
+                  [
+                    "v",
+                    0
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ],
+              [
+                "v",
+                0
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "*",
+              [
+                "q",
+                "4",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              1
+            ],
+            [
+              "*",
+              [
+                "q",
+                "3",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "2",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_430"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-938",
+      "entry_ns": 1244163348095082,
+      "witness": {
+        "point_index": 7,
+        "point": [
+          [
+            "575",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "x",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "eq",
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "*",
+                [
+                  "*",
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "25"
+                  ]
+                ],
+                [
+                  "v",
+                  0
+                ]
+              ]
+            ],
+            [
+              "q",
+              "598",
+              "1"
+            ]
+          ]
+        ],
+        "goal": [
+          "lt",
+          [
+            "q",
+            "575",
+            "1"
+          ],
+          [
+            "v",
+            0
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_algebra_137"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2323",
+      "entry_ns": 1246702500545744,
+      "witness": {
+        "point_index": 16,
+        "point": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "10",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "x",
+            "domain": "nat"
+          },
+          {
+            "name": "n",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "le",
+            [
+              "q",
+              "10",
+              "1"
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "true"
+          ],
+          [
+            "true"
+          ]
+        ],
+        "goal": [
+          "le",
+          [
+            "q",
+            "4",
+            "1"
+          ],
+          [
+            "v",
+            0
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_5"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2323",
+      "entry_ns": 1246702591987126,
+      "witness": {
+        "point_index": 47,
+        "point": [
+          [
+            "3",
+            "1"
+          ],
+          [
+            "10",
+            "1"
+          ],
+          [
+            "9",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "t",
+            "domain": "nat"
+          },
+          {
+            "name": "n",
+            "domain": "nat"
+          },
+          {
+            "name": "x",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "le",
+            [
+              "q",
+              "10",
+              "1"
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "true"
+          ],
+          [
+            "true"
+          ],
+          [
+            "le",
+            [
+              "q",
+              "4",
+              "1"
+            ],
+            [
+              "v",
+              2
+            ]
+          ]
+        ],
+        "goal": [
+          "le",
+          [
+            "q",
+            "4",
+            "1"
+          ],
+          [
+            "v",
+            0
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_5"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2323",
+      "entry_ns": 1246702903702248,
+      "witness": {
+        "point_index": 9,
+        "point": [
+          [
+            "63",
+            "1"
+          ],
+          [
+            "63",
+            "1"
+          ],
+          [
+            "63",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "n",
+            "domain": "nat"
+          },
+          {
+            "name": "x",
+            "domain": "nat"
+          },
+          {
+            "name": "t",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "le",
+            [
+              "q",
+              "10",
+              "1"
+            ],
+            [
+              "v",
+              0
+            ]
+          ],
+          [
+            "true"
+          ],
+          [
+            "true"
+          ],
+          [
+            "le",
+            [
+              "q",
+              "4",
+              "1"
+            ],
+            [
+              "v",
+              1
+            ]
+          ],
+          [
+            "le",
+            [
+              "q",
+              "4",
+              "1"
+            ],
+            [
+              "v",
+              2
+            ]
+          ]
+        ],
+        "goal": [
+          "le",
+          [
+            "q",
+            "64",
+            "1"
+          ],
+          [
+            "v",
+            0
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "mathd_numbertheory_5"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2982",
+      "entry_ns": 1248146570225488,
+      "witness": {
+        "point_index": 9,
+        "point": [
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "lt",
+              [
+                "q",
+                "0",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "and",
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ],
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "+",
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "*",
+                [
+                  "v",
+                  0
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ],
+                [
+                  "q",
+                  "1",
+                  "1"
+                ]
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "8",
+                "1"
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ]
+                ],
+                [
+                  "+",
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "3",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "amc12b_2002_p7"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2988",
+      "entry_ns": 1248149651038122,
+      "witness": {
+        "point_index": 9,
+        "point": [
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "lt",
+              [
+                "q",
+                "0",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "and",
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ],
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "+",
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "*",
+                [
+                  "v",
+                  0
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ],
+                [
+                  "q",
+                  "1",
+                  "1"
+                ]
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "8",
+                "1"
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ]
+                ],
+                [
+                  "+",
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "*",
+                [
+                  "v",
+                  0
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "1",
+                    "1"
+                  ]
+                ]
+              ],
+              [
+                "+",
+                [
+                  "v",
+                  0
+                ],
+                [
+                  "q",
+                  "2",
+                  "1"
+                ]
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "8",
+                "1"
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "+",
+                    [
+                      "v",
+                      0
+                    ],
+                    [
+                      "q",
+                      "1",
+                      "1"
+                    ]
+                  ]
+                ],
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "q",
+                    "2",
+                    "1"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "5",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "amc12b_2002_p7"
+        ]
+      }
+    },
+    {
+      "source_id": "minif2f-2993",
+      "entry_ns": 1248151245878868,
+      "witness": {
+        "point_index": 9,
+        "point": [
+          [
+            "4",
+            "1"
+          ],
+          [
+            "5",
+            "1"
+          ],
+          [
+            "6",
+            "1"
+          ]
+        ],
+        "point_count": 4096,
+        "CPU_exact_checked": true
+      },
+      "ast": {
+        "variables": [
+          {
+            "name": "a",
+            "domain": "nat"
+          },
+          {
+            "name": "b",
+            "domain": "nat"
+          },
+          {
+            "name": "c",
+            "domain": "nat"
+          }
+        ],
+        "hypotheses": [
+          [
+            "and",
+            [
+              "lt",
+              [
+                "q",
+                "0",
+                "1"
+              ],
+              [
+                "v",
+                0
+              ]
+            ],
+            [
+              "and",
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "lt",
+                [
+                  "q",
+                  "0",
+                  "1"
+                ],
+                [
+                  "v",
+                  2
+                ]
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              1
+            ],
+            [
+              "+",
+              [
+                "v",
+                0
+              ],
+              [
+                "q",
+                "1",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "v",
+              2
+            ],
+            [
+              "+",
+              [
+                "v",
+                1
+              ],
+              [
+                "q",
+                "1",
+                "1"
+              ]
+            ]
+          ],
+          [
+            "eq",
+            [
+              "*",
+              [
+                "*",
+                [
+                  "v",
+                  0
+                ],
+                [
+                  "v",
+                  1
+                ]
+              ],
+              [
+                "v",
+                2
+              ]
+            ],
+            [
+              "*",
+              [
+                "q",
+                "8",
+                "1"
+              ],
+              [
+                "+",
+                [
+                  "+",
+                  [
+                    "v",
+                    0
+                  ],
+                  [
+                    "v",
+                    1
+                  ]
+                ],
+                [
+                  "v",
+                  2
+                ]
+              ]
+            ]
+          ]
+        ],
+        "goal": [
+          "eq",
+          [
+            "v",
+            0
+          ],
+          [
+            "q",
+            "3",
+            "1"
+          ]
+        ],
+        "excluded_recursive_auxiliaries": [
+          "amc12b_2002_p7"
+        ]
+      }
+    }
+  ],
+  "witness_current_statuses": {
+    "no_final_current_response_yet": 11
+  },
+  "historical_failure_witness_IDs": [
+    "minif2f-2323",
+    "minif2f-2982",
+    "minif2f-2988",
+    "minif2f-2993",
+    "minif2f-379",
+    "minif2f-802",
+    "minif2f-812",
+    "minif2f-813",
+    "minif2f-814",
+    "minif2f-815",
+    "minif2f-938"
+  ],
+  "historical_failure_witness_HTTP_sum_seconds": 15.156438371,
+  "historical_witness_timeouts": [],
+  "proposal_errors": [],
+  "analysis_seconds": 2.7541777649894357,
+  "point_count": 4096,
+  "seed": 0,
+  "limitations": [
+    "No witness is unknown, not validity or falsity proof.",
+    "Historical request spans overlap and are associations, not savedwholewall or currentprofilefractions.",
+    "A witness in an acceptedcandidate may be an abandonedfalsebranch; failonlythat tactic, neverkillthewholecandidate.",
+    "Unsupported terms/fullcontext conditions retain nativefallback. GPU is not running in this census."
+  ],
+  "expected_sources": 7808,
+  "source_class_counts": {
+    "no_observed_entry": 6050,
+    "unsupported_only": 1032,
+    "supported_no_witness": 715,
+    "exact_witness": 11
+  },
+  "source_partitions": {
+    "current_status": [
+      {
+        "status": "not_returned",
+        "observation_class": "exact_witness",
+        "sources": 11,
+        "observed_entries": 41,
+        "supported_entries": 40,
+        "historical_body_sum_seconds": 14.386867,
+        "historical_HTTP_sum_seconds": 15.156438371
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "no_observed_entry",
+        "sources": 6050,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 26768.572231,
+        "historical_HTTP_sum_seconds": 31458.510948685
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "supported_no_witness",
+        "sources": 715,
+        "observed_entries": 6040,
+        "supported_entries": 5883,
+        "historical_body_sum_seconds": 2778.520786,
+        "historical_HTTP_sum_seconds": 2829.0600774179998
+      },
+      {
+        "status": "not_returned",
+        "observation_class": "unsupported_only",
+        "sources": 1032,
+        "observed_entries": 4244,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 3042.592478,
+        "historical_HTTP_sum_seconds": 3504.403296397
+      }
+    ],
+    "historical_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "exact_witness",
+        "sources": 11,
+        "observed_entries": 41,
+        "supported_entries": 40,
+        "historical_body_sum_seconds": 14.386867,
+        "historical_HTTP_sum_seconds": 15.156438371
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3560,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 4682.29774,
+        "historical_HTTP_sum_seconds": 5091.002829957
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 223,
+        "observed_entries": 667,
+        "supported_entries": 540,
+        "historical_body_sum_seconds": 231.981898,
+        "historical_HTTP_sum_seconds": 248.962257652
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "unsupported_only",
+        "sources": 881,
+        "observed_entries": 3975,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 1945.194651,
+        "historical_HTTP_sum_seconds": 2035.950311712
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "no_observed_entry",
+        "sources": 45,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 4037.087970603
+      },
+      {
+        "status": "resource_failure",
+        "observation_class": "unsupported_only",
+        "sources": 2,
+        "observed_entries": 3,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.0,
+        "historical_HTTP_sum_seconds": 362.301527069
+      },
+      {
+        "status": "timeout_error",
+        "observation_class": "no_observed_entry",
+        "sources": 68,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 20400.0,
+        "historical_HTTP_sum_seconds": 20451.450268057
+      },
+      {
+        "status": "timeout_error",
+        "observation_class": "unsupported_only",
+        "sources": 3,
+        "observed_entries": 5,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 900.0,
+        "historical_HTTP_sum_seconds": 900.179384136
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 2377,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 1686.274491,
+        "historical_HTTP_sum_seconds": 1878.969880068
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 492,
+        "observed_entries": 5373,
+        "supported_entries": 5343,
+        "historical_body_sum_seconds": 2546.538888,
+        "historical_HTTP_sum_seconds": 2580.097819766
+      },
+      {
+        "status": "valid",
+        "observation_class": "unsupported_only",
+        "sources": 146,
+        "observed_entries": 261,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 197.397827,
+        "historical_HTTP_sum_seconds": 205.97207348
+      }
+    ]
+  },
+  "exporter_sum_seconds": 14.805162978,
+  "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/partial-source-coverage.csv",
+  "sampling_diagnostics": "artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/partial-sampling-diagnostics.jsonl",
+  "sampling_summary": {
+    "entries": 5923,
+    "zero_float_feasible_entries": 4996,
+    "zero_float_feasible_historical_failed_entries": 336,
+    "float_counterexample_proposals": 11043,
+    "exact_candidates_checked": 5781,
+    "note": "Counts of numeric proposals, not exact feasible-point coverage or proof of absence."
+  }
+}

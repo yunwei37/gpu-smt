@@ -1,14 +1,14 @@
 param(
  [Parameter(Mandatory)][string]$SourcePod,
  [Parameter(Mandatory)][string]$Out,
- [ValidateSet('points','lean24')][string]$Phase='points'
+ [ValidateSet('points','lean24','lean-full')][string]$Phase='points'
 )
 # Invoke from the sole spark-manage checkout; application files stay in Workspace.
 $ErrorActionPreference='Stop'
 $gpuRoot='/workspaces/repository'
 $gpuArc="$gpuRoot/artifacts/arithmetic-counterexample-2026-10-23"
 $gpuBench="$gpuRoot/bench/lean-counterexample"
-$gpuCheck='import pathlib,json,sys;p=pathlib.Path("/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/full-observe/verification/terminal.json");assert sys.argv[2]!="lean24" or (p.exists() and json.loads(p.read_text())["state"]=="complete"),"Original full observation is still active";assert not pathlib.Path(sys.argv[1]).exists(),"Preserve existing output"'
+$gpuCheck='import pathlib,json,sys;p=pathlib.Path("/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/full-observe/verification/terminal.json");assert sys.argv[2]=="points" or (p.exists() and json.loads(p.read_text())["state"]=="complete"),"Original full observation is still active";assert not pathlib.Path(sys.argv[1]).exists(),"Preserve existing output"'
 ./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' python3 -c $gpuCheck $Out $Phase
 if($LASTEXITCODE -ne 0){throw 'Keep the current acquisition and existing outputs'}
 $gpuSpecText=./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' cat "$gpuArc/point-job.json"
@@ -55,7 +55,9 @@ try {
  $gpuStartup=$gpuClock.Elapsed.TotalSeconds
  $gpuIP=$gpuPod.status.podIP
  $gpuScript=if($Phase -eq 'points'){'qualify-remote-points.py'}else{'qualify-screening.py'}
- ./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' /workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u "$gpuBench/$gpuScript" --host $gpuIP --backend device --out $Out
+ $gpuArguments=@('--host',$gpuIP,'--backend','device','--out',$Out)
+ if($Phase -eq 'lean-full'){$gpuArguments+='--full'}
+ ./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' /workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u "$gpuBench/$gpuScript" @gpuArguments
  $gpuClientExit=$LASTEXITCODE
  $gpuClientSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuStartup
 } finally {
@@ -99,7 +101,7 @@ try {
   if($LASTEXITCODE -ne 0){throw 'Final Job absence is unverified'}
   $gpuRemains=[bool]$gpuLeftJob
  } catch {$gpuCleanup.Add($_.Exception.Message)}
- $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToAPIReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own finite qualification; CUDA initializes on first monitored batch; no online speedup claim; joint48GiB contract'}
+ $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToAPIReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract'}
  $gpuPayload=@{receipt=$gpuReceipt;providerLog=$gpuLog;job=$gpuSpec}|ConvertTo-Json -Depth 18 -Compress
  $gpuWrite='import pathlib,json,gzip,sys;x=json.load(sys.stdin);p=pathlib.Path(sys.argv[1]);p.mkdir(parents=True,exist_ok=True);(p/"lifecycle.json").write_text(json.dumps(x["receipt"],indent=2)+chr(10));(p/"job.json").write_text(json.dumps(x["job"],indent=2)+chr(10));(p/"provider.log.gz").write_bytes(gzip.compress(x["providerLog"].encode(),mtime=0));print(json.dumps(x["receipt"]))'
  $gpuPayload|./scripts/kubectl-home.ps1 -n coder exec -i $SourcePod -c dev '--' python3 -c $gpuWrite $Out

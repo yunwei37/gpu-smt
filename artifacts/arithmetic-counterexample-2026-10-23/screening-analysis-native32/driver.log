@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-counterexample/analyze-screening.py", line 97, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-counterexample/analyze-screening.py", line 36, in main
+    off,a,ta=read_cell(args.off);on,b,tb=read_cell(args.on)
+             ~~~~~~~~~^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-counterexample/analyze-screening.py", line 17, in read_cell
+    data=list(rows(directory/'results.jsonl'))
+  File "/workspaces/repository/bench/lean-counterexample/analyze-screening.py", line 8, in rows
+    if not line.endswith('\\n'):raise RuntimeError('Only closed, newline-complete results are admissible')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Only closed, newline-complete results are admissible

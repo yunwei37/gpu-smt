@@ -12,14 +12,15 @@ def load_rows(p):
    if not line.endswith('\n'):break
    if line.strip():yield json.loads(line)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--partial',action='store_true');p.add_argument('--qualification',action='store_true');args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--partial',action='store_true');p.add_argument('--qualification',action='store_true');p.add_argument('--goals',type=Path);p.add_argument('--output-dir',type=Path,default=A);args=p.parse_args()
+ args.output_dir.mkdir(parents=True,exist_ok=True)
  directory=A/('qualification32v3-observe'if args.qualification else'full-observe/verification')
  terminal=directory/'terminal.json'
  if not args.partial:
   assert terminal.exists()and json.loads(terminal.read_text())['state']=='complete'
  results={x['proof_id']:x for x in load_rows(directory/'results.jsonl')}if (terminal.exists()or(directory/'results.jsonl').exists())else{}
  with(A/'failure-source-costs.csv').open()as f:costs={x['proof_id']:x for x in csv.DictReader(f)}
- rows=list(load_rows(directory/'goals.jsonl'));supported=[x for x in rows if x['payload']['supported']]
+ rows=list(load_rows(args.goals or(directory/'goals.jsonl')));supported=[x for x in rows if x['payload']['supported']]
  witnesses=[];unknown=[];sampling=[];started=time.monotonic()
  for x in supported:
   try:
@@ -31,7 +32,7 @@ def main():
  by_status=collections.Counter(results[i]['status']if i in results else'no_final_current_response_yet'for i in ids)
  known_old_failure=[i for i in ids if costs[i]['failed']=='True']
  out=dict(scope='PARTIAL_PREFIX_DIAGNOSTIC, not a fullcoverage result'if args.partial else('Real first32qualification only'if args.qualification else'Complete original7808ownhook observation'),
- observed_entries=len(rows),observed_source_count=len({x['source_id']for x in rows}),
+ input_goals=str(args.goals or(directory/'goals.jsonl')),observed_entries=len(rows),observed_source_count=len({x['source_id']for x in rows}),
  supported_entries=len(supported),supported_source_count=len({x['source_id']for x in supported}),
  unsupported_reasons=dict(collections.Counter(x['payload'].get('reason')for x in rows if not x['payload']['supported'])),
  witness_entries=len(witnesses),witness_source_count=len(ids),witness_source_IDs=ids,witnesses=witnesses,
@@ -78,12 +79,12 @@ def main():
   exporter_sum_seconds=sum(x['exporter_sum_ns']for x in ledger)/1e9,
   denominator_note='Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.')
  prefix='qualification32v3'if args.qualification else'partial'if args.partial else'full'
- dest_csv=A/(prefix+'-source-coverage.csv')
+ dest_csv=args.output_dir/(prefix+'-source-coverage.csv')
  with dest_csv.open('w',newline='')as f:
   writer=csv.DictWriter(f,fieldnames=list(ledger[0]),lineterminator='\n')
   writer.writeheader();writer.writerows(ledger)
  out['source_ledger']=str(dest_csv.relative_to(R))
- sample_dest=A/(prefix+'-sampling-diagnostics.jsonl')
+ sample_dest=args.output_dir/(prefix+'-sampling-diagnostics.jsonl')
  with sample_dest.open('w')as f:
   for diagnostic in sampling:f.write(json.dumps(diagnostic,separators=(',',':'))+'\n')
  out['sampling_diagnostics']=str(sample_dest.relative_to(R))
@@ -94,7 +95,7 @@ def main():
   exact_candidates_checked=sum(x['exact_candidates_checked']for x in sampling),
   note='Counts of numeric proposals, not exact feasible-point coverage or proof of absence.')
 
- dest=A/('qualification32v3-coverage.json'if args.qualification else'partial-coverage.json'if args.partial else'full-coverage.json')
+ dest=args.output_dir/('qualification32v3-coverage.json'if args.qualification else'partial-coverage.json'if args.partial else'full-coverage.json')
  dest.write_text(json.dumps(out,indent=2)+'\n')
  print(json.dumps({k:v for k,v in out.items()if k not in['witnesses','unsupported_reasons','limitations']},indent=2))
 if __name__=='__main__':main()

@@ -1075,6 +1075,29 @@ Earlier arithmetic versions, complete phase captures and the supported-expressio
 
 The arithmetic CPU gains establish a stronger comparator, not a benefit from heterogeneous execution. The completed device qualifications have not established a useful additional gain over their matched CPU portfolios. Neither those observations nor the conditional cost models establish a general GPU impossibility bound.
 
+\subsubsection{Arithmetic counterexample screening}
+Arithmetic search failures can consume substantial time even when they
+produce no proof. Our alternative device path screens a supported arithmetic
+goal before \texttt{linarith} or \texttt{nlinarith} searches for a certificate.
+The GPU evaluates the goal and its complete supported local assumptions at
+many numeric points. The CPU reconstructs a proposed point as exact rational
+or integer values and checks every assumption and the negated goal before
+the tactic fails early. The enclosing proof can still take another branch.
+Unsupported expressions, provider errors and searches without an exact
+witness retain the native tactic.
+
+A failed candidate does not establish that its intermediate goal is false.
+We therefore distinguish actual refuted goals from unsupported contexts and
+supported goals without a witness. Finite sampling under exact equalities can
+miss counterexamples, and such misses remain unknown. The end-to-end
+comparison charges source preparation, export, point construction, transfers,
+queueing, exact checks, fallback and process retirement. We report failed
+requests and timeouts separately because finding cheap counterexamples does
+not establish savings on the expensive failures.
+\missing{Complete original miniF2F false-goal coverage and matched native
+versus GPU-screening results, including accepted-set changes, failure and
+timeout costs, fixed baseline-ranked tails and complete cold lifecycle.}
+
 Answering RQ4 at its stated scope requires the remaining workload and
 strongest-checker comparisons. RQ4 remains unanswered until measured
 complete boundaries establish a device benefit or a negative opportunity bound.

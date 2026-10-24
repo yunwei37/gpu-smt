@@ -234,3 +234,46 @@ pending. REVIEW_GATE rootselfaudit confirms no new verificationREPL,
 competitor, Agent or activebinary replacement. Next native24qualification
 still follows actual full-observation completion; compile success is not
 proof-outcome consistency or speedup.
+
+## Larger supported-goal measurement and complete-pair execution path
+
+EXPERIMENT_GATE reuses an immutable newline-complete real snapshot rather
+than starts a new proof run. It contains10325entries/1758observed sources,
+5923supportedentries/726sources and13exact witnesses in11sources.
+All11have current HTTPLeanerrors,0timeouts and0.316–5.974srequest spans.
+4996supportedentries have0float-feasible proposals, including336historical
+failure entries. This limits sampling coverage; no-witness remains unknown.
+[Full snapshot/cost result and root disposition](../../../../artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md)
+retains exactAST/points, sourceledger, diagnostic counts and same-clock joins.
+Known witnesses do not yet cover costlytimeouts. Continue the actual full
+observation, then measure complete same-candidate off/on effect.
+
+The existing native24runner now also supplies --full for7808originals, with
+untouched native off sources and prepared/screening on sources. It retains
+all resource/timeouts/outcomes and closes native children before compressing
+raw. Existing finite lifecycle supports lean-full, without a new scheduler
+or external method. These new execution paths are syntax-checked, not run.
+
+The paired analyzer actually processes priorclosed32off/observe records,
+reproducing28valid/4errors and0acceptance/statuschanges. Failure/timeout and
+baseline-ranked1%/10%grouping, native warm/cold clocks and separate provider
+lifecycle accounting are implemented. [Executed analysis and limitations](../../../../artifacts/arithmetic-counterexample-2026-10-23/screening-analysis-native32-v2/result-review.md).
+First missingpsutil controller attempt and escaped-newline analyzer failure
+are retained with corrected executions. No extra REPL or healthyrestart.
+
+WRITE_GATE updates current README/evaluation/source instructions and adds
+the own counterexample mechanism to RQ4 in docs/paper/main.tex. Complete
+coverage, accepted-set and performance result slots remain explicit.
+Tectonic0.17.0 compiles the current PDF with exit0, no undefinedreferences
+or overfullboxes reported. Existing underfull-layout warnings remain.
+[Actual compilation/memory receipt](../../../../artifacts/arithmetic-counterexample-2026-10-23/paper-check-20261024T0600/command.json).
+This is a targeted expression update, not a completed full12round WRITEloop,
+complete paper review or OSDIacceptance. Four originalRQ remain unchanged.
+
+REVIEW_GATE rootselfaudit checks immutable inputs, current-versus-historical
+clocks, exactdomain/context evaluation, all11native response joins, fixed
+same-candidate tail groups and full-offoriginalsource behavior. No new
+external replication, Agent or independentaudit is claimed. Joint monitors
+retain max2REPLs/0kills/errors. Next scientific evidence is still complete
+falsegoal/cost coverage followed by native24and complete pairedmeasurement,
+not more narrowkernel or ready-only checks.

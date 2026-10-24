@@ -1,0 +1,138 @@
+{
+  "scope": "One closed own off/on pair; fixed order, root self-review required. Acceptance means the recorded SDK status valid.",
+  "source_count": 32,
+  "off_mode": "off",
+  "on_mode": "observe",
+  "acceptance_changed_sources": [],
+  "status_changes": [],
+  "groups": {
+    "all_sources": {
+      "sources": 32,
+      "off_counts": {
+        "valid": 28,
+        "lean_error": 4
+      },
+      "on_counts": {
+        "valid": 28,
+        "lean_error": 4
+      },
+      "off_HTTP_sum_seconds": 6.401013803,
+      "on_HTTP_sum_seconds": 6.4148098110000005,
+      "off_reported_body_sum_seconds": 3.894337,
+      "on_reported_body_sum_seconds": 3.992124
+    },
+    "baseline_failed": {
+      "sources": 4,
+      "off_counts": {
+        "lean_error": 4
+      },
+      "on_counts": {
+        "lean_error": 4
+      },
+      "off_HTTP_sum_seconds": 0.444119226,
+      "on_HTTP_sum_seconds": 0.442683852,
+      "off_reported_body_sum_seconds": 0.183113,
+      "on_reported_body_sum_seconds": 0.184901
+    },
+    "baseline_timeout": {
+      "sources": 0,
+      "off_counts": {},
+      "on_counts": {},
+      "off_HTTP_sum_seconds": 0,
+      "on_HTTP_sum_seconds": 0,
+      "off_reported_body_sum_seconds": 0,
+      "on_reported_body_sum_seconds": 0
+    },
+    "baseline_slowest_1_percent": {
+      "sources": 1,
+      "off_counts": {
+        "valid": 1
+      },
+      "on_counts": {
+        "valid": 1
+      },
+      "off_HTTP_sum_seconds": 0.518184337,
+      "on_HTTP_sum_seconds": 0.514414763,
+      "off_reported_body_sum_seconds": 0.40702,
+      "on_reported_body_sum_seconds": 0.410961
+    },
+    "baseline_slowest_10_percent": {
+      "sources": 4,
+      "off_counts": {
+        "valid": 4
+      },
+      "on_counts": {
+        "valid": 4
+      },
+      "off_HTTP_sum_seconds": 2.062046619,
+      "on_HTTP_sum_seconds": 2.068875169,
+      "off_reported_body_sum_seconds": 1.697484,
+      "on_reported_body_sum_seconds": 1.739253
+    }
+  },
+  "screening": {
+    "entries": 13,
+    "supported_entries": 13,
+    "exact_refuted_entries": 0,
+    "exact_refuted_sources": [],
+    "fallback_errors": {},
+    "returned_point_recheck_failures": 0,
+    "provider_backends": {}
+  },
+  "off_warm_verify_seconds": 3.212682721,
+  "on_warm_verify_seconds": 3.21466037,
+  "warm_whole_group_ratio": 0.9993848031292961,
+  "off_native_lifecycle_seconds": 7.064458685,
+  "on_native_lifecycle_seconds": 7.102964428,
+  "native_lifecycle_ratio": 0.994578919352572,
+  "resource_point": {
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2
+  },
+  "memory": {
+    "off": {
+      "root_pid": 255140,
+      "root_birth": 1792811366.45,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 8,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8080687104,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 0,
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    },
+    "on": {
+      "root_pid": 255140,
+      "root_birth": 1792811366.45,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 8,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8111476736,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 0,
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    }
+  },
+  "limitations": [
+    "Qualification is not full benchmark evidence. No inference of acceleration if the on mode is observe.",
+    "HTTP and reported-body sums overlap across candidates: they are cumulative outcome-conditioned costs, not whole elapsed savings.",
+    "Tail cohorts are fixed by baseline HTTP time, then compared on identical IDs; timeouts and resource failures remain.",
+    "One off-first pair does not quantify run-order/host-load variance; existing captures are not rescaled.",
+    "Native cell lifecycle excludes provider creation/retirement and own input parsing; cold decomposition requires the controller receipt.",
+    "Opaque environment handles/error messages may differ; the reported accepted-set/status check is not full response equivalence."
+  ]
+}

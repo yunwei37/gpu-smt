@@ -32,7 +32,12 @@ batching, native proof equivalence or end-to-end acceleration.
 - qualify-remote-points.py checks an offline batch through the actual endpoint.
 - build-point-job.py / device-lifecycle.ps1 package and run the existing finite
   K8s route, including process exit and UID-owned cleanup.
-- qualify-screening.py is the pending own native24 off/on qualification.
+- qualify-screening.py runs the pending native24 qualification, then accepts
+  --full for an original7808off/on pair. Full off uses untouched original
+  Lean sources; on pays native parser/export preparation and GPU screening.
+- analyze-screening.py reports paired statuses/acceptance changes, failures,
+  timeouts, fixed baseline1%/10%tails and separate warm/cold cost accounting.
+  Its closed32observation replay validates analysis only, not GPU benefit.
 
 ## Resources and boundaries
 
@@ -47,7 +52,9 @@ budget failure into that REPL's original attribution directory.
 One sample in the subsecond point transaction is not a complete cold-lifecycle
 RSS peak or hard quota proof. API readiness precedes CUDA initialization.
 Kernel-only time and offline replay batches must not be called proof speedup.
-The GT/GE extractor source repair still needs its own native build/qualification.
+The GT/GE exporter is compiled in separate fresh outputs with joint memory
+monitoring. Native runtime qualification remains pending; the ongoing
+observation keeps its original frozen binaries.
 
 ## Repeat closed CPU functional checks
 
@@ -63,6 +70,23 @@ OS-assigned port, without CUDA or Lean execution:
     python bench/lean-counterexample/qualify-protocol.py --out /tmp/own-point-protocol
 
 The PowerShell lifecycle runs from the sole spark-manage controller checkout
-with the actual SourcePod, a fresh Workspace Out path and Phase points or
-lean24. Source/build/result work stays in the owning Workspace. No persistent
+with the actual SourcePod, a fresh Workspace Out path and Phase points,
+lean24 or lean-full. First review native24outcomes before running lean-full. Source/build/result work stays in the owning Workspace. No persistent
 Service, Workspace, additional schedule or Agent is created.
+
+
+## Analyze a closed own pair
+
+From the owning Workspace, run the existing capture Python with the two
+completed cell directories and a fresh result directory:
+
+    python bench/lean-counterexample/analyze-screening.py \
+      --off <run>/off --on <run>/gpu --out <run>/analysis \
+      --lifecycle <run>/lifecycle.json --preparation <run>/summary.json
+
+The lifecycle receipt is available only after actual provider retirement.
+HTTP/body sums can overlap. Whole warm-group and complete native lifecycle
+ratios are separate from cold controller accounting. The cold residual
+subtracts the measured off cell from the complete combined controller clock,
+so it includes preparation, GPU execution, controller/API work and provider
+exit. One fixed-order pair does not quantify host-load/run-order uncertainty.

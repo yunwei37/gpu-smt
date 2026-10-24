@@ -102,3 +102,27 @@ build source/products, jointPID/birth memory accounting and unchanged frozen
 observation receipt. Compilation alone does not qualify GT/GE runtime
 semantics or demonstrate native off/on equivalence/performance. Canonical
 receipt change affects future runs only. No independent reviewer is claimed.
+
+## Larger snapshot / end-to-end path / paper self-audit
+
+Root checks the immutable10325entry snapshot, all13exact witnesses/11source
+joins and zero timeout matches. Finite sampling finds nofloat-feasible
+points for4996supportedentries, so absence is not validity. Cumulative
+response tails are not an Amdahl bound or avoided time. The full observation
+and allfourRQ remain open; cheap falsegoal examples do not answer the user
+request to remove expensive failed requests.
+
+Root reviews the implemented complete pair against user instructions. It
+uses original7808untouched off sources, charges on preparation and keeps
+same resources/timeouts/allfailures. Existing32raw exercises analysis only,
+not unexecuted GPU/native integration. First two development failures are
+retained. Actual alias semantics/native24, full GPU/provider lifecycle and
+complete-pair effect remain pending. No extraAgent/baseline, timer, policy
+or fullcapture is created.
+
+Current paper's own-method paragraph scopes screening versus proof
+acceptance and leaves full result placeholders. The actual Tectonic compile
+succeeds under joint memory monitoring. Existing underfull warnings remain,
+and full12round writing refinement/independent audit were not completed.
+This is explicitly root self-review. No scope narrowing, paper acceptance or
+whole-performance claim is introduced.

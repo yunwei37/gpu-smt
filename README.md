@@ -26,6 +26,11 @@ Its complete finite cold Job lifecycle is **30.75 s**; this is offline
 functional qualification, **not end-to-end proof acceleration**.
 [Actual device data, phases, memory limits and retirement](artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
 
+A larger immutable partial snapshot finds **13 exact witnesses in 11 of
+1,758 observed candidates**. All 11 currently end in ordinary Lean errors,
+and none is a timeout. This does not establish the full false-goal fraction
+or saved wall time. [Coverage and cost limits](artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
+
 The complete original **7,808-source observation is still running**.
 Full false-goal/timeout coverage, native off/on acceptance consistency and
 end-to-end benefit remain open. The initial 32-source off/observation

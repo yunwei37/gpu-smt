@@ -1,6 +1,6 @@
 """Same-clock response tails of known exact witnesses; not saved whole time."""
 from pathlib import Path
-import collections,gzip,json,sys
+import argparse,collections,gzip,json,sys
 R=Path('/workspaces/repository');A=R/'artifacts/arithmetic-counterexample-2026-10-23'
 K=Path('/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d')
 sys.path[:0]=[str(K),str(K/'client')]
@@ -13,11 +13,16 @@ def rows(path):
    if not line.endswith('\n'):break
    if line.strip():yield json.loads(line)
 def main():
- known=json.loads((A/'partial-coverage.json').read_text())['witnesses']
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--coverage',type=Path,default=A/'partial-coverage.json')
+ parser.add_argument('--http',type=Path,default=A/'full-observe/verification/http.jsonl')
+ parser.add_argument('--out',type=Path,default=A/'current-witness-response-tails.json')
+ args=parser.parse_args()
+ known=json.loads(args.coverage.read_text())['witnesses']
  witnesses=collections.defaultdict(list)
  for x in known:witnesses[x['source_id']].append(x['entry_ns'])
  attempts=collections.defaultdict(list)
- for event in rows(A/'full-observe/verification/http.jsonl'):
+ for event in rows(args.http):
   if event.get('event')!='response':continue
   request=json.loads(event['request']);ids=[x['id']for x in request['snippets']]
   if len(ids)!=1 or ids[0]not in witnesses:continue
@@ -39,6 +44,6 @@ def main():
    'Returning a response does not prove native background threads or process cleanup are complete.',
    'Intervals can overlap; do not sum them into whole elapsed savings, CPU weights or an Amdahl bound.',
    'No response or no matched entry remains unobserved; a partial witness set is not full failure coverage.'])
- (A/'current-witness-response-tails.json').write_text(json.dumps(output,indent=2)+'\n')
+ args.out.write_text(json.dumps(output,indent=2)+'\n')
  print(json.dumps(output,indent=2))
 if __name__=='__main__':main()
