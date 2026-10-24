@@ -198,3 +198,25 @@ mechanisms. The measured4.27adaptation is not an unchanged upstream4.31
 replication. Keep the current full-population experiment and original systems
 goal; do not promote a local CPU composition into the missing systems novelty.
 No additional numerical main baseline or new acquisition is admitted.
+
+
+## 2026-10-24: arithmetic counterexample screening
+
+[Bounded primary-source review and own-experiment handoff](tmp/bootstrap/step-0011-20261023T195335-0700/literature-20261024T0630/report.md)
+covers sampling, hypothesis satisfaction, subgoal backtracking and current Lean
+refutation. Generic counterexample filtering is not our new contribution:
+[the Isabelle overview](https://isabelle.in.tum.de/~nipkow/pubs/frocos11.pdf)
+and [ACL2 testing integration](https://arxiv.org/html/1105.4394v2) establish
+the principle. [Official Lean Plausible source](https://github.com/leanprover-community/plausible/blob/fb13df72ecefd8ddbf9291021d7f33a8673eb57b/Plausible/Tactic.lean)
+already tests local goals; [formal counterexample generation](https://arxiv.org/abs/2603.19514)
+already requires Lean proofs of refutation. Our CPU rational witness checker
+does not itself produce such a Lean proof.
+
+The unresolved claim is useful complete verification savings on real expensive
+failed candidates, including all host/device/fallback/cleanup cost at equal
+resources. Current cheap witnesses do not establish that claim, and a finite
+search finding no direct GPU counterpart does not prove novelty or impossibility.
+No additional external reproduction or numerical baseline is admitted. Preserve
+the original7808observation; actual completion precedes own native24qualification
+and the complete same-candidate native/GPU pair. The source-access and incomplete
+coverage limits remain in the detailed report. AllfourRQ/Lean+SMT/OSDI goals remain.

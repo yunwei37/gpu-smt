@@ -163,3 +163,20 @@ entireInitialNarrative and Narrativeevolution exactly. The shortcurrentstate
 does not narrowthe fullgoal. Stopcriteria and newentities are notadded.
 Rootroutesbackto actualexperimentcollection/qualification, not another
 writing-onlycycle orprematuremilestoneacceptance.
+
+## Counterexample closest-work self-audit
+
+Root verifies primary ACL2 fulltext, official pinned Lean Plausible source,
+current Lean counterexample preprint and the earlier-opened Isabelle overview.
+Failed later PDF refetches/Nitpick403/overflowed output are recorded rather
+than treated as successful reads. Generic sampling/backtracking/Lean-refutation
+novelty is rejected, without narrowing the original RQs or claiming exhaustive
+GPU novelty coverage. No competitor is installed or executed.
+
+Current paper already limits the mechanism to exact-checked intermediate
+goal failures with outer alternatives/native fallback and missing full result.
+No source/PDF is changed in this node. Future result-bearing prose still owes
+the new citations. Root preserves live capture and48GiB/twoREPL resource point.
+The canonical file had unrelated dirty edits: only our appended dated section
+enters the index, with its previous working bytes preserved exactly. This is
+a self-audit; no independent reviewer or completed overall goal is claimed.

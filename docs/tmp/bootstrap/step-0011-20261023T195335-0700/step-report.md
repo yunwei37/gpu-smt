@@ -352,3 +352,21 @@ necessarywritingcycle, not repeatedcoveragepolling. Do not repeat unchanged
 writingloops or extend narrowkernels. Nextscientificnode remains the original
 fullcapture's actualterminal collection, native24devicequalification and
 whole off/on measurement.
+
+## Counterexample literature boundary while the original census runs
+
+EXPERIMENT_GATE completes a finite claim-oriented primary-source node:
+[search, verified sources, contradiction review and experiment handoff](literature-20261024T0630/report.md).
+Automatic sampling and counterexample-guided subgoal backtracking are prior
+art, including official Lean goal testing. No first-use or formal-certificate
+claim is admitted. The possible systems claim remains useful complete failed
+verification savings; current cheap witnesses and narrow kernel timings do
+not establish it. No new external reproduction/baseline or secondfullrun.
+
+WRITE_GATE checks the existing mechanism paragraph and missingresultslot;
+paper/PDF remain unchanged. The canonical literature map gains only the new
+dated node; all pre-existing foreign dirty bytes remain unstaged. REVIEW_GATE
+is root self-review, not independent audit. Full original7808observation
+PID255332/birth124305929 remains live at06:36:46Z withoutterminal. Next is
+actual closed-run collection, then own native24 and complete paired test,
+not another unchanged literary cycle or minute-by-minute wait.
