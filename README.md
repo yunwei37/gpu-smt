@@ -288,6 +288,12 @@ Current run records identify the exact retained SDK, native libraries and
 numeric binaries. The separate arithmetic source build passes64real-source functional checks;
 the historical Workspace-specific capture paths are not a universal installation recipe.
 
+The current manuscript has completed a
+[12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
+Historical controls remain in appendices, every numerical value and all four
+RQs are retained, and missing results remain explicit. The compiled draft is
+32 pages including appendices; this is not a submission-ready result.
+
 All implementation, experiments and review run in this thread. Reviews are
 **self-review**, not independent audit. Tests and measurements do not establish
 venue acceptance or submission readiness.

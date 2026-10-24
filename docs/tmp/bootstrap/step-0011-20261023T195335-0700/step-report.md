@@ -305,3 +305,50 @@ elapsed, current responses from whole-run retirement, and directCPUconstant
 evaluation from GPUwork. No independentAgent/reviewer. Next remains actual
 fullclosure/native24/fullpaired measurement; no speculative operator/hook
 expansion or second fullrun starts.
+
+## Complete serial writing self-review while the observation runs
+
+WRITE_GATE enters fulliter-refine-writing under BOOTSTRAP/unfrozen, adapting
+reviewerexecution to the user's root-only requirement. The
+[Round0entrybaseline/plan](iter-refine-writing-20261024T0615/round-0-macro-structure.md)
+is cleanpaper23d8ffd. All12serialrounds have detailed Markdown findings and
+actual separate Tectoniccompile/memory receipts. No subagent/freshindependent
+reviewer is used. System/venue scientificrequirements are not markedcomplete.
+
+Macro moves retain allselected-cohort/preflight/olderengine/device records
+verbatim in the existing appendix. MainRQ4keeps currentpopulation/matchedGPU
+results and negativeProofNetgeneralization. Setup's resource/result separation,
+coefficient-infeasibility versus goalrefutation and exactclosedCPUhandling
+are clarified. Intro/abstract roles are rebuilt without a newclaim/result.
+All51existingbibannotations arecomplete, so citationgate runs Pass3only,
+adding one existing-source citationcommand at setup. No priorVERIFIEDdate
+is rewritten to imply a freshfullnetworkverification.
+
+The [cumulativemeaning audit](iter-refine-writing-20261024T0615/round-11-meaning-preservation.md)
+finds and restores three abstractconditions shortened inRound4: preceding
+alternatives, privatebranchmutation memory and GPUafterpreparationreuse.
+One audit rerun confirms numericalvalues and allfourRQstrings unchanged,
+no citedkeyremoved, and all15missingresultslots retained. FinalPDF32pages/
+89citecommands, no undefinedreference/citation/overfullwarning, with existing
+underfullwarnings/cosmeticappendixpunctuation and no actualpagevisualrender.
+All12builds stay max2REPLs with sampledjointRSS at most33014370304bytes,
+0kills/errors. These are concurrentbuildwindows, notperformanceobservations.
+
+REVIEW_GATE rootselfaudit classifies this as completed writing work with
+no newempirical effect. Remaining scientificbarriers are actualfullcoverage,
+native24/off-on proofbehavior, complete GPUfailure/timeout/tail costs,
+systemsnovelty, fullRQevidence, pagefit and independentaudit. Milestone
+acceptance review entrycondition fails because the RQs remain unanswered.
+No claim of OSDIacceptance or fullorchestratorcompletion follows.
+
+Maintenance condenses only the olddated Currentfrontier into a lossless
+linkedarchive; completeInitialNarrative and allNarrativeevolution remain
+byte-for-byte intact. Newshortfrontier points to actualdata and nextnative
+experiment. READMElinks the currentmanuscript/selfreview. No runtime,
+resourcepoint, externalmethod, scheduler or originalcapture is changed.
+
+Efficiency disposition: use the livecapture's waitingtime for one complete
+necessarywritingcycle, not repeatedcoveragepolling. Do not repeat unchanged
+writingloops or extend narrowkernels. Nextscientificnode remains the original
+fullcapture's actualterminal collection, native24devicequalification and
+whole off/on measurement.

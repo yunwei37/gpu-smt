@@ -141,3 +141,25 @@ nativefallback. Real2349entry replay agrees with exactsemantics, without
 a provider endpoint ornetworkcall. This is not nativewhole-proof qualification
 or a reported speedup. Active code remains frozen, originalresources remain,
 and allresearchrequirements remain incomplete.
+
+## Full writing-cycle and housekeeping self-audit
+
+Root verifies all12serialroundfiles and actualcompile receipts, cumulative
+source diff, exactfourRQstrings, numerical-value multisets, originalcitedkeys
+and15unfilledresultslots. The firstcumulativepass catches shortenedabstract
+scope; three originalconditions are restored before the one rerun.
+This is not a blind orindependent audit. Scientificnovelty and fullRQanswers
+remain absent, and a32pagedraft/compile is not submissionreadiness.
+
+The actualwritingchange improves primary-versus-historical organization and
+boundary clarity without deleting negativeperformance or changing denominators.
+51completeannotatedbibliographyentries justify the skill's Pass3-onlycitation
+path; no fabricatedfreshverificationdate/source is introduced. Previousdata
+and forbiddenAgentstates remain intact. Alljointbuildwindows respectthe
+declaredresourcepoint, with no extraverificationREPL orfullacquisition.
+
+Canonicalcleanup archives oldCurrentfrontier verbatim and preserves the
+entireInitialNarrative and Narrativeevolution exactly. The shortcurrentstate
+does not narrowthe fullgoal. Stopcriteria and newentities are notadded.
+Rootroutesbackto actualexperimentcollection/qualification, not another
+writing-onlycycle orprematuremilestoneacceptance.

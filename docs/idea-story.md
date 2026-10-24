@@ -27,297 +27,40 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-### 2026-10-18 — default-reference control and actual prior-cache execution
+The user's current experiment is our own exact-checked arithmetic
+counterexample screen within RQ4. Existing external-system comparisons are
+retained and are not being extended. The original Initial Narrative, four
+RQs and Lean/SMT/OSDI-quality objective remain open and unfrozen. No surviving
+new systems contribution or useful additional GPU effect is established.
 
-The complete original1000 default-tiered/Power HTTP pair is1018.23/492.98s,
-2.065455x against that alternative reference. It does not replace the faster
-measured hybrid headline or establish global CPU optimality. All992/8
-verdicts and non-message fields match;112message-only differences remain.
+The original7,808source typed-goal observation is active on its frozen
+source/worker, with the current48GiBaggregate/max2REPLs/24GiBeach resource
+contract. The completed RTX5090 offline474entry qualification finds the same
+two exact witnesses as CPU and retires its provider/context/Job. It is
+functional hardware evidence, not nativeproof equivalence or acceleration.
+The larger immutable prefix finds13witness entries in11sources, all ordinary
+Lean errors. Of19currently returned timeouts,13have no arithmetic entry,
+five have unsupported entries and one has supported entries. The main
+uncertainty is cost coverage of false goals, not point-kernel throughput.
+[Actual data and current interpretation](evaluation.md#current-own-method-frontier).
 
-The actual upstream SHRED closing executor qualifies on the original first32,
-and its HTTP integration preserves every verdict on miniF2F50/ProofNet68.
-Opaque env/messages differ; about7s preparation makes these tiny batches
-slower. The user-requested complete existing-method HTTP comparison now runs
-all5952ProofNet and7808miniF2F twice, with all preprocessing/fallback charged.
-This is prior-method evidence, not a new cache contribution. Original
-Initial Narrative, all4RQs, Lean/SMT scope and systems-novelty target remain.
-[Default control](../artifacts/linarith-oracle-2026-10-17/kimina-http/reference-engine/full1000-result-review.md);
-[SHRED baseline](../artifacts/linarith-oracle-2026-10-17/shred-closing/README.md).
+A separate alias build is compiled for future native qualification, and the
+future worker evaluates supported closed arithmetic once onCPU. Native24and
+complete same-candidate off/on measurement remain pending. The current
+observer and raw/failed data are preserved. Root alone implements and reviews;
+no independent audit is claimed. The sole current manuscript is
+[docs/paper](paper/main.tex). The
+[12-round writing self-review](tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md)
+preserves every numerical value, allfourRQ and missingresultslots. Scientific
+evidence and submission readiness are not supplied by writing.
 
-
-### 2026-10-18 — complete different-prover HTTP transfer
-
-All 438 official DSV2 proof outputs finish three alternating native/Power
-pairs through official Kimina HTTP: aggregate whole 1264.966/1194.906 s,
-1.058632x (5.54% less elapsed). All six cells retain 263 valid/175 Lean errors,
-matching verdict/non-message fields and one warning-only source difference.
-The modest transfer does not generalize the selected Goedel 1.70059x to all
-proofs. Tasks overlap miniF2F; no GPU or new systems mechanism is established.
-The separate Goedel HTTP first block is 857.11/534.48 s native/Power;
-its original three-block matrix and full populations continue.
-[Complete DSV2 result](../artifacts/linarith-oracle-2026-10-17/kimina-dsv2/result-review.md).
-Initial Narrative, all four RQs, Lean/SMT scope and OSDI target remain unchanged.
-
-
-### 2026-10-18 — reduced-diagnostic criterion and full-population evaluation
-The corrected original1000 native/direct pair is810.71/476.73s,1.70059x,
-with992complete8reject and matching verdict/non-message fields. It uses
-CPU8--11/observeroff and is not pooled with earlier instrumented4--7blocks.
-This meets the user's selected-cohort continuation criterion, without proving
-whole-Goedel speed, globalCPUoptimality, GPU gain or new systems contribution.
-The same frozen implementation's complete29750source matrix and unchanged
-formal populations are now acquiring. The earlier29750writer stays distinct.
-[Current result and scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md);
-[whole-population protocol](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-full29750/plan.md).
-InitialNarrative/all4RQs/Lean+SMT/OSDItarget remain unchanged.
-
-
-### 2026-10-18 — full natural-power comparison closes
-One original1000block,8queues/4CPU4--7/48GiB/officialomega:
-adaptedcompiledFast/hybrid629.48s,native+ourdual475.81s,olddirect404.97s,
-Power350.68s. Ratios1.79502/1.35681/1.15481usedistinctreferences.
-All992complete8reject0op,0verdict/nonmessage differences;warning/observer
-differencesretained. Thetotalisnotallpowerextensionandnotastable/globalCPU/
-GPU/OSDIcontributionclaim. All4RQs/InitialNarrativeremain. Original29750build
-doesnotgeneralizethenewimplementation. [Fulldata](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/full1000-result-review.md).
-
-
-### 2026-10-18 — representation mechanism produces a real preflight gain
-Literal natural-power export replaces opaque-power atoms before untrusted
-polynomial search, retaining native Lean certificate checking. All111affected
-originals: olddirect63.96s/new41.30s,1.54886x; native component59.27s,
-all109complete2reject0op, noverdict/nonmessagechanges,6Powerwarningchanges.
-Numericalraces593→176, notdevicebenefit. This selectedsubset doesnot satisfy
-thefull1000criterion. The completeoriginal1000Power/direct/native-dual/stock-native
-normal block is nowrunning, with equal8queues/4CPU4--7/48GiB/officialomega.
-[Source, fulladmission and exactevidence](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-export/README.md).
-
-
-### 2026-10-18 — original ProofNet prefix population closes
-All5952originals/186candidateblocks complete. Nativebatch1127.28s,
-exact2502.01s/unit2479.03s; unit3853cachelookups,9716executednodes.
-All413native-complete survive, but4batch-incomplete becomecomplete and
-operationaltransitions/censoredCPU precludeavalidatedspeedratio.
-No prefixwriterwaitingremains. This is actualnegativeevidenceforcurrentexecutor,
-notanupstreamwholeSHRED/KiminaservicecomparisonorwholeRQclosure.
-[CompleteProofNet evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/proofnet/result-review.md).
-
-
-### 2026-10-18 — cancelled work and current conditional budget
-The current common-omega component diagnostic closes all1000 originals:
-475.97s native/406.46s direct,992complete8reject in each. PID-specificwait4
-retains cancelled CPU. Perfect numerical-work removal gives a conditional
-1.46068x capacity bound against this already-oracle-containing native control;
-deleting all Lean product proofs too gives1.53960x. Same-IR checked-negative
-fallback products tighten that favorable model to1.51182x, still above1.5.
-This does not close GPU or redefine the original whole-system reference.
-Next work targets representation/fallback and proof-producing preprocessing,
-not another narrow LP kernel. All4RQs and InitialNarrative remain open.
-[Reproducible full accounting](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/strong-omega-cost/full1000-result-review.md).
-
-
-### 2026-10-18 — complete miniF2F prefix evidence
-The unchanged original7808-source unit-prefix capture closes:3711cachehits,
-40943.77s versus28673.00s nativebatch. Exactprefix hasonly7hits/41738.63s.
-All2992native-complete sources staycomplete, but batch319versusprefix326
-operational outcomes preclude a validated speedratio. Cachehits alone have
-not delivered useful whole-validation benefit. ProofNetcontinues; this is
-our SHRED-parser-based executor, not a fullupstreamservice benchmark.
-[Completeclosedunit evidence](../artifacts/linarith-oracle-2026-10-17/formal-default/minif2f/unit-result-review.md).
-
-
-### 2026-10-18 — actual ready-goal GPU qualification
-Argument-faithful batches expose1050immutable problems on15originals.
-Freshnative116.99s/CPU79.93s/CPU+GPU79.59s:all56racesretainnative+HiGHS,
-but noGPUanswerwins. Actual2groups/3devicemodels include across-candidate
-batch, allretired. One0.42%elapseddifference is not demonstratedGPUbenefit.
-The firststale-librarycomposition wasinvalidandretained; defaultprivate
-Cargo rebuild plusfreshpair suppliesactualvalidruntimeevidence.
-[Closedqualification](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/additive-device/result-review.md).
-No newfullGPUmatrix orsmallvariantgrid; broaderopportunity/exclusion,
-systemsnovelty andstrongfullworkloadcomparisons remainopen.
-
-### 2026-10-18 — current residual and native arithmetic pressure
-The complete current-build1000 diagnostic retains all13230/10251native/oracle
-numerical requests and matched native-ranked tails. Direct numeric search in
-the native slowest1% sums only1.20s; wider fixed-path zero-envelope sensitivities
-remain above1.5 and are not strict GPU bounds.
-[Complete current accounting](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/current-dual-phase-profile/full1000-result-review.md).
-
-A real10-source control uses stock Lean omega on bare discrete goals, preserving
-all8originalrejects and complete responses. Native+same-dualbackend54.49s becomes
-25.62s, with328nativecheckedgoals; direct+omega is25.76s. This is existing
-algorithmic capability and preflight only, not new contribution. The complete1000 block gives454.82s native+omega,388.17s direct+omega,
-and450.99s direct-off. Direct versus common-omega native is1.172x, not1.5x.
-All992complete/8reject outcomes agree; this stronger control narrows the claim.
-[Source/preflight](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-omega-control/README.md).
-The Initial Narrative, all4RQs and broad Lean/SMT/system/GPU objectives remain;
-none is closed by a selected preflight or ordinary native arithmetic gain.
-
-The ready-goal CPU adapter actually submits two512-problem groups and checks
-1024 certificates, but12-source whole time is98.96/98.47s and no parsed external
-large LP joins those groups. Useful GPU supply must be demonstrated on actual
-large nonlinear inputs, not inferred from arithmetic problem counts.
-[Interface qualification](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/ready-goal-batch/result-review.md).
-
-
-### 2026-10-18 — arithmetic evidence and unresolved system novelty
-
-Request-sized VMM now qualifies actual independent GPU groups under48GiB.
-The final-drain64 run executes20groups/36models with complete device samples
-and no live allocations, but43.069316s still loses to fresh CPU37.779115s.
-The GPU composition had replaced CPU HiGHS instead of retaining it as a
-contender. The corrected real control preserves both native hybrid and HiGHS while
-adding GPU: CPU38.022010s versus CPU+GPU39.326832s on the same64sources, identical
-full responses. HiGHS46/native21/GPU1exact-negative selections show CPU dominance.
-There is no full admission, kernel/allocator grid or systems-novelty claim. Source and results remain
-[scoped](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/request-sized-vmm/final-drain/result-review.md).
-
-A later source-native queue-control preflight finds no promotion-worthy benefit:
-same binary/body/eight workers, static54.811967s versusFIFO58.321468s on the
-original first64, identical full native responses. Its full matrix is rejected.
-This does not prove static scheduling globally optimal. Analysis of the current
-third CPU-oracle acquisition finds only9.250981s summed parsed external HiGHS
-search, while complete races include exact work and overlap. Fixed-lane deletion
-of all recorded races models1.53475x versus that pair's native reference; missing
-current product/small-LP regions and changed scheduling prevent a strict GPU
-ceiling. No GPU route closure follows. Existing full29,750 acquisition stays
-frozen and active.
-[Source/control](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/native-queue-control/result-review.md);
-[current numeric scope](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-third/current-race-budget-review.md).
-
-
-Three complete frozen two-sided CPU-oracle pairs use the upstream native
-eight-queue interface. Native/oracle whole clocks are681.243557/453.509810s,
-687.263047/447.309270s and691.359191/464.579050s. Ratios1.50216x,1.53644x
-and1.48814x include a subthreshold observation. The predeclared aggregate
-ratio2059.865795/1365.398131=1.50862x meets the local arithmetic-heavy-cohort
-continuation criterion, not a confidence/globalworkload/systemnoveltyclaim.
-All1,000sourceverdicts/non-messageJSONfields agree inallpairs,992/8/0,
-with104message-onlydifferences. Native tiered/HiGHSfirst64controls are slower
-than hybrid in their matched block; no global solver ranking follows.
-The complete native-frontend/same-dual-backend ablation is518.504231s versus
-AST464.579050s, only1.11607xadditionalfrontendgain(10.40%lowerelapsed).
-Backendengineeringexplainssubstantialtotalgain. ActualnativeFarkasdaemon
-ancestryandall1000nativeverdict/non-messageparityareverified. Thefull
-29,750original-sourcecomponentblockisadmittedafter24-sourceI/Opreflight,
-notanewsolver/kernelgrid.
-[Complete first and reversed data](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/two-sided-oracle/full1000-result-review.md).
-
-Real5090device-batched simplex executes with per-model cancellation and
-exact positive/negative certificate validation. In the matched32candidate/
-four-CPU64source trial, CPU39.662808/GPU45.022186s,ten actual2–4modelgroups.
-Retained records expose up to8.91s proxy head-of-line delay despite individual
-results. Root implemented independent in-flight groups, but stream-ordered
-allocation qualification failsunder48GiB (31OOMreturns/zeroGPUkernels).
-That private candidate is not promoted. This is not a GPU-route impossibility
-result; no full unprofitable GPU matrix or allocator/tuning grid is running.
-[Pipeline diagnosis](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/candidate-capacity32/device-pipeline-review.md);
-[failed implementation retained](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/async-device-progress/result-review.md).
-
-The completed same-interface all-call diagnostic has its own native691.204649/
-CPUoracle545.050104s clocks. Deleting a411.683390s occupied numeric interval
-union gives an intentionally optimistic fixed-timeline5.18274x sensitivity;
-it is not a scheduler-independent bound or a basis for below1.5x closure.
-Older wave8 GPU ratios and answer-aware omission clocks remain historical,
-scoped evidence. The omission control is complete and excluded from legitimate
-CPU/GPU continuation scores; it cannot be transferred to a different interface.
-
-The [primary-source review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261018T1036/report.md)
-rejects first-external-oracle, first-dual-certificate and first-batched-LP
-primitive claims. Established Farkas/exactLPchecking and ICPE2019GPUbatching
-cover those primitives. A differentiated systems result beyond strong native,
-CPU, cache and snapshot alternatives remains unproven. This current evidence
-preserves the complete Initial Narrative, allfourRQs,Lean/SMTscope andOSDItarget;
-it neither replaces the service-state thesis with solver substitution nor
-marks anyRQclosed. All execution/review is by this root thread; noAgent/OMP.
-
-
-BOOTSTRAP step0010 remains unfrozen and all four RQs remain open. The complete
-Initial Narrative and accepted evolution below are preserved. Completed evidence
-and interface checkpoints are now published on main, under the
-user's explicit request to stop withholding completed work until the whole
-research effort finishes. Publication is not an independent-review verdict,
-a final RQ answer or an OSDI acceptance claim.
-
-The current heartbeat requires the root to implement, execute, analyze and
-write directly, without delegation or native-session resume. Earlier OMP outputs
-and the original stopped Codex author session remain retained. The user cancels
-model recovery and all OMP/Codex subagents. All work and critical rechecks run in
-this thread; root self-review is not called independent audit. Prior genuinely
-independent reports keep their original scope and attribution.
-
-Completed negative implementations stay closed. Complete native6 ProofNet
-device comparisons, shared-process placement and repaired SMT prefix branching
-do not demonstrate their claimed acceleration. Their
-[published negative disposition](tmp/bootstrap/step-0010-20261014T133154+0000/negative-routes-disposition-20261015.md)
-retains the measurements and scope rather than continuing small variants.
-The original Lean/SMT/service/device research ambition is unchanged.
-
-Native compilation, native arithmetic and invocation-local product reuse supply
-competent CPU controls. They are not the proposed systems novelty. Completed
-CPU cells and per-input rows are now
-[published](tmp/bootstrap/step-0010-20261014T133154+0000/completed-cpu-cells-20261016/README.md);
-unfinished original acquisitions remain running without additional tuning grids.
-Their exact current results belong in evaluation, not this narrative.
-
-E033 completes all29,750 native sources and publishes its original capture,
-345 thread observations and analysis. Entry metavariable flags do not establish
-independent work or GPU coverage. E034's native batch interface builds and
-matches two accepted/rejected native fallback smoke cases, with provider
-unlinked and no device engagement. The
-[existing-data opportunity analysis](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-034/performance-ceiling-and-admission.md)
-distinguishes inclusive35% defeq CPU,23.16% argument-comparison CPU and a separate
-23.61% observer descriptor. Conditional1.067–1.090x calculations are sensitivity
-scenarios, not rigorous end-to-end bounds. The root suspends narrow GPU-backend
-implementation pending a credible independent-work and complete-cost opportunity.
-
-A new [source/cohort admission review](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T0845/report.md)
-finds one actual import header across all29,750Goedel attempts; native logs
-partition them into29,690 started-worker reuses and60 header preparations.
-The mini cohort has7,790 matching imported headers and18 empty headers.
-Counts do not establish saved cost. Generic multi-context eviction/placement
-cannot be a measured new contribution on a single-root cohort; existing
-Kimina, native snapshots and AXLE already establish the individual mechanisms.
-
-The four recovered serial generator-output segments cover all13,760 original
-ProofNet/miniF2F attempts, but official submission consumes a finished batch.
-These are not measured verifier arrivals or multi-producer feedback traffic.
-Preparation expense, equal-resource complete service frontiers, native artifact/
-history/cancellation behavior and strongest compatible competitors remain
-load-bearing evidence requirements. Existing services, caches and snapshots
-already provide the individual reuse mechanisms; no surviving novel system
-contribution has yet been demonstrated. Ordinary CPU gains cannot fill that gap.
-
-Healthy acquisitions do not justify goal turns that only poll row counts.
-Advance substantive mainline work and collect each original acquisition on
-completion. The complete paper, causal ablations, limitations and current-thread
-step/paper self-audits remain unfinished. No independent audit is claimed
-under the user's current prohibition of all other executors. The
-[step report](tmp/bootstrap/step-0010-20261014T133154+0000/step-report.md),
-[implementation](implementation.md) and [evaluation](evaluation.md) own detailed
-evidence. The previous frontier is preserved in
-[the dated archive](tmp/bootstrap/step-0010-20261014T133154+0000/idea-frontier-before-published-checkpoints-20261016.md).
-This is a status and admission update; it changes no accepted thesis, RQ meaning,
-scope or evaluation promise.
-
-
-A fresh independent plan review closes the proposed standalone reached-argument
-CPU census before execution: its missing fraction alone would not admit a
-concrete independent algorithm or a differentiated system. [E035 disposition](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-035/disposition.md)
-preserves the uncertainty rather than inventing a negative cost bound.
-The [formal Arena protocol/source assessment](tmp/bootstrap/step-0010-20261014T133154+0000/literature-20261016T1025/report.md)
-identifies complete post-export declaration checking as a candidate device
-boundary with strong already-parallel CPU competitors. No algorithm, backend,
-new performance result or novel contribution is admitted by that observation.
-It neither transfers to source-verification clocks nor replaces the original
-Lean/SMT service and four-RQ evidence requirements.
-
-The [2026-10-16 full manuscript checkpoint](tmp/bootstrap/step-0010-20261014T133154+0000/iter-refine-writing-20261016T1745/round-11-meaning-preservation.md) integrates the published evidence and actual native-runtime alternative into the current paper. Process and runtime constructors, measured and finite-only versions, and strongest compatible baselines remain distinct. The full writing cycle and source-preservation audit do not establish new systems novelty, close an RQ or change this scientific contract. Current detailed data remain in [evaluation](evaluation.md).
-
-The complete [E039 paid-preparation characterization](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-039/result.md) now measures actual request-driven import preparation on all5952ProofNet candidates×3 and reuses complete SMT phase costs. Observed import preparation is modest after competent reuse at this exact boundary; hits/header recurrence cannot establish expensive work saved. This is supporting RQ1 evidence, not a new scientific contract, a full-wall/GPU bound, complete RQ answer or reason to reopen closed fork variants. Broader contexts, strong native frontier and differentiated contribution remain open.
-
-The complete [E040reclamation setup](tmp/bootstrap/step-0010-20261014T133154+0000/experiment-040/result.md) closes this concrete host constructor without a device port: prospective paid support improves, but complete overhead and expensive step-limit failures remain adverse. This is a dependency decision, not a new scientific claim or RQanswer; all native checks remain and independent audit is missing. Do not turn same-capacity GC into systems novelty or another tuning grid.
+The next decisive action is to collect the existing full observation at
+actual completion, qualify our native24device path, and measure whole
+off/on failure/timeout/tail costs. Do not restart healthy acquisition or
+extend oldcompetitors/narrowkernels to create activity. The complete dated
+frontier that preceded this condensation is retained
+[verbatim](tmp/bootstrap/step-0011-20261023T195335-0700/idea-frontier-through-20261024T0630.md.gz);
+its pending statements describe their original dates, not current live state.
 
 ## Narrative evolution
 
