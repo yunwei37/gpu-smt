@@ -577,3 +577,18 @@ Fulloffusesuntouchedoriginals; onpaysownpreparation/export/provider/exact/
 fallback/cleanup. Fixedoff-firstorder/hostloadvariance remain limitations.
 No externalmethod expansion, newnarrowqualifier, independentaudit or GPU
 benefit is claimed. The fullpair is now the concrete next execution.
+
+
+## Complete own7808pair launched after closed preflight
+The existing finite lifecycle now runs native-gpu-full-20261024T0913, actual
+rootPID262956/birthticks126449727. Nativeoff has already returned49original
+candidate responses at the launch check. Max2REPLs and per-second joint
+RSS samples (includingtheprovider) are active; no secondfullgroup exists.
+The nativeoffcell uses untouchedoriginalsources; GPUon followsserially.
+[Launch provenance](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/launch.json)
+is runtime evidence, not a result or research-control contract.
+Source/build are frozeninrun. Localcontrolsession3748owns the finite
+provider lifecycle; preserve it until client completion and provider/context/
+exactUIDJobretirement. No completepairedoutcome or speedup is claimed yet.
+Censusboundaryb0368f3 and preflightboundaryc818f37 both pushedtoorigin/main.
+Do not restart this healthycapture or minute-poll it in goalturns.
