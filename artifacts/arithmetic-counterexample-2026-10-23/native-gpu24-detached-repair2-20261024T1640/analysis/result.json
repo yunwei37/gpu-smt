@@ -1,0 +1,239 @@
+{
+  "scope": "One closed own off/on pair; fixed order, root self-review required. Acceptance means the recorded SDK status valid.",
+  "source_count": 24,
+  "off_mode": "off",
+  "on_mode": "gpu",
+  "acceptance_changed_sources": [],
+  "status_changes": [],
+  "groups": {
+    "all_sources": {
+      "sources": 24,
+      "off_counts": {
+        "lean_error": 5,
+        "valid": 19
+      },
+      "on_counts": {
+        "lean_error": 5,
+        "valid": 19
+      },
+      "off_HTTP_sum_seconds": 8.853551056,
+      "on_HTTP_sum_seconds": 8.560045874,
+      "off_reported_body_sum_seconds": 7.021934,
+      "on_reported_body_sum_seconds": 6.856038
+    },
+    "baseline_failed": {
+      "sources": 5,
+      "off_counts": {
+        "lean_error": 5
+      },
+      "on_counts": {
+        "lean_error": 5
+      },
+      "off_HTTP_sum_seconds": 4.7159169499999996,
+      "on_HTTP_sum_seconds": 4.4128270380000005,
+      "off_reported_body_sum_seconds": 4.402223,
+      "on_reported_body_sum_seconds": 4.1341280000000005
+    },
+    "baseline_timeout": {
+      "sources": 0,
+      "off_counts": {},
+      "on_counts": {},
+      "off_HTTP_sum_seconds": 0,
+      "on_HTTP_sum_seconds": 0,
+      "off_reported_body_sum_seconds": 0,
+      "on_reported_body_sum_seconds": 0
+    },
+    "baseline_slowest_1_percent": {
+      "sources": 1,
+      "off_counts": {
+        "lean_error": 1
+      },
+      "on_counts": {
+        "lean_error": 1
+      },
+      "off_HTTP_sum_seconds": 3.661610894,
+      "on_HTTP_sum_seconds": 2.947779993,
+      "off_reported_body_sum_seconds": 3.542774,
+      "on_reported_body_sum_seconds": 2.868196
+    },
+    "baseline_slowest_10_percent": {
+      "sources": 3,
+      "off_counts": {
+        "lean_error": 2,
+        "valid": 1
+      },
+      "on_counts": {
+        "lean_error": 2,
+        "valid": 1
+      },
+      "off_HTTP_sum_seconds": 4.900984891,
+      "on_HTTP_sum_seconds": 4.596160638000001,
+      "off_reported_body_sum_seconds": 4.658099,
+      "on_reported_body_sum_seconds": 4.390277
+    }
+  },
+  "screening": {
+    "entries": 18,
+    "cpu_closed_entries": 0,
+    "supported_entries": 17,
+    "exact_refuted_entries": 2,
+    "exact_refuted_sources": [
+      "minif2f-379",
+      "minif2f-802"
+    ],
+    "fallback_errors": {},
+    "returned_point_recheck_failures": 0,
+    "provider_backends": {
+      "device": 17
+    }
+  },
+  "off_warm_verify_seconds": 4.452784686,
+  "on_warm_verify_seconds": 4.330936878,
+  "warm_whole_group_ratio": 1.028134283974203,
+  "off_native_lifecycle_seconds": 8.429092185,
+  "on_native_lifecycle_seconds": 8.57676063,
+  "native_lifecycle_ratio": 0.9827827251604199,
+  "resource_point": {
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2
+  },
+  "memory": {
+    "off": {
+      "root_pid": 266606,
+      "root_birth": 1792859093.11,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 9,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8152788992,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 31256576,
+      "included_owned_roots": [
+        {
+          "pid": 266606,
+          "birth": 1792859093.11,
+          "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/off"
+        }
+      ],
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    },
+    "on": {
+      "root_pid": 266606,
+      "root_birth": 1792859093.11,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 9,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8345407488,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 171630592,
+      "included_owned_roots": [
+        {
+          "pid": 266606,
+          "birth": 1792859093.11,
+          "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/gpu"
+        }
+      ],
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    }
+  },
+  "limitations": [
+    "Qualification is not full benchmark evidence. No inference of acceleration if the on mode is observe.",
+    "HTTP and reported-body sums overlap across candidates: they are cumulative outcome-conditioned costs, not whole elapsed savings.",
+    "Tail cohorts are fixed by baseline HTTP time, then compared on identical IDs; timeouts and resource failures remain.",
+    "One off-first pair does not quantify run-order/host-load variance; existing captures are not rescaled.",
+    "Native cell lifecycle excludes provider creation/retirement and own input parsing; cold decomposition requires the controller receipt.",
+    "Opaque environment handles/error messages may differ; the reported accepted-set/status check is not full response equivalence."
+  ],
+  "provider_lifecycle": {
+    "providerExit": 0,
+    "sourcePodUID": "c2392a42-e9ff-4b4c-941f-63c6d929728b",
+    "cleanupErrors": [],
+    "reusedOff": "",
+    "utc": "2026-10-24T16:25:34.4490015Z",
+    "clientWrapperSeconds": 27.350046299999995,
+    "sourceNode": "lab",
+    "clientTerminalVerified": true,
+    "jobUID": "1965bf10-b0da-4c22-93df-14de53cadc9f",
+    "startupToAPIReadySeconds": 8.9681987,
+    "ownJobRemains": false,
+    "podUID": "f46c01ab-3cfe-47c8-9f4c-05ca48b172b4",
+    "retirementSeconds": 15.039061000000004,
+    "pod": "gpu-smt-cuopt-20261017-flwcx",
+    "clientExit": 0,
+    "scope": "Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract",
+    "providerReady": {
+      "event": "ready",
+      "backend": "device",
+      "pid": 1,
+      "port": 5001,
+      "device": null,
+      "cuda_initialized": false,
+      "provider_setup_ns": 1532786,
+      "owned_memory": {
+        "ready": true,
+        "root_pid": 1,
+        "root_start_ticks": 129045698,
+        "rss_bytes": 31256576,
+        "processes": [
+          {
+            "pid": 1,
+            "ppid": 0,
+            "start_ticks": 129045698,
+            "rss_bytes": 31256576
+          }
+        ],
+        "time_ns": 1290457197423150,
+        "affinity": [
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    },
+    "sourcePod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+    "clientLaunch": {
+      "pid": 266606,
+      "start_ticks": 129046511,
+      "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640",
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "/workspaces/repository/bench/lean-counterexample/qualify-screening.py",
+        "--host",
+        "10.42.1.171",
+        "--backend",
+        "device",
+        "--out",
+        "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640"
+      ]
+    },
+    "phase": "lean24",
+    "completeColdLifecycleSeconds": 51.3588659,
+    "workerStream": false
+  },
+  "cold_time_accounting": {
+    "combined_pair_controller_seconds": 51.3588659,
+    "provider_creation_to_API_seconds": 8.9681987,
+    "provider_retirement_seconds": 15.039061000000004,
+    "shared_input_preparation_seconds": 7.274122054921463,
+    "native_with_own_preparation_seconds": 15.703214239921463,
+    "on_controller_residual_seconds": 42.929773714999996,
+    "reused_off_directory": null,
+    "native_original_lifecycle_seconds": 8.429092185,
+    "native_over_on_cold_ratio": 0.19634606604168542,
+    "note": "Controller residual removes the measured native off cell from the combined pair clock; it includes input preparation, GPU path, API/controller overhead and provider retirement. It is an explicit cold accounting convention, not an isolated second run."
+  }
+}

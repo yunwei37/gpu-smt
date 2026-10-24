@@ -471,3 +471,15 @@ no false return or providerRPC;2333contexts contain a false hypothesis and
 16have true hypotheses/true goal. This avoids identical numeric point copies,
 not native proof work or a new solver. Frozen full observation remains on its
 old source; complete native24/off-on qualification is still pending.
+
+
+### Finite counterexample experiment lifecycle recovery
+The owning Workspace starts the finite native/GPU client once, retains its
+PID/birth and durable stdout/exit, and treats transport loss as lost
+observation. Repeated startup calls return that client; provider cleanup waits
+for its confirmed exit. This replaces the failed long-SSH foreground path.
+The algorithm, CUDA provider and 48GiB joint guard are unchanged.
+After a failed GPU cell, device-lifecycle.ps1 -Phase lean-full -ReuseOff
+accepts the closed original nativeoff path and reruns every GPU candidate.
+It does not splice partial sources or rerun a healthy completed baseline.
+[Real recovery qualification](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/result-review.md).

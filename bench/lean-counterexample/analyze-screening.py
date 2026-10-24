@@ -80,15 +80,21 @@ def main():
   life=json.loads(args.lifecycle.read_text())
   if life['clientExit']!=0 or life['providerExit']!=0 or life['ownJobRemains']or life['cleanupErrors']:
    raise RuntimeError('Provider lifecycle incomplete; preserve raw before comparison')
-  prep=json.loads(args.preparation.read_text())['preparation_seconds']if args.preparation else None
+  preparation=json.loads(args.preparation.read_text())if args.preparation else {}
+  prep=preparation.get('preparation_seconds')
+  reused_off=bool(preparation.get('reused_off_directory'))
+  on_cold=life['completeColdLifecycleSeconds']if reused_off else life['completeColdLifecycleSeconds']-off['whole_lifecycle_seconds']
   output['provider_lifecycle']=life
   output['cold_time_accounting']=dict(
    combined_pair_controller_seconds=life['completeColdLifecycleSeconds'],
    provider_creation_to_API_seconds=life['startupToAPIReadySeconds'],provider_retirement_seconds=life['retirementSeconds'],
    shared_input_preparation_seconds=prep,
-   native_with_own_preparation_seconds=off['whole_lifecycle_seconds']+prep if prep is not None else None,
-   on_controller_residual_seconds=life['completeColdLifecycleSeconds']-off['whole_lifecycle_seconds'],
-   note='Controller residual removes the measured native off cell from the combined pair clock; it includes input preparation, GPU path, API/controller overhead and provider retirement. It is an explicit cold accounting convention, not an isolated second run.')
+   native_with_own_preparation_seconds=off['whole_lifecycle_seconds']+prep if prep is not None and not reused_off else None,
+   on_controller_residual_seconds=on_cold,
+   reused_off_directory=preparation.get('reused_off_directory'),
+   native_original_lifecycle_seconds=off['whole_lifecycle_seconds'],
+   native_over_on_cold_ratio=elapsed(off['whole_lifecycle_seconds'],on_cold),
+   note=('GPU-only repair lifecycle includes all new provider/input/validation/retirement costs; native baseline is the unchanged closed prior cell. The failed first GPU attempt is retained separately, never spliced.'if reused_off else'Controller residual removes the measured native off cell from the combined pair clock; it includes input preparation, GPU path, API/controller overhead and provider retirement. It is an explicit cold accounting convention, not an isolated second run.'))
  with(args.out/'paired-sources.csv').open('w',newline='')as f:
   w=csv.DictWriter(f,fieldnames=['source_id','off_status','on_status','off_HTTP_seconds','on_HTTP_seconds'],lineterminator='\n');w.writeheader()
   for sid in a:w.writerow(dict(source_id=sid,off_status=a[sid]['status'],on_status=b[sid]['status'],off_HTTP_seconds=ta[sid],on_HTTP_seconds=tb[sid]))

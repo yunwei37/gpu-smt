@@ -1,0 +1,67 @@
+{
+  "providerExit": 0,
+  "sourcePodUID": "c2392a42-e9ff-4b4c-941f-63c6d929728b",
+  "cleanupErrors": [],
+  "reusedOff": "",
+  "utc": "2026-10-24T16:25:34.4490015Z",
+  "clientWrapperSeconds": 27.350046299999995,
+  "sourceNode": "lab",
+  "clientTerminalVerified": true,
+  "jobUID": "1965bf10-b0da-4c22-93df-14de53cadc9f",
+  "startupToAPIReadySeconds": 8.9681987,
+  "ownJobRemains": false,
+  "podUID": "f46c01ab-3cfe-47c8-9f4c-05ca48b172b4",
+  "retirementSeconds": 15.039061000000004,
+  "pod": "gpu-smt-cuopt-20261017-flwcx",
+  "clientExit": 0,
+  "scope": "Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract",
+  "providerReady": {
+    "event": "ready",
+    "backend": "device",
+    "pid": 1,
+    "port": 5001,
+    "device": null,
+    "cuda_initialized": false,
+    "provider_setup_ns": 1532786,
+    "owned_memory": {
+      "ready": true,
+      "root_pid": 1,
+      "root_start_ticks": 129045698,
+      "rss_bytes": 31256576,
+      "processes": [
+        {
+          "pid": 1,
+          "ppid": 0,
+          "start_ticks": 129045698,
+          "rss_bytes": 31256576
+        }
+      ],
+      "time_ns": 1290457197423150,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "sourcePod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+  "clientLaunch": {
+    "pid": 266606,
+    "start_ticks": 129046511,
+    "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640",
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "/workspaces/repository/bench/lean-counterexample/qualify-screening.py",
+      "--host",
+      "10.42.1.171",
+      "--backend",
+      "device",
+      "--out",
+      "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640"
+    ]
+  },
+  "phase": "lean24",
+  "completeColdLifecycleSeconds": 51.3588659,
+  "workerStream": false
+}

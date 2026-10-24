@@ -626,3 +626,19 @@ failure inpaper/no prematureGPUclosure. REVIEW_GATE rootselfreview
 preserves raw/partial/resource outcomes and admits only the existing lifecycle
 repair, real24check and completeGPU-only rerun against unchanged completed
 nativeoff. All4RQ/goal/resources/algorithm/input remainunchanged.
+
+
+## Actual lifecycle repair qualified, unchanged fullbaseline reusable
+EXPERIMENT_GATE repairs demonstrated observer-loss/replay cleanup defect in
+existing device-lifecycle/qualify-screening/analyze-screening only.
+[Real24transportqualification and retained encodingfailure](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/result-review.md)
+has actual19valid/5Leanerrorsunchanged,17deviceRPCs/2witnesses,
+samePID/birth onreplayedstartup, durableexit0, allnative/provider/Jobretired.
+Pre-dispatch single-quote argumentfailure isretained; no client was launched,
+itsownprovider exited0 andwasdeleted. Base64 encoding fixes that transport
+compatibility defect. No independentaudit or fullreliabilityclaim.
+WRITE_GATE documents runtimebehavior/commands, not paperexperimentalresults.
+REVIEW_GATE rootselfreview keeps algorithm/workloads/resourcepoint unchanged.
+Admit only completeGPUfromzero against the alreadycompleted unchanged
+native7808baseline; originalpartialGPUdata isneverspliced or discarded.
+Coldaccounting distinguishes GPU-only receipt from combinedpair clock.

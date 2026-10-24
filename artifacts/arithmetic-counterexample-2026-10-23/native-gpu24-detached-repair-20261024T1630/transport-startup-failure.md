@@ -1,0 +1,2 @@
+# Pre-dispatch transport failure
+The local owning kubectl entrypoint rejected an argument containing single quotes before dispatch. No client output, launch receipt or matching native process existed at direct verification. The conservative lifecycle retained its owned provider; root verifies this absence and gracefully retires that exact Job. Initial cause is command encoding, not GPU/Lean behavior. Repaired launch/poll snippets use the existing base64 transport pattern. No validation results are invented.
