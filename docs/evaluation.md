@@ -17,6 +17,16 @@ retain gates, failed routes and scope.
 
 ## Current own-method frontier
 
+[Original-statement interpretation of the13known witnesses](../artifacts/arithmetic-counterexample-2026-10-23/witness-origins-20261024T0715/result-review.md)
+finds11candidate sources but5underlying tasks. None of these points refutes
+its original theorem:10satisfy its assumptions/conclusion,3fail an original
+existential premise after context weakening. They refute current proof
+obligations instead. All11are ordinaryLeanerrors with0timeouts and0.316–5.974s
+currentHTTPspans; cumulative21.557s is not removed walltime. This is supporting
+source interpretation of fixed partial positives, not completeprevalence,
+nativeoff/on qualification or a GPUimpossibility bound.
+
+
 The [actual worker-stream qualifier](../artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md)
 now exercises474retained entries through two persistent worker subprocesses:
 84CPUclosed/390actual5090requests,2matching exact witnesses/0invalidpoints/errors.

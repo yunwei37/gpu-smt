@@ -458,3 +458,27 @@ REVIEW_GATE rootselfaudit checks primaryclaimalignment, unchangedscientific
 contract, numbers/missingdata, archiveequivalence and localentrylinks.
 No independentaudit, newfullwritingcycle, completecoverage or GPUbenefit is
 claimed. Return to the active full experiment, not further citation-onlywork.
+
+## Source meaning of the known false-goal witnesses
+
+EXPERIMENT_GATE reuses all13exact positives in the immutable snapshot and their
+11original sources, not another native/device capture. [Actual analysis/raw](../../../../artifacts/arithmetic-counterexample-2026-10-23/witness-origins-20261024T0715/result-review.md)
+finds5underlying tasks,9wrongauxiliaryequalities/3introducedbounds/1original
+conclusion underweakenedcontext. Ten testedpoints satisfy originalassumptions
+andconclusion;3fail anoriginalexistentialpremise. None refutes its original
+theorem. Native2323error output corroborates hx/ht:True and sequential
+erroneous obligations. All11sources are ordinaryLeanerrors/no timeout with
+0.316–5.974sresponse spans;21.557scumulative is not removed wholewall.
+
+This is supporting RQ4characterization: a finitehit count concerns incorrect
+proofsteps across5tasks, not11false originaltheorems or expensive timeout
+savings. It is not universaltheoremproof or fullprevalence. Exactoriginal
+equations are manuallyencoded fromretainedsource and clearlylabelled, not a
+general semanticparser or independentproof. Originalcapture remains live at
+07:15UTC withsamePID/birth/no terminal. Jointanalysis addsnoREPL, sampled
+10.009GB/max2REPLs/0kills/errors.
+
+WRITE_GATE updates current README/evaluation scope without inserting partial
+numbers into finalpaper results. REVIEW_GATE is rootselfaudit only. Root
+retains the approved completecensus/native24/fullpair and allfourRQ, rather
+than expands operators/grids or claims a generalGPUnegative.

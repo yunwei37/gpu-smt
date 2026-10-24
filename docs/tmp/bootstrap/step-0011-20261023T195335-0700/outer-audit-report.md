@@ -232,3 +232,20 @@ keeps headlinepositive/negative outcomes and links complete historicalraw.
 Checkedlocaltargets resolve. Dailyreflection returns execution to the missing
 whole-flow experiment and rejects more narrowqualification loops. No other
 session's dirtyfiles, originalcapture, resourcecontract or scheduler is changed.
+
+## Known-witness origin self-audit
+
+Root compares the13captured exactpoints with all11retained originalsources
+and five manuallyencoded theoremstatements, including exactNat subtraction/
+domain checks and the existential square-condition failure. Capturedgoal
+refutation is rechecked separately. Tenpoints satisfy originalconclusion;
+3fail originalpremises. This supports nonebeing a counterexample to the
+originaltheorem at thatpoint, not a universalproof of originaltheoremtruth.
+
+The native2323response confirms hx/ht:True and laterobligations following
+arithmeticerrors. Three samecandidateentries are not three independent
+requests; sourcecost is chargedonce. Current21.557scumulativeHTTP is not
+wholeelapsed/Amdahl and no timeout is included. The finitepartialpositives
+are not a representative failurepopulation or a completedGPU comparison.
+No otherAgent, newbenchmark, REPL or device operation is used; allreviewis
+self-review. Originaloverallgoal and decisivefullpair stay open.

@@ -1,0 +1,34 @@
+{
+  "scope": "Complete interpretation of13already-found witnesses in a fixed partial snapshot, not a complete7808prevalence or performance result.",
+  "witness_entries": 13,
+  "witness_sources": 11,
+  "theorem_families": 5,
+  "source_family_counts": {
+    "mathd_algebra_33": 1,
+    "mathd_numbertheory_430": 5,
+    "mathd_algebra_137": 1,
+    "mathd_numbertheory_5": 1,
+    "amc12b_2002_p7": 3
+  },
+  "entry_origin_counts": {
+    "wrong_auxiliary_equality": 9,
+    "unnecessarily_strict_bound": 1,
+    "unsupported_derived_lower_bound": 2,
+    "original_conclusion_with_weakened_context": 1
+  },
+  "original_assumptions_and_conclusion_true_entries": 10,
+  "original_assumptions_false_entries": 3,
+  "witnesses_refuting_original_statement": 0,
+  "source_HTTP_sum_seconds": 21.557487377,
+  "source_HTTP_min_seconds": 0.315583888,
+  "source_HTTP_max_seconds": 5.973943029,
+  "timeout_sources": 0,
+  "limitations": [
+    "The classification covers only the already-detected finite-sampling positives, not all failures or all false goals.",
+    "Ten checked points satisfy the original assumptions and conclusion; three fail an original existential premise. This does not prove the original theorem universally.",
+    "The original statement equations are read directly from the retained source and manually encoded in this analysis; they are not a general Lean semantic parser or a native proof.",
+    "No exact counterexample to a current proof obligation is a license to reject every proof of the original theorem.",
+    "Per-source HTTP spans are charged once, even when a candidate has multiple witnesses. Their sum can overlap and is not avoided wall time.",
+    "Some proof entries occur after Lean error recovery; native off/on acceptance and complete timing still require the planned paired run."
+  ]
+}

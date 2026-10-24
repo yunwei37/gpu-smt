@@ -1,0 +1,45 @@
+{
+  "id": "minif2f-2323",
+  "time": 0.784397,
+  "response": {
+    "env": 12,
+    "messages": [
+      {
+        "severity": "error",
+        "pos": {
+          "line": 36,
+          "column": 31
+        },
+        "endPos": {
+          "line": 36,
+          "column": 40
+        },
+        "data": "linarith failed to find a contradiction\ncase a\nn : \u2115\nh\u2080 : 10 \u2264 n\nx t : \u2115\nhx ht : True\na\u271d : 4 > x\n\u22a2 False\nfailed"
+      },
+      {
+        "severity": "error",
+        "pos": {
+          "line": 39,
+          "column": 31
+        },
+        "endPos": {
+          "line": 39,
+          "column": 63
+        },
+        "data": "linarith failed to find a contradiction\ncase a\nn : \u2115\nh\u2080 : 10 \u2264 n\nx t : \u2115\nhx ht : True\nthis : 4 \u2264 x\na\u271d : 4 > t\n\u22a2 False\nfailed"
+      },
+      {
+        "severity": "error",
+        "pos": {
+          "line": 41,
+          "column": 29
+        },
+        "endPos": {
+          "line": 41,
+          "column": 61
+        },
+        "data": "linarith failed to find a contradiction\ncase intro.intro.a\nn : \u2115\nh\u2080 : 10 \u2264 n\nx t : \u2115\nhx ht : True\nthis\u271d : 4 \u2264 x\nthis : 4 \u2264 t\na\u271d : 64 > n\n\u22a2 False\nfailed"
+      }
+    ]
+  }
+}

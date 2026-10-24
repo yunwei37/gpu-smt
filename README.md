@@ -25,6 +25,10 @@ preserves 28 complete and four rejected outcomes.
 A fixed partial snapshot finds **13 exact witnesses in 11 of 1,758 observed
 candidates**. All 11 end in ordinary Lean errors, none in a timeout. This
 does not establish the full false-goal fraction or saved wall time.
+The known witnesses refute current proof obligations rather than their
+original theorem statements; the11sources cover5underlying tasks.
+[Original-source interpretation](artifacts/arithmetic-counterexample-2026-10-23/witness-origins-20261024T0715/result-review.md).
+
 [Coverage and cost limits](artifacts/arithmetic-counterexample-2026-10-23/coverage-snapshot-20261024T0543/result-review.md).
 
 Actual RTX 5090 qualification processes 474 retained goals with the same two
