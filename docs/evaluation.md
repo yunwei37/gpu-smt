@@ -228,3 +228,15 @@ for555, not causaldevicewin counts.488actualmodels are allsingletons, with
 kernelretirement;505decodedinputs provide5source-ownedarrivals during prior
 retirement, while192undecodedconnections remainunknown. No strictceiling follows.
 [Complete matrix, allraw/source CSV, costs and self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
+
+
+## Current user-directed arithmetic counterexample measurement
+Furtherexternal-methodreproduction/integration is stopped byuserdecision.
+Existingcomparisonsremain. [Own-method plan](../artifacts/arithmetic-counterexample-2026-10-23/plan.md)
+tests GPUproposed/CPUexactchecked counterexamples at actualarithmeticgoals,
+with nativefallback and all48GiBresourceconstraints. ExistingfullminiF2F
+census4793non-complete/7808sources consumes87.660953%of cumulativeHTTPenvelopes,
+not wholewall.51of71timeouts mentionarithmetic;2024printactual linarithfailure.
+These are notfalse-goalcounts. [All-source costs and limits](../artifacts/arithmetic-counterexample-2026-10-23/failure-cost-review.md).
+Nextnative-extraction measurement must separateexactwitness/no-witness/
+unsupported and preserveacceptedcandidate/tacticalternative behavior.

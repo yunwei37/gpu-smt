@@ -1,0 +1,103 @@
+{
+  "dataset": "All7808originalminiF2Fcandidates",
+  "baseline_source": "Existing closed native capture, no new external-system replication.",
+  "groups": {
+    "all": {
+      "sources": 7808,
+      "statuses": {
+        "valid": 3015,
+        "lean_error": 4675,
+        "timeout_error": 71,
+        "resource_failure": 47
+      },
+      "reported_body_sum_seconds": 32604.072362,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 37807.130760871,
+      "missing_HTTP_seconds": 0
+    },
+    "failed": {
+      "sources": 4793,
+      "statuses": {
+        "lean_error": 4675,
+        "timeout_error": 71,
+        "resource_failure": 47
+      },
+      "reported_body_sum_seconds": 28173.861156,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 33142.090987557,
+      "missing_HTTP_seconds": 0
+    },
+    "accepted": {
+      "sources": 3015,
+      "statuses": {
+        "valid": 3015
+      },
+      "reported_body_sum_seconds": 4430.211206,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 4665.039773314,
+      "missing_HTTP_seconds": 0
+    },
+    "timeout": {
+      "sources": 71,
+      "statuses": {
+        "timeout_error": 71
+      },
+      "reported_body_sum_seconds": 21300.0,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 21351.629652192998,
+      "missing_HTTP_seconds": 0
+    },
+    "resource_failure": {
+      "sources": 47,
+      "statuses": {
+        "resource_failure": 47
+      },
+      "reported_body_sum_seconds": 0.0,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 4399.389497672,
+      "missing_HTTP_seconds": 0
+    },
+    "failed_source_mentions_arithmetic": {
+      "sources": 2867,
+      "statuses": {
+        "lean_error": 2804,
+        "resource_failure": 12,
+        "timeout_error": 51
+      },
+      "reported_body_sum_seconds": 20569.316683,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 22610.584902981,
+      "missing_HTTP_seconds": 0
+    },
+    "timeout_source_mentions_arithmetic": {
+      "sources": 51,
+      "statuses": {
+        "timeout_error": 51
+      },
+      "reported_body_sum_seconds": 15300.0,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 15344.974159821,
+      "missing_HTTP_seconds": 0
+    },
+    "printed_linarith_failure": {
+      "sources": 2024,
+      "statuses": {
+        "lean_error": 2024
+      },
+      "reported_body_sum_seconds": 4515.801064,
+      "missing_body_seconds": 0,
+      "recorded_HTTP_sum_seconds": 4762.64130661,
+      "missing_HTTP_seconds": 0
+    }
+  },
+  "failed_fraction_reported_body": 0.86412092462525,
+  "failed_fraction_HTTP": 0.8766095263134291,
+  "counterexample_confirmed_sources": null,
+  "limitations": [
+    "Accumulated request spans overlap, not additive cohort whole wall or CPU.",
+    "Textual arithmetic mentions include comments and unexecuted branches; not observed tactic entries.",
+    "A printed linarith failure/false goal does not mean a satisfiable context or a false theorem.",
+    "Absent exact goal witnesses are unknown, never zero counterexample opportunities.",
+    "SDK resource failures report body0 bookkeeping; their actual request costs are not zero."
+  ]
+}

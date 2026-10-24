@@ -405,3 +405,18 @@ TheoneGPUdiscovered-capacitypoolrepairalsoreturns31OOMs,nowpinnedto
 cudaMemPoolCreatebeforeLPbuffers;zeroactualkernels. Nofurtherallocator
 parametergridorfullGPUcapturefromthiscandidate;oldlegacybackendpreserved,
 overallGPUroute/hourlygoalnotclosed.
+
+
+### 2026-10-23 local — user-directed false-arithmetic-goal screening
+The user stops further external-method reproductions/integrations and directs
+our method toward exact-checked counterexamples before costly arithmetic
+search. Retain all existing comparisons. GPU proposes points; CPU rational/
+integer checks must satisfy the complete supported context and refute the
+actualgoal. No witness/unsupported cases follow native. This is a new RQ4
+mechanism experiment, not a claim that failedproofs are falsestatements or
+that priorCPU/GPU results prove thisdirection. CurrentfullminiF2Fcensus
+identifies87.66%of accumulatedrequestenvelopes on non-complete sources,
+with51arithmetic-mentioned300stimeouts; actualfalse-goalcoverage isunknown.
+The completeInitialNarrative/all4RQs and Lean+SMT/OSDIgoal stayintact, with
+futureeffort focused on our method rather than expanding competitors.
+[Plan and evidence](../artifacts/arithmetic-counterexample-2026-10-23/plan.md).
