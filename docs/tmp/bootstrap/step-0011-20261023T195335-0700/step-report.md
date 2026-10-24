@@ -198,3 +198,26 @@ WRITE_GATE scopes these operational facts, no GPU or wholeperformance result.
 REVIEW_GATE rootselfaudit preserves allRQ and the single fullcapture, admits
 only the actual short devicepoint check next, and retains its coexecution
 window rather than call the ongoing observation a clean performance run.
+
+## Actual RTX5090 point qualification — completed functional boundary
+
+EXPERIMENT_GATE executes the own fixed kernel on actualRTX5090. All474offline
+entries return with the same2exact witnesses, no missing/invalid points or
+provider errors. ActualCUDAinit441.207ms/pack186.075ms/deviceIO+kernel9.342ms/
+exactcheck227.307ms gives864.007msproviderbatch; synchronizedlaunch/sync is
+only0.649ms. Complete coldJoblife30.746s includes startup/client/retirement,
+not a proofspeedup. Sharedtimings must not be summed over474responses.
+[Result and allraw](../../../../artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
+
+Jointsampling seesoriginalNative2REPLs/24GiBeach/11,894,378,496bytes/0kills/
+errors, but onlyone sample in the subsecond transaction; it doesnotestablish
+a complete coldRSSpeak. CUDAcontextcloses, provider exits0, sameUIDJob is
+absent andcleanupErrors empty. OriginalPID/birth remainslive. Record this
+shortcoexecution window as diagnostic, not isolatedbaselineperformance.
+
+WRITE_GATE distills currentREADME/evaluation/implementation to actualhardware
+functional facts, preserving allolderdata and fixedRQ. REVIEW_GATE rootselfaudit
+admits functionalqualification only: no nativeoff/on acceptance consistency,
+complete falsegoalcoverage, onlinebatching, criticalpathbound orOSDIclaim.
+Next inner nodes remain fullcoverage/cost collection, separateGT/GEbuild and
+ownnative24qualification before a clean fullpairedmeasurement.

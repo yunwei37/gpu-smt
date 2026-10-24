@@ -1,0 +1,49 @@
+{
+  "sourceNode": "lab",
+  "sourcePodUID": "c2392a42-e9ff-4b4c-941f-63c6d929728b",
+  "utc": "2026-10-24T04:57:08.5391415Z",
+  "cleanupErrors": [],
+  "sourcePod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+  "clientExit": 0,
+  "scope": "Own finite qualification; CUDA initializes on first monitored batch; no online speedup claim; joint48GiB contract",
+  "startupToAPIReadySeconds": 10.256035,
+  "completeColdLifecycleSeconds": 30.7461915,
+  "clientWrapperSeconds": 3.4717338999999985,
+  "pod": "gpu-smt-cuopt-20261017-mn4m6",
+  "providerReady": {
+    "event": "ready",
+    "backend": "device",
+    "pid": 1,
+    "port": 5001,
+    "device": null,
+    "cuda_initialized": false,
+    "provider_setup_ns": 844591,
+    "owned_memory": {
+      "ready": true,
+      "root_pid": 1,
+      "root_start_ticks": 124917279,
+      "rss_bytes": 31023104,
+      "processes": [
+        {
+          "pid": 1,
+          "ppid": 0,
+          "start_ticks": 124917279,
+          "rss_bytes": 31023104
+        }
+      ],
+      "time_ns": 1249173112306330,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "retirementSeconds": 17.015871699999998,
+  "podUID": "b72e0394-53a5-471c-a2de-70dc572a01a8",
+  "ownJobRemains": false,
+  "jobUID": "a4079a40-4178-4cda-a0f9-9e6d22afd21f",
+  "phase": "points",
+  "providerExit": 0
+}

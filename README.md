@@ -14,30 +14,25 @@ answers are still open.
 
 ## Current work: arithmetic counterexamples
 
-Following the latest user decision, existing SHRED, Kimina and Farkas
-comparisons are retained; no further reproduction or integration is planned.
-Our next method samples arithmetic assignments on RTX5090, verifies proposed
-counterexamples exactly on CPU, and rejects only the current false arithmetic
-tactic before native search. Unsupported goals or no exact witness retain
-the native path. Enclosing proof alternatives must still run.
+Existing SHRED, Kimina and Farkas comparisons are retained; no further
+reproduction or integration is planned. Our own method proposes arithmetic
+counterexamples on RTX5090, checks them exactly on CPU, and fails only the
+current false arithmetic tactic. Unsupported contexts or no exact witness
+retain native execution and enclosing proof alternatives.
 
-The own goal exporter, native syntax wrapper and exact checker are implemented.
-A qualification on 32 real candidates with the hook off or observing preserves
-all 28 complete and four rejected outcomes; its 13 arithmetic entries yield
-no witness in 4,096 points. The complete original 7,808-source **observation**
-is running under the budget
-below. Full false-goal coverage, GPU implementation and end-to-end benefit
-are **not established**. The first partial observation contains two
-CPU-exact-checked false intermediate goals, both associated with cheap
-historically failed requests; no timeout benefit is observed yet.
-[First witnesses and limits](artifacts/arithmetic-counterexample-2026-10-23/first-witness-review.md).
-The batched point-evaluator prototype now compiles for RTX5090. A CPU-side
-check on 474 captured entries has identical proposal masks and recovers both
-exact witnesses; device execution and Lean integration remain pending.
-[Prototype source and qualification scope](bench/lean-counterexample/README.md).
+The real GPU point qualifier returns all **474 captured entries** and the
+same **two CPU-exact-checked witnesses**, with no invalid returned points.
+Its complete finite cold Job lifecycle is **30.75 s**; this is offline
+functional qualification, **not end-to-end proof acceleration**.
+[Actual device data, phases, memory limits and retirement](artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
+
+The complete original **7,808-source observation is still running**.
+Full false-goal/timeout coverage, native off/on acceptance consistency and
+end-to-end benefit remain open. The initial 32-source off/observation
+qualification preserves 28 complete and four rejected results.
 [Plan](artifacts/arithmetic-counterexample-2026-10-23/plan.md),
-[qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
-and [current measurement limits](artifacts/arithmetic-counterexample-2026-10-23/goal-measurement-review.md).
+[Lean qualification](artifacts/arithmetic-counterexample-2026-10-23/qualification-review.md)
+and [source](bench/lean-counterexample/README.md).
 
 ## Current collection resources
 
@@ -56,7 +51,7 @@ become kernel unknown-constant errors after cache hits. This integration has
 neither an outcome-preserving speedup nor a new systems contribution.
 [Complete paired results, all failures and resource evidence](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
 
-## Current result: complete Goedel population
+## Completed Goedel population comparison
 
 All **29,750 originals** return in each of three alternating pairs through the
 official Kimina HTTP/SDK path. Native/CPU oracle whole times are
@@ -70,7 +65,7 @@ REPLs, with sampled total RSS at most 21.17 GiB, no watchdog kill/error and no
 owned survivor. **This is CPU-only and does not establish a GPU upper bound.**
 [Full raw results, outcome changes, tails, memory and self-review](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
 
-## Current matched heavy-cohort comparison
+## Completed heavy-cohort comparison
 
 The same current resource point completes all original1,000 heavy candidates:
 
@@ -93,7 +88,7 @@ race wins and no cross-source multi-model batch. Complete failures, same-native
 ranked tails, source-level regressions and aggregate memory are retained.
 [Complete matched data, protocol and self-review](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
 
-## Current GPU opportunity
+## Retained LP measurements
 
 The complete same-clock native diagnostic on the original1,000heavy inputs
 finds39.94s in floating LP solves versus951.85s in1,636exact fallbacks,

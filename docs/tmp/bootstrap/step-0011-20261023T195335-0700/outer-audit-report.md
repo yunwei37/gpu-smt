@@ -84,3 +84,13 @@ a root implementation restriction, not a user requirement; it is removed while
 native24/full serialization remains. CUDA lazy initialization places large
 allocation after monitoring starts and keeps setup charged. Device evidence
 is still pending; source/CPU results alone are not a GPU result.
+
+## Actual hardware point result self-audit
+
+Root reads actual device initialization, synchronizedkernel/transfer/free
+events, all474source/entry outcomes, exactpoints and realprocess/context/Job
+retirement. CPUreference is not substituted fordevice. Correctness shown is
+functional exact-witness agreement, not rawGPUmask/wholeproof equivalence.
+One RSSsample/shortcoexecution andcold/controllerclocks are scoped honestly.
+No extraREPL/fullgroup, otherWorkspaceaction, independentAgent/audit or
+performanceclaim. The fullresearch objective and4RQremain incomplete.

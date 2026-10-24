@@ -420,48 +420,30 @@ HiGHS and alloutcomes, but produces7singletoncancelledmodels/noactualoverlap/
 noGPUwins, so nofullvariant is admitted. [Source, failedsetup, allraw and
 self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/admission-async-20261024/result-review.md).
 
-## Own arithmetic counterexample observation
+## Own arithmetic counterexample screening
 
-Our Lean4.9 wrapper exports actual tactic goals and complete supported
-ordinary propositional contexts, including type/domain constraints and lets.
-A native parser wraps only original arithmetic tactic syntax spans. Only
-Lean's recursion-placeholder auxDecl is excluded and explicitly logged;
-unsupported assumptions/opaque terms cause full native fallback.
+The native syntax wrapper exports actual tactic goals and complete supported
+ordinary contexts, including types/domains and lets. Only the native recursive
+placeholder auxDecl is excluded/logged. Unsupported expressions keep native
+fallback. The frozen original7808source observer is still running; current
+GT/GE source extensions are not silently attributed to that old build.
 
-The frozen first observation and closed32qualification use the exact source
-under [arithmetic counterexample artifacts](../artifacts/arithmetic-counterexample-2026-10-23/).
-The current source adds GT/GE comparison-alias coverage, but that repair
-awaits compilation/qualification after the active run retires. Do not mix
-its promised coverage with the frozen capture.
+The fixed CUDA stack interpreter now executes on RTX5090: an offline474entry
+qualification yields the same2exact witnesses without invalid points/errors.
+GPU masks only propose points. Provider-host CPU checking and the worker's
+own exact context recheck precede any arithmetic-tactic failure; enclosing
+native alternatives must remain available.
+[Actual hardware/phase/resource/retirement evidence](../artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
 
-The CPU vectorized point proposer is measurement tooling, not a GPU result.
-Exact rational/integer reconstruction checks all assumptions and a false
-goal. Failure affects one tactic; native surrounding alternatives remain.
-No false-goal coverage or unchanged final acceptance set is inferred from
-compilation or an ordinary failed proof.
+CUDA initializes only at the first monitored batch. The existing watchdog can
+include a retained owned root by PID/start identity and adds owned provider
+RSS, preserving48GiBtotal/max2actualREPLs/24GiBeach. Source attribution for any
+real budget kill stays in that REPL's original activity directory. The active
+observer's already-loaded code and worker are not replaced.
 
-The own batched CUDA point evaluator is now implemented and compiled for
-RTX5090. It interprets packed arithmetic programs across point/goal dimensions
-and returns floating proposal masks. CPU bytecode qualification on474real
-entries matches the nested evaluator and recovers both exact witnesses.
-This has not run on a GPU and is not yet connected to the Lean worker.
-[Source and actual qualification](../bench/lean-counterexample/README.md).
-
-The finite point-provider/worker RPC path is implemented. The provider's host
-CPU checks numeric hints and the standard-library worker independently checks
-the returned rational point/context and ownership before tactic failure.
-Actual CPU-reference socket qualification confirms two witnesses, one
-nonrefuted correct goal, closed-endpoint fallback and child retirement.
-Provider hostRSS/birth/backend/affinity connects to the existing aggregate
-watchdog through an optional capture callback. It does not select the old LP
-GPU mode. Native off/on replay and real device execution remain pending.
-[Protocol, original records and limitations](../artifacts/arithmetic-counterexample-2026-10-23/point-protocol-review.md).
-
-The point endpoint now supports one explicit offline batch in addition to
-individual live requests. A real474-entry CPU-reference RPC batch preserves
-all source/entry mappings and the same two exact witnesses; it does not
-establish online batching. The real device Job/lifecycle package is prepared
-with process-exit and UID ownership checks, but has not been applied.
-Known-witness positions can now be joined to current same-clock HTTP response
-tails; these instrumented tails are not proven saved work or whole-lifecycle
-cost. [Boundary and evidence](../artifacts/arithmetic-counterexample-2026-10-23/batch-and-device-preparation-review.md).
+The finite same-UID device Job stops its API/work, closes its context, exits,
+and is deleted through the existing lifecycle. The recorded cold window
+includes controller overhead; its RSS is only sampled during the client
+window and must not be called a complete cold peak. Full native acceptance/
+fallback/backtracking and end-to-end benefit remain unverified.
+[Source and retained qualifications](../bench/lean-counterexample/README.md).

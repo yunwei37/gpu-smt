@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open requirements
 
-Updated2026-10-22UTC (2026-10-21America/Los_Angeles). The original four RQs,
+Updated2026-10-24UTC for the new point qualifier; older captures retain their own dates. The original four RQs,
 Lean-first/SMT/RTX5090 and OSDI-quality target remain open. This root thread
 performs all work and self-review; no independent audit is claimed.
 
@@ -14,6 +14,22 @@ its dated pending statements are historical. Original older evidence remains
 [Step](tmp/bootstrap/step-0010-20261014T133154+0000/step-report.md) and
 [outer self-audit](tmp/bootstrap/step-0010-20261014T133154+0000/outer-audit-report.md)
 retain gates, failed routes and scope.
+
+## Current own-method frontier
+
+The actual RTX5090 point qualifier returns all474retained arithmetic entries,
+with the same2CPU-exact witnesses and no invalid returned points/errors.
+The complete finite cold lifecycle is30.746s; no native proof pair runs here,
+so this is functional hardware evidence, not proof acceleration or RQ4closure.
+The one-second joint monitor sees2actual24GiBREPLs/0kills/errors; its one
+sample is not a complete cold-lifecycle RSS peak. Actual context closure,
+process exit0 and UID-owned Job absence are recorded.
+[Full functional result and raw evidence](../artifacts/arithmetic-counterexample-2026-10-23/gpu-point-qualification-1/result-review.md).
+
+The complete own7808source goal observation remains active, with the original
+PID/birth and frozen source. Full false-goal/cost/timeout coverage and native
+off/on outcomes are pending. No further external-system reproduction starts.
+[Current step and root self-audit](tmp/bootstrap/step-0011-20261023T195335-0700/step-report.md).
 
 ## Fixed research questions
 
