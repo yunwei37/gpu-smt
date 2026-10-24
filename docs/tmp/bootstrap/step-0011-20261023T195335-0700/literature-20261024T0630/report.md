@@ -1,6 +1,6 @@
 # Counterexample-screening closest-work and experiment disposition
 
-Root-only literature node, 2026-10-24T06:30–06:44 UTC. Parent: step0011
+Root-only literature node, 2026-10-24T06:30–06:39 UTC. Parent: step0011
 EXPERIMENT_GATE / RQ4; source entry main3d083d3. This is a bounded search and
 self-review, not a new proof run, external-system reproduction, independent
 audit, completed RQ, or new performance result.
