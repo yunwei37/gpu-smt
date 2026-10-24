@@ -94,3 +94,11 @@ functional exact-witness agreement, not rawGPUmask/wholeproof equivalence.
 One RSSsample/shortcoexecution andcold/controllerclocks are scoped honestly.
 No extraREPL/fullgroup, otherWorkspaceaction, independentAgent/audit or
 performanceclaim. The fullresearch objective and4RQremain incomplete.
+
+## Comparison-alias build self-audit
+
+Root verifies the actual three exit0commands, separate output path, retained
+build source/products, jointPID/birth memory accounting and unchanged frozen
+observation receipt. Compilation alone does not qualify GT/GE runtime
+semantics or demonstrate native off/on equivalence/performance. Canonical
+receipt change affects future runs only. No independent reviewer is claimed.

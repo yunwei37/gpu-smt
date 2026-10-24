@@ -221,3 +221,16 @@ admits functionalqualification only: no nativeoff/on acceptance consistency,
 complete falsegoalcoverage, onlinebatching, criticalpathbound orOSDIclaim.
 Next inner nodes remain fullcoverage/cost collection, separateGT/GEbuild and
 ownnative24qualification before a clean fullpairedmeasurement.
+
+## Separate comparison-alias build boundary
+
+EXPERIMENT_GATE builds the already-committed nativeGT/GE operand-order repair
+in fresh private outputs. Both Lean modules and native linking exit0.
+The canonical receipt selects future runs only; the active observation's old
+source/worker/binaries remain frozen. Joint compiler/capture sampling observes
+two actualREPLs,11.910GiBpeak and0kills/errors. [Build evidence and self-review](../../../../artifacts/arithmetic-counterexample-2026-10-23/alias-next-build/result-review.md).
+WRITE_GATE keeps runtime qualification and whole-flow benefits explicitly
+pending. REVIEW_GATE rootselfaudit confirms no new verificationREPL,
+competitor, Agent or activebinary replacement. Next native24qualification
+still follows actual full-observation completion; compile success is not
+proof-outcome consistency or speedup.

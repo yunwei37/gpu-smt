@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-o",
+      "Counterexample.olean",
+      "-c",
+      "Counterexample.c",
+      "Counterexample.lean"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-o",
+      "Prepare.olean",
+      "-c",
+      "Prepare.c",
+      "Prepare.lean"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "-o",
+      "libCounterexample.so",
+      "Counterexample.c",
+      "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+      "-Wl,--no-as-needed",
+      "-l:libMathlib-Tactic-Linarith-1.so"
+    ],
+    "exit": 0
+  }
+]
