@@ -547,3 +547,19 @@ checks capturedpremises/domains/exactcompletefeasibleset, actualnativeSDK
 statuses and sameclockentry/requestjoins. No independentproof/audit,
 globalGPUclosure, newfactorizationbaseline or samplingvariant is admitted.
 The fullcensus/native24/completepair remains the next decisive work.
+
+
+## Complete census boundary and actual next experiment
+EXPERIMENT_GATE resumes the user-directed RQ4 experiment, rereads verbatim
+user instructions and resolved author questions, and collects the original
+7808capture only after terminalcomplete, childretirement and rawarchive.
+[Full result review](../../../../artifacts/arithmetic-counterexample-2026-10-23/full-coverage-analysis-20261024T0907/result-review.md)
+supplies complete failed/timeout/resource/tail partitions and all source IDs.
+30exactwitnessentries/25failedsources, zero78timeouts, contradict the
+first-recipe heavy-failure prediction. No point-kernel speed or strict
+Amdahl/globalGPUclosure follows. No new external baseline is admitted.
+WRITE_GATE adds the completed diagnostic facts and limitations to Evaluation,
+README and currentpaper, retaining all originalRQ and missingpairedresult.
+REVIEW_GATE is rootselfreview: denominator/currentclocks/exactcontext/
+rawfailures/resources/childretirement checked; no independent audit claimed.
+The already-admitted native24/fullpair follows, not more sampling variants.

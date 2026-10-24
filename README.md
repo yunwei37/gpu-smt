@@ -141,3 +141,5 @@ it is not submission-ready.
 All implementation, experiments and review run in this thread. Reviews are
 **self-review**, not independent audit. Tests, measurements and a compiled
 paper do not establish venue acceptance.
+
+Complete7808 own-goal census now finds exact witnesses in25of4903failed requests, none of78timeouts; their cumulative HTTPcost is only33.435s. This is applicability evidence, not measured GPU savings. [Full result and next native/GPU pair](artifacts/arithmetic-counterexample-2026-10-23/full-coverage-analysis-20261024T0907/result-review.md).

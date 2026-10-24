@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-24T03:09:26.449488+00:00",
+  "build": "/tmp/gpu-smt-counterexample-20261023",
+  "sdk": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "lean_path": "/tmp/gpu-smt-counterexample-20261023:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Cli/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib",
+  "library": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-o",
+        "Counterexample.olean",
+        "-c",
+        "Counterexample.c",
+        "Counterexample.lean"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-o",
+        "Prepare.olean",
+        "-c",
+        "Prepare.c",
+        "Prepare.lean"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O3",
+        "-shared",
+        "-fPIC",
+        "-o",
+        "libCounterexample.so",
+        "Counterexample.c",
+        "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+        "-Wl,--no-as-needed",
+        "-l:libMathlib-Tactic-Linarith-1.so"
+      ],
+      "exit": 0
+    }
+  ]
+}

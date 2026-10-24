@@ -311,3 +311,18 @@ not wholewall.51of71timeouts mentionarithmetic;2024printactual linarithfailure.
 These are notfalse-goalcounts. [All-source costs and limits](../artifacts/arithmetic-counterexample-2026-10-23/failure-cost-review.md).
 Nextnative-extraction measurement must separateexactwitness/no-witness/
 unsupported and preserveacceptedcandidate/tacticalternative behavior.
+
+
+## Complete own7808 arithmetic-goal census,2026-10-24UTC
+[Closed census and self-review](../artifacts/arithmetic-counterexample-2026-10-23/full-coverage-analysis-20261024T0907/result-review.md)
+reports15372entries/3701sources;8407supportedentries/1485sources.
+Fixed4096-point seed0 proposals plus exact checks refute30intermediate goals
+in25sources, allLeanerrors, out of4903failed requests. Their current overlapping
+HTTPsums33.435316s/35613.993576s (0.093883%) do not establish savedwalltime.
+Zero of78timeouts and zero observation-ranked slowest1% have a witness.
+No-witness/unsupported/unobserved remain unknown. All7808returned:
+2905SDKvalid/4782Leanerror/78timeout/43resourcefailure.
+Whole20903.803838s including input preparation; peak46.648457GiB/max2,
+0watchdogerrors/kills, allchildrenretired; source24GiBeach/48total/CPUs8–11.
+This census challenges first-recipe applicability to expensive failures,
+not globalGPUimpossibility. Existingnative24 and fullownoff/on remain next.
