@@ -194,3 +194,18 @@ source is reconstructed, not claimed pre-executioncapture. Only the matching
 client tree is terminated, preserving originalPID/birth and resource settings.
 Twojointsamples are limitedpeak evidence. This dependencycloses one transport
 gap but noRQ; no independentreviewer, competitor orsecondfullgroup is used.
+
+## Coverage/cost-analysis self-audit
+
+Root checks actual32returned records against unique currentHTTP IDs and
+terminalstatus/monitor/retirement, preserving28/4 and historical denominators.
+The analyzer now exposes current costs rather than asking readers to infer
+them from historical partitions. Missing clocks remain missing, and any
+postresponse goal entries remain separate from matched response intervals.
+CumulativeHTTP/bodytime is not wholewall or a skippable-cost/Amdahl bound.
+The descriptive tails belong to observationtime, not an unstatedbaseline.
+
+The first32have no timeout/resourcefailures or witness, so the corresponding
+new output branches remain unvalidated on actualfull results. One memory
+sample is not a fullpeak. No additionalREPL/Agent/GPU/originalrunrestart occurs,
+and this dependency does not close anRQ or independentaudit requirement.

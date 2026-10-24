@@ -1,0 +1,303 @@
+{
+  "scope": "Real first32qualification only",
+  "input_goals": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-observe/goals.jsonl",
+  "observed_entries": 13,
+  "observed_source_count": 13,
+  "supported_entries": 13,
+  "supported_source_count": 13,
+  "unsupported_reasons": {},
+  "witness_entries": 0,
+  "witness_source_count": 0,
+  "witness_source_IDs": [],
+  "witnesses": [],
+  "witness_current_statuses": {},
+  "historical_failure_witness_IDs": [],
+  "historical_failure_witness_HTTP_sum_seconds": 0,
+  "historical_witness_timeouts": [],
+  "proposal_errors": [],
+  "analysis_seconds": 0.012828046921640635,
+  "point_count": 4096,
+  "seed": 0,
+  "limitations": [
+    "No witness is unknown, not validity or falsity proof.",
+    "Historical request spans overlap and are associations, not savedwholewall or currentprofilefractions.",
+    "A witness in an acceptedcandidate may be an abandonedfalsebranch; failonlythat tactic, neverkillthewholecandidate.",
+    "Unsupported terms/fullcontext conditions retain nativefallback. GPU is not running in this census."
+  ],
+  "expected_sources": 32,
+  "source_class_counts": {
+    "no_observed_entry": 19,
+    "supported_no_witness": 13
+  },
+  "source_partitions": {
+    "current_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.07086,
+        "historical_HTTP_sum_seconds": 0.327445095,
+        "current_HTTP_sum_seconds": 0.331546614,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 0.098604,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 1,
+        "observed_entries": 1,
+        "supported_entries": 1,
+        "historical_body_sum_seconds": 0.058415,
+        "historical_HTTP_sum_seconds": 0.108366896,
+        "current_HTTP_sum_seconds": 0.111137238,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 0.086297,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 16,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.798998,
+        "historical_HTTP_sum_seconds": 2.084046506,
+        "current_HTTP_sum_seconds": 2.20735469,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 1.11273,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 12,
+        "observed_entries": 12,
+        "supported_entries": 12,
+        "historical_body_sum_seconds": 1.841014,
+        "historical_HTTP_sum_seconds": 2.426142315,
+        "current_HTTP_sum_seconds": 3.764771269,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 2.694493,
+        "current_reported_body_missing_sources": 0
+      }
+    ],
+    "historical_status": [
+      {
+        "status": "lean_error",
+        "observation_class": "no_observed_entry",
+        "sources": 3,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.07086,
+        "historical_HTTP_sum_seconds": 0.327445095,
+        "current_HTTP_sum_seconds": 0.331546614,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 0.098604,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "lean_error",
+        "observation_class": "supported_no_witness",
+        "sources": 1,
+        "observed_entries": 1,
+        "supported_entries": 1,
+        "historical_body_sum_seconds": 0.058415,
+        "historical_HTTP_sum_seconds": 0.108366896,
+        "current_HTTP_sum_seconds": 0.111137238,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 0.086297,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "valid",
+        "observation_class": "no_observed_entry",
+        "sources": 16,
+        "observed_entries": 0,
+        "supported_entries": 0,
+        "historical_body_sum_seconds": 0.798998,
+        "historical_HTTP_sum_seconds": 2.084046506,
+        "current_HTTP_sum_seconds": 2.20735469,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 1.11273,
+        "current_reported_body_missing_sources": 0
+      },
+      {
+        "status": "valid",
+        "observation_class": "supported_no_witness",
+        "sources": 12,
+        "observed_entries": 12,
+        "supported_entries": 12,
+        "historical_body_sum_seconds": 1.841014,
+        "historical_HTTP_sum_seconds": 2.426142315,
+        "current_HTTP_sum_seconds": 3.764771269,
+        "current_HTTP_missing_sources": 0,
+        "current_reported_body_sum_seconds": 2.694493,
+        "current_reported_body_missing_sources": 0
+      }
+    ]
+  },
+  "exporter_sum_seconds": 0.020322819,
+  "denominator_note": "Source partitions cover the declared input; unobserved/unsupported/no-witness remain unknown. Historical spans overlap and cannot be credited as eliminated work. Current diagnostic body timings include observation cost.",
+  "current_HTTP_input": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/qualification32v3-observe/http.jsonl",
+  "current_HTTP_missing_IDs": [],
+  "current_HTTP_duplicate_IDs": {},
+  "current_observation_cohorts": {
+    "all_declared_sources": {
+      "sources": 32,
+      "current_statuses": {
+        "valid": 28,
+        "lean_error": 4
+      },
+      "classes": {
+        "no_observed_entry": 19,
+        "supported_no_witness": 13
+      },
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 6.4148098110000005,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 3.992124,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "current_returned_sources": {
+      "sources": 32,
+      "current_statuses": {
+        "valid": 28,
+        "lean_error": 4
+      },
+      "classes": {
+        "no_observed_entry": 19,
+        "supported_no_witness": 13
+      },
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 6.4148098110000005,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 3.992124,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "current_failed_sources": {
+      "sources": 4,
+      "current_statuses": {
+        "lean_error": 4
+      },
+      "classes": {
+        "no_observed_entry": 3,
+        "supported_no_witness": 1
+      },
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 0.442683852,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 0.184901,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "current_timeouts": {
+      "sources": 0,
+      "current_statuses": {},
+      "classes": {},
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 0,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 0,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "current_resource_failures": {
+      "sources": 0,
+      "current_statuses": {},
+      "classes": {},
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 0,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 0,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "observation_slowest_1_percent": {
+      "sources": 1,
+      "current_statuses": {
+        "valid": 1
+      },
+      "classes": {
+        "supported_no_witness": 1
+      },
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 0.526574238,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 0.490131,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    },
+    "observation_slowest_10_percent": {
+      "sources": 4,
+      "current_statuses": {
+        "valid": 4
+      },
+      "classes": {
+        "supported_no_witness": 4
+      },
+      "exact_witness_sources": 0,
+      "exact_witness_inside_HTTP_sources": 0,
+      "HTTP_sum_seconds": 2.068875169,
+      "HTTP_missing_sources": 0,
+      "reported_body_sum_seconds": 1.739253,
+      "reported_body_missing_sources": 0,
+      "witness_source_HTTP_sum_seconds": 0
+    }
+  },
+  "entries_outside_matched_current_HTTP": 0,
+  "current_capture_clocks": {
+    "expected": 32,
+    "returned": 32,
+    "own_method_mode": "observe",
+    "whole_lifecycle_seconds": 7.102964428,
+    "warm_verify_seconds": 3.21466037,
+    "input_preparation_seconds": null,
+    "whole_including_input_preparation_seconds": null,
+    "memory_watchdog": {
+      "root_pid": 255140,
+      "root_birth": 1792811366.45,
+      "budget_bytes": 51539607552,
+      "effective_threshold_bytes": 51539607552,
+      "per_second": true,
+      "samples": 8,
+      "kills": 0,
+      "peak_sampled_owned_rss_bytes": 8111476736,
+      "peak_sampled_native_repl_count": 2,
+      "error": null,
+      "peak_external_owned_provider_rss_bytes": 0,
+      "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+    },
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2
+  },
+  "current_cost_scope": "Current request/body sums overlap and include observation overhead; this is neither a native/off-on speedup nor an Amdahl/avoidable-work bound. Tails are ranked by this observation, not an uninstrumented baseline. Missing timing remains explicit.",
+  "source_ledger": "artifacts/arithmetic-counterexample-2026-10-23/closed-coverage-analysis-20261024T0654/qualification32v3-source-coverage.csv",
+  "sampling_diagnostics": "artifacts/arithmetic-counterexample-2026-10-23/closed-coverage-analysis-20261024T0654/qualification32v3-sampling-diagnostics.jsonl",
+  "sampling_summary": {
+    "entries": 13,
+    "zero_float_feasible_entries": 0,
+    "zero_float_feasible_historical_failed_entries": 0,
+    "float_counterexample_proposals": 0,
+    "exact_candidates_checked": 0,
+    "note": "Counts of numeric proposals, not exact feasible-point coverage or proof of absence."
+  }
+}

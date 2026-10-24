@@ -102,3 +102,12 @@ The finite point qualifier also supports `device-lifecycle.ps1 -Phase points
 real goal input. [Executed result and failure history](../../artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md)
 are interface qualification only, without a Lean proof run or acceleration
 claim. Native24/fullpair still follow actual original-observation completion.
+
+
+After the original full observer actually retires, run `analyze-goals.py
+--output-dir <new-result-directory>` with the existing NumPy Python. Its
+current HTTP/body costs, failure/timeout/resource partitions and observation
+tail cohorts stay separate from historical clocks and whole elapsed time.
+[Closed32 analysis execution](../../artifacts/arithmetic-counterexample-2026-10-23/closed-coverage-analysis-20261024T0654/result-review.md)
+qualifies the analysis path only. It does not replace the complete7808result
+or the native/GPU paired comparison.

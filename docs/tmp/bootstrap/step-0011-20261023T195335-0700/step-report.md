@@ -389,3 +389,21 @@ evaluation/source docs; no paperresult is inserted or repeatedwritingloop run.
 REVIEW_GATE rootselfaudit treats this as dependency-only, not researchnovelty,
 accepted-set proof or performance. Return to actualfullclosure/native24/fullpair,
 not another point-only control or wait-based goal turn.
+
+## Complete observation cost-analysis path
+
+EXPERIMENT_GATE finishes the existing goal analyzer's current-clock join:
+current failure/timeout/resource/observation-tail cohorts now include their
+own HTTP/body associations with missingness, source IDs and outside-response
+entries, while historical sums remain separate. Actual closed32reanalysis
+returns28valid/4errors/32matchedHTTP, without a new Lean/device run.
+[Source, command, results and limitations](../../../../artifacts/arithmetic-counterexample-2026-10-23/closed-coverage-analysis-20261024T0654/result-review.md).
+This is dependency-only; no new performance or fullfalsegoal finding.
+Jointsamplemax2REPLs/9.382GB/0kills/errors preserves originalfullobserver.
+
+WRITE_GATE updates runnable source instructions without adding paper numbers
+or rerunning unchanged writing. REVIEW_GATE rootselfaudit rejects summing
+overlapping spans into Amdahl or using observation-ranked tails as baseline
+paired tails. Timeout/resource/witness branches are not empirically exercised
+by the closed32input; completeactualdata remain required. Return to the
+existing complete experiment, not more narrow qualification or newmatrix.
