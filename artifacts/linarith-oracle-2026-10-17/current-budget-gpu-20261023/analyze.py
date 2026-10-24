@@ -1,5 +1,5 @@
 from pathlib import Path
-import json,gzip,collections,runpy,sys,math
+import json,gzip,collections,runpy,sys,math,csv
 O=Path(__file__).resolve().parent
 F=runpy.run_path(str(O.parent/'kimina-full29750-budgeted-20261019/analyze.py'))
 def rows(path):
@@ -127,5 +127,26 @@ out=dict(scope=('Closed GPU cell only; CPU/native controls still pending, no pai
  'GPUzeroallocations means no CUDAmodels engaged, not fast device solving.',
  'Tail HTTP sums overlap and are not isolated tail lifecycles; cold provider lifecycle is separate.',
  'No strict GPU bound, broad route closure, independent audit or OSDI contribution acceptance.'])
+if full and not phase:
+ native_whole=cells['native']['terminal']['whole_lifecycle_seconds']
+ cpu_whole=cells['power']['terminal']['whole_lifecycle_seconds']
+ gpu_whole=cells['gpu']['terminal']['whole_lifecycle_seconds']
+ out['paired_summary']=dict(native_over_CPU=native_whole/cpu_whole,native_over_GPU_cell=native_whole/gpu_whole,
+  GPU_cell_elapsed_reduction_vs_CPU=1-gpu_whole/cpu_whole,
+  GPU_cold_over_CPU=life['completeColdLifecycleSeconds']/cpu_whole,
+  native_over_GPU_cold=native_whole/life['completeColdLifecycleSeconds'],
+  comparisons='Whole completed original1000 matched resource point; one fixed-order shared-host observation, not uncertainty estimate.')
+ per_source=[]
+ for i in ids:
+  per_source.append(dict(proof_id=i,native_outcome=F['native_outcome'](native[i]),
+   native_HTTP_seconds=lat['native'][i],CPU_HTTP_seconds=lat['power'][i],GPU_HTTP_seconds=lat['gpu'][i],
+   GPU_minus_CPU_HTTP_seconds=lat['gpu'][i]-lat['power'][i]))
+ with (O/'paired-source-latencies.csv').open('w',newline='')as stream:
+  writer=csv.DictWriter(stream,fieldnames=list(per_source[0]),lineterminator='\n');writer.writeheader();writer.writerows(per_source)
+ out['GPU_CPU_source_HTTP_comparison']=dict(GPU_shorter=sum(lat['gpu'][i]<lat['power'][i]for i in ids),
+  GPU_longer=sum(lat['gpu'][i]>lat['power'][i]for i in ids),
+  largest_GPU_regressions=sorted(per_source,key=lambda x:x['GPU_minus_CPU_HTTP_seconds'],reverse=True)[:10],
+  largest_GPU_improvements=sorted(per_source,key=lambda x:x['GPU_minus_CPU_HTTP_seconds'])[:10],
+  interpretation='Per-source envelopes overlap, include queue/contention and fixed-order host drift; not isolated latency trials or device causation.')
 (O/('gpu-phase-analysis.json'if phase else('full-analysis.json'if full else'preflight-analysis.json'))).write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps({k:v for k,v in out.items()if k not in['conditions','native_ranked_tails','lifecycle','limitations']},indent=2))

@@ -164,12 +164,13 @@ coverage or a strictAmdahlceiling;no GPU batch/result is inferred.
 
 ## Next decisive work and scientific limits
 
-Use existing full raw evidence to locate remaining expensive work and missing
-strong-baseline product/all-LP attribution before admitting another mechanism.
-Heavy-tail accounting and native fallback must survive that analysis. A
-candidate GPU composition needs real ready batches and complete costs against
-the same strong CPU baseline, not another narrow kernel. No below1.5×ceiling,
-GPU/project closure or hourly-task deletion follows from this CPU result.
+Close the complete current-resource matched1,000 result below before any
+new variant. The concrete single-flight CUDA admission dependency should be
+qualified separately without changing CPU contenders or resource limits.
+Removing it must demonstrate real concurrent device work and a useful
+discriminator before another full measurement; it is not an assumed speedup.
+Own-clock overlap diagnostics still do not establish a strict exclusion of1.5×.
+No broad GPU/project closure or hourly-task deletion is justified.
 
 The original shared-preparation systems hypothesis and all four RQs remain.
 Arithmetic improvement, compiled CPU optimization, existing parallelism and
@@ -192,12 +193,6 @@ The original1,000own-denominator diagnostic is admitted only after this
 qualification, with source2/live2/24each/48totalRSS/fourCPU8–11unchanged.
 No full-population/GPU result or strictceiling is supplied by the preflight.
 
-The original1,000diagnostic actually starts2026-10-22T08:15:23Z fromdf26c55:
-[launch and first real requests](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/README.md).
-Only this one finite group runs. First native source responses and fresh
-owned-tree RSS/max2liveREPLs are observed; the profile pair is not complete.
-Active logs stay unstaged. A complete own-denominator result is still required.
-
 ### Native original1000 own-clock phase boundary (2026-10-22)
 
 [Complete protected diagnostic](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/full-result-review.md): frozen1448.917480465s/profile1450.783580374s, all992complete/8reject and fullrawresponses identical. LPwrapper999.359174s, products234.128256s, certificate229.327302s, preprocess105.789579s, linearize107.055237s are accumulated, overlapping stage wall. LP includes IPC/exactrepair/fallback; no pureGPU fraction or strictAmdahl ceiling is inferred. Profile/globalproduct-LPoccupation66.596722% is not removable criticalpath. All sources have arithmetic and/or omega records, but omitted internal work remains unknown. Peak15.575276GiB,max2,0monitorfailures/kills,fully retired. ContinueGPU; next resolve pure-native LP/helper costs using the same algorithm and real qualification.
@@ -205,3 +200,31 @@ Active logs stay unstaged. A complete own-denominator result is still required.
 ### Complete native-helper attribution (2026-10-23 UTC)
 
 [Same-clock original1000result](../artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md) closes the pending helper capture: whole1380.322631s,992complete/8reject, allfullresponses unchanged.8646LPs from995actualsources have pairedsource/call shapes: FP39.935943s,1636exactfallbacks951.845679s,exactrepair0.599694s,packing1.498451s. Products225.613134s/LeanLPwrapper1013.994258s are overlapping wall; no cross-run denominator. Below38rows still costs50.095157s exactfallback; at least38rows901.750521s.3102hypothetical overlap pairs(max2) are not GPUbatches. Occupied-union zeroing gives conditional3.253512x sensitivity only, not a strict bound; continueGPU. Peak15.550793GiB,max2,0guarderrors/kills,no survivors. Rootselfreview, no independent audit or newcontribution claim.
+
+
+## Complete current-resource CPU/GPU/native1000 comparison (2026-10-24 UTC)
+
+RQ4 supporting matched evidence: native1376.236473s,CPU oracle769.116831s,
+additiveGPU762.439983s whole cells. Native/CPU1.789372× and native/GPU1.805042×,
+with GPU cold lifecycle797.608028s/native-over-cold1.725455×. All1000sources
+return992complete/8reject, zero verdict/non-message differences;CPU/GPUfull
+responses identical.108native message-only changes remain. GPU0.868119%less
+elapsed than CPU in this one fixed-order shared-host observation, but cold
+3.704404%more elapsed. No extra useful GPUgain/confidence estimate is claimed.
+The original better-valid-CPU/GPU1.5× selected-cohort criterion is met;
+whole-population1.106271× and OSDI novelty remain separate.
+
+Original1000/order/Lean4.27/KiminaHTTP, source2/live2/24GiBeach/48GiBaggregate
+sampledRSS, same fourCPUs8–11/same private nativebinaries. ProviderUIDdeleted
+before clean CPU/native controls. All3000HTTPsource attempts answered, no
+operational failures, watchdogerrors/kills or owned survivors. SampledRSSpeaks
+GPU14.968769/CPU14.731617/native15.259586GiB include provider hostmemory.
+
+Native-ranked slowest1%HTTPsums native/CPU/GPU449.120365/255.927555/254.354805s;
+10%1266.105499/639.657565/634.291370s. These overlapping sums are not tail
+wholeclocks or removableCPU. GPU envelopes are longer for445sources and shorter
+for555, not causaldevicewin counts.488actualmodels are allsingletons, with
+6GPUpositive/4exactnegative racewins. The proxy serializes submission through
+kernelretirement;505decodedinputs provide5source-ownedarrivals during prior
+retirement, while192undecodedconnections remainunknown. No strictceiling follows.
+[Complete matrix, allraw/source CSV, costs and self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).

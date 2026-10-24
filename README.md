@@ -42,6 +42,29 @@ REPLs, with sampled total RSS at most 21.17 GiB, no watchdog kill/error and no
 owned survivor. **This is CPU-only and does not establish a GPU upper bound.**
 [Full raw results, outcome changes, tails, memory and self-review](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md).
 
+## Current matched heavy-cohort comparison
+
+The same current resource point completes all original1,000 heavy candidates:
+
+| Method | Whole elapsed | Native / method |
+|---|---:|---:|
+| Compiled native hybrid | 1,376.24 s | 1.000× |
+| CPU certificate oracle | 769.12 s | 1.789× |
+| CPU oracle with GPU | 762.44 s | 1.805× |
+| GPU condition including cold provider lifecycle | 797.61 s | 1.725× |
+
+Every method returns992 complete/eight rejected, with matching verdicts and
+non-message fields. CPU/GPU full responses agree. The GPU cell is0.87% less
+elapsed than CPU in one fixed-order observation, while its complete cold
+lifecycle is3.70% more elapsed. Neither is established useful extra device
+acceleration. The local1.5× continuation criterion is met, but the selected
+cohort is not the whole population or a demonstrated new systems contribution.
+
+Actual GPU work is488 singleton LP models with6 positive/4 exact-negative
+race wins and no cross-source multi-model batch. Complete failures, same-native
+ranked tails, source-level regressions and aggregate memory are retained.
+[Complete matched data, protocol and self-review](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
+
 ## Current GPU opportunity
 
 The complete same-clock native diagnostic on the original1,000heavy inputs
@@ -52,7 +75,7 @@ the floating kernel targets a small part. Concurrent phase sums are not an
 Amdahl ceiling. [Full attribution, shapes, tails and resource evidence](artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md).
 No useful additional GPU gain has yet been established.
 
-## Selected arithmetic-heavy result
+## Historical selected arithmetic-heavy result
 
 The corrected native-array comparison uses the original **1,000 arithmetic-heavy
 Goedel candidates**, selected before the implementation's measurements:
