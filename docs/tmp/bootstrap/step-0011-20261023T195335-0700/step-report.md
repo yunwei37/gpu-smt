@@ -147,3 +147,33 @@ rootselfaudit checks enqueue-only locking, ownership/exact-point boundary,
 fallback and post-context retirement markers. Hardware cleanup, native branch
 behavior and whole off/on costs remain unverified. No new Agent, external
 comparison, GPU Job or concurrent full collection.
+
+## Offline batch / actual device lifecycle readiness boundary
+
+EXPERIMENT_GATE adds one grouped474actual-entry RPC batch. Real CPU-reference
+execution returns all474, the same2exact witnesses, no invalid points/errors
+and a clean stop/reaped provider. Final0.517840sRPC is functional CPU data,
+notGPU or wholeproof performance. Both batch revisions/source/raw remain.
+Same-clock joins locate the first witnesses0.548160s/2.597230s before their
+observed HTTP responses; canonical current outcomes are Lean errors. Those
+tails include other work and omit unobserved post-response retirement, so no
+avoidable-time bound or cross-run ratio is admitted.
+[Complete node record](../../../../artifacts/arithmetic-counterexample-2026-10-23/batch-and-device-preparation-review.md).
+
+The finite device package reuses existing Job/image/runtime/hardware/resource
+path, embeds own source/PTX without PVC/Secret/Service, and is not applied.
+The lifecycle is syntax-checked only, with exact Job/Pod ownership, provider
+process exit before log/Job cleanup and complete cold-clock fields. It requires
+the original full observation to finish before any mutation. Actual GPU,
+image NumPy availability, device teardown and native24off/on are still missing.
+
+A real management call briefly failed before command dispatch. Existing
+healthy HA/Cloudflare paths restored actual Workspace execution and verified
+the same original PID/birth; no node/Workspace/capture restart occurred.
+Owning infrastructure incident dcac67a4 holds the detailed record. The
+research-source command was executed once only after absence was verified.
+
+WRITE_GATE documents actual protocol/time-location scope and pending hardware.
+REVIEW_GATE rootselfaudit rejects offlinebatch/CPU clocks as GPU or criticalpath
+evidence, and keeps allfourRQ/overallgoalopen. No new Agent, external-method
+reproduction, service, schedule, resource policy or concurrent full group.

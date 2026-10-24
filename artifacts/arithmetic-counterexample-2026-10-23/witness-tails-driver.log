@@ -1,0 +1,44 @@
+{
+  "scope": "Partial observed response intervals for the retained known witnesses; root self-review.",
+  "known_witness_sources": 2,
+  "sources_with_responses": 2,
+  "attempts": {
+    "minif2f-379": [
+      {
+        "source_id": "minif2f-379",
+        "start_ns": 1243470878156416,
+        "end_ns": 1243471598120414,
+        "HTTP_seconds": 0.719963998,
+        "reported_body_seconds": 0.698654,
+        "status": "lean_error",
+        "observed_witness_entry_ns": [
+          1243471049960266
+        ],
+        "before_first_witness_seconds": 0.17180385,
+        "response_tail_seconds": 0.548160148
+      }
+    ],
+    "minif2f-802": [
+      {
+        "source_id": "minif2f-802",
+        "start_ns": 1243917128407906,
+        "end_ns": 1243920779877990,
+        "HTTP_seconds": 3.651470084,
+        "reported_body_seconds": 3.574128,
+        "status": "lean_error",
+        "observed_witness_entry_ns": [
+          1243918182648202
+        ],
+        "before_first_witness_seconds": 1.054240296,
+        "response_tail_seconds": 2.597229788
+      }
+    ]
+  },
+  "limitations": [
+    "Same host monotonic entry/HTTP clocks; no historical denominator is substituted.",
+    "Response tail includes native tactic, subsequent commands, transport and possible waiting; it is not proven avoidable work.",
+    "Returning a response does not prove native background threads or process cleanup are complete.",
+    "Intervals can overlap; do not sum them into whole elapsed savings, CPU weights or an Amdahl bound.",
+    "No response or no matched entry remains unobserved; a partial witness set is not full failure coverage."
+  ]
+}

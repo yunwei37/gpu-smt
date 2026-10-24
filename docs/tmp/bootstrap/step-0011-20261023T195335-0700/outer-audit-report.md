@@ -61,3 +61,15 @@ only7optional-memory-callback lines; no legacy algorithm mode is enabled.
 Retirement is logged after context-manager exit in current source, but real
 CUDA retirement still needs hardware evidence. The active observation is
 unmodified and all4RQ/overallresearch requirements remain open.
+
+## Offline batch/device preparation self-audit
+
+Root verifies the real474-entry CPU-reference response set, two exact
+witnesses, source/entry mapping and graceful process exit. Both developed
+batch revisions are retained. Same-clock response tails have explicit
+instrumentation/subsequent-work/cleanup limits. The packaged Job embeds
+own sources with honest working-tree provenance, and no Job is applied.
+PowerShell syntax is checked; hardware/image/native behavior is still open.
+The transient management call did not execute its command and did not stop
+the original live capture. Root used existing management recovery paths;
+all detailed infrastructure facts have their owning incident home.

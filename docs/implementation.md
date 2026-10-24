@@ -456,3 +456,12 @@ Provider hostRSS/birth/backend/affinity connects to the existing aggregate
 watchdog through an optional capture callback. It does not select the old LP
 GPU mode. Native off/on replay and real device execution remain pending.
 [Protocol, original records and limitations](../artifacts/arithmetic-counterexample-2026-10-23/point-protocol-review.md).
+
+The point endpoint now supports one explicit offline batch in addition to
+individual live requests. A real474-entry CPU-reference RPC batch preserves
+all source/entry mappings and the same two exact witnesses; it does not
+establish online batching. The real device Job/lifecycle package is prepared
+with process-exit and UID ownership checks, but has not been applied.
+Known-witness positions can now be joined to current same-clock HTTP response
+tails; these instrumented tails are not proven saved work or whole-lifecycle
+cost. [Boundary and evidence](../artifacts/arithmetic-counterexample-2026-10-23/batch-and-device-preparation-review.md).

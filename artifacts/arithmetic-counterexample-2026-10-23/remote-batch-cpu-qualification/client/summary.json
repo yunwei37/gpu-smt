@@ -1,0 +1,49 @@
+{
+  "backend": "cpu-reference",
+  "device": null,
+  "returned": 474,
+  "exact_witnesses": 2,
+  "missing_reference_witnesses": 0,
+  "additional_exact_witnesses": 0,
+  "invalid_returned_points": 0,
+  "provider_errors": 0,
+  "batch_rpc_seconds": 0.5089310079347342,
+  "whole_qualification_seconds": 0.5106491360347718,
+  "initial_provider": {
+    "ready": true,
+    "root_pid": 256909,
+    "root_start_ticks": 124736525,
+    "rss_bytes": 30334976,
+    "processes": [
+      {
+        "pid": 256909,
+        "ppid": 256904,
+        "start_ticks": 124736525,
+        "rss_bytes": 30334976
+      }
+    ],
+    "time_ns": 1247365368012631,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "backend": "cpu-reference"
+  },
+  "memory_watchdog": {
+    "root_pid": 256911,
+    "root_birth": 1792815993.32,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 1,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 63565824,
+    "peak_sampled_native_repl_count": 0,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 43208704,
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "scope": "Offline actual-goal RPC batch. Device execution only when backend=device; no online candidate overlap or proof speedup."
+}

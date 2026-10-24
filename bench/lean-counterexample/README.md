@@ -74,3 +74,21 @@ To repeat only the closed CPU socket qualification in a new output directory:
 
 This starts and retires its own short CPU-reference process on an OS-assigned
 port. It does not use CUDA or execute a Lean candidate.
+
+## Actual device qualification lifecycle
+
+The batch endpoint has completed CPU-reference RPC qualification on all
+474 retained entries in one batch. It returns the same two exactly checked
+witnesses. This is offline batching, not observed online candidate overlap.
+
+build-point-job.py packages only our source/PTX into the existing finite
+RTX5090 Job path. device-lifecycle.ps1 is a Windows infrastructure entrypoint
+invoked from spark-manage; application code and result directories remain
+in the owning Workspace. It refuses an incomplete original observation,
+preserves existing Jobs/results, and records actual process exit before
+UID-owned cleanup. Neither it nor point-job.json has been applied/executed.
+
+qualify-remote-points.py validates a remote backend's real goal responses,
+CPU exact points and owned memory. Device mode requires original observation
+completion. The alternative24-source qualifier also checks native children
+have retired. [Executed CPU records and pending device boundary](../../artifacts/arithmetic-counterexample-2026-10-23/batch-and-device-preparation-review.md).

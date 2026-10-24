@@ -54,6 +54,7 @@ async def main():
   (out/'terminal.json').write_text(json.dumps(result,indent=2)+'\n')
   cells.append(result)
   if result['state']!='complete' or result['returned']!=24:raise RuntimeError('Preserve partial qualification')
+  if result['memory_watchdog']['error']or result['owned_live_descendants_after_shutdown']:raise RuntimeError('Resource monitoring/child retirement incomplete')
  summary=dict(source_ids=[x['proof_id']for x in snippets],source_matches_build=source_matches_build,
   preparation_seconds=preparation_seconds,provider_identity=provider,
   cells=[dict(mode=x['own_mode'],state=x['state'],returned=x['returned'])for x in cells],

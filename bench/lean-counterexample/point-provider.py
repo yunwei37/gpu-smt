@@ -37,14 +37,17 @@ def main():
    try:
     request=json.loads(self.rfile.readline())
     if request.get('memory'):reply=dict(owned_memory(),backend=args.backend)
-    elif request.get('ping'):reply=dict(ready=True,backend=args.backend,pid=os.getpid())
+    elif request.get('ping'):reply=dict(ready=True,backend=args.backend,pid=os.getpid(),device=device.name if device else None)
+    elif request.get('stop'):stopping.set();reply=dict(stopping=True,backend=args.backend,pid=os.getpid())
     else:
-     entry=request['screen']
-     ticket=dict(entry=entry,received_ns=time.monotonic_ns(),done=queue.Queue())
+     entries=request['screen_batch']if 'screen_batch'in request else[request['screen']]
+     tickets=[dict(entry=e,received_ns=time.monotonic_ns(),done=queue.Queue())for e in entries]
+     if not tickets:raise ValueError('empty point batch')
      with registration_lock:
       if stopping.is_set():raise RuntimeError('provider stopping')
-      pending.put(ticket)
-     reply=ticket['done'].get()
+      pending.put(tickets)
+     answers=[t['done'].get()for t in tickets]
+     reply=dict(results=answers,backend=args.backend)if 'screen_batch'in request else answers[0]
     self.wfile.write((json.dumps(reply,separators=(',',':'))+'\n').encode());self.wfile.flush()
    except (BrokenPipeError,ConnectionResetError):pass
    except Exception as ex:
@@ -65,9 +68,9 @@ def main():
    while not stopping.is_set():
     try:first=pending.get(timeout=.1)
     except queue.Empty:continue
-    tickets=[first]
+    tickets=list(first)
     while True:
-     try:tickets.append(pending.get_nowait())
+     try:tickets.extend(pending.get_nowait())
      except queue.Empty:break
     entries=[t['entry']for t in tickets];began=time.monotonic_ns()
     try:
@@ -100,9 +103,10 @@ def main():
    server.shutdown();thread.join()
    while True:
     try:
-     ticket=pending.get_nowait();e=ticket['entry']
-     ticket['done'].put(dict(source_id=e['source_id'],entry_ns=e['entry_ns'],
-      backend=args.backend,error='provider stopped before dispatch'))
+     for ticket in pending.get_nowait():
+      e=ticket['entry']
+      ticket['done'].put(dict(source_id=e['source_id'],entry_ns=e['entry_ns'],
+       backend=args.backend,error='provider stopped before dispatch'))
     except queue.Empty:break
    server.server_close()
   log(dict(event='transport_retired',backend=args.backend))
