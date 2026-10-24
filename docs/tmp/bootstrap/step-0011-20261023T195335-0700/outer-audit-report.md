@@ -180,3 +180,17 @@ the new citations. Root preserves live capture and48GiB/twoREPL resource point.
 The canonical file had unrelated dirty edits: only our appended dated section
 enters the index, with its previous working bytes preserved exactly. This is
 a self-audit; no independent reviewer or completed overall goal is claimed.
+
+## Worker-stream qualification self-audit
+
+Root verifies actual474unique source/entry worker records,390GPUrequests/
+84CPUclosed,2exact witnesses/referenceagreement,381devicebatches and
+bothworker/provider exit0/actualCUDAcontextclosure/ownedJob absence.
+No Leanproof replay runs, and offline sourceoverlap does not prove actual
+candidate batching. Complete27.924scoldlifecycle is not verification speedup.
+
+The firstframingfailure is retained and explicitly labelled; failedclient
+source is reconstructed, not claimed pre-executioncapture. Only the matching
+client tree is terminated, preserving originalPID/birth and resource settings.
+Twojointsamples are limitedpeak evidence. This dependencycloses one transport
+gap but noRQ; no independentreviewer, competitor orsecondfullgroup is used.

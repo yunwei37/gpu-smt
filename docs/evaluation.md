@@ -17,6 +17,16 @@ retain gates, failed routes and scope.
 
 ## Current own-method frontier
 
+The [actual worker-stream qualifier](../artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md)
+now exercises474retained entries through two persistent worker subprocesses:
+84CPUclosed/390actual5090requests,2matching exact witnesses/0invalidpoints/errors.
+381devicebatches are372singletons/9pairs; this is offline replay, not native
+candidate overlap or proof performance. Both workers/provider exit0, CUDAcontext
+closes and the ownedJob is absent. Joint sampledpeak20.10GiB/max2REPLs/0kills/
+errors is not a complete coldpeak. One escaped-newline client failure is retained.
+No paperresult changes; the full census/native24/fullpair remain pending.
+
+
 The actual RTX5090 point qualifier returns all474retained arithmetic entries,
 with the same2CPU-exact witnesses and no invalid returned points/errors.
 The complete finite cold lifecycle is30.746s; no native proof pair runs here,

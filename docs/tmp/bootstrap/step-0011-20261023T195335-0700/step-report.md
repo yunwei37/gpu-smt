@@ -370,3 +370,22 @@ is root self-review, not independent audit. Full original7808observation
 PID255332/birth124305929 remains live at06:36:46Z withoutterminal. Next is
 actual closed-run collection, then own native24 and complete paired test,
 not another unchanged literary cycle or minute-by-minute wait.
+
+## Actual persistent-worker / GPU transport qualification
+
+EXPERIMENT_GATE folds the missing individual worker interface into the existing
+point qualification, without another REPL or fullcapture. [Actual raw/review](../../../../artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md)
+records474owned replies,84CPUclosed/390RTX5090requests,2matching exact witnesses
+and0invalidpoints/providererrors.381batches have372singletons/9pairs; these are
+offlineworkerstreams, not nativecandidate concurrency. Workers/provider exit0,
+CUDAcontextcloses, exactUIDJob/Pod gone. Jointsamplepeak21.585GB/max2REPLs/
+0kills/errors; sampledRSS is not a hardlimit/fullcoldpeak.
+
+The first newclient attempt emits a literal escapednewline and hangs before
+anyproviderbatch. Rootstops only its verifiedown tree, preserves raw/client143/
+provider0/cleanup and corrects two lines. Secondattempt completes. No native
+exporter/activecollector replacement. WRITE_GATE records operational scope in
+evaluation/source docs; no paperresult is inserted or repeatedwritingloop run.
+REVIEW_GATE rootselfaudit treats this as dependency-only, not researchnovelty,
+accepted-set proof or performance. Return to actualfullclosure/native24/fullpair,
+not another point-only control or wait-based goal turn.

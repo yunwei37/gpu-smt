@@ -1,0 +1,63 @@
+{
+  "backend": "device",
+  "device": "NVIDIA GeForce RTX 5090",
+  "worker_stream": true,
+  "returned": 474,
+  "cpu_closed_entries": 84,
+  "exact_witnesses": 2,
+  "missing_reference_witnesses": 0,
+  "additional_exact_witnesses": 0,
+  "invalid_returned_points": 0,
+  "provider_errors": 0,
+  "batch_rpc_seconds": 1.1463608308695257,
+  "whole_qualification_seconds": 1.1513940568547696,
+  "initial_provider": {
+    "ready": true,
+    "root_pid": 1,
+    "root_start_ticks": 125577902,
+    "rss_bytes": 31686656,
+    "processes": [
+      {
+        "pid": 1,
+        "ppid": 0,
+        "start_ticks": 125577902,
+        "rss_bytes": 31686656
+      }
+    ],
+    "time_ns": 1255787095212238,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "backend": "device"
+  },
+  "memory_watchdog": {
+    "root_pid": 260425,
+    "root_birth": 1792824415.04,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 2,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 21584822272,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 172883968,
+    "included_owned_roots": [
+      {
+        "pid": 260425,
+        "birth": 1792824415.04,
+        "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2"
+      },
+      {
+        "pid": 255332,
+        "birth": 1792811687.29,
+        "out": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/full-observe/verification"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "scope": "Actual retained goals through two persistent native-facing worker streams; no Lean proof candidate run or speedup."
+}

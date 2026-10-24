@@ -65,3 +65,23 @@ both cells. Its residual after subtracting the native off lifecycle includes
 on preparation, execution and controller/retirement overhead, an explicit
 accounting convention rather than an isolated on measurement. Do not call
 offline474batch/device qualification a complete proof result.
+
+## Native-facing worker transport qualification, 2026-10-24UTC
+
+Fold one missing interface check into the existing point qualification, not
+a separate research experiment. The earlier actualGPU qualification supplied
+one prepacked474entry request and did not execute the persistent worker's
+individual screen RPC, exact host recheck or CPUclosed dispatch. Reuse the
+same actual474entry input and expected exact witnesses through two persistent
+worker processes, current worker source, existing finite5090provider and
+existing joint48GiB watchdog including the active original census.
+No new REPL or secondfullcapture; record the short coexecution window rather
+than treat observer times as an isolated performance baseline.
+
+Command: existing device-lifecycle.ps1 -Phase points -WorkerStream, with a new
+result directory. Compare actual source/entry ownership, expected exact
+witnesses, invalid points/provider errors, worker exits, actual GPU batch
+membership and complete provider/Job retirement. This is dependency-only
+evidence. Success returns to the already-planned native24/fullpair after
+actual observation completion; failure repairs only this online interface.
+No new numerical competitor, parameter search or RQ result is admitted.

@@ -1,0 +1,50 @@
+{
+  "cleanupErrors": [],
+  "completeColdLifecycleSeconds": 43.023965,
+  "clientWrapperSeconds": 18.6936533,
+  "sourcePodUID": "c2392a42-e9ff-4b4c-941f-63c6d929728b",
+  "ownJobRemains": false,
+  "retirementSeconds": 15.296249800000002,
+  "clientExit": 143,
+  "workerStream": true,
+  "startupToAPIReadySeconds": 9.0319567,
+  "scope": "Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract",
+  "sourceNode": "lab",
+  "jobUID": "aba184ed-5f3f-4221-be0a-4cc32b929cdc",
+  "phase": "points",
+  "providerExit": 0,
+  "pod": "gpu-smt-cuopt-20261017-75szh",
+  "sourcePod": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+  "providerReady": {
+    "event": "ready",
+    "backend": "device",
+    "pid": 1,
+    "port": 5001,
+    "device": null,
+    "cuda_initialized": false,
+    "provider_setup_ns": 368474,
+    "owned_memory": {
+      "ready": true,
+      "root_pid": 1,
+      "root_start_ticks": 125568172,
+      "rss_bytes": 31416320,
+      "processes": [
+        {
+          "pid": 1,
+          "ppid": 0,
+          "start_ticks": 125568172,
+          "rss_bytes": 31416320
+        }
+      ],
+      "time_ns": 1255682006129294,
+      "affinity": [
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "podUID": "d19ec454-513f-4f8a-a799-3040c320b760",
+  "utc": "2026-10-24T06:45:50.1415606Z"
+}

@@ -95,3 +95,10 @@ ratios are separate from cold controller accounting. The cold residual
 subtracts the measured off cell from the complete combined controller clock,
 so it includes preparation, GPU execution, controller/API work and provider
 exit. One fixed-order pair does not quantify host-load/run-order uncertainty.
+
+
+The finite point qualifier also supports `device-lifecycle.ps1 -Phase points
+-WorkerStream` to exercise two persistent native-facing workers on the retained
+real goal input. [Executed result and failure history](../../artifacts/arithmetic-counterexample-2026-10-23/gpu-worker-stream-qualification-2/result-review.md)
+are interface qualification only, without a Lean proof run or acceleration
+claim. Native24/fullpair still follow actual original-observation completion.

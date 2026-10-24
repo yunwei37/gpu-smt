@@ -1,10 +1,12 @@
 param(
  [Parameter(Mandatory)][string]$SourcePod,
  [Parameter(Mandatory)][string]$Out,
- [ValidateSet('points','lean24','lean-full')][string]$Phase='points'
+ [ValidateSet('points','lean24','lean-full')][string]$Phase='points',
+ [switch]$WorkerStream
 )
 # Invoke from the sole spark-manage checkout; application files stay in Workspace.
 $ErrorActionPreference='Stop'
+if($WorkerStream -and $Phase -ne 'points'){throw 'WorkerStream belongs only to the finite point qualification'}
 $gpuRoot='/workspaces/repository'
 $gpuArc="$gpuRoot/artifacts/arithmetic-counterexample-2026-10-23"
 $gpuBench="$gpuRoot/bench/lean-counterexample"
@@ -57,6 +59,7 @@ try {
  $gpuScript=if($Phase -eq 'points'){'qualify-remote-points.py'}else{'qualify-screening.py'}
  $gpuArguments=@('--host',$gpuIP,'--backend','device','--out',$Out)
  if($Phase -eq 'lean-full'){$gpuArguments+='--full'}
+ if($WorkerStream){$gpuArguments+='--worker-stream'}
  ./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' /workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python -u "$gpuBench/$gpuScript" @gpuArguments
  $gpuClientExit=$LASTEXITCODE
  $gpuClientSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuStartup
@@ -101,7 +104,7 @@ try {
   if($LASTEXITCODE -ne 0){throw 'Final Job absence is unverified'}
   $gpuRemains=[bool]$gpuLeftJob
  } catch {$gpuCleanup.Add($_.Exception.Message)}
- $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToAPIReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract'}
+ $gpuReceipt=@{utc=(Get-Date).ToUniversalTime().ToString('o');phase=$Phase;workerStream=[bool]$WorkerStream;sourcePod=$SourcePod;sourcePodUID=$gpuSource.metadata.uid;sourceNode=$gpuSourceNode;jobUID=$gpuUID;pod=$gpuPodName;podUID=$gpuPodUID;providerReady=$gpuReady;startupToAPIReadySeconds=$gpuStartup;clientWrapperSeconds=$gpuClientSeconds;clientExit=$gpuClientExit;providerExit=$gpuProviderExit;retirementSeconds=$gpuClock.Elapsed.TotalSeconds-$gpuRetiring;completeColdLifecycleSeconds=$gpuClock.Elapsed.TotalSeconds;ownJobRemains=$gpuRemains;cleanupErrors=$gpuCleanup.ToArray();scope='Own finite point/native experiment; CUDA initializes on first monitored batch; performance requires complete pair analysis; joint48GiB contract'}
  $gpuPayload=@{receipt=$gpuReceipt;providerLog=$gpuLog;job=$gpuSpec}|ConvertTo-Json -Depth 18 -Compress
  $gpuWrite='import pathlib,json,gzip,sys;x=json.load(sys.stdin);p=pathlib.Path(sys.argv[1]);p.mkdir(parents=True,exist_ok=True);(p/"lifecycle.json").write_text(json.dumps(x["receipt"],indent=2)+chr(10));(p/"job.json").write_text(json.dumps(x["job"],indent=2)+chr(10));(p/"provider.log.gz").write_bytes(gzip.compress(x["providerLog"].encode(),mtime=0));print(json.dumps(x["receipt"]))'
  $gpuPayload|./scripts/kubectl-home.ps1 -n coder exec -i $SourcePod -c dev '--' python3 -c $gpuWrite $Out
