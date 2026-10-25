@@ -61,3 +61,13 @@ RSS阈值标签，也不能用并发总量冒充单候选峰值。新引擎记�
 标识，继续保留保守估计；历史缺失不补零。研究总览已修正480仍运行的
 过时描述，初始叙事与历史沿革原样保留。真正缺少的仍是新资源点的完整
 实际数据和可改变验证工作量的有效机制；高RSS本身不证明GPU有用。
+
+
+### Native code-workload execution path
+
+The old code workload runner's fixed limits should not be copied into new
+captures. Add stock Lean source frontend as a backend of the same Rust resource
+engine; keep original native output,stdin/path scope and prototype qualification
+explicit. This removes the need for another resource scheduler while preparing
+the real source workload. It is implementation infrastructure, not workload
+novelty or a performance result. Current sole native7808group remains unchanged.

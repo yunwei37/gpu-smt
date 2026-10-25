@@ -119,3 +119,15 @@ admission observation. Complete aggregate RSS comes from the owned-tree event
 stream. Historical attempts without kind metadata remain ambiguous. Do not
 train a new-RSS-point source model from old AS-capped bad_alloc labels or
 concurrent aggregate envelopes presented as per-source allocation peaks.
+
+
+## Code-verification source frontend
+
+The same measure command accepts --lean /absolute/pinned-sdk/bin/lean instead of
+--repl. Launch from the matching project's lake env, with the same full Batch
+input format and eligible CPU/48GiB resource point. It executes the stock JSON
+stdin frontend, not a model/prover implementation. Keep this backend identity
+and its source-path limitations explicit; it is not automatically equivalent
+to native original-filename invocation or the strongest warm REPL reference.
+Existing legacy Verina results remain at their recorded old resource point.
+New whole-workload execution still waits for the sole retained native group.

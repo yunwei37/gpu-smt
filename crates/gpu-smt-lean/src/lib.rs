@@ -1,12 +1,14 @@
-//! Stock Lean REPL JSON backend. Fresh processes preserve request independence.
+//! Stock Lean REPL JSON and source frontend backends. Fresh processes preserve independence.
 //! Optional pinned-context import preparation lives in PreparedRepl; qualification is explicit.
 
 #![warn(missing_docs)]
 mod prepared;
+mod source;
 use async_trait::async_trait;
 use gpu_smt_core::*;
 pub use prepared::PreparedRepl;
 use serde_json::{Value, json};
+pub use source::{NativeLean, classify_source};
 use std::{path::PathBuf, process::Stdio, time::Duration};
 use tokio::{
     io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader},
@@ -159,6 +161,35 @@ fn process_identity(pid: u32) -> Option<ProcessIdentity> {
         start_ticks: ticks,
     })
 }
+fn observe_current_rss(identity: &ProcessIdentity, registry: &dyn ProcessRegistry) {
+    if let Ok(raw) = std::fs::read_to_string(format!("/proc/{}/stat", identity.pid))
+        && let Some(tail) = raw.rsplit_once(')').map(|x| x.1)
+        && tail
+            .split_whitespace()
+            .nth(19)
+            .and_then(|s| s.parse::<u64>().ok())
+            == Some(identity.start_ticks)
+        && let Some(pages) = tail
+            .split_whitespace()
+            .nth(21)
+            .and_then(|x| x.parse::<u64>().ok())
+    {
+        // SAFETY: sysconf has no pointer arguments.
+        let size = unsafe { libc::sysconf(libc::_SC_PAGESIZE) };
+        if size > 0 {
+            let bytes = pages.saturating_mul(size as u64);
+            registry.observe_rss(bytes);
+            registry.note(BackendEvent {
+                    stage: "rss_observation".into(),
+                    detail: json!({
+                        "kind":"leader_current_rss", "pid":identity.pid,
+                        "start_ticks":identity.start_ticks, "bytes":bytes,
+                        "scope":"birth-matched proc stat before retirement; not a high-water or whole-tree sample"
+                    }).to_string(),
+                });
+        }
+    }
+}
 #[async_trait]
 impl VerificationBackend for NativeRepl {
     fn identity(&self) -> String {
@@ -214,33 +245,7 @@ impl VerificationBackend for NativeRepl {
                 Outcome::operational(Status::Timeout,"native request timeout"),
             _=x.cancel.cancelled()=>Outcome::operational(Status::Cancelled,"attempt cancelled"),
         };
-        if let Ok(raw) = std::fs::read_to_string(format!("/proc/{pid}/stat"))
-            && let Some(tail) = raw.rsplit_once(')').map(|x| x.1)
-            && tail
-                .split_whitespace()
-                .nth(19)
-                .and_then(|s| s.parse::<u64>().ok())
-                == Some(identity.start_ticks)
-            && let Some(pages) = tail
-                .split_whitespace()
-                .nth(21)
-                .and_then(|x| x.parse::<u64>().ok())
-        {
-            // SAFETY: sysconf has no pointer arguments.
-            let size = unsafe { libc::sysconf(libc::_SC_PAGESIZE) };
-            if size > 0 {
-                let bytes = pages.saturating_mul(size as u64);
-                x.registry.observe_rss(bytes);
-                x.registry.note(BackendEvent {
-                    stage: "rss_observation".into(),
-                    detail: json!({
-                        "kind":"leader_current_rss", "pid":identity.pid,
-                        "start_ticks":identity.start_ticks, "bytes":bytes,
-                        "scope":"birth-matched proc stat before retirement; not a high-water or whole-tree sample"
-                    }).to_string(),
-                });
-            }
-        }
+        observe_current_rss(&identity, x.registry.as_ref());
         kill_group(&identity);
         let _ = child.start_kill();
         let _ = child.wait().await;

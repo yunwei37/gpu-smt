@@ -147,3 +147,28 @@ The older sampled_peak_attempt_rss_bytes remains a legacy alias with the same
 value. Old captures without kind events remain untyped; no observation kind is
 invented when reading them. Aggregate48GiB enforcement still uses the complete
 owned-tree sampler, not these individual supplemental values.
+
+
+## Stock source frontend
+
+NativeLean is a separate VerificationBackend for the SDK's lean executable.
+It sends exact source bytes to lean --json --stdin in the pinned project/import
+environment. The same engine admission, watchdog, retry and cancellation apply.
+The CLI selects it with --lean PATH instead of --repl PATH; the REPL path remains
+unchanged and prepared-host/sysroot are REPL-only. No native memory,trust,heartbeat
+or thread override is added; eligible CPU assignments still bound child execution.
+
+NativeLean responses retain exit_code, complete stdout, the labelled stderr tail
+and parsed messages. Successful native exit with recognized diagnostics is
+accepted; sorry warnings remain incomplete and native errors rejected. Unknown
+JSON shapes/non-JSON stdout, signals and transport failures remain operational;
+arbitrary source #eval printing therefore may be unsupported. No environment
+handle is fabricated. This is native frontend checking, not an imported-axiom
+audit. It writes no source,olean or auxiliary output into the original project.
+
+Stdin has its own native diagnostic filename/module context. Sources depending
+on their original file path,relative file IO or filesystem effects are not proven
+equivalent to invoking lean on their original filename. Run same-context raw CLI
+differentials and preserve those differences for each workload. CLI response
+envelopes and REPL JSON are different contracts; do not compare their raw payloads
+as though they were the same protocol or cache across backend identities.

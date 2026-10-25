@@ -4,7 +4,7 @@ use gpu_smt_engine::{
     Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, TaskInterleave,
     linux::ProcMonitor,
 };
-use gpu_smt_lean::NativeRepl;
+use gpu_smt_lean::{NativeLean, NativeRepl};
 use std::{
     collections::HashMap,
     path::PathBuf,
@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -91,6 +91,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     while let Some(key) = args.next() {
         if ![
             "--repl",
+            "--lean",
             "--project",
             "--environment",
             "--cpus",
@@ -144,12 +145,39 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .transpose()?
             .unwrap_or(1),
     };
-    let backend = NativeRepl {
-        program: PathBuf::from(required("--repl")?).canonicalize()?,
-        args: vec![],
-        project: PathBuf::from(required("--project")?).canonicalize()?,
-        environment: required("--environment")?,
-    };
+    let environment = required("--environment")?;
+    let project = PathBuf::from(required("--project")?).canonicalize()?;
+    let verifier: Arc<dyn VerificationBackend> =
+        match (options.get("--repl"), options.get("--lean")) {
+            (Some(program), None) => {
+                let backend = NativeRepl {
+                    program: PathBuf::from(program).canonicalize()?,
+                    args: vec![],
+                    project,
+                    environment: environment.clone(),
+                };
+                match (options.get("--prepared-host"), options.get("--sysroot")) {
+                    (None, None) => Arc::new(backend),
+                    (Some(host), Some(sysroot)) => Arc::new(gpu_smt_lean::PreparedRepl::new(
+                        backend,
+                        PathBuf::from(host).canonicalize()?,
+                        PathBuf::from(sysroot).canonicalize()?,
+                    )),
+                    _ => return Err("--prepared-host and --sysroot are required together".into()),
+                }
+            }
+            (None, Some(program)) => {
+                if options.contains_key("--prepared-host") || options.contains_key("--sysroot") {
+                    return Err("prepared import parent requires --repl".into());
+                }
+                Arc::new(NativeLean {
+                    program: PathBuf::from(program).canonicalize()?,
+                    project,
+                    environment: environment.clone(),
+                })
+            }
+            _ => return Err("specify exactly one of --repl or --lean".into()),
+        };
     gpu_smt_engine::linux::bind_current_thread(&config.cpus)?;
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .worker_threads(config.cpus.len())
@@ -159,7 +187,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         command,
         options,
         config,
-        backend,
+        verifier,
+        environment,
         started,
         started_unix_ms,
     ))
@@ -169,7 +198,8 @@ async fn run(
     command: String,
     options: HashMap<String, String>,
     config: Config,
-    backend: NativeRepl,
+    verifier: Arc<dyn VerificationBackend>,
+    environment: String,
     started: Instant,
     started_unix_ms: u64,
 ) -> Result<(), Box<dyn std::error::Error>> {
@@ -183,16 +213,6 @@ async fn run(
         "task-interleave" => Arc::new(TaskInterleave::new(Fifo)),
         _ => return Err("unknown scheduling policy".into()),
     };
-    let verifier: Arc<dyn VerificationBackend> =
-        match (options.get("--prepared-host"), options.get("--sysroot")) {
-            (None, None) => Arc::new(backend.clone()),
-            (Some(host), Some(sysroot)) => Arc::new(gpu_smt_lean::PreparedRepl::new(
-                backend.clone(),
-                PathBuf::from(host).canonicalize()?,
-                PathBuf::from(sysroot).canonicalize()?,
-            )),
-            _ => return Err("--prepared-host and --sysroot are required together".into()),
-        };
     let backend_identity = verifier.identity();
     let engine = Engine::new(
         config.clone(),
@@ -211,7 +231,7 @@ async fn run(
         let capture = gpu_smt_server::measurement::Capture {
             schema_version: 1,
             engine_version: env!("CARGO_PKG_VERSION").into(),
-            environment: backend.environment.clone(),
+            environment,
             backend: backend_identity,
             policy: policy_name.into(),
             resources: config,

@@ -34,6 +34,11 @@ Use serve for local Kimina core/check, legacy/verify and typed/v1/verify.
 Unsupported debug/infotree extensions return explicit errors. Native env
 fields are output provenance, not persistent remote session handles.
 
+For original code-verification source, --lean /absolute/pinned-sdk/bin/lean
+selects the stock JSON stdin frontend through the same resource engine. Its
+[output and source-path scope](docs/api.md#stock-source-frontend) are distinct
+from REPL JSON; no whole-workload speedup follows from backend availability.
+
 | Crate | Responsibility |
 |---|---|
 |gpu-smt-core|Requests, verdicts, attempt provenance and extension traits|

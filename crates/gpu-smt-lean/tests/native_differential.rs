@@ -470,3 +470,147 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         );
     }
 }
+
+#[tokio::test]
+#[ignore = "requires LEAN_SYSROOT and LEAN_PROJECT; native CI runs this with the pinned CLI"]
+async fn native_source_frontend_matches_cli_and_retires_interruptions() {
+    let program = PathBuf::from(std::env::var("LEAN_SYSROOT").unwrap()).join("bin/lean");
+    let project = PathBuf::from(std::env::var("LEAN_PROJECT").unwrap());
+    let mask = std::fs::read_to_string("/proc/self/status").unwrap();
+    let cpu = mask
+        .lines()
+        .find_map(|l| l.strip_prefix("Cpus_allowed_list:"))
+        .unwrap()
+        .trim()
+        .split([',', '-'])
+        .next()
+        .unwrap()
+        .parse()
+        .unwrap();
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 48 << 30,
+            cpus: vec![cpu],
+            cores_per_worker: 1,
+        },
+        Arc::new(gpu_smt_lean::NativeLean {
+            program: program.clone(),
+            project: project.clone(),
+            environment: "native-source-contract".into(),
+        }),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let make = |id: &str, code: &str, timeout_ms| Candidate {
+        id: id.into(),
+        task_id: None,
+        code: code.into(),
+        timeout_ms,
+        reuse: false,
+    };
+    let mut seen = vec![];
+    for (index, (code, status)) in [
+        (
+            "import Init\nexample : 1 + 1 = 2 := by decide",
+            Status::Accepted,
+        ),
+        (
+            "import Init\nexample : 1 = 2 := by decide",
+            Status::Rejected,
+        ),
+        (
+            "import Init\nexample : False := by sorry",
+            Status::Incomplete,
+        ),
+        ("import Init\n#check Nat", Status::Accepted),
+    ]
+    .into_iter()
+    .enumerate()
+    {
+        let mut native = tokio::process::Command::new(&program)
+            .args(["--json", "--stdin"])
+            .current_dir(&project)
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .kill_on_drop(true)
+            .spawn()
+            .unwrap();
+        let mut input = native.stdin.take().unwrap();
+        input.write_all(code.as_bytes()).await.unwrap();
+        drop(input);
+        let raw = tokio::time::timeout(
+            std::time::Duration::from_secs(300),
+            native.wait_with_output(),
+        )
+        .await
+        .unwrap()
+        .unwrap();
+        let expected = gpu_smt_lean::classify_source(
+            raw.status.code(),
+            String::from_utf8(raw.stdout).unwrap(),
+            String::from_utf8(raw.stderr).unwrap(),
+        );
+        assert_eq!(expected.status, status);
+        let result = engine
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![make(&index.to_string(), code, 300000)],
+            })
+            .await
+            .unwrap();
+        assert_eq!(result[0].outcome.status, status, "{:?}", result[0].outcome);
+        assert_eq!(
+            result[0].outcome.response, expected.response,
+            "CLI output differs"
+        );
+        seen.extend(
+            result[0]
+                .attempts
+                .iter()
+                .flat_map(|a| a.processes.iter().cloned()),
+        );
+    }
+    let timeout = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![make("timeout", "import Init\n#eval IO.sleep 10000", 50)],
+        })
+        .await
+        .unwrap();
+    assert_eq!(timeout[0].outcome.status, Status::Timeout);
+    seen.extend(
+        timeout[0]
+            .attempts
+            .iter()
+            .flat_map(|a| a.processes.iter().cloned()),
+    );
+    let after = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![make(
+                "after",
+                "import Init\nexample : True := by trivial",
+                300000,
+            )],
+        })
+        .await
+        .unwrap();
+    assert_eq!(after[0].outcome.status, Status::Accepted);
+    seen.extend(
+        after[0]
+            .attempts
+            .iter()
+            .flat_map(|a| a.processes.iter().cloned()),
+    );
+    engine.shutdown().await;
+    for p in seen {
+        assert!(
+            gpu_smt_engine::linux::identity(p.pid).is_err(),
+            "native CLI survives result/shutdown"
+        );
+    }
+}
