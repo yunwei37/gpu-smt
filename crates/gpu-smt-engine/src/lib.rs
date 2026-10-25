@@ -18,7 +18,7 @@ use tokio::{
 };
 use tokio_util::sync::CancellationToken;
 
-/// Default arrival-order policy.
+/// Default stable submission-order policy; exclusive resource retries take precedence.
 pub struct Fifo;
 impl SchedulingPolicy for Fifo {
     fn priority(&self, _: &Candidate) -> u64 {
@@ -159,6 +159,15 @@ struct Flight {
     tx: Sender,
     completion: Arc<Completion>,
 }
+enum Subscription {
+    Cached(Outcome),
+    Flight {
+        coalesced: bool,
+        rx: watch::Receiver<Option<Arc<WorkResult>>>,
+        sender: Sender,
+        completion: Arc<Completion>,
+    },
+}
 
 struct Inner {
     config: Config,
@@ -272,19 +281,23 @@ impl Inner {
         drop(s);
         self.notify.notify_waiters();
     }
+    fn enqueue(self: &Arc<Self>, priority: u64) -> Queued {
+        let ticket = (priority, self.next.fetch_add(1, Ordering::Relaxed));
+        self.state.lock().unwrap().queued.insert(ticket);
+        Queued {
+            inner: self.clone(),
+            ticket,
+        }
+    }
     async fn acquire(
         self: &Arc<Self>,
         estimate: Option<u64>,
         origin: &str,
         solo: bool,
-        priority: u64,
+        queued: Queued,
     ) -> Result<(Lease, Arc<Registry>, Vec<usize>, bool), String> {
-        let ticket = (priority, self.next.fetch_add(1, Ordering::Relaxed));
-        self.state.lock().unwrap().queued.insert(ticket);
-        let _queued = Queued {
-            inner: self.clone(),
-            ticket,
-        };
+        let ticket = queued.ticket;
+        let _queued = queued;
         loop {
             let notified = self.notify.notified();
             if let Some(e) = self.fatal.lock().unwrap().clone() {
@@ -399,7 +412,9 @@ impl Inner {
         key: CacheKey,
         tx: Sender,
         completion: Arc<Completion>,
+        queued: Queued,
     ) {
+        let mut queued = Some(queued);
         let mut attempts = vec![];
         let mut solo = false;
         let result = loop {
@@ -420,8 +435,11 @@ impl Inner {
             } else {
                 None
             };
+            let queued = queued
+                .take()
+                .unwrap_or_else(|| self.enqueue(self.policy.priority(&c)));
             let acquired = tokio::select! {
-                r=self.acquire(predicted,&c.id,exclusive,self.policy.priority(&c))=>r,
+                r=self.acquire(predicted,&c.id,exclusive,queued)=>r,
                 _=tx.closed()=>break Outcome::operational(Status::Cancelled,"no live subscribers"),
             };
             let (_lease, registry, cpus, exclusive) = match acquired {
@@ -540,8 +558,9 @@ impl Engine {
         });
         Ok(Self(inner))
     }
-    async fn verify(&self, c: Candidate, cancel: CancellationToken) -> Verification {
-        let start = Instant::now();
+    // Establish sharing and cache disposition in submission order, before
+    // spawned tasks or forecasts can race for the physical execution ticket.
+    fn subscribe(&self, c: &Candidate, queued: Queued) -> Subscription {
         let mut backend = self.0.backend.identity();
         if !c.reuse {
             backend.push_str(&format!(
@@ -554,46 +573,70 @@ impl Engine {
             code: c.code.clone(),
             timeout_ms: c.timeout_ms,
         };
-        let (cached, coalesced, mut rx, sender, completion) = {
-            let mut flights = self.0.inflight.lock().unwrap();
-            if let Some(o) = c.reuse.then(|| self.0.cache.get(&key)).flatten() {
+        let mut flights = self.0.inflight.lock().unwrap();
+        if let Some(o) = c.reuse.then(|| self.0.cache.get(&key)).flatten() {
+            return Subscription::Cached(o);
+        }
+        if let Some(flight) = flights.get(&key) {
+            drop(queued);
+            Subscription::Flight {
+                coalesced: true,
+                rx: flight.tx.subscribe(),
+                sender: flight.tx.clone(),
+                completion: flight.completion.clone(),
+            }
+        } else {
+            let (tx, rx) = watch::channel(None);
+            let completion = Arc::new(Completion {
+                done: AtomicBool::new(false),
+                notify: Notify::new(),
+            });
+            flights.insert(
+                key.clone(),
+                Flight {
+                    tx: tx.clone(),
+                    completion: completion.clone(),
+                },
+            );
+            tokio::spawn(self.0.clone().run(
+                c.clone(),
+                key,
+                tx.clone(),
+                completion.clone(),
+                queued,
+            ));
+            Subscription::Flight {
+                coalesced: false,
+                rx,
+                sender: tx,
+                completion,
+            }
+        }
+    }
+    async fn verify(
+        &self,
+        c: Candidate,
+        cancel: CancellationToken,
+        subscription: Subscription,
+    ) -> Verification {
+        let start = Instant::now();
+        let (coalesced, mut rx, sender, completion) = match subscription {
+            Subscription::Cached(outcome) => {
                 return Verification {
                     id: c.id,
-                    outcome: o,
+                    outcome,
                     attempts: vec![],
                     elapsed_seconds: start.elapsed().as_secs_f64(),
                     cached: true,
                     coalesced: false,
                 };
             }
-            if let Some(flight) = flights.get(&key) {
-                (
-                    false,
-                    true,
-                    flight.tx.subscribe(),
-                    flight.tx.clone(),
-                    flight.completion.clone(),
-                )
-            } else {
-                let (tx, rx) = watch::channel(None);
-                let completion = Arc::new(Completion {
-                    done: AtomicBool::new(false),
-                    notify: Notify::new(),
-                });
-                flights.insert(
-                    key.clone(),
-                    Flight {
-                        tx: tx.clone(),
-                        completion: completion.clone(),
-                    },
-                );
-                tokio::spawn(
-                    self.0
-                        .clone()
-                        .run(c.clone(), key, tx.clone(), completion.clone()),
-                );
-                (false, false, rx, tx, completion)
-            }
+            Subscription::Flight {
+                coalesced,
+                rx,
+                sender,
+                completion,
+            } => (coalesced, rx, sender, completion),
         };
         let mut work = loop {
             if let Some(done) = rx.borrow().clone() {
@@ -631,7 +674,7 @@ impl Engine {
             outcome: work.outcome.clone(),
             attempts: work.attempts.clone(),
             elapsed_seconds: start.elapsed().as_secs_f64(),
-            cached,
+            cached: false,
             coalesced,
         }
     }
@@ -674,19 +717,31 @@ impl Engine {
                 return Err("first_success requires task_id".into());
             }
         }
-        let mut pending: Vec<_> = batch.candidates.into_iter().enumerate().collect();
+        let mut pending: Vec<_> = batch
+            .candidates
+            .into_iter()
+            .enumerate()
+            .map(|(index, c)| (self.0.policy.priority(&c), index, c))
+            .collect();
         let n = pending.len();
-        pending.sort_by_key(|(_, c)| self.0.policy.priority(c));
+        pending.sort_by_key(|(priority, index, _)| (*priority, *index));
+        // Register the complete ranked frontier before any physical executor
+        // starts. Cost-model latency and Tokio wake order cannot reorder it.
+        let pending: Vec<_> = pending
+            .into_iter()
+            .map(|(priority, index, c)| (self.0.enqueue(priority), index, c))
+            .collect();
         let mut tasks = JoinSet::new();
         let mut groups: HashMap<String, Vec<CancellationToken>> = HashMap::new();
-        for (index, c) in pending {
+        for (queued, index, c) in pending {
             let cancel = CancellationToken::new();
             let task = c.task_id.clone();
             if let Some(id) = &task {
                 groups.entry(id.clone()).or_default().push(cancel.clone());
             }
+            let subscription = self.subscribe(&c, queued);
             let engine = self.clone();
-            tasks.spawn(async move { (index, task, engine.verify(c, cancel).await) });
+            tasks.spawn(async move { (index, task, engine.verify(c, cancel, subscription).await) });
         }
         let mut results: Vec<Option<Verification>> = vec![None; n];
         while let Some(next) = tasks.join_next().await {

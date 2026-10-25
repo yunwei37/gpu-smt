@@ -24,6 +24,9 @@ POST/v1/verify accepts the typed Batch JSON contract. Results retain original
 order, caller IDs, native JSON, final status, attempt history, complete elapsed
 time and cache/coalescing provenance. all mode executes every subscriber;
 first_success requires task_id and cancels only after a checked same-task win.
+Equal-priority candidates retain original submission order at admission;
+forecast latency or executor wake order does not define a new scheduling
+policy. CPU/RSS admission and exclusive resource retries still apply.
 
 POST/check accepts snippets(id,code), timeout seconds, reuse, debug=false,
 infotree=null. POST/verify and /one_pass_verify_batch accept codes with

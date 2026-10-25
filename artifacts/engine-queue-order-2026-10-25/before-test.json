@@ -1,0 +1,21 @@
+{
+  "UTC": "2026-10-25T10:43:27.393897+00:00",
+  "head": "ea2ea299f32d9dcefd1eb50e4f6f823c6a8f34d7",
+  "command": [
+    "cargo",
+    "test",
+    "-p",
+    "gpu-smt-engine",
+    "--test",
+    "engine",
+    "submitted_order_survives_delayed_forecast_and_task_wakeup",
+    "--locked",
+    "-j",
+    "2",
+    "--",
+    "--nocapture"
+  ],
+  "exit": 101,
+  "seconds": 3.6888278040569276,
+  "scope": "Controlled engine fixture, no Lean/native acquisition"
+}

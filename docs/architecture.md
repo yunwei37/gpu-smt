@@ -65,6 +65,14 @@ Deduplicate only exact backend/environment/header/source/options/timeout keys.
 No whitespace normalization or prefix/certificate reuse. Each caller keeps its
 identity and provenance; a cache hit is not a fresh zero-time proof.
 
+Within a batch, ranking is evaluated once per candidate, with original-index
+tie order. Queue tickets and cache/in-flight sharing disposition are established
+before asynchronous forecast/execution tasks can reorder them. Cache hits and
+shared subscribers release unused tickets; only physical work waits for CPU/RSS
+admission. Exclusive resource retries retain their precedence over fresh work.
+Independent concurrent batches enter the same queue at ticket registration;
+this is not a timestamp reconstruction of network arrivals.
+
 RL mode produces every candidate outcome. Pass@k cancels siblings only after an
 actually checked same-task acceptance. Cancellation is a consumer outcome, never
 Lean rejection. In-flight deduplication retains RL subscribers if a pass@k

@@ -451,3 +451,159 @@ async fn large_waiting_batch_does_not_rescan_process_table_per_candidate() {
     e.shutdown().await;
     assert_eq!(run.await.unwrap().unwrap().len(), 1024);
 }
+
+struct DelayedFirstForecast {
+    second_seen: std::sync::Mutex<bool>,
+    changed: std::sync::Condvar,
+}
+impl SchedulingPolicy for DelayedFirstForecast {
+    fn priority(&self, _: &Candidate) -> u64 {
+        0
+    }
+    fn predicted_rss(&self, c: &Candidate) -> Option<u64> {
+        if c.id == "early" {
+            let seen = self.second_seen.lock().unwrap();
+            let (seen, _) = self
+                .changed
+                .wait_timeout_while(seen, Duration::from_secs(2), |seen| !*seen)
+                .unwrap();
+            assert!(*seen, "second forecast never became runnable");
+            drop(seen);
+            // Make the earlier forecast finish after the later forecast.
+            std::thread::sleep(Duration::from_millis(50));
+        } else {
+            *self.second_seen.lock().unwrap() = true;
+            self.changed.notify_all();
+        }
+        Some(1)
+    }
+}
+struct ExecutionOrder(std::sync::Mutex<Vec<String>>);
+#[async_trait]
+impl VerificationBackend for ExecutionOrder {
+    fn identity(&self) -> String {
+        "execution-order-fixture".into()
+    }
+    async fn verify(&self, c: &Candidate, _: Execution) -> Outcome {
+        self.0.lock().unwrap().push(c.id.clone());
+        Outcome {
+            status: Status::Accepted,
+            response: Some(json!({"env":0,"messages":[]})),
+            error: None,
+        }
+    }
+}
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn submitted_order_survives_delayed_forecast_and_task_wakeup() {
+    let backend = Arc::new(ExecutionOrder(std::sync::Mutex::new(vec![])));
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0],
+            cores_per_worker: 1,
+        },
+        backend.clone(),
+        Arc::new(DelayedFirstForecast {
+            second_seen: std::sync::Mutex::new(false),
+            changed: std::sync::Condvar::new(),
+        }),
+        Arc::new(Monitor { per_job: 1 }),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let results = tokio::time::timeout(
+        Duration::from_secs(5),
+        engine.verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![
+                candidate("early", "early source", "one"),
+                candidate("late", "late source", "two"),
+            ],
+        }),
+    )
+    .await
+    .unwrap()
+    .unwrap();
+    engine.shutdown().await;
+    assert_eq!(results.len(), 2);
+    assert_eq!(
+        *backend.0.lock().unwrap(),
+        vec!["early", "late"],
+        "cost-model latency must not change stable submitted policy order"
+    );
+}
+
+struct CoupledStarts {
+    calls: AtomicUsize,
+    together: tokio::sync::Barrier,
+}
+#[async_trait]
+impl VerificationBackend for CoupledStarts {
+    fn identity(&self) -> String {
+        "coupled-starts-fixture".into()
+    }
+    async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+        self.calls.fetch_add(1, Ordering::SeqCst);
+        if c.code != "cached" {
+            tokio::select! {
+                _ = self.together.wait() => {},
+                _ = x.cancel.cancelled() => return Outcome::operational(
+                    Status::Cancelled, "fixture cancelled and retired"),
+            }
+        }
+        Outcome {
+            status: Status::Accepted,
+            response: Some(json!({"env":0,"messages":[]})),
+            error: None,
+        }
+    }
+}
+#[tokio::test]
+async fn cached_and_coalesced_tickets_do_not_block_independent_cpu_capacity() {
+    let backend = Arc::new(CoupledStarts {
+        calls: AtomicUsize::new(0),
+        together: tokio::sync::Barrier::new(2),
+    });
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0, 1],
+            cores_per_worker: 1,
+        },
+        backend.clone(),
+        Arc::new(Policy),
+        Arc::new(Monitor { per_job: 1 }),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("warm", "cached", "warm")],
+        })
+        .await
+        .unwrap();
+    let result = tokio::time::timeout(
+        Duration::from_secs(2),
+        engine.verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![
+                candidate("cached", "cached", "zero"),
+                candidate("physical", "work", "one"),
+                candidate("shared", "work", "two"),
+                candidate("independent", "other", "three"),
+            ],
+        }),
+    )
+    .await;
+    engine.shutdown().await;
+    let results = result
+        .expect("unused queue ticket blocks the other core")
+        .unwrap();
+    assert!(results[0].cached);
+    assert!(results[2].coalesced);
+    assert!(results.iter().all(|v| v.outcome.status == Status::Accepted));
+    assert_eq!(backend.calls.load(Ordering::SeqCst), 3);
+}
