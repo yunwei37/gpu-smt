@@ -638,3 +638,7 @@ Eight real candidates: original 4 valid/4 errors; both first-success policies ac
 ## 2026-10-25 Verina real native/profile qualification
 
 Three official files execute on pinned Lean4.18; both basic references exit0 without explicit admissions, the advanced stub is explicitly incomplete. All three diagnostic profiles produced; main qualification cost is frontend lint, not SAT. Duplicate watchdog directory fault in attempt1 fixed without launching any Lean; failed source/log retained. Complete successful group retired, root self-review recorded. Proceeding to original full189 source characterization, no oracle or external-system reproduction.
+
+## 2026-10-25 original Verina full189 completed
+
+All189 source files characterized, native/profile status equality: 46 exit0 without explicit admission, 139 admitted stubs, four actual pinned-toolchain API errors retained. Native/profile whole clocks48.841915097/53.948885378s, not speedup. Completed subgroup traced simp8.909486395s, no above-threshold bv_decide/omega/decide/grind; do not convert censored traces to zero. Peak RSS10.30GB/two native processes/zero kills or errors/all retired. Root self-review and exporter source retained in artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725. Continue real SLLVM bitvector references and own first-success native full comparison.

@@ -690,6 +690,52 @@ and it does not establish a new contribution for ordinary scheduling.
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
 
+\subsubsection{Observed failure hotspots}
+A completed diagnostic selects the 480 slowest original failures by the native
+request envelopes, including all 83 timeouts and 42 resource failures.
+All selected source classifications remain unchanged, and all 480 have
+native body-boundary observations. Its complete owned lifecycle is
+17,333.49 seconds. The sampled owned-tree peak is 44.49\,GiB with two
+REPLs; no watchdog kill or monitor error occurs.
+
+Within the timeout cohort, one-second endpoint attribution assigns
+13,692.70 observed thread CPU seconds (55.19\%) to
+\texttt{interval\_cases} and 6,998.01 seconds (28.21\%) to
+\texttt{simp\_all}. The timeout cohort has only 6.00 sampled seconds under
+\texttt{nlinarith}. Among the 355 ordinary errors, \texttt{simp\_all}
+accounts for 48.65\% of observed thread CPU. These denominators are
+sampled cohort thread CPU, not complete miniF2F elapsed time or removable
+critical-path work. Child-subtracted runtime counters, open frames,
+source transitions and terminated streams remain in the artifact.
+Resource failures lack returned body clocks; they are not zero-cost.
+
+These observations motivate continuing work on finite-case construction,
+simplifier repetition and reduction failure witnesses. An expensive prefix
+or a large branch count alone does not prove failure. No reliable early
+rejection mechanism or whole-population acceptance preservation has yet
+been established.
+
+\subsubsection{Public code-verification references}
+We execute all 189 original Verina task files at their pinned Lean~4.18
+environment. Native and profiled classifications agree: 46 files exit
+successfully without explicit admissions, 139 retain admitted proof stubs,
+and four fail on collection references to unavailable
+\texttt{Std.HashSet}/\texttt{HashMap.emptyWithCapacity} APIs.
+We retain the errors and stubs separately.
+The two complete group lifecycles are 48.84 and 53.95 seconds;
+this characterization is not an acceleration comparison.
+
+In the 46 no-explicit-admission references, traced \texttt{simp} and
+\texttt{simp\_all} occupy 8.91 accumulated elapsed-slice seconds.
+No \texttt{bv\_decide}, \texttt{omega}, \texttt{decide} or \texttt{grind}
+span above the default trace thresholds appears in this subgroup.
+Lean's exporter constructs these weights from elapsed slices and
+synthesizes its CPU-delta field from the same slices; they are not measured
+CPU samples. Missing subthreshold tactics are censored.
+This collection does not yet supply a large measured SAT/LRAT target.
+The ongoing code-verification direction also includes real compiler
+bitvector references; their native cost decomposition remains unmeasured.
+
 \subsection{Heterogeneous execution}
 RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.
 

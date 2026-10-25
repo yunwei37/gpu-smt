@@ -1,0 +1,917 @@
+{
+  "sources": 189,
+  "native_counts": {
+    "incomplete_reference": 139,
+    "lean_error": 4,
+    "native_exit0_no_explicit_admission": 46
+  },
+  "profile_counts": {
+    "incomplete_reference": 139,
+    "lean_error": 4,
+    "native_exit0_no_explicit_admission": 46
+  },
+  "status_changes": [],
+  "lifecycles": [
+    {
+      "mode": "native",
+      "state": "complete",
+      "expected": 189,
+      "returned": 189,
+      "whole_lifecycle_seconds": 48.841915097,
+      "memory_watchdog": {
+        "root_pid": 281214,
+        "root_birth": 1792912690.36,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 49,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 10299805696,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "peak_external_owned_provider_rss_bytes": 0,
+        "included_owned_roots": [
+          {
+            "pid": 281214,
+            "birth": 1792912690.36,
+            "out": "/workspaces/repository/artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/native"
+          }
+        ],
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+      },
+      "remaining_owned_descendants": [],
+      "profile_scope": "Builtin100ms component profiler and default10ms structured trace thresholds; completed trace wall intervals are not sampledCPU. Missing timed-out profiles remain censored."
+    },
+    {
+      "mode": "profile",
+      "state": "complete",
+      "expected": 189,
+      "returned": 189,
+      "whole_lifecycle_seconds": 53.948885378,
+      "memory_watchdog": {
+        "root_pid": 281214,
+        "root_birth": 1792912690.36,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "per_second": true,
+        "samples": 54,
+        "kills": 0,
+        "peak_sampled_owned_rss_bytes": 10257248256,
+        "peak_sampled_native_repl_count": 2,
+        "error": null,
+        "peak_external_owned_provider_rss_bytes": 0,
+        "included_owned_roots": [
+          {
+            "pid": 281214,
+            "birth": 1792912690.36,
+            "out": "/workspaces/repository/artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/profile"
+          }
+        ],
+        "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+      },
+      "remaining_owned_descendants": [],
+      "profile_scope": "Builtin100ms component profiler and default10ms structured trace thresholds; completed trace wall intervals are not sampledCPU. Missing timed-out profiles remain censored."
+    }
+  ],
+  "groups": {
+    "incomplete_reference": {
+      "sources": 139,
+      "component_exclusive_trace_weights_seconds": [
+        [
+          "runFrontend",
+          21.880940587000026
+        ],
+        [
+          "Elab.step: tacticDecreasing_trivial",
+          4.703456453000001
+        ],
+        [
+          "Elab.def.processPreDef",
+          3.8465658709999997
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticSeq1Indented",
+          1.7904548420000004
+        ],
+        [
+          "Kernel",
+          1.787982201
+        ],
+        [
+          "Elab.command",
+          1.4470140960000006
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.app",
+          0.8421600270000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.let",
+          0.5600423159999998
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.first",
+          0.5239991450000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.simp",
+          0.42950934500000004
+        ],
+        [
+          "compiler",
+          0.422004902
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.match",
+          0.317240394
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.letrec",
+          0.2808361720000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.omega",
+          0.21651365
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.letMVar",
+          0.15394483000000003
+        ],
+        [
+          "Meta.isDefEq",
+          0.108221397
+        ],
+        [
+          "Elab.lint",
+          0.08921786699999999
+        ],
+        [
+          "omega",
+          0.072411112
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.forInMacro",
+          0.057423768
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticSeq",
+          0.031440398999999994
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.fun",
+          0.028557778999999995
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.binrel",
+          0.025160635
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.arrow",
+          0.023308091
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.let_delayed",
+          0.01707521
+        ],
+        [
+          "Elab.step: tacticDecreasing_tactic",
+          0.014792431000000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.pipeProj",
+          0.013743767
+        ],
+        [
+          "Elab.step: Lean.withAnnotateTerm",
+          0.011614478999999995
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.allGoals",
+          0.011237077999999998
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.binop",
+          0.011136049
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.do",
+          0.007078803
+        ],
+        [
+          "Elab.step: tacticDecreasing_with_",
+          0.0036469140000000007
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.paren",
+          0.0031223760000000005
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.typeAscription",
+          0.0016582699999999999
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.waitIfTypeMVar",
+          0.001498908
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.assumption",
+          0.0012117719999999998
+        ],
+        [
+          "Elab.step: \u00abterm_\u2227_\u00bb",
+          0.0009693369999999999
+        ],
+        [
+          "Elab.step: termIfThenElse",
+          0.0006235099999999999
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.focus",
+          0.00033749400000000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.paren",
+          0.000322147
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+          0.00030953
+        ],
+        [
+          "Elab.step: tacticClean_wf",
+          0.00019229400000000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.clear",
+          0.000149657
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticTry_",
+          0.000111982
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.explicit",
+          9.4582e-05
+        ],
+        [
+          "Meta.isDefEq.delta",
+          8.4901e-05
+        ],
+        [
+          "Elab.step: \u00abterm_\u2228_\u00bb",
+          7.973e-05
+        ],
+        [
+          "Elab.step: termDepIfThenElse",
+          5.3274e-05
+        ],
+        [
+          "Elab.step: \u00abterm_=_\u00bb",
+          4.1739e-05
+        ],
+        [
+          "Elab.step: \u00abterm_\u2194_\u00bb",
+          2.0183e-05
+        ],
+        [
+          "Elab.step: \u00abterm_++_\u00bb",
+          1.7483000000000002e-05
+        ],
+        [
+          "Elab.step: \u00abterm_::_\u00bb",
+          1.6243e-05
+        ],
+        [
+          "Elab.step: \u00abterm__[_]_!\u00bb",
+          1.5484999999999998e-05
+        ],
+        [
+          "Elab.step: \u00abterm\u2203_,_\u00bb",
+          1.4729e-05
+        ]
+      ],
+      "nearest_tactic_trace_weights_seconds": [
+        [
+          "tacticDecreasing_trivial",
+          4.703456453000001
+        ],
+        [
+          "Lean.Parser.Tactic.tacticSeq1Indented",
+          1.7904548420000004
+        ],
+        [
+          "Lean.Parser.Tactic.first",
+          0.5239991450000001
+        ],
+        [
+          "Lean.Parser.Tactic.simp",
+          0.42950934500000004
+        ],
+        [
+          "Lean.Parser.Tactic.omega",
+          0.288924762
+        ],
+        [
+          "Lean.Parser.Tactic.assumption",
+          0.04562508599999999
+        ],
+        [
+          "Lean.Parser.Tactic.tacticSeq",
+          0.031440398999999994
+        ],
+        [
+          "tacticDecreasing_tactic",
+          0.014792431000000003
+        ],
+        [
+          "Lean.Parser.Tactic.allGoals",
+          0.011237077999999998
+        ],
+        [
+          "tacticDecreasing_with_",
+          0.0036469140000000007
+        ],
+        [
+          "Lean.Parser.Tactic.paren",
+          0.0031223760000000005
+        ],
+        [
+          "Lean.Parser.Tactic.focus",
+          0.00033749400000000003
+        ],
+        [
+          "Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+          0.00030953
+        ],
+        [
+          "tacticClean_wf",
+          0.00019229400000000003
+        ],
+        [
+          "Lean.Parser.Tactic.tacticTry_",
+          0.000111982
+        ]
+      ],
+      "family_trace_weights_seconds": [
+        [
+          "outside traced tactic",
+          31.892516105000013
+        ],
+        [
+          "other tactic",
+          7.128726024
+        ],
+        [
+          "simp",
+          0.42950934500000004
+        ],
+        [
+          "omega",
+          0.288924762
+        ]
+      ]
+    },
+    "lean_error": {
+      "sources": 4,
+      "component_exclusive_trace_weights_seconds": [
+        [
+          "runFrontend",
+          2.889816273
+        ],
+        [
+          "compiler",
+          0.083834941
+        ],
+        [
+          "Elab.command",
+          0.067394525
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.app",
+          0.044279193999999994
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.let",
+          0.034969172
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.match",
+          0.013801576
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.arrow",
+          0.011771794
+        ],
+        [
+          "Elab.lint",
+          0.010353549
+        ],
+        [
+          "Elab.def.processPreDef",
+          0.001508972
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.forInMacro",
+          0.001392266
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.do",
+          0.0011371130000000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.fun",
+          0.00041688600000000005
+        ],
+        [
+          "Elab.step: Lean.withAnnotateTerm",
+          0.00014167399999999997
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.letMVar",
+          0.00013626599999999999
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.typeAscription",
+          0.000105903
+        ],
+        [
+          "Elab.step: \u00abterm_\u2227_\u00bb",
+          4.9307e-05
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.paren",
+          4.0879999999999995e-05
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.waitIfTypeMVar",
+          3.2092e-05
+        ],
+        [
+          "Elab.step: \u00abterm_\u2228_\u00bb",
+          1.6966e-05
+        ],
+        [
+          "Elab.step: termIfThenElse",
+          1.2539e-05
+        ]
+      ],
+      "nearest_tactic_trace_weights_seconds": [],
+      "family_trace_weights_seconds": [
+        [
+          "outside traced tactic",
+          3.161211887999999
+        ]
+      ]
+    },
+    "native_exit0_no_explicit_admission": {
+      "sources": 46,
+      "component_exclusive_trace_weights_seconds": [
+        [
+          "runFrontend",
+          33.926186754
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.simpAll",
+          3.9184956150000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.simp",
+          2.6534241990000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticSeq1Indented",
+          1.3021770689999999
+        ],
+        [
+          "Meta.Tactic.simp.discharge",
+          1.0419652369999999
+        ],
+        [
+          "Meta.isDefEq",
+          0.7010998380000004
+        ],
+        [
+          "Meta.synthInstance",
+          0.6468323259999998
+        ],
+        [
+          "Elab.command",
+          0.544861741
+        ],
+        [
+          "Meta.check",
+          0.441449451
+        ],
+        [
+          "Kernel",
+          0.329802517
+        ],
+        [
+          "Elab.lint",
+          0.22890330299999997
+        ],
+        [
+          "Meta.instantiateMVars",
+          0.2054529
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.rewriteSeq",
+          0.20525084700000001
+        ],
+        [
+          "Elab.step: Mathlib.Tactic.splitIfs",
+          0.19397553299999998
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.first",
+          0.127633337
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.apply",
+          0.12016333000000001
+        ],
+        [
+          "Elab.step: tacticGet_elem_tactic_trivial",
+          0.11317480299999999
+        ],
+        [
+          "Elab.step: tacticDecreasing_trivial",
+          0.10300433
+        ],
+        [
+          "Elab.def.processPreDef",
+          0.088852261
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.split",
+          0.073490768
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.match",
+          0.06370040300000002
+        ],
+        [
+          "Elab.def.maxSharing",
+          0.06182174
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.let_fun",
+          0.055518069999999996
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticTrivial",
+          0.051062961999999996
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.app",
+          0.045497597
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.allGoals",
+          0.041471434
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.contradiction",
+          0.037937587
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.cases",
+          0.031840089
+        ],
+        [
+          "Meta.isDefEq.onFailure",
+          0.025929747999999992
+        ],
+        [
+          "Meta.whnf",
+          0.023764241999999998
+        ],
+        [
+          "compiler",
+          0.022916581999999998
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticRfl",
+          0.019610797000000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.induction",
+          0.018218340999999996
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.refine",
+          0.016782777
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.letMVar",
+          0.014820181
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.unfold",
+          0.013235283
+        ],
+        [
+          "Elab.step: Lean.cdot",
+          0.012621117
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.let",
+          0.011586715000000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.rwSeq",
+          0.010700991
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.paren",
+          0.010483290000000003
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticSeq",
+          0.008612560000000002
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticHave_",
+          0.004848286000000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.case",
+          0.003595918
+        ],
+        [
+          "Meta.isDefEq.delta",
+          0.003169121
+        ],
+        [
+          "Meta.synthInstance.tryResolve",
+          0.0027054559999999997
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticSeqBracketed",
+          0.001297938
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacDepIfThenElse",
+          0.0009668200000000001
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.focus",
+          0.00051015
+        ],
+        [
+          "Elab.step: tacticDecreasing_tactic",
+          0.000265771
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.withAnnotateState",
+          0.00021172599999999997
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.\u00abtacticExists_,,\u00bb",
+          0.000171882
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+          0.000164827
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticTry_",
+          0.00014893
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.exact",
+          0.000140166
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.withReducible",
+          0.000135935
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.have",
+          0.000132025
+        ],
+        [
+          "Elab.step: Array.tacticArray_get_dec",
+          0.00011848999999999999
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.paren",
+          0.000115981
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.fun",
+          0.000111348
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.noImplicitLambda",
+          0.00010357699999999999
+        ],
+        [
+          "Elab.step: tacticGet_elem_tactic",
+          0.000101304
+        ],
+        [
+          "Elab.step: tacticDecreasing_with_",
+          8.6465e-05
+        ],
+        [
+          "Elab.step: Lean.Parser.Term.waitIfTypeMVar",
+          6.2546e-05
+        ],
+        [
+          "Elab.step: Array.tacticArray_mem_dec",
+          5.7650999999999994e-05
+        ],
+        [
+          "Elab.step: List.tacticSizeOf_list_dec",
+          4.8914e-05
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticRefine_lift_",
+          4.7758999999999995e-05
+        ],
+        [
+          "Elab.step: termIfThenElse",
+          4.3982e-05
+        ],
+        [
+          "Elab.step: Lean.Parser.Tactic.tacticLet_",
+          4.1462e-05
+        ],
+        [
+          "Elab.step: \u00abterm_\u2227_\u00bb",
+          3.9238e-05
+        ]
+      ],
+      "nearest_tactic_trace_weights_seconds": [
+        [
+          "Lean.Parser.Tactic.simpAll",
+          4.678058972
+        ],
+        [
+          "Lean.Parser.Tactic.simp",
+          4.2314274229999995
+        ],
+        [
+          "Lean.Parser.Tactic.tacticSeq1Indented",
+          1.3021770689999999
+        ],
+        [
+          "Lean.Parser.Tactic.refine",
+          0.48845424499999995
+        ],
+        [
+          "Lean.Parser.Tactic.rewriteSeq",
+          0.319339096
+        ],
+        [
+          "Mathlib.Tactic.splitIfs",
+          0.19397553299999998
+        ],
+        [
+          "Lean.Parser.Tactic.apply",
+          0.146650742
+        ],
+        [
+          "Lean.Parser.Tactic.first",
+          0.127633337
+        ],
+        [
+          "Lean.Parser.Tactic.contradiction",
+          0.119349562
+        ],
+        [
+          "tacticGet_elem_tactic_trivial",
+          0.11317480299999999
+        ],
+        [
+          "tacticDecreasing_trivial",
+          0.10322938499999998
+        ],
+        [
+          "Lean.Parser.Tactic.split",
+          0.073490768
+        ],
+        [
+          "Lean.Parser.Tactic.tacticTrivial",
+          0.051062961999999996
+        ],
+        [
+          "Lean.Parser.Tactic.allGoals",
+          0.041471434
+        ],
+        [
+          "Lean.Parser.Tactic.cases",
+          0.031840089
+        ],
+        [
+          "Lean.Parser.Tactic.tacticRfl",
+          0.019610797000000003
+        ],
+        [
+          "Lean.Parser.Tactic.induction",
+          0.018218340999999996
+        ],
+        [
+          "Lean.Parser.Tactic.unfold",
+          0.013235283
+        ],
+        [
+          "Lean.cdot",
+          0.012621117
+        ],
+        [
+          "Lean.Parser.Tactic.exact",
+          0.011469772
+        ],
+        [
+          "Lean.Parser.Tactic.rwSeq",
+          0.010700991
+        ],
+        [
+          "Lean.Parser.Tactic.paren",
+          0.010483290000000003
+        ],
+        [
+          "Lean.Parser.Tactic.tacticSeq",
+          0.008612560000000002
+        ],
+        [
+          "Lean.Parser.Tactic.tacticHave_",
+          0.004848286000000001
+        ],
+        [
+          "Lean.Parser.Tactic.case",
+          0.003595918
+        ],
+        [
+          "Lean.Parser.Tactic.tacticSeqBracketed",
+          0.001297938
+        ],
+        [
+          "Lean.Parser.Tactic.tacDepIfThenElse",
+          0.0009668200000000001
+        ],
+        [
+          "Lean.Parser.Tactic.focus",
+          0.00051015
+        ],
+        [
+          "tacticDecreasing_tactic",
+          0.000265771
+        ],
+        [
+          "Lean.Parser.Tactic.withAnnotateState",
+          0.00021172599999999997
+        ],
+        [
+          "Lean.Parser.Tactic.\u00abtacticExists_,,\u00bb",
+          0.000171882
+        ],
+        [
+          "Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+          0.000164827
+        ],
+        [
+          "Lean.Parser.Tactic.tacticTry_",
+          0.00014893
+        ],
+        [
+          "Lean.Parser.Tactic.withReducible",
+          0.000135935
+        ],
+        [
+          "tacticGet_elem_tactic",
+          0.000101304
+        ],
+        [
+          "tacticDecreasing_with_",
+          8.6465e-05
+        ],
+        [
+          "Lean.Parser.Tactic.tacticRefine_lift_",
+          4.7758999999999995e-05
+        ],
+        [
+          "Lean.Parser.Tactic.tacticLet_",
+          4.1462e-05
+        ]
+      ],
+      "family_trace_weights_seconds": [
+        [
+          "outside traced tactic",
+          35.444889589000006
+        ],
+        [
+          "simp",
+          8.909486394999998
+        ],
+        [
+          "other tactic",
+          3.2293963489999995
+        ]
+      ]
+    }
+  },
+  "scope": "Unmodified official reference sources at pinned Lean4.18. Structured trace uses exclusive elapsed slices between children with default trace thresholds. threadCPUDelta is synthesized from wall slices by upstream exporter, never measured CPU. Weights sum across traces/threads/files, not whole-group elapsed or removable work. Admitted stubs separated."
+}

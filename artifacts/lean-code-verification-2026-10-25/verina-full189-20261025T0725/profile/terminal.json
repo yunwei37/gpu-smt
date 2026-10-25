@@ -1,0 +1,30 @@
+{
+  "mode": "profile",
+  "state": "complete",
+  "expected": 189,
+  "returned": 189,
+  "whole_lifecycle_seconds": 53.948885378,
+  "memory_watchdog": {
+    "root_pid": 281214,
+    "root_birth": 1792912690.36,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 54,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 10257248256,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 0,
+    "included_owned_roots": [
+      {
+        "pid": 281214,
+        "birth": 1792912690.36,
+        "out": "/workspaces/repository/artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/profile"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "remaining_owned_descendants": [],
+  "profile_scope": "Builtin100ms component profiler and default10ms structured trace thresholds; completed trace wall intervals are not sampledCPU. Missing timed-out profiles remain censored."
+}
