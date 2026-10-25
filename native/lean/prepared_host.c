@@ -26,6 +26,14 @@ extern lean_object *gpu_smt_prepared_create(lean_object *, lean_object *, lean_o
 extern lean_object *gpu_smt_prepared_check(lean_object *, lean_object *, lean_object *);
 
 struct branch { pid_t pid; int channel; struct branch *next; };
+/* Modern Lean starts libuv service threads in runtime initialization.
+   For audited synchronous import contexts, construct those services only in
+   disposable children. No live libuv thread or event descriptor is forked. */
+#ifdef GPU_SMT_DEFER_LIBUV
+static int deferred_libuv;
+extern void __real_initialize_libuv(void);
+void __wrap_initialize_libuv(void) { deferred_libuv=1; }
+#endif
 static volatile sig_atomic_t stopping;
 static void stop(int sig) { stopping = sig; }
 static void changed(int sig) { (void)sig; }
@@ -95,6 +103,9 @@ static void child(int fd, int listener, struct branch *siblings, lean_object *ro
     if (getline(&line,&capacity,input)<0 || bind_worker(line)) _exit(126);
     if (getline(&line,&capacity,input)<0) _exit(126);
     close(STDIN_FILENO);
+#ifdef GPU_SMT_DEFER_LIBUV
+    if (deferred_libuv) __real_initialize_libuv();
+#endif
     lean_init_task_manager();
     lean_inc(root);
     lean_object *response=value(gpu_smt_prepared_check(root,lean_mk_string(line),lean_io_mk_world()));

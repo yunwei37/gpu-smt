@@ -39,13 +39,21 @@ def main():
         # never edit the dependency source or hide other duplicate definitions.
         embedded=out/"libREPL-embedded.a"
         run(["objcopy","--redefine-sym","main=gpu_smt_dependency_main",str(archives[0]),str(embedded)])
+        runtime=sysroot/"lib/lean/libleanrt.a"
+        symbols=subprocess.run(["nm","-g","--defined-only",str(runtime)],
+            text=True,capture_output=True,check=True)
+        defer_uv=any(line.split() and line.split()[-1]=="initialize_libuv" for line in symbols.stdout.splitlines())
+        receipt["libuv_initializer_present"]=defer_uv
+        (out/"build.json").write_text(json.dumps(receipt,indent=2)+"\n")
+        compile_flags=["-DGPU_SMT_DEFER_LIBUV=1"] if defer_uv else []
+        link_flags=["-Wl,--wrap=initialize_libuv"] if defer_uv else []
         commands=[
             ["lake","env","lean","-R",str(source),"-c",str(out/"GpuSmtPrepared.c"),str(source/"GpuSmtPrepared.lean")],
             ["lake","env","leanc","-O3","-c",str(out/"GpuSmtPrepared.c"),"-o",str(out/"GpuSmtPrepared.o")],
-            ["lake","env","leanc","-std=gnu11","-O2","-Wall","-Wextra","-Werror",
+            ["lake","env","leanc","-std=gnu11","-O2","-Wall","-Wextra","-Werror"]+compile_flags+[
                 "-c",str(source/"prepared_host.c"),"-o",str(out/"prepared_host.o")],
             ["lake","env","leanc","-O3","-rdynamic","-L"+str(sysroot/"lib"),"-o",str(out/"prepared-host"),
-                str(out/"prepared_host.o"),str(out/"GpuSmtPrepared.o"),str(embedded)]]
+                str(out/"prepared_host.o"),str(out/"GpuSmtPrepared.o"),str(embedded)]+link_flags]
         for command in commands:
             run(command)
     finally:

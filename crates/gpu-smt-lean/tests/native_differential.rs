@@ -144,22 +144,26 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
     let mut first_expected = None;
     let mut seen = vec![];
     for (i, (code, status)) in [
-        ("import Init\ndef candidate_private := 7", Status::Accepted),
+        ("import Init\nimport Std.Internal.UV.Timer\ndef candidate_private := 7", Status::Accepted),
         (
-            "import Init\nexample : candidate_private = 7 := by rfl",
+            "import Init\nimport Std.Internal.UV.Timer\nexample : candidate_private = 7 := by rfl",
             Status::Rejected,
         ),
         (
-            "import Init\ndef candidate_private := 8\nexample : candidate_private = 8 := by rfl",
+            "import Init\nimport Std.Internal.UV.Timer\ndef candidate_private := 8\nexample : candidate_private = 8 := by rfl",
             Status::Accepted,
         ),
         (
-            "import Init\nexample : 1 = 2 := by decide",
+            "import Init\nimport Std.Internal.UV.Timer\nexample : 1 = 2 := by decide",
             Status::Rejected,
         ),
         (
-            "import Init\nexample : False := by sorry",
+            "import Init\nimport Std.Internal.UV.Timer\nexample : False := by sorry",
             Status::Incomplete,
+        ),
+        (
+            "import Init\nimport Std.Internal.UV.Timer\n#eval show IO Bool from do\n  let timer ← Std.Internal.UV.Timer.mk 1 false\n  let promise ← timer.next\n  pure promise.result?.get.isSome",
+            Status::Accepted,
         ),
         (
             "import Lean\nexample : True := by trivial",
@@ -250,7 +254,7 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             candidates: vec![Candidate {
                 id: "cancel-control".into(),
                 task_id: None,
-                code: "import Init\n#eval IO.sleep 10000".into(),
+                code: "import Init\nimport Std.Internal.UV.Timer\n#eval IO.sleep 10000".into(),
                 timeout_ms: 50,
                 reuse: false,
             }],
@@ -279,7 +283,8 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             candidates: vec![Candidate {
                 id: "after-cancel".into(),
                 task_id: None,
-                code: "import Init\ndef candidate_private := 7".into(),
+                code: "import Init\nimport Std.Internal.UV.Timer\ndef candidate_private := 7"
+                    .into(),
                 timeout_ms: 300000,
                 reuse: false,
             }],

@@ -89,3 +89,21 @@ preserves fallback observations independently of native payloads. Resource
 events associate origin/execution/PID/birth; counter scope is per-caller history,
 with coalesced histories explicitly not counted as distinct physical work.
 This boundary needs fresh real nativeCI; no Mathlib/performance result claimed.
+
+Actualc6b1cf8CI records preparation refusal: threads=3 extra_fds=10 even after
+task-manager join. Primary Lean4.18runtime source identifies unconditional libuv
+service threads in initialize_libuv, with no matching runtime shutdown API.
+The optional import-only context now defers that specific initializer until
+each disposable child; builder discovers its symbol in the pinned leanrt archive.
+This implements the requested native branch boundary, not a generic safe fork
+of existing UV services. Prepared imports must be audited synchronous code.
+The real native test adds a libuv Timer/Promise response against fresh native,
+so an inert or disabled child service cannot pass as engagement. Original
+one-thread/FD refusal remains; no guard was weakened. No new local collection.
+
+Conditional libuv constructor deferral is compiled with warnings-as-errors.
+ActualSDK runtime archive symbol discovery chooses the hook; pre-libuvSDKs do
+not acquire a fake service. Real Timer/Promise source is compared against fresh
+native under matching imports. Local20261025T100417 is fully successful
+(27tests,2native skips). Publish the repaired constructor and inspect actualCI;
+arbitrary asynchronous import initializers remain outside declared context.

@@ -47,7 +47,9 @@ it is not a kernel quota.
 
 The optional PreparedRepl backend uses an engine-owned Lean+C import parent:
 only parsed imports execute there with the normal task manager, which is joined
-and finalized before forking. Each candidate runs in
+and finalized before forking. For modern SDKs, global libuv services are
+constructed only in disposable children; the prepared context requires audited
+synchronous imports. Each candidate runs in
 a disposable OS child, whose connection is retired only after native waitpid.
 The parent remains in total owned RSS. Different imports and preparation faults
 use the original fresh backend within the remaining request timeout.

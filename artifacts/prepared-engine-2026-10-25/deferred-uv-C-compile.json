@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+    "-std=gnu11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-DGPU_SMT_DEFER_LIBUV=1",
+    "-c",
+    "/workspaces/repository/native/lean/prepared_host.c",
+    "-o",
+    "/tmp/gpu-smt-prepared-native-build-20261025/prepared_host.o"
+  ],
+  "exit": 0,
+  "LEAN_CC": "cc",
+  "stdout": "",
+  "stderr": ""
+}

@@ -46,3 +46,15 @@ forking. BackendEvent records retain failed preparation and fallback stderr
 even on an ultimately accepted native response. Origin/execution/PID/birth
 mapping is preserved in resource logs. Latest local20261025T095251 has all
 six commands successful,27passing checks and2explicit native skips.
+
+Actualc6b1cf8native test retains threads=3/extra_fds=10 preparation refusal.
+Official runtime source shows libuv services start unconditionally and survive
+task-manager finalization. For the opt-in audited synchronous-import context,
+a symbol-discovered hook now creates real SDK libuv services in each child,
+before candidate commands, instead of inheriting live parent service threads.
+One-thread/FD guards remain unchanged. The native differential controls now
+include an actual libuv Timer/Promise, and all accepted/error/sorry/name-isolation
+sources share its imports so the timer cannot pass through fresh-only fallback.
+Local20261025T100417 passes all6commands/27tests with2explicit native skips.
+This remains pending actualCI and fullMathlib evidence, not a generic FFIfork
+contract. All previous failing sources/CI/logs remain.

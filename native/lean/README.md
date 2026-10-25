@@ -6,8 +6,13 @@ another verifier service.
 
 The C executable owns a single native import parent. It parses the first source imports through Lean with the ordinary task manager,
 retains that environment, then finalizes/joins the manager before any fork. It does not execute candidate declarations or tactics.
-A one-thread and file-descriptor check at that branch point refuses observable initialization
-residue before opening the internal Unix socket.
+Modern Lean also starts global libuv services during runtime initialization.
+For audited synchronous-import contexts, the builder detects that initializer
+in the actual SDK archive and defers it to each child through a link-time hook.
+The real SDK services are initialized in each disposable child before candidate
+commands. Parent imports must not use libuv or external asynchronous resources.
+A one-thread and file-descriptor check at the branch point still refuses
+observable initialization residue before opening the internal Unix socket.
 
 Rust owns CPU/memory admission and creates one connection per admitted attempt.
 The parent forks a disposable child, which receives its assigned CPU mask and
