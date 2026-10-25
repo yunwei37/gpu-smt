@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/usr/local/cargo/bin/rustc",
+    "--edition=2024",
+    "/workspaces/repository/artifacts/native-source-backend-2026-10-25/replay-classifier.rs",
+    "--extern",
+    "gpu_smt_lean=/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/libgpu_smt_lean-48bdcc448bc3fabf.rlib",
+    "--extern",
+    "serde_json=/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/libserde_json-88299708f1e4a2b6.rlib",
+    "-L",
+    "dependency=/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps",
+    "-o",
+    "/tmp/gpu-smt-native-cli-20261025/replay-classifier"
+  ],
+  "exit": 1
+}

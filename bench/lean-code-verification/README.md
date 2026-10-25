@@ -26,3 +26,11 @@ Current research execution uses the [new aggregate resource contract](../../docs
 Do not interpret the historical24GiB/max2recipe as a new-resource qualification.
 Existing completed Verina data remain; source/toolchain preparation for additional
 original code workloads does not establish a measured SAT/LRAT target.
+
+
+Original Verina inputs for the Rust engine can be prepared with prepare-engine.py
+from the retained official source archive. The [prepared189input and filename
+manifest](../../artifacts/native-source-backend-2026-10-25/verina189-inputs/README.md)
+preserve every old reference byte, including admissions/errors. NativeLean uses
+the pinned CLI stdin frontend and current Rust resource path; qualify filename
+semantics before a new full-workload pair. No new native collection was started.

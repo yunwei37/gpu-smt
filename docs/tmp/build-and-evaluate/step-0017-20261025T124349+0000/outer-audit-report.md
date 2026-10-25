@@ -33,3 +33,34 @@ moves existing observation code without changing its meaning. New backend is
 roughly200lines with no new dependency/resource-controller layer.
 No whole-Mathlib performance, new throughput benefit, trained source predictor,
 independent audit or completed systems contribution follows from these checks.
+
+
+## Actual qualification and retained input preparation
+
+Implementationd376bdd305df1a5bf9c9305e400bd82adc15dd94passes engine
+CI40194769397(Rust and native) and benchmark-smoke40194769389. Actual pinned
+Lean4.18 native job121173128385passes all3tests,0ignored: source CLI exact
+raw-frontend accept/reject/sorry/info,timeout/recovery/retirement plus existing
+fresh and actual concurrent import-parent REPL contracts. Raw native log and
+terminal metadata retained. This is own backend dependency testing, not another
+system reproduction, full Mathlib qualification or performance evidence.
+
+The actual compiled Rust classifier also replays189archived original-file
+native outputs:46accepted,139incomplete,4rejected,0differences from recorded
+classification. Initial standalone replay compilation failed first for missing
+Rust environment/cwd discovery, then for independently selected duplicateSerde
+crate identities. Both diagnostics remain; using the repository cwd/toolchain
+and exporting Debug status as a primitive string fixes only the replay harness.
+No production change or native proof execution was needed.
+
+prepare-engine.py retains all189reference sources with original IDs and filename
+manifest. All368011UTF8bytes match the original native files exactly, including
+admitted stubs and native API errors. Batch all-mode/120s/reuse=false. This input
+does not establish stdin/original-filename semantic parity; future same-context
+qualification remains required. The sole old7808group is unchanged and alive
+at the retained12:48UTCbirth-matched observation.
+
+Root self-review finds additive backend scope, no dependency churn, no project
+file output and no second resource controller. Real native tests establish the
+bounded protocol/lifecycle contract; whole-workload throughput and the four
+research directions remain open. No independent audit is claimed.

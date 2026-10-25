@@ -71,3 +71,10 @@ engine; keep original native output,stdin/path scope and prototype qualification
 explicit. This removes the need for another resource scheduler while preparing
 the real source workload. It is implementation infrastructure, not workload
 novelty or a performance result. Current sole native7808group remains unchanged.
+
+
+The source backend's pinned native CI now passes all3actual native tests.
+An offline replay of189real original-filename outputs through the built Rust
+classifier gives46accepted/139incomplete/4rejected with0differences. The prepared
+engine population matches all368011original source bytes; this still requires
+stdin/original-file qualification before actual new-resource pairing.
