@@ -62,6 +62,55 @@ private def timed {α : Type} (phase : String) (slot : Nat) (action : M α) : M 
       ("entry_type_hashes", toJson (state.entries.map fun e => (hash e.type).toNat))
     ]).compress
 
+/-- Observe native simp progress without replacing any native method result.
+One-second snapshots expose origins already used at the current expression.
+A repeated expression hash is NOT a cycle witness. -/
+private def observedSimp (expression : Expr) (ctx : Simp.Context)
+    (simprocs : SimprocsArray) (phase : String) (slot : Nat) :
+    M (Simp.Result × Stats) := do
+  let state ← get
+  let last ← IO.mkRef (0 : Nat)
+  let defaults := Simp.mkDefaultMethodsCore simprocs
+  let methods := { defaults with
+    pre := fun expression => do
+      let now ← IO.monoNanosNow
+      if now - (← last.get) ≥ 1000000000 then
+        last.set now
+        let native ← get
+        let mut used : Array Json := #[]
+        for (origin, order) in native.usedTheorems.toArray do
+          used := used.push <| Json.mkObj [
+            ("origin", toJson (← (← ppOrigin origin).toString)),
+            ("first_use_order", toJson order)]
+        IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
+          ("event", toJson ("progress" : String)), ("phase", toJson phase),
+          ("invocation_byte", toJson state.invocation),
+          ("round", toJson state.profileRound), ("slot", toJson slot),
+          ("mono_ns", toJson now), ("native_num_steps", toJson native.numSteps),
+          ("expression_hash_hint", toJson (hash expression).toNat),
+          ("used_origins", toJson used),
+          ("cycle_witness", toJson false)]).compress
+      defaults.pre expression }
+  Simp.main expression ctx { state with } (methods := methods)
+
+private def observedHypothesis (entry : Entry) (ctx : Simp.Context)
+    (simprocs : SimprocsArray) (slot : Nat) : M (Option (Expr × Expr) × Stats) := do
+  let (result, stats) ← observedSimp entry.type ctx simprocs "hypothesis" slot
+  return (← applySimpResultToProp (← get).mvarId entry.proof entry.type result, stats)
+
+private def observedTarget (goal : MVarId) (ctx : Simp.Context)
+    (simprocs : SimprocsArray) : M (Option MVarId × Stats) := goal.withContext do
+  goal.checkNotAssigned `simp
+  let target ← instantiateMVars (← goal.getType)
+  let (result, stats) ← observedSimp target ctx simprocs "target" 0
+  if result.expr.isTrue then
+    match result.proof? with
+    | some proof => goal.assign (← mkOfEqTrue proof)
+    | none => goal.assign (mkConst `True.intro)
+    return (none, stats)
+  else
+    return (← applySimpResultToTarget goal target result, stats)
+
 private def initEntries : M Unit := do
   let hs ←  (← get).mvarId.withContext do getPropHyps
   let hsNonDeps ← (← get).mvarId.getNondepPropHyps
@@ -92,7 +141,7 @@ private partial def loop : M Bool := do
     let simpThmsWithoutEntry := (← getSimpTheorems).eraseTheorem entry.id
     let ctx := { ctx with simpTheorems := simpThmsWithoutEntry }
     let (r, stats) ← timed "hypothesis" i do
-      simpStep (← get).mvarId entry.proof entry.type ctx simprocs (stats := { (← get) with })
+      observedHypothesis entry ctx simprocs i
     modify fun s => { s with usedTheorems := stats.usedTheorems, diag := stats.diag }
     match r with
     | none => return true -- closed the goal
@@ -134,7 +183,7 @@ private partial def loop : M Bool := do
   -- simplify target
   let mvarId := (← get).mvarId
   let (r, stats) ← timed "target" 0 do
-    simpTarget mvarId (← get).ctx simprocs (stats := { (← get) with })
+    observedTarget mvarId (← get).ctx simprocs
   modify fun s => { s with usedTheorems := stats.usedTheorems, diag := stats.diag }
   match r with
   | none => return true

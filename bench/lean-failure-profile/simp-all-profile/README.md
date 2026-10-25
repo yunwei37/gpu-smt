@@ -35,3 +35,19 @@ development pairs agree,including a trailing-combinator case. This does not
 establish original23runtime behavior or early failure. The newest events use
 stderr and need a declared diagnostic capture;they are not an unchanged
 NativeLean frontend payload.
+
+## Internal native progress attribution
+
+The opt-in wrapper now delegates the native pre-method result unchanged and
+records phase-local progress at most once per second, including native step
+counts and theorem origins already used. Default pre/post/dpre/dpost/discharge
+behavior remains selected by the same simprocs. This is diagnostic overhead.
+The last observed origin is not proof that the origin is stuck; used origins
+are cumulative within the invocation. Hashes are hints, never cycle witnesses.
+
+Run analyze.py with --diagnostics DIR and optionally --preparation pointing
+to the exact23-source preparation.json to join original call byte positions.
+Missing/unterminated phases remain explicit. This analyzer never rejects a
+candidate. The qualification-006 artifacts contain14actual native invocations,
+seven matched pairs, with zero status mismatches; this is not execution of
+the23original timeouts. Do not infer their bottlenecks or cycle coverage yet.
