@@ -750,3 +750,16 @@ across observationloss, noemptygoalpolling/restart. Onactualtermination, analyze
 all480and83timeout/failedsubgroups, ownphasecosts, everyoutcomechange andresource
 failure, then select ourownmechanism fromthe measured dominantwork.
 Fullresult/WRITE/resultselfreview remainpending; noindependentauditclaim.
+
+## Grouped failure analysis path completed while the sole fullcapture continues
+The actualfull480ownerPID275822/birth1792894799.05 was revalidatedlive, with
+twoactualREPLs and healthyRSSsampling. Rootcompleted the requested per-sourceCSV,
+baseline-fixedtimeout/Leanerror/resourcefailure groups and namedcomponent/tactic
+rankedMarkdown output, using only the alreadyclosed real24qualification.
+[Actualgrouped24recomputation/selfreview](../../../../artifacts/lean-failure-profile-2026-10-25/preflight24-c-group-analysis/self-review.md)
+has bodycoverage24/24, disjointgroupCPUtotalsconsistent, failedbodyclocksmarked
+missing (not0cost), and sampling/unknowninternalphase caveats. This isanalysis
+dependencywork, not a newhotspot or performance conclusion. Joint existing48GiB
+watchdog covers the shortanalysisplusretainedfullcapture,0kills/errors/max2.
+No activeinputs/nativebinary/resources aremodified. Full480completion remains
+the next scientificdecisionboundary; no extraGPU/externalmethodrun or emptypolling.

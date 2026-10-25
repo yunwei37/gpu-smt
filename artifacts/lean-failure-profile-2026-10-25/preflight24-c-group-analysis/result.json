@@ -1,0 +1,3696 @@
+{
+  "source_count": 24,
+  "sources_with_native_boundary_data": 24,
+  "diagnostic_flags_maximum_over_threads": {
+    "sampler_error": 0,
+    "dropped_keys": 0,
+    "truncated_keys": 0,
+    "frame_overflows": 0,
+    "clock_errors": 0
+  },
+  "profile_status_counts": {
+    "valid": 4,
+    "lean_error": 18,
+    "timeout_error": 1,
+    "resource_failure": 1
+  },
+  "status_changes_from_original": [],
+  "ranked": [
+    {
+      "key": "simp|",
+      "calls": 10311,
+      "wall_ns": 326358062962,
+      "inclusive_cpu_ns": 326253575835,
+      "exclusive_cpu_ns": 323052740329,
+      "open_frames": 1,
+      "sources": 18
+    },
+    {
+      "key": "elaboration|",
+      "calls": 92,
+      "wall_ns": 423272034210,
+      "inclusive_cpu_ns": 423164398767,
+      "exclusive_cpu_ns": 76300797666,
+      "open_frames": 2,
+      "sources": 24
+    },
+    {
+      "key": "tactic execution|nlinarith",
+      "calls": 47,
+      "wall_ns": 18031011185,
+      "inclusive_cpu_ns": 18028890645,
+      "exclusive_cpu_ns": 13828442967,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "typeclass inference|ExistsAddOfLE",
+      "calls": 2859,
+      "wall_ns": 1587698329,
+      "inclusive_cpu_ns": 1586023090,
+      "exclusive_cpu_ns": 1531836088,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+      "calls": 272,
+      "wall_ns": 322012077723,
+      "inclusive_cpu_ns": 321918692988,
+      "exclusive_cpu_ns": 1390395092,
+      "open_frames": 1,
+      "sources": 10
+    },
+    {
+      "key": "typeclass inference|PartialOrder",
+      "calls": 4362,
+      "wall_ns": 783095653,
+      "inclusive_cpu_ns": 778986184,
+      "exclusive_cpu_ns": 778986184,
+      "open_frames": 0,
+      "sources": 17
+    },
+    {
+      "key": "typeclass inference|Preorder",
+      "calls": 7819,
+      "wall_ns": 571582238,
+      "inclusive_cpu_ns": 565013937,
+      "exclusive_cpu_ns": 565013937,
+      "open_frames": 0,
+      "sources": 18
+    },
+    {
+      "key": "typeclass inference|CovariantClass",
+      "calls": 476,
+      "wall_ns": 610508940,
+      "inclusive_cpu_ns": 609912979,
+      "exclusive_cpu_ns": 545145865,
+      "open_frames": 0,
+      "sources": 14
+    },
+    {
+      "key": "typeclass inference|ContravariantClass",
+      "calls": 2012,
+      "wall_ns": 497386568,
+      "inclusive_cpu_ns": 496288276,
+      "exclusive_cpu_ns": 476401905,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.normNum",
+      "calls": 22,
+      "wall_ns": 646935466,
+      "inclusive_cpu_ns": 646866910,
+      "exclusive_cpu_ns": 350769509,
+      "open_frames": 0,
+      "sources": 10
+    },
+    {
+      "key": "typeclass inference|OrderedSub",
+      "calls": 766,
+      "wall_ns": 343036900,
+      "inclusive_cpu_ns": 342372567,
+      "exclusive_cpu_ns": 339154405,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|Decidable",
+      "calls": 1207,
+      "wall_ns": 254479267,
+      "inclusive_cpu_ns": 253133307,
+      "exclusive_cpu_ns": 253133307,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "norm_num|",
+      "calls": 13570,
+      "wall_ns": 4594443615,
+      "inclusive_cpu_ns": 4589244904,
+      "exclusive_cpu_ns": 244716120,
+      "open_frames": 0,
+      "sources": 15
+    },
+    {
+      "key": "type checking|",
+      "calls": 119,
+      "wall_ns": 232907715,
+      "inclusive_cpu_ns": 232740271,
+      "exclusive_cpu_ns": 232740271,
+      "open_frames": 0,
+      "sources": 22
+    },
+    {
+      "key": "typeclass inference|Semiring",
+      "calls": 3910,
+      "wall_ns": 194583700,
+      "inclusive_cpu_ns": 191864876,
+      "exclusive_cpu_ns": 190785183,
+      "open_frames": 0,
+      "sources": 20
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.intervalCases",
+      "calls": 6,
+      "wall_ns": 279571937,
+      "inclusive_cpu_ns": 279545277,
+      "exclusive_cpu_ns": 176695982,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "typeclass inference|AddMonoidWithOne",
+      "calls": 2317,
+      "wall_ns": 166242316,
+      "inclusive_cpu_ns": 164590805,
+      "exclusive_cpu_ns": 164590805,
+      "open_frames": 0,
+      "sources": 18
+    },
+    {
+      "key": "typeclass inference|OrderedAddCommGroup",
+      "calls": 6609,
+      "wall_ns": 160931477,
+      "inclusive_cpu_ns": 155444700,
+      "exclusive_cpu_ns": 154753635,
+      "open_frames": 0,
+      "sources": 16
+    },
+    {
+      "key": "typeclass inference|CharZero",
+      "calls": 1050,
+      "wall_ns": 155766402,
+      "inclusive_cpu_ns": 154869122,
+      "exclusive_cpu_ns": 154113156,
+      "open_frames": 0,
+      "sources": 17
+    },
+    {
+      "key": "typeclass inference|ZeroLEOneClass",
+      "calls": 59,
+      "wall_ns": 167082816,
+      "inclusive_cpu_ns": 167019744,
+      "exclusive_cpu_ns": 140846185,
+      "open_frames": 0,
+      "sources": 15
+    },
+    {
+      "key": "ring|",
+      "calls": 20,
+      "wall_ns": 193377358,
+      "inclusive_cpu_ns": 193353391,
+      "exclusive_cpu_ns": 118950117,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.allGoals",
+      "calls": 25,
+      "wall_ns": 28724129098,
+      "inclusive_cpu_ns": 28719677918,
+      "exclusive_cpu_ns": 108311204,
+      "open_frames": 0,
+      "sources": 13
+    },
+    {
+      "key": "typeclass inference|OrderedSemiring",
+      "calls": 4241,
+      "wall_ns": 100698450,
+      "inclusive_cpu_ns": 97577873,
+      "exclusive_cpu_ns": 97577873,
+      "open_frames": 0,
+      "sources": 15
+    },
+    {
+      "key": "typeclass inference|OfNat",
+      "calls": 1015,
+      "wall_ns": 92299720,
+      "inclusive_cpu_ns": 91535193,
+      "exclusive_cpu_ns": 88468025,
+      "open_frames": 0,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|IsLocalRingHom",
+      "calls": 538,
+      "wall_ns": 87013835,
+      "inclusive_cpu_ns": 86566773,
+      "exclusive_cpu_ns": 86566773,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|AddGroup",
+      "calls": 2731,
+      "wall_ns": 82854046,
+      "inclusive_cpu_ns": 81298397,
+      "exclusive_cpu_ns": 81298397,
+      "open_frames": 0,
+      "sources": 15
+    },
+    {
+      "key": "typeclass inference|LE",
+      "calls": 1015,
+      "wall_ns": 79303056,
+      "inclusive_cpu_ns": 78596795,
+      "exclusive_cpu_ns": 78596795,
+      "open_frames": 0,
+      "sources": 16
+    },
+    {
+      "key": "typeclass inference|Nat.AtLeastTwo",
+      "calls": 1560,
+      "wall_ns": 79234889,
+      "inclusive_cpu_ns": 78215248,
+      "exclusive_cpu_ns": 78215248,
+      "open_frames": 0,
+      "sources": 12
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.RingNF.ringNF",
+      "calls": 3,
+      "wall_ns": 129613573,
+      "inclusive_cpu_ns": 129600672,
+      "exclusive_cpu_ns": 75467770,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|SubtractionMonoid",
+      "calls": 2997,
+      "wall_ns": 72347614,
+      "inclusive_cpu_ns": 70773632,
+      "exclusive_cpu_ns": 70773632,
+      "open_frames": 0,
+      "sources": 10
+    },
+    {
+      "key": "typeclass inference|Ring",
+      "calls": 6612,
+      "wall_ns": 72375170,
+      "inclusive_cpu_ns": 68803986,
+      "exclusive_cpu_ns": 68803986,
+      "open_frames": 0,
+      "sources": 13
+    },
+    {
+      "key": "typeclass inference|AddRightCancelMonoid",
+      "calls": 314,
+      "wall_ns": 68274990,
+      "inclusive_cpu_ns": 67981285,
+      "exclusive_cpu_ns": 67981285,
+      "open_frames": 0,
+      "sources": 10
+    },
+    {
+      "key": "typeclass inference|LT",
+      "calls": 854,
+      "wall_ns": 64748386,
+      "inclusive_cpu_ns": 64172631,
+      "exclusive_cpu_ns": 64172631,
+      "open_frames": 0,
+      "sources": 19
+    },
+    {
+      "key": "typeclass inference|NatCast",
+      "calls": 600,
+      "wall_ns": 62886733,
+      "inclusive_cpu_ns": 62313976,
+      "exclusive_cpu_ns": 62313976,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|NeZero",
+      "calls": 56,
+      "wall_ns": 62966479,
+      "inclusive_cpu_ns": 62929921,
+      "exclusive_cpu_ns": 60355801,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.refine",
+      "calls": 51,
+      "wall_ns": 591786093,
+      "inclusive_cpu_ns": 591694974,
+      "exclusive_cpu_ns": 55953286,
+      "open_frames": 0,
+      "sources": 12
+    },
+    {
+      "key": "typeclass inference|BooleanRing",
+      "calls": 8007,
+      "wall_ns": 59937166,
+      "inclusive_cpu_ns": 55911608,
+      "exclusive_cpu_ns": 55911608,
+      "open_frames": 0,
+      "sources": 13
+    },
+    {
+      "key": "tactic execution|linarith",
+      "calls": 2,
+      "wall_ns": 273406596,
+      "inclusive_cpu_ns": 273385921,
+      "exclusive_cpu_ns": 55164835,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|HAdd",
+      "calls": 299,
+      "wall_ns": 55590791,
+      "inclusive_cpu_ns": 55349654,
+      "exclusive_cpu_ns": 54887400,
+      "open_frames": 0,
+      "sources": 20
+    },
+    {
+      "key": "typeclass inference|Zero",
+      "calls": 104,
+      "wall_ns": 49547374,
+      "inclusive_cpu_ns": 49471814,
+      "exclusive_cpu_ns": 49471814,
+      "open_frames": 0,
+      "sources": 10
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.Positivity.positivity",
+      "calls": 2,
+      "wall_ns": 68359979,
+      "inclusive_cpu_ns": 68356860,
+      "exclusive_cpu_ns": 44723514,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|HPow",
+      "calls": 207,
+      "wall_ns": 42679141,
+      "inclusive_cpu_ns": 42509446,
+      "exclusive_cpu_ns": 42509446,
+      "open_frames": 0,
+      "sources": 14
+    },
+    {
+      "key": "typeclass inference|GroupWithZero",
+      "calls": 2744,
+      "wall_ns": 41180140,
+      "inclusive_cpu_ns": 39570288,
+      "exclusive_cpu_ns": 39570288,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "typeclass inference|CanonicallyOrderedAddCommMonoid",
+      "calls": 1587,
+      "wall_ns": 39587560,
+      "inclusive_cpu_ns": 38280842,
+      "exclusive_cpu_ns": 38280842,
+      "open_frames": 0,
+      "sources": 16
+    },
+    {
+      "key": "typeclass inference|HMul",
+      "calls": 215,
+      "wall_ns": 36212728,
+      "inclusive_cpu_ns": 36051579,
+      "exclusive_cpu_ns": 35291653,
+      "open_frames": 0,
+      "sources": 12
+    },
+    {
+      "key": "typeclass inference|AddCommMonoid",
+      "calls": 39,
+      "wall_ns": 33912142,
+      "inclusive_cpu_ns": 33872303,
+      "exclusive_cpu_ns": 33642812,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.rewriteSeq",
+      "calls": 27,
+      "wall_ns": 105807785,
+      "inclusive_cpu_ns": 105785106,
+      "exclusive_cpu_ns": 33285997,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "typeclass inference|CommSemiring",
+      "calls": 101,
+      "wall_ns": 30907883,
+      "inclusive_cpu_ns": 30826503,
+      "exclusive_cpu_ns": 27342439,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.cases'",
+      "calls": 23,
+      "wall_ns": 30622792,
+      "inclusive_cpu_ns": 30596897,
+      "exclusive_cpu_ns": 24798099,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "typeclass inference|OrderedAddCommMonoid",
+      "calls": 53,
+      "wall_ns": 23986365,
+      "inclusive_cpu_ns": 23923195,
+      "exclusive_cpu_ns": 23923195,
+      "open_frames": 0,
+      "sources": 14
+    },
+    {
+      "key": "typeclass inference|Nonempty",
+      "calls": 280,
+      "wall_ns": 23644868,
+      "inclusive_cpu_ns": 23384876,
+      "exclusive_cpu_ns": 23384876,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "typeclass inference|HSub",
+      "calls": 136,
+      "wall_ns": 22774171,
+      "inclusive_cpu_ns": 22660359,
+      "exclusive_cpu_ns": 22660359,
+      "open_frames": 0,
+      "sources": 14
+    },
+    {
+      "key": "typeclass inference|AddZeroClass",
+      "calls": 811,
+      "wall_ns": 23235642,
+      "inclusive_cpu_ns": 22633388,
+      "exclusive_cpu_ns": 22633388,
+      "open_frames": 0,
+      "sources": 17
+    },
+    {
+      "key": "typeclass inference|Subsingleton",
+      "calls": 1835,
+      "wall_ns": 22829630,
+      "inclusive_cpu_ns": 21751716,
+      "exclusive_cpu_ns": 21751716,
+      "open_frames": 0,
+      "sources": 11
+    },
+    {
+      "key": "typeclass inference|CoeT",
+      "calls": 21,
+      "wall_ns": 23049233,
+      "inclusive_cpu_ns": 23028670,
+      "exclusive_cpu_ns": 21612726,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "parsing|",
+      "calls": 94,
+      "wall_ns": 20877523,
+      "inclusive_cpu_ns": 20825898,
+      "exclusive_cpu_ns": 20825898,
+      "open_frames": 0,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|StrictOrderedSemiring",
+      "calls": 1570,
+      "wall_ns": 20932717,
+      "inclusive_cpu_ns": 19796752,
+      "exclusive_cpu_ns": 19796752,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "typeclass inference|NonUnitalSemiring",
+      "calls": 40,
+      "wall_ns": 18778750,
+      "inclusive_cpu_ns": 18739383,
+      "exclusive_cpu_ns": 18739383,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "linting|",
+      "calls": 92,
+      "wall_ns": 18058674,
+      "inclusive_cpu_ns": 18001939,
+      "exclusive_cpu_ns": 18001939,
+      "open_frames": 0,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|HDiv",
+      "calls": 94,
+      "wall_ns": 17900873,
+      "inclusive_cpu_ns": 17830624,
+      "exclusive_cpu_ns": 17830624,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "typeclass inference|PosMulStrictMono",
+      "calls": 6,
+      "wall_ns": 17103402,
+      "inclusive_cpu_ns": 17098523,
+      "exclusive_cpu_ns": 16940335,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|OrderedCancelAddCommMonoid",
+      "calls": 21,
+      "wall_ns": 15347206,
+      "inclusive_cpu_ns": 15318376,
+      "exclusive_cpu_ns": 15318376,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "typeclass inference|DecidablePred",
+      "calls": 2,
+      "wall_ns": 16556340,
+      "inclusive_cpu_ns": 16553392,
+      "exclusive_cpu_ns": 14770345,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+      "calls": 610,
+      "wall_ns": 456348100042,
+      "inclusive_cpu_ns": 456236482898,
+      "exclusive_cpu_ns": 11387790,
+      "open_frames": 1,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|One",
+      "calls": 56,
+      "wall_ns": 11294610,
+      "inclusive_cpu_ns": 11260636,
+      "exclusive_cpu_ns": 11260636,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "typeclass inference|CommMagma",
+      "calls": 413,
+      "wall_ns": 11510790,
+      "inclusive_cpu_ns": 11059189,
+      "exclusive_cpu_ns": 11059189,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|Monoid",
+      "calls": 568,
+      "wall_ns": 10889076,
+      "inclusive_cpu_ns": 10280391,
+      "exclusive_cpu_ns": 10280391,
+      "open_frames": 0,
+      "sources": 16
+    },
+    {
+      "key": "typeclass inference|DivisionRing",
+      "calls": 42,
+      "wall_ns": 9821185,
+      "inclusive_cpu_ns": 9801840,
+      "exclusive_cpu_ns": 9801840,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticHave_",
+      "calls": 49,
+      "wall_ns": 14040923460,
+      "inclusive_cpu_ns": 14039280750,
+      "exclusive_cpu_ns": 9727552,
+      "open_frames": 0,
+      "sources": 11
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.simp",
+      "calls": 13,
+      "wall_ns": 4116705246,
+      "inclusive_cpu_ns": 4116466276,
+      "exclusive_cpu_ns": 9088083,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|MulZeroClass",
+      "calls": 72,
+      "wall_ns": 8583877,
+      "inclusive_cpu_ns": 8521693,
+      "exclusive_cpu_ns": 8521693,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|AddLeftCancelMonoid",
+      "calls": 290,
+      "wall_ns": 8392250,
+      "inclusive_cpu_ns": 8088531,
+      "exclusive_cpu_ns": 8088531,
+      "open_frames": 0,
+      "sources": 10
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+      "calls": 610,
+      "wall_ns": 456336689294,
+      "inclusive_cpu_ns": 456225095108,
+      "exclusive_cpu_ns": 7837772,
+      "open_frames": 1,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|LinearOrderedSemiring",
+      "calls": 66,
+      "wall_ns": 6893442,
+      "inclusive_cpu_ns": 6847568,
+      "exclusive_cpu_ns": 6847568,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "typeclass inference|LinearOrder",
+      "calls": 131,
+      "wall_ns": 6556167,
+      "inclusive_cpu_ns": 6444947,
+      "exclusive_cpu_ns": 6444947,
+      "open_frames": 0,
+      "sources": 15
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.FieldSimp.fieldSimp",
+      "calls": 5,
+      "wall_ns": 759457779,
+      "inclusive_cpu_ns": 759395494,
+      "exclusive_cpu_ns": 6322832,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|AddCancelMonoid",
+      "calls": 43,
+      "wall_ns": 6277928,
+      "inclusive_cpu_ns": 6221426,
+      "exclusive_cpu_ns": 6221426,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.eqRefl",
+      "calls": 11,
+      "wall_ns": 6126113,
+      "inclusive_cpu_ns": 6120341,
+      "exclusive_cpu_ns": 6120341,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "typeclass inference|Group",
+      "calls": 723,
+      "wall_ns": 6322970,
+      "inclusive_cpu_ns": 6002759,
+      "exclusive_cpu_ns": 6002759,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|AddCommGroup",
+      "calls": 13,
+      "wall_ns": 5936231,
+      "inclusive_cpu_ns": 5927299,
+      "exclusive_cpu_ns": 5927299,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|LinearOrderedCommMonoidWithZero",
+      "calls": 75,
+      "wall_ns": 5378586,
+      "inclusive_cpu_ns": 5324571,
+      "exclusive_cpu_ns": 5324571,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.simpa",
+      "calls": 7,
+      "wall_ns": 344064629,
+      "inclusive_cpu_ns": 344041593,
+      "exclusive_cpu_ns": 4681096,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.rcases",
+      "calls": 1,
+      "wall_ns": 4604055,
+      "inclusive_cpu_ns": 4603035,
+      "exclusive_cpu_ns": 4603035,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|HMod",
+      "calls": 25,
+      "wall_ns": 4497143,
+      "inclusive_cpu_ns": 4476364,
+      "exclusive_cpu_ns": 4476364,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.exact",
+      "calls": 24,
+      "wall_ns": 4461968,
+      "inclusive_cpu_ns": 4440314,
+      "exclusive_cpu_ns": 4440314,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|LinearOrderedSemifield",
+      "calls": 76,
+      "wall_ns": 4092652,
+      "inclusive_cpu_ns": 4031081,
+      "exclusive_cpu_ns": 4031081,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "typeclass inference|CommGroup",
+      "calls": 513,
+      "wall_ns": 4200906,
+      "inclusive_cpu_ns": 3976567,
+      "exclusive_cpu_ns": 3976567,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|IsEmpty",
+      "calls": 280,
+      "wall_ns": 4143024,
+      "inclusive_cpu_ns": 3810235,
+      "exclusive_cpu_ns": 3810235,
+      "open_frames": 0,
+      "sources": 9
+    },
+    {
+      "key": "typeclass inference|AddMonoid",
+      "calls": 33,
+      "wall_ns": 3650117,
+      "inclusive_cpu_ns": 3626037,
+      "exclusive_cpu_ns": 3626037,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|MulOneClass",
+      "calls": 114,
+      "wall_ns": 3500119,
+      "inclusive_cpu_ns": 3412427,
+      "exclusive_cpu_ns": 3412427,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|AddCommMagma",
+      "calls": 224,
+      "wall_ns": 3471782,
+      "inclusive_cpu_ns": 3205978,
+      "exclusive_cpu_ns": 3205978,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|NonAssocSemiring",
+      "calls": 50,
+      "wall_ns": 3037742,
+      "inclusive_cpu_ns": 2993079,
+      "exclusive_cpu_ns": 2993079,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.substVars",
+      "calls": 1,
+      "wall_ns": 2500317,
+      "inclusive_cpu_ns": 2499383,
+      "exclusive_cpu_ns": 2499383,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Pow",
+      "calls": 28,
+      "wall_ns": 2101851,
+      "inclusive_cpu_ns": 2076194,
+      "exclusive_cpu_ns": 2076194,
+      "open_frames": 0,
+      "sources": 13
+    },
+    {
+      "key": "typeclass inference|LocallyFiniteOrder",
+      "calls": 6,
+      "wall_ns": 2061674,
+      "inclusive_cpu_ns": 2056761,
+      "exclusive_cpu_ns": 2056761,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticSeqBracketed",
+      "calls": 9,
+      "wall_ns": 547042347,
+      "inclusive_cpu_ns": 547010195,
+      "exclusive_cpu_ns": 2011968,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Add",
+      "calls": 12,
+      "wall_ns": 1989450,
+      "inclusive_cpu_ns": 1979859,
+      "exclusive_cpu_ns": 1979859,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.applyRfl",
+      "calls": 11,
+      "wall_ns": 3550639,
+      "inclusive_cpu_ns": 3545412,
+      "exclusive_cpu_ns": 1869893,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.PushNeg.tacticPush_neg_",
+      "calls": 2,
+      "wall_ns": 1869022,
+      "inclusive_cpu_ns": 1866846,
+      "exclusive_cpu_ns": 1689048,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|MonoidWithZero",
+      "calls": 9,
+      "wall_ns": 1696684,
+      "inclusive_cpu_ns": 1685539,
+      "exclusive_cpu_ns": 1685539,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.Ring.ring1",
+      "calls": 20,
+      "wall_ns": 241373072,
+      "inclusive_cpu_ns": 241346608,
+      "exclusive_cpu_ns": 1677256,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "tactic execution|Lean.cdot",
+      "calls": 2,
+      "wall_ns": 1881214987,
+      "inclusive_cpu_ns": 1881088632,
+      "exclusive_cpu_ns": 1675843,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Lake.FamilyOut",
+      "calls": 8,
+      "wall_ns": 1663695,
+      "inclusive_cpu_ns": 1653754,
+      "exclusive_cpu_ns": 1653754,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Membership",
+      "calls": 7,
+      "wall_ns": 1651224,
+      "inclusive_cpu_ns": 1643618,
+      "exclusive_cpu_ns": 1643618,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.case",
+      "calls": 19,
+      "wall_ns": 13438784502,
+      "inclusive_cpu_ns": 13437200790,
+      "exclusive_cpu_ns": 1543113,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|StrictOrderedRing",
+      "calls": 8,
+      "wall_ns": 1496616,
+      "inclusive_cpu_ns": 1487662,
+      "exclusive_cpu_ns": 1487662,
+      "open_frames": 0,
+      "sources": 3
+    },
+    {
+      "key": "typeclass inference|AddCommSemigroup",
+      "calls": 112,
+      "wall_ns": 1580112,
+      "inclusive_cpu_ns": 1469635,
+      "exclusive_cpu_ns": 1469635,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.apply",
+      "calls": 5,
+      "wall_ns": 1757517,
+      "inclusive_cpu_ns": 1753814,
+      "exclusive_cpu_ns": 1401611,
+      "open_frames": 0,
+      "sources": 5
+    },
+    {
+      "key": "typeclass inference|DivisionSemiring",
+      "calls": 8,
+      "wall_ns": 1266464,
+      "inclusive_cpu_ns": 1256972,
+      "exclusive_cpu_ns": 1256972,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|DivisionMonoid",
+      "calls": 2,
+      "wall_ns": 894020,
+      "inclusive_cpu_ns": 891923,
+      "exclusive_cpu_ns": 891923,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tactic_<;>_",
+      "calls": 24,
+      "wall_ns": 36764172178,
+      "inclusive_cpu_ns": 36757884740,
+      "exclusive_cpu_ns": 884746,
+      "open_frames": 0,
+      "sources": 12
+    },
+    {
+      "key": "typeclass inference|DivisionCommMonoid",
+      "calls": 4,
+      "wall_ns": 838056,
+      "inclusive_cpu_ns": 833073,
+      "exclusive_cpu_ns": 833073,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Field",
+      "calls": 34,
+      "wall_ns": 853159,
+      "inclusive_cpu_ns": 832926,
+      "exclusive_cpu_ns": 832926,
+      "open_frames": 0,
+      "sources": 5
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.focus",
+      "calls": 73,
+      "wall_ns": 50794270652,
+      "inclusive_cpu_ns": 50786343526,
+      "exclusive_cpu_ns": 823730,
+      "open_frames": 0,
+      "sources": 19
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.withAnnotateState",
+      "calls": 53,
+      "wall_ns": 13447573177,
+      "inclusive_cpu_ns": 13445979260,
+      "exclusive_cpu_ns": 760142,
+      "open_frames": 0,
+      "sources": 18
+    },
+    {
+      "key": "typeclass inference|CompleteLattice",
+      "calls": 2,
+      "wall_ns": 759898,
+      "inclusive_cpu_ns": 758065,
+      "exclusive_cpu_ns": 758065,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Nontrivial",
+      "calls": 10,
+      "wall_ns": 697976,
+      "inclusive_cpu_ns": 688677,
+      "exclusive_cpu_ns": 688677,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.constructor",
+      "calls": 7,
+      "wall_ns": 692358,
+      "inclusive_cpu_ns": 687600,
+      "exclusive_cpu_ns": 687600,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|CharP",
+      "calls": 29,
+      "wall_ns": 695072,
+      "inclusive_cpu_ns": 676392,
+      "exclusive_cpu_ns": 676392,
+      "open_frames": 0,
+      "sources": 11
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.rwSeq",
+      "calls": 27,
+      "wall_ns": 116987419,
+      "inclusive_cpu_ns": 116975046,
+      "exclusive_cpu_ns": 670161,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.paren",
+      "calls": 100,
+      "wall_ns": 14059651378,
+      "inclusive_cpu_ns": 14058012209,
+      "exclusive_cpu_ns": 634198,
+      "open_frames": 0,
+      "sources": 16
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.intro",
+      "calls": 12,
+      "wall_ns": 679953,
+      "inclusive_cpu_ns": 673441,
+      "exclusive_cpu_ns": 589566,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticRfl",
+      "calls": 11,
+      "wall_ns": 14771479,
+      "inclusive_cpu_ns": 14762968,
+      "exclusive_cpu_ns": 554987,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Lean.Elab.Tactic.Ext.ext",
+      "calls": 1,
+      "wall_ns": 435863,
+      "inclusive_cpu_ns": 435030,
+      "exclusive_cpu_ns": 435030,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|RCLike",
+      "calls": 9,
+      "wall_ns": 444420,
+      "inclusive_cpu_ns": 434825,
+      "exclusive_cpu_ns": 434825,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "typeclass inference|MulZeroOneClass",
+      "calls": 4,
+      "wall_ns": 416339,
+      "inclusive_cpu_ns": 411786,
+      "exclusive_cpu_ns": 411786,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|IsAbsoluteValue",
+      "calls": 20,
+      "wall_ns": 397958,
+      "inclusive_cpu_ns": 390710,
+      "exclusive_cpu_ns": 390710,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.refine'",
+      "calls": 1,
+      "wall_ns": 389327,
+      "inclusive_cpu_ns": 388588,
+      "exclusive_cpu_ns": 388588,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|CoheytingAlgebra",
+      "calls": 2,
+      "wall_ns": 365045,
+      "inclusive_cpu_ns": 363441,
+      "exclusive_cpu_ns": 363441,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|HeytingAlgebra",
+      "calls": 2,
+      "wall_ns": 337108,
+      "inclusive_cpu_ns": 335392,
+      "exclusive_cpu_ns": 335392,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Dvd",
+      "calls": 6,
+      "wall_ns": 313414,
+      "inclusive_cpu_ns": 308946,
+      "exclusive_cpu_ns": 308946,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.skip",
+      "calls": 34,
+      "wall_ns": 292282,
+      "inclusive_cpu_ns": 279447,
+      "exclusive_cpu_ns": 279447,
+      "open_frames": 0,
+      "sources": 14
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.rotateRight",
+      "calls": 30,
+      "wall_ns": 290525,
+      "inclusive_cpu_ns": 279179,
+      "exclusive_cpu_ns": 279179,
+      "open_frames": 0,
+      "sources": 5
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.guardTarget",
+      "calls": 1,
+      "wall_ns": 276694,
+      "inclusive_cpu_ns": 275791,
+      "exclusive_cpu_ns": 275791,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|CanonicallyOrderedCommMonoid",
+      "calls": 3,
+      "wall_ns": 272618,
+      "inclusive_cpu_ns": 270048,
+      "exclusive_cpu_ns": 270048,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Inv",
+      "calls": 4,
+      "wall_ns": 256808,
+      "inclusive_cpu_ns": 253358,
+      "exclusive_cpu_ns": 253358,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticRefine_lift_",
+      "calls": 30,
+      "wall_ns": 482767052,
+      "inclusive_cpu_ns": 482732792,
+      "exclusive_cpu_ns": 209666,
+      "open_frames": 0,
+      "sources": 5
+    },
+    {
+      "key": "typeclass inference|BooleanAlgebra",
+      "calls": 2,
+      "wall_ns": 201073,
+      "inclusive_cpu_ns": 199673,
+      "exclusive_cpu_ns": 199673,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Lattice",
+      "calls": 14,
+      "wall_ns": 206974,
+      "inclusive_cpu_ns": 197695,
+      "exclusive_cpu_ns": 197695,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.fail",
+      "calls": 11,
+      "wall_ns": 184673,
+      "inclusive_cpu_ns": 176350,
+      "exclusive_cpu_ns": 176350,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.first",
+      "calls": 13,
+      "wall_ns": 13382483,
+      "inclusive_cpu_ns": 13367929,
+      "exclusive_cpu_ns": 174034,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "typeclass inference|CommSemigroup",
+      "calls": 8,
+      "wall_ns": 174056,
+      "inclusive_cpu_ns": 166703,
+      "exclusive_cpu_ns": 166703,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.case'",
+      "calls": 11,
+      "wall_ns": 525337,
+      "inclusive_cpu_ns": 521927,
+      "exclusive_cpu_ns": 160993,
+      "open_frames": 0,
+      "sources": 7
+    },
+    {
+      "key": "typeclass inference|EuclideanDomain",
+      "calls": 6,
+      "wall_ns": 158413,
+      "inclusive_cpu_ns": 150486,
+      "exclusive_cpu_ns": 150486,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.tacticTry_",
+      "calls": 12,
+      "wall_ns": 11501617,
+      "inclusive_cpu_ns": 11492484,
+      "exclusive_cpu_ns": 132330,
+      "open_frames": 0,
+      "sources": 8
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.withReducible",
+      "calls": 10,
+      "wall_ns": 8759113,
+      "inclusive_cpu_ns": 8742342,
+      "exclusive_cpu_ns": 112299,
+      "open_frames": 0,
+      "sources": 6
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.decide",
+      "calls": 2,
+      "wall_ns": 177508,
+      "inclusive_cpu_ns": 176669,
+      "exclusive_cpu_ns": 104844,
+      "open_frames": 0,
+      "sources": 2
+    },
+    {
+      "key": "typeclass inference|CommMonoidWithZero",
+      "calls": 2,
+      "wall_ns": 92259,
+      "inclusive_cpu_ns": 90113,
+      "exclusive_cpu_ns": 90113,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|",
+      "calls": 2,
+      "wall_ns": 88386,
+      "inclusive_cpu_ns": 86707,
+      "exclusive_cpu_ns": 86707,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "attribute application|",
+      "calls": 68,
+      "wall_ns": 100856,
+      "inclusive_cpu_ns": 74997,
+      "exclusive_cpu_ns": 74997,
+      "open_frames": 0,
+      "sources": 24
+    },
+    {
+      "key": "typeclass inference|Neg",
+      "calls": 1,
+      "wall_ns": 70331,
+      "inclusive_cpu_ns": 69337,
+      "exclusive_cpu_ns": 69337,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.revert",
+      "calls": 1,
+      "wall_ns": 55998,
+      "inclusive_cpu_ns": 55491,
+      "exclusive_cpu_ns": 55491,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|Mod",
+      "calls": 1,
+      "wall_ns": 56093,
+      "inclusive_cpu_ns": 55337,
+      "exclusive_cpu_ns": 55337,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|byContra!",
+      "calls": 1,
+      "wall_ns": 2915575,
+      "inclusive_cpu_ns": 2915087,
+      "exclusive_cpu_ns": 43075,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "typeclass inference|NonemptyFiniteLinearOrder",
+      "calls": 2,
+      "wall_ns": 41568,
+      "inclusive_cpu_ns": 39769,
+      "exclusive_cpu_ns": 39769,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose!",
+      "calls": 2,
+      "wall_ns": 2815560,
+      "inclusive_cpu_ns": 2814771,
+      "exclusive_cpu_ns": 34935,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Batteries.Tactic.byContra",
+      "calls": 1,
+      "wall_ns": 2029681,
+      "inclusive_cpu_ns": 2029230,
+      "exclusive_cpu_ns": 21455,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Lean.Parser.Tactic.seq1",
+      "calls": 1,
+      "wall_ns": 84162,
+      "inclusive_cpu_ns": 83875,
+      "exclusive_cpu_ns": 11222,
+      "open_frames": 0,
+      "sources": 1
+    },
+    {
+      "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose",
+      "calls": 1,
+      "wall_ns": 166580,
+      "inclusive_cpu_ns": 166290,
+      "exclusive_cpu_ns": 8836,
+      "open_frames": 0,
+      "sources": 1
+    }
+  ],
+  "open_frames": [
+    {
+      "source_id": "minif2f-175",
+      "pid": 275551,
+      "tid": 1,
+      "phase": "body",
+      "key": "elaboration|",
+      "snapshot_ns": 1325886093512337,
+      "observed_open_wall_ns": 299765355494,
+      "observed_open_exclusive_cpu_ns": 4211843
+    },
+    {
+      "source_id": "minif2f-175",
+      "pid": 275551,
+      "tid": 1,
+      "phase": "body",
+      "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+      "snapshot_ns": 1325886093512337,
+      "observed_open_wall_ns": 299754332427,
+      "observed_open_exclusive_cpu_ns": 15014
+    },
+    {
+      "source_id": "minif2f-175",
+      "pid": 275551,
+      "tid": 1,
+      "phase": "body",
+      "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+      "snapshot_ns": 1325886093512337,
+      "observed_open_wall_ns": 299754317203,
+      "observed_open_exclusive_cpu_ns": 6855
+    },
+    {
+      "source_id": "minif2f-175",
+      "pid": 275551,
+      "tid": 1,
+      "phase": "body",
+      "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+      "snapshot_ns": 1325886093512337,
+      "observed_open_wall_ns": 299754310269,
+      "observed_open_exclusive_cpu_ns": 1094252999
+    },
+    {
+      "source_id": "minif2f-175",
+      "pid": 275551,
+      "tid": 1,
+      "phase": "body",
+      "key": "simp|",
+      "snapshot_ns": 1325886093512337,
+      "observed_open_wall_ns": 965599,
+      "observed_open_exclusive_cpu_ns": 972714
+    },
+    {
+      "source_id": "minif2f-2404",
+      "pid": 275552,
+      "tid": 1,
+      "phase": "body",
+      "key": "elaboration|",
+      "snapshot_ns": 1325666042216338,
+      "observed_open_wall_ns": 76678091447,
+      "observed_open_exclusive_cpu_ns": 75938408286
+    }
+  ],
+  "profile_streams": [
+    {
+      "path": "/workspaces/repository/artifacts/lean-failure-profile-2026-10-25/preflight24-c/profiles/275551.jsonl.gz",
+      "records": 439,
+      "first_ns": 1325561021535750,
+      "last_ns": 1325886093512337,
+      "_stream_closed": false,
+      "_trailing_partial_bytes": 0
+    },
+    {
+      "path": "/workspaces/repository/artifacts/lean-failure-profile-2026-10-25/preflight24-c/profiles/275552.jsonl.gz",
+      "records": 219,
+      "first_ns": 1325561021535094,
+      "last_ns": 1325666042216338,
+      "_stream_closed": false,
+      "_trailing_partial_bytes": 0
+    }
+  ],
+  "unknown_source_snapshot_counts": [
+    {
+      "source_id": "unknown",
+      "phase": "unknown",
+      "records": 2
+    },
+    {
+      "source_id": "warm-0",
+      "phase": "header",
+      "records": 6
+    },
+    {
+      "source_id": "warm-0",
+      "phase": "body",
+      "records": 5
+    },
+    {
+      "source_id": "warm-1",
+      "phase": "header",
+      "records": 6
+    },
+    {
+      "source_id": "warm-1",
+      "phase": "body",
+      "records": 5
+    }
+  ],
+  "events": 658,
+  "sampled_endpoint_CPU_rankings": [
+    {
+      "family": "component",
+      "ranked": [
+        {
+          "key": "simp|",
+          "endpoint_weighted_thread_CPU_seconds": 310.967612162
+        },
+        {
+          "key": "elaboration|",
+          "endpoint_weighted_thread_CPU_seconds": 76.002032764
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "endpoint_weighted_thread_CPU_seconds": 9.001097589
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "endpoint_weighted_thread_CPU_seconds": 2.999813172
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "endpoint_weighted_thread_CPU_seconds": 1.008568819
+        },
+        {
+          "key": "typeclass inference|ContravariantClass",
+          "endpoint_weighted_thread_CPU_seconds": 1.000256367
+        },
+        {
+          "key": "typeclass inference|CovariantClass",
+          "endpoint_weighted_thread_CPU_seconds": 1.000223763
+        },
+        {
+          "key": "typeclass inference|ExistsAddOfLE",
+          "endpoint_weighted_thread_CPU_seconds": 1.000194334
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "endpoint_weighted_thread_CPU_seconds": 1.000182301
+        },
+        {
+          "key": "typeclass inference|Nat.AtLeastTwo",
+          "endpoint_weighted_thread_CPU_seconds": 1.000064892
+        },
+        {
+          "key": "typeclass inference|Decidable",
+          "endpoint_weighted_thread_CPU_seconds": 1.000014804
+        },
+        {
+          "key": "typeclass inference|PartialOrder",
+          "endpoint_weighted_thread_CPU_seconds": 0.999957581
+        },
+        {
+          "key": "outside active profile boundary",
+          "endpoint_weighted_thread_CPU_seconds": 0.977866129
+        }
+      ]
+    },
+    {
+      "family": "tactic",
+      "ranked": [
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "endpoint_weighted_thread_CPU_seconds": 314.975448009
+        },
+        {
+          "key": "outside active tactic boundary",
+          "endpoint_weighted_thread_CPU_seconds": 76.979898893
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "endpoint_weighted_thread_CPU_seconds": 13.001964199
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "endpoint_weighted_thread_CPU_seconds": 2.000391275
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "endpoint_weighted_thread_CPU_seconds": 1.000182301
+        }
+      ]
+    }
+  ],
+  "sampled_interval_limits": {
+    "source_transition_intervals": 18
+  },
+  "scope": "Actual stock profileit/profileitM boundaries, child-subtracted thread CPU plus final observed open frames. Inclusive spans overlap. Endpoint-weighted1sCPU samples are approximate attribution; source transitions and long gaps are reported separately. This diagnostic is not a speedup, exhaustive source/CPU attribution, or removable critical-path fraction.",
+  "fresh_native_profile_status_changes": [],
+  "fresh_native_seconds": 326.646616444,
+  "profile_seconds": 326.83995537,
+  "extra_elapsed_percent": 0.05918901842754121,
+  "reference_native_directory": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off",
+  "sources_with_body_profile_data": 24,
+  "baseline_fixed_groups": {
+    "all_selected": {
+      "sources": 24,
+      "profile_status_counts": {
+        "valid": 4,
+        "lean_error": 18,
+        "timeout_error": 1,
+        "resource_failure": 1
+      },
+      "baseline_cumulative_HTTP_seconds": 444.836939865,
+      "baseline_reported_body_seconds_available": 348.088682,
+      "baseline_missing_body_timings": 1,
+      "profile_reported_body_seconds_available": 347.310115,
+      "profile_missing_body_timings": 1,
+      "profile_single_HTTP_seconds_available": 427.57839319100003,
+      "profile_ambiguous_or_missing_HTTP_sources": [],
+      "measured_category_exclusive_CPU_seconds": [
+        {
+          "category": "simp",
+          "seconds": 323.052740329
+        },
+        {
+          "category": "elaboration",
+          "seconds": 76.300797666
+        },
+        {
+          "category": "tactic execution",
+          "seconds": 16.23109388
+        },
+        {
+          "category": "typeclass inference",
+          "seconds": 6.965283448
+        },
+        {
+          "category": "norm_num",
+          "seconds": 0.24471612
+        },
+        {
+          "category": "type checking",
+          "seconds": 0.232740271
+        },
+        {
+          "category": "ring",
+          "seconds": 0.118950117
+        },
+        {
+          "category": "parsing",
+          "seconds": 0.020825898
+        },
+        {
+          "category": "linting",
+          "seconds": 0.018001939
+        },
+        {
+          "category": "attribute application",
+          "seconds": 7.4997e-05
+        }
+      ],
+      "measured_component_exclusive_CPU_seconds": [
+        {
+          "key": "simp|",
+          "seconds": 323.052740329
+        },
+        {
+          "key": "elaboration|",
+          "seconds": 76.300797666
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "seconds": 13.828442967
+        },
+        {
+          "key": "typeclass inference|ExistsAddOfLE",
+          "seconds": 1.531836088
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 1.390395092
+        },
+        {
+          "key": "typeclass inference|PartialOrder",
+          "seconds": 0.778986184
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "seconds": 0.565013937
+        },
+        {
+          "key": "typeclass inference|CovariantClass",
+          "seconds": 0.545145865
+        },
+        {
+          "key": "typeclass inference|ContravariantClass",
+          "seconds": 0.476401905
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "seconds": 0.350769509
+        },
+        {
+          "key": "typeclass inference|OrderedSub",
+          "seconds": 0.339154405
+        },
+        {
+          "key": "typeclass inference|Decidable",
+          "seconds": 0.253133307
+        },
+        {
+          "key": "norm_num|",
+          "seconds": 0.24471612
+        },
+        {
+          "key": "type checking|",
+          "seconds": 0.232740271
+        },
+        {
+          "key": "typeclass inference|Semiring",
+          "seconds": 0.190785183
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.intervalCases",
+          "seconds": 0.176695982
+        },
+        {
+          "key": "typeclass inference|AddMonoidWithOne",
+          "seconds": 0.164590805
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommGroup",
+          "seconds": 0.154753635
+        },
+        {
+          "key": "typeclass inference|CharZero",
+          "seconds": 0.154113156
+        },
+        {
+          "key": "typeclass inference|ZeroLEOneClass",
+          "seconds": 0.140846185
+        },
+        {
+          "key": "ring|",
+          "seconds": 0.118950117
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.allGoals",
+          "seconds": 0.108311204
+        },
+        {
+          "key": "typeclass inference|OrderedSemiring",
+          "seconds": 0.097577873
+        },
+        {
+          "key": "typeclass inference|OfNat",
+          "seconds": 0.088468025
+        },
+        {
+          "key": "typeclass inference|IsLocalRingHom",
+          "seconds": 0.086566773
+        },
+        {
+          "key": "typeclass inference|AddGroup",
+          "seconds": 0.081298397
+        },
+        {
+          "key": "typeclass inference|LE",
+          "seconds": 0.078596795
+        },
+        {
+          "key": "typeclass inference|Nat.AtLeastTwo",
+          "seconds": 0.078215248
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.RingNF.ringNF",
+          "seconds": 0.07546777
+        },
+        {
+          "key": "typeclass inference|SubtractionMonoid",
+          "seconds": 0.070773632
+        },
+        {
+          "key": "typeclass inference|Ring",
+          "seconds": 0.068803986
+        },
+        {
+          "key": "typeclass inference|AddRightCancelMonoid",
+          "seconds": 0.067981285
+        },
+        {
+          "key": "typeclass inference|LT",
+          "seconds": 0.064172631
+        },
+        {
+          "key": "typeclass inference|NatCast",
+          "seconds": 0.062313976
+        },
+        {
+          "key": "typeclass inference|NeZero",
+          "seconds": 0.060355801
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.refine",
+          "seconds": 0.055953286
+        },
+        {
+          "key": "typeclass inference|BooleanRing",
+          "seconds": 0.055911608
+        },
+        {
+          "key": "tactic execution|linarith",
+          "seconds": 0.055164835
+        },
+        {
+          "key": "typeclass inference|HAdd",
+          "seconds": 0.0548874
+        },
+        {
+          "key": "typeclass inference|Zero",
+          "seconds": 0.049471814
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Positivity.positivity",
+          "seconds": 0.044723514
+        },
+        {
+          "key": "typeclass inference|HPow",
+          "seconds": 0.042509446
+        },
+        {
+          "key": "typeclass inference|GroupWithZero",
+          "seconds": 0.039570288
+        },
+        {
+          "key": "typeclass inference|CanonicallyOrderedAddCommMonoid",
+          "seconds": 0.038280842
+        },
+        {
+          "key": "typeclass inference|HMul",
+          "seconds": 0.035291653
+        },
+        {
+          "key": "typeclass inference|AddCommMonoid",
+          "seconds": 0.033642812
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rewriteSeq",
+          "seconds": 0.033285997
+        },
+        {
+          "key": "typeclass inference|CommSemiring",
+          "seconds": 0.027342439
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.cases'",
+          "seconds": 0.024798099
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommMonoid",
+          "seconds": 0.023923195
+        },
+        {
+          "key": "typeclass inference|Nonempty",
+          "seconds": 0.023384876
+        },
+        {
+          "key": "typeclass inference|HSub",
+          "seconds": 0.022660359
+        },
+        {
+          "key": "typeclass inference|AddZeroClass",
+          "seconds": 0.022633388
+        },
+        {
+          "key": "typeclass inference|Subsingleton",
+          "seconds": 0.021751716
+        },
+        {
+          "key": "typeclass inference|CoeT",
+          "seconds": 0.021612726
+        },
+        {
+          "key": "parsing|",
+          "seconds": 0.020825898
+        },
+        {
+          "key": "typeclass inference|StrictOrderedSemiring",
+          "seconds": 0.019796752
+        },
+        {
+          "key": "typeclass inference|NonUnitalSemiring",
+          "seconds": 0.018739383
+        },
+        {
+          "key": "linting|",
+          "seconds": 0.018001939
+        },
+        {
+          "key": "typeclass inference|HDiv",
+          "seconds": 0.017830624
+        },
+        {
+          "key": "typeclass inference|PosMulStrictMono",
+          "seconds": 0.016940335
+        },
+        {
+          "key": "typeclass inference|OrderedCancelAddCommMonoid",
+          "seconds": 0.015318376
+        },
+        {
+          "key": "typeclass inference|DecidablePred",
+          "seconds": 0.014770345
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+          "seconds": 0.01138779
+        },
+        {
+          "key": "typeclass inference|One",
+          "seconds": 0.011260636
+        },
+        {
+          "key": "typeclass inference|CommMagma",
+          "seconds": 0.011059189
+        },
+        {
+          "key": "typeclass inference|Monoid",
+          "seconds": 0.010280391
+        },
+        {
+          "key": "typeclass inference|DivisionRing",
+          "seconds": 0.00980184
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticHave_",
+          "seconds": 0.009727552
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "seconds": 0.009088083
+        },
+        {
+          "key": "typeclass inference|MulZeroClass",
+          "seconds": 0.008521693
+        },
+        {
+          "key": "typeclass inference|AddLeftCancelMonoid",
+          "seconds": 0.008088531
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+          "seconds": 0.007837772
+        },
+        {
+          "key": "typeclass inference|LinearOrderedSemiring",
+          "seconds": 0.006847568
+        },
+        {
+          "key": "typeclass inference|LinearOrder",
+          "seconds": 0.006444947
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.FieldSimp.fieldSimp",
+          "seconds": 0.006322832
+        },
+        {
+          "key": "typeclass inference|AddCancelMonoid",
+          "seconds": 0.006221426
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.eqRefl",
+          "seconds": 0.006120341
+        },
+        {
+          "key": "typeclass inference|Group",
+          "seconds": 0.006002759
+        },
+        {
+          "key": "typeclass inference|AddCommGroup",
+          "seconds": 0.005927299
+        },
+        {
+          "key": "typeclass inference|LinearOrderedCommMonoidWithZero",
+          "seconds": 0.005324571
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpa",
+          "seconds": 0.004681096
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rcases",
+          "seconds": 0.004603035
+        },
+        {
+          "key": "typeclass inference|HMod",
+          "seconds": 0.004476364
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.exact",
+          "seconds": 0.004440314
+        },
+        {
+          "key": "typeclass inference|LinearOrderedSemifield",
+          "seconds": 0.004031081
+        },
+        {
+          "key": "typeclass inference|CommGroup",
+          "seconds": 0.003976567
+        },
+        {
+          "key": "typeclass inference|IsEmpty",
+          "seconds": 0.003810235
+        },
+        {
+          "key": "typeclass inference|AddMonoid",
+          "seconds": 0.003626037
+        },
+        {
+          "key": "typeclass inference|MulOneClass",
+          "seconds": 0.003412427
+        },
+        {
+          "key": "typeclass inference|AddCommMagma",
+          "seconds": 0.003205978
+        },
+        {
+          "key": "typeclass inference|NonAssocSemiring",
+          "seconds": 0.002993079
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.substVars",
+          "seconds": 0.002499383
+        },
+        {
+          "key": "typeclass inference|Pow",
+          "seconds": 0.002076194
+        },
+        {
+          "key": "typeclass inference|LocallyFiniteOrder",
+          "seconds": 0.002056761
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeqBracketed",
+          "seconds": 0.002011968
+        },
+        {
+          "key": "typeclass inference|Add",
+          "seconds": 0.001979859
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.applyRfl",
+          "seconds": 0.001869893
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.PushNeg.tacticPush_neg_",
+          "seconds": 0.001689048
+        },
+        {
+          "key": "typeclass inference|MonoidWithZero",
+          "seconds": 0.001685539
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Ring.ring1",
+          "seconds": 0.001677256
+        },
+        {
+          "key": "tactic execution|Lean.cdot",
+          "seconds": 0.001675843
+        },
+        {
+          "key": "typeclass inference|Lake.FamilyOut",
+          "seconds": 0.001653754
+        },
+        {
+          "key": "typeclass inference|Membership",
+          "seconds": 0.001643618
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case",
+          "seconds": 0.001543113
+        },
+        {
+          "key": "typeclass inference|StrictOrderedRing",
+          "seconds": 0.001487662
+        },
+        {
+          "key": "typeclass inference|AddCommSemigroup",
+          "seconds": 0.001469635
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.apply",
+          "seconds": 0.001401611
+        },
+        {
+          "key": "typeclass inference|DivisionSemiring",
+          "seconds": 0.001256972
+        },
+        {
+          "key": "typeclass inference|DivisionMonoid",
+          "seconds": 0.000891923
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tactic_<;>_",
+          "seconds": 0.000884746
+        },
+        {
+          "key": "typeclass inference|DivisionCommMonoid",
+          "seconds": 0.000833073
+        },
+        {
+          "key": "typeclass inference|Field",
+          "seconds": 0.000832926
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.focus",
+          "seconds": 0.00082373
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withAnnotateState",
+          "seconds": 0.000760142
+        },
+        {
+          "key": "typeclass inference|CompleteLattice",
+          "seconds": 0.000758065
+        },
+        {
+          "key": "typeclass inference|Nontrivial",
+          "seconds": 0.000688677
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.constructor",
+          "seconds": 0.0006876
+        },
+        {
+          "key": "typeclass inference|CharP",
+          "seconds": 0.000676392
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rwSeq",
+          "seconds": 0.000670161
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.paren",
+          "seconds": 0.000634198
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.intro",
+          "seconds": 0.000589566
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticRfl",
+          "seconds": 0.000554987
+        },
+        {
+          "key": "tactic execution|Lean.Elab.Tactic.Ext.ext",
+          "seconds": 0.00043503
+        },
+        {
+          "key": "typeclass inference|RCLike",
+          "seconds": 0.000434825
+        },
+        {
+          "key": "typeclass inference|MulZeroOneClass",
+          "seconds": 0.000411786
+        },
+        {
+          "key": "typeclass inference|IsAbsoluteValue",
+          "seconds": 0.00039071
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.refine'",
+          "seconds": 0.000388588
+        },
+        {
+          "key": "typeclass inference|CoheytingAlgebra",
+          "seconds": 0.000363441
+        },
+        {
+          "key": "typeclass inference|HeytingAlgebra",
+          "seconds": 0.000335392
+        },
+        {
+          "key": "typeclass inference|Dvd",
+          "seconds": 0.000308946
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.skip",
+          "seconds": 0.000279447
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rotateRight",
+          "seconds": 0.000279179
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.guardTarget",
+          "seconds": 0.000275791
+        },
+        {
+          "key": "typeclass inference|CanonicallyOrderedCommMonoid",
+          "seconds": 0.000270048
+        },
+        {
+          "key": "typeclass inference|Inv",
+          "seconds": 0.000253358
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticRefine_lift_",
+          "seconds": 0.000209666
+        },
+        {
+          "key": "typeclass inference|BooleanAlgebra",
+          "seconds": 0.000199673
+        },
+        {
+          "key": "typeclass inference|Lattice",
+          "seconds": 0.000197695
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.fail",
+          "seconds": 0.00017635
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.first",
+          "seconds": 0.000174034
+        },
+        {
+          "key": "typeclass inference|CommSemigroup",
+          "seconds": 0.000166703
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case'",
+          "seconds": 0.000160993
+        },
+        {
+          "key": "typeclass inference|EuclideanDomain",
+          "seconds": 0.000150486
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticTry_",
+          "seconds": 0.00013233
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withReducible",
+          "seconds": 0.000112299
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.decide",
+          "seconds": 0.000104844
+        },
+        {
+          "key": "typeclass inference|CommMonoidWithZero",
+          "seconds": 9.0113e-05
+        },
+        {
+          "key": "typeclass inference|",
+          "seconds": 8.6707e-05
+        },
+        {
+          "key": "attribute application|",
+          "seconds": 7.4997e-05
+        },
+        {
+          "key": "typeclass inference|Neg",
+          "seconds": 6.9337e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.revert",
+          "seconds": 5.5491e-05
+        },
+        {
+          "key": "typeclass inference|Mod",
+          "seconds": 5.5337e-05
+        },
+        {
+          "key": "tactic execution|byContra!",
+          "seconds": 4.3075e-05
+        },
+        {
+          "key": "typeclass inference|NonemptyFiniteLinearOrder",
+          "seconds": 3.9769e-05
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose!",
+          "seconds": 3.4935e-05
+        },
+        {
+          "key": "tactic execution|Batteries.Tactic.byContra",
+          "seconds": 2.1455e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.seq1",
+          "seconds": 1.1222e-05
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose",
+          "seconds": 8.836e-06
+        }
+      ],
+      "sampled_tactic_endpoint_CPU_seconds": [
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 314.975448009
+        },
+        {
+          "key": "outside active tactic boundary",
+          "seconds": 76.979898893
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "seconds": 13.001964199
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "seconds": 2.000391275
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "seconds": 1.000182301
+        }
+      ]
+    },
+    "baseline_timeout_error": {
+      "sources": 1,
+      "profile_status_counts": {
+        "timeout_error": 1
+      },
+      "baseline_cumulative_HTTP_seconds": 300.073288695,
+      "baseline_reported_body_seconds_available": 300.0,
+      "baseline_missing_body_timings": 0,
+      "profile_reported_body_seconds_available": 300.0,
+      "profile_missing_body_timings": 0,
+      "profile_single_HTTP_seconds_available": 300.034583193,
+      "profile_ambiguous_or_missing_HTTP_sources": [],
+      "measured_category_exclusive_CPU_seconds": [
+        {
+          "category": "simp",
+          "seconds": 298.570266052
+        },
+        {
+          "category": "tactic execution",
+          "seconds": 1.094274868
+        },
+        {
+          "category": "typeclass inference",
+          "seconds": 0.006809477
+        },
+        {
+          "category": "elaboration",
+          "seconds": 0.004717478
+        },
+        {
+          "category": "parsing",
+          "seconds": 0.000546463
+        },
+        {
+          "category": "linting",
+          "seconds": 0.000124898
+        },
+        {
+          "category": "attribute application",
+          "seconds": 1.672e-06
+        }
+      ],
+      "measured_component_exclusive_CPU_seconds": [
+        {
+          "key": "simp|",
+          "seconds": 298.570266052
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 1.094252999
+        },
+        {
+          "key": "elaboration|",
+          "seconds": 0.004717478
+        },
+        {
+          "key": "typeclass inference|OfNat",
+          "seconds": 0.002065006
+        },
+        {
+          "key": "typeclass inference|HPow",
+          "seconds": 0.00172366
+        },
+        {
+          "key": "typeclass inference|AddCommMonoid",
+          "seconds": 0.001713067
+        },
+        {
+          "key": "typeclass inference|HAdd",
+          "seconds": 0.00064087
+        },
+        {
+          "key": "parsing|",
+          "seconds": 0.000546463
+        },
+        {
+          "key": "typeclass inference|HMod",
+          "seconds": 0.000458211
+        },
+        {
+          "key": "linting|",
+          "seconds": 0.000124898
+        },
+        {
+          "key": "typeclass inference|Pow",
+          "seconds": 8.6484e-05
+        },
+        {
+          "key": "typeclass inference|Monoid",
+          "seconds": 6.6842e-05
+        },
+        {
+          "key": "typeclass inference|Mod",
+          "seconds": 5.5337e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+          "seconds": 1.5014e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+          "seconds": 6.855e-06
+        },
+        {
+          "key": "attribute application|",
+          "seconds": 1.672e-06
+        }
+      ],
+      "sampled_tactic_endpoint_CPU_seconds": [
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 298.965708471
+        }
+      ]
+    },
+    "baseline_lean_error": {
+      "sources": 18,
+      "profile_status_counts": {
+        "lean_error": 18
+      },
+      "baseline_cumulative_HTTP_seconds": 61.633974058,
+      "baseline_reported_body_seconds_available": 45.859875,
+      "baseline_missing_body_timings": 0,
+      "profile_reported_body_seconds_available": 45.096392,
+      "profile_missing_body_timings": 0,
+      "profile_single_HTTP_seconds_available": 46.294176944,
+      "profile_ambiguous_or_missing_HTTP_sources": [],
+      "measured_category_exclusive_CPU_seconds": [
+        {
+          "category": "simp",
+          "seconds": 23.79552459
+        },
+        {
+          "category": "tactic execution",
+          "seconds": 13.636297654
+        },
+        {
+          "category": "typeclass inference",
+          "seconds": 6.422794194
+        },
+        {
+          "category": "elaboration",
+          "seconds": 0.289554138
+        },
+        {
+          "category": "norm_num",
+          "seconds": 0.232972687
+        },
+        {
+          "category": "type checking",
+          "seconds": 0.164713802
+        },
+        {
+          "category": "ring",
+          "seconds": 0.081586738
+        },
+        {
+          "category": "parsing",
+          "seconds": 0.016711212
+        },
+        {
+          "category": "linting",
+          "seconds": 0.004672137
+        },
+        {
+          "category": "attribute application",
+          "seconds": 5.8194e-05
+        }
+      ],
+      "measured_component_exclusive_CPU_seconds": [
+        {
+          "key": "simp|",
+          "seconds": 23.79552459
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "seconds": 12.336553287
+        },
+        {
+          "key": "typeclass inference|ExistsAddOfLE",
+          "seconds": 1.320167294
+        },
+        {
+          "key": "typeclass inference|PartialOrder",
+          "seconds": 0.778456539
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "seconds": 0.544963853
+        },
+        {
+          "key": "typeclass inference|CovariantClass",
+          "seconds": 0.487021264
+        },
+        {
+          "key": "typeclass inference|ContravariantClass",
+          "seconds": 0.424341444
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "seconds": 0.349932404
+        },
+        {
+          "key": "typeclass inference|OrderedSub",
+          "seconds": 0.339154405
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 0.296142093
+        },
+        {
+          "key": "elaboration|",
+          "seconds": 0.289554138
+        },
+        {
+          "key": "typeclass inference|Decidable",
+          "seconds": 0.253133307
+        },
+        {
+          "key": "norm_num|",
+          "seconds": 0.232972687
+        },
+        {
+          "key": "typeclass inference|Semiring",
+          "seconds": 0.190040012
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.intervalCases",
+          "seconds": 0.176695982
+        },
+        {
+          "key": "type checking|",
+          "seconds": 0.164713802
+        },
+        {
+          "key": "typeclass inference|AddMonoidWithOne",
+          "seconds": 0.154284818
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommGroup",
+          "seconds": 0.142911635
+        },
+        {
+          "key": "typeclass inference|ZeroLEOneClass",
+          "seconds": 0.135391139
+        },
+        {
+          "key": "typeclass inference|CharZero",
+          "seconds": 0.120823091
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.allGoals",
+          "seconds": 0.108289155
+        },
+        {
+          "key": "typeclass inference|OrderedSemiring",
+          "seconds": 0.091100329
+        },
+        {
+          "key": "typeclass inference|IsLocalRingHom",
+          "seconds": 0.086566773
+        },
+        {
+          "key": "ring|",
+          "seconds": 0.081586738
+        },
+        {
+          "key": "typeclass inference|LE",
+          "seconds": 0.078477056
+        },
+        {
+          "key": "typeclass inference|Nat.AtLeastTwo",
+          "seconds": 0.078215248
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.RingNF.ringNF",
+          "seconds": 0.07546777
+        },
+        {
+          "key": "typeclass inference|AddGroup",
+          "seconds": 0.070961174
+        },
+        {
+          "key": "typeclass inference|SubtractionMonoid",
+          "seconds": 0.070773632
+        },
+        {
+          "key": "typeclass inference|OfNat",
+          "seconds": 0.069814434
+        },
+        {
+          "key": "typeclass inference|Ring",
+          "seconds": 0.068686973
+        },
+        {
+          "key": "typeclass inference|AddRightCancelMonoid",
+          "seconds": 0.067981285
+        },
+        {
+          "key": "typeclass inference|NatCast",
+          "seconds": 0.062313976
+        },
+        {
+          "key": "typeclass inference|NeZero",
+          "seconds": 0.060174098
+        },
+        {
+          "key": "typeclass inference|BooleanRing",
+          "seconds": 0.055694192
+        },
+        {
+          "key": "tactic execution|linarith",
+          "seconds": 0.055164835
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.refine",
+          "seconds": 0.054710533
+        },
+        {
+          "key": "typeclass inference|Zero",
+          "seconds": 0.049256116
+        },
+        {
+          "key": "typeclass inference|HAdd",
+          "seconds": 0.047074956
+        },
+        {
+          "key": "typeclass inference|LT",
+          "seconds": 0.046307934
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Positivity.positivity",
+          "seconds": 0.044723514
+        },
+        {
+          "key": "typeclass inference|GroupWithZero",
+          "seconds": 0.039570288
+        },
+        {
+          "key": "typeclass inference|CanonicallyOrderedAddCommMonoid",
+          "seconds": 0.036982179
+        },
+        {
+          "key": "typeclass inference|AddCommMonoid",
+          "seconds": 0.031929745
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rewriteSeq",
+          "seconds": 0.031778334
+        },
+        {
+          "key": "typeclass inference|HPow",
+          "seconds": 0.030790603
+        },
+        {
+          "key": "typeclass inference|CommSemiring",
+          "seconds": 0.02721243
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.cases'",
+          "seconds": 0.024798099
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommMonoid",
+          "seconds": 0.023695708
+        },
+        {
+          "key": "typeclass inference|Nonempty",
+          "seconds": 0.022946934
+        },
+        {
+          "key": "typeclass inference|HMul",
+          "seconds": 0.022001618
+        },
+        {
+          "key": "typeclass inference|Subsingleton",
+          "seconds": 0.021751716
+        },
+        {
+          "key": "typeclass inference|CoeT",
+          "seconds": 0.021612726
+        },
+        {
+          "key": "typeclass inference|AddZeroClass",
+          "seconds": 0.019414612
+        },
+        {
+          "key": "typeclass inference|HSub",
+          "seconds": 0.017976744
+        },
+        {
+          "key": "typeclass inference|NonUnitalSemiring",
+          "seconds": 0.017255372
+        },
+        {
+          "key": "typeclass inference|StrictOrderedSemiring",
+          "seconds": 0.016838822
+        },
+        {
+          "key": "parsing|",
+          "seconds": 0.016711212
+        },
+        {
+          "key": "typeclass inference|OrderedCancelAddCommMonoid",
+          "seconds": 0.015167997
+        },
+        {
+          "key": "typeclass inference|DecidablePred",
+          "seconds": 0.014770345
+        },
+        {
+          "key": "typeclass inference|HDiv",
+          "seconds": 0.013927068
+        },
+        {
+          "key": "typeclass inference|CommMagma",
+          "seconds": 0.011059189
+        },
+        {
+          "key": "typeclass inference|One",
+          "seconds": 0.011023949
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+          "seconds": 0.01093067
+        },
+        {
+          "key": "typeclass inference|Monoid",
+          "seconds": 0.009882072
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticHave_",
+          "seconds": 0.009709262
+        },
+        {
+          "key": "typeclass inference|DivisionRing",
+          "seconds": 0.009536837
+        },
+        {
+          "key": "typeclass inference|AddLeftCancelMonoid",
+          "seconds": 0.008088531
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+          "seconds": 0.00744946
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "seconds": 0.00734372
+        },
+        {
+          "key": "typeclass inference|LinearOrderedSemiring",
+          "seconds": 0.006544818
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.FieldSimp.fieldSimp",
+          "seconds": 0.006322832
+        },
+        {
+          "key": "typeclass inference|LinearOrder",
+          "seconds": 0.006143557
+        },
+        {
+          "key": "typeclass inference|Group",
+          "seconds": 0.006002759
+        },
+        {
+          "key": "typeclass inference|AddCommGroup",
+          "seconds": 0.005927299
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.eqRefl",
+          "seconds": 0.005858415
+        },
+        {
+          "key": "typeclass inference|AddCancelMonoid",
+          "seconds": 0.005648928
+        },
+        {
+          "key": "typeclass inference|LinearOrderedCommMonoidWithZero",
+          "seconds": 0.004874437
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpa",
+          "seconds": 0.004681096
+        },
+        {
+          "key": "linting|",
+          "seconds": 0.004672137
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rcases",
+          "seconds": 0.004603035
+        },
+        {
+          "key": "typeclass inference|LinearOrderedSemifield",
+          "seconds": 0.004031081
+        },
+        {
+          "key": "typeclass inference|CommGroup",
+          "seconds": 0.003976567
+        },
+        {
+          "key": "typeclass inference|IsEmpty",
+          "seconds": 0.003760013
+        },
+        {
+          "key": "typeclass inference|AddMonoid",
+          "seconds": 0.003501577
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.exact",
+          "seconds": 0.003420797
+        },
+        {
+          "key": "typeclass inference|MulOneClass",
+          "seconds": 0.003412427
+        },
+        {
+          "key": "typeclass inference|AddCommMagma",
+          "seconds": 0.003205978
+        },
+        {
+          "key": "typeclass inference|NonAssocSemiring",
+          "seconds": 0.002993079
+        },
+        {
+          "key": "typeclass inference|HMod",
+          "seconds": 0.002756248
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.substVars",
+          "seconds": 0.002499383
+        },
+        {
+          "key": "typeclass inference|LocallyFiniteOrder",
+          "seconds": 0.002056761
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeqBracketed",
+          "seconds": 0.002011968
+        },
+        {
+          "key": "typeclass inference|Add",
+          "seconds": 0.001979859
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.applyRfl",
+          "seconds": 0.001814511
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.PushNeg.tacticPush_neg_",
+          "seconds": 0.001689048
+        },
+        {
+          "key": "typeclass inference|MonoidWithZero",
+          "seconds": 0.001685539
+        },
+        {
+          "key": "tactic execution|Lean.cdot",
+          "seconds": 0.001675843
+        },
+        {
+          "key": "typeclass inference|Lake.FamilyOut",
+          "seconds": 0.001653754
+        },
+        {
+          "key": "typeclass inference|Membership",
+          "seconds": 0.001643618
+        },
+        {
+          "key": "typeclass inference|Pow",
+          "seconds": 0.001610002
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case",
+          "seconds": 0.001472127
+        },
+        {
+          "key": "typeclass inference|AddCommSemigroup",
+          "seconds": 0.001469635
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.apply",
+          "seconds": 0.001401611
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Ring.ring1",
+          "seconds": 0.001365777
+        },
+        {
+          "key": "typeclass inference|DivisionSemiring",
+          "seconds": 0.001256972
+        },
+        {
+          "key": "typeclass inference|StrictOrderedRing",
+          "seconds": 0.001232645
+        },
+        {
+          "key": "typeclass inference|DivisionMonoid",
+          "seconds": 0.000891923
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tactic_<;>_",
+          "seconds": 0.000843245
+        },
+        {
+          "key": "typeclass inference|DivisionCommMonoid",
+          "seconds": 0.000833073
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.focus",
+          "seconds": 0.000773923
+        },
+        {
+          "key": "typeclass inference|CompleteLattice",
+          "seconds": 0.000758065
+        },
+        {
+          "key": "typeclass inference|Nontrivial",
+          "seconds": 0.000688677
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.constructor",
+          "seconds": 0.0006876
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withAnnotateState",
+          "seconds": 0.000674548
+        },
+        {
+          "key": "typeclass inference|Field",
+          "seconds": 0.000655416
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rwSeq",
+          "seconds": 0.000630609
+        },
+        {
+          "key": "typeclass inference|CharP",
+          "seconds": 0.000607665
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.paren",
+          "seconds": 0.000560078
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.intro",
+          "seconds": 0.000543261
+        },
+        {
+          "key": "tactic execution|Lean.Elab.Tactic.Ext.ext",
+          "seconds": 0.00043503
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticRfl",
+          "seconds": 0.00042151
+        },
+        {
+          "key": "typeclass inference|MulZeroOneClass",
+          "seconds": 0.000411786
+        },
+        {
+          "key": "typeclass inference|IsAbsoluteValue",
+          "seconds": 0.00039071
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.refine'",
+          "seconds": 0.000388588
+        },
+        {
+          "key": "typeclass inference|CoheytingAlgebra",
+          "seconds": 0.000363441
+        },
+        {
+          "key": "typeclass inference|HeytingAlgebra",
+          "seconds": 0.000335392
+        },
+        {
+          "key": "typeclass inference|Dvd",
+          "seconds": 0.000308946
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rotateRight",
+          "seconds": 0.000279179
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.guardTarget",
+          "seconds": 0.000275791
+        },
+        {
+          "key": "typeclass inference|CanonicallyOrderedCommMonoid",
+          "seconds": 0.000270048
+        },
+        {
+          "key": "typeclass inference|Inv",
+          "seconds": 0.000253358
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.skip",
+          "seconds": 0.000243505
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticRefine_lift_",
+          "seconds": 0.000209666
+        },
+        {
+          "key": "typeclass inference|BooleanAlgebra",
+          "seconds": 0.000199673
+        },
+        {
+          "key": "typeclass inference|Lattice",
+          "seconds": 0.000197695
+        },
+        {
+          "key": "typeclass inference|CommSemigroup",
+          "seconds": 0.000166703
+        },
+        {
+          "key": "typeclass inference|EuclideanDomain",
+          "seconds": 0.000150486
+        },
+        {
+          "key": "typeclass inference|RCLike",
+          "seconds": 0.000135196
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.fail",
+          "seconds": 0.000129283
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.first",
+          "seconds": 0.00012638
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case'",
+          "seconds": 0.000119135
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.decide",
+          "seconds": 0.000104844
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticTry_",
+          "seconds": 9.6524e-05
+        },
+        {
+          "key": "typeclass inference|CommMonoidWithZero",
+          "seconds": 9.0113e-05
+        },
+        {
+          "key": "typeclass inference|",
+          "seconds": 8.6707e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withReducible",
+          "seconds": 7.438e-05
+        },
+        {
+          "key": "typeclass inference|Neg",
+          "seconds": 6.9337e-05
+        },
+        {
+          "key": "attribute application|",
+          "seconds": 5.8194e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.revert",
+          "seconds": 5.5491e-05
+        },
+        {
+          "key": "tactic execution|byContra!",
+          "seconds": 4.3075e-05
+        },
+        {
+          "key": "typeclass inference|NonemptyFiniteLinearOrder",
+          "seconds": 3.9769e-05
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose!",
+          "seconds": 3.4935e-05
+        },
+        {
+          "key": "tactic execution|Batteries.Tactic.byContra",
+          "seconds": 2.1455e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.seq1",
+          "seconds": 1.1222e-05
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Contrapose.contrapose",
+          "seconds": 8.836e-06
+        }
+      ],
+      "sampled_tactic_endpoint_CPU_seconds": [
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "seconds": 16.009739538
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "seconds": 13.001964199
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "seconds": 2.000391275
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "seconds": 1.000182301
+        },
+        {
+          "key": "outside active tactic boundary",
+          "seconds": 0.977866129
+        }
+      ]
+    },
+    "baseline_resource_failure": {
+      "sources": 1,
+      "profile_status_counts": {
+        "resource_failure": 1
+      },
+      "baseline_cumulative_HTTP_seconds": 80.564810544,
+      "baseline_reported_body_seconds_available": 0,
+      "baseline_missing_body_timings": 1,
+      "profile_reported_body_seconds_available": 0,
+      "profile_missing_body_timings": 1,
+      "profile_single_HTTP_seconds_available": 78.7545695,
+      "profile_ambiguous_or_missing_HTTP_sources": [],
+      "measured_category_exclusive_CPU_seconds": [
+        {
+          "category": "elaboration",
+          "seconds": 75.938882816
+        },
+        {
+          "category": "simp",
+          "seconds": 0.686949687
+        },
+        {
+          "category": "typeclass inference",
+          "seconds": 0.03750317
+        },
+        {
+          "category": "tactic execution",
+          "seconds": 0.003270971
+        },
+        {
+          "category": "parsing",
+          "seconds": 0.000742689
+        },
+        {
+          "category": "linting",
+          "seconds": 9.7222e-05
+        },
+        {
+          "category": "attribute application",
+          "seconds": 1.518e-06
+        }
+      ],
+      "measured_component_exclusive_CPU_seconds": [
+        {
+          "key": "elaboration|",
+          "seconds": 75.938882816
+        },
+        {
+          "key": "simp|",
+          "seconds": 0.686949687
+        },
+        {
+          "key": "typeclass inference|LT",
+          "seconds": 0.014822946
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "seconds": 0.014364712
+        },
+        {
+          "key": "typeclass inference|AddZeroClass",
+          "seconds": 0.002296613
+        },
+        {
+          "key": "typeclass inference|OfNat",
+          "seconds": 0.002026837
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "seconds": 0.001744363
+        },
+        {
+          "key": "typeclass inference|HAdd",
+          "seconds": 0.001632894
+        },
+        {
+          "key": "typeclass inference|HMod",
+          "seconds": 0.001261905
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.refine",
+          "seconds": 0.001242753
+        },
+        {
+          "key": "parsing|",
+          "seconds": 0.000742689
+        },
+        {
+          "key": "typeclass inference|Nonempty",
+          "seconds": 0.000437942
+        },
+        {
+          "key": "typeclass inference|BooleanRing",
+          "seconds": 0.000217416
+        },
+        {
+          "key": "typeclass inference|Monoid",
+          "seconds": 0.000168565
+        },
+        {
+          "key": "typeclass inference|Semiring",
+          "seconds": 0.000154391
+        },
+        {
+          "key": "linting|",
+          "seconds": 9.7222e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case",
+          "seconds": 7.0986e-05
+        },
+        {
+          "key": "typeclass inference|CharP",
+          "seconds": 6.8727e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+          "seconds": 6.0034e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+          "seconds": 5.5626e-05
+        },
+        {
+          "key": "typeclass inference|IsEmpty",
+          "seconds": 5.0222e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.intro",
+          "seconds": 4.6305e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.focus",
+          "seconds": 1.8489e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticHave_",
+          "seconds": 1.829e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withAnnotateState",
+          "seconds": 7.779e-06
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.paren",
+          "seconds": 6.346e-06
+        },
+        {
+          "key": "attribute application|",
+          "seconds": 1.518e-06
+        }
+      ],
+      "sampled_tactic_endpoint_CPU_seconds": [
+        {
+          "key": "outside active tactic boundary",
+          "seconds": 76.002032764
+        }
+      ]
+    },
+    "baseline_valid": {
+      "sources": 4,
+      "profile_status_counts": {
+        "valid": 4
+      },
+      "baseline_cumulative_HTTP_seconds": 2.5648665680000002,
+      "baseline_reported_body_seconds_available": 2.2288069999999998,
+      "baseline_missing_body_timings": 0,
+      "profile_reported_body_seconds_available": 2.213723,
+      "profile_missing_body_timings": 0,
+      "profile_single_HTTP_seconds_available": 2.4950635539999997,
+      "profile_ambiguous_or_missing_HTTP_sources": [],
+      "measured_category_exclusive_CPU_seconds": [
+        {
+          "category": "tactic execution",
+          "seconds": 1.497250387
+        },
+        {
+          "category": "typeclass inference",
+          "seconds": 0.498176607
+        },
+        {
+          "category": "type checking",
+          "seconds": 0.068026469
+        },
+        {
+          "category": "elaboration",
+          "seconds": 0.067643234
+        },
+        {
+          "category": "ring",
+          "seconds": 0.037363379
+        },
+        {
+          "category": "linting",
+          "seconds": 0.013107682
+        },
+        {
+          "category": "norm_num",
+          "seconds": 0.011743433
+        },
+        {
+          "category": "parsing",
+          "seconds": 0.002825534
+        },
+        {
+          "category": "attribute application",
+          "seconds": 1.3613e-05
+        }
+      ],
+      "measured_component_exclusive_CPU_seconds": [
+        {
+          "key": "tactic execution|nlinarith",
+          "seconds": 1.49188968
+        },
+        {
+          "key": "typeclass inference|ExistsAddOfLE",
+          "seconds": 0.211668794
+        },
+        {
+          "key": "type checking|",
+          "seconds": 0.068026469
+        },
+        {
+          "key": "elaboration|",
+          "seconds": 0.067643234
+        },
+        {
+          "key": "typeclass inference|CovariantClass",
+          "seconds": 0.058124601
+        },
+        {
+          "key": "typeclass inference|ContravariantClass",
+          "seconds": 0.052060461
+        },
+        {
+          "key": "ring|",
+          "seconds": 0.037363379
+        },
+        {
+          "key": "typeclass inference|CharZero",
+          "seconds": 0.033290065
+        },
+        {
+          "key": "typeclass inference|PosMulStrictMono",
+          "seconds": 0.016940335
+        },
+        {
+          "key": "typeclass inference|OfNat",
+          "seconds": 0.014561748
+        },
+        {
+          "key": "typeclass inference|HMul",
+          "seconds": 0.013290035
+        },
+        {
+          "key": "linting|",
+          "seconds": 0.013107682
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommGroup",
+          "seconds": 0.011842
+        },
+        {
+          "key": "norm_num|",
+          "seconds": 0.011743433
+        },
+        {
+          "key": "typeclass inference|AddGroup",
+          "seconds": 0.010337223
+        },
+        {
+          "key": "typeclass inference|AddMonoidWithOne",
+          "seconds": 0.010305987
+        },
+        {
+          "key": "typeclass inference|HPow",
+          "seconds": 0.009995183
+        },
+        {
+          "key": "typeclass inference|MulZeroClass",
+          "seconds": 0.008521693
+        },
+        {
+          "key": "typeclass inference|OrderedSemiring",
+          "seconds": 0.006477544
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "seconds": 0.005685372
+        },
+        {
+          "key": "typeclass inference|HAdd",
+          "seconds": 0.00553868
+        },
+        {
+          "key": "typeclass inference|ZeroLEOneClass",
+          "seconds": 0.005455046
+        },
+        {
+          "key": "typeclass inference|HSub",
+          "seconds": 0.004683615
+        },
+        {
+          "key": "typeclass inference|HDiv",
+          "seconds": 0.003903556
+        },
+        {
+          "key": "typeclass inference|LT",
+          "seconds": 0.003041751
+        },
+        {
+          "key": "typeclass inference|StrictOrderedSemiring",
+          "seconds": 0.00295793
+        },
+        {
+          "key": "parsing|",
+          "seconds": 0.002825534
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rewriteSeq",
+          "seconds": 0.001507663
+        },
+        {
+          "key": "typeclass inference|NonUnitalSemiring",
+          "seconds": 0.001484011
+        },
+        {
+          "key": "typeclass inference|CanonicallyOrderedAddCommMonoid",
+          "seconds": 0.001298663
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.exact",
+          "seconds": 0.001019517
+        },
+        {
+          "key": "typeclass inference|AddZeroClass",
+          "seconds": 0.000922163
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "seconds": 0.000837105
+        },
+        {
+          "key": "typeclass inference|Semiring",
+          "seconds": 0.00059078
+        },
+        {
+          "key": "typeclass inference|AddCancelMonoid",
+          "seconds": 0.000572498
+        },
+        {
+          "key": "typeclass inference|PartialOrder",
+          "seconds": 0.000529645
+        },
+        {
+          "key": "typeclass inference|LinearOrderedCommMonoidWithZero",
+          "seconds": 0.000450134
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq",
+          "seconds": 0.00038648
+        },
+        {
+          "key": "typeclass inference|Pow",
+          "seconds": 0.000379708
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticSeq1Indented",
+          "seconds": 0.000321423
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.Ring.ring1",
+          "seconds": 0.000311479
+        },
+        {
+          "key": "typeclass inference|LinearOrderedSemiring",
+          "seconds": 0.00030275
+        },
+        {
+          "key": "typeclass inference|LinearOrder",
+          "seconds": 0.00030139
+        },
+        {
+          "key": "typeclass inference|RCLike",
+          "seconds": 0.000299629
+        },
+        {
+          "key": "typeclass inference|DivisionRing",
+          "seconds": 0.000265003
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.eqRefl",
+          "seconds": 0.000261926
+        },
+        {
+          "key": "typeclass inference|StrictOrderedRing",
+          "seconds": 0.000255017
+        },
+        {
+          "key": "typeclass inference|One",
+          "seconds": 0.000236687
+        },
+        {
+          "key": "typeclass inference|OrderedAddCommMonoid",
+          "seconds": 0.000227487
+        },
+        {
+          "key": "typeclass inference|Zero",
+          "seconds": 0.000215698
+        },
+        {
+          "key": "typeclass inference|NeZero",
+          "seconds": 0.000181703
+        },
+        {
+          "key": "typeclass inference|Field",
+          "seconds": 0.00017751
+        },
+        {
+          "key": "typeclass inference|Monoid",
+          "seconds": 0.000162912
+        },
+        {
+          "key": "typeclass inference|OrderedCancelAddCommMonoid",
+          "seconds": 0.000150379
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticRfl",
+          "seconds": 0.000133477
+        },
+        {
+          "key": "typeclass inference|CommSemiring",
+          "seconds": 0.000130009
+        },
+        {
+          "key": "typeclass inference|AddMonoid",
+          "seconds": 0.00012446
+        },
+        {
+          "key": "typeclass inference|LE",
+          "seconds": 0.000119739
+        },
+        {
+          "key": "typeclass inference|Ring",
+          "seconds": 0.000117013
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withAnnotateState",
+          "seconds": 7.7815e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.paren",
+          "seconds": 6.7774e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.applyRfl",
+          "seconds": 5.5382e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.first",
+          "seconds": 4.7654e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.fail",
+          "seconds": 4.7067e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.case'",
+          "seconds": 4.1858e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tactic_<;>_",
+          "seconds": 4.1501e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.rwSeq",
+          "seconds": 3.9552e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.withReducible",
+          "seconds": 3.7919e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.skip",
+          "seconds": 3.5942e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.tacticTry_",
+          "seconds": 3.5806e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.focus",
+          "seconds": 3.1318e-05
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.allGoals",
+          "seconds": 2.2049e-05
+        },
+        {
+          "key": "attribute application|",
+          "seconds": 1.3613e-05
+        }
+      ],
+      "sampled_tactic_endpoint_CPU_seconds": []
+    }
+  }
+}

@@ -46,3 +46,10 @@ timed, zero diagnostic drops/errors and no surviving nativechildren.
 [Root qualification review](preflight-result-review.md). Full480 is now active
 under the same resourcepoint; full480.launch.json records its exactowner.
 Do not stage livefull480logs as finaldata or interpret a partialdistribution.
+
+
+The final analysis now emits per-source.csv and summary.md with baseline-fixed
+timeout/Leanerror/resourcefailure groups, categoryCPU and sampled active-tactic
+rankings. [Closed24analysis qualification](preflight24-c-group-analysis/self-review.md)
+checks realbodycoverage and missingfailureclocks; it is not full480evidence.
+Only closedfull480data will determine the next own-method experiment.

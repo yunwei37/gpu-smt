@@ -107,6 +107,91 @@ def main():
   result['fresh_native_profile_status_changes']=[dict(source_id=i,native=cells['native'][i]['status'],profile=cells['profile'][i]['status'])for i in selected['ids']if cells['native'][i]['status']!=cells['profile'][i]['status']]
   nt=json.loads((native_dir/'terminal.json').read_text());result['fresh_native_seconds']=nt['whole_lifecycle_seconds'];result['profile_seconds']=terminal['whole_lifecycle_seconds']
   result['extra_elapsed_percent']=(terminal['whole_lifecycle_seconds']/nt['whole_lifecycle_seconds']-1)*100
+ # The full diagnostic still uses baseline-fixed groups, even if instrumentation
+ # changes an outcome. Original failed-body zeroes are unavailable timings.
+ reference=Path('/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off')
+ original={x['proof_id']:x for x in rawrows(reference/'results.jsonl')}
+ profile_http=collections.defaultdict(list)
+ for event in rawrows(a.run/'profile/http.jsonl'):
+  if event.get('event')!='response':continue
+  snippets=json.loads(event['request']).get('snippets',[])
+  if len(snippets)==1 and snippets[0]['id']in wanted:
+   profile_http[snippets[0]['id']].append((event['end_ns']-event['start_ns'])/1e9)
+ for row in per_source:
+  sid=row['source_id'];baseline=original[sid]
+  if baseline['status']!=row['baseline_status']:raise RuntimeError('Baseline cohort status drift')
+  row['baseline_reported_body_seconds']=None if baseline['status']=='resource_failure'else baseline['result'].get('time')
+  if row['profile_status']=='resource_failure':row['profile_body_seconds']=None
+  row['profile_HTTP_attempts']=len(profile_http[sid])
+  row['profile_HTTP_seconds']=profile_http[sid][0]if len(profile_http[sid])==1 else None
+  row['profile_HTTP_attempt_seconds']=profile_http[sid]
+  row['has_body_profile_data']=any(k[2]==sid and k[3]=='body'for k in latest)
+  if row['baseline_status']=='resource_failure':row['fresh_native_body_seconds']=None
+ result['reference_native_directory']=str(reference)
+ result['sources_with_body_profile_data']=sum(x['has_body_profile_data']for x in per_source)
+ groups={}
+ for name,cohort in [('all_selected',per_source)]+[
+  ('baseline_'+status,[x for x in per_source if x['baseline_status']==status])
+  for status in ['timeout_error','lean_error','resource_failure','valid']]:
+  if not cohort:continue
+  categories=collections.Counter();components=collections.Counter();tactics=collections.Counter()
+  for row in cohort:
+   for key,values in row['components'].items():
+    categories[key.partition('|')[0]]+=values['exclusive_cpu_ns']
+    components[key]+=values['exclusive_cpu_ns']
+   for value in row['sampled_CPU_weights']:
+    if value['family']=='tactic':tactics[value['key']]+=value['nanoseconds']
+  groups[name]=dict(sources=len(cohort),
+   profile_status_counts=dict(collections.Counter(x['profile_status']for x in cohort)),
+   baseline_cumulative_HTTP_seconds=sum(x['baseline_HTTP_seconds']for x in cohort),
+   baseline_reported_body_seconds_available=sum(x['baseline_reported_body_seconds']for x in cohort if x['baseline_reported_body_seconds']is not None),
+   baseline_missing_body_timings=sum(x['baseline_reported_body_seconds']is None for x in cohort),
+   profile_reported_body_seconds_available=sum(x['profile_body_seconds']for x in cohort if x['profile_body_seconds']is not None),
+   profile_missing_body_timings=sum(x['profile_body_seconds']is None for x in cohort),
+   profile_single_HTTP_seconds_available=sum(x['profile_HTTP_seconds']for x in cohort if x['profile_HTTP_seconds']is not None),
+   profile_ambiguous_or_missing_HTTP_sources=[x['source_id']for x in cohort if x['profile_HTTP_seconds']is None],
+   measured_category_exclusive_CPU_seconds=[dict(category=k,seconds=v/1e9)for k,v in categories.most_common()],
+   measured_component_exclusive_CPU_seconds=[dict(key=k,seconds=v/1e9)for k,v in components.most_common()],
+   sampled_tactic_endpoint_CPU_seconds=[dict(key=k,seconds=v/1e9)for k,v in tactics.most_common()])
+ result['baseline_fixed_groups']=groups
+ with(a.out/'per-source.csv').open('w',newline='')as f:
+  fields=['source_id','baseline_status','profile_status','baseline_HTTP_seconds','baseline_reported_body_seconds',
+   'profile_HTTP_seconds','profile_body_seconds','profile_HTTP_attempts','has_body_profile_data',
+   'top_native_boundary','measured_exclusive_cpu_seconds']
+  writer=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore',lineterminator='\n');writer.writeheader();writer.writerows(per_source)
+ summary=['# Native failure-hotspot measurement — root self-review','',
+  f"Completed diagnostic: {len(wanted)} selected sources; actual body-profile data for {result['sources_with_body_profile_data']}.",
+  'Baseline-fixed groups retain the original timeout/error/resource classifications, even if profiled outcomes differ.',
+  'This is a diagnostic, not a performance improvement or independent audit.','',
+  'Counter CPU below includes completed child-subtracted runtime-boundary CPU and the last observed open-frame CPU.',
+  'Inclusive wall/CPU spans overlap. One-second endpoint CPU attribution to active tactics is an estimate, not exact per-tactic time.',
+  'Cumulative HTTP envelopes overlap across concurrent candidates and are not whole elapsed fractions.',
+  'Resource-failure body clocks are missing, never zero-cost. Gzip termination/clock/table/sampling limits remain in result.json.','',
+  '| Baseline group | Sources | Baseline cumulative HTTP (s) | Profile statuses | Missing baseline body clocks |',
+  '|---|---:|---:|---|---:|']
+ for name,g in groups.items():
+  summary.append(f"| {name} | {g['sources']} | {g['baseline_cumulative_HTTP_seconds']:.6f} | {json.dumps(g['profile_status_counts'],sort_keys=True)} | {g['baseline_missing_body_timings']} |")
+ for name,g in groups.items():
+  summary+=['',f'## {name}: actual component CPU','',
+   '| Stock profiler category | Observed exclusive thread CPU (s) |','|---|---:|']
+  for value in g['measured_category_exclusive_CPU_seconds']:
+   summary.append(f"| {value['category']} | {value['seconds']:.6f} |")
+  summary+=['',f'### {name}: sampled active tactic attribution','',
+   '| Actual innermost tactic kind | Endpoint-weighted thread CPU (s) |','|---|---:|']
+  for value in g['sampled_tactic_endpoint_CPU_seconds'][:20]:
+   summary.append(f"| {value['key'].replace('|',' / ')} | {value['seconds']:.6f} |")
+ summary+=['','## Scope and remaining decisions','',
+  f"Original-status changes: {len(result['status_changes_from_original'])}; all changed IDs remain in result.json.",
+  f"Diagnostic capacity/clock flags: {json.dumps(result['diagnostic_flags_maximum_over_threads'],sort_keys=True)}.",
+  f"Sampling transition/gap counts: {json.dumps(result['sampled_interval_limits'],sort_keys=True)}.",
+  'Per-source.csv lists every selected attempt, original/profile outcome, observed cost, missing clock and top measured boundary.',
+  'Per-source.json retains full named component and sampled tactic data; result.json retains open frames and stream completeness.',
+  'Named tactic boundaries do not automatically expose nlinarith preprocessing, product generation, LP and certificate subphases.',
+  'Any unmeasured internal subdivision remains unknown; do not borrow fractions from another corpus/version/run.',
+  'Select the next own-method experiment from this completed distribution only after raw-result review.',
+  'A small preflight may validate the analysis path but cannot select a whole-cohort dominant tactic.','']
+ (a.out/'summary.md').write_text('\n'.join(summary))
+
  (a.out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
  (a.out/'per-source.json').write_text(json.dumps(per_source,indent=2)+'\n')
  with(a.out/'ranked.csv').open('w',newline='')as f:
