@@ -6,6 +6,8 @@
 #include <lean/lean.h>
 #include <dirent.h>
 #include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 #include <poll.h>
 #include <sched.h>
 #include <signal.h>
@@ -69,6 +71,22 @@ static int foreign_fds(void) {
         if (fd>2 && fd!=own) ++foreign;
     }
     closedir(d); return foreign;
+}
+static void describe_foreign_fds(void) {
+    DIR *d=opendir("/proc/self/fd"); if (!d) return;
+    int own=dirfd(d); struct dirent *e;
+    while ((e=readdir(d))) {
+        if (e->d_name[0]=='.') continue;
+        int fd=atoi(e->d_name); if (fd<=2 || fd==own) continue;
+        char path[64],target[1024]; struct stat st={0};
+        snprintf(path,sizeof(path),"/proc/self/fd/%d",fd);
+        ssize_t n=readlink(path,target,sizeof(target)-1);
+        if (n<0) strcpy(target,"unavailable"); else target[n]=0;
+        fstat(fd,&st);
+        fprintf(stderr,"prepared fd=%d mode=%o flags=%d target=%s\n",fd,
+            (unsigned)st.st_mode,fcntl(fd,F_GETFL),target);
+    }
+    closedir(d);
 }
 static int bind_worker(char *text) {
     cpu_set_t mask; CPU_ZERO(&mask); size_t count=0;
@@ -161,6 +179,7 @@ int main(int argc,char **argv) {
     unsigned live_threads=threads(); int extra_fds=foreign_fds();
     if (live_threads!=1 || extra_fds) {
         fprintf(stderr,"prepared context residue: threads=%u extra_fds=%d\n",live_threads,extra_fds);
+        describe_foreign_fds();
         return 1;
     }
     struct sockaddr_un address={0}; address.sun_family=AF_UNIX;

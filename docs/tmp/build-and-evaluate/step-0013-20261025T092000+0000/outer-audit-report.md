@@ -105,3 +105,10 @@ not acquire a fake service. Real Timer/Promise source is compared against fresh
 native under matching imports. Local20261025T100417 is fully successful
 (27tests,2native skips). Publish the repaired constructor and inspect actualCI;
 arbitrary asynchronous import initializers remain outside declared context.
+
+Actual2f926e0CI confirms service deferral reaches one parent thread, while two
+descriptors remain; guard correctly refuses and raw fresh fallback stays valid.
+No nativeCOW result claimed. Added descriptor type/flags/target metadata only
+on preparation refusal to identify those actual owned descriptors before
+changing lifecycle handling. The one-thread/FD check remains unchanged. CI
+failures and all fallback reasons remain retained; no speculative guard removal.
