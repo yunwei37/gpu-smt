@@ -1,0 +1,196 @@
+warning: manifest out of date: source kind (git/path) of dependency 'batteries' changed; use `lake update batteries` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'Qq' changed; use `lake update Qq` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'aesop' changed; use `lake update aesop` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'proofwidgets' changed; use `lake update proofwidgets` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'Cli' changed; use `lake update Cli` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'importGraph' changed; use `lake update importGraph` to update it
+warning: manifest out of date: source kind (git/path) of dependency 'REPL' changed; use `lake update REPL` to update it
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:50:51: error: invalid field 'toNat', the environment does not contain 'Nat.toNat'
+  elapsed
+has type
+  Nat
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:75:0: error: invalid occurrence of universe level 'u_1' at '_private.SimpAllProfile.0.GpuSmt.SimpAllProfile.SimpAll.loop', it does not occur at the declaration type, nor it is explicit universe level provided by the user, occurring at expression
+  GpuSmt.SimpAllProfile.SimpAll.timed.{u_1} "hypothesis" i do
+    let __do_lift ← get.{0, 0}
+    let __do_lift_1 ← get.{0, 0}
+    liftM.{0, 0, 0}
+        (simpStep (State.mvarId __do_lift) (Entry.proof entry) (Entry.type entry) ctx simprocs none.{0} true
+          (let __src := __do_lift_1;
+          Stats.mk (State.usedTheorems __src) (State.diag __src)))
+at declaration body
+  do
+    modify fun (s : State) =>
+        { profileRound := s.profileRound + 1, hypothesisUpdates := s.hypothesisUpdates, modified := false,
+          mvarId := s.mvarId, entries := s.entries, ctx := s.ctx, simprocs := s.simprocs,
+          usedTheorems := s.usedTheorems, diag := s.diag }
+    let __do_lift ← get
+    let simprocs : SimprocsArray := __do_lift.simprocs
+    let __do_lift ← get
+    let r ←
+      let col : Std.Range := { start := 0, stop := __do_lift.entries.size, step := 1 };
+        forIn col { fst := none, snd := PUnit.unit } fun (i : Nat) (r : MProd (Option Bool) PUnit) =>
+          let r : PUnit := r.snd;
+          do
+          let __do_lift ← get
+          let entry : Entry := __do_lift.entries[i]!
+          let __do_lift ← get
+          let ctx : Simp.Context := __do_lift.ctx
+          let __do_lift ← GpuSmt.SimpAllProfile.SimpAll.getSimpTheorems
+          let simpThmsWithoutEntry : SimpTheoremsArray := __do_lift.eraseTheorem entry.id
+          let ctx : Simp.Context :=
+            { config := ctx.config, maxDischargeDepth := ctx.maxDischargeDepth, simpTheorems := simpThmsWithoutEntry,
+              congrTheorems := ctx.congrTheorems, parent? := ctx.parent?, dischargeDepth := ctx.dischargeDepth,
+              lctxInitIndices := ctx.lctxInitIndices }
+          let __discr ←
+            GpuSmt.SimpAllProfile.SimpAll.timed "hypothesis" i do
+                let __do_lift ← get
+                let __do_lift_1 ← get
+                liftM
+                    (simpStep __do_lift.mvarId entry.proof entry.type ctx simprocs none true
+                      (let __src : State := __do_lift_1;
+                      { usedTheorems := __src.usedTheorems, diag := __src.diag }))
+          match __discr with
+            | (r, stats) => do
+              modify fun (s : State) =>
+                  { profileRound := s.profileRound, hypothesisUpdates := s.hypothesisUpdates, modified := s.modified,
+                    mvarId := s.mvarId, entries := s.entries, ctx := s.ctx, simprocs := s.simprocs,
+                    usedTheorems := stats.usedTheorems, diag := stats.diag }
+              match r with
+                | none => pure (ForInStep.done { fst := some true, snd := PUnit.unit })
+                | some (proofNew, typeNew) =>
+                  if (typeNew == entry.type) = true then do
+                    pure PUnit.unit
+                    pure (ForInStep.yield { fst := none, snd := PUnit.unit })
+                  else
+                    let cls : Name := `Meta.Tactic.simp.all;
+                    do
+                    let __do_lift ← isTracingEnabledFor cls
+                    let __do_jp : Unit → M (ForInStep (MProd (Option Bool) PUnit)) := fun (y : Unit) => do
+                      let __do_lift ← GpuSmt.SimpAllProfile.SimpAll.getSimpTheorems
+                      let simpThmsNew : SimpTheoremsArray := __do_lift.eraseTheorem (Origin.fvar entry.fvarId)
+                      let idNew ← mkFreshId
+                      let __do_lift ← liftM (mkExpectedTypeHint proofNew typeNew)
+                      let r ← liftM (simpThmsNew.addTheorem (Origin.other idNew) __do_lift)
+                      let simpThmsNew : SimpTheoremsArray := r
+                      modify fun (s : State) =>
+                          { profileRound := s.profileRound, hypothesisUpdates := s.hypothesisUpdates + 1,
+                            modified := true, mvarId := s.mvarId,
+                            entries :=
+                              let __src : Array Entry := s.entries;
+                              __src.modifyOp i fun (s : Entry) =>
+                                { fvarId := entry.fvarId, userName := entry.userName, id := Origin.other idNew,
+                                  origType := entry.origType, type := typeNew, proof := proofNew },
+                            ctx :=
+                              let __src : Simp.Context := s.ctx;
+                              { config := __src.config, maxDischargeDepth := __src.maxDischargeDepth,
+                                simpTheorems := simpThmsNew, congrTheorems := __src.congrTheorems,
+                                parent? := __src.parent?, dischargeDepth := __src.dischargeDepth,
+                                lctxInitIndices := __src.lctxInitIndices },
+                            simprocs := s.simprocs, usedTheorems := s.usedTheorems, diag := s.diag }
+                      pure (ForInStep.yield { fst := none, snd := PUnit.unit })
+                    if __do_lift = true then do
+                        let __do_lift ← ppOrigin entry.id
+                        let y ←
+                          addTrace cls
+                              (toMessageData "entry.id: " ++ toMessageData __do_lift ++ toMessageData ", " ++
+                                      toMessageData entry.type ++
+                                    toMessageData " => " ++
+                                  toMessageData typeNew ++
+                                toMessageData "")
+                        __do_jp y
+                      else do
+                        let y ← pure PUnit.unit
+                        __do_jp y
+    let __do_jp : PUnit → M Bool := fun (y : PUnit) => do
+      let __do_lift ← get
+      let mvarId : MVarId := __do_lift.mvarId
+      let __discr ←
+        GpuSmt.SimpAllProfile.SimpAll.timed "target" 0 do
+            let __do_lift ← get
+            let __do_lift_1 ← get
+            liftM
+                (simpTarget mvarId __do_lift.ctx simprocs none true
+                  (let __src : State := __do_lift_1;
+                  { usedTheorems := __src.usedTheorems, diag := __src.diag }))
+      match __discr with
+        | (r, stats) => do
+          modify fun (s : State) =>
+              { profileRound := s.profileRound, hypothesisUpdates := s.hypothesisUpdates, modified := s.modified,
+                mvarId := s.mvarId, entries := s.entries, ctx := s.ctx, simprocs := s.simprocs,
+                usedTheorems := stats.usedTheorems, diag := stats.diag }
+          let __do_jp : PUnit → M Bool := fun (y : PUnit) => do
+            let __do_lift ← get
+            if __do_lift.modified = true then GpuSmt.SimpAllProfile.SimpAll.loop else pure false
+          match r with
+            | none => pure true
+            | some mvarIdNew =>
+              if (mvarId == mvarIdNew) = true then do
+                let y ← pure PUnit.unit
+                __do_jp y
+              else do
+                let y ←
+                  modify fun (s : State) =>
+                      { profileRound := s.profileRound, hypothesisUpdates := s.hypothesisUpdates, modified := true,
+                        mvarId := mvarIdNew, entries := s.entries, ctx := s.ctx, simprocs := s.simprocs,
+                        usedTheorems := s.usedTheorems, diag := s.diag }
+                __do_jp y
+    match r.fst with
+      | none => do
+        let y ← pure PUnit.unit
+        __do_jp y
+      | some a => pure a
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:145:8: error: unknown identifier 'loop'
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:162:34: error: invalid {...} notation, expected type is not known
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:145:2: error: failed to synthesize
+  Decidable __do_lift✝
+use `set_option diagnostics true` to get diagnostic information
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:169:0: error: invalid occurrence of universe level 'u_1' at 'GpuSmt.SimpAllProfile.simpAll', it does not occur at the declaration type, nor it is explicit universe level provided by the user, occurring at expression
+  StateRefT'.run SimpAll.main.{u_1}
+    (SimpAll.State.mk 0 0 false mvarId (List.toArray.{0} List.nil.{0}) ctx simprocs (Stats.usedTheorems stats)
+      (Stats.diag stats))
+at declaration body
+  fun (mvarId : MVarId) (ctx : Simp.Context) (simprocs : optParam SimprocsArray #[])
+      (stats :
+        optParam Stats
+          { usedTheorems := { root := PersistentHashMap.Node.entries PersistentHashMap.mkEmptyEntriesArray, size := 0 },
+            diag :=
+              {
+                usedThmCounter :=
+                  { root := PersistentHashMap.Node.entries PersistentHashMap.mkEmptyEntriesArray, size := 0 },
+                triedThmCounter :=
+                  { root := PersistentHashMap.Node.entries PersistentHashMap.mkEmptyEntriesArray, size := 0 },
+                congrThmCounter :=
+                  { root := PersistentHashMap.Node.entries PersistentHashMap.mkEmptyEntriesArray, size := 0 },
+                thmsWithBadKeys :=
+                  { root := PersistentArrayNode.node (Array.mkEmpty PersistentArray.branching.toNat),
+                    tail := Array.mkEmpty PersistentArray.branching.toNat, size := 0,
+                    shift := PersistentArray.initShift, tailOff := 0 } } }) =>
+    mvarId.withContext do
+      let __discr ←
+        StateRefT'.run SimpAll.main
+            { profileRound := 0, hypothesisUpdates := 0, modified := false, mvarId := mvarId, entries := #[],
+              ctx := ctx, simprocs := simprocs, usedTheorems := stats.usedTheorems, diag := stats.diag }
+      match __discr with
+        | (r, s) =>
+          let __do_jp : PUnit → MetaM (Option MVarId × Stats) := fun (y : PUnit) =>
+            pure (r, { usedTheorems := s.usedTheorems, diag := s.diag });
+          match r with
+          | some mvarIdNew =>
+            if (ctx.config.failIfUnchanged && mvarId == mvarIdNew) = true then do
+              let y ← Lean.throwError (toMessageData "simp_all made no progress")
+              __do_jp y
+            else do
+              let y ← pure PUnit.unit
+              __do_jp y
+          | x => do
+            let y ← pure PUnit.unit
+            __do_jp y
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:196:29: error: unknown identifier 'GpuSmt.SimpAllProfile.simpAll'
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:202:28: error: invalid field notation, type is not of the form (C ...) where C is a constant
+  stats
+has type
+  ?m.21388 __discr✝⁴ __discr✝³ __discr✝² inner y✝¹ __discr✝¹ ctx simprocs dischargeWrapper✝ __do_lift✝¹
+/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean:203:13: error: invalid field notation, type is not of the form (C ...) where C is a constant
+  stats
+has type
+  ?m.21388 __discr✝⁴ __discr✝³ __discr✝² inner y✝² __discr✝¹ ctx simprocs dischargeWrapper✝ __do_lift✝¹

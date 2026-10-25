@@ -78,9 +78,12 @@ def main():
             finally:
                 if proc.poll()is None:os.killpg(proc.pid,signal.SIGKILL)
                 code=proc.wait()
-        diagnostics=[]
+        diagnostics=[];observations=[]
         for line in log.read_text().splitlines():
-            try:diagnostics.append(json.loads(line))
+            try:
+                if line.startswith('[gpu-smt-simp-stage] '):
+                    observations.append(json.loads(line[len('[gpu-smt-simp-stage] '):]))
+                else:diagnostics.append(json.loads(line))
             except json.JSONDecodeError:
                 errors.append(dict(id=row['id'],non_json=line))
         severity=[d.get('severity')for d in diagnostics]
@@ -90,7 +93,8 @@ def main():
         result=dict(id=row['id'],pair=expect[row['id']]['pair'],status=status,
             expected=expect[row['id']]['expected_status'],exit=code,
             seconds=time.monotonic()-begin,command=cmd,cwd=str(args.project),
-            diagnostic_count=len(diagnostics),pressure_aborted_new_test_only=pressure)
+            diagnostic_count=len(diagnostics),phase_observations=observations,
+            pressure_aborted_new_test_only=pressure)
         results.append(result)
         print(json.dumps(result),flush=True)
         if pressure:break

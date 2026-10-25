@@ -1,0 +1,24 @@
+{
+  "UTC": "2026-10-25T15:35:09.716145+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-R",
+    "/workspaces/repository/bench/lean-failure-profile/simp-all-profile",
+    "-o",
+    "/tmp/gpu-smt-simp-all-profile-20261025/SimpAllProfile.olean",
+    "/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "exit": 0,
+  "seconds": 2.0071721819695085,
+  "samples": 3,
+  "combined_peak_rss_bytes": 25814155264,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_compile_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 283334
+}
