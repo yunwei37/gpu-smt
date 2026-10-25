@@ -226,3 +226,5 @@ Those repeated historical HTTP intervals sum to 13.337753652s out of
 time, nor evidence of a new-resource speedup. No substantive proof candidate is
 byte-identical here. Retain exact sharing as a component, not a novelty or major
 performance claim. [Executed existing-data analysis](../artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md).
+
+Original lean-mlir code-workload prerequisites now [compile in the unchanged root package](../artifacts/lean-code-verification-2026-10-25/native-project-prerequisites2-20261025/result-review.md):60native targets/checks pass,with actual source/pins and combinedRSS retained. The bv_decide workload root remains unexecuted; no SAT/LRAT time or acceleration claim is available yet.

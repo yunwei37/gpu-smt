@@ -55,3 +55,8 @@ still has 860 modules, resolves every dependency at original root-manifest pins,
 and retains public/meta/import-all flags. The corrected mixed prerequisite
 build excludes the actual bv_decide workload root; no SAT/LRAT performance or
 additional candidate run is claimed from preparation.
+
+The [corrected root-package prerequisite build](native-project-prerequisites2-20261025/result-review.md)
+is complete: 60 native targets and dependency checks pass, including all57
+project prerequisites and the three correct root Cli modules. The original
+workload body is still unexecuted; this is source readiness, not performance.

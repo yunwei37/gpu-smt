@@ -125,3 +125,9 @@ and42isolated resource-point reruns after the original group fully retires.
 拓扑编译，保留失败。依赖准备不能当SAT/LRAT性能数据。原采集结束后把
 槽位优先给42条动态内存独占重跑、Mathlib COW真实子进程差分及同资源
 吞吐配对。判死机制还缺充分证据，不能把同类源关键词或分支数量当拒绝。
+
+修正后的原root依赖编译现已实际完成60目标/60原生依赖检查，含57项目前置
+模块和正确版本的3个Cli模块；原manifest/lakefile及82628字节工作负载与
+固定source archive完全一致。准备完整模块供现有Rust引擎使用，未拆散
+定义和证明。189条Verina默认输入重新生成与旧输入完全相同。下一步
+需要实际原文件/stdin差分与profiling，不能将这些准备时间当加速数据。

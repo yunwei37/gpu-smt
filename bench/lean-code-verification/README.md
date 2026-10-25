@@ -60,3 +60,13 @@ silently take an arbitrary Mathlib package of the same name. Preserve the
 older graph as subproject-context evidence. The workload root is excluded
 from prerequisite building, and actual candidate execution still requires the
 single collection slot.
+
+Prepare the unchanged complete lean-mlir module for the existing Rust Batch API:
+
+    python3 bench/lean-code-verification/prepare-engine.py --workload leanmlir --input artifacts/lean-code-verification-2026-10-25/opencompl--lean-mlir-sources.jsonl.gz --out /tmp/leanmlir-engine-input
+
+The [prepared input and scope](../../artifacts/lean-code-verification-2026-10-25/leanmlir-engine-input/README.md)
+retain original source and filename provenance. Prerequisites now compile in
+the correct root context, but native original-file/stdin qualification and
+profiling await the sole candidate slot. Original source options and root
+--tstack=400000 must be preserved. Verina remains the default preparer mode.
