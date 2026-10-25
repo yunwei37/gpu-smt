@@ -20,3 +20,18 @@ API/architecture now state ranked submission and exclusive-retry precedence.
 Native4.9 symbol inspection confirms real task-manager symbols and no libuv
 initializer in that older runtime; this is read-only dependency information,
 not a successful4.9 adapter build or native qualification.
+
+## Actual Lean4.9 build result
+
+The engine module compiles against the retained real4.9.0-rc1 project API.
+Generated C/native C compile and a complete host link succeed using a private
+archive of11already-built REPL object inputs, whose size/mtime remain unchanged.
+No dependency source/archive/bin is written and the host is not executed.
+This is a bounded build, not another proof-candidate acquisition group.
+Both owned build and verified current research trees are sampled every1s;
+sampled maxima13.90GB/25.15GB stay below48GiB, with no fixed AS cap.
+Raw commands, logs, memory samples and source snapshots are retained under
+artifacts/engine-queue-order-2026-10-25/lean49-compile. Native4.9/Mathlib
+behavior/throughput qualification remains pending actual native slot availability.
+
+Actual exact-head CI on e2c2c96 is now successful: engine40186414108 (Rust and both native tests, including simultaneous children) and benchmark-smoke40186414094. Retained terminal metadata/native logs establish this implementation dependency only. All scientific/full-population requirements stay open; goal remains active.

@@ -1,0 +1,146 @@
+{
+  "UTC": "2026-10-25T10:54:29.547040+00:00",
+  "scope": "Compile/link only against unchanged retained Lean4.9/REPL objects. No native candidate execution, no dependency output mutations, no fixed AS cap. Existing object members archived privately because the original collector uses the same project.",
+  "object_inputs": [
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/ExtractData.c.o.export",
+      "bytes": 395920,
+      "mtime_ns": 1792218757036325576
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Frontend.c.o.export",
+      "bytes": 17616,
+      "mtime_ns": 1792218752912228353
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/JSON.c.o.export",
+      "bytes": 255712,
+      "mtime_ns": 1792218754306261218
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/ContextInfo.c.o.export",
+      "bytes": 3272,
+      "mtime_ns": 1792218753714247261
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/Environment.c.o.export",
+      "bytes": 12096,
+      "mtime_ns": 1792218752899228046
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/InfoTree/ToJson.c.o.export",
+      "bytes": 64024,
+      "mtime_ns": 1792218754678269988
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/InfoTree.c.o.export",
+      "bytes": 94080,
+      "mtime_ns": 1792218754419263882
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Main.c.o.export",
+      "bytes": 331016,
+      "mtime_ns": 1792218758081350210
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Snapshots.c.o.export",
+      "bytes": 216408,
+      "mtime_ns": 1792218754528266452
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Util/Path.c.o.export",
+      "bytes": 12288,
+      "mtime_ns": 1792218753745247992
+    },
+    {
+      "path": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Util/Pickle.c.o.export",
+      "bytes": 16528,
+      "mtime_ns": 1792218752772225052
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "ar",
+        "rcs",
+        "/tmp/gpu-smt-lean49-compile-20261025/libREPL-existing.a",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/ExtractData.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Frontend.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/JSON.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/ContextInfo.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/Environment.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/InfoTree/ToJson.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Lean/InfoTree.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Main.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Snapshots.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Util/Path.c.o.export",
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/ir/REPL/Util/Pickle.c.o.export"
+      ],
+      "exit": 0,
+      "seconds": 1.002586972899735,
+      "pressure_aborted_new_build": false
+    },
+    {
+      "command": [
+        "objcopy",
+        "--redefine-sym",
+        "main=gpu_smt_dependency_main",
+        "/tmp/gpu-smt-lean49-compile-20261025/libREPL-existing.a",
+        "/tmp/gpu-smt-lean49-compile-20261025/libREPL-embedded.a"
+      ],
+      "exit": 0,
+      "seconds": 1.0020230270456523,
+      "pressure_aborted_new_build": false
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O3",
+        "-c",
+        "/tmp/gpu-smt-lean49-compile-20261025/GpuSmtPrepared.c",
+        "-o",
+        "/tmp/gpu-smt-lean49-compile-20261025/GpuSmtPrepared.o"
+      ],
+      "exit": 0,
+      "seconds": 1.002200816059485,
+      "pressure_aborted_new_build": false
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-std=gnu11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-c",
+        "/workspaces/repository/native/lean/prepared_host.c",
+        "-o",
+        "/tmp/gpu-smt-lean49-compile-20261025/prepared_host.o"
+      ],
+      "exit": 0,
+      "seconds": 1.0019141130615026,
+      "pressure_aborted_new_build": false
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O3",
+        "-rdynamic",
+        "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib",
+        "-o",
+        "/tmp/gpu-smt-lean49-compile-20261025/prepared-host",
+        "/tmp/gpu-smt-lean49-compile-20261025/prepared_host.o",
+        "/tmp/gpu-smt-lean49-compile-20261025/GpuSmtPrepared.o",
+        "/tmp/gpu-smt-lean49-compile-20261025/libREPL-embedded.a"
+      ],
+      "exit": 0,
+      "seconds": 2.0044001289643347,
+      "pressure_aborted_new_build": false
+    }
+  ],
+  "aggregate_peak_rss_bytes": 25148940288,
+  "aggregate_budget_bytes": 51539607552,
+  "output_built": true,
+  "executed": false
+}

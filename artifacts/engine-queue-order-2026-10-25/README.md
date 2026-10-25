@@ -19,5 +19,14 @@ as part of the workspace validation.
 after-test.json/log retains the passing original regression. Full validation:
 ../rust-engine-2026-10-25/validation-20261025T104731/validation.json.
 All29ordinary tests pass; the2real-native tests are explicitly skipped locally
-while the original native group is active. Exact-head native CI remains the
-next dependency check. No new native collection is started here.
+while the original native group is active. Exact-head engine CI40186414108 passes, including the actual native
+sequential/concurrent/timeout/lifecycle contracts; benchmark-smoke40186414094
+also succeeds. Terminal metadata and the full native log are retained. No new native collection is started here.
+
+## Actual resource-target dependency
+
+[Lean4.9 compile/link receipts](lean49-compile/README.md) now establish that the
+real retained native project API accepts the engine module and the complete
+host links using untouched object inputs. The host has not been executed.
+This removes a build dependency for future Mathlib qualification, not the
+qualification itself. No extra native collection started.

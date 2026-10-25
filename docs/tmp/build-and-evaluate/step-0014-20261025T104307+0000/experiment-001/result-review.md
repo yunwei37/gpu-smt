@@ -15,3 +15,5 @@ artifacts/engine-queue-order-2026-10-25. Validation logs are in
 artifacts/rust-engine-2026-10-25/validation-20261025T104731.
 These are dependency semantics, not a native performance or full RQ result.
 Actual exact-head CI must still run after the forward push.
+
+Actual exact-head CI on e2c2c96 is now successful: engine40186414108 (Rust and both native tests, including simultaneous children) and benchmark-smoke40186414094. Retained terminal metadata/native logs establish this implementation dependency only. All scientific/full-population requirements stay open; goal remains active.
