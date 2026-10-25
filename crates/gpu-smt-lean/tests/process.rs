@@ -171,3 +171,61 @@ async fn real_owned_rss_watchdog_kills_reaps_and_retries_exclusively() {
     assert!(retry.attempts[1].exclusive);
     e.shutdown().await;
 }
+
+#[tokio::test]
+async fn unavailable_prepared_host_uses_unchanged_native_fallback() {
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/repl.py");
+    let fresh = NativeRepl {
+        program: "/usr/bin/python3".into(),
+        args: vec!["-u".into(), fixture.to_string_lossy().into()],
+        project: std::env::temp_dir(),
+        environment: "prepared-fallback-fixture-not-Lean".into(),
+    };
+    let backend = gpu_smt_lean::PreparedRepl::new(
+        fresh,
+        "/no-such-gpu-smt-prepared-host".into(),
+        "/no-such-sdk".into(),
+    );
+    let e = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(backend),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let result = e
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![
+                candidate("a", "ok", 5000),
+                candidate("b", "bad", 5000),
+                candidate("c", "sorry", 5000),
+            ],
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        result
+            .iter()
+            .map(|r| r.outcome.status.clone())
+            .collect::<Vec<_>>(),
+        [Status::Accepted, Status::Rejected, Status::Incomplete]
+    );
+    assert!(!e.prepared_state_ready());
+    for p in result
+        .iter()
+        .flat_map(|r| r.attempts.iter().flat_map(|a| &a.processes))
+    {
+        assert!(
+            gpu_smt_engine::linux::identity(p.pid).is_err(),
+            "fallback child not retired"
+        );
+    }
+    e.shutdown().await;
+}

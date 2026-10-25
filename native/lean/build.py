@@ -14,28 +14,32 @@ def main():
     source=Path(__file__).resolve().parent
     args.out.mkdir(parents=True,exist_ok=False)
     out=args.out.resolve()
-    archives=[project/".lake/build/lib/lean/libREPL.a",project/".lake/build/lib/libREPL.a"]
-    archive=next((p for p in archives if p.is_file()),None)
-    if archive is None:
-        raise FileNotFoundError("build the pinned REPL project with lake build first")
     env=dict(os.environ,PATH=str(sysroot/"bin")+os.pathsep+os.environ["PATH"],
         LEAN_SYSROOT=str(sysroot))
-    commands=[
-        ["lake","env","lean","-R",str(source),"-c",str(out/"GpuSmtPrepared.c"),str(source/"GpuSmtPrepared.lean")],
-        ["lake","env","leanc","-O3","-c",str(out/"GpuSmtPrepared.c"),"-o",str(out/"GpuSmtPrepared.o")],
-        ["gcc","-std=gnu11","-O2","-Wall","-Wextra","-Werror","-I"+str(sysroot/"include"),
-            "-c",str(source/"prepared_host.c"),"-o",str(out/"prepared_host.o")],
-        ["lake","env","leanc","-O3","-rdynamic","-o",str(out/"prepared-host"),
-            str(out/"prepared_host.o"),str(out/"GpuSmtPrepared.o"),str(archive)]]
     receipt={"cwd":str(project),"sysroot":str(sysroot),"commands":[]}
+    def run(command):
+        result=subprocess.run(command,cwd=project,env=env,text=True,capture_output=True)
+        receipt["commands"].append({"command":command,"exit":result.returncode,
+            "stdout":result.stdout,"stderr":result.stderr})
+        (out/"build.json").write_text(json.dumps(receipt,indent=2)+"\n")
+        print(result.stdout,result.stderr,flush=True)
+        result.check_returncode()
     try:
+        # The default executable build does not necessarily produce the archive
+        # needed for embedding. Ask the dependency's own static-library facet.
+        run(["lake","build","REPL:static"])
+        archives=list((project/".lake/build").rglob("libREPL.a"))
+        if len(archives)!=1:
+            raise FileNotFoundError(f"expected one built REPL static archive, found {archives}")
+        commands=[
+            ["lake","env","lean","-R",str(source),"-c",str(out/"GpuSmtPrepared.c"),str(source/"GpuSmtPrepared.lean")],
+            ["lake","env","leanc","-O3","-c",str(out/"GpuSmtPrepared.c"),"-o",str(out/"GpuSmtPrepared.o")],
+            ["gcc","-std=gnu11","-O2","-Wall","-Wextra","-Werror","-I"+str(sysroot/"include"),
+                "-c",str(source/"prepared_host.c"),"-o",str(out/"prepared_host.o")],
+            ["lake","env","leanc","-O3","-rdynamic","-o",str(out/"prepared-host"),
+                str(out/"prepared_host.o"),str(out/"GpuSmtPrepared.o"),str(archives[0])]]
         for command in commands:
-            result=subprocess.run(command,cwd=project,env=env,text=True,capture_output=True)
-            receipt["commands"].append({"command":command,"exit":result.returncode,
-                "stdout":result.stdout,"stderr":result.stderr})
-            (out/"build.json").write_text(json.dumps(receipt,indent=2)+"\n")
-            print(result.stdout,result.stderr,flush=True)
-            result.check_returncode()
+            run(command)
     finally:
         for name in ["GpuSmtPrepared.lean","prepared_host.c","build.py"]:
             (out/("source-"+name)).write_bytes((source/name).read_bytes())

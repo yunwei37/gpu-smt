@@ -123,6 +123,7 @@ impl PreparedRepl {
             Ok(c) => c,
             Err(e) => {
                 let _ = std::fs::remove_dir(&directory);
+                state.disabled = Some(format!("prepared host cannot start: {e}"));
                 return Err(Outcome::operational(Status::BackendError, e.to_string()));
             }
         };
@@ -209,7 +210,11 @@ impl PreparedRepl {
         x: &Execution,
         deadline: Instant,
     ) -> Result<Outcome, String> {
-        let stream = UnixStream::connect(path).await.map_err(|e| e.to_string())?;
+        let stream = tokio::select! {
+            s=UnixStream::connect(path)=>s.map_err(|e|e.to_string())?,
+            _=x.cancel.cancelled()=>return Ok(Outcome::operational(Status::Cancelled,"branch connection cancelled")),
+            _=tokio::time::sleep_until(deadline)=>return Ok(Outcome::operational(Status::Timeout,"branch connection timeout")),
+        };
         let (read, mut write) = stream.into_split();
         let mut lines = BufReader::new(read).lines();
         let start = tokio::select! {

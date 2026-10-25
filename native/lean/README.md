@@ -43,7 +43,8 @@ Then, from that native project:
       < population.json > capture.json 2> resources.jsonl
 
 Without the two prepared options, the default backend stays fresh-process.
-The builder does not download dependencies or change a running binary.
+The builder asks the pinned dependency for its REPL:static library facet;
+it does not download dependencies or change a running binary.
 CI builds this adapter against the pinned official Lean 4.18 REPL and checks
 native payloads, declaration isolation, import-mismatch fallback, timeout,
 surviving prepared state and final process retirement.

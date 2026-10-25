@@ -28,3 +28,12 @@ reported as aggregateRSS. Main unresolved dependency is actual nativeCI; the
 25localchecks and2skips do not answer RQ2. Earlier source-only Cheader and Rust
 borrow/scope failures remain retained. A forward publication followed by realCI
 is authorized; no claim that the native experiment already completed.
+
+Forward repair validated: default upstream executable lacked its static archive,
+so the builder now invokes its actual REPL:static facet and discovers output
+instead of assuming a library path. Retained fullCI failure shows native tests
+were skipped, not passed. Current local validation20261025T092817 has26passing
+checks and2explicit native skips; connection cancellation/deadline and missing
+host fallback retirement are included. Paper source/PDF compile successfully.
+The original capture PID/birth remain live; projectPVC has1.194GiB available,
+all native targets stay in OS temp, and no additional native collection starts.

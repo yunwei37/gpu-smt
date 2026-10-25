@@ -28,3 +28,14 @@ native wait4 leader high-water supplements admission observations without
 replacing aggregateRSS samples. Prepared-state readiness checks actual parent
 identity. No standalone performance conclusion. Publish then inspect exact
 nativeCI and repair actual source defects forward-only.
+
+Actual first nativeCI failed before glue compilation: default lake build produced no staticREPL archive. RustCI passed. Builder now asks upstream for REPL:static and discovers its archive; raw failingCI log is preserved. No native parity/COW result is claimed. Also bound branch connection to the original timeout, and added unavailable-host fallback/retirement coverage.
+
+Forward repair validated: default upstream executable lacked its static archive,
+so the builder now invokes its actual REPL:static facet and discovers output
+instead of assuming a library path. Retained fullCI failure shows native tests
+were skipped, not passed. Current local validation20261025T092817 has26passing
+checks and2explicit native skips; connection cancellation/deadline and missing
+host fallback retirement are included. Paper source/PDF compile successfully.
+The original capture PID/birth remain live; projectPVC has1.194GiB available,
+all native targets stay in OS temp, and no additional native collection starts.

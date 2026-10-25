@@ -14,3 +14,13 @@ acknowledgement; optional leader ru_maxrss supplements1s owned-tree samples
 for admission learning. That kernel leader peak is not aggregate tree RSS.
 Actual import-parent native engagement/full native payloads/cancellation are
 pending exact-headCI, not established by these fixture checks.
+
+First actual nativeCI on a6cb006 fails before glue compilation because upstream
+default executable build did not produce a static library. Full failure log and
+terminal job state are preserved. Builder now requests the actual Lake
+REPL:static facet (confirmed in upstream Lake build source), discovers the
+resulting archive and records every build command. Native semantics remain
+pending the corrected CI, not a successful result. Latest local validation
+20261025T092817: all six commands pass,26checks pass,2native tests explicitly
+skip locally. Added real-process missing-host fallback and retirement regression;
+branch connection time is charged to the same request deadline.
