@@ -235,3 +235,9 @@ then uses fresh native execution within the remaining deadline. Exact source
 6e3d858passes four executed pinned-native differential/lifecycle tests and
 ordinary RustCI. This is a resource-composition repair; fullMathlib/native
 population and matched-throughput measurements remain outstanding.
+
+The [opt-in interval-continuation source prototype](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/result-review.md)
+compiles against the retained4.9Mathlib API. It explores avoiding later leaf
+construction after a failing closing continuation; no original tactic override,
+source rewrite or candidate execution occurs. Eighteen prepared controls remain
+unexecuted. This is no reliability/accepted-set/performance/novelty result.
