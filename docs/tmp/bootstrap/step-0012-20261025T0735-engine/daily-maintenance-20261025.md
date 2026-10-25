@@ -139,3 +139,19 @@ and42isolated resource-point reruns after the original group fully retires.
 清理与回退计入同一请求deadline；之后普通请求可重新准备。34项本地
 测试及实际4项Lean4.18原生CI通过。它使下一轮48GiB测量的资源组合更
 准确，不构成novelty或吞吐结果。旧采集继续，42条及完整Mathlib仍待槽位。
+
+### Execute the missing native implementation paths (15:39 UTC)
+
+本轮从源码编译推进到真实运行：interval按需叶子构造18条原生控制（9对）
+状态一致；完整Mathlib单父进程实际派生8个子进程，其中6组和stock REPL
+一致、2个同时存在的子进程独立完成并回收。simp_all初始化/假设/目标阶段
+已加入begin/end实测，最终12条控制（6对）状态一致。日志、失败编译、
+含sorry与拒绝的结果都入库；不是只写接口或mock测试。
+
+怎样才能取得实质进展：现在缺的不是更多小控制，而是原48/23超时上
+准确定位的阶段证据及其安全语义，和原版lean-mlir完整模块的bv_decide
+实测。不能从范围大小/表达式哈希直接判死，也不能把小测试的导入节省
+称为全量吞吐收益。下一采集位置应执行原始工作负载和动态资源点，
+不再扩展冻结oracle。原调度first-original仍有效运行，first-short尚未
+启动；不能提早算最终配对或把它停掉换另一个采集。代码验证依赖已真正
+完成，原模块保留82628字节和原root选项，等同一全量位置释放后执行。
