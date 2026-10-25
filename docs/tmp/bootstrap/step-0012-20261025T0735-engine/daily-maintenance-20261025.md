@@ -169,3 +169,12 @@ and42isolated resource-point reruns after the original group fully retires.
 实质进展仍取决于原23条实际阶段轨迹、原48条安全程序语义和全量吞吐。
 不能将本次静态调用数当运行次数或CPU占比。当前全量仍占采集位置，
 不再做关键词报告或开启第二组完整采集；这份映射将直接用于其后的诊断。
+
+### Reject a tempting cross-scope inference with actual syntax (16:53 UTC)
+
+原生控制流原型9对差分一致，但原71超时源真实覆盖0。文本上“omega后有
+exact”常常是内层have证明结束后，外层exact使用已证事实；跨越作用域
+推断失败会误判。已按每条源/每个proof tree记录unknown，不把小测试当
+性能收益。实质推进继续依赖原23源的真实阶段、原48源的真实叶子行为
+和资源/调度成本。当前应把资源点准备成可运行的Rust引擎配对，四worker
+只是CPU上限，实际并发仍由48GiB准入/抢占决定，不能承诺始终四路满载。

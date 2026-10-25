@@ -28,3 +28,11 @@ include failure,acceptance,siblings,fallback and a runtime omega override.
 Scope is the deterministic pinned native tactic context and complete tail
 script. Arbitrary metaprograms that erase diagnostics/change semantics outside
 that context are not qualified. No default engine rejection plugin is installed.
+
+## Measured original-source scope
+
+[The exact native71-source audit](../../../artifacts/hotspot-mechanisms-2026-10-25/goal-effects/cohort-result-review.md)
+finds0supported pairs in48interval and23simp_all timeout sources. In particular,
+an outer exact following an inner have proof is not a doomed local suffix.
+This prototype has no demonstrated original-timeout coverage or speed benefit.
+Keep the local control result separate from original-candidate performance.
