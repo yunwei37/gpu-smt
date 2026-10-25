@@ -78,3 +78,12 @@ An offline replay of189real original-filename outputs through the built Rust
 classifier gives46accepted/139incomplete/4rejected with0differences. The prepared
 engine population matches all368011original source bytes; this still requires
 stdin/original-file qualification before actual new-resource pairing.
+
+
+### Keep CI output separate from retained research data
+
+The real smoke job was re-uploading2.956GB/13417tracked research files after
+its tests had passed. Narrow the existing artifact upload to its four generated
+JSON outputs and trace directory; no raw result is deleted. The changed job
+passes real CI40195663426including upload. This is a concrete OSS maintenance
+improvement; it is not evidence of verification throughput or novelty.
