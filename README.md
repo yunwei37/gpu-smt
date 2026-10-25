@@ -14,7 +14,7 @@ answers are still open.
 
 The Rust workspace separates public contracts, resource/workload scheduling,
 native backends and HTTP adapters. Existing raw research data stays outside
-the core. This is an experimental0.1 engine, not a production-ready service
+the core. This is an experimental 0.1 engine, not a production-ready service
 or a demonstrated speedup.
 
     cargo build -p gpu-smt-server
@@ -47,7 +47,7 @@ retains each caller's identity; cancellation and resource failures are not
 native rejections or cacheable proof results.
 
 [Architecture](docs/architecture.md) · [API and compatibility scope](docs/api.md) ·
-[Examples](examples/README.md) · [Contributing and checks](CONTRIBUTING.md) ·
+[Examples](examples/README.md) · [Paired measurement](docs/benchmarking.md) · [Contributing and checks](CONTRIBUTING.md) ·
 [CI](.github/workflows/engine.yml) · [Apache-2.0 engine license](LICENSE).
 
 Safe COW/one-time Mathlib preparation, native failure detectors, source-aware

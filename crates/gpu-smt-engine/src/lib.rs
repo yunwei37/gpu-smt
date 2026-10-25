@@ -57,7 +57,8 @@ impl ResultCache for MemoryCache {
 }
 
 /// Explicit hardware/resource contract, with no per-process address-space limit.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Deserialize, serde::Serialize)]
+#[serde(deny_unknown_fields)]
 pub struct Config {
     /// Total actual owned RSS budget.
     pub memory_bytes: u64,

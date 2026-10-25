@@ -59,3 +59,12 @@ Exact implementation head f016161 passes both engine jobs, including pinned offi
 ## Hardware/telemetry boundary validated
 
 Latest local validation is artifacts/rust-engine-2026-10-25/validation-20261025T084048: all six build/format/Clippy/test/doc/help commands pass,20checks pass and the local raw-native test remains explicitly skipped in favor of the pinned official nativeCI. Runtime/native threads share the chosen mask; resources emit complete1sJSON events to stderr without corrupting stdoutJSONL. Attempt history retains process birth and preemption RSS. Source sorting/queueing/retries/retirement enter per-candidate batch-entry latency. Prepared42unchanged sources are one-candidate-per-line/uncached for the isolated48GiB/all4eligibleCPUs point; no actual rerun has started. Existing full7808group/source/settings remain preserved. New exact-head CI must be checked after this forward commit.
+
+## Reusable measurement boundary
+
+Added Rust Capture/compare and CLI measure/compare: unchanged source population, native pin and aggregate resources are checked before pairing; accepted-ID/status/raw-JSON differences are explicit. Pass@k solved-task comparison is separate from every-candidate parity. Tail cohorts use baseline attempt wall durations and retain preemption/retry costs, without summing overlapping work as lifecycle. Internal lifecycle includes main/input/runtime/native retirement, excludes OS loader and final record serialization; an external controller clock remains required. The source-size heuristic is exposed without a performance claim. Existing full capture remains untouched and42isolated reruns remain unexecuted. This is a reusable validation component, not a new verifier technique.
+
+Measurement validation: artifacts/rust-engine-2026-10-25/validation-20261025T085339
+contains all6successful command receipts,25passing checks and explicit local
+native skip.152103c exact-head CI is fully successful including the actual
+native differential contract; final measurement commit requires freshCI.

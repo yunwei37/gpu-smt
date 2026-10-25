@@ -19,3 +19,13 @@ denied and executable/help pass. Earlier compiler/lint/format failures/logs
 remain retained. The lookup microbenchmark is explicitly a data-structure
 control, not native/service performance. Real native full-population parity,
 42large-memory reruns and new-resource throughput remain pending.
+
+## Paired measurement follow-up
+
+The latest measurement boundary uses validation-20261025T085339: all six commands
+pass and25checks pass. Earlier validation logs and failures remain. Four native
+semantic controls are not claimed: the actual pinned nativeCI test checks three
+accepted/rejected/sorry sources. ci-152103c-complete.json and its native-contract
+log retain terminal evidence for that pushed hardware/telemetry head. The final
+measurement head has separateCI evidence after push. Source/clock/report scope
+is documented in ../../docs/benchmarking.md.

@@ -16,3 +16,8 @@ Use serve instead of check to expose local /check, /verify and /v1/verify.
 See [API](../docs/api.md) for core Kimina schemas, explicit unsupported options
 and differences between all-candidate RL and first-success consumers.
 No service is deployed by building or running tests.
+
+To capture a complete batch and compare engine policies, use the documented
+[measure/compare commands](../docs/benchmarking.md). The input to measure is
+one Batch object; check accepts one Batch per JSONL line. Keep stderr resource
+logs and an external lifecycle clock alongside captured native results.

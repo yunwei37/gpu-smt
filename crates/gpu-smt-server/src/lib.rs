@@ -2,6 +2,8 @@
 //! Unsupported debug/infotree options are rejected, not silently ignored.
 
 #![warn(missing_docs)]
+pub mod measurement;
+
 use axum::{
     Json, Router,
     extract::State,

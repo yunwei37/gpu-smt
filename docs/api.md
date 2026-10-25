@@ -81,3 +81,10 @@ environment. Sources using mutable external state or nondeterministic IO must
 request reuse=false; byte identity alone does not prove arbitrary Lean
 metaprograms pure. Fresh uncached native differential execution remains the
 reference, and resource failures/timeouts are never cached as logical results.
+
+## Measurement API
+
+The server library exposes measurement::Capture and measurement::compare for
+saved exact-input comparisons. The CLI measure command captures one Batch
+through native retirement; compare reads two saved captures without running
+a verifier. See [measurement scope, clocks and parity](benchmarking.md).

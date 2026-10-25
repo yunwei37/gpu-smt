@@ -13,7 +13,7 @@ The Rust workspace has four crates:
 |gpu-smt-core|Typed source/consumer/verdict/attempt contracts; backend, policy, monitor, admission, cache, detector and prepared-state traits|
 |gpu-smt-engine|Global CPU slots, priority admission queue, actual RSS reservations, watchdog, exclusive retry, exact cache/in-flight sharing, all/first-success semantics|
 |gpu-smt-lean|Original native JSON command transport in isolated fresh process groups, assigned CPU affinity, timeout/cancellation and reaping|
-|gpu-smt-server|Local HTTP core/check and legacy/verify adapters, typed/v1/verify, JSONL/HTTP executable|
+|gpu-smt-server|Local HTTP core/check and legacy/verify adapters, typed/v1/verify, JSONL/HTTP executable and reusable capture/comparison|
 
 The initial native backend is fresh-process execution, not safe COW or
 one-load Mathlib. Unsupported debug/infotree/state-handle features return an

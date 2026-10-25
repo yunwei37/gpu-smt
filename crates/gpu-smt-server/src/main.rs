@@ -1,9 +1,16 @@
 //! Local engine executable. Library use does not require a network service.
-use gpu_smt_core::Batch;
-use gpu_smt_engine::{Config, Engine, Fifo, HeadroomAdmission, MemoryCache, linux::ProcMonitor};
+use gpu_smt_core::{Batch, VerificationBackend};
+use gpu_smt_engine::{
+    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, linux::ProcMonitor,
+};
 use gpu_smt_lean::NativeRepl;
-use std::{collections::HashMap, path::PathBuf, sync::Arc};
-use tokio::io::{AsyncBufReadExt, AsyncWriteExt, BufReader};
+use std::{
+    collections::HashMap,
+    path::PathBuf,
+    sync::Arc,
+    time::{Instant, SystemTime, UNIX_EPOCH},
+};
+use tokio::io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader};
 
 fn cpu_eligibility() -> Result<Vec<usize>, String> {
     let mut set = libc_cpu::CpuSet::new()?;
@@ -43,6 +50,11 @@ mod libc_cpu {
     }
 }
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let started = Instant::now();
+    let started_unix_ms = SystemTime::now()
+        .duration_since(UNIX_EPOCH)?
+        .as_millis()
+        .try_into()?;
     tracing_subscriber::fmt()
         .json()
         .with_writer(std::io::stderr)
@@ -55,12 +67,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--listen 127.0.0.1:3000]"
+            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
-    if !matches!(command.as_str(), "serve" | "check") {
-        return Err("expected serve or check".into());
+    if command == "compare" {
+        let baseline = args.next().ok_or("baseline capture path required")?;
+        let candidate = args.next().ok_or("candidate capture path required")?;
+        if args.next().is_some() {
+            return Err("compare takes exactly two capture paths".into());
+        }
+        let baseline = serde_json::from_slice(&std::fs::read(baseline)?)?;
+        let candidate = serde_json::from_slice(&std::fs::read(candidate)?)?;
+        let report = gpu_smt_server::measurement::compare(&baseline, &candidate)?;
+        println!("{}", serde_json::to_string_pretty(&report)?);
+        return Ok(());
+    }
+    if !matches!(command.as_str(), "serve" | "check" | "measure") {
+        return Err("expected serve, check, measure or compare".into());
     }
     let mut options = HashMap::new();
     while let Some(key) = args.next() {
@@ -72,6 +96,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "--worker-cores",
             "--memory-gib",
             "--listen",
+            "--policy",
         ]
         .contains(&key.as_str())
         {
@@ -127,7 +152,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .worker_threads(config.cpus.len())
         .enable_all()
         .build()?;
-    runtime.block_on(run(command, options, config, backend))
+    runtime.block_on(run(
+        command,
+        options,
+        config,
+        backend,
+        started,
+        started_unix_ms,
+    ))
 }
 
 async fn run(
@@ -135,16 +167,51 @@ async fn run(
     options: HashMap<String, String>,
     config: Config,
     backend: NativeRepl,
+    started: Instant,
+    started_unix_ms: u64,
 ) -> Result<(), Box<dyn std::error::Error>> {
+    let policy_name = options
+        .get("--policy")
+        .map(String::as_str)
+        .unwrap_or("fifo");
+    let policy: Arc<dyn gpu_smt_core::SchedulingPolicy> = match policy_name {
+        "fifo" => Arc::new(Fifo),
+        "source-size" => Arc::new(SourceSize),
+        _ => return Err("unknown scheduling policy".into()),
+    };
     let engine = Engine::new(
-        config,
-        Arc::new(backend),
-        Arc::new(Fifo),
+        config.clone(),
+        Arc::new(backend.clone()),
+        policy,
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
         Arc::new(MemoryCache::default()),
     )?;
-    if command == "check" {
+    if command == "measure" {
+        let mut source = String::new();
+        tokio::io::stdin().read_to_string(&mut source).await?;
+        let batch: Batch = serde_json::from_str(&source)?;
+        let results = engine.verify_batch(batch.clone()).await?;
+        engine.shutdown().await;
+        let capture = gpu_smt_server::measurement::Capture {
+            schema_version: 1,
+            engine_version: env!("CARGO_PKG_VERSION").into(),
+            environment: backend.environment.clone(),
+            backend: backend.identity(),
+            policy: policy_name.into(),
+            resources: config,
+            batch,
+            results,
+            started_unix_ms,
+            lifecycle_seconds: started.elapsed().as_secs_f64(),
+        };
+        let mut stdout = tokio::io::stdout();
+        stdout
+            .write_all(serde_json::to_string(&capture)?.as_bytes())
+            .await?;
+        stdout.write_all(b"\n").await?;
+        stdout.flush().await?;
+    } else if command == "check" {
         let mut lines = BufReader::new(tokio::io::stdin()).lines();
         let mut stdout = tokio::io::stdout();
         while let Some(line) = lines.next_line().await? {

@@ -42,3 +42,7 @@ Verified real native core-contract CI on f016161, without treating three proof c
 ## Hardware/telemetry self-review
 
 Rechecked stdout/log separation, actual thread affinity inheritance, full-core exclusive semantics, attempt PID/birth/preemption provenance and admission/retirement. Latest20tests all pass; read raw nativeCI success for f016161 without pooling with new resource-point evidence. Input preparation for42reruns is not execution. Remaining safeCOW, full matched throughput/native parity and source-cost learning remain open; no independent audit or novelty claim.
+
+## Capture/comparison self-review
+
+Root-only self-review of the measurement addition: reject changed population/timeouts/environment/aggregate hardware; compare identities rather than counts; preserve operational outcomes and retry cost; no per-candidate parity claim for first-success consumers; no concurrency phase sum presented as end-to-end clock. A real subprocess fixture exercises capture/native retirement; fixture output is not Lean proof evidence. Official nativeCI remains separate. No independent audit claimed.

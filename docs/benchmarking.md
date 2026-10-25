@@ -1,0 +1,87 @@
+# Measuring engine changes
+
+The engine has two reusable commands: measure captures one execution,
+and compare analyzes two saved captures. They do not reproduce another
+system or deploy a service.
+
+## Capture a fixed population
+
+The measure command reads one complete [Batch](api.md) JSON object from stdin,
+creates a cold engine/cache, runs the batch, waits for native retirement,
+and writes one JSON capture to stdout. Keep stderr as the resource-event stream.
+
+From the pinned Lean project's directory:
+
+    lake env /absolute/path/gpu-smt measure \
+      --repl /absolute/path/repl --project /absolute/path/lean-project \
+      --environment immutable-lean-mathlib-project-pin \
+      --cpus 8,9,10,11 --worker-cores 1 --memory-gib 48 \
+      --policy fifo \
+      < population.json > fifo.json 2> fifo.resources.jsonl
+
+Use an external controller clock as well. The recorded lifecycle begins at
+executable main entry and includes input reading, runtime setup, native work,
+queueing, retries and backend shutdown. It excludes executable loading and
+final record serialization/output. Keep those costs in the external clock;
+do not call the internal ratio a complete cold-controller result.
+
+Capture format version 1 retains every original source, task/candidate ID,
+timeout and reuse setting, native response, status, attempt, process identity,
+sampled peak and preemption history. It also records backend/environment
+identity, scheduling policy, RSS/CPU configuration and lifecycle time.
+Resource logs carry aggregate RSS; an attempt peak is not total engine RSS.
+
+The current CLI backend starts a fresh native REPL for each independent
+source. This has no warm-state or COW advantage. A measurement of that backend
+does not replace the strongest warm/native reference. Keep native reference
+captures and adapters explicit.
+
+The fifo and source-size policies are available. Source size is an
+unvalidated heuristic, not a learned predictor or a novelty claim.
+reuse=false gives every duplicate a fresh native execution; reuse=true
+permits exact completed and in-flight sharing in a deterministic pinned
+environment. Report reuse as part of the method.
+
+## Pair completed captures
+
+    gpu-smt compare baseline.json candidate.json > comparison.json
+
+Comparison checks exact source/ID/task/timeout populations and the pinned
+native environment, total RSS budget and CPU eligibility. Different budgets
+or populations are separate measurements. Worker core assignments, policies,
+reuse-option differences and backend identity differences remain visible.
+
+The report includes:
+
+- Lifecycle ratio and candidate throughput using each capture's own wall clock.
+- Accepted-ID differences, every status change and raw-response differences.
+- Solved-task differences for pass@k, with no per-candidate parity claim when
+  either side cancels siblings.
+- Counts of timeout, resource failure, cancellation, preemption, reuse and
+  actual attempts.
+- Completion latency quantiles including queueing.
+- Slowest 1% and 10% cohorts ranked by the baseline's accumulated native attempt
+  wall durations, with retry costs retained on both sides.
+
+Attempt sums overlap under concurrency. Neither those sums nor completion
+latency sums are end-to-end time. Slowest-cohort membership is diagnostic, not
+an oracle scheduling policy.
+
+A favorable ratio alone is insufficient: inspect changed accepted sets and
+operational outcomes, resource logs, controller clocks, input provenance and
+contention. Resource-point changes can change which candidates complete.
+An environment label records the operator's pin; it does not authenticate the
+binary or make arbitrary stateful Lean metaprograms deterministic.
+
+## This Workspace's next execution
+
+Only one native collection group runs at a time. The existing original
+7,808-candidate scheduling group retains its old two-worker, 24 GiB
+per-process address-space settings. Do not restart it or pool its clocks with
+the new point.
+
+After that group retires, the prepared [42 isolated inputs](../artifacts/engine-resource-profile-2026-10-25/isolated42/README.md)
+run individually with four reserved eligible cores, no per-process AS cap and
+48 GiB aggregate sampled RSS. Then qualify and measure the new engine
+resource/workload policies on the complete native population. A one-second
+watchdog is a sampled response, not a kernel hard RSS quota.
