@@ -1,0 +1,132 @@
+{
+  "state": "complete",
+  "method": "stock",
+  "expected": 7808,
+  "source_concurrency": 2,
+  "affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "memory_limit_bytes": 51539607552,
+  "aggregate_memory_budget_bytes": 51539607552,
+  "per_native_repl_address_limit_bytes": 25769803776,
+  "maximum_live_native_repls": 2,
+  "cost_timing_requested": false,
+  "cost_timing_effective": false,
+  "cost_timing_log": null,
+  "omega_control_log": null,
+  "reference_diagnostic": false,
+  "reference_phases": false,
+  "reference_phase_log": null,
+  "native_engine": null,
+  "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support",
+  "native_hybrid_override": null,
+  "lean_version": "v4.9.0-rc1",
+  "native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so",
+  "scope": "Same original native inputs and transport; no proof-state/certificate reuse. Pending siblings cancelled, not native failures. Not per-candidate RL rewards.",
+  "GPU_enabled": false,
+  "GPU_provider": null,
+  "GPU_minimum_rows": null,
+  "retained_strong_CPU": false,
+  "returned": 7808,
+  "counts": {
+    "valid": 3014,
+    "lean_error": 4669,
+    "timeout_error": 82,
+    "resource_failure": 43
+  },
+  "server_ready_seconds": 0.865985379,
+  "preparation_seconds": 3.832679547,
+  "warm_verify_seconds": 21736.368711498,
+  "server_exit": -15,
+  "joined_owned_descendants": 2,
+  "owned_descendants_before_shutdown": [
+    {
+      "pid": 338547,
+      "birth": 1792934430.07,
+      "command": [
+        "lake",
+        "env"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    },
+    {
+      "pid": 338558,
+      "birth": 1792934430.23,
+      "command": [
+        "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl"
+      ],
+      "cpu_affinity": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "address_limit": [
+        "Max address space         25769803776          25769803776          bytes     "
+      ]
+    }
+  ],
+  "owned_live_descendants_after_shutdown": [],
+  "memory_watchdog": {
+    "root_pid": 283334,
+    "root_birth": 1792912973.05,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 21738,
+    "kills": 0,
+    "peak_sampled_owned_rss_bytes": 50313207808,
+    "peak_sampled_native_repl_count": 2,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 0,
+    "included_owned_roots": [
+      {
+        "pid": 283334,
+        "birth": 1792912973.05,
+        "out": "/workspaces/repository/artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "whole_lifecycle_seconds": 21740.758136028,
+  "waited_child_cpu_seconds": 6096.146442,
+  "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution.",
+  "effective_test_settings": {
+    "LEAN_SERVER_PROJECT_DIR": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "LEAN_SERVER_REPL_PATH": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "LEAN_SERVER_LEAN_VERSION": "v4.9.0-rc1",
+    "LEAN_SERVER_MAX_REPL_MEM": "24G",
+    "LEAN_SERVER_HOST": "127.0.0.1",
+    "LEAN_SERVER_PORT": "35445",
+    "LEAN_SERVER_NATIVE_DYNLIB": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so",
+    "LEAN_SERVER_MAX_REPLS": "2"
+  },
+  "consumer": "all-candidate native",
+  "scheduler_policy": "all",
+  "actual_same_task_max_in_flight": null,
+  "transport_slot_counts": {
+    "valid": 3014,
+    "lean_error": 4669,
+    "timeout_error": 82,
+    "resource_failure": 43
+  },
+  "consumer_counts": {
+    "valid": 3014,
+    "lean_error": 4669,
+    "timeout_error": 82,
+    "resource_failure": 43
+  },
+  "consumer_complete_lifecycle_seconds": 21746.811713538,
+  "consumer_cost_scope": "Includes model loading, source ranking, native transport lifecycle, queued cancellation, result mapping and raw compression. Offline training/shared input materialization reported separately."
+}

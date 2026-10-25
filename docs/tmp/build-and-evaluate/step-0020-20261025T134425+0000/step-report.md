@@ -78,3 +78,14 @@ Its log is retained,then validation runs with two eligible CPUs. No test is
 weakened/skipped to mask the failure. No new native collection was started.
 
 Final local validation at135059passes format,Clippy,34ordinary tests,docs and CLIhelp;4native tests intentionally ignored locally. Exact pushed native CI still required for this source version.
+
+
+## Final pinned native qualification
+
+15d084dd58374ac29a3338eccdac82ac276bfeb4passes engineCI40199783360(Rust and
+native job121188306293)and smoke40199783408. All4actual native tests pass,
+0ignored,including failed-header fallback/no-ready plus actual positive module
+metadata and previous raw-source/REPL/concurrent-disposable-child contracts.
+Raw logs and terminalmetadata retained. This is pinned4.18native CI,not actual
+Mathlib child/whole-population performance. Real4.9Mathlib import-only data
+remain separately scoped and root self-reviewed.

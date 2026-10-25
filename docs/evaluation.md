@@ -144,6 +144,15 @@ The complete original7808 matrix is the sole active full capture;
 [launch identity](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730.launch.json)
 and actual terminal files own status. Do not restart a healthy capture.
 
+The [completed all-candidate cell](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all/result-review.md)
+returns3014valid/4669errors/82timeouts/43resource failures with the exact same
+accepted IDs as the historical native reference. minif2f-7231changes from
+timeout to native bad_alloc; all43resource clocks remain unavailable rather
+than zero. The paired group remains incomplete(first-original running,
+first-short queued); no speed ratio is reported. This is the frozen old point,
+separate from the next uncapped dynamic-resource comparison.
+
+
 ## Lean code-verification workloads
 
 [Pinned official sources and primary-source review](tmp/bootstrap/step-0011-20261023T195335-0700/literature-20261025-code-verification/report.md)

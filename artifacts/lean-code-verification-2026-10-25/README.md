@@ -27,7 +27,7 @@ cache exit0. The old556module lexical graph is retained but superseded: it misse
 meta imports. The [native header parser result](native-header-closure-20261025/receipt.json)
 contains860source modules(58project/802external), with all/meta/export flags.
 No workload imports or candidate bodies execute in this parsing step. Native
-prerequisite compilation is running separately below; no second full capture.
+external prerequisite compilation has completed below; no second full capture.
 
 
 ## Current capture boundary
@@ -37,8 +37,8 @@ evidence. The legacy run-verina driver still reproduces that point; it is not
 the new dynamic-admission path. New code-workload captures require the current
 48GiB aggregate/CPU-coupled controller after the sole old group retires.
 No second proof collection has started. Lean-mlir's [native-parser-driven prerequisite build](native-prerequisite-build-20261025/launch.json)
-is running sequentially for802external modules after zero-hit upstream caches.
-It excludes all58project/workload modules. Existing capture plus setup RSS is
-sampled each second; pressure terminates only new setup. Native-parser860module
+completed all802external modules after zero-hit upstream caches.
+It excludes all58project/workload modules. Existing capture plus setup RSS was
+sampled each second; no monitor error or pressure termination occurred. Native-parser860module
 closure supersedes lexical556. These are dependency preparation, not a native
 workload measurement or baseline-system reproduction.
