@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "/workspaces/repository/bench/lean-candidate-scheduling/analyze-exact-duplicates.py",
+    "--input",
+    "/workspaces/repository/artifacts/linarith-oracle-2026-10-17/prefix-opportunity/minif2f-input.jsonl.gz",
+    "--native",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off/results.jsonl.gz",
+    "--pairs",
+    "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/analysis/paired-sources.csv",
+    "--out",
+    "/workspaces/repository/artifacts/engine-resource-profile-2026-10-25/exact-duplicates"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 0.2795990570448339
+}

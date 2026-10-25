@@ -205,3 +205,15 @@ its relative paths were authored from docs/evaluation.md.
 keeps that location. Earlier archives and exact raw data remain linked there.
 The [current step/self-audit](tmp/bootstrap/step-0011-20261023T195335-0700/step-report.md)
 records transitions, root dispositions, failures and publication.
+
+
+### Exact-source sharing in the original miniF2F population
+
+The Rust engine supports exact result and in-flight sharing, but the original
+7,808 sources contain 7,791 unique byte strings. Their only duplicate group is
+18 literal None errors, leaving 17 repeated executions after the first.
+Those repeated historical HTTP intervals sum to 13.337753652s out of
+43,121.2401169s (0.03093% of cumulative intervals). This is not whole lifecycle
+time, nor evidence of a new-resource speedup. No substantive proof candidate is
+byte-identical here. Retain exact sharing as a component, not a novelty or major
+performance claim. [Executed existing-data analysis](../artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md).

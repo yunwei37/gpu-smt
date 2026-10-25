@@ -46,3 +46,14 @@ Rechecked stdout/log separation, actual thread affinity inheritance, full-core e
 ## Capture/comparison self-review
 
 Root-only self-review of the measurement addition: reject changed population/timeouts/environment/aggregate hardware; compare identities rather than counts; preserve operational outcomes and retry cost; no per-candidate parity claim for first-success consumers; no concurrency phase sum presented as end-to-end clock. A real subprocess fixture exercises capture/native retirement; fixture output is not Lean proof evidence. Official nativeCI remains separate. No independent audit claimed.
+
+## Exact-duplicate existing-data result
+
+Direct UTF8 comparison over all 7808 original miniF2F sources finds 7791 unique
+sources; only 18 literal None failures duplicate. 17 repeated historical intervals
+sum to 13.337753652s (0.03093% of cumulative native HTTP spans), not lifecycle
+savings. Raw duplicate IDs/statuses, source/command and result-review are retained
+under artifacts/engine-resource-profile-2026-10-25/exact-duplicates. No substantive
+proof duplication or large exact-cache opportunity found; no new proof collection.
+Current engine code e010988 passes its actual Rust/native CI jobs. All four
+research directions remain active, no stopping criterion or independent audit.

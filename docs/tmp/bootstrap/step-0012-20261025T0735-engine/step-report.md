@@ -68,3 +68,19 @@ Measurement validation: artifacts/rust-engine-2026-10-25/validation-20261025T085
 contains all6successful command receipts,25passing checks and explicit local
 native skip.152103c exact-head CI is fully successful including the actual
 native differential contract; final measurement commit requires freshCI.
+
+## Exact-duplicate existing-data result
+
+Direct UTF8 comparison over all 7808 original miniF2F sources finds 7791 unique
+sources; only 18 literal None failures duplicate. 17 repeated historical intervals
+sum to 13.337753652s (0.03093% of cumulative native HTTP spans), not lifecycle
+savings. Raw duplicate IDs/statuses, source/command and result-review are retained
+under artifacts/engine-resource-profile-2026-10-25/exact-duplicates. No substantive
+proof duplication or large exact-cache opportunity found; no new proof collection.
+Current engine code e010988 passes its actual Rust/native CI jobs. All four
+research directions remain active, no stopping criterion or independent audit.
+
+Paper/source/PDF now include the exact-duplicate coverage result and compile
+successfully to34pages. This records compilation, not full visual/paper acceptance.
+Final code head e010988 has successful Rust, actual pinned nativeREPL and Z3smoke
+CI; terminal receipts are under artifacts/rust-engine-2026-10-25.

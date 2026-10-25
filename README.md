@@ -55,6 +55,11 @@ cost models and multi-node execution remain implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload
 methods and actual end-to-end results.
 
+An [exact-source audit](artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md)
+finds no duplicate substantive proofs among the 7,808 miniF2F candidates:
+only 18 repeated literal None failures. Exact caching is supported, but is
+not the expected source of meaningful acceleration on this population.
+
 ## Current work: failure hotspots in Lean
 
 The complete native/GPU counterexample-screening pair returns all **7,808**
@@ -189,7 +194,7 @@ Synthetic controls are not the real-workload evidence.
 The manuscript has completed a
 [12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
 Its current citation update retains all numerical results, four RQs and
-14 missing result slots. The compiled draft is 33 pages including appendices;
+14 missing result slots. The compiled draft is 34 pages including appendices;
 it is not submission-ready.
 
 All implementation, experiments and review run in this thread. Reviews are

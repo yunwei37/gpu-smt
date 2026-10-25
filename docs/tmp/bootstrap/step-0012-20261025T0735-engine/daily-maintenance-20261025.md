@@ -16,3 +16,16 @@ interval_cases/simp热点寻找充分证据，不能用预测或短超时冒充�
 先用真实差分/内存日志确认行为，再在相同48GiB/4核上做完整吞吐配对。
 普通缓存、预热和COW只是资源层基础，不当novelty；当前接口与测试不等于
 已实现COW或研究成功。四方向持续，无关口/截止/收尾，CPUoracle保持冻结。
+
+
+## Following the reflection: exact duplicates measured
+
+The reusable Rust engine and measurement API now exist, rather than remaining
+an architecture document. Existing-data analysis finds only 17 redundant literal
+None failures (0.03093% of cumulative HTTP spans), so exact caching cannot carry
+the miniF2F performance story. Main uncertainty remains whole-population
+throughput/decision differences under dynamic 48GiB admission, and then safe
+native preparation plus workload-aware gains. Next real native work is 42 isolated
+resource reruns after the healthy old group retires, followed by a matched engine
+qualification/full pair. Continue source-level failure and code-workload work
+without an additional simultaneous collection or CPU oracle changes.

@@ -153,6 +153,17 @@ not yet provide a safe one-load Mathlib/COW implementation.
 Prepared-state and failure-detector interfaces specify pending extensions,
 not completed mechanisms or new contributions.
 
+\paragraph{Exact-source sharing coverage.}
+The 7,808 original miniF2F candidates contain 7,791 distinct source byte
+strings. Their only duplicate group comprises 18 literal \texttt{None}
+inputs, all native errors; no substantive proof candidates are byte-identical.
+The 17 repeated executions after the first account for 13.34 seconds of
+43,121.24 cumulative native HTTP interval seconds (0.031\%).
+These overlapping request intervals are not whole-flow time or measured
+cache savings. Exact sharing remains an engine component, with negligible
+observed opportunity in this population.
+
+
 The next measurement point removes fixed per-process address-space caps
 while retaining a 48\,GiB aggregate actual-RSS budget. Dynamic admission uses
 observed memory and assigned CPU capacity. A one-second watchdog preempts
