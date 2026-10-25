@@ -20,3 +20,17 @@ responses and verifies retirement. It remains locally ignored during the old
 group; exact-head CI is the next evidence. Retrospective timing labels have been
 clarified to no observed success, never theorem unsolvability; prior raw metadata
 are preserved. No new scientific/performance conclusion or independent audit.
+
+## Actual native CI result
+
+Implementation commit d5ed7c6f998f259ad173ec7323ad6702ce1db803 passes
+engine CI40189403240 and benchmark-smoke40189403249. Rust checks pass and
+both actual native tests execute (2passed,0ignored). The first native test now
+runs the task-aware policy in all-mode and first-success mode: checked
+same-proposition siblings, admission retained as incomplete, rejected-only task
+exhaustion, raw-response equality for executed controls and final retirement.
+The prepared-parent concurrent/timeout/lifecycle native test still passes.
+Raw native log and terminal CI metadata are retained here.
+
+This closes this implementation dependency only. No actual full-population
+task-aware throughput or client-delivery improvement has been measured.

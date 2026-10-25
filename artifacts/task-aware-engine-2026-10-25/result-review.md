@@ -65,3 +65,17 @@ its exact-head result is still pending the forward push. The ordering-only
 Rust example agrees on every one of7808IDs in both modes with the reference
 original/interleaved order.43relative core-document target paths exist;
 external URL and anchor validity were not re-audited here.
+
+## Actual native CI result
+
+Implementation commit d5ed7c6f998f259ad173ec7323ad6702ce1db803 passes
+engine CI40189403240 and benchmark-smoke40189403249. Rust checks pass and
+both actual native tests execute (2passed,0ignored). The first native test now
+runs the task-aware policy in all-mode and first-success mode: checked
+same-proposition siblings, admission retained as incomplete, rejected-only task
+exhaustion, raw-response equality for executed controls and final retirement.
+The prepared-parent concurrent/timeout/lifecycle native test still passes.
+Raw native log and terminal CI metadata are retained here.
+
+This closes this implementation dependency only. No actual full-population
+task-aware throughput or client-delivery improvement has been measured.
