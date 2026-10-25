@@ -114,3 +114,15 @@ Successful fresh fallback alone cannot satisfy that contract.
 [Retained result and self-review](../../artifacts/prepared-engine-2026-10-25/result-review.md)
 separate this fixed-context qualification from pending Mathlib/resource/throughput
 measurements. Earlier failures and their raw CI logs remain in the same directory.
+
+
+Preparation fails when the native header/import MessageLog contains errors.
+The ready handshake includes the actual environment's imported_modules count
+and header_errors=false; the Rust adapter requires this metadata from a matching
+host. Missing/failed preparation uses the original fresh backend. A count is
+import readiness evidence, not proof that arbitrary FFI is safe to fork.
+
+The retained Lean4.9 Mathlib/Aesop import-only preparation loads5545modules,
+observes one thread/no children,and retires on stdin EOF. It executes no candidate
+and opens no branch connection. Full Mathlib child differential/concurrency/
+performance qualification remains pending; Init-only CI is not substituted.

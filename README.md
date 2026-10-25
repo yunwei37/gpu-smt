@@ -61,7 +61,10 @@ native rejections or cacheable proof results.
 [CI](.github/workflows/engine.yml) · [Apache-2.0 engine license](LICENSE).
 
 An [optional native import parent](native/lean/README.md) passes the pinned Lean4.18
-native differential/lifecycle CI; the default backend remains fresh-process. Full Mathlib COW
+native differential/lifecycle CI; the default backend remains fresh-process.
+[Actual Mathlib import-only preparation](artifacts/mathlib-import-preparation-2026-10-25/README.md)
+loads5,545modules and retires normally; no candidate child executes in that setup.
+Full Mathlib COW
 qualification, native failure detectors, source-aware
 cost models and multi-node execution remain implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload

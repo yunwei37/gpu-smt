@@ -99,3 +99,14 @@ capture unchanged and observe combined RSS. For direction1,48dominant interval
 timeouts lie in7tasks;23simp_alltimeouts in16. Supplied native simp already handles
 a one-step unchanged expression. Next witnesses must distinguish actual
 multi-step cycles/growth and fallback context,not reject by source keyword.
+
+
+### Qualify the real import path without overlapping proof collections
+
+Own parent preparation previously accepted a Root even when native imports
+logged errors. Fail that preparation and expose actual module count; keep
+fresh fallback. A real4.9Mathlib/Aesop import-only run now loads5545modules,
+observes one thread/nochildren and retires normally. This is a concrete setup
+result for the requested resource layer,not cross-candidate acceleration.
+The next decisive resource evidence remains full native child parity/throughput
+and42isolated resource-point reruns after the original group fully retires.

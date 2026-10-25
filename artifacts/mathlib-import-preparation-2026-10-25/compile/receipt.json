@@ -1,0 +1,21 @@
+{
+  "UTC": "2026-10-25T13:46:14.399796+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-R",
+    "/workspaces/repository/native/lean",
+    "-c",
+    "/tmp/gpu-smt-mathlib-import-20261025/build/GpuSmtPrepared.c",
+    "/workspaces/repository/native/lean/GpuSmtPrepared.lean"
+  ],
+  "cwd": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel",
+  "exit": 0,
+  "seconds": 1.0050068630371243,
+  "aggregate_peak_rss_bytes": 17038766080,
+  "aggregate_budget_bytes": 51539607552,
+  "pressure_aborted_new_build": false,
+  "scope": "Compile engine module against actual retained Lean4.9/REPL API only; no proof candidate collection, no dependency build/source changes, no fixed AS cap; sample both known research group and bounded compiler each second.",
+  "dependency_archive_link": "not executed; existing native capture stays frozen"
+}

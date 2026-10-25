@@ -315,6 +315,12 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
                 && v["bytes"].as_u64().is_some_and(|n| n > 0)),
             "native retired child must retain the kernel leader high-water observation");
         if i == 0 {
+            let context = result[0].attempts[0].backend_events.iter()
+                .find(|event| event.stage == "prepared_ready")
+                .map(|event| serde_json::from_str::<serde_json::Value>(&event.detail).unwrap())
+                .expect("native import readiness event");
+            assert_eq!(context["prepared_context"]["header_errors"], false);
+            assert!(context["prepared_context"]["imported_modules"].as_u64().is_some_and(|n| n > 0));
             let ids = &result[0].attempts[0].processes;
             assert_eq!(
                 ids.len(),
@@ -611,6 +617,93 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
         assert!(
             gpu_smt_engine::linux::identity(p.pid).is_err(),
             "native CLI survives result/shutdown"
+        );
+    }
+}
+
+#[tokio::test]
+#[ignore = "requires matching native host/SDK; native CI executes failed-import regression"]
+async fn native_import_error_never_becomes_prepared_readiness() {
+    let backend = gpu_smt_lean::PreparedRepl::new(
+        NativeRepl {
+            program: PathBuf::from(std::env::var("LEAN_REPL").unwrap()),
+            args: vec![],
+            project: PathBuf::from(std::env::var("LEAN_PROJECT").unwrap()),
+            environment: "native-import-error-contract".into(),
+        },
+        PathBuf::from(std::env::var("LEAN_PREPARED_HOST").unwrap()),
+        PathBuf::from(std::env::var("LEAN_SYSROOT").unwrap()),
+    );
+    let mask = std::fs::read_to_string("/proc/self/status").unwrap();
+    let cpu = mask
+        .lines()
+        .find_map(|line| line.strip_prefix("Cpus_allowed_list:"))
+        .unwrap()
+        .trim()
+        .split([',', '-'])
+        .next()
+        .unwrap()
+        .parse()
+        .unwrap();
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 48 << 30,
+            cpus: vec![cpu],
+            cores_per_worker: 1,
+        },
+        Arc::new(backend),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let results = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![Candidate {
+                id: "missing-import".into(),
+                task_id: None,
+                code: "import GpuSmtCertainlyAbsentModule\nexample : True := by trivial".into(),
+                timeout_ms: 300000,
+                reuse: false,
+            }],
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        results[0].outcome.status,
+        Status::Rejected,
+        "{:?}",
+        results[0].outcome
+    );
+    assert!(
+        !engine.prepared_state_ready(),
+        "failed import claimed ready"
+    );
+    assert!(
+        results[0]
+            .attempts
+            .iter()
+            .flat_map(|a| &a.backend_events)
+            .any(|event| event.stage == "fresh_fallback")
+    );
+    assert!(
+        results[0]
+            .attempts
+            .iter()
+            .flat_map(|a| &a.backend_events)
+            .all(|event| event.stage != "prepared_ready")
+    );
+    engine.shutdown().await;
+    for process in results
+        .iter()
+        .flat_map(|r| &r.attempts)
+        .flat_map(|a| &a.processes)
+    {
+        assert!(
+            gpu_smt_engine::linux::identity(process.pid).is_err(),
+            "failed import/fallback process survives retirement"
         );
     }
 }

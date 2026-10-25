@@ -25,6 +25,7 @@
 extern void lean_initialize(void);
 extern lean_object *initialize_GpuSmtPrepared(uint8_t, lean_object *);
 extern lean_object *gpu_smt_prepared_create(lean_object *, lean_object *, lean_object *);
+extern lean_object *gpu_smt_prepared_stats(lean_object *);
 extern lean_object *gpu_smt_prepared_check(lean_object *, lean_object *, lean_object *);
 
 struct branch { pid_t pid; int channel; struct branch *next; };
@@ -205,8 +206,11 @@ int main(int argc,char **argv) {
 #ifdef GPU_SMT_DEFER_LIBUV
     uv_deferred=deferred_libuv;
 #endif
-    printf("{\"ready\":true,\"parent_pid\":%ld,\"parent_threads\":1,\"preparations\":1,\"closed_inherited_fds\":%u,\"libuv_deferred\":%s}\n",
-        (long)getpid(),closed_inherited,uv_deferred?"true":"false"); fflush(stdout);
+    lean_inc(root);
+    lean_object *prepared_stats=gpu_smt_prepared_stats(root);
+    printf("{\"ready\":true,\"parent_pid\":%ld,\"parent_threads\":1,\"preparations\":1,\"closed_inherited_fds\":%u,\"libuv_deferred\":%s,\"prepared_context\":%s}\n",
+        (long)getpid(),closed_inherited,uv_deferred?"true":"false",lean_string_cstr(prepared_stats)); fflush(stdout);
+    lean_dec(prepared_stats);
     struct branch *active=NULL;
     while (!stopping) {
         reap(&active);

@@ -20,7 +20,16 @@ unsafe def create (encoded sysroot : String) : IO Root := do
   let context := Parser.mkInputContext code "<input>"
   let (header, parser, messages) ← Parser.parseHeader context
   let (env, messages) ← processHeader header {} messages context
+  if messages.hasErrors then
+    throw <| IO.userError "native header import failed; use original frontend"
   return { imports := code.extract 0 parser.pos, env, messages }
+
+
+@[export gpu_smt_prepared_stats]
+def stats (root : Root) : String :=
+  (Json.mkObj [
+    ("imported_modules", toJson root.env.header.moduleNames.size),
+    ("header_errors", toJson root.messages.hasErrors)]).compress
 
 @[export gpu_smt_prepared_check]
 unsafe def check (root : Root) (encoded : String) : IO String := do

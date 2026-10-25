@@ -1,0 +1,82 @@
+{
+  "UTC": "2026-10-25T13:51:15.011591+00:00",
+  "steps": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 0.10118139488622546
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 0.10023985803127289
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "-j",
+        "2",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 1.2094197301194072
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "-j",
+        "2"
+      ],
+      "exit": 0,
+      "seconds": 12.523315581027418
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--locked",
+        "-j",
+        "2"
+      ],
+      "exit": 0,
+      "seconds": 1.664697069907561
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "run",
+        "-p",
+        "gpu-smt-server",
+        "--bin",
+        "gpu-smt",
+        "--",
+        "--help"
+      ],
+      "exit": 0,
+      "seconds": 0.05961222806945443
+    }
+  ],
+  "native_differential": "Explicitly ignored locally while existing full collection owns the slot; dedicated pinned native CI configured."
+}

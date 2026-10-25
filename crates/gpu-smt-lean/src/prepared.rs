@@ -158,6 +158,8 @@ impl PreparedRepl {
                     || ready["parent_pid"].as_u64() != Some(identity.pid as u64)
                     || ready["parent_threads"] != 1
                     || ready["preparations"] != 1
+                    || ready["prepared_context"]["header_errors"] != false
+                    || !ready["prepared_context"]["imported_modules"].is_u64()
                 {
                     return Err("native preparation handshake mismatch".into());
                 }

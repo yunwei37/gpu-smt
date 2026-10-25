@@ -1,0 +1,55 @@
+{
+  "UTC": "2026-10-25T13:46:29.508043+00:00",
+  "steps": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 0.09791990905068815
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 0.0992494160309434
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "-j",
+        "2",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 1.6100958539173007
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "-j",
+        "2"
+      ],
+      "exit": 101,
+      "seconds": 13.267674695933238
+    }
+  ],
+  "native_differential": "Explicitly ignored locally while existing full collection owns the slot; dedicated pinned native CI configured."
+}
