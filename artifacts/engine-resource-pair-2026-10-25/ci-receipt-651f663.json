@@ -1,0 +1,42 @@
+{
+  "observed_UTC": "2026-10-25T17:18:10.486726+00:00",
+  "runs": [
+    {
+      "run_id": 40215434002,
+      "head_sha": "651f663c58f665e922f9bfce32b2079a4cdcc6a4",
+      "name": "benchmark-smoke",
+      "conclusion": "success",
+      "url": "https://github.com/yunwei37/gpu-smt/actions/runs/40215434002",
+      "jobs": [
+        {
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40215434002/job/121235437604"
+        }
+      ]
+    },
+    {
+      "run_id": 40215434131,
+      "head_sha": "651f663c58f665e922f9bfce32b2079a4cdcc6a4",
+      "name": "engine",
+      "conclusion": "success",
+      "url": "https://github.com/yunwei37/gpu-smt/actions/runs/40215434131",
+      "jobs": [
+        {
+          "name": "native-repl-contract",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40215434131/job/121235438296"
+        },
+        {
+          "name": "rust",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40215434131/job/121235438434"
+        }
+      ]
+    }
+  ],
+  "scope": "Exact implementation commit CI only; not four-worker Mathlib or population throughput evidence. Root self-review."
+}

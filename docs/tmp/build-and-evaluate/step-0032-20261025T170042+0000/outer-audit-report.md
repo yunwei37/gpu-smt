@@ -52,3 +52,10 @@ records and pair native/scheduling results,then start the requested original
 lean-mlir bv_decide measurement. The original23phase diagnostic and48interval
 semantic work remain native runtime nodes. Four directions continue;closed
 CPU oracle routes stay frozen. Root self-review,not independent audit.
+
+## Exact implementation CI receipt
+
+Implementation commit651f663 passes both engine(native-repl-contract and rust jobs)
+and benchmark-smoke(z3-smoke) runs. API receipts are preserved in
+artifacts/engine-resource-pair-2026-10-25/ci-receipt-651f663.json.
+This confirms those checks only;four-worker Mathlib/native throughput remains pending.
