@@ -1,0 +1,36 @@
+{
+  "id": "no-sibling-leak",
+  "kind": "prepared",
+  "status": "rejected",
+  "expected": "rejected",
+  "started": {
+    "started": 397913,
+    "start_ticks": 137355217
+  },
+  "birth": 1792942180.17,
+  "retired": {
+    "retired": 0,
+    "peak_rss_bytes": 317509632
+  },
+  "absent_after_retirement": true,
+  "seconds": 0.03316047601401806,
+  "response": {
+    "native": {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 7
+          },
+          "endPos": {
+            "line": 3,
+            "column": 25
+          },
+          "data": "unknown identifier 'gpuSmtPrivateChild'"
+        }
+      ],
+      "env": 0
+    }
+  }
+}

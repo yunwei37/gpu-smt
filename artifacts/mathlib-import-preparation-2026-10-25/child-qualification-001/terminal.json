@@ -1,0 +1,423 @@
+{
+  "sdk": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "project": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "host": "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+  "repl": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+  "context_reference": {
+    "pid": 397851,
+    "birth": 1792942031.73
+  },
+  "resource_contract": {
+    "aggregate_rss_bytes": 51539607552,
+    "AS_limit": null,
+    "cpu": [
+      10,
+      11
+    ],
+    "sample_seconds": 1
+  },
+  "development_controls_only": true,
+  "full_population_executions": 0,
+  "performance_claim": false,
+  "ready": {
+    "ready": true,
+    "parent_pid": 397896,
+    "parent_threads": 1,
+    "preparations": 1,
+    "closed_inherited_fds": 0,
+    "libuv_deferred": false,
+    "prepared_context": {
+      "imported_modules": 5545,
+      "header_errors": false
+    }
+  },
+  "simultaneous_children": [
+    {
+      "started": 397914,
+      "start_ticks": 137355220
+    },
+    {
+      "started": 397915,
+      "start_ticks": 137355221
+    }
+  ],
+  "concurrent_results": [
+    {
+      "id": "arithmetic",
+      "started": {
+        "started": 397914,
+        "start_ticks": 137355220
+      },
+      "native": {
+        "native": {
+          "env": 0
+        }
+      },
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 327225344
+      },
+      "absent": true
+    },
+    {
+      "id": "ring",
+      "started": {
+        "started": 397915,
+        "start_ticks": 137355221
+      },
+      "native": {
+        "native": {
+          "env": 0
+        }
+      },
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 380907520
+      },
+      "absent": true
+    }
+  ],
+  "parent_exit": 0,
+  "parent_absent": true,
+  "seconds": 17.859912910033017,
+  "results": [
+    {
+      "id": "arithmetic",
+      "kind": "fresh",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.654864769196138,
+      "response": {
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "arithmetic",
+      "kind": "prepared",
+      "status": "accepted",
+      "expected": "accepted",
+      "started": {
+        "started": 397900,
+        "start_ticks": 137353955
+      },
+      "birth": 1792942167.55,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 328421376
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.04984342399984598,
+      "response": {
+        "native": {
+          "env": 0
+        }
+      }
+    },
+    {
+      "id": "ring",
+      "kind": "fresh",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.5176882529631257,
+      "response": {
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "ring",
+      "kind": "prepared",
+      "status": "accepted",
+      "expected": "accepted",
+      "started": {
+        "started": 397904,
+        "start_ticks": 137354212
+      },
+      "birth": 1792942170.12,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 381935616
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.07426511496305466,
+      "response": {
+        "native": {
+          "env": 0
+        }
+      }
+    },
+    {
+      "id": "failed",
+      "kind": "fresh",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.4852472429629415,
+      "response": {
+        "messages": [
+          {
+            "severity": "error",
+            "pos": {
+              "line": 3,
+              "column": 30
+            },
+            "endPos": {
+              "line": 3,
+              "column": 33
+            },
+            "data": "The rfl tactic failed. Possible reasons:\n- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).\n- The arguments of the relation are not equal.\nTry using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.\n\u22a2 1 = 2"
+          }
+        ],
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "failed",
+      "kind": "prepared",
+      "status": "rejected",
+      "expected": "rejected",
+      "started": {
+        "started": 397906,
+        "start_ticks": 137354468
+      },
+      "birth": 1792942172.68,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 334438400
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.033893469953909516,
+      "response": {
+        "native": {
+          "messages": [
+            {
+              "severity": "error",
+              "pos": {
+                "line": 3,
+                "column": 30
+              },
+              "endPos": {
+                "line": 3,
+                "column": 33
+              },
+              "data": "The rfl tactic failed. Possible reasons:\n- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).\n- The arguments of the relation are not equal.\nTry using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.\n\u22a2 1 = 2"
+            }
+          ],
+          "env": 0
+        }
+      }
+    },
+    {
+      "id": "admitted",
+      "kind": "fresh",
+      "status": "incomplete",
+      "expected": "incomplete",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.4746996429748833,
+      "response": {
+        "sorries": [
+          {
+            "proofState": 0,
+            "pos": {
+              "line": 3,
+              "column": 22
+            },
+            "goal": "\u22a2 False",
+            "endPos": {
+              "line": 3,
+              "column": 27
+            }
+          }
+        ],
+        "messages": [
+          {
+            "severity": "warning",
+            "pos": {
+              "line": 3,
+              "column": 0
+            },
+            "endPos": {
+              "line": 3,
+              "column": 7
+            },
+            "data": "declaration uses 'sorry'"
+          }
+        ],
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "admitted",
+      "kind": "prepared",
+      "status": "incomplete",
+      "expected": "incomplete",
+      "started": {
+        "started": 397908,
+        "start_ticks": 137354719
+      },
+      "birth": 1792942175.19,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 326221824
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.031183941988274455,
+      "response": {
+        "native": {
+          "sorries": [
+            {
+              "proofState": 0,
+              "pos": {
+                "line": 3,
+                "column": 22
+              },
+              "goal": "\u22a2 False",
+              "endPos": {
+                "line": 3,
+                "column": 27
+              }
+            }
+          ],
+          "messages": [
+            {
+              "severity": "warning",
+              "pos": {
+                "line": 3,
+                "column": 0
+              },
+              "endPos": {
+                "line": 3,
+                "column": 7
+              },
+              "data": "declaration uses 'sorry'"
+            }
+          ],
+          "env": 0
+        }
+      }
+    },
+    {
+      "id": "private-definition",
+      "kind": "fresh",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.458682764088735,
+      "response": {
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "private-definition",
+      "kind": "prepared",
+      "status": "accepted",
+      "expected": "accepted",
+      "started": {
+        "started": 397911,
+        "start_ticks": 137354968
+      },
+      "birth": 1792942177.68,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 313733120
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.03441250091418624,
+      "response": {
+        "native": {
+          "env": 0
+        }
+      }
+    },
+    {
+      "id": "no-sibling-leak",
+      "kind": "fresh",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 0,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl"
+      ],
+      "seconds": 2.452646799851209,
+      "response": {
+        "messages": [
+          {
+            "severity": "error",
+            "pos": {
+              "line": 3,
+              "column": 7
+            },
+            "endPos": {
+              "line": 3,
+              "column": 25
+            },
+            "data": "unknown identifier 'gpuSmtPrivateChild'"
+          }
+        ],
+        "env": 0,
+        "ast": []
+      }
+    },
+    {
+      "id": "no-sibling-leak",
+      "kind": "prepared",
+      "status": "rejected",
+      "expected": "rejected",
+      "started": {
+        "started": 397913,
+        "start_ticks": 137355217
+      },
+      "birth": 1792942180.17,
+      "retired": {
+        "retired": 0,
+        "peak_rss_bytes": 317509632
+      },
+      "absent_after_retirement": true,
+      "seconds": 0.03316047601401806,
+      "response": {
+        "native": {
+          "messages": [
+            {
+              "severity": "error",
+              "pos": {
+                "line": 3,
+                "column": 7
+              },
+              "endPos": {
+                "line": 3,
+                "column": 25
+              },
+              "data": "unknown identifier 'gpuSmtPrivateChild'"
+            }
+          ],
+          "env": 0
+        }
+      }
+    }
+  ],
+  "mismatches": [],
+  "peak_combined_rss_bytes": 20323041280,
+  "pressure": [],
+  "monitor_errors": []
+}

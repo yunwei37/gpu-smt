@@ -1,0 +1,32 @@
+[
+  {
+    "id": "arithmetic",
+    "code": "import Mathlib\n\nexample (n : Nat) : n + 0 = n := by omega\n",
+    "expected": "accepted"
+  },
+  {
+    "id": "ring",
+    "code": "import Mathlib\n\nexample (x y : Int) : (x+y)^2 = x^2+2*x*y+y^2 := by ring\n",
+    "expected": "accepted"
+  },
+  {
+    "id": "failed",
+    "code": "import Mathlib\n\nexample : (1 : Nat) = 2 := by rfl\n",
+    "expected": "rejected"
+  },
+  {
+    "id": "admitted",
+    "code": "import Mathlib\n\nexample : False := by sorry\n",
+    "expected": "incomplete"
+  },
+  {
+    "id": "private-definition",
+    "code": "import Mathlib\n\ndef gpuSmtPrivateChild : Nat := 7\nexample : gpuSmtPrivateChild = 7 := by rfl\n",
+    "expected": "accepted"
+  },
+  {
+    "id": "no-sibling-leak",
+    "code": "import Mathlib\n\n#check gpuSmtPrivateChild\n",
+    "expected": "rejected"
+  }
+]

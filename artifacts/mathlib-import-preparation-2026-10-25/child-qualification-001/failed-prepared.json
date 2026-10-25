@@ -1,0 +1,36 @@
+{
+  "id": "failed",
+  "kind": "prepared",
+  "status": "rejected",
+  "expected": "rejected",
+  "started": {
+    "started": 397906,
+    "start_ticks": 137354468
+  },
+  "birth": 1792942172.68,
+  "retired": {
+    "retired": 0,
+    "peak_rss_bytes": 334438400
+  },
+  "absent_after_retirement": true,
+  "seconds": 0.033893469953909516,
+  "response": {
+    "native": {
+      "messages": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 30
+          },
+          "endPos": {
+            "line": 3,
+            "column": 33
+          },
+          "data": "The rfl tactic failed. Possible reasons:\n- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).\n- The arguments of the relation are not equal.\nTry using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.\n\u22a2 1 = 2"
+        }
+      ],
+      "env": 0
+    }
+  }
+}
