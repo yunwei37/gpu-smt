@@ -131,3 +131,11 @@ and42isolated resource-point reruns after the original group fully retires.
 固定source archive完全一致。准备完整模块供现有Rust引擎使用，未拆散
 定义和证明。189条Verina默认输入重新生成与旧输入完全相同。下一步
 需要实际原文件/stdin差分与profiling，不能将这些准备时间当加速数据。
+
+### Restore actual memory headroom on resource retry
+
+原代码在RSS超额后独占重跑时仍保留COW导入父进程，父子RSS相加会减少
+独占候选实际可用的预算。已修正为回收闲置父进程后走原生fresh重跑，
+清理与回退计入同一请求deadline；之后普通请求可重新准备。34项本地
+测试及实际4项Lean4.18原生CI通过。它使下一轮48GiB测量的资源组合更
+准确，不构成novelty或吞吐结果。旧采集继续，42条及完整Mathlib仍待槽位。

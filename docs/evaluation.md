@@ -228,3 +228,10 @@ byte-identical here. Retain exact sharing as a component, not a novelty or major
 performance claim. [Executed existing-data analysis](../artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md).
 
 Original lean-mlir code-workload prerequisites now [compile in the unchanged root package](../artifacts/lean-code-verification-2026-10-25/native-project-prerequisites2-20261025/result-review.md):60native targets/checks pass,with actual source/pins and combinedRSS retained. The bv_decide workload root remains unexecuted; no SAT/LRAT time or acceleration claim is available yet.
+
+The optional Rust import backend now [evicts idle prepared state for an exclusive
+resource retry](../artifacts/prepared-engine-2026-10-25/resource-retry/result-review.md),
+then uses fresh native execution within the remaining deadline. Exact source
+6e3d858passes four executed pinned-native differential/lifecycle tests and
+ordinary RustCI. This is a resource-composition repair; fullMathlib/native
+population and matched-throughput measurements remain outstanding.

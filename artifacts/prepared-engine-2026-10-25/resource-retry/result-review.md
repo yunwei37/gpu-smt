@@ -34,3 +34,20 @@ Sampling remains1s and is not a kernel quota. Goal still reports blocked despite
 the user's resume message and available API lacks an active transition; actual
 root work continues without requesting another resume command. Self-review
 was performed by the implementing root, not an independent reviewer.
+
+## Exact source native CI completed — 2026-10-25T14:52Z
+
+Source6e3d858919ff0309ab9306e0fbf0da26896abfe8 passes the actual
+[engine/native workflow](https://github.com/yunwei37/gpu-smt/actions/runs/40203946559)
+and smoke40203946557. Rust formatting/Clippy/tests/docs pass. All four actual
+native tests execute:4passed,0failed,0ignored in3.36s. The expanded prepared
+parent test observes old-parent retirement, unchanged raw fresh native response,
+a new parent for later ordinary work and complete cleanup. The raw native job
+log and terminal receipt are retained in artifacts/prepared-engine-2026-10-25/
+resource-retry. The earlier pending-CI text records the state at source push.
+
+This qualifies the declared Lean4.18 Init/Timer lifecycle context. It does not
+execute Mathlib candidates,42isolated retries or a throughput matrix, and does
+not prove all finite-resource populations preserve the same timeout/resource
+labels. Root self-review remains self-review; CI is not an independent scientific
+audit. No performance conclusion or completion of the research goal follows.
