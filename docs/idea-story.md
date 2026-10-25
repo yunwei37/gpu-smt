@@ -40,9 +40,13 @@ tactic/phase attribution on the native slowest10%FAILED cohort:480sources,
 including83timeouts/355Leanerrors/42resourcefailures. Its original83/old78
 timeout mapping, unchanged source inputs, native runtime profiling boundary
 and preflight are documented in the [measurement plan](../artifacts/lean-failure-profile-2026-10-25/plan.md).
-Qualification is underway; it is not a hotspot conclusion or speed result.
-Use the resulting measured distribution to select our next mechanism,
-including GPUparallel enumeration only if actualwork supports it.
+The C-only24source qualification is complete and the solefull480capture
+is running; neither qualification nor a partial profile is a hotspot conclusion.
+The user now freezes the externalCPUoracle as a baseline and permits a final
+new method only with a dominant measured cost and a costed full-population
+native-relative gain above1.3x, excluding frozen-oracle gains. Implementation
+and full pairing must complete by2026-11-01UTC; absent that evidence, stop
+new experiments and write a measurement/negative-results short paper.
 No external-system reproductions, narrow-kernel revival or newGPUgrid.
 
 The Initial Narrative, allfourRQs, Lean/SMTscope and OSDI-quality objective
@@ -152,3 +156,22 @@ with51arithmetic-mentioned300stimeouts; actualfalse-goalcoverage isunknown.
 The completeInitialNarrative/all4RQs and Lean+SMT/OSDIgoal stayintact, with
 futureeffort focused on our method rather than expanding competitors.
 [Plan and evidence](../artifacts/arithmetic-counterexample-2026-10-23/plan.md).
+
+### 2026-10-25 — user freezes the arithmetic oracle and bounds further research
+
+After reading the complete Initial Narrative and evolution, root accepts the
+explicit user decision: external certificate search, floatingLP/exact repair
+and the retained arithmetic CPU composition are established techniques and
+remain frozen baselines, not our contribution. No further oracle variant or
+experiment is admitted. This supersedes the earlier selected1,000/better-oracle
+1.5x continuation rule; numbers and raw results remain unchanged.
+The sole480failure profile must finish and its actual ranking be committed
+first. Continuing requires a dominant actual tactic/phase and a new method
+with defensible >1.3x end-to-end over native on all7,808or29,750originals,
+excluding oracle gains; completion deadline2026-11-01UTC. Otherwise new
+experiments end and the user authorizes a measurement/negative-results short
+paper. This is more faithful to the user's latest scope than presenting a
+known certificate interface as novelty or repeatedly narrowing GPU kernels.
+It preserves the Initial Narrative as history and does not pretend its four
+systems RQs were answered. Pending480evidence determines the conditional
+disposition. [Root decision/self-audit](tmp/bootstrap/step-0011-20261023T195335-0700/step-report.md#cpu-oracle-frozen-and-new-conditional-continuation).

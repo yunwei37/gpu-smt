@@ -25,10 +25,16 @@ allocation failure under the24GiB-per-process limit on both sides. The48GiB
 aggregate watchdog records no kills or errors.
 [Complete pair, accepted sets, failure causes and limitations](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md).
 
-Next, profile the baseline's83timeouts and slowest10%of failed requests
-(480sources) using actual Lean tactic/phase measurements, then choose our
-method from the dominant measured cost. All4RQs and the systems goal remain
-open. Existing external-system comparisons are retained without expansion.
+The sole active capture profiles the baseline's83timeouts and slowest10%of
+failed requests (480sources). Publish its actual tactic/phase ranking before
+admitting any method. Continue only if a dominant measured cost and our own
+new method support more than **1.3x end-to-end over native on the full7,808
+miniF2F or29,750Goedel population**, with implementation/full pairing due
+**2026-11-01UTC**. Otherwise stop new experiments and write a measurement and
+negative-results short paper. The external CPU oracle is **frozen as a baseline**:
+no optimization, extension or new oracle experiments, and no contribution claim.
+Its gains do not count toward1.3x. Existing comparisons and all raw data remain.
+[Decision and evidence boundary](docs/evaluation.md#current-decision-frozen-oracle-and-conditional-final-experiment).
 
 ## Collection resources
 
@@ -92,7 +98,7 @@ outcomes. Current run records identify actual SDKs, native libraries and
 numerical binaries; historical Workspace paths are not a universal installer.
 
 - [Current counterexample source and execution instructions](bench/lean-counterexample/README.md).
-- [Arithmetic implementation and experiment commands](bench/lean-native/linarith-oracle/README.md).
+- [Frozen arithmetic baseline and historical commands](bench/lean-native/linarith-oracle/README.md).
 - [Portable arithmetic source build and 64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).
 - [Retained-environment reproduction guide](docs/reproduce-checkpoint.md).
 - [Benchmark methodology](bench/README.md).

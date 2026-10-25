@@ -1,11 +1,18 @@
-# Lean arithmetic oracle experiments
+# Frozen Lean arithmetic oracle baseline
 
-Experimental CPU certificate-oracle research, with retained GPU attempts.
+Frozen by the user's2026-10-25 decision. Preserve the code, data and all
+completed/failed/partial results unchanged. This is a baseline, not a project
+contribution. No optimization, extension or new experiment is authorized:
+two-sided certificates, power export and exact-fallback tuning are included.
+The build/replay recipes below document historical reproducibility; they are
+not an active work queue. Existing shared memory-monitor/transport utilities
+can support the separately approved native failure profile without reopening
+the arithmetic oracle.
 [Current results, open RQs and resource point](../../../docs/evaluation.md)
 are the status authority. The public component, historical measurements and
-current whole-service capture have different reproducibility boundaries.
+completed whole-service measurements have different reproducibility boundaries.
 
-## Build and check the component
+## Archived component build and check
 
 [Buildable source and commands](reproduction/README.md) contain the Lean/Rust
 bodies, locked numerical dependencies, license and provenance. Supply an
@@ -19,7 +26,7 @@ native-reference executable, or historical clocks. Its standalone build/check
 commands do not install the experiment's aggregate-RSS watchdog. Do not use
 them as an additional unbudgeted shared-lab collection while another runs.
 
-## Reproduce the official HTTP comparison
+## Archived HTTP comparison
 
 The existing [kimina-http.py](kimina-http.py) command replays original
 source records through the official Kimina app/SDK with declared adaptations.
@@ -28,7 +35,7 @@ cover the dependency patches, native REPL, strong reference, CPU support
 environment, input contract and method boundary. Run --help with Kimina's
 Python environment to inspect the actual CLI.
 
-The [current full-population plan](../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
+The [completed full-population experiment](../../../artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/README.md)
 uses every original Goedel source and three alternating native/Powerpairs.
 Its exact source commit, actual command, preflight, single full launch and
 raw records remain adjacent. It is separate from the earlier stopped

@@ -161,7 +161,12 @@ For source verification backed by this SMT adapter, the measured interval also i
 
 For Lean, the adapter retains accepted context and keeps branch-local proof construction independent. It waits for source snapshots and the checked declaration environment before qualifying runtime quiescence, thread ownership and mutable extensions. Frontend completion alone does not establish that runtime workers, their finalizers and event loops have stopped. The adapter enables native process branching only after that separate runtime qualification.
 
-\subsection{Arithmetic certificate reuse}\label{sec:arithmetic-oracle}
+\subsection{Frozen arithmetic certificate baseline}\label{sec:arithmetic-oracle}
+The external native arithmetic oracle is retained as a frozen comparison
+baseline, not a contribution. External certificate search with native checking
+and floating-point support search followed by exact repair are established
+techniques; this composition does not supply systems novelty.
+
 The arithmetic experiment tests whether reusing an external coefficient
 certificate removes work that remains after native compilation and warm
 environment reuse. FarkasFast selects hypotheses numerically and then invokes
@@ -801,8 +806,9 @@ the maxima are 888, 3,160 and 26,044. The trace contains 3,102 cross-source
 matrix-ready-to-answer overlap pairs, with at most two open requests.
 These are hypothetical race windows, not GPU batches. Among the sources
 ranked slowest on the native reference, the slowest 1\% includes only nine
-exact fallbacks, but they occupy 108.36 accumulated seconds. The result motivates avoiding expensive exact fallback
-with support search rather than porting only the cheap floating-point stage.
+exact fallbacks, but they occupy 108.36 accumulated seconds. This attributes cost to exact fallback rather than only to the cheap
+floating-point stage; the retained oracle is frozen and this observation
+does not admit another support-search optimization.
 Missing stock, outer elaboration and product-provenance coverage, overlapping
 intervals and instrumentation prevent a scheduler-independent GPU ceiling.
 Peak sampled owned RSS is 15.55\,GiB, with no watchdog error or termination
@@ -834,8 +840,11 @@ GPU. Corresponding slowest 10\% sums are 1,266.11, 639.66 and 634.29 seconds.
 Concurrent HTTP sums are not isolated tail lifecycles. Sampled aggregate
 owned RSS peaks at 15.26\,GiB or less, including GPU-provider host memory,
 with no watchdog error, termination or surviving owned process. The selected
-cohort satisfies the local continuation criterion, but its oracle improvement
-does not establish a new systems contribution or a useful extra GPU effect.
+cohort met the earlier local oracle criterion. That historical criterion is
+superseded: frozen-oracle gains do not count toward the current requirement
+of more than $1.3\times$ full-population improvement from a new method.
+These measurements establish neither a new systems contribution nor a useful
+extra GPU effect.
 
 Earlier arithmetic versions, complete phase captures and the supported-expression GPU control remain in Appendix~\ref{app:arithmetic-history}; the supporting CPU comparisons remain in Appendix~\ref{app:cpu-controls}. These observations constrain their own mechanisms and do not supply a current GPU impossibility bound.
 
@@ -1552,7 +1561,7 @@ or $1.48814\times$, below the threshold. All outcomes and non-message fields
 again match, with the same 104 message-only differences and 105 observer
 read errors in the oracle cell. Across all three predeclared pairs,
 native and candidate whole times sum to 2,059.87 and 1,365.40 seconds:
-the aggregate ratio is $1.50862\times$. This meets the local continuation
+the aggregate ratio is $1.50862\times$. This met the historical local continuation
 criterion on the enriched arithmetic-heavy cohort, while preserving the
 subthreshold observation. It is not a confidence interval, full-population
 or globally strongest-CPU result.
@@ -1726,9 +1735,11 @@ warnings and their positions or counts. Raw responses remain unchanged,
 so outcome agreement does not establish diagnostic transparency.
 The ratio of aggregate complete times is $1.34668$, a $25.74\%$ elapsed-time
 reduction. This earlier CPU implementation finishes below the $1.5\times$ target.
-The final criterion uses the better valid CPU or GPU oracle result, and the
-complete CPU/GPU comparison remains in progress. These historical CPU-only results establish
-neither GPU acceleration nor GPU impossibility and do not close the project.
+The subsequent CPU/GPU comparison is complete and reported above. This
+earlier selected-cohort criterion is historical; the oracle is now frozen
+as a baseline and excluded from the current full-population continuation
+criterion. These CPU-only results establish neither GPU acceleration nor
+a general GPU impossibility.
 
 The GPU follow-up changes external support search using cuOpt
 primal-dual hybrid-gradient LP search (PDLP)~\cite{nvidia-cuopt-2026}, while retaining CPU exact repair and Lean proof

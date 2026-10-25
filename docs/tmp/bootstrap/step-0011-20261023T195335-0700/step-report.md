@@ -763,3 +763,44 @@ dependencywork, not a newhotspot or performance conclusion. Joint existing48GiB
 watchdog covers the shortanalysisplusretainedfullcapture,0kills/errors/max2.
 No activeinputs/nativebinary/resources aremodified. Full480completion remains
 the next scientificdecisionboundary; no extraGPU/externalmethodrun or emptypolling.
+
+
+## CPU oracle frozen and new conditional continuation
+
+EXPERIMENT_GATE: the latest verbatim user decision is appended to
+docs/user-instruction.md. Freeze the external native arithmetic CPU oracle:
+preserve code/data/results, prohibit new variants, optimization or experiments
+(including dual certificates, power export and exact-fallback tuning), and
+exclude it from novelty and the new performance threshold. Native failure
+profiling uses shared transport/watchdog utilities, not another oracle run.
+The healthy full480PID275822/birth1792894799.05 is preserved; no result or
+dominant full-cohort tactic is declared before its actual completion.
+
+Continue only after publishing the complete480ranking and self-review, and
+only if a dominant measured tactic/phase plus our new method support >1.3x
+end-to-end over native for all7,808miniF2F or29,750Goedel candidates, excluding
+frozen-oracle gains. A hypothetical removal must distinguish cumulative CPU,
+overlapping HTTP, scheduling and whole elapsed; include the method's actual
+preparation, queueing, fallback and cleanup. Do not infer a removable share
+from a CPU tally alone. If admitted, implement and complete full paired
+measurement by2026-11-01UTC; otherwise stop new experiments and write the
+user-authorized measurement/negative-results short paper. Old local1.5x
+decisions remain dated history, not current authority.
+
+WRITE_GATE: source/artifact entrypoints, current README/evaluation/narrative
+and manuscript label the oracle a frozen baseline and correct obsolete
+continuation/progress wording without changing any number or raw record.
+The conditional short-paper reconstruction is authorized by the user but
+not yet decided before480evidence. Initial Narrative is preserved intact.
+
+REVIEW_GATE: root self-review only. Full idea-story and current instructions
+were read; no independent auditor is claimed. Only documentation/paper
+expression changes at this boundary, no active profiling inputs/native binary
+or resource point changed. Foreign dirty paths and live capture outputs are
+excluded from staging. Existing hourly task updated to this precise scope,
+with original frequency/target/executor retained. No new scheduler or agent.
+
+Targeted paper compilation completed successfully with the currentPDF;
+[command, logs and root self-review](cpu-oracle-freeze-paper-check/self-review.md)
+retain actual cost/monitor evidence. The14missing result slots and32page
+draft are not submission readiness. No active capture input was changed.

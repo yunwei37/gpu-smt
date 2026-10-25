@@ -507,3 +507,21 @@ dependencywork, not a newhotspot or performance conclusion. Joint existing48GiB
 watchdog covers the shortanalysisplusretainedfullcapture,0kills/errors/max2.
 No activeinputs/nativebinary/resources aremodified. Full480completion remains
 the next scientificdecisionboundary; no extraGPU/externalmethodrun or emptypolling.
+
+## Root self-audit: oracle freeze and conditional final experiment
+
+Explicit latest user authority changes the continuation rule; it is not a
+reviewer-induced thesis reduction. Full Initial Narrative/evolution read and
+preserved. Existing CPU/GPU data stay unchanged and oracle code is untouched;
+the paper now identifies that composition as a frozen baseline. No new
+oracle experiment, source change or external-system reproduction is admitted.
+The480capture remains the sole live group with its original identity/resources.
+The >1.3x full-population condition excludes frozen-oracle gains; deadline
+2026-11-01UTC and the alternative measurement short paper are explicit.
+No new performance conclusion follows from this documentation boundary.
+Self-review is not an independent audit; full480ranking/interpretation is pending.
+
+Targeted paper compilation completed successfully with the currentPDF;
+[command, logs and root self-review](cpu-oracle-freeze-paper-check/self-review.md)
+retain actual cost/monitor evidence. The14missing result slots and32page
+draft are not submission readiness. No active capture input was changed.

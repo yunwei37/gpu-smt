@@ -23,7 +23,25 @@ its dated pending statements are historical. Original older evidence remains
 [outer self-audit](tmp/bootstrap/step-0010-20261014T133154+0000/outer-audit-report.md)
 retain gates, failed routes and scope.
 
-## Current own-method frontier
+## Current decision: frozen oracle and conditional final experiment
+
+The external native arithmetic CPU oracle is **frozen as a baseline** by the
+user's2026-10-25 decision. Its code, data and results remain in place; no
+optimization, extension or new oracle experiment is authorized, including
+two-sided certificates, power export or exact-fallback tuning. External
+certificate search/checking and floating LP with exact repair are established
+techniques, not this project's contribution.
+
+Finish and publish the sole480-source failed-tail profile first. Continue
+experiments only if a dominant measured tactic/phase and an explicitly costed
+new method support **more than1.3x end-to-end over native on all7,808miniF2F
+or29,750Goedel candidates**, excluding frozen-oracle gains. A selected tail's
+CPU percentage is not that estimate. Any admitted implementation/full pair
+must finish by **2026-11-01UTC**; otherwise, or if admission fails, stop new
+experiments and write the measurement/negative-results short paper. The
+original narrative remains historical authority, not evidence of contribution.
+
+## Earlier own-method observations
 
 [Three costly factorization timeouts](../artifacts/arithmetic-counterexample-2026-10-23/timeout-factorization-20261024T0805/result-review.md)
 record300srequest limits but9captured true arithmetic obligations. Their full
@@ -81,9 +99,10 @@ disposition](../artifacts/arithmetic-counterexample-2026-10-23/failure-entry-cos
 The future worker evaluates2349closed supported entries directly onCPU,
 avoiding identical GPUgrid copies. Real data replay is functional only.
 
-The complete own7808source goal observation remains active, with the original
-PID/birth and frozen source. Full false-goal/cost/timeout coverage and native
-off/on outcomes are pending. No further external-system reproduction starts.
+The dated observation described above has completed; the final corrected
+7,808-source GPU pair and its negative result appear below. These partial
+observations retain their own coverage and cannot replace that final result.
+No further external-system reproduction or GPU-pair expansion starts.
 [Current step and root self-audit](tmp/bootstrap/step-0011-20261023T195335-0700/step-report.md).
 
 ## Fixed research questions
@@ -169,8 +188,9 @@ and non-message fields;108message differences retained. It uses eight queues,
 48GiB per worker and observer-off, not the current resource point.
 [Original result](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md).
 The three earlier instrumented pairs aggregate1.78205× on a different affinity.
-The original better-valid-CPU/GPU1.5×criterion on1,000 is unchanged. Passing
-that local CPU criterion does not establish full-population1.5× or OSDI novelty.
+The earlier better-valid-CPU/GPU1.5x criterion on1,000 is historical.
+It is superseded by the user decision above; frozen-oracle gains do not
+qualify the new full-population1.3x criterion or establish OSDI novelty.
 
 ## Standard workloads and strongest-service comparisons
 
