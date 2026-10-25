@@ -909,3 +909,7 @@ next evidence, not setup, lexical tokens or the unsuccessful predictor.
 ## 2026-10-25 completed 480-source result
 
 480/480 returned; original 355/83/42 statuses unchanged. Timeout sampled CPU: interval_cases 55.19%, simp_all 28.21%; ordinary-error simp_all 48.65%. Full raw, per-source ranking, memory and censored-stream limits retained in artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md. Root self-review only; no speedup or failure-prediction proof claimed. Goal remains active; CPU oracle frozen.
+
+## 2026-10-25 native first-success qualification
+
+Eight real candidates: original 4 valid/4 errors; both first-success policies actually check one valid and four errors, cancel three queued siblings, and retain solved task {0}. Lifecycle 6.21/6.20/6.33 seconds is startup-dominated, no speedup claim. All native cells retired within 48 GiB/2 REPL contract. Transport error-shaped cancellation slots are separately mapped, never counted as actual rejection. Full data and self-review in artifacts/candidate-scheduling-2026-10-25/native-qualification-20261025T0715. Verina three-file native/profiler qualification now owns the sole proof-collection slot.

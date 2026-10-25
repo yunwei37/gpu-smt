@@ -105,6 +105,8 @@ async def main(args):
     row['result']=dict(row['result'],time=None)
    else:row=dict(row,native_response_returned=True)
    consumer.append(row)
+  value['transport_slot_counts']=value['counts']
+  value['consumer_counts']=dict(collections.Counter(row['status']for row in consumer))
   with gzip.open(out/'consumer-results.jsonl.gz','wt')as f:
    for row in consumer:f.write(json.dumps(row,ensure_ascii=False)+'\n')
   for path in list(out.iterdir()):
