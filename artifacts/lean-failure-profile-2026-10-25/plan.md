@@ -25,7 +25,7 @@ The official evalTactic/profileitM boundary already calls lean_profileit with ca
 and actual syntax kind. Link only a diagnostic wrapper around that runtime function,
 reusing the exact existing native object files. No source/tactic rewriting or verifier
 algorithm changes. Native result/exception is returned unchanged.
-Record calls, inclusive wall/threadCPU and child-subtracted exclusive threadCPU by
+Use C/pthreads/zlib without adding a C++exception runtime. Record calls, inclusive wall/threadCPU and child-subtracted exclusive threadCPU by
 category/name. Snapshot cumulative counters and active native stacks every1s to gzip,
 plus each completed outer region. This preserves unfinished timeout activity.
 Source ownership comes from the existing native transport's source/PID activity file;
@@ -54,3 +54,20 @@ effects, not acceptance/performance gains.
 Output artifacts/lean-failure-profile-2026-10-25; command in build/launch receipts.
 The next paired acceleration experiment is chosen only after this distribution.
 No user approval pending; root alone executes and self-reviews. Independent audit absent.
+
+## Actual preflight1 diagnostic repair
+The original GNU C++link wrapper engages realnative tactic calls, but on real
+allocationfailure2404 introduces 'terminate called without an active exception'
+instead of the originalbad_alloc/resource_failure. It is cancelled and all
+raw preserved; no finalhotspot result is admitted. Its completed native24control
+remains unchanged and reusable (326.646616s,4valid/18Leanerror/1timeout/1resource).
+The replacement is C/pthreads/zlib, with originalnative C++runtime and existing
+nativeobjects unchanged. Qualification2 reruns all24instrumented inputs and
+reuses the closednative24control, charging/reviewing the same source boundaries.
+ActualCqualification now reproduces return134/std::bad_alloc on2404; completion
+and300stimeout still must be collected. Diagnosticfixedtable capacity counters,
+gzip stream termination and1sendpoint sampledCPUownership are explicit in outputs.
+The hypothesis/cohort/resources are unchanged; this is a protocol implementation
+repair, not a newGPU variant or a performance claim.
+
+Full480replay preserves original numeric sourceorder within the fixed native-ranked selectedset. Actualqualified C-only boundary/profile sources are frozen for that onecapture.

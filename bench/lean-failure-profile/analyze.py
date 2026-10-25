@@ -24,15 +24,35 @@ def main():
  terminal=json.loads((a.run/'profile/terminal.json').read_text())
  if terminal['state']!='complete'or terminal['returned']!=len(wanted):raise RuntimeError('Preserve partial run; not final hotspot distribution')
  cells={'profile':{x['proof_id']:x for x in rawrows(a.run/'profile/results.jsonl')}}
- if(a.run/'native/terminal.json').exists():cells['native']={x['proof_id']:x for x in rawrows(a.run/'native/results.jsonl')}
- latest={};streams=[];unknown=collections.Counter();events=0
+ native_dir=a.run/'native'
+ if(a.run/'reused-native.json').exists():native_dir=Path(json.loads((a.run/'reused-native.json').read_text())['directory'])
+ if(native_dir/'terminal.json').exists():cells['native']={x['proof_id']:x for x in rawrows(native_dir/'results.jsonl')}
+ latest={};streams=[];unknown=collections.Counter();events=0;flags=collections.Counter()
+ sampled=collections.defaultdict(lambda:collections.Counter());previous_samples={}
+ sampled_limits=collections.Counter()
  for file in sorted((a.run/'profiles').glob('*.jsonl.gz')):
   first=last=None;count=0;meta={}
   for q in snapshots(file):
    if '_stream_closed'in q:meta=q;continue
    events+=1;count+=1;first=first or q['time_ns'];last=q['time_ns']
+   flags['sampler_error']=max(flags['sampler_error'],q.get('sampler_error',0))
    for t in q['threads']:
     sid=t['source_id'];phase=t['phase']
+    for flag in ['dropped_keys','truncated_keys','frame_overflows','clock_errors']:
+     flags[flag]=max(flags[flag],t.get(flag,0))
+    if q['event']=='sample':
+     ident=(q['pid'],t['tid']);prior=previous_samples.get(ident);previous_samples[ident]=(q['time_ns'],t)
+     if prior:
+      old_time,old=prior;dt=q['time_ns']-old_time;dc=t['thread_cpu_ns']-old['thread_cpu_ns']
+      if dc<0:sampled_limits['negative_clock_intervals']+=1
+      elif old['source_id']!=sid or old['phase']!=phase:sampled_limits['source_transition_intervals']+=1
+      elif sid in wanted and phase=='body':
+       if dt>2500000000:sampled_limits['long_sample_gaps']+=1;sampled_limits['long_gap_CPU_ns']+=dc
+       else:
+        stack=t['active'];component=stack[-1]['key']if stack else 'outside active profile boundary'
+        tactic=next((f['key']for f in reversed(stack)if f['key'].startswith('tactic execution|')),'outside active tactic boundary')
+        sampled[sid][('component',component)]+=dc;sampled[sid][('tactic',tactic)]+=dc
+        sampled[sid][('observed','wall_ns')]+=dt
     if sid not in wanted:unknown[(sid,phase)]+=1;continue
     latest[(q['pid'],t['tid'],sid,phase)]=(q['time_ns'],t)
   streams.append(dict(path=str(file),records=count,first_ns=first,last_ns=last,**meta))
@@ -57,11 +77,35 @@ def main():
    for k,v in values.items():x[k]+=v
   ranked=sorted(components.items(),key=lambda x:-x[1]['exclusive_cpu_ns'])
   per_source.append(dict(source_id=sid,baseline_status=selected['baseline_statuses'][sid],profile_status=cells['profile'][sid]['status'],baseline_HTTP_seconds=selected['baseline_HTTP_seconds'][sid],profile_body_seconds=cells['profile'][sid]['result'].get('time'),measured_exclusive_cpu_seconds=sum(x['exclusive_cpu_ns']for x in components.values())/1e9,top_native_boundary=ranked[0][0]if ranked else None,components=components))
+ sampling=[]
+ for family in ['component','tactic']:
+  counters=collections.Counter()
+  for values in sampled.values():
+   for(kind,key),value in values.items():
+    if kind==family:counters[key]+=value
+  sampling.append(dict(family=family,ranked=[dict(key=k,endpoint_weighted_thread_CPU_seconds=v/1e9)for k,v in counters.most_common()]))
+ for row in per_source:
+  row['sampled_CPU_weights']=[dict(family=k[0],key=k[1],nanoseconds=v)for k,v in sampled[row['source_id']].items()]
  ranked=[dict(key=k,**v)for k,v in sorted(totals.items(),key=lambda x:-x[1]['exclusive_cpu_ns'])]
- result=dict(source_count=len(wanted),sources_with_native_boundary_data=len(by_source),profile_status_counts=dict(collections.Counter(x['status']for x in cells['profile'].values())),status_changes_from_original=[dict(source_id=i,baseline=selected['baseline_statuses'][i],profile=cells['profile'][i]['status'])for i in selected['ids']if selected['baseline_statuses'][i]!=cells['profile'][i]['status']],ranked=ranked,open_frames=open_frames,profile_streams=streams,unknown_source_snapshot_counts=[dict(source_id=k[0],phase=k[1],records=v)for k,v in unknown.items()],events=events,scope='Actual stock profileit/profileitM boundaries, child-subtracted thread CPU plus final observed open frames. Inclusive spans overlap. This diagnostic is not a speedup, exhaustive source/CPU attribution, or removable critical-path fraction.')
+ result=dict(source_count=len(wanted),sources_with_native_boundary_data=len(by_source),diagnostic_flags_maximum_over_threads=dict(flags),profile_status_counts=dict(collections.Counter(x['status']for x in cells['profile'].values())),status_changes_from_original=[dict(source_id=i,baseline=selected['baseline_statuses'][i],profile=cells['profile'][i]['status'])for i in selected['ids']if selected['baseline_statuses'][i]!=cells['profile'][i]['status']],ranked=ranked,open_frames=open_frames,profile_streams=streams,unknown_source_snapshot_counts=[dict(source_id=k[0],phase=k[1],records=v)for k,v in unknown.items()],events=events,sampled_endpoint_CPU_rankings=sampling,sampled_interval_limits=dict(sampled_limits),scope='Actual stock profileit/profileitM boundaries, child-subtracted thread CPU plus final observed open frames. Inclusive spans overlap. Endpoint-weighted1sCPU samples are approximate attribution; source transitions and long gaps are reported separately. This diagnostic is not a speedup, exhaustive source/CPU attribution, or removable critical-path fraction.')
  if 'native'in cells:
+  def envelopes(directory):
+   result={}
+   for x in rawrows(directory/'http.jsonl'):
+    if x.get('event')=='response':
+     snippets=json.loads(x['request']).get('snippets',[])
+     if len(snippets)==1 and snippets[0]['id']in wanted:
+      sid=snippets[0]['id']
+      if sid in result:raise RuntimeError('Retain retries; no ambiguous diagnostic comparison')
+      result[sid]=(x['end_ns']-x['start_ns'])/1e9
+   return result
+  native_http=envelopes(native_dir);profile_http=envelopes(a.run/'profile')
+  for row in per_source:
+   sid=row['source_id'];row['fresh_native_HTTP_seconds']=native_http.get(sid)
+   row['profile_HTTP_seconds']=profile_http.get(sid)
+   row['fresh_native_body_seconds']=cells['native'][sid]['result'].get('time')
   result['fresh_native_profile_status_changes']=[dict(source_id=i,native=cells['native'][i]['status'],profile=cells['profile'][i]['status'])for i in selected['ids']if cells['native'][i]['status']!=cells['profile'][i]['status']]
-  nt=json.loads((a.run/'native/terminal.json').read_text());result['fresh_native_seconds']=nt['whole_lifecycle_seconds'];result['profile_seconds']=terminal['whole_lifecycle_seconds']
+  nt=json.loads((native_dir/'terminal.json').read_text());result['fresh_native_seconds']=nt['whole_lifecycle_seconds'];result['profile_seconds']=terminal['whole_lifecycle_seconds']
   result['extra_elapsed_percent']=(terminal['whole_lifecycle_seconds']/nt['whole_lifecycle_seconds']-1)*100
  (a.out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
  (a.out/'per-source.json').write_text(json.dumps(per_source,indent=2)+'\n')

@@ -1,0 +1,38 @@
+{
+  "groups": {
+    "failed480": {
+      "sources": 480,
+      "native_HTTP_sum_seconds": 34602.439199711,
+      "gpu_HTTP_sum_seconds": 34761.759295647,
+      "native_reported_body_sum_seconds": 30298.268678,
+      "statuses": {
+        "lean_error": 355,
+        "timeout_error": 83,
+        "resource_failure": 42
+      }
+    },
+    "all_failed": {
+      "sources": 4794,
+      "native_HTTP_sum_seconds": 36981.890285075,
+      "gpu_HTTP_sum_seconds": 39748.728828581,
+      "native_reported_body_sum_seconds": 32327.877325,
+      "statuses": {
+        "lean_error": 4669,
+        "timeout_error": 83,
+        "resource_failure": 42
+      }
+    },
+    "timeouts83": {
+      "sources": 83,
+      "native_HTTP_sum_seconds": 24966.405941674,
+      "gpu_HTTP_sum_seconds": 24998.866242602,
+      "native_reported_body_sum_seconds": 24900.0,
+      "statuses": {
+        "timeout_error": 83
+      }
+    }
+  },
+  "failed480_share_of_all_failed_cumulative_HTTP": 0.9356590194005229,
+  "timeout_share_of_all_failed_cumulative_HTTP": 0.6750981561304842,
+  "scope": "Complete original native response envelopes, overlapping across two concurrent candidates. Cohort selection/cost concentration only, not whole elapsed CPU fractions or tactic attribution."
+}

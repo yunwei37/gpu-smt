@@ -466,3 +466,18 @@ WRITE_GATE onlyupdates currentfrontier, no result insertedbeforeactualcompletion
 REVIEW_GATE rootselfreview records scope/unknowns; noindependent audit.
 The existinghourlytask prompt isupdated to currentuserdirection withoutcadence,
 target or executorchange. No newscheduler/agent/Workspace iscreated.
+
+## Failure-hotspot qualification complete; full480 admitted
+EXPERIMENT_GATE actualnative24control326.646616444s/C-onlyprofile24
+326.839955370s,4valid/18Leanerror/1timeout/1resourcefailure unchanged. Actual
+all24sourceattribution, zero sampler/table/truncation/clock faults; allchildren
+retire undermax2/24GiBAS/48GiBaggregate/CPU8–11. The300stimeout andbad_alloc
+paths are measured, not excluded. Smallwholeclockdifference0.059189% is not
+proof ofzerooverhead. [Rootselfreview](../../../../artifacts/lean-failure-profile-2026-10-25/preflight-result-review.md).
+OriginalC++diagnostic failure/raw/HTTP500 retained; Cinterface restoresoriginal
+bad_alloc withoutaddedC++runtime. Nativecontrol remainsvalid/reused. Onlytwo
+realqualificationattempts ran; dependencycompileerrors are separatelyretained.
+WRITE_GATE keeps the14remainingpaperresultslots and allfourRQopen; no24source
+hotspotheadline. REVIEW_GATE selfaudit admits thefixed480failedtail inoriginal
+sourceorder, not aGPU or externalmethodvariant. Main mechanismselection awaits
+full480ranked actualtactic/phase costs, includingunclosedtimeoutprofiles.

@@ -1,0 +1,143 @@
+{"event": "cell_start", "mode": "native", "sources": 24, "pid": 275162}
+{"state": "complete", "method": "stock", "expected": 24, "source_concurrency": 2, "affinity": [8, 9, 10, 11], "memory_limit_bytes": 51539607552, "aggregate_memory_budget_bytes": 51539607552, "per_native_repl_address_limit_bytes": 25769803776, "maximum_live_native_repls": 2, "cost_timing_requested": false, "cost_timing_effective": false, "cost_timing_log": null, "omega_control_log": null, "reference_diagnostic": false, "reference_phases": false, "reference_phase_log": null, "native_engine": null, "native_helper": "/workspaces/repository/artifacts/lean-modern-native-compilation-2026-10-14/farkas-external-support", "native_hybrid_override": null, "lean_version": "v4.9.0-rc1", "native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so", "scope": "Official Kimina HTTP/SDK replay; complete owned lifecycle and aggregate memory, root self-review.", "GPU_enabled": false, "GPU_provider": null, "GPU_minimum_rows": null, "retained_strong_CPU": false, "returned": 24, "counts": {"valid": 4, "lean_error": 18, "timeout_error": 1, "resource_failure": 1}, "server_ready_seconds": 0.782380747, "preparation_seconds": 3.634465147, "warm_verify_seconds": 322.827592051, "server_exit": -15, "joined_owned_descendants": 0, "owned_live_descendants_after_shutdown": [], "memory_watchdog": {"root_pid": 275162, "root_birth": 1792893450.66, "budget_bytes": 51539607552, "effective_threshold_bytes": 51539607552, "per_second": true, "samples": 327, "kills": 0, "peak_sampled_owned_rss_bytes": 30079418368, "peak_sampled_native_repl_count": 2, "error": null, "peak_external_owned_provider_rss_bytes": 0, "included_owned_roots": [{"pid": 275162, "birth": 1792893450.66, "out": "/workspaces/repository/artifacts/lean-failure-profile-2026-10-25/preflight24/native"}], "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."}, "whole_lifecycle_seconds": 326.646616444, "waited_child_cpu_seconds": 114.984287, "cpu_scope": "Not validated exhaustive descendant CPU; no pure solver attribution."}
+{"event": "cell_start", "mode": "profile", "sources": 24, "pid": 275162}
+Error posting to http://127.0.0.1:54145/api/check: Server error '500 Internal Server Error' for url 'http://127.0.0.1:54145/api/check'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 1.0 seconds as it raised HTTPStatusError: Server error '500 Internal Server Error' for url 'http://127.0.0.1:54145/api/check'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500.
+Error posting to http://127.0.0.1:54145/api/check: Server error '500 Internal Server Error' for url 'http://127.0.0.1:54145/api/check'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+Retrying kimina_client.async_client.AsyncKiminaClient._query.<locals>.run_method in 2.0 seconds as it raised HTTPStatusError: Server error '500 Internal Server Error' for url 'http://127.0.0.1:54145/api/check'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500.
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/workspaces/repository/bench/lean-failure-profile/run.py", line 44, in main
+    for mode in modes:
+            ^^^^^^^^^^
+  File "/workspaces/repository/bench/lean-native/linarith-oracle/kimina-http.py", line 211, in cell
+    replies=await client.check(snippets,timeout=300,batch_size=1,max_workers=concurrency,reuse=True,show_progress=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/client/kimina_client/async_client.py", line 77, in check
+    results = await asyncio.gather(*tasks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/client/kimina_client/async_client.py", line 68, in worker
+    return await self.api_check(
+           ^^^^^^^^^^^^^^^^^^^^^
+        batch, timeout, debug, reuse, infotree, True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/client/kimina_client/async_client.py", line 99, in api_check
+    resp = await self._query(url, payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/client/kimina_client/async_client.py", line 138, in _query
+    return await run_method()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/client/kimina_client/async_client.py", line 121, in run_method
+    response = await self.session.post(url, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 136, in handle_async_request
+    raise exc
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 35, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1254, in receive
+    await self._protocol.read_event.wait()
+  File "/usr/lib/python3.13/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-failure-profile/run.py", line 59, in <module>
+    if p.is_file()and p.suffix in ['.jsonl','.log']:
+      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

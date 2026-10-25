@@ -11,3 +11,11 @@ Profiler output must not corrupt REPL JSON or convert harmless stderr into a fai
 Active-frame snapshots must preserve cancelledwork and sourceownership. ExclusiveCPU
 is not removable wall; outputthresholds/missingfunctions must remain unknown.
 Preflight includes the realtimeout/allocation paths and nativecomparison. Proceed.
+
+
+## Root self-review after actual qualification1
+Reject the C++instrumented measurement because native allocation-failure handling
+changed and HTTP500retries would distort costs. Keep the successfulnative24control
+and allfailedraw. C-only wrapper removes the addedGNUexceptionruntime;
+actualresourcecase now has the originalbad_alloc marker. Require completed24and
+retirement/counter/sourcecoverage review before full480. Rootselfreview only.

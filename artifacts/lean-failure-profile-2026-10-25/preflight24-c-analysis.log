@@ -1,0 +1,275 @@
+{
+  "source_count": 24,
+  "sources_with_native_boundary_data": 24,
+  "diagnostic_flags_maximum_over_threads": {
+    "sampler_error": 0,
+    "dropped_keys": 0,
+    "truncated_keys": 0,
+    "frame_overflows": 0,
+    "clock_errors": 0
+  },
+  "profile_status_counts": {
+    "valid": 4,
+    "lean_error": 18,
+    "timeout_error": 1,
+    "resource_failure": 1
+  },
+  "status_changes_from_original": [],
+  "unknown_source_snapshot_counts": [
+    {
+      "source_id": "unknown",
+      "phase": "unknown",
+      "records": 2
+    },
+    {
+      "source_id": "warm-0",
+      "phase": "header",
+      "records": 6
+    },
+    {
+      "source_id": "warm-0",
+      "phase": "body",
+      "records": 5
+    },
+    {
+      "source_id": "warm-1",
+      "phase": "header",
+      "records": 6
+    },
+    {
+      "source_id": "warm-1",
+      "phase": "body",
+      "records": 5
+    }
+  ],
+  "events": 658,
+  "sampled_endpoint_CPU_rankings": [
+    {
+      "family": "component",
+      "ranked": [
+        {
+          "key": "simp|",
+          "endpoint_weighted_thread_CPU_seconds": 310.967612162
+        },
+        {
+          "key": "elaboration|",
+          "endpoint_weighted_thread_CPU_seconds": 76.002032764
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "endpoint_weighted_thread_CPU_seconds": 9.001097589
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "endpoint_weighted_thread_CPU_seconds": 2.999813172
+        },
+        {
+          "key": "typeclass inference|Preorder",
+          "endpoint_weighted_thread_CPU_seconds": 1.008568819
+        },
+        {
+          "key": "typeclass inference|ContravariantClass",
+          "endpoint_weighted_thread_CPU_seconds": 1.000256367
+        },
+        {
+          "key": "typeclass inference|CovariantClass",
+          "endpoint_weighted_thread_CPU_seconds": 1.000223763
+        },
+        {
+          "key": "typeclass inference|ExistsAddOfLE",
+          "endpoint_weighted_thread_CPU_seconds": 1.000194334
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "endpoint_weighted_thread_CPU_seconds": 1.000182301
+        },
+        {
+          "key": "typeclass inference|Nat.AtLeastTwo",
+          "endpoint_weighted_thread_CPU_seconds": 1.000064892
+        },
+        {
+          "key": "typeclass inference|Decidable",
+          "endpoint_weighted_thread_CPU_seconds": 1.000014804
+        },
+        {
+          "key": "typeclass inference|PartialOrder",
+          "endpoint_weighted_thread_CPU_seconds": 0.999957581
+        },
+        {
+          "key": "outside active profile boundary",
+          "endpoint_weighted_thread_CPU_seconds": 0.977866129
+        }
+      ]
+    },
+    {
+      "family": "tactic",
+      "ranked": [
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+          "endpoint_weighted_thread_CPU_seconds": 314.975448009
+        },
+        {
+          "key": "outside active tactic boundary",
+          "endpoint_weighted_thread_CPU_seconds": 76.979898893
+        },
+        {
+          "key": "tactic execution|nlinarith",
+          "endpoint_weighted_thread_CPU_seconds": 13.001964199
+        },
+        {
+          "key": "tactic execution|Lean.Parser.Tactic.simp",
+          "endpoint_weighted_thread_CPU_seconds": 2.000391275
+        },
+        {
+          "key": "tactic execution|Mathlib.Tactic.normNum",
+          "endpoint_weighted_thread_CPU_seconds": 1.000182301
+        }
+      ]
+    }
+  ],
+  "sampled_interval_limits": {
+    "source_transition_intervals": 18
+  },
+  "scope": "Actual stock profileit/profileitM boundaries, child-subtracted thread CPU plus final observed open frames. Inclusive spans overlap. Endpoint-weighted1sCPU samples are approximate attribution; source transitions and long gaps are reported separately. This diagnostic is not a speedup, exhaustive source/CPU attribution, or removable critical-path fraction.",
+  "fresh_native_profile_status_changes": [],
+  "fresh_native_seconds": 326.646616444,
+  "profile_seconds": 326.83995537,
+  "extra_elapsed_percent": 0.05918901842754121
+}
+[
+  {
+    "key": "simp|",
+    "calls": 10311,
+    "wall_ns": 326358062962,
+    "inclusive_cpu_ns": 326253575835,
+    "exclusive_cpu_ns": 323052740329,
+    "open_frames": 1,
+    "sources": 18
+  },
+  {
+    "key": "elaboration|",
+    "calls": 92,
+    "wall_ns": 423272034210,
+    "inclusive_cpu_ns": 423164398767,
+    "exclusive_cpu_ns": 76300797666,
+    "open_frames": 2,
+    "sources": 24
+  },
+  {
+    "key": "tactic execution|nlinarith",
+    "calls": 47,
+    "wall_ns": 18031011185,
+    "inclusive_cpu_ns": 18028890645,
+    "exclusive_cpu_ns": 13828442967,
+    "open_frames": 0,
+    "sources": 9
+  },
+  {
+    "key": "typeclass inference|ExistsAddOfLE",
+    "calls": 2859,
+    "wall_ns": 1587698329,
+    "inclusive_cpu_ns": 1586023090,
+    "exclusive_cpu_ns": 1531836088,
+    "open_frames": 0,
+    "sources": 9
+  },
+  {
+    "key": "tactic execution|Lean.Parser.Tactic.simpAll",
+    "calls": 272,
+    "wall_ns": 322012077723,
+    "inclusive_cpu_ns": 321918692988,
+    "exclusive_cpu_ns": 1390395092,
+    "open_frames": 1,
+    "sources": 10
+  },
+  {
+    "key": "typeclass inference|PartialOrder",
+    "calls": 4362,
+    "wall_ns": 783095653,
+    "inclusive_cpu_ns": 778986184,
+    "exclusive_cpu_ns": 778986184,
+    "open_frames": 0,
+    "sources": 17
+  },
+  {
+    "key": "typeclass inference|Preorder",
+    "calls": 7819,
+    "wall_ns": 571582238,
+    "inclusive_cpu_ns": 565013937,
+    "exclusive_cpu_ns": 565013937,
+    "open_frames": 0,
+    "sources": 18
+  },
+  {
+    "key": "typeclass inference|CovariantClass",
+    "calls": 476,
+    "wall_ns": 610508940,
+    "inclusive_cpu_ns": 609912979,
+    "exclusive_cpu_ns": 545145865,
+    "open_frames": 0,
+    "sources": 14
+  },
+  {
+    "key": "typeclass inference|ContravariantClass",
+    "calls": 2012,
+    "wall_ns": 497386568,
+    "inclusive_cpu_ns": 496288276,
+    "exclusive_cpu_ns": 476401905,
+    "open_frames": 0,
+    "sources": 7
+  },
+  {
+    "key": "tactic execution|Mathlib.Tactic.normNum",
+    "calls": 22,
+    "wall_ns": 646935466,
+    "inclusive_cpu_ns": 646866910,
+    "exclusive_cpu_ns": 350769509,
+    "open_frames": 0,
+    "sources": 10
+  },
+  {
+    "key": "typeclass inference|OrderedSub",
+    "calls": 766,
+    "wall_ns": 343036900,
+    "inclusive_cpu_ns": 342372567,
+    "exclusive_cpu_ns": 339154405,
+    "open_frames": 0,
+    "sources": 8
+  },
+  {
+    "key": "typeclass inference|Decidable",
+    "calls": 1207,
+    "wall_ns": 254479267,
+    "inclusive_cpu_ns": 253133307,
+    "exclusive_cpu_ns": 253133307,
+    "open_frames": 0,
+    "sources": 7
+  },
+  {
+    "key": "norm_num|",
+    "calls": 13570,
+    "wall_ns": 4594443615,
+    "inclusive_cpu_ns": 4589244904,
+    "exclusive_cpu_ns": 244716120,
+    "open_frames": 0,
+    "sources": 15
+  },
+  {
+    "key": "type checking|",
+    "calls": 119,
+    "wall_ns": 232907715,
+    "inclusive_cpu_ns": 232740271,
+    "exclusive_cpu_ns": 232740271,
+    "open_frames": 0,
+    "sources": 22
+  },
+  {
+    "key": "typeclass inference|Semiring",
+    "calls": 3910,
+    "wall_ns": 194583700,
+    "inclusive_cpu_ns": 191864876,
+    "exclusive_cpu_ns": 190785183,
+    "open_frames": 0,
+    "sources": 20
+  }
+]
