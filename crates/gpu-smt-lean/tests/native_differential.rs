@@ -117,20 +117,28 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         PathBuf::from(std::env::var("LEAN_SYSROOT").unwrap()),
     );
     let mask = std::fs::read_to_string("/proc/self/status").unwrap();
-    let cpu = mask
+    let cpus: Vec<usize> = mask
         .lines()
         .find_map(|l| l.strip_prefix("Cpus_allowed_list:"))
         .unwrap()
         .trim()
-        .split([',', '-'])
-        .next()
-        .unwrap()
-        .parse()
-        .unwrap();
+        .split(',')
+        .flat_map(|range| {
+            let mut ends = range.split('-').map(|v| v.parse::<usize>().unwrap());
+            let first = ends.next().unwrap();
+            first..=ends.next().unwrap_or(first)
+        })
+        .take(2)
+        .collect();
+    assert_eq!(
+        cpus.len(),
+        2,
+        "native concurrency contract requires two eligible cores"
+    );
     let engine = Engine::new(
         Config {
             memory_bytes: 48 << 30,
-            cpus: vec![cpu],
+            cpus,
             cores_per_worker: 1,
         },
         Arc::new(backend),
@@ -248,6 +256,72 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             }
         }
     }
+    // Confirm actual native siblings overlap, rather than merely accepting a
+    // batch that the scheduler silently serialized. This is a lifecycle
+    // contract, not a throughput ratio or a timing-based speed assertion.
+    let parallel_code = "import Init\nimport Std.Internal.UV.Timer\n#eval IO.sleep 1000\nexample : True := by trivial";
+    let parallel = engine.verify_batch(Batch {
+        mode: Mode::All,
+        candidates: (0..2)
+            .map(|i| Candidate {
+                id: format!("parallel-{i}"),
+                task_id: None,
+                code: parallel_code.into(),
+                timeout_ms: 300000,
+                reuse: false,
+            })
+            .collect(),
+    });
+    tokio::pin!(parallel);
+    let mut samples = tokio::time::interval(std::time::Duration::from_millis(20));
+    let parent_pid = parent.as_ref().unwrap().pid;
+    let mut saw_two_live_children = false;
+    let parallel_results = loop {
+        tokio::select! {
+            result = &mut parallel => break result.unwrap(),
+            _ = samples.tick() => {
+                let children = std::fs::read_to_string(format!(
+                    "/proc/{parent_pid}/task/{parent_pid}/children"
+                )).unwrap();
+                let live = children.split_whitespace().filter(|pid| {
+                    std::fs::read_to_string(format!("/proc/{pid}/stat"))
+                        .ok()
+                        .and_then(|s| s.rsplit_once(')').map(|(_, tail)| tail.trim_start().starts_with('Z')))
+                        == Some(false)
+                }).count();
+                saw_two_live_children |= live >= 2;
+            }
+        }
+    };
+    assert!(
+        saw_two_live_children,
+        "prepared native batch did not overlap two live disposable children"
+    );
+    for result in parallel_results {
+        assert_eq!(
+            result.outcome.status,
+            Status::Accepted,
+            "{:?}",
+            result.outcome
+        );
+        assert!(
+            result
+                .attempts
+                .iter()
+                .all(|a| a.backend_events.iter().all(|e| e.stage != "fresh_fallback"))
+        );
+        for process in result.attempts.iter().flat_map(|a| &a.processes) {
+            assert!(
+                gpu_smt_engine::linux::identity(process.pid).is_err(),
+                "parallel candidate survives its result"
+            );
+            seen.push(process.clone());
+        }
+    }
+    assert!(
+        engine.prepared_state_ready(),
+        "concurrent branches retired their shared import parent"
+    );
     let interrupted = engine
         .verify_batch(Batch {
             mode: Mode::All,

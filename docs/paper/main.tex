@@ -151,8 +151,10 @@ timeout, preemption and consumer cancellation remain distinct.
 The default Rust backend executes isolated fresh native processes.
 An optional Lean+C adapter prepares parsed imports in a single native parent
 and executes candidate commands in disposable OS children, with fresh fallback
-for different imports. This context-specific implementation is under native
-qualification; it does not establish safe general FFI cloning, whole-Mathlib
+for different imports. Pinned stock Lean 4.18 controls pass raw-response
+comparison, declaration isolation, native timer/promise execution,
+import-mismatch fallback, timeout recovery and final process retirement.
+These controls do not establish safe general FFI cloning, whole-Mathlib
 behavior preservation or a measured one-load performance benefit.
 Prepared-state and failure-detector interfaces specify pending extensions,
 not completed mechanisms or new contributions.
@@ -175,7 +177,8 @@ owned work and retries it exclusively, recording all queueing, attempts and
 retirement. This sampled mechanism can overshoot between observations; it is
 not a kernel memory quota. The historical measurements below retain their
 original resource settings. New-resource throughput, 42 isolated larger-memory
-reruns, safe COW and complete native differential parity remain unmeasured.
+reruns, whole-Mathlib COW behavior and complete population differential parity
+remain unmeasured.
 Ordinary warm-state/resource mechanisms are prior techniques; prospective
 novelty lies in workload-level methods and must be established empirically.
 

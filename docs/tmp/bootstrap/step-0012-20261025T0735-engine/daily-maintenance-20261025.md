@@ -29,3 +29,12 @@ native preparation plus workload-aware gains. Next real native work is 42 isolat
 resource reruns after the healthy old group retires, followed by a matched engine
 qualification/full pair. Continue source-level failure and code-workload work
 without an additional simultaneous collection or CPU oracle changes.
+
+## Following the reflection: native prepared import boundary
+
+可选 Lean+C 导入父进程已完成实际 Lean4.18 差分和生命周期 CI，Rust 核心/接口
+检查也通过。默认仍为 fresh backend；此前构建、初始化和继承 FD 故障全部保留。
+这一步把接口变成了真实可运行组件，但还没有 Mathlib/48GiB 吞吐数据。
+剩余主线仍是旧全量结束后一次收结果、42条独占重跑、同资源全量配对；不能把
+固定 Init 控制当作全体验证加速。今日核心文档45个相对链接存在；真实原生测试
+命令已按 fresh/optional prepared 拆开，避免缺少可选环境时失败。

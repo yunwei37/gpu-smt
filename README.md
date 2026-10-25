@@ -50,8 +50,8 @@ native rejections or cacheable proof results.
 [Examples](examples/README.md) · [Paired measurement](docs/benchmarking.md) · [Contributing and checks](CONTRIBUTING.md) ·
 [CI](.github/workflows/engine.yml) · [Apache-2.0 engine license](LICENSE).
 
-An [optional native import parent](native/lean/README.md) is under pinned-context
-qualification; the default backend remains fresh-process. Full Mathlib COW
+An [optional native import parent](native/lean/README.md) passes the pinned Lean4.18
+native differential/lifecycle CI; the default backend remains fresh-process. Full Mathlib COW
 qualification, native failure detectors, source-aware
 cost models and multi-node execution remain implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload

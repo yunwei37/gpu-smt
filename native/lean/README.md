@@ -97,3 +97,18 @@ The parent therefore prepares with the normal manager and joins/finalizes it
 before inspecting the branch point. Those checks still do not certify arbitrary
 FFI. Failed preparation and fresh fallback remain in each attempt's backend
 events even when the final native response is accepted.
+
+## Pinned native qualification
+
+Commit 34225c194da290292ca5ab7b3408c84b20f9cb26 passes the actual
+[Lean4.18 native CI](https://github.com/yunwei37/gpu-smt/actions/runs/40184524032).
+The tests compare raw native responses for acceptance, rejection and admitted
+proofs, check declaration isolation/redefinition, exercise real Timer/Promise
+services, force import-mismatch fallback and timeout, then confirm parent reuse
+and complete final retirement. Engagement requires both registered import parent
+and candidate child, plus the live parent after candidate retirement.
+Successful fresh fallback alone cannot satisfy that contract.
+
+[Retained result and self-review](../../artifacts/prepared-engine-2026-10-25/result-review.md)
+separate this fixed-context qualification from pending Mathlib/resource/throughput
+measurements. Earlier failures and their raw CI logs remain in the same directory.

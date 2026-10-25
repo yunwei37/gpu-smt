@@ -53,8 +53,9 @@ synchronous imports. Each candidate runs in
 a disposable OS child, whose connection is retired only after native waitpid.
 The parent remains in total owned RSS. Different imports and preparation faults
 use the original fresh backend within the remaining request timeout.
-This is a context-specific implementation under native qualification, not a
-generic safe fork argument for arbitrary FFI. The default is fresh processes.
+Pinned Lean4.18 native differential/lifecycle CI passes for the declared context.
+Full Mathlib qualification remains open; this is not a generic safe fork argument
+for arbitrary FFI. The default is fresh processes.
 Independently loaded workers must not be called one Mathlib load. Multi-node
 transport/ownership is extensible, not measured scaling.
 

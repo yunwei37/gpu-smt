@@ -31,8 +31,11 @@ sampled peak and preemption history. It also records backend/environment
 identity, scheduling policy, RSS/CPU configuration and lifecycle time.
 Resource logs carry aggregate RSS; an attempt peak is not total engine RSS.
 
-The current CLI backend starts a fresh native REPL for each independent
-source. This has no warm-state or COW advantage. A measurement of that backend
+The default CLI backend starts a fresh native REPL for each independent
+source. This default has no warm-state or COW advantage. The optional
+prepared-host/sysroot pair selects the declared pinned-context import parent;
+its identity, readiness, fallback and child retirement must be checked in the
+capture/events before attributing any reuse. A measurement of the fresh backend
 does not replace the strongest warm/native reference. Keep native reference
 captures and adapters explicit.
 
