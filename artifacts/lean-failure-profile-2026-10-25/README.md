@@ -39,3 +39,10 @@ and incomplete trailingbytes. It never invents records after the lastsample.
 Fresh runs need a freshoutdirectory; never rerun a live or closed output.
 Full480uses --phase full only after actual24review. This is profiler setup,
 not a new systemcontribution, GPU speedup or independent audit.
+
+
+The C-only24qualification is complete with all statuses unchanged, source24/24
+timed, zero diagnostic drops/errors and no surviving nativechildren.
+[Root qualification review](preflight-result-review.md). Full480 is now active
+under the same resourcepoint; full480.launch.json records its exactowner.
+Do not stage livefull480logs as finaldata or interpret a partialdistribution.

@@ -737,3 +737,16 @@ WRITE_GATE keeps the14remainingpaperresultslots and allfourRQopen; no24source
 hotspotheadline. REVIEW_GATE selfaudit admits thefixed480failedtail inoriginal
 sourceorder, not aGPU or externalmethodvariant. Main mechanismselection awaits
 full480ranked actualtactic/phase costs, includingunclosedtimeoutprofiles.
+
+## Actual full480 native-failure diagnostic launched
+The onlyfullgroup is now artifacts/lean-failure-profile-2026-10-25/full480,
+PID275822/birth1792894799.05, sourcecommit7ca48d6. Selected480originalsources
+are replayed inoriginalnumericorder; actualnative profiles and independent
+parentRSSsampling have begun. Original300stimeout,2liveREPL/24GiBeach/48GiBtotal/
+CPU8–11 remainunchanged. No deviceprovider, newcompetitor orGPUpair isstarted.
+[Launch identity](../../../../artifacts/lean-failure-profile-2026-10-25/full480.launch.json)
+is runtimeprovenance, not afinaldistribution. Preserve thishealthyfinitecapture
+across observationloss, noemptygoalpolling/restart. Onactualtermination, analyze
+all480and83timeout/failedsubgroups, ownphasecosts, everyoutcomechange andresource
+failure, then select ourownmechanism fromthe measured dominantwork.
+Fullresult/WRITE/resultselfreview remainpending; noindependentauditclaim.

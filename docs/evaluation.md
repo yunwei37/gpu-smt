@@ -329,3 +329,15 @@ resourcefailures, instrumentationcost and unclosedtimeoutregions. Choose our
 next mechanism from the ranked actualtactic/phasecosts, not source-tokencounts,
 unsupportedGPUceilings or moreexternalmethodreproduction. Rootselfreview only.
 AllfourRQs/OSDIgoalremainopen.
+
+
+### Actual failure-hotspot capture active
+[Real24qualification](../artifacts/lean-failure-profile-2026-10-25/preflight-result-review.md)
+has unchanged4valid/18Leanerror/1timeout/1resourcefailure, complete actualsource
+attribution,0sampler/table/clockfaults and allchildrenretired. One failedC++ABI
+diagnostic isretained; C-onlyinterface restoresnativebad_alloc. Native/profile
+326.646616/326.839955s is qualification, not zerooverhead proof orcohorthotspot.
+Actualfull480PID275822 nowruns inoriginalsourceorder under the same48GiB/max2/
+24AS/CPU8–11/300s point. No furtherGPUpair or externalmethodreproduction.
+The 480cover93.5659%of nativefailed cumulativeHTTP, not93.5659%wholeelapsed.
+Complete tactic/component rankings and subsequentmechanismselection arepending.
