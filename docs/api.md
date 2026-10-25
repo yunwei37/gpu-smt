@@ -60,3 +60,24 @@ Current backend scope is Linux and a cooperative persistent native REPL;
 it is not a sandbox for hostile sources that daemonize or escape ownership.
 A safe COW backend and cross-node supervisor must implement their own native
 lifecycle argument before replacing this transparent fresh-process fallback.
+
+## Resource-event recording
+
+The executable writes structured JSON logs to stderr, keeping JSONL results
+on stdout. Default resource INFO events preserve1s actual RSS/budget and
+registered PID/birth accounting; preemption events identify the interrupted
+attempt. Standard RUST_LOG can select other verbosity. Formal captures retain
+the complete stderr event stream alongside result/attempt JSON, commands,
+environment and outer cold lifecycle. This telemetry is not a hard RSS quota.
+
+The executable binds its calling thread before constructing Tokio, so runtime
+and descendant threads inherit the selected CPU mask. Library embedders own
+their runtime/thread affinity and must bind before creating it if benchmarking
+a fixed hardware domain. A whole-core allocation is an exclusive execution
+point; four one-core workers are a distinct throughput point.
+
+Exact-result reuse assumes deterministic native behavior in the pinned
+environment. Sources using mutable external state or nondeterministic IO must
+request reuse=false; byte identity alone does not prove arbitrary Lean
+metaprograms pure. Fresh uncached native differential execution remains the
+reference, and resource failures/timeouts are never cached as logical results.

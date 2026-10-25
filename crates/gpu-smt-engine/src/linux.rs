@@ -130,3 +130,23 @@ impl ResourceMonitor for ProcMonitor {
         Ok(result)
     }
 }
+
+/// Bind the calling thread before constructing its runtime so new threads inherit
+/// the same hardware budget. Existing unrelated threads are not reconfigured.
+pub fn bind_current_thread(cpus: &[usize]) -> Result<(), String> {
+    if cpus.is_empty() || cpus.iter().any(|id| *id >= libc::CPU_SETSIZE as usize) {
+        return Err("invalid CPU mask".into());
+    }
+    // SAFETY: the CPU mask is initialized and sized for the kernel syscall.
+    unsafe {
+        let mut set: libc::cpu_set_t = std::mem::zeroed();
+        libc::CPU_ZERO(&mut set);
+        for cpu in cpus {
+            libc::CPU_SET(*cpu, &mut set);
+        }
+        if libc::sched_setaffinity(0, std::mem::size_of_val(&set), &set) != 0 {
+            return Err(std::io::Error::last_os_error().to_string());
+        }
+    }
+    Ok(())
+}

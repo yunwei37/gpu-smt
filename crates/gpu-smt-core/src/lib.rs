@@ -160,7 +160,7 @@ pub struct ProcessIdentity {
 }
 
 /// Owned job process accounting.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
 pub struct ProcessSample {
     /// Stable owned leader identity.
     pub identity: ProcessIdentity,

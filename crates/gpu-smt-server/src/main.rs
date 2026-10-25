@@ -42,10 +42,14 @@ mod libc_cpu {
         }
     }
 }
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     tracing_subscriber::fmt()
-        .with_env_filter(tracing_subscriber::EnvFilter::from_default_env())
+        .json()
+        .with_writer(std::io::stderr)
+        .with_env_filter(
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| "gpu_smt_engine::resources=info".into()),
+        )
         .init();
     let mut args = std::env::args().skip(1);
     let command = args.next().unwrap_or_else(|| "--help".into());
@@ -118,6 +122,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         project: PathBuf::from(required("--project")?).canonicalize()?,
         environment: required("--environment")?,
     };
+    gpu_smt_engine::linux::bind_current_thread(&config.cpus)?;
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .worker_threads(config.cpus.len())
+        .enable_all()
+        .build()?;
+    runtime.block_on(run(command, options, config, backend))
+}
+
+async fn run(
+    command: String,
+    options: HashMap<String, String>,
+    config: Config,
+    backend: NativeRepl,
+) -> Result<(), Box<dyn std::error::Error>> {
     let engine = Engine::new(
         config,
         Arc::new(backend),

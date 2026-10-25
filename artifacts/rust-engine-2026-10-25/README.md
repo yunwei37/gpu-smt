@@ -1,10 +1,11 @@
 # Rust engine implementation qualification — root self-review
 
 Reusable source: crates/. Exact validation commands, exits and compressed logs
-are in validation-20261025T082239/.18unit/integration/process/HTTP tests pass;
+are in validation-20261025T084048/.20unit/integration/process/HTTP tests pass;
 the native differential test is explicitly ignored locally while the existing
-full research capture owns the slot. Pinned official Lean4.18/REPL CI has been
-configured to execute that separate real-native contract.
+full research capture owns the slot. Pinned official Lean4.18/REPL CI passes
+the accepted/rejected/sorry raw-JSON differential on exact head f016161.
+Updated hardware/telemetry code receives a fresh exact-head CI below.
 
 Actual low-threshold process RSS triggers watchdog preemption and exclusive
 retry; native fixture outcomes distinguish acceptance/rejection/admission,

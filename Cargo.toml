@@ -19,7 +19,7 @@ serde_json = "1"
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "io-std", "sync", "time", "net", "signal"] }
 tokio-util = { version = "0.7", features = ["rt"] }
 tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
 gpu-smt-core = { path = "crates/gpu-smt-core", version = "0.1.0" }
 gpu-smt-engine = { path = "crates/gpu-smt-engine", version = "0.1.0" }
 gpu-smt-lean = { path = "crates/gpu-smt-lean", version = "0.1.0" }

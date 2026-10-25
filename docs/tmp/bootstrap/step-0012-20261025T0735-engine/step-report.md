@@ -51,3 +51,11 @@ crates/protocols. Shared fixture implementations serve multiple scenarios;
 no per-feature helper service/Workspace/runner or unused dependency layer.
 No foreign dirty file, historical source/raw result or CPUoracle code changed.
 This is a reviewed implementation boundary, not a completed research objective.
+
+## Native CI and hardware accounting follow-up
+
+Exact implementation head f016161 passes both engine jobs, including pinned official Lean4.18/REPL raw JSON differential for accepted/rejected/sorry examples, plus retained Z3smoke CI. Full native population parity remains open. Self-review then found the CLI created its Tokio runtime before applying CPU eligibility; the forward fix binds the calling thread before runtime creation so every runtime/native thread stays within the declared CPU budget. A real executable/proc-thread-affinity regression is added. Per-candidate complete latency now begins at batch entry, including policy ranking. Historical capture remains untouched. Subsequent exact-head CI is tracked separately.
+
+## Hardware/telemetry boundary validated
+
+Latest local validation is artifacts/rust-engine-2026-10-25/validation-20261025T084048: all six build/format/Clippy/test/doc/help commands pass,20checks pass and the local raw-native test remains explicitly skipped in favor of the pinned official nativeCI. Runtime/native threads share the chosen mask; resources emit complete1sJSON events to stderr without corrupting stdoutJSONL. Attempt history retains process birth and preemption RSS. Source sorting/queueing/retries/retirement enter per-candidate batch-entry latency. Prepared42unchanged sources are one-candidate-per-line/uncached for the isolated48GiB/all4eligibleCPUs point; no actual rerun has started. Existing full7808group/source/settings remain preserved. New exact-head CI must be checked after this forward commit.

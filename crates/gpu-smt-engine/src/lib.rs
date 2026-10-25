@@ -214,6 +214,10 @@ impl Inner {
                 return;
             }
         };
+        tracing::info!(target:"gpu_smt_engine::resources",
+            rss_bytes=sample.rss_bytes,budget_bytes=self.config.memory_bytes,
+            processes=%serde_json::to_string(&sample.processes).expect("resource samples serialize"),
+            "owned RSS sample");
         let s = self.state.lock().unwrap();
         let mut largest = None;
         for a in s.active.values() {
@@ -233,6 +237,10 @@ impl Inner {
         }
         if sample.rss_bytes > self.config.memory_bytes {
             if let Some((_, registry)) = largest {
+                tracing::warn!(target:"gpu_smt_engine::resources",rss_bytes=sample.rss_bytes,
+                    budget_bytes=self.config.memory_bytes,
+                    processes=%serde_json::to_string(&*registry.roots.lock().unwrap()).expect("process identities serialize"),
+                    "preempt owned attempt and requeue exclusively");
                 registry
                     .preemption_rss
                     .store(sample.rss_bytes, Ordering::Release);
@@ -292,8 +300,9 @@ impl Inner {
                             .filter(|n| *n > 0)
                             .max()
                     });
-                let actual_exclusive =
-                    solo || estimate.is_some_and(|n| n >= self.config.memory_bytes);
+                let actual_exclusive = solo
+                    || self.config.cores_per_worker == self.config.cpus.len()
+                    || estimate.is_some_and(|n| n >= self.config.memory_bytes);
                 let unknown = estimate.is_none() && !s.active.is_empty();
                 let exclusive_block = s.active.values().any(|a| a.exclusive)
                     || if actual_exclusive {
@@ -631,6 +640,7 @@ impl Engine {
     }
     /// Return one record per caller in original order; checked winners alone cancel siblings.
     pub async fn verify_batch(&self, batch: Batch) -> Result<Vec<Verification>, String> {
+        let submitted = Instant::now();
         let mut ids = HashSet::new();
         for c in &batch.candidates {
             if !ids.insert(c.id.clone()) || c.timeout_ms == 0 {
@@ -656,7 +666,8 @@ impl Engine {
         }
         let mut results: Vec<Option<Verification>> = vec![None; n];
         while let Some(next) = tasks.join_next().await {
-            let (index, task, result) = next.map_err(|e| e.to_string())?;
+            let (index, task, mut result) = next.map_err(|e| e.to_string())?;
+            result.elapsed_seconds = submitted.elapsed().as_secs_f64();
             if batch.mode == Mode::FirstSuccess
                 && result.outcome.status == Status::Accepted
                 && let Some(task) = task

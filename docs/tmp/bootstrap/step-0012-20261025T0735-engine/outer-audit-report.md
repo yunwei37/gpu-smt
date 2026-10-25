@@ -34,3 +34,11 @@ crates/protocols. Shared fixture implementations serve multiple scenarios;
 no per-feature helper service/Workspace/runner or unused dependency layer.
 No foreign dirty file, historical source/raw result or CPUoracle code changed.
 This is a reviewed implementation boundary, not a completed research objective.
+
+## Follow-up root self-review
+
+Verified real native core-contract CI on f016161, without treating three proof controls as full-population parity. Found/fixed supervisor CPU-accounting escape before any new-resource full measurement: runtime is now constructed only after its thread inherits the selected mask. Added executable-thread affinity regression. Complete request latency includes ranking from batch entry. No other Agent or native AI session used.
+
+## Hardware/telemetry self-review
+
+Rechecked stdout/log separation, actual thread affinity inheritance, full-core exclusive semantics, attempt PID/birth/preemption provenance and admission/retirement. Latest20tests all pass; read raw nativeCI success for f016161 without pooling with new resource-point evidence. Input preparation for42reruns is not execution. Remaining safeCOW, full matched throughput/native parity and source-cost learning remain open; no independent audit or novelty claim.
