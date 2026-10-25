@@ -1,0 +1,45 @@
+{
+  "scope": "Upstream cache dispatch requires official nightly tag context; restore exact original dependency tag/commit, no source or research main change.",
+  "steps": [
+    {
+      "command": [
+        "git",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "refs/tags/nightly-testing-2025-12-01:refs/tags/nightly-testing-2025-12-01"
+      ],
+      "exit": 0,
+      "output": "From https://github.com/leanprover-community/mathlib4-nightly-testing\n * [new tag]         nightly-testing-2025-12-01 -> nightly-testing-2025-12-01\n"
+    },
+    {
+      "command": [
+        "git",
+        "checkout",
+        "--detach",
+        "refs/tags/nightly-testing-2025-12-01"
+      ],
+      "exit": 0,
+      "output": "HEAD is now at 2100ee6 chore: bump to nightly-2025-12-01\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "output": "2100ee662d0d4b3233534f70716a04f15f74c300\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit": 0,
+      "output": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "started_UTC": "2026-10-25T06:09:35Z",
+  "root": "/tmp/gpu-smt-code-verification-20261025",
+  "scope": "Official pinned SDK and source download/extraction only; no Lean proof verification or second collection.",
+  "downloads": [
+    {
+      "url": "https://github.com/leanprover/lean4/releases/download/v4.18.0/lean-4.18.0-linux.tar.zst",
+      "path": "/tmp/gpu-smt-code-verification-20261025/downloads/lean-4.18.0-linux.tar.zst",
+      "bytes": 333619526,
+      "seconds": 4.6324076652526855
+    },
+    {
+      "url": "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/aa936c36e8484abd300577139faf8e945850831a",
+      "path": "/tmp/gpu-smt-code-verification-20261025/downloads/mathlib4-aa936c36.tar.gz",
+      "bytes": 17490718,
+      "seconds": 3.1813337802886963
+    }
+  ],
+  "mathlib_source": "/tmp/gpu-smt-code-verification-20261025/mathlib-source",
+  "sdk_extract": {
+    "command": [
+      "tar",
+      "--zstd",
+      "-xf",
+      "/tmp/gpu-smt-code-verification-20261025/downloads/lean-4.18.0-linux.tar.zst",
+      "-C",
+      "/tmp/gpu-smt-code-verification-20261025/sdk"
+    ],
+    "exit": 2,
+    "output": "tar (child): zstd: Cannot exec: No such file or directory\ntar (child): Error is not recoverable: exiting now\ntar: Child returned status 2\ntar: Error is not recoverable: exiting now\n"
+  },
+  "finished_UTC": "2026-10-25T06:09:41Z"
+}

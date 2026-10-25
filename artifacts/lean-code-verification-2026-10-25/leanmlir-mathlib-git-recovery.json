@@ -1,0 +1,59 @@
+{
+  "scope": "Initialize original dependency Git metadata required by upstream cache discovery, fetching the exact official source commit. No source working file or research checkout is overwritten.",
+  "steps": [
+    {
+      "command": [
+        "git",
+        "init",
+        "-b",
+        "main"
+      ],
+      "exit": 0,
+      "output": "Initialized empty Git repository in /tmp/gpu-smt-code-verification-20261025/mathlib-nightly/.git/\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/mathlib4-nightly-testing"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "2100ee662d0d4b3233534f70716a04f15f74c300"
+      ],
+      "exit": 0,
+      "output": "From https://github.com/leanprover-community/mathlib4-nightly-testing\n * branch            2100ee662d0d4b3233534f70716a04f15f74c300 -> FETCH_HEAD\n"
+    },
+    {
+      "command": [
+        "git",
+        "update-ref",
+        "refs/heads/main",
+        "FETCH_HEAD"
+      ],
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "read-tree",
+        "HEAD"
+      ],
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "HEAD": "2100ee662d0d4b3233534f70716a04f15f74c300",
+  "status": ""
+}

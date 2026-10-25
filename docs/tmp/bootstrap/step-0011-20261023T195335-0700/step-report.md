@@ -858,3 +858,27 @@ ratios to the paper without calling them measured speed or RL equivalence.
 retain command/log/memory evidence. Runtime scheduler qualification waits
 only for the one-group resource invariant, not a performance/novelty gate.
 No oracle code, active480source/binary or foreign dirty path changes.
+
+## Actual native code-verification environment prepared
+
+The Verina4.18SDK is confirmed and officialMathlib cache6471/6471finishes
+successfully. [Setup, failed zstd dependency and root self-review](../../../../artifacts/lean-code-verification-2026-10-25/sdk-preparation-review.md)
+preserve exact downloads/commands/actual combinedRSS. No active venv or
+other Workspace is modified. Root implements the original189reference native/
+builtin-profile runner, with original admission stubs retained and version/
+120s author-default boundaries explicit. It is AST-parsed, not yet qualified.
+
+The sole480profile continues. Source preparation for lean-mlir's native
+nightly and compiler-refinement goals also proceeds, not a second collection
+or reproduced competitor prover. The next work remains actual profile/result
+collection, scheduler qualification/measurement and real code-reference timing.
+No1.3x gate, deadline, closure or oracle revival is reintroduced.
+
+The exact lean-mlir nightlySDK/source are prepared; its cache is unavailable
+(0/7675even after restoring official tag context;43moduleCloudflareprobe also0).
+Cache exit0 is not readiness. MissingCliobject and Git/tag discovery faults
+are repaired without source changes. The needed static58project/498external
+module closure is prepared for native source build, not another cache grid.
+Verina is already ready and its original189file profiler implementation
+handles pending-task cancellation and process retirement before guard stop.
+These are actual prerequisite fixes; no new verification result is claimed.
