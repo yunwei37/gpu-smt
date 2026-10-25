@@ -3,6 +3,20 @@
 Observed 2026-10-25 UTC. This is implementation qualification for the fourth
 continuing engine direction; no new paper RQ, novelty or performance result.
 
+## Latest concurrent contract
+
+Commit e2e54b6ebfb1907af07c422de80d59c0dcd04aef also passes
+[engine CI40185069274](https://github.com/yunwei37/gpu-smt/actions/runs/40185069274).
+Rust and both actual native tests succeed, with zero ignored native tests.
+The prepared-parent test uses two eligible cores and directly observes at
+least two simultaneously live child processes belonging to the same parent.
+Reuse is disabled; it then verifies successful native outcomes, no fresh
+fallback, child retirement and continued parent readiness. The subsequent
+timeout/recovery/final shutdown checks still pass. No elapsed-time threshold
+or throughput ratio is used to infer concurrency. The benchmark-smoke workflow
+also succeeds. Terminal receipts and the full native log are retained as
+ci-e2e54b6-final.json and ci-e2e54b6-native.log.gz.
+
 ## Evidence
 
 - Engine implementation commit: 34225c194da290292ca5ab7b3408c84b20f9cb26.

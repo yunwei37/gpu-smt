@@ -21,7 +21,7 @@ versioned; production stability is not asserted.
 |---|---|
 | VerificationBackend | Pinned environment identity, native response, full retirement/cancellation |
 | SchedulingPolicy | Candidate ranking; predictions never prove rejection |
-| ResourceMonitor | Actual owned-tree RSS/CPU and PID/birth identity; observable errors |
+| ResourceMonitor | Actual owned-tree RSS and PID/birth identity; observable errors |
 | AdmissionPolicy | Joint CPU capacity and RSS plus unconsumed predicted growth |
 | ResultCache | Exact context/source/options keys, no reusable operational failures |
 | FailureDetector | Unknown falls through; rejection requires validated sufficient witness |

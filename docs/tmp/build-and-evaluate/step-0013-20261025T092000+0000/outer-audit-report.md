@@ -127,3 +127,16 @@ BackendEvent rather than making engagement depend on fallback success.
 Actual engine CI40184524032 is successful: Rust checks plus both real native tests (2passed,0ignored). Pinned-parent engagement, raw native decisions, isolation, real async Timer/Promise, timeout/remaining fallback and final retirement pass. See artifacts/prepared-engine-2026-10-25/result-review.md and retained raw CI log. This closes this implementation-contract repair only; Mathlib/resource/throughput and all paper RQs remain open. No second local collection or delegated execution. Goal stays active. OSS native-test commands are split so a fresh-only invocation does not require optional prepared-host environment variables.
 
 The next dependency check extends actual native CI to two eligible cores and observes two simultaneously live child processes under the same prepared parent. Equal-source reuse is disabled, so coalescing cannot impersonate concurrency. No timing ratio is asserted. This check remains locally ignored while the existing native group runs; its exact-head CI result will be retained separately from the already successful sequential/timeout contract.
+
+## Latest terminal dependency result — e2e54b6
+
+Engine CI40185069274 and benchmark-smoke40185069246 succeed. Both actual native
+tests execute/pass with0ignored. The expanded two-core control directly
+observes2simultaneously live disposable children under one import parent,
+with reuse=false and no fresh fallback; native outcomes, retirement, timeout
+recovery and final shutdown pass. See retained ci-e2e54b6-final.json/native.log.gz
+and result-review.md. The preceding sequential implementation result34225c1
+remains valid; this adds actual concurrent engagement, not measured throughput.
+Targeted paper update compiles (paper-check-native-qualified); no complete
+writing/milestone or independent audit is claimed. Current source/metadata/docs
+boundary is complete, while native Mathlib/resource/full pairs remain open.

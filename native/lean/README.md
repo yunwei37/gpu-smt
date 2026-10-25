@@ -100,12 +100,14 @@ events even when the final native response is accepted.
 
 ## Pinned native qualification
 
-Commit 34225c194da290292ca5ab7b3408c84b20f9cb26 passes the actual
-[Lean4.18 native CI](https://github.com/yunwei37/gpu-smt/actions/runs/40184524032).
+Commit e2e54b6ebfb1907af07c422de80d59c0dcd04aef passes the actual
+[Lean4.18 native CI](https://github.com/yunwei37/gpu-smt/actions/runs/40185069274).
 The tests compare raw native responses for acceptance, rejection and admitted
 proofs, check declaration isolation/redefinition, exercise real Timer/Promise
 services, force import-mismatch fallback and timeout, then confirm parent reuse
-and complete final retirement. Engagement requires both registered import parent
+and complete final retirement. A two-core batch also observes two actually live
+candidate children under the same parent, with reuse disabled and no fresh
+fallback. Engagement requires both registered import parent
 and candidate child, plus the live parent after candidate retirement.
 Successful fresh fallback alone cannot satisfy that contract.
 
