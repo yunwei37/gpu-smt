@@ -112,3 +112,12 @@ No nativeCOW result claimed. Added descriptor type/flags/target metadata only
 on preparation refusal to identify those actual owned descriptors before
 changing lifecycle handling. The one-thread/FD check remains unchanged. CI
 failures and all fallback reasons remain retained; no speculative guard removal.
+
+149f8b7CI identifies the remaining descriptors as high-numbered read/write
+launcher pipes142/145, not a live native thread. The executable protocol accepts
+only stdin/stdout/stderr, so it now closes unexpected inherited descriptors at
+main entry, before any Lean runtime/import resource exists. It never sweeps
+post-initialization Lean descriptors; the subsequent guard still refuses any
+native/import residue. Successful preparation now retains its ready metadata
+(parentPID/threadcount/one preparation/closed inherited count/UVdeferral) as
+BackendEvent rather than making engagement depend on fallback success.

@@ -14,6 +14,10 @@ commands. Parent imports must not use libuv or external asynchronous resources.
 A one-thread and file-descriptor check at the branch point still refuses
 observable initialization residue before opening the internal Unix socket.
 
+The host accepts only standard input/output/error as inherited channels and
+closes other launcher descriptors before Lean initialization. Descriptors
+created during native imports remain subject to the branch-point check.
+
 Rust owns CPU/memory admission and creates one connection per admitted attempt.
 The parent forks a disposable child, which receives its assigned CPU mask and
 the original complete source. The child re-parses the import boundary through
@@ -50,9 +54,13 @@ Without the two prepared options, the default backend stays fresh-process.
 The builder uses Python, the pinned SDK/Lake, a system C compiler and binutils.
 The SDK bundles a minimal C sysroot without the required POSIX headers.
 The builder uses the upstream-supported LEAN_CC override (existing value, or cc)
-for both C compilation and linking, preserving SDK runtime/library flags and\nthe SDK C++ runtime directory. This
-avoids mixing host glibc objects with a different bundled libc at link time. It asks the\npinned dependency for its REPL:static library facet, then renames only the\nupstream executable main symbol in a private archive to avoid the embedding\nentry-point collision. The dependency source/archive stay unchanged; it
-it does not download dependencies or change a running binary.
+for both C compilation and linking, preserving SDK runtime/library flags and
+the SDK C++ runtime directory. This
+avoids mixing host glibc objects with a different bundled libc at link time. It asks the
+pinned dependency for its REPL:static library facet, then renames only the
+upstream executable main symbol in a private archive to avoid the embedding
+entry-point collision. The dependency source/archive stay unchanged; it
+does not download dependencies or change a running binary.
 CI builds this adapter against the pinned official Lean 4.18 REPL and checks
 native payloads, declaration isolation, import-mismatch fallback, timeout,
 surviving prepared state and final process retirement.

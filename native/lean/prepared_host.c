@@ -88,6 +88,19 @@ static void describe_foreign_fds(void) {
     }
     closedir(d);
 }
+/* This executable accepts only stdin/stdout/stderr as inherited channels.
+   Close unexpected launcher descriptors before initializing any Lean resources;
+   never sweep descriptors created later by Lean or imported native code. */
+static unsigned close_inherited_fds(void) {
+    DIR *d=opendir("/proc/self/fd"); if (!d) return 0;
+    int own=dirfd(d); unsigned closed=0; struct dirent *e;
+    while ((e=readdir(d))) {
+        if (e->d_name[0]=='.') continue;
+        int fd=atoi(e->d_name);
+        if (fd>2 && fd!=own && close(fd)==0) ++closed;
+    }
+    closedir(d); return closed;
+}
 static int bind_worker(char *text) {
     cpu_set_t mask; CPU_ZERO(&mask); size_t count=0;
     char *next=NULL, *token=strtok_r(text,",\n",&next);
@@ -156,6 +169,7 @@ static void reap(struct branch **active) {
 }
 int main(int argc,char **argv) {
     if (argc!=3) { fprintf(stderr,"usage: prepared-host SOCKET SYSROOT\n"); return 2; }
+    unsigned closed_inherited=close_inherited_fds();
     struct sigaction action={0}; sigemptyset(&action.sa_mask);
     action.sa_handler=stop; sigaction(SIGTERM,&action,NULL); sigaction(SIGINT,&action,NULL);
     action.sa_handler=changed; sigaction(SIGCHLD,&action,NULL);
@@ -187,7 +201,12 @@ int main(int argc,char **argv) {
     strcpy(address.sun_path,argv[1]);
     int listener=socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC,0);
     if (listener<0 || bind(listener,(void *)&address,sizeof(address)) || listen(listener,SOMAXCONN)) { perror("prepared listener"); return 1; }
-    printf("{\"ready\":true,\"parent_pid\":%ld,\"parent_threads\":1,\"preparations\":1}\n",(long)getpid()); fflush(stdout);
+    int uv_deferred=0;
+#ifdef GPU_SMT_DEFER_LIBUV
+    uv_deferred=deferred_libuv;
+#endif
+    printf("{\"ready\":true,\"parent_pid\":%ld,\"parent_threads\":1,\"preparations\":1,\"closed_inherited_fds\":%u,\"libuv_deferred\":%s}\n",
+        (long)getpid(),closed_inherited,uv_deferred?"true":"false"); fflush(stdout);
     struct branch *active=NULL;
     while (!stopping) {
         reap(&active);

@@ -161,6 +161,10 @@ impl PreparedRepl {
                 {
                     return Err("native preparation handshake mismatch".into());
                 }
+                x.registry.note(BackendEvent {
+                    stage: "prepared_ready".into(),
+                    detail: ready.to_string(),
+                });
                 Ok::<_, String>(())
             };
             tokio::pin!(prepare);
