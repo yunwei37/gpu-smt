@@ -45,3 +45,12 @@ the sorry pair remains incomplete. See
 [retained result](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/qualification-001/result-review.md).
 This is not original-population parity, a reliable timeout detector or a
 performance result. Diagnostic multiplicity differs on the failed-leaf pair.
+
+## Before-expansion domain diagnostics
+
+IntervalProfile.lean is a separate opt-in observer. It inspects numeric native
+bounds in saved/restored state,constructs no leaves,then delegates the original
+interval_cases. Actual control qualification and exact48-source/116-call
+preparation are retained under artifacts/hotspot-mechanisms-2026-10-25/
+interval-bound-profile/. The observer is not the on-demand traversal and does
+not classify failure/timeout. Original48runtime fractions remain unmeasured.

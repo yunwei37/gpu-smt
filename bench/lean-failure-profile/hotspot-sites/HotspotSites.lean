@@ -11,7 +11,7 @@ partial def sites (source : String) (stx : Syntax)
   let mut result : Array Json := #[]
   let kind := stx.getKind.toString
   if kind == "Lean.Parser.Tactic.simpAll" ||
-     kind == "Mathlib.Tactic.intervalCases" || kind == "gpuSmtProfileSimpAll" then
+     kind == "Mathlib.Tactic.intervalCases" || kind == "gpuSmtProfileSimpAll" || kind == "GpuSmt.IntervalProfile.gpuSmtProfileInterval" then
     if let some start := stx.getPos? then
       if let some stop := stx.getTailPos? then
         result := result.push (Json.mkObj [
@@ -48,7 +48,7 @@ unsafe def main (args : List String) : IO Unit := do
   let [input, output] := args | throw (IO.userError "usage: HotspotSites INPUT OUTPUT")
   initSearchPath (← findSysroot)
   enableInitializersExecution
-  let preparation := Parser.mkInputContext "import Mathlib\nimport SimpAllProfile\n" "<setup>"
+  let preparation := Parser.mkInputContext "import Mathlib\nimport SimpAllProfile\nimport IntervalProfile\n" "<setup>"
   let (header, _, messages) ← Parser.parseHeader preparation
   let (env, messages) ← Elab.processHeader header {} messages preparation
   if messages.hasErrors then throw (IO.userError "native setup import failed")

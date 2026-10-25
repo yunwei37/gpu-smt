@@ -1,0 +1,1475 @@
+{
+  "original_timeout_sources": 71,
+  "groups": {
+    "control": {
+      "sources": 2,
+      "parse_errors": 1,
+      "Lean.Parser.Tactic.simpAll": 2
+    },
+    "interval_cases": {
+      "sources": 48,
+      "parse_errors": 0,
+      "Mathlib.Tactic.intervalCases": 116,
+      "Lean.Parser.Tactic.simpAll": 13
+    },
+    "simp_all": {
+      "sources": 23,
+      "parse_errors": 0,
+      "Lean.Parser.Tactic.simpAll": 48,
+      "Mathlib.Tactic.intervalCases": 15
+    }
+  },
+  "prepared_group": "interval_cases",
+  "prepared_sources": 48,
+  "prepared_sites": 116,
+  "unsupported": [],
+  "manifest": [
+    {
+      "id": "minif2f-998",
+      "group": "interval_cases",
+      "original_bytes": 2413,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2272,
+          "instrumented_keyword_byte": 2320,
+          "instrumented_wrapper_byte": 2297
+        },
+        {
+          "original_byte": 2293,
+          "instrumented_keyword_byte": 2364,
+          "instrumented_wrapper_byte": 2341
+        }
+      ]
+    },
+    {
+      "id": "minif2f-1000",
+      "group": "interval_cases",
+      "original_bytes": 2282,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2166,
+          "instrumented_keyword_byte": 2214,
+          "instrumented_wrapper_byte": 2191
+        },
+        {
+          "original_byte": 2187,
+          "instrumented_keyword_byte": 2258,
+          "instrumented_wrapper_byte": 2235
+        }
+      ]
+    },
+    {
+      "id": "minif2f-1005",
+      "group": "interval_cases",
+      "original_bytes": 2761,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2616,
+          "instrumented_keyword_byte": 2664,
+          "instrumented_wrapper_byte": 2641
+        },
+        {
+          "original_byte": 2637,
+          "instrumented_keyword_byte": 2708,
+          "instrumented_wrapper_byte": 2685
+        }
+      ]
+    },
+    {
+      "id": "minif2f-1021",
+      "group": "interval_cases",
+      "original_bytes": 2763,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2628,
+          "instrumented_keyword_byte": 2676,
+          "instrumented_wrapper_byte": 2653
+        },
+        {
+          "original_byte": 2649,
+          "instrumented_keyword_byte": 2720,
+          "instrumented_wrapper_byte": 2697
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4878",
+      "group": "interval_cases",
+      "original_bytes": 2273,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2195,
+          "instrumented_keyword_byte": 2243,
+          "instrumented_wrapper_byte": 2220
+        },
+        {
+          "original_byte": 2216,
+          "instrumented_keyword_byte": 2287,
+          "instrumented_wrapper_byte": 2264
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4894",
+      "group": "interval_cases",
+      "original_bytes": 2352,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2274,
+          "instrumented_keyword_byte": 2322,
+          "instrumented_wrapper_byte": 2299
+        },
+        {
+          "original_byte": 2295,
+          "instrumented_keyword_byte": 2366,
+          "instrumented_wrapper_byte": 2343
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4895",
+      "group": "interval_cases",
+      "original_bytes": 2407,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2339,
+          "instrumented_keyword_byte": 2387,
+          "instrumented_wrapper_byte": 2364
+        },
+        {
+          "original_byte": 2360,
+          "instrumented_keyword_byte": 2431,
+          "instrumented_wrapper_byte": 2408
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4992",
+      "group": "interval_cases",
+      "original_bytes": 3368,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 3297,
+          "instrumented_keyword_byte": 3345,
+          "instrumented_wrapper_byte": 3322
+        },
+        {
+          "original_byte": 3318,
+          "instrumented_keyword_byte": 3389,
+          "instrumented_wrapper_byte": 3366
+        },
+        {
+          "original_byte": 3339,
+          "instrumented_keyword_byte": 3433,
+          "instrumented_wrapper_byte": 3410
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4993",
+      "group": "interval_cases",
+      "original_bytes": 2698,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2627,
+          "instrumented_keyword_byte": 2675,
+          "instrumented_wrapper_byte": 2652
+        },
+        {
+          "original_byte": 2648,
+          "instrumented_keyword_byte": 2719,
+          "instrumented_wrapper_byte": 2696
+        },
+        {
+          "original_byte": 2669,
+          "instrumented_keyword_byte": 2763,
+          "instrumented_wrapper_byte": 2740
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5009",
+      "group": "interval_cases",
+      "original_bytes": 2290,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2100,
+          "instrumented_keyword_byte": 2148,
+          "instrumented_wrapper_byte": 2125
+        },
+        {
+          "original_byte": 2121,
+          "instrumented_keyword_byte": 2192,
+          "instrumented_wrapper_byte": 2169
+        },
+        {
+          "original_byte": 2142,
+          "instrumented_keyword_byte": 2236,
+          "instrumented_wrapper_byte": 2213
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5011",
+      "group": "interval_cases",
+      "original_bytes": 3324,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 3235,
+          "instrumented_keyword_byte": 3283,
+          "instrumented_wrapper_byte": 3260
+        },
+        {
+          "original_byte": 3256,
+          "instrumented_keyword_byte": 3327,
+          "instrumented_wrapper_byte": 3304
+        },
+        {
+          "original_byte": 3277,
+          "instrumented_keyword_byte": 3371,
+          "instrumented_wrapper_byte": 3348
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5015",
+      "group": "interval_cases",
+      "original_bytes": 2180,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1980,
+          "instrumented_keyword_byte": 2028,
+          "instrumented_wrapper_byte": 2005
+        },
+        {
+          "original_byte": 2001,
+          "instrumented_keyword_byte": 2072,
+          "instrumented_wrapper_byte": 2049
+        },
+        {
+          "original_byte": 2022,
+          "instrumented_keyword_byte": 2116,
+          "instrumented_wrapper_byte": 2093
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5017",
+      "group": "interval_cases",
+      "original_bytes": 2132,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1996,
+          "instrumented_keyword_byte": 2044,
+          "instrumented_wrapper_byte": 2021
+        },
+        {
+          "original_byte": 2017,
+          "instrumented_keyword_byte": 2088,
+          "instrumented_wrapper_byte": 2065
+        },
+        {
+          "original_byte": 2038,
+          "instrumented_keyword_byte": 2132,
+          "instrumented_wrapper_byte": 2109
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5020",
+      "group": "interval_cases",
+      "original_bytes": 2375,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2304,
+          "instrumented_keyword_byte": 2352,
+          "instrumented_wrapper_byte": 2329
+        },
+        {
+          "original_byte": 2325,
+          "instrumented_keyword_byte": 2396,
+          "instrumented_wrapper_byte": 2373
+        },
+        {
+          "original_byte": 2346,
+          "instrumented_keyword_byte": 2440,
+          "instrumented_wrapper_byte": 2417
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5023",
+      "group": "interval_cases",
+      "original_bytes": 1849,
+      "original_sites": 3,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1766,
+          "instrumented_keyword_byte": 1814,
+          "instrumented_wrapper_byte": 1791
+        },
+        {
+          "original_byte": 1787,
+          "instrumented_keyword_byte": 1858,
+          "instrumented_wrapper_byte": 1835
+        },
+        {
+          "original_byte": 1808,
+          "instrumented_keyword_byte": 1902,
+          "instrumented_wrapper_byte": 1879
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5952",
+      "group": "interval_cases",
+      "original_bytes": 1794,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1701,
+          "instrumented_keyword_byte": 1749,
+          "instrumented_wrapper_byte": 1726
+        },
+        {
+          "original_byte": 1722,
+          "instrumented_keyword_byte": 1793,
+          "instrumented_wrapper_byte": 1770
+        },
+        {
+          "original_byte": 1743,
+          "instrumented_keyword_byte": 1837,
+          "instrumented_wrapper_byte": 1814
+        },
+        {
+          "original_byte": 1764,
+          "instrumented_keyword_byte": 1881,
+          "instrumented_wrapper_byte": 1858
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5954",
+      "group": "interval_cases",
+      "original_bytes": 1623,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1498,
+          "instrumented_keyword_byte": 1546,
+          "instrumented_wrapper_byte": 1523
+        },
+        {
+          "original_byte": 1519,
+          "instrumented_keyword_byte": 1590,
+          "instrumented_wrapper_byte": 1567
+        },
+        {
+          "original_byte": 1540,
+          "instrumented_keyword_byte": 1634,
+          "instrumented_wrapper_byte": 1611
+        },
+        {
+          "original_byte": 1561,
+          "instrumented_keyword_byte": 1678,
+          "instrumented_wrapper_byte": 1655
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5960",
+      "group": "interval_cases",
+      "original_bytes": 2677,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2548,
+          "instrumented_keyword_byte": 2596,
+          "instrumented_wrapper_byte": 2573
+        },
+        {
+          "original_byte": 2569,
+          "instrumented_keyword_byte": 2640,
+          "instrumented_wrapper_byte": 2617
+        },
+        {
+          "original_byte": 2590,
+          "instrumented_keyword_byte": 2684,
+          "instrumented_wrapper_byte": 2661
+        },
+        {
+          "original_byte": 2611,
+          "instrumented_keyword_byte": 2728,
+          "instrumented_wrapper_byte": 2705
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5964",
+      "group": "interval_cases",
+      "original_bytes": 2686,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2597,
+          "instrumented_keyword_byte": 2645,
+          "instrumented_wrapper_byte": 2622
+        },
+        {
+          "original_byte": 2618,
+          "instrumented_keyword_byte": 2689,
+          "instrumented_wrapper_byte": 2666
+        },
+        {
+          "original_byte": 2639,
+          "instrumented_keyword_byte": 2733,
+          "instrumented_wrapper_byte": 2710
+        },
+        {
+          "original_byte": 2660,
+          "instrumented_keyword_byte": 2777,
+          "instrumented_wrapper_byte": 2754
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5980",
+      "group": "interval_cases",
+      "original_bytes": 1771,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1678,
+          "instrumented_keyword_byte": 1726,
+          "instrumented_wrapper_byte": 1703
+        },
+        {
+          "original_byte": 1699,
+          "instrumented_keyword_byte": 1770,
+          "instrumented_wrapper_byte": 1747
+        },
+        {
+          "original_byte": 1720,
+          "instrumented_keyword_byte": 1814,
+          "instrumented_wrapper_byte": 1791
+        },
+        {
+          "original_byte": 1741,
+          "instrumented_keyword_byte": 1858,
+          "instrumented_wrapper_byte": 1835
+        }
+      ]
+    },
+    {
+      "id": "minif2f-6383",
+      "group": "interval_cases",
+      "original_bytes": 2668,
+      "original_sites": 4,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2552,
+          "instrumented_keyword_byte": 2600,
+          "instrumented_wrapper_byte": 2577
+        },
+        {
+          "original_byte": 2573,
+          "instrumented_keyword_byte": 2644,
+          "instrumented_wrapper_byte": 2621
+        },
+        {
+          "original_byte": 2594,
+          "instrumented_keyword_byte": 2688,
+          "instrumented_wrapper_byte": 2665
+        },
+        {
+          "original_byte": 2615,
+          "instrumented_keyword_byte": 2732,
+          "instrumented_wrapper_byte": 2709
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7200",
+      "group": "interval_cases",
+      "original_bytes": 1787,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1685,
+          "instrumented_keyword_byte": 1733,
+          "instrumented_wrapper_byte": 1710
+        },
+        {
+          "original_byte": 1706,
+          "instrumented_keyword_byte": 1777,
+          "instrumented_wrapper_byte": 1754
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7202",
+      "group": "interval_cases",
+      "original_bytes": 1461,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1340,
+          "instrumented_keyword_byte": 1388,
+          "instrumented_wrapper_byte": 1365
+        },
+        {
+          "original_byte": 1361,
+          "instrumented_keyword_byte": 1432,
+          "instrumented_wrapper_byte": 1409
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7203",
+      "group": "interval_cases",
+      "original_bytes": 1530,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1179,
+          "instrumented_keyword_byte": 1227,
+          "instrumented_wrapper_byte": 1204
+        },
+        {
+          "original_byte": 1200,
+          "instrumented_keyword_byte": 1271,
+          "instrumented_wrapper_byte": 1248
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7205",
+      "group": "interval_cases",
+      "original_bytes": 1678,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1525,
+          "instrumented_keyword_byte": 1573,
+          "instrumented_wrapper_byte": 1550
+        },
+        {
+          "original_byte": 1546,
+          "instrumented_keyword_byte": 1617,
+          "instrumented_wrapper_byte": 1594
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7207",
+      "group": "interval_cases",
+      "original_bytes": 2394,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2291,
+          "instrumented_keyword_byte": 2339,
+          "instrumented_wrapper_byte": 2316
+        },
+        {
+          "original_byte": 2312,
+          "instrumented_keyword_byte": 2383,
+          "instrumented_wrapper_byte": 2360
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7208",
+      "group": "interval_cases",
+      "original_bytes": 1873,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1735,
+          "instrumented_keyword_byte": 1783,
+          "instrumented_wrapper_byte": 1760
+        },
+        {
+          "original_byte": 1756,
+          "instrumented_keyword_byte": 1827,
+          "instrumented_wrapper_byte": 1804
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7210",
+      "group": "interval_cases",
+      "original_bytes": 1869,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1764,
+          "instrumented_keyword_byte": 1812,
+          "instrumented_wrapper_byte": 1789
+        },
+        {
+          "original_byte": 1785,
+          "instrumented_keyword_byte": 1856,
+          "instrumented_wrapper_byte": 1833
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7212",
+      "group": "interval_cases",
+      "original_bytes": 1116,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 998,
+          "instrumented_keyword_byte": 1046,
+          "instrumented_wrapper_byte": 1023
+        },
+        {
+          "original_byte": 1019,
+          "instrumented_keyword_byte": 1090,
+          "instrumented_wrapper_byte": 1067
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7213",
+      "group": "interval_cases",
+      "original_bytes": 2335,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2273,
+          "instrumented_keyword_byte": 2321,
+          "instrumented_wrapper_byte": 2298
+        },
+        {
+          "original_byte": 2294,
+          "instrumented_keyword_byte": 2365,
+          "instrumented_wrapper_byte": 2342
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7216",
+      "group": "interval_cases",
+      "original_bytes": 1402,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1131,
+          "instrumented_keyword_byte": 1179,
+          "instrumented_wrapper_byte": 1156
+        },
+        {
+          "original_byte": 1152,
+          "instrumented_keyword_byte": 1223,
+          "instrumented_wrapper_byte": 1200
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7217",
+      "group": "interval_cases",
+      "original_bytes": 2224,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2049,
+          "instrumented_keyword_byte": 2097,
+          "instrumented_wrapper_byte": 2074
+        },
+        {
+          "original_byte": 2070,
+          "instrumented_keyword_byte": 2141,
+          "instrumented_wrapper_byte": 2118
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7218",
+      "group": "interval_cases",
+      "original_bytes": 2332,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2217,
+          "instrumented_keyword_byte": 2265,
+          "instrumented_wrapper_byte": 2242
+        },
+        {
+          "original_byte": 2238,
+          "instrumented_keyword_byte": 2309,
+          "instrumented_wrapper_byte": 2286
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7219",
+      "group": "interval_cases",
+      "original_bytes": 1201,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 919,
+          "instrumented_keyword_byte": 967,
+          "instrumented_wrapper_byte": 944
+        },
+        {
+          "original_byte": 940,
+          "instrumented_keyword_byte": 1011,
+          "instrumented_wrapper_byte": 988
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7221",
+      "group": "interval_cases",
+      "original_bytes": 1219,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1086,
+          "instrumented_keyword_byte": 1134,
+          "instrumented_wrapper_byte": 1111
+        },
+        {
+          "original_byte": 1107,
+          "instrumented_keyword_byte": 1178,
+          "instrumented_wrapper_byte": 1155
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7223",
+      "group": "interval_cases",
+      "original_bytes": 2843,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2777,
+          "instrumented_keyword_byte": 2825,
+          "instrumented_wrapper_byte": 2802
+        },
+        {
+          "original_byte": 2798,
+          "instrumented_keyword_byte": 2869,
+          "instrumented_wrapper_byte": 2846
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7224",
+      "group": "interval_cases",
+      "original_bytes": 1501,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1451,
+          "instrumented_keyword_byte": 1499,
+          "instrumented_wrapper_byte": 1476
+        },
+        {
+          "original_byte": 1472,
+          "instrumented_keyword_byte": 1543,
+          "instrumented_wrapper_byte": 1520
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7225",
+      "group": "interval_cases",
+      "original_bytes": 1300,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1232,
+          "instrumented_keyword_byte": 1280,
+          "instrumented_wrapper_byte": 1257
+        },
+        {
+          "original_byte": 1253,
+          "instrumented_keyword_byte": 1324,
+          "instrumented_wrapper_byte": 1301
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7226",
+      "group": "interval_cases",
+      "original_bytes": 1646,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1231,
+          "instrumented_keyword_byte": 1279,
+          "instrumented_wrapper_byte": 1256
+        },
+        {
+          "original_byte": 1252,
+          "instrumented_keyword_byte": 1323,
+          "instrumented_wrapper_byte": 1300
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7229",
+      "group": "interval_cases",
+      "original_bytes": 1577,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1527,
+          "instrumented_keyword_byte": 1575,
+          "instrumented_wrapper_byte": 1552
+        },
+        {
+          "original_byte": 1548,
+          "instrumented_keyword_byte": 1619,
+          "instrumented_wrapper_byte": 1596
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7231",
+      "group": "interval_cases",
+      "original_bytes": 1443,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1317,
+          "instrumented_keyword_byte": 1365,
+          "instrumented_wrapper_byte": 1342
+        },
+        {
+          "original_byte": 1338,
+          "instrumented_keyword_byte": 1409,
+          "instrumented_wrapper_byte": 1386
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7521",
+      "group": "interval_cases",
+      "original_bytes": 2377,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2330,
+          "instrumented_keyword_byte": 2378,
+          "instrumented_wrapper_byte": 2355
+        },
+        {
+          "original_byte": 2351,
+          "instrumented_keyword_byte": 2422,
+          "instrumented_wrapper_byte": 2399
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7525",
+      "group": "interval_cases",
+      "original_bytes": 1524,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1477,
+          "instrumented_keyword_byte": 1525,
+          "instrumented_wrapper_byte": 1502
+        },
+        {
+          "original_byte": 1498,
+          "instrumented_keyword_byte": 1569,
+          "instrumented_wrapper_byte": 1546
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7530",
+      "group": "interval_cases",
+      "original_bytes": 2569,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2522,
+          "instrumented_keyword_byte": 2570,
+          "instrumented_wrapper_byte": 2547
+        },
+        {
+          "original_byte": 2543,
+          "instrumented_keyword_byte": 2614,
+          "instrumented_wrapper_byte": 2591
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7532",
+      "group": "interval_cases",
+      "original_bytes": 1970,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1910,
+          "instrumented_keyword_byte": 1958,
+          "instrumented_wrapper_byte": 1935
+        },
+        {
+          "original_byte": 1931,
+          "instrumented_keyword_byte": 2002,
+          "instrumented_wrapper_byte": 1979
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7533",
+      "group": "interval_cases",
+      "original_bytes": 3251,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 3148,
+          "instrumented_keyword_byte": 3196,
+          "instrumented_wrapper_byte": 3173
+        },
+        {
+          "original_byte": 3169,
+          "instrumented_keyword_byte": 3240,
+          "instrumented_wrapper_byte": 3217
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7537",
+      "group": "interval_cases",
+      "original_bytes": 1834,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 1787,
+          "instrumented_keyword_byte": 1835,
+          "instrumented_wrapper_byte": 1812
+        },
+        {
+          "original_byte": 1808,
+          "instrumented_keyword_byte": 1879,
+          "instrumented_wrapper_byte": 1856
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7542",
+      "group": "interval_cases",
+      "original_bytes": 2354,
+      "original_sites": 2,
+      "native_prefix_commands": [
+        "Lean.Parser.Command.open"
+      ],
+      "unelaborated_command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.declaration"
+      ],
+      "inserted_import_at_original_byte": 29,
+      "inserted_import": "\nimport IntervalProfile\n\n",
+      "inserted_tactic_prefix": "profile_interval_cases ",
+      "sites": [
+        {
+          "original_byte": 2216,
+          "instrumented_keyword_byte": 2264,
+          "instrumented_wrapper_byte": 2241
+        },
+        {
+          "original_byte": 2237,
+          "instrumented_keyword_byte": 2308,
+          "instrumented_wrapper_byte": 2285
+        }
+      ]
+    }
+  ],
+  "native_verification_runs": 0,
+  "semantic_equivalence_claim": false,
+  "scope": "native syntax and exact byte edits only"
+}

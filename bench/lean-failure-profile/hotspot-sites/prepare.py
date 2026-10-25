@@ -1,7 +1,7 @@
-"""Prepare exact-source simp_all diagnostics from retained native Syntax spans.
+"""Prepare exact-source tactic diagnostics from retained native Syntax spans.
 
 No candidate execution. Original, added-import control and profiling variant
-remain separate; no interval program is rewritten and no failure rule is used.
+remain separate; diagnostic prefixes do not implement a failure rule.
 """
 import argparse, collections, gzip, json
 from pathlib import Path
@@ -14,6 +14,7 @@ def main():
     p.add_argument('--inputs',type=Path,required=True)
     p.add_argument('--sites',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
+    p.add_argument('--group',choices=['simp_all','interval_cases'],default='simp_all')
     args=p.parse_args()
     original=json.loads(gzip.decompress(args.inputs.read_bytes()))
     parsed=json.loads(args.sites.read_text())
@@ -24,8 +25,12 @@ def main():
     counts=collections.defaultdict(collections.Counter)
     batches={name:[]for name in ['original','import-control','profile']}
     manifest=[];unsupported=[]
-    header_addition=b'\nimport SimpAllProfile\n\n'
-    prefix=b'profile_simp_all '
+    module, keyword, native_kind = {
+        'simp_all': ('SimpAllProfile','simp_all','Lean.Parser.Tactic.simpAll'),
+        'interval_cases': ('IntervalProfile','interval_cases','Mathlib.Tactic.intervalCases')
+    }[args.group]
+    header_addition=('\nimport '+module+'\n\n').encode()
+    prefix=('profile_'+keyword+' ').encode()
     for row in parsed:
         source=codes[row['id']]
         group=source['hotspot_group']
@@ -38,21 +43,21 @@ def main():
             assert 0<=begin<=end<=len(raw)
             assert raw[begin:end]==site['text'].encode()
             counts[group][site['kind']]+=1
-        if group!='simp_all':continue
+        if group!=args.group:continue
         if row['parse_errors']:
             unsupported.append(dict(id=row['id'],reason='native parse error',
                                     messages=row['messages']))
             continue
         positions=sorted({s['start_byte']for s in row['sites']
-                         if s['kind']=='Lean.Parser.Tactic.simpAll'})
+                         if s['kind']==native_kind})
         assert positions and len(positions)==sum(
-            s['kind']=='Lean.Parser.Tactic.simpAll'for s in row['sites'])
+            s['kind']==native_kind for s in row['sites'])
         header=row['header_end_byte']
         assert 0<=header<=min(positions)
         control=raw[:header]+header_addition+raw[header:]
         modified=control
         for position in reversed(positions):
-            assert raw[position:position+8]==b'simp_all'
+            assert raw[position:position+len(keyword)]==keyword.encode()
             offset=position+len(header_addition)
             modified=modified[:offset]+prefix+modified[offset:]
         # An inverse-by-recorded-edits check establishes byte preservation,
@@ -83,8 +88,8 @@ def main():
     for name,candidates in batches.items():
         write_json_gz(args.out/(name+'.json.gz'),dict(mode='all',candidates=candidates))
     report=dict(original_timeout_sources=71,
-        groups={k:dict(v)for k,v in counts.items()},prepared_simp_sources=len(manifest),
-        prepared_simp_sites=sum(x['original_sites']for x in manifest),
+        groups={k:dict(v)for k,v in counts.items()},prepared_group=args.group,prepared_sources=len(manifest),
+        prepared_sites=sum(x['original_sites']for x in manifest),
         unsupported=unsupported,manifest=manifest,native_verification_runs=0,
         semantic_equivalence_claim=False,scope='native syntax and exact byte edits only')
     (args.out/'preparation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
