@@ -7,6 +7,8 @@ open; tests, setup and a compiled paper do not establish OSDI contribution.
 
 ## Current decision: frozen oracle and three continuing directions
 
+The completed [480-source profile](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md) preserves all selected statuses. Of observed timeout thread CPU, interval_cases accounts for 55.19% and simp_all 28.21%; these are sampled diagnostic fractions, not whole-workload wall fractions. Per-source timings, all 42 resource failures and censored streams are retained. No reliable early-rejection mechanism has yet been established.
+
 The latest user decision removes the earlier1.3x admission condition,
 2026-11-01 deadline and conditional short-paper closure. Goal stays active.
 Continue all three directions; no new threshold, deadline or closure.

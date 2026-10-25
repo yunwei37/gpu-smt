@@ -626,3 +626,7 @@ benchmark entrypoints. InitialNarrative is intact; no closure, deadline,
 oracle revival, new scheduler or permission appears. The reflection identifies
 actual native pairing and measured timeout/code-verification costs as the
 next evidence, not setup, lexical tokens or the unsuccessful predictor.
+
+## 2026-10-25 completed 480-source result
+
+480/480 returned; original 355/83/42 statuses unchanged. Timeout sampled CPU: interval_cases 55.19%, simp_all 28.21%; ordinary-error simp_all 48.65%. Full raw, per-source ranking, memory and censored-stream limits retained in artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md. Root self-review only; no speedup or failure-prediction proof claimed. Goal remains active; CPU oracle frozen.
