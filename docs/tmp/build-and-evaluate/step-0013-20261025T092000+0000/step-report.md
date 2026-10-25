@@ -39,3 +39,12 @@ checks and2explicit native skips; connection cancellation/deadline and missing
 host fallback retirement are included. Paper source/PDF compile successfully.
 The original capture PID/birth remain live; projectPVC has1.194GiB available,
 all native targets stay in OS temp, and no additional native collection starts.
+
+Second actual nativeCI builds the static dependency and all Lean/C glue, then
+fails link because upstream REPL.Main also exports executable main. Raw linker
+log retained. Builder now renames only upstream main in a private archive via
+binutils; dependency source/original archive stay untouched, no duplicate-symbol
+errors are suppressed. This is a build repair, not a native passing result.
+Prepared original7808all/first-success Batch inputs are now materialized with
+actual task metadata/source validation, unchanged300s/reuse=false and allNone
+failures retained. No additional native collection started.

@@ -43,7 +43,7 @@ Then, from that native project:
       < population.json > capture.json 2> resources.jsonl
 
 Without the two prepared options, the default backend stays fresh-process.
-The builder asks the pinned dependency for its REPL:static library facet;
+The builder uses Python, the pinned SDK/Lake, GCC and binutils. It asks the\npinned dependency for its REPL:static library facet, then renames only the\nupstream executable main symbol in a private archive to avoid the embedding\nentry-point collision. The dependency source/archive stay unchanged; it
 it does not download dependencies or change a running binary.
 CI builds this adapter against the pinned official Lean 4.18 REPL and checks
 native payloads, declaration isolation, import-mismatch fallback, timeout,

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "objcopy",
+    "--redefine-sym",
+    "main=gpu_smt_dependency_main",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib/libREPL.a",
+    "/tmp/gpu-smt-prepared-native-build-20261025/libREPL-symbol-check.a"
+  ],
+  "exit": 0,
+  "scope": "Private copy of existing dependency archive; no Lean execution or upstream mutation"
+}
