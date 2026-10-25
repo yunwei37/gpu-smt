@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-c",
+    "from pathlib import Path\nimport yaml,json\np=Path('.github/workflows/benchmark-smoke.yml');x=yaml.safe_load(p.read_text())\ns=x['jobs']['z3-smoke']['steps']\npaths=s[-1]['with']['path'].splitlines()\nassert len(paths)==5\nproducers='\\n'.join(str(v.get('run',''))for v in s[:-1])\nassert all(path.rstrip('/')in producers for path in paths)\nassert s[-1]['uses']=='actions/upload-artifact@v4'\nprint(json.dumps(dict(yaml_parses=True,selected_outputs=paths,producers_present=True)))\n"
+  ],
+  "exit": 0,
+  "output": "{\"yaml_parses\": true, \"selected_outputs\": [\"artifacts/synthetic-cli.json\", \"artifacts/synthetic-libz3.json\", \"artifacts/reuse-levels.json\", \"artifacts/trace-analysis.json\", \"artifacts/traces/\"], \"producers_present\": true}\n"
+}
