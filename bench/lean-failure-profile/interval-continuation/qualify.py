@@ -83,6 +83,8 @@ def main():
             try:
                 if line.startswith('[gpu-smt-simp-stage] '):
                     observations.append(json.loads(line[len('[gpu-smt-simp-stage] '):]))
+                elif line.startswith('[gpu-smt-closed-tail] '):
+                    observations.append(json.loads(line[len('[gpu-smt-closed-tail] '):]))
                 else:diagnostics.append(json.loads(line))
             except json.JSONDecodeError:
                 errors.append(dict(id=row['id'],non_json=line))

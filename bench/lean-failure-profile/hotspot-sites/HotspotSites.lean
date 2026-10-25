@@ -24,6 +24,26 @@ partial def sites (source : String) (stx : Syntax)
     result := result ++ (← sites source child (ancestors.push kind))
   return result
 
+/-- Minimal native syntax tree; positions refer to unnormalized source bytes. -/
+partial def tree (stx : Syntax) : IO Json := do
+  let mut children := #[]
+  for child in stx.getArgs do children := children.push (← tree child)
+  return Json.mkObj [
+    ("kind", toJson stx.getKind.toString),
+    ("atom", toJson (if stx.isAtom then some stx.getAtomVal else none)),
+    ("identifier", toJson (if stx.isIdent then some stx.getId.toString else none)),
+    ("start_byte", toJson (stx.getPos?.map (·.byteIdx))),
+    ("end_byte", toJson (stx.getTailPos?.map (·.byteIdx))),
+    ("children", toJson children)]
+
+/-- Record outer proof blocks; their nested proof blocks remain within the tree. -/
+partial def bodies (stx : Syntax) : IO (Array Json) := do
+  if stx.getKind.toString == "Lean.Parser.Term.byTactic" then
+    return #[← tree stx]
+  let mut result := #[]
+  for child in stx.getArgs do result := result ++ (← bodies child)
+  return result
+
 unsafe def main (args : List String) : IO Unit := do
   let [input, output] := args | throw (IO.userError "usage: HotspotSites INPUT OUTPUT")
   initSearchPath (← findSysroot)
@@ -46,6 +66,7 @@ unsafe def main (args : List String) : IO Unit := do
     let mut messages := messages
     let mut found := #[]
     let mut commands := #[]
+    let mut proofBodies := #[]
     repeat
       let scope := commandState.scopes.head!
       let pmctx : Parser.ParserModuleContext := { env := commandState.env, options := scope.opts, currNamespace := scope.currNamespace, openDecls := scope.openDecls }
@@ -63,12 +84,14 @@ unsafe def main (args : List String) : IO Unit := do
         messages := messages ++ commandState.messages
         prefixCommands := prefixCommands.push stx.getKind.toString
       found := found ++ (← sites source stx)
+      proofBodies := proofBodies ++ (← bodies stx)
     let mut errors := #[]
     for message in messages.toList do
       errors := errors.push (← message.toString)
     results := results.push (Json.mkObj [
       ("id", toJson id), ("header_end_byte", toJson initial.pos.byteIdx),
-      ("sites", toJson found), ("command_kinds", toJson commands),
+      ("sites", toJson found), ("proof_bodies", toJson proofBodies),
+      ("command_kinds", toJson commands),
       ("native_prefix_commands", toJson prefixCommands),
       ("parse_errors", toJson messages.hasErrors), ("messages", toJson errors),
       ("candidate_elaborated", toJson false)])

@@ -1,0 +1,24 @@
+{
+  "UTC": "2026-10-25T16:42:59.593155+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-R",
+    "/workspaces/repository/bench/lean-failure-profile/closed-tail",
+    "-o",
+    "/tmp/gpu-smt-closed-tail-20261025/ClosedTail.olean",
+    "/workspaces/repository/bench/lean-failure-profile/closed-tail/ClosedTail.lean"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "exit": 1,
+  "seconds": 3.0057610939256847,
+  "samples": 4,
+  "combined_peak_rss_bytes": 28798103552,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_compile_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 283334
+}

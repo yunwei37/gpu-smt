@@ -1,0 +1,24 @@
+{
+  "UTC": "2026-10-25T16:31:36.252240+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--run",
+    "/workspaces/repository/bench/lean-failure-profile/hotspot-sites/HotspotSites.lean",
+    "/tmp/gpu-smt-failure-effect-20261025/initial-inputs.json",
+    "/workspaces/repository/artifacts/hotspot-mechanisms-2026-10-25/goal-effects/compile-001/sites.json"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "exit": 0,
+  "seconds": 4.007109057158232,
+  "samples": 5,
+  "combined_peak_rss_bytes": 12999438336,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_compile_only": false,
+  "source_parse_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 283334
+}

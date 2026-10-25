@@ -1,0 +1,369 @@
+{
+  "completed": 18,
+  "planned": 18,
+  "mismatches": [],
+  "seconds": 54.11155898706056,
+  "peak_combined_rss_bytes": 37442981888,
+  "budget_bytes": 51539607552,
+  "sampling_seconds": 1,
+  "monitor_errors": [],
+  "existing_owner": 283334,
+  "development_controls_only": true,
+  "isolated_performance": false,
+  "results": [
+    {
+      "id": "single-close-native",
+      "pair": "single-close",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.005659980000928,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "single-close-prototype",
+      "pair": "single-close",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.005279024131596,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "tail_byte": 105,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 98,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "interval-close-native",
+      "pair": "interval-close",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.00532807293348,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "interval-close-prototype",
+      "pair": "interval-close",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.0051782259251922,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "tail_byte": 128,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 100,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "interval-fail-native",
+      "pair": "interval-fail",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.0054341070353985,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 4,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "interval-fail-prototype",
+      "pair": "interval-fail",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.0054551309440285,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "tail_byte": 126,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 98,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "siblings-native",
+      "pair": "siblings",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0052412510849535,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "siblings-prototype",
+      "pair": "siblings",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0071216369979084,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "unknown-open-native",
+      "pair": "unknown-open",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0053981200326234,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "unknown-open-prototype",
+      "pair": "unknown-open",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0052675949409604,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "missing-bound-native",
+      "pair": "missing-bound",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.005366441095248,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "missing-bound-prototype",
+      "pair": "missing-bound",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.0053121058735996,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "tail_byte": 126,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 98,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "first-fallback-native",
+      "pair": "first-fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005081286886707,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "first-fallback-prototype",
+      "pair": "first-fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005673642968759,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 2,
+      "phase_observations": [
+        {
+          "tail_byte": 114,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 107,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "try-fallback-native",
+      "pair": "try-fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0052246840205044,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "try-fallback-prototype",
+      "pair": "try-fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0053908810950816,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 2,
+      "phase_observations": [
+        {
+          "tail_byte": 110,
+          "scope": "local tactic suffix; enclosing fallback remains native",
+          "rule": "native-finisher-then-exact",
+          "close_byte": 103,
+          "active_goals": 1
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "handler-override-native",
+      "pair": "handler-override",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0056239180266857,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "handler-override-prototype",
+      "pair": "handler-override",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005946316057816,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    }
+  ]
+}

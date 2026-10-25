@@ -1,0 +1,128 @@
+[
+  {
+    "id": "single-close-native",
+    "pair": "single-close",
+    "variant": "native",
+    "expected_status": "rejected",
+    "expected_local_witness": false
+  },
+  {
+    "id": "single-close-prototype",
+    "pair": "single-close",
+    "variant": "prototype",
+    "expected_status": "rejected",
+    "expected_local_witness": true
+  },
+  {
+    "id": "interval-close-native",
+    "pair": "interval-close",
+    "variant": "native",
+    "expected_status": "rejected",
+    "expected_local_witness": false
+  },
+  {
+    "id": "interval-close-prototype",
+    "pair": "interval-close",
+    "variant": "prototype",
+    "expected_status": "rejected",
+    "expected_local_witness": true
+  },
+  {
+    "id": "interval-fail-native",
+    "pair": "interval-fail",
+    "variant": "native",
+    "expected_status": "rejected",
+    "expected_local_witness": false
+  },
+  {
+    "id": "interval-fail-prototype",
+    "pair": "interval-fail",
+    "variant": "prototype",
+    "expected_status": "rejected",
+    "expected_local_witness": true
+  },
+  {
+    "id": "siblings-native",
+    "pair": "siblings",
+    "variant": "native",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "siblings-prototype",
+    "pair": "siblings",
+    "variant": "prototype",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "unknown-open-native",
+    "pair": "unknown-open",
+    "variant": "native",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "unknown-open-prototype",
+    "pair": "unknown-open",
+    "variant": "prototype",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "missing-bound-native",
+    "pair": "missing-bound",
+    "variant": "native",
+    "expected_status": "rejected",
+    "expected_local_witness": false
+  },
+  {
+    "id": "missing-bound-prototype",
+    "pair": "missing-bound",
+    "variant": "prototype",
+    "expected_status": "rejected",
+    "expected_local_witness": true
+  },
+  {
+    "id": "first-fallback-native",
+    "pair": "first-fallback",
+    "variant": "native",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "first-fallback-prototype",
+    "pair": "first-fallback",
+    "variant": "prototype",
+    "expected_status": "accepted",
+    "expected_local_witness": true
+  },
+  {
+    "id": "try-fallback-native",
+    "pair": "try-fallback",
+    "variant": "native",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "try-fallback-prototype",
+    "pair": "try-fallback",
+    "variant": "prototype",
+    "expected_status": "accepted",
+    "expected_local_witness": true
+  },
+  {
+    "id": "handler-override-native",
+    "pair": "handler-override",
+    "variant": "native",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  },
+  {
+    "id": "handler-override-prototype",
+    "pair": "handler-override",
+    "variant": "prototype",
+    "expected_status": "accepted",
+    "expected_local_witness": false
+  }
+]
