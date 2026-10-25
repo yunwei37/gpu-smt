@@ -8,7 +8,9 @@ def main():
     ap.add_argument('--preparation',required=True,type=Path)
     ap.add_argument('--closure',required=True,type=Path)
     ap.add_argument('--out',required=True,type=Path)
-    ap.add_argument('--library',choices=['LeanMLIR'],help='Build only this original project library after external prerequisites')
+    modes=ap.add_mutually_exclusive_group()
+    modes.add_argument('--library',choices=['LeanMLIR'],help='Diagnose an isolated original library context')
+    modes.add_argument('--project-prerequisites',action='store_true',help='Prepare original root pins and mixed project prerequisites, excluding the workload')
     args=ap.parse_args()
     prep=json.loads(args.preparation.read_text());closure=json.loads(args.closure.read_text())
     sdk=Path(prep['SDK']);project=Path(prep['project']);mathlib=Path(prep['mathlib'])
@@ -28,7 +30,7 @@ def main():
         visiting.remove(module);seen.add(module);ordered.append(module)
     visit(closure['root'])
     # Do not build root/project workloads while another capture owns the slot.
-    package=project/args.library if args.library else mathlib
+    package=project if args.project_prerequisites else project/args.library if args.library else mathlib
     links=[]
     if args.library:
         # Reuse only dependencies at exactly the original subproject manifest pins.
@@ -47,6 +49,8 @@ def main():
             else:destination.symlink_to(source,target_is_directory=True)
             links.append(dict(name=entry['name'],revision=revision,source=str(source),link=str(destination)))
         targets=[m for m in ordered if Path(nodes[m]['path']).is_relative_to(package)]
+    elif args.project_prerequisites:
+        targets=[m for m in ordered if m!=closure['root']and Path(nodes[m]['path']).is_relative_to(project)]
     else:
         targets=[m for m in ordered if not Path(nodes[m]['path']).is_relative_to(project)]
     assert closure['root']not in targets
@@ -84,18 +88,59 @@ def main():
     thread=threading.Thread(target=watch,daemon=True);thread.start()
     initial=dict(UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),pid=os.getpid(),
         birth=owner.create_time(),sdk=str(sdk),cwd=str(package),eligible_cpus=[11],
-        targets=len(targets),dependency_links=links,library=args.library,aggregate_budget_bytes=48*1024**3,old_owner=old.pid if old else None,
-        scope='Dependency source compilation only; sequential native Lake olean facets in the original package manifest. Excludes the candidate workload root. Project library mode checks prior dependency facets without building before each leaf. Original7808group keeps its point; shared CPU interference retained. No candidate capture or new per-process limit.')
+        targets=len(targets),dependency_links=links,library=args.library,project_prerequisites=args.project_prerequisites,aggregate_budget_bytes=48*1024**3,old_owner=old.pid if old else None,
+        scope='Dependency source compilation only; sequential native Lake olean facets in the original package manifest. Excludes the candidate workload root. Project modes check prior dependency facets without building before each leaf. Original7808group keeps its point; shared CPU interference retained. No candidate capture or new per-process limit.')
     (args.out/'launch.json').write_text(json.dumps(initial,indent=2)+'\n')
     (args.out/'run-source.py').write_bytes(Path(__file__).read_bytes())
     code=0
     try:
+        if args.project_prerequisites:
+            # Root context is required for reverse LeanMLIR -> SSA imports.
+            # Honor every original root manifest pin, including its different Cli.
+            manifest=json.loads((project/'lake-manifest.json').read_text())
+            packages=project/manifest.get('packagesDir','.lake/packages')
+            packages.mkdir(parents=True,exist_ok=True)
+            for entry in manifest['packages']:
+                if errors:raise RuntimeError('combined memory monitor stopped preparation')
+                if entry['type']=='path':
+                    if not(project/entry['dir']).is_dir():raise RuntimeError('missing original path package '+entry['name'])
+                    continue
+                if entry['type']!='git':raise RuntimeError('unsupported root dependency '+entry['name'])
+                source=mathlib if entry['name']=='mathlib'else mathlib/'.lake/packages'/entry['name']
+                destination=packages/entry['name']
+                revision=None
+                if source.is_dir()and(source/'.git').exists():
+                    revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()
+                if destination.exists()or destination.is_symlink():
+                    actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=destination,text=True).strip()
+                    if actual!=entry['rev']:raise RuntimeError('existing root dependency differs: '+entry['name'])
+                elif revision==entry['rev']:
+                    destination.symlink_to(source,target_is_directory=True)
+                else:
+                    destination.mkdir()
+                    commands=[
+                        ['git','init','--quiet',str(destination)],
+                        ['git','-C',str(destination),'remote','add','origin',entry['url']],
+                        ['git','-C',str(destination),'fetch','--depth=1','origin',entry['rev']],
+                        ['git','-C',str(destination),'checkout','--quiet','--detach','FETCH_HEAD']]
+                    with(args.out/('package-'+entry['name']+'.log')).open('wb')as stream:
+                        for command in commands:
+                            if errors:raise RuntimeError('combined memory monitor stopped package fetch')
+                            process=subprocess.Popen(command,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+                            active=('package:'+entry['name'],process);result=process.wait();active=None
+                            with(args.out/'package-commands.jsonl').open('a')as receipt:
+                                receipt.write(json.dumps(dict(command=command,exit=result))+'\n')
+                            if result:raise RuntimeError('original root dependency fetch failed: '+entry['name'])
+                    actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=destination,text=True).strip()
+                    if actual!=entry['rev']:raise RuntimeError('fetched root dependency differs: '+entry['name'])
+                links.append(dict(name=entry['name'],revision=entry['rev'],path=str(destination),reused=destination.is_symlink()))
+            (args.out/'root-dependencies.json').write_text(json.dumps(links,indent=2)+'\n')
         for index,module in enumerate(targets):
             if errors:code=1;break
             command=[str(sdk/'bin/lake'),'build','+'+module+':olean']
             log=args.out/(str(index).zfill(4)+'.log');started=time.monotonic()
             with log.open('wb')as stream:
-                if args.library:
+                if args.library or args.project_prerequisites:
                     # Fail rather than launch a fan-out dependency rebuild when
                     # the explicitly prepared topological prerequisites are stale.
                     check=[str(sdk/'bin/lake'),'--no-build','build','+'+module+':deps']

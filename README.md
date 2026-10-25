@@ -100,7 +100,12 @@ Four directions continue: the layered Rust engine, reliable early failure/timeou
 same-task ranking/cancellation for pass@k or best-of-n, and public Lean
 code-verification workloads. The sole active full collection now compares
 native all-candidate execution against two first-success scheduling policies
-on all 7,808 original candidates. Its real eight-candidate qualification
+on all 7,808 original candidates. Its [completed all-candidate cell](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all/result-review.md)
+returns 3,014 valid, 4,669 Lean errors, 82 timeouts and 43 allocation failures,
+with the same accepted set as the historical reference. One former timeout
+now reports bad_alloc; resource-failure body clocks are unavailable, not zero.
+The first-success cells remain pending, so no scheduling speedup follows yet.
+Its real eight-candidate qualification
 checked winners before cancelling siblings. The original Verina 189-file
 native/profile characterization is complete; admitted stubs and source-version
 errors are reported separately from completed reference files.

@@ -42,3 +42,16 @@ It excludes all58project/workload modules. Existing capture plus setup RSS was
 sampled each second; no monitor error or pressure termination occurred. Native-parser860module
 closure supersedes lexical556. These are dependency preparation, not a native
 workload measurement or baseline-system reproduction.
+
+## Original root-package preparation
+
+The completed 802-module external build uses the Mathlib/subproject context.
+It is useful prerequisite evidence, not readiness for the complete root.
+The original root manifest chooses a different Cli revision, and LeanMLIR
+modules import SSA in reverse. The [library-only partial failure](native-leanmlir-library-build-20261025/result-review.md)
+and [root dependency mismatch](native-project-prerequisites-20261025/result-review.md)
+are retained. A corrected [native root graph](native-root-header-closure-20261025/receipt.json)
+still has 860 modules, resolves every dependency at original root-manifest pins,
+and retains public/meta/import-all flags. The corrected mixed prerequisite
+build excludes the actual bv_decide workload root; no SAT/LRAT performance or
+additional candidate run is claimed from preparation.

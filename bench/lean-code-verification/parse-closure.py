@@ -12,11 +12,22 @@ def main():
     prep=json.loads(args.preparation.read_text())
     sdk=Path(prep['SDK']);project=Path(prep['project']);mathlib=Path(prep['mathlib'])
     args.out.mkdir(exist_ok=False)
-    roots=[project]
+    roots=[project];package_sources=[]
     manifest=json.loads((project/'lake-manifest.json').read_text())
-    roots += [project/p['dir']for p in manifest['packages']if p['type']=='path']
-    roots += [mathlib]+sorted((mathlib/'.lake/packages').glob('*'))
-    roots=[p for p in roots if p.is_dir()]
+    for entry in manifest['packages']:
+        if entry['type']=='path':
+            source=project/entry['dir']
+        elif entry['type']=='git':
+            primary=project/manifest.get('packagesDir','.lake/packages')/entry['name']
+            fallback=mathlib if entry['name']=='mathlib'else mathlib/'.lake/packages'/entry['name']
+            source=primary if primary.exists()else fallback
+            if not source.is_dir():raise RuntimeError('unprepared root package '+entry['name'])
+            actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()
+            if actual!=entry['rev']:raise RuntimeError('root package source revision differs: '+entry['name'])
+            package_sources.append(dict(name=entry['name'],path=str(source.resolve()),revision=actual))
+        else:raise RuntimeError('unsupported root package '+entry['name'])
+        if not source.is_dir():raise RuntimeError('missing source root '+str(source))
+        if source.resolve()not in[p.resolve()for p in roots]:roots.append(source.resolve())
     owner=psutil.Process();old=None
     if psutil.pid_exists(283334):
         candidate=psutil.Process(283334)
@@ -104,7 +115,7 @@ def main():
             aggregate_peak_rss_bytes=max((x['rss_bytes']for x in samples),default=None),
             existing_owner_pid=old.pid if old else None,
             scope='Source header parsing only. SDK builtins excluded; import flags retained. No candidate body/import initialization is executed; not compiled dependency readiness.',
-            source_roots=[str(p)for p in roots],native_candidate_executions=0)
+            source_roots=[str(p)for p in roots],root_manifest_packages=package_sources,native_candidate_executions=0)
         (args.out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
         (args.out/'closure.json').write_text(json.dumps(dict(root=args.root,modules=graph,
             unresolved=unresolved,scope=receipt['scope']),indent=2)+'\n')

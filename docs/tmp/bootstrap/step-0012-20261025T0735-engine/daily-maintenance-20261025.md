@@ -110,3 +110,18 @@ observes one thread/nochildren and retires normally. This is a concrete setup
 result for the requested resource layer,not cross-candidate acceleration.
 The next decisive resource evidence remains full native child parity/throughput
 and42isolated resource-point reruns after the original group fully retires.
+
+### Completed baseline and original package context
+
+已把当前完整7808原生单元及全部失败/内存/生命周期原始数据推到main；
+通过集合不变，7231由timeout变为bad_alloc单独记录。第一成功调度的两个
+单元还未跑完，因此不能从一个完整单元宣称吞吐收益。bench首页原先仍将
+10月12日E030称为当前实验，已改为当前Rust资源路径/三种负载入口，旧
+命令保留为历史而非删除数据。
+
+怎样取得实质进展：方向3真正缺的是原版代码依赖可执行，而不是再统计
+多少个bv_decide关键字。802外部模块已实际编译。单独构建LeanMLIR子包
+失败暴露反向SSA依赖，不能裁剪图或换版本掩盖；按原root manifest和混合
+拓扑编译，保留失败。依赖准备不能当SAT/LRAT性能数据。原采集结束后把
+槽位优先给42条动态内存独占重跑、Mathlib COW真实子进程差分及同资源
+吞吐配对。判死机制还缺充分证据，不能把同类源关键词或分支数量当拒绝。

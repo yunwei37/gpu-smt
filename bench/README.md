@@ -6,17 +6,36 @@ RTX5090 results and incomplete cohorts. Public ProofNet test candidates and
 miniF2F attempts are real workloads; historical synthetic fixtures and resident
 metadata tests below are supporting controls, not whole verification speedups.
 
-The current [E030 plan](../artifacts/lean-parallel-verification-2026-10-12/experiment030/plan.md)
-and acquisition compare native response extraction against the same-version
-warm pool over all5952retained ProofNet attempts. Repeated complete clocks,
-requested responses and separate resource/cost profiles decide its value.
-[Build commands and source](../artifacts/lean-parallel-verification-2026-10-12/experiment030/build.py)
-and [capture](../artifacts/lean-parallel-verification-2026-10-12/experiment030/run.py)
-are retained in the owning Workspace. [Complete results](../artifacts/lean-parallel-verification-2026-10-12/experiment030/result-review.md)
-show a small same-version CPU improvement. This experiment is not an OSDI
-contribution or a completed current-release comparison.
+## Current entrypoints
 
-The remaining sections document earlier benchmark entrypoints and their scope.
+The reusable Rust engine owns new resource admission, cancellation and native
+backend retirement. Use its [measurement workflow](../docs/benchmarking.md)
+for new resource points. Current research preparation is split into:
+
+- [Candidate scheduling](lean-candidate-scheduling/README.md): original 7,808
+  miniF2F sources and task identities. The retained all-candidate cell is
+  complete; its first-success pair is still running.
+- [Code verification](lean-code-verification/README.md): original public Lean
+  sources, pinned native SDKs, header closure and native dependency preparation.
+- [Failure profiling](lean-failure-profile/): the completed 480-source
+  characterization. Source keywords are not reliable failure witnesses.
+- [Native import parent](../native/lean/README.md): optional pinned-context COW
+  backend. Full Mathlib child parity and throughput remain to be measured.
+
+Historical scripts retain the resource semantics recorded with their results.
+Do not copy their fixed address-space caps into new captures. Do not run a
+second full candidate collection beside the retained group or reopen frozen
+CPU-oracle experiments. Current resource authority is the
+[engine architecture](../docs/architecture.md).
+
+## Historical experiments
+
+The [E030 plan](../artifacts/lean-parallel-verification-2026-10-12/experiment030/plan.md)
+and [completed results](../artifacts/lean-parallel-verification-2026-10-12/experiment030/result-review.md)
+compare response extraction against the same-version warm pool on 5,952
+ProofNet attempts. This older CPU result is retained evidence, not the current
+implementation direction or an OSDI contribution. The following sections
+document historical entrypoints and their original scope.
 
 ## 1. Synthetic prefix benchmark through the Z3 CLI
 

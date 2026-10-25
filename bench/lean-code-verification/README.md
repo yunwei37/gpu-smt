@@ -51,3 +51,12 @@ filtering one library alone. The [retained attempt](../../artifacts/lean-code-ve
 records 16 successful modules and the missing-SSA failure. Continue with the
 original root package and mixed source dependency order; do not remove imports
 or substitute package revisions. Source preparation is not workload timing.
+
+For this pinned lean-mlir workload, use --project-prerequisites with the
+native root-manifest graph. Original root package pins can differ from a
+subproject's pins (Cli is one concrete example). parse-closure.py now resolves
+and records source directories/revisions from the root manifest; it does not
+silently take an arbitrary Mathlib package of the same name. Preserve the
+older graph as subproject-context evidence. The workload root is excluded
+from prerequisite building, and actual candidate execution still requires the
+single collection slot.
