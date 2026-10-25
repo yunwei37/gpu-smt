@@ -231,6 +231,13 @@ pub trait VerificationBackend: Send + Sync {
 pub trait SchedulingPolicy: Send + Sync {
     /// Smaller first, stable submission order for ties.
     fn priority(&self, candidate: &Candidate) -> u64;
+    /// One key per input candidate. Smaller first; original-index ties are stable.
+    /// The default preserves existing per-source policies. Batch-aware wrappers
+    /// may use task identity and consumer mode, never future native outcomes.
+    /// An invalid length is rejected before submitting any physical work.
+    fn batch_priorities(&self, candidates: &[Candidate], _mode: Mode) -> Vec<u64> {
+        candidates.iter().map(|c| self.priority(c)).collect()
+    }
     /// Predicted peak, not a fixed per-process memory cap.
     fn predicted_rss(&self, _candidate: &Candidate) -> Option<u64> {
         None

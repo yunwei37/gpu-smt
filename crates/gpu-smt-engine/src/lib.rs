@@ -5,7 +5,7 @@ pub mod linux;
 
 use gpu_smt_core::*;
 use std::{
-    collections::{BTreeSet, HashMap, HashSet},
+    collections::{BTreeSet, HashMap, HashSet, VecDeque},
     sync::{
         Arc, Mutex, Weak,
         atomic::{AtomicBool, AtomicU64, Ordering},
@@ -31,6 +31,65 @@ pub struct SourceSize;
 impl SchedulingPolicy for SourceSize {
     fn priority(&self, c: &Candidate) -> u64 {
         c.code.len() as u64
+    }
+}
+
+/// Interleave ranked candidates across tasks for first-success consumers.
+/// This is ordinary scheduling, not a failure detector or a novelty claim.
+/// All-mode delegates the wrapped policy unchanged; no RL rewards are skipped.
+pub struct TaskInterleave<P> {
+    inner: P,
+}
+impl<P> TaskInterleave<P> {
+    /// Compose task awareness with an existing source-ranking/memory policy.
+    pub fn new(inner: P) -> Self {
+        Self { inner }
+    }
+}
+impl<P: SchedulingPolicy> SchedulingPolicy for TaskInterleave<P> {
+    fn priority(&self, c: &Candidate) -> u64 {
+        self.inner.priority(c)
+    }
+    fn predicted_rss(&self, c: &Candidate) -> Option<u64> {
+        self.inner.predicted_rss(c)
+    }
+    fn batch_priorities(&self, candidates: &[Candidate], mode: Mode) -> Vec<u64> {
+        let base = self.inner.batch_priorities(candidates, mode);
+        if mode != Mode::FirstSuccess || base.len() != candidates.len() {
+            return base;
+        }
+        let mut ranked: Vec<_> = (0..candidates.len()).collect();
+        ranked.sort_by_key(|i| (base[*i], *i));
+        let mut groups: Vec<Vec<usize>> = vec![];
+        let mut by_task = HashMap::<&str, usize>::new();
+        for index in ranked {
+            let task = candidates[index].task_id.as_deref();
+            let group = if let Some(task) = task {
+                *by_task.entry(task).or_insert_with(|| {
+                    groups.push(vec![]);
+                    groups.len() - 1
+                })
+            } else {
+                // Missing task IDs are rejected by Engine for first-success,
+                // but direct trait callers still get independent ungrouped rows.
+                groups.push(vec![]);
+                groups.len() - 1
+            };
+            groups[group].push(index);
+        }
+        let mut frontiers: VecDeque<_> = groups.into_iter().map(Vec::into_iter).collect();
+        let mut priorities = vec![0; candidates.len()];
+        let mut next = 0;
+        while let Some(mut group) = frontiers.pop_front() {
+            if let Some(index) = group.next() {
+                priorities[index] = next;
+                next += 1;
+            }
+            if !group.as_slice().is_empty() {
+                frontiers.push_back(group);
+            }
+        }
+        priorities
     }
 }
 
@@ -717,11 +776,19 @@ impl Engine {
                 return Err("first_success requires task_id".into());
             }
         }
+        let priorities = self
+            .0
+            .policy
+            .batch_priorities(&batch.candidates, batch.mode);
+        if priorities.len() != batch.candidates.len() {
+            return Err("batch policy must return exactly one priority per candidate".into());
+        }
         let mut pending: Vec<_> = batch
             .candidates
             .into_iter()
+            .zip(priorities)
             .enumerate()
-            .map(|(index, c)| (self.0.policy.priority(&c), index, c))
+            .map(|(index, (c, priority))| (priority, index, c))
             .collect();
         let n = pending.len();
         pending.sort_by_key(|(priority, index, _)| (*priority, *index));

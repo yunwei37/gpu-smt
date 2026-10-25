@@ -1,0 +1,45 @@
+{
+  "UTC": "2026-10-25T11:22:32.709455+00:00",
+  "runs": [
+    {
+      "mode": "all",
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "gpu-smt-engine",
+        "--example",
+        "task_order",
+        "--locked",
+        "-j",
+        "2"
+      ],
+      "input": "artifacts/engine-resource-profile-2026-10-25/population-inputs/all.json.gz",
+      "exit": 0,
+      "seconds": 1.7245542129967362,
+      "exact_original_population_order_matches": true,
+      "rows": 7808,
+      "scope": "Actual Rust public policy on unchanged full input; ordering only, no native proof acquisition/performance result"
+    },
+    {
+      "mode": "first_success",
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "gpu-smt-engine",
+        "--example",
+        "task_order",
+        "--locked",
+        "-j",
+        "2"
+      ],
+      "input": "artifacts/engine-resource-profile-2026-10-25/population-inputs/first_success.json.gz",
+      "exit": 0,
+      "seconds": 0.28096579504199326,
+      "exact_original_population_order_matches": true,
+      "rows": 7808,
+      "scope": "Actual Rust public policy on unchanged full input; ordering only, no native proof acquisition/performance result"
+    }
+  ]
+}

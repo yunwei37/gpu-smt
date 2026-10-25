@@ -70,6 +70,22 @@ fn quantiles(mut values: Vec<f64>) -> Value {
     let at = |n: usize| values[(values.len() * n).div_ceil(100).saturating_sub(1)];
     json!({"count":values.len(),"p50":at(50),"p90":at(90),"p99":at(99),"max":values.last()})
 }
+fn first_success_times(c: &Capture) -> BTreeMap<&str, f64> {
+    let outputs: BTreeMap<_, _> = c.results.iter().map(|v| (v.id.as_str(), v)).collect();
+    let mut first = BTreeMap::<&str, f64>::new();
+    for input in &c.batch.candidates {
+        let output = outputs[input.id.as_str()];
+        if output.outcome.status == Status::Accepted
+            && let Some(task) = input.task_id.as_deref()
+        {
+            first
+                .entry(task)
+                .and_modify(|t| *t = t.min(output.elapsed_seconds))
+                .or_insert(output.elapsed_seconds);
+        }
+    }
+    first
+}
 fn summarize(c: &Capture) -> Value {
     let mut counts = BTreeMap::<String, usize>::new();
     for v in &c.results {
@@ -93,9 +109,28 @@ fn summarize(c: &Capture) -> Value {
         .filter(|v| accepted.contains(v.id.as_str()))
         .filter_map(|v| v.task_id.as_deref())
         .collect();
+    let first_success = first_success_times(c);
+    let task_ids: BTreeSet<_> = c
+        .batch
+        .candidates
+        .iter()
+        .filter_map(|v| v.task_id.as_deref())
+        .collect();
+    let unsolved_tasks: Vec<_> = task_ids
+        .iter()
+        .filter(|task| !first_success.contains_key(**task))
+        .copied()
+        .collect();
     json!({
         "lifecycle_seconds":c.lifecycle_seconds,
         "candidates_per_second":c.results.len() as f64/c.lifecycle_seconds,
+        "returned_candidates_per_second":c.results.len() as f64/c.lifecycle_seconds,
+        "candidates_per_second_scope":"returned consumer rows including cancelled/cache/coalesced results, not fresh native check throughput",
+        "declared_task_count":task_ids.len(),
+        "unsolved_tasks":unsolved_tasks,
+        "internal_task_first_success_seconds":first_success,
+        "internal_solved_task_latency_seconds":quantiles(first_success.values().copied().collect()),
+        "task_latency_scope":"internal acceptance availability after batch submission, including queue/retry/retirement; solved tasks only, unsolved IDs explicit; not streamed client delivery",
         "statuses":counts, "accepted_ids":accepted,"solved_tasks":solved,
         "cached":c.results.iter().filter(|v|v.cached).count(),
         "coalesced":c.results.iter().filter(|v|v.coalesced).count(),

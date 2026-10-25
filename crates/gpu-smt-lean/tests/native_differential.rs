@@ -1,6 +1,8 @@
 //! Explicit native environment test, not a mocked verifier.
 use gpu_smt_core::*;
-use gpu_smt_engine::{Config, Engine, Fifo, HeadroomAdmission, MemoryCache, linux::ProcMonitor};
+use gpu_smt_engine::{
+    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, TaskInterleave, linux::ProcMonitor,
+};
 use gpu_smt_lean::NativeRepl;
 use std::{path::PathBuf, process::Stdio, sync::Arc};
 use tokio::io::AsyncWriteExt;
@@ -34,12 +36,13 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
             cores_per_worker: 1,
         },
         Arc::new(backend),
-        Arc::new(Fifo),
+        Arc::new(TaskInterleave::new(Fifo)),
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
         Arc::new(MemoryCache::default()),
     )
     .unwrap();
+    let mut native_payloads = vec![];
     for (i, (code, expected)) in [
         (
             "import Init\nexample : 1 + 1 = 2 := by decide",
@@ -50,7 +53,7 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
             Status::Rejected,
         ),
         (
-            "import Init\nexample : False := by sorry",
+            "import Init\nexample : 1 = 2 := by sorry",
             Status::Incomplete,
         ),
     ]
@@ -79,6 +82,7 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
         .unwrap()
         .unwrap();
         let payload: serde_json::Value = serde_json::from_slice(&raw.stdout).unwrap();
+        native_payloads.push(payload.clone());
         let result = engine
             .verify_batch(Batch {
                 mode: Mode::All,
@@ -99,7 +103,85 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
             "raw native payload differs on source {i}"
         );
     }
+    let input = |id: &str, task: &str, code: &str| Candidate {
+        id: id.into(),
+        task_id: Some(task.into()),
+        code: code.into(),
+        timeout_ms: 300000,
+        reuse: false,
+    };
+    let first = engine
+        .verify_batch(Batch {
+            mode: Mode::FirstSuccess,
+            candidates: vec![
+                input(
+                    "winner",
+                    "solvable",
+                    "import Init\nexample : 1 + 1 = 2 := by decide",
+                ),
+                input(
+                    "sibling",
+                    "solvable",
+                    "import Init\nexample : 1 + 1 = 2 := by decide",
+                ),
+                input(
+                    "admitted",
+                    "unsolved",
+                    "import Init\nexample : 1 = 2 := by sorry",
+                ),
+                input(
+                    "rejected",
+                    "unsolved",
+                    "import Init\nexample : 1 = 2 := by decide",
+                ),
+            ],
+        })
+        .await
+        .unwrap();
+    assert_eq!(first[0].outcome.status, Status::Accepted);
+    assert_eq!(
+        first[0].outcome.response.as_ref(),
+        Some(&native_payloads[0])
+    );
+    assert!(matches!(
+        first[1].outcome.status,
+        Status::Cancelled | Status::Accepted
+    ));
+    if first[1].outcome.status == Status::Accepted {
+        assert_eq!(
+            first[1].outcome.response.as_ref(),
+            Some(&native_payloads[0])
+        );
+    }
+    assert_eq!(
+        first[2].outcome.status,
+        Status::Incomplete,
+        "admission must not become a task winner"
+    );
+    assert_eq!(
+        first[2].outcome.response.as_ref(),
+        Some(&native_payloads[2])
+    );
+    assert_eq!(
+        first[3].outcome.status,
+        Status::Rejected,
+        "unsolved task must exhaust its candidates"
+    );
+    assert_eq!(
+        first[3].outcome.response.as_ref(),
+        Some(&native_payloads[1])
+    );
     engine.shutdown().await;
+    for process in first
+        .iter()
+        .flat_map(|v| &v.attempts)
+        .flat_map(|a| &a.processes)
+    {
+        assert!(
+            gpu_smt_engine::linux::identity(process.pid).is_err(),
+            "task-aware native process survives shutdown"
+        );
+    }
 }
 
 #[tokio::test]

@@ -1,7 +1,8 @@
 //! Local engine executable. Library use does not require a network service.
 use gpu_smt_core::{Batch, VerificationBackend};
 use gpu_smt_engine::{
-    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, linux::ProcMonitor,
+    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, TaskInterleave,
+    linux::ProcMonitor,
 };
 use gpu_smt_lean::NativeRepl;
 use std::{
@@ -67,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -179,6 +180,7 @@ async fn run(
     let policy: Arc<dyn gpu_smt_core::SchedulingPolicy> = match policy_name {
         "fifo" => Arc::new(Fifo),
         "source-size" => Arc::new(SourceSize),
+        "task-interleave" => Arc::new(TaskInterleave::new(Fifo)),
         _ => return Err("unknown scheduling policy".into()),
     };
     let verifier: Arc<dyn VerificationBackend> =

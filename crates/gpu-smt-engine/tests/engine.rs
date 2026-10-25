@@ -487,7 +487,11 @@ impl VerificationBackend for ExecutionOrder {
     async fn verify(&self, c: &Candidate, _: Execution) -> Outcome {
         self.0.lock().unwrap().push(c.id.clone());
         Outcome {
-            status: Status::Accepted,
+            status: if c.code.starts_with("bad") {
+                Status::Rejected
+            } else {
+                Status::Accepted
+            },
             response: Some(json!({"env":0,"messages":[]})),
             error: None,
         }
@@ -606,4 +610,116 @@ async fn cached_and_coalesced_tickets_do_not_block_independent_cpu_capacity() {
     assert!(results[2].coalesced);
     assert!(results.iter().all(|v| v.outcome.status == Status::Accepted));
     assert_eq!(backend.calls.load(Ordering::SeqCst), 3);
+}
+
+#[test]
+fn task_interleaving_composes_source_ranking_and_memory_forecasts() {
+    let candidates = vec![
+        candidate("a-long", "xxxxxx", "a"),
+        candidate("a-short", "b", "a"),
+        candidate("b-long", "ccc", "b"),
+        candidate("b-short", "dd", "b"),
+    ];
+    let policy = TaskInterleave::new(SourceSize);
+    let priorities = policy.batch_priorities(&candidates, Mode::FirstSuccess);
+    let mut order: Vec<_> = (0..candidates.len()).collect();
+    order.sort_by_key(|i| priorities[*i]);
+    assert_eq!(
+        order
+            .iter()
+            .map(|i| candidates[*i].id.as_str())
+            .collect::<Vec<_>>(),
+        vec!["a-short", "b-short", "a-long", "b-long"]
+    );
+    assert_eq!(
+        policy.batch_priorities(&candidates, Mode::All),
+        SourceSize.batch_priorities(&candidates, Mode::All)
+    );
+    assert_eq!(
+        TaskInterleave::new(Policy).predicted_rss(&candidates[0]),
+        Some(1)
+    );
+}
+
+#[tokio::test]
+async fn task_interleaving_drives_execution_without_changing_all_mode_order() {
+    for (mode, expected) in [
+        (Mode::FirstSuccess, vec!["a0", "b0", "c0", "a1", "b1", "c1"]),
+        (Mode::All, vec!["a0", "a1", "b0", "b1", "c0", "c1"]),
+    ] {
+        let backend = Arc::new(ExecutionOrder(std::sync::Mutex::new(vec![])));
+        let engine = Engine::new(
+            Config {
+                memory_bytes: 100,
+                cpus: vec![0],
+                cores_per_worker: 1,
+            },
+            backend.clone(),
+            Arc::new(TaskInterleave::new(Fifo)),
+            Arc::new(Monitor { per_job: 1 }),
+            Arc::new(HeadroomAdmission),
+            Arc::new(MemoryCache::default()),
+        )
+        .unwrap();
+        let results = engine
+            .verify_batch(Batch {
+                mode,
+                candidates: vec![
+                    candidate("a0", "bad-a0", "a"),
+                    candidate("a1", "bad-a1", "a"),
+                    candidate("b0", "bad-b0", "b"),
+                    candidate("b1", "bad-b1", "b"),
+                    candidate("c0", "bad-c0", "c"),
+                    candidate("c1", "bad-c1", "c"),
+                ],
+            })
+            .await
+            .unwrap();
+        engine.shutdown().await;
+        assert_eq!(*backend.0.lock().unwrap(), expected);
+        assert!(results.iter().all(|v| v.outcome.status == Status::Rejected));
+        assert_eq!(
+            results.iter().map(|v| v.id.as_str()).collect::<Vec<_>>(),
+            vec!["a0", "a1", "b0", "b1", "c0", "c1"]
+        );
+    }
+}
+
+struct InvalidBatchPolicy;
+impl SchedulingPolicy for InvalidBatchPolicy {
+    fn priority(&self, _: &Candidate) -> u64 {
+        0
+    }
+    fn batch_priorities(&self, _: &[Candidate], _: Mode) -> Vec<u64> {
+        vec![]
+    }
+}
+#[tokio::test]
+async fn invalid_batch_policy_is_an_interface_error_before_native_work() {
+    let backend = Arc::new(Backend {
+        calls: AtomicUsize::new(0),
+        delay_ms: 1,
+    });
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0],
+            cores_per_worker: 1,
+        },
+        backend.clone(),
+        Arc::new(TaskInterleave::new(InvalidBatchPolicy)),
+        Arc::new(Monitor { per_job: 1 }),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let result = engine
+        .verify_batch(Batch {
+            mode: Mode::FirstSuccess,
+            candidates: vec![candidate("a", "ok", "one")],
+        })
+        .await;
+    engine.shutdown().await;
+    assert!(result.unwrap_err().contains("one priority"));
+    assert_eq!(backend.calls.load(Ordering::SeqCst), 0);
 }

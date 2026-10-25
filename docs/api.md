@@ -9,7 +9,8 @@ an assertion that the current prototype is production-stable.
 - gpu-smt-core: Candidate, Batch, Mode, Outcome, Status, Verification,
   Attempt, Execution, exact CacheKey and extension traits.
 - gpu-smt-engine: Engine, Config and built-in FIFO/source-size policies,
-  exact cache, measured-headroom admission and Linux /proc monitor.
+  exact cache, composable TaskInterleave<P>, measured-headroom admission
+  and Linux /proc monitor.
 - gpu-smt-lean: fresh stock REPL backend, optional PreparedRepl and strict classifier.
 - gpu-smt-server: embeddable Axum router and gpu-smt executable.
 
@@ -116,3 +117,18 @@ prepared context. Resource logs map origin caller ID, execution ID and PID/birth
 to active ownership and preemption. Shared/coalesced result histories can repeat
 one physical attempt in several caller rows; measurement counters state that
 scope explicitly.
+
+
+## Batch-aware scheduling
+
+SchedulingPolicy::batch_priorities has a default implementation using the
+existing per-source priority. Implementers need not add a method. It returns
+one key per candidate; an invalid length is an interface error before any
+physical work, not a native rejection. Ranked ties use original input order.
+
+TaskInterleave::new(Fifo) is available as --policy task-interleave. For
+first_success it interleaves task groups using their declared IDs; it never
+reads future verdicts. A custom wrapped policy supplies within-task ranking,
+group-first ordering and RSS forecasts. all-mode uses its wrapped policy
+unchanged. There is no per-task permission/resource cap. CPU/RSS admission,
+checked cancellation, reuse and paid retirement retain the same contracts.

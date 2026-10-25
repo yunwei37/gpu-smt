@@ -158,6 +158,11 @@ These controls do not establish safe general FFI cloning, whole-Mathlib
 behavior preservation or a measured one-load performance benefit.
 Prepared-state and failure-detector interfaces specify pending extensions,
 not completed mechanisms or new contributions.
+A composable task-group policy interleaves ranked candidates for first-success
+consumers and delegates all-candidate ordering unchanged. This is an ordinary
+scheduling component, not a novelty claim. Reported per-task first-acceptance
+times are internal result observations; the batch adapter does not stream
+these decisions to clients before the remaining batch completes.
 
 \paragraph{Exact-source sharing coverage.}
 The 7,808 original miniF2F candidates contain 7,791 distinct source byte

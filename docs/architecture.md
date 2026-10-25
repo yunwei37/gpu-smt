@@ -20,7 +20,7 @@ versioned; production stability is not asserted.
 | Extension | Contract |
 |---|---|
 | VerificationBackend | Pinned environment identity, native response, full retirement/cancellation |
-| SchedulingPolicy | Candidate ranking; predictions never prove rejection |
+| SchedulingPolicy | Source/batch ranking and optional RSS forecasts; predictions never prove rejection |
 | ResourceMonitor | Actual owned-tree RSS and PID/birth identity; observable errors |
 | AdmissionPolicy | Joint CPU capacity and RSS plus unconsumed predicted growth |
 | ResultCache | Exact context/source/options keys, no reusable operational failures |
@@ -72,6 +72,14 @@ shared subscribers release unused tickets; only physical work waits for CPU/RSS
 admission. Exclusive resource retries retain their precedence over fresh work.
 Independent concurrent batches enter the same queue at ticket registration;
 this is not a timestamp reconstruction of network arrivals.
+
+TaskInterleave<P> composes with an existing ranking/RSS policy. In first-success
+mode it takes one ranked candidate from each task in turn before returning to
+the same task. Groups follow their first ranked candidate; order inside each
+group follows the wrapped source policy. This is batch-local round-robin, not
+a fixed per-task concurrency cap or a continuous-arrival fairness guarantee.
+All-mode delegates the wrapped keys unchanged. Ordinary interleaving is prior
+technique, not the claimed scientific contribution.
 
 RL mode produces every candidate outcome. Pass@k cancels siblings only after an
 actually checked same-task acceptance. Cancellation is a consumer outcome, never

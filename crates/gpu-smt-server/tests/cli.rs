@@ -149,47 +149,49 @@ fn measure_capture_and_compare_round_trip_retire_native_fixture() {
     fixture.write_all(b"#!/usr/bin/python3\nimport sys\nwhile sys.stdin.readline().strip(): pass\nprint('{\"env\":0}',flush=True)\nprint('',flush=True)\nsys.stdin.read()\n").unwrap();
     drop(fixture);
     std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o700)).unwrap();
-    let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
-        .args([
-            "measure",
-            "--repl",
-            path.to_str().unwrap(),
-            "--project",
-            "/tmp",
-            "--environment",
-            "fixture-not-a-native-proof",
-            "--policy",
-            "source-size",
-        ])
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .spawn()
-        .unwrap();
-    let mut stdin = child.stdin.take().unwrap();
-    stdin.write_all(br#"{"candidates":[{"id":"a","code":"a","reuse":false},{"id":"b","code":"b","reuse":false}]}"#).unwrap();
-    drop(stdin);
-    let result = child.wait_with_output().unwrap();
-    std::fs::remove_file(&path).unwrap();
-    assert!(
-        result.status.success(),
-        "{}",
-        String::from_utf8_lossy(&result.stderr)
-    );
-    let capture: gpu_smt_server::measurement::Capture =
-        serde_json::from_slice(&result.stdout).unwrap();
-    assert_eq!(capture.policy, "source-size");
-    assert_eq!(capture.results.len(), 2);
-    for v in &capture.results {
-        assert_eq!(v.outcome.status, gpu_smt_core::Status::Accepted);
-        assert_eq!(v.attempts.len(), 1);
-        for p in &v.attempts[0].processes {
-            assert!(!std::path::Path::new(&format!("/proc/{}", p.pid)).exists());
+    for policy in ["source-size", "task-interleave"] {
+        let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
+            .args([
+                "measure",
+                "--repl",
+                path.to_str().unwrap(),
+                "--project",
+                "/tmp",
+                "--environment",
+                "fixture-not-a-native-proof",
+                "--policy",
+                policy,
+            ])
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        let mut stdin = child.stdin.take().unwrap();
+        stdin.write_all(br#"{"candidates":[{"id":"a","code":"a","reuse":false},{"id":"b","code":"b","reuse":false}]}"#).unwrap();
+        drop(stdin);
+        let result = child.wait_with_output().unwrap();
+        assert!(
+            result.status.success(),
+            "{}",
+            String::from_utf8_lossy(&result.stderr)
+        );
+        let capture: gpu_smt_server::measurement::Capture =
+            serde_json::from_slice(&result.stdout).unwrap();
+        assert_eq!(capture.policy, policy);
+        assert_eq!(capture.results.len(), 2);
+        for v in &capture.results {
+            assert_eq!(v.outcome.status, gpu_smt_core::Status::Accepted);
+            assert_eq!(v.attempts.len(), 1);
+            for p in &v.attempts[0].processes {
+                assert!(!std::path::Path::new(&format!("/proc/{}", p.pid)).exists());
+            }
         }
+        assert!(capture.lifecycle_seconds > 0.0);
+        assert_eq!(
+            gpu_smt_server::measurement::compare(&capture, &capture).unwrap()["lifecycle_speedup"],
+            1.0
+        );
     }
-    assert!(capture.lifecycle_seconds > 0.0);
-    assert_eq!(
-        gpu_smt_server::measurement::compare(&capture, &capture).unwrap()["lifecycle_speedup"],
-        1.0
-    );
+    std::fs::remove_file(&path).unwrap();
 }

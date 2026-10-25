@@ -112,3 +112,42 @@ fn records_retry_cost_and_operational_failure_in_tails() {
     assert_eq!(v["candidate"]["sampled_peak_attempt_rss_bytes"], 100);
     assert_eq!(v["candidate"]["attempt_seconds_per_candidate"]["max"], 7.0);
 }
+
+#[test]
+fn task_availability_is_internal_and_keeps_unsolved_tasks_explicit() {
+    let mut capture = fixture();
+    capture.lifecycle_seconds = 4.0;
+    capture.results[0].elapsed_seconds = 3.0;
+    capture.results[1].elapsed_seconds = 0.5;
+    let mut input = capture.batch.candidates[0].clone();
+    input.id = "failed".into();
+    input.task_id = Some("unsolved".into());
+    input.code = "rejected source".into();
+    capture.batch.candidates.push(input);
+    let mut output = capture.results[0].clone();
+    output.id = "failed".into();
+    output.outcome.status = Status::Rejected;
+    output.outcome.response = Some(serde_json::json!({
+        "env":0, "messages":[{"severity":"error","data":"fixture error"}]
+    }));
+    capture.results.push(output);
+    let report = compare(&capture, &capture).unwrap();
+    let summary = &report["candidate"];
+    assert_eq!(summary["declared_task_count"], 2);
+    assert_eq!(summary["internal_task_first_success_seconds"]["t"], 0.5);
+    assert_eq!(summary["internal_solved_task_latency_seconds"]["count"], 1);
+    assert_eq!(summary["unsolved_tasks"], serde_json::json!(["unsolved"]));
+    assert_eq!(summary["returned_candidates_per_second"], 0.75);
+    assert!(
+        summary["task_latency_scope"]
+            .as_str()
+            .unwrap()
+            .contains("not streamed")
+    );
+    assert!(
+        summary["candidates_per_second_scope"]
+            .as_str()
+            .unwrap()
+            .contains("not fresh native")
+    );
+}

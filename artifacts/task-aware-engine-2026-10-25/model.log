@@ -1,0 +1,106 @@
+{
+  "2": {
+    "flat_first_success": {
+      "model_makespan_seconds": 14926.195716597995,
+      "model_consumed_span_seconds": 29629.65877737699,
+      "model_internal_solved_task_latency": {
+        "count": 142,
+        "p50": 4644.362839116002,
+        "p90": 10286.462545739992,
+        "p99": 14699.88754333299,
+        "max": 14703.463060778991
+      },
+      "model_tasks_solved_by_seconds": {
+        "60": 14,
+        "300": 20,
+        "900": 32,
+        "3600": 69
+      },
+      "tasks_with_no_valid_observation": 102,
+      "model_completed_candidates": 3639,
+      "model_started_candidates": 3691,
+      "model_cancelled_queued": 4117,
+      "model_cancelled_active": 52,
+      "model_cancelled_active_consumed_seconds": 210.49041072698463,
+      "model_starts_while_same_task_already_active": 1826,
+      "model_max_same_task_inflight": 2
+    },
+    "task_interleaved_first_success": {
+      "model_makespan_seconds": 14803.176432087968,
+      "model_consumed_span_seconds": 29529.687500883047,
+      "model_internal_solved_task_latency": {
+        "count": 142,
+        "p50": 662.997755741,
+        "p90": 2713.9081703070005,
+        "p99": 10829.69171462998,
+        "max": 12031.50303383398
+      },
+      "model_tasks_solved_by_seconds": {
+        "60": 25,
+        "300": 51,
+        "900": 93,
+        "3600": 131
+      },
+      "tasks_with_no_valid_observation": 102,
+      "model_completed_candidates": 3631,
+      "model_started_candidates": 3631,
+      "model_cancelled_queued": 4177,
+      "model_cancelled_active": 0,
+      "model_cancelled_active_consumed_seconds": 0.0,
+      "model_starts_while_same_task_already_active": 4,
+      "model_max_same_task_inflight": 2
+    }
+  },
+  "4": {
+    "flat_first_success": {
+      "model_makespan_seconds": 7617.016813931002,
+      "model_consumed_span_seconds": 29703.280885387943,
+      "model_internal_solved_task_latency": {
+        "count": 142,
+        "p50": 2338.789889779999,
+        "p90": 5142.968185553999,
+        "p99": 7359.632392872001,
+        "max": 7362.088023819001
+      },
+      "model_tasks_solved_by_seconds": {
+        "60": 16,
+        "300": 20,
+        "900": 39,
+        "3600": 94
+      },
+      "tasks_with_no_valid_observation": 102,
+      "model_completed_candidates": 3672,
+      "model_started_candidates": 3839,
+      "model_cancelled_queued": 3969,
+      "model_cancelled_active": 167,
+      "model_cancelled_active_consumed_seconds": 386.3122405399989,
+      "model_starts_while_same_task_already_active": 2758,
+      "model_max_same_task_inflight": 4
+    },
+    "task_interleaved_first_success": {
+      "model_makespan_seconds": 7429.953970024,
+      "model_consumed_span_seconds": 29529.687500882927,
+      "model_internal_solved_task_latency": {
+        "count": 142,
+        "p50": 304.535118699,
+        "p90": 1286.7132495510002,
+        "p99": 5351.686284642997,
+        "max": 5930.759239143
+      },
+      "model_tasks_solved_by_seconds": {
+        "60": 40,
+        "300": 69,
+        "900": 117,
+        "3600": 138
+      },
+      "tasks_with_no_valid_observation": 102,
+      "model_completed_candidates": 3631,
+      "model_started_candidates": 3631,
+      "model_cancelled_queued": 4177,
+      "model_cancelled_active": 0,
+      "model_cancelled_active_consumed_seconds": 0.0,
+      "model_starts_while_same_task_already_active": 36,
+      "model_max_same_task_inflight": 2
+    }
+  }
+}

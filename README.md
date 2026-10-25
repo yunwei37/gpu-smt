@@ -41,6 +41,11 @@ fields are output provenance, not persistent remote session handles.
 |gpu-smt-lean|Original native REPL JSON transport and process retirement|
 |gpu-smt-server|Embeddable HTTP adapter and JSONL/HTTP executable|
 
+The composable task-interleave policy orders first-success work across task
+groups while retaining wrapped source ranking and memory forecasts. It is an
+ordinary scheduling component; workload-layer novelty and whole-flow benefit
+remain research questions.
+
 RL mode returns every candidate outcome. First-success mode cancels siblings
 only after checked same-task acceptance. Exact completed/in-flight reuse
 retains each caller's identity; cancellation and resource failures are not

@@ -1,0 +1,35 @@
+{
+  "mode": "first_success",
+  "candidates": [
+    {
+      "id": "arith-admitted",
+      "task_id": "arithmetic",
+      "code": "import Init\nexample : 1 + 1 = 2 := by sorry",
+      "reuse": false
+    },
+    {
+      "id": "arith-checked",
+      "task_id": "arithmetic",
+      "code": "import Init\nexample : 1 + 1 = 2 := by decide",
+      "reuse": false
+    },
+    {
+      "id": "arith-sibling",
+      "task_id": "arithmetic",
+      "code": "import Init\nexample : 1 + 1 = 2 := by rfl",
+      "reuse": false
+    },
+    {
+      "id": "false-decide",
+      "task_id": "unsolved",
+      "code": "import Init\nexample : False := by decide",
+      "reuse": false
+    },
+    {
+      "id": "false-rfl",
+      "task_id": "unsolved",
+      "code": "import Init\nexample : False := by rfl",
+      "reuse": false
+    }
+  ]
+}

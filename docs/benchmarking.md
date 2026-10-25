@@ -39,8 +39,11 @@ capture/events before attributing any reuse. A measurement of the fresh backend
 does not replace the strongest warm/native reference. Keep native reference
 captures and adapters explicit.
 
-The fifo and source-size policies are available. Source size is an
+The fifo, source-size and task-interleave policies are available. Source size is an
 unvalidated heuristic, not a learned predictor or a novelty claim.
+task-interleave wraps FIFO and interleaves first-success task groups; all-mode
+stays FIFO. This ordering is a prior scheduling technique, not a new contribution.
+Reuse/mode/resource settings must match the intended consumer comparison.
 reuse=false gives every duplicate a fresh native execution; reuse=true
 permits exact completed and in-flight sharing in a deterministic pinned
 environment. Report reuse as part of the method.
@@ -88,3 +91,23 @@ run individually with four reserved eligible cores, no per-process AS cap and
 48 GiB aggregate sampled RSS. Then qualify and measure the new engine
 resource/workload policies on the complete native population. A one-second
 watchdog is a sampled response, not a kernel hard RSS quota.
+
+
+## Internal task availability and consumer rows
+
+Comparison reports internal_task_first_success_seconds and solved-task latency
+quantiles, taking each task's earliest actual Accepted result after batch
+submission. These observation times come from the batch result loop and include
+queue/retry/retirement; they are not reconstructed native CPU intervals. Unsolved task IDs/counts
+remain explicit; conditional solved-task quantiles do not hide their failures.
+Cache/coalesced checked decisions remain labelled through existing provenance.
+
+These are internal acceptance events. The current HTTP/CLI batch adapter replies
+after every result, so these fields do not measure streamed client delivery.
+Use a client/controller clock for delivery, parsing and full cold lifecycle.
+
+returned_candidates_per_second counts returned consumer rows, including
+cancelled/cache/coalesced rows. The earlier candidates_per_second key remains
+as the same value with an explicit scope string. Neither denotes fresh native
+verification throughput; physical-attempt statistics retain their per-caller
+history/coalescing limitations.
