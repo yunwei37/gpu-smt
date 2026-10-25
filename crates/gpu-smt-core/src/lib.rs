@@ -225,6 +225,13 @@ pub trait VerificationBackend: Send + Sync {
     }
     /// Return after attempt children retire; shared prepared state retires at shutdown.
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome;
+    /// Execute a resource retry after the preceding attempt has fully retired
+    /// and this engine has granted exclusive admission. Backends may reclaim
+    /// idle prepared state; the default retains ordinary verification behavior.
+    /// Cleanup must be included in the attempt and native request deadline.
+    async fn verify_resource_retry(&self, candidate: &Candidate, execution: Execution) -> Outcome {
+        self.verify(candidate, execution).await
+    }
     /// Retire backend-owned idle/prepared state on engine shutdown.
     async fn shutdown(&self) {}
 }

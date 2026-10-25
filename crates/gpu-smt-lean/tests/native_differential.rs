@@ -193,11 +193,11 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         project: PathBuf::from(std::env::var("LEAN_PROJECT").unwrap()),
         environment: "pinned-prepared-native-contract".into(),
     };
-    let backend = gpu_smt_lean::PreparedRepl::new(
+    let backend = Arc::new(gpu_smt_lean::PreparedRepl::new(
         fresh.clone(),
         PathBuf::from(std::env::var("LEAN_PREPARED_HOST").unwrap()),
         PathBuf::from(std::env::var("LEAN_SYSROOT").unwrap()),
-    );
+    ));
     let mask = std::fs::read_to_string("/proc/self/status").unwrap();
     let cpus: Vec<usize> = mask
         .lines()
@@ -220,10 +220,10 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
     let engine = Engine::new(
         Config {
             memory_bytes: 48 << 30,
-            cpus,
+            cpus: cpus.clone(),
             cores_per_worker: 1,
         },
-        Arc::new(backend),
+        backend.clone(),
         Arc::new(Fifo),
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
@@ -463,6 +463,98 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
     assert_eq!(after[0].outcome.response, first_expected);
     seen.extend(
         after[0]
+            .attempts
+            .iter()
+            .flat_map(|a| a.processes.iter().cloned()),
+    );
+    // Engine routing is covered by the preemption test. Here exercise the
+    // real native backend's exclusive retry after all earlier work retired.
+    // This is a lifecycle control, not a real-memory-pressure performance run.
+    #[derive(Default)]
+    struct RetryRegistry {
+        seen: std::sync::Mutex<Vec<ProcessIdentity>>,
+        events: std::sync::Mutex<Vec<BackendEvent>>,
+    }
+    impl ProcessRegistry for RetryRegistry {
+        fn note(&self, event: BackendEvent) {
+            self.events.lock().unwrap().push(event);
+        }
+        fn register(&self, process: ProcessIdentity) {
+            self.seen.lock().unwrap().push(process);
+        }
+        fn unregister(&self, _: &ProcessIdentity) {}
+    }
+    let retry_registry = Arc::new(RetryRegistry::default());
+    let retry_source = Candidate {
+        id: "exclusive-retry".into(),
+        task_id: None,
+        code: "import Init\nimport Std.Internal.UV.Timer\ndef candidate_private := 7".into(),
+        timeout_ms: 300000,
+        reuse: false,
+    };
+    let retry = backend
+        .verify_resource_retry(
+            &retry_source,
+            Execution {
+                cancel: Default::default(),
+                cpus: cpus.clone(),
+                registry: retry_registry.clone(),
+            },
+        )
+        .await;
+    assert_eq!(retry.status, Status::Accepted);
+    assert_eq!(retry.response, first_expected);
+    assert!(
+        !engine.prepared_state_ready(),
+        "exclusive retry recreated the parent"
+    );
+    assert!(
+        gpu_smt_engine::linux::identity(parent.as_ref().unwrap().pid).is_err(),
+        "old prepared parent consumes memory after exclusive retry"
+    );
+    assert!(retry_registry.events.lock().unwrap().iter().any(|event| {
+        event.stage == "prepared_evicted"
+            && serde_json::from_str::<serde_json::Value>(&event.detail)
+                .is_ok_and(|v| v["parent_pid"] == parent.as_ref().unwrap().pid)
+    }));
+    let retry_processes = retry_registry.seen.lock().unwrap().clone();
+    assert_eq!(
+        retry_processes.len(),
+        1,
+        "retry must use one fresh native process"
+    );
+    for process in &retry_processes {
+        assert!(
+            gpu_smt_engine::linux::identity(process.pid).is_err(),
+            "fresh retry survives its returned result"
+        );
+    }
+    seen.extend(retry_processes);
+    let next = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![Candidate {
+                id: "after-resource-retry".into(),
+                ..retry_source
+            }],
+        })
+        .await
+        .unwrap();
+    assert_eq!(next[0].outcome.status, Status::Accepted);
+    assert_eq!(next[0].outcome.response, first_expected);
+    assert!(
+        engine.prepared_state_ready(),
+        "ordinary work did not prepare a new parent"
+    );
+    let prepared_again = next[0].attempts[0]
+        .backend_events
+        .iter()
+        .find(|event| event.stage == "prepared_ready")
+        .map(|event| serde_json::from_str::<serde_json::Value>(&event.detail).unwrap())
+        .expect("new native import parent was not prepared");
+    assert_ne!(prepared_again["parent_pid"], parent.as_ref().unwrap().pid);
+    seen.extend(
+        next[0]
             .attempts
             .iter()
             .flat_map(|a| a.processes.iter().cloned()),

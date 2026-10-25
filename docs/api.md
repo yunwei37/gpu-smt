@@ -60,6 +60,14 @@ returns resource_exhausted; concurrent preemptions remain in attempts.
 Predictions never reject oversized work without an actual solo execution.
 Queueing, retry and retirement are charged. Sampling is not a kernel quota.
 
+VerificationBackend::verify_resource_retry defaults to verify, so existing
+backend implementations need no change. Engine invokes it only for a resource
+retry under exclusive admission after preceding attempts retire. PreparedRepl
+reclaims its idle parent and runs this retry through its unchanged fresh native
+backend, retaining prepared_evicted and fresh_fallback events. The same request
+deadline includes teardown; later ordinary requests may prepare again.
+Candidate/Execution JSON and source semantics are unchanged.
+
 Current backend scope is Linux and a cooperative persistent native REPL;
 it is not a sandbox for hostile sources that daemonize or escape ownership.
 The optional pinned-context import parent uses native process branching, with
@@ -101,7 +109,7 @@ Lean+C adapter. The default stays fresh-process. See [native build/lifecycle and
 limitations](../native/lean/README.md). Preparation and child checks share the
 original request timeout; remaining time is passed to any fresh fallback.
 Attempt histories include the parent during active preparation; after readiness
-it becomes shared backend-owned state until shutdown. Disposable candidate
+it becomes shared backend-owned state until shutdown or exclusive-retry eviction. Disposable candidate
 children retire before each result. Backend readiness is reported separately
 from general resource health.
 

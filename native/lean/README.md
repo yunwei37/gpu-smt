@@ -30,6 +30,13 @@ for that retirement before releasing the CPU lease or returning a result.
 Timeout/cancellation kills the owned child group; the parent survives.
 Preparation, connection, fallback, remaining timeout and shutdown are charged.
 
+A memory-preempted candidate's exclusive retry first retires the idle import
+parent, then uses the unchanged fresh native backend. Otherwise the retained
+parent's summed RSS would reduce the memory available to that supposedly solo
+retry. The operation has no new AS cap, timeout or acceptance rule; parent
+teardown consumes the existing request deadline and its eviction is recorded.
+Ordinary work may prepare a new parent afterwards.
+
 ## Build and use
 
 From this repository, with the native project already built:

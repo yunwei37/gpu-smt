@@ -407,6 +407,37 @@ impl VerificationBackend for PreparedRepl {
             Err(e) => self.fallback(c, x, deadline, e).await,
         }
     }
+    async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
+        let deadline = Instant::now() + Duration::from_millis(c.timeout_ms);
+        {
+            // Engine grants this retry only after other attempts retire. Hold
+            // the state lock through graceful teardown so no new branch can
+            // acquire this parent while its memory is being reclaimed.
+            let mut state = self.state.lock().await;
+            self.ready.store(false, Ordering::Release);
+            if let Some(parent) = state.parent.take() {
+                x.registry.note(BackendEvent {
+                    stage: "prepared_evicted".into(),
+                    detail: serde_json::json!({
+                        "reason":"exclusive_resource_retry",
+                        "parent_pid":parent.identity.pid,
+                        "start_ticks":parent.identity.start_ticks
+                    })
+                    .to_string(),
+                });
+                parent.stop(false).await;
+            }
+        }
+        // Do not recreate the import parent on the very retry meant to reclaim
+        // its memory. Later ordinary requests can prepare it again.
+        self.fallback(
+            c,
+            x,
+            deadline,
+            "exclusive resource retry uses fresh native state".into(),
+        )
+        .await
+    }
     async fn shutdown(&self) {
         self.ready.store(false, Ordering::Release);
         let parent = self.state.lock().await.parent.take();

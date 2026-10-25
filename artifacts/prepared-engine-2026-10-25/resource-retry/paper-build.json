@@ -1,0 +1,16 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "10",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/tmp/gpu-smt-resource-retry-paper-20261025",
+    "main.tex"
+  ],
+  "exit": 0,
+  "pdf": "/tmp/gpu-smt-resource-retry-paper-20261025/main.pdf",
+  "first_background_exit": "not captured; output retained",
+  "note": "Only targeted implementation paragraph changed. PDF produced with retained layout warnings; no visual/submission acceptance claim."
+}

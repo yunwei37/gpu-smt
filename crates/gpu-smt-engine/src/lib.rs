@@ -511,7 +511,11 @@ impl Inner {
                 cpus,
                 registry: registry.clone(),
             };
-            let future = self.backend.verify(&c, execution);
+            let future = if solo {
+                self.backend.verify_resource_retry(&c, execution)
+            } else {
+                self.backend.verify(&c, execution)
+            };
             tokio::pin!(future);
             let mut outcome = tokio::select! {
                 o=&mut future=>o,

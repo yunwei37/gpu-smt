@@ -71,7 +71,7 @@ fn candidate(id: &str, code: &str, task: &str) -> Candidate {
         reuse: true,
     }
 }
-fn engine(backend: Arc<Backend>, per_job: u64) -> Engine {
+fn engine(backend: Arc<dyn VerificationBackend>, per_job: u64) -> Engine {
     Engine::new(
         Config {
             memory_bytes: 100,
@@ -173,9 +173,29 @@ async fn first_success_is_separate_from_every_candidate_rewards() {
 }
 #[tokio::test]
 async fn preempted_candidate_is_requeued_exclusively_with_history() {
-    let b = Arc::new(Backend {
-        calls: AtomicUsize::new(0),
-        delay_ms: 1300,
+    struct RetryBackend {
+        base: Backend,
+        retries: AtomicUsize,
+    }
+    #[async_trait]
+    impl VerificationBackend for RetryBackend {
+        fn identity(&self) -> String {
+            self.base.identity()
+        }
+        async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+            self.base.verify(c, x).await
+        }
+        async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
+            self.retries.fetch_add(1, Ordering::SeqCst);
+            self.base.verify(c, x).await
+        }
+    }
+    let b = Arc::new(RetryBackend {
+        base: Backend {
+            calls: AtomicUsize::new(0),
+            delay_ms: 1300,
+        },
+        retries: AtomicUsize::new(0),
     });
     let e = engine(b.clone(), 70);
     let result = e
@@ -192,7 +212,8 @@ async fn preempted_candidate_is_requeued_exclusively_with_history() {
     let retried = result.iter().find(|v| v.attempts.len() == 2).unwrap();
     assert_eq!(retried.attempts[0].status, Status::Preempted);
     assert!(retried.attempts[1].exclusive);
-    assert_eq!(b.calls.load(Ordering::SeqCst), 3);
+    assert_eq!(b.base.calls.load(Ordering::SeqCst), 3);
+    assert_eq!(b.retries.load(Ordering::SeqCst), 1);
     e.shutdown().await;
 }
 #[tokio::test]

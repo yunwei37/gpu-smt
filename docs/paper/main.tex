@@ -149,6 +149,10 @@ adapters. Backend, scheduling, resource sampling, admission and exact-result
 storage use replaceable interfaces. Logical rejection, incomplete proof,
 timeout, preemption and consumer cancellation remain distinct.
 The default Rust backend executes isolated fresh native processes.
+For an exclusive resource retry after concurrent preemption, the optional
+import backend retires its idle prepared parent and uses fresh native execution.
+The existing request deadline includes teardown and fallback; later ordinary
+requests may prepare again. This is resource recovery, not early rejection.
 An optional Lean+C adapter prepares parsed imports in a single native parent
 and executes candidate commands in disposable OS children, with fresh fallback
 for different imports. Pinned stock Lean 4.18 controls pass raw-response
