@@ -27,40 +27,29 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-The user's current experiment is our own exact-checked arithmetic
-counterexample screen within RQ4. Existing external-system comparisons are
-retained and are not being extended. The original Initial Narrative, four
-RQs and Lean/SMT/OSDI-quality objective remain open and unfrozen. No surviving
-new systems contribution or useful additional GPU effect is established.
+The complete own arithmetic counterexample-screening pair on7,808original
+miniF2Fcandidates has exact accepted/status parity but requires8.8563%more
+elapsed than native before additional preparation. Exact refutations occur
+in29ordinary-error candidates and remove no83timeouts. This is a small
+supporting component, not the missing systems contribution.
+[Complete final result](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md)
+retains all42resourcefailures and missing cold-controller-clock limitations.
 
-The original7,808source typed-goal observation is active on its frozen
-source/worker, with the current48GiBaggregate/max2REPLs/24GiBeach resource
-contract. The completed RTX5090 offline474entry qualification finds the same
-two exact witnesses as CPU and retires its provider/context/Job. It is
-functional hardware evidence, not nativeproof equivalence or acceleration.
-The larger immutable prefix finds13witness entries in11sources, all ordinary
-Lean errors. Of19currently returned timeouts,13have no arithmetic entry,
-five have unsupported entries and one has supported entries. The main
-uncertainty is cost coverage of false goals, not point-kernel throughput.
-[Actual data and current interpretation](evaluation.md#current-own-method-frontier).
+The user explicitly stops expanding thisGPUcomparison and requests actual
+tactic/phase attribution on the native slowest10%FAILED cohort:480sources,
+including83timeouts/355Leanerrors/42resourcefailures. Its original83/old78
+timeout mapping, unchanged source inputs, native runtime profiling boundary
+and preflight are documented in the [measurement plan](../artifacts/lean-failure-profile-2026-10-25/plan.md).
+Qualification is underway; it is not a hotspot conclusion or speed result.
+Use the resulting measured distribution to select our next mechanism,
+including GPUparallel enumeration only if actualwork supports it.
+No external-system reproductions, narrow-kernel revival or newGPUgrid.
 
-A separate alias build is compiled for future native qualification, and the
-future worker evaluates supported closed arithmetic once onCPU. Native24and
-complete same-candidate off/on measurement remain pending. The current
-observer and raw/failed data are preserved. Root alone implements and reviews;
-no independent audit is claimed. The sole current manuscript is
-[docs/paper](paper/main.tex). The
-[12-round writing self-review](tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md)
-preserves every numerical value, allfourRQ and missingresultslots. Scientific
-evidence and submission readiness are not supplied by writing.
-
-The next decisive action is to collect the existing full observation at
-actual completion, qualify our native24device path, and measure whole
-off/on failure/timeout/tail costs. Do not restart healthy acquisition or
-extend oldcompetitors/narrowkernels to create activity. The complete dated
-frontier that preceded this condensation is retained
-[verbatim](tmp/bootstrap/step-0011-20261023T195335-0700/idea-frontier-through-20261024T0630.md.gz);
-its pending statements describe their original dates, not current live state.
+The Initial Narrative, allfourRQs, Lean/SMTscope and OSDI-quality objective
+remain unchanged, open and unfrozen. Rootalone implements and reviews,
+with no independent audit. The only current paper is [docs/paper](paper/main.tex).
+Source/runtime adaptations and complete results do not prove novelty or
+submission readiness. Historical datedfrontiers remain linked in step reports.
 
 ## Narrative evolution
 

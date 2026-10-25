@@ -705,3 +705,20 @@ REVIEW_GATE rootselfreview verifies rawsets, denominators, memory and limitsof
 attribution; noindependentaudit. UsernowprohibitsfurtherGPUpairedexpansion.
 Next actualprofilingselects native83timeouts andfailed-onlyslow480sources;
 old78mapping remains. Do notsubstituteall-source781tail orbrokenobservercounts.
+
+## Native failure-hotspot plan and real qualification in progress
+EXPERIMENT_GATE selects supportingRQ4diagnostic from latestuserinstruction,
+not anotherGPUcounterexamplevariant. Fixed480nativefailedtail includes83timeouts;
+old78are a strictsubset, new5IDs are retained in cohort.json. Originalsource
+and compilednativeobjects remainunchanged. The actualstockprofileitMboundary
+is wrapped only atlink time, measuring namedtactic/component costs and active
+unclosedregions; no source-token timing or speculativeGPUkernel.
+[Plan and rootselfreview](../../../../artifacts/lean-failure-profile-2026-10-25/plan.md)
+requires real24off/profile qualification beforefull480. Three dependency
+compiler/linker errors arepreserved, repaired via theexistingGNUruntimepath;
+these were not threeactualpreflightruns. Actualfirst24qualification is live,
+singleparentPID275162, max2/24AS/48total/CPU8–11/300s unchanged.
+WRITE_GATE onlyupdates currentfrontier, no result insertedbeforeactualcompletion.
+REVIEW_GATE rootselfreview records scope/unknowns; noindependent audit.
+The existinghourlytask prompt isupdated to currentuserdirection withoutcadence,
+target or executorchange. No newscheduler/agent/Workspace iscreated.

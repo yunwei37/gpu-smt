@@ -1,0 +1,24 @@
+{
+  "original": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+  "binary": "/tmp/gpu-smt-failure-profiler-20261025/repl",
+  "source": "/workspaces/repository/bench/lean-failure-profile/profileit.cpp",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-std=c++17",
+        "-O2",
+        "-fPIC",
+        "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+        "-c",
+        "/workspaces/repository/bench/lean-failure-profile/profileit.cpp",
+        "-o",
+        "/tmp/gpu-smt-failure-profiler-20261025/profileit.o"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "In file included from /workspaces/repository/bench/lean-failure-profile/profileit.cpp:3:\n/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include/lean/lean.h:14:10: fatal error: 'atomic' file not found\n#include <atomic>\n         ^~~~~~~~\n1 error generated.\n"
+    }
+  ],
+  "scope": "Existing native objects relinked; runtime diagnostic wrapper only."
+}

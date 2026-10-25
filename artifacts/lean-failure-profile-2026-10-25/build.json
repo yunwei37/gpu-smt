@@ -1,0 +1,51 @@
+{
+  "original": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+  "binary": "/tmp/gpu-smt-failure-profiler-20261025/repl",
+  "source": "/workspaces/repository/bench/lean-failure-profile/profileit.cpp",
+  "commands": [
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "-fPIC",
+        "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+        "-c",
+        "/workspaces/repository/bench/lean-failure-profile/profileit.cpp",
+        "-o",
+        "/tmp/gpu-smt-failure-profiler-20261025/profileit.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-o",
+        "/tmp/gpu-smt-failure-profiler-20261025/repl",
+        "././.lake/build/ir/REPL/Main.c.o.export",
+        "././.lake/build/ir/REPL/JSON.c.o.export",
+        "././.lake/build/ir/REPL/Frontend.c.o.export",
+        "././.lake/build/ir/REPL/Util/Path.c.o.export",
+        "././.lake/build/ir/REPL/Lean/ContextInfo.c.o.export",
+        "././.lake/build/ir/REPL/Util/Pickle.c.o.export",
+        "././.lake/build/ir/REPL/Lean/Environment.c.o.export",
+        "././.lake/build/ir/REPL/Lean/InfoTree.c.o.export",
+        "././.lake/build/ir/REPL/Lean/InfoTree/ToJson.c.o.export",
+        "././.lake/build/ir/REPL/Snapshots.c.o.export",
+        "././.lake/build/ir/REPL/ExtractData.c.o.export",
+        "-rdynamic",
+        "/tmp/gpu-smt-failure-profiler-20261025/profileit.o",
+        "-Wl,--wrap=lean_profileit",
+        "/usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so",
+        "-lz",
+        "-pthread"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Existing native objects relinked; runtime diagnostic wrapper only."
+}
