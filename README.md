@@ -123,7 +123,7 @@ Synthetic controls are not the real-workload evidence.
 The manuscript has completed a
 [12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
 Its current citation update retains all numerical results, four RQs and
-14 missing result slots. The compiled draft is 32 pages including appendices;
+14 missing result slots. The compiled draft is 33 pages including appendices;
 it is not submission-ready.
 
 All implementation, experiments and review run in this thread. Reviews are

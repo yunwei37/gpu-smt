@@ -523,5 +523,7 @@ Self-review is not an independent audit; full480ranking/interpretation is pendin
 
 Targeted paper compilation completed successfully with the currentPDF;
 [command, logs and root self-review](cpu-oracle-freeze-paper-check/self-review.md)
-retain actual cost/monitor evidence. The14missing result slots and32page
+retain actual cost/monitor evidence. The14missing result slots and33page
 draft are not submission readiness. No active capture input was changed.
+
+The compilation log records33pages after the freeze wording, correcting the earlier cached32page count. No numerical result changed.

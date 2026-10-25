@@ -8,7 +8,7 @@ history and cannot authorize a new oracle experiment or satisfy the new
 full-population threshold. No full480distribution or new method is admitted.
 
 Tectonic exits0 after the targeted source edits; source/PDF agree. The draft
-retains14missing result slots and32pages including appendices, with existing
+retains14missing result slots and33pages including appendices, with existing
 underfull box warnings, not submission readiness. Compile stdout/TeXlog are
 losslessgzip; receipt records actual command/time. The joint sampled watchdog
 covers the compiler root plus the exact live capture identity,3samples,
