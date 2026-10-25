@@ -86,7 +86,13 @@ def main():
             if source_id in files:
                 raise ValueError("ambiguous diagnostic files for "+source_id)
             files[source_id] = path
-    ids = list(mapping) if mapping else sorted(files)
+    if mapping:
+        ids = list(mapping)
+    elif (args.diagnostics / "terminal.json").exists():
+        terminal = json.loads((args.diagnostics / "terminal.json").read_text())
+        ids = [row["id"] for row in terminal["results"]]
+    else:
+        raise ValueError("exact preparation or terminal candidate inventory required")
     sources = [analyze_source(i, files.get(i), mapping.get(i,{})) for i in ids]
     output = dict(planned_sources=len(ids),
         sources_with_runtime_records=sum(x["runtime_record_available"] for x in sources),

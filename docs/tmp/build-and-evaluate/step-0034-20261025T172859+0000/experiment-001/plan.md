@@ -1,0 +1,1 @@
+Repair the two observed diagnostic-fidelity defects only;keep prior raw failures. Recompile and repeat exact seven native control pairs under combined48GiB sampling. Compare labels and assert actual native-origin representation and exact candidate cardinality. No population overlap or failure-rule expansion.

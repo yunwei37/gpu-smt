@@ -80,7 +80,8 @@ private def observedSimp (expression : Expr) (ctx : Simp.Context)
         let mut used : Array Json := #[]
         for (origin, order) in native.usedTheorems.toArray do
           used := used.push <| Json.mkObj [
-            ("origin", toJson (← (← ppOrigin origin).toString)),
+            ("origin", toJson origin.key.toString),
+            ("native_origin", toJson (reprStr origin)),
             ("first_use_order", toJson order)]
         IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
           ("event", toJson ("progress" : String)), ("phase", toJson phase),

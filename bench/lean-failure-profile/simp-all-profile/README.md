@@ -51,3 +51,9 @@ Missing/unterminated phases remain explicit. This analyzer never rejects a
 candidate. The qualification-006 artifacts contain14actual native invocations,
 seven matched pairs, with zero status mismatches; this is not execution of
 the23original timeouts. Do not infer their bottlenecks or cycle coverage yet.
+
+The progress observer now serializes native Origin.key and tagged Origin repr
+directly. qualification006 lazy MessageData names are invalid attribution;
+qualification007 is the repaired seven-pair control. The analyzer requires the
+exact preparation/terminal source inventory and excludes memory sidecars.
+See progress-repair-result-review.md in the existing artifact directory.

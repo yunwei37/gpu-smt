@@ -1,0 +1,911 @@
+{
+  "completed": 14,
+  "planned": 14,
+  "mismatches": [],
+  "seconds": 42.0933606068138,
+  "peak_combined_rss_bytes": 20991365120,
+  "budget_bytes": 51539607552,
+  "sampling_seconds": 1,
+  "monitor_errors": [],
+  "existing_owner": 283334,
+  "development_controls_only": true,
+  "isolated_performance": false,
+  "results": [
+    {
+      "id": "implication-native",
+      "pair": "implication",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0051932288333774,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "implication-profile",
+      "pair": "implication",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005475235870108,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 113,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 113,
+          "event": "end",
+          "elapsed_ns": 39090
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 113,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 113,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            1161479664,
+            1958355994
+          ],
+          "entries": 2,
+          "elapsed_ns": 554900
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 113,
+          "event": "begin",
+          "entries": 2
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "native_num_steps": 1,
+          "mono_ns": 1380572017950101,
+          "invocation_byte": 113,
+          "expression_hash_hint": 1161479664,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 113,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            1161479664,
+            1958355994
+          ],
+          "entries": 2,
+          "elapsed_ns": 457410
+        },
+        {
+          "slot": 1,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 113,
+          "event": "begin",
+          "entries": 2
+        },
+        {
+          "used_origins": [],
+          "slot": 1,
+          "round": 1,
+          "phase": "hypothesis",
+          "native_num_steps": 1,
+          "mono_ns": 1380572018336180,
+          "invocation_byte": 113,
+          "expression_hash_hint": 1958355994,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 1,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 113,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            1161479664,
+            1958355994
+          ],
+          "entries": 2,
+          "elapsed_ns": 1291552
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 113,
+          "event": "begin",
+          "entries": 2
+        },
+        {
+          "used_origins": [
+            {
+              "origin": "true_implies",
+              "native_origin": "Lean.Meta.Origin.decl `true_implies true false",
+              "first_use_order": 1
+            },
+            {
+              "origin": "_uniq.15",
+              "native_origin": "Lean.Meta.Origin.fvar (Lean.Name.mkNum `_uniq 15)",
+              "first_use_order": 0
+            }
+          ],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380572019945095,
+          "invocation_byte": 113,
+          "expression_hash_hint": 3246358015,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 113,
+          "hypothesis_updates": 1,
+          "event": "end",
+          "entry_type_hashes": [
+            1161479664,
+            3246358015
+          ],
+          "entries": 2,
+          "elapsed_ns": 484432
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "substitution-native",
+      "pair": "substitution",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0053214230574667,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "substitution-profile",
+      "pair": "substitution",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005585655104369,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 105,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 105,
+          "event": "end",
+          "elapsed_ns": 41666
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            156005795
+          ],
+          "entries": 1,
+          "elapsed_ns": 329114
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "native_num_steps": 1,
+          "mono_ns": 1380578022805179,
+          "invocation_byte": 105,
+          "expression_hash_hint": 156005795,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            156005795
+          ],
+          "entries": 1,
+          "elapsed_ns": 1621935
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380578024461440,
+          "invocation_byte": 105,
+          "expression_hash_hint": 3625771804,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            156005795
+          ],
+          "entries": 1,
+          "elapsed_ns": 2810548
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "modular-native",
+      "pair": "modular",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0053720402065665,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 0,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "modular-profile",
+      "pair": "modular",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005470830015838,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 105,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 105,
+          "event": "end",
+          "elapsed_ns": 42480
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            3476464779
+          ],
+          "entries": 1,
+          "elapsed_ns": 350240
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "native_num_steps": 1,
+          "mono_ns": 1380584015773400,
+          "invocation_byte": 105,
+          "expression_hash_hint": 3476464779,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            3476464779
+          ],
+          "entries": 1,
+          "elapsed_ns": 1697661
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 105,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380584017507706,
+          "invocation_byte": 105,
+          "expression_hash_hint": 2148468311,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 105,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            3476464779
+          ],
+          "entries": 1,
+          "elapsed_ns": 4378001
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "unsolved-native",
+      "pair": "unsolved",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.005305818049237,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "unsolved-profile",
+      "pair": "unsolved",
+      "status": "rejected",
+      "expected": "rejected",
+      "exit": 1,
+      "seconds": 3.005511130904779,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 86,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 86,
+          "event": "end",
+          "elapsed_ns": 37072
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 86,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 86,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 128890
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 86,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380589991876736,
+          "invocation_byte": 86,
+          "expression_hash_hint": 207835726,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 86,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 582358
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "fallback-native",
+      "pair": "fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005290513858199,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "fallback-profile",
+      "pair": "fallback",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.0057262999471277,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 2,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 97,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 97,
+          "event": "end",
+          "elapsed_ns": 179203
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 97,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 97,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 131274
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 97,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380595993590777,
+          "invocation_byte": 97,
+          "expression_hash_hint": 995776877,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 97,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 853879
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "admitted-native",
+      "pair": "admitted",
+      "status": "incomplete",
+      "expected": "incomplete",
+      "exit": 0,
+      "seconds": 3.0048027399461716,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "admitted-profile",
+      "pair": "admitted",
+      "status": "incomplete",
+      "expected": "incomplete",
+      "exit": 0,
+      "seconds": 3.005513752810657,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 2,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 90,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 90,
+          "event": "end",
+          "elapsed_ns": 43433
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 90,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 90,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 141776
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 90,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380602056056203,
+          "invocation_byte": 90,
+          "expression_hash_hint": 207835726,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 90,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [],
+          "entries": 0,
+          "elapsed_ns": 10031389
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "trailing-combinator-native",
+      "pair": "trailing-combinator",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005436341976747,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 1,
+      "phase_observations": [],
+      "pressure_aborted_new_test_only": false
+    },
+    {
+      "id": "trailing-combinator-profile",
+      "pair": "trailing-combinator",
+      "status": "accepted",
+      "expected": "accepted",
+      "exit": 0,
+      "seconds": 3.005829714005813,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--json",
+        "--stdin"
+      ],
+      "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+      "diagnostic_count": 2,
+      "phase_observations": [
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 101,
+          "event": "begin"
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "elaborate-arguments",
+          "invocation_byte": 101,
+          "event": "end",
+          "elapsed_ns": 37030
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 101,
+          "event": "begin",
+          "entries": 0
+        },
+        {
+          "slot": 0,
+          "round": 0,
+          "phase": "initialize",
+          "invocation_byte": 101,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            2799987987
+          ],
+          "entries": 1,
+          "elapsed_ns": 317225
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 101,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "native_num_steps": 1,
+          "mono_ns": 1380608033255532,
+          "invocation_byte": 101,
+          "expression_hash_hint": 2799987987,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "hypothesis",
+          "invocation_byte": 101,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            2799987987
+          ],
+          "entries": 1,
+          "elapsed_ns": 1950758
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 101,
+          "event": "begin",
+          "entries": 1
+        },
+        {
+          "used_origins": [],
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "native_num_steps": 1,
+          "mono_ns": 1380608035245923,
+          "invocation_byte": 101,
+          "expression_hash_hint": 2799987987,
+          "event": "progress",
+          "cycle_witness": false
+        },
+        {
+          "slot": 0,
+          "round": 1,
+          "phase": "target",
+          "invocation_byte": 101,
+          "hypothesis_updates": 0,
+          "event": "end",
+          "entry_type_hashes": [
+            2799987987
+          ],
+          "entries": 1,
+          "elapsed_ns": 932509
+        }
+      ],
+      "pressure_aborted_new_test_only": false
+    }
+  ]
+}
