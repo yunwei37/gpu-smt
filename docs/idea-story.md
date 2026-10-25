@@ -42,11 +42,12 @@ timeout mapping, unchanged source inputs, native runtime profiling boundary
 and preflight are documented in the [measurement plan](../artifacts/lean-failure-profile-2026-10-25/plan.md).
 The C-only24source qualification is complete and the solefull480capture
 is running; neither qualification nor a partial profile is a hotspot conclusion.
-The user now freezes the externalCPUoracle as a baseline and permits a final
-new method only with a dominant measured cost and a costed full-population
-native-relative gain above1.3x, excluding frozen-oracle gains. Implementation
-and full pairing must complete by2026-11-01UTC; absent that evidence, stop
-new experiments and write a measurement/negative-results short paper.
+The CPUoracle remains frozen. The latest user decision removes the
+performance condition, deadline and short-paper closure and directs continuous
+work on three axes: reliable earlyfailure/timeout detection,32candidate
+first-success scheduling, and public Lean code-verification workloads.
+During the sole live capture, advance offline scheduling analysis,
+implementation and workload preparation rather than empty waiting.
 No external-system reproductions, narrow-kernel revival or newGPUgrid.
 
 The Initial Narrative, allfourRQs, Lean/SMTscope and OSDI-quality objective
@@ -175,3 +176,19 @@ known certificate interface as novelty or repeatedly narrowing GPU kernels.
 It preserves the Initial Narrative as history and does not pretend its four
 systems RQs were answered. Pending480evidence determines the conditional
 disposition. [Root decision/self-audit](tmp/bootstrap/step-0011-20261023T195335-0700/step-report.md#cpu-oracle-frozen-and-new-conditional-continuation).
+
+### 2026-10-25 — user replaces the conditional closure with three continuing directions
+
+The latest explicit user instruction supersedes the immediately previous
+1.3x condition, one-week deadline and short-paper closure. CPUoracle freeze
+is unchanged. Continue reliable earlyfailure/timeout detection, first-success
+candidate scheduling, and actual Lean code-verification workloads. This
+preserves the ambitious Initial Narrative and is more faithful to current
+user intent than a forced closure or oracle novelty claim. Candidate
+scheduling changes the consumer contract to pass@k/best-of-n, not full
+candidate rewards; report that boundary rather than claiming identical
+per-candidate RL semantics. A provable local simplifier cycle or branch count
+must still account for backtracking and complete-request acceptance.
+The full480profile remains active; offline scheduling analysis/workload
+preparation proceeds concurrently without a second collection or agent.
+No new proof of benefit or contribution is implied by this direction change.

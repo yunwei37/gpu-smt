@@ -95,7 +95,7 @@ Frozen2026-10-25 by explicit user instruction: existing implementation/data
 are retained, no further optimization, extension or new experiment.
 This certificate-search composition is not a contribution. The details below
 describe historical implementation, not an authorized work queue.
-[Current decision](evaluation.md#current-decision-frozen-oracle-and-conditional-final-experiment).
+[Current decision](evaluation.md#current-decision-frozen-oracle-and-three-continuing-directions).
 
 Immutable upstream Farkas5a38a7e native exact Rust daemon implements the existing
 CertificateOracle boundary. A producer427 adapter uses current tactic/namespace/

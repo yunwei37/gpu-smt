@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-candidate-scheduling/analyze.py", line 134, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-candidate-scheduling/analyze.py", line 73, in main
+    if len(declarations)!=1:raise ValueError((sid,declarations))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: ('minif2f-723', [])

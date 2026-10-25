@@ -1,0 +1,130 @@
+{
+  "dataset": "original released miniF2F244tasks x32candidates",
+  "source_count": 7808,
+  "task_count": 244,
+  "workers": 2,
+  "status_counts": {
+    "valid": 3014,
+    "lean_error": 4669,
+    "timeout_error": 83,
+    "resource_failure": 42
+  },
+  "solvable_tasks": 142,
+  "task_mapping": "Existing244task metadata plus producer32-record layout, verified against every present theorem declaration. All18literalNone rejected candidates retained.",
+  "missing_declaration_source_ids": [
+    "minif2f-723",
+    "minif2f-1434",
+    "minif2f-1877",
+    "minif2f-2120",
+    "minif2f-2135",
+    "minif2f-3641",
+    "minif2f-3643",
+    "minif2f-3832",
+    "minif2f-4114",
+    "minif2f-4758",
+    "minif2f-4969",
+    "minif2f-4975",
+    "minif2f-5794",
+    "minif2f-5800",
+    "minif2f-5814",
+    "minif2f-5818",
+    "minif2f-5821",
+    "minif2f-7206"
+  ],
+  "native_whole_seconds": 21693.761299439,
+  "cumulative_native_HTTP_seconds": 43121.2401169,
+  "timeout_HTTP_seconds": 24966.405941674,
+  "timeout_sources_in_solvable_tasks": 17,
+  "hindsight_minimum_cumulative_span_seconds": 28830.779821367,
+  "hindsight_span_work_ratio": 1.4956667972241975,
+  "idealized_service_model_makespan_lower_bound_seconds": 14415.3899106835,
+  "ordered_first_k_solved_task_counts": {
+    "original": {
+      "1": 92,
+      "2": 112,
+      "4": 125,
+      "8": 132,
+      "16": 138,
+      "32": 142
+    },
+    "short_code": {
+      "1": 96,
+      "2": 108,
+      "4": 118,
+      "8": 126,
+      "16": 135,
+      "32": 142
+    },
+    "hindsight": {
+      "1": 142,
+      "2": 142,
+      "4": 142,
+      "8": 142,
+      "16": 142,
+      "32": 142
+    }
+  },
+  "scope": "Offline replay of observed HTTP spans as fixed task costs, not CPU or measured performance. Hindsight uses unavailable outcome/time knowledge. Zero cancellation/prediction/setup overhead and unchanged per-candidate costs are optimistic modeling assumptions. No bound on physical whole service, no RL every-candidate equivalence, no claimed novelty for ordinary first-success scheduling."
+}
+{
+  "all_candidates_original_order": {
+    "model_makespan_seconds": 21687.482849337946,
+    "model_consumed_span_seconds": 43121.240116900204,
+    "completed_sources": 7808,
+    "completed_valid_sources": 3014,
+    "solved_tasks": 142,
+    "cancelled_before_start": 0,
+    "cancelled_in_flight": 0,
+    "cancelled_observed_timeouts": 0
+  },
+  "stop_first_original_order": {
+    "model_makespan_seconds": 14926.195716597995,
+    "model_consumed_span_seconds": 29629.65877737699,
+    "completed_sources": 3639,
+    "completed_valid_sources": 142,
+    "solved_tasks": 142,
+    "cancelled_before_start": 4117,
+    "cancelled_in_flight": 52,
+    "cancelled_observed_timeouts": 17
+  },
+  "stop_first_short_code": {
+    "model_makespan_seconds": 14693.324701810016,
+    "model_consumed_span_seconds": 29249.32415887605,
+    "completed_sources": 3725,
+    "completed_valid_sources": 142,
+    "solved_tasks": 142,
+    "cancelled_before_start": 4036,
+    "cancelled_in_flight": 47,
+    "cancelled_observed_timeouts": 17
+  },
+  "round_robin_original_order": {
+    "model_makespan_seconds": 14803.176432087968,
+    "model_consumed_span_seconds": 29529.687500883047,
+    "completed_sources": 3631,
+    "completed_valid_sources": 142,
+    "solved_tasks": 142,
+    "cancelled_before_start": 4177,
+    "cancelled_in_flight": 0,
+    "cancelled_observed_timeouts": 17
+  },
+  "round_robin_short_code": {
+    "model_makespan_seconds": 14659.452073537997,
+    "model_consumed_span_seconds": 29269.885104911038,
+    "completed_sources": 3724,
+    "completed_valid_sources": 142,
+    "solved_tasks": 142,
+    "cancelled_before_start": 4084,
+    "cancelled_in_flight": 0,
+    "cancelled_observed_timeouts": 17
+  },
+  "hindsight_valid_fastest_first": {
+    "model_makespan_seconds": 14446.82911275899,
+    "model_consumed_span_seconds": 28830.77982136702,
+    "completed_sources": 3406,
+    "completed_valid_sources": 142,
+    "solved_tasks": 142,
+    "cancelled_before_start": 4402,
+    "cancelled_in_flight": 0,
+    "cancelled_observed_timeouts": 17
+  }
+}

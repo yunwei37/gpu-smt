@@ -527,3 +527,55 @@ retain actual cost/monitor evidence. The14missing result slots and33page
 draft are not submission readiness. No active capture input was changed.
 
 The compilation log records33pages after the freeze wording, correcting the earlier cached32page count. No numerical result changed.
+
+## Latest user decision: three directions continue; no closure condition
+
+The latest verbatim prompt in user-instruction.md explicitly supersedes the
+preceding1.3x gate,2026-11-01 deadline and short-paper closure; CPUoracle
+freeze is unchanged. Goal stays active. Root alone advances reliable
+earlyfailure/timeout mechanisms,32candidate first-success scheduling and
+public Lean code-verification workload preparation/measurement. No
+subagent/external-system reproduction or prefix/certificate-reuse novelty.
+
+EXPERIMENT_GATE: preserve the same live480owner; analyze existing32candidate
+cost/outcome data and prepare official code-verification assets while it runs.
+Only one collection and the existing48GiB/max2/24each resource point.
+WRITE_GATE removes obsolete closure conditions from current docs/paper
+without changing any result. Initial Narrative/evolution retained.
+REVIEW_GATE self-review: source heuristics/branch-count growth do not prove
+whole-request inevitable failure; account for backtracking. First-success
+cancellation is an explicit inference contract, unsuitable for full RL rewards.
+No performance, solved-task preservation or independent audit is yet claimed.
+
+## Concrete progress while the sole480profile runs
+
+The original7,808records yield244tasks/142solvable/102unsolved. Only17of83
+timeouts are in solvable tasks. [Owned scheduling analysis/self-review](../../../../artifacts/candidate-scheduling-2026-10-25/result-review.md)
+recomputes fixed-cost model opportunities (~1.45–1.48x; hindsight~1.50x)
+without claiming actual speed.18literalNone failures stay in their groups.
+Runtime scheduler code is written/AST-parsed but no second Lean capture ran.
+Pending siblings are cancelled only after a native checked success; no
+per-candidate RL equivalence or in-flight cancellation claim.
+
+[Official code-verification assets](literature-20261025-code-verification/report.md)
+are pinned/acquired losslessly with licenses and native version differences.
+Actual source preparation, not system reproduction or dynamic timing:
+Verina189taskfiles/46without explicit admissions, miniCodeProps/CLEVER
+stubs versus proof controls, lean-mlirSAT/LRAT-capable source. FVAPPS gated
+access remains unaccepted; accessible work continues. Token counts cannot
+establish runtime costs. No foreign dirty related-work file is staged.
+
+Daily progress reflection: cancellation addresses only the17timeouts whose
+tasks already have a valid sibling;66unsolvable-group timeouts remain. The
+strongest next actions are real first-success scheduling measurement after
+current480retirement and mechanism work on its actual timeout profile,
+while native code-verification assets broaden the real workload beyond
+arithmetic. Do not optimize the frozen oracle, wait empty, or call these
+ordinary scheduling primitives a novel systems contribution.
+
+WRITE_GATE adds scoped first-success inference counts and optimistic replay
+ratios to the paper without calling them measured speed or RL equivalence.
+[Actual33page compile and root self-review](three-directions-paper-check/self-review.md)
+retain command/log/memory evidence. Runtime scheduler qualification waits
+only for the one-group resource invariant, not a performance/novelty gate.
+No oracle code, active480source/binary or foreign dirty path changes.

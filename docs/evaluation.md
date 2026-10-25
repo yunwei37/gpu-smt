@@ -23,23 +23,32 @@ its dated pending statements are historical. Original older evidence remains
 [outer self-audit](tmp/bootstrap/step-0010-20261014T133154+0000/outer-audit-report.md)
 retain gates, failed routes and scope.
 
-## Current decision: frozen oracle and conditional final experiment
+## Current decision: frozen oracle and three continuing directions
 
-The external native arithmetic CPU oracle is **frozen as a baseline** by the
-user's2026-10-25 decision. Its code, data and results remain in place; no
-optimization, extension or new oracle experiment is authorized, including
-two-sided certificates, power export or exact-fallback tuning. External
-certificate search/checking and floating LP with exact repair are established
-techniques, not this project's contribution.
+The latest user decision explicitly removes the1.3x admission condition,
+2026-11-01 deadline and conditional short-paper closure. Goal stays active;
+continue all three directions without a new threshold, cutoff or closure.
+The arithmetic CPU oracle remains frozen: no optimization, extension or new
+oracle experiment; its code/data/results stay as a baseline, not a contribution.
 
-Finish and publish the sole480-source failed-tail profile first. Continue
-experiments only if a dominant measured tactic/phase and an explicitly costed
-new method support **more than1.3x end-to-end over native on all7,808miniF2F
-or29,750Goedel candidates**, excluding frozen-oracle gains. A selected tail's
-CPU percentage is not that estimate. Any admitted implementation/full pair
-must finish by **2026-11-01UTC**; otherwise, or if admission fails, stop new
-experiments and write the measurement/negative-results short paper. The
-original narrative remains historical authority, not evidence of contribution.
+1. Reliable early failure/timeout determination, driven by the sole480source
+native profile. Preserve the complete accepted set; lower timeouts, source
+heuristics, large branch-count estimates or a slow prefix alone are not proofs
+of inevitable failure. An ordinary tactic exception can backtrack, so a
+local loop detection cannot silently reject a recoverable whole request.
+2. Candidate scheduling for pass@k/best-of-n: first compute hindsight limits
+from the existing32candidate/task population, then implement ranking and
+cancellation after one checked success. Preserve solved-task semantics;
+this does not supply every candidate reward for RL training.
+3. Public Lean code-verification workloads with released candidates/reference
+proofs: prepare official assets and measure bv_decide/omega/simp/decide/grind,
+including actual SAT/LRAT and simplifier work where present.
+
+Only one collection runs. While it runs, advance another direction's offline
+analysis, implementation or data preparation. Reuse existing comparisons
+without reproducing other systems. Prefix/certificate reuse is not our method.
+The full480ranking and all failed/resource records will be committed on actual
+completion. Self-review remains self-review.
 
 ## Earlier own-method observations
 
@@ -189,8 +198,9 @@ and non-message fields;108message differences retained. It uses eight queues,
 [Original result](../artifacts/linarith-oracle-2026-10-17/gpu-stage/large-lp-race/power-without-diagnostics/full1000-result-review.md).
 The three earlier instrumented pairs aggregate1.78205× on a different affinity.
 The earlier better-valid-CPU/GPU1.5x criterion on1,000 is historical.
-It is superseded by the user decision above; frozen-oracle gains do not
-qualify the new full-population1.3x criterion or establish OSDI novelty.
+It is historical and does not establish OSDI novelty. The latest user
+decision removes performance admission/closure conditions while keeping
+the oracle frozen.
 
 ## Standard workloads and strongest-service comparisons
 
@@ -361,3 +371,19 @@ Actualfull480PID275822 nowruns inoriginalsourceorder under the same48GiB/max2/
 24AS/CPU8–11/300s point. No furtherGPUpair or externalmethodreproduction.
 The 480cover93.5659%of nativefailed cumulativeHTTP, not93.5659%wholeelapsed.
 Complete tactic/component rankings and subsequentmechanismselection arepending.
+
+## First-success scheduling opportunity and code-verification preparation
+
+[Complete existing-data scheduling analysis](../artifacts/candidate-scheduling-2026-10-25/result-review.md)
+covers all7,808native candidates/244tasks.142tasks have a valid candidate;
+only17of83timeouts have a successful sibling. Two-worker fixed-cost HTTP
+replay gives~1.45–1.48x for cancellation/source-size policies and~1.50x for
+hindsight labels. These are optimistic models, not measured end-to-end speed.
+The source-size first-k coverage is not uniformly better. Native runtime
+implementation exists but has not run concurrently with the480profile;
+the paired plan preserves task success, not every-candidate RL rewards.
+
+[Pinned official code-verification assets](tmp/bootstrap/step-0011-20261023T195335-0700/literature-20261025-code-verification/report.md)
+now include Verina, miniCodeProps, CLEVER and lean-mlir sources/licenses/
+toolchains. Raw/stub and version boundaries are explicit; no dynamic tactic
+timing or proof-completion claim yet. FVAPPS gated agreement is not accepted.

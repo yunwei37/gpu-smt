@@ -1,0 +1,1991 @@
+[
+  {
+    "repository": "opencompl--lean-mlir-sources.jsonl.gz",
+    "comment_stripped_lexical_counts": {
+      "lean_files": 9449,
+      "contains_admission_token": 8767,
+      "bv_decide_files": 18,
+      "bv_decide_tokens": 136,
+      "omega_files": 42,
+      "omega_tokens": 748,
+      "simp_files": 112,
+      "simp_tokens": 5204,
+      "simp_all_files": 26,
+      "simp_all_tokens": 404,
+      "decide_files": 14,
+      "decide_tokens": 87,
+      "native_decide_files": 3,
+      "native_decide_tokens": 7,
+      "grind_files": 24,
+      "grind_tokens": 308,
+      "no_admission_with_target_token_files": 92
+    },
+    "candidate_files": [
+      {
+        "path": "Blase/Blase/AutoStructs/Basic.lean",
+        "bytes": 25548,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 107,
+          "simp_all": 35,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 63
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/BundledNfa.lean",
+        "bytes": 2612,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 14,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/Constructions.lean",
+        "bytes": 49618,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 5,
+          "simp": 208,
+          "simp_all": 63,
+          "decide": 3,
+          "native_decide": 0,
+          "grind": 2
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/Defs.lean",
+        "bytes": 16541,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 20,
+          "simp": 99,
+          "simp_all": 4,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/FiniteStateMachine.lean",
+        "bytes": 1199,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 4,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/ForLean.lean",
+        "bytes": 7996,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 6,
+          "simp": 23,
+          "simp_all": 11,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 2
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/ForMathlib.lean",
+        "bytes": 31579,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 170,
+          "simp_all": 42,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 5
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/FormulaToAuto.lean",
+        "bytes": 76625,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 109,
+          "simp": 437,
+          "simp_all": 109,
+          "decide": 1,
+          "native_decide": 4,
+          "grind": 3
+        }
+      },
+      {
+        "path": "Blase/Blase/AutoStructs/Worklist.lean",
+        "bytes": 37617,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 5,
+          "simp": 151,
+          "simp_all": 62,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 12
+        }
+      },
+      {
+        "path": "Blase/Blase/EnvBitstream.lean",
+        "bytes": 2508,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 2,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/Aiger.lean",
+        "bytes": 2272,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 2,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 3
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/BitStream.lean",
+        "bytes": 53948,
+        "tokens": {
+          "bv_decide": 5,
+          "omega": 68,
+          "simp": 301,
+          "simp_all": 9,
+          "decide": 17,
+          "native_decide": 0,
+          "grind": 2
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/Circuit.lean",
+        "bytes": 52338,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 24,
+          "simp": 293,
+          "simp_all": 3,
+          "decide": 1,
+          "native_decide": 0,
+          "grind": 1
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/Decide.lean",
+        "bytes": 1591,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 7,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/Defs.lean",
+        "bytes": 25247,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 10,
+          "simp": 151,
+          "simp_all": 0,
+          "decide": 7,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/Lemmas.lean",
+        "bytes": 3670,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 16,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/Fast/MBA.lean",
+        "bytes": 32538,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 21,
+          "simp": 173,
+          "simp_all": 0,
+          "decide": 3,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/FinEnum.lean",
+        "bytes": 1057,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/ForLean.lean",
+        "bytes": 180,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/KInduction/KInduction.lean",
+        "bytes": 70175,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 104,
+          "simp": 192,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 2
+        }
+      },
+      {
+        "path": "Blase/Blase/MultiWidth/Defs.lean",
+        "bytes": 121578,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 2,
+          "simp": 69,
+          "simp_all": 0,
+          "decide": 2,
+          "native_decide": 0,
+          "grind": 28
+        }
+      },
+      {
+        "path": "Blase/Blase/MultiWidth/GoodFSM.lean",
+        "bytes": 90357,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 78,
+          "simp": 378,
+          "simp_all": 0,
+          "decide": 26,
+          "native_decide": 0,
+          "grind": 46
+        }
+      },
+      {
+        "path": "Blase/Blase/MultiWidth/Tactic.lean",
+        "bytes": 53663,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 2,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/SingleWidth/Defs.lean",
+        "bytes": 5514,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/Blase/Vars.lean",
+        "bytes": 7113,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 21,
+          "simp": 30,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Blase/BlaseTest/Preprocessing7.lean",
+        "bytes": 2535,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Dialects/LLVM/Basic.lean",
+        "bytes": 23382,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 44,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Dialects/LLVM/Semantics.lean",
+        "bytes": 19304,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 4,
+          "simp": 15,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/EffectKind.lean",
+        "bytes": 9379,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 26,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/ErasedContext.lean",
+        "bytes": 41653,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 2,
+          "simp": 159,
+          "simp_all": 7,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 32
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Framework/Basic.lean",
+        "bytes": 52982,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 179,
+          "simp_all": 6,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 4
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Framework/Print.lean",
+        "bytes": 6389,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 0,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 1
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Framework/Refinement.lean",
+        "bytes": 13284,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 9,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Framework/Zipper.lean",
+        "bytes": 6084,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 10,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/HVector.lean",
+        "bytes": 14296,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 21,
+          "simp_all": 4,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 1
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/MLIRSyntax/AST.lean",
+        "bytes": 12145,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/MLIRSyntax/GenericParser.lean",
+        "bytes": 41467,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/MLIRSyntax/Transform.lean",
+        "bytes": 8288,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Tactic.lean",
+        "bytes": 11081,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Transforms/CSE.lean",
+        "bytes": 16646,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 25,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Transforms/DCE.lean",
+        "bytes": 16425,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 6,
+          "simp": 48,
+          "simp_all": 4,
+          "decide": 0,
+          "native_decide": 1,
+          "grind": 26
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Transforms/Rewrite/Mapping.lean",
+        "bytes": 2968,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Transforms/Rewrite/Match.lean",
+        "bytes": 31328,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 71,
+          "simp_all": 8,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 2
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Transforms/Rewrite/Rewrite.lean",
+        "bytes": 14256,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 27,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Util.lean",
+        "bytes": 4786,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Util/ConcreteOrMVar.lean",
+        "bytes": 2900,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 10,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "LeanMLIR/LeanMLIR/Util/Poison.lean",
+        "bytes": 8792,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 45,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "Medusa/Medusa/FailingTests.lean",
+        "bytes": 1808,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/CIRCT/DC/Lemmas.lean",
+        "bytes": 1159,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/CIRCT/Handshake/Handshake.lean",
+        "bytes": 16805,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 0,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/CIRCT/Stream/Test.lean",
+        "bytes": 499,
+        "tokens": {
+          "bv_decide": 1,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/FullyHomomorphicEncryption/Basic.lean",
+        "bytes": 29717,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 74,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 1
+        }
+      },
+      {
+        "path": "SSA/Projects/FullyHomomorphicEncryption/PaperExamples.lean",
+        "bytes": 5545,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/FullyHomomorphicEncryption/Statements.lean",
+        "bytes": 10364,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 40,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/FullyHomomorphicEncryption/Syntax.lean",
+        "bytes": 7261,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/BvShift.lean",
+        "bytes": 1089,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/ComWrappers.lean",
+        "bytes": 9802,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/ForLean.lean",
+        "bytes": 20522,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 53,
+          "simp": 144,
+          "simp_all": 9,
+          "decide": 6,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/ForStd.lean",
+        "bytes": 3322,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 10,
+          "simp_all": 0,
+          "decide": 1,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/LLVM/CLITests.lean",
+        "bytes": 9550,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/LLVM/Enumerator.lean",
+        "bytes": 8123,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/LLVM/Lemmas.lean",
+        "bytes": 1217,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 12,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/PaperExamples.lean",
+        "bytes": 2015,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/Refinement.lean",
+        "bytes": 346,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/Tactic/ReduceModTwoPow.lean",
+        "bytes": 1048,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 0,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/Tactic/SimpLLVM.lean",
+        "bytes": 8822,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 14,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/TacticAuto.lean",
+        "bytes": 5997,
+        "tokens": {
+          "bv_decide": 5,
+          "omega": 1,
+          "simp": 15,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/InstCombine/Test.lean",
+        "bytes": 14453,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 8,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Evaluation/LLVM-tests/alu16.lean",
+        "bytes": 13417,
+        "tokens": {
+          "bv_decide": 2,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/LLVMAndRiscv.lean",
+        "bytes": 13490,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 10,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/PeepholeRefine.lean",
+        "bytes": 2610,
+        "tokens": {
+          "bv_decide": 2,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Pipeline/ReconcileCast.lean",
+        "bytes": 1708,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Pipeline/const.lean",
+        "bytes": 65686,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 101,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Pipeline/icmp.lean",
+        "bytes": 18607,
+        "tokens": {
+          "bv_decide": 1,
+          "omega": 0,
+          "simp": 0,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Pipeline/mul.lean",
+        "bytes": 8744,
+        "tokens": {
+          "bv_decide": 1,
+          "omega": 0,
+          "simp": 0,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LLVMRiscV/Tests/Lowering.lean",
+        "bytes": 1861,
+        "tokens": {
+          "bv_decide": 1,
+          "omega": 6,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LeanMlirCommon/SimplyTyped/Basic.lean",
+        "bytes": 7033,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 8,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LeanMlirCommon/SimplyTyped/Context.lean",
+        "bytes": 1645,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LeanMlirCommon/SimplyTyped/WellTyped.lean",
+        "bytes": 7645,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 9,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/LeanMlirCommon/UnTyped/Basic.lean",
+        "bytes": 2375,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/ModArith/Basic.lean",
+        "bytes": 3886,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/ModArith/Examples.lean",
+        "bytes": 27008,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 1,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/PaperExamples/PaperExamples.lean",
+        "bytes": 9997,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 9,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 2,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/RISCV64/Base.lean",
+        "bytes": 19635,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/RISCV64/Tactic/SimpRiscV.lean",
+        "bytes": 3532,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/SLLVM/Dialect/Basic.lean",
+        "bytes": 9242,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/SLLVM/Dialect/Refinement.lean",
+        "bytes": 1414,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/SLLVM/Dialect/Semantics/EffectM.lean",
+        "bytes": 3217,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/SLLVM/Evaluation/AliveAutoGeneratedCopy.lean",
+        "bytes": 82628,
+        "tokens": {
+          "bv_decide": 89,
+          "omega": 0,
+          "simp": 0,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/SLLVM/Tactic.lean",
+        "bytes": 5360,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/Scf/ScfFunctor.lean",
+        "bytes": 23339,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 29,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "SSA/Projects/Tensor2D/Tensor2D.lean",
+        "bytes": 6747,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 14,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      }
+    ],
+    "lexical_failures": [],
+    "scope": "Source preparation only: no dynamic invocation, success, completed-proof, or timing claim. Macro/internal admissions and unexecuted branches remain possible."
+  },
+  {
+    "repository": "sunblaze-ucb--verina-sources.jsonl.gz",
+    "comment_stripped_lexical_counts": {
+      "lean_files": 192,
+      "contains_admission_token": 144,
+      "bv_decide_files": 0,
+      "bv_decide_tokens": 0,
+      "omega_files": 1,
+      "omega_tokens": 1,
+      "simp_files": 134,
+      "simp_tokens": 443,
+      "simp_all_files": 23,
+      "simp_all_tokens": 51,
+      "decide_files": 2,
+      "decide_tokens": 2,
+      "native_decide_files": 0,
+      "native_decide_tokens": 0,
+      "grind_files": 0,
+      "grind_tokens": 0,
+      "no_admission_with_target_token_files": 46
+    },
+    "candidate_files": [
+      {
+        "path": "datasets/verina/verina_basic_1/task.lean",
+        "bytes": 1663,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_10/task.lean",
+        "bytes": 1253,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_100/task.lean",
+        "bytes": 1275,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_101/task.lean",
+        "bytes": 1181,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_11/task.lean",
+        "bytes": 1249,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 1,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_12/task.lean",
+        "bytes": 1246,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_13/task.lean",
+        "bytes": 1921,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 8,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_14/task.lean",
+        "bytes": 1210,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_15/task.lean",
+        "bytes": 2291,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_16/task.lean",
+        "bytes": 1909,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_17/task.lean",
+        "bytes": 1765,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_19/task.lean",
+        "bytes": 1528,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 2,
+          "decide": 1,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_2/task.lean",
+        "bytes": 1473,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_26/task.lean",
+        "bytes": 1110,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_29/task.lean",
+        "bytes": 2026,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_3/task.lean",
+        "bytes": 1415,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_30/task.lean",
+        "bytes": 2255,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_31/task.lean",
+        "bytes": 1782,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_32/task.lean",
+        "bytes": 2622,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 5,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_36/task.lean",
+        "bytes": 1811,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_4/task.lean",
+        "bytes": 1544,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_42/task.lean",
+        "bytes": 1328,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_44/task.lean",
+        "bytes": 2219,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 3,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_45/task.lean",
+        "bytes": 1995,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_47/task.lean",
+        "bytes": 2493,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 1,
+          "simp": 13,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_48/task.lean",
+        "bytes": 5431,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 9,
+          "simp_all": 8,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_49/task.lean",
+        "bytes": 3511,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 3,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_5/task.lean",
+        "bytes": 1171,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_50/task.lean",
+        "bytes": 1372,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 4,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_53/task.lean",
+        "bytes": 1399,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_55/task.lean",
+        "bytes": 1202,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_6/task.lean",
+        "bytes": 2360,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 6,
+          "simp_all": 7,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_66/task.lean",
+        "bytes": 1215,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_68/task.lean",
+        "bytes": 7613,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 28,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_76/task.lean",
+        "bytes": 1462,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_78/task.lean",
+        "bytes": 1308,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_8/task.lean",
+        "bytes": 1361,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_81/task.lean",
+        "bytes": 3585,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 10,
+          "simp_all": 2,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_9/task.lean",
+        "bytes": 1995,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_91/task.lean",
+        "bytes": 1306,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_92/task.lean",
+        "bytes": 1468,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_95/task.lean",
+        "bytes": 4970,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 29,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_96/task.lean",
+        "bytes": 1365,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 2,
+          "simp_all": 1,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_97/task.lean",
+        "bytes": 1926,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 5,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_98/task.lean",
+        "bytes": 1097,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 3,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "datasets/verina/verina_basic_99/task.lean",
+        "bytes": 1492,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 8,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      }
+    ],
+    "lexical_failures": [],
+    "scope": "Source preparation only: no dynamic invocation, success, completed-proof, or timing claim. Macro/internal admissions and unexecuted branches remain possible."
+  },
+  {
+    "repository": "cmu-l3--minicodeprops-eval-sources.jsonl.gz",
+    "comment_stripped_lexical_counts": {
+      "lean_files": 31,
+      "contains_admission_token": 3,
+      "bv_decide_files": 0,
+      "bv_decide_tokens": 0,
+      "omega_files": 0,
+      "omega_tokens": 0,
+      "simp_files": 3,
+      "simp_tokens": 165,
+      "simp_all_files": 0,
+      "simp_all_tokens": 0,
+      "decide_files": 2,
+      "decide_tokens": 4,
+      "native_decide_files": 0,
+      "native_decide_tokens": 0,
+      "grind_files": 0,
+      "grind_tokens": 0,
+      "no_admission_with_target_token_files": 3
+    },
+    "candidate_files": [
+      {
+        "path": "MiniCodePropsLeanSrc/LeanSrc/FewShot.lean",
+        "bytes": 1792,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 7,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "MiniCodePropsLeanSrc/LeanSrc/Sorts.lean",
+        "bytes": 37725,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 157,
+          "simp_all": 0,
+          "decide": 2,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "repl/test/Mathlib/test/H20231020.lean",
+        "bytes": 789,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 1,
+          "simp_all": 0,
+          "decide": 2,
+          "native_decide": 0,
+          "grind": 0
+        }
+      }
+    ],
+    "lexical_failures": [],
+    "scope": "Source preparation only: no dynamic invocation, success, completed-proof, or timing claim. Macro/internal admissions and unexecuted branches remain possible."
+  },
+  {
+    "repository": "trishullab--clever-sources.jsonl.gz",
+    "comment_stripped_lexical_counts": {
+      "lean_files": 169,
+      "contains_admission_token": 164,
+      "bv_decide_files": 0,
+      "bv_decide_tokens": 0,
+      "omega_files": 2,
+      "omega_tokens": 5,
+      "simp_files": 77,
+      "simp_tokens": 465,
+      "simp_all_files": 0,
+      "simp_all_tokens": 0,
+      "decide_files": 0,
+      "decide_tokens": 0,
+      "native_decide_files": 0,
+      "native_decide_tokens": 0,
+      "grind_files": 0,
+      "grind_tokens": 0,
+      "no_admission_with_target_token_files": 4
+    },
+    "candidate_files": [
+      {
+        "path": "src/lean4/Imports/AllImports.lean",
+        "bytes": 17464,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 3,
+          "simp": 6,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "src/lean4/sample_examples/problem_2.lean",
+        "bytes": 4442,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 37,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "src/lean4/sample_examples/problem_3.lean",
+        "bytes": 8573,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 24,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      },
+      {
+        "path": "src/lean4/sample_examples/problem_4.lean",
+        "bytes": 2867,
+        "tokens": {
+          "bv_decide": 0,
+          "omega": 0,
+          "simp": 13,
+          "simp_all": 0,
+          "decide": 0,
+          "native_decide": 0,
+          "grind": 0
+        }
+      }
+    ],
+    "lexical_failures": [],
+    "scope": "Source preparation only: no dynamic invocation, success, completed-proof, or timing claim. Macro/internal admissions and unexecuted branches remain possible."
+  }
+]

@@ -26,15 +26,16 @@ aggregate watchdog records no kills or errors.
 [Complete pair, accepted sets, failure causes and limitations](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md).
 
 The sole active capture profiles the baseline's83timeouts and slowest10%of
-failed requests (480sources). Publish its actual tactic/phase ranking before
-admitting any method. Continue only if a dominant measured cost and our own
-new method support more than **1.3x end-to-end over native on the full7,808
-miniF2F or29,750Goedel population**, with implementation/full pairing due
-**2026-11-01UTC**. Otherwise stop new experiments and write a measurement and
-negative-results short paper. The external CPU oracle is **frozen as a baseline**:
-no optimization, extension or new oracle experiments, and no contribution claim.
-Its gains do not count toward1.3x. Existing comparisons and all raw data remain.
-[Decision and evidence boundary](docs/evaluation.md#current-decision-frozen-oracle-and-conditional-final-experiment).
+failed requests (480sources). Three directions now continue: reliable early
+failure/timeout determination, same-task candidate ranking/cancellation for
+pass@k or best-of-n, and public Lean code-verification workloads. During the
+capture, offline scheduling analysis and workload preparation proceed.
+There is no performance admission threshold, deadline or closure decision.
+The external CPU oracle stays **frozen as a baseline**: no optimization,
+extension or new oracle experiments, and no contribution claim.
+Candidate cancellation serves first-success inference, not per-candidate RL
+reward collection. Existing comparisons and all raw data remain.
+[Current scope and evidence boundaries](docs/evaluation.md#current-decision-frozen-oracle-and-three-continuing-directions).
 
 ## Collection resources
 

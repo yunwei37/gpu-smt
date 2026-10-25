@@ -4,9 +4,9 @@ Frozen2026-10-25 by explicit user decision. All code, raw data, failures and
 completed results remain in their original paths. This portfolio is a
 baseline, not a paper contribution. No optimization, extension or new oracle
 experiment is authorized. Historical continuation statements in dated records
-do not reopen it; selected-cohort gains do not satisfy the new criterion.
+do not reopen it; the oracle stays frozen under the latest continuing research directions.
 
-[Current decision and full-population evidence](../../docs/evaluation.md#current-decision-frozen-oracle-and-conditional-final-experiment).
+[Current decision and full-population evidence](../../docs/evaluation.md#current-decision-frozen-oracle-and-three-continuing-directions).
 [Retained source and historical reproduction](../../bench/lean-native/linarith-oracle/README.md).
 
 ## Earlier frontier, preserved verbatim
