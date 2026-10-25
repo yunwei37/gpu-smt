@@ -1,0 +1,15 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "10",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/tmp/gpu-smt-hotspot-mechanisms-20261025/paper",
+    "main.tex"
+  ],
+  "exit": 0,
+  "seconds": 3.6599450930953026,
+  "scope": "Existing installed Tectonic fallback; latexmk unavailable, original make failure preserved."
+}

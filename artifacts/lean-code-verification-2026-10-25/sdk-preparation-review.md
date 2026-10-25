@@ -48,3 +48,20 @@ comments and then the Lean4.27 'import all' modifier; both intermediate raw
 graphs remain and the final graph fixes that grammar before any native run.
 Native builtin SDK imports are explicit exclusions, not missing source costs.
 These are dependency-preparation results, not SAT timing or acceleration.
+
+
+## Native parser correction — 2026-10-25T13:23:57UTC
+
+The earlier556module source closure is incomplete: the lexical parser skipped
+public meta import declarations, including Mathlib.Tactic.Ring.Basic/RingNF/PNat.
+The exact workload SDK's Lean.Elab.parseImports, not another regex, now finds
+860provided-source modules(58project,802external),304additional modules and
+0unresolved/ambiguous provided-source paths. Native import flags are retained.
+Raw old graphs stay unchanged. This is source parsing,not package-build readiness
+or proof execution. Root Cli dependency version reconciliation and project
+workload compilation remain separate requirements before a native workload claim.
+
+Sequential802module own-Mathlib prerequisite build is live under combined48GiB
+monitoring with the original7808group. It does not build any58project modules
+or execute the SLLVM root. CPU11is shared with the old four-core eligibility;
+setup interference is explicit,not pristine performance data.

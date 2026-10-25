@@ -34,3 +34,13 @@ manifest](../../artifacts/native-source-backend-2026-10-25/verina189-inputs/READ
 preserve every old reference byte, including admissions/errors. NativeLean uses
 the pinned CLI stdin frontend and current Rust resource path; qualify filename
 semantics before a new full-workload pair. No new native collection was started.
+
+
+For nightly lean-mlir source preparation, ParseImports.lean calls that exact
+SDK's Lean.Elab.parseImports. parse-closure.py records the transitive source
+graph without initializing workload imports or elaborating candidate bodies.
+This avoids guessing public/meta/import-all syntax. build-closure.py builds
+only external prerequisites in native dependency order,using each module's own
+Lake olean facet and Mathlib manifest; it excludes the workload/project modules.
+These setup commands require the existing psutil environment and retain combined
+research RSS/termination records. They do not constitute a second full capture.

@@ -87,3 +87,15 @@ its tests had passed. Narrow the existing artifact upload to its four generated
 JSON outputs and trace directory; no raw result is deleted. The changed job
 passes real CI40195663426including upload. This is a concrete OSS maintenance
 improvement; it is not evidence of verification throughput or novelty.
+
+
+### Replace preparation guesses with source-native execution
+
+To make direction3advance,the actual missing prerequisite is compiled pinned
+lean-mlir dependencies,not another source census or cache probe. The lexical
+closure missed meta imports. Use the exact SDK header parser(860modules)and
+native Lake facets to compile only802external prerequisites; keep original
+capture unchanged and observe combined RSS. For direction1,48dominant interval
+timeouts lie in7tasks;23simp_alltimeouts in16. Supplied native simp already handles
+a one-step unchanged expression. Next witnesses must distinguish actual
+multi-step cycles/growth and fallback context,not reject by source keyword.

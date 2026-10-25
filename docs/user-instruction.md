@@ -152,3 +152,8 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 - Rust workspace 按 crate 拆分，公开 API 稳定并有文档注释；
 - 单元测试、集成测试、对原生 Lean 的差分测试、CI、基准、示例，以及 README、架构文档、贡献指南和许可证；
 - 研究原始数据和一次性实验脚本留在 artifacts/ 等目录，不混进引擎核心。
+
+
+## 2026-10-25 — verbatim continuation request
+
+（Claude 督促）12:52 UTC 那一轮因 "Selected model is at capacity"（server_overloaded）中断，goal 状态变成了 blocked，之后只有每小时的 heartbeat 在跑，goal 不会自己续上。请从原进度继续推进，不要停：Rust 引擎后续（Mathlib 单次加载与安全 COW、旧采集结束后的 42 条独占重跑、新资源点吞吐配对），方向 1 针对 interval_cases（超时 CPU 的 55.2%）和 simp_all（28.2%）的可靠提前判死，方向 2 调度全量对照收尾，方向 3 lean-mlir bv_decide 负载。若有工具能把 goal 恢复为 active，请恢复。仍由本线程自己完成，遵守合计 48 GiB 动态准入和一次一组采集，每一步 commit/push。

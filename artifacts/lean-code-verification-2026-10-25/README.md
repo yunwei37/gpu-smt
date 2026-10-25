@@ -23,9 +23,11 @@ actual qualification and all189 native/profile records are retained above.
 
 Lean-mlir's exact nightly SDK and source are ready, but both official cache
 paths return zero objects, so its dependency build is not ready despite
-cache exit0. The real SLLVM file's static import closure is retained for
-source build, including its version's import-all syntax. No extra cache
-URL grid, substitute version, or second collection is launched.
+cache exit0. The old556module lexical graph is retained but superseded: it missed
+meta imports. The [native header parser result](native-header-closure-20261025/receipt.json)
+contains860source modules(58project/802external), with all/meta/export flags.
+No workload imports or candidate bodies execute in this parsing step. Native
+prerequisite compilation is running separately below; no second full capture.
 
 
 ## Current capture boundary
@@ -34,6 +36,9 @@ The original Verina189capture and its fixed resource point remain historical
 evidence. The legacy run-verina driver still reproduces that point; it is not
 the new dynamic-admission path. New code-workload captures require the current
 48GiB aggregate/CPU-coupled controller after the sole old group retires.
-No second proof collection has started. Lean-mlir source dependencies remain
-unbuilt after zero-hit upstream caches; static closure556modules is preparation,
-not a native workload measurement or baseline-system reproduction.
+No second proof collection has started. Lean-mlir's [native-parser-driven prerequisite build](native-prerequisite-build-20261025/launch.json)
+is running sequentially for802external modules after zero-hit upstream caches.
+It excludes all58project/workload modules. Existing capture plus setup RSS is
+sampled each second; pressure terminates only new setup. Native-parser860module
+closure supersedes lexical556. These are dependency preparation, not a native
+workload measurement or baseline-system reproduction.
