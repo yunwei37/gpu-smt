@@ -284,6 +284,15 @@ impl PreparedRepl {
                 }
                 if let Some(peak) = done["peak_rss_bytes"].as_u64() {
                     x.registry.observe_rss(peak);
+                    x.registry.note(BackendEvent {
+                        stage: "rss_observation".into(),
+                        detail: serde_json::json!({
+                            "kind":"leader_kernel_high_water_rss",
+                            "pid":identity.pid, "start_ticks":identity.start_ticks,
+                            "bytes":peak,
+                            "scope":"native parent wait4 leader ru_maxrss; excludes descendants and shared parent, not aggregate RSS"
+                        }).to_string(),
+                    });
                 }
                 retired = true;
                 if done["retired"] != 0 {

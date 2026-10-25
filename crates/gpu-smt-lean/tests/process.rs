@@ -74,6 +74,26 @@ async fn pipe_protocol_errors_admissions_and_stderr_drain() {
             Status::Accepted
         ]
     );
+    for row in &result {
+        let observations: Vec<_> = row
+            .attempts
+            .iter()
+            .flat_map(|a| &a.backend_events)
+            .filter(|e| e.stage == "rss_observation")
+            .map(|e| serde_json::from_str::<serde_json::Value>(&e.detail).unwrap())
+            .collect();
+        assert!(
+            observations.iter().any(|v| {
+                v["kind"] == "leader_current_rss"
+                    && v["bytes"].as_u64().unwrap() > 0
+                    && row.attempts.iter().flat_map(|a| &a.processes).any(|p| {
+                        v["pid"].as_u64() == Some(p.pid as u64)
+                            && v["start_ticks"].as_u64() == Some(p.start_ticks)
+                    })
+            }),
+            "before-retirement sample lacks its process/kind provenance"
+        );
+    }
     engine.shutdown().await;
 }
 #[tokio::test]

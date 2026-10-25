@@ -216,6 +216,11 @@ impl VerificationBackend for NativeRepl {
         };
         if let Ok(raw) = std::fs::read_to_string(format!("/proc/{pid}/stat"))
             && let Some(tail) = raw.rsplit_once(')').map(|x| x.1)
+            && tail
+                .split_whitespace()
+                .nth(19)
+                .and_then(|s| s.parse::<u64>().ok())
+                == Some(identity.start_ticks)
             && let Some(pages) = tail
                 .split_whitespace()
                 .nth(21)
@@ -224,7 +229,16 @@ impl VerificationBackend for NativeRepl {
             // SAFETY: sysconf has no pointer arguments.
             let size = unsafe { libc::sysconf(libc::_SC_PAGESIZE) };
             if size > 0 {
-                x.registry.observe_rss(pages.saturating_mul(size as u64));
+                let bytes = pages.saturating_mul(size as u64);
+                x.registry.observe_rss(bytes);
+                x.registry.note(BackendEvent {
+                    stage: "rss_observation".into(),
+                    detail: json!({
+                        "kind":"leader_current_rss", "pid":identity.pid,
+                        "start_ticks":identity.start_ticks, "bytes":bytes,
+                        "scope":"birth-matched proc stat before retirement; not a high-water or whole-tree sample"
+                    }).to_string(),
+                });
             }
         }
         kill_group(&identity);

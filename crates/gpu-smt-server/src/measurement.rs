@@ -142,6 +142,9 @@ fn summarize(c: &Capture) -> Value {
             .filter(|a|a.status==Status::Preempted).count(),
         "sampled_peak_attempt_rss_bytes":c.results.iter().flat_map(|v|&v.attempts)
             .map(|a|a.peak_rss_bytes).max(),
+        "peak_attempt_observed_rss_bytes":c.results.iter().flat_map(|v|&v.attempts)
+            .map(|a|a.peak_rss_bytes).max(),
+        "attempt_peak_rss_scope":"maximum of registered-tree samples and backend supplements; observation kinds in backend_events when recorded; older untyped supplements remain unknown; not aggregate RSS or complete kernel tree high-water; sampled_peak_attempt_rss_bytes is a legacy alias",
         "completion_latency_seconds":quantiles(c.results.iter().map(|v|v.elapsed_seconds).collect()),
         "attempt_seconds_per_candidate":quantiles(c.results.iter().map(attempt_seconds).collect())
     })

@@ -110,6 +110,13 @@ fn records_retry_cost_and_operational_failure_in_tails() {
     let v = compare(&a, &b).unwrap();
     assert_eq!(v["candidate"]["preemptions"], 1);
     assert_eq!(v["candidate"]["sampled_peak_attempt_rss_bytes"], 100);
+    assert_eq!(v["candidate"]["peak_attempt_observed_rss_bytes"], 100);
+    assert!(
+        v["candidate"]["attempt_peak_rss_scope"]
+            .as_str()
+            .unwrap()
+            .contains("backend supplements")
+    );
     assert_eq!(v["candidate"]["attempt_seconds_per_candidate"]["max"], 7.0);
 }
 

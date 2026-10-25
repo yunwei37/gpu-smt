@@ -27,34 +27,43 @@ This section records the initial scientific disposition of the expanded research
 
 ## Current frontier
 
-The complete own arithmetic counterexample-screening pair on7,808original
-miniF2Fcandidates has exact accepted/status parity but requires8.8563%more
-elapsed than native before additional preparation. Exact refutations occur
-in29ordinary-error candidates and remove no83timeouts. This is a small
-supporting component, not the missing systems contribution.
-[Complete final result](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md)
-retains all42resourcefailures and missing cold-controller-clock limitations.
+The user directs four continuing areas: reliable early failure/timeout
+determination, first-success multi-candidate scheduling, Lean code-verification
+workloads, and the layered Rust engine. There is no project deadline or
+performance-based closure rule. Resource primitives remain prior techniques;
+prospective novelty must come from workload-level methods. The external CPU
+oracle is frozen, with no new oracle experiments or contribution claim.
 
-The user explicitly stops expanding thisGPUcomparison and requests actual
-tactic/phase attribution on the native slowest10%FAILED cohort:480sources,
-including83timeouts/355Leanerrors/42resourcefailures. Its original83/old78
-timeout mapping, unchanged source inputs, native runtime profiling boundary
-and preflight are documented in the [measurement plan](../artifacts/lean-failure-profile-2026-10-25/plan.md).
-The C-only24source qualification is complete and the solefull480capture
-is running; neither qualification nor a partial profile is a hotspot conclusion.
-The CPUoracle remains frozen. The latest user decision removes the
-performance condition, deadline and short-paper closure and directs continuous
-work on three axes: reliable earlyfailure/timeout detection,32candidate
-first-success scheduling, and public Lean code-verification workloads.
-During the sole live capture, advance offline scheduling analysis,
-implementation and workload preparation rather than empty waiting.
-No external-system reproductions, narrow-kernel revival or newGPUgrid.
+The complete own arithmetic counterexample pair retains all7,808originals,
+exact accepted/status parity and8.86%more native elapsed. It removes no
+timeouts and remains a small component:
+[full result](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md).
 
-The Initial Narrative, allfourRQs, Lean/SMTscope and OSDI-quality objective
-remain unchanged, open and unfrozen. Rootalone implements and reviews,
-with no independent audit. The only current paper is [docs/paper](paper/main.tex).
-Source/runtime adaptations and complete results do not prove novelty or
-submission readiness. Historical datedfrontiers remain linked in step reports.
+The480source failure profile is complete:
+[actual tactic/phase ranking](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md).
+Its source-memory diagnostic distinguishes sampled process occupancy, old
+address-space failures, missing observations and new-RSS-point uncertainty:
+[memory evidence](../artifacts/source-memory-attribution-2026-10-25/result-review.md).
+Neither thread-CPU fractions nor sampled RSS maxima are whole-flow removable
+fractions or a justified failure predictor.
+
+The [Rust architecture](architecture.md) now includes typed backend/policy/
+resource interfaces, dynamic admission, retirement, prepared import parents
+and task-aware ordering. Pinned native contracts and whole-input policy checks
+are implementation evidence; actual Mathlib/new-resource/full population
+throughput and a useful systems contribution remain unproven.
+[Task-aware implementation/model scopes](../artifacts/task-aware-engine-2026-10-25/result-review.md).
+
+For current runtime/terminal state and the next inner work item, inspect the
+latest timestamped reports under docs/tmp/build-and-evaluate and the owning
+capture's actual terminal files. A narrative checkpoint is not a live-process
+health record. Existing captures, raw failures and historical resources remain;
+do not restart or change an active capture to match a newer resource point.
+
+The complete Initial Narrative, all four RQs, Lean/SMT scope and OSDI-quality
+objective remain intact and open. This thread performs implementation,
+experiments, writing and self-review; no independent audit is claimed.
+The current manuscript remains [docs/paper](paper/main.tex).
 
 ## Narrative evolution
 

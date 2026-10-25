@@ -121,7 +121,9 @@ pub struct Attempt {
     pub status: Status,
     /// Startup through complete retirement elapsed.
     pub elapsed_seconds: f64,
-    /// Observed owned RSS, sampled rather than kernel high-water.
+    /// Maximum of registered-tree RSS samples and backend supplements.
+    /// Observation kinds remain in backend_events; this is not a complete
+    /// aggregate or kernel process-tree high-water mark.
     pub peak_rss_bytes: u64,
     /// Exclusive retry after concurrent preemption.
     pub exclusive: bool,

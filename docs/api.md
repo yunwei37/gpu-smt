@@ -132,3 +132,18 @@ reads future verdicts. A custom wrapped policy supplies within-task ranking,
 group-first ordering and RSS forecasts. all-mode uses its wrapped policy
 unchanged. There is no per-task permission/resource cap. CPU/RSS admission,
 checked cancellation, reuse and paid retirement retain the same contracts.
+
+## RSS observation kinds
+
+Attempt peak_rss_bytes is a conservative maximum of registered-tree samples and
+backend supplements. It is not a complete aggregate or kernel tree high-water.
+rss_observation backend events record kind,PID,kernel start ticks and bytes.
+The fresh backend records birth-matched current leader RSS before retirement;
+the prepared backend records the native parent's wait4 leader ru_maxrss.
+Leader data exclude a complete descendant/shared-parent total.
+
+The comparison key peak_attempt_observed_rss_bytes states this combined scope.
+The older sampled_peak_attempt_rss_bytes remains a legacy alias with the same
+value. Old captures without kind events remain untyped; no observation kind is
+invented when reading them. Aggregate48GiB enforcement still uses the complete
+owned-tree sampler, not these individual supplemental values.

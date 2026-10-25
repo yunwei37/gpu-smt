@@ -308,6 +308,12 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             Some(&expected),
             "{code}"
         );
+        assert!(result[0].attempts.iter().flat_map(|a| &a.backend_events)
+            .filter(|e| e.stage == "rss_observation")
+            .filter_map(|e| serde_json::from_str::<serde_json::Value>(&e.detail).ok())
+            .any(|v| v["kind"] == "leader_kernel_high_water_rss"
+                && v["bytes"].as_u64().is_some_and(|n| n > 0)),
+            "native retired child must retain the kernel leader high-water observation");
         if i == 0 {
             let ids = &result[0].attempts[0].processes;
             assert_eq!(

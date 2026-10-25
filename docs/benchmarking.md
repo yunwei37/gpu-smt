@@ -111,3 +111,11 @@ cancelled/cache/coalesced rows. The earlier candidates_per_second key remains
 as the same value with an explicit scope string. Neither denotes fresh native
 verification throughput; physical-attempt statistics retain their per-caller
 history/coalescing limitations.
+
+Attempt memory is observed, not uniformly sampled or a complete high-water.
+Use rss_observation events to separate current leader RSS, wait4 leader HWM
+and registered-tree sampling. The combined maximum remains a conservative
+admission observation. Complete aggregate RSS comes from the owned-tree event
+stream. Historical attempts without kind metadata remain ambiguous. Do not
+train a new-RSS-point source model from old AS-capped bad_alloc labels or
+concurrent aggregate envelopes presented as per-source allocation peaks.

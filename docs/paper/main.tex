@@ -756,6 +756,18 @@ critical-path work. Child-subtracted runtime counters, open frames,
 source transitions and terminated streams remain in the artifact.
 Resource failures lack returned body clocks; they are not zero-cost.
 
+A same-run memory join obtains bracket-inferred process observations for
+477 of the 480 sources. It requires an unambiguous observed process birth,
+adjacent source-label agreement within 2.5 seconds and a unique HTTP envelope.
+Among each source's observed single-worker maxima, the medians are
+23.27\,GiB for the 42 resource failures, 14.71\,GiB for the 83 timeouts and
+3.67\,GiB for 352 observed ordinary errors. Three error sources remain
+missing. These occupancies include imports, process history and diagnostic
+overhead; asynchronous samples are neither source allocations nor true
+high-water marks. All records retain the old 24\,GiB address-space limit.
+Those allocation-failure labels do not directly calibrate a new 48\,GiB
+actual-RSS predictor or justify four simultaneous workers.
+
 These observations motivate continuing work on finite-case construction,
 simplifier repetition and reduction failure witnesses. An expensive prefix
 or a large branch count alone does not prove failure. No reliable early
