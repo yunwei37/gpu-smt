@@ -47,7 +47,7 @@ response, not a kernel RSS quota. No otherWorkspace/quota/permission changes.
 |miniF2F|244tasks×32=7,808,Lean4.9rc1|Completed native/GPU pair; failure profile and first-success work|
 |GoedelWorkbook|29,750original Lean4.27files|Completed three-pair frozen CPU baseline; not32siblings/task|
 |ProofNet|186tasks×32=5,952,Lean4.9rc1|Earlier complete controls retained without expansion|
-|Lean code verification|Pinned Verina/miniCodeProps/CLEVER/lean-mlir sources|Native environments and profiler implementation prepared; reference timing pending|
+|Lean code verification|Pinned Verina/miniCodeProps/CLEVER/lean-mlir sources|Original Verina189 native/profile complete; real compiler SAT/LRAT timing still unmeasured|
 |Verus/SMT|Version-aligned original traces|Prior negative/compatibility results retained; broader systems claims open|
 
 Released candidates are replay inputs, not generator arrival traces.
@@ -90,9 +90,12 @@ It covers93.5659%of failed cumulativeHTTP, not that fraction of whole elapsed.
 The C-only native runtime-boundary qualifier preserves4valid/18Leanerror/
 1timeout/1resourcefailure, allsource attribution, no sampler/table/clockfaults
 and complete retirement. Native/profile326.646616/326.839955s does not prove
-zero overhead. The failedC++ABI diagnostic remains. Full480rankings/result
-review remain pending until actual terminal collection; the output/launch
-receipt owns runtime identity. Preserve a healthy owner without restarting.
+zero overhead. The failed C++ ABI diagnostic remains. The completed
+[full480 result and root self-review](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md)
+retain all 480 outcomes, unchanged statuses, per-source rankings, 44.49 GiB
+sampled peak RSS and zero watchdog kills/errors. All descendants retired.
+Timeout endpoint attribution puts interval_cases at 55.19% and simp_all at
+28.21% of observed timeout thread CPU. This is not a failure witness or speedup.
 
 Profile counters distinguish child-subtracted threadCPU, nested wall spans,
 sampled active tactics and unfinished timeout frames. Auxiliary offline
@@ -122,19 +125,26 @@ fit without adding a redundant long full cell or a parameter grid.
 [Runtime implementation/plan](../artifacts/candidate-scheduling-2026-10-25/plan.md)
 still compares native all-candidate, original first-success and short-code
 first-success. Model/source sorting, queued cancellation, output handling
-and cleanup enter the complete consumer clock. Actual qualification/full
-measurement remain pending while the sole480profile finishes.
+and cleanup enter the complete consumer clock.
+[Real eight-candidate qualification](../artifacts/candidate-scheduling-2026-10-25/native-qualification-20261025T0715/result-review.md)
+preserves the solved task and cancels three queued siblings only after a
+checked winner. Its startup-dominated clocks do not establish a gain.
+The complete original7808 matrix is the sole active full capture;
+[launch identity](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730.launch.json)
+and actual terminal files own status. Do not restart a healthy capture.
 
 ## Lean code-verification workloads
 
 [Pinned official sources and primary-source review](tmp/bootstrap/step-0011-20261023T195335-0700/literature-20261025-code-verification/report.md)
 and [prepared environments](../artifacts/lean-code-verification-2026-10-25/sdk-preparation-review.md)
 retain exact commits, licenses, toolchains and incomplete/reference boundaries.
-Verina has189taskfiles,46without explicit admission tokens; all189will be
-retained. Its4.18SDK/Mathlibaa936c36 cache6471/6471are ready. The original
-native/profile runner is implemented but not yet executed. Its published
-synchronous120s native limit is a separate resource/protocol point from
-miniF2F300s, not a new research deadline or a pooled speed comparison.
+The [complete original Verina189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md)
+uses pinned4.18SDK/Mathlibaa936c36: 46 no-explicit-admission exits, 139 admitted
+stubs and four API errors, exactly matched by the profiled run. Whole native
+and diagnostic clocks are48.841915/53.948885s. The completed-reference subgroup
+has8.909486s of nearest-simp trace wall slices, with no observed above-threshold
+bv_decide/omega/decide/grind. Trace absence is not zero time. Its published
+synchronous120s per-file limit remains a distinct protocol point from miniF2F300s.
 
 miniCodeProps includes library/test material; CLEVER has many stubs.
 FVAPPS gated contact-sharing terms are not accepted; accessible work continues.

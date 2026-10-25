@@ -13,7 +13,9 @@ files remain incomplete even on native exit0. Trace-wall weights are not CPU.
 With the retained Kimina Python environment:
     python bench/lean-code-verification/run-verina.py --phase qualification --out /tmp/a-fresh-verina-qualification
 
-The real qualification and full189reference profile are pending while the
-original480profile remains the sole collection. run-source/commands/logs/
-actual limits will be retained by each group. SDK/cache setup is not a proof
+[The real qualification and all189 native/profile records](../../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md)
+are complete. Analyze with:
+    python bench/lean-code-verification/analyze-verina.py --run <completed-group>
+
+Each group retains run-source, commands, logs and actual limits. SDK/cache setup is not a proof
 result. No other system's generation/prover baseline is reproduced.

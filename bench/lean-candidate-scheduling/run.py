@@ -6,6 +6,18 @@ BASE=ROOT/'bench/lean-candidate-scheduling'
 ART=ROOT/'artifacts/candidate-scheduling-2026-10-25'
 ACTIVE_PROFILE=ROOT/'artifacts/lean-failure-profile-2026-10-25/full480'
 OWNED_OUTPUT=None
+def check_collection_ownership():
+ current=os.getpid()
+ for proc in psutil.process_iter(['pid','cmdline']):
+  if proc.pid==current:continue
+  cmd=proc.info.get('cmdline')or[]
+  if '--phase'not in cmd or '--out'not in cmd:continue
+  try:
+   scripts=[Path(a)for a in cmd if a.endswith('.py')]
+   ours=any((p if p.is_absolute()else Path(proc.cwd())/p).is_relative_to(ROOT/'bench')for p in scripts)
+   if ours and proc.status()!=psutil.STATUS_ZOMBIE:
+    raise RuntimeError('Another owned proof-collection group is live: PID '+str(proc.pid)+' birth '+str(proc.create_time()))
+  except(psutil.NoSuchProcess,psutil.AccessDenied):continue
 def input_rows():
  with gzip.open(ROOT/'artifacts/linarith-oracle-2026-10-17/prefix-opportunity/minif2f-input.jsonl.gz','rt')as f:return [json.loads(l)for l in f]
 def record(path,event,**values):
@@ -57,6 +69,7 @@ def install_scheduler(mode,out):
  return original
 async def main(args):
  global OWNED_OUTPUT
+ check_collection_ownership()
  # Preserve the sole existing collection. This is the user's resource invariant,
  # not a performance/novelty admission condition.
  if psutil.pid_exists(275822):

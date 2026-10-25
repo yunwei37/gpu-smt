@@ -99,6 +99,7 @@ async def cell(mode,files,out,sdk,project,lean_path):
  return terminal
 async def main(args):
  global OWNED
+ runpy.run_path(str(ROOT/'bench/lean-candidate-scheduling/run.py'))['check_collection_ownership']()
  if psutil.pid_exists(275822):
   p=psutil.Process(275822)
   if abs(p.create_time()-1792894799.05)<.01 and p.status()!=psutil.STATUS_ZOMBIE:raise RuntimeError('Sole existing480capture still live')

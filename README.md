@@ -25,11 +25,19 @@ allocation failure under the24GiB-per-process limit on both sides. The48GiB
 aggregate watchdog records no kills or errors.
 [Complete pair, accepted sets, failure causes and limitations](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md).
 
-The sole active capture profiles the baseline's83timeouts and slowest10%of
-failed requests (480sources). Three directions now continue: reliable early
-failure/timeout determination, same-task candidate ranking/cancellation for
-pass@k or best-of-n, and public Lean code-verification workloads. During the
-capture, offline scheduling analysis and workload preparation proceed.
+The completed 480-source failure profile attributes 55.19% of observed
+timeout thread CPU to interval_cases and 28.21% to simp_all. All selected
+statuses are unchanged. These diagnostic fractions are not total elapsed-time
+fractions or a proven early-rejection mechanism.
+
+Three directions continue: reliable early failure/timeout determination,
+same-task ranking/cancellation for pass@k or best-of-n, and public Lean
+code-verification workloads. The sole active full collection now compares
+native all-candidate execution against two first-success scheduling policies
+on all 7,808 original candidates. Its real eight-candidate qualification
+checked winners before cancelling siblings. The original Verina 189-file
+native/profile characterization is complete; admitted stubs and source-version
+errors are reported separately from completed reference files.
 There is no performance admission threshold, deadline or closure decision.
 The external CPU oracle stays **frozen as a baseline**: no optimization,
 extension or new oracle experiments, and no contribution claim.
