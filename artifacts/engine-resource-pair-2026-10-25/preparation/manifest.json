@@ -1,0 +1,54 @@
+{
+  "prepared_UTC": "2026-10-25T17:07:37.081601+00:00",
+  "input_reference": "artifacts/engine-resource-profile-2026-10-25/population-inputs/all.json.gz",
+  "sources": 7808,
+  "mode": "all",
+  "reuse": false,
+  "input_codes_changed": false,
+  "input_bytes": 14834061,
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1
+  },
+  "maximum_CPU_leases": 4,
+  "observed_four_native_workers": false,
+  "conditions": [
+    "native fresh",
+    "prepared native branches"
+  ],
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lake",
+    "env",
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/release/examples/resource_pair",
+    "/tmp/gpu-smt-resource-pair-20261025/original7808.json",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/preparation/resources.json",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-at-actual-launch-UTC"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "required_environment": {
+    "PATH_prefix": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin",
+    "LEAN_SYSROOT": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux"
+  },
+  "prior_owning_collection": "artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730",
+  "native_full_pair_executed": false,
+  "scope": "Own-engine same-native resources support pair; excludes frozen CPU oracle and extra comparison-system variants; not a strongest warm-service advantage or novelty result",
+  "output_policy": "stream captures through owned gzip child; retain raw native outcomes,attempts,RSS/CPU ticks,terminal and complete serialization/retirement clocks",
+  "memory_contract": "actual summed owned-tree48GiB,not a kernel hard cap;1s watchdog and dynamic CPU/RSS admission;no per-process AS cap;actual concurrency may be lower",
+  "qualification_pending": [
+    "four real native workers at this exact point",
+    "full7808 native/prepared pairing",
+    "accepted/native operational set differences",
+    "old42 exclusive reruns kept separate"
+  ]
+}

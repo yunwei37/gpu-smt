@@ -1,0 +1,22 @@
+{
+  "UTC": "2026-10-25T17:05:52.065008+00:00",
+  "command": [
+    "taskset",
+    "-c",
+    "10,11",
+    "/usr/local/cargo/bin/cargo",
+    "build",
+    "--release",
+    "-p",
+    "gpu-smt-server",
+    "--example",
+    "resource_pair",
+    "--locked",
+    "-j",
+    "2"
+  ],
+  "cwd": "/workspaces/repository",
+  "exit": 0,
+  "seconds": 47.70903079304844,
+  "scope": "Rust example release build only; no native candidate execution"
+}

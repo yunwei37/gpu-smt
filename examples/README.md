@@ -50,3 +50,25 @@ Preview the policy through the public Rust traits without starting a verifier:
 
 This prints candidate order only; it does not validate proofs, perform resource
 admission or produce benchmark performance.
+
+## Matched native/prepared resource pair
+
+Build the reusable API example with cargo build --release -p gpu-smt-server
+--example resource_pair. Its --help documents eight positional inputs:one Batch
+JSON,matching native REPL/project/prepared-host/sysroot/environment,one Config
+JSON,and a fresh output directory. Run from that native project's lake env.
+The example starts no verifier when invoked with --help.
+
+Both conditions use the exact same Batch,Config,FIFO and native context.
+The driver uses the existing Rust admission/watchdog/exclusive-retry path.
+Capture compression is an owned gzip child and is always retired;gzip is a
+runtime dependency of this example. Complete cell clocks include serialization
+and compressor retirement;the inner Capture clock retains its narrower scope.
+RSS/CPU-tick records keep missing process observations explicit. CPU tick rates
+need the measured system CLK_TCK to interpret;leader count is not CPU busyness.
+
+Only run when the owning collection slot is free. A four-core configuration
+permits up to four workers subject to actual memory and cleanup. Supporting
+fresh/prepared comparisons do not establish a strongest warm-service advantage
+or novelty. [Prepared original-workload scope](../artifacts/engine-resource-pair-2026-10-25/preparation/README.md)
+is distinct from executed performance.

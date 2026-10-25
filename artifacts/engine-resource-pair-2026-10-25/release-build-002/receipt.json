@@ -1,0 +1,22 @@
+{
+  "UTC": "2026-10-25T17:09:44.085700+00:00",
+  "command": [
+    "taskset",
+    "-c",
+    "10,11",
+    "/usr/local/cargo/bin/cargo",
+    "build",
+    "--release",
+    "-p",
+    "gpu-smt-server",
+    "--example",
+    "resource_pair",
+    "--locked",
+    "-j",
+    "2"
+  ],
+  "cwd": "/workspaces/repository",
+  "exit": 0,
+  "seconds": 4.205294104991481,
+  "native_candidates": 0
+}
