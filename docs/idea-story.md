@@ -192,3 +192,7 @@ must still account for backtracking and complete-request acceptance.
 The full480profile remains active; offline scheduling analysis/workload
 preparation proceeds concurrently without a second collection or agent.
 No new proof of benefit or contribution is implied by this direction change.
+
+### 2026-10-25 — user prioritizes layered Rust engine and dynamic memory
+
+The complete Initial Narrative/evolution were read. The user adds the Rust engine as a fourth continuing direction and makes extensible OSS organization the immediate priority. Resource/workload/semantic layers preserve the original verification-service ambition more faithfully than isolated arithmetic primitives. Only workload-level methods may support novelty. The next resource point removes fixed24GiB process caps, retains48GiB total actual RSS, measures CPU demand for concurrency, and retries preempted candidates alone. Healthy existing capture stays unchanged; historical outcomes remain. Safe COW, native parity and throughput are unproven. CPU oracle remains frozen; no gate/deadline/closure. [Design and root disposition](architecture.md).
