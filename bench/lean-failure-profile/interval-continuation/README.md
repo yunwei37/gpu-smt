@@ -35,3 +35,13 @@ Lazy traversal is a standard technique, not itself a novelty claim. The open
 question is whether this particular expensive native work can be avoided in
 actual failed candidates, and whether any benefit survives full-flow costs.
 No CPU oracle/GPU narrow-kernel route or another verifier system is reopened.
+
+## Executed development qualification
+
+The first runtime qualification now executes18native frontend controls
+(9native/prototype pairs), including kernel-checked successful examples,
+rejected/unsolved leaves, rollback and admitted proofs. All9status pairs match;
+the sorry pair remains incomplete. See
+[retained result](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/qualification-001/result-review.md).
+This is not original-population parity, a reliable timeout detector or a
+performance result. Diagnostic multiplicity differs on the failed-leaf pair.
