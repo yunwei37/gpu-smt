@@ -67,7 +67,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> --repl PATH --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -97,6 +97,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "--memory-gib",
             "--listen",
             "--policy",
+            "--prepared-host",
+            "--sysroot",
         ]
         .contains(&key.as_str())
         {
@@ -179,9 +181,20 @@ async fn run(
         "source-size" => Arc::new(SourceSize),
         _ => return Err("unknown scheduling policy".into()),
     };
+    let verifier: Arc<dyn VerificationBackend> =
+        match (options.get("--prepared-host"), options.get("--sysroot")) {
+            (None, None) => Arc::new(backend.clone()),
+            (Some(host), Some(sysroot)) => Arc::new(gpu_smt_lean::PreparedRepl::new(
+                backend.clone(),
+                PathBuf::from(host).canonicalize()?,
+                PathBuf::from(sysroot).canonicalize()?,
+            )),
+            _ => return Err("--prepared-host and --sysroot are required together".into()),
+        };
+    let backend_identity = verifier.identity();
     let engine = Engine::new(
         config.clone(),
-        Arc::new(backend.clone()),
+        verifier,
         policy,
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
@@ -197,7 +210,7 @@ async fn run(
             schema_version: 1,
             engine_version: env!("CARGO_PKG_VERSION").into(),
             environment: backend.environment.clone(),
-            backend: backend.identity(),
+            backend: backend_identity,
             policy: policy_name.into(),
             resources: config,
             batch,

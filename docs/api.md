@@ -10,13 +10,13 @@ an assertion that the current prototype is production-stable.
   Attempt, Execution, exact CacheKey and extension traits.
 - gpu-smt-engine: Engine, Config and built-in FIFO/source-size policies,
   exact cache, measured-headroom admission and Linux /proc monitor.
-- gpu-smt-lean: fresh stock REPL subprocess backend and strict classifier.
+- gpu-smt-lean: fresh stock REPL backend, optional PreparedRepl and strict classifier.
 - gpu-smt-server: embeddable Axum router and gpu-smt executable.
 
 Backend/policy/monitor/admission/cache are injected at Engine::new.
 PreparedState and FailureDetector define future native-state extensions;
-neither safe COW nor an actual rejection detector is implemented by the
-initial runtime. A trait definition is not an acceleration result.
+the import-parent implementation is a separate optional VerificationBackend.
+An actual rejection detector is not implemented. A trait is not an acceleration result.
 
 ## HTTP
 
@@ -58,8 +58,9 @@ Queueing, retry and retirement are charged. Sampling is not a kernel quota.
 
 Current backend scope is Linux and a cooperative persistent native REPL;
 it is not a sandbox for hostile sources that daemonize or escape ownership.
-A safe COW backend and cross-node supervisor must implement their own native
-lifecycle argument before replacing this transparent fresh-process fallback.
+The optional pinned-context import parent uses native process branching, with
+explicit context limitations and fallback; it is not a generic arbitrary-FFI
+fork contract. A cross-node supervisor remains future work.
 
 ## Resource-event recording
 
@@ -88,3 +89,14 @@ The server library exposes measurement::Capture and measurement::compare for
 saved exact-input comparisons. The CLI measure command captures one Batch
 through native retirement; compare reads two saved captures without running
 a verifier. See [measurement scope, clocks and parity](benchmarking.md).
+
+## Optional native import parent
+
+Supply --prepared-host and --sysroot together to opt into the matching compiled
+Lean+C adapter. The default stays fresh-process. See [native build/lifecycle and
+limitations](../native/lean/README.md). Preparation and child checks share the
+original request timeout; remaining time is passed to any fresh fallback.
+Attempt histories include the parent during active preparation; after readiness
+it becomes shared backend-owned state until shutdown. Disposable candidate
+children retire before each result. Backend readiness is reported separately
+from general resource health.

@@ -31,7 +31,7 @@ async fn health(State(engine): State<Engine>) -> Result<Json<Value>, Error> {
         .health()
         .map_err(|e| (StatusCode::SERVICE_UNAVAILABLE, Json(json!({"error":e}))))?;
     Ok(Json(
-        json!({"status":"ok","api_version":"0.1","native_backend_warm":false}),
+        json!({"status":"ok","api_version":"0.1","native_backend_warm":engine.prepared_state_ready()}),
     ))
 }
 type Error = (StatusCode, Json<Value>);

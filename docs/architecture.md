@@ -45,10 +45,15 @@ RSS counts shared COW pages per process as requested; physical-sharing claims
 need separate PSS. A1s sampled watchdog can overshoot between observations;
 it is not a kernel quota.
 
-Safe COW requires a Lean+C quiescent single-threaded branch point. A trait
-does not implement that argument. A fresh-process backend supplies the initial
-transparent fallback; independently loaded workers must not be called one
-Mathlib load. Multi-node transport/ownership is extensible, not measured scaling.
+The optional PreparedRepl backend uses an engine-owned Lean+C import parent:
+only parsed imports execute there, with no task manager. Each candidate runs in
+a disposable OS child, whose connection is retired only after native waitpid.
+The parent remains in total owned RSS. Different imports and preparation faults
+use the original fresh backend within the remaining request timeout.
+This is a context-specific implementation under native qualification, not a
+generic safe fork argument for arbitrary FFI. The default is fresh processes.
+Independently loaded workers must not be called one Mathlib load. Multi-node
+transport/ownership is extensible, not measured scaling.
 
 ## Workload layer
 
@@ -86,6 +91,6 @@ keeps its frozen source and resource point; new-rule data are separate.
 - artifacts/, results/, bench/, tools/: retained research data and experiments.
 - docs/paper/: current manuscript.
 
-Safe COW, real native new-resource parity,42isolated reruns, full throughput
+Full Mathlib COW qualification, real native new-resource parity,42isolated reruns, full throughput
 pairs and multi-node measurements remain separately tracked. Tests/CI do not
 prove a systems contribution or venue acceptance.

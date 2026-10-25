@@ -203,7 +203,11 @@ pub struct Execution {
 pub trait VerificationBackend: Send + Sync {
     /// Exact immutable environment identity.
     fn identity(&self) -> String;
-    /// Return only after all attempt processes retire.
+    /// Whether backend-owned prepared state is ready; false by default.
+    fn prepared_state_ready(&self) -> bool {
+        false
+    }
+    /// Return after attempt children retire; shared prepared state retires at shutdown.
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome;
     /// Retire backend-owned idle/prepared state on engine shutdown.
     async fn shutdown(&self) {}

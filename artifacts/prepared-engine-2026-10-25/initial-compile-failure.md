@@ -1,0 +1,1 @@
+The first Rust check failed with E0505/E0503/E0499: pinned local futures retained borrows of child input/output and branch state across cleanup. Corrected by lexical scopes around each select/future. No native process ran. Full original diagnostic was returned in this thread. Subsequent commands retain raw logs here.

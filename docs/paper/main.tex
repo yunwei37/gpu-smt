@@ -148,8 +148,12 @@ contracts, resource/workload scheduling, native Lean transport and service
 adapters. Backend, scheduling, resource sampling, admission and exact-result
 storage use replaceable interfaces. Logical rejection, incomplete proof,
 timeout, preemption and consumer cancellation remain distinct.
-The initial Rust backend executes isolated fresh native processes; it does
-not yet provide a safe one-load Mathlib/COW implementation.
+The default Rust backend executes isolated fresh native processes.
+An optional Lean+C adapter prepares parsed imports in a single native parent
+and executes candidate commands in disposable OS children, with fresh fallback
+for different imports. This context-specific implementation is under native
+qualification; it does not establish safe general FFI cloning, whole-Mathlib
+behavior preservation or a measured one-load performance benefit.
 Prepared-state and failure-detector interfaces specify pending extensions,
 not completed mechanisms or new contributions.
 

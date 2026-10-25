@@ -1,9 +1,11 @@
 //! Stock Lean REPL JSON backend. Fresh processes preserve request independence.
-//! Safe prepared-state/COW implementations are separate future backends, not simulated here.
+//! Optional pinned-context import preparation lives in PreparedRepl; qualification is explicit.
 
 #![warn(missing_docs)]
+mod prepared;
 use async_trait::async_trait;
 use gpu_smt_core::*;
+pub use prepared::PreparedRepl;
 use serde_json::{Value, json};
 use std::{path::PathBuf, process::Stdio, time::Duration};
 use tokio::{
@@ -81,7 +83,7 @@ async fn response(stdout: tokio::process::ChildStdout) -> Result<Value, String> 
         serde_json::from_str(&text).map_err(|e| format!("native JSON: {e}"))
     }
 }
-async fn drain(mut stderr: tokio::process::ChildStderr) -> String {
+async fn drain<R: tokio::io::AsyncRead + Unpin>(mut stderr: R) -> String {
     // Drain to avoid pipe deadlock. Retain a labelled diagnostic tail, not unbounded stderr.
     let mut tail = Vec::new();
     let mut chunk = [0u8; 4096];

@@ -15,8 +15,9 @@ The Rust workspace has four crates:
 |gpu-smt-lean|Original native JSON command transport in isolated fresh process groups, assigned CPU affinity, timeout/cancellation and reaping|
 |gpu-smt-server|Local HTTP core/check and legacy/verify adapters, typed/v1/verify, JSONL/HTTP executable and reusable capture/comparison|
 
-The initial native backend is fresh-process execution, not safe COW or
-one-load Mathlib. Unsupported debug/infotree/state-handle features return an
+The default native backend is fresh-process execution. An optional Lean+C
+import-parent backend now has source and a Rust adapter, with actual pinned-native
+qualification tracked separately from whole Mathlib COW/performance evidence. Unsupported debug/infotree/state-handle features return an
 explicit compatibility error or remain out of scope. Backend environment
 identity is immutable for cache lifetime. No ordinary cache/queue/fork
 primitive is a novelty claim. [Architecture](architecture.md), [API](api.md).
@@ -62,7 +63,7 @@ No test suite is a full native population parity or throughput result.
 
 ## Pending native work
 
-Safe Lean+C preparation/COW, actual sufficient failure detectors, trained
+Full Mathlib/native qualification of import preparation/COW, actual sufficient failure detectors, trained
 source memory/time models, multi-node execution,42larger-memory isolated
 reruns and full new-resource/native matched throughput remain open.
 PreparedState/FailureDetector are extension contracts; no active rejection

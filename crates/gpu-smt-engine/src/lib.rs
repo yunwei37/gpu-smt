@@ -616,6 +616,10 @@ impl Engine {
             coalesced,
         }
     }
+    /// Actual backend prepared-state readiness, independent of resource health.
+    pub fn prepared_state_ready(&self) -> bool {
+        self.0.backend.prepared_state_ready()
+    }
     /// Current monitor/admission health; this does not claim a warm native backend.
     pub fn health(&self) -> Result<(), String> {
         if let Some(error) = self.0.fatal.lock().unwrap().clone() {

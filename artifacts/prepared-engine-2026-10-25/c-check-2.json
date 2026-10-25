@@ -1,0 +1,16 @@
+{
+  "command": [
+    "gcc",
+    "-std=gnu11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+    "-c",
+    "/workspaces/repository/native/lean/prepared_host.c",
+    "-o",
+    "/tmp/gpu-smt-prepared-native-build-20261025/prepared_host.o"
+  ],
+  "exit": 0
+}

@@ -2,9 +2,9 @@ name: engine
 
 on:
   push:
-    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "examples/**", ".github/workflows/engine.yml"]
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", ".github/workflows/engine.yml"]
   pull_request:
-    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "examples/**", ".github/workflows/engine.yml"]
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", ".github/workflows/engine.yml"]
   workflow_dispatch:
 
 jobs:
@@ -44,5 +44,10 @@ jobs:
           lake build
           echo "LEAN_REPL=$RUNNER_TEMP/native-repl/.lake/build/bin/repl" >> "$GITHUB_ENV"
           echo "LEAN_PROJECT=$RUNNER_TEMP/native-repl" >> "$GITHUB_ENV"
+      - name: Build import-only native parent
+        run: |
+          python3 native/lean/build.py --project "$LEAN_PROJECT" --sysroot "$RUNNER_TEMP/lean-4.18.0-linux" --out "$RUNNER_TEMP/prepared-host"
+          echo "LEAN_PREPARED_HOST=$RUNNER_TEMP/prepared-host/prepared-host" >> "$GITHUB_ENV"
+          echo "LEAN_SYSROOT=$RUNNER_TEMP/lean-4.18.0-linux" >> "$GITHUB_ENV"
       - name: Differential check against raw native JSON
         run: cargo test -p gpu-smt-lean --test native_differential --locked -- --ignored
