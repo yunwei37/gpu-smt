@@ -6,7 +6,7 @@ pub mod measurement;
 
 use axum::{
     Json, Router,
-    extract::State,
+    extract::{DefaultBodyLimit, State},
     http::StatusCode,
     routing::{get, post},
 };
@@ -24,6 +24,9 @@ pub fn router(engine: Engine) -> Router {
         .route("/check/", post(check))
         .route("/verify", post(legacy))
         .route("/one_pass_verify_batch", post(legacy))
+        // Full released populations exceed Axum's2MiB extractor default.
+        // Actual process-memory admission/watchdog remains the resource contract.
+        .layer(DefaultBodyLimit::disable())
         .with_state(engine)
 }
 async fn health(State(engine): State<Engine>) -> Result<Json<Value>, Error> {

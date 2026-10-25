@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+    "-O2",
+    "-rdynamic",
+    "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib",
+    "-o",
+    "/tmp/gpu-smt-prepared-native-build-20261025/abi-link-control",
+    "/tmp/gpu-smt-prepared-native-build-20261025/prepared_host.o",
+    "/tmp/gpu-smt-prepared-native-build-20261025/abi-control.o"
+  ],
+  "LEAN_CC": "cc",
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Non-verifier ABI control. No candidate/Lean execution; not native qualification"
+}

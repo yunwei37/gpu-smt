@@ -16,7 +16,10 @@ def main():
     out=args.out.resolve()
     env=dict(os.environ,PATH=str(sysroot/"bin")+os.pathsep+os.environ["PATH"],
         LEAN_SYSROOT=str(sysroot))
-    receipt={"cwd":str(project),"sysroot":str(sysroot),"commands":[]}
+    # POSIX APIs need full platform headers, absent from the minimal SDK sysroot.
+    # Upstream supports LEAN_CC and removes bundled sysroot flags for that mode.
+    env.setdefault("LEAN_CC","cc")
+    receipt={"cwd":str(project),"sysroot":str(sysroot),"LEAN_CC":env["LEAN_CC"],"commands":[]}
     def run(command):
         result=subprocess.run(command,cwd=project,env=env,text=True,capture_output=True)
         receipt["commands"].append({"command":command,"exit":result.returncode,
@@ -39,9 +42,9 @@ def main():
         commands=[
             ["lake","env","lean","-R",str(source),"-c",str(out/"GpuSmtPrepared.c"),str(source/"GpuSmtPrepared.lean")],
             ["lake","env","leanc","-O3","-c",str(out/"GpuSmtPrepared.c"),"-o",str(out/"GpuSmtPrepared.o")],
-            ["gcc","-std=gnu11","-O2","-Wall","-Wextra","-Werror","-I"+str(sysroot/"include"),
+            ["lake","env","leanc","-std=gnu11","-O2","-Wall","-Wextra","-Werror",
                 "-c",str(source/"prepared_host.c"),"-o",str(out/"prepared_host.o")],
-            ["lake","env","leanc","-O3","-rdynamic","-o",str(out/"prepared-host"),
+            ["lake","env","leanc","-O3","-rdynamic","-L"+str(sysroot/"lib"),"-o",str(out/"prepared-host"),
                 str(out/"prepared_host.o"),str(out/"GpuSmtPrepared.o"),str(embedded)]]
         for command in commands:
             run(command)

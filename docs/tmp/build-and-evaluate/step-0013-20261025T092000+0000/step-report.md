@@ -48,3 +48,25 @@ errors are suppressed. This is a build repair, not a native passing result.
 Prepared original7808all/first-success Batch inputs are now materialized with
 actual task metadata/source validation, unchanged300s/reuse=false and allNone
 failures retained. No additional native collection started.
+
+Prepared full input measures14,834,061UTF8JSON bytes. A real Axum request
+regression reproduced default413rejection before engine scheduling at2MiB.
+Removed the framework extractor cutoff for the authorized local engine API,
+retaining the existing aggregateRSS/CPU contract. The before-failure log is
+preserved; this fixes actual full-batch transport, not a performance result.
+
+The SDK bundled compiler uses a minimal sysroot lacking dirent.h; that failed
+attempt is retained. Upstream Leanc explicitly supports LEAN_CC, clearing bundled
+internal sysroot flags while preserving runtime/library flags. Builder now uses
+one system compiler for C and linking through that supported interface. Native
+OS glue requires full POSIX headers; no glibc shim, symbol stub or suppressed
+link error enters the real backend. A separate non-verifier ABI-control stub
+is used only to check link flags locally, never executed as Lean or counted as
+a native result. Real pinned-native integration still decides qualification.
+
+Forward ABI repair complete locally: upstream-supported LEAN_CC for both C and
+link plus the actual SDK C++ library directory passes a full ABI link control.
+The control stub source is retained and cannot be used as a native proof result.
+Latest27localchecks/format/Clippy/docs/help pass with2localnative skips
+(validation20261025T093746). LargeHTTPregression now passes after413was reproduced.
+Actual realLean nativeCI must run on the new head; all failures remain explicit.

@@ -100,3 +100,9 @@ Attempt histories include the parent during active preparation; after readiness
 it becomes shared backend-owned state until shutdown. Disposable candidate
 children retire before each result. Backend readiness is reported separately
 from general resource health.
+
+Full-population Batch bodies can exceed the HTTP framework's default2MiB JSON
+cutoff (the original7808body is14,834,061bytes). The local adapter removes that
+extractor cutoff; engine resources remain governed by the declared aggregate
+RSS/CPU point. This is not an authenticated public deployment or a hard parser
+memory quota. CLI measure avoids HTTP when only a local capture is needed.

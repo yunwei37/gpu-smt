@@ -24,3 +24,16 @@ pending the corrected CI, not a successful result. Latest local validation
 20261025T092817: all six commands pass,26checks pass,2native tests explicitly
 skip locally. Added real-process missing-host fallback and retirement regression;
 branch connection time is charged to the same request deadline.
+
+Actual3rdCI shows a libc ABI mismatch in systemGCC objects versus bundled SDK
+linking. Bundled leanc alone cannot compile POSIX glue because its minimal
+sysroot lacks dirent.h; that attempt is also retained. The official LEAN_CC
+override, used for both compile/link plus the SDK C++ runtime search directory,
+passes a local full ABI link control. Its clearly-labelled dummy export source
+is retained as source-abi-control.c and is never used in the actual backend.
+The next actual nativeCI still compiles the real Lean exports and decides parity.
+
+Latest local validation20261025T093746 has27passing checks and2explicit local
+native skips. The actual largeHTTP regression fails413before the change and now
+passes: the original7808Batch is14,834,061bytes, above the framework default2MiB.
+Native COW performance/fullMathlib result remains unproven.

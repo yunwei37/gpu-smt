@@ -1,0 +1,50 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-std=gnu11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-c",
+        "/workspaces/repository/native/lean/prepared_host.c",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-build-20261025/prepared_host.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O2",
+        "-c",
+        "/tmp/gpu-smt-prepared-native-build-20261025/abi-control.c",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-build-20261025/abi-control.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-O2",
+        "-rdynamic",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-build-20261025/abi-link-control",
+        "/tmp/gpu-smt-prepared-native-build-20261025/prepared_host.o",
+        "/tmp/gpu-smt-prepared-native-build-20261025/abi-control.o"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/ld: cannot find -lc++: No such file or directory\n/usr/bin/ld: have you installed the static version of the c++ library ?\n/usr/bin/ld: cannot find -lc++abi: No such file or directory\n/usr/bin/ld: have you installed the static version of the c++abi library ?\ncollect2: error: ld returned 1 exit status\n"
+    }
+  ],
+  "LEAN_CC": "cc",
+  "scope": "ABI compile/link control with non-verifier stub exports; no Lean execution or native proof result"
+}

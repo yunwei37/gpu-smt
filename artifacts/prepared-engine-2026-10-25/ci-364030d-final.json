@@ -1,0 +1,197 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 121132405014,
+      "run_id": 40181183448,
+      "workflow_name": "engine",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/runs/40181183448",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUy3vaM8AAAAcNA3RFg",
+      "head_sha": "364030dcd574c665c2c2a3595b8902cb3732c436",
+      "url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/jobs/121132405014",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40181183448/job/121132405014",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-25T09:34:08Z",
+      "started_at": "2026-10-25T09:34:10Z",
+      "completed_at": "2026-10-25T09:35:54Z",
+      "name": "rust",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-25T09:34:11Z",
+          "completed_at": "2026-10-25T09:34:11Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-25T09:34:11Z",
+          "completed_at": "2026-10-25T09:35:09Z"
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-25T09:35:09Z",
+          "completed_at": "2026-10-25T09:35:19Z"
+        },
+        {
+          "name": "Run cargo fmt --all -- --check",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-25T09:35:19Z",
+          "completed_at": "2026-10-25T09:35:20Z"
+        },
+        {
+          "name": "Run cargo clippy --workspace --all-targets --locked -- -D warnings",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-25T09:35:20Z",
+          "completed_at": "2026-10-25T09:35:30Z"
+        },
+        {
+          "name": "Run cargo test --workspace --all-targets --locked",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-25T09:35:30Z",
+          "completed_at": "2026-10-25T09:35:51Z"
+        },
+        {
+          "name": "Run cargo doc --workspace --no-deps --locked",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-25T09:35:51Z",
+          "completed_at": "2026-10-25T09:35:52Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-25T09:35:52Z",
+          "completed_at": "2026-10-25T09:35:53Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-25T09:35:53Z",
+          "completed_at": "2026-10-25T09:35:53Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/yunwei37/gpu-smt/check-runs/121132405014",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000004011,
+      "runner_name": "GitHub Actions 1000004011",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 121132405279,
+      "run_id": 40181183448,
+      "workflow_name": "engine",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/runs/40181183448",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUy3vaM8AAAAcNA3SHw",
+      "head_sha": "364030dcd574c665c2c2a3595b8902cb3732c436",
+      "url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/jobs/121132405279",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40181183448/job/121132405279",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-25T09:34:08Z",
+      "started_at": "2026-10-25T09:34:11Z",
+      "completed_at": "2026-10-25T09:37:01Z",
+      "name": "native-repl-contract",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-25T09:34:12Z",
+          "completed_at": "2026-10-25T09:34:13Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-25T09:34:13Z",
+          "completed_at": "2026-10-25T09:36:28Z"
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-25T09:36:28Z",
+          "completed_at": "2026-10-25T09:36:36Z"
+        },
+        {
+          "name": "Prepare pinned native protocol dependency",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-25T09:36:36Z",
+          "completed_at": "2026-10-25T09:36:55Z"
+        },
+        {
+          "name": "Build import-only native parent",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 5,
+          "started_at": "2026-10-25T09:36:55Z",
+          "completed_at": "2026-10-25T09:36:59Z"
+        },
+        {
+          "name": "Differential check against raw native JSON",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-10-25T09:36:59Z",
+          "completed_at": "2026-10-25T09:36:59Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-25T09:36:59Z",
+          "completed_at": "2026-10-25T09:36:59Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-25T09:36:59Z",
+          "completed_at": "2026-10-25T09:36:59Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/yunwei37/gpu-smt/check-runs/121132405279",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000004013,
+      "runner_name": "GitHub Actions 1000004013",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

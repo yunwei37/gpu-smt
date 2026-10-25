@@ -101,3 +101,17 @@ async fn unsupported_extensions_are_rejected() {
         400
     );
 }
+
+#[tokio::test]
+async fn batches_larger_than_default_extractor_limit_reach_the_engine() {
+    // The retained original7808Batch is14,834,061bytes. This protocol fixture
+    // crosses the actual default2MiB cutoff without running a verifier.
+    let code = "fixture".repeat(350_000);
+    let (status, value) = post(
+        "/v1/verify",
+        json!({"candidates":[{"id":"large","code":code,"reuse":false}]}),
+    )
+    .await;
+    assert_eq!(status, 200, "valid large Batch rejected before scheduling");
+    assert_eq!(value["results"][0]["id"], "large");
+}

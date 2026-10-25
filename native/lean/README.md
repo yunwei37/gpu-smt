@@ -43,7 +43,11 @@ Then, from that native project:
       < population.json > capture.json 2> resources.jsonl
 
 Without the two prepared options, the default backend stays fresh-process.
-The builder uses Python, the pinned SDK/Lake, GCC and binutils. It asks the\npinned dependency for its REPL:static library facet, then renames only the\nupstream executable main symbol in a private archive to avoid the embedding\nentry-point collision. The dependency source/archive stay unchanged; it
+The builder uses Python, the pinned SDK/Lake, a system C compiler and binutils.
+The SDK bundles a minimal C sysroot without the required POSIX headers.
+The builder uses the upstream-supported LEAN_CC override (existing value, or cc)
+for both C compilation and linking, preserving SDK runtime/library flags and\nthe SDK C++ runtime directory. This
+avoids mixing host glibc objects with a different bundled libc at link time. It asks the\npinned dependency for its REPL:static library facet, then renames only the\nupstream executable main symbol in a private archive to avoid the embedding\nentry-point collision. The dependency source/archive stay unchanged; it
 it does not download dependencies or change a running binary.
 CI builds this adapter against the pinned official Lean 4.18 REPL and checks
 native payloads, declaration isolation, import-mismatch fallback, timeout,
