@@ -155,3 +155,17 @@ and42isolated resource-point reruns after the original group fully retires.
 不再扩展冻结oracle。原调度first-original仍有效运行，first-short尚未
 启动；不能提早算最终配对或把它停掉换另一个采集。代码验证依赖已真正
 完成，原模块保留82628字节和原root选项，等同一全量位置释放后执行。
+
+### Connect phase diagnostics to the exact original timeout sources (16:18 UTC)
+
+按原生Syntax而不是正则识别71条超时源。五条阶乘输入最初因缺open Nat
+解析上下文报错，处理原生open命令后全部解析成功；保留失败版本，没有把
+真实源判为错误。23条simp_all源的48个静态调用已生成原样、只加import、
+插桩三个独立输入，并重新原生解析验证UTF8映射和包装语法。
+参数/上下文构造也单独计时，事件带调用位置，避免超时只剩一个未归属
+的全局阶段名。tactic:max包装尝试被真实解析/控制测试发现不适用，已改为
+原生<;>使用的绑定级别2；最终7对开发控制一致，失败版本保留。
+
+实质进展仍取决于原23条实际阶段轨迹、原48条安全程序语义和全量吞吐。
+不能将本次静态调用数当运行次数或CPU占比。当前全量仍占采集位置，
+不再做关键词报告或开启第二组完整采集；这份映射将直接用于其后的诊断。

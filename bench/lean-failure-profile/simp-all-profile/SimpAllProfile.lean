@@ -24,6 +24,7 @@ structure Entry where
   deriving Inhabited
 
 structure State where
+  invocation : Option Nat := none
   profileRound : Nat := 0
   hypothesisUpdates : Nat := 0
   modified     : Bool := false
@@ -42,6 +43,7 @@ private def timed {α : Type} (phase : String) (slot : Nat) (action : M α) : M 
   let state ← get
   IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
     ("event", toJson ("begin" : String)), ("phase", toJson phase),
+    ("invocation_byte", toJson state.invocation),
     ("round", toJson state.profileRound), ("slot", toJson slot),
     ("entries", toJson state.entries.size)]).compress
   let start ← IO.monoNanosNow
@@ -52,6 +54,7 @@ private def timed {α : Type} (phase : String) (slot : Nat) (action : M α) : M 
     let state ← get
     IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
       ("event", toJson ("end" : String)),
+      ("invocation_byte", toJson state.invocation),
       ("phase", toJson phase), ("round", toJson state.profileRound),
       ("slot", toJson slot), ("elapsed_ns", toJson elapsed),
       ("entries", toJson state.entries.size),
@@ -172,9 +175,9 @@ def main : M (Option MVarId) := do
 
 end SimpAll
 
-def simpAll (mvarId : MVarId) (ctx : Simp.Context) (simprocs : SimprocsArray := #[]) (stats : Stats := {}) : MetaM (Option MVarId × Stats) := do
+def simpAll (mvarId : MVarId) (ctx : Simp.Context) (simprocs : SimprocsArray := #[]) (stats : Stats := {}) (invocation : Option Nat := none) : MetaM (Option MVarId × Stats) := do
   mvarId.withContext do
-    let (r, s) ← SimpAll.main.run { stats with mvarId, ctx, simprocs }
+    let (r, s) ← SimpAll.main.run { stats with mvarId, ctx, simprocs, invocation }
     if let .some mvarIdNew := r then
       if ctx.config.failIfUnchanged && mvarId == mvarIdNew then
         throwError "simp_all made no progress"
@@ -190,17 +193,28 @@ open Lean Meta Elab Tactic
 
 /-- Opt-in profiling of the pinned native simp_all algorithm.
 It observes phase costs; it never declares a cycle or returns early. -/
-syntax "profile_simp_all " tactic : tactic
+syntax (name := gpuSmtProfileSimpAll) "profile_simp_all " tactic:2 : tactic
 
 elab_rules : tactic
   | `(tactic| profile_simp_all $inner:tactic) => withMainContext do
     unless inner.raw.isOfKind ``Lean.Parser.Tactic.simpAll do
       throwError "profile_simp_all expects one simp_all invocation"
     withSimpDiagnostics do
+      let invocation := inner.raw.getPos?.map (·.byteIdx)
+      IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
+        ("event", toJson ("begin" : String)), ("phase", toJson ("elaborate-arguments" : String)),
+        ("round", toJson (0 : Nat)), ("slot", toJson (0 : Nat)),
+        ("invocation_byte", toJson invocation)]).compress
+      let start ← IO.monoNanosNow
       let { ctx, simprocs, .. } ← mkSimpContext inner (eraseLocal := true)
         (kind := .simpAll) (ignoreStarArg := true)
+      IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
+        ("event", toJson ("end" : String)), ("phase", toJson ("elaborate-arguments" : String)),
+        ("round", toJson (0 : Nat)), ("slot", toJson (0 : Nat)),
+        ("invocation_byte", toJson invocation),
+        ("elapsed_ns", toJson ((← IO.monoNanosNow) - start))]).compress
       let (result?, stats) ← GpuSmt.SimpAllProfile.simpAll (← getMainGoal) ctx
-        (simprocs := simprocs)
+        (simprocs := simprocs) (invocation := invocation)
       match result? with
       | none => replaceMainGoal []
       | some goal => replaceMainGoal [goal]

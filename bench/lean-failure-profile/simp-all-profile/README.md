@@ -23,3 +23,15 @@ now executes6native/profile pairs;all statuses match,including rejected and
 incomplete controls. It does not run the23original timeouts or establish a
 safe rejection predicate. Exact original-source profiling is the next runtime
 node once the retained full acquisition releases the slot.
+
+## Original-source attribution preparation
+
+The hook now emits invocation_byte and an argument/context-elaboration phase,
+with the inner tactic parsed at binding power2 so trailing <;> stays outside
+the wrapper. A too-restrictive max-precedence attempt was caught and retained.
+[Exact native sites and23prepared originals](../../../artifacts/hotspot-mechanisms-2026-10-25/native-sites/result-review.md)
+map48static simp_all sites to instrumented positions. Final7native/profile
+development pairs agree,including a trailing-combinator case. This does not
+establish original23runtime behavior or early failure. The newest events use
+stderr and need a declared diagnostic capture;they are not an unchanged
+NativeLean frontend payload.
