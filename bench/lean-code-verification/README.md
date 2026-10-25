@@ -44,3 +44,10 @@ only external prerequisites in native dependency order,using each module's own
 Lake olean facet and Mathlib manifest; it excludes the workload/project modules.
 These setup commands require the existing psutil environment and retain combined
 research RSS/termination records. They do not constitute a second full capture.
+
+The optional --library LeanMLIR mode retains the native package context, but
+this pinned workload has reverse imports into SSA and cannot be prepared by
+filtering one library alone. The [retained attempt](../../artifacts/lean-code-verification-2026-10-25/native-leanmlir-library-build-20261025/result-review.md)
+records 16 successful modules and the missing-SSA failure. Continue with the
+original root package and mixed source dependency order; do not remove imports
+or substitute package revisions. Source preparation is not workload timing.

@@ -1,4 +1,4 @@
-"""Build only source-native external prerequisites, never the workload root."""
+"""Build native prerequisites in their original package, never the workload root."""
 from pathlib import Path
 import argparse,datetime,gzip,json,os,signal,subprocess,threading,time
 import psutil
@@ -8,6 +8,7 @@ def main():
     ap.add_argument('--preparation',required=True,type=Path)
     ap.add_argument('--closure',required=True,type=Path)
     ap.add_argument('--out',required=True,type=Path)
+    ap.add_argument('--library',choices=['LeanMLIR'],help='Build only this original project library after external prerequisites')
     args=ap.parse_args()
     prep=json.loads(args.preparation.read_text());closure=json.loads(args.closure.read_text())
     sdk=Path(prep['SDK']);project=Path(prep['project']);mathlib=Path(prep['mathlib'])
@@ -27,7 +28,27 @@ def main():
         visiting.remove(module);seen.add(module);ordered.append(module)
     visit(closure['root'])
     # Do not build root/project workloads while another capture owns the slot.
-    targets=[m for m in ordered if not Path(nodes[m]['path']).is_relative_to(project)]
+    package=project/args.library if args.library else mathlib
+    links=[]
+    if args.library:
+        # Reuse only dependencies at exactly the original subproject manifest pins.
+        # Lake still owns all compiler settings and dependency facets.
+        manifest=json.loads((package/'lake-manifest.json').read_text())
+        packages=package/manifest.get('packagesDir','.lake/packages')
+        packages.mkdir(parents=True,exist_ok=True)
+        for entry in manifest['packages']:
+            if entry['type']!='git':raise RuntimeError('unsupported library dependency '+entry['name'])
+            source=mathlib if entry['name']=='mathlib'else mathlib/'.lake/packages'/entry['name']
+            revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()
+            if revision!=entry['rev']:raise RuntimeError('dependency pin mismatch: '+entry['name'])
+            destination=packages/entry['name']
+            if destination.exists()or destination.is_symlink():
+                if destination.resolve()!=source.resolve():raise RuntimeError('existing package path differs: '+str(destination))
+            else:destination.symlink_to(source,target_is_directory=True)
+            links.append(dict(name=entry['name'],revision=revision,source=str(source),link=str(destination)))
+        targets=[m for m in ordered if Path(nodes[m]['path']).is_relative_to(package)]
+    else:
+        targets=[m for m in ordered if not Path(nodes[m]['path']).is_relative_to(project)]
     assert closure['root']not in targets
     env=dict(os.environ,PATH=str(sdk/'bin')+os.pathsep+os.environ['PATH'])
     env.pop('LEAN_PATH',None)
@@ -62,9 +83,9 @@ def main():
                 stop.wait(1)
     thread=threading.Thread(target=watch,daemon=True);thread.start()
     initial=dict(UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),pid=os.getpid(),
-        birth=owner.create_time(),sdk=str(sdk),cwd=str(mathlib),eligible_cpus=[11],
-        targets=len(targets),aggregate_budget_bytes=48*1024**3,old_owner=old.pid if old else None,
-        scope='Dependency source compilation only; sequential native Lake module olean facets in Mathlib own pinned manifest. Excludes all58project modules/workload root. Original7808group keeps its point; shared CPU interference retained. No candidate capture or new per-process limit.')
+        birth=owner.create_time(),sdk=str(sdk),cwd=str(package),eligible_cpus=[11],
+        targets=len(targets),dependency_links=links,library=args.library,aggregate_budget_bytes=48*1024**3,old_owner=old.pid if old else None,
+        scope='Dependency source compilation only; sequential native Lake olean facets in the original package manifest. Excludes the candidate workload root. Project library mode checks prior dependency facets without building before each leaf. Original7808group keeps its point; shared CPU interference retained. No candidate capture or new per-process limit.')
     (args.out/'launch.json').write_text(json.dumps(initial,indent=2)+'\n')
     (args.out/'run-source.py').write_bytes(Path(__file__).read_bytes())
     code=0
@@ -74,7 +95,18 @@ def main():
             command=[str(sdk/'bin/lake'),'build','+'+module+':olean']
             log=args.out/(str(index).zfill(4)+'.log');started=time.monotonic()
             with log.open('wb')as stream:
-                process=subprocess.Popen(command,cwd=mathlib,env=env,stdout=stream,
+                if args.library:
+                    # Fail rather than launch a fan-out dependency rebuild when
+                    # the explicitly prepared topological prerequisites are stale.
+                    check=[str(sdk/'bin/lake'),'--no-build','build','+'+module+':deps']
+                    process=subprocess.Popen(check,cwd=package,env=env,stdout=stream,
+                        stderr=subprocess.STDOUT,start_new_session=True)
+                    active=(module,process);dependency_exit=process.wait();active=None
+                    with(args.out/'dependency-checks.jsonl').open('a')as receipt:
+                        receipt.write(json.dumps(dict(module=module,command=check,exit=dependency_exit))+'\n')
+                    if dependency_exit or errors:
+                        raise RuntimeError('library dependency check failed: '+module)
+                process=subprocess.Popen(command,cwd=package,env=env,stdout=stream,
                     stderr=subprocess.STDOUT,start_new_session=True)
                 active=(module,process);result=process.wait();active=None
             row=dict(module=module,index=index,command=command,exit=result,
