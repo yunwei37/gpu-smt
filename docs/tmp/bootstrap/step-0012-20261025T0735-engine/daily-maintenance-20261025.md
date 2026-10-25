@@ -192,3 +192,17 @@ CPU ticks、允许核和未知值。7808条原始输入及48GiB/CPU8–11/每wor
 动态资源点和42条独占重跑按同一个采集位置排入执行。判死局部规则
 在原71源覆盖0，不能继续用同类小样本重复证明价值；原23阶段和48叶子
 的真实状态才是下一份研究证据。不会为了制造新结果重启健康旧采集。
+
+## Completed first-success result and actual next work
+
+Two completed consumer cells now give1.413471885x while preserving exactly142
+solved problem IDs;4177siblings are cancelled,not rejected. This advances a
+real pass@kmeasurement but ordinary cancellation alone is no novelty and does
+not serve per-candidate RL reward training.65timeouts remain. Correct stale
+evaluation text that still called18interval controls unexecuted. Preserve
+original23/48runtime attribution as pending rather than declare diagnostic
+wrappers a failure shortcut. Substantial next progress requires those runtime
+phase/bound facts and exact4worker/Mathlib population evidence,not more
+zero-coverage closed-tail variants or source-spelling classifiers. Keep the
+sole first-short capture;after retirement collect it,then run the prepared
+dynamic48GiB native/prepared pair before actual lean-mlir measurement.

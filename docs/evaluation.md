@@ -148,8 +148,15 @@ The [completed all-candidate cell](../artifacts/candidate-scheduling-2026-10-25/
 returns3014valid/4669errors/82timeouts/43resource failures with the exact same
 accepted IDs as the historical native reference. minif2f-7231changes from
 timeout to native bad_alloc; all43resource clocks remain unavailable rather
-than zero. The paired group remains incomplete(first-original running,
-first-short queued); no speed ratio is reported. This is the frozen old point,
+than zero. The [complete first-original cell](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/first-original/result-review.md)
+takes15385.386818s versus21746.811714s:1.413471885x(29.252219%less elapsed).
+Exactly142solved tasks match;3631sources execute and4177pending siblings are
+cancelled against checked same-task winners. Executed labels/source bytes
+match the paired all cell.65timeouts/35bad_alloc remain;body zeros areunknown.
+Peak sampledRSS42,856,058,880bytes,max2REPLs,0watchdogkills/errors;cell retired.
+The full group remains incomplete(first-short running). This single
+shared-host old-point comparison is not isolated replication,new4worker
+throughput,RL per-candidate rewards or a scheduling novelty claim. This is the frozen old point,
 separate from the next uncapped dynamic-resource comparison.
 
 
@@ -236,8 +243,13 @@ then uses fresh native execution within the remaining deadline. Exact source
 ordinary RustCI. This is a resource-composition repair; fullMathlib/native
 population and matched-throughput measurements remain outstanding.
 
-The [opt-in interval-continuation source prototype](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/result-review.md)
-compiles against the retained4.9Mathlib API. It explores avoiding later leaf
-construction after a failing closing continuation; no original tactic override,
-source rewrite or candidate execution occurs. Eighteen prepared controls remain
-unexecuted. This is no reliability/accepted-set/performance/novelty result.
+The opt-in interval continuation has18executed native controls/nine matching
+pairs,while [pre-expansion domain observation](../artifacts/hotspot-mechanisms-2026-10-25/interval-bound-profile/result-review.md)
+has a separate nine-pair qualification and exact48source/116call preparation.
+Original48runtime/demand-driven failure fractions remain unmeasured. Native
+delegation/parse controls do not certify global failure,timeouts or novelty.
+The [simp progress observer](../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/progress-repair-result-review.md)
+retains actual native origins with seven matched control pairs;original23
+phase/lemma attribution is still pending. Prior lazy-name placeholders and
+sidecar-inflated source counts remain as explicitly invalid diagnostic attempts.
+The closed-tail rule stays frozen at0/71original coverage.

@@ -738,7 +738,18 @@ $1.50\times$. These are optimistic scheduling models, not measured speedups
 or physical upper bounds: changing order can change native costs, and actual
 setup, cancellation and retirement remain unpaid in this model. Source-size
 ordering also reduces solved-problem coverage at some intermediate candidate
-counts. Real paired execution is pending. First-success cancellation does not
+counts. Two complete native consumer cells now measure
+21,746.81 seconds for all candidates and 15,385.39 seconds for original-order
+first-success, a $1.41347\times$ ratio (29.25\% less elapsed time).
+The solved-problem IDs remain exactly the same 142: 3,631 candidates execute
+and 4,177 queued siblings are cancelled after a checked same-problem winner.
+Executed candidate labels do not change. Timeouts decline from 82 to 65 and
+allocation failures from 43 to 35 because fewer siblings execute, not because
+the tactics or memory limit improve. Both cells retain the old two-worker,
+24~GiB per-process address-space point and 48~GiB sampled aggregate budget;
+this is one sequential shared-host comparison, not the pending four-worker
+dynamic-resource engine measurement. The third, source-size ordering cell
+is still running. First-success cancellation does not
 provide every candidate reward required by reinforcement-learning training,
 and it does not establish a new contribution for ordinary scheduling.
 

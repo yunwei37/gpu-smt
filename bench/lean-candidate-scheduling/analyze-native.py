@@ -1,10 +1,12 @@
 """Audit actual scheduling consumer results, clocks and task acceptance."""
 from pathlib import Path
 import argparse,collections,gzip,json
-def analyze(root):
+def analyze(root, modes=None):
+ modes=modes or ['all','first-original','first-short']
+ if not modes or modes[0]!='all'or len(set(modes))!=len(modes):raise ValueError('unique completed cells must begin with all baseline')
  selected=json.loads((root/'selected.json').read_text())['ids'];wanted=set(selected)
  cells={};baseline=None
- for mode in ['all','first-original','first-short']:
+ for mode in modes:
   out=root/mode;t=json.loads((out/'terminal.json').read_text())
   with gzip.open(out/'consumer-results.jsonl.gz','rt')as f:rows=[json.loads(l)for l in f]
   by={x['proof_id']:x for x in rows}
@@ -29,11 +31,16 @@ def analyze(root):
    source_status_changes_on_executed=changes,queued_cancellations=len(cancelled),
    whole_native_lifecycle_seconds=t['whole_lifecycle_seconds'],
    consumer_complete_lifecycle_seconds=t['consumer_complete_lifecycle_seconds'],memory=t['memory_watchdog'])
- assert json.loads((root/'client-exit.json').read_text())['exit']==0
- return dict(selection_count=len(selected),task_count=len({int(x.split('-')[1])//32 for x in selected}),cells=cells,
+ complete_group=modes==['all','first-original','first-short']
+ if complete_group:assert json.loads((root/'client-exit.json').read_text())['exit']==0
+ reference=cells['all']['consumer_complete_lifecycle_seconds']
+ for mode,cell in cells.items():
+  cell['consumer_speedup_over_all']=reference/cell['consumer_complete_lifecycle_seconds']
+  cell['consumer_time_reduction_percent']=100*(1-cell['consumer_complete_lifecycle_seconds']/reference)
+ return dict(complete_group=complete_group,included_cells=modes,selection_count=len(selected),task_count=len({int(x.split('-')[1])//32 for x in selected}),cells=cells,
   scope='Measured complete native and consumer lifecycles; task acceptance differs from per-candidate labels. All cancellations verified against an actually checked same-task winner. Self-review.')
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--run',type=Path,required=True);a=p.parse_args()
- result=analyze(a.run);(a.run/'paired-analysis.json').write_text(json.dumps(result,indent=2)+'\n')
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--run',type=Path,required=True);p.add_argument('--cells',nargs='+',choices=['all','first-original','first-short']);a=p.parse_args()
+ result=analyze(a.run,a.cells);(a.run/('paired-analysis.json'if result['complete_group']else'completed-cell-analysis.json')).write_text(json.dumps(result,indent=2)+'\n')
  print(json.dumps(result,indent=2))
 if __name__=='__main__':main()
