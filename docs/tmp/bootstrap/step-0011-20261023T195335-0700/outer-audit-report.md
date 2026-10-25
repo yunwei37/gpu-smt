@@ -603,3 +603,26 @@ module closure is prepared for native source build, not another cache grid.
 Verina is already ready and its original189file profiler implementation
 handles pending-task cancellation and process retirement before guard stop.
 These are actual prerequisite fixes; no new verification result is claimed.
+
+## First source-only learned ordering result
+
+[Actual five-fold whole-task-held-out fit](../../../../artifacts/candidate-scheduling-2026-10-25/crossfit/result-review.md)
+does not beat original/short-code ordering:92first1and105first2tasks versus
+92/112original, modeled15051.031831s versus14803.176432s. All labels/data/
+coefficients stay; no fresh native speed or novel ranker is claimed.
+Runtime arithmetic agrees with every held-out score and reads no outcome
+label, but this weak fit is not another expensive wholepopulation cell.
+Scheduling continues with the three existing planned conditions and a
+replaceable predictor. Source sorting, queued cancellations, result mapping
+and compression enter the complete consumer lifecycle. Rootself-review only.
+
+## Local2026-10-25 daily upkeep and reflection
+
+[Daily record](daily-maintenance-20261025.md) preserves all results and
+foreign dirty work. The canonical evaluation's389line mixed historical
+frontier is archived losslessly with a pinned readable copy, then condensed
+to current three routes/evidence/resources. README links both new owned
+benchmark entrypoints. InitialNarrative is intact; no closure, deadline,
+oracle revival, new scheduler or permission appears. The reflection identifies
+actual native pairing and measured timeout/code-verification costs as the
+next evidence, not setup, lexical tokens or the unsuccessful predictor.

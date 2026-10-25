@@ -19,3 +19,12 @@ responses/cancellations and missing per-candidate rewards, all resource failures
 and cleanup. Runtime ranking uses only source text/task identity.
 No new guarantee of speed or novelty follows from the model. Root alone runs
 and self-reviews; results update the paper without a closure condition.
+
+The task-held-out source-only learned ranker is recorded in
+crossfit/result-review.md. It does not improve the existing-data model;
+retain its negative result without adding a redundant full cell.
+The planned actual group still compares all-candidate native, original
+first-success and short-code first-success. This is implementation selection,
+not a performance gate, deadline or route closure. Runtime consumer lifecycle
+now includes model/source sorting and postprocessing/closed-log compression;
+offline training and shared input materialization are reported separately.

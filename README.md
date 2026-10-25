@@ -98,6 +98,8 @@ All populations retain accepted, rejected, incomplete and resource-failure
 outcomes. Current run records identify actual SDKs, native libraries and
 numerical binaries; historical Workspace paths are not a universal installer.
 
+- [First-success candidate scheduling](bench/lean-candidate-scheduling/README.md).
+- [Public Lean code-verification profiling](bench/lean-code-verification/README.md).
 - [Current counterexample source and execution instructions](bench/lean-counterexample/README.md).
 - [Frozen arithmetic baseline and historical commands](bench/lean-native/linarith-oracle/README.md).
 - [Portable arithmetic source build and 64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).

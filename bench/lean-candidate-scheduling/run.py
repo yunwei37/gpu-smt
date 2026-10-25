@@ -15,6 +15,8 @@ def install_scheduler(mode,out):
  from kimina_client.models import CheckResponse,ReplResponse
  original=kimina_client.AsyncKiminaClient
  strip=runpy.run_path(str(BASE/'analyze.py'))['strip_comments']
+ predictor=runpy.run_path(str(BASE/'features.py'))if mode=='first-predicted'else None
+ models=json.loads((ART/'crossfit/models.json').read_text())['models']if predictor else None
  class Client(original):
   async def check(self,snips,timeout=60,debug=False,reuse=True,infotree=None,batch_size=8,max_workers=5,show_progress=True):
    if not isinstance(snips,list)or not snips or not all(getattr(x,'id','').startswith('minif2f-')for x in snips):
@@ -23,6 +25,9 @@ def install_scheduler(mode,out):
    for snip in snips:groups[int(snip.id.split('-')[1])//32].append(snip)
    if mode=='first-short':
     for group in groups.values():group.sort(key=lambda x:(len(strip(x.code)),int(x.id.split('-')[1])))
+   if mode=='first-predicted':
+    for task,group in groups.items():
+     group.sort(key=lambda x:(-predictor['score'](x.code,models[task%5]),int(x.id.split('-')[1])))
    results={};semaphore=asyncio.Semaphore(max_workers);ledger=out/'scheduler-events.jsonl'
    async def task_group(task,items):
     winner=None
@@ -77,6 +82,7 @@ async def main(args):
  import kimina_client
  for mode in modes:
   out=args.out/mode
+  consumer_start=time.monotonic_ns()
   if mode!='all':original_client=install_scheduler(mode,out)
   try:
    value=await capture['cell'](settings,'stock',out,items,build)
@@ -106,7 +112,10 @@ async def main(args):
     data=path.read_bytes();compressed=gzip.compress(data,mtime=0)
     assert gzip.decompress(compressed)==data
     path.with_name(path.name+'.gz').write_bytes(compressed);path.unlink()
-  print(json.dumps(dict(event='cell_complete',mode=mode,whole=value['whole_lifecycle_seconds'])),flush=True)
+  value['consumer_complete_lifecycle_seconds']=(time.monotonic_ns()-consumer_start)/1e9
+  value['consumer_cost_scope']='Includes model loading, source ranking, native transport lifecycle, queued cancellation, result mapping and raw compression. Offline training/shared input materialization reported separately.'
+  (out/'terminal.json').write_text(json.dumps(value,indent=2)+'\n')
+  print(json.dumps(dict(event='cell_complete',mode=mode,whole=value['whole_lifecycle_seconds'],complete_consumer=value['consumer_complete_lifecycle_seconds'])),flush=True)
  (args.out/'summary.json').write_text(json.dumps(summaries,indent=2)+'\n')
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__)

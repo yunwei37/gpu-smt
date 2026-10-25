@@ -92,3 +92,12 @@ analyses. No source input/result or numerical value is normalized away.
 The real8source qualification uses0–3and64–67: one solvable task and one
 baseline-unsolved task, rather than mistakenly using32–35from another
 solvable task. This correction precedes any runtime execution.
+
+The task-held-out source-only learned ranker is recorded in
+crossfit/result-review.md. It does not improve the existing-data model;
+retain its negative result without adding a redundant full cell.
+The planned actual group still compares all-candidate native, original
+first-success and short-code first-success. This is implementation selection,
+not a performance gate, deadline or route closure. Runtime consumer lifecycle
+now includes model/source sorting and postprocessing/closed-log compression;
+offline training and shared input materialization are reported separately.
