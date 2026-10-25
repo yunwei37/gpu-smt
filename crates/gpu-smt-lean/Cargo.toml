@@ -1,0 +1,20 @@
+[package]
+description = "Native Lean REPL JSON process backend"
+readme = "../../README.md"
+name = "gpu-smt-lean"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+gpu-smt-core.workspace = true
+async-trait.workspace = true
+tokio.workspace = true
+serde_json.workspace = true
+libc.workspace = true
+
+[dev-dependencies]
+tokio-util.workspace = true
+gpu-smt-engine.workspace = true

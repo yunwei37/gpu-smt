@@ -1,6 +1,7 @@
 # gpu-smt
 
-A research prototype for accelerating native Lean and SMT verification.
+A Rust verification-engine prototype with a native Lean REPL backend and
+verifier-neutral extension traits. Lean and SMT remain the research scope.
 Lean has priority; RTX 5090 is the only GPU target.
 
 The broader hypothesis is that related verification jobs can share expensive
@@ -8,6 +9,51 @@ prepared state while preserving native behavior and independent candidate
 execution. [The initial narrative and four research questions](docs/idea-story.md)
 remain intact. The OSDI-quality systems contribution and all four final RQ
 answers are still open.
+
+## Engine quick start
+
+The Rust workspace separates public contracts, resource/workload scheduling,
+native backends and HTTP adapters. Existing raw research data stays outside
+the core. This is an experimental0.1 engine, not a production-ready service
+or a demonstrated speedup.
+
+    cargo build -p gpu-smt-server
+    cargo run -p gpu-smt-server --bin gpu-smt -- --help
+    cargo test --workspace --all-targets
+
+Supply an existing pinned Lean REPL and its project environment. From that
+Lean project, use Lake's discovered import paths:
+
+    lake env /absolute/path/to/gpu-smt/target/debug/gpu-smt check \
+      --repl /absolute/path/to/repl --project /absolute/path/to/lean-project \
+      --environment your-immutable-toolchain-project-pin \
+      --cpus 8,9,10,11 --worker-cores 1 --memory-gib 48 \
+      < /absolute/path/to/gpu-smt/examples/check.jsonl
+
+Use serve for local Kimina core/check, legacy/verify and typed/v1/verify.
+Unsupported debug/infotree extensions return explicit errors. Native env
+fields are output provenance, not persistent remote session handles.
+
+| Crate | Responsibility |
+|---|---|
+|gpu-smt-core|Requests, verdicts, attempt provenance and extension traits|
+|gpu-smt-engine|Joint admission, global queue, watchdog, exclusive retries, exact deduplication, consumer modes|
+|gpu-smt-lean|Original native REPL JSON transport and process retirement|
+|gpu-smt-server|Embeddable HTTP adapter and JSONL/HTTP executable|
+
+RL mode returns every candidate outcome. First-success mode cancels siblings
+only after checked same-task acceptance. Exact completed/in-flight reuse
+retains each caller's identity; cancellation and resource failures are not
+native rejections or cacheable proof results.
+
+[Architecture](docs/architecture.md) · [API and compatibility scope](docs/api.md) ·
+[Examples](examples/README.md) · [Contributing and checks](CONTRIBUTING.md) ·
+[CI](.github/workflows/engine.yml) · [Apache-2.0 engine license](LICENSE).
+
+Safe COW/one-time Mathlib preparation, native failure detectors, source-aware
+cost models and multi-node execution remain implementation/research work.
+Resource mechanisms are prior techniques; novelty must come from workload
+methods and actual end-to-end results.
 
 ## Current work: failure hotspots in Lean
 
@@ -30,7 +76,7 @@ timeout thread CPU to interval_cases and 28.21% to simp_all. All selected
 statuses are unchanged. These diagnostic fractions are not total elapsed-time
 fractions or a proven early-rejection mechanism.
 
-Three directions continue: reliable early failure/timeout determination,
+Four directions continue: the layered Rust engine, reliable early failure/timeout determination,
 same-task ranking/cancellation for pass@k or best-of-n, and public Lean
 code-verification workloads. The sole active full collection now compares
 native all-candidate execution against two first-success scheduling policies
@@ -47,11 +93,19 @@ reward collection. Existing comparisons and all raw data remain.
 
 ## Collection resources
 
-New runs use the user-requested **48 GiB total owned-process RSS budget**,
-at most **two live REPLs**, each with a **24 GiB address-space limit**, and
-CPU eligibility on CPUs 8–11. A parent watchdog samples the owned tree every second,
-kills the largest owned REPL on excess and records its candidate as a resource
-failure. This is a sampled response, not a kernel hard RSS quota.
+The **next resource point** keeps **48 GiB total actual RSS**, removes fixed
+per-process address-space caps, and jointly admits candidates by measured
+memory and CPU demand on CPUs8–11. A15-second observation of existing REPLs
+finds one active thread/~one core per worker, motivating up to four workers
+at this point, subject to actual memory admission. The Rust watchdog samples
+owned trees each second; concurrent preemptions are requeued for an exclusive
+retry, whose resource failures remain separately reported. This is sampled
+response, not a kernel hard RSS quota.
+
+The healthy original7808capture retains its frozen two-worker/24GiB-AS
+settings and remains the sole full group. Its results are not mixed with the
+new resource point. The historical42bad_alloc candidates await separate
+larger isolated reruns after that group retires.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.
 
@@ -125,7 +179,8 @@ Synthetic controls are not the real-workload evidence.
 
 ## Repository and paper
 
-- `bench/` and `tools/`: experiments and adapters.
+- `crates/`: reusable Rust engine; [layered design](docs/architecture.md).
+- `bench/` and `tools/`: experiments and historical adapters.
 - `artifacts/` and `results/`: source snapshots, raw data and self-reviews.
 - [Research narrative and fixed RQs](docs/idea-story.md),
   [design](docs/design.md), [related work](docs/background-related-work.md).

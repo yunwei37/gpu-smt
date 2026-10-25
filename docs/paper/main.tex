@@ -140,7 +140,31 @@ Supported device work preserves verifier semantics. Before a device operation is
 
 Unsupported work returns to CPU execution, whose cost remains in the complete verification measurement. Complete verification includes device initialization, representation construction, upload, download and queueing. We report operation speedups measured with data already on the device separately from complete checking.
 
-\section{Implementation}\label{sec:implementation}
+\section{Implementation}
+
+\paragraph{Reusable engine organization.}
+The implementation now includes a Rust workspace separating verifier-neutral
+contracts, resource/workload scheduling, native Lean transport and service
+adapters. Backend, scheduling, resource sampling, admission and exact-result
+storage use replaceable interfaces. Logical rejection, incomplete proof,
+timeout, preemption and consumer cancellation remain distinct.
+The initial Rust backend executes isolated fresh native processes; it does
+not yet provide a safe one-load Mathlib/COW implementation.
+Prepared-state and failure-detector interfaces specify pending extensions,
+not completed mechanisms or new contributions.
+
+The next measurement point removes fixed per-process address-space caps
+while retaining a 48\,GiB aggregate actual-RSS budget. Dynamic admission uses
+observed memory and assigned CPU capacity. A one-second watchdog preempts
+owned work and retries it exclusively, recording all queueing, attempts and
+retirement. This sampled mechanism can overshoot between observations; it is
+not a kernel memory quota. The historical measurements below retain their
+original resource settings. New-resource throughput, 42 isolated larger-memory
+reruns, safe COW and complete native differential parity remain unmeasured.
+Ordinary warm-state/resource mechanisms are prior techniques; prospective
+novelty lies in workload-level methods and must be established empirically.
+
+\label{sec:implementation}
 The artifact implements the native adapters and branch constructors used to test the design. It contains separate experimental
 process-branch and shared-runtime state-branch constructors. These components
 do not yet establish the complete bounded service proposed in

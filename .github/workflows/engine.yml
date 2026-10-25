@@ -1,0 +1,48 @@
+name: engine
+
+on:
+  push:
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "examples/**", ".github/workflows/engine.yml"]
+  pull_request:
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "examples/**", ".github/workflows/engine.yml"]
+  workflow_dispatch:
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.98.1
+          components: rustfmt, clippy
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --all-targets --locked
+      - run: cargo doc --workspace --no-deps --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+
+  native-repl-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.98.1
+      - name: Prepare pinned native protocol dependency
+        shell: bash
+        run: |
+          curl -fL https://github.com/leanprover/lean4/releases/download/v4.18.0/lean-4.18.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          export PATH="$RUNNER_TEMP/lean-4.18.0-linux/bin:$PATH"
+          echo "$RUNNER_TEMP/lean-4.18.0-linux/bin" >> "$GITHUB_PATH"
+          curl -fL https://codeload.github.com/leanprover-community/repl/tar.gz/2f0a3cb876b045cc0fe550ca3a625bc479816739 -o "$RUNNER_TEMP/repl.tar.gz"
+          mkdir "$RUNNER_TEMP/native-repl"
+          tar -xzf "$RUNNER_TEMP/repl.tar.gz" --strip-components=1 -C "$RUNNER_TEMP/native-repl"
+          cd "$RUNNER_TEMP/native-repl"
+          lake build
+          echo "LEAN_REPL=$RUNNER_TEMP/native-repl/.lake/build/bin/repl" >> "$GITHUB_ENV"
+          echo "LEAN_PROJECT=$RUNNER_TEMP/native-repl" >> "$GITHUB_ENV"
+      - name: Differential check against raw native JSON
+        run: cargo test -p gpu-smt-lean --test native_differential --locked -- --ignored

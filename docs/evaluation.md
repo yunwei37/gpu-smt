@@ -5,7 +5,18 @@ All reviews are self-review, not independent audit. The original
 [Initial Narrative/fourRQs](idea-story.md) and ambitious systems goal remain
 open; tests, setup and a compiled paper do not establish OSDI contribution.
 
-## Current decision: frozen oracle and three continuing directions
+<a id="current-decision-frozen-oracle-and-three-continuing-directions"></a>
+
+## Current decision: frozen oracle and four continuing directions
+
+The user prioritizes the [layered Rust engine](architecture.md): reusable crates,
+public contracts, tests/CI/examples/docs first, then all three workload directions
+on that foundation. Resource mechanisms are prior techniques, not novelty.
+The next point has48GiB actual aggregate RSS, no fixed per-process AS cap,
+measured CPU-aligned dynamic admission and1s watchdog/exclusive requeue.
+The healthy old7808group remains frozen; its42resource failures will receive
+separate larger-memory isolated reruns after retirement. No result is yet
+claimed for the new point. [API/implementation scope](api.md).
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The real compiler bitvector workload remains in progress.
 

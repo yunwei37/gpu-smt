@@ -1,0 +1,25 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+exclude = ["bench/lean-native/linarith-oracle/reproduction/native"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98"
+license = "Apache-2.0"
+repository = "https://github.com/yunwei37/gpu-smt"
+
+[workspace.dependencies]
+async-trait = "0.1"
+axum = "0.8"
+libc = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "io-std", "sync", "time", "net", "signal"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+gpu-smt-core = { path = "crates/gpu-smt-core", version = "0.1.0" }
+gpu-smt-engine = { path = "crates/gpu-smt-engine", version = "0.1.0" }
+gpu-smt-lean = { path = "crates/gpu-smt-lean", version = "0.1.0" }
