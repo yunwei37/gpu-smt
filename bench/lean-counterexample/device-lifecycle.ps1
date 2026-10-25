@@ -117,7 +117,9 @@ while True:
 "@
   do {
    $gpuPoll64=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($gpuPollCode))
+   try {
    $gpuPollRaw=./scripts/kubectl-home.ps1 -n coder exec $SourcePod -c dev '--' python3 -c 'import base64,sys;source=base64.b64decode(sys.argv[1]);sys.argv=sys.argv[1:];exec(source)' $gpuPoll64 $Out $gpuLaunch.pid $gpuLaunch.start_ticks
+   } catch {Start-Sleep -Seconds 1;continue}
    if($LASTEXITCODE -ne 0){Start-Sleep -Seconds 1;continue}
    $gpuPoll=$gpuPollRaw|ConvertFrom-Json
    if($gpuPoll.state -eq 'lost'){throw 'Actual client disappeared without exit receipt; preserve raw and owned provider for recovery'}

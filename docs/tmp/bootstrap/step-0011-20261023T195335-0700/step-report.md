@@ -693,3 +693,15 @@ Preparation4272wrapped/13sourcefallbacks is versioned, not mixed with old
 brokenwrapper coverage. No otherfullgroup, partialsplicing, performance/
 accepted-set claim or projectclosure. Collect actualcompletion and provider
 cleanup before analyzing native-rankedfailed/timeout/tail outcomes.
+
+## Complete corrected GPU screening pair and next user-directed hotspot work
+EXPERIMENT_GATE closes all7808native/GPUstatuses/acceptedsets with exactparity,
+21693.761299439/23615.030439515s (GPU8.856321%slower),29exactrefutedsources/
+no timeoutreduction. [Fullresult and all42resourcecauses](../../../../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md)
+retains42sameIDbad_alloc/24GiBAS/42exit134each/0aggregatekills, fullraw/cleanup.
+Coldcontrollerclockmissing afterobservationloss isexplicit, notfabricated.
+WRITE_GATE fills thissupportingresult locally withoutRQ/story/OSDIclaims.
+REVIEW_GATE rootselfreview verifies rawsets, denominators, memory and limitsof
+attribution; noindependentaudit. UsernowprohibitsfurtherGPUpairedexpansion.
+Next actualprofilingselects native83timeouts andfailed-onlyslow480sources;
+old78mapping remains. Do notsubstituteall-source781tail orbrokenobservercounts.

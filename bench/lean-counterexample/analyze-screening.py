@@ -8,7 +8,7 @@ def rows(path):
    if not line.endswith('\n'):raise RuntimeError('Only closed, newline-complete results are admissible')
    if line.strip():yield json.loads(line)
 def elapsed(a,b):
- return a/b if b>0 else None
+ return a/b if a is not None and b is not None and b>0 else None
 def read_cell(directory):
  terminal=json.loads((directory/'terminal.json').read_text())
  if terminal['state']!='complete':raise RuntimeError('Preserve partial cell; not a completed pair')
@@ -83,7 +83,7 @@ def main():
   preparation=json.loads(args.preparation.read_text())if args.preparation else {}
   prep=preparation.get('preparation_seconds')
   reused_off=bool(preparation.get('reused_off_directory'))
-  on_cold=life['completeColdLifecycleSeconds']if reused_off else life['completeColdLifecycleSeconds']-off['whole_lifecycle_seconds']
+  on_cold=(life['completeColdLifecycleSeconds']if reused_off else life['completeColdLifecycleSeconds']-off['whole_lifecycle_seconds'])if life.get('completeColdLifecycleSeconds')is not None else None
   output['provider_lifecycle']=life
   output['cold_time_accounting']=dict(
    combined_pair_controller_seconds=life['completeColdLifecycleSeconds'],

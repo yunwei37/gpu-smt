@@ -873,9 +873,31 @@ requests and timeouts separately because finding cheap counterexamples does
 not establish savings on the expensive failures.
 The paired comparison also checks accepted proof outcomes and native
 diagnostics separately, as required by Section~\ref{sec:behavior}.
-\missing{Complete original miniF2F false-goal coverage and matched native
-versus GPU-screening results, including accepted-set changes, failure and
-timeout costs, fixed baseline-ranked tails and complete cold lifecycle.}
+On all 7,808 miniF2F candidates, the native and device-screened paths
+return the same accepted set of 3,014 proofs, 4,669 Lean errors, 83 timeouts
+and 42 resource failures. Native execution takes 21,693.76\,s and device
+screening 23,615.03\,s, an 8.86\% increase before 23.99\,s of additional
+source preparation and native reparsing. This is one fixed-order observation
+on a shared host, not an estimate of run-order variance.
+All resource failures report allocation failure under the same 24\,GiB
+per-process address-space limit. Peak sampled aggregate RSS is 46.87/47.38\,GiB,
+with at most two verification processes and no aggregate-watchdog kills.
+
+Exact checking refutes 34 intermediate goals in 29 candidates, all of which
+still return Lean errors. No timeout is removed. These candidates account
+for only 34.07\,s of accumulated native HTTP envelopes; concurrent envelopes
+are not removable elapsed time. Actual device evaluation handles 6,187
+entries in 6,186 batches, with only one cross-candidate batch. Thus this
+screening implementation does not improve complete verification on the
+tested population, and we retain it as a supporting component.
+
+The complete cold-controller stopwatch was lost during an observation-channel
+outage. The detached verification client completed and all owned native
+processes and the device provider retired. Recorded provider lifetime also
+includes delayed controller recovery; it is not substituted for the missing
+cold performance clock. The paired cell clocks above remain independently
+recorded, and the missing cold clock cannot establish an additional benefit.
+
 
 Answering RQ4 at its stated scope requires the remaining workload and
 strongest-checker comparisons. RQ4 remains unanswered until measured

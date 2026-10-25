@@ -1,0 +1,171 @@
+{
+  "scope": "One closed own off/on pair; fixed order, root self-review required. Acceptance means the recorded SDK status valid.",
+  "source_count": 7808,
+  "off_mode": "off",
+  "on_mode": "gpu",
+  "acceptance_changed_sources": [],
+  "status_changes": [],
+  "groups": {
+    "all_sources": {
+      "sources": 7808,
+      "off_counts": {
+        "valid": 3014,
+        "lean_error": 4669,
+        "timeout_error": 83,
+        "resource_failure": 42
+      },
+      "on_counts": {
+        "valid": 3014,
+        "lean_error": 4669,
+        "timeout_error": 83,
+        "resource_failure": 42
+      },
+      "off_HTTP_sum_seconds": 43121.2401169,
+      "on_HTTP_sum_seconds": 46939.775079419,
+      "off_reported_body_sum_seconds": 38212.996108,
+      "on_reported_body_sum_seconds": 38184.35724
+    },
+    "baseline_failed": {
+      "sources": 4794,
+      "off_counts": {
+        "lean_error": 4669,
+        "timeout_error": 83,
+        "resource_failure": 42
+      },
+      "on_counts": {
+        "lean_error": 4669,
+        "timeout_error": 83,
+        "resource_failure": 42
+      },
+      "off_HTTP_sum_seconds": 36981.890285075,
+      "on_HTTP_sum_seconds": 39748.728828581,
+      "off_reported_body_sum_seconds": 32327.877325,
+      "on_reported_body_sum_seconds": 32322.929813
+    },
+    "baseline_timeout": {
+      "sources": 83,
+      "off_counts": {
+        "timeout_error": 83
+      },
+      "on_counts": {
+        "timeout_error": 83
+      },
+      "off_HTTP_sum_seconds": 24966.405941674,
+      "on_HTTP_sum_seconds": 24998.866242602,
+      "off_reported_body_sum_seconds": 24900.0,
+      "on_reported_body_sum_seconds": 24900.0
+    },
+    "baseline_slowest_1_percent": {
+      "sources": 79,
+      "off_counts": {
+        "timeout_error": 79
+      },
+      "on_counts": {
+        "timeout_error": 79
+      },
+      "off_HTTP_sum_seconds": 23766.365765649,
+      "on_HTTP_sum_seconds": 23798.662003962,
+      "off_reported_body_sum_seconds": 23700.0,
+      "on_reported_body_sum_seconds": 23700.0
+    },
+    "baseline_slowest_10_percent": {
+      "sources": 781,
+      "off_counts": {
+        "timeout_error": 83,
+        "lean_error": 429,
+        "valid": 227,
+        "resource_failure": 42
+      },
+      "on_counts": {
+        "timeout_error": 83,
+        "lean_error": 429,
+        "valid": 227,
+        "resource_failure": 42
+      },
+      "off_HTTP_sum_seconds": 39833.113954972,
+      "on_HTTP_sum_seconds": 40022.919647713,
+      "off_reported_body_sum_seconds": 35399.198105,
+      "on_reported_body_sum_seconds": 35345.57416
+    }
+  },
+  "screening": {
+    "entries": 15396,
+    "cpu_closed_entries": 2354,
+    "supported_entries": 8541,
+    "exact_refuted_entries": 34,
+    "exact_refuted_sources": [
+      "minif2f-2323",
+      "minif2f-2982",
+      "minif2f-2988",
+      "minif2f-2993",
+      "minif2f-379",
+      "minif2f-4171",
+      "minif2f-4514",
+      "minif2f-4526",
+      "minif2f-4530",
+      "minif2f-4532",
+      "minif2f-4777",
+      "minif2f-4896",
+      "minif2f-4937",
+      "minif2f-5079",
+      "minif2f-5080",
+      "minif2f-5178",
+      "minif2f-5542",
+      "minif2f-7211",
+      "minif2f-7566",
+      "minif2f-7574",
+      "minif2f-7577",
+      "minif2f-7777",
+      "minif2f-7806",
+      "minif2f-802",
+      "minif2f-812",
+      "minif2f-813",
+      "minif2f-814",
+      "minif2f-815",
+      "minif2f-938"
+    ],
+    "fallback_errors": {},
+    "returned_point_recheck_failures": 0,
+    "provider_backends": {
+      "device": 6187
+    }
+  },
+  "off_warm_verify_seconds": 21689.518813733,
+  "on_warm_verify_seconds": 23607.743226728,
+  "warm_whole_group_ratio": 0.9187459642129944,
+  "off_native_lifecycle_seconds": 21693.761299439,
+  "on_native_lifecycle_seconds": 23615.030439515,
+  "native_lifecycle_ratio": 0.9186421061367279,
+  "resource_point": {
+    "source_concurrency": 2,
+    "affinity": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_memory_budget_bytes": 51539607552,
+    "per_native_repl_address_limit_bytes": 25769803776,
+    "maximum_live_native_repls": 2
+  },
+  "limitations": [
+    "Qualification is not full benchmark evidence. No inference of acceleration if the on mode is observe.",
+    "HTTP and reported-body sums overlap across candidates: they are cumulative outcome-conditioned costs, not whole elapsed savings.",
+    "Tail cohorts are fixed by baseline HTTP time, then compared on identical IDs; timeouts and resource failures remain.",
+    "One off-first pair does not quantify run-order/host-load variance; existing captures are not rescaled.",
+    "Native cell lifecycle excludes provider creation/retirement and own input parsing; cold decomposition requires the controller receipt.",
+    "Opaque environment handles/error messages may differ; the reported accepted-set/status check is not full response equivalence."
+  ],
+  "cold_time_accounting": {
+    "combined_pair_controller_seconds": null,
+    "provider_creation_to_API_seconds": null,
+    "provider_retirement_seconds": null,
+    "shared_input_preparation_seconds": 23.98976855794899,
+    "native_with_own_preparation_seconds": null,
+    "on_controller_residual_seconds": null,
+    "reused_off_directory": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off",
+    "native_original_lifecycle_seconds": 21693.761299439,
+    "native_over_on_cold_ratio": null,
+    "note": "GPU-only repair lifecycle includes all new provider/input/validation/retirement costs; native baseline is the unchanged closed prior cell. The failed first GPU attempt is retained separately, never spliced."
+  }
+}

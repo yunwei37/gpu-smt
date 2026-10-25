@@ -235,13 +235,10 @@ coverage or a strictAmdahlceiling;no GPU batch/result is inferred.
 
 ## Next decisive work and scientific limits
 
-Close the complete current-resource matched1,000 result below before any
-new variant. The concrete single-flight CUDA admission dependency should be
-qualified separately without changing CPU contenders or resource limits.
-Removing it must demonstrate real concurrent device work and a useful
-discriminator before another full measurement; it is not an assumed speedup.
-Own-clock overlap diagnostics still do not establish a strict exclusion of1.5×.
-No broad GPU/project closure or hourly-task deletion is justified.
+The matched1,000 result below is complete. Current work follows the latest
+user-directed failure-hotspot diagnostic at the end of this file. Do not
+expand old GPU paired variants or external-system reproductions. Existing
+own-clock overlap diagnostics are not strictGPU impossibility bounds.
 
 The original shared-preparation systems hypothesis and all four RQs remain.
 Arithmetic improvement, compiled CPU optimization, existing parallelism and
@@ -301,40 +298,34 @@ retirement, while192undecodedconnections remainunknown. No strictceiling follows
 [Complete matrix, allraw/source CSV, costs and self-review](../artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
 
 
-## Current user-directed arithmetic counterexample measurement
+## Completed arithmetic counterexample measurement and next hotspot diagnostic
 
-Further external-method reproduction/integration is stopped by userdecision.
-[Ownmethod plan](../artifacts/arithmetic-counterexample-2026-10-23/plan.md)
-tests GPUproposed/CPUexactchecked refutation of intermediate arithmeticgoals,
-nativefallback and untouched-original outcome parity. Failure is not falsity;
-a refuted branch is not a false originaltheorem. All4RQ remainopen.
+[Final complete native/GPU pair](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md):
+all7,808statuses and3,014accepted IDs exactly equal;4,669Leanerrors/83timeouts/
+42resourcefailures both. Whole native21693.761299439s/GPU23615.030439515s,
+GPU8.856321%slower, ownpreparation23.989769sadditional. Fixedorder/sharedhost;
+no causalvariance claim. Completecoldcontrollerclock unavailable after SSH/API
+observationoutage; independentremoteclientexit0/providerexit0/exactJobdeleted.
+Known32001sJobwall includes8345.949707sdelayedobserverretirement, not kernelcost.
+Do not fabricatecoldclock or reuse anothermeasurement.
 
-The untouched native7808baseline iscomplete:3014SDKvalid/4669Leanerrors/
-83timeouts/42resourcefailures, whole21693.761299439s, same2actualREPLs/
-24GiBeach/48GiBaggregate/CPUs8–11. Keep allresourcefailures andtimeoutcosts.
-[Originalfullattempt/native and failedGPUraw](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/failure-result-review.md)
-retains2214GPUresponses beforethe demonstrated control-transport cleanup
-failure. Detached single-client observation repair isqualified;
-[actual24/replay/cleanup](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu24-detached-repair2-20261024T1640/result-review.md).
+All42sameIDs report std::bad_alloc under24GiBAS; eachside42exit134records;
+aggregatewatchdogkills/errors0. Per-source APIerrors and allRSS/exits retained.
+Failedbodytime0meansmissingtime, notzerocost. SampledRSSpeaks46.87/47.38GiB,
+max2REPLs,48GiBtotal/24each/CPU8–11, allownedchildrenretired.
 
-A later actualcomparison finds109nativeaccepted sources rejected byold
-source-wrapperparsererrors. Oldcensus/timeoutpartition numbers therefore
-describe thatinstrumentedversion, not finaloriginalsourcecoverage.
-Currentpaper withdraws provisionalpopulationconclusions; raw andhistory
-remain. [Original109losses, layoutrepair and realqualification](../artifacts/arithmetic-counterexample-2026-10-23/layout-regression-20261024T1644/result-review.md)
-preserves them, the intentionallycancelled invalidrerun and allcleanupreceipts.
+34exactrefutations/29sources, allLeanerrors/no timeout. NativeHTTP/body sums
+34.070886/28.410035s; notsavedwall orstrictAmdahlbound.6187actualdeviceentries/
+6186batches/onecross-sourcebatch/1528sources,0exactrecheckfailures.
+Earlier25sources/78timeouts/984of1020supportedentries belong to the old
+wrapper with109acceptance regressions, not this validnativepopulationcoverage.
+Historicalraw/partial/failedattempts remain in their originaldirectories.
+No further GPUcounterexample pair expansion per latestuserdirection.
 
-Repairedpreparation preservesLeanlayout, reparseswithnativeparser and falls
-back toexactoriginalsource. Full7808preparation wraps4272sources/8578tactics;
-13transformedparsefailures retainoriginals. Real24 usesuntouchedoff:
-19valid/5errorsboth, threeactuallyregressedpositives restored,
-18deviceRPCs/2exactwitnesses,0fallbackerrors, allchildren/provider/Jobretired.
-These are qualificationfacts, not completespeedup or independentaudit.
-
-Next is the corrected completeGPUrun fromzero against retaineduntouched
-nativebaseline. No partial GPUsplicing, oldobserverdenominator, algorithm/
-resourcevariation or extrapolated performanceclaim. Charge own preparation/
-reparse/device/queue/exact/fallback/cancellation/cleanup, and report native-
-ranked tails, failedrequests, timeout and every outcomechange.
-[Priorcounterexample chronology](tmp/bootstrap/step-0011-20261023T195335-0700/evaluation-counterexample-history-20261024T1650.md.gz)
-is retainedasdatedhistory, not freshlyvalidated currentstate.
+Next decisive diagnostic is actual Lean profiling of formalnative83timeouts
+plus native-ranked slowest10%FAILED (480of4794:83timeout/355Leanerror/
+42resourcefailure), including mapping to old78. Preserve the300slimit,
+resourcefailures, instrumentationcost and unclosedtimeoutregions. Choose our
+next mechanism from the ranked actualtactic/phasecosts, not source-tokencounts,
+unsupportedGPUceilings or moreexternalmethodreproduction. Rootselfreview only.
+AllfourRQs/OSDIgoalremainopen.
