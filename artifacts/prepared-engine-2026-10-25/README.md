@@ -37,3 +37,12 @@ Latest local validation20261025T093746 has27passing checks and2explicit local
 native skips. The actual largeHTTP regression fails413before the change and now
 passes: the original7808Batch is14,834,061bytes, above the framework default2MiB.
 Native COW performance/fullMathlib result remains unproven.
+
+12ed2f8 actual nativeCI now builds all real Lean/C code and executes native
+tests: fresh raw-native parity passes, import-parent survival/engagement fails.
+That failure is not counted as COW/native parity. Stock runtime promises need
+a normal manager, so parent preparation now uses it and joins/finalizes before
+forking. BackendEvent records retain failed preparation and fallback stderr
+even on an ultimately accepted native response. Origin/execution/PID/birth
+mapping is preserved in resource logs. Latest local20261025T095251 has all
+six commands successful,27passing checks and2explicit native skips.

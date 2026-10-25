@@ -138,12 +138,20 @@ int main(int argc,char **argv) {
     lean_initialize(); lean_set_panic_messages(false);
     if (!value(initialize_GpuSmtPrepared(1,lean_io_mk_world()))) return 1;
     lean_set_panic_messages(true); lean_io_mark_end_initialization();
-    lean_init_task_manager_using(0);
+    /* Stock environment construction can create native promises and requires
+       the ordinary manager. Tear down/join its owned workers before any fork. */
+    lean_init_task_manager();
     lean_object *root=value(gpu_smt_prepared_create(lean_mk_string(encoded),lean_mk_string(argv[2]),lean_io_mk_world()));
-    free(encoded); if (!root) return 1;
-    /* No work manager in the parent; module initialization must leave one thread. */
-    if (threads()!=1 || foreign_fds()) { fprintf(stderr,"prepared context left native threads or descriptors\n"); return 1; }
-    lean_mark_persistent(root);
+    free(encoded);
+    if (root) lean_mark_persistent(root);
+    lean_finalize_task_manager();
+    if (!root) return 1;
+    /* No work manager at the branch point; imports must leave one thread. */
+    unsigned live_threads=threads(); int extra_fds=foreign_fds();
+    if (live_threads!=1 || extra_fds) {
+        fprintf(stderr,"prepared context residue: threads=%u extra_fds=%d\n",live_threads,extra_fds);
+        return 1;
+    }
     struct sockaddr_un address={0}; address.sun_family=AF_UNIX;
     if (strlen(argv[1])>=sizeof(address.sun_path)) return 2;
     strcpy(address.sun_path,argv[1]);

@@ -46,7 +46,8 @@ need separate PSS. A1s sampled watchdog can overshoot between observations;
 it is not a kernel quota.
 
 The optional PreparedRepl backend uses an engine-owned Lean+C import parent:
-only parsed imports execute there, with no task manager. Each candidate runs in
+only parsed imports execute there with the normal task manager, which is joined
+and finalized before forking. Each candidate runs in
 a disposable OS child, whose connection is retired only after native waitpid.
 The parent remains in total owned RSS. Different imports and preparation faults
 use the original fresh backend within the remaining request timeout.

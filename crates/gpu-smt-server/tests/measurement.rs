@@ -92,6 +92,7 @@ fn records_retry_cost_and_operational_failure_in_tails() {
         exclusive: false,
         processes: vec![],
         preemption_rss_bytes: Some(100),
+        backend_events: vec![],
     };
     b.results[0].attempts = vec![
         attempt,
@@ -102,6 +103,7 @@ fn records_retry_cost_and_operational_failure_in_tails() {
             exclusive: true,
             processes: vec![],
             preemption_rss_bytes: Some(101),
+            backend_events: vec![],
         },
     ];
     b.results[0].outcome = Outcome::operational(Status::ResourceExhausted, "solo budget");

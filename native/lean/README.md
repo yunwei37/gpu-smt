@@ -4,10 +4,9 @@ This engine-owned adapter builds against an existing pinned stock Lean REPL
 project. It is a resource component, not a novelty claim or a replication of
 another verifier service.
 
-The C executable owns a single native import parent. It initializes Lean with
-no task manager, parses the first source's imports through Lean, and loads
-that environment once. It does not execute candidate declarations or tactics.
-A one-thread and file-descriptor check refuses observable initialization
+The C executable owns a single native import parent. It parses the first source imports through Lean with the ordinary task manager,
+retains that environment, then finalizes/joins the manager before any fork. It does not execute candidate declarations or tactics.
+A one-thread and file-descriptor check at that branch point refuses observable initialization
 residue before opening the internal Unix socket.
 
 Rust owns CPU/memory admission and creates one connection per admitted attempt.
@@ -78,3 +77,10 @@ The adapter uses the stock REPL's public frontend and diagnostic serializers:
 [frontend](https://github.com/leanprover-community/repl/blob/2f0a3cb876b045cc0fe550ca3a625bc479816739/REPL/Frontend.lean)
 and [response construction](https://github.com/leanprover-community/repl/blob/2f0a3cb876b045cc0fe550ca3a625bc479816739/REPL/Main.lean).
 Those dependencies retain their original copyright/license.
+
+Native promise allocation requires a task manager in the pinned runtime
+([upstream implementation](https://github.com/leanprover/lean4/blob/v4.18.0/src/runtime/object.cpp)).
+The parent therefore prepares with the normal manager and joins/finalizes it
+before inspecting the branch point. Those checks still do not certify arbitrary
+FFI. Failed preparation and fresh fallback remain in each attempt's backend
+events even when the final native response is accepted.

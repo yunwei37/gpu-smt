@@ -172,7 +172,7 @@ impl PreparedRepl {
         };
         // The native import parent becomes backend-owned idle state after ready.
         // It remains in total RSS through the engine's complete owned-tree monitor.
-        if let Err(result) = result {
+        if let Err(mut result) = result {
             kill_group(&identity);
             let _ = child.start_kill();
             let _ = child.wait().await;
@@ -181,11 +181,8 @@ impl PreparedRepl {
             let _ = std::fs::remove_file(&socket);
             let _ = std::fs::remove_dir(&directory);
             if result.status == Status::BackendError {
-                state.disabled = Some(format!(
-                    "{}; {}",
-                    result.error.clone().unwrap_or_default(),
-                    stderr
-                ));
+                result.error = Some(format!("{}; {}", result.error.unwrap_or_default(), stderr));
+                state.disabled = result.error.clone();
             }
             return Err(result);
         }
@@ -338,6 +335,11 @@ impl PreparedRepl {
         reason: String,
     ) -> Outcome {
         tracing::info!(target:"gpu_smt_lean::prepared",reason=%reason,"use unchanged fresh native backend");
+        x.registry.note(BackendEvent {
+            stage: "fresh_fallback".into(),
+            detail: reason,
+        });
+
         if x.cancel.is_cancelled() {
             return Outcome::operational(Status::Cancelled, "attempt cancelled");
         }

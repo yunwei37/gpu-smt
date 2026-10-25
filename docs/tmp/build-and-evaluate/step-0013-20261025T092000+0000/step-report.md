@@ -70,3 +70,22 @@ The control stub source is retained and cannot be used as a native proof result.
 Latest27localchecks/format/Clippy/docs/help pass with2localnative skips
 (validation20261025T093746). LargeHTTPregression now passes after413was reproduced.
 Actual realLean nativeCI must run on the new head; all failures remain explicit.
+
+ActualCI on12ed2f8 builds all real Lean/C glue successfully and runs both native
+tests. Fresh native raw parity passes; prepared-parent engagement fails its
+surviving-parent assertion, so fallback is not misreported as COW success.
+Added retained backend lifecycle events/failed-preparation stderr and explicit
+candidate-origin/execution/PID/birth resource mapping. Runtime primary source
+object.cpp v4.18 shows native promises require g_task_manager. Preparing with
+a zero manager is therefore unsafe for stock environment construction; imports
+now use the normal manager and finalize/join it before the same one-thread/FD
+branch checks. This is a runtime initialization repair, with arbitraryFFI
+limitations unchanged. Next actualCI must validate engagement and isolation.
+
+Repaired source passes all6localvalidation commands and27tests
+(validation20261025T095251);2realnativechecks remain explicitly skipped locally
+and run in actualCI. NewBackendEvent is optional on old captured attempts and
+preserves fallback observations independently of native payloads. Resource
+events associate origin/execution/PID/birth; counter scope is per-caller history,
+with coalesced histories explicitly not counted as distinct physical work.
+This boundary needs fresh real nativeCI; no Mathlib/performance result claimed.

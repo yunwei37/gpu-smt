@@ -83,6 +83,9 @@ impl Config {
     }
 }
 struct Registry {
+    origin: String,
+    execution_id: u64,
+    events: Mutex<Vec<BackendEvent>>,
     roots: Mutex<Vec<ProcessIdentity>>,
     seen: Mutex<Vec<ProcessIdentity>>,
     preemption_rss: AtomicU64,
@@ -91,8 +94,11 @@ struct Registry {
     peak: AtomicU64,
 }
 impl Registry {
-    fn new() -> Self {
+    fn new(origin: String, execution_id: u64) -> Self {
         Self {
+            origin,
+            execution_id,
+            events: Mutex::new(vec![]),
             roots: Mutex::new(vec![]),
             seen: Mutex::new(vec![]),
             preemption_rss: AtomicU64::new(0),
@@ -103,7 +109,15 @@ impl Registry {
     }
 }
 impl ProcessRegistry for Registry {
+    fn note(&self, event: BackendEvent) {
+        tracing::info!(target:"gpu_smt_engine::resources",origin_id=%self.origin,
+            execution_id=self.execution_id,stage=%event.stage,detail=%event.detail,
+            "backend lifecycle event");
+        self.events.lock().unwrap().push(event);
+    }
     fn register(&self, p: ProcessIdentity) {
+        tracing::info!(target:"gpu_smt_engine::resources",origin_id=%self.origin,
+            execution_id=self.execution_id,pid=p.pid,start_ticks=p.start_ticks,"register active process");
         self.seen.lock().unwrap().push(p.clone());
         let mut roots = self.roots.lock().unwrap();
         if !roots.contains(&p) {
@@ -114,6 +128,8 @@ impl ProcessRegistry for Registry {
         self.peak.fetch_max(bytes, Ordering::Relaxed);
     }
     fn unregister(&self, p: &ProcessIdentity) {
+        tracing::info!(target:"gpu_smt_engine::resources",origin_id=%self.origin,
+            execution_id=self.execution_id,pid=p.pid,start_ticks=p.start_ticks,"release active process ownership");
         self.roots.lock().unwrap().retain(|x| x != p);
     }
 }
@@ -239,6 +255,7 @@ impl Inner {
         if sample.rss_bytes > self.config.memory_bytes {
             if let Some((_, registry)) = largest {
                 tracing::warn!(target:"gpu_smt_engine::resources",rss_bytes=sample.rss_bytes,
+                    origin_id=%registry.origin,execution_id=registry.execution_id,
                     budget_bytes=self.config.memory_bytes,
                     processes=%serde_json::to_string(&*registry.roots.lock().unwrap()).expect("process identities serialize"),
                     "preempt owned attempt and requeue exclusively");
@@ -258,6 +275,7 @@ impl Inner {
     async fn acquire(
         self: &Arc<Self>,
         estimate: Option<u64>,
+        origin: &str,
         solo: bool,
         priority: u64,
     ) -> Result<(Lease, Arc<Registry>, Vec<usize>, bool), String> {
@@ -350,8 +368,8 @@ impl Inner {
                     for cpu in &cpus {
                         s.free.remove(cpu);
                     }
-                    let registry = Arc::new(Registry::new());
                     let id = self.next.fetch_add(1, Ordering::Relaxed);
+                    let registry = Arc::new(Registry::new(origin.to_owned(), id));
                     s.active.insert(
                         id,
                         Active {
@@ -403,7 +421,7 @@ impl Inner {
                 None
             };
             let acquired = tokio::select! {
-                r=self.acquire(predicted,exclusive,self.policy.priority(&c))=>r,
+                r=self.acquire(predicted,&c.id,exclusive,self.policy.priority(&c))=>r,
                 _=tx.closed()=>break Outcome::operational(Status::Cancelled,"no live subscribers"),
             };
             let (_lease, registry, cpus, exclusive) = match acquired {
@@ -449,6 +467,7 @@ impl Inner {
                 peak_rss_bytes: peak,
                 exclusive,
                 processes: registry.seen.lock().unwrap().clone(),
+                backend_events: registry.events.lock().unwrap().clone(),
                 preemption_rss_bytes: registry
                     .preempted
                     .load(Ordering::Acquire)

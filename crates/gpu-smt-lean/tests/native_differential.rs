@@ -232,7 +232,8 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         );
         assert!(
             gpu_smt_engine::linux::identity(parent.as_ref().unwrap().pid).is_ok(),
-            "one import parent must survive individual candidates"
+            "one import parent must survive individual candidates; backend events: {:?}",
+            result[0].attempts[0].backend_events
         );
         for p in result[0].attempts.iter().flat_map(|a| &a.processes) {
             if Some(p) != parent.as_ref() {

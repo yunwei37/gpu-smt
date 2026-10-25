@@ -218,6 +218,12 @@ async fn unavailable_prepared_host_uses_unchanged_native_fallback() {
         [Status::Accepted, Status::Rejected, Status::Incomplete]
     );
     assert!(!e.prepared_state_ready());
+    assert!(result.iter().all(|r| {
+        r.attempts[0]
+            .backend_events
+            .iter()
+            .any(|e| e.stage == "fresh_fallback")
+    }));
     for p in result
         .iter()
         .flat_map(|r| r.attempts.iter().flat_map(|a| &a.processes))

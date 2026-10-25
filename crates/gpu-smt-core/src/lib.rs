@@ -105,6 +105,15 @@ impl Outcome {
     }
 }
 
+/// Backend lifecycle evidence, including a failed preparation before successful fallback.
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct BackendEvent {
+    /// Lifecycle stage such as preparation or fallback.
+    pub stage: String,
+    /// Observed reason, distinct from an unchanged native response.
+    pub detail: String,
+}
+
 /// Accounting for one actual backend execution.
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Attempt {
@@ -120,6 +129,9 @@ pub struct Attempt {
     pub processes: Vec<ProcessIdentity>,
     /// Aggregate measured RSS at watchdog interruption.
     pub preemption_rss_bytes: Option<u64>,
+    /// Retained backend events; successful fallback must not hide failed preparation.
+    #[serde(default)]
+    pub backend_events: Vec<BackendEvent>,
 }
 
 /// Caller-specific result and provenance.
@@ -179,6 +191,8 @@ pub struct ResourceSnapshot {
 
 /// Backend-owned process registration.
 pub trait ProcessRegistry: Send + Sync {
+    /// Preserve lifecycle diagnostics without rewriting native proof output.
+    fn note(&self, _event: BackendEvent) {}
     /// Register immediately after spawn, before expensive input.
     fn register(&self, process: ProcessIdentity);
     /// Supplement periodic sampling before a short-lived process is retired.

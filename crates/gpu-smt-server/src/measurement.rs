@@ -100,6 +100,9 @@ fn summarize(c: &Capture) -> Value {
         "cached":c.results.iter().filter(|v|v.cached).count(),
         "coalesced":c.results.iter().filter(|v|v.coalesced).count(),
         "attempts":c.results.iter().map(|v|v.attempts.len()).sum::<usize>(),
+        "attempt_counts_scope":"per-caller histories; coalesced callers may repeat the same physical attempt",
+        "fresh_fallback_event_rows":c.results.iter().flat_map(|v|&v.attempts)
+            .flat_map(|a|&a.backend_events).filter(|e|e.stage=="fresh_fallback").count(),
         "preemptions":c.results.iter().flat_map(|v|&v.attempts)
             .filter(|a|a.status==Status::Preempted).count(),
         "sampled_peak_attempt_rss_bytes":c.results.iter().flat_map(|v|&v.attempts)

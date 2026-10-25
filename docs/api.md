@@ -106,3 +106,10 @@ cutoff (the original7808body is14,834,061bytes). The local adapter removes that
 extractor cutoff; engine resources remain governed by the declared aggregate
 RSS/CPU point. This is not an authenticated public deployment or a hard parser
 memory quota. CLI measure avoids HTTP when only a local capture is needed.
+
+Attempt.backend_events preserves preparation/fallback reasons independently of
+the unmodified native response. Successful fresh fallback cannot hide a refused
+prepared context. Resource logs map origin caller ID, execution ID and PID/birth
+to active ownership and preemption. Shared/coalesced result histories can repeat
+one physical attempt in several caller rows; measurement counters state that
+scope explicitly.
