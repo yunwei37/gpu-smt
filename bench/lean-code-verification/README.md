@@ -10,7 +10,8 @@ miniF2F300s request point. Both retain CPU8–11, at most2actual Lean processes,
 24GiBAS per child and48GiBaggregate sampledRSS. Explicitly admitted reference
 files remain incomplete even on native exit0. Trace-wall weights are not CPU.
 
-With the retained Kimina Python environment:
+Historical reproduction of that recorded point (the driver has not yet been
+adapted to the new dynamic resource contract), with the retained Kimina environment:
     python bench/lean-code-verification/run-verina.py --phase qualification --out /tmp/a-fresh-verina-qualification
 
 [The real qualification and all189 native/profile records](../../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md)
@@ -19,3 +20,9 @@ are complete. Analyze with:
 
 Each group retains run-source, commands, logs and actual limits. SDK/cache setup is not a proof
 result. No other system's generation/prover baseline is reproduced.
+
+
+Current research execution uses the [new aggregate resource contract](../../docs/architecture.md).
+Do not interpret the historical24GiB/max2recipe as a new-resource qualification.
+Existing completed Verina data remain; source/toolchain preparation for additional
+original code workloads does not establish a measured SAT/LRAT target.

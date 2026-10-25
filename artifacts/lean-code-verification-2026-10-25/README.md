@@ -10,7 +10,8 @@ is comment-stripped lexical filtering, never execution/CPU attribution.
 CLEVER carries many stubs; miniCodeProps includes library/test modules;
 lean-mlir's generated sorry files are retained but are not verified proofs.
 FVAPPS gated access is not accepted. The 480-source failure profile has retired;
-the original7808 first-success scheduling matrix is now the sole full collection. Root only;48GiB aggregate/max2REPL/24each requirements remain.
+the original7808 first-success scheduling matrix is now the sole full collection. Those historical captures used48GiB aggregate/max2REPL/24GiBeach;
+new captures follow the current dynamic point in [architecture](../../docs/architecture.md).
 
 ## Prepared native environments
 
@@ -25,3 +26,14 @@ paths return zero objects, so its dependency build is not ready despite
 cache exit0. The real SLLVM file's static import closure is retained for
 source build, including its version's import-all syntax. No extra cache
 URL grid, substitute version, or second collection is launched.
+
+
+## Current capture boundary
+
+The original Verina189capture and its fixed resource point remain historical
+evidence. The legacy run-verina driver still reproduces that point; it is not
+the new dynamic-admission path. New code-workload captures require the current
+48GiB aggregate/CPU-coupled controller after the sole old group retires.
+No second proof collection has started. Lean-mlir source dependencies remain
+unbuilt after zero-hit upstream caches; static closure556modules is preparation,
+not a native workload measurement or baseline-system reproduction.

@@ -1,0 +1,43 @@
+{
+  "UTC": "2026-10-25T12:26:54.415388+00:00",
+  "runs": [
+    {
+      "id": 40192760532,
+      "name": "benchmark-smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40192760532",
+      "head_sha": "502a4d31307631c1ffc6f70715d674b62001c229",
+      "jobs": [
+        {
+          "id": 121167093265,
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 40192760470,
+      "name": "engine",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40192760470",
+      "head_sha": "502a4d31307631c1ffc6f70715d674b62001c229",
+      "jobs": [
+        {
+          "id": 121167092961,
+          "name": "native-repl-contract",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 121167093082,
+          "name": "rust",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

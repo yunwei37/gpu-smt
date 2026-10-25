@@ -60,3 +60,17 @@ Actual implementation checks/CI are appended at the completed boundary. All
 four RQs/directions remain open; CPUoracle remains frozen. Root self-review
 is not independent audit. The original native group stays live; no second
 native acquisition starts.
+
+## Actual implementation qualification
+
+Implementation502a4d31307631c1ffc6f70715d674b62001c229 passes engine
+CI40192760470 (Rust plus both real native tests,2passed/0ignored) and
+benchmark-smoke40192760532. Fresh protocol integration checks the current-RSS
+observation's process birth/kind, and the actual prepared-native test checks
+retired-child leader high-water provenance while preserving raw native results,
+concurrency, timeout recovery and retirement. Terminal metadata/raw native
+logs are retained. The conservative estimate/native decisions are unchanged.
+
+This is implementation evidence for future interpretable data, not full
+Mathlib/48GiB performance, an accurate whole-population cost model or an
+independent audit. Goal remains active.
