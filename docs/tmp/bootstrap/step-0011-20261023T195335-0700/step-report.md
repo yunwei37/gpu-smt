@@ -913,3 +913,7 @@ next evidence, not setup, lexical tokens or the unsuccessful predictor.
 ## 2026-10-25 native first-success qualification
 
 Eight real candidates: original 4 valid/4 errors; both first-success policies actually check one valid and four errors, cancel three queued siblings, and retain solved task {0}. Lifecycle 6.21/6.20/6.33 seconds is startup-dominated, no speedup claim. All native cells retired within 48 GiB/2 REPL contract. Transport error-shaped cancellation slots are separately mapped, never counted as actual rejection. Full data and self-review in artifacts/candidate-scheduling-2026-10-25/native-qualification-20261025T0715. Verina three-file native/profiler qualification now owns the sole proof-collection slot.
+
+## 2026-10-25 Verina real native/profile qualification
+
+Three official files execute on pinned Lean4.18; both basic references exit0 without explicit admissions, the advanced stub is explicitly incomplete. All three diagnostic profiles produced; main qualification cost is frontend lint, not SAT. Duplicate watchdog directory fault in attempt1 fixed without launching any Lean; failed source/log retained. Complete successful group retired, root self-review recorded. Proceeding to original full189 source characterization, no oracle or external-system reproduction.

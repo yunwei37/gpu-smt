@@ -10,7 +10,7 @@ def limits():
  resource.setrlimit(resource.RLIMIT_AS,(24*1024**3,24*1024**3))
  resource.setrlimit(resource.RLIMIT_CORE,(0,0))
 async def cell(mode,files,out,sdk,project,lean_path):
- out.mkdir();(out/'activity').mkdir();(out/'profiles').mkdir();(out/'logs').mkdir()
+ out.mkdir();(out/'profiles').mkdir();(out/'logs').mkdir()
  start=time.monotonic_ns()
  W=runpy.run_path(str(ROOT/'bench/lean-native/linarith-oracle/memory_budget.py'))['MemoryWatchdog']
  guard=W(os.getpid(),48*1024**3,48*1024**3,2,sdk/'bin/lean',out)
