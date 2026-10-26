@@ -113,6 +113,14 @@ sampled peak RSS and zero watchdog kills/errors. All descendants retired.
 Timeout endpoint attribution puts interval_cases at 55.19% and simp_all at
 28.21% of observed timeout thread CPU. This is not a failure witness or speedup.
 
+The earlier [primary memory join](../artifacts/source-memory-attribution-2026-10-25/result-review.md)
+already observes477sources. A [body/full-read-window sensitivity check](../artifacts/lean-failure-profile-2026-10-25/body-memory-association-20261026/README.md)
+retains435(310errors/all83timeouts/all42resourcefailures),33,039rows that are
+a subset of the earlier34,130body rows. All125timeout/resource per-worker
+sampled maxima are unchanged. This is the same old2worker/24GiB-AS observation,
+not a new dataset,source-only demand,uncapped predictor or performance gain.
+
+
 Profile counters distinguish child-subtracted threadCPU, nested wall spans,
 sampled active tactics and unfinished timeout frames. Auxiliary offline
 analysis/cache preparation shares the sampled budget; its actual intervals

@@ -1,0 +1,41 @@
+{
+  "primary_result": "artifacts/source-memory-attribution-2026-10-25/result.json",
+  "primary_worker_samples": 34284,
+  "prior_body_worker_samples": 34130,
+  "window_body_samples": 33039,
+  "window_sample_keys_not_in_prior_body": 0,
+  "same_key_RSS_mismatches": 0,
+  "critical_sources_with_identical_primary_maxima": 125,
+  "groups": {
+    "lean_error": {
+      "sources": 355,
+      "observed": 310,
+      "prior_body_observed": 338,
+      "p50_nearest_rank_bytes": 3947999232,
+      "max_bytes": 13573107712,
+      "sources_with_lower_max_than_prior_body": 137,
+      "sources_with_higher_max_than_prior_body": 0
+    },
+    "timeout_error": {
+      "sources": 83,
+      "observed": 83,
+      "prior_body_observed": 83,
+      "p50_nearest_rank_bytes": 15793541120,
+      "max_bytes": 24261738496,
+      "sources_with_lower_max_than_prior_body": 0,
+      "sources_with_higher_max_than_prior_body": 0
+    },
+    "resource_failure": {
+      "sources": 42,
+      "observed": 42,
+      "prior_body_observed": 42,
+      "p50_nearest_rank_bytes": 24988127232,
+      "max_bytes": 25185705984,
+      "sources_with_lower_max_than_prior_body": 0,
+      "sources_with_higher_max_than_prior_body": 0
+    }
+  },
+  "initially_overlooked_prior_step": "step-0016-20261025T115728+0000",
+  "role": "One sensitivity control of prior observations; not newly acquired labels or a model",
+  "scope": "Sensitivity of the same archived data, not independent or new native observations."
+}

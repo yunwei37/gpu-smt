@@ -1,0 +1,45 @@
+{
+  "UTC": "2026-10-26T04:56:26.749389+00:00",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_profile_memory_attribution.py",
+        "-v"
+      ],
+      "exit": 0,
+      "seconds": 1.007351211970672
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "bench/lean-failure-profile/memory_attribution.py",
+        "--run",
+        "artifacts/lean-failure-profile-2026-10-25/full480",
+        "--inputs",
+        "artifacts/engine-resource-profile-2026-10-25/population-inputs/all.json.gz",
+        "--out",
+        "/workspaces/repository/artifacts/lean-failure-profile-2026-10-25/body-memory-association-20261026/confirmed/attribution.json"
+      ],
+      "exit": 0,
+      "seconds": 5.01564222201705
+    }
+  ],
+  "samples": 10,
+  "combined_peak_rss_bytes": 47333916672,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_analysis": false,
+  "monitor_errors": [],
+  "old_owner": 408739,
+  "old_start_ticks": 140695363,
+  "native_candidate_executions": 0,
+  "offline_reanalysis": true
+}

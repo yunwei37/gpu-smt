@@ -813,6 +813,15 @@ high-water marks. All records retain the old 24\,GiB address-space limit.
 Those allocation-failure labels do not directly calibrate a new 48\,GiB
 actual-RSS predictor or justify four simultaneous workers.
 
+A sensitivity check requires the entire sequential RSS-read window, rather
+than only its timestamp, to lie between agreeing active-body observations and
+within the matching HTTP envelope, with no intervening source boundary.
+It retains 435 sources: 310 ordinary errors, all 83 timeouts and all 42 resource
+failures. The retained rows are a subset of the earlier body observations;
+all 125 timeout/resource sources retain exactly the same sampled per-worker
+maxima. This check selects the same archived observations and adds no native
+candidate executions.
+
 These observations motivate continuing work on finite-case construction,
 simplifier repetition and reduction failure witnesses. An expensive prefix
 or a large branch count alone does not prove failure. No reliable early
