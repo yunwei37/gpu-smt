@@ -82,8 +82,9 @@ existing CI for source25debfc.
 This preserves lean-mlir upstream --tstack=400000. The optional source-file
 backend/CLI now verifies original file bytes before invoking that exact path,
 scopes identity by file path and shares existing resource/retirement handling.
-It does not establish the pending actual original-file/stdin or complete
-bv_decide workload result.
+Pinned-Lean4.18 original-file native differential cases execute successfully
+at ad7ecdc. This does not establish the pending nightly original-file/stdin
+or complete bv_decide workload result.
 
 A [separate interval-continuation prototype](../bench/lean-failure-profile/interval-continuation/README.md)
 now compiles against the retained4.9API. It defers proof-tree leaves until a

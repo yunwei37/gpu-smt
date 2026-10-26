@@ -62,3 +62,12 @@ empty goal wait or overlapping native acquisition. Use actual CI to repair a
 native contract failure if found. Daily maintenance/reflection already performed
 in Step0038; no additional policy/helper/scheduler or memory update is needed.
 Publish this coherent implementation boundary on main, with raw checks intact.
+
+
+## Post-publication native verification
+Exact published ad7ecdc now has success for both existing workflows and all4
+executed pinned-native contract tests. The source test includes actual accepted/
+rejected original-file and raw same-file pairs with matching diagnostics and
+retirement. [Executed receipt/log and scope](../../../../artifacts/rust-engine-2026-10-25/source-file-native-ci-ad7ecdc/result-review.md)
+supersede publication-time pending status. No new code/test rerun or scientific
+gate is introduced by this forward evidence record.
