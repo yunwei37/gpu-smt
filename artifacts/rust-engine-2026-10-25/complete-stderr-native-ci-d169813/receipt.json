@@ -1,0 +1,183 @@
+{
+  "observed_utc": "2026-10-26T02:30:56.484716+00:00",
+  "head_sha": "d16981352cc0dc287337d00a4d78079be84c3162",
+  "runs": [
+    {
+      "id": 40259093535,
+      "name": "engine",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "d16981352cc0dc287337d00a4d78079be84c3162",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40259093535",
+      "updated_at": "2026-10-26T02:28:18Z"
+    },
+    {
+      "id": 40259093490,
+      "name": "benchmark-smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "d16981352cc0dc287337d00a4d78079be84c3162",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40259093490",
+      "updated_at": "2026-10-26T02:27:49Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 121367314279,
+      "name": "native-repl-contract",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T02:26:21Z",
+      "completed_at": "2026-10-26T02:27:58Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-26T02:26:21Z",
+          "completed_at": "2026-10-26T02:26:22Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-26T02:26:22Z",
+          "completed_at": "2026-10-26T02:27:13Z"
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-26T02:27:13Z",
+          "completed_at": "2026-10-26T02:27:23Z"
+        },
+        {
+          "name": "Prepare pinned native protocol dependency",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-26T02:27:23Z",
+          "completed_at": "2026-10-26T02:27:36Z"
+        },
+        {
+          "name": "Build import-only native parent",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-26T02:27:36Z",
+          "completed_at": "2026-10-26T02:27:40Z"
+        },
+        {
+          "name": "Differential check against raw native JSON",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-26T02:27:40Z",
+          "completed_at": "2026-10-26T02:27:56Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-26T02:27:56Z",
+          "completed_at": "2026-10-26T02:27:56Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-26T02:27:56Z",
+          "completed_at": "2026-10-26T02:27:56Z"
+        }
+      ]
+    },
+    {
+      "id": 121367314514,
+      "name": "rust",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T02:26:21Z",
+      "completed_at": "2026-10-26T02:28:17Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-26T02:26:22Z",
+          "completed_at": "2026-10-26T02:26:23Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-26T02:26:23Z",
+          "completed_at": "2026-10-26T02:27:24Z"
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-26T02:27:24Z",
+          "completed_at": "2026-10-26T02:27:34Z"
+        },
+        {
+          "name": "Run cargo fmt --all -- --check",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-26T02:27:34Z",
+          "completed_at": "2026-10-26T02:27:34Z"
+        },
+        {
+          "name": "Run cargo clippy --workspace --all-targets --locked -- -D warnings",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-26T02:27:34Z",
+          "completed_at": "2026-10-26T02:27:48Z"
+        },
+        {
+          "name": "Run cargo test --workspace --all-targets --locked",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-26T02:27:48Z",
+          "completed_at": "2026-10-26T02:28:13Z"
+        },
+        {
+          "name": "Run cargo doc --workspace --no-deps --locked",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-26T02:28:13Z",
+          "completed_at": "2026-10-26T02:28:15Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-26T02:28:15Z",
+          "completed_at": "2026-10-26T02:28:15Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-26T02:28:15Z",
+          "completed_at": "2026-10-26T02:28:15Z"
+        }
+      ]
+    }
+  ],
+  "scope": "Existing Lean4.18 actual native contract; includes configured original-file raw/logged accepted/rejected proof pairs. No research population or nightly code workload."
+}

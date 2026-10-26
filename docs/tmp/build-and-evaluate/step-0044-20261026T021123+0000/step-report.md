@@ -66,3 +66,12 @@ At real terminal, collect fullpair; then original lean-mlir and prepared failure
 cohorts, retaining diagnostic cost/censoring. No gate, deadline or closure added.
 Maintain current docs, not a second rule/service catalog. Publish completed
 boundary on main with raw failure/success evidence.
+
+
+## Post-publication native execution
+Published d169813 now has success for engine/benchmark-smoke and all4 actually
+executed pinned native contracts. The source test covers raw/configured
+original-file proofs with complete stderr file events,byte counts and retirement.
+[Exact-head raw native evidence](../../../../artifacts/rust-engine-2026-10-25/complete-stderr-native-ci-d169813/result-review.md)
+supersedes publication-time CI-pending status. No source or research run changes
+in this forward evidence update; no new correctness/performance scope is claimed.

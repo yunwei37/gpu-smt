@@ -80,6 +80,8 @@ response remains a labelled64KiB tail. Log setup/I/O errors are operational,
 flush/cleanup costs stay in the attempt, no default file is created. This
 supports later complete phase attribution; it is not proof/profile completion
 or an active failure detector.
+PinnedLean4.18 native file/logging accepted/rejected controls execute successfully
+at d169813, separately from the pending original workloads.
 
 The source CLI backend now accepts explicitly declared upstream arguments via
 NativeLean::with_args and repeated --lean-arg. Defaults remain unchanged;
