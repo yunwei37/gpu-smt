@@ -69,3 +69,14 @@ not create a competing native group. Daily project maintenance/reflection was
 already recorded in Step0038; no duplicate maintenance entity is created.
 Publish this completed implementation boundary directly on main; actual hash,
 push and CI receipts are observed after commit and reported separately.
+
+
+## Post-publication native CI observation
+At2026-10-26T01:28:19UTC the actual pinned native job for published25debfc
+completed successfully, including configured accepted/rejected proof comparisons.
+Both engine and benchmark-smoke workflows finish success.
+[Executed evidence and scope](../../../../artifacts/rust-engine-2026-10-25/source-argv-native-ci-25debfc/result-review.md)
+supersede the earlier publication-time pending status, without rewriting raw
+validation receipts or claiming the separate lean-mlir workload was run.
+A forward evidence-only commit preserves this observation; no new tests/code,
+research gate, policy, competing collection or RQ result is introduced.

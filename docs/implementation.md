@@ -77,7 +77,8 @@ path or COW performance is implied by their definitions.
 The source CLI backend now accepts explicitly declared upstream arguments via
 NativeLean::with_args and repeated --lean-arg. Defaults remain unchanged;
 nonempty argv partitions cache identity. Process/CLI transport tests pass, and
-same-argv pinned-native differential coverage is compiled for existing CI.
+same-argv pinned-Lean4.18 native differential cases execute successfully in
+existing CI for source25debfc.
 This preserves lean-mlir upstream --tstack=400000; it does not establish the
 pending original-file/stdin or complete bv_decide workload result.
 
