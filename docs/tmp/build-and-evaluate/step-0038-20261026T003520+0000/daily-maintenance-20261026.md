@@ -59,3 +59,9 @@ Step0062fixesaconfirmedenginelifecycle race while71runs:staleadmissioncouldstart
 backendaftershutdownreturned. Deterministicred→green/21tests/clippy,without
 changingactiveCLI. Thissupportscoreengineering;itisnotpaper novelty orfailure
 prediction. Nextdecisivedataremain71native/import/prototypeandoriginallean-mlir.
+
+Step0063 makes the queued original lean-mlir measurement executable through
+existing engine APIs. The full source remains unchanged; environment discovery
+works without building or updating dependencies. Do not infer SAT/LRAT cost
+from89 source mentions. The next useful evidence is actual file/stdin/profile
+outcomes after71, not more observers or kernel prototypes before attribution.
