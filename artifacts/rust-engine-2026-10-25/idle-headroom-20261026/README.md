@@ -49,7 +49,10 @@ reclamation through Engine rather than invoking the hook directly. A synthetic
 forecast of budget-minus1byte forces the path without allocating that memory.
 It checks one exclusive attempt,real parent retirement,fresh child retirement,
 unchanged raw-native response and re-preparation on later ordinary work.
-That source compiles locally;actual native CI execution follows publication.
+That source compiles locally;[exact-source native CI](native-ci-a3052a0/result-review.md)
+now actually executes all4contracts with0failures/0ignored. The initial engine
+headroom path reclaims the actual native parent and preserves the reference
+reply;fullMathlib performance remains separate.
 No additional local candidate group or new workflow is created.
 
 [Original fullpair observation](original-full-observation.json) confirms the

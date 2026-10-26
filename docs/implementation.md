@@ -50,7 +50,10 @@ attempt. An otherwise idle queue also promotes a forecast that cannot fit
 resident headroom to exclusive admission instead of waiting forever.
 PreparedRepl evicts its idle parent for this initial admission or resource retry,
 runs fresh under the same request deadline,and allows preparation again on
-later ordinary work. This restores the budget formerly consumed by idle state;
+later ordinary work. The a3052a0pinned-native CI case executes this initial
+engine-driven eviction path and preserves the raw reference response;it is a
+bounded4.18lifecycle contract,not the pending full4.9Mathlib result.
+This restores the budget formerly consumed by idle state;
 eviction/fallback remain in attempt provenance. That attempt still exceeding the total budget becomes an explicit
 resource failure, with all attempt costs retained. Last-subscriber cancellation
 waits for backend cleanup; an RL subscriber keeps shared work alive.

@@ -100,3 +100,15 @@ boundary onmain and push. Verify existing exact-headCI;native contract execution
 is required before claiming that changed route qualified. Continue fullpair to
 actual terminal,then original nightly and prepared hotspot cohorts under one
 native group/48GiB. No waiting-only goal loop or new admission tuning.
+
+## Post-publication executed native evidence
+
+Sourcea3052a0has both existing workflows successful. The actual native job
+executes4tests,4passed/0failed/0ignored,including the strengthened engine-driven
+exclusive-headroom parent eviction/reference-response/re-preparation contract.
+[Executed receipt/log/self-review](../../../../artifacts/rust-engine-2026-10-25/idle-headroom-20261026/native-ci-a3052a0/result-review.md)
+resolves the earlier publication-time pending status only. No new runtime/source
+change is made. Scope remains pinned4.18lifecycle,not complete4.9Mathlib
+population parity,throughput,high-memory benchmark or independent audit.
+Historical42isolated inputs were already prepared;no redundant generator/run
+was added. Preserve the sole fullpair and the pending original workload order.

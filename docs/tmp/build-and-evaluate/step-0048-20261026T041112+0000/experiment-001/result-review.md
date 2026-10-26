@@ -60,3 +60,15 @@ The prior journal entries are native cancellations followed by exclusive retry;
 engine-final preemption/resource classification belongs to finalCapture.
 This is heavy resource-constrained work,not evidence it hit the repaired
 empty-active-set path. No restart,signal,source/config/binary replacement.
+
+## Post-publication executed native evidence
+
+Sourcea3052a0has both existing workflows successful. The actual native job
+executes4tests,4passed/0failed/0ignored,including the strengthened engine-driven
+exclusive-headroom parent eviction/reference-response/re-preparation contract.
+[Executed receipt/log/self-review](../../../../../artifacts/rust-engine-2026-10-25/idle-headroom-20261026/native-ci-a3052a0/result-review.md)
+resolves the earlier publication-time pending status only. No new runtime/source
+change is made. Scope remains pinned4.18lifecycle,not complete4.9Mathlib
+population parity,throughput,high-memory benchmark or independent audit.
+Historical42isolated inputs were already prepared;no redundant generator/run
+was added. Preserve the sole fullpair and the pending original workload order.
