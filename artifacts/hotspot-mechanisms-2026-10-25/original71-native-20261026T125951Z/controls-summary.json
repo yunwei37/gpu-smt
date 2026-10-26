@@ -1,0 +1,131 @@
+{
+  "UTC": "2026-10-26T13:02:05.763053+00:00",
+  "native_controls": [
+    {
+      "id": "implication-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 2.301195263
+    },
+    {
+      "id": "implication-profile",
+      "service_status": "backend_error",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 3.404751935
+    },
+    {
+      "id": "substitution-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 3.382556219
+    },
+    {
+      "id": "substitution-profile",
+      "service_status": "backend_error",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 3.403678989
+    },
+    {
+      "id": "modular-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 4.747276736
+    },
+    {
+      "id": "modular-profile",
+      "service_status": "backend_error",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 5.884195066
+    },
+    {
+      "id": "unsolved-native",
+      "service_status": "rejected",
+      "native_diagnostic_label": "reported_error",
+      "elapsed_seconds": 5.936080629
+    },
+    {
+      "id": "unsolved-profile",
+      "service_status": "rejected",
+      "native_diagnostic_label": "reported_error",
+      "elapsed_seconds": 5.936073122
+    },
+    {
+      "id": "fallback-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 7.230688087
+    },
+    {
+      "id": "fallback-profile",
+      "service_status": "backend_error",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 8.383881546
+    },
+    {
+      "id": "admitted-native",
+      "service_status": "incomplete",
+      "native_diagnostic_label": "reported_incomplete",
+      "elapsed_seconds": 8.482269097
+    },
+    {
+      "id": "admitted-profile",
+      "service_status": "incomplete",
+      "native_diagnostic_label": "reported_incomplete",
+      "elapsed_seconds": 8.480542055
+    },
+    {
+      "id": "trailing-combinator-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 9.627890439
+    },
+    {
+      "id": "trailing-combinator-profile",
+      "service_status": "backend_error",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 10.651923552
+    }
+  ],
+  "recovery_controls": [
+    {
+      "id": "recovery-context-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 0.382188474
+    },
+    {
+      "id": "recovery-context-wrapped",
+      "service_status": "rejected",
+      "native_diagnostic_label": "reported_error",
+      "elapsed_seconds": 0.75751561
+    },
+    {
+      "id": "ordinary-backtracking-native",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 1.057349053
+    },
+    {
+      "id": "ordinary-backtracking-wrapped",
+      "service_status": "accepted",
+      "native_diagnostic_label": "successful_native_exit_without_reported_error_or_sorry",
+      "elapsed_seconds": 1.3191741430000001
+    },
+    {
+      "id": "already-failed-have-native",
+      "service_status": "rejected",
+      "native_diagnostic_label": "reported_error",
+      "elapsed_seconds": 1.319167512
+    },
+    {
+      "id": "already-failed-have-wrapped",
+      "service_status": "rejected",
+      "native_diagnostic_label": "reported_error",
+      "elapsed_seconds": 1.319339581
+    }
+  ],
+  "target71": "native reference cell active;import/experimental pending",
+  "source_diagnostic_pairs_agree": 7,
+  "service_statuses_do_not_match_due_to_full_stderr": 5,
+  "recovery_sensitive_source_acceptance_changes": true
+}

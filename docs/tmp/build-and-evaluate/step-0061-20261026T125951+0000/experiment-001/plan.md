@@ -1,0 +1,10 @@
+# Plan — execute original71and source controls
+Prior42actualexit0andallregisterednativebirthsretired,publishedf042673.
+Runalready-preparedmanualexecute.py,existingRustNativeLean/fullstderr frontend.
+14priorprofilecontrols,6recoverycontrols,71original/import/experimental sequential
+cells;within eachcellup to4onecoreworkers/actual48GiBdynamic/noAScap/300s.
+Original48interval and23simp have distinctpurposes;no combinedspeedupclaim.
+Controlsvalidateactualmodule behavior;intentionalrecoverycontext mismatch is
+not a transparentfailuremechanism. Preserve strictservice/backendverdicts.
+Fullrawstderr/results/tmp;closed losslessarchivesincludeactualclockcost.
+Thenoriginallean-mlir. No loggerexpansion,AIdelegation or competingcollection.

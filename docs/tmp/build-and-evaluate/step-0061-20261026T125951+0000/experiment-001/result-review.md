@@ -1,0 +1,12 @@
+# Actualcontrol result and launch self-review
+Completed14simpcontrols:7pairs matchnativeexit/JSONerror/sorrysemanticlabels.
+5profile source exits0withphase stderrbecomeservicebackend_error;do nothide
+service mismatch orinventengineacceptance. Native1error/1incompletepreserved.
+Completed6recoverycontrolsconfirm1intentionalnative-success→wrapper-error;
+ordinaryfirstfallbackandfailedhavepairsmatch. Genericno-recoveryisunsafe for
+arbitrarytactics,notanenginewitness. NoOSDI/novelty/71parity/performanceclaim.
+
+Actualtarget71nativeCLIlaunchandfourregisterednativebirths/RSSgrowthobserved.
+Onlythisgroupisrunning;current42alreadycompleteandretired. Allstaticcontrol
+bytes/logs/outcomes/terminalsarecopiedafterexit;active71streamsremainruntime.
+SameSDK/stockfrontend/budget,4onecoreleases;noAScap/shorttimeout/binaryrebuild.
