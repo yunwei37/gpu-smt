@@ -8,3 +8,8 @@ hypothesisphases andcumulativeorigins,notcausal/infinite-loopcertificates.
 Falsecompletionflagsinpassedsmallcontrols areunqualified,notactualunwinding.
 Rawdata/serviceverdictsstayunmodified. 0certifiedimpossible,nottransparent23
 observerqualification orspeedup. Next22actualintervalcontrols then48repair.
+
+Actualfollowup:22intervalcontrols are nowexecuted,all11native/map pairs match
+declaredstatuses(16accepted/4rejected/2incomplete). Thisrepairsimportreadiness
+butdoesnotqualify48performance/acceptedsets. Repairedimport48isactive;
+theonlycollection usesoldbinaryandcorrectedpaths,nosourcebodychange.

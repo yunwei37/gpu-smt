@@ -25,3 +25,13 @@ Runtimephaseevidenceimprovesdirection butdoesnotcompletefailuremechanism/RQs.
 Commitclosedgroupnow,thenactuallyrun22intervalcontrols and48scopedrepairusing
 fixedpaths/oldbinary;onegroup. Do notrerunhealthy23/native71. Fullmatched
 wholepopulationadvantage/MathlibCOW/novelty remainopen. Lean-mlirfollowsrepair.
+
+## Actual scoped repair launch and completed controls
+
+Afterclosedgroupdata commitc8bc69c,the repairedcontroller449266/birth146344239
+starts16:27:50UTC. Actual22controlscomplete15.243435s,all11native/map pairs
+matchpredeclaredstatuses:16accepted/4rejected/2incomplete. CorrectMap+
+Continuation imports are actually exercised. Import48hasnowstarted,mapped48
+follows;bothremainpending. Nohealthy23/native71repeat oractivebinarychange.
+[Actualcontrolraw/launch](../../../../artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md)
+is narrowqualification,not48parity orperformance.
