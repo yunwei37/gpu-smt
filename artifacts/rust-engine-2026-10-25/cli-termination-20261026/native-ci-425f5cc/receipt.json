@@ -1,0 +1,136 @@
+{
+  "UTC": "2026-10-26T06:08:04.012222+00:00",
+  "runs": [
+    {
+      "id": 40277588695,
+      "name": "engine",
+      "head": "425f5cc15a62645d3f99dfb921bb879030ba3e8c",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40277588695",
+      "jobs": [
+        {
+          "id": 121423525757,
+          "name": "rust",
+          "conclusion": "success",
+          "executed_test_result_lines": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "20",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "3",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "8",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "7",
+              "0",
+              "0"
+            ],
+            [
+              "5",
+              "0",
+              "0"
+            ],
+            [
+              "5",
+              "0",
+              "0"
+            ],
+            [
+              "3",
+              "0",
+              "0"
+            ]
+          ],
+          "passed_sum": 51,
+          "ignored_sum": 4,
+          "actual_native_test_names": [],
+          "cli_signal_test_names": [
+            "termination_retires_owned_attempts_in_all_cli_modes",
+            "termination_interrupts_idle_cli_input_without_waiting_for_eof"
+          ]
+        },
+        {
+          "id": 121423525934,
+          "name": "native-repl-contract",
+          "conclusion": "success",
+          "executed_test_result_lines": [
+            [
+              "4",
+              "0",
+              "0"
+            ]
+          ],
+          "passed_sum": 4,
+          "ignored_sum": 0,
+          "actual_native_test_names": [
+            "native_accept_reject_and_sorry_match_raw_stock_repl",
+            "native_import_parent_isolates_children_and_matches_raw_responses",
+            "native_source_frontend_matches_cli_and_retires_interruptions",
+            "native_import_error_never_becomes_prepared_readiness"
+          ],
+          "cli_signal_test_names": []
+        }
+      ]
+    },
+    {
+      "id": 40277588784,
+      "name": "benchmark-smoke",
+      "head": "425f5cc15a62645d3f99dfb921bb879030ba3e8c",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40277588784",
+      "jobs": [
+        {
+          "id": 121423525773,
+          "name": "z3-smoke",
+          "conclusion": "success",
+          "executed_test_result_lines": [],
+          "passed_sum": 0,
+          "ignored_sum": 0,
+          "actual_native_test_names": [],
+          "cli_signal_test_names": []
+        }
+      ]
+    }
+  ],
+  "scope": "Existing CI execution only; controlled signal fixtures and pinned native contracts, not full Mathlib4.9 population throughput or independent audit."
+}

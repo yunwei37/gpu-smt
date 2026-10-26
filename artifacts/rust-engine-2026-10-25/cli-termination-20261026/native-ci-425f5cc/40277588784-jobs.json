@@ -1,0 +1,129 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 121423525773,
+      "run_id": 40277588784,
+      "workflow_name": "benchmark-smoke",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/runs/40277588784",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUy3vaM8AAAAcRWf3jQ",
+      "head_sha": "425f5cc15a62645d3f99dfb921bb879030ba3e8c",
+      "url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/jobs/121423525773",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40277588784/job/121423525773",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T06:03:06Z",
+      "started_at": "2026-10-26T06:03:08Z",
+      "completed_at": "2026-10-26T06:04:22Z",
+      "name": "z3-smoke",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-26T06:03:09Z",
+          "completed_at": "2026-10-26T06:03:10Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-26T06:03:10Z",
+          "completed_at": "2026-10-26T06:04:05Z"
+        },
+        {
+          "name": "Install Z3",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-26T06:04:05Z",
+          "completed_at": "2026-10-26T06:04:15Z"
+        },
+        {
+          "name": "Syntax and unit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-26T06:04:15Z",
+          "completed_at": "2026-10-26T06:04:15Z"
+        },
+        {
+          "name": "Run synthetic cold-vs-incremental CLI benchmark",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-26T06:04:15Z",
+          "completed_at": "2026-10-26T06:04:16Z"
+        },
+        {
+          "name": "Run direct libz3 state-reuse benchmark",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-26T06:04:16Z",
+          "completed_at": "2026-10-26T06:04:17Z"
+        },
+        {
+          "name": "Decompose reuse levels",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-26T06:04:17Z",
+          "completed_at": "2026-10-26T06:04:17Z"
+        },
+        {
+          "name": "Analyze cross-query prefix reuse",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-26T06:04:17Z",
+          "completed_at": "2026-10-26T06:04:18Z"
+        },
+        {
+          "name": "Validate benchmark output",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-26T06:04:18Z",
+          "completed_at": "2026-10-26T06:04:18Z"
+        },
+        {
+          "name": "Upload smoke benchmark artifacts",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-26T06:04:18Z",
+          "completed_at": "2026-10-26T06:04:20Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-26T06:04:20Z",
+          "completed_at": "2026-10-26T06:04:20Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-26T06:04:20Z",
+          "completed_at": "2026-10-26T06:04:20Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/yunwei37/gpu-smt/check-runs/121423525773",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000004124,
+      "runner_name": "GitHub Actions 1000004124",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

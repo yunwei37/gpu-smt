@@ -105,3 +105,12 @@ Publication check note:the initial whole-index whitespace check reports native
 Cargo log blank/trailing whitespace. Preserve those raw bytes. Source/docs/
 scripts pass the check with only raw*.log files excluded;no whitespace policy,
 attribute or output cleanup is introduced. This is not a code/test failure.
+
+## Post-publication executed CI
+
+Exact425f5cc engine40277588695 and benchmark-smoke40277588784 both succeed.
+Rustjob actually executes51ordinarytests including bothnewCLItests;the separate
+nativejob actually executes4pinnednativecontracts,4passed/0failed/0ignored.
+[Executed receipt/log/self-review](../../../../artifacts/rust-engine-2026-10-25/cli-termination-20261026/native-ci-425f5cc/result-review.md)
+resolves pendingCI without reclassifying fixture tests or existing4.18contracts
+as fullMathlib4.9/nativeSIGTERM/performance evidence. No code/runtime change.
