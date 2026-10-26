@@ -97,13 +97,18 @@ def main():
     parser.add_argument("--inputs", type=Path, required=True)
     parser.add_argument("--sites", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--mode", choices=["close", "map"], default="close",
+                        help="close: require closed leaves; map: collect first-stage survivors")
     args = parser.parse_args()
     original = json.loads(gzip.decompress(args.inputs.read_bytes()))
     parsed = {row["id"]: row for row in json.loads(args.sites.read_text())}
     assert len(original["candidates"]) == 48
     assert len({c["id"] for c in original["candidates"]}) == 48
     args.out.mkdir(exist_ok=False)
-    variants = {"import-control": [], "lazy": []}
+    variant_name = "lazy" if args.mode == "close" else "mapped"
+    module_name = "IntervalContinuation" if args.mode == "close" else "IntervalMap"
+    tactic_name = b"interval_cases_then" if args.mode == "close" else b"interval_cases_map"
+    variants = {"import-control": [], variant_name: []}
     manifest, unsupported = [], []
     counts = collections.Counter()
     for candidate in original["candidates"]:
@@ -135,23 +140,32 @@ def main():
                         assert len(names) == 1
                         name = names[0]
                         terms.append(raw[name["start_byte"]:name["end_byte"]])
-                    tail = raw[parts[leading]["start_byte"]:node["end_byte"]]
+                    first_stage_end = parts[leading]["end_byte"]
+                    tail_end = node["end_byte"] if args.mode == "close" else first_stage_end
+                    tail = raw[parts[leading]["start_byte"]:tail_end]
                     replacement = b"(" + tail + b")"
                     for term in reversed(terms):
-                        replacement = b"(interval_cases_then " + term + b" => " + replacement + b")"
+                        replacement = b"(" + tactic_name + b" " + term + b" => " + replacement + b")"
+                    if args.mode == "map":
+                        # Preserve the original suffix, including separators/comments.
+                        # Only the first post-expansion tactic is interleaved.
+                        replacement += raw[first_stage_end:node["end_byte"]]
                     chains.append(dict(start=node["start_byte"], end=node["end_byte"],
                         replacement=replacement, variables=[t.decode() for t in terms],
+                        first_stage_kind=parts[leading]["kind"],
+                        preserved_suffix_kinds=[p["kind"] for p in parts[leading + 1:]]
+                            if args.mode == "map" else [],
                         tail_kinds=[p["kind"] for p in parts[leading:]]))
                     counts[str(leading) + "_interval_chain"] += 1
         if not chains:
             unsupported.append(dict(id=candidate["id"], reason="no supported terminal chain"))
         header = row["header_end_byte"]
         assert 0 <= header <= min([c["start"] for c in chains] or [len(raw)])
-        addition = b"\nimport IntervalContinuation\n\n"
+        addition = ("\nimport " + module_name + "\n\n").encode()
         header_edit = dict(start=header, end=header, replacement=addition)
         control, control_mapping = apply(raw, [header_edit])
         lazy, lazy_mapping = apply(raw, [header_edit] + chains)
-        for name, code in [("import-control", control), ("lazy", lazy)]:
+        for name, code in [("import-control", control), (variant_name, lazy)]:
             variants[name].append(dict(candidate, code=code.decode(), reuse=False))
         manifest.append(dict(id=candidate["id"], original_bytes=len(raw),
             chain_count=len(chains), interval_sites=sum(len(c["variables"]) for c in chains),
@@ -162,14 +176,14 @@ def main():
     for name, candidates in variants.items():
         compressed(args.out / (name + ".json.gz"), dict(original, candidates=candidates))
     compressed(args.out / "parser-inputs.json.gz",
-        [dict(id=c["id"], code=c["code"]) for c in variants["lazy"]])
-    report = dict(sources=48, prepared_chains=sum(x["chain_count"] for x in manifest),
+        [dict(id=c["id"], code=c["code"]) for c in variants[variant_name]])
+    report = dict(mode=args.mode, sources=48, prepared_chains=sum(x["chain_count"] for x in manifest),
         interval_sites=sum(x["interval_sites"] for x in manifest),
         chain_distribution=dict(counts), unsupported=unsupported, manifest=manifest,
         native_candidate_executions=0, generated_native_parse_status="pending",
         certified_global_failures=None, certified_timeout_fraction=None,
         semantic_equivalence_claim=False,
-        scope="Native AST and exact inverse edits; experimental reassociation, not rejection.")
+        scope="Native AST and exact inverse edits; experimental construction/tactic interleaving, not rejection.")
     (args.out / "preparation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     (args.out / "run-source.py").write_bytes(Path(__file__).read_bytes())
     print(json.dumps({k:v for k,v in report.items() if k != "manifest"}))

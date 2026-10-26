@@ -1,0 +1,1 @@
+Initial structural check incorrectly required one AST node per exact span. minif2f-7200 has tacticSeq/tacticSeq1Indented/null/paren wrappers sharing one span (AssertionError: ('minif2f-7200', 4)). Correction selects tactic_<;> or paren, leaving native parser output unchanged.

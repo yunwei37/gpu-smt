@@ -113,7 +113,13 @@ now compiles against the retained4.9API. It defers proof-tree leaves until a
 closing callback needs them; it does not hook original tactics or reject
 requests. Nine small native/prototype paired controls execute with matching status.
 Original48 complete variants now have native grammar and exact-edit validation;
-actual cohort behavior/performance remains unmeasured. Native left-associative
+actual cohort behavior/performance remains unmeasured. A separate first-stage
+IntervalMap now compiles and allows open survivors,keeping later suffix stages
+outside instead of requiring the whole closer at each leaf. Actual native
+grammar validates all48sources/116calls and22prepared control sources.
+[Implementation/validation](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md).
+No new proof control or original candidate body has run for this map.
+Native left-associative
 stage accumulation and nested continuations differ, so failed speculative leaves
 do not yet constitute a reliable early-failure witness.
 The code-verification/math workloads and all four paper RQs remain open.

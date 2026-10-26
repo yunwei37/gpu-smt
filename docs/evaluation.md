@@ -14,8 +14,8 @@ public contracts, tests/CI/examples/docs first, then all three workload directio
 on that foundation. Resource mechanisms are prior techniques, not novelty.
 The next point has48GiB actual aggregate RSS, no fixed per-process AS cap,
 measured CPU-aligned dynamic admission and1s watchdog/exclusive requeue.
-The healthy old7808group remains frozen; its42resource failures will receive
-separate larger-memory isolated reruns after retirement. No result is yet
+The completed old7808group retains its historical settings; its42resource
+failures still require separate larger-memory isolated reruns. No result is yet
 claimed for the new point. [API/implementation scope](api.md).
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The real compiler bitvector workload remains in progress.
@@ -46,12 +46,17 @@ Exact latest user words remain in [user-instruction](user-instruction.md).
 
 ## Resource point and workloads
 
-All own capture trees share48GiB aggregate sampledRSS, at most2actual live
-verification REPLs including startup/cache/retirement,24GiBAS each,CPU8–11.
-The independent parent samples every1s and kills the largest owned REPL on
-excess, preserving source/PID/birth/resource_failure. This is a sampled
-response, not a kernel RSS quota. No otherWorkspace/quota/permission changes.
-[Implementation and actual fault/positive qualification](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
+New capture trees share48GiB aggregate actual sampledRSS,CPU8–11,up to four
+one-core workers under dynamic memory/CPU admission,no fixed per-process AS
+limit. Every1s the watchdog preempts/reaps the largest owned attempt on excess
+and requeues it for an exclusive retry under the same total budget. A retry
+exceeding that budget remains an explicit resource failure. Sampling can
+overshoot between observations and is not a kernel quota. OtherWorkspaces and
+container quotas/permissions are unchanged.
+
+Historical groups retain their own at-most2liveREPL/24GiBAS-per-process point.
+Never pool their clocks with the new resource point.
+[Historical implementation and actual fault/positive qualification](../artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
 
 | Workload | Retained input/version | Current scope |
 |---|---|---|
@@ -310,3 +315,15 @@ subprocess retirement and surviving shared RL demand; they do not measure native
 stream latency or throughput. The frozen fullpair remains at42659a8.
 The existing task-held-out lexical ranker remains a negative offline result;
 no new model is trained from ambiguous old per-request RSS or incomplete new data.
+
+## Interval first-stage mapping preparation
+
+[Step0046 implementation evidence](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md)
+adds opt-in leaf mapping with survivors,not a detector. All48original sources
+(116sites) parse natively;19norm_num-first chains preserve later native suffixes,
+17omega and12simp_all chains have no later suffix. Definition compilation and
+22small control source parses execute zero candidate proofs. Exact inverse edits
+and unchanged default-close source artifacts pass. Runtime parity,resource
+savings,end-to-end speed and sufficient-failure coverage are unknown.
+Existing0/71closed-tail result stays frozen. New construction/tactic interleaving
+is still experimental; service rejection remains disabled. No RQ is closed.

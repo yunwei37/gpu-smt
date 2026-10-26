@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "/workspaces/repository/bench/lean-failure-profile/interval-continuation/prepare-cohort.py",
+    "--inputs",
+    "/workspaces/repository/artifacts/hotspot-mechanisms-2026-10-25/interval-bound-profile/prepared-interval48/original.json.gz",
+    "--sites",
+    "/workspaces/repository/artifacts/hotspot-mechanisms-2026-10-25/goal-effects/compile-002/sites.json",
+    "--out",
+    "/tmp/gpu-smt-interval-map-20261026/close-backcompat-001"
+  ],
+  "exit": 0,
+  "preserved_source_artifacts": [
+    "original.json.gz",
+    "import-control.json.gz",
+    "lazy.json.gz",
+    "parser-inputs.json.gz"
+  ],
+  "bytes_identical": true,
+  "native_candidate_executions": 0
+}

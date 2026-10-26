@@ -1,0 +1,16 @@
+/workspaces/repository/bench/lean-failure-profile/interval-continuation/IntervalMap.lean:45:43: error: application type mismatch
+  continuation.raw
+argument
+  continuation
+has type
+  TSyntax `tacticSeq : Type
+but is expected to have type
+  TSyntax `Lean.Parser.Tactic.tacticSeq : Type
+/workspaces/repository/bench/lean-failure-profile/interval-continuation/IntervalMap.lean:60:55: error: application type mismatch
+  mapInterval __do_lift✝ term.raw continuation
+argument
+  continuation
+has type
+  TSyntax `Lean.Parser.Tactic.tacticSeq : Type
+but is expected to have type
+  TSyntax `tacticSeq : Type

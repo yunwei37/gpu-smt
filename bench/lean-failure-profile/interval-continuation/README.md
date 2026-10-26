@@ -72,3 +72,40 @@ resource-limited outcomes. This is an explicit experimental variant, not a
 transparent automatic rewrite or a sufficient failure certificate. It is
 disabled in the engine. Keep unknown fallback; do not infer guaranteed timeout
 from syntactic range count or failed speculative leaves.
+
+## First-stage map (runtime qualification pending)
+
+[IntervalMap.lean](IntervalMap.lean) adds a separate opt-in form which allows
+surviving goals. It interleaves one pruning stage with interval construction,
+collects survivors in leaf order, and leaves later stages outside:
+
+```lean
+(interval_cases_map m => (interval_cases_map n => norm_num at h)) <;> omega
+```
+
+Unlike interval_cases_then, the callback need not close each goal. Native
+all_goals handles callback errors/recovery; propagated construction errors
+restore tactic entry state. Errors are never interpreted as a mathematical
+counterexample or a guaranteed native failure. Surviving goals and completed
+proof terms can still consume large memory; bounded live memory is not proved.
+
+Prepare the retained original48 source variants with:
+
+```sh
+python3 bench/lean-failure-profile/interval-continuation/prepare-cohort.py \
+  --mode map --inputs ORIGINAL48.json.gz --sites NATIVE_SITES.json --out OUTPUT
+```
+
+Default mode remains the previous closing-continuation preparation, with all
+four retained source artifacts byte-identical. The new mode changes only the
+native interval chain and its first subsequent tactic; exact suffix bytes,
+comments, variable order and inverse edits are checked. All48sources/116sites
+pass native parsing. First stages:19norm_num,17omega,12simp_all. Only the19
+norm_num sources have a later stage suffix. [Evidence and pending controls](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md).
+
+Definition compilation and parsing do not execute proofs. The22prepared
+native/map controls (11pairs) and original48runtime comparison remain pending
+the sole acquisition slot. No reliable-failure or speedup result follows.
+Native left-associated eager staging and this construction/first-stage
+interleaving still differ in metavariable history, recovery, tags and resources;
+this is not an automatic service rewrite or transparent rejection path.
