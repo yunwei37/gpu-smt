@@ -876,3 +876,108 @@ async fn unread_stream_cancels_checked_siblings_and_emits_complete_rows() {
     assert_eq!(results[&2].outcome.status, Status::Accepted);
     e.shutdown().await;
 }
+
+// A resident import parent/engine can strand an otherwise idle queue when
+// a source forecast fits the total budget but not remaining headroom.
+// Toy units and a fixture backend: this is not a native speed/acceptance test.
+struct IdleHeadroom {
+    rss: AtomicUsize,
+    calls: AtomicUsize,
+    reclaims: AtomicUsize,
+}
+impl ResourceMonitor for IdleHeadroom {
+    fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+        Ok(ResourceSnapshot {
+            rss_bytes: self.rss.load(Ordering::SeqCst) as u64,
+            processes: vec![],
+        })
+    }
+}
+#[async_trait]
+impl VerificationBackend for IdleHeadroom {
+    fn identity(&self) -> String {
+        "idle-headroom-fixture-not-Lean".into()
+    }
+    async fn verify(&self, _: &Candidate, _: Execution) -> Outcome {
+        self.calls.fetch_add(1, Ordering::SeqCst);
+        Outcome {
+            status: Status::Accepted,
+            response: Some(json!({"messages":[]})),
+            error: None,
+        }
+    }
+    async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
+        self.reclaims.fetch_add(1, Ordering::SeqCst);
+        self.rss.store(0, Ordering::SeqCst);
+        self.verify(c, x).await
+    }
+}
+struct FixedForecast(u64);
+impl SchedulingPolicy for FixedForecast {
+    fn priority(&self, _: &Candidate) -> u64 {
+        0
+    }
+    fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+        Some(self.0)
+    }
+}
+#[tokio::test]
+async fn idle_native_state_cannot_strand_a_large_forecast() {
+    for (idle_rss, forecast, reclaims, accepted) in [
+        (20, 1, 0, true),
+        (20, 90, 1, true),
+        (20, 100, 1, true),
+        (20, 200, 1, true),
+        (101, 90, 0, false),
+    ] {
+        let backend = Arc::new(IdleHeadroom {
+            rss: AtomicUsize::new(idle_rss),
+            calls: AtomicUsize::new(0),
+            reclaims: AtomicUsize::new(0),
+        });
+        let engine = Engine::new(
+            Config {
+                memory_bytes: 100,
+                cpus: vec![0, 1],
+                cores_per_worker: 1,
+            },
+            backend.clone(),
+            Arc::new(FixedForecast(forecast)),
+            backend.clone(),
+            Arc::new(HeadroomAdmission),
+            Arc::new(MemoryCache::default()),
+        )
+        .unwrap();
+        let result = tokio::time::timeout(
+            Duration::from_secs(5),
+            engine.verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![candidate("large", "source", "one")],
+            }),
+        )
+        .await;
+        engine.shutdown().await;
+        let rows = result
+            .expect("idle resident memory strands a below-total-budget forecast")
+            .unwrap();
+        assert_eq!(
+            rows[0].outcome.status,
+            if accepted {
+                Status::Accepted
+            } else {
+                Status::BackendError
+            }
+        );
+        assert_eq!(backend.calls.load(Ordering::SeqCst), usize::from(accepted));
+        assert_eq!(backend.reclaims.load(Ordering::SeqCst), reclaims);
+        if accepted {
+            assert_eq!(rows[0].attempts.len(), 1);
+            assert_eq!(rows[0].attempts[0].exclusive, reclaims > 0);
+        } else {
+            assert!(
+                rows[0].attempts.is_empty(),
+                "actual over-budget RSS must block execution"
+            );
+        }
+    }
+}

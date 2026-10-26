@@ -336,3 +336,14 @@ by the observer. Actual retained4.9definitions compile;four analyzer tests keep
 legacy native timings/origins unchanged while classifying legacy action outcomes
 as unknown. This does not execute the23originals or establish failure/cycle
 coverage. New observer parity/overhead remain pending;no detector is enabled.
+
+## Idle-headroom liveness repair
+
+[Reproduced and repaired boundary](../artifacts/rust-engine-2026-10-25/idle-headroom-20261026/README.md):
+a forecast below total memory can exceed idle headroom and otherwise wait with
+no active peer to retire. Initial exclusive admission now uses existing idle
+preparation reclamation,still subject to actualRSS/watchdog/CPU policy.
+A fixture regression fails on old code and passes after repair;49ordinary tests
+pass. Pinned-native CI will exercise actual engine-to-parent eviction;not locally
+executed alongside the fullpair. Current fullpair remains42659a8and no native
+performance or original accepted-set conclusion follows from this fix.

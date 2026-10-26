@@ -410,7 +410,7 @@ impl VerificationBackend for PreparedRepl {
     async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
         let deadline = Instant::now() + Duration::from_millis(c.timeout_ms);
         {
-            // Engine grants this retry only after other attempts retire. Hold
+            // Engine grants exclusive headroom only after peers retire. Hold
             // the state lock through graceful teardown so no new branch can
             // acquire this parent while its memory is being reclaimed.
             let mut state = self.state.lock().await;

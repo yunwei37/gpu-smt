@@ -245,6 +245,7 @@ struct Inner {
 struct Lease {
     inner: Arc<Inner>,
     id: u64,
+    reclaim_idle: bool,
 }
 impl Drop for Lease {
     fn drop(&mut self) {
@@ -412,9 +413,20 @@ impl Inner {
                             .filter(|n| *n > 0)
                             .max()
                     });
+                // An idle prepared parent/engine also consumes headroom. A
+                // forecast below the total budget must not wait forever when
+                // no active attempt can retire to make that reservation fit.
+                let forecast_exclusive = estimate.is_some_and(|n| {
+                    n >= self.config.memory_bytes
+                        || (s.active.is_empty()
+                            && sample
+                                .rss_bytes
+                                .checked_add(n)
+                                .is_none_or(|sum| sum > self.config.memory_bytes))
+                });
                 let actual_exclusive = solo
                     || self.config.cores_per_worker == self.config.cpus.len()
-                    || estimate.is_some_and(|n| n >= self.config.memory_bytes);
+                    || forecast_exclusive;
                 let unknown = estimate.is_none() && !s.active.is_empty();
                 let exclusive_block = s.active.values().any(|a| a.exclusive)
                     || if actual_exclusive {
@@ -463,6 +475,18 @@ impl Inner {
                     }
                     let id = self.next.fetch_add(1, Ordering::Relaxed);
                     let registry = Arc::new(Registry::new(origin.to_owned(), id));
+                    if forecast_exclusive && !solo {
+                        registry.note(BackendEvent {
+                            stage: "exclusive_headroom".into(),
+                            detail: serde_json::json!({
+                                "forecast_bytes": estimate,
+                                "actual_idle_rss_bytes": sample.rss_bytes,
+                                "budget_bytes": self.config.memory_bytes,
+                                "prior_attempt_required": false
+                            })
+                            .to_string(),
+                        });
+                    }
                     s.active.insert(
                         id,
                         Active {
@@ -476,6 +500,7 @@ impl Inner {
                         Lease {
                             inner: self.clone(),
                             id,
+                            reclaim_idle: solo || forecast_exclusive,
                         },
                         registry,
                         cpus,
@@ -522,7 +547,7 @@ impl Inner {
                 r=self.acquire(predicted,&c.id,exclusive,queued)=>r,
                 _=tx.closed()=>break Outcome::operational(Status::Cancelled,"no live subscribers"),
             };
-            let (_lease, registry, cpus, exclusive) = match acquired {
+            let (lease, registry, cpus, exclusive) = match acquired {
                 Ok(v) => v,
                 Err(e) => break Outcome::operational(Status::BackendError, e),
             };
@@ -532,7 +557,7 @@ impl Inner {
                 cpus,
                 registry: registry.clone(),
             };
-            let future = if solo {
+            let future = if lease.reclaim_idle {
                 self.backend.verify_resource_retry(&c, execution)
             } else {
                 self.backend.verify(&c, execution)

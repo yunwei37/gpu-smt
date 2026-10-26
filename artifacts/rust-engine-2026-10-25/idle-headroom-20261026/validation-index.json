@@ -1,0 +1,200 @@
+{
+  "scope": "Regression/ordinary development validation, not native workload performance",
+  "baseline_source": "484fd5754defd208a092a82f4803fb450dab289c",
+  "runs": [
+    {
+      "path": "artifacts/rust-engine-2026-10-25/validation-20261026T041141",
+      "steps": [
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "test",
+            "-p",
+            "gpu-smt-engine",
+            "--test",
+            "engine",
+            "--locked",
+            "-j",
+            "2",
+            "idle_native_state_cannot_strand_a_large_forecast",
+            "--",
+            "--exact",
+            "--nocapture"
+          ],
+          "exit": 101,
+          "seconds": 8.156392401084304
+        }
+      ]
+    },
+    {
+      "path": "artifacts/rust-engine-2026-10-25/validation-20261026T041409",
+      "steps": [
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "fmt",
+            "--all"
+          ],
+          "exit": 0,
+          "seconds": 0.12008827994577587
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "fmt",
+            "--all",
+            "--",
+            "--check"
+          ],
+          "exit": 0,
+          "seconds": 0.11943820910528302
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "clippy",
+            "--workspace",
+            "--all-targets",
+            "--locked",
+            "-j",
+            "2",
+            "--",
+            "-D",
+            "warnings"
+          ],
+          "exit": 0,
+          "seconds": 1.9678522429894656
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "test",
+            "--workspace",
+            "--all-targets",
+            "--locked",
+            "-j",
+            "2"
+          ],
+          "exit": 0,
+          "seconds": 16.129800661001354
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "doc",
+            "--workspace",
+            "--no-deps",
+            "--locked",
+            "-j",
+            "2"
+          ],
+          "exit": 0,
+          "seconds": 1.9544191698078066
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "run",
+            "-p",
+            "gpu-smt-server",
+            "--bin",
+            "gpu-smt",
+            "--",
+            "--help"
+          ],
+          "exit": 0,
+          "seconds": 0.05614359793253243
+        }
+      ]
+    },
+    {
+      "path": "artifacts/rust-engine-2026-10-25/validation-20261026T041840",
+      "steps": [
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "fmt",
+            "--all"
+          ],
+          "exit": 0,
+          "seconds": 0.12006127089262009
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "fmt",
+            "--all",
+            "--",
+            "--check"
+          ],
+          "exit": 0,
+          "seconds": 0.12018350185826421
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "clippy",
+            "--workspace",
+            "--all-targets",
+            "--locked",
+            "-j",
+            "2",
+            "--",
+            "-D",
+            "warnings"
+          ],
+          "exit": 0,
+          "seconds": 0.4030061010271311
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "test",
+            "--workspace",
+            "--all-targets",
+            "--locked",
+            "-j",
+            "2"
+          ],
+          "exit": 0,
+          "seconds": 10.402917869854718
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "doc",
+            "--workspace",
+            "--no-deps",
+            "--locked",
+            "-j",
+            "2"
+          ],
+          "exit": 0,
+          "seconds": 0.5657131499610841
+        },
+        {
+          "command": [
+            "/usr/local/cargo/bin/cargo",
+            "run",
+            "-p",
+            "gpu-smt-server",
+            "--bin",
+            "gpu-smt",
+            "--",
+            "--help"
+          ],
+          "exit": 0,
+          "seconds": 0.05711809708736837
+        }
+      ]
+    }
+  ],
+  "original_full_implementation": "42659a883dbea2c0fb64111736ffd0c4ec4a7744",
+  "original_full_pid": 408739,
+  "original_full_start_ticks": 140695363,
+  "native_local_executions": 0,
+  "development_cpu_affinity": [
+    10,
+    11
+  ]
+}

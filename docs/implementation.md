@@ -46,8 +46,10 @@ start conservatively. Prediction never proves rejection.
 
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive
-attempt. PreparedRepl evicts its idle import parent before that resource retry,
-runs it fresh under the same request deadline, and allows preparation again on
+attempt. An otherwise idle queue also promotes a forecast that cannot fit
+resident headroom to exclusive admission instead of waiting forever.
+PreparedRepl evicts its idle parent for this initial admission or resource retry,
+runs fresh under the same request deadline,and allows preparation again on
 later ordinary work. This restores the budget formerly consumed by idle state;
 eviction/fallback remain in attempt provenance. That attempt still exceeding the total budget becomes an explicit
 resource failure, with all attempt costs retained. Last-subscriber cancellation

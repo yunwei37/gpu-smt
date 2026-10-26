@@ -92,12 +92,20 @@ returns resource_exhausted; concurrent preemptions remain in attempts.
 Predictions never reject oversized work without an actual solo execution.
 Queueing, retry and retirement are charged. Sampling is not a kernel quota.
 
-VerificationBackend::verify_resource_retry defaults to verify, so existing
-backend implementations need no change. Engine invokes it only for a resource
-retry under exclusive admission after preceding attempts retire. PreparedRepl
-reclaims its idle parent and runs this retry through its unchanged fresh native
-backend, retaining prepared_evicted and fresh_fallback events. The same request
-deadline includes teardown; later ordinary requests may prepare again.
+VerificationBackend::verify_resource_retry defaults to verify. Engine invokes
+it after peers retire for a resource retry or an initial exclusive request whose
+forecast cannot fit idle headroom. Implementations overriding this0.1hook must
+not require a preceding failed attempt;the signature/default remain unchanged.
+PreparedRepl reclaims its idle parent and runs fresh native verification,
+retaining prepared_evicted and fresh_fallback events. The same request deadline
+includes teardown;later ordinary requests may prepare again.
+
+When no attempt is active,a below-budget forecast can still exceed remaining
+headroom because the engine/prepared parent consumes actual memory. Such work
+gets exclusive reclamation,not an indefinite reservation wait or predicted
+rejection. Actual measured RSS must still satisfy the admission policy;the
+watchdog/CPU budget remains unchanged. Attempt.exclusive does not imply an
+earlier failure,and exclusive_headroom records initial forecast/RSS/budget.
 Candidate/Execution JSON and source semantics are unchanged.
 
 Current backend scope is Linux and a cooperative persistent native REPL;
@@ -141,7 +149,7 @@ Lean+C adapter. The default stays fresh-process. See [native build/lifecycle and
 limitations](../native/lean/README.md). Preparation and child checks share the
 original request timeout; remaining time is passed to any fresh fallback.
 Attempt histories include the parent during active preparation; after readiness
-it becomes shared backend-owned state until shutdown or exclusive-retry eviction. Disposable candidate
+it becomes shared backend-owned state until shutdown or exclusive-resource eviction. Disposable candidate
 children retire before each result. Backend readiness is reported separately
 from general resource health.
 

@@ -125,7 +125,8 @@ pub struct Attempt {
     /// Observation kinds remain in backend_events; this is not a complete
     /// aggregate or kernel process-tree high-water mark.
     pub peak_rss_bytes: u64,
-    /// Exclusive retry after concurrent preemption.
+    /// Attempt admitted without peers, including large forecasts and retries.
+    /// This does not imply a preceding failed attempt.
     pub exclusive: bool,
     /// Actual process births, retained after reaping.
     pub processes: Vec<ProcessIdentity>,
@@ -248,8 +249,9 @@ pub trait VerificationBackend: Send + Sync {
     }
     /// Return after attempt children retire; shared prepared state retires at shutdown.
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome;
-    /// Execute a resource retry after the preceding attempt has fully retired
-    /// and this engine has granted exclusive admission. Backends may reclaim
+    /// Execute after exclusive resource admission and retirement of all peers.
+    /// Called for a retry or a first attempt whose forecast needs idle headroom.
+    /// Implementations must not require a preceding attempt. Backends may reclaim
     /// idle prepared state; the default retains ordinary verification behavior.
     /// Cleanup must be included in the attempt and native request deadline.
     async fn verify_resource_retry(&self, candidate: &Candidate, execution: Execution) -> Outcome {

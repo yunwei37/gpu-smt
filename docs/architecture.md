@@ -53,8 +53,9 @@ synchronous imports. Each candidate runs in
 a disposable OS child, whose connection is retired only after native waitpid.
 The parent remains in total owned RSS. Different imports and preparation faults
 use the original fresh backend within the remaining request timeout.
-After an RSS preemption, the exclusive resource retry instead retires the idle
-import parent and uses fresh native execution for that retry. Parent teardown
+After an RSS preemption,or an initial forecast that cannot fit idle headroom,
+exclusive resource admission retires the idle import parent and uses fresh
+native execution. Actual RSS admission and watchdog still apply. Parent teardown
 and fallback share its request deadline and appear in attempt provenance.
 Later ordinary work can prepare a new parent; ordinary candidate timeout or
 consumer cancellation still preserves it. Eviction is a resource mechanism,

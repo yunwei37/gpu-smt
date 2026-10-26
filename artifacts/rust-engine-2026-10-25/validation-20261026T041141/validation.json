@@ -1,0 +1,25 @@
+{
+  "UTC": "2026-10-26T04:11:50.079328+00:00",
+  "steps": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "-p",
+        "gpu-smt-engine",
+        "--test",
+        "engine",
+        "--locked",
+        "-j",
+        "2",
+        "idle_native_state_cannot_strand_a_large_forecast",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "exit": 101,
+      "seconds": 8.156392401084304
+    }
+  ],
+  "native_differential": "Native tests compiled but not executed by ordinary checks; full7808resourcepair remains sole active native acquisition. Headroom regression uses fixture bytes/backend, not native performance evidence."
+}

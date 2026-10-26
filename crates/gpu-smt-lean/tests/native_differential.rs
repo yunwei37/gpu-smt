@@ -217,6 +217,19 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         2,
         "native concurrency contract requires two eligible cores"
     );
+    // Explicit source forecast is a reservation, not an allocation/limit.
+    // The later headroom control changes this policy for one request only.
+    struct Forecast(std::sync::atomic::AtomicU64);
+    impl SchedulingPolicy for Forecast {
+        fn priority(&self, _: &Candidate) -> u64 {
+            0
+        }
+        fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+            let bytes = self.0.load(std::sync::atomic::Ordering::Relaxed);
+            (bytes > 0).then_some(bytes)
+        }
+    }
+    let forecast = Arc::new(Forecast(std::sync::atomic::AtomicU64::new(0)));
     let engine = Engine::new(
         Config {
             memory_bytes: 48 << 30,
@@ -224,7 +237,7 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             cores_per_worker: 1,
         },
         backend.clone(),
-        Arc::new(Fifo),
+        forecast.clone(),
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
         Arc::new(MemoryCache::default()),
@@ -467,24 +480,13 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             .iter()
             .flat_map(|a| a.processes.iter().cloned()),
     );
-    // Engine routing is covered by the preemption test. Here exercise the
-    // real native backend's exclusive retry after all earlier work retired.
-    // This is a lifecycle control, not a real-memory-pressure performance run.
-    #[derive(Default)]
-    struct RetryRegistry {
-        seen: std::sync::Mutex<Vec<ProcessIdentity>>,
-        events: std::sync::Mutex<Vec<BackendEvent>>,
-    }
-    impl ProcessRegistry for RetryRegistry {
-        fn note(&self, event: BackendEvent) {
-            self.events.lock().unwrap().push(event);
-        }
-        fn register(&self, process: ProcessIdentity) {
-            self.seen.lock().unwrap().push(process);
-        }
-        fn unregister(&self, _: &ProcessIdentity) {}
-    }
-    let retry_registry = Arc::new(RetryRegistry::default());
+    // Exercise the actual engine's initial exclusive-headroom dispatch.
+    // The prediction is below the total budget but exceeds idle headroom
+    // because this process/import parent necessarily consumes more than1byte.
+    // No memory is allocated for the forecast; this is a lifecycle control.
+    forecast
+        .0
+        .store((48_u64 << 30) - 1, std::sync::atomic::Ordering::Relaxed);
     let retry_source = Candidate {
         id: "exclusive-retry".into(),
         task_id: None,
@@ -492,18 +494,29 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         timeout_ms: 300000,
         reuse: false,
     };
-    let retry = backend
-        .verify_resource_retry(
-            &retry_source,
-            Execution {
-                cancel: Default::default(),
-                cpus: cpus.clone(),
-                registry: retry_registry.clone(),
-            },
-        )
-        .await;
-    assert_eq!(retry.status, Status::Accepted);
-    assert_eq!(retry.response, first_expected);
+    let mut retries = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![retry_source.clone()],
+        })
+        .await
+        .unwrap();
+    forecast.0.store(0, std::sync::atomic::Ordering::Relaxed);
+    let retry = retries.remove(0);
+    assert_eq!(retry.outcome.status, Status::Accepted);
+    assert_eq!(retry.outcome.response, first_expected);
+    assert_eq!(
+        retry.attempts.len(),
+        1,
+        "forecast must not fabricate a failed attempt"
+    );
+    assert!(retry.attempts[0].exclusive);
+    assert!(
+        retry.attempts[0]
+            .backend_events
+            .iter()
+            .any(|event| event.stage == "exclusive_headroom")
+    );
     assert!(
         !engine.prepared_state_ready(),
         "exclusive retry recreated the parent"
@@ -512,12 +525,16 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         gpu_smt_engine::linux::identity(parent.as_ref().unwrap().pid).is_err(),
         "old prepared parent consumes memory after exclusive retry"
     );
-    assert!(retry_registry.events.lock().unwrap().iter().any(|event| {
+    assert!(retry.attempts[0].backend_events.iter().any(|event| {
         event.stage == "prepared_evicted"
             && serde_json::from_str::<serde_json::Value>(&event.detail)
                 .is_ok_and(|v| v["parent_pid"] == parent.as_ref().unwrap().pid)
     }));
-    let retry_processes = retry_registry.seen.lock().unwrap().clone();
+    let retry_processes: Vec<_> = retry
+        .attempts
+        .iter()
+        .flat_map(|a| a.processes.iter().cloned())
+        .collect();
     assert_eq!(
         retry_processes.len(),
         1,
