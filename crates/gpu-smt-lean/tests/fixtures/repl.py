@@ -4,6 +4,9 @@ code = json.loads(sys.stdin.readline())["cmd"]
 if code.startswith("memory_"):
     retained = bytearray(16 * 1024 * 1024)
     time.sleep(2.2)
+if code == "eof_flush":
+    # Model a real REPL that buffers its reply until its next read reaches EOF.
+    sys.stdin.read()
 if code == "slow":
     time.sleep(60)
 if code == "stderr":

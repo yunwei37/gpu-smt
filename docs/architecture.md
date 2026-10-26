@@ -106,8 +106,8 @@ binary/environment, with exact accepted IDs, not just counts.
 
 Kimina core/check and legacy/verify shapes and Lean REPL JSON transport are
 separate contracts; unsupported infotrees/debug/auth/state handles must not
-be silently presented as full compatibility. The healthy old7808 capture
-keeps its frozen source and resource point; new-rule data are separate.
+be silently presented as full compatibility. The completed old7808 scheduling
+matrix retains its frozen source/resource point;new-rule data are separate.
 
 ## Layout and remaining evidence
 

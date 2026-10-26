@@ -1,0 +1,117 @@
+{
+  "returned_each": 24,
+  "statuses": {
+    "accepted": 21,
+    "rejected": 3
+  },
+  "accepted_and_status_sets_equal": true,
+  "historical24_labels_equal": true,
+  "import_parent_preparations": 1,
+  "imported_modules": 5545,
+  "fresh_fallbacks": 0,
+  "native_four_positive_RSS_affinity_leaders_observed": true,
+  "prepared_busy_four_worker_claim": false,
+  "all_attempt_parent_child_pids_retired": [
+    408034,
+    408035,
+    408036,
+    408037,
+    408038,
+    408040,
+    408041,
+    408042,
+    408043,
+    408044,
+    408045,
+    408046,
+    408047,
+    408048,
+    408049,
+    408050,
+    408051,
+    408052,
+    408053,
+    408054,
+    408056,
+    408057,
+    408058,
+    408059,
+    408061,
+    408062,
+    408063,
+    408064,
+    408065,
+    408066,
+    408067,
+    408068,
+    408069,
+    408070,
+    408071,
+    408072,
+    408073,
+    408074,
+    408075,
+    408076,
+    408077,
+    408078,
+    408079,
+    408080,
+    408081,
+    408082,
+    408083,
+    408084,
+    408085
+  ],
+  "root_retired": true,
+  "terminal": {
+    "native": {
+      "clock_scope": "input decoding through native shutdown, capture serialization, compression and compressor retirement",
+      "condition": "native",
+      "external_cell_seconds": 17.730862198,
+      "fixed_process_AS_cap": false,
+      "interrupted": false,
+      "observations": {
+        "max_observed_registered_leaders": 4,
+        "retained_samples": 15,
+        "sampled_peak_rss_bytes": 14515625984,
+        "scope": "RSS includes this driver/engine and all owned native/compressor descendants; registered leaders are not proof of busy CPU cores"
+      },
+      "resources": {
+        "cores_per_worker": 1,
+        "cpus": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "memory_bytes": 51539607552
+      },
+      "state": "complete"
+    },
+    "prepared": {
+      "clock_scope": "input decoding through native shutdown, capture serialization, compression and compressor retirement",
+      "condition": "prepared",
+      "external_cell_seconds": 3.931333937,
+      "fixed_process_AS_cap": false,
+      "interrupted": false,
+      "observations": {
+        "max_observed_registered_leaders": 4,
+        "retained_samples": 4,
+        "sampled_peak_rss_bytes": 5313019904,
+        "scope": "RSS includes this driver/engine and all owned native/compressor descendants; registered leaders are not proof of busy CPU cores"
+      },
+      "resources": {
+        "cores_per_worker": 1,
+        "cpus": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "memory_bytes": 51539607552
+      },
+      "state": "complete"
+    }
+  },
+  "scope": "Real native qualification only;startup-dominated24source clocks are not population gain or strongest-warm comparator."
+}

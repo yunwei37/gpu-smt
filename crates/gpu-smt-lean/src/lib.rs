@@ -236,6 +236,10 @@ impl VerificationBackend for NativeRepl {
             stdin.write_all(&text).await.map_err(|e| e.to_string())?;
             stdin.write_all(b"\n\n").await.map_err(|e| e.to_string())?;
             stdin.flush().await.map_err(|e| e.to_string())?;
+            // This backend owns one fresh process per command. EOF allows
+            // upstream versions without an explicit stdout flush to exit and
+            // flush their complete reply instead of waiting for a second input.
+            drop(stdin);
             response(stdout).await
         };
         tokio::pin!(io);

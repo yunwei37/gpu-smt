@@ -98,13 +98,16 @@ fractions or a proven early-rejection mechanism.
 
 Four directions continue: the layered Rust engine, reliable early failure/timeout determination,
 same-task ranking/cancellation for pass@k or best-of-n, and public Lean
-code-verification workloads. The sole active full collection now compares
-native all-candidate execution against two first-success scheduling policies
-on all 7,808 original candidates. Its [completed all-candidate cell](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all/result-review.md)
+code-verification workloads. The [completed scheduling matrix](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md)
+covers all 7,808 original candidates: all-candidate execution takes21,746.81s,
+original-order first-success15,385.39s(1.41347×),and source-size first-success
+15,112.12s(1.43903×). Both preserve exactly142solved problem IDs. These are
+single shared-host pass@k consumer comparisons,not RL per-candidate rewards
+or scheduling novelty. The [all-candidate cell](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all/result-review.md)
 returns 3,014 valid, 4,669 Lean errors, 82 timeouts and 43 allocation failures,
 with the same accepted set as the historical reference. One former timeout
 now reports bad_alloc; resource-failure body clocks are unavailable, not zero.
-The first-success cells remain pending, so no scheduling speedup follows yet.
+First-success skips only siblings of a checked winner;the remaining timeouts and allocation failures stay in the results.
 Its real eight-candidate qualification
 checked winners before cancelling siblings. The original Verina 189-file
 native/profile characterization is complete; admitted stubs and source-version
@@ -127,10 +130,10 @@ owned trees each second; concurrent preemptions are requeued for an exclusive
 retry, whose resource failures remain separately reported. This is sampled
 response, not a kernel hard RSS quota.
 
-The healthy original7808capture retains its frozen two-worker/24GiB-AS
-settings and remains the sole full group. Its results are not mixed with the
-new resource point. The historical42bad_alloc candidates await separate
-larger isolated reruns after that group retires.
+The original scheduling matrix completed under its frozen two-worker/24GiB-AS
+settings. Its results are kept separate from the next dynamic four-worker
+native/prepared engine pair. The historical42bad_alloc candidates still require
+separate isolated reruns;they are not silently merged with later resource cohorts.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.
 

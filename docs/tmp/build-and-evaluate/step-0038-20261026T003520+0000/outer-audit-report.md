@@ -1,0 +1,7 @@
+# Outer audit — rootself-review
+Directionunchanged. Genuine protocolfaultrepairedinownbackend,noupstream
+orproofchanges. NewEOFfixtureaddressesobservedblockedpipe,notmirrorimplementation.
+Real24qualificationretainsallrawoutcomes,versions,RSS/CPU/cleanup.
+PreparedsustainedfourCPU/busyclaimnotmade;earlyregisteredcountaloneinsufficient.
+Noqualifiedsmallratioadmittedasresearchgain. Allfourroutesremainopen,
+oldCPUoracle/closed-tailzero-coveragepathsfrozen.

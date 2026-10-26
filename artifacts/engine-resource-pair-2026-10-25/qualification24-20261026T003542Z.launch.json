@@ -1,0 +1,61 @@
+{
+  "UTC": "20261026T003542Z",
+  "pid": 408028,
+  "command": [
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/release/examples/resource_pair",
+    "/tmp/gpu-smt-resource-pair-20261025/qualification-original24.json",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/preparation/resources.json",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/qualification24-20261026T003542Z"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "source_ids": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-4",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-16",
+    "minif2f-17",
+    "minif2f-18",
+    "minif2f-19",
+    "minif2f-20",
+    "minif2f-21",
+    "minif2f-22",
+    "minif2f-23"
+  ],
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1
+  },
+  "resource_AS_limit": "unlimited",
+  "prior_group_retired": true,
+  "environment_source": "Pinned lake env queried before direct Rust spawn;Lake process reaped. No resident Lean launcher outside Rust monitor tree.",
+  "log": "/tmp/gpu-smt-resource-pair-20261025/qualification24-20261026T003542Z.log",
+  "result_directory": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/qualification24-20261026T003542Z",
+  "scope": "Actual24original source native/prepared resource qualification,not7808throughput or strongest warm-baseline gain.",
+  "start_ticks": 140631436,
+  "repair": "Close stdin after one fresh native request;upstream4.9flushes on EOF.",
+  "prior_interrupted_run": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/qualification24-20261026T003152Z"
+}

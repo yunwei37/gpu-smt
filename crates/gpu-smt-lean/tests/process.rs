@@ -58,6 +58,7 @@ async fn pipe_protocol_errors_admissions_and_stderr_drain() {
                 candidate("rejected", "bad", 5000),
                 candidate("incomplete", "sorry", 5000),
                 candidate("stderr", "stderr", 5000),
+                candidate("eof_flush", "eof_flush", 5000),
             ],
         })
         .await
@@ -71,6 +72,7 @@ async fn pipe_protocol_errors_admissions_and_stderr_drain() {
             Status::Accepted,
             Status::Rejected,
             Status::Incomplete,
+            Status::Accepted,
             Status::Accepted
         ]
     );
