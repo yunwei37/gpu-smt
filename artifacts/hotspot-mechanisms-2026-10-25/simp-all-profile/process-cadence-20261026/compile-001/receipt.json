@@ -1,0 +1,48 @@
+{
+  "UTC": "2026-10-26T07:39:26.734153+00:00",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "/workspaces/repository/artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/process-cadence-20261026/analyze-existing.py",
+        "/workspaces/repository/artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/process-cadence-20261026/existing23"
+      ],
+      "exit": 0,
+      "seconds": 1.0083954858127981
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/simp-all-profile",
+        "-o",
+        "/tmp/gpu-smt-simp-cadence-20261026/SimpAllProfile.olean",
+        "/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean"
+      ],
+      "exit": 0,
+      "seconds": 4.0152789580170065
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "--run",
+        "/tmp/gpu-smt-simp-cadence-20261026/ClockControl.lean"
+      ],
+      "exit": 1,
+      "seconds": 4.015849180985242
+    }
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "seconds": 9.03958508814685,
+  "samples": 15,
+  "combined_peak_rss_bytes": 14897979392,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_definition_compile_and_clock_only_IO": true,
+  "native_candidate_executions": 0,
+  "original_group": 408739,
+  "original_group_start_ticks": 140695363,
+  "native_body_elaboration": false
+}

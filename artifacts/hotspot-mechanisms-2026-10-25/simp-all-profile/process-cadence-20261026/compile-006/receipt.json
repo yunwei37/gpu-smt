@@ -1,0 +1,59 @@
+{
+  "UTC": "2026-10-26T07:47:42.527335+00:00",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/simp-all-profile",
+        "-o",
+        "/tmp/gpu-smt-simp-cadence-20261026/SimpAllProfile.olean",
+        "/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean"
+      ],
+      "exit": 0,
+      "seconds": 4.019618289079517
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "-o",
+        "/tmp/gpu-smt-simp-cadence-20261026/ClockControl.olean",
+        "/tmp/gpu-smt-simp-cadence-20261026/ClockControl.lean"
+      ],
+      "exit": 0,
+      "seconds": 4.01663769595325
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "--run",
+        "/tmp/gpu-smt-simp-cadence-20261026/Driver.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.0047926290426403
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "--run",
+        "/tmp/gpu-smt-simp-cadence-20261026/Driver.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.0050054450985044
+    }
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "seconds": 10.046125140972435,
+  "samples": 18,
+  "combined_peak_rss_bytes": 44119293952,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_definition_compile_and_clock_only_IO": true,
+  "native_candidate_executions": 0,
+  "original_group": 408739,
+  "original_group_start_ticks": 140695363,
+  "native_body_elaboration": false
+}

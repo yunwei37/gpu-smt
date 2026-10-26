@@ -3,6 +3,7 @@ Copyright (c) 2021 Microsoft Corporation. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Leonardo de Moura
 -/
+import Init.System.Mutex
 import Lean.Meta.Tactic.Clear
 import Lean.Meta.Tactic.Util
 import Lean.Elab.Tactic.Simp
@@ -37,6 +38,16 @@ structure State where
 
 abbrev M := StateRefT State MetaM
 
+/-- Only the diagnostic timestamp is shared; no native work/output holds this lock. -/
+initialize progressClock : IO.Mutex Nat ← IO.Mutex.new 0
+
+private def sampleProgress (now : Nat) : IO Bool :=
+  progressClock.atomically do
+    if now - (← get) ≥ 1000000000 then
+      set now
+      return true
+    return false
+
 /-- Diagnostic wrapper only: no rejection, caching or rewrite change.
 Hashes below are hints for investigation, never equality/cycle witnesses. -/
 private def timed {α : Type} (phase : String) (slot : Nat) (action : M α)
@@ -63,24 +74,22 @@ private def timed {α : Type} (phase : String) (slot : Nat) (action : M α)
       ("slot", toJson slot), ("elapsed_ns", toJson elapsed),
       ("subject", toJson subject), ("action_completed", toJson completed),
       ("entries", toJson state.entries.size),
-      ("hypothesis_updates", toJson state.hypothesisUpdates),
-      ("entry_type_hashes", toJson (state.entries.map fun e => (hash e.type).toNat))
+      ("hypothesis_updates", toJson state.hypothesisUpdates)
     ]).compress
 
 /-- Observe native simp progress without replacing any native method result.
-One-second snapshots expose origins already used at the current expression.
-A repeated expression hash is NOT a cycle witness. -/
+Process-wide one-second snapshots expose origins and context hash hints.
+A repeated expression/hash is NOT a cycle witness. The native pre method runs
+after the clock lock is released. -/
 private def observedSimp (expression : Expr) (ctx : Simp.Context)
     (simprocs : SimprocsArray) (phase : String) (slot : Nat) :
     M (Simp.Result × Stats) := do
   let state ← get
-  let last ← IO.mkRef (0 : Nat)
   let defaults := Simp.mkDefaultMethodsCore simprocs
   let methods := { defaults with
     pre := fun expression => do
       let now ← IO.monoNanosNow
-      if now - (← last.get) ≥ 1000000000 then
-        last.set now
+      if ← sampleProgress now then
         let native ← get
         let mut used : Array Json := #[]
         for (origin, order) in native.usedTheorems.toArray do
@@ -95,6 +104,8 @@ private def observedSimp (expression : Expr) (ctx : Simp.Context)
           ("mono_ns", toJson now), ("native_num_steps", toJson native.numSteps),
           ("expression_hash_hint", toJson (hash expression).toNat),
           ("used_origins", toJson used),
+          ("entry_type_hashes", toJson (state.entries.map fun e => (hash e.type).toNat)),
+          ("sampling_scope", toJson ("process-wide one-second progress snapshots" : String)),
           ("cycle_witness", toJson false)]).compress
       defaults.pre expression }
   Simp.main expression ctx { state with } (methods := methods)

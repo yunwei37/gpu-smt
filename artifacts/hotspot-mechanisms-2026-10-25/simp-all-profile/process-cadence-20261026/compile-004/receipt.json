@@ -1,0 +1,49 @@
+{
+  "UTC": "2026-10-26T07:46:10.712310+00:00",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/simp-all-profile",
+        "-o",
+        "/tmp/gpu-smt-simp-cadence-20261026/SimpAllProfile.olean",
+        "/workspaces/repository/bench/lean-failure-profile/simp-all-profile/SimpAllProfile.lean"
+      ],
+      "exit": 0,
+      "seconds": 4.015811669174582
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "-o",
+        "/tmp/gpu-smt-simp-cadence-20261026/ClockControl.olean",
+        "/tmp/gpu-smt-simp-cadence-20261026/ClockControl.lean"
+      ],
+      "exit": 0,
+      "seconds": 4.015772643964738
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/tmp/gpu-smt-simp-cadence-20261026",
+        "--run",
+        "/tmp/gpu-smt-simp-cadence-20261026/Driver.lean"
+      ],
+      "exit": 1,
+      "seconds": 1.0052043120376766
+    }
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "seconds": 9.036852414952591,
+  "samples": 15,
+  "combined_peak_rss_bytes": 32151793664,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "source_definition_compile_and_clock_only_IO": true,
+  "native_candidate_executions": 0,
+  "original_group": 408739,
+  "original_group_start_ticks": 140695363,
+  "native_body_elaboration": false
+}

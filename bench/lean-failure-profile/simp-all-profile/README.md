@@ -39,7 +39,7 @@ NativeLean frontend payload.
 ## Internal native progress attribution
 
 The opt-in wrapper now delegates the native pre-method result unchanged and
-records phase-local progress at most once per second, including native step
+records process-wide progress snapshots at most once per second, including native step
 counts and theorem origins already used. Default pre/post/dpre/dpost/discharge
 behavior remains selected by the same simprocs. This is diagnostic overhead.
 The last observed origin is not proof that the origin is stuck; used origins
@@ -75,3 +75,27 @@ zero candidate proofs. Native comparison and original23phase timing remain
 pending the sole collection slot. No cycle predicate,automatic rejection or
 per-lemma causal conclusion is added. Individual phase sums omit untimed loop,
 outer logging and service costs and are not an end-to-end denominator.
+
+## Process-wide snapshot cadence (original23 runtime still pending)
+
+The completed480 native diagnostic, restricted to the fixed23 simp_all timeouts,
+contains two different observed patterns:9last-open inner simp calls span
+143.82–299.86seconds;14span9microseconds–48.87milliseconds after thousands of
+completed calls. Eight of the latter sources also have thousands of completed
+outer simpAll calls. These are cumulative source counts and censored,
+non-atomic final observations,not per-invocation rounds or a cycle certificate.
+[Recomputation and retained rows](../../../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/process-cadence-20261026/README.md).
+
+The current observer shares only a timestamp across calls. Its mutex is released
+before native simplification,hashing and output;it never serializes solving.
+Expensive used-origin/entry-hash JSON is emitted on that process-wide cadence,
+rather than resetting a timer at each call. Entry hashes describe the entry
+state at the start of the currently observed simp call,not completed phase
+states. All lightweight begin/end events and measured native action costs stay.
+They can still be numerous and add overhead;sampling does not make this
+instrumentation free. Hashes and repeated origins never authorize rejection.
+
+Compilation and a clock-only IO control are dependency checks. They do not
+qualify native proof behavior or the23original instrumented inputs. The older
+seven-pair qualification applies only to its retained source. Actual native
+differential qualification and original23phase attribution remain pending.
