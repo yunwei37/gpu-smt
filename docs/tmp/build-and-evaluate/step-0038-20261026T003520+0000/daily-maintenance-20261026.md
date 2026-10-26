@@ -36,3 +36,10 @@ cross-task latency/resource effects still need separate actual evidence.
 Current42collection stays untouched;follow userqueue71thenlean-mlir. No new
 logger or generic infrastructure layer follows from this negative model result.
 Primary evidence:artifacts/candidate-scheduling-2026-10-25/source-cost-crossfit-20261026.
+
+Step0059 reconciles the public README/evaluation/architecture with the actual
+native completion and prepared ENOSPC. Prepared71now has a manual executable
+entrypoint using existing native capture support;large diagnosticstreams use
+existing/tmp until lossless archival,avoiding anotherPVCwrite amplification.
+Still zero prototypeproofs. Advance actual71after42,thenlean-mlir;neither more
+diagnostic framework nor sourcepredictor tuning is justified by current evidence.

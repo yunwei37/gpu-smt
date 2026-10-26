@@ -79,6 +79,12 @@ finds no duplicate substantive proofs among the 7,808 miniF2F candidates:
 only 18 repeated literal None failures. Exact caching is supported, but is
 not the expected source of meaningful acceleration on this population.
 
+A [whole-task heldout source-cost analysis](artifacts/candidate-scheduling-2026-10-25/source-cost-crossfit-20261026/README.md)
+did not improve frozen first-success work over FIFO. The 102 unsolved tasks
+account for 95.2% of remaining attempt time. Even an outcome-informed within-task
+ordering saves only 3.7% of that frozen work. This is an offline replay, not an
+end-to-end bound or measured service speedup; the weak predictor is not deployed.
+
 ## Current work: failure hotspots in Lean
 
 The complete native/GPU counterexample-screening pair returns all **7,808**
@@ -135,12 +141,19 @@ retry, whose resource failures remain separately reported. This is sampled
 response, not a kernel hard RSS quota.
 
 The original scheduling matrix completed under its frozen two-worker/24GiB-AS
-settings. The [dynamic four-worker native/prepared pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z.launch.json)
-has now started on all7,808original sources,after real native qualification.
-Only that full group runs;its results remain pending and separate from the
-old point. Actual four fresh workers,unlimited per-processAS and growing
-flushed native attempt records are observed;no full throughput claim follows. The historical42bad_alloc candidates still require
-separate isolated reruns;they are not silently merged with later resource cohorts.
+settings. The [dynamic four-worker capture](artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/README.md)
+completed its native cell: 7,808 results, with 3,013 accepted, 4,665 rejected,
+87 timeouts, 41 resource failures and two backend faults. Its native lifecycle
+is 28,464.81s. One historically accepted candidate now times out; accepted-set
+equivalence is not established. The sampled peak was 48.79GiB, above the
+48GiB budget between watchdog responses.
+The prepared cell failed when the Workspace volume filled; partial data and
+losslessly archived fault outputs remain. There is no complete pair or speedup.
+The storage repair preserved sources, results and compiled dependencies.
+The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
+are now being rerun exclusively under the aggregate budget, with no fixed
+per-process address-space cap. Their final outcomes remain pending and
+separate from both earlier resource points.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.
 

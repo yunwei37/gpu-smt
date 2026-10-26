@@ -66,3 +66,34 @@ its own clocks;no performance result is inferred from prepared files.
 Current42owner remains the only collection. Then userorder is these71original
 timeout prototypes and original lean-mlir. No new scheduler or automatic loop,
 no competing checkout,CPUoracle expansion or subagent. Root self-review only.
+
+## Manual execution entrypoint
+
+execute.py now wires these fixed inputs into the existing Rust CLI/NativeLean
+backend. --validate-only checks static input cardinality/IDs/options without
+launching any native proof; execution-input-validation.json records zero
+executions. Native runtime qualification is still pending.
+The actual run requires the42terminal and retirement of both its controller
+and CLI,then checks that no pinned native owner remains. It does not wait,
+poll,launch itself or install a scheduler. Run it manually only at that boundary.
+
+Five sequential cells:14existing controls,6recovery controls,71native,
+71import-only,71experimental. Each cell is a single all-mode batch,up to four
+one-core workers under the existing48GiB dynamic engine/watchdog. No rebuild,
+AS cap,shorter timeout or original source substitution. Same pinned stock
+--json --stdin frontend in every cell;do not pool with oldREPL clocks.
+The two prototype populations have different purposes;do not combine their
+timings into one acceleration claim. Custom recovery sensitivity deliberately
+tests a known nontransparent wrapper,not a universally safe rejection rule.
+
+Native full diagnostic files and results go to the existing spacious/tmp
+filesystem because the Workspace PVC recently filled. After each actual CLI
+exit,closed streams are losslessly gzip archived and decompressed-byte checked.
+Archival seconds remain separate and also enter the whole controller clock.
+No source/active stream is deleted;compressed originals retain their bytes.
+Final selected evidence must still be committed/pushed into artifacts after
+collection. /tmp retention alone is not a published result or durable backup.
+The existing backend keeps PID/birth attribution and service classifications.
+Strict stderr handling remains;do not turn diagnostic backend errors into
+invented engine acceptances. Import/body/logging/queue/cancellation/cleanup
+costs cannot be omitted. No new logging implementation is introduced.

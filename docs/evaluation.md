@@ -14,9 +14,13 @@ public contracts, tests/CI/examples/docs first, then all three workload directio
 on that foundation. Resource mechanisms are prior techniques, not novelty.
 The next point has48GiB actual aggregate RSS, no fixed per-process AS cap,
 measured CPU-aligned dynamic admission and1s watchdog/exclusive requeue.
-The completed old7808group retains its historical settings; its42resource
-failures still require separate larger-memory isolated reruns. No result is yet
-claimed for the new point. [API/implementation scope](api.md).
+The completed old7808group retains its historical settings. Its42resource
+failures are in a separate exclusive rerun, whose final outcomes are pending.
+The [new four-worker native cell](../artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/README.md)
+completed all7,808candidates, but its prepared cell failed with ENOSPC.
+One historical acceptance becomes a timeout and sampled RSS peaks at48.79GiB;
+neither transparent accepted-set parity nor a full-pair speedup is established.
+[API/implementation scope](api.md).
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The real compiler bitvector workload remains in progress.
 
