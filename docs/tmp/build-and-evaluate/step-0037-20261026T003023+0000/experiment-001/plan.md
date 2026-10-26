@@ -1,0 +1,1 @@
+Collect retired third cell/group exit;recompute exactsource/task/cancellation/error/RSS/cleanup and complete clocks. Preserve oldresourcepoint and7231operationalshift. Fill local paper result,compile,commit/push before nextdynamic capture. No agent/new scheduler or scientificcontract change.

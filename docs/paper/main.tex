@@ -738,7 +738,7 @@ $1.50\times$. These are optimistic scheduling models, not measured speedups
 or physical upper bounds: changing order can change native costs, and actual
 setup, cancellation and retirement remain unpaid in this model. Source-size
 ordering also reduces solved-problem coverage at some intermediate candidate
-counts. Two complete native consumer cells now measure
+counts. The complete three-cell native consumer matrix measures
 21,746.81 seconds for all candidates and 15,385.39 seconds for original-order
 first-success, a $1.41347\times$ ratio (29.25\% less elapsed time).
 The solved-problem IDs remain exactly the same 142: 3,631 candidates execute
@@ -748,8 +748,14 @@ allocation failures from 43 to 35 because fewer siblings execute, not because
 the tactics or memory limit improve. Both cells retain the old two-worker,
 24~GiB per-process address-space point and 48~GiB sampled aggregate budget;
 this is one sequential shared-host comparison, not the pending four-worker
-dynamic-resource engine measurement. The third, source-size ordering cell
-is still running. First-success cancellation does not
+dynamic-resource engine measurement. Source-size ordering completes in 15,112.12 seconds
+($1.43903\times$, 30.51\% less than all candidates), with the same 142
+solved-problem IDs and 4,084 queued cancellations. It executes 3,724 sources,
+returning 66 timeouts and 32 allocation failures. One executed source changes
+from an all-cell allocation failure to a timeout; accepted tasks do not change.
+The modest difference between the two ordering policies is not an isolated
+causal result from these single sequential captures.
+First-success cancellation does not
 provide every candidate reward required by reinforcement-learning training,
 and it does not establish a new contribution for ordinary scheduling.
 

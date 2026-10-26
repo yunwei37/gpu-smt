@@ -154,7 +154,12 @@ Exactly142solved tasks match;3631sources execute and4177pending siblings are
 cancelled against checked same-task winners. Executed labels/source bytes
 match the paired all cell.65timeouts/35bad_alloc remain;body zeros areunknown.
 Peak sampledRSS42,856,058,880bytes,max2REPLs,0watchdogkills/errors;cell retired.
-The full group remains incomplete(first-short running). This single
+The [complete three-cell matrix](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md)
+includes first-short15112.118703443s:1.439031293x(30.508808%less).
+It preserves142solvedtaskIDs,executes3724,cancels4084,with66timeouts/32bad_alloc.
+7231changes all-cellbad_alloc to timeout;acceptedtasks unchanged.
+Allgroup/cellprocesses retired,group exit0. First-shortpeakRSS43,824,566,272B,
+0watchdogkills/errors. Raw failures/cancellations preserved. This single
 shared-host old-point comparison is not isolated replication,new4worker
 throughput,RL per-candidate rewards or a scheduling novelty claim. This is the frozen old point,
 separate from the next uncapped dynamic-resource comparison.
