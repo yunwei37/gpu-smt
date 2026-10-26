@@ -72,3 +72,11 @@ permits up to four workers subject to actual memory and cleanup. Supporting
 fresh/prepared comparisons do not establish a strongest warm-service advantage
 or novelty. [Prepared original-workload scope](../artifacts/engine-resource-pair-2026-10-25/preparation/README.md)
 is distinct from executed performance.
+
+The resource_pair example also flushes attempts.jsonl after every physical
+native attempt. This preserves returned native results if the parent run is
+interrupted before its final capture. Capture/terminal still own queued and
+consumer outcomes,source mapping and whole-clock completeness. Ordinary and
+exclusive retry calls preserve backend behavior;I/O errors are explicit
+evidence errors. Flush does not promise power-loss durability. Both paired
+conditions include these recording costs.

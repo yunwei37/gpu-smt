@@ -1,0 +1,169 @@
+{
+  "accepted_set_only_baseline": [],
+  "accepted_set_only_candidate": [],
+  "all_candidate_status_parity_applicable": true,
+  "all_candidate_statuses_equal": true,
+  "backend_identity_equal": false,
+  "baseline": {
+    "accepted_ids": [
+      "minif2f-0",
+      "minif2f-1"
+    ],
+    "attempt_counts_scope": "per-caller histories; coalesced callers may repeat the same physical attempt",
+    "attempt_peak_rss_scope": "maximum of registered-tree samples and backend supplements; observation kinds in backend_events when recorded; older untyped supplements remain unknown; not aggregate RSS or complete kernel tree high-water; sampled_peak_attempt_rss_bytes is a legacy alias",
+    "attempt_seconds_per_candidate": {
+      "count": 4,
+      "max": 2.640625721,
+      "p50": 2.570296877,
+      "p90": 2.640625721,
+      "p99": 2.640625721
+    },
+    "attempts": 4,
+    "cached": 0,
+    "candidates_per_second": 1.0969323933504656,
+    "candidates_per_second_scope": "returned consumer rows including cancelled/cache/coalesced results, not fresh native check throughput",
+    "coalesced": 0,
+    "completion_latency_seconds": {
+      "count": 4,
+      "max": 3.643708182,
+      "p50": 3.5720035020000003,
+      "p90": 3.643708182,
+      "p99": 3.643708182
+    },
+    "declared_task_count": 1,
+    "fresh_fallback_event_rows": 0,
+    "internal_solved_task_latency_seconds": {
+      "count": 1,
+      "max": 2.479155457,
+      "p50": 2.479155457,
+      "p90": 2.479155457,
+      "p99": 2.479155457
+    },
+    "internal_task_first_success_seconds": {
+      "mathd_algebra_478": 2.479155457
+    },
+    "lifecycle_seconds": 3.646532844,
+    "peak_attempt_observed_rss_bytes": 3757195264,
+    "preemptions": 0,
+    "returned_candidates_per_second": 1.0969323933504656,
+    "sampled_peak_attempt_rss_bytes": 3757195264,
+    "solved_tasks": [
+      "mathd_algebra_478"
+    ],
+    "statuses": {
+      "accepted": 2,
+      "rejected": 2
+    },
+    "task_latency_scope": "internal acceptance availability after batch submission, including queue/retry/retirement; solved tasks only, unsolved IDs explicit; not streamed client delivery",
+    "unsolved_tasks": []
+  },
+  "baseline_cores_per_worker": 1,
+  "baseline_mode": "all",
+  "baseline_policy": "fifo",
+  "candidate": {
+    "accepted_ids": [
+      "minif2f-0",
+      "minif2f-1"
+    ],
+    "attempt_counts_scope": "per-caller histories; coalesced callers may repeat the same physical attempt",
+    "attempt_peak_rss_scope": "maximum of registered-tree samples and backend supplements; observation kinds in backend_events when recorded; older untyped supplements remain unknown; not aggregate RSS or complete kernel tree high-water; sampled_peak_attempt_rss_bytes is a legacy alias",
+    "attempt_seconds_per_candidate": {
+      "count": 4,
+      "max": 2.339270805,
+      "p50": 1.408696567,
+      "p90": 2.339270805,
+      "p99": 2.339270805
+    },
+    "attempts": 4,
+    "cached": 0,
+    "candidates_per_second": 1.5547023829108433,
+    "candidates_per_second_scope": "returned consumer rows including cancelled/cache/coalesced results, not fresh native check throughput",
+    "coalesced": 0,
+    "completion_latency_seconds": {
+      "count": 4,
+      "max": 2.426796303,
+      "p50": 2.339397606,
+      "p90": 2.426796303,
+      "p99": 2.426796303
+    },
+    "declared_task_count": 1,
+    "fresh_fallback_event_rows": 0,
+    "internal_solved_task_latency_seconds": {
+      "count": 1,
+      "max": 2.339358034,
+      "p50": 2.339358034,
+      "p90": 2.339358034,
+      "p99": 2.339358034
+    },
+    "internal_task_first_success_seconds": {
+      "mathd_algebra_478": 2.339358034
+    },
+    "lifecycle_seconds": 2.572839692,
+    "peak_attempt_observed_rss_bytes": 3731533824,
+    "preemptions": 0,
+    "returned_candidates_per_second": 1.5547023829108433,
+    "sampled_peak_attempt_rss_bytes": 3731533824,
+    "solved_tasks": [
+      "mathd_algebra_478"
+    ],
+    "statuses": {
+      "accepted": 2,
+      "rejected": 2
+    },
+    "task_latency_scope": "internal acceptance availability after batch submission, including queue/retry/retirement; solved tasks only, unsolved IDs explicit; not streamed client delivery",
+    "unsolved_tasks": []
+  },
+  "candidate_cores_per_worker": 1,
+  "candidate_mode": "all",
+  "candidate_policy": "fifo",
+  "changed_statuses": [],
+  "external_cell_seconds": {
+    "native": 3.647335252,
+    "prepared": 2.573622202
+  },
+  "external_native_over_prepared": 1.4171991713335397,
+  "lifecycle_speedup": 1.4173183254823636,
+  "limits": "Lifecycle includes input/runtime/native retirement; excludes record serialization and executable loading. Keep external controller time and stderr resource logs. Pins and clocks are recorded claims, not independent authentication. First-success cancellation is not every-candidate RL parity. No speedup is admissible from ratios alone.",
+  "raw_payload_changed_ids": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-10",
+    "minif2f-5"
+  ],
+  "reuse_option_changed_ids": [],
+  "scope": "matched own-engine native/prepared support measurement; not a strongest-warm-baseline or novelty claim; no timer/source/oracle change",
+  "solved_tasks_only_baseline": [],
+  "solved_tasks_only_candidate": [],
+  "tails": [
+    {
+      "baseline_attempt_seconds_sum": 2.640625721,
+      "baseline_slowest_percent": 1,
+      "candidate_attempt_seconds_sum": 1.4275304819999999,
+      "candidate_statuses": [
+        {
+          "id": "minif2f-5",
+          "status": "rejected"
+        }
+      ],
+      "ids": [
+        "minif2f-5"
+      ],
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    },
+    {
+      "baseline_attempt_seconds_sum": 2.640625721,
+      "baseline_slowest_percent": 10,
+      "candidate_attempt_seconds_sum": 1.4275304819999999,
+      "candidate_statuses": [
+        {
+          "id": "minif2f-5",
+          "status": "rejected"
+        }
+      ],
+      "ids": [
+        "minif2f-5"
+      ],
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    }
+  ]
+}

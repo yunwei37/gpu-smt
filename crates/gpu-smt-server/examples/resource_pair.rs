@@ -53,6 +53,71 @@ impl Drop for Gzip {
     }
 }
 
+/// Flush each physical attempt before returning it to the engine. The final
+/// capture remains authoritative for queued cancellations and consumer latency;
+/// this journal retains completed native attempts after an interrupted run.
+struct JournalBackend {
+    inner: Arc<dyn VerificationBackend>,
+    output: Mutex<BufWriter<File>>,
+    errors: Mutex<Vec<String>>,
+}
+impl JournalBackend {
+    fn new(inner: Arc<dyn VerificationBackend>, path: &Path) -> Result<Self, std::io::Error> {
+        Ok(Self {
+            inner,
+            output: Mutex::new(BufWriter::new(File::create_new(path)?)),
+            errors: Mutex::new(Vec::new()),
+        })
+    }
+    fn record(&self, c: &Candidate, outcome: &Outcome, exclusive: bool, seconds: f64) {
+        let result = (|| -> Result<(), String> {
+            let mut output = self.output.lock().map_err(|e| e.to_string())?;
+            let row = json!({"id":c.id,"task_id":c.task_id,
+                "attempt_timeout_ms":c.timeout_ms,"exclusive_retry":exclusive,
+                "native_attempt_seconds":seconds,"outcome":outcome});
+            serde_json::to_writer(&mut *output, &row).map_err(|e| e.to_string())?;
+            writeln!(&mut *output).map_err(|e| e.to_string())?;
+            output.flush().map_err(|e| e.to_string())
+        })();
+        if let Err(error) = result {
+            self.errors
+                .lock()
+                .unwrap_or_else(|e| e.into_inner())
+                .push(error);
+        }
+    }
+    fn errors(&self) -> Vec<String> {
+        self.errors
+            .lock()
+            .unwrap_or_else(|e| e.into_inner())
+            .clone()
+    }
+}
+#[async_trait::async_trait]
+impl VerificationBackend for JournalBackend {
+    fn identity(&self) -> String {
+        self.inner.identity()
+    }
+    fn prepared_state_ready(&self) -> bool {
+        self.inner.prepared_state_ready()
+    }
+    async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+        let start = Instant::now();
+        let outcome = self.inner.verify(c, x).await;
+        self.record(c, &outcome, false, start.elapsed().as_secs_f64());
+        outcome
+    }
+    async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
+        let start = Instant::now();
+        let outcome = self.inner.verify_resource_retry(c, x).await;
+        self.record(c, &outcome, true, start.elapsed().as_secs_f64());
+        outcome
+    }
+    async fn shutdown(&self) {
+        self.inner.shutdown().await;
+    }
+}
+
 struct Observations {
     last: Option<Instant>,
     output: BufWriter<File>,
@@ -209,9 +274,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 Arc::new(PreparedRepl::new(backend.clone(),
                     PathBuf::from(host).canonicalize()?,PathBuf::from(sysroot).canonicalize()?))
             };
+            let verifier=Arc::new(JournalBackend::new(verifier,&cell.join("attempts.jsonl"))?);
             let backend_identity=verifier.identity();
             let monitor=Arc::new(RecordingMonitor::new(&cell.join("rss-cpu.jsonl"))?);
-            let engine=Engine::new(config.clone(),verifier,Arc::new(Fifo),
+            let engine=Engine::new(config.clone(),verifier.clone(),Arc::new(Fifo),
                 monitor.clone(),Arc::new(HeadroomAdmission),Arc::new(MemoryCache::default()))?;
             let compressor=Gzip::start(&cell.join("capture.json.gz"))?;
             // Explicit startup/post-retirement observations also cover empty batches.
@@ -239,7 +305,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             };
             compressor.finish(&capture)?;
             let seconds=start.elapsed().as_secs_f64();
-            let terminal=json!({"state":if interrupted{"interrupted"}else{"complete"},
+            let journal_errors=verifier.errors();
+            let terminal=json!({"state":if interrupted{"interrupted"}else if !journal_errors.is_empty(){"evidence_error"}else{"complete"},
+                "journal_errors":journal_errors,
+                "journal_scope":"flushed physical native attempts; final capture also includes queued/consumer outcomes; no power-loss durability claim",
                 "condition":condition,"external_cell_seconds":seconds,
                 "clock_scope":"input decoding through native shutdown, capture serialization, compression and compressor retirement",
                 "resources":config,"observations":monitor.report()?,
@@ -248,6 +317,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             lifecycle.push(seconds);
             captures.push(capture);
             drop(engine);
+            if !journal_errors.is_empty() { return Err::<(),Box<dyn std::error::Error>>("attempt journal I/O failure; raw capture retained".into()); }
             if interrupted {return Err::<(),Box<dyn std::error::Error>>("pair interrupted; partial records retained".into());}
         }
         let mut summary=compare(&captures[0],&captures[1])?;
@@ -273,6 +343,39 @@ mod tests {
                 .unwrap()
                 .as_nanos()
         ))
+    }
+    #[test]
+    fn physical_attempt_is_readable_before_final_capture() {
+        let path = temporary("journal");
+        let backend: Arc<dyn VerificationBackend> = Arc::new(NativeRepl {
+            program: "/not-run".into(),
+            args: vec![],
+            project: std::env::temp_dir(),
+            environment: "journal-fixture".into(),
+        });
+        let journal = JournalBackend::new(backend, &path).unwrap();
+        let candidate = Candidate {
+            id: "proof".into(),
+            task_id: Some("task".into()),
+            code: "original".into(),
+            timeout_ms: 300000,
+            reuse: false,
+        };
+        let outcome = Outcome::operational(Status::ResourceExhausted, "native allocation failed");
+        journal.record(&candidate, &outcome, false, 0.25);
+        journal.record(&candidate, &outcome, true, 0.5);
+        let rows: Vec<Value> = fs::read_to_string(&path)
+            .unwrap()
+            .lines()
+            .map(|line| serde_json::from_str(line).unwrap())
+            .collect();
+        assert_eq!(rows.len(), 2);
+        assert_eq!(rows[0]["id"], "proof");
+        assert_eq!(rows[0]["outcome"]["error"], "native allocation failed");
+        assert_eq!(rows[1]["exclusive_retry"], true);
+        assert!(journal.errors().is_empty());
+        drop(journal);
+        fs::remove_file(path).unwrap();
     }
     #[test]
     fn compressed_capture_roundtrips_and_retires_child() {
