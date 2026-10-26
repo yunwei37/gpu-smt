@@ -1,0 +1,6 @@
+# Root plan self-review
+The23diagnosticobservercausesthreeearlyruntimefailures;completionflagalsois
+unqualified bysuccessfulcontrols,so do notcallitnative-equivalentora reliable
+unwindingflag. Useobservedbegins/ends/rounds/originswithcensorshipandlimitations.
+Oldgroupactuallyretired before22/48repair;do notchangeactiveCLI orrerunhealthy
+23cases. Acompletedprocessexitdoesnotqualify missingimports asproofrejects.

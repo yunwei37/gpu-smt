@@ -1,0 +1,8 @@
+# Root outer self-audit
+Checkactualterminal/alloutputs/PIDbirthjoinsbeforeclaimingcollectioncomplete.
+20timeoutsand3instrumentedruntimefailuresarenotnative23parity. MissingMap48
+errorsarenotlogicalgoalrejections. Phasecounts/origins/hashhintsdonotprove
+cycles. falsecompletionmarkersareexplicitlyunqualified;nofalseunwindingclaim.
+Controller/setup/archiveclockscope andsharedCPUconfoundsretained. Large
+rawlogsremainlosslessgzip;noobserverexpansion orsourcechange. Onlyrootreviewed.
+Nextrepairdoesnotrepeatvalid23orpretend48-onlywallmatchesoldmixed71.

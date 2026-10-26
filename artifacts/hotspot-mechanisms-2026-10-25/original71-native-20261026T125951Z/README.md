@@ -67,3 +67,13 @@ import/map inputs;it does not repeat healthy23sources or the complete71native
 reference. Static22/48/48inputvalidation is not nativequalification.
 A48-only repairedcohort doesnot share the oldmixed71wall denominator;no
 aggregatepair speedup is defined. Afteractualrepairretirement,lean-mliris next.
+
+## Group terminal and actual23phase result
+
+The complete controller exits0at16:13:56UTC,11645.059694s including setup,
+allcells,native cleanup andlosslessarchival. Experimental71returns48invalid
+IntervalMap-import errors,3instrumented runtime failures and20timeouts.
+[Simp23attribution and limits](simp23-analysis/README.md) distinguish eight
+outer-fanout cases from six inner-round cases. No reliablefailurewitness or
+wholepairgain is established. Allfailed andpartialsemantics are retained;
+scope repair is next beforeoriginallean-mlir.

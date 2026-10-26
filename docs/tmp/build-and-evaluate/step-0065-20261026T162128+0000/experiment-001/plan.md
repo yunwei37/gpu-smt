@@ -1,0 +1,9 @@
+# Plan — collect actualsimp23phase evidence and run scopedintervalrepair
+Currentoriginal71group is complete. Preserve native/import/experimentalrawcells,
+all48missingimportfailures,andthreeinstrumentedruntimefailuresseparatelyfrom
+logicalfailure. Reuseexistingphaseanalyzerfor23actualsource logswithPID/birth
+attemptmapping;do notmodifyobserver/parserorclaimloopcertificate.
+Publishclosedgroup and launch existing22intervalcontrol sources with corrected
+Map+Continuationpaths,then48import/maprepair. SameoldCLI/SDK/4onecore48GiB
+resourcepoint,no23repeat/native71repeat. Fixed48cohort clocksnotmixedwith
+old71total. Root-only;thenoriginallean-mlir.

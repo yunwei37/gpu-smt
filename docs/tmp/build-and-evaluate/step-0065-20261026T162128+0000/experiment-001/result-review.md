@@ -1,0 +1,10 @@
+# Actual23result self-review
+Wholegroupterminal0/retired. Experimental71:48missingimportfailures plus3runtime
+deep-recursion failures and20timeouts. All20timeouts/3failures retain complete
+source/PID/birthdiagnostics. Existinganalyzer joins exact23preparation positions,
+norecorderchange. Eightpreviousfast-callcases show2034–24827outerentries;
+sixshow1–2outerentries/966–2640innerrounds. Lastprogress identifies target/
+hypothesisphases andcumulativeorigins,notcausal/infinite-loopcertificates.
+Falsecompletionflagsinpassedsmallcontrols areunqualified,notactualunwinding.
+Rawdata/serviceverdictsstayunmodified. 0certifiedimpossible,nottransparent23
+observerqualification orspeedup. Next22actualintervalcontrols then48repair.

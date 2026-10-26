@@ -28,6 +28,14 @@ neither transparent accepted-set parity nor a full-pair speedup is established.
 
 The completed [480-source profile](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md) preserves all selected statuses. Of observed timeout thread CPU, interval_cases accounts for 55.19% and simp_all 28.21%; these are sampled diagnostic fractions, not whole-workload wall fractions. Per-source timings, all 42 resource failures and censored streams are retained. No reliable early-rejection mechanism has yet been established.
 
+The [actual23-source phase run](../artifacts/hotspot-mechanisms-2026-10-25/original71-native-20261026T125951Z/simp23-analysis/README.md)
+distinguishes eight repeated outer-invocation cases from six repeated inner-round
+cases among the prior14short-call sources. Instrumentation produces three
+runtime recursion failures and20timeouts;it is not qualified as transparent.
+The48interval import controls failed to load IntervalMap because the execution
+path omitted its compiled directory. All invalid data are preserved;the path
+is repaired for a scoped rerun. No early-failure coverage or speedup follows.
+
 The latest user decision removes the earlier1.3x admission condition,
 2026-11-01 deadline and conditional short-paper closure. Goal stays active.
 Continue all three directions; no new threshold, deadline or closure.

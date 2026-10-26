@@ -70,3 +70,8 @@ Step0064findsmy missingIntervalMap runtimepath in realimport48controls. The
 fasterrorsareinvaliddata,notresearchgain. Preservehealthy23simp work,repair
 Map+Continuation paths,andactuallyrunexisting22intervalnativecontrols before
 interpreting48results. Do notbuildmoreobservers orrerunhealthy23/native71.
+
+Step0065actual23phaseevidence separates8outerfanout cases from6inner-round
+cases. Modularrewrites recur amonginnercaseorigin lists,butnames/hashhints
+are not certificates. Follow exactnativeprogress reasoning after validinterval
+repair;do notexpandobserveragain orcallits3recursionfailures earlyrejection.

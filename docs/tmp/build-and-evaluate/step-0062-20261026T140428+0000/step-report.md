@@ -30,3 +30,9 @@ No independentaudit/OSDI/performance/correctnessofwholeLeansystemclaim.
 Preserveactual71group,collectrealterminalsandinterpret48interval/23simpseparately.
 Thenoriginallean-mlir. Applyfixedengineonfuturefreshbuildaftercurrentgroup.
 No timer/poller/model/permission/quota/resourcepoint changes.
+
+## Published revision checks
+Exact15efc78engine workflow40337159728completes success,including rust and
+native-repl-contract jobs;benchmark-smoke40337159588also succeeds. Actualjob/
+stepresponse is retained in the lifecycle artifact. This is the configured
+pinned native contract job,not fullMathlibCOW/71failuremechanism qualification.
