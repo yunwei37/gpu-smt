@@ -1,0 +1,23 @@
+{
+  "UTC": "2026-10-26T13:00:03.291388+00:00",
+  "pid": 445819,
+  "start_ticks": 145097529,
+  "command": [
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/debug/gpu-smt",
+    "check",
+    "--lean",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--project",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--environment",
+    "lean4.9-original71-stock-cli-48GiB-4x1core-20261026",
+    "--cpus",
+    "8,9,10,11",
+    "--worker-cores",
+    "1",
+    "--memory-gib",
+    "48",
+    "--stderr-dir",
+    "/tmp/gpu-smt-original71-native-20261026T125951Z/native71/native-stderr"
+  ]
+}

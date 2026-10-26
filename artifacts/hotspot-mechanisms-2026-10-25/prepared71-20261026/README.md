@@ -97,3 +97,19 @@ The existing backend keeps PID/birth attribution and service classifications.
 Strict stderr handling remains;do not turn diagnostic backend errors into
 invented engine acceptances. Import/body/logging/queue/cancellation/cleanup
 costs cannot be omitted. No new logging implementation is introduced.
+
+## Discovered import-path defect and scoped repair
+
+The first actual run omitted /tmp/gpu-smt-interval-map-20261026 from LEAN_PATH.
+Directory-existence validation and unrelated simp/recovery controls missed it.
+All48interval import controls fail before their proof bodies. Preserve this
+failed run;do not reinterpret it as early failure or acceleration.
+
+execute.py now includes Map and its original Continuation dependency and checks
+the four namedoleanfiles. repair-interval48.py reuses existing22interval control
+sources and only48affected import/mapped candidates after current71retires.
+It does not rerunhealthy23simp sources or native71. Staticrepairvalidation is
+22/48/48inputs,zero nativeproofs;actual differentialqualification remainspending.
+The repair cohort differs from mixed71reference,so no wholepairratioisdefined.
+The queuedlean-mlirentrypoint also checksactualrepairretirement if it is launched.
+No sourcebody/observer/compiler flags/activeCLI are changed by this repair.

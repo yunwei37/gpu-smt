@@ -65,3 +65,8 @@ existing engine APIs. The full source remains unchanged; environment discovery
 works without building or updating dependencies. Do not infer SAT/LRAT cost
 from89 source mentions. The next useful evidence is actual file/stdin/profile
 outcomes after71, not more observers or kernel prototypes before attribution.
+
+Step0064findsmy missingIntervalMap runtimepath in realimport48controls. The
+fasterrorsareinvaliddata,notresearchgain. Preservehealthy23simp work,repair
+Map+Continuation paths,andactuallyrunexisting22intervalnativecontrols before
+interpreting48results. Do notbuildmoreobservers orrerunhealthy23/native71.

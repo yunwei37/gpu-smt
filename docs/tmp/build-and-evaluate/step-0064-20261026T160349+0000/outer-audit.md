@@ -1,0 +1,10 @@
+# Root outer self-audit
+
+Themissingimportismy preparationfault.48fastserviceerrorsareinvalidproof-body
+data;thereisnocoverage/gainclaim. Native71alltimeoutisvalidreferencebutdoesnot
+validateanearlyrejector. The23simpconditionisstillactiveandpreserved.
+NamedMap/Continuationoleansreplacefalseconfidencefromdirectorychecks.
+Existing22controlsourceexpectationsarenotpassedproofs;runtimequalification
+remainsrequired. No mixoffixedpathsintoactiveprocesses,no repeatedhealthy23.
+Staticrepairinputs/binarypointersarenotnewresult. Allclosedrawsource/logbytes
+preservedlosslessly. Root-onlyself-review,notindependentaudit.

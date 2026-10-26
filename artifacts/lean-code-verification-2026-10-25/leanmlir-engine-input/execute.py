@@ -40,6 +40,15 @@ def main():
  for p in priorout.glob('*/launch.json'):
   launch=json.loads(p.read_text())
   assert ARCHIVE.birth(launch['pid'])!=launch['start_ticks']
+ repair_pointer=Path('/tmp/gpu-smt-active-interval48-repair-context.txt')
+ if repair_pointer.exists():
+  repair=json.loads(Path(repair_pointer.read_text()).read_text())
+  repairout=Path(repair['runtime_output'])
+  assert json.loads((repairout/'terminal.json').read_text())['exit_code']==0
+  assert ARCHIVE.birth(repair['controller_pid'])!=repair['controller_start_ticks']
+  for p in repairout.glob('*/launch.json'):
+   launch=json.loads(p.read_text())
+   assert ARCHIVE.birth(launch['pid'])!=launch['start_ticks']
  # No pinned old/next research native executable may still own a candidate.
  old=json.loads(Path('/tmp/gpu-smt-isolated42-20261026/context.json').read_text())['previous_manifest']
  pinned={old['repl'],old['prepared_host'],str(Path(old['sysroot'])/'bin/lean'),str(SDK/'bin/lean')}

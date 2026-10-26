@@ -10,6 +10,7 @@ OLD=REPO/'artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T10113
 CONTEXT=Path('/tmp/gpu-smt-isolated42-20261026/context.json')
 CLI=Path('/tmp/gpu-smt-rust-engine-build-20261025/target/debug/gpu-smt')
 MODULES=[Path('/tmp/gpu-smt-simp-cadence-20261026'),
+ Path('/tmp/gpu-smt-interval-map-20261026'),
  Path('/tmp/gpu-smt-interval-continuation-20261025'),
  Path('/tmp/gpu-smt-failfast-native-20261026')]
 CELLS=['existing-simp-controls14','failfast-controls6','native71','import71','experimental71']
@@ -42,7 +43,8 @@ def main():
  batches=inputs();ctx=json.loads(CONTEXT.read_text());m=ctx['previous_manifest']
  lean=Path(m['sysroot'])/'bin/lean'
  assert CLI.is_file() and lean.is_file()
- assert all(p.exists() for p in MODULES)
+ assert all((p/(name+'.olean')).is_file() for p,name in zip(
+  MODULES,['SimpAllProfile','IntervalMap','IntervalContinuation','NativeFailFast']))
  assert resource.getrlimit(resource.RLIMIT_AS)==(-1,-1)
  if sys.argv[1:]==['--validate-only']:
   print(json.dumps({'UTC':now(),'input_counts':{n:len(v['candidates']) for n,v in batches.items()},
