@@ -43,3 +43,8 @@ entrypoint using existing native capture support;large diagnosticstreams use
 existing/tmp until lossless archival,avoiding anotherPVCwrite amplification.
 Still zero prototypeproofs. Advance actual71after42,thenlean-mlir;neither more
 diagnostic framework nor sourcepredictor tuning is justified by current evidence.
+
+Step0060actual42isolatedheadroom reruns stillproduce41aggregate48GiBfailures/
+1timeout,zeroacceptance. Increasingheadroomalone didnotrescuethiscapturedcohort.
+Do nottuneafrozenoracle orpretendthesearelogicalrejections. Advanceoriginal71
+phase/branchprototypesnow;retain48GiBsampledovershootandresourcefailures.

@@ -1,32 +1,37 @@
-# Original42isolated native reruns — execution in progress
+# Original42isolated native reruns — complete
 
-The previous7808run ended:complete native/ENOSPC partialprepared preserved at
-engine-resource-pair-2026-10-25/full7808-20261026T004621Z. Its owner/native/host
-retired before this group. This is the user's next requested actual collection,
-not a replacement Workspace/scheduler or a repeat fullpopulation matrix.
+Actual terminal exits0 at2026-10-26T12:41:46Z;all42consumer records are complete.
+Source79f89f3CLI,original42IDs/code bytes matched canonical7808,all/no-reuse/
+300s. One native candidate at a time,CPU8–11one4core lease,no fixedAScap,
+48GiBactual aggregate RSS/1s watchdog. Lease size does not mean4busyLean cores.
 
-42original IDs/code/300s/all/no-reuse match canonical7808. Existing RustCLI check
-reads sequential one-candidate batches. CPU8–11 are reserved as one4core lease;
-48GiB aggregate actualRSS/watchdog/exclusive semantics,no per-process AS limit.
-Lease count is1;do not claim Lean uses4busycores. No prepared parent,CPUoracle
-or source/backend flags changed. Larger headroom is a distinct resource point.
+Results:41resource_exhausted,1timeout,minif2f-1885. No accepted or native
+logical-rejected outcomes. All41resource failures have source-matched aggregate
+watchdog preemptions while already exclusive;they are finalbudget failures,
+not further retries. Despite the lifecycle log message saying requeue,the
+finalconsumer attempt histories each contain exactlyoneexclusive attempt.
+There is no newbad_alloc diagnosis:all41are48GiBtotalbudget failures.
+Historical42ASfailures and fourworker results remain separate resource points.
 
-Build current validated CLI at79f89f3 with locked dependencies;build exits0.
-Launch command,PID/birth,SDK/project/import path,source IDs and diskspace are in
-launch.json. Actual first native PID443884/birth144092234 and registered/RSS
-events verify the real workload started,not merely that the controller launched.
-Final outcomes,accepted IDs,peak/retries and elapsed are pending until terminal.
-No per-minute polling or interim count-as-result claim.
+Controller elapsed8955.777133s includesCLIstartup,all42verification records and
+complete retirement,excludinglaterobservation/analysis. Attempt sum8955.699560s.
+The lone timeout's302.301197s attempt includeskill/reaping beyond300s deadline.
+Its observedleaderRSS42,633,547,776B is not a whole-tree highwater.
 
-results.jsonl and resource-events.jsonl are live raw consumer/resource records
-and remain uncommitted until stable;completed build/launch/source metadata are
-published now. Native CLI retains attempt outcome/ownership/cleanup. Controller
-terminal will report actual process exit and cold controller duration,excluding
-post-run observation delay. Do not synthesize an absent terminal. Exact source
-snapshot and command remain;engine/core source unchanged by this launch.
+8956retainedaggregateRSSsamples,41abovebudget;observedpeak51,790,401,536B
+=48.233570GiB,250,793,984Babove48GiB. This is actual sampledovershoot,not
+hardquota compliance. Maximumregisterednativeleaders1;42registrations and
+42matchingreleases. Allregisteredbirths and originalcontroller/CLIretired.
+No claim of no globalOOM follows from those own-process observations.
 
-Compare with historical42ASfailures and newfour-worker outcomes as separate
-resource points,no mixed wallclocks/transparent speedup. Then user queue is
-71original timeout prototypes followed by original lean-mlir. Complete valid
-preparedpopulation comparison remains open after its storage failure.
-All execution/analysis/review by this thread;self-review,not independent audit.
+[Summary](analysis/summary.json),[per-sourceoutcomes](analysis/per-candidate.json),
+exactanalysis/source,terminal/launch/SDK/input IDs and allclosedrawconsumer/
+resource/controller streams are retained. Rawstreams are losslessgzipcopies,
+verified by exactdecompressedbyteequality. Driverexit0means collection success,
+not candidate proofsuccess. Failedgoals remain logicallyunknown.
+
+This is the requested isolatedlargerheadroom cohort,not a repeatfullmatrix,
+newWorkspace/scheduler or frozenCPUoracle experiment. No cross-resource speed
+ratio or accepted-set claim. Next usersequence:original71timeoutprototypes,
+thenoriginallean-mlir. Fullvalidpreparedpopulation comparison remainsoutstanding
+afterENOSPC. Root-only execution/analysis/review;self-review,notindependentaudit.

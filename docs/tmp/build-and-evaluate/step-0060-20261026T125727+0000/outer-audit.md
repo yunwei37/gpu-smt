@@ -1,0 +1,8 @@
+# Root outer self-audit
+Evidencechecks:driverexit0doesnotimplyprovedcandidate;noneaccepted. All41budget
+failureshaveexclusiveattemptandmatchedpreemption;1885timeoutisoperational.
+RawRSSretainedseparatelyfromleaderobservation;observed48.23GiBexceedance is
+reported,notnormalizedunder48. Allownnativebirthsretired;nootherWorkspace/
+quota/permissionchange. Nativecubeold/newclocksnotmixed. Losslessgzipbytechecks
+preserveallclosedstreams. Onlythisthreadreviewed;noindependentauditclaim.
+Complete42doesnotcompleteengine,MathlibCOW,71failuremechanism orpapergoals.

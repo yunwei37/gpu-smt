@@ -15,7 +15,9 @@ on that foundation. Resource mechanisms are prior techniques, not novelty.
 The next point has48GiB actual aggregate RSS, no fixed per-process AS cap,
 measured CPU-aligned dynamic admission and1s watchdog/exclusive requeue.
 The completed old7808group retains its historical settings. Its42resource
-failures are in a separate exclusive rerun, whose final outcomes are pending.
+failures completed a separate exclusive rerun:41aggregate-budget failures and
+one timeout,no accepted outcomes. [Rawresults and resource scope](../artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md).
+The sampled peak48.23GiB exceeded the48GiBbudget between watchdog responses.
 The [new four-worker native cell](../artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/README.md)
 completed all7,808candidates, but its prepared cell failed with ENOSPC.
 One historical acceptance becomes a timeout and sampled RSS peaks at48.79GiB;

@@ -1,0 +1,36 @@
+{
+  "UTC": "2026-10-26T12:58:02.307023+00:00",
+  "sources": 42,
+  "statuses": {
+    "resource_exhausted": 41,
+    "timeout": 1
+  },
+  "accepted_ids": [],
+  "logical_rejections": 0,
+  "controller_seconds": 8955.77713318984,
+  "sum_attempt_seconds": 8955.699560158,
+  "sum_consumer_seconds": 8955.727160924,
+  "resources": {
+    "actual_aggregate_budget_bytes": 51539607552,
+    "cpu_ids": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 4,
+    "maximum_registered_native_leaders": 1,
+    "fixed_AS_limit": false
+  },
+  "watchdog_events": 41,
+  "retained_RSS_samples": 8956,
+  "sampled_peak_rss_bytes": 51790401536,
+  "sampled_peak_GiB": 48.23357009887695,
+  "peak_excess_bytes": 250793984,
+  "retained_samples_above_budget": 41,
+  "all_registered_native_births_retired": true,
+  "original_input_ids_options_match": true,
+  "canonical7808_source_bytes_match": true,
+  "scope": "42historicalASfailures rerun solo with larger aggregate headroom;not proof of false goals or universal failure;no cross-resource-point speedup",
+  "sampling_limit": "1s watchdog response can overshoot;not hard RSSquota"
+}

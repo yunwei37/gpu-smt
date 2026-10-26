@@ -151,9 +151,10 @@ The prepared cell failed when the Workspace volume filled; partial data and
 losslessly archived fault outputs remain. There is no complete pair or speedup.
 The storage repair preserved sources, results and compiled dependencies.
 The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
-are now being rerun exclusively under the aggregate budget, with no fixed
-per-process address-space cap. Their final outcomes remain pending and
-separate from both earlier resource points.
+completed their exclusive rerun with no fixed per-process address-space cap:
+41 exceeded the aggregate RSS budget and one timed out; none became accepted.
+The sampled peak was48.23GiB. These outcomes remain separate from both earlier
+resource points;they are operational failures,not proofs of false goals.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.
 

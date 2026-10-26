@@ -126,6 +126,6 @@ matrix retains its frozen source/resource point;new-rule data are separate.
 
 The complete new-resource native cell reports one historical accepted-set
 regression; its prepared cell failed with ENOSPC and remains a partial record.
-Full Mathlib COW qualification, accepted-set parity, the ongoing42isolated
-reruns, complete throughput pairs and multi-node measurements remain separately
+Full Mathlib COW qualification, accepted-set parity, the completed42isolated
+reruns (41budget failures and1timeout,zero acceptance), complete throughput pairs and multi-node measurements remain separately
 tracked. Tests/CI do not prove a systems contribution or venue acceptance.
