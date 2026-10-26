@@ -1,0 +1,9 @@
+# Root outer self-audit
+Regressioninterleavingiscontrolledbyoneshot/Condvar,notfragiletimingsleeps.
+Privatefixtureomitswatchdogonlytoseparatethesampled-admissionrace;itdoesnot
+fakeaLeanproof. Initialfatalcheckcanbe stale;in-lockrechecklinearizeslease
+insertionwithshutdown'sstateinspection. Existing21tests/clippyvalidate scope.
+Current71oldCLIbinaryunchanged;onlyfutureenginebuildgetsfix. Rootcombined
+monitorincludesactualcontrollerdescendantspluscompiler,notjustper-processcap.
+CompilationCPUoverlaprecorded;sampledRSSnotcalledhardlimit. Allfailedrawdata/
+partialsetupkept. Root-onlyself-reviewcannotbeindependentaudit.

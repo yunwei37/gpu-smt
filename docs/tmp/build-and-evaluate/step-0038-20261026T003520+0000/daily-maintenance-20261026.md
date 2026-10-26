@@ -54,3 +54,8 @@ no-recovery changes a successfulcustomtacticintoerror. Do notdeployitasa
 transparentdetector. Native71reference isnow runningunderexistingbudget;
 remainingopportunitymustcome from actualphase/branch evidence,notgeneric
 contextflagchanges. KeepstrictserviceerrorsandnativeJSONsemanticsseparate.
+
+Step0062fixesaconfirmedenginelifecycle race while71runs:staleadmissioncouldstart
+backendaftershutdownreturned. Deterministicred→green/21tests/clippy,without
+changingactiveCLI. Thissupportscoreengineering;itisnotpaper novelty orfailure
+prediction. Nextdecisivedataremain71native/import/prototypeandoriginallean-mlir.

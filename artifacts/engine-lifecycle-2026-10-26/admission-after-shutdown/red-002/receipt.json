@@ -1,0 +1,32 @@
+{
+  "UTC": "2026-10-26T14:06:36.018963+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--locked",
+        "-p",
+        "gpu-smt-engine",
+        "--lib",
+        "shutdown_during_admission_sample_cannot_start_backend_after_return",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 101,
+      "seconds": 3.0058642248623073
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 3.005911411019042,
+  "samples": 5,
+  "combined_peak_rss_bytes": 30671077376,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "non_native_engine_regression": true,
+  "native_candidate_executions": 0,
+  "original_group": 445781,
+  "original_group_start_ticks": 145096327,
+  "native_body_elaboration": false
+}

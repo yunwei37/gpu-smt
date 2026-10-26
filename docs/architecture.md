@@ -47,8 +47,11 @@ it is not a kernel quota.
 
 The CLI installs SIGTERM/SIGINT handling before launching candidates and
 awaits engine shutdown at handled termination. HTTP handlers drain; interrupted
-JSONL/measurement execution exits nonzero. Native retirement is awaited before
-runtime shutdown, which does not wait on an idle blocking stdin reader.
+JSONL/measurement execution exits nonzero. Admission rechecks fatal/shutdown
+state after resource sampling while holding the lease-insertion lock: shutdown
+either sees an admitted lease and awaits its retirement, or prevents the lease.
+Native retirement is awaited before runtime shutdown, which does not wait on an
+idle blocking stdin reader.
 This is process lifecycle behavior, not crash/SIGKILL containment.
 
 The optional PreparedRepl backend uses an engine-owned Lean+C import parent:

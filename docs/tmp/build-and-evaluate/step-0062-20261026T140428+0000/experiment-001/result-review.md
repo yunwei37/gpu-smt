@@ -1,0 +1,11 @@
+# Result self-review
+Deterministic old-code regression actually fails(cargo101,onebackendcallafter
+shutdownreturned). Fixrechecks fatalunder active-statelease-insertionlock.
+Newregression+20existingengineintegration tests pass;clippy lib/tests warnings
+denied andrustfmtcheckpass. No API,queue,resource,timeout ornative semantics
+change. Shortcompilation usesCPU11/onejob andexistingcombinedRSSmonitor;
+max46,033,952,768Bsampled,no pressurekills/errors. Onlynewcompilerwaseligible
+forpressureabort;healthy71ownerpreserved. SharedCPUconfoundrecordedexplicitly.
+InitialhelperKeyError beforecargo preserved;not counted as red regression.
+CurrentcollectingCLI/Leanmodulesunchanged;newsourcefixnotretroactivelyclaimed
+tobeinrunningnative71conditions. No newnativeproofgroup orindependentaudit.

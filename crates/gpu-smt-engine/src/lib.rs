@@ -398,6 +398,12 @@ impl Inner {
             let sample = self.snapshot()?;
             {
                 let mut s = self.state.lock().unwrap();
+                // Sampling may overlap shutdown or a fatal watchdog result.
+                // Recheck while holding the lease-insertion lock: shutdown
+                // either sees/cancels this lease or prevents its creation.
+                if let Some(error) = self.fatal.lock().unwrap().clone() {
+                    return Err(error);
+                }
                 // Waiting jobs must refresh learned costs; freezing an unknown
                 // forecast here serializes the entire first submitted batch.
                 let estimate = estimate
@@ -930,5 +936,119 @@ impl Engine {
             }
         }
         Ok(results.into_iter().map(Option::unwrap).collect())
+    }
+}
+
+#[cfg(test)]
+mod shutdown_admission_tests {
+    use super::*;
+    use std::sync::Condvar;
+    use tokio::sync::oneshot;
+
+    struct PausedSample {
+        entered: Mutex<Option<oneshot::Sender<()>>>,
+        resume: Arc<(Mutex<bool>, Condvar)>,
+    }
+    impl ResourceMonitor for PausedSample {
+        fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+            if let Some(entered) = self.entered.lock().unwrap().take() {
+                let _ = entered.send(());
+                let (ready, changed) = &*self.resume;
+                let mut ready = ready.lock().unwrap();
+                while !*ready {
+                    ready = changed.wait(ready).unwrap();
+                }
+            }
+            Ok(ResourceSnapshot {
+                rss_bytes: 0,
+                processes: vec![],
+            })
+        }
+    }
+    struct CountBackend(AtomicU64);
+    #[async_trait::async_trait]
+    impl VerificationBackend for CountBackend {
+        fn identity(&self) -> String {
+            "shutdown-race-fixture".into()
+        }
+        async fn verify(&self, _: &Candidate, _: Execution) -> Outcome {
+            self.0.fetch_add(1, Ordering::SeqCst);
+            Outcome {
+                status: Status::Accepted,
+                response: None,
+                error: None,
+            }
+        }
+    }
+
+    #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+    async fn shutdown_during_admission_sample_cannot_start_backend_after_return() {
+        let (entered, sampled) = oneshot::channel();
+        let resume = Arc::new((Mutex::new(false), Condvar::new()));
+        let backend = Arc::new(CountBackend(AtomicU64::new(0)));
+        // Construct the private accounting state without a periodic watchdog:
+        // only the admission sample can take this deterministic blocking hook.
+        let engine = Engine(Arc::new(Inner {
+            config: Config {
+                memory_bytes: 100,
+                cpus: vec![0],
+                cores_per_worker: 1,
+            },
+            backend: backend.clone(),
+            policy: Arc::new(Fifo),
+            admission: Arc::new(HeadroomAdmission),
+            monitor: Arc::new(PausedSample {
+                entered: Mutex::new(Some(entered)),
+                resume: resume.clone(),
+            }),
+            cache: Arc::new(MemoryCache::default()),
+            state: Mutex::new(State {
+                free: [0].into_iter().collect(),
+                active: HashMap::new(),
+                solo_waiters: 0,
+                queued: BTreeSet::new(),
+            }),
+            inflight: Mutex::new(HashMap::new()),
+            observed_peaks: Mutex::new(vec![]),
+            next: AtomicU64::new(1),
+            notify: Notify::new(),
+            fatal: Mutex::new(None),
+        }));
+        let running = engine.clone();
+        let batch = tokio::spawn(async move {
+            running
+                .verify_batch(Batch {
+                    mode: Mode::All,
+                    candidates: vec![Candidate {
+                        id: "after-shutdown".into(),
+                        code: "fixture".into(),
+                        task_id: None,
+                        timeout_ms: 300000,
+                        reuse: false,
+                    }],
+                })
+                .await
+        });
+        sampled.await.unwrap();
+        // acquire has checked health but has not obtained the active-state lock.
+        engine.shutdown().await;
+        {
+            let (ready, changed) = &*resume;
+            *ready.lock().unwrap() = true;
+            changed.notify_all();
+        }
+        let result = tokio::time::timeout(std::time::Duration::from_secs(2), batch)
+            .await
+            .unwrap()
+            .unwrap()
+            .unwrap();
+        assert_eq!(
+            backend.0.load(Ordering::SeqCst),
+            0,
+            "shutdown returned before a stale admission started new backend work"
+        );
+        assert_eq!(result[0].outcome.status, Status::BackendError);
+        assert!(result[0].attempts.is_empty());
+        assert!(engine.0.state.lock().unwrap().active.is_empty());
     }
 }

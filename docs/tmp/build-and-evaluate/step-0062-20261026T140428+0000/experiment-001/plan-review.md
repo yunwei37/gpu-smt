@@ -1,0 +1,7 @@
+# Root plan self-review
+Thefixtureorchestratesareallockinterleaving,insteadoftimingsleepsor source
+assertions. Itdoesnotstandinfornativeverifierparity. Shutdownmuststopnewleases
+andawait existingretirement;theinsertioncheckmustsharetheactive-state lock so
+concurrentshutdown eithercancelsan admittedleaseorpreventsitscreation.
+No quota/policy/deadlinechange andno ordinarytimer/loggingframeworkexpansion.
+Protectactual71owner;existingCLIbinary remainsunchangeduntilcollectionends.
