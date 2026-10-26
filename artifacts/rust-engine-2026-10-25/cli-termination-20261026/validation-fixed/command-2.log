@@ -1,0 +1,26 @@
+    Checking gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+error: this `if` statement can be collapsed
+   --> crates/gpu-smt-server/tests/cli.rs:518:9
+    |
+518 | /         if let Some((pid, birth)) = native {
+519 | |             if std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 | |                 .ok()
+521 | |                 .and_then(|s| {
+...   |
+532 | |         }
+    | |_________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#collapsible_if
+    = note: `-D clippy::collapsible-if` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+    |
+518 ~         if let Some((pid, birth)) = native
+519 ~             && std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 |                 .ok()
+...
+530 |                     .status();
+531 ~             }
+    |
+
+error: could not compile `gpu-smt-server` (test "cli") due to 1 previous error

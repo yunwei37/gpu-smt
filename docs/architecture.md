@@ -45,6 +45,12 @@ RSS counts shared COW pages per process as requested; physical-sharing claims
 need separate PSS. A1s sampled watchdog can overshoot between observations;
 it is not a kernel quota.
 
+The CLI installs SIGTERM/SIGINT handling before launching candidates and
+awaits engine shutdown at handled termination. HTTP handlers drain; interrupted
+JSONL/measurement execution exits nonzero. Native retirement is awaited before
+runtime shutdown, which does not wait on an idle blocking stdin reader.
+This is process lifecycle behavior, not crash/SIGKILL containment.
+
 The optional PreparedRepl backend uses an engine-owned Lean+C import parent:
 only parsed imports execute there with the normal task manager, which is joined
 and finalized before forking. For modern SDKs, global libuv services are

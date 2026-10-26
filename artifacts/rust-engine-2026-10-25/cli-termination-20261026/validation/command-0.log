@@ -1,0 +1,28 @@
+   Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.16s
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... FAILED
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+
+failures:
+
+---- termination_retires_owned_attempts_in_all_cli_modes stdout ----
+
+thread 'termination_retires_owned_attempts_in_all_cli_modes' (432883) panicked at crates/gpu-smt-server/tests/cli.rs:534:9:
+serve/-TERM: Err("cannot parse integer from empty string")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    termination_retires_owned_attempts_in_all_cli_modes
+
+test result: FAILED. 6 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s
+
+error: test failed, to rerun pass `-p gpu-smt-server --test cli`

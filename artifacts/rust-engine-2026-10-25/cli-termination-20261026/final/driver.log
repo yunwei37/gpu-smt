@@ -1,0 +1,182 @@
+{"UTC": "2026-10-26T05:58:37.734505+00:00", "commands": [{"command": ["cargo", "test", "-p", "gpu-smt-server", "--test", "cli"], "exit": 0, "seconds": 2.007377293193713}, {"command": ["cargo", "fmt", "--all", "--", "--check"], "exit": 0, "seconds": 1.0050248708575964}, {"command": ["cargo", "clippy", "--workspace", "--all-targets", "--", "-D", "warnings"], "exit": 0, "seconds": 1.0049841220024973}, {"command": ["cargo", "test", "--workspace", "--all-targets"], "exit": 0, "seconds": 12.01611160999164}, {"command": ["cargo", "doc", "--workspace", "--no-deps"], "exit": 0, "seconds": 3.0082348010037094}], "samples": 29, "combined_peak_rss_bytes": 14982926336, "budget_bytes": 51539607552, "pressure_aborted_only_new_analysis": false, "monitor_errors": [], "old_owner": 408739, "old_start_ticks": 140695363, "native_candidate_executions": 0, "process_fixture_only": true}
+command-0.log    Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.93s
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+
+command-1.log 
+command-2.log     Checking gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.35s
+
+command-3.log ignored, requires matching native host/SDK; native CI executes failed-import regression
+test native_import_parent_isolates_children_and_matches_raw_responses ... ignored, requires matching LEAN_PREPARED_HOST/LEAN_SYSROOT/LEAN_REPL/LEAN_PROJECT; native CI runs this
+test native_source_frontend_matches_cli_and_retires_interruptions ... ignored, requires LEAN_SYSROOT and LEAN_PROJECT; native CI runs this with the pinned CLI
+
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/process-f148243e948c69fb)
+
+running 8 tests
+test original_source_file_preserves_context_and_refuses_different_bytes ... ok
+test complete_stderr_log_preserves_events_beyond_response_tail ... ok
+test pipe_protocol_errors_admissions_and_stderr_drain ... ok
+test source_arguments_preserve_tokens_source_and_cache_context ... ok
+test stderr_log_setup_fault_retires_native_attempt ... ok
+test timeout_retires_process_before_next_attempt ... ok
+test unavailable_prepared_host_uses_unchanged_native_fallback ... ok
+test real_owned_rss_watchdog_kills_reaps_and_retries_exclusively ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.61s
+
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_server-b918c1458d858b01)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt-dbd5e0d462125063)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s
+
+     Running tests/http.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/http-9e68c6d2e4d8a795)
+
+running 5 tests
+test core_kimina_and_legacy_shapes ... ok
+test dropped_http_stream_retires_real_owned_subprocess_before_shutdown ... ok
+test ndjson_delivers_a_result_before_slow_peer_releases ... ok
+test unsupported_extensions_are_rejected ... ok
+test batches_larger_than_default_extractor_limit_reach_the_engine ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/measurement.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/measurement-6c07025464610bb2)
+
+running 5 tests
+test compares_sets_not_just_equal_accepted_counts ... ok
+test first_success_does_not_claim_per_candidate_parity ... ok
+test refuses_population_or_hardware_clock_pooling ... ok
+test task_availability_is_internal_and_keeps_unsolved_tasks_explicit ... ok
+test records_retry_cost_and_operational_failure_in_tails ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/resource_pair.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/resource_pair-b67f8b970fdf84ad)
+
+running 3 tests
+test tests::physical_attempt_is_readable_before_final_capture ... ok
+test tests::recording_monitor_uses_actual_owned_rss_and_flushes_observations ... ok
+test tests::compressed_capture_roundtrips_and_retires_child ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+command-4.log  Documenting gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.45s
+   Generated /tmp/gpu-smt-rust-engine-build-20261025/target/doc/gpu_smt_core/index.html and 4 other files
+
+driver.log _source_frontend_matches_cli_and_retires_interruptions ... ignored, requires LEAN_SYSROOT and LEAN_PROJECT; native CI runs this with the pinned CLI
+
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/process-f148243e948c69fb)
+
+running 8 tests
+test original_source_file_preserves_context_and_refuses_different_bytes ... ok
+test complete_stderr_log_preserves_events_beyond_response_tail ... ok
+test pipe_protocol_errors_admissions_and_stderr_drain ... ok
+test source_arguments_preserve_tokens_source_and_cache_context ... ok
+test stderr_log_setup_fault_retires_native_attempt ... ok
+test timeout_retires_process_before_next_attempt ... ok
+test unavailable_prepared_host_uses_unchanged_native_fallback ... ok
+test real_owned_rss_watchdog_kills_reaps_and_retries_exclusively ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.61s
+
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_server-b918c1458d858b01)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt-dbd5e0d462125063)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s
+
+     Running tests/http.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/http-9e68c6d2e4d8a795)
+
+running 5 tests
+test core_kimina_and_legacy_shapes ... ok
+test dropped_http_stream_retires_real_owned_subprocess_before_shutdown ... ok
+test ndjson_delivers_a_result_before_slow_peer_releases ... ok
+test unsupported_extensions_are_rejected ... ok
+test batches_larger_than_default_extractor_limit_reach_the_engine ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/measurement.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/measurement-6c07025464610bb2)
+
+running 5 tests
+test compares_sets_not_just_equal_accepted_counts ... ok
+test first_success_does_not_claim_per_candidate_parity ... ok
+test refuses_population_or_hardware_clock_pooling ... ok
+test task_availability_is_internal_and_keeps_unsolved_tasks_explicit ... ok
+test records_retry_cost_and_operational_failure_in_tails ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/resource_pair.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/resource_pair-b67f8b970fdf84ad)
+
+running 3 tests
+test tests::physical_attempt_is_readable_before_final_capture ... ok
+test tests::recording_monitor_uses_actual_owned_rss_and_flushes_observations ... ok
+test tests::compressed_capture_roundtrips_and_retires_child ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+command-4.log  Documenting gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.45s
+   Generated /tmp/gpu-smt-rust-engine-build-20261025/target/doc/gpu_smt_core/index.html and 4 other files
+
+

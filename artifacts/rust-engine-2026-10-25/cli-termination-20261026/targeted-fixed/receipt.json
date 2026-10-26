@@ -1,0 +1,30 @@
+{
+  "UTC": "2026-10-26T05:54:24.412206+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-server",
+        "--test",
+        "cli",
+        "termination_retires_owned_attempts_in_all_cli_modes",
+        "--",
+        "--exact",
+        "--nocapture"
+      ],
+      "exit": 0,
+      "seconds": 3.0110094281844795
+    }
+  ],
+  "samples": 5,
+  "combined_peak_rss_bytes": 15957532672,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_analysis": false,
+  "monitor_errors": [],
+  "old_owner": 408739,
+  "old_start_ticks": 140695363,
+  "native_candidate_executions": 0,
+  "process_fixture_only": true
+}

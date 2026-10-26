@@ -205,7 +205,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .worker_threads(config.cpus.len())
         .enable_all()
         .build()?;
-    runtime.block_on(run(
+    let result = runtime.block_on(run(
         command,
         options,
         config,
@@ -213,7 +213,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         environment,
         started,
         started_unix_ms,
-    ))
+    ));
+    // Engine shutdown has awaited native retirement. Tokio's blocking stdin
+    // read cannot be cancelled; do not wait for caller EOF after a signal.
+    runtime.shutdown_background();
+    result
 }
 
 async fn run(
@@ -244,49 +248,16 @@ async fn run(
         Arc::new(HeadroomAdmission),
         Arc::new(MemoryCache::default()),
     )?;
-    if command == "measure" {
-        let mut source = String::new();
-        tokio::io::stdin().read_to_string(&mut source).await?;
-        let batch: Batch = serde_json::from_str(&source)?;
-        let results = engine.verify_batch(batch.clone()).await?;
-        engine.shutdown().await;
-        let capture = gpu_smt_server::measurement::Capture {
-            schema_version: 1,
-            engine_version: env!("CARGO_PKG_VERSION").into(),
-            environment,
-            backend: backend_identity,
-            policy: policy_name.into(),
-            resources: config,
-            batch,
-            results,
-            started_unix_ms,
-            lifecycle_seconds: started.elapsed().as_secs_f64(),
-        };
-        let mut stdout = tokio::io::stdout();
-        stdout
-            .write_all(serde_json::to_string(&capture)?.as_bytes())
-            .await?;
-        stdout.write_all(b"\n").await?;
-        stdout.flush().await?;
-    } else if command == "check" {
-        let mut lines = BufReader::new(tokio::io::stdin()).lines();
-        let mut stdout = tokio::io::stdout();
-        while let Some(line) = lines.next_line().await? {
-            let response = match serde_json::from_str::<Batch>(&line) {
-                Ok(batch) => match engine.verify_batch(batch).await {
-                    Ok(results) => serde_json::json!({"results":results}),
-                    Err(error) => serde_json::json!({"error":error}),
-                },
-                Err(error) => serde_json::json!({"error":error.to_string()}),
-            };
-            stdout
-                .write_all(serde_json::to_string(&response)?.as_bytes())
-                .await?;
-            stdout.write_all(b"\n").await?;
-            stdout.flush().await?;
+    // Install termination handling before any candidate can start. SIGTERM
+    // otherwise bypasses Drop and leaves native children outside accounting.
+    let mut terminate = tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate())?;
+    let stopping = async move {
+        tokio::select! {
+            signal = tokio::signal::ctrl_c() => signal.map(|_| "SIGINT"),
+            _ = terminate.recv() => Ok::<_, std::io::Error>("SIGTERM"),
         }
-        engine.shutdown().await;
-    } else {
+    };
+    if command == "serve" {
         let listener = tokio::net::TcpListener::bind(
             options
                 .get("--listen")
@@ -297,10 +268,70 @@ async fn run(
         let shutdown = engine.clone();
         axum::serve(listener, gpu_smt_server::router(engine))
             .with_graceful_shutdown(async move {
-                let _ = tokio::signal::ctrl_c().await;
+                if let Err(error) = stopping.await {
+                    tracing::warn!(%error, "shutdown signal handler failed");
+                }
                 shutdown.shutdown().await;
             })
             .await?;
+        return Ok(());
     }
-    Ok(())
+    let work = async {
+        if command == "measure" {
+            let mut source = String::new();
+            tokio::io::stdin().read_to_string(&mut source).await?;
+            let batch: Batch = serde_json::from_str(&source)?;
+            let results = engine.verify_batch(batch.clone()).await?;
+            engine.shutdown().await;
+            let capture = gpu_smt_server::measurement::Capture {
+                schema_version: 1,
+                engine_version: env!("CARGO_PKG_VERSION").into(),
+                environment,
+                backend: backend_identity,
+                policy: policy_name.into(),
+                resources: config,
+                batch,
+                results,
+                started_unix_ms,
+                lifecycle_seconds: started.elapsed().as_secs_f64(),
+            };
+            let mut stdout = tokio::io::stdout();
+            stdout
+                .write_all(serde_json::to_string(&capture)?.as_bytes())
+                .await?;
+            stdout.write_all(b"\n").await?;
+            stdout.flush().await?;
+        } else if command == "check" {
+            let mut lines = BufReader::new(tokio::io::stdin()).lines();
+            let mut stdout = tokio::io::stdout();
+            while let Some(line) = lines.next_line().await? {
+                let response = match serde_json::from_str::<Batch>(&line) {
+                    Ok(batch) => match engine.verify_batch(batch).await {
+                        Ok(results) => serde_json::json!({"results":results}),
+                        Err(error) => serde_json::json!({"error":error}),
+                    },
+                    Err(error) => serde_json::json!({"error":error.to_string()}),
+                };
+                stdout
+                    .write_all(serde_json::to_string(&response)?.as_bytes())
+                    .await?;
+                stdout.write_all(b"\n").await?;
+                stdout.flush().await?;
+            }
+            engine.shutdown().await;
+        }
+        Ok::<_, Box<dyn std::error::Error>>(())
+    };
+    tokio::select! {
+        result = work => {
+            if result.is_err() {
+                engine.shutdown().await;
+            }
+            result
+        },
+        signal = stopping => {
+            engine.shutdown().await;
+            Err(format!("{}; owned verification attempts retired", signal?).into())
+        }
+    }
 }

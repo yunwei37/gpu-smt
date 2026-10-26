@@ -1,0 +1,70 @@
+{
+  "UTC": "2026-10-26T05:58:37.734505+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-server",
+        "--test",
+        "cli"
+      ],
+      "exit": 0,
+      "seconds": 2.007377293193713
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.0050248708575964
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 1.0049841220024973
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-targets"
+      ],
+      "exit": 0,
+      "seconds": 12.01611160999164
+    },
+    {
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps"
+      ],
+      "exit": 0,
+      "seconds": 3.0082348010037094
+    }
+  ],
+  "samples": 29,
+  "combined_peak_rss_bytes": 14982926336,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_analysis": false,
+  "monitor_errors": [],
+  "old_owner": 408739,
+  "old_start_ticks": 140695363,
+  "native_candidate_executions": 0,
+  "process_fixture_only": true
+}

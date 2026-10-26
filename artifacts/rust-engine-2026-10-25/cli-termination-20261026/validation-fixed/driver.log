@@ -1,0 +1,91 @@
+{"UTC": "2026-10-26T05:57:12.190230+00:00", "commands": [{"command": ["cargo", "test", "-p", "gpu-smt-server", "--test", "cli"], "exit": 0, "seconds": 3.0132364220917225}, {"command": ["cargo", "fmt", "--all", "--", "--check"], "exit": 0, "seconds": 1.0047255349345505}, {"command": ["cargo", "clippy", "--workspace", "--all-targets", "--", "-D", "warnings"], "exit": 101, "seconds": 1.004229434998706}], "samples": 11, "combined_peak_rss_bytes": 15985418240, "budget_bytes": 51539607552, "pressure_aborted_only_new_analysis": false, "monitor_errors": [], "old_owner": 408739, "old_start_ticks": 140695363, "native_candidate_executions": 0, "process_fixture_only": true}
+command-0.log    Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.51s
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+
+
+command-1.log 
+command-2.log     Checking gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+error: this `if` statement can be collapsed
+   --> crates/gpu-smt-server/tests/cli.rs:518:9
+    |
+518 | /         if let Some((pid, birth)) = native {
+519 | |             if std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 | |                 .ok()
+521 | |                 .and_then(|s| {
+...   |
+532 | |         }
+    | |_________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#collapsible_if
+    = note: `-D clippy::collapsible-if` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+    |
+518 ~         if let Some((pid, birth)) = native
+519 ~             && std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 |                 .ok()
+...
+530 |                     .status();
+531 ~             }
+    |
+
+error: could not compile `gpu-smt-server` (test "cli") due to 1 previous error
+
+driver.log {"UTC": "2026-10-26T05:57:12.190230+00:00", "commands": [{"command": ["cargo", "test", "-p", "gpu-smt-server", "--test", "cli"], "exit": 0, "seconds": 3.0132364220917225}, {"command": ["cargo", "fmt", "--all", "--", "--check"], "exit": 0, "seconds": 1.0047255349345505}, {"command": ["cargo", "clippy", "--workspace", "--all-targets", "--", "-D", "warnings"], "exit": 101, "seconds": 1.004229434998706}], "samples": 11, "combined_peak_rss_bytes": 15985418240, "budget_bytes": 51539607552, "pressure_aborted_only_new_analysis": false, "monitor_errors": [], "old_owner": 408739, "old_start_ticks": 140695363, "native_candidate_executions": 0, "process_fixture_only": true}
+command-0.log    Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.51s
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+
+
+command-1.log 
+command-2.log     Checking gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+error: this `if` statement can be collapsed
+   --> crates/gpu-smt-server/tests/cli.rs:518:9
+    |
+518 | /         if let Some((pid, birth)) = native {
+519 | |             if std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 | |                 .ok()
+521 | |                 .and_then(|s| {
+...   |
+532 | |         }
+    | |_________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#collapsible_if
+    = note: `-D clippy::collapsible-if` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+    |
+518 ~         if let Some((pid, birth)) = native
+519 ~             && std::fs::read_to_string(format!("/proc/{pid}/stat"))
+520 |                 .ok()
+...
+530 |                     .status();
+531 ~             }
+    |
+
+error: could not compile `gpu-smt-server` (test "cli") due to 1 previous error
+
+

@@ -1,0 +1,26 @@
+{
+  "UTC": "2026-10-26T05:50:31.220564+00:00",
+  "source": "cdaae0021ac7069e9f1833e1b0f343b991204800",
+  "command": [
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/debug/gpu-smt",
+    "serve",
+    "--repl",
+    "/usr/bin/python3",
+    "--project",
+    "/tmp",
+    "--environment",
+    "idle-signal-reproduction-no-native",
+    "--cpus",
+    "11",
+    "--listen",
+    "127.0.0.1:0"
+  ],
+  "pid": 431579,
+  "start_ticks": 142520291,
+  "exit": -15,
+  "expected_graceful_exit": 0,
+  "defect_reproduced": true,
+  "native_candidate_executions": 0,
+  "backend_children": 0,
+  "binary_mtime": 1792988058.226156
+}

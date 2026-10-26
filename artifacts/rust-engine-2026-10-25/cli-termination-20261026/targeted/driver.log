@@ -1,0 +1,43 @@
+{"UTC": "2026-10-26T05:52:59.566111+00:00", "commands": [{"command": ["cargo", "test", "-p", "gpu-smt-server", "--test", "cli", "termination_retires_owned_attempts_in_all_cli_modes", "--", "--exact", "--nocapture"], "exit": 101, "seconds": 2.009492323966697}], "samples": 4, "combined_peak_rss_bytes": 13294596096, "budget_bytes": 51539607552, "pressure_aborted_only_new_analysis": false, "monitor_errors": [], "old_owner": 408739, "old_start_ticks": 140695363, "native_candidate_executions": 0, "process_fixture_only": true}
+command-0.log    Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+error[E0373]: async block may outlive the current function, but it borrows `terminate`, which is owned by the current function
+   --> crates/gpu-smt-server/src/main.rs:250:20
+    |
+250 |     let stopping = async {
+    |                    ^^^^^ may outlive borrowed value `terminate`
+...
+253 |             _ = terminate.recv() => Ok::<_, std::io::Error>("SIGTERM"),
+    |                 --------- `terminate` is borrowed here
+    |
+    = note: async blocks are not executed immediately and must either take a reference or ownership of outside variables they use
+help: to force the async block to take ownership of `terminate` (and any other referenced variables), use the `move` keyword
+    |
+250 |     let stopping = async move {
+    |                          ++++
+
+For more information about this error, try `rustc --explain E0373`.
+error: could not compile `gpu-smt-server` (bin "gpu-smt") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+
+driver.log {"UTC": "2026-10-26T05:52:59.566111+00:00", "commands": [{"command": ["cargo", "test", "-p", "gpu-smt-server", "--test", "cli", "termination_retires_owned_attempts_in_all_cli_modes", "--", "--exact", "--nocapture"], "exit": 101, "seconds": 2.009492323966697}], "samples": 4, "combined_peak_rss_bytes": 13294596096, "budget_bytes": 51539607552, "pressure_aborted_only_new_analysis": false, "monitor_errors": [], "old_owner": 408739, "old_start_ticks": 140695363, "native_candidate_executions": 0, "process_fixture_only": true}
+command-0.log    Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+error[E0373]: async block may outlive the current function, but it borrows `terminate`, which is owned by the current function
+   --> crates/gpu-smt-server/src/main.rs:250:20
+    |
+250 |     let stopping = async {
+    |                    ^^^^^ may outlive borrowed value `terminate`
+...
+253 |             _ = terminate.recv() => Ok::<_, std::io::Error>("SIGTERM"),
+    |                 --------- `terminate` is borrowed here
+    |
+    = note: async blocks are not executed immediately and must either take a reference or ownership of outside variables they use
+help: to force the async block to take ownership of `terminate` (and any other referenced variables), use the `move` keyword
+    |
+250 |     let stopping = async move {
+    |                          ++++
+
+For more information about this error, try `rustc --explain E0373`.
+error: could not compile `gpu-smt-server` (bin "gpu-smt") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+
+

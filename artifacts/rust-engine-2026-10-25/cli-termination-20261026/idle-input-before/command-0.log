@@ -1,0 +1,19 @@
+   Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.82s
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 1 test
+
+thread 'termination_interrupts_idle_cli_input_without_waiting_for_eof' (432517) panicked at crates/gpu-smt-server/tests/cli.rs:580:9:
+check: shutdown waited for stdin EOF
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... FAILED
+
+failures:
+
+failures:
+    termination_interrupts_idle_cli_input_without_waiting_for_eof
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out; finished in 3.11s
+
+error: test failed, to rerun pass `-p gpu-smt-server --test cli`

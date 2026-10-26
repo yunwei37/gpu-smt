@@ -1,0 +1,50 @@
+{
+  "UTC": "2026-10-26T05:57:12.190230+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-server",
+        "--test",
+        "cli"
+      ],
+      "exit": 0,
+      "seconds": 3.0132364220917225
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.0047255349345505
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 101,
+      "seconds": 1.004229434998706
+    }
+  ],
+  "samples": 11,
+  "combined_peak_rss_bytes": 15985418240,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_analysis": false,
+  "monitor_errors": [],
+  "old_owner": 408739,
+  "old_start_ticks": 140695363,
+  "native_candidate_executions": 0,
+  "process_fixture_only": true
+}

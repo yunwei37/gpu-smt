@@ -360,3 +360,222 @@ fn original_source_file_mode_reaches_native_file_context() {
     std::fs::remove_dir(directory).unwrap();
     std::fs::remove_file(path).unwrap();
 }
+
+#[test]
+fn termination_retires_owned_attempts_in_all_cli_modes() {
+    use std::io::Write;
+    use std::net::{TcpListener, TcpStream};
+    use std::os::unix::fs::PermissionsExt;
+    use std::time::Instant;
+    let directory = std::env::temp_dir().join(format!("gpu-smt-stop-{}", std::process::id()));
+    std::fs::create_dir(&directory).unwrap();
+    let fixture = directory.join("hold.py");
+    std::fs::write(
+        &fixture,
+        b"#!/usr/bin/python3\nimport json,os,sys,time\nfrom pathlib import Path\nsource=json.loads(sys.stdin.readline())['cmd']\nmarker=Path(source)\nready=marker.with_suffix('.ready')\nready.write_text(str(os.getpid()))\nready.rename(marker)\ntime.sleep(60)\n",
+    ).unwrap();
+    std::fs::set_permissions(&fixture, std::fs::Permissions::from_mode(0o700)).unwrap();
+    let eligible = std::fs::read_to_string("/proc/self/status").unwrap();
+    let cpu = mask(
+        eligible
+            .lines()
+            .find_map(|l| l.strip_prefix("Cpus_allowed_list:"))
+            .unwrap(),
+    )
+    .into_iter()
+    .next()
+    .unwrap()
+    .to_string();
+    for (mode, signal) in [
+        ("serve", "-TERM"),
+        ("check", "-TERM"),
+        ("measure", "-TERM"),
+        ("check", "-INT"),
+    ] {
+        let marker = directory.join(format!("{mode}{signal}.pid"));
+        let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+        let address = listener.local_addr().unwrap();
+        drop(listener);
+        let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
+            .args([
+                mode,
+                "--repl",
+                fixture.to_str().unwrap(),
+                "--project",
+                "/tmp",
+                "--environment",
+                "signal-fixture-not-Lean",
+                "--cpus",
+                &cpu,
+                "--listen",
+                &address.to_string(),
+            ])
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        let mut native = None;
+        let result = (|| -> Result<(), String> {
+            let payload = serde_json::json!({"candidates":[
+                {"id":"held","code":marker.to_str().unwrap(),"reuse":false}]})
+            .to_string();
+            let mut connection = if mode == "serve" {
+                let until = Instant::now() + Duration::from_secs(5);
+                let mut stream = loop {
+                    match TcpStream::connect(address) {
+                        Ok(stream) => break stream,
+                        Err(_) if Instant::now() < until => {
+                            std::thread::sleep(Duration::from_millis(10))
+                        }
+                        Err(error) => return Err(error.to_string()),
+                    }
+                };
+                write!(stream, "POST /v1/verify HTTP/1.1\r\nHost: localhost\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: {}\r\n\r\n{}", payload.len(), payload).map_err(|e|e.to_string())?;
+                Some(stream)
+            } else {
+                let mut input = child.stdin.take().unwrap();
+                writeln!(input, "{payload}").map_err(|e| e.to_string())?;
+                drop(input);
+                None
+            };
+            let until = Instant::now() + Duration::from_secs(5);
+            while !marker.exists() && Instant::now() < until {
+                if child.try_wait().map_err(|e| e.to_string())?.is_some() {
+                    return Err("CLI exited before held attempt".into());
+                }
+                std::thread::sleep(Duration::from_millis(10));
+            }
+            let pid: u32 = std::fs::read_to_string(&marker)
+                .map_err(|e| e.to_string())?
+                .parse()
+                .map_err(|e| format!("{e}"))?;
+            let stat =
+                std::fs::read_to_string(format!("/proc/{pid}/stat")).map_err(|e| e.to_string())?;
+            let birth = stat
+                .rsplit_once(')')
+                .unwrap()
+                .1
+                .split_whitespace()
+                .nth(19)
+                .unwrap()
+                .to_owned();
+            native = Some((pid, birth));
+            assert!(
+                Command::new("kill")
+                    .args([signal, &child.id().to_string()])
+                    .status()
+                    .unwrap()
+                    .success()
+            );
+            let until = Instant::now() + Duration::from_secs(5);
+            let status = loop {
+                if let Some(status) = child.try_wait().map_err(|e| e.to_string())? {
+                    break status;
+                }
+                if Instant::now() >= until {
+                    return Err("CLI failed to retire after signal".into());
+                }
+                std::thread::sleep(Duration::from_millis(10));
+            };
+            if status.success() != (mode == "serve") || (mode != "serve" && status.code().is_none())
+            {
+                return Err(format!("incorrect termination status: {status}"));
+            }
+            if std::path::Path::new(&format!("/proc/{pid}")).exists() {
+                return Err("owned verifier still exists after CLI exit".into());
+            }
+            if let Some(stream) = connection.as_mut() {
+                stream
+                    .set_read_timeout(Some(Duration::from_secs(2)))
+                    .unwrap();
+                let mut response = String::new();
+                stream
+                    .read_to_string(&mut response)
+                    .map_err(|e| e.to_string())?;
+                if !response.contains("backend_error") {
+                    return Err(response);
+                }
+            } else if mode == "measure" {
+                let mut output = String::new();
+                child
+                    .stdout
+                    .take()
+                    .unwrap()
+                    .read_to_string(&mut output)
+                    .map_err(|e| e.to_string())?;
+                if !output.is_empty() {
+                    return Err("interrupted measure emitted a complete capture".into());
+                }
+            }
+            Ok(())
+        })();
+        if child.try_wait().unwrap().is_none() {
+            let _ = child.kill();
+        }
+        let _ = child.wait();
+        // Failure cleanup targets only the fixture's still-matching process birth.
+        if let Some((pid, birth)) = native
+            && std::fs::read_to_string(format!("/proc/{pid}/stat"))
+                .ok()
+                .and_then(|s| {
+                    s.rsplit_once(')')
+                        .map(|(_, t)| t.split_whitespace().nth(19).unwrap_or("").to_owned())
+                })
+                .as_ref()
+                == Some(&birth)
+        {
+            let _ = Command::new("kill")
+                .args(["-KILL", "--", &format!("-{pid}")])
+                .status();
+        }
+        let _ = std::fs::remove_file(marker);
+        assert!(result.is_ok(), "{mode}/{signal}: {result:?}");
+    }
+    std::fs::remove_file(fixture).unwrap();
+    std::fs::remove_dir(directory).unwrap();
+}
+
+#[test]
+fn termination_interrupts_idle_cli_input_without_waiting_for_eof() {
+    for mode in ["check", "measure"] {
+        let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
+            .args([
+                mode,
+                "--repl",
+                "/usr/bin/python3",
+                "--project",
+                "/tmp",
+                "--environment",
+                "idle-signal-no-native",
+            ])
+            .stdin(Stdio::piped())
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn()
+            .unwrap();
+        std::thread::sleep(Duration::from_millis(100));
+        assert!(child.try_wait().unwrap().is_none());
+        assert!(
+            Command::new("kill")
+                .args(["-TERM", &child.id().to_string()])
+                .status()
+                .unwrap()
+                .success()
+        );
+        let until = std::time::Instant::now() + Duration::from_secs(3);
+        let mut stopped = false;
+        while std::time::Instant::now() < until {
+            if let Some(status) = child.try_wait().unwrap() {
+                stopped = status.code().is_some() && !status.success();
+                break;
+            }
+            std::thread::sleep(Duration::from_millis(10));
+        }
+        if child.try_wait().unwrap().is_none() {
+            child.kill().unwrap();
+        }
+        child.wait().unwrap();
+        assert!(stopped, "{mode}: shutdown waited for stdin EOF");
+    }
+}

@@ -1,0 +1,137 @@
+   Compiling gpu-smt-server v0.1.0 (/workspaces/repository/crates/gpu-smt-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.74s
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_core-a40ea26deef841a0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_engine-90d7831e58a3ce80)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/engine.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/engine-1667e1344376caca)
+
+running 20 tests
+test cached_and_coalesced_tickets_do_not_block_independent_cpu_capacity ... ok
+test changed_timeout_and_source_are_not_duplicate_keys ... ok
+test cancellation_of_one_consumer_does_not_abort_rl_duplicate_subscribers ... ok
+test exact_duplicates_preserve_all_reward_rows_and_bypass_operational_cache ... ok
+test first_success_is_separate_from_every_candidate_rewards ... ok
+test idle_native_state_cannot_strand_a_large_forecast ... ok
+test invalid_batch_policy_is_an_interface_error_before_native_work ... ok
+test first_success_waits_for_last_subscribers_backend_retirement ... ok
+test memory_cache_does_not_promote_operational_outcomes ... ok
+test large_waiting_batch_does_not_rescan_process_table_per_candidate ... ok
+test oversized_solo_is_resource_failure_not_infinite_retry_or_rejection ... ok
+test owned_idle_preparation_is_included_in_total_rss ... ok
+test proc_monitor_is_owned_and_birth_checked ... ok
+test stream_disconnect_preserves_shared_rl_subscription ... ok
+test submitted_order_survives_delayed_forecast_and_task_wakeup ... ok
+test task_interleaving_composes_source_ranking_and_memory_forecasts ... ok
+test task_interleaving_drives_execution_without_changing_all_mode_order ... ok
+test preempted_candidate_is_requeued_exclusively_with_history ... ok
+test unread_stream_cancels_checked_siblings_and_emits_complete_rows ... ok
+test unknown_forecasts_refresh_from_live_observations ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.91s
+
+     Running benches/exact_cache.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/exact_cache-b77e5ad9babb19e6)
+exact completed-result lookups=100000, elapsed_seconds=1.504755; excludes verifier and service work
+     Running unittests examples/task_order.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/task_order-8ba9ca67ce4d2e11)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_lean-104b00d393374054)
+
+running 3 tests
+test source::tests::native_exit_and_diagnostic_shapes_are_distinct ... ok
+test source::tests::stderr_log_write_failure_stays_explicit_after_drain ... ok
+test tests::admissions_and_unknown_shapes_are_never_accepted ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/native_differential.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/native_differential-c6a34b89236b1903)
+
+running 4 tests
+test native_accept_reject_and_sorry_match_raw_stock_repl ... ignored, requires LEAN_REPL and LEAN_PROJECT; run when the sole native collection slot is free
+test native_import_error_never_becomes_prepared_readiness ... ignored, requires matching native host/SDK; native CI executes failed-import regression
+test native_import_parent_isolates_children_and_matches_raw_responses ... ignored, requires matching LEAN_PREPARED_HOST/LEAN_SYSROOT/LEAN_REPL/LEAN_PROJECT; native CI runs this
+test native_source_frontend_matches_cli_and_retires_interruptions ... ignored, requires LEAN_SYSROOT and LEAN_PROJECT; native CI runs this with the pinned CLI
+
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/process.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/process-f148243e948c69fb)
+
+running 8 tests
+test original_source_file_preserves_context_and_refuses_different_bytes ... ok
+test complete_stderr_log_preserves_events_beyond_response_tail ... ok
+test pipe_protocol_errors_admissions_and_stderr_drain ... ok
+test source_arguments_preserve_tokens_source_and_cache_context ... ok
+test stderr_log_setup_fault_retires_native_attempt ... ok
+test timeout_retires_process_before_next_attempt ... ok
+test unavailable_prepared_host_uses_unchanged_native_fallback ... ok
+test real_owned_rss_watchdog_kills_reaps_and_retries_exclusively ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.61s
+
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_server-b918c1458d858b01)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt-dbd5e0d462125063)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/cli-fbd3254766b7fcbd)
+
+running 7 tests
+test native_source_arguments_reach_process_and_capture_identity ... ok
+test original_source_file_mode_reaches_native_file_context ... ok
+test measure_capture_and_compare_round_trip_retire_native_fixture ... ok
+test runtime_threads_inherit_the_same_cpu_budget ... ok
+test structured_resource_logs_do_not_corrupt_jsonl_results ... ok
+test termination_interrupts_idle_cli_input_without_waiting_for_eof ... ok
+test termination_retires_owned_attempts_in_all_cli_modes ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s
+
+     Running tests/http.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/http-9e68c6d2e4d8a795)
+
+running 5 tests
+test core_kimina_and_legacy_shapes ... ok
+test dropped_http_stream_retires_real_owned_subprocess_before_shutdown ... ok
+test ndjson_delivers_a_result_before_slow_peer_releases ... ok
+test unsupported_extensions_are_rejected ... ok
+test batches_larger_than_default_extractor_limit_reach_the_engine ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/measurement.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/measurement-6c07025464610bb2)
+
+running 5 tests
+test compares_sets_not_just_equal_accepted_counts ... ok
+test first_success_does_not_claim_per_candidate_parity ... ok
+test refuses_population_or_hardware_clock_pooling ... ok
+test task_availability_is_internal_and_keeps_unsolved_tasks_explicit ... ok
+test records_retry_cost_and_operational_failure_in_tails ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests examples/resource_pair.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/resource_pair-b67f8b970fdf84ad)
+
+running 3 tests
+test tests::physical_attempt_is_readable_before_final_capture ... ok
+test tests::recording_monitor_uses_actual_owned_rss_and_flushes_observations ... ok
+test tests::compressed_capture_roundtrips_and_retires_child ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

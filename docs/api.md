@@ -81,6 +81,15 @@ not establish compatibility with every optional Kimina feature.
 
 ## Memory, CPU and lifecycle
 
+The executable handles SIGTERM and SIGINT through engine shutdown before
+exiting: admissions stop and active owned attempts retire. serve drains its
+HTTP handlers; interrupted check/measure exit nonzero. If verification is
+interrupted, measure emits no complete capture; interruption during later output
+may leave a partial record, so consumers also check exit status. An idle stdin reader does not require
+caller EOF to let the CLI exit. This covers handled signals after runtime
+initialization, not SIGKILL or an external process/container crash.
+Library/router users still call Engine::shutdown at their own lifecycle boundary.
+
 Config takes actual CPU IDs, measured cores_per_worker and aggregate byte
 budget. No RLIMIT_AS is installed. Unknown memory starts conservatively;
 observed peaks and optional source forecasts guide admission. Shared global
