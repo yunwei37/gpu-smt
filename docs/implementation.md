@@ -32,6 +32,8 @@ subscriptions; physical cancellation occurs after the last subscriber and stays
 owned through native retirement. Buffered event memory enters process RSS.
 Internal availability is not client delivery time. This is ordinary service
 engineering, not a new verifier algorithm or demonstrated workload speedup.
+Actual pinnedLean4.18 stream/raw accepted/rejected controls pass at faa2a0f;
+full population and client delivery measurement remain separate requirements.
 
 ## Resource contract
 

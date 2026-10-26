@@ -70,3 +70,13 @@ Maintain existing docs and original raw/failed results. At actual fullpair
 terminal collect once,then original nightly measurement and failure cohorts.
 Publish coherent source/validation/self-review boundary directly on main;
 actual commit/push/nativeCI observation follows without claiming goal complete.
+
+
+## Post-publication executed native check
+Both existing workflows succeed at faa2a0f. All4pinned native contracts actually
+execute;the source test checks stream accepted/rejected payloads against raw
+native envelopes,unique original indices,Complete2and retirement.
+[Executed evidence](../../../../artifacts/rust-engine-2026-10-25/stream-native-ci-faa2a0f/result-review.md)
+resolves publication-time pending status only. Matched strongest warm/native
+baseline evidence and actual delivered-latency benchmarking remain open alongside
+the full resource pair. No code/source/resource or paper-contract change follows.
