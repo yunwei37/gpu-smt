@@ -81,3 +81,12 @@ Publishcompleteboundarymain/push;futurecaptureclocks include addedrecordingI/O
 and must not be pooled with currentversion. Continue currentpair toactual
 terminal,then originallean-mlir/hotspotqualification/42isolatedwork in declared
 sequence. Allfourdirections/RQs and paperobjective remain active/incomplete.
+
+## Post-publication executed CI
+
+Exact7206af9 engine40282376640 and benchmark-smoke40282376557 bothsucceed.
+Rustjob actually executes53ordinarytests including bothnewjournaltests.
+Separatepinnednativejob actually executes4cases,4passed/0failed/0ignored.
+[Receipt/rawlogs/rootself-review](../../../../artifacts/rust-engine-2026-10-25/consumer-journal-20261026/native-ci-7206af9/result-review.md)
+resolves the earlierpendingstatus. These areboundedexistingcontracts,not
+full4.9Mathlib/newjournalpopulation or performanceevidence. No newsource/runtime.
