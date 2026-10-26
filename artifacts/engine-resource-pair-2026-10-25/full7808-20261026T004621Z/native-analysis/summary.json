@@ -1,0 +1,119 @@
+{
+  "UTC": "2026-10-26T10:04:20.257560+00:00",
+  "condition": "native complete; prepared cell terminated ENOSPC,partial preserved",
+  "sources": 7808,
+  "original_input_equal": true,
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1
+  },
+  "lifecycle_seconds": 28464.813474899,
+  "external_cell_seconds": 28466.132238978,
+  "final_statuses": {
+    "accepted": 3013,
+    "rejected": 4665,
+    "timeout": 87,
+    "resource_exhausted": 41,
+    "backend_error": 2
+  },
+  "final_attempt_statuses": {
+    "accepted": 3013,
+    "rejected": 4665,
+    "timeout": 87,
+    "preempted": 44,
+    "resource_exhausted": 41,
+    "backend_error": 2
+  },
+  "physical_journal_statuses": {
+    "accepted": 3013,
+    "rejected": 4665,
+    "timeout": 87,
+    "cancelled": 85,
+    "backend_error": 2
+  },
+  "sources_with_retry": 44,
+  "watchdog_events": 85,
+  "exclusive_budget_failures": 41,
+  "sampled_peak_rss_bytes": 52386656256,
+  "sampled_peak_GiB": 48.788875579833984,
+  "retained_one_second_peak_rss_bytes": 52220346368,
+  "samples": 20866,
+  "samples_over_budget": 33,
+  "max_registered_leaders": 4,
+  "peak_excess_bytes": 847048704,
+  "journal_errors": [],
+  "monitor_peak_scope": "All admission/watchdog observations; raw JSONL is thinned to at most one retained sample/second,so its maximum need not equal monitor peak.",
+  "old_status_scope": "Historical2workers/24GiB AS per-process data; compare sets only,no time/speed inference.",
+  "accepted_missing_vs_old": [
+    "minif2f-3086"
+  ],
+  "accepted_added_vs_old": [],
+  "old_accepted": 3014,
+  "current_accepted": 3013,
+  "status_transitions": [
+    {
+      "old": "accepted",
+      "current": "accepted",
+      "count": 3013
+    },
+    {
+      "old": "rejected",
+      "current": "rejected",
+      "count": 4665
+    },
+    {
+      "old": "timeout",
+      "current": "timeout",
+      "count": 83
+    },
+    {
+      "old": "resource_exhausted",
+      "current": "resource_exhausted",
+      "count": 41
+    },
+    {
+      "old": "resource_exhausted",
+      "current": "timeout",
+      "count": 1
+    },
+    {
+      "old": "rejected",
+      "current": "backend_error",
+      "count": 2
+    },
+    {
+      "old": "rejected",
+      "current": "timeout",
+      "count": 2
+    },
+    {
+      "old": "accepted",
+      "current": "timeout",
+      "count": 1
+    }
+  ],
+  "historic42_current_statuses": {
+    "resource_exhausted": 41,
+    "timeout": 1
+  },
+  "native_backend_faults": [
+    {
+      "id": "minif2f-2325",
+      "error_excerpt": "native EOF before response; [stderr tail truncated] inarith.CertificateOracle.simplexAlgorithm._elambda_1._spec_24\n#6176 Lean.Loop.forIn.loop._at.Linarith.CertificateOracle.simplexAlgorithm._elambda_1._spec_24._lambda_3\n",
+      "deep_simplex_stack_in_tail": true
+    },
+    {
+      "id": "minif2f-3209",
+      "error_excerpt": "native EOF before response; [stderr tail truncated] m._elambda_1._spec_24._lambda_3\n#6289 Lean.Loop.forIn.loop._at.Linarith.CertificateOracle.simplexAlgorithm._elambda_1._spec_24\n#6290 Lean.Loop.forIn.loop._at.Linarith.C",
+      "deep_simplex_stack_in_tail": true
+    }
+  ],
+  "pair_speedup": null,
+  "scope": "Complete native cell. Actual preempted physical outcomes differ from final classification. One-second sampled watchdog can overshoot;not a hard48GiBquota. No prepared parity/result or performance conclusion."
+}

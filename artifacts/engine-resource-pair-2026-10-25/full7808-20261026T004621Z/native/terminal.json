@@ -1,0 +1,26 @@
+{
+  "clock_scope": "input decoding through native shutdown, capture serialization, compression and compressor retirement",
+  "condition": "native",
+  "external_cell_seconds": 28466.132238978,
+  "fixed_process_AS_cap": false,
+  "interrupted": false,
+  "journal_errors": [],
+  "journal_scope": "flushed physical native attempts; final capture also includes queued/consumer outcomes; no power-loss durability claim",
+  "observations": {
+    "max_observed_registered_leaders": 4,
+    "retained_samples": 20866,
+    "sampled_peak_rss_bytes": 52386656256,
+    "scope": "RSS includes this driver/engine and all owned native/compressor descendants; registered leaders are not proof of busy CPU cores"
+  },
+  "resources": {
+    "cores_per_worker": 1,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "memory_bytes": 51539607552
+  },
+  "state": "complete"
+}

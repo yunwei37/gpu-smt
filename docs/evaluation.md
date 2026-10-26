@@ -355,3 +355,17 @@ A fixture regression fails on old code and passes after repair;49ordinary tests
 pass. Pinned-native CI will exercise actual engine-to-parent eviction;not locally
 executed alongside the fullpair. Current fullpair remains42659a8and no native
 performance or original accepted-set conclusion follows from this fix.
+
+## Dynamic-resource7808 native boundary and failed prepared cell
+
+[Exact native/partial prepared record](../artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/README.md):
+native7808complete at3013accepted/4665rejected/87timeouts/41resource exhausted/
+2backend faults,28466.132239s external cell. Historical accepted ID3086now
+times out;no accepted-set equivalence or cross-point speedup is established.
+85watchdog events;all-monitor peak48.788876GiB exceeds the sampled48GiB budget.
+Prepared terminates ENOSPC with2408physical attempt rows,no completeCapture;
+no pair ratio is available. Failed/raw data and lossless repair receipts remain.
+Storage cache/core archival repaired writable space without changing quotas,
+nativeflags or otherWorkspaces. Next native sequence is42exclusive reruns,
+71timeout prototypes,then original lean-mlir. Completing the prepared comparison
+remains open;partial physical rows cannot substitute for finalconsumer results.
