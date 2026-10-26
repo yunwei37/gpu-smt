@@ -73,10 +73,22 @@ fresh/prepared comparisons do not establish a strongest warm-service advantage
 or novelty. [Prepared original-workload scope](../artifacts/engine-resource-pair-2026-10-25/preparation/README.md)
 is distinct from executed performance.
 
-The resource_pair example also flushes attempts.jsonl after every physical
-native attempt. This preserves returned native results if the parent run is
-interrupted before its final capture. Capture/terminal still own queued and
-consumer outcomes,source mapping and whole-clock completeness. Ordinary and
-exclusive retry calls preserve backend behavior;I/O errors are explicit
-evidence errors. Flush does not promise power-loss durability. Both paired
-conditions include these recording costs.
+The resource_pair example flushes attempts.jsonl after each physical backend
+attempt and results.jsonl after each final consumer BatchEvent from the existing
+stream API. These are different: watchdog classification and retry history can
+change a backend cancellation into a final engine result. The consumer journal
+preserves original indices, IDs, native responses, histories and elapsed clocks;
+the complete Capture keeps original submission order.
+
+A validated Complete event covers all consumer rows, not idle-backend shutdown
+or whole-cell completion. EOF without Complete is partial. Capture/terminal
+remain the whole-clock and lifecycle authority. A handled SIGINT/SIGTERM stops
+the pair after cleanup and retains interrupted records; a journal I/O failure
+also awaits owned retirement before returning an error. Flush is not fsync or
+a power-loss guarantee. No automatic resume or reconstructed missing outcome
+is implied.
+
+Both paired conditions include consumer-journal I/O in their own cell clocks.
+Older captures without results.jsonl remain unchanged; do not pool recording
+versions or expect an in-progress old executable to gain this file. No active
+collection should be rebuilt or restarted to adopt this observation change.

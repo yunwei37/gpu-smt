@@ -81,16 +81,21 @@ binary or make arbitrary stateful Lean metaprograms deterministic.
 
 ## This Workspace's next execution
 
-Only one native collection group runs at a time. The existing original
-7,808-candidate scheduling group retains its old two-worker, 24 GiB
-per-process address-space settings. Do not restart it or pool its clocks with
-the new point.
+The current resource point, completed groups and pending original workloads
+are recorded in [evaluation](evaluation.md#resource-point-and-workloads), with
+the actual active capture linked there. Only one native collection group runs;
+preserve its frozen source/resources until it retires. The prepared
+[42 isolated inputs](../artifacts/engine-resource-profile-2026-10-25/isolated42/README.md)
+remain a separate cohort. Do not copy an obsolete queue order from this guide
+or pool old AS-capped captures with the current dynamic-resource point.
 
-After that group retires, the prepared [42 isolated inputs](../artifacts/engine-resource-profile-2026-10-25/isolated42/README.md)
-run individually with four reserved eligible cores, no per-process AS cap and
-48 GiB aggregate sampled RSS. Then qualify and measure the new engine
-resource/workload policies on the complete native population. A one-second
-watchdog is a sampled response, not a kernel hard RSS quota.
+The [resource_pair example](../examples/README.md#matched-nativeprepared-resource-pair)
+uses the existing streamed BatchEvents to retain final consumer results before
+a whole cell finishes. Its physical-attempt and consumer journals have distinct
+meanings. Complete in the consumer journal does not replace the post-shutdown
+Capture/terminal or external cell clock. The additional recording cost belongs
+to that driver's own version and both of its cells; older live captures remain
+untouched.
 
 
 ## Internal task availability and consumer rows
@@ -102,8 +107,9 @@ queue/retry/retirement; they are not reconstructed native CPU intervals. Unsolve
 remain explicit; conditional solved-task quantiles do not hide their failures.
 Cache/coalesced checked decisions remain labelled through existing provenance.
 
-These are internal acceptance events. The current HTTP/CLI batch adapter replies
-after every result, so these fields do not measure streamed client delivery.
+These are internal acceptance events. Collected HTTP/CLI routes reply after
+the whole batch; the optional typed NDJSON route has its own
+[streaming contract](api.md#http). These fields do not measure client delivery.
 Use a client/controller clock for delivery, parsing and full cold lifecycle.
 
 returned_candidates_per_second counts returned consumer rows, including

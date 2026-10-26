@@ -118,6 +118,50 @@ impl VerificationBackend for JournalBackend {
     }
 }
 
+/// Persist final caller outcomes as they retire, independently of the physical
+/// attempt log. Complete covers consumer rows, not backend shutdown/cell time.
+async fn collect_results(
+    mut stream: gpu_smt_engine::BatchStream,
+    batch: &Batch,
+    mut output: impl Write,
+) -> std::io::Result<Vec<Verification>> {
+    let mut results = vec![None; batch.candidates.len()];
+    while let Some(event) = stream.recv().await {
+        match &event {
+            BatchEvent::Result {
+                index,
+                verification,
+            } => {
+                if results.get(*index).is_none_or(Option::is_some)
+                    || batch.candidates[*index].id != verification.id
+                {
+                    return Err(std::io::Error::other("invalid consumer result index/ID"));
+                }
+            }
+            BatchEvent::Complete { count }
+                if *count != results.len() || results.iter().any(Option::is_none) =>
+            {
+                return Err(std::io::Error::other("incomplete consumer result count"));
+            }
+            _ => {}
+        }
+        serde_json::to_writer(&mut output, &event).map_err(std::io::Error::other)?;
+        writeln!(&mut output)?;
+        output.flush()?;
+        match event {
+            BatchEvent::Result {
+                index,
+                verification,
+            } => results[index] = Some(verification),
+            BatchEvent::Complete { .. } => {
+                return Ok(results.into_iter().map(Option::unwrap).collect());
+            }
+            BatchEvent::Error { message } => return Err(std::io::Error::other(message)),
+        }
+    }
+    Err(std::io::Error::other("consumer stream EOF before Complete"))
+}
+
 struct Observations {
     last: Option<Instant>,
     output: BufWriter<File>,
@@ -259,6 +303,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }))?,
     )?;
     runtime.block_on(async {
+        // Register before any native child starts; never signal another collection.
+        let mut terminate=tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate())?;
         let mut captures=Vec::new();
         let mut lifecycle=Vec::new();
         for condition in ["native","prepared"] {
@@ -283,13 +329,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             // Explicit startup/post-retirement observations also cover empty batches.
             monitor.sample(&[])?;
             let (verified,interrupted)={
-                let result=engine.verify_batch(batch.clone());
+                // Open before stream submission so a setup fault launches no work.
+                let output=BufWriter::new(File::create_new(cell.join("results.jsonl"))?);
+                let stream=engine.verify_stream(batch.clone()).map_err(std::io::Error::other)?;
+                let result=collect_results(stream,&batch,output);
                 tokio::pin!(result);
                 tokio::select! {
                     value=&mut result=>(value,false),
-                    signal=tokio::signal::ctrl_c()=>{
-                        signal?;
+                    signal=async {
+                        tokio::select! {
+                            signal=tokio::signal::ctrl_c()=>signal,
+                            _=terminate.recv()=>Ok(()),
+                        }
+                    }=>{
                         engine.shutdown().await;
+                        signal?;
                         (result.await,true)
                     }
                 }
@@ -308,7 +362,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let journal_errors=verifier.errors();
             let terminal=json!({"state":if interrupted{"interrupted"}else if !journal_errors.is_empty(){"evidence_error"}else{"complete"},
                 "journal_errors":journal_errors,
-                "journal_scope":"flushed physical native attempts; final capture also includes queued/consumer outcomes; no power-loss durability claim",
+                "journal_scope":"flushed physical native attempts; no power-loss durability claim",
+                "consumer_journal":"results.jsonl",
+                "consumer_journal_scope":"flushed final caller BatchEvents; Complete covers consumer rows only, not idle-backend shutdown or whole-cell lifecycle; EOF without Complete is partial",
                 "condition":condition,"external_cell_seconds":seconds,
                 "clock_scope":"input decoding through native shutdown, capture serialization, compression and compressor retirement",
                 "resources":config,"observations":monitor.report()?,
@@ -432,5 +488,171 @@ mod tests {
         assert_eq!(row["registered_leaders"].as_array().unwrap().len(), 1);
         drop(monitor);
         fs::remove_file(path).unwrap();
+    }
+
+    struct GateBackend {
+        started: tokio::sync::Notify,
+        release: tokio::sync::Notify,
+        active: std::sync::atomic::AtomicUsize,
+    }
+    #[async_trait::async_trait]
+    impl VerificationBackend for GateBackend {
+        fn identity(&self) -> String {
+            "consumer-retention-fixture-not-Lean".into()
+        }
+        async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+            use std::sync::atomic::Ordering;
+            self.active.fetch_add(1, Ordering::SeqCst);
+            let status = if c.id == "slow" {
+                self.started.notify_one();
+                tokio::select! {
+                    _ = self.release.notified() => Status::Rejected,
+                    _ = x.cancel.cancelled() => Status::Cancelled,
+                }
+            } else {
+                Status::Accepted
+            };
+            self.active.fetch_sub(1, Ordering::SeqCst);
+            Outcome::operational(status, "controlled fixture only")
+        }
+    }
+    struct FixtureResources;
+    impl ResourceMonitor for FixtureResources {
+        fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+            Ok(ResourceSnapshot::default())
+        }
+    }
+    impl SchedulingPolicy for FixtureResources {
+        fn priority(&self, _: &Candidate) -> u64 {
+            0
+        }
+        fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+            Some(1)
+        }
+    }
+    fn journal_fixture() -> (Engine, Arc<GateBackend>, Batch) {
+        let backend = Arc::new(GateBackend {
+            started: tokio::sync::Notify::new(),
+            release: tokio::sync::Notify::new(),
+            active: std::sync::atomic::AtomicUsize::new(0),
+        });
+        let engine = Engine::new(
+            Config {
+                memory_bytes: 100,
+                cpus: vec![0, 1],
+                cores_per_worker: 1,
+            },
+            backend.clone(),
+            Arc::new(FixtureResources),
+            Arc::new(FixtureResources),
+            Arc::new(HeadroomAdmission),
+            Arc::new(MemoryCache::default()),
+        )
+        .unwrap();
+        let batch = Batch {
+            mode: Mode::All,
+            candidates: ["slow", "fast"]
+                .into_iter()
+                .map(|id| Candidate {
+                    id: id.into(),
+                    task_id: None,
+                    code: id.into(),
+                    timeout_ms: 300000,
+                    reuse: false,
+                })
+                .collect(),
+        };
+        (engine, backend, batch)
+    }
+
+    #[tokio::test]
+    async fn consumer_rows_survive_a_held_peer_and_an_interrupted_collector() {
+        for complete in [true, false] {
+            let (engine, backend, batch) = journal_fixture();
+            let path = temporary("consumer");
+            let output = BufWriter::new(File::create_new(&path).unwrap());
+            let stream = engine.verify_stream(batch.clone()).unwrap();
+            let collector =
+                tokio::spawn(async move { collect_results(stream, &batch, output).await });
+            tokio::time::timeout(Duration::from_secs(2), backend.started.notified())
+                .await
+                .unwrap();
+            let until = Instant::now() + Duration::from_secs(2);
+            let prefix = loop {
+                let prefix = fs::read_to_string(&path).unwrap();
+                if prefix.ends_with('\n') {
+                    break prefix;
+                }
+                assert!(
+                    Instant::now() < until,
+                    "completed fast result was not flushed"
+                );
+                tokio::time::sleep(Duration::from_millis(10)).await;
+            };
+            let first: Value = serde_json::from_str(prefix.lines().next().unwrap()).unwrap();
+            assert_eq!(first["event"], "result");
+            assert_eq!(first["index"], 1);
+            assert_eq!(first["verification"]["id"], "fast");
+            assert_eq!(first["verification"]["outcome"]["status"], "accepted");
+            assert!(
+                !collector.is_finished(),
+                "held peer must still be unresolved"
+            );
+            if complete {
+                backend.release.notify_one();
+                let results = collector.await.unwrap().unwrap();
+                assert_eq!(
+                    results.iter().map(|v| v.id.as_str()).collect::<Vec<_>>(),
+                    ["slow", "fast"]
+                );
+                assert_eq!(results[0].outcome.status, Status::Rejected);
+                assert_eq!(results[1].outcome.status, Status::Accepted);
+                assert!(results.iter().all(|v| v.attempts.len() == 1));
+            } else {
+                collector.abort();
+                assert!(collector.await.unwrap_err().is_cancelled());
+            }
+            engine.shutdown().await;
+            assert_eq!(backend.active.load(std::sync::atomic::Ordering::SeqCst), 0);
+            let rows: Vec<Value> = fs::read_to_string(&path)
+                .unwrap()
+                .lines()
+                .map(|line| serde_json::from_str(line).unwrap())
+                .collect();
+            assert_eq!(
+                rows.iter().filter(|r| r["event"] == "complete").count(),
+                usize::from(complete)
+            );
+            assert_eq!(rows.len(), if complete { 3 } else { 1 });
+            if complete {
+                assert_eq!(rows.last().unwrap()["count"], 2);
+            }
+            fs::remove_file(path).unwrap();
+        }
+    }
+
+    #[tokio::test]
+    async fn consumer_write_failure_propagates_after_owned_work_retires() {
+        struct FailedOutput;
+        impl Write for FailedOutput {
+            fn write(&mut self, _: &[u8]) -> std::io::Result<usize> {
+                Err(std::io::Error::other("controlled journal write failure"))
+            }
+            fn flush(&mut self) -> std::io::Result<()> {
+                Ok(())
+            }
+        }
+        let (engine, backend, batch) = journal_fixture();
+        let stream = engine.verify_stream(batch.clone()).unwrap();
+        let result = collect_results(stream, &batch, FailedOutput).await;
+        // Same unconditional cleanup boundary as the example's cell.
+        engine.shutdown().await;
+        assert!(
+            result
+                .unwrap_err()
+                .to_string()
+                .contains("controlled journal write failure")
+        );
+        assert_eq!(backend.active.load(std::sync::atomic::Ordering::SeqCst), 0);
     }
 }

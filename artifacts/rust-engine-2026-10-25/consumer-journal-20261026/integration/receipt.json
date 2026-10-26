@@ -1,0 +1,66 @@
+{
+  "UTC": "2026-10-26T06:43:44.720733+00:00",
+  "cases": [
+    {
+      "signal": "SIGTERM",
+      "command": [
+        "/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/resource_pair",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGTERM/input.json",
+        "/tmp/gpu-smt-consumer-journal-20261026/hold-fixture.py",
+        "/tmp",
+        "/usr/bin/true",
+        "/tmp",
+        "controlled-not-Lean",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGTERM/resources.json",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGTERM/pair"
+      ],
+      "exit": 1,
+      "seconds": 0.12293887021951377,
+      "prefix_results_before_signal": 1,
+      "complete_consumer_rows": 2,
+      "terminal_state": "interrupted",
+      "statuses": {
+        "fast": "accepted",
+        "held": "backend_error"
+      },
+      "remaining_owned_processes": [],
+      "prepared_cell_started": false,
+      "native_candidate_executions": 0,
+      "protocol_fixture_only": true
+    },
+    {
+      "signal": "SIGINT",
+      "command": [
+        "/tmp/gpu-smt-rust-engine-build-20261025/target/debug/examples/resource_pair",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGINT/input.json",
+        "/tmp/gpu-smt-consumer-journal-20261026/hold-fixture.py",
+        "/tmp",
+        "/usr/bin/true",
+        "/tmp",
+        "controlled-not-Lean",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGINT/resources.json",
+        "/workspaces/repository/artifacts/rust-engine-2026-10-25/consumer-journal-20261026/integration/SIGINT/pair"
+      ],
+      "exit": 1,
+      "seconds": 0.11325977696105838,
+      "prefix_results_before_signal": 1,
+      "complete_consumer_rows": 2,
+      "terminal_state": "interrupted",
+      "statuses": {
+        "fast": "accepted",
+        "held": "backend_error"
+      },
+      "remaining_owned_processes": [],
+      "prepared_cell_started": false,
+      "native_candidate_executions": 0,
+      "protocol_fixture_only": true
+    }
+  ],
+  "sampled_combined_peak_rss_bytes": 11854999552,
+  "budget_bytes": 51539607552,
+  "pressure_samples": [],
+  "monitor_errors": [],
+  "old_owner": 408739,
+  "old_start_ticks": 140695363,
+  "scope": "Actual debug example process with controlled Python protocol fixture, not Lean proof/performance or a second native acquisition."
+}
