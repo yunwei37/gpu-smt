@@ -1,0 +1,71 @@
+{
+  "sources": 7808,
+  "tasks": 244,
+  "folds": 5,
+  "features": [
+    "log1p_utf8_bytes",
+    "log1p_newlines",
+    "semicolon_fanout",
+    "interval_cases",
+    "simp_all",
+    "simp",
+    "nlinarith",
+    "linarith",
+    "omega",
+    "norm_num",
+    "decide",
+    "rcases",
+    "exact",
+    "rfl",
+    "aesop"
+  ],
+  "regularization": 1,
+  "target": "checked acceptance and observed summed attempt elapsed within existing finite-resource native capture;not theorem truth or unobserved uncensored runtime",
+  "score": "P(checked acceptance)/(1+max(0,ridge predicted observed seconds))",
+  "policies": {
+    "fifo": {
+      "tasks": 244,
+      "observed_solved_tasks": 142,
+      "all_task_frozen_work_seconds": 50527.116345395,
+      "solved_task_frozen_work_seconds": 2408.034120884,
+      "unsolved_task_frozen_work_seconds": 48119.082224511,
+      "candidates_checked": 3631,
+      "first_source_observed_accepted": 92,
+      "fifo_over_policy_frozen_work_ratio": 1.0
+    },
+    "source_bytes": {
+      "tasks": 244,
+      "observed_solved_tasks": 142,
+      "all_task_frozen_work_seconds": 49975.153224327,
+      "solved_task_frozen_work_seconds": 1856.0709998159998,
+      "unsolved_task_frozen_work_seconds": 48119.082224510996,
+      "candidates_checked": 3635,
+      "first_source_observed_accepted": 95,
+      "fifo_over_policy_frozen_work_ratio": 1.0110447509503446
+    },
+    "source_cost_crossfit": {
+      "tasks": 244,
+      "observed_solved_tasks": 142,
+      "all_task_frozen_work_seconds": 50740.663169711,
+      "solved_task_frozen_work_seconds": 2621.5809452,
+      "unsolved_task_frozen_work_seconds": 48119.082224510996,
+      "candidates_checked": 3740,
+      "first_source_observed_accepted": 90,
+      "fifo_over_policy_frozen_work_ratio": 0.9957914065174561
+    },
+    "outcome_oracle": {
+      "tasks": 244,
+      "observed_solved_tasks": 142,
+      "all_task_frozen_work_seconds": 48637.21667491,
+      "solved_task_frozen_work_seconds": 518.134450399,
+      "unsolved_task_frozen_work_seconds": 48119.082224511,
+      "candidates_checked": 3406,
+      "first_source_observed_accepted": 142,
+      "fifo_over_policy_frozen_work_ratio": 1.038857068715857
+    }
+  },
+  "analysis_seconds": 2.7058586289640516,
+  "native_proof_executions": 0,
+  "measured_runtime_speedup": null,
+  "caveat": "Frozen serial work only. Originalconcurrency/preemptions/censored timeouts/cleanup are fixed;reordering can change them. No actual admission/cancellation/service latency or parity measurement."
+}

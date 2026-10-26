@@ -22,3 +22,17 @@ historical42exclusive retries separately. Follow real raw outputs and preserve
 all failures. Rootself-review is not independent audit. Four routes continue.
 
 Action from this reflection:corrected EOF/nativejournal source was qualified,pushed,then full7808dynamicresource pair launched at2026-10-26T00:46:21Z. Growing per-attempt outcomes and four positive-RSS leaders observed. No full result or newmethod benefit claimed;collect only at actualtermination.
+
+## Evidence update — source-cost ranking,12:09UTC
+
+Today's additional source-aware crossfit uses complete native7808only,no new
+capture. Whole-task heldout costmodel does not improveFIFO. In a frozen serial
+first-success replay,102unsolvedtasks retain95.2342%of remainingwork;even a
+future-informed within-task order removes only3.7404%here. This is not an
+end-to-end/Amdahl bound. Do not add hardcodedmodelweights or a parametergrid.
+Substantial progress now requires actual original71phase/error measurements,
+especially work already doomed after native recovery or finite fanout,while
+cross-task latency/resource effects still need separate actual evidence.
+Current42collection stays untouched;follow userqueue71thenlean-mlir. No new
+logger or generic infrastructure layer follows from this negative model result.
+Primary evidence:artifacts/candidate-scheduling-2026-10-25/source-cost-crossfit-20261026.
