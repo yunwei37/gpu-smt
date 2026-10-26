@@ -283,3 +283,13 @@ adds file/argv identity, pre-launch source-byte checks and local transport tests
 nightly whole-module file/stdin/profiler runs remain pending after full resource
 pair. The retained SDK source exposes actual SAT/LRAT phase hooks; their presence
 does not measure phase cost or executed bv_decide coverage.
+
+
+The [original48 traversal inputs](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/original48-preparation/README.md)
+now preserve48 complete original/import-control/experimental variants:
+34 two-range,8 three-range,6 four-range chains,116 native sites. All generated
+sources parse in pinned4.9 with exact variable/span/inverse checks. This is
+syntax/preparation, not48 proved failures or a measured speedup. Native
+left-associated stage accumulation differs from nested closing continuations;
+the failed-leaf-to-global-failure claim is not admitted. Original48 runtime
+failure/timeout proportions and23simp phase attribution remain unmeasured.

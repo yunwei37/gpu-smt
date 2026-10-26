@@ -11,7 +11,8 @@ proof constructors while visiting leaves depth-first. The caller supplies a
 continuation that must close the current leaf. A failure stops traversal; the
 frontend restores saved tactic state before propagating the failure.
 Successful calls leave a native proof for the normal Lean checker.
-The implementation has only been compiled, not behavior-qualified.
+The implementation has nine small native paired controls, detailed below;
+original-cohort behavior and performance remain unmeasured.
 
 The opt-in syntax is interval_cases_then n => omega (for example). It supports
 inferred Nat/Int bounds and closing single-leaf continuations, not arbitrary
@@ -25,8 +26,8 @@ carried from the root through leaf construction.
 [Actual compile attempts and limits](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/result-review.md)
 retain both the initial reserved-name parser failure and the successful pinned
 4.9 build. Compiling metaprogram definitions does not validate the generated
-proof terms on any original candidate. The prepared qualification input is
-unexecuted. Run it only in the sole collection slot, with original diagnostics,
+proof terms on any original candidate. The initial small qualification now executes below. Original-cohort execution
+still uses the sole collection slot, with original diagnostics,
 acceptance/incomplete/failure sets,cleanup and resource/clock evidence.
 Kernel-checked success/failure/rollback, nested scopes and native accepted-set
 comparison must precede any original-population integration.
@@ -54,3 +55,20 @@ interval_cases. Actual control qualification and exact48-source/116-call
 preparation are retained under artifacts/hotspot-mechanisms-2026-10-25/
 interval-bound-profile/. The observer is not the on-demand traversal and does
 not classify failure/timeout. Original48runtime fractions remain unmeasured.
+
+
+## Original-cohort preparation and association limits
+
+`prepare-cohort.py` reads retained native Syntax and complete source, not a
+regex reconstruction of proof grammar. The [prepared original48 experiment](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/original48-preparation/README.md)
+contains original/import-control/lazy batches and exact inverse edit maps.
+Actual native parsing confirms48 sources/116 prototype sites with correct
+variables/spans, while executing zero candidate proofs.
+
+Native `<;>` is left-associative; its `all_goals` accumulator completes each
+stage before the next. Reassociation into nested closing continuations changes
+that interleaving and may change fresh metavariable names, shared state and
+resource-limited outcomes. This is an explicit experimental variant, not a
+transparent automatic rewrite or a sufficient failure certificate. It is
+disabled in the engine. Keep unknown fallback; do not infer guaranteed timeout
+from syntactic range count or failed speculative leaves.

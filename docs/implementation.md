@@ -89,8 +89,11 @@ or complete bv_decide workload result.
 A [separate interval-continuation prototype](../bench/lean-failure-profile/interval-continuation/README.md)
 now compiles against the retained4.9API. It defers proof-tree leaves until a
 closing callback needs them; it does not hook original tactics or reject
-requests. Native behavior/accepted-set and performance qualification remain
-unexecuted,so no reliable early-failure mechanism is claimed.
+requests. Nine small native/prototype paired controls execute with matching status.
+Original48 complete variants now have native grammar and exact-edit validation;
+actual cohort behavior/performance remains unmeasured. Native left-associative
+stage accumulation and nested continuations differ, so failed speculative leaves
+do not yet constitute a reliable early-failure witness.
 The code-verification/math workloads and all four paper RQs remain open.
 
 CPU oracle source/data are frozen baselines and must not be optimized or

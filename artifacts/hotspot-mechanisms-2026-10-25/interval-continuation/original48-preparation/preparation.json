@@ -1,0 +1,2363 @@
+{
+  "sources": 48,
+  "prepared_chains": 48,
+  "interval_sites": 116,
+  "chain_distribution": {
+    "2_interval_chain": 34,
+    "3_interval_chain": 8,
+    "4_interval_chain": 6
+  },
+  "unsupported": [],
+  "manifest": [
+    {
+      "id": "minif2f-998",
+      "original_bytes": 2413,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2272,
+          "end": 2340,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2272,
+          "original_end": 2340,
+          "changed_start": 2302,
+          "changed_end": 2384,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂ <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-1000",
+      "original_bytes": 2282,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2166,
+          "end": 2216,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2166,
+          "original_end": 2216,
+          "changed_start": 2196,
+          "changed_end": 2260,
+          "original_text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-1005",
+      "original_bytes": 2761,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2616,
+          "end": 2761,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.tacticTry_"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2616,
+          "original_end": 2761,
+          "changed_start": 2646,
+          "changed_end": 2805,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ ⊢\n  -- We choose the pair (6, 126) which minimizes the sum m + n.\n  <;> try linarith",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂ ⊢\n  -- We choose the pair (6, 126) which minimizes the sum m + n.\n  <;> try linarith)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-1021",
+      "original_bytes": 2763,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2628,
+          "end": 2693,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2628,
+          "original_end": 2693,
+          "changed_start": 2658,
+          "changed_end": 2737,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-4878",
+      "original_bytes": 2273,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2195,
+          "end": 2273,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2195,
+          "original_end": 2273,
+          "changed_start": 2225,
+          "changed_end": 2317,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₁ h₂ h₃ <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₁ h₂ h₃ <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-4894",
+      "original_bytes": 2352,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2274,
+          "end": 2352,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2274,
+          "original_end": 2352,
+          "changed_start": 2304,
+          "changed_end": 2396,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₁ h₂ h₃ <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₁ h₂ h₃ <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-4895",
+      "original_bytes": 2407,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2339,
+          "end": 2407,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2339,
+          "original_end": 2407,
+          "changed_start": 2369,
+          "changed_end": 2451,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₃ <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₃ <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-4992",
+      "original_bytes": 3368,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 3297,
+          "end": 3368,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 3297,
+          "original_end": 3368,
+          "changed_start": 3327,
+          "changed_end": 3418,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (simp_all))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-4993",
+      "original_bytes": 2698,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 2627,
+          "end": 2698,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2627,
+          "original_end": 2698,
+          "changed_start": 2657,
+          "changed_end": 2748,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (simp_all))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5009",
+      "original_bytes": 2290,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 2100,
+          "end": 2290,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "linarith"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2100,
+          "original_end": 2290,
+          "changed_start": 2130,
+          "changed_end": 2340,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ ⊢\n  -- Using linarith to derive a contradiction from the distinctness and product constraint.\n  <;> linarith",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (norm_num at h₁ ⊢\n  -- Using linarith to derive a contradiction from the distinctness and product constraint.\n  <;> linarith))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5011",
+      "original_bytes": 3324,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 3235,
+          "end": 3324,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 3235,
+          "original_end": 3324,
+          "changed_start": 3265,
+          "changed_end": 3374,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ <;> omega",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (norm_num at h₁ <;> omega))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5015",
+      "original_bytes": 2180,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 1980,
+          "end": 2180,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Mathlib.Tactic.normNum",
+            "linarith"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1980,
+          "original_end": 2180,
+          "changed_start": 2010,
+          "changed_end": 2230,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ <;> norm_num\n  -- By checking the smallest possible values, we find that the sum i + m + o is indeed 671.\n  <;> linarith",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (norm_num at h₁ <;> norm_num\n  -- By checking the smallest possible values, we find that the sum i + m + o is indeed 671.\n  <;> linarith))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5017",
+      "original_bytes": 2132,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 1996,
+          "end": 2067,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1996,
+          "original_end": 2067,
+          "changed_start": 2026,
+          "changed_end": 2117,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (simp_all))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5020",
+      "original_bytes": 2375,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 2304,
+          "end": 2375,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2304,
+          "original_end": 2375,
+          "changed_start": 2334,
+          "changed_end": 2425,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (simp_all))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5023",
+      "original_bytes": 1849,
+      "chain_count": 1,
+      "interval_sites": 3,
+      "chains": [
+        {
+          "start": 1766,
+          "end": 1849,
+          "variables": [
+            "i",
+            "m",
+            "o"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1766,
+          "original_end": 1849,
+          "changed_start": 1796,
+          "changed_end": 1899,
+          "original_text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all\n  <;> omega",
+          "replacement_text": "(interval_cases_then i => (interval_cases_then m => (interval_cases_then o => (simp_all\n  <;> omega))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5952",
+      "original_bytes": 1794,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 1701,
+          "end": 1794,
+          "variables": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1701,
+          "original_end": 1794,
+          "changed_start": 1731,
+          "changed_end": 1846,
+          "original_text": "interval_cases a <;> interval_cases b <;> interval_cases c <;> interval_cases d <;>\n    omega",
+          "replacement_text": "(interval_cases_then a => (interval_cases_then b => (interval_cases_then c => (interval_cases_then d => (omega)))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5954",
+      "original_bytes": 1623,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 1498,
+          "end": 1623,
+          "variables": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1498,
+          "original_end": 1623,
+          "changed_start": 1528,
+          "changed_end": 1675,
+          "original_text": "interval_cases a <;> interval_cases b <;> interval_cases c <;> interval_cases d <;>\n    simp_all (config := {decide := true})",
+          "replacement_text": "(interval_cases_then a => (interval_cases_then b => (interval_cases_then c => (interval_cases_then d => (simp_all (config := {decide := true}))))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5960",
+      "original_bytes": 2677,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 2548,
+          "end": 2677,
+          "variables": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2548,
+          "original_end": 2677,
+          "changed_start": 2578,
+          "changed_end": 2729,
+          "original_text": "interval_cases a <;> interval_cases b <;> interval_cases c <;> interval_cases d <;>\n    norm_num at h₁ h₂ h₃ h₄ <;> omega",
+          "replacement_text": "(interval_cases_then a => (interval_cases_then b => (interval_cases_then c => (interval_cases_then d => (norm_num at h₁ h₂ h₃ h₄ <;> omega)))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5964",
+      "original_bytes": 2686,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 2597,
+          "end": 2686,
+          "variables": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2597,
+          "original_end": 2686,
+          "changed_start": 2627,
+          "changed_end": 2742,
+          "original_text": "interval_cases a <;> interval_cases b <;> interval_cases c <;> interval_cases d <;> omega",
+          "replacement_text": "(interval_cases_then a => (interval_cases_then b => (interval_cases_then c => (interval_cases_then d => (omega)))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-5980",
+      "original_bytes": 1771,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 1678,
+          "end": 1771,
+          "variables": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1678,
+          "original_end": 1771,
+          "changed_start": 1708,
+          "changed_end": 1823,
+          "original_text": "interval_cases a <;> interval_cases b <;> interval_cases c <;> interval_cases d <;>\n    omega",
+          "replacement_text": "(interval_cases_then a => (interval_cases_then b => (interval_cases_then c => (interval_cases_then d => (omega)))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-6383",
+      "original_bytes": 2668,
+      "chain_count": 1,
+      "interval_sites": 4,
+      "chains": [
+        {
+          "start": 2552,
+          "end": 2668,
+          "variables": [
+            "m",
+            "n",
+            "k",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll",
+            "Lean.Parser.Tactic.tacticTry_"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2552,
+          "original_end": 2668,
+          "changed_start": 2582,
+          "changed_end": 2724,
+          "original_text": "interval_cases m <;> interval_cases n <;> interval_cases k <;> interval_cases t <;> simp_all\n  <;> try contradiction",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (interval_cases_then k => (interval_cases_then t => (simp_all\n  <;> try contradiction)))))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7200",
+      "original_bytes": 1787,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1685,
+          "end": 1732,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1685,
+          "original_end": 1732,
+          "changed_start": 1715,
+          "changed_end": 1776,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7202",
+      "original_bytes": 1461,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1340,
+          "end": 1390,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1340,
+          "original_end": 1390,
+          "changed_start": 1370,
+          "changed_end": 1434,
+          "original_text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7203",
+      "original_bytes": 1530,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1179,
+          "end": 1246,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1179,
+          "original_end": 1246,
+          "changed_start": 1209,
+          "changed_end": 1290,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₁ h₂ ⊢",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₁ h₂ ⊢)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7205",
+      "original_bytes": 1678,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1525,
+          "end": 1593,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1525,
+          "original_end": 1593,
+          "changed_start": 1555,
+          "changed_end": 1637,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at this <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at this <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7207",
+      "original_bytes": 2394,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2291,
+          "end": 2338,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2291,
+          "original_end": 2338,
+          "changed_start": 2321,
+          "changed_end": 2382,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7208",
+      "original_bytes": 1873,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1735,
+          "end": 1782,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1735,
+          "original_end": 1782,
+          "changed_start": 1765,
+          "changed_end": 1826,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7210",
+      "original_bytes": 1869,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1764,
+          "end": 1811,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1764,
+          "original_end": 1811,
+          "changed_start": 1794,
+          "changed_end": 1855,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7212",
+      "original_bytes": 1116,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 998,
+          "end": 1045,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 998,
+          "original_end": 1045,
+          "changed_start": 1028,
+          "changed_end": 1089,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7213",
+      "original_bytes": 2335,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2273,
+          "end": 2335,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2273,
+          "original_end": 2335,
+          "changed_start": 2303,
+          "changed_end": 2379,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ ⊢",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂ ⊢)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7216",
+      "original_bytes": 1402,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1131,
+          "end": 1352,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.tacticTry_"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1131,
+          "original_end": 1352,
+          "changed_start": 1161,
+          "changed_end": 1396,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n    -- After checking, we find that m = 41 and n = 49 is a pair that satisfies m * n = 2005.\n    -- Summing these numbers gives 41 + 49 = 90.\n    <;> try linarith",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂\n    -- After checking, we find that m = 41 and n = 49 is a pair that satisfies m * n = 2005.\n    -- Summing these numbers gives 41 + 49 = 90.\n    <;> try linarith)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7217",
+      "original_bytes": 2224,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2049,
+          "end": 2211,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2049,
+          "original_end": 2211,
+          "changed_start": 2079,
+          "changed_end": 2255,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n    -- Finally, we find that m = 45 and n = 450 (or vice versa) satisfies the conditions.\n    <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂\n    -- Finally, we find that m = 45 and n = 450 (or vice versa) satisfies the conditions.\n    <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7218",
+      "original_bytes": 2332,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2217,
+          "end": 2267,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2217,
+          "original_end": 2267,
+          "changed_start": 2247,
+          "changed_end": 2311,
+          "original_text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7219",
+      "original_bytes": 1201,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 919,
+          "end": 1201,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.tacticTry_"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 919,
+          "original_end": 1201,
+          "changed_start": 949,
+          "changed_end": 1245,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We will check all pairs (m, n) where 1 < m ≤ 2005 and 1 < n ≤ 2005 to find the sum m + n.\n  <;> try linarith\n  -- By checking all pairs, we will confirm that the sum is indeed 406.\n  <;> try norm_num\n  <;> try ring",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂\n  -- We will check all pairs (m, n) where 1 < m ≤ 2005 and 1 < n ≤ 2005 to find the sum m + n.\n  <;> try linarith\n  -- By checking all pairs, we will confirm that the sum is indeed 406.\n  <;> try norm_num\n  <;> try ring)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7221",
+      "original_bytes": 1219,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1086,
+          "end": 1133,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1086,
+          "original_end": 1133,
+          "changed_start": 1116,
+          "changed_end": 1177,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7223",
+      "original_bytes": 2843,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2777,
+          "end": 2824,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2777,
+          "original_end": 2824,
+          "changed_start": 2807,
+          "changed_end": 2868,
+          "original_text": "interval_cases m <;> interval_cases n <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7224",
+      "original_bytes": 1501,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1451,
+          "end": 1501,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1451,
+          "original_end": 1501,
+          "changed_start": 1481,
+          "changed_end": 1545,
+          "original_text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7225",
+      "original_bytes": 1300,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1232,
+          "end": 1300,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1232,
+          "original_end": 1300,
+          "changed_start": 1262,
+          "changed_end": 1344,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ <;> omega",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂ <;> omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7226",
+      "original_bytes": 1646,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1231,
+          "end": 1583,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "linarith"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1231,
+          "original_end": 1583,
+          "changed_start": 1261,
+          "changed_end": 1627,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We use interval_cases to check all possible values of m and n that satisfy the constraints.\n  -- This will check all pairs (m, n) where m and n are greater than 1 and the product is 2005.\n  -- The only pair that satisfies this condition is (401, 404), and their sum is 406.\n  <;> linarith",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂\n  -- We use interval_cases to check all possible values of m and n that satisfy the constraints.\n  -- This will check all pairs (m, n) where m and n are greater than 1 and the product is 2005.\n  -- The only pair that satisfies this condition is (401, 404), and their sum is 406.\n  <;> linarith)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7229",
+      "original_bytes": 1577,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1527,
+          "end": 1577,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1527,
+          "original_end": 1577,
+          "changed_start": 1557,
+          "changed_end": 1621,
+          "original_text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7231",
+      "original_bytes": 1443,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1317,
+          "end": 1443,
+          "variables": [
+            "m",
+            "n"
+          ],
+          "tail_kinds": [
+            "Mathlib.Tactic.normNum",
+            "Lean.Parser.Tactic.simpAll"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1317,
+          "original_end": 1443,
+          "changed_start": 1347,
+          "changed_end": 1487,
+          "original_text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We then verify that m + n = 1001 + 1003 = 2004.\n  <;> simp_all",
+          "replacement_text": "(interval_cases_then m => (interval_cases_then n => (norm_num at h₂\n  -- We then verify that m + n = 1001 + 1003 = 2004.\n  <;> simp_all)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7521",
+      "original_bytes": 2377,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2330,
+          "end": 2377,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2330,
+          "original_end": 2377,
+          "changed_start": 2360,
+          "changed_end": 2421,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7525",
+      "original_bytes": 1524,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1477,
+          "end": 1524,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1477,
+          "original_end": 1524,
+          "changed_start": 1507,
+          "changed_end": 1568,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7530",
+      "original_bytes": 2569,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2522,
+          "end": 2569,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2522,
+          "original_end": 2569,
+          "changed_start": 2552,
+          "changed_end": 2613,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7532",
+      "original_bytes": 1970,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1910,
+          "end": 1957,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1910,
+          "original_end": 1957,
+          "changed_start": 1940,
+          "changed_end": 2001,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7533",
+      "original_bytes": 3251,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 3148,
+          "end": 3195,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 3148,
+          "original_end": 3195,
+          "changed_start": 3178,
+          "changed_end": 3239,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7537",
+      "original_bytes": 1834,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 1787,
+          "end": 1834,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 1787,
+          "original_end": 1834,
+          "changed_start": 1817,
+          "changed_end": 1878,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    },
+    {
+      "id": "minif2f-7542",
+      "original_bytes": 2354,
+      "chain_count": 1,
+      "interval_sites": 2,
+      "chains": [
+        {
+          "start": 2216,
+          "end": 2263,
+          "variables": [
+            "x",
+            "t"
+          ],
+          "tail_kinds": [
+            "Lean.Parser.Tactic.omega"
+          ]
+        }
+      ],
+      "import_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        }
+      ],
+      "experimental_edits": [
+        {
+          "original_start": 29,
+          "original_end": 29,
+          "changed_start": 29,
+          "changed_end": 59,
+          "original_text": "",
+          "replacement_text": "\nimport IntervalContinuation\n\n"
+        },
+        {
+          "original_start": 2216,
+          "original_end": 2263,
+          "changed_start": 2246,
+          "changed_end": 2307,
+          "original_text": "interval_cases x <;> interval_cases t <;> omega",
+          "replacement_text": "(interval_cases_then x => (interval_cases_then t => (omega)))"
+        }
+      ],
+      "inverse_restores_original_bytes": true
+    }
+  ],
+  "native_candidate_executions": 0,
+  "generated_native_parse_status": "pending",
+  "certified_global_failures": null,
+  "certified_timeout_fraction": null,
+  "semantic_equivalence_claim": false,
+  "scope": "Native AST and exact inverse edits; experimental reassociation, not rejection."
+}
