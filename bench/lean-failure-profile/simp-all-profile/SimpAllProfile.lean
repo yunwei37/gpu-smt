@@ -39,16 +39,20 @@ abbrev M := StateRefT State MetaM
 
 /-- Diagnostic wrapper only: no rejection, caching or rewrite change.
 Hashes below are hints for investigation, never equality/cycle witnesses. -/
-private def timed {α : Type} (phase : String) (slot : Nat) (action : M α) : M α := do
+private def timed {α : Type} (phase : String) (slot : Nat) (action : M α)
+    (subject : Option String := none) : M α := do
   let state ← get
   IO.eprintln <| "[gpu-smt-simp-stage] " ++ (Json.mkObj [
     ("event", toJson ("begin" : String)), ("phase", toJson phase),
     ("invocation_byte", toJson state.invocation),
     ("round", toJson state.profileRound), ("slot", toJson slot),
-    ("entries", toJson state.entries.size)]).compress
+    ("entries", toJson state.entries.size), ("subject", toJson subject)]).compress
   let start ← IO.monoNanosNow
+  let mut completed := false
   try
-    action
+    let result ← action
+    completed := true
+    return result
   finally
     let elapsed := (← IO.monoNanosNow) - start
     let state ← get
@@ -57,6 +61,7 @@ private def timed {α : Type} (phase : String) (slot : Nat) (action : M α) : M 
       ("invocation_byte", toJson state.invocation),
       ("phase", toJson phase), ("round", toJson state.profileRound),
       ("slot", toJson slot), ("elapsed_ns", toJson elapsed),
+      ("subject", toJson subject), ("action_completed", toJson completed),
       ("entries", toJson state.entries.size),
       ("hypothesis_updates", toJson state.hypothesisUpdates),
       ("entry_type_hashes", toJson (state.entries.map fun e => (hash e.type).toNat))
@@ -113,20 +118,26 @@ private def observedTarget (goal : MVarId) (ctx : Simp.Context)
     return (← applySimpResultToTarget goal target result, stats)
 
 private def initEntries : M Unit := do
-  let hs ←  (← get).mvarId.withContext do getPropHyps
-  let hsNonDeps ← (← get).mvarId.getNondepPropHyps
+  let (hs, hsNonDeps) ← timed "collect-hypotheses" 0 do
+    let hs ← (← get).mvarId.withContext do getPropHyps
+    let hsNonDeps ← (← get).mvarId.getNondepPropHyps
+    return (hs, hsNonDeps)
   let mut simpThms := (← get).ctx.simpTheorems
-  for h in hs do
-    unless simpThms.isErased (.fvar h) do
+  for i in [:hs.size] do
+    let h := hs[i]!
+    simpThms ← timed "initialize-hypothesis" i (subject := some h.name.toString) do
+      if simpThms.isErased (.fvar h) then
+        return simpThms
       let localDecl ← h.getDecl
-      let proof  := localDecl.toExpr
-      simpThms ← simpThms.addTheorem (.fvar h) proof
-      modify fun s => { s with ctx.simpTheorems := simpThms }
+      let proof := localDecl.toExpr
+      let next ← simpThms.addTheorem (.fvar h) proof
+      modify fun s => { s with ctx.simpTheorems := next }
       if hsNonDeps.contains h then
-        -- We only simplify nondependent hypotheses
+        -- Native order and the nondependent-hypothesis restriction stay.
         let type ← instantiateMVars localDecl.type
         let entry : Entry := { fvarId := h, userName := localDecl.userName, id := .fvar h, origType := type, type, proof }
         modify fun s => { s with entries := s.entries.push entry }
+      return next
 
 private abbrev getSimpTheorems : M SimpTheoremsArray :=
   return (← get).ctx.simpTheorems
@@ -141,7 +152,7 @@ private partial def loop : M Bool := do
     -- We disable the current entry to prevent it to be simplified to `True`
     let simpThmsWithoutEntry := (← getSimpTheorems).eraseTheorem entry.id
     let ctx := { ctx with simpTheorems := simpThmsWithoutEntry }
-    let (r, stats) ← timed "hypothesis" i do
+    let (r, stats) ← timed "hypothesis" i (subject := some entry.userName.toString) do
       observedHypothesis entry ctx simprocs i
     modify fun s => { s with usedTheorems := stats.usedTheorems, diag := stats.diag }
     match r with
@@ -200,7 +211,7 @@ private partial def loop : M Bool := do
     return false
 
 def main : M (Option MVarId) := do
-  timed "initialize" 0 initEntries
+  initEntries
   if (← loop) then
     return none -- close the goal
   else
@@ -220,8 +231,10 @@ def main : M (Option MVarId) := do
         toClear := toClear.push e.fvarId
         toAssert := toAssert.push { userName := e.userName, type := e.type, value := e.proof }
         modified := true
-    let (_, mvarId) ← mvarId.assertHypotheses toAssert
-    mvarId.tryClearMany toClear
+    let (_, mvarId) ← timed "assert-hypotheses" 0 do
+      mvarId.assertHypotheses toAssert
+    timed "clear-hypotheses" 0 do
+      mvarId.tryClearMany toClear
 
 end SimpAll
 
@@ -262,6 +275,7 @@ elab_rules : tactic
         ("event", toJson ("end" : String)), ("phase", toJson ("elaborate-arguments" : String)),
         ("round", toJson (0 : Nat)), ("slot", toJson (0 : Nat)),
         ("invocation_byte", toJson invocation),
+        ("action_completed", toJson true),
         ("elapsed_ns", toJson ((← IO.monoNanosNow) - start))]).compress
       let (result?, stats) ← GpuSmt.SimpAllProfile.simpAll (← getMainGoal) ctx
         (simprocs := simprocs) (invocation := invocation)

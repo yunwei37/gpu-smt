@@ -30,7 +30,9 @@ def analyze_source(source_id, path, mapping):
                 for x in mapping.get("sites", [])}
     active = {}
     phases = collections.defaultdict(lambda: dict(
-        began=0, ended=0, elapsed_ns=0, progress_snapshots=0, used_origins=set()))
+        began=0, ended=0, elapsed_ns=0, max_elapsed_ns=None,
+        completed_actions=0, unwound_actions=0, completion_unknown=0,
+        subjects=set(), progress_snapshots=0, used_origins=set()))
     last_progress = None
     mismatched = []
     for event in events:
@@ -38,6 +40,8 @@ def analyze_source(source_id, path, mapping):
                event.get("round"), event.get("slot"))
         phase = phases[key]
         kind = event.get("event")
+        if isinstance(event.get("subject"), str):
+            phase["subjects"].add(event["subject"])
         if kind == "begin":
             phase["began"] += 1
             if key in active:
@@ -45,7 +49,13 @@ def analyze_source(source_id, path, mapping):
             active[key] = event
         elif kind == "end":
             phase["ended"] += 1
-            phase["elapsed_ns"] += event.get("elapsed_ns", 0)
+            elapsed = event.get("elapsed_ns", 0)
+            phase["elapsed_ns"] += elapsed
+            phase["max_elapsed_ns"] = max(elapsed, phase["max_elapsed_ns"] or 0)
+            completed = event.get("action_completed")
+            phase["completed_actions" if completed is True else
+                  "unwound_actions" if completed is False else
+                  "completion_unknown"] += 1
             if active.pop(key, None) is None:
                 mismatched.append(dict(reason="end without begin", key=key))
         elif kind == "progress":

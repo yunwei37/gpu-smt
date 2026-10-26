@@ -1,6 +1,6 @@
 # Implementation: Rust engine and retained research adapters
 
-Updated2026-10-25. All source/build/test work occurs in the retained
+Updated2026-10-26. All source/build/test work occurs in the retained
 yunwei356/gpu-smt-dev Workspace, /workspaces/repository on main, by this
 thread only. No OMP/subagents/native AI-session resumes. Reviews are self-review.
 
@@ -122,6 +122,12 @@ No new proof control or original candidate body has run for this map.
 Native left-associative
 stage accumulation and nested continuations differ, so failed speculative leaves
 do not yet constitute a reliable early-failure witness.
+The separate simp_all observer now labels initialization per hypothesis and
+native final reassert/clear calls,with returned/unwound actions. It compiles to
+a separate olean;prior native seven-pair qualification applies only to the
+retained old observer. Four analyzer tests preserve actual old diagnostics and
+unknown/open fields. [Evidence](../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/phase-completion-20261026/README.md).
+No new original23proof or runtime parity result is implied.
 The code-verification/math workloads and all four paper RQs remain open.
 
 CPU oracle source/data are frozen baselines and must not be optimized or

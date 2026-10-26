@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open work
 
-Updated2026-10-25UTC. This thread alone implements, runs, analyzes and writes.
+Updated2026-10-26UTC. This thread alone implements, runs, analyzes and writes.
 All reviews are self-review, not independent audit. The original
 [Initial Narrative/fourRQs](idea-story.md) and ambitious systems goal remain
 open; tests, setup and a compiled paper do not establish OSDI contribution.
@@ -327,3 +327,12 @@ and unchanged default-close source artifacts pass. Runtime parity,resource
 savings,end-to-end speed and sufficient-failure coverage are unknown.
 Existing0/71closed-tail result stays frozen. New construction/tactic interleaving
 is still experimental; service rejection remains disabled. No RQ is closed.
+
+## simp_all phase completeness dependency
+
+[Step0047 source/diagnostic validation](../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/phase-completion-20261026/README.md)
+labels native reassert/clear and per-hypothesis initialization previously hidden
+by the observer. Actual retained4.9definitions compile;four analyzer tests keep
+legacy native timings/origins unchanged while classifying legacy action outcomes
+as unknown. This does not execute the23originals or establish failure/cycle
+coverage. New observer parity/overhead remain pending;no detector is enabled.

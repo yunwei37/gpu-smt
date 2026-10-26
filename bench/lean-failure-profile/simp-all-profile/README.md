@@ -57,3 +57,21 @@ directly. qualification006 lazy MessageData names are invalid attribution;
 qualification007 is the repaired seven-pair control. The analyzer requires the
 exact preparation/terminal source inventory and excludes memory sidecars.
 See progress-repair-result-review.md in the existing artifact directory.
+
+## Phase completion update (native runtime qualification pending)
+
+The current source splits initialization into disjoint collect-hypotheses and
+ordered initialize-hypothesis spans,and adds the previously unlabelled native
+assertHypotheses/tryClearMany spans. Hypothesis names/IDs identify subjects;
+action_completed distinguishes returned actions from exception unwinding.
+Analyzer max_elapsed_ns exposes the worst observed repeated phase;legacy ends
+without the new field remain completion_unknown. An open span stays censored.
+
+[Source/compile/analyzer evidence](../../../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/phase-completion-20261026/README.md).
+Definition compilation and four diagnostic analyzer tests pass. The old
+qualification007source/olean stay retained;its seven native/profile pairs
+qualify that older observer,not this update. The changed observer has executed
+zero candidate proofs. Native comparison and original23phase timing remain
+pending the sole collection slot. No cycle predicate,automatic rejection or
+per-lemma causal conclusion is added. Individual phase sums omit untimed loop,
+outer logging and service costs and are not an end-to-end denominator.
