@@ -88,11 +88,12 @@ impl NativeLean {
     /// struct/API. Arguments are forwarded individually, before --json --stdin,
     /// and included in backend identity so contexts cannot share cached results.
     /// Callers must qualify the same flags against their raw native invocation.
-    pub fn with_args(self, args: Vec<String>) -> impl VerificationBackend {
-        SourceWithArgs {
+    pub fn with_args(self, args: Vec<String>) -> ConfiguredLean {
+        ConfiguredLean {
             backend: self,
             args,
             source_file: None,
+            stderr_dir: None,
         }
     }
     /// Check an original source file in its original project context.
@@ -101,11 +102,12 @@ impl NativeLean {
     /// Relative paths are resolved from the project; file path and argv become
     /// part of backend identity. Callers must keep the pinned project immutable,
     /// as with imported dependencies. No file is created or rewritten.
-    pub fn with_source_file(self, path: PathBuf, args: Vec<String>) -> impl VerificationBackend {
-        SourceWithArgs {
+    pub fn with_source_file(self, path: PathBuf, args: Vec<String>) -> ConfiguredLean {
+        ConfiguredLean {
             backend: self,
             args,
             source_file: Some(path),
+            stderr_dir: None,
         }
     }
     async fn verify_args(
@@ -114,6 +116,7 @@ impl NativeLean {
         execution: Execution,
         args: &[String],
         source_file: Option<&PathBuf>,
+        stderr_dir: Option<&PathBuf>,
     ) -> Outcome {
         let source_file = match source_file {
             Some(path) => {
@@ -175,9 +178,53 @@ impl NativeLean {
             }
         };
         execution.registry.register(identity.clone());
+        let stderr_path = stderr_dir.map(|directory| {
+            self.project.join(directory).join(format!(
+                "native-{}-{}.stderr",
+                identity.pid, identity.start_ticks
+            ))
+        });
+        let log_file = match &stderr_path {
+            Some(path) => match tokio::fs::OpenOptions::new()
+                .write(true)
+                .create_new(true)
+                .open(path)
+                .await
+            {
+                Ok(file) => {
+                    execution.registry.note(BackendEvent {
+                        stage: "stderr_log".into(),
+                        detail: json!({"path":path, "pid":identity.pid,
+                            "start_ticks":identity.start_ticks})
+                        .to_string(),
+                    });
+                    Some(file)
+                }
+                Err(error) => {
+                    kill_group(&identity);
+                    let _ = child.start_kill();
+                    let _ = child.wait().await;
+                    execution.registry.unregister(&identity);
+                    return Outcome::operational(
+                        Status::BackendError,
+                        format!(
+                            "cannot create native stderr log {}: {error}",
+                            path.display()
+                        ),
+                    );
+                }
+            },
+            None => None,
+        };
         let input = child.stdin.take();
         let mut output = child.stdout.take().unwrap();
-        let stderr = tokio::spawn(drain(child.stderr.take().unwrap()));
+        let reader = child.stderr.take().unwrap();
+        let stderr = tokio::spawn(async move {
+            match log_file {
+                Some(file) => drain_to_file(reader, file).await,
+                None => (drain(reader).await, None, 0),
+            }
+        });
         let io = async {
             if let Some(mut input) = input {
                 input
@@ -221,11 +268,24 @@ impl NativeLean {
             }
             None
         };
-        let diagnostic = stderr
+        let (diagnostic, log_error, bytes_read) = stderr
             .await
-            .unwrap_or_else(|e| format!("stderr reader: {e}"));
+            .unwrap_or_else(|e| (format!("stderr reader: {e}"), Some(e.to_string()), 0));
+        if let Some(path) = &stderr_path {
+            execution.registry.note(BackendEvent {
+                stage: if log_error.is_none() {
+                    "stderr_log_complete"
+                } else {
+                    "stderr_log_error"
+                }
+                .into(),
+                detail: json!({"path":path, "bytes_read":bytes_read,
+                    "complete":log_error.is_none(), "error":log_error})
+                .to_string(),
+            });
+        }
         execution.registry.unregister(&identity);
-        match (outcome, interrupted) {
+        let mut result = match (outcome, interrupted) {
             (_, Some(result)) => result,
             (Some(Ok((exit_code, stdout))), _) => classify_source(exit_code, stdout, diagnostic),
             (Some(Err(error)), _) => Outcome::operational(
@@ -237,7 +297,15 @@ impl NativeLean {
                 format!("{error}; {diagnostic}"),
             ),
             _ => unreachable!(),
+        };
+        if stderr_path.is_some()
+            && let Some(error) = log_error
+            && !matches!(result.status, Status::Cancelled | Status::Timeout)
+        {
+            result.status = Status::BackendError;
+            result.error = Some(format!("native stderr log incomplete: {error}"));
         }
+        result
     }
 }
 #[async_trait]
@@ -250,16 +318,34 @@ impl VerificationBackend for NativeLean {
     }
 
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
-        self.verify_args(candidate, execution, &[], None).await
+        self.verify_args(candidate, execution, &[], None, None)
+            .await
     }
 }
-struct SourceWithArgs {
+/// Configured stock source frontend; defaults remain those of NativeLean.
+/// Extra observability does not reinterpret diagnostic stderr as proof acceptance.
+#[derive(Clone, Debug)]
+pub struct ConfiguredLean {
     backend: NativeLean,
     args: Vec<String>,
     source_file: Option<PathBuf>,
+    stderr_dir: Option<PathBuf>,
+}
+impl ConfiguredLean {
+    /// Retain complete unmodified stderr in an existing directory.
+    ///
+    /// Each actual attempt creates a new PID/birth-scoped file and records its
+    /// path/completion in backend events. Relative directories use project context.
+    /// Log setup/I/O failures are operational faults. Flush is included in attempt
+    /// retirement, without an fsync/power-loss durability claim. Use reuse=false
+    /// to measure fresh diagnostics; cache hits do not create a native log.
+    pub fn with_stderr_dir(mut self, directory: PathBuf) -> Self {
+        self.stderr_dir = Some(directory);
+        self
+    }
 }
 #[async_trait]
-impl VerificationBackend for SourceWithArgs {
+impl VerificationBackend for ConfiguredLean {
     fn identity(&self) -> String {
         let mut identity = if self.args.is_empty() {
             self.backend.identity()
@@ -269,18 +355,86 @@ impl VerificationBackend for SourceWithArgs {
         if let Some(path) = &self.source_file {
             identity.push_str(&format!("|source-file:{path:?}"));
         }
+        if let Some(directory) = &self.stderr_dir {
+            identity.push_str(&format!("|stderr-dir:{directory:?}"));
+        }
         identity
     }
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
         self.backend
-            .verify_args(candidate, execution, &self.args, self.source_file.as_ref())
+            .verify_args(
+                candidate,
+                execution,
+                &self.args,
+                self.source_file.as_ref(),
+                self.stderr_dir.as_ref(),
+            )
             .await
     }
+}
+
+/// Preserve complete bytes while keeping response memory bounded. Log errors do
+/// not stop draining the native pipe; they remain explicit operational evidence.
+async fn drain_to_file<R: tokio::io::AsyncRead + Unpin>(
+    mut reader: R,
+    mut file: tokio::fs::File,
+) -> (String, Option<String>, u64) {
+    let mut tail = Vec::new();
+    let mut chunk = [0u8; 4096];
+    let mut error = None;
+    let mut bytes = 0u64;
+    let mut truncated = false;
+    loop {
+        let n = match reader.read(&mut chunk).await {
+            Ok(0) => break,
+            Ok(n) => n,
+            Err(e) => {
+                error.get_or_insert_with(|| format!("stderr read: {e}"));
+                break;
+            }
+        };
+        bytes += n as u64;
+        if error.is_none()
+            && let Err(e) = file.write_all(&chunk[..n]).await
+        {
+            error = Some(format!("stderr write: {e}"));
+        }
+        tail.extend_from_slice(&chunk[..n]);
+        if tail.len() > 65536 {
+            tail.drain(..tail.len() - 65536);
+            truncated = true;
+        }
+    }
+    if let Err(e) = file.flush().await {
+        error.get_or_insert_with(|| format!("stderr flush: {e}"));
+    }
+    let text = String::from_utf8_lossy(&tail);
+    let text = if truncated {
+        format!("[stderr tail truncated] {text}")
+    } else {
+        text.into_owned()
+    };
+    (text, error, bytes)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[tokio::test]
+    async fn stderr_log_write_failure_stays_explicit_after_drain() {
+        // Linux /dev/full reports a real ENOSPC without filling any project disk.
+        let file = tokio::fs::OpenOptions::new()
+            .write(true)
+            .open("/dev/full")
+            .await
+            .unwrap();
+        let bytes = b"retained event\\n";
+        let (tail, error, read) = drain_to_file(&bytes[..], file).await;
+        assert_eq!(tail.as_bytes(), bytes);
+        assert_eq!(read, bytes.len() as u64);
+        assert!(error.is_some_and(|e| e.contains("stderr write:") || e.contains("stderr flush:")));
+    }
     #[test]
     fn native_exit_and_diagnostic_shapes_are_distinct() {
         assert_eq!(

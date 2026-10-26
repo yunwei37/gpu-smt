@@ -74,6 +74,13 @@ reruns and full new-resource/native matched throughput remain open.
 PreparedState/FailureDetector are extension contracts; no active rejection
 path or COW performance is implied by their definitions.
 
+Optional source diagnostics now retain per-attempt full raw stderr files via
+the configured backend/CLI, linked by PID/birth in attempt events; the normal
+response remains a labelled64KiB tail. Log setup/I/O errors are operational,
+flush/cleanup costs stay in the attempt, no default file is created. This
+supports later complete phase attribution; it is not proof/profile completion
+or an active failure detector.
+
 The source CLI backend now accepts explicitly declared upstream arguments via
 NativeLean::with_args and repeated --lean-arg. Defaults remain unchanged;
 nonempty argv partitions cache identity. Process/CLI transport tests pass, and

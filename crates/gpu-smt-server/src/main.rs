@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--stderr-dir DIR] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -95,6 +95,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "--lean",
             "--lean-arg",
             "--source-file",
+            "--stderr-dir",
             "--project",
             "--environment",
             "--cpus",
@@ -157,8 +158,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let verifier: Arc<dyn VerificationBackend> =
         match (options.get("--repl"), options.get("--lean")) {
             (Some(program), None) => {
-                if !lean_args.is_empty() || options.contains_key("--source-file") {
-                    return Err("--lean-arg and --source-file require --lean".into());
+                if !lean_args.is_empty()
+                    || options.contains_key("--source-file")
+                    || options.contains_key("--stderr-dir")
+                {
+                    return Err("--lean-arg, --source-file and --stderr-dir require --lean".into());
                 }
                 let backend = NativeRepl {
                     program: PathBuf::from(program).canonicalize()?,
@@ -185,12 +189,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     project,
                     environment: environment.clone(),
                 };
-                match options.get("--source-file") {
-                    Some(path) => {
-                        Arc::new(backend.with_source_file(PathBuf::from(path), lean_args))
-                    }
-                    None => Arc::new(backend.with_args(lean_args)),
+                let mut configured = match options.get("--source-file") {
+                    Some(path) => backend.with_source_file(PathBuf::from(path), lean_args),
+                    None => backend.with_args(lean_args),
+                };
+                if let Some(directory) = options.get("--stderr-dir") {
+                    configured = configured.with_stderr_dir(PathBuf::from(directory));
                 }
+                Arc::new(configured)
             }
             _ => return Err("specify exactly one of --repl or --lean".into()),
         };

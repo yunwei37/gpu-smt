@@ -293,3 +293,10 @@ syntax/preparation, not48 proved failures or a measured speedup. Native
 left-associated stage accumulation differs from nested closing continuations;
 the failed-leaf-to-global-failure claim is not admitted. Original48 runtime
 failure/timeout proportions and23simp phase attribution remain unmeasured.
+
+Complete per-attempt stderr capture is now an opt-in source-backend facility,
+rather than relying on the64KiB response tail for diagnostic attribution.
+[Step0044](tmp/build-and-evaluate/step-0044-20261026T021123+0000/step-report.md)
+retains large-stream/error/retirement qualification; original23/48 runtime
+measurements and full nightly code profiling remain pending. Transport-complete
+EOF after interruption does not make the recorded native phase complete.

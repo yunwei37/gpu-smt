@@ -8,7 +8,7 @@ use async_trait::async_trait;
 use gpu_smt_core::*;
 pub use prepared::PreparedRepl;
 use serde_json::{Value, json};
-pub use source::{NativeLean, classify_source};
+pub use source::{ConfiguredLean, NativeLean, classify_source};
 use std::{path::PathBuf, process::Stdio, time::Duration};
 use tokio::{
     io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader},

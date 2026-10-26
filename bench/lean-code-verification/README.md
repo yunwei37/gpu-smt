@@ -96,3 +96,11 @@ identifies actual native trace nodes for preprocessing, bitblasting, SAT search,
 LRAT parsing/trimming and certificate checking. It is source inspection, not
 executed stage timing. Profiler output must retain stage messages (the default
 Firefox export omits them); record this diagnostic overhead separately.
+
+For stderr-based tactic instrumentation, create an output directory and pass
+`--stderr-dir /absolute/logs` to the source backend. Each physical attempt's
+backend events name its complete raw PID/birth log; do not analyze only the
+64KiB response tail. A timed-out attempt can have a complete pipe log but an open
+phase: retain that phase as censored. Preserve/compress the files after native
+retirement. Raw diagnostic stream logging is opt-in, includes its own I/O cost
+and does not change the default proof classification or activate a failure rule.

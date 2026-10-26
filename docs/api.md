@@ -213,3 +213,29 @@ cache lifetime; this pre-read does not guarantee atomicity against concurrent
 file mutation. For baseline measurement use `reuse=false`. Original-file and
 stdin contexts remain distinct; qualify them on the actual workload instead of
 assuming diagnostic filenames/module names are interchangeable.
+
+### Complete diagnostic stderr
+
+The configured source backend can retain full stderr with
+`NativeLean::with_args(args).with_stderr_dir(directory)` or
+`NativeLean::with_source_file(path, args).with_stderr_dir(directory)`.
+The CLI accepts `--stderr-dir DIR` with `--lean`. The directory must already
+exist; no file or directory is added by default. Each actual attempt creates
+`native-PID-START_TICKS.stderr` with create-new semantics. Backend events link
+the exact file to the attempt's process identity and record transport
+completion/error plus bytes read. No candidate ID is used as a filesystem path.
+
+The response retains its labelled64KiB tail, while the file contains the
+unmodified complete stream when transport completion succeeds. Writing/flush
+and retirement costs enter attempt/lifecycle time. Setup or I/O failure is
+operational; partial files and error events remain. Flush is not an fsync or
+power-loss guarantee. A transport-complete file after timeout/cancellation can
+still contain incomplete phase records: EOF is not a completed proof/profile.
+
+Logging never interprets diagnostic stderr as acceptance. Original strict
+classification remains; structured profiler stderr may therefore give an
+operational response even when native exit/JSON diagnostics otherwise complete.
+Analyze such diagnostic runs from their full raw records, separately from
+uninstrumented accepted-set/performance captures. Use `reuse=false` for fresh
+measurement; cache/coalesced consumers need not create an independent log.
+Logging directory participates in configured identity. Main defaults are unchanged.

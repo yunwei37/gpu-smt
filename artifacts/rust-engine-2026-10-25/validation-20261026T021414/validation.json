@@ -1,0 +1,42 @@
+{
+  "UTC": "2026-10-26T02:14:20.727866+00:00",
+  "steps": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 0.11589818517677486
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 0.11656287801451981
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "-j",
+        "2",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 101,
+      "seconds": 5.75185221596621
+    }
+  ],
+  "native_differential": "Native tests compiled but not executed by ordinary checks; full7808resourcepair remains sole active native acquisition. File/argv/complete-stderr fixtures are not Lean proofs."
+}

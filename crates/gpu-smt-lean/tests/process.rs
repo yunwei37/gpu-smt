@@ -389,3 +389,136 @@ async fn original_source_file_preserves_context_and_refuses_different_bytes() {
     assert_eq!(std::fs::read(&path).unwrap(), code.as_bytes());
     std::fs::remove_file(path).unwrap();
 }
+
+#[tokio::test]
+async fn complete_stderr_log_preserves_events_beyond_response_tail() {
+    use gpu_smt_lean::NativeLean;
+    let directory = std::env::temp_dir().join(format!("gpu-smt-stderr-{}", std::process::id()));
+    std::fs::create_dir(&directory).unwrap();
+    let base = NativeLean {
+        program: "/usr/bin/python3".into(),
+        project: std::env::temp_dir(),
+        environment: "raw-stderr-fixture-not-Lean".into(),
+    };
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source.py");
+    let args = vec![fixture.to_string_lossy().into_owned()];
+    let plain = base.clone().with_args(args.clone());
+    let logged = base.with_args(args).with_stderr_dir(directory.clone());
+    assert_ne!(plain.identity(), logged.identity());
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(logged),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let results = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("events", "large-stderr", 5000)],
+        })
+        .await
+        .unwrap();
+    // Arbitrary stderr still cannot establish native proof acceptance.
+    assert_eq!(results[0].outcome.status, Status::BackendError);
+    let response = results[0].outcome.response.as_ref().unwrap();
+    assert!(
+        response["stderr"]
+            .as_str()
+            .unwrap()
+            .starts_with("[stderr tail truncated] ")
+    );
+    let attempt = &results[0].attempts[0];
+    let opened = attempt
+        .backend_events
+        .iter()
+        .find(|e| e.stage == "stderr_log")
+        .unwrap();
+    let opened: serde_json::Value = serde_json::from_str(&opened.detail).unwrap();
+    let path = PathBuf::from(opened["path"].as_str().unwrap());
+    assert_eq!(path.parent().unwrap(), directory);
+    assert_eq!(opened["pid"], attempt.processes[0].pid);
+    assert_eq!(opened["start_ticks"], attempt.processes[0].start_ticks);
+    let bytes = std::fs::read(&path).unwrap();
+    assert!(bytes.len() > 65536);
+    let rows: Vec<serde_json::Value> = std::str::from_utf8(&bytes)
+        .unwrap()
+        .lines()
+        .map(|line| serde_json::from_str(line).unwrap())
+        .collect();
+    assert_eq!(rows.len(), 1024);
+    for (index, row) in rows.iter().enumerate() {
+        assert_eq!(row["row"], index);
+        assert_eq!(row["payload"], "α".repeat(64));
+    }
+    let complete = attempt
+        .backend_events
+        .iter()
+        .find(|e| e.stage == "stderr_log_complete")
+        .unwrap();
+    let complete: serde_json::Value = serde_json::from_str(&complete.detail).unwrap();
+    assert_eq!(complete["bytes_read"], bytes.len());
+    assert_eq!(complete["complete"], true);
+    engine.shutdown().await;
+    for p in &attempt.processes {
+        assert!(gpu_smt_engine::linux::identity(p.pid).is_err());
+    }
+    std::fs::remove_file(path).unwrap();
+    std::fs::remove_dir(directory).unwrap();
+}
+
+#[tokio::test]
+async fn stderr_log_setup_fault_retires_native_attempt() {
+    use gpu_smt_lean::NativeLean;
+    let absent = std::env::temp_dir().join(format!("gpu-smt-absent-log-{}", std::process::id()));
+    assert!(!absent.exists());
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source.py");
+    let backend = NativeLean {
+        program: "/usr/bin/python3".into(),
+        project: std::env::temp_dir(),
+        environment: "log-fault-fixture-not-Lean".into(),
+    }
+    .with_args(vec![fixture.to_string_lossy().into_owned()])
+    .with_stderr_dir(absent);
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(backend),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let results = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("fault", "input", 5000)],
+        })
+        .await
+        .unwrap();
+    assert_eq!(results[0].outcome.status, Status::BackendError);
+    assert!(results[0].outcome.response.is_none());
+    assert!(
+        results[0]
+            .outcome
+            .error
+            .as_ref()
+            .unwrap()
+            .contains("cannot create native stderr log")
+    );
+    assert_eq!(results[0].attempts[0].processes.len(), 1);
+    engine.shutdown().await;
+    for p in &results[0].attempts[0].processes {
+        assert!(gpu_smt_engine::linux::identity(p.pid).is_err());
+    }
+}

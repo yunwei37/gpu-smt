@@ -781,6 +781,9 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
     }
     configured.shutdown().await;
     let original = project.join(format!("GpuSmtFileContract{}.lean", std::process::id()));
+    let log_directory = project.join(format!("GpuSmtNativeLogs{}", std::process::id()));
+    std::fs::create_dir(&log_directory).unwrap();
+    let mut native_logs = Vec::new();
     let file_engine = Engine::new(
         Config {
             memory_bytes: 48 << 30,
@@ -793,7 +796,8 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
                 project: project.clone(),
                 environment: "native-original-file-contract".into(),
             }
-            .with_source_file(original.clone(), vec!["--tstack=400000".into()]),
+            .with_source_file(original.clone(), vec!["--tstack=400000".into()])
+            .with_stderr_dir(log_directory.clone()),
         ),
         Arc::new(Fifo),
         Arc::new(ProcMonitor::default()),
@@ -852,9 +856,26 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
                 .flat_map(|a| a.processes.iter().cloned()),
         );
         assert_eq!(std::fs::read(&original).unwrap(), code.as_bytes());
+        let event = result[0].attempts[0]
+            .backend_events
+            .iter()
+            .find(|e| e.stage == "stderr_log_complete")
+            .unwrap();
+        let event: serde_json::Value = serde_json::from_str(&event.detail).unwrap();
+        assert_eq!(event["complete"], true);
+        let log = PathBuf::from(event["path"].as_str().unwrap());
+        assert_eq!(
+            std::fs::read(&log).unwrap().len() as u64,
+            event["bytes_read"].as_u64().unwrap()
+        );
+        native_logs.push(log);
     }
     file_engine.shutdown().await;
     std::fs::remove_file(original).unwrap();
+    for log in native_logs {
+        std::fs::remove_file(log).unwrap();
+    }
+    std::fs::remove_dir(log_directory).unwrap();
     for p in seen {
         assert!(
             gpu_smt_engine::linux::identity(p.pid).is_err(),

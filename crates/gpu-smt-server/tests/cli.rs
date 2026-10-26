@@ -276,6 +276,8 @@ fn original_source_file_mode_reaches_native_file_context() {
     use std::io::Write;
     let path =
         std::env::temp_dir().join(format!("gpu-smt-cli-original-{}.lean", std::process::id()));
+    let directory = std::env::temp_dir().join(format!("gpu-smt-cli-logs-{}", std::process::id()));
+    std::fs::create_dir(&directory).unwrap();
     let code = "unchanged original α\n";
     std::fs::write(&path, code).unwrap();
     let fixture = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
@@ -295,6 +297,8 @@ fn original_source_file_mode_reaches_native_file_context() {
             fixture.to_str().unwrap(),
             "--source-file",
             path.to_str().unwrap(),
+            "--stderr-dir",
+            directory.to_str().unwrap(),
         ])
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
@@ -341,5 +345,18 @@ fn original_source_file_mode_reaches_native_file_context() {
     {
         assert!(!std::path::Path::new(&format!("/proc/{}", process.pid)).exists());
     }
+    let attempt = &capture.results[0].attempts[0];
+    let event = attempt
+        .backend_events
+        .iter()
+        .find(|e| e.stage == "stderr_log_complete")
+        .unwrap();
+    let event: serde_json::Value = serde_json::from_str(&event.detail).unwrap();
+    assert_eq!(event["complete"], true);
+    assert_eq!(event["bytes_read"], 0);
+    let log = std::path::PathBuf::from(event["path"].as_str().unwrap());
+    assert_eq!(std::fs::read(&log).unwrap(), b"");
+    std::fs::remove_file(log).unwrap();
+    std::fs::remove_dir(directory).unwrap();
     std::fs::remove_file(path).unwrap();
 }
