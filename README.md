@@ -131,8 +131,11 @@ retry, whose resource failures remain separately reported. This is sampled
 response, not a kernel hard RSS quota.
 
 The original scheduling matrix completed under its frozen two-worker/24GiB-AS
-settings. Its results are kept separate from the next dynamic four-worker
-native/prepared engine pair. The historical42bad_alloc candidates still require
+settings. The [dynamic four-worker native/prepared pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z.launch.json)
+has now started on all7,808original sources,after real native qualification.
+Only that full group runs;its results remain pending and separate from the
+old point. Actual four fresh workers,unlimited per-processAS and growing
+flushed native attempt records are observed;no full throughput claim follows. The historical42bad_alloc candidates still require
 separate isolated reruns;they are not silently merged with later resource cohorts.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.

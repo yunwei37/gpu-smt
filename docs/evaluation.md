@@ -258,3 +258,15 @@ retains actual native origins with seven matched control pairs;original23
 phase/lemma attribution is still pending. Prior lazy-name placeholders and
 sidecar-inflated source counts remain as explicitly invalid diagnostic attempts.
 The closed-tail rule stays frozen at0/71original coverage.
+
+
+The [new dynamic resource acquisition](../artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z.launch.json)
+is now running under implementation42659a8:all7808originals,48GiBaggregateRSS,
+CPU8–11,onecorelease,unlimitedAS,matched freshnative then Mathlib-derived.
+[Real24qualification and transport repair](../artifacts/engine-resource-pair-2026-10-25/qualification24-20261026T003542Z/result-review.md)
+preserve21accepted/3rejectedwith exactmatched sets;oneparentloads5545modules.
+The firstbuffered-outputhang stays as an interruptedpartialrecord.
+[Flushed native-attempt persistence](../artifacts/engine-resource-pair-2026-10-25/journal-control4-20261026T004354Z/result-review.md)
+retains physicaloutcomes before finalCapture. These controls are notwholeflow
+gains;the fullnewresourcepoint remains unfinished. Resourcepreparation is
+priorart,not a strongestwarmbaseline ornovelty result.

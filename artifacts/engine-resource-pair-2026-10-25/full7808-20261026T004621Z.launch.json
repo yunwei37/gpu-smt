@@ -1,0 +1,47 @@
+{
+  "UTC": "20261026T004621Z",
+  "pid": 408739,
+  "start_ticks": 140695363,
+  "implementation_commit": "42659a883dbea2c0fb64111736ffd0c4ec4a7744",
+  "command": [
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/release/examples/resource_pair",
+    "/tmp/gpu-smt-resource-pair-20261025/original7808.json",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/preparation/resources.json",
+    "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "result_directory": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z",
+  "driver_log": "/tmp/gpu-smt-resource-pair-20261025/full7808-20261026T004621Z.log",
+  "sources": 7808,
+  "mode": "all",
+  "source_reference": "artifacts/engine-resource-profile-2026-10-25/population-inputs/all.json.gz",
+  "original_source_bytes": 13379424,
+  "original_source_and_task_timeout_fields_unchanged": true,
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1
+  },
+  "AS_limit": "unlimited",
+  "conditions": [
+    "own-engine fresh native",
+    "own-engine Mathlib prepared branches"
+  ],
+  "prior_group_retired": true,
+  "one_full_group_only": true,
+  "preparation_runs": [
+    "qualification24-20261026T003542Z",
+    "journal-control4-20261026T004354Z"
+  ],
+  "scope": "Actual full new-resource acquisition launched;no outcome,speed,parity or sustainedfourpreparedworkers claimed. Resource techniques are prior work;not strongestwarmservice comparison."
+}
