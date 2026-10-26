@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -94,6 +94,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "--repl",
             "--lean",
             "--lean-arg",
+            "--source-file",
             "--project",
             "--environment",
             "--cpus",
@@ -156,8 +157,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let verifier: Arc<dyn VerificationBackend> =
         match (options.get("--repl"), options.get("--lean")) {
             (Some(program), None) => {
-                if !lean_args.is_empty() {
-                    return Err("--lean-arg requires --lean".into());
+                if !lean_args.is_empty() || options.contains_key("--source-file") {
+                    return Err("--lean-arg and --source-file require --lean".into());
                 }
                 let backend = NativeRepl {
                     program: PathBuf::from(program).canonicalize()?,
@@ -179,14 +180,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 if options.contains_key("--prepared-host") || options.contains_key("--sysroot") {
                     return Err("prepared import parent requires --repl".into());
                 }
-                Arc::new(
-                    NativeLean {
-                        program: PathBuf::from(program).canonicalize()?,
-                        project,
-                        environment: environment.clone(),
+                let backend = NativeLean {
+                    program: PathBuf::from(program).canonicalize()?,
+                    project,
+                    environment: environment.clone(),
+                };
+                match options.get("--source-file") {
+                    Some(path) => {
+                        Arc::new(backend.with_source_file(PathBuf::from(path), lean_args))
                     }
-                    .with_args(lean_args),
-                )
+                    None => Arc::new(backend.with_args(lean_args)),
+                }
             }
             _ => return Err("specify exactly one of --repl or --lean".into()),
         };

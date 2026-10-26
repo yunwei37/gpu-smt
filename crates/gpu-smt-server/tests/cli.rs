@@ -270,3 +270,76 @@ fn native_source_arguments_reach_process_and_capture_identity() {
         assert!(!std::path::Path::new(&format!("/proc/{}", process.pid)).exists());
     }
 }
+
+#[test]
+fn original_source_file_mode_reaches_native_file_context() {
+    use std::io::Write;
+    let path =
+        std::env::temp_dir().join(format!("gpu-smt-cli-original-{}.lean", std::process::id()));
+    let code = "unchanged original α\n";
+    std::fs::write(&path, code).unwrap();
+    let fixture = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .join("gpu-smt-lean/tests/fixtures/source.py");
+    let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
+        .args([
+            "measure",
+            "--lean",
+            "/usr/bin/python3",
+            "--project",
+            "/tmp",
+            "--environment",
+            "file-fixture-not-Lean",
+            "--lean-arg",
+            fixture.to_str().unwrap(),
+            "--source-file",
+            path.to_str().unwrap(),
+        ])
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .unwrap();
+    child
+        .stdin
+        .take()
+        .unwrap()
+        .write_all(
+            serde_json::to_string(&serde_json::json!({"candidates":[
+                {"id":"original","code":code,"reuse":false}
+            ]}))
+            .unwrap()
+            .as_bytes(),
+        )
+        .unwrap();
+    let output = child.wait_with_output().unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let capture: gpu_smt_server::measurement::Capture =
+        serde_json::from_slice(&output.stdout).unwrap();
+    assert!(capture.backend.contains("source-file:"));
+    assert_eq!(
+        capture.results[0].outcome.status,
+        gpu_smt_core::Status::Accepted
+    );
+    let result = capture.results[0].outcome.response.as_ref().unwrap();
+    let detail: serde_json::Value =
+        serde_json::from_str(result["messages"][0]["data"].as_str().unwrap()).unwrap();
+    assert_eq!(detail["source"], code);
+    assert_eq!(
+        detail["argv"],
+        serde_json::json!(["--json", path.to_str().unwrap()])
+    );
+    for process in capture.results[0]
+        .attempts
+        .iter()
+        .flat_map(|a| &a.processes)
+    {
+        assert!(!std::path::Path::new(&format!("/proc/{}", process.pid)).exists());
+    }
+    std::fs::remove_file(path).unwrap();
+}

@@ -275,3 +275,11 @@ The source backend now preserves declared compiler argv without changing default
 flags or source bytes. [Step0041](tmp/build-and-evaluate/step-0041-20261026T011417+0000/step-report.md)
 qualifies transport and compiles native differential coverage; original lean-mlir
 file/stdin and profiler measurement still follows the sole dynamic full pair.
+
+
+Original-file source checking now shares the Rust native lifecycle rather than
+assuming stdin preserves filename/module context. [Step0042](tmp/build-and-evaluate/step-0042-20261026T013224+0000/step-report.md)
+adds file/argv identity, pre-launch source-byte checks and local transport tests;
+nightly whole-module file/stdin/profiler runs remain pending after full resource
+pair. The retained SDK source exposes actual SAT/LRAT phase hooks; their presence
+does not measure phase cost or executed bv_decide coverage.

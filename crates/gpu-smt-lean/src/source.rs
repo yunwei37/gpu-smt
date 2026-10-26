@@ -92,6 +92,20 @@ impl NativeLean {
         SourceWithArgs {
             backend: self,
             args,
+            source_file: None,
+        }
+    }
+    /// Check an original source file in its original project context.
+    ///
+    /// The file must match the submitted source bytes before each execution.
+    /// Relative paths are resolved from the project; file path and argv become
+    /// part of backend identity. Callers must keep the pinned project immutable,
+    /// as with imported dependencies. No file is created or rewritten.
+    pub fn with_source_file(self, path: PathBuf, args: Vec<String>) -> impl VerificationBackend {
+        SourceWithArgs {
+            backend: self,
+            args,
+            source_file: Some(path),
         }
     }
     async fn verify_args(
@@ -99,13 +113,45 @@ impl NativeLean {
         candidate: &Candidate,
         execution: Execution,
         args: &[String],
+        source_file: Option<&PathBuf>,
     ) -> Outcome {
+        let source_file = match source_file {
+            Some(path) => {
+                let path = self.project.join(path);
+                let path = if path.is_absolute() {
+                    path
+                } else {
+                    match std::env::current_dir() {
+                        Ok(directory) => directory.join(path),
+                        Err(error) => {
+                            return Outcome::operational(Status::BackendError, error.to_string());
+                        }
+                    }
+                };
+                match std::fs::read(&path) {
+                    Ok(bytes) if bytes == candidate.code.as_bytes() => Some(path),
+                    Ok(_) => {
+                        return Outcome::operational(
+                            Status::BackendError,
+                            "original source file differs from submitted bytes",
+                        );
+                    }
+                    Err(error) => {
+                        return Outcome::operational(Status::BackendError, error.to_string());
+                    }
+                }
+            }
+            None => None,
+        };
         let mut command = Command::new(&self.program);
+        command.args(args).arg("--json");
+        if let Some(path) = &source_file {
+            command.arg(path).stdin(Stdio::null());
+        } else {
+            command.arg("--stdin").stdin(Stdio::piped());
+        }
         command
-            .args(args)
-            .args(["--json", "--stdin"])
             .current_dir(&self.project)
-            .stdin(Stdio::piped())
             .stdout(Stdio::piped())
             .stderr(Stdio::piped())
             .kill_on_drop(true);
@@ -129,16 +175,18 @@ impl NativeLean {
             }
         };
         execution.registry.register(identity.clone());
-        let mut input = child.stdin.take().unwrap();
+        let input = child.stdin.take();
         let mut output = child.stdout.take().unwrap();
         let stderr = tokio::spawn(drain(child.stderr.take().unwrap()));
         let io = async {
-            input
-                .write_all(candidate.code.as_bytes())
-                .await
-                .map_err(|e| e.to_string())?;
-            input.shutdown().await.map_err(|e| e.to_string())?;
-            drop(input);
+            if let Some(mut input) = input {
+                input
+                    .write_all(candidate.code.as_bytes())
+                    .await
+                    .map_err(|e| e.to_string())?;
+                input.shutdown().await.map_err(|e| e.to_string())?;
+                drop(input);
+            }
             let mut bytes = Vec::new();
             output
                 .read_to_end(&mut bytes)
@@ -202,25 +250,30 @@ impl VerificationBackend for NativeLean {
     }
 
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
-        self.verify_args(candidate, execution, &[]).await
+        self.verify_args(candidate, execution, &[], None).await
     }
 }
 struct SourceWithArgs {
     backend: NativeLean,
     args: Vec<String>,
+    source_file: Option<PathBuf>,
 }
 #[async_trait]
 impl VerificationBackend for SourceWithArgs {
     fn identity(&self) -> String {
-        if self.args.is_empty() {
+        let mut identity = if self.args.is_empty() {
             self.backend.identity()
         } else {
             format!("{}|args:{:?}", self.backend.identity(), self.args)
+        };
+        if let Some(path) = &self.source_file {
+            identity.push_str(&format!("|source-file:{path:?}"));
         }
+        identity
     }
     async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
         self.backend
-            .verify_args(candidate, execution, &self.args)
+            .verify_args(candidate, execution, &self.args, self.source_file.as_ref())
             .await
     }
 }

@@ -1,0 +1,165 @@
+{
+  "observed_utc": "2026-10-26T01:37:30.703492+00:00",
+  "sdk": "Lean4.27.0-nightly-2025-12-01-linux",
+  "workload_commit": "b8c4a771319a044854a4bbb49b8821381ef86ff8",
+  "native_workload_invocations": 0,
+  "source_nodes": {
+    "Elab/Tactic/BVDecide.lean": [],
+    "Elab/Tactic/BVDecide/Frontend/Normalize.lean": [
+      {
+        "line": 52,
+        "text": "  withTraceNode `Meta.Tactic.bv (fun _ => return \"Preprocessing goal\") do"
+      }
+    ],
+    "Elab/Tactic/BVDecide/Frontend/BVDecide.lean": [
+      {
+        "line": 278,
+        "text": "  withTraceNode `Meta.Tactic.sat (fun _ => return \"Compiling expr term\") do"
+      },
+      {
+        "line": 281,
+        "text": "  withTraceNode `Meta.Tactic.sat (fun _ => return \"Compiling proof certificate term\") do"
+      },
+      {
+        "line": 287,
+        "text": "  withTraceNode `Meta.Tactic.sat (fun _ => return \"Compiling reflection proof term\") do"
+      },
+      {
+        "line": 302,
+        "text": "        withTraceNode `Meta.Tactic.sat (fun _ => return \"Verifying LRAT certificate\") do"
+      },
+      {
+        "line": 326,
+        "text": "    withTraceNode `Meta.Tactic.bv (fun _ => return \"Bitblasting BVLogicalExpr to AIG\") do"
+      },
+      {
+        "line": 336,
+        "text": "    withTraceNode `Meta.Tactic.sat (fun _ => return \"Converting AIG to CNF\") do"
+      },
+      {
+        "line": 345,
+        "text": "    withTraceNode `Meta.Tactic.sat (fun _ => return \"Obtaining external proof certificate\") do"
+      },
+      {
+        "line": 388,
+        "text": "      withTraceNode `Meta.Tactic.bv (fun _ => return \"Reflecting goal into BVLogicalExpr\") do"
+      },
+      {
+        "line": 404,
+        "text": "    withTraceNode `Meta.Tactic.bv (fun _ => return \"Preparing LRAT reflection term\") do"
+      }
+    ],
+    "Elab/Tactic/BVDecide/Frontend/LRAT.lean": [
+      {
+        "line": 99,
+        "text": "    withTraceNode `Meta.Tactic.sat (fun _ => return s!\"Parsing LRAT file\") do"
+      },
+      {
+        "line": 110,
+        "text": "      withTraceNode `Meta.Tactic.sat (fun _ => return \"Trimming LRAT proof\") do"
+      },
+      {
+        "line": 137,
+        "text": "    withTraceNode `Meta.Tactic.sat (fun _ => return \"Serializing SAT problem to DIMACS file\") do"
+      },
+      {
+        "line": 143,
+        "text": "      withTraceNode `Meta.Tactic.sat (fun _ => return \"Running SAT solver\") do"
+      },
+      {
+        "line": 149,
+        "text": "      withTraceNode `Meta.Tactic.sat (fun _ => return \"Obtaining LRAT certificate\") do"
+      }
+    ],
+    "Util/Trace.lean": [
+      {
+        "line": 26,
+        "text": "- ``withTraceNode `class.name (fun result => return msg) do body`"
+      },
+      {
+        "line": 165,
+        "text": "register_builtin_option trace.profiler : Bool := {"
+      },
+      {
+        "line": 172,
+        "text": "register_builtin_option trace.profiler.threshold : Nat := {"
+      },
+      {
+        "line": 179,
+        "text": "register_builtin_option trace.profiler.useHeartbeats : Bool := {"
+      },
+      {
+        "line": 185,
+        "text": "register_builtin_option trace.profiler.output : String := {"
+      },
+      {
+        "line": 191,
+        "text": "register_builtin_option trace.profiler.output.pp : Bool := {"
+      },
+      {
+        "line": 253,
+        "text": "then `Lean.withTraceNode'` can be used instead."
+      },
+      {
+        "line": 258,
+        "text": "withTraceNode `isPosTrace (msg := (return m!\"{ExceptToEmoji.toEmoji \u00b7} checking positivity\")) do"
+      },
+      {
+        "line": 264,
+        "text": "def withTraceNode [always : MonadAlwaysExcept \u03b5 m] [MonadLiftT BaseIO m] (cls : Name)"
+      },
+      {
+        "line": 286,
+        "text": "/-- A version of `Lean.withTraceNode` which allows generating the message within the computation. -/"
+      },
+      {
+        "line": 287,
+        "text": "def withTraceNode' [MonadAlwaysExcept Exception m] [MonadLiftT BaseIO m] (cls : Name)"
+      },
+      {
+        "line": 292,
+        "text": "  Prod.fst <$> withTraceNode cls msg k collapsed tag"
+      },
+      {
+        "line": 365,
+        "text": "Similar to `withTraceNode`, but msg is constructed **before** executing `k`."
+      },
+      {
+        "line": 372,
+        "text": "def withTraceNodeBefore [MonadRef m] [AddMessageContext m] [MonadOptions m]"
+      }
+    ],
+    "Util/Profiler.lean": [
+      {
+        "line": 257,
+        "text": "            threadCPUDelta := thread.samples.threadCPUDelta.push 0.0 |>.push (nextStart - thread.lastTime)"
+      },
+      {
+        "line": 268,
+        "text": "          threadCPUDelta := thread.samples.threadCPUDelta.push 0.0 |>.push (data.stopTime - thread.lastTime)"
+      },
+      {
+        "line": 276,
+        "text": "  samples := { stack := #[], time := #[], weight := #[], threadCPUDelta := #[], length := 0 }"
+      },
+      {
+        "line": 310,
+        "text": "            threadCPUDelta := thread.samples.threadCPUDelta.push 0.0 |>.push 0.0"
+      },
+      {
+        "line": 313,
+        "text": "      thread \u2190 addTrace (Lean.trace.profiler.output.pp.get opts) thread trace"
+      },
+      {
+        "line": 353,
+        "text": "              threadCPUDelta := threadCPUDelta.push 1.0"
+      }
+    ],
+    "Elab/Frontend.lean": [
+      {
+        "line": 210,
+        "text": "  if let some out := trace.profiler.output.get? opts then"
+      }
+    ]
+  }
+}

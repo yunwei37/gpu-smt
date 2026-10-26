@@ -780,6 +780,81 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
         );
     }
     configured.shutdown().await;
+    let original = project.join(format!("GpuSmtFileContract{}.lean", std::process::id()));
+    let file_engine = Engine::new(
+        Config {
+            memory_bytes: 48 << 30,
+            cpus: vec![cpu],
+            cores_per_worker: 1,
+        },
+        Arc::new(
+            gpu_smt_lean::NativeLean {
+                program: program.clone(),
+                project: project.clone(),
+                environment: "native-original-file-contract".into(),
+            }
+            .with_source_file(original.clone(), vec!["--tstack=400000".into()]),
+        ),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    for (index, (code, status)) in [
+        (
+            "import Init\nexample : 1 + 1 = 2 := by decide",
+            Status::Accepted,
+        ),
+        (
+            "import Init\nexample : 1 = 2 := by decide",
+            Status::Rejected,
+        ),
+    ]
+    .into_iter()
+    .enumerate()
+    {
+        std::fs::write(&original, code).unwrap();
+        let raw = tokio::time::timeout(
+            std::time::Duration::from_secs(300),
+            tokio::process::Command::new(&program)
+                .args(["--tstack=400000", "--json"])
+                .arg(&original)
+                .current_dir(&project)
+                .stdin(Stdio::null())
+                .stdout(Stdio::piped())
+                .stderr(Stdio::piped())
+                .kill_on_drop(true)
+                .output(),
+        )
+        .await
+        .unwrap()
+        .unwrap();
+        let expected = gpu_smt_lean::classify_source(
+            raw.status.code(),
+            String::from_utf8(raw.stdout).unwrap(),
+            String::from_utf8(raw.stderr).unwrap(),
+        );
+        assert_eq!(expected.status, status, "{expected:?}");
+        let result = file_engine
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![make(&format!("file-{index}"), code, 300000)],
+            })
+            .await
+            .unwrap();
+        assert_eq!(result[0].outcome.status, status, "{:?}", result[0].outcome);
+        assert_eq!(result[0].outcome.response, expected.response);
+        seen.extend(
+            result[0]
+                .attempts
+                .iter()
+                .flat_map(|a| a.processes.iter().cloned()),
+        );
+        assert_eq!(std::fs::read(&original).unwrap(), code.as_bytes());
+    }
+    file_engine.shutdown().await;
+    std::fs::remove_file(original).unwrap();
     for p in seen {
         assert!(
             gpu_smt_engine::linux::identity(p.pid).is_err(),

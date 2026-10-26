@@ -79,8 +79,11 @@ NativeLean::with_args and repeated --lean-arg. Defaults remain unchanged;
 nonempty argv partitions cache identity. Process/CLI transport tests pass, and
 same-argv pinned-Lean4.18 native differential cases execute successfully in
 existing CI for source25debfc.
-This preserves lean-mlir upstream --tstack=400000; it does not establish the
-pending original-file/stdin or complete bv_decide workload result.
+This preserves lean-mlir upstream --tstack=400000. The optional source-file
+backend/CLI now verifies original file bytes before invoking that exact path,
+scopes identity by file path and shares existing resource/retirement handling.
+It does not establish the pending actual original-file/stdin or complete
+bv_decide workload result.
 
 A [separate interval-continuation prototype](../bench/lean-failure-profile/interval-continuation/README.md)
 now compiles against the retained4.9API. It defers proof-tree leaves until a

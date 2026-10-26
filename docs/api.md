@@ -197,3 +197,19 @@ Other source-path/stdin limitations above remain. Callers must compare the
 same declared argv against raw native execution;argument support is not
 proof that the whole project has been measured or that arbitrary modes
 produce compatible JSON diagnostics.
+
+### Original source-file context
+
+`NativeLean::with_source_file(path, args)` uses the original file rather than
+stdin. The CLI exposes `--source-file FILE` with `--lean`; relative paths are
+resolved from the project without canonicalizing away a supplied symlink name.
+Before spawning, the file bytes must equal `Candidate.code`. A missing/different
+file is a backend error, never a native rejection. The backend creates or edits
+no source file and uses the same resource, interruption and retirement path.
+
+The file path and declared argv scope cache identity. As with imported modules,
+the caller must keep the pinned source/project immutable during execution and
+cache lifetime; this pre-read does not guarantee atomicity against concurrent
+file mutation. For baseline measurement use `reuse=false`. Original-file and
+stdin contexts remain distinct; qualify them on the actual workload instead of
+assuming diagnostic filenames/module names are interchangeable.

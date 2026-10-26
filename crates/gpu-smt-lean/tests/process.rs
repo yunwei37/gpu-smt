@@ -320,3 +320,72 @@ async fn source_arguments_preserve_tokens_source_and_cache_context() {
         assert!(gpu_smt_engine::linux::identity(process.pid).is_err());
     }
 }
+
+#[tokio::test]
+async fn original_source_file_preserves_context_and_refuses_different_bytes() {
+    use gpu_smt_lean::NativeLean;
+    let path = std::env::temp_dir().join(format!(
+        "gpu-smt-original-source-{}.lean",
+        std::process::id()
+    ));
+    let code = "original α\r\n";
+    std::fs::write(&path, code).unwrap();
+    let base = NativeLean {
+        program: "/usr/bin/python3".into(),
+        project: std::env::temp_dir(),
+        environment: "original-file-fixture-not-Lean".into(),
+    };
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source.py");
+    let args = vec![
+        fixture.to_string_lossy().into_owned(),
+        "--tstack=400000".into(),
+    ];
+    let stdin_identity = base.clone().with_args(args.clone()).identity();
+    let configured = base.with_source_file(path.file_name().unwrap().into(), args);
+    assert_ne!(configured.identity(), stdin_identity);
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(configured),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let results = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("original", code, 5000)],
+        })
+        .await
+        .unwrap();
+    assert_eq!(results[0].outcome.status, Status::Accepted);
+    let response = results[0].outcome.response.as_ref().unwrap();
+    let detail: serde_json::Value =
+        serde_json::from_str(response["messages"][0]["data"].as_str().unwrap()).unwrap();
+    assert_eq!(detail["source"], code);
+    assert_eq!(
+        detail["argv"],
+        serde_json::json!(["--tstack=400000", "--json", path.to_str().unwrap()])
+    );
+    let mismatch = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("mismatch", "different source", 5000)],
+        })
+        .await
+        .unwrap();
+    assert_eq!(mismatch[0].outcome.status, Status::BackendError);
+    assert!(mismatch[0].outcome.response.is_none());
+    assert!(mismatch[0].attempts.iter().all(|a| a.processes.is_empty()));
+    engine.shutdown().await;
+    for process in results[0].attempts.iter().flat_map(|a| &a.processes) {
+        assert!(gpu_smt_engine::linux::identity(process.pid).is_err());
+    }
+    assert_eq!(std::fs::read(&path).unwrap(), code.as_bytes());
+    std::fs::remove_file(path).unwrap();
+}
