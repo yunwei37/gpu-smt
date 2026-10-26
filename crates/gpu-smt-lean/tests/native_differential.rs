@@ -610,6 +610,7 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
         reuse: false,
     };
     let mut seen = vec![];
+    let mut raw_source_envelopes = std::collections::HashMap::new();
     for (index, (code, status)) in [
         (
             "import Init\nexample : 1 + 1 = 2 := by decide",
@@ -653,6 +654,7 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
             String::from_utf8(raw.stderr).unwrap(),
         );
         assert_eq!(expected.status, status);
+        raw_source_envelopes.insert(code.to_string(), expected.response.clone());
         let result = engine
             .verify_batch(Batch {
                 mode: Mode::All,
@@ -704,6 +706,59 @@ async fn native_source_frontend_matches_cli_and_retires_interruptions() {
             .iter()
             .flat_map(|a| a.processes.iter().cloned()),
     );
+    let stream_sources = [
+        "import Init\nexample : 1 + 1 = 2 := by decide",
+        "import Init\nexample : 1 = 2 := by decide",
+    ];
+    let mut stream = engine
+        .verify_stream(Batch {
+            mode: Mode::All,
+            candidates: stream_sources
+                .iter()
+                .enumerate()
+                .map(|(i, source)| make(&format!("stream-{i}"), source, 300000))
+                .collect(),
+        })
+        .unwrap();
+    let mut stream_indices = std::collections::BTreeSet::new();
+    let mut stream_complete = false;
+    while let Some(event) = tokio::time::timeout(std::time::Duration::from_secs(300), stream.recv())
+        .await
+        .unwrap()
+    {
+        match event {
+            BatchEvent::Result {
+                index,
+                verification,
+            } => {
+                assert!(stream_indices.insert(index));
+                assert_eq!(
+                    verification.outcome.response,
+                    raw_source_envelopes[stream_sources[index]]
+                );
+                assert_eq!(
+                    verification.outcome.status,
+                    if index == 0 {
+                        Status::Accepted
+                    } else {
+                        Status::Rejected
+                    }
+                );
+                seen.extend(
+                    verification
+                        .attempts
+                        .iter()
+                        .flat_map(|a| a.processes.iter().cloned()),
+                );
+            }
+            BatchEvent::Complete { count } => {
+                assert_eq!(count, 2);
+                stream_complete = true;
+            }
+            BatchEvent::Error { message } => panic!("{message}"),
+        }
+    }
+    assert!(stream_complete && stream_indices.len() == 2);
     engine.shutdown().await;
     let configured = Engine::new(
         Config {

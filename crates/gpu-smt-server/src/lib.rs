@@ -20,6 +20,7 @@ pub fn router(engine: Engine) -> Router {
     Router::new()
         .route("/health", get(health))
         .route("/v1/verify", post(native_batch))
+        .route("/v1/verify/stream", post(native_stream))
         .route("/check", post(check))
         .route("/check/", post(check))
         .route("/verify", post(legacy))
@@ -51,6 +52,38 @@ async fn native_batch(
     let results = engine.verify_batch(batch).await.map_err(error)?;
     Ok(Json(json!({"results":results})))
 }
+struct JsonLines(gpu_smt_engine::BatchStream);
+impl futures_core::Stream for JsonLines {
+    type Item = Result<axum::body::Bytes, std::io::Error>;
+    fn poll_next(
+        self: std::pin::Pin<&mut Self>,
+        cx: &mut std::task::Context<'_>,
+    ) -> std::task::Poll<Option<Self::Item>> {
+        self.get_mut().0.poll_recv(cx).map(|event| {
+            event.map(|event| {
+                serde_json::to_vec(&event)
+                    .map(|mut bytes| {
+                        bytes.push(b'\n');
+                        axum::body::Bytes::from(bytes)
+                    })
+                    .map_err(std::io::Error::other)
+            })
+        })
+    }
+}
+async fn native_stream(
+    State(engine): State<Engine>,
+    Json(batch): Json<Batch>,
+) -> Result<axum::response::Response, Error> {
+    use axum::response::IntoResponse;
+    let stream = engine.verify_stream(batch).map_err(error)?;
+    Ok((
+        [(axum::http::header::CONTENT_TYPE, "application/x-ndjson")],
+        axum::body::Body::from_stream(JsonLines(stream)),
+    )
+        .into_response())
+}
+
 /// Kimina source snippet.
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]

@@ -31,6 +31,10 @@ Lean project, use Lake's discovered import paths:
       < /absolute/path/to/gpu-smt/examples/check.jsonl
 
 Use serve for local Kimina core/check, legacy/verify and typed/v1/verify.
+The optional typed/v1/verify/stream route sends NDJSON results as they complete,
+with a final count marker; existing collected routes retain their order/schema.
+[Streaming and disconnect semantics](docs/api.md#http) distinguish checked
+first-success cancellation from every-candidate RL delivery.
 Unsupported debug/infotree extensions return explicit errors. Native env
 fields are output provenance, not persistent remote session handles.
 

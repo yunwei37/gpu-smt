@@ -7,14 +7,25 @@ does not produce all RL candidate rewards.
 [Existing-data opportunity and limitations](../../artifacts/candidate-scheduling-2026-10-25/result-review.md).
 [Actual measurement plan](../../artifacts/candidate-scheduling-2026-10-25/plan.md).
 
-Run with the retained Kimina Python environment:
+Existing-data analysis uses the retained Python environment; it executes no Lean:
     python bench/lean-candidate-scheduling/analyze.py --out /tmp/a-fresh-analysis --workers 2
-    python bench/lean-candidate-scheduling/run.py --phase qualification --out /tmp/a-fresh-native-qualification
 
 [Real native qualification](../../artifacts/candidate-scheduling-2026-10-25/native-qualification-20261025T0715/result-review.md)
-is complete; the original7808 all/first-original/first-short matrix is active.
-Do not start a second proof-collection group while its launch owner is alive.
-Analyze closed groups with analyze-native.py --run <completed-group>. AST parsing and
-offline simulation are not performance results. Full uses --phase full and
-all7,808originals. Existing48GiB/max2/24each resources and sampled watchdog
-remain unchanged. Reviews are root self-review.
+and the [complete original7808 three-cell matrix](../../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md)
+are retained. Analyze closed groups with analyze-native.py --run <completed-group>.
+AST parsing and offline simulation are not performance results. The legacy
+run.py/source snapshot reproduces its historical48GiB/max2/24GiBeach point;
+it is not the current dynamic resource runner and must not restart a competing
+capture. New resource measurements use the Rust engine/current resource contract.
+Reviews are root self-review.
+
+The [existing task-held-out lexical model](../../artifacts/candidate-scheduling-2026-10-25/crossfit/result-review.md)
+did not improve its own offline short-code comparison. Preserve it instead of
+retraining the same inspected data or adding a redundant full cell. This is not
+a route closure. New source memory/time policies still need identifiable labels
+at their declared resource/backend point; final overwritten activity snapshots
+alone are not a per-candidate memory trace.
+
+The optional engine HTTP stream delivers completion-order results with a final
+count marker. It shares first-success/RL semantics and does not make source
+predictions into failure verdicts. See [API delivery scope](../../docs/api.md#http).

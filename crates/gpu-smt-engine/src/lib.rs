@@ -13,7 +13,7 @@ use std::{
     time::Instant,
 };
 use tokio::{
-    sync::{Notify, watch},
+    sync::{Notify, mpsc, watch},
     task::JoinSet,
 };
 use tokio_util::sync::CancellationToken;
@@ -256,6 +256,27 @@ impl Drop for Lease {
         self.inner.notify.notify_waiters();
     }
 }
+type RankedBatch = Vec<(Queued, usize, Candidate)>;
+
+/// Completion-order batch subscription. Drop cancels only this subscription;
+/// physical retirement remains owned/accounted by the shared engine.
+pub struct BatchStream {
+    receiver: mpsc::UnboundedReceiver<BatchEvent>,
+}
+impl BatchStream {
+    /// Receive the next event; require Complete before treating EOF as success.
+    pub async fn recv(&mut self) -> Option<BatchEvent> {
+        self.receiver.recv().await
+    }
+    /// Poll an event when adapting to an HTTP body or another stream interface.
+    pub fn poll_recv(
+        &mut self,
+        cx: &mut std::task::Context<'_>,
+    ) -> std::task::Poll<Option<BatchEvent>> {
+        self.receiver.poll_recv(cx)
+    }
+}
+
 struct Queued {
     inner: Arc<Inner>,
     ticket: (u64, u64),
@@ -771,6 +792,38 @@ impl Engine {
     /// Return one record per caller in original order; checked winners alone cancel siblings.
     pub async fn verify_batch(&self, batch: Batch) -> Result<Vec<Verification>, String> {
         let submitted = Instant::now();
+        let (mode, pending) = self.prepare_batch(batch)?;
+        self.run_batch(mode, pending, submitted, None).await
+    }
+
+    /// Deliver each retired result in completion order, without waiting for peers.
+    ///
+    /// Input validation/ranking happens before any work is launched. Dropping
+    /// the receiver cancels this consumer only; shared subscribers retain work.
+    /// Results buffer at most one event per submitted input, plus a terminal.
+    /// A Complete event is required; an interrupted EOF is not batch completion.
+    pub fn verify_stream(&self, batch: Batch) -> Result<BatchStream, String> {
+        let submitted = Instant::now();
+        let (mode, pending) = self.prepare_batch(batch)?;
+        let count = pending.len();
+        let (output, receiver) = mpsc::unbounded_channel();
+        let engine = self.clone();
+        tokio::spawn(async move {
+            tokio::select! {
+                _ = output.closed() => {}
+                result = engine.run_batch(mode, pending, submitted, Some(&output)) => {
+                    let terminal = match result {
+                        Ok(_) => BatchEvent::Complete { count },
+                        Err(message) => BatchEvent::Error { message },
+                    };
+                    let _ = output.send(terminal);
+                }
+            }
+        });
+        Ok(BatchStream { receiver })
+    }
+
+    fn prepare_batch(&self, batch: Batch) -> Result<(Mode, RankedBatch), String> {
         let mut ids = HashSet::new();
         for c in &batch.candidates {
             if !ids.insert(c.id.clone()) || c.timeout_ms == 0 {
@@ -794,7 +847,6 @@ impl Engine {
             .enumerate()
             .map(|(index, (c, priority))| (priority, index, c))
             .collect();
-        let n = pending.len();
         pending.sort_by_key(|(priority, index, _)| (*priority, *index));
         // Register the complete ranked frontier before any physical executor
         // starts. Cost-model latency and Tokio wake order cannot reorder it.
@@ -802,6 +854,17 @@ impl Engine {
             .into_iter()
             .map(|(priority, index, c)| (self.0.enqueue(priority), index, c))
             .collect();
+        Ok((batch.mode, pending))
+    }
+
+    async fn run_batch(
+        &self,
+        mode: Mode,
+        pending: RankedBatch,
+        submitted: Instant,
+        output: Option<&mpsc::UnboundedSender<BatchEvent>>,
+    ) -> Result<Vec<Verification>, String> {
+        let n = pending.len();
         let mut tasks = JoinSet::new();
         let mut groups: HashMap<String, Vec<CancellationToken>> = HashMap::new();
         for (queued, index, c) in pending {
@@ -814,11 +877,15 @@ impl Engine {
             let engine = self.clone();
             tasks.spawn(async move { (index, task, engine.verify(c, cancel, subscription).await) });
         }
-        let mut results: Vec<Option<Verification>> = vec![None; n];
+        let mut results: Vec<Option<Verification>> = if output.is_none() {
+            vec![None; n]
+        } else {
+            vec![]
+        };
         while let Some(next) = tasks.join_next().await {
             let (index, task, mut result) = next.map_err(|e| e.to_string())?;
             result.elapsed_seconds = submitted.elapsed().as_secs_f64();
-            if batch.mode == Mode::FirstSuccess
+            if mode == Mode::FirstSuccess
                 && result.outcome.status == Status::Accepted
                 && let Some(task) = task
             {
@@ -826,7 +893,16 @@ impl Engine {
                     cancel.cancel();
                 }
             }
-            results[index] = Some(result);
+            if let Some(output) = output {
+                output
+                    .send(BatchEvent::Result {
+                        index,
+                        verification: result,
+                    })
+                    .map_err(|_| "batch stream receiver closed".to_string())?;
+            } else {
+                results[index] = Some(result);
+            }
         }
         Ok(results.into_iter().map(Option::unwrap).collect())
     }

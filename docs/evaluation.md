@@ -300,3 +300,13 @@ rather than relying on the64KiB response tail for diagnostic attribution.
 retains large-stream/error/retirement qualification; original23/48 runtime
 measurements and full nightly code profiling remain pending. Transport-complete
 EOF after interruption does not make the recorded native phase complete.
+
+
+[Step0045](tmp/build-and-evaluate/step-0045-20261026T025106+0000/step-report.md)
+adds optional completion-order delivery with unchanged verification semantics,
+explicit terminal counts and subscriber-scoped disconnect handling. Tests prove
+early body delivery with a gated peer, cancellation independent of reads, real
+subprocess retirement and surviving shared RL demand; they do not measure native
+stream latency or throughput. The frozen fullpair remains at42659a8.
+The existing task-held-out lexical ranker remains a negative offline result;
+no new model is trained from ambiguous old per-request RSS or incomplete new data.

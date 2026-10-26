@@ -22,6 +22,17 @@ explicit compatibility error or remain out of scope. Backend environment
 identity is immutable for cache lifetime. No ordinary cache/queue/fork
 primitive is a novelty claim. [Architecture](architecture.md), [API](api.md).
 
+## Completion delivery
+
+The typed HTTP service and Engine::verify_stream now optionally deliver retired
+results in completion order, with original index and explicit Complete/Error
+events. Collected APIs keep original order. Both share validation, ranking,
+admission, coalescing and first-success logic. Receiver disconnect drops only its
+subscriptions; physical cancellation occurs after the last subscriber and stays
+owned through native retirement. Buffered event memory enters process RSS.
+Internal availability is not client delivery time. This is ordinary service
+engineering, not a new verifier algorithm or demonstrated workload speedup.
+
 ## Resource contract
 
 New groups:48GiB total actual owned RSS, no per-process AS cap, CPU8–11.

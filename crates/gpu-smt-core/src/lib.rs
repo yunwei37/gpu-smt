@@ -153,6 +153,29 @@ pub struct Verification {
     pub coalesced: bool,
 }
 
+/// Completion-order batch delivery. EOF without Complete is not success.
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(tag = "event", rename_all = "snake_case")]
+pub enum BatchEvent {
+    /// One caller result, retaining the original submission index.
+    Result {
+        /// Original zero-based index.
+        index: usize,
+        /// Native/operational result with complete attempt provenance.
+        verification: Verification,
+    },
+    /// Every input has exactly one delivered result.
+    Complete {
+        /// Number of caller results, including explicit cancellations/cache hits.
+        count: usize,
+    },
+    /// Batch execution failed; missing results are unknown, never rejections.
+    Error {
+        /// Operational failure.
+        message: String,
+    },
+}
+
 /// Exact identity; no normalization or probabilistic equality.
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct CacheKey {

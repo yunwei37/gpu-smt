@@ -7,7 +7,7 @@ an assertion that the current prototype is production-stable.
 ## Library interfaces
 
 - gpu-smt-core: Candidate, Batch, Mode, Outcome, Status, Verification,
-  Attempt, Execution, exact CacheKey and extension traits.
+  Attempt, BatchEvent, Execution, exact CacheKey and extension traits.
 - gpu-smt-engine: Engine, Config and built-in FIFO/source-size policies,
   exact cache, composable TaskInterleave<P>, measured-headroom admission
   and Linux /proc monitor.
@@ -28,6 +28,38 @@ first_success requires task_id and cancels only after a checked same-task win.
 Equal-priority candidates retain original submission order at admission;
 forecast latency or executor wake order does not define a new scheduling
 policy. CPU/RSS admission and exclusive resource retries still apply.
+
+POST/v1/verify/stream accepts the same typed Batch and returns
+application/x-ndjson. It validates IDs/task mode/policy before launching work.
+Each completed caller emits a result event with original zero-based index and
+the full Verification. Arrival order is completion order; existing collected
+routes still return submission order. Successful completion requires a final
+complete event with count equal to input size. An error event means incomplete
+execution; EOF without complete is not success and missing rows are unknown.
+
+For example:
+
+    {"event":"result","index":1,"verification":{"id":"fast","outcome":{"status":"accepted","response":null,"error":null},"attempts":[],"elapsed_seconds":0.1,"cached":true,"coalesced":false}}
+    {"event":"result","index":0,"verification":{"id":"slow","outcome":{"status":"rejected","response":null,"error":null},"attempts":[],"elapsed_seconds":1.0,"cached":true,"coalesced":false}}
+    {"event":"complete","count":2}
+
+These are illustrative cached protocol records, not measurements or native proofs.
+
+The library counterpart is Engine::verify_stream and BatchStream::recv/poll_recv.
+Dropping the response/receiver cancels its consumer subscription. Only the last
+subscriber's disappearance cancels physical work; a separate RL subscriber
+retains its check. Owned cancellation and cleanup remain visible to the engine.
+Use engine.shutdown at service teardown; disconnect is not a claim that every
+owned prepared process has already exited at that instant.
+
+One result per input plus a terminal can buffer, as with collected result
+storage; this memory participates in owned RSS. Delivery uses nonblocking sends,
+so a slow reader does not delay checked first-success cancellation. This is
+bounded by the submitted batch, not a new source quota or unlimited-memory
+promise. Cache/coalesced/cancelled rows stay explicit. Serialization/network
+delivery time is not included in Verification.elapsed_seconds, which retains
+internal batch availability/queue/retry/retirement scope. Measure client arrival
+separately; a protocol test is not a native latency/speedup result.
 
 POST/check accepts snippets(id,code), timeout seconds, reuse, debug=false,
 infotree=null. POST/verify and /one_pass_verify_batch accept codes with

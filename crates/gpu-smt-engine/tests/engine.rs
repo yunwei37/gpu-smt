@@ -744,3 +744,135 @@ async fn invalid_batch_policy_is_an_interface_error_before_native_work() {
     assert!(result.unwrap_err().contains("one priority"));
     assert_eq!(backend.calls.load(Ordering::SeqCst), 0);
 }
+
+struct StreamGate {
+    started: tokio::sync::Notify,
+    release: tokio::sync::Notify,
+    retired: tokio::sync::Notify,
+    cancelled: AtomicUsize,
+    calls: AtomicUsize,
+}
+#[async_trait]
+impl VerificationBackend for StreamGate {
+    fn identity(&self) -> String {
+        "stream-gate-fixture-not-Lean".into()
+    }
+    async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+        self.calls.fetch_add(1, Ordering::SeqCst);
+        if c.code == "winner" {
+            self.started.notified().await;
+        }
+        if c.code == "hold" {
+            self.started.notify_one();
+            tokio::select! {
+                _ = self.release.notified() => {}
+                _ = x.cancel.cancelled() => {
+                    self.cancelled.fetch_add(1, Ordering::SeqCst);
+                    self.retired.notify_one();
+                    return Outcome::operational(Status::Cancelled, "fixture retired");
+                }
+            }
+        }
+        Outcome {
+            status: Status::Accepted,
+            response: Some(json!({"messages":[]})),
+            error: None,
+        }
+    }
+}
+#[tokio::test]
+async fn stream_disconnect_preserves_shared_rl_subscription() {
+    let b = Arc::new(StreamGate {
+        started: tokio::sync::Notify::new(),
+        release: tokio::sync::Notify::new(),
+        retired: tokio::sync::Notify::new(),
+        cancelled: AtomicUsize::new(0),
+        calls: AtomicUsize::new(0),
+    });
+    let e = engine(b.clone(), 0);
+    let rl_engine = e.clone();
+    let rl = tokio::spawn(async move {
+        rl_engine
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![candidate("rl", "hold", "one")],
+            })
+            .await
+            .unwrap()
+    });
+    b.started.notified().await;
+    let mut stream = e
+        .verify_stream(Batch {
+            mode: Mode::All,
+            candidates: vec![
+                candidate("stream", "hold", "one"),
+                candidate("fast", "ok", "two"),
+            ],
+        })
+        .unwrap();
+    let first = tokio::time::timeout(Duration::from_secs(5), stream.recv())
+        .await
+        .unwrap()
+        .unwrap();
+    assert!(matches!(first, BatchEvent::Result { index: 1, .. }));
+    // Receiving fast proves this stream's shared hold subscription was installed.
+    drop(stream);
+    b.release.notify_one();
+    let rows = tokio::time::timeout(Duration::from_secs(5), rl)
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!(rows[0].outcome.status, Status::Accepted);
+    assert_eq!(b.calls.load(Ordering::SeqCst), 2);
+    assert_eq!(b.cancelled.load(Ordering::SeqCst), 0);
+    e.shutdown().await;
+}
+
+#[tokio::test]
+async fn unread_stream_cancels_checked_siblings_and_emits_complete_rows() {
+    let b = Arc::new(StreamGate {
+        started: tokio::sync::Notify::new(),
+        release: tokio::sync::Notify::new(),
+        retired: tokio::sync::Notify::new(),
+        cancelled: AtomicUsize::new(0),
+        calls: AtomicUsize::new(0),
+    });
+    let e = engine(b.clone(), 0);
+    let mut stream = e
+        .verify_stream(Batch {
+            mode: Mode::FirstSuccess,
+            candidates: vec![
+                candidate("winner", "winner", "one"),
+                candidate("sibling", "hold", "one"),
+                candidate("other", "other", "two"),
+            ],
+        })
+        .unwrap();
+    // Require actual sibling retirement before reading any event. This uses
+    // logical synchronization, not a performance/timer ordering assumption.
+    tokio::time::timeout(Duration::from_secs(5), b.retired.notified())
+        .await
+        .unwrap();
+    let mut results = std::collections::BTreeMap::new();
+    let mut complete = false;
+    while let Some(event) = stream.recv().await {
+        match event {
+            BatchEvent::Result {
+                index,
+                verification,
+            } => {
+                assert!(results.insert(index, verification).is_none());
+            }
+            BatchEvent::Complete { count } => {
+                assert_eq!(count, 3);
+                complete = true;
+            }
+            BatchEvent::Error { message } => panic!("{message}"),
+        }
+    }
+    assert!(complete);
+    assert_eq!(results[&0].outcome.status, Status::Accepted);
+    assert_eq!(results[&1].outcome.status, Status::Cancelled);
+    assert_eq!(results[&2].outcome.status, Status::Accepted);
+    e.shutdown().await;
+}
