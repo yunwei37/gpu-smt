@@ -1,0 +1,31 @@
+{
+  "UTC": "2026-10-26T17:06:45.986954+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-lean",
+        "--lib",
+        "observed_runtime_exits_are_not_logical_rejections",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 101,
+      "seconds": 2.0054124309681356
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 2.005461673019454,
+  "samples": 4,
+  "combined_peak_rss_bytes": 42419503104,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "non_native_engine_regression": true,
+  "native_candidate_executions": 0,
+  "original_group": 449266,
+  "original_group_start_ticks": 146344239,
+  "native_body_elaboration": false
+}

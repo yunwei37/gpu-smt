@@ -1,0 +1,32 @@
+{
+  "UTC": "2026-10-26T17:08:02.509636+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-lean",
+        "--test",
+        "process",
+        "--",
+        "--skip",
+        "real_owned_rss_watchdog_kills_reaps_and_retries_exclusively"
+      ],
+      "exit": 0,
+      "seconds": 1.0032418000046164
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 1.0032913030590862,
+  "samples": 3,
+  "combined_peak_rss_bytes": 36182069248,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "non_native_engine_regression": true,
+  "native_candidate_executions": 0,
+  "original_group": 449266,
+  "original_group_start_ticks": 146344239,
+  "native_body_elaboration": false
+}

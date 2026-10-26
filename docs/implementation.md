@@ -61,11 +61,14 @@ Sampling is not a kernel quota and can overshoot between observations.
 The backend refuses an inherited finite AS cap rather than silently claiming
 the new resource point. No Workspace quota or other Workspace is changed.
 
-The completed full7808 three-policy capture retains its original
-two-worker/24GiB-AS/48GiB point and source snapshot. The sole active capture is
-now the fresh-native/Mathlib-derived full pair at the dynamic four-core point,
-implementation42659a8. Do not mix their clocks. Historical42bad_alloc records
-remain untouched pending separately reported exclusive retries.
+The completed three-policy capture retains its original two-worker,
+24GiB-AS-per-process,48GiB aggregate point. The later dynamic four-core native
+cell completed, but its prepared cell failed with ENOSPC; it is not a complete
+throughput pair. All42 historical allocation failures have since completed
+exclusive uncapped retries:41 aggregate-budget failures and one timeout,
+with no accepted result. [Current results](evaluation.md) keep these resource
+points separate. The sole active group now repairs the48 interval_cases
+import/prototype comparison; the original lean-mlir measurement follows it.
 
 ## Semantic guarantees and tests
 
@@ -86,9 +89,9 @@ No test suite is a full native population parity or throughput result.
 
 ## Pending native work
 
-Full Mathlib/native qualification of import preparation/COW, actual sufficient failure detectors, trained
-source memory/time models, multi-node execution,42larger-memory isolated
-reruns and full new-resource/native matched throughput remain open.
+Full Mathlib/native qualification of import preparation/COW, sufficient
+failure detectors, source memory/time models, multi-node execution and a valid
+complete throughput pair at the dynamic resource point remain open.
 PreparedState/FailureDetector are extension contracts; no active rejection
 path or COW performance is implied by their definitions.
 
@@ -117,22 +120,30 @@ A [separate interval-continuation prototype](../bench/lean-failure-profile/inter
 now compiles against the retained4.9API. It defers proof-tree leaves until a
 closing callback needs them; it does not hook original tactics or reject
 requests. Nine small native/prototype paired controls execute with matching status.
-Original48 complete variants now have native grammar and exact-edit validation;
-actual cohort behavior/performance remains unmeasured. A separate first-stage
-IntervalMap now compiles and allows open survivors,keeping later suffix stages
-outside instead of requiring the whole closer at each leaf. Actual native
-grammar validates all48sources/116calls and22prepared control sources.
-[Implementation/validation](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md).
-No new proof control or original candidate body has run for this map.
+Original48 variants have native grammar and exact-edit validation.
+The first-stage IntervalMap permits open survivors and leaves later suffix
+stages outside the per-leaf callback. All48sources/116calls parse. The first
+cohort attempt had a missing import path, so its48 fast failures are invalid.
+With both Map and Continuation paths restored,22 actual control sources
+match their expected native/prototype statuses; the scoped48 comparison
+is still running.
+[Implementation](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md),
+[actual controls and repair](../artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md).
 Native left-associative
 stage accumulation and nested continuations differ, so failed speculative leaves
 do not yet constitute a reliable early-failure witness.
-The separate simp_all observer now labels initialization per hypothesis and
-native final reassert/clear calls,with returned/unwound actions. It compiles to
-a separate olean;prior native seven-pair qualification applies only to the
-retained old observer. Four analyzer tests preserve actual old diagnostics and
-unknown/open fields. [Evidence](../artifacts/hotspot-mechanisms-2026-10-25/simp-all-profile/phase-completion-20261026/README.md).
-No new original23proof or runtime parity result is implied.
+The existing simp_all observer has now run on the original23 sources.
+Eight repeated-outer-call cases and six repeated-inner-round cases account
+for the prior14 short-call sources. Three instrumented runs crash at runtime
+and20 time out; the observer is not transparent on this cohort and establishes
+no failure certificate. Its action-completion flag is not qualified by the
+successful controls. [Actual phase evidence](../artifacts/hotspot-mechanisms-2026-10-25/original71-native-20261026T125951Z/simp23-analysis/README.md).
+The source frontend now requires a recognized native JSON error to classify
+a nonzero exit as rejection; otherwise it reports a backend fault and retains
+the raw response. [Observed-response regression and scope](../artifacts/engine-lifecycle-2026-10-26/native-runtime-classification/README.md).
+The active capture continues using its original executable; the fix applies
+to subsequent builds.
+
 The code-verification/math workloads and all four paper RQs remain open.
 
 CPU oracle source/data are frozen baselines and must not be optimized or

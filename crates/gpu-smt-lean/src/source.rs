@@ -29,6 +29,8 @@ pub struct NativeLean {
 /// Only successful native exit with recognized JSON diagnostics can establish
 /// acceptance. A source can print arbitrary output, so unknown/non-JSON stdout
 /// remains a backend fault instead of being mistaken for a checked proof.
+/// A nonzero exit alone is also operational: only a recognized JSON error
+/// establishes source rejection. Runtime crashes can produce no such error.
 /// This is native frontend behavior, not an audit of axioms or trusted imports.
 pub fn classify_source(exit_code: Option<i32>, stdout: String, stderr: String) -> Outcome {
     let parsed = stdout
@@ -61,8 +63,14 @@ pub fn classify_source(exit_code: Option<i32>, stdout: String, stderr: String) -
         Status::ResourceExhausted
     } else if exit_code.is_none() || protocol_error.is_some() {
         Status::BackendError
-    } else if exit_code != Some(0) || messages.iter().any(|m| m["severity"] == "error") {
+    } else if messages.iter().any(|m| m["severity"] == "error") {
         Status::Rejected
+    } else if exit_code != Some(0) {
+        protocol_error = Some(format!(
+            "native exit {} without a JSON error diagnostic",
+            exit_code.unwrap()
+        ));
+        Status::BackendError
     } else if messages.iter().any(|m| {
         m["data"]
             .as_str()
@@ -434,6 +442,26 @@ mod tests {
         assert_eq!(tail.as_bytes(), bytes);
         assert_eq!(read, bytes.len() as u64);
         assert!(error.is_some_and(|e| e.contains("stderr write:") || e.contains("stderr flush:")));
+    }
+    #[test]
+    fn observed_runtime_exits_are_not_logical_rejections() {
+        // Exact retained native responses from the actual simp_all diagnostic
+        // run. Runtime recursion failures supplied no Lean JSON proof errors.
+        let fixture: Value = serde_json::from_str(include_str!(
+            "../tests/fixtures/source-runtime-failures.json"
+        ))
+        .unwrap();
+        for case in fixture["cases"].as_array().unwrap() {
+            let native = &case["native_response"];
+            let result = classify_source(
+                native["exit_code"].as_i64().map(|code| code as i32),
+                native["stdout"].as_str().unwrap().into(),
+                native["stderr"].as_str().unwrap().into(),
+            );
+            assert_eq!(result.status, Status::BackendError, "{}", case["id"]);
+            assert_eq!(result.response.as_ref(), Some(native));
+            assert!(result.error.is_some());
+        }
     }
     #[test]
     fn native_exit_and_diagnostic_shapes_are_distinct() {

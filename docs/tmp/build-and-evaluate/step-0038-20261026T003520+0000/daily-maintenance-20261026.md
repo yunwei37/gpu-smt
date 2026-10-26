@@ -75,3 +75,19 @@ Step0065actual23phaseevidence separates8outerfanout cases from6inner-round
 cases. Modularrewrites recur amonginnercaseorigin lists,butnames/hashhints
 are not certificates. Follow exactnativeprogress reasoning after validinterval
 repair;do notexpandobserveragain orcallits3recursionfailures earlyrejection.
+
+## Implementation and direction update —17:08UTC
+
+The three observer recursion exits are operational faults, not proof
+rejections. The source adapter now distinguishes them with exact native-response
+regressions; the active executable remains frozen. Reconcile stale public
+implementation status with the completed42 retries and actual23 phases.
+
+Source inspection suggests a specific simp_all hazard: native target rewriting
+can produce a fresh goal ID even if its expression is unchanged; the loop uses
+that ID to mark progress. This is a hypothesis, not an observed cycle witness.
+A reliable mechanism needs exact relevant state and deterministic transition,
+including simprocs, metavariables and fallback. Repeated origins/hashes and an
+observer crash cannot justify rejection. Concentrate the next implementation
+on a sufficient native-state condition or record its unsupported scope, while
+the valid interval48 repair runs. Do not add another diagnostic logger.
