@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -88,10 +88,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Err("expected serve, check, measure or compare".into());
     }
     let mut options = HashMap::new();
+    let mut lean_args = Vec::new();
     while let Some(key) = args.next() {
         if ![
             "--repl",
             "--lean",
+            "--lean-arg",
             "--project",
             "--environment",
             "--cpus",
@@ -109,6 +111,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let value = args
             .next()
             .ok_or_else(|| format!("missing value for {key}"))?;
+        if key == "--lean-arg" {
+            lean_args.push(value);
+            continue;
+        }
         if options.insert(key.clone(), value).is_some() {
             return Err(format!("duplicate {key}").into());
         }
@@ -150,6 +156,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let verifier: Arc<dyn VerificationBackend> =
         match (options.get("--repl"), options.get("--lean")) {
             (Some(program), None) => {
+                if !lean_args.is_empty() {
+                    return Err("--lean-arg requires --lean".into());
+                }
                 let backend = NativeRepl {
                     program: PathBuf::from(program).canonicalize()?,
                     args: vec![],
@@ -170,11 +179,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 if options.contains_key("--prepared-host") || options.contains_key("--sysroot") {
                     return Err("prepared import parent requires --repl".into());
                 }
-                Arc::new(NativeLean {
-                    program: PathBuf::from(program).canonicalize()?,
-                    project,
-                    environment: environment.clone(),
-                })
+                Arc::new(
+                    NativeLean {
+                        program: PathBuf::from(program).canonicalize()?,
+                        project,
+                        environment: environment.clone(),
+                    }
+                    .with_args(lean_args),
+                )
             }
             _ => return Err("specify exactly one of --repl or --lean".into()),
         };

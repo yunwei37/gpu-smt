@@ -257,3 +257,66 @@ async fn unavailable_prepared_host_uses_unchanged_native_fallback() {
     }
     e.shutdown().await;
 }
+
+#[tokio::test]
+async fn source_arguments_preserve_tokens_source_and_cache_context() {
+    use gpu_smt_lean::NativeLean;
+    let base = NativeLean {
+        program: "/usr/bin/python3".into(),
+        project: std::env::temp_dir(),
+        environment: "argv-fixture-not-Lean".into(),
+    };
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source.py");
+    let arguments = vec![
+        fixture.to_string_lossy().into_owned(),
+        "--tstack=400000".into(),
+        "one argument with spaces".into(),
+    ];
+    assert_eq!(base.clone().with_args(vec![]).identity(), base.identity());
+    let configured = base.clone().with_args(arguments.clone());
+    assert_ne!(configured.identity(), base.identity());
+    assert_ne!(
+        configured.identity(),
+        base.with_args(vec!["other".into()]).identity()
+    );
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(configured),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let code = "original UTF8: α\r\nsecond line\n";
+    let results = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("argv", code, 5000)],
+        })
+        .await
+        .unwrap();
+    let row = &results[0];
+    assert_eq!(row.outcome.status, Status::Accepted);
+    let envelope = row.outcome.response.as_ref().unwrap();
+    let detail: serde_json::Value =
+        serde_json::from_str(envelope["messages"][0]["data"].as_str().unwrap()).unwrap();
+    assert_eq!(detail["source"], code);
+    assert_eq!(
+        detail["argv"],
+        serde_json::json!([
+            "--tstack=400000",
+            "one argument with spaces",
+            "--json",
+            "--stdin"
+        ])
+    );
+    engine.shutdown().await;
+    for process in row.attempts.iter().flat_map(|attempt| &attempt.processes) {
+        assert!(gpu_smt_engine::linux::identity(process.pid).is_err());
+    }
+}

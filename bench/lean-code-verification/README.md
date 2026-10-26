@@ -70,3 +70,14 @@ retain original source and filename provenance. Prerequisites now compile in
 the correct root context, but native original-file/stdin qualification and
 profiling await the sole candidate slot. Original source options and root
 --tstack=400000 must be preserved. Verina remains the default preparer mode.
+
+The source backend accepts repeated `--lean-arg` tokens; preserve the upstream
+`--tstack=400000` explicitly. Same-argument native differential cases in the
+existing engine CI are separate from full project qualification. The next
+original-file/stdin measurement must use identical SDK, root package search
+paths, options and full source, and report any filename/module-context changes.
+The prepared Batch's 300s comes from the engine default, **not** a published
+lean-mlir timeout. Retain it as a declared operational observation point if
+used; a timeout is a censored result and is not evidence that the proof is false.
+A diagnostic profiler invocation keeps its own flags, trace overhead and raw
+exit/outputs, separately from NativeLean's verification response classification.

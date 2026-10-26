@@ -83,18 +83,26 @@ pub fn classify_source(exit_code: Option<i32>, stdout: String, stderr: String) -
     }
 }
 
-#[async_trait]
-impl VerificationBackend for NativeLean {
-    fn identity(&self) -> String {
-        format!(
-            "lean-cli|{:?}|{:?}|{}",
-            self.program, self.project, self.environment
-        )
+impl NativeLean {
+    /// Preserve declared upstream SDK arguments without changing the default
+    /// struct/API. Arguments are forwarded individually, before --json --stdin,
+    /// and included in backend identity so contexts cannot share cached results.
+    /// Callers must qualify the same flags against their raw native invocation.
+    pub fn with_args(self, args: Vec<String>) -> impl VerificationBackend {
+        SourceWithArgs {
+            backend: self,
+            args,
+        }
     }
-
-    async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
+    async fn verify_args(
+        &self,
+        candidate: &Candidate,
+        execution: Execution,
+        args: &[String],
+    ) -> Outcome {
         let mut command = Command::new(&self.program);
         command
+            .args(args)
             .args(["--json", "--stdin"])
             .current_dir(&self.project)
             .stdin(Stdio::piped())
@@ -182,6 +190,38 @@ impl VerificationBackend for NativeLean {
             ),
             _ => unreachable!(),
         }
+    }
+}
+#[async_trait]
+impl VerificationBackend for NativeLean {
+    fn identity(&self) -> String {
+        format!(
+            "lean-cli|{:?}|{:?}|{}",
+            self.program, self.project, self.environment
+        )
+    }
+
+    async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
+        self.verify_args(candidate, execution, &[]).await
+    }
+}
+struct SourceWithArgs {
+    backend: NativeLean,
+    args: Vec<String>,
+}
+#[async_trait]
+impl VerificationBackend for SourceWithArgs {
+    fn identity(&self) -> String {
+        if self.args.is_empty() {
+            self.backend.identity()
+        } else {
+            format!("{}|args:{:?}", self.backend.identity(), self.args)
+        }
+    }
+    async fn verify(&self, candidate: &Candidate, execution: Execution) -> Outcome {
+        self.backend
+            .verify_args(candidate, execution, &self.args)
+            .await
     }
 }
 

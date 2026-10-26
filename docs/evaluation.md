@@ -140,7 +140,7 @@ and cleanup enter the complete consumer clock.
 [Real eight-candidate qualification](../artifacts/candidate-scheduling-2026-10-25/native-qualification-20261025T0715/result-review.md)
 preserves the solved task and cancels three queued siblings only after a
 checked winner. Its startup-dominated clocks do not establish a gain.
-The complete original7808 matrix is the sole active full capture;
+The original7808 scheduling matrix has completed at its frozen resource point;
 [launch identity](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730.launch.json)
 and actual terminal files own status. Do not restart a healthy capture.
 
@@ -270,3 +270,8 @@ The firstbuffered-outputhang stays as an interruptedpartialrecord.
 retains physicaloutcomes before finalCapture. These controls are notwholeflow
 gains;the fullnewresourcepoint remains unfinished. Resourcepreparation is
 priorart,not a strongestwarmbaseline ornovelty result.
+
+The source backend now preserves declared compiler argv without changing default
+flags or source bytes. [Step0041](tmp/build-and-evaluate/step-0041-20261026T011417+0000/step-report.md)
+qualifies transport and compiles native differential coverage; original lean-mlir
+file/stdin and profiler measurement still follows the sole dynamic full pair.

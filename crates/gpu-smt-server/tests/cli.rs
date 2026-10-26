@@ -195,3 +195,78 @@ fn measure_capture_and_compare_round_trip_retire_native_fixture() {
     }
     std::fs::remove_file(&path).unwrap();
 }
+
+#[test]
+fn native_source_arguments_reach_process_and_capture_identity() {
+    use std::io::Write;
+    let fixture = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .join("gpu-smt-lean/tests/fixtures/source.py");
+    let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
+        .args([
+            "measure",
+            "--lean",
+            "/usr/bin/python3",
+            "--project",
+            "/tmp",
+            "--environment",
+            "source-argv-fixture-not-Lean",
+            "--lean-arg",
+            fixture.to_str().unwrap(),
+            "--lean-arg",
+            "--tstack=400000",
+            "--lean-arg",
+            "one argument with spaces",
+        ])
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .unwrap();
+    let code = "original α\r\n";
+    child
+        .stdin
+        .take()
+        .unwrap()
+        .write_all(
+            serde_json::to_string(&serde_json::json!({"candidates":[
+            {"id":"argv","code":code,"reuse":false}]}))
+            .unwrap()
+            .as_bytes(),
+        )
+        .unwrap();
+    let output = child.wait_with_output().unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let capture: gpu_smt_server::measurement::Capture =
+        serde_json::from_slice(&output.stdout).unwrap();
+    assert!(capture.backend.contains("--tstack=400000"));
+    assert_eq!(
+        capture.results[0].outcome.status,
+        gpu_smt_core::Status::Accepted
+    );
+    let result = capture.results[0].outcome.response.as_ref().unwrap();
+    let detail: serde_json::Value =
+        serde_json::from_str(result["messages"][0]["data"].as_str().unwrap()).unwrap();
+    assert_eq!(detail["source"], code);
+    assert_eq!(
+        detail["argv"],
+        serde_json::json!([
+            "--tstack=400000",
+            "one argument with spaces",
+            "--json",
+            "--stdin"
+        ])
+    );
+    for process in capture.results[0]
+        .attempts
+        .iter()
+        .flat_map(|a| &a.processes)
+    {
+        assert!(!std::path::Path::new(&format!("/proc/{}", process.pid)).exists());
+    }
+}

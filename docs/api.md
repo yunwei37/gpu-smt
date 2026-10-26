@@ -180,3 +180,20 @@ equivalent to invoking lean on their original filename. Run same-context raw CLI
 differentials and preserve those differences for each workload. CLI response
 envelopes and REPL JSON are different contracts; do not compare their raw payloads
 as though they were the same protocol or cache across backend identities.
+
+### Declared source compiler arguments
+
+The default NativeLean struct literals and identity remain unchanged.
+NativeLean::with_args(Vec<String>) returns a configured backend;the CLI accepts
+repeatable --lean-arg ARG tokens. Each token is forwarded without shell parsing,
+before --json --stdin. Nonempty arguments become part of backend identity/cache
+scope;an empty vector keeps the default identity. REPL backends do not consume
+--lean-arg. Nothing silently adds a compiler or thread option.
+
+For example,the retained lean-mlir root declares --tstack=400000 upstream.
+Use --lean /absolute/pinned-sdk/bin/lean --lean-arg --tstack=400000 for the
+matching source context,instead of dropping that option or patching source.
+Other source-path/stdin limitations above remain. Callers must compare the
+same declared argv against raw native execution;argument support is not
+proof that the whole project has been measured or that arbitrary modes
+produce compatible JSON diagnostics.

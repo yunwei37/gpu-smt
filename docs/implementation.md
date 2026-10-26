@@ -43,9 +43,11 @@ Sampling is not a kernel quota and can overshoot between observations.
 The backend refuses an inherited finite AS cap rather than silently claiming
 the new resource point. No Workspace quota or other Workspace is changed.
 
-The existing healthy full7808three-policy capture keeps its original
-two-worker/24GiB-AS/48GiB point and source snapshot. Do not restart or mix its
-clocks with the next point. Historical42bad_alloc records remain untouched.
+The completed full7808 three-policy capture retains its original
+two-worker/24GiB-AS/48GiB point and source snapshot. The sole active capture is
+now the fresh-native/Mathlib-derived full pair at the dynamic four-core point,
+implementation42659a8. Do not mix their clocks. Historical42bad_alloc records
+remain untouched pending separately reported exclusive retries.
 
 ## Semantic guarantees and tests
 
@@ -71,6 +73,13 @@ source memory/time models, multi-node execution,42larger-memory isolated
 reruns and full new-resource/native matched throughput remain open.
 PreparedState/FailureDetector are extension contracts; no active rejection
 path or COW performance is implied by their definitions.
+
+The source CLI backend now accepts explicitly declared upstream arguments via
+NativeLean::with_args and repeated --lean-arg. Defaults remain unchanged;
+nonempty argv partitions cache identity. Process/CLI transport tests pass, and
+same-argv pinned-native differential coverage is compiled for existing CI.
+This preserves lean-mlir upstream --tstack=400000; it does not establish the
+pending original-file/stdin or complete bv_decide workload result.
 
 A [separate interval-continuation prototype](../bench/lean-failure-profile/interval-continuation/README.md)
 now compiles against the retained4.9API. It defers proof-tree leaves until a
