@@ -1,0 +1,16 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "8-11",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "--outdir",
+    "/tmp/gpu-smt-paper-resource-pair-20261027",
+    "main.tex"
+  ],
+  "returncode": 0,
+  "seconds": 4.003052641171962,
+  "sampled_group_peak_rss_bytes": 197685248,
+  "budget_kill": false,
+  "paper_only": true
+}

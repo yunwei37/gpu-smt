@@ -131,3 +131,20 @@ engine stays unchanged. The real unknown has moved to physical sharing,
 compilation barriers/fallback memory and complete original-module performance.
 Use the existing paired capture when the sole group frees;do not infer benefit
 from unequal development files or call ordinary sharing novelty.
+
+## Full result collection and concrete next action — UTC27
+
+The frozen native/prepared7808pair has now completed with status/accepted-set
+equality and1.24028x descriptive whole-cell ratio. It is established resource
+reuse,not our novelty. Peaks still overshoot48GiB;do not imply hard enforcement.
+README,implementation,evaluation and paper now say complete and expose parent
+recreation/fallback,AST envelope difference and operational faults. The small
+volume filled again;only own pip download cache was losslessly archived/reclaimed.
+
+Substantial progress now requires a method result,not another status/logging
+variant. Execute the already native-checked closed-CNF frontend on the unchanged
+original lean-mlir module:does it actually avoid enough repeated construction
+during certificate checking to improve whole verification once its compiled
+declaration and fallback costs are charged? Compare native,import-only,explicit
+core and public fallback in one sole group;retain failures and exact source
+transforms. Resource/COW controls alone cannot establish that mechanism.

@@ -455,3 +455,22 @@ Storage cache/core archival repaired writable space without changing quotas,
 nativeflags or otherWorkspaces. Next native sequence is42exclusive reruns,
 71timeout prototypes,then original lean-mlir. Completing the prepared comparison
 remains open;partial physical rows cannot substitute for finalconsumer results.
+
+## Completed frozen dynamic native/Mathlib-derived pair
+
+[Full7,808-source result](../artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/result-review.md)
+at1f38be7supersedes this run's running status above. Native and prepared return
+exactly3,013accepted,4,665rejected,87timeout,41resource-exhausted and2backend-error
+IDs. All statuses/accepted IDs match;7,660responses differ only by omitted empty
+ast:[],86operational error strings differ. Input/order and complete consumer/
+physical multiplicities are checked. Historical accepted-to-timeout regression
+remains separate;the old ENOSPC prepared data stay partial.
+
+Whole-cell28,391.984735/22,891.507755s=1.240284609x,19.373344%less elapsed,
+including serialization/compression/cleanup. One native-first/shared-host pair
+with CPU11 support contention is supporting evidence,not causal replication,
+strongest warm-service superiority or novelty. Fourteen preparations,13evictions
+and62fresh-fallback event rows are charged. Sampled full-monitor RSS peaks
+48.774902/48.927013GiB overshoot48GiB;1s response is not a hard quota.
+All recorded births/controller retired. Complete raw,failures,tail cohorts,
+recomputation and root self-review are committed;all four RQs remain open.

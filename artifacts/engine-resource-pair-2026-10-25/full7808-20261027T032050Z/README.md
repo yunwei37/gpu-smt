@@ -1,43 +1,18 @@
-# Current matched native/Mathlib-derived full pair — running
+# Completed matched native/Mathlib-derived full pair
 
-Source1f38be7 builds the existing resource_pair release example. Its run-specific
-executable is copied byte-for-byte into the existing/tmp output, preserving
-the binary while later source work can proceed. Original Lean4.9rc1 REPL,
-Mathlib,prepared host,inputs and resource point remain pinned. The earlier
-native-complete/prepared-ENOSPC pair and all partial data remain untouched.
+Both frozen cells completed;all7,808original decisions and3,013accepted IDs
+match. Whole-cell time28,391.984735/22,891.507755s gives1.240284609x,
+19.373344%less elapsed. This single fixed-order own-engine component comparison
+does not establish strongest warm-service superiority,GPU gain or novelty.
 
-A real24-source qualification of this binary completes both conditions:
-21accepted/3rejected with equal IDs/statuses and all owned native identities
-retired. It actually loads5,545modules once in a single-thread import parent,
-then uses disposable children with zero fresh fallback. Native/prepared clocks
-are17.615919/3.963403s. This preparation-dominated small control is not a full
-population speedup or novel technique.
+[Full result and self-review](result-review.md) records all failures,response
+field differences,14parent preparations/13evictions/62fallback event rows,
+sampled RSS overshoots,confounders and complete recorded ownership retirement.
+The1s watchdog is not a hard48GiB quota. Empty ast:[] is omitted in7,660prepared
+responses;other response fields match. Both retain87timeouts,41resource failures
+and2backend EOF faults. No failed candidate is excluded.
 
-Raw JSON differs on every qualifier: fresh REPL includes ast:[],while the
-prepared adapter omits that empty field. All other native fields are exactly
-equal. The original captures preserve the difference; no normalization is
-applied and byte-identical raw response/complete AST compatibility is not
-claimed. Unsupported debug/AST/state-handle features remain outside scope.
-Accepted/error messages and positions match on these24only.
-
-The complete7,808-source pair launches03:26:43UTC, PID457460/birth150297500,
-native condition first and prepared second. All large attempt/consumer/RSS/
-capture/driver streams use the existing/tmp filesystem rather than the nearly
-full project volume. The same48GiB actual aggregate sampledRSS,CPUs8–11,one
-core per worker,max4leases,no fixedAScap and1s watchdog/exclusive retry are
-unchanged. No second native capture,AI agent,service or scheduler starts.
-
-Launch and post-launch registration/journals establish engagement only.
-Full accepted/status sets,whole lifecycle,resource failures,COW behavior,
-fallback and performance remain pending. Do not replace the frozen executable,
-host,SDK or source/import environment mid-group. Preserve health and collect
-actual terminal data once,not minute polling. Temporary raw files are not yet
-committed completed results; full result delivery requires terminal ingestion.
-Existing closed qualifier data are losslessly compressed here now.
-
-The fresh native cell is repeated to obtain a same-version coupled pair after
-ENOSPC and the actual admission/shutdown race fix. Do not splice the new
-prepared condition onto old source/version wall time. This own-engine support
-comparison does not reproduce a competing service or establish strongest warm
-baseline superiority; resource primitives are prior work,not novelty.
-Root thread execution and self-review only.
+Original step0069real24qualification and launch records stay alongside complete
+raw captures/journals. The earlier ENOSPC pair remains separate and partial.
+Original large journals stay in/tmp;ingestion.json records lossless copies here.
+Run python3 analyze.py to recompute audit.json. Root execution/self-review only.

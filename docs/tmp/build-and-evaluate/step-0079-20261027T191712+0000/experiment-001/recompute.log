@@ -1,0 +1,112 @@
+{
+  "cells": {
+    "native": {
+      "statuses": {
+        "accepted": 3013,
+        "rejected": 4665,
+        "timeout": 87,
+        "resource_exhausted": 41,
+        "backend_error": 2
+      },
+      "candidate_count": 7808,
+      "physical_attempt_rows": 7852,
+      "attempt_count": 7852,
+      "exclusive_attempts": 44,
+      "watchdog_preempted_attempts": 85,
+      "attempt_status_difference_scope": "native journal precedes engine wrapper watchdog classification; full physical outcomes retained",
+      "backend_events": {
+        "rss_observation": 7852
+      },
+      "parent_preparations": 0,
+      "ready_module_counts": [],
+      "ready_parent_threads": [],
+      "registered_identities": 7852,
+      "cached": 0,
+      "coalesced": 0,
+      "lifecycle_seconds": 28390.654879996,
+      "external_cell_seconds": 28391.984734647,
+      "terminal_reported_sample_peak_bytes": 52371652608,
+      "retained_sample_peak_bytes": 52207243264,
+      "retained_over_budget_samples": 45,
+      "retained_samples": 20751,
+      "retained_max_registered_leaders": 4,
+      "resource_failure_errors": {
+        "aggregate RSS watchdog preemption": 41
+      }
+    },
+    "prepared": {
+      "statuses": {
+        "accepted": 3013,
+        "rejected": 4665,
+        "timeout": 87,
+        "resource_exhausted": 41,
+        "backend_error": 2
+      },
+      "candidate_count": 7808,
+      "physical_attempt_rows": 7850,
+      "attempt_count": 7850,
+      "exclusive_attempts": 42,
+      "watchdog_preempted_attempts": 83,
+      "attempt_status_difference_scope": "native journal precedes engine wrapper watchdog classification; full physical outcomes retained",
+      "backend_events": {
+        "prepared_ready": 14,
+        "rss_observation": 7740,
+        "fresh_fallback": 62,
+        "prepared_evicted": 13
+      },
+      "parent_preparations": 14,
+      "ready_module_counts": [
+        5545
+      ],
+      "ready_parent_threads": [
+        1
+      ],
+      "registered_identities": 7884,
+      "cached": 0,
+      "coalesced": 0,
+      "lifecycle_seconds": 22890.193560248,
+      "external_cell_seconds": 22891.50775452,
+      "terminal_reported_sample_peak_bytes": 52534980608,
+      "retained_sample_peak_bytes": 52265881600,
+      "retained_over_budget_samples": 33,
+      "retained_samples": 16751,
+      "retained_max_registered_leaders": 4,
+      "resource_failure_errors": {
+        "aggregate RSS watchdog preemption": 41
+      }
+    }
+  },
+  "pair": {
+    "status_changed_ids": 0,
+    "accepted_set_changed_ids": 0,
+    "omitted_empty_ast_response_ids": 7660,
+    "other_response_changed_ids": 0,
+    "operational_error_text_changed_ids": 86,
+    "accepted_count": 3013,
+    "solved_task_count": 142,
+    "external_native_over_prepared": 1.2402846085592993,
+    "elapsed_reduction_percent": 19.373344384109636,
+    "lifecycle_ratio": 1.2402977198628986
+  },
+  "retirement": {
+    "recorded_pid_birth_pairs": 15736,
+    "matching_non_zombie_alive": [],
+    "controller_457460_exists": false,
+    "scope": "current recorded-identity check; process absence does not independently authenticate all unregistered descendants"
+  },
+  "historical_native_status_changes": [],
+  "tails": [
+    {
+      "baseline_attempt_seconds_sum": 26204.199384311014,
+      "baseline_slowest_percent": 1,
+      "candidate_attempt_seconds_sum": 25242.089169711006,
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    },
+    {
+      "baseline_attempt_seconds_sum": 56518.29355642798,
+      "baseline_slowest_percent": 10,
+      "candidate_attempt_seconds_sum": 54771.21158870696,
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    }
+  ]
+}

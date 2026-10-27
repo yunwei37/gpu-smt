@@ -721,6 +721,32 @@ establish replicated memory savings. This optimization strengthens a CPU
 comparison on the measured cohort. It does not establish systems novelty
 or heterogeneous benefit.
 
+\paragraph{Complete native and prepared engine comparison.}
+A separate matched component comparison executes all 7,808 original miniF2F
+candidates with four one-core leases on CPUs 8--11, a 48~GiB sampled aggregate
+RSS budget, no fixed per-process address-space cap, and the original
+300-second allowance. Fresh native execution completes in 28,391.98 seconds
+and Mathlib-derived execution in 22,891.51 seconds, including decoding,
+shutdown, result serialization, compression and compressor retirement.
+The descriptive ratio is $1.24028\times$ (19.37\% less elapsed time).
+Both cells return the same 3,013 accepted, 4,665 rejected, 87 timeout,
+41 resource-exhausted and two backend-error candidate IDs.
+All other native response fields match after accounting for the omitted empty
+\texttt{ast:[]} field in 7,660 prepared replies; 86 operational error strings
+differ. Raw artifact compatibility is therefore limited.
+
+Prepared execution records 14 single-thread parent preparations, each loading
+5,545 modules, 13 evictions and 62 fresh-fallback event rows. These costs are
+included; the environment is not loaded once for the entire population.
+Observed aggregate RSS peaks reach 48.77 and 48.93~GiB, so the one-second
+watchdog is a sampled response policy rather than a hard memory quota.
+All recorded process identities and the controller retire. The two backend
+faults retain native EOF and deep simplex recursion traces; their exact crash
+cause remains unresolved. This is a single native-first, shared-host comparison,
+with development support work on CPU 11 during collection. It does not isolate
+a causal effect, establish superiority over the strongest warm service,
+or make established preparation and copy-on-write mechanisms novel.
+
 \paragraph{First-success candidate scheduling.}
 A distinct inference consumer needs one checked proof per problem rather than
 a reward for every candidate. In the completed native miniF2F capture,
@@ -747,7 +773,7 @@ Executed candidate labels do not change. Timeouts decline from 82 to 65 and
 allocation failures from 43 to 35 because fewer siblings execute, not because
 the tactics or memory limit improve. Both cells retain the old two-worker,
 24~GiB per-process address-space point and 48~GiB sampled aggregate budget;
-this is one sequential shared-host comparison, not the pending four-worker
+this is one sequential shared-host comparison, not the separate four-worker
 dynamic-resource engine measurement. Source-size ordering completes in 15,112.12 seconds
 ($1.43903\times$, 30.51\% less than all candidates), with the same 142
 solved-problem IDs and 4,084 queued cancellations. It executes 3,724 sources,

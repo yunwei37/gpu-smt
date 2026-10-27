@@ -166,9 +166,14 @@ The prepared cell failed when the Workspace volume filled; partial data and
 losslessly archived fault outputs remain. There is no complete pair or speedup.
 The storage repair preserved sources, results and compiled dependencies.
 The [new same-version full repair pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
-is now collecting both conditions from the same frozen binary,with large raw
-output on existing/tmp. Its actual24-source qualification matches21accepted/
-3rejected per side; full accepted-set and throughput results remain pending.
+now completes both7,808-source conditions with equal statuses and3,013accepted
+IDs. Whole-cell time28,391.98/22,891.51s gives1.24028x(19.37%less elapsed).
+This is a single own-engine fresh/prepared component observation with shared-host
+and CPU11 support contention,not strongest warm-service superiority or novelty.
+Both retain87timeouts,41resource failures and2backend faults. Empty ast:[] is
+omitted in7,660prepared replies. Sampled RSS peaks48.77/48.93GiB overshoot the
+48GiB budget between watchdog responses;it is not a hard quota.
+Fourteen parent preparations and62fallback event rows are charged.
 The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 completed their exclusive rerun with no fixed per-process address-space cap:
 41 exceeded the aggregate RSS budget and one timed out; none became accepted.

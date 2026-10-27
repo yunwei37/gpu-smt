@@ -95,10 +95,15 @@ timeouts on each side and no early-failure coverage. The first original lean-mli
 execution with equal successful responses; its42 trace threads are not measured
 CPU utilization or an Amdahl partition.
 A [new same-version full native/Mathlib-derived pair](../artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
-now runs after the real24-source qualification. It uses a frozen1f38be7release
-example and stores large live journals on existing/tmp. Full result is pending.
-The qualifier has equal native statuses; raw prepared replies omit empty ast:[]
-while other fields match,so byte-identical raw/AST compatibility is not claimed.
+completes both7,808-source cells at frozen1f38be7with status/accepted-set
+equality. Other response fields match after accounting for omitted empty ast:[]
+in7,660prepared replies;raw-byte/AST compatibility is limited.
+The full population records14single-thread preparations of5,545modules,
+13evictions and62fresh-fallback event rows,not one eternal Mathlib load.
+Whole-cell1.24028x is a descriptive component observation,not novel reuse or
+strongest warm-service superiority. Original/tmp streams and all failures are
+committed losslessly;sampled peaks overshoot48GiB,not a hard RSS quota.
+All15,736recorded PID/birth pairs and the controller have retired.
 
 ## Semantic guarantees and tests
 
