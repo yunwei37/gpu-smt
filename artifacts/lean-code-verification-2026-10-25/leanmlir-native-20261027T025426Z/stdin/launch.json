@@ -1,0 +1,27 @@
+{
+  "UTC": "2026-10-27T02:55:12.038629+00:00",
+  "pid": 455977,
+  "start_ticks": 150108403,
+  "command": [
+    "/tmp/gpu-smt-rust-engine-build-20261025/target/debug/gpu-smt",
+    "check",
+    "--lean",
+    "/tmp/gpu-smt-code-verification-20261025/leanmlir-sdk/lean-4.27.0-nightly-2025-12-01-linux/bin/lean",
+    "--project",
+    "/tmp/gpu-smt-code-verification-20261025/lean-mlir",
+    "--environment",
+    "leanmlir-b8c4a771-nightly20251201-original48GiB-4core",
+    "--cpus",
+    "8,9,10,11",
+    "--worker-cores",
+    "4",
+    "--memory-gib",
+    "48",
+    "--lean-arg",
+    "--tstack=400000",
+    "--stderr-dir",
+    "/tmp/gpu-smt-leanmlir-native-20261027T025426Z/stdin/native-stderr"
+  ],
+  "binary_bytes": 72265968,
+  "binary_mtime": 1793069671.5149899
+}

@@ -1,0 +1,1091 @@
+{
+  "UTC": "2026-10-27T03:01:26.152092+00:00",
+  "controller_terminal": {
+    "UTC": "2026-10-27T02:57:26.970989+00:00",
+    "exit_code": 0,
+    "controller_seconds": 180.24244729196653,
+    "scope": "includes environment lookup,build,startup,all threecells,cleanup andarchival;profile overhead separatefrom uninstrumented clocks"
+  },
+  "cells": {
+    "original-file": {
+      "cell_seconds": 40.46607144200243,
+      "attempt_seconds": 40.460449491,
+      "status": "accepted",
+      "native_response": {
+        "exit_code": 0,
+        "messages": [],
+        "stderr": "",
+        "stdout": ""
+      },
+      "profile_exists": false,
+      "sampled_peak_rss_bytes": 3648999424,
+      "samples": 41,
+      "samples_over_budget": 0,
+      "watchdog_preemptions": 0,
+      "monitor_errors": [],
+      "max_registered_leaders": 1,
+      "all_native_owners_retired": true,
+      "attempts": [
+        {
+          "backend_events": [
+            {
+              "detail": "{\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/original-file/native-stderr/native-455678-150104356.stderr\",\"pid\":455678,\"start_ticks\":150104356}",
+              "stage": "stderr_log"
+            },
+            {
+              "detail": "{\"bytes\":0,\"kind\":\"leader_current_rss\",\"pid\":455678,\"scope\":\"birth-matched proc stat before retirement; not a high-water or whole-tree sample\",\"start_ticks\":150104356}",
+              "stage": "rss_observation"
+            },
+            {
+              "detail": "{\"bytes_read\":0,\"complete\":true,\"error\":null,\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/original-file/native-stderr/native-455678-150104356.stderr\"}",
+              "stage": "stderr_log_complete"
+            }
+          ],
+          "elapsed_seconds": 40.460449491,
+          "exclusive": true,
+          "peak_rss_bytes": 3639328768,
+          "preemption_rss_bytes": null,
+          "processes": [
+            {
+              "pid": 455678,
+              "start_ticks": 150104356
+            }
+          ],
+          "status": "accepted"
+        }
+      ]
+    },
+    "stdin": {
+      "cell_seconds": 40.21006437484175,
+      "attempt_seconds": 40.204444823,
+      "status": "accepted",
+      "native_response": {
+        "exit_code": 0,
+        "messages": [],
+        "stderr": "",
+        "stdout": ""
+      },
+      "profile_exists": false,
+      "sampled_peak_rss_bytes": 3656437760,
+      "samples": 41,
+      "samples_over_budget": 0,
+      "watchdog_preemptions": 0,
+      "monitor_errors": [],
+      "max_registered_leaders": 1,
+      "all_native_owners_retired": true,
+      "attempts": [
+        {
+          "backend_events": [
+            {
+              "detail": "{\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/stdin/native-stderr/native-455983-150108404.stderr\",\"pid\":455983,\"start_ticks\":150108404}",
+              "stage": "stderr_log"
+            },
+            {
+              "detail": "{\"bytes\":0,\"kind\":\"leader_current_rss\",\"pid\":455983,\"scope\":\"birth-matched proc stat before retirement; not a high-water or whole-tree sample\",\"start_ticks\":150108404}",
+              "stage": "rss_observation"
+            },
+            {
+              "detail": "{\"bytes_read\":0,\"complete\":true,\"error\":null,\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/stdin/native-stderr/native-455983-150108404.stderr\"}",
+              "stage": "stderr_log_complete"
+            }
+          ],
+          "elapsed_seconds": 40.204444823,
+          "exclusive": true,
+          "peak_rss_bytes": 3646631936,
+          "preemption_rss_bytes": null,
+          "processes": [
+            {
+              "pid": 455983,
+              "start_ticks": 150108404
+            }
+          ],
+          "status": "accepted"
+        }
+      ]
+    },
+    "original-file-profile": {
+      "cell_seconds": 94.0428367559798,
+      "attempt_seconds": 94.03749339,
+      "status": "accepted",
+      "native_response": {
+        "exit_code": 0,
+        "messages": [],
+        "stderr": "",
+        "stdout": ""
+      },
+      "profile_exists": true,
+      "sampled_peak_rss_bytes": 3777740800,
+      "samples": 95,
+      "samples_over_budget": 0,
+      "watchdog_preemptions": 0,
+      "monitor_errors": [],
+      "max_registered_leaders": 1,
+      "all_native_owners_retired": true,
+      "attempts": [
+        {
+          "backend_events": [
+            {
+              "detail": "{\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/original-file-profile/native-stderr/native-456290-150112425.stderr\",\"pid\":456290,\"start_ticks\":150112425}",
+              "stage": "stderr_log"
+            },
+            {
+              "detail": "{\"bytes\":0,\"kind\":\"leader_current_rss\",\"pid\":456290,\"scope\":\"birth-matched proc stat before retirement; not a high-water or whole-tree sample\",\"start_ticks\":150112425}",
+              "stage": "rss_observation"
+            },
+            {
+              "detail": "{\"bytes_read\":0,\"complete\":true,\"error\":null,\"path\":\"/tmp/gpu-smt-leanmlir-native-20261027T025426Z/original-file-profile/native-stderr/native-456290-150112425.stderr\"}",
+              "stage": "stderr_log_complete"
+            }
+          ],
+          "elapsed_seconds": 94.03749339,
+          "exclusive": true,
+          "peak_rss_bytes": 3767676928,
+          "preemption_rss_bytes": null,
+          "processes": [
+            {
+              "pid": 456290,
+              "start_ticks": 150112425
+            }
+          ],
+          "status": "accepted"
+        }
+      ]
+    }
+  },
+  "all_statuses_equal": true,
+  "all_native_responses_equal": true,
+  "profile_over_original_cell_ratio": 2.323992258323512,
+  "profile_threads": 42,
+  "positive_trace_slices": 63917,
+  "zero_trace_slices": 65055,
+  "negative_slices": [],
+  "export_pair_deviations": [],
+  "component_exclusive_elapsed_slices_seconds": [
+    [
+      "Kernel",
+      559.5439333710003
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.simp",
+      127.07253626200007
+    ],
+    [
+      "Meta.Tactic.sat",
+      40.31392776099998
+    ],
+    [
+      "Meta.synthInstance",
+      25.572541299
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.simpAll",
+      21.571236649000006
+    ],
+    [
+      "runFrontend",
+      19.920225906000002
+    ],
+    [
+      "Meta.isDefEq",
+      19.28504369999994
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.app",
+      11.454454788999998
+    ],
+    [
+      "Compiler",
+      7.2893916800000005
+    ],
+    [
+      "Meta.whnf",
+      6.358572200999992
+    ],
+    [
+      "Meta.check",
+      6.336734798999999
+    ],
+    [
+      "Elab.lint",
+      5.5119325639999985
+    ],
+    [
+      "Meta.Tactic.bv",
+      3.0974975819999995
+    ],
+    [
+      "LeanMLIR.Elab",
+      2.829610415000003
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.split",
+      1.778061623
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.tacticSeq1Indented",
+      1.773004647999997
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.allGoals",
+      1.6890153839999997
+    ],
+    [
+      "Meta.isDefEq.assign",
+      1.6458911080000003
+    ],
+    [
+      "Elab.async",
+      1.630251036999999
+    ],
+    [
+      "Elab.command",
+      1.1224808289999992
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=_(_)(_)_:(_)->(_)\u00bb",
+      0.8663715620000001
+    ],
+    [
+      "Elab.definition.value",
+      0.8208592689999995
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.structInst",
+      0.7717276410000006
+    ],
+    [
+      "Meta.isDefEq.onFailure",
+      0.6355019339999998
+    ],
+    [
+      "Elab.step: LeanMLIR.SLLVM.\u00abterm[sllvm|_]\u00bb",
+      0.5931399839999999
+    ],
+    [
+      "Elab.def.processPreDef",
+      0.5711600520000001
+    ],
+    [
+      "Meta.isDefEq.assign.checkTypes",
+      0.5570309880000003
+    ],
+    [
+      "Elab.def.maxSharing",
+      0.44074596599999993
+    ],
+    [
+      "addDecl",
+      0.43987596999999984
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_op|_]\u00bb",
+      0.4261117549999991
+    ],
+    [
+      "Meta.synthInstance.tryResolve",
+      0.41918782199999993
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_type|_]\u00bb",
+      0.4013862590000001
+    ],
+    [
+      "Elab.step: ident",
+      0.39255323799999997
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.typeAscription",
+      0.310989878
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.first",
+      0.256806835
+    ],
+    [
+      "Elab.step: MLIR.EDSL.Pretty.\u00abmlir_op_=__:_\u00bb",
+      0.25420302199999983
+    ],
+    [
+      "Elab.step: tacticSimp_alive_case_bash'",
+      0.23850002099999995
+    ],
+    [
+      "Elab.step: tacticSimp_sllvm",
+      0.19938933999999986
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.bvDecide",
+      0.196503749
+    ],
+    [
+      "Meta.isLevelDefEq",
+      0.185733161
+    ],
+    [
+      "Elab.step: Mathlib.Tactic.cases'",
+      0.16376008600000003
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_ops|_]\u00bb",
+      0.1558456240000001
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.tacticSeq",
+      0.14805070100000003
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.let",
+      0.14314865300000001
+    ],
+    [
+      "Meta.Tactic.simp.discharge",
+      0.13536573699999999
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_region{^_(_,):_}\u00bb",
+      0.13493429000000007
+    ],
+    [
+      "Meta.realizeConst",
+      0.134051591
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_op_operand|_]\u00bb",
+      0.11812292000000002
+    ],
+    [
+      "Elab.step: \u00abterm_::_\u00bb",
+      0.11521499400000003
+    ],
+    [
+      "Meta.isDefEq.delta",
+      0.10670015200000006
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_bb_operand|_]\u00bb",
+      0.10125828199999998
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_attr_dict|_]\u00bb",
+      0.085455207
+    ],
+    [
+      "Elab.step: tacticSimp_sllvm_split",
+      0.08495423599999996
+    ],
+    [
+      "Meta.appBuilder",
+      0.08159396499999998
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.dotIdent",
+      0.075902759
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=__Overflow<_>:_\u00bb",
+      0.07432009299999999
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.rewriteSeq",
+      0.052261545
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.intro",
+      0.050350699
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=__,_:_\u00bb",
+      0.050140057
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=Llvm.mlir.constant(_:_):_\u00bb",
+      0.04871330599999998
+    ],
+    [
+      "Elab.step: tacticSimp_sllvm_case_bash",
+      0.046685300999999985
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.repeat'",
+      0.042912275
+    ],
+    [
+      "Elab.step: SSA.tacticSimp_peephole_",
+      0.039966255
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.focus",
+      0.036552648999999965
+    ],
+    [
+      "Meta.instantiateMVars",
+      0.034090518
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.revert",
+      0.0310417
+    ],
+    [
+      "Compiler.elimDeadBranches",
+      0.025770164
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.change",
+      0.025068492000000005
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=Llvm.mlir.constant_:_\u00bb",
+      0.023923206000000002
+    ],
+    [
+      "Meta.isDefEq.hint",
+      0.023516701000000004
+    ],
+    [
+      "Elab.step: num",
+      0.023387808
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_region|_]\u00bb",
+      0.023109096000000016
+    ],
+    [
+      "Elab.step: tacticSimp_alive_case_bash",
+      0.022823787000000005
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+      0.021600096999999985
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.withAnnotateState",
+      0.017505352
+    ],
+    [
+      "Elab.step: tacticRevert_intw",
+      0.014492376
+    ],
+    [
+      "Elab.step: \u00abterm-_\u00bb",
+      0.014091902
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=Llvm.select_,_,_:_\u00bb",
+      0.013572608
+    ],
+    [
+      "Elab.step: \u00abterm_\u2291_\u00bb",
+      0.012800919000000003
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abmlir_op_=__:_\u00bb",
+      0.012754987000000002
+    ],
+    [
+      "Meta.synthInstance.answer",
+      0.012458739
+    ],
+    [
+      "Elab.def.fixLevelParams",
+      0.011521135
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.hole",
+      0.010872366
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.unfold",
+      0.010774164000000001
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.unop",
+      0.01025174
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.paren",
+      0.008077195000000004
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_attr_entry|_]\u00bb",
+      0.006451574999999999
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.tuple",
+      0.0015717550000000006
+    ],
+    [
+      "Elab.step: MLIR.EDSL.\u00abterm[mlir_attr_val|_]\u00bb",
+      0.0015097660000000003
+    ],
+    [
+      "Elab.definition.header",
+      0.0008016279999999999
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.forall",
+      0.000662949
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.failIfSuccess",
+      0.000167195
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.rwSeq",
+      5.7551e-05
+    ],
+    [
+      "Elab.step: Lean.Parser.Tactic.tacticTry_",
+      3.3875e-05
+    ],
+    [
+      "Elab.step: Lean.Parser.Term.paren",
+      3.2705e-05
+    ],
+    [
+      "Elab.step: \u00abterm[_]\u00bb",
+      1.7419e-05
+    ],
+    [
+      "Elab.step: \u00abterm_\u00d7_\u00bb",
+      1.4087e-05
+    ]
+  ],
+  "nearest_tactic_family_elapsed_slices_seconds": [
+    [
+      "bv_decide",
+      583.0818914959995
+    ],
+    [
+      "simp",
+      212.38491932000005
+    ],
+    [
+      "outside traced tactic",
+      74.51184418600019
+    ],
+    [
+      "other tactic",
+      7.436553984999963
+    ]
+  ],
+  "nearest_tactic_elapsed_slices_seconds": [
+    [
+      "Lean.Parser.Tactic.bvDecide",
+      583.0818914959995
+    ],
+    [
+      "Lean.Parser.Tactic.simp",
+      187.32273709099982
+    ],
+    [
+      "Lean.Parser.Tactic.simpAll",
+      25.062182228999998
+    ],
+    [
+      "Lean.Parser.Tactic.split",
+      2.055620221
+    ],
+    [
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      1.812970902999998
+    ],
+    [
+      "Lean.Parser.Tactic.allGoals",
+      1.6890153839999997
+    ],
+    [
+      "Mathlib.Tactic.cases'",
+      0.259435525
+    ],
+    [
+      "Lean.Parser.Tactic.first",
+      0.256806835
+    ],
+    [
+      "tacticSimp_alive_case_bash'",
+      0.23850002099999995
+    ],
+    [
+      "tacticSimp_sllvm",
+      0.19938933999999986
+    ],
+    [
+      "Lean.Parser.Tactic.intro",
+      0.194155033
+    ],
+    [
+      "Lean.Parser.Tactic.change",
+      0.19267072400000002
+    ],
+    [
+      "Lean.Parser.Tactic.tacticSeq",
+      0.14805070100000003
+    ],
+    [
+      "tacticSimp_sllvm_split",
+      0.08495423599999996
+    ],
+    [
+      "Lean.Parser.Tactic.rewriteSeq",
+      0.052261545
+    ],
+    [
+      "tacticSimp_sllvm_case_bash",
+      0.046685300999999985
+    ],
+    [
+      "Lean.Parser.Tactic.repeat'",
+      0.042912275
+    ],
+    [
+      "Lean.Parser.Tactic.focus",
+      0.036552648999999965
+    ],
+    [
+      "Lean.Parser.Tactic.revert",
+      0.0310417
+    ],
+    [
+      "tacticSimp_alive_case_bash",
+      0.022823787000000005
+    ],
+    [
+      "Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb",
+      0.021600096999999985
+    ],
+    [
+      "Lean.Parser.Tactic.withAnnotateState",
+      0.017505352
+    ],
+    [
+      "tacticRevert_intw",
+      0.014492376
+    ],
+    [
+      "Lean.Parser.Tactic.unfold",
+      0.010774164000000001
+    ],
+    [
+      "Lean.Parser.Tactic.paren",
+      0.008077195000000004
+    ],
+    [
+      "Lean.Parser.Tactic.failIfSuccess",
+      0.000167195
+    ],
+    [
+      "Lean.Parser.Tactic.rwSeq",
+      5.7551e-05
+    ],
+    [
+      "Lean.Parser.Tactic.tacticTry_",
+      3.3875e-05
+    ]
+  ],
+  "nearest_bv_or_sat_stage_elapsed_slices_seconds": [
+    [
+      "Meta.Tactic.sat: Verifying LRAT certificate",
+      538.1384027139995
+    ],
+    [
+      "Meta.Tactic.sat: Running SAT solver",
+      31.361627121
+    ],
+    [
+      "Meta.Tactic.sat: Obtaining LRAT certificate",
+      3.1425630830000015
+    ],
+    [
+      "Meta.Tactic.sat: Trimming LRAT proof",
+      2.444324236
+    ],
+    [
+      "Meta.Tactic.sat: Parsing LRAT file",
+      2.27117992
+    ],
+    [
+      "Meta.Tactic.bv: Preprocessing goal",
+      0.8576794139999996
+    ],
+    [
+      "Meta.Tactic.bv: Preparing LRAT reflection term",
+      0.44340068099999985
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d = BitVec.intMin 64\na\u271d : \u00acx\u271d.sdiv 18446744073709551615#64 = 0#64 - x\u271d\n\u22a2 False",
+      0.4085091700000006
+    ],
+    [
+      "Meta.Tactic.sat: Converting AIG to CNF",
+      0.39640331700000003
+    ],
+    [
+      "Meta.Tactic.sat: Serializing SAT problem to DIMACS file",
+      0.370684088
+    ],
+    [
+      "Meta.Tactic.sat: Obtaining external proof certificate",
+      0.28653955899999994
+    ],
+    [
+      "Meta.Tactic.bv: Bitblasting BVLogicalExpr to AIG",
+      0.284708642
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0 \u2227 (x\u271d = BitVec.intMin 5 \u2192 \u00acx\u271d\u00b9 = 31#5)\na\u271d : \u00acx\u271d.sdiv x\u271d\u00b9 * x\u271d\u00b9 = x\u271d - x\u271d.srem x\u271d\u00b9\n\u22a2 False",
+      0.175088754
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac0#64 - x\u271d\u00b9 + (0#64 - x\u271d) = 0#64 - (x\u271d\u00b9 + x\u271d)\n\u22a2 False",
+      0.17043067599999998
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d * x\u271d\u00b9 = x\u271d &&& x\u271d\u00b9\n\u22a2 False",
+      0.13891477499999996
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9) ||| BitVec.ofBool (x\u271d\u00b9 != x\u271d) = 1#1\n\u22a2 False",
+      0.136460179
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (0#64 - x\u271d\u00b9) = x\u271d + x\u271d\u00b9\n\u22a2 False",
+      0.135169261
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d * 18446744073709551615#64 = 0#64 - x\u271d\n\u22a2 False",
+      0.106669711
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(0#64 - x\u271d) * (0#64 - x\u271d\u00b9) = x\u271d * x\u271d\u00b9\n\u22a2 False",
+      0.10640898000000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (x\u271d + x\u271d\u00b9) = 0#64 - x\u271d\u00b9\n\u22a2 False",
+      0.10460137299999998
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d + x\u271d\u00b9 = x\u271d ^^^ x\u271d\u00b9\n\u22a2 False",
+      0.09058267600000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(\u00ac1#64 \u2265 \u219164 \u2227 x\u271d + x\u271d = x\u271d <<< 1)\n\u22a2 False",
+      0.08793645100000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0 \u2227 (x\u271d = BitVec.intMin 5 \u2192 \u00acx\u271d\u00b9 = 31#5)\na\u271d : \u00acx\u271d.sdiv x\u271d\u00b9 * (0#5 - x\u271d\u00b9) = x\u271d.srem x\u271d\u00b9 - x\u271d\n\u22a2 False",
+      0.071264065
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 9\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d = 0#9\na\u271d\u00b9 : (\u00acx\u271d = 0 \u2227 (x\u271d\u00b9 = BitVec.intMin 9 \u2192 \u00acx\u271d = 511#9)) \u2227 \u00acx\u271d = 0 \u2227 (x\u271d\u00b9 - x\u271d\u00b9.srem x\u271d = BitVec.intMin 9 \u2192 \u00acx\u271d = 511#9)\na\u271d : \u00ac(x\u271d\u00b9 - x\u271d\u00b9.srem x\u271d).sdiv x\u271d = x\u271d\u00b9.sdiv x\u271d\n\u22a2 False",
+      0.057740229
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 &&& x\u271d\u00b2 ^^^ x\u271d\u00b2) + 1#64 + x\u271d = x\u271d - (x\u271d\u00b9 ||| ~~~x\u271d\u00b2)\n\u22a2 False",
+      0.05702010200000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0\na\u271d : \u00acx\u271d / x\u271d\u00b9 * (0#5 - x\u271d\u00b9) = x\u271d % x\u271d\u00b9 - x\u271d\n\u22a2 False",
+      0.054064588999999996
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d == 0#64) ||| BitVec.ofBool (x\u271d\u00b9 <\u1d64 x\u271d) = BitVec.ofBool (x\u271d\u00b9 \u2264\u1d64 x\u271d + 18446744073709551615#64)\n\u22a2 False",
+      0.052668742000000004
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d \u2265 \u219164\na\u271d : \u00acx\u271d\u00b9 <<< x\u271d >>> x\u271d = x\u271d\u00b9 &&& 18446744073709551615#64 >>> x\u271d\n\u22a2 False",
+      0.040781806000000004
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0\na\u271d : \u00acx\u271d / x\u271d\u00b9 * x\u271d\u00b9 = x\u271d - x\u271d % x\u271d\u00b9\n\u22a2 False",
+      0.038487613000000004
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 - x\u271d = 0#64 - x\u271d\u00b9\n\u22a2 False",
+      0.037317684
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 != 0#64) ||| BitVec.ofBool (x\u271d != 0#64) = BitVec.ofBool (x\u271d\u00b9 ||| x\u271d != 0#64)\n\u22a2 False",
+      0.030693766
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (x\u271d\u00b9 ^^^ 18446744073709551615#64) = x\u271d\u00b9 + (x\u271d + 1#64)\n\u22a2 False",
+      0.026639526
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d ||| x\u271d ^^^ x\u271d\u00b9 = x\u271d ||| x\u271d\u00b9\n\u22a2 False",
+      0.025615473000000003
+    ],
+    [
+      "Meta.Tactic.bv: Reflecting goal into BVLogicalExpr",
+      0.025399499
+    ],
+    [
+      "Meta.Tactic.sat: Compiling proof certificate term",
+      0.025376245000000002
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u209b x\u271d\u00b9) ^^^ 1#1 = BitVec.ofBool (x\u271d\u00b9 \u2264\u209b x\u271d)\n\u22a2 False",
+      0.02513035
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 \u2264\u1d64 x\u271d) ^^^ BitVec.ofBool (x\u271d\u00b9 != x\u271d) = BitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9)\n\u22a2 False",
+      0.023181204
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac0#64 - x\u271d\u00b9 + x\u271d = x\u271d - x\u271d\u00b9\n\u22a2 False",
+      0.022395831
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!~~~(~~~(x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& ~~~x\u271d) ^^^ 18446744073709551615#64 ==\n        x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)) =\n    true\n\u22a2 False",
+      0.021466277000000002
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b2 ^^^ x\u271d) >>> x\u271d\u00b9 = x\u271d\u00b2 >>> x\u271d\u00b9 ^^^ x\u271d >>> x\u271d\u00b9\n\u22a2 False",
+      0.020757569
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 = x\u271d ^^^ x\u271d\u00b9\n\u22a2 False",
+      0.02001989
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: intToBitVec on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d ||| x\u271d ^^^ x\u271d\u00b9 = x\u271d ||| x\u271d\u00b9\n\u22a2 False",
+      0.019898363
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 - x\u271d = x\u271d\u00b9 + -x\u271d\n\u22a2 False",
+      0.0198733
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 == 0#64) &&& BitVec.ofBool (x\u271d == 0#64) = BitVec.ofBool (x\u271d\u00b9 ||| x\u271d == 0#64)\n\u22a2 False",
+      0.019376684999999998
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == x\u271d\u00b2) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == x\u271d\u00b2) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 &&& x\u271d) == x\u271d\u00b2)\n\u22a2 False",
+      0.01928631
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 == x\u271d) &&& BitVec.ofBool (x\u271d\u00b9 != x\u271d) = 0#1\n\u22a2 False",
+      0.01843459
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 - (x\u271d\u00b2 + x\u271d) = x\u271d\u00b9 - x\u271d - x\u271d\u00b2\n\u22a2 False",
+      0.018188354
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 &&& x\u271d) + (x\u271d\u00b9 ||| x\u271d) = x\u271d\u00b9 + x\u271d\n\u22a2 False",
+      0.017036685000000003
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& x\u271d ||| x\u271d\u00b9 ^^^ x\u271d = x\u271d\u00b9 ||| x\u271d\n\u22a2 False",
+      0.016864251
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 6\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b2 + x\u271d\u00b9) * x\u271d = x\u271d\u00b2 * x\u271d + x\u271d\u00b9 * x\u271d\n\u22a2 False",
+      0.016745123
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == x\u271d\u00b9) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == x\u271d) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 ||| x\u271d) == x\u271d\u00b9 ||| x\u271d)\n\u22a2 False",
+      0.01668791
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == 0#64) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == 0#64) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 ||| x\u271d) == 0#64)\n\u22a2 False",
+      0.016490196000000002
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b2 + x\u271d) <<< x\u271d\u00b9 = x\u271d\u00b2 <<< x\u271d\u00b9 + x\u271d <<< x\u271d\u00b9\n\u22a2 False",
+      0.016033849
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 + x\u271d ^^^ 18446744073709551615#64 = 18446744073709551615#64 - x\u271d - x\u271d\u00b9\n\u22a2 False",
+      0.01587735
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ||| x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) = x\u271d\u00b9 ^^^ x\u271d\n\u22a2 False",
+      0.015551969
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 9\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d = 0#9\na\u271d\u00b9 : \u00acx\u271d = 0\na\u271d : \u00ac(x\u271d\u00b9 - x\u271d\u00b9 % x\u271d) / x\u271d = x\u271d\u00b9 / x\u271d\n\u22a2 False",
+      0.015431779999999999
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d \u2265 \u219164\na\u271d : \u00acx\u271d\u00b9 >>> x\u271d <<< x\u271d = x\u271d\u00b9 &&& 18446744073709551615#64 <<< x\u271d\n\u22a2 False",
+      0.015271744
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : (x\u271d <\u1d64 64#64) = true\na\u271d : (!x\u271d\u00b9 >>> x\u271d <<< x\u271d == x\u271d\u00b9 &&& 18446744073709551615#64 <<< x\u271d) = true\n\u22a2 False",
+      0.014926187
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : (x\u271d <\u1d64 64#64) = true\na\u271d : (!x\u271d\u00b9 <<< x\u271d >>> x\u271d == x\u271d\u00b9 &&& 18446744073709551615#64 >>> x\u271d) = true\n\u22a2 False",
+      0.014803212999999999
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acx\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64) =\n      x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64\n\u22a2 False",
+      0.014414577000000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!~~~(~~~(x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& ~~~(x\u271d ^^^ 18446744073709551615#64)) ==\n        x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64) =\n    true\n\u22a2 False",
+      0.014137420000000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) ^^^ 18446744073709551615#64 = x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)\n\u22a2 False",
+      0.01398886
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!((bif (!BitVec.extractLsb' 63 1 x\u271d\u00b9 == bif BitVec.extractLsb' 63 1 x\u271d == 1#1 then 1#1 else 0#1) == (x\u271d <\u1d64 x\u271d\u00b9) then\n            0#1\n          else 1#1) &&&\n          bif x\u271d\u00b9 == x\u271d then 0#1 else 1#1) ==\n        bif\n            (!BitVec.extractLsb' 63 1 x\u271d\u00b9 == bif BitVec.extractLsb' 63 1 x\u271d == 1#1 then 1#1 else 0#1) ==\n              (x\u271d <\u1d64 x\u271d\u00b9) then\n          0#1\n        else 1#1) =\n    true\n\u22a2 False",
+      0.013985496
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b2 ||| x\u271d\u00b9) &&& x\u271d = (x\u271d\u00b2 ||| x\u271d\u00b9 &&& x\u271d) &&& x\u271d\n\u22a2 False",
+      0.01387652
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 + (0#64 - x\u271d) = x\u271d\u00b9 - x\u271d\n\u22a2 False",
+      0.013838671
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u209b x\u271d\u00b9) &&& BitVec.ofBool (x\u271d\u00b9 != x\u271d) = BitVec.ofBool (x\u271d <\u209b x\u271d\u00b9)\n\u22a2 False",
+      0.013390231999999998
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& x\u271d ||| x\u271d\u00b9 ^^^ 18446744073709551615#64 = x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d\n\u22a2 False",
+      0.013385204
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64) + x\u271d = x\u271d - 1#64 - x\u271d\u00b9\n\u22a2 False",
+      0.012773369000000001
+    ],
+    [
+      "Meta.Tactic.sat: Compiling expr term",
+      0.012170339
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u1d64 x\u271d\u00b9) ||| BitVec.ofBool (x\u271d\u00b9 == x\u271d) = BitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9)\n\u22a2 False",
+      0.011801823000000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 ^^^ 18446744073709551615#64 = x\u271d\u00b9 + (18446744073709551615#64 - x\u271d)\n\u22a2 False",
+      0.011797665
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) &&& x\u271d\u00b9 = x\u271d\u00b9 &&& x\u271d\n\u22a2 False",
+      0.011541021
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& x\u271d = x\u271d\u00b9 ^^^ x\u271d\n\u22a2 False",
+      0.011352620999999999
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : (!~~~(~~~(x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)) &&& ~~~(x\u271d\u00b9 ^^^ x\u271d)) == x\u271d\u00b9 ^^^ x\u271d) = true\n\u22a2 False",
+      0.010726842
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!((bif x\u271d\u00b9 == 0#64 then 1#1 else 0#1) &&& bif x\u271d == 0#64 then 1#1 else 0#1) ==\n        bif x\u271d\u00b9 == 0#64 && x\u271d == 0#64 then 1#1 else 0#1) =\n    true\n\u22a2 False",
+      0.010414936000000001
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b2 ||| x\u271d\u00b9 ||| x\u271d = x\u271d\u00b2 ||| x\u271d ||| x\u271d\u00b9\n\u22a2 False",
+      0.010406688
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d ^^^ 18446744073709551615#64 = x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64\n\u22a2 False",
+      0.01016225
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: intToBitVec on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 ||| (x\u271d\u00b9 ||| x\u271d) ^^^ 18446744073709551615#64 = x\u271d\u00b9 ||| x\u271d ^^^ 18446744073709551615#64\n\u22a2 False",
+      0.010106159
+    ],
+    [
+      "Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.value.h\nx\u271d\u00b3 x\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b3 ^^^ x\u271d\u00b2 >>> x\u271d\u00b9 &&& x\u271d) <<< x\u271d\u00b9 = x\u271d\u00b2 &&& x\u271d <<< x\u271d\u00b9 ^^^ x\u271d\u00b3 <<< x\u271d\u00b9\n\u22a2 False",
+      0.010033954
+    ]
+  ],
+  "observed_distinct_bv_tactic_stack_contexts": 89,
+  "profile_interval_union_seconds": {
+    "all traced": 41.53068610787392,
+    "family:outside traced tactic": 41.53068610787392,
+    "family:other tactic": 6.753156507968902,
+    "family:simp": 28.242327853918077,
+    "family:bv_decide": 39.14593481898308,
+    "phase:Meta.Tactic.bv: Preprocessing goal": 0.8284513595104217,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(\u00ac1#64 \u2265 \u219164 \u2227 x\u271d + x\u271d = x\u271d <<< 1)\n\u22a2 False": 0.08793645095825195,
+    "phase:Meta.Tactic.bv: Preparing LRAT reflection term": 0.4430378053188324,
+    "phase:Meta.Tactic.sat: Obtaining external proof certificate": 0.28634681534767153,
+    "phase:Meta.Tactic.sat: Running SAT solver": 21.36009242939949,
+    "phase:Meta.Tactic.sat: Verifying LRAT certificate": 38.81469258117676,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u209b x\u271d\u00b9) ^^^ 1#1 = BitVec.ofBool (x\u271d\u00b9 \u2264\u209b x\u271d)\n\u22a2 False": 0.025130350112915038,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 &&& x\u271d\u00b2 ^^^ x\u271d\u00b2) + 1#64 + x\u271d = x\u271d - (x\u271d\u00b9 ||| ~~~x\u271d\u00b2)\n\u22a2 False": 0.05702010202407837,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == 0#64) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == 0#64) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 ||| x\u271d) == 0#64)\n\u22a2 False": 0.016490195989608766,
+    "phase:Meta.Tactic.bv: Reflecting goal into BVLogicalExpr": 0.02539949893951416,
+    "phase:Meta.Tactic.bv: Running pass: intToBitVec on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d ||| x\u271d ^^^ x\u271d\u00b9 = x\u271d ||| x\u271d\u00b9\n\u22a2 False": 0.01989836311340332,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d ||| x\u271d ^^^ x\u271d\u00b9 = x\u271d ||| x\u271d\u00b9\n\u22a2 False": 0.025615473031997682,
+    "phase:Meta.Tactic.sat: Converting AIG to CNF": 0.3424873788356781,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d \u2265 \u219164\na\u271d : \u00acx\u271d\u00b9 >>> x\u271d <<< x\u271d = x\u271d\u00b9 &&& 18446744073709551615#64 <<< x\u271d\n\u22a2 False": 0.015271744012832641,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : (x\u271d <\u1d64 64#64) = true\na\u271d : (!x\u271d\u00b9 >>> x\u271d <<< x\u271d == x\u271d\u00b9 &&& 18446744073709551615#64 <<< x\u271d) = true\n\u22a2 False": 0.014926186800003051,
+    "phase:Meta.Tactic.bv: Bitblasting BVLogicalExpr to AIG": 0.248019394159317,
+    "phase:Meta.Tactic.sat: Serializing SAT problem to DIMACS file": 0.33492596459388735,
+    "phase:Meta.Tactic.sat: Obtaining LRAT certificate": 2.7309316999912263,
+    "phase:Meta.Tactic.sat: Parsing LRAT file": 2.010665900468826,
+    "phase:Meta.Tactic.sat: Trimming LRAT proof": 2.3712634432315824,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac0#64 - x\u271d\u00b9 + x\u271d = x\u271d - x\u271d\u00b9\n\u22a2 False": 0.02239583086967468,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == x\u271d\u00b9) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == x\u271d) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 ||| x\u271d) == x\u271d\u00b9 ||| x\u271d)\n\u22a2 False": 0.016687910079956056,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac0#64 - x\u271d\u00b9 + (0#64 - x\u271d) = 0#64 - (x\u271d\u00b9 + x\u271d)\n\u22a2 False": 0.17043067598342895,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d * 18446744073709551615#64 = 0#64 - x\u271d\n\u22a2 False": 0.1066697108745575,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d * x\u271d\u00b9 = x\u271d &&& x\u271d\u00b9\n\u22a2 False": 0.13891477513313294,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d + x\u271d\u00b9 = x\u271d ^^^ x\u271d\u00b9\n\u22a2 False": 0.0905826759338379,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (x\u271d\u00b9 ^^^ 18446744073709551615#64) = x\u271d\u00b9 + (x\u271d + 1#64)\n\u22a2 False": 0.026639525890350343,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d == 0#64) ||| BitVec.ofBool (x\u271d\u00b9 <\u1d64 x\u271d) = BitVec.ofBool (x\u271d\u00b9 \u2264\u1d64 x\u271d + 18446744073709551615#64)\n\u22a2 False": 0.0526687421798706,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64) + x\u271d = x\u271d - 1#64 - x\u271d\u00b9\n\u22a2 False": 0.012773369073867797,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) ^^^ 18446744073709551615#64 = x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)\n\u22a2 False": 0.01398885989189148,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!~~~(~~~(x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& ~~~x\u271d) ^^^ 18446744073709551615#64 ==\n        x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)) =\n    true\n\u22a2 False": 0.02146627712249756,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 + (0#64 - x\u271d) = x\u271d\u00b9 - x\u271d\n\u22a2 False": 0.0138386709690094,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u209b x\u271d\u00b9) &&& BitVec.ofBool (x\u271d\u00b9 != x\u271d) = BitVec.ofBool (x\u271d <\u209b x\u271d\u00b9)\n\u22a2 False": 0.013390231847763062,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!((bif (!BitVec.extractLsb' 63 1 x\u271d\u00b9 == bif BitVec.extractLsb' 63 1 x\u271d == 1#1 then 1#1 else 0#1) == (x\u271d <\u1d64 x\u271d\u00b9) then\n            0#1\n          else 1#1) &&&\n          bif x\u271d\u00b9 == x\u271d then 0#1 else 1#1) ==\n        bif\n            (!BitVec.extractLsb' 63 1 x\u271d\u00b9 == bif BitVec.extractLsb' 63 1 x\u271d == 1#1 then 1#1 else 0#1) ==\n              (x\u271d <\u1d64 x\u271d\u00b9) then\n          0#1\n        else 1#1) =\n    true\n\u22a2 False": 0.013985496044158935,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& x\u271d ||| x\u271d\u00b9 ^^^ x\u271d = x\u271d\u00b9 ||| x\u271d\n\u22a2 False": 0.016864251136779786,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) &&& x\u271d\u00b9 = x\u271d\u00b9 &&& x\u271d\n\u22a2 False": 0.011541020870208741,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 &&& x\u271d) + (x\u271d\u00b9 ||| x\u271d) = x\u271d\u00b9 + x\u271d\n\u22a2 False": 0.017036684989929197,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 == x\u271d) &&& BitVec.ofBool (x\u271d\u00b9 != x\u271d) = 0#1\n\u22a2 False": 0.018434590101242064,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b2 + x\u271d) <<< x\u271d\u00b9 = x\u271d\u00b2 <<< x\u271d\u00b9 + x\u271d <<< x\u271d\u00b9\n\u22a2 False": 0.016033849000930786,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 - x\u271d = x\u271d\u00b9 + -x\u271d\n\u22a2 False": 0.019873299837112425,
+    "phase:Meta.Tactic.sat: Compiling expr term": 0.01217033886909485,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d <\u1d64 x\u271d\u00b9) ||| BitVec.ofBool (x\u271d\u00b9 == x\u271d) = BitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9)\n\u22a2 False": 0.011801822900772094,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (x\u271d + x\u271d\u00b9) = 0#64 - x\u271d\u00b9\n\u22a2 False": 0.10460137295722961,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acx\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64) =\n      x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64\n\u22a2 False": 0.014414577007293702,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 1\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 = x\u271d ^^^ x\u271d\u00b9\n\u22a2 False": 0.02001989006996155,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& x\u271d = x\u271d\u00b9 ^^^ x\u271d\n\u22a2 False": 0.01135262107849121,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 &&& x\u271d ||| x\u271d\u00b9 ^^^ 18446744073709551615#64 = x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d\n\u22a2 False": 0.013385203838348389,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0\na\u271d : \u00acx\u271d / x\u271d\u00b9 * (0#5 - x\u271d\u00b9) = x\u271d % x\u271d\u00b9 - x\u271d\n\u22a2 False": 0.054064589023590084,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 != 0#64) ||| BitVec.ofBool (x\u271d != 0#64) = BitVec.ofBool (x\u271d\u00b9 ||| x\u271d != 0#64)\n\u22a2 False": 0.03069376611709595,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 6\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b2 + x\u271d\u00b9) * x\u271d = x\u271d\u00b2 * x\u271d + x\u271d\u00b9 * x\u271d\n\u22a2 False": 0.016745123147964478,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 - (x\u271d\u00b2 + x\u271d) = x\u271d\u00b9 - x\u271d - x\u271d\u00b2\n\u22a2 False": 0.018188354015350343,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9) ||| BitVec.ofBool (x\u271d\u00b9 != x\u271d) = 1#1\n\u22a2 False": 0.1364601788520813,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b9 ||| x\u271d ^^^ 18446744073709551615#64) ^^^ (x\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d) = x\u271d\u00b9 ^^^ x\u271d\n\u22a2 False": 0.015551968812942504,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - (0#64 - x\u271d\u00b9) = x\u271d + x\u271d\u00b9\n\u22a2 False": 0.13516926097869872,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 == 0#64) &&& BitVec.ofBool (x\u271d == 0#64) = BitVec.ofBool (x\u271d\u00b9 ||| x\u271d == 0#64)\n\u22a2 False": 0.01937668490409851,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!((bif x\u271d\u00b9 == 0#64 then 1#1 else 0#1) &&& bif x\u271d == 0#64 then 1#1 else 0#1) ==\n        bif x\u271d\u00b9 == 0#64 && x\u271d == 0#64 then 1#1 else 0#1) =\n    true\n\u22a2 False": 0.010414935827255249,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(x\u271d\u00b2 ||| x\u271d\u00b9) &&& x\u271d = (x\u271d\u00b2 ||| x\u271d\u00b9 &&& x\u271d) &&& x\u271d\n\u22a2 False": 0.013876519918441773,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : (!~~~(~~~(x\u271d\u00b9 &&& (x\u271d ^^^ 18446744073709551615#64)) &&& ~~~(x\u271d\u00b9 ^^^ x\u271d)) == x\u271d\u00b9 ^^^ x\u271d) = true\n\u22a2 False": 0.010726841926574707,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0\na\u271d : \u00acx\u271d / x\u271d\u00b9 * x\u271d\u00b9 = x\u271d - x\u271d % x\u271d\u00b9\n\u22a2 False": 0.03848761296272278,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 - x\u271d = 0#64 - x\u271d\u00b9\n\u22a2 False": 0.03731768393516541,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  \u00acBitVec.ofBool (x\u271d\u00b2 &&& x\u271d\u00b9 == x\u271d\u00b2) &&& BitVec.ofBool (x\u271d\u00b2 &&& x\u271d == x\u271d\u00b2) =\n      BitVec.ofBool (x\u271d\u00b2 &&& (x\u271d\u00b9 &&& x\u271d) == x\u271d\u00b2)\n\u22a2 False": 0.019286309957504272,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b2 ||| x\u271d\u00b9 ||| x\u271d = x\u271d\u00b2 ||| x\u271d ||| x\u271d\u00b9\n\u22a2 False": 0.01040668797492981,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d - x\u271d\u00b9 ^^^ 18446744073709551615#64 = x\u271d\u00b9 + (18446744073709551615#64 - x\u271d)\n\u22a2 False": 0.011797665119171142,
+    "phase:Meta.Tactic.bv: Running pass: intToBitVec on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 ||| (x\u271d\u00b9 ||| x\u271d) ^^^ 18446744073709551615#64 = x\u271d\u00b9 ||| x\u271d ^^^ 18446744073709551615#64\n\u22a2 False": 0.010106158971786499,
+    "phase:Meta.Tactic.sat: Compiling proof certificate term": 0.02537624502182007,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0 \u2227 (x\u271d = BitVec.intMin 5 \u2192 \u00acx\u271d\u00b9 = 31#5)\na\u271d : \u00acx\u271d.sdiv x\u271d\u00b9 * (0#5 - x\u271d\u00b9) = x\u271d.srem x\u271d\u00b9 - x\u271d\n\u22a2 False": 0.07126406502723694,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 + x\u271d ^^^ 18446744073709551615#64 = 18446744073709551615#64 - x\u271d - x\u271d\u00b9\n\u22a2 False": 0.015877350091934205,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acx\u271d\u00b9 ^^^ 18446744073709551615#64 ||| x\u271d ^^^ 18446744073709551615#64 = x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64\n\u22a2 False": 0.01016225004196167,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d :\n  (!~~~(~~~(x\u271d\u00b9 ^^^ 18446744073709551615#64) &&& ~~~(x\u271d ^^^ 18446744073709551615#64)) ==\n        x\u271d\u00b9 &&& x\u271d ^^^ 18446744073709551615#64) =\n    true\n\u22a2 False": 0.014137419939041138,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.value.h\nx\u271d\u00b3 x\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b3 ^^^ x\u271d\u00b2 >>> x\u271d\u00b9 &&& x\u271d) <<< x\u271d\u00b9 = x\u271d\u00b2 &&& x\u271d <<< x\u271d\u00b9 ^^^ x\u271d\u00b3 <<< x\u271d\u00b9\n\u22a2 False": 0.01003395414352417,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00acBitVec.ofBool (x\u271d\u00b9 \u2264\u1d64 x\u271d) ^^^ BitVec.ofBool (x\u271d\u00b9 != x\u271d) = BitVec.ofBool (x\u271d \u2264\u1d64 x\u271d\u00b9)\n\u22a2 False": 0.023181204080581667,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 5\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d\u00b9 = 0#5\na\u271d\u00b9 : \u00acx\u271d\u00b9 = 0 \u2227 (x\u271d = BitVec.intMin 5 \u2192 \u00acx\u271d\u00b9 = 31#5)\na\u271d : \u00acx\u271d.sdiv x\u271d\u00b9 * x\u271d\u00b9 = x\u271d - x\u271d.srem x\u271d\u00b9\n\u22a2 False": 0.17508875393867493,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d : \u00ac(0#64 - x\u271d) * (0#64 - x\u271d\u00b9) = x\u271d * x\u271d\u00b9\n\u22a2 False": 0.10640897989273071,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d \u2265 \u219164\na\u271d : \u00acx\u271d\u00b9 <<< x\u271d >>> x\u271d = x\u271d\u00b9 &&& 18446744073709551615#64 >>> x\u271d\n\u22a2 False": 0.040781805753707885,
+    "phase:Meta.Tactic.bv: Running pass: embeddedConstraintSubstitution on\ncase value.value.h\nx\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : (x\u271d <\u1d64 64#64) = true\na\u271d : (!x\u271d\u00b9 <<< x\u271d >>> x\u271d == x\u271d\u00b9 &&& 18446744073709551615#64 >>> x\u271d) = true\n\u22a2 False": 0.014803212881088258,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 9\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d = 0#9\na\u271d\u00b9 : \u00acx\u271d = 0\na\u271d : \u00ac(x\u271d\u00b9 - x\u271d\u00b9 % x\u271d) / x\u271d = x\u271d\u00b9 / x\u271d\n\u22a2 False": 0.015431780099868774,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.h\nx\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d = BitVec.intMin 64\na\u271d : \u00acx\u271d.sdiv 18446744073709551615#64 = 0#64 - x\u271d\n\u22a2 False": 0.40850916981697083,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.isFalse.h\nx\u271d\u00b9 x\u271d : BitVec 9\ns\u271d : LeanMLIR.GlobalState\nh\u271d : \u00acx\u271d = 0#9\na\u271d\u00b9 : (\u00acx\u271d = 0 \u2227 (x\u271d\u00b9 = BitVec.intMin 9 \u2192 \u00acx\u271d = 511#9)) \u2227 \u00acx\u271d = 0 \u2227 (x\u271d\u00b9 - x\u271d\u00b9.srem x\u271d = BitVec.intMin 9 \u2192 \u00acx\u271d = 511#9)\na\u271d : \u00ac(x\u271d\u00b9 - x\u271d\u00b9.srem x\u271d).sdiv x\u271d = x\u271d\u00b9.sdiv x\u271d\n\u22a2 False": 0.05774022889137268,
+    "phase:Meta.Tactic.bv: Running pass: rewriteRules on\ncase value.value.value.h\nx\u271d\u00b2 x\u271d\u00b9 x\u271d : BitVec 64\ns\u271d : LeanMLIR.GlobalState\na\u271d\u00b9 : \u00acx\u271d\u00b9 \u2265 \u219164\na\u271d : \u00ac(x\u271d\u00b2 ^^^ x\u271d) >>> x\u271d\u00b9 = x\u271d\u00b2 >>> x\u271d\u00b9 ^^^ x\u271d >>> x\u271d\u00b9\n\u22a2 False": 0.02075756883621216
+  },
+  "scope": "Complete unchanged official module;native trace exclusive same-thread elapsed slices may overlap across threads. Profile-only unions,not CPU,critical path,Amdahl or uninstrumented denominators. Default10ms trace threshold;missing nodes not zero. Stack contexts not invocation count. Single fixed-order matrix,profile perturbs runtime."
+}

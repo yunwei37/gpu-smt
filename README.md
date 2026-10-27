@@ -126,6 +126,13 @@ Its real eight-candidate qualification
 checked winners before cancelling siblings. The original Verina 189-file
 native/profile characterization is complete; admitted stubs and source-version
 errors are reported separately from completed reference files.
+The [first unchanged lean-mlir compiler module](artifacts/lean-code-verification-2026-10-25/leanmlir-native-20261027T025426Z/README.md)
+also completes: original file40.47s, exact stdin40.21s, native profile94.04s,
+all with equal successful native responses. Its actual trace exposes a
+substantial LRAT/kernel-checking region, with concurrent elapsed slices and
+material profiling overhead. This identifies work to investigate; it does
+not establish a removable wall fraction or GPU benefit.
+
 There is no performance admission threshold, deadline or closure decision.
 The external CPU oracle stays **frozen as a baseline**: no optimization,
 extension or new oracle experiments, and no contribution claim.
@@ -242,7 +249,7 @@ Synthetic controls are not the real-workload evidence.
 The manuscript has completed a
 [12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
 Its current citation update retains all numerical results, four RQs and
-14 missing result slots. The compiled draft is 34 pages including appendices;
+14 missing result slots. The compiled draft is 35 pages including appendices;
 it is not submission-ready.
 
 All implementation, experiments and review run in this thread. Reviews are

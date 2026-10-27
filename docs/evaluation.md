@@ -24,7 +24,7 @@ One historical acceptance becomes a timeout and sampled RSS peaks at48.79GiB;
 neither transparent accepted-set parity nor a full-pair speedup is established.
 [API/implementation scope](api.md).
 
-[Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The real compiler bitvector workload remains in progress.
+[Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The first unchanged compiler bitvector module now completes file/stdin/profile execution; its detailed diagnostic scope is recorded below.
 
 The completed [480-source profile](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md) preserves all selected statuses. Of observed timeout thread CPU, interval_cases accounts for 55.19% and simp_all 28.21%; these are sampled diagnostic fractions, not whole-workload wall fractions. Per-source timings, all 42 resource failures and censored streams are retained. No reliable early-rejection mechanism has yet been established.
 
@@ -82,7 +82,7 @@ Never pool their clocks with the new resource point.
 |miniF2F|244tasks×32=7,808,Lean4.9rc1|Completed native/GPU pair; failure profile and first-success work|
 |GoedelWorkbook|29,750original Lean4.27files|Completed three-pair frozen CPU baseline; not32siblings/task|
 |ProofNet|186tasks×32=5,952,Lean4.9rc1|Earlier complete controls retained without expansion|
-|Lean code verification|Pinned Verina/miniCodeProps/CLEVER/lean-mlir sources|Original Verina189 native/profile complete; real compiler SAT/LRAT timing still unmeasured|
+|Lean code verification|Pinned Verina/miniCodeProps/CLEVER/lean-mlir sources|Original Verina189 complete; first compiler module file/stdin/profile complete,diagnostic LRAT scope only|
 |Verus/SMT|Version-aligned original traces|Prior negative/compatibility results retained; broader systems claims open|
 
 Released candidates are replay inputs, not generator arrival traces.
@@ -212,12 +212,23 @@ synchronous120s per-file limit remains a distinct protocol point from miniF2F300
 
 miniCodeProps includes library/test material; CLEVER has many stubs.
 FVAPPS gated contact-sharing terms are not accepted; accessible work continues.
+[The unchanged lean-mlir compiler module](../artifacts/lean-code-verification-2026-10-25/leanmlir-native-20261027T025426Z/README.md)
+now completes original-file/stdin/native-profile conditions in40.466071/
+40.210064/94.042837s with identical successful native responses. Sampled
+RSS peaks at3.518GiB,zero resource events,and all owned native leaders retire.
+The actual profile has89 distinct bv_decide stack contexts across42trace
+threads. LRAT verification accumulates538.138403 elapsed-slice seconds and
+38.814693s interval union within41.530686s traced intervals. These overlap
+across threads and are not CPU time, a whole-wall partition or Amdahl inputs.
+The2.323992x diagnostic lifecycle ratio precludes transferring its fractions
+onto uninstrumented wall. This is one original module,not a whole benchmark
+or demonstrated GPU opportunity. Its native-checking region is the next
+concrete code-verification mechanism target.
+
 Lean-mlir's exact nightlySDK/source are prepared; both public cache paths have
 zero hits, so cache exit0 is not readiness. The real SLLVM proof file has89
 source bv_decide mentions and a static58project/498external-module closure.
-These are not executed calls, timing or GPU-ready coverage. Native source
-build and profiling proceed after the current collection retires, without
-substituting a different version or reproducing competitor prover systems.
+These are not executed calls, timing or GPU-ready coverage. The original first module has now executed without substituting a different version or reproducing competitor prover systems.
 
 ## Frozen comparisons and limits
 

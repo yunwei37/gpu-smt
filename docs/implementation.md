@@ -68,8 +68,9 @@ throughput pair. All42 historical allocation failures have since completed
 exclusive uncapped retries:41 aggregate-budget failures and one timeout,
 with no accepted result. [Current results](evaluation.md) keep these resource
 points separate. The48 interval_cases import/prototype repair has also completed, with all48
-timeouts on each side and no early-failure coverage. The original lean-mlir
-measurement follows its ingestion.
+timeouts on each side and no early-failure coverage. The first original lean-mlir module has now completed file/stdin/native-profile
+execution with equal successful responses; its42 trace threads are not measured
+CPU utilization or an Amdahl partition.
 
 ## Semantic guarantees and tests
 
@@ -114,8 +115,8 @@ This preserves lean-mlir upstream --tstack=400000. The optional source-file
 backend/CLI now verifies original file bytes before invoking that exact path,
 scopes identity by file path and shares existing resource/retirement handling.
 Pinned-Lean4.18 original-file native differential cases execute successfully
-at ad7ecdc. This does not establish the pending nightly original-file/stdin
-or complete bv_decide workload result.
+at ad7ecdc. The first nightly original-file/stdin/profile module now returns equal native
+success; full workload scope and acceleration remain open.
 
 A [separate interval-continuation prototype](../bench/lean-failure-profile/interval-continuation/README.md)
 now compiles against the retained4.9API. It defers proof-tree leaves until a

@@ -21,3 +21,14 @@ with that single collection, reason about a sufficient native-state condition
 for simp_all failure and the reusable engine. Keep prediction separate from
 proof, and resource primitives separate from scientific novelty. Actual
 workload data must decide which expensive work the method can remove.
+
+## Follow-through — original compiler measurement completes
+
+Step0068 executes the original module, stdin and native profile, with equal
+native success. The actual profile now identifies LRAT verification/kernel
+work as a concrete target. Preserve the large diagnostic overhead and
+cross-thread wall overlap: a phase total is not a speedup bound. Next work
+must reduce useful certificate/checking work without skipping native checks,
+while Mathlib COW and sufficient failure detection still need their own
+complete evidence. Update the existing paper and public frontier and commit
+the raw result now; do not spend this outcome on another narrow LP kernel.
