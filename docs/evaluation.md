@@ -119,6 +119,13 @@ Released candidates are replay inputs, not generator arrival traces.
 Old unbudgeted/OOM/ENOSPC captures remain stopped partial records; do not pool
 them with the current point. [ENOSPC preservation/repair](../artifacts/linarith-oracle-2026-10-17/enospc-recovery-20261020T0840/README.md).
 
+The [shared-CNF source/contract preparation](../artifacts/lean-code-verification-2026-10-25/shared-cnf-contract-20261027/README.md)
+identifies that the native certificate-check span includes reflective CNF
+reconstruction and LRAT parsing/checking. Source-level duplication does not
+measure how much work is expensive or physically reusable. The bridge is an
+uncompiled draft,not a tactic,checked theorem,GPU method or measured speedup.
+No new compiler/native collection competes with the active fullpair.
+
 ## Completed GPU counterexample pair
 
 [Complete corrected native/GPU pair](../artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md):

@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-27T08:01:45.000228+00:00",
+  "locations": [
+    {
+      "native_source": "Lean/Elab/Tactic/BVDecide/Frontend/BVDecide.lean",
+      "line": 321,
+      "declaration": "def lratBitblaster",
+      "source_observation": "pre-solver bitblast/CNF construction"
+    },
+    {
+      "native_source": "Lean/Elab/Tactic/BVDecide/Frontend/BVDecide.lean",
+      "line": 276,
+      "declaration": "def LratCert.toReflectionProof",
+      "source_observation": "closed reflection definition/ofReduceBool/mkAuxLemma scope"
+    },
+    {
+      "native_source": "Std/Tactic/BVDecide/Reflect.lean",
+      "line": 170,
+      "declaration": "def verifyCert",
+      "source_observation": "LRAT parsing and unchanged checker"
+    },
+    {
+      "native_source": "Std/Tactic/BVDecide/Reflect.lean",
+      "line": 186,
+      "declaration": "def verifyBVExpr",
+      "source_observation": "native reflective CNF reconstruction"
+    },
+    {
+      "native_source": "Std/Tactic/BVDecide/Reflect.lean",
+      "line": 189,
+      "declaration": "theorem unsat_of_verifyBVExpr_eq_true",
+      "source_observation": "existing checked semantic bridge"
+    },
+    {
+      "native_source": "Std/Tactic/BVDecide/LRAT/Internal/LRATChecker.lean",
+      "line": 32,
+      "declaration": "def lratChecker",
+      "source_observation": "sequential formula-state transitions"
+    }
+  ],
+  "scope": "source control flow only;not a timing or batchability measurement"
+}

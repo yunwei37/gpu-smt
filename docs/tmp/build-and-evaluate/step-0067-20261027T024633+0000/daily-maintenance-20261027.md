@@ -101,3 +101,13 @@ is green,but the new release freeze is still incomplete. The substantial next
 step is matched native execution after that slot frees,not more frontend
 options or diagnostics. Early-failure witness and certificate mechanisms remain
 open;the already negative Map/closed-tail variants are not repeated.
+
+## Check actual trusted work,not only trace names —07:59UTC
+
+Pinned source shows CNF reconstruction and LRAT parsing inside certificate
+reflection;sequential formula updates constrain naive batching. Step0076keeps
+an explicit native-correspondence contract draft for possible within-proof
+sharing. It is uncompiled and has no tactic/runtime/novelty qualification.
+The useful next question is whether actual compiled-value sharing survives
+compilation barriers and complete-module costs,not whether the old trace label
+can be called GPU work. Keep all tests/builds pending the free resource slot.

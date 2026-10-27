@@ -174,6 +174,15 @@ the raw response. [Observed-response regression and scope](../artifacts/engine-l
 The active capture continues using its original executable; the fix applies
 to subsequent builds.
 
+The pinned4.27source also shows that verifyBVExpr rebuilds bitblast/CNF and
+verifyCert parses LRAT inside the enclosing certificate-check reflection.
+[Source evidence and uncompiled contract draft](../artifacts/lean-code-verification-2026-10-25/shared-cnf-contract-20261027/README.md)
+prepare a possible within-proof shared closed-CNF declaration with exact native
+correspondence and unchanged certificate checking. No tactic is implemented,
+no theorem is compiled,and physical meta/native value sharing is unverified.
+Sequential LRAT formula updates constrain batching;their dependency width and
+the actual stage-cost split are unknown. Ordinary sharing alone is not novelty.
+
 The code-verification/math workloads and all four paper RQs remain open.
 
 CPU oracle source/data are frozen baselines and must not be optimized or

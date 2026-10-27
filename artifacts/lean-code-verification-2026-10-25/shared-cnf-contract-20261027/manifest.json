@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-27T07:59:39.067762+00:00",
+  "native_sdk": "lean-4.27.0-nightly-2025-12-01-linux",
+  "existing_frontend_snapshots_equal_current_sdk": true,
+  "frontend_snapshot_home": "artifacts/lean-code-verification-2026-10-25/native-bv-stage-map-20261026",
+  "additional_native_sources": [
+    {
+      "native_path": "Std/Tactic/BVDecide/Reflect.lean",
+      "archive": "Std--Tactic--BVDecide--Reflect.lean.gz",
+      "bytes": 6391,
+      "license": "upstream Apache-2.0 header preserved"
+    },
+    {
+      "native_path": "Std/Tactic/BVDecide/LRAT/Checker.lean",
+      "archive": "Std--Tactic--BVDecide--LRAT--Checker.lean.gz",
+      "bytes": 2795,
+      "license": "upstream Apache-2.0 header preserved"
+    },
+    {
+      "native_path": "Std/Tactic/BVDecide/LRAT/Internal/LRATChecker.lean",
+      "archive": "Std--Tactic--BVDecide--LRAT--Internal--LRATChecker.lean.gz",
+      "bytes": 1470,
+      "license": "upstream Apache-2.0 header preserved"
+    }
+  ],
+  "prototype": "CnfBridge.lean",
+  "prototype_status": "uncompiled contract draft only;not tactic implementation or validated theorem",
+  "native_candidate_executions": 0,
+  "new_collections_started": 0,
+  "active_capture_modified": false,
+  "source_observation": "frontend bitblasts/CNF-converts before runExternal;verifyBVExpr constructs CNF again and verifyCert parses LRAT text then invokes LRAT.check;ofReduceBool wrapped by mkAuxLemma is the enclosing verification span",
+  "quantitative_unknowns": [
+    "cost of repeated construction versus LRAT parsing/RUP/RAT",
+    "whether generated closed CNF can physically share compiled value across meta evaluation and native reflection",
+    "compilation/checked-environment barrier cost",
+    "certificate dependency DAG width and actual GPU batchability",
+    "whole-module speedup and accepted-set behavior"
+  ],
+  "contract": "supplied CNF must equal exact native CNF of reflected expression and original native verifyCert must return true;no arbitrary host CNF trusted",
+  "scope": "within one certificate construction,not cross-candidate prefix/certificate reuse;ordinary computation sharing is not by itself novelty"
+}
