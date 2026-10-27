@@ -67,8 +67,9 @@ cell completed, but its prepared cell failed with ENOSPC; it is not a complete
 throughput pair. All42 historical allocation failures have since completed
 exclusive uncapped retries:41 aggregate-budget failures and one timeout,
 with no accepted result. [Current results](evaluation.md) keep these resource
-points separate. The sole active group now repairs the48 interval_cases
-import/prototype comparison; the original lean-mlir measurement follows it.
+points separate. The48 interval_cases import/prototype repair has also completed, with all48
+timeouts on each side and no early-failure coverage. The original lean-mlir
+measurement follows its ingestion.
 
 ## Semantic guarantees and tests
 
@@ -125,8 +126,8 @@ The first-stage IntervalMap permits open survivors and leaves later suffix
 stages outside the per-leaf callback. All48sources/116calls parse. The first
 cohort attempt had a missing import path, so its48 fast failures are invalid.
 With both Map and Continuation paths restored,22 actual control sources
-match their expected native/prototype statuses; the scoped48 comparison
-is still running.
+match their expected native/prototype statuses. Both complete48 comparison
+cells still return48timeouts; no reliable early failure is established.
 [Implementation](../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md),
 [actual controls and repair](../artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md).
 Native left-associative

@@ -104,7 +104,11 @@ aggregate watchdog records no kills or errors.
 The completed 480-source failure profile attributes 55.19% of observed
 timeout thread CPU to interval_cases and 28.21% to simp_all. All selected
 statuses are unchanged. These diagnostic fractions are not total elapsed-time
-fractions or a proven early-rejection mechanism.
+fractions or a proven early-rejection mechanism. The
+[completed48-source interval prototype](artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md)
+still times out on all48 sources, matching its import control: reliable
+early-failure coverage is0/48. Its shorter collection clock has different
+memory preemptions and does not establish whole-verifier acceleration.
 
 Four directions continue: the layered Rust engine, reliable early failure/timeout determination,
 same-task ranking/cancellation for pass@k or best-of-n, and public Lean

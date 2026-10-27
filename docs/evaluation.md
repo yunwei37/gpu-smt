@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open work
 
-Updated2026-10-26UTC. This thread alone implements, runs, analyzes and writes.
+Updated2026-10-27UTC. This thread alone implements, runs, analyzes and writes.
 All reviews are self-review, not independent audit. The original
 [Initial Narrative/fourRQs](idea-story.md) and ambitious systems goal remain
 open; tests, setup and a compiled paper do not establish OSDI contribution.
@@ -32,9 +32,14 @@ The [actual23-source phase run](../artifacts/hotspot-mechanisms-2026-10-25/origi
 distinguishes eight repeated outer-invocation cases from six repeated inner-round
 cases among the prior14short-call sources. Instrumentation produces three
 runtime recursion failures and20timeouts;it is not qualified as transparent.
-The48interval import controls failed to load IntervalMap because the execution
-path omitted its compiled directory. All invalid data are preserved;the path
-is repaired for a scoped rerun. No early-failure coverage or speedup follows.
+The initial48 interval import controls failed to load IntervalMap because
+the execution path omitted its compiled directory. That invalid data remains.
+The [completed scoped repair](../artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md)
+loads both modules and matches all11 native/map control pairs. Both original
+import and on-demand mapped48 cohorts still return48timeouts:0/48 reliable
+early-failure coverage. Cell clocks6021.886333/5117.085469s differ with3/1memory
+preemptions and support CPU overlap; they do not establish causal speedup.
+Sampled peaks48.140190/48.053036GiB and complete retirement are preserved.
 
 The latest user decision removes the earlier1.3x admission condition,
 2026-11-01 deadline and conditional short-paper closure. Goal stays active.
