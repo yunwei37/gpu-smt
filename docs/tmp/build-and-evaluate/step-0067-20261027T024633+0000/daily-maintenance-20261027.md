@@ -148,3 +148,16 @@ during certificate checking to improve whole verification once its compiled
 declaration and fallback costs are charged? Compare native,import-only,explicit
 core and public fallback in one sole group;retain failures and exact source
 transforms. Resource/COW controls alone cannot establish that mechanism.
+
+## Actual method result and next executable hypothesis
+
+The complete closed-CNF original-module comparison now checks successfully but
+takes57.98/56.91s(core/public) versus40.15s native;import-only40.34s. Small
+preflight success did not generalize. Preserve exact inputs,raw output,resource
+logs and negative result;do not enable it by default or invent a phase cause.
+Canonical evaluation476lines had stale contradictory statuses;132line frontier
+now links full byte-preserved/readable history. Next substantial step is the
+already implemented measured-sibling memory policy:does less redundant
+preemption outweigh conservative reservation on32real queued originals?
+Run FIFO and task-memory on identical resources;report actual whole time,
+retry outcomes and selection bias. Source lexical fit remains negative.

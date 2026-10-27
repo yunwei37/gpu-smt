@@ -55,3 +55,7 @@ No original-module accepted-set conclusion,GPU implementation or novelty is
 claimed. Ordinary within-proof sharing alone is not a paper contribution.
 The frozen arithmetic CPU oracle and excluded cross-candidate prefix/certificate
 reuse are not part of this implementation.
+
+## Original-module measurement
+
+[Whole-module result](../../artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) now executes all89active original tactic sites: native40.146047s,import-only40.338398s,core57.984536s,public56.912237s. All four check successfully with equal native responses;core44.43%slower/public41.76%slower in one ordered observation. No default enablement,physical-sharing or gain claim. Unit/preflight success did not predict full benefit;original source/config,raw output and failures remain.

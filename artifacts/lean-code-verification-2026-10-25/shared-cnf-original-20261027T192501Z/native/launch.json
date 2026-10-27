@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-27T19:25:08.397355+00:00",
+  "pid": 485404,
+  "start_ticks": 156048039,
+  "command": [
+    "/tmp/gpu-smt-shared-cnf-original-20261027T192501Z/gpu-smt",
+    "check",
+    "--lean",
+    "/tmp/gpu-smt-code-verification-20261025/leanmlir-sdk/lean-4.27.0-nightly-2025-12-01-linux/bin/lean",
+    "--project",
+    "/tmp/gpu-smt-code-verification-20261025/lean-mlir",
+    "--environment",
+    "leanmlir-b8c4a771-shared-cnf",
+    "--cpus",
+    "8,9,10,11",
+    "--worker-cores",
+    "4",
+    "--memory-gib",
+    "48",
+    "--lean-arg",
+    "--tstack=400000",
+    "--stderr-dir",
+    "/tmp/gpu-smt-shared-cnf-original-20261027T192501Z/native/native-stderr",
+    "--source-file",
+    "/tmp/gpu-smt-shared-cnf-original-20261027T192501Z/native/Input.lean"
+  ]
+}

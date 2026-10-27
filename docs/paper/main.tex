@@ -903,6 +903,29 @@ to the uninstrumented run. This module supplies a concrete certificate-checking
 target; it does not establish that this work can be removed or accelerated
 while preserving native checking.
 
+\paragraph{Closed-CNF checking ablation.}
+We test an opt-in frontend that compiles one closed CNF declaration for
+consumption by the existing SAT search and native certificate reflection.
+The proof still requires correspondence to the original reflected expression
+and acceptance by the native certificate checker. On the same complete
+compiler module, replacing its 89 active tactic sites preserves the original
+statements, comments and configuration. Native, import-only, explicit-core
+and public-fallback conditions all check successfully with equal native
+responses. Their complete CLI times are 40.15, 40.34, 57.98 and 56.91 seconds.
+The explicit core is 44.43\% slower and public frontend 41.76\% slower than
+the matched native condition in this single ordered observation.
+A successful, faster first-theorem preflight did not predict whole-module benefit.
+
+These clocks include runtime declaration compilation, search, checking,
+fallback when used and retirement; dependency-library compilation is prepared
+before collection, and archival is recorded separately. All cells use the
+same four-core lease and 48\,GiB sampled budget, without preemption or retry.
+One symbolic CNF reference does not establish one physical construction,
+and this comparison does not attribute the slowdown among compilation,
+evaluation and certificate checking. The public variant's fallback engagement
+is not measured. This local negative result neither supplies a GPU gain nor
+establishes a general limit on certificate-checking acceleration.
+
 \subsection{Heterogeneous execution}
 RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.
 

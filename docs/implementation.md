@@ -194,7 +194,7 @@ It evaluates one closed CNF declaration for the existing solver and references
 that declaration in unchanged native certificate checking. Core/public/reference
 false controls return the same counterexample body. Unsafe meta evaluation
 does not replace the checked logical witness. The engine/default tactic is
-unchanged;physical value reuse and complete-module performance remain unmeasured.
+unchanged;physical value reuse remains unmeasured. The [actual whole-module comparison](../artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) now accepts all native/import/core/public conditions but takes40.15/40.34/57.98/56.91s. Core/public are44.43%/41.76%slower in this ordered observation. Keep the prototype opt-in;small control success is not whole-module benefit.
 Sequential LRAT formula updates constrain batching;their dependency width and
 the actual stage-cost split are unknown. Ordinary sharing alone is not novelty.
 

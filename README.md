@@ -186,6 +186,9 @@ partitions. Only one full acquisition group runs at a time.
 Older unbudgeted captures and captures with 48 GiB per worker are stopped partial records;
 their results are not pooled with this resource point.
 
+
+The [own closed-CNF whole-module test](artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) also completes: native40.15s,import-only40.34s,core57.98s,public56.91s. All four verify successfully,but the method is slower in this observation. It remains an explicit research prototype;no default enablement or GPU-gain claim.
+
 ## Completed measurements
 
 **No useful extra end-to-end GPU acceleration over the strongest measured CPU
