@@ -11,8 +11,9 @@ proof constructors while visiting leaves depth-first. The caller supplies a
 continuation that must close the current leaf. A failure stops traversal; the
 frontend restores saved tactic state before propagating the failure.
 Successful calls leave a native proof for the normal Lean checker.
-The implementation has nine small native paired controls, detailed below;
-original-cohort behavior and performance remain unmeasured.
+The closing-continuation implementation has nine small native paired controls.
+The separate first-stage Map variant now also has a completed original48
+comparison,documented below. Neither establishes a reliable rejection rule.
 
 The opt-in syntax is interval_cases_then n => omega (for example). It supports
 inferred Nat/Int bounds and closing single-leaf continuations, not arbitrary
@@ -73,7 +74,7 @@ transparent automatic rewrite or a sufficient failure certificate. It is
 disabled in the engine. Keep unknown fallback; do not infer guaranteed timeout
 from syntactic range count or failed speculative leaves.
 
-## First-stage map (runtime qualification pending)
+## First-stage map — completed scoped original48 comparison
 
 [IntervalMap.lean](IntervalMap.lean) adds a separate opt-in form which allows
 surviving goals. It interleaves one pruning stage with interval construction,
@@ -104,8 +105,15 @@ pass native parsing. First stages:19norm_num,17omega,12simp_all. Only the19
 norm_num sources have a later stage suffix. [Evidence and pending controls](../../../artifacts/hotspot-mechanisms-2026-10-25/interval-continuation/first-stage-map/README.md).
 
 Definition compilation and parsing do not execute proofs. The22prepared
-native/map controls (11pairs) and original48runtime comparison remain pending
-the sole acquisition slot. No reliable-failure or speedup result follows.
+native/map controls (11pairs) and original48runtime comparison have completed.
+The [scoped import-path repair](../../../artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md)
+preserves the initial invalid missing-import run. With both native prototype
+modules available,the11control pairs agree. Original import and Map conditions
+both return48timeouts:0/48 reliable early-failure coverage. Complete cell clocks
+are6021.886333s and5117.085469s,but3versus1preemptions and supportCPUoverlap
+prevent a causal speedup claim. Sampled peaks48.140190/48.053036GiB disclose
+watchdog overshoot. All owned work retires. This does not qualify the more
+general closing-continuation variant or transparent original-population reuse.
 Native left-associated eager staging and this construction/first-stage
 interleaving still differ in metavariable history, recovery, tags and resources;
 this is not an automatic service rewrite or transparent rejection path.

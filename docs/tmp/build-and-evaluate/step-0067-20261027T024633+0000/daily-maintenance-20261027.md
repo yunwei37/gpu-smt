@@ -64,3 +64,15 @@ Keep the current frozen full pair unchanged,then measure native admission/
 throughput once it retires. Continue work on actually removable failed or
 certificate work;source correlation and an implemented interface are not a
 research contribution. Public architecture/example/API docs now match code.
+
+## Native qualification and stale-guide cleanup —04:55UTC
+
+The actual backend-to-policy semantic gap now has an extended existing native
+CI case,not another fixture-only claim or local concurrent capture. It is
+now actually executed successfully in hosted4.18CI at81fe7cc;the exact native
+step log and source/job receipt are retained in step0072. This does not measure
+original4.9performance. The current simp and interval guides have also been
+reconciled to completed23/48results,including runtime faults,zero reliable
+coverage and noncomparable clocks. Preserve raw historical classifications.
+This avoids presenting completed negative data as unfinished preparation;
+the remaining obstacle is a sufficient effective mechanism,not more logging.

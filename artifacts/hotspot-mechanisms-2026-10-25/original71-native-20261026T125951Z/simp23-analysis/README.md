@@ -5,6 +5,10 @@ condition returns20timeouts and3service rejections. The latter are native
 runtime deep-recursion failures at interpreter(175),replace(1816),and expression
 equality test(6807),not validated logical failure certificates. The observer
 therefore is not qualified as transparent on the whole23cohort.
+The three service-rejection labels describe the historical frontend output,
+not logical rejection. The later native-runtime classification repair988de45
+requires a recognized native JSON error before rejection;these exact observed
+responses are backend runtime faults. All raw historical labels remain unchanged.
 
 Reuse the existing phase analyzer with exact source/call-position mapping and
 each PID/birth-attributed attempt log. No new observer or parser is added.
