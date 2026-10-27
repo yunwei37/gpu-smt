@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-27T06:52:54.977930+00:00",
+  "source_capture": "artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/native/capture.json.gz",
+  "source_version": "42659a8",
+  "source_candidates": 7808,
+  "source_tasks": 244,
+  "selected_candidates": 32,
+  "selected_tasks": [
+    "amc12a_2020_p4",
+    "mathd_numbertheory_483",
+    "aime_1983_p2",
+    "aime_1989_p8"
+  ],
+  "resource_tail_tasks": {
+    "amc12a_2020_p4": 29,
+    "mathd_numbertheory_483": 9
+  },
+  "ordinary_tasks": [
+    "aime_1983_p2",
+    "aime_1989_p8"
+  ],
+  "selected_prior_statuses": {
+    "rejected": 7,
+    "resource_exhausted": 9,
+    "accepted": 16
+  },
+  "selected_prior_preempted_candidates": 9,
+  "selected_prior_accumulated_attempt_seconds": 2906.130923099,
+  "selected_prior_unknown_peak_count": 0,
+  "original_batch_order_preserved": true,
+  "original_candidate_fields_preserved": true,
+  "input_json_bytes": 72142,
+  "mode": "all",
+  "reuse": false,
+  "timeout_ms": 300000,
+  "selection": "two highest-resource-failure tasks plus two lexical-first complete stable tasks with acceptance and positive maximum observed peak <=8GiB;first8original submissions per task;global original order",
+  "scope": "outcome-informed development cohort,not blind/unbiased throughput evidence;prior statuses are observations,not injected results",
+  "native_candidate_executions": 0,
+  "new_collections_started": 0,
+  "clock_scope": "accumulated concurrent attempt elapsed is not removable wall or an Amdahl bound",
+  "future_reference": "fresh FIFO versus fresh TaskMemory on same pinned native environment/resources/bytes after current sole group retires"
+}

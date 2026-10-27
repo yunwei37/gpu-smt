@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-27T06:54:33.585937+00:00",
+  "head_sha": "596a6a27d7d775f8ea1327721ea59ac8e425972f",
+  "workflow_run": 40457363047,
+  "conclusion": "success",
+  "jobs": [
+    {
+      "job_id": 122033703651,
+      "name": "native-repl-contract",
+      "conclusion": "success",
+      "started_at": "2026-10-27T05:48:04Z",
+      "completed_at": "2026-10-27T05:49:43Z",
+      "log": "native-repl-contract-selected-test-step.log.gz",
+      "retained_line_start": 467,
+      "retained_line_end": 559,
+      "whole_job_lines": 576,
+      "selected_bytes": 7150
+    },
+    {
+      "job_id": 122033703766,
+      "name": "rust",
+      "conclusion": "success",
+      "started_at": "2026-10-27T05:48:04Z",
+      "completed_at": "2026-10-27T05:49:33Z",
+      "log": "rust-selected-test-step.log.gz",
+      "retained_line_start": 549,
+      "retained_line_end": 759,
+      "whole_job_lines": 794,
+      "selected_bytes": 16937
+    }
+  ],
+  "benchmark_smoke_run": 40457363062,
+  "benchmark_smoke_conclusion": "success",
+  "scope": "existing hosted CI; process CLI fixture and pinned4.18native controls,not original4.9performance or independent research audit"
+}

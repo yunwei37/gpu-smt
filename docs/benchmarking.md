@@ -79,6 +79,14 @@ fixtures qualify selection/capture/retirement. Neither supplies original4.9
 whole-workload throughput or a novelty claim. The task-memory CLI variant does
 not interleave task groups;library callers can compose wrappers separately.
 
+The [prepared real32development input](../artifacts/engine-resource-profile-2026-10-25/task-memory-preflight-20261027/README.md)
+preserves exact original candidate bytes/fields and prior outcomes. It uses
+outcome-informed heavy/ordinary task selection,not an unbiased full workload.
+No native comparison has started. The local release build is interrupted by
+combined48GiBpressure;do not use a stale executable or call input readiness
+execution completion. Keep the active collection unchanged and compile/freeze
+the measured executable when the resource/collection slot is actually free.
+
 ## Pair completed captures
 
     gpu-smt compare baseline.json candidate.json > comparison.json

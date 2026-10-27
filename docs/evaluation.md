@@ -47,6 +47,12 @@ The existing CLI now accepts --policy task-memory for check/measure/serve,
 so the method can use the same capture/compare path with FIFO ranking and
 unchanged schemas. [Executable red/green qualification](tmp/build-and-evaluate/step-0074-20261027T054550+0000/step-report.md)
 passes17process/API tests;these do not substitute for original native throughput.
+Its596a6a2hostedCI is now complete. A [real32-source development cohort](../artifacts/engine-resource-profile-2026-10-25/task-memory-preflight-20261027/README.md)
+preserves16prioraccepted/7rejected/9resource-failed candidates. Selection uses
+old outcomes and is not representative final evidence. It has not run;the
+local release freeze is aborted by combined support monitoring at48.326897GiB,
+with only the new compiler killed and original capture preserved. Inputs are
+ready,qualified new release/performance data are not. [Exact follow-through](tmp/build-and-evaluate/step-0075-20261027T065210+0000/step-report.md).
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The first unchanged compiler bitvector module now completes file/stdin/profile execution; its detailed diagnostic scope is recorded below.
 

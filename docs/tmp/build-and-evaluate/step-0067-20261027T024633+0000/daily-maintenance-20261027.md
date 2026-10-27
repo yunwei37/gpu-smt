@@ -87,3 +87,17 @@ execution gap,not a new scientific claim. The important unknown remains
 whether fewer resource preemptions outweigh overreservation in the original
 full workload;measure after the frozen pair retires,with all operational and
 accepted-set changes exposed. Keep source prediction distinct from proof.
+
+## Actual stress input and resource contention —06:59UTC
+
+The32real-input development cohort is ready with original bytes/order and
+16prioraccepted/7rejected/9preempted-resource histories. This directly tests
+whether measured sibling cost avoids duplicated preemption;it cannot rescue
+intrinsic solo48GiBfailures and its selected prior work is not a wall bound.
+The actual local release attempt is stopped by support monitoring at48.3269GiB.
+Preserve it as partial,and keep the original full capture unchanged instead of
+retrying a compiler into the same pressure. The executable source's hostedCI
+is green,but the new release freeze is still incomplete. The substantial next
+step is matched native execution after that slot frees,not more frontend
+options or diagnostics. Early-failure witness and certificate mechanisms remain
+open;the already negative Map/closed-tail variants are not repeated.
