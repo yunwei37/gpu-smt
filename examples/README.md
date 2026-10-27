@@ -65,6 +65,8 @@ unknown tasks keep their original forecast. Use a fresh wrapper per workload
 or clear_memory. A heavy sibling can cause overreservation. Keep normal
 admission/watchdog/exclusive retry and qualify on native workloads before any
 performance claim; fixture tests are not that qualification.
+[Existing official4.18nativeCI controls](../docs/tmp/build-and-evaluate/step-0072-20261027T044950+0000/experiment-001/result-review.md)
+now execute actual feedback/raw-response checks,not original4.9performance.
 
 ## Matched native/prepared resource pair
 

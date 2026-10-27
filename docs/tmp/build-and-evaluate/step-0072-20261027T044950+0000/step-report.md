@@ -1,4 +1,4 @@
-# Step0072 — native feedback differential extends existing CI
+# Step0072 — native feedback differential qualified in existing CI
 
 2026-10-27;root only,main. A supporting semantic qualification node for99709ec.
 
@@ -11,14 +11,20 @@ A test-local probe records actual callbacks;TaskMemory learns measured retired
 attempt peaks,not synthetic values or source/verdict predictions. Test requires
 exact raw-native responses,positive actual peaks,causal maximum forecast,
 context/task/timeout isolation and no rejected-teacher poisoning.
-[Result review](experiment-001/result-review.md) is explicitly native-pending.
-Ignored test compiles,workspace Clippy and formatting pass. No local native
-runtime proof or population parity follows. Push this concrete source boundary
-so existingCI can execute;collect its actual conclusion before qualification.
+[Result review](experiment-001/result-review.md) retains initial native-pending
+entry and actual completion. Local no-run compilation/Clippy/format pass.
+Exact source81fe7cc now completes existing official4.18nativeCI:all4native
+functions pass with0ignored;the changed task-memory case explicitly executes.
+It checks actual retired peak publication,scoped forecast and exact raw native
+payload,including acceptance after rejected/incomplete same-task work.
+[Retained native log](experiment-001/native-ci-differential-step.log.gz) and
+[receipt](experiment-001/native-ci-receipt.json) identify the context/job/source.
+This is bounded native control qualification,not4.9Mathlib population/throughput.
 
 ## WRITE_GATE
 
-Public implementation records this native execution as pending. Full paper
+Public implementation now distinguishes completed4.18native controls from
+still-pending original4.9workload/performance qualification. Full paper
 writing/milestone review do not enter for test-source preparation;fourRQs and
 35page paper remain unchanged. No new scientific claim.
 
@@ -26,10 +32,13 @@ writing/milestone review do not enter for test-source preparation;fourRQs and
 
 [Outer self-audit](outer-audit.md) checks real-backend rather than fixture-only
 intent,no duplicated opaque encoding,default unchanged and original capture
-preserved. This is self-review,not independent audit. CI execution is pending.
+preserved. This is self-review,not independent audit. Actual completedCI log confirms
+execution rather than merely source/compile preparation.
 
 ## Next
 
-Observe actual existingCI completion once after useful independent work,
-preserve relevant native job evidence and update this result. Keep original
-full pair running;no reset,restart,extra collection or performance claim.
+The actual existingCI completion has been collected once after independent
+guide maintenance. Commit/push its bounded evidence now. Keep original full
+pair running unchanged;after actual retirement,qualify/compare this policy on
+matched original native resources. No reset,restart,extra local collection or
+throughput claim from hosted tests.

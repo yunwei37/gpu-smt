@@ -56,10 +56,13 @@ History can be explicitly cleared and should be scoped to an engine/workload.
 This library mechanism is not active in the frozen full pair; fixture tests
 prove causality/composition only, with native memory/throughput qualification
 still pending. There is no new CLI default or service.
-The existing pinned-native CI test now also requires real retired-attempt
-feedback to match recorded RSS,scoped same-task forecasts,and an accepted
-sibling after native rejection. Local no-run compilation passes;execution of
-this extended case is pending and is not covered by the earlier CI result.
+The extended existing pinned-native CI test now executes at81fe7cc:real
+retired-attempt feedback matches recorded RSS,same-task forecasts remain
+scoped,and an accepted sibling follows native rejection/incompleteness.
+All4native test functions pass with0ignored under officialLean4.18/REPL2f0a3cb.
+[Exact source/job/log evidence](tmp/build-and-evaluate/step-0072-20261027T044950+0000/experiment-001/result-review.md)
+qualifies this small semantic context,not original4.9Mathlib throughput or
+full accepted-set equivalence. The active full pair remains unchanged.
 
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive

@@ -113,7 +113,10 @@ consumes memory. Scope the wrapper to a workload/engine lifetime or clear_memory
 The default remains unchanged; watchdog, exclusive retry and parent retirement
 are still required. Causal fixture tests establish queue refresh/composition,
 not native benefit, safe memory prediction or a scientific novelty result.
-Native qualification waits until the current frozen full pair retires.
+Pinned4.18native CI now executes feedback/response/retirement controls;
+[exact evidence](tmp/build-and-evaluate/step-0072-20261027T044950+0000/experiment-001/result-review.md)
+is separate from original4.9workload/performance qualification,which still
+waits until the current frozen full pair retires.
 
 RL mode produces every candidate outcome. Pass@k cancels siblings only after an
 actually checked same-task acceptance. Cancellation is a consumer outcome, never

@@ -37,9 +37,11 @@ do not establish full parity or a final throughput result.
 now provides opt-in TaskMemory<P> and queued forecast refresh after actual
 physical-attempt observations. Missing feedback fails a causal fixture;
 restoration passes22engine integration tests,1unit and1public doctest,plus
-workspace compilation/Clippy/format. No native workload runs for this policy
-yet. It shares no verdict and can overreserve heterogeneous siblings;lower-
-bound peaks are not a memory guarantee. Default/current full pair is unchanged.
+workspace compilation/Clippy/format. The [extended pinned4.18native CI](tmp/build-and-evaluate/step-0072-20261027T044950+0000/experiment-001/result-review.md)
+now executes real feedback/raw-response controls at81fe7cc,all4test functions
+passing with0ignored. Original4.9workload/performance qualification remains
+pending. It shares no verdict and can overreserve heterogeneous siblings;
+lower-bound peaks are not a memory guarantee. Default/current pair is unchanged.
 This is engineering qualification,not novelty or a measured throughput gain.
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The first unchanged compiler bitvector module now completes file/stdin/profile execution; its detailed diagnostic scope is recorded below.
