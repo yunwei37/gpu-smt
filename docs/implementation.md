@@ -56,6 +56,10 @@ History can be explicitly cleared and should be scoped to an engine/workload.
 This library mechanism is not active in the frozen full pair; fixture tests
 prove causality/composition only, with native memory/throughput qualification
 still pending. There is no new CLI default or service.
+The existing pinned-native CI test now also requires real retired-attempt
+feedback to match recorded RSS,scoped same-task forecasts,and an accepted
+sibling after native rejection. Local no-run compilation passes;execution of
+this extended case is pending and is not covered by the earlier CI result.
 
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive

@@ -1,7 +1,8 @@
 //! Explicit native environment test, not a mocked verifier.
 use gpu_smt_core::*;
 use gpu_smt_engine::{
-    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, TaskInterleave, linux::ProcMonitor,
+    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, TaskInterleave, TaskMemory,
+    linux::ProcMonitor,
 };
 use gpu_smt_lean::NativeRepl;
 use std::{path::PathBuf, process::Stdio, sync::Arc};
@@ -9,7 +10,7 @@ use tokio::io::AsyncWriteExt;
 
 #[tokio::test]
 #[ignore = "requires LEAN_REPL and LEAN_PROJECT; run when the sole native collection slot is free"]
-async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
+async fn native_task_memory_accept_reject_and_sorry_match_raw_stock_repl() {
     let program = PathBuf::from(std::env::var("LEAN_REPL").expect("LEAN_REPL"));
     let project = PathBuf::from(std::env::var("LEAN_PROJECT").expect("LEAN_PROJECT"));
     let backend = NativeRepl {
@@ -29,6 +30,27 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
         .unwrap()
         .parse()
         .unwrap();
+    // Test-local capture of the actual opaque observation context. No encoding
+    // assumption, RSS injection or copied native verdict participates.
+    struct NativeFeedback(Arc<std::sync::Mutex<Vec<(String, String, u64)>>>);
+    impl SchedulingPolicy for NativeFeedback {
+        fn priority(&self, _: &Candidate) -> u64 {
+            0
+        }
+        fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+            Some(1)
+        }
+        fn observe_rss(&self, c: &Candidate, context: &str, bytes: u64) {
+            self.0
+                .lock()
+                .unwrap()
+                .push((c.id.clone(), context.into(), bytes));
+        }
+    }
+    let observations = Arc::new(std::sync::Mutex::new(Vec::new()));
+    let policy = Arc::new(TaskInterleave::new(TaskMemory::new(NativeFeedback(
+        observations.clone(),
+    ))));
     let engine = Engine::new(
         Config {
             memory_bytes: 48 * 1024 * 1024 * 1024,
@@ -36,7 +58,7 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
             cores_per_worker: 1,
         },
         Arc::new(backend),
-        Arc::new(TaskInterleave::new(Fifo)),
+        policy.clone(),
         Arc::new(ProcMonitor::default()),
         Arc::new(HeadroomAdmission),
         Arc::new(MemoryCache::default()),
@@ -88,7 +110,7 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
                 mode: Mode::All,
                 candidates: vec![Candidate {
                     id: i.to_string(),
-                    task_id: None,
+                    task_id: Some("native-memory-task".into()),
                     code: code.into(),
                     timeout_ms: 300000,
                     reuse: false,
@@ -102,6 +124,46 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
             Some(&payload),
             "raw native payload differs on source {i}"
         );
+        assert!(!result[0].cached && !result[0].coalesced);
+        assert_eq!(result[0].attempts.len(), 1);
+        let measured = result[0].attempts[0].peak_rss_bytes;
+        assert!(
+            measured > 0,
+            "real retired native attempt has no RSS observation"
+        );
+        let seen = observations.lock().unwrap();
+        assert_eq!(seen.len(), i + 1, "one observation per physical attempt");
+        let (id, context, bytes) = seen.last().unwrap();
+        assert_eq!(id, &i.to_string());
+        assert_eq!(*bytes, measured, "feedback differs from actual attempt");
+        let sibling = Candidate {
+            id: "unexecuted-forecast-probe".into(),
+            task_id: Some("native-memory-task".into()),
+            code: "unexecuted different source".into(),
+            timeout_ms: 300000,
+            reuse: false,
+        };
+        let observed_max = seen.iter().map(|(_, _, bytes)| *bytes).max().unwrap();
+        assert_eq!(
+            policy.refresh_rss(&sibling, context, Some(1)),
+            Some(observed_max)
+        );
+        let mut unrelated = sibling.clone();
+        unrelated.task_id = Some("another-task".into());
+        assert_eq!(policy.refresh_rss(&unrelated, context, Some(1)), Some(1));
+        unrelated = sibling.clone();
+        unrelated.timeout_ms += 1;
+        assert_eq!(policy.refresh_rss(&unrelated, context, Some(1)), Some(1));
+        assert_eq!(
+            policy.refresh_rss(&sibling, "unobserved-context", Some(1)),
+            Some(1)
+        );
+        for process in &result[0].attempts[0].processes {
+            assert!(
+                gpu_smt_engine::linux::identity(process.pid).is_err(),
+                "native child survives its published observation"
+            );
+        }
     }
     let input = |id: &str, task: &str, code: &str| Candidate {
         id: id.into(),
@@ -110,6 +172,33 @@ async fn native_accept_reject_and_sorry_match_raw_stock_repl() {
         timeout_ms: 300000,
         reuse: false,
     };
+    // Rejected and incomplete siblings above must not determine this verdict.
+    let after_failure = engine
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![input(
+                "accepted-after-failure",
+                "native-memory-task",
+                "import Init\nexample : 1 + 1 = 2 := by decide",
+            )],
+        })
+        .await
+        .unwrap();
+    assert_eq!(after_failure[0].outcome.status, Status::Accepted);
+    assert_eq!(
+        after_failure[0].outcome.response.as_ref(),
+        Some(&native_payloads[0])
+    );
+    assert_eq!(after_failure[0].attempts.len(), 1);
+    assert!(!after_failure[0].cached && !after_failure[0].coalesced);
+    assert_eq!(observations.lock().unwrap().len(), 4);
+    for process in after_failure
+        .iter()
+        .flat_map(|row| &row.attempts)
+        .flat_map(|a| &a.processes)
+    {
+        assert!(gpu_smt_engine::linux::identity(process.pid).is_err());
+    }
     let first = engine
         .verify_batch(Batch {
             mode: Mode::FirstSuccess,
