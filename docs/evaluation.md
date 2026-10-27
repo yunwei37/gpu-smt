@@ -76,6 +76,12 @@ underestimated>2x. No fit deployment.
 [Exact duplicate analysis](../artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md)
 finds only18literalNone errors duplicated,no substantive repeated proof.
 
+[Completed-reference retry occupancy](../artifacts/engine-resource-profile-2026-10-25/preemption-occupancy-20261027/result-review.md)
+joins all7852native births.44preempted-nonexclusive intervals have3514.045098s
+union(12.376891%of ownwhole);44exclusive retries9479.735897s(33.388775%).
+These overlap useful work and are not removable time,Amdahl inputs or gains.
+Actual32pair remains necessary;oversized forecasts still execute natively.
+
 ## Failure and scheduling
 
 [480failure profile](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md):

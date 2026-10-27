@@ -1,0 +1,90 @@
+{
+  "source": "artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z",
+  "reference_whole_cell_seconds": 28391.984734647,
+  "registered_native_span_seconds": 28385.458829164505,
+  "groups": {
+    "all_native": {
+      "attempts": 7852,
+      "unique_candidates": 7808,
+      "interval_union_seconds": 28384.41051363945,
+      "overlapping_interval_sum_seconds": 77857.22285103798,
+      "native_monotonic_attempt_sum_seconds": 77928.908684425,
+      "interval_union_fraction_of_reference_cell": 0.9997332267864208,
+      "final_statuses_per_attempt": {
+        "accepted": 3013,
+        "rejected": 4665,
+        "timeout": 90,
+        "resource_exhausted": 82,
+        "backend_error": 2
+      },
+      "unique_final_statuses": {
+        "accepted": 3013,
+        "rejected": 4665,
+        "timeout": 87,
+        "resource_exhausted": 41,
+        "backend_error": 2
+      }
+    },
+    "preempted_nonexclusive": {
+      "attempts": 44,
+      "unique_candidates": 44,
+      "interval_union_seconds": 3514.0450978279114,
+      "overlapping_interval_sum_seconds": 5559.9431347846985,
+      "native_monotonic_attempt_sum_seconds": 5560.318232701,
+      "interval_union_fraction_of_reference_cell": 0.12376891332784107,
+      "final_statuses_per_attempt": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      },
+      "unique_final_statuses": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      }
+    },
+    "exclusive_retry": {
+      "attempts": 44,
+      "unique_candidates": 44,
+      "interval_union_seconds": 9479.735897064209,
+      "overlapping_interval_sum_seconds": 9479.735897064209,
+      "native_monotonic_attempt_sum_seconds": 9480.134700098,
+      "interval_union_fraction_of_reference_cell": 0.33388774985836056,
+      "final_statuses_per_attempt": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      },
+      "unique_final_statuses": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      }
+    },
+    "final_resource_failure": {
+      "attempts": 82,
+      "unique_candidates": 41,
+      "interval_union_seconds": 11301.664091825485,
+      "overlapping_interval_sum_seconds": 13347.562128782272,
+      "native_monotonic_attempt_sum_seconds": 13348.291994628,
+      "interval_union_fraction_of_reference_cell": 0.3980582617753369,
+      "final_statuses_per_attempt": {
+        "resource_exhausted": 82
+      },
+      "unique_final_statuses": {
+        "resource_exhausted": 41
+      }
+    },
+    "preempted_nonexclusive_eventually_resource_failed": {
+      "attempts": 41,
+      "unique_candidates": 41,
+      "interval_union_seconds": 2726.3746275901794,
+      "overlapping_interval_sum_seconds": 4772.272664546967,
+      "native_monotonic_attempt_sum_seconds": 4772.626348368,
+      "interval_union_fraction_of_reference_cell": 0.09602620785658424,
+      "final_statuses_per_attempt": {
+        "resource_exhausted": 41
+      },
+      "unique_final_statuses": {
+        "resource_exhausted": 41
+      }
+    }
+  },
+  "scope": "UTC registration/retirement occupied-time union;not removable elapsed,Amdahl input,CPU time or counterfactual throughput"
+}

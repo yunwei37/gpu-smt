@@ -172,3 +172,12 @@ fixed32FIFO/task-memory group now runs cold histories,identical sources and
 once at termination. This advances the method beyond more unit/logging work.
 Existing evaluation anchors are restored after consolidation;failed build/raw
 records remain. No additional fullnative collection runs concurrently.
+
+## Interpret the actual retry costs
+
+While the only real32comparison runs,completed7808birth/event joins show44initial
+preemptions occupy3514.05s union,versus9479.74s exclusive retries. They ultimately
+fail operationally(41budget,3timeout);forecasting cannot simply erase solo
+checking. Occupancy is not removablewall/Amdahlshare. Oversized forecasts
+correctly get actual native exclusive attempts. Next is complete paired policy
+evidence,including overreservation and currentCPU11analysis contention.
