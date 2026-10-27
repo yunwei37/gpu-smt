@@ -206,6 +206,23 @@ invented when reading them. Aggregate48GiB enforcement still uses the complete
 owned-tree sampler, not these individual supplemental values.
 
 
+## Measured task-memory policy
+
+TaskMemory::new(Fifo) is selected by --policy task-memory at startup of check,
+measure or serve. Default FIFO is unchanged. The choice affects RSS forecasts
+only,not ranking,native code,consumer modes or verdicts. No new HTTP field,
+Batch/Candidate/Capture schema or native argument is added. Capture.policy
+records task-memory;measure starts cold history,while check/serve keep history
+for that engine lifetime.
+
+The policy observes positive retired-attempt measured peaks and refreshes
+same-task waiting reservations. Backend/resource context and timeout partition
+history. No proof result is borrowed. Peaks can be censored and heterogeneous
+siblings can overreserve,so existing watchdog/exclusive retry remains required.
+Library callers can clear_memory or compose TaskInterleave;the single CLI
+task-memory variant wraps FIFO. [Matched execution and limitations](benchmarking.md#measured-same-task-memory-policy)
+remain separate from native control semantics and measured performance.
+
 ## Stock source frontend
 
 NativeLean is a separate VerificationBackend for the SDK's lean executable.

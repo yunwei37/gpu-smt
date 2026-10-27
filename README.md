@@ -54,6 +54,10 @@ The composable task-interleave policy orders first-success work across task
 groups while retaining wrapped source ranking and memory forecasts. It is an
 ordinary scheduling component; workload-layer novelty and whole-flow benefit
 remain research questions.
+The optional --policy task-memory keeps FIFO order while learning RSS
+reservations from completed same-task attempts. It shares no proof outcome;
+[matched measurement and limits](docs/benchmarking.md#measured-same-task-memory-policy)
+separate native control qualification from still-pending throughput evidence.
 
 RL mode returns every candidate outcome. First-success mode cancels siblings
 only after checked same-task acceptance. Exact completed/in-flight reuse

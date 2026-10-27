@@ -39,7 +39,7 @@ capture/events before attributing any reuse. A measurement of the fresh backend
 does not replace the strongest warm/native reference. Keep native reference
 captures and adapters explicit.
 
-The fifo, source-size and task-interleave policies are available. Source size is an
+The fifo, source-size, task-interleave and task-memory policies are available. Source size is an
 unvalidated heuristic, not a learned predictor or a novelty claim.
 task-interleave wraps FIFO and interleaves first-success task groups; all-mode
 stays FIFO. This ordering is a prior scheduling technique, not a new contribution.
@@ -47,6 +47,37 @@ Reuse/mode/resource settings must match the intended consumer comparison.
 reuse=false gives every duplicate a fresh native execution; reuse=true
 permits exact completed and in-flight sharing in a deterministic pinned
 environment. Report reuse as part of the method.
+
+## Measured same-task memory policy
+
+Use --policy task-memory with the same check,measure or serve command to select
+TaskMemory::new(Fifo). FIFO ranking remains unchanged;only waiting RSS
+reservations learn from actual completed same-task attempt peaks. This is an
+explicit opt-in. Default FIFO and frozen captures are unchanged. Do not combine
+it with a changed CPU mask,native backend,input ordering or cache mode and
+attribute the combined difference to feedback alone.
+
+For a matched new native preflight,repeat the command above changing only
+--policy fifo to --policy task-memory and output paths. Use mode all,reuse=false,
+unchanged task IDs/timeout/source and the same48GiB/CPU8–11point when measuring
+this Workspace's population. Start only after the current sole native group
+actually retires. Both measure invocations create fresh policy history;check
+and serve retain observations for their engine lifetime. The existing
+Capture.policy field records task-memory;no schema or additional log is needed.
+
+Only positive physical-attempt observations are used,after native retirement.
+Task ID,backend/resources and timeout scope history. Different siblings can
+have different demand:a large one may overreserve or serialize small ones,
+while a preempted peak is only a lower bound. Keep the actual-RSS watchdog,
+exclusive retry,parent reclamation and every operational outcome. No result is
+predicted or reused by this policy. Report accepted-set/status differences,
+resource/preemption/retry history,tail behavior and external lifecycle clocks,
+not just memory prediction or an internal ratio.
+
+Pinned4.18native controls qualify feedback/raw-response semantics;CLI process
+fixtures qualify selection/capture/retirement. Neither supplies original4.9
+whole-workload throughput or a novelty claim. The task-memory CLI variant does
+not interleave task groups;library callers can compose wrappers separately.
 
 ## Pair completed captures
 

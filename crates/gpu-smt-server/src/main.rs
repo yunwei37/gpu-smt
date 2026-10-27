@@ -1,7 +1,7 @@
 //! Local engine executable. Library use does not require a network service.
 use gpu_smt_core::{Batch, VerificationBackend};
 use gpu_smt_engine::{
-    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, TaskInterleave,
+    Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, TaskInterleave, TaskMemory,
     linux::ProcMonitor,
 };
 use gpu_smt_lean::{NativeLean, NativeRepl};
@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--stderr-dir DIR] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--stderr-dir DIR] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave|task-memory] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -237,6 +237,7 @@ async fn run(
         "fifo" => Arc::new(Fifo),
         "source-size" => Arc::new(SourceSize),
         "task-interleave" => Arc::new(TaskInterleave::new(Fifo)),
+        "task-memory" => Arc::new(TaskMemory::new(Fifo)),
         _ => return Err("unknown scheduling policy".into()),
     };
     let backend_identity = verifier.identity();

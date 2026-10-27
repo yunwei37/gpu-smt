@@ -57,6 +57,11 @@ Library callers can pass Arc::new(TaskInterleave::new(TaskMemory::new(Fifo)))
 as Engine::new's policy. Import the three policy types from gpu_smt_engine.
 The compiled public TaskMemory example documents this composition; it does not
 start a verifier. Existing CLI defaults and frozen collections are unchanged.
+The executable now exposes TaskMemory::new(Fifo) as --policy task-memory for
+check,measure and serve. It keeps FIFO ranking;the library composition above
+also adds task interleaving. See the [matched measurement recipe](../docs/benchmarking.md#measured-same-task-memory-policy)
+before starting a native comparison. Existing Capture.policy identifies the
+chosen method;no extra collection tool is required.
 
 The wrapper uses only measured physical-attempt peaks after retirement to
 refresh same-task waiting reservations. It shares no native verdict, prefix or

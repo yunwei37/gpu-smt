@@ -149,7 +149,7 @@ fn measure_capture_and_compare_round_trip_retire_native_fixture() {
     fixture.write_all(b"#!/usr/bin/python3\nimport sys\nwhile sys.stdin.readline().strip(): pass\nprint('{\"env\":0}',flush=True)\nprint('',flush=True)\nsys.stdin.read()\n").unwrap();
     drop(fixture);
     std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o700)).unwrap();
-    for policy in ["source-size", "task-interleave"] {
+    for policy in ["source-size", "task-interleave", "task-memory"] {
         let mut child = Command::new(env!("CARGO_BIN_EXE_gpu-smt"))
             .args([
                 "measure",
@@ -168,7 +168,7 @@ fn measure_capture_and_compare_round_trip_retire_native_fixture() {
             .spawn()
             .unwrap();
         let mut stdin = child.stdin.take().unwrap();
-        stdin.write_all(br#"{"candidates":[{"id":"a","code":"a","reuse":false},{"id":"b","code":"b","reuse":false}]}"#).unwrap();
+        stdin.write_all(br#"{"candidates":[{"id":"a","task_id":"same-task","code":"a","reuse":false},{"id":"b","task_id":"same-task","code":"b","reuse":false}]}"#).unwrap();
         drop(stdin);
         let result = child.wait_with_output().unwrap();
         assert!(

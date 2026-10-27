@@ -43,6 +43,10 @@ passing with0ignored. Original4.9workload/performance qualification remains
 pending. It shares no verdict and can overreserve heterogeneous siblings;
 lower-bound peaks are not a memory guarantee. Default/current pair is unchanged.
 This is engineering qualification,not novelty or a measured throughput gain.
+The existing CLI now accepts --policy task-memory for check/measure/serve,
+so the method can use the same capture/compare path with FIFO ranking and
+unchanged schemas. [Executable red/green qualification](tmp/build-and-evaluate/step-0074-20261027T054550+0000/step-report.md)
+passes17process/API tests;these do not substitute for original native throughput.
 
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The first unchanged compiler bitvector module now completes file/stdin/profile execution; its detailed diagnostic scope is recorded below.
 

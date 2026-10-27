@@ -55,7 +55,10 @@ peaks and heterogeneous siblings can still underpredict or overreserve.
 History can be explicitly cleared and should be scoped to an engine/workload.
 This library mechanism is not active in the frozen full pair; fixture tests
 prove causality/composition only, with native memory/throughput qualification
-still pending. There is no new CLI default or service.
+still pending. The executable exposes this optional FIFO-wrapped policy as
+--policy task-memory for check/measure/serve,using existing Capture.policy
+provenance. Defaults and current frozen capture are unchanged;there is no new
+schema,collector,service or native workload claim.
 The extended existing pinned-native CI test now executes at81fe7cc:real
 retired-attempt feedback matches recorded RSS,same-task forecasts remain
 scoped,and an accepted sibling follows native rejection/incompleteness.

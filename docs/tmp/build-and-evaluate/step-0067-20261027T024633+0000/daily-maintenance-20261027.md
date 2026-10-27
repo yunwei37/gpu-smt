@@ -76,3 +76,14 @@ reconciled to completed23/48results,including runtime faults,zero reliable
 coverage and noncomparable clocks. Preserve raw historical classifications.
 This avoids presenting completed negative data as unfinished preparation;
 the remaining obstacle is a sufficient effective mechanism,not more logging.
+
+## Runnable measured-memory method —05:48UTC
+
+Step0074 connects TaskMemory to the existing CLI rather than adding another
+collector. A real executable regression fails before the selector exists and
+passes afterwards;17server tests pass. The public matched-native recipe now
+uses the same existing commands/provenance as FIFO. This removes an actual
+execution gap,not a new scientific claim. The important unknown remains
+whether fewer resource preemptions outweigh overreservation in the original
+full workload;measure after the frozen pair retires,with all operational and
+accepted-set changes exposed. Keep source prediction distinct from proof.
