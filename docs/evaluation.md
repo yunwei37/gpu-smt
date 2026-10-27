@@ -24,6 +24,15 @@ One historical acceptance becomes a timeout and sampled RSS peaks at48.79GiB;
 neither transparent accepted-set parity nor a full-pair speedup is established.
 [API/implementation scope](api.md).
 
+The [same-version repair pair](../artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
+has now launched on all7,808 originals using frozen1f38be7code and the same
+dynamic48GiB/4core point,with all large streams on existing/tmp. The real24
+native/prepared qualifier returns21accepted/3rejected each,one5,545module
+parent,zero fallback and complete retirement. Empty ast:[] is omitted in
+prepared raw envelopes; remaining fields match. These controls and launch
+do not establish full parity or a final throughput result.
+
+
 [Original Verina full189 measurement](../artifacts/lean-code-verification-2026-10-25/verina-full189-20261025T0725/result-review.md) is complete: 46 no-explicit-admission native exits, 139 admitted stubs, four pinned-source API errors; every profiled status matches. No above-threshold SAT/LRAT tactic work appears in the completed subgroup. The first unchanged compiler bitvector module now completes file/stdin/profile execution; its detailed diagnostic scope is recorded below.
 
 The completed [480-source profile](../artifacts/lean-failure-profile-2026-10-25/full480-analysis/result-review.md) preserves all selected statuses. Of observed timeout thread CPU, interval_cases accounts for 55.19% and simp_all 28.21%; these are sampled diagnostic fractions, not whole-workload wall fractions. Per-source timings, all 42 resource failures and censored streams are retained. No reliable early-rejection mechanism has yet been established.

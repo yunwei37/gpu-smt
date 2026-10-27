@@ -71,6 +71,11 @@ points separate. The48 interval_cases import/prototype repair has also completed
 timeouts on each side and no early-failure coverage. The first original lean-mlir module has now completed file/stdin/native-profile
 execution with equal successful responses; its42 trace threads are not measured
 CPU utilization or an Amdahl partition.
+A [new same-version full native/Mathlib-derived pair](../artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
+now runs after the real24-source qualification. It uses a frozen1f38be7release
+example and stores large live journals on existing/tmp. Full result is pending.
+The qualifier has equal native statuses; raw prepared replies omit empty ast:[]
+while other fields match,so byte-identical raw/AST compatibility is not claimed.
 
 ## Semantic guarantees and tests
 

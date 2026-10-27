@@ -32,3 +32,13 @@ must reduce useful certificate/checking work without skipping native checks,
 while Mathlib COW and sufficient failure detection still need their own
 complete evidence. Update the existing paper and public frontier and commit
 the raw result now; do not spend this outcome on another narrow LP kernel.
+
+## Engine follow-through —03:26UTC
+
+The existing native/Mathlib-derived full pair now restarts as a same-version
+coupled comparison after the old ENOSPC and the real lifecycle fix. A frozen
+run executable and large/tmp output address actual execution faults without
+another engine/logger/scheduler. Real24 qualification matches decisions while
+retaining the missing empty AST-envelope field. This setup is engineering,
+not novelty. Preserve the healthy group and use waiting time for the sufficient
+failure/certificate mechanism; collect once at actual termination.

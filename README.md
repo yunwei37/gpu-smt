@@ -161,6 +161,10 @@ equivalence is not established. The sampled peak was 48.79GiB, above the
 The prepared cell failed when the Workspace volume filled; partial data and
 losslessly archived fault outputs remain. There is no complete pair or speedup.
 The storage repair preserved sources, results and compiled dependencies.
+The [new same-version full repair pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
+is now collecting both conditions from the same frozen binary,with large raw
+output on existing/tmp. Its actual24-source qualification matches21accepted/
+3rejected per side; full accepted-set and throughput results remain pending.
 The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 completed their exclusive rerun with no fixed per-process address-space cap:
 41 exceeded the aggregate RSS budget and one timed out; none became accepted.

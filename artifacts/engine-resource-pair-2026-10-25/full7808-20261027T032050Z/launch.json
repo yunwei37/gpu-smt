@@ -1,0 +1,45 @@
+{
+  "UTC": "2026-10-27T03:26:43.011959+00:00",
+  "pid": 457460,
+  "start_ticks": 150297500,
+  "source": "1f38be7d5ebae282d8a13cb8a9ff6b3ba27fb15f",
+  "command": [
+    "/tmp/gpu-smt-resource-pair-repair-20261027T032050/resource_pair",
+    "/tmp/gpu-smt-resource-pair-repair-20261027T032050/original7808.json",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "/tmp/gpu-smt-resource-pair-repair-20261027T032050/resources.json",
+    "/tmp/gpu-smt-resource-pair-repair-20261027T032050/full7808"
+  ],
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "runtime_output": "/tmp/gpu-smt-resource-pair-repair-20261027T032050/full7808",
+  "driver_log": "/tmp/gpu-smt-resource-pair-repair-20261027T032050/full7808.log",
+  "artifact": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z",
+  "step": "/workspaces/repository/docs/tmp/build-and-evaluate/step-0069-20261027T032050+0000",
+  "frozen_example_binary": "/tmp/gpu-smt-resource-pair-repair-20261027T032050/resource_pair",
+  "canonical_input": "artifacts/engine-resource-profile-2026-10-25/population-inputs/all.json.gz",
+  "sources": 7808,
+  "conditions": [
+    "native",
+    "prepared"
+  ],
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1
+  },
+  "fixed_AS_cap": false,
+  "prior_groups_retired": true,
+  "real24qualification_complete": true,
+  "raw_response_AST_shape_difference_known": true,
+  "all_large_outputs_existing_tmp": true,
+  "scope": "matched own-engine full acquisition active,not a result or strongest-warm/novelty claim"
+}
