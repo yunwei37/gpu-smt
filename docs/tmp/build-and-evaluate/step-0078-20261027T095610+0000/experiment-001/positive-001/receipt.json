@@ -1,0 +1,35 @@
+{
+  "UTC": "2026-10-27T10:00:37.949282+00:00",
+  "commands": [
+    {
+      "command": [
+        "/tmp/gpu-smt-code-verification-20261025/leanmlir-sdk/lean-4.27.0-nightly-2025-12-01-linux/bin/lean",
+        "ControlsPositive.lean"
+      ],
+      "exit": 0,
+      "seconds": 6.0211045648902655
+    },
+    {
+      "command": [
+        "/tmp/gpu-smt-code-verification-20261025/leanmlir-sdk/lean-4.27.0-nightly-2025-12-01-linux/bin/lean",
+        "ControlsNative.lean"
+      ],
+      "exit": 0,
+      "seconds": 3.008632400073111
+    }
+  ],
+  "cwd": "/workspaces/repository/bench/lean-bv-shared-cnf",
+  "seconds": 9.029827763093635,
+  "samples": 13,
+  "combined_peak_rss_bytes": 16163287040,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "lean_prototype_build_unit_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 457460,
+  "original_group_start_ticks": 150297500,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": true,
+  "native_compiler_invocations": 2
+}

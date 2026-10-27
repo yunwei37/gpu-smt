@@ -128,6 +128,13 @@ not a second fullpopulation collection. They establish the declared semantic
 contract,not a tactic,physical compiled-value sharing,GPU method or speedup.
 TheirCPU11support is included in combinedRSS monitoring and disclosed as
 contention for the preserved fullpair.
+The [compiled opt-in closed-CNF frontend](../bench/lean-bv-shared-cnf/README.md)
+now proves direct/public/backtracking4bit controls and preserves a native SAT
+counterexample. Trace confirms actual core certificate checking;the matched
+axiom lists retain the stock trust basis. These are development proofs with
+different per-file counts/tracing,not timing evidence. No physical-sharing,
+whole-module speedup or full-population acceptance claim follows.
+
 
 ## Completed GPU counterexample pair
 

@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-27T10:10:10.424197+00:00",
+  "sdk": "lean-4.27.0-nightly-2025-12-01-linux",
+  "definitions_compile": "passed after opening native parser namespace",
+  "direct_core_positive": "accepted,trace confirms shared CNF certificate check",
+  "public_positive": "accepted with native timeout config passthrough",
+  "backtrack_positive": "shared proof constructed then deliberate failure;stock fallback accepted after native state restore",
+  "native_reference_positive": "accepted",
+  "shared_certificate_verification_trace_nodes": 3,
+  "stock_verification_trace_nodes_in_backtrack_module": 1,
+  "false_core_public_native": "all reject x*x=x with identical counterexample body x=15#4;source filename differs",
+  "original_generated_candidate_executions": 0,
+  "native_development_compiler_invocations": 8,
+  "max_combined_sampled_rss_bytes": 23143673856,
+  "budget_bytes": 51539607552,
+  "support_pressure_aborts": 0,
+  "monitor_errors": [],
+  "preserved_failures": [
+    "first functions-tool script rejected unescaped JS template backticks before any remote mutation",
+    "compile-001 missing optConfig parser namespace",
+    "false-core postcheck chained Python membership/is-False assertion;validated original log without rerun",
+    "one readiness probe failed before dispatch;adaptive retry skipped completed native cells"
+  ],
+  "trust": "core/public/stock theorem axiom lists equal:propext,Classical.choice,Lean.ofReduceBool,Lean.trustCompiler,Quot.sound;no sorryAx",
+  "runtime_sharing_scope": "same closed CNF declaration is consumed by solver evaluation and unchanged certificate-check expression;physical meta/native heap or computation reuse not measured",
+  "clock_scope": "development files contain different numbers of proofs and tracing;their seconds cannot form an acceleration ratio",
+  "unknowns": [
+    "whole-module overhead and physical value reuse",
+    "original code-workload accepted set and resource effects",
+    "real fallback cost and retained compiler memory",
+    "novelty"
+  ],
+  "active_full_capture_changed": false
+}

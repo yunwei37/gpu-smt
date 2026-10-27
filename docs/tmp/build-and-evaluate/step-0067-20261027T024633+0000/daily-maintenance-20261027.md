@@ -121,3 +121,13 @@ development assumptions remain. The next substantive task is physical closed-
 CNF value reuse through the original frontend,with SAT-model/fallback behavior
 and compilation-barrier costs. A checked theorem alone cannot answer whether
 this saves the measured module's time or supplies novelty.
+
+## Frontend now executes,not only a theorem —10:12UTC
+
+Step0078connects the closed CNF declaration to the existing solver and native
+certificate reflection. Direct core/nontrivial proofs,public config handling,
+backtracking and matching SAT counterexample controls execute. Default Lean/
+engine stays unchanged. The real unknown has moved to physical sharing,
+compilation barriers/fallback memory and complete original-module performance.
+Use the existing paired capture when the sole group frees;do not infer benefit
+from unequal development files or call ordinary sharing novelty.

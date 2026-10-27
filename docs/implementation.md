@@ -182,8 +182,14 @@ correspondence and unchanged certificate checking.
 [Actual pinned4.27contract controls](../artifacts/lean-code-verification-2026-10-25/shared-cnf-controls-20261027/README.md)
 now compile the generic bridge,pass5Boolean controls/valid certificate proof
 and reject wrong correspondence/invalid-certificate proof. Stock native
-reflection retains its compiler/interpreter trust basis. No tactic/frontend
-or physical meta/native value sharing is implemented/verified yet.
+reflection retains its compiler/interpreter trust basis.
+The [explicit opt-in frontend](../bench/lean-bv-shared-cnf/README.md) now compiles
+and executes direct/public/backtracking development proofs plus SAT rejection.
+It evaluates one closed CNF declaration for the existing solver and references
+that declaration in unchanged native certificate checking. Core/public/reference
+false controls return the same counterexample body. Unsafe meta evaluation
+does not replace the checked logical witness. The engine/default tactic is
+unchanged;physical value reuse and complete-module performance remain unmeasured.
 Sequential LRAT formula updates constrain batching;their dependency width and
 the actual stage-cost split are unknown. Ordinary sharing alone is not novelty.
 

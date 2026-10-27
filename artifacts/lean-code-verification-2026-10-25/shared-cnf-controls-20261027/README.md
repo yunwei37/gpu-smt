@@ -29,5 +29,8 @@ candidate executes here and no full collection is restarted/reconfigured.
 
 [Exact sources,raw outputs,commands,failures and self-review](../../../docs/tmp/build-and-evaluate/step-0077-20261027T085610+0000/step-report.md)
 separate actual native theorem qualification from runtime implementation.
-There is still no shared-CNF tactic,verified physical value sharing,GPU
-implementation,whole-module speedup or original accepted-set conclusion.
+These contract controls do not establish a tactic,runtime value sharing,
+GPU implementation,whole-module speedup or original accepted-set conclusion.
+The later [opt-in frontend and its separate native controls](../../../bench/lean-bv-shared-cnf/README.md)
+now live in the bench source tree;physical reuse and full performance remain
+open. This record preserves the earlier contract-only qualification.
