@@ -26,7 +26,7 @@ can be replayed as verdicts. Accepted/status changes,retries,tails and cleanup
 must remain visible. Prior concurrent attempt sums are not saved wall or a
 speedup bound. Original full-population performance and novelty remain open.
 
-## Current execution readiness
+## Initial execution readiness (historical)
 
 Inputs are complete;native execution has not started. Existing source596a6a2
 hosted Rust/nativeCI succeeds. A new local release build is interrupted by the
@@ -36,3 +36,7 @@ No frozen new release executable is qualified. Do not use a stale or partially
 built target,or count compilation as proof execution. Retry compilation when
 the collection/resource slot is free. execution-readiness.json separates these
 facts;the original preparation/failed-build records remain unchanged.
+
+## Later execution update
+
+[New release/preflight and real32 run](../task-memory32-20261027T193536Z/README.md) now builds/fixes the executable after prior owners retire. Both ordinary native preflights match;the full pair is running. The previous interrupted build/readiness receipts above remain historical evidence,not current execution status. No final performance result yet.

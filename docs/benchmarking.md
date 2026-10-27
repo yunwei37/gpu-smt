@@ -82,10 +82,11 @@ not interleave task groups;library callers can compose wrappers separately.
 The [prepared real32development input](../artifacts/engine-resource-profile-2026-10-25/task-memory-preflight-20261027/README.md)
 preserves exact original candidate bytes/fields and prior outcomes. It uses
 outcome-informed heavy/ordinary task selection,not an unbiased full workload.
-No native comparison has started. The local release build is interrupted by
-combined48GiBpressure;do not use a stale executable or call input readiness
-execution completion. Keep the active collection unchanged and compile/freeze
-the measured executable when the resource/collection slot is actually free.
+The [current release/preflight and real32 comparison](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/README.md)
+now builds and freezes the executable after prior owners retire;both actual
+ordinary-source preflights match native outcomes. The full32pair is running,
+not complete. The earlier competing build failure stays historical evidence.
+Do not replace a healthy frozen executable or interpret a prefix as a full pair.
 
 ## Pair completed captures
 
@@ -121,7 +122,7 @@ binary or make arbitrary stateful Lean metaprograms deterministic.
 ## This Workspace's next execution
 
 The current resource point, completed groups and pending original workloads
-are recorded in [evaluation](evaluation.md#resource-point-and-workloads), with
+are recorded in [evaluation](evaluation.md#current-resource-point), with
 the actual active capture linked there. Only one native collection group runs;
 preserve its frozen source/resources until it retires. The prepared
 [42 isolated inputs](../artifacts/engine-resource-profile-2026-10-25/isolated42/README.md)

@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-27T19:34:48.365941+00:00",
+  "source": "8045cca90cdd0e6ec66699f0f57af330225427cc",
+  "command": [
+    "taskset",
+    "-c",
+    "11",
+    "/usr/local/cargo/bin/cargo",
+    "build",
+    "--locked",
+    "--release",
+    "-p",
+    "gpu-smt-server",
+    "--bin",
+    "gpu-smt"
+  ],
+  "exit_code": 0,
+  "seconds": 12.010628168936819,
+  "sampled_build_tree_peak_rss_bytes": 336310272,
+  "budget_kill": false,
+  "native_candidates": 0
+}

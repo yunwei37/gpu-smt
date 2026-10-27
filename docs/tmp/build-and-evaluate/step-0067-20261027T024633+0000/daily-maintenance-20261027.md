@@ -161,3 +161,14 @@ already implemented measured-sibling memory policy:does less redundant
 preemption outweigh conservative reservation on32real queued originals?
 Run FIFO and task-memory on identical resources;report actual whole time,
 retry outcomes and selection bias. Source lexical fit remains negative.
+
+## Measured-sibling method execution starts
+
+After all prior native groups retired,the release build now succeeds at
+12.010628s/336,310,272B sample,no guard kill. Two actual ordinary originals
+accept under each policy with equal native responses and retirement. The
+fixed32FIFO/task-memory group now runs cold histories,identical sources and
+48GiB/CPU8–11point. No result or gain is yet claimed;collect complete outputs
+once at termination. This advances the method beyond more unit/logging work.
+Existing evaluation anchors are restored after consolidation;failed build/raw
+records remain. No additional fullnative collection runs concurrently.

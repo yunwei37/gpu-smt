@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-27T19:35:46.239318+00:00",
+  "pid": 486945,
+  "start_ticks": 156111823,
+  "command": [
+    "/tmp/gpu-smt-task-memory32-20261027T193536Z/gpu-smt",
+    "measure",
+    "--repl",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "--project",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "--environment",
+    "lean49rc1-mathlib-task-memory32",
+    "--cpus",
+    "8,9,10,11",
+    "--worker-cores",
+    "1",
+    "--memory-gib",
+    "48",
+    "--policy",
+    "task-memory"
+  ]
+}

@@ -5,6 +5,8 @@ audits. Four [original RQs](idea-story.md) and the Lean/SMT/OSDI objective remai
 open. Engineering tests,activity and a compiled paper do not establish novelty
 or venue acceptance. All original,negative,failed and partial data remain.
 
+<a id="current-decision-frozen-oracle-and-three-continuing-directions"></a>
+
 ## Current directions
 
 Prioritize the independent [Rust engine](architecture.md),then reliable failure
@@ -16,6 +18,8 @@ delegation,new research stopping threshold,deadline or conditional closure.
 See the exact [user instructions](user-instruction.md).
 
 <a id="current-resource-point"></a>
+
+<a id="resource-point-and-workloads"></a>
 
 ## Resource point
 
@@ -59,8 +63,12 @@ CI and CLI/process controls pass. Lower-bound peaks can underestimate and
 heterogeneous siblings can overreserve. Default FIFO remains unchanged.
 [Real32development cohort](../artifacts/engine-resource-profile-2026-10-25/task-memory-preflight-20261027/README.md)
 preserves16prioraccepted/7rejected/9resource-failed sources in original order.
-Selection is outcome-informed,not final representative evidence. No throughput
-benefit yet;the earlier release build was guard-killed and is not qualified.
+Selection is outcome-informed,not final representative evidence. The
+[current release/preflight and real32 run](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/README.md)
+now follows complete prior-owner retirement. Release12.010628s succeeds;
+both actual2-source preflights accept with equal native outcomes. Full FIFO
+then task-memory is running;no fullpair/throughput result yet. The prior
+competing guard-killed build remains archived.
 
 [Whole-task lexical memory fit](../artifacts/engine-resource-profile-2026-10-25/source-memory-crossfit-20261027/README.md)
 is negative:MAE0.606624GiB versus median0.352486;all41resource/44preempted sources
