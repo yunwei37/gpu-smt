@@ -206,6 +206,15 @@ throughput,RL per-candidate rewards or a scheduling novelty claim. This is the f
 separate from the next uncapped dynamic-resource comparison.
 
 
+The [whole-task-held-out source-memory fit](../artifacts/engine-resource-profile-2026-10-25/source-memory-crossfit-20261027/README.md)
+uses the completed uncapped native population,not the current live prefix.
+One fixed27-feature log-RSS ridge worsens MAE to0.606624GiB versus0.352486 for
+a fold-training median. Every41resource-failed and44preempted source remains
+underestimated more than2x; one unknown peak is retained. No model is deployed
+and no memory-admission/runtime gain follows. The actual resource tail is
+concentrated in four tasks,which motivates a separately tested policy learning
+only measured past sibling memory rather than lexical tuning or hindsight.
+
 ## Lean code-verification workloads
 
 [Pinned official sources and primary-source review](tmp/bootstrap/step-0011-20261023T195335-0700/literature-20261025-code-verification/report.md)

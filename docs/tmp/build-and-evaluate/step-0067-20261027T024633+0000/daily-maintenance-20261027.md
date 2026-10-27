@@ -42,3 +42,14 @@ another engine/logger/scheduler. Real24 qualification matches decisions while
 retaining the missing empty AST-envelope field. This setup is engineering,
 not novelty. Preserve the healthy group and use waiting time for the sufficient
 failure/certificate mechanism; collect once at actual termination.
+
+## Measured memory feedback rather than lexical tuning —03:51UTC
+
+A fixed whole-task-held-out source-memory model misses all41resource failures
+and44preempted sources by more than2x and worsens ordinary accuracy. Do not
+ship or tune it. Actual resource failures concentrate29+9+2+1 across four
+tasks. The next concrete engine method should learn from real completed
+siblings' observed memory,refresh waiting forecasts and retain all native
+checks/watchdog behavior. It must not borrow unseen outcomes or propagate
+rejection. Implement and test that feedback causally while the current full
+pair stays frozen; this is an opportunity,not yet a throughput or novelty result.

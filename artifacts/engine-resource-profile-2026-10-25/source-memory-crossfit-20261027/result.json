@@ -1,0 +1,252 @@
+{
+  "UTC": "2026-10-27T03:51:43.974090+00:00",
+  "input": "artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/native/capture.json.gz",
+  "sources": 7808,
+  "tasks": 244,
+  "features": [
+    "log_characters",
+    "log_lines",
+    "log_numeral_max",
+    "log_numerals",
+    "log_semicolon_chains",
+    "log_simp",
+    "log_simp_all",
+    "log_simpa",
+    "log_norm_num",
+    "log_omega",
+    "log_linarith",
+    "log_nlinarith",
+    "log_ring",
+    "log_ring_nf",
+    "log_decide",
+    "log_native_decide",
+    "log_interval_cases",
+    "log_aesop",
+    "log_exact",
+    "log_rw",
+    "log_have",
+    "log_by_cases",
+    "log_rcases",
+    "log_cases",
+    "log_induction",
+    "log_constructor",
+    "log_apply"
+  ],
+  "folds": "sorted task IDs modulo5,32siblings together",
+  "L2_penalty": 1,
+  "unpenalized_intercept": true,
+  "known_peak_sources": 7807,
+  "unknown_peak_ids": [
+    "minif2f-4969"
+  ],
+  "target": "maximum reported observed attempt peak per candidate; finite-resource observation,not uncensored intrinsic source demand",
+  "metrics": {
+    "all_observed": {
+      "source_ridge": {
+        "known_sources": 7807,
+        "mean_absolute_error_GiB": 0.6066240971531743,
+        "median_absolute_error_GiB": 0.2344712107344198,
+        "p90_absolute_error_GiB": 0.6600521869413776,
+        "median_absolute_log2_error": 0.09684372982518545,
+        "underpredict_more_than_2x_sources": 94,
+        "sum_positive_byte_shortfall_GiB": 3219.8606181683585,
+        "sum_positive_byte_overprediction_GiB": 1516.0537083064737,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 7807,
+        "mean_absolute_error_GiB": 0.3524862342933175,
+        "median_absolute_error_GiB": 0.007053375244140625,
+        "p90_absolute_error_GiB": 0.0820144653320313,
+        "median_absolute_log2_error": 0.002904871892951042,
+        "underpredict_more_than_2x_sources": 100,
+        "sum_positive_byte_shortfall_GiB": 2601.864803314209,
+        "sum_positive_byte_overprediction_GiB": 149.9952278137207,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "accepted": {
+      "source_ridge": {
+        "known_sources": 3013,
+        "mean_absolute_error_GiB": 0.28289926916917213,
+        "median_absolute_error_GiB": 0.2292853525089904,
+        "p90_absolute_error_GiB": 0.5615637535382705,
+        "median_absolute_log2_error": 0.09595193161053085,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 440.2901783631812,
+        "sum_positive_byte_overprediction_GiB": 412.0853196435345,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 3013,
+        "mean_absolute_error_GiB": 0.035050821035279414,
+        "median_absolute_error_GiB": 0.00726318359375,
+        "p90_absolute_error_GiB": 0.1028564453125,
+        "median_absolute_log2_error": 0.002991050320789558,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 66.26081466674805,
+        "sum_positive_byte_overprediction_GiB": 39.34730911254883,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "ordinary_rejected": {
+      "source_ridge": {
+        "known_sources": 4664,
+        "mean_absolute_error_GiB": 0.3160088602054253,
+        "median_absolute_error_GiB": 0.22987709012437296,
+        "p90_absolute_error_GiB": 0.6801186041308176,
+        "median_absolute_log2_error": 0.09476992873913853,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 376.2864040247455,
+        "sum_positive_byte_overprediction_GiB": 1097.5789199733583,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 4664,
+        "mean_absolute_error_GiB": 0.03571710864634702,
+        "median_absolute_error_GiB": 0.006649017333984375,
+        "p90_absolute_error_GiB": 0.04222259521484374,
+        "median_absolute_log2_error": 0.0027355595044502292,
+        "underpredict_more_than_2x_sources": 2,
+        "sum_positive_byte_shortfall_GiB": 55.97758102416992,
+        "sum_positive_byte_overprediction_GiB": 110.60701370239258,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "timeout": {
+      "source_ridge": {
+        "known_sources": 87,
+        "mean_absolute_error_GiB": 6.870098063979584,
+        "median_absolute_error_GiB": 9.253624557512527,
+        "p90_absolute_error_GiB": 11.795129593917476,
+        "median_absolute_log2_error": 1.5361508207476802,
+        "underpredict_more_than_2x_sources": 53,
+        "sum_positive_byte_shortfall_GiB": 592.7761318807892,
+        "sum_positive_byte_overprediction_GiB": 4.922399685434574,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 87,
+        "mean_absolute_error_GiB": 7.5250205555181395,
+        "median_absolute_error_GiB": 10.589584350585938,
+        "p90_absolute_error_GiB": 12.771578216552735,
+        "median_absolute_log2_error": 2.0074714189094403,
+        "underpredict_more_than_2x_sources": 57,
+        "sum_positive_byte_shortfall_GiB": 654.6358833312988,
+        "sum_positive_byte_overprediction_GiB": 0.040904998779296875,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "resource_exhausted": {
+      "source_ridge": {
+        "known_sources": 41,
+        "mean_absolute_error_GiB": 44.15872936340592,
+        "median_absolute_error_GiB": 44.107323440495314,
+        "p90_absolute_error_GiB": 44.61214823874535,
+        "median_absolute_log2_error": 3.61140522223657,
+        "underpredict_more_than_2x_sources": 41,
+        "sum_positive_byte_shortfall_GiB": 1810.5079038996425,
+        "sum_positive_byte_overprediction_GiB": 0.0,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 41,
+        "mean_absolute_error_GiB": 44.50453465159347,
+        "median_absolute_error_GiB": 44.53406524658203,
+        "p90_absolute_error_GiB": 44.58733367919922,
+        "median_absolute_log2_error": 3.7766165228341086,
+        "underpredict_more_than_2x_sources": 41,
+        "sum_positive_byte_shortfall_GiB": 1824.685920715332,
+        "sum_positive_byte_overprediction_GiB": 0.0,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "backend_error": {
+      "source_ridge": {
+        "known_sources": 2,
+        "mean_absolute_error_GiB": 0.7335345020731636,
+        "median_absolute_error_GiB": 0.7335345020731636,
+        "p90_absolute_error_GiB": 0.8071062559680189,
+        "median_absolute_log2_error": 0.26386187257631416,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 0.0,
+        "sum_positive_byte_overprediction_GiB": 1.4670690041463272,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 2,
+        "mean_absolute_error_GiB": 0.15230178833007812,
+        "median_absolute_error_GiB": 0.15230178833007812,
+        "p90_absolute_error_GiB": 0.20185623168945313,
+        "median_absolute_log2_error": 0.06114884110949259,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 0.30460357666015625,
+        "sum_positive_byte_overprediction_GiB": 0.0,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "had_preemption": {
+      "source_ridge": {
+        "known_sources": 44,
+        "mean_absolute_error_GiB": 42.46710253050639,
+        "median_absolute_error_GiB": 44.07454926995958,
+        "p90_absolute_error_GiB": 44.59640970817059,
+        "median_absolute_log2_error": 3.6063463354486425,
+        "underpredict_more_than_2x_sources": 44,
+        "sum_positive_byte_shortfall_GiB": 1868.5525113422812,
+        "sum_positive_byte_overprediction_GiB": 0.0,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 44,
+        "mean_absolute_error_GiB": 42.87542924014005,
+        "median_absolute_error_GiB": 44.53321075439453,
+        "p90_absolute_error_GiB": 44.58602333068848,
+        "median_absolute_log2_error": 3.77659086089578,
+        "underpredict_more_than_2x_sources": 44,
+        "sum_positive_byte_shortfall_GiB": 1886.518886566162,
+        "sum_positive_byte_overprediction_GiB": 0.0,
+        "forecasts_over_48GiB": 0
+      }
+    },
+    "completed_without_preemption": {
+      "source_ridge": {
+        "known_sources": 7677,
+        "mean_absolute_error_GiB": 0.30301430532822965,
+        "median_absolute_error_GiB": 0.2296881188298059,
+        "p90_absolute_error_GiB": 0.6279376069433837,
+        "median_absolute_log2_error": 0.09516909403943033,
+        "underpredict_more_than_2x_sources": 0,
+        "sum_positive_byte_shortfall_GiB": 816.5765823879268,
+        "sum_positive_byte_overprediction_GiB": 1509.6642396168927,
+        "forecasts_over_48GiB": 0
+      },
+      "training_median_constant": {
+        "known_sources": 7677,
+        "mean_absolute_error_GiB": 0.03545561006980062,
+        "median_absolute_error_GiB": 0.006938934326171875,
+        "p90_absolute_error_GiB": 0.0609405517578126,
+        "median_absolute_log2_error": 0.0028584860560869193,
+        "underpredict_more_than_2x_sources": 2,
+        "sum_positive_byte_shortfall_GiB": 122.23839569091797,
+        "sum_positive_byte_overprediction_GiB": 149.9543228149414,
+        "forecasts_over_48GiB": 0
+      }
+    }
+  },
+  "preempted_attempts": 44,
+  "preempted_sources": 44,
+  "preempted_attempt_elapsed_sum_seconds": 5537.329117507,
+  "all_attempt_elapsed_sum_seconds": 78218.880093944,
+  "analysis_seconds": 3.0252724830061197,
+  "native_candidate_executions": 0,
+  "actual_admission_or_runtime_speedup": null,
+  "limitations": [
+    "all metrics are on existing finite-resource observations",
+    "fold-training median is a predictive constant,not exact causal engine replay",
+    "test task outcomes/peaks never enter fitting/standardization",
+    "censored high-demand observations may understate demand",
+    "no admission simulation,changed resource policy,rejection decision or runtime benefit",
+    "concurrent discarded-work sums are not removable wall"
+  ]
+}
