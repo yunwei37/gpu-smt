@@ -3,6 +3,15 @@
 This is a source-grounded mechanism preparation for the actual lean-mlir
 bitvector workload,not a new benchmark result or deployed tactic.
 
+## Later native qualification
+
+[Step0077 checked copy and controls](../shared-cnf-controls-20261027/README.md)
+now compile the same generic theorem body with pinned4.27Std and pass declared
+native controls. This original draft/header/manifest retain their entry-time
+uncompiled status;the checked source/receipts live in the linked qualification.
+No runtime sharing,tactic implementation or original-module speedup follows.
+
+
 ## What the retained native source shows
 
 The pinned frontend bitblasts the reflected expression and converts AIG to CNF

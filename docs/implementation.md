@@ -178,8 +178,12 @@ The pinned4.27source also shows that verifyBVExpr rebuilds bitblast/CNF and
 verifyCert parses LRAT inside the enclosing certificate-check reflection.
 [Source evidence and uncompiled contract draft](../artifacts/lean-code-verification-2026-10-25/shared-cnf-contract-20261027/README.md)
 prepare a possible within-proof shared closed-CNF declaration with exact native
-correspondence and unchanged certificate checking. No tactic is implemented,
-no theorem is compiled,and physical meta/native value sharing is unverified.
+correspondence and unchanged certificate checking.
+[Actual pinned4.27contract controls](../artifacts/lean-code-verification-2026-10-25/shared-cnf-controls-20261027/README.md)
+now compile the generic bridge,pass5Boolean controls/valid certificate proof
+and reject wrong correspondence/invalid-certificate proof. Stock native
+reflection retains its compiler/interpreter trust basis. No tactic/frontend
+or physical meta/native value sharing is implemented/verified yet.
 Sequential LRAT formula updates constrain batching;their dependency width and
 the actual stage-cost split are unknown. Ordinary sharing alone is not novelty.
 

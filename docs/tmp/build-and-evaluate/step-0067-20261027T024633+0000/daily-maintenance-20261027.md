@@ -111,3 +111,13 @@ sharing. It is uncompiled and has no tactic/runtime/novelty qualification.
 The useful next question is whether actual compiled-value sharing survives
 compilation barriers and complete-module costs,not whether the old trace label
 can be called GPU work. Keep all tests/builds pending the free resource slot.
+
+## Native contract is checked;runtime method remains —09:04UTC
+
+Step0077compiles the generic CNF-correspondence theorem and actual native
+positive/negative controls under combined48GiBmonitoring. This removes the
+draft's semantic dependency without another fullperformance group;failed
+development assumptions remain. The next substantive task is physical closed-
+CNF value reuse through the original frontend,with SAT-model/fallback behavior
+and compilation-barrier costs. A checked theorem alone cannot answer whether
+this saves the measured module's time or supplies novelty.

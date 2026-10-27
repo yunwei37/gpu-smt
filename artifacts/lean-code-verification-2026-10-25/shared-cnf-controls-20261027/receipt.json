@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-27T09:03:33.414271+00:00",
+  "sdk": "lean-4.27.0-nightly-2025-12-01-linux",
+  "contract_module_compilation": "passed",
+  "five_boolean_controls": "passed in positive-002",
+  "valid_certificate_soundness_theorem": "passed using original native_decide reflection",
+  "generic_correspondence_theorem": "passed",
+  "wrong_cnf_correspondence": "native rfl rejection confirmed",
+  "invalid_certificate_soundness_attempt": "native_decide evaluated proposition false;expected rejection confirmed",
+  "native_lean_compiler_invocations": 6,
+  "original_generated_candidate_executions": 0,
+  "all_receipt_commands_exit": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    1
+  ],
+  "max_combined_sampled_rss_bytes": 38852960256,
+  "budget_bytes": 51539607552,
+  "max_is_below_budget_in_recorded_samples": true,
+  "support_pressure_aborts": 0,
+  "monitor_errors": [],
+  "preserved_failures": [
+    "support Python parse failed before Lean execution",
+    "positive-001 assumed a still-accepted shortened certificate was invalid and used ordinary decide on opaque computation",
+    "invalid-certificate-001 failed name/type elaboration,not the intended Boolean rejection",
+    "negative-002 postcheck initially searched evaluated-to instead of actual evaluated-that wording;native execution itself already gave the intended false rejection"
+  ],
+  "trust": "generic bridge printed axioms propext/Classical.choice/Quot.sound;closed native certificate theorem additionally uses existing Lean.ofReduceBool/Lean.trustCompiler,matching stock native reflection basis;no new axiom defined",
+  "scope": "build/unit qualification only;no tactic/frontend integration,physical compiled CNF sharing,GPU work,wholemodule speedup or population accepted-set evidence"
+}

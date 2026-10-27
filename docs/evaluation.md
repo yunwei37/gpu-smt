@@ -122,9 +122,12 @@ them with the current point. [ENOSPC preservation/repair](../artifacts/linarith-
 The [shared-CNF source/contract preparation](../artifacts/lean-code-verification-2026-10-25/shared-cnf-contract-20261027/README.md)
 identifies that the native certificate-check span includes reflective CNF
 reconstruction and LRAT parsing/checking. Source-level duplication does not
-measure how much work is expensive or physically reusable. The bridge is an
-uncompiled draft,not a tactic,checked theorem,GPU method or measured speedup.
-No new compiler/native collection competes with the active fullpair.
+measure how much work is expensive or physically reusable. The [generic bridge and small native controls](../artifacts/lean-code-verification-2026-10-25/shared-cnf-controls-20261027/README.md)
+now actually compile/check under pinned4.27. These are build/unit dependencies,
+not a second fullpopulation collection. They establish the declared semantic
+contract,not a tactic,physical compiled-value sharing,GPU method or speedup.
+TheirCPU11support is included in combinedRSS monitoring and disclosed as
+contention for the preserved fullpair.
 
 ## Completed GPU counterexample pair
 
