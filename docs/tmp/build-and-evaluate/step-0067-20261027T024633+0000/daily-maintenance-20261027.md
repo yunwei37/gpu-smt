@@ -53,3 +53,14 @@ siblings' observed memory,refresh waiting forecasts and retain all native
 checks/watchdog behavior. It must not borrow unseen outcomes or propagate
 rejection. Implement and test that feedback causally while the current full
 pair stays frozen; this is an opportunity,not yet a throughput or novelty result.
+
+## Actual feedback implementation —04:12UTC
+
+Step0071 now implements the opt-in policy rather than another diagnostic tool.
+It refreshes waiting same-task reservations only after actual observed memory,
+without copying proof outcomes. Red/green causal regression and composed API
+checks pass;native benefit is still unknown and overreservation is a real risk.
+Keep the current frozen full pair unchanged,then measure native admission/
+throughput once it retires. Continue work on actually removable failed or
+certificate work;source correlation and an implemented interface are not a
+research contribution. Public architecture/example/API docs now match code.

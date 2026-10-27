@@ -981,3 +981,192 @@ async fn idle_native_state_cannot_strand_a_large_forecast() {
         }
     }
 }
+
+#[test]
+fn task_memory_forecasts_are_scoped_and_never_lower_existing_reservations() {
+    let policy = TaskMemory::new(SourceSize);
+    let c = candidate("teacher", "source", "same-task");
+    let sibling = candidate("sibling", "different-source", "same-task");
+    assert_eq!(
+        policy.refresh_rss(&sibling, "native-resource-A", None),
+        None
+    );
+    policy.observe_rss(&c, "native-resource-A", 90);
+    policy.observe_rss(&c, "native-resource-A", 0);
+    policy.observe_rss(&c, "native-resource-A", 40);
+    assert_eq!(
+        policy.refresh_rss(&sibling, "native-resource-A", None),
+        Some(90)
+    );
+    assert_eq!(
+        policy.refresh_rss(&sibling, "native-resource-A", Some(200)),
+        Some(200)
+    );
+    assert_eq!(
+        policy.refresh_rss(&sibling, "prepared-resource-B", Some(1)),
+        Some(1)
+    );
+    let mut changed_timeout = sibling.clone();
+    changed_timeout.timeout_ms += 1;
+    assert_eq!(
+        policy.refresh_rss(&changed_timeout, "native-resource-A", None),
+        None
+    );
+    for task in [None, Some(String::new())] {
+        let mut anonymous = c.clone();
+        anonymous.task_id = task;
+        policy.observe_rss(&anonymous, "native-resource-A", 300);
+        assert_eq!(
+            policy.refresh_rss(&anonymous, "native-resource-A", Some(1)),
+            Some(1)
+        );
+    }
+    assert_eq!(policy.priority(&sibling), sibling.code.len() as u64);
+    policy.clear_memory();
+    assert_eq!(
+        policy.refresh_rss(&sibling, "native-resource-A", None),
+        None
+    );
+
+    let composed = TaskMemory::new(TaskInterleave::new(SourceSize));
+    assert_eq!(
+        composed.batch_priorities(
+            &[
+                candidate("long", "long-source", "a"),
+                candidate("short", "x", "a"),
+                candidate("other", "xx", "b"),
+            ],
+            Mode::FirstSuccess,
+        ),
+        vec![2, 0, 1],
+    );
+}
+
+struct MemorySignals {
+    second_forecast: tokio::sync::Notify,
+    second_refresh: tokio::sync::Notify,
+    finish_peer: tokio::sync::Notify,
+    peer_alive: std::sync::atomic::AtomicBool,
+    sibling_reclaims: AtomicUsize,
+}
+struct SignalledForecast(Arc<MemorySignals>);
+impl SchedulingPolicy for SignalledForecast {
+    fn priority(&self, _: &Candidate) -> u64 {
+        0
+    }
+    fn predicted_rss(&self, c: &Candidate) -> Option<u64> {
+        if c.id == "sibling" {
+            // Teacher cannot finish until this stale initial forecast exists.
+            self.0.second_forecast.notify_one();
+        }
+        Some(1)
+    }
+    fn refresh_rss(&self, c: &Candidate, _: &str, initial: Option<u64>) -> Option<u64> {
+        if c.id == "sibling" {
+            self.0.second_refresh.notify_one();
+        }
+        initial
+    }
+}
+struct MemoryFeedbackBackend(Arc<MemorySignals>);
+#[async_trait]
+impl VerificationBackend for MemoryFeedbackBackend {
+    fn identity(&self) -> String {
+        "measured-memory-fixture-not-Lean".into()
+    }
+    async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+        if c.id == "teacher" {
+            tokio::select! {
+                _=self.0.second_forecast.notified()=>{},
+                _=x.cancel.cancelled()=>return Outcome::operational(Status::Cancelled,"fixture retired"),
+            }
+            // Toy memory units from a completed physical backend attempt.
+            // No native process or proof execution is represented by this fixture.
+            x.registry.observe_rss(100);
+            Outcome {
+                status: Status::Rejected,
+                response: Some(
+                    json!({"messages":[{"severity":"error","data":"teacher fixture error"}]}),
+                ),
+                error: None,
+            }
+        } else {
+            if c.id == "peer" {
+                self.0.peer_alive.store(true, Ordering::SeqCst);
+                tokio::select! {
+                    _=self.0.finish_peer.notified()=>{},
+                    _=x.cancel.cancelled()=>{},
+                }
+                self.0.peer_alive.store(false, Ordering::SeqCst);
+            }
+            Outcome {
+                status: Status::Accepted,
+                response: Some(json!({"env":0,"messages":[]})),
+                error: None,
+            }
+        }
+    }
+    async fn verify_resource_retry(&self, c: &Candidate, x: Execution) -> Outcome {
+        if c.id == "sibling" {
+            assert!(!self.0.peer_alive.load(Ordering::SeqCst));
+            self.0.sibling_reclaims.fetch_add(1, Ordering::SeqCst);
+        }
+        self.verify(c, x).await
+    }
+}
+#[tokio::test]
+async fn queued_sibling_refreshes_only_after_measured_memory_and_keeps_own_verdict() {
+    let signals = Arc::new(MemorySignals {
+        second_forecast: tokio::sync::Notify::new(),
+        second_refresh: tokio::sync::Notify::new(),
+        finish_peer: tokio::sync::Notify::new(),
+        peer_alive: std::sync::atomic::AtomicBool::new(false),
+        sibling_reclaims: AtomicUsize::new(0),
+    });
+    let e = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0, 1],
+            cores_per_worker: 1,
+        },
+        Arc::new(MemoryFeedbackBackend(signals.clone())),
+        Arc::new(TaskInterleave::new(TaskMemory::new(SignalledForecast(
+            signals.clone(),
+        )))),
+        Arc::new(Monitor { per_job: 0 }),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let worker = e.clone();
+    let run = tokio::spawn(async move {
+        worker
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![
+                    candidate("teacher", "teacher-source", "same-task"),
+                    candidate("peer", "peer-source", "another-task"),
+                    candidate("sibling", "sibling-source", "same-task"),
+                ],
+            })
+            .await
+    });
+    tokio::time::timeout(Duration::from_secs(2), signals.second_refresh.notified())
+        .await
+        .unwrap();
+    signals.finish_peer.notify_one();
+    let outcome = tokio::time::timeout(Duration::from_secs(2), run).await;
+    e.shutdown().await;
+    let rows = outcome.unwrap().unwrap().unwrap();
+    assert_eq!(rows.len(), 3);
+    assert_eq!(rows[0].outcome.status, Status::Rejected);
+    assert_eq!(rows[1].outcome.status, Status::Accepted);
+    assert_eq!(rows[2].outcome.status, Status::Accepted);
+    assert_eq!(signals.sibling_reclaims.load(Ordering::SeqCst), 1);
+    assert!(rows[2].attempts[0].exclusive);
+    assert_eq!(
+        rows[2].attempts.len(),
+        1,
+        "no predicted failure or speculative native retry"
+    );
+}

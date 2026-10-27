@@ -51,6 +51,21 @@ Preview the policy through the public Rust traits without starting a verifier:
 This prints candidate order only; it does not validate proofs, perform resource
 admission or produce benchmark performance.
 
+## Opt-in measured sibling memory
+
+Library callers can pass Arc::new(TaskInterleave::new(TaskMemory::new(Fifo)))
+as Engine::new's policy. Import the three policy types from gpu_smt_engine.
+The compiled public TaskMemory example documents this composition; it does not
+start a verifier. Existing CLI defaults and frozen collections are unchanged.
+
+The wrapper uses only measured physical-attempt peaks after retirement to
+refresh same-task waiting reservations. It shares no native verdict, prefix or
+certificate. Observations are separated by backend/resources and timeout;
+unknown tasks keep their original forecast. Use a fresh wrapper per workload
+or clear_memory. A heavy sibling can cause overreservation. Keep normal
+admission/watchdog/exclusive retry and qualify on native workloads before any
+performance claim; fixture tests are not that qualification.
+
 ## Matched native/prepared resource pair
 
 Build the reusable API example with cargo build --release -p gpu-smt-server

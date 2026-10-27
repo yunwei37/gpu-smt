@@ -53,6 +53,12 @@ impl<P: SchedulingPolicy> SchedulingPolicy for TaskInterleave<P> {
     fn predicted_rss(&self, c: &Candidate) -> Option<u64> {
         self.inner.predicted_rss(c)
     }
+    fn refresh_rss(&self, c: &Candidate, context: &str, initial: Option<u64>) -> Option<u64> {
+        self.inner.refresh_rss(c, context, initial)
+    }
+    fn observe_rss(&self, c: &Candidate, context: &str, bytes: u64) {
+        self.inner.observe_rss(c, context, bytes);
+    }
     fn batch_priorities(&self, candidates: &[Candidate], mode: Mode) -> Vec<u64> {
         let base = self.inner.batch_priorities(candidates, mode);
         if mode != Mode::FirstSuccess || base.len() != candidates.len() {
@@ -90,6 +96,73 @@ impl<P: SchedulingPolicy> SchedulingPolicy for TaskInterleave<P> {
             }
         }
         priorities
+    }
+}
+
+/// Opt-in memory forecasts learned only from measured same-task attempts.
+///
+/// Wraps ranking unchanged. History is scoped by backend/resources, task ID
+/// and timeout; no proof result, prefix or certificate is reused. Observed
+/// maxima are lower bounds, not memory caps or guarantees. A large sibling can
+/// overreserve/serialize smaller ones. Keep the normal watchdog and exclusive
+/// retry path, qualify native benefit separately, and use a fresh wrapper per
+/// engine/workload lifetime or explicitly clear its retained observations.
+///
+/// Compose opt-in measured feedback without changing the wrapped ordering:
+///
+/// ```
+/// use gpu_smt_engine::{Fifo, TaskInterleave, TaskMemory};
+/// let policy = TaskInterleave::new(TaskMemory::new(Fifo));
+/// // Pass Arc::new(policy) as the scheduling policy to Engine::new.
+/// ```
+pub struct TaskMemory<P> {
+    inner: P,
+    peaks: Mutex<HashMap<(String, String, u64), u64>>,
+}
+impl<P> TaskMemory<P> {
+    /// Compose measured-sibling memory with an existing ranking/forecast policy.
+    pub fn new(inner: P) -> Self {
+        Self {
+            inner,
+            peaks: Mutex::new(HashMap::new()),
+        }
+    }
+    /// Clear only observations held by this wrapper; no job or verdict changes.
+    pub fn clear_memory(&self) {
+        self.peaks.lock().unwrap().clear();
+    }
+    fn key(c: &Candidate, context: &str) -> Option<(String, String, u64)> {
+        c.task_id
+            .as_ref()
+            .filter(|task| !task.is_empty())
+            .map(|task| (context.into(), task.clone(), c.timeout_ms))
+    }
+}
+impl<P: SchedulingPolicy> SchedulingPolicy for TaskMemory<P> {
+    fn priority(&self, c: &Candidate) -> u64 {
+        self.inner.priority(c)
+    }
+    fn batch_priorities(&self, candidates: &[Candidate], mode: Mode) -> Vec<u64> {
+        self.inner.batch_priorities(candidates, mode)
+    }
+    fn predicted_rss(&self, c: &Candidate) -> Option<u64> {
+        self.inner.predicted_rss(c)
+    }
+    fn refresh_rss(&self, c: &Candidate, context: &str, initial: Option<u64>) -> Option<u64> {
+        let initial = self.inner.refresh_rss(c, context, initial);
+        let observed =
+            Self::key(c, context).and_then(|key| self.peaks.lock().unwrap().get(&key).copied());
+        initial.max(observed)
+    }
+    fn observe_rss(&self, c: &Candidate, context: &str, bytes: u64) {
+        self.inner.observe_rss(c, context, bytes);
+        if bytes > 0
+            && let Some(key) = Self::key(c, context)
+        {
+            let mut peaks = self.peaks.lock().unwrap();
+            let peak = peaks.entry(key).or_insert(0);
+            *peak = (*peak).max(bytes);
+        }
     }
 }
 
@@ -373,10 +446,12 @@ impl Inner {
     async fn acquire(
         self: &Arc<Self>,
         estimate: Option<u64>,
-        origin: &str,
+        candidate: &Candidate,
+        context: &str,
         solo: bool,
         queued: Queued,
     ) -> Result<(Lease, Arc<Registry>, Vec<usize>, bool), String> {
+        let origin = &candidate.id;
         let ticket = queued.ticket;
         let _queued = queued;
         loop {
@@ -395,6 +470,9 @@ impl Inner {
                 notified.await;
                 continue;
             }
+            // Refresh after becoming eligible, not once at batch submission.
+            // Policy callbacks run without holding the engine state lock.
+            let estimate = self.policy.refresh_rss(candidate, context, estimate);
             let sample = self.snapshot()?;
             {
                 let mut s = self.state.lock().unwrap();
@@ -525,6 +603,7 @@ impl Inner {
         completion: Arc<Completion>,
         queued: Queued,
     ) {
+        let memory_context = serde_json::json!([self.backend.identity(), &self.config]).to_string();
         let mut queued = Some(queued);
         let mut attempts = vec![];
         let mut solo = false;
@@ -550,7 +629,7 @@ impl Inner {
                 .take()
                 .unwrap_or_else(|| self.enqueue(self.policy.priority(&c)));
             let acquired = tokio::select! {
-                r=self.acquire(predicted,&c.id,exclusive,queued)=>r,
+                r=self.acquire(predicted,&c,&memory_context,exclusive,queued)=>r,
                 _=tx.closed()=>break Outcome::operational(Status::Cancelled,"no live subscribers"),
             };
             let (lease, registry, cpus, exclusive) = match acquired {
@@ -593,6 +672,7 @@ impl Inner {
             let peak = registry.peak.load(Ordering::Relaxed);
             if peak > 0 {
                 self.observed_peaks.lock().unwrap().push(peak);
+                self.policy.observe_rss(&c, &memory_context, peak);
             }
             attempts.push(Attempt {
                 status: outcome.status.clone(),

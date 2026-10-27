@@ -276,6 +276,23 @@ pub trait SchedulingPolicy: Send + Sync {
     fn predicted_rss(&self, _candidate: &Candidate) -> Option<u64> {
         None
     }
+    /// Refresh a queued forecast from already observed work. The opaque context
+    /// identifies the engine's immutable backend and resource configuration.
+    /// The default preserves the initial prediction. Called outside engine
+    /// state locks; implementations must keep this synchronous callback short.
+    fn refresh_rss(
+        &self,
+        _candidate: &Candidate,
+        _context: &str,
+        initial: Option<u64>,
+    ) -> Option<u64> {
+        initial
+    }
+    /// Observe positive measured peak bytes after a physical backend attempt
+    /// retires, before its lease is released. No callback for a completed cache
+    /// hit or additional coalesced caller. A preempted peak is only a lower
+    /// bound; observations never authorize rejection. No engine lock is held.
+    fn observe_rss(&self, _candidate: &Candidate, _context: &str, _bytes: u64) {}
 }
 
 /// Actual owned process sampling.

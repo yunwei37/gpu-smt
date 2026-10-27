@@ -20,7 +20,7 @@ versioned; production stability is not asserted.
 | Extension | Contract |
 |---|---|
 | VerificationBackend | Pinned environment identity, native response, full retirement/cancellation |
-| SchedulingPolicy | Source/batch ranking and optional RSS forecasts; predictions never prove rejection |
+| SchedulingPolicy | Source/batch ranking, queued RSS refresh and completed-attempt feedback; predictions never prove rejection |
 | ResourceMonitor | Actual owned-tree RSS and PID/birth identity; observable errors |
 | AdmissionPolicy | Joint CPU capacity and RSS plus unconsumed predicted growth |
 | ResultCache | Exact context/source/options keys, no reusable operational failures |
@@ -96,6 +96,24 @@ group follows the wrapped source policy. This is batch-local round-robin, not
 a fixed per-task concurrency cap or a continuous-arrival fairness guarantee.
 All-mode delegates the wrapped keys unchanged. Ordinary interleaving is prior
 technique, not the claimed scientific contribution.
+
+TaskMemory<P> is an opt-in library wrapper for measured same-task memory.
+It preserves ranking and refreshes waiting reservations from positive physical-
+attempt peaks observed after retirement. Backend/resource context, task ID
+and timeout partition history; anonymous tasks receive no shared estimate.
+A refresh takes the maximum of existing and learned reservations. TaskInterleave
+forwards both callbacks, so either wrapper order remains usable. Callbacks run
+outside engine state locks and must remain short; cache hits and additional
+coalesced subscribers do not manufacture observations.
+
+History contains no proof outcome: a rejected teacher can have an accepted
+sibling. A preempted peak is a lower bound, not a complete demand measurement.
+One expensive sibling can overreserve smaller ones, and retained history itself
+consumes memory. Scope the wrapper to a workload/engine lifetime or clear_memory.
+The default remains unchanged; watchdog, exclusive retry and parent retirement
+are still required. Causal fixture tests establish queue refresh/composition,
+not native benefit, safe memory prediction or a scientific novelty result.
+Native qualification waits until the current frozen full pair retires.
 
 RL mode produces every candidate outcome. Pass@k cancels siblings only after an
 actually checked same-task acceptance. Cancellation is a consumer outcome, never

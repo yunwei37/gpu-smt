@@ -1,6 +1,6 @@
 # Implementation: Rust engine and retained research adapters
 
-Updated2026-10-26. All source/build/test work occurs in the retained
+Updated2026-10-27. All source/build/test work occurs in the retained
 yunwei356/gpu-smt-dev Workspace, /workspaces/repository on main, by this
 thread only. No OMP/subagents/native AI-session resumes. Reviews are self-review.
 
@@ -43,6 +43,19 @@ core per REPL; next-point capacity starts at four one-core workers, subject
 to measured-memory admission. The Rust default learns positive observed
 peaks; source-policy predictions can override reservations. Unknown costs
 start conservatively. Prediction never proves rejection.
+
+An opt-in TaskMemory<P> Rust policy now learns positive completed-attempt peaks
+from same-task siblings, separated by backend/resource context and timeout.
+SchedulingPolicy supplies default no-op observe_rss and identity refresh_rss
+callbacks; waiting jobs refresh outside engine locks before admission.
+TaskInterleave forwards them without changing all/first-success ordering.
+No acceptance/rejection is shared. Existing reservations can only increase;
+anonymous tasks and unobserved peaks keep the wrapped prediction. Lower-bound
+peaks and heterogeneous siblings can still underpredict or overreserve.
+History can be explicitly cleared and should be scoped to an engine/workload.
+This library mechanism is not active in the frozen full pair; fixture tests
+prove causality/composition only, with native memory/throughput qualification
+still pending. There is no new CLI default or service.
 
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive
