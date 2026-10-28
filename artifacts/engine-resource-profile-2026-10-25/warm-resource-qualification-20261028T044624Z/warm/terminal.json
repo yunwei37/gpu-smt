@@ -1,0 +1,78 @@
+{
+  "state": "complete",
+  "returned": 24,
+  "counts": {
+    "valid": 14,
+    "lean_error": 7,
+    "timeout_error": 1,
+    "resource_failure": 2
+  },
+  "preparation_seconds": 3.578960410086438,
+  "whole_seconds": 1429.0778583651409,
+  "physical_attempts": 27,
+  "scope": "official retained Kimina Manager/run_checks;CLI-level transport;not HTTP latency;all native outcomes/retries charged",
+  "memory": {
+    "root_pid": 514136,
+    "root_birth": 1793181805.55,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 1429,
+    "kills": 5,
+    "peak_sampled_owned_rss_bytes": 51768815616,
+    "peak_sampled_native_repl_count": 4,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 0,
+    "included_owned_roots": [
+      {
+        "pid": 514136,
+        "birth": 1793181805.55,
+        "out": "/tmp/gpu-smt-warm-resource-qualification-20261028T044624Z/warm"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "maximum_native_workers": 4,
+    "per_process_AS": null
+  },
+  "source_repl": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+  "native_library": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+  "source_context": {
+    "LEAN_PATH": "././.lake/packages/batteries/.lake/build/lib:././.lake/packages/Qq/.lake/build/lib:././.lake/packages/aesop/.lake/build/lib:././.lake/packages/proofwidgets/.lake/build/lib:././.lake/packages/Cli/.lake/build/lib:././.lake/packages/importGraph/.lake/build/lib:././.lake/packages/REPL/.lake/build/lib:././.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "LEAN_SYSROOT": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "environment": "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "input": "/tmp/gpu-smt-resource-pair-repair-20261027T032050/original7808.json",
+    "one_collection_at_a_time": "caller must retire its previous owning collection before running",
+    "order": [
+      "native",
+      "prepared"
+    ],
+    "prepared_host": "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "project": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "repl": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "resources": {
+      "cores_per_worker": 1,
+      "cpus": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "memory_bytes": 51539607552
+    },
+    "scope": "same API/native input/resources; prior resource mechanisms are not novelty",
+    "sysroot": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux"
+  },
+  "phase": "qualification",
+  "adaptation": "benchmark-local Repl.max_memory_bytes=RLIM_INFINITY;installed source unchanged",
+  "UTC": "2026-10-28T10:27:16.045914+00:00",
+  "native_survivors": []
+}

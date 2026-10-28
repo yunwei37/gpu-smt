@@ -1,0 +1,399 @@
+{
+  "utc": "2026-10-28T10:30:03.212837+00:00",
+  "state": "warm-side-complete-engine-side-pending",
+  "returned": 24,
+  "counts": {
+    "valid": 14,
+    "lean_error": 7,
+    "timeout_error": 1,
+    "resource_failure": 2
+  },
+  "accepted_ids": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-4",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-3086"
+  ],
+  "internal_seconds": 1429.0778583651409,
+  "external_seconds": 1430.6775802059565,
+  "preparation_seconds": 3.578960410086438,
+  "physical_attempts": 27,
+  "memory": {
+    "root_pid": 514136,
+    "root_birth": 1793181805.55,
+    "budget_bytes": 51539607552,
+    "effective_threshold_bytes": 51539607552,
+    "per_second": true,
+    "samples": 1429,
+    "kills": 5,
+    "peak_sampled_owned_rss_bytes": 51768815616,
+    "peak_sampled_native_repl_count": 4,
+    "error": null,
+    "peak_external_owned_provider_rss_bytes": 0,
+    "included_owned_roots": [
+      {
+        "pid": 514136,
+        "birth": 1793181805.55,
+        "out": "/tmp/gpu-smt-warm-resource-qualification-20261028T044624Z/warm"
+      }
+    ],
+    "scope": "Whole owned experiment tree RSS sum; sampled response, not a kernel RSS quota. Includes retained descendants after reparenting and optional source-owned GPU provider samples."
+  },
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "maximum_native_workers": 4,
+    "per_process_AS": null
+  },
+  "native_survivors": [],
+  "four_warm_workers_mapped_library": true,
+  "source_fields_equal_frozen_input": true,
+  "per_id": [
+    {
+      "id": "minif2f-0",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.04004304390400648,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.04004304390400648
+        }
+      ]
+    },
+    {
+      "id": "minif2f-1",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.04148035100661218,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.04148035100661218
+        }
+      ]
+    },
+    {
+      "id": "minif2f-2",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.04313661204650998,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.04313661204650998
+        }
+      ]
+    },
+    {
+      "id": "minif2f-3",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.469874989008531,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.469874989008531
+        }
+      ]
+    },
+    {
+      "id": "minif2f-4",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.15450564702041447,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.15450564702041447
+        }
+      ]
+    },
+    {
+      "id": "minif2f-5",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 0.0862165738362819,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 0.0862165738362819
+        }
+      ]
+    },
+    {
+      "id": "minif2f-6",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.4410620201379061,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.4410620201379061
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.10884428001008928,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.10884428001008928
+        }
+      ]
+    },
+    {
+      "id": "minif2f-8",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.424386482918635,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.424386482918635
+        }
+      ]
+    },
+    {
+      "id": "minif2f-9",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.05971028096973896,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.05971028096973896
+        }
+      ]
+    },
+    {
+      "id": "minif2f-10",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 0.07157449307851493,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 0.07157449307851493
+        }
+      ]
+    },
+    {
+      "id": "minif2f-11",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.033293420216068625,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.033293420216068625
+        }
+      ]
+    },
+    {
+      "id": "minif2f-12",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.05064457608386874,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.05064457608386874
+        }
+      ]
+    },
+    {
+      "id": "minif2f-13",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 0.015844397945329547,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 0.015844397945329547
+        }
+      ]
+    },
+    {
+      "id": "minif2f-14",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.0649551700334996,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.0649551700334996
+        }
+      ]
+    },
+    {
+      "id": "minif2f-15",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 0.06985634099692106,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 0.06985634099692106
+        }
+      ]
+    },
+    {
+      "id": "minif2f-1885",
+      "status": "timeout_error",
+      "exclusive": true,
+      "wall_seconds": 300.0020146840252,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "resource_failure",
+          "wall_seconds": 240.86283394601196
+        },
+        {
+          "exclusive": true,
+          "status": "timeout_error",
+          "wall_seconds": 300.0020146840252
+        }
+      ]
+    },
+    {
+      "id": "minif2f-2325",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 197.8411566389259,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 197.8411566389259
+        }
+      ]
+    },
+    {
+      "id": "minif2f-2507",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 298.2920492531266,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 298.2920492531266
+        }
+      ]
+    },
+    {
+      "id": "minif2f-3086",
+      "status": "valid",
+      "exclusive": false,
+      "wall_seconds": 292.69086974905804,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "valid",
+          "wall_seconds": 292.69086974905804
+        }
+      ]
+    },
+    {
+      "id": "minif2f-3209",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 27.53306335094385,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 27.53306335094385
+        }
+      ]
+    },
+    {
+      "id": "minif2f-3683",
+      "status": "resource_failure",
+      "exclusive": true,
+      "wall_seconds": 220.54033103911206,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "resource_failure",
+          "wall_seconds": 167.60089620994404
+        },
+        {
+          "exclusive": true,
+          "status": "resource_failure",
+          "wall_seconds": 220.54033103911206
+        }
+      ]
+    },
+    {
+      "id": "minif2f-3685",
+      "status": "resource_failure",
+      "exclusive": true,
+      "wall_seconds": 221.88618455687538,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "resource_failure",
+          "wall_seconds": 167.43813289911486
+        },
+        {
+          "exclusive": true,
+          "status": "resource_failure",
+          "wall_seconds": 221.88618455687538
+        }
+      ]
+    },
+    {
+      "id": "minif2f-7230",
+      "status": "lean_error",
+      "exclusive": false,
+      "wall_seconds": 288.51198742492124,
+      "attempts": [
+        {
+          "exclusive": false,
+          "status": "lean_error",
+          "wall_seconds": 288.51198742492124
+        }
+      ]
+    }
+  ],
+  "engine_side_pending": true,
+  "new_db8ecbf_retry_order_applied": false,
+  "performance_scope": "selected development24 qualification,with disclosed root CPU10-11 support overlap;not fullthroughput or a pairedgain",
+  "review": "root self-review only"
+}
