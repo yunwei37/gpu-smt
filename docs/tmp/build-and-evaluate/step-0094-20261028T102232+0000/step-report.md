@@ -34,3 +34,21 @@ No sampling/diagnostic tooling or service layer is added to the engine.
 Commit/push source and regression evidence;follow the existing engine CI.
 Preserve warm terminal/raw inputs and wait for actual engine terminal through
 its existing owner event. Do not overwrite its binary or run another cohort.
+
+## Actual source CI and release followthrough
+
+db8ecbf GitHub engine run40672462407 completes both Rust and native-repl-contract
+jobs successfully. Actual native job122762431233 runs all5pinnedLean4.18
+differential/lifecycle tests with0ignored/0failed. Rust job122762431683
+includes the two new engine regression controls and actual owned-process
+watchdog tests. Benchmark-smoke run40672462371 also succeeds.
+Exact metadata and rawcompressedlogs/testlines are in actual-source-ci/.
+This is boundednativecontract evidence,not native4.9throughput or fullMathlib
+matching and not independent auditing.
+
+A singleCPU11releasebuild completes27.034840s with48,069,668,864Bcombinedpeak,
+no pressureabort/monitorerror. Copying the full bytes freezes a prospective
+newretry-orderbinary and unchanged24inputs privately;pending-native-release.json
+records the exact latercommand. No runner/autostart is installed and current
+qualificationbinary/nativehost remain unchanged. Executeonlyafter complete
+rootreview of that pair. Preparation is not a measuredperformance result.

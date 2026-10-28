@@ -1,0 +1,36 @@
+{
+  "UTC": "2026-10-28T10:33:03.488273+00:00",
+  "commands": [
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "11",
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "gpu-smt-server",
+        "--bin",
+        "gpu-smt",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 27.034839652944356
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 27.034887371817604,
+  "samples": 29,
+  "combined_peak_rss_bytes": 48069668864,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "resource_retry_tail_support": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "analysis_commands": 1
+}

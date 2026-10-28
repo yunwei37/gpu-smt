@@ -17,3 +17,5 @@ cohort runs. New native replay must follow its complete root review.
 README/architecture/implementation are synchronized. Historical/foreign files,
 failed raw results,original goal and retained private state stay untouched.
 No subagent,AI session,new checkout,service,scheduler or permission change.
+
+Source CI is actually terminalsuccess,including all5realLean controls;rawjoblogs are retained. Prospective release/input copies are fullbytecompared but not executed. No CI result is treated as fullMathlib throughput.
