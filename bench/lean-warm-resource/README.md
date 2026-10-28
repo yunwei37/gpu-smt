@@ -21,19 +21,24 @@ REPLs, rather than trusting configuration labels.
 
 The retained owned-tree watchdog samples each second, attributes/kills the
 largest own REPL and records its source. Admission stops on actual pressure.
-After an actual concurrent preemption, peers finish, all idle warm workers retire,
-and the preempted original source executes exclusively under the same48GiB
-budget. A solo excess is a resource failure. Source forecasts never reject.
-These resource-control rules differ from historical24GiB-AS timings.
+The current entrypoint finishes the finite ordinary frontier before resource
+retries,subject to actual RSS admission. A pending preemption alone does not
+suspend unrelated ordinary work. Idle state may still need retirement when
+actual admission pressure blocks all work. After the frontier and active jobs
+retire,all idle warm workers close,and original preempted sources execute
+alone under the same48GiB budget in recorded retry order. A solo excess is a
+resource failure. No speculative overlap during a solo retry or predicted
+rejection is added. Capacity and admission threshold come from the existing
+Manager/watchdog objects. These rules differ from historical24GiB-AS timings.
 
-The current full engine instead defers an actual resource retry until the
-ordinary frontier already queued at that retry has drained; later batches
-cannot starve it. Its retry still runs alone under the same budget. The warm
-adapter above drains and retries immediately. The full comparison therefore
-measures these resource-path compositions, including different retry order
-and warm-worker retirement/reload costs. It cannot isolate a pure COW effect.
-Do not describe FIFO candidate input order as identical physical retry order,
-or attribute a final ratio entirely to Mathlib derivation.
+The already running full7808 and earlier24captures retain their copied old
+warm adapter,which drains and retries immediately,versus the frozen engine's
+ordinary-frontier-before-solo ordering. Those results measure the disclosed
+resource-path compositions,including retry order and retirement/reload costs;
+they cannot isolate pure COW or retroactively measure this later entrypoint.
+Do not describe their physical retry order as identical,or assign their ratio
+entirely to Mathlib derivation. The revised future entrypoint needs actual
+native qualification/results;unit controls do not establish a stronger timing.
 
 Official asynchronous close operations are retained and awaited once per native
 Process object. This is benchmark retirement glue; no proof search/reuse algorithm
@@ -148,3 +153,25 @@ a7808-row accounting fixture,are not the real full7808 acquisition. The
 analyzer computes observations and never automatically certifies a gain.
 Preserve any post-run executable-alias observation with the archived point so
 later replay does not require the original private native installation.
+
+
+## Finite retry-order adaptation and validation scope
+
+The adapter uses the official installed Manager/run_checks. Its private async
+frontier helper only owns existing ordinary-attempt tasks and waits for their
+cleanup on error/cancellation. The caller retains native resource attribution,
+all actual preemption records,the later solo loop and final pool retirement.
+There is no new CLI mode,competitor variant,controller or native timeout.
+
+Future terminal resource_retry_order=ordinary_frontier_then_exclusive declares
+the selected adaptation;raw attempts are still required to establish actual
+retry engagement. A failed/partial terminal is not evidence of completion.
+Old captures lacking this field are not relabelled. Their frozen source and
+reported behavior remain authoritative. Raw data from different adapter/source
+points must be reported separately.
+
+Callback controls cover progress of ordinary sources while a retry is pending,
+actual-pressure idle reclamation,and cancellation cleanup. They do not import
+Kimina,execute Lean,prove4native-worker engagement or measure native benefit.
+The real native qualifier/full population remain necessary;current ongoing
+captures are never restarted or changed to use a later source repair.

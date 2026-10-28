@@ -416,3 +416,12 @@ fresh fallback;70workspace/35Python controls,fmt/clippy/docs pass. Source
 qualification is separate from throughput. The sole frozen native warm leg
 is still live at15:02:44UTC;the latest29.02GBsample is not a complete-run peak
 or a hard-quota proof. No current native source/binary was substituted.
+
+
+Step0110substantive-progress thought:the next resource comparison should not
+reward the engine for an immediate-drain barrier added by our own warm adapter.
+Align the future adapter's finite ordinary-frontier/solo-retry order with the
+engine while retaining actual RSS/worker/retirement controls. Source changes
+and15offline controls are complete;real native qualification remains absent.
+Keep the current frozen resource-composition capture and its raw outcomes,
+then original42priority;do not restart it or claim that it measured new code.

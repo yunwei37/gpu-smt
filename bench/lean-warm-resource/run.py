@@ -3,7 +3,7 @@
 Runs official Manager/run_checks directly, matching CLI-level engine transport.
 The only native cap adaptation sets Repl.max_memory_bytes to RLIM_INFINITY.
 One existing owned-tree watchdog supplies resource attribution; preempted sources
-are retried exclusively after peers and warm idle workers retire.
+are retried exclusively after the ordinary frontier and idle workers retire.
 """
 from pathlib import Path
 import argparse,asyncio,collections,datetime,gzip,importlib.util,json,os,resource,signal,sys,time
@@ -44,6 +44,36 @@ def native_library_environment(context):
         path=path.resolve()
         if path.is_dir()and str(path)not in paths:paths.append(str(path))
     return {'LEAN_SERVER_NATIVE_DYNLIB':str(library),'LD_LIBRARY_PATH':os.pathsep.join(paths)}
+
+async def _run_first_attempts(candidates,execute,can_admit,close_idle,max_active):
+    """Drain one finite ordinary frontier without executing deferred retries.
+
+    The caller owns native execution/resource attribution and the later solo
+    retry queue. This function owns cancellation/retirement of its async tasks.
+    """
+    pending=iter(candidates);active=set();exhausted=False
+    try:
+        while not exhausted or active:
+            while len(active)<max_active and not exhausted:
+                if not can_admit():
+                    if not active:
+                        await close_idle()
+                        continue
+                    break
+                candidate=next(pending,None)
+                if candidate is None:
+                    exhausted=True
+                    break
+                active.add(asyncio.create_task(execute(candidate)))
+            if active:
+                done,active=await asyncio.wait(active,return_when=asyncio.FIRST_COMPLETED)
+                for task in done:
+                    task.result()
+    except BaseException:
+        for task in active:
+            task.cancel()
+        await asyncio.gather(*active,return_exceptions=True)
+        raise
 
 async def main(args):
     no_other_collection()
@@ -166,37 +196,20 @@ async def main(args):
             except psutil.NoSuchProcess:raise RuntimeError('Warm worker exited before native-library readiness')
         assert len(loaded)==4,'Native-library readiness must cover all four warm REPLs'
         (args.out/'native-library-readiness.json').write_text(json.dumps(loaded,indent=2)+'\n')
-        # A shared queue never dispatches a fifth native request. When pressure
-        # preempts an attempt, drain peers,retire all idle warm states,then retry
-        # actual preempted sources one at a time. No predicted rejection.
-        pending=iter(candidates);active=set();exhausted=False
-        while not exhausted or active:
-            while len(active)<4 and not exhausted and not preempted:
-                # Actual RSS guard is the final authority; do not admit new
-                # source work at/above the total budget while peers can retire.
-                total=0
-                for process in watchdog.owned():
-                    try:total+=process.memory_info().rss
-                    except psutil.NoSuchProcess:pass
-                if total>=48*1024**3:
-                    if not active:
-                        await close_workers()
-                        continue
-                    break
-                candidate=next(pending,None)
-                if candidate is None:exhausted=True;break
-                active.add(asyncio.create_task(execute(candidate)))
-            if active:
-                done,active=await asyncio.wait(active,return_when=asyncio.FIRST_COMPLETED)
-                for task in done:task.result()
-            if preempted:
-                if active:
-                    await asyncio.gather(*active)
-                    active.clear()
-                await close_workers()
-                while preempted:
-                    candidate=preempted.pop(0)
-                    await execute(candidate,exclusive=True)
+        # Match the engine's finite ordinary-frontier/solo-retry order.
+        # A preempted attempt does not itself suspend unrelated first attempts.
+        def can_admit():
+            total=0
+            for process in watchdog.owned():
+                try:total+=process.memory_info().rss
+                except psutil.NoSuchProcess:pass
+            return total<watchdog.threshold
+        await _run_first_attempts(candidates,execute,can_admit,close_workers,
+                                  manager.max_repls)
+        if preempted:
+            await close_workers()
+            for candidate in preempted:
+                await execute(candidate,exclusive=True)
         assert set(final)==set(ids)
         if watchdog.error:raise RuntimeError(watchdog.error)
         await close_workers()
@@ -209,8 +222,7 @@ async def main(args):
           'physical_attempts':len(physical),'scope':'official retained Kimina Manager/run_checks;CLI-level transport;not HTTP latency;all native outcomes/retries charged'}
     except BaseException as exc:
         failure=repr(exc)
-        for task in list(locals().get('active',set())):task.cancel()
-        await asyncio.gather(*list(locals().get('active',set())),return_exceptions=True)
+        # The frontier helper retires its tasks before propagating cancellation.
         await close_workers()
         terminal={'state':'failed-or-interrupted','error':failure,'returned':len(final),
                   'whole_seconds':time.monotonic()-started}
@@ -220,6 +232,7 @@ async def main(args):
          'cpus':[8,9,10,11],'maximum_native_workers':4,'per_process_AS':None},
          source_repl=str(repl),native_library=native_library,source_context=context,phase=args.phase,
          adaptation='benchmark-local Repl.max_memory_bytes=RLIM_INFINITY;installed source unchanged',
+         resource_retry_order='ordinary_frontier_then_exclusive',
          UTC=datetime.datetime.now(datetime.timezone.utc).isoformat())
         # Independent actual process check,including reparented owned descendants.
         survivors=[]
