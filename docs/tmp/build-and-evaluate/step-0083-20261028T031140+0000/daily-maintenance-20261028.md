@@ -370,3 +370,12 @@ ordinary frontier. The final whole-batch ratio must include this difference,
 not become a pure Mathlib-COW claim. No active cohort was changed or duplicated.
 The next substantive result remains the complete matched native pair,including
 accepted/status/resource differences;selected24 and test success do not answer it.
+
+
+Step0107substantive-progress thought:while the sole native resource pair runs,
+remove a concrete avoidable engine cost instead of adding observers. The old
+broadcast wakes every waiting request on each resource transition even though
+only the queue head is eligible. Route normal wakes to that head,retain full
+fault/shutdown release and test real acquire futures. This changes no research
+claim until native performance is measured. Existing CI must qualify the source;
+do not replace the frozen active binary or launch another native cohort.

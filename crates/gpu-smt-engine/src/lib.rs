@@ -6,7 +6,7 @@ pub mod linux;
 use gpu_smt_core::*;
 use std::{
     cmp::Reverse,
-    collections::{BTreeSet, BinaryHeap, HashMap, HashSet, VecDeque},
+    collections::{BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, VecDeque},
     sync::{
         Arc, Mutex, Weak,
         atomic::{AtomicBool, AtomicU64, Ordering},
@@ -275,8 +275,20 @@ struct Active {
 struct State {
     free: BTreeSet<usize>,
     active: HashMap<u64, Active>,
-    queued: BTreeSet<(u64, bool, u64, u64)>,
+    queued: BTreeMap<(u64, bool, u64, u64), Arc<Notify>>,
     queue_epoch: u64,
+}
+impl State {
+    fn notify_queue_head(&self) {
+        if let Some((_, ready)) = self.queued.first_key_value() {
+            ready.notify_one();
+        }
+    }
+    fn notify_all_queued(&self) {
+        for ready in self.queued.values() {
+            ready.notify_one();
+        }
+    }
 }
 #[derive(Clone)]
 struct WorkResult {
@@ -352,6 +364,7 @@ impl Drop for Lease {
         if let Some(a) = s.active.remove(&self.id) {
             s.free.extend(a.cpus);
         }
+        s.notify_queue_head();
         drop(s);
         self.inner.notify.notify_waiters();
     }
@@ -380,11 +393,13 @@ impl BatchStream {
 struct Queued {
     inner: Arc<Inner>,
     ticket: (u64, bool, u64, u64),
+    ready: Arc<Notify>,
 }
 impl Drop for Queued {
     fn drop(&mut self) {
-        self.inner.state.lock().unwrap().queued.remove(&self.ticket);
-        self.inner.notify.notify_waiters();
+        let mut state = self.inner.state.lock().unwrap();
+        state.queued.remove(&self.ticket);
+        state.notify_queue_head();
     }
 }
 impl Inner {
@@ -404,9 +419,12 @@ impl Inner {
             Ok(s) => s,
             Err(e) => {
                 *self.fatal.lock().unwrap() = Some(e);
-                for a in self.state.lock().unwrap().active.values() {
+                let state = self.state.lock().unwrap();
+                for a in state.active.values() {
                     a.registry.cancel.cancel();
                 }
+                state.notify_all_queued();
+                drop(state);
                 self.notify.notify_waiters();
                 return;
             }
@@ -449,6 +467,11 @@ impl Inner {
                     Some("engine RSS alone exceeds aggregate budget".into());
             }
         }
+        if self.fatal.lock().unwrap().is_some() {
+            s.notify_all_queued();
+        } else {
+            s.notify_queue_head();
+        }
         drop(s);
         self.notify.notify_waiters();
     }
@@ -466,11 +489,13 @@ impl Inner {
             // Freeze the ordinary frontier. Later batches cannot starve this retry.
             state.queue_epoch = self.next.fetch_add(1, Ordering::Relaxed);
         }
-        state.queued.insert(ticket);
+        let ready = Arc::new(Notify::new());
+        state.queued.insert(ticket, ready.clone());
         drop(state);
         Queued {
             inner: self.clone(),
             ticket,
+            ready,
         }
     }
     async fn acquire(
@@ -485,7 +510,7 @@ impl Inner {
         let ticket = queued.ticket;
         let _queued = queued;
         loop {
-            let notified = self.notify.notified();
+            let notified = _queued.ready.notified();
             if let Some(e) = self.fatal.lock().unwrap().clone() {
                 return Err(e);
             }
@@ -493,7 +518,10 @@ impl Inner {
             // not cause every queued candidate to scan the process table.
             let head_ready = {
                 let s = self.state.lock().unwrap();
-                s.queued.first() == Some(&ticket) && s.free.len() >= self.config.cores_per_worker
+                s.queued
+                    .first_key_value()
+                    .is_some_and(|(key, _)| *key == ticket)
+                    && s.free.len() >= self.config.cores_per_worker
             };
             if !head_ready {
                 notified.await;
@@ -560,7 +588,10 @@ impl Inner {
                 } else {
                     reserve
                 };
-                let queue_turn = s.queued.first() == Some(&ticket);
+                let queue_turn = s
+                    .queued
+                    .first_key_value()
+                    .is_some_and(|(key, _)| *key == ticket);
                 if queue_turn
                     && !unknown
                     && !exclusive_block
@@ -740,7 +771,7 @@ impl Engine {
             state: Mutex::new(State {
                 free: config.cpus.iter().copied().collect(),
                 active: HashMap::new(),
-                queued: BTreeSet::new(),
+                queued: BTreeMap::new(),
                 queue_epoch: 0,
             }),
             config,
@@ -900,8 +931,12 @@ impl Engine {
     /// Stop admissions, cancel active attempts and wait for backend retirement.
     pub async fn shutdown(&self) {
         *self.0.fatal.lock().unwrap() = Some("engine shutdown".into());
-        for a in self.0.state.lock().unwrap().active.values() {
-            a.registry.cancel.cancel();
+        {
+            let state = self.0.state.lock().unwrap();
+            for a in state.active.values() {
+                a.registry.cancel.cancel();
+            }
+            state.notify_all_queued();
         }
         self.0.notify.notify_waiters();
         loop {
@@ -1098,7 +1133,7 @@ mod shutdown_admission_tests {
             state: Mutex::new(State {
                 free: [0].into_iter().collect(),
                 active: HashMap::new(),
-                queued: BTreeSet::new(),
+                queued: BTreeMap::new(),
                 queue_epoch: 0,
             }),
             inflight: Mutex::new(HashMap::new()),
@@ -1319,5 +1354,196 @@ mod observed_peak_median_tests {
         assert_eq!(peaks.median(), Some(1));
         peaks.push(u64::MAX);
         assert_eq!(peaks.median(), Some(60));
+    }
+}
+
+#[cfg(test)]
+mod queue_wakeup_tests {
+    use super::*;
+    use std::{
+        future::Future,
+        sync::atomic::AtomicUsize,
+        task::{Context, Poll, Wake, Waker},
+    };
+
+    #[derive(Default)]
+    struct CountWake(AtomicUsize);
+    impl Wake for CountWake {
+        fn wake(self: Arc<Self>) {
+            self.0.fetch_add(1, Ordering::SeqCst);
+        }
+        fn wake_by_ref(self: &Arc<Self>) {
+            self.0.fetch_add(1, Ordering::SeqCst);
+        }
+    }
+    #[derive(Default)]
+    struct Monitor(AtomicBool);
+    impl ResourceMonitor for Monitor {
+        fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+            if self.0.load(Ordering::SeqCst) {
+                Err("owned monitor failure fixture".into())
+            } else {
+                Ok(ResourceSnapshot::default())
+            }
+        }
+    }
+    struct NoBackend;
+    #[async_trait::async_trait]
+    impl VerificationBackend for NoBackend {
+        fn identity(&self) -> String {
+            "queue-wakeup-fixture".into()
+        }
+        async fn verify(&self, _: &Candidate, _: Execution) -> Outcome {
+            panic!("private admission control must not execute a native backend");
+        }
+    }
+    fn engine(monitor: Arc<Monitor>) -> Engine {
+        let engine = Engine::new(
+            Config {
+                memory_bytes: 100,
+                cpus: vec![0],
+                cores_per_worker: 1,
+            },
+            Arc::new(NoBackend),
+            Arc::new(Fifo),
+            monitor,
+            Arc::new(HeadroomAdmission),
+            Arc::new(MemoryCache::default()),
+        )
+        .unwrap();
+        // Keep every real acquire future pending until its Waker is registered.
+        // The test controls this private free-core transition without a process.
+        engine.0.state.lock().unwrap().free.clear();
+        engine
+    }
+    fn candidates(n: usize) -> Vec<Candidate> {
+        (0..n)
+            .map(|i| Candidate {
+                id: i.to_string(),
+                task_id: None,
+                code: "fixture".into(),
+                timeout_ms: 300000,
+                reuse: false,
+            })
+            .collect()
+    }
+
+    #[tokio::test]
+    async fn full_queue_watchdog_wakes_only_the_head_and_retirement_passes_the_lease() {
+        let engine = engine(Arc::new(Monitor::default()));
+        let candidates = candidates(7808);
+        let counts: Vec<_> = (0..candidates.len())
+            .map(|_| Arc::new(CountWake::default()))
+            .collect();
+        let wakers: Vec<_> = counts.iter().cloned().map(Waker::from).collect();
+        let mut waiting: Vec<_> = candidates
+            .iter()
+            .map(|c| {
+                let queued = engine.0.enqueue(0, false);
+                Box::pin(engine.0.acquire(Some(1), c, "fixture", false, queued))
+            })
+            .collect();
+        for (future, waker) in waiting.iter_mut().zip(&wakers) {
+            assert!(
+                future
+                    .as_mut()
+                    .poll(&mut Context::from_waker(waker))
+                    .is_pending()
+            );
+        }
+
+        engine.0.state.lock().unwrap().free.insert(0);
+        engine.0.watchdog();
+        assert_eq!(counts[0].0.load(Ordering::SeqCst), 1);
+        assert!(
+            counts[1..].iter().all(|w| w.0.load(Ordering::SeqCst) == 0),
+            "a resource tick woke ineligible tail requests"
+        );
+
+        let first = match waiting[0]
+            .as_mut()
+            .poll(&mut Context::from_waker(&wakers[0]))
+        {
+            Poll::Ready(Ok((lease, _, _, _))) => lease,
+            _ => panic!("eligible head did not acquire"),
+        };
+        assert_eq!(engine.0.state.lock().unwrap().active.len(), 1);
+        // Head removal can notify its successor before there is a free CPU.
+        assert!(
+            waiting[1]
+                .as_mut()
+                .poll(&mut Context::from_waker(&wakers[1]))
+                .is_pending()
+        );
+        counts[1].0.store(0, Ordering::SeqCst);
+        drop(first);
+        assert_eq!(counts[1].0.load(Ordering::SeqCst), 1);
+        let second = match waiting[1]
+            .as_mut()
+            .poll(&mut Context::from_waker(&wakers[1]))
+        {
+            Poll::Ready(Ok((lease, _, _, _))) => lease,
+            _ => panic!("retired CPU lease did not reach the successor"),
+        };
+        drop(second);
+
+        engine.shutdown().await;
+        for (future, waker) in waiting.iter_mut().zip(&wakers).skip(2) {
+            assert!(
+                matches!(future.as_mut().poll(&mut Context::from_waker(waker)),
+                Poll::Ready(Err(error)) if error == "engine shutdown")
+            );
+        }
+        assert!(engine.0.state.lock().unwrap().queued.is_empty());
+        assert!(engine.0.state.lock().unwrap().active.is_empty());
+    }
+
+    #[tokio::test]
+    async fn head_cancellation_advances_and_monitor_failure_releases_every_waiter() {
+        let monitor = Arc::new(Monitor::default());
+        let engine = engine(monitor.clone());
+        let candidates = candidates(32);
+        let counts: Vec<_> = (0..candidates.len())
+            .map(|_| Arc::new(CountWake::default()))
+            .collect();
+        let wakers: Vec<_> = counts.iter().cloned().map(Waker::from).collect();
+        let mut waiting: Vec<_> = candidates
+            .iter()
+            .map(|c| {
+                let queued = engine.0.enqueue(0, false);
+                Box::pin(engine.0.acquire(Some(1), c, "fixture", false, queued))
+            })
+            .collect();
+        for (future, waker) in waiting.iter_mut().zip(&wakers) {
+            assert!(
+                future
+                    .as_mut()
+                    .poll(&mut Context::from_waker(waker))
+                    .is_pending()
+            );
+        }
+        drop(waiting.remove(0));
+        assert_eq!(counts[1].0.load(Ordering::SeqCst), 1);
+        assert!(counts[2..].iter().all(|w| w.0.load(Ordering::SeqCst) == 0));
+        assert!(
+            waiting[0]
+                .as_mut()
+                .poll(&mut Context::from_waker(&wakers[1]))
+                .is_pending()
+        );
+        counts[1].0.store(0, Ordering::SeqCst);
+
+        monitor.0.store(true, Ordering::SeqCst);
+        engine.0.watchdog();
+        assert!(counts[1..].iter().all(|w| w.0.load(Ordering::SeqCst) == 1));
+        for (future, waker) in waiting.iter_mut().zip(&wakers[1..]) {
+            assert!(
+                matches!(future.as_mut().poll(&mut Context::from_waker(waker)),
+                Poll::Ready(Err(error)) if error == "owned monitor failure fixture")
+            );
+        }
+        assert!(engine.0.state.lock().unwrap().queued.is_empty());
+        assert!(engine.0.state.lock().unwrap().active.is_empty());
+        engine.shutdown().await;
     }
 }

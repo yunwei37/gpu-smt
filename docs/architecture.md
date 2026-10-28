@@ -103,6 +103,15 @@ Preempted peaks are lower bounds, so they do not justify speculative overlap
 during the exclusive retry. Each retry closes its current frontier; later batch arrivals wait behind it.
 This prevents an endless arrival stream from overtaking an already queued retry,
 without claiming a bounded delay for long or memory-constrained native work.
+
+Each ordered ticket has its own private wake notification. Normal watchdog
+and lease/ticket retirement transitions wake the queue head,which alone can
+attempt admission;shutdown and fatal monitor errors release every waiter.
+Notifications retain an unconsumed permit across a pre-poll transition.
+This removes whole-queue broadcast wakes without changing the ticket keys,
+reservations or retry order. It adds a notification per queued request,not a
+separate scheduler or limit. Native throughput impact remains unmeasured;
+the frozen13d4606full pair does not run this later source change.
 Independent concurrent batches enter the same queue at ticket registration;
 this is not a timestamp reconstruction of network arrivals.
 
