@@ -186,3 +186,18 @@ turnover,36pages,pages13/14visuallychecked,PDFsynchronized. Samefinite
 continuation restored507932/birth159941957;FIFOunchanged,noqualifiernative
 launchyet. The precise next evidence remains actualmatched4.9qualification,
 not a sourcepatch or CI green substituted for resourcegain.
+
+
+## 06:45UTC — finish the actual comparison,do not invent another control
+
+The baselinealreadyhas a liveprocess semaphore spanning startthrough awaited
+close,so adding a secondlimiter would be redundant. The missing deliverable
+was pairedanalysis across warmSDK and enginecaptures. It now checks exact
+inputs/resources/native-library engagement,acceptedIDs and rawdiagnostics,
+using only externalcompletecell clocks for the descriptive ratio. Sixoffline
+accountingcontrols pass;actualpartialdata refuses a ratio. A realpartial
+RustselfCPU snapshot is179.91CPUsover10967.45selapsed,not isolatedmonitorcost
+or an end-to-endbound. This supports staying focused on the alreadyprepared
+nativecode-matched point instead of inventing observer tuning or anotherpolicy.
+CoreAPIs and runningcollection are unchanged;analysis stays in bench/tests
+and detailedfailed/partialevidence under thisstep.

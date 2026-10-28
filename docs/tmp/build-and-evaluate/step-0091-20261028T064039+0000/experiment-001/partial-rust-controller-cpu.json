@@ -1,0 +1,25 @@
+{
+  "pid": 490546,
+  "start_ticks": 159034837,
+  "state": "S",
+  "observation_unix_seconds": 1793169943.8248785,
+  "birth_unix_seconds": 1793158976.37,
+  "elapsed_birth_to_observation_seconds": 10967.45487856865,
+  "rust_self_user_seconds": 101.35,
+  "rust_self_system_seconds": 78.56,
+  "reported_children_user_seconds": 23007.18,
+  "reported_children_system_seconds": 1080.76,
+  "threads": 5,
+  "cpu_affinity": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "psutil_cpu_times_contract": "Return a (user, system, children_user, children_system)\nnamedtuple representing the accumulated process time, in\nseconds.\nThis is similar to os.times() but per-process.\nOn macOS and Windows children_user and children_system are\nalways set to 0.\n",
+  "capture_complete": false,
+  "utc": "2026-10-28T06:45:43.829596+00:00",
+  "self_cpu_sum_seconds": 179.91,
+  "self_cpu_over_elapsed_one_cpu_fraction": 0.016403988162427694,
+  "scope": "Single partial-running Rust-controller CPU snapshot, including scheduler, monitor, logs, serialization and drain. No isolated observer/logging attribution; CPU is not removable wall time. Children CPU is not validated exhaustive native accounting. Frozen8045source;not a measured9d/cf/11b improvement."
+}

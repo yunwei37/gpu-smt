@@ -82,3 +82,28 @@ paths are used for both. This is prior native compilation,not a method claim.
 Actual /proc maps and ready native_library metadata must confirm loading;
 configuration alone is insufficient. Preserve the superseded unexecuted
 qualification setup and current frozenFIFO unmodified.
+
+
+## Analyze the actual complete qualification
+
+After terminal.json reports qualification-pair-complete:
+
+    python3 bench/lean-warm-resource/compare.py /absolute/path/to/retained-point
+
+The analyzer refuses partial/duplicate populations,changed source/timeout/task/
+reuse fields,unmatched CPU/RSS/AS/native-library evidence and completed-result
+reuse. It compares accepted IDs,all final status aliases,raw native replies and
+an explicitly labelled secondary view removing only env handles/empty ast.
+Diagnostics,positions and metavariable changes remain visible.
+
+Only the two external launch-to-exit clocks determine the descriptive ratio.
+Warm admitted envelopes and engine native-attempt durations have different
+boundaries,so their overlapping sums and selected tails are separatelylabelled,
+not used as a speedup. Prepared-ready counts do not establish preparation
+duration. Configuration and terminal receipts still need root evidence review;
+fixture tests and the selected24qualification never establish full7808gain.
+
+The installed baseline already holds its benchmark_memory process slot from
+Repl.start through Repl.close's awaited native retirement. Manager's scheduled
+close alone is therefore not evidence that a fifth native worker can start.
+No second lifecycle limiter or retirement wrapper is added.
