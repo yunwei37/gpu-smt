@@ -33,3 +33,7 @@ Consume this same controller/CLI's nativeexit event and originalrawfiles,
 not goalroundminute polling. Keep anyhealthycollection unchanged. Ifresource
 parity is stillunsupported,repair from actualevidence;do not extendtimeouts,
 discardfailures or reduce the research objective. Fixed42solo staysstaged.
+
+## Actual completion
+
+CLI519441/birth161672846 exits0 at 11:25:04 UTC. Step0099 owns the complete result and root review. The earlier readiness record remains an interim observation.

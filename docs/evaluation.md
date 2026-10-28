@@ -120,7 +120,13 @@ is implemented and passes observed old-source-failure/fixed-progress controls,
 62workspace tests plus doctest and pinned5nativeLean CI. It lets alreadyqueued
 ordinary work use availableadmission before a resource retry;later arrivals
 cannot starve that retry. Exclusive retirement/fullcost stay,not safe backfill.
-The currentnativequalifier predates this change;newnativeperformance is pending.
+The initial native qualifier predates this change. Its
+[completed24-source repair measurement](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-retry-frontier24-20261028T110236Z/README.md)
+takes1347.584488s:12.534567%below oldengine and5.807954%below retainedwarm.
+All24rawoutcomes match oldengine,including its twoextra timeouts versuswarm.
+This selected/sharedhost/reference comparison is not representative throughput
+or complete observable parity. Response/retirement semantics are the next
+bounded source/control question,not a proved cause of those timeouts.
 [Historical growthanalysis](tmp/build-and-evaluate/step-0096-20261028T103651+0000/experiment-001/result-review.md)
 shows41resource retries have>47.5GiBnativepeak lowerbounds but4658/7389exclusive-
 alone samples stillhave>=16GiBaggregateheadroom. Samples are not time shares,
