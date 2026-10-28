@@ -208,3 +208,17 @@ The soleFIFOhas not terminated and the finitecontinuation remainslive without
 error. No scheduled/proofmethod/resourceconfiguration is changed. Pending
 nativeevidence is awaited through the existingfinitepidfdpath,not promoted
 from fixtures or repeatedgoalturnpolls.
+
+
+## 07:05UTC — make the next mandatedrerun executable without a newrunner
+
+The historical42launcher used stockREPL/debugCLI and had no explicit native
+libraryselection. Reusing it unchanged would miss the currentbaseline repair.
+The same42IDs/order and originalsource/options are now verified and theexact
+98,034Binput is staged with a concreteprospectiverepairedrelease/nativeMathlib
+command/environment. It runsonecase at a time under48GiB/no-AS and retains
+everypossibleoutcome,not the oldanalysis's failure-onlyassertions. No new
+launcher/service/agent or actualcollection is added. Actualresourcecomparison
+review is stillthe nextdependency;no furthergenericdiagnostictools are needed.
+Historicalrecords stayhistorical;READMElinks and current/pending distinction
+are keptclear. Executeonlyafter the repairedpoint is actuallyreviewed.

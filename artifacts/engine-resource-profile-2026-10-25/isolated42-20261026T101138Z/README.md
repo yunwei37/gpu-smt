@@ -35,3 +35,16 @@ newWorkspace/scheduler or frozenCPUoracle experiment. No cross-resource speed
 ratio or accepted-set claim. Next usersequence:original71timeoutprototypes,
 thenoriginallean-mlir. Fullvalidpreparedpopulation comparison remainsoutstanding
 afterENOSPC. Root-only execution/analysis/review;self-review,notindependentaudit.
+
+
+## 2026-10-28 native-context clarification
+
+This historicallauncher used the stockREPL/debugCLI and did not explicitly
+configure the nativeMathlib library now required by the corrected resource
+comparison. Per-source modulemaps were not retained;do not relabel the41/1
+outcomes as a newrun after the explicitlibraryrepair. The originalsources,
+launch,rawdata and observedanalysis remain unchanged. That analysis asserts
+its observed failure-onlystatuses and must not be used to constrain unknown
+newoutcomes. The original42inputs are prepared for a separatelyreported
+corrected-point replay after actualresourcecomparison review;no rerun has
+been launched by this clarification.

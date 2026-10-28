@@ -184,6 +184,9 @@ completed their exclusive rerun with no fixed per-process address-space cap:
 41 exceeded the aggregate RSS budget and one timed out; none became accepted.
 The sampled peak was48.23GiB. These outcomes remain separate from both earlier
 resource points;they are operational failures,not proofs of false goals.
+That historicalsolo launcher did not explicitly select the now-matched native
+Mathlib library. A corrected-point42solo rerun is prepared but remains pending
+the resource comparison;the old41/1outcomes are not newresults.
 RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
 partitions. Only one full acquisition group runs at a time.
 
