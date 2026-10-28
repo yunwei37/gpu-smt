@@ -16,3 +16,5 @@ mutation. The currentowner/nativebirths are actuallylive at entry. Supporting
 CPU11analysis is combinedguarded and its own output is preserved.
 Closed23simp_allresults are read rather than rerun without a newcriterion.
 Rootself-review,not independentaudit or fullwriting/milestone acceptance.
+
+Canonical maintenance followthrough:remove stale assertions that oldFIFOis still running and the finitecontroller stillwaits on it. Evaluation/implementation nowlink actual7808closure,completed4warm24rawdata,pendingenginepair,sourceCI and guardedmemorygrowthanalysis. Historicalrecords are not rewritten;fourpolicycells are not claimedexecuted.

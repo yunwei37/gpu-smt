@@ -78,12 +78,22 @@ The monitor had retained retired PID/birth entries under its long-lived root.
 The source now strictly prunes confirmed retired/reused identities while keeping
 live known descendants.55workspace tests/doctest,clippy andformatpass;two earlier
 failed test attempts remain. No native repaired-population speedup is measured.
+The preserved old FIFO has [actually completed all7808sources](../artifacts/engine-resource-profile-2026-10-25/policy7808-20261028T034248Z/README.md).
+Its3013accepted/4665rejected/87timeout/41resource/2backend outcomes and nativeJSON
+match the earlier prepared cell;the six historicalwarm differences persist.
+All7882registered nativebirths retire. Its22716.038751s internalclock has no
+completeexternalcounterpart after the originalwrapperpause;do not make a ratio.
+
 The [finite warm resource continuation](../artifacts/engine-resource-pair-2026-10-25/gpu-smt-warm-resource-qualification-20261028T044624Z/README.md)
-is now waiting on that exact FIFOchild's pidfd. It will preserve the old result,
-retire the obsolete policy wrapper,and run the real4warm/repairedFIFOqualification.
-No new native qualification or full warm comparison is complete yet.
-The sourcefix also passes pinnedLean4.18native-protocol CI,not the pending4.9
-resource comparison. Further policy/failure gains remain deferred. Historical42solo
+retired that obsolete wrapper and started the corrected native-library point.
+[Four-warm24sources are complete](../artifacts/engine-resource-profile-2026-10-25/warm-resource-qualification-20261028T044624Z/README.md):
+14valid/7Leanerrors/1timeout/2resourcefailures,27physicalattempts,allworkers retired.
+The historicalwarm loaded compiledMathlib linarith;oldengine cells omitted it.
+Both corrected sides now explicitly load that same existingordinary library;
+this restores baselinecontext,not CPUoracle novelty. The frozenengine side is
+still running at this update;the completepair/full7808warm comparison is open.
+Warm1430.677580s externalclock has disclosed developmentCPU overlap and is not
+a pairedgain. Further policy/failure gains remain deferred. Historical42solo
 results are preserved;the requested repaired-point42cohort follows resource work.
 
 [Disjoint singleton decomposition](tmp/build-and-evaluate/step-0088-20261028T053756+0000/experiment-001/result-review.md)
@@ -100,7 +110,19 @@ A separate stale-global-fallback defect is fixed:queued requests keep explicit
 policy forecasts,while the learned globalmedian is refreshed at admission.
 A real-engine concurrency fixture and56workspace tests/doctest,clippy/fmtpass.
 This is a resource-layer repair without a new policy or measured native speedup.
-The current frozenFIFOis unchanged;the next native version must remain explicit.
+The completed oldFIFO remains frozen;the current qualification uses its separately pinned repaired version.
+
+
+[Queue-frontier retry ordering](tmp/build-and-evaluate/step-0094-20261028T102232+0000/step-report.md)
+is implemented and passes observed old-source-failure/fixed-progress controls,
+62workspace tests plus doctest and pinned5nativeLean CI. It lets alreadyqueued
+ordinary work use availableadmission before a resource retry;later arrivals
+cannot starve that retry. Exclusive retirement/fullcost stay,not safe backfill.
+The currentnativequalifier predates this change;newnativeperformance is pending.
+[Historical growthanalysis](tmp/build-and-evaluate/step-0096-20261028T103651+0000/experiment-001/result-review.md)
+shows41resource retries have>47.5GiBnativepeak lowerbounds but4658/7389exclusive-
+alone samples stillhave>=16GiBaggregateheadroom. Samples are not time shares,
+upperbounds or a speedup;neither constantpeak nor guaranteedcapacity follows.
 
 ## Own load-aware methods
 
@@ -121,9 +143,11 @@ peaks overshoot48GiB(48.753387/48.558949),not a hardquota. Allowners retire.
 Outcome-informed cohort,singleorder/sharedhost andCPU11analysis limit scope:
 not fullpopulation/strongestwarm/novelty evidence. The old failedrelease stays.
 The [representative preparedMathlib policy matrix](../artifacts/engine-resource-pair-2026-10-25/prepared-policy7808-20261028T034248Z/README.md)
-started with four intended fullcells;the serial controller is now stopped to defer later policy cells while its current FIFO child continues unchanged.
-Actual24-source qualifiers match21accepted/3rejected and everyrawoutcome;
-each engages a5545module singlethreadparent,no fallback. Fullresults pending.
+started with four intended fullcells;only its FIFO fullcell ran before resource
+baselinepriority deferred the remainingthree. Its [completedrawdata](../artifacts/engine-resource-profile-2026-10-25/policy7808-20261028T034248Z/README.md)
+are preserved,not an executedfourcellmatrix. Earlier24-source qualifiers match
+21accepted/3rejected and everyrawoutcome;each engages a5545module singlethread
+parent,no fallback. No representative policygain is established.
 
 [Whole-task lexical memory fit](../artifacts/engine-resource-profile-2026-10-25/source-memory-crossfit-20261027/README.md)
 is negative:MAE0.606624GiB versus median0.352486;all41resource/44preempted sources

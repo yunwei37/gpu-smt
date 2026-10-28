@@ -44,3 +44,5 @@ run the completedpairedanalyzer,review acceptedsets/rawnativepayloads/resources,
 then launch the alreadyfrozen retry-frontier nativecomparison if appropriate.
 The fixed42solo is separatelystaged for the reviewedresourcepoint.
 No forcedclosure,budget,deadline or repeatedemptygoalpolling.
+
+Canonical maintenance followthrough:remove stale assertions that oldFIFOis still running and the finitecontroller stillwaits on it. Evaluation/implementation nowlink actual7808closure,completed4warm24rawdata,pendingenginepair,sourceCI and guardedmemorygrowthanalysis. Historicalrecords are not rewritten;fourpolicycells are not claimedexecuted.
