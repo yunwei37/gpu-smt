@@ -48,3 +48,15 @@ accepted IDs,native diagnostics,resource outcomes,import/queue/cleanup costs.
 Diagnostic stderr is not native acceptance. Existing simp observer remains
 responsible for phase/origin timing. No new diagnostics are added here.
 Same-thread self-review,not independent audit.71timeout/lean-mlir work remains.
+
+##2026-10-28 disposition from later completed native controls
+
+The preparation/compile history above is retained. The later
+[completed six native controls](../original71-native-20261026T125951Z/failfast-controls6/)
+include an actual accepted-to-rejected recovery-sensitive counterexample.
+Ordinary backtracking and already-failed-have controls agree. Thus generic
+recovery disabling is not a transparent engine optimization;the23prepared
+wrapper inputs are not a qualified speedup. The current
+[offline reconstruction and scope](../recovery-boundary-20261028T131753Z/README.md)
+links all raw outcomes and the original71command shapes. This is not a new
+candidate acquisition or a reason to close the broader failure-method direction.

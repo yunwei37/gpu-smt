@@ -335,3 +335,18 @@ for old miniF2F differences and full accepted-set equality remain unproved.
 The fixed42 future command is rebound to the ongoing full point13d4606 without
 launching or overwriting its old preparation. This keeps future resource data
 matched rather than silently using a stale cf1138b binary.
+
+## Recovery semantics: how to obtain substantive progress
+
+Do not rediscover or rerun prepared primitives. The actual2026-10-26six-control
+cell already falsifies transparent generic recovery disabling;promote that
+native counterexample into the current frontier. Native71parser data show one
+final theorem per source,so a post-theorem-command error cut has no later proof
+declarations to skip there. A useful failure mechanism must act inside the
+expensive theorem while preserving native recovery/backtracking semantics.
+Source flags,hashes and large branch counts are not such a witness. The highest
+new acquisition value remains completing the corrected strong warm-resource
+pair,then original42;this step starts no new collection or efficacy layer.
+Canonical evaluation is distilled173lines with full old text retained and
+four unanswered RQs explicit. Paper source/PDF are unchanged from the actual
+36-page compile;rejected intermediate constructors do not become paper claims.

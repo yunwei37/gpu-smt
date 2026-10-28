@@ -15,7 +15,7 @@ and its actual qualification/limits; older results preserve their own resource
 points and raw failures. The exact latest user words remain in user-instruction.md.
 No authorization question remains, and no obsolete unbudgeted queue resumes.
 
-## OMP model recovery — cancelled by the user
+## OMP model recovery — resolved: cancelled by the user
 
 The user's current instruction cancels the zai/model migration proposal and all
 further OMP use, including coordinator/OSS/experiments/paper/CLI. The current

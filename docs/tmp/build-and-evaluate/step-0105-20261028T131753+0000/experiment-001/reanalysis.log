@@ -1,0 +1,829 @@
+{
+  "scope": "offline existing native controls and source-native parse-table reuse;zero new candidate executions",
+  "selected_RQ": "RQ2: Does branching from prepared native state preserve verifier responses and requested artifacts while isolating candidates and cancellation?",
+  "native_controls": 6,
+  "pairs": [
+    {
+      "control": "recovery-context",
+      "native_status": "accepted",
+      "wrapped_status": "rejected",
+      "native_exit_code": 0,
+      "wrapped_exit_code": 1,
+      "wrapped_error_messages": [
+        "requires recovery context"
+      ]
+    },
+    {
+      "control": "ordinary-backtracking",
+      "native_status": "accepted",
+      "wrapped_status": "accepted",
+      "native_exit_code": 0,
+      "wrapped_exit_code": 0,
+      "wrapped_error_messages": []
+    },
+    {
+      "control": "already-failed-have",
+      "native_status": "rejected",
+      "wrapped_status": "rejected",
+      "native_exit_code": 1,
+      "wrapped_exit_code": 1,
+      "wrapped_error_messages": [
+        "unproved have\n⊢ False"
+      ]
+    }
+  ],
+  "synthetic_control_not_released_workload": true,
+  "generic_recovery_wrapper_transparent": false,
+  "ordinary_workload_failure_rate_or_speedup": null,
+  "target_originals": 71,
+  "source_native_parse_errors": 0,
+  "one_final_theorem_declaration": 71,
+  "later_top_level_proof_declarations_after_target": 0,
+  "static_command_rows": [
+    {
+      "id": "minif2f-998",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1000",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1005",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1021",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4878",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4894",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4895",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4992",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4993",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5009",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5011",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5015",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5017",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5020",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5023",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5952",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5954",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5960",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5964",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5980",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-6383",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7200",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7202",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7203",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7205",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7207",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7208",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7210",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7212",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7213",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7216",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7217",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7218",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7219",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7221",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7223",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7224",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7225",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7226",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7229",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7231",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7521",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7525",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7530",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7532",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7533",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7537",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7542",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-175",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1816",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1841",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-1846",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-2429",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-2498",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-3101",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-3587",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-3610",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4336",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4339",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-4997",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5006",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5016",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5913",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-5919",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-6209",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-6373",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-6398",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-6807",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7129",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7551",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    },
+    {
+      "id": "minif2f-7771",
+      "command_kinds": [
+        "Lean.Parser.Command.set_option",
+        "Lean.Parser.Command.open",
+        "Lean.Parser.Command.declaration"
+      ],
+      "declaration_count": 1,
+      "last_command_kind": "Lean.Parser.Command.declaration",
+      "theorem_ancestor_in_sites": true
+    }
+  ],
+  "top_level_scope": "For errors discovered in the final theorem,a hook only after that command cannot skip later proof declarations. This is not measured early-failure coverage or a proof about errors in the setup prefix.",
+  "native_control_raw": "artifacts/hotspot-mechanisms-2026-10-25/original71-native-20261026T125951Z/failfast-controls6",
+  "native_parser_raw": "artifacts/hotspot-mechanisms-2026-10-25/native-sites/compile-005/sites.json",
+  "native71_reference": "artifacts/hotspot-mechanisms-2026-10-25/original71-native-20261026T125951Z/native71"
+}
