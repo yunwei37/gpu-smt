@@ -361,3 +361,12 @@ outputs/memory logs exactly. This is necessary analysis glue,not another
 research result. Preserve unknown memory and distinguish admitted-tail costs
 from unrecorded paired arrival latency. Frozen13d4606full data remains the
 next decisive evidence;no new source efficacy layer is mixed into that run.
+
+
+Step0106CI closure:the source analyzer's actual benchmark-smoke passed35offline
+tests. Rechecking the frozen resource paths exposed an attribution limit:
+warm drains/retries immediately,engine postpones solo retries behind its queued
+ordinary frontier. The final whole-batch ratio must include this difference,
+not become a pure Mathlib-COW claim. No active cohort was changed or duplicated.
+The next substantive result remains the complete matched native pair,including
+accepted/status/resource differences;selected24 and test success do not answer it.

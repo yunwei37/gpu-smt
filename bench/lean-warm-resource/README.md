@@ -26,6 +26,15 @@ and the preempted original source executes exclusively under the same48GiB
 budget. A solo excess is a resource failure. Source forecasts never reject.
 These resource-control rules differ from historical24GiB-AS timings.
 
+The current full engine instead defers an actual resource retry until the
+ordinary frontier already queued at that retry has drained; later batches
+cannot starve it. Its retry still runs alone under the same budget. The warm
+adapter above drains and retries immediately. The full comparison therefore
+measures these resource-path compositions, including different retry order
+and warm-worker retirement/reload costs. It cannot isolate a pure COW effect.
+Do not describe FIFO candidate input order as identical physical retry order,
+or attribute a final ratio entirely to Mathlib derivation.
+
 Official asynchronous close operations are retained and awaited once per native
 Process object. This is benchmark retirement glue; no proof search/reuse algorithm
 changes. Dynamic admission/watchdog, queue/drain, warmup, retries and cleanup count.

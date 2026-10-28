@@ -19,6 +19,14 @@ or per-leader-to-aggregate inference occurs. No automatic gain flag is set.
 
 The full cohort retains frozen13d4606and its settings;source edits affect
 postprocessing only. No native preflight,new matrix,profile hook or compiler
-runs locally. The paper/frozen scientific contract is unchanged. Full source
-CI is pending;actual final native data,behavior/operational differences,
+runs locally. The paper/frozen scientific contract is unchanged. Source
+CI40700654919/job122859242565 passed35offline tests and its raw log is
+archived. This is not native performance validation. Actual final native data,
+behavior/operational differences,
 resource conclusions,novelty and independent auditing remain unfulfilled.
+
+The warm adapter's immediate peer-drain/solo retry differs from the engine's
+ordinary-frontier-before-solo ordering. This resource-path composition can be
+reported,with all retry/warmup costs,but the full ratio cannot be interpreted
+as pure COW. Public instructions now carry that limit. The frozen running
+native experiment is unchanged;no second native group was started.

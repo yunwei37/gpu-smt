@@ -58,7 +58,7 @@ compilation/source identity remains as verified by step0105;this analyzer
 change is not entered as a scientific result. No full writing pass or milestone
 review is justified with four open RQs. Full resource results still pending.
 
-## REVIEW_GATE — root self-review;source CI pending
+## REVIEW_GATE — root self-review;source CI verified
 
 Root reviews the same executed changes under the explicit no-Agent rule;
 there is no fresh independent reviewer. The analyzer is necessary glue for the
@@ -70,9 +70,12 @@ automatic gain verdict. Tests do not prove the real full input has completed.
 Direction:scientific contract,baseline family,workload/metric meaning and
 four-RQ scope are unchanged. Efficiency:reuse the existing analyzer and captured
 data;no second cohort,compiler,provider or logging framework is added.
-Maintenance:source and public interpretation agree;CI will execute the normal
-repository test suite after publication. Source CI status remains explicit
-rather than claimed from local unit controls.
+Maintenance:source and public interpretation agree. Actual benchmark-smoke
+run40700654919/job122859242565 completed successfully for sourcea7ab198;
+its full log records35offline unit tests,including the12comparison controls.
+The archived job metadata/log are real GitHub outputs,not inferred from local
+controls. No new Rust/native change was introduced by this analyzer commit.
+This CI is source validation,not new native performance or full-pair evidence.
 
 Ranked open objections:the actual full pair is incomplete;accepted/status
 differences and retirement remain unknown at population scope;the legacy warm
@@ -81,3 +84,23 @@ workload novelty and independent audit remain open. None prevents implementing
 the ordinary offline analysis. Route remains the same frozen full run,then
 root result review and the already rebound original42 exclusive cohort.
 No full gain,project completion or OSDI acceptance is claimed.
+
+### Post-publication self-review — retry-order attribution
+
+Reading the actual frozen finite collector and both resource paths confirms
+that the installed warm benchmark adapter drains peers and immediately retries
+a preempted source alone;frozen13d4606engine instead drains the already queued
+ordinary frontier before its solo retry. Their48GiB/CPU/cohort/native-library
+matching does not make those physical retry orders identical. The public
+benchmark README now explicitly labels a resource-composition comparison,not
+a pure Mathlib-COW causal estimate. No active collector,SDK,source snapshot,
+timeout,resource value or retry implementation is changed by this clarification.
+
+The latest inspected warm prefix had2443physical attempts:1081valid,
+1321lean_error,25resource_failure,16timeout_error. It had no server_error,
+repl_error or backend_error rows and no final full-pair terminal. These are
+partial attempt observations,not7808candidate outcomes or a speedup. Native
+collection continues under its existing finite exit program. Repository free
+space was3,304,284,160bytes,/tmp259,214,159,872bytes;no storage expansion or
+artifact deletion is performed. The own Mathlib project had no core/core.PID
+files at this observation. Existing resource controls and failures are retained.
