@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open work
 
-Updated2026-10-27UTC. Root thread alone;all reviews are self-review,not independent
+Updated2026-10-28UTC. Root thread alone;all reviews are self-review,not independent
 audits. Four [original RQs](idea-story.md) and the Lean/SMT/OSDI objective remain
 open. Engineering tests,activity and a compiled paper do not establish novelty
 or venue acceptance. All original,negative,failed and partial data remain.
@@ -130,6 +130,18 @@ inverse edits recover originalbytes. Small proof/preflight success did not
 predict whole-time benefit. Single generated CNF does not prove physical reuse;
 internal slowdown attribution is unmeasured. Keep opt-in research prototype,
 not default enablement,GPU gain or novelty. Fourdirections continue.
+
+[Own fused LRAT correctness qualification](tmp/build-and-evaluate/step-0085-20261028T035549+0000/experiment-001/result-review.md)
+now proves universal equality with stock checker/reflection truth and executes
+seven certificate boundaries, positive/negative frontend controls and the paired
+first original lean-mlir theorem. The fused path is directly engaged, not hidden
+by fallback. Nine compiler invocations retain two failed proof-script attempts
+and two expected SAT rejections. No complete module performance measurement or
+GPU result yet; concurrent CPU11 control timings are not speed evidence.
+Full parsing/CNF reconstruction and sequential stock formula operations remain.
+The exact full-module native/import/fused inputs and paired-order protocol are
+prepared, without starting a competing full collection. Ordinary fusion alone
+is not a novelty claim.
 
 ## Frozen evidence and full history
 

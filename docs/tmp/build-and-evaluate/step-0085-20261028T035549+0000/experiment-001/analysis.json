@@ -1,0 +1,237 @@
+{
+  "UTC": "2026-10-28T04:05:51.255240+00:00",
+  "scope": "supporting formal/native development qualification; not performance",
+  "cells": {
+    "frontend-001": {
+      "UTC": "2026-10-28T04:00:16.466294+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "-o",
+            "/tmp/gpu-smt-lrat-fused-build-20261028/FusedFrontend.olean",
+            "FusedFrontend.lean"
+          ],
+          "exit": 0,
+          "seconds": 1.0033891769126058
+        },
+        {
+          "command": [
+            "lean",
+            "Controls.lean"
+          ],
+          "exit": 0,
+          "seconds": 2.00413111387752
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 3.007608179934323,
+      "samples": 7,
+      "combined_peak_rss_bytes": 29361184768,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 2
+    },
+    "original-first-theorem": {
+      "UTC": "2026-10-28T04:01:18.576871+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "--tstack=400000",
+            "-Dtrace.Meta.Tactic.sat=true",
+            "OriginalFirstNative.lean"
+          ],
+          "exit": 0,
+          "seconds": 3.0058542490005493
+        },
+        {
+          "command": [
+            "lean",
+            "--tstack=400000",
+            "-Dtrace.Meta.Tactic.sat=true",
+            "OriginalFirstFused.lean"
+          ],
+          "exit": 0,
+          "seconds": 3.004950945964083
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 6.010897485073656,
+      "samples": 10,
+      "combined_peak_rss_bytes": 44757458944,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_reference_theorem_control_executions": 2,
+      "full_original_module_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 2
+    },
+    "compile-002": {
+      "UTC": "2026-10-28T03:57:37.167608+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "-o",
+            "/tmp/gpu-smt-lrat-fused-build-20261028/FusedLRAT.olean",
+            "FusedLRAT.lean"
+          ],
+          "exit": 1,
+          "seconds": 1.003549654968083
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 1.0036361070815474,
+      "samples": 3,
+      "combined_peak_rss_bytes": 41215811584,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 1
+    },
+    "false-fused": {
+      "UTC": "2026-10-28T04:01:11.474695+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "FalseFused.lean"
+          ],
+          "exit": 1,
+          "seconds": 1.003513848874718
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 1.003599129151553,
+      "samples": 3,
+      "combined_peak_rss_bytes": 41512345600,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 1
+    },
+    "compile-003": {
+      "UTC": "2026-10-28T03:57:54.507509+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "-o",
+            "/tmp/gpu-smt-lrat-fused-build-20261028/FusedLRAT.olean",
+            "FusedLRAT.lean"
+          ],
+          "exit": 0,
+          "seconds": 1.0034842782188207
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 1.0035712579265237,
+      "samples": 3,
+      "combined_peak_rss_bytes": 44370948096,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 1
+    },
+    "false-native": {
+      "UTC": "2026-10-28T04:01:12.515705+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "FalseNative.lean"
+          ],
+          "exit": 1,
+          "seconds": 1.0034007399808615
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 1.0034840928856283,
+      "samples": 3,
+      "combined_peak_rss_bytes": 41743720448,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 1
+    },
+    "compile-001": {
+      "UTC": "2026-10-28T03:56:22.838632+00:00",
+      "commands": [
+        {
+          "command": [
+            "lean",
+            "-o",
+            "/tmp/gpu-smt-lrat-fused-build-20261028/FusedLRAT.olean",
+            "FusedLRAT.lean"
+          ],
+          "exit": 1,
+          "seconds": 1.0026045020204037
+        }
+      ],
+      "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+      "seconds": 1.002690606052056,
+      "samples": 3,
+      "combined_peak_rss_bytes": 24187973632,
+      "budget_bytes": 51539607552,
+      "pressure_aborted_only_new_compiler": false,
+      "monitor_errors": [],
+      "lean_prototype_build_unit_only": true,
+      "native_candidate_executions": 0,
+      "original_group": 490481,
+      "original_group_start_ticks": 159034008,
+      "original_generated_candidate_elaboration": false,
+      "native_development_module_elaboration": true,
+      "native_compiler_invocations": 1
+    }
+  },
+  "compiler_invocations": 9,
+  "genuine_failed_proof_attempts": 2,
+  "expected_false_rejections": 2,
+  "certificate_boundary_controls": 7,
+  "positive_fused_proofs": 2,
+  "positive_stock_proofs": 1,
+  "original_reference_theorem_native_and_fused": true,
+  "full_original_module_executions": 0,
+  "generic_checker_and_reflection_equalities_compiled": true,
+  "combined_peak_rss_bytes": 44757458944,
+  "new_helpers_retired_by_wait": true,
+  "independent_audit": false
+}

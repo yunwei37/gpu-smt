@@ -1,6 +1,6 @@
 # Implementation: Rust engine and retained research adapters
 
-Updated2026-10-27. All source/build/test work occurs in the retained
+Updated2026-10-28. All source/build/test work occurs in the retained
 yunwei356/gpu-smt-dev Workspace, /workspaces/repository on main, by this
 thread only. No OMP/subagents/native AI-session resumes. Reviews are self-review.
 
@@ -53,9 +53,10 @@ No acceptance/rejection is shared. Existing reservations can only increase;
 anonymous tasks and unobserved peaks keep the wrapped prediction. Lower-bound
 peaks and heterogeneous siblings can still underpredict or overreserve.
 History can be explicitly cleared and should be scoped to an engine/workload.
-This library mechanism is not active in the frozen full pair; fixture tests
-prove causality/composition only, with native memory/throughput qualification
-still pending. The executable exposes this optional FIFO-wrapped policy as
+This library mechanism is qualified by the completed real32 pair below.
+The new full prepared-policy matrix uses the frozen release at both policies;
+its representative throughput result remains pending. Fixture causality alone
+does not establish that result. The executable exposes this optional FIFO-wrapped policy as
 --policy task-memory for check/measure/serve,using existing Capture.policy
 provenance. Defaults and current frozen capture are unchanged;there is no new
 schema,collector,service or native workload claim.
@@ -208,6 +209,21 @@ does not replace the checked logical witness. The engine/default tactic is
 unchanged;physical value reuse remains unmeasured. The [actual whole-module comparison](../artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) now accepts all native/import/core/public conditions but takes40.15/40.34/57.98/56.91s. Core/public are44.43%/41.76%slower in this ordered observation. Keep the prototype opt-in;small control success is not whole-module benefit.
 Sequential LRAT formula updates constrain batching;their dependency width and
 the actual stage-cost split are unknown. Ordinary sharing alone is not novelty.
+
+The [own fused LRAT prototype](../bench/lean-lrat-fused/README.md) now combines
+action conversion/filtering with sequential checking. Universal action-list,
+CNF and certificate-string equalities with the pinned Std checker compile in
+Lean. A direct opt-in frontend executes seven certificate boundaries, real
+positive/configured proofs, matching SAT rejection and the original first
+lean-mlir theorem. It retains full parsing, Array.toList, CNF reconstruction
+and stock RUP/RAT operations; no complete module speed result or GPU path exists.
+Native compiler trust is unchanged; whole frontend/resource/diagnostic equality
+is not inferred from pure checker equality. Two failed proof-script attempts
+and all outputs remain in [step0085](tmp/build-and-evaluate/step-0085-20261028T035549+0000/step-report.md).
+Supporting CPU11 controls overlap the active full policy matrix under combined
+RSS monitoring and do not form a performance comparison. Full module inputs
+are prepared for measurement after that sole collection retires. Ordinary fusion
+alone is not an established contribution.
 
 The code-verification/math workloads and all four paper RQs remain open.
 

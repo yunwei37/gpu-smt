@@ -66,3 +66,18 @@ equality,actual5545module singlethreadparent and nofallback. The sole all7808
 fourcell matrix starts block1FIFO→TaskMemory,then block2TaskMemory→FIFO,
 coldhistories/identicalresources. This follows the reflection's actualnextstep;
 fullresults remain pending. No othernativecollection or AIexecutor is started.
+
+## Own code-verification mechanism while the policy matrix runs
+
+Avoid repeating completed42solo retries or elaborating logging. Pinned LRAT
+source materializes mapped/filtered action lists before checking. Implement
+one-pass action conversion/checking and prove exact stock truth for all inputs;
+the direct frontend now passes real original-theorem and SAT-negative controls.
+No fullmodule gain follows from successful proofs or ~3s concurrent control
+clocks. The remaining parser/CNF/sequential checks may dominate, and native
+compiler optimizations may erase source-level savings. Ordinary fusion is not
+novelty by itself. Prepare exact fullmodule inputs and matched opposite-order
+measurement, then run after the current sole fullmatrix retires. Supporting
+CPU11 contention and combinedRSS receipts remain explicit in step0085.
+Reconcile the older closed-CNF README's pending wording with its already
+measured slowdown; do not rerun that failed direction.

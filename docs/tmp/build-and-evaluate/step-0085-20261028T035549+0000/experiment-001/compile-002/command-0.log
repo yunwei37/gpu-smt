@@ -1,0 +1,32 @@
+FusedLRAT.lean:72:2: error: Tactic `apply` failed: could not unify the conclusion of `@funext`
+  ?f = ?g
+with the goal
+  List.filterMap (prepare (cnf.numLiterals + 1)) actions.toList =
+    List.filterMap
+      (fun x =>
+        match intActionToDefaultClauseAction (cnf.numLiterals + 1) x with
+        | none => none
+        | some (LRAT.Action.addEmpty id rupHints) => some (LRAT.Action.addEmpty id rupHints)
+        | some (LRAT.Action.addRup id c rupHints) => some (LRAT.Action.addRup id c rupHints)
+        | some (LRAT.Action.del ids) => some (LRAT.Action.del ids)
+        | some (LRAT.Action.addRat id c pivot rupHints ratHints) =>
+          if pivot ∈ Clause.toList c then some (LRAT.Action.addRat id c pivot rupHints ratHints) else none)
+      actions.toList
+
+Note: The full type of `@funext` is
+  ∀ {α : Sort ?u.3224} {β : α → Sort ?u.3223} {f g : (x : α) → β x}, (∀ (x : α), f x = g x) → f = g
+
+case e_p.e_a.e_prf
+actions : Array LRAT.IntAction
+cnf : CNF Nat
+⊢ List.filterMap (prepare (cnf.numLiterals + 1)) actions.toList =
+    List.filterMap
+      (fun x =>
+        match intActionToDefaultClauseAction (cnf.numLiterals + 1) x with
+        | none => none
+        | some (LRAT.Action.addEmpty id rupHints) => some (LRAT.Action.addEmpty id rupHints)
+        | some (LRAT.Action.addRup id c rupHints) => some (LRAT.Action.addRup id c rupHints)
+        | some (LRAT.Action.del ids) => some (LRAT.Action.del ids)
+        | some (LRAT.Action.addRat id c pivot rupHints ratHints) =>
+          if pivot ∈ Clause.toList c then some (LRAT.Action.addRat id c pivot rupHints ratHints) else none)
+      actions.toList

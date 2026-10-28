@@ -42,16 +42,18 @@ The initial missing-parser-namespace compile failure remains. Positive trace
 has3shared certificate checks;it is not fallback-only acceptance. Native and
 prototype printed axiom lists match and contain no sorryAx.
 
-## Measurement still required
+## Interpretation of the completed measurement
 
 One source-level declaration does not guarantee physical meta/native heap or
 computation sharing. Existing compilation barriers can outweigh saved work.
-Complete unchanged original-module/import-only/prototype measurements must
-include preparation,solver,checker,fallback,queue and retirement through the
-[existing capture path](../../docs/benchmarking.md). Keep variant edits explicit.
+The completed unchanged original-module/import-only/prototype measurement
+includes preparation,solver,checker,fallback,queue and retirement through the
+[existing capture path](../../docs/benchmarking.md). Its negative result is below;
+future claims would still need explicit variant edits and matched conditions.
 Unequal development files/proof counts/tracing cannot form a speed ratio.
 
-No original-module accepted-set conclusion,GPU implementation or novelty is
+The one measured module checks successfully in all four conditions; this is
+not a broader accepted-set equivalence claim. No GPU implementation or novelty is
 claimed. Ordinary within-proof sharing alone is not a paper contribution.
 The frozen arithmetic CPU oracle and excluded cross-candidate prefix/certificate
 reuse are not part of this implementation.

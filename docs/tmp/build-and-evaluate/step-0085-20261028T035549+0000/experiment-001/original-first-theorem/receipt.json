@@ -1,0 +1,41 @@
+{
+  "UTC": "2026-10-28T04:01:18.576871+00:00",
+  "commands": [
+    {
+      "command": [
+        "lean",
+        "--tstack=400000",
+        "-Dtrace.Meta.Tactic.sat=true",
+        "OriginalFirstNative.lean"
+      ],
+      "exit": 0,
+      "seconds": 3.0058542490005493
+    },
+    {
+      "command": [
+        "lean",
+        "--tstack=400000",
+        "-Dtrace.Meta.Tactic.sat=true",
+        "OriginalFirstFused.lean"
+      ],
+      "exit": 0,
+      "seconds": 3.004950945964083
+    }
+  ],
+  "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+  "seconds": 6.010897485073656,
+  "samples": 10,
+  "combined_peak_rss_bytes": 44757458944,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "lean_prototype_build_unit_only": true,
+  "native_candidate_executions": 0,
+  "original_reference_theorem_control_executions": 2,
+  "full_original_module_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": true,
+  "native_compiler_invocations": 2
+}

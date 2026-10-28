@@ -1,0 +1,37 @@
+{
+  "UTC": "2026-10-28T04:00:16.466294+00:00",
+  "commands": [
+    {
+      "command": [
+        "lean",
+        "-o",
+        "/tmp/gpu-smt-lrat-fused-build-20261028/FusedFrontend.olean",
+        "FusedFrontend.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.0033891769126058
+    },
+    {
+      "command": [
+        "lean",
+        "Controls.lean"
+      ],
+      "exit": 0,
+      "seconds": 2.00413111387752
+    }
+  ],
+  "cwd": "/workspaces/repository/bench/lean-lrat-fused",
+  "seconds": 3.007608179934323,
+  "samples": 7,
+  "combined_peak_rss_bytes": 29361184768,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "lean_prototype_build_unit_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": true,
+  "native_compiler_invocations": 2
+}
