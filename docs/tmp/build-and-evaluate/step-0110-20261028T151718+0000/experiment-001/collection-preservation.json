@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-28T15:28:41.906802+00:00",
+  "copied_old_immediate_retry_condition": true,
+  "copied_script_has_new_helper": false,
+  "copied_script_has_new_order_marker": false,
+  "warm_launch": {
+    "utc": "2026-10-28T12:25:19.253015+00:00",
+    "pid": 529178,
+    "start_ticks": 162169125,
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "/tmp/gpu-smt-warm-engine-full7808-20261028T1220Z/warm-run.py",
+      "--phase",
+      "full",
+      "--out",
+      "/tmp/gpu-smt-warm-engine-full7808-20261028T1220Z/warm"
+    ]
+  },
+  "owners": [
+    {
+      "pid": 529177,
+      "expected_start_ticks": 162169119,
+      "observed_start_ticks": 162169119,
+      "state": "S",
+      "same_birth": true
+    },
+    {
+      "pid": 529178,
+      "expected_start_ticks": 162169125,
+      "observed_start_ticks": 162169125,
+      "state": "S",
+      "same_birth": true
+    }
+  ],
+  "full_terminal_exists": false,
+  "warm_terminal_exists": false,
+  "engine_started": false,
+  "controller_stderr_bytes": 0
+}

@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-28T15:31:46.801311+00:00",
+  "run": {
+    "id": 40715849281,
+    "name": "benchmark-smoke",
+    "head_sha": "6252a786c8f7ff715a9e904e498ebb468567446b",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-28T15:25:45Z",
+    "updated_at": "2026-10-28T15:27:28Z",
+    "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40715849281",
+    "run_attempt": 1
+  },
+  "job_id": 122913190830,
+  "raw_bytes": 47032,
+  "test_lines": [
+    "2026-10-28T15:27:19.7756016Z test_actual_pressure_retires_idle_state_before_first_admission (test_warm_resource_queue.WarmResourceQueue.test_actual_pressure_retires_idle_state_before_first_admission) ... ok",
+    "2026-10-28T15:27:19.7838775Z test_cancellation_awaits_all_ordinary_task_cleanup (test_warm_resource_queue.WarmResourceQueue.test_cancellation_awaits_all_ordinary_task_cleanup) ... ok",
+    "2026-10-28T15:27:19.7871175Z test_deferred_retry_does_not_block_the_ordinary_frontier (test_warm_resource_queue.WarmResourceQueue.test_deferred_retry_does_not_block_the_ordinary_frontier) ... ok",
+    "2026-10-28T15:27:19.7876714Z Ran 38 tests in 0.335s"
+  ],
+  "scope": "38offline Python source tests,including3async callback controls;not real native qualification/performance for this new adapter"
+}

@@ -13,7 +13,9 @@ Task cancellation cleans up before control returns to the caller. The new
 terminal field declares adaptation only;it is not proof of execution/cap/parity.
 
 Three actual callback tests plus12comparison tests pass locally;no native
-source or hardware was executed by those fixtures. Source CI remains pending.
+source or hardware was executed by those fixtures. Actual6252a78CI40715849281
+passes38Python controls and its full log is retained. Rust/native source is
+unchanged from qualified4283acb;no fresh native workflow/result is claimed.
 Current copied warm script and frozen engine/controller are not changed.
 All raw old data/version distinctions stay. Their ratio remains a resource-
 composition observation,not a retroactively matched COW or strongest-warm gain.

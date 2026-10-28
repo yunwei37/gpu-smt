@@ -425,3 +425,11 @@ engine while retaining actual RSS/worker/retirement controls. Source changes
 and15offline controls are complete;real native qualification remains absent.
 Keep the current frozen resource-composition capture and its raw outcomes,
 then original42priority;do not restart it or claim that it measured new code.
+
+
+Step0110validation complete:38Python controls pass in actual source CI,including
+ordinary-progress/admission/cancellation queue cases. These remain software
+controls,not the revised adapter's native qualification. Exact15:28:41UTC
+PID/birth and copied-source checks confirm the active warm/full point still
+runs its old immediate-drain copy. Preserve its scope/raw data and await its
+actual terminal;no hidden protocol replacement or second collector occurred.

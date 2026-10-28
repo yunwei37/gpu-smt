@@ -33,7 +33,11 @@ real helper admission blocking/idle retirement,and complete owned task cleanup
 on cancellation. Twelve existing exact-source/status/resource/clock comparison
 controls also pass. Both modified Python files compile syntactically.
 These fixtures do not import Kimina or execute Lean,and are not a native
-population or throughput result. Normal existing CI remains pending publication.
+population or throughput result. Actual source6252a78CI40715849281/
+job122913190830now passes all38Python controls,including the3new callbacks.
+[Result review](experiment-001/result-review.md) and raw logs/metadata retain
+that scope. Rust/Cargo/native source is byte-unchanged from qualified4283acb;
+no new Rust/native workflow ran and no native queue qualification is inferred.
 
 The currently running warm script is a separate frozen copy;the source repair
 does not modify/restart that process,its finite controller,13d4606binary/host
@@ -53,7 +57,7 @@ No paper/RQ/scientific-contract change or numerical result is inserted.
 Resource queue order is prior technique,not novelty. No full writing loop,
 milestone review or OSDI acceptance claim. Foreign dirty files stay untouched.
 
-## REVIEW_GATE — root self-review,source CI pending
+## REVIEW_GATE — root self-review,source CI verified
 
 Root checks helper task ownership,unchanged row/resource attribution,SDK slot/
 retirement guard,actual threshold discovery,solo-loop serialization and preserved
@@ -73,3 +77,16 @@ differences,throughput and novelty cannot be supplied by unit tests.
 Next remains the current real full pair terminal/root review,then original42
 solo at its fixed point. Later use of the revised adapter/source requires its
 own native evidence before claims;no new native run is queued here.
+
+
+Actual15:28:41UTC PID/birth and copied-source observations confirm the running
+warm leg still uses its immediate-drain script,not the new repository helper.
+No full/warm terminal or engine launch exists yet. Controller stderr is0bytes.
+The paper source diff against13d4606is empty. No active run,settings,controller
+or binary is replaced;the actual current outcome remains pending.
+
+
+The later15:47:05UTC read-only native progress observation matches PID533762/
+birth163369016 to the live warm owner and observes stateR/~onecore over2s.
+This is actual compute activity,not merely a controller/pointer inference or
+a complete performance result. No new acquisition or observer service is added.
