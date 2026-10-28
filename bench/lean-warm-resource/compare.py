@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Analyze the complete retained four-warm/engine qualification, without running it."""
+"""Analyze complete retained four-warm/engine pairs, without running them."""
 import argparse
 import collections
 import datetime
@@ -60,11 +60,58 @@ def executable_resolution(requested):
             "scope": "post-run filesystem alias observation; not a frozen launch-time attestation"}
 
 
+def read_engine_memory(root, budget):
+    path = root / "engine.stderr"
+    if path.exists():
+        stream = path.open("rt")
+    elif path.with_name(path.name + ".gz").exists():
+        path = path.with_name(path.name + ".gz")
+        stream = gzip.open(path, "rt")
+    else:
+        return None
+    samples, above, actions, malformed, invalid = 0, 0, 0, 0, 0
+    peak, logged_budgets = None, set()
+    with stream:
+        for line in stream:
+            try:
+                fields = json.loads(line)["fields"]
+                if not isinstance(fields, dict):
+                    raise ValueError("non-object fields")
+            except (ValueError, KeyError, TypeError):
+                malformed += 1
+                continue
+            if fields.get("message") == "preempt owned attempt and requeue exclusively":
+                actions += 1
+            if fields.get("message") != "owned RSS sample":
+                continue
+            rss = fields.get("rss_bytes")
+            if not isinstance(rss, int) or isinstance(rss, bool) or rss < 0:
+                invalid += 1
+                continue
+            samples += 1
+            peak = rss if peak is None else max(peak, rss)
+            above += rss > budget
+            logged = fields.get("budget_bytes")
+            if isinstance(logged, int) and not isinstance(logged, bool):
+                logged_budgets.add(logged)
+    return {
+        "source": path.name, "rss_samples": samples,
+        "peak_sampled_owned_RSS_bytes": peak,
+        "samples_above_declared_budget": above, "declared_budget_bytes": budget,
+        "logged_budget_values": sorted(logged_budgets), "watchdog_events": actions,
+        "malformed_log_lines": malformed, "invalid_rss_sample_lines": invalid,
+        "scope": "Existing aggregate owned-RSS log samples,not per-leader maxima or a kernel hard quota. Missing/malformed observations are not zero.",
+    }
+
+
 def compare(point):
     m, batch = point["manifest"], point["input"]
     warm, wt, engine = point["warm"], point["warm_terminal"], point["engine"]
-    require(point["terminal"]["state"] == "qualification-pair-complete",
-            "qualification has no successful terminal receipt")
+    phase = m.get("phase", "qualification")
+    require(phase in {"qualification", "full"}, "unknown resource comparison phase")
+    terminal_state = "full-pair-complete" if phase == "full" else "qualification-pair-complete"
+    require(point["terminal"]["state"] == terminal_state,
+            "pair has no successful terminal receipt for its phase")
     require(wt["state"] == "complete" and not wt["native_survivors"]
             and wt["memory"]["error"] is None, "warm collection is incomplete or unhealthy")
     require(batch["mode"] == "all" and engine["batch"] == batch
@@ -72,6 +119,8 @@ def compare(point):
             "mode or exact source/timeout/task/reuse population differs")
     ids = [c["id"] for c in batch["candidates"]]
     require(ids and len(set(ids)) == len(ids), "input IDs are empty or duplicated")
+    if phase == "full":
+        require(m.get("candidate_count") == len(ids), "full input count differs from declared population")
     require(wt["returned"] == len(ids), "warm returned count differs")
     w, e = index(warm["results"], ids, "warm"), index(engine["results"], ids, "engine")
     require(set(warm["attempts"]) == set(ids), "warm physical histories differ")
@@ -148,8 +197,10 @@ def compare(point):
     fallbacks = collections.Counter(v["detail"] for a in attempts
                                    for v in a.get("backend_events", [])
                                    if v["stage"] == "fresh_fallback")
-    return {
-        "scope": "development-selected resource qualification; root result review required",
+    result = {
+        "scope": ("complete full-phase resource pair; root result review required"
+                  if phase == "full" else
+                  "development-selected resource qualification; root result review required"),
         "candidate_count": len(ids), "external_clocks": clocks,
         "executable_resolution": resolution,
         "descriptive_external_elapsed_ratio": clocks["warm"]["launch_to_exit_seconds"] / clocks["engine"]["launch_to_exit_seconds"],
@@ -180,22 +231,42 @@ def compare(point):
         "clock_limits": "External clocks include program loading, setup, queueing, native work, retries, serialization and retirement. Warm admitted-envelope clocks can end before asynchronous teardown; engine attempt clocks include retirement. Neither overlapping sum is whole-run time or comparable isolated native CPU. Logging/observation CPU is not independently identified.",
         "resource_limits": "Same aggregate CPU/RSS point; warm pool and engine per-worker affinity differ. Configuration/terminal receipts are recorded evidence, not independent authentication or proof of arbitrary FFI/fork safety.",
     }
+    if phase == "full":
+        result.update(
+            whole_batch_candidates_per_second={
+                name: len(ids) / clocks[name]["launch_to_exit_seconds"]
+                for name in ["warm", "engine"]
+            },
+            operational_error_differences=[
+                {"id": i, "warm": w[i]["result"].get("error"), "engine": e[i]["outcome"].get("error")}
+                for i in ids if w[i]["result"].get("error") != e[i]["outcome"].get("error")
+            ],
+            warm_memory_summary=wt["memory"],
+            engine_memory_summary=point.get("engine_memory"),
+        )
+    return result
 
 
 def read_point(root):
-    paths = {
-        "manifest": "manifest.json", "input": "input24.json",
-        "warm": "warm/results.json", "warm_terminal": "warm/terminal.json",
-        "engine": "engine.stdout", "warm_exit": "warm-exit.json",
-        "engine_exit": "engine-exit.json", "terminal": "terminal.json",
-        "warm_libraries": "warm/native-library-readiness.json",
-    }
     def read_json(path):
         path = root / path
         if path.exists():
             return json.loads(path.read_text())
         return json.loads(gzip.decompress(path.with_name(path.name + ".gz").read_bytes()))
-    point = {name: read_json(path) for name, path in paths.items()}
+
+    manifest = read_json("manifest.json")
+    phase = manifest.get("phase", "qualification")
+    require(phase in {"qualification", "full"}, "unknown resource comparison phase")
+    paths = {
+        "input": "input7808.json" if phase == "full" else "input24.json",
+        "warm": "warm/results.json", "warm_terminal": "warm/terminal.json",
+        "engine": "engine.stdout", "warm_exit": "warm-exit.json",
+        "engine_exit": "engine-exit.json", "terminal": "terminal.json",
+        "warm_libraries": "warm/native-library-readiness.json",
+    }
+    point = {"manifest": manifest, **{name: read_json(path) for name, path in paths.items()}}
+    if phase == "full":
+        point["engine_memory"] = read_engine_memory(root, manifest["memory_bytes"])
     receipt = root / "native-executable-resolution.json"
     if receipt.exists():
         point["executable_resolution"] = json.loads(receipt.read_text())

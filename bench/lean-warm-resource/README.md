@@ -92,9 +92,10 @@ configuration alone is insufficient. Preserve the superseded unexecuted
 qualification setup and closed original FIFO data unmodified.
 
 
-## Analyze the actual complete qualification
+## Analyze a complete qualification or full pair
 
-After terminal.json reports qualification-pair-complete:
+After the actual terminal.json reports qualification-pair-complete for the
+selected point,or full-pair-complete for the full point:
 
     python3 bench/lean-warm-resource/compare.py /absolute/path/to/retained-point
 
@@ -115,3 +116,26 @@ The installed baseline already holds its benchmark_memory process slot from
 Repl.start through Repl.close's awaited native retirement. Manager's scheduled
 close alone is therefore not evidence that a fifth native worker can start.
 No second lifecycle limiter or retirement wrapper is added.
+
+
+The same analyzer reads input24.json for legacy/qualification captures and
+input7808.json for phase=full,including archived gzip files. A full manifest's
+declared candidate_count must match the complete input;phase terminal labels
+cannot be interchanged. These are read-only completeness checks,not a research
+promotion gate. The active finite collector and native settings are unchanged.
+
+Full output also reports whole-batch returned-candidate throughput from the
+external clocks,exact operational error-string differences,the preserved warm
+memory summary,and aggregate engine RSS samples from its existing stderr log.
+Missing logs or no valid samples remain unknown,not zero;malformed lines and
+sampling overshoot remain explicit. Per-leader high-water observations are
+not substituted for aggregate RSS. No new runtime logging is required.
+
+Slowest1%/10%IDs use the already defined warm admitted-attempt envelopes and
+retain their status differences. They are not a comparison of paired arrival
+latencies:the warm collector does not record each candidate's batch-queue wait
+as that envelope. Whole-batch clocks include those waits. Fixtures,including
+a7808-row accounting fixture,are not the real full7808 acquisition. The
+analyzer computes observations and never automatically certifies a gain.
+Preserve any post-run executable-alias observation with the archived point so
+later replay does not require the original private native installation.

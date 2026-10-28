@@ -350,3 +350,14 @@ pair,then original42;this step starts no new collection or efficacy layer.
 Canonical evaluation is distilled173lines with full old text retained and
 four unanswered RQs explicit. Paper source/PDF are unchanged from the actual
 36-page compile;rejected intermediate constructors do not become paper claims.
+
+## Full resource result path
+
+Complete the existing comparison reader before the real full pair ends.
+It assumed only input24/qualification terminal;support actual input7808/full
+terminal without changing metrics or starting another group. Validate the
+last of7808synthetic fixture IDs and tail groups,then replay actual old24
+outputs/memory logs exactly. This is necessary analysis glue,not another
+research result. Preserve unknown memory and distinguish admitted-tail costs
+from unrecorded paired arrival latency. Frozen13d4606full data remains the
+next decisive evidence;no new source efficacy layer is mixed into that run.

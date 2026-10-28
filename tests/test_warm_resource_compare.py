@@ -51,7 +51,118 @@ def fixture():
         terminal=dict(state="qualification-pair-complete"))
 
 
+def full_fixture(count=2):
+    # Accounting fixtures only: these are not verified Lean candidate inputs,
+    # native timings, or a completed real7808 experiment.
+    point = fixture()
+    warm_template, engine_template = point["warm"]["results"][0], point["engine"]["results"][0]
+    candidates, warm_results, engine_results, attempts = [], [], [], {}
+    for n in range(count):
+        identity = f"candidate-{n}"
+        candidates.append(dict(id=identity, code=f"import Init\n-- fixture {n}",
+                               timeout_ms=300000, task_id=identity, reuse=False))
+        w, e = copy.deepcopy(warm_template), copy.deepcopy(engine_template)
+        w["id"] = e["id"] = identity
+        e["attempts"][0]["elapsed_seconds"] = 1
+        if n:
+            e["attempts"][0]["backend_events"] = []
+        warm_results.append(w)
+        engine_results.append(e)
+        attempts[identity] = [dict(wall_seconds=1 + n / count)]
+    point["manifest"].update(phase="full", candidate_count=count)
+    point["input"]["candidates"] = candidates
+    point["warm"].update(original_candidates=candidates, results=warm_results, attempts=attempts)
+    point["warm_terminal"].update(returned=count, physical_attempts=count, whole_seconds=10000)
+    point["engine"].update(batch=point["input"], results=engine_results, lifecycle_seconds=9000)
+    point["warm_exit"]["external_seconds"] = 10001
+    point["engine_exit"]["external_seconds"] = 9001
+    point["terminal"]["state"] = "full-pair-complete"
+    return point
+
+
 class WarmResourceCompare(unittest.TestCase):
+
+    def test_full_phase_reads_its_population_not_a_stale_qualification_file(self):
+        point = full_fixture()
+        paths = {
+            "manifest": "manifest.json", "input": "input7808.json",
+            "warm": "warm/results.json", "warm_terminal": "warm/terminal.json",
+            "engine": "engine.stdout", "warm_exit": "warm-exit.json",
+            "engine_exit": "engine-exit.json", "terminal": "terminal.json",
+            "warm_libraries": "warm/native-library-readiness.json",
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name, path in paths.items():
+                p = root / (path + ".gz")
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes(gzip.compress(json.dumps(point[name]).encode(), mtime=0))
+            (root / "input24.json").write_text(json.dumps({"mode": "all", "candidates": []}))
+            budget = point["manifest"]["memory_bytes"]
+            events = [
+                {"fields": {"message": "owned RSS sample", "rss_bytes": 1, "budget_bytes": budget}},
+                {"fields": {"message": "owned RSS sample", "rss_bytes": budget + 1, "budget_bytes": budget}},
+                {"fields": {"message": "preempt owned attempt and requeue exclusively"}},
+            ]
+            raw = "".join(json.dumps(v) + "\n" for v in events) + "partial-invalid-log-line\n"
+            (root / "engine.stderr.gz").write_bytes(gzip.compress(raw.encode(), mtime=0))
+            value = module.compare(module.read_point(root))
+            expected = module.compare(point)
+            expected["engine_memory_summary"] = value["engine_memory_summary"]
+            self.assertEqual(value, expected)
+            memory = value["engine_memory_summary"]
+            self.assertEqual(memory["rss_samples"], 2)
+            self.assertEqual(memory["peak_sampled_owned_RSS_bytes"], budget + 1)
+            self.assertEqual(memory["samples_above_declared_budget"], 1)
+            self.assertEqual(memory["watchdog_events"], 1)
+            self.assertEqual(memory["malformed_log_lines"], 1)
+            self.assertEqual(value["candidate_count"], 2)
+            self.assertIn("full-phase", value["scope"])
+            self.assertFalse(value["resource_layer_gain_established"])
+            (root / "engine.stderr.gz").write_bytes(gzip.compress(b"unstructured\n", mtime=0))
+            unknown = module.compare(module.read_point(root))["engine_memory_summary"]
+            self.assertEqual(unknown["rss_samples"], 0)
+            self.assertIsNone(unknown["peak_sampled_owned_RSS_bytes"])
+            self.assertEqual(unknown["malformed_log_lines"], 1)
+            (root / "engine.stderr.gz").unlink()
+            self.assertIsNone(module.read_point(root)["engine_memory"])
+
+    def test_full_phase_does_not_hide_the_last_of_7808_statuses_or_tails(self):
+        point = full_fixture(7808)
+        point["engine"]["results"][-1]["outcome"] = dict(status="timeout", response=None, error="fixture timeout")
+        value = module.compare(point)
+        self.assertEqual(value["candidate_count"], 7808)
+        self.assertEqual(value["accepted_set_only_warm"], ["candidate-7807"])
+        self.assertEqual(value["accepted_set_only_engine"], [])
+        self.assertEqual(value["changed_statuses"], [
+            dict(id="candidate-7807", warm_raw="valid", warm="accepted", engine="timeout")])
+        self.assertEqual(value["missing_engine_native_payload_ids"], ["candidate-7807"])
+        self.assertEqual(value["operational_error_differences"], [
+            dict(id="candidate-7807", warm=None, engine="fixture timeout")])
+        self.assertEqual(value["whole_batch_candidates_per_second"], {
+            "warm": 7808 / 10001, "engine": 7808 / 9001})
+        self.assertIsNone(value["engine_memory_summary"])
+        self.assertEqual([len(t["ids"]) for t in value["tails"]], [79, 781])
+        self.assertTrue(all(t["ids"][0] == "candidate-7807" for t in value["tails"]))
+
+    def test_full_and_qualification_terminals_or_populations_are_not_interchangeable(self):
+        variants = []
+        point = full_fixture()
+        point["terminal"]["state"] = "qualification-pair-complete"
+        variants.append(point)
+        point = fixture()
+        point["terminal"]["state"] = "full-pair-complete"
+        variants.append(point)
+        point = full_fixture()
+        point["manifest"]["candidate_count"] += 1
+        variants.append(point)
+        point = full_fixture()
+        point["manifest"]["phase"] = "other"
+        variants.append(point)
+        for n, point in enumerate(variants):
+            with self.subTest(n=n), self.assertRaises(ValueError):
+                module.compare(point)
+
     def test_alias_resolution_accepts_only_the_exact_canonical_executable(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
