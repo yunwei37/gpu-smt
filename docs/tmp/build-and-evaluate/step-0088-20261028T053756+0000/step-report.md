@@ -57,3 +57,13 @@ and2memoryfailure cases in the qualifier. Review alloutcomes and fullcost before
 a repaired full7808warm comparison,and separately report fixed42solo afterward.
 Current available work is resource-layer fault diagnosis from existing retained
 data,not stacking new scheduling or failure gains.
+
+## Verified followthrough
+
+The cf1138b GitHub engine workflow completed both Rust and native-repl-contract
+jobs successfully;benchmark-smoke also succeeded. These pinned4.18CI checks
+do not substitute for the pending real4.9qualification. Before either future
+warm/engine launch,the tested release was copied into that finite continuation,
+full bytes compared;prior9d binary/manifest retained. CurrentFIFO binary and
+controller are untouched. Exact receipts:resource-fix-ci.json,
+resource-fix-ci-jobs.json,pending-qualification-binary-refresh.json.

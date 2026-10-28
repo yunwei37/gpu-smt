@@ -147,3 +147,19 @@ succeed. No secondnativecapture. Paper localresults/limitations compile and
 page13is visuallychecked. Actual matchedwarmqualification remains pending;source
 test success is not resourceparity. Continue actual resource-fault work using
 retained evidence while the sole native group completes.
+
+
+## 06:01UTC — what can produce material progress
+
+The low-concurrency symptom is now quantitatively separated:86.01%of singleton
+time is mandated exclusive replay,11.88%inferred drain,2.10%tail. Simply opening
+more admissions cannot be credited with that time,and dropping required
+replays would violate the experiment contract. A separate real stale-fallback
+bug is repaired and regression-tested;its actual gain is pending. Preserved
+cores now expose shared native interpreter stack-exception aborts in both
+backends. Resource parity needs actual warm qualification including prior
+state regressions,not more policy layers or treating crashes as rejection.
+The immediate best test is the already queued matched4warm/engine point;
+while it waits,the useful work was the resource fix and offline fault diagnosis.
+Open-source organization:core repair stays in engine crate,diagnostic data
+under the current step;raw private cores stay outsideGit,losslessly archived.

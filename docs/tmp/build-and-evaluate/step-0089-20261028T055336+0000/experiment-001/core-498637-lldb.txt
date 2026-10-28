@@ -1,0 +1,5 @@
+(lldb) target create --core "/workspaces/.agent-state/gpu-smt-core-inspect-ij1ezrtq/native.core"
+Core file '/workspaces/.agent-state/gpu-smt-core-inspect-ij1ezrtq/native.core' (x86_64) was loaded.
+(lldb) settings set frame-format "frame #${frame.index}: ${frame.pc} ${function.name}\\n"
+(lldb) image list -b
+error: the target has no associated executable images

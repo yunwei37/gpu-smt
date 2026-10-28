@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-28T06:02:26.048082+00:00",
+  "core_candidate": "minif2f-2325",
+  "native_candidate_executions": 0,
+  "private_cores_preserved": true,
+  "explicit_executable_lldb_exit": [
+    0,
+    0
+  ],
+  "observed_signal": "SIGABRT in both prepared and original fresh executable",
+  "observed_stack": "abort -> demangling_terminate_handler -> failed_throw -> __cxa_throw -> lean::ir::interpreter::check_system -> eval_body/call",
+  "official_source": "https://github.com/leanprover/lean4/blob/v4.9.0-rc1/src/library/compiler/ir_interpreter.cpp",
+  "source_fact": "check_system catches stack_space_exception, builds interpreter stacktrace, then throws throwable(ss)",
+  "fresh_disassembly_throw_return_file_offset": "0xebe9ca",
+  "fresh_core_stack_return_pc": "0x58a262a859ca",
+  "diagnosis": "Existing native interpreter stack-space exception/termination path, shared by fresh and COW. This is not evidence of COW-only corruption or a valid early rejection. Why historical warm yielded a structured Lean error still needs the matched actual qualification. No limits, algorithms, error classification or live collection were changed.",
+  "historical_rows": [
+    {
+      "backend": "native",
+      "candidate": "minif2f-2325",
+      "status": "backend_error",
+      "error_prefix": "native EOF before response; [stderr tail truncated] inarith.CertificateOracle",
+      "preserved_tail_frame_count": 670,
+      "last_interpreter_frame_index": 6845,
+      "simplex_named_frames_in_preserved_tail": 635,
+      "outcome_source": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/native/capture.json.gz",
+      "interpretation": "Truncated stderr tail contains native Mathlib simplex recursion. It is not the frozen external CPU oracle and is not a proof of nontermination."
+    },
+    {
+      "backend": "native",
+      "candidate": "minif2f-3209",
+      "status": "backend_error",
+      "error_prefix": "native EOF before response; [stderr tail truncated] m._elambda_1._spec_24._la",
+      "preserved_tail_frame_count": 672,
+      "last_interpreter_frame_index": 6960,
+      "simplex_named_frames_in_preserved_tail": 634,
+      "outcome_source": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/native/capture.json.gz",
+      "interpretation": "Truncated stderr tail contains native Mathlib simplex recursion. It is not the frozen external CPU oracle and is not a proof of nontermination."
+    },
+    {
+      "backend": "prepared",
+      "candidate": "minif2f-2325",
+      "status": "backend_error",
+      "error_prefix": "native EOF before response; [stderr tail truncated] inarith.CertificateOracle",
+      "preserved_tail_frame_count": 670,
+      "last_interpreter_frame_index": 6845,
+      "simplex_named_frames_in_preserved_tail": 635,
+      "outcome_source": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/prepared/capture.json.gz",
+      "interpretation": "Truncated stderr tail contains native Mathlib simplex recursion. It is not the frozen external CPU oracle and is not a proof of nontermination."
+    },
+    {
+      "backend": "prepared",
+      "candidate": "minif2f-3209",
+      "status": "backend_error",
+      "error_prefix": "native EOF before response; [stderr tail truncated] m._elambda_1._spec_24._la",
+      "preserved_tail_frame_count": 672,
+      "last_interpreter_frame_index": 6960,
+      "simplex_named_frames_in_preserved_tail": 634,
+      "outcome_source": "/workspaces/repository/artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/prepared/capture.json.gz",
+      "interpretation": "Truncated stderr tail contains native Mathlib simplex recursion. It is not the frozen external CPU oracle and is not a proof of nontermination."
+    }
+  ],
+  "unsupported_conclusions": [
+    "No inference that candidate is false or must time out",
+    "Do not map backend_error to rejected",
+    "No warm resource speedup or semantic parity claimed",
+    "No oracle optimization or new native evaluation"
+  ]
+}

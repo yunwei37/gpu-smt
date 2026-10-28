@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-28T05:53:57.348500+00:00",
+  "cases": [
+    {
+      "pid": 498637,
+      "source_archive": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/core.498637.gz",
+      "logical_bytes": 502325248,
+      "file_command": [
+        "/usr/bin/file",
+        "-b",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-ij1ezrtq/native.core"
+      ],
+      "lldb_command": [
+        "/usr/bin/lldb",
+        "--no-lldbinit",
+        "--batch",
+        "--core",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-ij1ezrtq/native.core",
+        "-o",
+        "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${function.name}\\\\n\"",
+        "-o",
+        "image list -b",
+        "-o",
+        "thread backtrace -c 28"
+      ],
+      "file_exit": 0,
+      "lldb_exit": 1,
+      "seconds": 2.6172195619437844,
+      "temporary_copy_cleanup": "TemporaryDirectory after debugger exit",
+      "original_private_archive_preserved": true
+    },
+    {
+      "pid": 498764,
+      "source_archive": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/core.498764.gz",
+      "logical_bytes": 502358016,
+      "file_command": [
+        "/usr/bin/file",
+        "-b",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-lq8q4s38/native.core"
+      ],
+      "lldb_command": [
+        "/usr/bin/lldb",
+        "--no-lldbinit",
+        "--batch",
+        "--core",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-lq8q4s38/native.core",
+        "-o",
+        "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${function.name}\\\\n\"",
+        "-o",
+        "image list -b",
+        "-o",
+        "thread backtrace -c 28"
+      ],
+      "file_exit": 0,
+      "lldb_exit": 1,
+      "seconds": 2.2365023270249367,
+      "temporary_copy_cleanup": "TemporaryDirectory after debugger exit",
+      "original_private_archive_preserved": true
+    }
+  ],
+  "seconds": 4.894081186037511,
+  "native_candidate_executions": 0
+}

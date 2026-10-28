@@ -1,0 +1,67 @@
+{
+  "utc": "2026-10-28T05:56:31.775586+00:00",
+  "cases": [
+    {
+      "pid": 498637,
+      "source_archive": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/core.498637.gz",
+      "logical_bytes": 502325248,
+      "file_command": [
+        "/usr/bin/file",
+        "-b",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-8248bs75/native.core"
+      ],
+      "lldb_command": [
+        "/usr/bin/lldb",
+        "--no-lldbinit",
+        "--batch",
+        "--file",
+        "/tmp/gpu-smt-prepared-policy7808-20261028T034248Z/prepared-host",
+        "--core",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-8248bs75/native.core",
+        "-o",
+        "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${function.name}\\\\n\"",
+        "-o",
+        "image list -b",
+        "-o",
+        "thread backtrace -c 28"
+      ],
+      "file_exit": 0,
+      "lldb_exit": 0,
+      "seconds": 2.7906282800249755,
+      "temporary_copy_cleanup": "TemporaryDirectory after debugger exit",
+      "original_private_archive_preserved": true
+    },
+    {
+      "pid": 498764,
+      "source_archive": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/core.498764.gz",
+      "logical_bytes": 502358016,
+      "file_command": [
+        "/usr/bin/file",
+        "-b",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-jbqdlef4/native.core"
+      ],
+      "lldb_command": [
+        "/usr/bin/lldb",
+        "--no-lldbinit",
+        "--batch",
+        "--file",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+        "--core",
+        "/workspaces/.agent-state/gpu-smt-core-inspect-jbqdlef4/native.core",
+        "-o",
+        "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${function.name}\\\\n\"",
+        "-o",
+        "image list -b",
+        "-o",
+        "thread backtrace -c 28"
+      ],
+      "file_exit": 0,
+      "lldb_exit": 0,
+      "seconds": 2.915278750937432,
+      "temporary_copy_cleanup": "TemporaryDirectory after debugger exit",
+      "original_private_archive_preserved": true
+    }
+  ],
+  "seconds": 5.7516694811638445,
+  "native_candidate_executions": 0
+}

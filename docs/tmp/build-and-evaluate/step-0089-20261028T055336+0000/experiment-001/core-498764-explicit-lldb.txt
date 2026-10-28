@@ -1,0 +1,15 @@
+(lldb) target create "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl" --core "/workspaces/.agent-state/gpu-smt-core-inspect-jbqdlef4/native.core"
+Core file '/workspaces/.agent-state/gpu-smt-core-inspect-jbqdlef4/native.core' (x86_64) was loaded.
+(lldb) settings set frame-format "frame #${frame.index}: ${frame.pc} ${function.name}\\n"
+(lldb) image list -b
+[  0] repl
+[  1] [vdso](0x0000744447863000)
+[  2] libm.so.6
+[  3] libdl.so.2
+[  4] libpthread.so.0
+[  5] libc.so.6
+[  6] librt.so.1
+[  7] ld-linux-x86-64.so.2
+(lldb) thread backtrace -c 28
+* thread #1, name = 'repl', stop reason = signal SIGABRT
+  * frame #0: 0x00007444475f995c ___lldb_unnamed_symbol3701\n    frame #1: 0x00007444475a4cc2 raise\n    frame #2: 0x000074444758d4ac abort\n    frame #3: 0x000058a2665844b6 abort_message\n    frame #4: 0x000058a2665686db demangling_terminate_handler()\n    frame #5: 0x000058a2665685b3 std::__terminate(void (*)())\n    frame #6: 0x000058a2665863e6 __cxxabiv1::failed_throw(__cxxabiv1::__cxa_exception*)\n    frame #7: 0x000058a26658637f __cxa_throw\n    frame #8: 0x000058a262a859ca lean::ir::interpreter::check_system()\n    frame #9: 0x000058a262a8418c lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #10: 0x000058a262a86ed2 lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)\n    frame #11: 0x000058a262a84df0 lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #12: 0x000058a262a86ed2 lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)\n    frame #13: 0x000058a262a84df0 lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #14: 0x000058a262a86ed2 lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)\n    frame #15: 0x000058a262a84df0 lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #16: 0x000058a262a88a13 lean::ir::interpreter::stub_m(lean_object**)\n    frame #17: 0x000058a262a88697 lean::ir::interpreter::stub_m_aux(lean_object**)\n    frame #18: 0x000058a262a882e3 lean::ir::interpreter::stub_7_aux(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*)\n    frame #19: 0x000058a2665010e8 lean_apply_1\n    frame #20: 0x000058a2662cf418 l_StateT_bind___rarg\n    frame #21: 0x000058a266504c99 lean_apply_5\n    frame #22: 0x000058a262a86320 lean::ir::interpreter::eval_expr(lean::object_ref const&, lean::ir::type)\n    frame #23: 0x000058a262a84df0 lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #24: 0x000058a262a86ed2 lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)\n    frame #25: 0x000058a262a84df0 lean::ir::interpreter::eval_body(lean::object_ref const&)\n    frame #26: 0x000058a262a88a13 lean::ir::interpreter::stub_m(lean_object**)\n    frame #27: 0x000058a262a88697 lean::ir::interpreter::stub_m_aux(lean_object**)\n
