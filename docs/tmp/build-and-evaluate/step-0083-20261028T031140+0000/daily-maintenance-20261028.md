@@ -222,3 +222,16 @@ launcher/service/agent or actualcollection is added. Actualresourcecomparison
 review is stillthe nextdependency;no furthergenericdiagnostictools are needed.
 Historicalrecords stayhistorical;READMElinks and current/pending distinction
 are keptclear. Executeonlyafter the repairedpoint is actuallyreviewed.
+
+
+## 10:10UTC — actualcollectionclosure,then correctedpoint
+
+The preservedFIFOexits0 at10:01:32and all7808rawrows are nowingested. Its
+accepted/statussets and nativeJSONresponses match the priorprepared cell;
+sixhistoricalwarm differences persist. Internal22716.04s cannot repair the
+missingcompleteexternalclock or prove warmgain. All7882nativebirths retire,
+while48.6494GiBsampledpeak documentsovershoot. Remainingprivatecores are
+losslesslyarchived and source-mapped. Threeunexecutedpolicycells staydeferred.
+The corrected4warm phase actuallystarts10:03:25,so the nextdecisiveevidence is
+its completepair,not morepreparation or a recycledoldFIFO ratio. Code/data
+remainseparate;artifactREADME and rootREADME make the context/clocklimitsclear.

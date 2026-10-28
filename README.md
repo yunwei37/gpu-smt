@@ -174,6 +174,11 @@ Both retain87timeouts,41resource failures and2backend faults. Empty ast:[] is
 omitted in7,660prepared replies. Sampled RSS peaks48.77/48.93GiB overshoot the
 48GiB budget between watchdog responses;it is not a hard quota.
 Fourteen parent preparations and62fallback event rows are charged.
+A [preserved FIFO replay](artifacts/engine-resource-profile-2026-10-25/policy7808-20261028T034248Z/README.md)
+now also returns all7,808sources with identical per-ID statuses/nativeJSON
+responses. Its22,716.04s internalclock has no completeexternalcounterpart after
+the originalcontrollerpause. The historicalwarm's sixstatusdifferences persist;
+this is oldpoint closure,not the correctedwarm comparison or a newgain.
 The historical warm cell also loaded compiled Mathlib linarith;both engine
 cells omitted that library. Equal source bytes therefore did not match the
 effective tactic code. The [corrected four-warm resource comparison](bench/lean-warm-resource/README.md)
