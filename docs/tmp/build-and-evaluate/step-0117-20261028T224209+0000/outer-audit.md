@@ -30,3 +30,9 @@ more implementation or logger work. Foreign dirty files are untouched.
 Next decisive action is the existing complete engine result and correctness/
 fairness review,then the separately prepared42cohort. Goal is not completed
 or blocked by a healthy pending cell.
+
+Publication correction:the primary docs/paper/main.pdf is tracked. The first
+source/evidence commit omitted it;the following forward-only commit publishes
+the exact byte-matched inspected PDF beside its source. No new compilation,
+source change or native run occurs. The compressed build evidence and primary
+PDF are byte-identical.

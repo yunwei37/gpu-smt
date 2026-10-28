@@ -108,3 +108,9 @@ independent audit and the full paper/Lean-SMT evidence promise. No RQ closes.
 Route to the same actual engine exit,whole-pair root review,then the prepared
 original42fresh-native point. No automatic new native matrix is installed.
 Goal remains active. Publish the completed targeted-writing boundary on main.
+
+Publication correction:the primary docs/paper/main.pdf is tracked. The first
+source/evidence commit omitted it;the following forward-only commit publishes
+the exact byte-matched inspected PDF beside its source. No new compilation,
+source change or native run occurs. The compressed build evidence and primary
+PDF are byte-identical.
