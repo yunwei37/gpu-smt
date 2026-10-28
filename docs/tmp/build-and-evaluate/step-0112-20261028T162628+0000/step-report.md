@@ -77,3 +77,13 @@ Next:collect actual source CI and repair any code/test failures;then record its
 precise scope. Preserve the sole full native pair until its existing exit
 event,root-review complete results,and proceed to the prepared42solo point.
 No new workload experiment or automatic queue is started. Goal remains active.
+
+
+### E112.3 — preserve and repair first real CI failure
+Source80c271dRust job122952278167fails E0063because the pre-existing private
+shutdown/admission race fixture manually constructs Inner without its new
+field. Root missed that initializer. Add the default unstarted guard only;
+no fixture sampling thread is started and its paused-sample semantics stay.
+Native contract job122952277663passes5explicit controls(4.63s,not a performance
+measurement). Failed log/run metadata remain;do not call this source qualified.
+A forward source commit retriggers the same existing workflow.

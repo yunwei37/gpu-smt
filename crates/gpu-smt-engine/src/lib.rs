@@ -1197,6 +1197,7 @@ mod shutdown_admission_tests {
             next: AtomicU64::new(1),
             notify: Notify::new(),
             fatal: Mutex::new(None),
+            watchdog_worker: WatchdogWorker::default(),
         }));
         let running = engine.clone();
         let batch = tokio::spawn(async move {
