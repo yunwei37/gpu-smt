@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-warm-resource/run.py", line 209, in <module>
+    asyncio.run(main(parser.parse_args()))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/workspaces/repository/bench/lean-warm-resource/run.py", line 37, in main
+    no_other_collection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/workspaces/repository/bench/lean-warm-resource/run.py", line 32, in no_other_collection
+    raise RuntimeError(f"Retained native collection still live: {launch}")
+RuntimeError: Retained native collection still live: /tmp/gpu-smt-prepared-policy7808-20261028T034248Z/block1-fifo/launch.json
