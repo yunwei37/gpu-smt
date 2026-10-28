@@ -73,3 +73,17 @@ manifest remain on the owningruntime path and originalGitcommit;new frozen
 source/input and rationale are retained here. The pidfd continuation is not
 restarted and still launches only after the existingFIFOretires. No native
 qualification has started and no result is retroactively changed.
+
+## Closed own-fault output retention during the ongoing FIFO
+
+Two closed own core dumps,core.498637/core.498764,both match current registered
+minif2f-2325attempts and no live PID. They are repeated faults at the already
+known source,not evidence of a new system/global OOM. Preserve1,004,683,264logical
+source bytes as156,657,472compressed bytes on the same private owningPVC using
+the existing stream/full-byte-comparison archival. No core bytes enter Git.
+Available volume bytes rise2,616,889,344→3,448,176,640while other current output
+continues. Archive CPU11time169.112255s is supporting contention in the current
+frozen diagnostic FIFO,not future matched warm time. No source,limits,quota,
+active native process or otherWorkspace is changed. Actualreceipt/provenance
+are in experiment-001/closed-cores-20261028T0505.json. The healthyFIFOand pidfd
+continuation remain;no qualification terminal is inferred from maintenance.

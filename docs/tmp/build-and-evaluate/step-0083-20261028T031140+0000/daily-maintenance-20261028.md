@@ -124,3 +124,11 @@ memory failures. Both sides keep the exact same24and original ascending order;
 the original20+4source/input/manifest remain as unexecuted superseded records.
 The healthyFIFOand pidfdcontinuation are not restarted. This corrects test
 coverage before any attempt to claim resource parity;it is not another fullrun.
+
+Two closed current2325core dumps now retain all1,004,683,264logical bytes in
+156,657,472compressed private bytes,fully stream-compared. Observed available
+volume rises2,616,889,344→3,448,176,640B. Metadata only is public.169.112255s
+compression on CPU11adds disclosed contention to this nonfinal FIFOdiagnostic;
+it is not part of future warm efficacy. No nativewriter,resource boundary or
+Workspace setting changes. The known failing source remains in the pending
+paired qualifier,not hidden by freeing space.

@@ -18,3 +18,10 @@ performance result exists. Selection20ordinary+4heavy is not final workload
 evidence. External and internal clocks remain separate. Root result review is
 required before claiming resource parity or another full run. No independent
 audit,OSDIacceptance or project closure.
+
+Before first execution,the same24qualification now explicitly covers all6known
+historical status changes plus2real memory failures and16ordinary cases.
+Superseded20+4inputs/source remain;no native results or currentcapture change.
+Closed2325core outputs match registered ownership and absent PIDs;stream
+compression is byte-compared on the samePVC and only metadata is public.
+This retained failure/space repair is operational maintenance,not researchgain.
