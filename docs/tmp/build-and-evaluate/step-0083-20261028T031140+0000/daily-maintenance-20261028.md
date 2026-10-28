@@ -489,3 +489,15 @@ treat this maintenance as a new performance result.
 A13-process namespace observation provides no basis to replace the process
 discovery algorithm speculatively. The next decisive work is still the actual
 whole resource result,not another logging/monitoring abstraction.
+
+### 19:02UTC — use actual phases before choosing the next mechanism
+The native host already persists its import root and uses _exit;do not add the
+same optimization again. A lexical27/42omega clue is misleading:31of42resource
+failure records are eqRefl-dominant,with onlyoneomega-dominant record. Preserve
+the sampled/censored original profile and do not build a new oracle from token
+counts. The resource comparison/42priority remains first.
+Extend the existing source preparer to the18pinned whole files mentioning
+bv_decide,with per-file Batch boundaries and original contexts still required.
+Real preparation byte-matches2,240,762source bytes;no Lean runs. This makes the
+next code-workload input concrete without introducing another runner or
+mistaking the one completed module for full coverage.

@@ -9,9 +9,11 @@ is comment-stripped lexical filtering, never execution/CPU attribution.
 [All189 original Verina files measured](verina-full189-20261025T0725/result-review.md): 46 exit0 without explicit admission, 139 admitted stubs, four native API errors; profiled statuses match.
 CLEVER carries many stubs; miniCodeProps includes library/test modules;
 lean-mlir's generated sorry files are retained but are not verified proofs.
-FVAPPS gated access is not accepted. The 480-source failure profile has retired;
-the original7808 first-success scheduling matrix is now the sole full collection. Those historical captures used48GiB aggregate/max2REPL/24GiBeach;
-new captures follow the current dynamic point in [architecture](../../docs/architecture.md).
+FVAPPS gated access is not accepted. The480-source failure profile and original
+first-success matrix are complete historical groups,not the current collector.
+Those groups used48GiB aggregate/max2REPL/24GiBeach; current native acquisition
+follows the dynamic point in [architecture](../../docs/architecture.md) and the
+[owning warm-resource comparison](../../bench/lean-warm-resource/README.md).
 
 ## Prepared native environments
 
@@ -21,9 +23,9 @@ The original189file native/profile implementation is in
 [bench/lean-code-verification](../../bench/lean-code-verification/README.md);
 actual qualification and all189 native/profile records are retained above.
 
-Lean-mlir's exact nightly SDK and source are ready, but both official cache
-paths return zero objects, so its dependency build is not ready despite
-cache exit0. The old556module lexical graph is retained but superseded: it missed
+Lean-mlir's exact nightly SDK/source are retained. Both original official cache
+attempts returned zero objects; cache exit0did not establish dependency
+readiness. The later native builds below retain the actual preparation result. The old556module lexical graph is retained but superseded: it missed
 meta imports. The [native header parser result](native-header-closure-20261025/receipt.json)
 contains860source modules(58project/802external), with all/meta/export flags.
 No workload imports or candidate bodies execute in this parsing step. Native
@@ -58,5 +60,11 @@ additional candidate run is claimed from preparation.
 
 The [corrected root-package prerequisite build](native-project-prerequisites2-20261025/result-review.md)
 is complete: 60 native targets and dependency checks pass, including all57
-project prerequisites and the three correct root Cli modules. The original
-workload body is still unexecuted; this is source readiness, not performance.
+project prerequisites and the three correct root Cli modules. The
+[one original module's native/file/stdin/profile point](leanmlir-native-20261027T025426Z/README.md)
+has since completed; this does not qualify every project file or establish a
+GPU benefit. [Prepared whole files mentioning bv_decide](leanmlir-bv-files-20261028/README.md)
+now cover18lexically selected original files,2,240,762bytes. Macros and admissions
+remain;each is a separate Batch. They are unexecuted inputs and still need their
+actual root-package/native argument/dependency contexts. All source archives,
+failed preparation attempts and original measurements remain unchanged.

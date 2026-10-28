@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-10-28T19:01:10.152212+00:00",
+  "ended_at": "2026-10-28T19:01:12.635417+00:00",
+  "command": [
+    "python3",
+    "-B",
+    "bench/lean-code-verification/prepare-engine.py",
+    "--workload",
+    "leanmlir",
+    "--bv-decide-files",
+    "--input",
+    "artifacts/lean-code-verification-2026-10-25/opencompl--lean-mlir-sources.jsonl.gz",
+    "--out",
+    "/workspaces/repository/artifacts/lean-code-verification-2026-10-25/leanmlir-bv-files-20261028"
+  ],
+  "exit": 0,
+  "stdout": "{\"candidates\": 18, \"source_bytes\": 2240762, \"source_changed\": false, \"new_native_executions\": 0}\n",
+  "stderr": "",
+  "scope": "source-byte preparation only;no Lean,solver,GPU or dependency build"
+}
