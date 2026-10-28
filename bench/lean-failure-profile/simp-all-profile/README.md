@@ -65,3 +65,10 @@ are historical preparation,not substitutes for the completed original run.
 A future early-failure mechanism still needs a sufficient native-state witness
 and preserved enclosing backtracking/fallback. Neither these diagnostics nor
 small successful controls establish that witness,cohort equivalence or speedup.
+
+
+[Continuing-round mechanism evidence](../../../artifacts/hotspot-mechanisms-2026-10-25/original71-native-20261026T125951Z/simp23-analysis/target-progress-20261028.md)
+now narrows the six inner-round cases using existing cumulative update fields
+and pinned native control flow. It remains distinct from exact target equality,
+full-state recurrence and a sufficient candidate-level failure witness.
+No new runtime observer/parser or engine rule is added.

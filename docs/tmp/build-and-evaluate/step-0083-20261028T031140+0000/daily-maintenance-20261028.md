@@ -388,3 +388,14 @@ Measured native CPU savings remain unknown. The frozen full resource run's
 exact controller/warm births are still live;no second native acquisition,
 source replacement or storage mutation was performed. Next remains its actual
 full completion and population review,then the fixed42solo cohort.
+
+
+Step0108substantive-progress thought and execution:the actual6inner-round traces
+now show12102of12104continuing rounds without hypothesis-type changes,so the
+target update path is the concrete next mechanism to understand. Native4.9
+resets the single-call step counter between calls;that limit does not bound
+the outer loop. Exact target/context recurrence and full-candidate continuation
+behavior are still missing;hash repetition must not enable rejection. Upstream
+already has possible-loop warnings,so generic diagnostics are no novelty.
+Use these existing records and source facts;add no observer or parallel cohort.
+The full resource pair/42priority remains unchanged.

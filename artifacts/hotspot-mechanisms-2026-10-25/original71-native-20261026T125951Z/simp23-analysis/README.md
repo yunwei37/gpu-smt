@@ -45,3 +45,10 @@ Successful small controls emit false action_completed values in hypothesis/
 target end records. Treat those flags as unqualified raw fields;the analyzer's
 unwound_actions counts must not be interpreted as actual error unwinding.
 No additional diagnostic implementation is introduced to chase this marker.
+
+
+The later [continuing-round/source-state analysis](target-progress-20261028.md)
+reuses these exact raw records to distinguish hypothesis updates from target
+goal-ID progress and per-call from outer-loop step limits. It changes no
+historical result,no observer and no failure detector. The upstream warning
+mechanism is citation-only and does not certify arbitrary early rejection.
