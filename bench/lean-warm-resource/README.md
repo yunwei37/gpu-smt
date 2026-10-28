@@ -63,3 +63,22 @@ Rust loading, serialization and native retirement. Raw outputs and all failures
 remain. The direct library baseline avoids HTTP polling overhead; do not compare
 its clocks to historical HTTP labels without explaining the transport boundary.
 Full comparison and observer/logging phase attribution remain pending.
+
+
+## Corrected native-code provenance
+
+The historical21693.761299sKiminaoff run loaded libCounterexample.so with
+GPU_SMT_CEX_MODE=off. Its ELFdependencies include the retained ordinary native
+Mathlib linarith library. The first fullengine cells and the initial unstarted
+resourcequalifier omitted that code. That further confound must accompany
+historical concurrency/AS/transport/retry caveats;an interpreter/native gap is
+not resource-layer improvement or scheduling novelty.
+
+The corrected pending qualifier loads the existing ordinary
+project/.lake/build/lib/libMathlib-Tactic-Linarith-1.so directly in both warmREPL
+and preparedparent/freshfallback. The counterexample module,export hooks and
+external CPUoracle remain off/frozen. The same discovered project/SDK dependency
+paths are used for both. This is prior native compilation,not a method claim.
+Actual /proc maps and ready native_library metadata must confirm loading;
+configuration alone is insufficient. Preserve the superseded unexecuted
+qualification setup and current frozenFIFO unmodified.

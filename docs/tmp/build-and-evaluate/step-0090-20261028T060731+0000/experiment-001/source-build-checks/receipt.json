@@ -1,0 +1,76 @@
+{
+  "UTC": "2026-10-28T06:09:11.750244+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 1.0021346809808165
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 2.0031096239108592
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 15.01416344079189
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "import ast;from pathlib import Path;[ast.parse(Path(p).read_text())for p in ['bench/lean-warm-resource/run.py','bench/lean-warm-resource/qualify_after_fifo.py']]"
+      ],
+      "exit": 0,
+      "seconds": 1.0021902148146182
+    },
+    {
+      "command": [
+        "python3",
+        "native/lean/build.py",
+        "--project",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL",
+        "--sysroot",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+        "--out",
+        "/tmp/gpu-smt-prepared-native-library-20261028"
+      ],
+      "exit": 1,
+      "seconds": 2.0028859099838883
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 21.02455443609506,
+  "samples": 31,
+  "combined_peak_rss_bytes": 31893602304,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "native_library_resource_parity_repair": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": true,
+  "analysis_commands": 5
+}

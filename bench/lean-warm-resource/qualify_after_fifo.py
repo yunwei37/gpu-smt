@@ -69,8 +69,13 @@ def main():
         os.kill(previous['controller_pid'],signal.SIGTERM)
         os.kill(previous['controller_pid'],signal.SIGCONT)
     del capture
+    spec=importlib.util.spec_from_file_location('warm_resource_context',out/'warm-run.py')
+    warm_context=importlib.util.module_from_spec(spec);spec.loader.exec_module(warm_context)
+    library_environment=warm_context.native_library_environment(previous)
+    native_library=library_environment['LEAN_SERVER_NATIVE_DYNLIB']
+    assert native_library==m['native_library']
     env=dict(os.environ,LEAN_SYSROOT=previous['sysroot'],LEAN_PATH=previous['LEAN_PATH'],
-      PATH=previous['sysroot']+'/bin:'+os.environ['PATH'])
+      **library_environment,PATH=previous['sysroot']+'/bin:'+os.environ['PATH'])
     for name,command,cwd in [
       ('warm',[PY,str(out/'warm-run.py'),'--phase','qualification','--out',str(out/'warm')],R),
       ('engine',[str(out/'gpu-smt'),'measure','--repl',m['warm_repl'],'--project',previous['project'],
@@ -106,6 +111,10 @@ def main():
             done=json.loads((out/'engine.stdout').read_text())
             assert len(done['results'])==24
             assert done['batch']==json.loads((out/'input24.json').read_text())
+            contexts=[json.loads(event['detail'])['prepared_context']
+                for row in done['results']for attempt in row['attempts']for event in attempt['backend_events']
+                if event['stage']=='prepared_ready']
+            assert contexts and all(c.get('native_library')==native_library for c in contexts),'Prepared native compilation was not loaded'
             for row in done['results']:
                 for attempt in row['attempts']:
                     for process in attempt['processes']:

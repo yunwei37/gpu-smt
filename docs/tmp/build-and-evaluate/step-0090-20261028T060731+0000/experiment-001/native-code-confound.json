@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-28T06:09:32.535243+00:00",
+  "historical_source": "/workspaces/repository/artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off/terminal.json",
+  "historical_native_library": "/tmp/gpu-smt-counterexample-next-20261024/libCounterexample.so",
+  "historical_own_mode": "off",
+  "historical_whole_seconds": 21693.761299439,
+  "library_link_command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+    "-O3",
+    "-shared",
+    "-fPIC",
+    "-o",
+    "libCounterexample.so",
+    "Counterexample.c",
+    "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+    "-Wl,--no-as-needed",
+    "-l:libMathlib-Tactic-Linarith-1.so"
+  ],
+  "off_wrapper_original_tactic_dispatch": "GPU_SMT_CEX_MODE off skips export/query and directly evalTactic original; retained Counterexample.lean inspected",
+  "matched_request_codes": 7808,
+  "observed_candidate_ids": 7808,
+  "expected_original_ids": 7808,
+  "mismatched_candidate_ids": [],
+  "fresh_prepared_full_cells_loaded_library": false,
+  "original_unstarted_warm_qualification_loaded_library": false,
+  "resource_only_effect_identified": false,
+  "corrective_scope": "Same existing nativeMathlib library in warm/prepared/fresh fallback; no CPUoracle or CEX evaluation; candidate/source/resource point unchanged."
+}

@@ -133,3 +133,24 @@ The retained Lean4.9 Mathlib/Aesop import-only preparation loads5545modules,
 observes one thread/no children,and retires on stdin EOF. It executes no candidate
 and opens no branch connection. Full Mathlib child differential/concurrency/
 performance qualification remains pending; Init-only CI is not substituted.
+
+
+## Match native compilation as well as the toolchain
+
+For an explicitly configured native context,the import parent honors
+LEAN_SERVER_NATIVE_DYNLIB using Lean.loadDynlib before parsing/importing.
+The ready context records native_library (null by default). A load failure
+prevents readiness; existing one-thread/descriptor checks still run afterward.
+Dynamic library initializers/FFI need the same context-specific audit as imports.
+Use the identical effective library in the fresh fallback and warm baseline;
+a stock REPL without this environment-variable support must be configured
+through its own supported loading path before comparing results.
+The retained4.9warm-capable REPL supports this variable. No library is selected
+by default,and this setting is part of the immutable environment identity.
+
+Historical Kiminaoff loaded nativeMathlib through a disabled counterexample
+wrapper. Omitting those native symbols in an engine comparison changes the
+execution mechanism even though source/toolchain match. The pending resource
+qualification directly loads that existing ordinary Mathlib library in both
+backends,without the counterexample wrapper or external arithmetic oracle.
+This is baseline parity,not a new contribution or oracle optimization.

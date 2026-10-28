@@ -1131,3 +1131,155 @@ async fn native_import_error_never_becomes_prepared_readiness() {
         );
     }
 }
+
+#[tokio::test]
+#[ignore = "requires LEAN_PREPARED_HOST/LEAN_SYSROOT/LEAN_PROJECT; native CI runs this"]
+async fn native_library_load_is_before_imports_once_and_failures_never_ready() {
+    use tokio::io::{AsyncBufReadExt, BufReader};
+    let program = PathBuf::from(std::env::var("LEAN_PREPARED_HOST").unwrap());
+    let sysroot = PathBuf::from(std::env::var("LEAN_SYSROOT").unwrap());
+    let project = PathBuf::from(std::env::var("LEAN_PROJECT").unwrap());
+    let directory = std::env::temp_dir().join(format!(
+        "gpu-smt-native-library-{}-{}",
+        std::process::id(),
+        std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_nanos()
+    ));
+    std::fs::create_dir(&directory).unwrap();
+    let library = directory.join("probe.so");
+    let marker = directory.join("loads");
+    let socket = directory.join("control.sock");
+    let source = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/native_load.c");
+    assert!(
+        std::process::Command::new("cc")
+            .args(["-shared", "-fPIC", "-Wall", "-Wextra", "-Werror"])
+            .arg(source)
+            .arg("-o")
+            .arg(&library)
+            .status()
+            .unwrap()
+            .success()
+    );
+    let mut host = tokio::process::Command::new(&program)
+        .args([socket.as_os_str(), sysroot.as_os_str()])
+        .env("LEAN_SERVER_NATIVE_DYNLIB", &library)
+        .env("GPU_SMT_NATIVE_LOAD_MARKER", &marker)
+        .current_dir(&project)
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .kill_on_drop(true)
+        .spawn()
+        .unwrap();
+    let mut input = host.stdin.take().unwrap();
+    input
+        .write_all(format!("{}\n", serde_json::json!("import Init\n")).as_bytes())
+        .await
+        .unwrap();
+    input.flush().await.unwrap();
+    let mut output = BufReader::new(host.stdout.take().unwrap());
+    let mut line = String::new();
+    tokio::time::timeout(
+        std::time::Duration::from_secs(300),
+        output.read_line(&mut line),
+    )
+    .await
+    .unwrap()
+    .unwrap();
+    let ready: serde_json::Value = serde_json::from_str(&line).unwrap();
+    assert_eq!(ready["ready"], true);
+    assert_eq!(ready["parent_threads"], 1);
+    assert_eq!(
+        ready["prepared_context"]["native_library"],
+        serde_json::json!(library)
+    );
+    assert_eq!(std::fs::read_to_string(&marker).unwrap(), "loaded\n");
+    let mask = std::fs::read_to_string("/proc/self/status").unwrap();
+    let cpu = mask
+        .lines()
+        .find_map(|l| l.strip_prefix("Cpus_allowed_list:"))
+        .unwrap()
+        .trim()
+        .split([',', '-'])
+        .next()
+        .unwrap();
+    for (code, status) in [
+        (
+            "import Init\nexample : True := by trivial",
+            Status::Accepted,
+        ),
+        (
+            "import Init\nexample : False := by decide",
+            Status::Rejected,
+        ),
+    ] {
+        let stream = tokio::net::UnixStream::connect(&socket).await.unwrap();
+        let (read, mut write) = stream.into_split();
+        let mut lines = BufReader::new(read).lines();
+        let started = lines.next_line().await.unwrap().unwrap();
+        let started: serde_json::Value = serde_json::from_str(&started).unwrap();
+        write
+            .write_all(format!("{cpu}\n{}\n", serde_json::json!(code)).as_bytes())
+            .await
+            .unwrap();
+        write.flush().await.unwrap();
+        let response = lines.next_line().await.unwrap().unwrap();
+        let response: serde_json::Value = serde_json::from_str(&response).unwrap();
+        let retired = lines.next_line().await.unwrap().unwrap();
+        let retired: serde_json::Value = serde_json::from_str(&retired).unwrap();
+        assert_eq!(retired["retired"], 0);
+        assert_eq!(
+            gpu_smt_lean::classify(response["native"].clone()).status,
+            status
+        );
+        assert!(
+            gpu_smt_engine::linux::identity(started["started"].as_u64().unwrap() as u32).is_err()
+        );
+        // Loading in every candidate would append another line. Missing the
+        // loader entirely cannot satisfy this actual constructor side effect.
+        assert_eq!(std::fs::read_to_string(&marker).unwrap(), "loaded\n");
+    }
+    drop(input);
+    assert!(
+        tokio::time::timeout(std::time::Duration::from_secs(300), host.wait())
+            .await
+            .unwrap()
+            .unwrap()
+            .success()
+    );
+    assert!(!socket.exists());
+    let missing = directory.join("missing.so");
+    let mut host = tokio::process::Command::new(program)
+        .args([socket.as_os_str(), sysroot.as_os_str()])
+        .env("LEAN_SERVER_NATIVE_DYNLIB", &missing)
+        .current_dir(project)
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .kill_on_drop(true)
+        .spawn()
+        .unwrap();
+    let mut input = host.stdin.take().unwrap();
+    input
+        .write_all(format!("{}\n", serde_json::json!("import Init\n")).as_bytes())
+        .await
+        .unwrap();
+    drop(input);
+    let failed = tokio::time::timeout(std::time::Duration::from_secs(300), host.wait_with_output())
+        .await
+        .unwrap()
+        .unwrap();
+    assert!(!failed.status.success());
+    assert!(
+        failed.stdout.is_empty(),
+        "failed native import claimed ready"
+    );
+    assert!(
+        String::from_utf8_lossy(&failed.stderr).contains("missing.so"),
+        "missing-library diagnostic lost: {:?}",
+        failed.stderr
+    );
+    std::fs::remove_dir_all(directory).unwrap();
+}

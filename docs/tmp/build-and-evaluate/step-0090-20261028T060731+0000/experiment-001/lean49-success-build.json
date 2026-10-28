@@ -1,0 +1,97 @@
+{
+  "cwd": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL",
+  "sysroot": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "LEAN_CC": "cc",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "REPL:static"
+      ],
+      "exit": 0,
+      "stdout": "Build completed successfully.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "objcopy",
+        "--redefine-sym",
+        "main=gpu_smt_dependency_main",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib/libREPL.a",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/libREPL-embedded.a"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-R",
+        "/workspaces/repository/native/lean",
+        "-c",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/GpuSmtPrepared.c",
+        "/workspaces/repository/native/lean/GpuSmtPrepared.lean"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanc",
+        "-O3",
+        "-c",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/GpuSmtPrepared.c",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/GpuSmtPrepared.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanc",
+        "-std=gnu11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-c",
+        "/workspaces/repository/native/lean/prepared_host.c",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/prepared_host.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanc",
+        "-O3",
+        "-rdynamic",
+        "-L/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib",
+        "-o",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/prepared-host",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/prepared_host.o",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/GpuSmtPrepared.o",
+        "/tmp/gpu-smt-prepared-native-library-20261028-v2/libREPL-embedded.a"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "libuv_initializer_present": false
+}

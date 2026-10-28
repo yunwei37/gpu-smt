@@ -33,6 +33,18 @@ def no_other_collection():
     if resource.getrlimit(resource.RLIMIT_AS)!=(-1,-1):
         raise RuntimeError('An inherited fixed address-space cap would invalidate this resource point')
 
+def native_library_environment(context):
+    project=Path(context['project'])
+    library=project/'.lake/build/lib/libMathlib-Tactic-Linarith-1.so'
+    if not library.is_file():raise RuntimeError('Retained native Mathlib library missing')
+    paths=[]
+    for entry in context['LEAN_PATH'].split(os.pathsep)+[str(Path(context['sysroot'])/'lib'),str(Path(context['sysroot'])/'lib/lean')]:
+        path=Path(entry)
+        if not path.is_absolute():path=project/path
+        path=path.resolve()
+        if path.is_dir()and str(path)not in paths:paths.append(str(path))
+    return {'LEAN_SERVER_NATIVE_DYNLIB':str(library),'LD_LIBRARY_PATH':os.pathsep.join(paths)}
+
 async def main(args):
     no_other_collection()
     os.sched_setaffinity(0,{8,9,10,11})
@@ -46,9 +58,13 @@ async def main(args):
         LEAN_SERVER_REPL_PATH=str(repl),LEAN_SERVER_LEAN_VERSION='v4.9.0-rc1',
         LEAN_SERVER_MAX_REPLS='4',LEAN_SERVER_ENVIRONMENT='prod',GPU_SMT_MEMORY_DIRECTORY=str(args.out),
         GPU_SMT_CEX_MODE='off')
+    # Match the historical strong native compilation without its disabled CEX wrapper.
+    library_environment=native_library_environment(context)
+    os.environ.update(library_environment)
+    native_library=library_environment['LEAN_SERVER_NATIVE_DYNLIB']
     # No arithmetic oracle, numeric service, counterexample provider or profiling hook.
     for key in list(os.environ):
-        if key.startswith('GPU_ARITHMETIC_') or key in ['LEAN_SERVER_NATIVE_DYNLIB','GPU_SMT_CANDIDATE_TIMING']:
+        if key.startswith('GPU_ARITHMETIC_') or key in ['GPU_SMT_CANDIDATE_TIMING']:
             os.environ.pop(key)
     sys.path[:0]=[str(KIMINA),str(KIMINA/'client')]
     from kimina_client import Snippet
@@ -137,6 +153,19 @@ async def main(args):
     try:
         await manager.initialize_repls()
         warm_ready=time.monotonic()-started
+        loaded=[]
+        for process in watchdog.owned():
+            try:
+                command=process.cmdline()
+                if not command or Path(command[0]).name!=repl.name:continue
+                before=process.create_time()
+                paths={line.split()[-1]for line in Path('/proc',str(process.pid),'maps').read_text().splitlines()if len(line.split())>=6}
+                assert native_library in paths,'Warm native compilation was not actually mapped'
+                assert before==process.create_time()
+                loaded.append({'pid':process.pid,'birth':before,'native_library':native_library,'mapped':True})
+            except psutil.NoSuchProcess:raise RuntimeError('Warm worker exited before native-library readiness')
+        assert len(loaded)==4,'Native-library readiness must cover all four warm REPLs'
+        (args.out/'native-library-readiness.json').write_text(json.dumps(loaded,indent=2)+'\n')
         # A shared queue never dispatches a fifth native request. When pressure
         # preempts an attempt, drain peers,retire all idle warm states,then retry
         # actual preempted sources one at a time. No predicted rejection.
@@ -189,7 +218,7 @@ async def main(args):
         watchdog.stop();ledger.close()
         terminal.update(memory=watchdog.summary(),resources={'memory_bytes':48*1024**3,
          'cpus':[8,9,10,11],'maximum_native_workers':4,'per_process_AS':None},
-         source_repl=str(repl),source_context=context,phase=args.phase,
+         source_repl=str(repl),native_library=native_library,source_context=context,phase=args.phase,
          adaptation='benchmark-local Repl.max_memory_bytes=RLIM_INFINITY;installed source unchanged',
          UTC=datetime.datetime.now(datetime.timezone.utc).isoformat())
         # Independent actual process check,including reparented owned descendants.

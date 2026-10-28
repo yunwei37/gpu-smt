@@ -1,0 +1,50 @@
+{
+  "UTC": "2026-10-28T06:11:40.856322+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.0050020050257444
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "import ast;from pathlib import Path;[ast.parse(Path(p).read_text())for p in ['bench/lean-warm-resource/run.py','bench/lean-warm-resource/qualify_after_fifo.py']]"
+      ],
+      "exit": 0,
+      "seconds": 1.006234992062673
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+        "/workspaces/repository/docs/paper/main.tex",
+        "--outdir",
+        "/tmp/gpu-smt-paper-native-library-20261028",
+        "--keep-logs"
+      ],
+      "exit": -9,
+      "seconds": 3.0120030490215868
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 5.02330133295618,
+  "samples": 11,
+  "combined_peak_rss_bytes": 51958112256,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": true,
+  "monitor_errors": [],
+  "native_library_resource_parity_repair": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": true,
+  "analysis_commands": 3
+}

@@ -11,10 +11,14 @@ structure Root where
   imports : String
   env : Environment
   messages : MessageLog
+  nativeLibrary? : Option String := none
 
 @[export gpu_smt_prepared_create]
 unsafe def create (encoded sysroot : String) : IO Root := do
   initSearchPath sysroot
+  let nativeLibrary? ← IO.getEnv "LEAN_SERVER_NATIVE_DYNLIB"
+  if let some nativeLibrary := nativeLibrary? then
+    Lean.loadDynlib nativeLibrary
   enableInitializersExecution
   let code ← IO.ofExcept (Json.parse encoded >>= fromJson? (α := String))
   let context := Parser.mkInputContext code "<input>"
@@ -22,14 +26,15 @@ unsafe def create (encoded sysroot : String) : IO Root := do
   let (env, messages) ← processHeader header {} messages context
   if messages.hasErrors then
     throw <| IO.userError "native header import failed; use original frontend"
-  return { imports := code.extract 0 parser.pos, env, messages }
+  return { imports := code.extract 0 parser.pos, env, messages, nativeLibrary? }
 
 
 @[export gpu_smt_prepared_stats]
 def stats (root : Root) : String :=
   (Json.mkObj [
     ("imported_modules", toJson root.env.header.moduleNames.size),
-    ("header_errors", toJson root.messages.hasErrors)]).compress
+    ("header_errors", toJson root.messages.hasErrors),
+    ("native_library", toJson root.nativeLibrary?)]).compress
 
 @[export gpu_smt_prepared_check]
 unsafe def check (root : Root) (encoded : String) : IO String := do
