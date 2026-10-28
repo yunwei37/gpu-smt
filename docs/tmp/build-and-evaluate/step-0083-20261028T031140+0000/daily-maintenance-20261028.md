@@ -399,3 +399,12 @@ behavior are still missing;hash repetition must not enable rejection. Upstream
 already has possible-loop warnings,so generic diagnostics are no novelty.
 Use these existing records and source facts;add no observer or parallel cohort.
 The full resource pair/42priority remains unchanged.
+
+
+Step0109resource work while collecting:the native parent currently masks an
+exit-signal/wait race with100msperiodic polling. Replace that with standard
+atomic ppoll signal waiting,restore the original mask in each candidate,and
+qualify actual native mask/response behavior through existing CI. This removes
+a concrete periodic-wake mechanism but does not quantify full throughput.
+Clean the adapter guide's stale "Mathlib child controls pending" statements
+using links to their completed evidence;leave the active full point frozen.

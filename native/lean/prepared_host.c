@@ -40,6 +40,13 @@ void __wrap_initialize_libuv(void) { deferred_libuv=1; }
 static volatile sig_atomic_t stopping;
 static void stop(int sig) { stopping = sig; }
 static void changed(int sig) { (void)sig; }
+static int lifecycle_handlers(void) {
+    struct sigaction action={0}; sigemptyset(&action.sa_mask);
+    action.sa_handler=stop;
+    if (sigaction(SIGTERM,&action,NULL) || sigaction(SIGINT,&action,NULL)) return -1;
+    action.sa_handler=changed;
+    return sigaction(SIGCHLD,&action,NULL);
+}
 static int send_all(int fd, const char *text) {
     size_t left = strlen(text);
     while (left) {
@@ -121,11 +128,14 @@ static unsigned long long birth_ticks(void) {
     unsigned long long ticks=field?strtoull(field,NULL,10):0;
     free(raw); return ticks;
 }
-static void child(int fd, int listener, struct branch *siblings, lean_object *root, pid_t owner) {
+static void child(int fd, int listener, struct branch *siblings, lean_object *root, pid_t owner, const sigset_t *original_mask) {
     if (setpgid(0,0) || prctl(PR_SET_PDEATHSIG,SIGKILL) || getppid()!=owner) _exit(125);
     close(listener);
     for (struct branch *b=siblings;b;b=b->next) close(b->channel);
     signal(SIGINT,SIG_DFL); signal(SIGTERM,SIG_DFL); signal(SIGCHLD,SIG_DFL);
+    /* The parent's atomic wait blocks lifecycle signals between events.
+       Candidate runtime/FFI must inherit the launcher's mask, not that wait mask. */
+    if (sigprocmask(SIG_SETMASK,original_mask,NULL)) _exit(125);
     char started[160]; snprintf(started,sizeof(started),"{\"started\":%ld,\"start_ticks\":%llu}\n",(long)getpid(),birth_ticks());
     if (send_all(fd,started)) _exit(126);
     /* Dedicated request stream; stdout/stderr remain diagnostic channels.
@@ -171,9 +181,7 @@ static void reap(struct branch **active) {
 int main(int argc,char **argv) {
     if (argc!=3) { fprintf(stderr,"usage: prepared-host SOCKET SYSROOT\n"); return 2; }
     unsigned closed_inherited=close_inherited_fds();
-    struct sigaction action={0}; sigemptyset(&action.sa_mask);
-    action.sa_handler=stop; sigaction(SIGTERM,&action,NULL); sigaction(SIGINT,&action,NULL);
-    action.sa_handler=changed; sigaction(SIGCHLD,&action,NULL);
+    if (lifecycle_handlers()) { perror("prepared signal handlers"); return 1; }
     signal(SIGPIPE,SIG_IGN);
     pid_t owner=getppid();
     if (prctl(PR_SET_PDEATHSIG,SIGTERM) || getppid()!=owner) return 125;
@@ -206,6 +214,21 @@ int main(int argc,char **argv) {
 #ifdef GPU_SMT_DEFER_LIBUV
     uv_deferred=deferred_libuv;
 #endif
+    /* Block lifecycle signals around reap/check; ppoll atomically enables
+       them only while waiting. A signal pending before ppoll cannot be lost. */
+    sigset_t blocked,original_mask,wait_mask;
+    sigemptyset(&blocked);
+    sigaddset(&blocked,SIGCHLD); sigaddset(&blocked,SIGTERM); sigaddset(&blocked,SIGINT);
+    if (sigprocmask(SIG_BLOCK,&blocked,&original_mask)) {
+        perror("prepared signal mask"); close(listener); unlink(argv[1]); return 1;
+    }
+    wait_mask=original_mask;
+    sigdelset(&wait_mask,SIGCHLD); sigdelset(&wait_mask,SIGTERM); sigdelset(&wait_mask,SIGINT);
+    /* Native initialization/imports have finished; this single-threaded host
+       owns branch retirement and shutdown until it exits. */
+    if (lifecycle_handlers()) {
+        perror("prepared signal handlers"); close(listener); unlink(argv[1]); return 1;
+    }
     lean_inc(root);
     lean_object *prepared_stats=gpu_smt_prepared_stats(root);
     printf("{\"ready\":true,\"parent_pid\":%ld,\"parent_threads\":1,\"preparations\":1,\"closed_inherited_fds\":%u,\"libuv_deferred\":%s,\"prepared_context\":%s}\n",
@@ -215,16 +238,14 @@ int main(int argc,char **argv) {
     while (!stopping) {
         reap(&active);
         struct pollfd fds[2]={{listener,POLLIN,0},{STDIN_FILENO,POLLIN|POLLHUP,0}};
-        /* The finite poll interval closes the signal-arrival-before-poll race;
-           it does not implement proof timeouts or limit candidate execution. */
-        int n=poll(fds,2,100);
+        int n=ppoll(fds,2,NULL,&wait_mask);
         if (n<0 && errno==EINTR) continue;
-        if (n<0 || (fds[1].revents&(POLLIN|POLLHUP|POLLERR))) break;
+        if (stopping || n<0 || (fds[1].revents&(POLLIN|POLLHUP|POLLERR))) break;
         if (fds[0].revents&POLLIN) {
             int fd=accept4(listener,NULL,NULL,SOCK_CLOEXEC); if (fd<0) continue;
             if (threads()!=1) { send_all(fd,"{\"backend_error\":\"parent is not single threaded\"}\n"); close(fd); continue; }
             pid_t parent=getpid(),pid=fork();
-            if (!pid) child(fd,listener,active,root,parent);
+            if (!pid) child(fd,listener,active,root,parent,&original_mask);
             if (pid<0) { close(fd); continue; }
             setpgid(pid,pid);
             struct branch *b=malloc(sizeof(*b));

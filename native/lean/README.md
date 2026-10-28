@@ -30,6 +30,20 @@ for that retirement before releasing the CPU lease or returning a result.
 Timeout/cancellation kills the owned child group; the parent survives.
 Preparation, connection, fallback, remaining timeout and shutdown are charged.
 
+The parent waits for listener/control-descriptor readiness and lifecycle signals
+with ppoll,without a periodic poll timer. SIGCHLD/SIGTERM/SIGINT remain blocked
+between reap/check and the atomic wait,then are enabled by its temporary mask.
+This prevents a signal arriving in that gap from being lost. Handlers are
+checked/reinstalled after audited import initialization. Each forked child
+restores the launcher's original signal mask before native runtime services;
+the parent's wait mask must not escape into candidate execution.
+This uses the [ordinary ppoll contract](https://man7.org/linux/man-pages/man2/poll.2.html),
+not a proof timeout or a new event service. Native CI compares the actual
+child's SigBlk output with fresh Lean and refuses fresh-fallback agreement.
+Removing periodic waiting is not a measured whole-workload speedup. The
+ongoing13d4606resource pair keeps its old compiled host and cannot measure
+this later source change.
+
 A memory-preempted candidate's exclusive retry first retires the idle import
 parent, then uses the unchanged fresh native backend. Otherwise the retained
 parent's summed RSS would reduce the memory available to that supposedly solo
@@ -88,10 +102,13 @@ Shared COW pages count in each process's RSS under the user's aggregate-RSS
 contract; lower physical memory needs separate PSS measurement.
 
 Core Init controls in CI are not Mathlib whole-population qualification,
-a full isolation proof, or a throughput result. The live original collection
-keeps its old settings. Real Mathlib/resource/full-pair qualification follows
-only after that sole group retires, with the new resource point reported
-separately.
+a full isolation proof, or a throughput result.
+[Existing native Mathlib child controls](../../artifacts/mathlib-import-preparation-2026-10-25/child-qualification-001/result-review.md)
+are complete at their declared development scope. The
+[corrected warm/resource comparison](../../bench/lean-warm-resource/README.md)
+owns full-population/resource status and its limitations. Every active
+collection retains its frozen source/settings;later source repairs cannot be
+credited to an earlier native timing result.
 
 The adapter uses the stock REPL's public frontend and diagnostic serializers:
 [frontend](https://github.com/leanprover-community/repl/blob/2f0a3cb876b045cc0fe550ca3a625bc479816739/REPL/Frontend.lean)
@@ -130,9 +147,10 @@ host. Missing/failed preparation uses the original fresh backend. A count is
 import readiness evidence, not proof that arbitrary FFI is safe to fork.
 
 The retained Lean4.9 Mathlib/Aesop import-only preparation loads5545modules,
-observes one thread/no children,and retires on stdin EOF. It executes no candidate
-and opens no branch connection. Full Mathlib child differential/concurrency/
-performance qualification remains pending; Init-only CI is not substituted.
+observes one thread/no children,and retires on stdin EOF. That initial point
+executes no candidate and opens no branch connection. The linked later child
+controls supply actual differential/concurrency evidence at their limited
+scope;neither point establishes whole-population performance.
 
 
 ## Match native compilation as well as the toolchain
@@ -150,7 +168,7 @@ by default,and this setting is part of the immutable environment identity.
 
 Historical Kiminaoff loaded nativeMathlib through a disabled counterexample
 wrapper. Omitting those native symbols in an engine comparison changes the
-execution mechanism even though source/toolchain match. The pending resource
-qualification directly loads that existing ordinary Mathlib library in both
+execution mechanism even though source/toolchain match. The corrected resource
+comparison directly loads that existing ordinary Mathlib library in both
 backends,without the counterexample wrapper or external arithmetic oracle.
 This is baseline parity,not a new contribution or oracle optimization.

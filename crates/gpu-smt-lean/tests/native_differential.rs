@@ -358,6 +358,16 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             Status::Accepted,
         ),
         (
+            // Compare the actual native main-thread signal mask, not a mock
+            // handshake. A child must not retain the parent's blocked wait set.
+            r#"import Init
+import Std.Internal.UV.Timer
+#eval show IO String from do
+  let status ← IO.FS.readFile "/proc/self/status"
+  pure (((status.splitOn "\n").find? (fun line => line.startsWith "SigBlk:")).getD "missing")"#,
+            Status::Accepted,
+        ),
+        (
             "import Lean\nexample : True := by trivial",
             Status::Accepted,
         ),
@@ -387,6 +397,16 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
         .unwrap()
         .unwrap();
         let expected: serde_json::Value = serde_json::from_slice(&raw.stdout).unwrap();
+        if code.contains("SigBlk:") {
+            assert!(
+                expected["messages"].as_array().unwrap().iter().any(|message| {
+                    message["data"].as_str().is_some_and(|text| {
+                        text.contains("SigBlk:") && !text.contains("missing")
+                    })
+                }),
+                "raw native control did not actually return its blocked-signal mask: {expected}"
+            );
+        }
         let result = engine
             .verify_batch(Batch {
                 mode: Mode::All,
@@ -410,6 +430,14 @@ async fn native_import_parent_isolates_children_and_matches_raw_responses() {
             Some(&expected),
             "{code}"
         );
+        if code.contains("SigBlk:") {
+            assert!(
+                result[0].attempts.iter().all(|attempt| {
+                    attempt.backend_events.iter().all(|event| event.stage != "fresh_fallback")
+                }),
+                "signal-mask agreement through fresh fallback is not prepared-child engagement"
+            );
+        }
         assert!(result[0].attempts.iter().flat_map(|a| &a.backend_events)
             .filter(|e| e.stage == "rss_observation")
             .filter_map(|e| serde_json::from_str::<serde_json::Value>(&e.detail).ok())
