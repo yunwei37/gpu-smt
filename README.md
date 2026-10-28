@@ -78,223 +78,101 @@ implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload
 methods and actual end-to-end results.
 
-An [exact-source audit](artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md)
-finds no duplicate substantive proofs among the 7,808 miniF2F candidates:
-only 18 repeated literal None failures. Exact caching is supported, but is
-not the expected source of meaningful acceleration on this population.
+## Resource and verification contracts
 
-A [whole-task heldout source-cost analysis](artifacts/candidate-scheduling-2026-10-25/source-cost-crossfit-20261026/README.md)
-did not improve frozen first-success work over FIFO. The 102 unsolved tasks
-account for 95.2% of remaining attempt time. Even an outcome-informed within-task
-ordering saves only 3.7% of that frozen work. This is an offline replay, not an
-end-to-end bound or measured service speedup; the weak predictor is not deployed.
+The current research resource point uses **48 GiB total sampled owned RSS** on
+CPUs 8–11, up to four one-core workers, and no fixed per-process address-space
+cap. Admission uses actual memory plus measured forecasts. The one-second
+watchdog interrupts owned native groups independently of request execution;
+retirement remains awaited and charged. Sampling can overshoot: this is **not
+a kernel hard memory quota**.
 
-## Current work: failure hotspots in Lean
+Preempted work follows the already queued ordinary frontier, then retries alone
+after peers retire. Later arrivals cannot starve that retry. Observed peaks are
+forecasts, not safe memory caps; moving retries to the tail does not parallelize
+the tail itself. [Resource implementation](docs/implementation.md#resource-contract)
+and [measurement protocol](docs/benchmarking.md) document the boundaries.
 
-The complete native/GPU counterexample-screening pair returns all **7,808**
-miniF2F candidates with identical statuses and accepted sets: **3,014 valid,
-4,669 Lean errors, 83 timeouts and 42 resource failures**. Native takes
-21,693.76s; GPU takes23,615.03s (**8.86% slower**) before its additional
-23.99s input preparation. The full cold-controller clock is unavailable
-after an observation outage; actual completion and cleanup are recorded.
-
-Exact screening refutes34 intermediate goals in29candidates, all ordinary
-Lean errors, with no timeout reduction. It remains a small component; no
-further GPU-pair expansion is planned. All42resource failures report native
-allocation failure under the24GiB-per-process limit on both sides. The48GiB
-aggregate watchdog records no kills or errors.
-[Complete pair, accepted sets, failure causes and limitations](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md).
-
-The completed 480-source failure profile attributes 55.19% of observed
-timeout thread CPU to interval_cases and 28.21% to simp_all. All selected
-statuses are unchanged. These diagnostic fractions are not total elapsed-time
-fractions or a proven early-rejection mechanism. The
-[completed48-source interval prototype](artifacts/hotspot-mechanisms-2026-10-25/interval48-import-repair-20261026T162128Z/README.md)
-still times out on all48 sources, matching its import control: reliable
-early-failure coverage is0/48. Its shorter collection clock has different
-memory preemptions and does not establish whole-verifier acceleration.
-
-Four directions continue: the layered Rust engine, reliable early failure/timeout determination,
-same-task ranking/cancellation for pass@k or best-of-n, and public Lean
-code-verification workloads. The [completed scheduling matrix](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md)
-covers all 7,808 original candidates: all-candidate execution takes21,746.81s,
-original-order first-success15,385.39s(1.41347×),and source-size first-success
-15,112.12s(1.43903×). Both preserve exactly142solved problem IDs. These are
-single shared-host pass@k consumer comparisons,not RL per-candidate rewards
-or scheduling novelty. The [all-candidate cell](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/all/result-review.md)
-returns 3,014 valid, 4,669 Lean errors, 82 timeouts and 43 allocation failures,
-with the same accepted set as the historical reference. One former timeout
-now reports bad_alloc; resource-failure body clocks are unavailable, not zero.
-First-success skips only siblings of a checked winner;the remaining timeouts and allocation failures stay in the results.
-Its real eight-candidate qualification
-checked winners before cancelling siblings. The original Verina 189-file
-native/profile characterization is complete; admitted stubs and source-version
-errors are reported separately from completed reference files.
-The [first unchanged lean-mlir compiler module](artifacts/lean-code-verification-2026-10-25/leanmlir-native-20261027T025426Z/README.md)
-also completes: original file40.47s, exact stdin40.21s, native profile94.04s,
-all with equal successful native responses. Its actual trace exposes a
-substantial LRAT/kernel-checking region, with concurrent elapsed slices and
-material profiling overhead. This identifies work to investigate; it does
-not establish a removable wall fraction or GPU benefit.
-
-There is no performance admission threshold, deadline or closure decision.
-The external CPU oracle stays **frozen as a baseline**: no optimization,
-extension or new oracle experiments, and no contribution claim.
-Candidate cancellation serves first-success inference, not per-candidate RL
-reward collection. Existing comparisons and all raw data remain.
-[Current scope and evidence boundaries](docs/evaluation.md#current-decision-frozen-oracle-and-three-continuing-directions).
-
-## Collection resources
-
-The **current resource point** keeps **48 GiB total actual RSS**, removes fixed
-per-process address-space caps, and jointly admits candidates by measured
-memory and CPU demand on CPUs8–11. A15-second observation of existing REPLs
-finds one active thread/~one core per worker, motivating up to four workers
-at this point, subject to actual memory admission. The Rust watchdog samples
-owned trees each second; concurrent preemptions are requeued for an exclusive
-retry after the already queued ordinary frontier, whose resource failures
-remain separately reported. Later arrivals cannot starve a deferred retry;
-the retry still waits for peer retirement. The [selected24 qualification](artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z/README.md)
-records lower elapsed time with equal accepted IDs but two additional timeouts;
-whole-population throughput remains pending. This is sampled
-response, not a kernel hard RSS quota.
-
-The original scheduling matrix completed under its frozen two-worker/24GiB-AS
-settings. The [dynamic four-worker capture](artifacts/engine-resource-pair-2026-10-25/full7808-20261026T004621Z/README.md)
-completed its native cell: 7,808 results, with 3,013 accepted, 4,665 rejected,
-87 timeouts, 41 resource failures and two backend faults. Its native lifecycle
-is 28,464.81s. One historically accepted candidate now times out; accepted-set
-equivalence is not established. The sampled peak was 48.79GiB, above the
-48GiB budget between watchdog responses.
-The prepared cell failed when the Workspace volume filled; partial data and
-losslessly archived fault outputs remain. There is no complete pair or speedup.
-The storage repair preserved sources, results and compiled dependencies.
-The [new same-version full repair pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md)
-now completes both7,808-source conditions with equal statuses and3,013accepted
-IDs. Whole-cell time28,391.98/22,891.51s gives1.24028x(19.37%less elapsed).
-This is a single own-engine fresh/prepared component observation with shared-host
-and CPU11 support contention,not strongest warm-service superiority or novelty.
-Both retain87timeouts,41resource failures and2backend faults. Empty ast:[] is
-omitted in7,660prepared replies. Sampled RSS peaks48.77/48.93GiB overshoot the
-48GiB budget between watchdog responses;it is not a hard quota.
-Fourteen parent preparations and62fallback event rows are charged.
-A [preserved FIFO replay](artifacts/engine-resource-profile-2026-10-25/policy7808-20261028T034248Z/README.md)
-now also returns all7,808sources with identical per-ID statuses/nativeJSON
-responses. Its22,716.04s internalclock has no completeexternalcounterpart after
-the originalcontrollerpause. The historicalwarm's sixstatusdifferences persist;
-this is oldpoint closure,not the correctedwarm comparison or a newgain.
-The historical warm cell also loaded compiled Mathlib linarith;both engine
-cells omitted that library. Equal source bytes therefore did not match the
-effective tactic code. The [corrected four-warm resource comparison](bench/lean-warm-resource/README.md)
-loads the same retained native library on both sides. Selected24 results are
-complete; the [serial full7808 pair](docs/tmp/build-and-evaluate/step-0102-20261028T122519+0000/experiment-001/plan.md)
-is now running and has no final result.
-Ordinary native compilation is a baseline requirement,not an engine contribution.
-The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
-completed their exclusive rerun with no fixed per-process address-space cap:
-41 exceeded the aggregate RSS budget and one timed out; none became accepted.
-The sampled peak was48.23GiB. These outcomes remain separate from both earlier
-resource points;they are operational failures,not proofs of false goals.
-That historicalsolo launcher did not explicitly select the now-matched native
-Mathlib library. A corrected-point42solo rerun is prepared but remains pending
-the resource comparison;the old41/1outcomes are not newresults.
-RTX 5090 is shared through NVIDIA time slicing, without fixed half-card
-partitions. Only one full acquisition group runs at a time.
-
-[Implementation, real qualification and limits](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/README.md).
-Older unbudgeted captures and captures with 48 GiB per worker are stopped partial records;
-their results are not pooled with this resource point.
-
-
-The [own closed-CNF whole-module test](artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) also completes: native40.15s,import-only40.34s,core57.98s,public56.91s. All four verify successfully,but the method is slower in this observation. It remains an explicit research prototype;no default enablement or GPU-gain claim.
-
-The [own measured-sibling memory development pair](artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/result-review.md)
-completes32originals:2,832.46s FIFO versus2,169.74s feedback(23.40%less elapsed),
-with exactly equal native outcomes:16accepted,7rejected,9resource failures.
-Retries fall9→5. This tail-selected,single-order development result does not
-establish whole-population performance or novelty;48GiB sampled budgets still
-overshoot. Further policy measurements remain deferred behind the matched warm-resource
-comparison.
-
-## Completed measurements
+## Research status and retained results
 
 **No useful extra end-to-end GPU acceleration over the strongest measured CPU
-composition has been demonstrated.** Selected-cohort improvements do not
-establish whole-population performance or a new systems contribution.
+composition has been demonstrated.** The resource layer has also not yet
+established superiority over the matched four-worker warm service. Source tests
+and selected-cohort results do not establish whole-population speedup, novelty,
+or unchanged accepted sets.
 
-| Completed comparison | Whole elapsed | Scope and result |
-|---|---|---|
-| 29,750 Goedel originals, three native/CPU pairs|18,584.96/16,661.35;18,478.26/16,912.11;18,608.55/16,750.33s|CPU-only aggregate 1.10627×, 9.61% less elapsed; two additional checked completions and the same 40 timeouts|
-| 1,000 selected heavy originals: native / CPU / CPU+GPU|1,376.24 /769.12 /762.44s|1.789× CPU and 1.805× CPU+GPU versus native; 992 complete and eight rejected throughout|
-| Same GPU condition including cold provider lifecycle|797.61s|3.70% more elapsed than CPU; no established useful extra GPU gain|
-| 7,808 miniF2F originals: native / retained SHRED integration|18,987.74 /19,235.45s|3,015 versus 3,010 genuine completions; five regressions and 11 sorry-bearing incomplete results retained|
-| 5,952 ProofNet originals: native / retained SHRED integration|356.37 /373.22s|413 genuine completions each; 20 native rejections become sorry-bearing incomplete responses|
+| Evidence | Result and scope |
+|---|---|
+| [Matched warm-resource comparison](bench/lean-warm-resource/README.md) | The selected 24-source qualification has equal accepted IDs but two additional engine timeouts. The full 7,808-source pair is unresolved. Both sides load the same ordinary native Mathlib library. |
+| [Own-engine fresh/prepared pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md) | 1.24028× compares two own-engine components. It does **not** establish a gain over the strongest warm baseline; baseline compilation, resource-point and status differences remain. |
+| [Full GPU counterexample pair](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md) | At the historical two-worker/24GiB-AS point, all 7,808 statuses agree; GPU takes 8.86% longer before 23.99s input preparation. Screening does not reduce timeouts. |
+| [Failure hotspot profile and prototypes](docs/evaluation.md#failure-and-scheduling) | interval_cases and simp_all dominate observed timeout thread CPU. These are not total wall fractions or proven early-failure certificates; the 48-source interval prototype has 0/48 reliable early-failure coverage. |
+| [First-success scheduling matrix](artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md) | All three 7,808-source conditions complete and preserve 142 solved tasks. First-success cancellation serves pass@k/best-of-n, not every-candidate RL rewards or a novelty claim. |
+| [Measured sibling-memory development pair](artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/result-review.md) | A selected 32-source pair reduces elapsed time 23.40% with equal outcomes. It is not a full-population result. Further policy measurement is deferred behind resource parity. |
+| [Lean code-verification workload](bench/lean-code-verification/README.md) | Original Verina and lean-mlir characterization is retained. The own closed-CNF whole-module prototype is slower than native; it is not enabled by default. |
 
-All outcomes, resource failures, latency tails and baseline limitations remain:
+The external CPU oracle remains **frozen as a baseline**: no optimization,
+extension, new oracle experiments or contribution claim. All original, failed
+and partial results remain in [the evaluation index](docs/evaluation.md),
+including Goedel, ProofNet, earlier GPU/CPU compositions, prefix integrations,
+resource failures and baseline limitations. Earlier resource captures retain a
+historically accepted candidate becoming a timeout; accepted-set equivalence is
+not established by their component ratio. Historical resource points are not
+pooled with the current point. A corrected fixed 42-source solo replay remains separate
+from its earlier 41-budget-failure/1-timeout result, which did not explicitly
+select the now-matched native Mathlib library.
 
-- [Complete Goedel population](artifacts/linarith-oracle-2026-10-17/kimina-full29750-budgeted-20261019/full-result-review.md), [cohort cost figure](docs/paper/figures/full-goedel-cohort-costs.pdf).
-- [Matched heavy-cohort CPU/GPU results](artifacts/linarith-oracle-2026-10-17/current-budget-gpu-20261023/full-result-review.md).
-- [Complete miniF2F comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/aggregate-budget-20261019/full-pair-result-review.md).
-- [Complete ProofNet comparison](artifacts/linarith-oracle-2026-10-17/shred-closing/proofnet-full-result-review.md).
-- [Current evaluation, earlier experiments and open requirements](docs/evaluation.md).
+Four directions continue: the layered engine, reliable failure/timeout
+determination, same-task scheduling, and public Lean code-verification workloads.
+The priority is resource-layer parity with the installed warm baseline before
+enabling additional workload methods. Warmup, snapshots, caches, native
+compilation and external certificate oracles are prior techniques; workload-layer
+novelty remains an open research requirement.
 
-The same-clock native profile on the 1,000 heavy inputs finds 39.94 s in floating
-LP solves and 951.85 s in 1,636 exact fallbacks within its own 1,380.32 s lifecycle.
-Concurrent phase sums are not an Amdahl ceiling. A faster narrow LP kernel
-alone therefore does not establish whole-verifier benefit.
-[Attribution, shapes and tails](artifacts/linarith-oracle-2026-10-17/native-stage-profile-20261022/reference-full-result-review.md).
-
-Warm REPLs, caches, snapshots, native compilation, batched LPs, external
-certificate oracles and counterexample testing are prior techniques, not
-individual novelty claims. The remaining scientific question concerns useful
-whole-flow savings beyond competent native execution.
+[Exact-duplicate analysis](artifacts/engine-resource-profile-2026-10-25/exact-duplicates/result-review.md)
+found no duplicate substantive miniF2F proofs. The
+[heldout source-cost analysis](artifacts/candidate-scheduling-2026-10-25/source-cost-crossfit-20261026/README.md)
+did not improve frozen first-success work over FIFO. These limitations remain
+part of the evidence, rather than reasons to assume a scheduling gain.
 
 ## Workloads and reproduction
 
 | Workload | Retained input | Native environment |
 |---|---|---|
-|GoedelWorkbook| 29,750 released original source files|Lean 4.27|
-|miniF2F|244 tasks × 32 candidates = 7,808|Lean 4.9.0-rc1|
-|ProofNet|186 tasks × 32 candidates = 5,952|Lean 4.9.0-rc1|
-|AutoVerus / VeruSAGE|Original source runs and solver traces|Version-aligned native SMT execution|
+| GoedelWorkbook |29,750 released original source files|Lean 4.27|
+| miniF2F |244 tasks × 32 candidates =7,808|Lean 4.9.0-rc1|
+| ProofNet |186 tasks × 32 candidates =5,952|Lean 4.9.0-rc1|
+| AutoVerus / VeruSAGE |Original source runs and solver traces|Version-aligned native SMT execution|
 
-Released candidate files are replay workloads, not generator arrival traces.
-All populations retain accepted, rejected, incomplete and resource-failure
-outcomes. Current run records identify actual SDKs, native libraries and
-numerical binaries; historical Workspace paths are not a universal installer.
+Released candidates are replay workloads, not generator arrival traces.
+[Benchmark methodology](bench/README.md), the
+[retained-environment reproduction guide](docs/reproduce-checkpoint.md), and
+each result's manifest identify actual SDKs, native libraries, clocks and
+resource points. Historical Workspace paths are not a universal installer.
 
+- [Matched native/warm resource comparison](bench/lean-warm-resource/README.md).
 - [First-success candidate scheduling](bench/lean-candidate-scheduling/README.md).
 - [Public Lean code-verification profiling](bench/lean-code-verification/README.md).
-- [Current counterexample source and execution instructions](bench/lean-counterexample/README.md).
+- [Counterexample component](bench/lean-counterexample/README.md).
 - [Frozen arithmetic baseline and historical commands](bench/lean-native/linarith-oracle/README.md).
-- [Portable arithmetic source build and 64-source functional qualification](bench/lean-native/linarith-oracle/reproduction/README.md).
-- [Retained-environment reproduction guide](docs/reproduce-checkpoint.md).
-- [Benchmark methodology](bench/README.md).
 - [Real SMT replay and limitations](results/2026-10-04-verusage-real-traces.md).
-
-For an existing captured SMT trace directory:
-
-    python3 tools/analyze_smt_trace.py traces --json trace-analysis.json
-
-Initial synthetic-prefix commands and the complete previous README remain in
-the [dated historical archive](docs/tmp/bootstrap/step-0011-20261023T195335-0700/readme-history-through-20261024T0707.md.gz).
-Synthetic controls are not the real-workload evidence.
 
 ## Repository and paper
 
-- `crates/`: reusable Rust engine; [layered design](docs/architecture.md).
-- `bench/` and `tools/`: experiments and historical adapters.
-- `artifacts/` and `results/`: source snapshots, raw data and self-reviews.
-- [Research narrative and fixed RQs](docs/idea-story.md),
-  [design](docs/design.md), [related work](docs/background-related-work.md).
-- [Paper source](docs/paper/main.tex) and [current PDF](docs/paper/main.pdf).
+- crates/: reusable Rust engine; [architecture and extension points](docs/architecture.md).
+- native/: optional pinned Lean+C import-parent adapter.
+- bench/, tools/: experiments and retained adapters.
+- artifacts/, results/: source snapshots, raw data, failures and self-reviews.
+- [Implementation status](docs/implementation.md), [evaluation](docs/evaluation.md),
+  [research narrative and four RQs](docs/idea-story.md), [related work](docs/background-related-work.md).
+- [Paper source](docs/paper/main.tex) and [compiled draft](docs/paper/main.pdf).
 
-The manuscript has completed a
-[12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
-Its current citation update retains all numerical results, four RQs and
-14 missing result slots. The compiled draft is 36 pages including appendices;
-it is not submission-ready.
+The paper is a research draft, not submission-ready or accepted. All current
+implementation, experiments and reviews run in this thread. Reviews are
+**self-review**, not independent audit; tests and a compiled paper do not
+establish venue acceptance.
 
-All implementation, experiments and review run in this thread. Reviews are
-**self-review**, not independent audit. Tests, measurements and a compiled
-paper do not establish venue acceptance.
+The detailed previous README is preserved [byte-for-byte](docs/tmp/build-and-evaluate/step-0114-20261028T181730+0000/readme-before.md.gz).
+Its relative links use the original repository-root context; the
+[original rendered revision](https://github.com/yunwei37/gpu-smt/blob/5e5e3e50ad4b2390e591ad2a7d88f851c53f4847/README.md)
+retains that link context. No result or source data was deleted.

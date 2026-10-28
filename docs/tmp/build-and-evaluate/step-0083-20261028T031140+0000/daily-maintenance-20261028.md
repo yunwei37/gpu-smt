@@ -478,3 +478,14 @@ existing23 traces still lack complete-state recurrence/continuation evidence.
 Record this bounded negative method decision without another logger or native
 run. Resource pair completion/population review and original42 remain next;
 source/CI repairs are not a substitute for their performance evidence.
+
+### 18:17UTC — keep the open-source entry usable
+The README had grown to300lines/20,081bytes of research chronology. Preserve
+its complete prior bytes and stable quick start;replace the later chronology
+with concise contracts,status and evidence links. Keep the failed GPU result,
+unproven warm parity,accepted-set limitations,frozen oracle and self-review
+boundary visible. Fix its stale evaluation anchor. Do not move raw data or
+treat this maintenance as a new performance result.
+A13-process namespace observation provides no basis to replace the process
+discovery algorithm speculatively. The next decisive work is still the actual
+whole resource result,not another logging/monitoring abstraction.
