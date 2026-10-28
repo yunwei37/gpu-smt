@@ -333,14 +333,14 @@ impl PreparedRepl {
         }
         x.registry.unregister(&identity);
         let native = match result? {
-            Some(()) => received_native,
+            Some(()) if reply_before_deadline => received_native,
             None if reply_before_deadline && retired && !x.cancel.is_cancelled() => {
                 // Match the fresh backend: a complete timely reply determines
                 // the native verdict. Retirement remains awaited and charged,
                 // even when its acknowledgement arrives after the deadline.
                 received_native
             }
-            None => None,
+            _ => None,
         };
         match native {
             None => Ok(Outcome::operational(

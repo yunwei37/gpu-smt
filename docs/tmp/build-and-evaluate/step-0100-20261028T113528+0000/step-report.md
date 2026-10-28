@@ -33,3 +33,24 @@ See outer-audit.md. Source/test correction is complete; native CI and original
 candidate qualification remain open. Root self-review only. Original research
 goal remains active and incomplete; no full7808/fixed42 or new load-layer gain
 is inferred from this narrow correctness result.
+
+## Verified followthrough
+
+The first-fix source a750aa3 completes engine CI40682324445, including real
+native-repl-contract and Rust jobs, and benchmark-smoke40682324462. Metadata
+is retained in first-fix-source-ci. These CI results belong to a750aa3.
+A forward strict-receipt guard additionally requires the recorded timely flag
+on the normal operation-complete path, avoiding a ready-IO/timer race. Its
+workspace targets, clippy, format and release build pass separately; current
+source CI must be checked after this forward commit.
+
+The manuscript compiles in the owning Workspace (exit0,36 pages). The generated
+PDF is rendered read-only; changed page5 and adjacent pages4/6 are visually
+inspected without clipping or overlap. paper-check.json records the scope.
+The four RQs, abstract/introduction and scientific contract are unchanged.
+This is a targeted implementation description, not a full writing review.
+
+The response/retirement fix remains unmeasured on the real24 candidates.
+Preserve original300-second budgets and all reference clocks/failures. Native
+CI and a separately pinned unchanged24 run follow; do not claim this caused
+the previous2507/7230 timeouts or achieved full-population parity.

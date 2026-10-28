@@ -248,3 +248,20 @@ pass;five actualLean controls staylocallyignored. One docbuild was pressure-
 killed and a singleCPUretry passes;allfailures retained. The ongoing real
 qualification binary remains frozen. Next measure actual throughput only
 after its complete resource-baseline review,not by claiming86%avoidabletime.
+
+## Real progress after the completed resource pair
+
+The complete24 retry-frontier run takes1347.584488s,12.534567%below oldengine
+and5.807954%below retainedwarm,with exactly unchanged oldengine outcomes.
+Two extra timeouts versuswarm remain,so selectedelapsed improvement is not
+completeobservable parity or representative systems contribution.
+
+The next useful work is now a concrete correctness fault:oldprepared execution
+discards a timely native reply while waiting for retirement. An actual old-code
+failure and fixed real-process controls confirm the inconsistency. Retirement
+is still awaited/charged,late replies stay late,and no budget is increased.
+First-fix CI and targeted36page paper compilation pass;strictreceipt followup
+has localtests/release and needs its own CI/native24 qualification. This is
+more informative than another parameter grid or proxy kernel. Next compare
+every native result at the reviewed point,then complete the genuine full
+strong-warm experiment rather than treating a small preflight as final success.

@@ -1,0 +1,78 @@
+{
+  "UTC": "2026-10-28T11:52:09.156426+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 1.0015625800006092
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 16.010505058104172
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 2.003980235895142
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.001326696947217
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "gpu-smt-server",
+        "--bin",
+        "gpu-smt",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 25.01523913210258
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 45.0326949278824,
+  "samples": 55,
+  "combined_peak_rss_bytes": 396320768,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "native_reply_retirement_control": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "analysis_commands": 5
+}

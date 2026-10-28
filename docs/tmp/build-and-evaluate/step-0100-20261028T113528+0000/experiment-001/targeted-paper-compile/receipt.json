@@ -1,0 +1,33 @@
+{
+  "UTC": "2026-10-28T11:44:49.147300+00:00",
+  "commands": [
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "11",
+        "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+        "/workspaces/repository/docs/paper/main.tex",
+        "--outdir",
+        "/tmp/gpu-smt-paper-reply-retirement-20261028",
+        "--keep-logs"
+      ],
+      "exit": 0,
+      "seconds": 4.00300605292432
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 4.0030527650378644,
+  "samples": 6,
+  "combined_peak_rss_bytes": 209944576,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "native_reply_retirement_control": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "analysis_commands": 1
+}
