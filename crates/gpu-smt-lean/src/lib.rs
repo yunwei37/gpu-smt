@@ -9,7 +9,7 @@ use gpu_smt_core::*;
 pub use prepared::PreparedRepl;
 use serde_json::{Value, json};
 pub use source::{ConfiguredLean, NativeLean, classify_source};
-use std::{path::PathBuf, process::Stdio, time::Duration};
+use std::{future::Future, path::PathBuf, process::Stdio, time::Duration};
 use tokio::{
     io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader},
     process::Command,
@@ -85,6 +85,26 @@ async fn response(stdout: tokio::process::ChildStdout) -> Result<Value, String> 
         serde_json::from_str(&text).map_err(|e| format!("native JSON: {e}"))
     }
 }
+// A non-yielding decoder can finish after the timer's deadline within one
+// poll. Check the completion instant as well as racing the asynchronous timer.
+async fn request_io<T>(
+    io: impl Future<Output = T>,
+    cancelled: impl Future<Output = ()>,
+    deadline: tokio::time::Instant,
+) -> Result<T, Status> {
+    tokio::select! {
+        result = io => {
+            if tokio::time::Instant::now() > deadline {
+                Err(Status::Timeout)
+            } else {
+                Ok(result)
+            }
+        },
+        _ = tokio::time::sleep_until(deadline) => Err(Status::Timeout),
+        _ = cancelled => Err(Status::Cancelled),
+    }
+}
+
 async fn drain<R: tokio::io::AsyncRead + Unpin>(mut stderr: R) -> String {
     // Drain to avoid pipe deadlock. Retain a labelled diagnostic tail, not unbounded stderr.
     let mut tail = Vec::new();
@@ -242,12 +262,12 @@ impl VerificationBackend for NativeRepl {
             drop(stdin);
             response(stdout).await
         };
-        tokio::pin!(io);
-        let mut result = tokio::select! {
-            r=&mut io=>match r{Ok(value)=>classify(value),Err(e)=>Outcome::operational(Status::BackendError,e)},
-            _=tokio::time::sleep(Duration::from_millis(c.timeout_ms))=>
-                Outcome::operational(Status::Timeout,"native request timeout"),
-            _=x.cancel.cancelled()=>Outcome::operational(Status::Cancelled,"attempt cancelled"),
+        let deadline = tokio::time::Instant::now() + Duration::from_millis(c.timeout_ms);
+        let mut result = match request_io(io, x.cancel.cancelled(), deadline).await {
+            Ok(Ok(value)) => classify(value),
+            Ok(Err(error)) => Outcome::operational(Status::BackendError, error),
+            Err(Status::Timeout) => Outcome::operational(Status::Timeout, "native request timeout"),
+            Err(status) => Outcome::operational(status, "attempt cancelled"),
         };
         observe_current_rss(&identity, x.registry.as_ref());
         kill_group(&identity);
@@ -298,5 +318,113 @@ mod tests {
             classify(json!({"env":0,"messages":[]})).status,
             Status::Accepted
         );
+    }
+}
+
+#[cfg(test)]
+mod native_reply_deadline_tests {
+    use super::*;
+    use std::{future::pending, task::Poll};
+    use tokio::time::{Instant, advance};
+    use tokio_util::sync::CancellationToken;
+
+    // Advance the paused test clock inside a single IO poll. Like synchronous
+    // JSON decoding, the poll completes without letting the timer run first.
+    // This fixture models scheduling only; it is not Lean or a measured decode.
+    async fn non_yielding_reply(value: Result<Value, String>) -> Result<Value, String> {
+        let advancing = advance(Duration::from_secs(2));
+        tokio::pin!(advancing);
+        std::future::poll_fn(|cx| {
+            let _ = advancing.as_mut().poll(cx);
+            Poll::Ready(())
+        })
+        .await;
+        value
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn non_yielding_decode_cannot_accept_a_reply_after_the_original_budget() {
+        let cancel = CancellationToken::new();
+        let started = Instant::now();
+        let io = non_yielding_reply(Ok(json!({"env": 0})));
+        tokio::pin!(io);
+        // Exact prior selection behavior, retained as a negative control.
+        let previous = tokio::select! {
+            r = &mut io => match r {
+                Ok(value) => classify(value),
+                Err(error) => Outcome::operational(Status::BackendError, error),
+            },
+            _ = tokio::time::sleep(Duration::from_secs(1)) =>
+                Outcome::operational(Status::Timeout, "native request timeout"),
+            _ = cancel.cancelled() =>
+                Outcome::operational(Status::Cancelled, "attempt cancelled"),
+        };
+        assert!(Instant::now() > started + Duration::from_secs(1));
+        assert_eq!(
+            previous.status,
+            Status::Accepted,
+            "negative control did not engage"
+        );
+
+        for value in [
+            Ok(json!({"env": 0})),
+            Ok(json!({"env": 0, "messages": [{"severity": "error", "data": "fixture"}]})),
+            Ok(json!({"env": 0, "sorries": [{}]})),
+            Err("late JSON decoding error".into()),
+        ] {
+            let deadline = Instant::now() + Duration::from_secs(1);
+            let current = request_io(non_yielding_reply(value), cancel.cancelled(), deadline).await;
+            assert!(
+                Instant::now() > deadline,
+                "single-poll clock control did not engage"
+            );
+            assert!(matches!(current, Err(Status::Timeout)));
+        }
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn timely_json_and_operational_outcomes_retain_their_contract() {
+        let cancel = CancellationToken::new();
+        for (payload, expected) in [
+            (json!({"env": 0}), Status::Accepted),
+            (
+                json!({"env": 0, "messages": [{"severity": "error", "data": "fixture"}]}),
+                Status::Rejected,
+            ),
+            (json!({"env": 0, "sorries": [{}]}), Status::Incomplete),
+        ] {
+            let actual = request_io(
+                async { Ok::<Value, String>(payload.clone()) },
+                cancel.cancelled(),
+                Instant::now() + Duration::from_secs(1),
+            )
+            .await;
+            let actual = classify(actual.unwrap().unwrap());
+            assert_eq!(actual.status, expected);
+            assert_eq!(actual.response, Some(payload));
+        }
+        let error = request_io(
+            async { Err::<Value, String>("JSON failure".into()) },
+            cancel.cancelled(),
+            Instant::now() + Duration::from_secs(1),
+        )
+        .await;
+        assert_eq!(error.unwrap().unwrap_err(), "JSON failure");
+
+        let timeout = request_io(
+            pending::<Result<Value, String>>(),
+            cancel.cancelled(),
+            Instant::now() + Duration::from_secs(1),
+        )
+        .await;
+        assert!(matches!(timeout, Err(Status::Timeout)));
+        cancel.cancel();
+        let cancelled = request_io(
+            pending::<Result<Value, String>>(),
+            cancel.cancelled(),
+            Instant::now() + Duration::from_secs(1),
+        )
+        .await;
+        assert!(matches!(cancelled, Err(Status::Cancelled)));
     }
 }

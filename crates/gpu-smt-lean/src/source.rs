@@ -252,11 +252,10 @@ impl NativeLean {
             let status = child.wait().await.map_err(|e| e.to_string())?;
             Ok::<_, String>((status.code(), text))
         };
-        let outcome = tokio::select! {
-            result = io => Some(result),
-            _ = tokio::time::sleep(Duration::from_millis(candidate.timeout_ms)) => None,
-            _ = execution.cancel.cancelled() => None,
-        };
+        let deadline = tokio::time::Instant::now() + Duration::from_millis(candidate.timeout_ms);
+        let outcome = super::request_io(io, execution.cancel.cancelled(), deadline)
+            .await
+            .ok();
         let interrupted = if outcome.is_none() {
             kill_group(&identity);
             let _ = child.start_kill();

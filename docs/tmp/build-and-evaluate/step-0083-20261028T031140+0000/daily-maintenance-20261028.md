@@ -313,3 +313,15 @@ Actual sourcebf4eb8c passes engine40688762011 and smoke40688762081. Full job
 logs confirm66 workspace tests and5 pinned native controls;format/clippy/docs
 build pass. Current full Mathlib collection remains unchanged13d4606. No new
 runtime-speed claim follows from the complexity change or green controls.
+
+## Native response deadline contract
+
+A second useful resource/semantic task is to align fresh/source IO completion
+with the existing prepared receipt guard. A synchronous IO poll can run past
+a cooperative timer and return ready without giving it another poll. Retain
+that exact old selection as a deterministic paused-clock control,then guard
+the actual completion instant. No deadline value or native work budget is
+relaxed. Parsing/retirement can still run late and are fully charged;this is
+not a hard wall limit or a measured explanation for2507/7230. The current
+full resource run remains frozen13d4606,and no local compilation/test competes
+with its four-core clock. Validate using the existing non-AI CI workflow.

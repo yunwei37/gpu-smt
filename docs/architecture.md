@@ -184,3 +184,16 @@ no history copy or sort under the admission lock. Storage remains linear in
 observations. This changes neither the forecast definition nor the watchdog,
 retry, timeout or result semantics; it is resource-layer maintenance without
 a measured end-to-end gain claim. A preempted peak remains a lower bound.
+
+### Cooperative native IO deadlines
+
+Fresh REPL and stock-source IO use the original response budget and verify
+completion time before using a ready result. A synchronous decode may finish
+within one future poll after the asynchronous timer deadline; racing the timer
+alone would allow that late result through. Timely native responses retain
+their classification. Source CLI completion still includes stdout and natural
+exit,distinct from REPL JSON receipt. This check cannot interrupt synchronous
+parsing or impose a hard whole-request wall bound;late decoding and mandatory
+retirement remain charged. It can change formerly late accepted outcomes,so
+fixture success is not a whole-workload accepted-set guarantee. The ongoing
+source13d4606 resource pair is frozen and does not use this later correction.
