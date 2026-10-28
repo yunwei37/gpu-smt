@@ -433,3 +433,15 @@ controls,not the revised adapter's native qualification. Exact15:28:41UTC
 PID/birth and copied-source checks confirm the active warm/full point still
 runs its old immediate-drain copy. Preserve its scope/raw data and await its
 actual terminal;no hidden protocol replacement or second collector occurred.
+
+
+### 16:17UTC — avoid overinterpreting the retry-order repair
+Existing complete-trace headroom shows that exclusive policy often leaves RAM
+unused while ordinary work remains,but observed peaks are censored forecasts.
+Moving retries to the finite frontier tail removes the ordinary drain barrier;
+it does not parallelize the later tail. The fixed-duration rearrangement model
+must retain those serial attempts and is not a real-system speedup bound.
+Keep the real current pair unchanged,review its exact outcomes,then run the
+already prepared42solo point. Do not compensate for missing throughput evidence
+with another observer or an unqualified overlapping-retry default.
+The existing artifact README now links the one owning calculation/reproduction.

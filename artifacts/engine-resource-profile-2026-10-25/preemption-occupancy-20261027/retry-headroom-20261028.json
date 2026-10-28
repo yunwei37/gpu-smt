@@ -1,0 +1,1050 @@
+{
+  "source": "artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z",
+  "scope": "retrospective sampled headroom, not safe admission bounds, removed wall time or measured backfill speedup",
+  "cells": {
+    "native": {
+      "budget_bytes": 51539607552,
+      "exclusive_attempts": 44,
+      "exclusive_status_counts": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      },
+      "exclusive_monotonic_attempt_sum_seconds": 9480.134700098,
+      "exclusive_sample_interior_seconds": 9435.004132270813,
+      "sampled_exclusive_attempts": 44,
+      "maximum_retained_sample_gap_seconds": 1.0070888996124268,
+      "sample_interior_seconds_by_attempt_status": {
+        "resource_exhausted": 8534.00378704071,
+        "timeout": 901.0003452301025
+      },
+      "sample_interior_seconds_with_unstarted_ordinary_requests": 9435.004132270813,
+      "ordinary_first_attempt_nonzero_peak_observations": 7802,
+      "ordinary_observed_upper_median_peak_bytes": 3763990528,
+      "headroom_reference_counts": {
+        "1": {
+          "endpoint_headroom_bytes": 3763990528,
+          "sample_interior_seconds": 8521.006617546082,
+          "sample_interior_fraction": 0.9031269619057654,
+          "with_unstarted_ordinary_requests_seconds": 8521.006617546082
+        },
+        "2": {
+          "endpoint_headroom_bytes": 7527981056,
+          "sample_interior_seconds": 7853.004360437393,
+          "sample_interior_fraction": 0.8323265417105159,
+          "with_unstarted_ordinary_requests_seconds": 7853.004360437393
+        },
+        "3": {
+          "endpoint_headroom_bytes": 11291971584,
+          "sample_interior_seconds": 7163.004215717316,
+          "sample_interior_fraction": 0.7591946029167586,
+          "with_unstarted_ordinary_requests_seconds": 7163.004215717316
+        }
+      },
+      "per_attempt": [
+        {
+          "id": "minif2f-579",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 219.181412695,
+          "peak_rss_bytes": 51599417344,
+          "registered_children_seconds": 219.17546701431274,
+          "covered_sample_interiors_seconds": 218.00000309944153,
+          "pending_ordinary_sample_interiors_seconds": 218.00000309944153,
+          "headroom_one_observed_median_seconds": 198.99974513053894
+        },
+        {
+          "id": "minif2f-663",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 216.720013536,
+          "peak_rss_bytes": 51530215424,
+          "registered_children_seconds": 216.70486211776733,
+          "covered_sample_interiors_seconds": 215.9998061656952,
+          "pending_ordinary_sample_interiors_seconds": 215.9998061656952,
+          "headroom_one_observed_median_seconds": 192.0002031326294
+        },
+        {
+          "id": "minif2f-664",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 218.041850615,
+          "peak_rss_bytes": 51616575488,
+          "registered_children_seconds": 218.03591990470886,
+          "covered_sample_interiors_seconds": 217.00009107589722,
+          "pending_ordinary_sample_interiors_seconds": 217.00009107589722,
+          "headroom_one_observed_median_seconds": 192.00004196166992
+        },
+        {
+          "id": "minif2f-1885",
+          "attempt_index": 1,
+          "status": "timeout",
+          "attempt_seconds": 302.243384925,
+          "peak_rss_bytes": 42703941632,
+          "registered_children_seconds": 302.2350368499756,
+          "covered_sample_interiors_seconds": 301.0004630088806,
+          "pending_ordinary_sample_interiors_seconds": 301.0004630088806,
+          "headroom_one_observed_median_seconds": 301.0004630088806
+        },
+        {
+          "id": "minif2f-2401",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 187.009882519,
+          "peak_rss_bytes": 51665784832,
+          "registered_children_seconds": 187.0030460357666,
+          "covered_sample_interiors_seconds": 186.0002019405365,
+          "pending_ordinary_sample_interiors_seconds": 186.0002019405365,
+          "headroom_one_observed_median_seconds": 169.00043106079102
+        },
+        {
+          "id": "minif2f-2403",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 186.969621039,
+          "peak_rss_bytes": 51544387584,
+          "registered_children_seconds": 186.96339511871338,
+          "covered_sample_interiors_seconds": 186.00035619735718,
+          "pending_ordinary_sample_interiors_seconds": 186.00035619735718,
+          "headroom_one_observed_median_seconds": 170.00035738945007
+        },
+        {
+          "id": "minif2f-2404",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 197.978293934,
+          "peak_rss_bytes": 51449307136,
+          "registered_children_seconds": 197.96254706382751,
+          "covered_sample_interiors_seconds": 197.0000159740448,
+          "pending_ordinary_sample_interiors_seconds": 197.0000159740448,
+          "headroom_one_observed_median_seconds": 179.99972987174988
+        },
+        {
+          "id": "minif2f-2409",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 193.974710396,
+          "peak_rss_bytes": 51633737728,
+          "registered_children_seconds": 193.96717286109924,
+          "covered_sample_interiors_seconds": 192.99988889694214,
+          "pending_ordinary_sample_interiors_seconds": 192.99988889694214,
+          "headroom_one_observed_median_seconds": 176.00035786628723
+        },
+        {
+          "id": "minif2f-2412",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 194.994695864,
+          "peak_rss_bytes": 51459997696,
+          "registered_children_seconds": 194.98301696777344,
+          "covered_sample_interiors_seconds": 194.0007200241089,
+          "pending_ordinary_sample_interiors_seconds": 194.0007200241089,
+          "headroom_one_observed_median_seconds": 177.00129389762878
+        },
+        {
+          "id": "minif2f-2419",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 194.183893862,
+          "peak_rss_bytes": 51460972544,
+          "registered_children_seconds": 194.17676711082458,
+          "covered_sample_interiors_seconds": 192.99981808662415,
+          "pending_ordinary_sample_interiors_seconds": 192.99981808662415,
+          "headroom_one_observed_median_seconds": 176.99925208091736
+        },
+        {
+          "id": "minif2f-2421",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 195.031359233,
+          "peak_rss_bytes": 51573788672,
+          "registered_children_seconds": 195.02364301681519,
+          "covered_sample_interiors_seconds": 194.00059604644775,
+          "pending_ordinary_sample_interiors_seconds": 194.00059604644775,
+          "headroom_one_observed_median_seconds": 177.00111413002014
+        },
+        {
+          "id": "minif2f-2423",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 198.97673947,
+          "peak_rss_bytes": 51582803968,
+          "registered_children_seconds": 198.96366810798645,
+          "covered_sample_interiors_seconds": 197.99994802474976,
+          "pending_ordinary_sample_interiors_seconds": 197.99994802474976,
+          "headroom_one_observed_median_seconds": 180.9996919631958
+        },
+        {
+          "id": "minif2f-2424",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 191.534181848,
+          "peak_rss_bytes": 51628158976,
+          "registered_children_seconds": 191.52968096733093,
+          "covered_sample_interiors_seconds": 190.00019001960754,
+          "pending_ordinary_sample_interiors_seconds": 190.00019001960754,
+          "headroom_one_observed_median_seconds": 173.0006549358368
+        },
+        {
+          "id": "minif2f-3681",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 209.921869872,
+          "peak_rss_bytes": 51578716160,
+          "registered_children_seconds": 209.91451001167297,
+          "covered_sample_interiors_seconds": 208.9992790222168,
+          "pending_ordinary_sample_interiors_seconds": 208.9992790222168,
+          "headroom_one_observed_median_seconds": 185.99985313415527
+        },
+        {
+          "id": "minif2f-3682",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.366373535,
+          "peak_rss_bytes": 51489570816,
+          "registered_children_seconds": 215.35759496688843,
+          "covered_sample_interiors_seconds": 214.00002002716064,
+          "pending_ordinary_sample_interiors_seconds": 214.00002002716064,
+          "headroom_one_observed_median_seconds": 190.00038504600525
+        },
+        {
+          "id": "minif2f-3683",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.911752637,
+          "peak_rss_bytes": 51598245888,
+          "registered_children_seconds": 213.90507698059082,
+          "covered_sample_interiors_seconds": 212.9996509552002,
+          "pending_ordinary_sample_interiors_seconds": 212.9996509552002,
+          "headroom_one_observed_median_seconds": 188.9998700618744
+        },
+        {
+          "id": "minif2f-3685",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.019654425,
+          "peak_rss_bytes": 51519377408,
+          "registered_children_seconds": 212.00872492790222,
+          "covered_sample_interiors_seconds": 211.00001096725464,
+          "pending_ordinary_sample_interiors_seconds": 211.00001096725464,
+          "headroom_one_observed_median_seconds": 187.0002830028534
+        },
+        {
+          "id": "minif2f-3686",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.944587618,
+          "peak_rss_bytes": 51454930944,
+          "registered_children_seconds": 212.93324279785156,
+          "covered_sample_interiors_seconds": 212.0001618862152,
+          "pending_ordinary_sample_interiors_seconds": 212.0001618862152,
+          "headroom_one_observed_median_seconds": 189.00066590309143
+        },
+        {
+          "id": "minif2f-3687",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.362837427,
+          "peak_rss_bytes": 51533721600,
+          "registered_children_seconds": 214.35529804229736,
+          "covered_sample_interiors_seconds": 213.00016689300537,
+          "pending_ordinary_sample_interiors_seconds": 213.00016689300537,
+          "headroom_one_observed_median_seconds": 189.00039768218994
+        },
+        {
+          "id": "minif2f-3688",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.0050209,
+          "peak_rss_bytes": 51633360896,
+          "registered_children_seconds": 214.99491214752197,
+          "covered_sample_interiors_seconds": 214.00010299682617,
+          "pending_ordinary_sample_interiors_seconds": 214.00010299682617,
+          "headroom_one_observed_median_seconds": 189.00045800209045
+        },
+        {
+          "id": "minif2f-3689",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.350269809,
+          "peak_rss_bytes": 51433295872,
+          "registered_children_seconds": 214.34385681152344,
+          "covered_sample_interiors_seconds": 212.99988508224487,
+          "pending_ordinary_sample_interiors_seconds": 212.99988508224487,
+          "headroom_one_observed_median_seconds": 189.9997398853302
+        },
+        {
+          "id": "minif2f-3690",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 217.012640274,
+          "peak_rss_bytes": 51412934656,
+          "registered_children_seconds": 217.00332593917847,
+          "covered_sample_interiors_seconds": 216.00014305114746,
+          "pending_ordinary_sample_interiors_seconds": 216.00014305114746,
+          "headroom_one_observed_median_seconds": 192.00038599967957
+        },
+        {
+          "id": "minif2f-3691",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.591349444,
+          "peak_rss_bytes": 51630870528,
+          "registered_children_seconds": 214.58428382873535,
+          "covered_sample_interiors_seconds": 214.0000638961792,
+          "pending_ordinary_sample_interiors_seconds": 214.0000638961792,
+          "headroom_one_observed_median_seconds": 189.00000977516174
+        },
+        {
+          "id": "minif2f-3692",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.103275844,
+          "peak_rss_bytes": 51644473344,
+          "registered_children_seconds": 213.09453797340393,
+          "covered_sample_interiors_seconds": 212.00091981887817,
+          "pending_ordinary_sample_interiors_seconds": 212.00091981887817,
+          "headroom_one_observed_median_seconds": 187.00079679489136
+        },
+        {
+          "id": "minif2f-3693",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 208.912529433,
+          "peak_rss_bytes": 51508310016,
+          "registered_children_seconds": 208.90644097328186,
+          "covered_sample_interiors_seconds": 208.00005507469177,
+          "pending_ordinary_sample_interiors_seconds": 208.00005507469177,
+          "headroom_one_observed_median_seconds": 185.000470161438
+        },
+        {
+          "id": "minif2f-3694",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 208.890363976,
+          "peak_rss_bytes": 51470905344,
+          "registered_children_seconds": 208.87976002693176,
+          "covered_sample_interiors_seconds": 208.00004696846008,
+          "pending_ordinary_sample_interiors_seconds": 208.00004696846008,
+          "headroom_one_observed_median_seconds": 184.99974179267883
+        },
+        {
+          "id": "minif2f-3695",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.077863222,
+          "peak_rss_bytes": 51512365056,
+          "registered_children_seconds": 213.07145190238953,
+          "covered_sample_interiors_seconds": 211.99964904785156,
+          "pending_ordinary_sample_interiors_seconds": 211.99964904785156,
+          "headroom_one_observed_median_seconds": 187.999281167984
+        },
+        {
+          "id": "minif2f-3697",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.1317743,
+          "peak_rss_bytes": 51488743424,
+          "registered_children_seconds": 213.11517906188965,
+          "covered_sample_interiors_seconds": 211.99953198432922,
+          "pending_ordinary_sample_interiors_seconds": 211.99953198432922,
+          "headroom_one_observed_median_seconds": 187.9993839263916
+        },
+        {
+          "id": "minif2f-3698",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.027248056,
+          "peak_rss_bytes": 51482669056,
+          "registered_children_seconds": 215.02052688598633,
+          "covered_sample_interiors_seconds": 213.99990391731262,
+          "pending_ordinary_sample_interiors_seconds": 213.99990391731262,
+          "headroom_one_observed_median_seconds": 189.0007827281952
+        },
+        {
+          "id": "minif2f-3699",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.961667634,
+          "peak_rss_bytes": 51417980928,
+          "registered_children_seconds": 213.94527292251587,
+          "covered_sample_interiors_seconds": 213.00060319900513,
+          "pending_ordinary_sample_interiors_seconds": 213.00060319900513,
+          "headroom_one_observed_median_seconds": 189.0006022453308
+        },
+        {
+          "id": "minif2f-3700",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 209.724761577,
+          "peak_rss_bytes": 51624419328,
+          "registered_children_seconds": 209.71553111076355,
+          "covered_sample_interiors_seconds": 209.00002884864807,
+          "pending_ordinary_sample_interiors_seconds": 209.00002884864807,
+          "headroom_one_observed_median_seconds": 184.99961972236633
+        },
+        {
+          "id": "minif2f-3701",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.889962941,
+          "peak_rss_bytes": 51481063424,
+          "registered_children_seconds": 212.88363790512085,
+          "covered_sample_interiors_seconds": 212.00057816505432,
+          "pending_ordinary_sample_interiors_seconds": 212.00057816505432,
+          "headroom_one_observed_median_seconds": 188.0000901222229
+        },
+        {
+          "id": "minif2f-3702",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 216.008354319,
+          "peak_rss_bytes": 51541114880,
+          "registered_children_seconds": 215.99401187896729,
+          "covered_sample_interiors_seconds": 215.00038504600525,
+          "pending_ordinary_sample_interiors_seconds": 215.00038504600525,
+          "headroom_one_observed_median_seconds": 191.0004608631134
+        },
+        {
+          "id": "minif2f-3703",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.085112335,
+          "peak_rss_bytes": 51608850432,
+          "registered_children_seconds": 215.0791139602661,
+          "covered_sample_interiors_seconds": 214.00100994110107,
+          "pending_ordinary_sample_interiors_seconds": 214.00100994110107,
+          "headroom_one_observed_median_seconds": 190.0011429786682
+        },
+        {
+          "id": "minif2f-3704",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.01059067,
+          "peak_rss_bytes": 51552481280,
+          "registered_children_seconds": 213.0036380290985,
+          "covered_sample_interiors_seconds": 211.99941205978394,
+          "pending_ordinary_sample_interiors_seconds": 211.99941205978394,
+          "headroom_one_observed_median_seconds": 187.9995460510254
+        },
+        {
+          "id": "minif2f-3705",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 216.02810605,
+          "peak_rss_bytes": 51585658880,
+          "registered_children_seconds": 216.01900506019592,
+          "covered_sample_interiors_seconds": 214.99978303909302,
+          "pending_ordinary_sample_interiors_seconds": 214.99978303909302,
+          "headroom_one_observed_median_seconds": 190.99950790405273
+        },
+        {
+          "id": "minif2f-3706",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.008322778,
+          "peak_rss_bytes": 51518025728,
+          "registered_children_seconds": 213.00260591506958,
+          "covered_sample_interiors_seconds": 212.00060486793518,
+          "pending_ordinary_sample_interiors_seconds": 212.00060486793518,
+          "headroom_one_observed_median_seconds": 188.00048995018005
+        },
+        {
+          "id": "minif2f-3707",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.946138347,
+          "peak_rss_bytes": 51653373952,
+          "registered_children_seconds": 214.93920612335205,
+          "covered_sample_interiors_seconds": 214.00057888031006,
+          "pending_ordinary_sample_interiors_seconds": 214.00057888031006,
+          "headroom_one_observed_median_seconds": 190.0002999305725
+        },
+        {
+          "id": "minif2f-3708",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.885810516,
+          "peak_rss_bytes": 51607306240,
+          "registered_children_seconds": 214.87917304039001,
+          "covered_sample_interiors_seconds": 214.00000309944153,
+          "pending_ordinary_sample_interiors_seconds": 214.00000309944153,
+          "headroom_one_observed_median_seconds": 190.00044012069702
+        },
+        {
+          "id": "minif2f-3709",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 208.937743594,
+          "peak_rss_bytes": 51640827904,
+          "registered_children_seconds": 208.92317581176758,
+          "covered_sample_interiors_seconds": 207.9999029636383,
+          "pending_ordinary_sample_interiors_seconds": 207.9999029636383,
+          "headroom_one_observed_median_seconds": 183.99921798706055
+        },
+        {
+          "id": "minif2f-3710",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 210.055886193,
+          "peak_rss_bytes": 51495800832,
+          "registered_children_seconds": 210.0430028438568,
+          "covered_sample_interiors_seconds": 209.00006794929504,
+          "pending_ordinary_sample_interiors_seconds": 209.00006794929504,
+          "headroom_one_observed_median_seconds": 185.0000820159912
+        },
+        {
+          "id": "minif2f-3711",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 210.897123523,
+          "peak_rss_bytes": 51651063808,
+          "registered_children_seconds": 210.88418006896973,
+          "covered_sample_interiors_seconds": 209.9996018409729,
+          "pending_ordinary_sample_interiors_seconds": 209.9996018409729,
+          "headroom_one_observed_median_seconds": 185.99939393997192
+        },
+        {
+          "id": "minif2f-5960",
+          "attempt_index": 1,
+          "status": "timeout",
+          "attempt_seconds": 301.218460493,
+          "peak_rss_bytes": 19707777024,
+          "registered_children_seconds": 301.2113199234009,
+          "covered_sample_interiors_seconds": 299.9997901916504,
+          "pending_ordinary_sample_interiors_seconds": 299.9997901916504,
+          "headroom_one_observed_median_seconds": 299.9997901916504
+        },
+        {
+          "id": "minif2f-7521",
+          "attempt_index": 1,
+          "status": "timeout",
+          "attempt_seconds": 301.00720842,
+          "peak_rss_bytes": 15813771264,
+          "registered_children_seconds": 301.00007605552673,
+          "covered_sample_interiors_seconds": 300.00009202957153,
+          "pending_ordinary_sample_interiors_seconds": 300.00009202957153,
+          "headroom_one_observed_median_seconds": 300.00009202957153
+        }
+      ],
+      "fixed_duration_exclusive_model": {
+        "ordinary_attempt_seconds_sum": 68448.773984327,
+        "exclusive_attempt_seconds_sum": 9480.134700098,
+        "external_cell_seconds": 28391.984734647,
+        "four_slot_perfect_ordinary_packing_plus_unchanged_serial_seconds": 26592.328196179747,
+        "descriptive_ratio_to_model": 1.0676757794650635,
+        "scope": "optimistic fixed-duration scheduling model only; measured contention-sensitive durations are not invariant across protocols, so this is not a real-system speedup ceiling or Amdahl bound"
+      }
+    },
+    "prepared": {
+      "budget_bytes": 51539607552,
+      "exclusive_attempts": 42,
+      "exclusive_status_counts": {
+        "resource_exhausted": 41,
+        "timeout": 1
+      },
+      "exclusive_monotonic_attempt_sum_seconds": 8927.469732566,
+      "exclusive_sample_interior_seconds": 8882.004949569702,
+      "sampled_exclusive_attempts": 42,
+      "maximum_retained_sample_gap_seconds": 1.0248260498046875,
+      "sample_interior_seconds_by_attempt_status": {
+        "resource_exhausted": 8581.004392623901,
+        "timeout": 301.0005569458008
+      },
+      "sample_interior_seconds_with_unstarted_ordinary_requests": 8882.004949569702,
+      "ordinary_first_attempt_nonzero_peak_observations": 7808,
+      "ordinary_observed_upper_median_peak_bytes": 488558592,
+      "headroom_reference_counts": {
+        "1": {
+          "endpoint_headroom_bytes": 488558592,
+          "sample_interior_seconds": 8718.003108739853,
+          "sample_interior_fraction": 0.9815354931953968,
+          "with_unstarted_ordinary_requests_seconds": 8718.003108739853
+        },
+        "2": {
+          "endpoint_headroom_bytes": 977117184,
+          "sample_interior_seconds": 8636.013590335846,
+          "sample_interior_fraction": 0.972304523513492,
+          "with_unstarted_ordinary_requests_seconds": 8636.013590335846
+        },
+        "3": {
+          "endpoint_headroom_bytes": 1465675776,
+          "sample_interior_seconds": 8556.009717464447,
+          "sample_interior_fraction": 0.9632971120871703,
+          "with_unstarted_ordinary_requests_seconds": 8556.009717464447
+        }
+      },
+      "per_attempt": [
+        {
+          "id": "minif2f-579",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 219.993248061,
+          "peak_rss_bytes": 51275927552,
+          "registered_children_seconds": 219.967129945755,
+          "covered_sample_interiors_seconds": 219.00015497207642,
+          "pending_ordinary_sample_interiors_seconds": 219.00015497207642,
+          "headroom_one_observed_median_seconds": 214.99987292289734
+        },
+        {
+          "id": "minif2f-663",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 218.099712904,
+          "peak_rss_bytes": 51279036416,
+          "registered_children_seconds": 218.08525013923645,
+          "covered_sample_interiors_seconds": 217.00006198883057,
+          "pending_ordinary_sample_interiors_seconds": 217.00006198883057,
+          "headroom_one_observed_median_seconds": 213.00005197525024
+        },
+        {
+          "id": "minif2f-664",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 218.157865489,
+          "peak_rss_bytes": 51362181120,
+          "registered_children_seconds": 217.99320888519287,
+          "covered_sample_interiors_seconds": 216.99971199035645,
+          "pending_ordinary_sample_interiors_seconds": 216.99971199035645,
+          "headroom_one_observed_median_seconds": 212.99911499023438
+        },
+        {
+          "id": "minif2f-1885",
+          "attempt_index": 1,
+          "status": "timeout",
+          "attempt_seconds": 302.377902868,
+          "peak_rss_bytes": 42657681408,
+          "registered_children_seconds": 302.20951104164124,
+          "covered_sample_interiors_seconds": 301.0005569458008,
+          "pending_ordinary_sample_interiors_seconds": 301.0005569458008,
+          "headroom_one_observed_median_seconds": 301.0005569458008
+        },
+        {
+          "id": "minif2f-2401",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 196.884941159,
+          "peak_rss_bytes": 51339767808,
+          "registered_children_seconds": 196.8724730014801,
+          "covered_sample_interiors_seconds": 195.9997959136963,
+          "pending_ordinary_sample_interiors_seconds": 195.9997959136963,
+          "headroom_one_observed_median_seconds": 191.99943280220032
+        },
+        {
+          "id": "minif2f-2403",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 185.122745299,
+          "peak_rss_bytes": 51386601472,
+          "registered_children_seconds": 185.10176396369934,
+          "covered_sample_interiors_seconds": 184.00012803077698,
+          "pending_ordinary_sample_interiors_seconds": 184.00012803077698,
+          "headroom_one_observed_median_seconds": 179.99993109703064
+        },
+        {
+          "id": "minif2f-2404",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 192.04351133,
+          "peak_rss_bytes": 51413573632,
+          "registered_children_seconds": 191.86835598945618,
+          "covered_sample_interiors_seconds": 191.0002110004425,
+          "pending_ordinary_sample_interiors_seconds": 191.0002110004425,
+          "headroom_one_observed_median_seconds": 187.00015902519226
+        },
+        {
+          "id": "minif2f-2409",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 189.027138065,
+          "peak_rss_bytes": 51434115072,
+          "registered_children_seconds": 189.0083088874817,
+          "covered_sample_interiors_seconds": 188.00037384033203,
+          "pending_ordinary_sample_interiors_seconds": 188.00037384033203,
+          "headroom_one_observed_median_seconds": 183.99948692321777
+        },
+        {
+          "id": "minif2f-2412",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 195.134084651,
+          "peak_rss_bytes": 51294998528,
+          "registered_children_seconds": 194.96777820587158,
+          "covered_sample_interiors_seconds": 193.9999189376831,
+          "pending_ordinary_sample_interiors_seconds": 193.9999189376831,
+          "headroom_one_observed_median_seconds": 189.99978303909302
+        },
+        {
+          "id": "minif2f-2419",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 200.102656193,
+          "peak_rss_bytes": 51456266240,
+          "registered_children_seconds": 200.08919501304626,
+          "covered_sample_interiors_seconds": 199.0007300376892,
+          "pending_ordinary_sample_interiors_seconds": 199.0007300376892,
+          "headroom_one_observed_median_seconds": 195.00051188468933
+        },
+        {
+          "id": "minif2f-2421",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 202.170541222,
+          "peak_rss_bytes": 51424673792,
+          "registered_children_seconds": 202.00695705413818,
+          "covered_sample_interiors_seconds": 200.99961400032043,
+          "pending_ordinary_sample_interiors_seconds": 200.99961400032043,
+          "headroom_one_observed_median_seconds": 196.99952602386475
+        },
+        {
+          "id": "minif2f-2423",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 196.181126318,
+          "peak_rss_bytes": 51274182656,
+          "registered_children_seconds": 196.1674988269806,
+          "covered_sample_interiors_seconds": 194.99945998191833,
+          "pending_ordinary_sample_interiors_seconds": 194.99945998191833,
+          "headroom_one_observed_median_seconds": 191.99994587898254
+        },
+        {
+          "id": "minif2f-2424",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 189.88407472,
+          "peak_rss_bytes": 51382575104,
+          "registered_children_seconds": 189.86741518974304,
+          "covered_sample_interiors_seconds": 188.99995708465576,
+          "pending_ordinary_sample_interiors_seconds": 188.99995708465576,
+          "headroom_one_observed_median_seconds": 185.00004315376282
+        },
+        {
+          "id": "minif2f-3681",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.043592792,
+          "peak_rss_bytes": 51474202624,
+          "registered_children_seconds": 213.03007411956787,
+          "covered_sample_interiors_seconds": 212.00034999847412,
+          "pending_ordinary_sample_interiors_seconds": 212.00034999847412,
+          "headroom_one_observed_median_seconds": 208.00029802322388
+        },
+        {
+          "id": "minif2f-3682",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.231965276,
+          "peak_rss_bytes": 51329163264,
+          "registered_children_seconds": 215.06239986419678,
+          "covered_sample_interiors_seconds": 214.00035786628723,
+          "pending_ordinary_sample_interiors_seconds": 214.00035786628723,
+          "headroom_one_observed_median_seconds": 209.99976587295532
+        },
+        {
+          "id": "minif2f-3683",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.980191482,
+          "peak_rss_bytes": 51503644672,
+          "registered_children_seconds": 212.96746516227722,
+          "covered_sample_interiors_seconds": 212.00021409988403,
+          "pending_ordinary_sample_interiors_seconds": 212.00021409988403,
+          "headroom_one_observed_median_seconds": 208.00013995170593
+        },
+        {
+          "id": "minif2f-3685",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.987203057,
+          "peak_rss_bytes": 51277799424,
+          "registered_children_seconds": 212.97296786308289,
+          "covered_sample_interiors_seconds": 212.00050497055054,
+          "pending_ordinary_sample_interiors_seconds": 212.00050497055054,
+          "headroom_one_observed_median_seconds": 208.0004699230194
+        },
+        {
+          "id": "minif2f-3686",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.99138914,
+          "peak_rss_bytes": 51306651648,
+          "registered_children_seconds": 213.9782350063324,
+          "covered_sample_interiors_seconds": 213.0003650188446,
+          "pending_ordinary_sample_interiors_seconds": 213.0003650188446,
+          "headroom_one_observed_median_seconds": 209.00052618980408
+        },
+        {
+          "id": "minif2f-3687",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.154198042,
+          "peak_rss_bytes": 51432665088,
+          "registered_children_seconds": 213.98786306381226,
+          "covered_sample_interiors_seconds": 213.00038599967957,
+          "pending_ordinary_sample_interiors_seconds": 213.00038599967957,
+          "headroom_one_observed_median_seconds": 208.99984288215637
+        },
+        {
+          "id": "minif2f-3688",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.200462847,
+          "peak_rss_bytes": 51491520512,
+          "registered_children_seconds": 212.02630805969238,
+          "covered_sample_interiors_seconds": 211.00035691261292,
+          "pending_ordinary_sample_interiors_seconds": 211.00035691261292,
+          "headroom_one_observed_median_seconds": 207.0007050037384
+        },
+        {
+          "id": "minif2f-3689",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 213.046601826,
+          "peak_rss_bytes": 51492065280,
+          "registered_children_seconds": 213.02943181991577,
+          "covered_sample_interiors_seconds": 212.00016498565674,
+          "pending_ordinary_sample_interiors_seconds": 212.00016498565674,
+          "headroom_one_observed_median_seconds": 207.99947309494019
+        },
+        {
+          "id": "minif2f-3690",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.980822782,
+          "peak_rss_bytes": 51400716288,
+          "registered_children_seconds": 212.9655900001526,
+          "covered_sample_interiors_seconds": 212.00042986869812,
+          "pending_ordinary_sample_interiors_seconds": 212.00042986869812,
+          "headroom_one_observed_median_seconds": 208.00085997581482
+        },
+        {
+          "id": "minif2f-3691",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.037648189,
+          "peak_rss_bytes": 51402899456,
+          "registered_children_seconds": 215.0150649547577,
+          "covered_sample_interiors_seconds": 213.99964785575867,
+          "pending_ordinary_sample_interiors_seconds": 213.99964785575867,
+          "headroom_one_observed_median_seconds": 209.99908590316772
+        },
+        {
+          "id": "minif2f-3692",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 233.52663635,
+          "peak_rss_bytes": 51304132608,
+          "registered_children_seconds": 233.34433507919312,
+          "covered_sample_interiors_seconds": 232.99933695793152,
+          "pending_ordinary_sample_interiors_seconds": 232.99933695793152,
+          "headroom_one_observed_median_seconds": 228.99959206581116
+        },
+        {
+          "id": "minif2f-3693",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 218.496153045,
+          "peak_rss_bytes": 51451363328,
+          "registered_children_seconds": 218.483060836792,
+          "covered_sample_interiors_seconds": 216.9991328716278,
+          "pending_ordinary_sample_interiors_seconds": 216.9991328716278,
+          "headroom_one_observed_median_seconds": 212.99899101257324
+        },
+        {
+          "id": "minif2f-3694",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 216.193337139,
+          "peak_rss_bytes": 51502817280,
+          "registered_children_seconds": 216.17595291137695,
+          "covered_sample_interiors_seconds": 215.00031900405884,
+          "pending_ordinary_sample_interiors_seconds": 215.00031900405884,
+          "headroom_one_observed_median_seconds": 211.0007839202881
+        },
+        {
+          "id": "minif2f-3695",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 219.726421946,
+          "peak_rss_bytes": 51395727360,
+          "registered_children_seconds": 219.71020603179932,
+          "covered_sample_interiors_seconds": 219.00038719177246,
+          "pending_ordinary_sample_interiors_seconds": 219.00038719177246,
+          "headroom_one_observed_median_seconds": 215.00029921531677
+        },
+        {
+          "id": "minif2f-3697",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.104609223,
+          "peak_rss_bytes": 51279507456,
+          "registered_children_seconds": 215.08993983268738,
+          "covered_sample_interiors_seconds": 213.99973106384277,
+          "pending_ordinary_sample_interiors_seconds": 213.99973106384277,
+          "headroom_one_observed_median_seconds": 210.00033903121948
+        },
+        {
+          "id": "minif2f-3698",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.036115608,
+          "peak_rss_bytes": 51292426240,
+          "registered_children_seconds": 212.0217559337616,
+          "covered_sample_interiors_seconds": 210.99972009658813,
+          "pending_ordinary_sample_interiors_seconds": 210.99972009658813,
+          "headroom_one_observed_median_seconds": 206.99954199790955
+        },
+        {
+          "id": "minif2f-3699",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 210.982052606,
+          "peak_rss_bytes": 51290816512,
+          "registered_children_seconds": 210.96874403953552,
+          "covered_sample_interiors_seconds": 210.00038814544678,
+          "pending_ordinary_sample_interiors_seconds": 210.00038814544678,
+          "headroom_one_observed_median_seconds": 206.00068521499634
+        },
+        {
+          "id": "minif2f-3700",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 211.068947089,
+          "peak_rss_bytes": 51381321728,
+          "registered_children_seconds": 210.89460921287537,
+          "covered_sample_interiors_seconds": 209.99999904632568,
+          "pending_ordinary_sample_interiors_seconds": 209.99999904632568,
+          "headroom_one_observed_median_seconds": 205.99995589256287
+        },
+        {
+          "id": "minif2f-3701",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.109470548,
+          "peak_rss_bytes": 51389009920,
+          "registered_children_seconds": 212.07923293113708,
+          "covered_sample_interiors_seconds": 211.00012111663818,
+          "pending_ordinary_sample_interiors_seconds": 211.00012111663818,
+          "headroom_one_observed_median_seconds": 207.00006103515625
+        },
+        {
+          "id": "minif2f-3702",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 210.895366323,
+          "peak_rss_bytes": 51330007040,
+          "registered_children_seconds": 210.87913298606873,
+          "covered_sample_interiors_seconds": 210.00039315223694,
+          "pending_ordinary_sample_interiors_seconds": 210.00039315223694,
+          "headroom_one_observed_median_seconds": 206.00049805641174
+        },
+        {
+          "id": "minif2f-3703",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.142361093,
+          "peak_rss_bytes": 51296874496,
+          "registered_children_seconds": 213.97773098945618,
+          "covered_sample_interiors_seconds": 213.00037384033203,
+          "pending_ordinary_sample_interiors_seconds": 213.00037384033203,
+          "headroom_one_observed_median_seconds": 209.00013184547424
+        },
+        {
+          "id": "minif2f-3704",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 215.005578053,
+          "peak_rss_bytes": 51472904192,
+          "registered_children_seconds": 214.99179816246033,
+          "covered_sample_interiors_seconds": 212.99995803833008,
+          "pending_ordinary_sample_interiors_seconds": 212.99995803833008,
+          "headroom_one_observed_median_seconds": 209.0002281665802
+        },
+        {
+          "id": "minif2f-3705",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 211.085376781,
+          "peak_rss_bytes": 51328606208,
+          "registered_children_seconds": 210.9119279384613,
+          "covered_sample_interiors_seconds": 208.99992203712463,
+          "pending_ordinary_sample_interiors_seconds": 208.99992203712463,
+          "headroom_one_observed_median_seconds": 204.99946904182434
+        },
+        {
+          "id": "minif2f-3706",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 217.718389963,
+          "peak_rss_bytes": 51295744000,
+          "registered_children_seconds": 217.7036418914795,
+          "covered_sample_interiors_seconds": 216.00002002716064,
+          "pending_ordinary_sample_interiors_seconds": 216.00002002716064,
+          "headroom_one_observed_median_seconds": 211.99997401237488
+        },
+        {
+          "id": "minif2f-3707",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 217.146947419,
+          "peak_rss_bytes": 51450671104,
+          "registered_children_seconds": 217.13127493858337,
+          "covered_sample_interiors_seconds": 217.0000388622284,
+          "pending_ordinary_sample_interiors_seconds": 217.0000388622284,
+          "headroom_one_observed_median_seconds": 212.00011205673218
+        },
+        {
+          "id": "minif2f-3708",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 214.158706232,
+          "peak_rss_bytes": 51297411072,
+          "registered_children_seconds": 214.14662098884583,
+          "covered_sample_interiors_seconds": 213.00078201293945,
+          "pending_ordinary_sample_interiors_seconds": 213.00078201293945,
+          "headroom_one_observed_median_seconds": 208.99997210502625
+        },
+        {
+          "id": "minif2f-3709",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 216.180270326,
+          "peak_rss_bytes": 51339943936,
+          "registered_children_seconds": 216.013916015625,
+          "covered_sample_interiors_seconds": 215.00037789344788,
+          "pending_ordinary_sample_interiors_seconds": 215.00037789344788,
+          "headroom_one_observed_median_seconds": 211.00149869918823
+        },
+        {
+          "id": "minif2f-3710",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 212.014830657,
+          "peak_rss_bytes": 51269570560,
+          "registered_children_seconds": 211.989511013031,
+          "covered_sample_interiors_seconds": 210.99990892410278,
+          "pending_ordinary_sample_interiors_seconds": 210.99990892410278,
+          "headroom_one_observed_median_seconds": 207.00012588500977
+        },
+        {
+          "id": "minif2f-3711",
+          "attempt_index": 1,
+          "status": "resource_exhausted",
+          "attempt_seconds": 209.044538453,
+          "peak_rss_bytes": 51402792960,
+          "registered_children_seconds": 209.02456498146057,
+          "covered_sample_interiors_seconds": 209.00058698654175,
+          "pending_ordinary_sample_interiors_seconds": 209.00058698654175,
+          "headroom_one_observed_median_seconds": 205.00126600265503
+        }
+      ],
+      "fixed_duration_exclusive_model": {
+        "ordinary_attempt_seconds_sum": 49801.536404126,
+        "exclusive_attempt_seconds_sum": 8927.469732566,
+        "external_cell_seconds": 22891.50775452,
+        "four_slot_perfect_ordinary_packing_plus_unchanged_serial_seconds": 21377.853833597503,
+        "descriptive_ratio_to_model": 1.0708047651885257,
+        "scope": "optimistic fixed-duration scheduling model only; measured contention-sensitive durations are not invariant across protocols, so this is not a real-system speedup ceiling or Amdahl bound"
+      }
+    }
+  }
+}

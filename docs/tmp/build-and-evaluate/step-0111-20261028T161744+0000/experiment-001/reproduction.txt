@@ -1,0 +1,85 @@
+exit_code=0
+{
+  "source": "artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z",
+  "scope": "retrospective sampled headroom, not safe admission bounds, removed wall time or measured backfill speedup",
+  "cells": {
+    "native": {
+      "budget_bytes": 51539607552,
+      "exclusive_attempts": 44,
+      "exclusive_status_counts": {
+        "resource_exhausted": 41,
+        "timeout": 3
+      },
+      "exclusive_monotonic_attempt_sum_seconds": 9480.134700098,
+      "exclusive_sample_interior_seconds": 9435.004132270813,
+      "sampled_exclusive_attempts": 44,
+      "maximum_retained_sample_gap_seconds": 1.0070888996124268,
+      "sample_interior_seconds_by_attempt_status": {
+        "resource_exhausted": 8534.00378704071,
+        "timeout": 901.0003452301025
+      },
+      "sample_interior_seconds_with_unstarted_ordinary_requests": 9435.004132270813,
+      "ordinary_first_attempt_nonzero_peak_observations": 7802,
+      "ordinary_observed_upper_median_peak_bytes": 3763990528,
+      "headroom_reference_counts": {
+        "1": {
+          "endpoint_headroom_bytes": 3763990528,
+          "sample_interior_seconds": 8521.006617546082,
+          "sample_interior_fraction": 0.9031269619057654,
+          "with_unstarted_ordinary_requests_seconds": 8521.006617546082
+        },
+        "2": {
+          "endpoint_headroom_bytes": 7527981056,
+          "sample_interior_seconds": 7853.004360437393,
+          "sample_interior_fraction": 0.8323265417105159,
+          "with_unstarted_ordinary_requests_seconds": 7853.004360437393
+        },
+        "3": {
+          "endpoint_headroom_bytes": 11291971584,
+          "sample_interior_seconds": 7163.004215717316,
+          "sample_interior_fraction": 0.7591946029167586,
+          "with_unstarted_ordinary_requests_seconds": 7163.004215717316
+        }
+      }
+    },
+    "prepared": {
+      "budget_bytes": 51539607552,
+      "exclusive_attempts": 42,
+      "exclusive_status_counts": {
+        "resource_exhausted": 41,
+        "timeout": 1
+      },
+      "exclusive_monotonic_attempt_sum_seconds": 8927.469732566,
+      "exclusive_sample_interior_seconds": 8882.004949569702,
+      "sampled_exclusive_attempts": 42,
+      "maximum_retained_sample_gap_seconds": 1.0248260498046875,
+      "sample_interior_seconds_by_attempt_status": {
+        "resource_exhausted": 8581.004392623901,
+        "timeout": 301.0005569458008
+      },
+      "sample_interior_seconds_with_unstarted_ordinary_requests": 8882.004949569702,
+      "ordinary_first_attempt_nonzero_peak_observations": 7808,
+      "ordinary_observed_upper_median_peak_bytes": 488558592,
+      "headroom_reference_counts": {
+        "1": {
+          "endpoint_headroom_bytes": 488558592,
+          "sample_interior_seconds": 8718.003108739853,
+          "sample_interior_fraction": 0.9815354931953968,
+          "with_unstarted_ordinary_requests_seconds": 8718.003108739853
+        },
+        "2": {
+          "endpoint_headroom_bytes": 977117184,
+          "sample_interior_seconds": 8636.013590335846,
+          "sample_interior_fraction": 0.972304523513492,
+          "with_unstarted_ordinary_requests_seconds": 8636.013590335846
+        },
+        "3": {
+          "endpoint_headroom_bytes": 1465675776,
+          "sample_interior_seconds": 8556.009717464447,
+          "sample_interior_fraction": 0.9632971120871703,
+          "with_unstarted_ordinary_requests_seconds": 8556.009717464447
+        }
+      }
+    }
+  }
+}
