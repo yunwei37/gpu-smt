@@ -174,6 +174,11 @@ Both retain87timeouts,41resource failures and2backend faults. Empty ast:[] is
 omitted in7,660prepared replies. Sampled RSS peaks48.77/48.93GiB overshoot the
 48GiB budget between watchdog responses;it is not a hard quota.
 Fourteen parent preparations and62fallback event rows are charged.
+The historical warm cell also loaded compiled Mathlib linarith;both engine
+cells omitted that library. Equal source bytes therefore did not match the
+effective tactic code. The [corrected four-warm resource comparison](bench/lean-warm-resource/README.md)
+loads the same retained native library on both sides;its results are pending.
+Ordinary native compilation is a baseline requirement,not an engine contribution.
 The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 completed their exclusive rerun with no fixed per-process address-space cap:
 41 exceeded the aggregate RSS budget and one timed out; none became accepted.

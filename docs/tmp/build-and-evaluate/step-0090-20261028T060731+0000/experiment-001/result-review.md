@@ -21,7 +21,7 @@ Those are qualification evidence requirements,not a claimed current result.
 The new ignored nativeCI test loads a real Cconstructor fixture before
 branching,observes one load across accepted/rejected child checks,and refuses
 readiness for a missing library. Locally this native test remains ignored:
-the sole FIFO has not retired. Local56tests pass (including ownedprocess
+the sole FIFO has not retired. Local60tests pass (including ownedprocess
 regressions),clippy/fmt/PythonAST pass. The first4.9adapter build fails because
 Option lacked the needed ForIn instance;the if-let repair compiles and links
 successfully. Both failed and fixed build/source receipts are retained.
@@ -34,3 +34,29 @@ original native group is not killed/restarted by this helper,and no new full
 collection starts. Do not call this hardRSS enforcement or a completed paper
 PDF update. Current source states the native-code confound;prior PDF remains
 until a successful guarded compile. Root self-review only.
+
+
+## Completed followthrough,06:17UTC
+
+The same finite continuation/runtime is restored as507932/birth159941957,
+with corrected scripts and byte-compared newpreparedhost. Prior unexecuted
+scripts/binary/manifest/controller launch remain. FrozenFIFO490546and paused
+originalwrapper490481are unchanged;the continuation has no error/stderr and
+still waits for actualFIFO termination. No warm/engine qualification/fullrun
+has started. Exactrecord:corrected-continuation-launch.json,
+corrected-qualification-manifest.json,followthrough-native-observation.json.
+
+The pinned4.18nativeCIjob now actually executes allfive native tests,
+including the new one-load/missinglibrary regression:5passed/0failed/0ignored.
+RustCIandbenchmark-smoke also succeed. Rawjoblog and actualtestlines are
+retained in native-library-ci*. This does not substitute for actual4.9Mathlib
+branch behavior/48GiBthroughput;that qualification remains pending.
+
+After native-resource turnover,a guardedpapercompile succeeds. UpdatedPDF
+is36pages,pages13/14rendered and visuallyinspected without clipping,and
+docs/paper/main.pdfis synchronized. Firstpressurecancelledcompile and its
+51,958,112,256Bcombinedsample remain in the priorreceipt. READMEalso states
+the native-codeconfound. Localchecklog counts60passing unit/integration/
+exampletests (earlier prose56was an undercount),withfive actualLean tests
+ignored locally during the solecapture. No per-candidate acceptance,
+resource-parity,novelty or OSDIacceptance claim.

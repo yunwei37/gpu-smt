@@ -163,3 +163,26 @@ The immediate best test is the already queued matched4warm/engine point;
 while it waits,the useful work was the resource fix and offline fault diagnosis.
 Open-source organization:core repair stays in engine crate,diagnostic data
 under the current step;raw private cores stay outsideGit,losslessly archived.
+
+
+## 06:14UTC — baseline repair takes priority
+
+All7808historical HTTP request bytes match the engine input,but the old warm
+baseline had compiled Mathlib symbols through a disabledCEXlibrary;the engine
+did not. This is a concrete missing control with more explanatory value than
+another scheduling variant. Correcting it is mandatory before a resource-gain
+claim. The adapter now loads an explicit native library beforeimports and
+reports readiness;both pending paths use the same existing library directly,
+without CEX or CPUoracle.60localtests/clippy/fmt/PythonAST pass;4.9adapter
+compiles. The firstOptionForIn failure and pressure-cancelledpapercompile are
+retained. NativeCI/live24qualification remain evidence to obtain. The same
+finite continuation was repaired/restarted after confirming it had no native
+children;currentFIFO remains frozen. READMEandpaper now state the confound.
+
+
+06:17followthrough:allfive real4.18nativeCIchecks pass,including the newnative
+libraryload regression;RustCI/smoke pass. Paper recompiles after resource
+turnover,36pages,pages13/14visuallychecked,PDFsynchronized. Samefinite
+continuation restored507932/birth159941957;FIFOunchanged,noqualifiernative
+launchyet. The precise next evidence remains actualmatched4.9qualification,
+not a sourcepatch or CI green substituted for resourcegain.
