@@ -1,0 +1,1156 @@
+{
+  "utc": "2026-10-28T10:36:51.517608+00:00",
+  "capture": "artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/prepared",
+  "budget_bytes": 51539607552,
+  "exclusive_attempts": 42,
+  "outcomes": {
+    "resource_exhausted": 41,
+    "timeout": 1
+  },
+  "native_peak_lower_bounds_bytes": {
+    "count": 42,
+    "min": 42657681408,
+    "p10": 51277799424,
+    "median": 51371751424.0,
+    "p90": 51472904192,
+    "max": 51503644672
+  },
+  "exclusive_resource_peak_lower_bounds_bytes": {
+    "count": 41,
+    "min": 51269570560,
+    "p10": 51279036416,
+    "median": 51381321728,
+    "p90": 51474202624,
+    "max": 51503644672
+  },
+  "exclusive_attempt_seconds": {
+    "count": 42,
+    "min": 185.122745299,
+    "p10": 195.134084651,
+    "median": 213.0153979245,
+    "p90": 218.157865489,
+    "max": 302.377902868
+  },
+  "ordinary_accepted_rejected_peak_lower_bounds_bytes": {
+    "count": 7678,
+    "min": 261500928,
+    "p10": 389115904,
+    "median": 487299072.0,
+    "p90": 579571712,
+    "max": 5684461568
+  },
+  "exclusive_peak_above_47GiB": 41,
+  "exclusive_peak_above_47_5GiB": 41,
+  "resource_samples_total": 16751,
+  "exclusive_alone_samples": 7389,
+  "headroom_sample_counts": {
+    "268435456": 7334,
+    "1073741824": 7231,
+    "2147483648": 7080,
+    "4294967296": 6598,
+    "8589934592": 5962,
+    "17179869184": 4658
+  },
+  "exclusive_attempts_without_sampled_leader": 0,
+  "per_attempt": [
+    {
+      "id": "minif2f-579",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 219.993248061,
+      "peak_lower_bound_bytes": 51275927552,
+      "preemption_total_bytes": 51540639744,
+      "processes": [
+        {
+          "pid": 474951,
+          "start_ticks": 153231455
+        }
+      ],
+      "samples": 170,
+      "alone_samples": 170,
+      "aggregate_headroom_min_bytes": 221921280,
+      "headroom_counts": {
+        "268435456": 169,
+        "1073741824": 167,
+        "2147483648": 163,
+        "4294967296": 155,
+        "8589934592": 143,
+        "17179869184": 109
+      }
+    },
+    {
+      "id": "minif2f-663",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 218.099712904,
+      "peak_lower_bound_bytes": 51279036416,
+      "preemption_total_bytes": 51543552000,
+      "processes": [
+        {
+          "pid": 474928,
+          "start_ticks": 153209645
+        }
+      ],
+      "samples": 171,
+      "alone_samples": 171,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 170,
+        "1073741824": 167,
+        "2147483648": 164,
+        "4294967296": 152,
+        "8589934592": 136,
+        "17179869184": 105
+      }
+    },
+    {
+      "id": "minif2f-664",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 218.157865489,
+      "peak_lower_bound_bytes": 51362181120,
+      "preemption_total_bytes": 51627089920,
+      "processes": [
+        {
+          "pid": 474906,
+          "start_ticks": 153187843
+        }
+      ],
+      "samples": 182,
+      "alone_samples": 182,
+      "aggregate_headroom_min_bytes": 152772608,
+      "headroom_counts": {
+        "268435456": 181,
+        "1073741824": 178,
+        "2147483648": 174,
+        "4294967296": 161,
+        "8589934592": 144,
+        "17179869184": 113
+      }
+    },
+    {
+      "id": "minif2f-1885",
+      "attempt": 1,
+      "final_status": "timeout",
+      "status": "timeout",
+      "seconds": 302.377902868,
+      "peak_lower_bound_bytes": 42657681408,
+      "preemption_total_bytes": null,
+      "processes": [
+        {
+          "pid": 476787,
+          "start_ticks": 153418421
+        }
+      ],
+      "samples": 225,
+      "alone_samples": 225,
+      "aggregate_headroom_min_bytes": 8647098368,
+      "headroom_counts": {
+        "268435456": 225,
+        "1073741824": 225,
+        "2147483648": 225,
+        "4294967296": 225,
+        "8589934592": 225,
+        "17179869184": 178
+      }
+    },
+    {
+      "id": "minif2f-2401",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 196.884941159,
+      "peak_lower_bound_bytes": 51339767808,
+      "preemption_total_bytes": 51608608768,
+      "processes": [
+        {
+          "pid": 476988,
+          "start_ticks": 153515764
+        }
+      ],
+      "samples": 148,
+      "alone_samples": 148,
+      "aggregate_headroom_min_bytes": 179314688,
+      "headroom_counts": {
+        "268435456": 147,
+        "1073741824": 145,
+        "2147483648": 142,
+        "4294967296": 136,
+        "8589934592": 122,
+        "17179869184": 97
+      }
+    },
+    {
+      "id": "minif2f-2403",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 185.122745299,
+      "peak_lower_bound_bytes": 51386601472,
+      "preemption_total_bytes": 51654852608,
+      "processes": [
+        {
+          "pid": 476968,
+          "start_ticks": 153497251
+        }
+      ],
+      "samples": 150,
+      "alone_samples": 150,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 149,
+        "1073741824": 146,
+        "2147483648": 143,
+        "4294967296": 136,
+        "8589934592": 124,
+        "17179869184": 97
+      }
+    },
+    {
+      "id": "minif2f-2404",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 192.04351133,
+      "peak_lower_bound_bytes": 51413573632,
+      "preemption_total_bytes": 51681824768,
+      "processes": [
+        {
+          "pid": 476948,
+          "start_ticks": 153478062
+        }
+      ],
+      "samples": 165,
+      "alone_samples": 165,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 163,
+        "1073741824": 161,
+        "2147483648": 157,
+        "4294967296": 149,
+        "8589934592": 136,
+        "17179869184": 106
+      }
+    },
+    {
+      "id": "minif2f-2409",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 189.027138065,
+      "peak_lower_bound_bytes": 51434115072,
+      "preemption_total_bytes": 51703349248,
+      "processes": [
+        {
+          "pid": 477096,
+          "start_ticks": 153605356
+        }
+      ],
+      "samples": 139,
+      "alone_samples": 139,
+      "aggregate_headroom_min_bytes": 99319808,
+      "headroom_counts": {
+        "268435456": 138,
+        "1073741824": 136,
+        "2147483648": 134,
+        "4294967296": 126,
+        "8589934592": 115,
+        "17179869184": 90
+      }
+    },
+    {
+      "id": "minif2f-2412",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 195.134084651,
+      "peak_lower_bound_bytes": 51294998528,
+      "preemption_total_bytes": 51564625920,
+      "processes": [
+        {
+          "pid": 477055,
+          "start_ticks": 153565845
+        }
+      ],
+      "samples": 168,
+      "alone_samples": 168,
+      "aggregate_headroom_min_bytes": 226836480,
+      "headroom_counts": {
+        "268435456": 167,
+        "1073741824": 164,
+        "2147483648": 160,
+        "4294967296": 152,
+        "8589934592": 138,
+        "17179869184": 109
+      }
+    },
+    {
+      "id": "minif2f-2419",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 200.102656193,
+      "peak_lower_bound_bytes": 51456266240,
+      "preemption_total_bytes": 51725500416,
+      "processes": [
+        {
+          "pid": 477075,
+          "start_ticks": 153585344
+        }
+      ],
+      "samples": 163,
+      "alone_samples": 163,
+      "aggregate_headroom_min_bytes": 53379072,
+      "headroom_counts": {
+        "268435456": 162,
+        "1073741824": 159,
+        "2147483648": 155,
+        "4294967296": 148,
+        "8589934592": 135,
+        "17179869184": 105
+      }
+    },
+    {
+      "id": "minif2f-2421",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 202.170541222,
+      "peak_lower_bound_bytes": 51424673792,
+      "preemption_total_bytes": 51694104576,
+      "processes": [
+        {
+          "pid": 477158,
+          "start_ticks": 153654755
+        }
+      ],
+      "samples": 173,
+      "alone_samples": 173,
+      "aggregate_headroom_min_bytes": 84185088,
+      "headroom_counts": {
+        "268435456": 172,
+        "1073741824": 169,
+        "2147483648": 165,
+        "4294967296": 158,
+        "8589934592": 143,
+        "17179869184": 112
+      }
+    },
+    {
+      "id": "minif2f-2423",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 196.181126318,
+      "peak_lower_bound_bytes": 51274182656,
+      "preemption_total_bytes": 51542827008,
+      "processes": [
+        {
+          "pid": 477199,
+          "start_ticks": 153693948
+        }
+      ],
+      "samples": 144,
+      "alone_samples": 144,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 142,
+        "1073741824": 140,
+        "2147483648": 137,
+        "4294967296": 130,
+        "8589934592": 118,
+        "17179869184": 93
+      }
+    },
+    {
+      "id": "minif2f-2424",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 189.88407472,
+      "peak_lower_bound_bytes": 51382575104,
+      "preemption_total_bytes": 51652005888,
+      "processes": [
+        {
+          "pid": 477179,
+          "start_ticks": 153674959
+        }
+      ],
+      "samples": 154,
+      "alone_samples": 154,
+      "aggregate_headroom_min_bytes": 144175104,
+      "headroom_counts": {
+        "268435456": 153,
+        "1073741824": 150,
+        "2147483648": 147,
+        "4294967296": 140,
+        "8589934592": 127,
+        "17179869184": 100
+      }
+    },
+    {
+      "id": "minif2f-3681",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 213.043592792,
+      "peak_lower_bound_bytes": 51474202624,
+      "preemption_total_bytes": 51745599488,
+      "processes": [
+        {
+          "pid": 478697,
+          "start_ticks": 153933456
+        }
+      ],
+      "samples": 166,
+      "alone_samples": 166,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 164,
+        "1073741824": 161,
+        "2147483648": 158,
+        "4294967296": 146,
+        "8589934592": 131,
+        "17179869184": 103
+      }
+    },
+    {
+      "id": "minif2f-3682",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 215.231965276,
+      "peak_lower_bound_bytes": 51329163264,
+      "preemption_total_bytes": 51601149952,
+      "processes": [
+        {
+          "pid": 478675,
+          "start_ticks": 153911947
+        }
+      ],
+      "samples": 182,
+      "alone_samples": 182,
+      "aggregate_headroom_min_bytes": 178712576,
+      "headroom_counts": {
+        "268435456": 181,
+        "1073741824": 179,
+        "2147483648": 174,
+        "4294967296": 161,
+        "8589934592": 145,
+        "17179869184": 114
+      }
+    },
+    {
+      "id": "minif2f-3683",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.980191482,
+      "peak_lower_bound_bytes": 51503644672,
+      "preemption_total_bytes": 51775041536,
+      "processes": [
+        {
+          "pid": 478769,
+          "start_ticks": 153997663
+        }
+      ],
+      "samples": 187,
+      "alone_samples": 187,
+      "aggregate_headroom_min_bytes": 3837952,
+      "headroom_counts": {
+        "268435456": 185,
+        "1073741824": 183,
+        "2147483648": 179,
+        "4294967296": 165,
+        "8589934592": 148,
+        "17179869184": 116
+      }
+    },
+    {
+      "id": "minif2f-3685",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.987203057,
+      "peak_lower_bound_bytes": 51277799424,
+      "preemption_total_bytes": 51549786112,
+      "processes": [
+        {
+          "pid": 478814,
+          "start_ticks": 154040362
+        }
+      ],
+      "samples": 163,
+      "alone_samples": 163,
+      "aggregate_headroom_min_bytes": 229879808,
+      "headroom_counts": {
+        "268435456": 162,
+        "1073741824": 160,
+        "2147483648": 157,
+        "4294967296": 144,
+        "8589934592": 129,
+        "17179869184": 101
+      }
+    },
+    {
+      "id": "minif2f-3686",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 213.99138914,
+      "peak_lower_bound_bytes": 51306651648,
+      "preemption_total_bytes": 51578638336,
+      "processes": [
+        {
+          "pid": 478792,
+          "start_ticks": 154018962
+        }
+      ],
+      "samples": 181,
+      "alone_samples": 181,
+      "aggregate_headroom_min_bytes": 197095424,
+      "headroom_counts": {
+        "268435456": 180,
+        "1073741824": 178,
+        "2147483648": 173,
+        "4294967296": 161,
+        "8589934592": 145,
+        "17179869184": 113
+      }
+    },
+    {
+      "id": "minif2f-3687",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 214.154198042,
+      "peak_lower_bound_bytes": 51432665088,
+      "preemption_total_bytes": 51704455168,
+      "processes": [
+        {
+          "pid": 478747,
+          "start_ticks": 153976262
+        }
+      ],
+      "samples": 192,
+      "alone_samples": 192,
+      "aggregate_headroom_min_bytes": 76390400,
+      "headroom_counts": {
+        "268435456": 191,
+        "1073741824": 188,
+        "2147483648": 184,
+        "4294967296": 171,
+        "8589934592": 153,
+        "17179869184": 119
+      }
+    },
+    {
+      "id": "minif2f-3688",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.200462847,
+      "peak_lower_bound_bytes": 51491520512,
+      "preemption_total_bytes": 51763310592,
+      "processes": [
+        {
+          "pid": 478863,
+          "start_ticks": 154082955
+        }
+      ],
+      "samples": 188,
+      "alone_samples": 188,
+      "aggregate_headroom_min_bytes": 18124800,
+      "headroom_counts": {
+        "268435456": 186,
+        "1073741824": 184,
+        "2147483648": 180,
+        "4294967296": 166,
+        "8589934592": 149,
+        "17179869184": 117
+      }
+    },
+    {
+      "id": "minif2f-3689",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 213.046601826,
+      "peak_lower_bound_bytes": 51492065280,
+      "preemption_total_bytes": 51763855360,
+      "processes": [
+        {
+          "pid": 478885,
+          "start_ticks": 154104160
+        }
+      ],
+      "samples": 185,
+      "alone_samples": 185,
+      "aggregate_headroom_min_bytes": 11288576,
+      "headroom_counts": {
+        "268435456": 183,
+        "1073741824": 180,
+        "2147483648": 177,
+        "4294967296": 163,
+        "8589934592": 146,
+        "17179869184": 113
+      }
+    },
+    {
+      "id": "minif2f-3690",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.980822782,
+      "peak_lower_bound_bytes": 51400716288,
+      "preemption_total_bytes": 51672113152,
+      "processes": [
+        {
+          "pid": 478907,
+          "start_ticks": 154125465
+        }
+      ],
+      "samples": 180,
+      "alone_samples": 180,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 179,
+        "1073741824": 175,
+        "2147483648": 172,
+        "4294967296": 160,
+        "8589934592": 143,
+        "17179869184": 112
+      }
+    },
+    {
+      "id": "minif2f-3691",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 215.037648189,
+      "peak_lower_bound_bytes": 51402899456,
+      "preemption_total_bytes": 51674296320,
+      "processes": [
+        {
+          "pid": 478930,
+          "start_ticks": 154146764
+        }
+      ],
+      "samples": 169,
+      "alone_samples": 169,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 167,
+        "1073741824": 165,
+        "2147483648": 161,
+        "4294967296": 150,
+        "8589934592": 133,
+        "17179869184": 104
+      }
+    },
+    {
+      "id": "minif2f-3692",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 233.52663635,
+      "peak_lower_bound_bytes": 51304132608,
+      "preemption_total_bytes": 51575922688,
+      "processes": [
+        {
+          "pid": 478979,
+          "start_ticks": 154189980
+        }
+      ],
+      "samples": 205,
+      "alone_samples": 205,
+      "aggregate_headroom_min_bytes": 202170368,
+      "headroom_counts": {
+        "268435456": 204,
+        "1073741824": 201,
+        "2147483648": 196,
+        "4294967296": 180,
+        "8589934592": 161,
+        "17179869184": 123
+      }
+    },
+    {
+      "id": "minif2f-3693",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 218.496153045,
+      "peak_lower_bound_bytes": 51451363328,
+      "preemption_total_bytes": 51723350016,
+      "processes": [
+        {
+          "pid": 479056,
+          "start_ticks": 154256911
+        }
+      ],
+      "samples": 165,
+      "alone_samples": 165,
+      "aggregate_headroom_min_bytes": 54743040,
+      "headroom_counts": {
+        "268435456": 164,
+        "1073741824": 161,
+        "2147483648": 158,
+        "4294967296": 146,
+        "8589934592": 131,
+        "17179869184": 101
+      }
+    },
+    {
+      "id": "minif2f-3694",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 216.193337139,
+      "peak_lower_bound_bytes": 51502817280,
+      "preemption_total_bytes": 51774607360,
+      "processes": [
+        {
+          "pid": 479033,
+          "start_ticks": 154235291
+        }
+      ],
+      "samples": 181,
+      "alone_samples": 181,
+      "aggregate_headroom_min_bytes": 9187328,
+      "headroom_counts": {
+        "268435456": 179,
+        "1073741824": 177,
+        "2147483648": 173,
+        "4294967296": 159,
+        "8589934592": 143,
+        "17179869184": 112
+      }
+    },
+    {
+      "id": "minif2f-3695",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 219.726421946,
+      "peak_lower_bound_bytes": 51395727360,
+      "preemption_total_bytes": 51667124224,
+      "processes": [
+        {
+          "pid": 479010,
+          "start_ticks": 154213318
+        }
+      ],
+      "samples": 194,
+      "alone_samples": 194,
+      "aggregate_headroom_min_bytes": 118636544,
+      "headroom_counts": {
+        "268435456": 193,
+        "1073741824": 190,
+        "2147483648": 186,
+        "4294967296": 171,
+        "8589934592": 155,
+        "17179869184": 121
+      }
+    },
+    {
+      "id": "minif2f-3697",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 215.104609223,
+      "peak_lower_bound_bytes": 51279507456,
+      "preemption_total_bytes": 51551690752,
+      "processes": [
+        {
+          "pid": 479128,
+          "start_ticks": 154321363
+        }
+      ],
+      "samples": 188,
+      "alone_samples": 188,
+      "aggregate_headroom_min_bytes": 221683712,
+      "headroom_counts": {
+        "268435456": 187,
+        "1073741824": 184,
+        "2147483648": 181,
+        "4294967296": 167,
+        "8589934592": 151,
+        "17179869184": 118
+      }
+    },
+    {
+      "id": "minif2f-3698",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.036115608,
+      "peak_lower_bound_bytes": 51292426240,
+      "preemption_total_bytes": 51564609536,
+      "processes": [
+        {
+          "pid": 479151,
+          "start_ticks": 154342874
+        }
+      ],
+      "samples": 178,
+      "alone_samples": 178,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 177,
+        "1073741824": 174,
+        "2147483648": 171,
+        "4294967296": 157,
+        "8589934592": 140,
+        "17179869184": 109
+      }
+    },
+    {
+      "id": "minif2f-3699",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 210.982052606,
+      "peak_lower_bound_bytes": 51290816512,
+      "preemption_total_bytes": 51562409984,
+      "processes": [
+        {
+          "pid": 479173,
+          "start_ticks": 154364079
+        }
+      ],
+      "samples": 163,
+      "alone_samples": 163,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 161,
+        "1073741824": 159,
+        "2147483648": 156,
+        "4294967296": 143,
+        "8589934592": 129,
+        "17179869184": 102
+      }
+    },
+    {
+      "id": "minif2f-3700",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 211.068947089,
+      "peak_lower_bound_bytes": 51381321728,
+      "preemption_total_bytes": 51653505024,
+      "processes": [
+        {
+          "pid": 479106,
+          "start_ticks": 154300271
+        }
+      ],
+      "samples": 190,
+      "alone_samples": 190,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 188,
+        "1073741824": 186,
+        "2147483648": 181,
+        "4294967296": 168,
+        "8589934592": 150,
+        "17179869184": 117
+      }
+    },
+    {
+      "id": "minif2f-3701",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.109470548,
+      "peak_lower_bound_bytes": 51389009920,
+      "preemption_total_bytes": 51660603392,
+      "processes": [
+        {
+          "pid": 479266,
+          "start_ticks": 154448969
+        }
+      ],
+      "samples": 175,
+      "alone_samples": 175,
+      "aggregate_headroom_min_bytes": 122601472,
+      "headroom_counts": {
+        "268435456": 174,
+        "1073741824": 171,
+        "2147483648": 167,
+        "4294967296": 155,
+        "8589934592": 139,
+        "17179869184": 108
+      }
+    },
+    {
+      "id": "minif2f-3702",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 210.895366323,
+      "peak_lower_bound_bytes": 51330007040,
+      "preemption_total_bytes": 51602190336,
+      "processes": [
+        {
+          "pid": 479244,
+          "start_ticks": 154427879
+        }
+      ],
+      "samples": 187,
+      "alone_samples": 187,
+      "aggregate_headroom_min_bytes": 178655232,
+      "headroom_counts": {
+        "268435456": 186,
+        "1073741824": 184,
+        "2147483648": 180,
+        "4294967296": 166,
+        "8589934592": 149,
+        "17179869184": 117
+      }
+    },
+    {
+      "id": "minif2f-3703",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 214.142361093,
+      "peak_lower_bound_bytes": 51296874496,
+      "preemption_total_bytes": 51568467968,
+      "processes": [
+        {
+          "pid": 479221,
+          "start_ticks": 154406478
+        }
+      ],
+      "samples": 191,
+      "alone_samples": 191,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 189,
+        "1073741824": 187,
+        "2147483648": 183,
+        "4294967296": 169,
+        "8589934592": 152,
+        "17179869184": 119
+      }
+    },
+    {
+      "id": "minif2f-3704",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 215.005578053,
+      "peak_lower_bound_bytes": 51472904192,
+      "preemption_total_bytes": 51744890880,
+      "processes": [
+        {
+          "pid": 479288,
+          "start_ticks": 154470181
+        }
+      ],
+      "samples": 165,
+      "alone_samples": 165,
+      "aggregate_headroom_min_bytes": 36544512,
+      "headroom_counts": {
+        "268435456": 164,
+        "1073741824": 161,
+        "2147483648": 158,
+        "4294967296": 145,
+        "8589934592": 130,
+        "17179869184": 103
+      }
+    },
+    {
+      "id": "minif2f-3705",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 211.085376781,
+      "peak_lower_bound_bytes": 51328606208,
+      "preemption_total_bytes": 51600199680,
+      "processes": [
+        {
+          "pid": 479337,
+          "start_ticks": 154513082
+        }
+      ],
+      "samples": 190,
+      "alone_samples": 190,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 188,
+        "1073741824": 186,
+        "2147483648": 182,
+        "4294967296": 168,
+        "8589934592": 150,
+        "17179869184": 118
+      }
+    },
+    {
+      "id": "minif2f-3706",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 217.718389963,
+      "peak_lower_bound_bytes": 51295744000,
+      "preemption_total_bytes": 51567927296,
+      "processes": [
+        {
+          "pid": 479382,
+          "start_ticks": 154555891
+        }
+      ],
+      "samples": 179,
+      "alone_samples": 179,
+      "aggregate_headroom_min_bytes": 207413248,
+      "headroom_counts": {
+        "268435456": 178,
+        "1073741824": 175,
+        "2147483648": 172,
+        "4294967296": 158,
+        "8589934592": 143,
+        "17179869184": 111
+      }
+    },
+    {
+      "id": "minif2f-3707",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 217.146947419,
+      "peak_lower_bound_bytes": 51450671104,
+      "preemption_total_bytes": 51722854400,
+      "processes": [
+        {
+          "pid": 479359,
+          "start_ticks": 154534176
+        }
+      ],
+      "samples": 191,
+      "alone_samples": 191,
+      "aggregate_headroom_min_bytes": 38920192,
+      "headroom_counts": {
+        "268435456": 189,
+        "1073741824": 187,
+        "2147483648": 183,
+        "4294967296": 170,
+        "8589934592": 152,
+        "17179869184": 119
+      }
+    },
+    {
+      "id": "minif2f-3708",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 214.158706232,
+      "peak_lower_bound_bytes": 51297411072,
+      "preemption_total_bytes": 51569594368,
+      "processes": [
+        {
+          "pid": 479404,
+          "start_ticks": 154577664
+        }
+      ],
+      "samples": 167,
+      "alone_samples": 167,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 166,
+        "1073741824": 163,
+        "2147483648": 160,
+        "4294967296": 148,
+        "8589934592": 133,
+        "17179869184": 103
+      }
+    },
+    {
+      "id": "minif2f-3709",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 216.180270326,
+      "peak_lower_bound_bytes": 51339943936,
+      "preemption_total_bytes": 51611734016,
+      "processes": [
+        {
+          "pid": 479558,
+          "start_ticks": 154620775
+        }
+      ],
+      "samples": 189,
+      "alone_samples": 189,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 187,
+        "1073741824": 185,
+        "2147483648": 181,
+        "4294967296": 167,
+        "8589934592": 150,
+        "17179869184": 117
+      }
+    },
+    {
+      "id": "minif2f-3710",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 212.014830657,
+      "peak_lower_bound_bytes": 51269570560,
+      "preemption_total_bytes": 51541557248,
+      "processes": [
+        {
+          "pid": 479602,
+          "start_ticks": 154663283
+        }
+      ],
+      "samples": 168,
+      "alone_samples": 168,
+      "aggregate_headroom_min_bytes": 0,
+      "headroom_counts": {
+        "268435456": 167,
+        "1073741824": 165,
+        "2147483648": 161,
+        "4294967296": 148,
+        "8589934592": 134,
+        "17179869184": 103
+      }
+    },
+    {
+      "id": "minif2f-3711",
+      "attempt": 1,
+      "final_status": "resource_exhausted",
+      "status": "resource_exhausted",
+      "seconds": 209.044538453,
+      "peak_lower_bound_bytes": 51402792960,
+      "preemption_total_bytes": 51674779648,
+      "processes": [
+        {
+          "pid": 479580,
+          "start_ticks": 154642378
+        }
+      ],
+      "samples": 178,
+      "alone_samples": 178,
+      "aggregate_headroom_min_bytes": 112947200,
+      "headroom_counts": {
+        "268435456": 177,
+        "1073741824": 175,
+        "2147483648": 170,
+        "4294967296": 158,
+        "8589934592": 142,
+        "17179869184": 111
+      }
+    }
+  ],
+  "limits": [
+    "Peak memory observations are lower bounds;headroom samples do not bound next-second growth.",
+    "Samples are counts,not uniform time intervals or promised spareCPU/RSS capacity.",
+    "Aggregate snapshots include other own engine/backend state,not just candidateleader.",
+    "This historicalpoint omitted the native Mathlib library;do not transfer its costs to the running repairedpoint.",
+    "Do not infer rejection or success from memory measurements,or add overlapping retries without native pairedvalidation."
+  ]
+}
