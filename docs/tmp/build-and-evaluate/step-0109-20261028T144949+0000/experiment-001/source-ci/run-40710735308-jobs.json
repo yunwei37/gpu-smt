@@ -1,0 +1,126 @@
+[
+  {
+    "id": 122894988281,
+    "run_id": 40710735308,
+    "workflow_name": "benchmark-smoke",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/runs/40710735308",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOUy3vaM8AAAAcnRyz-Q",
+    "head_sha": "4283acb1a4e11299bacfb04771bf170de5e67d5d",
+    "url": "https://api.github.com/repos/yunwei37/gpu-smt/actions/jobs/122894988281",
+    "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40710735308/job/122894988281",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-28T14:55:25Z",
+    "started_at": "2026-10-28T14:55:27Z",
+    "completed_at": "2026-10-28T14:56:48Z",
+    "name": "z3-smoke",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-28T14:55:28Z",
+        "completed_at": "2026-10-28T14:55:29Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-28T14:55:29Z",
+        "completed_at": "2026-10-28T14:56:32Z"
+      },
+      {
+        "name": "Install Z3",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-28T14:56:32Z",
+        "completed_at": "2026-10-28T14:56:42Z"
+      },
+      {
+        "name": "Syntax and unit tests",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-28T14:56:42Z",
+        "completed_at": "2026-10-28T14:56:42Z"
+      },
+      {
+        "name": "Run synthetic cold-vs-incremental CLI benchmark",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-28T14:56:42Z",
+        "completed_at": "2026-10-28T14:56:43Z"
+      },
+      {
+        "name": "Run direct libz3 state-reuse benchmark",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-28T14:56:43Z",
+        "completed_at": "2026-10-28T14:56:44Z"
+      },
+      {
+        "name": "Decompose reuse levels",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-10-28T14:56:44Z",
+        "completed_at": "2026-10-28T14:56:44Z"
+      },
+      {
+        "name": "Analyze cross-query prefix reuse",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-28T14:56:44Z",
+        "completed_at": "2026-10-28T14:56:45Z"
+      },
+      {
+        "name": "Validate benchmark output",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-10-28T14:56:45Z",
+        "completed_at": "2026-10-28T14:56:45Z"
+      },
+      {
+        "name": "Upload smoke benchmark artifacts",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-10-28T14:56:45Z",
+        "completed_at": "2026-10-28T14:56:46Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20,
+        "started_at": "2026-10-28T14:56:46Z",
+        "completed_at": "2026-10-28T14:56:47Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21,
+        "started_at": "2026-10-28T14:56:47Z",
+        "completed_at": "2026-10-28T14:56:47Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/yunwei37/gpu-smt/check-runs/122894988281",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000004252,
+    "runner_name": "GitHub Actions 1000004252",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  }
+]

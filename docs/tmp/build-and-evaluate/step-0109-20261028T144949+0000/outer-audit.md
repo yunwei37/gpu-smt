@@ -13,7 +13,10 @@ read the real field and match raw fresh Lean without fallback. Existing native
 concurrency,retirement,timeout and readiness controls remain. The mask change
 belongs only to these owned native processes,not a Workspace or other service.
 
-Compile/test/native CI is still pending at publication;no passing run,measured
+Source4283acbnow passes actual engine40710734996/native job122894986422,
+Rust job122894987113and smoke40710735308/job122894988281. Complete archived
+logs show70workspace/5explicit native/35Python controls. The added real
+mask case executes within the existing import-parent differential. No measured
 latency reduction,whole-population parity or generic fork-safety claim is made.
 Current13d4606binary/host are not rebuilt or replaced. No new local acquisition,
 research matrix,observer,limit or Agent. Four RQs/paper unchanged;full matched

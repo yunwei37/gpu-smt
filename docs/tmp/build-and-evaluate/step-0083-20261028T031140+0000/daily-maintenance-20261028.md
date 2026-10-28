@@ -408,3 +408,11 @@ qualify actual native mask/response behavior through existing CI. This removes
 a concrete periodic-wake mechanism but does not quantify full throughput.
 Clean the adapter guide's stale "Mathlib child controls pending" statements
 using links to their completed evidence;leave the active full point frozen.
+
+
+Step0109validation complete:actual native C/Lean build and all5pinned4.18
+differential tests pass,including the new real SigBlk comparison without
+fresh fallback;70workspace/35Python controls,fmt/clippy/docs pass. Source
+qualification is separate from throughput. The sole frozen native warm leg
+is still live at15:02:44UTC;the latest29.02GBsample is not a complete-run peak
+or a hard-quota proof. No current native source/binary was substituted.
