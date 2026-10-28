@@ -77,8 +77,11 @@ The selected24 repair results are now complete; their
 [full raw outcomes and limits](../../artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z/README.md)
 still include two extra engine timeouts with equal accepted IDs. The
 [current full7808 resource pair](../../docs/tmp/build-and-evaluate/step-0102-20261028T122519+0000/experiment-001/plan.md)
-uses one finite serial warm/engine program and is in progress. It does not
-start another workload policy or the separately prepared42 cell automatically.
+uses one finite serial warm/engine program. Its
+[complete warm leg](../../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
+returned all7808on2026-10-28T19:24:55UTC;the unchanged engine leg is now active.
+There is no complete pair ratio or accepted-set comparison yet. The program
+does not start another workload policy or the separately prepared42 cell automatically.
 
 External launch-to-exit clocks must accompany internal times, including Python/
 Rust loading, serialization and native retirement. Raw outputs and all failures

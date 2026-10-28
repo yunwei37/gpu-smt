@@ -1,0 +1,3288 @@
+{
+  "observed_utc": "2026-10-28T19:36:29.190184+00:00",
+  "scope": "Complete warm leg of existing full pair;engine leg active,not a paired result",
+  "counts": {
+    "valid": 3014,
+    "lean_error": 4668,
+    "timeout_error": 85,
+    "resource_failure": 41
+  },
+  "returned": 7808,
+  "physical_attempts": 7860,
+  "retried_candidates": 52,
+  "attempt_counts": {
+    "False": {
+      "valid": 3014,
+      "lean_error": 4668,
+      "timeout_error": 74,
+      "resource_failure": 52
+    },
+    "True": {
+      "resource_failure": 41,
+      "timeout_error": 11
+    }
+  },
+  "whole_seconds": 25175.270356231136,
+  "external_seconds": 25176.48727664491,
+  "preparation_seconds": 3.02692116308026,
+  "serial_exclusive_envelopes_seconds": 12106.91613526945,
+  "all_attempt_envelopes_seconds": 55651.175698806765,
+  "aggregate_rss": {
+    "samples": 25167,
+    "above_budget_samples": 93,
+    "peak_bytes": 52365074432,
+    "budget_bytes": 51539607552,
+    "peak_GiB": 48.768775939941406,
+    "native_process_count_samples": {
+      "0": 136,
+      "4": 9183,
+      "3": 1248,
+      "2": 1127,
+      "1": 13473
+    },
+    "scope": "Sampled process count includes idle warm workers;not active-candidate utilization"
+  },
+  "all_observed_native_address_limits_unlimited": true,
+  "mapped_native_library_workers": 4,
+  "native_survivors_at_warm_terminal": [],
+  "final_resource_failures": [
+    {
+      "id": "minif2f-579",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 529449,
+        "owner_birth": 1793190793.01,
+        "victim_pid": 529450,
+        "victim_birth": 1793190793.17,
+        "victim_rss_bytes": 51204481024,
+        "total_rss_bytes": 51645493248,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-579",
+        "snippet_id": "minif2f-579",
+        "phase": "body",
+        "time_ns": 1622384525545665,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-663",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 529705,
+        "owner_birth": 1793191015.02,
+        "victim_pid": 529706,
+        "victim_birth": 1793191015.18,
+        "victim_rss_bytes": 51266994176,
+        "total_rss_bytes": 51707891712,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-663",
+        "snippet_id": "minif2f-663",
+        "phase": "body",
+        "time_ns": 1622607562631743,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-664",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 529843,
+        "owner_birth": 1793191238.03,
+        "victim_pid": 529844,
+        "victim_birth": 1793191238.2,
+        "victim_rss_bytes": 51259772928,
+        "total_rss_bytes": 51700543488,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-664",
+        "snippet_id": "minif2f-664",
+        "phase": "body",
+        "time_ns": 1622828599721198,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2401",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 530781,
+        "owner_birth": 1793193925.35,
+        "victim_pid": 530783,
+        "victim_birth": 1793193925.52,
+        "victim_rss_bytes": 51285635072,
+        "total_rss_bytes": 51730677760,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2401",
+        "snippet_id": "minif2f-2401",
+        "phase": "body",
+        "time_ns": 1625473971450920,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2403",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 530808,
+        "owner_birth": 1793194104.51,
+        "victim_pid": 530809,
+        "victim_birth": 1793194104.67,
+        "victim_rss_bytes": 51165179904,
+        "total_rss_bytes": 51610443776,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2403",
+        "snippet_id": "minif2f-2403",
+        "phase": "body",
+        "time_ns": 1625675999794025,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2404",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 530946,
+        "owner_birth": 1793194306.59,
+        "victim_pid": 530947,
+        "victim_birth": 1793194306.75,
+        "victim_rss_bytes": 51149361152,
+        "total_rss_bytes": 51594715136,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2404",
+        "snippet_id": "minif2f-2404",
+        "phase": "body",
+        "time_ns": 1625863030118380,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2409",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531118,
+        "owner_birth": 1793195183.75,
+        "victim_pid": 531119,
+        "victim_birth": 1793195183.91,
+        "victim_rss_bytes": 51132817408,
+        "total_rss_bytes": 51578306560,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2409",
+        "snippet_id": "minif2f-2409",
+        "phase": "body",
+        "time_ns": 1626747178606321,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2412",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531052,
+        "owner_birth": 1793194798.0,
+        "victim_pid": 531053,
+        "victim_birth": 1793194798.16,
+        "victim_rss_bytes": 51192643584,
+        "total_rss_bytes": 51638136832,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2412",
+        "snippet_id": "minif2f-2412",
+        "phase": "body",
+        "time_ns": 1626356115191498,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2419",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531079,
+        "owner_birth": 1793194986.69,
+        "victim_pid": 531080,
+        "victim_birth": 1793194986.86,
+        "victim_rss_bytes": 51298758656,
+        "total_rss_bytes": 51744264192,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2419",
+        "snippet_id": "minif2f-2419",
+        "phase": "body",
+        "time_ns": 1626553147572697,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2421",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531341,
+        "owner_birth": 1793196062.9,
+        "victim_pid": 531342,
+        "victim_birth": 1793196063.07,
+        "victim_rss_bytes": 51291254784,
+        "total_rss_bytes": 51736756224,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2421",
+        "snippet_id": "minif2f-2421",
+        "phase": "body",
+        "time_ns": 1627627329228851,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2423",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531287,
+        "owner_birth": 1793195682.86,
+        "victim_pid": 531288,
+        "victim_birth": 1793195683.03,
+        "victim_rss_bytes": 51276738560,
+        "total_rss_bytes": 51722420224,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2423",
+        "snippet_id": "minif2f-2423",
+        "phase": "body",
+        "time_ns": 1627243268447612,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-2424",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 531314,
+        "owner_birth": 1793195873.9,
+        "victim_pid": 531315,
+        "victim_birth": 1793195874.06,
+        "victim_rss_bytes": 51108421632,
+        "total_rss_bytes": 51553845248,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-2424",
+        "snippet_id": "minif2f-2424",
+        "phase": "body",
+        "time_ns": 1627432298944188,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3681",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532373,
+        "owner_birth": 1793198095.98,
+        "victim_pid": 532374,
+        "victim_birth": 1793198096.15,
+        "victim_rss_bytes": 51215831040,
+        "total_rss_bytes": 51694268416,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3681",
+        "snippet_id": "minif2f-3681",
+        "phase": "body",
+        "time_ns": 1629685329179087,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3682",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532330,
+        "owner_birth": 1793197877.04,
+        "victim_pid": 532331,
+        "victim_birth": 1793197877.2,
+        "victim_rss_bytes": 51192770560,
+        "total_rss_bytes": 51671379968,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3682",
+        "snippet_id": "minif2f-3682",
+        "phase": "body",
+        "time_ns": 1629465293478165,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3683",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532649,
+        "owner_birth": 1793198764.22,
+        "victim_pid": 532650,
+        "victim_birth": 1793198764.39,
+        "victim_rss_bytes": 51198988288,
+        "total_rss_bytes": 51677839360,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3683",
+        "snippet_id": "minif2f-3683",
+        "phase": "body",
+        "time_ns": 1630353462293591,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3685",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532685,
+        "owner_birth": 1793198984.28,
+        "victim_pid": 532686,
+        "victim_birth": 1793198984.44,
+        "victim_rss_bytes": 51187044352,
+        "total_rss_bytes": 51665543168,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3685",
+        "snippet_id": "minif2f-3685",
+        "phase": "body",
+        "time_ns": 1630575497721532,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3686",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532619,
+        "owner_birth": 1793198542.16,
+        "victim_pid": 532620,
+        "victim_birth": 1793198542.32,
+        "victim_rss_bytes": 51188535296,
+        "total_rss_bytes": 51667402752,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3686",
+        "snippet_id": "minif2f-3686",
+        "phase": "body",
+        "time_ns": 1630133426239276,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3687",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 532776,
+        "owner_birth": 1793199206.28,
+        "victim_pid": 532777,
+        "victim_birth": 1793199206.44,
+        "victim_rss_bytes": 51137175552,
+        "total_rss_bytes": 51615649792,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3687",
+        "snippet_id": "minif2f-3687",
+        "phase": "body",
+        "time_ns": 1630794536470502,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3688",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533097,
+        "owner_birth": 1793199874.44,
+        "victim_pid": 533098,
+        "victim_birth": 1793199874.6,
+        "victim_rss_bytes": 51150106624,
+        "total_rss_bytes": 51628564480,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3688",
+        "snippet_id": "minif2f-3688",
+        "phase": "body",
+        "time_ns": 1631460661883888,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3689",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533240,
+        "owner_birth": 1793200091.52,
+        "victim_pid": 533241,
+        "victim_birth": 1793200091.69,
+        "victim_rss_bytes": 51156832256,
+        "total_rss_bytes": 51635458048,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3689",
+        "snippet_id": "minif2f-3689",
+        "phase": "body",
+        "time_ns": 1631680695298184,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3690",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533019,
+        "owner_birth": 1793199652.47,
+        "victim_pid": 533020,
+        "victim_birth": 1793199652.64,
+        "victim_rss_bytes": 51176566784,
+        "total_rss_bytes": 51655409664,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3690",
+        "snippet_id": "minif2f-3690",
+        "phase": "body",
+        "time_ns": 1631243628474897,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3691",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533264,
+        "owner_birth": 1793200311.56,
+        "victim_pid": 533265,
+        "victim_birth": 1793200311.73,
+        "victim_rss_bytes": 51069599744,
+        "total_rss_bytes": 51548459008,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3691",
+        "snippet_id": "minif2f-3691",
+        "phase": "body",
+        "time_ns": 1631900731237251,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3692",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533547,
+        "owner_birth": 1793201201.72,
+        "victim_pid": 533548,
+        "victim_birth": 1793201201.88,
+        "victim_rss_bytes": 51254751232,
+        "total_rss_bytes": 51733340160,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3692",
+        "snippet_id": "minif2f-3692",
+        "phase": "body",
+        "time_ns": 1632793898487629,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3693",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533390,
+        "owner_birth": 1793200981.71,
+        "victim_pid": 533391,
+        "victim_birth": 1793200981.88,
+        "victim_rss_bytes": 51282468864,
+        "total_rss_bytes": 51760889856,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3693",
+        "snippet_id": "minif2f-3693",
+        "phase": "body",
+        "time_ns": 1632570861387556,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3694",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533576,
+        "owner_birth": 1793201424.83,
+        "victim_pid": 533577,
+        "victim_birth": 1793201425.0,
+        "victim_rss_bytes": 51078029312,
+        "total_rss_bytes": 51556749312,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3694",
+        "snippet_id": "minif2f-3694",
+        "phase": "body",
+        "time_ns": 1633016933911471,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3695",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533353,
+        "owner_birth": 1793200760.65,
+        "victim_pid": 533354,
+        "victim_birth": 1793200760.82,
+        "victim_rss_bytes": 51290955776,
+        "total_rss_bytes": 51769761792,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3695",
+        "snippet_id": "minif2f-3695",
+        "phase": "body",
+        "time_ns": 1632350826416751,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3697",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533668,
+        "owner_birth": 1793202096.85,
+        "victim_pid": 533669,
+        "victim_birth": 1793202097.02,
+        "victim_rss_bytes": 51169349632,
+        "total_rss_bytes": 51648057344,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3697",
+        "snippet_id": "minif2f-3697",
+        "phase": "body",
+        "time_ns": 1633687056059717,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3698",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533644,
+        "owner_birth": 1793201875.89,
+        "victim_pid": 533645,
+        "victim_birth": 1793201876.06,
+        "victim_rss_bytes": 51189989376,
+        "total_rss_bytes": 51668799488,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3698",
+        "snippet_id": "minif2f-3698",
+        "phase": "body",
+        "time_ns": 1633466020437531,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3699",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533791,
+        "owner_birth": 1793202539.17,
+        "victim_pid": 533792,
+        "victim_birth": 1793202539.33,
+        "victim_rss_bytes": 51111534592,
+        "total_rss_bytes": 51590455296,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3699",
+        "snippet_id": "minif2f-3699",
+        "phase": "body",
+        "time_ns": 1634129120882186,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3700",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533761,
+        "owner_birth": 1793202317.99,
+        "victim_pid": 533762,
+        "victim_birth": 1793202318.16,
+        "victim_rss_bytes": 51279429632,
+        "total_rss_bytes": 51758223360,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3700",
+        "snippet_id": "minif2f-3700",
+        "phase": "body",
+        "time_ns": 1633908088771538,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3701",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533958,
+        "owner_birth": 1793202993.02,
+        "victim_pid": 533959,
+        "victim_birth": 1793202993.2,
+        "victim_rss_bytes": 51235516416,
+        "total_rss_bytes": 51714338816,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3701",
+        "snippet_id": "minif2f-3701",
+        "phase": "body",
+        "time_ns": 1634582221112528,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3702",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534055,
+        "owner_birth": 1793203432.18,
+        "victim_pid": 534056,
+        "victim_birth": 1793203432.34,
+        "victim_rss_bytes": 51210997760,
+        "total_rss_bytes": 51689881600,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3702",
+        "snippet_id": "minif2f-3702",
+        "phase": "body",
+        "time_ns": 1635023288792001,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3703",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 533982,
+        "owner_birth": 1793203213.08,
+        "victim_pid": 533983,
+        "victim_birth": 1793203213.25,
+        "victim_rss_bytes": 51111940096,
+        "total_rss_bytes": 51590680576,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3703",
+        "snippet_id": "minif2f-3703",
+        "phase": "body",
+        "time_ns": 1634801253826243,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3704",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534125,
+        "owner_birth": 1793203654.32,
+        "victim_pid": 534126,
+        "victim_birth": 1793203654.5,
+        "victim_rss_bytes": 51061784576,
+        "total_rss_bytes": 51540504576,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3704",
+        "snippet_id": "minif2f-3704",
+        "phase": "body",
+        "time_ns": 1635247325423268,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3705",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534332,
+        "owner_birth": 1793204327.3,
+        "victim_pid": 534333,
+        "victim_birth": 1793204327.47,
+        "victim_rss_bytes": 51114864640,
+        "total_rss_bytes": 51593687040,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3705",
+        "snippet_id": "minif2f-3705",
+        "phase": "body",
+        "time_ns": 1635918447579374,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3706",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534574,
+        "owner_birth": 1793204768.37,
+        "victim_pid": 534575,
+        "victim_birth": 1793204768.53,
+        "victim_rss_bytes": 51141697536,
+        "total_rss_bytes": 51620151296,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3706",
+        "snippet_id": "minif2f-3706",
+        "phase": "body",
+        "time_ns": 1636362518178267,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3707",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534532,
+        "owner_birth": 1793204549.42,
+        "victim_pid": 534533,
+        "victim_birth": 1793204549.59,
+        "victim_rss_bytes": 51068649472,
+        "total_rss_bytes": 51547389952,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3707",
+        "snippet_id": "minif2f-3707",
+        "phase": "body",
+        "time_ns": 1636137480491383,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3708",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534267,
+        "owner_birth": 1793204105.39,
+        "victim_pid": 534268,
+        "victim_birth": 1793204105.56,
+        "victim_rss_bytes": 51161550848,
+        "total_rss_bytes": 51640430592,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3708",
+        "snippet_id": "minif2f-3708",
+        "phase": "body",
+        "time_ns": 1635696413344799,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3709",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534872,
+        "owner_birth": 1793205199.56,
+        "victim_pid": 534873,
+        "victim_birth": 1793205199.74,
+        "victim_rss_bytes": 51223228416,
+        "total_rss_bytes": 51701866496,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3709",
+        "snippet_id": "minif2f-3709",
+        "phase": "body",
+        "time_ns": 1636796632103913,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3710",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 535064,
+        "owner_birth": 1793205652.35,
+        "victim_pid": 535065,
+        "victim_birth": 1793205652.52,
+        "victim_rss_bytes": 51155431424,
+        "total_rss_bytes": 51634266112,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3710",
+        "snippet_id": "minif2f-3710",
+        "phase": "body",
+        "time_ns": 1637240699184206,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    },
+    {
+      "id": "minif2f-3711",
+      "exclusive": true,
+      "status": "resource_failure",
+      "watchdog": {
+        "owner_pid": 534903,
+        "owner_birth": 1793205427.6,
+        "victim_pid": 534904,
+        "victim_birth": 1793205427.78,
+        "victim_rss_bytes": 51140558848,
+        "total_rss_bytes": 51619213312,
+        "budget_bytes": 51539607552,
+        "effective_threshold_bytes": 51539607552,
+        "source_id": "minif2f-3711",
+        "snippet_id": "minif2f-3711",
+        "phase": "body",
+        "time_ns": 1637021664884968,
+        "reason": "aggregate_rss_exceeded",
+        "largest_native_repl_selected": true
+      }
+    }
+  ],
+  "retained_files": [
+    {
+      "source": "controller-launch.json",
+      "retained": "controller-launch.json",
+      "raw_bytes": 306,
+      "retained_bytes": 306,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "execute-existing-pair.py",
+      "retained": "execute-existing-pair.py",
+      "raw_bytes": 5446,
+      "retained_bytes": 5446,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "input7808.json",
+      "retained": "input7808.json.gz",
+      "raw_bytes": 15128300,
+      "retained_bytes": 1493604,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "manifest.json",
+      "retained": "manifest.json",
+      "raw_bytes": 5992,
+      "retained_bytes": 5992,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529180.json",
+      "retained": "warm/activity/529180.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529181.json",
+      "retained": "warm/activity/529181.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529182.json",
+      "retained": "warm/activity/529182.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529183.json",
+      "retained": "warm/activity/529183.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529449.json",
+      "retained": "warm/activity/529449.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529705.json",
+      "retained": "warm/activity/529705.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529843.json",
+      "retained": "warm/activity/529843.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529880.json",
+      "retained": "warm/activity/529880.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529881.json",
+      "retained": "warm/activity/529881.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529882.json",
+      "retained": "warm/activity/529882.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529883.json",
+      "retained": "warm/activity/529883.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529923.json",
+      "retained": "warm/activity/529923.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/529925.json",
+      "retained": "warm/activity/529925.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530172.json",
+      "retained": "warm/activity/530172.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530189.json",
+      "retained": "warm/activity/530189.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530199.json",
+      "retained": "warm/activity/530199.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530354.json",
+      "retained": "warm/activity/530354.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530386.json",
+      "retained": "warm/activity/530386.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530387.json",
+      "retained": "warm/activity/530387.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530388.json",
+      "retained": "warm/activity/530388.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530392.json",
+      "retained": "warm/activity/530392.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530400.json",
+      "retained": "warm/activity/530400.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530402.json",
+      "retained": "warm/activity/530402.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530453.json",
+      "retained": "warm/activity/530453.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530479.json",
+      "retained": "warm/activity/530479.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530516.json",
+      "retained": "warm/activity/530516.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530518.json",
+      "retained": "warm/activity/530518.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530527.json",
+      "retained": "warm/activity/530527.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530545.json",
+      "retained": "warm/activity/530545.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530574.json",
+      "retained": "warm/activity/530574.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530577.json",
+      "retained": "warm/activity/530577.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530579.json",
+      "retained": "warm/activity/530579.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530581.json",
+      "retained": "warm/activity/530581.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530583.json",
+      "retained": "warm/activity/530583.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530602.json",
+      "retained": "warm/activity/530602.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530699.json",
+      "retained": "warm/activity/530699.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530700.json",
+      "retained": "warm/activity/530700.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530701.json",
+      "retained": "warm/activity/530701.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530705.json",
+      "retained": "warm/activity/530705.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530781.json",
+      "retained": "warm/activity/530781.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530808.json",
+      "retained": "warm/activity/530808.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530946.json",
+      "retained": "warm/activity/530946.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530979.json",
+      "retained": "warm/activity/530979.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530980.json",
+      "retained": "warm/activity/530980.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530981.json",
+      "retained": "warm/activity/530981.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/530982.json",
+      "retained": "warm/activity/530982.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531052.json",
+      "retained": "warm/activity/531052.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531079.json",
+      "retained": "warm/activity/531079.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531118.json",
+      "retained": "warm/activity/531118.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531147.json",
+      "retained": "warm/activity/531147.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531148.json",
+      "retained": "warm/activity/531148.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531149.json",
+      "retained": "warm/activity/531149.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531150.json",
+      "retained": "warm/activity/531150.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531287.json",
+      "retained": "warm/activity/531287.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531314.json",
+      "retained": "warm/activity/531314.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531341.json",
+      "retained": "warm/activity/531341.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531415.json",
+      "retained": "warm/activity/531415.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531416.json",
+      "retained": "warm/activity/531416.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531417.json",
+      "retained": "warm/activity/531417.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531418.json",
+      "retained": "warm/activity/531418.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/531630.json",
+      "retained": "warm/activity/531630.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532272.json",
+      "retained": "warm/activity/532272.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532275.json",
+      "retained": "warm/activity/532275.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532277.json",
+      "retained": "warm/activity/532277.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532280.json",
+      "retained": "warm/activity/532280.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532282.json",
+      "retained": "warm/activity/532282.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532330.json",
+      "retained": "warm/activity/532330.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532373.json",
+      "retained": "warm/activity/532373.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532403.json",
+      "retained": "warm/activity/532403.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532404.json",
+      "retained": "warm/activity/532404.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532405.json",
+      "retained": "warm/activity/532405.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532406.json",
+      "retained": "warm/activity/532406.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532619.json",
+      "retained": "warm/activity/532619.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532649.json",
+      "retained": "warm/activity/532649.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532685.json",
+      "retained": "warm/activity/532685.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532776.json",
+      "retained": "warm/activity/532776.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532964.json",
+      "retained": "warm/activity/532964.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532965.json",
+      "retained": "warm/activity/532965.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532966.json",
+      "retained": "warm/activity/532966.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/532967.json",
+      "retained": "warm/activity/532967.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533019.json",
+      "retained": "warm/activity/533019.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533097.json",
+      "retained": "warm/activity/533097.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533240.json",
+      "retained": "warm/activity/533240.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533264.json",
+      "retained": "warm/activity/533264.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533288.json",
+      "retained": "warm/activity/533288.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533289.json",
+      "retained": "warm/activity/533289.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533290.json",
+      "retained": "warm/activity/533290.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533291.json",
+      "retained": "warm/activity/533291.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533353.json",
+      "retained": "warm/activity/533353.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533390.json",
+      "retained": "warm/activity/533390.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533547.json",
+      "retained": "warm/activity/533547.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533576.json",
+      "retained": "warm/activity/533576.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533607.json",
+      "retained": "warm/activity/533607.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533608.json",
+      "retained": "warm/activity/533608.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533609.json",
+      "retained": "warm/activity/533609.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533610.json",
+      "retained": "warm/activity/533610.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533644.json",
+      "retained": "warm/activity/533644.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533668.json",
+      "retained": "warm/activity/533668.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533761.json",
+      "retained": "warm/activity/533761.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533791.json",
+      "retained": "warm/activity/533791.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533927.json",
+      "retained": "warm/activity/533927.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533928.json",
+      "retained": "warm/activity/533928.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533929.json",
+      "retained": "warm/activity/533929.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533930.json",
+      "retained": "warm/activity/533930.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533958.json",
+      "retained": "warm/activity/533958.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/533982.json",
+      "retained": "warm/activity/533982.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534055.json",
+      "retained": "warm/activity/534055.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534125.json",
+      "retained": "warm/activity/534125.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534195.json",
+      "retained": "warm/activity/534195.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534196.json",
+      "retained": "warm/activity/534196.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534197.json",
+      "retained": "warm/activity/534197.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534198.json",
+      "retained": "warm/activity/534198.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534267.json",
+      "retained": "warm/activity/534267.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534332.json",
+      "retained": "warm/activity/534332.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534532.json",
+      "retained": "warm/activity/534532.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534574.json",
+      "retained": "warm/activity/534574.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534676.json",
+      "retained": "warm/activity/534676.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534677.json",
+      "retained": "warm/activity/534677.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534678.json",
+      "retained": "warm/activity/534678.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534679.json",
+      "retained": "warm/activity/534679.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534872.json",
+      "retained": "warm/activity/534872.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/534903.json",
+      "retained": "warm/activity/534903.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535064.json",
+      "retained": "warm/activity/535064.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535104.json",
+      "retained": "warm/activity/535104.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535105.json",
+      "retained": "warm/activity/535105.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535106.json",
+      "retained": "warm/activity/535106.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535107.json",
+      "retained": "warm/activity/535107.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535113.json",
+      "retained": "warm/activity/535113.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535115.json",
+      "retained": "warm/activity/535115.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535132.json",
+      "retained": "warm/activity/535132.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535134.json",
+      "retained": "warm/activity/535134.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535311.json",
+      "retained": "warm/activity/535311.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535314.json",
+      "retained": "warm/activity/535314.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535336.json",
+      "retained": "warm/activity/535336.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535338.json",
+      "retained": "warm/activity/535338.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535353.json",
+      "retained": "warm/activity/535353.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535355.json",
+      "retained": "warm/activity/535355.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535396.json",
+      "retained": "warm/activity/535396.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535506.json",
+      "retained": "warm/activity/535506.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535508.json",
+      "retained": "warm/activity/535508.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535511.json",
+      "retained": "warm/activity/535511.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535513.json",
+      "retained": "warm/activity/535513.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535517.json",
+      "retained": "warm/activity/535517.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535612.json",
+      "retained": "warm/activity/535612.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535700.json",
+      "retained": "warm/activity/535700.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535701.json",
+      "retained": "warm/activity/535701.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535702.json",
+      "retained": "warm/activity/535702.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535706.json",
+      "retained": "warm/activity/535706.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535869.json",
+      "retained": "warm/activity/535869.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535872.json",
+      "retained": "warm/activity/535872.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/535986.json",
+      "retained": "warm/activity/535986.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536083.json",
+      "retained": "warm/activity/536083.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536160.json",
+      "retained": "warm/activity/536160.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536161.json",
+      "retained": "warm/activity/536161.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536162.json",
+      "retained": "warm/activity/536162.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536166.json",
+      "retained": "warm/activity/536166.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536221.json",
+      "retained": "warm/activity/536221.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536224.json",
+      "retained": "warm/activity/536224.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536237.json",
+      "retained": "warm/activity/536237.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536239.json",
+      "retained": "warm/activity/536239.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536241.json",
+      "retained": "warm/activity/536241.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536243.json",
+      "retained": "warm/activity/536243.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536246.json",
+      "retained": "warm/activity/536246.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536248.json",
+      "retained": "warm/activity/536248.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536250.json",
+      "retained": "warm/activity/536250.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536252.json",
+      "retained": "warm/activity/536252.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536254.json",
+      "retained": "warm/activity/536254.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536256.json",
+      "retained": "warm/activity/536256.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536293.json",
+      "retained": "warm/activity/536293.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536301.json",
+      "retained": "warm/activity/536301.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536472.json",
+      "retained": "warm/activity/536472.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536475.json",
+      "retained": "warm/activity/536475.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536482.json",
+      "retained": "warm/activity/536482.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536490.json",
+      "retained": "warm/activity/536490.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536535.json",
+      "retained": "warm/activity/536535.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536579.json",
+      "retained": "warm/activity/536579.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536580.json",
+      "retained": "warm/activity/536580.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536581.json",
+      "retained": "warm/activity/536581.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536585.json",
+      "retained": "warm/activity/536585.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536742.json",
+      "retained": "warm/activity/536742.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536752.json",
+      "retained": "warm/activity/536752.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536758.json",
+      "retained": "warm/activity/536758.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/536866.json",
+      "retained": "warm/activity/536866.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537100.json",
+      "retained": "warm/activity/537100.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537102.json",
+      "retained": "warm/activity/537102.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537156.json",
+      "retained": "warm/activity/537156.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537159.json",
+      "retained": "warm/activity/537159.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537165.json",
+      "retained": "warm/activity/537165.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537276.json",
+      "retained": "warm/activity/537276.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537568.json",
+      "retained": "warm/activity/537568.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537569.json",
+      "retained": "warm/activity/537569.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537570.json",
+      "retained": "warm/activity/537570.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537574.json",
+      "retained": "warm/activity/537574.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537664.json",
+      "retained": "warm/activity/537664.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537733.json",
+      "retained": "warm/activity/537733.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537734.json",
+      "retained": "warm/activity/537734.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537735.json",
+      "retained": "warm/activity/537735.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537739.json",
+      "retained": "warm/activity/537739.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537820.json",
+      "retained": "warm/activity/537820.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537852.json",
+      "retained": "warm/activity/537852.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537853.json",
+      "retained": "warm/activity/537853.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537854.json",
+      "retained": "warm/activity/537854.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537858.json",
+      "retained": "warm/activity/537858.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/537964.json",
+      "retained": "warm/activity/537964.json",
+      "raw_bytes": 125,
+      "retained_bytes": 125,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538021.json",
+      "retained": "warm/activity/538021.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538022.json",
+      "retained": "warm/activity/538022.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538023.json",
+      "retained": "warm/activity/538023.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538027.json",
+      "retained": "warm/activity/538027.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538204.json",
+      "retained": "warm/activity/538204.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538272.json",
+      "retained": "warm/activity/538272.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538273.json",
+      "retained": "warm/activity/538273.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538274.json",
+      "retained": "warm/activity/538274.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538279.json",
+      "retained": "warm/activity/538279.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538585.json",
+      "retained": "warm/activity/538585.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538629.json",
+      "retained": "warm/activity/538629.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538630.json",
+      "retained": "warm/activity/538630.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538631.json",
+      "retained": "warm/activity/538631.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538635.json",
+      "retained": "warm/activity/538635.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538667.json",
+      "retained": "warm/activity/538667.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/activity/538670.json",
+      "retained": "warm/activity/538670.json",
+      "raw_bytes": 126,
+      "retained_bytes": 126,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/attempts.jsonl",
+      "retained": "warm/attempts.jsonl.gz",
+      "raw_bytes": 16918012,
+      "retained_bytes": 1061860,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529181.json",
+      "retained": "warm/kills/529181.json",
+      "raw_bytes": 417,
+      "retained_bytes": 417,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529182.json",
+      "retained": "warm/kills/529182.json",
+      "raw_bytes": 416,
+      "retained_bytes": 416,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529183.json",
+      "retained": "warm/kills/529183.json",
+      "raw_bytes": 417,
+      "retained_bytes": 417,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529449.json",
+      "retained": "warm/kills/529449.json",
+      "raw_bytes": 417,
+      "retained_bytes": 417,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529705.json",
+      "retained": "warm/kills/529705.json",
+      "raw_bytes": 417,
+      "retained_bytes": 417,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/529843.json",
+      "retained": "warm/kills/529843.json",
+      "raw_bytes": 416,
+      "retained_bytes": 416,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530172.json",
+      "retained": "warm/kills/530172.json",
+      "raw_bytes": 417,
+      "retained_bytes": 417,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530527.json",
+      "retained": "warm/kills/530527.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530699.json",
+      "retained": "warm/kills/530699.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530701.json",
+      "retained": "warm/kills/530701.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530705.json",
+      "retained": "warm/kills/530705.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530781.json",
+      "retained": "warm/kills/530781.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530808.json",
+      "retained": "warm/kills/530808.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530946.json",
+      "retained": "warm/kills/530946.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530979.json",
+      "retained": "warm/kills/530979.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530981.json",
+      "retained": "warm/kills/530981.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/530982.json",
+      "retained": "warm/kills/530982.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531052.json",
+      "retained": "warm/kills/531052.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531079.json",
+      "retained": "warm/kills/531079.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531118.json",
+      "retained": "warm/kills/531118.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531148.json",
+      "retained": "warm/kills/531148.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531149.json",
+      "retained": "warm/kills/531149.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531150.json",
+      "retained": "warm/kills/531150.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531287.json",
+      "retained": "warm/kills/531287.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531314.json",
+      "retained": "warm/kills/531314.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531341.json",
+      "retained": "warm/kills/531341.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/531415.json",
+      "retained": "warm/kills/531415.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532282.json",
+      "retained": "warm/kills/532282.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532330.json",
+      "retained": "warm/kills/532330.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532373.json",
+      "retained": "warm/kills/532373.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532403.json",
+      "retained": "warm/kills/532403.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532404.json",
+      "retained": "warm/kills/532404.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532405.json",
+      "retained": "warm/kills/532405.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532406.json",
+      "retained": "warm/kills/532406.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532619.json",
+      "retained": "warm/kills/532619.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532649.json",
+      "retained": "warm/kills/532649.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532685.json",
+      "retained": "warm/kills/532685.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532776.json",
+      "retained": "warm/kills/532776.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532964.json",
+      "retained": "warm/kills/532964.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532965.json",
+      "retained": "warm/kills/532965.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532966.json",
+      "retained": "warm/kills/532966.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/532967.json",
+      "retained": "warm/kills/532967.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533019.json",
+      "retained": "warm/kills/533019.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533097.json",
+      "retained": "warm/kills/533097.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533240.json",
+      "retained": "warm/kills/533240.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533264.json",
+      "retained": "warm/kills/533264.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533288.json",
+      "retained": "warm/kills/533288.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533289.json",
+      "retained": "warm/kills/533289.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533290.json",
+      "retained": "warm/kills/533290.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533291.json",
+      "retained": "warm/kills/533291.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533353.json",
+      "retained": "warm/kills/533353.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533390.json",
+      "retained": "warm/kills/533390.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533547.json",
+      "retained": "warm/kills/533547.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533576.json",
+      "retained": "warm/kills/533576.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533607.json",
+      "retained": "warm/kills/533607.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533608.json",
+      "retained": "warm/kills/533608.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533609.json",
+      "retained": "warm/kills/533609.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533610.json",
+      "retained": "warm/kills/533610.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533644.json",
+      "retained": "warm/kills/533644.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533668.json",
+      "retained": "warm/kills/533668.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533761.json",
+      "retained": "warm/kills/533761.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533791.json",
+      "retained": "warm/kills/533791.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533927.json",
+      "retained": "warm/kills/533927.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533928.json",
+      "retained": "warm/kills/533928.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533929.json",
+      "retained": "warm/kills/533929.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533930.json",
+      "retained": "warm/kills/533930.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533958.json",
+      "retained": "warm/kills/533958.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/533982.json",
+      "retained": "warm/kills/533982.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534055.json",
+      "retained": "warm/kills/534055.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534125.json",
+      "retained": "warm/kills/534125.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534195.json",
+      "retained": "warm/kills/534195.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534196.json",
+      "retained": "warm/kills/534196.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534197.json",
+      "retained": "warm/kills/534197.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534198.json",
+      "retained": "warm/kills/534198.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534267.json",
+      "retained": "warm/kills/534267.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534332.json",
+      "retained": "warm/kills/534332.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534532.json",
+      "retained": "warm/kills/534532.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534574.json",
+      "retained": "warm/kills/534574.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534676.json",
+      "retained": "warm/kills/534676.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534677.json",
+      "retained": "warm/kills/534677.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534678.json",
+      "retained": "warm/kills/534678.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534872.json",
+      "retained": "warm/kills/534872.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/534903.json",
+      "retained": "warm/kills/534903.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/535064.json",
+      "retained": "warm/kills/535064.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/535396.json",
+      "retained": "warm/kills/535396.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/535869.json",
+      "retained": "warm/kills/535869.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/536475.json",
+      "retained": "warm/kills/536475.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/537100.json",
+      "retained": "warm/kills/537100.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/537569.json",
+      "retained": "warm/kills/537569.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/537739.json",
+      "retained": "warm/kills/537739.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/537858.json",
+      "retained": "warm/kills/537858.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/538023.json",
+      "retained": "warm/kills/538023.json",
+      "raw_bytes": 419,
+      "retained_bytes": 419,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kills/538279.json",
+      "retained": "warm/kills/538279.json",
+      "raw_bytes": 418,
+      "retained_bytes": 418,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/kimina.log",
+      "retained": "warm/kimina.log.gz",
+      "raw_bytes": 40883017,
+      "retained_bytes": 3220366,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/memory-rss.jsonl",
+      "retained": "warm/memory-rss.jsonl.gz",
+      "raw_bytes": 39447151,
+      "retained_bytes": 998795,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/native-library-readiness.json",
+      "retained": "warm/native-library-readiness.json",
+      "raw_bytes": 851,
+      "retained_bytes": 851,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/process-exits.jsonl",
+      "retained": "warm/process-exits.jsonl.gz",
+      "raw_bytes": 88805,
+      "retained_bytes": 1597,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/results.json",
+      "retained": "warm/results.json.gz",
+      "raw_bytes": 48790685,
+      "retained_bytes": 3637189,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm/terminal.json",
+      "retained": "warm/terminal.json",
+      "raw_bytes": 3240,
+      "retained_bytes": 3240,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm-exit.json",
+      "retained": "warm-exit.json",
+      "raw_bytes": 164,
+      "retained_bytes": 164,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm-launch.json",
+      "retained": "warm-launch.json",
+      "raw_bytes": 327,
+      "retained_bytes": 327,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm-run.py",
+      "retained": "warm-run.py",
+      "raw_bytes": 13428,
+      "retained_bytes": 13428,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm.stderr",
+      "retained": "warm.stderr",
+      "raw_bytes": 0,
+      "retained_bytes": 0,
+      "lossless_byte_comparison": true
+    },
+    {
+      "source": "warm.stdout",
+      "retained": "warm.stdout",
+      "raw_bytes": 2902,
+      "retained_bytes": 2902,
+      "lossless_byte_comparison": true
+    }
+  ],
+  "limits": [
+    "No engine throughput or accepted-set comparison before its actual terminal",
+    "Frozen warm immediate retry differs from frozen engine ordinary-frontier-first retry",
+    "Raw result time=0 on watchdog rows is not zero native cost",
+    "Serial solo envelopes are charged work,not guaranteed recoverable capacity",
+    "1s watchdog sampling overshoots;not a hard RSS quota"
+  ],
+  "historical_fixed42_within_warm_full": {
+    "status_counts": {
+      "resource_failure": 41,
+      "timeout_error": 1
+    },
+    "ids": [
+      "minif2f-579",
+      "minif2f-663",
+      "minif2f-664",
+      "minif2f-1885",
+      "minif2f-2401",
+      "minif2f-2403",
+      "minif2f-2404",
+      "minif2f-2409",
+      "minif2f-2412",
+      "minif2f-2419",
+      "minif2f-2421",
+      "minif2f-2423",
+      "minif2f-2424",
+      "minif2f-3681",
+      "minif2f-3682",
+      "minif2f-3683",
+      "minif2f-3685",
+      "minif2f-3686",
+      "minif2f-3687",
+      "minif2f-3688",
+      "minif2f-3689",
+      "minif2f-3690",
+      "minif2f-3691",
+      "minif2f-3692",
+      "minif2f-3693",
+      "minif2f-3694",
+      "minif2f-3695",
+      "minif2f-3697",
+      "minif2f-3698",
+      "minif2f-3699",
+      "minif2f-3700",
+      "minif2f-3701",
+      "minif2f-3702",
+      "minif2f-3703",
+      "minif2f-3704",
+      "minif2f-3705",
+      "minif2f-3706",
+      "minif2f-3707",
+      "minif2f-3708",
+      "minif2f-3709",
+      "minif2f-3710",
+      "minif2f-3711"
+    ],
+    "exclusive_final_count": 42,
+    "scope": "Retrospective subset of full warm run,not a separately launched frozen42 fresh-native experiment"
+  },
+  "postrun_warm_native_retirement": {
+    "observed_utc": "2026-10-28T19:37:10.736593+00:00",
+    "identities_seen": 209,
+    "still_matching_processes": [],
+    "scope": "PID and birth revalidated from original owned-tree samples;zombies are retired,not running"
+  },
+  "solo_resource_victim_observations": {
+    "count": 41,
+    "min_GiB": 47.55499267578125,
+    "median_GiB": 47.67164993286133,
+    "max_GiB": 47.775691986083984,
+    "scope": "Last preemption RSS observations are lower bounds on uncapped completion peaks,not admission reservations"
+  }
+}

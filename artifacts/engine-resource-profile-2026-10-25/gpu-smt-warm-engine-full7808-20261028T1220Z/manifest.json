@@ -1,0 +1,129 @@
+{
+  "utc": "2026-10-28T12:21:14.941769+00:00",
+  "retained_fifo_root": "/tmp/gpu-smt-prepared-policy7808-20261028T034248Z",
+  "engine_source": "cf1138bf3566ce0a8cc2f7ca5718561840565525",
+  "engine_build_receipt": "/workspaces/repository/docs/tmp/build-and-evaluate/step-0088-20261028T053756+0000/experiment-002/fixed-control-release-paper/receipt.json",
+  "warm_repl": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+  "baseline": "retained Kimina fb2393d Manager/run_checks direct library; no HTTP polling",
+  "baseline_log_profile": "prod/INFO raw file; no rich console",
+  "native_algorithm_changes": false,
+  "fixed_process_AS_cap": false,
+  "memory_bytes": 51539607552,
+  "cpus": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "qualification_source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    1885,
+    2325,
+    2507,
+    3086,
+    3209,
+    3683,
+    3685,
+    7230
+  ],
+  "scope": "16ordinary+8targeted real development qualification including all6statusdivergences and2memory-failure cases;fullpaired run not auto-started",
+  "engine_replacement_utc": "2026-10-28T05:58:49.725770+00:00",
+  "qualification_definition_source": "11b65a5fcbdf47edf35df9e3ea3d5df0834d7376",
+  "prepared_host_definition_source": "11b65a5fcbdf47edf35df9e3ea3d5df0834d7376",
+  "prepared_host_build_receipt": "/workspaces/repository/docs/tmp/build-and-evaluate/step-0090-20261028T060731+0000/experiment-001/lean49-success-build.json",
+  "native_library": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib/libMathlib-Tactic-Linarith-1.so",
+  "library_paths": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/batteries/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/Qq/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/aesop/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/proofwidgets/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/importGraph/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/build/lib",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib"
+  ],
+  "superseded_unexecuted_configuration_retained": true,
+  "native_library_repair_utc": "2026-10-28T06:14:07.570944+00:00",
+  "native_library_scope": "existing ordinary nativeMathlib, no counterexample wrapper/external oracle",
+  "phase": "full",
+  "candidate_count": 7808,
+  "source_commit": "13d460699e017e576e33a8b12883e066f9a4f4e2",
+  "engine_binary": "/tmp/gpu-smt-reply-retirement-13d4606-20261028/gpu-smt",
+  "prepared_host": "/tmp/gpu-smt-warm-resource-qualification-20261028T044624Z/prepared-host",
+  "source_context": {
+    "LEAN_PATH": "././.lake/packages/batteries/.lake/build/lib:././.lake/packages/Qq/.lake/build/lib:././.lake/packages/aesop/.lake/build/lib:././.lake/packages/proofwidgets/.lake/build/lib:././.lake/packages/Cli/.lake/build/lib:././.lake/packages/importGraph/.lake/build/lib:././.lake/packages/REPL/.lake/build/lib:././.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+    "LEAN_SYSROOT": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+    "environment": "lean4.9.0-rc1-retained-Mathlib-native-own-engine-resource-pair",
+    "input": "/tmp/gpu-smt-resource-pair-repair-20261027T032050/original7808.json",
+    "one_collection_at_a_time": "caller must retire its previous owning collection before running",
+    "order": [
+      "native",
+      "prepared"
+    ],
+    "prepared_host": "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+    "project": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+    "repl": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+    "resources": {
+      "cores_per_worker": 1,
+      "cpus": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "memory_bytes": 51539607552
+    },
+    "scope": "same API/native input/resources; prior resource mechanisms are not novelty",
+    "sysroot": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux"
+  },
+  "previous_qualification": "/tmp/gpu-smt-resource-timely-reply24-20261028T115820Z",
+  "decision": "prepared only; root must review actual24 result before starting",
+  "state": "root-reviewed-for-full-pair",
+  "transport": "official Manager/run_checks versus engine CLI; no HTTP transport",
+  "timeout_ms": 300000,
+  "reuse": false,
+  "order": [
+    "warm",
+    "engine"
+  ],
+  "limits": "one selected serial whole-population pair; no workload policies or new deadline/thread/resource settings",
+  "review_utc": "2026-10-28T12:24:55.886441+00:00",
+  "qualification_raw_source": "artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z",
+  "known_operational_differences": [
+    {
+      "id": "minif2f-2507",
+      "warm_raw": "lean_error",
+      "warm": "rejected",
+      "engine": "timeout"
+    },
+    {
+      "id": "minif2f-7230",
+      "warm_raw": "lean_error",
+      "warm": "rejected",
+      "engine": "timeout"
+    }
+  ],
+  "root_decision": "Measure requested full population after lower selected elapsed and accepted-set parity;do not claim complete observable parity or full gain. No failure/scheduling/LRAT layer enabled.",
+  "source_ci": {
+    "engine": 40683600648,
+    "benchmark_smoke": 40683600581,
+    "state": "completed success"
+  },
+  "qualification_result_commit": "8327e96352968149cc8a3581b8a03e4b5d5ea137"
+}

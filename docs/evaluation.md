@@ -99,6 +99,13 @@ explicit matched native-library selection. The corrected fixed42 cohort is
 prepared/rebound to13d4606 and remains unstarted until the current pair retires
 and is reviewed. Do not report old41/1as a new run.
 
+[Complete four-warm full7808 leg](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
+now returns3014valid/4668lean_error/85timeouts/41budget failures in25176.487277s
+external wall. All7860attempts,52solo retries,raw replies/RSS/kill records
+are retained. Peak48.768776GiB includes sampled overshoot. Engine13dstarted
+after warm retirement;no full-pair ratio or accepted/status comparison yet.
+Immediate-warm versus frontier-engine retry order remains a causal caveat.
+
 ## Own load-aware methods
 
 [TaskMemory32](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/README.md):

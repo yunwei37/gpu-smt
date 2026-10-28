@@ -501,3 +501,16 @@ bv_decide,with per-file Batch boundaries and original contexts still required.
 Real preparation byte-matches2,240,762source bytes;no Lean runs. This makes the
 next code-workload input concrete without introducing another runner or
 mistaking the one completed module for full coverage.
+
+
+## 19:37UTC — charge actual retries before claiming utilization
+
+The full7808four-warm leg actually ends and its329raw/source files are
+losslessly retained in step0116. Its52exclusive attempts cost12106.916135s;
+41remain budget failures with47.55–47.78GiBvictim RSS at preemption.
+Those observations cannot reserve a safe future peak or guarantee backfill.
+Ordinary-frontier deferral is already implemented and regression-tested;
+avoid creating it again. The same finite program now runs frozenengine13d.
+The most useful next result is the complete equal-resource pair with all
+acceptance/status/resource differences and retry-order caveat,then fixed42.
+No extra source layer or native acquisition is justified while it runs.
