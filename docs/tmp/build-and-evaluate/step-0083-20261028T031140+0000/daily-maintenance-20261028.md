@@ -132,3 +132,18 @@ compression on CPU11adds disclosed contention to this nonfinal FIFOdiagnostic;
 it is not part of future warm efficacy. No nativewriter,resource boundary or
 Workspace setting changes. The known failing source remains in the pending
 paired qualifier,not hidden by freeing space.
+
+## Disjoint singleton attribution and a separate resource fix
+
+The10,375.98singletonseconds are86.01%actualexclusive retries,11.88%inferred
+peer-drain/pendingretry,2.10%finaltimeouttail,and0.0041%remaining. Spare cores
+under the required exclusive48GiBretry are not evidence of a conservative
+forecast bug. Do not discard mandatory checks or relax memory to claim parity.
+
+Separately,warm queued requests cache an obsoleteglobalmedian. Refresh it at
+actualadmission,keeping explicitpolicyforecasts. The realengine regression
+fails with the oldblock and passes fixed;56tests/clippy/fmt and newrelease build
+succeed. No secondnativecapture. Paper localresults/limitations compile and
+page13is visuallychecked. Actual matchedwarmqualification remains pending;source
+test success is not resourceparity. Continue actual resource-fault work using
+retained evidence while the sole native group completes.

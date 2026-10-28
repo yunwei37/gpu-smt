@@ -611,11 +611,11 @@ impl Inner {
             if tx.is_closed() {
                 break Outcome::operational(Status::Cancelled, "no live subscribers");
             }
-            let predicted = self.policy.predicted_rss(&c).or_else(|| {
-                let mut peaks = self.observed_peaks.lock().unwrap().clone();
-                peaks.sort_unstable();
-                peaks.get(peaks.len() / 2).copied()
-            });
+            // Only a policy-supplied forecast belongs to this request.
+            // The learned global fallback is refreshed inside acquire after
+            // reaching the queue head; caching it here strands warm queued
+            // requests on an obsolete median even as newer observations fall.
+            let predicted = self.policy.predicted_rss(&c);
             let exclusive = solo || predicted.is_some_and(|n| n >= self.config.memory_bytes);
             let _solo = if exclusive {
                 self.state.lock().unwrap().solo_waiters += 1;
@@ -1130,5 +1130,130 @@ mod shutdown_admission_tests {
         assert_eq!(result[0].outcome.status, Status::BackendError);
         assert!(result[0].attempts.is_empty());
         assert!(engine.0.state.lock().unwrap().active.is_empty());
+    }
+}
+
+#[cfg(test)]
+mod admission_fallback_tests {
+    use super::*;
+    use async_trait::async_trait;
+    use std::sync::atomic::AtomicUsize;
+    use std::time::Duration;
+
+    struct UnknownPolicy(Arc<AtomicUsize>);
+    impl SchedulingPolicy for UnknownPolicy {
+        fn priority(&self, _: &Candidate) -> u64 {
+            0
+        }
+        fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+            self.0.fetch_add(1, Ordering::SeqCst);
+            None
+        }
+    }
+    struct EmptyMonitor;
+    impl ResourceMonitor for EmptyMonitor {
+        fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+            Ok(ResourceSnapshot::default())
+        }
+    }
+    struct Backend {
+        predictions: Arc<AtomicUsize>,
+        entered_tail: Arc<AtomicUsize>,
+        tail_changed: Arc<Notify>,
+        release: CancellationToken,
+    }
+    #[async_trait]
+    impl VerificationBackend for Backend {
+        fn identity(&self) -> String {
+            "warm-global-fallback-regression".into()
+        }
+        async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+            if c.id == "0" {
+                // All five requests must have queued while the old fallback
+                // was60. The first two real completions then lower its median.
+                while self.predictions.load(Ordering::SeqCst) < 5 {
+                    tokio::task::yield_now().await;
+                }
+            } else if c.id != "1" {
+                self.entered_tail.fetch_add(1, Ordering::SeqCst);
+                self.tail_changed.notify_waiters();
+                tokio::select! {
+                    _ = self.release.cancelled() => {},
+                    _ = x.cancel.cancelled() => {},
+                }
+            }
+            x.registry.observe_rss(1);
+            Outcome {
+                status: Status::Accepted,
+                response: Some(serde_json::json!({"env":0})),
+                error: None,
+            }
+        }
+    }
+    #[tokio::test]
+    async fn queued_unknown_requests_refresh_a_falling_warm_fallback() {
+        let predictions = Arc::new(AtomicUsize::new(0));
+        let entered_tail = Arc::new(AtomicUsize::new(0));
+        let tail_changed = Arc::new(Notify::new());
+        let release = CancellationToken::new();
+        let backend = Arc::new(Backend {
+            predictions: predictions.clone(),
+            entered_tail: entered_tail.clone(),
+            tail_changed: tail_changed.clone(),
+            release: release.clone(),
+        });
+        let engine = Engine::new(
+            Config {
+                memory_bytes: 100,
+                cpus: vec![0, 1, 2],
+                cores_per_worker: 1,
+            },
+            backend,
+            Arc::new(UnknownPolicy(predictions)),
+            Arc::new(EmptyMonitor),
+            Arc::new(HeadroomAdmission),
+            Arc::new(MemoryCache::default()),
+        )
+        .unwrap();
+        engine.0.observed_peaks.lock().unwrap().push(60);
+        let worker = engine.clone();
+        let batch = tokio::spawn(async move {
+            worker
+                .verify_batch(Batch {
+                    mode: Mode::All,
+                    candidates: (0..5)
+                        .map(|i| Candidate {
+                            id: i.to_string(),
+                            task_id: None,
+                            code: format!("fixture-{i}"),
+                            timeout_ms: 10000,
+                            reuse: false,
+                        })
+                        .collect(),
+                })
+                .await
+                .unwrap()
+        });
+        let concurrent = tokio::time::timeout(Duration::from_secs(2), async {
+            loop {
+                let changed = tail_changed.notified();
+                if entered_tail.load(Ordering::SeqCst) == 3 {
+                    break;
+                }
+                changed.await;
+            }
+        })
+        .await
+        .is_ok();
+        // Also cleanly retire the fixture if the stale-forecast bug regresses.
+        release.cancel();
+        let results = batch.await.unwrap();
+        engine.shutdown().await;
+        assert_eq!(results.len(), 5);
+        assert!(results.iter().all(|v| v.outcome.status == Status::Accepted));
+        assert!(
+            concurrent,
+            "queued fallback must refresh from60 to1 instead of serializing the remaining three jobs"
+        );
     }
 }

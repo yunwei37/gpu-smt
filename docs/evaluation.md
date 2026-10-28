@@ -86,6 +86,22 @@ The sourcefix also passes pinnedLean4.18native-protocol CI,not the pending4.9
 resource comparison. Further policy/failure gains remain deferred. Historical42solo
 results are preserved;the requested repaired-point42cohort follows resource work.
 
+[Disjoint singleton decomposition](tmp/build-and-evaluate/step-0088-20261028T053756+0000/experiment-001/result-review.md)
+now accounts for10,375.984325s(onechild,45.326784%of its own prepared cell):
+8924.778203s actualexclusive retries(86.013798%of singleton time),
+1232.447705s while another source's retry is pending/inferred(11.877887%),
+218.331456s finaltimeout7771tail(2.104200%),and0.426961s unclassified with
+unstarted native work(0.004115%). These categories are disjoint within singleton
+occupancy. Retry-pending is a retirement→next-native-registration proxy,not a
+logged admission state;process occupancy is not CPU or removable time.
+No evidence attributes most historical singleton time to conservative estimates.
+
+A separate stale-global-fallback defect is fixed:queued requests keep explicit
+policy forecasts,while the learned globalmedian is refreshed at admission.
+A real-engine concurrency fixture and56workspace tests/doctest,clippy/fmtpass.
+This is a resource-layer repair without a new policy or measured native speedup.
+The current frozenFIFOis unchanged;the next native version must remain explicit.
+
 ## Own load-aware methods
 
 [TaskMemory](tmp/build-and-evaluate/step-0071-20261027T035144+0000/step-report.md)

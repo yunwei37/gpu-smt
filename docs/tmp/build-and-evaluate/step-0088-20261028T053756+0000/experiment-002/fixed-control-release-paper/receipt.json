@@ -1,0 +1,60 @@
+{
+  "UTC": "2026-10-28T05:46:02.977875+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "-p",
+        "gpu-smt-engine",
+        "--lib",
+        "admission_fallback_tests::queued_unknown_requests_refresh_a_falling_warm_fallback",
+        "--",
+        "--exact"
+      ],
+      "exit": 0,
+      "seconds": 2.010359498905018
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "build",
+        "--release",
+        "-p",
+        "gpu-smt-server",
+        "--bin",
+        "gpu-smt"
+      ],
+      "exit": 0,
+      "seconds": 26.02885453007184
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "11",
+        "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+        "/workspaces/repository/docs/paper/main.tex",
+        "--outdir",
+        "/tmp/gpu-smt-paper-singleton-20261028",
+        "--keep-logs"
+      ],
+      "exit": 0,
+      "seconds": 3.0051003869157284
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 31.044371730880812,
+  "samples": 37,
+  "combined_peak_rss_bytes": 7695335424,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "rust_resource_regression_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "test_or_lint_commands": 3
+}

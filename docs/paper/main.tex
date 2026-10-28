@@ -747,6 +747,21 @@ with development support work on CPU 11 during collection. It does not isolate
 a causal effect, establish superiority over the strongest warm service,
 or make established preparation and copy-on-write mechanisms novel.
 
+\paragraph{Interpreting low concurrency.}
+Registered native process lifetimes account for 10,375.98 seconds with one
+candidate child active, 45.33\% of the prepared cell.
+Of that singleton time, 8,924.78 seconds (86.01\%) execute exclusive resource
+retries, 1,232.45 seconds (11.88\%) fall between another preempted attempt's
+retirement and its retry's native registration, and 218.33 seconds (2.10\%)
+are the final timeout tail after all first native starts.
+Only 0.43 seconds remain outside these disjoint categories.
+The retry-wait interval is inferred from lifecycle boundaries, rather than
+directly observed admission-state transitions.
+These are occupied process intervals, not CPU utilization or removable wall
+time; they do not establish conservative forecasting as the cause of most
+singleton time. The required exclusive-retry contract and a matched warm
+comparison must be retained when evaluating resource-layer changes.
+
 \paragraph{Measured sibling-memory development comparison.}
 An opt-in policy retains observed physical-attempt RSS peaks by task,
 backend/resource context and timeout, and refreshes waiting reservations.

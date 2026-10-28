@@ -76,6 +76,15 @@ history-dependent scanning,not the still-unmeasured whole-verification overhead.
 preserves both failed test attempts and four locallyignored real-Lean tests.
 The existing frozen FIFOchild is unchanged;new native qualification is pending.
 
+Queued jobs now retain only their explicit policy forecast. The global learned
+median stays a fallback refreshed at queue-head admission;it is no longer frozen
+from warm batch submission when later physical peaks fall. The regression queues
+five jobs under60,records two peak1completions,then requires all remaining three
+to admit together under the same100budget/three virtualslots. Resource deadlines,
+ranking,watchdog and exclusive retry remain. [Source/test scope](tmp/build-and-evaluate/step-0088-20261028T053756+0000/experiment-002/result-review.md)
+does not establish actual Lean throughput. Historical singleton occupancy is
+mostly exclusive retry and drain/tail work,not shown to result from this bug.
+
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive
 attempt. An otherwise idle queue also promotes a forecast that cannot fit
