@@ -145,3 +145,20 @@ and retain failures if any. Complete the same existing full native pair by its
 exit event,review accepted/status/resource/lifecycle evidence,then original42.
 Additional code-file contexts and measurements remain later work under the same
 single-group budget. The full goal remains active.
+
+## Final source qualification — completed
+
+Exact sourceafb1812passes actual benchmark-smoke run40752171812,job123041472063.
+The full raw job log records41unittests in0.429s,including the three new input
+controls;all subsequent existing smoke/validation/artifact steps complete
+successfully. [Run](https://github.com/yunwei37/gpu-smt/actions/runs/40752171812),
+[source-CI summary](source-ci/summary.json),complete job/run metadata and
+losslessly retained log are actual evidence. Rust/native CI is path-filtered
+out because those sources did not change;no skipped native result is called
+a pass. This is source/format qualification,not execution of the18modules.
+
+The actual CI conclusion resolves this step's prior pending qualification.
+Only CI evidence and these report updates follow that tested source;the
+preparer,tests,prepared source bytes and native acquisition remain unchanged.
+Independent review remains absent. Continue the same native full-pair terminal
+and42priority;no RQ or performance claim is closed by41unit tests.

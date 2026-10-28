@@ -37,3 +37,9 @@ and the paper are unchanged;complete novelty/independent review and actual nativ
 population/performance evidence remain missing. Existing CI must be read before
 any green qualification claim. Goal stays active and native completion remains
 the next decisive experimental boundary.
+
+Actual source CI now completes successfully atafb1812:41Python controls and
+the existing smoke validations pass. Complete logs and terminal metadata were
+read and retained;the new input tests are not counted as native Lean proofs.
+No source repair or new native cohort followed qualification. Evidence-only
+publication does not extend those test claims to other native contexts.
