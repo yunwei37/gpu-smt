@@ -33,3 +33,5 @@ The response/retirement fix remains unmeasured on the real24 candidates.
 Preserve original300-second budgets and all reference clocks/failures. Native
 CI and a separately pinned unchanged24 run follow; do not claim this caused
 the previous2507/7230 timeouts or achieved full-population parity.
+
+Current strict-receipt source13d4606 now also completes engine CI40683600648 (Rust and native-repl-contract) and benchmark-smoke40683600581 successfully. Exact metadata is in experiment-001/strict-receipt-source-ci/. Step0101 owns the actual native24 qualification; it remains pending.

@@ -125,8 +125,11 @@ The initial native qualifier predates this change. Its
 takes1347.584488s:12.534567%below oldengine and5.807954%below retainedwarm.
 All24rawoutcomes match oldengine,including its twoextra timeouts versuswarm.
 This selected/sharedhost/reference comparison is not representative throughput
-or complete observable parity. Response/retirement semantics are the next
-bounded source/control question,not a proved cause of those timeouts.
+or complete observable parity. The [reply/retirement inconsistency](tmp/build-and-evaluate/step-0100-20261028T113528+0000/step-report.md)
+is now confirmed by an old-code failing real-process control and fixed without
+extending the response budget. Source13d4606 passes Rust and five native Lean
+CI controls;[its unchanged24 qualification](tmp/build-and-evaluate/step-0101-20261028T115820+0000/step-report.md)
+is actually running. No effect on the two real timeouts is claimed yet.
 [Historical growthanalysis](tmp/build-and-evaluate/step-0096-20261028T103651+0000/experiment-001/result-review.md)
 shows41resource retries have>47.5GiBnativepeak lowerbounds but4658/7389exclusive-
 alone samples stillhave>=16GiBaggregateheadroom. Samples are not time shares,
