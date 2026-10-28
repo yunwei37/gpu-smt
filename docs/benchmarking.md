@@ -83,9 +83,11 @@ The [prepared real32development input](../artifacts/engine-resource-profile-2026
 preserves exact original candidate bytes/fields and prior outcomes. It uses
 outcome-informed heavy/ordinary task selection,not an unbiased full workload.
 The [current release/preflight and real32 comparison](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/README.md)
-now builds and freezes the executable after prior owners retire;both actual
-ordinary-source preflights match native outcomes. The full32pair is running,
-not complete. The earlier competing build failure stays historical evidence.
+now completes both32-source cells:2832.462187/2169.738637s,exactly equal raw
+outcomes(16accepted/7rejected/9resource failures),41/37attempts and9/5retries.
+Selection is biased toward the tail;this is not fullpopulation or strongestwarm
+evidence. Both sampledRSSpeaks exceed48GiB;1s response is not a hardquota.
+The earlier competing build failure stays historical evidence.
 Do not replace a healthy frozen executable or interpret a prefix as a full pair.
 
 ## Pair completed captures

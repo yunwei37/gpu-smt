@@ -39,4 +39,4 @@ facts;the original preparation/failed-build records remain unchanged.
 
 ## Later execution update
 
-[New release/preflight and real32 run](../task-memory32-20261027T193536Z/README.md) now builds/fixes the executable after prior owners retire. Both ordinary native preflights match;the full pair is running. The previous interrupted build/readiness receipts above remain historical evidence,not current execution status. No final performance result yet.
+[New release/preflight and real32 run](../task-memory32-20261027T193536Z/README.md) now builds/fixes the executable after prior owners retire. Both ordinary native preflights and the complete32-source pair now finish with exact native outcome equality;the scoped result is1.305439346x. Selection remains outcome-informed,not representative whole-population evidence. The previous interrupted build/readiness receipts above remain historical evidence,not current execution status. The complete development result is available at that link;representative prepared-backend validation remains next.

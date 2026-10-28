@@ -1,0 +1,213 @@
+{
+  "accepted_set_only_baseline": [],
+  "accepted_set_only_candidate": [],
+  "all_candidate_status_parity_applicable": true,
+  "all_candidate_statuses_equal": true,
+  "backend_identity_equal": true,
+  "baseline": {
+    "accepted_ids": [
+      "minif2f-7328",
+      "minif2f-7329",
+      "minif2f-7330",
+      "minif2f-7331",
+      "minif2f-7332",
+      "minif2f-7333",
+      "minif2f-7334",
+      "minif2f-7335",
+      "minif2f-7488",
+      "minif2f-7489",
+      "minif2f-7490",
+      "minif2f-7491",
+      "minif2f-7492",
+      "minif2f-7493",
+      "minif2f-7494",
+      "minif2f-7495"
+    ],
+    "attempt_counts_scope": "per-caller histories; coalesced callers may repeat the same physical attempt",
+    "attempt_peak_rss_scope": "maximum of registered-tree samples and backend supplements; observation kinds in backend_events when recorded; older untyped supplements remain unknown; not aggregate RSS or complete kernel tree high-water; sampled_peak_attempt_rss_bytes is a legacy alias",
+    "attempt_seconds_per_candidate": {
+      "count": 32,
+      "max": 434.988558695,
+      "p50": 4.564639094,
+      "p90": 427.815829936,
+      "p99": 434.988558695
+    },
+    "attempts": 41,
+    "cached": 0,
+    "candidates_per_second": 0.01129761305994844,
+    "candidates_per_second_scope": "returned consumer rows including cancelled/cache/coalesced results, not fresh native check throughput",
+    "coalesced": 0,
+    "completion_latency_seconds": {
+      "count": 32,
+      "max": 2832.455914115,
+      "p50": 2777.63476168,
+      "p90": 2825.193698701,
+      "p99": 2832.455914115
+    },
+    "declared_task_count": 4,
+    "fresh_fallback_event_rows": 0,
+    "internal_solved_task_latency_seconds": {
+      "count": 2,
+      "max": 2819.354849957,
+      "p50": 2786.892020839,
+      "p90": 2819.354849957,
+      "p99": 2819.354849957
+    },
+    "internal_task_first_success_seconds": {
+      "aime_1983_p2": 2786.892020839,
+      "aime_1989_p8": 2819.354849957
+    },
+    "lifecycle_seconds": 2832.456717202,
+    "peak_attempt_observed_rss_bytes": 51755626496,
+    "preemptions": 9,
+    "returned_candidates_per_second": 0.01129761305994844,
+    "sampled_peak_attempt_rss_bytes": 51755626496,
+    "solved_tasks": [
+      "aime_1983_p2",
+      "aime_1989_p8"
+    ],
+    "statuses": {
+      "accepted": 16,
+      "rejected": 7,
+      "resource_exhausted": 9
+    },
+    "task_latency_scope": "internal acceptance availability after batch submission, including queue/retry/retirement; solved tasks only, unsolved IDs explicit; not streamed client delivery",
+    "unsolved_tasks": [
+      "amc12a_2020_p4",
+      "mathd_numbertheory_483"
+    ]
+  },
+  "baseline_cores_per_worker": 1,
+  "baseline_mode": "all",
+  "baseline_policy": "fifo",
+  "candidate": {
+    "accepted_ids": [
+      "minif2f-7328",
+      "minif2f-7329",
+      "minif2f-7330",
+      "minif2f-7331",
+      "minif2f-7332",
+      "minif2f-7333",
+      "minif2f-7334",
+      "minif2f-7335",
+      "minif2f-7488",
+      "minif2f-7489",
+      "minif2f-7490",
+      "minif2f-7491",
+      "minif2f-7492",
+      "minif2f-7493",
+      "minif2f-7494",
+      "minif2f-7495"
+    ],
+    "attempt_counts_scope": "per-caller histories; coalesced callers may repeat the same physical attempt",
+    "attempt_peak_rss_scope": "maximum of registered-tree samples and backend supplements; observation kinds in backend_events when recorded; older untyped supplements remain unknown; not aggregate RSS or complete kernel tree high-water; sampled_peak_attempt_rss_bytes is a legacy alias",
+    "attempt_seconds_per_candidate": {
+      "count": 32,
+      "max": 442.10265745699996,
+      "p50": 4.590895991,
+      "p90": 253.35990886800002,
+      "p99": 442.10265745699996
+    },
+    "attempts": 37,
+    "cached": 0,
+    "candidates_per_second": 0.014748342844441013,
+    "candidates_per_second_scope": "returned consumer rows including cancelled/cache/coalesced results, not fresh native check throughput",
+    "coalesced": 0,
+    "completion_latency_seconds": {
+      "count": 32,
+      "max": 2169.734572009,
+      "p50": 2139.651518114,
+      "p90": 2163.76471141,
+      "p99": 2169.734572009
+    },
+    "declared_task_count": 4,
+    "fresh_fallback_event_rows": 0,
+    "internal_solved_task_latency_seconds": {
+      "count": 2,
+      "max": 2160.79384621,
+      "p50": 2148.848317122,
+      "p90": 2160.79384621,
+      "p99": 2160.79384621
+    },
+    "internal_task_first_success_seconds": {
+      "aime_1983_p2": 2148.848317122,
+      "aime_1989_p8": 2160.79384621
+    },
+    "lifecycle_seconds": 2169.735294163,
+    "peak_attempt_observed_rss_bytes": 51743993856,
+    "preemptions": 5,
+    "returned_candidates_per_second": 0.014748342844441013,
+    "sampled_peak_attempt_rss_bytes": 51743993856,
+    "solved_tasks": [
+      "aime_1983_p2",
+      "aime_1989_p8"
+    ],
+    "statuses": {
+      "accepted": 16,
+      "rejected": 7,
+      "resource_exhausted": 9
+    },
+    "task_latency_scope": "internal acceptance availability after batch submission, including queue/retry/retirement; solved tasks only, unsolved IDs explicit; not streamed client delivery",
+    "unsolved_tasks": [
+      "amc12a_2020_p4",
+      "mathd_numbertheory_483"
+    ]
+  },
+  "candidate_cores_per_worker": 1,
+  "candidate_mode": "all",
+  "candidate_policy": "task-memory",
+  "changed_statuses": [],
+  "lifecycle_speedup": 1.3054388361667189,
+  "limits": "Lifecycle includes input/runtime/native retirement; excludes record serialization and executable loading. Keep external controller time and stderr resource logs. Pins and clocks are recorded claims, not independent authentication. First-success cancellation is not every-candidate RL parity. No speedup is admissible from ratios alone.",
+  "raw_payload_changed_ids": [],
+  "reuse_option_changed_ids": [],
+  "solved_tasks_only_baseline": [],
+  "solved_tasks_only_candidate": [],
+  "tails": [
+    {
+      "baseline_attempt_seconds_sum": 434.988558695,
+      "baseline_slowest_percent": 1,
+      "candidate_attempt_seconds_sum": 213.067156875,
+      "candidate_statuses": [
+        {
+          "id": "minif2f-3685",
+          "status": "resource_exhausted"
+        }
+      ],
+      "ids": [
+        "minif2f-3685"
+      ],
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    },
+    {
+      "baseline_attempt_seconds_sum": 1721.7494160610001,
+      "baseline_slowest_percent": 10,
+      "candidate_attempt_seconds_sum": 1079.036848199,
+      "candidate_statuses": [
+        {
+          "id": "minif2f-3685",
+          "status": "resource_exhausted"
+        },
+        {
+          "id": "minif2f-3686",
+          "status": "resource_exhausted"
+        },
+        {
+          "id": "minif2f-3687",
+          "status": "resource_exhausted"
+        },
+        {
+          "id": "minif2f-3682",
+          "status": "resource_exhausted"
+        }
+      ],
+      "ids": [
+        "minif2f-3685",
+        "minif2f-3686",
+        "minif2f-3687",
+        "minif2f-3682"
+      ],
+      "ranking": "sum of native attempt wall durations, excluding queue; overlapping sums are not lifecycle"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "collected_utc": "2026-10-28T03:11:40.081170+00:00",
+  "cells": {
+    "fifo": {
+      "statuses": {
+        "rejected": 7,
+        "resource_exhausted": 9,
+        "accepted": 16
+      },
+      "external_seconds": 2832.46218681382,
+      "archival_seconds": 0.020198604092001915,
+      "external_plus_archive": 2832.482385417912,
+      "lifecycle_seconds": 2832.456717202,
+      "attempts": 41,
+      "retry_attempts": 9,
+      "exclusive_attempts": 11,
+      "watchdog_marked_attempts": 18,
+      "sampled_aggregate_peak_bytes": 52348551168,
+      "sampled_aggregate_peak_GiB": 48.753387451171875,
+      "over_budget_samples": 18,
+      "resource_failure_errors": {
+        "aggregate RSS watchdog preemption": 9
+      }
+    },
+    "task-memory": {
+      "statuses": {
+        "rejected": 7,
+        "resource_exhausted": 9,
+        "accepted": 16
+      },
+      "external_seconds": 2169.738637159113,
+      "archival_seconds": 0.017949661007151008,
+      "external_plus_archive": 2169.75658682012,
+      "lifecycle_seconds": 2169.735294163,
+      "attempts": 37,
+      "retry_attempts": 5,
+      "exclusive_attempts": 10,
+      "watchdog_marked_attempts": 14,
+      "sampled_aggregate_peak_bytes": 52139773952,
+      "sampled_aggregate_peak_GiB": 48.5589485168457,
+      "over_budget_samples": 14,
+      "resource_failure_errors": {
+        "aggregate RSS watchdog preemption": 9
+      }
+    }
+  },
+  "selection": "outcome-informed32development sources,not unbiased final population",
+  "all_outcomes_raw_equal": true,
+  "external_ratio": 1.3054393456911595,
+  "elapsed_reduction_percent": 23.397436786267978,
+  "attempt_count_changed": [
+    {
+      "id": "minif2f-3683",
+      "fifo_attempts": 2,
+      "task_memory_attempts": 1,
+      "final_status": "resource_exhausted"
+    },
+    {
+      "id": "minif2f-3685",
+      "fifo_attempts": 2,
+      "task_memory_attempts": 1,
+      "final_status": "resource_exhausted"
+    },
+    {
+      "id": "minif2f-3686",
+      "fifo_attempts": 2,
+      "task_memory_attempts": 1,
+      "final_status": "resource_exhausted"
+    },
+    {
+      "id": "minif2f-3687",
+      "fifo_attempts": 2,
+      "task_memory_attempts": 1,
+      "final_status": "resource_exhausted"
+    }
+  ],
+  "retirement": {
+    "fullcell_recorded_native_and_cli_births": 80,
+    "matching_live_non_zombie": [],
+    "controller_486935_exists": false
+  }
+}

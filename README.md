@@ -146,7 +146,7 @@ reward collection. Existing comparisons and all raw data remain.
 
 ## Collection resources
 
-The **next resource point** keeps **48 GiB total actual RSS**, removes fixed
+The **current resource point** keeps **48 GiB total actual RSS**, removes fixed
 per-process address-space caps, and jointly admits candidates by measured
 memory and CPU demand on CPUs8–11. A15-second observation of existing REPLs
 finds one active thread/~one core per worker, motivating up to four workers
@@ -188,6 +188,13 @@ their results are not pooled with this resource point.
 
 
 The [own closed-CNF whole-module test](artifacts/lean-code-verification-2026-10-25/shared-cnf-original-20261027T192501Z/result-review.md) also completes: native40.15s,import-only40.34s,core57.98s,public56.91s. All four verify successfully,but the method is slower in this observation. It remains an explicit research prototype;no default enablement or GPU-gain claim.
+
+The [own measured-sibling memory development pair](artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/result-review.md)
+completes32originals:2,832.46s FIFO versus2,169.74s feedback(23.40%less elapsed),
+with exactly equal native outcomes:16accepted,7rejected,9resource failures.
+Retries fall9→5. This tail-selected,single-order development result does not
+establish whole-population performance or novelty;48GiB sampled budgets still
+overshoot. The next validation composes feedback with preparedMathlib.
 
 ## Completed measurements
 

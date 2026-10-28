@@ -65,10 +65,14 @@ heterogeneous siblings can overreserve. Default FIFO remains unchanged.
 preserves16prioraccepted/7rejected/9resource-failed sources in original order.
 Selection is outcome-informed,not final representative evidence. The
 [current release/preflight and real32 run](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/README.md)
-now follows complete prior-owner retirement. Release12.010628s succeeds;
-both actual2-source preflights accept with equal native outcomes. Full FIFO
-then task-memory is running;no fullpair/throughput result yet. The prior
-competing guard-killed build remains archived.
+now completes:2832.462187s FIFO/2169.738637s task-memory(1.305439346x,
+23.397437%less elapsed),with exact raw outcomes and16accepted/7rejected/
+9resource-failed IDs. Physical attempts41→37,retries9→5;fourheavy sources
+now execute directly solo and still hit the actual watchdog. Both sampled
+peaks overshoot48GiB(48.753387/48.558949),not a hardquota. Allowners retire.
+Outcome-informed cohort,singleorder/sharedhost andCPU11analysis limit scope:
+not fullpopulation/strongestwarm/novelty evidence. The old failedrelease stays.
+Next representative policy comparison composes feedback atop preparedMathlib.
 
 [Whole-task lexical memory fit](../artifacts/engine-resource-profile-2026-10-25/source-memory-crossfit-20261027/README.md)
 is negative:MAE0.606624GiB versus median0.352486;all41resource/44preempted sources
@@ -142,5 +146,5 @@ SMT-prefix results remain frozen and linked in history.
 is preserved byte-for-byte;its links were authored from docs/evaluation.md.
 [Readable pinned parent](https://github.com/yunwei37/gpu-smt/blob/606a4b5/docs/evaluation.md)
 keeps that location and links earlier archives. Current [paper](paper/main.tex)
-remains an incomplete35page research draft;all fourRQ evidence/novelty coverage
+remains an incomplete36page research draft;all fourRQ evidence/novelty coverage
 and independent audit remain open.

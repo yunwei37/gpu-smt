@@ -1,22 +1,17 @@
-# Real32 FIFO/task-memory development comparison — running
+# Real32FIFO/task-memory development comparison — complete
 
-Release8045cca builds successfully after all prior native owners retire:
-12.010628s,336,310,272B sampled build-group peak,no guard kill.
-The run copies/fixes this executable outside Cargo target. Original prior
-guard-killed release attempt remains preserved,not reused.
+[Full result/self-review](result-review.md):2832.462187s FIFO/2169.738637s
+task-memory(1.305439346x,23.397437%less elapsed). Both16accepted/7rejected/
+9resource failures,with exactly equal raw native outcomes and accepted IDs.
+Physical attempts41→37,retries9→5. Four sources go directly to actual solo
+verification instead of an initial preemption plus retry;allstillfail by the
+watchdog. No verdict is predicted or reused.
 
-Real preflight on originals7328/7329accepts both under FIFO and task-memory,
-with identical native outcomes and all4native births retired. This engagement
-does not test heavy memory feedback or prove a speedup.
-
-The full32input is the exact prepared outcome-informed heavy/ordinary cohort,
-all/reusefalse/300s,pinned native4.9Mathlib,48GiB actualRSS/CPU8–11/fourone-core
-dynamic leases,noAScap. FIFO starts,then task-memory starts after cell retirement.
-Each policy history starts cold;no prior result or memory peak is injected.
-Raw streams use existing/tmp location in launch.json;do not replace executable,
-SDK or input mid-run. Existing measure/compare/archival,no new scheduler/AI.
-
-No complete fullpair/accepted-set/throughput result yet. Selection bias,observed
-peak censoring,conservative reservation,fixed-order shared host and1s watchdog
-overshoot limit interpretation. Source policy is opt-in;no default enablement,
-novelty or strongest-warm-service claim. Root execution/self-review only.
+This is a fixed outcome-informed heavy/ordinary development cohort,not
+representative7808,causalreplication,strongest warm-service superiority or
+novelty. Both sampled peaks overshoot48GiB(48.75/48.56);the1s watchdog is not
+a hardquota. All80fullcell CLI/native identities,preflights/controller retired.
+Historical launch/setup/failedrelease receipts remain unchanged and dated.
+Raw completed data/comparison/analysis/ingestion and allfailure histories remain.
+Next policy validation uses complete original population and prepared Mathlib.
+Root execution/self-review only;no independent audit or RQclosure.

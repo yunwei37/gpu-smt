@@ -29,7 +29,7 @@ versioned; production stability is not asserted.
 
 ## Resource layer
 
-The next resource point uses48GiB aggregate actual RSS, no per-worker address
+The current resource point uses48GiB aggregate actual RSS, no per-worker address
 space cap, CPU8–11. Concurrency derives from measured active CPU per worker.
 Unknown-memory jobs start conservatively; observed context peaks guide future
 admission. Predictions are reservations, not a hard memory guarantee.
@@ -115,8 +115,9 @@ are still required. Causal fixture tests establish queue refresh/composition,
 not native benefit, safe memory prediction or a scientific novelty result.
 Pinned4.18native CI now executes feedback/response/retirement controls;
 [exact evidence](tmp/build-and-evaluate/step-0072-20261027T044950+0000/experiment-001/result-review.md)
-is separate from original4.9workload/performance qualification,which still
-waits until the current frozen full pair retires.
+is separate from the [completed original4.9development pair](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/result-review.md):
+all32rawoutcomes match,with fourfewer retries in a tail-selected cohort.
+Representative throughput atop preparedMathlib remains unmeasured.
 
 RL mode produces every candidate outcome. Pass@k cancels siblings only after an
 actually checked same-task acceptance. Cancellation is a consumer outcome, never
@@ -148,8 +149,11 @@ matrix retains its frozen source/resource point;new-rule data are separate.
 - artifacts/, results/, bench/, tools/: retained research data and experiments.
 - docs/paper/: current manuscript.
 
-The complete new-resource native cell reports one historical accepted-set
-regression; its prepared cell failed with ENOSPC and remains a partial record.
-The42 exclusive retries are complete:41 budget failures and one timeout,
-with no acceptance. Full Mathlib COW qualification, accepted-set parity,
-valid complete throughput pairs and multi-node measurements remain open. Tests/CI do not prove a systems contribution or venue acceptance.
+The earlier native-complete/prepared-ENOSPC pair remains partial. The later
+[complete frozen7808resource pair](../artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/result-review.md)
+has equal status/accepted sets,with a disclosed emptyAST-envelope difference,
+operationalerror-string changes and1.24028x descriptive own-engine ratio.
+One historical acceptance still times out across different resource points.
+The42solo reruns remain41budgetfailures/1timeout. Broaderartifact/strongestwarm
+coverage,representative load-aware results and actual multi-node measurements
+remain open. Tests/CI do not prove contribution or venue acceptance.

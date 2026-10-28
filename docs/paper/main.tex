@@ -747,6 +747,30 @@ with development support work on CPU 11 during collection. It does not isolate
 a causal effect, establish superiority over the strongest warm service,
 or make established preparation and copy-on-write mechanisms novel.
 
+\paragraph{Measured sibling-memory development comparison.}
+An opt-in policy retains observed physical-attempt RSS peaks by task,
+backend/resource context and timeout, and refreshes waiting reservations.
+It preserves FIFO ranking and performs native checking even when a forecast
+exceeds the budget. A development cohort selects the first eight original
+candidates from each of two resource-heavy and two ordinary tasks, restoring
+their original order. This selection uses prior outcomes and is not an unbiased
+sample of the full population.
+
+With cold policy histories and identical native Lean~4.9 sources, deadlines,
+reuse settings and four-core/48\,GiB resources, FIFO takes 2,832.46 seconds
+and feedback 2,169.74 seconds, including output serialization and retirement.
+The descriptive ratio is $1.30544\times$ (23.40\% less elapsed).
+Both cells have exactly equal native outcomes: 16 accepted, seven rejected and
+nine resource failures. Physical attempts fall from 41 to 37 and retries from
+nine to five. Four heavy sources execute directly in isolation rather than
+after an initial preemption, and still fail through the actual RSS watchdog.
+No forecast supplies a verification verdict. Sampled peaks of 48.75 and
+48.56\,GiB exceed the budget between watchdog responses.
+This single ordered, shared-host comparison includes brief analysis support
+during FIFO; it does not isolate causality, establish novelty, or demonstrate
+representative throughput after preparation reuse. That full-population
+composition remains unmeasured.
+
 \paragraph{First-success candidate scheduling.}
 A distinct inference consumer needs one checked proof per problem rather than
 a reward for every candidate. In the completed native miniF2F capture,

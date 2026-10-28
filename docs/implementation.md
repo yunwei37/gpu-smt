@@ -105,6 +105,15 @@ strongest warm-service superiority. Original/tmp streams and all failures are
 committed losslessly;sampled peaks overshoot48GiB,not a hard RSS quota.
 All15,736recorded PID/birth pairs and the controller have retired.
 
+The [completed real32feedback comparison](../artifacts/engine-resource-profile-2026-10-25/task-memory32-20261027T193536Z/result-review.md)
+now checks the actual4.9originals:2832.462187s FIFO/2169.738637s task-memory,
+exact raw outcomes/16accepted IDs preserved. Fourheavy sources receive a real
+forecast-exclusive initial attempt rather than a nonexclusive preemption and
+retry;no forecast becomes a verdict. Physical attempts41→37,retries9→5.
+This biased development pair does not establish fullpopulation throughput,
+strongestwarm superiority or novelty. Both observed peaks overshoot48GiB.
+Allrecorded native/CLIbirths/controller retire. Default FIFO remains unchanged.
+
 ## Semantic guarantees and tests
 
 Exact keys include backend/environment, original source and timeout; no
@@ -124,9 +133,11 @@ No test suite is a full native population parity or throughput result.
 
 ## Pending native work
 
-Full Mathlib/native qualification of import preparation/COW, sufficient
-failure detectors, source memory/time models, multi-node execution and a valid
-complete throughput pair at the dynamic resource point remain open.
+Broader Mathlib/SMT artifact qualification, sufficient failure detectors,
+representative load-aware throughput atop prepared execution, source cost
+prediction and actual multi-node execution remain open. The completed native/
+prepared7808pair and biased32feedback result are explicitly scoped above;
+neither closes the paper's full equal-resource/strongest-warm evaluation.
 PreparedState/FailureDetector are extension contracts; no active rejection
 path or COW performance is implied by their definitions.
 
