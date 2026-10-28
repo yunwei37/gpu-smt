@@ -253,7 +253,9 @@ pub trait VerificationBackend: Send + Sync {
     /// Called for a retry or a first attempt whose forecast needs idle headroom.
     /// Implementations must not require a preceding attempt. Backends may reclaim
     /// idle prepared state; the default retains ordinary verification behavior.
-    /// Cleanup must be included in the attempt and native request deadline.
+    /// Native work must finish within the original request budget. Retirement
+    /// is always awaited and charged to attempt/whole-run latency; it must not
+    /// discard a complete native reply already received within that budget.
     async fn verify_resource_retry(&self, candidate: &Candidate, execution: Execution) -> Outcome {
         self.verify(candidate, execution).await
     }

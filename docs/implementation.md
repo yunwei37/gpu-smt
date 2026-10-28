@@ -101,7 +101,15 @@ engine-driven eviction path and preserves the raw reference response;it is a
 bounded4.18lifecycle contract,not the pending full4.9Mathlib result.
 This restores the budget formerly consumed by idle state;
 eviction/fallback remain in attempt provenance. That attempt still exceeding the total budget becomes an explicit
-resource failure, with all attempt costs retained. Last-subscriber cancellation
+resource failure, with all attempt costs retained. Fresh and prepared backends
+now agree on the reply/retirement boundary: a complete native reply received
+within the original response budget is retained while retirement finishes.
+Cleanup is still awaited and charged to attempt/whole-run latency. Late replies,
+cancellation and malformed retirement do not become acceptance. The
+[real-process protocol regression](tmp/build-and-evaluate/step-0100-20261028T113528+0000/experiment-001/result-review.md)
+actually fails on the old prepared backend and passes after this correction;
+it does not establish the cause of the two real candidate timeouts.
+Last-subscriber cancellation
 waits for backend cleanup; an RL subscriber keeps shared work alive.
 Sampling is not a kernel quota and can overshoot between observations.
 The backend refuses an inherited finite AS cap rather than silently claiming

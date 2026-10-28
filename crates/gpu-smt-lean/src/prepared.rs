@@ -206,6 +206,21 @@ impl PreparedRepl {
         self.ready.store(true, Ordering::Release);
         Ok(socket)
     }
+    fn observe_retirement(done: &Value, identity: &ProcessIdentity, x: &Execution) {
+        if let Some(peak) = done["peak_rss_bytes"].as_u64() {
+            x.registry.observe_rss(peak);
+            x.registry.note(BackendEvent {
+            stage: "rss_observation".into(),
+            detail: serde_json::json!({
+                "kind":"leader_kernel_high_water_rss",
+                "pid":identity.pid, "start_ticks":identity.start_ticks,
+                "bytes":peak,
+                "scope":"native parent wait4 leader ru_maxrss; excludes descendants and shared parent, not aggregate RSS"
+            }).to_string(),
+        });
+        }
+    }
+
     async fn branch(
         &self,
         path: PathBuf,
@@ -250,6 +265,8 @@ impl PreparedRepl {
             .ok_or("native branch birth changed before registration")?;
         x.registry.register(identity.clone());
         let mut retired = false;
+        let mut received_native = None;
+        let mut reply_before_deadline = false;
         let result = {
             let operation = async {
                 let mask = x
@@ -273,6 +290,8 @@ impl PreparedRepl {
                         .ok_or("missing native response")?,
                 )
                 .map_err(|e| e.to_string())?;
+                reply_before_deadline = Instant::now() <= deadline;
+                received_native = Some(native);
                 let done: Value = serde_json::from_str(
                     &lines
                         .next_line()
@@ -284,23 +303,12 @@ impl PreparedRepl {
                 if !done["retired"].is_i64() {
                     return Err("missing native retirement status".into());
                 }
-                if let Some(peak) = done["peak_rss_bytes"].as_u64() {
-                    x.registry.observe_rss(peak);
-                    x.registry.note(BackendEvent {
-                        stage: "rss_observation".into(),
-                        detail: serde_json::json!({
-                            "kind":"leader_kernel_high_water_rss",
-                            "pid":identity.pid, "start_ticks":identity.start_ticks,
-                            "bytes":peak,
-                            "scope":"native parent wait4 leader ru_maxrss; excludes descendants and shared parent, not aggregate RSS"
-                        }).to_string(),
-                    });
-                }
+                Self::observe_retirement(&done, &identity, x);
                 retired = true;
                 if done["retired"] != 0 {
                     return Err(format!("native child exited {}", done["retired"]));
                 }
-                Ok::<_, String>(native)
+                Ok::<_, String>(())
             };
             tokio::pin!(operation);
             tokio::select! {
@@ -314,16 +322,27 @@ impl PreparedRepl {
             let _ = write.shutdown().await;
             // Parent emits retirement only after waitpid; EOF also retires transport.
             while let Ok(Some(line)) = lines.next_line().await {
-                if serde_json::from_str::<Value>(&line)
-                    .ok()
-                    .is_some_and(|v| v["retired"].is_i64())
+                if let Ok(done) = serde_json::from_str::<Value>(&line)
+                    && done["retired"].is_i64()
                 {
+                    Self::observe_retirement(&done, &identity, x);
+                    retired = true;
                     break;
                 }
             }
         }
         x.registry.unregister(&identity);
-        match result? {
+        let native = match result? {
+            Some(()) => received_native,
+            None if reply_before_deadline && retired && !x.cancel.is_cancelled() => {
+                // Match the fresh backend: a complete timely reply determines
+                // the native verdict. Retirement remains awaited and charged,
+                // even when its acknowledgement arrives after the deadline.
+                received_native
+            }
+            None => None,
+        };
+        match native {
             None => Ok(Outcome::operational(
                 if x.cancel.is_cancelled() {
                     Status::Cancelled
@@ -444,5 +463,203 @@ impl VerificationBackend for PreparedRepl {
         if let Some(parent) = parent {
             parent.stop(false).await;
         }
+    }
+}
+
+#[cfg(test)]
+mod reply_deadline_tests {
+    use super::*;
+    use std::sync::{Arc, Mutex as StdMutex};
+    use tokio::net::UnixListener;
+    use tokio_util::sync::CancellationToken;
+
+    #[derive(Default)]
+    struct Registry(StdMutex<Vec<ProcessIdentity>>, StdMutex<Vec<u64>>);
+    impl ProcessRegistry for Registry {
+        fn observe_rss(&self, bytes: u64) {
+            self.1.lock().unwrap().push(bytes);
+        }
+        fn register(&self, process: ProcessIdentity) {
+            self.0.lock().unwrap().push(process);
+        }
+        fn unregister(&self, process: &ProcessIdentity) {
+            assert!(
+                process_identity(process.pid).is_none(),
+                "unregister before reaping"
+            );
+            self.0.lock().unwrap().retain(|p| p != process);
+        }
+    }
+    struct SocketPath(PathBuf);
+    impl Drop for SocketPath {
+        fn drop(&mut self) {
+            let _ = std::fs::remove_file(&self.0);
+        }
+    }
+
+    // A protocol/lifecycle fixture, not a Lean proof or performance benchmark.
+    async fn control(
+        code: &str,
+        late_reply: bool,
+        cancel_reply: bool,
+        malformed_retirement: bool,
+    ) -> (Result<Outcome, String>, Duration) {
+        use std::os::unix::process::ExitStatusExt;
+        let path = SocketPath(std::env::temp_dir().join(format!(
+            "gpu-smt-reply-{}-{}.sock",
+            std::process::id(),
+            NEXT.fetch_add(1, Ordering::Relaxed)
+        )));
+        let listener = UnixListener::bind(&path.0).unwrap();
+        let mut child = Command::new("/bin/sleep")
+            .arg("5")
+            .process_group(0)
+            .kill_on_drop(true)
+            .spawn()
+            .unwrap();
+        let identity = process_identity(child.id().unwrap()).unwrap();
+        let sent = Arc::new(tokio::sync::Notify::new());
+        let sent_by_server = sent.clone();
+        let server_identity = identity.clone();
+        let server = tokio::spawn(async move {
+            let (stream, _) = listener.accept().await.unwrap();
+            let (read, mut write) = stream.into_split();
+            let mut lines = BufReader::new(read).lines();
+            let start = serde_json::json!({"started":server_identity.pid,
+                "start_ticks":server_identity.start_ticks});
+            write
+                .write_all(format!("{start}\n").as_bytes())
+                .await
+                .unwrap();
+            let _mask = lines.next_line().await.unwrap().unwrap();
+            let command: String =
+                serde_json::from_str(&lines.next_line().await.unwrap().unwrap()).unwrap();
+            if late_reply {
+                tokio::time::sleep(Duration::from_millis(500)).await;
+            }
+            let response = match command.as_str() {
+                "rejected" => {
+                    serde_json::json!({"env":0,"messages":[{"severity":"error","data":"fixture"}]})
+                }
+                "incomplete" => serde_json::json!({"env":0,"sorries":[{}]}),
+                _ => serde_json::json!({"env":0,"messages":[]}),
+            };
+            write
+                .write_all(format!("{}\n", serde_json::json!({"native":response})).as_bytes())
+                .await
+                .unwrap();
+            sent_by_server.notify_one();
+            tokio::time::sleep(Duration::from_millis(if malformed_retirement {
+                1
+            } else {
+                500
+            }))
+            .await;
+            let _ = child.start_kill();
+            let status = child.wait().await.unwrap();
+            let done = if malformed_retirement {
+                serde_json::json!({"retired":"invalid"})
+            } else {
+                serde_json::json!({"retired":status.into_raw(),"peak_rss_bytes":12345})
+            };
+            write
+                .write_all(format!("{done}\n").as_bytes())
+                .await
+                .unwrap();
+        });
+        let registry = Arc::new(Registry::default());
+        let cancel = CancellationToken::new();
+        let cancel_task = if cancel_reply {
+            let token = cancel.clone();
+            Some(tokio::spawn(async move {
+                sent.notified().await;
+                token.cancel();
+            }))
+        } else {
+            None
+        };
+        let backend = PreparedRepl::new(
+            NativeRepl {
+                program: "/unused".into(),
+                args: vec![],
+                project: std::env::temp_dir(),
+                environment: "protocol-fixture-not-Lean".into(),
+            },
+            "/unused".into(),
+            "/unused".into(),
+        );
+        // Only the wire command changes; the fixture never changes affinity.
+        let candidate = Candidate {
+            id: "reply".into(),
+            code: code.into(),
+            task_id: None,
+            timeout_ms: 250,
+            reuse: false,
+        };
+        let started = Instant::now();
+        let result = backend
+            .branch(
+                path.0.clone(),
+                &candidate,
+                &Execution {
+                    cancel,
+                    cpus: vec![0],
+                    registry: registry.clone(),
+                },
+                started + Duration::from_millis(250),
+            )
+            .await;
+        let elapsed = started.elapsed();
+        server.await.unwrap();
+        if let Some(task) = cancel_task {
+            task.await.unwrap();
+        }
+        assert!(process_identity(identity.pid).is_none());
+        assert!(registry.0.lock().unwrap().is_empty());
+        if !malformed_retirement {
+            // Synthetic protocol metadata, not a measured native memory peak.
+            assert_eq!(*registry.1.lock().unwrap(), vec![12345]);
+        }
+        (result, elapsed)
+    }
+
+    #[tokio::test]
+    async fn timely_native_reply_is_not_lost_while_waiting_for_retirement() {
+        for (code, expected) in [
+            ("accepted", Status::Accepted),
+            ("rejected", Status::Rejected),
+            ("incomplete", Status::Incomplete),
+        ] {
+            let (result, elapsed) = control(code, false, false, false).await;
+            assert_eq!(
+                result.unwrap().status,
+                expected,
+                "timely reply lost at retirement deadline"
+            );
+            assert!(
+                elapsed >= Duration::from_millis(500),
+                "retirement cost was hidden"
+            );
+        }
+    }
+    #[tokio::test]
+    async fn late_reply_cancellation_and_malformed_retirement_are_not_accepted() {
+        assert_eq!(
+            control("accepted", true, false, false)
+                .await
+                .0
+                .unwrap()
+                .status,
+            Status::Timeout
+        );
+        assert_eq!(
+            control("accepted", false, true, false)
+                .await
+                .0
+                .unwrap()
+                .status,
+            Status::Cancelled
+        );
+        assert!(control("accepted", false, false, true).await.0.is_err());
     }
 }

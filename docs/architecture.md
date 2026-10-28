@@ -54,6 +54,14 @@ Native retirement is awaited before runtime shutdown, which does not wait on an
 idle blocking stdin reader.
 This is process lifecycle behavior, not crash/SIGKILL containment.
 
+Fresh and prepared backends preserve a complete native reply received within
+the original request budget while awaiting physical retirement. Late replies
+remain timeouts; cancellation and malformed retirement remain operational.
+Every process is reaped before unregistering. Retirement can extend observed
+latency beyond the response deadline and is always charged; this grants no
+additional proof execution time and does not hide cleanup costs.
+
+
 The optional PreparedRepl backend uses an engine-owned Lean+C import parent:
 only parsed imports execute there with the normal task manager, which is joined
 and finalized before forking. For modern SDKs, global libuv services are

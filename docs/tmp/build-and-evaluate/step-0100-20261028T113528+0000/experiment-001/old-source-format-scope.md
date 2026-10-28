@@ -1,0 +1,1 @@
+The retained source bytes precede cargo fmt in the negative control. The existing production logic is unchanged by formatting; command/output receipts record the actual formatted test run. This is not claimed to be a byte-for-byte snapshot of the post-format compiler input.

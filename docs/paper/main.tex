@@ -151,8 +151,12 @@ timeout, preemption and consumer cancellation remain distinct.
 The default Rust backend executes isolated fresh native processes.
 For an exclusive resource retry after concurrent preemption, the optional
 import backend retires its idle prepared parent and uses fresh native execution.
-The existing request deadline includes teardown and fallback; later ordinary
-requests may prepare again. This is resource recovery, not early rejection.
+Preparation, teardown and fallback consume the original native response
+budget. A complete native reply received within that budget is retained while
+physical retirement finishes, consistently with the fresh backend.
+Retirement is always awaited and charged to attempt and whole-run latency;
+this does not grant additional proof-execution time. Later ordinary requests
+may prepare again. This is resource recovery, not early rejection.
 An optional Lean+C adapter prepares parsed imports in a single native parent
 and executes candidate commands in disposable OS children, with fresh fallback
 for different imports. Pinned stock Lean 4.18 controls pass raw-response
@@ -187,7 +191,10 @@ The next measurement point removes fixed per-process address-space caps
 while retaining a 48\,GiB aggregate actual-RSS budget. Dynamic admission uses
 observed memory and assigned CPU capacity. A one-second watchdog preempts
 owned work and retries it exclusively, recording all queueing, attempts and
-retirement. This sampled mechanism can overshoot between observations; it is
+retirement. Resource retries follow the already registered ordinary queue
+frontier; later arrivals cannot indefinitely overtake an existing retry.
+This changes queue order rather than assuming that a measured memory peak
+bounds future demand. This sampled mechanism can overshoot between observations; it is
 not a kernel memory quota. The historical measurements below retain their
 original resource settings. New-resource throughput, 42 isolated larger-memory
 reruns, whole-Mathlib COW behavior and complete population differential parity
