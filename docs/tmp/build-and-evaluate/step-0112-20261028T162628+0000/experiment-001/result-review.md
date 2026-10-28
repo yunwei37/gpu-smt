@@ -1,4 +1,4 @@
-# Result review — pending source CI,self-review
+# Result review — final source08d6bccqualified,self-review
 
 Source replaces the co-scheduled async sampler with an owned parent thread.
 Existing watchdog implementation still selects the largest active owned
@@ -41,3 +41,18 @@ fmt/clippy/rustdoc. Full logs/raw counts are preserved.
 This is sampler/notification qualification only. The later physical-preemption
 hook,real group-signalling control and sixth native-COW interruption control
 remain uncompiled/unrun until their own existing CI completes.
+
+
+## Final accepted source result
+Actual source08d6bccCI40734483359/40734483273succeeds:73workspace controls,
+6explicit pinned-native controls and38Python controls. Fmt/clippy/rustdoc
+steps also succeed. Read final raw logs/counts in source08-final-log-summary.json.
+Both new engine regressions,allfour real native provider group hooks,and the
+actual prepared-child stop-before-async-repoll control pass. Native reaping
+is then awaited and birth-matched ownership gone. This verifies software
+resource behavior,not4.9Mathlib full-population parity/performance or hard RSS.
+
+Retain failed80c271dcompile andf15197fCLI cases with their exact logs. Final
+code bytes are08d6bcc,not an inferred union of predecessor test passes.
+No active binary or experiment settings were changed. This closes E112source
+repair/qualification only;the paper-level performance experiment remains open.

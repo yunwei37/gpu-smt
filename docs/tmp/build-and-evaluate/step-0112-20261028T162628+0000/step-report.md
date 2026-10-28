@@ -4,6 +4,13 @@
 historical exclusive-headroom calculation and pushedf454e84. That result is
 supporting interpretation,not native warm parity. FourRQs remain open.
 
+Final source boundary:08d6bccpasses actual engineCI40734483359and
+benchmark-smoke40734483273. All73workspace controls,6explicit pinned-native
+contracts,38Python controls,fmt/clippy/rustdoc pass. Earlier pending/failed
+source nodes below are chronological,not current qualification claims.
+The real4.9Mathlib full pair is still at its separate frozen point;no
+throughput/native-population gain is established by this source qualification.
+
 ## EXPERIMENT_GATE
 
 ### E112.1 — source repair of the requested resource contract
@@ -159,3 +166,44 @@ a live pre-stop child with matching kernel birth as well as PPID. Merely seeing
 a parent-related PID that had already exited would not establish intervention.
 This changes the new control only,not resource implementation. Preserve all
 source-CI revisions separately;final qualification must cover this exact control.
+
+
+## Final REVIEW_GATE — complete source boundary,self-review
+
+Actual final source08d6bccqualifies the expanded path. The Rust control
+requires sampler delivery of both cancellation and the synchronous hook while
+its sole request executor is blocked. The real OS-group control runs without
+a Tokio runtime and checks allfour provider forms:wrong birth survives,the
+correct group receives SIGKILL,and an unrequested sentinel survives.
+The sixth pinned-native test separately observes a live,birth-matched native
+child whose PPID is the preparation parent,with no prior fresh fallback.
+It requests cancellation/hook and observes stop without repolling the async
+attempt,then resumes/awaits reaping and requires its owned registry to empty.
+
+This is composed software-contract evidence,not a monolithic48GiBMathlib
+blocked-executor throughput test. The new native hook test invokes the hook
+directly;the sampler-dispatch and real-RSS integration controls cover other
+parts of the path. Signal/sampling delay and resource-point status differences
+still need their real paired observations. The actual nativeSDK is4.18inCI,
+not the current4.9Mathlib population.
+
+[Final exact-source counts](experiment-001/source-ci/source08-final-log-summary.json),
+full job logs and terminal/job metadata preserve allqualifying evidence.
+Both actual failed source revisions and their raw logs remain;no commit is
+amended,discarded or rewritten. Source4966491's72/5/38passes qualify the earlier
+sampler only;sourcebaee9b6's native6is predecessor evidence,not a substitute
+for the stricter08d6bcccontrol. Allcurrent source checks were actually read.
+
+Direction:allfourRQs/Lean-SMT/OSDIobjective remain;standard resource signalling
+is not novelty or an answered RQ. Efficiency:the two root mistakes(missed private
+initializer and delayed first sample)cost CIiterations;fixes are forward-only.
+Do not attribute those delays to research progress or solve them by weakening
+the pre-existing CLI assertion. Maintenance:no new runtime configuration/
+logger/controller/collector;public trait addition has a provided default and
+allnative/wrapper forwarding is covered by source review. No independent audit
+was performed. Paper/authority source remains unchanged.
+
+Next remains complete actual4.9full-pair terminal/root review,then the fixed42
+solo point. Any later performance use of these source bytes needs its own
+native resource qualification and matched cost evidence. Keep the goal active;
+do not start a parallel capture or replace the healthy frozen writer.

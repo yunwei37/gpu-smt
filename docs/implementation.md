@@ -15,6 +15,11 @@ The Rust workspace has four crates:
 |gpu-smt-lean|Original native JSON command transport in isolated fresh process groups, assigned CPU affinity, timeout/cancellation and reaping|
 |gpu-smt-server|Local HTTP core/check and legacy/verify adapters, typed/v1/verify, JSONL/HTTP executable and reusable capture/comparison|
 
+The resource sampler and native interruption path now run independently of the
+request executor;async providers still await retirement. [Exact source
+qualification and limits](tmp/build-and-evaluate/step-0112-20261028T162628+0000/step-report.md)
+separate this software repair from unmeasured native resource-point throughput.
+
 The default native backend is fresh-process execution. An optional Lean+C
 import-parent backend now has source and a Rust adapter, with actual pinned-native
 qualification tracked separately from whole Mathlib COW/performance evidence. Unsupported debug/infotree/state-handle features return an

@@ -460,3 +460,11 @@ cancellation poll. Complete the existing native resource path with a short
 birth-matched synchronous group-signal hook,and keep reaping charged/awaited.
 Qualify with real owned groups and a native prepared child held while Tokio
 cannot poll;do not mistake a token fixture for physical interruption.
+
+
+Final source08d6bccnow passes its actual complete softwareCI,including the
+strict native prepared-child interruption control. Keep the failed iterations
+and state explicitly that this is resource-contract repair,not an RQ answer
+or measured throughput gain. The one existing full4.9pair remains unchanged;
+do not replace it with a newer binary or count its later performance as these
+source fixes. The next empirical boundary is its actual terminal/root review.

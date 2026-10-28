@@ -1,4 +1,4 @@
-# Step0112 outer audit — root self-review,source CI pending
+# Step0112 outer audit — root self-review,final source qualified
 
 Executing root only;this is not independent audit. Inputs:exact source diff,
 two new Rust controls,architecture paragraph,plan/result review and unchanged
@@ -41,3 +41,20 @@ The hook is outside engine locks and retirement remains awaited. Local
 backends signal existing PID/birth guards;unimplemented plugin hooks remain
 cooperative only. These later bytes are pending fresh CI,not covered by the
 earlier green source. No change to native4.9active acquisition or proof policy.
+
+
+## Final audit of actual evidence
+Read exact final08d6bccengine/smoke terminals and allthree completed job logs:
+73workspace controls,6explicit pinned-native controls,38Python controls,
+fmt/clippy/rustdoc success. Real OS-group hook unit and blocked-executor
+hook dispatch pass. The strict native control proves pre-stop liveness,birth,
+PPID and no prior fallback;stop is observed before async repoll,and native
+retirement is awaited afterward. Composed controls are not described as one
+native48GiBpressure/blocked-executor experiment.
+
+The earlier compile/CLI failures are preserved and corrected forward-only.
+Code byte-diff against the qualified source is empty at evidence closure.
+No source/native settings or private running binaries are edited after testing.
+No whole-candidate throughput,accepted-set equality,hard quota,novelty or
+OSDIacceptance is claimed. This is root self-audit,not independent review.
+The final source boundary is complete;the existing full research run is not.
