@@ -22,3 +22,14 @@ was initialized. No native benchmark/executable was changed. Full failed log
 job122952278167and run/jobs metadata are retained. Pinned4.18native job
 122952277663passes all5explicit controls;that does not override the Rust failure.
 Qualification stays incomplete until corrected source checks actually pass.
+
+
+Corrected-sourcef15197fCI40727967801passes fmt/clippy,all8engine unit controls,
+all26engine integration controls(including both new regressions),all8Lean unit/
+8process controls and5explicit pinned-native contracts. It then fails existing
+CLI structured_resource_logs_do_not_corrupt_jsonl_results:an empty short request
+exits before the new delayed first sample. Root had changed the old immediate
+interval phase. Restore an immediate first sample with Duration::ZERO,then
+retain the same nominal1s period. Do not weaken the existing log assertion,
+insert fixture sleeps or call the partial workspace pass complete.
+Failed job122956253072and successful native job122956253593full logs are retained.

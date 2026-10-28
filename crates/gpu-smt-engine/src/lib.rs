@@ -825,7 +825,8 @@ impl Engine {
             .name("gpu-smt-rss".into())
             .spawn(move || {
                 let interval = Duration::from_secs(1);
-                let mut delay = interval;
+                // Preserve immediate sampling at startup, as with the old interval.
+                let mut delay = Duration::ZERO;
                 loop {
                     let stopped = stop.stopped.lock().unwrap();
                     let (stopped, _) = stop
