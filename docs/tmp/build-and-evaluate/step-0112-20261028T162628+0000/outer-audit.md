@@ -31,3 +31,13 @@ native collection or compilation is launched.
 Disposition:publish the source boundary to trigger the existing CI,explicitly
 pending;close validation only after actual job results. Full native outcomes,
 warm parity,original42solo,methods/novelty and complete paper evidence remain.
+
+
+Re-entry finding:source4966491passes72workspace/5native/38Python controls,but
+its blocked-executor test proves cancellation notification,not independent
+physical stop. The root accepts this distinction and extends the same repair
+with a synchronous backend hook plus actual owned-group/native-COW controls.
+The hook is outside engine locks and retirement remains awaited. Local
+backends signal existing PID/birth guards;unimplemented plugin hooks remain
+cooperative only. These later bytes are pending fresh CI,not covered by the
+earlier green source. No change to native4.9active acquisition or proof policy.

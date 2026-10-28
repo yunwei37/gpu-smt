@@ -394,6 +394,9 @@ impl PreparedRepl {
 }
 #[async_trait]
 impl VerificationBackend for PreparedRepl {
+    fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+        self.fresh.request_resource_preemption(processes);
+    }
     fn identity(&self) -> String {
         format!(
             "prepared-imports|{:?}|{:?}|{}",

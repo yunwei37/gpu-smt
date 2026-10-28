@@ -33,3 +33,11 @@ interval phase. Restore an immediate first sample with Duration::ZERO,then
 retain the same nominal1s period. Do not weaken the existing log assertion,
 insert fixture sleeps or call the partial workspace pass complete.
 Failed job122956253072and successful native job122956253593full logs are retained.
+
+
+Source4966491now passes full engine40729814255and smoke40729814567:
+72workspace controls,5explicit pinned-native contracts,38Python controls,
+fmt/clippy/rustdoc. Full logs/raw counts are preserved.
+This is sampler/notification qualification only. The later physical-preemption
+hook,real group-signalling control and sixth native-COW interruption control
+remain uncompiled/unrun until their own existing CI completes.

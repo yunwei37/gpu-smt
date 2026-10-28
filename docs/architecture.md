@@ -45,7 +45,18 @@ The CLI already binds its parent before constructing the runtime,so this
 thread inherits that existing CPU mask. It is not a service or a new collector.
 Admission still refreshes actual RSS synchronously;the periodic sampler starts
 with an immediate sample,as the previous Tokio interval did. The sampler accounts registered owned roots and the
-engine's own descendant tree,including idle owned state. Kernel
+engine's own descendant tree,including idle owned state.
+On excess the engine both requests cancellation and invokes the backend's short
+synchronous resource-preemption hook outside engine locks. Native REPL,
+prepared-child and stock-source providers signal only registered PID/birth
+matched groups immediately;that delivery does not wait for Tokio to resume.
+The async provider still awaits reaping/retirement and charges cleanup before
+releasing its CPU lease. The new provided trait method is source compatible;
+its default is cooperative cancellation only. Other backends cannot claim
+executor-independent stopping until they implement that hook. Sampling or
+signal-delivery latency is still not a hard kernel RSS bound,and changed
+sampling/stop scheduling can change operational preemptions/statuses.
+ Kernel
 start ticks prevent signalling an unrelated reused PID. On excess preempt the
 largest active owned process, reap its group and requeue its candidate for an
 exclusive attempt after queued first attempts and active jobs retire. A solo attempt exceeding48GiB is

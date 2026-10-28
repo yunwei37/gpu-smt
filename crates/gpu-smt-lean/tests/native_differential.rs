@@ -1311,3 +1311,160 @@ async fn native_library_load_is_before_imports_once_and_failures_never_ready() {
     );
     std::fs::remove_dir_all(directory).unwrap();
 }
+
+#[tokio::test(flavor = "current_thread")]
+#[ignore = "requires matching LEAN_PREPARED_HOST/LEAN_SYSROOT/LEAN_REPL/LEAN_PROJECT; native CI exercises actual prepared-child resource interruption"]
+async fn native_preemption_stops_a_prepared_child_before_the_async_executor_resumes() {
+    use std::sync::Mutex;
+    use tokio_util::sync::CancellationToken;
+
+    #[derive(Default)]
+    struct Registry {
+        processes: Mutex<Vec<ProcessIdentity>>,
+        parent: std::sync::atomic::AtomicU32,
+        fallback: std::sync::atomic::AtomicBool,
+    }
+    impl ProcessRegistry for Registry {
+        fn note(&self, event: BackendEvent) {
+            if event.stage == "fresh_fallback" {
+                self.fallback
+                    .store(true, std::sync::atomic::Ordering::SeqCst);
+            }
+            if event.stage == "prepared_ready"
+                && let Ok(value) = serde_json::from_str::<serde_json::Value>(&event.detail)
+                && let Some(parent) = value["parent_pid"]
+                    .as_u64()
+                    .and_then(|pid| u32::try_from(pid).ok())
+            {
+                self.parent
+                    .store(parent, std::sync::atomic::Ordering::SeqCst);
+            }
+        }
+        fn register(&self, process: ProcessIdentity) {
+            self.processes.lock().unwrap().push(process);
+        }
+        fn unregister(&self, process: &ProcessIdentity) {
+            self.processes
+                .lock()
+                .unwrap()
+                .retain(|owned| owned != process);
+        }
+    }
+    let backend = gpu_smt_lean::PreparedRepl::new(
+        NativeRepl {
+            program: std::env::var("LEAN_REPL").unwrap().into(),
+            args: vec![],
+            project: std::env::var("LEAN_PROJECT").unwrap().into(),
+            environment: "pinned-native-immediate-preemption".into(),
+        },
+        std::env::var("LEAN_PREPARED_HOST").unwrap().into(),
+        std::env::var("LEAN_SYSROOT").unwrap().into(),
+    );
+    let cpu = std::fs::read_to_string("/proc/self/status")
+        .unwrap()
+        .lines()
+        .find_map(|line| line.strip_prefix("Cpus_allowed_list:"))
+        .unwrap()
+        .trim()
+        .split([',', '-'])
+        .next()
+        .unwrap()
+        .parse()
+        .unwrap();
+    let registry = Arc::new(Registry::default());
+    let cancel = CancellationToken::new();
+    let candidate = Candidate {
+        id: "native-urgent-resource-control".into(),
+        task_id: None,
+        code: "import Init\n#eval IO.sleep 60000".into(),
+        timeout_ms: 300000,
+        reuse: false,
+    };
+    let attempt = backend.verify(
+        &candidate,
+        Execution {
+            cancel: cancel.clone(),
+            cpus: vec![cpu],
+            registry: registry.clone(),
+        },
+    );
+    tokio::pin!(attempt);
+    let mut progress = tokio::time::interval(std::time::Duration::from_millis(5));
+    let owned = loop {
+        tokio::select! {
+            outcome = &mut attempt => panic!("native child did not engage: {outcome:?}"),
+            _ = progress.tick() => {
+                let owned = registry.processes.lock().unwrap().clone();
+                // Parent ownership is released before ready becomes true.
+                // The remaining registered root is the real disposable child.
+                if backend.prepared_state_ready() && owned.len() == 1 {
+                    break owned;
+                }
+            }
+        }
+    };
+    let parent = registry.parent.load(std::sync::atomic::Ordering::SeqCst);
+    let observed_parent = std::fs::read_to_string(format!("/proc/{}/stat", owned[0].pid))
+        .ok()
+        .and_then(|text| {
+            text.rsplit_once(')')
+                .and_then(|(_, tail)| tail.split_whitespace().nth(1)?.parse::<u32>().ok())
+        });
+    let actual_prepared_child = parent != 0 && observed_parent == Some(parent);
+    let engaged_without_fallback = !registry.fallback.load(std::sync::atomic::Ordering::SeqCst);
+    cancel.cancel();
+    backend.request_resource_preemption(&owned);
+    // Do not poll the async attempt. Cooperative cancellation alone cannot
+    // kill this native child while this only executor is synchronously held.
+    let deadline = std::time::Instant::now() + std::time::Duration::from_secs(3);
+    let stopped_before_resume = loop {
+        let running = std::fs::read_to_string(format!("/proc/{}/stat", owned[0].pid))
+            .ok()
+            .and_then(|text| {
+                text.rsplit_once(')').map(|(_, tail)| {
+                    let fields: Vec<_> = tail.split_whitespace().collect();
+                    fields.get(19).and_then(|v| v.parse::<u64>().ok()) == Some(owned[0].start_ticks)
+                        && fields
+                            .first()
+                            .is_some_and(|state| *state != "Z" && *state != "X")
+                })
+            })
+            .unwrap_or(false);
+        if !running {
+            break true;
+        }
+        if std::time::Instant::now() >= deadline {
+            break false;
+        }
+        std::thread::sleep(std::time::Duration::from_millis(5));
+    };
+    // Always resume cancellation and await native retirement before checking
+    // the blocked-executor observation, including a broken-hook failure.
+    let outcome = tokio::time::timeout(std::time::Duration::from_secs(10), &mut attempt)
+        .await
+        .expect("native cancellation did not retire");
+    backend.shutdown().await;
+    assert!(
+        actual_prepared_child,
+        "registered process was not the native parent's child"
+    );
+    assert!(
+        engaged_without_fallback,
+        "fresh fallback is not prepared engagement"
+    );
+    assert!(
+        stopped_before_resume,
+        "native stop depended on resuming Tokio"
+    );
+    assert!(
+        matches!(outcome.status, Status::Cancelled | Status::BackendError),
+        "{outcome:?}"
+    );
+    assert!(registry.processes.lock().unwrap().is_empty());
+    for process in owned {
+        assert!(
+            gpu_smt_engine::linux::identity(process.pid).ok().as_ref() != Some(&process),
+            "owned native child remains after retirement"
+        );
+    }
+}

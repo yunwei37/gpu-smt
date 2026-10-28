@@ -317,6 +317,11 @@ impl NativeLean {
 }
 #[async_trait]
 impl VerificationBackend for NativeLean {
+    fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+        for identity in processes {
+            kill_group(identity);
+        }
+    }
     fn identity(&self) -> String {
         format!(
             "lean-cli|{:?}|{:?}|{}",
@@ -353,6 +358,9 @@ impl ConfiguredLean {
 }
 #[async_trait]
 impl VerificationBackend for ConfiguredLean {
+    fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+        self.backend.request_resource_preemption(processes);
+    }
     fn identity(&self) -> String {
         let mut identity = if self.args.is_empty() {
             self.backend.identity()

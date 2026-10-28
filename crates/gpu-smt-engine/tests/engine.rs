@@ -239,10 +239,21 @@ async fn oversized_solo_is_resource_failure_not_infinite_retry_or_rejection() {
 async fn watchdog_preempts_while_the_request_executor_is_blocked() {
     struct BlockingBackend {
         cancelled_while_blocked: std::sync::atomic::AtomicBool,
+        immediate_interrupt: std::sync::atomic::AtomicBool,
         solo_calls: AtomicUsize,
     }
     #[async_trait]
     impl VerificationBackend for BlockingBackend {
+        fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+            assert_eq!(
+                processes,
+                &[ProcessIdentity {
+                    pid: 54321,
+                    start_ticks: 7
+                }]
+            );
+            self.immediate_interrupt.store(true, Ordering::SeqCst);
+        }
         fn identity(&self) -> String {
             "blocked-executor-fixture".into()
         }
@@ -255,11 +266,15 @@ async fn watchdog_preempts_while_the_request_executor_is_blocked() {
             // Occupy the only Tokio executor: an async timer/task on this
             // executor cannot enforce the budget during this bounded wait.
             let deadline = std::time::Instant::now() + Duration::from_secs(3);
-            while !x.cancel.is_cancelled() && std::time::Instant::now() < deadline {
+            while !(x.cancel.is_cancelled() && self.immediate_interrupt.load(Ordering::SeqCst))
+                && std::time::Instant::now() < deadline
+            {
                 std::thread::sleep(Duration::from_millis(5));
             }
-            self.cancelled_while_blocked
-                .store(x.cancel.is_cancelled(), Ordering::SeqCst);
+            self.cancelled_while_blocked.store(
+                x.cancel.is_cancelled() && self.immediate_interrupt.load(Ordering::SeqCst),
+                Ordering::SeqCst,
+            );
             x.registry.unregister(&identity);
             Outcome::operational(Status::Cancelled, "blocking fixture retired")
         }
@@ -270,6 +285,7 @@ async fn watchdog_preempts_while_the_request_executor_is_blocked() {
     }
     let backend = Arc::new(BlockingBackend {
         cancelled_while_blocked: std::sync::atomic::AtomicBool::new(false),
+        immediate_interrupt: std::sync::atomic::AtomicBool::new(false),
         solo_calls: AtomicUsize::new(0),
     });
     let e = engine(backend.clone(), 140);

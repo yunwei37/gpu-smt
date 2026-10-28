@@ -22,3 +22,26 @@ retirement. These are software controls,not Lean/profiling/throughput runs.
 Use existing source CI for compilation/workspace tests/native protocol controls;
 do not compile locally alongside the real native collection. Pending CI is
 not qualification,and pinned4.18controls cannot prove4.9Mathlib performance.
+
+
+## E112.4 — complete the independent native interruption path
+Further source audit shows that moving sampling alone is insufficient:
+CancellationToken wakes the async provider,so a blocked executor can still
+delay the actual kill. Add a provided synchronous backend hook,called outside
+engine locks after ownership/preemption bookkeeping. Native REPL,prepared/
+fresh fallback,stock source/configured source and the journal wrapper must
+forward birth-matched group signalling. Retirement stays asynchronous/awaited
+and fully charged;custom backends default to cooperative behavior only.
+
+Strengthen the blocked-executor fixture to require hook delivery too. Add
+real owned-process controls for allfour native provider forms:stale birth
+must survive,correct group must receive SIGKILL,and an unrequested owned
+sentinel must survive. These run in the Lean unit-test binary to avoid adding
+competing helper memory to the existing50MiBRSS integration control.
+
+Add a sixth ignored/pinned-native contract:wait for an actual prepared child,
+verify its kernel PPID matches the observed native parent and that engagement
+did not use fallback,then request cancellation+preemption and synchronously
+hold the only Tokio executor. The child must stop before the async attempt
+is repolled. Always resume/await cleanup before assertions,including a broken
+hook. No native4.9Mathlib performance population is run or inferred.

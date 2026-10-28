@@ -212,6 +212,11 @@ fn observe_current_rss(identity: &ProcessIdentity, registry: &dyn ProcessRegistr
 }
 #[async_trait]
 impl VerificationBackend for NativeRepl {
+    fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+        for identity in processes {
+            kill_group(identity);
+        }
+    }
     fn identity(&self) -> String {
         format!(
             "lean-repl|{:?}|{:?}|{:?}|{}",
@@ -426,5 +431,92 @@ mod native_reply_deadline_tests {
         )
         .await;
         assert!(matches!(cancelled, Err(Status::Cancelled)));
+    }
+}
+
+#[cfg(test)]
+mod resource_preemption_tests {
+    use super::*;
+    #[test]
+    fn native_resource_hooks_signal_only_birth_matched_owned_groups_without_a_runtime() {
+        use std::io::{BufRead, BufReader};
+        use std::os::unix::process::{CommandExt, ExitStatusExt};
+        use std::process::{Child, Command, Stdio};
+
+        struct OwnedChild(Child);
+        impl Drop for OwnedChild {
+            fn drop(&mut self) {
+                let _ = self.0.kill();
+                let _ = self.0.wait();
+            }
+        }
+        fn child() -> OwnedChild {
+            let mut process = Command::new("/usr/bin/python3");
+            process
+                .args(["-u", "-c", "import time; print('ready'); time.sleep(60)"])
+                .process_group(0)
+                .stdout(Stdio::piped())
+                .stderr(Stdio::null());
+            let mut process = OwnedChild(process.spawn().unwrap());
+            let mut ready = String::new();
+            BufReader::new(process.0.stdout.take().unwrap())
+                .read_line(&mut ready)
+                .unwrap();
+            assert_eq!(ready.trim(), "ready");
+            process
+        }
+
+        let fresh = NativeRepl {
+            program: "/usr/bin/python3".into(),
+            args: vec![],
+            project: std::env::temp_dir(),
+            environment: "synchronous-owned-group-control-not-Lean".into(),
+        };
+        let source = super::NativeLean {
+            program: "/usr/bin/python3".into(),
+            project: std::env::temp_dir(),
+            environment: "synchronous-source-owned-group-control-not-Lean".into(),
+        };
+        let providers: Vec<Box<dyn VerificationBackend>> = vec![
+            Box::new(fresh.clone()),
+            Box::new(super::PreparedRepl::new(
+                fresh,
+                "/unused-prepared-host".into(),
+                "/unused-sysroot".into(),
+            )),
+            Box::new(source.clone()),
+            Box::new(source.with_args(vec!["--unused-test-identity".into()])),
+        ];
+        let mut sentinel = child();
+        for provider in providers {
+            let mut target = child();
+            let identity = gpu_smt_engine::linux::identity(target.0.id()).unwrap();
+            let wrong_birth = ProcessIdentity {
+                pid: identity.pid,
+                start_ticks: identity.start_ticks + 1,
+            };
+            provider.request_resource_preemption(&[wrong_birth]);
+            assert!(
+                target.0.try_wait().unwrap().is_none(),
+                "stale birth was signalled"
+            );
+            provider.request_resource_preemption(&[identity]);
+            let deadline = std::time::Instant::now() + Duration::from_secs(2);
+            let status = loop {
+                if let Some(status) = target.0.try_wait().unwrap() {
+                    break status;
+                }
+                assert!(
+                    std::time::Instant::now() < deadline,
+                    "owned group was not interrupted"
+                );
+                std::thread::sleep(Duration::from_millis(5));
+            };
+            assert_eq!(status.signal(), Some(libc::SIGKILL));
+            assert!(
+                sentinel.0.try_wait().unwrap().is_none(),
+                "unrequested group was signalled"
+            );
+        }
     }
 }

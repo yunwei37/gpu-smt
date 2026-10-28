@@ -95,6 +95,9 @@ impl JournalBackend {
 }
 #[async_trait::async_trait]
 impl VerificationBackend for JournalBackend {
+    fn request_resource_preemption(&self, processes: &[ProcessIdentity]) {
+        self.inner.request_resource_preemption(processes);
+    }
     fn identity(&self) -> String {
         self.inner.identity()
     }

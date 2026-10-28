@@ -466,6 +466,7 @@ impl Inner {
             "owned RSS sample");
         let s = self.state.lock().unwrap();
         let mut largest = None;
+        let mut interrupt = None;
         for a in s.active.values() {
             let roots = a.registry.roots.lock().unwrap();
             let rss: u64 = sample
@@ -492,6 +493,7 @@ impl Inner {
                     .preemption_rss
                     .store(sample.rss_bytes, Ordering::Release);
                 registry.preempted.store(true, Ordering::Release);
+                interrupt = Some(registry.roots.lock().unwrap().clone());
                 registry.cancel.cancel();
             } else if s.active.is_empty() {
                 *self.fatal.lock().unwrap() =
@@ -504,6 +506,9 @@ impl Inner {
             s.notify_queue_head();
         }
         drop(s);
+        if let Some(processes) = interrupt {
+            self.backend.request_resource_preemption(&processes);
+        }
         self.notify.notify_waiters();
     }
     fn enqueue(self: &Arc<Self>, priority: u64, retry: bool) -> Queued {

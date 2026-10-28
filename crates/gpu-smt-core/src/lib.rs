@@ -259,6 +259,16 @@ pub trait VerificationBackend: Send + Sync {
     async fn verify_resource_retry(&self, candidate: &Candidate, execution: Execution) -> Outcome {
         self.verify(candidate, execution).await
     }
+    /// Best-effort immediate resource interruption of registered owned roots.
+    ///
+    /// The RSS sampler calls this outside engine locks after requesting
+    /// cooperative cancellation. Keep it synchronous and short: it must not
+    /// await the request executor or perform retirement. Local native backends
+    /// signal only birth-matched owned process groups; verify still awaits
+    /// reaping and charges cleanup. The default retains cooperative cancellation
+    /// only, so other backends must not claim executor-independent interruption
+    /// without implementing the hook.
+    fn request_resource_preemption(&self, _processes: &[ProcessIdentity]) {}
     /// Retire backend-owned idle/prepared state on engine shutdown.
     async fn shutdown(&self) {}
 }

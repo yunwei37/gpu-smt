@@ -1,4 +1,4 @@
-# Step0112 — RSS sampling independent of the request executor
+# Step0112 — independent RSS sampling and native resource interruption
 
 2026-10-28UTC;BUILD_AND_EVALUATE;root only. Previous goal turn completed the
 historical exclusive-headroom calculation and pushedf454e84. That result is
@@ -98,3 +98,57 @@ interval phase. Restore an immediate first sample with Duration::ZERO,then
 retain the same nominal1s period. Do not weaken the existing log assertion,
 insert fixture sleeps or call the partial workspace pass complete.
 Failed job122956253072and successful native job122956253593full logs are retained.
+
+
+## EXPERIMENT_GATE re-entry — E112.4,physical interruption
+
+Actual source4966491CI40729814255passes all72workspace controls,fmt/clippy/
+rustdoc,all5explicit native contracts,and38Python controls. Full job logs
+and exact-source counts are retained. This qualifies that source's independent
+sampling/notification,not physical stop under a blocked executor.
+
+The root then found the remaining dependency:Native backends physically kill
+from their async cancellation paths. The sampler can request a token while
+the executor remains blocked. Add VerificationBackend's source-compatible
+provided synchronous request_resource_preemption hook. The engine snapshots
+owned roots before cancellation and calls the hook outside engine locks.
+Allfour local native provider forms and the existing journal wrapper forward
+the existing birth-matched group signal. Other backends' default remains
+cooperative;no generic hard-interruption guarantee is invented.
+
+The strengthened blocked-executor fixture now requires both token and hook.
+A real OS-process unit control covers stale birth/correct group/unrequested
+sentinel for allfour providers without a Tokio runtime. A new sixth pinned
+native control verifies actual prepared-child PPID/no prior fallback,stops it
+while the only executor is held,and then resumes awaited reaping. Possible
+cancelled-transport errors remain operational,never proof rejection.
+These controls must pass actual source CI before the expanded repair qualifies.
+
+No active collector/private binary changes. The fixed4.9Mathlib full pair
+still runs at its own point. Kernel scheduling,monitor/syscall/engine-lock
+latency,signal latency and between-sample growth remain;physical interruption
+does not turn the1s sampler into a hard RSS quota. Changed scheduling can alter
+operational preemptions/statuses,so future real paired acceptance/status sets
+remain required. This is resource engineering,not a workload novelty result.
+
+## WRITE_GATE re-entry
+
+The architecture/API Rustdoc now distinguishes synchronous signalling from
+awaited retirement and documents default cooperative-only plugins. Existing
+daily thought records the dependency. Paper/scientific contract remain
+unchanged. The source/CI predecessor remains separately attributed;no proxy
+notification test is presented as a native independent-kill test.
+
+## REVIEW_GATE re-entry — pending expanded-source CI,self-review
+
+Audit callback execution outside locks,owned-root capture before token wake,
+birth verification in the unchanged native group guard,and wrapper forwarding.
+The new test rejects fresh fallback as prepared engagement before interruption;
+post-cancel fallback diagnostics alone do not falsify the earlier actual PPID
+witness. Target and sentinel fixtures own/reap their children on both pass and
+assertion failure. Actual native retirement is awaited before checking the
+blocked-executor observation. No other agent or independent-audit claim.
+
+Route to the same existing CI for the expanded source. Prior72/5/38passes
+cannot qualify these later code bytes. Complete native population/warm parity
+and all RQs remain open;keep the one live cohort and full goal unchanged.

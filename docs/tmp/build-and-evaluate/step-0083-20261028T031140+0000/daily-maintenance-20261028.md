@@ -454,3 +454,9 @@ ownership/preemption/retry semantics,and test cancellation while the only
 async executor is blocked. Existing CI can qualify the software without
 compiling alongside the full native acquisition. No new logger or collector;
 the actual throughput question remains in the one retained real pair.
+
+Sampling independence alone still leaves actual termination behind an async
+cancellation poll. Complete the existing native resource path with a short
+birth-matched synchronous group-signal hook,and keep reaping charged/awaited.
+Qualify with real owned groups and a native prepared child held while Tokio
+cannot poll;do not mistake a token fixture for physical interruption.
