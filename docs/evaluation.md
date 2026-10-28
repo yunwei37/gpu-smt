@@ -72,7 +72,10 @@ now execute directly solo and still hit the actual watchdog. Both sampled
 peaks overshoot48GiB(48.753387/48.558949),not a hardquota. Allowners retire.
 Outcome-informed cohort,singleorder/sharedhost andCPU11analysis limit scope:
 not fullpopulation/strongestwarm/novelty evidence. The old failedrelease stays.
-Next representative policy comparison composes feedback atop preparedMathlib.
+The [representative preparedMathlib policy matrix](../artifacts/engine-resource-pair-2026-10-25/prepared-policy7808-20261028T034248Z/README.md)
+now runs all7808under bothpolicies in opposite-order blocks(4fullcells).
+Actual24-source qualifiers match21accepted/3rejected and everyrawoutcome;
+each engages a5545module singlethreadparent,no fallback. Fullresults pending.
 
 [Whole-task lexical memory fit](../artifacts/engine-resource-profile-2026-10-25/source-memory-crossfit-20261027/README.md)
 is negative:MAE0.606624GiB versus median0.352486;all41resource/44preempted sources

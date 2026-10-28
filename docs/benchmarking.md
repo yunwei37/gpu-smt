@@ -90,6 +90,17 @@ evidence. Both sampledRSSpeaks exceed48GiB;1s response is not a hardquota.
 The earlier competing build failure stays historical evidence.
 Do not replace a healthy frozen executable or interpret a prefix as a full pair.
 
+The [current full prepared-backend matrix](../artifacts/engine-resource-pair-2026-10-25/prepared-policy7808-20261028T034248Z/README.md) now follows
+the complete32development pair. Both policies use the same actual prepared
+Mathlib backend;two blocks reverseFIFO/task-memory order across all7808.
+Eachpolicy starts cold. Only policy differs;preparation,parent eviction,
+fallback,retry,serialization/retirement remain charged. Fourfullcells are
+in progress,not an extrapolation from selected32. Privatecore retention and
+closedcapture/resourcegzip are separatelytimed and additionallycharged.
+The oldfrozen4.27generated.private cache is losslessly archived on the samePVC
+for space;its cache must be restored before oldenvironment reuse. Current
+4.9/nightly SDK/source/data/frozenexecutables are unchanged. No oldoracle run.
+
 ## Pair completed captures
 
     gpu-smt compare baseline.json candidate.json > comparison.json

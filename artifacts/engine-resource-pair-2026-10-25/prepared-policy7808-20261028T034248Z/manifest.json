@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-28T03:42:48.599632+00:00",
+  "controller_pid": 490481,
+  "controller_start_ticks": 159034008,
+  "CLI_source": "8045cca release copied from completed32run",
+  "CLI_bytes": 5773552,
+  "prepared_host_source": "/tmp/gpu-smt-mathlib-import-20261025/build/prepared-host",
+  "prepared_host_bytes": 94563856,
+  "repl": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4/.lake/packages/REPL/.lake/build/bin/repl",
+  "project": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4",
+  "sysroot": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux",
+  "LEAN_PATH": "././.lake/packages/batteries/.lake/build/lib:././.lake/packages/Qq/.lake/build/lib:././.lake/packages/aesop/.lake/build/lib:././.lake/packages/proofwidgets/.lake/build/lib:././.lake/packages/Cli/.lake/build/lib:././.lake/packages/importGraph/.lake/build/lib:././.lake/packages/REPL/.lake/build/lib:././.lake/build/lib:/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean",
+  "cells": [
+    {
+      "name": "qualification-fifo",
+      "policy": "fifo",
+      "input": "qualification24.json"
+    },
+    {
+      "name": "qualification-task-memory",
+      "policy": "task-memory",
+      "input": "qualification24.json"
+    },
+    {
+      "name": "block1-fifo",
+      "policy": "fifo",
+      "input": "original7808.json"
+    },
+    {
+      "name": "block1-task-memory",
+      "policy": "task-memory",
+      "input": "original7808.json"
+    },
+    {
+      "name": "block2-task-memory",
+      "policy": "task-memory",
+      "input": "original7808.json"
+    },
+    {
+      "name": "block2-fifo",
+      "policy": "fifo",
+      "input": "original7808.json"
+    }
+  ],
+  "resources": {
+    "memory_bytes": 51539607552,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "cores_per_worker": 1,
+    "fixed_process_AS_cap": false
+  },
+  "scope": "own load-feedback composition atop preparedMathlib;two opposite-order blocks;not competitor replication or unconditional novelty/strongestwarm claim"
+}

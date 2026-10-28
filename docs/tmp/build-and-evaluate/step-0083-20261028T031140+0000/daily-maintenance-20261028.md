@@ -50,3 +50,19 @@ new closed owncore between cells so retained crash output cannot fill the
 volume again. This is lossless retention/repair,not a new diagnostic framework.
 
 All six closed core archives now verify byte-for-byte,including the original zero-length dump. Reclaimed1,607,888,896B;free space1,670,451,200B at completion. Private archives remain on the samePVC;metadata receipt is committed. No native experiment ran during this compression.
+
+## Representative composition actually starts
+
+After the completedcore repair,retain sufficient headroom for multiple future
+coredumps:7517inactive generated.private cachepayloads(3,015,156,440B) from the
+frozen old4.27Goedel environment are byte-compared into a samePVCarchive
+1,094,761,876B. Free space rises to3,606,642,688B. Restore recipe/metadata
+are in step0084;oldcache requires restoration before reuse,no oldoracle
+experiment or source/data/currentSDK/executable change. This is lossless
+retention,not cache optimization as research. Newclosedcores archive percell.
+
+Both24prepared-policy qualifiers now pass21accepted/3rejected with exact raw
+equality,actual5545module singlethreadparent and nofallback. The sole all7808
+fourcell matrix starts block1FIFO→TaskMemory,then block2TaskMemory→FIFO,
+coldhistories/identicalresources. This follows the reflection's actualnextstep;
+fullresults remain pending. No othernativecollection or AIexecutor is started.
