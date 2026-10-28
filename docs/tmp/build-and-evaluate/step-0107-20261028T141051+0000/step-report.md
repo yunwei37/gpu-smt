@@ -36,8 +36,11 @@ error,requiring successor progress and all remaining waiters to finish.
 
 These are synthetic resource/lifecycle controls,not7808real Lean executions.
 Existing queue/forecast/retry/cancellation/shutdown/native contract tests remain
-required. Rustfmt and git diff --check pass. Compilation,clippy,unit/native CI
-are pending after publication;no pass is inferred. The existing CI executes
+required. Rustfmt and git diff --check pass. Actual source CI now passes for
+a7e0992:engine40704122955runs70workspace controls plus5explicit pinned4.18
+native differentials;benchmark-smoke40704122931runs35Python controls.
+Fmt,clippy and rustdoc pass. [Result review](experiment-001/result-review.md)
+and archived complete logs distinguish each actual scope. Existing CI executes
 validation without local compilation or another Workspace native cohort.
 No full-performance or RQ-answer claim is made.
 
@@ -50,7 +53,7 @@ remain unanswered. The currently running13d4606collection is not upgraded
 mid-run and cannot measure this later source change. No new schedule,Agent,
 provider,log framework or experimental matrix is introduced.
 
-## REVIEW_GATE — root self-review,CI pending
+## REVIEW_GATE — root self-review,source CI passed
 
 The executing root checks wake coverage against every old broadcast site:
 ticket drop,lease drop,periodic watchdog,monitor failure,engine-only RSS fatal,
@@ -62,7 +65,13 @@ counts. No independent audit is available under the explicit user prohibition.
 Direction remains equal-resource native throughput with exact behavior/
 resource evidence. Efficiency removes a source-visible whole-queue wake path;
 it does not assign a native CPU fraction or throughput value. Maintenance adds
-no API knob and keeps existing CI/contracts. Final full native data,source CI,
-complete accepted-set/resource parity,novelty and independent auditing remain
-open. The next native boundary is still the actual full serial pair terminal;
+no API knob and keeps existing CI/contracts. Source CI is now verified;final full native data,complete accepted-set/resource
+parity,novelty and independent auditing remain open. The next native boundary is still the actual full serial pair terminal;
 no second local acquisition or scientific promotion is authorized by this test.
+
+
+Actual14:19:09UTC PID/birth observations confirm the old native controller
+and warm child remain live;no full/warm terminal or engine launch exists yet.
+This is a preserved healthy native acquisition,not an answered RQ. The paper
+source diff against13d4606is empty. No final paper writing/milestone review
+or full-population benefit is claimed from the source controls.

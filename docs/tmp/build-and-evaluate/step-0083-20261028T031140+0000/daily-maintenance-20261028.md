@@ -379,3 +379,12 @@ only the queue head is eligible. Route normal wakes to that head,retain full
 fault/shutdown release and test real acquire futures. This changes no research
 claim until native performance is measured. Existing CI must qualify the source;
 do not replace the frozen active binary or launch another native cohort.
+
+
+Step0107validation complete:actual existing CI qualifies70workspace tests,
+5explicit pinned4.18native differentials and35Python controls,including the
+7808waiting-future wake/handoff and monitor-fault/cancellation controls.
+Measured native CPU savings remain unknown. The frozen full resource run's
+exact controller/warm births are still live;no second native acquisition,
+source replacement or storage mutation was performed. Next remains its actual
+full completion and population review,then the fixed42solo cohort.

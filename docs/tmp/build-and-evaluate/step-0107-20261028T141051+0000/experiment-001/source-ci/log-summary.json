@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-28T14:18:35.852472+00:00",
+  "head": "a7e0992614220a0752aa5f100bc5cdf44335eee1",
+  "engine_run": 40704122955,
+  "smoke_run": 40704122931,
+  "jobs": [
+    {
+      "job_id": 122871505565,
+      "raw_bytes": 64178,
+      "log": "job-122871505565.log.gz",
+      "test_lines": [
+        "2026-10-28T14:17:06.5165180Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:06.5491827Z test queue_wakeup_tests::head_cancellation_advances_and_monitor_failure_releases_every_waiter ... ok",
+        "2026-10-28T14:17:06.5599446Z test queue_wakeup_tests::full_queue_watchdog_wakes_only_the_head_and_retirement_passes_the_lease ... ok",
+        "2026-10-28T14:17:09.6946778Z test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.18s",
+        "2026-10-28T14:17:12.5096258Z test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.81s",
+        "2026-10-28T14:17:13.4731529Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:14.9851684Z test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.51s",
+        "2026-10-28T14:17:14.9877723Z test result: ok. 0 passed; 0 failed; 5 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:19.5560585Z test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.57s",
+        "2026-10-28T14:17:19.5577807Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:19.5591457Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:19.9046378Z test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.34s",
+        "2026-10-28T14:17:20.0420426Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s",
+        "2026-10-28T14:17:20.0458767Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+        "2026-10-28T14:17:20.0539530Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s"
+      ]
+    },
+    {
+      "job_id": 122871506203,
+      "raw_bytes": 45119,
+      "log": "job-122871506203.log.gz",
+      "test_lines": [
+        "2026-10-28T14:17:07.0982728Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.92s"
+      ]
+    },
+    {
+      "job_id": 122871505125,
+      "raw_bytes": 46769,
+      "log": "job-122871505125.log.gz",
+      "test_lines": [
+        "2026-10-28T14:16:38.5930304Z Ran 35 tests in 0.285s"
+      ]
+    }
+  ],
+  "scope": "source/unit/pinned4.18native protocol validation,not full4.9Mathlib performance"
+}

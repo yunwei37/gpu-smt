@@ -12,8 +12,9 @@ requests. Active cancellation and lease-retirement completion still use their
 original paths. Stored permits prevent a pre-poll notification disappearing.
 
 The actual private acquire-future controls cover7808waiters,lease handoff,
-head cancellation and monitor-fault/shutdown termination. Their source is new
-and CI is pending:neither successful compilation nor a passing test is yet
-claimed. Fixtures do not prove end-to-end Lean speedup. The frozen full13d4606
+head cancellation and monitor-fault/shutdown termination. Actual source CI40704122955passes70workspace controls
+and5explicit pinned4.18native differentials;fmt/clippy/rustdoc pass. The
+separate35-test benchmark-smoke40704122931also succeeds. Full logs/metadata
+retain the exact source revision and scopes. Fixtures do not prove end-to-end Lean speedup. The frozen full13d4606
 native run is unchanged and will not measure this edit. No paper-level result
 or independent audit is asserted;all four RQs remain open.
