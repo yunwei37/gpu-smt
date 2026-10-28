@@ -306,3 +306,10 @@ warm benchmark readme marks its one-off FIFO continuation as historical and
 states its legacy guard scope;it must not be restarted as a current runner.
 All relative target paths in six entry/API/architecture/benchmark documents
 exist. This is a local-target check,not an external-link or anchor audit.
+
+## Exact median source validation complete
+
+Actual sourcebf4eb8c passes engine40688762011 and smoke40688762081. Full job
+logs confirm66 workspace tests and5 pinned native controls;format/clippy/docs
+build pass. Current full Mathlib collection remains unchanged13d4606. No new
+runtime-speed claim follows from the complexity change or green controls.
