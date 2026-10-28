@@ -72,9 +72,9 @@ An [optional native import parent](native/lean/README.md) passes the pinned Lean
 native differential/lifecycle CI; the default backend remains fresh-process.
 [Actual Mathlib import-only preparation](artifacts/mathlib-import-preparation-2026-10-25/README.md)
 loads5,545modules and retires normally; no candidate child executes in that setup.
-Full Mathlib COW
-qualification, native failure detectors, source-aware
-cost models and multi-node execution remain implementation/research work.
+A complete comparison to the matched strongest warm service, native failure
+detectors, source-aware cost models and multi-node execution remain
+implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload
 methods and actual end-to-end results.
 
@@ -154,8 +154,9 @@ at this point, subject to actual memory admission. The Rust watchdog samples
 owned trees each second; concurrent preemptions are requeued for an exclusive
 retry after the already queued ordinary frontier, whose resource failures
 remain separately reported. Later arrivals cannot starve a deferred retry;
-the retry still waits for peer retirement. Native throughput for this new
-ordering remains unmeasured. This is sampled
+the retry still waits for peer retirement. The [selected24 qualification](artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z/README.md)
+records lower elapsed time with equal accepted IDs but two additional timeouts;
+whole-population throughput remains pending. This is sampled
 response, not a kernel hard RSS quota.
 
 The original scheduling matrix completed under its frozen two-worker/24GiB-AS
@@ -185,7 +186,9 @@ this is oldpoint closure,not the correctedwarm comparison or a newgain.
 The historical warm cell also loaded compiled Mathlib linarith;both engine
 cells omitted that library. Equal source bytes therefore did not match the
 effective tactic code. The [corrected four-warm resource comparison](bench/lean-warm-resource/README.md)
-loads the same retained native library on both sides;its results are pending.
+loads the same retained native library on both sides. Selected24 results are
+complete; the [serial full7808 pair](docs/tmp/build-and-evaluate/step-0102-20261028T122519+0000/experiment-001/plan.md)
+is now running and has no final result.
 Ordinary native compilation is a baseline requirement,not an engine contribution.
 The [42 historical allocation failures](artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 completed their exclusive rerun with no fixed per-process address-space cap:
@@ -210,7 +213,8 @@ completes32originals:2,832.46s FIFO versus2,169.74s feedback(23.40%less elapsed)
 with exactly equal native outcomes:16accepted,7rejected,9resource failures.
 Retries fall9→5. This tail-selected,single-order development result does not
 establish whole-population performance or novelty;48GiB sampled budgets still
-overshoot. The next validation composes feedback with preparedMathlib.
+overshoot. Further policy measurements remain deferred behind the matched warm-resource
+comparison.
 
 ## Completed measurements
 
@@ -288,7 +292,7 @@ Synthetic controls are not the real-workload evidence.
 The manuscript has completed a
 [12-round serial writing self-review](docs/tmp/bootstrap/step-0011-20261023T195335-0700/iter-refine-writing-20261024T0615/round-11-meaning-preservation.md).
 Its current citation update retains all numerical results, four RQs and
-14 missing result slots. The compiled draft is 35 pages including appendices;
+14 missing result slots. The compiled draft is 36 pages including appendices;
 it is not submission-ready.
 
 All implementation, experiments and review run in this thread. Reviews are

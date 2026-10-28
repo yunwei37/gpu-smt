@@ -297,3 +297,12 @@ new setting,forecast or scientific claim. Existing CI validates the source;
 no compiler or second native experiment competes with the active full clock.
 The full run remains frozen13d4606, so it cannot be reported as evidence for
 this subsequent maintenance change.
+
+## Entry-document cleanup during source CI
+
+README now distinguishes completed selected24 from the running full pair,
+keeps policy validation deferred,and reports the actual36-page draft. The
+warm benchmark readme marks its one-off FIFO continuation as historical and
+states its legacy guard scope;it must not be restarted as a current runner.
+All relative target paths in six entry/API/architecture/benchmark documents
+exist. This is a local-target check,not an external-link or anchor audit.

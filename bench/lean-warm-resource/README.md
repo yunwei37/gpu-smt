@@ -51,12 +51,20 @@ disables completed-result caching: these are different meanings, not hidden
 result reuse. Cache/prefix/certificate reuse and first-success cancellation are
 not part of this all-candidate comparison.
 
-qualify_after_fifo.py continues the existing finite experiment: it blocks once
-on the exact running FIFO pidfd, preserves its full original capture, stops
-the paused old policy wrapper without launching its queue, then runs one
-four-warm/repaired-FIFO qualification pair. It stops for root result review.
-It is not a timer, service, AI agent or full-run performance acceptance gate.
-The one-group exclusion rejects execution while the recorded current CLI lives.
+The retained qualify_after_fifo.py is historical execution provenance: it
+waited on the exact old FIFO pidfd, preserved the completed capture, retired
+the paused old wrapper without launching its policy queue, and completed one
+four-warm/repaired-FIFO qualification pair. Do not restart that retired
+controller. Its legacy startup check covers the recorded old FIFO; it is not
+a universal collection lock. Verify the actual current native group before
+using the direct command above.
+
+The selected24 repair results are now complete; their
+[full raw outcomes and limits](../../artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z/README.md)
+still include two extra engine timeouts with equal accepted IDs. The
+[current full7808 resource pair](../../docs/tmp/build-and-evaluate/step-0102-20261028T122519+0000/experiment-001/plan.md)
+uses one finite serial warm/engine program and is in progress. It does not
+start another workload policy or the separately prepared42 cell automatically.
 
 External launch-to-exit clocks must accompany internal times, including Python/
 Rust loading, serialization and native retirement. Raw outputs and all failures
@@ -74,14 +82,14 @@ resourcequalifier omitted that code. That further confound must accompany
 historical concurrency/AS/transport/retry caveats;an interpreter/native gap is
 not resource-layer improvement or scheduling novelty.
 
-The corrected pending qualifier loads the existing ordinary
+The corrected qualifier loads the existing ordinary
 project/.lake/build/lib/libMathlib-Tactic-Linarith-1.so directly in both warmREPL
 and preparedparent/freshfallback. The counterexample module,export hooks and
 external CPUoracle remain off/frozen. The same discovered project/SDK dependency
 paths are used for both. This is prior native compilation,not a method claim.
 Actual /proc maps and ready native_library metadata must confirm loading;
 configuration alone is insufficient. Preserve the superseded unexecuted
-qualification setup and current frozenFIFO unmodified.
+qualification setup and closed original FIFO data unmodified.
 
 
 ## Analyze the actual complete qualification
