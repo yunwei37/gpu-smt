@@ -46,3 +46,19 @@ inspect every accepted/status/diagnostic difference and externalcost,then fix
 resourceproblems before any newfullrun or policy/failure/LRATgain. The fixed42solo
 cohort remains separatelyrequested after the repairedresourcepoint.
 No repeatedminute/goalturnpoll loop or secondnativecollection.
+
+
+## Verified followthrough,06:52UTC
+
+Sourcecommitcb87914benchmarkCI succeeds. The rawCIjoblog confirms allsix new
+WarmResourceCompare controls actuallyrun andpass,not merely a greenworkflow
+label. Retain paired-analysis-ci*. The separately pinnednative4.18CI from
+step0090is unchanged and not repeated or substituted for real4.9throughput.
+
+BirthmatchedFIFO490546and finitecontinuation507932remainlive,stateS.
+There is no controllererror/stderr,retainedFIFOterminal,warm/enginelaunch,
+or qualificationterminal. Current rawtrace's latest observed registration
+at06:49:58is minif2f-3700;registration is not a completed-result count.
+The helper will react to the actualFIFOexit via its existingpidfd. No new
+timer,collector,wrapper,nativeproof or deferredpolicyqueue is started.
+Mainpairedperformance work remainsinprogress;analyzer readiness is not a gain.

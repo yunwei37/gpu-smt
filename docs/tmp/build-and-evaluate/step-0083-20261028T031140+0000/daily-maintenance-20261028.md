@@ -201,3 +201,10 @@ or an end-to-endbound. This supports staying focused on the alreadyprepared
 nativecode-matched point instead of inventing observer tuning or anotherpolicy.
 CoreAPIs and runningcollection are unchanged;analysis stays in bench/tests
 and detailedfailed/partialevidence under thisstep.
+
+
+06:52followthrough:actualCIlogs execute/pass allsixnewaccountingcontrols.
+The soleFIFOhas not terminated and the finitecontinuation remainslive without
+error. No scheduled/proofmethod/resourceconfiguration is changed. Pending
+nativeevidence is awaited through the existingfinitepidfdpath,not promoted
+from fixtures or repeatedgoalturnpolls.
