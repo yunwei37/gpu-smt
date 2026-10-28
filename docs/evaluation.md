@@ -11,6 +11,9 @@ or venue acceptance. All original,negative,failed and partial data remain.
 
 Prioritize the independent [Rust engine](architecture.md),then reliable failure
 determination,same-task scheduling and public Lean code verification.
+Current user priority is the matched four-warm-REPL resource baseline and
+resource-layer repair before further scheduling/failure gains. The selected32
+result and LRAT controls remain retained,without new stacked efficacy runs.
 Resource preparation,ordinary COW/cache and first-success cancellation alone
 are prior techniques;novelty needs evidence in the load-aware methods.
 No CPU-oracle optimization/extension/new run,competitor reproduction,AI
@@ -54,6 +57,31 @@ relative to an older point. New pair equality does not erase that regression.
 [Historical42solo reruns](../artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 give41budget failures/1timeout,no checked accepts/rejects,48.23GiB sampled peak.
 
+## Resource-layer diagnosis and missing warm comparison
+
+[Step0086](tmp/build-and-evaluate/step-0086-20261028T041734+0000/step-report.md)
+recomputes the exact historical Kimina warm cell21693.761299s. Prepared
+22891.507755s is5.521156%longer descriptively;fresh28391.984735s is also slower.
+The old point has2workers/24GiB-AS,no aggregate kills;new4worker/no-AS performs
+exclusive resource retries. Six source statuses differ,including3086accepted
+becoming timeout. Neither old/new ratio is a matched final resource comparison.
+The own-backend1.24028x is not engine benefit over warm reuse.
+
+Existing prepared lifecycle unions rank final resource failures11242.06s,
+timeouts10650.16s,exclusive checking8924.78s and parent readiness31.37s.
+Groups overlap and are not additive or removable.42of62fallbacks are the same
+exclusive checks;18import mismatches cost2.28s accumulated attempts,two retirement
+fault attempts188.86s. One-child occupancy is10375.98s,not CPU use.
+Startup/import versus native proof work and observer/logging CPU are unseparated.
+
+The monitor had retained retired PID/birth entries under its long-lived root.
+The source now strictly prunes confirmed retired/reused identities while keeping
+live known descendants.55workspace tests/doctest,clippy andformatpass;two earlier
+failed test attempts remain. No native repaired-population speedup is measured.
+A matched Kimina4warm/no-AS/48GiB/CPU8–11comparison is next once the current
+FIFOchild retires. Further policy/failure gains remain deferred. Historical42solo
+results are preserved;the requested repaired-point42cohort follows resource work.
+
 ## Own load-aware methods
 
 [TaskMemory](tmp/build-and-evaluate/step-0071-20261027T035144+0000/step-report.md)
@@ -73,7 +101,7 @@ peaks overshoot48GiB(48.753387/48.558949),not a hardquota. Allowners retire.
 Outcome-informed cohort,singleorder/sharedhost andCPU11analysis limit scope:
 not fullpopulation/strongestwarm/novelty evidence. The old failedrelease stays.
 The [representative preparedMathlib policy matrix](../artifacts/engine-resource-pair-2026-10-25/prepared-policy7808-20261028T034248Z/README.md)
-now runs all7808under bothpolicies in opposite-order blocks(4fullcells).
+started with four intended fullcells;the serial controller is now stopped to defer later policy cells while its current FIFO child continues unchanged.
 Actual24-source qualifiers match21accepted/3rejected and everyrawoutcome;
 each engages a5545module singlethreadparent,no fallback. Fullresults pending.
 

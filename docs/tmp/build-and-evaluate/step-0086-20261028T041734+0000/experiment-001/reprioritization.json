@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-28T04:17:34.652793+00:00",
+  "action": "SIGSTOP existing serial controller only; preserve current FIFO child and watchdog",
+  "controller": 490481,
+  "controller_start_ticks": 159034008,
+  "controller_state": "\tR (running)",
+  "current_fifo_pid": 490546,
+  "current_fifo_start_ticks": 159034837,
+  "current_fifo_alive": true,
+  "deferred_cells": [
+    "block1-task-memory",
+    "block2-task-memory",
+    "block2-fifo"
+  ],
+  "reason": "User prioritizes matched warm resource baseline; no new scheduling/failure gains before resource repair.",
+  "warning": "Controller paused while native child continues. Do not resume automatic policy queue. Current cell external completion clock not final until actual observed exit; internal capture remains authoritative.",
+  "controller_state_verified": "\tT (stopped)"
+}

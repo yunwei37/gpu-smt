@@ -1,0 +1,33 @@
+{
+  "UTC": "2026-10-28T04:27:34.393778+00:00",
+  "commands": [
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "10,11",
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit": 101,
+      "seconds": 1.0055937969591469
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 1.005642948905006,
+  "samples": 3,
+  "combined_peak_rss_bytes": 43919695872,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "rust_resource_regression_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "test_or_lint_commands": 1
+}

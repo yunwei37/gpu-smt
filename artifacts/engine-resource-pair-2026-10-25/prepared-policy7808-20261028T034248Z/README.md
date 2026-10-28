@@ -23,3 +23,12 @@ strongestwarm superiority or novelty follows from the selected32pilot.
 Rawstreams/pins/owner are in launch.json;preserve healthyfrozen group and
 collect finalcells once. Privatecache/cores remain on owningPVC,outsideGit.
 Root only,self-review only. AllfourRQ/userdirections remain open.
+
+## Current priority supersedes the queued policy cells
+
+[User-directed resource-baseline work](../../../docs/tmp/build-and-evaluate/step-0086-20261028T041734+0000/step-report.md)
+pauses only the existing serial controller after both qualifications and while
+block1-fifo continues. The next three policy cells are deferred and must not
+auto-launch. This is an incomplete policy matrix;no fullpolicy ratio exists.
+Current FIFO source/executable/resources remain unchanged and native output is
+retained at its original runtime path.

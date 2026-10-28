@@ -1,0 +1,38 @@
+{
+  "UTC": "2026-10-28T04:26:22.952162+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/rustfmt",
+        "--edition",
+        "2024",
+        "crates/gpu-smt-engine/src/linux.rs"
+      ],
+      "exit": 0,
+      "seconds": 1.0183431289624423
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace"
+      ],
+      "exit": 101,
+      "seconds": 35.092684780946
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 36.11108157900162,
+  "samples": 40,
+  "combined_peak_rss_bytes": 34570469376,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "rust_resource_regression_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "test_or_lint_commands": 2
+}

@@ -1,0 +1,629 @@
+{
+  "scope": "existing complete own-engine component pair; no matched warm result; self-review",
+  "cells": {
+    "native": {
+      "external_cell_seconds": 28391.984734647,
+      "lifecycle_seconds": 28390.654879996,
+      "external_minus_lifecycle_seconds": 1.3298546510013693,
+      "ranked_overlapping_categories": [
+        {
+          "category": "final_timeout_native_execution",
+          "attempts": 90,
+          "unique_sources": 87,
+          "registered_interval_union_seconds": 12447.73713850975,
+          "overlapping_attempt_wall_sum_seconds": 26944.336039228,
+          "union_fraction_of_external_cell": 0.43842433894097094
+        },
+        {
+          "category": "final_resource_failure_native_execution",
+          "attempts": 82,
+          "unique_sources": 41,
+          "registered_interval_union_seconds": 11301.664091825485,
+          "overlapping_attempt_wall_sum_seconds": 13348.291994628,
+          "union_fraction_of_external_cell": 0.3980582617753369
+        },
+        {
+          "category": "rejected_native_execution",
+          "attempts": 4665,
+          "unique_sources": 4665,
+          "registered_interval_union_seconds": 10086.428030729294,
+          "overlapping_attempt_wall_sum_seconds": 22848.518049262,
+          "union_fraction_of_external_cell": 0.35525617969288115
+        },
+        {
+          "category": "exclusive_native_execution",
+          "attempts": 44,
+          "unique_sources": 44,
+          "registered_interval_union_seconds": 9479.735897064209,
+          "overlapping_attempt_wall_sum_seconds": 9480.134700098,
+          "union_fraction_of_external_cell": 0.33388774985836056
+        },
+        {
+          "category": "accepted_native_execution",
+          "attempts": 3013,
+          "unique_sources": 3013,
+          "registered_interval_union_seconds": 6218.6594851017,
+          "overlapping_attempt_wall_sum_seconds": 14691.929517001001,
+          "union_fraction_of_external_cell": 0.21902869923401347
+        },
+        {
+          "category": "nonexclusive_preempted_native_execution",
+          "attempts": 44,
+          "unique_sources": 44,
+          "registered_interval_union_seconds": 3514.0450978279114,
+          "overlapping_attempt_wall_sum_seconds": 5560.318232701,
+          "union_fraction_of_external_cell": 0.12376891332784107
+        },
+        {
+          "category": "fresh_fallback_attempts",
+          "attempts": 0,
+          "unique_sources": 0,
+          "registered_interval_union_seconds": 0,
+          "overlapping_attempt_wall_sum_seconds": 0,
+          "union_fraction_of_external_cell": 0.0
+        },
+        {
+          "category": "parent_preparation_registration_to_handoff",
+          "preparations": 0,
+          "registered_interval_union_seconds": 0,
+          "overlapping_attempt_wall_sum_seconds": null,
+          "union_fraction_of_external_cell": 0.0
+        }
+      ],
+      "occupied_native_children_seconds_by_count": {
+        "0": 1.0483155250549316,
+        "1": 11273.489013910294,
+        "2": 713.0909233093262,
+        "3": 433.7703151702881,
+        "4": 15964.060261249542,
+        "outside_native_span": 6.525905482496455
+      },
+      "sampled_registered_children_seconds_by_count": {
+        "0": 11.467648179999319,
+        "1": 11268.038670631,
+        "4": 12599.364665569072,
+        "3": 3752.7355572139427,
+        "2": 754.403959827985
+      },
+      "sample_counts_by_registered_children": {
+        "0": 10,
+        "1": 9361,
+        "4": 8125,
+        "3": 2627,
+        "2": 628
+      },
+      "sampled_peak_aggregate_rss_bytes": 52207243264,
+      "occupied_child_slot_seconds": 77857.22285103798,
+      "occupied_slot_fraction_of_4cpu_cell": 0.6855563601725604,
+      "observed_registered_process_cpu_seconds_lower_bound": 71449.88,
+      "cpu_scope": "max sampled cumulative process ticks; misses short unsampled processes/final tails and idle unregistered-parent CPU; not exhaustive CPU or utilization",
+      "top20_attempt_cost_sources": [
+        {
+          "id": "minif2f-7521",
+          "status": "timeout",
+          "attempt_seconds_sum": 579.070289858,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-5960",
+          "status": "timeout",
+          "attempt_seconds_sum": 577.539220202,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-1885",
+          "status": "timeout",
+          "attempt_seconds_sum": 535.551428111,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3695",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 457.28934488899995,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3708",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 437.91437239699997,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-664",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 436.872105087,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3689",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 433.028319233,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3682",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 431.950955178,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3701",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 431.91479078,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3700",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 429.082625346,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3687",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 426.921592607,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3709",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 426.014389242,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2409",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 398.691102882,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2423",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 394.772231595,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2421",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 388.328130316,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-579",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 345.168730811,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3693",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 321.912670472,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-663",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 316.396147945,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3703",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 315.673268447,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3697",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 314.74420037,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        }
+      ],
+      "parent_preparations": 0,
+      "fallback_event_rows": 0,
+      "fallback_attempts": 0,
+      "not_separated": [
+        "within-native imports versus elaboration/checking",
+        "mutex/admission waiting versus idle natural gaps",
+        "watchdog/procscan CPU",
+        "logging CPU/wall"
+      ],
+      "warning": "Categories overlap. Never add their seconds or infer removable/Amdahl time. Occupied native children are not CPU utilization or a counterfactual warm result."
+    },
+    "prepared": {
+      "external_cell_seconds": 22891.50775452,
+      "lifecycle_seconds": 22890.193560248,
+      "external_minus_lifecycle_seconds": 1.3141942719994404,
+      "ranked_overlapping_categories": [
+        {
+          "category": "final_resource_failure_native_execution",
+          "attempts": 82,
+          "unique_sources": 41,
+          "registered_interval_union_seconds": 11242.055533647537,
+          "overlapping_attempt_wall_sum_seconds": 13536.977560621,
+          "union_fraction_of_external_cell": 0.49110157592951725
+        },
+        {
+          "category": "final_timeout_native_execution",
+          "attempts": 88,
+          "unique_sources": 87,
+          "registered_interval_union_seconds": 10650.161919355392,
+          "overlapping_attempt_wall_sum_seconds": 26446.240752895,
+          "union_fraction_of_external_cell": 0.4652451045847989
+        },
+        {
+          "category": "fresh_fallback_attempts",
+          "attempts": 62,
+          "unique_sources": 62,
+          "registered_interval_union_seconds": 9115.254030704498,
+          "overlapping_attempt_wall_sum_seconds": 9118.605454058,
+          "union_fraction_of_external_cell": 0.39819369385595244
+        },
+        {
+          "category": "exclusive_native_execution",
+          "attempts": 42,
+          "unique_sources": 42,
+          "registered_interval_union_seconds": 8924.77820277214,
+          "overlapping_attempt_wall_sum_seconds": 8927.469732566,
+          "union_fraction_of_external_cell": 0.3898728864205074
+        },
+        {
+          "category": "rejected_native_execution",
+          "attempts": 4665,
+          "unique_sources": 4665,
+          "registered_interval_union_seconds": 6196.9309141635895,
+          "overlapping_attempt_wall_sum_seconds": 11383.665299292,
+          "union_fraction_of_external_cell": 0.27070872659927725
+        },
+        {
+          "category": "accepted_native_execution",
+          "attempts": 3013,
+          "unique_sources": 3013,
+          "registered_interval_union_seconds": 3320.479818344116,
+          "overlapping_attempt_wall_sum_seconds": 7173.26458431,
+          "union_fraction_of_external_cell": 0.1450529101862448
+        },
+        {
+          "category": "nonexclusive_preempted_native_execution",
+          "attempts": 42,
+          "unique_sources": 42,
+          "registered_interval_union_seconds": 2916.120178937912,
+          "overlapping_attempt_wall_sum_seconds": 5208.540146812,
+          "union_fraction_of_external_cell": 0.12738873342067714
+        },
+        {
+          "category": "parent_preparation_registration_to_handoff",
+          "preparations": 14,
+          "registered_interval_union_seconds": 31.365106105804443,
+          "overlapping_attempt_wall_sum_seconds": null,
+          "union_fraction_of_external_cell": 0.0013701634004257017
+        }
+      ],
+      "occupied_native_children_seconds_by_count": {
+        "0": 32.496774196624756,
+        "1": 10375.984324932098,
+        "2": 637.012701511383,
+        "3": 539.9758491516113,
+        "4": 11297.380866289139,
+        "outside_native_span": 8.657238439143839
+      },
+      "sampled_registered_children_seconds_by_count": {
+        "0": 36.97858396399924,
+        "1": 10376.763873191005,
+        "3": 2172.0019495780016,
+        "4": 9651.67631132,
+        "2": 647.9568552669958
+      },
+      "sample_counts_by_registered_children": {
+        "0": 30,
+        "1": 8627,
+        "3": 1698,
+        "4": 5859,
+        "2": 537
+      },
+      "sampled_peak_aggregate_rss_bytes": 52265881600,
+      "occupied_child_slot_seconds": 58459.460740566254,
+      "occupied_slot_fraction_of_4cpu_cell": 0.6384404794068583,
+      "observed_registered_process_cpu_seconds_lower_bound": 55285.39,
+      "cpu_scope": "max sampled cumulative process ticks; misses short unsampled processes/final tails and idle unregistered-parent CPU; not exhaustive CPU or utilization",
+      "top20_attempt_cost_sources": [
+        {
+          "id": "minif2f-1885",
+          "status": "timeout",
+          "attempt_seconds_sum": 599.032318757,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3692",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 450.469504936,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-664",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 433.735665109,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3709",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 432.96278118600003,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3703",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 426.973411509,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3687",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 426.112112149,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3688",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 424.96443371099997,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3705",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 424.916879003,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3700",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 423.54190215100004,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3682",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 420.05879524600005,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2421",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 404.006892513,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2404",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 397.949286191,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2409",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 394.40501083699996,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-663",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 324.931882203,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3697",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 322.701658773,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3694",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 322.699101493,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-579",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 321.480642728,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-2401",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 320.712474977,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3704",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 320.426345293,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        },
+        {
+          "id": "minif2f-3691",
+          "status": "resource_exhausted",
+          "attempt_seconds_sum": 319.568259935,
+          "attempts": 2,
+          "exclusive_attempts": 1
+        }
+      ],
+      "parent_preparations": 14,
+      "fallback_event_rows": 62,
+      "fallback_attempts": 62,
+      "not_separated": [
+        "within-native imports versus elaboration/checking",
+        "mutex/admission waiting versus idle natural gaps",
+        "watchdog/procscan CPU",
+        "logging CPU/wall"
+      ],
+      "warning": "Categories overlap. Never add their seconds or infer removable/Amdahl time. Occupied native children are not CPU utilization or a counterfactual warm result."
+    }
+  },
+  "logging_retained": {
+    "uncompressed_driver_bytes": 35804683,
+    "driver_rows": 98595,
+    "wall_overhead_seconds": null,
+    "reason": "bytes/row counts are not CPU or elapsed overhead; matched log-on/off control remains required"
+  },
+  "historical_warm": {
+    "source": "artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-20261024T0913/off",
+    "whole_lifecycle_seconds": 21693.761299439,
+    "workers": 2,
+    "per_process_AS_bytes": 25769803776,
+    "aggregate_memory_bytes": 51539607552,
+    "counts": {
+      "valid": 3014,
+      "lean_error": 4669,
+      "timeout_error": 83,
+      "resource_failure": 42
+    },
+    "HTTP_groups_overlapping": {
+      "lean_error": {
+        "sources": 4669,
+        "HTTP_envelope_sum_seconds": 8019.053541910136,
+        "HTTP_envelope_union_seconds": 6888.33262300631
+      },
+      "resource_failure": {
+        "sources": 42,
+        "HTTP_envelope_sum_seconds": 3996.430801492883,
+        "HTTP_envelope_union_seconds": 2400.7558617787436
+      },
+      "timeout_error": {
+        "sources": 83,
+        "HTTP_envelope_sum_seconds": 24966.40594167402,
+        "HTTP_envelope_union_seconds": 16042.253433093429
+      },
+      "valid": {
+        "sources": 3014,
+        "HTTP_envelope_sum_seconds": 6139.349831822561,
+        "HTTP_envelope_union_seconds": 4371.41871913732
+      }
+    },
+    "engine_status_differences": {
+      "native": [
+        {
+          "id": "minif2f-1885",
+          "historical_warm": "resource_exhausted",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-2325",
+          "historical_warm": "rejected",
+          "engine": "backend_error"
+        },
+        {
+          "id": "minif2f-2507",
+          "historical_warm": "rejected",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-3086",
+          "historical_warm": "accepted",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-3209",
+          "historical_warm": "rejected",
+          "engine": "backend_error"
+        },
+        {
+          "id": "minif2f-7230",
+          "historical_warm": "rejected",
+          "engine": "timeout"
+        }
+      ],
+      "prepared": [
+        {
+          "id": "minif2f-1885",
+          "historical_warm": "resource_exhausted",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-2325",
+          "historical_warm": "rejected",
+          "engine": "backend_error"
+        },
+        {
+          "id": "minif2f-2507",
+          "historical_warm": "rejected",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-3086",
+          "historical_warm": "accepted",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-3209",
+          "historical_warm": "rejected",
+          "engine": "backend_error"
+        },
+        {
+          "id": "minif2f-7230",
+          "historical_warm": "rejected",
+          "engine": "timeout"
+        }
+      ]
+    },
+    "prepared_elapsed_over_historical_warm": 1.0552115623726335,
+    "warning": "Historical only:2workers/24GiB-AS versus4workers/no-AS/exclusive retries; different complete cost boundaries and fixed source order. Accepted set is not equal. Do not claim engine benefit or infer causal slowdown from this ratio."
+  },
+  "prepared_fallback_details": {
+    "exclusive resource retry uses fresh native state": {
+      "attempts": 42,
+      "overlapping_attempt_wall_sum_seconds": 8927.469732566,
+      "exclusive_attempts": 42
+    },
+    "parsed imports differ from prepared root": {
+      "attempts": 18,
+      "overlapping_attempt_wall_sum_seconds": 2.2777819179999996,
+      "exclusive_attempts": 0
+    },
+    "missing native retirement": {
+      "attempts": 2,
+      "overlapping_attempt_wall_sum_seconds": 188.857939574,
+      "exclusive_attempts": 0
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "UTC": "2026-10-28T04:28:35.620145+00:00",
+  "commands": [
+    {
+      "command": [
+        "/usr/local/cargo/bin/rustfmt",
+        "--edition",
+        "2024",
+        "crates/gpu-smt-engine/src/linux.rs"
+      ],
+      "exit": 0,
+      "seconds": 1.0061279709916562
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "10,11",
+        "/usr/local/cargo/bin/cargo",
+        "test",
+        "--workspace",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit": 0,
+      "seconds": 27.054399424931034
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 5.019551130011678
+    },
+    {
+      "command": [
+        "/usr/local/cargo/bin/cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.0047636909876019
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 34.08491371409036,
+  "samples": 42,
+  "combined_peak_rss_bytes": 49852178432,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "rust_resource_regression_only": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "test_or_lint_commands": 4
+}

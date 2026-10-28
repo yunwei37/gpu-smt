@@ -81,3 +81,21 @@ measurement, then run after the current sole fullmatrix retires. Supporting
 CPU11 contention and combinedRSS receipts remain explicit in step0085.
 Reconcile the older closed-CNF README's pending wording with its already
 measured slowdown; do not rerun that failed direction.
+
+## User priority correction: establish warm resource parity first
+
+The exact21693.76s warm result is faster than both engine component cells.
+It used24GiB-AS/two workers;the new uncapped point has exclusive retries and
+six status changes,including one lost accepted candidate. A1.24028xown-fresh
+ratio is not engine benefit. Stop adding policy/failure gains and first run
+the requested matched four-warm baseline after currentFIFOretirement.
+Pause the serial controller to defer its next three policy cells,preserving
+the healthy FIFOchild. No automatic queue resume or second collection.
+
+Existing full data rank resource-failure/timeout/exclusive occupied intervals
+above31.37s parent readiness. Overlaps are explicit. A source-confirmed monitor
+defect retained dead descendants across the whole engine history;fix it with
+strict identity/liveness pruning,retaining live/reparented ownership and errors.
+55tests/doctest,clippy/fmtpass;both failed test attempts remain. Actual repaired
+native throughput is still unknown. The next useful action is matched warm
+qualification/resource repair,not another selected32ratio or LRAT speed claim.

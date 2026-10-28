@@ -68,6 +68,14 @@ All4native test functions pass with0ignored under officialLean4.18/REPL2f0a3cb.
 qualifies this small semantic context,not original4.9Mathlib throughput or
 full accepted-set equivalence. The active full pair remains unchanged.
 
+ProcMonitor now prunes strictly confirmed retired/reused PID/birth records
+under the long-lived engine root. Live known descendants remain accounted even
+when their original parent link is gone;stat read errors propagate. This fixes
+history-dependent scanning,not the still-unmeasured whole-verification overhead.
+[Repair and55test/doctest qualification](tmp/build-and-evaluate/step-0086-20261028T041734+0000/experiment-002/result-review.md)
+preserves both failed test attempts and four locallyignored real-Lean tests.
+The existing frozen FIFOchild is unchanged;new native qualification is pending.
+
 Every second actual owned-tree RSS is sampled, including idle preparation
 descendants. Concurrent preemptions kill/reap and requeue for an exclusive
 attempt. An otherwise idle queue also promotes a forecast that cannot fit

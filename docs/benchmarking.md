@@ -94,8 +94,10 @@ The [current full prepared-backend matrix](../artifacts/engine-resource-pair-202
 the complete32development pair. Both policies use the same actual prepared
 Mathlib backend;two blocks reverseFIFO/task-memory order across all7808.
 Eachpolicy starts cold. Only policy differs;preparation,parent eviction,
-fallback,retry,serialization/retirement remain charged. Fourfullcells are
-in progress,not an extrapolation from selected32. Privatecore retention and
+fallback,retry,serialization/retirement remain charged. The currentFIFOchild continues unchanged;the serial wrapper is stopped so the
+three further policy cells do not launch. The user now prioritizes the matched
+four-warm-REPL resource baseline and resource-layer repair. No result is
+extrapolated from selected32. Privatecore retention and
 closedcapture/resourcegzip are separatelytimed and additionallycharged.
 The oldfrozen4.27generated.private cache is losslessly archived on the samePVC
 for space;its cache must be restored before oldenvironment reuse. Current
@@ -131,6 +133,19 @@ operational outcomes, resource logs, controller clocks, input provenance and
 contention. Resource-point changes can change which candidates complete.
 An environment label records the operator's pin; it does not authenticate the
 binary or make arbitrary stateful Lean metaprograms deterministic.
+
+## Current priority: warm resource baseline
+
+The user requests retained official Kimina with four warmed REPLs against FIFO
+engine at48GiB actualRSS/CPU8–11,no AS cap,dynamic admission and exclusive requeue.
+The historical two-worker warm cell also had24GiB-AS;do not pool its clocks with
+uncapped four-worker retries. Own fresh-versus-prepared is a component control,
+not overall engine benefit. [Attribution and priority](tmp/build-and-evaluate/step-0086-20261028T041734+0000/step-report.md)
+retain six historical status changes and observer-cost unknowns.
+Complete the current healthy FIFOchild and collect its source/output;do not resume
+the deferred automatic policy queue. Qualify the matched resource baseline,
+repair resource overhead,then fullpair and the fixed42solo cohort.
+No further scheduling/failure/LRAT efficacy layer before this resource work.
 
 ## This Workspace's next execution
 

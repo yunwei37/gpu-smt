@@ -90,6 +90,21 @@ impl ResourceMonitor for ProcMonitor {
             {
                 entries.push(root.clone());
             }
+            // Retain only birth-matched live descendants. The engine root is
+            // long-lived: retaining every retired child makes every admission
+            // and watchdog tick revisit the whole request history.
+            // Read known owned identities strictly before pruning: an access
+            // error must not silently turn owned memory into unowned memory.
+            let mut live = Vec::with_capacity(entries.len());
+            for p in entries.iter() {
+                if let Some(current) = stat(p.pid)?
+                    && current.identity == *p
+                {
+                    table.insert(p.pid, current);
+                    live.push(p.clone());
+                }
+            }
+            *entries = live;
             loop {
                 let before = entries.len();
                 for s in table.values() {
@@ -149,4 +164,77 @@ pub fn bind_current_thread(cpus: &[usize]) -> Result<(), String> {
         }
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::process::{Child, Command};
+
+    struct OwnedChild(Child);
+    impl Drop for OwnedChild {
+        fn drop(&mut self) {
+            let _ = self.0.kill();
+            let _ = self.0.wait();
+        }
+    }
+    fn child() -> OwnedChild {
+        use std::io::{BufRead, BufReader};
+        let mut child = OwnedChild(
+            Command::new("/usr/bin/python3")
+                .args(["-u", "-c", "import time; print('ready'); time.sleep(60)"])
+                .stdout(std::process::Stdio::piped())
+                .spawn()
+                .unwrap(),
+        );
+        // Successful exec alone can precede the first resident-page fault.
+        // Synchronize with the real helper instead of racing an RSS>0 assertion.
+        let mut ready = String::new();
+        BufReader::new(child.0.stdout.take().unwrap())
+            .read_line(&mut ready)
+            .unwrap();
+        assert_eq!(ready.trim(), "ready");
+        child
+    }
+
+    #[test]
+    fn retired_descendants_do_not_accumulate_under_the_engine_root() {
+        let own = identity(std::process::id()).unwrap();
+        let monitor = ProcMonitor::default();
+        for _ in 0..3 {
+            let mut child = child();
+            let born = identity(child.0.id()).unwrap();
+            monitor.sample(&[]).unwrap();
+            assert!(monitor.known.lock().unwrap()[&(own.pid, own.start_ticks)].contains(&born));
+            child.0.kill().unwrap();
+            child.0.wait().unwrap();
+            monitor.sample(&[]).unwrap();
+            assert!(
+                !monitor.known.lock().unwrap()[&(own.pid, own.start_ticks)].contains(&born),
+                "retired request identities must not grow every future RSS scan"
+            );
+        }
+    }
+
+    #[test]
+    fn pruning_keeps_live_owned_births_and_discards_reused_pid_identity() {
+        let own = identity(std::process::id()).unwrap();
+        let child = child();
+        let born = identity(child.0.id()).unwrap();
+        let stale = ProcessIdentity {
+            pid: born.pid,
+            start_ticks: born.start_ticks + 1,
+        };
+        let monitor = ProcMonitor::default();
+        monitor.known.lock().unwrap().insert(
+            (own.pid, own.start_ticks),
+            vec![own.clone(), born.clone(), stale.clone()],
+        );
+        let sample = monitor.sample(std::slice::from_ref(&born)).unwrap();
+        assert!(sample.processes[0].rss_bytes > 0);
+        let known = monitor.known.lock().unwrap();
+        let retained = &known[&(own.pid, own.start_ticks)];
+        assert!(retained.contains(&born));
+        assert!(!retained.contains(&stale));
+    }
 }
