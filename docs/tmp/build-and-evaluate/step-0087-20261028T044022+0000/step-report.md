@@ -43,3 +43,20 @@ publish the completed setup boundary. At real pair termination,collect raw
 outcomes/limits/workercount/CPU/RSS/preemptions/retries/retirement and external
 clocks once. Repair resource behavior before a full matched warm comparison.
 Then separately replay fixed42at the repairedpoint. Do not resume queued policies.
+
+## Actual startup and source CI followthrough
+
+The finite continuation now starts at2026-10-28T04:48:11UTC:
+PID499365/birth159426315,sourcec7e4464. Its own startup receipt matches the
+recorded FIFO490546/birth159034837. ActualstateS/poll wait,stderr0,no controller
+error,and no warm/engine launch yet. This preserves the running verifier rather
+than spending agent rounds waiting. [Startup evidence](experiment-001/continuation-start.json).
+The native qualification is pending,not relabelled complete.
+
+The9d814adsourcefix has successful engine andbenchmark-smoke CI. The engine
+workflow's actual native-repl-contract job builds pinnedLean4.18/REPL/importparent
+and its raw-native differential step succeeds. [Job receipts](experiment-001/resource-fix-ci-jobs.json)
+qualify that context only,not full4.9Mathlib/warm throughput. Current local four
+native tests stayed ignored while the sole collection ran.
+The existing hourly automation prompt now follows the user-requested resource
+baseline priority and completed42history;hourly frequency/target remain unchanged.

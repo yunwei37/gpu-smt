@@ -78,8 +78,12 @@ The monitor had retained retired PID/birth entries under its long-lived root.
 The source now strictly prunes confirmed retired/reused identities while keeping
 live known descendants.55workspace tests/doctest,clippy andformatpass;two earlier
 failed test attempts remain. No native repaired-population speedup is measured.
-A matched Kimina4warm/no-AS/48GiB/CPU8–11comparison is next once the current
-FIFOchild retires. Further policy/failure gains remain deferred. Historical42solo
+The [finite warm resource continuation](../artifacts/engine-resource-pair-2026-10-25/gpu-smt-warm-resource-qualification-20261028T044624Z/README.md)
+is now waiting on that exact FIFOchild's pidfd. It will preserve the old result,
+retire the obsolete policy wrapper,and run the real4warm/repairedFIFOqualification.
+No new native qualification or full warm comparison is complete yet.
+The sourcefix also passes pinnedLean4.18native-protocol CI,not the pending4.9
+resource comparison. Further policy/failure gains remain deferred. Historical42solo
 results are preserved;the requested repaired-point42cohort follows resource work.
 
 ## Own load-aware methods

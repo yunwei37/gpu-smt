@@ -99,3 +99,18 @@ strict identity/liveness pruning,retaining live/reparented ownership and errors.
 55tests/doctest,clippy/fmtpass;both failed test attempts remain. Actual repaired
 native throughput is still unknown. The next useful action is matched warm
 qualification/resource repair,not another selected32ratio or LRAT speed claim.
+
+## Actual resource-baseline followthrough
+
+Repairedrelease builds successfully without changing the active executable.
+Retained KiminaManager/run_checks API imports work in its existingvenv;system
+Python's missinghttpx is not a missing actualruntime dependency. A benchmark-local
+unlimited-AS field and awaited official retirement preserve the new resource
+contract;no installed source/default changes. The one-group guard actually
+refuses an overlapping launch. Freeze equal20ordinary+4heavy inputs,binaries
+and source,then start the existing finite continuation on the actualFIFOpidfd.
+It will collect the whole old capture,stop the stale queued policy wrapper and
+run one native qualification pair;no new fulltest or policy is autoaccepted.
+Root will review results before repaired fullpair and42solo. This executes the
+next available dependency instead of empty goal polling. Resourcefix CI including
+pinned4.18native differential job succeeds;4.9warm throughput is still pending.

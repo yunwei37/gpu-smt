@@ -146,6 +146,11 @@ Complete the current healthy FIFOchild and collect its source/output;do not resu
 the deferred automatic policy queue. Qualify the matched resource baseline,
 repair resource overhead,then fullpair and the fixed42solo cohort.
 No further scheduling/failure/LRAT efficacy layer before this resource work.
+The [retained warm baseline adapter](../bench/lean-warm-resource/README.md)
+uses official Manager/run_checks directly,no HTTP polling,new service or oracle.
+The existing finite continuation waits on currentFIFOretirement,then performs
+one real development qualification pair and stops for root result review.
+Build/import/refusal controls are complete;actualnative4warmresults remain pending.
 
 ## This Workspace's next execution
 
