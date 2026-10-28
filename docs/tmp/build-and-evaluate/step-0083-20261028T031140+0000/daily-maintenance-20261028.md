@@ -325,3 +325,13 @@ relaxed. Parsing/retirement can still run late and are fully charged;this is
 not a hard wall limit or a measured explanation for2507/7230. The current
 full resource run remains frozen13d4606,and no local compilation/test competes
 with its four-core clock. Validate using the existing non-AI CI workflow.
+
+## Native IO source validation complete
+
+Sourcee20dcaa passes68 workspace tests and5 pinned native controls in actual
+CI40691001753;smoke40691002023 also passes. Old-selection overrun control
+engages and the fixed path times out late fixture results. Actual causality
+for old miniF2F differences and full accepted-set equality remain unproved.
+The fixed42 future command is rebound to the ongoing full point13d4606 without
+launching or overwriting its old preparation. This keeps future resource data
+matched rather than silently using a stale cf1138b binary.

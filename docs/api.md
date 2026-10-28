@@ -79,6 +79,15 @@ timeouts/resource exhaustion from logical rejection. Native warning/message
 payloads remain available. Compatibility tests cover core shapes; they do
 not establish compatibility with every optional Kimina feature.
 
+Timeout is a cooperative native response budget, not a whole-delivery wall
+bound. A single synchronous IO poll can finish late; such a completion is a
+timeout even if its timer has not yet been polled again. Fresh REPL completion
+means complete native JSON, while source CLI IO includes stdout and natural
+process exit. Parsing cannot be interrupted by this check. Queueing, retries,
+post-response work and mandatory retirement remain visible in elapsed costs;
+a timed-out attempt still pays cleanup. See [deadline scope](architecture.md#cooperative-native-io-deadlines).
+
+
 ## Memory, CPU and lifecycle
 
 The executable handles SIGTERM and SIGINT through engine shutdown before

@@ -1,0 +1,294 @@
+{
+  "utc": "2026-10-28T12:52:50.886535+00:00",
+  "runs": [
+    {
+      "id": 40691001753,
+      "name": "engine",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "e20dcaa6b3467cdf27e2a729c025257dd30711a6",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40691001753",
+      "created_at": "2026-10-28T12:49:22Z",
+      "updated_at": "2026-10-28T12:51:31Z",
+      "jobs": [
+        {
+          "id": 122825473280,
+          "name": "native-repl-contract",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40691001753/job/122825473280",
+          "started_at": "2026-10-28T12:49:25Z",
+          "completed_at": "2026-10-28T12:51:05Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-28T12:49:25Z",
+              "completed_at": "2026-10-28T12:49:26Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-28T12:49:26Z",
+              "completed_at": "2026-10-28T12:50:20Z"
+            },
+            {
+              "name": "Run dtolnay/rust-toolchain@stable",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-28T12:50:20Z",
+              "completed_at": "2026-10-28T12:50:29Z"
+            },
+            {
+              "name": "Prepare pinned native protocol dependency",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-28T12:50:29Z",
+              "completed_at": "2026-10-28T12:50:43Z"
+            },
+            {
+              "name": "Build import-only native parent",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-28T12:50:43Z",
+              "completed_at": "2026-10-28T12:50:47Z"
+            },
+            {
+              "name": "Differential check against raw native JSON",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-28T12:50:47Z",
+              "completed_at": "2026-10-28T12:51:03Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12,
+              "started_at": "2026-10-28T12:51:03Z",
+              "completed_at": "2026-10-28T12:51:03Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13,
+              "started_at": "2026-10-28T12:51:03Z",
+              "completed_at": "2026-10-28T12:51:04Z"
+            }
+          ]
+        },
+        {
+          "id": 122825473768,
+          "name": "rust",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40691001753/job/122825473768",
+          "started_at": "2026-10-28T12:49:25Z",
+          "completed_at": "2026-10-28T12:51:30Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-28T12:49:26Z",
+              "completed_at": "2026-10-28T12:49:27Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-28T12:49:27Z",
+              "completed_at": "2026-10-28T12:50:31Z"
+            },
+            {
+              "name": "Run dtolnay/rust-toolchain@stable",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-28T12:50:31Z",
+              "completed_at": "2026-10-28T12:50:44Z"
+            },
+            {
+              "name": "Run cargo fmt --all -- --check",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-28T12:50:44Z",
+              "completed_at": "2026-10-28T12:50:44Z"
+            },
+            {
+              "name": "Run cargo clippy --workspace --all-targets --locked -- -D warnings",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-28T12:50:44Z",
+              "completed_at": "2026-10-28T12:50:55Z"
+            },
+            {
+              "name": "Run cargo test --workspace --all-targets --locked",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-28T12:50:55Z",
+              "completed_at": "2026-10-28T12:51:22Z"
+            },
+            {
+              "name": "Run cargo doc --workspace --no-deps --locked",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-28T12:51:22Z",
+              "completed_at": "2026-10-28T12:51:28Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14,
+              "started_at": "2026-10-28T12:51:28Z",
+              "completed_at": "2026-10-28T12:51:28Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15,
+              "started_at": "2026-10-28T12:51:28Z",
+              "completed_at": "2026-10-28T12:51:28Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40691002023,
+      "name": "benchmark-smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "e20dcaa6b3467cdf27e2a729c025257dd30711a6",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40691002023",
+      "created_at": "2026-10-28T12:49:22Z",
+      "updated_at": "2026-10-28T12:50:51Z",
+      "jobs": [
+        {
+          "id": 122825475643,
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40691002023/job/122825475643",
+          "started_at": "2026-10-28T12:49:25Z",
+          "completed_at": "2026-10-28T12:50:51Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-28T12:49:26Z",
+              "completed_at": "2026-10-28T12:49:27Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-28T12:49:27Z",
+              "completed_at": "2026-10-28T12:50:21Z"
+            },
+            {
+              "name": "Install Z3",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-28T12:50:21Z",
+              "completed_at": "2026-10-28T12:50:41Z"
+            },
+            {
+              "name": "Syntax and unit tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-28T12:50:41Z",
+              "completed_at": "2026-10-28T12:50:42Z"
+            },
+            {
+              "name": "Run synthetic cold-vs-incremental CLI benchmark",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-28T12:50:42Z",
+              "completed_at": "2026-10-28T12:50:42Z"
+            },
+            {
+              "name": "Run direct libz3 state-reuse benchmark",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-28T12:50:42Z",
+              "completed_at": "2026-10-28T12:50:45Z"
+            },
+            {
+              "name": "Decompose reuse levels",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-28T12:50:45Z",
+              "completed_at": "2026-10-28T12:50:46Z"
+            },
+            {
+              "name": "Analyze cross-query prefix reuse",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-28T12:50:46Z",
+              "completed_at": "2026-10-28T12:50:46Z"
+            },
+            {
+              "name": "Validate benchmark output",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-28T12:50:46Z",
+              "completed_at": "2026-10-28T12:50:46Z"
+            },
+            {
+              "name": "Upload smoke benchmark artifacts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-28T12:50:46Z",
+              "completed_at": "2026-10-28T12:50:48Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20,
+              "started_at": "2026-10-28T12:50:48Z",
+              "completed_at": "2026-10-28T12:50:48Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21,
+              "started_at": "2026-10-28T12:50:48Z",
+              "completed_at": "2026-10-28T12:50:48Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
