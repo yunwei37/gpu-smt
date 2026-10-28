@@ -235,6 +235,105 @@ async fn oversized_solo_is_resource_failure_not_infinite_retry_or_rejection() {
     assert_eq!(b.calls.load(Ordering::SeqCst), 2);
     e.shutdown().await;
 }
+#[tokio::test(flavor = "current_thread")]
+async fn watchdog_preempts_while_the_request_executor_is_blocked() {
+    struct BlockingBackend {
+        cancelled_while_blocked: std::sync::atomic::AtomicBool,
+        solo_calls: AtomicUsize,
+    }
+    #[async_trait]
+    impl VerificationBackend for BlockingBackend {
+        fn identity(&self) -> String {
+            "blocked-executor-fixture".into()
+        }
+        async fn verify(&self, _: &Candidate, x: Execution) -> Outcome {
+            let identity = ProcessIdentity {
+                pid: 54321,
+                start_ticks: 7,
+            };
+            x.registry.register(identity.clone());
+            // Occupy the only Tokio executor: an async timer/task on this
+            // executor cannot enforce the budget during this bounded wait.
+            let deadline = std::time::Instant::now() + Duration::from_secs(3);
+            while !x.cancel.is_cancelled() && std::time::Instant::now() < deadline {
+                std::thread::sleep(Duration::from_millis(5));
+            }
+            self.cancelled_while_blocked
+                .store(x.cancel.is_cancelled(), Ordering::SeqCst);
+            x.registry.unregister(&identity);
+            Outcome::operational(Status::Cancelled, "blocking fixture retired")
+        }
+        async fn verify_resource_retry(&self, _: &Candidate, _: Execution) -> Outcome {
+            self.solo_calls.fetch_add(1, Ordering::SeqCst);
+            Outcome::operational(Status::Rejected, "solo fixture retired")
+        }
+    }
+    let backend = Arc::new(BlockingBackend {
+        cancelled_while_blocked: std::sync::atomic::AtomicBool::new(false),
+        solo_calls: AtomicUsize::new(0),
+    });
+    let e = engine(backend.clone(), 140);
+    let result = e
+        .verify_batch(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("blocked", "proof", "task")],
+        })
+        .await
+        .unwrap();
+    assert!(
+        backend.cancelled_while_blocked.load(Ordering::SeqCst),
+        "budget cancellation depended on the blocked request executor"
+    );
+    assert_eq!(result[0].outcome.status, Status::Rejected);
+    assert_eq!(result[0].attempts.len(), 2);
+    assert_eq!(result[0].attempts[0].status, Status::Preempted);
+    assert!(result[0].attempts[1].exclusive);
+    assert_eq!(backend.solo_calls.load(Ordering::SeqCst), 1);
+    e.shutdown().await;
+}
+
+#[tokio::test(flavor = "current_thread")]
+async fn dropping_the_last_engine_retires_its_sampling_thread() {
+    struct DropMonitor(std::sync::mpsc::Sender<()>);
+    impl ResourceMonitor for DropMonitor {
+        fn sample(&self, _: &[ProcessIdentity]) -> Result<ResourceSnapshot, String> {
+            Ok(ResourceSnapshot::default())
+        }
+    }
+    impl Drop for DropMonitor {
+        fn drop(&mut self) {
+            let _ = self.0.send(());
+        }
+    }
+    let (retired, retirement) = std::sync::mpsc::channel();
+    let e = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0],
+            cores_per_worker: 1,
+        },
+        Arc::new(Backend {
+            calls: AtomicUsize::new(0),
+            delay_ms: 1,
+        }),
+        Arc::new(Policy),
+        Arc::new(DropMonitor(retired)),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let clone = e.clone();
+    drop(e);
+    assert!(matches!(
+        retirement.try_recv(),
+        Err(std::sync::mpsc::TryRecvError::Empty)
+    ));
+    drop(clone);
+    retirement
+        .recv_timeout(Duration::from_secs(2))
+        .expect("the sampling thread retained the last engine owner");
+}
+
 #[test]
 fn memory_cache_does_not_promote_operational_outcomes() {
     let cache = MemoryCache::default();

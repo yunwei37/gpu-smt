@@ -445,3 +445,12 @@ Keep the real current pair unchanged,review its exact outcomes,then run the
 already prepared42solo point. Do not compensate for missing throughput evidence
 with another observer or an unqualified overlapping-retry default.
 The existing artifact README now links the one owning calculation/reproduction.
+
+
+### 16:26UTC — make the existing sampler independent of request execution
+Source inspection finds the aggregate watchdog sharing Tokio request workers.
+Separate its nominal1s execution inside the same parent process,retain exact
+ownership/preemption/retry semantics,and test cancellation while the only
+async executor is blocked. Existing CI can qualify the software without
+compiling alongside the full native acquisition. No new logger or collector;
+the actual throughput question remains in the one retained real pair.

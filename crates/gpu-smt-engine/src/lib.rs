@@ -8,10 +8,10 @@ use std::{
     cmp::Reverse,
     collections::{BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, VecDeque},
     sync::{
-        Arc, Mutex, Weak,
+        Arc, Condvar, Mutex, Weak,
         atomic::{AtomicBool, AtomicU64, Ordering},
     },
-    time::Instant,
+    time::{Duration, Instant},
 };
 use tokio::{
     sync::{Notify, mpsc, watch},
@@ -339,6 +339,36 @@ impl ObservedPeaks {
     }
 }
 
+#[derive(Default)]
+struct WatchdogStop {
+    stopped: Mutex<bool>,
+    changed: Condvar,
+}
+#[derive(Default)]
+struct WatchdogWorker {
+    stop: Arc<WatchdogStop>,
+    thread: Mutex<Option<std::thread::JoinHandle<()>>>,
+}
+impl WatchdogWorker {
+    fn stop(&self) {
+        *self.stop.stopped.lock().unwrap() = true;
+        self.stop.changed.notify_all();
+        let handle = self.thread.lock().unwrap().take();
+        // The final Inner owner can be the sampling thread itself.
+        // Never join that thread from its own destructor.
+        if let Some(handle) = handle
+            && handle.thread().id() != std::thread::current().id()
+        {
+            let _ = handle.join();
+        }
+    }
+}
+impl Drop for WatchdogWorker {
+    fn drop(&mut self) {
+        self.stop();
+    }
+}
+
 struct Inner {
     config: Config,
     backend: Arc<dyn VerificationBackend>,
@@ -352,6 +382,7 @@ struct Inner {
     next: AtomicU64,
     notify: Notify,
     fatal: Mutex<Option<String>>,
+    watchdog_worker: WatchdogWorker,
 }
 struct Lease {
     inner: Arc<Inner>,
@@ -757,7 +788,8 @@ impl Inner {
 #[derive(Clone)]
 pub struct Engine(Arc<Inner>);
 impl Engine {
-    /// Construct inside a Tokio runtime; watchdog lifetime follows the engine.
+    /// Construct inside a Tokio runtime; the owned RSS sampler runs independently
+    /// of Tokio request tasks and is retired by shutdown or the final owner.
     pub fn new(
         config: Config,
         backend: Arc<dyn VerificationBackend>,
@@ -785,16 +817,39 @@ impl Engine {
             next: AtomicU64::new(1),
             notify: Notify::new(),
             fatal: Mutex::new(None),
+            watchdog_worker: WatchdogWorker::default(),
         });
         let weak: Weak<Inner> = Arc::downgrade(&inner);
-        tokio::spawn(async move {
-            let mut tick = tokio::time::interval(std::time::Duration::from_secs(1));
-            loop {
-                tick.tick().await;
-                let Some(inner) = weak.upgrade() else { break };
-                inner.watchdog();
-            }
-        });
+        let stop = inner.watchdog_worker.stop.clone();
+        let thread = std::thread::Builder::new()
+            .name("gpu-smt-rss".into())
+            .spawn(move || {
+                let interval = Duration::from_secs(1);
+                let mut delay = interval;
+                loop {
+                    let stopped = stop.stopped.lock().unwrap();
+                    let (stopped, _) = stop
+                        .changed
+                        .wait_timeout_while(stopped, delay, |stopped| !*stopped)
+                        .unwrap();
+                    if *stopped {
+                        break;
+                    }
+                    drop(stopped);
+                    let Some(inner) = weak.upgrade() else { break };
+                    if inner.fatal.lock().unwrap().is_some() {
+                        break;
+                    }
+                    let sample_started = Instant::now();
+                    inner.watchdog();
+                    delay = interval.saturating_sub(sample_started.elapsed());
+                    // Drop the temporary owner before sleeping again.
+                    // Otherwise the sampler would keep an unused engine alive.
+                    drop(inner);
+                }
+            })
+            .map_err(|error| format!("cannot start RSS watchdog: {error}"))?;
+        *inner.watchdog_worker.thread.lock().unwrap() = Some(thread);
         Ok(Self(inner))
     }
     // Establish sharing and cache disposition in submission order, before
@@ -947,6 +1002,7 @@ impl Engine {
             notified.await;
         }
         self.0.backend.shutdown().await;
+        self.0.watchdog_worker.stop();
     }
     /// Return one record per caller in original order; checked winners alone cancel siblings.
     pub async fn verify_batch(&self, batch: Batch) -> Result<Vec<Verification>, String> {

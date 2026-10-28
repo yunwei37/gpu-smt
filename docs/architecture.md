@@ -34,7 +34,16 @@ space cap, CPU8–11. Concurrency derives from measured active CPU per worker.
 Unknown-memory jobs start conservatively; observed context peaks guide future
 admission. Predictions are reservations, not a hard memory guarantee.
 
-Every second the Rust watchdog samples registered owned trees only. Kernel
+The Rust watchdog samples registered owned trees on a nominal one-second
+cadence in one owned parent-process thread,independent of Tokio request tasks.
+Synchronous request work cannot starve it merely by occupying the async
+executor. Sampling time is charged to that cadence;slow monitoring/syscalls,
+locks and OS scheduling can still delay observations. Shutdown wakes and joins
+the sampler;the last engine owner also wakes it,without retaining an engine
+reference while asleep. This changes no native worker/core count or RSS budget.
+The CLI already binds its parent before constructing the runtime,so this
+thread inherits that existing CPU mask. It is not a service or a new collector.
+The sampler observes registered owned trees only. Kernel
 start ticks prevent signalling an unrelated reused PID. On excess preempt the
 largest active owned process, reap its group and requeue its candidate for an
 exclusive attempt after queued first attempts and active jobs retire. A solo attempt exceeding48GiB is
