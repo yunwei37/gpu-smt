@@ -762,9 +762,51 @@ The two engine cells omit that library. All 7,808 HTTP request sources exactly
 match the engine input, but matching source and toolchain does not match the
 effective native tactic implementation. Neither the historical time difference
 nor the engine component ratio identifies a resource-layer effect.
-The pending four-worker warm/engine qualification loads the same retained
-ordinary Mathlib native library in both paths, without the counterexample
-wrapper or external oracle; its throughput and outcome comparison remain pending.
+The corrected four-worker comparison loads the same retained ordinary Mathlib
+native library in both paths, without the counterexample wrapper or external
+oracle. Table~\ref{tab:corrected-warm-resource} reports its complete warm cell
+on the original 7,808 miniF2F candidates, under the same CPUs 8--11,
+48~GiB sampled aggregate RSS budget, unlimited per-process address space
+and 300-second admitted-attempt allowance.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Warm-cell measure & Observed value \\
+\midrule
+Accepted candidates & 3,014 \\
+Rejected candidates & 4,668 \\
+Timeouts & 85 \\
+Resource failures & 41 \\
+External whole elapsed (s) & 25,176.49 \\
+Internal whole elapsed (s) & 25,175.27 \\
+\bottomrule
+\end{tabular}
+\caption{Complete corrected four-warm resource baseline for all 7,808 original
+miniF2F candidates. The corresponding engine cell is not yet complete, so the
+table establishes neither accepted-set parity nor a comparative speedup.}
+\label{tab:corrected-warm-resource}
+\end{table}
+
+The external clock covers launch, output and native retirement. Preparation
+takes 3.03 seconds within the internal whole clock and is not added again.
+The 7,808 ordinary attempts include 52 watchdog preemptions, each followed by
+one exclusive retry. Those retries end in 41 resource failures and 11 timeouts,
+and their serial admitted envelopes sum to 12,106.92 seconds.
+Final resource failures retain attributed watchdog records rather than native
+allocator exceptions. The one-second aggregate RSS observations peak at
+48.77~GiB, including 93 over-budget samples and 93 recorded preemptions.
+Sampling does not enforce a hard RSS quota.
+
+Retry ordering remains a comparison boundary. The frozen warm adapter drains
+ordinary peers for immediate resource retries, whereas the engine finishes its
+registered ordinary frontier before exclusive retries. Any complete comparison
+therefore measures these resource paths, including retry ordering, rather than
+isolating copy-on-write.
+\missing{Complete the corrected engine cell and compare external whole time,
+accepted IDs, full native responses, operational outcomes and resources.}
 
 \paragraph{Interpreting low concurrency.}
 Registered native process lifetimes account for 10,375.98 seconds with one

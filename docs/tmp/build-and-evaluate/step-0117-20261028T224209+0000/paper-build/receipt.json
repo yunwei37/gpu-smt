@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-10-28T22:43:08.980219+00:00",
+  "completed_utc": "2026-10-28T22:43:11.985188+00:00",
+  "command": [
+    "taskset",
+    "-c",
+    "11",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "/workspaces/repository/docs/paper/main.tex",
+    "--outdir",
+    "/tmp/gpu-smt-paper-corrected-warm-20261028T2242",
+    "--keep-logs"
+  ],
+  "exit": 0,
+  "seconds": 3.0049942969344556,
+  "affinity": [
+    11
+  ],
+  "combined_sampled_peak_bytes": 9251762176,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_TeX_compiler": false,
+  "native_Lean_executions": 0,
+  "retained_engine_pid": 538699,
+  "retained_engine_start_ticks": 164686833,
+  "engine_was_birth_matched_at_compile_start": true,
+  "scope": "Targeted manuscript compilation in owning Workspace;not a second native benchmark. Single support CPU11 window is a disclosed interference window for the ongoing shared-host resource capture."
+}

@@ -514,3 +514,15 @@ avoid creating it again. The same finite program now runs frozenengine13d.
 The most useful next result is the complete equal-resource pair with all
 acceptance/status/resource differences and retry-order caveat,then fixed42.
 No extra source layer or native acquisition is justified while it runs.
+
+
+## 22:43UTC — keep the paper's denominator aligned with the strong baseline
+
+The corrected warm7808cell now has complete native outcomes and25176.49s
+external wall. Its paper table replaces a stale qualification placeholder
+without implying a completed pair. Keep immediate-warm versus frontier-engine
+retry order visible. The retained engine has moved into its actual solo tail.
+The best next decision still needs its complete accepted/status/resources and
+external clock,not another predictor/logger. A3.005sCPU11TeXcompile preserves
+the support-work window;36-page output and edited pages12–15are checked.
+No new Lean group,workload policy or claimed resource gain is introduced.
