@@ -33,3 +33,9 @@ without minute-by-minute goal rounds. Preserve healthy work. If the two real
 timeouts persist, report that evidence and continue the resource investigation;
 do not claim the protocol fix caused an unmeasured candidate improvement.
 The separately staged fixed42 rerun and full matched throughput remain open.
+
+## Concurrent useful work
+
+Resource-scope-review and retained-boundary-candidates analyze the existing
+resource context and actual near-deadline native payloads. No second cohort,
+new observer or resource setting was added; current native24 remains running.

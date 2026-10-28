@@ -1,0 +1,10 @@
+{
+  "primary_url": "https://raw.githubusercontent.com/leanprover/lean4/v4.9.0-rc1/src/runtime/object.cpp",
+  "lines": [
+    808,
+    827
+  ],
+  "finding": "The default initializer reads LEAN_NUM_THREADS;without it,capacity comes from hardware_concurrency(). Live thread count is not an intrinsic fixed runtime limit.",
+  "local_ELF_scope": "Pinned4.9 SDK disassembly confirms getenv/strtol and hardware_concurrency paths;no runtime/thread knob changed.",
+  "failed_lookup": "src/runtime/task.cpp is absent at this pinned revision;the definition is in object.cpp."
+}

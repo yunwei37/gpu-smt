@@ -1,0 +1,76 @@
+{
+  "utc": "2026-10-28T12:11:48.308784+00:00",
+  "source_commit": "13d460699e017e576e33a8b12883e066f9a4f4e2",
+  "runtime": "/tmp/gpu-smt-resource-timely-reply24-20261028T115820Z",
+  "LEAN_NUM_THREADS": null,
+  "logical_cpu_topology": [
+    {
+      "logical_cpu": 8,
+      "core_id": "8",
+      "physical_package_id": "0",
+      "thread_siblings_list": "8"
+    },
+    {
+      "logical_cpu": 9,
+      "core_id": "9",
+      "physical_package_id": "0",
+      "thread_siblings_list": "9"
+    },
+    {
+      "logical_cpu": 10,
+      "core_id": "10",
+      "physical_package_id": "0",
+      "thread_siblings_list": "10"
+    },
+    {
+      "logical_cpu": 11,
+      "core_id": "11",
+      "physical_package_id": "0",
+      "thread_siblings_list": "11"
+    }
+  ],
+  "processes": [
+    {
+      "pid": 528645,
+      "birth": 162073628,
+      "origin_id": "minif2f-1885",
+      "role": "candidate process",
+      "status": {
+        "VmRSS": "21036460 kB",
+        "Threads": "1",
+        "Cpus_allowed_list": "8"
+      },
+      "smaps_bytes": {
+        "127300000-7ffecffd1000 ---p 00000000 00": 0,
+        "Rss": 21552717824,
+        "Pss": 21548544000,
+        "Pss_Dirty": 18029899776,
+        "Pss_Anon": 18029899776,
+        "Pss_File": 3518644224,
+        "Pss_Shmem": 0,
+        "Shared_Clean": 7360512,
+        "Shared_Dirty": 0,
+        "Private_Clean": 3515457536,
+        "Private_Dirty": 18029899776,
+        "Referenced": 21552717824,
+        "Anonymous": 18029899776,
+        "KSM": 0,
+        "LazyFree": 0,
+        "AnonHugePages": 0,
+        "ShmemPmdMapped": 0,
+        "FilePmdMapped": 0,
+        "Shared_Hugetlb": 0,
+        "Private_Hugetlb": 0,
+        "Swap": 0,
+        "SwapPss": 0,
+        "Locked": 0
+      },
+      "sample_start_ns": 1620880092871261,
+      "sample_end_ns": 1620880308103430
+    }
+  ],
+  "sum_sampled_process_Rss_bytes": 21552717824,
+  "sum_sampled_process_Pss_bytes": 21548544000,
+  "scope": "One non-atomic own-native-process snapshot during the running workload;not whole-pointpeak,basis for admission or a comparison to historical warm PSS.",
+  "resources_or_processes_modified": false
+}
