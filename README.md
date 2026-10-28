@@ -152,7 +152,10 @@ memory and CPU demand on CPUs8–11. A15-second observation of existing REPLs
 finds one active thread/~one core per worker, motivating up to four workers
 at this point, subject to actual memory admission. The Rust watchdog samples
 owned trees each second; concurrent preemptions are requeued for an exclusive
-retry, whose resource failures remain separately reported. This is sampled
+retry after the already queued ordinary frontier, whose resource failures
+remain separately reported. Later arrivals cannot starve a deferred retry;
+the retry still waits for peer retirement. Native throughput for this new
+ordering remains unmeasured. This is sampled
 response, not a kernel hard RSS quota.
 
 The original scheduling matrix completed under its frozen two-worker/24GiB-AS

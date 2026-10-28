@@ -1,0 +1,60 @@
+{
+  "UTC": "2026-10-28T10:25:09.079474+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 1.0022648100275546
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-engine",
+        "--test",
+        "engine",
+        "resource_retry_waits_behind_normal_work_without_blocking_free_slots",
+        "--locked",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 0,
+      "seconds": 4.006095255026594
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-engine",
+        "--test",
+        "engine",
+        "shutdown_cancels_a_deferred_retry_without_dispatching_it",
+        "--locked",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 0,
+      "seconds": 1.003430032869801
+    }
+  ],
+  "cwd": "/workspaces/repository",
+  "seconds": 6.011855124961585,
+  "samples": 12,
+  "combined_peak_rss_bytes": 25981100032,
+  "budget_bytes": 51539607552,
+  "pressure_aborted_only_new_compiler": false,
+  "monitor_errors": [],
+  "resource_retry_tail_support": true,
+  "native_candidate_executions": 0,
+  "original_group": 490481,
+  "original_group_start_ticks": 159034008,
+  "original_generated_candidate_elaboration": false,
+  "native_development_module_elaboration": false,
+  "analysis_commands": 3
+}

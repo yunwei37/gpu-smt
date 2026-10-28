@@ -1,0 +1,1 @@
+First launch failed before sampling/tests because the inherited cwd did not resolve the relative step output path. The tool transcript contains the original FileNotFoundError; subsequent launch explicitly uses the repository cwd. This note is not a reconstructed raw log.

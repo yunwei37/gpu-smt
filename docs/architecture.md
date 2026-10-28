@@ -37,7 +37,7 @@ admission. Predictions are reservations, not a hard memory guarantee.
 Every second the Rust watchdog samples registered owned trees only. Kernel
 start ticks prevent signalling an unrelated reused PID. On excess preempt the
 largest active owned process, reap its group and requeue its candidate for an
-exclusive attempt after other jobs retire. A solo attempt exceeding48GiB is
+exclusive attempt after queued first attempts and active jobs retire. A solo attempt exceeding48GiB is
 resource failure, not logical rejection or infinite retry. Queueing/retries/
 cleanup enter complete latency and attempt history. No other Workspace changes.
 
@@ -85,7 +85,16 @@ Within a batch, ranking is evaluated once per candidate, with original-index
 tie order. Queue tickets and cache/in-flight sharing disposition are established
 before asynchronous forecast/execution tasks can reorder them. Cache hits and
 shared subscribers release unused tickets; only physical work waits for CPU/RSS
-admission. Exclusive resource retries retain their precedence over fresh work.
+admission. Resource retries follow the ordinary queue frontier registered at preemption.
+They retain policy order within a frontier and stable retry registration order, wait for
+all active attempts to retire, and reclaim idle prepared state as before.
+A pending retry therefore does not itself block normal CPU/RSS admission.
+This avoids repeated mid-batch drain barriers; it does not eliminate the
+serial cost of candidates whose actual memory occupies the whole budget.
+Preempted peaks are lower bounds, so they do not justify speculative overlap
+during the exclusive retry. Each retry closes its current frontier; later batch arrivals wait behind it.
+This prevents an endless arrival stream from overtaking an already queued retry,
+without claiming a bounded delay for long or memory-constrained native work.
 Independent concurrent batches enter the same queue at ticket registration;
 this is not a timestamp reconstruction of network arrivals.
 

@@ -18,7 +18,7 @@ use tokio::{
 };
 use tokio_util::sync::CancellationToken;
 
-/// Default stable submission-order policy; exclusive resource retries take precedence.
+/// Default stable submission order; resource retries follow queued first attempts.
 pub struct Fifo;
 impl SchedulingPolicy for Fifo {
     fn priority(&self, _: &Candidate) -> u64 {
@@ -274,8 +274,8 @@ struct Active {
 struct State {
     free: BTreeSet<usize>,
     active: HashMap<u64, Active>,
-    solo_waiters: usize,
-    queued: BTreeSet<(u64, u64)>,
+    queued: BTreeSet<(u64, bool, u64, u64)>,
+    queue_epoch: u64,
 }
 #[derive(Clone)]
 struct WorkResult {
@@ -353,20 +353,11 @@ impl BatchStream {
 
 struct Queued {
     inner: Arc<Inner>,
-    ticket: (u64, u64),
+    ticket: (u64, bool, u64, u64),
 }
 impl Drop for Queued {
     fn drop(&mut self) {
         self.inner.state.lock().unwrap().queued.remove(&self.ticket);
-        self.inner.notify.notify_waiters();
-    }
-}
-struct Solo {
-    inner: Arc<Inner>,
-}
-impl Drop for Solo {
-    fn drop(&mut self) {
-        self.inner.state.lock().unwrap().solo_waiters -= 1;
         self.inner.notify.notify_waiters();
     }
 }
@@ -435,9 +426,22 @@ impl Inner {
         drop(s);
         self.notify.notify_waiters();
     }
-    fn enqueue(self: &Arc<Self>, priority: u64) -> Queued {
-        let ticket = (priority, self.next.fetch_add(1, Ordering::Relaxed));
-        self.state.lock().unwrap().queued.insert(ticket);
+    fn enqueue(self: &Arc<Self>, priority: u64, retry: bool) -> Queued {
+        // Finite batches drain ordinary work before paying full-budget retries.
+        // Keep resource attempts exclusive; a preempted peak is no safe cap.
+        let mut state = self.state.lock().unwrap();
+        let ticket = (
+            state.queue_epoch,
+            retry,
+            priority,
+            self.next.fetch_add(1, Ordering::Relaxed),
+        );
+        if retry {
+            // Freeze the ordinary frontier. Later batches cannot starve this retry.
+            state.queue_epoch = self.next.fetch_add(1, Ordering::Relaxed);
+        }
+        state.queued.insert(ticket);
+        drop(state);
         Queued {
             inner: self.clone(),
             ticket,
@@ -463,8 +467,7 @@ impl Inner {
             // not cause every queued candidate to scan the process table.
             let head_ready = {
                 let s = self.state.lock().unwrap();
-                (solo || s.queued.first() == Some(&ticket))
-                    && s.free.len() >= self.config.cores_per_worker
+                s.queued.first() == Some(&ticket) && s.free.len() >= self.config.cores_per_worker
             };
             if !head_ready {
                 notified.await;
@@ -513,11 +516,7 @@ impl Inner {
                     || forecast_exclusive;
                 let unknown = estimate.is_none() && !s.active.is_empty();
                 let exclusive_block = s.active.values().any(|a| a.exclusive)
-                    || if actual_exclusive {
-                        !s.active.is_empty()
-                    } else {
-                        s.solo_waiters > 0
-                    };
+                    || (actual_exclusive && !s.active.is_empty());
                 let reserve: u64 = s
                     .active
                     .values()
@@ -539,7 +538,7 @@ impl Inner {
                 } else {
                     reserve
                 };
-                let queue_turn = solo || s.queued.first() == Some(&ticket);
+                let queue_turn = s.queued.first() == Some(&ticket);
                 if queue_turn
                     && !unknown
                     && !exclusive_block
@@ -617,17 +616,9 @@ impl Inner {
             // requests on an obsolete median even as newer observations fall.
             let predicted = self.policy.predicted_rss(&c);
             let exclusive = solo || predicted.is_some_and(|n| n >= self.config.memory_bytes);
-            let _solo = if exclusive {
-                self.state.lock().unwrap().solo_waiters += 1;
-                Some(Solo {
-                    inner: self.clone(),
-                })
-            } else {
-                None
-            };
             let queued = queued
                 .take()
-                .unwrap_or_else(|| self.enqueue(self.policy.priority(&c)));
+                .unwrap_or_else(|| self.enqueue(self.policy.priority(&c), solo));
             let acquired = tokio::select! {
                 r=self.acquire(predicted,&c,&memory_context,exclusive,queued)=>r,
                 _=tx.closed()=>break Outcome::operational(Status::Cancelled,"no live subscribers"),
@@ -727,8 +718,8 @@ impl Engine {
             state: Mutex::new(State {
                 free: config.cpus.iter().copied().collect(),
                 active: HashMap::new(),
-                solo_waiters: 0,
                 queued: BTreeSet::new(),
+                queue_epoch: 0,
             }),
             config,
             backend,
@@ -963,7 +954,7 @@ impl Engine {
         // starts. Cost-model latency and Tokio wake order cannot reorder it.
         let pending: Vec<_> = pending
             .into_iter()
-            .map(|(priority, index, c)| (self.0.enqueue(priority), index, c))
+            .map(|(priority, index, c)| (self.0.enqueue(priority, false), index, c))
             .collect();
         Ok((batch.mode, pending))
     }
@@ -1085,8 +1076,8 @@ mod shutdown_admission_tests {
             state: Mutex::new(State {
                 free: [0].into_iter().collect(),
                 active: HashMap::new(),
-                solo_waiters: 0,
                 queued: BTreeSet::new(),
+                queue_epoch: 0,
             }),
             inflight: Mutex::new(HashMap::new()),
             observed_peaks: Mutex::new(vec![]),

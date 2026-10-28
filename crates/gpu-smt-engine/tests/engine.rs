@@ -1170,3 +1170,265 @@ async fn queued_sibling_refreshes_only_after_measured_memory_and_keeps_own_verdi
         "no predicted failure or speculative native retry"
     );
 }
+
+// A failed attempt must not put a drain barrier in front of already queued work.
+#[tokio::test]
+async fn resource_retry_waits_behind_normal_work_without_blocking_free_slots() {
+    use std::sync::Mutex;
+    use tokio::sync::Semaphore;
+    struct TailBackend {
+        peer_started: Semaphore,
+        release_peer: Semaphore,
+        small_finished: Semaphore,
+        live: AtomicUsize,
+        events: Mutex<Vec<String>>,
+    }
+    #[async_trait]
+    impl VerificationBackend for TailBackend {
+        fn identity(&self) -> String {
+            "retry-tail-fixture".into()
+        }
+        async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+            self.live.fetch_add(1, Ordering::SeqCst);
+            self.events.lock().unwrap().push(c.id.clone());
+            let result = match c.id.as_str() {
+                "retry" => {
+                    tokio::select! {
+                        permit = self.peer_started.acquire() => { permit.unwrap().forget(); }
+                        _ = x.cancel.cancelled() => {}
+                    }
+                    Outcome::operational(
+                        Status::ResourceExhausted,
+                        "actual fixture resource failure",
+                    )
+                }
+                "peer" => {
+                    self.peer_started.add_permits(1);
+                    tokio::select! {
+                        permit = self.release_peer.acquire() => { permit.unwrap().forget(); }
+                        _ = x.cancel.cancelled() => {}
+                    }
+                    Outcome::operational(Status::Rejected, "peer retired")
+                }
+                _ => {
+                    self.small_finished.add_permits(1);
+                    Outcome::operational(Status::Accepted, "small retired")
+                }
+            };
+            self.live.fetch_sub(1, Ordering::SeqCst);
+            result
+        }
+        async fn verify_resource_retry(&self, c: &Candidate, _: Execution) -> Outcome {
+            assert_eq!(self.live.load(Ordering::SeqCst), 0, "retry overlaps a peer");
+            self.events.lock().unwrap().push(format!("{}-solo", c.id));
+            Outcome::operational(Status::Rejected, "exclusive result")
+        }
+    }
+    let b = Arc::new(TailBackend {
+        peer_started: Semaphore::new(0),
+        release_peer: Semaphore::new(0),
+        small_finished: Semaphore::new(0),
+        live: AtomicUsize::new(0),
+        events: Mutex::new(vec![]),
+    });
+    struct TailPolicy {
+        retry_refreshes: AtomicUsize,
+        retry_queued: Semaphore,
+        later_queued: Semaphore,
+    }
+    impl SchedulingPolicy for TailPolicy {
+        fn priority(&self, c: &Candidate) -> u64 {
+            if c.id == "later" {
+                self.later_queued.add_permits(1);
+            }
+            if c.id.starts_with("small") {
+                u64::MAX
+            } else {
+                0
+            }
+        }
+        fn predicted_rss(&self, _: &Candidate) -> Option<u64> {
+            Some(1)
+        }
+        fn refresh_rss(&self, c: &Candidate, _: &str, initial: Option<u64>) -> Option<u64> {
+            if c.id == "retry" && self.retry_refreshes.fetch_add(1, Ordering::SeqCst) == 1 {
+                self.retry_queued.add_permits(1);
+            }
+            initial
+        }
+    }
+    let policy = Arc::new(TailPolicy {
+        retry_refreshes: AtomicUsize::new(0),
+        retry_queued: Semaphore::new(0),
+        later_queued: Semaphore::new(0),
+    });
+    let e = Engine::new(
+        Config {
+            memory_bytes: 100,
+            cpus: vec![0, 1],
+            cores_per_worker: 1,
+        },
+        b.clone(),
+        policy.clone(),
+        Arc::new(Monitor { per_job: 1 }),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    let worker = e.clone();
+    let batch = tokio::spawn(async move {
+        worker
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![
+                    candidate("retry", "retry", "one"),
+                    candidate("peer", "peer", "two"),
+                    candidate("small-a", "small-a", "three"),
+                    candidate("small-b", "small-b", "four"),
+                ],
+            })
+            .await
+            .unwrap()
+    });
+    let normal_progress =
+        tokio::time::timeout(Duration::from_secs(2), b.small_finished.acquire_many(2)).await;
+    let progressed = normal_progress.is_ok();
+    if let Ok(permit) = normal_progress {
+        permit.unwrap().forget();
+    }
+    let later = if progressed {
+        let permit = tokio::time::timeout(Duration::from_secs(2), policy.retry_queued.acquire())
+            .await
+            .unwrap()
+            .unwrap();
+        permit.forget();
+        let worker = e.clone();
+        let later = tokio::spawn(async move {
+            worker
+                .verify_batch(Batch {
+                    mode: Mode::All,
+                    candidates: vec![candidate("later", "later", "five")],
+                })
+                .await
+                .unwrap()
+        });
+        let permit = tokio::time::timeout(Duration::from_secs(2), policy.later_queued.acquire())
+            .await
+            .unwrap()
+            .unwrap();
+        permit.forget();
+        Some(later)
+    } else {
+        None
+    };
+    // Always release/retire the held peer, including the old-behavior control.
+    b.release_peer.add_permits(1);
+    let rows = tokio::time::timeout(Duration::from_secs(2), batch).await;
+    if let Some(later) = later {
+        let rows = tokio::time::timeout(Duration::from_secs(2), later)
+            .await
+            .unwrap()
+            .unwrap();
+        assert_eq!(rows[0].outcome.status, Status::Accepted);
+    }
+    e.shutdown().await;
+    let rows = rows.unwrap().unwrap();
+    assert!(
+        progressed,
+        "retry waiter blocked normal work in an available CPU/RSS slot"
+    );
+    assert_eq!(rows.len(), 4);
+    assert_eq!(rows[0].outcome.status, Status::Rejected);
+    assert_eq!(rows[0].attempts.len(), 2);
+    assert_eq!(rows[0].attempts[0].status, Status::ResourceExhausted);
+    assert!(!rows[0].attempts[0].exclusive);
+    assert!(rows[0].attempts[1].exclusive);
+    assert!(
+        rows[2..]
+            .iter()
+            .all(|r| r.outcome.status == Status::Accepted)
+    );
+    let events = b.events.lock().unwrap();
+    let retry = events.iter().position(|e| e == "retry-solo").unwrap();
+    let later = events.iter().position(|e| e == "later").unwrap();
+    assert!(events.iter().position(|e| e == "small-a").unwrap() < retry);
+    assert!(events.iter().position(|e| e == "small-b").unwrap() < retry);
+    assert!(
+        retry < later,
+        "later batches must not starve an already deferred retry"
+    );
+}
+
+// Shutdown must wake a deferred ticket even while its peer owns a lease.
+#[tokio::test]
+async fn shutdown_cancels_a_deferred_retry_without_dispatching_it() {
+    use tokio::sync::Semaphore;
+    struct CancelBackend {
+        failed: Semaphore,
+        held: Semaphore,
+        release: Semaphore,
+        retries: AtomicUsize,
+    }
+    #[async_trait]
+    impl VerificationBackend for CancelBackend {
+        fn identity(&self) -> String {
+            "cancel-retry-tail-fixture".into()
+        }
+        async fn verify(&self, c: &Candidate, x: Execution) -> Outcome {
+            if c.id == "retry" {
+                // Wait until another batch owns a lease, so a retry stays queued.
+                let permit = self.held.acquire().await.unwrap();
+                permit.forget();
+                self.failed.add_permits(1);
+                return Outcome::operational(Status::ResourceExhausted, "fixture failure");
+            }
+            self.held.add_permits(1);
+            tokio::select! {
+                permit = self.release.acquire() => { permit.unwrap().forget(); }
+                _ = x.cancel.cancelled() => {}
+            }
+            Outcome::operational(Status::Accepted, "held work retired")
+        }
+        async fn verify_resource_retry(&self, _: &Candidate, _: Execution) -> Outcome {
+            self.retries.fetch_add(1, Ordering::SeqCst);
+            Outcome::operational(Status::Rejected, "should not execute cancelled retry")
+        }
+    }
+    let b = Arc::new(CancelBackend {
+        failed: Semaphore::new(0),
+        held: Semaphore::new(0),
+        release: Semaphore::new(0),
+        retries: AtomicUsize::new(0),
+    });
+    let e = engine(b.clone(), 1);
+    let stream = e
+        .verify_stream(Batch {
+            mode: Mode::All,
+            candidates: vec![candidate("retry", "retry", "one")],
+        })
+        .unwrap();
+    let worker = e.clone();
+    let held = tokio::spawn(async move {
+        worker
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![candidate("held", "held", "two")],
+            })
+            .await
+            .unwrap()
+    });
+    let permit = tokio::time::timeout(Duration::from_secs(2), b.failed.acquire())
+        .await
+        .unwrap()
+        .unwrap();
+    permit.forget();
+    tokio::time::timeout(Duration::from_secs(2), e.shutdown())
+        .await
+        .unwrap();
+    drop(stream);
+    let _ = tokio::time::timeout(Duration::from_secs(2), held)
+        .await
+        .unwrap()
+        .unwrap();
+    assert_eq!(b.retries.load(Ordering::SeqCst), 0);
+}

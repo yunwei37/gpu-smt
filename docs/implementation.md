@@ -86,8 +86,13 @@ does not establish actual Lean throughput. Historical singleton occupancy is
 mostly exclusive retry and drain/tail work,not shown to result from this bug.
 
 Every second actual owned-tree RSS is sampled, including idle preparation
-descendants. Concurrent preemptions kill/reap and requeue for an exclusive
-attempt. An otherwise idle queue also promotes a forecast that cannot fit
+descendants. Concurrent preemptions kill/reap and defer the exclusive
+retry until the already registered ordinary queue frontier has drained.
+Later arrivals cannot overtake that retry; ordinary policy order within
+each frontier remains stable. No memory prediction authorizes overlap with
+the exclusive attempt, and its complete cost remains charged. The regression
+demonstrates freed-slot progress, later-arrival ordering and shutdown cleanup;
+native throughput for this change remains unmeasured. An otherwise idle queue also promotes a forecast that cannot fit
 resident headroom to exclusive admission instead of waiting forever.
 PreparedRepl evicts its idle parent for this initial admission or resource retry,
 runs fresh under the same request deadline,and allows preparation again on

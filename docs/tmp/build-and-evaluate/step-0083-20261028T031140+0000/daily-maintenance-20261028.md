@@ -235,3 +235,16 @@ losslesslyarchived and source-mapped. Threeunexecutedpolicycells staydeferred.
 The corrected4warm phase actuallystarts10:03:25,so the nextdecisiveevidence is
 its completepair,not morepreparation or a recycledoldFIFO ratio. Code/data
 remainseparate;artifactREADME and rootREADME make the context/clocklimitsclear.
+
+## 10:29UTC — remove a real mid-batch resource barrier
+
+Resource retries now follow their registered ordinary frontier instead of
+blocking all ordinary work immediately. New arrivals wait behind that retry
+so it cannot starve. Keep exclusive native execution and48GiB sampled control:
+failed peak measurements cannot justify overlapping full-budget attempts.
+Two execution/shutdown fixtures pass and the original source demonstrably
+fails the same progress check.62workspace tests plus one doctest,fmt/clippy/docs
+pass;five actualLean controls staylocallyignored. One docbuild was pressure-
+killed and a singleCPUretry passes;allfailures retained. The ongoing real
+qualification binary remains frozen. Next measure actual throughput only
+after its complete resource-baseline review,not by claiming86%avoidabletime.
