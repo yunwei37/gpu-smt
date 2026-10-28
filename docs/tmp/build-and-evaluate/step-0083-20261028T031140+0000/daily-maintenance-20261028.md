@@ -275,3 +275,13 @@ run the requested whole-population resource comparison, expose every failure
 and accepted-set difference, and keep all retirement/retry costs. No workload
 policy gain is added before that evidence. Prepared7808 input is byte-identical
 and keeps300s/48GiB/fourCPU/no-AS. Resource-layer reuse remains prior technique.
+
+##12:25 UTC — real full resource comparison started
+
+The root-reviewed finite warm/engine7808 pair starts after timely-reply24
+retirement. Four installed warm REPLs actually map the same compiledMathlib
+library. Source13d4606 engine follows serially, not concurrently. Raw failures,
+exact accepted sets and all memory/retry costs remain mandatory. No completed
+throughput or parity claim exists. The fixed42 exclusive rerun stays staged
+until this sole research group terminates. Use the kernel exit event rather
+than empty agent polling; resource-layer work only while the group runs.
