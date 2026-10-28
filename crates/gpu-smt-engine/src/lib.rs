@@ -5,7 +5,8 @@ pub mod linux;
 
 use gpu_smt_core::*;
 use std::{
-    collections::{BTreeSet, HashMap, HashSet, VecDeque},
+    cmp::Reverse,
+    collections::{BTreeSet, BinaryHeap, HashMap, HashSet, VecDeque},
     sync::{
         Arc, Mutex, Weak,
         atomic::{AtomicBool, AtomicU64, Ordering},
@@ -301,6 +302,31 @@ enum Subscription {
     },
 }
 
+// Exact upper median, matching the former sorted[len / 2] fallback.
+// Keep querying admission independent of the lifetime's observation count.
+#[derive(Default)]
+struct ObservedPeaks {
+    lower: BinaryHeap<u64>,
+    upper: BinaryHeap<Reverse<u64>>,
+}
+impl ObservedPeaks {
+    fn push(&mut self, bytes: u64) {
+        if self.upper.peek().is_none_or(|peak| bytes >= peak.0) {
+            self.upper.push(Reverse(bytes));
+        } else {
+            self.lower.push(bytes);
+        }
+        if self.upper.len() > self.lower.len() + 1 {
+            self.lower.push(self.upper.pop().unwrap().0);
+        } else if self.lower.len() > self.upper.len() {
+            self.upper.push(Reverse(self.lower.pop().unwrap()));
+        }
+    }
+    fn median(&self) -> Option<u64> {
+        self.upper.peek().map(|peak| peak.0)
+    }
+}
+
 struct Inner {
     config: Config,
     backend: Arc<dyn VerificationBackend>,
@@ -310,7 +336,7 @@ struct Inner {
     cache: Arc<dyn ResultCache>,
     state: Mutex<State>,
     inflight: Mutex<HashMap<CacheKey, Flight>>,
-    observed_peaks: Mutex<Vec<u64>>,
+    observed_peaks: Mutex<ObservedPeaks>,
     next: AtomicU64,
     notify: Notify,
     fatal: Mutex<Option<String>>,
@@ -488,11 +514,7 @@ impl Inner {
                 // Waiting jobs must refresh learned costs; freezing an unknown
                 // forecast here serializes the entire first submitted batch.
                 let estimate = estimate
-                    .or_else(|| {
-                        let mut peaks = self.observed_peaks.lock().unwrap().clone();
-                        peaks.sort_unstable();
-                        peaks.get(peaks.len() / 2).copied()
-                    })
+                    .or_else(|| self.observed_peaks.lock().unwrap().median())
                     .or_else(|| {
                         s.active
                             .values()
@@ -728,7 +750,7 @@ impl Engine {
             admission,
             cache,
             inflight: Mutex::new(HashMap::new()),
-            observed_peaks: Mutex::new(vec![]),
+            observed_peaks: Mutex::new(ObservedPeaks::default()),
             next: AtomicU64::new(1),
             notify: Notify::new(),
             fatal: Mutex::new(None),
@@ -1080,7 +1102,7 @@ mod shutdown_admission_tests {
                 queue_epoch: 0,
             }),
             inflight: Mutex::new(HashMap::new()),
-            observed_peaks: Mutex::new(vec![]),
+            observed_peaks: Mutex::new(ObservedPeaks::default()),
             next: AtomicU64::new(1),
             notify: Notify::new(),
             fatal: Mutex::new(None),
@@ -1246,5 +1268,56 @@ mod admission_fallback_tests {
             concurrent,
             "queued fallback must refresh from60 to1 instead of serializing the remaining three jobs"
         );
+    }
+}
+
+#[cfg(test)]
+mod observed_peak_median_tests {
+    use super::*;
+
+    fn compare_every_prefix(values: impl IntoIterator<Item = u64>) {
+        let mut actual = ObservedPeaks::default();
+        let mut reference = Vec::new();
+        assert_eq!(actual.median(), None);
+        for value in values {
+            actual.push(value);
+            reference.push(value);
+            reference.sort_unstable();
+            assert_eq!(
+                actual.median(),
+                Some(reference[reference.len() / 2]),
+                "admission fallback changed after observation{}",
+                reference.len()
+            );
+            assert_eq!(actual.lower.len() + actual.upper.len(), reference.len());
+            assert!(actual.upper.len() >= actual.lower.len());
+            assert!(actual.upper.len() <= actual.lower.len() + 1);
+        }
+    }
+
+    #[test]
+    fn exact_upper_median_matches_sorted_history_at_every_prefix() {
+        compare_every_prefix(0..1024);
+        compare_every_prefix((0..1024).rev());
+        compare_every_prefix([0, u64::MAX, 1, u64::MAX, 0, 60, 1, 1, 1, 1, 1]);
+        compare_every_prefix(std::iter::repeat_n(7, 1024));
+        // Deterministic mixed and duplicate values, without a new dependency.
+        let mut value = 1_u64;
+        compare_every_prefix((0..4096).map(|_| {
+            value = value.wrapping_mul(6364136223846793005).wrapping_add(1);
+            value % 257
+        }));
+    }
+
+    #[test]
+    fn exact_upper_median_keeps_adapting_after_large_early_peaks() {
+        let mut peaks = ObservedPeaks::default();
+        peaks.push(60);
+        peaks.push(1);
+        assert_eq!(peaks.median(), Some(60));
+        peaks.push(1);
+        assert_eq!(peaks.median(), Some(1));
+        peaks.push(u64::MAX);
+        assert_eq!(peaks.median(), Some(60));
     }
 }

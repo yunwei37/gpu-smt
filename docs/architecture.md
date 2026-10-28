@@ -174,3 +174,13 @@ One historical acceptance still times out across different resource points.
 The42solo reruns remain41budgetfailures/1timeout. Broaderartifact/strongestwarm
 coverage,representative load-aware results and actual multi-node measurements
 remain open. Tests/CI do not prove contribution or venue acceptance.
+
+### Exact historical RSS median
+
+The default admission fallback still uses the upper median of all positive
+completed-attempt peak observations (sorted index n/2). Two heaps maintain
+that exact value incrementally: insertion is logarithmic and querying requires
+no history copy or sort under the admission lock. Storage remains linear in
+observations. This changes neither the forecast definition nor the watchdog,
+retry, timeout or result semantics; it is resource-layer maintenance without
+a measured end-to-end gain claim. A preempted peak remains a lower bound.

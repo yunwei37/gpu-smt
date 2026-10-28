@@ -285,3 +285,15 @@ exact accepted sets and all memory/retry costs remain mandatory. No completed
 throughput or parity claim exists. The fixed42 exclusive rerun stays staged
 until this sole research group terminates. Use the kernel exit event rather
 than empty agent polling; resource-layer work only while the group runs.
+
+##12:31 UTC — useful source work during sole full group
+
+Do not replace valid ongoing measurements or stack new workload policies.
+The default FIFO admission still cloned/sorted all historical RSS peaks under
+its state lock. Maintain exactly the same upper median incrementally instead;
+compare every-prefix values to the old algorithm and retain falling-forecast
+concurrency controls. This removes avoidable history-sized work without a
+new setting,forecast or scientific claim. Existing CI validates the source;
+no compiler or second native experiment competes with the active full clock.
+The full run remains frozen13d4606, so it cannot be reported as evidence for
+this subsequent maintenance change.
