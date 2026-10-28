@@ -39,3 +39,5 @@ after this completedboundary is committed. It specificallyaddresses the observed
 ordinaryqueuebarrier;do not replace currentdatawith its sourceCI or predictthe
 outcome. No timeoutincrease,full7808,newfailure/LRATgain or fixed42launch yet.
 Allown48GiB/CPU8–11/nativecontext and onecohortatonce constraints remain.
+
+Actualanalyzersource0216621benchmark-smoke CI40676567957completes successfully;metadata/jobs are in experiment-001/actual-analyzer-ci/. This independentlyexecutes the CI tests,not an independent scientificaudit or resourceperformanceproof.

@@ -18,3 +18,5 @@ blocking. Do not infer that late-growing retries are safeconcurrentjobs or that
 theirwholeexclusivecost disappears. Keep rawacceptedIDs and allstatuses,
 including3086near300seconds. Full7808/fixed42 and allpaper/RQsremain open.
 Rootself-review only;no independent audit/subagent/otherWorkspace mutation.
+
+Actualanalyzersource0216621benchmark-smoke CI40676567957completes successfully;metadata/jobs are in experiment-001/actual-analyzer-ci/. This independentlyexecutes the CI tests,not an independent scientificaudit or resourceperformanceproof.
