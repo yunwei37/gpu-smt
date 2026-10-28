@@ -265,3 +265,13 @@ has localtests/release and needs its own CI/native24 qualification. This is
 more informative than another parameter grid or proxy kernel. Next compare
 every native result at the reviewed point,then complete the genuine full
 strong-warm experiment rather than treating a small preflight as final success.
+
+##12:21 UTC — native qualification result
+
+The timely-reply repair is correct in controls but changes none of the24 real
+outcomes. Selected1349.55s remains below retained warm1430.68s with accepted14
+parity, while2507/7230 extra timeouts persist. Stop inventing narrow causes:
+run the requested whole-population resource comparison, expose every failure
+and accepted-set difference, and keep all retirement/retry costs. No workload
+policy gain is added before that evidence. Prepared7808 input is byte-identical
+and keeps300s/48GiB/fourCPU/no-AS. Resource-layer reuse remains prior technique.

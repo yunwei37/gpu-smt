@@ -1,41 +1,26 @@
-# Step0101 — native24 runs after reply/retirement CI qualification
+# Step0101 — timely native reply qualification complete
 
-BUILD_AND_EVALUATE. Root only. Previous goal turn is concrete progress:
-completed retry-frontier data, a demonstrated protocol fault, validated source
-repair, targeted manuscript compilation and this actual native start.
+BUILD_AND_EVALUATE. Root only.
 
-## EXPERIMENT_GATE — running
+## EXPERIMENT_GATE
+Actual source13d4606 exits0 and returns24 at12:21:52UTC. See experiment-001/
+comparison.json,result-review.md and the complete raw-linked artifact.
+External1349.551353s is below retained warm1430.677580s. Accepted14 sets agree;
+two extra timeouts persist and all outcomes equal the previous frontier24.
+The protocol fix is real but is not a measured explanation for those timeouts.
+Actual native retirement and sampled resource failures are preserved.
 
-See experiment-001/plan.md, manifest.json, actual-controller-launch.json,
-engine-launch.json and progress-review.md. Actual native readiness and kernel
-birth are verified. Source13d4606 has successful Rust and five-native-test CI.
-No new request deadline, quota, workspace, service, AI session or concurrent
-collection is introduced. The experiment has no final capture or clock yet.
+## WRITE_GATE
+The running report is superseded by this complete result. Canonical evaluation
+and daily progress retain both the selected improvement and operational
+differences. No full-population gain, fresh interleaving, full12-round writing
+or paper acceptance is claimed. Original four RQs remain unchanged.
 
-## WRITE_GATE — interim record
-
-The plan and current evaluation distinguish the actual running qualification
-from the retained warm and retry-frontier complete results. Source/paper
-semantics now agree on timely replies and fully charged retirement. Full
-paper writing and acceptance review are not entered; four RQs remain unchanged.
-
-## REVIEW_GATE — interim self-audit
-
-See outer-audit.md. This is root self-review, not independent auditing or a
-completed experiment. On actual exit retain all raw/partial/failed outcomes,
-retirement and complete costs; compare exact accepted sets and all status/
-payload differences before any full7808 or new workload-layer gain claim.
-
-## Next actual node
-
-Follow this exact CLI/controller's terminal through the existing exit event,
-without minute-by-minute goal rounds. Preserve healthy work. If the two real
-timeouts persist, report that evidence and continue the resource investigation;
-do not claim the protocol fix caused an unmeasured candidate improvement.
-The separately staged fixed42 rerun and full matched throughput remain open.
-
-## Concurrent useful work
-
-Resource-scope-review and retained-boundary-candidates analyze the existing
-resource context and actual near-deadline native payloads. No second cohort,
-new observer or resource setting was added; current native24 remains running.
+## REVIEW_GATE
+Root self-review, not independent auditing. Full source input/result bytes,
+complete clocks, retries and memory outcomes are kept. Extra timeouts are
+disclosed rather than hidden or repaired by extra time. The user requested a
+full resource-layer comparison after fixing regressions; selected elapsed and
+accepted-set behavior justify measuring it, not declaring victory. No new
+failure/policy/LRAT layer is stacked. Next node is that serial full pair, then
+the separately reported fixed42 resource rerun.

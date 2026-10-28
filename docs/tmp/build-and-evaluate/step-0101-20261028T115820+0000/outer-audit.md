@@ -1,12 +1,9 @@
-# Interim root self-audit
+# Completed root self-audit
 
-The run is verified from an actual kernel birth and native readiness, not a
-manifest or intent. Currentsource CI is terminal success; earlier a750aa3 CI
-is recorded separately. The strict receipt correction does not extend native
-proof execution time, and all retirement remains charged.
-
-There is no completed result for this run. Retained previous24 improvements
-are selected/order/sharedhost observations and still have two extra timeouts.
-No full population, complete observable parity or paper acceptance is inferred.
-All four RQs and the broad active objective remain; review is self-review.
-No other Workspace, agent, service, schedule or second native cohort changes.
+Kernel/birth-based retirement confirms no remaining registered native process.
+Exact24 source,timeout,resource,library and accepted-ID checks pass. Every raw
+outcome equals prior frontier24; two warm operational differences remain.
+Selected elapsed is lower, but resource_layer_gain_established stays false.
+No independent audit, complete observable parity or full gain is claimed.
+Raw stdout/stderr are full-byte-preserving gzip; offline comparison replay
+passes. One native group ended before preparing the next serial whole pair.

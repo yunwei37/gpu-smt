@@ -1,0 +1,212 @@
+{
+  "scope": "development-selected resource qualification; root result review required",
+  "candidate_count": 24,
+  "external_clocks": {
+    "warm": {
+      "launch_to_exit_seconds": 1430.6775802059565,
+      "internal_seconds": 1429.0778583651409,
+      "external_minus_internal_seconds": 1.5997218408156186
+    },
+    "engine": {
+      "launch_to_exit_seconds": 1349.5513531418983,
+      "internal_seconds": 1349.548780133,
+      "external_minus_internal_seconds": 0.0025730088982527377
+    }
+  },
+  "executable_resolution": {
+    "requested": "/tmp/gpu-smt-linarith-oracle-20261017/prefix/repl-kernel/.lake/build/bin/repl",
+    "resolved": "/workspaces/.agent-state/gpu-smt-native427-20261017-recovery/linarith-oracle/prefix/repl-kernel/.lake/build/bin/repl",
+    "device": 16736,
+    "inode": 2809690,
+    "bytes": 95832520,
+    "same_file": true,
+    "observed_utc": "2026-10-28T10:58:11.978146+00:00",
+    "scope": "post-run filesystem alias observation; not a frozen launch-time attestation"
+  },
+  "descriptive_external_elapsed_ratio": 1.0601134791019162,
+  "ratio_is_not_a_gain_claim": true,
+  "resource_layer_gain_established": false,
+  "accepted_set_only_warm": [],
+  "accepted_set_only_engine": [],
+  "changed_statuses": [
+    {
+      "id": "minif2f-2507",
+      "warm_raw": "lean_error",
+      "warm": "rejected",
+      "engine": "timeout"
+    },
+    {
+      "id": "minif2f-7230",
+      "warm_raw": "lean_error",
+      "warm": "rejected",
+      "engine": "timeout"
+    }
+  ],
+  "raw_warm_status_counts": {
+    "valid": 14,
+    "lean_error": 7,
+    "timeout_error": 1,
+    "resource_failure": 2
+  },
+  "warm_status_counts": {
+    "accepted": 14,
+    "rejected": 7,
+    "timeout": 1,
+    "resource_exhausted": 2
+  },
+  "engine_status_counts": {
+    "accepted": 14,
+    "rejected": 5,
+    "timeout": 3,
+    "resource_exhausted": 2
+  },
+  "status_aliases": {
+    "valid": "accepted",
+    "lean_error": "rejected",
+    "sorry": "incomplete",
+    "timeout_error": "timeout",
+    "resource_failure": "resource_exhausted",
+    "repl_error": "backend_error",
+    "server_error": "backend_error"
+  },
+  "raw_native_payload_changed_ids": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-4",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-2325",
+    "minif2f-2507",
+    "minif2f-3086",
+    "minif2f-3209",
+    "minif2f-7230"
+  ],
+  "top_level_env_and_empty_ast_normalized_payload_changed_ids": [
+    "minif2f-2507",
+    "minif2f-7230"
+  ],
+  "both_native_payloads_available_ids": [
+    "minif2f-0",
+    "minif2f-1",
+    "minif2f-2",
+    "minif2f-3",
+    "minif2f-4",
+    "minif2f-5",
+    "minif2f-6",
+    "minif2f-7",
+    "minif2f-8",
+    "minif2f-9",
+    "minif2f-10",
+    "minif2f-11",
+    "minif2f-12",
+    "minif2f-13",
+    "minif2f-14",
+    "minif2f-15",
+    "minif2f-2325",
+    "minif2f-3086",
+    "minif2f-3209"
+  ],
+  "missing_warm_native_payload_ids": [
+    "minif2f-1885",
+    "minif2f-3683",
+    "minif2f-3685"
+  ],
+  "missing_engine_native_payload_ids": [
+    "minif2f-1885",
+    "minif2f-2507",
+    "minif2f-3683",
+    "minif2f-3685",
+    "minif2f-7230"
+  ],
+  "diagnostic_normalization": "Only top-level env handles and empty ast are removed in the labelled secondary view; raw payload differences remain. No metavariable/message/position normalization.",
+  "warm_preparation_seconds": 3.578960410086438,
+  "engine_prepared_ready_event_rows": 1,
+  "engine_preparation_seconds": null,
+  "engine_preparation_scope": "duration is not recoverable from ready event counts alone",
+  "fresh_fallback_event_reasons": {
+    "exclusive resource retry uses fresh native state": 3
+  },
+  "warm_physical_attempts": 27,
+  "engine_attempts": 27,
+  "warm_admitted_envelope_seconds_sum": 2425.374948431272,
+  "engine_native_attempt_seconds_sum": 2456.910757013,
+  "tails": [
+    {
+      "warm_slowest_percent": 1,
+      "ids": [
+        "minif2f-1885"
+      ],
+      "warm_admitted_envelope_seconds_sum": 540.8648486300372,
+      "engine_native_attempt_seconds_sum": 569.414510775,
+      "statuses": [
+        {
+          "id": "minif2f-1885",
+          "warm": "timeout",
+          "engine": "timeout"
+        }
+      ]
+    },
+    {
+      "warm_slowest_percent": 10,
+      "ids": [
+        "minif2f-1885",
+        "minif2f-3685",
+        "minif2f-3683"
+      ],
+      "warm_admitted_envelope_seconds_sum": 1318.3303933350835,
+      "engine_native_attempt_seconds_sum": 1320.4734118220001,
+      "statuses": [
+        {
+          "id": "minif2f-1885",
+          "warm": "timeout",
+          "engine": "timeout"
+        },
+        {
+          "id": "minif2f-3685",
+          "warm": "resource_exhausted",
+          "engine": "resource_exhausted"
+        },
+        {
+          "id": "minif2f-3683",
+          "warm": "resource_exhausted",
+          "engine": "resource_exhausted"
+        }
+      ]
+    }
+  ],
+  "clock_limits": "External clocks include program loading, setup, queueing, native work, retries, serialization and retirement. Warm admitted-envelope clocks can end before asynchronous teardown; engine attempt clocks include retirement. Neither overlapping sum is whole-run time or comparable isolated native CPU. Logging/observation CPU is not independently identified.",
+  "resource_limits": "Same aggregate CPU/RSS point; warm pool and engine per-worker affinity differ. Configuration/terminal receipts are recorded evidence, not independent authentication or proof of arbitrary FFI/fork safety.",
+  "comparison_scope": "current selected24 versus retained earlier warm24,not newly interleaved or full-population evidence",
+  "new_execution_terminal": {
+    "utc": "2026-10-28T12:21:52.478069+00:00",
+    "state": "timely-reply24-complete",
+    "returned": 24,
+    "native_survivors": [],
+    "external_seconds": 1349.5513531418983,
+    "gain_claim": false,
+    "next": "root compare all outcomes and completecosts"
+  },
+  "prior_frontier_raw_outcome_changed_ids": [],
+  "elapsed_reduction_vs_retained_warm_fraction": 0.056704758770581565,
+  "elapsed_reduction_vs_prior_frontier_fraction": -0.0014595486058552876,
+  "retirement_and_resources": {
+    "registered_native_births": 28,
+    "remaining_native_births": [],
+    "RSS_samples": 1350,
+    "peak_sampled_owned_RSS_bytes": 51780562944,
+    "samples_above_48GiB": 5,
+    "watchdog_events": 5,
+    "physical_attempts": 27
+  }
+}

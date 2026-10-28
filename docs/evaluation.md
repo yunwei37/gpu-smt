@@ -246,3 +246,13 @@ is preserved byte-for-byte;its links were authored from docs/evaluation.md.
 keeps that location and links earlier archives. Current [paper](paper/main.tex)
 remains an incomplete36page research draft;all fourRQ evidence/novelty coverage
 and independent audit remain open.
+
+### Reply/retirement qualification completed (2026-10-28)
+
+Source13d4606 completes the same24 in1349.551353s versus retained four-warm
+1430.677580s. All14 accepted IDs agree;2507/7230 still time out versus warm
+errors, and all24 outcomes equal the prior frontier result. The protocol fix
+has no demonstrated benefit on these differences. Full raw evidence and
+limitations: [timely-reply24](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-resource-timely-reply24-20261028T115820Z/README.md).
+The next full matched resource pair must report every operational difference;
+this selected comparison is not a full engine gain claim.
