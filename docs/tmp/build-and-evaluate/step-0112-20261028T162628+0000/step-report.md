@@ -152,3 +152,10 @@ blocked-executor observation. No other agent or independent-audit claim.
 Route to the same existing CI for the expanded source. Prior72/5/38passes
 cannot qualify these later code bytes. Complete native population/warm parity
 and all RQs remain open;keep the one live cohort and full goal unchanged.
+
+
+Before expanded-source qualification,the native control is tightened to require
+a live pre-stop child with matching kernel birth as well as PPID. Merely seeing
+a parent-related PID that had already exited would not establish intervention.
+This changes the new control only,not resource implementation. Preserve all
+source-CI revisions separately;final qualification must cover this exact control.

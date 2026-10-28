@@ -1404,13 +1404,20 @@ async fn native_preemption_stops_a_prepared_child_before_the_async_executor_resu
         }
     };
     let parent = registry.parent.load(std::sync::atomic::Ordering::SeqCst);
-    let observed_parent = std::fs::read_to_string(format!("/proc/{}/stat", owned[0].pid))
+    let observed_child = std::fs::read_to_string(format!("/proc/{}/stat", owned[0].pid))
         .ok()
         .and_then(|text| {
-            text.rsplit_once(')')
-                .and_then(|(_, tail)| tail.split_whitespace().nth(1)?.parse::<u32>().ok())
+            text.rsplit_once(')').and_then(|(_, tail)| {
+                let fields: Vec<_> = tail.split_whitespace().collect();
+                Some((
+                    fields.get(1)?.parse::<u32>().ok()?,
+                    fields.get(19)?.parse::<u64>().ok()?,
+                    *fields.first()? != "Z" && *fields.first()? != "X",
+                ))
+            })
         });
-    let actual_prepared_child = parent != 0 && observed_parent == Some(parent);
+    let actual_prepared_child =
+        parent != 0 && observed_child == Some((parent, owned[0].start_ticks, true));
     let engaged_without_fallback = !registry.fallback.load(std::sync::atomic::Ordering::SeqCst);
     cancel.cancel();
     backend.request_resource_preemption(&owned);
