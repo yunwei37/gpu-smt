@@ -114,3 +114,13 @@ run one native qualification pair;no new fulltest or policy is autoaccepted.
 Root will review results before repaired fullpair and42solo. This executes the
 next available dependency instead of empty goal polling. Resourcefix CI including
 pinned4.18native differential job succeeds;4.9warm throughput is still pending.
+
+## Known-regression coverage before resource qualification
+
+The pending24source qualifier must include the already observed accepted3086
+regression,not just ordinary positives and resource failures. Before native
+execution,retain16ordinary plus all6historical status changes and3683/3685real
+memory failures. Both sides keep the exact same24and original ascending order;
+the original20+4source/input/manifest remain as unexecuted superseded records.
+The healthyFIFOand pidfdcontinuation are not restarted. This corrects test
+coverage before any attempt to claim resource parity;it is not another fullrun.

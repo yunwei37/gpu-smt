@@ -39,7 +39,7 @@ From the retained Workspace, after the sole previous collection retires:
       bench/lean-warm-resource/run.py --phase qualification \
       --out /tmp/gpu-smt-warm-resource-qualification-example
 
-Qualification uses20original ordinary candidates and4real heavy candidates,
+Qualification uses16original ordinary candidates and8targeted candidates,
 including prior resource failures/timeouts. This is development selection, not
 representative final throughput. The full phase retains all7808originals and
 order. Resource42replay remains a separately reported subsequent cohort.

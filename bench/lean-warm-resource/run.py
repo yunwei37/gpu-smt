@@ -90,7 +90,7 @@ async def main(args):
     candidates=source['candidates']
     if args.phase=='qualification':
         # Real ordinary and heavy inputs exercise resource retry, not a toy.
-        candidates=[source['candidates'][i]for i in list(range(20))+[3683,3685,1885,7230]]
+        candidates=[source['candidates'][i]for i in list(range(16))+[1885,2325,2507,3086,3209,3683,3685,7230]]
     ids=[v['id']for v in candidates]
     assert len(set(ids))==len(ids)
     headers=[split_snippet(v['code']).header for v in candidates]

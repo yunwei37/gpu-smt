@@ -20,10 +20,12 @@ existing measure mode writes results only at whole-batch completion,so stopping
 it now would discard completed in-memory results. Preserve it instead.
 Use a one-shot pidfd continuation,not agent waiting/polling or a new schedule.
 
-Qualification is the same20ordinary+4heavy original sources in both methods.
+Qualification is the same16ordinary+8targeted original sources in both methods.
 Require actual4warm workers,actualunlimited AS,safe48GiB watchdog/requeue and
 no survivors,then compare alloutcomes/acceptedsets and costs. This is a real
 development qualification,not a final resource speed result. No full run or
 workload policies automatically launch on a successful control.
 Review failures and repair actual resource deficiencies first. The exact42
 bad_alloc cohort follows the repaired matched resource point separately.
+
+Before any native execution,the24-source selection is corrected to include all6known status divergences,including accepted3086,and2real memory-failure sources. The complete source population/resource contract is unchanged;the original selection remains in Git and the runtime superseded files.

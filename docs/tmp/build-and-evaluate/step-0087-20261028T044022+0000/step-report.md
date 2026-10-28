@@ -60,3 +60,16 @@ qualify that context only,not full4.9Mathlib/warm throughput. Current local four
 native tests stayed ignored while the sole collection ran.
 The existing hourly automation prompt now follows the user-requested resource
 baseline priority and completed42history;hourly frequency/target remain unchanged.
+
+## Before-first-execution qualification correction
+
+The historical6status differences must be explicitly tested,especially
+3086accepted→timeout. Replace the not-yet-executed20ordinary+4heavy development
+selection with16ordinary+8targeted originals,still24and bothsides identical:
+1885,2325,2507,3086,3209,7230cover all6changes;3683/3685exercise real memory
+failure. Restore original ascending order. Originalcandidate bytes,48GiB/CPU/
+deadline,enginebinary and activeFIFOremain unchanged. Supersededsource/input/
+manifest remain on the owningruntime path and originalGitcommit;new frozen
+source/input and rationale are retained here. The pidfd continuation is not
+restarted and still launches only after the existingFIFOretires. No native
+qualification has started and no result is retroactively changed.
