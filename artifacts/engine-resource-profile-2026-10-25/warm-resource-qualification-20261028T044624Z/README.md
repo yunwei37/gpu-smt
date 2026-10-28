@@ -31,8 +31,38 @@ The historical problematic3086 now passes in this warm side;2325/2507/3209/
 where the historical24GiB-AS warm run had a resource failure. This warm-only
 observation does not establish causal repair or full engine parity.
 
-The immutable cf1138b engine/native-library-repaired host side starts
-sequentially10:27:16UTC and remains pending at ingestion. Retry-frontier code
-db8ecbf was not loaded into either side. No pair speedup/full7808gain,
-newmethod novelty or independent audit is claimed. Review the complete pair
-before changing the native resource point or stacking workload-layer gains.
+The immutable cf1138b engine/native-library-repaired host side also exits0.
+[Completepairedanalysis](paired-analysis.json),[native/resourceclosure](paired-ingestion.json).
+
+| Condition | accepted | rejected | timeout | resource | external seconds |
+|---|---:|---:|---:|---:|---:|
+| Kimina4warm |14|7|1|2|1430.677580|
+| Repairedengine before retry-frontier change |14|5|3|2|1540.705220|
+
+The engine is descriptively7.690596%longer in this selecteddevelopmentpair.
+AcceptedIDsets match exactly,including restored3086acceptance. Sources2507and
+7230return native errors inwarm but timeout inengine. Rawpayloads differ on21IDs;
+after the separately labelled top-levelenv/emptyAST view,only those two differ.
+No diagnostic/metavariable/position rewriting is used. That is not all-status
+parity or resource-layer victory. Source3086takes299.966440s inengine,close to
+the unchanged300sdeadline;do not extend thatdeadline or hide tail outcomes.
+
+Both sides execute27physicalattempts and5watchdogkills. Engine has2prepared
+readyevents and3exclusivefreshfallbacks;all29registerednativebirths are retired
+withno live/zombiesurvivor. Its samplepeak51,677,036,544B is overshoot,not hardquota.
+Lateordinary7230does not start until3683solo retires10:47:56UTC,an observed
+resourcebarrier;elapsedbenefit from changing it remains unmeasured.
+Per-attempt warmenvelopes and engine retirement-inclusive clocks differ in
+boundary and overlap;their sums are not a disjointwhole-flowcostbreakdown.
+
+The initial analyzer incorrectly treated the requesteddirectoryalias and
+canonicalbackendpath as differentexecutables. The post-run
+[native executable identity](native-executable-resolution.json) verifies
+samefiledevice/inode/size. It is separate from the unchangedfrozenmanifest,
+not a retrospective launch-time attestation. The strict repairedanalyzer
+rejects a differentexecutable/missingalias and replays this compressedartifact
+without requiring the liveprivatebinary. All9analyzercontrols pass.
+
+The db8ecbf retry-frontier source was not applied to either side. Next is its
+unchanged24source resource-repair measurement,not full7808or newfailure/policy
+layers. Rootself-review only,no strongest-warm gain or paperacceptanceclaim.

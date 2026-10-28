@@ -2,6 +2,8 @@
 """Analyze the complete retained four-warm/engine qualification, without running it."""
 import argparse
 import collections
+import datetime
+import gzip
 import json
 import math
 from pathlib import Path
@@ -44,6 +46,20 @@ def incidental(payload):
     return result
 
 
+def executable_resolution(requested):
+    """Observe an existing alias after a run; never rewrite its frozen manifest."""
+    path = Path(requested)
+    resolved = path.resolve(strict=True)
+    a, b = path.stat(), resolved.stat()
+    require(path.is_file() and resolved.is_file()
+            and (a.st_dev, a.st_ino) == (b.st_dev, b.st_ino),
+            "executable alias does not identify the same existing file")
+    return {"requested": requested, "resolved": str(resolved),
+            "device": a.st_dev, "inode": a.st_ino, "bytes": a.st_size,
+            "same_file": True, "observed_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "scope": "post-run filesystem alias observation; not a frozen launch-time attestation"}
+
+
 def compare(point):
     m, batch = point["manifest"], point["input"]
     warm, wt, engine = point["warm"], point["warm_terminal"], point["engine"]
@@ -74,9 +90,16 @@ def compare(point):
     library = m["native_library"]
     require(wt["native_library"] == library and wt["source_repl"] == m["warm_repl"],
             "warm native library or executable differs")
-    require(m["warm_repl"] in engine["backend"]
-            and wt["source_context"]["project"] in engine["backend"],
-            "engine native fallback executable/project differs")
+    resolution = point.get("executable_resolution")
+    native_repl = m["warm_repl"]
+    if resolution is not None:
+        require(resolution["requested"] == native_repl and resolution["same_file"] is True,
+                "executable alias receipt differs from the original requested path")
+        native_repl = resolution["resolved"]
+    # Match complete quoted path fields, not prefixes such as repl-backup.
+    require(("lean-repl|" + json.dumps(native_repl, ensure_ascii=False) + "|") in engine["backend"]
+            and ("|" + json.dumps(wt["source_context"]["project"], ensure_ascii=False) + "|")
+            in engine["backend"], "engine native fallback executable/project differs")
     mapped = point["warm_libraries"]
     identities = {(p["pid"], p["birth"]) for p in mapped}
     require(len(identities) == len(mapped) == wr["maximum_native_workers"]
@@ -128,6 +151,7 @@ def compare(point):
     return {
         "scope": "development-selected resource qualification; root result review required",
         "candidate_count": len(ids), "external_clocks": clocks,
+        "executable_resolution": resolution,
         "descriptive_external_elapsed_ratio": clocks["warm"]["launch_to_exit_seconds"] / clocks["engine"]["launch_to_exit_seconds"],
         "ratio_is_not_a_gain_claim": True, "resource_layer_gain_established": False,
         "accepted_set_only_warm": sorted(accepted_w - accepted_e),
@@ -166,7 +190,18 @@ def read_point(root):
         "engine_exit": "engine-exit.json", "terminal": "terminal.json",
         "warm_libraries": "warm/native-library-readiness.json",
     }
-    return {name: json.loads((root / path).read_text()) for name, path in paths.items()}
+    def read_json(path):
+        path = root / path
+        if path.exists():
+            return json.loads(path.read_text())
+        return json.loads(gzip.decompress(path.with_name(path.name + ".gz").read_bytes()))
+    point = {name: read_json(path) for name, path in paths.items()}
+    receipt = root / "native-executable-resolution.json"
+    if receipt.exists():
+        point["executable_resolution"] = json.loads(receipt.read_text())
+    elif ("lean-repl|" + json.dumps(point["manifest"]["warm_repl"], ensure_ascii=False) + "|") not in point["engine"]["backend"]:
+        point["executable_resolution"] = executable_resolution(point["manifest"]["warm_repl"])
+    return point
 
 
 if __name__ == "__main__":

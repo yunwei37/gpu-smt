@@ -1,7 +1,9 @@
 """Accounting controls only; fixture durations are not native performance data."""
 import copy
+import gzip
 import importlib.util
 import json
+import tempfile
 from pathlib import Path
 import unittest
 
@@ -42,7 +44,7 @@ def fixture():
             native_library=library, source_repl=repl, source_context=dict(project="/project"),
             whole_seconds=14, preparation_seconds=2),
         engine=dict(batch=batch, results=engine_results, resources=dict(**resources, cores_per_worker=1),
-                    backend="/native/repl|/project", lifecycle_seconds=9),
+                    backend='lean-repl|"/native/repl"|[]|"/project"|fixture', lifecycle_seconds=9),
         warm_libraries=[dict(pid=n, birth=1, mapped=True, native_library=library) for n in range(4)],
         warm_exit=dict(exit=0, external_seconds=15),
         engine_exit=dict(exit=0, external_seconds=10),
@@ -50,6 +52,52 @@ def fixture():
 
 
 class WarmResourceCompare(unittest.TestCase):
+    def test_alias_resolution_accepts_only_the_exact_canonical_executable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            real = root / "retained"
+            real.mkdir()
+            (real / "repl").write_bytes(b"native fixture")
+            (root / "alias").symlink_to(real, target_is_directory=True)
+            requested = str(root / "alias" / "repl")
+            resolution = module.executable_resolution(requested)
+            self.assertEqual(resolution["resolved"], str(real / "repl"))
+            self.assertTrue(resolution["same_file"])
+            point = fixture()
+            point["manifest"]["warm_repl"] = requested
+            point["warm_terminal"]["source_repl"] = requested
+            point["executable_resolution"] = resolution
+            point["engine"]["backend"] = 'lean-repl|' + json.dumps(str(real / "repl")) + '|[]|"/project"|fixture'
+            self.assertEqual(module.compare(point)["executable_resolution"], resolution)
+            point["engine"]["backend"] = 'lean-repl|' + json.dumps(str(real / "repl") + "-backup") + '|[]|"/project"|fixture'
+            with self.assertRaisesRegex(ValueError, "native fallback"):
+                module.compare(point)
+            point["executable_resolution"]["requested"] = "/another/alias"
+            with self.assertRaisesRegex(ValueError, "alias receipt"):
+                module.compare(point)
+
+    def test_missing_executable_alias_never_becomes_an_identity_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(FileNotFoundError):
+                module.executable_resolution(str(Path(tmp) / "missing"))
+
+    def test_archived_compressed_point_replays_without_native_files(self):
+        point = fixture()
+        paths = {
+            "manifest": "manifest.json", "input": "input24.json",
+            "warm": "warm/results.json", "warm_terminal": "warm/terminal.json",
+            "engine": "engine.stdout", "warm_exit": "warm-exit.json",
+            "engine_exit": "engine-exit.json", "terminal": "terminal.json",
+            "warm_libraries": "warm/native-library-readiness.json",
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name, path in paths.items():
+                p = root / (path + ".gz")
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes(gzip.compress(json.dumps(point[name]).encode(), mtime=0))
+            self.assertEqual(module.compare(module.read_point(root)), module.compare(point))
+
     def test_only_external_complete_clocks_determine_the_descriptive_ratio(self):
         value = module.compare(fixture())
         self.assertEqual(value["descriptive_external_elapsed_ratio"], 1.5)

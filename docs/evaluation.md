@@ -90,10 +90,12 @@ retired that obsolete wrapper and started the corrected native-library point.
 14valid/7Leanerrors/1timeout/2resourcefailures,27physicalattempts,allworkers retired.
 The historicalwarm loaded compiledMathlib linarith;oldengine cells omitted it.
 Both corrected sides now explicitly load that same existingordinary library;
-this restores baselinecontext,not CPUoracle novelty. The frozenengine side is
-still running at this update;the completepair/full7808warm comparison is open.
-Warm1430.677580s externalclock has disclosed developmentCPU overlap and is not
-a pairedgain. Further policy/failure gains remain deferred. Historical42solo
+this restores baselinecontext,not CPUoracle novelty. The frozenengine side is nowcomplete:
+14accepted/5rejected/3timeout/2resource,versuswarm14/7/1/2. AcceptedIDs match,
+but2507and7230timeoutonlyinengine. External1540.705220s is7.690596%longer
+thanwarm1430.677580s in this selecteddevelopmentpair with disclosedCPU overlap.
+All29engine nativebirths retire;the full7808warm comparison remains open.
+The alreadyimplemented retry-frontier repair is next,not an establishedgain. Further policy/failure gains remain deferred. Historical42solo
 results are preserved;the requested repaired-point42cohort follows resource work.
 
 [Disjoint singleton decomposition](tmp/build-and-evaluate/step-0088-20261028T053756+0000/experiment-001/result-review.md)

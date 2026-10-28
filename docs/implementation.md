@@ -74,7 +74,7 @@ when their original parent link is gone;stat read errors propagate. This fixes
 history-dependent scanning,not the still-unmeasured whole-verification overhead.
 [Repair and55test/doctest qualification](tmp/build-and-evaluate/step-0086-20261028T041734+0000/experiment-002/result-review.md)
 preserves both failed test attempts and four locallyignored real-Lean tests.
-The old FIFO7808cell is now complete and remains frozen. The repaired native-library-matched qualification has completed its4warm side;engine-side comparison remains pending. See [current evidence](evaluation.md#resource-layer-diagnosis-and-missing-warm-comparison).
+The old FIFO7808cell is now complete and remains frozen. The repaired native-library-matched24qualification is complete:acceptedsets agree,but twoextraengine timeouts and7.690596%descriptiveelapsedexcess remain. Native retry-frontier measurement is next. See [current evidence](evaluation.md#resource-layer-diagnosis-and-missing-warm-comparison).
 
 Queued jobs now retain only their explicit policy forecast. The global learned
 median stays a fallback refreshed at queue-head admission;it is no longer frozen
