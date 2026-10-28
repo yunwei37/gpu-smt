@@ -52,3 +52,6 @@ reuses these exact raw records to distinguish hypothesis updates from target
 goal-ID progress and per-call from outer-loop step limits. It changes no
 historical result,no observer and no failure detector. The upstream warning
 mechanism is citation-only and does not certify arbitrary early rejection.
+
+
+The [bounded upstream/source inspection](../../../../docs/tmp/build-and-evaluate/step-0113-20261028T180615+0000/step-report.md) distinguishes abstract rewrite-loop warnings from concrete full-candidate failure certificates. It enables no detector and is not a completed paper novelty survey.

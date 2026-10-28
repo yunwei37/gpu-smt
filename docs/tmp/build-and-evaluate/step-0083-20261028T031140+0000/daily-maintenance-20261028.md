@@ -468,3 +468,13 @@ and state explicitly that this is resource-contract repair,not an RQ answer
 or measured throughput gain. The one existing full4.9pair remains unchanged;
 do not replace it with a newer binary or count its later performance as these
 source fixes. The next empirical boundary is its actual terminal/root review.
+
+
+### 18:06UTC — keep the failure mechanism concrete
+Official Lean PR8688 documents successful concrete calls that trigger abstract
+rewrite-cycle warnings; merged8865 implements a warning, not safe rejection.
+Do not rebuild that diagnostic as a purported new failure certificate. The
+existing23 traces still lack complete-state recurrence/continuation evidence.
+Record this bounded negative method decision without another logger or native
+run. Resource pair completion/population review and original42 remain next;
+source/CI repairs are not a substitute for their performance evidence.
