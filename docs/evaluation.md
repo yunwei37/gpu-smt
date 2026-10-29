@@ -96,8 +96,11 @@ Neither change replaces frozen13d4606 or has a measured whole-flow benefit.
 [Historical42solo](../artifacts/engine-resource-profile-2026-10-25/isolated42-20261026T101138Z/README.md)
 is41budget failures/1timeout,no accepted,and48.23GiB sampled peak;it lacked
 explicit matched native-library selection. The corrected fixed42 cohort is
-prepared/rebound to13d4606 and remains unstarted until the current pair retires
-and is reviewed. Do not report old41/1as a new run.
+prepared/rebound to13d4606. After actual full-pair retirement/review,it
+[started separately](../artifacts/engine-resource-profile-2026-10-25/solo42-native-library-20261029/README.md)
+at2026-10-29T05:35:59UTC,one four-core-eligible fresh native request at a time.
+The ordinary native library and unlimited-AS first engagement are observed;
+its own42outcomes remain pending. Do not report old41/1as this run.
 
 [Complete four-warm full7808 leg](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
 now returns3014valid/4668lean_error/85timeouts/41budget failures in25176.487277s

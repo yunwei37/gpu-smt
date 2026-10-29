@@ -18,3 +18,9 @@ methods and complete novelty discrimination. Keep its clock separate from
 historical24GiB-AS or single-core leases. While it runs,finish full manuscript/
 primary-source reading and use concrete findings to choose permitted method
 work,without restoring the frozen external CPUoracle or changing the four RQs.
+
+
+At05:35:59UTC the requested fixed42fresh-native point actually starts after
+complete7808result publication. FirstREPL maps the ordinary native library,
+has unlimitedAS andCPU8–11. Its historical missing task_idis explicit;code
+and original deadline/reuse remain unchanged. Complete outcomes remain pending.
