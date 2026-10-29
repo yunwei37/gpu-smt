@@ -198,9 +198,12 @@ bounds future demand. This sampled mechanism can overshoot between observations;
 not a kernel memory quota. The historical measurements below retain their
 original resource settings. Section~\ref{sec:service-results} reports a complete
 new-resource miniF2F comparison with equal final outcome sets and explicit
-artifact differences. The separate 42-source isolated larger-memory rerun is
-in progress. Multi-context behavior, offered-load scaling and repeated
-resource-frontier evidence remain incomplete.
+artifact differences. A separate 42-source exclusive native-library rerun
+under the 48\,GiB aggregate budget without per-process address-space caps
+returns 41 watchdog preemptions and one timeout, with no recovered acceptance.
+These are operational outcomes, not semantic refutations. Multi-context
+behavior, offered-load scaling and repeated resource-frontier evidence
+remain incomplete.
 Ordinary warm-state/resource mechanisms are prior techniques; prospective
 novelty lies in workload-level methods and must be established empirically.
 

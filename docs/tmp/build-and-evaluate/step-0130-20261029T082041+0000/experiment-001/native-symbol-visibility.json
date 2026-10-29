@@ -1,0 +1,7 @@
+{
+  "symptom": "Interpreter could not find boxed sameEnvironmentNative",
+  "evidence": "nm-Dhad only raw gpu_smt_environment_equal;nmshowed lowercase tLean wrappers/initializer.",
+  "pinned_header_rule": "LEAN_EXPORT is default visibility only with LEAN_EXPORTING.",
+  "repair": "Compile this research shared library with -DLEAN_EXPORTING.",
+  "scope": "Existing build compatibility;no new runtime service/config."
+}

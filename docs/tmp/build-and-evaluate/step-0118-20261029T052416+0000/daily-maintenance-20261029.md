@@ -60,3 +60,18 @@ Complete trace reuse now resolves retry-tail versus ordinary admission: [step012
 [Step0126](../step-0126-20261029T071858+0000/step-report.md) follows the new elastic/state-cache request. Existing data distinguishes text counts from missing full-state/cost evidence and current resource tails from older timeout CPU. Next progress requires native dependency/state observations after42,not another generic cache/future claim. READMEstale full-pair-pending labels are corrected with its actual composite-comparison limits.
 
 [Step0127](../step-0127-20261029T074448+0000/step-report.md) applies the latest stop of interval_cases parallel development and prioritizes state-matched native tactic-failure measurement. Public example/CLI/rustdoc checks pass without Lean;93entrypoint links resolve including manualHTMLanchors. Initial anchor falsepositive is corrected and its own uncommitted link edits withdrawn. Current ResultCacheis clearly whole-source,not the proposed tactic-state method.
+
+
+## Native failure-input measurement continuation,09:05UTC
+The corrected42solo point recovers no acceptance at48GiB(41watchdog/1timeout);
+repeating it is not progress. Actual input/cost instrumentation now passes
+controlled duplicate/negative cases plus native real-source status/rawdiagnostic
+checks. Whole-environment canonicalization itself consumed375.89CPUseconds and
+was unusable;direct structural comparison skips common subgraphs instead.
+The next substantive result is the entire retained expensive repeated-text
+population's reached,exact-input,error cost,including unmatched/unsupported/
+operational cases and observation overhead. A text count or successful observer
+compile is not contribution. No result replay is yet enabled;heartbeat,hidden
+elaborator state,diagnostic fidelity and novelty remain open. Launch one frozen
+measurement under48GiB/noASand preserve every segment,then use real cost to
+choose implementation. No independent auditor or stoppedparallel route is added.

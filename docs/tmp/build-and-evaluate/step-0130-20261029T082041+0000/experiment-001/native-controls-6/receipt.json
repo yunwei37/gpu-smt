@@ -1,0 +1,65 @@
+{
+  "UTC": "2026-10-29T08:40:54.949867+00:00",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/state-reuse",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.olean",
+        "-c",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.c",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseProfile.lean"
+      ],
+      "exit": 0,
+      "seconds": 2.0022336929105222
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-shared",
+        "-fPIC",
+        "-O2",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.c",
+        "/tmp/gpu-smt-state-reuse-20261029/environment-equality.o",
+        "-lstdc++",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/libStateReuseProfile.so"
+      ],
+      "exit": 0,
+      "seconds": 5.015618240926415
+    },
+    {
+      "command": [
+        "env",
+        "LEAN_PATH=/tmp/gpu-smt-state-reuse-20261029",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/state-reuse",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.olean",
+        "-c",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.c",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.0015404329169542
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--load-dynlib=/tmp/gpu-smt-state-reuse-20261029/libStateReuseProfile.so",
+        "--run",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean",
+        "/tmp/gpu-smt-state-reuse-20261029/controls-native-filename.json"
+      ],
+      "exit": 1,
+      "seconds": 12.009410282131284
+    }
+  ],
+  "seconds": 20.029811637010425,
+  "combined_peak_bytes": 8546021376,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 3,
+  "scope": "Sole native input-observer controls after42retirement;not performance measurement"
+}

@@ -8,7 +8,10 @@ open Lean Meta Elab Tactic
 namespace GpuSmt.StateReuseProfile
 
 /-- Keep strong references: an address reused after collection cannot alias an old environment. -/
-unsafe def sameEnvironmentImpl (a b : Environment) : Bool := ptrEq a b
+@[extern "gpu_smt_environment_equal"]
+unsafe def sameEnvironmentNative (a b : @& Environment) : Bool := false
+
+unsafe def sameEnvironmentImpl (a b : Environment) : Bool := sameEnvironmentNative a b
 
 @[implemented_by sameEnvironmentImpl]
 opaque sameEnvironment (a b : Environment) : Bool := false
@@ -157,7 +160,7 @@ elab (name := observeState) "observe_state " inner:tactic : tactic => do
   let (call, keyId) ← register key
   let captureNs := (← IO.monoNanosNow) - captureStart
   emit [("event", toJson ("begin" : String)), ("call", toJson call),
-        ("key", toJson keyId), ("eligibility", toJson eligibility),
+        ("key", toJson keyId), ("environment", toJson (key.map (·.environment))), ("eligibility", toJson eligibility),
         ("source", toJson (← readThe Core.Context).fileName),
         ("byte", toJson (inner.raw.getPos?.map (·.byteIdx))),
         ("kind", toJson inner.raw.getKind.toString), ("capture_ns", toJson captureNs),

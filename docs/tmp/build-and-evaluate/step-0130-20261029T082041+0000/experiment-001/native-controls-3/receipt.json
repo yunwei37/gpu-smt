@@ -1,0 +1,35 @@
+{
+  "UTC": "2026-10-29T08:28:18.410243+00:00",
+  "commands": [
+    {
+      "command": [
+        "env",
+        "LEAN_PATH=/tmp/gpu-smt-state-reuse-20261029",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.olean",
+        "-c",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.c",
+        "bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.001680419081822
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--run",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean",
+        "/tmp/gpu-smt-state-reuse-20261029/controls-native-filename.json"
+      ],
+      "exit": 0,
+      "seconds": 12.009818569058552
+    }
+  ],
+  "seconds": 13.01219556806609,
+  "combined_peak_bytes": 8579256320,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 2,
+  "scope": "Sole native input-observer controls after42retirement;not performance measurement"
+}

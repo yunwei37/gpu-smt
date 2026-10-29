@@ -64,7 +64,7 @@ unsafe def main (args : List String) : IO Unit := do
     let mode ← IO.ofExcept (row.getObjValAs? String "mode")
     emit <| Json.mkObj [("event", toJson ("candidate_begin" : String)),
                         ("id", toJson id), ("mode", toJson mode)]
-    let context := Parser.mkInputContext source id (normalizeLineEndings := false)
+    let context := Parser.mkInputContext source "<input>" (normalizeLineEndings := false)
     let (_, initial, messages) ← Parser.parseHeader context
     let rawHeader := source.extract 0 initial.pos
     let setup := rawHeader ++ (if mode == "original" then "" else "\nimport StateReuseProfile\n")
