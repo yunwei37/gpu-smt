@@ -1,0 +1,20 @@
+# Daily repository maintenance and substantive-progress reflection — 2026-10-29UTC
+
+Root only. The complete7808strong-warm/engine pair now replaces stale running
+labels in the artifact index,evaluation and resource guide. Preserve historical
+data/sources and author dirty work. No branch,Workspace,dependency,logger,
+service or schedule is added.
+
+The measured resource regression is absent on this point:20,323s versus25,176s,
+equal all-candidate statuses/accepted set. Retry-order/affinity/shared-host and
+artifact caveats still prevent a general systems contribution. Resource-layer
+success does not eliminate expensive failed work:85timeouts and41resource
+failures remain. That unchanged burden is the next serious opportunity,not
+a need for more reporting or a tiny metadata kernel.
+
+Immediate next step is the already prepared42source-native exclusive resource
+run at48GiB/no-AS/four-core eligibility,then actual same-input failure/code
+methods and complete novelty discrimination. Keep its clock separate from
+historical24GiB-AS or single-core leases. While it runs,finish full manuscript/
+primary-source reading and use concrete findings to choose permitted method
+work,without restoring the frozen external CPUoracle or changing the four RQs.

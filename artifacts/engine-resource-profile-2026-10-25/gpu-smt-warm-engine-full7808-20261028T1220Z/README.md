@@ -3,7 +3,8 @@
 The installed Kimina fb2393d Manager/run_checks returned all7,808original
 candidates on2026-10-28T19:24:55UTC. The existing finite controller then retired
 this leg and launched the frozen engine side. This archive is a complete warm
-leg,not a complete pair;no engine speedup or accepted-set comparison is known.
+leg receipt,now followed by the complete engine cell at2026-10-29T01:03:39UTC.
+The [complete result review](result-review.md) reports the full pair and limits.
 
 | Final native status | Count |
 | --- | ---: |
@@ -56,6 +57,21 @@ and kill records;large files are gzip-compressed without source modification.
 Original161355255B becomes10512696B before this index. Per-file byte
 comparisons and all recomputed counts are retained in the
 [step analysis](../../../docs/tmp/build-and-evaluate/step-0116-20261028T193629+0000/warm-result-review.json).
-Only this closed warm leg is archived;live engine files are not copied as final.
-Native survivor,acceptance,status,resource,tail and whole-clock comparison
-remains pending until the existing engine actually exits.
+At the earlier step0116closure,only the complete warm leg was archived.
+The subsequently completed engine leg and full comparison are added below;
+the original warm raw receipts remain unchanged.
+
+
+## Full pair completed — 2026-10-29UTC
+
+Engine external20323.007642s versus warm25176.487277s is1.238816996x and
+19.2778269%less elapsed on this one ordered shared-host resource comparison.
+All7808final statuses and3014accepted IDs match. Raw payload/operational
+wording differences remain;this is not universal artifact transparency or
+a COW-only causal claim. Immediate-warm versus frontier-engine retry order
+and CPU affinity differ. No workload-layer/GPU contribution follows.
+
+The additional engine stdout/stderr,launch/exit,controller logs,terminal and
+[complete comparison](comparison.json.gz) are now retained losslessly.
+Only the original raw-log filename changes when recomputing through gzip.
+The archived input,adapter and source definition are not replaced.

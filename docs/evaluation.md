@@ -9,8 +9,8 @@ All raw,failed,partial and superseded evidence remains;detailed history is below
 
 ## Current directions
 
-The sole new acquisition is the matched four-warm Kimina versus repaired-engine
-full7808 resource pair. Repair/measure resource performance before stacking
+The matched four-warm Kimina versus repaired-engine full7808resource pair
+is complete with equal basic outcomes and19.28%less elapsed on this one point. Repair/measure resource performance before stacking
 task-memory,ranking,failure or LRAT gains. The four continuing directions remain:
 the layered Rust engine,reliable early failure,multi-candidate inference and
 public Lean code verification. There is no project deadline or closure rule.
@@ -23,7 +23,7 @@ Exact authority remains [the user log](user-instruction.md).
 |---|---|---|
 | RQ1 | How much expensive native preparation can real verification candidate streams share across independent jobs? | unanswered:complete preparation-cost/context coverage remains missing |
 | RQ2 | Does branching from prepared native state preserve verifier responses and requested artifacts while isolating candidates and cancellation? | unanswered:full native artifacts,history,cancellation and supported scopes remain incomplete |
-| RQ3 | How does prepared-state branching change end-to-end latency, throughput and memory at equal resources compared with established warm-session reuse? | unanswered:the corrected full warm-resource pair is running;scaling/repetition promises remain open |
+| RQ3 | How does prepared-state branching change end-to-end latency, throughput and memory at equal resources compared with established warm-session reuse? | unanswered:one full warm-resource pair is complete with limits;scaling/repetition promises remain open |
 | RQ4 | After preparation reuse, when does heterogeneous execution improve complete verification over the strongest measured CPU path? | unanswered:no useful extra full-flow GPU gain has been demonstrated |
 
 <a id="current-resource-point"></a>
@@ -101,10 +101,15 @@ and is reviewed. Do not report old41/1as a new run.
 
 [Complete four-warm full7808 leg](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
 now returns3014valid/4668lean_error/85timeouts/41budget failures in25176.487277s
-external wall. All7860attempts,52solo retries,raw replies/RSS/kill records
-are retained. Peak48.768776GiB includes sampled overshoot. Engine13dstarted
-after warm retirement;no full-pair ratio or accepted/status comparison yet.
-Immediate-warm versus frontier-engine retry order remains a causal caveat.
+external wall. The [complete engine cell](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/result-review.md)
+ends20323.007642s,1.238817x/19.2778%less elapsed,with exact7808status/3014accepted
+ID parity. Warm7860attempts/52retries versus engine7850/42are fully retained.
+The engine has one prepared-ready event,42solo and18import-different fallbacks.
+Raw native payloads differ on7682IDs;even removing only env/empty ast leaves
+23rejected-source diagnostic/optional-field differences. All126operational
+strings differ. Peaks48.768776/48.805775GiB include sampled overshoot.
+Immediate-warm versus frontier-engine retry order,affinity,single order and
+shared support work prevent a COW-only or general strongest-service claim.
 
 ## Own load-aware methods
 

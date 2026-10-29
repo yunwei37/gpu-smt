@@ -1,0 +1,131 @@
+{
+  "observed_utc": "2026-10-29T05:27:19.087961+00:00",
+  "retired_unique_engine_process_identities": 7869,
+  "still_live": [],
+  "external_seconds": {
+    "warm": 25176.48727664491,
+    "engine": 20323.007641792996
+  },
+  "descriptive_ratio": 1.2388169960075712,
+  "less_external_elapsed_percent": 19.27782689269074,
+  "status_counts": {
+    "accepted": 3014,
+    "rejected": 4668,
+    "timeout": 85,
+    "resource_exhausted": 41
+  },
+  "changed_status_count": 0,
+  "raw_payload_difference_count": 7682,
+  "secondary_payload_difference_count": 23,
+  "operational_string_differences": 126,
+  "tails": [
+    {
+      "selected_percent": 1,
+      "candidate_count": 79,
+      "warm_envelopes_seconds": 28077.951007219963,
+      "engine_attempts_seconds": 24479.05310683,
+      "status_differences": 0,
+      "scope": "Different per-attempt boundaries and overlapping sums;not paired arrival-latency speedup"
+    },
+    {
+      "selected_percent": 10,
+      "candidate_count": 781,
+      "warm_envelopes_seconds": 52682.63258667174,
+      "engine_attempts_seconds": 49569.309615603,
+      "status_differences": 0,
+      "scope": "Different per-attempt boundaries and overlapping sums;not paired arrival-latency speedup"
+    }
+  ],
+  "memory": {
+    "source": "engine.stderr",
+    "rss_samples": 20323,
+    "peak_sampled_owned_RSS_bytes": 52404801536,
+    "samples_above_declared_budget": 83,
+    "declared_budget_bytes": 51539607552,
+    "logged_budget_values": [
+      51539607552
+    ],
+    "watchdog_events": 83,
+    "malformed_log_lines": 0,
+    "invalid_rss_sample_lines": 0,
+    "scope": "Existing aggregate owned-RSS log samples,not per-leader maxima or a kernel hard quota. Missing/malformed observations are not zero."
+  },
+  "fallbacks": {
+    "exclusive resource retry uses fresh native state": 42,
+    "parsed imports differ from prepared root": 18
+  },
+  "archive_added_files": [
+    {
+      "source": "engine.stdout",
+      "retained": "engine.stdout.gz",
+      "raw_bytes": 34390838,
+      "retained_bytes": 2732377,
+      "lossless": true
+    },
+    {
+      "source": "engine.stderr",
+      "retained": "engine.stderr.gz",
+      "raw_bytes": 15678749,
+      "retained_bytes": 1146268,
+      "lossless": true
+    },
+    {
+      "source": "engine-launch.json",
+      "retained": "engine-launch.json",
+      "raw_bytes": 670,
+      "retained_bytes": 670,
+      "lossless": true
+    },
+    {
+      "source": "engine-exit.json",
+      "retained": "engine-exit.json",
+      "raw_bytes": 165,
+      "retained_bytes": 165,
+      "lossless": true
+    },
+    {
+      "source": "terminal.json",
+      "retained": "terminal.json",
+      "raw_bytes": 251,
+      "retained_bytes": 251,
+      "lossless": true
+    },
+    {
+      "source": "controller.stdout",
+      "retained": "controller.stdout",
+      "raw_bytes": 0,
+      "retained_bytes": 0,
+      "lossless": true
+    },
+    {
+      "source": "controller.stderr",
+      "retained": "controller.stderr",
+      "raw_bytes": 0,
+      "retained_bytes": 0,
+      "lossless": true
+    },
+    {
+      "source": "native-executable-resolution.json",
+      "retained": "native-executable-resolution.json",
+      "raw_bytes": 458,
+      "retained_bytes": 458,
+      "lossless": true
+    },
+    {
+      "source": "comparison.json",
+      "retained": "comparison.json.gz",
+      "raw_bytes": 472680,
+      "retained_bytes": 53849,
+      "lossless": true
+    }
+  ],
+  "claim_limits": [
+    "Single warm-first ordered shared-host pair",
+    "Frozen warm immediate resource retries versus engine ordinary-frontier-first",
+    "Group eligible CPUs versus fixed per-worker affinity",
+    "Brief documented source-analysis and TeX CPU11 support work",
+    "No established COW-only causal effect or workload-layer novelty",
+    "Raw output artifacts are not equal",
+    "No GPU contribution in this pair"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-29T05:28:43.237278+00:00",
+  "command": [
+    "python3",
+    "bench/lean-warm-resource/compare.py",
+    "/workspaces/repository/artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z"
+  ],
+  "exit": 0,
+  "all_values_equal_except_actual_compressed_log_filename": true,
+  "expected_filename_pair": [
+    "engine.stderr",
+    "engine.stderr.gz"
+  ],
+  "initial_strict_object_assertion": "Failed solely on the actual compressed-log filename;not an analyzer/native/data failure. No numbers or diagnostics were normalized.",
+  "retained_raw_result_unchanged": true
+}

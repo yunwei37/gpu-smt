@@ -31,7 +31,7 @@ resource failure. No speculative overlap during a solo retry or predicted
 rejection is added. Capacity and admission threshold come from the existing
 Manager/watchdog objects. These rules differ from historical24GiB-AS timings.
 
-The already running full7808 and earlier24captures retain their copied old
+The completed full7808 and earlier24captures retain their copied old
 warm adapter,which drains and retries immediately,versus the frozen engine's
 ordinary-frontier-before-solo ordering. Those results measure the disclosed
 resource-path compositions,including retry order and retirement/reload costs;
@@ -79,15 +79,18 @@ still include two extra engine timeouts with equal accepted IDs. The
 [current full7808 resource pair](../../docs/tmp/build-and-evaluate/step-0102-20261028T122519+0000/experiment-001/plan.md)
 uses one finite serial warm/engine program. Its
 [complete warm leg](../../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
-returned all7808on2026-10-28T19:24:55UTC;the unchanged engine leg is now active.
-There is no complete pair ratio or accepted-set comparison yet. The program
-does not start another workload policy or the separately prepared42 cell automatically.
+returned all7808on2026-10-28T19:24:55UTC;the unchanged engine leg completed
+at2026-10-29T01:03:39UTC. The [complete review](../../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/result-review.md)
+reports equal statuses/accepted IDs and a1.238817xdescriptive external ratio,
+with retry-order,artifact and shared-host limits. The program does not start
+another workload policy or the separately prepared42 cell automatically.
 
 External launch-to-exit clocks must accompany internal times, including Python/
 Rust loading, serialization and native retirement. Raw outputs and all failures
 remain. The direct library baseline avoids HTTP polling overhead; do not compare
 its clocks to historical HTTP labels without explaining the transport boundary.
-Full comparison and observer/logging phase attribution remain pending.
+The full comparison is complete with the limits above. Independent
+observer/logging CPU attribution remains unavailable.
 
 
 ## Corrected native-code provenance
@@ -139,7 +142,7 @@ The same analyzer reads input24.json for legacy/qualification captures and
 input7808.json for phase=full,including archived gzip files. A full manifest's
 declared candidate_count must match the complete input;phase terminal labels
 cannot be interchanged. These are read-only completeness checks,not a research
-promotion gate. The active finite collector and native settings are unchanged.
+promotion gate. The finite collector and native settings were not changed during collection.
 
 Full output also reports whole-batch returned-candidate throughput from the
 external clocks,exact operational error-string differences,the preserved warm
