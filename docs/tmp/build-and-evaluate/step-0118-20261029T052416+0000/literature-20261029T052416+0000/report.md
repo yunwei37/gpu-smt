@@ -48,3 +48,6 @@ No monitor source/test/default changes are made.
 
 The current paper and prior-work files are still being read. No completed
 full-survey or novelty verdict is claimed by this initial record.
+
+
+Resumed2026-10-29in[step0123](../../step-0123-20261029T063534+0000/literature-20261029T063534+0000/report.md). Initial partial status remains historical;the new node records complete current-main reading,scoped search/coverage and baseline handoff.

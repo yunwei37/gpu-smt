@@ -1,0 +1,25 @@
+{
+  "generated_PDF_bytes": 525653,
+  "local_path": "C:/Users/10678/AppData/Local/Temp/gpu-smt-step0123-main.pdf",
+  "initial_failure": "Windowsdrivecolonwasnotakubectlcplocalpath;relativecopyexecutedontheHAserverratherthanWindows",
+  "recovery": "Readexistingfleetwrapper;streamgeneratedPDFbase64withoutprintingpayload;writeOS-tempmedia",
+  "cleanup": [
+    {
+      "host": "um760",
+      "path": "/home/misaka/gpu-smt-step0123-main.pdf",
+      "exact_byte_match": true,
+      "removed_only_own_generated_copy": true
+    },
+    {
+      "host": "g10",
+      "path": "/home/misaka/gpu-smt-step0123-main.pdf",
+      "exists": false
+    },
+    {
+      "host": "raspberry-pi",
+      "path": "/home/yunwei37/gpu-smt-step0123-main.pdf",
+      "exists": false
+    }
+  ],
+  "scope": "Generatedpreviewhandlingonly;nootherfile,service,quota,credentialorWorkspacechange"
+}

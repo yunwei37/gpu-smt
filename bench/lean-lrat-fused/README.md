@@ -67,3 +67,10 @@ but not launched. Charge preparation, solver, checking, compilation, queue,
 serialization and retirement; use identical resources and no tracing in timed
 cells. Equal acceptance must be checked alongside any observed gain.
 Ordinary list fusion alone is not an established research contribution.
+
+## Related checking mechanisms
+
+[LRAT-Catcher v2](https://arxiv.org/abs/2607.00815v2) already provides resumable,
+streamed certificate import into Lean. This prototype retains bulk parsing
+and does not implement that path. Citation-only here:no port/reproduction.
+Whole-module efficacy and a distinct workload contribution remain unestablished.

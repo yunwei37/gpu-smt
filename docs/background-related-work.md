@@ -220,3 +220,12 @@ No additional external reproduction or numerical baseline is admitted. Preserve
 the original7808observation; actual completion precedes own native24qualification
 and the complete same-candidate native/GPU pair. The source-access and incomplete
 coverage limits remain in the detailed report. AllfourRQ/Lean+SMT/OSDI goals remain.
+
+
+## 2026-10-29: workload and certificate-checking scope
+
+[Completed scoped three-claim review](tmp/build-and-evaluate/step-0123-20261029T063534+0000/literature-20261029T063534+0000/report.md) reads the current paper and verifies primary overlap/protocol boundaries.
+Resumable/streamed LRAT-to-Lean import is established in [LRAT-Catcher v2](https://arxiv.org/abs/2607.00815v2);our conversion fusion remains a qualified control,not a novelty claim.
+Resource reuse and ordinary first-success scheduling remain prior techniques.
+Useful native-preserving failure/memory methods and complete equal-resource
+workload evidence remain unproven. No additional competitor reproduction is admitted.

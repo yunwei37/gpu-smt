@@ -187,7 +187,7 @@ cache savings. Exact sharing remains an engine component, with negligible
 observed opportunity in this population.
 
 
-The next measurement point removes fixed per-process address-space caps
+The current resource point removes fixed per-process address-space caps
 while retaining a 48\,GiB aggregate actual-RSS budget. Dynamic admission uses
 observed memory and assigned CPU capacity. A one-second watchdog preempts
 owned work and retries it exclusively, recording all queueing, attempts and
@@ -196,9 +196,11 @@ frontier; later arrivals cannot indefinitely overtake an existing retry.
 This changes queue order rather than assuming that a measured memory peak
 bounds future demand. This sampled mechanism can overshoot between observations; it is
 not a kernel memory quota. The historical measurements below retain their
-original resource settings. New-resource throughput, 42 isolated larger-memory
-reruns, whole-Mathlib COW behavior and complete population differential parity
-remain unmeasured.
+original resource settings. Section~\ref{sec:service-results} reports a complete
+new-resource miniF2F comparison with equal final outcome sets and explicit
+artifact differences. The separate 42-source isolated larger-memory rerun is
+in progress. Multi-context behavior, offered-load scaling and repeated
+resource-frontier evidence remain incomplete.
 Ordinary warm-state/resource mechanisms are prior techniques; prospective
 novelty lies in workload-level methods and must be established empirically.
 
@@ -820,7 +822,14 @@ payload pairs differ. A labelled secondary comparison removes only top-level
 environment handles and empty \texttt{ast} fields, leaving 23 rejected-source
 differences. Seven contain embedded diagnostic coordinates offset by three
 lines, and 16 differ in omitted versus null \texttt{endPos} fields. All 126
-operational error strings differ as well. We retain these responses without
+operational error strings differ as well. Offline replay through the installed
+warm-service data model reproduces the 16 optional-field differences.
+Its header-offset routine shifts structured positions but leaves embedded
+message text unchanged; the seven other sources contain 22 such coordinates.
+Historical fresh responses agree with the engine on these 23 cases in the same
+two-field view, but their executable and dynamic-library context differs.
+This corroborates a service-boundary explanation rather than establishing a
+new matched native differential. We retain the original responses without
 normalizing diagnostic text or claiming full artifact transparency.
 
 The slowest 1\% and 10\% of warm admitted-attempt envelopes select 79 and
@@ -1052,6 +1061,15 @@ evaluation and certificate checking. The public variant's fallback engagement
 is not measured. This local negative result neither supplies a GPU gain nor
 establishes a general limit on certificate-checking acceleration.
 
+A separate opt-in checker fuses LRAT action conversion and filtering with
+sequential checking, retaining whole-certificate parsing, the action array
+and its list conversion. Kernel-checked equalities cover all action lists,
+CNFs and certificate strings at the pinned interface. Positive and negative
+controls and the first original compiler theorem execute; the complete-module
+performance comparison is not yet executed. This is a correctness qualification,
+not a speedup or novelty result. Resumable, streamed LRAT import and verified
+chunk composition are already established~\cite{lratStreaming}.
+
 \subsection{Heterogeneous execution}
 RQ4 asks when heterogeneous execution improves complete verification over the strongest measured CPU path after preparation reuse. We identify whether each complete measurement begins with source verification or post-export checking. Results from post-export checking therefore apply only to that checking boundary. We profile warm complete checking and identify costly operations and their actual context-sensitive dependencies. Device qualification runs the same supported operation on CPU and RTX 5090 with exact reference comparisons, while required online checks follow Section~\ref{sec:device}. All unsupported work remains in the complete verification interval.
 
@@ -1167,8 +1185,8 @@ to this ProofNet component. The native mode is not the full Lean 4.27 Fast
 frontend. The stock control imports the same adapter, whose explicit
 argument elaboration precedes mode rejection. It is therefore not pristine
 Mathlib. All three failed REPL requests per condition and their retirements
-remain charged. This is neither a whole-service comparison nor GPU evidence;
-the complete miniF2F arithmetic comparison remains pending.
+remain charged. This is neither a whole-service comparison nor GPU evidence.
+A complete miniF2F comparison of this frozen external oracle was not executed.
 
 
 \subsubsection{Arithmetic portfolio and device cost}
@@ -2156,8 +2174,8 @@ This serving policy yields little multirequest batching on the measured demand.
 The native reference under the same plan completes in 2,331.39 seconds and the robust
 CPU support variant in 2,363.00 seconds, both with 992 complete and 8 rejected
 outcomes. The GPU/reference ratio is 0.691 and the GPU fails outcome parity.
-These observations remain specific to the stacked headers; the corrected
-comparison and final best-CPU-or-GPU threshold decision remain open.
+These observations remain specific to the stacked headers; they do not replace
+the later corrected-family and complete portfolio comparisons.
 All three corrected-family CPU pairs under 48\,GiB are complete.
 Native clocks are 2,234.69, 2,234.14 and 2,222.77 seconds; direct-oracle
 clocks are 1,717.80, 1,751.17 and 1,695.88 seconds.
@@ -2196,8 +2214,8 @@ Reference / prototype & 1.347 & 1.347 & 1.346 \\
 \end{tabular}
 \caption{Complete native verification of the same enriched 1,000-source
 cohort per cell, with alternating method order. Whole times include the common
-resource observer and normal retirement. These historical, unbounded-address-space CPU-stage pairs fall below $1.5\times$; the final CPU/GPU
-comparison remains open. They establish no GPU benefit.}
+resource observer and normal retirement. These historical, unbounded-address-space CPU-stage pairs fall below $1.5\times$; later complete portfolio
+comparisons retain their own resource points. These earlier cells establish no GPU benefit.}
 \label{tab:arithmetic-direct-pairs}
 \end{table}
 
@@ -2563,7 +2581,8 @@ GPU provider & 315.870 & 322.891 & 323.607 \\
 \caption{Complete source verification for 5,952 ProofNet-lineage attempts
 per condition. All twelve primary conditions finish with identical basic
 outcomes within each matched block. Four separate resource profiles also
-complete. No complete miniF2F GPU comparison is available.}
+complete. No complete miniF2F comparison of this expression-reduction provider
+is available.}
 \label{tab:current-proofnet-gpu}
 \end{table}
 

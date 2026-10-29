@@ -47,3 +47,10 @@ matches the23prepared responses but has a different library/executable context.
 Preserve every raw difference and do not patch the engine to mimic body-relative
 message text. This narrows the remaining native-differential question without
 claiming full response guarantees or independent audit.
+
+The complete current paper read exposes stale measured/pending text. Repair only
+implementation/result status and preserve expression-provider,external-oracle
+and current resource boundaries. Add the LRAT-Catcherv2precedent;streaming/
+resumption is not a new contribution. Actual37-pageTeXbuild succeeds in3.004s
+with30,396,260,352Bcombined sampled RSS;changed text/citation pages are inspected.
+Do not add another list-fusion variant before its prepared module measurement.

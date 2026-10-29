@@ -1,0 +1,119 @@
+# Step0123 — close the scoped literature loop and repair paper facts
+
+2026-10-29UTC;BUILD_AND_EVALUATE;root only.
+Previous step0122produces new23-case source/model attribution and is pushed
+5ce6e2a. It is actual evidence progress,not a waiting-only goal turn.
+This step resumes the partial step0118literature node while the original42
+remains the sole native collection. No AIagent is spawned/resumed.
+
+## EXPERIMENT_GATE
+
+### E123.1 — complete source/claim reading and finite external-search loop
+
+[Detailed literature node](literature-20261029T063534+0000/report.md) records all three plain
+claims,the declared branches,literal query revisions,primary verification,
+contradictions,residual uncertainty and coverage disposition.
+Read all189201bytes of current main.texincluding appendices;recover the one
+truncated interval by an explicit complete reread. Read complete user log,
+InitialNarrative/evolution and current related-work. Relevant bibliography
+entries are checked;no exhaustive citation/PDFaudit is claimed.
+
+AXLE/native snapshots and accepted prepared-execution systems already cover
+preloading,branching and isolation. Native Leanloop warnings have successful
+concrete exceptions. Adjacent serving already has dynamic state/resource
+rescheduling. Newly verify LRAT-Catcherv2's resumable/streamed theorem import;
+its current official source uses4.30,not our4.27. It remains citation-only.
+No competitor port,installation,new numerical baseline or GPUkernel is added.
+
+The[experiment handoff](literature-20261029T063534+0000/baseline-handoff.md) retains native/
+competent warm comparisons,explicit information/resource/fairness limits,
+real existing assets and accepted per-RQexperimental precedents.
+Our generic resource/certificate/ordinary scheduling mechanisms have high
+prior-art overlap;useful workload-level differentiation remains unproven.
+This finite result neither changes the scientific contract nor proves global
+novelty absence. All four author directions continue without deadlines/closure.
+
+### E123.2 — preserve the actual collection and failures
+
+The original42CLI551647/birth168353182and its controller remain unchanged.
+The document compiler's existing-root checks at06:36include the matching owned
+tree;no second Lean/native capture starts. Source/timeouts/48GiB/no-AS/CPUs8–11
+and existing exit/retirement program stay frozen. No minute-polling loop.
+
+A too-large metadata/report command fails in WindowsSSHargument creation,
+before reaching the Workspace. The resulting no-ready-APIwrapper text is not
+evidence of a cluster outage. Existing supported stdin transport succeeds;
+no infrastructure/Workspace/runner repair or persistent helper is introduced.
+
+## WRITE_GATE
+
+### W123.1 — root accepts local facts,not a new story
+
+Root disposition preserves title,abstract,introduction,motivation,design goals,
+related-work narrative,conclusion and all fourRQmeanings. The literature node
+does not edit those scientific-contract sections. Full12-round writing and
+milestone critique are excluded by current phase/open results/user scope.
+
+Fix implementation's stale unmeasured label to point at the actual completed
+full resource pair,retain artifact limits and distinguish pending42/scaling.
+Preserve the frozen external oracle as unexecuted on miniF2Fat that boundary,
+rather than implying another oracle experiment. Clarify historical portfolio
+and expression-provider-specific pending statements instead of conflating
+different GPUmechanisms. No old result value or measured resource point changes.
+
+Propagate actual step0122response attribution with historical-context limits.
+Add the already-qualified fusedLRATcorrectness boundary and its absent complete
+module timing;cite the new primary streaming precedent without a novelty claim.
+The new bibliography entry is explicitly a preprint/version,not accepted venue
+metadata. Existing frozen numerical data and full result placeholders remain.
+
+### W123.2 — actual compile and targeted visual check
+
+[Compiler receipt](paper-build/receipt.json):owning WorkspaceCPU11,
+2026-10-29T06:36:09–06:36:12UTC,exit0,3.00437s.
+Combined existing native/new compiler sampled peak30396260352B,below48GiB;
+no helper pressure abort. This support window remains part of the ongoing42
+shared-host context;it is not an interference-free experiment claim.
+All new compiler work is awaited and charged to its own receipt.
+
+Retain exact37-page525653BPDF/complete logs and source. Primary main.pdf
+byte-matches the compressed build artifact. Generated media only is transferred
+to WindowsOS-temp for read-only rendering. Actual pages5,14,16,18,22,33are viewed:
+changed paragraphs,citation and nearby columns/tables fit without overlap or
+clipping. [Check](paper-check.json) does not assert all-page/camera-ready review.
+Missing research data and layout warnings remain.
+
+Initial preview transfer uses a remote kubectl wrapper incorrectly,leaving
+one generated PDFon an HAserver. After reading the wrapper,stream the existing
+generated bytes to OS-temp and compare/delete only that exact own file.
+[Transfer/cleanup evidence](preview-transfer.json) retains successful identity/
+cleanup and other two server absence checks. No service,credential,quota,
+Workspace or unrelated file changes. Failed local move attempts created no
+Windowsdestination. This is corrected media handling,not a native experiment.
+
+### W123.3 — canonical memory and publication ownership
+
+Detailed literature/handoff lives in this step;canonical related-work receives
+one brief owned addition and pointer. Preserve its pre-existing125+/123-foreign
+working edit exactly;stage only HEADcontent plus our addition,not the whole
+working file. Other tracked author edits remain unchanged. Existing daily
+reflection and original partial-node report link the new completed scoped pass.
+Bench prototype guide credits the prior work. No duplicate current literature
+map,rule,dependency,service,gate or dataset is created.
+
+## REVIEW_GATE — same-thread self-review
+
+[Outer audit](outer-audit.md) is root self-review,not independent.
+Direction:all original RQs/Lean-SMT/OSDI/RTX5090objectives remain open.
+No proposed larger claim is adopted as a replacement or narrower success.
+Efficiency:complete an actually unfinished literature loop,discover a direct
+prior method before another variant,and remove misleading pending labels.
+These are paper/source decisions,not a new performance or accepted contribution.
+Maintenance:canonical pointer owns the frontier;raw historical results,
+foreign edits,failed transport and exact PDFstay separate and preserved.
+
+Next actual work remains fixed42terminal collection,then prepared own native
+controls and original LRATmodule comparison in the sole available slot.
+No new background queue or autonomous competitor replication is started.
+The goal stays active;independent auditing and final systems evidence remain
+unfulfilled. Publish only this coherent reviewed boundary on main.
