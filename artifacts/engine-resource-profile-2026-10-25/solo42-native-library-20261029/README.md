@@ -1,36 +1,27 @@
-# Original42 resource failures — corrected native-library solo point
+# Fixed42 native-library exclusive rerun — complete
 
-Actually started2026-10-29T05:35:59UTC,after the full7808warm/engine pair
-terminated and its root review/raw results were published at269ded9.
-Only this finite collection is running. No result or recovery count is known.
+Actual2026-10-29 05:35:59–08:16:16UTC;root only. This corrects the missing
+native-library launch context;it is separate from the earlier41budget/1timeout
+record. Exact original42IDs/source bytes/order preserved;all42return once.
 
-Use the unchanged42one-candidate all-mode requests,300000ms,reuse=false,
-ordinary native Mathlib,engine13d4606,noCOWparent. All source/id/deadline/reuse
-fields byte-match the original full7808inputs. The historical prepared input
-omits task_id,which the full7808record contains. No task-aware policy,
-first-success grouping or result reuse is active,so it is preserved rather
-than silently rewritten. An initial whole-object check caught this metadata
-difference before any native launch;all original source bytes were equal.
+- Outcomes:41resource_exhausted/1timeout/0accepted.
+- Every resource row explicitly says aggregate RSS watchdog preemption.
+- Timeout: minif2f-1885.
+- Whole launch/input/output/check/retirement: 9617.061385s.
+- Sampled native-owner peak:51782287360B;
+  41samples above48GiB. One-second response may overshoot;
+  this is not a hard kernel quota. Leader-current-RSS fields are not high water.
+- One active exclusive candidate,CPU8–11eligibility,no fixed processASlimit.
+  Four eligible cores are not four observed busy cores.
+-42birth-matched attempts plus controller/CLIactually retired;complete order/
+  one-attempt/exclusive/IDs checked again by root. Raw stdout,stderr,memory samples,
+  launch/context/controller/exit/terminal preserved losslessly under complete/.
 
-CPUs8–11,one four-core lease,48GiB summed sampled owned RSS,no fixed process
-AS cap. One original source executes at a time and is reaped before the next.
-This four-core eligibility point is separate from the fullengine's one-core
-leases and historical24GiB-AS/no-explicit-library results. No CPU/GPUoracle,
-counterexample wrapper,ranking or diagnostic instrumentation is enabled.
+These are operational resource/time outcomes,not proofs that the candidate or
+arithmetic goal is false. No increased-memory success is recovered at48GiB.
+No throughput or independent timing comparison is claimed:ownedCPU11support
+work/combined watchdog receipts are retained in steps0125–0128.
 
-[Actual launch](launch.json) records engine551647/birth168353182 and
-[finite wait capture](controller-launch.json)551646/birth168353179.
-The existing native CLI check interface accepts one Batch per line;the
-finite script adds only launch/exit/retirement capture,no service or policy queue.
-It never launches a following experiment or resumes an AI session.
-
-[Actual first native engagement](native-library-readiness.json) observes
-source579REPL551653/birth168353184,ordinary library in /proc maps,unlimited
-address-space limits,CPUs8–11and one native thread. A four-core lease does not
-prove four cores of useful execution. Host MemAvailable at launch was
-116298784kB;no Workspace quota,host policy or other workload changed.
-
-The live directory is /tmp/gpu-smt-solo42-native-library-20261028.
-Wait for its own actual terminal/exit,then retain stdout/stderr and every failed
-or partial row with memory/CPU evidence. Do not report old41failure/1timeout
-or full-pair retrospective subset outcomes as this point's result.
+No collection is automatically started by the completed controller. The next
+user-authorized method experiment is native exact-input expensive tactic reuse,
+particularly ordinary tactic failures;interval_casesparallel is stopped.
