@@ -270,3 +270,9 @@ three modes:3explicit native-process failures,3subsequent native completions,
 allworkersretired. Continuation preserves the prefix and5deferred resource
 retries;one old unreported panic is explicitly derived with unknown elapsed.
 Phased diagnostic completion cannot claim an uninterrupted end-to-end speedup.
+
+The [actual continuation](../artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/continuation-20261029T125316/README.md)
+started12:53:16UTCfrom aee0932with unchanged native modules and resourcepoint.
+Its frozen pipeline has returned new rows beyond the preserved prefix.
+5390unfinished cells/5deferred resource retries are restored. Fullselected
+match/cost results remain pending;no uninterrupted-performance claim.

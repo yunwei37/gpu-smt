@@ -1,0 +1,27 @@
+{
+  "previous_run": "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/run",
+  "previous_client_exit": {
+    "error": "Traceback (most recent call last):\n  File \"/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/source/run.py\", line 271, in <module>\n    main()\n    ~~~~^^\n  File \"/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/source/run.py\", line 249, in main\n    pending = segment(pending, False)\n  File \"/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/source/run.py\", line 244, in segment\n    raise RuntimeError(f\"Preserve failed native segment{index}:exit{rc},current{current}\")\nRuntimeError: Preserve failed native segment19:exit1,current('proofnet-5879', 'original')\n",
+    "state": "failed"
+  },
+  "prior_result_rows": 2640,
+  "derived_prior_attempts": [
+    {
+      "event": "operational_end",
+      "id": "proofnet-5879",
+      "mode": "original",
+      "segment": 19,
+      "exclusive_retry": false,
+      "status": "native_process_failure",
+      "native_exit_code": 1,
+      "transport_wall_seconds": null,
+      "derived_from_prior_retirement": true,
+      "replay_qualified": false
+    }
+  ],
+  "pending_first_attempts": 5390,
+  "deferred_exclusive_retries": 5,
+  "phase": 1,
+  "input_and_context_equal": true,
+  "clock_scope": "New phase starts a new seconds axis;prior gaps are not a fresh uninterrupted clock."
+}
