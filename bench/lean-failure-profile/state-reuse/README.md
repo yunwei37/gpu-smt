@@ -209,3 +209,11 @@ exception-only substitution fails its post-state assertion. This establishes
 a replay obligation for that custom case,not selected expensive-tactic
 coverage or speedup. Its CPU6–7 development point is separate from the formal
 lab capture;the8031-cell measurement has not resumed on G10.
+
+
+An [offline whole-source input control](../../../docs/tmp/build-and-evaluate/step-0145-20261029T191343+0000/experiment-001/result-review.md)
+finds2677distinct full source strings independently in every mode:2045miniF2F
+and632ProofNet,with zero exact-source duplicate groups. The intentionally
+repeated mode conditions must not be counted as reusable production requests.
+This excludes one byte-exact whole-source cache confound in the selected cohort,
+not normalized/prefix/semantic reuse or the missing full-state/cost result.

@@ -1,5 +1,13 @@
 # Actual continuation of the same selected native measurement
 
+Status correction2026-10-29:the startup observations below describe the actual
+12:53launch. This continuation no longer runs:the original Pod was evicted at
+16:05:43UTC,and its unarchived/tmp data are unavailable in the replacement.
+[Current recovery evidence](../../../../../docs/tmp/build-and-evaluate/step-0140-20261029T170259+0000/step-report.md)
+supersedes liveness wording below without changing the retained startup bytes/
+source records. No complete match/cost result exists and old PIDs are not
+authority to resume or start another process.
+
 Starts2026-10-29T12:53:16UTCfrom aee0932. Native Lean/Cprofile/library remain the
 qualified ae59c77version. This is the same8031cell/2677source measurement:
 2640prior rows copied byte-for-byte,1old nativepanic explicitly classified from

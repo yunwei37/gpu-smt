@@ -13,8 +13,9 @@ The matched four-warm Kimina versus repaired-engine full7808resource pair
 is complete with equal basic outcomes and19.28%less elapsed on this one point. Repair/measure resource performance before stacking
 task-memory,ranking,failure or LRAT gains. The latest user decision stops interval_cases parallel development and
 prioritizes measuring complete-state expensive tactic reuse,especially native
-strategy failures. The corrected42capture has completed;the current selected-population
-native input/cost capture is linked below. Timeout and memory
+strategy failures. The corrected42capture has completed;the selected-population
+native input/cost capture was interrupted and its recovery is prepared,not running.
+The actual interruption/recovery status is linked below. Timeout and memory
 failures are not interchangeable with tactic exceptions.
 The four continuing directions remain:
 the layered Rust engine,reliable early failure,multi-candidate inference and
@@ -231,8 +232,9 @@ handling follow the pinned native procedure. Exact tactic text is compared;
 fresh goal generation is a separate replay qualifier,not target-expression identity.
 
 The [frozen selected-population capture](../artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/README.md)
-is actually running fromae59c77:2045miniF2F+632ProofNetsources x3modes=8031
-elaborations,one48GiB/noAScollection. This is not all7808or13760sources,nor a
+was launched fromae59c77:2045miniF2F+632ProofNetsources x3modes=8031
+elaborations,one48GiB/noAScollection;the later interruptions below supersede
+that startup observation. This is not all7808or13760sources,nor a
 four-workerwarm-service comparison. SDK--rundriver overhead and opaque/hidden/
 posterror/HB/diagnostic replay limits remain explicit. No failurecache,early reject,
 novelty or end-to-endgain is claimed before complete data and implementation.
@@ -250,8 +252,8 @@ sources get no such credit. [Step0134](tmp/build-and-evaluate/step-0134-20261029
 adds per-kind cost/eligibility and source-level reachability denominators,
 and corrects an old preflight reachability description from its raw calls;
 no source verdict or later positive-control match changes.
-The existing selected-population capture remains on
-its frozen qualified source,without an enabled cache or second collection.
+The launch used its frozen qualified observation source,without an enabled
+cache or second collection;this records source provenance,not current liveness.
 
 ## Actual population interruption — 2026-10-29
 
@@ -273,6 +275,27 @@ Phased diagnostic completion cannot claim an uninterrupted end-to-end speedup.
 
 The [actual continuation](../artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/continuation-20261029T125316/README.md)
 started12:53:16UTCfrom aee0932with unchanged native modules and resourcepoint.
-Its frozen pipeline has returned new rows beyond the preserved prefix.
-5390unfinished cells/5deferred resource retries are restored. Fullselected
-match/cost results remain pending;no uninterrupted-performance claim.
+Before the later eviction,its frozen pipeline returned new rows beyond the
+preserved prefix.5390unfinished cells/5deferred resource retries were restored.
+Fullselected match/cost results remain pending;no uninterrupted-performance claim.
+
+
+## Current recovery status — after the storage eviction
+
+[Step0140](tmp/build-and-evaluate/step-0140-20261029T170259+0000/step-report.md)
+records the16:05:43UTC ephemeral-storage eviction and automatic replacement of
+the same Workspace onG10. Only2640rows are archived;one old panic row can be
+derived from retained evidence,while at least1273newly observed entries are
+currently unavailable. Final eviction-time count/outcomes are unknown.
+No formal collection is running. The8031input and5390pending/5retry plan are
+prepared on the existing PVC,awaiting approved lab hardware restoration.
+[Step0142](tmp/build-and-evaluate/step-0142-20261029T182504+0000/step-report.md)
+adds the requested early PVC-output check;the next collector snapshot is5e563f9.
+[G10 semantic controls](tmp/build-and-evaluate/step-0143-20261029T183313+0000/experiment-001/result-review.md)
+validate one custom failed-state example,not the formal workload/resource point.
+
+[Offline input control](tmp/build-and-evaluate/step-0145-20261029T191343+0000/experiment-001/result-review.md)
+finds2677distinct complete source strings in each mode,including2045miniF2F
+and632ProofNet;exact-source duplicate groups are zero. Intentional repetition
+across the three measurement modes is not a workload cache opportunity. This
+does not determine full-state matches,cost,coverage or speedup.

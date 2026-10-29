@@ -1,4 +1,14 @@
-# Selected-population native tactic-input/cost measurement — running
+# Selected-population native tactic-input/cost measurement — interrupted
+
+Current status2026-10-29:the initial run failed on a native panic;the repaired
+12:53continuation was later interrupted by a16:05ephemeral-storage eviction.
+No collection is running. Retained2640rows and original inputs are recovered on
+the existing PVC;at least1273later observed entries are currently unavailable.
+The current recovery and output guard are in
+[step0140](../../../../docs/tmp/build-and-evaluate/step-0140-20261029T170259+0000/step-report.md)
+and[step0142](../../../../docs/tmp/build-and-evaluate/step-0142-20261029T182504+0000/step-report.md).
+The launch/PID observations below are dated history,not a live-status pointer.
+Full input-match/cost results remain unknown;do not relaunch from a stale PID.
 
 Actual launch2026-10-29T10:09:16UTC;sourceae59c77281888d01fb9684c8712d58f966ea9880.
 This is the entire retained expensive repeated-text selection,not all mathematical
