@@ -18,6 +18,12 @@ The owned-RSS process integration test needs at least two eligible Linux CPUs.
 Use an allowed two-core affinity when running that full suite; a single-core
 mask cannot exercise its concurrent preemption/retry case.
 
+Lifecycle fixtures also need permission to signal their own child processes and
+process groups. A container that denies TERM/KILL cannot exercise the full
+watchdog/cancellation/retirement contract; report that environment limitation
+separately from fixture-only successes. The standalone failure-replay example
+uses no subprocess or Lean and is described in [examples](examples/README.md#tactic-failure-replay-skeleton).
+
 The protocol fixture is deliberately not Lean. Real native differential tests
 require a stock REPL and its pinned project, and must not overlap an owning
 Workspace's existing full collection:

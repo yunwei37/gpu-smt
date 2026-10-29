@@ -22,7 +22,7 @@ fmt,all-target clippy and warning-free rustdoc pass. Local workspace check
 reaches49passes and2existing Lean lifecycle failures with2explicit process-test
 exclusions,then stops before later targets. Earlier unexcluded/exclusion attempts
 and raw errors remain. Same-UID signal diagnostic reproduces errno13 TERM/KILL
-denial on G10;no test/CI weakening or permission workaround. Full CI is pending.
+denial on G10;no test/CI weakening or permission workaround. Full CI subsequently completed successfully as recorded below.
 
 Nominal1s sampled development tree max535,994,368B across retained commands;
 no budget interruption. CPUs6–7,one-job compact development builds,outputs on
@@ -45,4 +45,17 @@ alias,not suppression. Eight fixtures cover state effects,HB debit,budget misses
 scope/input/restart isolation,cancellation/invalidation,fault propagation and
 lock lifetime. Raw negative/interim checks retained. No native semantic/throughput
 claim,no independent auditor. Production activation remains disabled. Commit/push
-the implementation boundary,then record actual CI terminal evidence.
+the implementation boundary;retain actual CI terminal evidence below.
+
+## CI terminal evidence
+Source40336aa is pushed and origin/main verified. Existing full Rust job passes
+85tests with6native tests ignored in that job;separate native-repl-contract
+actually executes those6and passes. The simulated example and rustdoc pass.
+engine40946751636 and benchmark-smoke40946751639 both succeed.
+[Terminal metadata](experiment-001/ci-terminal.json) and complete job logs retain
+the evidence. No full-state cache implementation/benefit follows from these
+existing native protocol checks. G10 local signal failures remain explicit.
+
+CONTRIBUTING gains the observed owned-process signal prerequisite. Intermittent
+management-ready probe failures did not establish a host outage;three existing
+HA APIs subsequently returned ok over real SSH. No mutation;formal capture stopped.

@@ -159,3 +159,8 @@ the report green. Formal hardware approval and the missing cohort result remain
 the real dependencies;this requested skeleton prepares integration without
 inventing hit-rate or acceleration evidence. Next use actual full CI,then finish
 the same state/cost measurement once placement is explicitly approved.
+
+Step0146 CI closure:source40336aa passes85Rust tests and the separate six
+existing pinned native differential checks,plus example/docs/smoke. This is a
+usable unenabled library boundary;native failure-cache qualification and the
+selected workload's cost remain unresolved. Local signal-denial records remain.

@@ -69,3 +69,25 @@ native adapter modification or test relaxation is part of this patch.
 The all-target command also executes the pre-existing exact-cache microbench;
 its printed number is not a result of this skeleton or a formal workload
 measurement. The example executes separately and asserts only toy semantics.
+
+## Actual CI closure
+Source commit40336aad543e45db92c7d0efb8dc35c410a0f3c9:
+engine40946751636 and benchmark-smoke40946751639 completed success.
+The Rust job's unchanged full suite reports85passed/0failed/6ignored,
+then executes the simulated example and warning-free docs successfully.
+The separate pinned native contract job executes all6ignored differential
+checks successfully. Those are existing protocol/lifecycle checks,not native
+failure-cache replay qualification. Raw job logs and exact terminal metadata
+are retained. Full CI success does not rewrite local G10 failures as passes.
+
+Two collection-access attempts failed before remote exec with
+"No K3s HA server from inventory/fleet.json had a reachable ready API."
+A successful existing-entrypoint query between those failures reported the same
+G10 Workspace1/1Running with0restarts. Subsequent direct read-only inventory-
+derived SSH readyz probes returned ok/exit0 on um760,g10,raspberry-pi. No
+scheduling,permission or recovery operation was performed. Raw CI records were
+retrieved in the original Workspace;all own validation children/helpers retired.
+
+CONTRIBUTING documents the demonstrated permission to signal owned children/
+groups as a requirement of full lifecycle fixtures. No default skip/ignore or
+CI filtering is added.

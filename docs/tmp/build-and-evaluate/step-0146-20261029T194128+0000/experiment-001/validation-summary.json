@@ -196,6 +196,32 @@
   "any_budget_abort": false,
   "native_cache_enabled": false,
   "formal_capture_running": false,
-  "ci_status": "not yet dispatched",
-  "review": "same-thread self-review;no external agents"
+  "ci_status": "completed-success",
+  "review": "same-thread self-review;no external agents",
+  "ci_runs": [
+    {
+      "id": 40946751636,
+      "name": "engine",
+      "head_sha": "40336aad543e45db92c7d0efb8dc35c410a0f3c9",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40946751636"
+    },
+    {
+      "id": 40946751639,
+      "name": "benchmark-smoke",
+      "head_sha": "40336aad543e45db92c7d0efb8dc35c410a0f3c9",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40946751639"
+    }
+  ],
+  "ci_rust_tests": {
+    "passed": 85,
+    "failed": 0,
+    "ignored": 6
+  },
+  "ci_existing_native_differential_tests": {
+    "passed": 6,
+    "failed": 0,
+    "ignored": 0
+  }
 }

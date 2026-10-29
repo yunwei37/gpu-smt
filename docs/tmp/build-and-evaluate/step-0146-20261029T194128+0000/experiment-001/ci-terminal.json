@@ -1,0 +1,224 @@
+{
+  "utc": "2026-10-29T20:17:02.870225+00:00",
+  "runs": [
+    {
+      "id": 40946751636,
+      "name": "engine",
+      "head_sha": "40336aad543e45db92c7d0efb8dc35c410a0f3c9",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40946751636",
+      "created_at": "2026-10-29T20:11:12Z",
+      "updated_at": "2026-10-29T20:13:33Z",
+      "jobs": [
+        {
+          "id": 123704013810,
+          "name": "native-repl-contract",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T20:11:15Z",
+          "completed_at": "2026-10-29T20:12:46Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run dtolnay/rust-toolchain@stable",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare pinned native protocol dependency",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build import-only native parent",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Differential check against raw native JSON",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ],
+          "rust_test_totals_from_job_log": {
+            "passed": 6,
+            "failed": 0,
+            "ignored": 0
+          }
+        },
+        {
+          "id": 123704013963,
+          "name": "rust",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T20:11:15Z",
+          "completed_at": "2026-10-29T20:13:32Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run dtolnay/rust-toolchain@stable",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run cargo fmt --all -- --check",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run cargo clippy --workspace --all-targets --locked -- -D warnings",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run cargo test --workspace --all-targets --locked",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run cargo run -p gpu-smt-engine --example failure_replay --locked",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run cargo doc --workspace --no-deps --locked",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ],
+          "rust_test_totals_from_job_log": {
+            "passed": 85,
+            "failed": 0,
+            "ignored": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 40946751639,
+      "name": "benchmark-smoke",
+      "head_sha": "40336aad543e45db92c7d0efb8dc35c410a0f3c9",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40946751639",
+      "created_at": "2026-10-29T20:11:12Z",
+      "updated_at": "2026-10-29T20:13:18Z",
+      "jobs": [
+        {
+          "id": 123704013533,
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T20:11:15Z",
+          "completed_at": "2026-10-29T20:13:17Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install Z3",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Syntax and unit tests",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run synthetic cold-vs-incremental CLI benchmark",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run direct libz3 state-reuse benchmark",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Decompose reuse levels",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Analyze cross-query prefix reuse",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate benchmark output",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Upload smoke benchmark artifacts",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ],
+          "rust_test_totals_from_job_log": {
+            "passed": 0,
+            "failed": 0,
+            "ignored": 0
+          }
+        }
+      ]
+    }
+  ]
+}
