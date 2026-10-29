@@ -76,8 +76,13 @@ reuse=false/disable_cache=true bypass both completed and in-flight reuse.
 
 The classifier separates admissions from accepted proofs and operational
 timeouts/resource exhaustion from logical rejection. Native warning/message
-payloads remain available. Compatibility tests cover core shapes; they do
-not establish compatibility with every optional Kimina feature.
+payloads remain available. Diagnostic entries must have a known native severity
+(trace/info/warning/error) and string data; present message/error fields must
+also be strings. Malformed diagnostics return an uncacheable backend_error
+with their original JSON, even if an env handle or an earlier valid error is
+present. Positions and other uninterpreted native metadata remain unchanged.
+Compatibility tests cover core shapes; they do not establish compatibility with
+every optional Kimina feature.
 
 Timeout is a cooperative native response budget, not a whole-delivery wall
 bound. A single synchronous IO poll can finish late; such a completion is a

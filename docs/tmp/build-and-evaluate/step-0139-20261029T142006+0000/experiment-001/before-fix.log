@@ -1,0 +1,24 @@
+   Compiling gpu-smt-lean v0.1.0 (/workspaces/repository/crates/gpu-smt-lean)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.04s
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_lean-0d63ea6db84850ee)
+
+running 1 test
+test tests::malformed_diagnostic_entries_are_operational_and_not_cacheable ... FAILED
+
+failures:
+
+---- tests::malformed_diagnostic_entries_are_operational_and_not_cacheable stdout ----
+
+thread 'tests::malformed_diagnostic_entries_are_operational_and_not_cacheable' (571398) panicked at crates/gpu-smt-lean/src/lib.rs:315:13:
+assertion `left == right` failed: {"env":0,"messages":[null]}
+  left: Accepted
+ right: BackendError
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::malformed_diagnostic_entries_are_operational_and_not_cacheable
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 10 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p gpu-smt-lean --lib`

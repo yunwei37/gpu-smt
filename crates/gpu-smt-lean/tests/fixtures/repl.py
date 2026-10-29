@@ -12,7 +12,9 @@ if code == "slow":
 if code == "stderr":
     sys.stderr.write("diagnostic " * 10000)
     sys.stderr.flush()
-if code == "bad":
+if code == "invalid_message":
+    payload = {"env": 0, "messages": [None]}
+elif code == "bad":
     payload = {"env": 0, "messages": [{"severity": "error", "data": "fixture rejection"}]}
 elif code == "sorry":
     payload = {"env": 0, "messages": [], "sorries": [{}]}

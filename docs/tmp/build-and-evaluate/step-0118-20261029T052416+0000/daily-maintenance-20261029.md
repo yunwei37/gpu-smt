@@ -87,3 +87,14 @@ Rust回归。下一步应收完整观察阶段的输入匹配及普通错误成�
 中断和未到达分母；只有成本有依据，再验证失败策略的后状态、心跳与
 诊断重放。不能放松环境/上下文/选项来凑命中，也不能把这些工程修复
 当作论文新贡献或用暂停间隔拼出端到端提速。
+
+
+### 14:22 UTC — semantic correctness during the active measurement
+
+A recognizable env handle did not make malformed diagnostic entries safe to
+accept. The actual red regression exposed this; step0139 repairs it and checks
+uncacheable repeated requests with physical retirement. This is useful OSS
+maintenance, not our research contribution. Keep the single frozen measurement
+running. Its complete per-state ordinary-failure cost is still the information
+needed to choose a substantive mechanism; do not replace that result with
+more parser fixtures or status reports.

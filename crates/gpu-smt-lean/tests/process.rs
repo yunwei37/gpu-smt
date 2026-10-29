@@ -99,6 +99,39 @@ async fn pipe_protocol_errors_admissions_and_stderr_drain() {
     engine.shutdown().await;
 }
 #[tokio::test]
+async fn malformed_native_diagnostics_are_not_cached_between_requests() {
+    let engine = engine();
+    for id in ["first-malformed", "second-malformed"] {
+        let mut input = candidate(id, "invalid_message", 5000);
+        input.reuse = true;
+        let rows = engine
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![input],
+            })
+            .await
+            .unwrap();
+        let row = &rows[0];
+        assert_eq!(row.outcome.status, Status::BackendError);
+        assert!(!row.outcome.cacheable());
+        assert!(!row.cached && !row.coalesced);
+        assert_eq!(row.attempts.len(), 1);
+        assert_eq!(
+            row.outcome.response,
+            Some(serde_json::json!({"env": 0, "messages": [null]}))
+        );
+        assert!(row.outcome.error.as_deref().unwrap().contains("malformed"));
+        for process in &row.attempts[0].processes {
+            assert!(
+                gpu_smt_engine::linux::identity(process.pid).is_err(),
+                "fixture process survives the operational response"
+            );
+        }
+    }
+    engine.shutdown().await;
+}
+
+#[tokio::test]
 async fn timeout_retires_process_before_next_attempt() {
     let engine = engine();
     let result = tokio::time::timeout(

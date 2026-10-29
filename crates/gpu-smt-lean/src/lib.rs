@@ -31,8 +31,21 @@ pub struct NativeRepl {
 pub fn classify(payload: Value) -> Outcome {
     let messages = payload.get("messages");
     let sorries = payload.get("sorries");
-    let malformed =
-        messages.is_some_and(|m| !m.is_array()) || sorries.is_some_and(|s| !s.is_array());
+    // Only interpreted diagnostic fields are constrained; native metadata stays
+    // untouched. An unknown entry must not disappear into a cacheable verdict.
+    let malformed = messages.is_some_and(|m| {
+        m.as_array().is_none_or(|entries| {
+            entries.iter().any(|entry| {
+                !matches!(
+                    entry.get("severity").and_then(Value::as_str),
+                    Some("trace" | "info" | "warning" | "error")
+                ) || !entry.get("data").is_some_and(Value::is_string)
+            })
+        })
+    }) || sorries.is_some_and(|s| !s.is_array())
+        || ["message", "error"]
+            .iter()
+            .any(|field| payload.get(field).is_some_and(|v| !v.is_string()));
     let status = if malformed {
         Status::BackendError
     } else if payload.get("message").is_some_and(Value::is_string)
@@ -63,7 +76,7 @@ pub fn classify(payload: Value) -> Outcome {
     Outcome {
         status,
         response: Some(payload),
-        error: None,
+        error: malformed.then(|| "malformed native REPL diagnostics".into()),
     }
 }
 async fn response(stdout: tokio::process::ChildStdout) -> Result<Value, String> {
@@ -299,6 +312,50 @@ impl VerificationBackend for NativeRepl {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn malformed_diagnostic_entries_are_operational_and_not_cacheable() {
+        for message in [
+            json!(null),
+            json!("unparsed diagnostic"),
+            json!({}),
+            json!({"severity": "fatal", "data": "unknown severity"}),
+            json!({"severity": 1, "data": "wrong type"}),
+            json!({"severity": "warning", "data": null}),
+            json!({"severity": "warning"}),
+        ] {
+            let payload = json!({"env": 0, "messages": [message]});
+            let result = classify(payload.clone());
+            assert_eq!(result.status, Status::BackendError, "{payload}");
+            assert!(!result.cacheable(), "{payload}");
+            assert_eq!(result.response, Some(payload));
+            assert!(result.error.is_some());
+        }
+        let mixed = json!({"env": 0, "messages": [
+            {"severity": "error", "data": "earlier error"}, null
+        ]});
+        assert_eq!(classify(mixed).status, Status::BackendError);
+        for field in ["message", "error"] {
+            let mut payload = json!({"env": 0});
+            payload[field] = json!(false);
+            assert_eq!(classify(payload).status, Status::BackendError);
+        }
+        for severity in ["trace", "info", "warning", "error"] {
+            let payload = json!({"env": 0, "messages": [
+                {"severity": severity, "data": "native message", "pos": {"line": 1, "column": 0}}
+            ]});
+            let result = classify(payload.clone());
+            assert_eq!(
+                result.status,
+                if severity == "error" {
+                    Status::Rejected
+                } else {
+                    Status::Accepted
+                }
+            );
+            assert_eq!(result.response, Some(payload));
+        }
+    }
+
     #[test]
     fn admissions_and_unknown_shapes_are_never_accepted() {
         assert_eq!(
