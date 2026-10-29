@@ -64,6 +64,12 @@ only after checked same-task acceptance. Exact completed/in-flight reuse
 retains each caller's identity; cancellation and resource failures are not
 native rejections or cacheable proof results.
 
+The [standalone tactic-failure cache skeleton](docs/api.md#standalone-tactic-failure-replay-skeleton)
+is an optional library development component. A backend owns replay-qualified
+inputs and complete ordinary-failure transitions; fixtures and a simulated
+example exercise its contract. It is not enabled in engine verification and
+has no stock Lean replay adapter or measured workload benefit.
+
 [Architecture](docs/architecture.md) · [API and compatibility scope](docs/api.md) ·
 [Examples](examples/README.md) · [Paired measurement](docs/benchmarking.md) · [Contributing and checks](CONTRIBUTING.md) ·
 [CI](.github/workflows/engine.yml) · [Apache-2.0 engine license](LICENSE).

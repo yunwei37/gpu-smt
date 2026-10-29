@@ -2,6 +2,9 @@
 //! Public API0.1 is experimental. Logical and operational outcomes stay distinct.
 
 #![warn(missing_docs)]
+mod failure;
+pub use failure::{FailureReplayBackend, TacticCompletion};
+
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;

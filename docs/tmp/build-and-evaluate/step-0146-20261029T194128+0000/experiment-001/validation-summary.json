@@ -1,0 +1,201 @@
+{
+  "utc": "2026-10-29T20:11:07.378728+00:00",
+  "checks": {
+    "final-format": {
+      "utc": "2026-10-29T20:05:13.266830+00:00",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit_code": 0,
+      "seconds": 1.0030077081173658,
+      "sampled_owned_rss_bytes": 25886720,
+      "budget_abort": false,
+      "pvc_free_before": 2677235712,
+      "pvc_free_after": 2677235712,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    },
+    "final-clippy": {
+      "utc": "2026-10-29T20:05:24.387846+00:00",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "seconds": 11.019824249204248,
+      "sampled_owned_rss_bytes": 287531008,
+      "budget_abort": false,
+      "pvc_free_before": 2677231616,
+      "pvc_free_after": 2677231616,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    },
+    "final-workspace-tests": {
+      "utc": "2026-10-29T20:08:57.972641+00:00",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "--skip",
+        "linux::tests::retired_descendants_do_not_accumulate_under_the_engine_root",
+        "--skip",
+        "owned_idle_preparation_is_included_in_total_rss"
+      ],
+      "exit_code": 101,
+      "seconds": 213.4959717472084,
+      "sampled_owned_rss_bytes": 345366528,
+      "budget_abort": false,
+      "pvc_free_before": 2677227520,
+      "pvc_free_after": 2677211136,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    },
+    "final-example": {
+      "utc": "2026-10-29T20:09:06.095922+00:00",
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "gpu-smt-engine",
+        "--example",
+        "failure_replay",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "seconds": 8.01605754904449,
+      "sampled_owned_rss_bytes": 293285888,
+      "budget_abort": false,
+      "pvc_free_before": 2677207040,
+      "pvc_free_after": 2670358528,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    },
+    "final-rustdoc": {
+      "utc": "2026-10-29T20:09:29.264098+00:00",
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "seconds": 23.054667200893164,
+      "sampled_owned_rss_bytes": 445407232,
+      "budget_abort": false,
+      "pvc_free_before": 2670354432,
+      "pvc_free_after": 2649047040,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    },
+    "final-format-check": {
+      "utc": "2026-10-29T20:09:30.386981+00:00",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.0029125278815627,
+      "sampled_owned_rss_bytes": 27828224,
+      "budget_abort": false,
+      "pvc_free_before": 2649042944,
+      "pvc_free_after": 2649042944,
+      "cpu_ids": [
+        6,
+        7
+      ],
+      "build_settings": {
+        "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+        "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+        "CARGO_BUILD_JOBS": "1",
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "RUST_TEST_THREADS": "1"
+      },
+      "scope": "G10 development validation,no native collection or performance point"
+    }
+  },
+  "new_simulated_tests_passed": 8,
+  "final_local_test_outcome": "49 passed,2 failed,2 excluded before later targets;not full suite success",
+  "sampled_development_tree_max_rss_bytes": 535994368,
+  "any_budget_abort": false,
+  "native_cache_enabled": false,
+  "formal_capture_running": false,
+  "ci_status": "not yet dispatched",
+  "review": "same-thread self-review;no external agents"
+}

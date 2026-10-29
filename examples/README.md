@@ -114,3 +114,22 @@ Both paired conditions include consumer-journal I/O in their own cell clocks.
 Older captures without results.jsonl remain unchanged; do not pool recording
 versions or expect an in-progress old executable to gain this file. No active
 collection should be rebuilt or restarted to adopt this observation change.
+
+
+## Tactic-failure replay skeleton
+
+    cargo run -p gpu-smt-engine --example failure_replay --locked
+
+This is an explicitly simulated backend using the public library API. It
+captures an input, stores an opaque ordinary-failure transition, revalidates
+the current state/budget and applies simulated goal/error/heartbeat effects.
+It asserts the resulting toy state and returned ordinary exception, then prints
+a simulation-only message. A native caller must propagate that exception through
+its original failure/backtracking path.
+It does not launch Lean, prove a target, implement a native replay certificate
+or measure acceleration. The normal engine/CLI/HTTP paths remain unchanged.
+
+Native adapters must implement FailureReplayBackend and qualify complete entry
+compatibility, post-error/identity/diagnostic replay, resource and cancellation
+semantics. See [API contracts](../docs/api.md#standalone-tactic-failure-replay-skeleton).
+A match in the research input observer is not that qualification.

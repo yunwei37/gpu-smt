@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-29T19:50:44.435651+00:00",
+  "command": [
+    "cargo",
+    "clippy",
+    "--workspace",
+    "--all-targets",
+    "--locked",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "exit_code": 101,
+  "seconds": 26.062191074248403,
+  "sampled_owned_rss_bytes": 467275776,
+  "budget_abort": false,
+  "pvc_free_before": 2945605632,
+  "pvc_free_after": 2899898368,
+  "cpu_ids": [
+    6,
+    7
+  ],
+  "build_settings": {
+    "CARGO_HOME": "/workspaces/.agent-state/gpu-smt-rust-development/cargo-home",
+    "CARGO_TARGET_DIR": "/workspaces/.agent-state/gpu-smt-rust-development/target",
+    "CARGO_BUILD_JOBS": "1",
+    "CARGO_INCREMENTAL": "0",
+    "CARGO_PROFILE_DEV_DEBUG": "0",
+    "CARGO_PROFILE_TEST_DEBUG": "0",
+    "RUST_TEST_THREADS": "1"
+  },
+  "scope": "G10 development validation,no native collection or performance point"
+}

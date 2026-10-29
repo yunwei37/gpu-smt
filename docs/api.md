@@ -19,6 +19,47 @@ PreparedState and FailureDetector define future native-state extensions;
 the import-parent implementation is a separate optional VerificationBackend.
 An actual rejection detector is not implemented. A trait is not an acceleration result.
 
+## Standalone tactic-failure replay skeleton
+
+gpu-smt-core exports FailureReplayBackend and TacticCompletion; gpu-smt-engine
+exports FailureCache and its opaque FailureInput. This additive experimental
+0.1 library API has no CLI/HTTP option and is not used by Engine verification.
+
+The backend defines its exact Key, owned Record, exclusive State and native
+Exception types.
+replay_input returns a coherent scope/key only for supported, replay-qualified
+inputs. Scope includes verifier/environment and process/allocation generation.
+The key covers tactic text, goal/local context, options and relevant hidden state
+dependencies. Key Hash/Eq/destruction must be nonblocking metadata operations.
+An observed canonical goal/context match is insufficient. Records include the
+failed state transition and diagnostics/identity/resource effects; whole-source
+Outcome and error text are not implicitly converted into entries.
+
+Before original execution, capture returns the private scoped input. remember
+uses that captured scope, even if the backend restarts before insertion.
+OrdinaryFailure stores a qualified fresh producer's record; NotReplayable covers
+returns, unqualified errors and every operational/resource/interrupt case and
+invalidates a previous entry for that input. Do not record a replay as a new
+native producer.
+
+try_replay returns None on a miss/unsupported input/pre-existing cancellation.
+For a record it calls replay_failure after releasing the metadata lock. That
+backend revalidates supplied scope/key and live state, cancellation and budget
+before committing. Some(exception) means one ordinary-failure transition was
+applied, including original action heartbeat accounting. The caller must
+propagate that destination-native exception through the original native
+failure/backtracking path, never return tactic success or a source verdict.
+None leaves observable state/action charges unchanged and requests original
+execution. Err is operational: do not turn it into rejection or blindly fall
+back on a possibly damaged native state.
+
+clear drops stored records outside the lock, but does not cancel an in-flight
+replay or retire native ownership. Retained records consume memory; scope the
+store to a backend lifecycle. No automatic eviction/size guarantee is supplied.
+The [simulated library example](../examples/README.md#tactic-failure-replay-skeleton)
+runs without a verifier. There is no qualified Lean replay implementation or
+native performance result yet.
+
 ## HTTP
 
 POST/v1/verify accepts the typed Batch JSON contract. Results retain original

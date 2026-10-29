@@ -1,0 +1,73 @@
+ Downloading crates ...
+  Downloaded cfg-if v1.0.5
+  Downloaded atomic-waker v1.1.2
+  Downloaded matchers v0.2.0
+  Downloaded http-body v1.1.0
+  Downloaded aho-corasick v1.1.5
+  Downloaded sync_wrapper v1.0.2
+  Downloaded mime v0.3.17
+  Downloaded thread_local v1.1.10
+  Downloaded form_urlencoded v1.2.2
+  Downloaded httpdate v1.0.3
+  Downloaded tracing-serde v0.2.0
+  Downloaded tower-layer v0.3.3
+  Downloaded percent-encoding v2.3.2
+  Downloaded lazy_static v1.5.1
+  Downloaded tower-service v0.3.3
+  Downloaded axum-core v0.5.6
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded tracing-log v0.2.0
+  Downloaded http-body-util v0.1.5
+  Downloaded nu-ansi-term v0.50.3
+  Downloaded serde_path_to_error v0.1.20
+  Downloaded matchit v0.8.4
+  Downloaded smallvec v1.16.4
+  Downloaded httparse v1.10.1
+  Downloaded log v0.4.34
+  Downloaded ryu v1.0.23
+  Downloaded sharded-slab v0.1.7
+  Downloaded tower v0.5.3
+  Downloaded http v1.5.0
+  Downloaded hyper-util v0.1.21
+  Downloaded hyper v1.12.0
+  Downloaded axum v0.8.9
+  Downloaded tracing-subscriber v0.3.23
+  Downloaded regex-syntax v0.8.11
+  Downloaded regex-automata v0.4.18
+    Checking pin-project-lite v0.2.17
+    Checking itoa v1.0.18
+    Checking libc v0.2.191
+    Checking bytes v1.12.1
+   Compiling serde_core v1.0.229
+    Checking futures-core v0.3.34
+    Checking errno v0.3.14
+    Checking signal-hook-registry v1.4.8
+    Checking mio v1.2.4
+    Checking socket2 v0.6.5
+    Checking once_cell v1.21.4
+    Checking tracing-core v0.1.36
+    Checking tokio v1.54.1
+    Checking serde v1.0.229
+    Checking futures-task v0.3.34
+    Checking slab v0.4.12
+    Checking log v0.4.34
+   Compiling serde_json v1.0.154
+    Checking futures-util v0.3.34
+    Checking zmij v1.0.23
+    Checking memchr v2.8.3
+    Checking tracing v0.1.44
+    Checking futures-sink v0.3.34
+    Checking tokio-util v0.7.20
+    Checking gpu-smt-core v0.1.0 (/workspaces/repository/crates/gpu-smt-core)
+    Checking gpu-smt-engine v0.1.0 (/workspaces/repository/crates/gpu-smt-engine)
+error: very complex type used. Consider factoring parts into `type` definitions
+  --> crates/gpu-smt-engine/src/failure.rs:26:14
+   |
+26 |     entries: Mutex<HashMap<FailureInput<B::Key>, Arc<B::Record>>>,
+   |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#type_complexity
+   = note: `-D clippy::type-complexity` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::type_complexity)]`
+
+error: could not compile `gpu-smt-engine` (lib) due to 1 previous error

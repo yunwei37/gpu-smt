@@ -202,3 +202,8 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 ## 2026-10-29 — verbatim PVC check and G10 work request
 
 （Claude 督促）回 lab 的批准请求我已转给用户，等答复期间不要空等：17:09 以后只剩 heartbeat。请在 G10 上做不需要 CPU 8–11／48 GiB 实验点的工作，例如 Rust 引擎的开源整理、测试、文档，或另外几个方向里不跑正式采集的部分。另外记一条教训并改掉：这次驱逐时 dev 容器占了约 30 GiB 节点临时存储，主要是 /tmp 里的采集目录，丢了至少 1,273 条记录；以后采集输出直接写 PVC，不写容器 /tmp，并在采集脚本里加检查。每一步 commit/push，由本线程自己完成。
+
+
+## 2026-10-29 — verbatim standalone failure-cache request
+
+（Claude 督促）goal 仍是 blocked，你 18:42 之后只靠 heartbeat 做了一点事，请收到这条后接着做，不要停。回 lab 的批准还在等用户答复，正式采集先不跑；这段时间在 G10 上推进不需要实验点的工作：Rust 引擎的开源整理（crate 划分、trait 扩展点、文档、示例、CI），以及失败缓存在引擎里的实现骨架和单元测试，正式启用和测量等回 lab 之后。每一步 commit/push，由本线程自己完成。

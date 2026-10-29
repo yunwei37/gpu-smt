@@ -1,7 +1,9 @@
 //! Joint resource admission, exact-result sharing and explicit consumer semantics.
 //! The watchdog samples once per second; it is not a kernel memory quota.
 #![warn(missing_docs)]
+mod failure;
 pub mod linux;
+pub use failure::{FailureCache, FailureInput};
 
 use gpu_smt_core::*;
 use std::{

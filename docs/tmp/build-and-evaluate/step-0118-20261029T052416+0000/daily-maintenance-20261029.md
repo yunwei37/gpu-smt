@@ -144,3 +144,18 @@ assertion. Both retired,with outputs on PVC. This is a real small semantic
 qualification,not expensive-tactic workload coverage or a throughput point.
 The eventual method must preserve compatible failed state and fallback effects;
 waiting for the cohort data still cannot be replaced by more synthetic cases.
+
+### Requested failure-cache skeleton — keep a failed tactic distinct from a failed proof
+Step0146 implements a backend-owned,scoped Rust store and native exception
+contract in the existing core/engine crates. Eight simulated regressions and
+the runnable example check the library boundary;it is not wired into stock
+Lean or Engine verification. A boolean cache-hit return could hide the original
+failure path,so self-review replaced it with a native exception to propagate.
+Post-state/heartbeats/diagnostics remain native qualification obligations.
+
+Actual G10 signal permission errors prevent a clean full local process suite.
+Keep raw errors and unchanged tests/CI rather than relaxing correctness to make
+the report green. Formal hardware approval and the missing cohort result remain
+the real dependencies;this requested skeleton prepares integration without
+inventing hit-rate or acceleration evidence. Next use actual full CI,then finish
+the same state/cost measurement once placement is explicitly approved.

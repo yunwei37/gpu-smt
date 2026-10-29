@@ -1,0 +1,85 @@
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded async-trait v0.1.92
+  Downloaded futures-core v0.3.34
+  Downloaded errno v0.3.14
+  Downloaded futures-macro v0.3.34
+  Downloaded futures-sink v0.3.34
+  Downloaded itoa v1.0.18
+  Downloaded tokio-macros v2.7.2
+  Downloaded bytes v1.12.1
+  Downloaded futures-task v0.3.34
+  Downloaded signal-hook-registry v1.4.8
+  Downloaded slab v0.4.12
+  Downloaded zmij v1.0.23
+  Downloaded pin-project-lite v0.2.17
+  Downloaded quote v1.0.47
+  Downloaded once_cell v1.21.4
+  Downloaded unicode-ident v1.0.27
+  Downloaded proc-macro2 v1.0.107
+  Downloaded tracing-core v0.1.36
+  Downloaded tracing-attributes v0.1.31
+  Downloaded serde_core v1.0.229
+  Downloaded socket2 v0.6.5
+  Downloaded serde_derive v1.0.229
+  Downloaded serde v1.0.229
+  Downloaded memchr v2.8.3
+  Downloaded mio v1.2.4
+  Downloaded tokio-util v0.7.20
+  Downloaded serde_json v1.0.154
+  Downloaded futures-util v0.3.34
+  Downloaded syn v3.0.9
+  Downloaded syn v2.0.119
+  Downloaded tracing v0.1.44
+  Downloaded libc v0.2.191
+  Downloaded tokio v1.54.1
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling syn v3.0.9
+   Compiling libc v0.2.191
+   Compiling serde_core v1.0.229
+   Compiling pin-project-lite v0.2.17
+   Compiling errno v0.3.14
+   Compiling zmij v1.0.23
+   Compiling signal-hook-registry v1.4.8
+   Compiling mio v1.2.4
+   Compiling socket2 v0.6.5
+   Compiling futures-macro v0.3.34
+   Compiling tokio-macros v2.7.2
+   Compiling futures-core v0.3.34
+   Compiling futures-task v0.3.34
+   Compiling serde_json v1.0.154
+   Compiling serde v1.0.229
+   Compiling slab v0.4.12
+   Compiling bytes v1.12.1
+   Compiling tokio v1.54.1
+   Compiling futures-util v0.3.34
+   Compiling serde_derive v1.0.229
+   Compiling syn v2.0.119
+   Compiling once_cell v1.21.4
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling futures-sink v0.3.34
+   Compiling tokio-util v0.7.20
+   Compiling tracing-core v0.1.36
+   Compiling tracing-attributes v0.1.31
+   Compiling async-trait v0.1.92
+   Compiling gpu-smt-core v0.1.0 (/workspaces/repository/crates/gpu-smt-core)
+   Compiling tracing v0.1.44
+   Compiling gpu-smt-engine v0.1.0 (/workspaces/repository/crates/gpu-smt-engine)
+    Finished `test` profile [unoptimized] target(s) in 1m 32s
+     Running unittests src/lib.rs (/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/gpu_smt_engine-264c4900188df675)
+
+running 8 tests
+test failure::tests::applies_failed_transition_and_debits_once_without_a_source_verdict ... ok
+test failure::tests::backend_revalidates_scope_after_lookup_and_propagates_faults ... ok
+test failure::tests::cancellation_before_lookup_and_during_validation_preserves_state ... ok
+test failure::tests::insufficient_budget_and_backend_rejection_commit_no_effects ... ok
+test failure::tests::misses_and_unsupported_inputs_preserve_original_execution ... ok
+test failure::tests::nonreplayable_completion_cannot_retain_a_previous_ordinary_failure ... ok
+test failure::tests::producer_scope_is_captured_before_restart_not_relabelled_at_insertion ... ok
+test failure::tests::replay_and_record_destruction_run_outside_the_metadata_lock ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.00s
+

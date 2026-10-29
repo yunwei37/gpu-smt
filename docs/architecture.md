@@ -25,6 +25,7 @@ versioned; production stability is not asserted.
 | AdmissionPolicy | Joint CPU capacity and RSS plus unconsumed predicted growth |
 | ResultCache | Exact context/source/options keys, no reusable operational failures |
 | FailureDetector | Unknown falls through; rejection requires validated sufficient witness |
+| FailureReplayBackend | Opaque scoped input/failed transition; backend revalidates effects, diagnostics, budget and cancellation |
 | PreparedState | Backend-owned safe preparation/branch boundary, no arbitrary threaded fork |
 
 ## Resource layer
@@ -178,6 +179,33 @@ subscriber cancels. Source cost predictions affect order/admission only.
 Failure detectors remain unknown without a sufficient checked witness under
 the actual Lean state, including backtracking/fallback. Token patterns, large
 branch counts and shorter timeouts do not prove failure.
+
+The standalone FailureCache skeleton stores backend-owned ordinary tactic
+failure transitions. It captures scope before the fresh producer runs; a new
+process/allocation generation cannot relabel an old record. Ineligible
+completions evict that input's previous entry. Unsupported inputs, misses and
+cancelled requests fall through; the backend validates scope/key, current
+resources and cancellation again before committing post-state, diagnostics
+and action heartbeat charges. A replay yields the destination-native ordinary
+exception, which must follow the original failure/backtracking path instead of
+returning tactic success. Backend faults remain operational.
+An exception payload alone is not such a transition and does not prove a
+target false. The existing whole-source ResultCache is unchanged.
+
+Only metadata is accessed under the store lock. Record ownership uses Arc so
+lookup does not call an opaque Record::clone under that lock. Replacement,
+invalidation and clear release old records outside it; native-reference
+destruction must not turn into a global solve lock. A store owns retained
+references until clear/drop; clear does not cancel already in-flight replay.
+There is no automatic size bound, eviction policy or native memory claim.
+
+No stock native adapter implements FailureReplayBackend, and Engine, CLI and
+HTTP do not construct the store. Fixture tests and the simulated example are
+development evidence only. Native state/identity mapping, post-error and
+diagnostic replay, heartbeat/resource parity, default activation and complete
+matched measurement remain open. The prior observed-input keys are not
+automatically admitted as replay-compatible keys.
+
 
 ## Semantic guarantee layer
 
