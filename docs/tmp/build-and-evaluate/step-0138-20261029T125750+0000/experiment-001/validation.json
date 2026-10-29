@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 1,
+    "seconds": 0.20202653505839407,
+    "combined_own_peak_bytes": 21021024256,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  }
+]

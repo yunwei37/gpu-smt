@@ -1,0 +1,39 @@
+[
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "10-11",
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-targets",
+      "--locked"
+    ],
+    "exit": 0,
+    "seconds": 21.59820379014127,
+    "combined_own_peak_bytes": 25590820864,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit": 101,
+    "seconds": 0.5045798900537193,
+    "combined_own_peak_bytes": 25880121344,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  }
+]

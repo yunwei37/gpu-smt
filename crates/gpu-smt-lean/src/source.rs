@@ -68,7 +68,8 @@ pub struct NativeLean {
 /// acceptance. A source can print arbitrary output, so unknown/non-JSON stdout
 /// remains a backend fault instead of being mistaken for a checked proof.
 /// A nonzero exit alone is also operational: only a recognized JSON error
-/// establishes source rejection. Runtime crashes can produce no such error.
+/// establishes source rejection. A fatal runtime panic remains operational even
+/// when partial JSON error diagnostics preceded it.
 /// This is native frontend behavior, not an audit of axioms or trusted imports.
 pub fn classify_source(exit_code: Option<i32>, stdout: String, stderr: String) -> Outcome {
     let parsed = stdout
@@ -99,14 +100,17 @@ pub fn classify_source(exit_code: Option<i32>, stdout: String, stderr: String) -
     };
     let status = if stderr.contains("bad_alloc") || stderr.contains("out of memory") {
         Status::ResourceExhausted
+    } else if stderr.contains("INTERNAL PANIC:") {
+        protocol_error =
+            Some("native runtime panic; preceding diagnostics may be incomplete".into());
+        Status::BackendError
     } else if exit_code.is_none() || protocol_error.is_some() {
         Status::BackendError
     } else if messages.iter().any(|m| m["severity"] == "error") {
         Status::Rejected
-    } else if exit_code != Some(0) {
+    } else if let Some(code) = exit_code.filter(|code| *code != 0) {
         protocol_error = Some(format!(
-            "native exit {} without a JSON error diagnostic",
-            exit_code.unwrap()
+            "native exit {code} without a JSON error diagnostic"
         ));
         Status::BackendError
     } else if messages.iter().any(|m| {
@@ -520,6 +524,23 @@ mod tests {
             assert!(result.error.is_some());
         }
     }
+    #[test]
+    fn runtime_panic_overrides_prior_json_errors_and_is_not_cacheable() {
+        // The fatal marker is observed in the original proofnet-5879 run.
+        // The preceding JSON is a composed protocol boundary,not another
+        // claimed source-CLI measurement.
+        let stdout = r#"{"severity":"error","data":"unsolved goals"}"#;
+        let stderr = "INTERNAL PANIC: Nat.pow exponent is too big\n";
+        let outcome = classify_source(Some(1), stdout.into(), stderr.into());
+        assert_eq!(outcome.status, Status::BackendError);
+        assert!(!outcome.cacheable());
+        assert!(outcome.error.is_some());
+        let response = outcome.response.unwrap();
+        assert_eq!(response["stdout"], stdout);
+        assert_eq!(response["stderr"], stderr);
+        assert_eq!(response["messages"][0]["data"], "unsolved goals");
+    }
+
     #[test]
     fn native_exit_and_diagnostic_shapes_are_distinct() {
         assert_eq!(

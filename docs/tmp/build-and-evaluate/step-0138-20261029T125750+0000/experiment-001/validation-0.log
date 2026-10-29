@@ -1,0 +1,10 @@
+Diff in /workspaces/repository/crates/gpu-smt-lean/src/source.rs:101:
+     let status = if stderr.contains("bad_alloc") || stderr.contains("out of memory") {
+         Status::ResourceExhausted
+     } else if stderr.contains("INTERNAL PANIC:") {
+-        protocol_error = Some("native runtime panic; preceding diagnostics may be incomplete".into());
++        protocol_error =
++            Some("native runtime panic; preceding diagnostics may be incomplete".into());
+         Status::BackendError
+     } else if exit_code.is_none() || protocol_error.is_some() {
+         Status::BackendError

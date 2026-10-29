@@ -1,0 +1,11 @@
+Diff in /workspaces/repository/crates/gpu-smt-lean/src/source.rs:109:
+     } else if messages.iter().any(|m| m["severity"] == "error") {
+         Status::Rejected
+     } else if let Some(code) = exit_code.filter(|code| *code != 0) {
+-        protocol_error = Some(format!("native exit {code} without a JSON error diagnostic"));
++        protocol_error = Some(format!(
++            "native exit {code} without a JSON error diagnostic"
++        ));
+         Status::BackendError
+     } else if messages.iter().any(|m| {
+         m["data"]

@@ -1,0 +1,18 @@
+   Compiling gpu-smt-lean v0.1.0 (/workspaces/repository/crates/gpu-smt-lean)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.37s
+     Running unittests src/lib.rs (/tmp/gpu-smt-rust-engine-build-20261025/target/debug/deps/gpu_smt_lean-0d63ea6db84850ee)
+
+running 10 tests
+test native_reply_deadline_tests::non_yielding_decode_cannot_accept_a_reply_after_the_original_budget ... ok
+test native_reply_deadline_tests::timely_json_and_operational_outcomes_retain_their_contract ... ok
+test prepared::reply_deadline_tests::late_reply_cancellation_and_malformed_retirement_are_not_accepted ... ok
+test prepared::reply_deadline_tests::timely_native_reply_is_not_lost_while_waiting_for_retirement ... ok
+test resource_preemption_tests::native_resource_hooks_signal_only_birth_matched_owned_groups_without_a_runtime ... ok
+test source::tests::native_exit_and_diagnostic_shapes_are_distinct ... ok
+test source::tests::observed_runtime_exits_are_not_logical_rejections ... ok
+test source::tests::runtime_panic_overrides_prior_json_errors_and_is_not_cacheable ... ok
+test source::tests::stderr_log_write_failure_stays_explicit_after_drain ... ok
+test tests::admissions_and_unknown_shapes_are_never_accepted ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.09s
+

@@ -1,0 +1,73 @@
+[
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 0,
+    "seconds": 0.20200139307416975,
+    "combined_own_peak_bytes": 4754956288,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "10-11",
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-targets",
+      "--locked"
+    ],
+    "exit": 0,
+    "seconds": 26.958865287015215,
+    "combined_own_peak_bytes": 5249916928,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit": 0,
+    "seconds": 1.920277734985575,
+    "combined_own_peak_bytes": 5028093952,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "doc",
+      "--workspace",
+      "--no-deps",
+      "--locked"
+    ],
+    "exit": 0,
+    "seconds": 2.3221081828232855,
+    "combined_own_peak_bytes": 5132005376,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  }
+]

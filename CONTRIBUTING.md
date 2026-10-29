@@ -14,6 +14,10 @@ Use Rust1.98 or newer on Linux and Python3 for subprocess fixtures:
     RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps
     cargo bench -p gpu-smt-engine --bench exact_cache
 
+The owned-RSS process integration test needs at least two eligible Linux CPUs.
+Use an allowed two-core affinity when running that full suite; a single-core
+mask cannot exercise its concurrent preemption/retry case.
+
 The protocol fixture is deliberately not Lean. Real native differential tests
 require a stock REPL and its pinned project, and must not overlap an owning
 Workspace's existing full collection:

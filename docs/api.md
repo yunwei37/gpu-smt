@@ -252,8 +252,11 @@ NativeLean responses retain exit_code, complete stdout, the labelled stderr tail
 and parsed messages. Successful native exit with recognized diagnostics is
 accepted; sorry warnings remain incomplete and native errors rejected. Unknown
 JSON shapes/non-JSON stdout, signals and transport failures remain operational;
-arbitrary source #eval printing therefore may be unsupported. No environment
-handle is fabricated. This is native frontend checking, not an imported-axiom
+arbitrary source #eval printing therefore may be unsupported. A reported native
+INTERNAL PANIC stays a backend error even if JSON error diagnostics preceded
+it;raw output is retained and this incomplete execution is not cached as a
+completed rejection. Ordinary JSON errors without a runtime panic keep their
+existing classification. No environment handle is fabricated. This is native frontend checking, not an imported-axiom
 audit. It writes no source,olean or auxiliary output into the original project.
 
 Stdin has its own native diagnostic filename/module context. Sources depending

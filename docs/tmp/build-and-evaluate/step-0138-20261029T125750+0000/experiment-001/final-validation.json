@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 0,
+    "seconds": 0.20233500795438886,
+    "combined_own_peak_bytes": 26864037888,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-lean",
+      "--lib",
+      "--locked"
+    ],
+    "exit": 0,
+    "seconds": 4.535901386989281,
+    "combined_own_peak_bytes": 27218325504,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  },
+  {
+    "command": [
+      "taskset",
+      "-c",
+      "11",
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-targets",
+      "--locked"
+    ],
+    "exit": 101,
+    "seconds": 20.481135429115966,
+    "combined_own_peak_bytes": 31812149248,
+    "aborted_only_new_support": false,
+    "native_collection_launched": false
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "11",
+    "cargo",
+    "test",
+    "-p",
+    "gpu-smt-lean",
+    "--lib",
+    "--locked",
+    "source::tests::runtime_panic_overrides_prior_json_errors_and_is_not_cacheable",
+    "--",
+    "--exact"
+  ],
+  "exit": 101,
+  "seconds": 3.235805089119822,
+  "combined_own_peak_bytes": 4934230016,
+  "aborted_only_new_support": false,
+  "native_collection_launched": false
+}

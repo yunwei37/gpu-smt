@@ -17,5 +17,5 @@ One native candidate,48GiBsampled aggregate/noAS/CPU8–11unchanged. Raw memory
 gzip has multiple members and phase-labelled restarted seconds. Terminal
 seconds applies only to continuation phase;the pause/oldunknown operational
 elapsed cannot be reconstructed into an uninterrupted end-to-end benchmark.
-Ordinary tactic errors,paniques/timeouts/memory/watchdog interruptions remain
+Ordinary tactic errors,native failures/timeouts/memory/watchdog interruptions remain
 distinct. No cache or early rejection is enabled. Do not restart a healthy job.

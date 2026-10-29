@@ -75,3 +75,15 @@ compile is not contribution. No result replay is yet enabled;heartbeat,hidden
 elaborator state,diagnostic fidelity and novelty remain open. Launch one frozen
 measurement under48GiB/noASand preserve every segment,then use real cost to
 choose implementation. No independent auditor or stoppedparallel route is added.
+
+
+## 实质进展思考补充 — 2026-10-29T13:10:09.764498+00:00
+
+当前瓶颈是把真实失败负载完整执行并可信分类，而不是继续增加日志。
+本轮修掉了两个可复现问题：Nat.pow原生panic会停止整组采集；Rust源码后端
+会让先前JSON错误掩盖后续panic并缓存为Rejected。原始失败数据已保存，
+第一条已完成三模式原生验证并接续未完成单元，第二条有先失败后通过的
+Rust回归。下一步应收完整观察阶段的输入匹配及普通错误成本，保留操作性
+中断和未到达分母；只有成本有依据，再验证失败策略的后状态、心跳与
+诊断重放。不能放松环境/上下文/选项来凑命中，也不能把这些工程修复
+当作论文新贡献或用暂停间隔拼出端到端提速。
