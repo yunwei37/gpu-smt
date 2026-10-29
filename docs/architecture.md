@@ -261,3 +261,11 @@ parsing or impose a hard whole-request wall bound;late decoding and mandatory
 retirement remain charged. It can change formerly late accepted outcomes,so
 fixture success is not a whole-workload accepted-set guarantee. The ongoing
 source13d4606 resource pair is frozen and does not use this later correction.
+
+
+The optional failure-cache store also supports backend trait objects with known
+associated types. Native per-consumer state can be Send without Sync because it
+is exclusively held across replay. Concurrent simulated integration checks keep
+in-flight records alive across clear and revalidate live generation/cancellation
+after suspension. Clearing stored metadata is not revocation of existing native
+ownership. None of these checks enables a native adapter or certifies safe replay.

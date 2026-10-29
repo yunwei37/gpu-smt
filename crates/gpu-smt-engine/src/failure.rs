@@ -24,11 +24,11 @@ type Entries<K, R> = HashMap<FailureInput<K>, Arc<R>>;
 /// compatibility and transition validation remain backend responsibilities.
 /// Retained records consume memory; scope this store to an owned lifecycle and
 /// clear/drop it when obsolete. There is no automatic eviction/size guarantee.
-pub struct FailureCache<B: FailureReplayBackend> {
+pub struct FailureCache<B: FailureReplayBackend + ?Sized> {
     entries: Mutex<Entries<B::Key, B::Record>>,
 }
 
-impl<B: FailureReplayBackend> Default for FailureCache<B> {
+impl<B: FailureReplayBackend + ?Sized> Default for FailureCache<B> {
     fn default() -> Self {
         Self {
             entries: Mutex::new(HashMap::new()),
@@ -36,7 +36,7 @@ impl<B: FailureReplayBackend> Default for FailureCache<B> {
     }
 }
 
-impl<B: FailureReplayBackend> FailureCache<B> {
+impl<B: FailureReplayBackend + ?Sized> FailureCache<B> {
     /// Capture a backend-qualified input before fresh original execution.
     pub fn capture(&self, backend: &B, state: &B::State) -> Option<FailureInput<B::Key>> {
         backend

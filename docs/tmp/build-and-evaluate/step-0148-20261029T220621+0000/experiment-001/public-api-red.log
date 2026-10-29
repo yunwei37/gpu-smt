@@ -1,0 +1,239 @@
+   Compiling gpu-smt-engine v0.1.0 (/workspaces/repository/crates/gpu-smt-engine)
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+  --> crates/gpu-smt-engine/tests/failure_cache.rs:71:30
+   |
+71 | fn fixture(consumers:usize)->(Arc<Simulation>,Arc<Store>,Arc<AtomicUsize>){
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+   |
+   = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+  --> crates/gpu-smt-engine/src/failure.rs:27:25
+   |
+27 | pub struct FailureCache<B: FailureReplayBackend> {
+   |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+   = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+  --> crates/gpu-smt-engine/tests/failure_cache.rs:80:17
+   |
+80 | fn replay(cache:Arc<Store>,backend:Arc<Simulation>,cancel:CancellationToken,
+   |                 ^^^^^^^^^^ doesn't have a size known at compile-time
+   |
+   = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+  --> crates/gpu-smt-engine/src/failure.rs:27:25
+   |
+27 | pub struct FailureCache<B: FailureReplayBackend> {
+   |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+   = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+  --> crates/gpu-smt-engine/tests/failure_cache.rs:74:24
+   |
+74 |     let cache=Arc::new(Store::default());
+   |                        ^^^^^ doesn't have a size known at compile-time
+   |
+   = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+  --> crates/gpu-smt-engine/src/failure.rs:27:25
+   |
+27 | pub struct FailureCache<B: FailureReplayBackend> {
+   |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+   = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+
+error[E0599]: the associated function or constant `default` exists for struct `FailureCache<...>`, but its trait bounds were not satisfied
+  --> crates/gpu-smt-engine/tests/failure_cache.rs:74:31
+   |
+74 |     let cache=Arc::new(Store::default());
+   |                               ^^^^^^^ associated function or constant cannot be called on `FailureCache<...>` due to unsatisfied trait bounds
+   |
+  ::: crates/gpu-smt-core/src/failure.rs:26:1
+   |
+26 | pub trait FailureReplayBackend: Send + Sync {
+   | ------------------------------------------- doesn't satisfy `_: Sized`
+   |
+  ::: crates/gpu-smt-engine/src/failure.rs:27:1
+   |
+27 | pub struct FailureCache<B: FailureReplayBackend> {
+   | ------------------------------------------------ doesn't satisfy `_: Default`
+   |
+   = note: the following trait bounds were not satisfied:
+           `(dyn FailureReplayBackend<Exception = &'static str, Key = (u64, u64), Record = Transition, State = State> + 'static): Sized`
+           which is required by `FailureCache<(dyn FailureReplayBackend<Exception = &'static str, Key = (u64, u64), Record = Transition, State = State> + 'static)>: Default`
+   = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-9292163447710474538.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+
+error[E0599]: the method `try_replay` exists for struct `Arc<FailureCache<...>>`, but its trait bounds were not satisfied
+  --> crates/gpu-smt-engine/tests/failure_cache.rs:86:29
+   |
+86 |         let exception=cache.try_replay(backend.as_ref(),&mut state,&cancel).await.unwrap();
+   |                             ^^^^^^^^^^ method cannot be called on `Arc<FailureCache<...>>` due to unsatisfied trait bounds
+   |
+  ::: crates/gpu-smt-core/src/failure.rs:26:1
+   |
+26 | pub trait FailureReplayBackend: Send + Sync {
+   | ------------------------------------------- doesn't satisfy `_: Sized`
+   |
+   = note: the following trait bounds were not satisfied:
+           `(dyn FailureReplayBackend<Exception = &'static str, Key = (u64, u64), Record = Transition, State = State> + 'static): Sized`
+   = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-4760066330181235819.txt'
+   = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:105:30
+    |
+105 |     let(backend,cache,drops)=fixture(2);
+    |                              ^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:106:22
+    |
+106 |     let first=replay(cache.clone(),backend.clone(),CancellationToken::new(),100);
+    |                      ^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:107:23
+    |
+107 |     let second=replay(cache.clone(),backend.clone(),CancellationToken::new(),80);
+    |                       ^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0599]: the method `clear` exists for struct `Arc<FailureCache<...>>`, but its trait bounds were not satisfied
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:109:11
+    |
+109 |     cache.clear();
+    |           ^^^^^ method cannot be called on `Arc<FailureCache<...>>` due to unsatisfied trait bounds
+    |
+   ::: crates/gpu-smt-core/src/failure.rs:26:1
+    |
+ 26 | pub trait FailureReplayBackend: Send + Sync {
+    | ------------------------------------------- doesn't satisfy `_: Sized`
+    |
+    = note: the following trait bounds were not satisfied:
+            `(dyn FailureReplayBackend<Exception = &'static str, Key = (u64, u64), Record = Transition, State = State> + 'static): Sized`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-4760066330181235819.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0599]: the method `try_replay` exists for struct `Arc<FailureCache<...>>`, but its trait bounds were not satisfied
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:112:22
+    |
+112 |     assert_eq!(cache.try_replay(backend.as_ref(),&mut after_clear,&CancellationToken::new()).await.unwrap(),None);
+    |                      ^^^^^^^^^^ method cannot be called on `Arc<FailureCache<...>>` due to unsatisfied trait bounds
+    |
+   ::: crates/gpu-smt-core/src/failure.rs:26:1
+    |
+ 26 | pub trait FailureReplayBackend: Send + Sync {
+    | ------------------------------------------- doesn't satisfy `_: Sized`
+    |
+    = note: the following trait bounds were not satisfied:
+            `(dyn FailureReplayBackend<Exception = &'static str, Key = (u64, u64), Record = Transition, State = State> + 'static): Sized`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-4760066330181235819.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:122:31
+    |
+122 |     let(backend,cache,_drops)=fixture(1);
+    |                               ^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:123:21
+    |
+123 |     let task=replay(cache,backend.clone(),CancellationToken::new(),100);
+    |                     ^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:132:31
+    |
+132 |     let(backend,cache,_drops)=fixture(2);
+    |                               ^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:134:22
+    |
+134 |     let first=replay(cache.clone(),backend.clone(),cancel.clone(),100);
+    |                      ^^^^^^^^^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+error[E0277]: the size for values of type `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>` cannot be known at compilation time
+   --> crates/gpu-smt-engine/tests/failure_cache.rs:135:23
+    |
+135 |     let second=replay(cache,backend.clone(),CancellationToken::new(),80);
+    |                       ^^^^^ doesn't have a size known at compile-time
+    |
+    = help: the trait `Sized` is not implemented for `dyn FailureReplayBackend<Exception = ..., Key = ..., Record = ..., State = ...>`
+note: required by an implicit `Sized` bound in `FailureCache`
+   --> crates/gpu-smt-engine/src/failure.rs:27:25
+    |
+ 27 | pub struct FailureCache<B: FailureReplayBackend> {
+    |                         ^ required by the implicit `Sized` requirement on this type parameter in `FailureCache`
+    = note: the full name for the type has been written to '/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/failure_cache-b309b309812ace2e.long-type-17404217083180793019.txt'
+    = note: consider using `--verbose` to print the full type name to the console
+
+Some errors have detailed explanations: E0277, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: could not compile `gpu-smt-engine` (test "failure_cache") due to 15 previous errors

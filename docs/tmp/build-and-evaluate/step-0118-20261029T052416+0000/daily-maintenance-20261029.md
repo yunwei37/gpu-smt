@@ -173,3 +173,12 @@ API/6GiB whole-collection stopping. Own-signal denial prevents safe capture,
 not Rust implementation. Preserve unavailable lab data and don't borrow its
 denominator. Next substantive available work is public/dynamic and concurrent
 failure-cache semantics,not another repeated positive native control or queue.
+
+### Public extension means a consumer can actually use it
+Step0148's external dyn-backend fixture first failed the cache's hidden Sized
+bound. Three ?Sized additions fix actual extensibility without another crate
+or runtime layer. Suspended public consumers then verify clear/generation/
+cancellation lifetime contracts using Send/notSync state.11focused tests pass,
+along with clippy/example/docs. This remains an unenabled library component,
+not a measured failure-reuse method;do not let good OSS tests substitute for
+the missing native workload evidence or lower the capture safety requirement.

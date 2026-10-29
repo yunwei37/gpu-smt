@@ -1,0 +1,16 @@
+   Compiling gpu-smt-engine v0.1.0 (/workspaces/repository/crates/gpu-smt-engine)
+    Finished `test` profile [unoptimized] target(s) in 3.58s
+     Running unittests src/lib.rs (/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/gpu_smt_engine-264c4900188df675)
+
+running 8 tests
+test failure::tests::applies_failed_transition_and_debits_once_without_a_source_verdict ... ok
+test failure::tests::backend_revalidates_scope_after_lookup_and_propagates_faults ... ok
+test failure::tests::cancellation_before_lookup_and_during_validation_preserves_state ... ok
+test failure::tests::insufficient_budget_and_backend_rejection_commit_no_effects ... ok
+test failure::tests::misses_and_unsupported_inputs_preserve_original_execution ... ok
+test failure::tests::nonreplayable_completion_cannot_retain_a_previous_ordinary_failure ... ok
+test failure::tests::producer_scope_is_captured_before_restart_not_relabelled_at_insertion ... ok
+test failure::tests::replay_and_record_destruction_run_outside_the_metadata_lock ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.00s
+

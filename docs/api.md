@@ -25,6 +25,14 @@ gpu-smt-core exports FailureReplayBackend and TacticCompletion; gpu-smt-engine
 exports FailureCache and its opaque FailureInput. This additive experimental
 0.1 library API has no CLI/HTTP option and is not used by Engine verification.
 
+The store accepts a concrete backend or dyn FailureReplayBackend with its
+associated types specified. Native State is exclusively owned and needs Send,
+not Sync; no extra sharing guarantee is inferred. Public integration fixtures
+exercise two suspended simulated replays:clear preserves their owned records
+but prevents new hits,generation changes require unchanged fallback,and one
+consumer's cancellation does not cancel another. These are API/lifetime
+contracts,not native state qualification or workload parallel speedup.
+
 The backend defines its exact Key, owned Record, exclusive State and native
 Exception types.
 replay_input returns a coherent scope/key only for supported, replay-qualified

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6,7",
+    "cargo",
+    "test",
+    "-p",
+    "gpu-smt-engine",
+    "--test",
+    "failure_cache",
+    "--no-run",
+    "--locked"
+  ],
+  "exit_code": 101
+}
