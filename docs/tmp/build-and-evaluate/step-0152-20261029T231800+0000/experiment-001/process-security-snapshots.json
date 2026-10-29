@@ -1,0 +1,125 @@
+{
+  "utc": "2026-10-29T23:18:01.019126+00:00",
+  "transport": "existing G10 SSH+CRI exec into same observed dev container;no new container",
+  "container_id": "4d5f0881b6627a12033b972c785f86830293d3b834e00992bd40d1d02c790f76",
+  "parent": {
+    "pid": 13366,
+    "ppid": 0,
+    "pgid": 13366,
+    "sid": 13366,
+    "apparmor": "cri-containerd.apparmor.d//&unconfined (enforce)",
+    "status": {
+      "Name": "python3",
+      "Pid": "13366",
+      "PPid": "0",
+      "TracerPid": "0",
+      "Uid": "0\t0\t0\t0",
+      "Gid": "0\t0\t0\t0",
+      "NSpid": "13366",
+      "NSpgid": "13366",
+      "NSsid": "13366",
+      "CapInh": "0000000000000000",
+      "CapPrm": "00000000a80425fb",
+      "CapEff": "00000000a80425fb",
+      "CapBnd": "00000000a80425fb",
+      "CapAmb": "0000000000000000",
+      "NoNewPrivs": "0",
+      "Seccomp": "0",
+      "Seccomp_filters": "0"
+    },
+    "cgroup": "0::/\n",
+    "uid_map": "         0          0 4294967295\n",
+    "gid_map": "         0          0 4294967295\n",
+    "namespaces": {
+      "pid": "pid:[4026534045]",
+      "pid_for_children": "pid:[4026534045]",
+      "user": "user:[4026531837]",
+      "mnt": "mnt:[4026534044]",
+      "cgroup": "cgroup:[4026534054]"
+    }
+  },
+  "children": [
+    {
+      "start_new_session": false,
+      "exit_code": 0,
+      "snapshot": {
+        "pid": 13374,
+        "ppid": 13366,
+        "pgid": 13366,
+        "sid": 13366,
+        "apparmor": "cri-containerd.apparmor.d//&unconfined (enforce)",
+        "status": {
+          "Name": "python3",
+          "Pid": "13374",
+          "PPid": "13366",
+          "TracerPid": "0",
+          "Uid": "0\t0\t0\t0",
+          "Gid": "0\t0\t0\t0",
+          "NSpid": "13374",
+          "NSpgid": "13366",
+          "NSsid": "13366",
+          "CapInh": "0000000000000000",
+          "CapPrm": "00000000a80425fb",
+          "CapEff": "00000000a80425fb",
+          "CapBnd": "00000000a80425fb",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "0",
+          "Seccomp": "0",
+          "Seccomp_filters": "0"
+        },
+        "cgroup": "0::/\n",
+        "uid_map": "         0          0 4294967295\n",
+        "gid_map": "         0          0 4294967295\n",
+        "namespaces": {
+          "pid": "pid:[4026534045]",
+          "pid_for_children": "pid:[4026534045]",
+          "user": "user:[4026531837]",
+          "mnt": "mnt:[4026534044]",
+          "cgroup": "cgroup:[4026534054]"
+        }
+      }
+    },
+    {
+      "start_new_session": true,
+      "exit_code": 0,
+      "snapshot": {
+        "pid": 13375,
+        "ppid": 13366,
+        "pgid": 13375,
+        "sid": 13375,
+        "apparmor": "cri-containerd.apparmor.d//&unconfined (enforce)",
+        "status": {
+          "Name": "python3",
+          "Pid": "13375",
+          "PPid": "13366",
+          "TracerPid": "0",
+          "Uid": "0\t0\t0\t0",
+          "Gid": "0\t0\t0\t0",
+          "NSpid": "13375",
+          "NSpgid": "13375",
+          "NSsid": "13375",
+          "CapInh": "0000000000000000",
+          "CapPrm": "00000000a80425fb",
+          "CapEff": "00000000a80425fb",
+          "CapBnd": "00000000a80425fb",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "0",
+          "Seccomp": "0",
+          "Seccomp_filters": "0"
+        },
+        "cgroup": "0::/\n",
+        "uid_map": "         0          0 4294967295\n",
+        "gid_map": "         0          0 4294967295\n",
+        "namespaces": {
+          "pid": "pid:[4026534045]",
+          "pid_for_children": "pid:[4026534045]",
+          "user": "user:[4026531837]",
+          "mnt": "mnt:[4026534044]",
+          "cgroup": "cgroup:[4026534054]"
+        }
+      }
+    }
+  ],
+  "signals_sent": false,
+  "security_configuration_changed": false
+}

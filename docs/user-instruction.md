@@ -222,3 +222,8 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 ## 2026-10-29 — verbatim preserve cluster CronJobs
 
 （Claude 转达用户要求）用户原话：「旧的集群上面的定时任务能不能不要动?」。集群上现有的定时任务（agent-duties、各类 backup/dump、archive 等 CronJob）一律不要修改、暂停、删除或手动触发，也不要为了 G10 上的工作去改它们的调度。G10 是 control-plane + etcd 节点，今天 API 已经几次短暂不可达；你在 G10 上跑重负载时注意别把它压垮，影响这些定时任务。其余照常推进，每一步 commit/push，由本线程自己完成。
+
+
+## 2026-10-29 — verbatim read-only signal diagnosis and engine integration
+
+（Claude 督促）goal 仍是 blocked，本轮结束后不会自动续上，请收到这条后接着做。G10 上同 UID 杀自有子进程返回 EPERM，先只读查清原因：看 /proc/self/attr/current 和容器的 AppArmor/seccomp 配置，以及子进程是否被放进了别的 PID 命名空间或 cgroup。把结论写进记录，不改安全配置。查清之前继续推进不需要原生长采集的工作：失败缓存接进引擎（默认关闭）、Rust 引擎开源整理、另外几个方向的离线分析。每一步 commit/push，由本线程自己完成。
