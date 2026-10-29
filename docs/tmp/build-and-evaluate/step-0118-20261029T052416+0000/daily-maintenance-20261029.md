@@ -109,3 +109,13 @@ landed on a smaller node without CPUs8–11,so silently restarting would introdu
 both safety and measurement errors. The next substantive action is restoring
 the existing approved resource point,then finishing the8031cell measurement.
 No new logger,proxy experiment or negative research conclusion replaces it.
+
+
+### Native failure reuse — determine state effects,not just key equality
+
+While hardware approval is pending,step0141 traced the pinned runtime handler
+and dispatcher. The elaborator already packages ordinary exceptions with state
+and has heartbeat-aware full snapshots;neither primitive is a contribution for
+us. A prepared native control distinguishes exception-only replay from post-
+error effects. It is unexecuted/custom,so real expensive-tactic coverage/cost
+still comes only from the incomplete capture. No new logger or experiment.

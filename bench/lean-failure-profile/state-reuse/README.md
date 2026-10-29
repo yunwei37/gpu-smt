@@ -184,3 +184,15 @@ See step0140 for raw event evidence, exact recovery scope and prepared input.
 Do not label missing/evicted data as ordinary tactic failures or pool clocks
 across node changes. Rebuild frozen native modules only at the approved resource
 point before resuming the finite plan.
+
+
+## Ordinary failure replay boundary
+
+The pinned dispatcher can rethrow an ordinary exception with its failed
+post-state. Our runtime-exception observer does not itself roll back that state.
+An observed input match and identical exception text do not certify replay.
+Full snapshots with heartbeat debit already exist upstream,with explicitly
+approximate overhead accounting. See [source audit and unexecuted control](../../../docs/tmp/build-and-evaluate/step-0141-20261029T182000+0000/experiment-001/source-analysis.md).
+No producer snapshot may be transplanted across candidates without compatible
+entry state/identity mapping. Complete the selected measurement before claiming
+failure-reuse coverage or benefit;this control is not workload evidence.
