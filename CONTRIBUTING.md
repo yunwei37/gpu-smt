@@ -24,7 +24,7 @@ Workspace's existing full collection:
 
     LEAN_REPL=/absolute/path/to/repl LEAN_PROJECT=/absolute/path/to/project \
       cargo test -p gpu-smt-lean --test native_differential \
-        native_accept_reject_and_sorry_match_raw_stock_repl -- --ignored
+        native_task_memory_accept_reject_and_sorry_match_raw_stock_repl -- --ignored
 
 CI runs the native contract against pinned official Lean4.18/REPL sources.
 The separate optional prepared-parent test also requires LEAN_PREPARED_HOST
