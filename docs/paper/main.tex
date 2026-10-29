@@ -764,7 +764,7 @@ effective native tactic implementation. Neither the historical time difference
 nor the engine component ratio identifies a resource-layer effect.
 The corrected four-worker comparison loads the same retained ordinary Mathlib
 native library in both paths, without the counterexample wrapper or external
-oracle. Table~\ref{tab:corrected-warm-resource} reports its complete warm cell
+oracle. Table~\ref{tab:corrected-warm-resource} reports the complete pair
 on the original 7,808 miniF2F candidates, under the same CPUs 8--11,
 48~GiB sampled aggregate RSS budget, unlimited per-process address space
 and 300-second admitted-attempt allowance.
@@ -772,21 +772,22 @@ and 300-second admitted-attempt allowance.
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lr}
+\begin{tabular}{lrr}
 \toprule
-Warm-cell measure & Observed value \\
+Measure & Four-warm & Engine \\
 \midrule
-Accepted candidates & 3,014 \\
-Rejected candidates & 4,668 \\
-Timeouts & 85 \\
-Resource failures & 41 \\
-External whole elapsed (s) & 25,176.49 \\
-Internal whole elapsed (s) & 25,175.27 \\
+Accepted candidates & 3,014 & 3,014 \\
+Rejected candidates & 4,668 & 4,668 \\
+Timeouts & 85 & 85 \\
+Resource failures & 41 & 41 \\
+External whole elapsed (s) & 25,176.49 & 20,323.01 \\
+Internal whole elapsed (s) & 25,175.27 & 20,322.83 \\
 \bottomrule
 \end{tabular}
-\caption{Complete corrected four-warm resource baseline for all 7,808 original
-miniF2F candidates. The corresponding engine cell is not yet complete, so the
-table establishes neither accepted-set parity nor a comparative speedup.}
+\caption{Complete corrected resource comparison on all 7,808 original miniF2F
+candidates. Both paths preserve the same final status for every candidate in
+this single warm-first shared-host pair. Retry ordering and affinity differ,
+so the elapsed ratio does not isolate copy-on-write.}
 \label{tab:corrected-warm-resource}
 \end{table}
 
@@ -796,17 +797,42 @@ The 7,808 ordinary attempts include 52 watchdog preemptions, each followed by
 one exclusive retry. Those retries end in 41 resource failures and 11 timeouts,
 and their serial admitted envelopes sum to 12,106.92 seconds.
 Final resource failures retain attributed watchdog records rather than native
-allocator exceptions. The one-second aggregate RSS observations peak at
-48.77~GiB, including 93 over-budget samples and 93 recorded preemptions.
-Sampling does not enforce a hard RSS quota.
+allocator exceptions. Warm aggregate RSS observations peak at
+48.77~GiB, with 93 over-budget samples and recorded preemptions. The engine
+peaks at 48.81~GiB with 83 such samples and preemptions.
+One-second sampling does not enforce a hard RSS quota.
 
 Retry ordering remains a comparison boundary. The frozen warm adapter drains
 ordinary peers for immediate resource retries, whereas the engine finishes its
 registered ordinary frontier before exclusive retries. Any complete comparison
 therefore measures these resource paths, including retry ordering, rather than
 isolating copy-on-write.
-\missing{Complete the corrected engine cell and compare external whole time,
-accepted IDs, full native responses, operational outcomes and resources.}
+The external elapsed ratio is $1.23882\times$, or 19.28\% less time for the
+engine in this comparison. Exact final status and accepted-ID sets match,
+including all resource failures and timeouts. Engine execution has 7,850
+physical attempts, compared with 7,860 for warm execution. One prepared parent
+serves the ordinary frontier, with 42 fresh exclusive resource retries and
+18 other fresh fallbacks for different imports. Preparation, native work,
+queueing, fallback and retirement remain charged.
+
+Native response artifacts are not byte-identical. All 7,682 available raw
+payload pairs differ. A labelled secondary comparison removes only top-level
+environment handles and empty \texttt{ast} fields, leaving 23 rejected-source
+differences. Seven contain embedded diagnostic coordinates offset by three
+lines, and 16 differ in omitted versus null \texttt{endPos} fields. All 126
+operational error strings differ as well. We retain these responses without
+normalizing diagnostic text or claiming full artifact transparency.
+
+The slowest 1\% and 10\% of warm admitted-attempt envelopes select 79 and
+781 candidates. Their statuses match exactly. Their cumulative warm envelopes
+are 28,077.95 and 52,682.63 seconds, compared with 24,479.05 and 49,569.31
+seconds of corresponding engine native attempts. These sums overlap across
+workers and use different per-attempt boundaries, so they do not estimate
+paired arrival-latency speedups. Single order, shared-host support work,
+retry ordering and affinity limit the whole-time comparison. Resource
+primitives remain established techniques, rather than a new workload method.
+\missing{Whole-run repetition, matched-order attribution and the promised
+offered-load, scaling and complete observable-behavior evidence.}
 
 \paragraph{Interpreting low concurrency.}
 Registered native process lifetimes account for 10,375.98 seconds with one

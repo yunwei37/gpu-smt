@@ -183,6 +183,8 @@ has no useful extra GPU gain;overlapping fallback totals are not strict ceilings
 E038,defeq/metadata/declaration,SMT-prefix and retained SHRED/ProofNet results stay
 frozen. The [complete previous frontier](tmp/build-and-evaluate/step-0105-20261028T131753+0000/evaluation-history-through-1274950.md.gz) is losslessly archived;its
 relative links were authored from docs/evaluation.md. A [readable pinned parent](https://github.com/yunwei37/gpu-smt/blob/1274950dfc2307b178d07a6d75165c780916036e/docs/evaluation.md)
-retains those links and earlier archives. The unchanged36-page
-[paper](paper/main.tex) remains incomplete;four-RQ final evidence,novelty and
-independent audit are unfulfilled. No acceptance or project-completion claim.
+retains those links and earlier archives. The current37-page
+[paper](paper/main.tex) includes the complete corrected resource table,with
+[actual targeted compile/layout evidence](tmp/build-and-evaluate/step-0120-20261029T053959+0000/paper-check.json).
+Four-RQ final evidence,novelty and independent audit remain unfulfilled.
+No acceptance or project-completion claim.

@@ -24,3 +24,10 @@ At05:35:59UTC the requested fixed42fresh-native point actually starts after
 complete7808result publication. FirstREPL maps the ordinary native library,
 has unlimitedAS andCPU8–11. Its historical missing task_idis explicit;code
 and original deadline/reuse remain unchanged. Complete outcomes remain pending.
+
+
+At05:40UTC complete7808resource results enter the paper's two-path table.
+The37-pagePDFcompiles and targeted pages12–15are inspected. Preserve23native
+diagnostic/optional-field and126operational-string differences,plus retry-order
+causal limits. This factual integration does not turn resource primitives into
+novelty. The fixed42point remains the only actual native collection.
