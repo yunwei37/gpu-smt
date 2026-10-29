@@ -136,3 +136,11 @@ process restart; never combine their numeric IDs across segments. No hidden-stat
 post-error,heartbeat or diagnostic replay certificate is implied by a match.
 Tests include the actual retained positive-control stream and real low-threshold
 watchdog injection; existing benchmark-smoke CI discovers them without a new job.
+
+Coverage analysis also reports per-kind capture/completed-action nanoseconds,
+input-eligibility reasons,and completed non-operational/non-limit sources with
+wrappers but no runtime observation. A source with zero wrapped units is separate
+from a wrapped-but-unreached source. Partially reached units inside a source are
+not inferred by subtracting runtime calls from Syntax counts:one unit may run
+many times,and the current record has no complete per-unit inventory. Open calls
+retain unknown action completion;none of these counts certifies failure replay.

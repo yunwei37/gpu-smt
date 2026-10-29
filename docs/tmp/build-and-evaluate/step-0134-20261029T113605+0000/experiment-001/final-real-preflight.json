@@ -1,0 +1,178 @@
+{
+  "terminal": {
+    "state": "complete",
+    "planned": 6,
+    "native_end_rows": 6,
+    "operational_attempts": 0,
+    "exclusive_retries": 0,
+    "segments": 1,
+    "seconds": 13.750968881184235,
+    "sampled_peak_RSS_bytes": 8585854976,
+    "budget_bytes": 51539607552,
+    "watchdog_sampling_seconds": 1,
+    "fixed_AS": false,
+    "cpu_eligibility": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "proof_result_reuse": false,
+    "complete_replay_qualification": false
+  },
+  "client_exit": {
+    "error": null,
+    "state": "returned"
+  },
+  "collection_complete": true,
+  "final_cells_returned": 6,
+  "attempt_outcomes": [
+    {
+      "mode": "import-control",
+      "status": "native_error",
+      "count": 2
+    },
+    {
+      "mode": "observe",
+      "status": "native_error",
+      "count": 2
+    },
+    {
+      "mode": "original",
+      "status": "native_error",
+      "count": 2
+    }
+  ],
+  "final_outcomes": [
+    {
+      "mode": "import-control",
+      "status": "native_error",
+      "count": 2
+    },
+    {
+      "mode": "observe",
+      "status": "native_error",
+      "count": 2
+    },
+    {
+      "mode": "original",
+      "status": "native_error",
+      "count": 2
+    }
+  ],
+  "datasets": {
+    "minif2f": [
+      {
+        "mode": "import-control",
+        "status": "native_error",
+        "count": 2
+      },
+      {
+        "mode": "observe",
+        "status": "native_error",
+        "count": 2
+      },
+      {
+        "mode": "original",
+        "status": "native_error",
+        "count": 2
+      }
+    ]
+  },
+  "watchdog_events": 0,
+  "unresolved_native_exits": [],
+  "exclusive_retry_attempts": 0,
+  "late_native_completions": 0,
+  "paired_status_differences": [],
+  "paired_raw_diagnostic_differences": [],
+  "segments": [
+    {
+      "native_sources": 6,
+      "native_error_sources": 6,
+      "observed_begins": 4,
+      "completed_observations": 4,
+      "open_observations": [],
+      "unsupported_inputs": 0,
+      "input_eligibility_counts": {
+        "observed_input_only": 4
+      },
+      "observed_cost_by_kind": {
+        "Lean.Parser.Tactic.simpAll": {
+          "begins": 2,
+          "completed": 2,
+          "open": 0,
+          "unsupported_inputs": 0,
+          "capture_ns": 313449904,
+          "completed_action_ns": 29678602,
+          "outcomes": {
+            "returned": 2
+          }
+        },
+        "Mathlib.Tactic.normNum": {
+          "begins": 1,
+          "completed": 1,
+          "open": 0,
+          "unsupported_inputs": 0,
+          "capture_ns": 359478,
+          "completed_action_ns": 122107329,
+          "outcomes": {
+            "returned": 1
+          }
+        },
+        "nlinarith": {
+          "begins": 1,
+          "completed": 1,
+          "open": 0,
+          "unsupported_inputs": 0,
+          "capture_ns": 501052,
+          "completed_action_ns": 8191894,
+          "outcomes": {
+            "native_error": 1
+          }
+        }
+      },
+      "completed_observe_source_coverage": {
+        "sources": 2,
+        "sources_with_runtime_observations": 2,
+        "wrapped_but_unreached_sources": [],
+        "wrapped_but_unreached_outer_units": 0,
+        "sources_with_zero_wrapped_outer_units": 0,
+        "missing_wrapper_count_sources": 0,
+        "scope": "Completed non-operational/non-limit observe-mode sources only; other outcomes stay separate. Not unique runtime invocations or gain. No observation before whole-source timeout remains operational/unknown."
+      },
+      "excluded_operational_or_limit_calls": 0,
+      "outcomes": {
+        "returned": 3,
+        "native_error": 1
+      },
+      "completed_input_match_occurrences": 0,
+      "repeated_ordinary_error_occurrences": 0,
+      "same_generation_input_matches": 0,
+      "different_generation_input_matches": 0,
+      "unobserved_generation_input_matches": 0,
+      "observed_repeated_error_wall_seconds": 0.0,
+      "repeated_ordinary_errors_by_kind": {},
+      "cross_source_repeated_ordinary_errors": 0,
+      "cross_source_repeated_error_seconds": 0.0,
+      "within_source_repeated_ordinary_errors": 0,
+      "repeated_outcome_changes": [],
+      "unstable_input_keys": [],
+      "capture_seconds": 0.314310434,
+      "observed_action_seconds": 0.159977825,
+      "repeats": [],
+      "errors": [],
+      "unmatched_end_calls": [],
+      "complete_replay_certification": false,
+      "complete_state_hit_count": null,
+      "end_to_end_speedup": null,
+      "scope": "One process segment; observed input matches only. Operational/limit sources and outcome-unstable keys receive no ordinary-failure cost credit. Generation/hidden/post-error/heartbeat/diagnostic replay remains unqualified.",
+      "segment": 0
+    }
+  ],
+  "observed_repeated_error_wall_seconds": 0.0,
+  "repeated_ordinary_error_occurrences": 0,
+  "complete_state_hit_count": null,
+  "complete_replay_certification": false,
+  "end_to_end_speedup": null,
+  "scope": "Selected outer-unit population. No joins across native process segments. Final outcomes never discard prior operational attempts. Raw clock sums are not warm-service speedup or a global Amdahl bound. An incomplete collection is not a population result; process retirement is checked separately."
+}

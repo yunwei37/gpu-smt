@@ -88,6 +88,30 @@ def analyze_raw(path, eligible_sources=None):
                          if not diagnostic_limits(r)}
     if eligible_sources is not None:
         completed_sources &= eligible_sources
+    # Syntax units and runtime invocations are different populations: a
+    # wrapped unit may never run, or run many times. Do not subtract counts.
+    source_calls = collections.Counter(call_sources.values())
+    observed_sources = [r for r in sources if r["mode"] == "observe"
+                        and (r["id"], r["mode"]) in completed_sources]
+    unreached = [r for r in observed_sources
+                 if r.get("wrapped_outer_units", 0) > 0
+                 and not source_calls[(r["id"], r["mode"])]]
+    by_kind_cost = {}
+    for call, start in begins.items():
+        bucket = by_kind_cost.setdefault(start["kind"], dict(
+            begins=0, completed=0, open=0, unsupported_inputs=0,
+            capture_ns=0, completed_action_ns=0, outcomes={}))
+        bucket["begins"] += 1
+        bucket["capture_ns"] += start["capture_ns"]
+        bucket["unsupported_inputs"] += start["key"] is None
+        end = ends.get(call)
+        if end is None:
+            bucket["open"] += 1
+        else:
+            bucket["completed"] += 1
+            bucket["completed_action_ns"] += end["elapsed_ns"]
+            name = end["outcome"]
+            bucket["outcomes"][name] = bucket["outcomes"].get(name, 0) + 1
     prior, repeats, outcomes, changes = {}, [], collections.Counter(), []
     for call, start in sorted(begins.items(), key=lambda item: positions[(item[0], "begin")]):
         end = ends.get(call)
@@ -130,6 +154,22 @@ def analyze_raw(path, eligible_sources=None):
         observed_begins=len(begins), completed_observations=len(ends),
         open_observations=sorted(set(begins)-set(ends)),
         unsupported_inputs=sum(r["key"] is None for r in begins.values()),
+        input_eligibility_counts=dict(collections.Counter(
+            r.get("eligibility", "unrecorded") for r in begins.values())),
+        observed_cost_by_kind=by_kind_cost,
+        completed_observe_source_coverage=dict(
+            sources=len(observed_sources),
+            sources_with_runtime_observations=sum(
+                source_calls[(r["id"], r["mode"])] > 0 for r in observed_sources),
+            wrapped_but_unreached_sources=[r["id"] for r in unreached],
+            wrapped_but_unreached_outer_units=sum(r["wrapped_outer_units"] for r in unreached),
+            sources_with_zero_wrapped_outer_units=sum(
+                r.get("wrapped_outer_units") == 0 for r in observed_sources),
+            missing_wrapper_count_sources=sum(
+                "wrapped_outer_units" not in r for r in observed_sources),
+            scope="Completed non-operational/non-limit observe-mode sources only; "
+                  "other outcomes stay separate. Not unique runtime invocations or gain. "
+                  "No observation before whole-source timeout remains operational/unknown."),
         excluded_operational_or_limit_calls=sum(
             call_sources[c] not in completed_sources for c in begins),
         outcomes=dict(outcomes), completed_input_match_occurrences=len(repeats),

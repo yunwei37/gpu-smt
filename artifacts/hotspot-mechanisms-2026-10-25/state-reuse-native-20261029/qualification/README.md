@@ -6,7 +6,11 @@ match expected error/accepted outcomes and raw diagnostics. The duplicate
 ordinary nlinarith failure matches key3;changed target/options/context differ.
 One norm_num normal return leaves a goal,so it is not an ordinary tactic error.
 -RealminiF2F897/911:all6mode/source outcomes and raw diagnostics match;both
-reject before the selected nlinarith. Text presence is not runtime coverage.
+reject. The raw stream has one simp_all call on897,and simp_all,norm_num and
+one ordinary nlinarith error on911. The earlier statement that both reject
+before nlinarith was incorrect;the [step0134 correction](../../../../docs/tmp/build-and-evaluate/step-0134-20261029T113605+0000/step-report.md)
+preserves that historical mistake and its raw evidence. Text presence alone is
+not runtime coverage.
 -RealacceptedminiF2F7/15plus ordinary failure,changed simp environment and
 unresolved-local control:all15outcomes/raw diagnostics match across modes.
 The changed environment differs;unresolved local fails before observation.

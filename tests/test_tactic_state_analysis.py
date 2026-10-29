@@ -59,6 +59,61 @@ class TacticStateAnalysis(unittest.TestCase):
         self.assertFalse(result["complete_replay_certification"])
         self.assertIsNone(result["complete_state_hit_count"])
 
+    def test_retained_rejected_source_really_reaches_arithmetic_failure(self):
+        directory = ROOT/"artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/qualification/real-preflight"
+        result = ANALYSIS.analyze_collection(directory)
+        self.assertEqual(result["final_cells_returned"], 6)
+        segment = result["segments"][0]
+        self.assertEqual(segment["completed_observations"], 4)
+        cost = segment["observed_cost_by_kind"]["nlinarith"]
+        self.assertEqual(cost["completed"], 1)
+        self.assertEqual(cost["outcomes"], {"native_error": 1})
+        self.assertEqual(segment["completed_observe_source_coverage"]["sources_with_runtime_observations"], 2)
+
+    def test_retained_unresolved_local_is_unreached_not_unsupported_hit(self):
+        directory = ROOT/"artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/qualification/input-generation-preflight"
+        result = ANALYSIS.analyze_collection(directory)["segments"][0]
+        coverage = result["completed_observe_source_coverage"]
+        self.assertEqual(coverage["sources"], 5)
+        self.assertEqual(coverage["sources_with_runtime_observations"], 4)
+        self.assertEqual(coverage["wrapped_but_unreached_sources"], ["unresolved-local"])
+        self.assertEqual(coverage["wrapped_but_unreached_outer_units"], 1)
+        self.assertEqual(result["unsupported_inputs"], 0)
+        self.assertEqual(result["input_eligibility_counts"], {"observed_input_only": 5})
+        kinds = result["observed_cost_by_kind"].values()
+        self.assertEqual(sum(k["completed"] for k in kinds), result["completed_observations"])
+        self.assertAlmostEqual(sum(k["completed_action_ns"] for k in kinds)/1e9,
+                               result["observed_action_seconds"])
+
+    def test_repeated_runtime_calls_are_not_subtracted_from_syntax_units(self):
+        result = self.analyze([
+            source("candidate_begin", "unreached"),
+            completed("unreached", wrapped_outer_units=2),
+            source("candidate_begin", "repeated"), begin(0), end(0), begin(1), end(1),
+            completed("repeated", wrapped_outer_units=1),
+            source("candidate_begin", "no-wrapper"),
+            completed("no-wrapper", wrapped_outer_units=0),
+        ])
+        coverage = result["completed_observe_source_coverage"]
+        self.assertEqual(coverage["sources"], 3)
+        self.assertEqual(coverage["wrapped_but_unreached_sources"], ["unreached"])
+        self.assertEqual(coverage["wrapped_but_unreached_outer_units"], 2)
+        self.assertEqual(coverage["sources_with_zero_wrapped_outer_units"], 1)
+        self.assertEqual(result["observed_cost_by_kind"]["nlinarith"]["begins"], 2)
+
+    def test_unsupported_and_open_calls_keep_their_kind_cost_denominator(self):
+        unsupported = dict(begin(0, None), eligibility="unresolved_target")
+        opened = dict(begin(1), eligibility="observed_input_only")
+        result = self.analyze([source("candidate_begin"), unsupported, end(0),
+                               opened, completed(wrapped_outer_units=2)])
+        self.assertEqual(result["input_eligibility_counts"],
+                         {"unresolved_target": 1, "observed_input_only": 1})
+        cost = result["observed_cost_by_kind"]["nlinarith"]
+        self.assertEqual((cost["begins"], cost["completed"], cost["open"]), (2, 1, 1))
+        self.assertEqual((cost["capture_ns"], cost["completed_action_ns"]), (20, 100))
+        self.assertEqual(cost["unsupported_inputs"], 1)
+        self.assertEqual(result["repeated_ordinary_error_occurrences"], 0)
+
     def test_return_resource_limit_and_open_call_are_not_reusable_errors(self):
         result = self.analyze([
             source("candidate_begin"), begin(0), end(0, "returned"),
@@ -149,6 +204,7 @@ class TacticStateAnalysis(unittest.TestCase):
             (path/"results.jsonl").write_text(json.dumps(late)+"\n"+json.dumps(timeout)+"\n")
             result = ANALYSIS.analyze_collection(path)
             self.assertEqual(result["late_native_completions"], 1)
+            self.assertEqual(result["segments"][0]["completed_observe_source_coverage"]["sources"], 0)
             self.assertEqual(result["final_outcomes"],
                              [{"mode": "observe", "status": "timeout", "count": 1}])
             self.assertEqual(result["repeated_ordinary_error_occurrences"], 0)

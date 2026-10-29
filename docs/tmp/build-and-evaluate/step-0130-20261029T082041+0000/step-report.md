@@ -77,3 +77,12 @@ Archive/push this boundary and proceed to real selected-population measurement.
 This review is not independent audit or OSDIacceptance.
 
 Paper build actualexit0/4.004s,37pages/528350B;changedpage5rendered and viewed,legible. Existing underfull warnings retained;not full-layout/acceptance audit.
+
+## Forward correction — 2026-10-29,step0134
+
+E130.4's sentence that both897/911reject before selected nlinarith is incorrect.
+The unchanged retained real-preflight stream records4observer calls:897simp_all;
+911simp_all,norm_num,and nlinarith ending native_error. All6source/mode outcomes
+and raw diagnostic comparisons are still unchanged/equal. This correction
+changes no original raw data or proof status. See step0134's exact call list and
+regression;do not use the old sentence to infer zero arithmetic execution.

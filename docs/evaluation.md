@@ -246,5 +246,9 @@ population hit rate. Offline result analysis now separates original resource
 attempts/final retries, timeout/late returns, memory/heartbeat/recursion/interrupt
 diagnostics and explicit watchdog events. Completed ordinary-error costs require
 a prior completed producer in the same process; unstable outcomes and operational
-sources get no such credit. The existing selected-population capture remains on
+sources get no such credit. [Step0134](tmp/build-and-evaluate/step-0134-20261029T113605+0000/step-report.md)
+adds per-kind cost/eligibility and source-level reachability denominators,
+and corrects an old preflight reachability description from its raw calls;
+no source verdict or later positive-control match changes.
+The existing selected-population capture remains on
 its frozen qualified source,without an enabled cache or second collection.
