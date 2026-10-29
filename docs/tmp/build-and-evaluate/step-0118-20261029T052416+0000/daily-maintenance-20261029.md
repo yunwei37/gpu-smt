@@ -31,3 +31,11 @@ The37-pagePDFcompiles and targeted pages12–15are inspected. Preserve23native
 diagnostic/optional-field and126operational-string differences,plus retry-order
 causal limits. This factual integration does not turn resource primitives into
 novelty. The fixed42point remains the only actual native collection.
+
+While original42continues, distinguish actual false theorem heads from costly
+true finite counting. Prepare two credited, unexecuted Lean negation controls
+and compute exact retained task/header/status costs. The29resource failures in
+the true four-digit-count task prevent a broad false-goal shortcut. This is
+concrete failure-method preparation, not a new throughput result, novelty
+finding or benchmark correction. Continue native proof controls only after
+the existing42collection retires; no additional logging framework is needed.

@@ -1,0 +1,228 @@
+{
+  "population": 7808,
+  "source": "artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z",
+  "tasks": [
+    {
+      "task": "amc12a_2020_p10",
+      "interpretation": "Known false universal statement: n=1; certificate not yet checked here.",
+      "candidates": 32,
+      "exact_text_headers": [
+        {
+          "header": "theorem amc12a_2020_p10 (n : ℕ) (h₀ : 0 < n)\n    (h₁ : Real.logb 2 (Real.logb 16 n) = Real.logb 4 (Real.logb 4 n)) :\n    (List.sum (Nat.digits 10 n)) = 13 ",
+          "ids": [
+            "minif2f-576",
+            "minif2f-577",
+            "minif2f-578",
+            "minif2f-579",
+            "minif2f-580",
+            "minif2f-581",
+            "minif2f-582",
+            "minif2f-583",
+            "minif2f-584",
+            "minif2f-585",
+            "minif2f-586",
+            "minif2f-587",
+            "minif2f-588",
+            "minif2f-589",
+            "minif2f-590",
+            "minif2f-591",
+            "minif2f-592",
+            "minif2f-593",
+            "minif2f-594",
+            "minif2f-595",
+            "minif2f-596",
+            "minif2f-597",
+            "minif2f-598",
+            "minif2f-599",
+            "minif2f-600",
+            "minif2f-601",
+            "minif2f-602",
+            "minif2f-603",
+            "minif2f-604",
+            "minif2f-605",
+            "minif2f-606",
+            "minif2f-607"
+          ]
+        }
+      ],
+      "unmatched_sources": [],
+      "statuses": {
+        "lean_error": 31,
+        "resource_failure": 1
+      },
+      "admitted_attempt_envelopes_seconds_sum": 319.9419487018604,
+      "exclusive_envelopes_seconds_sum": 222.01189426891506
+    },
+    {
+      "task": "imo_1982_p1",
+      "interpretation": "Known false universal statement: bumped floor(n/3); certificate not yet checked here.",
+      "candidates": 32,
+      "exact_text_headers": [
+        {
+          "header": "theorem imo_1982_p1 (f : ℕ → ℕ)\n    (h₀ : ∀ m n, 0 < m ∧ 0 < n → f (m + n) - f m - f n = 0 ∨ f (m + n) - f m - f n = 1)\n    (h₁ : f 2 = 0) (h₂ : 0 < f 3) (h₃ : f 9999 = 3333) : f 1982 = 660 ",
+          "ids": [
+            "minif2f-1856",
+            "minif2f-1857",
+            "minif2f-1858",
+            "minif2f-1859",
+            "minif2f-1860",
+            "minif2f-1861",
+            "minif2f-1862",
+            "minif2f-1863",
+            "minif2f-1864",
+            "minif2f-1865",
+            "minif2f-1866",
+            "minif2f-1867",
+            "minif2f-1868",
+            "minif2f-1869",
+            "minif2f-1870",
+            "minif2f-1871",
+            "minif2f-1872",
+            "minif2f-1873",
+            "minif2f-1874",
+            "minif2f-1875",
+            "minif2f-1876",
+            "minif2f-1878",
+            "minif2f-1879",
+            "minif2f-1880",
+            "minif2f-1881",
+            "minif2f-1882",
+            "minif2f-1883",
+            "minif2f-1884",
+            "minif2f-1885",
+            "minif2f-1886",
+            "minif2f-1887"
+          ]
+        }
+      ],
+      "unmatched_sources": [
+        {
+          "id": "minif2f-1877",
+          "source": "None"
+        }
+      ],
+      "statuses": {
+        "lean_error": 30,
+        "timeout_error": 2
+      },
+      "admitted_attempt_envelopes_seconds_sum": 923.197817223845,
+      "exclusive_envelopes_seconds_sum": 300.0015607769601
+    },
+    {
+      "task": "amc12a_2020_p4",
+      "interpretation": "True finite-cardinality statement; not refuted by these controls.",
+      "candidates": 32,
+      "exact_text_headers": [
+        {
+          "header": "theorem amc12a_2020_p4 (S : Finset ℕ)\n    (h₀ : ∀ n : ℕ, n ∈ S ↔ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) :\n    S.card = 100 ",
+          "ids": [
+            "minif2f-3680",
+            "minif2f-3681",
+            "minif2f-3682",
+            "minif2f-3683",
+            "minif2f-3684",
+            "minif2f-3685",
+            "minif2f-3686",
+            "minif2f-3687",
+            "minif2f-3688",
+            "minif2f-3689",
+            "minif2f-3690",
+            "minif2f-3691",
+            "minif2f-3692",
+            "minif2f-3693",
+            "minif2f-3694",
+            "minif2f-3695",
+            "minif2f-3696",
+            "minif2f-3697",
+            "minif2f-3698",
+            "minif2f-3699",
+            "minif2f-3700",
+            "minif2f-3701",
+            "minif2f-3702",
+            "minif2f-3703",
+            "minif2f-3704",
+            "minif2f-3705",
+            "minif2f-3706",
+            "minif2f-3707",
+            "minif2f-3708",
+            "minif2f-3709",
+            "minif2f-3710",
+            "minif2f-3711"
+          ]
+        }
+      ],
+      "unmatched_sources": [],
+      "statuses": {
+        "lean_error": 3,
+        "resource_failure": 29
+      },
+      "admitted_attempt_envelopes_seconds_sum": 9596.644246362848,
+      "exclusive_envelopes_seconds_sum": 6417.686069664545
+    },
+    {
+      "task": "mathd_numbertheory_427",
+      "interpretation": "True divisor-sum statement; false prose arithmetic is not the Lean goal.",
+      "candidates": 32,
+      "exact_text_headers": [
+        {
+          "header": "theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, k) :\n    (∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k) = 25 ",
+          "ids": [
+            "minif2f-640",
+            "minif2f-641",
+            "minif2f-642",
+            "minif2f-643",
+            "minif2f-644",
+            "minif2f-645",
+            "minif2f-646",
+            "minif2f-647",
+            "minif2f-648",
+            "minif2f-649",
+            "minif2f-650",
+            "minif2f-651",
+            "minif2f-652",
+            "minif2f-653",
+            "minif2f-654",
+            "minif2f-655",
+            "minif2f-656",
+            "minif2f-657",
+            "minif2f-658",
+            "minif2f-659",
+            "minif2f-660",
+            "minif2f-661",
+            "minif2f-662",
+            "minif2f-663",
+            "minif2f-664",
+            "minif2f-665",
+            "minif2f-666",
+            "minif2f-667",
+            "minif2f-668",
+            "minif2f-669",
+            "minif2f-670",
+            "minif2f-671"
+          ]
+        }
+      ],
+      "unmatched_sources": [],
+      "statuses": {
+        "lean_error": 15,
+        "valid": 15,
+        "resource_failure": 2
+      },
+      "admitted_attempt_envelopes_seconds_sum": 827.3690132556949,
+      "exclusive_envelopes_seconds_sum": 444.1135017089546
+    }
+  ],
+  "finite_integer_sanity": {
+    "pairs": 729,
+    "all_pass": true,
+    "scope": "Finite arithmetic check only; not proof of the infinite hypothesis or execution of Lean certificates."
+  },
+  "lean_certificate_execution": "pending: one owned native collection already active",
+  "limits": [
+    "Text/task association is descriptive and is not a parser, context guard or production matcher.",
+    "No mathematical-falsity label authorizes rejecting source containing additional axioms or overridden behavior.",
+    "Known false statements are prior work, not our novelty; no benchmark correction is made.",
+    "Overlapping admitted attempt envelopes are not end-to-end wall time, CPU sums, Amdahl fractions or predicted savings.",
+    "Original timeout and resource-failure labels are preserved; no result is silently reclassified."
+  ]
+}

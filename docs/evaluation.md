@@ -141,6 +141,15 @@ and nine long calls;no certified full-state cycle/failure witness.
 times out on both48-source conditions;0/48reliable failure coverage.
 Closed-tail remains frozen0/71;branch counts/hashes are not failure proofs.
 
+[Known-statement controls](../artifacts/hotspot-mechanisms-2026-10-25/known-statement-controls-20261029/README.md)
+prepare two unexecuted Lean negation certificates for publicly known defects,
+not new discoveries or a deployed rejection rule. Exact retained theorem text
+matches32log/31Nat-subtraction sources;one literalNone remains unmatched.
+The true four-digit-cardinality task still has29resource failures. Its9596.64s
+admitted-envelope sum is overlapping cost,not workflow time or predicted gain.
+Finite arithmetic sanity/primary-source inspection do not certify native
+acceptance equivalence;actual Lean certificate checks await the active42point.
+
 [Recovery-boundary reuse](../artifacts/hotspot-mechanisms-2026-10-25/recovery-boundary-20261028T131753Z/README.md)
 recomputes the existing six native controls:an explicitly recovery-sensitive
 custom tactic changes accepted→rejected under generic recovery disabling.
