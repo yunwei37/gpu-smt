@@ -197,7 +197,15 @@ The pinned dispatcher can rethrow an ordinary exception with its failed
 post-state. Our runtime-exception observer does not itself roll back that state.
 An observed input match and identical exception text do not certify replay.
 Full snapshots with heartbeat debit already exist upstream,with explicitly
-approximate overhead accounting. See [source audit and unexecuted control](../../../docs/tmp/build-and-evaluate/step-0141-20261029T182000+0000/experiment-001/source-analysis.md).
+approximate overhead accounting. See [source audit and prepared control](../../../docs/tmp/build-and-evaluate/step-0141-20261029T182000+0000/experiment-001/source-analysis.md).
 No producer snapshot may be transplanted across candidates without compatible
 entry state/identity mapping. Complete the selected measurement before claiming
 failure-reuse coverage or benefit;this control is not workload evidence.
+
+
+The [G10 native semantic qualification](../../../docs/tmp/build-and-evaluate/step-0143-20261029T183313+0000/experiment-001/result-review.md)
+now checks that custom control:the original compiles and proves True;the
+exception-only substitution fails its post-state assertion. This establishes
+a replay obligation for that custom case,not selected expensive-tactic
+coverage or speedup. Its CPU6–7 development point is separate from the formal
+lab capture;the8031-cell measurement has not resumed on G10.

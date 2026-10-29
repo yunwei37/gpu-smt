@@ -1,0 +1,60 @@
+[
+  {
+    "name": "FailureReplayControl",
+    "utc": "2026-10-29T18:34:33.746779+00:00",
+    "command": [
+      "taskset",
+      "-c",
+      "6,7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/failure-replay-unit-20261029T183313Z/FailureReplayControl.olean",
+      "/workspaces/repository/docs/tmp/build-and-evaluate/step-0143-20261029T183313+0000/experiment-001/FailureReplayControl.lean"
+    ],
+    "exit_code": 0,
+    "expected_exit": 0,
+    "combined_peak_sampled_rss_bytes": 453607424,
+    "budget_abort": false,
+    "native_pid": 6218,
+    "native_birth": 1793298839.84,
+    "retired": true,
+    "toolchain": "Lean (version 4.9.0-rc1, x86_64-unknown-linux-gnu, commit be6c4894e0a6, Release)",
+    "cpu_ids": [
+      6,
+      7
+    ],
+    "node": "g10",
+    "scope": "Tiny semantic unit;not a population capture or performance comparison",
+    "fixed_AS": false
+  },
+  {
+    "name": "ExceptionOnlySubstitute",
+    "utc": "2026-10-29T18:34:35.754318+00:00",
+    "command": [
+      "taskset",
+      "-c",
+      "6,7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/failure-replay-unit-20261029T183313Z/ExceptionOnlySubstitute.olean",
+      "/workspaces/repository/docs/tmp/build-and-evaluate/step-0143-20261029T183313+0000/experiment-001/ExceptionOnlySubstitute.lean"
+    ],
+    "exit_code": 1,
+    "expected_exit": 1,
+    "combined_peak_sampled_rss_bytes": 25600000,
+    "budget_abort": false,
+    "native_pid": 6229,
+    "native_birth": 1793298872.9,
+    "retired": true,
+    "toolchain": "Lean (version 4.9.0-rc1, x86_64-unknown-linux-gnu, commit be6c4894e0a6, Release)",
+    "cpu_ids": [
+      6,
+      7
+    ],
+    "node": "g10",
+    "scope": "Tiny semantic unit;not a population capture or performance comparison",
+    "fixed_AS": false
+  }
+]

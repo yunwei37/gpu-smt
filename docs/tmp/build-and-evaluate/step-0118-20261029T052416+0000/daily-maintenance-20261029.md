@@ -134,3 +134,13 @@ It resolves aliases and checks the declared Workspace mount/device. Boundary
 regressions and actual G10 placement/negative CLI tests pass. The user explicitly
 requested this check;it is not a new resource/approval policy. No fsync timer,
 backup service or logging layer is added. Root self-review only.
+
+
+### G10 native unit result — the failure transition is observable
+
+Step0143 actually checked the prepared control with stock Lean4.9.0-rc1.
+Original passed;an exception-only replacement failed at the expected post-state
+assertion. Both retired,with outputs on PVC. This is a real small semantic
+qualification,not expensive-tactic workload coverage or a throughput point.
+The eventual method must preserve compatible failed state and fallback effects;
+waiting for the cohort data still cannot be replaced by more synthetic cases.
