@@ -202,3 +202,9 @@ before completion.12GiB cannot be raised through the current collector's options
 No Lean source executes. That is useful operational protection,not opportunity/
 speedup/novelty. Keep all duties/backups/dumps/archives intact and continue low
 load engineering;do not trade missing kill capability for a risky long run.
+
+Step0151 confirms4fa62e7's actual81-test CI success. Existing cluster duties/
+backups/dumps/archive schedules remain entirely outside our mutations and
+triggers. The implemented protection correctly refuses the current signal-denied
+startup;that is not permission to run heavy native work or claim under-load
+qualification. Preserve the shared control-plane and continue low-load work.
