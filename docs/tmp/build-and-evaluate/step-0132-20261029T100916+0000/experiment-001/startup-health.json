@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-29T10:11:53.752349+00:00",
+  "controller_same_birth_live": true,
+  "native_result_rows": 119,
+  "native_launches": [
+    {
+      "event": "launch",
+      "segment": 0,
+      "pid": 563114,
+      "birth": 1793268556.45,
+      "exclusive_retry": false,
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--load-dynlib=/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/modules/libStateReuseProfile.so",
+        "--run",
+        "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/source/StateReuseMeasure.lean",
+        "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/run/segment-0000/input.json",
+        "ack"
+      ],
+      "sources": 8031
+    }
+  ],
+  "native_operational_rows": 0,
+  "controller_stderr": "",
+  "native_terminal_present": false
+}

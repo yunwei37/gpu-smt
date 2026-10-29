@@ -1,0 +1,77 @@
+{
+  "state": "running",
+  "point": "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z",
+  "counts": {
+    "minif2f": 2045,
+    "proofnet": 632
+  },
+  "mode_order": [
+    "original",
+    "import-control",
+    "observe"
+  ],
+  "native_frontend_elaborations": 8031,
+  "unique_sources": 2677,
+  "source_bytes_unchanged": true,
+  "semantic_scope": "One serial process segment uses exact typed input equality with conservative opaque misses;no full-state replay certificate.",
+  "budget": {
+    "aggregate_RSS_bytes": 51539607552,
+    "sampling_seconds": 1,
+    "fixed_AS": false,
+    "cpus": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "active_candidates": 1
+  },
+  "request_seconds": 300,
+  "raw_data_scope": "All modes,failed/partial/late/resource records and segment boundaries retained;not a4workerthroughputcomparison.",
+  "prerequisites": "Review real24+safe injection actual terminal/retirement;no automatic fulllaunch.",
+  "source_git": "ae59c77281888d01fb9684c8712d58f966ea9880",
+  "freeze_utc": "2026-10-29T10:09:16.131083+00:00",
+  "source_snapshots": [
+    "StateReuseProfile.lean",
+    "StateReuseMeasure.lean",
+    "environment-equality.cpp",
+    "run.py",
+    "analyze.py",
+    "README.md",
+    "prepare.py"
+  ],
+  "source_and_module_snapshots_frozen": true,
+  "native_frontend_info_trees": true,
+  "proposed_key_exact_strategy_text": true,
+  "fresh_goal_generation_recorded_separately": true,
+  "matched_diagnostic_frontend_not_warm4performance": true,
+  "production_cache_enabled": false,
+  "node_memory_at_launch": {
+    "MemTotal": "131338424 kB",
+    "MemAvailable": "111714528 kB",
+    "SwapTotal": "8388604 kB",
+    "SwapFree": "6153604 kB"
+  },
+  "launch": {
+    "utc": "2026-10-29T10:09:16.131660+00:00",
+    "pid": 563113,
+    "start_ticks": 169992813,
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/source/run.py",
+      "--input",
+      "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/input.json.gz",
+      "--out",
+      "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/run",
+      "--context",
+      "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/native-context.json",
+      "--module-dir",
+      "/tmp/gpu-smt-state-reuse-populations-20261029T092230Z/modules"
+    ],
+    "source_git": "ae59c77281888d01fb9684c8712d58f966ea9880",
+    "scope": "Onefiniteoriginal/import-control/observe selected-population capture;notAIagent or replacementWorkspace.",
+    "native_frontend_elaborations": 8031,
+    "unique_sources": 2677,
+    "budget_bytes": 51539607552
+  }
+}

@@ -57,9 +57,9 @@ Corrected counts equal original accounting. No original input changes.
 
 ## Next actual measurement
 
-After the sole fixed42retires,use the authorized native profile to measure
-independent branch work versus construction and complete key equality/cost
-versus text candidates. Builtin4.9heartbeat replay explicitly approximates
+The user stops branch-parallel implementation. After corrected fixed42completion,
+the [native specified-input/cost measurement](../state-reuse-native-20261029/populations/README.md)
+compares runtime keys/error cost with text candidates;the earlier branch plan is superseded. Builtin4.9heartbeat replay explicitly approximates
 reuse overhead. Generic futures,LeanTree,Simp,Tactician andSHREDare prior work.
 No competitor reproduction,new oracle or enabled parallel/cache rule.
 

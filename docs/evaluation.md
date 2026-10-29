@@ -13,7 +13,8 @@ The matched four-warm Kimina versus repaired-engine full7808resource pair
 is complete with equal basic outcomes and19.28%less elapsed on this one point. Repair/measure resource performance before stacking
 task-memory,ranking,failure or LRAT gains. The latest user decision stops interval_cases parallel development and
 prioritizes measuring complete-state expensive tactic reuse,especially native
-strategy failures,after the corrected42capture retires. Timeout and memory
+strategy failures. The corrected42capture has completed;the current selected-population
+native input/cost capture is linked below. Timeout and memory
 failures are not interchangeable with tactic exceptions.
 The four continuing directions remain:
 the layered Rust engine,reliable early failure,multi-candidate inference and
@@ -103,8 +104,9 @@ explicit matched native-library selection. The corrected fixed42 cohort is
 prepared/rebound to13d4606. After actual full-pair retirement/review,it
 [started separately](../artifacts/engine-resource-profile-2026-10-25/solo42-native-library-20261029/README.md)
 at2026-10-29T05:35:59UTC,one four-core-eligible fresh native request at a time.
-The ordinary native library and unlimited-AS first engagement are observed;
-its own42outcomes remain pending. Do not report old41/1as this run.
+The ordinary native library and unlimited-AS point has now completed;its own
+[complete raw results](../artifacts/engine-resource-profile-2026-10-25/solo42-native-library-20261029/result.json)
+are retained separately. The earlier41/1record is not substituted for this run.
 
 [Complete four-warm full7808 leg](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/README.md)
 now returns3014valid/4668lean_error/85timeouts/41budget failures in25176.487277s
@@ -159,7 +161,8 @@ matches32log/31Nat-subtraction sources;one literalNone remains unmatched.
 The true four-digit-cardinality task still has29resource failures. Its9596.64s
 admitted-envelope sum is overlapping cost,not workflow time or predicted gain.
 Finite arithmetic sanity/primary-source inspection do not certify native
-acceptance equivalence;actual Lean certificate checks await the active42point.
+acceptance equivalence;those Lean certificate controls remain unexecuted and
+deferred behind the current tactic-input measurement,without an automatic queue.
 
 [Recovery-boundary reuse](../artifacts/hotspot-mechanisms-2026-10-25/recovery-boundary-20261028T131753Z/README.md)
 recomputes the existing six native controls:an explicitly recovery-sensitive
@@ -216,3 +219,22 @@ No acceptance or project-completion claim.
 ## Elastic branches and complete-state tactic caching — initial opportunity
 
 [Step0126](tmp/build-and-evaluate/step-0126-20261029T071858+0000/step-report.md) reuses the full process/Syntax populations and distinct historical480profile. The18.38%rooted count is ProofNet;miniF2Fis13.44%. Four named expensive outer tactics make461/3987and82/3957rooted repeats;complete-state hits/time remain unknown. Current42tail IDs have older CPUdominated73.04%byeqRefl,not the83timeoutgroup. Missing same-run dependencies/state/cost require the user-authorized profile after42. No parallel/cache mechanism or gain is enabled/claimed.
+
+
+## Native input matching and completed error cost — actual measurement
+
+[Step0131](tmp/build-and-evaluate/step-0131-20261029T091211+0000/step-report.md)
+qualifies the native boundary,not a cache:24real sources x3modesmatch statuses/
+raw diagnostics,4originalnativeREPLsourcesagree,and safe low-threshold injection
+actually kills/requeues/retires4workers. Sourcepositions/info trees/message/terminal
+handling follow the pinned native procedure. Exact tactic text is compared;
+fresh goal generation is a separate replay qualifier,not target-expression identity.
+
+The [frozen selected-population capture](../artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/README.md)
+is actually running fromae59c77:2045miniF2F+632ProofNetsources x3modes=8031
+elaborations,one48GiB/noAScollection. This is not all7808or13760sources,nor a
+four-workerwarm-service comparison. SDK--rundriver overhead and opaque/hidden/
+posterror/HB/diagnostic replay limits remain explicit. No failurecache,early reject,
+novelty or end-to-endgain is claimed before complete data and implementation.
+Keep raw failures and analyze completed ordinary-error repeats,unreached and
+operational cases separately;no old proxy/cross-run time denominator is substituted.

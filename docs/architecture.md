@@ -205,8 +205,9 @@ The earlier native-complete/prepared-ENOSPC pair remains partial. The later
 has equal status/accepted sets,with a disclosed emptyAST-envelope difference,
 operationalerror-string changes and1.24028x descriptive own-engine ratio.
 One historical acceptance still times out across different resource points.
-The historical42solo point has41budgetfailures/1timeout;the corrected
-ordinary-native-library42point is separately running and has no final result.
+The historical42solo point is retained separately from the
+[completed corrected ordinary-native-library point](../artifacts/engine-resource-profile-2026-10-25/solo42-native-library-20261029/README.md);
+their provenance/resource records must not be conflated.
 Broaderartifact/strongestwarm coverage,representative load-aware results and actual multi-node measurements
 remain open. Tests/CI do not prove contribution or venue acceptance.
 
