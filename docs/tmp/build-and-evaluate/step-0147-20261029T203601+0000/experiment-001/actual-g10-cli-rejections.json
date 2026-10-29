@@ -1,0 +1,44 @@
+[
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-B",
+      "bench/lean-failure-profile/state-reuse/run.py",
+      "--input",
+      "unread-input",
+      "--context",
+      "unread-context",
+      "--module-dir",
+      "unread-modules",
+      "--out",
+      "/workspaces/repository/docs/tmp/build-and-evaluate/step-0147-20261029T203601+0000/experiment-001/not-created-default48"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: run.py [-h] --input INPUT --out OUT --context CONTEXT\n              --module-dir MODULE_DIR [--resume-from RESUME_FROM]\n              [--rss-budget-gib RSS_BUDGET_GIB] [--cpus CPUS]\nrun.py: error: RSS budget must be positive and fit physical host RAM; select a smaller budget with headroom for other work\n",
+    "output_created": false
+  },
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-B",
+      "bench/lean-failure-profile/state-reuse/run.py",
+      "--input",
+      "unread-input",
+      "--context",
+      "unread-context",
+      "--module-dir",
+      "unread-modules",
+      "--out",
+      "/workspaces/repository/docs/tmp/build-and-evaluate/step-0147-20261029T203601+0000/experiment-001/not-created-oldcpu",
+      "--rss-budget-gib",
+      "12",
+      "--cpus",
+      "8,9,10,11"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: run.py [-h] --input INPUT --out OUT --context CONTEXT\n              --module-dir MODULE_DIR [--resume-from RESUME_FROM]\n              [--rss-budget-gib RSS_BUDGET_GIB] [--cpus CPUS]\nrun.py: error: --cpus must be a nonempty subset of current CPU eligibility\n",
+    "output_created": false
+  }
+]

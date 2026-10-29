@@ -27,3 +27,11 @@ audit. Session directories and already-produced reviews are preserved.
 
 The gateway model-priority change reported by the user is not a reason to resume
 or retarget OMP. No gateway or model setting is changed by this research action.
+
+
+## Hardware placement — resolved by the user's G10 decision
+The user says "先不用回 lab. 在别的地方干活". The previous temporary lab
+selector proposal is cancelled,never applied,and must not be asked again.
+Continue in the existing G10 Workspace. The prospective separate resource point
+and actual native signal limitation are recorded in evaluation.md. No author
+approval is pending for a return tolab;unaffected engineering continues here.

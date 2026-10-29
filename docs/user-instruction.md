@@ -207,3 +207,13 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 ## 2026-10-29 — verbatim standalone failure-cache request
 
 （Claude 督促）goal 仍是 blocked，你 18:42 之后只靠 heartbeat 做了一点事，请收到这条后接着做，不要停。回 lab 的批准还在等用户答复，正式采集先不跑；这段时间在 G10 上推进不需要实验点的工作：Rust 引擎的开源整理（crate 划分、trait 扩展点、文档、示例、CI），以及失败缓存在引擎里的实现骨架和单元测试，正式启用和测量等回 lab 之后。每一步 commit/push，由本线程自己完成。
+
+
+## 2026-10-29 — verbatim G10 continuation decision
+
+（Claude 转达用户答复）关于回 lab 的批准，用户原话：「先不用回 lab. 在别的地方干活」。所以不要改调度，也别再问回 lab 的事，就在现在的 G10 上继续干。不需要实验点的工作照常推进：Rust 引擎开源整理、失败缓存实现和测试、其他方向。要在 G10 上跑采集的话，按 G10 的实际资源（CPU 0–7、约 28 GiB）重新设总 RSS 上限，并留出余量；结果标成新的硬件点，不要和 lab 上的数字直接比；输出写 PVC。每一步 commit/push，由本线程自己完成。
+
+
+## 2026-10-29 — verbatim G10 control-plane safety requirement
+
+（Claude 督促）goal 仍是 blocked，本轮结束后不会自动续上，请收到这条后接着做。G10 的方案可以：总 RSS 12 GiB、单进程串行、输出写 PVC、结果标成新硬件点。补一个风险：G10 是集群的 control-plane + etcd 节点，你 20:15 已经碰到过一次 K3s API 不可达。采集时把看门狗上限守死在 12 GiB，盯住节点可用内存；如果 API 再出现不可达或节点可用内存低于约 6 GiB，就立刻停采集并记录，不要硬跑。信号权限问题先用短控制查清，看门狗杀不掉自有子进程就不启动采集。每一步 commit/push，由本线程自己完成。

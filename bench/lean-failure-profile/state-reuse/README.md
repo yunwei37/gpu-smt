@@ -217,3 +217,27 @@ and632ProofNet,with zero exact-source duplicate groups. The intentionally
 repeated mode conditions must not be counted as reusable production requests.
 This excludes one byte-exact whole-source cache confound in the selected cohort,
 not normalized/prefix/semantic reuse or the missing full-state/cost result.
+
+
+## Hardware-specific capture points
+run.py accepts --rss-budget-gib and optional --cpus (comma-separated IDs).
+The default48GiB is retained for old commands but is rejected when it exceeds
+physical host RAM. CPU default is discovered from current affinity rather than
+hardcoded lab IDs. Budget selection must leave room for other workloads.
+The lifecycle resource_point event and terminal record contain actual budget,
+CPU eligibility,physical RAM and host boot identity. Resume requires matching
+recorded evidence;legacy/changed-hardware output is retained as a separate point.
+
+The latest user decision keeps work onG10 and cancels the lab-selector proposal.
+Prospective G10 arguments are --rss-budget-gib 12 --cpus 0,1,2,3,4,5,6,7. Use a fresh complete
+three-mode input,not the old lab prefix,to compare observation overhead.
+Current G10 same-UID TERM/KILL probes are denied,so the required watchdog is not
+functional on this path and no formal capture has started. No security/profile
+change or new approval request is made. Development/test work continues.
+
+For this G10 point the user additionally requires whole-collection abort on API
+unreachability or host available RAM below about6GiB. These guards must precede
+any actual capture launch;the resource-option patch alone does not implement
+or qualify them. The current signal-denied path is not used for native capture.
+The12GiB stop threshold must never be raised for retries and is not a kernel
+hard quota.

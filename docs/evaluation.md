@@ -288,7 +288,9 @@ the same Workspace onG10. Only2640rows are archived;one old panic row can be
 derived from retained evidence,while at least1273newly observed entries are
 currently unavailable. Final eviction-time count/outcomes are unknown.
 No formal collection is running. The8031input and5390pending/5retry plan are
-prepared on the existing PVC,awaiting approved lab hardware restoration.
+preserved on the existing PVC. The user now directs staying onG10 and
+cancels the lab-placement proposal. A future G10 capture is a fresh hardware
+point,not an elapsed-time continuation using lab's original-mode denominator.
 [Step0142](tmp/build-and-evaluate/step-0142-20261029T182504+0000/step-report.md)
 adds the requested early PVC-output check;the next collector snapshot is5e563f9.
 [G10 semantic controls](tmp/build-and-evaluate/step-0143-20261029T183313+0000/experiment-001/result-review.md)
@@ -299,3 +301,34 @@ finds2677distinct complete source strings in each mode,including2045miniF2F
 and632ProofNet;exact-source duplicate groups are zero. Intentional repetition
 across the three measurement modes is not a workload cache opportunity. This
 does not determine full-state matches,cost,coverage or speedup.
+
+
+## G10 continuation — user-directed separate hardware point
+The user directs staying on the present Workspace/node and no scheduling change
+or further lab question. Actual G10 eligibility isCPU0–7,total RAM about27.8GiB;
+the selected prospective collector point is12GiB total owned sampled RSS,
+no fixed per-process AS limit,one native frontend,eligible CPUs0–7. This leaves
+about15.8GiB physical RAM outside the research budget;availability remains shared
+and must be observed at launch. Output stays on the existing PVC.
+
+No formal capture has started. Two-second same-UID controls show TERM/KILL
+returning PermissionDenied;the children retire naturally. The mandatory watchdog
+cannot currently guarantee interruption,so no long/large Lean collection is
+admitted on that execution path. No permission/security change is requested or
+made. Continue G10 Rust development and simulated tests;this is not a negative
+cache-opportunity result or a reason to return tolab.
+
+The collector now accepts an explicit budget/CPU selection and records actual
+hardware/boot identity in lifecycle/terminal output. It rejects a budget exceeding
+host RAM and refuses a continuation lacking matching resource/hardware records.
+Historical source/data remain frozen. Any eventual G10 three-mode comparison
+must execute its own selected2677sources in all3modes rather than borrowing
+the2640retained lab original rows.12GiB resource censorship is separately reported;
+no cross-hardware speedup or strict globalAmdahl bound follows.
+
+The user subsequently approves this12GiB/serial/PVC point and requires an
+immediate whole-collection stop on API unreachability or hostMemAvailable below
+about6GiB. The node hosts control-plane/etcd. The current resource-option patch
+does not claim those health guards are implemented/qualified. No capture can
+start on the signal-denied path;healthy unit-test activity is not capture
+qualification. A1s sampled threshold cannot be called a hard kernel RSS limit.

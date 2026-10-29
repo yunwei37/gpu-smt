@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-29T20:36:01.870950+00:00",
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "proc_meminfo": "MemTotal:       29177340 kB\nMemFree:         1279192 kB\nMemAvailable:   21101976 kB\nBuffers:         4593820 kB\nCached:         10936168 kB\nSwapCached:        31832 kB\nActive:          9371940 kB\nInactive:       12566076 kB\nActive(anon):    4101344 kB\nInactive(anon):  2327700 kB\nActive(file):    5270596 kB\nInactive(file): 10238376 kB\nUnevictable:       20888 kB\nMlocked:           20516 kB\nSwapTotal:       8388604 kB\nSwapFree:        8218432 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3140 kB\nWriteback:             0 kB\nAnonPages:       6422832 kB\nMapped:          1510744 kB\nShmem:              7064 kB\nKReclaimable:    4735648 kB\nSlab:            5539684 kB\nSReclaimable:    4735648 kB\nSUnreclaim:       804036 kB\nKernelStack:       27408 kB\nPageTables:        52536 kB\nSecPageTables:      3768 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    22977272 kB\nCommitted_AS:   19997900 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      102208 kB\nVmallocChunk:          0 kB\nPercpu:            44256 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:     49152 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    751616 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:           14820 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      400076 kB\nDirectMap2M:    14225408 kB\nDirectMap1G:    16777216 kB\n",
+  "memory_max": "max",
+  "profile": "cri-containerd.apparmor.d//&unconfined (enforce)",
+  "planned_rss_budget_bytes": 12884901888,
+  "formal_capture_started": false,
+  "signal_control": {
+    "scope": "Previously executed finite2s direct child of this root Python execution path",
+    "parent_and_child_profile": "cri-containerd.apparmor.d//&unconfined (enforce)",
+    "os_kill_TERM": "PermissionError errno13",
+    "subprocess_bin_kill_TERM": "exit1 Permission denied",
+    "child_exit": 0,
+    "exact_probe_utc": "unknown;preceding live tool output retained in conversation"
+  }
+}

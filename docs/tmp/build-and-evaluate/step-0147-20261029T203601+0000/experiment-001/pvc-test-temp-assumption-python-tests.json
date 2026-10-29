@@ -1,0 +1,25 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6,7",
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "utc": "2026-10-29T20:38:26.608822+00:00",
+  "exit_code": 1,
+  "seconds": 2.004612220916897,
+  "sampled_owned_rss_bytes": 86327296,
+  "formal_capture": false,
+  "cpu_ids": [
+    6,
+    7
+  ],
+  "test_temporary_output": "/workspaces/.agent-state/gpu-smt-development-tests/tmp"
+}

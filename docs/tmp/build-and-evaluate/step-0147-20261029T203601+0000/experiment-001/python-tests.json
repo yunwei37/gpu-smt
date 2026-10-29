@@ -1,0 +1,26 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6,7",
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "utc": "2026-10-29T20:40:15.702056+00:00",
+  "exit_code": 0,
+  "seconds": 2.017970818094909,
+  "sampled_owned_rss_bytes": 77086720,
+  "formal_capture": false,
+  "cpu_ids": [
+    6,
+    7
+  ],
+  "test_temporary_output": "/workspaces/.agent-state/gpu-smt-development-tests/tmp",
+  "negative_storage_checks": "/tmp intentionally outside PVC,no capture created"
+}

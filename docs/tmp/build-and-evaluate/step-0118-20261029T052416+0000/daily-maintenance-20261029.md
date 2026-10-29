@@ -164,3 +164,12 @@ Step0146 CI closure:source40336aa passes85Rust tests and the separate six
 existing pinned native differential checks,plus example/docs/smoke. This is a
 usable unenabled library boundary;native failure-cache qualification and the
 selected workload's cost remain unresolved. Local signal-denial records remain.
+
+### User selects G10 — make the resource point truthful before any launch
+Step0147 removes lab constants from current collector resource selection and
+records actual hardware/budget/CPU identity.72Python tests pass;old48GiB/CPU8–11
+commands really reject onG10. The user cancels lab return and adds12GiB plus
+API/6GiB whole-collection stopping. Own-signal denial prevents safe capture,
+not Rust implementation. Preserve unavailable lab data and don't borrow its
+denominator. Next substantive available work is public/dynamic and concurrent
+failure-cache semantics,not another repeated positive native control or queue.

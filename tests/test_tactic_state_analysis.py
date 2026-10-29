@@ -106,7 +106,7 @@ class CaptureOutputDurability(unittest.TestCase):
                     RUNNER.persistent_output(nested/"run", root)
 
     def test_real_cli_rejects_temporary_output_without_creating_it(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir="/tmp") as directory:
             output = Path(directory)/"not-created"
             result = subprocess.run(
                 [sys.executable, "-B", str(RUN_SPEC.origin),
@@ -119,7 +119,7 @@ class CaptureOutputDurability(unittest.TestCase):
             self.assertFalse(output.exists())
 
     def test_bad_cli_output_is_rejected_before_affinity_or_native_work(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir="/tmp") as directory:
             output = Path(directory)/"container-output"
             argv = ["run.py", "--input", "unread-input.json.gz",
                     "--out", str(output), "--context", "unread-context.json",
@@ -135,6 +135,41 @@ class CaptureOutputDurability(unittest.TestCase):
                 affinity.assert_not_called()
                 native.assert_not_called()
             self.assertFalse(output.exists())
+
+
+class CaptureResourcePoint(unittest.TestCase):
+    def test_g10_budget_and_discovered_cpu_ids_are_recorded_without_lab_labels(self):
+        point = RUNNER.resource_point(12, None, set(range(8)), 28 * 1024**3)
+        self.assertEqual(point, dict(budget_bytes=12 * 1024**3,
+                                    cpu_eligibility=list(range(8)),
+                                    hardware_memory_bytes=28 * 1024**3))
+        chosen = RUNNER.resource_point(12, "6,7", set(range(8)), 28 * 1024**3)
+        self.assertEqual(chosen["cpu_eligibility"], [6, 7])
+
+    def test_old_48gib_default_and_nonpositive_budgets_do_not_fit_g10(self):
+        for budget in [48, 0, -1]:
+            with self.subTest(budget=budget), self.assertRaisesRegex(ValueError, "RSS budget"):
+                RUNNER.resource_point(budget, None, set(range(8)), 28 * 1024**3)
+
+    def test_old_cpu_ids_empty_and_malformed_masks_are_not_silently_relabelled(self):
+        for cpus in ["8,9,10,11", "", "0,,1", "CPU0", "-1"]:
+            with self.subTest(cpus=cpus), self.assertRaisesRegex(ValueError, "--cpus"):
+                RUNNER.resource_point(12, cpus, set(range(8)), 28 * 1024**3)
+
+    def test_continuation_requires_actual_matching_resource_and_host_evidence(self):
+        point = dict(RUNNER.resource_point(12, None, set(range(8)), 28 * 1024**3),
+                     host_boot_id="g10-boot")
+        RUNNER.check_continuation_resources([dict(event="resource_point", **point)], point)
+        for history in [[], [dict(event="launch", pid=123)]]:
+            with self.assertRaisesRegex(ValueError, "separate fresh point"):
+                RUNNER.check_continuation_resources(history, point)
+        for field, old in [("budget_bytes", 48 * 1024**3),
+                           ("cpu_eligibility", [8, 9, 10, 11]),
+                           ("hardware_memory_bytes", 125 * 1024**3),
+                           ("host_boot_id", "lab-boot")]:
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, "separate fresh point"):
+                RUNNER.check_continuation_resources(
+                    [dict(event="resource_point", **dict(point, **{field: old}))], point)
 
 
 class TacticStateAnalysis(unittest.TestCase):

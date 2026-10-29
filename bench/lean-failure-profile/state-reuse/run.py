@@ -1,4 +1,4 @@
-"""Finite serial native measurement,48GiB owned RSS/no AS/CPU8–11.
+"""Finite serial native measurement,selected owned RSS/no AS/CPU eligibility.
 
 Keeps a warm native frontend inside each segment. On300s timeout or RSS
 preemption,reap it before proceeding. Resource-preempted candidates retry alone
@@ -22,7 +22,34 @@ import traceback
 RUN_OUTPUT = None
 
 
-BUDGET = 48 * 1024**3
+DEFAULT_BUDGET_GIB = 48
+
+
+def resource_point(budget_gib, cpu_spec, allowed_cpus, host_memory_bytes):
+    """Bind the declared diagnostic point to actual host/affinity observations."""
+    budget = budget_gib * 1024**3
+    if budget_gib <= 0 or budget > host_memory_bytes:
+        raise ValueError("RSS budget must be positive and fit physical host RAM; "
+                         "select a smaller budget with headroom for other work")
+    try:
+        cpus = set(allowed_cpus) if cpu_spec is None else {
+            int(value) for value in cpu_spec.split(",")}
+    except ValueError as error:
+        raise ValueError("--cpus must contain comma-separated eligible CPU IDs") from error
+    if not cpus or not cpus.issubset(allowed_cpus):
+        raise ValueError("--cpus must be a nonempty subset of current CPU eligibility")
+    return dict(budget_bytes=budget, cpu_eligibility=sorted(cpus),
+                hardware_memory_bytes=host_memory_bytes)
+
+
+def check_continuation_resources(history, point):
+    """A previous point is not a same-hardware prefix without recorded evidence."""
+    prior = [row for row in history if row.get("event") == "resource_point"]
+    if not prior or any(any(row.get(key) != value for key, value in point.items())
+                        for row in prior):
+        raise ValueError("previous resource/hardware point differs or is unknown; "
+                         "keep the old capture and start a separate fresh point")
+
 
 
 
@@ -92,6 +119,9 @@ def main():
     a.add_argument("--module-dir", type=Path, required=True)
     a.add_argument("--resume-from", type=Path,
                    help="Actually retired prior run of this exact input/context;keep its raw prefix")
+    a.add_argument("--rss-budget-gib", type=int, default=DEFAULT_BUDGET_GIB,
+                   help="Aggregate owned-tree sampled RSS budget; choose host headroom explicitly")
+    a.add_argument("--cpus", help="Eligible CPU IDs,comma-separated;default is current affinity")
     args = a.parse_args()
     try:
         args.out = persistent_output(args.out)
@@ -103,7 +133,14 @@ def main():
     assert resource.getrlimit(resource.RLIMIT_AS) == (-1, -1)
     # The owning thread verifies the previous collection's actual retirement
     # before launch and records it in the experiment;no stale PID catalog here.
-    os.sched_setaffinity(0, {8, 9, 10, 11})
+    try:
+        point = resource_point(args.rss_budget_gib, args.cpus,
+                               set(os.sched_getaffinity(0)), psutil.virtual_memory().total)
+    except ValueError as error:
+        a.error(str(error))
+    point["host_boot_id"] = Path("/proc/sys/kernel/random/boot_id").read_text().strip()
+    budget = point["budget_bytes"]
+    os.sched_setaffinity(0, set(point["cpu_eligibility"]))
     args.out.mkdir(exist_ok=False)
     RUN_OUTPUT = args.out
     definition = json.loads(args.context.read_text())
@@ -136,6 +173,7 @@ def main():
             raise ValueError("continuation native context differs")
         history = [json.loads(line) for line in (previous/"results.jsonl").read_text().splitlines()]
         lifecycle = [json.loads(line) for line in (previous/"lifecycle.jsonl").read_text().splitlines()]
+        check_continuation_resources(lifecycle, point)
         prior_launch_path = previous.parent/"launch.json"
         if prior_launch_path.exists():
             prior_launch = json.loads(prior_launch_path.read_text())
@@ -191,6 +229,8 @@ def main():
         f.write(json.dumps(value, ensure_ascii=False)+"\n")
         f.flush()
 
+    record(events, dict(event="resource_point", **point))
+
     for value in derived:
         record(ledger, value)
 
@@ -233,7 +273,7 @@ def main():
             nonlocal current, current_start, next_request, operational, operational_current, source_started
             if next_request >= len(batch):
                 return
-            if sample() > BUDGET:
+            if sample() > budget:
                 if finished:
                     operational = "idle_cache_resource_recycle"
                 else:
@@ -312,7 +352,7 @@ def main():
                     if now >= next_sample:
                         total = sample()
                         next_sample = now + 1
-                        if total > BUDGET and not exited:
+                        if total > budget and not exited:
                             operational = "resource_preempted"
                             operational_current = current
                             # The sole native frontend is the largest owned Lean
@@ -322,7 +362,7 @@ def main():
                             victim = max(victims, key=lambda q: q.memory_info().rss)
                             record(events, dict(event="watchdog_kill", segment=index,
                                 pid=victim.pid, birth=victim.create_time(),
-                                current=current, rss=total, budget=BUDGET))
+                                current=current, rss=total, budget=budget))
                             victim.kill()
                     if current_start and now-current_start >= 300 and not exited:
                         operational = operational or "timeout"
@@ -394,8 +434,8 @@ def main():
                                   if x["event"] in ("candidate_end", "operational_end")),
             exclusive_retries_this_phase=len(retry), segments=number,
             seconds=time.monotonic()-started, sampled_peak_RSS_bytes=peak,
-            budget_bytes=BUDGET, watchdog_sampling_seconds=1, fixed_AS=False,
-            cpu_eligibility=[8, 9, 10, 11], proof_result_reuse=False,
+            **point, watchdog_sampling_seconds=1, fixed_AS=False,
+            proof_result_reuse=False,
             complete_replay_qualification=False, continuation_phase=phase,
             seconds_scope="Current controller phase only;prior gaps are not included" if phase else "Single controller phase")
         (args.out/"terminal.json").write_text(json.dumps(terminal, indent=2)+"\n")
