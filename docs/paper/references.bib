@@ -638,3 +638,42 @@
  year={2026}, doi={10.48550/arXiv.2607.00815},
  url={https://arxiv.org/abs/2607.00815v2},
  note={Version 2, revised 7 September 2026; preprint}}
+
+
+% VERIFIED: 2026-10-29, primary PDF pp.57--71, especially managed evaluation on p.65.
+% USED_FOR: Existing proof futures, exception memoization, cancellation and ordered output.
+@inproceedings{wenzelProofFutures,
+ author={Makarius Wenzel},
+ title={READ-EVAL-PRINT in Parallel and Asynchronous Proof-checking},
+ booktitle={User Interfaces for Theorem Provers},
+ series={EPTCS}, volume={118}, pages={57--71}, year={2013},
+ doi={10.4204/EPTCS.118.4},
+ url={https://arxiv.org/abs/1307.1944}}
+% VERIFIED: 2026-10-29, primary paper Sections2.2 and4.
+@misc{tactician2020,
+ author={Lasse Blaauwbroek and Josef Urban and Herman Geuvers},
+ title={The Tactician (extended version): A Seamless, Interactive Tactic Learner and Prover for Coq},
+ year={2020}, eprint={2008.00120}, archivePrefix={arXiv},
+ url={https://arxiv.org/abs/2008.00120},
+ note={Extended version of the CICM paper}}
+% VERIFIED: 2026-10-29, official source; current API is not the measured Lean4.9 context.
+@misc{leanParallelSource,
+ author={{Lean contributors}},
+ title={{Lean.Elab.Parallel}: parallel tactic-monad combinators},
+ year={2026},
+ url={https://github.com/leanprover/lean4/blob/master/src/Lean/Elab/Parallel.lean},
+ note={Source documentation; accessed 29 October 2026}}
+% VERIFIED: 2026-10-29, installed pin and official versioned source agree.
+@misc{lean49StateReuse,
+ author={{Lean contributors}},
+ title={Lean4.9.0-rc1 CoreM: saved-state reuse and heartbeat restoration},
+ year={2024},
+ url={https://github.com/leanprover/lean4/blob/v4.9.0-rc1/src/Lean/CoreM.lean},
+ note={withRestoreOrSaveFull; source explicitly notes approximate accounting of reuse overhead}}
+% VERIFIED: 2026-10-29, official release notes and pinned simplifier source.
+@misc{leanSimpCache,
+ author={{Lean contributors}},
+ title={Lean4.22.0 release: simplifier cache reuse},
+ year={2025},
+ url={https://lean-lang.org/doc/reference/latest/releases/v4.22.0/},
+ note={Simp section; PR 8880}}

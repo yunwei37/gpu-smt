@@ -1,0 +1,806 @@
+{
+  "source": "complete frozen13d4606native process envelopes + distinct historical480profile + original Syntax corpus",
+  "current_low_concurrency_wall_seconds": {
+    "1": 9379.564923524857,
+    "2": 63.03575539588928
+  },
+  "current_low_concurrency_unique_ids": 468,
+  "low_concurrency_IDs_with_historical_body_profile": 77,
+  "low_concurrency_IDs_without_historical_body_profile": 391,
+  "historical_conditioned_CPU_seconds": {
+    "interval_cases_constructor": 2090.9370074370004,
+    "goal_combinator_boundary": 28.000859143999996,
+    "other_tactic_or_unattributed": 5579.891511999999,
+    "simp_all": 2810.777103291,
+    "other_simp": 307.020692696,
+    "cases_or_rcases_boundary": 2.000324216
+  },
+  "exclusive_tail_IDs": 42,
+  "exclusive_tail_IDs_with_historical_body_profile": 42,
+  "historical_exclusive_tail_CPU_seconds": {
+    "other_tactic_or_unattributed": 3791.242442316
+  },
+  "measured_current_tail_independent_branch_wall_fraction": null,
+  "reason": "Current process trace has no tactic phase/goal dependencies;historical CPU cannot be transferred onto its wall denominator. Constructor CPU is not branch execution CPU.",
+  "exact_state_cache": {
+    "minif2f": {
+      "counts": {
+        "steps": 29669,
+        "rooted_unit_repeats": 3987,
+        "unrooted_same_text_repeats": 10643,
+        "expensive_outer_steps": 4376,
+        "expensive_rooted_unit_repeats": 461,
+        "expensive_unrooted_same_text_repeats": 2001
+      },
+      "statement_groups": 244,
+      "fallbacks": {
+        "native_parse_or_mapping_unavailable": 136
+      },
+      "outer_syntax_kind_counts": {
+        "Lean.Parser.Tactic.rwSeq": {
+          "occurrences": 1824,
+          "rooted_text_repeats": 361,
+          "unrooted_text_repeats": 880
+        },
+        "Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb": {
+          "occurrences": 2215,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 135
+        },
+        "Lean.Parser.Tactic.subst": {
+          "occurrences": 119,
+          "rooted_text_repeats": 39,
+          "unrooted_text_repeats": 56
+        },
+        "Mathlib.Tactic.FieldSimp.fieldSimp": {
+          "occurrences": 904,
+          "rooted_text_repeats": 92,
+          "unrooted_text_repeats": 402
+        },
+        "Mathlib.Tactic.normNum": {
+          "occurrences": 2116,
+          "rooted_text_repeats": 366,
+          "unrooted_text_repeats": 1236
+        },
+        "linarith": {
+          "occurrences": 967,
+          "rooted_text_repeats": 43,
+          "unrooted_text_repeats": 761
+        },
+        "Mathlib.Tactic.RingNF.ringNF": {
+          "occurrences": 1043,
+          "rooted_text_repeats": 123,
+          "unrooted_text_repeats": 741
+        },
+        "Lean.Parser.Tactic.simpAll": {
+          "occurrences": 1232,
+          "rooted_text_repeats": 33,
+          "unrooted_text_repeats": 273
+        },
+        "Mathlib.Tactic.RingNF.ring": {
+          "occurrences": 182,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 134
+        },
+        "Lean.Parser.Tactic.substVars": {
+          "occurrences": 22,
+          "rooted_text_repeats": 3,
+          "unrooted_text_repeats": 11
+        },
+        "Lean.Parser.Tactic.simp": {
+          "occurrences": 1612,
+          "rooted_text_repeats": 78,
+          "unrooted_text_repeats": 275
+        },
+        "Lean.Parser.Tactic.intro": {
+          "occurrences": 381,
+          "rooted_text_repeats": 197,
+          "unrooted_text_repeats": 319
+        },
+        "Lean.Parser.Tactic.tacticHave_": {
+          "occurrences": 11704,
+          "rooted_text_repeats": 1846,
+          "unrooted_text_repeats": 2643
+        },
+        "Lean.Parser.Tactic.omega": {
+          "occurrences": 524,
+          "rooted_text_repeats": 14,
+          "unrooted_text_repeats": 467
+        },
+        "Lean.Parser.Tactic.exact": {
+          "occurrences": 695,
+          "rooted_text_repeats": 30,
+          "unrooted_text_repeats": 270
+        },
+        "nlinarith": {
+          "occurrences": 1027,
+          "rooted_text_repeats": 62,
+          "unrooted_text_repeats": 492
+        },
+        "Lean.Parser.Tactic.tacticNorm_cast_": {
+          "occurrences": 324,
+          "rooted_text_repeats": 31,
+          "unrooted_text_repeats": 205
+        },
+        "Lean.Parser.Tactic.apply": {
+          "occurrences": 447,
+          "rooted_text_repeats": 106,
+          "unrooted_text_repeats": 267
+        },
+        "Lean.Parser.Tactic.tacticRfl": {
+          "occurrences": 268,
+          "rooted_text_repeats": 6,
+          "unrooted_text_repeats": 237
+        },
+        "Lean.Parser.Tactic.decide": {
+          "occurrences": 73,
+          "rooted_text_repeats": 6,
+          "unrooted_text_repeats": 46
+        },
+        "Lean.Parser.Tactic.congr": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.cases'": {
+          "occurrences": 182,
+          "rooted_text_repeats": 69,
+          "unrooted_text_repeats": 85
+        },
+        "Lean.cdot": {
+          "occurrences": 139,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 20
+        },
+        "Mathlib.Tactic.useSyntax": {
+          "occurrences": 155,
+          "rooted_text_repeats": 89,
+          "unrooted_text_repeats": 106
+        },
+        "Lean.Parser.Tactic.refine'": {
+          "occurrences": 85,
+          "rooted_text_repeats": 37,
+          "unrooted_text_repeats": 41
+        },
+        "Aesop.Frontend.Parser.aesopTactic": {
+          "occurrences": 29,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 17
+        },
+        "Lean.Parser.Tactic.refine": {
+          "occurrences": 10,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 1
+        },
+        "Lean.Parser.Tactic.simpa": {
+          "occurrences": 120,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 23
+        },
+        "Lean.Parser.Tactic.allGoals": {
+          "occurrences": 131,
+          "rooted_text_repeats": 7,
+          "unrooted_text_repeats": 20
+        },
+        "Lean.Parser.Tactic.revert": {
+          "occurrences": 80,
+          "rooted_text_repeats": 17,
+          "unrooted_text_repeats": 58
+        },
+        "Lean.Parser.Tactic.rintro": {
+          "occurrences": 19,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 6
+        },
+        "Lean.Parser.Tactic.assumption": {
+          "occurrences": 36,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 14
+        },
+        "Lean.Parser.Tactic.cases": {
+          "occurrences": 41,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.induction'": {
+          "occurrences": 145,
+          "rooted_text_repeats": 93,
+          "unrooted_text_repeats": 95
+        },
+        "Lean.Parser.Tactic.induction": {
+          "occurrences": 178,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.case": {
+          "occurrences": 93,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 3
+        },
+        "Lean.Parser.Tactic.constructor": {
+          "occurrences": 167,
+          "rooted_text_repeats": 126,
+          "unrooted_text_repeats": 153
+        },
+        "Lean.Parser.Tactic.\u00abtacticNext_=>_\u00bb": {
+          "occurrences": 14,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 2
+        },
+        "Lean.Parser.Tactic.tacticSeqBracketed": {
+          "occurrences": 18,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 1
+        },
+        "Lean.Parser.Tactic.rcases": {
+          "occurrences": 80,
+          "rooted_text_repeats": 32,
+          "unrooted_text_repeats": 35
+        },
+        "Mathlib.Tactic.applyFun": {
+          "occurrences": 44,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 27
+        },
+        "Lean.Parser.Tactic.tacticExact_mod_cast_": {
+          "occurrences": 12,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 2
+        },
+        "Mathlib.Tactic.PushNeg.tacticPush_neg_": {
+          "occurrences": 9,
+          "rooted_text_repeats": 3,
+          "unrooted_text_repeats": 3
+        },
+        "Lean.Parser.Tactic.unfold": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.tacticSimp_rw___": {
+          "occurrences": 11,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.obtain": {
+          "occurrences": 60,
+          "rooted_text_repeats": 39,
+          "unrooted_text_repeats": 41
+        },
+        "Lean.Parser.Tactic.tacticHaveI_": {
+          "occurrences": 14,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 8
+        },
+        "Mathlib.Tactic.LinearCombination.linearCombination": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 1
+        },
+        "Batteries.Tactic.byContra": {
+          "occurrences": 10,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 4
+        },
+        "byContra!": {
+          "occurrences": 22,
+          "rooted_text_repeats": 10,
+          "unrooted_text_repeats": 11
+        },
+        "Mathlib.Tactic.Zify.zify": {
+          "occurrences": 12,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 4
+        },
+        "Mathlib.Tactic.Contrapose.contrapose!": {
+          "occurrences": 23,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 11
+        },
+        "Lean.Parser.Tactic.tacticRwa__": {
+          "occurrences": 4,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Batteries.Tactic.congrConfigWith": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.convert": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticLet_": {
+          "occurrences": 6,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.Positivity.positivity": {
+          "occurrences": 5,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.GCongr.tacticGcongr__With__": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.calcTactic": {
+          "occurrences": 7,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.pushCast": {
+          "occurrences": 3,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 1
+        },
+        "Batteries.Tactic.rcongr": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.intervalCases": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticExfalso": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.change": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.nthRwSeq": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Batteries.Tactic.exacts": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticSuffices_": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.splitIfs": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Congr!.congr!": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Elab.Tactic.Ext.tacticExt1___": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        }
+      },
+      "rooted_unit_repeat_fraction": 0.1343826890019886,
+      "expensive_fraction_of_rooted_unit_repeats": 0.11562578379734136,
+      "certified_complete_state_reuse_count": null,
+      "cost_of_complete_state_reuse_seconds": null,
+      "reason": "Native Syntax contains no full target/localcontext/environment/options/metavariable state or per-step heartbeats/cost."
+    },
+    "proofnet": {
+      "counts": {
+        "steps": 21530,
+        "rooted_unit_repeats": 3957,
+        "unrooted_same_text_repeats": 7746,
+        "expensive_outer_steps": 1306,
+        "expensive_rooted_unit_repeats": 82,
+        "expensive_unrooted_same_text_repeats": 586
+      },
+      "statement_groups": 259,
+      "fallbacks": {
+        "native_parse_or_mapping_unavailable": 235
+      },
+      "outer_syntax_kind_counts": {
+        "Lean.Parser.Tactic.obtain": {
+          "occurrences": 516,
+          "rooted_text_repeats": 130,
+          "unrooted_text_repeats": 165
+        },
+        "Lean.Parser.Tactic.apply": {
+          "occurrences": 826,
+          "rooted_text_repeats": 88,
+          "unrooted_text_repeats": 250
+        },
+        "Lean.Parser.Tactic.simpa": {
+          "occurrences": 344,
+          "rooted_text_repeats": 5,
+          "unrooted_text_repeats": 32
+        },
+        "Lean.Parser.Tactic.tacticHave_": {
+          "occurrences": 3444,
+          "rooted_text_repeats": 304,
+          "unrooted_text_repeats": 540
+        },
+        "Lean.Parser.Tactic.exact": {
+          "occurrences": 1982,
+          "rooted_text_repeats": 91,
+          "unrooted_text_repeats": 371
+        },
+        "byContra!": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.simpAll": {
+          "occurrences": 966,
+          "rooted_text_repeats": 17,
+          "unrooted_text_repeats": 437
+        },
+        "Lean.Elab.Tactic.Ext.ext": {
+          "occurrences": 274,
+          "rooted_text_repeats": 87,
+          "unrooted_text_repeats": 204
+        },
+        "\u00abtacticBy_cases_:_\u00bb": {
+          "occurrences": 47,
+          "rooted_text_repeats": 12,
+          "unrooted_text_repeats": 17
+        },
+        "Lean.Parser.Tactic.simp": {
+          "occurrences": 1909,
+          "rooted_text_repeats": 164,
+          "unrooted_text_repeats": 605
+        },
+        "Mathlib.Tactic.cases'": {
+          "occurrences": 269,
+          "rooted_text_repeats": 97,
+          "unrooted_text_repeats": 115
+        },
+        "Lean.Parser.Tactic.rcases": {
+          "occurrences": 218,
+          "rooted_text_repeats": 62,
+          "unrooted_text_repeats": 78
+        },
+        "Lean.Parser.Tactic.refine'": {
+          "occurrences": 826,
+          "rooted_text_repeats": 128,
+          "unrooted_text_repeats": 179
+        },
+        "Lean.Parser.Tactic.intro": {
+          "occurrences": 2404,
+          "rooted_text_repeats": 1140,
+          "unrooted_text_repeats": 1822
+        },
+        "Lean.Parser.Tactic.\u00abtactic_<;>_\u00bb": {
+          "occurrences": 1173,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 11
+        },
+        "Lean.cdot": {
+          "occurrences": 267,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 14
+        },
+        "Mathlib.Tactic.tacticHave_": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.rwSeq": {
+          "occurrences": 999,
+          "rooted_text_repeats": 262,
+          "unrooted_text_repeats": 403
+        },
+        "Lean.Parser.Tactic.allGoals": {
+          "occurrences": 85,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 15
+        },
+        "Mathlib.Tactic.normNum": {
+          "occurrences": 287,
+          "rooted_text_repeats": 64,
+          "unrooted_text_repeats": 136
+        },
+        "nlinarith": {
+          "occurrences": 53,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 13
+        },
+        "Aesop.Frontend.Parser.aesopTactic": {
+          "occurrences": 191,
+          "rooted_text_repeats": 3,
+          "unrooted_text_repeats": 107
+        },
+        "Mathlib.Tactic.useSyntax": {
+          "occurrences": 1378,
+          "rooted_text_repeats": 538,
+          "unrooted_text_repeats": 704
+        },
+        "Lean.Parser.Tactic.tacticLet_": {
+          "occurrences": 104,
+          "rooted_text_repeats": 6,
+          "unrooted_text_repeats": 8
+        },
+        "Lean.Parser.Tactic.refine": {
+          "occurrences": 114,
+          "rooted_text_repeats": 15,
+          "unrooted_text_repeats": 17
+        },
+        "linarith": {
+          "occurrences": 163,
+          "rooted_text_repeats": 7,
+          "unrooted_text_repeats": 96
+        },
+        "Lean.Parser.Tactic.constructor": {
+          "occurrences": 895,
+          "rooted_text_repeats": 489,
+          "unrooted_text_repeats": 799
+        },
+        "Mathlib.Tactic.tacticSimp_rw___": {
+          "occurrences": 69,
+          "rooted_text_repeats": 3,
+          "unrooted_text_repeats": 4
+        },
+        "Lean.Elab.Tactic.Ext.tacticExt1___": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.Choose.choose": {
+          "occurrences": 14,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 3
+        },
+        "Mathlib.Tactic.Tauto.tauto": {
+          "occurrences": 31,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 6
+        },
+        "Mathlib.Tactic.FieldSimp.fieldSimp": {
+          "occurrences": 65,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 32
+        },
+        "Mathlib.Tactic.RingNF.ringNF": {
+          "occurrences": 92,
+          "rooted_text_repeats": 8,
+          "unrooted_text_repeats": 59
+        },
+        "Mathlib.Tactic.RingNF.ring": {
+          "occurrences": 31,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 18
+        },
+        "tacticFunext___": {
+          "occurrences": 4,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 1
+        },
+        "Lean.Parser.Tactic.tacticHaveI_": {
+          "occurrences": 537,
+          "rooted_text_repeats": 122,
+          "unrooted_text_repeats": 180
+        },
+        "Mathlib.Tactic.Contrapose.contrapose!": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticNorm_cast_": {
+          "occurrences": 61,
+          "rooted_text_repeats": 9,
+          "unrooted_text_repeats": 35
+        },
+        "Lean.Parser.Tactic.rintro": {
+          "occurrences": 204,
+          "rooted_text_repeats": 48,
+          "unrooted_text_repeats": 101
+        },
+        "Lean.Parser.Tactic.specialize": {
+          "occurrences": 25,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 3
+        },
+        "Lean.Parser.Tactic.exact?": {
+          "occurrences": 13,
+          "rooted_text_repeats": 6,
+          "unrooted_text_repeats": 10
+        },
+        "Lean.Parser.Tactic.induction": {
+          "occurrences": 57,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.contradiction": {
+          "occurrences": 15,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 3
+        },
+        "Batteries.Tactic.exacts": {
+          "occurrences": 4,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Batteries.Tactic.byContra": {
+          "occurrences": 12,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 1
+        },
+        "Lean.Parser.Tactic.congr": {
+          "occurrences": 7,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 1
+        },
+        "Mathlib.Tactic.filterUpwards": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.case": {
+          "occurrences": 58,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.assumption": {
+          "occurrences": 5,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 2
+        },
+        "Mathlib.Tactic.PushNeg.tacticPush_neg_": {
+          "occurrences": 12,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 5
+        },
+        "Lean.Parser.Tactic.tacticLetI_": {
+          "occurrences": 38,
+          "rooted_text_repeats": 4,
+          "unrooted_text_repeats": 7
+        },
+        "Batteries.Tactic.tacticClassical_": {
+          "occurrences": 7,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.omega": {
+          "occurrences": 56,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 46
+        },
+        "Lean.Parser.Tactic.decide": {
+          "occurrences": 22,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 12
+        },
+        "Lean.Parser.Tactic.cases": {
+          "occurrences": 30,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.intros": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticSeqBracketed": {
+          "occurrences": 159,
+          "rooted_text_repeats": 5,
+          "unrooted_text_repeats": 21
+        },
+        "Mathlib.Tactic.induction'": {
+          "occurrences": 20,
+          "rooted_text_repeats": 2,
+          "unrooted_text_repeats": 3
+        },
+        "Lean.Parser.Tactic.tacticInfer_instance": {
+          "occurrences": 34,
+          "rooted_text_repeats": 9,
+          "unrooted_text_repeats": 24
+        },
+        "Lean.Parser.Tactic.tacticRfl": {
+          "occurrences": 25,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 7
+        },
+        "Lean.Parser.Tactic.dsimp": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.LinearCombination.linearCombination": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 1
+        },
+        "Lean.Parser.Tactic.\u00abtacticNext_=>_\u00bb": {
+          "occurrences": 14,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.subst": {
+          "occurrences": 28,
+          "rooted_text_repeats": 17,
+          "unrooted_text_repeats": 18
+        },
+        "Mathlib.Tactic.Choose.tacticChoose!___Using_": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.splitIfs": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.calcTactic": {
+          "occurrences": 5,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.right": {
+          "occurrences": 7,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 2
+        },
+        "Lean.Parser.Tactic.tacticExact_mod_cast_": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.applyFun": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.left": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.apply?": {
+          "occurrences": 3,
+          "rooted_text_repeats": 1,
+          "unrooted_text_repeats": 1
+        },
+        "Mathlib.Tactic.Positivity.positivity": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 2
+        },
+        "Lean.Parser.Tactic.tacticRwa__": {
+          "occurrences": 3,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.tacticExfalso": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Mathlib.Tactic.convert": {
+          "occurrences": 2,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        },
+        "Lean.Parser.Tactic.match": {
+          "occurrences": 1,
+          "rooted_text_repeats": 0,
+          "unrooted_text_repeats": 0
+        }
+      },
+      "rooted_unit_repeat_fraction": 0.1837900603808639,
+      "expensive_fraction_of_rooted_unit_repeats": 0.020722769775082132,
+      "certified_complete_state_reuse_count": null,
+      "cost_of_complete_state_reuse_seconds": null,
+      "reason": "Native Syntax contains no full target/localcontext/environment/options/metavariable state or per-step heartbeats/cost."
+    }
+  },
+  "analysis_seconds": 0.6243578339926898,
+  "scope": "Offline opportunity only;no certified independence/state hit,parallelism implementation,gain or new native capture."
+}

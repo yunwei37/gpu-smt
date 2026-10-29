@@ -72,7 +72,7 @@ An [optional native import parent](native/lean/README.md) passes the pinned Lean
 native differential/lifecycle CI; the default backend remains fresh-process.
 [Actual Mathlib import-only preparation](artifacts/mathlib-import-preparation-2026-10-25/README.md)
 loads5,545modules and retires normally; no candidate child executes in that setup.
-A complete comparison to the matched strongest warm service, native failure
+A complete matched four-warm comparison is retained below. Native failure
 detectors, source-aware cost models and multi-node execution remain
 implementation/research work.
 Resource mechanisms are prior techniques; novelty must come from workload
@@ -96,14 +96,15 @@ and [measurement protocol](docs/benchmarking.md) document the boundaries.
 ## Research status and retained results
 
 **No useful extra end-to-end GPU acceleration over the strongest measured CPU
-composition has been demonstrated.** The resource layer has also not yet
-established superiority over the matched four-worker warm service. Source tests
+composition has been demonstrated.** One complete resource-path comparison takes19.28%less elapsed time than the
+matched four-worker warm service;different retry ordering and CPUeligibility
+remain,so this is not an isolated COWor general service-superiority result. Source tests
 and selected-cohort results do not establish whole-population speedup, novelty,
 or unchanged accepted sets.
 
 | Evidence | Result and scope |
 |---|---|
-| [Matched warm-resource comparison](bench/lean-warm-resource/README.md) | The selected 24-source qualification has equal accepted IDs but two additional engine timeouts. The full 7,808-source pair is unresolved. Both sides load the same ordinary native Mathlib library. |
+| [Matched warm-resource comparison](bench/lean-warm-resource/README.md) | The complete7,808-source pair returns identical final statuses and3,014accepted IDs;engine20,323.01s versus four-warm25,176.49s. Retry-order/CPUeligibility differences,23secondary-view diagnostic differences and sampled RSSovershoot remain. [Complete result](artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/result-review.md). |
 | [Own-engine fresh/prepared pair](artifacts/engine-resource-pair-2026-10-25/full7808-20261027T032050Z/README.md) | 1.24028× compares two own-engine components. It does **not** establish a gain over the strongest warm baseline; baseline compilation, resource-point and status differences remain. |
 | [Full GPU counterexample pair](artifacts/arithmetic-counterexample-2026-10-23/native-gpu-full-layout-fixed-20261024T1650/result-review.md) | At the historical two-worker/24GiB-AS point, all 7,808 statuses agree; GPU takes 8.86% longer before 23.99s input preparation. Screening does not reduce timeouts. |
 | [Failure hotspot profile and prototypes](docs/evaluation.md#failure-and-scheduling) | interval_cases and simp_all dominate observed timeout thread CPU. These are not total wall fractions or proven early-failure certificates; the 48-source interval prototype has 0/48 reliable early-failure coverage. |

@@ -208,3 +208,7 @@ No acceptance or project-completion claim.
 ## Complete retry-tail engagement — 2026-10-29
 
 [Step0124](tmp/build-and-evaluate/step-0124-20261029T065342+0000/step-report.md) reuses all7850engine attempts from the complete7808pair. Four native candidate-process envelopes cover95.3%of ordinary time;42exclusive envelopes take9145.23s,97.5%of single-candidate time and45.0%of whole time. This confirms the existing queue-tail fix engages;it is not CPU utilization,a safe memory-overlap bound or isolated speedup. The41solo resource failures/1timeout remain. No new native collection or workload policy is introduced.
+
+## Elastic branches and complete-state tactic caching — initial opportunity
+
+[Step0126](tmp/build-and-evaluate/step-0126-20261029T071858+0000/step-report.md) reuses the full process/Syntax populations and distinct historical480profile. The18.38%rooted count is ProofNet;miniF2Fis13.44%. Four named expensive outer tactics make461/3987and82/3957rooted repeats;complete-state hits/time remain unknown. Current42tail IDs have older CPUdominated73.04%byeqRefl,not the83timeoutgroup. Missing same-run dependencies/state/cost require the user-authorized profile after42. No parallel/cache mechanism or gain is enabled/claimed.

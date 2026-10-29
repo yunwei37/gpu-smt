@@ -1,0 +1,67 @@
+/-
+Copyright (c) 2020 Microsoft Corporation. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Leonardo de Moura
+-/
+prelude
+import Lean.Meta.AppBuilder
+import Lean.Meta.CongrTheorems
+
+218:   | .continue (some r) => mkEqTransResultStep r (← g r.expr)
+219:   | .visit r           => return .visit r
+220: 
+221: instance : AndThen Simproc where
+222:   andThen s₁ s₂ := andThen s₁ (s₂ ())
+223: 
+224: @[always_inline]
+225: def dandThen (f g : DSimproc) : DSimproc := fun e => do
+226:   match (← f e) with
+227:   | .done eNew            => return .done eNew
+228:   | .continue none        => g e
+229:   | .continue (some eNew) => g eNew
+230:   | .visit eNew           => return .visit eNew
+231: 
+232: instance : AndThen DSimproc where
+233:   andThen s₁ s₂ := dandThen s₁ (s₂ ())
+234: 
+235: /--
+236: `Simproc` .olean entry.
+237: -/
+238: structure SimprocOLeanEntry where
+239:   /-- Name of a declaration stored in the environment which has type `Simproc`. -/
+240:   declName : Name
+241:   post     : Bool := true
+242:   keys     : Array SimpTheoremKey := #[]
+243:   deriving Inhabited
+244: 
+245: /--
+246: `Simproc` entry. It is the .olean entry plus the actual function.
+247: -/
+248: structure SimprocEntry extends SimprocOLeanEntry where
+249:   /--
+250:   Recall that we cannot store `Simproc` into .olean files because it is a closure.
+251:   Given `SimprocOLeanEntry.declName`, we convert it into a `Simproc` by using the unsafe function `evalConstCheck`.
+252:   -/
+253:   proc : Sum Simproc DSimproc
+254: 
+255: abbrev SimprocTree := DiscrTree SimprocEntry
+256: 
+257: structure Simprocs where
+258:   pre          : SimprocTree   := DiscrTree.empty
+259:   post         : SimprocTree   := DiscrTree.empty
+260:   simprocNames : PHashSet Name := {}
+261:   erased       : PHashSet Name := {}
+262:   deriving Inhabited
+263: 
+264: structure Methods where
+265:   pre        : Simproc  := fun _ => return .continue
+266:   post       : Simproc  := fun e => return .done { expr := e }
+267:   dpre       : DSimproc := fun _ => return .continue
+268:   dpost      : DSimproc := fun e => return .done e
+269:   discharge? : Expr → SimpM (Option Expr) := fun _ => return none
+270:   /--
+271:   `wellBehavedDischarge` must **not** be set to `true` IF `discharge?`
+272:   access local declarations with index >= `Context.lctxInitIndices` when
+273:   `contextual := false`.
+274:   Reason: it would prevent us from aggressively caching `simp` results.
+275:   -/

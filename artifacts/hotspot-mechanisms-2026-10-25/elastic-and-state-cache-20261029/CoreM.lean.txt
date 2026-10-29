@@ -1,0 +1,49 @@
+/-
+Copyright (c) 2020 Microsoft Corporation. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Leonardo de Moura
+-/
+prelude
+import Lean.Util.RecDepth
+import Lean.Util.Trace
+
+215: deriving Nonempty
+216: 
+217: def saveState : CoreM SavedState := do
+218:   let s ← get
+219:   return { toState := s, passedHearbeats := 0 }
+220: 
+221: /--
+222: Incremental reuse primitive: if `reusableResult?` is `none`, runs `act` and returns its result
+223: together with the saved monadic state after `act` including the heartbeats used by it. If
+224: `reusableResult?` on the other hand is `some (a, state)`, restores full `state` including heartbeats
+225: used and returns `(a, state)`.
+226: 
+227: The intention is for steps that support incremental reuse to initially pass `none` as
+228: `reusableResult?` and store the result and state in a snapshot. In a further run, if reuse is
+229: possible, `reusableResult?` should be set to the previous result and state, ensuring that the state
+230: after running `withRestoreOrSaveFull` is identical in both runs. Note however that necessarily this
+231: is only an approximation in the case of heartbeats as heartbeats used by `withRestoreOrSaveFull`
+232: itself after calling `act` as well as by reuse-handling code such as the one supplying
+233: `reusableResult?` are not accounted for.
+234: -/
+235: @[specialize] def withRestoreOrSaveFull (reusableResult? : Option (α × SavedState))
+236:     (act : CoreM α) : CoreM (α × SavedState) := do
+237:   if let some (val, state) := reusableResult? then
+238:     set state.toState
+239:     IO.addHeartbeats state.passedHearbeats.toUInt64
+240:     return (val, state)
+241: 
+242:   let startHeartbeats ← IO.getNumHeartbeats
+243:   let a ← act
+244:   let s ← get
+245:   let stopHeartbeats ← IO.getNumHeartbeats
+246:   return (a, { toState := s, passedHearbeats := stopHeartbeats - startHeartbeats })
+247: 
+248: /-- Restore backtrackable parts of the state. -/
+249: def SavedState.restore (b : SavedState) : CoreM Unit :=
+250:   modify fun s => { s with env := b.env, messages := b.messages, infoState := b.infoState }
+251: 
+252: private def mkFreshNameImp (n : Name) : CoreM Name := do
+253:   let fresh ← modifyGet fun s => (s.nextMacroScope, { s with nextMacroScope := s.nextMacroScope + 1 })
+254:   return addMacroScope (← getEnv).mainModule n fresh

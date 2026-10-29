@@ -1336,6 +1336,18 @@ the complete public service path. Isolated preloaded serving is therefore
 existing work, and our complete behavior and resource comparison with unchanged sources
 must establish any additional benefit.
 
+\paragraph{Proof-level parallelism.}
+Isabelle's managed futures already execute proof work in parallel and retain
+ordinary results and exceptions~\cite{wenzelProofFutures}.
+Lean supports asynchronous elaboration and parallel tactic-monad
+combinators~\cite{lean4,leanParallelSource}.
+Together with the goal factorization described above, these are direct
+precedents for independent-branch execution.
+Our unmeasured question is whether reallocating idle service cores within a
+candidate can reduce complete verification cost while preserving shared-goal
+dependencies, heartbeat accounting, cancellation and diagnostic order.
+Generic proof parallelism alone would not distinguish the service.
+
 \paragraph{Verification caching.}
 Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
 
@@ -1344,6 +1356,14 @@ keyed by elaborated context and target, with native proof checking and fallback~
 Reusing expensive proof construction is therefore also established work.
 A distinct mechanism needs evidence beyond the presence of repeated tactics
 or a large acceleration for a selected cache hit.
+Tactician records state--tactic transitions and can replay discovered tactic
+sequences before renewed search~\cite{tactician2020}.
+Lean's simplifier already memoizes simplification results, and its saved-state
+reuse primitive replays recorded heartbeats with approximate reuse-overhead
+accounting~\cite{lean49StateReuse,leanSimpCache}.
+These primitives are prior work. The frequency and cost of repeated complete
+states, especially failed tactic attempts, remain unmeasured in our workloads;
+textual repetition cannot establish a cache hit or preserved verifier behavior.
 
 \paragraph{Prepared execution.}
 Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.
