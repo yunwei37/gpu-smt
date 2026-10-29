@@ -110,3 +110,29 @@ Unreached/unsupported/resource/open observations are not zero reusable failures.
 The SDK--runmeasurement driver is a diagnostic frontend with compiled Mathlib
 provider;its setup/memory and serial execution are not a warm4REPLbaseline or an
 end-to-endgain. NativeREPLperformanceconfirmation remains required.
+
+## Analyze completed captures
+
+Use the existing result analysis after the native collector actually retires:
+
+    python3 bench/lean-failure-profile/state-reuse/analyze.py --collection /path/to/run --out /tmp/state-result.json
+
+For one retained process stream, --raw accepts raw.log or raw.log.gz. Plain and
+losslessly compressed archived layouts are supported. The selected2677-source
+three-mode capture is not a whole7808candidate throughput comparison.
+
+The collection analysis retains each resource attempt and exclusive retry, final
+per-mode/dataset outcomes, actual watchdog-kill events, late replies and
+unresolved native process exits. It compares source-mode classifications and
+unaltered diagnostic lists. Memory, heartbeat, recursion and interruption
+diagnostics are conservative exclusions from ordinary-error cost credit, not
+proof that a statement is false. Late native completion cannot erase a timeout.
+A complete marker with missing planned cells remains incomplete.
+
+Only already completed producers in the same process segment can match.
+Input keys with observed outcome changes receive no ordinary-failure cost credit.
+Report within-source and cross-source repeats separately. Keys reset at native
+process restart; never combine their numeric IDs across segments. No hidden-state,
+post-error,heartbeat or diagnostic replay certificate is implied by a match.
+Tests include the actual retained positive-control stream and real low-threshold
+watchdog injection; existing benchmark-smoke CI discovers them without a new job.

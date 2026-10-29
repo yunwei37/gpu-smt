@@ -238,3 +238,13 @@ posterror/HB/diagnostic replay limits remain explicit. No failurecache,early rej
 novelty or end-to-endgain is claimed before complete data and implementation.
 Keep raw failures and analyze completed ordinary-error repeats,unreached and
 operational cases separately;no old proxy/cross-run time denominator is substituted.
+
+[Step0133](tmp/build-and-evaluate/step-0133-20261029T102319+0000/step-report.md)
+recomputes the retained native positive control: the intentional ordinary-failure
+pair matches after the existing environment-comparison repair. This is not a
+population hit rate. Offline result analysis now separates original resource
+attempts/final retries, timeout/late returns, memory/heartbeat/recursion/interrupt
+diagnostics and explicit watchdog events. Completed ordinary-error costs require
+a prior completed producer in the same process; unstable outcomes and operational
+sources get no such credit. The existing selected-population capture remains on
+its frozen qualified source,without an enabled cache or second collection.

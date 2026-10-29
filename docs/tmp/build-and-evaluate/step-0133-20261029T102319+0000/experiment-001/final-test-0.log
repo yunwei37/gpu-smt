@@ -1,0 +1,25 @@
+test_complete_marker_without_all_planned_cells_remains_incomplete (test_tactic_state_analysis.TacticStateAnalysis.test_complete_marker_without_all_planned_cells_remains_incomplete) ... ok
+test_equal_error_flags_do_not_hide_diagnostic_or_limit_differences (test_tactic_state_analysis.TacticStateAnalysis.test_equal_error_flags_do_not_hide_diagnostic_or_limit_differences) ... ok
+test_late_native_completion_does_not_erase_timeout (test_tactic_state_analysis.TacticStateAnalysis.test_late_native_completion_does_not_erase_timeout) ... ok
+test_observer_without_completed_source_is_unknown_not_a_hit (test_tactic_state_analysis.TacticStateAnalysis.test_observer_without_completed_source_is_unknown_not_a_hit) ... ok
+test_outcome_unstable_key_gets_no_failure_cost_credit (test_tactic_state_analysis.TacticStateAnalysis.test_outcome_unstable_key_gets_no_failure_cost_credit) ... ok
+test_prior_must_finish_before_repeated_call_starts (test_tactic_state_analysis.TacticStateAnalysis.test_prior_must_finish_before_repeated_call_starts) ... ok
+test_process_local_key_ids_do_not_join_between_segments (test_tactic_state_analysis.TacticStateAnalysis.test_process_local_key_ids_do_not_join_between_segments) ... ok
+test_retained_native_positive_and_changed_inputs (test_tactic_state_analysis.TacticStateAnalysis.test_retained_native_positive_and_changed_inputs) ... ok
+test_retained_real_watchdog_injection_preserves_all_attempts (test_tactic_state_analysis.TacticStateAnalysis.test_retained_real_watchdog_injection_preserves_all_attempts) ... FAIL
+test_return_resource_limit_and_open_call_are_not_reusable_errors (test_tactic_state_analysis.TacticStateAnalysis.test_return_resource_limit_and_open_call_are_not_reusable_errors) ... ok
+test_wrapped_allocation_diagnostic_is_conservatively_excluded (test_tactic_state_analysis.TacticStateAnalysis.test_wrapped_allocation_diagnostic_is_conservatively_excluded) ... ok
+
+======================================================================
+FAIL: test_retained_real_watchdog_injection_preserves_all_attempts (test_tactic_state_analysis.TacticStateAnalysis.test_retained_real_watchdog_injection_preserves_all_attempts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/repository/tests/test_tactic_state_analysis.py", line 99, in test_retained_real_watchdog_injection_preserves_all_attempts
+    self.assertTrue(result["collection_complete"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.007s
+
+FAILED (failures=1)

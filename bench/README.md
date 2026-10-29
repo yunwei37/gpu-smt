@@ -13,14 +13,18 @@ backend retirement. Use its [measurement workflow](../docs/benchmarking.md)
 for new resource points. Current research preparation is split into:
 
 - [Candidate scheduling](lean-candidate-scheduling/README.md): original 7,808
-  miniF2F sources and task identities. The retained all-candidate cell is
-  complete; its first-success pair is still running.
+  miniF2F sources and task identities. The original all-candidate and two
+  first-success cells are [complete](../artifacts/candidate-scheduling-2026-10-25/native-full7808-20261025T0730/full-result-review.md).
+  Their old resource point is separate from current engine measurements.
 - [Code verification](lean-code-verification/README.md): original public Lean
   sources, pinned native SDKs, header closure and native dependency preparation.
 - [Failure profiling](lean-failure-profile/): the completed 480-source
-  characterization. Source keywords are not reliable failure witnesses.
+  characterization and current [native tactic-input measurement](lean-failure-profile/state-reuse/README.md).
+  Source keywords and observed input matches are not reliable failure witnesses.
 - [Native import parent](../native/lean/README.md): optional pinned-context COW
-  backend. Full Mathlib child parity and throughput remain to be measured.
+  backend. The [complete matched resource pair](../artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z/result-review.md)
+  retains outcome parity and response differences; its elapsed reduction is
+  not isolated COW benefit or a general strongest-service claim.
 
 Historical scripts retain the resource semantics recorded with their results.
 Do not copy their fixed address-space caps into new captures. Do not run a

@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_tactic_state_analysis.py",
+      "-v"
+    ],
+    "exit": 0,
+    "seconds": 0.10113799781538546,
+    "combined_owned_peak_RSS": 4741939200,
+    "only_new_support_aborted": false
+  },
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-m",
+      "py_compile",
+      "bench/lean-failure-profile/state-reuse/analyze.py"
+    ],
+    "exit": 0,
+    "seconds": 0.10098315309733152,
+    "combined_owned_peak_RSS": 4740427776,
+    "only_new_support_aborted": false
+  },
+  {
+    "command": [
+      "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit": 0,
+    "seconds": 0.5036182259209454,
+    "combined_owned_peak_RSS": 4780146688,
+    "only_new_support_aborted": false
+  }
+]
