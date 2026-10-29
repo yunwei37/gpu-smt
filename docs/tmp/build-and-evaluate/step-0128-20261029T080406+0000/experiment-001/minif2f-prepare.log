@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-failure-profile/state-reuse/prepare.py", line 82, in <module>
+    main()
+    ~~~~^^
+  File "/workspaces/repository/bench/lean-failure-profile/state-reuse/prepare.py", line 38, in main
+    assert wanted <= observed, (wanted, observed)
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: ({'Lean.Parser.Tactic.normNum', 'Mathlib.Tactic.intervalCases', 'nlinarith', 'Lean.Parser.Tactic.simpAll'}, {'nlinarith', 'Mathlib.Tactic.intervalCases', 'Lean.Parser.Tactic.simpAll', 'Mathlib.Tactic.normNum'})
