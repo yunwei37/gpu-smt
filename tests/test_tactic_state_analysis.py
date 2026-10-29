@@ -11,6 +11,11 @@ SPEC = importlib.util.spec_from_file_location(
 ANALYSIS = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(ANALYSIS)
 
+RUN_SPEC = importlib.util.spec_from_file_location(
+    "state_runner", ROOT/"bench/lean-failure-profile/state-reuse/run.py")
+RUNNER = importlib.util.module_from_spec(RUN_SPEC)
+RUN_SPEC.loader.exec_module(RUNNER)
+
 
 def source(event, identity="candidate", mode="observe", **fields):
     return dict(event=event, id=identity, mode=mode, **fields)
@@ -41,6 +46,81 @@ class TacticStateAnalysis(unittest.TestCase):
             path = Path(directory)/"raw.log"
             path.write_text(raw_text(events))
             return ANALYSIS.analyze_raw(path, **kwargs)
+
+    def test_native_exit_is_operational_only_after_source_begin(self):
+        current = ("source", "observe")
+        self.assertEqual(RUNNER.native_exit_kind(current, True, None), "native_process_failure")
+        self.assertIsNone(RUNNER.native_exit_kind(current, False, None))
+        self.assertIsNone(RUNNER.native_exit_kind(None, True, None))
+        self.assertEqual(RUNNER.native_exit_kind(current, True, "timeout"), "timeout")
+        self.assertEqual(RUNNER.native_exit_kind(current, True, "resource_preempted"),
+                         "resource_preempted")
+
+    def test_continuation_retains_resource_queue_and_classifies_unreported_exit(self):
+        rows = [dict(id=i, mode="original") for i in ["done", "resource", "timeout", "panic", "pending"]]
+        history = [completed("done", "original", segment=0),
+                   source("operational_end", "resource", "original", segment=1,
+                          status="resource_preempted", exclusive_retry=False),
+                   source("operational_end", "timeout", "original", segment=2,
+                          status="timeout", exclusive_retry=False)]
+        retired = [dict(event="retired", segment=3, exit=1,
+                        current=["panic", "original"], source_started=True)]
+        pending, retry, derived = RUNNER.continuation_plan(rows, history, retired)
+        self.assertEqual([r["id"] for r in pending], ["pending"])
+        self.assertEqual([r["id"] for r in retry], ["resource"])
+        row, = derived
+        self.assertEqual(row["status"], "native_process_failure")
+        self.assertTrue(row["derived_from_prior_retirement"])
+        self.assertIsNone(row["transport_wall_seconds"])
+
+    def test_continuation_refuses_prior_exit_without_source_begin(self):
+        with self.assertRaises(ValueError):
+            RUNNER.continuation_plan([dict(id="x", mode="original")], [],
+                [dict(segment=0, exit=1, current=["x", "original"], source_started=False)])
+
+    def test_actual_failed_prefix_restores_only_unfinished_cells_and_five_retries(self):
+        import gzip
+        directory = ROOT/"artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/partial-20261029T1233"
+        rows = json.loads(gzip.decompress((directory/"input.json.gz").read_bytes()))["candidates"]
+        history = [json.loads(s) for s in ANALYSIS.lines(directory/"run/results.jsonl.gz")]
+        lifecycle = [json.loads(s) for s in ANALYSIS.lines(directory/"run/lifecycle.jsonl.gz")]
+        retired = []
+        for old in lifecycle:
+            if old["event"] != "retired":
+                continue
+            if old.get("current") and not old.get("operational"):
+                raw = directory/("run/segment-%04d/raw.log.gz" % old["segment"])
+                starts = []
+                for line in ANALYSIS.lines(raw):
+                    if line.startswith("{"):
+                        value = json.loads(line)
+                        if value.get("event") == "candidate_begin":
+                            starts.append([value["id"], value["mode"]])
+                old = dict(old, source_started=old["current"] in starts)
+            retired.append(old)
+        pending, retry, derived = RUNNER.continuation_plan(rows, history, retired)
+        self.assertEqual((len(rows), len(history), len(pending), len(retry), len(derived)),
+                         (8031, 2640, 5390, 5, 1))
+        self.assertEqual(derived[0]["id"], "proofnet-5879")
+        self.assertNotIn(("proofnet-5879", "original"),
+                         {(r["id"], r["mode"]) for r in pending})
+
+    def test_derived_prior_attempt_is_explicit_not_an_unresolved_exit_or_tactic_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            row = source("operational_end", "panic", "original", segment=19,
+                         status="native_process_failure", exclusive_retry=False,
+                         derived_from_prior_retirement=True, transport_wall_seconds=None)
+            old = dict(event="retired", segment=19, exit=1,
+                       current=["panic", "original"], operational=None)
+            (path/"results.jsonl").write_text(json.dumps(row)+"\n")
+            (path/"lifecycle.jsonl").write_text(json.dumps(old)+"\n")
+            result = ANALYSIS.analyze_collection(path)
+            self.assertEqual(len(result["derived_prior_attempts"]), 1)
+            self.assertEqual(result["unresolved_native_exits"], [])
+            self.assertEqual(result["repeated_ordinary_error_occurrences"], 0)
+            self.assertEqual(result["final_outcomes"],
+                             [{"mode": "original", "status": "native_process_failure", "count": 1}])
 
     def test_retained_native_positive_and_changed_inputs(self):
         directory = ROOT/"docs/tmp/build-and-evaluate/step-0131-20261029T091211+0000/experiment-001"

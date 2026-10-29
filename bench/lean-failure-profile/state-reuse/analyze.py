@@ -261,8 +261,13 @@ def analyze_collection(directory):
         final_outcomes=counted(final_counts),
         datasets={name: counted(counts) for name, counts in datasets.items()},
         watchdog_events=sum(r["event"] == "watchdog_kill" for r in lifecycle),
+        derived_prior_attempts=[r for r in rows if r.get("derived_from_prior_retirement")],
         unresolved_native_exits=[r for r in lifecycle if r["event"] == "retired"
-                                 and r.get("exit") and not r.get("operational")],
+                                 and r.get("exit") and not r.get("operational")
+                                 and not any(v.get("event") == "operational_end"
+                                     and v.get("segment") == r["segment"]
+                                     and [v.get("id"), v.get("mode")] == r.get("current")
+                                     for v in rows)],
         exclusive_retry_attempts=sum(r.get("exclusive_retry", False) for r in rows
                                      if r["event"] in ("candidate_end", "operational_end")),
         late_native_completions=late, paired_status_differences=differences,

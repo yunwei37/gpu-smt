@@ -144,3 +144,26 @@ from a wrapped-but-unreached source. Partially reached units inside a source are
 not inferred by subtracting runtime calls from Syntax counts:one unit may run
 many times,and the current record has no complete per-unit inventory. Open calls
 retain unknown action completion;none of these counts certifies failure replay.
+
+## Native failure and continuation
+
+A source that begins but exits without a reply is native_process_failure,not a
+logical/tactic rejection. The process group retires before another source starts;
+the raw panic/exit remains. Existing timeout/resource causes take precedence.
+Pre-source driver/library failures still stop the collector for repair.
+
+After actually retiring a failed run,use the same original input/context with
+--resume-from /path/to/failed/run and a new --out directory. The collector refuses
+a live prior controller/native worker or changed input/context. It copies raw
+prefix bytes,keeps old attempts,continues segment IDs and restores deferred
+fresh/solo resource retries. Old files are never edited. An admitted prior
+retirement lacking a result is explicitly labelled derived_from_prior_retirement,
+with native exit code and unknown elapsed;it is not a fresh native response.
+
+Memory gzip retains its original members and appends a new member with phase
+identity. seconds restarts for each phase;terminal seconds_scope describes only
+the new controller phase,not the pause or a fresh uninterrupted whole-run clock.
+The selected input-match/error-cost study can finish across these declared
+phases,but it cannot become an end-to-end speedup by summing convenient clocks.
+Actual proofnet-5879panic plus minif2f7 in all3modes qualifies retirement and
+continuation after a native exit;all6results retain their raw distinctions.

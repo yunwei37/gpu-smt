@@ -263,3 +263,10 @@ Nat.pow panic before a result row;the old controller stops and allworkers retire
 This supersedes the earlier running observation,not the raw launch metadata.
 Match rate and saved time remain unknown;repair and continue unfinished cells
 without discarding the healthy prefix or five deferred resource retries.
+
+[Step0136](tmp/build-and-evaluate/step-0136-20261029T124312+0000/step-report.md)
+repairs this operational failure and qualifies original5879/minif2f7 across
+three modes:3explicit native-process failures,3subsequent native completions,
+allworkersretired. Continuation preserves the prefix and5deferred resource
+retries;one old unreported panic is explicitly derived with unknown elapsed.
+Phased diagnostic completion cannot claim an uninterrupted end-to-end speedup.
