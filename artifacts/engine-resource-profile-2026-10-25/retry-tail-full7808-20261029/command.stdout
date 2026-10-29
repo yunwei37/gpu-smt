@@ -1,0 +1,46 @@
+{
+  "observed_utc": "2026-10-29T06:52:03.992139+00:00",
+  "source": "complete frozen13d4606 full7808 actual native roots; prepared parents excluded",
+  "denominator_internal_lifecycle_seconds": 20322.829858862,
+  "physical_attempts": 7850,
+  "ordinary_attempts": 7808,
+  "exclusive_attempts": 42,
+  "prepared_parent_pids_excluded": [
+    538705
+  ],
+  "registered_retired_identities": 7869,
+  "intervals_without_native_roots": [],
+  "process_envelope_seconds_by_active_count": {
+    "0": 3.786428451538086,
+    "1": 9379.564923524857,
+    "2": 63.03575539588928,
+    "3": 224.6896300315857,
+    "4": 10651.753121376038
+  },
+  "single_candidate_seconds": 9379.564923524857,
+  "single_candidate_exclusive_seconds": 9145.231930494308,
+  "single_candidate_ordinary_seconds": 234.3329930305481,
+  "exclusive_fraction_of_single_candidate_time": 0.9750166457675645,
+  "exclusive_fraction_of_whole_lifecycle": 0.44999795766663014,
+  "last_ordinary_release_utc": "2026-10-28T22:31:12.985277+00:00",
+  "first_exclusive_register_utc": "2026-10-28T22:31:13.163526+00:00",
+  "retry_tail_follows_all_ordinary_native_retirement": true,
+  "gap_before_retry_tail_seconds": 0.17824912071228027,
+  "exclusive_status_counts": {
+    "resource_exhausted": 41,
+    "timeout": 1
+  },
+  "exclusive_reported_attempt_seconds_sum": 9146.153409305,
+  "three_unused_core_seconds_during_exclusive_process_envelopes": 27435.695791482925,
+  "warm_immediate_exclusive_attempts": 52,
+  "warm_exclusive_wall_envelopes_sum": 12106.91613526945,
+  "clock_and_scope": "registration through ownership release, not candidate CPU use or whole lease; zero count includes queue/admission/setup/retirement gaps, not attributed overhead",
+  "causal_limits": [
+    "No isolated old/new queue policy A/B",
+    "No safe memory ceiling inferred from censored peak",
+    "Warm and engine envelope bounds differ",
+    "Do not credit unused slots as safe overlap or free speedup",
+    "Shared-host support analysis on CPU11 is disclosed"
+  ],
+  "analysis_elapsed_seconds": 0.9161856910213828
+}

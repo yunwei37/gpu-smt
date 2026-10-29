@@ -54,3 +54,5 @@ and current resource boundaries. Add the LRAT-Catcherv2precedent;streaming/
 resumption is not a new contribution. Actual37-pageTeXbuild succeeds in3.004s
 with30,396,260,352Bcombined sampled RSS;changed text/citation pages are inspected.
 Do not add another list-fusion variant before its prepared module measurement.
+
+Complete trace reuse now resolves retry-tail versus ordinary admission: [step0124](../step-0124-20261029T065342+0000/step-report.md). Four-process ordinary coverage95.3%;97.5%of remaining single-process time belongs to solo retries. Keep the existing tested queue-tail repair;do not infer safe overlap from censored peaks. Continue actual42then own native method evidence.
