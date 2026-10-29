@@ -182,3 +182,11 @@ cancellation lifetime contracts using Send/notSync state.11focused tests pass,
 along with clippy/example/docs. This remains an unenabled library component,
 not a measured failure-reuse method;do not let good OSS tests substitute for
 the missing native workload evidence or lower the capture safety requirement.
+
+### Actual CI terminal for the dynamic backend source
+Step0149 verifies88Rust passes and six actual pinned native protocol checks for
+c656391,plus both relevant smoke terminals. Those checks do not enable failure
+replay or answer native cohort opportunity. Native collection remains zero on
+the signal-denied G10 path. The user's12GiB/serial/PVC and API/6GiB stop must
+remain intact;avoid turning that real execution dependency into either a
+return-tolab question or a sequence of redundant synthetic positive controls.

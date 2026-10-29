@@ -1,0 +1,93 @@
+{
+  "utc": "2026-10-29T22:28:41.570447+00:00",
+  "runs": [
+    {
+      "id": 40965824796,
+      "name": "engine",
+      "head_sha": "c6563911cd308f3ff1ab87ede562d1ca9d8c08e7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40965824796",
+      "created_at": "2026-10-29T22:26:00Z",
+      "updated_at": "2026-10-29T22:27:59Z",
+      "jobs": [
+        {
+          "id": 123769942325,
+          "name": "rust",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T22:26:03Z",
+          "completed_at": "2026-10-29T22:27:58Z",
+          "rust_test_totals": {
+            "passed": 88,
+            "failed": 0,
+            "ignored": 6
+          }
+        },
+        {
+          "id": 123769942929,
+          "name": "native-repl-contract",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T22:26:03Z",
+          "completed_at": "2026-10-29T22:27:58Z",
+          "rust_test_totals": {
+            "passed": 6,
+            "failed": 0,
+            "ignored": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": 40965824756,
+      "name": "benchmark-smoke",
+      "head_sha": "c6563911cd308f3ff1ab87ede562d1ca9d8c08e7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40965824756",
+      "created_at": "2026-10-29T22:26:00Z",
+      "updated_at": "2026-10-29T22:27:15Z",
+      "jobs": [
+        {
+          "id": 123769941774,
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T22:26:03Z",
+          "completed_at": "2026-10-29T22:27:14Z",
+          "rust_test_totals": {
+            "passed": 0,
+            "failed": 0,
+            "ignored": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": 40962972159,
+      "name": "benchmark-smoke",
+      "head_sha": "b7f62eefbf0752a63524edf53a6880b8b8da2bd7",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/yunwei37/gpu-smt/actions/runs/40962972159",
+      "created_at": "2026-10-29T22:04:24Z",
+      "updated_at": "2026-10-29T22:05:49Z",
+      "jobs": [
+        {
+          "id": 123760222182,
+          "name": "z3-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-29T22:04:26Z",
+          "completed_at": "2026-10-29T22:05:49Z",
+          "rust_test_totals": {
+            "passed": 0,
+            "failed": 0,
+            "ignored": 0
+          }
+        }
+      ]
+    }
+  ]
+}
