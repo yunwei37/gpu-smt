@@ -1,0 +1,107 @@
+{
+  "observedUtc": "2026-10-29T17:00:40.7259593Z",
+  "pods": [
+    {
+      "name": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-wzmfb",
+      "node": "lab",
+      "phase": "Succeeded",
+      "owners": [
+        {
+          "apiVersion": "apps/v1",
+          "blockOwnerDeletion": true,
+          "controller": true,
+          "kind": "ReplicaSet",
+          "name": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff",
+          "uid": "51469c7c-d51d-44d0-9a68-0b6154ef66fd"
+        }
+      ],
+      "containers": [
+        {
+          "name": "dev",
+          "containerID": "containerd://22866654e596b1ed89726e1791f3f503c93a7fba6e5b17e1431dbcf4e9b6af90",
+          "state": {
+            "terminated": {
+              "containerID": "containerd://22866654e596b1ed89726e1791f3f503c93a7fba6e5b17e1431dbcf4e9b6af90",
+              "exitCode": 0,
+              "finishedAt": "2026-10-29T16:05:44Z",
+              "reason": "Completed",
+              "startedAt": "2026-10-19T03:13:21Z"
+            }
+          }
+        }
+      ],
+      "pvc": [
+        "coder-81668d0b-bcba-4058-a2e6-473350357c52-workspaces",
+        "coder-codex-auth-yusen356-gmail-com"
+      ],
+      "resources": {
+        "requests": {
+          "cpu": "0",
+          "memory": "0"
+        }
+      },
+      "nodeSelector": {
+        "kubernetes.io/arch": "amd64"
+      }
+    },
+    {
+      "name": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff-7tjff",
+      "node": "g10",
+      "phase": "Running",
+      "owners": [
+        {
+          "apiVersion": "apps/v1",
+          "blockOwnerDeletion": true,
+          "controller": true,
+          "kind": "ReplicaSet",
+          "name": "coder-81668d0b-bcba-4058-a2e6-473350357c52-9dc6df5ff",
+          "uid": "51469c7c-d51d-44d0-9a68-0b6154ef66fd"
+        }
+      ],
+      "containers": [
+        {
+          "name": "dev",
+          "containerID": "containerd://4d5f0881b6627a12033b972c785f86830293d3b834e00992bd40d1d02c790f76",
+          "state": {
+            "running": {
+              "startedAt": "2026-10-29T16:06:10Z"
+            }
+          }
+        }
+      ],
+      "pvc": [
+        "coder-81668d0b-bcba-4058-a2e6-473350357c52-workspaces",
+        "coder-codex-auth-yusen356-gmail-com"
+      ],
+      "resources": {
+        "requests": {
+          "cpu": "0",
+          "memory": "0"
+        }
+      },
+      "nodeSelector": {
+        "kubernetes.io/arch": "amd64"
+      }
+    }
+  ],
+  "events": [
+    {
+      "lastTimestamp": "2026-10-29T16:05:43Z",
+      "reason": "Evicted",
+      "message": "The node was low on resource: ephemeral-storage. Threshold quantity: 98392304877, available: 101882432Ki. Container dev was using 30137924Ki, request is 0, has larger consumption of ephemeral-storage. "
+    },
+    {
+      "lastTimestamp": "2026-10-29T16:05:43Z",
+      "reason": "Killing",
+      "message": "Stopping container dev"
+    }
+  ],
+  "deployment": {
+    "name": "coder-81668d0b-bcba-4058-a2e6-473350357c52",
+    "uid": "5f92689a-031a-477a-82a0-b7fc627718fe",
+    "nodeSelector": {
+      "kubernetes.io/arch": "amd64"
+    },
+    "replicas": 1
+  }
+}

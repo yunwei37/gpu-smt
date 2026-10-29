@@ -98,3 +98,14 @@ maintenance, not our research contribution. Keep the single frozen measurement
 running. Its complete per-state ordinary-failure cost is still the information
 needed to choose a substantive mechanism; do not replace that result with
 more parser fixtures or status reports.
+
+
+### Workspace eviction — preserve the information the experiment is collecting
+
+The actual blocker became ephemeral-storage eviction,not Lean semantics.
+Using/tmp for live raw data lost unarchived progress. Restore the proven archive
+onto the existing PVC and keep future incremental outputs there. The replacement
+landed on a smaller node without CPUs8–11,so silently restarting would introduce
+both safety and measurement errors. The next substantive action is restoring
+the existing approved resource point,then finishing the8031cell measurement.
+No new logger,proxy experiment or negative research conclusion replaces it.

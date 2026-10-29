@@ -167,3 +167,20 @@ The selected input-match/error-cost study can finish across these declared
 phases,but it cannot become an end-to-end speedup by summing convenient clocks.
 Actual proofnet-5879panic plus minif2f7 in all3modes qualifies retirement and
 continuation after a native exit;all6results retain their raw distinctions.
+
+
+## Capture durability
+
+Keep population inputs, frozen source/modules and run output under the existing
+PVC-backed /workspaces/.agent-state/gpu-smt-captures directory. Container /tmp
+is disposable scratch and does not survive Workspace replacement. The root
+records a live launch and actual node/CPU context; a prepared recovery directory
+does not mean a collector is running. No new storage service or timer is needed.
+
+The2026-10-29 ephemeral-storage eviction lost the unarchived /tmp continuation.
+The retained2640-row prefix remains available;at least1273 later observed ledger
+entries are currently unavailable and the eviction-time total is unknown.
+See step0140 for raw event evidence, exact recovery scope and prepared input.
+Do not label missing/evicted data as ordinary tactic failures or pool clocks
+across node changes. Rebuild frozen native modules only at the approved resource
+point before resuming the finite plan.

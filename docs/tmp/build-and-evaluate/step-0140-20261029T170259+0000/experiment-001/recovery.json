@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-29T16:59:08.045153+00:00",
+  "state": "prepared-not-launched",
+  "recovered_native_result_rows": 2640,
+  "planned_cells": 8031,
+  "last_previous_health_ledger_rows": 3914,
+  "minimum_no_longer_recoverable_ledger_rows": 1273,
+  "loss_scope": "At least1273 new observed ledger entries are unavailable beyond archived2640. One additional derived old panic entry is reconstructable from retained source-start/exit evidence;final eviction-time count and unobserved final outcomes unknown.",
+  "archive": "artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/partial-20261029T1233",
+  "recovered_files": 57,
+  "retired_by": "Kubernetes ephemeral-storage eviction2026-10-29T16:05:43Z;container exit0 at16:05:44Z",
+  "current_node": "g10",
+  "required_cpu_ids": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "current_cpu_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "controller_source": "aee09328b5e721a845e4a3953d10d06e98379b6a",
+  "native_source": "ae59c77281888d01fb9684c8712d58f966ea9880",
+  "missing_compiled_modules_require_rebuild": true,
+  "no_semantic_failure_inferred": true,
+  "no_new_collection_launched": true,
+  "clock_scope": "Interrupted phase unavailable beyond retained prefix;no pooled continuous end-to-end clock",
+  "observed_rows_after_archived_prefix": 1274,
+  "recoverable_derived_old_panic_rows": 1
+}
