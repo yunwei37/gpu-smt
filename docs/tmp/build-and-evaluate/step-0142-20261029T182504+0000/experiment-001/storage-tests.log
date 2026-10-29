@@ -1,0 +1,15 @@
+test_bad_cli_output_is_rejected_before_affinity_or_native_work (test_tactic_state_analysis.CaptureOutputDurability.test_bad_cli_output_is_rejected_before_affinity_or_native_work) ... usage: run.py [-h] --input INPUT --out OUT --context CONTEXT
+              --module-dir MODULE_DIR [--resume-from RESUME_FROM]
+run.py: error: --out must be on the existing /workspaces PVC; container /tmp is disposable
+ok
+test_nested_other_device_is_rejected (test_tactic_state_analysis.CaptureOutputDurability.test_nested_other_device_is_rejected) ... ok
+test_nonexistent_output_on_the_workspace_filesystem_is_allowed (test_tactic_state_analysis.CaptureOutputDurability.test_nonexistent_output_on_the_workspace_filesystem_is_allowed) ... ok
+test_outside_prefix_and_symlink_escape_are_rejected (test_tactic_state_analysis.CaptureOutputDurability.test_outside_prefix_and_symlink_escape_are_rejected) ... ok
+test_real_cli_rejects_temporary_output_without_creating_it (test_tactic_state_analysis.CaptureOutputDurability.test_real_cli_rejects_temporary_output_without_creating_it) ... ok
+test_symlink_into_the_volume_is_canonicalized_before_use (test_tactic_state_analysis.CaptureOutputDurability.test_symlink_into_the_volume_is_canonicalized_before_use) ... ok
+test_unmounted_workspace_is_not_assumed_persistent (test_tactic_state_analysis.CaptureOutputDurability.test_unmounted_workspace_is_not_assumed_persistent) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.075s
+
+OK

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6,7",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_tactic_state_analysis.py",
+    "-k",
+    "CaptureOutputDurability",
+    "-v"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.21904592541977763,
+  "children_maxrss_kib": 24120,
+  "scope": "G10 development tests;no Lean candidate or formal resource-point measurement"
+}

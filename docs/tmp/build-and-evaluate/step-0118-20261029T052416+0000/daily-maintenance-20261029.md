@@ -119,3 +119,18 @@ and has heartbeat-aware full snapshots;neither primitive is a contribution for
 us. A prepared native control distinguishes exception-only replay from post-
 error effects. It is unexecuted/custom,so real expensive-tactic coverage/cost
 still comes only from the incomplete capture. No new logger or experiment.
+
+
+### Capture storage lesson — turn the requirement into an early check
+
+The eviction event recorded30,137,924KiB total container ephemeral usage;the
+user identifies/tmp capture directories as the main contributor. No retained
+eviction-time du breakdown proves their exact share. Choosing/tmp for live
+incremental output left at least1273 observed entries unavailable after the
+Pod was replaced. Keep capture outputs on the existing PVC,not container/tmp.
+
+Step0142 puts the check before directory creation,CPU binding and native startup.
+It resolves aliases and checks the declared Workspace mount/device. Boundary
+regressions and actual G10 placement/negative CLI tests pass. The user explicitly
+requested this check;it is not a new resource/approval policy. No fsync timer,
+backup service or logging layer is added. Root self-review only.

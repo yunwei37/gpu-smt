@@ -1,0 +1,14 @@
+{
+  "actual_workspace_mount": true,
+  "accepted_pvc_write": {
+    "path": "/workspaces/.agent-state/gpu-smt-captures/storage-guard-05_9znpk/probe",
+    "same_device": true,
+    "readback": "PVC placement probe,not a native capture\n"
+  },
+  "rejected_symlink_cli": {
+    "exit_code": 2,
+    "stderr": "usage: run.py [-h] --input INPUT --out OUT --context CONTEXT\n              --module-dir MODULE_DIR [--resume-from RESUME_FROM]\nrun.py: error: --out must be on the existing /workspaces PVC; container /tmp is disposable\n",
+    "created_output": false
+  },
+  "scope": "Actual G10 filesystem placement and CLI rejection;no native launch/restart/durability guarantee"
+}

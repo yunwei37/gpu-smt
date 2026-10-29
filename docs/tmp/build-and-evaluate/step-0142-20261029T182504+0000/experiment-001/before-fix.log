@@ -1,0 +1,26 @@
+test_bad_cli_output_is_rejected_before_affinity_or_native_work (test_tactic_state_analysis.CaptureOutputDurability.test_bad_cli_output_is_rejected_before_affinity_or_native_work) ... FAIL
+
+======================================================================
+FAIL: test_bad_cli_output_is_rejected_before_affinity_or_native_work (test_tactic_state_analysis.CaptureOutputDurability.test_bad_cli_output_is_rejected_before_affinity_or_native_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/repository/tests/test_tactic_state_analysis.py", line 59, in test_bad_cli_output_is_rejected_before_affinity_or_native_work
+    RUNNER.main()
+    ~~~~~~~~~~~^^
+  File "/workspaces/repository/bench/lean-failure-profile/state-reuse/run.py", line 87, in main
+    os.sched_setaffinity(0, {8, 9, 10, 11})
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1228, in _execute_mock_call
+    raise effect
+AssertionError: affinity before storage check
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+FAILED (failures=1)

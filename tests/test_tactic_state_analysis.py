@@ -1,6 +1,11 @@
 """Result-analysis regressions; no native collection or proof verdict substitution."""
 import importlib.util
 import json
+import os
+import subprocess
+import sys
+from types import SimpleNamespace
+from unittest.mock import patch
 from pathlib import Path
 import tempfile
 import unittest
@@ -38,6 +43,98 @@ def completed(identity="candidate", mode="observe", **fields):
 def raw_text(events):
     return "".join((ANALYSIS.PREFIX if "call" in row else "")+json.dumps(row)+"\n"
                    for row in events)
+
+
+class CaptureOutputDurability(unittest.TestCase):
+    def test_nonexistent_output_on_the_workspace_filesystem_is_allowed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root/"new"/"run"
+            with patch.object(Path, "is_mount", return_value=True):
+                self.assertEqual(RUNNER.persistent_output(output, root), output)
+            self.assertFalse(output.exists())
+
+    def test_unmounted_workspace_is_not_assumed_persistent(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaisesRegex(ValueError, "PVC"):
+                RUNNER.persistent_output(root/"run", root)
+
+    def test_outside_prefix_and_symlink_escape_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base/"workspace"
+            outside = base/"workspace-other"
+            root.mkdir()
+            outside.mkdir()
+            (root/"escape").symlink_to(outside, target_is_directory=True)
+            with patch.object(Path, "is_mount", return_value=True):
+                for output in [base/"tmp"/"run", outside/"run", root/"escape"/"run"]:
+                    with self.subTest(output=output):
+                        with self.assertRaisesRegex(ValueError, "PVC"):
+                            RUNNER.persistent_output(output, root)
+                        self.assertFalse(output.exists())
+
+    def test_symlink_into_the_volume_is_canonicalized_before_use(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base/"workspace"
+            root.mkdir()
+            (base/"alias").symlink_to(root, target_is_directory=True)
+            with patch.object(Path, "is_mount", return_value=True):
+                self.assertEqual(RUNNER.persistent_output(base/"alias"/"run", root),
+                                 root/"run")
+
+    def test_nested_other_device_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            nested = root/"other-mount"
+            nested.mkdir()
+            original = Path.stat
+
+            def stat(path, *args, **kwargs):
+                value = original(path, *args, **kwargs)
+                if path == nested:
+                    fields = list(value)
+                    fields[2] += 1  # Simulated different device,not an actual mount.
+                    return os.stat_result(fields)
+                return value
+
+            with patch.object(Path, "is_mount", return_value=True), \
+                 patch.object(Path, "stat", stat):
+                with self.assertRaisesRegex(ValueError, "different filesystem"):
+                    RUNNER.persistent_output(nested/"run", root)
+
+    def test_real_cli_rejects_temporary_output_without_creating_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)/"not-created"
+            result = subprocess.run(
+                [sys.executable, "-B", str(RUN_SPEC.origin),
+                 "--input", "not-read", "--out", str(output),
+                 "--context", "not-read", "--module-dir", "not-read"],
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertIn("PVC", result.stderr)
+            self.assertNotIn("affinity", result.stderr)
+            self.assertFalse(output.exists())
+
+    def test_bad_cli_output_is_rejected_before_affinity_or_native_work(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)/"container-output"
+            argv = ["run.py", "--input", "unread-input.json.gz",
+                    "--out", str(output), "--context", "unread-context.json",
+                    "--module-dir", "unread-modules"]
+            with patch.object(sys, "argv", argv), \
+                 patch.dict(sys.modules, {"psutil": SimpleNamespace()}), \
+                 patch.object(RUNNER.os, "sched_setaffinity",
+                              side_effect=AssertionError("affinity before storage check")) as affinity, \
+                 patch.object(RUNNER.subprocess, "Popen") as native:
+                with self.assertRaises(SystemExit) as error:
+                    RUNNER.main()
+                self.assertEqual(error.exception.code, 2)
+                affinity.assert_not_called()
+                native.assert_not_called()
+            self.assertFalse(output.exists())
 
 
 class TacticStateAnalysis(unittest.TestCase):

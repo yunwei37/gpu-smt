@@ -173,8 +173,13 @@ continuation after a native exit;all6results retain their raw distinctions.
 
 Keep population inputs, frozen source/modules and run output under the existing
 PVC-backed /workspaces/.agent-state/gpu-smt-captures directory. Container /tmp
-is disposable scratch and does not survive Workspace replacement. The root
-records a live launch and actual node/CPU context; a prepared recovery directory
+is disposable scratch and does not survive Workspace replacement. run.py
+resolves --out before any file creation,CPU binding or native startup and
+requires the existing /workspaces mount plus the same filesystem device.
+Paths outside it,symlink escapes and nested different filesystems are rejected
+with a CLI error;there is no bypass switch. This checks placement on the
+declared Workspace volume,not a storage backup or crash-durability guarantee.
+The root records a live launch and actual node/CPU context; a prepared recovery directory
 does not mean a collector is running. No new storage service or timer is needed.
 
 The2026-10-29 ephemeral-storage eviction lost the unarchived /tmp continuation.

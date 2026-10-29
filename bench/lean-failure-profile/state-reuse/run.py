@@ -26,6 +26,20 @@ BUDGET = 48 * 1024**3
 
 
 
+def persistent_output(path, workspace=Path("/workspaces")):
+    """Resolve capture output onto the existing Workspace volume before writes."""
+    workspace, output = workspace.resolve(), path.resolve()
+    if not workspace.is_mount() or not output.is_relative_to(workspace):
+        raise ValueError("--out must be on the existing /workspaces PVC; "
+                         "container /tmp is disposable")
+    existing = output
+    while not existing.exists():
+        existing = existing.parent
+    if existing.stat().st_dev != workspace.stat().st_dev:
+        raise ValueError("--out is on a different filesystem from the /workspaces PVC")
+    return output
+
+
 def native_exit_kind(current, source_started, operational):
     """Only an actually begun source can own an otherwise unexplained exit."""
     if operational is None and current is not None and source_started:
@@ -70,7 +84,6 @@ def continuation_plan(rows, history, retired):
 
 def main():
     global RUN_OUTPUT
-    import psutil
 
     a = argparse.ArgumentParser(description=__doc__)
     a.add_argument("--input", type=Path, required=True)
@@ -80,6 +93,12 @@ def main():
     a.add_argument("--resume-from", type=Path,
                    help="Actually retired prior run of this exact input/context;keep its raw prefix")
     args = a.parse_args()
+    try:
+        args.out = persistent_output(args.out)
+    except (OSError, ValueError) as error:
+        a.error(str(error))
+    import psutil
+
     started = time.monotonic()
     assert resource.getrlimit(resource.RLIMIT_AS) == (-1, -1)
     # The owning thread verifies the previous collection's actual retirement
