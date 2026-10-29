@@ -221,9 +221,10 @@ not normalized/prefix/semantic reuse or the missing full-state/cost result.
 
 ## Hardware-specific capture points
 run.py accepts --rss-budget-gib and optional --cpus (comma-separated IDs).
-The default48GiB is retained for old commands but is rejected when it exceeds
-physical host RAM. CPU default is discovered from current affinity rather than
-hardcoded lab IDs. Budget selection must leave room for other workloads.
+The current G10 source defaults to12GiB and rejects any larger requested budget,
+even on a larger host. Frozen historical lab sources retain their old defaults.
+CPU default is discovered from current affinity rather than hardcoded lab IDs.
+A selected lower budget still must fit physical RAM.
 The lifecycle resource_point event and terminal record contain actual budget,
 CPU eligibility,physical RAM and host boot identity. Resume requires matching
 recorded evidence;legacy/changed-hardware output is retained as a separate point.
@@ -235,9 +236,37 @@ Current G10 same-UID TERM/KILL probes are denied,so the required watchdog is not
 functional on this path and no formal capture has started. No security/profile
 change or new approval request is made. Development/test work continues.
 
-For this G10 point the user additionally requires whole-collection abort on API
-unreachability or host available RAM below about6GiB. These guards must precede
-any actual capture launch;the resource-option patch alone does not implement
-or qualify them. The current signal-denied path is not used for native capture.
-The12GiB stop threshold must never be raised for retries and is not a kernel
-hard quota.
+## Shared control-plane protection
+
+The user requires preserving every existing cluster CronJob,including duties,
+backups,dumps and archives:the collector never modifies,suspends,deletes or
+manually triggers them. It does not change scheduling,permissions or quotas.
+
+Before expensive native startup,the collector checks hostMemAvailable>=6GiB
+and proves actual retirement of finite owned controls through PID and group
+SIGKILL. A denied/unproven control stops startup and is retained in lifecycle
+output. Passing a tiny control is not full native-workload qualification.
+
+Readiness uses only existing Pod service-account token/CA and /readyz;missing
+credentials,non-200status or unreachable API stop the collection without adding
+credentials. One background request prevents HTTP from blocking parent RSS
+sampling. The request timeout is1s;an unresolved probe is treated as stalled
+after2s and failures are consumed at parent sampling/admission checks.
+The final pending result is checked before a complete terminal can be written.
+
+HostMemAvailable<6GiB or API failure stops the whole group,not merely one
+candidate. Existing native work is killed/reaped,raw data and operational stop
+remain,and the interrupted candidate is unfinished rather than a proof failure
+or automatic resource retry. The total12GiB threshold is never raised for
+retries.1s sampling/probe response latency can overshoot;this is not a kernel
+hard quota or a guarantee under revoked signal permission.
+
+Actual G10 guarded entry stopped on errno13,retired its2s control,and launched
+zero Lean processes. Native collection remains off. API/low-memory runtime
+branches have unit coverage,not a successful under-load G10 qualification.
+
+Readiness startup/probes/final drain are collector work. The health worker retires
+before terminal seconds are computed and completion is written. That controller
+phase clock still excludes early CLI/import and final metadata writing and is
+not a strong-service end-to-end denominator. All guard overhead stays in this
+new hardware point;no free-guard or cross-run speedup is assumed.

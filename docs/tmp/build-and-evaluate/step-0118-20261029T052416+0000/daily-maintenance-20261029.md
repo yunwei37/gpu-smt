@@ -190,3 +190,15 @@ replay or answer native cohort opportunity. Native collection remains zero on
 the signal-denied G10 path. The user's12GiB/serial/PVC and API/6GiB stop must
 remain intact;avoid turning that real execution dependency into either a
 return-tolab question or a sequence of redundant synthetic positive controls.
+
+### Protect the shared control-plane rather than touching its scheduled work
+Step0150 implements the user's capture safety requirements without touching any
+CronJob or node policy. Owned signal retirement is checked before Lean startup;
+API observability/6GiB memory floor stop the whole collection,not a proof.
+One background API request preserves parent RSS sampling,and cleanup is charged
+before completion.12GiB cannot be raised through the current collector's options.
+
+81tests pass and real G10 entry refuses errno13 after its tiny control retires.
+No Lean source executes. That is useful operational protection,not opportunity/
+speedup/novelty. Keep all duties/backups/dumps/archives intact and continue low
+load engineering;do not trade missing kill capability for a risky long run.

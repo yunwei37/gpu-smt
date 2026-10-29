@@ -328,7 +328,23 @@ no cross-hardware speedup or strict globalAmdahl bound follows.
 
 The user subsequently approves this12GiB/serial/PVC point and requires an
 immediate whole-collection stop on API unreachability or hostMemAvailable below
-about6GiB. The node hosts control-plane/etcd. The current resource-option patch
-does not claim those health guards are implemented/qualified. No capture can
-start on the signal-denied path;healthy unit-test activity is not capture
-qualification. A1s sampled threshold cannot be called a hard kernel RSS limit.
+about6GiB. The node hosts control-plane/etcd. The resource-option patch alone did not implement those guards.
+The later guarded source below implements their operational paths,but no
+capture can start on the signal-denied path;healthy unit-test activity is not
+under-load native qualification. A1s sampled threshold cannot be called a hard kernel RSS limit.
+
+
+## Shared-node guard implementation — step0150
+Current finite collector source defaults/caps sampledRSS at12GiB. It checks
+hostMemAvailable>=6GiB,owned PID/group signal retirement before native startup,
+and existing-account API readiness. Background probing preserves independent
+RSS sampling;API failure/stall or low available memory aborts the whole
+collection,never fabricating a source rejection or hiding a pending API failure
+at successful termination. No CronJob or cluster runtime setting changes.
+
+81Python tests pass. An actual G10 guarded-entry qualification,CPU6–7/PVC,
+stops at denied PID signalling:the2s Python control naturally retires,zero Lean
+processes launch,zero candidate results and no complete terminal are written.
+No native workload result,API pressure test or hardRSS quota follows from it.
+G10 still requires working interruption and readiness observability before
+native capture can run. No permission or lab-placement request is made.

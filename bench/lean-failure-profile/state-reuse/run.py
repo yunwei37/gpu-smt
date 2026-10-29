@@ -6,6 +6,7 @@ after the frontier,once;unresolved operational outcomes are never tactic failure
 No cache/policy/production engine behavior is enabled.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 import collections
 import gzip
 import json
@@ -16,21 +17,25 @@ import selectors
 import shutil
 import signal
 import subprocess
+import sys
+import ssl
+import urllib.request
+import urllib.error
 import time
 import traceback
 
 RUN_OUTPUT = None
 
 
-DEFAULT_BUDGET_GIB = 48
+MAX_BUDGET_GIB = 12
 
 
 def resource_point(budget_gib, cpu_spec, allowed_cpus, host_memory_bytes):
     """Bind the declared diagnostic point to actual host/affinity observations."""
     budget = budget_gib * 1024**3
-    if budget_gib <= 0 or budget > host_memory_bytes:
-        raise ValueError("RSS budget must be positive and fit physical host RAM; "
-                         "select a smaller budget with headroom for other work")
+    if budget_gib <= 0 or budget_gib > MAX_BUDGET_GIB or budget > host_memory_bytes:
+        raise ValueError(f"RSS budget must be positive,fit host RAM and not exceed "
+                         f"the user-selected {MAX_BUDGET_GIB}GiB maximum")
     try:
         cpus = set(allowed_cpus) if cpu_spec is None else {
             int(value) for value in cpu_spec.split(",")}
@@ -51,6 +56,104 @@ def check_continuation_resources(history, point):
                          "keep the old capture and start a separate fresh point")
 
 
+
+
+
+MIN_AVAILABLE_BYTES = 6 * 1024**3
+
+
+class HostSafetyStop(RuntimeError):
+    """Stop the whole collection,without changing any native candidate verdict."""
+
+
+def check_host_memory(available_bytes):
+    if available_bytes < MIN_AVAILABLE_BYTES:
+        raise HostSafetyStop(f"host available memory {available_bytes} below 6GiB")
+
+
+def require_signal_control(process_module, record):
+    """Retire finite owned controls before starting any expensive native process."""
+    for group in [False, True]:
+        child = subprocess.Popen(
+            [sys.executable, "-u", "-c",
+             "import time;print('ready',flush=True);time.sleep(2)"],
+            stdout=subprocess.PIPE, start_new_session=True)
+        birth = process_module.Process(child.pid).create_time()
+        error = None
+        try:
+            if child.stdout.readline().strip() != b"ready":
+                raise RuntimeError("signal control did not become ready")
+            (os.killpg if group else os.kill)(child.pid, signal.SIGKILL)
+        except (OSError, RuntimeError) as failure:
+            error = f"{type(failure).__name__}:errno{getattr(failure, 'errno', None)}"
+        finally:
+            # The known small control naturally exits after2s if signalling fails.
+            # A successful exec or kill request is not retirement evidence.
+            code = child.wait()
+            child.stdout.close()
+        passed = error is None and code == -signal.SIGKILL
+        record(dict(event="watchdog_control", pid=child.pid, birth=birth,
+                    process_group=group, exit_code=code, signal_error=error,
+                    qualified=passed))
+        if not passed:
+            raise HostSafetyStop("cannot qualify owned-process interruption;no native startup")
+
+
+def api_ready():
+    """Read readiness using only the Pod's existing account;never add credentials."""
+    account = Path("/var/run/secrets/kubernetes.io/serviceaccount")
+    host = os.environ.get("KUBERNETES_SERVICE_HOST")
+    if not host or not (account/"token").exists() or not (account/"ca.crt").exists():
+        raise HostSafetyStop("existing API readiness credentials unavailable;no native startup")
+    port = os.environ.get("KUBERNETES_SERVICE_PORT_HTTPS", "443")
+    address = f"[{host}]" if ":" in host else host
+    request = urllib.request.Request(f"https://{address}:{port}/readyz",
+        headers={"Authorization": "Bearer "+(account/"token").read_text().strip()})
+    try:
+        with urllib.request.urlopen(request,
+                context=ssl.create_default_context(cafile=str(account/"ca.crt")),
+                timeout=1) as response:
+            if response.status != 200:
+                raise HostSafetyStop(f"API readiness HTTP{response.status}")
+    except urllib.error.HTTPError as error:
+        raise HostSafetyStop(f"API readiness HTTP{error.code}") from error
+    except (OSError, urllib.error.URLError) as error:
+        # Headers/tokens/response bodies never enter diagnostics.
+        raise HostSafetyStop(f"API readiness unavailable:{type(error).__name__}") from error
+
+
+class ApiHealth:
+    """One bounded background readiness request;RSS sampling never waits for HTTP."""
+    def __init__(self, probe=api_ready):
+        self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="capture-api")
+        self.probe, self.pending, self.started = probe, None, 0
+
+    def start(self):
+        self.started = time.monotonic()
+        self.pending = self.executor.submit(self.probe)
+        self.finish()
+
+    def finish(self):
+        if self.pending is not None:
+            try:
+                self.pending.result(timeout=2)
+            except FutureTimeout as error:
+                raise HostSafetyStop("API readiness probe stalled") from error
+            self.pending = None
+
+    def check(self, now):
+        if self.pending is not None:
+            if self.pending.done():
+                self.pending.result()
+                self.pending = None
+            elif now-self.started >= 2:
+                raise HostSafetyStop("API readiness probe stalled")
+        if self.pending is None and now-self.started >= 1:
+            self.started = now
+            self.pending = self.executor.submit(self.probe)
+
+    def close(self):
+        self.executor.shutdown(wait=True, cancel_futures=True)
 
 
 def persistent_output(path, workspace=Path("/workspaces")):
@@ -119,8 +222,8 @@ def main():
     a.add_argument("--module-dir", type=Path, required=True)
     a.add_argument("--resume-from", type=Path,
                    help="Actually retired prior run of this exact input/context;keep its raw prefix")
-    a.add_argument("--rss-budget-gib", type=int, default=DEFAULT_BUDGET_GIB,
-                   help="Aggregate owned-tree sampled RSS budget; choose host headroom explicitly")
+    a.add_argument("--rss-budget-gib", type=int, default=MAX_BUDGET_GIB,
+                   help=f"Aggregate owned-tree sampled RSS GiB;maximum/default {MAX_BUDGET_GIB}")
     a.add_argument("--cpus", help="Eligible CPU IDs,comma-separated;default is current affinity")
     args = a.parse_args()
     try:
@@ -234,6 +337,8 @@ def main():
     for value in derived:
         record(ledger, value)
 
+    health = None
+
     def sample():
         nonlocal peak
         processes = []
@@ -245,8 +350,12 @@ def main():
                 pass
         total = sum(q["rss"] for q in processes)
         peak = max(peak, total)
+        available = psutil.virtual_memory().available
         record(memory, dict(seconds=time.monotonic()-started, phase=phase, rss=total,
-                            processes=processes))
+                            host_available_bytes=available, processes=processes))
+        check_host_memory(available)
+        if health is not None:
+            health.check(time.monotonic())
         return total
 
     def segment(batch, exclusive):
@@ -335,6 +444,7 @@ def main():
             sel = selectors.DefaultSelector()
             sel.register(proc.stdout, selectors.EVENT_READ)
             next_sample = 0
+            host_stop = None
             try:
                 admit(proc)
                 eof = False
@@ -385,6 +495,9 @@ def main():
                             parse(line)
                 if buffer:
                     parse(buffer)
+            except HostSafetyStop as error:
+                host_stop = str(error)
+                raise
             finally:
                 sel.close()
                 try:
@@ -394,6 +507,11 @@ def main():
                 rc = proc.wait()
                 proc.stdout.close()
                 proc.stdin.close()
+                if host_stop is not None:
+                    record(events, dict(event="retired", segment=index, pid=proc.pid,
+                        birth=identity, exit=rc, current=current, source_started=source_started,
+                        exclusive_retry=exclusive, operational="host_safety_stop",
+                        detail=host_stop))
             operational = native_exit_kind(current, source_started, operational)
             if operational == "native_process_failure":
                 operational_current = current
@@ -422,11 +540,22 @@ def main():
         return [x for x in batch if (x["id"], x["mode"]) not in finished]
 
     try:
+        check_host_memory(psutil.virtual_memory().available)
+        require_signal_control(psutil, lambda value: record(events, value))
+        health = ApiHealth()
+        health.start()
         while pending:
             pending = segment(pending, False)
         for row in retry:
             rest = segment([row], True)
             assert not rest
+        # Retire the health worker before completion and charge its final drain.
+        check_host_memory(psutil.virtual_memory().available)
+        health.check(time.monotonic())
+        health.finish()
+        health.close()
+        health = None
+        check_host_memory(psutil.virtual_memory().available)
         terminal = dict(state="complete", planned=len(rows),
             native_end_rows=sum(x["event"] == "candidate_end" for x in results),
             operational_attempts=sum(x["event"] == "operational_end" for x in results),
@@ -439,7 +568,12 @@ def main():
             complete_replay_qualification=False, continuation_phase=phase,
             seconds_scope="Current controller phase only;prior gaps are not included" if phase else "Single controller phase")
         (args.out/"terminal.json").write_text(json.dumps(terminal, indent=2)+"\n")
+    except HostSafetyStop as error:
+        record(events, dict(event="host_safety_stop", detail=str(error)))
+        raise
     finally:
+        if health is not None:
+            health.close()
         memory.close()
         ledger.close()
         events.close()

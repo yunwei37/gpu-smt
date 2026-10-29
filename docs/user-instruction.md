@@ -217,3 +217,8 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 ## 2026-10-29 — verbatim G10 control-plane safety requirement
 
 （Claude 督促）goal 仍是 blocked，本轮结束后不会自动续上，请收到这条后接着做。G10 的方案可以：总 RSS 12 GiB、单进程串行、输出写 PVC、结果标成新硬件点。补一个风险：G10 是集群的 control-plane + etcd 节点，你 20:15 已经碰到过一次 K3s API 不可达。采集时把看门狗上限守死在 12 GiB，盯住节点可用内存；如果 API 再出现不可达或节点可用内存低于约 6 GiB，就立刻停采集并记录，不要硬跑。信号权限问题先用短控制查清，看门狗杀不掉自有子进程就不启动采集。每一步 commit/push，由本线程自己完成。
+
+
+## 2026-10-29 — verbatim preserve cluster CronJobs
+
+（Claude 转达用户要求）用户原话：「旧的集群上面的定时任务能不能不要动?」。集群上现有的定时任务（agent-duties、各类 backup/dump、archive 等 CronJob）一律不要修改、暂停、删除或手动触发，也不要为了 G10 上的工作去改它们的调度。G10 是 control-plane + etcd 节点，今天 API 已经几次短暂不可达；你在 G10 上跑重负载时注意别把它压垮，影响这些定时任务。其余照常推进，每一步 commit/push，由本线程自己完成。

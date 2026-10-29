@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-29T22:43:23.691470+00:00",
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "-B",
+    "bench/lean-failure-profile/state-reuse/run.py",
+    "--input",
+    "/workspaces/.agent-state/gpu-smt-captures/state-reuse-recovery-20261029T165905Z/input.json.gz",
+    "--context",
+    "/workspaces/.agent-state/gpu-smt-captures/state-reuse-recovery-20261029T165905Z/native-context.json",
+    "--module-dir",
+    "/workspaces/repository/docs/tmp/build-and-evaluate/step-0150-20261029T223636+0000/unbuilt-modules",
+    "--out",
+    "/workspaces/repository/docs/tmp/build-and-evaluate/step-0150-20261029T223636+0000/experiment-001/guarded-entry",
+    "--rss-budget-gib",
+    "12",
+    "--cpus",
+    "6,7"
+  ],
+  "exit_code": 1,
+  "seconds": 3.008312077727169,
+  "sampled_owned_rss_bytes": 81956864,
+  "native_launches": 0,
+  "active_control_retired": true,
+  "events": [
+    {
+      "event": "resource_point",
+      "budget_bytes": 12884901888,
+      "cpu_eligibility": [
+        6,
+        7
+      ],
+      "hardware_memory_bytes": 29877596160,
+      "host_boot_id": "a1bb482b-a7b7-4d15-bb6b-8db1dac37dd7"
+    },
+    {
+      "event": "watchdog_control",
+      "pid": 12829,
+      "birth": 1793313800.28,
+      "process_group": false,
+      "exit_code": 0,
+      "signal_error": "PermissionError:errno13",
+      "qualified": false
+    },
+    {
+      "event": "host_safety_stop",
+      "detail": "cannot qualify owned-process interruption;no native startup"
+    }
+  ],
+  "classification": "startup safety qualification only,no native workload executed"
+}

@@ -1,11 +1,14 @@
 """Result-analysis regressions; no native collection or proof verdict substitution."""
 import importlib.util
+from concurrent.futures import Future
+import signal
+import errno
 import json
 import os
 import subprocess
 import sys
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 from pathlib import Path
 import tempfile
 import unittest
@@ -146,10 +149,16 @@ class CaptureResourcePoint(unittest.TestCase):
         chosen = RUNNER.resource_point(12, "6,7", set(range(8)), 28 * 1024**3)
         self.assertEqual(chosen["cpu_eligibility"], [6, 7])
 
-    def test_old_48gib_default_and_nonpositive_budgets_do_not_fit_g10(self):
+    def test_old_lab_budget_and_nonpositive_budgets_do_not_fit_g10(self):
         for budget in [48, 0, -1]:
             with self.subTest(budget=budget), self.assertRaisesRegex(ValueError, "RSS budget"):
                 RUNNER.resource_point(budget, None, set(range(8)), 28 * 1024**3)
+
+    def test_user_12gib_cap_cannot_be_raised_even_if_host_ram_is_larger(self):
+        self.assertEqual(RUNNER.MAX_BUDGET_GIB, 12)
+        for budget in [13, 48]:
+            with self.subTest(budget=budget), self.assertRaisesRegex(ValueError, "12GiB maximum"):
+                RUNNER.resource_point(budget, None, set(range(8)), 125 * 1024**3)
 
     def test_old_cpu_ids_empty_and_malformed_masks_are_not_silently_relabelled(self):
         for cpus in ["8,9,10,11", "", "0,,1", "CPU0", "-1"]:
@@ -170,6 +179,105 @@ class CaptureResourcePoint(unittest.TestCase):
             with self.subTest(field=field), self.assertRaisesRegex(ValueError, "separate fresh point"):
                 RUNNER.check_continuation_resources(
                     [dict(event="resource_point", **dict(point, **{field: old}))], point)
+
+
+class CaptureHostSafety(unittest.TestCase):
+    def test_memory_floor_is_whole_collection_failure_not_a_candidate_verdict(self):
+        RUNNER.check_host_memory(6 * 1024**3)
+        with self.assertRaisesRegex(RUNNER.HostSafetyStop, "below 6GiB"):
+            RUNNER.check_host_memory(6 * 1024**3 - 1)
+
+    def test_signal_control_requires_real_retirement_for_both_owned_signal_paths(self):
+        records = []
+        children = [Mock(pid=101), Mock(pid=102)]
+        for child in children:
+            child.stdout.readline.return_value = b"ready\n"
+            child.wait.return_value = -signal.SIGKILL
+        processes = SimpleNamespace(Process=lambda pid: SimpleNamespace(create_time=lambda: pid + 0.5))
+        with patch.object(RUNNER.subprocess, "Popen", side_effect=children), \
+             patch.object(RUNNER.os, "kill") as pid_kill, \
+             patch.object(RUNNER.os, "killpg") as group_kill:
+            RUNNER.require_signal_control(processes, records.append)
+        pid_kill.assert_called_once_with(101, signal.SIGKILL)
+        group_kill.assert_called_once_with(102, signal.SIGKILL)
+        self.assertEqual([(r["pid"], r["birth"], r["qualified"]) for r in records],
+                         [(101, 101.5, True), (102, 102.5, True)])
+        for child in children:
+            child.wait.assert_called_once()
+            child.stdout.close.assert_called_once()
+
+    def test_denied_signal_retires_the_control_and_stops_before_other_work(self):
+        records, child = [], Mock(pid=101)
+        child.stdout.readline.return_value = b"ready\n"
+        child.wait.return_value = 0
+        processes = SimpleNamespace(Process=lambda pid: SimpleNamespace(create_time=lambda: 1.5))
+        with patch.object(RUNNER.subprocess, "Popen", return_value=child) as spawn, \
+             patch.object(RUNNER.os, "kill", side_effect=PermissionError(errno.EACCES, "denied")), \
+             patch.object(RUNNER.os, "killpg") as group_kill:
+            with self.assertRaisesRegex(RUNNER.HostSafetyStop, "no native startup"):
+                RUNNER.require_signal_control(processes, records.append)
+        self.assertEqual(spawn.call_count, 1)
+        group_kill.assert_not_called()
+        child.wait.assert_called_once()
+        self.assertEqual(records[0]["exit_code"], 0)
+        self.assertFalse(records[0]["qualified"])
+
+    def test_missing_existing_api_credentials_cannot_be_called_ready(self):
+        with patch.object(Path, "exists", return_value=False), \
+             patch.object(RUNNER.urllib.request, "urlopen") as request:
+            with self.assertRaisesRegex(RUNNER.HostSafetyStop, "credentials unavailable"):
+                RUNNER.api_ready()
+            request.assert_not_called()
+
+    def test_api_http_failure_is_operational_and_does_not_reveal_a_token(self):
+        failure = RUNNER.urllib.error.HTTPError("https://fixture/readyz", 503, "unready", {}, None)
+        with patch.dict(os.environ, {"KUBERNETES_SERVICE_HOST": "127.0.0.1"}), \
+             patch.object(Path, "exists", return_value=True), \
+             patch.object(Path, "read_text", return_value="simulated-token"), \
+             patch.object(RUNNER.ssl, "create_default_context"), \
+             patch.object(RUNNER.urllib.request, "urlopen", side_effect=failure):
+            with self.assertRaisesRegex(RUNNER.HostSafetyStop, "HTTP503") as error:
+                RUNNER.api_ready()
+        self.assertNotIn("simulated-token", str(error.exception))
+
+    def test_pending_api_work_does_not_block_sampling_and_stalls_stop(self):
+        ready, pending = Future(), Future()
+        ready.set_result(None)
+        executor = Mock()
+        executor.submit.side_effect = [ready, pending]
+        with patch.object(RUNNER, "ThreadPoolExecutor", return_value=executor), \
+             patch.object(RUNNER.time, "monotonic", return_value=0):
+            health = RUNNER.ApiHealth(lambda: None)
+            health.start()
+            health.check(1)
+            health.check(2.9)  # In-flight HTTP is never synchronously awaited here.
+            self.assertFalse(pending.done())
+            with self.assertRaisesRegex(RUNNER.HostSafetyStop, "stalled"):
+                health.check(3)
+            health.close()
+
+    def test_final_api_failure_is_not_discarded_at_successful_collection_end(self):
+        ready, bad = Future(), Future()
+        ready.set_result(None)
+        bad.set_exception(RUNNER.HostSafetyStop("API unreachable"))
+        executor = Mock()
+        executor.submit.side_effect = [ready, bad]
+        with patch.object(RUNNER, "ThreadPoolExecutor", return_value=executor), \
+             patch.object(RUNNER.time, "monotonic", return_value=0):
+            health = RUNNER.ApiHealth(lambda: None)
+            health.start()
+            health.check(1)
+            with self.assertRaisesRegex(RUNNER.HostSafetyStop, "unreachable"):
+                health.finish()
+            health.close()
+
+    def test_host_stop_keeps_the_interrupted_candidate_pending_not_failed(self):
+        rows = [dict(id="stopped", mode="observe")]
+        pending, retry, derived = RUNNER.continuation_plan(rows, [],
+            [dict(segment=0, current=["stopped", "observe"], source_started=True,
+                  exit=-9, operational="host_safety_stop")])
+        self.assertEqual(pending, rows)
+        self.assertEqual((retry, derived), ([], []))
 
 
 class TacticStateAnalysis(unittest.TestCase):
