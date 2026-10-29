@@ -110,6 +110,9 @@ transport/ownership is extensible, not measured scaling.
 Deduplicate only exact backend/environment/header/source/options/timeout keys.
 No whitespace normalization or prefix/certificate reuse. Each caller keeps its
 identity and provenance; a cache hit is not a fresh zero-time proof.
+ResultCache stores whole-source native decisions, including stable rejections;
+it does not implement the proposed full-goal-state tactic-failure cache.
+Timeout, resource interruption and cancellation remain non-cacheable.
 
 Within a batch, ranking is evaluated once per candidate, with original-index
 tie order. Queue tickets and cache/in-flight sharing disposition are established
@@ -202,8 +205,9 @@ The earlier native-complete/prepared-ENOSPC pair remains partial. The later
 has equal status/accepted sets,with a disclosed emptyAST-envelope difference,
 operationalerror-string changes and1.24028x descriptive own-engine ratio.
 One historical acceptance still times out across different resource points.
-The42solo reruns remain41budgetfailures/1timeout. Broaderartifact/strongestwarm
-coverage,representative load-aware results and actual multi-node measurements
+The historical42solo point has41budgetfailures/1timeout;the corrected
+ordinary-native-library42point is separately running and has no final result.
+Broaderartifact/strongestwarm coverage,representative load-aware results and actual multi-node measurements
 remain open. Tests/CI do not prove contribution or venue acceptance.
 
 ### Exact historical RSS median

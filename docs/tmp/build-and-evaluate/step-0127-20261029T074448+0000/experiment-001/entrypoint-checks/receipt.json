@@ -1,0 +1,48 @@
+{
+  "UTC": "2026-10-29T07:46:27.996632+00:00",
+  "commands": [
+    {
+      "command": [
+        "bash",
+        "-c",
+        "cargo run --locked -p gpu-smt-engine --example task_order < examples/first-success.json"
+      ],
+      "exit": 0,
+      "seconds": 4.008410884998739
+    },
+    {
+      "command": [
+        "cargo",
+        "run",
+        "--locked",
+        "-p",
+        "gpu-smt-server",
+        "--bin",
+        "gpu-smt",
+        "--",
+        "--help"
+      ],
+      "exit": 0,
+      "seconds": 9.018098095199093
+    },
+    {
+      "command": [
+        "env",
+        "RUSTDOCFLAGS=-D warnings",
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 4.008259867783636
+    }
+  ],
+  "seconds": 17.03642754093744,
+  "combined_peak_bytes": 23919333376,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 0,
+  "scope": "CPU11support tests;native42unchanged;not performance measurement"
+}

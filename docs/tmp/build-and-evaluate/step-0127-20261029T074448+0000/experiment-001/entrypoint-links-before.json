@@ -1,0 +1,21 @@
+{
+  "scope": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/architecture.md",
+    "docs/api.md",
+    "docs/implementation.md",
+    "docs/benchmarking.md",
+    "examples/README.md"
+  ],
+  "checked": 91,
+  "broken": [
+    {
+      "source": "docs/benchmarking.md",
+      "label": "evaluation",
+      "target": "evaluation.md#current-resource-point",
+      "reason": "missing heading anchor"
+    }
+  ],
+  "limits": "Existing entrypoint Markdown only;not old artifacts or external HTTP. GFM-style ordinary-heading anchor check."
+}

@@ -11,7 +11,11 @@ All raw,failed,partial and superseded evidence remains;detailed history is below
 
 The matched four-warm Kimina versus repaired-engine full7808resource pair
 is complete with equal basic outcomes and19.28%less elapsed on this one point. Repair/measure resource performance before stacking
-task-memory,ranking,failure or LRAT gains. The four continuing directions remain:
+task-memory,ranking,failure or LRAT gains. The latest user decision stops interval_cases parallel development and
+prioritizes measuring complete-state expensive tactic reuse,especially native
+strategy failures,after the corrected42capture retires. Timeout and memory
+failures are not interchangeable with tactic exceptions.
+The four continuing directions remain:
 the layered Rust engine,reliable early failure,multi-candidate inference and
 public Lean code verification. There is no project deadline or closure rule.
 Resource/COW/cache/ordinary compilation/cancellation primitives are prior work;
