@@ -1,0 +1,47 @@
+   Compiling gpu-smt-engine v0.1.0 (/workspaces/repository/crates/gpu-smt-engine)
+    Finished `test` profile [unoptimized] target(s) in 3.91s
+     Running tests/engine.rs (/workspaces/.agent-state/gpu-smt-rust-development/target/debug/deps/engine-ece36e156b675659)
+
+running 26 tests
+test cached_and_coalesced_tickets_do_not_block_independent_cpu_capacity ... ok
+test changed_timeout_and_source_are_not_duplicate_keys ... ok
+test dropping_the_last_engine_retires_its_sampling_thread ... ok
+test cancellation_of_one_consumer_does_not_abort_rl_duplicate_subscribers ... ok
+test exact_duplicates_preserve_all_reward_rows_and_bypass_operational_cache ... ok
+test first_success_is_separate_from_every_candidate_rewards ... ok
+test idle_native_state_cannot_strand_a_large_forecast ... ok
+test invalid_batch_policy_is_an_interface_error_before_native_work ... ok
+test first_success_waits_for_last_subscribers_backend_retirement ... ok
+test memory_cache_does_not_promote_operational_outcomes ... ok
+test large_waiting_batch_does_not_rescan_process_table_per_candidate ... ok
+test owned_idle_preparation_is_included_in_total_rss ... FAILED
+test oversized_solo_is_resource_failure_not_infinite_retry_or_rejection ... ok
+test proc_monitor_is_owned_and_birth_checked ... ok
+test queued_sibling_refreshes_only_after_measured_memory_and_keeps_own_verdict ... ok
+test resource_retry_waits_behind_normal_work_without_blocking_free_slots ... ok
+test shutdown_cancels_a_deferred_retry_without_dispatching_it ... ok
+test stream_disconnect_preserves_shared_rl_subscription ... ok
+test submitted_order_survives_delayed_forecast_and_task_wakeup ... ok
+test task_interleaving_composes_source_ranking_and_memory_forecasts ... ok
+test task_interleaving_drives_execution_without_changing_all_mode_order ... ok
+test task_memory_forecasts_are_scoped_and_never_lower_existing_reservations ... ok
+test preempted_candidate_is_requeued_exclusively_with_history ... ok
+test unread_stream_cancels_checked_siblings_and_emits_complete_rows ... ok
+test watchdog_preempts_while_the_request_executor_is_blocked ... ok
+test unknown_forecasts_refresh_from_live_observations ... ok
+
+failures:
+
+---- owned_idle_preparation_is_included_in_total_rss stdout ----
+
+thread 'owned_idle_preparation_is_included_in_total_rss' (13884) panicked at crates/gpu-smt-engine/tests/engine.rs:489:18:
+called `Result::unwrap()` on an `Err` value: Os { code: 13, kind: PermissionDenied, message: "Permission denied" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    owned_idle_preparation_is_included_in_total_rss
+
+test result: FAILED. 25 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.89s
+
+error: test failed, to rerun pass `-p gpu-smt-engine --test engine`

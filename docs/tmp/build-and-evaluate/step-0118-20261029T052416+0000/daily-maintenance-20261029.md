@@ -208,3 +208,14 @@ backups/dumps/archive schedules remain entirely outside our mutations and
 triggers. The implemented protection correctly refuses the current signal-denied
 startup;that is not permission to run heavy native work or claim under-load
 qualification. Preserve the shared control-plane and continue low-load work.
+
+## Step0152–0153: advance the actual backend path while native collection stays off
+Read-only runtime/process comparison points to AppArmor stacked-peer signal
+mediation, not child namespace/cgroup migration or effective seccomp. No security
+fix is attempted. The useful implementation is now the actual admitted backend
+bridge: default off, explicit qualified-backend opt-in, source decisions still
+native, and original resource-retry retirement preserved. Pipeline tests must
+exercise the Engine rather than only a standalone store; this closes an API
+integration gap without inventing native coverage or a performance result.
+The next scientific dependency remains native replay qualification and the
+interrupted selected-state measurement; fixture pass counts cannot replace them.

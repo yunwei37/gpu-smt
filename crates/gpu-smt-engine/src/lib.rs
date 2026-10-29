@@ -2,8 +2,12 @@
 //! The watchdog samples once per second; it is not a kernel memory quota.
 #![warn(missing_docs)]
 mod failure;
+mod failure_backend;
 pub mod linux;
 pub use failure::{FailureCache, FailureInput};
+pub use failure_backend::{
+    BackendFailureCache, FailureCacheAdapter, FailureCacheVerificationBackend,
+};
 
 use gpu_smt_core::*;
 use std::{

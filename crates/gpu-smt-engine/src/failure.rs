@@ -1,4 +1,4 @@
-//! Standalone ordinary-failure storage. Not connected to Engine verification.
+//! Ordinary-failure storage for optional backend-owned tactic hooks.
 
 use gpu_smt_core::{FailureReplayBackend, TacticCompletion};
 use std::{
@@ -19,8 +19,9 @@ type Entries<K, R> = HashMap<FailureInput<K>, Arc<R>>;
 
 /// Development skeleton for qualified backend-owned ordinary-failure records.
 ///
-/// This is separate from the whole-source ResultCache and is not constructed by
-/// Engine, CLI or HTTP. No stock Lean replay adapter is supplied. Native state
+/// This is separate from the whole-source ResultCache. FailureCacheAdapter can
+/// opt in for a qualified backend; Engine, CLI and HTTP defaults do not enable it.
+/// No stock Lean replay adapter is supplied. Native state
 /// compatibility and transition validation remain backend responsibilities.
 /// Retained records consume memory; scope this store to an owned lifecycle and
 /// clear/drop it when obsolete. There is no automatic eviction/size guarantee.

@@ -23,7 +23,35 @@ An actual rejection detector is not implemented. A trait is not an acceleration 
 
 gpu-smt-core exports FailureReplayBackend and TacticCompletion; gpu-smt-engine
 exports FailureCache and its opaque FailureInput. This additive experimental
-0.1 library API has no CLI/HTTP option and is not used by Engine verification.
+0.1 library API has no CLI/HTTP option. FailureCacheAdapter connects a qualified
+FailureCacheVerificationBackend to Engine through the existing VerificationBackend
+extension; default construction is off and delegates the original backend.
+
+FailureCacheAdapter::new(backend) allocates no tactic store and does not call
+the replay-enabled verification hook. FailureCacheAdapter::enabled(backend)
+explicitly opts in for the adapter lifetime; both are passed as the ordinary
+backend Arc to Engine::new. BackendFailureCache specifies the bridge's typed
+store and supports dynamically dispatched backends with known associated types.
+The enabled adapter namespaces its whole-source cache identity, so an older
+baseline entry in a shared ResultCache cannot mask the opt-in path.
+
+The backend's verify_with_failure_cache hook runs only after normal admission
+and retains the original execution cancellation, CPU/process accounting and
+retirement contract. It owns tactic state and must route replayed exceptions
+through ordinary backtracking, then perform the remaining source verification.
+Candidate.reuse controls whole-source sharing, not this separately enabled
+tactic store. Resource-exclusive execution clears retained transitions before
+calling the original verify_resource_retry, bypassing replay while the backend
+reclaims memory. Engine shutdown awaits active retirement, then the adapter
+clears records before delegating native shutdown. Prepared-state reporting and
+watchdog interruption are forwarded unchanged.
+
+[Engine pipeline tests](../crates/gpu-smt-engine/tests/failure_backend.rs) exercise
+default-off behavior, dynamic opt-in, separate final decisions after a repeated
+ordinary tactic failure, operational exclusions, resource retry/cleanup and
+whole-source identity separation. These are simulated API/lifecycle checks,
+not a native replay implementation or throughput measurement. Stock Lean
+backends cannot opt in because they do not implement the bridge.
 
 The store accepts a concrete backend or dyn FailureReplayBackend with its
 associated types specified. Native State is exclusively owned and needs Send,

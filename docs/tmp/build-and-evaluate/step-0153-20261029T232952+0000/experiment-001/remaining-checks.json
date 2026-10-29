@@ -1,0 +1,65 @@
+[
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--test",
+      "engine",
+      "--offline",
+      "--",
+      "--skip",
+      "owned_idle_preparation_is_included_in_total_rss"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--lib",
+      "failure",
+      "--offline"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--doc",
+      "--offline"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "cargo",
+      "clippy",
+      "-p",
+      "gpu-smt-engine",
+      "--all-targets",
+      "--offline",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "cargo",
+      "doc",
+      "-p",
+      "gpu-smt-engine",
+      "--no-deps",
+      "--offline"
+    ],
+    "exit": 0
+  }
+]

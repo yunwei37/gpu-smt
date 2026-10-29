@@ -64,11 +64,12 @@ only after checked same-task acceptance. Exact completed/in-flight reuse
 retains each caller's identity; cancellation and resource failures are not
 native rejections or cacheable proof results.
 
-The [standalone tactic-failure cache skeleton](docs/api.md#standalone-tactic-failure-replay-skeleton)
-is an optional library development component. A backend owns replay-qualified
-inputs and complete ordinary-failure transitions; fixtures and a simulated
-example exercise its contract. It is not enabled in engine verification and
-has no stock Lean replay adapter or measured workload benefit.
+The [optional tactic-failure cache](docs/api.md#standalone-tactic-failure-replay-skeleton)
+has a default-off backend adapter for engine verification. An explicitly
+qualified backend owns replay-compatible inputs and complete ordinary-failure
+transitions; the engine still admits and verifies each source. Library pipeline
+tests use a simulator. No stock Lean replay adapter or measured workload benefit
+is supplied; CLI/HTTP do not enable tactic replay.
 
 [Architecture](docs/architecture.md) · [API and compatibility scope](docs/api.md) ·
 [Examples](examples/README.md) · [Paired measurement](docs/benchmarking.md) · [Contributing and checks](CONTRIBUTING.md) ·

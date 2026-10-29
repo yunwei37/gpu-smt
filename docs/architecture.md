@@ -180,7 +180,7 @@ Failure detectors remain unknown without a sufficient checked witness under
 the actual Lean state, including backtracking/fallback. Token patterns, large
 branch counts and shorter timeouts do not prove failure.
 
-The standalone FailureCache skeleton stores backend-owned ordinary tactic
+The optional FailureCache store holds backend-owned ordinary tactic
 failure transitions. It captures scope before the fresh producer runs; a new
 process/allocation generation cannot relabel an old record. Ineligible
 completions evict that input's previous entry. Unsupported inputs, misses and
@@ -199,11 +199,20 @@ destruction must not turn into a global solve lock. A store owns retained
 references until clear/drop; clear does not cancel already in-flight replay.
 There is no automatic size bound, eviction policy or native memory claim.
 
-No stock native adapter implements FailureReplayBackend, and Engine, CLI and
-HTTP do not construct the store. Fixture tests and the simulated example are
-development evidence only. Native state/identity mapping, post-error and
-diagnostic replay, heartbeat/resource parity, default activation and complete
-matched measurement remain open. The prior observed-input keys are not
+FailureCacheAdapter connects the store to admitted engine verification only
+for a backend implementing FailureCacheVerificationBackend. Default construction
+delegates without storage or hook invocation; opt-in has a distinct whole-source
+identity. The backend owns tactic hooks and the full verification continuation.
+Exclusive resource execution clears records and delegates original reclamation
+without replay; shutdown clears them after active retirement and before native
+teardown. No metadata lock spans native verification, cleanup or replay.
+
+No stock native adapter implements FailureReplayBackend or this bridge.
+CLI/HTTP defaults do not enable it. Engine pipeline fixtures and the simulated
+example are development evidence only. Native state/identity mapping,
+post-error/diagnostic replay, heartbeat/resource parity and complete matched
+measurement remain open. Default activation is deliberately not planned before
+qualification. The prior observed-input keys are not
 automatically admitted as replay-compatible keys.
 
 

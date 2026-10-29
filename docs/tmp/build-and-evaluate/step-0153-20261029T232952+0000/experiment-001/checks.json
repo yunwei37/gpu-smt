@@ -1,0 +1,52 @@
+[
+  {
+    "command": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit": 0,
+    "elapsed": 1.0095368749462068
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--test",
+      "failure_backend",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 2.003975044004619
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--test",
+      "failure_cache",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 3.00655608298257
+  },
+  {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "gpu-smt-engine",
+      "--test",
+      "engine",
+      "--offline"
+    ],
+    "exit": 101,
+    "elapsed": 10.024908449035138
+  }
+]
