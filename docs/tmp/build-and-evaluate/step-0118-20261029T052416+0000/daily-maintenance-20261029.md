@@ -219,3 +219,8 @@ exercise the Engine rather than only a standalone store; this closes an API
 integration gap without inventing native coverage or a performance result.
 The next scientific dependency remains native replay qualification and the
 interrupted selected-state measurement; fixture pass counts cannot replace them.
+
+Step0154 terminal check:source366e6d4 engine40974026677 and smoke40974026684
+succeeded;93Rust cases(including5new Engine bridge cases),6separate native
+protocol differentials and81Python tests passed. G10signal denial is unchanged;
+native CI is not failure replay qualification. No formal collection started.

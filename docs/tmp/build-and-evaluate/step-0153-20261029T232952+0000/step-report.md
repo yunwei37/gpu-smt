@@ -34,7 +34,7 @@ owned_idle_preparation_is_included_in_total_rss;its child.kill() again received
 errno13/EACCES at engine.rs:489.25other tests passed. The finite8MiB Python
 child naturally exits after5s;no security/config change or retry of that kill.
 This was a test-selection mistake,not a native long collection or cache defect.
-The complete failure log and command remain in experiment-001/check-2.log.
+The complete failure log and command remain in experiment-001/check-3.log.
 
 Remaining checks exclude that known signalling-dependent fixture:25engine
 integration tests,9selected library tests(including8store cases),1doctest pass.
