@@ -522,3 +522,73 @@ async fn stderr_log_setup_fault_retires_native_attempt() {
         assert!(gpu_smt_engine::linux::identity(p.pid).is_err());
     }
 }
+
+#[tokio::test]
+async fn source_exit_retires_background_pipe_holders_before_returning() {
+    use gpu_smt_lean::NativeLean;
+    let fixture = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/source.py");
+    let backend = NativeLean {
+        program: "/usr/bin/python3".into(),
+        project: std::env::temp_dir(),
+        environment: "background-pipe-fixture-not-Lean".into(),
+    }
+    .with_args(vec![fixture.to_string_lossy().into_owned()]);
+    let engine = Engine::new(
+        Config {
+            memory_bytes: 1 << 30,
+            cpus: vec![cpu()],
+            cores_per_worker: 1,
+        },
+        Arc::new(backend),
+        Arc::new(Fifo),
+        Arc::new(ProcMonitor::default()),
+        Arc::new(HeadroomAdmission),
+        Arc::new(MemoryCache::default()),
+    )
+    .unwrap();
+    for code in ["hold-stderr", "hold-stdout"] {
+        let started = std::time::Instant::now();
+        let rows = engine
+            .verify_batch(Batch {
+                mode: Mode::All,
+                candidates: vec![candidate(code, code, 500)],
+            })
+            .await
+            .unwrap();
+        assert!(
+            started.elapsed() < Duration::from_secs(2),
+            "retired native leader left a pipe-holding descendant on the resource lease"
+        );
+        assert_eq!(
+            rows[0].outcome.status,
+            Status::Accepted,
+            "{:?}",
+            rows[0].outcome
+        );
+        let response = rows[0].outcome.response.as_ref().unwrap();
+        let detail: serde_json::Value =
+            serde_json::from_str(response["messages"][0]["data"].as_str().unwrap()).unwrap();
+        let pid = detail["background"].as_u64().unwrap() as u32;
+        // SIGKILL/pipe closure can precede the final kernel zombie transition.
+        // Observe actual exit, rather than racing that short transition.
+        tokio::time::timeout(Duration::from_secs(2), async {
+            loop {
+                match std::fs::read_to_string(format!("/proc/{pid}/stat")) {
+                    Err(error) if error.kind() == std::io::ErrorKind::NotFound => break,
+                    Ok(stat)
+                        if stat.rsplit_once(')').unwrap().1.split_whitespace().next()
+                            == Some("Z") =>
+                    {
+                        break;
+                    }
+                    Err(error) => panic!("cannot inspect owned fixture: {error}"),
+                    _ => tokio::time::sleep(Duration::from_millis(1)).await,
+                }
+            }
+        })
+        .await
+        .expect("owned background pipe holder survived native retirement");
+        assert!(gpu_smt_engine::linux::identity(detail["pid"].as_u64().unwrap() as u32).is_err());
+    }
+    engine.shutdown().await;
+}

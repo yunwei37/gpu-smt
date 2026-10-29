@@ -1,0 +1,36 @@
+{
+  "UTC": "2026-10-29T07:11:18.016849+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0,
+      "seconds": 5.01130466000177
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "seconds": 1.0037230351008475
+    }
+  ],
+  "seconds": 6.016334678046405,
+  "combined_peak_bytes": 20749570048,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 0,
+  "scope": "CPU11support tests;native42unchanged;not performance measurement"
+}

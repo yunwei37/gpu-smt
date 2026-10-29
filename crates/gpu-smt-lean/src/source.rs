@@ -9,6 +9,44 @@ use tokio::{
     process::Command,
 };
 
+// Observe exit without reaping: the birth-matched leader must still exist
+// when retiring its process group. SIGCHLD is already used by Tokio children;
+// install our receiver before checking, so an exit cannot be missed.
+async fn exited_unreaped(pid: u32) -> Result<(), String> {
+    let mut changed = tokio::signal::unix::signal(tokio::signal::unix::SignalKind::child())
+        .map_err(|error| error.to_string())?;
+    loop {
+        let exited = {
+            // SAFETY: initialized output, our owned child PID, no pointers retained.
+            let mut info: libc::siginfo_t = unsafe { std::mem::zeroed() };
+            let result = unsafe {
+                libc::waitid(
+                    libc::P_PID,
+                    pid,
+                    &mut info,
+                    libc::WEXITED | libc::WNOWAIT | libc::WNOHANG,
+                )
+            };
+            if result != 0 {
+                let error = std::io::Error::last_os_error();
+                if error.kind() == std::io::ErrorKind::Interrupted {
+                    continue;
+                }
+                return Err(error.to_string());
+            }
+            // SAFETY: waitid initialized the siginfo output above.
+            unsafe { info.si_pid() != 0 }
+        };
+        if exited {
+            return Ok(());
+        }
+        changed
+            .recv()
+            .await
+            .ok_or("native exit signal stream closed")?;
+    }
+}
+
 /// Stock Lean CLI using exact full source on stdin and JSON diagnostics.
 ///
 /// This is a distinct backend from Lean REPL; the raw response envelope retains
@@ -226,6 +264,14 @@ impl NativeLean {
         };
         let input = child.stdin.take();
         let mut output = child.stdout.take().unwrap();
+        let mut stdout = tokio::spawn(async move {
+            let mut bytes = Vec::new();
+            output
+                .read_to_end(&mut bytes)
+                .await
+                .map_err(|e| e.to_string())?;
+            String::from_utf8(bytes).map_err(|e| e.to_string())
+        });
         let reader = child.stderr.take().unwrap();
         let stderr = tokio::spawn(async move {
             match log_file {
@@ -233,6 +279,7 @@ impl NativeLean {
                 None => (drain(reader).await, None, 0),
             }
         });
+        let mut stdout_joined = false;
         let io = async {
             if let Some(mut input) = input {
                 input
@@ -242,15 +289,15 @@ impl NativeLean {
                 input.shutdown().await.map_err(|e| e.to_string())?;
                 drop(input);
             }
-            let mut bytes = Vec::new();
-            output
-                .read_to_end(&mut bytes)
-                .await
-                .map_err(|e| e.to_string())?;
-            let text = String::from_utf8(bytes).map_err(|e| e.to_string())?;
+            exited_unreaped(pid).await?;
+            // The compiler has exited, but descendants may still hold either
+            // pipe. Retire them while its PID/birth still authorizes the group.
+            kill_group(&identity);
             observe_current_rss(&identity, execution.registry.as_ref());
             let status = child.wait().await.map_err(|e| e.to_string())?;
-            Ok::<_, String>((status.code(), text))
+            let text = (&mut stdout).await;
+            stdout_joined = true;
+            Ok::<_, String>((status.code(), text.map_err(|e| e.to_string())??))
         };
         let deadline = tokio::time::Instant::now() + Duration::from_millis(candidate.timeout_ms);
         let outcome = super::request_io(io, execution.cancel.cancelled(), deadline)
@@ -275,6 +322,9 @@ impl NativeLean {
             }
             None
         };
+        if !stdout_joined {
+            let _ = stdout.await;
+        }
         let (diagnostic, log_error, bytes_read) = stderr
             .await
             .unwrap_or_else(|e| (format!("stderr reader: {e}"), Some(e.to_string()), 0));

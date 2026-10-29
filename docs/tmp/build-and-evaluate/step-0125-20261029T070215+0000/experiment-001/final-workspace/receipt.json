@@ -1,0 +1,78 @@
+{
+  "UTC": "2026-10-29T07:09:55.951134+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 1.0036745918914676
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-lean",
+        "--test",
+        "process",
+        "source_exit_retires_background_pipe_holders_before_returning",
+        "--locked",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 0,
+      "seconds": 2.0048326570540667
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "10,11",
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-targets",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 54.08373078308068
+    },
+    {
+      "command": [
+        "taskset",
+        "-c",
+        "10,11",
+        "cargo",
+        "test",
+        "--workspace",
+        "--doc",
+        "--locked"
+      ],
+      "exit": 0,
+      "seconds": 1.0029154401272535
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": -9,
+      "seconds": 8.017549918033183
+    }
+  ],
+  "seconds": 66.1151724550873,
+  "combined_peak_bytes": 51555725312,
+  "pressure_aborted_only_new_support": true,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 0,
+  "scope": "CPU11support tests;native42unchanged;not performance measurement"
+}

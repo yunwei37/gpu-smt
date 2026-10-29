@@ -241,6 +241,13 @@ The CLI selects it with --lean PATH instead of --repl PATH; the REPL path remain
 unchanged and prepared-host/sysroot are REPL-only. No native memory,trust,heartbeat
 or thread override is added; eligible CPU assignments still bound child execution.
 
+NativeLean drains stdout and stderr concurrently. After the compiler exits,
+the backend stops remaining members of its owned process group before reaping
+the birth-matched leader and completing pipe retirement. A descendant holding
+a pipe cannot turn successful compiler exit into an indefinite cleanup wait.
+This retains the existing owned-group boundary; it is not containment for a
+source that deliberately escapes that group. Retirement is awaited and charged.
+
 NativeLean responses retain exit_code, complete stdout, the labelled stderr tail
 and parsed messages. Successful native exit with recognized diagnostics is
 accepted; sorry warnings remain incomplete and native errors rejected. Unknown

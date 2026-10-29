@@ -1,0 +1,36 @@
+{
+  "UTC": "2026-10-29T07:06:15.600275+00:00",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all"
+      ],
+      "exit": 0,
+      "seconds": 1.003713967045769
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "-p",
+        "gpu-smt-lean",
+        "--test",
+        "process",
+        "source_exit_retires_background_pipe_holders_before_returning",
+        "--locked",
+        "--",
+        "--nocapture"
+      ],
+      "exit": 101,
+      "seconds": 2.0049737030640244
+    }
+  ],
+  "seconds": 3.009992590174079,
+  "combined_peak_bytes": 6534701056,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 0,
+  "scope": "CPU11support tests;native42unchanged;not performance measurement"
+}
