@@ -9,7 +9,7 @@ namespace GpuSmt.StateReuseProfile
 
 /-- Keep strong references: an address reused after collection cannot alias an old environment. -/
 @[extern "gpu_smt_environment_equal"]
-unsafe def sameEnvironmentNative (a b : @& Environment) : Bool := false
+unsafe def sameEnvironmentNative (a b : @& Environment) : Bool := ptrEq a b
 
 unsafe def sameEnvironmentImpl (a b : Environment) : Bool := sameEnvironmentNative a b
 
@@ -100,7 +100,10 @@ Unresolved expression/universe metavariables and out-of-context fvars are unsupp
 This does not certify that hidden elaborator state or resource budgets are replayable. -/
 private def inputKey (stx : Syntax) : TacticM (Option Key × String) := do
   let envId ← environmentId (← getEnv)
-  let mut metadata : Array Json := #[syntaxIdentity stx]
+  let some begin := stx.getPos? | return (none, "missing_tactic_source_span")
+  let some stop := stx.getTailPos? | return (none, "missing_tactic_source_span")
+  let exactText := (← getFileMap).source.extract begin stop
+  let mut metadata : Array Json := #[syntaxIdentity stx, toJson exactText]
   let mut expressions : Array ExprStructEq := #[]
   let core ← readThe Core.Context
   let meta ← readThe Meta.Context
@@ -112,6 +115,7 @@ private def inputKey (stx : Syntax) : TacticM (Option Key × String) := do
   if meta.canUnfold?.isSome || meta.defEqCtx?.isSome then
     return (none, "custom_unfold_or_defeq_context")
   for goal in (← getGoals) do
+    if (← goal.isAssignedOrDelayedAssigned) then return (none, "assigned_or_delayed_goal")
     let decl ← goal.getDecl
     let mut fvars : Array Expr := #[]
     let mut locals : Array Json := #[]
@@ -132,7 +136,7 @@ private def inputKey (stx : Syntax) : TacticM (Option Key × String) := do
         | .ldecl _ _ name _ _ nonDep kind =>
           Json.arr #[toJson ("let" : String), nameIdentity name,
                             toJson nonDep, toJson (reprStr kind)]
-      locals := locals.push tag
+      locals := locals.push (Json.arr #[toJson localDecl.index, tag])
     let target := (← instantiateMVars decl.type).abstract fvars
     if target.hasMVar || target.hasFVar then return (none, "unresolved_target")
     expressions := expressions.push ⟨target⟩
@@ -156,11 +160,12 @@ A normal return need not close a goal; an internal exception is never cached.
 Timestamps/heartbeats below are observations, not a replay implementation. -/
 elab (name := observeState) "observe_state " inner:tactic : tactic => do
   let captureStart ← IO.monoNanosNow
+  let goalIndexes ← (← getGoals).toArray.mapM fun g => do return (← g.getDecl).index
   let (key, eligibility) ← inputKey inner.raw
   let (call, keyId) ← register key
   let captureNs := (← IO.monoNanosNow) - captureStart
   emit [("event", toJson ("begin" : String)), ("call", toJson call),
-        ("key", toJson keyId), ("environment", toJson (key.map (·.environment))), ("eligibility", toJson eligibility),
+        ("key", toJson keyId), ("goal_generation_indexes", toJson goalIndexes), ("environment", toJson (key.map (·.environment))), ("eligibility", toJson eligibility),
         ("source", toJson (← readThe Core.Context).fileName),
         ("byte", toJson (inner.raw.getPos?.map (·.byteIdx))),
         ("kind", toJson inner.raw.getKind.toString), ("capture_ns", toJson captureNs),

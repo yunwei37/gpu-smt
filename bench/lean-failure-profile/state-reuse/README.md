@@ -84,3 +84,29 @@ The failed whole-environment ShareCommon canonicalization is retained:it used
 cancelled as an unusable development control. Generic sharing is upstream prior
 work: https://raw.githubusercontent.com/leanprover/lean4/v4.9.0-rc1/src/runtime/sharecommon.cpp
 The final observer compares existing values and does not use that path.
+
+
+The population collector uses the plain program argument ack(Lean4.9consumes
+option-looking arguments itself). It admits one request over the existing child
+stdin,starts its300sclock before ACK,and never lets the native producer run ahead.
+Late payloads stay raw and operational;retirement precedes another process.
+Cold preparation memory exhaustion belongs to its caller;idle over-budget cache
+may retire without assigning a semantic verdict. One fresh exclusive retry
+follows the ordinary frontier. Safe test-local128MiBinjection actually killed
+four owned workers and exercised two queue-tail retries;full collection remains
+48GiB. Normal24real sources x3modesmatch status/raw diagnostics with nominal
+one-second sampled own peak9.24GB. NativeREPLfour-sourceblackboxagrees(2accepted/
+2rejected),not an all7808certificate.
+
+Before population capture,the frontend is aligned with pinnedREPL/Frontend:
+info trees enabled,pre-parse command start,parser/elaborator message order,
+terminal command elaboration and original container sourceinfo. The early
+self-consistency controls did not by themselves establish this alignment.
+The exact native tactic span text is part of the input key. Goal creation indexes
+are recorded separately and compared as a replay qualifier;do not conflate
+metavariable-generation identity with the target expression or assume it
+irrelevant. Local declaration indexes remain part of the strict local context.
+Unreached/unsupported/resource/open observations are not zero reusable failures.
+The SDK--runmeasurement driver is a diagnostic frontend with compiled Mathlib
+provider;its setup/memory and serial execution are not a warm4REPLbaseline or an
+end-to-endgain. NativeREPLperformanceconfirmation remains required.

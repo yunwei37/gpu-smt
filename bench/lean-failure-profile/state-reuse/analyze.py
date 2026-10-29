@@ -53,7 +53,11 @@ def main():
             item = dict(call=call, prior_call=pcall, key=key,
                         source=call_sources[call], prior_source=call_sources[pcall],
                         outcome=end["outcome"], prior_outcome=pend["outcome"],
-                        observed_action_ns=end["elapsed_ns"])
+                        observed_action_ns=end["elapsed_ns"],
+                        same_goal_generation_indexes=(
+                            start["goal_generation_indexes"] == begins[pcall]["goal_generation_indexes"]
+                            if "goal_generation_indexes" in start and
+                            "goal_generation_indexes" in begins[pcall] else None))
             repeats.append(item)
             if end["outcome"] != pend["outcome"]:
                 changes.append(item)
@@ -68,6 +72,9 @@ def main():
         unsupported_inputs=sum(x["key"] is None for x in begins.values()),
         outcomes=dict(outcomes), completed_input_match_occurrences=len(repeats),
         repeated_ordinary_error_occurrences=len(failures),
+        same_generation_input_matches=sum(x["same_goal_generation_indexes"] is True for x in repeats),
+        different_generation_input_matches=sum(x["same_goal_generation_indexes"] is False for x in repeats),
+        unobserved_generation_input_matches=sum(x["same_goal_generation_indexes"] is None for x in repeats),
         observed_repeated_error_wall_seconds=sum(
             x["observed_action_ns"] for x in failures)/1e9,
         repeated_outcome_changes=changes,

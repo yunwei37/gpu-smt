@@ -1,0 +1,92 @@
+{
+  "UTC": "2026-10-29T09:54:17.561714+00:00",
+  "commands": [
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/state-reuse",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.olean",
+        "-c",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.c",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseProfile.lean"
+      ],
+      "exit": 0,
+      "seconds": 2.0025585889816284
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/leanc",
+        "-c",
+        "-fPIC",
+        "-O2",
+        "-DLEAN_EXPORTING",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.c",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.o"
+      ],
+      "exit": 0,
+      "seconds": 5.004812450846657
+    },
+    {
+      "command": [
+        "c++",
+        "-shared",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseProfile.o",
+        "/tmp/gpu-smt-state-reuse-20261029/environment-equality.o",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/libStateReuseProfile.so"
+      ],
+      "exit": 0,
+      "seconds": 1.0015160040929914
+    },
+    {
+      "command": [
+        "env",
+        "LEAN_PATH=/tmp/gpu-smt-state-reuse-20261029",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--root=/workspaces/repository/bench/lean-failure-profile/state-reuse",
+        "-o",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.olean",
+        "-c",
+        "/tmp/gpu-smt-state-reuse-20261029/StateReuseMeasure.c",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean"
+      ],
+      "exit": 0,
+      "seconds": 1.0016465140506625
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "--load-dynlib=/tmp/gpu-smt-state-reuse-20261029/libStateReuseProfile.so",
+        "--run",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/StateReuseMeasure.lean",
+        "/tmp/gpu-smt-state-reuse-20261029/controls-native-filename.json"
+      ],
+      "exit": 0,
+      "seconds": 12.010037066880614
+    },
+    {
+      "command": [
+        "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+        "/workspaces/repository/bench/lean-failure-profile/state-reuse/run.py",
+        "--input",
+        "/tmp/gpu-smt-state-reuse-20261029/extended-preflight.json.gz",
+        "--out",
+        "/tmp/gpu-smt-state-reuse-input-generation-preflight-20261029",
+        "--context",
+        "/tmp/gpu-smt-solo42-native-library-20261028/rebound-point-13d4606.json",
+        "--module-dir",
+        "/tmp/gpu-smt-state-reuse-20261029"
+      ],
+      "exit": 0,
+      "seconds": 25.022465089103207
+    }
+  ],
+  "seconds": 46.04436587705277,
+  "combined_peak_bytes": 16974548992,
+  "pressure_aborted_only_new_support": false,
+  "budget_bytes": 51539607552,
+  "native_Lean_invocations": 3,
+  "scope": "Sole native input-observer controls after42retirement;not performance measurement"
+}
