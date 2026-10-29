@@ -252,3 +252,14 @@ and corrects an old preflight reachability description from its raw calls;
 no source verdict or later positive-control match changes.
 The existing selected-population capture remains on
 its frozen qualified source,without an enabled cache or second collection.
+
+## Actual population interruption — 2026-10-29
+
+[Step0135](tmp/build-and-evaluate/step-0135-20261029T123554+0000/step-report.md)
+preserves a [failed partial capture](../artifacts/hotspot-mechanisms-2026-10-25/state-reuse-native-20261029/populations/partial-20261029T1233/README.md):
+2640original-mode rows,5RSSpreemptions/14timeouts among them,and no observe/import
+phase yet. An additional original proofnet-5879attempt exits1 with native
+Nat.pow panic before a result row;the old controller stops and allworkers retire.
+This supersedes the earlier running observation,not the raw launch metadata.
+Match rate and saved time remain unknown;repair and continue unfinished cells
+without discarding the healthy prefix or five deferred resource retries.
