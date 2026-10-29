@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/artifacts/engine-resource-profile-2026-10-25/native-response-origin-20261029/analyze.py", line 117, in <module>
+    print(json.dumps(analyze(), ensure_ascii=False, indent=2))
+                     ~~~~~~~^^
+  File "/workspaces/repository/artifacts/engine-resource-profile-2026-10-25/native-response-origin-20261029/analyze.py", line 37, in analyze
+    differences = read(DIFF)
+  File "/workspaces/repository/artifacts/engine-resource-profile-2026-10-25/native-response-origin-20261029/analyze.py", line 22, in read
+    return json.loads(path.read_text())
+                      ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 548, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+  File "<frozen codecs>", line 325, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte

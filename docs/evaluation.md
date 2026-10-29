@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open work
 
-Updated2026-10-28UTC. Root only;reviews are self-review,not independent audits.
+Updated2026-10-29UTC. Root only;reviews are self-review,not independent audits.
 The [original four RQs](idea-story.md),Lean/SMT scope and OSDI objective remain
 open. Tests,a compiled draft and selected timings do not establish novelty.
 All raw,failed,partial and superseded evidence remains;detailed history is below.
@@ -113,6 +113,13 @@ Raw native payloads differ on7682IDs;even removing only env/empty ast leaves
 strings differ. Peaks48.768776/48.805775GiB include sampled overshoot.
 Immediate-warm versus frontier-engine retry order,affinity,single order and
 shared support work prevent a COW-only or general strongest-service claim.
+
+[Response-origin analysis](../artifacts/engine-resource-profile-2026-10-25/native-response-origin-20261029/README.md)
+reproduces16optional-field differences through the installed model serializer
+and relates22embedded coordinates in7sources to the3removed header lines.
+All23also match historical fresh responses in the same two-field view,but
+its library/executable context differs;this is not a new matched native proof.
+Original raw differences remain,no response normalization or engine patch.
 
 ## Own load-aware methods
 

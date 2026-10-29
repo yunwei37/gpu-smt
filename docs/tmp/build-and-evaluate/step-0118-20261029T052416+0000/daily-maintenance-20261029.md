@@ -39,3 +39,11 @@ the true four-digit-count task prevent a broad false-goal shortcut. This is
 concrete failure-method preparation, not a new throughput result, novelty
 finding or benchmark correction. Continue native proof controls only after
 the existing42collection retires; no additional logging framework is needed.
+
+Response fidelity needs origin attribution rather than a cosmetic normalizer.
+Actual installed serialization reproduces16optional-field cases;7sources retain
+22embedded positions shifted by their3removed import lines. Historical fresh
+matches the23prepared responses but has a different library/executable context.
+Preserve every raw difference and do not patch the engine to mimic body-relative
+message text. This narrows the remaining native-differential question without
+claiming full response guarantees or independent audit.

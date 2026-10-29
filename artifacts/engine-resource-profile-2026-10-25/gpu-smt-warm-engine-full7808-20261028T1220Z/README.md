@@ -75,3 +75,12 @@ The additional engine stdout/stderr,launch/exit,controller logs,terminal and
 [complete comparison](comparison.json.gz) are now retained losslessly.
 Only the original raw-log filename changes when recomputing through gzip.
 The archived input,adapter and source definition are not replaced.
+
+## Post-run response attribution
+
+[Selected23source/model attribution](../native-response-origin-20261029/README.md)
+explains optional-field serialization and embedded source-line boundaries using
+the actual installed service and historical fresh corroboration. It does not
+rewrite any raw/comparison data or replace the cross-context native limitation.
+The resource pair remains a composite single-order result,not exact wire
+transparency or a COW-only causal estimate.
