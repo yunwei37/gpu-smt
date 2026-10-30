@@ -1,6 +1,6 @@
 # Evaluation: current evidence and open work
 
-Updated2026-10-29UTC. Root only;reviews are self-review,not independent audits.
+Updated2026-10-30UTC. Root only;reviews are self-review,not independent audits.
 The [original four RQs](idea-story.md),Lean/SMT scope and OSDI objective remain
 open. Tests,a compiled draft and selected timings do not establish novelty.
 All raw,failed,partial and superseded evidence remains;detailed history is below.
@@ -9,20 +9,28 @@ All raw,failed,partial and superseded evidence remains;detailed history is below
 
 ## Current directions
 
+Root currently integrates paper/evidence while W owns workloads, M owns
+mechanism measurements and O owns engine/open-source changes. The user-approved
+existing Workspace now runs on phobos-vt with the same 128 GiB PVC. Total lane
+budgets are 40 GiB (W16/M16/O4/root4), each at most 8 cores. Root uses 0–1 for small
+analysis/builds. Current signal controls still return errno 13; no functioning
+signal watchdog is claimed. Owners retain natural-exit bounded native methods.
+Mainline selection awaits W/M and the user's decision; no extra Agent is started.
+
 The matched four-warm Kimina versus repaired-engine full7808resource pair
 is complete with equal basic outcomes and19.28%less elapsed on this one point. Repair/measure resource performance before stacking
-task-memory,ranking,failure or LRAT gains. The latest user decision stops interval_cases parallel development and
-prioritizes measuring complete-state expensive tactic reuse,especially native
-strategy failures. The corrected42capture has completed;the selected-population
-native input/cost capture was interrupted and its recovery is prepared,not running.
-The actual interruption/recovery status is linked below. Timeout and memory
+task-memory,ranking,failure or LRAT gains. An earlier user decision stops interval_cases parallel development and
+requests complete-state expensive tactic reuse measurements, especially native
+strategy failures. Current W/M work broadens workload and mechanism evidence. The corrected42capture has completed;the earlier selected-population
+native input/cost capture was interrupted; its historical recovery is prepared,
+not running. Its interruption/recovery records are retained below. Timeout and memory
 failures are not interchangeable with tactic exceptions.
 The four continuing directions remain:
 the layered Rust engine,reliable early failure,multi-candidate inference and
 public Lean code verification. There is no project deadline or closure rule.
 Resource/COW/cache/ordinary compilation/cancellation primitives are prior work;
 prospective novelty needs workload-level evidence. CPU oracle stays frozen.
-No other competitor reproduction,AI delegation,new Workspace or checkout.
+No additional competitor reproduction,Agent,Workspace or checkout.
 Exact authority remains [the user log](user-instruction.md).
 
 | RQ | Frozen question | Current status |
@@ -37,12 +45,12 @@ Exact authority remains [the user log](user-instruction.md).
 
 ## Resource point
 
-One native collection at a time:48GiB summed own sampled RSS,CPUs8–11,up to
-four one-core workers,dynamic admission,no fixed process AS cap. A1s watchdog
-preempts/reaps the largest own attempt;retry follows the queued ordinary
-frontier and runs alone. Later arrivals cannot starve it;solo excess remains
-resource failure. Sampling overshoots and is not a kernel quota. No other
-Workspace/quota/permission change. Historical2worker/24GiB-AS points stay separate.
+Current placement and lane limits are described above. The48GiB/CPU8–11
+four-worker service measurements below are the historical matched lab point,
+not current phobos-vt limits or a new allocation. Their1s sampled watchdog,
+dynamic admission, solo retries and no fixed process AS belong to that point.
+Sampling overshoots are not a kernel quota. Earlier2worker/24GiB-AS and later
+G10/phobos-vt records remain separate; no clock is rescaled across them.
 
 ## Complete native/Mathlib-derived pair
 
@@ -686,3 +694,20 @@ paragraph with this later limited result. All prior failure data stay in M
 artifacts, step0180 and Git history. No historical run is relabeled or deleted.
 Root launches no native verifier or other Agent, changes no W/M/O path, and
 preserves all scientific framing/RQs and existing citations. Same-thread review.
+
+
+## 2026-10-30 — native failure/dependency cache precedents (step0182)
+
+[Detailed primary-source
+audit](tmp/build-and-evaluate/step-0182-20261030T111939+0000/literature-20261030T111939+0000/report.md)
+verifies that Lean4.9.0-rc1 and4.34.1 already cache negative typeclass queries. Native
+full-state reuse also charges saved heartbeats approximately. Separately pinned current
+upstream 0f852cc822d5 records observed query dependencies, normalizes eligible contexts
+and persists eligible entries across commands; selected official changes date to
+September/October2026. These current features are not silently attributed to either
+measured release. Generic failure/read-set caching is therefore prior mechanism.
+Arbitrary tactic failure replay, complete native semantics, workload opportunity and
+incremental service benefit remain unresolved. No native benchmark or production feature
+is run, and the paper mainline stays unchanged. Source-only details remain in the root
+node because canonical background-related-work.md has foreign dirty work; it is not
+overwritten or staged.
