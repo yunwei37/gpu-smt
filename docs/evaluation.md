@@ -377,3 +377,49 @@ measured short-order control. No source features are recomputed for it.
 Mean task latency improves in the CPU proxy,but consumed work/batch timing
 worsen and RSS/original-budget parity is unqualified. No runtime feature is
 enabled;exact finite bounds/exhaustive unsolved groups remain explicit.
+
+
+## 2026-10-30 — root paper integration after authorized parallelization
+
+User assigns workloads/ to W, engineering/onboarding to O and
+research/mechanisms-2026-10-30/ to M. Root owns manuscript/evidence integration,
+not those implementation paths. The title, abstract, introduction, design,
+implementation and all four RQ texts remain byte-identical in this paper update.
+No cross-proof reuse thesis or new novelty claim is adopted before W/M evidence
+and the user's decision. Root uses only two eligible CPUs and its4GiB share of
+the new40GiB aggregate;this does not rerun historical48GiB experiments.
+
+The existing Workspace/PVC is restored onphobos-vt. Root's short same-UID
+Kubernetes-exec controls still observe errno13 for TERM and KILL. Both2-second
+Python children naturally exit0 and are confirmed retired. Their birth identity
+and return codes are archived in step0174. This entry-path observation does not
+establish whether an untested Coder SSH execution path can signal its children.
+No security adjustment or native long capture follows.
+
+Step0170/f41c3f0 provides all21396retained AutoVerus timing cells. Three direct
+passes cover3566sources each;reportedRust+VIR+nonSMT-AIR is75.33–75.68% of
+reported native time. SMTinit+run is9.77–9.87% of summed external candidate
+process time,not whole-service wall.17missing timingJSON and341missingSMT
+fields per pass remain explicit. Paper now includes these per-pass costs.
+
+Step0174 reproduces the earlier read-only196-log accounting directly from the
+retained compressed archive without extraction. Logger endpoints sum84267s;
+1652inference labels sum80835.416549206s(95.9277%). Residual3431.583450794s
+contains verification and other work;exactgeneration/verification ratio stays
+unknown. Two negative per-log residuals remain at one-second resolution;
+archived Python does not reconstruct the historical inference timer. API waits/
+retries are included. No2026native or cross-hardware denominator is substituted.
+
+Step0173/eefd07f audits96sources in the three largest observed-unsolved tasks:
+19451.516132460/52992.124105687 physical-attempt seconds(36.7064%). Coverage
+is95nativeSyntax sources and79independent historical profiles. The same
+five-source closed-target projection is found,all with resource failures.
+Actualreads,ordinary-failure producers and replay saving stayunknown. The
+manuscript records this scope without making it a new central mechanism.
+Salsa/Adapton and the existingSHRED citation delimit read-set reuse precedent.
+
+At the frozen W03d8f95/M573c3d8snapshot,W enumerates163097Lean source files,
+not verified candidates or per-proof native times. M's G10PMU probes are denied;
+the392shared-library-file census is not a native-execution fraction or evidence
+about PMU permissions onphobos. These initial artifacts do not settle the
+paper's mechanism. Root reads them but makes no edits to the branch-owned paths.

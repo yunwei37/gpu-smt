@@ -248,3 +248,23 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 ## 2026-10-30 — direct user correction
 
 （Claude 更正上一条）第 2 项里"用源码特征预测代价和通过概率再排序"，你 10-26 的 heldout source-cost 分析已经做过，结果比 FIFO 没有改进，不要重做。第 2 项只做两件事：精确 pass@k 下的理想上界，以及对重尾候选的抢占重启（只利用运行时观测到的已耗时间，不依赖源码特征）。第 1 项（按目标 + 策略 + 预算缓存资源失败）不变；README 说 miniF2F 没有完全相同的有效证明，所以要看的是不同证明里是否有相同的昂贵调用，不是整份源码重复。
+
+
+## 2026-10-30 — direct user message
+
+（Claude 通知，用户原话：「新开一个 Codex 线程 命令行, phobos-vt」「并行派几个」）用户决定并行。你之前排队的 16 条消息已经撤下，拆给了从你 fork 出来的三个并行分支，它们和你共用 gpu-smt-dev 和同一个仓库：
+- W 线：负载刻画，最高优先级。用 openai/math、EPFL 候选语料、新一代证明器的输出、计算型证书证明、AWS LNSym 等公开数据，加最新的开源工具做 characterization，并写代表性审计。路径：workloads/。
+- O 线：开源和文档。crate 改名为 proofserve-*，cargo 发布 dry-run 和打 tag 发布的工作流，用户视角的 README，Docker，Python 客户端，CHANGELOG；把今天讨论的结论写进 docs/research-plan.md，把不对称信任写进 docs/architecture.md。路径：crates/、README、CHANGELOG、.github/、docs/research-plan.md、docs/architecture.md。
+- M 线：机制可行性测量。perf 和预编译、乱序推测执行的可并行度、计算抽取的证书原型、内存配比模拟、先例核查。路径：research/mechanisms-2026-10-30/。
+你负责论文和整合，别去碰上面这些路径。论文主线先不要改成"跨证明调用复用"，等 W 和 M 的结果出来、用户拍板再定，现有结果照常记录。G10 上四条线合计不超过 12 GiB；你不跑重活，不跑长采集。push 之前先 git pull --rebase，禁止 reset 和强推。不要迁 Workspace：用户提的 phobos-vt 和"带凭据的个人 Workspace 不能放到外部节点"这条硬规则冲突，还在等用户确认。每一步 commit/push。
+
+
+## 2026-10-30 — direct user message
+
+【Claude 通知，接着干】你们刚才遇到的 Workspace 中断是我做的迁移，用户原话：「gpu-smt-dev 可以迁移凭据会落在机构共享的机器上没问题, 通过广域网重建 64 GiB 副本没问题, 数据也迁移过去」。决策记录见 spark-manage 仓库的 docs/configuration-decisions/2026-10-30-gpu-smt-dev-phobos-vt-migration.md。
+- gpu-smt-dev 名字不变（coder ssh yunwei356/gpu-smt-dev），已经在 phobos-vt 上重新跑起来了：24 核，节点上约 59 GiB 可用内存，同一块 PVC，数据都在。
+- Longhorn 正在通过广域网把数据副本从 lab 重建到 phobos-vt。重建完成之前磁盘 I/O 会比较慢，git 和大量小文件操作尤其慢；完成后就是本地盘。
+- 新的资源分配：四条线合计不超过 40 GiB，W 最多 16 GiB，M 最多 16 GiB，O 最多 4 GiB，主线程最多 4 GiB。phobos-vt 上还有别的 Workspace，CPU 别全部占满，每条线最多用 8 个核。
+- 先用一个短小的控制任务确认，在新节点上能不能给自己的子进程发信号（G10 上是 AppArmor 拒绝的）。能的话，看门狗恢复可用，可以跑有上限的采集；不能就继续用 maxHeartbeats 让进程自然退出。
+- 其余规则不变：只改自己的路径，push 之前 git pull --rebase，禁止 reset 和强推，不开别的 agent，每一步 commit/push。
+【主线程】你负责论文和整合，迁移后照常继续；论文主线仍然等 W 和 M 的结果出来、用户拍板再定。

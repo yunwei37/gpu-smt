@@ -669,6 +669,53 @@ These single non-atomic profiles do not establish replicated or exact memory
 bounds. They show no stock-relative memory saving that compensates for the
 measured time loss. The complete service frontier remains unfinished.
 
+\paragraph{Stage costs in retained AutoVerus source replay.}
+A separate single-CPU diagnostic retains three direct passes over all 3,566
+source candidates, with native expanded timers and per-source process-wall
+clocks. It is not the three-CPU prefix comparison above.
+Rust, VIR construction and AIR work excluding SMT account for
+75.33--75.68\% of reported native time. Reported SMT initialization plus query
+execution account for 9.77--9.87\% of the summed external process-wall clocks
+(Table~\ref{tab:autoverus-stage-costs}). The pinned timer implementation
+subtracts SMT from AIR; nested VIR components and verification totals are not
+added again. Query time is host elapsed around SMT interactions, not isolated
+Z3 CPU time. Each pass retains 17 candidates without timing JSON and 341
+JSON-bearing candidates without SMT timing fields as unavailable observations.
+Unreported work, millisecond truncation and external process overhead remain
+separate. These diagnostic fractions do not establish a whole-application
+acceleration bound or a gain for function-result caching.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Pass & External (s) & Frontend (s) & SMT (s) \\
+\midrule
+1 & 639.238 & 443.690 & 63.120 \\
+2 & 631.215 & 439.982 & 61.686 \\
+3 & 632.607 & 440.488 & 61.805 \\
+\bottomrule
+\end{tabular}
+\caption{Summed direct per-source process clocks for retained AutoVerus
+candidates. Frontend combines reported Rust, VIR and AIR excluding SMT;
+SMT combines initialization and queries. These sums are not whole-service
+lifecycle clocks. Missing timing fields remain unavailable.}
+\label{tab:autoverus-stage-costs}
+\end{table}
+
+The publisher's 196 retained generation logs span 84,267 seconds between their
+first and last recorded timestamps. Their 1,652 inference-time labels sum to
+80,835.42 seconds (95.93\% of that aggregate span), including API waiting and
+retries. The fraction varies from 63.74\% to 97.40\% across the four saved
+source groups. The remaining 3,431.58 seconds include verification and other
+unattributed work; they are not a measured verification component.
+One-second logger resolution produces two small negative per-log residuals,
+which remain retained. The archived Python revision does not reconstruct the
+historical inference-timer implementation. We therefore report label accounting
+rather than an exact generation/verification ratio, and do not combine these
+historical logger spans with the separate native replay clocks.
+
 \paragraph{Complete source verification across placements.}
 We compare a shared-process warm-worker alternative with the competent
 process-isolated warm pool on the retained 5,952 ProofNet-lineage
@@ -1006,6 +1053,18 @@ peer history and sampling. The same target, tactic and global RSS cap do not
 supply a deterministic work-budget certificate or establish failure at every
 smaller budget. We therefore retain this focused cross-proof opportunity
 without enabling a resource-failure rejection cache.
+
+A broader offline audit ranks the three largest observed-unsolved problems
+by composed physical-attempt work. Their 96 candidates consume 19,451.52 of
+52,992.12 summed attempt seconds (36.71\%), including retries.
+Retained native syntax covers 95 candidates and separate historical profiles
+cover 79. The narrow rewritten-target projection recovers the same five-source
+group, all with final resource-failure outcomes. Actual dynamic read sets,
+remaining native budgets and completed ordinary-failure transitions are absent.
+Consequently, a smaller dependency key has no qualified hit rate or saved-time
+result in this audit. Source projection remains an opportunity observation,
+not the paper's adopted mechanism or a replacement for the prepared-state
+service evaluation.
 
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
@@ -1450,6 +1509,15 @@ Generic proof parallelism alone would not distinguish the service.
 
 \paragraph{Verification caching.}
 Fine-grained verification caching avoids rechecking unchanged program regions~\cite{boogieCache}. The service comparison combines competent caching with warm execution, so cold startup cannot account for the entire claimed advantage. Caching and session reuse retain different parts of verification work. Native session reuse retains incremental command history and requested-artifact state~\cite{z3api}. Reconstruction with equivalent assertions remains a different execution history from the original native stream.
+
+Dynamic dependency tracking is also established: Salsa validates recorded
+query dependencies across revisions~\cite{salsaDependencies}, and Adapton
+reuses demanded computation graphs as inputs and context change~\cite{adapton}.
+A smaller tactic key must cover native dependencies, including environment
+extensions and unsuccessful lookups, while preserving the complete ordinary
+failure transition and its resource accounting. Merely recording previously
+returned declarations does not establish that contract. These precedents
+prevent treating read-set memoization itself as a new contribution.
 
 SHRED supplies exact rooted-prefix profiling and a closing-proof reuse prototype
 keyed by elaborated context and target, with native proof checking and fallback~\cite{shred}.

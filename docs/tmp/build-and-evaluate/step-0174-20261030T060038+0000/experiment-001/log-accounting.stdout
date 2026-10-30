@@ -1,0 +1,75 @@
+{
+  "aggregate": {
+    "logs": 196,
+    "logger_span_s": 84267.0,
+    "logged_inference_s": 80835.41654920578,
+    "unattributed_residual_s": 3431.58345079422,
+    "logged_inference_over_logger_span": 0.9592772562118715,
+    "inference_events": 1652
+  },
+  "by_folder": {
+    "gpt4o-clover-1.0": {
+      "logs": 11,
+      "logger_span_s": 529.0,
+      "logged_inference_s": 450.320054769516,
+      "unattributed_residual_s": 78.67994523048401,
+      "logged_inference_over_logger_span": 0.8512666441767788,
+      "inference_events": 28
+    },
+    "gpt4o-diffy-1.0": {
+      "logs": 39,
+      "logger_span_s": 1142.0,
+      "logged_inference_s": 727.9617786407471,
+      "unattributed_residual_s": 414.03822135925293,
+      "logged_inference_over_logger_span": 0.6374446397904966,
+      "inference_events": 105
+    },
+    "gpt4o-mbpp-1.0": {
+      "logs": 108,
+      "logger_span_s": 79046.0,
+      "logged_inference_s": 76990.6982767582,
+      "unattributed_residual_s": 2055.301723241806,
+      "logged_inference_over_logger_span": 0.9739986625099081,
+      "inference_events": 1189
+    },
+    "gpt4o-misc-1.0": {
+      "logs": 38,
+      "logger_span_s": 3550.0,
+      "logged_inference_s": 2666.436439037323,
+      "unattributed_residual_s": 883.563560962677,
+      "logged_inference_over_logger_span": 0.7511088560668515,
+      "inference_events": 330
+    }
+  },
+  "negative_residual_logs": [
+    {
+      "log": "cohort/raw/generated/autoverus/autoverus-generated/gpt4o-mbpp-1.0/1-task_id_809.time",
+      "folder": "gpt4o-mbpp-1.0",
+      "span_s": 123.0,
+      "logged_inference_s": 123.17390060424805,
+      "residual_s": -0.17390060424804688,
+      "inference_events": 1,
+      "finished": true,
+      "overlap_above_one_second": 0
+    },
+    {
+      "log": "cohort/raw/generated/autoverus/autoverus-generated/gpt4o-clover-1.0/1-array_copy_strong.time",
+      "folder": "gpt4o-clover-1.0",
+      "span_s": 3.0,
+      "logged_inference_s": 3.055941581726074,
+      "residual_s": -0.05594158172607422,
+      "inference_events": 1,
+      "finished": true,
+      "overlap_above_one_second": 0
+    }
+  ],
+  "archived_python_inference_timer_implementation_matches": [],
+  "exact_generation_to_verification_ratio": null,
+  "limitations": [
+    "Historical Infer-time labels include observed API waits/retries; not pure model compute.",
+    "Logger endpoints have one-second resolution; two negative residuals remain retained.",
+    "Residual includes verification and other/unlogged work, not verified timing alone.",
+    "Archived current Python sources do not reconstruct the historical timer implementation.",
+    "No2026 replay clock or cross-node clock enters this historical logger denominator."
+  ]
+}
