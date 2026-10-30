@@ -2224,6 +2224,41 @@ new proofs under a specialized repair policy, not unchanged-source
 verification acceleration or a demonstrated systems novelty.
 Complete-stream differential and performance measurements remain open.
 
+The four remaining budget interruptions in the two-family cohort do not
+share one observed bottleneck. We replay their unchanged repaired sources
+with a C wrapper around the version-matched SDK's original profiling
+function, recording tactic, elaboration and declaration-check intervals.
+The wrapper delegates the original function and leaves profiler tracing
+disabled. A positive control and all four sources preserve their operational
+categories and full diagnostics after source-path normalization.
+Raw heartbeat-count parity and instrumentation overhead are unmeasured.
+
+In source 3683, every observed tactic call returns, with the largest enclosing
+tactic interval taking 0.963 seconds, but declaration checking is still open
+when the 16-second wall bound fires. In 3703, the bridge attempt falls back
+to the original \texttt{rfl}; its \texttt{eqRefl} frame remains open at the
+wall bound. The other two return recursion-depth errors: 3698 in a prefix
+\texttt{simp}, and 3710 during bridge matching after cardinality expansion,
+with an earlier \texttt{omega} error also reported. The raw diagnostic for
+3698 says recursion depth, not heartbeat exhaustion.
+
+Seven changed-source diagnostic interventions remain separate from the
+candidate results. Removing selected cardinality expansions returns ordinary
+proof errors in 3.425--4.376 seconds, whereas removing only the final
+\texttt{norm\_num} in 3683 still reaches the wall bound.
+These changes do not preserve a valid complete proof, so they cannot isolate
+an equivalent successful composition or count as recovered candidates.
+A separate source replacing the entire body with an application of the
+already checked digits theorem passes in 0.968 seconds; the added theorem's
+completed declaration-check interval uses 0.000296 seconds of thread CPU.
+That interval excludes the imported certificate's earlier proof checking
+and has different imports and proof construction. It is not first-certificate
+checking cost or a body-preserving end-to-end speedup.
+The observations locate distinct stages and sensitive composition paths;
+the exact kernel reduction node remains unidentified. Nested inclusive
+intervals and unfinished frames do not yield an exclusive wall-time
+partition. The interventions add no accepted candidate to the inventory.
+
 A third specialized family handles a natural number that is both a cube
 and a fourth power. Under the contradiction assumption $n<4096$, monotonicity
 proves the cube base is below 16 and the fourth-power base below eight.

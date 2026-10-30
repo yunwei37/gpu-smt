@@ -268,6 +268,34 @@ preserving verification,a generic compiler or established systems novelty.
 No production mode enabled. Remaining37staticopportunities/11bridges and
 rough engineering estimates are not implemented coverage or time savings.
 
+[Remaining-limit native audit](tmp/build-and-evaluate/step-0211-20261030T172449+0000/step-report.md) checks M8412ff4 from raw C events,
+not its narrative alone. Four byte-identical repaired sources preserve prior
+operational categories, normalized full stdout and exact stderr; a positive
+control also matches. Original lean_profileit delegation and matching
+Lean/AddDecl.lean establish the declaration-check category; no profiler trace
+option or proof-code changes in this primary comparison. Twelve actual native
+PID/birth identities (4primary+1positive+7interventions) are retired.
+
+3683: all observed tactics finish, max enclosing interval0.962999s, while
+declaration checking remains open at16.247170s wall interruption.
+3703: original rfl/eqRefl fallback remains open at16.245790s after failed
+bridge attempt. 3698: prefix simp recursion-depth error at3.222368s;
+M README's heartbeat-exhaustion attribution is contradicted by raw stdout.
+3710: bridge recursion-depth error plus earlier omega error,3.675107s.
+Raw heartbeat counts/observer overhead and exact kernel reduction node remain
+unknown. Nested/incomplete frames do not partition whole-source wall.
+
+Seven changed-source interventions retained with exact diffs. Removing
+cardinality expansions or a bad prefix can replace a budget outcome with
+ordinary proof errors; these are not semantics-preserving successful ablations.
+Removing norm_num alone still reaches the bound. Direct whole-body theorem
+application passes0.967882s, added theorem check0.000296484thread-CPU seconds;
+prechecked imported lemma/different imports/body,not first certificate check
+or another recovered candidate. No new accepted inventory ID or speedup claim.
+Four-command C wrapper relink wall0.966679s is separate setup.
+Other lane source/results are untouched; root corrects only canonical evidence
+and paper attribution. Current33newproof/145task inventory stays unchanged.
+
 [Third-family and corpus-inventory audit](tmp/build-and-evaluate/step-0209-20261030T165602+0000/step-report.md) adds a separate complete
 32source/64native power-familypoint,pinned8412ff4collector/transform and
 actualsources/receipts. Exactbounded128assignment lemma plus provedbounds

@@ -1,0 +1,168 @@
+{
+  "M_source": "8412ff4",
+  "primary_unchanged_sources": 4,
+  "primary_same_categories_and_diagnostics": 4,
+  "actual_observed_primary_diagnostic_classes": {
+    "wall_alarm_with_open_declaration_check": 1,
+    "wall_alarm_with_open_eqRefl": 1,
+    "prefix_simp_recursion_error": 1,
+    "bridge_recursion_and_prior_omega_error": 1
+  },
+  "narrative_correction_3698": "raw stderr/stdout shows maximum recursion depth, not heartbeat exhaustion",
+  "source_byte_parity_verified": true,
+  "diagnostic_parity_scope": "four sources plus positive control, path normalization only; raw heartbeat counts not measured",
+  "primary": [
+    {
+      "id": "minif2f-3683",
+      "native_exit": 124,
+      "wall_s": 16.2471696799621,
+      "events": 134,
+      "completed_frames": 66,
+      "open_frames": 2,
+      "deepest_open_category": "type checking",
+      "deepest_open_kind": "",
+      "same_source_bytes": true,
+      "normalized_stdout_equal": true,
+      "stderr_equal": true,
+      "recursion_depth": false,
+      "heartbeat": false,
+      "omega_error": false,
+      "largest_completed_tactic_frame_wall_s": 0.962998698
+    },
+    {
+      "id": "minif2f-3698",
+      "native_exit": 1,
+      "wall_s": 3.222367536276579,
+      "events": 114,
+      "completed_frames": 57,
+      "open_frames": 0,
+      "deepest_open_category": null,
+      "deepest_open_kind": null,
+      "same_source_bytes": true,
+      "normalized_stdout_equal": true,
+      "stderr_equal": true,
+      "recursion_depth": true,
+      "heartbeat": false,
+      "omega_error": false
+    },
+    {
+      "id": "minif2f-3703",
+      "native_exit": 124,
+      "wall_s": 16.24579016957432,
+      "events": 208,
+      "completed_frames": 101,
+      "open_frames": 6,
+      "deepest_open_category": "tactic execution",
+      "deepest_open_kind": "Lean.Parser.Tactic.eqRefl",
+      "same_source_bytes": true,
+      "normalized_stdout_equal": true,
+      "stderr_equal": true,
+      "recursion_depth": false,
+      "heartbeat": false,
+      "omega_error": false
+    },
+    {
+      "id": "minif2f-3710",
+      "native_exit": 1,
+      "wall_s": 3.6751071820035577,
+      "events": 116,
+      "completed_frames": 58,
+      "open_frames": 0,
+      "deepest_open_category": null,
+      "deepest_open_kind": null,
+      "same_source_bytes": true,
+      "normalized_stdout_equal": true,
+      "stderr_equal": true,
+      "recursion_depth": true,
+      "heartbeat": false,
+      "omega_error": true
+    }
+  ],
+  "changed_source_interventions": [
+    {
+      "label": "3683",
+      "intervention": "skip only final source norm_num, before certificate",
+      "status": "budget_exceeded",
+      "wall_s": 16.251234386116266,
+      "exit": 124,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "3698",
+      "intervention": "skip erroneous prefix simp rewrite; leave proof obligation/error intact",
+      "status": "lean_error",
+      "wall_s": 3.025107459165156,
+      "exit": 1,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "3703",
+      "intervention": "skip source card_filter expansion before certificate",
+      "status": "lean_error",
+      "wall_s": 4.376369310542941,
+      "exit": 1,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "3710",
+      "intervention": "skip source card_filter expansion before certificate",
+      "status": "lean_error",
+      "wall_s": 3.4249322256073356,
+      "exit": 1,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "no-card",
+      "intervention": "no-card",
+      "status": "lean_error",
+      "wall_s": 3.6709233662113547,
+      "exit": 1,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "no-both",
+      "intervention": "no-both",
+      "status": "lean_error",
+      "wall_s": 3.3693613316863775,
+      "exit": 1,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    },
+    {
+      "label": "direct-core",
+      "intervention": "direct-core",
+      "status": "accepted",
+      "wall_s": 0.9678821824491024,
+      "exit": 0,
+      "original_source_preserved": false,
+      "counted_as_recovered_candidate": false
+    }
+  ],
+  "direct_application_control": {
+    "whole_source_wall_s": 0.9678821824491024,
+    "new_theorem_check_CPU_intervals_s": [
+      0.000296484
+    ],
+    "prechecked_imported_lemma": true,
+    "original_body_preserved": false,
+    "new_candidate_recovery_counted": false
+  },
+  "relink_build_wall_s": 0.9666785877197981,
+  "native_identities_checked_retired": 12,
+  "sampler_interval_s": 1,
+  "hard_RSS_quota_claimed": false,
+  "instrumentation_overhead_estimate": null,
+  "exclusive_fullwall_partition": null,
+  "exact_kernel_reduction_node_identified": false,
+  "card_filter_removal_preserves_valid_proof": false,
+  "new_accepted_original_candidates_counted": 0,
+  "new_fullstream_throughput_measurement": false,
+  "root_new_native_processes": 0,
+  "root_elapsed_s": 0.010861481539905071,
+  "root_maxrss_kib": 13536
+}
