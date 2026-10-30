@@ -579,3 +579,49 @@ fn termination_interrupts_idle_cli_input_without_waiting_for_eof() {
         assert!(stopped, "{mode}: shutdown waited for stdin EOF");
     }
 }
+
+#[test]
+fn automatic_resources_and_explicit_override_need_no_native_process() {
+    use std::io::Write;
+    for override_memory in [false, true] {
+        let mut command = Command::new(env!("CARGO_BIN_EXE_gpu-smt"));
+        command.args([
+            "measure",
+            "--repl",
+            "/usr/bin/python3",
+            "--project",
+            "/tmp",
+            "--environment",
+            "empty-batch-resource-defaults",
+        ]);
+        if override_memory {
+            command.args(["--memory-gib", "1"]);
+        }
+        let mut child = command
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        child
+            .stdin
+            .take()
+            .unwrap()
+            .write_all(br#"{"candidates":[]}"#)
+            .unwrap();
+        let output = child.wait_with_output().unwrap();
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        let capture: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+        assert_eq!(capture["results"], serde_json::json!([]));
+        assert!(!capture["resources"]["cpus"].as_array().unwrap().is_empty());
+        let memory = capture["resources"]["memory_bytes"].as_u64().unwrap();
+        assert!(memory > 0);
+        if override_memory {
+            assert_eq!(memory, 1024 * 1024 * 1024);
+        }
+    }
+}

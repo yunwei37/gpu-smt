@@ -1,4 +1,5 @@
 //! Local engine executable. Library use does not require a network service.
+mod resources;
 use gpu_smt_core::{Batch, VerificationBackend};
 use gpu_smt_engine::{
     Config, Engine, Fifo, HeadroomAdmission, MemoryCache, SourceSize, TaskInterleave, TaskMemory,
@@ -68,7 +69,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let command = args.next().unwrap_or_else(|| "--help".into());
     if command == "--help" || command == "help" {
         println!(
-            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--stderr-dir DIR] [--cpus 8,9,10,11] [--worker-cores 1] [--memory-gib 48] [--policy fifo|source-size|task-interleave|task-memory] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
+            "gpu-smt <serve|check|measure> (--repl PATH | --lean PATH) --project DIR --environment ID [--lean-arg ARG ...] [--source-file FILE] [--stderr-dir DIR] [--cpus CPU,CPU,...] [--worker-cores N] [--memory-gib GiB] [--policy fifo|source-size|task-interleave|task-memory] [--prepared-host PATH --sysroot DIR] [--listen 127.0.0.1:3000]\ngpu-smt compare BASELINE.json CANDIDATE.json"
         );
         return Ok(());
     }
@@ -133,19 +134,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .map(str::parse::<usize>)
             .collect::<Result<Vec<_>, _>>()?
     } else {
-        eligible.clone()
+        resources::cpus(eligible.clone())?
     };
     if cpus.iter().any(|cpu| !eligible.contains(cpu)) {
         return Err("CPU outside current eligibility".into());
     }
     let config = Config {
-        memory_bytes: options
-            .get("--memory-gib")
-            .map(|s| s.parse::<u64>())
-            .transpose()?
-            .unwrap_or(48)
-            .checked_mul(1024 * 1024 * 1024)
-            .ok_or("memory size overflow")?,
+        memory_bytes: match options.get("--memory-gib") {
+            Some(text) => text
+                .parse::<u64>()?
+                .checked_mul(1024 * 1024 * 1024)
+                .ok_or("memory size overflow")?,
+            None => resources::memory_bytes()?,
+        },
         cpus,
         cores_per_worker: options
             .get("--worker-cores")

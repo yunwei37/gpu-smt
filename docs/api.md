@@ -424,3 +424,21 @@ The retained-pointer guard also misses independently created Core contexts;
 different source FileMaps prevent cross-source replay through this primitive.
 Semantic rebasing is not implemented. Do not describe it as an enabled
 cross-candidate goal-state cache or use its restricted scope to rule out one.
+
+
+## Automatic resource defaults
+
+The Linux CLI discovers its eligible CPU IDs and reduces the default worker
+budget to any visible cgroup-v2 ancestor CPU quota (fractional quotas use at
+least one worker). The startup RSS budget is 80% of the smaller of current
+MemAvailable and remaining visible cgroup-v2 memory capacity. This leaves
+headroom and does not change host/container limits. The existing sampled
+watchdog and dynamic admission still enforce the selected engine budget.
+Sampling may overshoot; this is not a kernel hard quota.
+
+Use --cpus, --worker-cores and --memory-gib only when choosing a specific
+resource point. Explicit values retain their existing meaning; CPUs must be
+eligible. Original captures keep their original parameters and clocks.
+The G10 research limit remains explicitly12GiB with serial native work;
+automatic service defaults are not permission to run that capture at a larger
+point. Legacy cgroup-v1 controllers are not currently auto-discovered.
