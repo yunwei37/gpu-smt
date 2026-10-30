@@ -340,100 +340,103 @@ axiom closure is established by this census. In particular, zero direct
 \texttt{native\_decide} or \texttt{ofReduceBool} tokens cannot establish absence
 of native evaluation or imported axiom dependencies.
 
-\paragraph{Native pilot of the released math library.}
-A separate phobos-vt point uses the release's Lean~4.34.1 toolchain,
-Mathlib revision \texttt{d13f23b7} and eight matching dependency pins.
-Seven modules covering four preselected targets are compiled serially with
-one Lean thread, a 200,000-heartbeat option, an 8,192\,MiB native memory
-option, \texttt{autoImplicit=false} and olean-only output.
-Source text is unchanged in these seven modules.
-Prerequisites and OS caches are already warm; their preparation is outside
-the per-compiler clocks.
+\paragraph{Bounded native builds of the released library.}
+The native point uses the release's Lean~4.34.1, Mathlib
+\texttt{d13f23b7} and eight matching dependency pins on phobos-vt.
+Table~\ref{tab:modern-native-builds} separates compiler invocations from
+budget interruptions and dependency-blocked modules. All points request
+\texttt{-j1} and an 8,192\,MiB native memory option; neither is a measured
+one-OS-thread or hard-RSS guarantee. Preparation and already-warm prerequisite
+caches lie outside the compiler clocks.
 
-Each module runs first without profiling/stats and then with native
-\texttt{--profile} only. All 14 compiler processes exit zero without a
-sorry warning. This does not establish transitive axiom closure or full
-candidate-service acceptance. Baseline and profiled process-wall sums are
-44.003 and 44.499 seconds; CPU sums are 44.044 and 44.530 seconds.
-The observed wall difference is 0.496 seconds, or 1.13\%, in one fixed-order,
-shared-node pair, without randomized repetitions or a population bound.
-The complete two-mode capture is 89.078 seconds.
-Compiler-process high-water RSS reaches 7.46\,GiB, while the one-second
-sampled aggregate peak is 7.43\,GiB; sampling can miss shorter peaks.
-Neither the native memory option nor those samples are a hard RSS quota.
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Point & \shortstack{Heartbeats\\(thousands)} & Invoked & Compile &
+\shortstack{HB\\stop} & \shortstack{Wall\\stop} & Uninvoked &
+\shortstack{Compiler-wall\\sum (s)} \\
+\midrule
+Seven-module baseline & 200 & 7 & 7 & 0 & 0 & 0 & 44.003 \\
+Same seven, \texttt{--profile} & 200 & 7 & 7 & 0 & 0 & 0 & 44.499 \\
+Expanded closure & 50 & 82 & 81 & 1 & 0 & 46 & 218.436 \\
+Incremental completion & 100 & 47 & 47 & 0 & 0 & 0 & 102.649 \\
+Wider closure & 100 & 109 & 108 & 0 & 1 & 62 & 724.589 \\
+Grid, \texttt{--profile --stats} & 100 & 1 & 0 & 0 & 1 & 0 & 300.100 \\
+\bottomrule
+\end{tabular}
+\caption{Distinct bounded native-build points, not a homogeneous full-library
+run. Compile means exit zero without a sorry warning, not full service
+acceptance or transitive axiom closure. HB denotes heartbeat interruption.
+The first two rows compile the same seven modules. The incremental row uses
+81 retained dependency objects from the preceding 128-module attempt.
+The wider row includes a 120-second self-wall interruption of Grid; the
+final row is a separate profiled 300-second diagnostic. Uninvoked dependencies
+have no measured compiler time or native verdict. Row clocks are not added
+to claim a fresh same-budget build.}
+\label{tab:modern-native-builds}
+\end{table*}
 
-This is four of the 53 selected targets, not complete representative native
-coverage or a full-library timing. Cumulative profiler phases overlap and
-are not a wall partition. Version, option, cohort, budget and compilation
-boundary differ from the \texttt{trace.profiler} diagnostic in
-Table~\ref{tab:profiler-diagnostic-limits}; this observed difference cannot
-rescale that truncated-work point or establish engine acceleration.
+The first seven unchanged modules cover four preselected targets and use
+\texttt{autoImplicit=false} with olean-only output. Baseline and profiled
+CPU sums are 44.044 and 44.530 seconds. Their fixed baseline-then-profile
+ordering gives a 0.496-second wall difference (1.13\%) and an 89.078-second
+two-mode capture, not a randomized overhead estimate or population bound.
+Compiler high-water RSS is 7.46\,GiB versus a one-second sampled tree peak
+of 7.43\,GiB. Native cumulative profiler phases overlap and do not partition
+wall time. This point cannot rescale the different version, budget and
+execution boundary in Table~\ref{tab:profiler-diagnostic-limits}.
 
-A separate expanded point follows the next three targets in the original
-53-target frame, with 128 new closure-module states at 50,000 heartbeats,
-no profiling/stats and one Lean thread. It actually invokes 82 compiler
-processes: 81 exit zero without a sorry warning and one reaches a
-\texttt{whnf} heartbeat limit in the \texttt{ProjectionCoordinates}
-dependency. The remaining 46 dependent modules are explicitly uninvoked,
-with no assigned timing or native verdict. Two target endpoints compile;
-the third is not invoked after that dependency boundary. This does not
-establish an invalid theorem or failure of an unbounded upstream build.
+The expanded three-target closure stops at a \texttt{ProjectionCoordinates}
+heartbeat diagnostic: 81 modules compile and 46 dependents are uninvoked.
+The later 100,000-heartbeat point compiles those remaining 47 modules,
+making all three endpoints available. It preserves the earlier failure
+and uninvoked states rather than proving general budget/runtime monotonicity.
+The respective capture clocks are 225.245 and 110.118 seconds; the expanded
+point's combined sampled tree peaks at 11.87\,GiB, including the retained
+old EPFL process. Its compiler user/system CPU sums are 187.020/31.291 seconds.
 
-Compiler-process wall sums are 218.436 seconds, with 187.020 user-CPU and
-31.291 system-CPU seconds. The complete capture is 225.245 seconds.
-Its one-second sampled combined W-tree peak is 11.87\,GiB, including the
-retained earlier EPFL process, and is not a hard quota or whole-node peak.
-These module clocks use a separate resource point from the initial seven
-200,000-heartbeat profiled modules; they do not complete all 53 targets,
-calibrate full-library costs or establish transitive axiom closure.
+The wider point adds nine targets from the original 53-target frame and
+one unweighted public repeated-text probe. Seven of the nine original
+endpoints compile; Grid blocks the other two and the extra probe.
+Its capture takes 732.836 seconds and the combined sampled tree peaks at
+12.20\,GiB, including retained EPFL work. Across these distinct points,
+243 compiled objects and 14 frame endpoints are available. These are not
+a completed frame, population cost estimate or homogeneous fresh build.
 
-A subsequent incremental point retains the 81 successful dependency
-objects and attempts the other 47 modules at 100,000 heartbeats. All 47
-compile without a sorry warning, including the previously interrupted
-dependency. The 128-module closure and all three target endpoints are then
-available across the two budget points. The fresh 47-call process-wall sum
-is 102.649 seconds, inside a separate 110.118-second capture. This does not
-retroactively turn the 50,000-heartbeat failure or uninvoked states into
-passes, supply a fresh single-budget build time, or prove general budget/
-runtime monotonicity. Including the earlier pilot, 135 distinct compiled
-objects are available; their full imported axiom status remains unestablished
-by compiler exits alone.
+Grid's 1.82\,MB source uses 151.397 user-plus-system CPU seconds before
+the unprofiled 120.094-second self-alarm, despite requested
+\texttt{-j1}/\texttt{LEAN\_NUM\_THREADS=1}. A separate native
+\texttt{--profile --stats} diagnostic is self-interrupted after
+300.100 seconds, with 176.164 user and 196.607 system CPU seconds.
+Its sampled combined tree peaks at 10.89\,GiB. The log contains one completed
+import event and 491 completed over-threshold type-checking events, whose
+reported durations sum to 176.426 seconds; the trailing event and final
+statistics are incomplete. Coverage is partial and durations can overlap,
+so this sum is not an exclusive fraction of the 300-second denominator.
+The 690,504 minor faults, zero major faults and 24,778,976/127,174
+voluntary/involuntary context switches do not isolate a tactic, syscall
+or hardware cause. Neither the earlier 120-second clock nor the seven-module
+1.13\% observation supplies this diagnostic's missing phases or overhead.
 
-A native metadata reader subsequently inspects all 135 serialized objects.
-It finds 1,799 theorem declarations, including 743 auxiliary-name theorems.
-Lean's native expression equality gives 601 auxiliary-type keys, or 604
-groups when ordered universe parameters and private-name status are added;
-45 groups span modules. These are typed producer observations, not complete
-state or replay keys. In the five files containing this pilot's 45
-\texttt{decide +kernel} source occurrences, the reader identifies 45
+\paragraph{Typed metadata does not establish cache eligibility.}
+A native reader inspects the earlier 135 serialized objects and finds
+1,799 theorems, including 743 auxiliary-name declarations.
+Native expression equality yields 601 auxiliary-type keys, or 604 groups
+when ordered universe parameters and private-name status are included;
+45 groups span modules. The five files containing that pilot's 45
+\texttt{decide +kernel} occurrences have 45
 \texttt{of\_decide\_eq\_true}-headed auxiliary proofs with distinct native
-type keys. This pilot therefore demonstrates no merging of those 45 calls
-by exact type equality. It excludes the large repeated-goal
-PlanarPacking/Ramsey clusters, failed calls and uninvoked producers.
-It supplies neither whole-corpus native counts nor failure-cache
-coverage. Transitive axiom closure, hidden-state dependencies and replay
-qualification remain unmeasured; reading objects is not checking them again.
-
-A wider unprofiled point selects nine more targets from the original frame
-and one unweighted public repeated-text probe. Among 171 new closure modules,
-109 native invocations yield 108 compiler successes and one self-wall
-interruption; 62 dependent modules are not invoked. Seven of the nine
-original target endpoints compile. The module-wall sum is 724.589 seconds
-inside a 732.836-second capture, with a 12.20\,GiB sampled combined tree
-that includes the retained old EPFL process.
-
-The interrupted 1.82\,MB \texttt{PlanarPacking.Grid} source consumes
-151.397 user-plus-system CPU seconds before its 120.094-second self-alarm.
-Requested \texttt{-j1}/\texttt{LEAN\_NUM\_THREADS=1} is therefore not a
-measurement of one OS thread. CPU-active compilation differs from the
-sleeping EPFL case, but these clocks do not attribute the Grid cost to
-a tactic, kernel phase or hardware bottleneck. The blocked public probe's
-16 repeated source annotations occur under 16 namespaces; neither their
-text equality nor namespace differences establish resolved native type
-identity. The accumulated points leave 243 distinct compiled objects,
-including 14 endpoints of the 53-target frame. This is availability across
-resource points, not a fresh homogeneous build clock, completed frame,
-transitive axiom audit or population estimate.
+type keys. Thus this pilot demonstrates no merging of those 45 calls by
+exact type equality. The blocked public probe has 16 repeated source
+annotations under 16 namespaces; text equality and namespace differences
+prove neither equality nor inequality of resolved types.
+Failed/uninvoked calls and the large repeated-goal PlanarPacking/Ramsey
+clusters are absent from the metadata pilot. Full imported axiom closure,
+hidden dependencies, replay qualification and whole-corpus failure-cache
+coverage remain unmeasured. Reading objects is not checking them again.
 
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL

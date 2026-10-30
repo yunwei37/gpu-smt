@@ -1,0 +1,38 @@
+{
+  "W_source": "d90d421",
+  "additional_native_calls": 0,
+  "module": "OAI.Analysis.PlanarPacking.Grid",
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-grid-profile300",
+  "status": "wall_budget_exceeded",
+  "exit": -14,
+  "native_retired": true,
+  "native_wall_s": 300.1002810774371,
+  "native_user_CPU_s": 176.164148,
+  "native_system_CPU_s": 196.607446,
+  "native_peak_RSS_kib": 6575484,
+  "sampled_combined_tree_RSS_bytes": 11688361984,
+  "capture_elapsed_s": 306.417271588929,
+  "completed_events": {
+    "import": 1,
+    "type checking": 491
+  },
+  "completed_type_checking_reported_sum_s": 176.426,
+  "unfinished_trailing_lines": [
+    "type checking"
+  ],
+  "minor_faults": 690504,
+  "major_faults": 0,
+  "voluntary_switches": 24778976,
+  "involuntary_switches": 127174,
+  "same_unprofiled120s_denominator": false,
+  "exclusive_phase_fraction": null,
+  "root_elapsed_s": 0.0024843262508511543,
+  "root_maxrss_kib": 12600,
+  "limits": [
+    "Profiler prints completed over-threshold events only; unfinished last work and unreported phases missing.",
+    "Cumulative/nested event times may overlap; sum cannot partition this300s ownwall.",
+    "Instrumented300s and earlier unprofiled120s are different censored points; no crossrun rescaling or borrowed1.13%overhead.",
+    "CPU,counters and requestedj1 do not isolate tactic,kernel,syscall or hardware cause.",
+    "Both interruptions preserve unknown unbounded compilation outcome and axiom closure."
+  ]
+}

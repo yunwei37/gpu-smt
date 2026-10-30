@@ -214,6 +214,18 @@ separate. M also reports the original six-cell group exceeded its 1,800 s
 whole-group bound: native processes alone took 3,081.953 s. The captured
 matrix remains exploratory evidence, not a conforming group/runtime claim.
 
+The [Grid partial-profile audit and native-table consolidation](tmp/build-and-evaluate/step-0198-20261030T131856+0000/step-report.md)
+checks own300.100281sSIGALRM record,491completed type-checking events/oneimport,
+176.426sreported type-check sums plus unfinished trailing event. Partial,
+possibly overlapping event durations do not partition300swall;--stats never
+finishes. Native user/system176.164148/196.607446s,690504minor/0majorfaults,
+24778976/127174voluntary/involuntaryswitches;no rootcause inferred.
+Combinedsampledpeak10.89GiB includesoldEPFL. The120sunprofiled point and
+seven-source1.13%profile observation are not borrowed denominators.
+Paper now tabulates six distinct bounded points instead of narrating each
+run,retaining statuses,clocks,metadata coverage and budget/axiom limitations.
+Historical full wording remains in this step entry snapshot and priorGit.
+
 The [historical-timeout-prefix reanalysis](tmp/build-and-evaluate/step-0196-20261030T125817+0000/step-report.md)
 independently checks one original minif2f-4997 repeated10times in each cell:
 30returns,all flags/diagnostics/InfoTrees/rawHB equal and native retired.
