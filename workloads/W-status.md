@@ -23,3 +23,5 @@ Coder CLI session expired,UI/login not used. Observation now works.
 APRIL primary paperv2 specifies Lean4.22.0-rc4,Mathlib pin still pending.
 EPFL4.15/APRIL candidate native reruns still pending.
 All SDK/source/build/raw assets outside Git. W16GiB/8core/one Lean remains.
+
+W006 complete:7source x baseline/profile-only14native compiles,all0. Wall44.002841/44.498820s(~1.13%observed overhead);CPU44.044105/44.530084s. Aggregate capture tree sampled7.43GiB,1Lean. See profile-overhead-4341. Broader cost point will use baseline flags;profile attribution separate.
