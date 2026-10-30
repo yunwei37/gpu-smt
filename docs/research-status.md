@@ -17,25 +17,16 @@ execution. [The initial narrative and four research questions](../docs/idea-stor
 remain intact. The OSDI-quality systems contribution and all four final RQ
 answers are still open.
 
-## Engine quick start
+## Engine scope
 
 The Rust workspace separates public contracts, resource/workload scheduling,
-native backends and HTTP adapters. Existing raw research data stays outside
-the core. This is an experimental 0.1 engine, not a production-ready service
-or a demonstrated speedup.
+native backends and HTTP adapters. Research data stays outside the engine core.
+The 0.1 API is experimental. Retained measurements below qualify individual
+resource points; they do not establish novelty or general performance guarantees.
 
-    cargo build -p proofserve
-    cargo run -p proofserve --bin gpu-smt -- --help
-    cargo test --workspace --all-targets
-
-Supply an existing pinned Lean REPL and its project environment. From that
-Lean project, use Lake's discovered import paths:
-
-    lake env /absolute/path/to/gpu-smt/target/debug/gpu-smt check \
-      --repl /absolute/path/to/repl --project /absolute/path/to/lean-project \
-      --environment your-immutable-toolchain-project-pin \
-      --cpus 8,9,10,11 --worker-cores 1 --memory-gib 48 \
-      < /absolute/path/to/gpu-smt/examples/check.jsonl
+Use the [current quick start](../README.md#quick-start) and
+[existing-project instructions](getting-started.md#an-existing-lean-project)
+for runnable commands. Resource settings in historical captures remain unchanged.
 
 Use serve for local Kimina core/check, legacy/verify and typed/v1/verify.
 The optional typed/v1/verify/stream route sends NDJSON results as they complete,
@@ -189,5 +180,5 @@ establish venue acceptance.
 
 The detailed previous README is preserved [byte-for-byte](../docs/tmp/build-and-evaluate/step-0114-20261028T181730+0000/readme-before.md.gz).
 Its relative links use the original repository-root context; the
-[original rendered revision](https://github.com/yunwei37/gpu-smt/blob/5e5e3e50ad4b2390e591ad2a7d88f851c53f4847/README.md)
+[original rendered revision](https://github.com/yunwei37/proofserve/blob/5e5e3e50ad4b2390e591ad2a7d88f851c53f4847/README.md)
 retains that link context. No result or source data was deleted.

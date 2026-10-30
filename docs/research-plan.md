@@ -72,15 +72,17 @@ are separate crates. Crate packages and Docker context exclude research data;
 the existing repository and history retain it.
 
 The operator-approved migration keeps the same Workspace/PVC on phobos-vt.
-The four lines now share40GiB actual RSS: W≤16GiB, M≤16GiB, O≤4GiB,
-main≤4GiB; each line uses at most8cores. O uses one compiler job on CPUs16–19,
+The four lines share 40 GiB actual RSS: W≤16 GiB, M≤16 GiB, O≤4 GiB,
+main≤4 GiB; each line uses at most 8 cores. O uses one compiler job on CPUs 16–19,
 without a Lean process, and preserves the interrupted G10 validation separately.
 
-Full Lean/Mathlib Docker construction waits for Longhorn's WAN replica rebuild
-to complete, then must stay within O's4GiB allowance. The current short signal
-control on the Kubernetes-exec path still returns errno13 for same-UID TERM;
-do not assume watchdog delivery from the node change. Native work uses bounded
-heartbeats/natural termination until its own execution path is qualified.
+After the 2026-10-30 storage recovery, O confirms the same PVC is writable.
+Docker qualification stays within O's 4 GiB allocation; its actual build result
+belongs in the [release preparation](releases/0.1.0.md#remaining-qualification-and-publication).
+The renewed short signal control on the Kubernetes-exec path still returns
+errno 13 for same-UID TERM. Do not assume watchdog delivery from the node change.
+Native work uses bounded heartbeats/natural termination until its own execution
+path is qualified.
 The migration is an explicit operator exception; O makes no scheduling/security
 or credential changes. No publication token is read or created.
 
