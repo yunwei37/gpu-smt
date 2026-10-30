@@ -1,0 +1,273 @@
+{
+  "source_commits": {
+    "training_construction": "7509dcc",
+    "native_after_grid": "a2b8c1a",
+    "training12": "b48e552",
+    "amplitudes": "48ffec4"
+  },
+  "points": {
+    "openai4341-native-after-grid": {
+      "rows": 24,
+      "native_invocations": 14,
+      "statuses": {
+        "compile_ok": 12,
+        "wall_budget_exceeded": 2,
+        "dependency_not_compiled": 10
+      },
+      "native_wall_s": 1399.3551279017702,
+      "user_cpu_s": 2146.029859,
+      "system_cpu_s": 610.72914,
+      "capture_elapsed_s": 1406.5487991478294,
+      "sampled_combined_peak_bytes": 12292308992,
+      "controller_identity": {
+        "pid": 31871,
+        "expected_birth": "741984203",
+        "same_live_identity": false,
+        "state": "absent"
+      },
+      "native_identities": [
+        {
+          "pid": 31996,
+          "expected_birth": "741984801",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 32008,
+          "expected_birth": "741984988",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 33098,
+          "expected_birth": "741997005",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 33606,
+          "expected_birth": "742007671",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 34206,
+          "expected_birth": "742018889",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 34861,
+          "expected_birth": "742030093",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 35425,
+          "expected_birth": "742041271",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 36098,
+          "expected_birth": "742052545",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 36774,
+          "expected_birth": "742063771",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 37296,
+          "expected_birth": "742074911",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 37953,
+          "expected_birth": "742086153",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 38538,
+          "expected_birth": "742097408",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 39069,
+          "expected_birth": "742108637",
+          "same_live_identity": false,
+          "state": "absent"
+        },
+        {
+          "pid": 39836,
+          "expected_birth": "742120616",
+          "same_live_identity": false,
+          "state": "absent"
+        }
+      ],
+      "memory_samples": 1406,
+      "terminal": {
+        "targets": [
+          "OAI.Analysis.MutuallyUnbiased.MixedSemantics.Zeros30",
+          "OAI.GroupTheory.PolycyclicRecognition.Analysis.TranslationCovering",
+          "OAI.Geometry.CylinderCovering.Radial.Assembly",
+          "OAI.NumberTheory.Catalan.Analysis.ManuscriptNormLogPGroup006",
+          "OAI.Analysis.MutuallyUnbiased.TaoCertificate.Rows45",
+          "OAI.Analysis.MutuallyUnbiased.GramAssembly.Block0Data",
+          "OAI.Analysis.PlanarPacking.Certificate.WUCert48",
+          "OAI.Analysis.Conductivity.Variational.VariationalDN",
+          "OAI.Analysis.PlanarPacking.Certificate.UMoments9",
+          "OAI.Analysis.PlanarPacking.Certificate.HighMoments0_0"
+        ],
+        "closure_modules": 171,
+        "initial_cached_modules": 109,
+        "planned_fresh_modules": 62,
+        "rows": 24,
+        "statuses": {
+          "dependency_not_compiled": 10,
+          "wall_budget_exceeded": 2,
+          "compile_ok": 12
+        },
+        "elapsed_s": 1400.0932079879567,
+        "source_original_untouched": true,
+        "budget_point": "unprofiledj8 Lean4.34.1,100000HB;120s self-wall;old stuck RSS charged,8192MiB,8192MiB allocation option; no original-unbounded timing claim"
+      }
+    },
+    "openai4341-amplitudes-j8-1200": {
+      "rows": 1,
+      "native_invocations": 1,
+      "statuses": {
+        "compile_ok": 1
+      },
+      "native_wall_s": 180.27557753026485,
+      "user_cpu_s": 228.897651,
+      "system_cpu_s": 95.953908,
+      "capture_elapsed_s": 188.2283004904166,
+      "sampled_combined_peak_bytes": 12585361408,
+      "controller_identity": {
+        "pid": 40983,
+        "expected_birth": "742182308",
+        "same_live_identity": false,
+        "state": "absent"
+      },
+      "native_identities": [
+        {
+          "pid": 41108,
+          "expected_birth": "742183031",
+          "same_live_identity": false,
+          "state": "absent"
+        }
+      ],
+      "memory_samples": 189,
+      "terminal": {
+        "targets": [
+          "OAI.Analysis.PlanarPacking.Certificate.Amplitudes"
+        ],
+        "closure_modules": 8,
+        "initial_cached_modules": 7,
+        "planned_fresh_modules": 1,
+        "rows": 1,
+        "statuses": {
+          "compile_ok": 1
+        },
+        "elapsed_s": 180.34803518932313,
+        "source_original_untouched": true,
+        "budget_point": "unprofiledj8 Lean4.34.1,100000HB;1200s self-wall;old stuck RSS charged,8192MiB,8192MiB allocation option; no original-unbounded timing claim"
+      }
+    },
+    "epfl-training12-native": {
+      "rows": 12,
+      "native_invocations": 12,
+      "statuses": {
+        "budget_exceeded": 6,
+        "lean_error": 3,
+        "compile_ok": 3
+      },
+      "native_wall_s": 29.3925303472206,
+      "user_cpu_s": 25.247972,
+      "system_cpu_s": 4.155552,
+      "capture_elapsed_s": 30.037957626394928,
+      "sampled_combined_peak_bytes": 9317634048,
+      "controller_identity": {
+        "pid": 40656,
+        "expected_birth": "742141556",
+        "same_live_identity": false,
+        "state": "absent"
+      },
+      "native_identities": [],
+      "memory_samples": 31,
+      "terminal": {
+        "rows": 12,
+        "planned_rows": 12,
+        "elapsed_s": 29.40192404948175,
+        "stopped_between_candidates_after_300s": false
+      }
+    }
+  },
+  "training_selection": {
+    "dataset_revision": "e5ff00a803d6a4a346a53d2116664c184c946bd7",
+    "seed": 20261030,
+    "group_frame": [
+      0,
+      113,
+      280,
+      287
+    ],
+    "eligible_stratum_rows": {
+      "valid": 16688,
+      "invalid_other": 18508,
+      "invalid_budget_text": 516
+    },
+    "excluded_rows": {
+      "exact_or_aesop_search_text": 2807,
+      "unclosed_comment": 19
+    },
+    "selected_per_stratum": 4,
+    "total_selected": 12,
+    "status": "prepared-not-launched",
+    "resource_point": "proposed Lean4.15 reconstructed matching-release Mathlib,10000HB,M6144,j2,20s self-wall; not publisher timing"
+  },
+  "training_cross": [
+    {
+      "publisher_valid": false,
+      "native_status": "budget_exceeded",
+      "rows": 4
+    },
+    {
+      "publisher_valid": false,
+      "native_status": "compile_ok",
+      "rows": 1
+    },
+    {
+      "publisher_valid": false,
+      "native_status": "lean_error",
+      "rows": 3
+    },
+    {
+      "publisher_valid": true,
+      "native_status": "budget_exceeded",
+      "rows": 2
+    },
+    {
+      "publisher_valid": true,
+      "native_status": "compile_ok",
+      "rows": 2
+    }
+  ],
+  "training_budget_wall_s": 16.17879963759333,
+  "training_budget_fraction": 0.550439157380107,
+  "publisher_counts_verified": 37,
+  "publisher_final_rows": 4836380,
+  "publisher_audit_bytes": 9365,
+  "amplitudes_source_bytes_equal": true,
+  "amplitudes_object_bytes": 25912904,
+  "root_elapsed_s": 0.010122307576239109,
+  "root_maxrss_kib": 18052,
+  "new_native_runs": 0
+}

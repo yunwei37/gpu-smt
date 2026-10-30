@@ -367,6 +367,8 @@ Incremental completion & 1 & 100 & 47 & 47 & 0 & 0 & 0 & 102.649 \\
 Wider closure & 1 & 100 & 109 & 108 & 0 & 1 & 62 & 724.589 \\
 Grid, \texttt{--profile --stats} & 1 & 100 & 1 & 0 & 0 & 1 & 0 & 300.100 \\
 Grid, unprofiled & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 634.280 \\
+After Grid, bounded group & 8 & 100 & 14 & 12 & 0 & 2 & 48 & 1399.355 \\
+Amplitudes, longer bound & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 180.276 \\
 \bottomrule
 \end{tabular}
 \caption{Distinct bounded native-build points, not a homogeneous full-library
@@ -375,9 +377,13 @@ acceptance or transitive axiom closure. HB denotes heartbeat interruption.
 The first two rows compile the same seven modules. The incremental row uses
 81 retained dependency objects from the preceding 128-module attempt.
 The wider row includes a 120-second self-wall interruption of Grid.
-The last two rows are separate 300-second profiled one-worker and
+The two Grid-only rows are separate 300-second profiled one-worker and
 1,200-second unprofiled eight-worker points; both worker request and wall
-bound change. Heartbeats are the Lean option, not a cumulative group counter.
+bound change. The bounded continuation starts 14 of 62 planned fresh modules:
+10 dependency-blocked and 38 not-started modules remain uninvoked.
+Its last call has only 41.935 seconds of group time left, despite a nominal
+120-second per-file cap. Amplitudes later receives a 1,200-second self-wall
+opportunity in a separate invocation. Heartbeats are the Lean option, not a cumulative group counter.
 Uninvoked dependencies have no measured compiler time or native verdict.
 Row clocks are not added to claim a fresh same-budget build or isolated
 worker-configuration speedup.}
@@ -407,7 +413,7 @@ The wider point adds nine targets from the original 53-target frame and
 one unweighted public repeated-text probe. Seven of the nine original
 endpoints compile; at that point Grid blocks the other two and the extra probe.
 Its capture takes 732.836 seconds and the combined sampled tree peaks at
-12.20\,GiB, including retained EPFL work. Across these distinct points,
+12.20\,GiB, including retained EPFL work. Across points through the completed Grid invocation,
 244 compiled objects and 14 frame endpoints are available. These are not
 a completed frame, population cost estimate or homogeneous fresh build.
 
@@ -436,6 +442,22 @@ change together; the one-worker outcome at the longer bound is unobserved,
 so these points establish neither an isolated worker effect nor a speedup.
 The completed object also does not supply the remaining uninvoked target
 or typed-probe results.
+
+A later continuation reuses 109 objects in the wider closure and plans
+62 fresh modules. Before its 1,400-second group boundary, 12 modules compile,
+two self-interrupt and 48 remain uninvoked, including 38 never started.
+Compiler-wall sum is 1,399.355 seconds; collection takes 1,406.549 seconds.
+Amplitudes is interrupted after 120.115 seconds, while the final
+\texttt{KernelValues10} call receives only the remaining 41.935 seconds.
+A separate invocation of the unchanged 2.69\,MB Amplitudes source, with
+the same eight-worker, 100,000-heartbeat and 8,192\,MiB options but a
+1,200-second self-wall opportunity, compiles in 180.276 seconds and produces
+a 25,912,904-byte object. Its user/system CPU times are 228.898/95.954 seconds;
+collection takes 188.228 seconds. The respective sampled combined peaks
+are 11.45 and 11.72\,GiB, including retained EPFL work.
+These results establish additional native builds, not failure of the
+uninvoked sources, an isolated worker effect or a homogeneous full-library cost.
+The original 53-target frame and typed repeated-goal probe remain incomplete.
 
 \paragraph{Typed metadata does not establish cache eligibility.}
 A native reader inspects the earlier 135 serialized objects and finds
@@ -467,6 +489,30 @@ at 68,930 programs. A separate scan of all 1,835 APRIL test tuples retains
 20 records containing budget-diagnostic text~\cite{aprilDataset}.
 These are publisher-created proof mutations, not natural failed arrivals;
 diagnostic text does not establish a failure cause or its native cost.
+
+The separate EPFL training release is a constructed feedback distribution,
+not an uncensored request stream. Its pinned publisher audit reconciles
+4,836,380 rows, including 250,000 synthetic pairs, and records exclusions
+of infrastructure and declaration failures. An additional contract filter
+removes 8,457 invalid-without-error rows~\cite{epflTrainingAudit}.
+Consequently, agreement between invalid labels and stored error comments
+partly follows data construction. These stage-specific filters are not
+combined into a global failure rate or transferred to the evaluation release;
+publisher merge clocks are not verification costs.
+
+A finite replay selects four released training candidates from each of three
+strata: valid, ordinary-invalid and budget-text-invalid. All 12 return under
+Lean~4.15.0, reconstructed Mathlib~\texttt{9837ca9d}, two requested workers,
+10,000 heartbeats, a 6,144\,MiB memory option and a 20-second self-wall bound.
+Every source's unlimited heartbeat setting is capped for this diagnostic.
+Three compile, three return ordinary errors and six reach heartbeat limits.
+The latter use 16.179 of 29.393 compiler-wall seconds (55.04\%), a selected
+sample share rather than a population estimate.
+Among four publisher-valid inputs, two compile and two reach the smaller
+heartbeat budget. Among eight publisher-invalid inputs, one compiles, three
+return errors and four reach that budget. Unknown original dependencies and
+operational settings preclude treating this disagreement as a publisher-label
+bug, a false-goal certificate or an exact acceptance reproduction.
 
 A later 10,000-heartbeat, 6,144\,MiB, 15-second self-bounded point returns
 the other seven selected EPFL sources outside the still-active censored

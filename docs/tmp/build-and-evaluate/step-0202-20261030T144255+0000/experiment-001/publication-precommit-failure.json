@@ -1,0 +1,47 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0202-20261030T144255+0000"
+    ],
+    "returncode": 0,
+    "stdout": " docs/evaluation.md        | 22 ++++++++++++++++++++\n docs/paper/main.tex       | 52 ++++++++++++++++++++++++++++++++++++++++++++---\n docs/paper/references.bib |  9 ++++++++\n 3 files changed, 80 insertions(+), 3 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0202-20261030T144255+0000"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0202-20261030T144255+0000"
+    ],
+    "returncode": 2,
+    "stdout": "docs/tmp/build-and-evaluate/step-0202-20261030T144255+0000/experiment-001/entry-native-workload-section.tex:114: new blank line at EOF.\n",
+    "stderr": ""
+  }
+]

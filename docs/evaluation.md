@@ -116,6 +116,28 @@ objects / three target endpoints are now available across points. Fresh
 no homogeneous fresh total is invented. Including the earlier pilot gives
 135 distinct objects, still not all 53 targets or an imported-axiom audit.
 
+The [completed continuation/training audit](tmp/build-and-evaluate/step-0202-20261030T144255+0000/step-report.md)
+recomputes three exited W points from raw ledgers/terminal/memory/logs.
+The 62-module continuation actually invokes14:12compile/2SIGALRM;
+10dependency-blocked+38not-started remain uninvoked. Own nativewall1399.355128s,
+capture1406.548799s,combinedsampled11.45GiB. LastKernelValues10 receivesonly
+41.935s of groupremainder,not a full120s test. Separate unchanged Amplitudes
+j8/100k/M8192/1200selfbound compiles180.275578s,object25912904B,
+capture188.228300s,combined11.72GiB;earlier120.115s censor retained.
+No full-frame completion,isolated speedup or homogeneous sum.
+
+The same audit checks all37training publisher counters against pinned primary
+JSON:final4836380rows includes250000synthetic;8457invalid-without-error
+excluded at a separate stage. Construction-filter agreement is not independent
+semantic validation or naturalarrival representativeness. The twelve stratified
+native replays yield3compile/3ordinary/6HB,16.178800/29.392530s=55.04% selected
+sample cost. Publisher-valid2pass/2HB;invalid1pass/3error/4HB. Original Mathlib
+unknown;all0HB sources capped10k. Labels,diagnostic budget and full harness
+acceptance stay separate. Root starts0nativecalls;all W controllers and recorded
+native PID/birth identities retired. No recovery count is inferred from M's
+new23f8ac1running candidate-preserving census;the earlier theorem-only prototype
+scope in step0201 is historical,not a claim that no adapter now exists.
+
 The [public checker audit](tmp/build-and-evaluate/step-0184-20261030T113046+0000/step-report.md)
 verifies 90 released KIR fixtures / 250 concrete inputs and 986 static positive
 wrapper obligations,not native executions or an LLM candidate stream.
