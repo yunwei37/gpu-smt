@@ -1,0 +1,128 @@
+176:         let mut air_times = verifier
+177:             .bucket_stats
+178:             .iter()
+179:             .filter(|(k, _)| k.function().is_none())
+180:             .map(|(k, v)| {
+181:                 (k.module(), (v.time_air - (v.time_smt_init + v.time_smt_run)).as_millis())
+182:             })
+183:             .collect::<Vec<_>>();
+184:         air_times.sort_by(|(_, a), (_, b)| b.cmp(a));
+185:         let total_air: u128 = air_times.iter().map(|(_, v)| v).sum();
+186: 
+187:         let mut verify_times = verifier
+188:             .bucket_stats
+189:             .iter()
+190:             .filter(|(k, _)| k.function().is_none())
+191:             .map(|(k, v)| (k.module(), (v.time_verify).as_millis()))
+192:             .collect::<Vec<_>>();
+193:         verify_times.sort_by(|(_, a), (_, b)| b.cmp(a));
+194:         let total_verify: u128 = verify_times.iter().map(|(_, v)| v).sum();
+195: 
+196:         // Rust time:
+197:         let rust_init = stats.time_rustc;
+198:         let lifetime = stats.time_lifetime;
+199:         let compile = stats.time_compile;
+200:         let rust = rust_init + lifetime + compile;
+201: 
+202:         // total verification time
+203:         let vir_rust_to_vir = verifier.time_vir_rust_to_vir; // included in verifier.time_vir
+204:         let vir_vir_time = verifier.time_vir;
+205:         let hir_time = verifier.time_hir;
+206:         let import_time = verifier.time_import;
+207:         let vir_time = hir_time + import_time + vir_vir_time;
+208:         let verify_crate_time = verifier.time_verify_crate;
+209: 
+210:         // total verify time is now the time to verify the crate plus the vir time
+211:         let verify = verifier.time_verify_crate + vir_time;
+212: 
+213:         // Unaccounted time is now total time minus all the other times
+214:         let unaccounted = total_time - (rust + verify);
+215: 
+216:         let total_cpu_time = if verifier.num_threads > 1 {
+217:             (total_time.as_millis()
+218:                 + total_verify
+219:                 + verifier.time_verify_crate_sequential.as_millis())
+220:                 - verifier.time_verify_crate.as_millis()
+221:         } else {
+222:             total_time.as_millis()
+223:         };
+224: 
+225:         if verifier.args.output_json {
+226:             {
+227:                 let _smt_function_breakdown_set =
+228:                     smt_function_breakdown.keys().collect::<std::collections::HashSet<_>>();
+229:                 let _smt_run_times_set =
+230:                     smt_run_stats.iter().map(|(x, _)| *x).collect::<std::collections::HashSet<_>>();
+231:                 // REVIEW check these are consistent
+232:             }
+233: 
+234:             let mut times = serde_json::json!({
+235:                 "verus-build": {
+236:                     "profile": build_info.profile.to_string(),
+237:                     "version": build_info.version.to_string(),
+238:                 },
+239:                 "num-threads": verifier.num_threads,
+240:                 "total": total_time.as_millis(),
+241:                 "estimated-cpu-time": if verifier.num_threads > 1 {total_cpu_time} else {total_time.as_millis()},
+242:                 "rust": {
+243:                     "total": rust.as_millis(),
+244:                     "init-and-types": rust_init.as_millis(),
+245:                     "lifetime": lifetime.as_millis(),
+246:                     "compile": compile.as_millis(),
+247:                 },
+248:                 "verification": {
+249:                     "total": verify.as_millis(),
+250:                     "vir" : {
+251:                         "total": vir_time.as_millis(),
+252:                         "hir": hir_time.as_millis(),
+253:                         "import": import_time.as_millis(),
+254:                         "rust-to-vir": vir_rust_to_vir.as_millis()
+255:                     }
+256:                 },
+257:                 "total-verify": total_verify,
+258:                 "total-verify-module-times" : verify_times.iter().map(|(m, t)| {
+259:                     serde_json::json!({
+260:                         "module" : rust_verify::verifier::module_name(m),
+261:                         "time" : t
+262:                     })
+263:                 }).collect::<Vec<serde_json::Value>>(),
+264:                 "air": {
+265:                     "total": total_air,
+266:                     "module-times" : air_times.iter().map(|(m, t)| {
+267:                         serde_json::json!({
+268:                             "module" : rust_verify::verifier::module_name(m),
+269:                             "time" : t
+270:                         })
+271:                     }).collect::<Vec<serde_json::Value>>(),
+272:                 },
+273:             });
+274:             if !verifier.encountered_vir_error {
+275:                 times.as_object_mut().unwrap().insert(
+276:                     "smt".to_string(),
+277:                     serde_json::json!({
+278:                         "total": (total_smt_init + total_smt_run),
+279:                         "smt-init": total_smt_init,
+280:                         "smt-init-module-times" : smt_init_times.iter().map(|(m, t)| {
+281:                             serde_json::json!({
+282:                                 "module" : rust_verify::verifier::module_name(m),
+283:                                 "time" : t
+284:                             })
+285:                         }).collect::<Vec<serde_json::Value>>(),
+286:                         "smt-run": total_smt_run,
+287:                         "smt-run-module-times" : smt_run_stats.iter().map(|(m, t)| {
+288:                             serde_json::json!({
+289:                                 "module" : rust_verify::verifier::module_name(m),
+290:                                 "time" : t.time_millis,
+291:                                 "rlimit-count" : t.rlimit_count,
+292:                                 "function-breakdown" : smt_function_breakdown.get_mut(*m).map(|b| b.iter().map(|(f, t)| {
+293:                                     serde_json::json!({
+294:                                         "function" : vir::ast_util::fun_as_friendly_rust_name(f),
+295:                                         "time" : t.time_millis,
+296:                                         "rlimit-count" : t.rlimit_count,
+297:                                         "success" : !verifier.func_fails.contains(f),
+298:                                     })
+299:                                  }).collect::<Vec<serde_json::Value>>()).unwrap_or_default(),
+300:                             })
+301:                         }).collect::<Vec<serde_json::Value>>(),
+302:                     }),
+303:                 );
