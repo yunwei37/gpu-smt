@@ -387,6 +387,18 @@ These module clocks use a separate resource point from the initial seven
 200,000-heartbeat profiled modules; they do not complete all 53 targets,
 calibrate full-library costs or establish transitive axiom closure.
 
+A subsequent incremental point retains the 81 successful dependency
+objects and attempts the other 47 modules at 100,000 heartbeats. All 47
+compile without a sorry warning, including the previously interrupted
+dependency. The 128-module closure and all three target endpoints are then
+available across the two budget points. The fresh 47-call process-wall sum
+is 102.649 seconds, inside a separate 110.118-second capture. This does not
+retroactively turn the 50,000-heartbeat failure or uninvoked states into
+passes, supply a fresh single-budget build time, or prove general budget/
+runtime monotonicity. Including the earlier pilot, 135 distinct compiled
+objects are available; their full imported axiom status remains unestablished
+by compiler exits alone.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,

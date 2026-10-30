@@ -1,0 +1,76 @@
+{
+  "observed_utc": "2026-10-30T12:27:28.613984+00:00",
+  "native_invocations": 0,
+  "prior_50k_successful_dependencies": 81,
+  "incremental_100k_actual_calls": 47,
+  "incremental_100k_successes": 47,
+  "distinct_closure_modules_now_successful_across_points": 128,
+  "target_endpoints_available": [
+    "OAI.Analysis.Cotype.FiniteRankWalsh",
+    "OAI.Analysis.Laughlin.FiniteFlux.Row0705207",
+    "OAI.NumberTheory.PadicHodge.IntegralComparison.OrderedCech.ReindexSingle"
+  ],
+  "old50k_failed_or_uninvoked_preserved": true,
+  "single_budget_fresh_full_capture_claimed": false,
+  "native_process_wall_sum_s": 102.64863045234233,
+  "native_user_cpu_sum_s": 84.770417,
+  "native_system_cpu_sum_s": 17.788411,
+  "combined_W_sampled_peak_bytes": 8734384128,
+  "unique_objects_including_prior_pilot": 135,
+  "rechecked_dependency": {
+    "module": "OAI.AlgebraicGeometry.AbelianModuli.HilbertConstruction.OrderedCech.ProjectionCoordinates",
+    "path": "lean/OAI/AlgebraicGeometry/AbelianModuli/HilbertConstruction/OrderedCech/ProjectionCoordinates.lean",
+    "status": "compile_ok",
+    "returncode": 0,
+    "wall_s": 5.395429261960089,
+    "user_cpu_s": 5.046249,
+    "system_cpu_s": 0.34701699999999996,
+    "peak_rss_kib": 3406952,
+    "sampled_process_peak_bytes": 3474419712,
+    "pid": 19540,
+    "birth_ticks": "741420998",
+    "source_bytes": 5801,
+    "heartbeat_budget": 100000,
+    "replaced_source_budget_settings": 0,
+    "lean_memory_option_MiB": 8192,
+    "threads": 1,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "sorry_warning": false,
+    "log": "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-native-resume100k/0000.log"
+  },
+  "capture_terminal": {
+    "exit_code": 0,
+    "elapsed_s": 110.11835049558431,
+    "sampled_tree_peak_bytes": 8734384128,
+    "max_native_lean_processes": 2,
+    "signal_control": "EACCES errno13; natural exit",
+    "sampling_interval_s": 1
+  },
+  "native_terminal": {
+    "targets": [
+      "OAI.Analysis.Cotype.FiniteRankWalsh",
+      "OAI.Analysis.Laughlin.FiniteFlux.Row0705207",
+      "OAI.NumberTheory.PadicHodge.IntegralComparison.OrderedCech.ReindexSingle"
+    ],
+    "closure_modules": 128,
+    "initial_cached_modules": 81,
+    "rows": 47,
+    "statuses": {
+      "compile_ok": 47
+    },
+    "elapsed_s": 102.7109116120264,
+    "source_original_untouched": true,
+    "budget_point": "unprofiled Lean4.34.1,100000HB;120s self-wall;old stuck RSS charged,8192MiB,8192MiB allocation option; no original-unbounded timing claim"
+  },
+  "root_elapsed_s": 0.0026288433000445366,
+  "root_maxrss_kib": 12100
+}

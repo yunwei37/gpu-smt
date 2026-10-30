@@ -109,6 +109,12 @@ of three target endpoints compile. At its separate unprofiled 50,000-HB
 point, native process-wall sum is 218.436 s; capture 225.245 s; combined
 W-tree sampled peak 11.87 GiB includes the old EPFL process. Full 53-target
 coverage, original unbounded costs and transitive axioms are not established.
+A [separate incremental 100k point](tmp/build-and-evaluate/step-0192-20261030T122728+0000/step-report.md)
+retains the 81 objects and compiles all other 47 modules: all 128 closure
+objects / three target endpoints are now available across points. Fresh
+47-call wall sum is 102.649 s, capture 110.118 s. The 50k states stay unchanged;
+no homogeneous fresh total is invented. Including the earlier pilot gives
+135 distinct objects, still not all 53 targets or an imported-axiom audit.
 
 The [public checker audit](tmp/build-and-evaluate/step-0184-20261030T113046+0000/step-report.md)
 verifies 90 released KIR fixtures / 250 concrete inputs and 986 static positive
