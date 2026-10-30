@@ -1,15 +1,15 @@
 # W current state
 
-## Current frontier (archived through W030, 2026-10-30)
+## Current frontier (archived through W032, 2026-10-30)
 
 - [OpenAI math](openai-math/README.md): static source audit complete; W027
   archived19/42probability costs,6/21complete cells. Full-build CPU/CI unknown.
-- Sole foreground Wcapture: PVC workloads/openai4341-authored-sample23,
-  controller60084/birth743067460. Verify actual launch/terminal; frozen23
-  remaining targets,8cores/M8192,source options unchanged,self600/group1400.
-  Old13733/birth741054360 remains censored/charged. Do not restart it.
-- 15-module Rellich context prepared, NOT launched: PVC
-  workloads/rellich4341-native15. No parallel WLean or automatic next group.
+- Sample23 retired:7compile/2allocation exceptions/1full600s/1remainder106s/
+  8uninvoked; no new endpoint costs. Do not restart known blocked draws.
+- Sole foreground Wcapture: PVC workloads/rellich4341-native15,
+  controller66580/birth743218790, exact official patched dependency context,
+  self600/group1400/8cores/M8192. Verify real launch/terminal before next.
+  Old13733/birth741054360 remains censored/charged; no parallel WLean.
 - [Publisher-label diagnosis](candidates/epfl-label-reproducibility/):
   original/800k/.ilean replay pass,rec128fails/256and512pass; unique historical
   cause unresolved. No proven labelbug or time-only explanation.

@@ -76,3 +76,27 @@ remains a publisher label versus current native replay discrepancy, not a
 proven label error. MaxRecDepth128 causes a native failure; default512 and
 256pass. Original trace/options/Mathlib pin and pre-truncation source remain
 unknown. No wallclock or machine-only causal explanation has been established.
+
+
+### Research formalization: source counts and native budget tails (W032)
+
+OpenAI math is a published source/reference workload, not an RL stream with
+reliable candidate-validity labels. Full source coverage163,097files does
+not establish full project acceptance. Version-matched native sampling is
+partial:W02719/42probability costs,13/21cells observed,6complete.
+Its later23-endpoint dependency group invoked11modules:7complete,2native
+allocation exceptions at the selected-M8192point,1full600s censor and1group
+remainder106.12s censor. Four budget events consume61.63%of1399.897s native
+wall in this selected group, not1.6%of a population or evidence of falsegoals.
+Interpreter is the allocation check tag, not a measured tactic CPU phase.
+Each cause and its own denominator are in authored-sample23/time-by-budget-cause.csv.
+
+The frozen sample retains failed/unreached endpoints; replacing them with
+easier proofs would bias a cost estimate. Full successful-build CPU/95%CI
+is not available from this budget-failed/incomplete subset. Uniform costs
+also emit only.olean; normal Lake artifacts/setup are a separate scope.
+The exact external Rellich dependency context requires the OAI4.34.1patch,
+not the dependency's original4.29.1objects. Source lexical1.35million kernel
+sites are not runtime check counts:Jet50shows944sites versus3938retained
+shape-matched helpers after branching. Neither type dedup nor static tokens
+establishes a timed global reuse opportunity.
