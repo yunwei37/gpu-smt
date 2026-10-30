@@ -31,3 +31,5 @@ W007:EPFL4.15/APRIL4.22rc4 SDKs+release Mathlib caches complete;144sources+39pai
 W008:214completed prefix preserved;136EPFL+78APRILstartup errors. Native13733/birth741054360 sleeps at214 exact?,SIGINT errno13. No second Lean. APRIL compat and self-alarm bounded replay prepared,not qualified/launched. Population tail unresolved; raw fully on PVC.
 
 W009:new MetaLKV public fixture audit in workloads/lean-kernel-verify;MIT,Lean4.34.0,90KIR cases fully parsed,12Lean files. No native build. Checker FAIL can be successful counterexample proof,not Lean rejection.
+
+W010:user authorizes progress alongside charged oldRSS.214=EPFL58969 explicitly stuck/right-censored.136EPFL total623.799s,budget-exceeded25.60%of observed time. APRIL4pairs qualified(actual4reference passes/4mutation errors),combined9.63GiB. Remaining eligible pairs running separately.
