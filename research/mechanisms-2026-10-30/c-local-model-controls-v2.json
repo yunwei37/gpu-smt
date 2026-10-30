@@ -1,0 +1,182 @@
+{
+  "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/c-live-linked-on",
+  "observed_sources": 4,
+  "complete_C_sources": 4,
+  "body_cpu_s": 0.019333925,
+  "local_model_saved_cpu_s": 0.00029542299999999995,
+  "local_model_ratio": 1.015517134698938,
+  "full_DAG_average_parallelism": null,
+  "exclusive_cpu_by_kind_s": {
+    "Lean.Parser.Tactic.tacticSeq1Indented": 0.003848514999999996,
+    "Lean.Parser.Tactic.tacticSeq": 0.002867877999999995,
+    "Lean.Parser.Tactic.paren": 0.0016520460000000001,
+    "Lean.Parser.Tactic.tacticRepeat_": 0.0013801489999999985,
+    "Lean.Parser.Tactic.first": 0.0011916760000000048,
+    "Lean.Parser.Tactic.skip": 0.0010819620000000003,
+    "Lean.Parser.Tactic.exact": 0.000760366,
+    "Lean.Parser.Tactic.apply": 0.000383852,
+    "Lean.Parser.Tactic.refine": 0.000359237,
+    "Lean.Parser.Tactic.constructor": 0.000205151,
+    "Lean.Parser.Tactic.tacticTrivial": 7.580800000000002e-05,
+    "Lean.Parser.Tactic.tacticRfl": 6.133600000000005e-05,
+    "Lean.Parser.Tactic.focus": 4.753200000000003e-05,
+    "Lean.Parser.Tactic.tactic_<;>_": 4.348899999999996e-05,
+    "Lean.Parser.Tactic.applyRfl": 4.2448e-05,
+    "Lean.Parser.Tactic.eqRefl": 3.5044e-05,
+    "Lean.Parser.Tactic.allGoals": 2.3745999999999945e-05,
+    "Lean.Parser.Tactic.withAnnotateState": 1.6102000000000003e-05
+  },
+  "limits": [
+    "InfoTree-enabled heartbeat3000 diagnostic point, not production acceptance.",
+    "Ordered ancestry-isomorphic allGoals projection model leaves other constructs and unsupported work serial.",
+    "All local context is conservatively traversed; this is not a dynamic read set.",
+    "Metavariable separation alone does not establish merge/hidden-state safety.",
+    "Atomic ceiling assumes unchanged work and indivisible observed C leaf calls.",
+    "C/libc tracing has CPU and I/O cost; no free instrumentation assumption."
+  ],
+  "rows": [
+    {
+      "id": "independent",
+      "classification": "no_lean_errors",
+      "body_wall_s": 0.002090542,
+      "body_cpu_s": 0.002097613,
+      "C_calls": 28,
+      "complete_C_tree": true,
+      "full_DAG_span_s": null,
+      "full_DAG_parallelism": null,
+      "local_allGoals_eligible": true,
+      "local_allGoals_saved_cpu_s": 0.00029542299999999995,
+      "C_root_cpu_s": 0.000990199,
+      "exclusive_cpu_by_kind_s": {
+        "Lean.Parser.Tactic.tacticSeq": 9.009000000000011e-05,
+        "Lean.Parser.Tactic.tacticSeq1Indented": 9.444799999999993e-05,
+        "Lean.Parser.Tactic.tactic_<;>_": 4.348899999999996e-05,
+        "Lean.Parser.Tactic.focus": 4.753200000000003e-05,
+        "Lean.Parser.Tactic.constructor": 0.000205151,
+        "Lean.Parser.Tactic.withAnnotateState": 1.6102000000000003e-05,
+        "Lean.Parser.Tactic.skip": 9.981e-06,
+        "Lean.Parser.Tactic.allGoals": 2.3745999999999945e-05,
+        "Lean.Parser.Tactic.tacticTrivial": 7.580800000000002e-05,
+        "Lean.Parser.Tactic.apply": 0.000383852
+      },
+      "largest_opaque_leaf_cpu_s": 0.000205151,
+      "untraced_body_cpu_s": 0.001107414,
+      "fixed_atomic_untraced_serial_model_ceiling": 1.894154309047926,
+      "fixed_atomic_leaf_only_parallelism_ceiling": 10.224727152195213,
+      "allGoals_info_count": 1,
+      "allGoals_C_count": 1,
+      "eligible_allGoals_nodes": 1,
+      "allGoals_node_reasons": {},
+      "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+      "qualified_nodes": [
+        {
+          "C_call_id": 10,
+          "branch_cpu_s": [
+            0.000317141,
+            0.000295423
+          ],
+          "nested_branch_model_span_s": [
+            0.000317141,
+            0.000295423
+          ],
+          "live_dependency_components": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "incremental_model_saved_cpu_s": 0.000295423
+        }
+      ],
+      "local_allGoals_model_span_cpu_s": 0.00180219,
+      "local_allGoals_model_parallelism": 1.1639244474777908
+    },
+    {
+      "id": "coupled",
+      "classification": "no_lean_errors",
+      "body_wall_s": 0.003175013,
+      "body_cpu_s": 0.003178507,
+      "C_calls": 9,
+      "complete_C_tree": true,
+      "full_DAG_span_s": null,
+      "full_DAG_parallelism": null,
+      "local_allGoals_eligible": false,
+      "local_allGoals_saved_cpu_s": 0.0,
+      "C_root_cpu_s": 0.001199445,
+      "exclusive_cpu_by_kind_s": {
+        "Lean.Parser.Tactic.tacticSeq": 2.037099999999993e-05,
+        "Lean.Parser.Tactic.tacticSeq1Indented": 3.065899999999994e-05,
+        "Lean.Parser.Tactic.refine": 0.000359237,
+        "Lean.Parser.Tactic.exact": 0.00065035,
+        "Lean.Parser.Tactic.tacticRfl": 6.133600000000005e-05,
+        "Lean.Parser.Tactic.applyRfl": 4.2448e-05,
+        "Lean.Parser.Tactic.eqRefl": 3.5044e-05
+      },
+      "largest_opaque_leaf_cpu_s": 0.000359237,
+      "untraced_body_cpu_s": 0.001979062,
+      "fixed_atomic_untraced_serial_model_ceiling": 1.6060674198180753,
+      "fixed_atomic_leaf_only_parallelism_ceiling": 8.847938825900451,
+      "allGoals_info_count": 0,
+      "allGoals_C_count": 0,
+      "eligible_allGoals_nodes": 0,
+      "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic"
+    },
+    {
+      "id": "ordinary-error",
+      "classification": "ordinary_lean_error",
+      "body_wall_s": 0.000763764,
+      "body_cpu_s": 0.000766723,
+      "C_calls": 3,
+      "complete_C_tree": true,
+      "full_DAG_span_s": null,
+      "full_DAG_parallelism": null,
+      "local_allGoals_eligible": false,
+      "local_allGoals_saved_cpu_s": 0.0,
+      "C_root_cpu_s": 0.000144666,
+      "exclusive_cpu_by_kind_s": {
+        "Lean.Parser.Tactic.tacticSeq": 1.854100000000001e-05,
+        "Lean.Parser.Tactic.tacticSeq1Indented": 1.610899999999999e-05,
+        "Lean.Parser.Tactic.exact": 0.000110016
+      },
+      "largest_opaque_leaf_cpu_s": 0.000110016,
+      "untraced_body_cpu_s": 0.000622057,
+      "fixed_atomic_untraced_serial_model_ceiling": 1.2325606817381687,
+      "fixed_atomic_leaf_only_parallelism_ceiling": 6.969195389761489,
+      "allGoals_info_count": 0,
+      "allGoals_C_count": 0,
+      "eligible_allGoals_nodes": 0,
+      "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic"
+    },
+    {
+      "id": "budget",
+      "classification": "diagnostic_budget_interruption",
+      "body_wall_s": 0.013286576,
+      "body_cpu_s": 0.013291082,
+      "C_calls": 1010,
+      "complete_C_tree": true,
+      "full_DAG_span_s": null,
+      "full_DAG_parallelism": null,
+      "local_allGoals_eligible": false,
+      "local_allGoals_saved_cpu_s": 0.0,
+      "C_root_cpu_s": 0.011742027,
+      "exclusive_cpu_by_kind_s": {
+        "Lean.Parser.Tactic.tacticSeq": 0.002738875999999995,
+        "Lean.Parser.Tactic.tacticSeq1Indented": 0.003707298999999996,
+        "Lean.Parser.Tactic.tacticRepeat_": 0.0013801489999999985,
+        "Lean.Parser.Tactic.first": 0.0011916760000000048,
+        "Lean.Parser.Tactic.paren": 0.0016520460000000001,
+        "Lean.Parser.Tactic.skip": 0.0010719810000000003
+      },
+      "largest_opaque_leaf_cpu_s": 1.6846e-05,
+      "untraced_body_cpu_s": 0.0015490549999999988,
+      "fixed_atomic_untraced_serial_model_ceiling": 8.580122719980897,
+      "fixed_atomic_leaf_only_parallelism_ceiling": 788.9755431556451,
+      "allGoals_info_count": 0,
+      "allGoals_C_count": 0,
+      "eligible_allGoals_nodes": 0,
+      "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic"
+    }
+  ]
+}

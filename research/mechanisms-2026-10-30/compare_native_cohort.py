@@ -54,6 +54,7 @@ def main():
     for m in native_models:kinds.update(m["exclusive_cpu_by_kind_s"])
     cpu=sum(r["body_cpu_s"] for r in rows)
     saved=sum(r["local_allGoals_saved_cpu_s"] for r in rows)
+    leaf_lower=sum(r.get("largest_opaque_leaf_cpu_s",0) for r in rows)
     summary={"sources":200,"native_returns":600,"completed_cells":6,
              "difference_counts":dict(counts),"diagnostic_differences":significant,
              "same_observed_flags_diagnostics_InfoTrees":not significant,
@@ -65,6 +66,8 @@ def main():
              "local_allGoals_model_saved_cpu_s":saved,
              "local_allGoals_model_ratio":cpu/(cpu-saved) if cpu>saved else None,
              "full_DAG_parallelism":None,
+             "sum_per_source_largest_atomic_leaf_cpu_s":leaf_lower,
+             "fixed_atomic_leaf_granularity_aggregate_parallelism_ceiling":cpu/leaf_lower if leaf_lower else None,
              "untraced_body_cpu_s":sum(r.get("untraced_body_cpu_s",0) for r in rows),
              "largest_atomic_leaf_cpu_s":max((r.get("largest_opaque_leaf_cpu_s",0) for r in rows),default=0),
              "classification":dict(collections.Counter(r["classification"] for r in rows)),
@@ -79,7 +82,9 @@ def main():
                "Fixed200 selected sources,not full7808 acceptance/sorry policy.",
                "Untraced body time is not automatically kernel time; software PC samples required.",
                "Cell order reversed across disjoint shards; no repeated variance estimate.",
-               "No complete merge-safe critical path or actual parallel runtime implemented."]}
+               "No complete merge-safe critical path or actual parallel runtime implemented.",
+               "Leaf-only bound assumes fixed work and unchanged atomic C leaf calls, not a general kernel-parallelism bound.",
+               "minif2f-4544 exceeds historical300s cutoff here; this budget3000 diagnostic population cannot establish production parallelism."]}
     (out/"summary.json").write_text(json.dumps(summary,indent=2)+chr(10))
     (out/"local-model-per-source.json").write_text(json.dumps(rows,indent=2)+chr(10))
     print(json.dumps({k:v for k,v in summary.items() if k not in ["whole_process_receipts","exclusive_cpu_by_kind_s","diagnostic_differences"]},indent=2))

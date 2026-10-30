@@ -80,48 +80,89 @@ def summarize(row, source):
     largest = max((cost(n) for n in leaves), default=0.)
     residual = max(0., result["body_cpu_s"]-result["C_root_cpu_s"])
     result.update(largest_opaque_leaf_cpu_s=largest, untraced_body_cpu_s=residual)
-    # Optimistic ceiling only if recorded leaf calls remain indivisible and work fixed.
+    # This model additionally serializes untraced body work. The leaf-only
+    # bound below does not require that extra assumption.
     denom = max(largest, residual)
-    result["fixed_atomic_work_optimistic_parallelism_ceiling"] = (
+    result["fixed_atomic_untraced_serial_model_ceiling"] = (
         result["body_cpu_s"]/denom if denom else None)
-    infos = [n for n in walk(row["infos"])
-             if normalized(n.get("kind", "")) == "Lean.Parser.Tactic.allGoals"]
-    calls = [n for n in nodes if normalized(n["kind"]) == "Lean.Parser.Tactic.allGoals"]
-    result["allGoals_info_count"] = len(infos)
-    result["allGoals_C_count"] = len(calls)
-    if len(infos) != 1 or len(calls) != 1:
-        result["local_reason"] = "No unique allGoals correspondence"
+    result["fixed_atomic_leaf_only_parallelism_ceiling"] = (
+        result["body_cpu_s"]/largest if largest else None)
+    def project(items):
+        output=[]
+        for node in items:
+            children=project(node.get("children", []))
+            if normalized(node.get("kind",""))=="Lean.Parser.Tactic.allGoals":
+                output.append((node,children))
+            else:output.extend(children)
+        return output
+    def shape(items):
+        return [shape(children) for _,children in items]
+    def flatten(items):
+        for node,children in items:
+            yield node
+            yield from flatten(children)
+    ip,cp=project(row["infos"]),project(roots)
+    infos,calls=list(flatten(ip)),list(flatten(cp))
+    result["allGoals_info_count"]=len(infos)
+    result["allGoals_C_count"]=len(calls)
+    result["eligible_allGoals_nodes"]=0
+    if not infos or shape(ip)!=shape(cp):
+        result["local_reason"]="AllGoals projection forests are absent or not order/ancestry isomorphic"
         return result
-    info, call = infos[0], calls[0]
-    goals = info.get("liveBefore", [])
-    branches = [n for n in info.get("children", [])
-                if normalized(n.get("kind", "")) == "Lean.Parser.Tactic.tacticSeq"]
-    timed = [n for n in call["children"]
-             if normalized(n["kind"]) == "Lean.Parser.Tactic.tacticSeq"]
-    if len(goals)<2 or len(branches)!=len(goals) or len(timed)!=len(goals):
-        result["local_reason"] = "Unmatched branch counts or no split"
+    # Every allGoals callback must be present, completed, successful and in the
+    # same ordered ancestry forest. This is NOT a global kind/order-only join.
+    if len(infos)!=len(calls) or any(c["end"]["return_tag"]!=1 for c in calls):
+        result["local_reason"]="Incomplete or failed allGoals correspondence"
         return result
-    if call["end"]["return_tag"] != 1:
-        result["local_reason"] = "C allGoals did not return qualified success tag1"
+    qualified={}
+    reasons=collections.Counter()
+    for info,call in zip(infos,calls):
+        goals=info.get("liveBefore",[])
+        branches=[n for n in info.get("children",[])
+                  if normalized(n.get("kind",""))=="Lean.Parser.Tactic.tacticSeq"]
+        timed=[n for n in call["children"]
+               if normalized(n["kind"])=="Lean.Parser.Tactic.tacticSeq"]
+        if len(goals)<2 or len(branches)!=len(goals) or len(timed)!=len(goals):
+            reasons["Unmatched branch counts or no split"]+=1;continue
+        if any(len(b.get("liveBefore",[]))!=1 or b["liveBefore"][0][0]!=g[0]
+               for b,g in zip(branches,goals)):
+            reasons["Branch goal identity/order mismatch"]+=1;continue
+        if any(c["end"]["return_tag"]!=1 for c in timed):
+            reasons["Failed branch callback"]+=1;continue
+        if sum(cost(c) for c in timed)>cost(call)+1e-7:
+            raise ValueError("Branch CPU exceeds parent")
+        qualified[call["id"]]=(timed,components(goals))
+    result["allGoals_node_reasons"]=dict(reasons)
+    result["eligible_allGoals_nodes"]=len(qualified)
+    if not qualified:
+        result["local_reason"]="Isomorphic allGoals forest but no qualified multi-goal split"
         return result
-    for branch, goal in zip(branches, goals):
-        before = branch.get("liveBefore", [])
-        if len(before)!=1 or before[0][0]!=goal[0]:
-            result["local_reason"] = "Branch goal identity/order mismatch"
-            return result
-    groups = components(goals)
-    costs = [cost(n) for n in timed]
-    serial = sum(costs)
-    parallel = max(sum(costs[i] for i in group) for group in groups)
-    if serial > cost(call)+1e-7:
-        raise ValueError("Branch CPU exceeds parent")
-    saved = serial-parallel
+    local=[]
+    def span(node):
+        childspans={c["id"]:span(c) for c in node["children"]}
+        own=max(0.,cost(node)-sum(cost(c) for c in node["children"]))
+        value=own+sum(childspans.values())
+        if node["id"] in qualified:
+            timed,groups=qualified[node["id"]]
+            branchspans=[childspans[c["id"]] for c in timed]
+            serial=sum(branchspans)
+            parallel=max(sum(branchspans[i] for i in group) for group in groups)
+            value-=serial-parallel
+            local.append({"C_call_id":node["id"],
+                          "branch_cpu_s":[cost(c) for c in timed],
+                          "nested_branch_model_span_s":branchspans,
+                          "live_dependency_components":groups,
+                          "incremental_model_saved_cpu_s":serial-parallel})
+        return value
+    modelspan=result["body_cpu_s"]-result["C_root_cpu_s"]+sum(span(n) for n in roots)
+    if modelspan<0 or modelspan>result["body_cpu_s"]+1e-7:
+        raise ValueError("Invalid nested local span")
     result.update(local_allGoals_eligible=True,
-                  local_reason="Unique local allGoals; conservative live-meta conflict model only",
-                  branch_cpu_s=costs, live_dependency_components=groups,
-                  local_allGoals_saved_cpu_s=saved,
-                  local_allGoals_model_span_cpu_s=result["body_cpu_s"]-saved,
-                  local_allGoals_model_parallelism=result["body_cpu_s"]/(result["body_cpu_s"]-saved))
+                  local_reason="Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+                  qualified_nodes=local,
+                  local_allGoals_saved_cpu_s=result["body_cpu_s"]-modelspan,
+                  local_allGoals_model_span_cpu_s=modelspan,
+                  local_allGoals_model_parallelism=result["body_cpu_s"]/modelspan)
     return result
 
 def analyze(capture):
@@ -141,7 +182,7 @@ def analyze(capture):
             "full_DAG_average_parallelism":None,
             "exclusive_cpu_by_kind_s":dict(kinds.most_common()),
             "limits":["InfoTree-enabled heartbeat3000 diagnostic point, not production acceptance.",
-                      "Unique allGoals model leaves other constructs and all unsupported work serial.",
+                      "Ordered ancestry-isomorphic allGoals projection model leaves other constructs and unsupported work serial.",
                       "All local context is conservatively traversed; this is not a dynamic read set.",
                       "Metavariable separation alone does not establish merge/hidden-state safety.",
                       "Atomic ceiling assumes unchanged work and indivisible observed C leaf calls.",

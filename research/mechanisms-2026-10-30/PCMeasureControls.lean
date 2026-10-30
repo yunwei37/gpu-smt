@@ -160,7 +160,7 @@ elab "measure_dag " path:str : command => do
       |>.setBool `trace.profiler false |>.setNat `trace.profiler.threshold 0
     mTraceMode (id ++ "|" ++ mode)
     if (← IO.getEnv "M_LATE_PC_FILE").isSome then
-      mPCPhase 1
+      mPCPhase ((c.getObjValAs? Nat "phase").toOption.getD 1).toUInt64
     let heartbeatStart ← IO.getNumHeartbeats
     let cpuStart ← mCpuNS
     let start ← IO.monoNanosNow
