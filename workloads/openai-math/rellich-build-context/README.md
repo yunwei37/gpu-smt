@@ -31,3 +31,8 @@ explicit source HB option; they used the SDK default200,000 per command,
 not authored0/unlimited. The raw source and source-option columns expose
 this distinction. Other source modules can set their own values. No costs
 from the100k replay were pooled into the authored/default point.
+
+
+Follow-up W033: all15needed modules subsequently compiled/no sorry at the
+qualified4.34.1context. See ../rellich-native-complete; the earlier preparation
+metadata remains a dated observation, not a live running field.
