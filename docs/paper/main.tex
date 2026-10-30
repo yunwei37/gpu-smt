@@ -371,6 +371,7 @@ After Grid, bounded group & 8 & 100 & 14 & 12 & 0 & 2 & 48 & 1399.355 \\
 Amplitudes, longer bound & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 180.276 \\
 New strata & 8 & 100 & 109 & 106 & 2 & 1 & 2984 & 1399.656 \\
 Authored options & 8 & --- & 2 & 2 & 0 & 0 & 0 & 41.811 \\
+Authored sample & 8 & --- & 189 & 187 & 0 & 1 & --- & 1399.505 \\
 \bottomrule
 \end{tabular}
 \caption{Distinct bounded native-build points, not a homogeneous full-library
@@ -389,6 +390,11 @@ opportunity in a separate invocation. The new-strata row invokes 109 of 3,093 pl
 fresh modules; its final call has only 8.030 seconds left from the group budget.
 The authored-options row removes the CLI heartbeat override on two unchanged
 sources and uses a separate 600-second self-wall bound.
+The authored-sample row makes 189 native invocations: 187 compile, one
+lacks an external dependency and one self-interrupts. It records 47 blocked
+dependents, while the planned dependency closure is not exhausted; the dash
+does not mean zero uninvoked work. The last call receives only 11.734 seconds
+of the group remainder rather than the configured 600-second per-file cap.
 Heartbeats are the Lean option, not a cumulative group counter.
 Uninvoked dependencies have no measured compiler time or native verdict.
 Row clocks are not added to claim a fresh same-budget build or isolated
@@ -481,6 +487,27 @@ These are different option points, not a same-budget acceleration comparison.
 Across the completed points, 365 original-module objects and 18 of the
 53 frame endpoints are available; full-frame coverage remains incomplete.
 
+A separate original-options probability-sample group freshly measures
+previously cached endpoints as well as new dependencies, without changing
+any source bytes or imposing a CLI heartbeat override. It returns 236 ledger
+records: 189 native invocations and 47 uninvoked dependency-blocked records.
+Of the invocations, 187 compile, one cannot find the external
+\texttt{RellichKondrachov} module, and the final one self-interrupts after
+only 11.734 seconds of remaining group time. The dependency error is not
+a mathematical proof failure. Sixteen already cached targets are measured
+to private output paths; 171 other successful modules are new dependencies.
+Compiler-wall sum is 1,399.505 seconds and CPU sum is 2,539.433 seconds;
+collection takes 1,407.576 seconds, with a 12.49\,GiB combined sampled peak
+including the retained EPFL process.
+
+This group supplies original-option costs for 19 of 42 probability endpoints
+and completes six of 21 sampling cells. The other 23 endpoint costs remain
+missing; successful dependencies do not substitute for them. The point
+measures \texttt{.olean}-only compiler output rather than all Lake build
+artifacts and driver overhead. An unbiased whole-build CPU-hours estimate
+and its confidence interval therefore remain unavailable; the older
+100,000-heartbeat observations are not pooled into this different point.
+
 \paragraph{Typed metadata does not establish cache eligibility.}
 The earlier native reader covers 135 serialized objects, with 1,799 theorems,
 743 auxiliary-name declarations and 601 native expression keys, or 604
@@ -522,6 +549,20 @@ Counts describe declarations already present in objects, not fresh proof checks
 or replay-qualified calls.}
 \label{tab:native-type-keys}
 \end{table}
+
+Source sites and retained proof helpers also count different units.
+In exactly these 363 compiled modules, the source has 42,886 lexical
+\texttt{decide +kernel} sites, compared with 45,661 retained helpers matching
+the decision-proof predicate. \texttt{Jet50} has 944 source sites but 3,938
+matching helpers with distinct native types; its source applies
+\texttt{decide} after \texttt{interval\_cases} using \texttt{<;>}.
+\texttt{Canonical240} similarly has 114 sites and 600 distinct helper types,
+with nested \texttt{fin\_cases} before \texttt{decide}.
+Conversely, \texttt{AuxiliaryGram} has one matching helper and no explicit
+kernel-mode source site. Branch syntax explains why a site can act on many
+goals, but exact event-to-helper attribution is not traced.
+Neither the global source-site count nor the retained-helper census
+identifies pre-cache requests, actual cache misses or removable checking CPU.
 
 The expanded metadata read completes in 1.762 seconds, with a 2.003-second
 collection and a 6.24\,GiB combined sampled peak including retained EPFL work.

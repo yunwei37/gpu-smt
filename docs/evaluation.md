@@ -90,6 +90,7 @@ The original53target frame and major typed repeated-goal probes remain incomplet
 | Amplitudes longer bound,j8 |1|1|0/0|0|180.275578|
 | New strata,j8,100k |109|106|2/1|2984|1399.655781|
 | Two authored-option modules,j8 |2|2|0/0|0|41.811451|
+| Authored probability point,j8 |189|187|0/1|incomplete closure|1399.505203|
 
 Points have different budgets,workers,warm prerequisites and collection clocks;
 never sum them as a fresh homogeneous library build. M8192 is cooperative
@@ -111,6 +112,17 @@ Native wall1399.655781/41.811451s,capture1407.564239/50.057644s,
 combinedsample12.40/11.99GiB. Acrosspoints365objects/18of53endpoints exist.
 
 
+[Original-options sample audit](tmp/build-and-evaluate/step-0210-20261030T170436+0000/step-report.md) checkscompleteboundedledger236:
+189actualnativeinvocations/187compile/1missingRellichKondrachov/1selfwall,
+47recordedblockeddependents. NoCLIHBoverride,sourceexact189copies,
+autoImplicit=false,j8/M8192/CPUs0–7,600sconfiguredchild/1400sgroup.
+FinalWaveExpDatahas11.734364sremainder,not600s.16cachedtargetsremeasured
+to privateobjects+171newdependencies;retired189actualPID/birthidentities.
+Nativewall1399.505203/CPU2539.433437s,capture1407.576181s,
+combinedsample13415440384B includesoldEPFL. .oleanonlynotfullLakeoutputs.
+19/42matchedprobabilitycosts,6/21completecells,23unmeasuredendpoints;
+nofullCPUestimate/95%CIorzero-costmissingcell,purposeful100krowsnotpooled.
+
 [Native type-group audit](tmp/build-and-evaluate/step-0205-20261030T152520+0000/step-report.md) contrasts the135object pilot
 (1799theorems/743auxiliary names/45distinct decision-shaped types) with a
 completed363object read:89268theorems,47989auxiliary names,44528Exprkeys,
@@ -124,6 +136,15 @@ full-population cache-eligibility claim. Metadata native1.762153s,capture
 2.003251s,combinedsample6.24GiB includes retained EPFL;not proof rechecking.
 The original repeated-text endpoint remains uncompiled;earlier45distinct
 pilot result stays valid within its smaller scope. No key-IDcross-run join.
+[Source/native unit reconciliation](tmp/build-and-evaluate/step-0210-20261030T170436+0000/step-report.md) rechecks363exactsourcefiles
+andoriginalnativecensus:42886lexicalkernel-sitesvs45661retainedshapehelpers,
+42610globalExprgroups/44164summedpermodulegroups. Jet50:944sites/3938helpers
+alldistincttypes;Canonical240:114/600,alldistinct. Sourceinterval_cases/<;>/
+nestedfin_casessyntaxobserved,notcausalper-eventinstrumentation.
+AuxiliaryGram:0explicitkernel-sites/1matchinghelper,predicateisnotexact
+syntaxattribution. Thesearecountsafterelaboration/cacheactivity,notraw
+cachemisses,originalkernelcallcounts,replaykeysorweightedruntimebenefit.
+
 [Same-point module exposure](tmp/build-and-evaluate/step-0206-20261030T155146+0000/step-report.md) maps52
 global cross-type-bearing modules;48occur in the109-call new-strata point.
 Those48successful calls use454.207083/1399.655781s=32.45%of own native-wall sum.
