@@ -1,0 +1,8 @@
+M_CERT_FALLBACK digits
+M_CERT_FALLBACK grid
+/workspaces/repository/research/mechanisms-2026-10-30/CandidateCertificateNegative.lean:4:44: error: The rfl tactic failed. Possible reasons:
+- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).
+- The arguments of the relation are not equal.
+Try using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.
+⊢ (Finset.range 2).card = 101
+/workspaces/repository/research/mechanisms-2026-10-30/CandidateCertificateNegative.lean:6:2: error: interval_cases failed: could not find upper bound on m
