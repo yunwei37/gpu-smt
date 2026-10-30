@@ -1,0 +1,16 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6-7",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "-T",
+    "100000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/FailureTransition.olean",
+    "/workspaces/repository/native/lean/failure-replay/FailureTransition.lean"
+  ],
+  "exit": 0,
+  "retired": true
+}

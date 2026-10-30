@@ -52,3 +52,14 @@ jobs:
           echo "LEAN_SYSROOT=$RUNNER_TEMP/lean-4.18.0-linux" >> "$GITHUB_ENV"
       - name: Differential check against raw native JSON
         run: cargo test -p gpu-smt-lean --test native_differential --locked -- --ignored
+      - name: Check native ordinary-failure transition controls
+        shell: bash
+        run: |
+          curl -fL https://github.com/leanprover/lean4/releases/download/v4.9.0-rc1/lean-4.9.0-rc1-linux.tar.zst -o "$RUNNER_TEMP/lean49.tar.zst"
+          tar --zstd -xf "$RUNNER_TEMP/lean49.tar.zst" -C "$RUNNER_TEMP"
+          lean49="$RUNNER_TEMP/lean-4.9.0-rc1-linux/bin/lean"
+          transition_out="$RUNNER_TEMP/failure-transition"
+          mkdir -p "$transition_out"
+          export LEAN_PATH="$transition_out"
+          "$lean49" --root native/lean/failure-replay -T 100000 -o "$transition_out/FailureTransition.olean" native/lean/failure-replay/FailureTransition.lean
+          "$lean49" --root native/lean/failure-replay/tests -T 100000 -o "$transition_out/Transition.olean" native/lean/failure-replay/tests/Transition.lean

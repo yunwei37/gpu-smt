@@ -1,0 +1,90 @@
+[
+  {
+    "mutation": "no-post-state",
+    "stage": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "6-7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "--root",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-post-state",
+      "-T",
+      "100000",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-post-state/FailureTransition.olean",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-post-state/FailureTransition.lean"
+    ],
+    "pid": 15199,
+    "birth": 1793321585.26,
+    "retired": true,
+    "exit": 0,
+    "expected_diagnostic": null
+  },
+  {
+    "mutation": "no-post-state",
+    "stage": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "6-7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "-T",
+      "100000",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-post-state/Transition.olean",
+      "/workspaces/repository/native/lean/failure-replay/tests/Transition.lean"
+    ],
+    "pid": 15200,
+    "birth": 1793321587.27,
+    "retired": true,
+    "exit": 1,
+    "expected_diagnostic": "replay lost failed post-state"
+  },
+  {
+    "mutation": "no-action-debit",
+    "stage": 0,
+    "command": [
+      "taskset",
+      "-c",
+      "6-7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "--root",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-action-debit",
+      "-T",
+      "100000",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-action-debit/FailureTransition.olean",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-action-debit/FailureTransition.lean"
+    ],
+    "pid": 15202,
+    "birth": 1793321592.28,
+    "retired": true,
+    "exit": 0,
+    "expected_diagnostic": null
+  },
+  {
+    "mutation": "no-action-debit",
+    "stage": 1,
+    "command": [
+      "taskset",
+      "-c",
+      "6-7",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "--json",
+      "-T",
+      "100000",
+      "-o",
+      "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/no-action-debit/Transition.olean",
+      "/workspaces/repository/native/lean/failure-replay/tests/Transition.lean"
+    ],
+    "pid": 15203,
+    "birth": 1793321594.29,
+    "retired": true,
+    "exit": 1,
+    "expected_diagnostic": "replay lost recorded action heartbeat debit"
+  }
+]

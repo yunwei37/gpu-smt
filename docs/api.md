@@ -406,3 +406,14 @@ Analyze such diagnostic runs from their full raw records, separately from
 uninstrumented accepted-set/performance captures. Use `reuse=false` for fresh
 measurement; cache/coalesced consumers need not create an independent log.
 Logging directory participates in configured identity. Main defaults are unchanged.
+
+## Experimental native transition primitive
+
+The [Lean4.9 component](../native/lean/failure-replay/README.md) is a low-level
+dependency for future FailureCacheVerificationBackend implementations. It has
+default-off capture/replay and a strict same-retained-input guard. Native finite
+controls now exercise post-state/exception and action-charge preservation.
+It is not connected to the stock adapter or Rust service. Pointer identity,
+including reader/state layers, does not itself certify mutable/opaque/IO effects,
+cross-candidate compatibility or exact timeout parity. The selected-state
+population measurement and complete accepted-set differential remain open.

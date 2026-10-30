@@ -1,0 +1,40 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6-7",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "-T",
+    "100000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/native-failure-transition-development/Transition.olean",
+    "/workspaces/repository/native/lean/failure-replay/tests/Transition.lean"
+  ],
+  "pid": 15250,
+  "birth": 1793321862.44,
+  "exit": 0,
+  "retired": true,
+  "samples": [
+    {
+      "rss_bytes": 14970880,
+      "available_bytes": 21786763264
+    },
+    {
+      "rss_bytes": 543469568,
+      "available_bytes": 21707481088
+    },
+    {
+      "rss_bytes": 550703104,
+      "available_bytes": 21703823360
+    },
+    {
+      "rss_bytes": 575885312,
+      "available_bytes": 21680627712
+    },
+    {
+      "rss_bytes": 591917056,
+      "available_bytes": 21665107968
+    }
+  ]
+}

@@ -172,3 +172,11 @@ execution mechanism even though source/toolchain match. The corrected resource
 comparison directly loads that existing ordinary Mathlib library in both
 backends,without the counterexample wrapper or external arithmetic oracle.
 This is baseline parity,not a new contribution or oracle optimization.
+
+## Ordinary-failure transition component
+
+The separate [opt-in Lean4.9 transition primitive](failure-replay/README.md)
+captures and restores caller-qualified ordinary failures with full native
+post-state and upstream action heartbeat accounting. It is not used by this
+import parent, stock adapters or the service. Native controls are distinct from
+Mathlib population opportunity, cross-candidate qualification and performance.
