@@ -1,0 +1,5 @@
+# Step021 outer audit — 自审
+
+EXPERIMENT: actual full batch scan/payload generation, complete grid theorem,3complete-source runs,24counterbalanced kernel groups/384chunk checks,1whole-cost pipeline; all terminal0/retired. Native budget, RSS and CPU limits retained. WRITE: frozen receipts, timing scope, proof/operational-mode distinction and prior-art boundary reported. REVIEW: self-review only; checked target families cannot be counted as49source recoveries; no parallel-first-check/merge or full service speedup claim. Cumulative RUSAGE and v5hardware-label discrepancies preserved with explicit correction. All writes confined to M. Continue supported source-goal integration; paper/root gate decisions belong to root.
+
+Final checks:126unique miniF2F rows/17EPFL rows; category counts and own-duration sums consistent;24kernel groups each16checks with actual requested overlap; no selected native process alive. Public bounded runner exit0and witness-v3exit0. One unnecessarySimpa linter warning in witness-v3retained; no linter option was disabled. Two further false-prefix classifications corrected forward,9known cases.

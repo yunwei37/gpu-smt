@@ -45,7 +45,12 @@ theorem block_append (first a b : Nat) :
   | zero => simp [block]
   | succ b ih => simp [block, ih, Nat.add_assoc, Bool.and_assoc]
 
-#eval IO.println "M_GRID_BEFORE_CHUNKS"
+open Lean Elab Command in
+elab "grid_phase " phase:ident : command => do
+  let now ← IO.monoNanosNow
+  logInfo m!"M_GRID_PHASE {phase.getId} {now}"
+
+grid_phase before_chunks
 theorem chunk0 : block 2 128 = true := by decide
 theorem chunk1 : block 130 128 = true := by decide
 theorem chunk2 : block 258 128 = true := by decide
@@ -62,7 +67,7 @@ theorem chunk12 : block 1538 128 = true := by decide
 theorem chunk13 : block 1666 128 = true := by decide
 theorem chunk14 : block 1794 128 = true := by decide
 theorem chunk15 : block 1922 84 = true := by decide
-#eval IO.println "M_GRID_AFTER_CHUNKS"
+grid_phase after_chunks
 theorem block_join (first a b : Nat) (ha : block first a = true)
     (hb : block (first + a) b = true) : block first (a + b) = true := by
   rw [block_append]
@@ -72,7 +77,7 @@ theorem block_join (first a b : Nat) (ha : block first a = true)
 theorem full_rows : block 2 2004 = true :=
   (block_join 2 128 1876 chunk0 (block_join 130 128 1748 chunk1 (block_join 258 128 1620 chunk2 (block_join 386 128 1492 chunk3 (block_join 514 128 1364 chunk4 (block_join 642 128 1236 chunk5 (block_join 770 128 1108 chunk6 (block_join 898 128 980 chunk7 (block_join 1026 128 852 chunk8 (block_join 1154 128 724 chunk9 (block_join 1282 128 596 chunk10 (block_join 1410 128 468 chunk11 (block_join 1538 128 340 chunk12 (block_join 1666 128 212 chunk13 (block_join 1794 128 84 chunk14 chunk15)))))))))))))))
 
-#eval IO.println "M_GRID_AFTER_ASSEMBLY"
+grid_phase after_assembly
 theorem mathd_numbertheory_541 (m n : Nat) (hm : 1 < m) (hn : 1 < n)
     (prod : m * n = 2005) : m + n = 406 := by
   have mn : m ≤ 2005 := by
@@ -87,47 +92,65 @@ theorem mathd_numbertheory_541 (m n : Nat) (hm : 1 < m) (hn : 1 < n)
   rw [same] at checked
   exact row_sound m n (by omega) (by omega) nn prod checked
 
+grid_phase after_final_theorem
 #print axioms row_sound
 #print axioms full_rows
 #print axioms mathd_numbertheory_541
 
 open Lean Elab Command in
+elab "recheck_grid_final" : command => do
+  let env ← getEnv
+  let some (.thmInfo value) := env.find? `MechanismReflectedGrid.mathd_numbertheory_541
+    | throwError "missing final theorem"
+  let start ← IO.monoNanosNow
+  match env.addDeclCore 1000000 (.thmDecl {value with
+      name := `MechanismReflectedGrid.final_rechecked,
+      all := [`MechanismReflectedGrid.final_rechecked]}) with
+  | .error _ => throwError "kernel rejected final theorem"
+  | .ok _ => pure ()
+  let stop ← IO.monoNanosNow
+  logInfo m!"M_GRID_FINAL_KERNEL_NS {stop - start}"
+recheck_grid_final
+
+open Lean Elab Command in
 elab "measure_grid_chunks" : command => do
+  unless (← IO.getEnv "M_GRID_MEASURE") == some "1" do return
   let env ← getEnv
   let mut declarations := #[]
   for i in [:16] do
     let name := Name.str `MechanismReflectedGrid ("chunk" ++ toString i)
     let some (.thmInfo value) := env.find? name | throwError "missing chunk"
     declarations := declarations.push value
-  for workers in [1, 2, 4, 8] do
-    for repetition in [:5] do
-      let start ← IO.monoNanosNow
-      let mut tasks := #[]
-      for worker in [:workers] do
-        let job : IO Nat := do
-          let mut total := 0
-          for i in [:declarations.size] do
-            if i % workers == worker then
-              let value := declarations[i]!
-              let checkName := Name.str `MechanismReflectedGrid
-                ("checked_" ++ toString workers ++ "_" ++ toString repetition ++ "_" ++ toString i)
-              let began ← IO.monoNanosNow
-              match env.addDeclCore 1000000 (.thmDecl {value with name := checkName, all := [checkName]}) with
-              | .error _ => throw (IO.userError "original kernel rejected chunk")
-              | .ok _ => total := total + 1
-              let ended ← IO.monoNanosNow
-              IO.println s!"M_GRID_CHUNK {workers} {repetition} {i} {ended - began}"
-          pure total
-        let task ← IO.asTask job
-        tasks := tasks.push task
-      let mut count := 0
-      for task in tasks do
-        match task.get with
-        | .error e => throwError "chunk task failed: {e}"
-        | .ok n => count := count + n
-      let stop ← IO.monoNanosNow
-      unless count == 16 do throwError "incomplete checks"
-      logInfo m!"M_GRID_GROUP {workers} {repetition} {stop - start} {count}"
+  for round in [:2] do
+   for workers in (if round == 0 then [8, 4, 2, 1] else [1, 2, 4, 8]) do
+     for repetition in [:3] do
+       let start ← IO.monoNanosNow
+       let mut tasks := #[]
+       for worker in [:workers] do
+         let job : IO Nat := do
+           let mut total := 0
+           for i in [:declarations.size] do
+             if i % workers == worker then
+               let value := declarations[i]!
+               let checkName := Name.str `MechanismReflectedGrid
+                 ("checked_" ++ toString workers ++ "_" ++ toString repetition ++ "_" ++ toString i)
+               let began ← IO.monoNanosNow
+               match env.addDeclCore 1000000 (.thmDecl {value with name := checkName, all := [checkName]}) with
+               | .error _ => throw (IO.userError "original kernel rejected chunk")
+               | .ok _ => total := total + 1
+               let ended ← IO.monoNanosNow
+               IO.println s!"M_GRID_CHUNK {round} {workers} {repetition} {i} {began} {ended}"
+           pure total
+         let task ← IO.asTask job
+         tasks := tasks.push task
+       let mut count := 0
+       for task in tasks do
+         match task.get with
+         | .error e => throwError "chunk task failed: {e}"
+         | .ok n => count := count + n
+       let stop ← IO.monoNanosNow
+       unless count == 16 do throwError "incomplete checks"
+       logInfo m!"M_GRID_GROUP {round} {workers} {repetition} {stop - start} {count}"
 measure_grid_chunks
 
 end MechanismReflectedGrid

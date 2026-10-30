@@ -102,7 +102,7 @@ theorem imo_1997_p5 (x y : ℕ) (h₀ : 0 < x ∧ 0 < y) (h₁ : x ^ y ^ 2 = y ^
 
 ### minif2f-970 — imo_1997_p5
 
-not_closed: exponential equation with unbounded match tails. finite syntax of match does not bound x,y; symbolic simp/nlinarith.
+proof_repair: asserts x<=1 or y<=1. (16,2) satisfies the original power equation but both exceed1; false auxiliary restriction.
 
 ```lean
 theorem imo_1997_p5 (x y : ℕ) (h₀ : 0 < x ∧ 0 < y) (h₁ : x ^ y ^ 2 = y ^ x) :
@@ -564,7 +564,7 @@ theorem imo_1982_p1 (f : ℕ → ℕ)
 
 ### minif2f-2401 — mathd_numbertheory_483
 
-bridge_required: recurrence determines positive Fibonacci values. current expensive simp works over symbolic function/quantified recurrence; first prove equivalence to structural evaluator; not closed input now.
+proof_repair: asserts Fibonacci residues have period2. a1=a2=1 and the recurrence force a3=2, contradicting period2 at1; target mod4 statement may still be true.
 
 ```lean
 theorem mathd_numbertheory_483 (a : ℕ → ℕ) (h₀ : a 1 = 1) (h₁ : a 2 = 1)

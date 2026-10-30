@@ -45,4 +45,15 @@ theorem square_divisor_outside_claimed_ranges :
 #print axioms factorial_product
 #print axioms divisor_not_square
 #print axioms square_divisor_outside_claimed_ranges
+theorem match_bound_counterexample :
+    (16 : Nat) ^ (2 ^ 2) = 2 ^ 16 ∧ ¬ (16 ≤ 1 ∨ 2 ≤ 1) := by decide
+theorem no_fibonacci_period_two (a : Nat → Nat) (h1 : a 1 = 1) (h2 : a 2 = 1)
+    (step : ∀ n, a (n + 2) = a (n + 1) + a n) :
+    ¬ (∀ n, a (n + 2) % 4 = a n % 4) := by
+  have a3 : a 3 = 2 := by simpa [h1, h2] using step 1
+  intro period
+  have impossible := period 1
+  simpa [a3, h1] using impossible
+#print axioms match_bound_counterexample
+#print axioms no_fibonacci_period_two
 end ExtractionAuditWitnesses

@@ -46,7 +46,8 @@ def run(source,label,wall_seconds=1200,library=None,native_executable=None,embed
  if input_path is not None:env['M_DAG_INPUT']=str(input_path)
  if embedded_probe:env.pop('LD_PRELOAD',None)
  args=['taskset','-c',cpus,str(native_executable or (SDK/'bin/lean')),f'-j{jobs}','-M8192','-T50000000',str(source)]
- began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':'phobos-vt serial M branch, CPU8-11, RSS budget16GiB',
+ usage_before=resource.getrusage(resource.RUSAGE_CHILDREN)
+ began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':f'phobos-vt one-native-process M branch, CPU{cpus}, RSS budget16GiB',
    'native_jobs':jobs,'cpu_affinity':cpus,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_T_flag':50000000,'native_T_semantics':'legacy field records CLI-T value, not a whole-source IO.getNumHeartbeats quota','native_memory_MiB':8192,'native_M_semantics':'Lean cooperative process RSS checks, not allocator-only, RLIMIT_AS or kernel hard quota','internal_wall_seconds':wall_seconds,'loaded_measurement_library':env.get('LD_PRELOAD','embedded probe'),'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
  (out/'launch.json').write_text(json.dumps(receipt,indent=2)+'\n')
  peak=0;minavail=None;samples=0
@@ -63,7 +64,7 @@ def run(source,label,wall_seconds=1200,library=None,native_executable=None,embed
    except subprocess.TimeoutExpired:pass
   code=child.wait()
  usage=resource.getrusage(resource.RUSAGE_CHILDREN)
- receipt.update(native_kernel_peak_rss_bytes=usage.ru_maxrss*1024,native_cpu_seconds=usage.ru_utime+usage.ru_stime,exit=code,wall_s=time.monotonic()-began,sampled_peak_owned_rss_bytes=peak,
+ receipt.update(native_kernel_peak_rss_bytes=usage.ru_maxrss*1024,native_cpu_seconds=usage.ru_utime+usage.ru_stime-usage_before.ru_utime-usage_before.ru_stime,native_cpu_scope='RUSAGE_CHILDREN delta for this serial run',native_kernel_peak_rss_scope='RUSAGE_CHILDREN cumulative maximum in controller; not per-run highwater',exit=code,wall_s=time.monotonic()-began,sampled_peak_owned_rss_bytes=peak,
   minimum_node_MemAvailable_bytes=minavail,samples=samples,sample_interval_s=1,
   retired=not Path(f'/proc/{child.pid}').exists())
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')

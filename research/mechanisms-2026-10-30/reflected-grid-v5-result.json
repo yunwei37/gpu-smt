@@ -1,0 +1,49 @@
+{
+  "source_wall_s": [
+    2.171878082677722,
+    2.172062656842172,
+    2.1718997908756137
+  ],
+  "final_theorem_kernel_s": [
+    0.03963029,
+    0.040147143,
+    0.039625348
+  ],
+  "chunk_scaling": [
+    {
+      "workers": 1,
+      "groups": 6,
+      "min_s": 0.273800403,
+      "median_s": 0.276176942,
+      "max_s": 0.278787319,
+      "speedup_vs_serial": 1.0
+    },
+    {
+      "workers": 2,
+      "groups": 6,
+      "min_s": 0.154460861,
+      "median_s": 0.155573357,
+      "max_s": 0.156680005,
+      "speedup_vs_serial": 1.7752200461933851
+    },
+    {
+      "workers": 4,
+      "groups": 6,
+      "min_s": 0.087806542,
+      "median_s": 0.089030126,
+      "max_s": 0.089737202,
+      "speedup_vs_serial": 3.1020616774146763
+    },
+    {
+      "workers": 8,
+      "groups": 6,
+      "min_s": 0.054438263,
+      "median_s": 0.055213179,
+      "max_s": 0.058854043,
+      "speedup_vs_serial": 5.002011240830744
+    }
+  ],
+  "all_groups_actual_overlap_matches_requested": true,
+  "scope": "independent kernel recheck phase, not initial parallel proof checking, merging or full service throughput",
+  "native_cpu_and_highwater_note": "run_finite v5 native_cpu_seconds and RUSAGE_CHILDREN highwater are cumulative within serial controller; use wall and sampled own tree peak for individual-run comparisons; not per-process CPU attribution"
+}

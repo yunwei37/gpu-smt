@@ -50,6 +50,9 @@ REVIEW={
 "mathd_numbertheory_582":("not_closed","symbolic Nat modular sum","unbounded n; residue reduction needs new symbolic bridge"),
 }
 OVERRIDE={
+"minif2f-970":("proof_repair","asserts x<=1 or y<=1","(16,2) satisfies the original power equation but both exceed1; false auxiliary restriction"),
+"minif2f-2401":("proof_repair","asserts Fibonacci residues have period2","a1=a2=1 and the recurrence force a3=2, contradicting period2 at1; target mod4 statement may still be true"),
+
 "minif2f-3689":("proof_repair","filter omits5-divisibility","even-digit4-digit set has500 members, not100; false intermediate equality"),
 "minif2f-4997":("proof_repair","asserts each factor<=40","(667,3,1) satisfies original assumptions and violates asserted bound; Lean witness already retained"),
 "minif2f-5006":("proof_repair","asserts each factor<=31","(667,3,1) refutes auxiliary bound; original final goal remains true"),

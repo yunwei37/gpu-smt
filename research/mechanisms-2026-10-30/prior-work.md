@@ -72,3 +72,15 @@ Primary sources reopened:Coq STM author PDF;LeanTree2507.14722 authors/title/
 independent-state factorization;LeanGraphSearch2610.22339 retrieval graph
 and feedback-loop scope;lean-egg author repository. No competitor reproduced.
 The GraphSearch name denotes lemma retrieval here,not a measured execution DAG.
+
+## Complete reflected-grid extension
+
+Step021 now checks the original mathd_numbertheory_541 statement with a
+proved row-division/completeness bridge and an untrusted batch payload. It is
+a specialized verified-reflection construction, not a new general extraction
+compiler. Measured independent kernel rechecks reach5.00x at8tasks; no
+first-check/environment-merge service gain follows. The original-kernel TCB,
+changed-budget outcome mode, incorrect-prefix proof-repair cases and complete
+candidate coverage obligations are recorded in step021and coverage/README.md.
+This narrows the plausible systems claim; generic reflection and futures
+remain prior art.

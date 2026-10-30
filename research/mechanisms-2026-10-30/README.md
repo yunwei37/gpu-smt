@@ -27,7 +27,9 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
 - [Local dependency model](step-009-report.md):independent/coupled controls
   separated; complete DAG and merge semantics still unknown.
 - [Ordinary-kernel certificate](step-003-report.md):digits answer100 passes;
-  [grid samples](step-004-report.md) are estimates,not full4million-cell execution.
+  [grid samples](step-004-report.md) are partial; the new
+  [reflected grid](step-019-report.md) proves the complete grid by a row-division
+  certificate. It does not execute4million Boolean reductions inside the kernel.
 - [Memory/core conclusions](memory-budget-conclusion.md):four budgets;full
   result coverage changes retry-model costs; no calibrated COW speedup claim.
 - [Hot tactics](hot-tactics.md) and [prior work](prior-work.md):actual loader
@@ -49,7 +51,9 @@ evidence first; preserve incomplete goal/dependency traces and distinguish
 structural opportunities from an executable dependency DAG and parallel speedup.
 3. Kernel-checked arithmetic extraction: structural decimal digits, an actual
 equivalence theorem and decide checks; no native_decide/trust bypass. Report
-compile/kernel costs and RSS separately. 4000000-grid estimates stay estimates.
+compile/kernel costs and RSS separately. Earlier4000000-cell linear projections stay estimates. The new complete
+row-certificate theorem uses an algorithmically compressed checker, not that
+projected dense computation.
 4. Per-core2/4/8/12GiB memory simulations reuse recorded candidate attempts and
 memory observations; missing latent peak/threshold response is censored, never
 an invented outcome. Compare fixed pool, destructive OOM and shared admission.
@@ -65,3 +69,15 @@ replace a profile-weighted native-code opportunity estimate; PMU remains denied.
 Migration approval preserves the Workspace/PVC. M uses at most 8 cores and 16 GiB within the four-line 40 GiB total. External child signals still fail with EACCES. See step-003-report.md for the full-import deadline failure; do not duplicate that live Lean process. Native-qualified software sampling points are now complete;see the current evidence above. See prior-work.md for the claim map.
 
 Step 003 completion: the maps process has retired; final digits certificate passes stock-kernel checking. See native/phobos-digits-certificate-v4 and hot-tactics.md. The previous whole-import run remains noncompliant with the 30-minute limit. Current finite runner loads a self-wall-exit library before imports; no signal-based watchdog is claimed.
+
+## Computation extraction extension
+
+[Individual coverage review](coverage/README.md): all126miniF2F operational failures
+and17returned EPFL budget observations reviewed. Two checked target families
+cover49source opportunities; actual unchanged-source replacement coverage remains
+unqualified. False auxiliary assertions are separate proof-repair cases.
+See [step020](step-020-report.md) and the original-source obligation table.
+
+[Full reflected grid](ReflectedGridCertificate.lean) checks row-completeness and
+proves the original mathd_numbertheory_541 theorem. Independent chunk kernel
+recheck timings and total pipeline cost are separate measurements; see step021.
