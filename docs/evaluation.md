@@ -769,3 +769,38 @@ Application verdict, compiler result and process exit must remain distinct.
 The paper adds only the existing-scope workload/setup fact and pinned citation.
 No competitor reproduction, runtime feature, new narrative or RQ change occurs.
 Primary-source details and completed static checks/build follow in tmp/build-and-evaluate/step-0184-20261030T113046+0000.
+
+
+## 2026-10-30 — completed prefixes do not qualify a full native comparison (step0185)
+
+Root directly parses M04aea15's three completed shard0 process outputs and
+terminal receipts:100unique sources/300returns, equal source snapshots and
+source order, all three process exits0/retired. For each linked-off and
+linked-on comparator all100error flags, raw diagnostic arrays and InfoTrees
+match stock, but33raw allocatedHeartbeatDelta values differ. Counter deltas
+range from-24019597to41(off) and-48100884to66(on). These are raw-counter
+differences, not33acceptance changes or proven budget flips. Their cause is
+not established by this audit. Exact four-control heartbeat equality does
+not qualify arbitrary cases; body-clock differences cannot be treated as
+pure observation overhead or a production speedup.
+
+Shard0 stock/off/on body wall sums729.881865/744.922177/742.865725s are inside
+separate822.189537/836.245556/834.054916s complete process clocks. Full200/600
+native comparison is pending, not inferred from this completed half. No
+production candidate acceptance policy or whole dependency DAG follows.
+
+Root also reparses W7e81ca8's frozen214record prefix:136EPFLreturns are53compiler
+passes/71ordinary errors/12budget interruptions. Their623.799202s process-cost
+sum is partitioned160.937229/303.183521/159.678453s. Budget cases account for
+25.5977%of this returned-prefix cost only. Eight selected EPFL requests have
+not returned, including the explicitly right-censored active invocation.
+No censor-adjusted population weighting or conclusion that budgets dominate
+or do not dominate full workloads is made. The seven wrong-declaration-labeled
+sources that compile do not reproduce the publisher's complete judge and are
+not counted as new false acceptances.
+
+The manuscript is unchanged:these pending/intermediate diagnostics remain
+provenance, rather than replacing complete evaluations. Three small earlier
+untracked root-owned CI/client-control snapshots are preserved verbatim with
+this step; their pending/historical fields are not relabeled as current proof.
+Detailed checks:tmp/build-and-evaluate/step-0185-20261030T113532+0000.

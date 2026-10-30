@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-10-30T11:35:32.951888+00:00",
+  "native_verifier_invocations": 0,
+  "M_shard0_complete_sources": 100,
+  "M_shard0_native_returns": 300,
+  "M_body_totals": {
+    "stock": {
+      "wall_s": 729.881865115,
+      "cpu_s": 729.68672939
+    },
+    "linked-off": {
+      "wall_s": 744.922177229,
+      "cpu_s": 744.726501778
+    },
+    "linked-on": {
+      "wall_s": 742.865724636,
+      "cpu_s": 742.650411976
+    }
+  },
+  "M_full200_complete": false,
+  "W_snapshot_rows": 214,
+  "W_EPFL_returned": 136,
+  "W_EPFL_selected": 144,
+  "W_EPFL_unreturned": 8,
+  "W_EPFL_returned_prefix_wall_s": 623.7992022261024,
+  "W_EPFL_status_costs": {
+    "compile_ok": {
+      "n": 53,
+      "wall_s": 160.93722893018275,
+      "returned_prefix_wall_share": 0.2579952464765247
+    },
+    "lean_error": {
+      "n": 71,
+      "wall_s": 303.18352068960667,
+      "returned_prefix_wall_share": 0.4860274261455607
+    },
+    "budget_exceeded": {
+      "n": 12,
+      "wall_s": 159.67845260631293,
+      "returned_prefix_wall_share": 0.25597732737791457
+    }
+  },
+  "W_wrong_declaration_compiler_ok_IDs": [
+    "epfl-25559",
+    "epfl-54203",
+    "epfl-29659",
+    "epfl-5007",
+    "epfl-49734",
+    "epfl-54215",
+    "epfl-37637"
+  ],
+  "limits": [
+    "Completed diagnostic shard0 only; full200/600 native comparisons pending.",
+    "Heartbeat differences are raw counters, not diagnostic/pass-set mismatches or demonstrated budget flips.",
+    "EPFL completed-prefix shares exclude all eight unreturned; no population weighting or time-tail conclusion.",
+    "Compiler pass is not the publisher expected-declaration/forbidden-proof judge; seven such differences are not new false acceptances.",
+    "No original or active capture modified."
+  ],
+  "root_elapsed_s": 0.1166221434250474,
+  "root_maxrss_kib": 89516
+}
+HB_DELTA_EXTREMA {'linked-off': (-24019597, 41), 'linked-on': (-48100884, 66)}
