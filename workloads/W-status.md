@@ -1,23 +1,28 @@
-# W branch current result
+# W branch current status
 
-W001 tree inventory pushed03d8f95; W002 complete OpenAI source/import scan
-pusheddaffefcc. W003 candidate/static coverage is ready: all68,932 EPFL
-evaluation candidates, all1,835 APRIL test mutations,18-entry pinned catalog,
-196-file LNSym scan and AutoVerus native-tail recomputation.
+W00103d8f95/W002daffefcc/W0033c6546b are pushed. Full source/candidate
+static tables remain under workloads/. Latest W ownership is workloads/ only.
 
-New scientific caution for root: AutoVerus top1.6% of3,566 direct candidates
-uses only3.315–3.399% of summed process elapsed per repetition. Lean73% cannot
-transfer here. EPFL evaluation excludes timeout/operational failures.
-Goedel V2 repository612JSONL rows all contain sorry; actual V2 candidate
-outputs are the19,177-row EPFL subset. OProofs has no failed-step/status field.
-Nemotron243,314 viewer rows are partial, not full raw-record count.
-See candidates/README.md, catalog.csv, docs/workloads-candidates.md andW003.
+W004 completed: conditional build CPU/wall/span/RSS/disk scenarios for8/24
+cores,default OAI target versus all163097sources,21strata/42probability
+targets plus purposeful stresses. Refined53-target closure has12785modules,
+252627947source bytes,146375decide-kernel forms and1285external imports.
+Naive full-root stress is explicitly deferred. Actual native time/RSS still
+unknown; models are not empirical forecasts.
 
-No native pilot/full build ran. Matching SDK/dependency environment absent
-from PATH;PVC about1.7GiB free; publisher flag-algebra26–43GB modules exceedW5GiB.
-Compiled axiom closure and per-cause native time remain unknown.
-Static processing stayed underW5GiB and noLean process ran.
-W made no Workspace placement/security/credential/runtime change; observed
-replacementPod isphobos-vt using samePVC. Other tracks' files untouched.
+AutoVerus audit refined: top1.6% cost only3.3–3.4%,but nonzero process exits
+still consume~95% aggregate process time.419rows/repetition have JSON
+success=true/exit1;17have exit101/no-verdict. Keep both axes. See
+representativeness.md and candidates/autoverus-outcome-time.csv.
 
-Additional Nemotron raw windows:202 complete rows/119 assistant messages; bounded3MiB,not population rates. Shared Git lock cleared without W removing locks or processes; normal publication retried. See W003 report for failure history.
+W005 source target-text pass has actually completed:5848files/all1354379
+kernel-form occurrences. Explicit annotation coverage881548,unresolved472831.
+625786within-file distinct annotation texts and489445global strings are NOT
+elaborated goal types or stock-cache miss counts.288files have textual
+duplicates; namespace/branch refinement is next before interpreting them.
+
+Same Workspace restarted during this turn; replacementPodmd5mq isReady,
+samePVC rw; actual capacity still64GiB/free~1.6GiB atcheck.
+No toolchain/cache installed; awaiting expansion-complete notification.
+W budget16GiB/8cores/one Lean process; all work so far static,<0.4GiB RSS.
+No placement/security/runtime setting changed byW. Goal remains open.

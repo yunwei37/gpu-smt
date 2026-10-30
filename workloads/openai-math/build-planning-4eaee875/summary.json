@@ -1,0 +1,28 @@
+{
+  "modules": 163097,
+  "source_bytes": 1785499363,
+  "unit_critical_path": 451,
+  "strata": 21,
+  "probability_targets": 42,
+  "purposeful_targets": 11,
+  "unique_target_modules": 53,
+  "sample_closure_modules": 132108,
+  "sample_closure_source_bytes": 1489149431,
+  "external_import_modules": 3276,
+  "size_cuts": [
+    4400,
+    15057,
+    80757
+  ],
+  "seed": 20261030,
+  "native_runs": 0,
+  "elapsed_s": 22.00519767589867,
+  "peak_rss_kib": 385152,
+  "limitations": [
+    "All time/RSS/artifact expansion assumptions uncalibrated.",
+    "External dependency DAG/build/cache costs excluded.",
+    "No hard bound on kernel reduction cost from source bytes.",
+    "Probability weights apply only to target costs, not closure modules or purposeful stresses.",
+    "No sample is certified to fit16GiB before native pilot."
+  ]
+}
