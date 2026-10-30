@@ -423,3 +423,31 @@ not verified candidates or per-proof native times. M's G10PMU probes are denied;
 the392shared-library-file census is not a native-execution fraction or evidence
 about PMU permissions onphobos. These initial artifacts do not settle the
 paper's mechanism. Root reads them but makes no edits to the branch-owned paths.
+
+
+## 2026-10-30 — root audit of completed M1149a59 evidence
+
+The root reads but does not edit M's1149a59mechanism results. The200-source
+stratification actually has50accepted/60rejected/50timeout/40resource-exhausted,
+200uniqueIDs,94priorprofiles and0freshLeanexecutions.290have/106<;>/5all_goals
+are structural top-level Syntax counts. Missing aligned mctx edges and node
+durations leave work/critical-path/average available parallelismunknown.
+The two usable completed-request atomic bounds do not settle parallelism.
+Paper records this coverage rather than a positive/negative1.3x conclusion.
+
+All12memory-model cells complete under M's frozen-demand assumptions.
+Budget-fit sizes7718/7766/7766/7808vary across the8/16/32/48GiB scenario budgets.
+These are offline model parameters,not new native budget acquisitions or a
+change to the current40GiBfour-lane allocation. All3014frozen accepted IDs
+survive in the selected subsets,which is not same-budget native verdict parity.
+Fixed-pool overcommit in every row invalidates its apparent compliant-baseline
+speed. Immediate/zero-cost kills omit10/49/38/48originalterminal labels;
+those are operational omissions,not reusable Lean rejections.
+Admission retains all selected frozen labels while conservatively reserving
+observed peaks. Censored/time-varying demand,shared-parent accounting and native
+retirement are not resolved;no COWdiscount orphysicalfrontier is inferred.
+Root numeric/status invariants pass. No M script is rerun or modified.
+
+The main thesis and four RQs are unchanged. These feasibility findings motivate
+continued native evidence,not adoption of a cross-proof mechanism or a new
+contribution before W/M evidence and the user's scientific decision.
