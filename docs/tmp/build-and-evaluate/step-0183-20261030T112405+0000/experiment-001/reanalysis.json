@@ -1,0 +1,208 @@
+{
+  "observed_utc": "2026-10-30T11:24:06.149982+00:00",
+  "native_invocations": 0,
+  "sources": 7808,
+  "warm_attempts": 7860,
+  "engine_attempts": 7850,
+  "warm_retry_transitions": [
+    {
+      "from": "resource_failure",
+      "to": "resource_failure",
+      "count": 41
+    },
+    {
+      "from": "resource_failure",
+      "to": "timeout_error",
+      "count": 11
+    }
+  ],
+  "engine_retry_transitions": [
+    {
+      "from": "preempted",
+      "to": "resource_exhausted",
+      "count": 41
+    },
+    {
+      "from": "preempted",
+      "to": "timeout",
+      "count": 1
+    }
+  ],
+  "warm_solo_timeout_ids": [
+    "minif2f-998",
+    "minif2f-1885",
+    "minif2f-4895",
+    "minif2f-5011",
+    "minif2f-5964",
+    "minif2f-7203",
+    "minif2f-7210",
+    "minif2f-7221",
+    "minif2f-7225",
+    "minif2f-7229",
+    "minif2f-7525"
+  ],
+  "first_four_warm_above3GiB": {
+    "time_ns": 1621694201446880,
+    "total_rss_bytes": 15131496448,
+    "repl_rss_bytes": [
+      3478355968,
+      3452882944,
+      3452137472,
+      3454156800
+    ],
+    "native_repl_count": 4,
+    "budget_bytes": 51539607552
+  },
+  "recomputed_matrix": [
+    {
+      "budget_GiB": 8.0,
+      "fit": 7718,
+      "excluded": 90,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 8681.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 8691.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 8731.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "budget_GiB": 16.0,
+      "fit": 7766,
+      "excluded": 42,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 21156.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 21204.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 21396.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "budget_GiB": 32.0,
+      "fit": 7766,
+      "excluded": 42,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 18423.31459139101,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 18456.314591391005,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 18588.314591391005,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "budget_GiB": 48.0,
+      "fit": 7808,
+      "excluded": 0,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 24832.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 24874.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 25042.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    }
+  ],
+  "root_elapsed_s": 0.5174278430640697,
+  "root_maxrss_kib": 167264
+}

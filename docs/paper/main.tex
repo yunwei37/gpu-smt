@@ -1139,8 +1139,12 @@ proof objects can affect the retained heap and remaining memory.
 An aggregate RSS interruption depends on allocation, retained/shared memory,
 peer history and sampling. The same target, tactic and global RSS cap do not
 supply a deterministic work-budget certificate or establish failure at every
-smaller budget. We therefore retain this focused cross-proof opportunity
-without enabling a resource-failure rejection cache.
+smaller budget. In the same 48\,GiB warm capture, 11 of the 52 concurrent
+resource failures become timeouts when retried alone; the other 41 remain
+resource failures. No retry in this set recovers acceptance. This observed
+change in operational classification also prevents treating the global RSS
+cap as a per-call deterministic work certificate. We retain the focused
+cross-proof opportunity without enabling a resource-failure rejection cache.
 
 A broader offline audit ranks the three largest observed-unsolved problems
 by composed physical-attempt work. Their 96 candidates consume 19,451.52 of
@@ -1168,6 +1172,24 @@ Hindsight admission preserves the frozen labels within the reservation model,
 but censored peaks, time-varying memory, retirement and shared-parent
 accounting prevent inferring a native throughput gain or an isolated COW
 benefit. No additional resource frontier is established by these simulations.
+
+A companion model retains every terminal label in each budget-fit subset by
+restarting preempted jobs alone after ordinary work drains. At 48\,GiB,
+its zero-cleanup completion proxy is 24,832.48 seconds, compared with
+9,759.43 seconds when interrupted labels are dropped. It uses 42 modeled
+preemptions; fixed-peak admission gives 23,163.71 seconds. At 8, 16 and
+32\,GiB, the full-coverage retry proxies are 8,681.98, 21,156.68 and
+18,423.31 seconds on their respective subsets. These are sensitivity models,
+not native runtimes or an online policy: the recorded physical demand already
+includes historical retries, a modeled restart charges that demand again,
+and results after restart are assumed to retain their frozen labels.
+Serialized cleanup sensitivities of one or five seconds per preemption are
+assumptions, not measured cancellation costs.
+
+The first retained snapshot with four warm REPLs each above 3\,GiB totals
+15,131,496,448 bytes for the owned tree (14.09\,GiB). This snapshot cannot fit
+an 8\,GiB aggregate point. It is not a global minimum warm footprint, a
+new startup benchmark or evidence of future candidate memory demands.
 
 \paragraph{Leader and shared-parent memory scopes.}
 A scope audit of the same prepared capture retains 7,808 leader

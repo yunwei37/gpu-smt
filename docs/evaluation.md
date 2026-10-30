@@ -711,3 +711,36 @@ incremental service benefit remain unresolved. No native benchmark or production
 is run, and the paper mainline stays unchanged. Source-only details remain in the root
 node because canonical background-related-work.md has foreign dirty work; it is not
 overwritten or staged.
+
+
+## 2026-10-30 — full-coverage memory retries and native outcome transitions (step0183)
+
+Root independently reopens the full original warm/engine records: 7,808 unique
+sources each, 7,860/7,850 physical attempts, and the warm sampled memory trace.
+All 52 warm retry sources begin nonexclusive and finish exclusive. Of these,
+41 remain resource_failure and 11 become timeout_error. Engine transitions are
+41 preempted-to-resource_exhausted and one preempted-to-timeout. No accepted
+proof is recovered by these retry sets. These are observed operational
+classifications at one total48GiB point, not equivalent failures of a complete
+goal/strategy state or a monotone per-call work certificate.
+
+Root also recomputes all12 M retry sensitivity cells from the original engine
+records and the read-only M function; fit-subset coverage, accepted-label
+assumptions, preemption counts and clocks agree. No M source/output is changed.
+At48GiB the zero-cleanup, full-coverage proxy is24832.4775s, rather than the
+9759.43s drop-result proxy; hindsight admission is23163.71s. At8/16/32GiB,
+full-coverage retry proxies are8681.98294/21156.68190/18423.31459s for the
+respective7718/7766/7766fit subsets. All3014 frozen accepted labels remain by
+assumption. Peak demand is flat/hindsight, physical work already includes
+historical retries, and cleanup0/1/5s is assumed. These are not native throughput
+or same-semantics results under changed budgets.
+
+The first four-warm snapshot above3GiB per REPL has total15131496448bytes;
+root reproduces all four resident values and its original timestamp. An8GiB
+point cannot retain that snapshot, but a minimum warm footprint or marginal
+COW saving does not follow. This is separate from leader wait4 or independent
+peak subtraction.
+
+The manuscript updates only the corresponding Evaluation method/limitations.
+Scientific framing and all four RQs remain fixed. Detailed source checks and
+actual build receipt are in tmp/build-and-evaluate/step-0183-20261030T112405+0000.

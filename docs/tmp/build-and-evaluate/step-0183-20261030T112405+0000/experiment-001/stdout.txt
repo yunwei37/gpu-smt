@@ -1,0 +1,58 @@
+{
+  "observed_utc": "2026-10-30T11:24:06.149982+00:00",
+  "native_invocations": 0,
+  "sources": 7808,
+  "warm_attempts": 7860,
+  "engine_attempts": 7850,
+  "warm_retry_transitions": [
+    {
+      "from": "resource_failure",
+      "to": "resource_failure",
+      "count": 41
+    },
+    {
+      "from": "resource_failure",
+      "to": "timeout_error",
+      "count": 11
+    }
+  ],
+  "engine_retry_transitions": [
+    {
+      "from": "preempted",
+      "to": "resource_exhausted",
+      "count": 41
+    },
+    {
+      "from": "preempted",
+      "to": "timeout",
+      "count": 1
+    }
+  ],
+  "warm_solo_timeout_ids": [
+    "minif2f-998",
+    "minif2f-1885",
+    "minif2f-4895",
+    "minif2f-5011",
+    "minif2f-5964",
+    "minif2f-7203",
+    "minif2f-7210",
+    "minif2f-7221",
+    "minif2f-7225",
+    "minif2f-7229",
+    "minif2f-7525"
+  ],
+  "first_four_warm_above3GiB": {
+    "time_ns": 1621694201446880,
+    "total_rss_bytes": 15131496448,
+    "repl_rss_bytes": [
+      3478355968,
+      3452882944,
+      3452137472,
+      3454156800
+    ],
+    "native_repl_count": 4,
+    "budget_bytes": 51539607552
+  },
+  "root_elapsed_s": 0.5174278430640697,
+  "root_maxrss_kib": 167264
+}
