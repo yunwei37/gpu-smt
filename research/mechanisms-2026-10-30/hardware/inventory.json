@@ -1,0 +1,1121 @@
+{
+  "kernel": "Linux-7.0.0-31-generic-x86_64-with-glibc2.41",
+  "cpu_model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+  "eligible_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "perf_executable": null,
+  "perf_event_paranoid": "4",
+  "perf_event_open": [
+    {
+      "event": "hardware-cycles",
+      "fd": -1,
+      "errno": 13
+    },
+    {
+      "event": "software-cpu-clock",
+      "fd": -1,
+      "errno": 13
+    }
+  ],
+  "mathlib_olean_modules": 4360,
+  "shared_library_files": 392,
+  "shared_library_bytes": 31667520,
+  "tactic_modules": 217,
+  "tactic_modules_with_matching_so": 124,
+  "module_rows": [
+    {
+      "module": "Mathlib.Tactic.Abel",
+      "olean_bytes": 2440728,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.AdaptationNote",
+      "olean_bytes": 190528,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ApplyAt",
+      "olean_bytes": 205208,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ApplyCongr",
+      "olean_bytes": 269808,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ApplyFun",
+      "olean_bytes": 965536,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ApplyWith",
+      "olean_bytes": 79016,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ArithMult.Init",
+      "olean_bytes": 45712,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ArithMult",
+      "olean_bytes": 227736,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Attr.Core",
+      "olean_bytes": 33712,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Attr.Register",
+      "olean_bytes": 233272,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Basic",
+      "olean_bytes": 570784,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ByContra",
+      "olean_bytes": 256904,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.CC.Addition",
+      "olean_bytes": 10833440,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CC.Datatypes",
+      "olean_bytes": 1796096,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CC.Lemmas",
+      "olean_bytes": 71288,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CC",
+      "olean_bytes": 519200,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms.Core",
+      "olean_bytes": 2554192,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.CancelDenoms",
+      "olean_bytes": 25056,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Cases",
+      "olean_bytes": 582752,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.CasesM",
+      "olean_bytes": 550720,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.BicategoryCoherence",
+      "olean_bytes": 1033872,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.Coherence",
+      "olean_bytes": 1332952,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.Elementwise",
+      "olean_bytes": 857752,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.MonoidalComp",
+      "olean_bytes": 318984,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.Reassoc",
+      "olean_bytes": 272160,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.CategoryTheory.Slice",
+      "olean_bytes": 307248,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Change",
+      "olean_bytes": 187328,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Check",
+      "olean_bytes": 220648,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Choose",
+      "olean_bytes": 840360,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Clean",
+      "olean_bytes": 379896,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ClearExcept",
+      "olean_bytes": 160448,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ClearExclamation",
+      "olean_bytes": 89896,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Clear_",
+      "olean_bytes": 152408,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Coe",
+      "olean_bytes": 281272,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Common",
+      "olean_bytes": 35600,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ComputeDegree",
+      "olean_bytes": 3711512,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Congr!",
+      "olean_bytes": 2328240,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Congrm",
+      "olean_bytes": 198280,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Constructor",
+      "olean_bytes": 74672,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Continuity.Init",
+      "olean_bytes": 45704,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Continuity",
+      "olean_bytes": 155544,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Contrapose",
+      "olean_bytes": 175824,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Conv",
+      "olean_bytes": 567960,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Convert",
+      "olean_bytes": 456984,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Core",
+      "olean_bytes": 658680,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.DefEqTransformations",
+      "olean_bytes": 952752,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.DeriveFintype",
+      "olean_bytes": 833360,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.DeriveToExpr",
+      "olean_bytes": 1245160,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.DeriveTraversable",
+      "olean_bytes": 2314440,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Eqns",
+      "olean_bytes": 125000,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Eval",
+      "olean_bytes": 68608,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Existsi",
+      "olean_bytes": 73920,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Explode.Datatypes",
+      "olean_bytes": 225744,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Explode.Pretty",
+      "olean_bytes": 191824,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Explode",
+      "olean_bytes": 642040,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ExtendDoc",
+      "olean_bytes": 131016,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ExtractGoal",
+      "olean_bytes": 337056,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ExtractLets",
+      "olean_bytes": 398808,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.FBinop",
+      "olean_bytes": 1136328,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.FailIfNoProgress",
+      "olean_bytes": 306544,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.FieldSimp",
+      "olean_bytes": 650944,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FinCases",
+      "olean_bytes": 380976,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Find",
+      "olean_bytes": 392592,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.AEMeasurable",
+      "olean_bytes": 39296,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Attr",
+      "olean_bytes": 144424,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.ContDiff",
+      "olean_bytes": 102320,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Core",
+      "olean_bytes": 3223144,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Decl",
+      "olean_bytes": 594368,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Differentiable",
+      "olean_bytes": 70608,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Elab",
+      "olean_bytes": 266624,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.FunctionData",
+      "olean_bytes": 727576,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Measurable",
+      "olean_bytes": 37720,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Mor",
+      "olean_bytes": 411608,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.RefinedDiscrTree",
+      "olean_bytes": 5410008,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.StateList",
+      "olean_bytes": 447600,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Theorems",
+      "olean_bytes": 1747088,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.ToBatteries",
+      "olean_bytes": 342368,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp.Types",
+      "olean_bytes": 516328,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.FunProp",
+      "olean_bytes": 24232,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.GCongr.Core",
+      "olean_bytes": 2135784,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.GCongr.ForwardAttr",
+      "olean_bytes": 211656,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.GCongr",
+      "olean_bytes": 50600,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Generalize",
+      "olean_bytes": 150936,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.GeneralizeProofs",
+      "olean_bytes": 2327728,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Group",
+      "olean_bytes": 475816,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.GuardGoalNums",
+      "olean_bytes": 115144,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.GuardHypNums",
+      "olean_bytes": 114728,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Have",
+      "olean_bytes": 357056,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.HaveI",
+      "olean_bytes": 139600,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.HelpCmd",
+      "olean_bytes": 1596552,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.HigherOrder",
+      "olean_bytes": 601600,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Hint",
+      "olean_bytes": 541976,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.InferParam",
+      "olean_bytes": 207536,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Inhabit",
+      "olean_bytes": 162448,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.IntervalCases",
+      "olean_bytes": 1606608,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.IrreducibleDef",
+      "olean_bytes": 971992,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Lemma",
+      "olean_bytes": 129432,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Lift",
+      "olean_bytes": 709392,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.LiftLets",
+      "olean_bytes": 473680,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Datatypes",
+      "olean_bytes": 1129288,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Frontend",
+      "olean_bytes": 1101136,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Lemmas",
+      "olean_bytes": 94048,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Oracle.FourierMotzkin",
+      "olean_bytes": 682512,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Oracle.SimplexAlgorithm",
+      "olean_bytes": 743784,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Parsing",
+      "olean_bytes": 928392,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Preprocessing",
+      "olean_bytes": 2625392,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.SimplexAlgorithm.Datatypes",
+      "olean_bytes": 229880,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.SimplexAlgorithm.Gauss",
+      "olean_bytes": 263072,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.SimplexAlgorithm.PositiveVector",
+      "olean_bytes": 149000,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.SimplexAlgorithm.SimplexAlgorithm",
+      "olean_bytes": 450144,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith.Verification",
+      "olean_bytes": 668168,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith",
+      "olean_bytes": 25928,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.LinearCombination",
+      "olean_bytes": 855840,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Linter.GlobalAttributeIn",
+      "olean_bytes": 236680,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linter.HashCommandLinter",
+      "olean_bytes": 216864,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linter.Lint",
+      "olean_bytes": 572840,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Linter",
+      "olean_bytes": 16904,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Measurability.Init",
+      "olean_bytes": 45704,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Measurability",
+      "olean_bytes": 177672,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.MkIffOfInductiveProp",
+      "olean_bytes": 1494008,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ModCases",
+      "olean_bytes": 556992,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Monotonicity.Attr",
+      "olean_bytes": 58088,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Monotonicity.Basic",
+      "olean_bytes": 224568,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Monotonicity.Lemmas",
+      "olean_bytes": 30424,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Monotonicity",
+      "olean_bytes": 24808,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.MoveAdd",
+      "olean_bytes": 1189832,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NoncommRing",
+      "olean_bytes": 347688,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Nontriviality.Core",
+      "olean_bytes": 507840,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Nontriviality",
+      "olean_bytes": 22792,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Basic",
+      "olean_bytes": 3870312,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.BigOperators",
+      "olean_bytes": 7425192,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Core",
+      "olean_bytes": 1688616,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.DivMod",
+      "olean_bytes": 814344,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Eq",
+      "olean_bytes": 734616,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.GCD",
+      "olean_bytes": 811560,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Ineq",
+      "olean_bytes": 1157872,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Inv",
+      "olean_bytes": 1080464,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.IsCoprime",
+      "olean_bytes": 313792,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.LegendreSymbol",
+      "olean_bytes": 952816,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.NatFib",
+      "olean_bytes": 348512,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.NatSqrt",
+      "olean_bytes": 226520,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.OfScientific",
+      "olean_bytes": 548008,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Pow",
+      "olean_bytes": 1171704,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Prime",
+      "olean_bytes": 686504,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum.Result",
+      "olean_bytes": 1519184,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NormNum",
+      "olean_bytes": 26016,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.NthRewrite",
+      "olean_bytes": 230824,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Observe",
+      "olean_bytes": 370472,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.PPWithUniv",
+      "olean_bytes": 167416,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Peel",
+      "olean_bytes": 990888,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Polyrith",
+      "olean_bytes": 4244672,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity.Basic",
+      "olean_bytes": 4209384,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity.Core",
+      "olean_bytes": 2582512,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity.Finset",
+      "olean_bytes": 379840,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity",
+      "olean_bytes": 25440,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ProdAssoc",
+      "olean_bytes": 965224,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ProjectionNotation",
+      "olean_bytes": 446440,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Propose",
+      "olean_bytes": 745256,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ProxyType",
+      "olean_bytes": 1362680,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.PushNeg",
+      "olean_bytes": 2289360,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Qify",
+      "olean_bytes": 216288,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.RSuffices",
+      "olean_bytes": 141600,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Recall",
+      "olean_bytes": 408648,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Recover",
+      "olean_bytes": 331992,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ReduceModChar.Ext",
+      "olean_bytes": 25136,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.ReduceModChar",
+      "olean_bytes": 1150816,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Relation.Rfl",
+      "olean_bytes": 132512,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Relation.Symm",
+      "olean_bytes": 126080,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Relation.Trans",
+      "olean_bytes": 1416944,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Rename",
+      "olean_bytes": 215240,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.RenameBVar",
+      "olean_bytes": 159680,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Replace",
+      "olean_bytes": 149672,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.RewriteSearch",
+      "olean_bytes": 2688840,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Rify",
+      "olean_bytes": 223112,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.Basic",
+      "olean_bytes": 10838952,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.PNat",
+      "olean_bytes": 53568,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Ring.RingNF",
+      "olean_bytes": 1576064,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Ring",
+      "olean_bytes": 25120,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Sat.FromLRAT",
+      "olean_bytes": 1432648,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Says",
+      "olean_bytes": 394192,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ScopedNS",
+      "olean_bytes": 798480,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Set",
+      "olean_bytes": 402696,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SetLike",
+      "olean_bytes": 39120,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.SimpIntro",
+      "olean_bytes": 426592,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SimpRw",
+      "olean_bytes": 398984,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Simps.Basic",
+      "olean_bytes": 4030472,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Simps.NotationClass",
+      "olean_bytes": 427680,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SlimCheck",
+      "olean_bytes": 383888,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.SplitIfs",
+      "olean_bytes": 542184,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Spread",
+      "olean_bytes": 410760,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Substs",
+      "olean_bytes": 92616,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SuccessIfFailWithMsg",
+      "olean_bytes": 198648,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SudoSetOption",
+      "olean_bytes": 365728,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.SuppressCompilation",
+      "olean_bytes": 702624,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.SwapVar",
+      "olean_bytes": 207944,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.TFAE",
+      "olean_bytes": 1237848,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Tauto",
+      "olean_bytes": 1431144,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.TermCongr",
+      "olean_bytes": 2044160,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ToAdditive",
+      "olean_bytes": 4391608,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ToExpr",
+      "olean_bytes": 502816,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.ToLevel",
+      "olean_bytes": 38560,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Trace",
+      "olean_bytes": 107128,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.TryThis",
+      "olean_bytes": 76592,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.TypeCheck",
+      "olean_bytes": 87296,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.TypeStar",
+      "olean_bytes": 60312,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.UnsetOption",
+      "olean_bytes": 104640,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Use",
+      "olean_bytes": 1006096,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Variable",
+      "olean_bytes": 1144880,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.WLOG",
+      "olean_bytes": 451328,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Calc",
+      "olean_bytes": 839464,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.CommDiag",
+      "olean_bytes": 393880,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Congrm",
+      "olean_bytes": 281960,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Conv",
+      "olean_bytes": 642304,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Gcongr",
+      "olean_bytes": 186096,
+      "matching_flat_shared_library_present": false
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.SelectInsertParamsClass",
+      "olean_bytes": 232272,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.SelectPanelUtils",
+      "olean_bytes": 662856,
+      "matching_flat_shared_library_present": true
+    },
+    {
+      "module": "Mathlib.Tactic.Zify",
+      "olean_bytes": 339112,
+      "matching_flat_shared_library_present": true
+    }
+  ],
+  "important_scope": "Presence is not proof of loading, native execution or cycle cost. No permissions changed."
+}
