@@ -42,13 +42,23 @@ static size_t name_text(lean_object *n,char *buf,size_t cap){
  int len=snprintf(buf+used,cap-used,"%s%s",used?".":"",piece);
  return len<0?used:used+(size_t)len>=cap?cap-1:used+(size_t)len;
 }
-LEAN_EXPORT lean_object *lean_profileit(lean_object *cat,lean_object *opts,lean_object *fn,lean_object *decl){
+#ifdef M_PROFILE_STATIC_WRAP
+extern lean_object *__real_lean_profileit(lean_object*,lean_object*,lean_object*,lean_object*);
+#define M_PROFILE_NAME __wrap_lean_profileit
+#else
+#define M_PROFILE_NAME lean_profileit
+#endif
+LEAN_EXPORT lean_object *M_PROFILE_NAME(lean_object *cat,lean_object *opts,lean_object *fn,lean_object *decl){
+#ifdef M_PROFILE_STATIC_WRAP
+ ProfileFn original=__real_lean_profileit;
+#else
  static ProfileFn original;
  if(!original){original=(ProfileFn)dlsym(RTLD_NEXT,"lean_profileit");if(!original)_exit(133);}
+#endif
  if(!recording||strcmp(lean_string_cstr(cat),"tactic execution"))
   return original(cat,opts,fn,decl);
  if(depth>=4096)_exit(134);
- char name[2048];name_text(decl,name,sizeof(name));
+ static _Thread_local char name[2048];name_text(decl,name,sizeof(name));
  uint64_t id=++serial,parent=depth?stack[depth-1]:0;
  stack[depth++]=id;
  uint64_t wall=ns(CLOCK_MONOTONIC),cpu=ns(CLOCK_THREAD_CPUTIME_ID);
@@ -57,7 +67,7 @@ LEAN_EXPORT lean_object *lean_profileit(lean_object *cat,lean_object *opts,lean_
  fprintf(events,",\"wall_ns\":%llu,\"cpu_ns\":%llu}\n",(unsigned long long)wall,(unsigned long long)cpu);
  lean_object *result=original(cat,opts,fn,decl);
  wall=ns(CLOCK_MONOTONIC);cpu=ns(CLOCK_THREAD_CPUTIME_ID);
- fprintf(events,"{\"event\":\"exit\",\"id\":%llu,\"wall_ns\":%llu,\"cpu_ns\":%llu}\n",
-  (unsigned long long)id,(unsigned long long)wall,(unsigned long long)cpu);
+ fprintf(events,"{\"event\":\"exit\",\"id\":%llu,\"wall_ns\":%llu,\"cpu_ns\":%llu,\"return_tag\":%u}\n",
+  (unsigned long long)id,(unsigned long long)wall,(unsigned long long)cpu,(unsigned)(lean_is_scalar(result)?UINT32_MAX:lean_obj_tag(result)));
  --depth;return result;
 }

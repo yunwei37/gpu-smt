@@ -30,7 +30,7 @@ static void sample_pc(int signal_number,siginfo_t *info,void *context) {
 __attribute__((constructor)) static void start_capture(void) {
  const char *wall=getenv("M_WALL_MILLISECONDS");
  if(wall) {
-  long ms=strtol(wall,NULL,10);if(ms<=0||ms>1500000)_exit(125);
+  long ms=0;for(const char *q=wall;*q;q++){if(*q<'0'||*q>'9'||ms>150000)_exit(125);ms=ms*10+(*q-'0');}if(ms<=0||ms>1500000)_exit(125);
   struct sigaction timeout={0};timeout.sa_handler=wall_exit;
   sigemptyset(&timeout.sa_mask);if(sigaction(SIGALRM,&timeout,NULL))_exit(126);
   struct itimerval timer={{0,0},{ms/1000,(ms%1000)*1000}};

@@ -54,6 +54,55 @@ partial def goalDeps (ctx : MetavarContext) (todo : List MVarId)
     goalDeps ctx (goals ++ pending ++ gs) (g :: seen)
       (("e:" ++ g.name.toString) :: more ++ deps)
 
+partial def levelVars (l : Level) : List LMVarId :=
+  match l with
+  | .mvar id => [id]
+  | .succ l => levelVars l
+  | .max a b | .imax a b => levelVars a ++ levelVars b
+  | _ => []
+
+partial def exprLevelVars (e : Expr) : List LMVarId :=
+  match e with
+  | .sort l => levelVars l
+  | .const _ ls => ls.bind levelVars
+  | .app a b => exprLevelVars a ++ exprLevelVars b
+  | .lam _ t b _ | .forallE _ t b _ => exprLevelVars t ++ exprLevelVars b
+  | .letE _ t v b _ => exprLevelVars t ++ exprLevelVars v ++ exprLevelVars b
+  | .mdata _ e | .proj _ _ e => exprLevelVars e
+  | _ => []
+
+partial def liveLevels (ctx : MetavarContext) (todo : List LMVarId)
+    (seen : List LMVarId := []) : List String :=
+  match todo with
+  | [] => []
+  | u :: us =>
+    if seen.contains u then liveLevels ctx us seen else
+    match ctx.lAssignment.find? u with
+    | some l => liveLevels ctx (levelVars l ++ us) (u :: seen)
+    | none => ("u:" ++ u.name.toString) :: liveLevels ctx us (u :: seen)
+
+partial def liveGoalDeps (ctx : MetavarContext) (todo : List MVarId)
+    (seen : List MVarId := []) (live : List String := [])
+    (levels : List LMVarId := []) : List String :=
+  match todo with
+  | [] => (live ++ liveLevels ctx levels).eraseDups
+  | g :: gs =>
+    if seen.contains g then liveGoalDeps ctx gs seen live levels else
+    let decl := ctx.decls.find? g
+    let expressions := match decl with
+      | none => []
+      | some d => d.type :: d.lctx.foldl
+          (fun es ld => ld.type :: (ld.value?.toList ++ es)) []
+    let assignment := ctx.eAssignment.find? g
+    let expressions := assignment.toList ++ expressions
+    let newLive := if assignment.isNone then ("e:" ++ g.name.toString) :: live else live
+    let pending := (ctx.dAssignment.find? g).toList.map (·.mvarIdPending)
+    liveGoalDeps ctx (expressions.bind exprMVars ++ pending ++ gs) (g :: seen)
+      newLive (expressions.bind exprLevelVars ++ levels)
+
+def liveGoalJson (ctx : MetavarContext) (gs : List MVarId) : Json :=
+  toJson (gs.map fun g => (g.name.toString, liveGoalDeps ctx [g]))
+
 def goalJson (ctx : MetavarContext) (gs : List MVarId) : Json :=
   toJson (gs.map fun g => (g.name.toString, goalDeps ctx [g]))
 
@@ -67,7 +116,9 @@ partial def infoJson : InfoTree → Json
          ("startByte", toJson (i.stx.getPos?.map (·.byteIdx))),
          ("stopByte", toJson (i.stx.getTailPos?.map (·.byteIdx))),
          ("before", goalJson i.mctxBefore i.goalsBefore),
-         ("after", goalJson i.mctxAfter i.goalsAfter)]
+         ("after", goalJson i.mctxAfter i.goalsAfter),
+         ("liveBefore", liveGoalJson i.mctxBefore i.goalsBefore),
+         ("liveAfter", liveGoalJson i.mctxAfter i.goalsAfter)]
       | _ => []
     Json.mkObj (fields ++ [("children", toJson (children.toArray.map infoJson))])
 
@@ -85,7 +136,7 @@ partial def traceJson : MessageData → Array Json
 
 elab "measure_dag " path:str : command => do
   let env ← getEnv
-  let content ← IO.FS.readFile path.getString
+  let content ← IO.FS.readFile ((← IO.getEnv "M_DAG_INPUT").getD path.getString)
   let json ← match Json.parse content with
     | .ok j => pure j
     | .error e => throwError "{e}"
