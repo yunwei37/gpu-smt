@@ -1,0 +1,5 @@
+# M step020 — individual computation-extraction opportunity audit
+
+自审,2026-10-30. EXPERIMENT: reused complete same-point7808inputs and all126operational failures, plus W12original/5later EPFLbudget returns; no new full collection. WRITE: coverage/README.md, individual CSV/source reviews, reproducible analysis, numeric Lean witnesses. REVIEW:49target-family opportunities are backed by2checked family theorems, not49qualified transformed candidates;37more static opportunities need proof bridges. False-prefix cases excluded; original-source unchanged-verdict coverage0qualified, actual savings unknown. Candidate worker-attempt exposure is not batch wall speedup. EPFL has3closed opportunities/12original budget returns,5.81%of their own cost; new7point remains separate.
+
+The new witness control initially failed to reduce Nat.digits; exact failure preserved. A forward version used the already-proved fuel/digits equivalence and checked all4witness theorems, exit0,no sorryAx,1.120s, sampled own-tree peak1,008,443,392B. Original bound witness not redundantly rerun. Neither existing nor new resource/timeout labels prove a goal false.

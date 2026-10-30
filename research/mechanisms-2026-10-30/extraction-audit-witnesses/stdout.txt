@@ -1,0 +1,14 @@
+/workspaces/repository/research/mechanisms-2026-10-30/ExtractionAuditWitnesses.lean:5:75: error: tactic 'decide' failed for proposition
+  Nat.digits 10 2002 = [2, 0, 0, 2] ∧ 2002 % 5 ≠ 0
+since its 'Decidable' instance reduced to
+  match instDecidableEqList (Nat.digits 10 2002) [2, 0, 0, 2] with
+  | isTrue hp =>
+    match instDecidableNot with
+    | isTrue hq => isTrue ⋯
+    | isFalse hq => isFalse ⋯
+  | isFalse hp => isFalse ⋯
+rather than to the 'isTrue' constructor.
+'ExtractionAuditWitnesses.missing_five' depends on axioms: [propext, Quot.sound, Classical.choice, sorryAx]
+'ExtractionAuditWitnesses.factorial_product' does not depend on any axioms
+'ExtractionAuditWitnesses.divisor_not_square' does not depend on any axioms
+'ExtractionAuditWitnesses.square_divisor_outside_claimed_ranges' does not depend on any axioms
