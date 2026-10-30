@@ -87,3 +87,9 @@ recheck timings and total pipeline cost are separate measurements; see step021.
 [openai/math seven-type check](openai-kernel-sample/README.md): both original and certificate plain sources7/7 accepted; the split-row certificate is slower (13.318s vs23.937s summed whole-source wall;2.328s vs5.758s additional kernel work).
 This is a negative generalization result for the tested Int/list family, not a global1.35m-call estimate. Raw heartbeat unit mistakes and the later60s typed-census censoring are retained separately.
 [Remaining37 bridge effort](coverage/remaining37-bridge-estimate.md) is an estimate, not completed proof coverage.
+
+[Third checked bridge and full32-source pair](power-family-result/README.md):
+128point cube/fourth checker with proved sharp bounds;2whole-source repairs,
+1/8selected historical timeout recovered. Latest corpus acceptance overlay145/244
+tasks (59.4262%),33new accepted candidates total. Shape coverage57/126must not be
+confused with actual32/126source recovery.
