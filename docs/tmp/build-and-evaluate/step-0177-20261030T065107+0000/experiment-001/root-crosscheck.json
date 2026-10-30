@@ -1,0 +1,131 @@
+{
+  "W_commit": "3c6546b",
+  "M_commit": "f387566",
+  "native_executions_by_root": 0,
+  "independent_autoverus_receipt_recalculation": [
+    {
+      "repeat": 0,
+      "rows": 3566,
+      "tail_rows": 58,
+      "process_wall_sum_s": 639.2380278361416,
+      "tail_process_wall_s": 21.726932300014596,
+      "tail_share": 0.033988798153266234,
+      "returncodes": {
+        "0": 190,
+        "1": 3359,
+        "101": 17
+      }
+    },
+    {
+      "repeat": 1,
+      "rows": 3566,
+      "tail_rows": 58,
+      "process_wall_sum_s": 631.2145905109974,
+      "tail_process_wall_s": 21.071486221011583,
+      "tail_share": 0.03338244479417569,
+      "returncodes": {
+        "0": 190,
+        "1": 3359,
+        "101": 17
+      }
+    },
+    {
+      "repeat": 2,
+      "rows": 3566,
+      "tail_rows": 58,
+      "process_wall_sum_s": 632.6072523148923,
+      "tail_process_wall_s": 20.970326807000674,
+      "tail_share": 0.03314904584205161,
+      "returncodes": {
+        "0": 190,
+        "1": 3359,
+        "101": 17
+      }
+    }
+  ],
+  "EPFL_six_group_conservation": {
+    "programs": 68932,
+    "valid": 28145,
+    "invalid": 40787,
+    "failed": 39473,
+    "wrong_declaration": 1314
+  },
+  "EPFL_lexical_unavailable": 2,
+  "APRIL_test_rows": 1835,
+  "APRIL_native_runs": 0,
+  "LNSym_source_files": 196,
+  "LNSym_direct_tokens": {
+    "decide": 216,
+    "native_decide": 153,
+    "bv_decide": 62,
+    "ofReduceBool": 1,
+    "simp": 1411,
+    "simp_all": 289,
+    "norm_num": 0,
+    "omega": 344,
+    "grind": 0,
+    "linarith": 0,
+    "nlinarith": 0,
+    "interval_cases": 0,
+    "aesop": 0,
+    "rfl": 165,
+    "decide_plus_kernel": 0
+  },
+  "M_certificate": {
+    "version_exits": [
+      {
+        "version": 1,
+        "exit": 1
+      },
+      {
+        "version": 2,
+        "exit": 1
+      },
+      {
+        "version": 3,
+        "exit": 1
+      },
+      {
+        "version": 4,
+        "exit": 0
+      }
+    ],
+    "wall_s": 30.581098513677716,
+    "cpu_s": 30.546728,
+    "leader_wait4_peak_bytes": 2369380352,
+    "sampled_own_tree_peak_bytes": 2382487552,
+    "warm_extra_declaration_recheck_ns": 8557221814,
+    "root_independent_count": 100,
+    "root_independent_sum": 544000,
+    "numeric_check_is_not_a_proof": true,
+    "full_cost_includes_extra_recheck": true,
+    "ordinary_kernel_success": "native v4 retained output",
+    "bridge_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "new_trust_axioms_observed": false
+  },
+  "M_leader_table_self_review": {
+    "prepared_attempt_rows": 7808,
+    "ordinary_rows": 7682,
+    "ordinary_median_leader_RSS_bytes": 470599680.0,
+    "ordinary_p99_leader_RSS_bytes": 977809408,
+    "separately_observed_parent_max_bytes": 3614543872,
+    "aggregate_memory_discount_inferred": false,
+    "quantile_convention": "M floor((n-1)*.99), checked at n=7682; no small-n percentile claim"
+  },
+  "scope": [
+    "Derived-table consistency is self-review, not a second EPFL full raw scan.",
+    "AutoVerus uses each repeat own process-wall sum; not service wall or generation time.",
+    "Native certificate changes proof representation and is not engine throughput or original-candidate parity.",
+    "Leader RSS omits descendants/parent; separate maxima cannot establish a simultaneous aggregate frontier."
+  ],
+  "root_affinity": [
+    0,
+    1
+  ],
+  "elapsed_s": 0.9515629336237907,
+  "process_peak_rss_kib": 414832
+}

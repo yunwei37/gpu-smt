@@ -482,3 +482,54 @@ bound. The title, abstract, introduction, design, implementation, and all four R
 descriptions remain unchanged. W and M continue their candidate, native-cost,
 and representativeness work in their owned paths; the scientific mainline still
 awaits that evidence and the user's decision.
+
+## 2026-10-30 — integrate W003 and M003 without selecting a new thesis
+
+Root checks completed commits W 3c6546b and M f387566. It does not edit or rerun
+their implementations. A separate script recalculates the three AutoVerus
+direct tails from all retained source receipts: the slowest 58 of 3,566 consume
+3.39888%, 3.33824%, and 3.31490% of their respective process-wall sums.
+Each pass has 190 exit-zero, 3,359 exit-one, 17 exit-101, and no capture timeout.
+This is a concrete counterexample to transferring the large Lean failure tail
+to this source-replay point, not a CPU hardware comparison or whole-service
+speedup bound. No cause is assigned to exit 101.
+
+The six EPFL derived groups conserve all 68,932 labels: 28,145 valid and
+40,787 invalid, including 1,314 wrong declarations. Publisher policy excludes
+timeouts and infrastructure/precheck failures and does not release native
+costs. This cannot measure an uncensored expensive-failure tail. APRIL's
+1,835 test mutations and 20 budget-text records are diagnostic coverage, not
+natural arrival or causal-cost observations. LNSym's 196 files contain 62
+bv_decide, 153 native_decide and one direct ofReduceBool token; native timing
+and transitive trust closure remain unmeasured. Exact pinned cards and the
+LNSym README are checked. EPFL/APRIL web-tool fetches fail; bounded CLI reads
+of the same primary revisions succeed.
+
+M's final finite-count certificate is actually checked by stock Lean
+4.9.0-rc1. Its computation theorem has no axioms; the predicate/cardinality
+bridge uses only propext, Quot.sound and Classical.choice in printed closure.
+The completed process takes 30.5811 s and 30.5467 CPU s, with 2,369,380,352-byte
+leader high water and a 2,382,487,552-byte sampled own-tree peak. The 8.5572 s
+extra warm declaration recheck is already inside the full process clock.
+Root's independent integer enumeration confirms count 100 and sum 544,000;
+this numeric agreement is not a second native proof check. All three earlier
+unsuccessful versions remain in M's commit. This is a checked alternative proof
+representation, not transparent acceptance of unchanged generated proofs,
+automatic certified extraction, engine throughput, or a GPU improvement.
+
+Root also verifies 684 direct ELF dependencies of the historical loaded
+Linarith library. Its dependency closure includes NormNum and Linarith code;
+the separate plain-CLI import maps only SDK shared libraries. The backends
+must not be conflated or converted into an interpreted CPU fraction.
+A check of M's 7,808 prepared-leader rows gives 7,682 accepted/rejected physical
+attempts with median 470,599,680 bytes and recorded p99 977,809,408 bytes.
+The separately observed parent peak is 3,614,543,872 bytes. Asynchronous peaks
+and leader-only accounting do not supply a marginal memory reservation or
+isolated COW gain.
+
+The root calculation takes 0.952 s, peaks at 414,832 KiB, and launches no native
+verifier. It is self-review of derived tables and retained receipts, not a new
+full EPFL or LNSym source scan. Root uses CPUs 0–1 under its 4 GiB allocation.
+Only Evaluation, citations, this evidence index and the root step records
+change. The entire pre-Evaluation manuscript and all four RQs are preserved;
+the scientific-mainline decision remains with the user after W/M evidence.

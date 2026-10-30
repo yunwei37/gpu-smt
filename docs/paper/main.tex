@@ -336,6 +336,20 @@ axiom closure is established by this census. In particular, zero direct
 \texttt{native\_decide} or \texttt{ofReduceBool} tokens cannot establish absence
 of native evaluation or imported axiom dependencies.
 
+\paragraph{Released feedback and repair corpora.}
+A separate static scan covers all 68,932 programs in the pinned EPFL
+evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
+including 1,314 wrong-declaration cases~\cite{epflEvaluation}.
+Its six prover/benchmark groups use Lean~4.15.0. These labels include the
+publisher's expected-theorem and forbidden-construct policy, while timeouts,
+infrastructure exceptions and precheck failures are excluded. The release
+provides neither per-program native costs nor an uncensored timeout tail.
+All labels are retained; two unterminated comments leave lexical coverage
+at 68,930 programs. A separate scan of all 1,835 APRIL test tuples retains
+20 records containing budget-diagnostic text~\cite{aprilDataset}.
+These are publisher-created proof mutations, not natural failed arrivals;
+diagnostic text does not establish a failure cause or its native cost.
+
 \paragraph{Retained generated candidates and submission policy.}
 The retained generated-candidate workload groups alternative proofs by task. The Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.
@@ -721,6 +735,17 @@ lifecycle clocks. Missing timing fields remain unavailable.}
 \label{tab:autoverus-stage-costs}
 \end{table}
 
+\paragraph{Tail concentration does not transfer across workloads.}
+In each of the three complete direct AutoVerus passes, the slowest
+58 of 3,566 candidates (the ceiling of 1.6\%) consume only
+3.399\%, 3.338\% and 3.315\% of that pass's summed external process clocks.
+Each pass retains 190 exit-zero, 3,359 exit-one and 17 exit-101 responses,
+with no capture timeout; the exit-101 causes remain unknown.
+The denominator excludes separate capture conditions, service lifecycle and
+generation. Thus a large timeout/resource tail in the retained Lean point
+cannot be assumed for this source-replay workload. Releases that omit
+timeouts or native clocks cannot independently test such a concentration claim.
+
 The publisher's 196 retained generation logs span 84,267 seconds between their
 first and last recorded timestamps. Their 1,652 inference-time labels sum to
 80,835.42 seconds (95.93\% of that aggregate span), including API waiting and
@@ -1098,6 +1123,17 @@ but censored peaks, time-varying memory, retirement and shared-parent
 accounting prevent inferring a native throughput gain or an isolated COW
 benefit. No additional resource frontier is established by these simulations.
 
+\paragraph{Leader and shared-parent memory scopes.}
+A scope audit of the same prepared capture retains 7,808 leader
+\texttt{wait4} high-water observations. Among its 7,682 accepted or rejected
+physical attempts, median leader RSS is 470,599,680 bytes and the recorded
+99th percentile is 977,809,408 bytes. The separately observed retained-parent
+peak is 3,614,543,872 bytes. A leader's high water omits its parent and
+descendants, while an attempt's aggregate maximum can include a retained
+parent already present for other attempts. Neither scalar is an independent
+job's marginal memory demand. Subtracting these asynchronous maxima does not
+establish an aggregate bound, physical-page COW saving or new resource frontier.
+
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
 
@@ -1196,7 +1232,44 @@ is usable for only two completed requests and is too loose to settle that
 question. No speculative-execution speedup or parallelism threshold follows
 from this structural census.
 
+\paragraph{Native dispatch depends on the execution boundary.}
+In the retained prepared Lean~4.9 service, the successfully loaded Linarith
+library has 684 direct ELF dependencies, including Linarith preprocessing
+and verification and NormNum arithmetic modules. The SDK also exports native
+\texttt{simp}, \texttt{simp\_all}, \texttt{omega} and \texttt{decide} handlers.
+A separate plain-CLI Mathlib import maps the SDK libraries without explicit
+Mathlib shared libraries. These are different execution boundaries.
+A filename census of compiled modules therefore supplies neither an
+interpreted CPU fraction nor a precompilation speedup estimate. Native entry
+handlers may still invoke interpreted extensions; timed helper residence
+and a matched end-to-end comparison remain unmeasured.
+
+\paragraph{Kernel-checked finite-computation representation.}
+A Lean~4.9.0-rc1 prototype replaces one deep count over 10,000 natural numbers
+with 100 blocks of 100 tests and proves equivalence to the original
+decimal-digit predicate and finite-set cardinality. Ordinary \texttt{decide}
+establishes the count of 100. The computation theorem reports no axioms;
+the equivalence and cardinality bridge report only \texttt{propext},
+\texttt{Quot.sound} and \texttt{Classical.choice}, without \texttt{sorryAx}
+or a native-evaluation trust axiom. Three unsuccessful versions remain
+retained separately.
+One complete successful CLI invocation on phobos-vt takes 30.581 seconds
+and 30.547 CPU seconds, with a 2,369,380,352-byte leader high-water mark
+and a 2,382,487,552-byte sampled owned-tree peak. Its lifecycle includes an
+additional warm declaration recheck taking 8.557 seconds; this subclock
+is not added to the lifecycle again. The result qualifies this alternative
+proof representation, not unchanged-candidate parity, an automatic verified
+extraction compiler, a CPU/GPU gain or engine throughput. Independent numeric
+enumeration confirms the count but is not used as proof evidence.
+
 \subsubsection{Public code-verification references}
+A pinned LNSym source audit covers 196 files and 1,887,252 bytes,
+with 62 lexical \texttt{bv\_decide}, 153 \texttt{native\_decide} and one direct
+\texttt{ofReduceBool} occurrence~\cite{lnsymPinned}.
+These source counts identify a different code-verification setting, not
+executed tactic counts, native time or transitive axiom closure.
+No native LNSym execution is included in this audit.
+
 We execute all 189 original Verina task files at their pinned Lean~4.18
 environment. Native and profiled classifications agree: 46 files exit
 successfully without explicit admissions, 139 retain admitted proof stubs,
