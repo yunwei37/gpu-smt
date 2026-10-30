@@ -226,6 +226,15 @@ Paper now tabulates six distinct bounded points instead of narrating each
 run,retaining statuses,clocks,metadata coverage and budget/axiom limitations.
 Historical full wording remains in this step entry snapshot and priorGit.
 
+The [completed Grid point audit](tmp/build-and-evaluate/step-0199-20261030T133110+0000/step-report.md)
+checks the independent unprofiledj8/1200swall/100kHB/M8192 point:
+compile_ok0/no sorry,native andcontroller retired,634.280070swall,
+399.933766user/440.562612sys,12.24GiBsampledcombinedRSS. The84,076,976-byte
+olean exists;these campaign points now yield244knownobjects,14frameendpoints.
+Oldj1/120swall andprofiled300sinterruptions remain censored;worker andwall
+bound changedjointly,so no isolatedworker speedup or originalj1long-bound
+outcome is inferred. No next-target or native typed-probe completion follows.
+
 The [historical-timeout-prefix reanalysis](tmp/build-and-evaluate/step-0196-20261030T125817+0000/step-report.md)
 independently checks one original minif2f-4997 repeated10times in each cell:
 30returns,all flags/diagnostics/InfoTrees/rawHB equal and native retired.

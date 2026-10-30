@@ -344,27 +344,29 @@ of native evaluation or imported axiom dependencies.
 The native point uses the release's Lean~4.34.1, Mathlib
 \texttt{d13f23b7} and eight matching dependency pins on phobos-vt.
 Table~\ref{tab:modern-native-builds} separates compiler invocations from
-budget interruptions and dependency-blocked modules. All points request
-\texttt{-j1} and an 8,192\,MiB native memory option; neither is a measured
-one-OS-thread or hard-RSS guarantee. Preparation and already-warm prerequisite
+budget interruptions and dependency-blocked modules. All points use an
+8,192\,MiB native memory option and the requested Lean worker counts in the
+table; these are not measured OS-thread counts or hard-RSS guarantees.
+Preparation and already-warm prerequisite
 caches lie outside the compiler clocks.
 
 \begin{table*}[t]
 \centering
 \small
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Point & \shortstack{Heartbeats\\(thousands)} & Invoked & Compile &
+Point & \shortstack{Requested\\Lean workers} & \shortstack{Heartbeats\\(thousands)} & Invoked & Compile &
 \shortstack{HB\\stop} & \shortstack{Wall\\stop} & Uninvoked &
 \shortstack{Compiler-wall\\sum (s)} \\
 \midrule
-Seven-module baseline & 200 & 7 & 7 & 0 & 0 & 0 & 44.003 \\
-Same seven, \texttt{--profile} & 200 & 7 & 7 & 0 & 0 & 0 & 44.499 \\
-Expanded closure & 50 & 82 & 81 & 1 & 0 & 46 & 218.436 \\
-Incremental completion & 100 & 47 & 47 & 0 & 0 & 0 & 102.649 \\
-Wider closure & 100 & 109 & 108 & 0 & 1 & 62 & 724.589 \\
-Grid, \texttt{--profile --stats} & 100 & 1 & 0 & 0 & 1 & 0 & 300.100 \\
+Seven-module baseline & 1 & 200 & 7 & 7 & 0 & 0 & 0 & 44.003 \\
+Same seven, \texttt{--profile} & 1 & 200 & 7 & 7 & 0 & 0 & 0 & 44.499 \\
+Expanded closure & 1 & 50 & 82 & 81 & 1 & 0 & 46 & 218.436 \\
+Incremental completion & 1 & 100 & 47 & 47 & 0 & 0 & 0 & 102.649 \\
+Wider closure & 1 & 100 & 109 & 108 & 0 & 1 & 62 & 724.589 \\
+Grid, \texttt{--profile --stats} & 1 & 100 & 1 & 0 & 0 & 1 & 0 & 300.100 \\
+Grid, unprofiled & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 634.280 \\
 \bottomrule
 \end{tabular}
 \caption{Distinct bounded native-build points, not a homogeneous full-library
@@ -372,10 +374,13 @@ run. Compile means exit zero without a sorry warning, not full service
 acceptance or transitive axiom closure. HB denotes heartbeat interruption.
 The first two rows compile the same seven modules. The incremental row uses
 81 retained dependency objects from the preceding 128-module attempt.
-The wider row includes a 120-second self-wall interruption of Grid; the
-final row is a separate profiled 300-second diagnostic. Uninvoked dependencies
-have no measured compiler time or native verdict. Row clocks are not added
-to claim a fresh same-budget build.}
+The wider row includes a 120-second self-wall interruption of Grid.
+The last two rows are separate 300-second profiled one-worker and
+1,200-second unprofiled eight-worker points; both worker request and wall
+bound change. Heartbeats are the Lean option, not a cumulative group counter.
+Uninvoked dependencies have no measured compiler time or native verdict.
+Row clocks are not added to claim a fresh same-budget build or isolated
+worker-configuration speedup.}
 \label{tab:modern-native-builds}
 \end{table*}
 
@@ -400,10 +405,10 @@ old EPFL process. Its compiler user/system CPU sums are 187.020/31.291 seconds.
 
 The wider point adds nine targets from the original 53-target frame and
 one unweighted public repeated-text probe. Seven of the nine original
-endpoints compile; Grid blocks the other two and the extra probe.
+endpoints compile; at that point Grid blocks the other two and the extra probe.
 Its capture takes 732.836 seconds and the combined sampled tree peaks at
 12.20\,GiB, including retained EPFL work. Across these distinct points,
-243 compiled objects and 14 frame endpoints are available. These are not
+244 compiled objects and 14 frame endpoints are available. These are not
 a completed frame, population cost estimate or homogeneous fresh build.
 
 Grid's 1.82\,MB source uses 151.397 user-plus-system CPU seconds before
@@ -420,6 +425,17 @@ The 690,504 minor faults, zero major faults and 24,778,976/127,174
 voluntary/involuntary context switches do not isolate a tactic, syscall
 or hardware cause. Neither the earlier 120-second clock nor the seven-module
 1.13\% observation supplies this diagnostic's missing phases or overhead.
+
+At a separate unprofiled eight-worker point with a 1,200-second self-wall
+bound, Grid compiles in 634.280 seconds without a sorry warning and the
+native process retires. User/system CPU totals are 399.934/440.563 seconds,
+the combined sampled tree peaks at 12.24\,GiB, and the resulting object is
+84,076,976 bytes. This does not retrospectively make the two earlier
+interrupted points compiler successes. Worker configuration and wall bound
+change together; the one-worker outcome at the longer bound is unobserved,
+so these points establish neither an isolated worker effect nor a speedup.
+The completed object also does not supply the remaining uninvoked target
+or typed-probe results.
 
 \paragraph{Typed metadata does not establish cache eligibility.}
 A native reader inspects the earlier 135 serialized objects and finds
