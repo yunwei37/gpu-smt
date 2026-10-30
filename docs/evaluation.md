@@ -248,6 +248,18 @@ whole-request early abort and enables no closed GPU route. Root uses the
 published9b67361decoder on raw snapshots,not uncommitted M code. One short
 witness sample misses its524,357,632B native high-water peak.
 
+The [full reflected-grid proof/recheck audit](tmp/build-and-evaluate/step-0200-20261030T134458+0000/step-report.md)
+uses actual540cfc2source snapshot byte-equal to executedv4,not currentv5.
+The original Nat proposition is proved via2004division rows/16chunks;
+4,016,016cells are logically covered,not individually evaluated. Bridge/
+assembly/final axioms onlypropext/Quot.sound. Whole6.929171s includes initial
+sequential checking and320extra rechecks;no generatorcost measured.
+Twenty1/2/4/8-task groups retain every startup repeat. Firsttwo8taskgroups
+~.274s,lastthree~.085s;causeunestablished,no causal scaling/servicegain.
+Same immutableenv,discarded newenvs,original sequential chunks used byfinal.
+This is an alternateproof/algorithm,not unchanged-candidate parity;no generic
+compiler or novelparallelmethod claimed. Oldfive-rectangle samples retained.
+
 <a id="public-lean-code-verification"></a>
 ## Earlier program/GPU evidence
 

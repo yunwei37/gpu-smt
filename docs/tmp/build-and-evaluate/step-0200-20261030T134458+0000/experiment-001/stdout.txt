@@ -1,0 +1,78 @@
+{
+  "source_commit": "540cfc2",
+  "executed_source_equals_published_snapshot": true,
+  "working_source_not_used": true,
+  "additional_native_calls_by_root": 0,
+  "full_original_proposition_compiler_checked": true,
+  "row_indices_checked": 2004,
+  "logical_square_cells_covered": 4016016,
+  "literal_kernel_cell_evaluations": "not measured; proof uses one quotient per row",
+  "initial_concrete_chunks": 16,
+  "extra_chunk_rechecks": 320,
+  "recheck_groups": 20,
+  "whole_native_wall_seconds": 6.929170955903828,
+  "whole_native_CPU_seconds": 7.73364,
+  "native_wait4_high_water_RSS_bytes": 588652544,
+  "sampled_owned_tree_peak_bytes": 572776448,
+  "actual_CPU_affinity": "8-15",
+  "legacy_hardware_point_field": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+  "axioms_of_audited_bridges_and_final_theorem": [
+    "propext",
+    "Quot.sound"
+  ],
+  "ordered_group_results": {
+    "1": {
+      "ordered_group_seconds": [
+        0.282871152,
+        0.275029697,
+        0.274809857,
+        0.276332892,
+        0.276747232
+      ],
+      "median_group_seconds": 0.276332892
+    },
+    "2": {
+      "ordered_group_seconds": [
+        0.273040005,
+        0.275971935,
+        0.274098709,
+        0.273243174,
+        0.274145186
+      ],
+      "median_group_seconds": 0.274098709
+    },
+    "4": {
+      "ordered_group_seconds": [
+        0.274918783,
+        0.274580732,
+        0.274744675,
+        0.273693522,
+        0.274438698
+      ],
+      "median_group_seconds": 0.274580732
+    },
+    "8": {
+      "ordered_group_seconds": [
+        0.274403447,
+        0.274653613,
+        0.084741749,
+        0.086735424,
+        0.085056157
+      ],
+      "median_group_seconds": 0.086735424
+    }
+  },
+  "sum_disjoint_extra_group_windows_s": 4.934256639,
+  "limits": [
+    "Embedded two-pair payload is checked, but external payload generation cost is not measured here.",
+    "A new proof of the original proposition is not unchanged-candidate verdict parity.",
+    "Initial declarations are checked sequentially; later tasks only recheck existing proof values.",
+    "Returned environments are discarded, not merged; no production elaborator or proof-state replay is enabled.",
+    "One process orders workers1,2,4,8 with five groups each; all startup repetitions retained.",
+    "Early two eight-task groups are near serial; cause of later faster groups is unestablished.",
+    "No causal parallel speedup, scaling curve, historical48GiB speedup or full7808 benefit claimed.",
+    "Actual argv/explicit affinity8-15 override stale generic hardware_point CPU8-11 text."
+  ],
+  "root_elapsed_s": 0.004817340523004532,
+  "root_maxrss_kib": 12960
+}

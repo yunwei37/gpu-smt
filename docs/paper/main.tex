@@ -1807,8 +1807,8 @@ The extra checks sum to 2.894 elapsed seconds within the control's complete
 11.007-second lifetime. Total process CPU time is 10.981 seconds.
 Leader high-water RSS is 872,542,208 bytes;
 sampled owned-tree peak is 886,497,280 bytes. Neither is a measured memory
-requirement for a complete grid proof. No full-grid certificate or coverage
-bridge is executed.
+requirement for a complete grid proof. This five-rectangle control executes
+no full-grid certificate or coverage bridge.
 
 Linear scaling of the individual sample rates to the complete grid gives
 402--517 seconds. This is an extrapolation, not a measured cost or certified
@@ -1819,6 +1819,72 @@ It does not check the Lean implication or construct a proof. These different
 operations and trust boundaries cannot establish a CPU/GPU checking speedup.
 Compact certified representations still require their own construction,
 correspondence and complete native-verification measurements.
+
+\paragraph{A complete row certificate changes the algorithm.}
+A separate Lean~4.9.0-rc1 prototype proves
+\texttt{mathd\_numbertheory\_541}, the original proposition for arbitrary
+natural $m,n>1$ with $mn=2005$. It first derives $m,n\leq2005$.
+For each $m=2,\ldots,2005$, a proved division lemma forces the only possible
+$n$ to be $2005/m$. A Boolean row checker verifies that any in-range quotient
+with zero remainder appears in the embedded payload
+$[(5,401),(401,5)]$ and has sum $406$. Sixteen ordinary \texttt{decide}
+proofs cover consecutive blocks of 128 rows, with a final 84-row block;
+proved block-composition and row-soundness lemmas establish the final theorem.
+This logically covers all 4,016,016 bounded cells through 2,004 row checks,
+not 4,016,016 kernel cell evaluations. The payload has no authority to
+accept an omitted or unsound row. External payload-generation cost is not
+measured in this version.
+
+The stock kernel accepts the soundness bridge, block assembly and final
+theorem. Their reported axioms are only \texttt{propext} and
+\texttt{Quot.sound}, with no \texttt{sorryAx} or native-evaluation axiom.
+The complete process exits zero in 6.929 seconds, with 7.734 CPU seconds,
+588,652,544-byte native high-water RSS and 572,776,448-byte sampled tree
+peak. This clock includes imports, sequential initial construction/checking,
+axiom reporting and 320 additional chunk rechecks. It is not an isolated
+construction time or a matched historical-service speedup.
+
+The later task groups copy the same 16 existing proof values under fresh
+names and check each against the same immutable environment, using the
+explicit \texttt{addDeclCore} heartbeat argument $1\,000\,000$.
+Returned environments are discarded. The final theorem uses the original,
+sequentially checked chunk declarations, so these groups measure parallel
+kernel rechecking rather than parallel elaboration or environment merging.
+The process requests eight workers on CPUs 8--15; the task-count groups run
+in the fixed order shown in Table~\ref{tab:reflected-grid-groups}.
+All five observations per group are retained. The first two eight-task
+groups remain near the serial groups, while the last three are faster;
+the cause is unestablished. These observations supply neither an
+eightfold-scaling result nor a causal whole-candidate speedup.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rll}
+\toprule
+Tasks & \shortstack[l]{Ordered group walls (s)\\first to last} & Median (s) \\
+\midrule
+1 & \shortstack[l]{.2829, .2750, .2748\\ .2763, .2767} & .2763 \\
+2 & \shortstack[l]{.2730, .2760, .2741\\ .2732, .2741} & .2741 \\
+4 & \shortstack[l]{.2749, .2746, .2747\\ .2737, .2744} & .2746 \\
+8 & \shortstack[l]{.2744, .2747, .0847\\ .0867, .0851} & .0867 \\
+\bottomrule
+\end{tabular}
+\caption{Additional rechecks of previously constructed chunk proofs in one
+fixed-order process. Each group checks all 16 chunks; the 20 disjoint group
+windows sum to 4.934 seconds inside the 6.929-second lifetime. Earlier
+construction and the final proof are not parallelized by these groups.
+This is one proof prototype, not a production scaling curve.}
+\label{tab:reflected-grid-groups}
+\end{table}
+
+The new certificate proves the original mathematical statement using a
+different representation and algorithm. It is an alternative proof, not
+unchanged-submitted-candidate verdict parity, a general extraction compiler
+or a demonstrated batch-service benefit. Reflection, arithmetic compression
+and independent proof checking alone establish no new systems contribution.
+Coverage and cost for the complete candidate streams remain open.
 
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,
