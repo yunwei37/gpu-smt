@@ -1,0 +1,74 @@
+{
+  "records": [
+    {
+      "control": "CandidateAutoUnrelated",
+      "mode": "original",
+      "status": "lean_error",
+      "meta": {
+        "route": "digits",
+        "edits": [
+          {
+            "line": 7,
+            "original": "rfl",
+            "replacement": "m_digits_rfl"
+          }
+        ]
+      },
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/candidate-auto-controls-v1-CandidateAutoUnrelated-original",
+      "line_map_added_import": 0
+    },
+    {
+      "control": "CandidateAutoUnrelated",
+      "mode": "certificate",
+      "status": "lean_error",
+      "meta": {
+        "route": "digits",
+        "edits": [
+          {
+            "line": 7,
+            "original": "rfl",
+            "replacement": "m_digits_rfl"
+          }
+        ]
+      },
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/candidate-auto-controls-v1-CandidateAutoUnrelated-certificate",
+      "line_map_added_import": 1
+    },
+    {
+      "control": "CandidateAutoPrefixError",
+      "mode": "original",
+      "status": "lean_error",
+      "meta": {
+        "route": "digits",
+        "edits": [
+          {
+            "line": 8,
+            "original": "rfl",
+            "replacement": "m_digits_rfl"
+          }
+        ]
+      },
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/candidate-auto-controls-v2-CandidateAutoPrefixError-original",
+      "line_map_added_import": 0
+    },
+    {
+      "control": "CandidateAutoPrefixError",
+      "mode": "certificate",
+      "status": "lean_error",
+      "meta": {
+        "route": "digits",
+        "edits": [
+          {
+            "line": 8,
+            "original": "rfl",
+            "replacement": "m_digits_rfl"
+          }
+        ]
+      },
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/candidate-auto-controls-v2-CandidateAutoPrefixError-certificate",
+      "line_map_added_import": 1
+    }
+  ],
+  "source_mapped_diagnostics_equal": true,
+  "prior_censored_control": "v1 PrefixError original retained at20s wall. Replaced its expensive valid tail by cheap range100.card; false prefix still present."
+}

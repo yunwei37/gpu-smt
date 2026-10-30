@@ -1,0 +1,18 @@
+{
+  "candidate_sources": 64,
+  "native_invocations": 128,
+  "source_identity_after_auto_routing": "all64 byte-identical to native-tested certificate source",
+  "flow": {
+    "lean_error -> lean_error": 13,
+    "budget_exceeded -> accepted": 31,
+    "budget_exceeded -> lean_error": 16,
+    "budget_exceeded -> budget_exceeded": 4
+  },
+  "mode_wall_sum_s": {
+    "original": 879.4314129082486,
+    "certificate": 285.7780881272629
+  },
+  "typed_runtime_guard_controls": "2 adversarial sources each original/certificate;0 accepted; source-mapped diagnostics equal",
+  "malformed_source_id": "minif2f-7206 literal None, unsupported, native rejected",
+  "scope": "two hand-proved parameter families, automatic source routing/tactic replacement, native type guard; not arbitrary computation extraction or production acceptance parity"
+}
