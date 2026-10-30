@@ -165,6 +165,24 @@ Body and whole-process clocks remain separate; sampled peak 8.06 GiB is not
 a hard quota. Step0185's stale full-matrix-pending statement is explicitly
 corrected forward in step0186 and is preserved with its contrary raw receipt.
 
+The [original-budget and native-type reanalysis](tmp/build-and-evaluate/step-0193-20261030T123624+0000/step-report.md)
+checks all 150 returns from 50 selected prior passes at their original
+maxHeartbeats0. All error flags/diagnostics/InfoTrees match across three cells;
+raw HB differs 29 off / 30 on. Earlier 19 budget-clipped passes now return
+without errors. The earlier diagnostic 1.031701× ceiling cannot exclude this
+different point's branch opportunity. Linked-on body CPU is 95.931585 s;
+18 matched allGoals forks in seven sources give finite 2/4/8-core latency
+models 1.184675/1.275923/1.340367×. These preserve work and omit unmeasured
+snapshot/merge/hidden-state/diagnostic/HB/memory costs, not actual parallel
+execution or 7,808 throughput. Three whole cells take 501.013149 s; 3.85 GiB
+sampled peak; have-only 1.015819× overlaps and is not added.
+
+Native metadata from 135 compiled objects yields 1,799 theorems, 743 auxiliary
+names, 601 native Expr keys / 604 level-private groups, 45 cross-module groups.
+The 45 decide-shaped auxiliaries have 45 distinct types: no exact-type
+merge demonstrated for this pilot. Failed calls and major repeated-goal
+clusters are absent; full imported axioms and cache/replay eligibility unknown.
+
 The [software-sampling audit](tmp/build-and-evaluate/step-0189-20261030T120435+0000/step-report.md)
 separates 14,118 outside-body samples from 2,531 body samples, and validates
 a separately timed successful closed recheck (4,258 PCs). Named RC/alloc/table

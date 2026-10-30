@@ -1,0 +1,78 @@
+{
+  "M_source": "9b67361",
+  "W_source": "4780b43",
+  "native_calls_started_by_root": 0,
+  "M_native_returns": 150,
+  "M_processes_retired": true,
+  "M_flag_diagnostic_InfoTree_differences": 0,
+  "M_raw_HB_differences": {
+    "linked-off/allocatedHeartbeatDelta": 29,
+    "linked-on/allocatedHeartbeatDelta": 30
+  },
+  "M_old_same50_classes": {
+    "no_lean_errors": 31,
+    "diagnostic_budget_interruption": 19
+  },
+  "M_new_same50_classes": {
+    "no_lean_errors": 50
+  },
+  "M_body_cpu_by_cell_s": {
+    "stock": 97.194227205,
+    "linked-off": 96.045307744,
+    "linked-on": 95.931585369
+  },
+  "M_native_wall_by_cell_s": {
+    "stock": 167.73861829098314,
+    "linked-off": 166.4698003390804,
+    "linked-on": 166.62926430813968
+  },
+  "M_group_wall_s": 501.01314906589687,
+  "M_sampled_owned_peak_bytes": 4134707200,
+  "M_qualified_allGoals_nodes": 18,
+  "M_qualified_allGoals_sources": 7,
+  "M_finite_core_models": {
+    "1": {
+      "modeled_latency_reduction_cpu_equivalent_s": 0.0,
+      "modeled_body_s": 95.931585369,
+      "ratio": 1.0
+    },
+    "2": {
+      "modeled_latency_reduction_cpu_equivalent_s": 14.954472443,
+      "modeled_body_s": 80.977112926,
+      "ratio": 1.1846752977803243
+    },
+    "4": {
+      "modeled_latency_reduction_cpu_equivalent_s": 20.745565434,
+      "modeled_body_s": 75.186019935,
+      "ratio": 1.2759231763023897
+    },
+    "8": {
+      "modeled_latency_reduction_cpu_equivalent_s": 24.360438684000002,
+      "modeled_body_s": 71.571146685,
+      "ratio": 1.3403667513001507
+    }
+  },
+  "M_unlimited_model_ratio": 1.368419395736092,
+  "M_have_only_model_ratio": 1.0158194473727857,
+  "W_native_metadata": {
+    "objects": 135,
+    "theorems": 1799,
+    "auxiliaries": 743,
+    "native_Expr_keys": 601,
+    "level_private_groups": 604,
+    "cross_module_groups": 45,
+    "decide_auxiliaries": 45,
+    "decide_Expr_keys": 45,
+    "axiom_fields_all_unknown": true
+  },
+  "limits": [
+    "Model is latency in serial CPU equivalents, not work removal or observed parallel execution.",
+    "No snapshot, merge, hidden state, diagnostics, heartbeat reconciliation or memory-admission costs measured.",
+    "Selected passes do not represent full7808 failures or service throughput.",
+    "Native type-group IDs are producer Expr equality, not a full replay key or expensive-failure cache eligibility.",
+    "Successfully serialized theorem types omit failures and absent PlanarPacking/Ramsey clusters.",
+    "Full imported axiom closure remains unknown."
+  ],
+  "root_elapsed_s": 0.20183784421533346,
+  "root_maxrss_kib": 88316
+}

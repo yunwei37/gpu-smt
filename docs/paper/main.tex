@@ -399,6 +399,21 @@ runtime monotonicity. Including the earlier pilot, 135 distinct compiled
 objects are available; their full imported axiom status remains unestablished
 by compiler exits alone.
 
+A native metadata reader subsequently inspects all 135 serialized objects.
+It finds 1,799 theorem declarations, including 743 auxiliary-name theorems.
+Lean's native expression equality gives 601 auxiliary-type keys, or 604
+groups when ordered universe parameters and private-name status are added;
+45 groups span modules. These are typed producer observations, not complete
+state or replay keys. In the five files containing this pilot's 45
+\texttt{decide +kernel} source occurrences, the reader identifies 45
+\texttt{of\_decide\_eq\_true}-headed auxiliary proofs with distinct native
+type keys. This pilot therefore demonstrates no merging of those 45 calls
+by exact type equality. It excludes the large repeated-goal
+PlanarPacking/Ramsey clusters, failed calls and uninvoked producers.
+It supplies neither whole-corpus native counts nor failure-cache
+coverage. Transitive axiom closure, hidden-state dependencies and replay
+qualification remain unmeasured; reading objects is not checking them again.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
@@ -1502,6 +1517,39 @@ service stops that request at 300 seconds. The diagnostic heartbeat option
 does not reproduce that per-request wall limit. Neither the 93.17\% share
 nor the conditional 1.03170 ratio can therefore be applied to the original
 7,808-candidate service denominator or used as a global GPU ceiling.
+
+\paragraph{Preserving source budgets exposes a different branch opportunity.}
+A separate point reruns the 50 historically passing sources with their
+original \texttt{maxHeartbeats 0} options, rather than the earlier 3,000-heartbeat
+diagnostic setting. Exact leading Mathlib/Aesop imports are loaded once by
+the collector. Three fresh stock, linked-off and linked-on processes return
+all 150 units, exit zero and retire. All 50 error flags, diagnostic strings
+and InfoTrees agree, and all sources have no Lean errors. Raw allocation
+heartbeats still differ on 29 timing-off and 30 timing-on units.
+The same 50 sources previously gave 31 no-error and 19 budget-interrupted
+diagnostic results. The earlier fixed-leaf bound therefore cannot rule out
+opportunities exposed at the original source budgets.
+
+Body CPU sums are 97.194, 96.045 and 95.932 seconds; complete process-wall
+times are 167.739, 166.470 and 166.629 seconds. The 501.013-second group
+finishes within its 1,800-second bound, with a 3.85\,GiB sampled owned-tree
+peak. This selected passing subset, serial SDK frontend and new hardware
+point do not reproduce full-service acceptance or throughput.
+
+Ordered, ancestry-matched InfoTree and successful C callbacks expose 18
+qualified \texttt{allGoals} forks in seven sources. A local model groups
+branches sharing live metavariables, selects nonoverlapping outer fork
+islands, leaves nested work serial and schedules the groups onto finite
+cores. Holding measured branch work fixed, its modeled aggregate body
+latencies are 80.977, 75.186 and 71.571 serial-CPU-equivalent seconds on
+two, four and eight cores, ratios of 1.185, 1.276 and 1.340 relative to
+95.932 seconds. These are latency opportunities with idle cores, not CPU
+work removed, measured parallel execution or saturated-batch throughput.
+Snapshot, hidden-state, merge, diagnostic-order, heartbeat-reconciliation
+and memory-admission costs remain unmeasured. A separate proof/continuation
+model gives only 1.016; its overlapping savings are not added.
+Neither model establishes a gain for all 7,808 candidates or a new
+parallel-proof mechanism.
 
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith
