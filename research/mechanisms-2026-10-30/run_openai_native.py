@@ -5,18 +5,22 @@ from run_finite import persistent_capture_path,owned_tree
 HERE=Path(__file__).resolve().parent
 ROOT=Path("/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30")
 SDK=Path("/workspaces/.agent-state/gpu-smt-workloads/toolchains/lean-4.34.1-linux")
-def run(source,label,seconds=35,jobs=1,extra_env=None,as_main=False):
+def run(source,label,seconds=35,jobs=1,extra_env=None,as_main=False,sdk=None,lean_path=None,module_path=None,olean_output=None,memory_mib=8192):
+    sdk=Path(sdk) if sdk is not None else SDK
     out=persistent_capture_path(ROOT/"openai-native"/label);out.mkdir(parents=True,exist_ok=False)
     (out/"source.lean").write_bytes(source.read_bytes())
     (out/"runner.py").write_bytes(Path(__file__).read_bytes())
-    paths=Path("/workspaces/.agent-state/gpu-smt-captures/workloads/mathlib4341-setup/LEAN_PATH.txt").read_text().strip()
-    oai="/workspaces/.agent-state/gpu-smt-workloads/openai4341-oleans"
+    paths=lean_path if lean_path is not None else Path("/workspaces/.agent-state/gpu-smt-captures/workloads/mathlib4341-setup/LEAN_PATH.txt").read_text().strip()
+    oai=str(module_path) if module_path is not None else "/workspaces/.agent-state/gpu-smt-workloads/openai4341-oleans"
     env=os.environ.copy();env.pop("LD_PRELOAD",None)
-    env.update(LEAN_SYSROOT=str(SDK),LEAN_PATH=oai+":"+paths,LEAN_NUM_THREADS=str(jobs))
+    env.update(LEAN_SYSROOT=str(sdk),LEAN_PATH=oai+":"+paths,LEAN_NUM_THREADS=str(jobs))
     env.update(extra_env or {})
-    args=["taskset","-c","8,9,10,11,12,13,14,15",str(SDK/"bin/lean"),f"-j{jobs}","-M8192"]
+    args=["taskset","-c","8,9,10,11,12,13,14,15",str(sdk/"bin/lean"),f"-j{jobs}",f"-M{memory_mib}"]
     if as_main:args+=["--run"]
-    args += [str(out/"source.lean")]
+    if olean_output is not None:
+        dest=persistent_capture_path(Path(olean_output));dest.parent.mkdir(parents=True,exist_ok=True)
+        args += ["-R",str(source.parent),"-o",str(dest),str(source)]
+    else:args += [str(out/"source.lean")]
     def own_alarm():
         signal.signal(signal.SIGALRM,signal.SIG_DFL)
         signal.setitimer(signal.ITIMER_REAL,seconds)
@@ -25,7 +29,7 @@ def run(source,label,seconds=35,jobs=1,extra_env=None,as_main=False):
         q=subprocess.Popen(args,env=env,stdout=so,stderr=se,preexec_fn=own_alarm)
         birth=Path(f"/proc/{q.pid}/stat").read_text().split()[21]
         launch={"pid":q.pid,"birth":birth,"argv":args,"self_wall_s":seconds,"external_signals":0,
-                "memory_native_MiB":8192,"M_own_tree_budget_GiB":16,"jobs":jobs,"point":"phobos-vt Lean4.34.1 locked openai/math",
+                "memory_native_MiB":memory_mib,"M_own_tree_budget_GiB":16,"jobs":jobs,"point":"phobos-vt explicit SDK "+str(sdk),
                 "boot_id":Path("/proc/sys/kernel/random/boot_id").read_text().strip()}
         (out/"launch.json").write_text(json.dumps(launch,indent=2)+"\n")
         peak=0;over=False

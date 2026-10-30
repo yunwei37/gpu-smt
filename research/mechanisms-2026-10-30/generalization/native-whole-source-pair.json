@@ -1,0 +1,77 @@
+{
+  "original": [
+    {
+      "id": "epfl-31023",
+      "mode": "original",
+      "source": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generalization-epfl-pair-v1/epfl-31023-original.lean",
+      "task": "amc12_2001_p5",
+      "input_row": 31023,
+      "edits": 1,
+      "exit": 1,
+      "wall_s": 3.4710053596645594,
+      "cpu_s": 3.447288,
+      "sampled_peak_owned_tree_RSS_bytes": 4705968128,
+      "sampled_budget_violation": false,
+      "retired": true,
+      "self_wall_s": 30,
+      "jobs": 1,
+      "limits": "single finite SDK process; native -M is cooperative, parent sampling not hard RSS enforcement; self alarm no external signals",
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/openai-native/generalization-epfl-pair-v1-epfl-31023-original",
+      "status": "budget_exceeded",
+      "hits": 0
+    },
+    {
+      "id": "epfl-2994",
+      "mode": "original",
+      "source": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generalization-epfl-pair-v1/epfl-2994-original.lean",
+      "task": "mathd_numbertheory_43",
+      "input_row": 2994,
+      "edits": 2,
+      "exit": 1,
+      "wall_s": 3.9768659016117454,
+      "cpu_s": 3.933132,
+      "sampled_peak_owned_tree_RSS_bytes": 4706054144,
+      "sampled_budget_violation": false,
+      "retired": true,
+      "self_wall_s": 30,
+      "jobs": 1,
+      "limits": "single finite SDK process; native -M is cooperative, parent sampling not hard RSS enforcement; self alarm no external signals",
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/openai-native/generalization-epfl-pair-v1-epfl-2994-original",
+      "status": "budget_exceeded",
+      "hits": 0
+    }
+  ],
+  "final_repair": [
+    {
+      "id": "epfl-31023",
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/openai-native/generalization-epfl-final-v4-epfl-31023",
+      "exit": 1,
+      "wall_s": 3.4214525297284126,
+      "cpu_s": 3.4116059999999995,
+      "sampled_peak_owned_tree_RSS_bytes": 4709466112,
+      "sampled_budget_violation": false,
+      "retired": true,
+      "self_wall_s": 30,
+      "jobs": 1,
+      "limits": "single finite SDK process; native -M is cooperative, parent sampling not hard RSS enforcement; self alarm no external signals",
+      "events": "M_CLOSED_ENTER\n"
+    },
+    {
+      "id": "epfl-2994",
+      "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/openai-native/generalization-epfl-final-v4-epfl-2994",
+      "exit": 1,
+      "wall_s": 3.8733620336279273,
+      "cpu_s": 3.861738999999999,
+      "sampled_peak_owned_tree_RSS_bytes": 4709617664,
+      "sampled_budget_violation": false,
+      "retired": true,
+      "self_wall_s": 30,
+      "jobs": 1,
+      "limits": "single finite SDK process; native -M is cooperative, parent sampling not hard RSS enforcement; self alarm no external signals",
+      "events": "M_CLOSED_ENTER\nM_CLOSED_HIT\n"
+    }
+  ],
+  "diagnostic_intermediates": "native-invocations.json and immutable PVC captures",
+  "full_recoveries": 0,
+  "production_enablement": false
+}

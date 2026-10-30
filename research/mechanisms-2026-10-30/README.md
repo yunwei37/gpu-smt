@@ -98,3 +98,9 @@ confused with actual32/126source recovery.
 expanded-goal bridge failure/recursion, and kernel proof composition after card_filter.
 C timing reproduces all4native categories/diagnostic text. Removal experiments do
 not count as new valid proofs; the33new accepted candidate count is unchanged.
+
+[Cross-dataset generalization](generalization/README.md): full5952ProofNet and
+all returned W EPFL/APRIL budget sources reviewed. ProofNet pass@32stays28/186;
+no existing-family hit outside miniF2F. Two additional EPFL arithmetic expressions
+check in the original kernel, but **0/2 whole-source repairs**. Recovery remains
+concentrated in miniF2F families. See step029 for exact separate denominators.
