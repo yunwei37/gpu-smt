@@ -36,3 +36,11 @@ Resource-tail source/state opportunity can be recomputed without Lean:
 
 Task/last-line/whitespace keys are opportunity proxies only;RSS-watchdog
 outcomes do not authorize deterministic resource-failure rejection reuse.
+
+The complete two-resource-point cost-selection/restart analysis uses all7808
+retained sources,whole-task heldout models and exhaustive observed-unsolved tasks:
+
+    python3 bench/lean-candidate-scheduling/analyze-cost-selection.py --out /workspaces/.agent-state/gpu-smt-captures/new-cost-selection
+
+It needs the existing numpy environment. Frozen-work/CPU-slot proxies are not
+service throughput;the probe/restart row has unknown native-budget eligibility.

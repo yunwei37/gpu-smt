@@ -1,0 +1,48 @@
+{
+  "current_four_worker_attempt_cost": {
+    "task_paired_cost_reduction_seconds": 141.39520122899998,
+    "improved_tasks": 51,
+    "regressed_tasks": 79,
+    "unchanged_tasks": 114,
+    "exploratory_task_bootstrap_95_percentile_interval_seconds": [
+      -638.441124915,
+      1025.348399814
+    ],
+    "bootstrap_scope": "2000resamples of inspected task deltas,seed0;conditional exploratory interval,not fresh evaluation or repeated runtime confidence",
+    "remaining_work_ratio_size_over_hindsight_minimum": 1.0184225885191618,
+    "selected_resource_tail": {
+      "fifo": {
+        "resource_failed_sources": 33,
+        "exclusive_attempt_work_seconds": 7518.067188114
+      },
+      "size": {
+        "resource_failed_sources": 31,
+        "exclusive_attempt_work_seconds": 7137.271617118
+      },
+      "probability_cost": {
+        "resource_failed_sources": 30,
+        "exclusive_attempt_work_seconds": 6930.255991399
+      },
+      "history": {
+        "resource_failed_sources": 30,
+        "exclusive_attempt_work_seconds": 6930.255991399
+      },
+      "oracle": {
+        "resource_failed_sources": 30,
+        "exclusive_attempt_work_seconds": 6930.255991399
+      }
+    }
+  },
+  "historical_two_worker_HTTP_span_proxy": {
+    "task_paired_cost_reduction_seconds": -177.548210912,
+    "improved_tasks": 50,
+    "regressed_tasks": 77,
+    "unchanged_tasks": 117,
+    "exploratory_task_bootstrap_95_percentile_interval_seconds": [
+      -792.159532993,
+      231.05707675299996
+    ],
+    "bootstrap_scope": "2000resamples of inspected task deltas,seed0;conditional exploratory interval,not fresh evaluation or repeated runtime confidence",
+    "remaining_work_ratio_size_over_hindsight_minimum": 1.0152205731424455
+  }
+}
