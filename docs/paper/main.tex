@@ -1519,6 +1519,8 @@ nor the conditional 1.03170 ratio can therefore be applied to the original
 7,808-candidate service denominator or used as a global GPU ceiling.
 
 \paragraph{Preserving source budgets exposes a different branch opportunity.}
+Figure~\ref{fig:source-budget-opportunity} separates observed outcomes
+from the two latency models.
 A separate point reruns the 50 historically passing sources with their
 original \texttt{maxHeartbeats 0} options, rather than the earlier 3,000-heartbeat
 diagnostic setting. Exact leading Mathlib/Aesop imports are loaded once by
@@ -1562,6 +1564,22 @@ end-to-end gain or a global impossibility bound. The serial SDK import,
 observer and export costs differ from a precompiled warm service.
 Three sources account for 85.68\% of the eight-core modeled CPU-span
 reduction; this retrospective concentration is not a scheduling predictor.
+
+\begin{figure*}[t]
+\centering
+\input{figures/source-budget-opportunity}
+\caption{Budget changes alter the work visible to a parallelism study.
+(a) The same 50 historically passing sources: 19 are interrupted at the
+diagnostic heartbeat setting, while all 50 return without Lean errors with
+their original source options. This is a protocol change, not an algorithmic
+gain or complete service-acceptance test.
+(b) Original-budget branch opportunities under the finite-core model.
+The body CPU ratio and the complete-process wall sensitivity have distinct
+denominators. The latter retains outside-body work and each source's
+observed wall/CPU multiplier. Both omit unmeasured parallel-execution costs;
+neither curve is an observed speedup or a bound on the full service.}
+\label{fig:source-budget-opportunity}
+\end{figure*}
 
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith

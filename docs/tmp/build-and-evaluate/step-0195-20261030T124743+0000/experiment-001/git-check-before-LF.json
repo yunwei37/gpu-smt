@@ -1,0 +1,41 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--",
+      "docs/paper/main.tex"
+    ],
+    "returncode": 0,
+    "stdout": "diff --git a/docs/paper/main.tex b/docs/paper/main.tex\nindex 513c4c7..e05e41e 100644\n--- a/docs/paper/main.tex\n+++ b/docs/paper/main.tex\n@@ -1519,6 +1519,8 @@ nor the conditional 1.03170 ratio can therefore be applied to the original\n 7,808-candidate service denominator or used as a global GPU ceiling.\n \n \\paragraph{Preserving source budgets exposes a different branch opportunity.}\n+Figure~\\ref{fig:source-budget-opportunity} separates observed outcomes\n+from the two latency models.\n A separate point reruns the 50 historically passing sources with their\n original \\texttt{maxHeartbeats 0} options, rather than the earlier 3,000-heartbeat\n diagnostic setting. Exact leading Mathlib/Aesop imports are loaded once by\n@@ -1563,6 +1565,22 @@ observer and export costs differ from a precompiled warm service.\n Three sources account for 85.68\\% of the eight-core modeled CPU-span\n reduction; this retrospective concentration is not a scheduling predictor.\n \n+\\begin{figure*}[t]\n+\\centering\n+\\input{figures/source-budget-opportunity}\n+\\caption{Budget changes alter the work visible to a parallelism study.\n+(a) The same 50 historically passing sources: 19 are interrupted at the\n+diagnostic heartbeat setting, while all 50 return without Lean errors with\n+their original source options. This is a protocol change, not an algorithmic\n+gain or complete service-acceptance test.\n+(b) Original-budget branch opportunities under the finite-core model.\n+The body CPU ratio and the complete-process wall sensitivity have distinct\n+denominators. The latter retains outside-body work and each source's\n+observed wall/CPU multiplier. Both omit unmeasured parallel-execution costs;\n+neither curve is an observed speedup or a bound on the full service.}\n+\\label{fig:source-budget-opportunity}\n+\\end{figure*}\n+\n \\paragraph{Native dispatch depends on the execution boundary.}\n In the retained prepared Lean~4.9 service, the successfully loaded Linarith\n library has 684 direct ELF dependencies, including Linarith preprocessing\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/figures/source-budget-opportunity.tex",
+      "docs/tmp/build-and-evaluate/step-0195-20261030T124743+0000"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/figures/source-budget-opportunity.tex",
+      "docs/tmp/build-and-evaluate/step-0195-20261030T124743+0000"
+    ],
+    "returncode": 2,
+    "stdout": "docs/tmp/build-and-evaluate/step-0195-20261030T124743+0000/experiment-001/figure-data.csv:1: trailing whitespace.\n+cores,body_model_ratio,process_model_ratio\ndocs/tmp/build-and-evaluate/step-0195-20261030T124743+0000/experiment-001/figure-data.csv:2: trailing whitespace.\n+1,1.0,1.0\ndocs/tmp/build-and-evaluate/step-0195-20261030T124743+0000/experiment-001/figure-data.csv:3: trailing whitespace.\n+2,1.1846752977803243,1.0986273902454038\ndocs/tmp/build-and-evaluate/step-0195-20261030T124743+0000/experiment-001/figure-data.csv:4: trailing whitespace.\n+4,1.2759231763023897,1.142253311291373\ndocs/tmp/build-and-evaluate/step-0195-20261030T124743+0000/experiment-001/figure-data.csv:5: trailing whitespace.\n+8,1.3403667513001507,1.1712871113973682\n",
+    "stderr": ""
+  }
+]

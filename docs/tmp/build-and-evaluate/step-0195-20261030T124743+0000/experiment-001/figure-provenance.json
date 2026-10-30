@@ -1,0 +1,42 @@
+{
+  "source_root_analysis": "docs/tmp/build-and-evaluate/step-0194-20261030T124220+0000",
+  "owner_source": "9b67361",
+  "raw_native_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/accepted-original-s0-linked-on",
+  "n": 50,
+  "old_diagnostic_no_errors": 31,
+  "old_diagnostic_budget_errors": 19,
+  "original_budget_no_errors": 50,
+  "data": [
+    {
+      "cores": "1",
+      "body_model_ratio": 1.0,
+      "process_model_ratio": 1.0
+    },
+    {
+      "cores": "2",
+      "body_model_ratio": 1.1846752977803243,
+      "process_model_ratio": 1.0986273902454038
+    },
+    {
+      "cores": "4",
+      "body_model_ratio": 1.2759231763023897,
+      "process_model_ratio": 1.142253311291373
+    },
+    {
+      "cores": "8",
+      "body_model_ratio": 1.3403667513001507,
+      "process_model_ratio": 1.1712871113973682
+    }
+  ],
+  "additional_native_calls": 0,
+  "vector_plot": "existing TikZ, no new dependency",
+  "figure_file": "docs/paper/figures/source-budget-opportunity.tex",
+  "limits": [
+    "Retain every source original body wall/CPU ratio when mapping its CPU-span opportunity to wall.",
+    "Keep all measured work outside candidate-body timers serial and unchanged.",
+    "No parallel runtime, overhead, scheduler, memory admission, diagnostic or heartbeat reconciliation costs measured.",
+    "This single ordered serial SDK capture is not a precompiled warm-service clock.",
+    "No transfer to other candidates, failures, full7808 or other hardware; not a general Amdahl impossibility bound.",
+    "Top3 concentration is retrospective, not a scheduling predictor."
+  ]
+}
