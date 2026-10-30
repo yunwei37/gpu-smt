@@ -93,3 +93,8 @@ This is a negative generalization result for the tested Int/list family, not a g
 1/8selected historical timeout recovered. Latest corpus acceptance overlay145/244
 tasks (59.4262%),33new accepted candidates total. Shape coverage57/126must not be
 confused with actual32/126source recovery.
+
+[Remaining4limit diagnosis](remaining-four-result/README.md): source-prefix simp,
+expanded-goal bridge failure/recursion, and kernel proof composition after card_filter.
+C timing reproduces all4native categories/diagnostic text. Removal experiments do
+not count as new valid proofs; the33new accepted candidate count is unchanged.

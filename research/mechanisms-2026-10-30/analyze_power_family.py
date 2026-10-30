@@ -43,6 +43,7 @@ def main():
         if x["mode"]!="certificate":continue
         if x["status"]=="accepted":after.add(x["id"])
         else:after.discard(x["id"])
+    assert oldpassed <= after, "accepted-set regression"
     beforetasks={inputs[i]["task_id"] for i in oldpassed};tasks={inputs[i]["task_id"] for i in after}
     fixedpassed=[x["id"] for x in rows if x["mode"]=="certificate" and x["status"]=="accepted" and x["id"] in selected]
     familynew=[x["id"] for x in rows if x["mode"]=="certificate" and x["status"]=="accepted"]

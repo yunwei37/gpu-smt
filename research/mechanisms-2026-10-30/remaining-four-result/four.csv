@@ -1,0 +1,5 @@
+id,unchanged_native_status,observed_wall_s,C_events,diagnostics_equal,last_open_C_stack,diagnosis
+minif2f-3683,budget_exceeded,16.2471696799621,134,True,elaboration:>type checking:,timeout inside original kernel declaration check after all tactic calls returned; source card_filter expansion triggers expensive proof composition/conversion
+minif2f-3698,budget_exceeded,3.222367536276579,114,True,,"prefix simp heartbeat exhaustion, certificate later constructed after error recovery but full source rejected"
+minif2f-3703,budget_exceeded,16.24579016957432,208,True,elaboration:>tactic execution:Lean.Parser.Tactic.tacticSeq>tactic execution:Lean.Parser.Tactic.tacticSeq1Indented>tactic execution:tacticM_digits_rfl>tactic execution:Lean.Parser.Tactic.tacticRfl>tactic execution:Lean.Parser.Tactic.eqRefl,"generic bridge attempt fails, then original rfl/eqRefl fallback still running at wall timer"
+minif2f-3710,budget_exceeded,3.6751071820035577,116,True,,maximum recursion in bridge matching after source card_filter expansion; prefix omega also fails
