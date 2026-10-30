@@ -8,15 +8,15 @@ licenses. Every manifest dependency revision is in static-4eaee875/dependencies.
 
 ## Latest archived native evidence
 
-Lean4.34.1 and pinned Mathlib cache are prepared on the same PVC. The W027
-snapshot has536distinct compiled module artifacts across explicitly separate
+Lean4.34.1 and pinned Mathlib cache are prepared on the same PVC. The W034
+snapshot has612distinct compiled module artifacts across explicitly separate
 budget/observation points, not full library acceptance.
 
 | Evidence | Scope |
 |---|---|
 | [Whole Amplitudes](amplitudes-native-complete/) |180.276s,100kHB/j8 replay point|
 | [Whole Grid](grid-native-complete/) |634.280s,its100kHB/j8 replay point|
-| [Unchanged-source target costs](authored-sample42/) |19/42probability endpoints;6/21complete cells at W027|
+| [Original-option target costs](deep-stratum-native-complete/) |21/42probability endpoints;7/21complete cells at W034|
 | [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not population count|
 | [Source/helper unit audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
 | [Artifact controls](artifact-scope-control/) |3targets emit .olean/.ilean/.c; separate cost point|
@@ -24,7 +24,7 @@ budget/observation points, not full library acceptance.
 
 The42probability targets span21source-size/import-depth/kernel-token strata.
 Purposeful targets and compiled dependencies get no extra population weight.
-The finite group continues23remaining targets; [W state](../W-status.md)
+The active group covers an algorithm median and another original draw; [W state](../W-status.md)
 records launch ownership. Source options remain unchanged, with child self
 timers despite denied parent signals. W16GiB includes separately censored
 old EPFL process13733; sampled RSS is not a hard kernel quota.

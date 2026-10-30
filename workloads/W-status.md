@@ -1,17 +1,20 @@
 # W current state
 
-## Current frontier (archived through W033, 2026-10-30)
+## Current frontier (archived through W034, 2026-10-30)
 
-- [OpenAI math](openai-math/README.md): static source audit complete; W027
-  archived19/42probability costs,6/21complete cells. Full-build CPU/CI unknown.
+- [OpenAI math](openai-math/README.md): static source audit complete; W034
+  archived21/42probability costs,14/21cells observed,7complete. Full CPU/CI unknown.
 - Sample23 retired:7compile/2allocation exceptions/1full600s/1remainder106s/
   8uninvoked; no new endpoint costs. Do not restart known blocked draws.
 - Exact Rellich context now15/15native compile complete; no sorry. Setup
   sources, official patch and objects preserved on PVC, not old4.29.1binaries.
-- Sole foreground Wcapture: PVC workloads/openai4341-deep-stratum2,
-  controller67386/birth743279187. Original rare cellN2 probability endpoints,
-  source HB unchanged,self600/group1400/8cores/M8192. Verify real terminal;
-  old13733 remains censored/charged. No parallel WLean.
+- Deep rare cellN2 is now complete:69fresh compiles/no sorry, both original
+  endpoints passed; foreground retired.612OAI module artifacts across points.
+- Sole foreground Wcapture: PVC workloads/openai4341-algorithm-median,
+  controller68877/birth743340062. Two frozen-frame targets: algorithm-project
+  purposeful median(weight0) + FixedCompactRow48probability target. Same
+  j8/M8192/source options/self600/group1400; old13733stillcharged.
+  Verify actual launch/terminal; no parallel WLean.
 - [Publisher-label diagnosis](candidates/epfl-label-reproducibility/):
   original/800k/.ilean replay pass,rec128fails/256and512pass; unique historical
   cause unresolved. No proven labelbug or time-only explanation.
