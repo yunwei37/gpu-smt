@@ -9,6 +9,8 @@ on:
 
 jobs:
   rust:
+    # A manual run qualifies the container alone; push/PR retains the full suite.
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,6 +54,7 @@ jobs:
           RUSTDOCFLAGS: -D warnings
 
   native-repl-contract:
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -117,7 +120,7 @@ jobs:
           if-no-files-found: ignore
 
   container-package:
-    # Full Lean/Mathlib environment build is opt-in until the build machine is selected.
+    # Run one isolated image build, leaving room within the 4 GiB O-line budget.
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
@@ -139,7 +142,9 @@ jobs:
           sparse-checkout-cone-mode: false
       - uses: docker/setup-buildx-action@v3
         with:
-          driver-opts: memory=4g
+          driver-opts: |
+            memory=3g
+            memory-swap=3g
       - name: Build pinned Lean Mathlib REPL environment without publishing
         uses: docker/build-push-action@v6
         with:
