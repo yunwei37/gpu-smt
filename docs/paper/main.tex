@@ -1551,6 +1551,18 @@ model gives only 1.016; its overlapping savings are not added.
 Neither model establishes a gain for all 7,808 candidates or a new
 parallel-proof mechanism.
 
+The same timing-on process spends 70.667 of its 166.629 seconds outside
+the 95.962-second candidate-body wall windows. To expose this denominator,
+we map each source's modeled CPU-span reduction through that source's
+observed body wall/CPU ratio and leave all outside-body work unchanged.
+The resulting two-, four- and eight-core complete-process latency models
+are 151.670, 145.878 and 142.262 seconds, ratios of 1.099, 1.142 and 1.171.
+These additional assumptions do not turn the model into a measured
+end-to-end gain or a global impossibility bound. The serial SDK import,
+observer and export costs differ from a precompiled warm service.
+Three sources account for 85.68\% of the eight-core modeled CPU-span
+reduction; this retrospective concentration is not a scheduling predictor.
+
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith
 library has 684 direct ELF dependencies, including Linarith preprocessing

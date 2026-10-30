@@ -1,0 +1,96 @@
+{
+  "source": "9b67361",
+  "native_returns": 50,
+  "additional_native_calls": 0,
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/accepted-original-s0-linked-on",
+  "complete_process_wall_s": 166.62926430813968,
+  "candidate_body_wall_s": 95.961979937,
+  "candidate_body_CPU_s": 95.931585369,
+  "outside_body_wall_s": 70.66728437113969,
+  "outside_body_wall_fraction": 0.42409888001700585,
+  "finite_core_sensitivity": {
+    "1": {
+      "modeled_CPU_equivalent_reduction_s": 0.0,
+      "body_CPU_model_ratio": 1.0,
+      "modeled_wall_reduction_s": 0.0,
+      "full_process_wall_model_s": 166.62926430813968,
+      "full_process_wall_model_ratio": 1.0
+    },
+    "2": {
+      "modeled_CPU_equivalent_reduction_s": 14.954472443,
+      "body_CPU_model_ratio": 1.1846752977803243,
+      "modeled_wall_reduction_s": 14.958856499611281,
+      "full_process_wall_model_s": 151.6704078085284,
+      "full_process_wall_model_ratio": 1.0986273902454038
+    },
+    "4": {
+      "modeled_CPU_equivalent_reduction_s": 20.745565434,
+      "body_CPU_model_ratio": 1.2759231763023897,
+      "modeled_wall_reduction_s": 20.751583183488638,
+      "full_process_wall_model_s": 145.87768112465105,
+      "full_process_wall_model_ratio": 1.142253311291373
+    },
+    "8": {
+      "modeled_CPU_equivalent_reduction_s": 24.360438684000002,
+      "body_CPU_model_ratio": 1.3403667513001507,
+      "modeled_wall_reduction_s": 24.36759107129535,
+      "full_process_wall_model_s": 142.26167323684433,
+      "full_process_wall_model_ratio": 1.1712871113973682
+    }
+  },
+  "eligible_sources_ranked": [
+    {
+      "id": "minif2f-6484",
+      "body_CPU_s": 11.129547074,
+      "saved_CPU_equivalent_8core_s": 8.865461508000001,
+      "saved_wall_8core_s": 8.869079768767575
+    },
+    {
+      "id": "minif2f-60",
+      "body_CPU_s": 8.742978927,
+      "saved_CPU_equivalent_8core_s": 6.75075267,
+      "saved_wall_8core_s": 6.752287997774081
+    },
+    {
+      "id": "minif2f-6477",
+      "body_CPU_s": 6.834387083,
+      "saved_CPU_equivalent_8core_s": 5.256445116,
+      "saved_wall_8core_s": 5.257683983174839
+    },
+    {
+      "id": "minif2f-487",
+      "body_CPU_s": 3.526393758,
+      "saved_CPU_equivalent_8core_s": 2.38421106,
+      "saved_wall_8core_s": 2.384694956855397
+    },
+    {
+      "id": "minif2f-7156",
+      "body_CPU_s": 1.421889647,
+      "saved_CPU_equivalent_8core_s": 0.646472687,
+      "saved_wall_8core_s": 0.646657826231823
+    },
+    {
+      "id": "minif2f-7745",
+      "body_CPU_s": 0.862380244,
+      "saved_CPU_equivalent_8core_s": 0.44107650200000004,
+      "saved_wall_8core_s": 0.4411684760248272
+    },
+    {
+      "id": "minif2f-7478",
+      "body_CPU_s": 0.071916823,
+      "saved_CPU_equivalent_8core_s": 0.016019141,
+      "saved_wall_8core_s": 0.01601806246680726
+    }
+  ],
+  "top3_fraction_of_modeled_CPU_reduction": 0.8568260844871081,
+  "assumptions": [
+    "Retain every source original body wall/CPU ratio when mapping its CPU-span opportunity to wall.",
+    "Keep all measured work outside candidate-body timers serial and unchanged.",
+    "No parallel runtime, overhead, scheduler, memory admission, diagnostic or heartbeat reconciliation costs measured.",
+    "This single ordered serial SDK capture is not a precompiled warm-service clock.",
+    "No transfer to other candidates, failures, full7808 or other hardware; not a general Amdahl impossibility bound.",
+    "Top3 concentration is retrospective, not a scheduling predictor."
+  ],
+  "root_elapsed_s": 0.030111262574791908,
+  "root_maxrss_kib": 29660
+}

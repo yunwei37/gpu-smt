@@ -177,6 +177,15 @@ snapshot/merge/hidden-state/diagnostic/HB/memory costs, not actual parallel
 execution or 7,808 throughput. Three whole cells take 501.013149 s; 3.85 GiB
 sampled peak; have-only 1.015819× overlaps and is not added.
 
+The [complete-clock sensitivity](tmp/build-and-evaluate/step-0194-20261030T124220+0000/step-report.md)
+keeps the same capture's 70.667284 s outside-body work unchanged and maps
+each modeled CPU reduction through its own source body wall/CPU ratio.
+The conditional full-process 2/4/8-core ratios are 1.098627/1.142253/1.171287×,
+versus the body-only 1.184675/1.275923/1.340367×. No measured runtime benefit,
+warm-service denominator or general Amdahl impossibility claim follows.
+Three sources account for85.68%of modeled eight-core reduction; retrospective
+concentration is not a predictor. Existing native rows are reanalyzed only.
+
 Native metadata from 135 compiled objects yields 1,799 theorems, 743 auxiliary
 names, 601 native Expr keys / 604 level-private groups, 45 cross-module groups.
 The 45 decide-shaped auxiliaries have 45 distinct types: no exact-type
