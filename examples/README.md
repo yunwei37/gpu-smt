@@ -1,12 +1,12 @@
 # Executable engine examples
 
-Build cargo build -p gpu-smt-server, then from the Lean project supply your actual stock REPL and
+Build cargo build -p proofserve, then from the Lean project supply your actual stock REPL and
 matching project/toolchain identity:
 
-    lake env /absolute/path/to/gpu-smt/target/debug/gpu-smt check \
+    lake env /absolute/path/to/proofserve/target/debug/proofserve check \
       --repl /absolute/path/to/repl --project /absolute/path/to/project \
       --environment lean4-project-pin --cpus 8,9,10,11 --worker-cores 1 \
-      --memory-gib 48 < /absolute/path/to/gpu-smt/examples/check.jsonl
+      --memory-gib 48 < /absolute/path/to/proofserve/examples/check.jsonl
 
 The source inputs include an accepted core proof, a false decide attempt and
 an admitted proof. These are correctness controls, not real generated workload
@@ -31,11 +31,11 @@ incomplete and cannot cancel its siblings. A checked winner may cancel remaining
 same-task work; the rejected-only task still exhausts its candidates. Native
 results remain in original input order. These are controls, not a benchmark.
 
-    lake env /absolute/path/to/gpu-smt/target/debug/gpu-smt measure \
+    lake env /absolute/path/to/proofserve/target/debug/proofserve measure \
       --repl /absolute/path/to/repl --project /absolute/path/to/project \
       --environment lean4-project-pin --cpus 8,9,10,11 --worker-cores 1 \
       --memory-gib 48 --policy task-interleave \
-      < /absolute/path/to/gpu-smt/examples/first-success.json \
+      < /absolute/path/to/proofserve/examples/first-success.json \
       > first-success.capture.json 2> first-success.resources.jsonl
 
 Use the same policy with mode all when every candidate reward is required;
@@ -45,7 +45,7 @@ remains controlled by each candidate's reuse field.
 
 Preview the policy through the public Rust traits without starting a verifier:
 
-    cargo run -p gpu-smt-engine --example task_order \
+    cargo run -p proofserve-engine --example task_order \
       < examples/first-success.json
 
 This prints candidate order only; it does not validate proofs, perform resource
@@ -54,7 +54,7 @@ admission or produce benchmark performance.
 ## Opt-in measured sibling memory
 
 Library callers can pass Arc::new(TaskInterleave::new(TaskMemory::new(Fifo)))
-as Engine::new's policy. Import the three policy types from gpu_smt_engine.
+as Engine::new's policy. Import the three policy types from proofserve_engine.
 The compiled public TaskMemory example documents this composition; it does not
 start a verifier. Existing CLI defaults and frozen collections are unchanged.
 The executable now exposes TaskMemory::new(Fifo) as --policy task-memory for
@@ -75,7 +75,7 @@ now execute actual feedback/raw-response checks,not original4.9performance.
 
 ## Matched native/prepared resource pair
 
-Build the reusable API example with cargo build --release -p gpu-smt-server
+Build the reusable API example with cargo build --release -p proofserve
 --example resource_pair. Its --help documents eight positional inputs:one Batch
 JSON,matching native REPL/project/prepared-host/sysroot/environment,one Config
 JSON,and a fresh output directory. Run from that native project's lake env.
@@ -118,7 +118,7 @@ collection should be rebuilt or restarted to adopt this observation change.
 
 ## Tactic-failure replay skeleton
 
-    cargo run -p gpu-smt-engine --example failure_replay --locked
+    cargo run -p proofserve-engine --example failure_replay --locked
 
 This is an explicitly simulated backend using the public library API. It
 captures an input, stores an opaque ordinary-failure transition, revalidates

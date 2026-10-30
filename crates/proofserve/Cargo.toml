@@ -1,0 +1,40 @@
+[package]
+description = "Local HTTP and JSONL interface for the verification engine"
+readme = "README.md"
+name = "proofserve"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+documentation = "https://docs.rs/proofserve"
+include = ["src/**", "tests/**", "benches/**", "examples/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
+proofserve-core.workspace = true
+proofserve-engine.workspace = true
+proofserve-lean.workspace = true
+axum.workspace = true
+futures-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[[bin]]
+name = "proofserve"
+path = "src/main.rs"
+
+[dev-dependencies]
+async-trait.workspace = true
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = []
+rustdoc-args = ["--cfg", "docsrs"]

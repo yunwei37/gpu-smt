@@ -1,0 +1,33 @@
+[package]
+description = "Verification scheduling, exact reuse and owned resource accounting"
+readme = "README.md"
+name = "proofserve-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+documentation = "https://docs.rs/proofserve-engine"
+include = ["src/**", "tests/**", "benches/**", "examples/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
+serde.workspace = true
+proofserve-core.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+serde_json.workspace = true
+libc.workspace = true
+async-trait.workspace = true
+tracing.workspace = true
+
+[[bench]]
+name = "exact_cache"
+harness = false
+
+[package.metadata.docs.rs]
+all-features = true
+targets = []
+rustdoc-args = ["--cfg", "docsrs"]

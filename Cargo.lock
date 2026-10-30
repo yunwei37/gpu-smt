@@ -154,63 +154,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gpu-smt-core"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "serde",
- "serde_json",
- "tokio-util",
-]
-
-[[package]]
-name = "gpu-smt-engine"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "gpu-smt-core",
- "libc",
- "serde",
- "serde_json",
- "tokio",
- "tokio-util",
- "tracing",
-]
-
-[[package]]
-name = "gpu-smt-lean"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "gpu-smt-core",
- "gpu-smt-engine",
- "libc",
- "serde_json",
- "tokio",
- "tokio-util",
- "tracing",
-]
-
-[[package]]
-name = "gpu-smt-server"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "axum",
- "futures-core",
- "gpu-smt-core",
- "gpu-smt-engine",
- "gpu-smt-lean",
- "http-body-util",
- "serde",
- "serde_json",
- "tokio",
- "tower",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "http"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -385,6 +328,63 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "proofserve"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "axum",
+ "futures-core",
+ "http-body-util",
+ "proofserve-core",
+ "proofserve-engine",
+ "proofserve-lean",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tower",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "proofserve-core"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "serde",
+ "serde_json",
+ "tokio-util",
+]
+
+[[package]]
+name = "proofserve-engine"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "libc",
+ "proofserve-core",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-util",
+ "tracing",
+]
+
+[[package]]
+name = "proofserve-lean"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "libc",
+ "proofserve-core",
+ "proofserve-engine",
+ "serde_json",
+ "tokio",
+ "tokio-util",
+ "tracing",
 ]
 
 [[package]]

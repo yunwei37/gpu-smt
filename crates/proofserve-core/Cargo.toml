@@ -1,0 +1,25 @@
+[package]
+description = "Verifier-neutral typed contracts and extension traits"
+readme = "README.md"
+name = "proofserve-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+documentation = "https://docs.rs/proofserve-core"
+include = ["src/**", "tests/**", "benches/**", "examples/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio-util.workspace = true
+
+[package.metadata.docs.rs]
+all-features = true
+targets = []
+rustdoc-args = ["--cfg", "docsrs"]

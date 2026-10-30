@@ -2,9 +2,9 @@ name: engine
 
 on:
   push:
-    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", ".github/workflows/engine.yml"]
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", "clients/python/**", "packaging/**", "Dockerfile", ".dockerignore", ".github/workflows/engine.yml"]
   pull_request:
-    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", ".github/workflows/engine.yml"]
+    paths: ["Cargo.toml", "Cargo.lock", "crates/**", "native/**", "examples/**", "clients/python/**", "packaging/**", "Dockerfile", ".dockerignore", ".github/workflows/engine.yml"]
   workflow_dispatch:
 
 jobs:
@@ -12,15 +12,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /Cargo.toml
+            /Cargo.lock
+            /LICENSE
+            /README.md
+            /.dockerignore
+            /Dockerfile
+            /crates/
+            /native/
+            /examples/
+            /clients/python/
+            /packaging/
+          sparse-checkout-cone-mode: false
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.98.1
           components: rustfmt, clippy
+      - run: PYTHONPATH=clients/python python3 -m unittest discover -s clients/python/tests -v
+      - run: cargo publish --workspace --dry-run --locked
       - run: cargo fmt --all -- --check
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - run: cargo test --workspace --all-targets --locked
       - run: cargo test --workspace --doc --locked
-      - run: cargo run -p gpu-smt-engine --example failure_replay --locked
+      - name: Build first-version Linux binary
+        run: cargo build --release --locked -p proofserve
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proofserve-linux-x86_64
+          path: |
+            target/release/proofserve
+            LICENSE
+          if-no-files-found: error
+      - run: cargo run -p proofserve-engine --example failure_replay --locked
       - run: cargo doc --workspace --no-deps --locked
         env:
           RUSTDOCFLAGS: -D warnings
@@ -29,6 +54,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /Cargo.toml
+            /Cargo.lock
+            /LICENSE
+            /README.md
+            /.dockerignore
+            /Dockerfile
+            /crates/
+            /native/
+            /examples/
+            /clients/python/
+            /packaging/
+          sparse-checkout-cone-mode: false
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.98.1
@@ -52,7 +91,7 @@ jobs:
           echo "LEAN_PREPARED_HOST=$RUNNER_TEMP/prepared-host/prepared-host" >> "$GITHUB_ENV"
           echo "LEAN_SYSROOT=$RUNNER_TEMP/lean-4.18.0-linux" >> "$GITHUB_ENV"
       - name: Differential check against raw native JSON
-        run: cargo test -p gpu-smt-lean --test native_differential --locked -- --ignored
+        run: cargo test -p proofserve-lean --test native_differential --locked -- --ignored
       - name: Check native ordinary-failure transition controls
         shell: bash
         run: |
@@ -74,3 +113,34 @@ jobs:
             ${{ runner.temp }}/failure-candidate-differential/**
             !${{ runner.temp }}/failure-candidate-differential/**/*.olean
           if-no-files-found: ignore
+
+  container-package:
+    # Full Lean/Mathlib environment build is opt-in until the build machine is selected.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /Cargo.toml
+            /Cargo.lock
+            /LICENSE
+            /README.md
+            /.dockerignore
+            /Dockerfile
+            /crates/
+            /native/
+            /examples/
+            /clients/python/
+            /packaging/
+          sparse-checkout-cone-mode: false
+      - uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: memory=4g
+      - name: Build pinned Lean Mathlib REPL environment without publishing
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: proofserve:ci

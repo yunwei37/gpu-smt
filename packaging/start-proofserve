@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+cd /opt/mathlib
+exec lake env /usr/local/bin/proofserve "$@" \
+  --repl /opt/repl/.lake/build/bin/repl \
+  --project /opt/mathlib \
+  --environment lean4.18.0-mathlib-aa936c36-repl-2f0a3cb8 \
+  --prepared-host /opt/prepared/prepared-host --sysroot /opt/lean

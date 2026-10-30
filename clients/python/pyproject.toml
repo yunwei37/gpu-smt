@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proofserve-client"
+version = "0.1.0"
+description = "Minimal Python client for the ProofServe Kimina-compatible check API"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+readme = "README.md"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["proofserve*"]
+
+[project.urls]
+Repository = "https://github.com/yunwei37/proofserve"
+Documentation = "https://github.com/yunwei37/proofserve/tree/main/clients/python"
