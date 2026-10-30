@@ -74,10 +74,16 @@ Step 003 completion: the maps process has retired; final digits certificate pass
 
 [Individual coverage review](coverage/README.md): all126miniF2F operational failures
 and17returned EPFL budget observations reviewed. Two checked target families
-cover49source opportunities; actual unchanged-source replacement coverage remains
-unqualified. False auxiliary assertions are separate proof-repair cases.
+cover49source opportunities. [Whole-source pair](step-023-report.md) now recovers31/49 complete proofs (16digits/15grid),14retain tactic errors and4remain budget-limited.
+The31 accepted sources solve two previously unsolved tasks in the retained historical corpus.
+This changes operational acceptance; it is not a result-preserving engine-speedup claim.
+[Automatic dispatch](automation/README.md) completes both64-source task frames, with unchanged31 passes and rejected adversarial targets/prefixes. False auxiliary assertions are separate proof-repair cases.
 See [step020](step-020-report.md) and the original-source obligation table.
 
 [Full reflected grid](ReflectedGridCertificate.lean) checks row-completeness and
 proves the original mathd_numbertheory_541 theorem. Independent chunk kernel
 recheck timings and total pipeline cost are separate measurements; see step021.
+
+[openai/math seven-type check](openai-kernel-sample/README.md): both original and certificate plain sources7/7 accepted; the split-row certificate is slower (13.318s vs23.937s summed whole-source wall;2.328s vs5.758s additional kernel work).
+This is a negative generalization result for the tested Int/list family, not a global1.35m-call estimate. Raw heartbeat unit mistakes and the later60s typed-census censoring are retained separately.
+[Remaining37 bridge effort](coverage/remaining37-bridge-estimate.md) is an estimate, not completed proof coverage.

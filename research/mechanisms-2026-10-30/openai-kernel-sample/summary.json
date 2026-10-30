@@ -1,0 +1,47 @@
+{
+  "terminal": {
+    "complete": true,
+    "units": 30,
+    "wall_s": 94.46709846984595
+  },
+  "paired_goal_types": 7,
+  "all_plain_accepted": true,
+  "all_observer_accepted": true,
+  "plain_sums": {
+    "original": {
+      "wall_s": 13.317705656401813,
+      "cpu_s": 13.108858000000016
+    },
+    "certificate": {
+      "wall_s": 23.93685738183558,
+      "cpu_s": 24.262333000000005
+    }
+  },
+  "kernel_recheck_sums": {
+    "original": 2.327609341,
+    "certificate": 5.757960241
+  },
+  "mutated_payload_rejected": true,
+  "typed_probe": {
+    "kind": "typed45",
+    "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/openai-native/openai-recheck-v2-typed45",
+    "exit": -14,
+    "wall_s": 60.18069073371589,
+    "cpu_s": 60.13094400000001,
+    "sampled_peak_owned_tree_RSS_bytes": 4980285440,
+    "sampled_budget_violation": false,
+    "retired": true,
+    "self_wall_s": 60,
+    "jobs": 1,
+    "limits": "single finite SDK process; native -M is cooperative, parent sampling not hard RSS enforcement; self alarm no external signals"
+  },
+  "typed_started": 17,
+  "typed_checks": 49,
+  "typed_status_counts": {
+    "started": 17,
+    "checked": 49
+  },
+  "typed_terminal": [],
+  "max_sampled_owned_RSS_bytes": 4980285440,
+  "scope": "availability-biased typed45 subset of135compiled modules;7 integer row types selected, not a full1.35m typed census or representative performance estimate"
+}
