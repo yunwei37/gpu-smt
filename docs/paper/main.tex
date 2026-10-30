@@ -923,6 +923,16 @@ First-success cancellation does not
 provide every candidate reward required by reinforcement-learning training,
 and it does not establish a new contribution for ordinary scheduling.
 
+A separate five-fold task-held-out model uses source size and tactic-token
+features to predict checked acceptance and observed attempt cost in the
+four-worker capture. Ranking by predicted acceptance divided by one plus
+predicted cost improves 63 tasks, worsens 77 and leaves 104 unchanged under
+frozen original attempt histories. Summed work increases from 50,527.12 to
+50,740.66 seconds. The three tasks with greatest FIFO work account for 39.36\%
+of that frozen work and have no observed accepted candidate. These task-level
+tails are not individual-candidate latency tails; neither frozen costs nor
+these observed-unsolved labels determine outcomes after actual rescheduling.
+
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
 
@@ -938,12 +948,18 @@ Within the timeout cohort, one-second endpoint attribution assigns
 13,692.70 observed thread CPU seconds (55.19\%) to
 \texttt{interval\_cases} and 6,998.01 seconds (28.21\%) to
 \texttt{simp\_all}. The timeout cohort has only 6.00 sampled seconds under
-\texttt{nlinarith}. Among the 355 ordinary errors, \texttt{simp\_all}
+\texttt{nlinarith}. Among the 355 source-error results, \texttt{simp\_all}
 accounts for 48.65\% of observed thread CPU. These denominators are
 sampled cohort thread CPU, not complete miniF2F elapsed time or removable
 critical-path work. Child-subtracted runtime counters, open frames,
 source transitions and terminated streams remain in the artifact.
 Resource failures lack returned body clocks; they are not zero-cost.
+Source-error outcomes do not count thrown ordinary tactic exceptions: a tactic
+can log an error and return normally. Counting any observed target entry
+partitions the 83 timeouts into 46 with only \texttt{interval\_cases} observed,
+18 with only \texttt{simp\_all}, nine with both and ten with neither observed.
+These source partitions are distinct from largest-CPU attribution and do not
+certify termination, failure or absence in a truncated execution.
 Grouping each timeout by its largest sampled tactic attributes
 48 sources across seven tasks to \texttt{interval\_cases} and
 23 sources across 16 tasks to \texttt{simp\_all}; 12 sources have another
@@ -980,7 +996,7 @@ A same-run memory join obtains bracket-inferred process observations for
 adjacent source-label agreement within 2.5 seconds and a unique HTTP envelope.
 Among each source's observed single-worker maxima, the medians are
 23.27\,GiB for the 42 resource failures, 14.71\,GiB for the 83 timeouts and
-3.67\,GiB for 352 observed ordinary errors. Three error sources remain
+3.67\,GiB for 352 observed source-error results. Three error sources remain
 missing. These occupancies include imports, process history and diagnostic
 overhead; asynchronous samples are neither source allocations nor true
 high-water marks. All records retain the old 24\,GiB address-space limit.
@@ -990,7 +1006,7 @@ actual-RSS predictor or justify four simultaneous workers.
 A sensitivity check requires the entire sequential RSS-read window, rather
 than only its timestamp, to lie between agreeing active-body observations and
 within the matching HTTP envelope, with no intervening source boundary.
-It retains 435 sources: 310 ordinary errors, all 83 timeouts and all 42 resource
+It retains 435 sources: 310 source-error results, all 83 timeouts and all 42 resource
 failures. The retained rows are a subset of the earlier body observations;
 all 125 timeout/resource sources retain exactly the same sampled per-worker
 maxima. This check selects the same archived observations and adds no native
@@ -1040,6 +1056,13 @@ not CPU time, a disjoint wall partition or an Amdahl ceiling. The profiler's
 to the uninstrumented run. This module supplies a concrete certificate-checking
 target; it does not establish that this work can be removed or accelerated
 while preserving native checking.
+
+Intersecting stage intervals finds 21.20 seconds with SAT and LRAT-verification
+labels concurrently active across trace lanes. Within the 41.53-second trace
+union, 17.62 seconds have only verification labels, 0.16 only SAT labels and
+2.55 neither. These are diagnostic coverage sets, not a critical-path model:
+accelerating SAT can shift later dependencies and contention. The SAT-only
+duration therefore supplies no end-to-end zero-cost ceiling.
 
 \paragraph{Closed-CNF checking ablation.}
 We test an opt-in frontend that compiles one closed CNF declaration for

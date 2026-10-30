@@ -40,3 +40,14 @@ cache. That work and actual population opportunity remain open. Browser read-onl
 status inspection was policy-stopped before any input because currentURL could
 not be determined;browser authentication is unknown,not inferred from CLI401.
 Goal APIreturnedactive. No safety/schedule/credential change or formalcapture.
+
+Step0158–0159:50whole-candidate short native cells match exactdiagnostics,
+verdict/exit and theorem audit;6controlled hits,not population opportunity.
+PriorstepCIclosed. Offline observed-entry partitions separate480source errors
+from ordinary thrown tactics;heldout ranking improves63tasks/regresses77 and
+the3largest frozenFIFO tasks carry39.36%work with no observed accepted source.
+Lean-mlir SAT/LRATtrace coverage overlaps21.195678s;trace lanes are not CPUcores
+or independence evidence. Paper now states these separate scopes and compiles.
+The next work is exception-level state qualification and proper dynamic/service
+evidence,not deploying this ranking model or interpreting trace overlap as a
+GPU/Amdahl bound. Native long-capture AppArmor limit stays untouched.
