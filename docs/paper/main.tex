@@ -369,6 +369,8 @@ Grid, \texttt{--profile --stats} & 1 & 100 & 1 & 0 & 0 & 1 & 0 & 300.100 \\
 Grid, unprofiled & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 634.280 \\
 After Grid, bounded group & 8 & 100 & 14 & 12 & 0 & 2 & 48 & 1399.355 \\
 Amplitudes, longer bound & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 180.276 \\
+New strata & 8 & 100 & 109 & 106 & 2 & 1 & 2984 & 1399.656 \\
+Authored options & 8 & --- & 2 & 2 & 0 & 0 & 0 & 41.811 \\
 \bottomrule
 \end{tabular}
 \caption{Distinct bounded native-build points, not a homogeneous full-library
@@ -383,7 +385,11 @@ bound change. The bounded continuation starts 14 of 62 planned fresh modules:
 10 dependency-blocked and 38 not-started modules remain uninvoked.
 Its last call has only 41.935 seconds of group time left, despite a nominal
 120-second per-file cap. Amplitudes later receives a 1,200-second self-wall
-opportunity in a separate invocation. Heartbeats are the Lean option, not a cumulative group counter.
+opportunity in a separate invocation. The new-strata row invokes 109 of 3,093 planned
+fresh modules; its final call has only 8.030 seconds left from the group budget.
+The authored-options row removes the CLI heartbeat override on two unchanged
+sources and uses a separate 600-second self-wall bound.
+Heartbeats are the Lean option, not a cumulative group counter.
 Uninvoked dependencies have no measured compiler time or native verdict.
 Row clocks are not added to claim a fresh same-budget build or isolated
 worker-configuration speedup.}
@@ -459,22 +465,74 @@ These results establish additional native builds, not failure of the
 uninvoked sources, an isolated worker effect or a homogeneous full-library cost.
 The original 53-target frame and typed repeated-goal probe remain incomplete.
 
+Another bounded group selects 12 targets from previously uncovered strata,
+with a 3,114-module dependency closure. It invokes 109 of 3,093 planned
+fresh modules: 106 compile, two reach heartbeat limits and the final call
+self-interrupts after only 8.030 seconds of remaining group time.
+Of 2,984 uninvoked modules, 217 have recorded blocked dependencies and
+2,767 are never started. Compiler-wall sum is 1,399.656 seconds; collection
+takes 1,407.564 seconds with a combined sampled peak of 12.40\,GiB.
+The two heartbeat-interrupted modules subsequently compile from identical
+original source bytes after removing the CLI heartbeat override, taking
+7.934 and 33.878 seconds. That separate authored-options point has a
+600-second self-wall bound, 41.811 seconds of compiler wall and 50.058
+seconds of collection, with a combined sampled peak of 11.99\,GiB.
+These are different option points, not a same-budget acceleration comparison.
+Across the completed points, 365 original-module objects and 18 of the
+53 frame endpoints are available; full-frame coverage remains incomplete.
+
 \paragraph{Typed metadata does not establish cache eligibility.}
-A native reader inspects the earlier 135 serialized objects and finds
-1,799 theorems, including 743 auxiliary-name declarations.
-Native expression equality yields 601 auxiliary-type keys, or 604 groups
-when ordered universe parameters and private-name status are included;
-45 groups span modules. The five files containing that pilot's 45
-\texttt{decide +kernel} occurrences have 45
-\texttt{of\_decide\_eq\_true}-headed auxiliary proofs with distinct native
-type keys. Thus this pilot demonstrates no merging of those 45 calls by
-exact type equality. The blocked public probe has 16 repeated source
-annotations under 16 namespaces; text equality and namespace differences
-prove neither equality nor inequality of resolved types.
-Failed/uninvoked calls and the large repeated-goal PlanarPacking/Ramsey
-clusters are absent from the metadata pilot. Full imported axiom closure,
-hidden dependencies, replay qualification and whole-corpus failure-cache
-coverage remain unmeasured. Reading objects is not checking them again.
+The earlier native reader covers 135 serialized objects, with 1,799 theorems,
+743 auxiliary-name declarations and 601 native expression keys, or 604
+groups after adding ordered universe parameters and private-name status.
+Its 45 \texttt{of\_decide\_eq\_true}-headed auxiliary proofs have distinct
+types. That small pilot does not establish absence of repetition in a
+larger workload.
+
+A completed reader over 363 objects instead observes 89,268 theorem records,
+47,989 auxiliary-name declarations, 44,528 native expression keys and 44,532
+level/private groups. Table~\ref{tab:native-type-keys} isolates declarations
+whose auxiliary names and proof heads have the decision-proof shape.
+Their 45,661 distinct declaration names occur in 90 modules and form 42,610
+type groups: 933 groups repeat, including 919 spanning modules.
+The 3,051 excess declarations split into 1,497 extra declarations within
+a module/key pair and 1,554 excess distinct module/key pairs across modules.
+This establishes repeated native types in the sampled objects, not a count
+of source tactic executions or missed runtime cache lookups.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrr}
+\toprule
+Objects & \shortstack{Decision-shaped\\auxiliaries} &
+\shortstack{Type\\groups} & \shortstack{Cross-module\\groups} \\
+\midrule
+135 & 45 & 45 & 0 \\
+363 & 45,661 & 42,610 & 919 \\
+\bottomrule
+\end{tabular}
+\caption{Separate completed native metadata reads. Grouping uses native
+expression equality, ordered level parameters and a private-name flag.
+The flag is derived from the serialized name, not the producer's export state;
+cache mode, runtime misses, hidden dependencies and checking cost are unobserved.
+Numeric group IDs are local to each read and are not joined across processes.
+Counts describe declarations already present in objects, not fresh proof checks
+or replay-qualified calls.}
+\label{tab:native-type-keys}
+\end{table}
+
+The expanded metadata read completes in 1.762 seconds, with a 2.003-second
+collection and a 6.24\,GiB combined sampled peak including retained EPFL work.
+Those are metadata-read costs, not repeated kernel proof checking.
+The earlier repeated-text probe still has 16 source annotations under
+16 namespaces but lacks its compiled endpoint; text equality and namespace
+differences establish neither equality nor inequality of resolved types.
+Failed/uninvoked calls remain absent. Actual cache eligibility, full imported
+axioms and time-weighted benefit remain unmeasured, so the repeated-type counts
+cannot be converted into saved verification time or whole-corpus failure-cache
+coverage.
 
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL

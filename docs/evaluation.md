@@ -88,6 +88,8 @@ The original53target frame and major typed repeated-goal probes remain incomplet
 | Grid unprofiled,j8 |1|1|0/0|0|634.280070|
 | After Grid bounded group,j8 |14|12|0/2|48|1399.355128|
 | Amplitudes longer bound,j8 |1|1|0/0|0|180.275578|
+| New strata,j8,100k |109|106|2/1|2984|1399.655781|
+| Two authored-option modules,j8 |2|2|0/0|0|41.811451|
 
 Points have different budgets,workers,warm prerequisites and collection clocks;
 never sum them as a fresh homogeneous library build. M8192 is cooperative
@@ -101,13 +103,27 @@ Grid worker/wall limits change jointly; no isolated worker speedup follows.
 Last KernelValues10 receives only41.935s remainder,not120s. Unchanged Amplitudes
 later compiles with1200s self-wall opportunity; its prior120.115s censor stays.
 Compilation is not full-service acceptance or an imported-axiom audit.
+[Expanded cohort audit](tmp/build-and-evaluate/step-0205-20261030T152520+0000/step-report.md) checks3114closure/3093fresh:
+109calls,106compile/2HB/1residual-wall;217dependency-blocked+2767not-started.
+The final call gets8.030s,not300s. Two original sources later compile with
+CLI-heartbeat override removed and600s selfwall;not a same-budget gain.
+Native wall1399.655781/41.811451s,capture1407.564239/50.057644s,
+combinedsample12.40/11.99GiB. Acrosspoints365objects/18of53endpoints exist.
 
-The [135-object metadata pilot](tmp/build-and-evaluate/step-0193-20261030T123624+0000/step-report.md)
-finds1,799theorems/743auxiliary names/601Expr keys/604level-private groups.
-All45decide-shaped auxiliary types are distinct. Cross-module type equality
-does not imply one native cache computation; actual4.34.1auxiliary cache is
-branch-local/nonserialized and includes ordered level parameters. Reading
-checked objects is not rechecking. Full weighted cache/replay coverage unknown.
+
+[Native type-group audit](tmp/build-and-evaluate/step-0205-20261030T152520+0000/step-report.md) contrasts the135object pilot
+(1799theorems/743auxiliary names/45distinct decision-shaped types) with a
+completed363object read:89268theorems,47989auxiliary names,44528Exprkeys,
+44532level-private groups. Its45661decision-shaped declarations have distinct
+global names,in90modules,42610typegroups;933repeat/919crossmodules.
+3051extra declarations=1497within-module extras+1554extra module/key pairs.
+These are real native type matches,not merely repeated tactic text or
+duplicate import enumeration. Actual export/cache mode,hiddendependencies,
+runtime misses/CPUcost and fullaxioms remain unobserved. No saved-time or
+full-population cache-eligibility claim. Metadata native1.762153s,capture
+2.003251s,combinedsample6.24GiB includes retained EPFL;not proof rechecking.
+The original repeated-text endpoint remains uncompiled;earlier45distinct
+pilot result stays valid within its smaller scope. No key-IDcross-run join.
 
 EPFL [136returned-prefix audit](tmp/build-and-evaluate/step-0185-20261030T113532+0000/step-report.md)
 has53compile/71ordinary/12budget,623.799202s;budget25.60%of returned-prefix
