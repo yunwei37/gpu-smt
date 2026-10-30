@@ -319,6 +319,23 @@ AutoVerus artifact~\cite{autoverusArtifact} in source-sorted order. Saved output
 include intermediate and unsuccessful attempts. This order does not reconstruct
 historical verifier arrivals.
 
+\paragraph{Research-level source-library characterization.}
+A separate static audit covers the pinned \texttt{openai/math} source release,
+with 163,097 Lean files and 1,785,499,363 source bytes~\cite{openaiMathSource}.
+Its Lean~4.34.1 toolchain and Mathlib revision differ from the earlier
+candidate replays. The publisher describes one large library and recommends
+building small portions~\cite{openaiMathSource}.
+A comment/string-filtered lexical census finds 1,354,379 occurrences of
+\texttt{decide +kernel} in 5,848 files. The resolved internal source-import
+graph has 370,864 edges, a longest unit-weight chain of 451 modules and a
+maximum same-depth layer of 9,225 modules. These are source properties,
+not executed tactic counts, a timed critical path or safe runtime concurrency.
+The largest 1.6\% of files contain 40.11\% of source bytes; this is not a
+runtime-tail measurement. No native acceptance, stage time or transitive
+axiom closure is established by this census. In particular, zero direct
+\texttt{native\_decide} or \texttt{ofReduceBool} tokens cannot establish absence
+of native evaluation or imported axiom dependencies.
+
 \paragraph{Retained generated candidates and submission policy.}
 The retained generated-candidate workload groups alternative proofs by task. The Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.
@@ -1546,6 +1563,18 @@ extensions and unsuccessful lookups, while preserving the complete ordinary
 failure transition and its resource accounting. Merely recording previously
 returned declarations does not establish that contract. These precedents
 prevent treating read-set memoization itself as a new contribution.
+
+The version-aligned baseline must also include existing native reuse.
+In Lean~4.34.1, \texttt{decide +kernel} calls \texttt{mkAuxLemma} before
+returning an auxiliary proof constant~\cite{leanDecide434}.
+The latter consults a type-indexed cache with privacy and definition-equality
+flags, checks universe-level parameters, and returns a matching existing
+declaration without adding it again~\cite{leanAuxLemma434}.
+Its lookup table is local to the environment branch and is not serialized
+in \texttt{.olean} files. This does not establish cross-request sharing or
+a hit rate in the released corpus, but it prevents interpreting each lexical
+occurrence as an independent expensive kernel reduction. Any new mechanism
+must distinguish native cache hits from additional removable work.
 
 SHRED supplies exact rooted-prefix profiling and a closing-proof reuse prototype
 keyed by elaborated context and target, with native proof checking and fallback~\cite{shred}.

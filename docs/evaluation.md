@@ -451,3 +451,34 @@ Root numeric/status invariants pass. No M script is rerun or modified.
 The main thesis and four RQs are unchanged. These feasibility findings motivate
 continued native evidence,not adoption of a cross-proof mechanism or a new
 contribution before W/M evidence and the user's scientific decision.
+
+
+## 2026-10-30 — root cross-check of W002 and native reuse baseline
+
+Root checks the derived CSV tables at W commit daffefc without editing or
+rerunning W's source scanner. All 163,097 unique file paths, 1,785,499,363
+source bytes, and tactic totals match. Reconstructing the internal graph gives
+370,864 edges, a longest unit-weight chain of 451 modules, a largest same-depth
+layer of 9,225 modules, and 130,834 modules reachable from the OAI root.
+The largest 2,610 files (the ceiling of 1.6%) contain 40.1099% of source bytes.
+This is an internal-consistency self-review of derived tables, not an
+independent full source scan or acquisition of native costs. It takes 2.36 s,
+with a process peak of 140,664 KiB and zero native verification executions.
+
+The publisher's pinned README, toolchain, and Lake sources describe a release
+with mixed verification status, one large Lean library, Lean 4.34.1, and a fixed
+Mathlib revision. The lexical count of 1,354,379 decide +kernel forms in
+5,848 files is not a count of repeated reductions. Lean 4.34.1's actual Decide
+and AuxLemma implementations include a branch-local type-indexed cache with
+privacy/defeq flags and universe-parameter matching. Its lookup table is not
+serialized in .olean files. These source facts establish neither a corpus hit
+rate nor cross-request reuse. The decide +native form is also an entry to native
+evaluation, so absence of literal native_decide names cannot prove absence of
+that route. Transitive axiom closure requires separate evidence.
+
+The paper records this static workload and the existing native cache baseline.
+It adds no mechanism, measured native time, acceptance claim, or global speedup
+bound. The title, abstract, introduction, design, implementation, and all four RQ
+descriptions remain unchanged. W and M continue their candidate, native-cost,
+and representativeness work in their owned paths; the scientific mainline still
+awaits that evidence and the user's decision.
