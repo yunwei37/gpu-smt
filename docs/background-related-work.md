@@ -229,3 +229,19 @@ Resumable/streamed LRAT-to-Lean import is established in [LRAT-Catcher v2](https
 Resource reuse and ordinary first-success scheduling remain prior techniques.
 Useful native-preserving failure/memory methods and complete equal-resource
 workload evidence remain unproven. No additional competitor reproduction is admitted.
+
+
+## Resource-failure and exact first-success selection — 2026-10-30
+
+[Primary-source review and applicability](tmp/build-and-evaluate/step-0163-20261030T032548+0000/literature/report.md)
+covers [SATzilla](https://arxiv.org/pdf/1111.2249),
+[Weitzman's search model](https://dspace.mit.edu/entities/publication/990c36ff-57d4-4d0e-916e-2db6a4e93969),
+[Luby restarts](https://www.cs.utexas.edu/~diz/pubs/speedup.pdf),
+[SOAP/Gittins](https://arxiv.org/html/1712.00790v2) and
+[adaptive Best-of-N stopping](https://arxiv.org/abs/2510.01394).
+Feature-based algorithm selection,p/c ordering and restart scheduling are prior
+mechanisms. Their assumptions differ from correlated finite candidate groups,
+RSS-watchdog failures and charged native kill/restart costs. Exact pass@k
+requires exhaustive checking of every observed-unsolved task;generic reward
+stopping cannot replace that obligation. A resource-failure record requires a
+valid native transition/resource model,not just task,tactic text and an RSS cap.

@@ -29,3 +29,10 @@ alone are not a per-candidate memory trace.
 The optional engine HTTP stream delivers completion-order results with a final
 count marker. It shares first-success/RL semantics and does not make source
 predictions into failure verdicts. See [API delivery scope](../../docs/api.md#http).
+
+Resource-tail source/state opportunity can be recomputed without Lean:
+
+    python3 bench/lean-candidate-scheduling/resource-failure-opportunity.py --out /workspaces/.agent-state/gpu-smt-captures/new-resource-audit
+
+Task/last-line/whitespace keys are opportunity proxies only;RSS-watchdog
+outcomes do not authorize deterministic resource-failure rejection reuse.

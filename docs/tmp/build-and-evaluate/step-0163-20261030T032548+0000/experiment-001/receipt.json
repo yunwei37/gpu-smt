@@ -1,0 +1,83 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6",
+    "python3",
+    "bench/lean-candidate-scheduling/resource-failure-opportunity.py",
+    "--out",
+    "/workspaces/repository/docs/tmp/build-and-evaluate/step-0163-20261030T032548+0000/experiment-001/resource"
+  ],
+  "exit": 0,
+  "samples": [
+    {
+      "rss_bytes": 495616,
+      "available_bytes": 22972960768
+    },
+    {
+      "rss_bytes": 68452352,
+      "available_bytes": 22910169088
+    },
+    {
+      "rss_bytes": 143601664,
+      "available_bytes": 22823501824
+    },
+    {
+      "rss_bytes": 200556544,
+      "available_bytes": 22775443456
+    },
+    {
+      "rss_bytes": 143429632,
+      "available_bytes": 22780985344
+    },
+    {
+      "rss_bytes": 144904192,
+      "available_bytes": 22780289024
+    },
+    {
+      "rss_bytes": 146411520,
+      "available_bytes": 22780305408
+    },
+    {
+      "rss_bytes": 148201472,
+      "available_bytes": 22781202432
+    },
+    {
+      "rss_bytes": 149725184,
+      "available_bytes": 22792306688
+    },
+    {
+      "rss_bytes": 151109632,
+      "available_bytes": 22792085504
+    },
+    {
+      "rss_bytes": 152408064,
+      "available_bytes": 22780313600
+    },
+    {
+      "rss_bytes": 153948160,
+      "available_bytes": 22780321792
+    },
+    {
+      "rss_bytes": 155607040,
+      "available_bytes": 22786031616
+    },
+    {
+      "rss_bytes": 157368320,
+      "available_bytes": 22786097152
+    },
+    {
+      "rss_bytes": 158892032,
+      "available_bytes": 22787907584
+    },
+    {
+      "rss_bytes": 160468992,
+      "available_bytes": 22791954432
+    },
+    {
+      "rss_bytes": 161742848,
+      "available_bytes": 22794637312
+    }
+  ],
+  "scope": "offline Python only; sampled not hard enforcement; no Lean"
+}
