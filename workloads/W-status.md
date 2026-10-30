@@ -109,3 +109,12 @@ Recovery2/2 pass; sample42 group187compile/1missing-object/1remainderwall/
 CI.536distinct checked module artifacts now available. Current no foreground
 WLean; old13733/birth741054360 remains censored/charged. Never restart it.
 Next native action must verify actual launch/terminal and use self budgets.
+
+
+W028:5artifact-scope controls complete and retired. EPFLoriginal+annotation
+with .ilean stillpass; exact publisher cause unknown.3OAI targets emit
+.olean/.ilean/.c successfully, separate cost scope from .olean-only.
+Only current foreground group: workloads/openai4341-authored-sample23,
+controller60084/birth743067460 (read actual launch+terminal). Frozen23remaining
+probability endpoints,600s selfchild/1400s group,no HB override,old13733charged.
+Do not restart healthy group or parallel another WLean.

@@ -66,3 +66,13 @@ and producer implementation is not yet released. No original per-row timing
 exists to attribute this to machine speed. Preserve both native and stored
 verdicts. Native-semantic budgets and harness acceptance labels are different
 measurement axes, not interchangeable facts about an intrinsically false goal.
+
+
+### EPFL annotation-artifact follow-up (W028)
+The same released amoeba_xor_function source and its feedback-annotated form
+also pass in Lean4.15 when .ilean serialization is requested. That alone
+does not reproduce LeanInteract's tracing/protocol. The confirmed discrepancy
+remains a publisher label versus current native replay discrepancy, not a
+proven label error. MaxRecDepth128 causes a native failure; default512 and
+256pass. Original trace/options/Mathlib pin and pre-truncation source remain
+unknown. No wallclock or machine-only causal explanation has been established.
