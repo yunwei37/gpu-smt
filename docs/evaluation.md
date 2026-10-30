@@ -533,3 +533,50 @@ full EPFL or LNSym source scan. Root uses CPUs 0–1 under its 4 GiB allocation.
 Only Evaluation, citations, this evidence index and the root step records
 change. The entire pre-Evaluation manuscript and all four RQs are preserved;
 the scientific-mainline decision remains with the user after W/M evidence.
+
+
+## 2026-10-30 — retained grid checks and fixed-trace memory envelopes (step0178)
+
+Root resumes the existing pending step after the user's planned maintenance.
+The original on-PVC crosscheck survives unchanged: zero native verifier runs,
+0.421 s, 20,536 KiB process high water, CPUs 0–1. M e259a49's raw trace samples
+are independently integrated using integer timestamps. Warm/engine covered spans
+are 25,174.736735515/20,321.999420 s, sample counts 25,167/20,323, and maximum
+sample gaps 1.031698211/1.003564 s. At 48 GiB, left-held exceedance durations
+are 92.937076033/83.008805 s; the engine's fraction is larger (0.40847% versus
+0.36917%) despite fewer absolute seconds. At 8/16/32 GiB the plotted fractions
+are descriptive queries of these same traces, not changed-budget throughput,
+acceptance, or a physical COW frontier. All original clocks remain separate.
+
+Five actual stock-kernel grid rechecks are retained at M e259a49. Their subtotal
+is 2.894191661 s inside the complete 11.006749094 s process clock. The three
+origin rectangles overlap and have no satisfying antecedent; two offset blocks
+include (5,401)/(401,5). No full-grid certificate or coverage bridge executes.
+Linear full-grid projections of 402–517 s are neither measurements nor certified
+upper bounds. The optimized C loop only enumerates/counts product matches; it
+does not check the complete Lean predicate or construct a proof. These timings
+cannot establish verified-checking or GPU speedup.
+
+Pinned 4.9.0-rc1 source inspection distinguishes the ordinary decide frontend
+from the extra warm declaration checks; the former reduces a Decidable instance
+before kernel checking. That control is not the 4.34.1 decide +kernel census.
+The public maxHeartbeats wrapper multiplies by 1,000, but allocation and kernel
+check counters differ. The direct addDeclCore raw parameter 100,000,000 does
+not establish equal remaining allowance to an original tactic invocation.
+This is source review, not a new binary/version performance comparison.
+
+The paper figure uses byte/JSON-equal retained input copies. The complete batch
+ratio stays 1.23882×, with its single ordered shared-host pair, affinity/retry
+and raw-artifact limitations. Warm preparation/retry accounting is clarified;
+all 7,808 status aliases and 3,014 accepted IDs match, not all wire artifacts.
+The four actual crate names/roles are reflected in Implementation. All text
+before Implementation, the section hierarchy, four RQs and Related-work-to-end
+remain unchanged. The scientific mainline remains pending W/M and user judgment.
+
+After maintenance the same Workspace/PVC is readable and writable on phobos-vt;
+root observes 61 GiB available at that time. Short self-owned TERM/KILL controls
+both return errno 13 and naturally exit zero. No functioning signal watchdog,
+security repair or native collection is claimed. Compiler/tool/output/cache
+paths remain on the existing PVC outside the checkout. The actual complete
+paper build and observed memory are recorded in this step's receipt, separately
+from all earlier clocks. Reviews are same-thread self-review.

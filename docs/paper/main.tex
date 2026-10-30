@@ -146,7 +146,11 @@ Unsupported work returns to CPU execution, whose cost remains in the complete ve
 The implementation now includes a Rust workspace separating verifier-neutral
 contracts, resource/workload scheduling, native Lean transport and service
 adapters. Backend, scheduling, resource sampling, admission and exact-result
-storage use replaceable interfaces. Logical rejection, incomplete proof,
+storage use replaceable interfaces. The source workspace separates
+verifier-neutral contracts in \texttt{proofserve-core}, scheduling, admission
+and reuse in \texttt{proofserve-engine}, native Lean transports in
+\texttt{proofserve-lean}, and HTTP/CLI adapters in \texttt{proofserve}.
+Logical rejection, incomplete proof,
 timeout, preemption and consumer cancellation remain distinct.
 The default Rust backend executes isolated fresh native processes.
 For an exclusive resource retry after concurrent preemption, the optional
@@ -901,9 +905,10 @@ so the elapsed ratio does not isolate copy-on-write.}
 \label{tab:corrected-warm-resource}
 \end{table}
 
-The external clock covers launch, output and native retirement. Preparation
-takes 3.03 seconds within the internal whole clock and is not added again.
-The 7,808 ordinary attempts include 52 watchdog preemptions, each followed by
+The external clock covers launch, output and native retirement. Warm-service
+preparation takes 3.03 seconds within its internal whole clock and is not
+added again. The warm leg's 7,808 ordinary attempts include 52 watchdog
+preemptions, each followed by
 one exclusive retry. Those retries end in 41 resource failures and 11 timeouts,
 and their serial admitted envelopes sum to 12,106.92 seconds.
 Final resource failures retain attributed watchdog records rather than native
@@ -918,7 +923,7 @@ registered ordinary frontier before exclusive retries. Any complete comparison
 therefore measures these resource paths, including retry ordering, rather than
 isolating copy-on-write.
 The external elapsed ratio is $1.23882\times$, or 19.28\% less time for the
-engine in this comparison. Exact final status and accepted-ID sets match,
+engine in this comparison. All 7,808 final status aliases and accepted-ID sets match,
 including all resource failures and timeouts. Engine execution has 7,850
 physical attempts, compared with 7,860 for warm execution. One prepared parent
 serves the ordinary frontier, with 42 fresh exclusive resource retries and
@@ -1134,6 +1139,35 @@ parent already present for other attempts. Neither scalar is an independent
 job's marginal memory demand. Subtracting these asynchronous maxima does not
 establish an aggregate bound, physical-page COW saving or new resource frontier.
 
+\paragraph{Observed memory-threshold envelopes.}
+The same historical pair retains separate RSS traces and clocks.
+Left-hold integration covers 25,174.74 seconds from 25,167 warm-service
+samples and 20,322.00 seconds from 20,323 engine samples.
+Figure~\ref{fig:retained-resource-envelope} evaluates thresholds against those
+fixed traces; both original captures used the configured 48\,GiB threshold.
+The maximum sample gaps are 1.032 and 1.004 seconds, respectively.
+Time above the configured threshold remains visible: 92.94 and 83.01
+held-sample seconds. The shorter absolute duration and the slightly larger
+fraction for the engine have different denominators and do not establish
+better memory control. These are sampled responses, not a hard RSS quota.
+The 8, 16 and 32\,GiB points do not supply native outcomes or throughput at
+smaller budgets: admission, interruption, retry order and memory would change.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../artifacts/paper-figures-2026-10-30/retained-resource-point.pdf}
+\caption{A complete historical resource comparison and offline checks of its
+RSS traces. (a) External batch time for all 7,808 candidates; final status
+aliases and accepted IDs match, while raw artifacts differ as described in
+Section~\ref{sec:service-results}. This is one warm-first shared-host pair;
+affinity and retry ordering differ, so the ratio does not isolate COW or a
+steady-state service frontier. (b) Own-trace fractions above each threshold,
+using a logarithmic vertical axis and left-hold samples. Both original runs
+use a 48\,GiB sampled threshold; lower points are offline evaluations, not
+smaller-budget runs or rescaled service clocks.}
+\label{fig:retained-resource-envelope}
+\end{figure*}
+
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
 
@@ -1261,6 +1295,64 @@ is not added to the lifecycle again. The result qualifies this alternative
 proof representation, not unchanged-candidate parity, an automatic verified
 extraction compiler, a CPU/GPU gain or engine throughput. Independent numeric
 enumeration confirms the count but is not used as proof evidence.
+
+\paragraph{Grid computation and checking have different costs.}
+A separate Lean~4.9.0-rc1 control on phobos-vt checks five rectangles for the
+implication $mn=2005\Rightarrow m+n=406$ using ordinary kernel reduction.
+In this version, ordinary \texttt{decide} first reduces its decidable
+instance in the tactic frontend, then returns a term whose kernel check
+recomputes the decision~\cite{lean49DecideSource}. The timed extra rechecks
+begin after the original declaration is accepted and omit that frontend.
+They are not whole-tactic costs or runtime estimates for the separate
+Lean~4.34.1 \texttt{decide +kernel} source census.
+All five theorems report no axioms. The three origin rectangles contain no
+satisfying antecedent; two offset rectangles include $(5,401)$ and $(401,5)$.
+The origin samples overlap, and the five rectangles do not form a partition
+of the complete 4,016,016-cell grid.
+Table~\ref{tab:grid-kernel-samples} reports extra warm declaration rechecks.
+Each copies the existing theorem body into a declaration with a new name,
+using the literal raw heartbeat argument $100\,000\,000$ to
+\texttt{Environment.addDeclCore}. This explicit API limit does not establish
+the same remaining heartbeat allowance as the original tactic invocation.
+These are extra checks in the retained environment after the original proof
+has been constructed.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Sample rectangle & Cells & Recheck (s) \\
+\midrule
+Origin $32\times32$ & 1,024 & 0.104427 \\
+Origin $64\times64$ & 4,096 & 0.474051 \\
+Origin $128\times128$ & 16,384 & 2.108383 \\
+Includes $(5,401)$ & 1,024 & 0.104818 \\
+Includes $(401,5)$ & 1,024 & 0.102512 \\
+\bottomrule
+\end{tabular}
+\caption{Warm extra stock-kernel declaration checks on phobos-vt. These are
+bounded samples, not complete-candidate comparisons or proof-construction
+costs. Their subtotal is already inside the control's complete process clock.}
+\label{tab:grid-kernel-samples}
+\end{table}
+
+The extra checks sum to 2.894 elapsed seconds within the control's complete
+11.007-second lifetime. Total process CPU time is 10.981 seconds.
+Leader high-water RSS is 872,542,208 bytes;
+sampled owned-tree peak is 886,497,280 bytes. Neither is a measured memory
+requirement for a complete grid proof. No full-grid certificate or coverage
+bridge is executed.
+
+Linear scaling of the individual sample rates to the complete grid gives
+402--517 seconds. This is an extrapolation, not a measured cost or certified
+upper bound; per-cell cost increases across the three origin sizes.
+A separate optimized C loop scans the same index range for product matches,
+prints the two pairs and counts them in 2.374--2.390 milliseconds of CPU time.
+It does not check the Lean implication or construct a proof. These different
+operations and trust boundaries cannot establish a CPU/GPU checking speedup.
+Compact certified representations still require their own construction,
+correspondence and complete native-verification measurements.
 
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,

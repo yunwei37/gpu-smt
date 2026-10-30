@@ -1,0 +1,144 @@
+{
+  "M_commit": "e259a49",
+  "native_runs_by_root": 0,
+  "RSS_trace_independent_integer_timestamp_check": {
+    "warm": {
+      "samples": 25167,
+      "own_trace_span_s": 25174.736735515,
+      "sample_peak_RSS_bytes": 52365074432,
+      "max_sample_gap_s": 1.031698211,
+      "zero_gaps": 0,
+      "cells": [
+        {
+          "threshold_GiB": 8,
+          "left_held_seconds_above": 22760.280999356,
+          "own_trace_fraction_above": 0.9040921157776068
+        },
+        {
+          "threshold_GiB": 16,
+          "left_held_seconds_above": 18402.26882233,
+          "own_trace_fraction_above": 0.7309815794962888
+        },
+        {
+          "threshold_GiB": 32,
+          "left_held_seconds_above": 7895.346968591,
+          "own_trace_fraction_above": 0.3136218285632644
+        },
+        {
+          "threshold_GiB": 48,
+          "left_held_seconds_above": 92.937076033,
+          "own_trace_fraction_above": 0.003691680155760675
+        }
+      ],
+      "clock": "warm monotonic nanoseconds"
+    },
+    "engine": {
+      "samples": 20323,
+      "own_trace_span_s": 20321.99942,
+      "sample_peak_RSS_bytes": 52404801536,
+      "max_sample_gap_s": 1.003564,
+      "zero_gaps": 0,
+      "cells": [
+        {
+          "threshold_GiB": 8,
+          "left_held_seconds_above": 16076.994594,
+          "own_trace_fraction_above": 0.7911128359829468
+        },
+        {
+          "threshold_GiB": 16,
+          "left_held_seconds_above": 12459.995682,
+          "own_trace_fraction_above": 0.6131284340918459
+        },
+        {
+          "threshold_GiB": 32,
+          "left_held_seconds_above": 5465.005704,
+          "own_trace_fraction_above": 0.2689206702083451
+        },
+        {
+          "threshold_GiB": 48,
+          "left_held_seconds_above": 83.008805,
+          "own_trace_fraction_above": 0.004084677067666209
+        }
+      ],
+      "clock": "engine UTC log microseconds"
+    }
+  },
+  "grid_native_receipt": {
+    "exit": 0,
+    "retired": true,
+    "wall_s": 11.006749093532562,
+    "native_cpu_seconds": 10.981057999999999,
+    "native_kernel_peak_rss_bytes": 872542208,
+    "sampled_peak_owned_rss_bytes": 886497280
+  },
+  "grid_blocks": [
+    {
+      "name": "block32",
+      "cells": 1024,
+      "warm_kernel_recheck_ns": 104427294,
+      "independently_evaluated_included_solutions": [],
+      "linear_only_full_grid_s": 409.55242533271877
+    },
+    {
+      "name": "block64",
+      "cells": 4096,
+      "warm_kernel_recheck_ns": 474051104,
+      "independently_evaluated_included_solutions": [],
+      "linear_only_full_grid_s": 464.794145137125
+    },
+    {
+      "name": "block128",
+      "cells": 16384,
+      "warm_kernel_recheck_ns": 2108382724,
+      "independently_evaluated_included_solutions": [],
+      "linear_only_full_grid_s": 516.8029024479727
+    },
+    {
+      "name": "solutionBlockLeft",
+      "cells": 1024,
+      "warm_kernel_recheck_ns": 104818139,
+      "independently_evaluated_included_solutions": [
+        [
+          5,
+          401
+        ]
+      ],
+      "linear_only_full_grid_s": 411.0852766740469
+    },
+    {
+      "name": "solutionBlockRight",
+      "cells": 1024,
+      "warm_kernel_recheck_ns": 102512400,
+      "independently_evaluated_included_solutions": [
+        [
+          401,
+          5
+        ]
+      ],
+      "linear_only_full_grid_s": 402.04242050625004
+    }
+  ],
+  "warm_recheck_subtotal_s": 2.894191661,
+  "full_grid_cells": 4016016,
+  "full_grid_native_certificate_executed": false,
+  "C_numeric_grid_CPU_seconds": [
+    0.002379636,
+    0.002373823,
+    0.002389924
+  ],
+  "C_is_not_a_verified_or_same_boundary_comparison": true,
+  "limits": [
+    "This self-review launches no native verifier and does not rerun M code.",
+    "Left-hold sample integration is descriptive; gaps and overshoots are retained.",
+    "Different trace clocks remain separate; no new-budget throughput or outcome is inferred.",
+    "Five warm kernel rechecks include two nonvacuous solution blocks but do not cover the full grid.",
+    "Linear prediction is neither a measured full-grid cost nor a certified upper bound.",
+    "C arithmetic timings exclude proof construction/checking and cannot establish GPU speedup."
+  ],
+  "root_affinity": [
+    0,
+    1
+  ],
+  "elapsed_s": 0.42100508976727724,
+  "root_process_peak_RSS_KiB": 20536
+}
