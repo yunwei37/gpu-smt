@@ -33,3 +33,5 @@ W008:214completed prefix preserved;136EPFL+78APRILstartup errors. Native13733/bi
 W009:new MetaLKV public fixture audit in workloads/lean-kernel-verify;MIT,Lean4.34.0,90KIR cases fully parsed,12Lean files. No native build. Checker FAIL can be successful counterexample proof,not Lean rejection.
 
 W010:user authorizes progress alongside charged oldRSS.214=EPFL58969 explicitly stuck/right-censored.136EPFL total623.799s,budget-exceeded25.60%of observed time. APRIL4pairs qualified(actual4reference passes/4mutation errors),combined9.63GiB. Remaining eligible pairs running separately.
+
+W011:APRIL39pairs complete(78native);references35pass/4HB;mutations23error/16budget. Budget mutation time50.53%unweighted vs11.05%inverse-probability ratio for released1835test rows,no CI. New sampled combined peak9.65GiB. OpenAI128new modules/3targets running separately.
