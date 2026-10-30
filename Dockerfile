@@ -42,4 +42,4 @@ WORKDIR /opt/mathlib
 EXPOSE 3000
 ENTRYPOINT ["/bin/sh", "/usr/local/bin/start-proofserve"]
 CMD ["serve", "--listen", "0.0.0.0:3000"]
-RUN python3 /opt/container_smoke.py --self-test
+RUN --network=none python3 /opt/container_smoke.py --self-test

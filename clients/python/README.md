@@ -10,7 +10,7 @@ from proofserve import Client
 response = Client("http://localhost:3000").check(
     [{"id": "one", "code": "import Mathlib\nexample : (2 : Nat) + 2 = 4 := by norm_num"},
      {"id": "two", "code": "example : False := by decide"}],
-    timeout=30,
+    timeout=180,
 )
 for result in response["results"]:
     print(result["id"], result["response"], result["error"])

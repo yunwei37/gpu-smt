@@ -32,7 +32,7 @@ Then submit a proof:
 
 ~~~sh
 curl http://localhost:3000/check -H 'Content-Type: application/json' \
-  -d '{"snippets":[{"id":"one","code":"import Mathlib\nexample : (2 : Nat) + 2 = 4 := by norm_num"}],"timeout":30}'
+  -d '{"snippets":[{"id":"one","code":"import Mathlib\nexample : (2 : Nat) + 2 = 4 := by norm_num"}],"timeout":180}'
 ~~~
 
 [Environment and resource options](docs/getting-started.md).
@@ -50,7 +50,7 @@ from proofserve import Client
 response = Client("http://localhost:3000").check(
     [{"id": "one", "code": "import Mathlib\nexample : (2 : Nat) + 2 = 4 := by norm_num"},
      {"id": "two", "code": "example : False := by decide"}],
-    timeout=30,
+    timeout=180,
 )
 for result in response["results"]:
     print(result["id"], result["response"], result["error"])
