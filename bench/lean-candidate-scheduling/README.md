@@ -57,3 +57,11 @@ matching expensive calls/entry states,not identical complete proof text.
 
 This reuses original native Syntax and checks proof-relative spans. Recovered
 source target templates are not complete native goal/context/budget records.
+
+Runtime-only elapsed-service policies and the exact finite first-success bound:
+
+    python3 bench/lean-candidate-scheduling/analyze-runtime-restarts.py --out /workspaces/.agent-state/gpu-smt-captures/new-runtime-only-analysis
+
+This uses runtime observations only,not source features/success models. Lossless
+resume and charged restart are distinct;the CPU-slot model omits RSS and native
+budget eligibility,so its mean-latency/work tradeoff is not service performance.

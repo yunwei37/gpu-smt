@@ -1,0 +1,43 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6",
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "bench/lean-candidate-scheduling/analyze-runtime-restarts.py",
+    "--out",
+    "/workspaces/repository/docs/tmp/build-and-evaluate/step-0167-20261030T042724+0000/experiment-001/runtime-only"
+  ],
+  "exit": 0,
+  "samples": [
+    {
+      "rss_bytes": 503808,
+      "available_bytes": 23252754432
+    },
+    {
+      "rss_bytes": 129548288,
+      "available_bytes": 23067676672
+    },
+    {
+      "rss_bytes": 156667904,
+      "available_bytes": 23066816512
+    },
+    {
+      "rss_bytes": 145657856,
+      "available_bytes": 23064608768
+    },
+    {
+      "rss_bytes": 145870848,
+      "available_bytes": 23055486976
+    },
+    {
+      "rss_bytes": 145870848,
+      "available_bytes": 23054061568
+    },
+    {
+      "rss_bytes": 145879040,
+      "available_bytes": 23056683008
+    }
+  ],
+  "scope": "Offline runtime-only simulation;no native process or signalling;sampled not hard RSS limit"
+}
