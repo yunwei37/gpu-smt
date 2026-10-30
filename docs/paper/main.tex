@@ -369,6 +369,24 @@ boundary differ from the \texttt{trace.profiler} diagnostic in
 Table~\ref{tab:profiler-diagnostic-limits}; this observed difference cannot
 rescale that truncated-work point or establish engine acceleration.
 
+A separate expanded point follows the next three targets in the original
+53-target frame, with 128 new closure-module states at 50,000 heartbeats,
+no profiling/stats and one Lean thread. It actually invokes 82 compiler
+processes: 81 exit zero without a sorry warning and one reaches a
+\texttt{whnf} heartbeat limit in the \texttt{ProjectionCoordinates}
+dependency. The remaining 46 dependent modules are explicitly uninvoked,
+with no assigned timing or native verdict. Two target endpoints compile;
+the third is not invoked after that dependency boundary. This does not
+establish an invalid theorem or failure of an unbounded upstream build.
+
+Compiler-process wall sums are 218.436 seconds, with 187.020 user-CPU and
+31.291 system-CPU seconds. The complete capture is 225.245 seconds.
+Its one-second sampled combined W-tree peak is 11.87\,GiB, including the
+retained earlier EPFL process, and is not a hard quota or whole-node peak.
+These module clocks use a separate resource point from the initial seven
+200,000-heartbeat profiled modules; they do not complete all 53 targets,
+calibrate full-library costs or establish transitive axiom closure.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
@@ -382,6 +400,15 @@ at 68,930 programs. A separate scan of all 1,835 APRIL test tuples retains
 20 records containing budget-diagnostic text~\cite{aprilDataset}.
 These are publisher-created proof mutations, not natural failed arrivals;
 diagnostic text does not establish a failure cause or its native cost.
+
+A later 10,000-heartbeat, 6,144\,MiB, 15-second self-bounded point returns
+the other seven selected EPFL sources outside the still-active censored
+request: one compiler pass, one ordinary error, three heartbeat
+interruptions and two self-alarm wall interruptions. The last two actually
+exit by \texttt{SIGALRM} after about 15.04 seconds. These are operational
+budget outcomes, not certified early rejection. Their costs and labels are
+not spliced into the earlier 136-return, 200,000-heartbeat denominator.
+The original single-point frame remains incomplete.
 
 A separate native replay completes all 39 selected APRIL error/reference
 pairs in two finite batches, using the published Lean~4.22.0-rc4 version,

@@ -1,0 +1,138 @@
+{
+  "observed_utc": "2026-10-30T12:12:30.178195+00:00",
+  "native_invocations": 0,
+  "module_states": {
+    "compile_ok": 81,
+    "budget_exceeded": 1,
+    "dependency_not_compiled": 46
+  },
+  "native_compiler_invocations": 82,
+  "native_process_wall_sum_s": 218.4361269455403,
+  "native_user_cpu_sum_s": 187.02033,
+  "native_system_cpu_sum_s": 31.290546,
+  "source_budget_replacements_recorded": 0,
+  "targets": [
+    {
+      "module": "OAI.Analysis.Cotype.FiniteRankWalsh",
+      "role": "probability_sample",
+      "stratum": "0-50;1-10;0",
+      "inclusion_probability": "7.826869643486087e-05",
+      "source_bytes": "3788",
+      "import_depth": "7",
+      "closure_modules": "9",
+      "native_status": "compile_ok"
+    },
+    {
+      "module": "OAI.Analysis.Laughlin.FiniteFlux.Row0705207",
+      "role": "probability_sample",
+      "stratum": "0-50;1-10;1",
+      "inclusion_probability": "0.0019230769230769232",
+      "source_bytes": "362",
+      "import_depth": "5",
+      "closure_modules": "6",
+      "native_status": "compile_ok"
+    },
+    {
+      "module": "OAI.NumberTheory.PadicHodge.IntegralComparison.OrderedCech.ReindexSingle",
+      "role": "probability_sample",
+      "stratum": "0-50;11-100;0",
+      "inclusion_probability": "4.4197918278049104e-05",
+      "source_bytes": "1484",
+      "import_depth": "39",
+      "closure_modules": "113",
+      "native_status": "dependency_not_compiled"
+    }
+  ],
+  "budget_failure": {
+    "module": "OAI.AlgebraicGeometry.AbelianModuli.HilbertConstruction.OrderedCech.ProjectionCoordinates",
+    "path": "lean/OAI/AlgebraicGeometry/AbelianModuli/HilbertConstruction/OrderedCech/ProjectionCoordinates.lean",
+    "status": "budget_exceeded",
+    "returncode": 1,
+    "wall_s": 5.534857033751905,
+    "user_cpu_s": 5.12132,
+    "system_cpu_s": 0.41018499999999997,
+    "peak_rss_kib": 3400720,
+    "sampled_process_peak_bytes": 3478728704,
+    "pid": 17112,
+    "birth_ticks": "741278729",
+    "source_bytes": 5801,
+    "heartbeat_budget": 50000,
+    "replaced_source_budget_settings": 0,
+    "lean_memory_option_MiB": 8192,
+    "threads": 1,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "sorry_warning": false,
+    "log": "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-native-expanded/0012.log"
+  },
+  "combined_W_peak_RSS_bytes": 12744069120,
+  "capture_terminal": {
+    "exit_code": 0,
+    "elapsed_s": 225.24477424379438,
+    "sampled_tree_peak_bytes": 12744069120,
+    "max_native_lean_processes": 2,
+    "signal_control": "EACCES errno13; natural exit",
+    "sampling_interval_s": 1
+  },
+  "native_terminal": {
+    "targets": [
+      "OAI.Analysis.Cotype.FiniteRankWalsh",
+      "OAI.Analysis.Laughlin.FiniteFlux.Row0705207",
+      "OAI.NumberTheory.PadicHodge.IntegralComparison.OrderedCech.ReindexSingle"
+    ],
+    "closure_modules": 128,
+    "rows": 128,
+    "statuses": {
+      "dependency_not_compiled": 46,
+      "budget_exceeded": 1,
+      "compile_ok": 81
+    },
+    "elapsed_s": 218.5210765497759,
+    "source_original_untouched": true,
+    "budget_point": "unprofiled Lean4.34.1,50000HB;120s self-wall;old stuck RSS charged,8192MiB,8192MiB allocation option; no original-unbounded timing claim"
+  },
+  "later_EPFL7_counts": {
+    "compile_ok": 1,
+    "budget_exceeded": 3,
+    "wall_budget_exceeded": 2,
+    "lean_error": 1
+  },
+  "later_EPFL7_capture_terminal": {
+    "exit_code": 0,
+    "elapsed_s": 41.06925939861685,
+    "sampled_tree_peak_bytes": 9488306176,
+    "max_native_lean_processes": 2,
+    "signal_control": "EACCES errno13; natural exit",
+    "sampling_interval_s": 1
+  },
+  "later_EPFL7_native_terminal": {
+    "rows": 7,
+    "planned_rows": 7,
+    "elapsed_s": 41.00855896901339,
+    "stopped_between_candidates_after_1500s": false
+  },
+  "later_EPFL7_alarm_returns": [
+    {
+      "id": "epfl-61171",
+      "wall_s": 15.042711486108601,
+      "returncode": -14
+    },
+    {
+      "id": "epfl-60781",
+      "wall_s": 15.035970626398921,
+      "returncode": -14
+    }
+  ],
+  "original_frame_matched_budget_complete": false,
+  "old_unreturned_not_labeled_failure": true,
+  "root_elapsed_s": 0.005662756972014904,
+  "root_maxrss_kib": 13092
+}

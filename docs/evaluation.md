@@ -102,6 +102,13 @@ uses Lean 4.34.1 / Mathlib d13f23b7. Seven modules/four of 53 targets yield 14 n
 exits0. Baseline/profile-only wall 44.002841 / 44.498820 s; the 1.13% difference is
 one fixed-order,warm-cache,shared-node observation. Peak compiler RSS 7.46 GiB
 is distinct from 1 s sampled tree 7.43 GiB. Full-library costs remain unmeasured.
+The [expanded closure point](tmp/build-and-evaluate/step-0190-20261030T121230+0000/step-report.md)
+keeps 128 module states: 82 actual compiler invocations, 81 passes, one
+heartbeat boundary and 46 dependency-blocked modules left uninvoked. Two
+of three target endpoints compile. At its separate unprofiled 50,000-HB
+point, native process-wall sum is 218.436 s; capture 225.245 s; combined
+W-tree sampled peak 11.87 GiB includes the old EPFL process. Full 53-target
+coverage, original unbounded costs and transitive axioms are not established.
 
 The [public checker audit](tmp/build-and-evaluate/step-0184-20261030T113046+0000/step-report.md)
 verifies 90 released KIR fixtures / 250 concrete inputs and 986 static positive
@@ -114,6 +121,10 @@ rechecks 136 of 144 selected EPFL returns: 53 compiler passes / 71 errors / 12 b
 cases, 623.799202 s. Eight remain unreturned/right-censored in that record;
 25.60% budget share is returned-prefix cost,not a population estimate.
 Compiler success does not implement the publisher's full declaration judge.
+A later separate 10k-HB/M6144/15s-self-bound point returns the other seven
+selected sources except the retained stuck request: 1 compiler pass, 1 error,
+3 HB and 2 self-wall interruptions. Actual SIGALRM exits are observed.
+It does not complete or replace the original 200k-HB point's missing tail.
 The [complete APRIL39 replay](tmp/build-and-evaluate/step-0188-20261030T115336+0000/step-report.md)
 has all 78 native returns at Lean 4.22rc4 / reconstructed Mathlib 928758a /
 50,000 HB / M6144 / one thread / 30 s self-bound. References: 35 compiler
