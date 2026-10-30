@@ -131,6 +131,19 @@ A later separate 10k-HB/M6144/15s-self-bound point returns the other seven
 selected sources except the retained stuck request: 1 compiler pass, 1 error,
 3 HB and 2 self-wall interruptions. Actual SIGALRM exits are observed.
 It does not complete or replace the original 200k-HB point's missing tail.
+The [wider-module/runtime-configuration audit](tmp/build-and-evaluate/step-0197-20261030T130732+0000/step-report.md)
+checks171closure states/109actual native invocations:108compile/1Grid120s
+self-wall interruption/62uninvoked. Seven of nine original endpoints compile;
+the extra unweighted repeated-text probe stays blocked. Native wall sum
+724.588552s/capture732.836210s;raw1ssampled combinedpeak12.20GiB including
+retained old EPFL. GridCPU151.397173s exceeds120.094289swall;requestedj1/env1
+is not measured oneOSthread or phase attribution. Across priorpoints243
+distinct compiled objects/14of53frame endpoints exist;no homogeneous total.
+Two same-source EPFLj2/env2returns reachHBerrors13.689/13.734s vsj1/env1
+15swall-outs with~2.1CPU s. No pass,isolatedflagcausality,rootcause or speedup.
+Ordinary-error first-message categories cover71requests/303.183521s as
+whole-request groups;they are not phase/tactic costs.
+
 The [complete APRIL39 replay](tmp/build-and-evaluate/step-0188-20261030T115336+0000/step-report.md)
 has all 78 native returns at Lean 4.22rc4 / reconstructed Mathlib 928758a /
 50,000 HB / M6144 / one thread / 30 s self-bound. References: 35 compiler

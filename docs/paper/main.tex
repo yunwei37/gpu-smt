@@ -414,6 +414,27 @@ It supplies neither whole-corpus native counts nor failure-cache
 coverage. Transitive axiom closure, hidden-state dependencies and replay
 qualification remain unmeasured; reading objects is not checking them again.
 
+A wider unprofiled point selects nine more targets from the original frame
+and one unweighted public repeated-text probe. Among 171 new closure modules,
+109 native invocations yield 108 compiler successes and one self-wall
+interruption; 62 dependent modules are not invoked. Seven of the nine
+original target endpoints compile. The module-wall sum is 724.589 seconds
+inside a 732.836-second capture, with a 12.20\,GiB sampled combined tree
+that includes the retained old EPFL process.
+
+The interrupted 1.82\,MB \texttt{PlanarPacking.Grid} source consumes
+151.397 user-plus-system CPU seconds before its 120.094-second self-alarm.
+Requested \texttt{-j1}/\texttt{LEAN\_NUM\_THREADS=1} is therefore not a
+measurement of one OS thread. CPU-active compilation differs from the
+sleeping EPFL case, but these clocks do not attribute the Grid cost to
+a tactic, kernel phase or hardware bottleneck. The blocked public probe's
+16 repeated source annotations occur under 16 namespaces; neither their
+text equality nor namespace differences establish resolved native type
+identity. The accumulated points leave 243 distinct compiled objects,
+including 14 endpoints of the 53-target frame. This is availability across
+resource points, not a fresh homogeneous build clock, completed frame,
+transitive axiom audit or population estimate.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
@@ -436,6 +457,19 @@ exit by \texttt{SIGALRM} after about 15.04 seconds. These are operational
 budget outcomes, not certified early rejection. Their costs and labels are
 not spliced into the earlier 136-return, 200,000-heartbeat denominator.
 The original single-point frame remains incomplete.
+
+A separate worker-configuration contrast revisits only the two 15-second
+wall-interrupted sources at the same 10,000-heartbeat and 6,144\,MiB point.
+Jointly changing CLI \texttt{-j1} and \texttt{LEAN\_NUM\_THREADS=1} to two
+workers lets both return heartbeat diagnostics in 13.689 and 13.734 seconds,
+using 13.722 and 13.764 CPU seconds. Their one-worker runs used only 2.076
+and 2.149 CPU seconds before the self-wall interrupts. Neither source
+passes. This nonrandomized joint change demonstrates operational outcome
+sensitivity, not a proved deadlock cause, isolated CLI effect or speedup.
+One result also contains unsolved-goal errors before its budget diagnostic.
+The old stuck candidate remains unresolved; goal text and a nominal budget
+alone do not describe the operational context of these results.
+
 
 A separate native replay completes all 39 selected APRIL error/reference
 pairs in two finite batches, using the published Lean~4.22.0-rc4 version,

@@ -1,0 +1,106 @@
+MEMORY_COLUMNS ['elapsed_s', 'tree_rss_bytes', 'native_lean_processes', 'own_processes']
+{
+  "W_source": "e6fdc90",
+  "new_native_calls_by_root": 0,
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-native-batch3",
+  "records": 171,
+  "actual_native_calls": 109,
+  "statuses": {
+    "compile_ok": 108,
+    "wall_budget_exceeded": 1,
+    "dependency_not_compiled": 62
+  },
+  "native_wall_sum_s": 724.5885519068688,
+  "user_cpu_sum_s": 607.486421,
+  "system_cpu_sum_s": 210.109566,
+  "capture_elapsed_s": 732.83620966319,
+  "combined_old_new_sampled_RSS_peak_bytes": 13104529408,
+  "target_endpoints": {
+    "original_selected": 9,
+    "original_compile_ok": 7,
+    "original_blocked": 2,
+    "extra_unweighted_probe": 1,
+    "extra_native_invoked": false
+  },
+  "grid": {
+    "module": "OAI.Analysis.PlanarPacking.Grid",
+    "path": "lean/OAI/Analysis/PlanarPacking/Grid.lean",
+    "status": "wall_budget_exceeded",
+    "returncode": -14,
+    "wall_s": 120.09428878780454,
+    "user_cpu_s": 78.535049,
+    "system_cpu_s": 72.862124,
+    "peak_rss_kib": 5753280,
+    "sampled_process_peak_bytes": 5888516096,
+    "pid": 23729,
+    "birth_ticks": "741631374",
+    "source_bytes": 1815532,
+    "heartbeat_budget": 100000,
+    "replaced_source_budget_settings": 0,
+    "lean_memory_option_MiB": 8192,
+    "threads": 1,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "sorry_warning": false,
+    "log": "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-native-batch3/0071.log"
+  },
+  "grid_CPU_to_wall": 1.260652563316352,
+  "available_compiled_object_union": 243,
+  "same_initial53frame_endpoint_objects_available": 14,
+  "available_frame_endpoints": [
+    "OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion",
+    "OAI.Analysis.Cotype.FiniteRankWalsh",
+    "OAI.Analysis.Laughlin.FiniteFlux.ComputeRow1115Batch17",
+    "OAI.Analysis.Laughlin.FiniteFlux.Row0705207",
+    "OAI.NumberTheory.PadicHodge.IntegralComparison.OrderedCech.ReindexSingle",
+    "OAI.Analysis.MutuallyUnbiased.MixedSemantics.Zeros30",
+    "OAI.GroupTheory.PolycyclicRecognition.Analysis.TranslationCovering",
+    "OAI.Geometry.CylinderCovering.Radial.Assembly",
+    "OAI.NumberTheory.Catalan.Analysis.ManuscriptNormLogPGroup006",
+    "OAI.Analysis.MutuallyUnbiased.TaoCertificate.Rows45",
+    "OAI.Analysis.MutuallyUnbiased.GramAssembly.Block0Data",
+    "OAI.Analysis.Conductivity.Variational.VariationalDN",
+    "OAI.Probability.TraceReconstruction.Binomial",
+    "OAI.Combinatorics.Ramsey.CycleClique.Construction.BallSeparation"
+  ],
+  "all_available_objects_exist": true,
+  "worker_contrast": [
+    {
+      "id": "epfl-61171",
+      "j1_wall_s": 15.042711486108601,
+      "j1_CPU_s": 2.076285,
+      "j2_wall_s": 13.689112102612853,
+      "j2_CPU_s": 13.722318,
+      "j2_prior_unsolved_goals": false
+    },
+    {
+      "id": "epfl-60781",
+      "j1_wall_s": 15.035970626398921,
+      "j1_CPU_s": 2.149298,
+      "j2_wall_s": 13.73386150598526,
+      "j2_CPU_s": 13.764483,
+      "j2_prior_unsolved_goals": true
+    }
+  ],
+  "first_error_surface_whole_request_sum_s": 303.18352068960667,
+  "limits": [
+    "Separate100kHB,j1,M8192,120sself-wall module point; not original-unbounded timings or a full-library sample.",
+    "62dependent modules have no invocation or measured zero-time outcome.",
+    "Historical old sleeping Lean RSS is charged; requestedj1 is not measured one OSthread.",
+    "Grid CPU>wall does not establish a specific phase,cause or hardware bottleneck.",
+    "Worker contrast jointly changesCLI-jandLEAN_NUM_THREADS; not isolatedcausalflagproof or a speedup/pass.",
+    "First error message categories group whole-request clocks,not tactic/phase attribution.",
+    "Compiled object union spans points; no homogeneous summed wallclock,axiom audit or fullcache eligibility.",
+    "Extra HighMoments source-text repetitions/namespaces do not establish native typed equality."
+  ],
+  "root_elapsed_s": 0.010619320906698704,
+  "root_maxrss_kib": 12852
+}
