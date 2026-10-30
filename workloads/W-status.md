@@ -1,4 +1,25 @@
 # W current state
+
+## Current frontier (archived through W030, 2026-10-30)
+
+- [OpenAI math](openai-math/README.md): static source audit complete; W027
+  archived19/42probability costs,6/21complete cells. Full-build CPU/CI unknown.
+- Sole foreground Wcapture: PVC workloads/openai4341-authored-sample23,
+  controller60084/birth743067460. Verify actual launch/terminal; frozen23
+  remaining targets,8cores/M8192,source options unchanged,self600/group1400.
+  Old13733/birth741054360 remains censored/charged. Do not restart it.
+- 15-module Rellich context prepared, NOT launched: PVC
+  workloads/rellich4341-native15. No parallel WLean or automatic next group.
+- [Publisher-label diagnosis](candidates/epfl-label-reproducibility/):
+  original/800k/.ilean replay pass,rec128fails/256and512pass; unique historical
+  cause unresolved. No proven labelbug or time-only explanation.
+- M handoff ready: [6IDs/20HB diagnostic positions](candidates/epfl-training12-native/M-heartbeat-locations.csv).
+  Availability does not confirm M consumed it.
+- Raw/private/failed/partial data are outside checkout on the same PVC.
+  Budget/SDK/artifact points are distinct. No full native1.35million type/work
+  extrapolation or full-build acceptance claim.
+
+## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
 W005 qualifies actual Lean4.34.1/Mathlibd13f23b7 and8matching dependencies.
 Official lake exe cache get succeeded,8908entries,1.88GiB sampled tree peak,

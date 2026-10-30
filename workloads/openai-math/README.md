@@ -1,10 +1,40 @@
-# OpenAI math: complete static workload characterization
+# OpenAI math: source coverage and native stratified measurements
 
 Pinned repository: [openai/math](https://github.com/openai/math/tree/4eaee87548250b2682affda7d05d947c05554bae),
 commit4eaee87548250b2682affda7d05d947c05554bae (2026-10-30T00:35:35Z).
 Lean4.34.1; Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612.
 The root and lean licenses are Apache-2.0; third-party dependencies retain their
 licenses. Every manifest dependency revision is in static-4eaee875/dependencies.csv.
+
+## Latest archived native evidence
+
+Lean4.34.1 and pinned Mathlib cache are prepared on the same PVC. The W027
+snapshot has536distinct compiled module artifacts across explicitly separate
+budget/observation points, not full library acceptance.
+
+| Evidence | Scope |
+|---|---|
+| [Whole Amplitudes](amplitudes-native-complete/) |180.276s,100kHB/j8 replay point|
+| [Whole Grid](grid-native-complete/) |634.280s,its100kHB/j8 replay point|
+| [Unchanged-source target costs](authored-sample42/) |19/42probability endpoints;6/21complete cells at W027|
+| [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not population count|
+| [Source/helper unit audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
+| [Artifact controls](artifact-scope-control/) |3targets emit .olean/.ilean/.c; separate cost point|
+| [Build-cost estimator](native-build-cost/) |full CPU-hours/95%CI still unavailable|
+
+The42probability targets span21source-size/import-depth/kernel-token strata.
+Purposeful targets and compiled dependencies get no extra population weight.
+The finite group continues23remaining targets; [W state](../W-status.md)
+records launch ownership. Source options remain unchanged, with child self
+timers despite denied parent signals. W16GiB includes separately censored
+old EPFL process13733; sampled RSS is not a hard kernel quota.
+
+Current uniform costs emit .olean only. Missing/censored/budget-exceeded
+targets are not zero. Complete-stratum HT/variance calculation is implemented;
+incomplete cells do not produce an invented full interval. Standard Lake
+artifacts/setup and external-package work remain separate. Earlier static
+work/span scenarios are assumptions, not calibrated forecasts. No clocks or
+costs are pooled across HB/SDK/thread/profiling/artifact configurations.
 
 ## Complete source coverage
 
@@ -47,7 +77,8 @@ occurrences, not executed calls or checked theorem counts.
 The number of theorems with transitive ofReduceBool axiom dependence is
 **unknown**: zero direct tokens does not prove zero dependency through imports,
 macros or generated proof terms. It requires version-matched compiled
-#print axioms or equivalent native dependency inspection. No build was run.
+#print axioms or equivalent native dependency inspection. The static stage did not build;
+the later native subset has not established full axiom closure.
 
 This release exposes much more source-level kernel-evaluation work than the
 old arithmetic-proof corpus. Whether it dominates native time remains to be
@@ -94,9 +125,10 @@ completed in697.87analysis seconds with2,140,936KiB process peak RSS; these
 are parser costs, not Lean verification times, and clocks are not combined.
 The second attempt checkpoints1,000-file compressed journals.
 
-All source processing stayed below W's5GiB allocation. No Lean process,
-native collection, full project build, agent harness or model inference ran.
+The original static stage stayed below its W5GiB allocation and ran no Lean
+or inference. Later partial native work uses W16GiB/8cores, a separate point.
+No full project build has completed.
 The only observed public workflow is lock-prs.yml; no public build CI was found
-at the pin. Compilation/acceptance, kernel-axiom closure, native time by failure
-cause and the1.6%/73%runtime hypothesis remain unmeasured.
+at the pin. Whole-project acceptance/axiom closure and the population1.6%/73%runtime
+hypothesis remain unknown; native costs exist for the stated subset.
 Review is same-chat self-review, not an independent audit.
