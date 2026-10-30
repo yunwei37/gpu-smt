@@ -19,6 +19,9 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
   diagnostic/InfoTree parity;rawHB differs,production DAG remains unknown.
 - [Software residence](software-profile-result.md):native sampling actually
   checked;observer IR separated,successful kernel4258sample pure-timing profile retained.
+- [Original-budget pass cohort](accepted-original-result.md):150returns,
+  all50no-errors;4/8core local latency models1.276/1.340x,not engine speedup.
+  This prevents applying the clipped diagnostic ceiling to original inputs.
 - [Local dependency model](step-009-report.md):independent/coupled controls
   separated; complete DAG and merge semantics still unknown.
 - [Ordinary-kernel certificate](step-003-report.md):digits answer100 passes;

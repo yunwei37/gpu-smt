@@ -1,0 +1,37 @@
+{
+  "source": "minif2f-1321",
+  "native_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/native-cohort-s0-linked-on",
+  "original_model": {
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.00031831599999999904,
+    "have_continuation_model_span_cpu_s": 0.076196768,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.004177552517713,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 328,
+        "proof_C_id": 333,
+        "proof_model_span_cpu_s": 0.022819895,
+        "continuation_model_span_cpu_s": 0.000318316,
+        "incremental_saved_cpu_s": 0.000318316
+      }
+    ]
+  },
+  "offline_shared_meta_mutant": {
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": 0.076515084,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "Proof/continuation share live metavariables": 1
+    },
+    "have_forks": []
+  },
+  "mutant_is_actual_native_execution": false
+}

@@ -24,3 +24,6 @@ retry and no extra work after a partial/failure. Original six-cell data and
 
 WRITE/REVIEW pending actual150returns/native retirements. Full original200
 failure tails and whole7808acceptance/throughput remain outside this point.
+
+Completion is recorded in step017:150returns,all50no-errors in each cell,
+whole group501.013s; originals and entry record preserved.

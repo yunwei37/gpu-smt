@@ -1,0 +1,4499 @@
+[
+  {
+    "id": "minif2f-2397",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.013343319,
+    "body_cpu_s": 0.013350292,
+    "C_calls": 31,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.000666758,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 7.600300000000005e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 9.437500000000006e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 4.878699999999995e-05,
+      "Lean.Parser.Tactic.focus": 6.717299999999996e-05,
+      "Lean.Parser.Tactic.apply": 0.000245613,
+      "Lean.Parser.Tactic.withAnnotateState": 6.816e-05,
+      "Lean.Parser.Tactic.skip": 3.137e-05,
+      "Lean.Parser.Tactic.allGoals": 3.5277e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.000245613,
+    "untraced_body_cpu_s": 0.012683534,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.0525687872165597,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 54.354989353169415,
+    "allGoals_info_count": 4,
+    "allGoals_C_count": 4,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 4
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.013350292,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.013350292,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.013350292,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.013350292,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7702",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.025446214,
+    "body_cpu_s": 0.02545,
+    "C_calls": 34,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.010524668,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00010306199999999977,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00011937399999999928,
+      "Lean.Parser.Tactic.rwSeq": 1.740400000000016e-05,
+      "Lean.Parser.Tactic.paren": 3.1216000000000035e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.000603847,
+      "Lean.Parser.Tactic.withAnnotateState": 1.8030000000000043e-05,
+      "Lean.Parser.Tactic.tacticTry_": 1.2718000000000104e-05,
+      "Lean.Parser.Tactic.first": 2.334699999999995e-05,
+      "Lean.Parser.Tactic.withReducible": 1.2795000000000016e-05,
+      "Lean.Parser.Tactic.tacticRfl": 7.228200000000001e-05,
+      "Lean.Parser.Tactic.exact": 0.0005441269999999999,
+      "Lean.Parser.Tactic.applyRfl": 3.2666e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000156828,
+      "Lean.Parser.Tactic.case'": 4.4033000000000003e-05,
+      "Lean.Parser.Tactic.fail": 2.8651e-05,
+      "Lean.Parser.Tactic.skip": 8.189e-06,
+      "Lean.Parser.Tactic.simp": 0.008696099
+    },
+    "largest_opaque_leaf_cpu_s": 0.008696099,
+    "untraced_body_cpu_s": 0.014925332000000001,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.7051546994063516,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.926599616678697,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.02545,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.02545,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.02545,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.02545,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-1593",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.027468998,
+    "body_cpu_s": 0.027439782,
+    "C_calls": 55,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.009524534,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.000146236,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.000194208,
+      "Lean.Parser.Tactic.rwSeq": 1.6924999999999883e-05,
+      "Lean.Parser.Tactic.paren": 3.8112000000000085e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.000368092,
+      "Lean.Parser.Tactic.withAnnotateState": 6.021e-05,
+      "Lean.Parser.Tactic.tacticTry_": 1.2899000000000027e-05,
+      "Lean.Parser.Tactic.first": 1.7405000000000068e-05,
+      "Lean.Parser.Tactic.withReducible": 1.2655999999999995e-05,
+      "Lean.Parser.Tactic.tacticRfl": 6.93260000000002e-05,
+      "Lean.Parser.Tactic.exact": 0.000526114,
+      "Lean.Parser.Tactic.applyRfl": 2.6877e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000415236,
+      "Lean.Parser.Tactic.case'": 5.2976e-05,
+      "Lean.Parser.Tactic.fail": 1.9893e-05,
+      "Lean.Parser.Tactic.skip": 3.3187e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 3.917600000000014e-05,
+      "Lean.Parser.Tactic.focus": 3.907499999999953e-05,
+      "Mathlib.Tactic.normNum": 0.007412244,
+      "Lean.Parser.Tactic.allGoals": 2.3687e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.007412244,
+    "untraced_body_cpu_s": 0.017915248,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.5316439939876911,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 3.701953416536207,
+    "allGoals_info_count": 3,
+    "allGoals_C_count": 3,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 3
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.027439782,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.027439782,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.027439782,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.027439782,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6126",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.03674882,
+    "body_cpu_s": 0.036752378,
+    "C_calls": 38,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.012828761,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00012026300000000066,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00011505900000000242,
+      "Lean.Parser.Tactic.tactic_<;>_": 5.9478000000001696e-05,
+      "Lean.Parser.Tactic.focus": 6.485399999999614e-05,
+      "Mathlib.Tactic.normNum": 0.012325533,
+      "Lean.Parser.Tactic.withAnnotateState": 6.4933e-05,
+      "Lean.Parser.Tactic.skip": 4.0736e-05,
+      "Lean.Parser.Tactic.allGoals": 3.7905000000000004e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.012325533,
+    "untraced_body_cpu_s": 0.023923617,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.5362383539244924,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.981808413477941,
+    "allGoals_info_count": 5,
+    "allGoals_C_count": 5,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 5
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.036752378,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.036752378,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.036752378,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.036752378,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7234",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.060841411,
+    "body_cpu_s": 0.060844716,
+    "C_calls": 62,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.019646076,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00015709800000000243,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001878899999999932,
+      "Lean.Parser.Tactic.rwSeq": 1.8963000000000096e-05,
+      "Lean.Parser.Tactic.paren": 3.2348999999999985e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.000627909,
+      "Lean.Parser.Tactic.withAnnotateState": 9.159300000000003e-05,
+      "Lean.Parser.Tactic.tacticTry_": 1.4255000000000127e-05,
+      "Lean.Parser.Tactic.first": 1.9258999999999986e-05,
+      "Lean.Parser.Tactic.withReducible": 1.3284000000000017e-05,
+      "Lean.Parser.Tactic.tacticRfl": 9.924599999999999e-05,
+      "Lean.Parser.Tactic.exact": 0.000566301,
+      "Lean.Parser.Tactic.applyRfl": 2.8165e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.00015234,
+      "Lean.Parser.Tactic.case'": 2.3129e-05,
+      "Lean.Parser.Tactic.fail": 2.1293e-05,
+      "Lean.Parser.Tactic.skip": 4.0359e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 5.1747999999997296e-05,
+      "Lean.Parser.Tactic.focus": 6.059400000000409e-05,
+      "Mathlib.Tactic.normNum": 0.017408506,
+      "Lean.Parser.Tactic.allGoals": 3.1795e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.017408506,
+    "untraced_body_cpu_s": 0.04119864,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.4768622459382155,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 3.495114170049974,
+    "allGoals_info_count": 4,
+    "allGoals_C_count": 4,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 4
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.060844716,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.060844716,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.060844716,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.060844716,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6036",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.050296229,
+    "body_cpu_s": 0.050300202,
+    "C_calls": 8,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.018331612,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 6.093600000000102e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 3.951899999999828e-05,
+      "Lean.Parser.Tactic.subst": 0.000275653,
+      "Mathlib.Tactic.RingNF.ring": 0.00029172000000000226,
+      "Lean.Parser.Tactic.first": 1.8274999999998154e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.017645509
+    },
+    "largest_opaque_leaf_cpu_s": 0.017645509,
+    "untraced_body_cpu_s": 0.031968590000000005,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.5734257281913275,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.850595128766192,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.050300202,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.050300202,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.050300202,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.050300202,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-2559",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.068430487,
+    "body_cpu_s": 0.068417474,
+    "C_calls": 18,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.039300882,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.912700000000134e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 7.409400000000024e-05,
+      "Lean.Parser.Tactic.simp": 0.010801237,
+      "Lean.Parser.Tactic.tactic_<;>_": 5.339499999999775e-05,
+      "Lean.Parser.Tactic.focus": 3.3505000000003116e-05,
+      "Mathlib.Tactic.normNum": 0.028178259,
+      "Lean.Parser.Tactic.withAnnotateState": 3.2703e-05,
+      "Lean.Parser.Tactic.skip": 2.0271e-05,
+      "Lean.Parser.Tactic.allGoals": 1.8290999999999998e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.028178259,
+    "untraced_body_cpu_s": 0.029116592000000004,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.3497761688593224,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.428023463053555,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 2
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.068417474,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.068417474,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.068417474,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.068417474,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7243",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.08038802,
+    "body_cpu_s": 0.080392544,
+    "C_calls": 42,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.039209537,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00013167600000000548,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.000146171000000001,
+      "Lean.Parser.Tactic.rwSeq": 1.902400000000008e-05,
+      "Lean.Parser.Tactic.paren": 3.225299999999999e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.000644276,
+      "Lean.Parser.Tactic.withAnnotateState": 3.8678000000000106e-05,
+      "Lean.Parser.Tactic.tacticTry_": 1.34540000000002e-05,
+      "Lean.Parser.Tactic.first": 1.8243999999999943e-05,
+      "Lean.Parser.Tactic.withReducible": 1.349200000000004e-05,
+      "Lean.Parser.Tactic.tacticRfl": 9.848799999999998e-05,
+      "Lean.Parser.Tactic.exact": 0.000554862,
+      "Lean.Parser.Tactic.applyRfl": 2.8206e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000160009,
+      "Lean.Parser.Tactic.case'": 2.3431999999999995e-05,
+      "Lean.Parser.Tactic.fail": 2.1122e-05,
+      "Lean.Parser.Tactic.skip": 2.031e-05,
+      "Lean.Parser.Tactic.simp": 0.020474407,
+      "Lean.Parser.Tactic.tactic_<;>_": 5.682099999999857e-05,
+      "Lean.Parser.Tactic.focus": 2.1067999999999087e-05,
+      "Mathlib.Tactic.normNum": 0.016683355,
+      "Lean.Parser.Tactic.allGoals": 1.0189e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.020474407,
+    "untraced_body_cpu_s": 0.041183006999999994,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.9520804782419119,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 3.926489494909425,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.080392544,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.080392544,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.080392544,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.080392544,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7478",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.071911981,
+    "body_cpu_s": 0.071916823,
+    "C_calls": 37,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 0.016019141,
+    "C_root_cpu_s": 0.050620974,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00019837400000000333,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00018347800000000167,
+      "Lean.Parser.Tactic.apply": 0.000891919,
+      "Lean.Parser.Tactic.intro": 0.000113822,
+      "Lean.Parser.Tactic.tactic_<;>_": 6.187299999999701e-05,
+      "Lean.Parser.Tactic.focus": 3.0316000000002452e-05,
+      "Mathlib.Tactic.intervalCases": 0.028630058,
+      "Lean.Parser.Tactic.withAnnotateState": 4.3558000000000005e-05,
+      "Lean.Parser.Tactic.skip": 2.4188e-05,
+      "Lean.Parser.Tactic.allGoals": 7.170100000000137e-05,
+      "Mathlib.Tactic.normNum": 0.020371687
+    },
+    "largest_opaque_leaf_cpu_s": 0.028630058,
+    "untraced_body_cpu_s": 0.021295849000000006,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.511934240580302,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.511934240580302,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 1,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 304,
+        "branch_cpu_s": [
+          0.004595011,
+          0.003217505,
+          0.003228845,
+          0.00321517,
+          0.003184368,
+          0.003173253
+        ],
+        "nested_branch_model_span_s": [
+          0.004595011,
+          0.003217505,
+          0.003228845,
+          0.00321517,
+          0.003184368,
+          0.003173253
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.016019141
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 0.055897682000000004,
+    "local_allGoals_model_parallelism": 1.2865797011046003,
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 1,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.071916823,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.009630718,
+        "modeled_body_s": 0.06228610500000001,
+        "ratio": 1.1546206493406515
+      },
+      "4": {
+        "saved_cpu_s": 0.014214614,
+        "modeled_body_s": 0.057702209000000004,
+        "ratio": 1.2463443643899317
+      },
+      "8": {
+        "saved_cpu_s": 0.016019141,
+        "modeled_body_s": 0.055897682000000004,
+        "ratio": 1.2865797011046003
+      }
+    }
+  },
+  {
+    "id": "minif2f-1321",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.078170626,
+    "body_cpu_s": 0.078153959,
+    "C_calls": 21,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.0358971,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00010667199999999863,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 8.555800000000294e-05,
+      "Lean.Parser.Tactic.tacticHave_": 2.0377000000001977e-05,
+      "Lean.Parser.Tactic.focus": 1.7878999999998424e-05,
+      "Lean.Parser.Tactic.refine": 0.012112712,
+      "Lean.Parser.Tactic.case": 5.017699999999847e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 1.2514999999997667e-05,
+      "Lean.Parser.Tactic.paren": 1.0074000000002276e-05,
+      "Lean.Parser.Tactic.simpAll": 0.007785123,
+      "Lean.Parser.Tactic.tacticRfl": 7.380200000000128e-05,
+      "Lean.Parser.Tactic.exact": 0.0008791809999999999,
+      "Lean.Parser.Tactic.applyRfl": 2.8621e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.014714409
+    },
+    "largest_opaque_leaf_cpu_s": 0.014714409,
+    "untraced_body_cpu_s": 0.042256858999999994,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.849497592804993,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 5.311389604570595,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.0003189279999999961,
+    "have_continuation_model_span_cpu_s": 0.077835031,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0040974866445418,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 328,
+        "proof_C_id": 333,
+        "proof_model_span_cpu_s": 0.023291252,
+        "continuation_model_span_cpu_s": 0.000318928,
+        "incremental_saved_cpu_s": 0.000318928
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.078153959,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.078153959,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.078153959,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.078153959,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-3041",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.063693645,
+    "body_cpu_s": 0.063637996,
+    "C_calls": 8,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.045039534,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 2.8828000000001575e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 4.835299999999404e-05,
+      "Lean.Parser.Tactic.apply": 0.00026696,
+      "Lean.Parser.Tactic.intro": 0.000111391,
+      "Lean.Parser.Tactic.revert": 0.000151625,
+      "Lean.Parser.Tactic.decide": 0.044432377
+    },
+    "largest_opaque_leaf_cpu_s": 0.044432377,
+    "untraced_body_cpu_s": 0.018598462000000003,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.4322437892530484,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.4322437892530484,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.063637996,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.063637996,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.063637996,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.063637996,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-563",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.073607246,
+    "body_cpu_s": 0.073611599,
+    "C_calls": 22,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.039549264,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.014600000000316e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 8.550200000000813e-05,
+      "Lean.Parser.Tactic.simp": 0.005259266,
+      "Lean.Parser.Tactic.tactic_<;>_": 4.908700000000321e-05,
+      "Lean.Parser.Tactic.focus": 3.252199999999317e-05,
+      "Mathlib.Tactic.RingNF.ring": 0.0002667619999999968,
+      "Lean.Parser.Tactic.first": 2.6716000000003015e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.033643702,
+      "Lean.Parser.Tactic.withAnnotateState": 3.3721e-05,
+      "Lean.Parser.Tactic.skip": 5.2908e-05,
+      "Lean.Parser.Tactic.allGoals": 1.8932e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.033643702,
+    "untraced_body_cpu_s": 0.034062335,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.1610849344297742,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.187975597929146,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 2
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073611599,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073611599,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073611599,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073611599,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6001",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.073727763,
+    "body_cpu_s": 0.073732272,
+    "C_calls": 18,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.042739426,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 7.493899999999956e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 7.320299999999825e-05,
+      "Mathlib.Tactic.normNum": 0.037036898,
+      "Lean.Parser.Tactic.tactic_<;>_": 5.367699999999937e-05,
+      "Lean.Parser.Tactic.focus": 3.3486000000000106e-05,
+      "Lean.Parser.Tactic.decide": 0.005400385,
+      "Lean.Parser.Tactic.withAnnotateState": 3.0736e-05,
+      "Lean.Parser.Tactic.skip": 1.9312e-05,
+      "Lean.Parser.Tactic.allGoals": 1.679e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.037036898,
+    "untraced_body_cpu_s": 0.030992846000000004,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.9907788173836807,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.9907788173836807,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 2
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073732272,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073732272,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073732272,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.073732272,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-4420",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.118375477,
+    "body_cpu_s": 0.118350996,
+    "C_calls": 45,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.084407677,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00013948899999999379,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001626590000000035,
+      "Lean.Parser.Tactic.tacticHave_": 1.6055999999999536e-05,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 1.2962000000000043e-05,
+      "Lean.Parser.Tactic.focus": 1.583900000000013e-05,
+      "Lean.Parser.Tactic.paren": 4.1952000000000374e-05,
+      "Lean.Parser.Tactic.refine": 0.004626793,
+      "Lean.Parser.Tactic.rotateRight": 1.6368e-05,
+      "Lean.Parser.Tactic.rwSeq": 2.22769999999998e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.001073574,
+      "Lean.Parser.Tactic.withAnnotateState": 1.8205000000000087e-05,
+      "Lean.Parser.Tactic.tacticTry_": 1.3309999999999993e-05,
+      "Lean.Parser.Tactic.first": 4.837299999999999e-05,
+      "Lean.Parser.Tactic.withReducible": 1.3214e-05,
+      "Lean.Parser.Tactic.tacticRfl": 6.903399999999994e-05,
+      "Lean.Parser.Tactic.exact": 0.000543186,
+      "Lean.Parser.Tactic.applyRfl": 2.8164e-05,
+      "Lean.Parser.Tactic.eqRefl": 6.0734e-05,
+      "Lean.Parser.Tactic.case'": 2.1386e-05,
+      "Lean.Parser.Tactic.fail": 2.0893e-05,
+      "Lean.Parser.Tactic.skip": 9e-06,
+      "Mathlib.Tactic.normNum": 0.031315158,
+      "Lean.Parser.Tactic.omega": 0.046119051
+    },
+    "largest_opaque_leaf_cpu_s": 0.046119051,
+    "untraced_body_cpu_s": 0.033943319,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.5662062300458004,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.5662062300458004,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": 0.118350996,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 1
+    },
+    "have_forks": [],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.118350996,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.118350996,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.118350996,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.118350996,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-1415",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.110263154,
+    "body_cpu_s": 0.110252143,
+    "C_calls": 45,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.067659922,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00018762200000000404,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001982310000000001,
+      "Lean.Parser.Tactic.tacticHave_": 0.00011338100000000007,
+      "Lean.Parser.Tactic.focus": 5.5047999999995045e-05,
+      "Lean.Parser.Tactic.refine": 0.025675887,
+      "Lean.Parser.Tactic.case": 0.000149900000000001,
+      "Lean.Parser.Tactic.withAnnotateState": 3.472800000000123e-05,
+      "Lean.Parser.Tactic.paren": 2.9094000000000342e-05,
+      "Mathlib.Tactic.normNum": 0.040943681999999995,
+      "Lean.Parser.Tactic.exact": 0.000272349
+    },
+    "largest_opaque_leaf_cpu_s": 0.011943624,
+    "untraced_body_cpu_s": 0.042592221,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.5885511582032783,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 9.231046037618063,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 3,
+    "have_continuation_model_saved_cpu_s": 0.014459202000000004,
+    "have_continuation_model_span_cpu_s": 0.09579294099999999,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.150942249492058,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 468,
+        "proof_C_id": 473,
+        "proof_model_span_cpu_s": 0.027175601,
+        "continuation_model_span_cpu_s": 0.000272349,
+        "incremental_saved_cpu_s": 0.000272349
+      },
+      {
+        "have_C_id": 455,
+        "proof_C_id": 460,
+        "proof_model_span_cpu_s": 0.002124054,
+        "continuation_model_span_cpu_s": 0.037636203,
+        "incremental_saved_cpu_s": 0.002124054
+      },
+      {
+        "have_C_id": 442,
+        "proof_C_id": 447,
+        "proof_model_span_cpu_s": 0.012062799,
+        "continuation_model_span_cpu_s": 0.042793081999999996,
+        "incremental_saved_cpu_s": 0.012062799
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.110252143,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.110252143,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.110252143,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.110252143,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6684",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.097324741,
+    "body_cpu_s": 0.097329056,
+    "C_calls": 81,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.063626193,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0002772270000000024,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.000365055999999986,
+      "Lean.Parser.Tactic.tacticHave_": 0.00017201900000000155,
+      "Lean.Parser.Tactic.focus": 9.529399999999924e-05,
+      "Lean.Parser.Tactic.refine": 0.036939691999999996,
+      "Lean.Parser.Tactic.case": 0.00022397300000000296,
+      "Lean.Parser.Tactic.withAnnotateState": 9.02940000000028e-05,
+      "Lean.Parser.Tactic.paren": 5.544099999999809e-05,
+      "Lean.Parser.Tactic.decide": 0.002655429,
+      "Lean.Parser.Tactic.simp": 0.022751768
+    },
+    "largest_opaque_leaf_cpu_s": 0.009985988,
+    "untraced_body_cpu_s": 0.033702863,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.8878572126053506,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 9.746562483351672,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 6,
+    "have_continuation_model_saved_cpu_s": 0.029808810000000005,
+    "have_continuation_model_span_cpu_s": 0.06752024599999999,
+    "have_info_count": 6,
+    "have_C_count": 6,
+    "have_continuation_model_ratio": 1.441479582287067,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 512,
+        "proof_C_id": 517,
+        "proof_model_span_cpu_s": 0.000673252,
+        "continuation_model_span_cpu_s": 0.006852985,
+        "incremental_saved_cpu_s": 0.000673252
+      },
+      {
+        "have_C_id": 499,
+        "proof_C_id": 504,
+        "proof_model_span_cpu_s": 0.00102504,
+        "continuation_model_span_cpu_s": 0.011675305,
+        "incremental_saved_cpu_s": 0.00102504
+      },
+      {
+        "have_C_id": 551,
+        "proof_C_id": 556,
+        "proof_model_span_cpu_s": 0.000688832,
+        "continuation_model_span_cpu_s": 0.005912795,
+        "incremental_saved_cpu_s": 0.000688832
+      },
+      {
+        "have_C_id": 538,
+        "proof_C_id": 543,
+        "proof_model_span_cpu_s": 0.000731586,
+        "continuation_model_span_cpu_s": 0.010674582,
+        "incremental_saved_cpu_s": 0.000731586
+      },
+      {
+        "have_C_id": 526,
+        "proof_C_id": 531,
+        "proof_model_span_cpu_s": 0.015547857,
+        "continuation_model_span_cpu_s": 0.009985988,
+        "incremental_saved_cpu_s": 0.009985988
+      },
+      {
+        "have_C_id": 487,
+        "proof_C_id": 492,
+        "proof_model_span_cpu_s": 0.016704112,
+        "continuation_model_span_cpu_s": 0.024684389999999997,
+        "incremental_saved_cpu_s": 0.016704112
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.097329056,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.097329056,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.097329056,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.097329056,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-3459",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.129536817,
+    "body_cpu_s": 0.129528628,
+    "C_calls": 106,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.085203597,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00020036100000003776,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00032247399999998233,
+      "Lean.Parser.Tactic.simp": 0.046635481,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.00019751100000001132,
+      "Lean.Parser.Tactic.focus": 0.0001993589999999823,
+      "Mathlib.Tactic.RingNF.ring": 0.0002728170000000016,
+      "Lean.Parser.Tactic.first": 1.9033999999994167e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.036976845,
+      "Lean.Parser.Tactic.withAnnotateState": 0.000155609,
+      "Lean.Parser.Tactic.skip": 9.6392e-05,
+      "Lean.Parser.Tactic.allGoals": 0.000127714
+    },
+    "largest_opaque_leaf_cpu_s": 0.046635481,
+    "untraced_body_cpu_s": 0.044325031,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.777469540841661,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.777469540841661,
+    "allGoals_info_count": 14,
+    "allGoals_C_count": 14,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 14
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.129528628,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.129528628,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.129528628,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.129528628,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-4721",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.141349404,
+    "body_cpu_s": 0.141340675,
+    "C_calls": 34,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.11702645,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0001157090000000003,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00014960800000000767,
+      "Lean.Parser.Tactic.tacticHave_": 9.261199999999886e-05,
+      "Lean.Parser.Tactic.focus": 3.523299999999563e-05,
+      "Lean.Parser.Tactic.refine": 0.072364415,
+      "Lean.Parser.Tactic.case": 0.0001278780000000014,
+      "Lean.Parser.Tactic.withAnnotateState": 2.3612000000002714e-05,
+      "Lean.Parser.Tactic.paren": 1.9225999999998925e-05,
+      "Mathlib.Tactic.normNum": 0.02363729,
+      "Mathlib.Tactic.RingNF.ring": 0.00024147499999999968,
+      "Lean.Parser.Tactic.first": 1.618300000000121e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.013863393,
+      "Lean.Parser.Tactic.simp": 0.006339816
+    },
+    "largest_opaque_leaf_cpu_s": 0.056320764,
+    "untraced_body_cpu_s": 0.024314224999999995,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.5095660101485837,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.5095660101485837,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 2,
+    "have_continuation_model_saved_cpu_s": 0.03009661999999999,
+    "have_continuation_model_span_cpu_s": 0.11124405500000001,
+    "have_info_count": 2,
+    "have_C_count": 2,
+    "have_continuation_model_ratio": 1.2705458732154271,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 687,
+        "proof_C_id": 692,
+        "proof_model_span_cpu_s": 0.014291392,
+        "continuation_model_span_cpu_s": 0.012148459,
+        "incremental_saved_cpu_s": 0.012148459
+      },
+      {
+        "have_C_id": 674,
+        "proof_C_id": 679,
+        "proof_model_span_cpu_s": 0.017948161,
+        "continuation_model_span_cpu_s": 0.070738868,
+        "incremental_saved_cpu_s": 0.017948161
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.141340675,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.141340675,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.141340675,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.141340675,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-3869",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.173707958,
+    "body_cpu_s": 0.173681355,
+    "C_calls": 10,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.143031616,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.570300000002029e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 4.5039999999996194e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 1.7262999999989592e-05,
+      "Lean.Parser.Tactic.focus": 1.8919000000006125e-05,
+      "Lean.Parser.Tactic.simp": 0.142817595,
+      "Lean.Parser.Tactic.withAnnotateState": 2.3195e-05,
+      "Lean.Parser.Tactic.skip": 1.3012e-05,
+      "Lean.Parser.Tactic.allGoals": 1.0889e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.142817595,
+    "untraced_body_cpu_s": 0.03064973900000001,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.2161061457448574,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.2161061457448574,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.173681355,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.173681355,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.173681355,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.173681355,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-4950",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.180340201,
+    "body_cpu_s": 0.180320224,
+    "C_calls": 18,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.117721518,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.097599999999303e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 7.964499999999625e-05,
+      "Lean.Parser.Tactic.tacticHave_": 2.0466000000000234e-05,
+      "Lean.Parser.Tactic.focus": 1.5971999999999514e-05,
+      "Lean.Parser.Tactic.refine": 0.006953408,
+      "Lean.Parser.Tactic.case": 5.0248000000002735e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 1.1799999999999311e-05,
+      "Lean.Parser.Tactic.paren": 1.0406000000000998e-05,
+      "Lean.Parser.Tactic.intro": 6.5345e-05,
+      "Lean.Parser.Tactic.apply": 0.021105513,
+      "linarith": 0.04948164,
+      "Mathlib.Tactic.Ring.ring1": 0.039846099
+    },
+    "largest_opaque_leaf_cpu_s": 0.039846099,
+    "untraced_body_cpu_s": 0.062598706,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.8805743045231638,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 4.525417256027999,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.021297676000000015,
+    "have_continuation_model_span_cpu_s": 0.15902254799999999,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.1339286551992616,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 718,
+        "proof_C_id": 723,
+        "proof_model_span_cpu_s": 0.021297676,
+        "continuation_model_span_cpu_s": 0.089327739,
+        "incremental_saved_cpu_s": 0.021297676
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.180320224,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.180320224,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.180320224,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.180320224,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-3169",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.217431752,
+    "body_cpu_s": 0.217357119,
+    "C_calls": 22,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.147936839,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.029999999997761e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 7.277999999996676e-05,
+      "Lean.Parser.Tactic.tacticHave_": 1.9494000000008782e-05,
+      "Lean.Parser.Tactic.focus": 1.6812000000004934e-05,
+      "Lean.Parser.Tactic.refine": 0.000782731,
+      "Lean.Parser.Tactic.case": 6.673600000001167e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 1.1654999999999305e-05,
+      "Lean.Parser.Tactic.paren": 9.48800000000194e-06,
+      "linarith": 0.07206370600000002,
+      "Mathlib.Tactic.Ring.ring1": 0.055434607,
+      "Mathlib.Tactic.normNum": 0.019163532,
+      "Lean.Parser.Tactic.exact": 0.000214998
+    },
+    "largest_opaque_leaf_cpu_s": 0.034907547,
+    "untraced_body_cpu_s": 0.06942028,
+    "fixed_atomic_untraced_serial_model_ceiling": 3.1310320125473416,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 6.226651188065435,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.00021499799999999403,
+    "have_continuation_model_span_cpu_s": 0.217142121,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0009901257250775,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 736,
+        "proof_C_id": 741,
+        "proof_model_span_cpu_s": 0.146799955,
+        "continuation_model_span_cpu_s": 0.000214998,
+        "incremental_saved_cpu_s": 0.000214998
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.217357119,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.217357119,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.217357119,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.217357119,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7774",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.209431067,
+    "body_cpu_s": 0.209361128,
+    "C_calls": 48,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.142110041,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00015791099999998856,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001793789999999911,
+      "Lean.Parser.Tactic.tacticHave_": 1.9777999999998075e-05,
+      "Lean.Parser.Tactic.focus": 1.7071000000007386e-05,
+      "Lean.Parser.Tactic.refine": 0.007898063,
+      "Lean.Parser.Tactic.case": 4.852199999999529e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 3.153200000000729e-05,
+      "Lean.Parser.Tactic.paren": 6.47489999999972e-05,
+      "Lean.Parser.Tactic.rwSeq": 1.5402000000000297e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.00197168,
+      "Lean.Parser.Tactic.tacticTry_": 1.3858000000000056e-05,
+      "Lean.Parser.Tactic.first": 1.814200000000007e-05,
+      "Lean.Parser.Tactic.withReducible": 1.3005999999999977e-05,
+      "Lean.Parser.Tactic.tacticRfl": 6.963200000000003e-05,
+      "Lean.Parser.Tactic.exact": 0.000528652,
+      "Lean.Parser.Tactic.applyRfl": 2.7235e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000152705,
+      "Lean.Parser.Tactic.case'": 2.1510000000000002e-05,
+      "Lean.Parser.Tactic.fail": 2.1341e-05,
+      "Lean.Parser.Tactic.skip": 9.227e-06,
+      "Mathlib.Tactic.normNum": 0.02995884,
+      "Lean.Parser.Tactic.omega": 0.100707819,
+      "Lean.Parser.Tactic.apply": 0.000163987
+    },
+    "largest_opaque_leaf_cpu_s": 0.100707819,
+    "untraced_body_cpu_s": 0.06725108700000001,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.0788964558948497,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.0788964558948497,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.00016398699999997657,
+    "have_continuation_model_span_cpu_s": 0.20919714100000003,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0007838873859178,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 758,
+        "proof_C_id": 763,
+        "proof_model_span_cpu_s": 0.13391871000000002,
+        "continuation_model_span_cpu_s": 0.000163987,
+        "incremental_saved_cpu_s": 0.000163987
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.209361128,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.209361128,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.209361128,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.209361128,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-3287",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.239423644,
+    "body_cpu_s": 0.239350971,
+    "C_calls": 95,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.189100543,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0002539150000000148,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0003254140000000105,
+      "Lean.Parser.Tactic.tacticHave_": 6.966800000000016e-05,
+      "Lean.Parser.Tactic.focus": 5.050199999999394e-05,
+      "Lean.Parser.Tactic.refine": 0.016565054,
+      "Lean.Parser.Tactic.case": 8.473300000000307e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 8.162699999999893e-05,
+      "Lean.Parser.Tactic.paren": 7.87619999999972e-05,
+      "linarith": 0.100650342,
+      "Mathlib.Tactic.Ring.ring1": 0.05501986700000001,
+      "Lean.Parser.Tactic.rwSeq": 3.8936999999999956e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.001750031,
+      "Lean.Parser.Tactic.tacticTry_": 2.4412000000000023e-05,
+      "Lean.Parser.Tactic.first": 2.943899999999992e-05,
+      "Lean.Parser.Tactic.withReducible": 2.3139000000000037e-05,
+      "Lean.Parser.Tactic.tacticRfl": 0.00014393399999999997,
+      "Lean.Parser.Tactic.exact": 0.001039507,
+      "Lean.Parser.Tactic.applyRfl": 4.99e-05,
+      "Lean.Parser.Tactic.eqRefl": 8.9317e-05,
+      "Lean.Parser.Tactic.case'": 2.1008999999999988e-05,
+      "Lean.Parser.Tactic.fail": 2.1031e-05,
+      "Lean.Parser.Tactic.skip": 1.9875000000000002e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 8.072200000000529e-05,
+      "Mathlib.Tactic.normNum": 0.012579597999999999,
+      "Lean.Parser.Tactic.allGoals": 9.808e-06
+    },
+    "largest_opaque_leaf_cpu_s": 0.022911229,
+    "untraced_body_cpu_s": 0.050250427999999986,
+    "fixed_atomic_untraced_serial_model_ceiling": 4.763162833160347,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 10.446884844108537,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 2,
+    "have_continuation_model_saved_cpu_s": 0.06337736499999999,
+    "have_continuation_model_span_cpu_s": 0.175973606,
+    "have_info_count": 2,
+    "have_C_count": 2,
+    "have_continuation_model_ratio": 1.3601526753961044,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 820,
+        "proof_C_id": 825,
+        "proof_model_span_cpu_s": 0.0014791939999999999,
+        "continuation_model_span_cpu_s": 0.108911177,
+        "incremental_saved_cpu_s": 0.0014791939999999999
+      },
+      {
+        "have_C_id": 806,
+        "proof_C_id": 811,
+        "proof_model_span_cpu_s": 0.06189817100000001,
+        "continuation_model_span_cpu_s": 0.122026036,
+        "incremental_saved_cpu_s": 0.06189817100000001
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.239350971,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.239350971,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.239350971,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.239350971,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-4838",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.305222703,
+    "body_cpu_s": 0.302782189,
+    "C_calls": 35,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.234240469,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00011387300000000652,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00017037199999998896,
+      "Mathlib.Tactic.normNum": 0.21415971900000003,
+      "Lean.Parser.Tactic.tacticHave_": 9.472999999999947e-05,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 3.902199999999967e-05,
+      "Lean.Parser.Tactic.focus": 5.308000000000049e-05,
+      "Lean.Parser.Tactic.paren": 2.9452999999999598e-05,
+      "Lean.Parser.Tactic.refine": 0.01342181,
+      "Lean.Parser.Tactic.rotateRight": 4.8283e-05,
+      "Lean.Parser.Tactic.omega": 0.006110127
+    },
+    "largest_opaque_leaf_cpu_s": 0.1433164,
+    "untraced_body_cpu_s": 0.06854171999999997,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.1126834681864737,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.1126834681864737,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": 0.302782189,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.0,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 3
+    },
+    "have_forks": [],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.302782189,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.302782189,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.302782189,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.302782189,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-2797",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.229603864,
+    "body_cpu_s": 0.229574966,
+    "C_calls": 10,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.175922862,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00010714300000002133,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 4.887100000000241e-05,
+      "Mathlib.Tactic.normNum": 0.14592962999999998,
+      "Mathlib.Tactic.RingNF.ring": 0.00027626400000000176,
+      "Lean.Parser.Tactic.first": 1.9355999999998152e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.029541598
+    },
+    "largest_opaque_leaf_cpu_s": 0.029541598,
+    "untraced_body_cpu_s": 0.05365210399999998,
+    "fixed_atomic_untraced_serial_model_ceiling": 4.2789555093682825,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 7.77124399296206,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.229574966,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.229574966,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.229574966,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.229574966,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-1041",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.290342132,
+    "body_cpu_s": 0.290214558,
+    "C_calls": 16,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.181527081,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 6.268499999997901e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 7.033000000000733e-05,
+      "Lean.Parser.Tactic.tacticHave_": 1.986700000000674e-05,
+      "Lean.Parser.Tactic.focus": 1.791500000000723e-05,
+      "Lean.Parser.Tactic.refine": 0.001007058,
+      "Lean.Parser.Tactic.case": 4.0980000000023775e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 1.2063999999978314e-05,
+      "Lean.Parser.Tactic.paren": 9.5810000000085e-06,
+      "Lean.Parser.Tactic.omega": 0.18004739,
+      "Lean.Parser.Tactic.exact": 0.000239211
+    },
+    "largest_opaque_leaf_cpu_s": 0.18004739,
+    "untraced_body_cpu_s": 0.108687477,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.6118787281504054,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.6118787281504054,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.00023921099999996143,
+    "have_continuation_model_span_cpu_s": 0.28997534700000005,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.000824935645305,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 946,
+        "proof_C_id": 951,
+        "proof_model_span_cpu_s": 0.180157003,
+        "continuation_model_span_cpu_s": 0.000239211,
+        "incremental_saved_cpu_s": 0.000239211
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.290214558,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.290214558,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.290214558,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.290214558,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6881",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.362886379,
+    "body_cpu_s": 0.362807967,
+    "C_calls": 65,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.289658336,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00026496100000000106,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.000245770999999978,
+      "Lean.Parser.Tactic.tacticHave_": 0.0002911489999999975,
+      "Lean.Parser.Tactic.focus": 7.660100000000253e-05,
+      "Lean.Parser.Tactic.refine": 0.011418223,
+      "Lean.Parser.Tactic.case": 0.0001827960000000059,
+      "Lean.Parser.Tactic.withAnnotateState": 4.897200000000129e-05,
+      "Lean.Parser.Tactic.paren": 4.423500000000358e-05,
+      "linarith": 0.15840822300000001,
+      "Mathlib.Tactic.Ring.ring1": 0.106065024,
+      "Mathlib.Tactic.normNum": 0.012534014000000001,
+      "Lean.Parser.Tactic.assumption": 7.8367e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.025370603,
+    "untraced_body_cpu_s": 0.07314963099999999,
+    "fixed_atomic_untraced_serial_model_ceiling": 4.959805839622076,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 14.300328888517157,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 4,
+    "have_continuation_model_saved_cpu_s": 0.19801847500000003,
+    "have_continuation_model_span_cpu_s": 0.16478949199999998,
+    "have_info_count": 4,
+    "have_C_count": 4,
+    "have_continuation_model_ratio": 2.201645035716234,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1007,
+        "proof_C_id": 1012,
+        "proof_model_span_cpu_s": 0.078717213,
+        "continuation_model_span_cpu_s": 7.8367e-05,
+        "incremental_saved_cpu_s": 7.8367e-05
+      },
+      {
+        "have_C_id": 992,
+        "proof_C_id": 997,
+        "proof_model_span_cpu_s": 0.055172864,
+        "continuation_model_span_cpu_s": 0.079718457,
+        "incremental_saved_cpu_s": 0.055172864
+      },
+      {
+        "have_C_id": 977,
+        "proof_C_id": 982,
+        "proof_model_span_cpu_s": 0.055915295,
+        "continuation_model_span_cpu_s": 0.082916043,
+        "incremental_saved_cpu_s": 0.055915295
+      },
+      {
+        "have_C_id": 962,
+        "proof_C_id": 967,
+        "proof_model_span_cpu_s": 0.087723572,
+        "continuation_model_span_cpu_s": 0.086851949,
+        "incremental_saved_cpu_s": 0.086851949
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.362807967,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.362807967,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.362807967,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.362807967,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-945",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.356823922,
+    "body_cpu_s": 0.356753392,
+    "C_calls": 62,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.307641892,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00013945799999997178,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001679250000000343,
+      "Lean.Parser.Tactic.tacticHave_": 2.1514999999971973e-05,
+      "Lean.Parser.Tactic.focus": 5.1799000000000186e-05,
+      "Lean.Parser.Tactic.refine": 0.002647802,
+      "Lean.Parser.Tactic.case": 4.6814999999977847e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 3.352000000001999e-05,
+      "Lean.Parser.Tactic.paren": 1.0357000000016381e-05,
+      "Mathlib.Tactic.normNum": 0.15617765500000003,
+      "linarith": 0.097793665,
+      "Mathlib.Tactic.Ring.ring1": 0.043642622,
+      "Lean.Parser.Tactic.tacticNorm_cast_": 3.954800000000036e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 2.744199999999951e-05,
+      "Lean.Parser.Tactic.normCast0": 0.005366347,
+      "Lean.Parser.Tactic.skip": 1.2457e-05,
+      "Lean.Parser.Tactic.allGoals": 1.6322999999999945e-05,
+      "Lean.Parser.Tactic.tacticTry_": 3.9252999999999944e-05,
+      "Lean.Parser.Tactic.first": 1.3048000000000096e-05,
+      "Lean.Parser.Tactic.tacticTrivial": 7.296499999999992e-05,
+      "Lean.Parser.Tactic.apply": 0.00032377700000000003,
+      "Lean.Parser.Tactic.decide": 3.9029e-05,
+      "Lean.Parser.Tactic.contradiction": 0.000153732,
+      "Lean.Parser.Tactic.tacticRfl": 6.626699999999995e-05,
+      "Lean.Parser.Tactic.exact": 0.0005368969999999999,
+      "Lean.Parser.Tactic.applyRfl": 2.5573e-05,
+      "Lean.Parser.Tactic.eqRefl": 8.4617e-05,
+      "Lean.Parser.Tactic.case'": 2.2124000000000007e-05,
+      "Lean.Parser.Tactic.fail": 3.922e-05,
+      "Lean.Parser.Tactic.assumption": 3.014e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.11375965,
+    "untraced_body_cpu_s": 0.04911150000000003,
+    "fixed_atomic_untraced_serial_model_ceiling": 3.1360275106331637,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 3.1360275106331637,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.007100390999999984,
+    "have_continuation_model_span_cpu_s": 0.349653001,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.0203069642751328,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1027,
+        "proof_C_id": 1032,
+        "proof_model_span_cpu_s": 0.297745016,
+        "continuation_model_span_cpu_s": 0.007100391,
+        "incremental_saved_cpu_s": 0.007100391
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.356753392,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.356753392,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.356753392,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.356753392,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-2693",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.358370299,
+    "body_cpu_s": 0.358336561,
+    "C_calls": 45,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.220575722,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00017985600000001317,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001772680000000179,
+      "Lean.Parser.Tactic.tacticHave_": 5.5067000000005915e-05,
+      "Lean.Parser.Tactic.focus": 7.192199999999868e-05,
+      "Lean.Parser.Tactic.refine": 0.065584642,
+      "Lean.Parser.Tactic.case": 0.00013779299999999023,
+      "Lean.Parser.Tactic.withAnnotateState": 2.3591999999995894e-05,
+      "Lean.Parser.Tactic.paren": 2.9779999999995422e-05,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 1.245599999999999e-05,
+      "Lean.Parser.Tactic.rotateRight": 1.4792e-05,
+      "Mathlib.Tactic.RingNF.ring": 0.00027065700000000054,
+      "Lean.Parser.Tactic.first": 1.755200000000401e-05,
+      "Mathlib.Tactic.Ring.ring1": 0.08726347699999999,
+      "linarith": 0.066352146,
+      "Lean.Parser.Tactic.exact": 0.000384722
+    },
+    "largest_opaque_leaf_cpu_s": 0.044384521,
+    "untraced_body_cpu_s": 0.137760839,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.601149670698507,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 8.073457884112345,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 2,
+    "have_continuation_model_saved_cpu_s": 0.04317937399999994,
+    "have_continuation_model_span_cpu_s": 0.31515718700000006,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.1370090094121823,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 1
+    },
+    "have_forks": [
+      {
+        "have_C_id": 1111,
+        "proof_C_id": 1116,
+        "proof_model_span_cpu_s": 0.042794652,
+        "continuation_model_span_cpu_s": 0.11127511100000001,
+        "incremental_saved_cpu_s": 0.042794652
+      },
+      {
+        "have_C_id": 1089,
+        "proof_C_id": 1094,
+        "proof_model_span_cpu_s": 0.15635319700000003,
+        "continuation_model_span_cpu_s": 0.000384722,
+        "incremental_saved_cpu_s": 0.000384722
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.358336561,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.358336561,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.358336561,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.358336561,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6049",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.366163193,
+    "body_cpu_s": 0.366064465,
+    "C_calls": 143,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.303534175,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.000490789999999972,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0006210000000000658,
+      "Lean.Parser.Tactic.tacticHave_": 2.2487999999987185e-05,
+      "Lean.Parser.Tactic.focus": 1.9324000000014996e-05,
+      "Lean.Parser.Tactic.refine": 0.007476379,
+      "Lean.Parser.Tactic.case": 9.399700000001232e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 6.634299999998565e-05,
+      "Lean.Parser.Tactic.paren": 0.00010738200000000385,
+      "Lean.Elab.Tactic.Ext.ext": 0.000654055,
+      "Lean.Parser.Tactic.simp": 0.007794911,
+      "Lean.Parser.Tactic.constructor": 0.000165037,
+      "Lean.cdot": 0.0003735329999999988,
+      "Lean.Parser.Tactic.intro": 0.000134856,
+      "Mathlib.Tactic.cases'": 0.007715254,
+      "Lean.Parser.Tactic.left": 0.000126717,
+      "linarith": 0.122669329,
+      "Mathlib.Tactic.Ring.ring1": 0.0565079,
+      "Lean.Parser.Tactic.right": 0.00012685,
+      "Lean.Parser.Tactic.rwSeq": 8.410600000000002e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.001372723,
+      "Lean.Parser.Tactic.tacticTry_": 3.8315999999999936e-05,
+      "Lean.Parser.Tactic.first": 5.2528000000000036e-05,
+      "Lean.Parser.Tactic.withReducible": 3.6840000000000006e-05,
+      "Lean.Parser.Tactic.tacticRfl": 0.00024223300000000012,
+      "Lean.Parser.Tactic.exact": 0.001673669,
+      "Lean.Parser.Tactic.applyRfl": 7.7307e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000316574,
+      "Lean.Parser.Tactic.case'": 6.3954e-05,
+      "Lean.Parser.Tactic.fail": 5.8797e-05,
+      "Lean.Parser.Tactic.skip": 2.5577e-05,
+      "Mathlib.Tactic.normNum": 0.094325406
+    },
+    "largest_opaque_leaf_cpu_s": 0.073015838,
+    "untraced_body_cpu_s": 0.06253028999999999,
+    "fixed_atomic_untraced_serial_model_ceiling": 5.013493990166901,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 5.013493990166901,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.07459335299999997,
+    "have_continuation_model_span_cpu_s": 0.29147111200000003,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.255920226495722,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1134,
+        "proof_C_id": 1139,
+        "proof_model_span_cpu_s": 0.22126628900000003,
+        "continuation_model_span_cpu_s": 0.074593353,
+        "incremental_saved_cpu_s": 0.074593353
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.366064465,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.366064465,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.366064465,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.366064465,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6063",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.386881824,
+    "body_cpu_s": 0.386837184,
+    "C_calls": 113,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.32696789,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0003740850000000076,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0004972619999999727,
+      "Lean.Parser.Tactic.tacticHave_": 2.1522999999995518e-05,
+      "Lean.Parser.Tactic.focus": 2.5902999999993792e-05,
+      "Lean.Parser.Tactic.refine": 0.007215723,
+      "Lean.Parser.Tactic.case": 7.569699999998569e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 4.6640000000001004e-05,
+      "Lean.Parser.Tactic.paren": 7.262499999998026e-05,
+      "Lean.Elab.Tactic.Ext.ext": 0.000614783,
+      "Lean.Parser.Tactic.simp": 0.007705081,
+      "Lean.Parser.Tactic.constructor": 0.000149336,
+      "Lean.cdot": 0.0003120599999999994,
+      "Lean.Parser.Tactic.intro": 0.000124012,
+      "Mathlib.Tactic.cases'": 0.007316194,
+      "Lean.Parser.Tactic.left": 0.000123702,
+      "linarith": 0.121284054,
+      "Mathlib.Tactic.Ring.ring1": 0.056598373,
+      "Lean.Parser.Tactic.right": 0.00012073,
+      "Lean.Parser.Tactic.rwSeq": 3.2465000000000185e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.000921263,
+      "Lean.Parser.Tactic.tacticTry_": 2.548300000000008e-05,
+      "Lean.Parser.Tactic.first": 3.249999999999987e-05,
+      "Lean.Parser.Tactic.withReducible": 2.4444000000000093e-05,
+      "Lean.Parser.Tactic.tacticRfl": 0.00017545699999999996,
+      "Lean.Parser.Tactic.exact": 0.001084351,
+      "Lean.Parser.Tactic.applyRfl": 5.1217999999999996e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.000189154,
+      "Lean.Parser.Tactic.case'": 4.1532e-05,
+      "Lean.Parser.Tactic.fail": 3.9146999999999996e-05,
+      "Lean.Parser.Tactic.skip": 1.7624e-05,
+      "Mathlib.Tactic.normNum": 0.096564009,
+      "Lean.Parser.Tactic.simpAll": 0.02509146
+    },
+    "largest_opaque_leaf_cpu_s": 0.075561591,
+    "untraced_body_cpu_s": 0.05986929400000002,
+    "fixed_atomic_untraced_serial_model_ceiling": 5.119494956108058,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 5.119494956108058,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.100653051,
+    "have_continuation_model_span_cpu_s": 0.286184133,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.351707307965952,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1277,
+        "proof_C_id": 1282,
+        "proof_model_span_cpu_s": 0.21890995,
+        "continuation_model_span_cpu_s": 0.100653051,
+        "incremental_saved_cpu_s": 0.100653051
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.386837184,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.386837184,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.386837184,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.386837184,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-5239",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.439777963,
+    "body_cpu_s": 0.439706863,
+    "C_calls": 38,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.375702994,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00010677000000003866,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00013473999999997902,
+      "Lean.Parser.Tactic.tacticHave_": 4.706000000000003e-05,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 3.536900000000005e-05,
+      "Lean.Parser.Tactic.focus": 4.3994999999999907e-05,
+      "Lean.Parser.Tactic.paren": 2.797800000000001e-05,
+      "Lean.Parser.Tactic.refine": 0.002422088,
+      "Lean.Parser.Tactic.rotateRight": 6.4489e-05,
+      "Lean.Parser.Tactic.simp": 0.233063291,
+      "linarith": 0.076591545,
+      "Mathlib.Tactic.Ring.ring1": 0.050652235,
+      "Mathlib.Tactic.normNum": 0.012513434
+    },
+    "largest_opaque_leaf_cpu_s": 0.233063291,
+    "untraced_body_cpu_s": 0.06400386899999999,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.8866414402429423,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.8866414402429423,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": 0.439706863,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.0,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 3
+    },
+    "have_forks": [],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.439706863,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.439706863,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.439706863,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.439706863,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-5777",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.521297289,
+    "body_cpu_s": 0.521189337,
+    "C_calls": 105,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.439540801,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0003008999999998838,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0004288460000000594,
+      "Lean.Parser.Tactic.tacticHave_": 0.00020651399999999098,
+      "Lean.Parser.Tactic.focus": 4.1171000000020386e-05,
+      "Lean.Parser.Tactic.refine": 0.0030974690000000003,
+      "Lean.Parser.Tactic.case": 9.760600000004171e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 6.895499999999316e-05,
+      "Lean.Parser.Tactic.paren": 9.08920000000042e-05,
+      "Mathlib.Tactic.RingNF.ringNF": 0.216547739,
+      "linarith": 0.12138460799999999,
+      "Mathlib.Tactic.normNum": 0.049427829000000006,
+      "Mathlib.Tactic.Ring.ring1": 0.044083108999999995,
+      "Lean.Parser.Tactic.rwSeq": 5.50500000000005e-05,
+      "Lean.Parser.Tactic.rewriteSeq": 0.001879196,
+      "Lean.Parser.Tactic.tacticTry_": 2.7507000000000074e-05,
+      "Lean.Parser.Tactic.first": 3.6103e-05,
+      "Lean.Parser.Tactic.withReducible": 2.709800000000003e-05,
+      "Lean.Parser.Tactic.tacticRfl": 0.00015817499999999998,
+      "Lean.Parser.Tactic.exact": 0.001121623,
+      "Lean.Parser.Tactic.applyRfl": 6.2389e-05,
+      "Lean.Parser.Tactic.eqRefl": 0.00029318599999999997,
+      "Lean.Parser.Tactic.case'": 4.343300000000001e-05,
+      "Lean.Parser.Tactic.fail": 4.1387e-05,
+      "Lean.Parser.Tactic.skip": 2.0016e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.153910207,
+    "untraced_body_cpu_s": 0.08164853600000005,
+    "fixed_atomic_untraced_serial_model_ceiling": 3.3863208110687557,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 3.3863208110687557,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 2,
+    "have_continuation_model_saved_cpu_s": 0.132543635,
+    "have_continuation_model_span_cpu_s": 0.38864570200000004,
+    "have_info_count": 2,
+    "have_C_count": 2,
+    "have_continuation_model_ratio": 1.3410397550208852,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1452,
+        "proof_C_id": 1457,
+        "proof_model_span_cpu_s": 0.115331229,
+        "continuation_model_span_cpu_s": 0.014997303,
+        "incremental_saved_cpu_s": 0.014997303
+      },
+      {
+        "have_C_id": 1428,
+        "proof_C_id": 1433,
+        "proof_model_span_cpu_s": 0.305664411,
+        "continuation_model_span_cpu_s": 0.117546332,
+        "incremental_saved_cpu_s": 0.117546332
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.521189337,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.521189337,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.521189337,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.521189337,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-5765",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.641674853,
+    "body_cpu_s": 0.64155314,
+    "C_calls": 80,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.546602108,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00012056400000007295,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00014725599999995675,
+      "Lean.Parser.Tactic.tacticHave_": 0.00013134700000000388,
+      "Lean.Parser.Tactic.focus": 3.708499999999226e-05,
+      "Lean.Parser.Tactic.refine": 0.006398986000000001,
+      "Lean.Parser.Tactic.case": 9.433599999997266e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 2.4175000000015157e-05,
+      "Lean.Parser.Tactic.paren": 1.935299999999973e-05,
+      "linarith": 0.258445017,
+      "Mathlib.Tactic.normNum": 0.18037851100000007,
+      "Mathlib.Tactic.Ring.ring1": 0.09994746600000001,
+      "Lean.Parser.Tactic.substVars": 0.000858012
+    },
+    "largest_opaque_leaf_cpu_s": 0.025081924,
+    "untraced_body_cpu_s": 0.09495103199999999,
+    "fixed_atomic_untraced_serial_model_ceiling": 6.756673692603995,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 25.578306512690176,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 2,
+    "have_continuation_model_saved_cpu_s": 0.3269909649999999,
+    "have_continuation_model_span_cpu_s": 0.31456217500000005,
+    "have_info_count": 2,
+    "have_C_count": 2,
+    "have_continuation_model_ratio": 2.0395113938921607,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1556,
+        "proof_C_id": 1561,
+        "proof_model_span_cpu_s": 0.151581466,
+        "continuation_model_span_cpu_s": 0.212878907,
+        "incremental_saved_cpu_s": 0.151581466
+      },
+      {
+        "have_C_id": 1533,
+        "proof_C_id": 1538,
+        "proof_model_span_cpu_s": 0.175409499,
+        "continuation_model_span_cpu_s": 0.21423450300000002,
+        "incremental_saved_cpu_s": 0.175409499
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.64155314,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.64155314,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.64155314,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.64155314,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-2478",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.601002928,
+    "body_cpu_s": 0.600828756,
+    "C_calls": 6,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.505718651,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 5.0004999999964106e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 5.450900000003589e-05,
+      "Mathlib.Tactic.normNum": 0.054980836000000005,
+      "Lean.Parser.Tactic.simpAll": 0.267558549,
+      "Lean.Parser.Tactic.omega": 0.183074752
+    },
+    "largest_opaque_leaf_cpu_s": 0.267558549,
+    "untraced_body_cpu_s": 0.09511010499999994,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.2455973028916376,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.2455973028916376,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.600828756,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.600828756,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.600828756,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.600828756,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7626",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.678762691,
+    "body_cpu_s": 0.678591351,
+    "C_calls": 16,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.631979409,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 5.8697000000065835e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 6.87630000000411e-05,
+      "Mathlib.Tactic.FieldSimp.fieldSimp": 0.484331439,
+      "Mathlib.Tactic.RingNF.ringNF": 0.066919312,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.00012949499999999337,
+      "Lean.Parser.Tactic.focus": 2.1953000000005107e-05,
+      "linarith": 0.056258262,
+      "Mathlib.Tactic.Ring.ring1": 0.016616123,
+      "Mathlib.Tactic.normNum": 0.007530231,
+      "Lean.Parser.Tactic.withAnnotateState": 2.2369000000000002e-05,
+      "Lean.Parser.Tactic.skip": 1.2302e-05,
+      "Lean.Parser.Tactic.allGoals": 1.0463e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.484331439,
+    "untraced_body_cpu_s": 0.04661194199999996,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.4010887924209274,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.4010887924209274,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.678591351,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.678591351,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.678591351,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.678591351,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7617",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.747277264,
+    "body_cpu_s": 0.747175656,
+    "C_calls": 45,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.688246402,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00012957499999994112,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00012040099999988585,
+      "Lean.Parser.Tactic.tacticHave_": 3.3632000000051194e-05,
+      "Lean.Parser.Tactic.focus": 3.137199999996563e-05,
+      "Lean.Parser.Tactic.refine": 0.001034431,
+      "Lean.Parser.Tactic.case": 4.357900000007131e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 1.2844999999983564e-05,
+      "Lean.Parser.Tactic.paren": 1.950300000008303e-05,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 1.281399999999999e-05,
+      "Lean.Parser.Tactic.rotateRight": 1.418e-05,
+      "Mathlib.Tactic.FieldSimp.fieldSimp": 0.48539245,
+      "linarith": 0.090922153,
+      "Mathlib.Tactic.normNum": 0.06724624000000001,
+      "Mathlib.Tactic.Ring.ring1": 0.043153182,
+      "Lean.Parser.Tactic.assumption": 8.0045e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.48539245,
+    "untraced_body_cpu_s": 0.05892925400000004,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.539322780978567,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 1.539322780978567,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 8.004500000002857e-05,
+    "have_continuation_model_span_cpu_s": 0.747095611,
+    "have_info_count": 2,
+    "have_C_count": 2,
+    "have_continuation_model_ratio": 1.0001071415744136,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 1
+    },
+    "have_forks": [
+      {
+        "have_C_id": 1635,
+        "proof_C_id": 1640,
+        "proof_model_span_cpu_s": 0.687234164,
+        "continuation_model_span_cpu_s": 8.0045e-05,
+        "incremental_saved_cpu_s": 8.0045e-05
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.747175656,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.747175656,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.747175656,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.747175656,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7745",
+    "classification": "no_lean_errors",
+    "body_wall_s": 0.862560069,
+    "body_cpu_s": 0.862380244,
+    "C_calls": 42,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 0.44107650200000015,
+    "C_root_cpu_s": 0.751338417,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00021140200000005493,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0002518999999997912,
+      "Lean.Parser.Tactic.tacticHave_": 2.1016999999984298e-05,
+      "Lean.Parser.Tactic.focus": 8.587499999995751e-05,
+      "Lean.Parser.Tactic.refine": 0.008224704,
+      "Lean.Parser.Tactic.case": 4.770300000001004e-05,
+      "Lean.Parser.Tactic.withAnnotateState": 5.45480000000089e-05,
+      "Lean.Parser.Tactic.paren": 1.0490000000001887e-05,
+      "Lean.Parser.Tactic.omega": 0.12430365,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.0006389630000001034,
+      "Lean.Parser.Tactic.rcases": 0.001801532,
+      "Lean.Parser.Tactic.skip": 2.6214e-05,
+      "Lean.Parser.Tactic.allGoals": 0.0003166729999999844,
+      "Lean.Parser.Tactic.simp": 0.615343746
+    },
+    "largest_opaque_leaf_cpu_s": 0.174410964,
+    "untraced_body_cpu_s": 0.11104182699999998,
+    "fixed_atomic_untraced_serial_model_ceiling": 4.944530000992369,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 4.944530000992369,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 1,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 1704,
+        "branch_cpu_s": [
+          0.174438566,
+          0.146254842,
+          0.145756459,
+          0.149065201
+        ],
+        "nested_branch_model_span_s": [
+          0.174438566,
+          0.146254842,
+          0.145756459,
+          0.149065201
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.44107650200000004
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 0.42130374199999987,
+    "local_allGoals_model_parallelism": 2.046932315165623,
+    "qualified_have_continuation_forks": 1,
+    "have_continuation_model_saved_cpu_s": 0.1244220800000001,
+    "have_continuation_model_span_cpu_s": 0.7379581639999999,
+    "have_info_count": 1,
+    "have_C_count": 1,
+    "have_continuation_model_ratio": 1.1686031621705864,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 1680,
+        "proof_C_id": 1685,
+        "proof_model_span_cpu_s": 0.12442208,
+        "continuation_model_span_cpu_s": 0.618530423,
+        "incremental_saved_cpu_s": 0.12442208
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 1,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 0.862380244,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.29532004300000003,
+        "modeled_body_s": 0.567060201,
+        "ratio": 1.5207913418702437
+      },
+      "4": {
+        "saved_cpu_s": 0.44107650200000004,
+        "modeled_body_s": 0.421303742,
+        "ratio": 2.0469323151656225
+      },
+      "8": {
+        "saved_cpu_s": 0.44107650200000004,
+        "modeled_body_s": 0.421303742,
+        "ratio": 2.0469323151656225
+      }
+    }
+  },
+  {
+    "id": "minif2f-7715",
+    "classification": "no_lean_errors",
+    "body_wall_s": 1.053177285,
+    "body_cpu_s": 1.052823899,
+    "C_calls": 112,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.997307834,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00025205699999999477,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00039622699999999347,
+      "Mathlib.Tactic.FieldSimp.fieldSimp": 0.943024191,
+      "Lean.Parser.Tactic.assumption": 2.6328e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.0003858590000000231,
+      "Lean.Parser.Tactic.focus": 0.0001862350000000068,
+      "Mathlib.Tactic.RingNF.ringNF": 0.052628966,
+      "Lean.Parser.Tactic.withAnnotateState": 0.00020398299999999997,
+      "Lean.Parser.Tactic.skip": 0.00010337399999999999,
+      "Lean.Parser.Tactic.allGoals": 0.000100614
+    },
+    "largest_opaque_leaf_cpu_s": 0.052628966,
+    "untraced_body_cpu_s": 0.05551606500000006,
+    "fixed_atomic_untraced_serial_model_ceiling": 18.964310582891617,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 20.00464723171647,
+    "allGoals_info_count": 15,
+    "allGoals_C_count": 15,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 15
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.052823899,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.052823899,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.052823899,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.052823899,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7508",
+    "classification": "no_lean_errors",
+    "body_wall_s": 7.862912536,
+    "body_cpu_s": 7.859041417,
+    "C_calls": 16,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 7.7068615,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.982999999940233e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 4.628100000036994e-05,
+      "Lean.Parser.Tactic.tactic_<;>_": 1.8362999999688157e-05,
+      "Lean.Parser.Tactic.focus": 1.8156000000324468e-05,
+      "nlinarith": 7.528591333,
+      "Mathlib.Tactic.Ring.ring1": 0.158296988,
+      "Mathlib.Tactic.normNum": 0.019754554,
+      "Lean.Parser.Tactic.withAnnotateState": 2.3215e-05,
+      "Lean.Parser.Tactic.skip": 1.2509e-05,
+      "Lean.Parser.Tactic.allGoals": 1.0271e-05
+    },
+    "largest_opaque_leaf_cpu_s": 0.085949321,
+    "untraced_body_cpu_s": 0.15217991700000066,
+    "fixed_atomic_untraced_serial_model_ceiling": 51.643091755661594,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 91.43808613682941,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 0,
+    "allGoals_node_reasons": {
+      "Unmatched branch counts or no split": 1
+    },
+    "local_reason": "Isomorphic allGoals forest but no qualified multi-goal split",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 7.859041417,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 7.859041417,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 7.859041417,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 7.859041417,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-7156",
+    "classification": "no_lean_errors",
+    "body_wall_s": 1.422296853,
+    "body_cpu_s": 1.421889647,
+    "C_calls": 193,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 1.1845908500000002,
+    "C_root_cpu_s": 1.34118681,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0009771260000001202,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0009769919999999023,
+      "Lean.Parser.Tactic.constructor": 0.00017033,
+      "Lean.Parser.Tactic.allGoals": 0.002537706999999792,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.0001309969999999487,
+      "Lean.Parser.Tactic.focus": 0.00011927800000006289,
+      "Mathlib.Tactic.cases'": 0.047700272,
+      "Lean.Parser.Tactic.withAnnotateState": 0.000165476,
+      "Lean.Parser.Tactic.skip": 9.1484e-05,
+      "Lean.Parser.Tactic.simpAll": 0.8510295120000001,
+      "linarith": 0.255202939,
+      "Mathlib.Tactic.Ring.ring1": 0.135734872,
+      "Mathlib.Tactic.normNum": 0.046349825000000004
+    },
+    "largest_opaque_leaf_cpu_s": 0.070022767,
+    "untraced_body_cpu_s": 0.08070283700000003,
+    "fixed_atomic_untraced_serial_model_ceiling": 17.618831008382017,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 20.306104827305667,
+    "allGoals_info_count": 9,
+    "allGoals_C_count": 9,
+    "eligible_allGoals_nodes": 9,
+    "allGoals_node_reasons": {},
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 1873,
+        "branch_cpu_s": [
+          0.002128234,
+          0.002080479
+        ],
+        "nested_branch_model_span_s": [
+          0.002128234,
+          0.002080479
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.002080479
+      },
+      {
+        "C_call_id": 1882,
+        "branch_cpu_s": [
+          0.003716069,
+          0.003674665,
+          0.003646794,
+          0.003652573
+        ],
+        "nested_branch_model_span_s": [
+          0.003716069,
+          0.003674665,
+          0.003646794,
+          0.003652573
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.010974032000000002
+      },
+      {
+        "C_call_id": 1897,
+        "branch_cpu_s": [
+          0.045995661,
+          0.047836714,
+          0.047209565,
+          0.061288332,
+          0.047767222,
+          0.055443004,
+          0.056987725,
+          0.070063589
+        ],
+        "nested_branch_model_span_s": [
+          0.045995661,
+          0.047836714,
+          0.047209565,
+          0.061288332,
+          0.047767222,
+          0.055443004,
+          0.056987725,
+          0.070063589
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.36252822300000004
+      },
+      {
+        "C_call_id": 1924,
+        "branch_cpu_s": [
+          0.074460966,
+          0.066191677,
+          0.041855582,
+          0.05448817
+        ],
+        "nested_branch_model_span_s": [
+          0.074460966,
+          0.066191677,
+          0.041855582,
+          0.05448817
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.162535429
+      },
+      {
+        "C_call_id": 1968,
+        "branch_cpu_s": [
+          0.002205264,
+          0.002133159
+        ],
+        "nested_branch_model_span_s": [
+          0.002205264,
+          0.002133159
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.002133159
+      },
+      {
+        "C_call_id": 1977,
+        "branch_cpu_s": [
+          0.004325857,
+          0.003790126,
+          0.003801723,
+          0.003793054
+        ],
+        "nested_branch_model_span_s": [
+          0.004325857,
+          0.003790126,
+          0.003801723,
+          0.003793054
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.011384903000000002
+      },
+      {
+        "C_call_id": 1992,
+        "branch_cpu_s": [
+          0.038987049,
+          0.054458638,
+          0.047738057,
+          0.062124027,
+          0.045407769,
+          0.056321254,
+          0.052196158,
+          0.061917453
+        ],
+        "nested_branch_model_span_s": [
+          0.038987049,
+          0.054458638,
+          0.047738057,
+          0.062124027,
+          0.045407769,
+          0.056321254,
+          0.052196158,
+          0.061917453
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.35702637800000003
+      },
+      {
+        "C_call_id": 2019,
+        "branch_cpu_s": [
+          0.057315274,
+          0.044121009,
+          0.044307176,
+          0.054855247
+        ],
+        "nested_branch_model_span_s": [
+          0.057315274,
+          0.044121009,
+          0.044307176,
+          0.054855247
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.14328343200000002
+      },
+      {
+        "C_call_id": 1851,
+        "branch_cpu_s": [
+          0.693985248,
+          0.646472687
+        ],
+        "nested_branch_model_span_s": [
+          0.15586708499999993,
+          0.13264481500000003
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.132644815
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 0.2372987969999998,
+    "local_allGoals_model_parallelism": 5.991980005697211,
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 1,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.421889647,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.646472687,
+        "modeled_body_s": 0.7754169599999999,
+        "ratio": 1.8337097591984577
+      },
+      "4": {
+        "saved_cpu_s": 0.646472687,
+        "modeled_body_s": 0.7754169599999999,
+        "ratio": 1.8337097591984577
+      },
+      "8": {
+        "saved_cpu_s": 0.646472687,
+        "modeled_body_s": 0.7754169599999999,
+        "ratio": 1.8337097591984577
+      }
+    }
+  },
+  {
+    "id": "minif2f-7190",
+    "classification": "no_lean_errors",
+    "body_wall_s": 1.8584701,
+    "body_cpu_s": 1.858076544,
+    "C_calls": 12,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 1.619362317,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00023373799999992784,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 5.341800000002728e-05,
+      "Mathlib.Tactic.FieldSimp.fieldSimp": 0.778886045,
+      "Mathlib.Tactic.RingNF.ringNF": 0.175924207,
+      "nlinarith": 0.5305126520000001,
+      "Mathlib.Tactic.Ring.ring1": 0.11052092699999999,
+      "Mathlib.Tactic.normNum": 0.02323133
+    },
+    "largest_opaque_leaf_cpu_s": 0.778886045,
+    "untraced_body_cpu_s": 0.238714227,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.385556341556999,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.385556341556999,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.858076544,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.858076544,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.858076544,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 1.858076544,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-305",
+    "classification": "no_lean_errors",
+    "body_wall_s": 3.356036849,
+    "body_cpu_s": 3.355460752,
+    "C_calls": 5,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 3.215214378,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 7.311800000042723e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 2.126199999974432e-05,
+      "nlinarith": 3.126554558,
+      "Mathlib.Tactic.Ring.ring1": 0.079339934,
+      "Mathlib.Tactic.normNum": 0.009225506
+    },
+    "largest_opaque_leaf_cpu_s": 0.079339934,
+    "untraced_body_cpu_s": 0.14024637399999973,
+    "fixed_atomic_untraced_serial_model_ceiling": 23.925472411857196,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 42.29220498217203,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 3.355460752,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 3.355460752,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 3.355460752,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 3.355460752,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-487",
+    "classification": "no_lean_errors",
+    "body_wall_s": 3.527109471,
+    "body_cpu_s": 3.526393758,
+    "C_calls": 74,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 2.38421106,
+    "C_root_cpu_s": 3.336010176,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.00040803899999980464,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0003127930000002637,
+      "Lean.Parser.Tactic.tactic_<;>_": 4.108300000015344e-05,
+      "Lean.Parser.Tactic.focus": 4.6861999999746676e-05,
+      "Mathlib.Tactic.cases'": 0.011278811,
+      "Lean.Parser.Tactic.withAnnotateState": 6.2918e-05,
+      "Lean.Parser.Tactic.skip": 3.6091000000000004e-05,
+      "Lean.Parser.Tactic.allGoals": 0.0015602020000001762,
+      "Lean.Parser.Tactic.simpAll": 0.190719311,
+      "nlinarith": 2.8340936279999998,
+      "Mathlib.Tactic.Ring.ring1": 0.23550587,
+      "Mathlib.Tactic.normNum": 0.06194456799999999
+    },
+    "largest_opaque_leaf_cpu_s": 0.085441594,
+    "untraced_body_cpu_s": 0.19038358200000038,
+    "fixed_atomic_untraced_serial_model_ceiling": 18.5225728025224,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 41.272565186459424,
+    "allGoals_info_count": 3,
+    "allGoals_C_count": 3,
+    "eligible_allGoals_nodes": 3,
+    "allGoals_node_reasons": {},
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 2075,
+        "branch_cpu_s": [
+          0.003487138,
+          0.003498397
+        ],
+        "nested_branch_model_span_s": [
+          0.003487138,
+          0.003498397
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.0034871379999999994
+      },
+      {
+        "C_call_id": 2084,
+        "branch_cpu_s": [
+          0.057525719,
+          0.0406608,
+          0.052482937,
+          0.040205425
+        ],
+        "nested_branch_model_span_s": [
+          0.057525719,
+          0.0406608,
+          0.052482937,
+          0.040205425
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.133349162
+      },
+      {
+        "C_call_id": 2099,
+        "branch_cpu_s": [
+          0.745156255,
+          0.877864247,
+          0.884382857,
+          0.624354258
+        ],
+        "nested_branch_model_span_s": [
+          0.745156255,
+          0.877864247,
+          0.884382857,
+          0.624354258
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 2.24737476
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 1.1421826980000003,
+    "local_allGoals_model_parallelism": 3.0874165439336743,
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 3,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 3.526393758,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 1.6053679899999997,
+        "modeled_body_s": 1.9210257680000005,
+        "ratio": 1.8356826944967868
+      },
+      "4": {
+        "saved_cpu_s": 2.38421106,
+        "modeled_body_s": 1.142182698,
+        "ratio": 3.0874165439336747
+      },
+      "8": {
+        "saved_cpu_s": 2.38421106,
+        "modeled_body_s": 1.142182698,
+        "ratio": 3.0874165439336747
+      }
+    }
+  },
+  {
+    "id": "minif2f-4817",
+    "classification": "no_lean_errors",
+    "body_wall_s": 4.731156775,
+    "body_cpu_s": 4.727961743,
+    "C_calls": 59,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 4.335185392,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0001277179999999642,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0001425069999994831,
+      "Lean.Parser.Tactic.tacticHave_": 0.00011951600000000007,
+      "Lean.Parser.Tactic.tacticRefine_lift_": 3.863199999999678e-05,
+      "Lean.Parser.Tactic.focus": 5.0199000000002506e-05,
+      "Lean.Parser.Tactic.paren": 2.9331999999998234e-05,
+      "Lean.Parser.Tactic.refine": 0.058869119,
+      "Lean.Parser.Tactic.rotateRight": 9.056300000000001e-05,
+      "nlinarith": 3.979019333,
+      "Mathlib.Tactic.Ring.ring1": 0.208852945,
+      "Mathlib.Tactic.normNum": 0.08784552799999998
+    },
+    "largest_opaque_leaf_cpu_s": 0.112348404,
+    "untraced_body_cpu_s": 0.3927763510000002,
+    "fixed_atomic_untraced_serial_model_ceiling": 12.037287201642132,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 42.08303433487137,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 8.881784197001252e-16,
+    "have_continuation_model_span_cpu_s": 4.727961742999999,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.0000000000000002,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {
+      "No unique successful outer proof case": 3
+    },
+    "have_forks": [],
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 4.727961743,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 4.727961743,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 4.727961743,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 4.727961743,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6991",
+    "classification": "no_lean_errors",
+    "body_wall_s": 2.516703023,
+    "body_cpu_s": 2.516139789,
+    "C_calls": 9,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 0.487735382,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 8.438500000002242e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 6.219099999999584e-05,
+      "Lean.Parser.Tactic.simp": 0.48599577099999997,
+      "Lean.Parser.Tactic.decide": 0.001593035
+    },
+    "largest_opaque_leaf_cpu_s": 0.000884647,
+    "untraced_body_cpu_s": 2.028404407,
+    "fixed_atomic_untraced_serial_model_ceiling": 1.2404527323628516,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2844.2302850741594,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 2.516139789,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 2.516139789,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 2.516139789,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 2.516139789,
+        "ratio": 1.0
+      }
+    }
+  },
+  {
+    "id": "minif2f-6477",
+    "classification": "no_lean_errors",
+    "body_wall_s": 6.835997848,
+    "body_cpu_s": 6.834387083,
+    "C_calls": 75,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 5.256445116,
+    "C_root_cpu_s": 6.386319492,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0002156700000003342,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00014796700000041518,
+      "Lean.Parser.Tactic.refine": 0.001482091,
+      "Lean.Parser.Tactic.allGoals": 0.0022383029999994974,
+      "nlinarith": 5.820003014,
+      "Mathlib.Tactic.Ring.ring1": 0.38050353700000006,
+      "Mathlib.Tactic.normNum": 0.18172891000000005
+    },
+    "largest_opaque_leaf_cpu_s": 0.075729014,
+    "untraced_body_cpu_s": 0.44806759100000004,
+    "fixed_atomic_untraced_serial_model_ceiling": 15.253027043859548,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 90.24793433861427,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 1,
+    "allGoals_node_reasons": {},
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 2203,
+        "branch_cpu_s": [
+          1.126054367,
+          1.084282907,
+          1.067987225,
+          0.996756592,
+          1.017991481,
+          1.089426911
+        ],
+        "nested_branch_model_span_s": [
+          1.126054367,
+          1.084282907,
+          1.067987225,
+          0.996756592,
+          1.017991481,
+          1.089426911
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 5.256445116
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 1.5779419670000003,
+    "local_allGoals_model_parallelism": 4.3312030644533825,
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 1,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 6.834387083,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 3.190798184,
+        "modeled_body_s": 3.643588899,
+        "ratio": 1.8757294723550535
+      },
+      "4": {
+        "saved_cpu_s": 4.2965207770000005,
+        "modeled_body_s": 2.5378663059999997,
+        "ratio": 2.6929657668893774
+      },
+      "8": {
+        "saved_cpu_s": 5.256445116,
+        "modeled_body_s": 1.5779419670000001,
+        "ratio": 4.331203064453383
+      }
+    }
+  },
+  {
+    "id": "minif2f-6484",
+    "classification": "no_lean_errors",
+    "body_wall_s": 11.134089376,
+    "body_cpu_s": 11.129547074,
+    "C_calls": 75,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 8.865461508000001,
+    "C_root_cpu_s": 10.704253602,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.0002203539999996451,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.00015223500000005608,
+      "Lean.Parser.Tactic.refine'": 0.001473844,
+      "Lean.Parser.Tactic.allGoals": 0.002847333000000063,
+      "nlinarith": 10.135177352,
+      "Mathlib.Tactic.Ring.ring1": 0.382095862,
+      "Mathlib.Tactic.normNum": 0.182286622
+    },
+    "largest_opaque_leaf_cpu_s": 0.07544004,
+    "untraced_body_cpu_s": 0.4252934719999999,
+    "fixed_atomic_untraced_serial_model_ceiling": 26.169099237902252,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 147.52838246109096,
+    "allGoals_info_count": 1,
+    "allGoals_C_count": 1,
+    "eligible_allGoals_nodes": 1,
+    "allGoals_node_reasons": {},
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 2278,
+        "branch_cpu_s": [
+          1.834374974,
+          1.807542762,
+          1.818579561,
+          1.704306648,
+          1.705139965,
+          1.829892572
+        ],
+        "nested_branch_model_span_s": [
+          1.834374974,
+          1.807542762,
+          1.818579561,
+          1.704306648,
+          1.705139965,
+          1.829892572
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 8.865461508000001
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 2.264085565999999,
+    "local_allGoals_model_parallelism": 4.915691898368829,
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 1,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 11.129547074,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 5.347057701,
+        "modeled_body_s": 5.782489373,
+        "ratio": 1.9246982322123845
+      },
+      "4": {
+        "saved_cpu_s": 7.176950273,
+        "modeled_body_s": 3.9525968009999994,
+        "ratio": 2.8157557257507886
+      },
+      "8": {
+        "saved_cpu_s": 8.865461508000001,
+        "modeled_body_s": 2.2640855659999986,
+        "ratio": 4.91569189836883
+      }
+    }
+  },
+  {
+    "id": "minif2f-60",
+    "classification": "no_lean_errors",
+    "body_wall_s": 8.744967348,
+    "body_cpu_s": 8.742978927,
+    "C_calls": 225,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": true,
+    "local_allGoals_saved_cpu_s": 7.6798454629999995,
+    "C_root_cpu_s": 8.263136733,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 0.001674483000000203,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 0.0015967000000003725,
+      "Lean.Parser.Tactic.intro": 0.000101048,
+      "Lean.Parser.Tactic.tacticHave_": 0.00012032199999990889,
+      "Lean.Parser.Tactic.focus": 0.00012993599999983757,
+      "Lean.Parser.Tactic.refine": 0.048491917,
+      "Lean.Parser.Tactic.case": 0.00017317999999967582,
+      "Lean.Parser.Tactic.withAnnotateState": 9.202600000002306e-05,
+      "Lean.Parser.Tactic.paren": 2.8838000000530606e-05,
+      "Lean.Parser.Tactic.omega": 0.326138749,
+      "Lean.Parser.Tactic.tactic_<;>_": 0.00025380799999988324,
+      "Lean.Parser.Tactic.rcases": 0.041573236000000006,
+      "Lean.Parser.Tactic.skip": 3.1586999999999994e-05,
+      "Lean.Parser.Tactic.allGoals": 0.013360333999999786,
+      "Lean.Parser.Tactic.simp": 7.829370569000001
+    },
+    "largest_opaque_leaf_cpu_s": 0.182796366,
+    "untraced_body_cpu_s": 0.4798421939999997,
+    "fixed_atomic_untraced_serial_model_ceiling": 18.220529658131742,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 47.829063117151904,
+    "allGoals_info_count": 2,
+    "allGoals_C_count": 2,
+    "eligible_allGoals_nodes": 2,
+    "allGoals_node_reasons": {},
+    "local_reason": "Order/ancestry-isomorphic allGoals forest; live-meta local model only",
+    "qualified_nodes": [
+      {
+        "C_call_id": 2402,
+        "branch_cpu_s": [
+          0.00515999,
+          0.005123274,
+          0.005119866,
+          0.005124358,
+          0.005132739,
+          0.00514424,
+          0.005126453
+        ],
+        "nested_branch_model_span_s": [
+          0.00515999,
+          0.005123274,
+          0.005119866,
+          0.005124358,
+          0.005132739,
+          0.00514424,
+          0.005126453
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 0.03077093
+      },
+      {
+        "C_call_id": 2426,
+        "branch_cpu_s": [
+          0.182823856,
+          0.16151805,
+          0.161842337,
+          0.161886606,
+          0.161943212,
+          0.16340646,
+          0.164672033,
+          0.166242466,
+          0.165381043,
+          0.165208255,
+          0.165098998,
+          0.165707382,
+          0.165707291,
+          0.164503269,
+          0.157792213,
+          0.158158481,
+          0.157997018,
+          0.157639916,
+          0.157950007,
+          0.15794577,
+          0.157680768,
+          0.157011669,
+          0.156507969,
+          0.156982314,
+          0.156909869,
+          0.15746698,
+          0.156818359,
+          0.157720508,
+          0.158129494,
+          0.157941179,
+          0.158048901,
+          0.158064657,
+          0.157575153,
+          0.157726068,
+          0.157911209,
+          0.156944436,
+          0.15751924,
+          0.15716484,
+          0.156847098,
+          0.156604624,
+          0.157041476,
+          0.157525914,
+          0.158299979,
+          0.158148417,
+          0.157846969,
+          0.157852153,
+          0.157892576,
+          0.158188971,
+          0.158101936
+        ],
+        "nested_branch_model_span_s": [
+          0.182823856,
+          0.16151805,
+          0.161842337,
+          0.161886606,
+          0.161943212,
+          0.16340646,
+          0.164672033,
+          0.166242466,
+          0.165381043,
+          0.165208255,
+          0.165098998,
+          0.165707382,
+          0.165707291,
+          0.164503269,
+          0.157792213,
+          0.158158481,
+          0.157997018,
+          0.157639916,
+          0.157950007,
+          0.15794577,
+          0.157680768,
+          0.157011669,
+          0.156507969,
+          0.156982314,
+          0.156909869,
+          0.15746698,
+          0.156818359,
+          0.157720508,
+          0.158129494,
+          0.157941179,
+          0.158048901,
+          0.158064657,
+          0.157575153,
+          0.157726068,
+          0.157911209,
+          0.156944436,
+          0.15751924,
+          0.15716484,
+          0.156847098,
+          0.156604624,
+          0.157041476,
+          0.157525914,
+          0.158299979,
+          0.158148417,
+          0.157846969,
+          0.157852153,
+          0.157892576,
+          0.158188971,
+          0.158101936
+        ],
+        "live_dependency_components": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13
+          ],
+          [
+            14
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ],
+          [
+            20
+          ],
+          [
+            21
+          ],
+          [
+            22
+          ],
+          [
+            23
+          ],
+          [
+            24
+          ],
+          [
+            25
+          ],
+          [
+            26
+          ],
+          [
+            27
+          ],
+          [
+            28
+          ],
+          [
+            29
+          ],
+          [
+            30
+          ],
+          [
+            31
+          ],
+          [
+            32
+          ],
+          [
+            33
+          ],
+          [
+            34
+          ],
+          [
+            35
+          ],
+          [
+            36
+          ],
+          [
+            37
+          ],
+          [
+            38
+          ],
+          [
+            39
+          ],
+          [
+            40
+          ],
+          [
+            41
+          ],
+          [
+            42
+          ],
+          [
+            43
+          ],
+          [
+            44
+          ],
+          [
+            45
+          ],
+          [
+            46
+          ],
+          [
+            47
+          ],
+          [
+            48
+          ]
+        ],
+        "incremental_model_saved_cpu_s": 7.649074533
+      }
+    ],
+    "local_allGoals_model_span_cpu_s": 1.0631334639999996,
+    "local_allGoals_model_parallelism": 8.223783017895862,
+    "qualified_have_continuation_forks": 3,
+    "have_continuation_model_saved_cpu_s": 0.3263930179999992,
+    "have_continuation_model_span_cpu_s": 8.416585909,
+    "have_info_count": 3,
+    "have_C_count": 3,
+    "have_continuation_model_ratio": 1.0387797405657062,
+    "have_model_reason": "Have-only optimistic fork model; names/effects/merge unproved",
+    "have_model_reasons": {},
+    "have_forks": [
+      {
+        "have_C_id": 2378,
+        "proof_C_id": 2383,
+        "proof_model_span_cpu_s": 0.059701094,
+        "continuation_model_span_cpu_s": 7.8875845700000005,
+        "incremental_saved_cpu_s": 0.059701094
+      },
+      {
+        "have_C_id": 2365,
+        "proof_C_id": 2370,
+        "proof_model_span_cpu_s": 0.103791479,
+        "continuation_model_span_cpu_s": 7.902017058,
+        "incremental_saved_cpu_s": 0.103791479
+      },
+      {
+        "have_C_id": 2353,
+        "proof_C_id": 2358,
+        "proof_model_span_cpu_s": 7.91727546,
+        "continuation_model_span_cpu_s": 0.162900445,
+        "incremental_saved_cpu_s": 0.162900445
+      }
+    ],
+    "disjoint_outer_allGoals_islands": 2,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 8.742978927,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 3.85982512,
+        "modeled_body_s": 4.883153806999999,
+        "ratio": 1.7904369332923615
+      },
+      "4": {
+        "saved_cpu_s": 5.786119521,
+        "modeled_body_s": 2.9568594059999995,
+        "ratio": 2.956846344895169
+      },
+      "8": {
+        "saved_cpu_s": 6.75075267,
+        "modeled_body_s": 1.9922262569999996,
+        "ratio": 4.3885471824699485
+      }
+    }
+  },
+  {
+    "id": "minif2f-4335",
+    "classification": "no_lean_errors",
+    "body_wall_s": 33.429156126,
+    "body_cpu_s": 33.421215775,
+    "C_calls": 8,
+    "complete_C_tree": true,
+    "full_DAG_span_s": null,
+    "full_DAG_parallelism": null,
+    "local_allGoals_eligible": false,
+    "local_allGoals_saved_cpu_s": 0.0,
+    "C_root_cpu_s": 32.216561714,
+    "exclusive_cpu_by_kind_s": {
+      "Lean.Parser.Tactic.tacticSeq": 5.870700000087936e-05,
+      "Lean.Parser.Tactic.tacticSeq1Indented": 3.8985999999852083e-05,
+      "Mathlib.Tactic.normNum": 11.423388736,
+      "linarith": 1.142033613999999,
+      "Mathlib.Tactic.Ring.ring1": 19.651041671
+    },
+    "largest_opaque_leaf_cpu_s": 11.416735699,
+    "untraced_body_cpu_s": 1.2046540609999994,
+    "fixed_atomic_untraced_serial_model_ceiling": 2.9273880604880245,
+    "fixed_atomic_leaf_only_parallelism_ceiling": 2.9273880604880245,
+    "allGoals_info_count": 0,
+    "allGoals_C_count": 0,
+    "eligible_allGoals_nodes": 0,
+    "local_reason": "AllGoals projection forests are absent or not order/ancestry isomorphic",
+    "qualified_have_continuation_forks": 0,
+    "have_continuation_model_saved_cpu_s": 0.0,
+    "have_continuation_model_span_cpu_s": null,
+    "have_info_count": 0,
+    "have_C_count": 0,
+    "have_model_reason": "No isomorphic ordered have-ancestry forest",
+    "disjoint_outer_allGoals_islands": 0,
+    "finite_core_island_models": {
+      "1": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 33.421215775,
+        "ratio": 1.0
+      },
+      "2": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 33.421215775,
+        "ratio": 1.0
+      },
+      "4": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 33.421215775,
+        "ratio": 1.0
+      },
+      "8": {
+        "saved_cpu_s": 0.0,
+        "modeled_body_s": 33.421215775,
+        "ratio": 1.0
+      }
+    }
+  }
+]

@@ -165,12 +165,145 @@ def summarize(row, source):
                   local_allGoals_model_parallelism=result["body_cpu_s"]/modelspan)
     return result
 
+def have_continuation_model(row, source):
+    """Optimistic have-proof vs later sibling continuation; not merge safety."""
+    answer={"qualified_have_continuation_forks":0,"have_continuation_model_saved_cpu_s":0.,
+            "have_continuation_model_span_cpu_s":None}
+    nodes=list(walk(source["nodes"]))
+    if not nodes or any("end" not in n for n in nodes):return answer
+    parents={c["id"]:n for n in nodes for c in n["children"]}
+    def project(items):
+        output=[]
+        for node in items:
+            children=project(node.get("children",[]))
+            if normalized(node.get("kind","")).endswith(".tacticHave_"):
+                output.append((node,children))
+            else:output.extend(children)
+        return output
+    def shape(items):return [shape(children)for _,children in items]
+    def flat(items):
+        for node,children in items:
+            yield node;yield from flat(children)
+    ip,cp=project(row["infos"]),project(source["nodes"])
+    infos,calls=list(flat(ip)),list(flat(cp))
+    answer.update(have_info_count=len(infos),have_C_count=len(calls))
+    if not infos or shape(ip)!=shape(cp) or len(infos)!=len(calls):
+        answer["have_model_reason"]="No isomorphic ordered have-ancestry forest"
+        return answer
+    if any(c["end"]["return_tag"]!=1 for c in calls):
+        answer["have_model_reason"]="Failed have callback; no speculative failure replay modeled"
+        return answer
+    qualified={};reasons=collections.Counter()
+    def top_cases(items):
+        output=[]
+        for n in items:
+            if normalized(n.get("kind","")).endswith(".case"):output.append(n)
+            else:output.extend(top_cases(n.get("children",[])))
+        return output
+    for info,call in zip(infos,calls):
+        after=info.get("liveAfter",[])
+        if len(after)!=1:
+            reasons["Have does not leave one continuation goal"]+=1;continue
+        main=after[0][0]
+        # The outer case records all goals; a nested same-kind InfoTree records
+        # only its focused proof goal. Do not count these as two C callbacks.
+        cases=[]
+        for n in walk(info.get("children",[])):
+            before=n.get("liveBefore",[]);rest=n.get("liveAfter",[])
+            if (normalized(n.get("kind","")).endswith(".case")
+                and len(before)==2 and len(rest)==1 and rest[0][0]==main
+                and main in [g[0]for g in before]):
+                cases.append(n)
+        timed=top_cases(call["children"])
+        if len(cases)!=1 or len(timed)!=1 or timed[0]["end"]["return_tag"]!=1:
+            reasons["No unique successful outer proof case"]+=1;continue
+        goals=cases[0]["liveBefore"]
+        if len(components(goals))!=2:
+            reasons["Proof/continuation share live metavariables"]+=1;continue
+        parent=parents.get(call["id"])
+        if parent is None:
+            reasons["No timed parent sequence"]+=1;continue
+        k=parent["children"].index(call)
+        if k+1==len(parent["children"]):
+            reasons["No later timed sibling continuation"]+=1;continue
+        if normalized(parent["kind"]) not in (
+                "Lean.Parser.Tactic.tacticSeq","Lean.Parser.Tactic.tacticSeq1Indented",
+                "Lean.Parser.Tactic.tacticSeqBracketed"):
+            reasons["Parent is not a qualified sequential tactic list"]+=1;continue
+        qualified[call["id"]]=timed[0]["id"]
+    span_cache={};local=[]
+    def span(node):
+        childspans=[span(c)for c in node["children"]]
+        tail=0.
+        for i in range(len(childspans)-1,-1,-1):
+            child=node["children"][i]
+            if child["id"] in qualified:
+                proof=span_cache[qualified[child["id"]]]
+                prefix=childspans[i]-proof
+                if prefix < -1e-7:raise ValueError("Proof span exceeds have span")
+                local.append({"have_C_id":child["id"],"proof_C_id":qualified[child["id"]],
+                              "proof_model_span_cpu_s":proof,"continuation_model_span_cpu_s":tail,
+                              "incremental_saved_cpu_s":min(proof,tail)})
+                tail=max(0.,prefix)+max(proof,tail)
+            else:tail=childspans[i]+tail
+        own=max(0.,cost(node)-sum(cost(c)for c in node["children"]))
+        value=own+tail;span_cache[node["id"]]=value;return value
+    root=sum(cost(n)for n in source["nodes"])
+    body=row["cpuNanoseconds"]/1e9
+    modelspan=body-root+sum(span(n)for n in source["nodes"])
+    if modelspan<=0 or modelspan>body+1e-7:raise ValueError("Invalid have-only span")
+    answer.update(qualified_have_continuation_forks=len(qualified),
+                  have_continuation_model_saved_cpu_s=body-modelspan,
+                  have_continuation_model_span_cpu_s=modelspan,
+                  have_continuation_model_ratio=body/modelspan,
+                  have_model_reason="Have-only optimistic fork model; names/effects/merge unproved",
+                  have_model_reasons=dict(reasons),have_forks=local)
+    return answer
+
+def fork_island_models(result, source):
+    """Finite-core model on disjoint outermost allGoals islands only.
+    Nested islands inside a selected island stay serial to avoid oversubscription.
+    """
+    q={x["C_call_id"]:x for x in result.get("qualified_nodes",[])}
+    nodes=list(walk(source["nodes"]))
+    parents={c["id"]:n["id"] for n in nodes for c in n["children"]}
+    outer=[]
+    for ident,entry in q.items():
+        ancestor=parents.get(ident,0);nested=False
+        while ancestor:
+            if ancestor in q:nested=True;break
+            ancestor=parents.get(ancestor,0)
+        if not nested:outer.append(entry)
+    models={}
+    for cores in [1,2,4,8]:
+        saved=0.
+        for entry in outer:
+            costs=entry["branch_cpu_s"]
+            groups=[sum(costs[i] for i in group)
+                    for group in entry["live_dependency_components"]]
+            lanes=[0.]*cores
+            for work in sorted(groups,reverse=True):
+                j=min(range(cores),key=lanes.__getitem__);lanes[j]+=work
+            saved+=max(0.,sum(costs)-max(lanes))
+        if cores==1:saved=0.
+        models[str(cores)]={"saved_cpu_s":saved,
+                           "modeled_body_s":result["body_cpu_s"]-saved,
+                           "ratio":result["body_cpu_s"]/(result["body_cpu_s"]-saved)}
+    return {"disjoint_outer_allGoals_islands":len(outer),"finite_core_island_models":models}
+
 def analyze(capture):
     rows = read_rows(capture/"stdout.txt")
     events = read_events(capture/"tactics.jsonl")
     if len({r["id"] for r in rows}) != len(rows):
         raise ValueError("Repeated source ID: do not cross segments")
-    output = [summarize(r, events.get(r["id"], {"nodes": []})) for r in rows]
+    output=[]
+    for row in rows:
+        source=events.get(row["id"],{"nodes":[]})
+        result=summarize(row,source)
+        if result["complete_C_tree"]:
+            result.update(have_continuation_model(row,source))
+            result.update(fork_island_models(result,source))
+        output.append(result)
     total = sum(r["body_cpu_s"] for r in output)
     saved = sum(r["local_allGoals_saved_cpu_s"] for r in output)
     kinds=collections.Counter()
@@ -179,6 +312,8 @@ def analyze(capture):
             "complete_C_sources":sum(r["complete_C_tree"] for r in output),
             "body_cpu_s":total, "local_model_saved_cpu_s":saved,
             "local_model_ratio":total/(total-saved) if total>saved else None,
+            "have_only_model_saved_cpu_s":sum(r.get("have_continuation_model_saved_cpu_s",0) for r in output),
+            "qualified_have_forks":sum(r.get("qualified_have_continuation_forks",0)for r in output),
             "full_DAG_average_parallelism":None,
             "exclusive_cpu_by_kind_s":dict(kinds.most_common()),
             "limits":["InfoTree-enabled heartbeat3000 diagnostic point, not production acceptance.",

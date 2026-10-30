@@ -106,7 +106,13 @@ def main():
     for m in native_models:kinds.update(m["exclusive_cpu_by_kind_s"])
     cpu=sum(r["body_cpu_s"] for r in rows)
     saved=sum(r["local_allGoals_saved_cpu_s"] for r in rows)
+    have_saved=sum(r.get("have_continuation_model_saved_cpu_s",0)for r in rows)
     leaf_lower=sum(r.get("largest_opaque_leaf_cpu_s",0) for r in rows)
+    finite={}
+    for cores in [1,2,4,8]:
+        cs=str(cores)
+        saving=sum(r.get("finite_core_island_models",{}).get(cs,{}).get("saved_cpu_s",0) for r in rows)
+        finite[cs]={"saved_cpu_s":saving,"modeled_body_s":cpu-saving,"ratio":cpu/(cpu-saving)}
     summary={"sources":expected_sources,"native_returns":expected_sources*3,"completed_cells":expected_cells,
              "difference_counts":dict(counts),"diagnostic_differences":significant,
              "same_observed_flags_diagnostics_InfoTrees":not significant,
@@ -117,6 +123,11 @@ def main():
              "eligible_local_allGoals_sources":sum(r["local_allGoals_eligible"] for r in rows),
              "local_allGoals_model_saved_cpu_s":saved,
              "local_allGoals_model_ratio":cpu/(cpu-saved) if cpu>saved else None,
+             "qualified_have_continuation_forks":sum(r.get("qualified_have_continuation_forks",0)for r in rows),
+             "have_only_model_saved_cpu_s":have_saved,
+             "have_only_model_ratio":cpu/(cpu-have_saved) if cpu>have_saved else None,
+             "finite_core_disjoint_allGoals_model":finite,
+             "model_units":"Saved_cpu_s legacy fields denote modeled latency reduction in serial CPU-time equivalents,not total CPU work removed.",
              "full_DAG_parallelism":None,
              "sum_per_source_largest_atomic_leaf_cpu_s":leaf_lower,
              "fixed_atomic_leaf_granularity_aggregate_parallelism_ceiling":cpu/leaf_lower if leaf_lower else None,
@@ -133,8 +144,10 @@ def main():
                "Strict unchanged budget semantics is not implied by observed flag parity.",
                f"Selected{expected_sources}sources,not full7808 acceptance/sorry policy.",
                "Untraced body time is not automatically kernel time; software PC samples required.",
-               "Cell order reversed across disjoint shards; no repeated variance estimate.",
+               ("Single orderedstock/off/on pass,no counterbalance or repeated variance estimate." if cli.accepted_original else "Cell order reversed across disjoint shards;no repeated variance estimate."),
                "No complete merge-safe critical path or actual parallel runtime implemented.",
+               "Have-only and allGoals-only savings overlap and are not added; have model assumes unproved effect-safe continuation speculation.",
+               "Finite-core islands use outermost nonoverlapping forks,hold nested work serial,and LPT schedule conservative dependency components; memory and merge overhead unmeasured.",
                "Leaf-only bound assumes fixed work and unchanged atomic C leaf calls, not a general kernel-parallelism bound.",
                ("Original source heartbeat0 retained;50priorpasses,new serial SDK API/hardware point,not production throughput." if cli.accepted_original else "minif2f-4544 exceeds historical300s cutoff here;budget3000diagnostic point is not production parallelism.")]}
     (out/"dependency-census.json").write_text(json.dumps(census,indent=2)+chr(10))
