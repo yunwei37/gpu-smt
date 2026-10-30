@@ -617,3 +617,35 @@ Root runs zero native verifiers. Raw reanalysis output, initial all-kind counts,
 refined tactic-only counts, exact frozen commits, root elapsed time and memory
 are retained in step0179. Other lanes' sources and active captures remain
 untouched. This is same-thread self-review, not independent audit.
+
+
+## 2026-10-30 — profiler changes diagnostic execution (step0180)
+
+Root independently streams M6f6f896's actual19,087,720-byte stdout, verifies all
+400 unique source/mode units,200paired IDs, control-first order, raw flags,
+durations, published CSV and completed native receipt. Current retained input
+pairs contain equal source strings and matching IDs; historical assurance stays
+the existing producer provenance. No new integrity/qualification protocol is added.
+
+Control has31 no-error flags/19other errors/150budget interruptions; observe
+has24/16/160. Seven flags become budget errors.80raw error-string arrays differ
+before normalization, including those seven; these are not80semantic changes
+or a full-service acceptance difference. hasErrors is only a frontend flag.
+Body sums779.387741001s/80.075228226s give0.1027411954ratio, with different
+curtailed execution. Body timers exclude subsequent extraction/serialization
+and are already inside the complete1170.882824374s capture. CPU1142.78795s,
+sampled own-tree peak8643375104bytes, native exit0 and retirement are distinct.
+No clock joins the interrupted WAN attempt or supplies an invented phase cost.
+
+The first root classifier misses '(kernel) deterministic timeout'; its failure
+is retained. The refined analysis recognizes that actual native budget form
+without altering native data or published labels. Literal marker counts can
+overlap: kernel timeout68/68, public heartbeat144/157, recursion limit4/3.
+These are not CPU fractions. Unrecorded raw heartbeat deltas stay unknown;
+order/cache history is unbalanced. No multiplier, native work/span, production
+pass-set loss or equal-work speedup follows.
+
+The separate C prototype's raw tactics.jsonl contains16source markers and zero
+tactic enter/exit callbacks. Completion is not engagement. Root launches no
+native verifier, repairs no M hook and edits no W/M/O path. Scientific framing,
+four RQs and citations stay fixed. Detailed evidence and self-review:step0180.

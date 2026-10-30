@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/docs/tmp/build-and-evaluate/step-0180-20261030T102521+0000/experiment-001/crosscheck.py", line 31, in <module>
+    assert row['classification']==classify(x),(x['id'],mode,row['classification'],classify(x),x['errors'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('minif2f-4544', 'control', 'diagnostic_budget_interruption', 'ordinary_lean_error', ['unsolved goals\ncase a\nS : Finset ℕ\nh₀ : ∀ (k : ℕ), k ∈ S ↔ 0 < k ∧ k * k ∣ ∏ i ∈ Finset.Icc 1 9, i !\nk : ℕ\n⊢ 0 < k ∧ (sf 9) % (k * k) = 0 ↔ ((sf 9) % k = 0 ∧ ¬sf 9 = 0) ∧ 0 < k', 'The rfl tactic failed. Possible reasons:\n- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).\n- The arguments of the relation are not equal.\nTry using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.\nS : Finset ℕ\nh₀ : ∀ (k : ℕ), k ∈ S ↔ 0 < k ∧ k * k ∣ ∏ i ∈ Finset.Icc 1 9, i !\nthis : S = Finset.filter (fun x => 0 < x) (∏ i ∈ Finset.Icc 1 9, i !).divisors\n⊢ (Finset.filter (fun x => 0 < x) (∏ i ∈ Finset.Icc 1 9, i !).divisors).card = 672', '(kernel) deterministic timeout'])

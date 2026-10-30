@@ -1,0 +1,193 @@
+{
+  "M_commit": "6f6f89608fae0783fad156704920ee8b93d767a1",
+  "raw_rows": 400,
+  "source_pairs": 200,
+  "mode_order": "control then observe for every source",
+  "mode_statistics": {
+    "control": {
+      "units": 200,
+      "classes": {
+        "no_lean_errors": 31,
+        "diagnostic_budget_interruption": 150,
+        "ordinary_lean_error": 19
+      },
+      "body_wall_ns": 779387741001,
+      "body_wall_s": 779.387741001
+    },
+    "observe": {
+      "units": 200,
+      "classes": {
+        "no_lean_errors": 24,
+        "diagnostic_budget_interruption": 160,
+        "ordinary_lean_error": 16
+      },
+      "body_wall_ns": 80075228226,
+      "body_wall_s": 80.075228226
+    }
+  },
+  "flag_changes": [
+    {
+      "id": "minif2f-2797",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "(deterministic) timeout at `whnf`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-1041",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "(deterministic) timeout at `isDefEq`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+        "(deterministic) timeout at `whnf`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-6881",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "(deterministic) timeout at `whnf`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+        "(deterministic) timeout at `isDefEq`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-945",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "linarith failed to find a contradiction\ncase h1.h\nx : \u2115\nh\u2080 : \u2191x + 1 / 25 * \u2191x = 598\na\u271d : \u2191x < 575\n\u22a2 False\nfailed",
+        "tactic 'simp' failed, nested error:\n(deterministic) timeout at `simp`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-2693",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "(deterministic) timeout at `whnf`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+        "(deterministic) timeout at `elaborator`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-6049",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "tactic 'simp' failed, nested error:\n(deterministic) timeout at `whnf`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    },
+    {
+      "id": "minif2f-6063",
+      "control_error": false,
+      "observe_error": true,
+      "control_class": "no_lean_errors",
+      "observe_class": "diagnostic_budget_interruption",
+      "observe_errors": [
+        "tactic 'simp' failed, nested error:\n(deterministic) timeout at `simp`, maximum number of heartbeats (3000) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information"
+      ]
+    }
+  ],
+  "raw_error_array_different_pairs": 80,
+  "error_marker_units": {
+    "control": {
+      "kernel_deterministic_timeout": 68,
+      "public_heartbeat_error": 144,
+      "recursion_limit_error": 4
+    },
+    "observe": {
+      "kernel_deterministic_timeout": 68,
+      "public_heartbeat_error": 157,
+      "recursion_limit_error": 3
+    }
+  },
+  "class_transitions": [
+    {
+      "control": "no_lean_errors",
+      "observe": "no_lean_errors",
+      "sources": 24
+    },
+    {
+      "control": "no_lean_errors",
+      "observe": "diagnostic_budget_interruption",
+      "sources": 7
+    },
+    {
+      "control": "diagnostic_budget_interruption",
+      "observe": "diagnostic_budget_interruption",
+      "sources": 150
+    },
+    {
+      "control": "ordinary_lean_error",
+      "observe": "ordinary_lean_error",
+      "sources": 16
+    },
+    {
+      "control": "ordinary_lean_error",
+      "observe": "diagnostic_budget_interruption",
+      "sources": 3
+    }
+  ],
+  "observe_control_body_wall_ratio": 0.10274119544548656,
+  "whole_native_receipt": {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9,10,11",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-j1",
+      "-M8192",
+      "-T50000000",
+      "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean"
+    ],
+    "source": "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean",
+    "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+    "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+    "signals_sent": 0,
+    "native_allocation_limit": 50000000,
+    "native_memory_MiB": 8192,
+    "internal_wall_seconds": 1500,
+    "intended_wall_handler_exit_code": 124,
+    "observed_internal_alarm_signal_possible": 14,
+    "pid": 5401,
+    "start_ticks": "740260987",
+    "native_kernel_peak_rss_bytes": 8628895744,
+    "native_cpu_seconds": 1142.7879500000001,
+    "exit": 0,
+    "wall_s": 1170.8828243743628,
+    "sampled_peak_owned_rss_bytes": 8643375104,
+    "minimum_node_MemAvailable_bytes": 56747827200,
+    "samples": 1171,
+    "sample_interval_s": 1,
+    "retired": true
+  },
+  "raw_stdout_bytes": 19087720,
+  "input_scope": "Current retained 400-unit input has byte-equal source strings per pair and matches raw IDs; capture/source history remains the recorded producer provenance",
+  "C_raw_event_counts": {
+    "source": 16
+  },
+  "C_hook_qualified": false,
+  "native_runs_by_root": 0,
+  "raw_heartbeat_deltas_available": false,
+  "full_production_acceptance_tested": false,
+  "unmodified_candidate_DAG_speedup_inferred": false,
+  "root_elapsed_s": 0.13614728581160307,
+  "root_peak_rss_kib": 22172,
+  "root_affinity": [
+    0,
+    1
+  ]
+}

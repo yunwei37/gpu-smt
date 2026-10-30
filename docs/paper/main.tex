@@ -1278,6 +1278,49 @@ is usable for only two completed requests and is too loose to settle that
 question. No speculative-execution speedup or parallelism threshold follows
 from this structural census.
 
+\paragraph{Profiling under a diagnostic heartbeat limit.}
+A separate Lean~4.9.0-rc1 process imports Mathlib and runs 200 sources
+in control/observe pairs. Both modes retain InfoTrees; observe additionally
+enables \texttt{trace.profiler} with threshold zero.
+Both start from the diagnostic \texttt{maxHeartbeats=3000} option.
+This is a separate point from the original 300-second service and the
+endpoint-sampled hotspot study above.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Mode & No error & Other error & Budget & Body (s) \\
+\midrule
+Control & 31 & 19 & 150 & 779.388 \\
+Observe & 24 & 16 & 160 & 80.075 \\
+\bottomrule
+\end{tabular}
+\caption{All 400 bounded diagnostic frontend calls. No error is a raw
+error flag, not whole-service acceptance. Budget includes deterministic
+heartbeat/recursion-limit errors. Body timers exclude subsequent record
+extraction and serialization; their sums are already inside the complete
+1,170.883-second process clock.}
+\label{tab:profiler-diagnostic-limits}
+\end{table}
+
+Seven pairs change from no error flag to a budget error, and 80 raw
+error-string arrays differ before normalization, including those seven.
+Table~\ref{tab:profiler-diagnostic-limits}'s smaller observe body time
+does not measure acceleration of the same work: more executions stop at
+diagnostic limits. Control always precedes observe in a shared process.
+Ordering/cache history and unrecorded raw heartbeat deltas prevent
+inferring a tracing allocation multiplier or production pass-set loss.
+The complete capture exits zero and retires, with an 8.05\,GiB sampled
+owned-tree peak; its whole clock includes both modes and other runtime work.
+
+A separate four-pair C-timing prototype emits 16 source-boundary markers
+but zero tactic entry/exit callbacks. Successful completion therefore does
+not qualify its intended measurements. Neither that inactive hook nor the
+budget-perturbed trace establishes the unmodified candidates' work/span or
+an engine speedup.
+
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith
 library has 684 direct ELF dependencies, including Linarith preprocessing
