@@ -44,8 +44,8 @@ denominator, its acceleration estimate is unknown.
 Reference counting often inlines, and allocator/hash operations can lie inside
 native tactic and kernel paths. Process CPU PC sampling can estimate residence
 in identifiable symbols, with unknowns and sampling overhead retained; it
-cannot recover IPC, LLC/dTLB misses or exact inlined operation costs. The C
-control is qualified; Lean sampling is not yet qualified.
+cannot recover IPC, LLC/dTLB misses or exact inlined operation costs. Native small-control and representative sampling is now qualified as
+detailed below; whole-workload/native-helper attribution remains limited.
 
 ## Native-qualified software residence,2026-10-30
 
@@ -62,3 +62,10 @@ part of the kernel even without type_checker in their symbol name. AOT of
 more Mathlib tactics does not remove this already native structural checking
 work. Whole-workload precompile gain is unmeasured; do not turn module
 census124/217 or these median samples into an overall Amdahl bound.
+
+The genuine original-timeout-prefix stratum is separately measured in
+genuine-timeout-prefix-result.md:149/1751body samples are IR-related(8.51%).
+Its earlier diagnostic-median counterpart was a clipped historical pass;
+the two labels and cost denominators must not be conflated. Cold RC plus
+exact out-of-line inc/dec wrappers provide an explicit lower bound13.82%
+at this real timeout prefix,not its complete300s execution.

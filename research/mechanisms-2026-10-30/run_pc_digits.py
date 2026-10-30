@@ -1,6 +1,7 @@
 """Finite stock/off/on sampling of the existing ordinary-kernel declaration recheck."""
 import os,json,re,subprocess
 from pathlib import Path
+from run_finite import persistent_capture_path
 from run_pc_qualification import EXT,HERE,alive
 from analyze_pc_samples import analyze
 
@@ -14,7 +15,7 @@ def main():
     previous=json.loads((EXT/"pc-representatives/cells.json").read_text())
     if any(alive(c["receipt"]) for c in previous):
         raise SystemExit("Previous representative native still active")
-    out=EXT/point;out.mkdir(exist_ok=False)
+    out=persistent_capture_path(EXT/point);out.mkdir(exist_ok=False)
     env=dict(os.environ,M_OWNERSHIP_ROOT_PID=str(os.getpid()),
              M_OWNERSHIP_ROOT_BIRTH=Path(f"/proc/{os.getpid()}/stat").read_text().split()[21])
     base=EXT/"generated/software-probe-timing/software-probe.so"

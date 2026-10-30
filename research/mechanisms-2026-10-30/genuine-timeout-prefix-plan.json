@@ -1,0 +1,13 @@
+{
+  "status": "prepared-not-executed",
+  "source": "minif2f-4997",
+  "historical_label": "timeout",
+  "historical_physical_work_s": 300.486276523,
+  "diagnostic_prefix_cpu_s": 0.348189656,
+  "selection": "Median diagnostic CPU among original timeout stratum only;not among all budget-interrupted sources.",
+  "source_code": "set_option maxHeartbeats 3000\n\nopen BigOperators Real Nat Topology Rat\n\n/-- In the year $2001$, the United States will host the [[International Mathematical Olympiad]].  Let $I,M,$ and $O$ be distinct [[positive integer]]s such that the product $I \\cdot M \\cdot O = 2001 $.  What is the largest possible value of the sum $I + M + O$?\n\n$\\textbf{(A)}\\ 23 \\qquad \\textbf{(B)}\\ 55 \\qquad \\textbf{(C)}\\ 99 \\qquad \\textbf{(D)}\\ 111 \\qquad \\textbf{(E)}\\ 671$ Show that it is \\text{(E)}.-/\ntheorem amc12_2000_p1 (i m o : ℕ) (h₀ : i ≠ m ∧ m ≠ o ∧ o ≠ i) (h₁ : i * m * o = 2001) :\n    i + m + o ≤ 671 := by\n  /-\n  Given the conditions:\n  1. \\( I, M, \\) and \\( O \\) are distinct positive integers.\n  2. The product \\( I \\cdot M \\cdot O = 2001 \\).\n  We need to determine the largest possible value of the sum \\( I + M + O \\).\n  First, we note that the product \\( I \\cdot M \\cdot O = 2001 \\) implies that \\( I, M, \\) and \\( O \\) are factors of 2001. We will find the factors of 2001 and check their sums.\n  The factors of 2001 are:\n  - \\( 1, 3, 9, 21, 39, 63, 147, 2001 \\)\n  Next, we sum these factors:\n  - \\( 1 + 3 + 9 + 21 + 39 + 63 + 147 + 2001 = 2173 \\)\n  However, we need to consider the distinct factors and their sums. The distinct factors of 2001 are:\n  - \\( 1, 3, 9, 21, 39, 63, 147, 2001 \\)\n  The sums of these distinct factors are:\n  - \\( 1 + 3 + 9 + 21 + 39 + 63 + 147 + 2001 = 2173 \\)\n  Given the constraints, the largest possible value of the sum \\( I + M + O \\) is 671.\n  -/\n  -- We will check the factors of 2001 to find the largest possible sum of the distinct factors.\n  have h₂ : i ≤ 40 := by\n    -- Since the product of the factors is 2001, we know that each factor must be less than or equal to 2001.\n    nlinarith\n  have h₃ : m ≤ 40 := by\n    nlinarith\n  have h₄ : o ≤ 40 := by\n    nlinarith\n  -- We now consider the distinct factors of 2001 and their sums.\n  interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all (config := {decide := true})\n  -- The largest possible sum of the distinct factors is 671.\n  <;> try linarith",
+  "repeats": 10,
+  "per_cell_seconds": 180,
+  "max_group_native_seconds": 540,
+  "limits": "Heartbeat3000diagnostic prefix,not full original300s timeout or failure prediction;separate from prior clipped accepted-source prefix."
+}

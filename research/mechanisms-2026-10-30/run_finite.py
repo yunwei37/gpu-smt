@@ -6,6 +6,17 @@ SDK=Path('/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-
 CAPTURE_ROOT=Path('/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures')
 BUILD_ROOT=CAPTURE_ROOT.parent/'generated'
 ML=Path('/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4')
+def persistent_capture_path(path):
+    """Reuse the existing collector's PVC policy before any capture writes."""
+    import importlib.util
+    import sys
+    owner=Path(__file__).resolve().parents[2]/"bench/lean-failure-profile/state-reuse/run.py"
+    spec=importlib.util.spec_from_file_location("mechanisms_existing_capture_storage",owner)
+    module=importlib.util.module_from_spec(spec)
+    sys.modules[spec.name]=module
+    spec.loader.exec_module(module)
+    return module.persistent_output(path)
+
 def rss(pid):
  try:return int(next(l.split()[1] for l in Path(f'/proc/{pid}/status').read_text().splitlines() if l.startswith('VmRSS:')))*1024
  except (OSError,StopIteration):return 0
@@ -27,7 +38,7 @@ def owned_tree():
   roots|=more
  return [{'pid':pid,'start_ticks':table[pid][1],'rss_bytes':table[pid][2]} for pid in roots if pid in table]
 def run(source,label,wall_seconds=1200,library=None,native_executable=None,embedded_probe=False,input_path=None):
- out=CAPTURE_ROOT/label;out.mkdir(parents=True,exist_ok=False)
+ out=persistent_capture_path(CAPTURE_ROOT/label);out.mkdir(parents=True,exist_ok=False)
  (out/'source.lean').write_bytes(source.read_bytes())
  (out/'runner.py').write_bytes(Path(__file__).read_bytes())
  env=os.environ.copy();paths=[SDK/'lib/lean',ML/'.lake/build/lib']+sorted((ML/'.lake/packages').glob('*/.lake/build/lib'))
@@ -36,7 +47,7 @@ def run(source,label,wall_seconds=1200,library=None,native_executable=None,embed
  if embedded_probe:env.pop('LD_PRELOAD',None)
  args=['taskset','-c','8,9,10,11',str(native_executable or (SDK/'bin/lean')),'-j1','-M8192','-T50000000',str(source)]
  began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':'phobos-vt serial M branch, CPU8-11, RSS budget16GiB',
-   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_memory_MiB':8192,'internal_wall_seconds':wall_seconds,'loaded_measurement_library':env.get('LD_PRELOAD','embedded probe'),'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
+   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_T_flag':50000000,'native_T_semantics':'legacy field records CLI-T value, not a whole-source IO.getNumHeartbeats quota','native_memory_MiB':8192,'native_M_semantics':'Lean cooperative process RSS checks, not allocator-only, RLIMIT_AS or kernel hard quota','internal_wall_seconds':wall_seconds,'loaded_measurement_library':env.get('LD_PRELOAD','embedded probe'),'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
  (out/'launch.json').write_text(json.dumps(receipt,indent=2)+'\n')
  peak=0;minavail=None;samples=0
  with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr,(out/'memory.jsonl').open('w') as memory:

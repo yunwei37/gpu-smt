@@ -45,11 +45,14 @@ has been established. Dropping resource-failing jobs changes terminal coverage.
   This completes the small certificate prototype,not a general extraction IR.
 - Software maps/native-symbol checks distinguish plain Mathlib CLI from the
   prepared backend's dependency-loaded native libraries. See hot-tactics.md.
-  Interpreter/RC/allocation CPU residence is still awaiting native-qualified
-  software sampling; module-file counts are not time fractions.
+  Native-qualified small software residence points now exist;see
+  software-profile-result.md and genuine-timeout-prefix-result.md. They do
+  not provide whole-workload CPU fractions or precompile speedup.
 - The400 diagnostic controls show trace.profiler changes7 error flags.
-  C profileit callbacks qualify on small controls; fixed200 native/off/on
-  comparison remains active. Complete work/span is not established.
+  C profileit callbacks qualify on small controls;the fixed200 comparison
+  has completed with observed flag/diagnostic parity and rawHB differences.
+  The restored-budget50pass point exposes opportunity hidden by the
+  diagnostic budget. Complete merge-safe work/span is not established.
 - Memory simulation now retains fit-subset results via exclusive retry,
   instead of presenting dropped hard cases as throughput. Actual warm retries
   change11 resource failures into timeouts at the same aggregate budget.

@@ -17,6 +17,8 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
   stock flags,diagnostics,InfoTrees and heartbeats on short controls.
   [Full200 result](native-cohort-result.md):600 returns with observed flag/
   diagnostic/InfoTree parity;rawHB differs,production DAG remains unknown.
+- [Genuine timeout prefix](genuine-timeout-prefix-result.md):30returns with
+  exact differential parity;separate from clipped-pass prefix and full timeout.
 - [Software residence](software-profile-result.md):native sampling actually
   checked;observer IR separated,successful kernel4258sample pure-timing profile retained.
 - [Original-budget pass cohort](accepted-original-result.md):150returns,
@@ -30,6 +32,8 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
   result coverage changes retry-model costs; no calibrated COW speedup claim.
 - [Hot tactics](hot-tactics.md) and [prior work](prior-work.md):actual loader
   context matters; reflection/futures/compilation are established techniques.
+
+Native guard/sampler scope:[exact resource semantics](native-resource-semantics.md).
 
 Execution-budget correction:[whole matrix overrun and forward fix](collection-budget-erratum.md).
 The former six-cell collection exceeded30minutes overall; per-cell bounds
@@ -58,6 +62,6 @@ replace a profile-weighted native-code opportunity estimate; PMU remains denied.
 
 ## phobos-vt continuation
 
-Migration approval preserves the Workspace/PVC. M uses at most 8 cores and 16 GiB within the four-line 40 GiB total. External child signals still fail with EACCES. See step-003-report.md for the full-import deadline failure; do not duplicate that live Lean process. Software CPU sampling control is qualified, Lean sampling is not. See prior-work.md for the claim map.
+Migration approval preserves the Workspace/PVC. M uses at most 8 cores and 16 GiB within the four-line 40 GiB total. External child signals still fail with EACCES. See step-003-report.md for the full-import deadline failure; do not duplicate that live Lean process. Native-qualified software sampling points are now complete;see the current evidence above. See prior-work.md for the claim map.
 
 Step 003 completion: the maps process has retired; final digits certificate passes stock-kernel checking. See native/phobos-digits-certificate-v4 and hot-tactics.md. The previous whole-import run remains noncompliant with the 30-minute limit. Current finite runner loads a self-wall-exit library before imports; no signal-based watchdog is claimed.

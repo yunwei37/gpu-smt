@@ -1,0 +1,460 @@
+{
+  "file": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/pc-native-timeout-prefix-sampler-on/samples.bin",
+  "samples_written": 2977,
+  "samples_retained": 2977,
+  "overflow": 0,
+  "interval_cpu_us": 2000,
+  "threads": [
+    21853
+  ],
+  "phase_counts": {
+    "3": 1751,
+    "0": 1226
+  },
+  "category_samples": [
+    {
+      "phase": 3,
+      "category": "other_named_native_residence",
+      "samples": 1068
+    },
+    {
+      "phase": 0,
+      "category": "IR_interpreter_residence",
+      "samples": 1041
+    },
+    {
+      "phase": 3,
+      "category": "out_of_line_reference_count_lower_bound",
+      "samples": 185
+    },
+    {
+      "phase": 3,
+      "category": "named_hash_or_table_lower_bound",
+      "samples": 167
+    },
+    {
+      "phase": 3,
+      "category": "allocation_or_deallocation_lower_bound",
+      "samples": 156
+    },
+    {
+      "phase": 3,
+      "category": "IR_interpreter_residence",
+      "samples": 149
+    },
+    {
+      "phase": 0,
+      "category": "other_named_native_residence",
+      "samples": 135
+    },
+    {
+      "phase": 0,
+      "category": "unresolved",
+      "samples": 32
+    },
+    {
+      "phase": 3,
+      "category": "unresolved",
+      "samples": 24
+    },
+    {
+      "phase": 0,
+      "category": "allocation_or_deallocation_lower_bound",
+      "samples": 9
+    },
+    {
+      "phase": 0,
+      "category": "out_of_line_reference_count_lower_bound",
+      "samples": 5
+    },
+    {
+      "phase": 0,
+      "category": "named_hash_or_table_lower_bound",
+      "samples": 4
+    },
+    {
+      "phase": 3,
+      "category": "named_kernel_residence",
+      "samples": 2
+    }
+  ],
+  "additional_explicit_RC_wrapper_samples": [
+    {
+      "phase": 0,
+      "samples": 0
+    },
+    {
+      "phase": 3,
+      "samples": 57
+    }
+  ],
+  "top_symbols": [
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::rb_map<lean::name, lean::ir::interpreter::symbol_cache_entry, lean::name_quick_cmp>::find(lean::name const&) const",
+      "samples": 476
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+      "samples": 320
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_dec_ref_cold",
+      "samples": 178
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+      "samples": 116
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_free_small",
+      "samples": 71
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_alloc_small",
+      "samples": 70
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::rb_map<lean::name, lean::ir::interpreter::symbol_cache_entry, lean::name_quick_cmp>::find(lean::name const&) const",
+      "samples": 66
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::eval_expr(lean::object_ref const&, lean::ir::type)",
+      "samples": 57
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_name_eq",
+      "samples": 52
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+      "samples": 47
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::replace_rec_fn::apply(lean::expr const&, unsigned int)",
+      "samples": 44
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_name_eq",
+      "samples": 44
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_dec",
+      "samples": 36
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::lookup_symbol(lean::name const&)",
+      "samples": 32
+    },
+    {
+      "phase": 0,
+      "module": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "symbol": "",
+      "samples": 31
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_st_ref_get",
+      "samples": 29
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_HashMapImp_find_x3f___at_Lean_Environment_find_x3f___spec__5",
+      "samples": 25
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::rb_map<lean::name, lean::ir::interpreter::constant_cache_entry, lean::name_quick_cmp>::find(lean::name const&) const",
+      "samples": 24
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_inc",
+      "samples": 21
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "std::__1::vector<lean::ir::value, std::__1::allocator<lean::ir::value> >::__append(unsigned long)",
+      "samples": 20
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Array_binSearchAux___at_Lean_getReducibilityStatusCore___spec__8",
+      "samples": 18
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Name_appendCore",
+      "samples": 18
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_whnfEasyCases___at_Lean_Meta_whnfCore_go___spec__3",
+      "samples": 17
+    },
+    {
+      "phase": 3,
+      "module": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "symbol": "",
+      "samples": 16
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Name_quickLt",
+      "samples": 16
+    },
+    {
+      "phase": 0,
+      "module": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "symbol": "getrusage@@GLIBC_2.2.5",
+      "samples": 16
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_copy_expand_array",
+      "samples": 15
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Name_hash___override",
+      "samples": 14
+    },
+    {
+      "phase": 3,
+      "module": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "symbol": "getrusage@@GLIBC_2.2.5",
+      "samples": 14
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_HashMapImp_find_x3f___at_Lean_Meta_Match_Extension_getMatcherInfo_x3f___spec__5",
+      "samples": 14
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_whnfEasyCases___at_Lean_Meta_whnfImp___spec__3___lambda__4",
+      "samples": 13
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_unfoldDefinition_x3f",
+      "samples": 12
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::replace_cache::insert(lean::expr const&, unsigned int, lean::expr const&)",
+      "samples": 12
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+      "samples": 11
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_instantiateExprMVars___at_Lean_instantiateMVarsCore___spec__2___rarg",
+      "samples": 11
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_whnfEasyCases___at_Lean_Meta_whnfCore_go___spec__3___lambda__5",
+      "samples": 11
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_EnvExtensionInterfaceUnsafe_getState___rarg",
+      "samples": 11
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_uint64_mix_hash",
+      "samples": 11
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_PersistentEnvExtension_getModuleEntries___rarg",
+      "samples": 10
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_whnf",
+      "samples": 10
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_PersistentHashMap_findAux___at_Lean_Core_instantiateTypeLevelParams___spec__6",
+      "samples": 10
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_whnfEasyCases___at_Lean_Meta_whnfCore_go___spec__3___lambda__4",
+      "samples": 9
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Expr_getAppFn",
+      "samples": 9
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_HashSetImp_contains___at_Lean_NameHashSet_contains___spec__1",
+      "samples": 9
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_List_reverseAux___rarg",
+      "samples": 9
+    },
+    {
+      "phase": 0,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::ir::interpreter::alloc_ctor(lean::object_ref const&, lean::array_ref<lean::object_ref> const&)",
+      "samples": 9
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_string_utf8_get",
+      "samples": 9
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_PersistentHashMap_findAux___at___private_Lean_Meta_InferType_0__Lean_Meta_checkInferTypeCache___spec__2",
+      "samples": 9
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Expr_ReplaceImpl_replaceUnsafeM_visit___at_Lean_Expr_instantiateLevelParams___spec__5",
+      "samples": 8
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::hash_str(unsigned long, unsigned char const*, unsigned long)",
+      "samples": 8
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::rb_map<lean::name, lean::ir::interpreter::constant_cache_entry, lean::name_quick_cmp>::find(lean::name const&) const",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_getConfig",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_HashMapImp_find_x3f___at_Lean_Environment_getModuleIdxFor_x3f___spec__1",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_expr_eqv",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_inc_ref_cold",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_isExprDefEqAuxImpl___lambda__3",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_Meta_reduceNat_x3f",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "l_Lean_PersistentHashMap_findAux___at_Lean_Meta_Match_Extension_getMatcherInfo_x3f___spec__3",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean::dealloc(void*, unsigned long)",
+      "samples": 7
+    },
+    {
+      "phase": 3,
+      "module": "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/lib/lean/libleanshared.so",
+      "symbol": "lean_infer_type",
+      "samples": 7
+    }
+  ],
+  "limits": [
+    "CPU timer samples are instruction residence, not PMU cycles/IPC/cache/TLB counts.",
+    "Out-of-line RC/allocation/table categories are lower bounds; inlined work stays in caller.",
+    "No precompilation speedup follows directly from interpreter residence.",
+    "Runtime mappings are start-time snapshot; later loads may be unresolved.",
+    "Sampling must pass native decision/diagnostic/heartbeat differential before interpretation."
+  ]
+}

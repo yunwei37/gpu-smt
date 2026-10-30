@@ -1,5 +1,6 @@
 """Finite serial native/linked-off/linked-on cohort matrix; no daemon or retries."""
 from pathlib import Path
+from run_finite import persistent_capture_path
 import subprocess,os,json,time
 HERE=Path(__file__).resolve().parent
 ROOT=Path("/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30")
@@ -25,6 +26,7 @@ def main():
     expected=50 if cli.accepted_original else 100
     prefix="accepted-original" if cli.accepted_original else "native-cohort"
     per_native=300 if cli.accepted_original else 1500
+    MATRIX=persistent_capture_path(MATRIX)
     MATRIX.mkdir(parents=True,exist_ok=True)
     os.environ["M_OWNERSHIP_ROOT_PID"]=str(os.getpid())
     os.environ["M_OWNERSHIP_ROOT_BIRTH"]=Path(f"/proc/{os.getpid()}/stat").read_text().split()[21]

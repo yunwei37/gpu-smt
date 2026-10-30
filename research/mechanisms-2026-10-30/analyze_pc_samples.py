@@ -90,6 +90,11 @@ def analyze(raw):
             "threads":sorted({tid for _,_,tid in data}),
             "phase_counts":dict(phases),
             "category_samples":[{"phase":p,"category":c,"samples":n}for (p,c),n in cats.most_common()],
+            "additional_explicit_RC_wrapper_samples":[
+                {"phase":phase,"samples":sum(n for (p,m,s),n in counts.items()
+                 if p==phase and s.split("@")[0] in
+                    ("lean_inc","lean_dec","lean_inc_ref","lean_dec_ref","lean_inc_ref_n"))}
+                for phase in sorted(phases)],
             "top_symbols":[{"phase":p,"module":m,"symbol":s,"samples":n}for (p,m,s),n in counts.most_common(60)],
             "limits":["CPU timer samples are instruction residence, not PMU cycles/IPC/cache/TLB counts.",
                       "Out-of-line RC/allocation/table categories are lower bounds; inlined work stays in caller.",
