@@ -529,7 +529,19 @@ Those are metadata-read costs, not repeated kernel proof checking.
 The earlier repeated-text probe still has 16 source annotations under
 16 namespaces but lacks its compiled endpoint; text equality and namespace
 differences establish neither equality nor inequality of resolved types.
-Failed/uninvoked calls remain absent. Actual cache eligibility, full imported
+Joining the observed types to the new-strata build locates whole-module
+cost exposure. Its 48 successful modules containing a cross-module type group
+use 454.207 of that point's 1,399.656 compiler-wall seconds (32.45\%).
+The other 58 successful modules use 903.311 seconds. Three interrupted
+invocations use 42.138 seconds but have no completed metadata, so their
+repeated-type contents are unknown. The 454.207 seconds include imports,
+elaboration, other proofs and object generation; they are not the time
+spent checking duplicates or an estimate of time saved. The 2,984 uninvoked
+modules also have unknown costs. These observations neither identify a
+removable wall fraction nor establish an end-to-end speedup.
+
+Failed/uninvoked calls remain absent from typed metadata.
+Actual cache eligibility, full imported
 axioms and time-weighted benefit remain unmeasured, so the repeated-type counts
 cannot be converted into saved verification time or whole-corpus failure-cache
 coverage.

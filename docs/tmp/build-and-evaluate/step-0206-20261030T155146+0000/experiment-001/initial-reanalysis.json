@@ -1,0 +1,50 @@
+{
+  "point": "openai4341-strata-batch4 only",
+  "native_calls": 109,
+  "total_native_wall_s": 1399.655780898407,
+  "classes": [
+    {
+      "class": "successful_module_without_observed_cross_module_type",
+      "native_calls": 58,
+      "native_wall_s": 903.3106614239514,
+      "fraction_of_this_point_native_wall": 0.6453805812484388
+    },
+    {
+      "class": "interrupted_module_without_completed_metadata",
+      "native_calls": 3,
+      "native_wall_s": 42.138036959804595,
+      "fraction_of_this_point_native_wall": 0.03010600001434435
+    },
+    {
+      "class": "successful_module_with_observed_cross_module_type",
+      "native_calls": 48,
+      "native_wall_s": 454.2070825146511,
+      "fraction_of_this_point_native_wall": 0.3245134187372169
+    }
+  ],
+  "raw_metadata_read": "openai4341-olean-types-363",
+  "observed_cross_module_type_groups": 919,
+  "global_affected_modules": 110,
+  "profile_scope": {
+    "completed_type_check_events": 491,
+    "events_with_declaration_identity": 0,
+    "unfinished_trailing_event": true,
+    "same_point_as_109call_group": false,
+    "type_group_checking_cost_identified": false
+  },
+  "observed_exposure_is_duplicate_check_cpu": false,
+  "actual_cache_hit_rate": null,
+  "measured_time_saved": null,
+  "service_speedup": null,
+  "uninvoked_modules_in_planned_fresh_closure": 2984,
+  "limits": [
+    "Whole-module wall is exposure,not repeated proof checking time;includes imports/elaboration/other proofs.",
+    "3interrupted calls have unknown typed contents,not zero repeated work.",
+    "Typed equality and physical earlier objects do not establish producer-state or cache eligibility.",
+    "109completed calls form a bounded prefix;2984uninvoked modules retain unknown cost.",
+    "No all-corpus/warm-service/GPU Amdahl bound,no point denominators combined."
+  ],
+  "new_native_runs": 0,
+  "root_elapsed_s": 0.30231485795229673,
+  "root_maxrss_kib": 69132
+}

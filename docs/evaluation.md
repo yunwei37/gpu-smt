@@ -124,6 +124,16 @@ full-population cache-eligibility claim. Metadata native1.762153s,capture
 2.003251s,combinedsample6.24GiB includes retained EPFL;not proof rechecking.
 The original repeated-text endpoint remains uncompiled;earlier45distinct
 pilot result stays valid within its smaller scope. No key-IDcross-run join.
+[Same-point module exposure](tmp/build-and-evaluate/step-0206-20261030T155146+0000/step-report.md) maps52
+global cross-type-bearing modules;48occur in the109-call new-strata point.
+Those48successful calls use454.207083/1399.655781s=32.45%of own native-wall sum.
+Other58successful calls903.310661s;3interrupted/untyped calls42.138037s.
+Whole-module imports/elaboration/otherproofs are included:neither duplicate-
+checking CPU nor saved time is identified. Unnamed491completed Gridprofile
+events have no declaration identity and come from another point;no guessed
+order-based join or cross-run phase rescaling. The2984uninvoked modules have
+unknown contents/cost. No corpus/warm-service/GPU Amdahl bound or cacheenablement.
+
 
 EPFL [136returned-prefix audit](tmp/build-and-evaluate/step-0185-20261030T113532+0000/step-report.md)
 has53compile/71ordinary/12budget,623.799202s;budget25.60%of returned-prefix
