@@ -37,3 +37,5 @@ W010:user authorizes progress alongside charged oldRSS.214=EPFL58969 explicitly 
 W011:APRIL39pairs complete(78native);references35pass/4HB;mutations23error/16budget. Budget mutation time50.53%unweighted vs11.05%inverse-probability ratio for released1835test rows,no CI. New sampled combined peak9.65GiB. OpenAI128new modules/3targets running separately.
 
 W012:OpenAI128closure states=81native compile/1HB/46uninvoked,2newtarget endpoints pass;combinedRSS11.87GiB. SevenotherEPFL return(1compile/1error/3HB/2selfwall),separate10kpoint;old58969 stillcensored. Imported metadata auditv2 running,previous helper error preserved.
+
+W013:47retry modules allcompile100kHB,128closure3targets complete incrementally;81cached deps explicit,old50kfailure retained. Separate102.649s native sums,capture110.118s,combined8.13GiB. Native135objectreader succeeds;globalcachecounts not established.
