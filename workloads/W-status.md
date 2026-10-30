@@ -98,3 +98,14 @@ not a proven labelbug. Current only foreground: openai4341-strata-batch4,
 controller42614/birth742295084,8cores/M8192/100kHB/self300/group1400,
 original frozen targets in12uncovered cells. Verify real terminal, do not
 restart. Exact full-build CPU CI not yet estimable from incomplete cells.
+
+
+W026/ee27167: stratified100k replay106compiles, retained-type census363
+modules gives45,661matched-helper/42,610globalExprtypes; not source-call or
+kernel-computation count. Uniform100k cost only3/42; no finitefullCI.
+W027: authored/native-default exact-source group ended and retired.
+Recovery2/2 pass; sample42 group187compile/1missing-object/1remainderwall/
+47dependency-skips.19/42fresh endpoint costs,6/21cells complete; no fullbuild
+CI.536distinct checked module artifacts now available. Current no foreground
+WLean; old13733/birth741054360 remains censored/charged. Never restart it.
+Next native action must verify actual launch/terminal and use self budgets.
