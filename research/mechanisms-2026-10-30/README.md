@@ -14,7 +14,11 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
 - [Profiler perturbation](profiler-heartbeat-methodology.md):400 diagnostic
   returns; trace.profiler changes7 error flags. Its lower runtime is not speedup.
 - [C timing qualification](step-007-report.md):fresh small controls match
-  stock flags,diagnostics,InfoTrees and heartbeats; fixed200 matrix in progress.
+  stock flags,diagnostics,InfoTrees and heartbeats on short controls.
+  [Full200 result](native-cohort-result.md):600 returns with observed flag/
+  diagnostic/InfoTree parity;rawHB differs,production DAG remains unknown.
+- [Software residence](software-profile-result.md):native sampling actually
+  checked;observer IR separated,successful kernel4334sample profile retained.
 - [Local dependency model](step-009-report.md):independent/coupled controls
   separated; complete DAG and merge semantics still unknown.
 - [Ordinary-kernel certificate](step-003-report.md):digits answer100 passes;

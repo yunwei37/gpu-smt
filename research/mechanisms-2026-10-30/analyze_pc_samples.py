@@ -40,7 +40,7 @@ def classify(symbol,module):
         return "IR_interpreter_residence"
     if any(s in symbol for s in ["lean_dec_ref_cold","lean_inc_ref_cold","lean_inc_ref_n_cold"]):
         return "out_of_line_reference_count_lower_bound"
-    if symbol.split("@")[0] in ("free","__libc_free","cfree") or any(s in symbol for s in ["lean_alloc_","lean::lean_alloc","lean::dealloc","lean::allocator::","malloc","calloc","realloc","free("]):
+    if symbol.split("@")[0] in ("free","__libc_free","cfree") or any(s in symbol for s in ["lean_alloc_","lean_free_","lean::lean_alloc","lean::dealloc","lean::allocator::","malloc","calloc","realloc","free("]):
         return "allocation_or_deallocation_lower_bound"
     if any(s in symbol for s in ["hash_table","hash_map","HashMap","HashSet"]):
         return "named_hash_or_table_lower_bound"

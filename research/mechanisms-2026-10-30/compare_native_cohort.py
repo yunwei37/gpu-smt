@@ -1,10 +1,52 @@
 """Compare the complete six-cell cohort before interpreting timing."""
 from pathlib import Path
 import collections, csv, json, sys
-from analyze_c_timing import read_rows, analyze
+from analyze_c_timing import read_rows, read_events, cost, normalized, analyze
+from analyze_dependency import walk, components
 sys.setrecursionlimit(20000)
 ROOT=Path("/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30")
 HERE=Path(__file__).resolve().parent
+
+def dependency_census(captures):
+    counts=collections.Counter();exclusive=collections.Counter();sources=collections.Counter()
+    multi_sources=shared_sources=multi=shared=0
+    for capture in captures:
+        events=read_events(capture/"tactics.jsonl")
+        for row in read_rows(capture/"stdout.txt"):
+            present=set()
+            for n in walk(events[row["id"]]["nodes"]):
+                k=normalized(n["kind"])
+                group=("have" if k.endswith(".tacticHave_") else
+                       "case" if k.endswith((".case",".caseTag")) else
+                       "allGoals" if k.endswith(".allGoals") else
+                       "and_then" if k.endswith(".tactic_<;>_") else
+                       "first" if k.endswith(".first") else None)
+                if group:
+                    counts[group]+=1;present.add(group)
+                    exclusive[group]+=max(0,cost(n)-sum(cost(c) for c in n["children"]))
+            for group in present:sources[group]+=1
+            snapshots=set()
+            for n in walk(row["infos"]):
+                for field in ["liveBefore","liveAfter"]:
+                    gs=n.get(field,[])
+                    if len(gs)>1:
+                        snapshots.add(tuple((g,tuple(sorted(set(refs))))for g,refs in gs))
+            if snapshots:multi_sources+=1
+            had_shared=False
+            for gs in snapshots:
+                multi+=1
+                if len(components(gs))<len(gs):shared+=1;had_shared=True
+            shared_sources+=int(had_shared)
+    return {"sources":200,"C_calls_by_construct":dict(counts),
+            "sources_by_construct":dict(sources),"exclusive_C_cpu_s_by_construct":dict(exclusive),
+            "sources_with_multiple_live_goals":multi_sources,
+            "sources_with_at_least_one_shared_live_meta_snapshot":shared_sources,
+            "observable_multi_goal_live_dependency_snapshots":multi,
+            "snapshots_with_shared_live_meta":shared,
+            "limits":["Exclusive construct CPU is wrapper work,not inclusive parallelizable proof work.",
+                      "Snapshots deduplicate goal IDs+live dependency sets per source,not full semantic contexts.",
+                      "Shared live variables are conservative conflicts; independent sets are not effect safety.",
+                      "Have/case/first counts are not runnable jobs or an effect-qualified full DAG."]}
 
 def main():
     matrix=ROOT/"native-cohort-matrix"
@@ -27,6 +69,8 @@ def main():
         if cell["cell"]=="linked-on":
             native_models.append(analyze(capture))
     if len(byid)!=200:raise ValueError("Wrong source population")
+    captures=[Path(c["raw_capture"]) for c in t["cells"] if c["cell"]=="linked-on"]
+    census=dependency_census(captures)
     comparisons=[];counts=collections.Counter();significant=[]
     for id,cells in byid.items():
         if set(cells)!={"stock","linked-off","linked-on"}:raise ValueError("Missing source comparison")
@@ -85,6 +129,7 @@ def main():
                "No complete merge-safe critical path or actual parallel runtime implemented.",
                "Leaf-only bound assumes fixed work and unchanged atomic C leaf calls, not a general kernel-parallelism bound.",
                "minif2f-4544 exceeds historical300s cutoff here; this budget3000 diagnostic population cannot establish production parallelism."]}
+    (out/"dependency-census.json").write_text(json.dumps(census,indent=2)+chr(10))
     (out/"summary.json").write_text(json.dumps(summary,indent=2)+chr(10))
     (out/"local-model-per-source.json").write_text(json.dumps(rows,indent=2)+chr(10))
     print(json.dumps({k:v for k,v in summary.items() if k not in ["whole_process_receipts","exclusive_cpu_by_kind_s","diagnostic_differences"]},indent=2))

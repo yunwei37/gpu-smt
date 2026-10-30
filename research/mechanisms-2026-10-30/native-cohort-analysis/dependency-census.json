@@ -1,0 +1,34 @@
+{
+  "sources": 200,
+  "C_calls_by_construct": {
+    "and_then": 156,
+    "allGoals": 69,
+    "first": 56,
+    "have": 303,
+    "case": 198
+  },
+  "sources_by_construct": {
+    "allGoals": 30,
+    "and_then": 56,
+    "first": 44,
+    "have": 130,
+    "case": 114
+  },
+  "exclusive_C_cpu_s_by_construct": {
+    "and_then": 0.004285076000000096,
+    "allGoals": 0.005321649000000077,
+    "first": 0.0010222019999999985,
+    "have": 0.021244666999999773,
+    "case": 0.015027429000000071
+  },
+  "sources_with_multiple_live_goals": 122,
+  "sources_with_at_least_one_shared_live_meta_snapshot": 1,
+  "observable_multi_goal_live_dependency_snapshots": 341,
+  "snapshots_with_shared_live_meta": 1,
+  "limits": [
+    "Exclusive construct CPU is wrapper work,not inclusive independently parallelizable proof work.",
+    "Snapshots deduplicate goal IDs+live dependency sets per source,not full semantic contexts.",
+    "Shared live variables are conservative conflicts; independent sets are not complete effect safety.",
+    "Have/case/first counts are not runnable independent jobs or an effect-qualified full DAG."
+  ]
+}
