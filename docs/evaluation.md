@@ -580,3 +580,40 @@ security repair or native collection is claimed. Compiler/tool/output/cache
 paths remain on the existing PVC outside the checkout. The actual complete
 paper build and observed memory are recorded in this step's receipt, separately
 from all earlier clocks. Reviews are same-thread self-review.
+
+
+## 2026-10-30 — failure frequency versus tail concentration (step0179)
+
+Root independently reaggregates the retained native-cell records for all three
+direct AutoVerus passes, using fsum and the original per-pass process clocks.
+Each pass has 3,566 unique complete candidates and no capture timeout. The
+3,376 nonzero exits consume 607.419495/599.613263/600.950988 s out of
+639.238028/631.214591/632.607252 s: 95.0224/94.9936/94.9959%.
+Native JSON success=false occurs on 2,940 rows per pass and consumes
+91.9664/91.9254/91.9163%. Each pass has 419 JSON-success/exit-one rows, costing
+3.01568/3.02811/3.03927%, and 17 exit-101 rows without a JSON verdict. These
+observations are not interchangeable acceptance classes or advance knowledge
+of an inevitably failing candidate. The already reported 58-source upper tail
+still contributes only 3.39888/3.33824/3.31490%.
+
+Thus the valid lack of a highly concentrated timeout/resource tail does not
+eliminate a large aggregate failed-candidate cost. No early rejection, budget
+failure reuse, source-cost predictor or end-to-end speedup is established.
+These clocks cannot be joined to publisher generation spans, other conditions
+or hardware points. The paper adds this local interpretation; all scientific
+framing, RQs, implementation and existing related work remain unchanged.
+
+W ea41025's phase-A plan has 53 targets (42 probability targets), 12,785 internal
+closure modules and 1,285 external import names. Time/RSS coefficients and
+native peaks are uncalibrated; planning is not a completed native workload.
+M 949622a's two tiny dependency controls succeed, but tactic Info/trace counts
+are 18/28 and 6/9. Root separately counts all kinds and tactic-only nodes;
+terms and punctuation must not be mislabeled tactic observations. No one-to-one
+trace join, global critical path, parallel speedup or replay eligibility follows.
+Their full 0.86654 s clock, leader high-water and sparse sample peak differ in
+scope. The planned bounded 200-source point is not silently treated as executed.
+
+Root runs zero native verifiers. Raw reanalysis output, initial all-kind counts,
+refined tactic-only counts, exact frozen commits, root elapsed time and memory
+are retained in step0179. Other lanes' sources and active captures remain
+untouched. This is same-thread self-review, not independent audit.

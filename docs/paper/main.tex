@@ -750,6 +750,18 @@ generation. Thus a large timeout/resource tail in the retained Lean point
 cannot be assumed for this source-replay workload. Releases that omit
 timeouts or native clocks cannot independently test such a concentration claim.
 
+A small upper-tail share does not imply that failing candidates consume little
+total time. In the same three passes, the 3,376 nonzero exits account for
+95.02\%, 94.99\% and 95.00\% of their respective summed process clocks.
+The 2,940 rows reporting native JSON \texttt{success=false} account for
+91.97\%, 91.93\% and 91.92\%. Each pass also has 419 JSON-success rows
+whose process exits one; they consume 3.02--3.04\% of the clock sum and are
+not whole-candidate acceptances. The 17 exit-101 rows have no native JSON
+verdict. Failure frequency, partial verification flags and tail concentration
+are therefore separate observations. These retrospective labels do not
+establish a sound early-rejection rule or a measured saving, and their
+process clocks are not the publisher's generation-time denominator.
+
 The publisher's 196 retained generation logs span 84,267 seconds between their
 first and last recorded timestamps. Their 1,652 inference-time labels sum to
 80,835.42 seconds (95.93\% of that aggregate span), including API waiting and

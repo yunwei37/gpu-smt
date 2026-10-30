@@ -1,0 +1,135 @@
+{
+  "W_commit": "ea410258484b8dc27471cd6cc173448099bc9be5",
+  "M_commit": "949622a78524a9726fbc68aa54a5bf052594cb4f",
+  "native_runs_by_root": 0,
+  "retained_direct_cells_reanalysis": [
+    {
+      "repetition": 0,
+      "candidates": 3566,
+      "process_wall_s": 639.2380278361416,
+      "nonzero_candidates": 3376,
+      "nonzero_wall_s": 607.4194949711546,
+      "nonzero_wall_fraction": 0.9502242803471899,
+      "native_json_false_candidates": 2940,
+      "native_json_false_wall_s": 587.8840467461323,
+      "native_json_false_wall_fraction": 0.9196637577025173,
+      "json_success_exit1_candidates": 419,
+      "json_success_exit1_wall_s": 19.277375399025914,
+      "json_success_exit1_wall_fraction": 0.030156803193140694,
+      "tail_candidates": 58,
+      "tail_wall_fraction": 0.033988798153266234,
+      "exit101_missing_json": 17,
+      "cross_tab_cells": 5
+    },
+    {
+      "repetition": 1,
+      "candidates": 3566,
+      "process_wall_s": 631.2145905109974,
+      "nonzero_candidates": 3376,
+      "nonzero_wall_s": 599.6132632380013,
+      "nonzero_wall_fraction": 0.9499356831289129,
+      "native_json_false_candidates": 2940,
+      "native_json_false_wall_s": 580.2466531110258,
+      "native_json_false_wall_fraction": 0.9192541836545466,
+      "json_success_exit1_candidates": 419,
+      "json_success_exit1_wall_s": 19.113885113974902,
+      "json_success_exit1_wall_fraction": 0.03028112055917676,
+      "tail_candidates": 58,
+      "tail_wall_fraction": 0.03338244479417569,
+      "exit101_missing_json": 17,
+      "cross_tab_cells": 5
+    },
+    {
+      "repetition": 2,
+      "candidates": 3566,
+      "process_wall_s": 632.6072523148923,
+      "nonzero_candidates": 3376,
+      "nonzero_wall_s": 600.9509883108894,
+      "nonzero_wall_fraction": 0.9499590561313304,
+      "native_json_false_candidates": 2940,
+      "native_json_false_wall_s": 581.4694751689076,
+      "native_json_false_wall_fraction": 0.9191634668131659,
+      "json_success_exit1_candidates": 419,
+      "json_success_exit1_wall_s": 19.22663882697998,
+      "json_success_exit1_wall_fraction": 0.030392694292745086,
+      "tail_candidates": 58,
+      "tail_wall_fraction": 0.03314904584205161,
+      "exit101_missing_json": 17,
+      "cross_tab_cells": 5
+    }
+  ],
+  "planning_scope": {
+    "phaseA_targets": 53,
+    "probability_targets": 42,
+    "internal_closure_modules": 12785,
+    "internal_source_bytes": 252627947,
+    "external_import_modules": 1285,
+    "native_RSS_unknown": true,
+    "native_build_or_cost_evidence": false,
+    "coefficients_calibrated": false
+  },
+  "M_control_nodes": [
+    {
+      "id": "independent",
+      "all_trace_kind_nodes": 33,
+      "all_info_kind_nodes": 24,
+      "tactic_trace_nodes": 28,
+      "tactic_info_nodes": 18,
+      "wall_ns": 2284717,
+      "cpu_ns": 2364340
+    },
+    {
+      "id": "coupled",
+      "all_trace_kind_nodes": 26,
+      "all_info_kind_nodes": 10,
+      "tactic_trace_nodes": 9,
+      "tactic_info_nodes": 6,
+      "wall_ns": 3960116,
+      "cpu_ns": 3967452
+    }
+  ],
+  "M_native_receipt": {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9,10,11",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-j1",
+      "-M8192",
+      "-T50000000",
+      "/workspaces/repository/research/mechanisms-2026-10-30/DAGCoreControls.lean"
+    ],
+    "source": "/workspaces/repository/research/mechanisms-2026-10-30/DAGCoreControls.lean",
+    "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+    "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+    "signals_sent": 0,
+    "native_allocation_limit": 50000000,
+    "native_memory_MiB": 8192,
+    "internal_wall_seconds": 120,
+    "intended_wall_handler_exit_code": 124,
+    "observed_internal_alarm_signal_possible": 14,
+    "pid": 5563,
+    "start_ticks": "739696082",
+    "native_kernel_peak_rss_bytes": 286560256,
+    "native_cpu_seconds": 0.818335,
+    "exit": 0,
+    "wall_s": 0.8665407411754131,
+    "sampled_peak_owned_rss_bytes": 14950400,
+    "minimum_node_MemAvailable_bytes": 61887528960,
+    "samples": 1,
+    "sample_interval_s": 1,
+    "retired": true
+  },
+  "limits": [
+    "Summed individual process walls are not service makespan or generation time.",
+    "Nonzero process exit and partial native JSON are different observations, neither defines reusable advance failure.",
+    "Tiny dependency controls do not establish a critical path or parallel speedup.",
+    "Static build scenarios are uncalibrated and not native execution evidence."
+  ],
+  "elapsed_s": 0.879561404697597,
+  "root_affinity": [
+    0,
+    1
+  ],
+  "root_peak_rss_kib": 413960
+}
