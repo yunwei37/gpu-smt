@@ -18,8 +18,9 @@ The recipe targets Linux x86-64 and fixes these inputs:
 | Lean REPL |2f0a3cb876b045cc0fe550ca3a625bc479816739|
 
 Both upstream Lean toolchain files select 4.18.0. Dependencies and cache are
-downloaded at build time. The full Docker build is pending its first bounded
-qualification attempt; see the release notes for the actual result.
+downloaded at build time. The prepared-path full Mathlib check timed out at both 60 and 180 seconds.
+The entrypoint now uses the CLI default fresh REPL. Its complete image recheck
+remains open; see the [qualification results](releases/0.1.0.md#corrective-qualification-result-and-closeout).
 No image is published. The .dockerignore excludes research data and reports
 without moving or deleting them.
 
@@ -47,7 +48,7 @@ lake env ../proofserve/target/release/proofserve serve \
 ~~~
 
 Paths are relative to that project. This advanced path requires a matching
-REPL; Docker supplies it automatically. The environment ID identifies the
+REPL. The Docker recipe supplies it, but its full qualification remains open. The environment ID identifies the
 immutable backend/toolchain/project context used for cache separation.
 
 ## Batch results

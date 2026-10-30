@@ -17,13 +17,18 @@ measured comparison; it is not a guarantee for every workload or isolated COW ga
 
 ## Quick start
 
-From this repository, build and start the pinned Linux x86-64 environment:
+Full Mathlib container qualification is still open: the tested prepared path
+times out even with a 180-second budget. The entrypoint now uses the existing
+fresh-REPL default; that correction still needs a full image recheck.
+[Qualification results](docs/releases/0.1.0.md#corrective-qualification-result-and-closeout).
+
+The pinned Linux x86-64 recipe is available for testing:
 
 ~~~sh
 docker build -t proofserve . && docker run --rm -p 127.0.0.1:3000:3000 proofserve
 ~~~
 
-The image includes Lean 4.18.0, Mathlib and REPL at fixed revisions. You do not
+The recipe pins Lean 4.18.0, Mathlib and REPL at fixed revisions. You do not
 need to supply a Lean installation or project. The first build downloads the
 toolchain and Mathlib cache. CPU and memory defaults are discovered automatically;
 research CPU IDs and a 48 GiB machine are not required.
@@ -80,8 +85,7 @@ target/release/proofserve --help
 [Apache-2.0](LICENSE).
 
 Version 0.1.0 is being prepared. No published registry image, crates.io package
-or stable binary release is advertised here. The Docker recipe is awaiting its
-full environment build on the selected machine.
+or stable binary release is advertised here. The corrected Docker recipe still needs full environment qualification.
 [Research status and retained results](docs/research-status.md) ·
 [Reproduction](bench/README.md) · [Paper](docs/paper/main.tex).
 
