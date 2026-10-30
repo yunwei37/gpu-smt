@@ -27,3 +27,5 @@ All SDK/source/build/raw assets outside Git. W16GiB/8core/one Lean remains.
 W006 complete:7source x baseline/profile-only14native compiles,all0. Wall44.002841/44.498820s(~1.13%observed overhead);CPU44.044105/44.530084s. Aggregate capture tree sampled7.43GiB,1Lean. See profile-overhead-4341. Broader cost point will use baseline flags;profile attribution separate.
 
 W007:EPFL4.15/APRIL4.22rc4 SDKs+release Mathlib caches complete;144sources+39pairs,222native invocations launched10:46:07Z. Raw outside Git; final native result pending. Original Mathlib pins unknown.
+
+W008:214completed prefix preserved;136EPFL+78APRILstartup errors. Native13733/birth741054360 sleeps at214 exact?,SIGINT errno13. No second Lean. APRIL compat and self-alarm bounded replay prepared,not qualified/launched. Population tail unresolved; raw fully on PVC.
