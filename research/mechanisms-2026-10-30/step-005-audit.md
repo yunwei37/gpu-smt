@@ -1,0 +1,1 @@
+Self-review: two actual control rows accepted; independent/coupled metavariable closures inspected. Non-bijective traces explicitly rejected for naive joins. Source and budget transformations retained.400-unit collection is prepared, not yet a result. No main engine edits.

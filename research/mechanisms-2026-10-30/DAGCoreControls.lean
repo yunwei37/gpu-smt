@@ -2,6 +2,7 @@ import Lean.Elab.Frontend
 set_option maxHeartbeats 200000
 set_option maxRecDepth 4000
 open Lean Elab Command
+@[extern "m_cpu_ns"] opaque mCpuNS : IO UInt64
 namespace MechanismDAG
 
 partial def levelDeps (l : Level) : List String :=
@@ -91,12 +92,15 @@ elab "measure_dag " path:str : command => do
   for c in cases do
     let id := (c.getObjValAs? String "id").toOption.getD "unknown"
     let code := (c.getObjValAs? String "code").toOption.getD ""
+    let mode := (c.getObjValAs? String "mode").toOption.getD "observe"
     let opts := ({} : Options) |>.setNat `maxHeartbeats 3000
-      |>.setBool `trace.profiler true |>.setNat `trace.profiler.threshold 0
+      |>.setBool `trace.profiler (mode == "observe") |>.setNat `trace.profiler.threshold 0
+    let cpuStart ← mCpuNS
     let start ← IO.monoNanosNow
     let state ← IO.processCommands (Parser.mkInputContext code id)
       {} (Command.mkState env {} opts)
     let stop ← IO.monoNanosNow
+    let cpuStop ← mCpuNS
     let mut traces := #[]
     for message in state.commandState.messages.toList do
       traces := traces ++ traceJson message.data
@@ -104,7 +108,7 @@ elab "measure_dag " path:str : command => do
     for m in state.commandState.messages.toList do
       if m.severity == .error then
         errors := errors.push (← m.data.toString)
-    let obj := Json.mkObj [("errors",toJson errors),("id",toJson id),("wallNanoseconds",toJson (stop-start)),
+    let obj := Json.mkObj [("mode",toJson mode),("errors",toJson errors),("id",toJson id),("wallNanoseconds",toJson (stop-start)),("cpuNanoseconds",toJson (cpuStop-cpuStart).toNat),
       ("hasErrors",toJson state.commandState.messages.hasErrors),
       ("infos",toJson (state.commandState.infoState.trees.toArray.map infoJson)),
       ("traces",toJson traces)]

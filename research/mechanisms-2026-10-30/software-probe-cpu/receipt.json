@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9",
+    "gcc",
+    "-O2",
+    "-std=c11",
+    "-fPIC",
+    "-shared",
+    "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+    "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+    "-o",
+    "/workspaces/repository/research/mechanisms-2026-10-30/software-probe-cpu/software-probe.so",
+    "-ldl"
+  ],
+  "exit_code": 0
+}

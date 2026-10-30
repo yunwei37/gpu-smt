@@ -10,11 +10,12 @@ def rss(pid):
 def run(source,label,wall_seconds=1200):
  out=HERE/'native'/label;out.mkdir(parents=True,exist_ok=False)
  (out/'source.lean').write_bytes(source.read_bytes())
+ (out/'runner.py').write_bytes(Path(__file__).read_bytes())
  env=os.environ.copy();paths=[ML/'.lake/build/lib']+sorted((ML/'.lake/packages').glob('*/.lake/build/lib'))
- env.update(LD_PRELOAD=str(HERE/'software-probe-wall-control/software-probe.so'),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS='1')
+ env.update(LD_PRELOAD=str(HERE/'software-probe-cpu/software-probe.so'),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS='1')
  args=['taskset','-c','8,9,10,11',str(SDK/'bin/lean'),'-j1','-M8192','-T50000000',str(source)]
  began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':'phobos-vt serial M branch, CPU8-11, RSS budget16GiB',
-   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_memory_MiB':8192,'internal_wall_seconds':wall_seconds,'wall_exit_code':124}
+   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_memory_MiB':8192,'internal_wall_seconds':wall_seconds,'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
  (out/'launch.json').write_text(json.dumps(receipt,indent=2)+'\n')
  peak=0;minavail=None;samples=0
  with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr,(out/'memory.jsonl').open('w') as memory:

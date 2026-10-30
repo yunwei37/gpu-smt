@@ -57,6 +57,11 @@ LEAN_EXPORT lean_obj_res m_lookup_symbol(lean_obj_arg value,lean_obj_arg world) 
 LEAN_EXPORT lean_obj_res m_set_phase(uint64_t value,lean_obj_arg world) {
  (void)world;current_phase=(sig_atomic_t)value;return lean_io_result_mk_ok(lean_box(0));
 }
+LEAN_EXPORT lean_obj_res l_mCpuNS(lean_obj_arg world) {
+ (void)world;struct timespec t;clock_gettime(CLOCK_THREAD_CPUTIME_ID,&t);
+ uint64_t value=(uint64_t)t.tv_sec*1000000000ULL+(uint64_t)t.tv_nsec;
+ return lean_io_result_mk_ok(lean_box_uint64(value));
+}
 LEAN_EXPORT lean_obj_res l_lookupSymbol(lean_obj_arg value,lean_obj_arg world) {
  return m_lookup_symbol(value,world);
 }
