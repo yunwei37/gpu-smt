@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9,10,11",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-j1",
+    "-M8192",
+    "-T50000000",
+    "/workspaces/repository/research/mechanisms-2026-10-30/DigitsCertificate.lean"
+  ],
+  "source": "/workspaces/repository/research/mechanisms-2026-10-30/DigitsCertificate.lean",
+  "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+  "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+  "signals_sent": 0,
+  "native_allocation_limit": 50000000,
+  "native_memory_MiB": 8192,
+  "internal_wall_seconds": 1200,
+  "wall_exit_code": 124,
+  "pid": 8842,
+  "start_ticks": "739508415"
+}

@@ -1,0 +1,59 @@
+{
+  "source": "artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z",
+  "native_executions": 0,
+  "prepared_parent_count": 1,
+  "prepared_attempt_count": 1,
+  "missing_attempt_metrics": {
+    "no_prepared_ready": 7849,
+    "no_leader_high_water": 42
+  },
+  "all_prepared_leader_peak_bytes": {
+    "count": 1,
+    "minimum": 379527168,
+    "median": 379527168,
+    "p90": 379527168,
+    "p99": 379527168,
+    "maximum": 379527168
+  },
+  "accepted_or_rejected_prepared_leader_peak_bytes": {
+    "count": 1,
+    "minimum": 379527168,
+    "median": 379527168,
+    "p90": 379527168,
+    "p99": 379527168,
+    "maximum": 379527168
+  },
+  "registered_parent_observed_peak_bytes": {
+    "count": 1,
+    "minimum": 3614543872,
+    "median": 3614543872,
+    "p90": 3614543872,
+    "p99": 3614543872,
+    "maximum": 3614543872
+  },
+  "solo_registered_parent_bytes": {
+    "count": 2,
+    "minimum": 2067472384,
+    "median": 2841008128.0,
+    "p90": 2067472384,
+    "p99": 2067472384,
+    "maximum": 3614543872
+  },
+  "rss_samples": 20323,
+  "total_minus_registered_process_RSS_bytes": {
+    "count": 20323,
+    "minimum": 5574656,
+    "median": 3917946880,
+    "p90": 4034166784,
+    "p99": 4057759744,
+    "maximum": 4329672704
+  },
+  "prepared_attempts_with_more_than_parent_plus_one_process": 0,
+  "conclusions": [
+    "Per-attempt aggregate peak is not the sum of marginal job footprints; a retained parent can be charged repeatedly by an independent-job reservation model.",
+    "Leader wait4 high water excludes descendants and the shared parent. It is not an aggregate RSS upper bound.",
+    "The residual is not attributed solely to a shared parent: it can include engine and retained/inactive owned processes.",
+    "No parent discount or native-outcome parity is inferred by subtracting independently observed maxima.",
+    "A corrected physical-memory/COW gain requires synchronized process ownership, active/idle state and RSS trajectories, not a per-source peak scalar."
+  ]
+}

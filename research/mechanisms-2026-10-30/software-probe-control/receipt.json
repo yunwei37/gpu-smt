@@ -1,0 +1,37 @@
+[
+  {
+    "argv": [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-DSAMPLER_TEST",
+      "-DNO_LEAN_FFI",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+      "-o",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software-probe-control/sampler-test",
+      "-ldl"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-fPIC",
+      "-shared",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+      "-o",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software-probe-control/software-probe.so",
+      "-ldl"
+    ],
+    "exit_code": 0
+  },
+  {
+    "test_exit_code": 0,
+    "elapsed_seconds": 0.20634962245821953,
+    "stdout": "software_samples=100 state=9741365406119980049\n",
+    "naturally_retired": true
+  }
+]

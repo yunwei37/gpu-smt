@@ -1,0 +1,51 @@
+[
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9",
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+      "-DSAMPLER_TEST",
+      "-DNO_LEAN_FFI",
+      "-o",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software-probe-wall-control/sampler-test",
+      "-ldl"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9",
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+      "-fPIC",
+      "-shared",
+      "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+      "-o",
+      "/workspaces/repository/research/mechanisms-2026-10-30/software-probe-wall-control/software-probe.so",
+      "-ldl"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "natural",
+    "exit_code": 0,
+    "elapsed_s": 0.20674033369868994,
+    "parent_signals": 0,
+    "retired": true
+  },
+  {
+    "label": "self-wall",
+    "exit_code": 124,
+    "elapsed_s": 0.022285963408648968,
+    "parent_signals": 0,
+    "retired": true
+  }
+]

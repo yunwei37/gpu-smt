@@ -1,0 +1,36 @@
+{
+  "build_argv": [
+    "taskset",
+    "-c",
+    "8,9",
+    "gcc",
+    "-O2",
+    "-std=c11",
+    "/workspaces/repository/research/mechanisms-2026-10-30/compute_reference.c",
+    "-o",
+    "/workspaces/repository/research/mechanisms-2026-10-30/compute-reference/compute-reference"
+  ],
+  "build_exit": 0,
+  "hardware_point": "phobos-vt",
+  "certificate_status": "reference numeric computation only; no verified Lean certificate yet",
+  "runs": [
+    {
+      "exit_code": 0,
+      "wall_seconds": 0.004332148469984531,
+      "stdout": "solution=5,401\nsolution=401,5\ndigits_count=100 digits_sum=544000 digits_CPU_seconds=0.000022335 lattice_cells=4016016 lattice_count=2 lattice_CPU_seconds=0.002379636\n",
+      "naturally_retired": true
+    },
+    {
+      "exit_code": 0,
+      "wall_seconds": 0.004186587408185005,
+      "stdout": "solution=5,401\nsolution=401,5\ndigits_count=100 digits_sum=544000 digits_CPU_seconds=0.000022081 lattice_cells=4016016 lattice_count=2 lattice_CPU_seconds=0.002373823\n",
+      "naturally_retired": true
+    },
+    {
+      "exit_code": 0,
+      "wall_seconds": 0.004030493088066578,
+      "stdout": "solution=5,401\nsolution=401,5\ndigits_count=100 digits_sum=544000 digits_CPU_seconds=0.000022011 lattice_cells=4016016 lattice_count=2 lattice_CPU_seconds=0.002389924\n",
+      "naturally_retired": true
+    }
+  ]
+}

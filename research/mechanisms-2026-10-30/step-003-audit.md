@@ -1,0 +1,3 @@
+Self-review: build/control receipt checked; no PMU metrics inferred. Native import deadline violation disclosed, no duplicate Lean launched. Prototype unexecuted; DAG and shared-parent gains remain unknown. Only M files staged.
+Internal wall-exit and C numeric controls have actual exit receipts; neither is claimed as Lean qualification. Live import outputs remain separate and explicitly incomplete.
+Final certificate exit0 and printed axioms checked; kernel warm recheck is distinct from initial checking. Both software-wrapper failure and all certificate failures retained. Maps process naturally retired after a disclosed wall-limit violation. Parent metric scope undercoverage corrected with first attempt retained. No new native parity or DAG parallelism claim.
