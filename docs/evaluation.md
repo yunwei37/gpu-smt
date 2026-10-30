@@ -135,6 +135,30 @@ order-based join or cross-run phase rescaling. The2984uninvoked modules have
 unknown contents/cost. No corpus/warm-service/GPU Amdahl bound or cacheenablement.
 
 
+[Modern native certificate contrast](tmp/build-and-evaluate/step-0208-20261030T164526+0000/step-report.md) audits pinned M af6e66d:
+seven distinct Int/list row goals from one module in the earlier45typepilot.
+14whole-source calls allaccepted,14correctedobservers allaccepted;292new
+theorem/auxiliary checks(14original+278certificate). Whole-source wall
+13.317706/23.936857s and CPU13.108858/24.262333s original/certificate;
+allsevenpairs slower. Extra-check intervals2.327609/5.757960s are additional
+checks in a populated environment,not exclusive CPU/initialproofchecking;
+definitions/abbrevs omitted there but included in plain sourcecost.
+Same final proposition text/importonlyRowCompute,finalAXpropext/Quot.sound.
+Corrupted scalar rejected. Native4.34.1/j1/M8192/source200k/depth10000/
+CPUs8–15/self35s;45nativeidentities retired;samplepeak4980285440B,
+nohardRSSquota. One modeobservation perrow,counterbalancednotrandomized.
+
+MatchedSDKaddDeclCore defaultsdoChecktrue;getMaxHeartbeats multiplies1000,
+so200koption→200000000raw. Threeinitialcertificate observers fail artificial
+raw1m limit;excludednotoriginalprooffailures. Initial45typeprobe128budget
+diagnostics retained. Corrected45typeprobe has49completedchecks,
+16complete3repstypes/1partial1rep/28unreached,wall60.180691s/selfalarm-14,
+nofinalcompletemarker. Parentgroupcompletion doesnotcomplete thiscensus.
+Selectedsevennegative contrastsdonot negate algorithmicdigit/gridcompression,
+provegeneralcertificatebenefit,measurewarmserviceoridentifyfullkernelcost.
+No newrootnativecalls,cacheorproductionmode.
+
+
 EPFL [136returned-prefix audit](tmp/build-and-evaluate/step-0185-20261030T113532+0000/step-report.md)
 has53compile/71ordinary/12budget,623.799202s;budget25.60%of returned-prefix
 cost,not full144frame/natural arrivals. Later seven-source10k/M6144/15s point:

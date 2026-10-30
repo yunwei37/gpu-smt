@@ -546,6 +546,63 @@ axioms and time-weighted benefit remain unmeasured, so the repeated-type counts
 cannot be converted into saved verification time or whole-corpus failure-cache
 coverage.
 
+\paragraph{A modern native certificate contrast.}
+A different representation need not reduce checking cost. We select seven
+distinct closed integer/list row goals from one compiled
+\texttt{ComputeRow1115Batch17} module, within the earlier 45-type pilot.
+Both versions import only its row-computation definitions, not the original
+answer theorem. The original proves the exact row value with
+\texttt{decide +kernel}. The alternative emits scalar results from untrusted
+integer computation, proves each scalar with the same original kernel,
+then assembles the list and its sum. Each pair states the same proposition.
+
+All seven original and seven certificate sources compile under Lean~4.34.1,
+one worker, an 8,192\,MiB cooperative memory option, 200,000 source heartbeats
+and a 35-second internal wall bound on phobos-vt CPUs 8--15.
+Order is counterbalanced by row, with one observation per mode.
+A deliberately corrupted scalar is rejected. Final theorem dependencies
+use only \texttt{propext} and \texttt{Quot.sound}; no alternate proof checker
+is trusted. Table~\ref{tab:modern-native-certificates} reports the actual
+negative result.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrr}
+\toprule
+Mode & \shortstack{Source-wall\\sum (s)} &
+\shortstack{Extra check\\interval sum (s)} \\
+\midrule
+Original & 13.318 & 2.328 \\
+Scalar certificates & 23.937 & 5.758 \\
+\bottomrule
+\end{tabular}
+\caption{Seven selected integer/list row goals, all accepted in both modes.
+Every certificate pair is slower in both reported measures.
+Source clocks include fresh CLI loading, proof construction and checking.
+Extra checks cover 14 original and 278 certificate theorem declarations.
+They are separate additional checks of all newly created theorem
+declarations and auxiliaries, under fresh names in the already populated
+environment. Definitions and abbreviations are not included in those extra
+checks; their construction is included in source clocks. These overlapping
+boundaries are not added together or interpreted as a kernel CPU partition.}
+\label{tab:modern-native-certificates}
+\end{table}
+
+The corrected extra-check observer uses the SDK's source-heartbeat conversion
+and default checked declaration insertion. Three certificate observers under
+an earlier, incorrectly smaller raw-heartbeat limit fail and are excluded,
+with their records retained. A broader matched-budget type-cost probe reaches
+17 of 45 types before its 60-second self-alarm: 16 have all three requested
+checks, one has one check, and 28 are not reached. Its 49 completed checks
+do not constitute a complete type-cost census or failed original proofs.
+The seven complete pairs show that this scalar/list representation increases
+serial cost for these goals, not that all certificate algorithms are slower.
+Their selection is biased toward available compiled types from one module;
+neither these cold CLI clocks nor additional declaration checks measure
+warm-service throughput or whole-library benefit.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
