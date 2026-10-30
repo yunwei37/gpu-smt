@@ -41,3 +41,5 @@ W012:OpenAI128closure states=81native compile/1HB/46uninvoked,2newtarget endpoin
 W013:47retry modules allcompile100kHB,128closure3targets complete incrementally;81cached deps explicit,old50kfailure retained. Separate102.649s native sums,capture110.118s,combined8.13GiB. Native135objectreader succeeds;globalcachecounts not established.
 
 W014:native135object census succeeds:1799theorems,743aux,601Expr/604level-private groups;45source decide+kernel match45shaped helpers/45distinctExpr. Whole1.354m count and transitiveaxioms unknown. Next53-frame batch plus separately labeled PlanarPacking repeat probe in preparation.
+
+W015:171batch complete108compile/1Gridwall120/62uninvoked,7new originalendpoints pass;combined12.20GiB. Two EPFLj2controls progress toHBdiagnostics13.7s vsj1idle15wall,no passclaim. 16Planar source annotations lie in16namespaces,typeidentity unknown. Gridprofile300diagnostic running,oldRSS charged.

@@ -16,3 +16,5 @@ that waiting must eventually end. There are8unreturned selected requests,
 including this active one;old queue is not resumed or replaced.
 Selected144frame incomplete;results not population/Pareto estimates and do not
 prove or refute transfer of1.6%/73%. All raw/failed/partial outputs preserved.
+
+first-error-surface.csv partitions the71ordinary-error requests by the first emitted error-marked line using declared keyword buckets. Whole-request costs are charged once;these are surface categories,not measured phase/tactic time or sole failure causes.
