@@ -1,0 +1,75 @@
+{
+  "new_native_runs": 0,
+  "source": "artifacts/engine-resource-profile-2026-10-25/gpu-smt-warm-engine-full7808-20261028T1220Z",
+  "trace_comparison": {
+    "warm": {
+      "samples": 25167,
+      "covered_span_seconds": 25174.736735515064,
+      "sampled_peak_RSS_bytes": 52365074432,
+      "cells": [
+        {
+          "GiB_per_core": 2,
+          "total_budget_GiB": 8,
+          "held_sample_seconds_above_threshold": 22760.280999356415,
+          "fraction_of_observed_span_above": 0.904092115777621
+        },
+        {
+          "GiB_per_core": 4,
+          "total_budget_GiB": 16,
+          "held_sample_seconds_above_threshold": 18402.268822329585,
+          "fraction_of_observed_span_above": 0.7309815794962704
+        },
+        {
+          "GiB_per_core": 8,
+          "total_budget_GiB": 32,
+          "held_sample_seconds_above_threshold": 7895.34696859098,
+          "fraction_of_observed_span_above": 0.3136218285632628
+        },
+        {
+          "GiB_per_core": 12,
+          "total_budget_GiB": 48,
+          "held_sample_seconds_above_threshold": 92.93707603216171,
+          "fraction_of_observed_span_above": 0.003691680155727367
+        }
+      ]
+    },
+    "engine": {
+      "samples": 20323,
+      "covered_span_seconds": 20321.999419927597,
+      "sampled_peak_RSS_bytes": 52404801536,
+      "cells": [
+        {
+          "GiB_per_core": 2,
+          "total_budget_GiB": 8,
+          "held_sample_seconds_above_threshold": 16076.994593858719,
+          "fraction_of_observed_span_above": 0.7911128359788132
+        },
+        {
+          "GiB_per_core": 4,
+          "total_budget_GiB": 16,
+          "held_sample_seconds_above_threshold": 12459.995680332184,
+          "fraction_of_observed_span_above": 0.6131284340119608
+        },
+        {
+          "GiB_per_core": 8,
+          "total_budget_GiB": 32,
+          "held_sample_seconds_above_threshold": 5465.005702972412,
+          "fraction_of_observed_span_above": 0.2689206701587379
+        },
+        {
+          "GiB_per_core": 12,
+          "total_budget_GiB": 48,
+          "held_sample_seconds_above_threshold": 83.00880336761475,
+          "fraction_of_observed_span_above": 0.0040846769873547455
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Each trace uses its own sample timestamps and sampled denominator; clocks are not aligned across runs.",
+    "Left-hold integration is descriptive, not new-budget admission, counterfactual outcomes or measured throughput.",
+    "A one-second response can overshoot; these are not hard RSS quotas.",
+    "The new threshold would change queueing, restarts, failure timing and perhaps terminal coverage.",
+    "Use the separate peak-reservation matrix only as a labeled model; no observed 48GiB clock is rescaled to another budget."
+  ]
+}

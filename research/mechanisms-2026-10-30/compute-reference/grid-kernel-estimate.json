@@ -1,0 +1,42 @@
+{
+  "hardware_point": "phobos-vt, Lean4.9.0-rc1, serial CPU8-11, native code unchanged",
+  "samples": [
+    {
+      "name": "block32",
+      "cells": 1024,
+      "kernel_recheck_seconds": 0.104427294,
+      "seconds_per_cell": 0.000101979779296875,
+      "linear_4016016_cell_estimate_seconds": 409.55242533271877
+    },
+    {
+      "name": "block64",
+      "cells": 4096,
+      "kernel_recheck_seconds": 0.474051104,
+      "seconds_per_cell": 0.0001157351328125,
+      "linear_4016016_cell_estimate_seconds": 464.794145137125
+    },
+    {
+      "name": "block128",
+      "cells": 16384,
+      "kernel_recheck_seconds": 2.108382724,
+      "seconds_per_cell": 0.00012868546899414063,
+      "linear_4016016_cell_estimate_seconds": 516.8029024479727
+    },
+    {
+      "name": "solutionBlockLeft",
+      "cells": 1024,
+      "kernel_recheck_seconds": 0.104818139,
+      "seconds_per_cell": 0.0001023614638671875,
+      "linear_4016016_cell_estimate_seconds": 411.0852766740469
+    },
+    {
+      "name": "solutionBlockRight",
+      "cells": 1024,
+      "kernel_recheck_seconds": 0.1025124,
+      "seconds_per_cell": 0.000100109765625,
+      "linear_4016016_cell_estimate_seconds": 402.04242050625004
+    }
+  ],
+  "full_grid_certificate_executed": false,
+  "estimate_scope": "Warm kernel recheck only; linear sampled-cell extrapolation. Not a certified upper bound; excludes proof generation, initial checking, coverage/equivalence lemma, orchestration, memory changes, cache/shape effects."
+}

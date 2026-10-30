@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9,10,11",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "-j1",
+    "-M8192",
+    "-T50000000",
+    "/workspaces/repository/research/mechanisms-2026-10-30/DAGControls.lean"
+  ],
+  "source": "/workspaces/repository/research/mechanisms-2026-10-30/DAGControls.lean",
+  "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+  "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+  "signals_sent": 0,
+  "native_allocation_limit": 50000000,
+  "native_memory_MiB": 8192,
+  "internal_wall_seconds": 90,
+  "wall_exit_code": 124,
+  "pid": 98,
+  "start_ticks": "739630510",
+  "native_kernel_peak_rss_bytes": 48558080,
+  "native_cpu_seconds": 0.15195999999999998,
+  "exit": 124,
+  "wall_s": 97.96705721039325,
+  "sampled_peak_owned_rss_bytes": 62660608,
+  "minimum_node_MemAvailable_bytes": 61295996928,
+  "samples": 87,
+  "sample_interval_s": 1,
+  "retired": true
+}

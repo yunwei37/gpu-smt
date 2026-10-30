@@ -1,0 +1,2 @@
+Self-review: all five grid theorems pass and print no axioms; raw recheck times and extrapolation scope checked. Threshold envelope has separate trace denominators; no alternate-budget throughput or parity inferred. Pod replacement and SIGALRM actual fate disclosed. Only M paths changed. Timed 200-source DAG remains incomplete.
+Control checks reveal a non-bijective trace/InfoTree mapping; no naive global join or complete parallelism figure is reported. Prepared400 diagnostic units remain unexecuted.
