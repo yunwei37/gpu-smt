@@ -363,3 +363,17 @@ not full Gittins and has unknown original-budget eligibility. No unsafe resource
 cache or unvalidated runtime scheduler is enabled. Primary literature and
 paper now distinguish algorithm-selection/search/restart precedents from a
 prospective native-semantics contribution. Four directions/RQs remain active.
+
+## Latest correction — runtime-only and cross-proof call granularity
+
+Source-feature success/cost ranking is frozen,no retraining. Step0166/4741ad8
+uses retained native Syntax and proof-relative mapping for all41resource failures:
+19narrow have/rw/rfl templates,5different proofs with the same explicit finite
+filter target template. Four later current envelopes889.82s;separate historical
+rfl CPU442.05s across5. These are not complete native state/resource witnesses.
+Steps0167/1772b1a and0168/77ea9f9complete elapsed-only LAS/completion-index
+resume/restart models on both7808points,including the immutable previously
+measured short-order control. No source features are recomputed for it.
+Mean task latency improves in the CPU proxy,but consumed work/batch timing
+worsen and RSS/original-budget parity is unqualified. No runtime feature is
+enabled;exact finite bounds/exhaustive unsolved groups remain explicit.

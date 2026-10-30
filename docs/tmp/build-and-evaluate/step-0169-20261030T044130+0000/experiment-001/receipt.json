@@ -1,0 +1,45 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6-7",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/workspaces/.agent-state/gpu-smt-captures/paper-step-0169-20261030T044130+0000",
+    "main.tex"
+  ],
+  "exit": 0,
+  "output": "/workspaces/.agent-state/gpu-smt-captures/paper-step-0169-20261030T044130+0000",
+  "samples": [
+    {
+      "rss_bytes": 770048,
+      "available_bytes": 23200985088
+    },
+    {
+      "rss_bytes": 191823872,
+      "available_bytes": 23011483648
+    },
+    {
+      "rss_bytes": 190873600,
+      "available_bytes": 23014805504
+    },
+    {
+      "rss_bytes": 196358144,
+      "available_bytes": 23016865792
+    },
+    {
+      "rss_bytes": 193961984,
+      "available_bytes": 23015247872
+    },
+    {
+      "rss_bytes": 197001216,
+      "available_bytes": 23016091648
+    },
+    {
+      "rss_bytes": 59604992,
+      "available_bytes": 23058870272
+    }
+  ],
+  "scope": "Paper only;no native Lean;sampled not hard RSS enforcement"
+}

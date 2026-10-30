@@ -961,37 +961,51 @@ only $1.01842\times$ the oracle's 35,838.02 seconds.
 These are conditional summed-work quantities, not observed service wall times
 or a global speedup bound.
 
-A five-fold, whole-problem-held-out model predicts acceptance and arithmetic
-expected observed cost from inexpensive source features. Probability/cost
-ordering uses 36,356.85 seconds, 141.40 seconds (0.39\%) below short-source
-ordering. It improves 51 problems but worsens 79; an exploratory paired
-problem bootstrap interval for the work reduction includes zero.
-Adding completed sibling failure/cost history increases work to 36,902.15
-seconds. A training-distribution one-prefix probe/restart heuristic consumes
-37,451.49 seconds, including 1,087.37 seconds of discarded prefixes.
-This is a restricted Gittins-inspired heuristic, not the full index policy
-or lossless native resume. Its 2,645 restarts also have unknown eligibility
-under original cumulative native budgets; optimistically retaining observed
-terminal labels does not establish exact bounded behavior.
-The historical two-worker data likewise show no work reduction from the new
-probability/cost model. CPU-slot timing projections omit RSS admission and
-exclusive retries and therefore do not establish end-to-end benefit.
-No new runtime policy is enabled from these results.
+The subsequent comparison uses runtime observations only; source-feature
+prediction is frozen. It extracts the complete candidate order of the existing
+short-source consumer from its archived scheduler ledger without recomputing
+features or fitting another source model. Replaying that retained order
+recovers the same 3,724 completed candidates and 142 observed-solved problems.
+
+Runtime-only policies rank by attained service or an empirical completion-time
+stopping index learned from other held-out problems' runtimes, without tactic
+types, source length or success-probability features. At the current point,
+the retained-order reference consumes 36,498.25 seconds of frozen work.
+Attained-service and runtime-index lossless-resume controls consume 38,487.25
+and 38,726.61 seconds. Charging discarded prefixes in the corresponding restart
+models increases work to 96,486.22 and 54,747.32 seconds.
+The runtime-index restart model reduces mean problem completion from
+3,894.30 to 1,596.58 seconds, while worsening total work and batch completion.
+This is a modeled latency/work tradeoff, not measured service acceleration.
+All policies still finish every candidate of observed-unsolved problems and
+retain the same 142 observed-solved problem IDs conditionally on frozen labels.
+RSS admission, exclusive retry serialization, continuation costs and original
+native-budget eligibility remain unmodeled; the CPU-slot clocks cannot be used
+as physical equal-resource predictions. These limited index models do not
+establish Gittins optimality for finite proof groups or free kill/restart.
+No new runtime policy is enabled from them.
 
 \paragraph{Resource-failure reuse remains unqualified.}
 In the matched four-worker capture, 41 RSS-watchdog failures span four
 problems with counts 29, nine, two and one. Their exclusive process envelopes
 sum to 8,843.12 seconds, within the 9,145.23-second exclusive tail that also
-contains one timeout. All 41 full sources and comment-stripped sources differ.
-Collapsing whitespace creates two later source matches covering 444.91 seconds
-of envelopes. Grouping by problem and final source line gives a much larger
-conditional opportunity, but preceding proof state and diagnostics can differ.
-The archive has no complete failed-entry goal/context/effect record for these
-41 calls; the true state-match rate is unknown.
+contains one timeout.
+The relevant unit is a repeated expensive call across different proofs,
+rather than equality of complete source files. Retained native syntax covers
+all 41 sources. A narrow three-step \texttt{have}/\texttt{rw}/\texttt{rfl}
+template applies to 19; five distinct proofs replace the set variable by the
+same explicit finite-filter expression and then call \texttt{rfl}.
+The four later proofs have 889.82 seconds of current exclusive envelopes.
+Separate historical profiles observe 442.05 seconds of \texttt{rfl} CPU over
+the five proofs; these clocks are not combined into a wall-time saving.
+The rewritten-target template is source-derived, not a complete native
+goal/local-context/effect-state equality check. Other proof steps and local
+proof objects can affect the retained heap and remaining memory.
 An aggregate RSS interruption depends on allocation, retained/shared memory,
-peer history and sampling. It is not a deterministic instruction-budget
-certificate and does not establish failure at every smaller budget.
-We therefore do not replace native work with a resource-failure rejection.
+peer history and sampling. The same target, tactic and global RSS cap do not
+supply a deterministic work-budget certificate or establish failure at every
+smaller budget. We therefore retain this focused cross-proof opportunity
+without enabling a resource-failure rejection cache.
 
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.

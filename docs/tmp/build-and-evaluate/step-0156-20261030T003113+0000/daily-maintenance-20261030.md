@@ -81,3 +81,14 @@ Paper results/positioning now follow these limits. No AI delegation or native
 collection;all outputs on existingPVC. An existing UM760control-plane CLI path
 read back successful paper build after a direct-SSH output stall;no UI/auth/
 credential/security/schedule/CronJob change or repeated direct reconnection.
+
+## Steps0166–0169 — apply user correction and inspect calls/runtime only
+
+Froze source predictor branch. Native Syntax audit finds a five-proof repeated
+explicit rfl computation rather than relying on whole-source duplicates.
+Corrected the native parser span interpretation to proof-relative and retained
+the failed source-absolute assertion. Full runtime-only policies and retained
+strong consumer order show lower modeled mean task finish but more work and
+worse batch timing under charged restarts. RSS/native budgets remain open;
+no production cache/preemption is enabled from that proxy. Publish paper with
+this narrower honest evidence while keeping all four directions active.
