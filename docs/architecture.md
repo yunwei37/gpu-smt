@@ -4,13 +4,31 @@ The engine is a Rust workspace independent of historical Python experiments.
 Four continuing research directions remain open. Resource primitives are prior
 work; novelty must come from measured workload-aware whole-flow savings.
 
+## Asymmetric trust
+
+Acceptance is trusted only after the original Lean kernel checks the proof under
+declared native semantics. Rejection may use any fast path; it does not add an
+axiom to accepted proofs or prove a proposition false. Faster rejection can drop
+a valid attempt, so completeness/accepted-set/pass@k effects must be measured.
+
+Only changing the trusted kernel changes that proof-checking boundary. Extracted
+computation, batching, reflection certificates and compiled tactics still return
+evidence checked by the original kernel. Native tactic compilation, csimp and
+Expr representation are distinct feasibility/TCB questions; compilation alone
+does not establish faster kernel reduction.
+
+Do not assume the operational watchdog as a research semantic primitive.
+Analyze ordinary native failures and deterministic heartbeat/resource budgets.
+The existing watchdog below remains a service resource mechanism, with its
+signal/retirement limitations reported.
+
 ## Layers and dependency direction
 
-    gpu-smt-server (HTTP/CLI, Kimina adapter)
+    proofserve (HTTP/CLI, Kimina adapter)
            │
-    gpu-smt-engine (queue, admission, ownership, watchdog, preemption)
+    proofserve-engine (queue, admission, ownership, watchdog, preemption)
            │                         │
-    gpu-smt-core ←──────────── gpu-smt-lean (native JSON protocol)
+    proofserve-core ←──────────── proofserve-lean (native JSON protocol)
 
 Core defines public requests, context identities, verdicts, cancellation and
 attempt provenance. Backends never import services; the queue never imports
@@ -28,12 +46,18 @@ versioned; production stability is not asserted.
 | FailureReplayBackend | Opaque scoped input/failed transition; backend revalidates effects, diagnostics, budget and cancellation |
 | PreparedState | Backend-owned safe preparation/branch boundary, no arbitrary threaded fork |
 
+The table describes implemented contracts. Proposed fast rejection policies
+remain separate experiments; this document does not claim they are enabled.
+
 ## Resource layer
 
-The current resource point uses48GiB aggregate actual RSS, no per-worker address
-space cap, CPU8–11. Concurrency derives from measured active CPU per worker.
-Unknown-memory jobs start conservatively; observed context peaks guide future
-admission. Predictions are reservations, not a hard memory guarantee.
+The service discovers eligible CPUs and visible cgroup-v2 resource capacity;
+explicit settings remain available for reproducible measurements.
+Historical48GiB/CPU8–11 captures retain that point. Current development resources
+and migration qualification are recorded in [research-plan](research-plan.md);
+they are not a new48GiB performance capture.
+Unknown-memory jobs start conservatively; observed context peaks guide admission.
+Predictions are reservations, not hard memory guarantees.
 
 The Rust watchdog samples registered owned trees on a nominal one-second
 cadence in one owned parent-process thread,independent of Tokio request tasks.
@@ -60,7 +84,7 @@ sampling/stop scheduling can change operational preemptions/statuses.
  Kernel
 start ticks prevent signalling an unrelated reused PID. On excess preempt the
 largest active owned process, reap its group and requeue its candidate for an
-exclusive attempt after queued first attempts and active jobs retire. A solo attempt exceeding48GiB is
+exclusive attempt after queued first attempts and active jobs retire. A solo attempt exceeding the configured RSS budget is
 resource failure, not logical rejection or infinite retry. Queueing/retries/
 cleanup enter complete latency and attempt history. No other Workspace changes.
 

@@ -6,13 +6,13 @@ an assertion that the current prototype is production-stable.
 
 ## Library interfaces
 
-- gpu-smt-core: Candidate, Batch, Mode, Outcome, Status, Verification,
+- proofserve-core: Candidate, Batch, Mode, Outcome, Status, Verification,
   Attempt, BatchEvent, Execution, exact CacheKey and extension traits.
-- gpu-smt-engine: Engine, Config and built-in FIFO/source-size policies,
+- proofserve-engine: Engine, Config and built-in FIFO/source-size policies,
   exact cache, composable TaskInterleave<P>, measured-headroom admission
   and Linux /proc monitor.
-- gpu-smt-lean: fresh stock REPL backend, optional PreparedRepl and strict classifier.
-- gpu-smt-server: embeddable Axum router and gpu-smt executable.
+- proofserve-lean: fresh stock REPL backend, optional PreparedRepl and strict classifier.
+- proofserve: embeddable Axum router and proofserve executable.
 
 Backend/policy/monitor/admission/cache are injected at Engine::new.
 PreparedState and FailureDetector define future native-state extensions;
@@ -21,7 +21,7 @@ An actual rejection detector is not implemented. A trait is not an acceleration 
 
 ## Standalone tactic-failure replay skeleton
 
-gpu-smt-core exports FailureReplayBackend and TacticCompletion; gpu-smt-engine
+proofserve-core exports FailureReplayBackend and TacticCompletion; proofserve-engine
 exports FailureCache and its opaque FailureInput. This additive experimental
 0.1 library API has no CLI/HTTP option. FailureCacheAdapter connects a qualified
 FailureCacheVerificationBackend to Engine through the existing VerificationBackend
@@ -46,7 +46,7 @@ reclaims memory. Engine shutdown awaits active retirement, then the adapter
 clears records before delegating native shutdown. Prepared-state reporting and
 watchdog interruption are forwarded unchanged.
 
-[Engine pipeline tests](../crates/gpu-smt-engine/tests/failure_backend.rs) exercise
+[Engine pipeline tests](../crates/proofserve-engine/tests/failure_backend.rs) exercise
 default-off behavior, dynamic opt-in, separate final decisions after a repeated
 ordinary tactic failure, operational exclusions, resource retry/cleanup and
 whole-source identity separation. These are simulated API/lifecycle checks,
@@ -439,6 +439,6 @@ Sampling may overshoot; this is not a kernel hard quota.
 Use --cpus, --worker-cores and --memory-gib only when choosing a specific
 resource point. Explicit values retain their existing meaning; CPUs must be
 eligible. Original captures keep their original parameters and clocks.
-The G10 research limit remains explicitly12GiB with serial native work;
-automatic service defaults are not permission to run that capture at a larger
-point. Legacy cgroup-v1 controllers are not currently auto-discovered.
+Historical G10 captures retain their explicit12GiB serial point; current
+development allocations are in research-plan.md. Automatic service defaults do
+not change any frozen capture resource point. Legacy cgroup-v1 controllers are not currently auto-discovered.

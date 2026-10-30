@@ -13,7 +13,7 @@ Use Rust1.98 or newer on Linux and Python3 for subprocess fixtures:
     cargo test --workspace --all-targets
     cargo test --workspace --doc --locked
     RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps
-    cargo bench -p gpu-smt-engine --bench exact_cache
+    cargo bench -p proofserve-engine --bench exact_cache
 
 Cargo excludes doctests from --all-targets; run both test commands above. CI also
 retains the short native candidate differential artifact, including raw JSON,
@@ -35,7 +35,7 @@ require a stock REPL and its pinned project, and must not overlap an owning
 Workspace's existing full collection:
 
     LEAN_REPL=/absolute/path/to/repl LEAN_PROJECT=/absolute/path/to/project \
-      cargo test -p gpu-smt-lean --test native_differential \
+      cargo test -p proofserve-lean --test native_differential \
         native_task_memory_accept_reject_and_sorry_match_raw_stock_repl -- --ignored
 
 CI runs the native contract against pinned official Lean4.18/REPL sources.
@@ -45,7 +45,7 @@ and LEAN_SYSROOT, set after building [the native adapter](native/lean/README.md)
     LEAN_REPL=/absolute/path/to/repl LEAN_PROJECT=/absolute/path/to/project \
       LEAN_PREPARED_HOST=/tmp/prepared-build/prepared-host \
       LEAN_SYSROOT=/absolute/path/to/matching-lean-sdk \
-      cargo test -p gpu-smt-lean --test native_differential \
+      cargo test -p proofserve-lean --test native_differential \
         native_import_parent_isolates_children_and_matches_raw_responses -- --ignored
 
 This tests the declared pinned-context transport/lifecycle contract, not
