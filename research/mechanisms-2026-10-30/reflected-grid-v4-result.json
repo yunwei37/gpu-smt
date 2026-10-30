@@ -1,0 +1,207 @@
+{
+  "receipt": {
+    "argv": [
+      "taskset",
+      "-c",
+      "8-15",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-j8",
+      "-M8192",
+      "-T50000000",
+      "/workspaces/repository/research/mechanisms-2026-10-30/ReflectedGridCertificate.lean"
+    ],
+    "source": "/workspaces/repository/research/mechanisms-2026-10-30/ReflectedGridCertificate.lean",
+    "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+    "native_jobs": 8,
+    "cpu_affinity": "8-15",
+    "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+    "signals_sent": 0,
+    "native_allocation_limit": 50000000,
+    "native_T_flag": 50000000,
+    "native_T_semantics": "legacy field records CLI-T value, not a whole-source IO.getNumHeartbeats quota",
+    "native_memory_MiB": 8192,
+    "native_M_semantics": "Lean cooperative process RSS checks, not allocator-only, RLIMIT_AS or kernel hard quota",
+    "internal_wall_seconds": 300,
+    "loaded_measurement_library": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-cpu/software-probe.so",
+    "intended_wall_handler_exit_code": 124,
+    "observed_internal_alarm_signal_possible": 14,
+    "pid": 31778,
+    "start_ticks": "741976118",
+    "native_kernel_peak_rss_bytes": 588652544,
+    "native_cpu_seconds": 7.73364,
+    "exit": 0,
+    "wall_s": 6.929170955903828,
+    "sampled_peak_owned_rss_bytes": 572776448,
+    "minimum_node_MemAvailable_bytes": 61440118784,
+    "samples": 7,
+    "sample_interval_s": 1,
+    "retired": true
+  },
+  "groups": [
+    {
+      "workers": 1,
+      "repetition": 0,
+      "wall_ns": 282871152,
+      "checks": 16
+    },
+    {
+      "workers": 1,
+      "repetition": 1,
+      "wall_ns": 275029697,
+      "checks": 16
+    },
+    {
+      "workers": 1,
+      "repetition": 2,
+      "wall_ns": 274809857,
+      "checks": 16
+    },
+    {
+      "workers": 1,
+      "repetition": 3,
+      "wall_ns": 276332892,
+      "checks": 16
+    },
+    {
+      "workers": 1,
+      "repetition": 4,
+      "wall_ns": 276747232,
+      "checks": 16
+    },
+    {
+      "workers": 2,
+      "repetition": 0,
+      "wall_ns": 273040005,
+      "checks": 16
+    },
+    {
+      "workers": 2,
+      "repetition": 1,
+      "wall_ns": 275971935,
+      "checks": 16
+    },
+    {
+      "workers": 2,
+      "repetition": 2,
+      "wall_ns": 274098709,
+      "checks": 16
+    },
+    {
+      "workers": 2,
+      "repetition": 3,
+      "wall_ns": 273243174,
+      "checks": 16
+    },
+    {
+      "workers": 2,
+      "repetition": 4,
+      "wall_ns": 274145186,
+      "checks": 16
+    },
+    {
+      "workers": 4,
+      "repetition": 0,
+      "wall_ns": 274918783,
+      "checks": 16
+    },
+    {
+      "workers": 4,
+      "repetition": 1,
+      "wall_ns": 274580732,
+      "checks": 16
+    },
+    {
+      "workers": 4,
+      "repetition": 2,
+      "wall_ns": 274744675,
+      "checks": 16
+    },
+    {
+      "workers": 4,
+      "repetition": 3,
+      "wall_ns": 273693522,
+      "checks": 16
+    },
+    {
+      "workers": 4,
+      "repetition": 4,
+      "wall_ns": 274438698,
+      "checks": 16
+    },
+    {
+      "workers": 8,
+      "repetition": 0,
+      "wall_ns": 274403447,
+      "checks": 16
+    },
+    {
+      "workers": 8,
+      "repetition": 1,
+      "wall_ns": 274653613,
+      "checks": 16
+    },
+    {
+      "workers": 8,
+      "repetition": 2,
+      "wall_ns": 84741749,
+      "checks": 16
+    },
+    {
+      "workers": 8,
+      "repetition": 3,
+      "wall_ns": 86735424,
+      "checks": 16
+    },
+    {
+      "workers": 8,
+      "repetition": 4,
+      "wall_ns": 85056157,
+      "checks": 16
+    }
+  ],
+  "summary": {
+    "1": {
+      "seconds": [
+        0.282871152,
+        0.275029697,
+        0.274809857,
+        0.276332892,
+        0.276747232
+      ],
+      "median_seconds": 0.276332892
+    },
+    "2": {
+      "seconds": [
+        0.273040005,
+        0.275971935,
+        0.274098709,
+        0.273243174,
+        0.274145186
+      ],
+      "median_seconds": 0.274098709
+    },
+    "4": {
+      "seconds": [
+        0.274918783,
+        0.274580732,
+        0.274744675,
+        0.273693522,
+        0.274438698
+      ],
+      "median_seconds": 0.274580732
+    },
+    "8": {
+      "seconds": [
+        0.274403447,
+        0.274653613,
+        0.084741749,
+        0.086735424,
+        0.085056157
+      ],
+      "median_seconds": 0.086735424
+    }
+  },
+  "TCB": "stock Lean4.9 kernel plus proved row_sound/block_sound/block_append; no sorryAx/native_decide",
+  "scope": "full 2..2005 square via division row certificate; parallel phase rechecks previously declared independent chunk proofs, does not replace original sequential initial checking or merge returned environments",
+  "startup_effect": "first 1/2/4 groups and first two 8 groups near serial; later three 8 groups overlap; cause not established"
+}

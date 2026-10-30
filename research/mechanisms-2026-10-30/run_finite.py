@@ -37,17 +37,17 @@ def owned_tree():
   if more<=roots:break
   roots|=more
  return [{'pid':pid,'start_ticks':table[pid][1],'rss_bytes':table[pid][2]} for pid in roots if pid in table]
-def run(source,label,wall_seconds=1200,library=None,native_executable=None,embedded_probe=False,input_path=None):
+def run(source,label,wall_seconds=1200,library=None,native_executable=None,embedded_probe=False,input_path=None,jobs=1,cpus="8,9,10,11"):
  out=persistent_capture_path(CAPTURE_ROOT/label);out.mkdir(parents=True,exist_ok=False)
  (out/'source.lean').write_bytes(source.read_bytes())
  (out/'runner.py').write_bytes(Path(__file__).read_bytes())
  env=os.environ.copy();paths=[SDK/'lib/lean',ML/'.lake/build/lib']+sorted((ML/'.lake/packages').glob('*/.lake/build/lib'))
- env.update(LEAN_SYSROOT=str(SDK),M_TACTIC_TRACE_FILE=str(out/'tactics.jsonl'),LD_PRELOAD=str(library or (BUILD_ROOT/'software-probe-cpu/software-probe.so')),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS='1')
+ env.update(LEAN_SYSROOT=str(SDK),M_TACTIC_TRACE_FILE=str(out/'tactics.jsonl'),LD_PRELOAD=str(library or (BUILD_ROOT/'software-probe-cpu/software-probe.so')),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS=str(jobs))
  if input_path is not None:env['M_DAG_INPUT']=str(input_path)
  if embedded_probe:env.pop('LD_PRELOAD',None)
- args=['taskset','-c','8,9,10,11',str(native_executable or (SDK/'bin/lean')),'-j1','-M8192','-T50000000',str(source)]
+ args=['taskset','-c',cpus,str(native_executable or (SDK/'bin/lean')),f'-j{jobs}','-M8192','-T50000000',str(source)]
  began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':'phobos-vt serial M branch, CPU8-11, RSS budget16GiB',
-   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_T_flag':50000000,'native_T_semantics':'legacy field records CLI-T value, not a whole-source IO.getNumHeartbeats quota','native_memory_MiB':8192,'native_M_semantics':'Lean cooperative process RSS checks, not allocator-only, RLIMIT_AS or kernel hard quota','internal_wall_seconds':wall_seconds,'loaded_measurement_library':env.get('LD_PRELOAD','embedded probe'),'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
+   'native_jobs':jobs,'cpu_affinity':cpus,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_T_flag':50000000,'native_T_semantics':'legacy field records CLI-T value, not a whole-source IO.getNumHeartbeats quota','native_memory_MiB':8192,'native_M_semantics':'Lean cooperative process RSS checks, not allocator-only, RLIMIT_AS or kernel hard quota','internal_wall_seconds':wall_seconds,'loaded_measurement_library':env.get('LD_PRELOAD','embedded probe'),'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
  (out/'launch.json').write_text(json.dumps(receipt,indent=2)+'\n')
  peak=0;minavail=None;samples=0
  with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr,(out/'memory.jsonl').open('w') as memory:
@@ -69,5 +69,5 @@ def run(source,label,wall_seconds=1200,library=None,native_executable=None,embed
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
  print(json.dumps(receipt),flush=True);return code
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('label');p.add_argument('--wall-seconds',type=int,default=1200);p.add_argument('--library',type=Path);p.add_argument('--native-executable',type=Path);p.add_argument('--embedded-probe',action='store_true');p.add_argument('--input',type=Path);a=p.parse_args()
- raise SystemExit(run(a.source.resolve(),a.label,a.wall_seconds,a.library,a.native_executable,a.embedded_probe,a.input))
+ p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('label');p.add_argument('--wall-seconds',type=int,default=1200);p.add_argument('--library',type=Path);p.add_argument('--native-executable',type=Path);p.add_argument('--embedded-probe',action='store_true');p.add_argument('--input',type=Path);p.add_argument('--jobs',type=int,default=1);p.add_argument('--cpus',default='8,9,10,11');a=p.parse_args()
+ raise SystemExit(run(a.source.resolve(),a.label,a.wall_seconds,a.library,a.native_executable,a.embedded_probe,a.input,a.jobs,a.cpus))
