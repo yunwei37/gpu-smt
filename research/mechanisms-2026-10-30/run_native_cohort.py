@@ -16,6 +16,15 @@ def native_seconds_left(started, now=None):
     return max(0,min(1500,remaining))
 
 def main():
+    import argparse
+    global MATRIX
+    parser=argparse.ArgumentParser();parser.add_argument("--accepted-original",action="store_true")
+    cli=parser.parse_args()
+    if cli.accepted_original:MATRIX=ROOT/"accepted-original-matrix"
+    shards=[0] if cli.accepted_original else [0,1]
+    expected=50 if cli.accepted_original else 100
+    prefix="accepted-original" if cli.accepted_original else "native-cohort"
+    per_native=300 if cli.accepted_original else 1500
     MATRIX.mkdir(parents=True,exist_ok=True)
     os.environ["M_OWNERSHIP_ROOT_PID"]=str(os.getpid())
     os.environ["M_OWNERSHIP_ROOT_BIRTH"]=Path(f"/proc/{os.getpid()}/stat").read_text().split()[21]
@@ -25,15 +34,15 @@ def main():
           "state":state,"elapsed_s":time.monotonic()-started,"whole_group_limit_s":1800,
           "finished_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
           "cells":records},indent=2))
-    for shard in [0,1]:
+    for shard in shards:
         cells=["stock","linked-off","linked-on"]
         if shard==1:cells.reverse()
         for cell in cells:
-            label=f"native-cohort-s{shard}-{cell}"
+            label=f"{prefix}-s{shard}-{cell}"
             out=ROOT/"captures"/label
             if out.exists():
                 raise RuntimeError(f"Preserve existing capture instead of rerunning {label}")
-            seconds=native_seconds_left(started)
+            seconds=min(per_native,native_seconds_left(started))
             if not seconds:
                 finish("group_deadline_partial");return 124
             mode="observe" if cell=="linked-on" else "control"
@@ -49,12 +58,12 @@ def main():
             assert not identity_alive(receipt),"Do not overlap a surviving native process"
             rows=sum(line.startswith("M_DAG ") for line in (out/"stdout.txt").open())
             record={"shard":shard,"cell":cell,"label":label,"client_exit":result.returncode,
-              "native_exit":receipt["exit"],"rows":rows,"expected":100,"native_retired":True,
+              "native_exit":receipt["exit"],"rows":rows,"expected":expected,"native_retired":True,
               "wall_s":receipt["wall_s"],"raw_capture":str(out)}
             records.append(record)
             (MATRIX/"cell-results.json").write_text(json.dumps(records,indent=2))
             print("END",json.dumps(record),flush=True)
-            if result.returncode!=0 or receipt["exit"]!=0 or rows!=100:
+            if result.returncode!=0 or receipt["exit"]!=0 or rows!=expected:
                 finish("native_failure_or_deadline_partial");return 1
     finish("complete")
     return 0

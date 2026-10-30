@@ -9,10 +9,12 @@ HERE=Path(__file__).resolve().parent
 
 def dependency_census(captures):
     counts=collections.Counter();exclusive=collections.Counter();sources=collections.Counter()
-    multi_sources=shared_sources=multi=shared=0
+    multi_sources=shared_sources=multi=shared=0;observed_sources=set()
     for capture in captures:
         events=read_events(capture/"tactics.jsonl")
         for row in read_rows(capture/"stdout.txt"):
+            if row["id"] in observed_sources:raise ValueError("Repeated source across census segments")
+            observed_sources.add(row["id"])
             present=set()
             for n in walk(events[row["id"]]["nodes"]):
                 k=normalized(n["kind"])
@@ -37,7 +39,7 @@ def dependency_census(captures):
                 multi+=1
                 if len(components(gs))<len(gs):shared+=1;had_shared=True
             shared_sources+=int(had_shared)
-    return {"sources":200,"C_calls_by_construct":dict(counts),
+    return {"sources":len(observed_sources),"C_calls_by_construct":dict(counts),
             "sources_by_construct":dict(sources),"exclusive_C_cpu_s_by_construct":dict(exclusive),
             "sources_with_multiple_live_goals":multi_sources,
             "sources_with_at_least_one_shared_live_meta_snapshot":shared_sources,
@@ -49,26 +51,32 @@ def dependency_census(captures):
                       "Have/case/first counts are not runnable jobs or an effect-qualified full DAG."]}
 
 def main():
-    matrix=ROOT/"native-cohort-matrix"
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument("--accepted-original",action="store_true")
+    cli=parser.parse_args()
+    expected_sources=50 if cli.accepted_original else 200
+    expected_cells=3 if cli.accepted_original else 6
+    expected_per_cell=50 if cli.accepted_original else 100
+    matrix=ROOT/("accepted-original-matrix" if cli.accepted_original else "native-cohort-matrix")
     terminal=matrix/"terminal.json"
     if not terminal.exists():
         raise SystemExit("Matrix has no terminal receipt; preserve healthy running collection.")
     t=json.loads(terminal.read_text())
-    if len(t["cells"])!=6:raise ValueError("Incomplete cell receipts")
+    if len(t["cells"])!=expected_cells:raise ValueError("Incomplete cell receipts")
     byid=collections.defaultdict(dict);native_models=[];receipts=[]
     for cell in t["cells"]:
         capture=Path(cell["raw_capture"])
         receipt=json.loads((capture/"receipt.json").read_text());receipts.append(receipt)
-        if receipt["exit"]!=0 or not cell["native_retired"] or cell["rows"]!=100:
+        if receipt["exit"]!=0 or not cell["native_retired"] or cell["rows"]!=expected_per_cell:
             raise ValueError("Incomplete/failed native cell: preserve separately, not full parity")
         rows=read_rows(capture/"stdout.txt")
-        if len(rows)!=100:raise ValueError("Wrong row count")
+        if len(rows)!=expected_per_cell:raise ValueError("Wrong row count")
         for row in rows:
             if cell["cell"] in byid[row["id"]]:raise ValueError("Duplicate source/cell")
             byid[row["id"]][cell["cell"]]=row
         if cell["cell"]=="linked-on":
             native_models.append(analyze(capture))
-    if len(byid)!=200:raise ValueError("Wrong source population")
+    if len(byid)!=expected_sources:raise ValueError("Wrong source population")
     captures=[Path(c["raw_capture"]) for c in t["cells"] if c["cell"]=="linked-on"]
     census=dependency_census(captures)
     comparisons=[];counts=collections.Counter();significant=[]
@@ -90,7 +98,7 @@ def main():
             if any(f!="allocatedHeartbeatDelta" for f in differences):
                 significant.append({"id":id,"comparator":comparator,"differences":differences,
                                     "stock_errors":a["errors"],"comparator_errors":b["errors"]})
-    out=HERE/"native-cohort-analysis";out.mkdir(exist_ok=True)
+    out=HERE/("accepted-original-analysis" if cli.accepted_original else "native-cohort-analysis");out.mkdir(exist_ok=True)
     with (out/"differential.csv").open("w") as f:
         w=csv.DictWriter(f,fieldnames=list(comparisons[0]));w.writeheader();w.writerows(comparisons)
     rows=[r for model in native_models for r in model["rows"]]
@@ -99,7 +107,7 @@ def main():
     cpu=sum(r["body_cpu_s"] for r in rows)
     saved=sum(r["local_allGoals_saved_cpu_s"] for r in rows)
     leaf_lower=sum(r.get("largest_opaque_leaf_cpu_s",0) for r in rows)
-    summary={"sources":200,"native_returns":600,"completed_cells":6,
+    summary={"sources":expected_sources,"native_returns":expected_sources*3,"completed_cells":expected_cells,
              "difference_counts":dict(counts),"diagnostic_differences":significant,
              "same_observed_flags_diagnostics_InfoTrees":not significant,
              "strict_raw_heartbeat_equality":not any(k.endswith("/allocatedHeartbeatDelta") for k in counts),
@@ -123,13 +131,15 @@ def main():
              "limits":native_models[0]["limits"]+[
                "Raw heartbeat differences are reported even if flags/diagnostics match.",
                "Strict unchanged budget semantics is not implied by observed flag parity.",
-               "Fixed200 selected sources,not full7808 acceptance/sorry policy.",
+               f"Selected{expected_sources}sources,not full7808 acceptance/sorry policy.",
                "Untraced body time is not automatically kernel time; software PC samples required.",
                "Cell order reversed across disjoint shards; no repeated variance estimate.",
                "No complete merge-safe critical path or actual parallel runtime implemented.",
                "Leaf-only bound assumes fixed work and unchanged atomic C leaf calls, not a general kernel-parallelism bound.",
-               "minif2f-4544 exceeds historical300s cutoff here; this budget3000 diagnostic population cannot establish production parallelism."]}
+               ("Original source heartbeat0 retained;50priorpasses,new serial SDK API/hardware point,not production throughput." if cli.accepted_original else "minif2f-4544 exceeds historical300s cutoff here;budget3000diagnostic point is not production parallelism.")]}
     (out/"dependency-census.json").write_text(json.dumps(census,indent=2)+chr(10))
+    if cli.accepted_original:
+        summary["limits"][0]="InfoTree-enabled frontend with original source heartbeat0;not production acceptance policy."
     (out/"summary.json").write_text(json.dumps(summary,indent=2)+chr(10))
     (out/"local-model-per-source.json").write_text(json.dumps(rows,indent=2)+chr(10))
     print(json.dumps({k:v for k,v in summary.items() if k not in ["whole_process_receipts","exclusive_cpu_by_kind_s","diagnostic_differences"]},indent=2))
