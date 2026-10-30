@@ -45,3 +45,30 @@ W014:native135object census succeeds:1799theorems,743aux,601Expr/604level-privat
 W015:171batch complete108compile/1Gridwall120/62uninvoked,7new originalendpoints pass;combined12.20GiB. Two EPFLj2controls progress toHBdiagnostics13.7s vsj1idle15wall,no passclaim. 16Planar source annotations lie in16namespaces,typeidentity unknown. Gridprofile300diagnostic running,oldRSS charged.
 
 W016:Grid300profile reachesownwallboundary,491typecheck+1importevents partial;CPU176.164user/196.607sys,0majorfaults,24.78mvoluntary switches,combined10.89GiB. No wallpartition/Amdahl claim. New unprofiledj8/M8/100kHB/self1200/batch1400point launched;terminal pending audit.
+
+
+W017–W021 current frontier (2026-10-30):
+- Grid j8/unprofiled/100kHB/self1200s actually passed634.280s, peak7.70GiB
+  child /12.24GiB combined with old13733. Foreground retired;70110b1.
+  Earlier j1 wall120/profile300 points remain censored, not falseproofs.
+- EPFL training static: group0=24,945rows; random groups113/280/287=13,593.
+  Group-level invalid fractions vary46.97–71.49%. No native times in release.
+  f0e6d57/f2f4a2b contain small derived tables and explicit sampling limits.
+- Publisher construction audit: synthetic250k, fallback-recovered inputs,
+  infra/missing-declaration/invalid-without-error filters. Exact final count
+  arithmetic reconciled;7509dcc. Consistency is partly enforced by filtering.
+- Lean4.34.1 auxiliary proof cache is local to an environment branch, not
+  persisted in .olean; global annotation dedup is not native miss counting.
+- Current finite native group: PVC workloads/openai4341-native-after-grid,
+  controller31871/birth741984203; verify actual identity/terminal before
+  next native group.8threads/CPU0–7,100kHB/M8192,120s self per file,
+ 1400s batch. Includes charged old13733/birth741054360. Do not restart.
+- Twelve EPFL-training released sources prepared outside Git (4valid,
+ 4invalid ordinary,4invalid budget-text), excluding exact?/aesop text;
+  raw epfl-training12-inputs + epfl-training12-native. NOT launched as of
+  this update. Planned reconstructed4.15release cache,10kHB/M6144/j2,
+ 20s per-case self-exit,300s group; cannot run until current group retires.
+  This is not publisher timing or a population cost sample.
+- Typed Planar probe remains dependency-blocked; no invented goal-type count.
+  All raw/partial/failed captures outside checkout on PVC. Only workloads/
+  changed. Original53target sample and broader native cost coverage open.
