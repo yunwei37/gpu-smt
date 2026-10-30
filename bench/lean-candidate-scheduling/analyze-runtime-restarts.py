@@ -46,17 +46,20 @@ class RuntimePrior:
   k=int(np.argmin(rank));answer=(float(rank[k]),float(ends[k]))
   assert answer[0]>0 and answer[1]>observed_age
   self.cache[key]=answer;return answer
-def simulate(meta,records,workers,priors,folds,policy):
+def simulate(meta,records,workers,priors,folds,policy,reference_order):
  tasks=list(dict.fromkeys(x['task_id'] for x in meta));groups=collections.defaultdict(list)
  for i,x in enumerate(meta):groups[x['task_id']].append(i)
  assert len(tasks)==244 and all(len(g)==32 for g in groups.values())
- initial=[groups[t][k] for k in range(32) for t in tasks]
+ if policy=='retained_short_control':
+  index={x['id']:i for i,x in enumerate(meta)}
+  initial=[index[reference_order[t][k]] for k in range(32) for t in tasks]
+ else:initial=[groups[t][k] for k in range(32) for t in tasks]
  positions={i:k for k,i in enumerate(initial)}
  jobs=[{'spent':0.,'progress':0.,'failed_prefix_bound':0.,'preemptions':0,'attempts':0,'discarded':0.,'terminal':None} for _ in meta]
  ready=[];events=[];active={};active_tasks=set();solved={};finished={};now=0.;seq=0
  def plan(i):
   j=jobs[i]
-  if policy=='fifo':return (positions[i],math.inf)
+  if policy in ['fifo','retained_short_control']:return (positions[i],math.inf)
   if policy.startswith('las'):
    chunk=1. if policy=='las_resume' else 2.**j['preemptions']
    return (j['spent'],j['progress']+chunk if policy=='las_resume' else chunk)
@@ -127,6 +130,15 @@ def simulate(meta,records,workers,priors,folds,policy):
 def main():
  ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--out',type=pathlib.Path,required=True);a=ap.parse_args()
  a.out.mkdir(parents=True,exist_ok=False);start=time.monotonic();meta,points=data();tasks=list(dict.fromkeys(x['task_id'] for x in meta));taskfold={t:k%5 for k,t in enumerate(tasks)};folds=[taskfold[x['task_id']] for x in meta]
+ reference=collections.defaultdict(list);routing={x['id']:x['task_id'] for x in meta}
+ with gzip.open(OLD/'first-short/scheduler-events.jsonl.gz','rt') as f:
+  for line in f:
+   row=json.loads(line)
+   if row['event'] in ['source_started','cancelled_before_start']:
+    reference[routing[row['source_id']]].append(row['source_id'])
+ assert set(reference)==set(tasks) and all(len(v)==len(set(v))==32 for v in reference.values())
+ assert {i for v in reference.values() for i in v}==set(routing)
+
  for point,workers,records in points:
   priors=[RuntimePrior([records[x['id']]['cost'] for x in meta if taskfold[x['task_id']]!=k]) for k in range(5)]
   target={t for t in tasks if any(records[x['id']]['accepted'] for x in meta if x['task_id']==t)}
@@ -136,10 +148,10 @@ def main():
   minimum=mandatory+sum(min(records[i]['cost'] for i in g if records[i]['accepted']) for t,g in groups.items() if t in target)
   summary={'point':point,'sources':7808,'tasks':244,'observed_solved_tasks':142,'unsolved_tasks':102,
     'all_frozen_work_seconds':sum(x['cost'] for x in records.values()),'mandatory_unsolved_work_seconds':mandatory,'ideal_exact_first_success_work_seconds':minimum,
-    'policy_information':'Only runtime age/elapsed prefix observation and prior runtimes of other heldout tasks. No code,tactic type,length,success probability model or outcome labels in planner.',
+    'policy_information':'Only runtime age/elapsed prefix observation and prior runtimes of other heldout tasks. The retained_short_control replays an immutable already-measured per-task order;no feature extraction or source-model training. Outcome labels are not passed to selectors.',
     'priors':[{'fold':k,'training_tasks':sum(v!=k for v in taskfold.values()),'heldout_tasks':sorted(t for t,v in taskfold.items() if v==k),'runtime_observations':len(p.x)} for k,p in enumerate(priors)],'policies':{}}
-  for policy in ['fifo','las_resume','index_resume','las_restart','index_restart']:
-   d=simulate(meta,records,workers,priors,folds,policy)
+  for policy in ['fifo','retained_short_control','las_resume','index_resume','las_restart','index_restart']:
+   d=simulate(meta,records,workers,priors,folds,policy,reference)
    with gzip.open(a.out/(point+'-'+policy+'.json.gz'),'wt') as f:json.dump(d,f)
    summary['policies'][policy]={k:v for k,v in d.items() if k not in ['per_source','solved_task_ids','new_elapsed_budget_proxy_exceedances','scope']}
    summary['policies'][policy]['new_elapsed_budget_proxy_exceedance_count']=len(d['new_elapsed_budget_proxy_exceedances'])

@@ -1,0 +1,49 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6",
+    "/workspaces/.agent-state/gpu-smt-deps/kimina-server-fb2393d/.venv/bin/python",
+    "bench/lean-candidate-scheduling/analyze-runtime-restarts.py",
+    "--out",
+    "/workspaces/repository/docs/tmp/build-and-evaluate/step-0168-20261030T043728+0000/experiment-001/with-retained-control"
+  ],
+  "exit": 0,
+  "samples": [
+    {
+      "rss_bytes": 1912832,
+      "available_bytes": 23284068352
+    },
+    {
+      "rss_bytes": 195416064,
+      "available_bytes": 23098339328
+    },
+    {
+      "rss_bytes": 157810688,
+      "available_bytes": 23098245120
+    },
+    {
+      "rss_bytes": 146804736,
+      "available_bytes": 23100522496
+    },
+    {
+      "rss_bytes": 147001344,
+      "available_bytes": 23105413120
+    },
+    {
+      "rss_bytes": 147017728,
+      "available_bytes": 23109308416
+    },
+    {
+      "rss_bytes": 147017728,
+      "available_bytes": 23111262208
+    },
+    {
+      "rss_bytes": 111583232,
+      "available_bytes": 23117635584
+    }
+  ],
+  "source_predictor_training": false,
+  "reference_source": "Existing first-short/scheduler-events.jsonl.gz ordering only",
+  "native_invocations": 0
+}
