@@ -18,7 +18,7 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
   [Full200 result](native-cohort-result.md):600 returns with observed flag/
   diagnostic/InfoTree parity;rawHB differs,production DAG remains unknown.
 - [Software residence](software-profile-result.md):native sampling actually
-  checked;observer IR separated,successful kernel4334sample profile retained.
+  checked;observer IR separated,successful kernel4258sample pure-timing profile retained.
 - [Local dependency model](step-009-report.md):independent/coupled controls
   separated; complete DAG and merge semantics still unknown.
 - [Ordinary-kernel certificate](step-003-report.md):digits answer100 passes;
@@ -27,6 +27,10 @@ No main-engine change or inferred speedup. Historical G10 points stay separate.
   result coverage changes retry-model costs; no calibrated COW speedup claim.
 - [Hot tactics](hot-tactics.md) and [prior work](prior-work.md):actual loader
   context matters; reflection/futures/compilation are established techniques.
+
+Execution-budget correction:[whole matrix overrun and forward fix](collection-budget-erratum.md).
+The former six-cell collection exceeded30minutes overall; per-cell bounds
+did not make it compliant. Current native points have completed and retired.
 
 ## Questions and measurement sequence
 

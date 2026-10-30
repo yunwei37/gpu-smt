@@ -10,11 +10,21 @@ def identity_alive(receipt):
     f=Path("/proc")/str(receipt["pid"])/"stat"
     try:return f.read_text().split()[21]==receipt["start_ticks"]
     except OSError:return False
+def native_seconds_left(started, now=None):
+    """Honor the user's30minute whole-collection bound across finite cells."""
+    remaining=int(1800-((time.monotonic() if now is None else now)-started))-1
+    return max(0,min(1500,remaining))
+
 def main():
     MATRIX.mkdir(parents=True,exist_ok=True)
     os.environ["M_OWNERSHIP_ROOT_PID"]=str(os.getpid())
     os.environ["M_OWNERSHIP_ROOT_BIRTH"]=Path(f"/proc/{os.getpid()}/stat").read_text().split()[21]
-    records=[]
+    records=[];started=time.monotonic()
+    def finish(state):
+        (MATRIX/"terminal.json").write_text(json.dumps({
+          "state":state,"elapsed_s":time.monotonic()-started,"whole_group_limit_s":1800,
+          "finished_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
+          "cells":records},indent=2))
     for shard in [0,1]:
         cells=["stock","linked-off","linked-on"]
         if shard==1:cells.reverse()
@@ -23,9 +33,12 @@ def main():
             out=ROOT/"captures"/label
             if out.exists():
                 raise RuntimeError(f"Preserve existing capture instead of rerunning {label}")
+            seconds=native_seconds_left(started)
+            if not seconds:
+                finish("group_deadline_partial");return 124
             mode="observe" if cell=="linked-on" else "control"
             args=["taskset","-c","12,13","python3","-u",str(HERE/"run_finite.py"),
-              str(HERE/"CMeasureCohort.lean"),label,"--wall-seconds","1500",
+              str(HERE/"CMeasureCohort.lean"),label,"--wall-seconds",str(seconds),
               "--input",str(MATRIX/f"shard-{shard}-{mode}.json")]
             if cell=="stock":args+=["--library",str(LIB)]
             else:args+=["--native-executable",str(EXE),"--embedded-probe"]
@@ -41,6 +54,8 @@ def main():
             records.append(record)
             (MATRIX/"cell-results.json").write_text(json.dumps(records,indent=2))
             print("END",json.dumps(record),flush=True)
-    (MATRIX/"terminal.json").write_text(json.dumps({"finished_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"cells":records},indent=2))
+            if result.returncode!=0 or receipt["exit"]!=0 or rows!=100:
+                finish("native_failure_or_deadline_partial");return 1
+    finish("complete")
     return 0
 if __name__=="__main__":raise SystemExit(main())

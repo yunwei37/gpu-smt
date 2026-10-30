@@ -5,19 +5,23 @@ from run_pc_qualification import EXT,HERE,alive
 from analyze_pc_samples import analyze
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--point",choices=["pc-digits","pc-digits-pure-timing"],default="pc-digits")
+    point=parser.parse_args().point
     if not json.loads((EXT/"pc-qualification/terminal.json").read_text())["native_controls_qualified"]:
         raise SystemExit("Short native sampler control did not qualify")
     previous=json.loads((EXT/"pc-representatives/cells.json").read_text())
     if any(alive(c["receipt"]) for c in previous):
         raise SystemExit("Previous representative native still active")
-    out=EXT/"pc-digits";out.mkdir(exist_ok=False)
+    out=EXT/point;out.mkdir(exist_ok=False)
     env=dict(os.environ,M_OWNERSHIP_ROOT_PID=str(os.getpid()),
              M_OWNERSHIP_ROOT_BIRTH=Path(f"/proc/{os.getpid()}/stat").read_text().split()[21])
     base=EXT/"generated/software-probe-timing/software-probe.so"
     sampler=EXT/"generated/late-pc-sampler-v2/pc-sampler.so"
     records=[];canonical=[]
     for mode in ["stock","library-off","sampler-on"]:
-        label="pc-digits-"+mode;capture=EXT/"captures"/label
+        label=point+"-"+mode;capture=EXT/"captures"/label
         native_env=env.copy();native_env.pop("M_LATE_PC_FILE",None)
         libs=str(base)
         if mode!="stock":libs+=":"+str(sampler)
@@ -43,11 +47,11 @@ def main():
     if any("sorryAx" in "\n".join(c) for c in canonical):raise ValueError("Sorry axiom found")
     summary={"cells":records,"same_non_timing_stdout":all(c==canonical[0] for c in canonical),
              "same_recheck_raw_HB":len({r["recheck_raw_HB"]for r in records})==1,
-             "all_native_retired":True,"software_samples":analyze(EXT/"captures/pc-digits-sampler-on/samples.bin"),
+             "all_native_retired":True,"software_samples":analyze(EXT/"captures"/(point+"-sampler-on")/"samples.bin"),
              "limits":["Actual computed_count ordinary-kernel recheck,not a generic extraction engine.",
                        "C/libc samples and out-of-line categories are not PMU cycle or complete allocation fractions.",
                        "New software-sampled runs have their own timing denominators; previous certificate run remains intact."]}
     (out/"terminal.json").write_text(json.dumps(summary,indent=2)+chr(10))
-    (HERE/"pc-digits-result.json").write_text(json.dumps(summary,indent=2)+chr(10))
+    (HERE/(point+"-result.json")).write_text(json.dumps(summary,indent=2)+chr(10))
     print(json.dumps({k:v for k,v in summary.items() if k!="software_samples"},indent=2))
 if __name__=="__main__":main()

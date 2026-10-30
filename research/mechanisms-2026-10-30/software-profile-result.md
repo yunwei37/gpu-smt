@@ -95,3 +95,18 @@ external-proof reconstruction are established prior art.
 Current small digits inputs fit machine words; no demonstrated GMP-specific
 speedup. The previously measured grid rechecks/4million-cell extrapolation
 remain separate evidence,not a new executed full-grid certificate.
+
+## Forward pure-timing correction
+
+The first window above remains raw historical evidence. A new explicit point
+(pc-digits-pure-timing) moves the stop clock immediately after addDeclCore,
+before diagnostics,sampler stop or msync. Results:8.645868s stock,8.679851s
+loaded/off,8.516725s on;all3exit0,identical proof/axiom output,rawHB57844573
+in each cell. HB scope differs by the relocated clock call and is not
+borrowed from the earlier window. Whole source still includes an explicit
+second kernel check; this is not an optimized proofserve end-to-end result.
+
+Corrected point4258kernel-phase samples:0IR,699coldRC(16.42%),462alloc/free
+(10.85%),777namedtable(18.25%),124unresolved(2.91%). This agrees qualitatively
+with the earlier kernel residence observation. Runtime variations in one
+ordered pass do not prove sampling is free or produces acceleration.

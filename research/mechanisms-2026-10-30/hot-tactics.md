@@ -46,3 +46,19 @@ native tactic and kernel paths. Process CPU PC sampling can estimate residence
 in identifiable symbols, with unknowns and sampling overhead retained; it
 cannot recover IPC, LLC/dTLB misses or exact inlined operation costs. The C
 control is qualified; Lean sampling is not yet qualified.
+
+## Native-qualified software residence,2026-10-30
+
+See software-profile-result.md. Small median repeated diagnostic bodies show
+IR-related PC residence5.21%(no-error),3.96%(ordinaryerror),2.25%(budget
+prefix). These are not whole interpreted-strategy costs or population
+fractions. Most IR in the complete instrumented process belongs to the
+collector/InfoTree-export phase,which is excluded from candidate bodies.
+
+An actually accepted digits computation's ordinary C++ kernel recheck has
+4258samples and0IR observations at the corrected timing point;explicit cold
+RC,allocator/free and named-table residence16.42/10.85/18.25%. Helpers are
+part of the kernel even without type_checker in their symbol name. AOT of
+more Mathlib tactics does not remove this already native structural checking
+work. Whole-workload precompile gain is unmeasured; do not turn module
+census124/217 or these median samples into an overall Amdahl bound.

@@ -110,6 +110,7 @@ elab "recheck_count_kernel" : command => do
     (.thmDecl { value with
       name := `M_count_kernel_recheck
       all := [`M_count_kernel_recheck] })
+  let stop ← IO.monoNanosNow
   let heartbeatStop ← IO.getNumHeartbeats
   if capture.isSome then
     mPCPhase 0
@@ -118,7 +119,6 @@ elab "recheck_count_kernel" : command => do
   match result with
   | .error _ => throwError "kernel recheck failed"
   | .ok _ =>
-    let stop ← IO.monoNanosNow
     logInfo m!"M_KERNEL_RECHECK_NS={stop - start}"
 recheck_count_kernel
 #print axioms digitsFuel_eq
