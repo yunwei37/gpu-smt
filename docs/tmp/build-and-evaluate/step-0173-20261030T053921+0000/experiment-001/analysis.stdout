@@ -1,0 +1,151 @@
+{
+  "point": "retained four-worker engine; same input7808, composed physical-attempt seconds",
+  "total_composed_attempt_seconds": 52992.124105687,
+  "top_unsolved_tasks": [
+    {
+      "task": "amc12a_2020_p4",
+      "candidates": 32,
+      "composed_attempt_seconds": 9088.187519275,
+      "fraction_all_composed_attempt_work": 0.1715007215251384,
+      "final_statuses": {
+        "rejected": 3,
+        "resource_exhausted": 29
+      },
+      "native_syntax_sources": 32,
+      "historical_profile_sources": 31,
+      "source_projection_sources": 19
+    },
+    {
+      "task": "mathd_numbertheory_541",
+      "candidates": 32,
+      "composed_attempt_seconds": 6332.001636251,
+      "fraction_all_composed_attempt_work": 0.11948948533601926,
+      "final_statuses": {
+        "timeout": 21,
+        "rejected": 11
+      },
+      "native_syntax_sources": 31,
+      "historical_profile_sources": 27,
+      "source_projection_sources": 0
+    },
+    {
+      "task": "amc12_2000_p1",
+      "candidates": 32,
+      "composed_attempt_seconds": 4031.326976934,
+      "fraction_all_composed_attempt_work": 0.07607407789304613,
+      "final_statuses": {
+        "timeout": 11,
+        "rejected": 21
+      },
+      "native_syntax_sources": 32,
+      "historical_profile_sources": 21,
+      "source_projection_sources": 0
+    }
+  ],
+  "top_three_composed_attempt_fraction": 0.3670642847542038,
+  "source_projection_groups": [
+    {
+      "source_projection": [
+        "amc12a_2020_p4",
+        "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rfl"
+      ],
+      "sources": [
+        "minif2f-3687",
+        "minif2f-3691",
+        "minif2f-3700",
+        "minif2f-3706",
+        "minif2f-3709"
+      ],
+      "conditional_collapsible_calls": 4,
+      "first_producer_scenarios": [
+        {
+          "assumed_first_producer": "minif2f-3687",
+          "later_source_ids": [
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1220.997081854,
+          "later_historical_rfl_family_cpu_envelope_seconds": 354.501716676,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3691",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3700",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1216.721399476,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.397316064,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3700",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1218.6916077780002,
+          "later_historical_rfl_family_cpu_envelope_seconds": 354.43880440600003,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3706",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1219.686149242,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.458118634,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3709",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3706"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1210.658329546,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.40841672,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        }
+      ],
+      "qualified_replay_hits": null,
+      "qualified_saved_seconds": null
+    }
+  ],
+  "actual_read_set_coverage": 0,
+  "qualified_ordinary_failure_replay_hits": null,
+  "qualified_saved_seconds": null,
+  "native_invocations": 0,
+  "interpretation": [
+    "No actual read sets were retained for these calls; zero trace coverage is not zero opportunity.",
+    "Native Syntax identifies source calls, not reached calls, post-rewrite Lean Expr targets or reads.",
+    "Closed targets do not establish absence of local-instance, metavariable, environment-extension or negative-lookup dependencies.",
+    "Whole candidate attempts include all their work and resource retries, not just the projected call.",
+    "Historical profiler CPU is a separate run; rfl family totals may include earlier/internal calls.",
+    "Resource-exhausted/timeout attempts are not completed ordinary-failure cache producers.",
+    "No guaranteed RSS-failure monotonicity follows from a semantic read-set key.",
+    "No source-feature prediction, new native collection or production cache is enabled."
+  ]
+}

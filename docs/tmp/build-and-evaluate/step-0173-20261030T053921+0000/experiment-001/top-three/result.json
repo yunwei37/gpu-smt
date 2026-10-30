@@ -1,0 +1,4133 @@
+{
+  "point": "retained four-worker engine; same input7808, composed physical-attempt seconds",
+  "total_composed_attempt_seconds": 52992.124105687,
+  "top_unsolved_tasks": [
+    {
+      "task": "amc12a_2020_p4",
+      "candidates": 32,
+      "composed_attempt_seconds": 9088.187519275,
+      "fraction_all_composed_attempt_work": 0.1715007215251384,
+      "final_statuses": {
+        "rejected": 3,
+        "resource_exhausted": 29
+      },
+      "native_syntax_sources": 32,
+      "historical_profile_sources": 31,
+      "source_projection_sources": 19
+    },
+    {
+      "task": "mathd_numbertheory_541",
+      "candidates": 32,
+      "composed_attempt_seconds": 6332.001636251,
+      "fraction_all_composed_attempt_work": 0.11948948533601926,
+      "final_statuses": {
+        "timeout": 21,
+        "rejected": 11
+      },
+      "native_syntax_sources": 31,
+      "historical_profile_sources": 27,
+      "source_projection_sources": 0
+    },
+    {
+      "task": "amc12_2000_p1",
+      "candidates": 32,
+      "composed_attempt_seconds": 4031.326976934,
+      "fraction_all_composed_attempt_work": 0.07607407789304613,
+      "final_statuses": {
+        "timeout": 11,
+        "rejected": 21
+      },
+      "native_syntax_sources": 32,
+      "historical_profile_sources": 21,
+      "source_projection_sources": 0
+    }
+  ],
+  "top_three_composed_attempt_fraction": 0.3670642847542038,
+  "sources": [
+    {
+      "id": "minif2f-3680",
+      "task": "amc12a_2020_p4",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 5.801695261,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => n % 5 = 0) (Finset.filter (fun n => ∀ d : ℕ, d ∈ n.digits 10 → Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1861,
+          "startByte": 1664
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1873,
+          "startByte": 1864
+        },
+        {
+          "text": "simp [Finset.card, Finset.filter_eq']",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1913,
+          "startByte": 1876
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1919,
+          "startByte": 1916
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 5.428204071,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 0.5098145000000002,
+        "rfl_eqrefl": 4.9183895710000005
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3681",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 326.583873705,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.Icc 1000 9999) := by\n    ext n\n    simp [Nat.lt_succ_iff, h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1015,
+          "startByte": 791
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1027,
+          "startByte": 1018
+        },
+        {
+          "text": "simp [Finset.filter_eq, Finset.Icc]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1065,
+          "startByte": 1030
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1071,
+          "startByte": 1068
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.078074344,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 0.498444137,
+        "rfl_eqrefl": 90.579630207
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3682",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 372.636097523,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ n % 5 = 0 ∧ (∀ d ∈ Nat.digits 10 n, Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff, Nat.le_add_left]\n    -- We need to show that the set S is equivalent to the set of numbers that meet the criteria.\n    -- This involves checking the conditions for membership in S.\n    -- The filter function will select numbers that meet the criteria:\n    -- 1. n % 5 = 0 (number is divisible by 5)\n    -- 2. All digits of n are even\n    -- 3. The number is between 1000 and 9999.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2280,
+          "startByte": 1731
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2339,
+          "startByte": 2330
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2385,
+          "startByte": 2382
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n ↦ n % 5 = 0 ∧ (∀ d ∈ Nat.digits 10 n, Even d)) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.984190555,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.462931853999999,
+        "rfl_eqrefl": 90.521258701
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3683",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 338.140550039,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 5 ∣ n) (Finset.filter (fun n ↦ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀]\n    refine' ⟨_, fun h => ⟨_, _, _, h⟩⟩\n    · rintro ⟨h₁, _, h₃, h₄⟩\n      exact (Nat.mod_eq_of_lt (Nat.mod_lt _ (zero_lt_succ _))).symm\n    · rcases h with (rfl | rfl | rfl | rfl) <;> norm_num",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1374,
+          "startByte": 983
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1386,
+          "startByte": 1377
+        },
+        {
+          "text": "simp only [Finset.card_filter, Nat.card_Icc, Nat.add_sub_cancel, Finset.card_range, Finset.card_product]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1493,
+          "startByte": 1389
+        },
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1504,
+          "startByte": 1496
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1510,
+          "startByte": 1507
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 93.974355497,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.7414966929999984,
+        "rfl_eqrefl": 91.232858804
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3684",
+      "task": "amc12a_2020_p4",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.676595466,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 5 ∣ n) (Finset.filter (fun n => ∀ d ∈ Nat.digits 10 n, Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀]\n    -- We need to show that the conditions in h₀ are equivalent to the conditions in the filter.\n    constructor <;> intro h\n    -- Case 1: If n satisfies the conditions in h₀, then it satisfies the conditions in the filter.\n    {\n      constructor\n      -- Check that n is a 4-digit number.\n      { simpa [Nat.lt_succ_iff] using h.1 }\n      constructor\n      -- Check that n is divisible by 5.\n      { simpa using h.2.2.2 }\n      constructor\n      -- Check that all digits of n are even.\n      { intro d hd\n        have : d ∈ Finset.range 10 := by simpa using hd\n        rcases this with ⟨d', hd'⟩\n        simp [← hd'] at this ⊢\n        simpa using h.2.2.1 d' hd' }\n      -- Check that n is a 4-digit number.\n      { simpa [Nat.lt_succ_iff] using h.1 }\n    }\n    -- Case 2: If n satisfies the conditions in the filter, then it satisfies the conditions in h₀.\n    {\n      constructor\n      -- Check that n is a 4-digit number.\n      { simpa [Nat.lt_succ_iff] using h.1 }\n      constructor\n      -- Check that n is divisible by 5.\n      { simpa using h.2 }\n      constructor\n      -- Check that all digits of n are even.\n      { intro d hd\n        have : d ∈ Finset.range 10 := by simpa using hd\n        rcases this with ⟨d', hd'⟩\n        simp [← hd'] at this ⊢\n        simpa using h.2.1 d' hd' }\n      -- Check that n is a 4-digit number.\n      { simpa [Nat.lt_succ_iff] using h.1 }\n    }",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2407,
+          "startByte": 833
+        },
+        {
+          "text": "simpa using this",
+          "syntaxKind": "Lean.Parser.Tactic.simpa",
+          "stopByte": 2426,
+          "startByte": 2410
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.805459212,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.805459212
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3685",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 320.886514034,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_range]\n    -- Use the omega tactic to solve the arithmetic constraints.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1561,
+          "startByte": 1289
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1625,
+          "startByte": 1616
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1724,
+          "startByte": 1721
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.106902983,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 0.4151769360000001,
+        "rfl_eqrefl": 90.69172604699999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3686",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 292.860834743,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [Nat.le_of_lt, h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 920,
+          "startByte": 710
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 979,
+          "startByte": 970
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1075,
+          "startByte": 1072
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 93.001976422,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.711272855,
+        "rfl_eqrefl": 90.290703567
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3687",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.69156012,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext\n    simp [h₀, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1419,
+          "startByte": 1210
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1431,
+          "startByte": 1422
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1437,
+          "startByte": 1434
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.984476527,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.6851000780000005,
+        "rfl_eqrefl": 89.29937644900001
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3688",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 299.834570885,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 5 ∣ n) (Finset.filter (fun n ↦ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 1000 ≤ n ∧ n ≤ 9999) (Finset.range 10000)) := by\n    ext n\n    simp [h₀, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1091,
+          "startByte": 855
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1103,
+          "startByte": 1094
+        },
+        {
+          "text": "simp only [Finset.card, Finset.filter_eq', Finset.mem_filter, Finset.mem_range, Finset.card_range]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1271,
+          "startByte": 1173
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1368,
+          "startByte": 1365
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.992126391,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.436344004000001,
+        "rfl_eqrefl": 88.555782387
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3689",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 306.871349466,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc, Nat.even_iff]\n    -- We need to show that n is in S if and only if it satisfies the conditions in the filter.\n    -- This involves checking that n is a 4-digit number, has only even digits, and is divisible by 5.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1308,
+          "startByte": 933
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1401,
+          "startByte": 1392
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1466,
+          "startByte": 1463
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.987123243,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.633727754999999,
+        "rfl_eqrefl": 88.35339548799999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3690",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.11923698500004,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter\n    (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d ∧ 5 ∣ n)\n    (Finset.Icc 1000 9999) := by\n    ext\n    simp [h₀, Nat.lt_succ_iff]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1248,
+          "startByte": 1062
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1311,
+          "startByte": 1302
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1453,
+          "startByte": 1450
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.977454577,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.5021212240000015,
+        "rfl_eqrefl": 90.475333353
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3691",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 304.967242498,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the filter of numbers from 0 to 9999 that satisfy the given conditions\n    -- is equal to the set of numbers from 1000 to 9999 that satisfy the conditions.\n    -- This is done by simplifying the filter operation and using the properties of numbers.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1266,
+          "startByte": 784
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1278,
+          "startByte": 1269
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1338,
+          "startByte": 1335
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.997875624,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.594098563000001,
+        "rfl_eqrefl": 88.403777061
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3692",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 301.98908026,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n : ℕ => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_Icc]\n    -- Use the `omega` tactic to solve the linear arithmetic problem.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1310,
+          "startByte": 1039
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1388,
+          "startByte": 1379
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1488,
+          "startByte": 1485
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n : ℕ => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.007380251,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.468361347999998,
+        "rfl_eqrefl": 89.539018903
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3693",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.048827791,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- The range function generates all integers from 0 to 9999.\n    -- The filter function applies the conditions given in h₀ to each integer in the range.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1182,
+          "startByte": 817
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1327,
+          "startByte": 1318
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1431,
+          "startByte": 1428
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n ↦ n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.986904712,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.686261063,
+        "rfl_eqrefl": 89.300643649
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3694",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.964295568,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the set S of numbers satisfying the given conditions\n    -- is the same as the filtered range from 0 to 9999.\n    -- This involves checking the conditions for each number in the range.\n    -- The conditions are:\n    -- 1. The number is a 4-digit number (1000 ≤ n ≤ 9999).\n    -- 2. All digits of the number are even.\n    -- 3. The number is divisible by 5.\n    -- We use the `omega` tactic to solve the arithmetic and logical constraints.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1886,
+          "startByte": 1199
+        },
+        {
+          "text": "simp [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1900,
+          "startByte": 1889
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2021,
+          "startByte": 2018
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.001248774,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.699598854000001,
+        "rfl_eqrefl": 89.30164991999999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3695",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.056986941,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range (10000)) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range, le_of_lt]\n    -- We need to show that the filter condition matches the given conditions.\n    -- This involves checking that the number is within the range [1000, 9999],\n    -- all digits are even, and the number is divisible by 5.\n    -- The first condition is checked by `le_of_lt`.\n    -- The second condition is checked by `le_of_lt`.\n    -- The third condition is checked by `simp [Nat.lt_succ_iff]`.\n    -- The fourth condition is checked by `le_of_lt`.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1930,
+          "startByte": 1233
+        },
+        {
+          "text": "simp_rw [h₁]",
+          "syntaxKind": "Mathlib.Tactic.tacticSimp_rw___",
+          "stopByte": 1947,
+          "startByte": 1933
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2611,
+          "startByte": 2608
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.97743134,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.6860285880000005,
+        "rfl_eqrefl": 90.291402752
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3696",
+      "task": "amc12a_2020_p4",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.198585193,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => n % 5 = 0) (Finset.filter (fun n => ∀ d ∈ (n % 10) :: n / 10 % 10 :: n / 100 % 10 :: n / 1000 % 10, Even d) (Finset.Icc 1000 9999)) := by\n    simp only [Finset.filter, Finset.Icc, Finset.card, Finset.mem_filter, Finset.mem_Icc]\n    refine' Finset.ext fun n => ⟨_, _⟩\n    · intro h\n      simp only [Finset.mem_filter] at h\n      simp only [h, Nat.mod_eq_of_lt, Nat.lt_of_le_of_lt (Nat.zero_le _) (Nat.lt_succ_self _),\n        Nat.mod_eq_of_lt, Nat.lt_of_le_of_lt (Nat.zero_le _) (Nat.lt_succ_self _),\n        Nat.mod_eq_of_lt, Nat.lt_of_le_of_lt (Nat.zero_le _) (Nat.lt_succ_self _),\n        Nat.mod_eq_of_lt, Nat.lt_of_le_of_lt (Nat.zero_le _) (Nat.lt_succ_self _),\n        Nat.mod_eq_of_lt, Nat.lt_of_le_of_lt (Nat.zero_le _) (Nat.lt_succ_self _)]\n      omega\n    · intro h\n      simp only [Finset.mem_filter]\n      simp only [Finset.mem_Icc, h]\n      constructor\n      · omega\n      · intro d hd\n        simp only [Finset.mem_filter] at hd\n        simp only [hd.2]\n        omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2706,
+          "startByte": 1674
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2718,
+          "startByte": 2709
+        },
+        {
+          "text": "simp only [Finset.card_filter]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 2751,
+          "startByte": 2721
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2757,
+          "startByte": 2754
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3697",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 302.803811727,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => n % 10 = 0 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, ← Nat.lt_succ_iff, Nat.le_of_dvd zero_lt_one]\n    -- We need to show that a number n is in S if and only if it satisfies the conditions in h₀.\n    -- This involves checking that n % 10 = 0 and all digits of n are even.\n    -- We use the properties of the digits and the range of numbers to establish this equivalence.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2096,
+          "startByte": 1606
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2214,
+          "startByte": 2205
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2273,
+          "startByte": 2270
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => n % 10 = 0 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.970919638,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.508966007,
+        "rfl_eqrefl": 89.461953631
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3698",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.930154903,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 5 ∣ n ∧ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, ← Nat.mod_eq_of_lt (show 1000 < 10000 from by norm_num)]\n    -- Use the `omega` tactic to solve the linear arithmetic problem\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1242,
+          "startByte": 956
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1254,
+          "startByte": 1245
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1308,
+          "startByte": 1305
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 5 ∣ n ∧ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.001154005,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.252184971000001,
+        "rfl_eqrefl": 89.748969034
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3699",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 301.063264925,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => n % 5 = 0) (Finset.filter (fun n => ∀ d ∈ Nat.digits 10 n, Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀, Nat.even_iff]\n    -- We need to show that a number is in S if and only if it is a 4-digit number with only even digits and divisible by 5.\n    -- This involves checking the conditions for membership in the sets involved.\n    -- The filter function will apply the conditions to each number in the range.\n    -- The Icc 1000 9999 is the set of all 4-digit numbers.\n    -- The filter (fun n => ∀ d ∈ Nat.digits 10 n, Even d) ensures that all digits of the number are even.\n    -- The filter (fun n => n % 5 = 0) ensures that the number is divisible by 5.\n    -- The final set S is the intersection of these two filters.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1722,
+          "startByte": 930
+        },
+        {
+          "text": "simp [this]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1823,
+          "startByte": 1812
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1907,
+          "startByte": 1904
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.994407901,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.772166828999999,
+        "rfl_eqrefl": 89.222241072
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3700",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 302.997034196,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that n is in S if and only if it satisfies the given conditions.\n    -- This is done by simplifying the conditions and using basic arithmetic and logical equivalences.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 944,
+          "startByte": 548
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1003,
+          "startByte": 994
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1097,
+          "startByte": 1094
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.995780843,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.633492124,
+        "rfl_eqrefl": 89.36228871899999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3701",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 301.02487596000003,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n    (Finset.Icc 1000 9999) := by\n    ext n\n    -- We use the given condition to show that n is in the set if and only if it satisfies the filter condition.\n    simp [h₀, Finset.mem_Icc]\n    -- The filter condition checks that n is between 1000 and 9999, has only even digits, and is divisible by 5.\n    -- This is sufficient to prove that the count of such integers is 100.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1148,
+          "startByte": 626
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1250,
+          "startByte": 1241
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1381,
+          "startByte": 1378
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.983413759,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.641218652,
+        "rfl_eqrefl": 88.34219510700001
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3702",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 300.038866477,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter\n    (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n    (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1347,
+          "startByte": 1109
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1359,
+          "startByte": 1350
+        },
+        {
+          "text": "simp only [Finset.card, Finset.filter_eq, Finset.mem_filter, Finset.mem_range, Finset.card_range,\n    Nat.div_self (Nat.zero_lt_succ _)]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1498,
+          "startByte": 1362
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1504,
+          "startByte": 1501
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.008748989,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.637172494000002,
+        "rfl_eqrefl": 89.371576495
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3703",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 302.89380543100003,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 5 ∣ n) (Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀, Nat.even_iff]\n    refine' ⟨_, fun h => ⟨h.2.2.1, h.2.2.2⟩⟩\n    simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1724,
+          "startByte": 1468
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1736,
+          "startByte": 1727
+        },
+        {
+          "text": "simp only [Finset.card_filter, Nat.card_Icc, Nat.card_eq_fintype_card, Finset.card_range,\n    Nat.add_zero, Nat.zero_eq, Finset.card_range]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1878,
+          "startByte": 1739
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1884,
+          "startByte": 1881
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.986422436,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.9759592129999994,
+        "simp_all": 0.00081849,
+        "rfl_eqrefl": 89.00964473299999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3704",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 301.08743316,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range 10000) := by\n    ext\n    simp [h₀, Finset.mem_filter, Finset.mem_range]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 996,
+          "startByte": 772
+        },
+        {
+          "text": "simp [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1782,
+          "startByte": 1771
+        },
+        {
+          "text": "rfl\n  <;> simp [h₀, Nat.zero_le]\n  <;> simp [h₀, Nat.zero_le]\n  <;> simp [h₀, Nat.zero_le]",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1952,
+          "startByte": 1856
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.994955389,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.665859499000001,
+        "rfl_eqrefl": 90.32909589
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3705",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 304.001368142,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff, Nat.le_add_right]\n    -- We use the properties of even numbers and divisibility by 5 to define the set S\n    constructor <;> intro h <;>\n    -- We handle the case analysis on the conditions for n to be in S\n    rcases h with ⟨h₁, h₂, h₃, h₄⟩ <;>\n    -- We simplify the conditions using logical equivalences\n    simp_all [Nat.even_iff]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1034,
+          "startByte": 485
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1113,
+          "startByte": 1104
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1197,
+          "startByte": 1194
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.989041381,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.6145918549999987,
+        "rfl_eqrefl": 89.374449526
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3706",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 302.002492732,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range, Nat.lt_succ_iff]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1685,
+          "startByte": 1438
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1742,
+          "startByte": 1733
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1823,
+          "startByte": 1820
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.995732306,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.652757815000001,
+        "rfl_eqrefl": 88.342974491
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3707",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 301.97936331200003,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun x : ℕ => 1000 ≤ x ∧ x ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 x → Even d) ∧ 5 ∣ x) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc]\n    -- This line uses the given condition to establish the equivalence between membership in S and the filter condition.\n    -- The filter condition checks if a number n is within the range [1000, 9999], has only even digits, and is divisible by 5.\n    -- The proof simply uses the given condition h₀ to show that the membership in S is equivalent to the filter condition.\n    <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2805,
+          "startByte": 2209
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2817,
+          "startByte": 2808
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2882,
+          "startByte": 2879
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun x : ℕ => 1000 ≤ x ∧ x ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 x → Even d) ∧ 5 ∣ x) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 89.990819263,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.5883762299999993,
+        "rfl_eqrefl": 87.402443033
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3708",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 299.97841783,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n : ℕ =>\n      n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc]\n    -- Use the omega tactic to solve the arithmetic conditions.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1021,
+          "startByte": 733
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1083,
+          "startByte": 1074
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1138,
+          "startByte": 1135
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n : ℕ => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.978937892,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.688030735000001,
+        "rfl_eqrefl": 88.290907157
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3709",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 311.030312428,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the number n is in S if and only if it satisfies the conditions in the filter.\n    -- This involves checking that n is a 4-digit number, has only even digits, and is divisible by 5.\n    -- The filter function will select numbers that satisfy these conditions.\n    -- We then use the properties of the filter to show that the cardinality of S is 100.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1207,
+          "startByte": 624
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1263,
+          "startByte": 1254
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1374,
+          "startByte": 1371
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 90.984755237,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.5920788320000008,
+        "rfl_eqrefl": 88.39267640499999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3710",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 338.374483064,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc, and_comm, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2090,
+          "startByte": 1881
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2102,
+          "startByte": 2093
+        },
+        {
+          "text": "simp only [Finset.card_filter]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 2135,
+          "startByte": 2105
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2141,
+          "startByte": 2138
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.99160625,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.4669272450000004,
+        "rfl_eqrefl": 89.52467900500001
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-3711",
+      "task": "amc12a_2020_p4",
+      "final_status": "resource_exhausted",
+      "current_composed_attempt_seconds": 444.65393851,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext\n    simp [h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 697,
+          "startByte": 506
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 709,
+          "startByte": 700
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 715,
+          "startByte": 712
+        }
+      ],
+      "source_target_projection": "(Finset.filter (fun n => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 92.990778647,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.665952227,
+        "rfl_eqrefl": 90.32482642
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7200",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.896344757,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₃ : m ≤ 2005 := by\n    -- Using the fact that m * n = 2005, we can infer that m ≤ 2005\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1072,
+          "startByte": 960
+        },
+        {
+          "text": "have h₄ : n ≤ 2005 := by\n    -- Similarly, using the fact that m * n = 2005, we can infer that n ≤ 2005\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1198,
+          "startByte": 1075
+        },
+        {
+          "text": "have h₅ : m + n = 406 := by\n    -- By solving the equation m * n = 2005 and using the constraints, we find that m + n = 406\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1378,
+          "startByte": 1201
+        },
+        {
+          "text": "exact h₅",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1433,
+          "startByte": 1423
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.690023864,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.849017105,
+        "interval_cases": 221.841006759
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7201",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.368100236,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : 2005 = m * n := by simp [h₂]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1142,
+          "startByte": 1105
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- We use the fact that m and n are positive and their product is 2005.\n    have : 1 < m := h₀\n    have : 1 < n := h₁\n    -- We use the fact that the product of m and n is 2005 to find the sum.\n    nlinarith [mul_pos (by decide : 0 < 2) (by decide : 0 < 2005)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1519,
+          "startByte": 1226
+        },
+        {
+          "text": "simp [this]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1582,
+          "startByte": 1571
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7202",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.625816278,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 468,
+          "startByte": 441
+        },
+        {
+          "text": "have h₃ : m + n = 406 := by\n    -- We use the fact that the product of two numbers is 2005 to deduce the sum of the numbers.\n    have h₃ : m ≤ 406 := by\n      -- Since m and n are positive integers greater than 1, their sum is at least 406.\n      nlinarith\n    have h₄ : n ≤ 406 := by\n      -- Similarly, n is at least 406.\n      nlinarith\n    -- Using the constraints on m and n, we can deduce their sum.\n    interval_cases m <;> interval_cases n <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1036,
+          "startByte": 566
+        },
+        {
+          "text": "exact h₃",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1107,
+          "startByte": 1097
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.782873616,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 163.961033227,
+        "simp_all": 9.70893025,
+        "interval_cases": 128.112910139
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7203",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.737842005,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h : m ≤ 2005 := by\n    -- Since the product of m and n is 2005, m must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 723,
+          "startByte": 601
+        },
+        {
+          "text": "have h' : n ≤ 2005 := by\n    -- Similarly, n must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 822,
+          "startByte": 726
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₁ h₂ ⊢",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 892,
+          "startByte": 825
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.958364407,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.97202775700005,
+        "interval_cases": 221.98633665
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7204",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.466060183,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₀ : m > 1 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 585,
+          "startByte": 553
+        },
+        {
+          "text": "have h₁ : n > 1 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 620,
+          "startByte": 588
+        },
+        {
+          "text": "have h₂ : m + n = 406 := by\n    -- Using the constraints and the product, we solve the equation.\n    apply Eq.symm\n    -- We use the fact that m and n are both greater than 1 and their product is 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 879,
+          "startByte": 662
+        },
+        {
+          "text": "exact h₂",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 936,
+          "startByte": 926
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.586366534,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.5863665340000006
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7205",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.64990984,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 678,
+          "startByte": 644
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- The factors of 2005 are 5 and 401.\n    have : m ≤ 401 := by\n      -- Since m and n are positive integers, m must be less than or equal to 401.\n      nlinarith\n    have : n ≤ 401 := by\n      -- Similarly, n must be less than or equal to 401.\n      nlinarith\n    -- Using interval cases to find specific values of m and n that satisfy the conditions.\n    interval_cases m <;> interval_cases n <;> norm_num at this <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1239,
+          "startByte": 782
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1324,
+          "startByte": 1314
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.324617177,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 175.18993646,
+        "interval_cases": 124.134680717
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7206",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.478934469,
+      "native_syntax_present": false,
+      "native_syntax_eligible": null,
+      "outer_units": [],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7207",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.826666448,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := by assumption",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1154,
+          "startByte": 1118
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- Since m and n are positive whole numbers and their product is 2005, we can use the fact that 2005 is a product of 5, 13, and 31.\n    -- The only pair of numbers greater than 1 that satisfies the product condition and the sum condition is (31, 65).\n    -- Therefore, the sum of m and n is 31 + 65 = 96.\n    -- However, since the problem states that the sum should be 406, we need to check if there are any other valid pairs that satisfy this condition.\n    -- Given the constraints and the sum, the only valid pair is (31, 65).\n    have : m ≤ 2005 := by nlinarith\n    have : n ≤ 2005 := by nlinarith\n    -- Using interval_cases to check possible values of m and n that satisfy the product condition.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1984,
+          "startByte": 1198
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 2040,
+          "startByte": 2030
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 302.010862629,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.042048871,
+        "interval_cases": 222.968813758
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7208",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.818928662,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m + n = 406 := by\n    -- We use the fact that the product of m and n is 2005 and neither number is 1 to deduce the sum.\n    have h₃ : m ≤ 2005 := by\n      -- Since m is a positive whole number and the product with n is 2005, m must be less than or equal to 2005.\n      nlinarith\n    have h₄ : n ≤ 2005 := by\n      -- Similarly, n is a positive whole number and the product with m is 2005, so n must be less than or equal to 2005.\n      nlinarith\n    -- Using the constraints and the fact that both m and n are greater than 1, we can deduce that the sum of the two numbers must be 406.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1428,
+          "startByte": 777
+        },
+        {
+          "text": "simpa",
+          "syntaxKind": "Lean.Parser.Tactic.simpa",
+          "stopByte": 1519,
+          "startByte": 1514
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.95529838,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.90807346199998,
+        "interval_cases": 222.047224918
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7209",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.220422619,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "nlinarith",
+          "syntaxKind": "nlinarith",
+          "stopByte": 894,
+          "startByte": 885
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.407724973,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.4077249729999997
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7210",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.872216887,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have mpos : 0 < m := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 882,
+          "startByte": 850
+        },
+        {
+          "text": "have npos : 0 < n := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 917,
+          "startByte": 885
+        },
+        {
+          "text": "have sum_is_406 : m + n = 406 := by\n    -- Using the fact that m and n are positive and their product is 2005,\n    -- we can check the possible pairs (m, n) that satisfy the equation.\n    -- After checking, we find that the only pair is (401, 5), and their sum is 406.\n    have h₃ : m ≤ 406 := by nlinarith\n    have h₄ : n ≤ 406 := by nlinarith\n    -- Using interval cases to check all possible pairs within the constraints.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1457,
+          "startByte": 973
+        },
+        {
+          "text": "exact sum_is_406",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1515,
+          "startByte": 1499
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.468678381,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 170.74323285999998,
+        "interval_cases": 128.725445521
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7211",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.8555552,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m = 401 ∧ n = 5 := by\n    -- The factors of 2005 are 401 and 5.\n    have : 401 * 5 = 2005 := by linarith\n    -- Since m and n are positive integers and their product is 2005, they must be 401 and 5 in some order.\n    have : 401 ≤ 2005 := by linarith\n    have : 5 ≤ 2005 := by linarith\n    -- Use the properties of the factors to determine the exact values.\n    constructor <;> nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1008,
+          "startByte": 609
+        },
+        {
+          "text": "simp [*]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1092,
+          "startByte": 1084
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7212",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.748805156,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m + n = 406 := by\n    -- Consider the possible values of m and n that satisfy the given conditions.\n    -- We know that m and n are both greater than 1 and their product is 2005.\n    have : m ≤ 2005 := by nlinarith\n    have : n ≤ 2005 := by nlinarith\n    -- We use interval_cases to check all possible values of m and n within the range.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 691,
+          "startByte": 291
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 762,
+          "startByte": 752
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.318279808,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.46418981399998,
+        "interval_cases": 221.854089994
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7213",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.770469781,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₀ : m ≤ 2005 := by\n    -- We need to show that m is less than or equal to 2005 to apply the equality check.\n    apply Nat.le_of_not_lt\n    intro h\n    -- If m is greater than 2005, then the product m * n would be greater than 2005, contradicting the given equality.\n    have : m * n > 2005 := by nlinarith\n    linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1512,
+          "startByte": 1184
+        },
+        {
+          "text": "have h₁ : n ≤ 2005 := by\n    -- Similarly, n must be less than or equal to 2005 to apply the equality check.\n    apply Nat.le_of_not_lt\n    intro h\n    -- If n is greater than 2005, then the product m * n would be greater than 2005, contradicting the given equality.\n    have : m * n > 2005 := by nlinarith\n    linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1838,
+          "startByte": 1515
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ ⊢",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1981,
+          "startByte": 1919
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.034176884,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 80.128499975,
+        "interval_cases": 220.905676909
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7214",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 11.226342821,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 567,
+          "startByte": 540
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- We will check the possible pairs of numbers that multiply to 2005.\n    have h₃ : m ≤ 60 := by\n      -- We will check the possible pairs of numbers that multiply to 2005.\n      nlinarith\n    have h₄ : n ≤ 60 := by\n      -- We will check the possible pairs of numbers that multiply to 2005.\n      nlinarith\n    -- We will check the possible pairs of numbers that multiply to 2005.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1112,
+          "startByte": 642
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1184,
+          "startByte": 1174
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 12.641228403,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 9.947384425,
+        "interval_cases": 2.693843978
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7215",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.302812049,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₃ : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 583,
+          "startByte": 551
+        },
+        {
+          "text": "have h₄ : 1 < m ∧ 1 < n := ⟨h₀, h₁⟩",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 689,
+          "startByte": 642
+        },
+        {
+          "text": "have h₅ : m + n = 406 := by\n    -- Using the fact that m and n are greater than 1 and their product is 2005,\n    -- we can deduce that m and n must be 2005 and 1 or 1 and 2005.\n    -- However, since 1 < m and 1 < n, we can use these conditions to simplify our problem.\n    apply Eq.symm\n    -- By solving the equation m + n = 406, we find that the sum of m and n is indeed 406.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1138,
+          "startByte": 745
+        },
+        {
+          "text": "exact h₅",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1220,
+          "startByte": 1210
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7216",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.81488289,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h : m + n = 406 := by\n    -- Use the fact that 2005 = 1 * 2005 and check other factors.\n    have : m ≤ 2005 := by nlinarith\n    have : n ≤ 2005 := by nlinarith\n    -- Check other pairs of factors.\n    interval_cases m <;> interval_cases n <;> norm_num at h₂\n    -- After checking, we find that m = 41 and n = 49 is a pair that satisfies m * n = 2005.\n    -- Summing these numbers gives 41 + 49 = 90.\n    <;> try linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 998,
+          "startByte": 567
+        },
+        {
+          "text": "exact h",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1048,
+          "startByte": 1041
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.033258524,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 77.49051075300004,
+        "interval_cases": 221.542747771
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7217",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.667421376,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m + n = 406 := by\n    -- We use the fact that the product of m and n is 2005 to find possible values for m and n.\n    -- Given that m and n are both greater than 1, we can test small values for m.\n    have : m < 406 := by\n      -- If m is at least 406, then n would be greater than 1.\n      apply Nat.lt_of_not_ge\n      intro h\n      -- If m ≥ 406, then m * n ≥ 2005, which is a contradiction.\n      have : m * n ≥ 2005 := by\n        nlinarith\n      linarith\n    -- We know m is less than 406, so we can test possible values for m.\n    have : n < 406 := by\n      -- If n is at least 406, then m would be greater than 1.\n      apply Nat.lt_of_not_ge\n      intro h\n      -- If n ≥ 406, then m * n ≥ 2005, which is a contradiction.\n      have : m * n ≥ 2005 := by\n        nlinarith\n      linarith\n    -- We can now test specific values for m and n that satisfy the product constraint.\n    interval_cases m <;> interval_cases n <;> norm_num at h₂\n    -- Finally, we find that m = 45 and n = 450 (or vice versa) satisfies the conditions.\n    <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1857,
+          "startByte": 790
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1870,
+          "startByte": 1860
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 302.003121609,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 177.00323496000001,
+        "interval_cases": 124.999886649
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7218",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.806226249,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₃ : m + n = 406 := by\n    -- Use the fact that m and n are both greater than 1 to infer that m and n must be one of the primes 5, 13, and 31.\n    -- Since m and n are not 1, we can deduce that m and n must be either 5 and 13 or 13 and 5.\n    -- Summing these numbers, we get 5 + 13 = 18 and 13 + 5 = 18.\n    -- Therefore, the sum of the two numbers is 406.\n    have : m ≤ 2005 := by nlinarith\n    have : n ≤ 2005 := by nlinarith\n    interval_cases m <;> interval_cases n <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1913,
+          "startByte": 1418
+        },
+        {
+          "text": "exact h₃",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1978,
+          "startByte": 1968
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.971188196,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.86396893099999,
+        "interval_cases": 222.107219265
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7219",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.797006331,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have m₁ : m ≤ 2005 := by\n    -- Since m * n = 2005, m must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 461,
+          "startByte": 354
+        },
+        {
+          "text": "have n₁ : n ≤ 2005 := by\n    -- Similarly, n must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 562,
+          "startByte": 464
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We will check all pairs (m, n) where 1 < m ≤ 2005 and 1 < n ≤ 2005 to find the sum m + n.\n  <;> try linarith\n  -- By checking all pairs, we will confirm that the sum is indeed 406.\n  <;> try norm_num\n  <;> try ring",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 847,
+          "startByte": 565
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.081801907,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.58600473000001,
+        "interval_cases": 221.495797177
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7220",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.313896654,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₃ : m * n = 2005 := by assumption",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 614,
+          "startByte": 573
+        },
+        {
+          "text": "have h₄ : m + n = 406 := by\n    -- Using the fact that m and n are both greater than 1, we can use the relationship between the product and the sum of the numbers.\n    -- Specifically, we use the identity: m * n = (m - 1) * (n - 1) + (m + n)\n    -- Given that m * n = 2005 and m, n > 1, we can solve for m + n.\n    apply Eq.symm\n    -- We use the fact that m and n are positive to apply a specific algebraic manipulation.\n    have : 0 < m * n := Nat.mul_pos (Nat.pos_of_ne_zero (ne_of_gt h₀)) (Nat.pos_of_ne_zero (ne_of_gt h₁))\n    -- Finally, we use linear arithmetic to conclude that m + n = 406.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1288,
+          "startByte": 670
+        },
+        {
+          "text": "exact h₄",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1370,
+          "startByte": 1360
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.436458914,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.4364589140000006
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7221",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.86957122,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m + n = 406 := by\n    -- We consider the possible values of m and n that satisfy the given conditions.\n    have : m * n = 2005 := by assumption\n    have : m + n = 406 := by\n      -- Using the fact that m and n are positive and their product is 2005, we can deduce the sum.\n      have : m ≤ 2005 := by nlinarith\n      have : n ≤ 2005 := by nlinarith\n      -- We use interval_cases to consider specific values of m and n.\n      interval_cases m <;> interval_cases n <;> omega\n    assumption",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 794,
+          "startByte": 295
+        },
+        {
+          "text": "assumption",
+          "syntaxKind": "Lean.Parser.Tactic.assumption",
+          "stopByte": 865,
+          "startByte": 855
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 298.486644621,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.48951789800002,
+        "interval_cases": 221.997126723
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7222",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.424082399,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : 1 < m := h₀",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 465,
+          "startByte": 445
+        },
+        {
+          "text": "have : 1 < n := h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 488,
+          "startByte": 468
+        },
+        {
+          "text": "have : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 518,
+          "startByte": 491
+        },
+        {
+          "text": "apply Eq.symm",
+          "syntaxKind": "Lean.Parser.Tactic.apply",
+          "stopByte": 616,
+          "startByte": 603
+        },
+        {
+          "text": "nlinarith [mul_pos (Nat.pos_of_ne_zero (by norm_num : (2005 : ℕ) ≠ 0)) (Nat.pos_of_ne_zero (by norm_num : (2005 : ℕ) ≠ 0))]",
+          "syntaxKind": "nlinarith",
+          "stopByte": 832,
+          "startByte": 701
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.557917938,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.557917937999999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7223",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.857900748,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m + n = 406 := by\n    -- We use the fact that m * n = 2005 and find pairs of natural numbers that multiply to 2005.\n    -- The pairs (m, n) must satisfy m * n = 2005 and m + n = 406.\n    have : m * n = 2005 := h₂\n    have : m ≤ 2005 := by nlinarith\n    have : n ≤ 2005 := by nlinarith\n    -- By inspection, we find that m = 2005 and n = 1 satisfy the condition.\n    -- However, since n must be greater than 1, we need to find another pair.\n    -- We check the pairs starting with the smallest possible numbers:\n    -- (1, 2005), (2, 1002.5), (3, 668.3333), (4, 501.25), (5, 401), (6, 334.1667), (7, 286.4286), (8, 250.625), (9, 222.7778), (10, 200.5).\n    -- From the above, we see that the pairs (10, 401), (1, 2005), (2005, 1), and (1, 2005) are the only pairs that satisfy m * n = 2005.\n    -- Given that m + n = 406, we can conclude that the pairs (10, 401), (1, 2005), (2005, 1), and (1, 2005) are the correct pairs.\n    interval_cases m <;> interval_cases n <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2470,
+          "startByte": 1484
+        },
+        {
+          "text": "simpa using this",
+          "syntaxKind": "Lean.Parser.Tactic.simpa",
+          "stopByte": 2489,
+          "startByte": 2473
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.379419179,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.79342030199996,
+        "interval_cases": 222.585998877
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7224",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.587135652,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 694,
+          "startByte": 667
+        },
+        {
+          "text": "have : m ≤ 406 := by\n    -- Since 2005 = 5 * 401, m and n must be factors of 2005. The only factors greater than 1 are 5 and 401.\n    -- Therefore, m must be less than or equal to 406.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 897,
+          "startByte": 697
+        },
+        {
+          "text": "have : n ≤ 406 := by\n    -- Similarly, n must be less than or equal to 406.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 991,
+          "startByte": 900
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1147,
+          "startByte": 1097
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 302.008019033,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 164.55626291800004,
+        "simp_all": 9.777093894,
+        "interval_cases": 127.674662221
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7225",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.842603408,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have hm : 1 < m := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 581,
+          "startByte": 551
+        },
+        {
+          "text": "have hn : 1 < n := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 614,
+          "startByte": 584
+        },
+        {
+          "text": "have hm1 : m ≤ 2005 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 742,
+          "startByte": 705
+        },
+        {
+          "text": "have hn1 : n ≤ 2005 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 782,
+          "startByte": 745
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₂ <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 946,
+          "startByte": 878
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.99411116,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.13355132500003,
+        "interval_cases": 222.860559835
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7226",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.787188831,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m ≤ 2005 := by\n    -- Since m * n = 2005, we know that m must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 778,
+          "startByte": 663
+        },
+        {
+          "text": "have : n ≤ 2005 := by\n    -- Similarly, n must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 874,
+          "startByte": 781
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We use interval_cases to check all possible values of m and n that satisfy the constraints.\n  -- This will check all pairs (m, n) where m and n are greater than 1 and the product is 2005.\n  -- The only pair that satisfies this condition is (401, 404), and their sum is 406.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1229,
+          "startByte": 877
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.970751437,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.870745535,
+        "interval_cases": 222.100005902
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7227",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.624546424,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "apply Eq.symm",
+          "syntaxKind": "Lean.Parser.Tactic.apply",
+          "stopByte": 556,
+          "startByte": 543
+        },
+        {
+          "text": "norm_num\n  -- We use the fact that 2005 is not a prime number to find the correct factors.\n  -- The correct factors of 2005 are 7 and 287, because 287 is 406 - 7.\n  -- Therefore, the sum of the two numbers is 406.\n  <;> nlinarith\n  <;> simp_all\n  <;> nlinarith\n  <;> simp_all\n  <;> nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1055,
+          "startByte": 764
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.812098664,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.811278581,
+        "simp_all": 0.000820083
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7228",
+      "task": "mathd_numbertheory_541",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.250112217,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m * n = 2005 := h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 875,
+          "startByte": 848
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- We use the fact that m and n are positive whole numbers and their product is 2005.\n    -- The factors of 2005 are 1 and 2005 itself, but since neither m nor n can be 1, we consider the possible pairs of factors.\n    -- The factors of 2005 are 5 and 401, 5 and 2005, and 401 and 2005.\n    -- Since neither pair can satisfy the condition that both numbers are greater than 1, we use the remaining factors.\n    -- Given the constraints, we can directly calculate the sum m + n for the valid pair (5, 401).\n    -- The sum of 5 and 401 is 406.\n    apply Eq.symm\n    -- We use the fact that m and n are positive whole numbers and their product is 2005.\n    -- The factors of 2005 are 1 and 2005 itself, but since neither m nor n can be 1, we consider the possible pairs of factors.\n    -- The factors of 2005 are 5 and 401, 5 and 2005, and 401 and 2005.\n    -- Since neither pair can satisfy the condition that both numbers are greater than 1, we use the remaining factors.\n    -- Given the constraints, we can directly calculate the sum m + n for the valid pair (5, 401).\n    -- The sum of 5 and 401 is 406.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2067,
+          "startByte": 919
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 2129,
+          "startByte": 2119
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7229",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.884092754,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : 1 < m ∧ 1 < n := by\n    constructor\n    · exact h₀\n    · exact h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 714,
+          "startByte": 634
+        },
+        {
+          "text": "have h₃ : m ≤ 2005 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1038,
+          "startByte": 996
+        },
+        {
+          "text": "have h₄ : n ≤ 2005 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1083,
+          "startByte": 1041
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1223,
+          "startByte": 1173
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.200048149,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.77563558500003,
+        "interval_cases": 222.424412564
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7230",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.746855606,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : 2 ≤ m := by\n    -- Since m is not 1, it must be at least 2.\n    apply le_of_not_gt\n    intro hm\n    apply lt_irrefl 1\n    linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1021,
+          "startByte": 882
+        },
+        {
+          "text": "have : 2 ≤ n := by\n    -- Since n is not 1, it must be at least 2.\n    apply le_of_not_gt\n    intro hn\n    apply lt_irrefl 1\n    linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1163,
+          "startByte": 1024
+        },
+        {
+          "text": "have : m + n = 406 := by\n    -- We list the pairs of positive integers that multiply to 2005 and find that m + n = 406.\n    have : m ≤ 401 := by\n      nlinarith\n    have : n ≤ 401 := by\n      nlinarith\n    interval_cases m <;> interval_cases n <;> norm_num at h₂",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1524,
+          "startByte": 1256
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1537,
+          "startByte": 1527
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 288.419356162,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 162.60675543299996,
+        "interval_cases": 125.812600729
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-7231",
+      "task": "mathd_numbertheory_541",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.862886101,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : m ≤ 2005 := by\n    -- Since m * n = 2005, m must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 762,
+          "startByte": 660
+        },
+        {
+          "text": "have : n ≤ 2005 := by\n    -- Similarly, n must be less than or equal to 2005.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 858,
+          "startByte": 765
+        },
+        {
+          "text": "interval_cases m <;> interval_cases n <;> norm_num at h₂\n  -- We then verify that m + n = 1001 + 1003 = 2004.\n  <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1089,
+          "startByte": 963
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 302.007275715,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 79.73996395800005,
+        "interval_cases": 222.267311757
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4992",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.916039092,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₂ : i * m * o = 2001 := by assumption",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 649,
+          "startByte": 604
+        },
+        {
+          "text": "have h₃ : i ≤ 671 := by\n    -- We use the fact that the product of the integers is 2001 and the integers are distinct primes or combinations of primes.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h]))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1390,
+          "startByte": 879
+        },
+        {
+          "text": "have h₄ : m ≤ 671 := by\n    -- Similarly, we use the fact that the product of the integers is 2001 and the integers are distinct primes or combinations of primes.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h]))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1915,
+          "startByte": 1393
+        },
+        {
+          "text": "have h₅ : o ≤ 671 := by\n    -- Similarly, we use the fact that the product of the integers is 2001 and the integers are distinct primes or combinations of primes.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.1 (by rw [h])),\n      mul_pos (Nat.pos_of_ne_zero fun h => h₀.1 (by rw [h])) (Nat.pos_of_ne_zero fun h => h₀.2.2 (by rw [h]))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2440,
+          "startByte": 1918
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 2728,
+          "startByte": 2657
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.471549147,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 75.19423426600001,
+        "interval_cases": 224.277314881
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4993",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.789990144,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mod_eq_zero (by simpa [mul_mod] using h₁))",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1557,
+          "startByte": 1452
+        },
+        {
+          "text": "have : m ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mod_eq_zero (by simpa [mul_mod] using h₁))",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1665,
+          "startByte": 1560
+        },
+        {
+          "text": "have : o ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mod_eq_zero (by simpa [mul_mod] using h₁))",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1773,
+          "startByte": 1668
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 2058,
+          "startByte": 1987
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.500905646,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.514298328,
+        "interval_cases": 222.986607318
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4994",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.651307648,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i * m * o = 2001 := by simpa using h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 482,
+          "startByte": 436
+        },
+        {
+          "text": "norm_num at this ⊢",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 649,
+          "startByte": 629
+        },
+        {
+          "text": "cases' i with i <;> cases' m with m <;> cases' o with o <;> simp_all\n  -- We use linear arithmetic to conclude the proof.\n  <;> nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 950,
+          "startByte": 813
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.768672771,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.7585897939999997,
+        "simp_all": 0.010082977
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4995",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.099772899,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "by_contra! h",
+          "syntaxKind": "byContra!",
+          "stopByte": 881,
+          "startByte": 869
+        },
+        {
+          "text": "have h' := h",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1024,
+          "startByte": 1012
+        },
+        {
+          "text": "simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm] at h₁",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1093,
+          "startByte": 1027
+        },
+        {
+          "text": "omega",
+          "syntaxKind": "Lean.Parser.Tactic.omega",
+          "stopByte": 1180,
+          "startByte": 1175
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.244363794,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.244363794
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4996",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 60.688158728,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₂ : i + m + o ≤ 671 := by\n    -- We know that the product of i, m, and o is 2001.\n    have : i * m * o = 2001 := h₁\n    -- We need to show that the sum of i, m, and o is at most 671.\n    have : i + m + o ≤ 671 := by\n      -- Consider the cases for the values of i, m, and o.\n      rcases i with (_ | _ | _ | _ | _ | _ | _ | _) <;>\n        rcases m with (_ | _ | _ | _ | _ | _ | _ | _) <;>\n          rcases o with (_ | _ | _ | _ | _ | _ | _ | _) <;>\n            -- Simplify the conditions and check the sum.\n            simp_all <;>\n              -- Use linear arithmetic to conclude the proof.\n              nlinarith\n    -- The result follows from the above calculation.\n    exact this",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1529,
+          "startByte": 829
+        },
+        {
+          "text": "exact h₂",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1590,
+          "startByte": 1580
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 56.19026801,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 55.131457017,
+        "simp_all": 1.058810993
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4997",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.486276523,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₂ : i ≤ 40 := by\n    -- Since the product of the factors is 2001, we know that each factor must be less than or equal to 2001.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1130,
+          "startByte": 980
+        },
+        {
+          "text": "have h₃ : m ≤ 40 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1173,
+          "startByte": 1133
+        },
+        {
+          "text": "have h₄ : o ≤ 40 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1216,
+          "startByte": 1176
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all (config := {decide := true})\n  -- The largest possible sum of the distinct factors is 671.\n  <;> try linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1466,
+          "startByte": 1285
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.69718182,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 154.67793630100002,
+        "simp_all": 86.5421236,
+        "interval_cases": 58.477121919
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4998",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.176321847,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i * m * o = 2001 := h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1107,
+          "startByte": 1076
+        },
+        {
+          "text": "have : i + m + o ≤ 671 := by\n    -- We use the fact that the product I * M * O = 2001 and the constraints on the values of I, M, and O\n    have : i ≤ 19 := by\n      -- Since I * M * O = 2001, we need to find the largest possible value for I\n      nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.1)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.1))]\n    have : m ≤ 667 := by\n      -- Similarly, we find the largest possible value for M\n      nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.1)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.1))]\n    have : o ≤ 2001 := by\n      -- And for O\n      nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.1)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.2.1)),\n        mul_pos (Nat.pos_of_ne_zero (by simpa using h₀.2.2)) (Nat.pos_of_ne_zero (by simpa using h₀.1))]\n    -- Combining these inequalities, we find that the largest possible value for the sum I + M + O is 671\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2678,
+          "startByte": 1169
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 2740,
+          "startByte": 2730
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-4999",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.090371237,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 395,
+          "startByte": 387
+        },
+        {
+          "text": "cases' mul_mem_mul_iff.1 h₁ with h h",
+          "syntaxKind": "Mathlib.Tactic.cases'",
+          "stopByte": 508,
+          "startByte": 470
+        },
+        {
+          "text": "cases' h with h h",
+          "syntaxKind": "Mathlib.Tactic.cases'",
+          "stopByte": 578,
+          "startByte": 561
+        },
+        {
+          "text": "norm_num at h",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 640,
+          "startByte": 627
+        },
+        {
+          "text": "nlinarith",
+          "syntaxKind": "nlinarith",
+          "stopByte": 713,
+          "startByte": 704
+        },
+        {
+          "text": "norm_num at h",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 775,
+          "startByte": 762
+        },
+        {
+          "text": "nlinarith",
+          "syntaxKind": "nlinarith",
+          "stopByte": 848,
+          "startByte": 839
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5000",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.179817359,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "apply le_of_not_lt",
+          "syntaxKind": "Lean.Parser.Tactic.apply",
+          "stopByte": 780,
+          "startByte": 762
+        },
+        {
+          "text": "intro h",
+          "syntaxKind": "Lean.Parser.Tactic.intro",
+          "stopByte": 790,
+          "startByte": 783
+        },
+        {
+          "text": "have : i * m * o ≤ 2001 := by\n    -- We use the fact that the product of three numbers, each at most 2001, cannot exceed 2001.\n    nlinarith [mul_le_mul_of_nonneg_right (mul_le_mul_right (Nat.zero_le i) (Nat.zero_le m))\n      (Nat.zero_le o)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1135,
+          "startByte": 891
+        },
+        {
+          "text": "linarith",
+          "syntaxKind": "linarith",
+          "stopByte": 1252,
+          "startByte": 1244
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5001",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 275.830607344,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i ≤ 31 := by\n    nlinarith [mul_pos (Nat.succ_pos i) (Nat.succ_pos m)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2374,
+          "startByte": 2295
+        },
+        {
+          "text": "have : m ≤ 31 := by\n    nlinarith [mul_pos (Nat.succ_pos i) (Nat.succ_pos m)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2456,
+          "startByte": 2377
+        },
+        {
+          "text": "have : o ≤ 31 := by\n    nlinarith [mul_pos (Nat.succ_pos i) (Nat.succ_pos m)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2538,
+          "startByte": 2459
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all (config := {decide := true})\n  -- We use linarith to conclude the proof by linear arithmetic.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 2819,
+          "startByte": 2639
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 251.078545726,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 145.68792907299996,
+        "simp_all": 77.067527149,
+        "interval_cases": 28.323089504
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5002",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 2.118449519,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i + m + o ≤ i * m * o := by\n    -- Use the fact that the sum of distinct positive integers is less than or equal to their product.\n    cases' le_total i m with i_le_m i_ge_m <;>\n    cases' le_total i o with i_le_o i_ge_o <;>\n    cases' le_total m o with m_le_o m_ge_o <;>\n    -- Use linear arithmetic to conclude the proof.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1365,
+          "startByte": 1019
+        },
+        {
+          "text": "nlinarith",
+          "syntaxKind": "nlinarith",
+          "stopByte": 1467,
+          "startByte": 1458
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 4.133548537,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 4.133548536999999
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5003",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.641658594,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "cases' i with i <;> cases' m with m <;> cases' o with o <;>\n    -- Simplify the distinctness condition and the product condition.\n    simp_all [Nat.succ_ne_zero, Nat.mul_assoc]",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1034,
+          "startByte": 858
+        },
+        {
+          "text": "all_goals\n    -- Use linear arithmetic to verify that the sum is at most 671.\n    nlinarith [h₀, h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.allGoals",
+          "stopByte": 1211,
+          "startByte": 1107
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5004",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.1652355,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : I * M * O = 2001 := by simpa using h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 777,
+          "startByte": 731
+        },
+        {
+          "text": "have h₂ : I + M + O ≤ 671 := by\n    -- We perform case analysis on the possible values of I, M, O.\n    cases' I with I\n    -- If I = 0, the product I * M * O cannot be 2001, so this case is impossible.\n    · simp at this\n    cases' M with M\n    -- If M = 0, the product I * M * O cannot be 2001, so this case is impossible.\n    · simp at this\n    -- We consider the possible values of I, M, O by checking the constraints.\n    have h₃ : I ≤ 31 := by\n      nlinarith\n    have h₄ : M ≤ 31 := by\n      nlinarith\n    have h₅ : O ≤ 31 := by\n      nlinarith\n    -- We use interval cases to check all possible values within the constraints.\n    interval_cases I <;> interval_cases M <;> interval_cases O <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1549,
+          "startByte": 823
+        },
+        {
+          "text": "simp [h₂]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1624,
+          "startByte": 1613
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5005",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.361913828,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁' : i * m * o = 2001 := by assumption",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 477,
+          "startByte": 431
+        },
+        {
+          "text": "have h₂ : i + m + o ≤ 671 := by\n    -- Consider the possible values of I, M, and O that satisfy the product condition.\n    -- We will use the fact that the largest sum of distinct primes that multiply to 2001 is 671.\n    -- This is because the prime factorization of 2001 is 3 * 11 * 61, and the sum of these primes is 671.\n    -- Since I, M, and O are distinct primes and their product is 2001, the largest sum of I, M, and O is 671.\n    -- Therefore, we can conclude that I + M + O ≤ 671.\n    have : I + M + O ≤ 671 := by\n      -- Use the fact that the sum of distinct primes is at most 671.\n      apply Nat.le_of_not_lt\n      intro h\n      -- If the sum I + M + O is greater than 671, it would contradict the fact that I, M, and O are primes and their product is 2001.\n      -- This is a contradiction, so the sum I + M + O must be at most 671.\n      simp_all [mul_assoc, mul_comm, mul_left_comm]\n      nlinarith\n    exact this",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1478,
+          "startByte": 540
+        },
+        {
+          "text": "exact h₂",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1552,
+          "startByte": 1542
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5006",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.199129405,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i ≤ 31 := by\n    -- Since i is a positive integer and the product of i, m, and o is 2001, i must be less than or equal to 31.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1465,
+          "startByte": 1013
+        },
+        {
+          "text": "have : m ≤ 31 := by\n    -- Similarly, m must be less than or equal to 31.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1861,
+          "startByte": 1468
+        },
+        {
+          "text": "have : o ≤ 31 := by\n    -- And o must be less than or equal to 31.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all)),\n      mul_pos (Nat.pos_of_ne_zero (by intro h; simp_all)) (Nat.pos_of_ne_zero (by intro h; simp_all))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2250,
+          "startByte": 1864
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 2416,
+          "startByte": 2345
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.781087981,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 256.5655378730001,
+        "simp_all": 15.071468731,
+        "interval_cases": 28.144081377
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5007",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.35196388,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have x : i ≤ 671 := by\n    -- Using the product condition, we know that i must be less than or equal to 671.\n    -- This is because i, m, and o are distinct integers and their product is 2001.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by linarith : i ≠ 0)) (Nat.pos_of_ne_zero (by linarith : m ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : m ≠ 0)) (Nat.pos_of_ne_zero (by linarith : o ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : o ≠ 0)) (Nat.pos_of_ne_zero (by linarith : i ≠ 0))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1049,
+          "startByte": 543
+        },
+        {
+          "text": "have y : m ≤ 671 := by\n    -- Similarly, m must be less than or equal to 671.\n    -- Since i, m, and o are distinct integers and their product is 2001, m must be less than or equal to 671.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by linarith : i ≠ 0)) (Nat.pos_of_ne_zero (by linarith : m ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : m ≠ 0)) (Nat.pos_of_ne_zero (by linarith : o ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : o ≠ 0)) (Nat.pos_of_ne_zero (by linarith : i ≠ 0))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1554,
+          "startByte": 1052
+        },
+        {
+          "text": "have z : o ≤ 671 := by\n    -- Similarly, o must be less than or equal to 671.\n    -- Since i, m, and o are distinct integers and their product is 2001, o must be less than or equal to 671.\n    nlinarith [mul_pos (Nat.pos_of_ne_zero (by linarith : i ≠ 0)) (Nat.pos_of_ne_zero (by linarith : m ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : m ≠ 0)) (Nat.pos_of_ne_zero (by linarith : o ≠ 0)), mul_pos (Nat.pos_of_ne_zero (by linarith : o ≠ 0)) (Nat.pos_of_ne_zero (by linarith : i ≠ 0))]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2059,
+          "startByte": 1557
+        },
+        {
+          "text": "omega",
+          "syntaxKind": "Lean.Parser.Tactic.omega",
+          "stopByte": 2219,
+          "startByte": 2214
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5008",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.497879133,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "norm_num at h₀ h₁",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 569,
+          "startByte": 548
+        },
+        {
+          "text": "have h₂ : i + m + o ≤ 671 := by\n    -- Use `nlinarith` to solve the inequality involving the sum of I, M, and O.\n    nlinarith [mul_pos (Nat.succ_pos 0) (Nat.succ_pos 0), mul_pos (Nat.succ_pos 0) (Nat.succ_pos 0),\n      mul_pos (Nat.succ_pos 0) (Nat.succ_pos 0)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1017,
+          "startByte": 751
+        },
+        {
+          "text": "linarith",
+          "syntaxKind": "linarith",
+          "stopByte": 1071,
+          "startByte": 1063
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5009",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.961619482,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "contrapose! h₀",
+          "syntaxKind": "Mathlib.Tactic.Contrapose.contrapose!",
+          "stopByte": 939,
+          "startByte": 923
+        },
+        {
+          "text": "have h₂ : i ≤ 2001 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1263,
+          "startByte": 1221
+        },
+        {
+          "text": "have h₃ : m ≤ 2001 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1308,
+          "startByte": 1266
+        },
+        {
+          "text": "have h₄ : o ≤ 2001 := by\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1353,
+          "startByte": 1311
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ ⊢\n  -- Using linarith to derive a contradiction from the distinctness and product constraint.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1650,
+          "startByte": 1460
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.512696588,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.19640590099998,
+        "interval_cases": 223.316290687
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5010",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 42.54493711,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i + m + o ≤ 671 := by\n    -- We use the fact that the product of the primes is 2001 and the primes are distinct to bound the sum.\n    have : i + m + o ≤ 671 := by\n      -- We consider all possible values of i, m, and o that are primes and distinct.\n      rcases i with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n        rcases m with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n          rcases o with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n            -- We check that the sum of these primes is less than or equal to 671.\n            simp_all (config := {decide := true})\n    -- We conclude that the sum of i, m, and o is less than or equal to 671.\n    exact this",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1622,
+          "startByte": 952
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1663,
+          "startByte": 1653
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 41.855871794,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 40.23571454300001,
+        "simp_all": 1.620157251
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5011",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.852714352,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₂ : i ≤ 671 := by\n    -- Use the product condition to bound i.\n    nlinarith [mul_pos (Nat.zero_lt_one.trans_le h₀.1.le) (Nat.zero_lt_one.trans_le h₀.2.1.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.1.le) (Nat.zero_lt_one.trans_le h₀.2.2.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.2.le) (Nat.zero_lt_one.trans_le h₀.1.le)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1782,
+          "startByte": 1426
+        },
+        {
+          "text": "have h₃ : m ≤ 671 := by\n    -- Use the product condition to bound m.\n    nlinarith [mul_pos (Nat.zero_lt_one.trans_le h₀.1.le) (Nat.zero_lt_one.trans_le h₀.2.1.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.1.le) (Nat.zero_lt_one.trans_le h₀.2.2.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.2.le) (Nat.zero_lt_one.trans_le h₀.1.le)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2141,
+          "startByte": 1785
+        },
+        {
+          "text": "have h₄ : o ≤ 671 := by\n    -- Use the product condition to bound o.\n    nlinarith [mul_pos (Nat.zero_lt_one.trans_le h₀.1.le) (Nat.zero_lt_one.trans_le h₀.2.1.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.1.le) (Nat.zero_lt_one.trans_le h₀.2.2.le),\n      mul_pos (Nat.zero_lt_one.trans_le h₀.2.2.le) (Nat.zero_lt_one.trans_le h₀.1.le)]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2500,
+          "startByte": 2144
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 2684,
+          "startByte": 2595
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.992135736,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 78.68968477199999,
+        "interval_cases": 223.302450964
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5012",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 111.295369552,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 888,
+          "startByte": 880
+        },
+        {
+          "text": "rcases i with (_ | _ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n  rcases m with (_ | _ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n  rcases o with (_ | _ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n  -- Simplify the expression using the given conditions.\n  simp_all [mul_assoc]\n  -- Use linear arithmetic to verify the constraints and the possible values.\n  <;> nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1308,
+          "startByte": 957
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 104.843765186,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 102.82033881199997,
+        "simp_all": 2.023426374
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5013",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 97.146726368,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have i_pos : 0 < i := (Nat.pos_of_ne_zero fun hi => by simp_all)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1014,
+          "startByte": 950
+        },
+        {
+          "text": "have m_pos : 0 < m := (Nat.pos_of_ne_zero fun hm => by simp_all)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1081,
+          "startByte": 1017
+        },
+        {
+          "text": "have o_pos : 0 < o := (Nat.pos_of_ne_zero fun ho => by simp_all)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1148,
+          "startByte": 1084
+        },
+        {
+          "text": "have : i + m + o ≤ 671 := by\n    -- Using the distinctness and positivity constraints, we can infer the maximum possible sum.\n    have : i ≤ 13 := by\n      nlinarith [mul_pos i_pos m_pos, mul_pos i_pos o_pos]\n    have : m ≤ 13 := by\n      nlinarith [mul_pos m_pos o_pos]\n    have : o ≤ 13 := by\n      nlinarith [mul_pos m_pos o_pos]\n    -- Given the constraints, we can deduce the maximum sum.\n    interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1688,
+          "startByte": 1211
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1766,
+          "startByte": 1756
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 91.912517499,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 81.58269334500001,
+        "simp_all": 7.781965202,
+        "interval_cases": 2.547858952
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5014",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.848526323,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₀' : i ≤ 671 := by\n    -- Since i is a positive integer and the product of i, m, and o equals 2001, i must be less than or equal to 671.\n    apply Nat.le_of_not_gt\n    intro h\n    have h' : i * m * o ≤ 2001 := by\n      -- If i is greater than 671, the product i * m * o would exceed 2001, contradicting the given condition.\n      simpa [mul_assoc] using Nat.mul_le_mul_left (m * o) h\n    simpa [mul_assoc] using Nat.mul_le_mul_left (m * o) h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1318,
+          "startByte": 862
+        },
+        {
+          "text": "have h₁' : m ≤ 671 := by\n    -- Similarly, m must be less than or equal to 671.\n    apply Nat.le_of_not_gt\n    intro h\n    have h' : i * m * o ≤ 2001 := by\n      -- If m is greater than 671, the product i * m * o would exceed 2001, contradicting the given condition.\n      simpa [mul_assoc] using Nat.mul_le_mul_left (i * o) h\n    simpa [mul_assoc] using Nat.mul_le_mul_left (i * o) h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1714,
+          "startByte": 1321
+        },
+        {
+          "text": "have h₂' : o ≤ 671 := by\n    -- And o must be less than or equal to 671.\n    apply Nat.le_of_not_gt\n    intro h\n    have h' : i * m * o ≤ 2001 := by\n      -- If o is greater than 671, the product i * m * o would exceed 2001, contradicting the given condition.\n      simpa [mul_assoc] using Nat.mul_le_mul_left (i * m) h\n    simpa [mul_assoc] using Nat.mul_le_mul_left (i * m) h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2103,
+          "startByte": 1717
+        },
+        {
+          "text": "have h₃ : i + m + o ≤ 671 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2254,
+          "startByte": 2210
+        },
+        {
+          "text": "exact h₃",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 2267,
+          "startByte": 2257
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5015",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.837785645,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₁ := h₀.2.1",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 828,
+          "startByte": 807
+        },
+        {
+          "text": "have h₂ := h₀.2.2",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 852,
+          "startByte": 831
+        },
+        {
+          "text": "have h₃ := h₀.1",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 874,
+          "startByte": 855
+        },
+        {
+          "text": "have : i ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mul_left_eq h₁)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1058,
+          "startByte": 980
+        },
+        {
+          "text": "have : m ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mul_left_eq h₁)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1139,
+          "startByte": 1061
+        },
+        {
+          "text": "have : o ≤ 2001 := Nat.le_of_dvd (by norm_num) (Nat.dvd_of_mul_left_eq h₂)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1220,
+          "startByte": 1142
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> norm_num at h₁ <;> norm_num\n  -- By checking the smallest possible values, we find that the sum i + m + o is indeed 671.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1540,
+          "startByte": 1340
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.585322868,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 73.890876952,
+        "interval_cases": 225.694445916
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5016",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.340344288,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have h₂ : i ≤ 44 := by\n    -- Using the fact that 2001 = 3 * 667, we know that i must be less than or equal to 44.\n    apply Nat.le_of_not_lt\n    intro hi\n    have : i ≤ 44 := by nlinarith\n    -- If i > 44, the product i * m * o would exceed 2001, which contradicts the given condition.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1239,
+          "startByte": 933
+        },
+        {
+          "text": "have h₃ : m ≤ 44 := by\n    -- Similarly, m must be less than or equal to 44.\n    apply Nat.le_of_not_lt\n    intro hm\n    have : m ≤ 44 := by nlinarith\n    -- If m > 44, the product i * m * o would exceed 2001, which contradicts the given condition.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1510,
+          "startByte": 1242
+        },
+        {
+          "text": "have h₄ : o ≤ 44 := by\n    -- And o must be less than or equal to 44.\n    apply Nat.le_of_not_lt\n    intro ho\n    have : o ≤ 44 := by nlinarith\n    -- If o > 44, the product i * m * o would exceed 2001, which contradicts the given condition.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1774,
+          "startByte": 1513
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1951,
+          "startByte": 1880
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 302.017595167,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 211.918466073,
+        "simp_all": 12.212483392,
+        "interval_cases": 77.886645702
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5017",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 300.845127115,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i * m * o = 2001 := h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 897,
+          "startByte": 866
+        },
+        {
+          "text": "have : i + m + o ≤ 671 := by\n    -- We use the fact that the product of three distinct integers equals 2001 to deduce that each integer must be less than or equal to 671.\n    have h₂ : i ≤ 2001 := by nlinarith\n    have h₃ : m ≤ 2001 := by nlinarith\n    have h₄ : o ≤ 2001 := by nlinarith\n    -- Using the constraints on i, m, and o, we can deduce that their sum is at most 671.\n    interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1427,
+          "startByte": 960
+        },
+        {
+          "text": "simpa",
+          "syntaxKind": "Lean.Parser.Tactic.simpa",
+          "stopByte": 1492,
+          "startByte": 1487
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.978658082,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 77.86884210299999,
+        "interval_cases": 224.109815979
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5018",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.138009278,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "norm_num at h₀ h₁",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1021,
+          "startByte": 1000
+        },
+        {
+          "text": "nlinarith [mul_pos (Nat.pos_of_ne_zero (h₀.1)) (Nat.pos_of_ne_zero (h₀.2.1)),\n    mul_pos (Nat.pos_of_ne_zero (h₀.2.1)) (Nat.pos_of_ne_zero (h₀.2.2)),\n    mul_pos (Nat.pos_of_ne_zero (h₀.1)) (Nat.pos_of_ne_zero (h₀.2.2))]",
+          "syntaxKind": "nlinarith",
+          "stopByte": 1384,
+          "startByte": 1151
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5019",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.596420604,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "norm_num at h₀",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1083,
+          "startByte": 1067
+        },
+        {
+          "text": "have h₂ : 0 < i ∧ 0 < m ∧ 0 < o := by\n    -- Since the product of the primes equals 2001, each prime must be greater than 0.\n    refine ⟨Nat.pos_of_ne_zero fun hi => ?_, Nat.pos_of_ne_zero fun hm => ?_, Nat.pos_of_ne_zero fun ho => ?_⟩ <;>\n    -- Use the fact that the product of the primes equals 2001 to infer properties about the primes.\n    simp_all [Nat.mul_assoc]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1580,
+          "startByte": 1201
+        },
+        {
+          "text": "nlinarith [mul_pos h₂.1 h₂.2.1, mul_pos h₂.1 h₂.2.2, mul_pos h₂.2.1 h₂.2.2]",
+          "syntaxKind": "nlinarith",
+          "stopByte": 1750,
+          "startByte": 1663
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": false,
+      "historical_profile_exclusive_cpu_seconds": null,
+      "historical_profile_family_exclusive_cpu_seconds": {},
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5020",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 301.044165797,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "apply le_of_not_gt",
+          "syntaxKind": "Lean.Parser.Tactic.apply",
+          "stopByte": 1122,
+          "startByte": 1104
+        },
+        {
+          "text": "intro h",
+          "syntaxKind": "Lean.Parser.Tactic.intro",
+          "stopByte": 1132,
+          "startByte": 1125
+        },
+        {
+          "text": "have h₂ : i + m + o ≥ 672 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1271,
+          "startByte": 1227
+        },
+        {
+          "text": "have h₃ : i ≤ 671 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1403,
+          "startByte": 1366
+        },
+        {
+          "text": "have h₄ : m ≤ 671 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1443,
+          "startByte": 1406
+        },
+        {
+          "text": "have h₅ : o ≤ 671 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1483,
+          "startByte": 1446
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1735,
+          "startByte": 1664
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 301.954376884,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 75.99290497199998,
+        "interval_cases": 225.961471912
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5021",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 127.976633627,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i * m * o = 2001 := h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 412,
+          "startByte": 381
+        },
+        {
+          "text": "have : i ≤ 2001 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 448,
+          "startByte": 415
+        },
+        {
+          "text": "have : m ≤ 2001 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 484,
+          "startByte": 451
+        },
+        {
+          "text": "have : o ≤ 2001 := by nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 520,
+          "startByte": 487
+        },
+        {
+          "text": "have : i + m + o ≤ 671 := by\n    -- We use a brute-force approach to check all possible values of i, m, and o that satisfy the constraints.\n    rcases i with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n    rcases m with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n    rcases o with (_ | _ | _ | _ | _ | _ | _ | _ | _) <;>\n    -- We simplify the conditions and check if the sum is less than or equal to 671.\n    simp_all [Nat.mul_assoc] <;>\n    -- We use linear arithmetic to verify the inequality.\n    nlinarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1167,
+          "startByte": 662
+        },
+        {
+          "text": "exact this",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 1267,
+          "startByte": 1257
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 122.78517892,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 119.81545598799998,
+        "simp_all": 2.969722932
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5022",
+      "task": "amc12_2000_p1",
+      "final_status": "rejected",
+      "current_composed_attempt_seconds": 0.408752019,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i * m * o = 2001 := h₁",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 946,
+          "startByte": 915
+        },
+        {
+          "text": "have h₂ : i + m + o ≤ 671 := by\n    -- We consider the possible values of i, m, and o that satisfy the product constraint.\n    -- We use the fact that the sum of i, m, and o is maximized when i, m, and o are distinct and their product is 2001.\n    -- By analyzing the factors of 2001, we find that the sum i + m + o is indeed 671.\n    have h₃ : i + m + o ≤ 671 := by\n      -- We use the fact that the sum of i, m, and o is maximized when i, m, and o are distinct and their product is 2001.\n      -- By analyzing the factors of 2001, we find that the sum i + m + o is indeed 671.\n      have h₄ : i ≤ 671 := by\n        -- Since i is a positive integer and the product of i, m, and o equals 2001, i must be less than or equal to 671.\n        nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.1)) (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.2.1))]\n      have h₅ : m ≤ 671 := by\n        -- Similarly, m must be less than or equal to 671.\n        nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.1)) (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.2.2))]\n      have h₆ : o ≤ 671 := by\n        -- And o must be less than or equal to 671.\n        nlinarith [mul_pos (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.1)) (Nat.pos_of_ne_zero (by simpa [mul_assoc] using h₀.2.2))]\n      -- Combining these inequalities, we get the desired result.\n      nlinarith\n    exact h₃",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2539,
+          "startByte": 1089
+        },
+        {
+          "text": "exact h₂",
+          "syntaxKind": "Lean.Parser.Tactic.exact",
+          "stopByte": 2631,
+          "startByte": 2621
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 2.522102236,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 2.522102236000001
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    },
+    {
+      "id": "minif2f-5023",
+      "task": "amc12_2000_p1",
+      "final_status": "timeout",
+      "current_composed_attempt_seconds": 301.244952694,
+      "native_syntax_present": true,
+      "native_syntax_eligible": true,
+      "outer_units": [
+        {
+          "text": "have : i ≤ 2001 := by\n    apply Nat.le_of_dvd (show 0 < 2001 by norm_num)\n    simp [h₀]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 935,
+          "startByte": 844
+        },
+        {
+          "text": "have : m ≤ 2001 := by\n    apply Nat.le_of_dvd (show 0 < 2001 by norm_num)\n    simp [h₀]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1029,
+          "startByte": 938
+        },
+        {
+          "text": "have : o ≤ 2001 := by\n    apply Nat.le_of_dvd (show 0 < 2001 by norm_num)\n    simp [h₀]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1123,
+          "startByte": 1032
+        },
+        {
+          "text": "interval_cases i <;> interval_cases m <;> interval_cases o <;> simp_all\n  <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1209,
+          "startByte": 1126
+        }
+      ],
+      "source_target_projection": null,
+      "historical_profile_present": true,
+      "historical_profile_exclusive_cpu_seconds": 299.307566702,
+      "historical_profile_family_exclusive_cpu_seconds": {
+        "other": 76.55766004300003,
+        "interval_cases": 222.749906659
+      },
+      "actual_dynamic_read_set": null,
+      "negative_lookups_recorded": false,
+      "elaborated_closed_target": null,
+      "remaining_native_heartbeat_budget": null,
+      "completed_ordinary_failure_producer": null
+    }
+  ],
+  "source_projection_groups": [
+    {
+      "source_projection": [
+        "amc12a_2020_p4",
+        "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rfl"
+      ],
+      "sources": [
+        "minif2f-3687",
+        "minif2f-3691",
+        "minif2f-3700",
+        "minif2f-3706",
+        "minif2f-3709"
+      ],
+      "conditional_collapsible_calls": 4,
+      "first_producer_scenarios": [
+        {
+          "assumed_first_producer": "minif2f-3687",
+          "later_source_ids": [
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1220.997081854,
+          "later_historical_rfl_family_cpu_envelope_seconds": 354.501716676,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3691",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3700",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1216.721399476,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.397316064,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3700",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3706",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1218.6916077780002,
+          "later_historical_rfl_family_cpu_envelope_seconds": 354.43880440600003,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3706",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3709"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1219.686149242,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.458118634,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        },
+        {
+          "assumed_first_producer": "minif2f-3709",
+          "later_source_ids": [
+            "minif2f-3687",
+            "minif2f-3691",
+            "minif2f-3700",
+            "minif2f-3706"
+          ],
+          "later_whole_candidate_attempt_envelope_seconds": 1210.658329546,
+          "later_historical_rfl_family_cpu_envelope_seconds": 355.40841672,
+          "later_current_final_statuses": {
+            "resource_exhausted": 4
+          }
+        }
+      ],
+      "qualified_replay_hits": null,
+      "qualified_saved_seconds": null
+    }
+  ],
+  "actual_read_set_coverage": 0,
+  "qualified_ordinary_failure_replay_hits": null,
+  "qualified_saved_seconds": null,
+  "native_invocations": 0,
+  "interpretation": [
+    "No actual read sets were retained for these calls; zero trace coverage is not zero opportunity.",
+    "Native Syntax identifies source calls, not reached calls, post-rewrite Lean Expr targets or reads.",
+    "Closed targets do not establish absence of local-instance, metavariable, environment-extension or negative-lookup dependencies.",
+    "Whole candidate attempts include all their work and resource retries, not just the projected call.",
+    "Historical profiler CPU is a separate run; rfl family totals may include earlier/internal calls.",
+    "Resource-exhausted/timeout attempts are not completed ordinary-failure cache producers.",
+    "No guaranteed RSS-failure monotonicity follows from a semantic read-set key.",
+    "No source-feature prediction, new native collection or production cache is enabled."
+  ]
+}
