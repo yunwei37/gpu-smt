@@ -340,6 +340,35 @@ axiom closure is established by this census. In particular, zero direct
 \texttt{native\_decide} or \texttt{ofReduceBool} tokens cannot establish absence
 of native evaluation or imported axiom dependencies.
 
+\paragraph{Native pilot of the released math library.}
+A separate phobos-vt point uses the release's Lean~4.34.1 toolchain,
+Mathlib revision \texttt{d13f23b7} and eight matching dependency pins.
+Seven modules covering four preselected targets are compiled serially with
+one Lean thread, a 200,000-heartbeat option, an 8,192\,MiB native memory
+option, \texttt{autoImplicit=false} and olean-only output.
+Source text is unchanged in these seven modules.
+Prerequisites and OS caches are already warm; their preparation is outside
+the per-compiler clocks.
+
+Each module runs first without profiling/stats and then with native
+\texttt{--profile} only. All 14 compiler processes exit zero without a
+sorry warning. This does not establish transitive axiom closure or full
+candidate-service acceptance. Baseline and profiled process-wall sums are
+44.003 and 44.499 seconds; CPU sums are 44.044 and 44.530 seconds.
+The observed wall difference is 0.496 seconds, or 1.13\%, in one fixed-order,
+shared-node pair, without randomized repetitions or a population bound.
+The complete two-mode capture is 89.078 seconds.
+Compiler-process high-water RSS reaches 7.46\,GiB, while the one-second
+sampled aggregate peak is 7.43\,GiB; sampling can miss shorter peaks.
+Neither the native memory option nor those samples are a hard RSS quota.
+
+This is four of the 53 selected targets, not complete representative native
+coverage or a full-library timing. Cumulative profiler phases overlap and
+are not a wall partition. Version, option, cohort, budget and compilation
+boundary differ from the \texttt{trace.profiler} diagnostic in
+Table~\ref{tab:profiler-diagnostic-limits}; this observed difference cannot
+rescale that truncated-work point or establish engine acceleration.
+
 \paragraph{Released feedback and repair corpora.}
 A separate static scan covers all 68,932 programs in the pinned EPFL
 evaluation release: 28,145 carry valid labels and 40,787 invalid labels,
@@ -1315,11 +1344,15 @@ inferring a tracing allocation multiplier or production pass-set loss.
 The complete capture exits zero and retires, with an 8.05\,GiB sampled
 owned-tree peak; its whole clock includes both modes and other runtime work.
 
-A separate four-pair C-timing prototype emits 16 source-boundary markers
-but zero tactic entry/exit callbacks. Successful completion therefore does
-not qualify its intended measurements. Neither that inactive hook nor the
-budget-perturbed trace establishes the unmodified candidates' work/span or
-an engine speedup.
+A subsequent link-time C-timing hook delegates to the stock callback
+without enabling Lean trace objects. Three fresh processes run the stock
+SDK, linked timing-off and linked timing-on paths on four controls.
+All eight stock/comparator pairs have equal error flags, raw diagnostic
+strings, InfoTrees and observed raw allocation-heartbeat deltas.
+The timed process records 1,050 entries and 1,050 matching exits with
+balanced per-thread nesting. This is small-control qualification, not
+generic transparency, full 200-source parity or an engine speedup.
+It does not recover work lost in the earlier profiler diagnostic.
 
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith

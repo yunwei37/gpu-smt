@@ -1,0 +1,213 @@
+{
+  "W_commit": "127ddc4",
+  "M_commit": "3837eca",
+  "native_runs_by_root": 0,
+  "W_native_modules": 7,
+  "W_native_executions": 14,
+  "W_modes": {
+    "baseline": {
+      "process_wall_sum_s": 44.00284085981548,
+      "CPU_sum_s": 44.044104999999995,
+      "wait4_peak_rss_range_bytes": [
+        1789149184,
+        8013123584
+      ]
+    },
+    "profile_only": {
+      "process_wall_sum_s": 44.498820007778704,
+      "CPU_sum_s": 44.530083999999995,
+      "wait4_peak_rss_range_bytes": [
+        1789296640,
+        8011960320
+      ]
+    }
+  },
+  "W_wall_difference_s": 0.49597914796322584,
+  "W_wall_relative_difference": 0.01127152561679634,
+  "W_aggregate_capture": {
+    "exit_code": 0,
+    "elapsed_s": 89.07757143024355,
+    "sampled_tree_peak_bytes": 7982608384,
+    "max_native_lean_processes": 1,
+    "signal_control": "EACCES errno13; natural child exit; no kill attempted",
+    "sampling_interval_s": 1
+  },
+  "W_memory_samples": 90,
+  "M_fresh_processes": 3,
+  "M_tiny_controls": 4,
+  "M_stock_comparisons": [
+    {
+      "comparator": "linked-off",
+      "control": "independent",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 13000
+    },
+    {
+      "comparator": "linked-off",
+      "control": "coupled",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 23351
+    },
+    {
+      "comparator": "linked-off",
+      "control": "ordinary-error",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 4461
+    },
+    {
+      "comparator": "linked-off",
+      "control": "budget",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 114090
+    },
+    {
+      "comparator": "linked-on",
+      "control": "independent",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 13000
+    },
+    {
+      "comparator": "linked-on",
+      "control": "coupled",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 23351
+    },
+    {
+      "comparator": "linked-on",
+      "control": "ordinary-error",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 4461
+    },
+    {
+      "comparator": "linked-on",
+      "control": "budget",
+      "equal_flags_diagnostics_InfoTree_raw_HB": true,
+      "raw_HB_delta": 114090
+    }
+  ],
+  "M_callback_counts": {
+    "source": 8,
+    "enter": 1050,
+    "exit": 1050
+  },
+  "M_balanced_per_thread_nesting": true,
+  "M_return_tags_are_not_candidate_verdicts": {
+    "1": 524,
+    "0": 526
+  },
+  "M_process_receipts": {
+    "stock": {
+      "argv": [
+        "taskset",
+        "-c",
+        "8,9,10,11",
+        "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+        "-j1",
+        "-M8192",
+        "-T50000000",
+        "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean"
+      ],
+      "source": "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean",
+      "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+      "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+      "signals_sent": 0,
+      "native_allocation_limit": 50000000,
+      "native_memory_MiB": 8192,
+      "internal_wall_seconds": 60,
+      "loaded_measurement_library": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing/software-probe.so",
+      "intended_wall_handler_exit_code": 124,
+      "observed_internal_alarm_signal_possible": 14,
+      "pid": 10046,
+      "start_ticks": "740838042",
+      "native_kernel_peak_rss_bytes": 291532800,
+      "native_cpu_seconds": 0.956649,
+      "exit": 0,
+      "wall_s": 0.9671751772984862,
+      "sampled_peak_owned_rss_bytes": 14389248,
+      "minimum_node_MemAvailable_bytes": 61759664128,
+      "samples": 1,
+      "sample_interval_s": 1,
+      "retired": true
+    },
+    "linked-off": {
+      "argv": [
+        "taskset",
+        "-c",
+        "8,9,10,11",
+        "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/wrapped-cli-v5/lean",
+        "-j1",
+        "-M8192",
+        "-T50000000",
+        "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean"
+      ],
+      "source": "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean",
+      "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+      "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+      "signals_sent": 0,
+      "native_allocation_limit": 50000000,
+      "native_memory_MiB": 8192,
+      "internal_wall_seconds": 60,
+      "loaded_measurement_library": "embedded probe",
+      "intended_wall_handler_exit_code": 124,
+      "observed_internal_alarm_signal_possible": 14,
+      "pid": 10048,
+      "start_ticks": "740838144",
+      "native_kernel_peak_rss_bytes": 293609472,
+      "native_cpu_seconds": 0.9399759999999999,
+      "exit": 0,
+      "wall_s": 0.9673841120675206,
+      "sampled_peak_owned_rss_bytes": 15044608,
+      "minimum_node_MemAvailable_bytes": 61710368768,
+      "samples": 1,
+      "sample_interval_s": 1,
+      "retired": true
+    },
+    "linked-on": {
+      "argv": [
+        "taskset",
+        "-c",
+        "8,9,10,11",
+        "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/wrapped-cli-v5/lean",
+        "-j1",
+        "-M8192",
+        "-T50000000",
+        "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean"
+      ],
+      "source": "/workspaces/repository/research/mechanisms-2026-10-30/CTimingFresh.lean",
+      "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+      "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+      "signals_sent": 0,
+      "native_allocation_limit": 50000000,
+      "native_memory_MiB": 8192,
+      "internal_wall_seconds": 60,
+      "loaded_measurement_library": "embedded probe",
+      "intended_wall_handler_exit_code": 124,
+      "observed_internal_alarm_signal_possible": 14,
+      "pid": 10050,
+      "start_ticks": "740838248",
+      "native_kernel_peak_rss_bytes": 293281792,
+      "native_cpu_seconds": 0.9568129999999999,
+      "exit": 0,
+      "wall_s": 0.9673275295644999,
+      "sampled_peak_owned_rss_bytes": 14798848,
+      "minimum_node_MemAvailable_bytes": 61706850304,
+      "samples": 1,
+      "sample_interval_s": 1,
+      "retired": true
+    }
+  },
+  "limits": [
+    "W seven-module fixed-order pilot is not the full probability sample or a causal/population overhead bound.",
+    "W native compiler --profile differs from the older trace.profiler diagnostic in version,option,cohort and budget.",
+    "Compiler process wait4 peaks and one-second aggregate samples have different scopes.",
+    "No transitive axiom-closure or full service acceptance is established by compiler exit and lack of sorry warnings.",
+    "M four controls do not prove generic allocation transparency or full200/production parity.",
+    "No new-budget model, global speedup, Amdahl bound, COW gain or scientific-mainline change."
+  ],
+  "elapsed_s": 0.016570542939007282,
+  "root_peak_rss_kib": 19620,
+  "root_affinity": [
+    0,
+    1
+  ]
+}

@@ -649,3 +649,40 @@ The separate C prototype's raw tactics.jsonl contains16source markers and zero
 tactic enter/exit callbacks. Completion is not engagement. Root launches no
 native verifier, repairs no M hook and edits no W/M/O path. Scientific framing,
 four RQs and citations stay fixed. Detailed evidence and self-review:step0180.
+
+
+## 2026-10-30 — first released-module native costs and engaged timing hook (step0181)
+
+Root independently reads W127ddc4's actual14 JSONL compiler records and logs,
+checks all seven module/mode pairs against the CSV, exact resource fields and
+zero source budget edits. Native Lean4.34.1/Mathlibd13f23b7 prerequisites are
+prepared separately; these are olean-only module compiles, not full project
+coverage, cold cache setup or original unlimited-budget costs.
+
+Baseline/profile-only process sums are44.002840860/44.498820008s, CPU sums
+44.044105/44.530084s. Difference0.495979148s (1.12715%) is descriptive for the
+single baseline-first, cache-warm shared-node pair. All14exit0 and no sorry
+warnings; no full service acceptance or transitive axiom audit follows.
+The whole two-mode capture takes89.077571430s. Root checks all90 memory samples
+and the7,982,608,384-byte sampled aggregate peak against the terminal record.
+Compiler wait4 peaks reach8,013,123,584bytes, above the sampled aggregate peak:
+short transients can be missed. Native memory8192MiB is not a hard RSS quota.
+This4-of53target pilot cannot calibrate a full-source cost model or safe
+eight-worker admission. Cumulative phase values overlap. The --profile point
+cannot correct a different-version/cohort/option/budget trace.profiler run.
+
+M3837eca supersedes the inactive dynamic hook with actual link-time callbacks.
+Root directly parses stock/linked-off/linked-on cold stdout and receipts, verifies
+identical source snapshots, all eight stock/comparator flag/error/InfoTree/raw-HB
+comparisons, and reads the raw event file. The1,050entry/exit IDs match, their
+per-thread parent stacks close correctly and durations are nonnegative.
+Return tags0/1 are callback values, not counts of successful/failed candidates.
+Four raw-HB deltas match13000/23351/4461/114090 across all paths; this is only
+small-control qualification, not general transparency, full200 or production
+parity, timing overhead, or a speculative-execution speedup.
+
+The paper adds the qualified native pilot and replaces the inactive-hook-only
+paragraph with this later limited result. All prior failure data stay in M
+artifacts, step0180 and Git history. No historical run is relabeled or deleted.
+Root launches no native verifier or other Agent, changes no W/M/O path, and
+preserves all scientific framing/RQs and existing citations. Same-thread review.
