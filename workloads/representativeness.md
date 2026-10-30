@@ -51,3 +51,18 @@ filtering, not independent semantic validation.
 Native tail ratios cannot be transferred directly between these samples,
 Verus and the older Lean1.6%/73% point. Each needs its own runtime denominator,
 budget provenance, arrival distribution and censoring analysis.
+
+
+## A concrete stored-label non-reproduction
+
+[Six fresh controls](candidates/epfl-label-reproducibility/) on
+training-rg0-row19776 retain the released program/feedback. Original0HB,
+annotated0HB and800kHB all compile; explicit recursion128 fails while256/512
+pass. Our smaller heartbeat cap and annotation comments therefore do not
+explain fresh success at this point. This does not prove the producer used
+a low recursion limit or that its label was a bug. The reported Lean version
+matches; exact original Mathlib/recursion/trace/target context is unavailable,
+and producer implementation is not yet released. No original per-row timing
+exists to attribute this to machine speed. Preserve both native and stored
+verdicts. Native-semantic budgets and harness acceptance labels are different
+measurement axes, not interchangeable facts about an intrinsically false goal.

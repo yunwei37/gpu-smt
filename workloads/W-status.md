@@ -87,3 +87,14 @@ passes here; original environment/limits unknown,not proven labelbug.
 Current unique foreground native: openai4341-amplitudes-j8-1200,
 launch.json owns actualPID/birth.100kHB/M8192/j8,1200s self/1400s group.
 Prior pilot retired. Old13733RSS charged. Do not duplicate/restart it.
+
+
+W024: full Amplitudes passes180.276s, combined11.72GiB;48ffec4 pushed and
+remote ancestry verified after transient commit_refs response. M handoff:
+candidates/epfl-training12-native/M-heartbeat-locations.csv (6IDs/20positions).
+W025: six exact-program controls: original0HB/annotated0HB/800k allpass,
+rec128fails/256anddefault512pass. Original producer context unavailable;
+not a proven labelbug. Current only foreground: openai4341-strata-batch4,
+controller42614/birth742295084,8cores/M8192/100kHB/self300/group1400,
+original frozen targets in12uncovered cells. Verify real terminal, do not
+restart. Exact full-build CPU CI not yet estimable from incomplete cells.
