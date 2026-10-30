@@ -16,6 +16,13 @@ Replay requires explicit caller qualification and identical retained Core/Meta/
 Term/Tactic reader and state objects plus the exact Syntax object. References
 are kept alive in the record; IDs/addresses cannot be recycled beneath it.
 This is intentionally conservative and can miss reconstructed equal inputs.
+In particular, independently created request contexts do not qualify merely
+because goals and tactics match. Different complete source FileMaps imply
+different Core contexts, so this guard cannot provide cross-source reuse for
+those requests. It is a transition primitive, not the proposed semantic
+goal-state cache. Cross-candidate identity/diagnostic rebasing and effect
+qualification are still required; do not claim a population zero-hit result
+or an impossibility bound for broader designs from this guard.
 It is **not complete replay qualification**: identical objects may contain mutable
 references, and ambient IO, opaque extensions, cancellation/resource observations
 and diagnostic effects still require backend-specific analysis. Do not enable

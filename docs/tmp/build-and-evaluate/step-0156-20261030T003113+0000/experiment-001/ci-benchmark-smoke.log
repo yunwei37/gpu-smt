@@ -1,0 +1,640 @@
+﻿2026-10-30T01:13:39.4896500Z Current runner version: '2.338.0'
+2026-10-30T01:13:39.4916209Z ##[group]Runner Image Provisioner
+2026-10-30T01:13:39.4916797Z Hosted Compute Agent
+2026-10-30T01:13:39.4917164Z Version: 20261021.618
+2026-10-30T01:13:39.4917544Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-30T01:13:39.4918071Z Build Date: 2026-10-21T00:45:21Z
+2026-10-30T01:13:39.4918475Z Worker ID: {b1084fa0-53f0-4a89-a14d-fa7a953d000a}
+2026-10-30T01:13:39.4918909Z Region: southcentralus
+2026-10-30T01:13:39.4919268Z Cloud: Azure
+2026-10-30T01:13:39.4919644Z ##[endgroup]
+2026-10-30T01:13:39.4920459Z ##[group]Operating System
+2026-10-30T01:13:39.4920849Z Ubuntu
+2026-10-30T01:13:39.4921154Z 24.04.5
+2026-10-30T01:13:39.4921512Z LTS
+2026-10-30T01:13:39.4921826Z ##[endgroup]
+2026-10-30T01:13:39.4922183Z ##[group]Runner Image
+2026-10-30T01:13:39.4922603Z Image: ubuntu-24.04
+2026-10-30T01:13:39.4922936Z Version: 20261025.353.1
+2026-10-30T01:13:39.4924072Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-30T01:13:39.4925282Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-10-30T01:13:39.4925827Z ##[endgroup]
+2026-10-30T01:13:39.4926525Z ##[group]GITHUB_TOKEN Permissions
+2026-10-30T01:13:39.4927960Z Contents: read
+2026-10-30T01:13:39.4928295Z Metadata: read
+2026-10-30T01:13:39.4928723Z Packages: read
+2026-10-30T01:13:39.4929058Z ##[endgroup]
+2026-10-30T01:13:39.4930455Z Secret source: Actions
+2026-10-30T01:13:39.4931008Z Cache mode: write
+2026-10-30T01:13:39.4931488Z Prepare workflow directory
+2026-10-30T01:13:39.5136707Z Prepare all required actions
+2026-10-30T01:13:39.5167503Z Getting action download info
+2026-10-30T01:13:39.7732474Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-30T01:13:39.8776482Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-30T01:13:40.0536838Z Complete job name: z3-smoke
+2026-10-30T01:13:40.1061621Z ##[group]Run actions/checkout@v4
+2026-10-30T01:13:40.1062023Z with:
+2026-10-30T01:13:40.1062257Z   repository: yunwei37/gpu-smt
+2026-10-30T01:13:40.1064308Z   token: ***
+2026-10-30T01:13:40.1064533Z   ssh-strict: true
+2026-10-30T01:13:40.1064765Z   ssh-user: git
+2026-10-30T01:13:40.1065004Z   persist-credentials: true
+2026-10-30T01:13:40.1065262Z   clean: true
+2026-10-30T01:13:40.1065500Z   sparse-checkout-cone-mode: true
+2026-10-30T01:13:40.1065772Z   fetch-depth: 1
+2026-10-30T01:13:40.1066016Z   fetch-tags: false
+2026-10-30T01:13:40.1066250Z   show-progress: true
+2026-10-30T01:13:40.1066489Z   lfs: false
+2026-10-30T01:13:40.1066704Z   submodules: false
+2026-10-30T01:13:40.1066942Z   set-safe-directory: true
+2026-10-30T01:13:40.1067209Z   allow-unsafe-pr-checkout: false
+2026-10-30T01:13:40.1067550Z ##[endgroup]
+2026-10-30T01:13:40.2979884Z Syncing repository: yunwei37/gpu-smt
+2026-10-30T01:13:40.2981339Z ##[group]Getting Git version info
+2026-10-30T01:13:40.2982001Z Working directory is '/home/runner/work/gpu-smt/gpu-smt'
+2026-10-30T01:13:40.2982824Z [command]/usr/bin/git version
+2026-10-30T01:13:40.3038257Z git version 2.56.0
+2026-10-30T01:13:40.3051135Z ##[endgroup]
+2026-10-30T01:13:40.3062187Z Temporarily overriding HOME='/home/runner/work/_temp/34c88310-9228-4981-88f2-750063439ca7' before making global git config changes
+2026-10-30T01:13:40.3063494Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T01:13:40.3067176Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gpu-smt/gpu-smt
+2026-10-30T01:13:40.3113386Z Deleting the contents of '/home/runner/work/gpu-smt/gpu-smt'
+2026-10-30T01:13:40.3119278Z ##[group]Initializing the repository
+2026-10-30T01:13:40.3120280Z [command]/usr/bin/git init /home/runner/work/gpu-smt/gpu-smt
+2026-10-30T01:13:40.3210149Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-30T01:13:40.3211036Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-30T01:13:40.3211760Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-30T01:13:40.3212143Z hint: call:
+2026-10-30T01:13:40.3212355Z hint:
+2026-10-30T01:13:40.3212641Z hint: 	git config --global init.defaultBranch <name>
+2026-10-30T01:13:40.3212964Z hint:
+2026-10-30T01:13:40.3213446Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-30T01:13:40.3214199Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-30T01:13:40.3214762Z hint:
+2026-10-30T01:13:40.3214985Z hint: 	git branch -m <name>
+2026-10-30T01:13:40.3215230Z hint:
+2026-10-30T01:13:40.3215557Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-30T01:13:40.3222901Z Initialized empty Git repository in /home/runner/work/gpu-smt/gpu-smt/.git/
+2026-10-30T01:13:40.3231926Z [command]/usr/bin/git remote add origin https://github.com/yunwei37/gpu-smt
+2026-10-30T01:13:40.3272683Z ##[endgroup]
+2026-10-30T01:13:40.3273448Z ##[group]Disabling automatic garbage collection
+2026-10-30T01:13:40.3276003Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-30T01:13:40.3304494Z ##[endgroup]
+2026-10-30T01:13:40.3304886Z ##[group]Setting up auth
+2026-10-30T01:13:40.3315773Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T01:13:40.3349013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-30T01:13:40.3642299Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T01:13:40.3678022Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-30T01:13:40.3861177Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T01:13:40.3896305Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-30T01:13:40.4078083Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-30T01:13:40.4117543Z ##[endgroup]
+2026-10-30T01:13:40.4118076Z ##[group]Fetching the repository
+2026-10-30T01:13:40.4126266Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a27876ca7d5986a6cb9bfe5663c711ee9f29c779:refs/remotes/origin/main
+2026-10-30T01:14:18.8668121Z From https://github.com/yunwei37/gpu-smt
+2026-10-30T01:14:18.8669556Z  * [new ref]           a27876ca7d5986a6cb9bfe5663c711ee9f29c779 -> origin/main
+2026-10-30T01:14:18.8671499Z ##[endgroup]
+2026-10-30T01:14:18.8671952Z ##[group]Determining the checkout info
+2026-10-30T01:14:18.8674053Z ##[endgroup]
+2026-10-30T01:14:18.8678676Z [command]/usr/bin/git sparse-checkout disable
+2026-10-30T01:14:18.8733814Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-30T01:14:18.8767101Z ##[group]Checking out the ref
+2026-10-30T01:14:18.8777192Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-30T01:14:20.4565632Z Updating files:  11% (2678/23500)
+2026-10-30T01:14:20.5110532Z Updating files:  12% (2820/23500)
+2026-10-30T01:14:20.5428833Z Updating files:  13% (3055/23500)
+2026-10-30T01:14:20.5896341Z Updating files:  14% (3290/23500)
+2026-10-30T01:14:20.6059309Z Updating files:  15% (3525/23500)
+2026-10-30T01:14:20.6447204Z Updating files:  16% (3760/23500)
+2026-10-30T01:14:20.6626914Z Updating files:  17% (3995/23500)
+2026-10-30T01:14:20.6701950Z Updating files:  18% (4230/23500)
+2026-10-30T01:14:20.7022503Z Updating files:  19% (4465/23500)
+2026-10-30T01:14:20.7128832Z Updating files:  20% (4700/23500)
+2026-10-30T01:14:20.7185687Z Updating files:  21% (4935/23500)
+2026-10-30T01:14:20.7551114Z Updating files:  22% (5170/23500)
+2026-10-30T01:14:20.7611470Z Updating files:  23% (5405/23500)
+2026-10-30T01:14:20.8021797Z Updating files:  24% (5640/23500)
+2026-10-30T01:14:20.8970306Z Updating files:  25% (5875/23500)
+2026-10-30T01:14:20.9099109Z Updating files:  25% (5938/23500)
+2026-10-30T01:14:20.9159102Z Updating files:  26% (6110/23500)
+2026-10-30T01:14:20.9227942Z Updating files:  27% (6345/23500)
+2026-10-30T01:14:20.9298140Z Updating files:  28% (6580/23500)
+2026-10-30T01:14:20.9412454Z Updating files:  29% (6815/23500)
+2026-10-30T01:14:20.9478457Z Updating files:  30% (7050/23500)
+2026-10-30T01:14:20.9534265Z Updating files:  31% (7285/23500)
+2026-10-30T01:14:20.9592938Z Updating files:  32% (7520/23500)
+2026-10-30T01:14:20.9650637Z Updating files:  33% (7755/23500)
+2026-10-30T01:14:20.9710581Z Updating files:  34% (7990/23500)
+2026-10-30T01:14:20.9781766Z Updating files:  35% (8225/23500)
+2026-10-30T01:14:21.0103403Z Updating files:  36% (8460/23500)
+2026-10-30T01:14:21.1180969Z Updating files:  37% (8695/23500)
+2026-10-30T01:14:21.3087362Z Updating files:  38% (8930/23500)
+2026-10-30T01:14:21.3149949Z Updating files:  39% (9165/23500)
+2026-10-30T01:14:21.3885786Z Updating files:  40% (9400/23500)
+2026-10-30T01:14:21.6280765Z Updating files:  41% (9635/23500)
+2026-10-30T01:14:21.8458192Z Updating files:  42% (9870/23500)
+2026-10-30T01:14:21.8991865Z Updating files:  43% (10105/23500)
+2026-10-30T01:14:22.0409700Z Updating files:  43% (10156/23500)
+2026-10-30T01:14:22.8179987Z Updating files:  44% (10340/23500)
+2026-10-30T01:14:22.8554824Z Updating files:  45% (10575/23500)
+2026-10-30T01:14:22.9024247Z Updating files:  46% (10810/23500)
+2026-10-30T01:14:22.9653114Z Updating files:  46% (10969/23500)
+2026-10-30T01:14:23.2210333Z Updating files:  47% (11045/23500)
+2026-10-30T01:14:23.3974302Z Updating files:  48% (11280/23500)
+2026-10-30T01:14:23.4158097Z Updating files:  49% (11515/23500)
+2026-10-30T01:14:23.4311489Z Updating files:  50% (11750/23500)
+2026-10-30T01:14:23.9415378Z Updating files:  51% (11985/23500)
+2026-10-30T01:14:24.0019822Z Updating files:  51% (12013/23500)
+2026-10-30T01:14:24.0257518Z Updating files:  52% (12220/23500)
+2026-10-30T01:14:24.1388734Z Updating files:  53% (12455/23500)
+2026-10-30T01:14:24.2297084Z Updating files:  54% (12690/23500)
+2026-10-30T01:14:24.2510096Z Updating files:  55% (12925/23500)
+2026-10-30T01:14:24.3289325Z Updating files:  56% (13160/23500)
+2026-10-30T01:14:24.3628987Z Updating files:  57% (13395/23500)
+2026-10-30T01:14:24.3765506Z Updating files:  58% (13630/23500)
+2026-10-30T01:14:24.4089327Z Updating files:  59% (13865/23500)
+2026-10-30T01:14:24.8973067Z Updating files:  60% (14100/23500)
+2026-10-30T01:14:24.9299178Z Updating files:  60% (14262/23500)
+2026-10-30T01:14:24.9456033Z Updating files:  61% (14335/23500)
+2026-10-30T01:14:25.1089343Z Updating files:  62% (14570/23500)
+2026-10-30T01:14:25.4234330Z Updating files:  63% (14805/23500)
+2026-10-30T01:14:25.8977799Z Updating files:  64% (15040/23500)
+2026-10-30T01:14:25.9241982Z Updating files:  64% (15222/23500)
+2026-10-30T01:14:26.0238694Z Updating files:  65% (15275/23500)
+2026-10-30T01:14:26.1206871Z Updating files:  66% (15510/23500)
+2026-10-30T01:14:26.1552261Z Updating files:  67% (15745/23500)
+2026-10-30T01:14:26.1674473Z Updating files:  68% (15980/23500)
+2026-10-30T01:14:26.2962702Z Updating files:  69% (16215/23500)
+2026-10-30T01:14:26.4775036Z Updating files:  70% (16450/23500)
+2026-10-30T01:14:26.6439823Z Updating files:  71% (16685/23500)
+2026-10-30T01:14:26.6612582Z Updating files:  72% (16920/23500)
+2026-10-30T01:14:26.6699798Z Updating files:  73% (17155/23500)
+2026-10-30T01:14:26.7246547Z Updating files:  74% (17390/23500)
+2026-10-30T01:14:26.7832217Z Updating files:  75% (17625/23500)
+2026-10-30T01:14:26.7988100Z Updating files:  76% (17860/23500)
+2026-10-30T01:14:26.8942564Z Updating files:  77% (18095/23500)
+2026-10-30T01:14:26.8973370Z Updating files:  78% (18330/23500)
+2026-10-30T01:14:27.9714268Z Updating files:  78% (18333/23500)
+2026-10-30T01:14:28.8295571Z Updating files:  79% (18565/23500)
+2026-10-30T01:14:28.8735473Z Updating files:  80% (18800/23500)
+2026-10-30T01:14:28.8794750Z Updating files:  81% (19035/23500)
+2026-10-30T01:14:28.8853108Z Updating files:  82% (19270/23500)
+2026-10-30T01:14:28.8906093Z Updating files:  83% (19505/23500)
+2026-10-30T01:14:28.8962719Z Updating files:  84% (19740/23500)
+2026-10-30T01:14:28.8965318Z Updating files:  85% (19975/23500)
+2026-10-30T01:14:29.0283943Z Updating files:  85% (19985/23500)
+2026-10-30T01:14:29.0752067Z Updating files:  86% (20210/23500)
+2026-10-30T01:14:29.0958739Z Updating files:  87% (20445/23500)
+2026-10-30T01:14:29.1421562Z Updating files:  88% (20680/23500)
+2026-10-30T01:14:29.1512022Z Updating files:  89% (20915/23500)
+2026-10-30T01:14:29.1648377Z Updating files:  90% (21150/23500)
+2026-10-30T01:14:29.1908364Z Updating files:  91% (21385/23500)
+2026-10-30T01:14:29.2058574Z Updating files:  92% (21620/23500)
+2026-10-30T01:14:29.2251411Z Updating files:  93% (21855/23500)
+2026-10-30T01:14:29.2400254Z Updating files:  94% (22090/23500)
+2026-10-30T01:14:29.2526999Z Updating files:  95% (22325/23500)
+2026-10-30T01:14:29.2611230Z Updating files:  96% (22560/23500)
+2026-10-30T01:14:29.2704823Z Updating files:  97% (22795/23500)
+2026-10-30T01:14:29.2788251Z Updating files:  98% (23030/23500)
+2026-10-30T01:14:29.2872100Z Updating files:  99% (23265/23500)
+2026-10-30T01:14:29.2872456Z Updating files: 100% (23500/23500)
+2026-10-30T01:14:29.2873069Z Updating files: 100% (23500/23500), done.
+2026-10-30T01:14:29.4861710Z Switched to a new branch 'main'
+2026-10-30T01:14:29.4894456Z branch 'main' set up to track 'origin/main'.
+2026-10-30T01:14:29.5415964Z ##[endgroup]
+2026-10-30T01:14:29.5477394Z [command]/usr/bin/git log -1 --format=%H
+2026-10-30T01:14:29.5515278Z a27876ca7d5986a6cb9bfe5663c711ee9f29c779
+2026-10-30T01:14:29.7074277Z ##[group]Run sudo apt-get update
+2026-10-30T01:14:29.7074530Z [36;1msudo apt-get update[0m
+2026-10-30T01:14:29.7074703Z [36;1msudo apt-get install -y z3 libz3-4[0m
+2026-10-30T01:14:29.7093729Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:29.7093910Z ##[endgroup]
+2026-10-30T01:14:29.9155057Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-30T01:14:29.9551237Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-30T01:14:29.9641487Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-30T01:14:29.9670948Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-30T01:14:29.9826846Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-30T01:14:30.0674689Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [617 kB]
+2026-10-30T01:14:30.2146187Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-30T01:14:30.2195558Z Get:15 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [682 kB]
+2026-10-30T01:14:30.2684702Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1406 kB]
+2026-10-30T01:14:30.3380801Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+2026-10-30T01:14:30.3396711Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1707 kB]
+2026-10-30T01:14:30.3978179Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [343 kB]
+2026-10-30T01:14:30.5188596Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1809 kB]
+2026-10-30T01:14:30.5792919Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-30T01:14:30.6472182Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-30T01:14:30.7096137Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+2026-10-30T01:14:30.8281454Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-30T01:14:30.8302048Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1223 kB]
+2026-10-30T01:14:30.9137513Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-30T01:14:34.9622828Z Fetched 10.5 MB in 1s (9334 kB/s)
+2026-10-30T01:14:35.6744920Z Reading package lists...
+2026-10-30T01:14:35.7063330Z Reading package lists...
+2026-10-30T01:14:35.9084391Z Building dependency tree...
+2026-10-30T01:14:35.9090033Z Reading state information...
+2026-10-30T01:14:36.0625041Z libz3-4 is already the newest version (4.8.12-3.1build1).
+2026-10-30T01:14:36.0625358Z libz3-4 set to manually installed.
+2026-10-30T01:14:36.0625528Z The following NEW packages will be installed:
+2026-10-30T01:14:36.0625686Z   z3
+2026-10-30T01:14:36.0794508Z 0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+2026-10-30T01:14:36.0794812Z Need to get 5911 kB of archives.
+2026-10-30T01:14:36.0794998Z After this operation, 16.4 MB of additional disk space will be used.
+2026-10-30T01:14:36.0795223Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-30T01:14:36.1305299Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 z3 amd64 4.8.12-3.1build1 [5911 kB]
+2026-10-30T01:14:36.4520931Z Fetched 5911 kB in 0s (46.5 MB/s)
+2026-10-30T01:14:36.6064208Z Selecting previously unselected package z3.
+2026-10-30T01:14:36.6266163Z (Reading database ... 
+2026-10-30T01:14:36.6266372Z (Reading database ... 5%
+2026-10-30T01:14:36.6266661Z (Reading database ... 10%
+2026-10-30T01:14:36.6266876Z (Reading database ... 15%
+2026-10-30T01:14:36.6267128Z (Reading database ... 20%
+2026-10-30T01:14:36.6267388Z (Reading database ... 25%
+2026-10-30T01:14:36.6267586Z (Reading database ... 30%
+2026-10-30T01:14:36.6267816Z (Reading database ... 35%
+2026-10-30T01:14:36.6268475Z (Reading database ... 40%
+2026-10-30T01:14:36.6268721Z (Reading database ... 45%
+2026-10-30T01:14:36.6268922Z (Reading database ... 50%
+2026-10-30T01:14:36.6302697Z (Reading database ... 55%
+2026-10-30T01:14:36.8109821Z (Reading database ... 60%
+2026-10-30T01:14:36.9755600Z (Reading database ... 65%
+2026-10-30T01:14:37.2218648Z (Reading database ... 70%
+2026-10-30T01:14:37.3696059Z (Reading database ... 75%
+2026-10-30T01:14:37.5683079Z (Reading database ... 80%
+2026-10-30T01:14:37.7171883Z (Reading database ... 85%
+2026-10-30T01:14:37.8335030Z (Reading database ... 90%
+2026-10-30T01:14:38.0101987Z (Reading database ... 95%
+2026-10-30T01:14:38.0102271Z (Reading database ... 100%
+2026-10-30T01:14:38.0102563Z (Reading database ... 215504 files and directories currently installed.)
+2026-10-30T01:14:38.0141595Z Preparing to unpack .../z3_4.8.12-3.1build1_amd64.deb ...
+2026-10-30T01:14:38.0160784Z Unpacking z3 (4.8.12-3.1build1) ...
+2026-10-30T01:14:38.1833058Z Setting up z3 (4.8.12-3.1build1) ...
+2026-10-30T01:14:38.1853563Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-30T01:14:38.1872170Z Not building database; man-db/auto-update is not 'true'.
+2026-10-30T01:14:38.6421818Z 
+2026-10-30T01:14:38.6422607Z Running kernel seems to be up-to-date.
+2026-10-30T01:14:38.6422904Z 
+2026-10-30T01:14:38.6422996Z No services need to be restarted.
+2026-10-30T01:14:38.6423331Z 
+2026-10-30T01:14:38.6423421Z No containers need to be restarted.
+2026-10-30T01:14:38.6423571Z 
+2026-10-30T01:14:38.6423681Z No user sessions are running outdated binaries.
+2026-10-30T01:14:38.6423861Z 
+2026-10-30T01:14:38.6424026Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-30T01:14:39.5228628Z ##[group]Run python3 -m py_compile bench/synthetic_prefix_bench.py
+2026-10-30T01:14:39.5228938Z [36;1mpython3 -m py_compile bench/synthetic_prefix_bench.py[0m
+2026-10-30T01:14:39.5229170Z [36;1mpython3 -m py_compile bench/libz3_state_reuse_bench.py[0m
+2026-10-30T01:14:39.5229386Z [36;1mpython3 -m py_compile bench/reuse_levels_bench.py[0m
+2026-10-30T01:14:39.5229604Z [36;1mpython3 -m py_compile bench/fork_snapshot_bench.py[0m
+2026-10-30T01:14:39.5229818Z [36;1mpython3 -m py_compile bench/related_snapshot_bench.py[0m
+2026-10-30T01:14:39.5230033Z [36;1mpython3 -m py_compile bench/smt2_replay_bench.py[0m
+2026-10-30T01:14:39.5230371Z [36;1mpython3 -m py_compile bench/fetch_real_smt.py[0m
+2026-10-30T01:14:39.5230566Z [36;1mpython3 -m py_compile bench/run_verus_trace.py[0m
+2026-10-30T01:14:39.5230766Z [36;1mpython3 -m py_compile tools/analyze_smt_trace.py[0m
+2026-10-30T01:14:39.5230959Z [36;1mpython3 -m py_compile tools/z3_capture.py[0m
+2026-10-30T01:14:39.5231168Z [36;1mpython3 -m unittest discover -s tests -v[0m
+2026-10-30T01:14:39.5248271Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:39.5248416Z ##[endgroup]
+2026-10-30T01:14:39.9384233Z test_default_single_module_recipe_stays_unchanged (test_code_source_inputs.CodeSourceInputs.test_default_single_module_recipe_stays_unchanged) ... ok
+2026-10-30T01:14:39.9701993Z test_multiple_files_keep_original_bytes_admissions_and_separate_batches (test_code_source_inputs.CodeSourceInputs.test_multiple_files_keep_original_bytes_admissions_and_separate_batches) ... ok
+2026-10-30T01:14:39.9946901Z test_new_selector_cannot_silently_change_verina (test_code_source_inputs.CodeSourceInputs.test_new_selector_cannot_silently_change_verina) ... ok
+2026-10-30T01:14:39.9952191Z test_expand_dedups_and_preserves_order (test_lean_export_batch.ExpandTests.test_expand_dedups_and_preserves_order) ... ok
+2026-10-30T01:14:39.9955326Z test_expand_duplicate_repeats_without_reordering_dedup (test_lean_export_batch.ExpandTests.test_expand_duplicate_repeats_without_reordering_dedup) ... ok
+2026-10-30T01:14:39.9956041Z test_expand_empty_when_no_match (test_lean_export_batch.ExpandTests.test_expand_empty_when_no_match) ... ok
+2026-10-30T01:14:39.9956648Z test_acceptance_requires_success_and_official_marker (test_lean_persistent_bench.DecisionTests.test_acceptance_requires_success_and_official_marker) ... ok
+2026-10-30T01:14:39.9957177Z test_process_failure_cannot_count_as_acceptance (test_lean_persistent_bench.DecisionTests.test_process_failure_cannot_count_as_acceptance) ... ok
+2026-10-30T01:14:39.9957960Z test_timeout_and_decline_are_not_proof_rejection (test_lean_persistent_bench.DecisionTests.test_timeout_and_decline_are_not_proof_rejection) ... ok
+2026-10-30T01:14:39.9961019Z test_forward_reference_cannot_enter_gpu_schedule (test_lean_state_workload.DAGValidationTests.test_forward_reference_cannot_enter_gpu_schedule) ... ok
+2026-10-30T01:14:39.9963645Z test_sparse_indices_are_explicitly_unsupported (test_lean_state_workload.DAGValidationTests.test_sparse_indices_are_explicitly_unsupported) ... ok
+2026-10-30T01:14:39.9964750Z test_incomplete_proof_is_distinct_from_type_error (test_lean_state_workload.ProofStatusTests.test_incomplete_proof_is_distinct_from_type_error) ... ok
+2026-10-30T01:14:39.9965583Z test_protocol_error_is_not_a_semantic_rejection (test_lean_state_workload.SMTStatusTests.test_protocol_error_is_not_a_semantic_rejection) ... ok
+2026-10-30T01:14:39.9966355Z test_unknown_is_preserved_in_query_order (test_lean_state_workload.SMTStatusTests.test_unknown_is_preserved_in_query_order) ... ok
+2026-10-30T01:14:39.9976771Z test_actual_legacy_native_records_keep_measured_counts (test_simp_stage_attribution.SimpStageAttribution.test_actual_legacy_native_records_keep_measured_counts) ... ok
+2026-10-30T01:14:39.9977625Z test_missing_record_is_unavailable (test_simp_stage_attribution.SimpStageAttribution.test_missing_record_is_unavailable) ... ok
+2026-10-30T01:14:39.9979507Z test_open_phase_and_repeated_hash_are_not_rejection (test_simp_stage_attribution.SimpStageAttribution.test_open_phase_and_repeated_hash_are_not_rejection) ... ok
+2026-10-30T01:14:39.9982143Z test_return_unwind_and_unknown_remain_distinct (test_simp_stage_attribution.SimpStageAttribution.test_return_unwind_and_unknown_remain_distinct) ... ok
+2026-10-30T01:14:40.0006175Z test_api_http_failure_is_operational_and_does_not_reveal_a_token (test_tactic_state_analysis.CaptureHostSafety.test_api_http_failure_is_operational_and_does_not_reveal_a_token) ... ok
+2026-10-30T01:14:40.0010545Z test_denied_signal_retires_the_control_and_stops_before_other_work (test_tactic_state_analysis.CaptureHostSafety.test_denied_signal_retires_the_control_and_stops_before_other_work) ... ok
+2026-10-30T01:14:40.0014590Z test_final_api_failure_is_not_discarded_at_successful_collection_end (test_tactic_state_analysis.CaptureHostSafety.test_final_api_failure_is_not_discarded_at_successful_collection_end) ... ok
+2026-10-30T01:14:40.0015636Z test_host_stop_keeps_the_interrupted_candidate_pending_not_failed (test_tactic_state_analysis.CaptureHostSafety.test_host_stop_keeps_the_interrupted_candidate_pending_not_failed) ... ok
+2026-10-30T01:14:40.0016300Z test_memory_floor_is_whole_collection_failure_not_a_candidate_verdict (test_tactic_state_analysis.CaptureHostSafety.test_memory_floor_is_whole_collection_failure_not_a_candidate_verdict) ... ok
+2026-10-30T01:14:40.0017079Z test_missing_existing_api_credentials_cannot_be_called_ready (test_tactic_state_analysis.CaptureHostSafety.test_missing_existing_api_credentials_cannot_be_called_ready) ... ok
+2026-10-30T01:14:40.0019717Z test_pending_api_work_does_not_block_sampling_and_stalls_stop (test_tactic_state_analysis.CaptureHostSafety.test_pending_api_work_does_not_block_sampling_and_stalls_stop) ... ok
+2026-10-30T01:14:40.0025351Z test_signal_control_requires_real_retirement_for_both_owned_signal_paths (test_tactic_state_analysis.CaptureHostSafety.test_signal_control_requires_real_retirement_for_both_owned_signal_paths) ... ok
+2026-10-30T01:14:40.0034035Z test_bad_cli_output_is_rejected_before_affinity_or_native_work (test_tactic_state_analysis.CaptureOutputDurability.test_bad_cli_output_is_rejected_before_affinity_or_native_work) ... usage: run.py [-h] --input INPUT --out OUT --context CONTEXT --module-dir
+2026-10-30T01:14:40.0034770Z               MODULE_DIR [--resume-from RESUME_FROM]
+2026-10-30T01:14:40.0034963Z               [--rss-budget-gib RSS_BUDGET_GIB] [--cpus CPUS]
+2026-10-30T01:14:40.0035367Z run.py: error: --out must be on the existing /workspaces PVC; container /tmp is disposable
+2026-10-30T01:14:40.0035713Z ok
+2026-10-30T01:14:40.0041152Z test_nested_other_device_is_rejected (test_tactic_state_analysis.CaptureOutputDurability.test_nested_other_device_is_rejected) ... ok
+2026-10-30T01:14:40.0044338Z test_nonexistent_output_on_the_workspace_filesystem_is_allowed (test_tactic_state_analysis.CaptureOutputDurability.test_nonexistent_output_on_the_workspace_filesystem_is_allowed) ... ok
+2026-10-30T01:14:40.0050652Z test_outside_prefix_and_symlink_escape_are_rejected (test_tactic_state_analysis.CaptureOutputDurability.test_outside_prefix_and_symlink_escape_are_rejected) ... ok
+2026-10-30T01:14:40.0562562Z test_real_cli_rejects_temporary_output_without_creating_it (test_tactic_state_analysis.CaptureOutputDurability.test_real_cli_rejects_temporary_output_without_creating_it) ... ok
+2026-10-30T01:14:40.0568231Z test_symlink_into_the_volume_is_canonicalized_before_use (test_tactic_state_analysis.CaptureOutputDurability.test_symlink_into_the_volume_is_canonicalized_before_use) ... ok
+2026-10-30T01:14:40.0570357Z test_unmounted_workspace_is_not_assumed_persistent (test_tactic_state_analysis.CaptureOutputDurability.test_unmounted_workspace_is_not_assumed_persistent) ... ok
+2026-10-30T01:14:40.0572342Z test_continuation_requires_actual_matching_resource_and_host_evidence (test_tactic_state_analysis.CaptureResourcePoint.test_continuation_requires_actual_matching_resource_and_host_evidence) ... ok
+2026-10-30T01:14:40.0573875Z test_g10_budget_and_discovered_cpu_ids_are_recorded_without_lab_labels (test_tactic_state_analysis.CaptureResourcePoint.test_g10_budget_and_discovered_cpu_ids_are_recorded_without_lab_labels) ... ok
+2026-10-30T01:14:40.0574979Z test_old_cpu_ids_empty_and_malformed_masks_are_not_silently_relabelled (test_tactic_state_analysis.CaptureResourcePoint.test_old_cpu_ids_empty_and_malformed_masks_are_not_silently_relabelled) ... ok
+2026-10-30T01:14:40.0576012Z test_old_lab_budget_and_nonpositive_budgets_do_not_fit_g10 (test_tactic_state_analysis.CaptureResourcePoint.test_old_lab_budget_and_nonpositive_budgets_do_not_fit_g10) ... ok
+2026-10-30T01:14:40.0576993Z test_user_12gib_cap_cannot_be_raised_even_if_host_ram_is_larger (test_tactic_state_analysis.CaptureResourcePoint.test_user_12gib_cap_cannot_be_raised_even_if_host_ram_is_larger) ... ok
+2026-10-30T01:14:40.1963017Z test_actual_failed_prefix_restores_only_unfinished_cells_and_five_retries (test_tactic_state_analysis.TacticStateAnalysis.test_actual_failed_prefix_restores_only_unfinished_cells_and_five_retries) ... ok
+2026-10-30T01:14:40.1971147Z test_complete_marker_without_all_planned_cells_remains_incomplete (test_tactic_state_analysis.TacticStateAnalysis.test_complete_marker_without_all_planned_cells_remains_incomplete) ... ok
+2026-10-30T01:14:40.1972142Z test_continuation_refuses_prior_exit_without_source_begin (test_tactic_state_analysis.TacticStateAnalysis.test_continuation_refuses_prior_exit_without_source_begin) ... ok
+2026-10-30T01:14:40.1972782Z test_continuation_retains_resource_queue_and_classifies_unreported_exit (test_tactic_state_analysis.TacticStateAnalysis.test_continuation_retains_resource_queue_and_classifies_unreported_exit) ... ok
+2026-10-30T01:14:40.1977087Z test_derived_prior_attempt_is_explicit_not_an_unresolved_exit_or_tactic_error (test_tactic_state_analysis.TacticStateAnalysis.test_derived_prior_attempt_is_explicit_not_an_unresolved_exit_or_tactic_error) ... ok
+2026-10-30T01:14:40.1980815Z test_equal_error_flags_do_not_hide_diagnostic_or_limit_differences (test_tactic_state_analysis.TacticStateAnalysis.test_equal_error_flags_do_not_hide_diagnostic_or_limit_differences) ... ok
+2026-10-30T01:14:40.1986888Z test_late_native_completion_does_not_erase_timeout (test_tactic_state_analysis.TacticStateAnalysis.test_late_native_completion_does_not_erase_timeout) ... ok
+2026-10-30T01:14:40.1987774Z test_native_exit_is_operational_only_after_source_begin (test_tactic_state_analysis.TacticStateAnalysis.test_native_exit_is_operational_only_after_source_begin) ... ok
+2026-10-30T01:14:40.1989802Z test_observer_without_completed_source_is_unknown_not_a_hit (test_tactic_state_analysis.TacticStateAnalysis.test_observer_without_completed_source_is_unknown_not_a_hit) ... ok
+2026-10-30T01:14:40.1992539Z test_outcome_unstable_key_gets_no_failure_cost_credit (test_tactic_state_analysis.TacticStateAnalysis.test_outcome_unstable_key_gets_no_failure_cost_credit) ... ok
+2026-10-30T01:14:40.1995143Z test_prior_must_finish_before_repeated_call_starts (test_tactic_state_analysis.TacticStateAnalysis.test_prior_must_finish_before_repeated_call_starts) ... ok
+2026-10-30T01:14:40.2001623Z test_process_local_key_ids_do_not_join_between_segments (test_tactic_state_analysis.TacticStateAnalysis.test_process_local_key_ids_do_not_join_between_segments) ... ok
+2026-10-30T01:14:40.2004566Z test_repeated_runtime_calls_are_not_subtracted_from_syntax_units (test_tactic_state_analysis.TacticStateAnalysis.test_repeated_runtime_calls_are_not_subtracted_from_syntax_units) ... ok
+2026-10-30T01:14:40.2009167Z test_retained_native_positive_and_changed_inputs (test_tactic_state_analysis.TacticStateAnalysis.test_retained_native_positive_and_changed_inputs) ... ok
+2026-10-30T01:14:40.2015746Z test_retained_real_watchdog_injection_preserves_all_attempts (test_tactic_state_analysis.TacticStateAnalysis.test_retained_real_watchdog_injection_preserves_all_attempts) ... ok
+2026-10-30T01:14:40.2022115Z test_retained_rejected_source_really_reaches_arithmetic_failure (test_tactic_state_analysis.TacticStateAnalysis.test_retained_rejected_source_really_reaches_arithmetic_failure) ... ok
+2026-10-30T01:14:40.2030403Z test_retained_unresolved_local_is_unreached_not_unsupported_hit (test_tactic_state_analysis.TacticStateAnalysis.test_retained_unresolved_local_is_unreached_not_unsupported_hit) ... ok
+2026-10-30T01:14:40.2033318Z test_return_resource_limit_and_open_call_are_not_reusable_errors (test_tactic_state_analysis.TacticStateAnalysis.test_return_resource_limit_and_open_call_are_not_reusable_errors) ... ok
+2026-10-30T01:14:40.2036088Z test_unsupported_and_open_calls_keep_their_kind_cost_denominator (test_tactic_state_analysis.TacticStateAnalysis.test_unsupported_and_open_calls_keep_their_kind_cost_denominator) ... ok
+2026-10-30T01:14:40.2038427Z test_wrapped_allocation_diagnostic_is_conservatively_excluded (test_tactic_state_analysis.TacticStateAnalysis.test_wrapped_allocation_diagnostic_is_conservatively_excluded) ... ok
+2026-10-30T01:14:40.2039305Z test_byte_overlap_counts_duplicate_commands (test_trace_analyzer.TraceAnalyzerTests.test_byte_overlap_counts_duplicate_commands) ... ok
+2026-10-30T01:14:40.2040092Z test_context_overlap_can_detect_reordered_commands (test_trace_analyzer.TraceAnalyzerTests.test_context_overlap_can_detect_reordered_commands) ... ok
+2026-10-30T01:14:40.2054600Z test_cross_task_reuse_excludes_same_task (test_trace_analyzer.TraceAnalyzerTests.test_cross_task_reuse_excludes_same_task) ... ok
+2026-10-30T01:14:40.2058846Z test_global_declarations_survive_pop_and_reset_clears_context (test_trace_analyzer.TraceAnalyzerTests.test_global_declarations_survive_pop_and_reset_clears_context) ... ok
+2026-10-30T01:14:40.2059701Z test_normalization_preserves_quoted_identity (test_trace_analyzer.TraceAnalyzerTests.test_normalization_preserves_quoted_identity) ... ok
+2026-10-30T01:14:40.2061264Z test_push_pop_reconstructs_active_assertions (test_trace_analyzer.TraceAnalyzerTests.test_push_pop_reconstructs_active_assertions) ... ok
+2026-10-30T01:14:40.2063486Z test_scoped_declarations_are_removed_and_order_is_preserved (test_trace_analyzer.TraceAnalyzerTests.test_scoped_declarations_are_removed_and_order_is_preserved) ... ok
+2026-10-30T01:14:40.2064321Z test_split_commands_handles_comments_and_strings (test_trace_analyzer.TraceAnalyzerTests.test_split_commands_handles_comments_and_strings) ... ok
+2026-10-30T01:14:40.2069876Z test_alias_resolution_accepts_only_the_exact_canonical_executable (test_warm_resource_compare.WarmResourceCompare.test_alias_resolution_accepts_only_the_exact_canonical_executable) ... ok
+2026-10-30T01:14:40.2081270Z test_archived_compressed_point_replays_without_native_files (test_warm_resource_compare.WarmResourceCompare.test_archived_compressed_point_replays_without_native_files) ... ok
+2026-10-30T01:14:40.2082205Z test_equal_accepted_counts_with_changed_ids_are_not_parity (test_warm_resource_compare.WarmResourceCompare.test_equal_accepted_counts_with_changed_ids_are_not_parity) ... ok
+2026-10-30T01:14:40.2084404Z test_full_and_qualification_terminals_or_populations_are_not_interchangeable (test_warm_resource_compare.WarmResourceCompare.test_full_and_qualification_terminals_or_populations_are_not_interchangeable) ... ok
+2026-10-30T01:14:40.3243812Z test_full_phase_does_not_hide_the_last_of_7808_statuses_or_tails (test_warm_resource_compare.WarmResourceCompare.test_full_phase_does_not_hide_the_last_of_7808_statuses_or_tails) ... ok
+2026-10-30T01:14:40.3271636Z test_full_phase_reads_its_population_not_a_stale_qualification_file (test_warm_resource_compare.WarmResourceCompare.test_full_phase_reads_its_population_not_a_stale_qualification_file) ... ok
+2026-10-30T01:14:40.3273969Z test_missing_executable_alias_never_becomes_an_identity_match (test_warm_resource_compare.WarmResourceCompare.test_missing_executable_alias_never_becomes_an_identity_match) ... ok
+2026-10-30T01:14:40.3276457Z test_missing_or_changed_resource_library_and_source_evidence_is_refused (test_warm_resource_compare.WarmResourceCompare.test_missing_or_changed_resource_library_and_source_evidence_is_refused) ... ok
+2026-10-30T01:14:40.3277582Z test_only_external_complete_clocks_determine_the_descriptive_ratio (test_warm_resource_compare.WarmResourceCompare.test_only_external_complete_clocks_determine_the_descriptive_ratio) ... ok
+2026-10-30T01:14:40.3278311Z test_operational_failure_stays_distinct_from_native_rejection (test_warm_resource_compare.WarmResourceCompare.test_operational_failure_stays_distinct_from_native_rejection) ... ok
+2026-10-30T01:14:40.3279872Z test_partial_failed_duplicate_or_unknown_results_are_refused (test_warm_resource_compare.WarmResourceCompare.test_partial_failed_duplicate_or_unknown_results_are_refused) ... ok
+2026-10-30T01:14:40.3280826Z test_wire_normalization_never_hides_diagnostic_changes (test_warm_resource_compare.WarmResourceCompare.test_wire_normalization_never_hides_diagnostic_changes) ... ok
+2026-10-30T01:14:40.3749231Z test_actual_pressure_retires_idle_state_before_first_admission (test_warm_resource_queue.WarmResourceQueue.test_actual_pressure_retires_idle_state_before_first_admission) ... ok
+2026-10-30T01:14:40.3818761Z test_cancellation_awaits_all_ordinary_task_cleanup (test_warm_resource_queue.WarmResourceQueue.test_cancellation_awaits_all_ordinary_task_cleanup) ... ok
+2026-10-30T01:14:40.3835966Z test_deferred_retry_does_not_block_the_ordinary_frontier (test_warm_resource_queue.WarmResourceQueue.test_deferred_retry_does_not_block_the_ordinary_frontier) ... ok
+2026-10-30T01:14:40.3838638Z 
+2026-10-30T01:14:40.3838782Z ----------------------------------------------------------------------
+2026-10-30T01:14:40.3839049Z Ran 81 tests in 0.472s
+2026-10-30T01:14:40.3839161Z 
+2026-10-30T01:14:40.3839228Z OK
+2026-10-30T01:14:40.4037973Z ##[group]Run mkdir -p artifacts/traces
+2026-10-30T01:14:40.4038195Z [36;1mmkdir -p artifacts/traces[0m
+2026-10-30T01:14:40.4038361Z [36;1mpython3 bench/synthetic_prefix_bench.py \[0m
+2026-10-30T01:14:40.4038529Z [36;1m  --queries 32 \[0m
+2026-10-30T01:14:40.4038665Z [36;1m  --prefix-constraints 512 \[0m
+2026-10-30T01:14:40.4038818Z [36;1m  --dump-dir artifacts/traces \[0m
+2026-10-30T01:14:40.4038981Z [36;1m  --json artifacts/synthetic-cli.json[0m
+2026-10-30T01:14:40.4054722Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:40.4054863Z ##[endgroup]
+2026-10-30T01:14:40.9644656Z {
+2026-10-30T01:14:40.9644835Z   "cold": {
+2026-10-30T01:14:40.9644966Z     "latency_ms_mean": 12.686414656251976,
+2026-10-30T01:14:40.9645177Z     "latency_ms_p50": 12.365085500007922,
+2026-10-30T01:14:40.9645329Z     "latency_ms_p95": 14.051554450011848,
+2026-10-30T01:14:40.9645470Z     "latency_ms_p99": 19.075147470000797,
+2026-10-30T01:14:40.9645606Z     "queries": 32,
+2026-10-30T01:14:40.9645818Z     "throughput_qps": 78.00411780325251,
+2026-10-30T01:14:40.9645975Z     "total_s": 0.41023475299999745
+2026-10-30T01:14:40.9646101Z   },
+2026-10-30T01:14:40.9646199Z   "config": {
+2026-10-30T01:14:40.9646317Z     "prefix_constraints": 512,
+2026-10-30T01:14:40.9646447Z     "queries": 32,
+2026-10-30T01:14:40.9646557Z     "z3": "/usr/bin/z3"
+2026-10-30T01:14:40.9646670Z   },
+2026-10-30T01:14:40.9646768Z   "incremental": {
+2026-10-30T01:14:40.9646889Z     "latency_ms_mean": 3.2280363750025742,
+2026-10-30T01:14:40.9647032Z     "latency_ms_p50": 0.3011845000031599,
+2026-10-30T01:14:40.9647172Z     "latency_ms_p95": 0.34640750000534126,
+2026-10-30T01:14:40.9647313Z     "latency_ms_p99": 65.45226184999035,
+2026-10-30T01:14:40.9647447Z     "queries": 32,
+2026-10-30T01:14:40.9647564Z     "throughput_qps": 269.76363638957196,
+2026-10-30T01:14:40.9647703Z     "total_s": 0.11862236299998585
+2026-10-30T01:14:40.9647825Z   },
+2026-10-30T01:14:40.9647926Z   "semantic_match": true,
+2026-10-30T01:14:40.9648057Z   "speedup_total": 3.458325585708037,
+2026-10-30T01:14:40.9648191Z   "statuses": {
+2026-10-30T01:14:40.9648297Z     "sat": 16,
+2026-10-30T01:14:40.9648401Z     "unknown": 0,
+2026-10-30T01:14:40.9648505Z     "unsat": 16
+2026-10-30T01:14:40.9648605Z   }
+2026-10-30T01:14:40.9648698Z }
+2026-10-30T01:14:40.9724373Z ##[group]Run python3 bench/libz3_state_reuse_bench.py \
+2026-10-30T01:14:40.9724653Z [36;1mpython3 bench/libz3_state_reuse_bench.py \[0m
+2026-10-30T01:14:40.9724825Z [36;1m  --queries 32 \[0m
+2026-10-30T01:14:40.9724966Z [36;1m  --prefix-constraints 256 \[0m
+2026-10-30T01:14:40.9725131Z [36;1m  --json artifacts/synthetic-libz3.json[0m
+2026-10-30T01:14:40.9740793Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:40.9740930Z ##[endgroup]
+2026-10-30T01:14:42.0227232Z {
+2026-10-30T01:14:42.0227498Z   "config": {
+2026-10-30T01:14:42.0227702Z     "libz3": "libz3.so.4",
+2026-10-30T01:14:42.0227932Z     "prefix_constraints": 256,
+2026-10-30T01:14:42.0228136Z     "queries": 32,
+2026-10-30T01:14:42.0228304Z     "z3_version": "4.8.12.0"
+2026-10-30T01:14:42.0228494Z   },
+2026-10-30T01:14:42.0228894Z   "fresh": {
+2026-10-30T01:14:42.0229068Z     "latency_ms_mean": 25.089467656244757,
+2026-10-30T01:14:42.0229300Z     "latency_ms_p50": 6.505554499995014,
+2026-10-30T01:14:42.0229593Z     "latency_ms_p95": 13.089433149980323,
+2026-10-30T01:14:42.0229819Z     "latency_ms_p99": 403.25593782999806,
+2026-10-30T01:14:42.0230045Z     "throughput_qps": 39.8560894258251,
+2026-10-30T01:14:42.0230260Z     "total_s": 0.8028886040000032
+2026-10-30T01:14:42.0230449Z   },
+2026-10-30T01:14:42.0230594Z   "reuse": {
+2026-10-30T01:14:42.0230758Z     "latency_ms_mean": 3.67889181250014,
+2026-10-30T01:14:42.0230980Z     "latency_ms_p50": 0.02236349999407139,
+2026-10-30T01:14:42.0231197Z     "latency_ms_p95": 0.03303814998787401,
+2026-10-30T01:14:42.0231419Z     "latency_ms_p99": 80.87934968999507,
+2026-10-30T01:14:42.0231642Z     "throughput_qps": 258.9657755039274,
+2026-10-30T01:14:42.0231855Z     "total_s": 0.12356845200000066
+2026-10-30T01:14:42.0232049Z   },
+2026-10-30T01:14:42.0232198Z   "semantic_match": true,
+2026-10-30T01:14:42.0232394Z   "speedup_total": 6.497520936816453
+2026-10-30T01:14:42.0232596Z }
+2026-10-30T01:14:42.0657454Z ##[group]Run python3 bench/reuse_levels_bench.py \
+2026-10-30T01:14:42.0657700Z [36;1mpython3 bench/reuse_levels_bench.py \[0m
+2026-10-30T01:14:42.0657870Z [36;1m  --queries 8 \[0m
+2026-10-30T01:14:42.0658008Z [36;1m  --prefix-sizes 16,64 \[0m
+2026-10-30T01:14:42.0658153Z [36;1m  --repetitions 2 \[0m
+2026-10-30T01:14:42.0658304Z [36;1m  --json artifacts/reuse-levels.json[0m
+2026-10-30T01:14:42.0674073Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:42.0674216Z ##[endgroup]
+2026-10-30T01:14:42.2462179Z {"ast_e2e_ms_median": 27.63170150001315, "ast_over_live_e2e": 7.92470914406799, "ast_warm_ms_median": 27.227517499994747, "ast_warm_over_live_warm": 23.161070457098905, "cold_e2e_ms_median": 38.431652499994584, "cold_over_ast_e2e": 1.3908536359940156, "cold_over_live_e2e": 11.022110527221987, "live_e2e_ms_median": 3.486778000009849, "live_warm_ms_median": 1.175572500002886, "prefix_constraints": 16, "queries": 8, "repetitions": 2, "statuses": {"sat": 4, "unknown": 0, "unsat": 4}}
+2026-10-30T01:14:42.3923942Z {"ast_e2e_ms_median": 30.006171499991297, "ast_over_live_e2e": 5.180933476092382, "ast_warm_ms_median": 29.399141500007886, "ast_warm_over_live_warm": 9.079223012031076, "cold_e2e_ms_median": 36.17319650001605, "cold_over_ast_e2e": 1.2055252200377025, "cold_over_live_e2e": 6.245745968766967, "live_e2e_ms_median": 5.79165349998334, "live_warm_ms_median": 3.238067999987493, "prefix_constraints": 64, "queries": 8, "repetitions": 2, "statuses": {"sat": 4, "unknown": 0, "unsat": 4}}
+2026-10-30T01:14:42.4859813Z ##[group]Run python3 tools/analyze_smt_trace.py artifacts/traces \
+2026-10-30T01:14:42.4860112Z [36;1mpython3 tools/analyze_smt_trace.py artifacts/traces \[0m
+2026-10-30T01:14:42.4860308Z [36;1m  --window 64 \[0m
+2026-10-30T01:14:42.4860456Z [36;1m  --json artifacts/trace-analysis.json[0m
+2026-10-30T01:14:42.4876895Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:42.4877064Z ##[endgroup]
+2026-10-30T01:14:42.9672660Z {
+2026-10-30T01:14:42.9673076Z   "commands_per_query": {
+2026-10-30T01:14:42.9673661Z     "mean": 1028.0,
+2026-10-30T01:14:42.9673979Z     "p50": 1028.0,
+2026-10-30T01:14:42.9674288Z     "p95": 1028.0,
+2026-10-30T01:14:42.9674585Z     "p99": 1028.0
+2026-10-30T01:14:42.9674873Z   },
+2026-10-30T01:14:42.9675176Z   "exact_duplicate_fraction": 0.0,
+2026-10-30T01:14:42.9675554Z   "exact_duplicate_queries": 0,
+2026-10-30T01:14:42.9675889Z   "files": 32,
+2026-10-30T01:14:42.9676227Z   "nearest_recent_context_byte_overlap_fraction": {
+2026-10-30T01:14:42.9676726Z     "mean": 0.9673363146134026,
+2026-10-30T01:14:42.9677051Z     "p50": 0.9985407118589963,
+2026-10-30T01:14:42.9677372Z     "p95": 0.9985407118589962,
+2026-10-30T01:14:42.9677692Z     "p99": 0.9985407118589962
+2026-10-30T01:14:42.9678005Z   },
+2026-10-30T01:14:42.9678319Z   "nearest_recent_context_overlap_fraction": {
+2026-10-30T01:14:42.9678701Z     "mean": 0.9678076361867705,
+2026-10-30T01:14:42.9679320Z     "p50": 0.9990272373540856,
+2026-10-30T01:14:42.9679636Z     "p95": 0.9990272373540856,
+2026-10-30T01:14:42.9679951Z     "p99": 0.9990272373540856
+2026-10-30T01:14:42.9680260Z   },
+2026-10-30T01:14:42.9680553Z   "nearest_recent_prefix_commands": {
+2026-10-30T01:14:42.9680899Z     "mean": 994.90625,
+2026-10-30T01:14:42.9681197Z     "p50": 1027.0,
+2026-10-30T01:14:42.9681491Z     "p95": 1027.0,
+2026-10-30T01:14:42.9681782Z     "p99": 1027.0
+2026-10-30T01:14:42.9682069Z   },
+2026-10-30T01:14:42.9682363Z   "nearest_recent_prefix_fraction": {
+2026-10-30T01:14:42.9682716Z     "mean": 0.9678076361867705,
+2026-10-30T01:14:42.9683047Z     "p50": 0.9990272373540856,
+2026-10-30T01:14:42.9683730Z     "p95": 0.9990272373540856,
+2026-10-30T01:14:42.9684165Z     "p99": 0.9990272373540856
+2026-10-30T01:14:42.9684380Z   },
+2026-10-30T01:14:42.9684557Z   "nearest_recent_transition_commands": {
+2026-10-30T01:14:42.9684777Z     "mean": 34.0625,
+2026-10-30T01:14:42.9684948Z     "p50": 2.0,
+2026-10-30T01:14:42.9685108Z     "p95": 2.0,
+2026-10-30T01:14:42.9685282Z     "p99": 709.9400000000013
+2026-10-30T01:14:42.9685459Z   },
+2026-10-30T01:14:42.9685600Z   "notes": [
+2026-10-30T01:14:42.9685802Z     "Prefix similarity is exact and order-sensitive.",
+2026-10-30T01:14:42.9686283Z     "Context overlap is exact normalized-command multiset overlap; it is order-insensitive but not semantic equivalence.",
+2026-10-30T01:14:42.9686946Z     "Transition commands approximate edits to the nearest recent context; a runtime still has to preserve scopes and backend semantics.",
+2026-10-30T01:14:42.9687614Z     "These conservative metrics are intended to falsify/validate the reuse hypothesis before implementing solver changes."
+2026-10-30T01:14:42.9688029Z   ],
+2026-10-30T01:14:42.9688187Z   "per_file_queries": {
+2026-10-30T01:14:42.9688389Z     "artifacts/traces/cold-00000.smt2": 1,
+2026-10-30T01:14:42.9688630Z     "artifacts/traces/cold-00001.smt2": 1,
+2026-10-30T01:14:42.9688860Z     "artifacts/traces/cold-00002.smt2": 1,
+2026-10-30T01:14:42.9689088Z     "artifacts/traces/cold-00003.smt2": 1,
+2026-10-30T01:14:42.9689314Z     "artifacts/traces/cold-00004.smt2": 1,
+2026-10-30T01:14:42.9689530Z     "artifacts/traces/cold-00005.smt2": 1,
+2026-10-30T01:14:42.9689738Z     "artifacts/traces/cold-00006.smt2": 1,
+2026-10-30T01:14:42.9689959Z     "artifacts/traces/cold-00007.smt2": 1,
+2026-10-30T01:14:42.9690199Z     "artifacts/traces/cold-00008.smt2": 1,
+2026-10-30T01:14:42.9690460Z     "artifacts/traces/cold-00009.smt2": 1,
+2026-10-30T01:14:42.9690688Z     "artifacts/traces/cold-00010.smt2": 1,
+2026-10-30T01:14:42.9691171Z     "artifacts/traces/cold-00011.smt2": 1,
+2026-10-30T01:14:42.9691432Z     "artifacts/traces/cold-00012.smt2": 1,
+2026-10-30T01:14:42.9691662Z     "artifacts/traces/cold-00013.smt2": 1,
+2026-10-30T01:14:42.9691888Z     "artifacts/traces/cold-00014.smt2": 1,
+2026-10-30T01:14:42.9692120Z     "artifacts/traces/cold-00015.smt2": 1,
+2026-10-30T01:14:42.9692349Z     "artifacts/traces/cold-00016.smt2": 1,
+2026-10-30T01:14:42.9692575Z     "artifacts/traces/cold-00017.smt2": 1,
+2026-10-30T01:14:42.9692852Z     "artifacts/traces/cold-00018.smt2": 1,
+2026-10-30T01:14:42.9693271Z     "artifacts/traces/cold-00019.smt2": 1,
+2026-10-30T01:14:42.9693502Z     "artifacts/traces/cold-00020.smt2": 1,
+2026-10-30T01:14:42.9693727Z     "artifacts/traces/cold-00021.smt2": 1,
+2026-10-30T01:14:42.9693953Z     "artifacts/traces/cold-00022.smt2": 1,
+2026-10-30T01:14:42.9694181Z     "artifacts/traces/cold-00023.smt2": 1,
+2026-10-30T01:14:42.9694409Z     "artifacts/traces/cold-00024.smt2": 1,
+2026-10-30T01:14:42.9694639Z     "artifacts/traces/cold-00025.smt2": 1,
+2026-10-30T01:14:42.9694870Z     "artifacts/traces/cold-00026.smt2": 1,
+2026-10-30T01:14:42.9695096Z     "artifacts/traces/cold-00027.smt2": 1,
+2026-10-30T01:14:42.9695322Z     "artifacts/traces/cold-00028.smt2": 1,
+2026-10-30T01:14:42.9695549Z     "artifacts/traces/cold-00029.smt2": 1,
+2026-10-30T01:14:42.9695773Z     "artifacts/traces/cold-00030.smt2": 1,
+2026-10-30T01:14:42.9696016Z     "artifacts/traces/cold-00031.smt2": 1
+2026-10-30T01:14:42.9696398Z   },
+2026-10-30T01:14:42.9696582Z   "queries": 32,
+2026-10-30T01:14:42.9696764Z   "unique_queries": 32,
+2026-10-30T01:14:42.9696953Z   "window": 64
+2026-10-30T01:14:42.9697127Z }
+2026-10-30T01:14:43.0653634Z ##[group]Run python3 - <<'PY'
+2026-10-30T01:14:43.0653945Z [36;1mpython3 - <<'PY'[0m
+2026-10-30T01:14:43.0654079Z [36;1mimport json[0m
+2026-10-30T01:14:43.0654209Z [36;1mfrom pathlib import Path[0m
+2026-10-30T01:14:43.0654348Z [36;1m[0m
+2026-10-30T01:14:43.0654521Z [36;1mcli = json.loads(Path("artifacts/synthetic-cli.json").read_text())[0m
+2026-10-30T01:14:43.0654791Z [36;1mlib = json.loads(Path("artifacts/synthetic-libz3.json").read_text())[0m
+2026-10-30T01:14:43.0655050Z [36;1mtrace = json.loads(Path("artifacts/trace-analysis.json").read_text())[0m
+2026-10-30T01:14:43.0655249Z [36;1m[0m
+2026-10-30T01:14:43.0655366Z [36;1massert cli["semantic_match"] is True[0m
+2026-10-30T01:14:43.0655530Z [36;1massert lib["semantic_match"] is True[0m
+2026-10-30T01:14:43.0655708Z [36;1massert cli["statuses"]["sat"] == 16[0m
+2026-10-30T01:14:43.0655873Z [36;1massert cli["statuses"]["unsat"] == 16[0m
+2026-10-30T01:14:43.0656031Z [36;1massert trace["queries"] == 32[0m
+2026-10-30T01:14:43.0656255Z [36;1massert trace["nearest_recent_prefix_fraction"]["p50"] > 0.90[0m
+2026-10-30T01:14:43.0656439Z [36;1m[0m
+2026-10-30T01:14:43.0656575Z [36;1mprint("CLI cold total s:", cli["cold"]["total_s"])[0m
+2026-10-30T01:14:43.0656800Z [36;1mprint("CLI incremental total s:", cli["incremental"]["total_s"])[0m
+2026-10-30T01:14:43.0657025Z [36;1mprint("CLI total speedup:", cli["speedup_total"])[0m
+2026-10-30T01:14:43.0657230Z [36;1mprint("libz3 fresh total s:", lib["fresh"]["total_s"])[0m
+2026-10-30T01:14:43.0657437Z [36;1mprint("libz3 reuse total s:", lib["reuse"]["total_s"])[0m
+2026-10-30T01:14:43.0657642Z [36;1mprint("libz3 total speedup:", lib["speedup_total"])[0m
+2026-10-30T01:14:43.0657874Z [36;1mprint("prefix p50:", trace["nearest_recent_prefix_fraction"]["p50"])[0m
+2026-10-30T01:14:43.0658074Z [36;1mPY[0m
+2026-10-30T01:14:43.0674661Z shell: /usr/bin/bash -e {0}
+2026-10-30T01:14:43.0674797Z ##[endgroup]
+2026-10-30T01:14:43.1827036Z CLI cold total s: 0.41023475299999745
+2026-10-30T01:14:43.1827409Z CLI incremental total s: 0.11862236299998585
+2026-10-30T01:14:43.1827600Z CLI total speedup: 3.458325585708037
+2026-10-30T01:14:43.1827750Z libz3 fresh total s: 0.8028886040000032
+2026-10-30T01:14:43.1827899Z libz3 reuse total s: 0.12356845200000066
+2026-10-30T01:14:43.1828046Z libz3 total speedup: 6.497520936816453
+2026-10-30T01:14:43.1828199Z prefix p50: 0.9990272373540856
+2026-10-30T01:14:43.1950800Z ##[group]Run actions/upload-artifact@v4
+2026-10-30T01:14:43.1950966Z with:
+2026-10-30T01:14:43.1951078Z   name: z3-smoke-results
+2026-10-30T01:14:43.1951404Z   path: artifacts/synthetic-cli.json
+artifacts/synthetic-libz3.json
+artifacts/reuse-levels.json
+artifacts/trace-analysis.json
+artifacts/traces/
+
+2026-10-30T01:14:43.1951747Z   if-no-files-found: warn
+2026-10-30T01:14:43.1951897Z   compression-level: 6
+2026-10-30T01:14:43.1952018Z   overwrite: false
+2026-10-30T01:14:43.1952136Z   include-hidden-files: false
+2026-10-30T01:14:43.1952274Z ##[endgroup]
+2026-10-30T01:14:43.3107179Z (node:2605) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-30T01:14:43.3107803Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-30T01:14:43.3226881Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-30T01:14:43.3229341Z The least common ancestor is /home/runner/work/gpu-smt/gpu-smt/artifacts. This will be the root directory of the artifact
+2026-10-30T01:14:43.3230045Z With the provided path, there will be 36 files uploaded
+2026-10-30T01:14:43.3233300Z Artifact name is valid!
+2026-10-30T01:14:43.3234039Z Root directory input is valid!
+2026-10-30T01:14:43.6515967Z Beginning upload of artifact content to blob storage
+2026-10-30T01:14:43.7231594Z (node:2605) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-30T01:14:44.1040410Z Uploaded bytes 254729
+2026-10-30T01:14:44.1536780Z Finished uploading artifact content to blob storage!
+2026-10-30T01:14:44.1537330Z SHA256 digest of uploaded artifact zip is bc948c616f82bd8697ec84d3e75f3535eb6eaf62411e4387ad40524e005a6e04
+2026-10-30T01:14:44.1538754Z Finalizing artifact upload
+2026-10-30T01:14:44.5642304Z Artifact z3-smoke-results.zip successfully finalized. Artifact ID 12945653900
+2026-10-30T01:14:44.5642997Z Artifact z3-smoke-results has been successfully uploaded! Final size is 254729 bytes. Artifact ID is 12945653900
+2026-10-30T01:14:44.5648081Z Artifact download URL: https://github.com/yunwei37/gpu-smt/actions/runs/40984549751/artifacts/12945653900
+2026-10-30T01:14:44.6368925Z Post job cleanup.
+2026-10-30T01:14:44.6956544Z [command]/usr/bin/git version
+2026-10-30T01:14:44.6983831Z git version 2.56.0
+2026-10-30T01:14:44.7008582Z Temporarily overriding HOME='/home/runner/work/_temp/9538bfc9-ee68-415e-99e0-e9a636f824c8' before making global git config changes
+2026-10-30T01:14:44.7009777Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T01:14:44.7012313Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gpu-smt/gpu-smt
+2026-10-30T01:14:44.8179185Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T01:14:44.8252366Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-30T01:14:44.8496680Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T01:14:44.8529248Z http.https://github.com/.extraheader
+2026-10-30T01:14:44.8536721Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-30T01:14:44.9376874Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-30T01:14:44.9600988Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T01:14:44.9639253Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-30T01:14:44.9975951Z Cleaning up orphan processes
+2026-10-30T01:14:45.0244028Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

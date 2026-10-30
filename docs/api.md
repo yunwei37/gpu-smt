@@ -417,3 +417,7 @@ It is not connected to the stock adapter or Rust service. Pointer identity,
 including reader/state layers, does not itself certify mutable/opaque/IO effects,
 cross-candidate compatibility or exact timeout parity. The selected-state
 population measurement and complete accepted-set differential remain open.
+The retained-pointer guard also misses independently created Core contexts;
+different source FileMaps prevent cross-source replay through this primitive.
+Semantic rebasing is not implemented. Do not describe it as an enabled
+cross-candidate goal-state cache or use its restricted scope to rule out one.
