@@ -773,6 +773,13 @@ Primary-source details and completed static checks/build follow in tmp/build-and
 
 ## 2026-10-30 — completed prefixes do not qualify a full native comparison (step0185)
 
+**Forward correction (step0186):** the partial analysis correctly checks
+shard0, but its full200-pending assertion was stale. The complete matrix had
+already finished at11:34:24UTC. Root observed that terminal at11:37:39UTC but
+the chained publication still carried the earlier wording. The old receipt
+and report are retained; the completed600-return reanalysis below replaces
+that status assertion. Its hardcoded full200=false was not a live check.
+
 Root directly parses M04aea15's three completed shard0 process outputs and
 terminal receipts:100unique sources/300returns, equal source snapshots and
 source order, all three process exits0/retired. For each linked-off and
@@ -804,3 +811,39 @@ provenance, rather than replacing complete evaluations. Three small earlier
 untracked root-owned CI/client-control snapshots are preserved verbatim with
 this step; their pending/historical fields are not relabeled as current proof.
 Detailed checks:tmp/build-and-evaluate/step-0185-20261030T113532+0000.
+
+
+## 2026-10-30 — complete200 native diagnostic differential (step0186)
+
+Root now independently parses all six terminal cells and actual raw outputs:
+600returns,200unique expected IDs, disjoint shards, equal within-shard captured
+harness/order, all process exits0 and retired PID/birth identities. It checks
+every recorded memory sample against each cell peak, and independently rebuilds
+the two timing-on C event streams with per-thread parent stacks, source
+ownership, clock monotonicity and exclusive CPU accounting.
+
+All200flags/diagnostic arrays/InfoTrees match both comparators. Raw heartbeat
+deltas differ63off/62on; exact budget semantics remains unqualified. The native
+diagnostic classes are31no-error/19ordinary-error/150budget interruptions,
+not the original service acceptance/sorry policy.
+
+Stock/off/on body CPU827.301816/839.965435/838.669501s and body wall
+827.525068/840.188200/838.914357s differ from full process wall sums
+1023.378439/1029.925766/1028.648512s. One reversed order on disjoint shards
+does not identify observer overhead or statistical variance. Maximum sampled
+tree RSS8659439616bytes (~8.06GiB),largest sample gap1.014281s; no external
+signal watchdog or hard RSS limit is claimed.
+
+All200C trees close:7599entries/7599exits,400source boundary markers. Root
+recomputes exclusive eqRefl CPU781.383626s (93.1694% of timing-on bodyCPU).
+Per-source largest leaf sum812.899512s yields a conditional fixed-work,
+indivisible-leaf upper bound1.03170132. It excludes new algorithms, splitting
+inside native leaves, early termination and work removal; it is not a full
+merge-safe DAG or production/global GPU Amdahl bound. The720.249942s leaf
+and721.618421s body ofminif2f-4544 exceed its historical300s service cutoff,
+so this diagnostic distribution cannot rescale the original7808point.
+
+The paper updates only the corresponding Evaluation result/method paragraph.
+All scientific framing, citations and four RQs remain fixed. Raw and failed
+earlier observations, including step0185's status error, remain preserved.
+Complete checks and build:tmp/build-and-evaluate/step-0186-20261030T114011+0000.

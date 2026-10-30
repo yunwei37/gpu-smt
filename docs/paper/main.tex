@@ -1396,6 +1396,40 @@ balanced per-thread nesting. This is small-control qualification, not
 generic transparency, full 200-source parity or an engine speedup.
 It does not recover work lost in the earlier profiler diagnostic.
 
+A complete follow-up runs the fixed 200-source diagnostic cohort in two
+disjoint 100-source shards. Each shard executes stock, relinked timing-off
+and timing-on frontends in separate processes, reversing condition order in
+the second shard. All six processes return 100 records, exit zero and retire.
+Both comparators preserve all 200 error flags, diagnostic arrays and
+InfoTrees, with 31 no-error, 19 ordinary-error and 150 diagnostic-budget
+outcomes. However, raw allocation-heartbeat deltas differ from stock for
+63 timing-off and 62 timing-on sources. Observed diagnostic equality thus
+does not establish exact resource semantics or full service acceptance.
+
+Stock, timing-off and timing-on body CPU sums are 827.302, 839.965 and
+838.670 seconds; their complete process-wall sums are 1,023.378, 1,029.926
+and 1,028.649 seconds. These are separate clocks, with import, extraction
+and serialization outside the body timer. Reversed order over different
+shards is not a repeated same-input estimate of observation overhead.
+The maximum one-second sampled owned-tree RSS is 8.06\,GiB; this is not a
+hard RSS quota.
+
+All 200 timing-on call trees close, with 7,599 matched entries and exits.
+Their exclusive \texttt{eqRefl} CPU totals 781.384 seconds, 93.17\% of
+the instrumented body CPU. Summing each source's largest observed leaf call
+gives 812.900 seconds. If work is unchanged and those leaf calls remain
+indivisible, the ideal aggregate work/span ratio is at most
+$838.670/812.900=1.03170$. This conditional granularity bound is neither a
+complete dependency DAG nor a bound on splitting work inside those calls,
+changing algorithms or eliminating work.
+
+In particular, one \texttt{eqRefl} leaf in \texttt{minif2f-4544} consumes
+720.250 seconds inside its 721.618-second diagnostic body. The historical
+service stops that request at 300 seconds. The diagnostic heartbeat option
+does not reproduce that per-request wall limit. Neither the 93.17\% share
+nor the conditional 1.03170 ratio can therefore be applied to the original
+7,808-candidate service denominator or used as a global GPU ceiling.
+
 \paragraph{Native dispatch depends on the execution boundary.}
 In the retained prepared Lean~4.9 service, the successfully loaded Linarith
 library has 684 direct ELF dependencies, including Linarith preprocessing
