@@ -1,0 +1,98 @@
+{
+  "planned_sources": 49,
+  "complete_units": 98,
+  "terminal": {
+    "complete": true,
+    "completed_units": 98,
+    "planned_units": 98,
+    "group_wall_s": 1016.9686663923785,
+    "stopped": false
+  },
+  "flow_counts": {
+    "budget_exceeded -> accepted": 31,
+    "budget_exceeded -> lean_error": 14,
+    "budget_exceeded -> budget_exceeded": 4
+  },
+  "costs": [
+    {
+      "mode": "original",
+      "status": "budget_exceeded",
+      "candidates": 49,
+      "wall_sum_s": 794.5905211539939,
+      "cpu_sum_s": 793.5913550000005,
+      "max_sampled_tree_RSS_bytes": 5978619904
+    },
+    {
+      "mode": "certificate",
+      "status": "accepted",
+      "candidates": 31,
+      "wall_sum_s": 128.42876654397696,
+      "cpu_sum_s": 127.7931709999998,
+      "max_sampled_tree_RSS_bytes": 3913949184
+    },
+    {
+      "mode": "certificate",
+      "status": "budget_exceeded",
+      "candidates": 4,
+      "wall_sum_s": 39.39262404944748,
+      "cpu_sum_s": 39.288385000000034,
+      "max_sampled_tree_RSS_bytes": 5837848576
+    },
+    {
+      "mode": "certificate",
+      "status": "lean_error",
+      "candidates": 14,
+      "wall_sum_s": 54.20965261571109,
+      "cpu_sum_s": 53.844470999999764,
+      "max_sampled_tree_RSS_bytes": 3909353472
+    }
+  ],
+  "new_verified_tasks_vs_selected_native": [
+    "amc12a_2020_p4",
+    "mathd_numbertheory_541"
+  ],
+  "new_verified_tasks_vs_historical_full": [
+    "amc12a_2020_p4",
+    "mathd_numbertheory_541"
+  ],
+  "historical_full_solved_tasks": 142,
+  "original_accepted_ids": [],
+  "certificate_accepted_ids": [
+    "minif2f-3681",
+    "minif2f-3685",
+    "minif2f-3686",
+    "minif2f-3687",
+    "minif2f-3691",
+    "minif2f-3693",
+    "minif2f-3694",
+    "minif2f-3695",
+    "minif2f-3700",
+    "minif2f-3701",
+    "minif2f-3702",
+    "minif2f-3706",
+    "minif2f-3707",
+    "minif2f-3708",
+    "minif2f-3709",
+    "minif2f-3711",
+    "minif2f-7200",
+    "minif2f-7203",
+    "minif2f-7207",
+    "minif2f-7208",
+    "minif2f-7212",
+    "minif2f-7213",
+    "minif2f-7216",
+    "minif2f-7218",
+    "minif2f-7219",
+    "minif2f-7221",
+    "minif2f-7223",
+    "minif2f-7225",
+    "minif2f-7226",
+    "minif2f-7229",
+    "minif2f-7231"
+  ],
+  "budget_to_accept": 31,
+  "error_to_accept": 0,
+  "accepted_regressions": 0,
+  "prefix_errors_observed": 16,
+  "limits": "only49selected sources at finite16s/200kHB/8GiB/native1; censored outcomes not false proofs; task-family full32candidate point pending extra15"
+}

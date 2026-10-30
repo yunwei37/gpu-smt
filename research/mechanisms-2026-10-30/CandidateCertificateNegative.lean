@@ -6,3 +6,5 @@ example (m n : Nat) (hm : m = 5) (hn : n = 401) : m+n=407 := by
   m_interval_cases m
   subst n
   norm_num
+
+example : (Finset.range 2).card = 100 := by m_digits_rfl
