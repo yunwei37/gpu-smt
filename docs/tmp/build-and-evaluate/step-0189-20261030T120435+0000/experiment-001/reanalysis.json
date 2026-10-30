@@ -1,0 +1,250 @@
+{
+  "observed_utc": "2026-10-30T12:04:40.575163+00:00",
+  "native_invocations": 0,
+  "decoder_commit": "363851c",
+  "representative_returns": 93,
+  "representative_sources": 31,
+  "representative_differences": [
+    {
+      "id": "minif2f-6684-pc-repeat-0",
+      "comparator": "library-off",
+      "field": "allocatedHeartbeatDelta",
+      "stock": 964276,
+      "observed": 964274
+    }
+  ],
+  "representative_PC_binary": {
+    "count": 16649,
+    "interval_us": 2000,
+    "phases": {
+      "0": 14118,
+      "1": 499,
+      "2": 328,
+      "3": 1558,
+      "4": 146
+    },
+    "threads": [
+      17741
+    ]
+  },
+  "representative_PC_table": [
+    {
+      "phase": 0,
+      "n": 14118,
+      "IR": 11903,
+      "RC": 33,
+      "alloc_free": 93,
+      "tables": 10,
+      "unresolved": 365
+    },
+    {
+      "phase": 1,
+      "n": 499,
+      "IR": 26,
+      "RC": 70,
+      "alloc_free": 68,
+      "tables": 29,
+      "unresolved": 5
+    },
+    {
+      "phase": 2,
+      "n": 328,
+      "IR": 13,
+      "RC": 32,
+      "alloc_free": 35,
+      "tables": 31,
+      "unresolved": 7
+    },
+    {
+      "phase": 3,
+      "n": 1558,
+      "IR": 35,
+      "RC": 157,
+      "alloc_free": 158,
+      "tables": 152,
+      "unresolved": 12
+    },
+    {
+      "phase": 4,
+      "n": 146,
+      "IR": 0,
+      "RC": 12,
+      "alloc_free": 11,
+      "tables": 16,
+      "unresolved": 2
+    }
+  ],
+  "representative_body_totals": {
+    "stock": {
+      "cpu_s": 5.041618196,
+      "wall_s": 5.041834392
+    },
+    "library-off": {
+      "cpu_s": 5.047694938,
+      "wall_s": 5.04799009
+    },
+    "sampler-on": {
+      "cpu_s": 5.067284281,
+      "wall_s": 5.067390618
+    }
+  },
+  "representative_whole_process_wall_s": {
+    "stock": 36.119517190381885,
+    "library-off": 36.25268116313964,
+    "sampler-on": 37.25465679820627
+  },
+  "kernel_cells": [
+    {
+      "mode": "stock",
+      "warm_recheck_interval_s": 8.645867747,
+      "raw_HB": 57844573,
+      "whole_process_wall_s": 30.67956057935953,
+      "receipt": {
+        "argv": [
+          "taskset",
+          "-c",
+          "8,9,10,11",
+          "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+          "-j1",
+          "-M8192",
+          "-T50000000",
+          "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean"
+        ],
+        "source": "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean",
+        "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+        "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+        "signals_sent": 0,
+        "native_allocation_limit": 50000000,
+        "native_memory_MiB": 8192,
+        "internal_wall_seconds": 180,
+        "loaded_measurement_library": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing/software-probe.so",
+        "intended_wall_handler_exit_code": 124,
+        "observed_internal_alarm_signal_possible": 14,
+        "pid": 19039,
+        "start_ticks": "741383979",
+        "native_kernel_peak_rss_bytes": 2369380352,
+        "native_cpu_seconds": 30.662158,
+        "exit": 0,
+        "wall_s": 30.67956057935953,
+        "sampled_peak_owned_rss_bytes": 2396483584,
+        "minimum_node_MemAvailable_bytes": 59971686400,
+        "samples": 31,
+        "sample_interval_s": 1,
+        "retired": true
+      }
+    },
+    {
+      "mode": "library-off",
+      "warm_recheck_interval_s": 8.679850596,
+      "raw_HB": 57844573,
+      "whole_process_wall_s": 30.780098312534392,
+      "receipt": {
+        "argv": [
+          "taskset",
+          "-c",
+          "8,9,10,11",
+          "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+          "-j1",
+          "-M8192",
+          "-T50000000",
+          "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean"
+        ],
+        "source": "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean",
+        "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+        "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+        "signals_sent": 0,
+        "native_allocation_limit": 50000000,
+        "native_memory_MiB": 8192,
+        "internal_wall_seconds": 180,
+        "loaded_measurement_library": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing/software-probe.so:/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler-v2/pc-sampler.so",
+        "intended_wall_handler_exit_code": 124,
+        "observed_internal_alarm_signal_possible": 14,
+        "pid": 19044,
+        "start_ticks": "741387052",
+        "native_kernel_peak_rss_bytes": 2369597440,
+        "native_cpu_seconds": 30.740151,
+        "exit": 0,
+        "wall_s": 30.780098312534392,
+        "sampled_peak_owned_rss_bytes": 2396651520,
+        "minimum_node_MemAvailable_bytes": 59987087360,
+        "samples": 31,
+        "sample_interval_s": 1,
+        "retired": true
+      }
+    },
+    {
+      "mode": "sampler-on",
+      "warm_recheck_interval_s": 8.51672479,
+      "raw_HB": 57844573,
+      "whole_process_wall_s": 30.53837437648326,
+      "receipt": {
+        "argv": [
+          "taskset",
+          "-c",
+          "8,9,10,11",
+          "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+          "-j1",
+          "-M8192",
+          "-T50000000",
+          "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean"
+        ],
+        "source": "/workspaces/repository/research/mechanisms-2026-10-30/PCDigitsCertificate.lean",
+        "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+        "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+        "signals_sent": 0,
+        "native_allocation_limit": 50000000,
+        "native_memory_MiB": 8192,
+        "internal_wall_seconds": 180,
+        "loaded_measurement_library": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing/software-probe.so:/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler-v2/pc-sampler.so",
+        "intended_wall_handler_exit_code": 124,
+        "observed_internal_alarm_signal_possible": 14,
+        "pid": 19061,
+        "start_ticks": "741390135",
+        "native_kernel_peak_rss_bytes": 2375892992,
+        "native_cpu_seconds": 30.455201,
+        "exit": 0,
+        "wall_s": 30.53837437648326,
+        "sampled_peak_owned_rss_bytes": 2402803712,
+        "minimum_node_MemAvailable_bytes": 59126263808,
+        "samples": 31,
+        "sample_interval_s": 1,
+        "retired": true
+      }
+    }
+  ],
+  "math_source_equal": true,
+  "same_non_timing_stdout": true,
+  "printed_axioms": [
+    "'MechanismCertificate.digitsFuel_eq' depends on axioms: [propext, Quot.sound, Classical.choice]",
+    "'MechanismCertificate.computed_count' does not depend on any axioms",
+    "'MechanismCertificate.amc12a_2020_p4_certificate' depends on axioms: [propext, Quot.sound, Classical.choice]"
+  ],
+  "corrected_kernel_PC_binary": {
+    "count": 4258,
+    "interval_us": 2000,
+    "phases": {
+      "4": 4258
+    },
+    "threads": [
+      19061
+    ]
+  },
+  "corrected_kernel_PC_table": [
+    {
+      "phase": 4,
+      "n": 4258,
+      "IR": 0,
+      "RC": 699,
+      "alloc_free": 462,
+      "tables": 777,
+      "unresolved": 124
+    }
+  ],
+  "initial_recheck_raw_HB": 57844572,
+  "corrected_recheck_raw_HB": 57844573,
+  "whole_matrix_native_wall_sum_s": 3081.9527160739526,
+  "M_reported_group_limit_s": 1800,
+  "matrix_exceeds_reported_group_limit": true,
+  "root_elapsed_s": 4.54304682649672,
+  "root_maxrss_kib": 86284
+}

@@ -148,6 +148,15 @@ Body and whole-process clocks remain separate; sampled peak 8.06 GiB is not
 a hard quota. Step0185's stale full-matrix-pending statement is explicitly
 corrected forward in step0186 and is preserved with its contrary raw receipt.
 
+The [software-sampling audit](tmp/build-and-evaluate/step-0189-20261030T120435+0000/step-report.md)
+separates 14,118 outside-body samples from 2,531 body samples, and validates
+a separately timed successful closed recheck (4,258 PCs). Named RC/alloc/table
+residence is not total operation cost or a precompilation gain. An old timing
+window included shutdown; the corrected timer and changed raw-HB scope remain
+separate. M also reports the original six-cell group exceeded its 1,800 s
+whole-group bound: native processes alone took 3,081.953 s. The captured
+matrix remains exploratory evidence, not a conforming group/runtime claim.
+
 <a id="public-lean-code-verification"></a>
 ## Earlier program/GPU evidence
 

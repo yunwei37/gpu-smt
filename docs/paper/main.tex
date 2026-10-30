@@ -1426,7 +1426,7 @@ balanced per-thread nesting. This is small-control qualification, not
 generic transparency, full 200-source parity or an engine speedup.
 It does not recover work lost in the earlier profiler diagnostic.
 
-A complete follow-up runs the fixed 200-source diagnostic cohort in two
+A retained follow-up executes the fixed 200-source diagnostic cohort in two
 disjoint 100-source shards. Each shard executes stock, relinked timing-off
 and timing-on frontends in separate processes, reversing condition order in
 the second shard. All six processes return 100 records, exit zero and retire.
@@ -1443,6 +1443,10 @@ and serialization outside the body timer. Reversed order over different
 shards is not a repeated same-input estimate of observation overhead.
 The maximum one-second sampled owned-tree RSS is 8.06\,GiB; this is not a
 hard RSS quota.
+The six serial native processes alone take 3,081.953 seconds, exceeding
+the declared 1,800-second whole-group bound despite each cell meeting its
+individual bound. We retain the overrun and all data as exploratory
+diagnostics, not a conforming complete-group service evaluation.
 
 All 200 timing-on call trees close, with 7,599 matched entries and exits.
 Their exclusive \texttt{eqRefl} CPU totals 781.384 seconds, 93.17\% of
@@ -1470,7 +1474,73 @@ Mathlib shared libraries. These are different execution boundaries.
 A filename census of compiled modules therefore supplies neither an
 interpreted CPU fraction nor a precompilation speedup estimate. Native entry
 handlers may still invoke interpreted extensions; timed helper residence
-and a matched end-to-end comparison remain unmeasured.
+and a matched end-to-end comparison are not established by that census.
+
+
+\paragraph{Software samples separate observer and candidate work.}
+A subsequent SDK~4.9 diagnostic uses process-local instruction sampling every
+2\,ms of CPU time, without hardware performance counters. It repeats one
+median source from each of three diagnostic classes ten times and retains
+a separate closed-list probe, giving 31 units in each of three fresh
+stock, library-off and sampler-on cells. All 93 units return. Sampler-on
+matches stock flags, diagnostics, InfoTrees and raw heartbeat deltas;
+library-off differs by two raw heartbeats on one unit. Strict three-cell
+heartbeat equality is therefore unqualified.
+
+The sampler records 16,649 instruction-pointer samples, of which 14,118 occur outside
+candidate-body phases. Of those outside-body samples, 11,903 fall in the
+interpreter or its named support routines, including observer lookup and
+InfoTree-export work. Attributing whole-process interpreter residence to
+Mathlib tactic bodies would chiefly profile the measuring program.
+The three repeated median bodies have the phase-specific distributions
+in Table~\ref{tab:software-residence}. They are neither workload-weighted
+fractions nor a measured precompilation gain. One ordered pass and periodic
+sampling do not provide causal overhead or IID confidence intervals.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Sampled phase & PCs & IR\% & RC\% & Alloc\% & Table\% \\
+\midrule
+No-error median & 499 & 5.21 & 14.03 & 13.63 & 5.81 \\
+Error median & 328 & 3.96 & 9.76 & 10.67 & 9.45 \\
+Budget median & 1,558 & 2.25 & 10.08 & 10.14 & 9.76 \\
+Warm kernel recheck & 4,258 & 0.00 & 16.42 & 10.85 & 18.25 \\
+\bottomrule
+\end{tabular}
+\caption{Phase-local software instruction samples. The first three rows
+repeat one median source ten times each; the final row is a separate proved
+digits-count certificate. RC, allocation/free and table columns are disjoint
+named helper buckets, excluding inlined operations. They do not partition
+all kernel or algorithmic costs, and these rows have different denominators.}
+\label{tab:software-residence}
+\end{table}
+
+The final row samples the existing ordinary-kernel digits certificate,
+whose mathematical declarations are unchanged. Its computed-count theorem
+has no axiom dependencies; the bridge retains its original standard axioms.
+A corrected timer stops immediately after the warm declaration recheck
+returns, before diagnostics and sampler shutdown/flushing. Stock, off and
+on recheck intervals are 8.646, 8.680 and 8.517 seconds inside separate
+30.680, 30.780 and 30.538-second source-process clocks. All three exit zero,
+print identical non-timing/axiom output and record 57,844,573 raw heartbeats.
+The added clock read changes that counter scope from the earlier
+57,844,572 observation; the counters are not equated across versions.
+Earlier 8.63--8.70-second fields included observer shutdown and remain
+retained with that timing erratum, alongside the separate uninstrumented
+8.557-second recheck.
+
+None of the corrected recheck phase's 4,258 samples is classified as
+interpreter residence; 124 remain unresolved. Generic structural replacement,
+cache, reference-count and allocation helpers can execute kernel work,
+so a small type-checker-name bucket is not a small total kernel fraction.
+Phase boundaries include brief measurement calls and are not stack attribution
+to only the internal checker. This successful compiled-kernel example does
+not establish population cost shares, automatic extraction, a precompilation
+speedup or a new certificate mechanism.
 
 \paragraph{Kernel-checked finite-computation representation.}
 A Lean~4.9.0-rc1 prototype replaces one deep count over 10,000 natural numbers
