@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/bench/lean-candidate-scheduling/analyze-resource-calls.py", line 79, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspaces/repository/bench/lean-candidate-scheduling/analyze-resource-calls.py", line 28, in main
+    assert c['code'].encode()[u['startByte']:u['stopByte']].decode()==u['text'],('native byte mapping',sid,ordinal)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('native byte mapping', 'minif2f-579', 0)

@@ -1,0 +1,1928 @@
+{
+  "resource_sources": 41,
+  "native_syntax_coverage": 41,
+  "same_call_text_cross_proof_groups": [
+    {
+      "key": [
+        "mathd_numbertheory_427",
+        "Mathlib.Tactic.normNum",
+        "norm_num"
+      ],
+      "distinct_proofs": [
+        "minif2f-663",
+        "minif2f-664"
+      ],
+      "later_proofs": [
+        "minif2f-664"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 221.97219610214233
+    },
+    {
+      "key": [
+        "mathd_numbertheory_427",
+        "Lean.Parser.Tactic.tacticRfl",
+        "rfl"
+      ],
+      "distinct_proofs": [
+        "minif2f-663",
+        "minif2f-664"
+      ],
+      "later_proofs": [
+        "minif2f-664"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 221.97219610214233
+    },
+    {
+      "key": [
+        "mathd_numbertheory_483",
+        "Mathlib.Tactic.normNum",
+        "norm_num"
+      ],
+      "distinct_proofs": [
+        "minif2f-2409",
+        "minif2f-2421"
+      ],
+      "later_proofs": [
+        "minif2f-2421"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 191.9965250492096
+    },
+    {
+      "key": [
+        "amc12a_2020_p4",
+        "Lean.Parser.Tactic.tacticRfl",
+        "rfl"
+      ],
+      "distinct_proofs": [
+        "minif2f-3681",
+        "minif2f-3682",
+        "minif2f-3683",
+        "minif2f-3685",
+        "minif2f-3686",
+        "minif2f-3687",
+        "minif2f-3688",
+        "minif2f-3689",
+        "minif2f-3690",
+        "minif2f-3691",
+        "minif2f-3692",
+        "minif2f-3693",
+        "minif2f-3694",
+        "minif2f-3695",
+        "minif2f-3697",
+        "minif2f-3698",
+        "minif2f-3699",
+        "minif2f-3700",
+        "minif2f-3701",
+        "minif2f-3702",
+        "minif2f-3703",
+        "minif2f-3705",
+        "minif2f-3706",
+        "minif2f-3707",
+        "minif2f-3708",
+        "minif2f-3709",
+        "minif2f-3710",
+        "minif2f-3711"
+      ],
+      "later_proofs": [
+        "minif2f-3682",
+        "minif2f-3683",
+        "minif2f-3685",
+        "minif2f-3686",
+        "minif2f-3687",
+        "minif2f-3688",
+        "minif2f-3689",
+        "minif2f-3690",
+        "minif2f-3691",
+        "minif2f-3692",
+        "minif2f-3693",
+        "minif2f-3694",
+        "minif2f-3695",
+        "minif2f-3697",
+        "minif2f-3698",
+        "minif2f-3699",
+        "minif2f-3700",
+        "minif2f-3701",
+        "minif2f-3702",
+        "minif2f-3703",
+        "minif2f-3705",
+        "minif2f-3706",
+        "minif2f-3707",
+        "minif2f-3708",
+        "minif2f-3709",
+        "minif2f-3710",
+        "minif2f-3711"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 5963.650922775269
+    }
+  ],
+  "same_rooted_native_unit_text_cross_proof_groups": [
+    {
+      "key": [
+        "mathd_numbertheory_483",
+        [
+          [
+            "Mathlib.Tactic.normNum",
+            "norm_num"
+          ]
+        ]
+      ],
+      "distinct_proofs": [
+        "minif2f-2409",
+        "minif2f-2421"
+      ],
+      "later_proofs": [
+        "minif2f-2421"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 191.9965250492096
+    }
+  ],
+  "source_rewritten_target_template_groups": [
+    {
+      "key": [
+        "amc12a_2020_p4",
+        "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rfl",
+        51539607552
+      ],
+      "distinct_proofs": [
+        "minif2f-3687",
+        "minif2f-3691",
+        "minif2f-3700",
+        "minif2f-3706",
+        "minif2f-3709"
+      ],
+      "later_proofs": [
+        "minif2f-3691",
+        "minif2f-3700",
+        "minif2f-3706",
+        "minif2f-3709"
+      ],
+      "conditional_later_whole_candidate_envelope_seconds": 889.8195960521698
+    }
+  ],
+  "template_matched_sources": 19,
+  "qualified_native_full_state_hits": null,
+  "native_invocations": 0,
+  "per_source": [
+    {
+      "id": "minif2f-579",
+      "task": "amc12a_2020_p10",
+      "native_units": [
+        {
+          "text": "simp_all [Real.logb, Real.log_rpow, mul_comm]",
+          "syntaxKind": "Lean.Parser.Tactic.simpAll",
+          "stopByte": 1196,
+          "startByte": 1151
+        },
+        {
+          "text": "ring_nf at h₁",
+          "syntaxKind": "Mathlib.Tactic.RingNF.ringNF",
+          "stopByte": 1260,
+          "startByte": 1245
+        },
+        {
+          "text": "have h₂ : n ≤ 16 ^ 4 := by\n    -- Use the fact that 16^4 is the maximum value that satisfies the equation\n    apply Nat.le_of_not_lt\n    intro h\n    -- If n > 16^4, the equation cannot hold\n    simp_all [Nat.log]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1547,
+          "startByte": 1331
+        },
+        {
+          "text": "have h₃ : n ≥ 16 ^ 4 := by linarith",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1666,
+          "startByte": 1627
+        },
+        {
+          "text": "interval_cases n <;> simp_all (config := {decide := true})",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1785,
+          "startByte": 1727
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 0,
+          "kind": "Lean.Parser.Tactic.simpAll",
+          "text": "simp_all [Real.logb, Real.log_rpow, mul_comm]",
+          "start_byte": 1151,
+          "stop_byte": 1196
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 222.60548901557922,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-663",
+      "task": "mathd_numbertheory_427",
+      "native_units": [
+        {
+          "text": "simp only [Finset.sum_eq_multiset_sum, Nat.divisors] at h₀ ⊢",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 885,
+          "startByte": 821
+        },
+        {
+          "text": "norm_num at h₀",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 966,
+          "startByte": 950
+        },
+        {
+          "text": "rw [h₀]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1029,
+          "startByte": 1020
+        },
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1086,
+          "startByte": 1078
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1131,
+          "startByte": 1128
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 1,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num at h₀",
+          "start_byte": 950,
+          "stop_byte": 966
+        },
+        {
+          "ordinal": 3,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num",
+          "start_byte": 1078,
+          "stop_byte": 1086
+        },
+        {
+          "ordinal": 4,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1128,
+          "stop_byte": 1131
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 94.009191849,
+      "current_exclusive_envelope_seconds": 224.02486991882324,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-664",
+      "task": "mathd_numbertheory_427",
+      "native_units": [
+        {
+          "text": "rw [h₀]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 839,
+          "startByte": 830
+        },
+        {
+          "text": "simp only [Nat.divisors, Finset.sum_eq_multiset_sum, Finset.mem_filter, Finset.mem_range,\n    Finset.mem_Ico, Finset.mem_singleton, Finset.sum_singleton, Finset.sum_range_succ,\n    Finset.sum_range_one, Nat.cast_one, Nat.cast_zero, add_zero]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1133,
+          "startByte": 892
+        },
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1228,
+          "startByte": 1220
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1234,
+          "startByte": 1231
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num",
+          "start_byte": 1220,
+          "stop_byte": 1228
+        },
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1231,
+          "stop_byte": 1234
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 91.009157262,
+      "current_exclusive_envelope_seconds": 221.97219610214233,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2401",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "have h₃ := h₂ 0",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 592,
+          "startByte": 573
+        },
+        {
+          "text": "have h₄ := h₂ 1",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 614,
+          "startByte": 595
+        },
+        {
+          "text": "have h₅ := h₂ 2",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 636,
+          "startByte": 617
+        },
+        {
+          "text": "have h₆ := h₂ 3",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 658,
+          "startByte": 639
+        },
+        {
+          "text": "have h₇ := h₂ 4",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 680,
+          "startByte": 661
+        },
+        {
+          "text": "have h₈ := h₂ 5",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 702,
+          "startByte": 683
+        },
+        {
+          "text": "have h₉ := h₂ 6",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 724,
+          "startByte": 705
+        },
+        {
+          "text": "have h₁₀ := h₂ 7",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 749,
+          "startByte": 727
+        },
+        {
+          "text": "have h₁₁ := h₂ 8",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 774,
+          "startByte": 752
+        },
+        {
+          "text": "have h₁₂ := h₂ 9",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 799,
+          "startByte": 777
+        },
+        {
+          "text": "have h₁₃ := h₂ 10",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 825,
+          "startByte": 802
+        },
+        {
+          "text": "have h₁₄ : ∀ n : ℕ, a (n + 2) % 4 = a (n + 1) % 4 + a n % 4 ∨\n    a (n + 2) % 4 = a (n + 1) % 4 - a n % 4 := by\n    intro n\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1076,
+          "startByte": 933
+        },
+        {
+          "text": "have h₁₅ : ∃ k : ℕ, k > 0 ∧ ∀ n : ℕ, a (n + k) % 4 = a n % 4 := by\n    use 2\n    constructor\n    norm_num\n    intro n\n    simpa [h₁, h₂] using h₂ (n + 2)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1334,
+          "startByte": 1161
+        },
+        {
+          "text": "have h₁₆ : ∀ n : ℕ, a (n + 2) % 4 = a n % 4 := by\n    intro n\n    induction' n with n ih\n    simpa [h₁] using h₁₅\n    simpa [h₂, h₁₅] using h₂ (n + 1)",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1590,
+          "startByte": 1418
+        },
+        {
+          "text": "have h₁₇ : a 100 % 4 = a 2 % 4 := by\n    simpa [h₁₆] using h₁₅ 1",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1773,
+          "startByte": 1697
+        },
+        {
+          "text": "simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.simpAll",
+          "stopByte": 1843,
+          "startByte": 1835
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 15,
+          "kind": "Lean.Parser.Tactic.simpAll",
+          "text": "simp_all",
+          "start_byte": 1835,
+          "stop_byte": 1843
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 197.77325081825256,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2403",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]\n  <;> norm_num\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1403,
+          "startByte": 1333
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 202.0118260383606,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2404",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "have h₃ : ∀ n, a (n + 6) % 4 = a n % 4 := by\n    intro n\n    simp [h₂, Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1509,
+          "startByte": 1389
+        },
+        {
+          "text": "simp [h₀, h₁, h₂, h₃] at *",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1644,
+          "startByte": 1610
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 187.9697461128235,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2409",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 554,
+          "startByte": 546
+        },
+        {
+          "text": "simp_all [Nat.add_mod, Nat.mul_mod]\n  -- The computed terms show a periodic pattern, and we can use this to find the 100th term modulo 4.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 773,
+          "startByte": 621
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 0,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num",
+          "start_byte": 546,
+          "stop_byte": 554
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 207.00227403640747,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2412",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "have h₃ := h₂ 0",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 794,
+          "startByte": 775
+        },
+        {
+          "text": "have h₄ := h₂ 1",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 816,
+          "startByte": 797
+        },
+        {
+          "text": "have h₅ := h₂ 2",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 838,
+          "startByte": 819
+        },
+        {
+          "text": "have h₆ := h₂ 3",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 860,
+          "startByte": 841
+        },
+        {
+          "text": "have h₇ := h₂ 4",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 882,
+          "startByte": 863
+        },
+        {
+          "text": "have h₈ := h₂ 5",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 904,
+          "startByte": 885
+        },
+        {
+          "text": "simp_all [h₀, h₁]\n  -- After computing the first few terms modulo 4, we find that the sequence repeats every 6 terms.\n  -- Since 100 modulo 6 equals 4, the 100th term is the same as the 4th term in the sequence, which is 3 modulo 4.\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1230,
+          "startByte": 979
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 194.0649528503418,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2419",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "simp [h₀, h₁, h₂] at *",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 855,
+          "startByte": 827
+        },
+        {
+          "text": "norm_num\n  -- Verify the remainder using the simplified sequence values\n  <;> linarith [h₂ 0, h₂ 1, h₂ 2, h₂ 3, h₂ 4, h₂ 5, h₂ 6, h₂ 7, h₂ 8, h₂ 9]",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1093,
+          "startByte": 926
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 189.9693248271942,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2421",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1346,
+          "startByte": 1338
+        },
+        {
+          "text": "simp_all [h₂]\n  -- Use linarith to solve the resulting linear arithmetic problem\n  <;> linarith\n  -- Use simp_all again to further simplify the goal\n  <;> simp_all [h₂]\n  -- Use linarith again to solve the resulting linear arithmetic problem\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1675,
+          "startByte": 1415
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 0,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num",
+          "start_byte": 1338,
+          "stop_byte": 1346
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 191.9965250492096,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2423",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_mod]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith\n  <;> simp_all [h₂]\n  <;> linarith",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1721,
+          "startByte": 1436
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 202.98241806030273,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-2424",
+      "task": "mathd_numbertheory_483",
+      "native_units": [
+        {
+          "text": "simp [h₀, h₁, h₂, Nat.add_mod, Nat.mul_mod, Nat.mod_mod] at *\n  -- The period is 6, and the 100th term modulo 4 is equivalent to the 4th term modulo 4\n  -- Since 100 % 6 = 4, the 100th term modulo 4 is the same as the 4th term modulo 4\n  -- The 4th term of the Fibonacci sequence is 3\n  -- Therefore, the remainder when the 100th term of the Fibonacci sequence is divided by 4 is 3\n  <;> rfl",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1536,
+          "startByte": 1139
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 0,
+      "current_exclusive_envelope_seconds": 195.9186520576477,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3681",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.Icc 1000 9999) := by\n    ext n\n    simp [Nat.lt_succ_iff, h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1015,
+          "startByte": 791
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1027,
+          "startByte": 1018
+        },
+        {
+          "text": "simp [Finset.filter_eq, Finset.Icc]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1065,
+          "startByte": 1030
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1071,
+          "startByte": 1068
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1068,
+          "stop_byte": 1071
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 90.995538713,
+      "current_exclusive_envelope_seconds": 221.0857310295105,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3682",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ n % 5 = 0 ∧ (∀ d ∈ Nat.digits 10 n, Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff, Nat.le_add_left]\n    -- We need to show that the set S is equivalent to the set of numbers that meet the criteria.\n    -- This involves checking the conditions for membership in S.\n    -- The filter function will select numbers that meet the criteria:\n    -- 1. n % 5 = 0 (number is divisible by 5)\n    -- 2. All digits of n are even\n    -- 3. The number is between 1000 and 9999.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2280,
+          "startByte": 1731
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2339,
+          "startByte": 2330
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2385,
+          "startByte": 2382
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2382,
+          "stop_byte": 2385
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n ↦ n % 5 = 0 ∧ (∀ d ∈ Nat.digits 10 n, Even d)) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n ↦ n % 5 = 0 ∧ (∀ d ∈ Nat.digits 10 n, Even d)) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 90.00341336,
+      "current_exclusive_envelope_seconds": 221.0012800693512,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3683",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 5 ∣ n) (Finset.filter (fun n ↦ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀]\n    refine' ⟨_, fun h => ⟨_, _, _, h⟩⟩\n    · rintro ⟨h₁, _, h₃, h₄⟩\n      exact (Nat.mod_eq_of_lt (Nat.mod_lt _ (zero_lt_succ _))).symm\n    · rcases h with (rfl | rfl | rfl | rfl) <;> norm_num",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1374,
+          "startByte": 983
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1386,
+          "startByte": 1377
+        },
+        {
+          "text": "simp only [Finset.card_filter, Nat.card_Icc, Nat.add_sub_cancel, Finset.card_range, Finset.card_product]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1493,
+          "startByte": 1389
+        },
+        {
+          "text": "norm_num",
+          "syntaxKind": "Mathlib.Tactic.normNum",
+          "stopByte": 1504,
+          "startByte": 1496
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1510,
+          "startByte": 1507
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Mathlib.Tactic.normNum",
+          "text": "norm_num",
+          "start_byte": 1496,
+          "stop_byte": 1504
+        },
+        {
+          "ordinal": 4,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1507,
+          "stop_byte": 1510
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 90.993286084,
+      "current_exclusive_envelope_seconds": 219.93596410751343,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3685",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_range]\n    -- Use the omega tactic to solve the arithmetic constraints.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1561,
+          "startByte": 1289
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1625,
+          "startByte": 1616
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1724,
+          "startByte": 1721
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1721,
+          "stop_byte": 1724
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 91.024742043,
+      "current_exclusive_envelope_seconds": 221.0497100353241,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3686",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [Nat.le_of_lt, h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 920,
+          "startByte": 710
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 979,
+          "startByte": 970
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1075,
+          "startByte": 1072
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1072,
+          "stop_byte": 1075
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n ↦ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 90.019513993,
+      "current_exclusive_envelope_seconds": 218.9025740623474,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3687",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext\n    simp [h₀, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1419,
+          "startByte": 1210
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1431,
+          "startByte": 1422
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1437,
+          "startByte": 1434
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1434,
+          "stop_byte": 1437
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.002442843,
+      "current_exclusive_envelope_seconds": 224.11730694770813,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3688",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n ↦ 5 ∣ n) (Finset.filter (fun n ↦ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 1000 ≤ n ∧ n ≤ 9999) (Finset.range 10000)) := by\n    ext n\n    simp [h₀, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1091,
+          "startByte": 855
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1103,
+          "startByte": 1094
+        },
+        {
+          "text": "simp only [Finset.card, Finset.filter_eq', Finset.mem_filter, Finset.mem_range, Finset.card_range]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1271,
+          "startByte": 1173
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1368,
+          "startByte": 1365
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1365,
+          "stop_byte": 1368
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 88.011224198,
+      "current_exclusive_envelope_seconds": 217.90577387809753,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3689",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc, Nat.even_iff]\n    -- We need to show that n is in S if and only if it satisfies the conditions in the filter.\n    -- This involves checking that n is a 4-digit number, has only even digits, and is divisible by 5.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1308,
+          "startByte": 933
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1401,
+          "startByte": 1392
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1466,
+          "startByte": 1463
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1463,
+          "stop_byte": 1466
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.004831108,
+      "current_exclusive_envelope_seconds": 224.07532691955566,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3690",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter\n    (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d ∧ 5 ∣ n)\n    (Finset.Icc 1000 9999) := by\n    ext\n    simp [h₀, Nat.lt_succ_iff]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1248,
+          "startByte": 1062
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1311,
+          "startByte": 1302
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1453,
+          "startByte": 1450
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1450,
+          "stop_byte": 1453
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d ∧ 5 ∣ n) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.995378516,
+      "current_exclusive_envelope_seconds": 219.99371886253357,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3691",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the filter of numbers from 0 to 9999 that satisfy the given conditions\n    -- is equal to the set of numbers from 1000 to 9999 that satisfy the conditions.\n    -- This is done by simplifying the filter operation and using the properties of numbers.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1266,
+          "startByte": 784
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1278,
+          "startByte": 1269
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1338,
+          "startByte": 1335
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1335,
+          "stop_byte": 1338
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.014293295,
+      "current_exclusive_envelope_seconds": 223.9209611415863,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3692",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n : ℕ => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_Icc]\n    -- Use the `omega` tactic to solve the linear arithmetic problem.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1310,
+          "startByte": 1039
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1388,
+          "startByte": 1379
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1488,
+          "startByte": 1485
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1485,
+          "stop_byte": 1488
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n : ℕ => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n : ℕ => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.016391455,
+      "current_exclusive_envelope_seconds": 219.99852323532104,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3693",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n ↦ n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- The range function generates all integers from 0 to 9999.\n    -- The filter function applies the conditions given in h₀ to each integer in the range.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1182,
+          "startByte": 817
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1327,
+          "startByte": 1318
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1431,
+          "startByte": 1428
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1428,
+          "stop_byte": 1431
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n ↦ n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n ↦ n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.995597371,
+      "current_exclusive_envelope_seconds": 219.0573251247406,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3694",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the set S of numbers satisfying the given conditions\n    -- is the same as the filtered range from 0 to 9999.\n    -- This involves checking the conditions for each number in the range.\n    -- The conditions are:\n    -- 1. The number is a 4-digit number (1000 ≤ n ≤ 9999).\n    -- 2. All digits of the number are even.\n    -- 3. The number is divisible by 5.\n    -- We use the `omega` tactic to solve the arithmetic and logical constraints.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1886,
+          "startByte": 1199
+        },
+        {
+          "text": "simp [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1900,
+          "startByte": 1889
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2021,
+          "startByte": 2018
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2018,
+          "stop_byte": 2021
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 89.011092726,
+      "current_exclusive_envelope_seconds": 220.95132684707642,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3695",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range (10000)) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range, le_of_lt]\n    -- We need to show that the filter condition matches the given conditions.\n    -- This involves checking that the number is within the range [1000, 9999],\n    -- all digits are even, and the number is divisible by 5.\n    -- The first condition is checked by `le_of_lt`.\n    -- The second condition is checked by `le_of_lt`.\n    -- The third condition is checked by `simp [Nat.lt_succ_iff]`.\n    -- The fourth condition is checked by `le_of_lt`.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1930,
+          "startByte": 1233
+        },
+        {
+          "text": "simp_rw [h₁]",
+          "syntaxKind": "Mathlib.Tactic.tacticSimp_rw___",
+          "stopByte": 1947,
+          "startByte": 1933
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2611,
+          "startByte": 2608
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2608,
+          "stop_byte": 2611
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 89.996838666,
+      "current_exclusive_envelope_seconds": 220.0441689491272,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3697",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => n % 10 = 0 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, ← Nat.lt_succ_iff, Nat.le_of_dvd zero_lt_one]\n    -- We need to show that a number n is in S if and only if it satisfies the conditions in h₀.\n    -- This involves checking that n % 10 = 0 and all digits of n are even.\n    -- We use the properties of the digits and the range of numbers to establish this equivalence.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2096,
+          "startByte": 1606
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2214,
+          "startByte": 2205
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2273,
+          "startByte": 2270
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2270,
+          "stop_byte": 2273
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => n % 10 = 0 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n => n % 10 = 0 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.999618057,
+      "current_exclusive_envelope_seconds": 222.9560251235962,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3698",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 5 ∣ n ∧ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, ← Nat.mod_eq_of_lt (show 1000 < 10000 from by norm_num)]\n    -- Use the `omega` tactic to solve the linear arithmetic problem\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1242,
+          "startByte": 956
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1254,
+          "startByte": 1245
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1308,
+          "startByte": 1305
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1305,
+          "stop_byte": 1308
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 5 ∣ n ∧ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 5 ∣ n ∧ ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.010321872,
+      "current_exclusive_envelope_seconds": 219.8813178539276,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3699",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => n % 5 = 0) (Finset.filter (fun n => ∀ d ∈ Nat.digits 10 n, Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀, Nat.even_iff]\n    -- We need to show that a number is in S if and only if it is a 4-digit number with only even digits and divisible by 5.\n    -- This involves checking the conditions for membership in the sets involved.\n    -- The filter function will apply the conditions to each number in the range.\n    -- The Icc 1000 9999 is the set of all 4-digit numbers.\n    -- The filter (fun n => ∀ d ∈ Nat.digits 10 n, Even d) ensures that all digits of the number are even.\n    -- The filter (fun n => n % 5 = 0) ensures that the number is divisible by 5.\n    -- The final set S is the intersection of these two filters.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1722,
+          "startByte": 930
+        },
+        {
+          "text": "simp [this]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1823,
+          "startByte": 1812
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1907,
+          "startByte": 1904
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1904,
+          "stop_byte": 1907
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 89.003366882,
+      "current_exclusive_envelope_seconds": 220.02076888084412,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3700",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that n is in S if and only if it satisfies the given conditions.\n    -- This is done by simplifying the conditions and using basic arithmetic and logical equivalences.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 944,
+          "startByte": 548
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1003,
+          "startByte": 994
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1097,
+          "startByte": 1094
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1094,
+          "stop_byte": 1097
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.012882491,
+      "current_exclusive_envelope_seconds": 221.97295689582825,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3701",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n    (Finset.Icc 1000 9999) := by\n    ext n\n    -- We use the given condition to show that n is in the set if and only if it satisfies the filter condition.\n    simp [h₀, Finset.mem_Icc]\n    -- The filter condition checks that n is between 1000 and 9999, has only even digits, and is divisible by 5.\n    -- This is sufficient to prove that the count of such integers is 100.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1148,
+          "startByte": 626
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1250,
+          "startByte": 1241
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1381,
+          "startByte": 1378
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1378,
+          "stop_byte": 1381
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n : ℕ => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.001536214,
+      "current_exclusive_envelope_seconds": 220.0020980834961,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3702",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter\n    (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n    (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1347,
+          "startByte": 1109
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1359,
+          "startByte": 1350
+        },
+        {
+          "text": "simp only [Finset.card, Finset.filter_eq, Finset.mem_filter, Finset.mem_range, Finset.card_range,\n    Nat.div_self (Nat.zero_lt_succ _)]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1498,
+          "startByte": 1362
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1504,
+          "startByte": 1501
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1501,
+          "stop_byte": 1504
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 89.017843438,
+      "current_exclusive_envelope_seconds": 219.02474308013916,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3703",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 5 ∣ n) (Finset.filter (fun n => ∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) (Finset.Icc 1000 9999)) := by\n    ext n\n    simp [h₀, Nat.even_iff]\n    refine' ⟨_, fun h => ⟨h.2.2.1, h.2.2.2⟩⟩\n    simp_all",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1724,
+          "startByte": 1468
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1736,
+          "startByte": 1727
+        },
+        {
+          "text": "simp only [Finset.card_filter, Nat.card_Icc, Nat.card_eq_fintype_card, Finset.card_range,\n    Nat.add_zero, Nat.zero_eq, Finset.card_range]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1878,
+          "startByte": 1739
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1884,
+          "startByte": 1881
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1881,
+          "stop_byte": 1884
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 88.997045766,
+      "current_exclusive_envelope_seconds": 221.89678692817688,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3704",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.range 10000) := by\n    ext\n    simp [h₀, Finset.mem_filter, Finset.mem_range]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 996,
+          "startByte": 772
+        },
+        {
+          "text": "simp [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 1782,
+          "startByte": 1771
+        },
+        {
+          "text": "rfl\n  <;> simp [h₀, Nat.zero_le]\n  <;> simp [h₀, Nat.zero_le]\n  <;> simp [h₀, Nat.zero_le]",
+          "syntaxKind": "Lean.Parser.Tactic.«tactic_<;>_»",
+          "stopByte": 1952,
+          "startByte": 1856
+        }
+      ],
+      "expensive_standalone_syntax_calls": [],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 90.014044381,
+      "current_exclusive_envelope_seconds": 220.08920192718506,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3705",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff, Nat.le_add_right]\n    -- We use the properties of even numbers and divisibility by 5 to define the set S\n    constructor <;> intro h <;>\n    -- We handle the case analysis on the conditions for n to be in S\n    rcases h with ⟨h₁, h₂, h₃, h₄⟩ <;>\n    -- We simplify the conditions using logical equivalences\n    simp_all [Nat.even_iff]",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1034,
+          "startByte": 485
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1113,
+          "startByte": 1104
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1197,
+          "startByte": 1194
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1194,
+          "stop_byte": 1197
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.99817856,
+      "current_exclusive_envelope_seconds": 222.97695088386536,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3706",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Finset.mem_filter, Finset.mem_range, Nat.lt_succ_iff]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1685,
+          "startByte": 1438
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1742,
+          "startByte": 1733
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1823,
+          "startByte": 1820
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1820,
+          "stop_byte": 1823
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.013830285,
+      "current_exclusive_envelope_seconds": 220.98692393302917,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3707",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun x : ℕ => 1000 ≤ x ∧ x ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 x → Even d) ∧ 5 ∣ x) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc]\n    -- This line uses the given condition to establish the equivalence between membership in S and the filter condition.\n    -- The filter condition checks if a number n is within the range [1000, 9999], has only even digits, and is divisible by 5.\n    -- The proof simply uses the given condition h₀ to show that the membership in S is equivalent to the filter condition.\n    <;> omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2805,
+          "startByte": 2209
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2817,
+          "startByte": 2808
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2882,
+          "startByte": 2879
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2879,
+          "stop_byte": 2882
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun x : ℕ => 1000 ≤ x ∧ x ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 x → Even d) ∧ 5 ∣ x) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun x : ℕ => 1000 ≤ x ∧ x ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 x → Even d) ∧ 5 ∣ x) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 87.010136081,
+      "current_exclusive_envelope_seconds": 220.97592186927795,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3708",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n : ℕ =>\n      n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n)\n      (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc]\n    -- Use the omega tactic to solve the arithmetic conditions.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1021,
+          "startByte": 733
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1083,
+          "startByte": 1074
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1138,
+          "startByte": 1135
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1135,
+          "stop_byte": 1138
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n : ℕ => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)",
+        "rewritten_goal_template": "(Finset.filter (fun n : ℕ => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 87.996049402,
+      "current_exclusive_envelope_seconds": 218.98456597328186,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3709",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext n\n    simp [h₀, Nat.lt_succ_iff]\n    -- We need to show that the number n is in S if and only if it satisfies the conditions in the filter.\n    -- This involves checking that n is a 4-digit number, has only even digits, and is divisible by 5.\n    -- The filter function will select numbers that satisfy these conditions.\n    -- We then use the properties of the filter to show that the cardinality of S is 100.\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 1207,
+          "startByte": 624
+        },
+        {
+          "text": "rw [this]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 1263,
+          "startByte": 1254
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 1374,
+          "startByte": 1371
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 1371,
+          "stop_byte": 1374
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "this",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 88.00236821,
+      "current_exclusive_envelope_seconds": 222.93875408172607,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3710",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => 5 ∣ n ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d)) (Finset.Icc 1000 9999) := by\n    ext n\n    simp [h₀, Finset.mem_Icc, and_comm, Nat.mod_eq_of_lt]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 2090,
+          "startByte": 1881
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 2102,
+          "startByte": 2093
+        },
+        {
+          "text": "simp only [Finset.card_filter]",
+          "syntaxKind": "Lean.Parser.Tactic.simp",
+          "stopByte": 2135,
+          "startByte": 2105
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 2141,
+          "startByte": 2138
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 3,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 2138,
+          "stop_byte": 2141
+        }
+      ],
+      "source_target_template": null,
+      "template_status": "outside the declared three-unit template",
+      "historical_rfl_sampled_CPU_seconds": 89.009899489,
+      "current_exclusive_envelope_seconds": 220.97935104370117,
+      "complete_native_target_context_hidden_state": null
+    },
+    {
+      "id": "minif2f-3711",
+      "task": "amc12a_2020_p4",
+      "native_units": [
+        {
+          "text": "have h₁ : S = Finset.filter (fun n => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000) := by\n    ext\n    simp [h₀]\n    omega",
+          "syntaxKind": "Lean.Parser.Tactic.tacticHave_",
+          "stopByte": 697,
+          "startByte": 506
+        },
+        {
+          "text": "rw [h₁]",
+          "syntaxKind": "Lean.Parser.Tactic.rwSeq",
+          "stopByte": 709,
+          "startByte": 700
+        },
+        {
+          "text": "rfl",
+          "syntaxKind": "Lean.Parser.Tactic.tacticRfl",
+          "stopByte": 715,
+          "startByte": 712
+        }
+      ],
+      "expensive_standalone_syntax_calls": [
+        {
+          "ordinal": 2,
+          "kind": "Lean.Parser.Tactic.tacticRfl",
+          "text": "rfl",
+          "start_byte": 712,
+          "stop_byte": 715
+        }
+      ],
+      "source_target_template": {
+        "explicit_set_expression": "Finset.filter (fun n => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)",
+        "rewritten_goal_template": "(Finset.filter (fun n => n ≥ 1000 ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.range 10000)).card = 100",
+        "rewrite_lemma_name": "h₁",
+        "tactic": "rfl",
+        "budget_bytes": 51539607552
+      },
+      "template_status": "template match;source-level target only",
+      "historical_rfl_sampled_CPU_seconds": 89.998993859,
+      "current_exclusive_envelope_seconds": 219.09979796409607,
+      "complete_native_target_context_hidden_state": null
+    }
+  ],
+  "scope": "Different proofs may repeat calls even without identical source. Native Syntax supplies call kinds/spans but not runtime reachability or full entry states. Narrow rewritten-target templates exclude extra simp/other steps and are not elaborated goals/context matches. Whole-candidate envelopes are conditional opportunity,not time inside the matching call;historical CPU clocks stay separate.",
+  "safety": "Same target/tactic/global RSS cap does not identify remaining allocator/GC/retained-heap state. No cross-budget failure certificate or native rejection is derived."
+}

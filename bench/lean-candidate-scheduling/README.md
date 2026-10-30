@@ -44,3 +44,16 @@ retained sources,whole-task heldout models and exhaustive observed-unsolved task
 
 It needs the existing numpy environment. Frozen-work/CPU-slot proxies are not
 service throughput;the probe/restart row has unknown native-budget eligibility.
+
+## Latest user correction:runtime-only continuation
+
+Source-feature success/cost training and comparison are frozen;do not rerun
+train-order.py or analyze-cost-selection.py as new research. Existing raw models
+remain historical. Continue only the exact finite pass@k ideal bound and
+elapsed-service-only preemption/restart. Cross-proof resource reuse is about
+matching expensive calls/entry states,not identical complete proof text.
+
+    python3 bench/lean-candidate-scheduling/analyze-resource-calls.py --out /workspaces/.agent-state/gpu-smt-captures/new-cross-proof-call-audit
+
+This reuses original native Syntax and checks proof-relative spans. Recovered
+source target templates are not complete native goal/context/budget records.
