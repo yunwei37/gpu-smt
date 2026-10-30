@@ -1614,6 +1614,35 @@ in Table~\ref{tab:software-residence}. They are neither workload-weighted
 fractions nor a measured precompilation gain. One ordered pass and periodic
 sampling do not provide causal overhead or IID confidence intervals.
 
+A separate finite point selects \texttt{minif2f-4997} from the historical
+timeout stratum and repeats its 3,000-heartbeat prefix ten times in each
+condition. It is one original candidate, not ten independent sources.
+All 30 units return; flags, diagnostics, InfoTrees and raw heartbeats match
+across stock, library-off and sampler-on. Their body CPU sums are 3.484,
+3.482 and 3.504 seconds, inside complete process clocks of 9.791, 9.791 and
+9.941 seconds. All native processes retire naturally.
+
+This prefix contributes 1,751 body samples and 1,226 outside-body samples.
+The body has 149 interpreter-related samples (8.51\%); its cold RC,
+allocation/free and named table counts appear separately in
+Table~\ref{tab:software-residence}. Another 57 samples occur in the exact
+\texttt{lean\_inc}/\texttt{lean\_dec} wrappers, increasing this explicit named
+RC subset from 185 to 242 samples (13.82\%). This supplement is outside the
+table's unchanged cold-helper category. Even zero-cost deletion of sampled
+interpreter residence gives only a conditional prefix ratio of
+$1/(1-149/1751)=1.093$; it is neither a precompilation forecast nor a
+full-timeout or global bound.
+
+The candidate first attempts auxiliary bounds $i,m,o\leq40$ before finite
+case expansion and simplification. A separate ordinary-kernel check proves,
+without axioms, that $(i,m,o)=(667,3,1)$ satisfies distinctness and product
+$2001$, refutes $i\leq40$, and has sum $671$. Its complete process takes
+0.418 seconds and its native high-water RSS is 524.36\,MB; the sole one-second
+sample misses that peak. This refutes the local assertion while satisfying
+the final sum bound. It supplies no whole-request abort rule under
+backtracking or error recovery. The short prefix does not locate the work
+of the complete historical 300-second timeout among subsequent tactics.
+
 \begin{table}[t]
 \centering
 \small
@@ -1624,12 +1653,15 @@ Sampled phase & PCs & IR\% & RC\% & Alloc\% & Table\% \\
 \midrule
 No-error median & 499 & 5.21 & 14.03 & 13.63 & 5.81 \\
 Error median & 328 & 3.96 & 9.76 & 10.67 & 9.45 \\
-Budget median & 1,558 & 2.25 & 10.08 & 10.14 & 9.76 \\
+Clipped-pass median & 1,558 & 2.25 & 10.08 & 10.14 & 9.76 \\
+Timeout prefix & 1,751 & 8.51 & 10.57 & 8.91 & 9.54 \\
 Warm kernel recheck & 4,258 & 0.00 & 16.42 & 10.85 & 18.25 \\
 \bottomrule
 \end{tabular}
 \caption{Phase-local software instruction samples. The first three rows
-repeat one median source ten times each; the final row is a separate proved
+repeat diagnostic-class medians ten times each; the third is a historically
+passing source clipped by the diagnostic budget. The fourth repeats a
+historical timeout's short prefix; the final row is a separate proved
 digits-count certificate. RC, allocation/free and table columns are disjoint
 named helper buckets, excluding inlined operations. They do not partition
 all kernel or algorithmic costs, and these rows have different denominators.}

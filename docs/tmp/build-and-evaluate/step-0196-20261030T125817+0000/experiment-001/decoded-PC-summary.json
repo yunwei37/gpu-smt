@@ -1,0 +1,88 @@
+{
+  "file": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/pc-native-timeout-prefix-sampler-on/samples.bin",
+  "samples_written": 2977,
+  "samples_retained": 2977,
+  "overflow": 0,
+  "interval_cpu_us": 2000,
+  "threads": [
+    21853
+  ],
+  "phase_counts": {
+    "3": 1751,
+    "0": 1226
+  },
+  "category_samples": [
+    {
+      "phase": 3,
+      "category": "other_named_native_residence",
+      "samples": 1068
+    },
+    {
+      "phase": 0,
+      "category": "IR_interpreter_residence",
+      "samples": 1041
+    },
+    {
+      "phase": 3,
+      "category": "out_of_line_reference_count_lower_bound",
+      "samples": 185
+    },
+    {
+      "phase": 3,
+      "category": "named_hash_or_table_lower_bound",
+      "samples": 167
+    },
+    {
+      "phase": 3,
+      "category": "allocation_or_deallocation_lower_bound",
+      "samples": 156
+    },
+    {
+      "phase": 3,
+      "category": "IR_interpreter_residence",
+      "samples": 149
+    },
+    {
+      "phase": 0,
+      "category": "other_named_native_residence",
+      "samples": 135
+    },
+    {
+      "phase": 0,
+      "category": "unresolved",
+      "samples": 32
+    },
+    {
+      "phase": 3,
+      "category": "unresolved",
+      "samples": 24
+    },
+    {
+      "phase": 0,
+      "category": "allocation_or_deallocation_lower_bound",
+      "samples": 9
+    },
+    {
+      "phase": 0,
+      "category": "out_of_line_reference_count_lower_bound",
+      "samples": 5
+    },
+    {
+      "phase": 0,
+      "category": "named_hash_or_table_lower_bound",
+      "samples": 4
+    },
+    {
+      "phase": 3,
+      "category": "named_kernel_residence",
+      "samples": 2
+    }
+  ],
+  "limits": [
+    "CPU timer samples are instruction residence, not PMU cycles/IPC/cache/TLB counts.",
+    "Out-of-line RC/allocation/table categories are lower bounds; inlined work stays in caller.",
+    "No precompilation speedup follows directly from interpreter residence.",
+    "Runtime mappings are start-time snapshot; later loads may be unresolved.",
+    "Sampling must pass native decision/diagnostic/heartbeat differential before interpretation."
+  ]
+}

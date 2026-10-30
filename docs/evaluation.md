@@ -201,6 +201,19 @@ separate. M also reports the original six-cell group exceeded its 1,800 s
 whole-group bound: native processes alone took 3,081.953 s. The captured
 matrix remains exploratory evidence, not a conforming group/runtime claim.
 
+The [historical-timeout-prefix reanalysis](tmp/build-and-evaluate/step-0196-20261030T125817+0000/step-report.md)
+independently checks one original minif2f-4997 repeated10times in each cell:
+30returns,all flags/diagnostics/InfoTrees/rawHB equal and native retired.
+This 3000HB prefix differs from earlier historically passing budget median.
+1,751body samples:149IR,185coldRC,156alloc/free,167namedtable,24unresolved;
+57exact lean_inc/lean_dec samples supplement coldRC to242(13.82%).
+It is not a full300s-timeout profile or precompilation gain. A separate
+axiom-free native witness(667,3,1) refutes the local i<=40 bound but satisfies
+the final sum<=671. It qualifies no general backtracking/recovery-safe
+whole-request early abort and enables no closed GPU route. Root uses the
+published9b67361decoder on raw snapshots,not uncommitted M code. One short
+witness sample misses its524,357,632B native high-water peak.
+
 <a id="public-lean-code-verification"></a>
 ## Earlier program/GPU evidence
 

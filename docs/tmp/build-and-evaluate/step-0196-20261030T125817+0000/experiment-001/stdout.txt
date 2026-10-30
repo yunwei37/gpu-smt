@@ -1,0 +1,64 @@
+{
+  "decoder_source": "9b67361",
+  "owner_result_state_at_read": "M source/result working tree not yet committed; root claims below independently reconstructed from retained raw captures using published decoder.",
+  "original_candidates": 1,
+  "repeated_units_per_cell": 10,
+  "cells": 3,
+  "native_returns": 30,
+  "all_native_retired": true,
+  "all_flags_diagnostics_InfoTrees_rawHB_equal": true,
+  "body_CPU_s": {
+    "stock": 3.484207478,
+    "library-off": 3.482306866,
+    "sampler-on": 3.503804529
+  },
+  "body_wall_s": {
+    "stock": 3.484349521,
+    "library-off": 3.48245198,
+    "sampler-on": 3.503904388
+  },
+  "process_wall_s": [
+    9.791286564432085,
+    9.790882992558181,
+    9.940745911560953
+  ],
+  "sampled_owned_tree_peak_bytes": 3807457280,
+  "phase_counts": {
+    "3": 1751,
+    "0": 1226
+  },
+  "phase3_categories": {
+    "other_named_native_residence": 1068,
+    "out_of_line_reference_count_lower_bound": 185,
+    "named_hash_or_table_lower_bound": 167,
+    "allocation_or_deallocation_lower_bound": 156,
+    "IR_interpreter_residence": 149,
+    "unresolved": 24,
+    "named_kernel_residence": 2
+  },
+  "additional_named_inc_dec_samples": 57,
+  "RC_exact_named_subset_total": 242,
+  "prefix_IR_fraction": 0.08509423186750428,
+  "IR_only_zero_cost_conditional_ratio": 1.093008739076155,
+  "witness": {
+    "native_exit": 0,
+    "native_retired": true,
+    "whole_wall_s": 0.41776505019515753,
+    "native_wait4_peak_RSS_bytes": 524357632,
+    "one_sample_peak_RSS_bytes": 13942784,
+    "axioms": [],
+    "statement_role": "Counterexample to i<=40 under actual integer-product/distinctness hypotheses; final sum bound remains true at this point."
+  },
+  "limits": [
+    "One original historically timed-out candidate repeated10times,not10 distinct candidates.",
+    "Explicit maxHeartbeats3000 samples a curtailed prefix,not original300s execution.",
+    "Named PC residence is not hardware cycles,total inlined operation counts or a full-timeout distribution.",
+    "No actual precompilation acceleration,early-abort method,failure accuracy or global Amdahl bound.",
+    "Counterexample to a local assertion does not refute final theorem or qualify whole-request rejection with backtracking/recovery.",
+    "One ordered stock/off/on pass; no causal overhead or IID confidence estimate.",
+    "Short-witness1s sampling misses native high-water peak; report wait4 separately.",
+    "No production engine method or closed GPU route enabled."
+  ],
+  "root_elapsed_s": 0.8730444181710482,
+  "root_maxrss_kib": 46292
+}
