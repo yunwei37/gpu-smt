@@ -43,3 +43,5 @@ W013:47retry modules allcompile100kHB,128closure3targets complete incrementally;
 W014:native135object census succeeds:1799theorems,743aux,601Expr/604level-private groups;45source decide+kernel match45shaped helpers/45distinctExpr. Whole1.354m count and transitiveaxioms unknown. Next53-frame batch plus separately labeled PlanarPacking repeat probe in preparation.
 
 W015:171batch complete108compile/1Gridwall120/62uninvoked,7new originalendpoints pass;combined12.20GiB. Two EPFLj2controls progress toHBdiagnostics13.7s vsj1idle15wall,no passclaim. 16Planar source annotations lie in16namespaces,typeidentity unknown. Gridprofile300diagnostic running,oldRSS charged.
+
+W016:Grid300profile reachesownwallboundary,491typecheck+1importevents partial;CPU176.164user/196.607sys,0majorfaults,24.78mvoluntary switches,combined10.89GiB. No wallpartition/Amdahl claim. New unprofiledj8/M8/100kHB/self1200/batch1400point launched;terminal pending audit.
