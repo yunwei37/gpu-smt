@@ -1,0 +1,76 @@
+{
+  "M_frozen_source": "8412ff4",
+  "native_group_complete": true,
+  "native_sources": 32,
+  "native_invocations": 64,
+  "native_flow": {
+    "lean_error -> lean_error": 20,
+    "budget_exceeded -> lean_error": 9,
+    "budget_exceeded -> budget_exceeded": 1,
+    "budget_exceeded -> accepted": 2
+  },
+  "power_acceptances": [
+    "minif2f-7545",
+    "minif2f-7551"
+  ],
+  "selected8_accepted": [
+    "minif2f-7551"
+  ],
+  "mode_wall_s": {
+    "original": 336.37289940193295,
+    "certificate": 208.96107415948063
+  },
+  "setup": [
+    {
+      "label": "power-certificate-build-v1",
+      "wall_s": 3.5731043880805373,
+      "cpu_s": 3.5259840000000002
+    },
+    {
+      "label": "power-method-build-v1",
+      "wall_s": 4.123672112822533,
+      "cpu_s": 4.098117
+    }
+  ],
+  "controls": [
+    {
+      "label": "power-control-v1-positive",
+      "exit": 0,
+      "wall_s": 3.118653789162636
+    },
+    {
+      "label": "power-control-v1-negative",
+      "exit": 1,
+      "wall_s": 3.0071914847940207
+    }
+  ],
+  "same_live_native_identities": 0,
+  "retired_checked": 68,
+  "max_sampled_candidate_own_RSS_bytes": 4194463744,
+  "actual_power_changed_source_strings": 22,
+  "total_candidates": 7808,
+  "tasks": 244,
+  "per_task": 32,
+  "historical_accepted": 3014,
+  "new_checked_repairs": 33,
+  "overlay_accepted": 3047,
+  "historical_solved": 142,
+  "overlay_solved": 145,
+  "historical_pass32": 0.5819672131147541,
+  "overlay_pass32": 0.5942622950819673,
+  "difference_percentage_points": 1.2295081967213115,
+  "new_tasks": [
+    "amc12a_2020_p4",
+    "mathd_numbertheory_296",
+    "mathd_numbertheory_541"
+  ],
+  "old_accepted_ids_removed_by_union_construction": 0,
+  "fresh_full7808_run": false,
+  "native_original_acceptances_in_3testedfamilies": 0,
+  "current_families_have_no_original_pass_to_test_nonregression": true,
+  "same_resource_throughput_ratio": null,
+  "baseline3014_full_transitive_axioms_rechecked": false,
+  "root_new_native_runs": 0,
+  "root_elapsed_s": 2.41581295337528,
+  "root_maxrss_kib": 200464
+}

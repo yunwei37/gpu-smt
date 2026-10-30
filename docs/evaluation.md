@@ -247,6 +247,35 @@ preserving verification,a generic compiler or established systems novelty.
 No production mode enabled. Remaining37staticopportunities/11bridges and
 rough engineering estimates are not implemented coverage or time savings.
 
+[Third-family and corpus-inventory audit](tmp/build-and-evaluate/step-0209-20261030T165602+0000/step-report.md) adds a separate complete
+32source/64native power-familypoint,pinned8412ff4collector/transform and
+actualsources/receipts. Exactbounded128assignment lemma plus provedbounds
+handles cube/fourth equation hypotheses;positivecontrolaccepted/exponent2
+controlfallbackrejected. Both modulebuilds actualexit0/retired3.573104/
+4.123672s,outsidecandidatephase. Rootchecks68actualretiredPID/birthidentities.
+
+Original20ordinary/12budget/0accepted;certificate29ordinary/1budget/2accepted.
+Flow20ordinary→ordinary,9budget→ordinary,1budget→budget,2budget→accepted.
+Only7551of8historicalselectedtimeoutsrecovers;7545isalsoacceptedbutoutside8.
+22of7808source stringsactuallychanged,powerfamily32tested,sameroutecatalog;
+nohistoricalacceptedIDchanged. Candidatewall336.372899/208.961074s,
+group545.592001s,ownsamplepeak4194463744B. Keep200ksourceHB/CLI-T5e7/
+M8192/j1/CPU8–11/self16settingsnotglobalHBpolicyorwarmservice.
+No sourcecost ratio inferredfromcensoredoriginaltimers.
+
+Cross-experiment inventoryrecomputedfromrawhistorical7808input/outcomes,
+prior31nativeproofs+2newproofs,notMsummaryalone. 244tasks×32sources,
+3014historicalacceptances+33newcheckedrepairs=3047;142→145solvedtasks,
+58.196721→59.426230%,+1.229508percentagepoints. All33newAXclosures reread,
+standardthree/noadmissions. 3014historicalfullAXclosurefreshrechecknotdone.
+Alloldacceptancesretainedbyunionconstruction,notmeasurednonregression.
+Complete7808CSVacceptanceoverlaymatchesrecomputedsets;no7808newnative
+run,nosamehardwareE2Eratio,notunchangedsourcevalidation.
+Two-family144-taskintermediateinventoryretained;this145inventorysupersedes
+onlyitscurrentcount. Shapecoverage57/126isnot57validrecoveredproofs;
+only32of126opportunitysourcesnowhavecheckedrepairs(33rdoutside126).
+Noengineproductionmodeornewpaperthesis;Mimplementationandfailuresunchanged.
+
 <a id="public-lean-code-verification"></a>
 ## Earlier code/GPU evidence and interrupted captures
 
