@@ -17,16 +17,21 @@ def loads(path):
         return rows
 
 def symbols(path):
-    proc=subprocess.Popen(["nm","-S","-n","-C","--defined-only",str(path)],
-                          stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,text=True)
     rows=[]
-    for line in proc.stdout:
-        fields=line.rstrip().split(None,3)
-        if len(fields)==4 and fields[2] in ("t","T","w","W"):
-            try:a,size=int(fields[0],16),int(fields[1],16)
-            except ValueError:continue
-            if size:rows.append((a,a+size,fields[3]))
-    proc.wait()
+    # SDK binaries retain local symbols; system libraries may only expose dynsym.
+    for dynamic in [False,True]:
+        args=["nm","-S","-n","-C","--defined-only"]
+        if dynamic:args.append("-D")
+        proc=subprocess.Popen(args+[str(path)],stdout=subprocess.PIPE,
+                              stderr=subprocess.DEVNULL,text=True)
+        for line in proc.stdout:
+            fields=line.rstrip().split(None,3)
+            if len(fields)==4 and fields[2] in ("t","T","w","W"):
+                try:a,size=int(fields[0],16),int(fields[1],16)
+                except ValueError:continue
+                if size:rows.append((a,a+size,fields[3]))
+        proc.wait()
+        if rows:break
     return sorted(rows)
 
 def classify(symbol,module):
@@ -35,7 +40,7 @@ def classify(symbol,module):
         return "IR_interpreter_residence"
     if any(s in symbol for s in ["lean_dec_ref_cold","lean_inc_ref_cold","lean_inc_ref_n_cold"]):
         return "out_of_line_reference_count_lower_bound"
-    if any(s in symbol for s in ["lean_alloc_","lean::lean_alloc","lean::dealloc","malloc","calloc","realloc","free("]):
+    if symbol.split("@")[0] in ("free","__libc_free","cfree") or any(s in symbol for s in ["lean_alloc_","lean::lean_alloc","lean::dealloc","lean::allocator::","malloc","calloc","realloc","free("]):
         return "allocation_or_deallocation_lower_bound"
     if any(s in symbol for s in ["hash_table","hash_map","HashMap","HashSet"]):
         return "named_hash_or_table_lower_bound"
