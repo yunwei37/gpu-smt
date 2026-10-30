@@ -1,0 +1,1 @@
+Self-review:400 unique source/mode units and receipt checked.7 differences recomputed from raw flags. Truncated-work ratio rejected as speedup. C marker/callback counts inspected (0 callbacks), so next full C collection is not started. Raw/failed/partial records preserved; only M paths changed. This is not an independent audit.

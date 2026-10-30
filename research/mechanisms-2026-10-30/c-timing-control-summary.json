@@ -1,0 +1,50 @@
+{
+  "pairs": [
+    {
+      "id": "independent",
+      "error_flags_equal": true,
+      "infos_equal": true,
+      "errors_equal": true,
+      "control_heartbeats": 13000,
+      "observe_heartbeats": 12316,
+      "control_error_flag": false,
+      "observe_error_flag": false
+    },
+    {
+      "id": "coupled",
+      "error_flags_equal": true,
+      "infos_equal": true,
+      "errors_equal": true,
+      "control_heartbeats": 23351,
+      "observe_heartbeats": 23351,
+      "control_error_flag": false,
+      "observe_error_flag": false
+    },
+    {
+      "id": "ordinary-error",
+      "error_flags_equal": true,
+      "infos_equal": true,
+      "errors_equal": true,
+      "control_heartbeats": 4461,
+      "observe_heartbeats": 4461,
+      "control_error_flag": true,
+      "observe_error_flag": true
+    },
+    {
+      "id": "budget",
+      "error_flags_equal": true,
+      "infos_equal": true,
+      "errors_equal": true,
+      "control_heartbeats": 114090,
+      "observe_heartbeats": 114090,
+      "control_error_flag": true,
+      "observe_error_flag": true
+    }
+  ],
+  "events": {
+    "source": 16
+  },
+  "trace_bytes": 968,
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/c-timing-controls-v1",
+  "qualified": false
+}

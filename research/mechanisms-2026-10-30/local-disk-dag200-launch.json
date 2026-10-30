@@ -1,0 +1,23 @@
+{
+  "controller_pid": 5400,
+  "controller_start_ticks": "740260983",
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9",
+    "python3",
+    "-u",
+    "/workspaces/repository/research/mechanisms-2026-10-30/run_finite.py",
+    "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean",
+    "local-disk-dag200",
+    "--wall-seconds",
+    "1500"
+  ],
+  "started_utc": "2026-10-30T08:47:06Z",
+  "capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/local-disk-dag200",
+  "units": 400,
+  "selected_sources": 200,
+  "old_interrupted_run_not_merged": true,
+  "storage_point": "phobos-vt fully local PVC after operator restoration",
+  "terminal_status": "unknown; newly launched"
+}

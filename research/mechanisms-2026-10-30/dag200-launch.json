@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9",
+    "python3",
+    "-u",
+    "/workspaces/repository/research/mechanisms-2026-10-30/run_finite.py",
+    "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean",
+    "phobos-dag200",
+    "--wall-seconds",
+    "1500"
+  ],
+  "controller_pid": 5819,
+  "start_ticks": "739726776",
+  "source_commit": "949622a78524a9726fbc68aa54a5bf052594cb4f",
+  "started_utc": "2026-10-30T07:18:04Z",
+  "units": 400,
+  "selected_sources": 200,
+  "source_budget": "heartbeat3000 diagnostic, 1 native process, 8GiB allocator, actualM16GiB",
+  "deadline_seconds": 1500,
+  "capture": "native/phobos-dag200",
+  "status": "launched; terminal result not yet known"
+}

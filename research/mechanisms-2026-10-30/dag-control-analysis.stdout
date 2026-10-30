@@ -1,0 +1,26 @@
+{
+  "observed_units": 2,
+  "expected_units": 2,
+  "complete_units": true,
+  "observed_sources": 2,
+  "classification": {
+    "no_lean_errors": 2
+  },
+  "control_observe_pairs": 0,
+  "same_error_flag_pairs": 0,
+  "profiler_control_wall_ratio": null,
+  "observed_instrumented_body_wall_seconds": 0.006244833,
+  "observed_thread_CPU_seconds": 0.006331791999999999,
+  "qualified_local_model_candidates": 1,
+  "modeled_local_branch_saved_seconds": 0.00028300005942583084,
+  "allGoals_only_model_ratio": 1.0474686329266005,
+  "full_200_DAG_average_parallelism": null,
+  "limits": [
+    "This is an allGoals-only model, not a complete critical-path measurement or global upper bound.",
+    "Per-goal closure overapproximates reads and includes assigned metavariables; shared refs do not prove mutable conflicts.",
+    "Hidden state, namespace generation, message order, caches, heartbeat accounting and merge costs remain unproved.",
+    "Have/case/first and unmatched/nested allGoals opportunities are unknown.",
+    "Trace times are wall-clock floats, not per-branch CPU cycles; all unsupported work is serial in this narrow model.",
+    "Both modes use a new heartbeat3000 diagnostic point, not original 300-second outcomes or production service throughput."
+  ]
+}

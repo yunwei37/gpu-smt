@@ -1,0 +1,35 @@
+{
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/local-disk-core-control",
+  "receipt": {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9,10,11",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-j1",
+      "-M8192",
+      "-T50000000",
+      "/workspaces/repository/research/mechanisms-2026-10-30/DAGCoreControls.lean"
+    ],
+    "source": "/workspaces/repository/research/mechanisms-2026-10-30/DAGCoreControls.lean",
+    "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+    "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+    "signals_sent": 0,
+    "native_allocation_limit": 50000000,
+    "native_memory_MiB": 8192,
+    "internal_wall_seconds": 30,
+    "intended_wall_handler_exit_code": 124,
+    "observed_internal_alarm_signal_possible": 14,
+    "pid": 5399,
+    "start_ticks": "740260795",
+    "native_kernel_peak_rss_bytes": 286040064,
+    "native_cpu_seconds": 0.9143889999999999,
+    "exit": 0,
+    "wall_s": 1.867545553483069,
+    "sampled_peak_owned_rss_bytes": 84545536,
+    "minimum_node_MemAvailable_bytes": 61734653952,
+    "samples": 2,
+    "sample_interval_s": 1,
+    "retired": true
+  }
+}

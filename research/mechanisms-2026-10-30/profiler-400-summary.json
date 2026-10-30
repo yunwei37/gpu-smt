@@ -1,0 +1,58 @@
+{
+  "rows": 400,
+  "sources": 200,
+  "different_error_flags": 7,
+  "mode_statistics": {
+    "control": {
+      "classes": {
+        "no_lean_errors": 31,
+        "diagnostic_budget_interruption": 150,
+        "ordinary_lean_error": 19
+      },
+      "body_wall_s": 779.387741001
+    },
+    "observe": {
+      "classes": {
+        "no_lean_errors": 24,
+        "diagnostic_budget_interruption": 160,
+        "ordinary_lean_error": 16
+      },
+      "body_wall_s": 80.075228226
+    }
+  },
+  "raw_capture": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures/local-disk-dag200",
+  "receipt": {
+    "argv": [
+      "taskset",
+      "-c",
+      "8,9,10,11",
+      "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+      "-j1",
+      "-M8192",
+      "-T50000000",
+      "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean"
+    ],
+    "source": "/workspaces/repository/research/mechanisms-2026-10-30/DAG200.lean",
+    "hardware_point": "phobos-vt serial M branch, CPU8-11, RSS budget16GiB",
+    "boot_id": "811fe1de-38bb-49e6-a50b-0ec7b35d2f40",
+    "signals_sent": 0,
+    "native_allocation_limit": 50000000,
+    "native_memory_MiB": 8192,
+    "internal_wall_seconds": 1500,
+    "intended_wall_handler_exit_code": 124,
+    "observed_internal_alarm_signal_possible": 14,
+    "pid": 5401,
+    "start_ticks": "740260987",
+    "native_kernel_peak_rss_bytes": 8628895744,
+    "native_cpu_seconds": 1142.7879500000001,
+    "exit": 0,
+    "wall_s": 1170.8828243743628,
+    "sampled_peak_owned_rss_bytes": 8643375104,
+    "minimum_node_MemAvailable_bytes": 56747827200,
+    "samples": 1171,
+    "sample_interval_s": 1,
+    "retired": true
+  },
+  "full_DAG_parallelism": null,
+  "stock_production_acceptance_parity": "not evaluated by this diagnostic; hasErrors is not the complete acceptance policy"
+}

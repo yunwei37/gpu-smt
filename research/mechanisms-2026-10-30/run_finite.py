@@ -3,19 +3,21 @@ from pathlib import Path
 import subprocess,os,time,json,argparse,resource
 HERE=Path(__file__).resolve().parent
 SDK=Path('/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux')
+CAPTURE_ROOT=Path('/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/captures')
+BUILD_ROOT=CAPTURE_ROOT.parent/'generated'
 ML=Path('/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/mathlib4')
 def rss(pid):
  try:return int(next(l.split()[1] for l in Path(f'/proc/{pid}/status').read_text().splitlines() if l.startswith('VmRSS:')))*1024
  except (OSError,StopIteration):return 0
-def run(source,label,wall_seconds=1200):
- out=HERE/'native'/label;out.mkdir(parents=True,exist_ok=False)
+def run(source,label,wall_seconds=1200,library=None):
+ out=CAPTURE_ROOT/label;out.mkdir(parents=True,exist_ok=False)
  (out/'source.lean').write_bytes(source.read_bytes())
  (out/'runner.py').write_bytes(Path(__file__).read_bytes())
  env=os.environ.copy();paths=[ML/'.lake/build/lib']+sorted((ML/'.lake/packages').glob('*/.lake/build/lib'))
- env.update(LD_PRELOAD=str(HERE/'software-probe-cpu/software-probe.so'),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS='1')
+ env.update(M_TACTIC_TRACE_FILE=str(out/'tactics.jsonl'),LD_PRELOAD=str(library or (BUILD_ROOT/'software-probe-cpu/software-probe.so')),M_WALL_MILLISECONDS=str(wall_seconds*1000),LEAN_PATH=':'.join(str(p) for p in paths),LEAN_NUM_THREADS='1')
  args=['taskset','-c','8,9,10,11',str(SDK/'bin/lean'),'-j1','-M8192','-T50000000',str(source)]
  began=time.monotonic();receipt={'argv':args,'source':str(source),'hardware_point':'phobos-vt serial M branch, CPU8-11, RSS budget16GiB',
-   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_memory_MiB':8192,'internal_wall_seconds':wall_seconds,'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
+   'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'signals_sent':0,'native_allocation_limit':50000000,'native_memory_MiB':8192,'internal_wall_seconds':wall_seconds,'loaded_measurement_library':env['LD_PRELOAD'],'intended_wall_handler_exit_code':124,'observed_internal_alarm_signal_possible':14}
  (out/'launch.json').write_text(json.dumps(receipt,indent=2)+'\n')
  peak=0;minavail=None;samples=0
  with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr,(out/'memory.jsonl').open('w') as memory:
@@ -37,5 +39,5 @@ def run(source,label,wall_seconds=1200):
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
  print(json.dumps(receipt),flush=True);return code
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('label');p.add_argument('--wall-seconds',type=int,default=1200);a=p.parse_args()
- raise SystemExit(run(a.source.resolve(),a.label,a.wall_seconds))
+ p=argparse.ArgumentParser();p.add_argument('source',type=Path);p.add_argument('label');p.add_argument('--wall-seconds',type=int,default=1200);p.add_argument('--library',type=Path);a=p.parse_args()
+ raise SystemExit(run(a.source.resolve(),a.label,a.wall_seconds,a.library))

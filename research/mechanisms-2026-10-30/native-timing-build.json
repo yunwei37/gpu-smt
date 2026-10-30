@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "8,9",
+    "gcc",
+    "-O2",
+    "-std=c11",
+    "-fPIC",
+    "-shared",
+    "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+    "/workspaces/repository/research/mechanisms-2026-10-30/software_probe.c",
+    "/workspaces/repository/research/mechanisms-2026-10-30/profileit_timing.c",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing/software-probe.so",
+    "-ldl"
+  ],
+  "exit_code": 0,
+  "build_directory": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/software-probe-timing"
+}
