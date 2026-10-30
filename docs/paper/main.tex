@@ -1823,68 +1823,106 @@ correspondence and complete native-verification measurements.
 \paragraph{A complete row certificate changes the algorithm.}
 A separate Lean~4.9.0-rc1 prototype proves
 \texttt{mathd\_numbertheory\_541}, the original proposition for arbitrary
-natural $m,n>1$ with $mn=2005$. It first derives $m,n\leq2005$.
-For each $m=2,\ldots,2005$, a proved division lemma forces the only possible
-$n$ to be $2005/m$. A Boolean row checker verifies that any in-range quotient
-with zero remainder appears in the embedded payload
-$[(5,401),(401,5)]$ and has sum $406$. Sixteen ordinary \texttt{decide}
-proofs cover consecutive blocks of 128 rows, with a final 84-row block;
-proved block-composition and row-soundness lemmas establish the final theorem.
-This logically covers all 4,016,016 bounded cells through 2,004 row checks,
-not 4,016,016 kernel cell evaluations. The payload has no authority to
-accept an omitted or unsound row. External payload-generation cost is not
-measured in this version.
+natural $m,n>1$ with $mn=2005$. It derives $m,n\leq2005$ and uses a proved
+division lemma to force the only possible $n$ in each row to be $2005/m$.
+An untrusted C program scans the 4,016,016 bounded pairs and proposes
+$[(5,401),(401,5)]$. The Boolean row checker verifies that every in-range
+quotient with zero remainder belongs to the payload and sums to $406$.
+Sixteen ordinary \texttt{decide} proofs cover consecutive 128-row blocks
+with a final 84-row block. Proved block-composition and row-soundness lemmas
+establish the final theorem. Thus 2,004 row checks logically cover the full
+square, without performing 4,016,016 kernel cell evaluations.
+The generator cannot make an omitted or unsound row pass.
 
-The stock kernel accepts the soundness bridge, block assembly and final
-theorem. Their reported axioms are only \texttt{propext} and
-\texttt{Quot.sound}, with no \texttt{sorryAx} or native-evaluation axiom.
-The complete process exits zero in 6.929 seconds, with 7.734 CPU seconds,
-588,652,544-byte native high-water RSS and 572,776,448-byte sampled tree
-peak. This clock includes imports, sequential initial construction/checking,
-axiom reporting and 320 additional chunk rechecks. It is not an isolated
-construction time or a matched historical-service speedup.
-
-The later task groups copy the same 16 existing proof values under fresh
-names and check each against the same immutable environment, using the
-explicit \texttt{addDeclCore} heartbeat argument $1\,000\,000$.
-Returned environments are discarded. The final theorem uses the original,
-sequentially checked chunk declarations, so these groups measure parallel
-kernel rechecking rather than parallel elaboration or environment merging.
-The process requests eight workers on CPUs 8--15; the task-count groups run
-in the fixed order shown in Table~\ref{tab:reflected-grid-groups}.
-All five observations per group are retained. The first two eight-task
-groups remain near the serial groups, while the last three are faster;
-the cause is unestablished. These observations supply neither an
-eightfold-scaling result nor a causal whole-candidate speedup.
+The stock kernel accepts the bridge, coverage assembly and final theorem;
+their axiom reports contain only \texttt{propext} and \texttt{Quot.sound},
+with no \texttt{sorryAx} or native-evaluation axiom.
+A complete bounded pipeline takes 2.291 seconds, including C compilation,
+scan, payload emission, the full Lean invocation, collection I/O and one
+additional final-theorem recheck. Table~\ref{tab:grid-pipeline-clocks}
+retains this denominator alongside its nested measured intervals.
+The native invocation uses 2.145 CPU seconds and its sampled owned-tree
+peak is 566,886,400 bytes. Three separate source-check processes take
+2.171878--2.172063 seconds and perform additional final-theorem rechecks
+of 39.625--40.147 milliseconds. Those repetitions exclude fresh generator
+cost and are not three complete pipeline trials.
 
 \begin{table}[t]
 \centering
 \small
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{rll}
+\begin{tabular}{lr}
 \toprule
-Tasks & \shortstack[l]{Ordered group walls (s)\\first to last} & Median (s) \\
+Measured interval & Elapsed (s) \\
 \midrule
-1 & \shortstack[l]{.2829, .2750, .2748\\ .2763, .2767} & .2763 \\
-2 & \shortstack[l]{.2730, .2760, .2741\\ .2732, .2741} & .2741 \\
-4 & \shortstack[l]{.2749, .2746, .2747\\ .2737, .2744} & .2746 \\
-8 & \shortstack[l]{.2744, .2747, .0847\\ .0867, .0851} & .0867 \\
+Complete pipeline & 2.290783 \\
+Generation and source emission & .075206 \\
+\quad C compilation & .071211 \\
+\quad Numeric process & .003335 \\
+Full Lean invocation & 2.171983 \\
+\quad Initial chunk declarations & .790054 \\
+\quad Coverage assembly & .029227 \\
+\quad Final theorem construction/check & .137320 \\
+\quad Additional final kernel recheck & .039546 \\
 \bottomrule
 \end{tabular}
-\caption{Additional rechecks of previously constructed chunk proofs in one
-fixed-order process. Each group checks all 16 chunks; the 20 disjoint group
-windows sum to 4.934 seconds inside the 6.929-second lifetime. Earlier
-construction and the final proof are not parallelized by these groups.
-This is one proof prototype, not a production scaling curve.}
+\caption{One complete proposal-and-certificate pipeline. Rows are nested
+windows, not a disjoint partition to sum. Native phase markers omit imports
+and generic soundness proofs. Initial chunk timing includes elaboration,
+proof construction and checking; its cost cannot be rescaled using the
+extra-recheck ratios below. Subtracting the additional final recheck would
+not measure an optimized pipeline latency.}
+\label{tab:grid-pipeline-clocks}
+\end{table}
+
+A separate process measures additional kernel checks of the same 16
+already established proof values under fresh names against one immutable
+environment, using the explicit \texttt{addDeclCore} heartbeat argument
+$1\,000\,000$ per check. Returned environments are discarded; these tasks
+do not construct the initial declarations, merge environments or implement
+a globally reconciled native heartbeat policy. Actual argv requests eight
+workers on CPUs 8--15.
+
+The process runs both $8\to4\to2\to1$ and $1\to2\to4\to8$, retaining all
+three repetitions at each task count in each order. All 24 groups complete
+their 16 checks. Absolute start/end records show maximum overlapping
+kernel-call intervals of one, two, four and eight in every respective
+group, with no overlap within an individual task's sequential chunk list.
+Table~\ref{tab:reflected-grid-groups} reports the observed phase latencies
+and ratios of medians. These describe extra proof-value rechecks, not
+initial elaboration or a whole-pipeline/service-throughput comparison.
+The earlier fixed-payload point took 6.929 seconds including 320 extra
+checks and showed near-serial early groups; its startup pattern and all
+data remain retained, with no established cause or retroactive correction.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrr}
+\toprule
+Tasks & Median (s) & Min--max (s) & \shortstack{1-task/\\median ratio} \\
+\midrule
+1 & .276177 & .273800--.278787 & 1.000 \\
+2 & .155573 & .154461--.156680 & 1.775 \\
+4 & .089030 & .087807--.089737 & 3.102 \\
+8 & .055213 & .054438--.058854 & 5.002 \\
+\bottomrule
+\end{tabular}
+\caption{Additional original-kernel checks in one process, six groups per
+task count across two orders, 384 checks total. Every group checks all 16
+chunks. All groups and startup observations are included. The intervals
+establish overlapping call lifetimes, not hardware-cycle attribution;
+these are not independent full-pipeline trials or a production scaling curve.}
 \label{tab:reflected-grid-groups}
 \end{table}
 
-The new certificate proves the original mathematical statement using a
-different representation and algorithm. It is an alternative proof, not
-unchanged-submitted-candidate verdict parity, a general extraction compiler
-or a demonstrated batch-service benefit. Reflection, arithmetic compression
-and independent proof checking alone establish no new systems contribution.
-Coverage and cost for the complete candidate streams remain open.
+The full pipeline is a new proof of the original mathematical statement
+using a different algorithm and representation. It does not validate an
+incorrect submitted proof or establish unchanged-candidate verdict parity,
+a general extraction compiler or batch-service benefit. Reflection, arithmetic compression and independent proof checking
+alone establish no new systems contribution. Original-source adapters and complete-stream differential and performance
+measurements remain open.
 
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,

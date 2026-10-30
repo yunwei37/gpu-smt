@@ -1,0 +1,123 @@
+{
+  "source_commit": "fd37172",
+  "additional_native_calls_by_root": 0,
+  "v5_native_processes_returned_and_retired": 4,
+  "v5_source_call_walls_and_extra_rechecks": [
+    {
+      "wall_s": 2.171878082677722,
+      "extra_final_recheck_s": 0.03963029
+    },
+    {
+      "wall_s": 2.172062656842172,
+      "extra_final_recheck_s": 0.040147143
+    },
+    {
+      "wall_s": 2.1718997908756137,
+      "extra_final_recheck_s": 0.039625348
+    }
+  ],
+  "v5_groups": 24,
+  "v5_extra_chunk_checks": 384,
+  "actual_overlap_matches_tasks_in_all_groups": true,
+  "scaling": {
+    "1": {
+      "groups": 6,
+      "seconds": [
+        0.273800403,
+        0.274259905,
+        0.276433121,
+        0.275920763,
+        0.278787319,
+        0.277816043
+      ],
+      "min_s": 0.273800403,
+      "median_s": 0.276176942,
+      "max_s": 0.278787319,
+      "ratio_of_medians": 1.0
+    },
+    "2": {
+      "groups": 6,
+      "seconds": [
+        0.156029539,
+        0.155976804,
+        0.154937664,
+        0.15516991,
+        0.154460861,
+        0.156680005
+      ],
+      "min_s": 0.154460861,
+      "median_s": 0.155573357,
+      "max_s": 0.156680005,
+      "ratio_of_medians": 1.7752200461933851
+    },
+    "4": {
+      "groups": 6,
+      "seconds": [
+        0.087806542,
+        0.088852944,
+        0.089138966,
+        0.088987732,
+        0.08907252,
+        0.089737202
+      ],
+      "min_s": 0.087806542,
+      "median_s": 0.089030126,
+      "max_s": 0.089737202,
+      "ratio_of_medians": 3.1020616774146763
+    },
+    "8": {
+      "groups": 6,
+      "seconds": [
+        0.058854043,
+        0.054775473,
+        0.054438263,
+        0.054969315,
+        0.055658792,
+        0.055457043
+      ],
+      "min_s": 0.054438263,
+      "median_s": 0.055213179,
+      "max_s": 0.058854043,
+      "ratio_of_medians": 5.002011240830744
+    }
+  },
+  "v6_whole_pipeline_s": 2.2907826537266374,
+  "v6_generation_and_emission_s": 0.07520618569105864,
+  "v6_C_compile_s": 0.07121081743389368,
+  "v6_numeric_process_wall_s": 0.0033354638144373894,
+  "v6_native_invocation_wall_s": 2.171982664614916,
+  "v6_native_CPU_delta_s": 2.1453719999999996,
+  "v6_phase_windows": {
+    "initial_chunk_declarations_s": 0.790054187,
+    "coverage_assembly_s": 0.029227078,
+    "final_theorem_construction_s": 0.137320328,
+    "extra_final_recheck_s": 0.039545864
+  },
+  "v6_sampled_own_tree_peak_bytes": 566886400,
+  "numeric_payload": [
+    [
+      5,
+      401
+    ],
+    [
+      401,
+      5
+    ]
+  ],
+  "axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "v5_cpu_and_highwater_scope": "Legacy cumulative controller fields; not used as per-native evidence.",
+  "v6_highwater_scope": "RUSAGE_CHILDREN cumulative maximum in controller; not per-run highwater",
+  "limits": [
+    "Ratios describe additional kernel rechecks of already available proof values, not initial elaboration or service throughput.",
+    "All24groups in both orders retained; six observations per task count, not independent full-pipeline trials.",
+    "Do not apply recheck scaling to the initial chunk phase that also includes elaboration and proof construction.",
+    "One complete pipeline includes generation, source emission, imports and one extra final-theorem recheck; no optimized cost inferred by subtraction.",
+    "New proof/algorithm does not establish original candidate verdict parity or49candidate recoveries.",
+    "Ordinary reflection and parallel checking are prior techniques; no generic compiler or production adapter enabled."
+  ],
+  "root_elapsed_s": 0.006162327714264393,
+  "root_maxrss_kib": 13092
+}

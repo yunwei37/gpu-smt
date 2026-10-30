@@ -260,6 +260,17 @@ Same immutableenv,discarded newenvs,original sequential chunks used byfinal.
 This is an alternateproof/algorithm,not unchanged-candidate parity;no generic
 compiler or novelparallelmethod claimed. Oldfive-rectangle samples retained.
 
+The [complete pipeline and overlap reanalysis](tmp/build-and-evaluate/step-0201-20261030T141554+0000/step-report.md)
+checks frozenfd37172 source/raw capture,all24groups/384kernel checks and
+per-group actual overlap1/2/4/8. Six-group medians .276177/.155573/.089030/
+.055213s give observed recheck-phase ratios1/1.775/3.102/5.002;not initial
+elaboration,mergedbudget orservice throughput. Earlier v4startupdata retained.
+One fullv6Ccompile+scan+payload+Lean+capture pipeline takes2.290783s,
+includingextra finalrecheck. Initialchunkwindow.790054s isnot purekernel
+recheck;no5×rescaling. v5CPU/highwaterfields cumulative,not per-run;v6CPUdelta
+2.145372s andsampled own-tree566886400B separately scoped. No originalsource
+replacement or49recoveryclaim. Allsource andcontrollerretirements verified.
+
 <a id="public-lean-code-verification"></a>
 ## Earlier program/GPU evidence
 
