@@ -134,9 +134,9 @@ native replays yield3compile/3ordinary/6HB,16.178800/29.392530s=55.04% selected
 sample cost. Publisher-valid2pass/2HB;invalid1pass/3error/4HB. Original Mathlib
 unknown;all0HB sources capped10k. Labels,diagnostic budget and full harness
 acceptance stay separate. Root starts0nativecalls;all W controllers and recorded
-native PID/birth identities retired. No recovery count is inferred from M's
-new23f8ac1running candidate-preserving census;the earlier theorem-only prototype
-scope in step0201 is historical,not a claim that no adapter now exists.
+native PID/birth identities retired. No recovery count was inferred from M's new23f8ac1candidate-preserving
+census at that entry. Step0203 below supersedes its earlier running status;
+step0201's theorem-only scope is historical,not a claim that no adapter exists.
 
 The [public checker audit](tmp/build-and-evaluate/step-0184-20261030T113046+0000/step-report.md)
 verifies 90 released KIR fixtures / 250 concrete inputs and 986 static positive
@@ -292,6 +292,22 @@ includingextra finalrecheck. Initialchunkwindow.790054s isnot purekernel
 recheck;no5×rescaling. v5CPU/highwaterfields cumulative,not per-run;v6CPUdelta
 2.145372s andsampled own-tree566886400B separately scoped. No originalsource
 replacement or49recoveryclaim. Allsource andcontrollerretirements verified.
+
+The [candidate-hook partial-result audit](tmp/build-and-evaluate/step-0203-20261030T145358+0000/step-report.md)
+checks frozen23f8ac1 build/positive/negative/import-control sources and receipts.
+Two false-goal fallback diagnostics exactly match after only source-path and
+measurement-marker normalization. This is control evidence,not general
+poststate/heartbeat equivalence. Actual v2terminal is23/49,complete=false,
+314.447099sgroup;STOP explicitly identifies pending synthetic-goal leakage.
+Raw23returns:10accepted transformed proofs withoutsorryAx,7new-sourceerrors
+withsorryAx,6budget interruptions;26notreturned. These are partial changed-
+source outcomes at new200kHB/phobos point,not49recoveries/originalrejections
+or crosshardware speedup. Every returned source exactly matches the frozen
+token+HB+import/axiom transform of the retained original;all23native identities
+retired. First leakexample printsHIT before later unsolvedgoal/sorryAx.
+No rootnative call,ownerinterruption,repair or production enablement. M's later
+working fixes are outside this frozen audit and need their own completed native
+qualification/census before replacing this evidence.
 
 <a id="public-lean-code-verification"></a>
 ## Earlier program/GPU evidence

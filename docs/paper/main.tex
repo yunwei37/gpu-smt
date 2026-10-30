@@ -1967,8 +1967,22 @@ The full pipeline is a new proof of the original mathematical statement
 using a different algorithm and representation. It does not validate an
 incorrect submitted proof or establish unchanged-candidate verdict parity,
 a general extraction compiler or batch-service benefit. Reflection, arithmetic compression and independent proof checking
-alone establish no new systems contribution. Original-source adapters and complete-stream differential and performance
-measurements remain open.
+alone establish no new systems contribution.
+
+Candidate-level integration requires a separate check. A prototype replaces
+only selected \texttt{rfl} or \texttt{interval\_cases} tokens, retains the
+surrounding submitted proof, and attempts a checked family theorem before
+restoring state and invoking the original tactic on failure. One short
+negative control reproduces the original diagnostics after normalizing only
+file paths and removing measurement markers. That control does not establish
+general fallback equivalence: the 49-source trial stops after 23 returns
+because pending synthetic obligations can escape the new attempt.
+Some logs print a certificate-hit marker before later unsolved goals and
+\texttt{sorryAx} appear. A hit marker is therefore not acceptance; errors in
+the transformed method are not certified rejections of the original candidate.
+The retained partial proofs and budget interruptions supply no full-cohort
+recovery rate, same-budget verdict parity or complete-service speedup.
+Complete original-source differential and performance measurements remain open.
 
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,

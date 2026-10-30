@@ -1,0 +1,11 @@
+M_CERT_HIT digits
+/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/candidate-recovery49-v2/minif2f-3681.lean:30:2: warning: aesop: failed to prove the goal after exhaustive search.
+/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/candidate-recovery49-v2/minif2f-3681.lean:30:2: error: unsolved goals
+n : ℕ
+upper : n ≤ 9999
+bound : n < 10000
+left : 1000 ≤ n
+left_1 : ∀ d ∈ digits 10 n, d % 2 = 0
+right : n % 5 = 0
+⊢ n ∈ LocallyFiniteOrder.finsetIcc 1000 9999
+'amc12a_2020_p4' depends on axioms: [propext, Quot.sound, Classical.choice, sorryAx]

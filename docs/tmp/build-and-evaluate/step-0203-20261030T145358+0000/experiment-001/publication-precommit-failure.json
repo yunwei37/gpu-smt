@@ -1,0 +1,44 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "--",
+      "docs/paper/main.tex",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0203-20261030T145358+0000"
+    ],
+    "returncode": 0,
+    "stdout": " docs/evaluation.md  | 22 +++++++++++++++++++---\n docs/paper/main.tex | 18 ++++++++++++++++--\n 2 files changed, 35 insertions(+), 5 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "docs/paper/main.tex",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0203-20261030T145358+0000"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/paper/main.tex",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0203-20261030T145358+0000"
+    ],
+    "returncode": 2,
+    "stdout": "docs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:1: trailing whitespace.\n+id,transformed_status,hits,fallbacks,has_sorryAx,source_rewrite_matches_frozen_rule,is_original_rejection_certified,wall_s\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:2: trailing whitespace.\n+minif2f-3681,lean_error,1,0,True,True,False,6.98103030025959\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:3: trailing whitespace.\n+minif2f-3682,lean_error,1,0,True,True,False,5.7800155291333795\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:4: trailing whitespace.\n+minif2f-3683,budget_exceeded,0,0,False,True,False,28.370846835896373\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:5: trailing whitespace.\n+minif2f-3685,accepted,1,0,False,True,False,12.440475588664412\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:6: trailing whitespace.\n+minif2f-3686,accepted,1,0,False,True,False,6.63112554512918\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:7: trailing whitespace.\n+minif2f-3687,accepted,1,0,False,True,False,12.44112769048661\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:8: trailing whitespace.\n+minif2f-3688,budget_exceeded,0,0,False,True,False,28.370451378636062\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:9: trailing whitespace.\n+minif2f-3690,lean_error,1,0,True,True,False,8.016151145100594\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:10: trailing whitespace.\n+minif2f-3691,accepted,1,0,False,True,False,12.442817670293152\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:11: trailing whitespace.\n+minif2f-3692,lean_error,1,0,True,True,False,5.7278190748766065\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:12: trailing whitespace.\n+minif2f-3693,accepted,1,0,False,True,False,13.024005027487874\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:13: trailing whitespace.\n+minif2f-3694,accepted,1,0,False,True,False,12.594721304252744\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:14: trailing whitespace.\n+minif2f-3695,accepted,1,0,False,True,False,12.597216784022748\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:15: trailing whitespace.\n+minif2f-3697,lean_error,1,0,True,True,False,7.832983559928834\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:16: trailing whitespace.\n+minif2f-3698,budget_exceeded,1,0,True,True,False,5.425905674695969\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:17: trailing whitespace.\n+minif2f-3699,budget_exceeded,0,0,False,True,False,28.36947014927864\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:18: trailing whitespace.\n+minif2f-3700,accepted,1,0,False,True,False,12.439515167847276\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:19: trailing whitespace.\n+minif2f-3701,accepted,1,0,False,True,False,6.530616571195424\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:20: trailing whitespace.\n+minif2f-3702,budget_exceeded,0,0,False,True,False,28.37045616377145\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:21: trailing whitespace.\n+minif2f-3703,budget_exceeded,0,0,False,True,False,28.325137658044696\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:22: trailing whitespace.\n+minif2f-3704,lean_error,1,0,True,True,False,12.594054426066577\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:23: trailing whitespace.\n+minif2f-3705,lean_error,1,0,True,True,False,6.481762859970331\ndocs/tmp/build-and-evaluate/step-0203-20261030T145358+0000/experiment-001/source-audit.csv:24: trailing whitespace.\n+minif2f-3706,accepted,1,0,False,True,False,12.54598733317107\n",
+    "stderr": ""
+  }
+]
