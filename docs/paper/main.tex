@@ -949,6 +949,50 @@ of that frozen work and have no observed accepted candidate. These task-level
 tails are not individual-candidate latency tails; neither frozen costs nor
 these observed-unsolved labels determine outcomes after actual rescheduling.
 
+\paragraph{Remaining cost-selection opportunity at the matched resource point.}
+A separate reanalysis uses all 7,808 outcomes from the matched four-worker
+warm/engine capture, keeping that point distinct from the preceding historical
+two-worker consumer experiment. A frozen-cost oracle still completes all 32
+candidates on each of the 102 problems without an observed acceptance; it
+chooses the fastest accepted candidate on the other 142 problems.
+The mandatory unsolved work is 35,686.07 of 52,992.12 summed attempt seconds
+(67.34\%). Short-source first-success ordering uses 36,498.25 seconds,
+only $1.01842\times$ the oracle's 35,838.02 seconds.
+These are conditional summed-work quantities, not observed service wall times
+or a global speedup bound.
+
+A five-fold, whole-problem-held-out model predicts acceptance and arithmetic
+expected observed cost from inexpensive source features. Probability/cost
+ordering uses 36,356.85 seconds, 141.40 seconds (0.39\%) below short-source
+ordering. It improves 51 problems but worsens 79; an exploratory paired
+problem bootstrap interval for the work reduction includes zero.
+Adding completed sibling failure/cost history increases work to 36,902.15
+seconds. A training-distribution one-prefix probe/restart heuristic consumes
+37,451.49 seconds, including 1,087.37 seconds of discarded prefixes.
+This is a restricted Gittins-inspired heuristic, not the full index policy
+or lossless native resume. Its 2,645 restarts also have unknown eligibility
+under original cumulative native budgets; optimistically retaining observed
+terminal labels does not establish exact bounded behavior.
+The historical two-worker data likewise show no work reduction from the new
+probability/cost model. CPU-slot timing projections omit RSS admission and
+exclusive retries and therefore do not establish end-to-end benefit.
+No new runtime policy is enabled from these results.
+
+\paragraph{Resource-failure reuse remains unqualified.}
+In the matched four-worker capture, 41 RSS-watchdog failures span four
+problems with counts 29, nine, two and one. Their exclusive process envelopes
+sum to 8,843.12 seconds, within the 9,145.23-second exclusive tail that also
+contains one timeout. All 41 full sources and comment-stripped sources differ.
+Collapsing whitespace creates two later source matches covering 444.91 seconds
+of envelopes. Grouping by problem and final source line gives a much larger
+conditional opportunity, but preceding proof state and diagnostics can differ.
+The archive has no complete failed-entry goal/context/effect record for these
+41 calls; the true state-match rate is unknown.
+An aggregate RSS interruption depends on allocation, retained/shared memory,
+peer history and sampling. It is not a deterministic instruction-budget
+certificate and does not establish failure at every smaller budget.
+We therefore do not replace native work with a resource-failure rejection.
+
 RQ3 remains unanswered until branching is compared with the strongest
 competent services over the complete workload, offered-load and resource matrix.
 
@@ -1406,6 +1450,31 @@ accounting~\cite{lean49StateReuse,leanSimpCache}.
 These primitives are prior work. The frequency and cost of repeated complete
 states, especially failed tactic attempts, remain unmeasured in our workloads;
 textual repetition cannot establish a cache hit or preserved verifier behavior.
+
+\paragraph{Algorithm selection and restart scheduling.}
+SATzilla already uses instance features and empirical hardness models for
+algorithm selection~\cite{satzilla2008}.
+For independent Bernoulli successes with known expected costs, pairwise
+interchange yields probability/cost ordering; this special case does not give
+Pandora's search guarantees for correlated candidate groups~\cite{weitzmanSearch}.
+Adaptive stopping also connects Pandora-style search with best-of-$N$
+inference~\cite{optimalStoppingBon2025}; reward-based stopping differs from
+exhaustive checking of our observed-unsolved finite groups.
+Luby's restart guarantees assume independent randomized Las Vegas
+runs~\cite{lubyRestart1993}. SOAP's Gittins analysis uses a lossless
+preempt-resume M/G/1 model and a mean-response-time objective~\cite{soap2018}.
+Neither establishes free kill/restart, preserved native resource outcomes or
+optimal finite verification-batch makespan. These are precedents, not claimed
+novel mechanisms in the engine.
+
+
+LeanGraphSearch additionally caches unchanged candidates with deterministic
+failures while excluding infrastructure failures~\cite{leanGraphSearch2026}.
+Cost-aware Lean proving controllers already condition success/cost estimates
+on previous failed attempts~\cite{leanCostQuality2026}. These generation/search
+policies differ from exact replay of complete native failed transitions or
+unchanged verification of a fixed candidate set; generic failure memory and
+history-based cost selection are nevertheless already established directions.
 
 \paragraph{Prepared execution.}
 Prepared execution and copy-on-write sharing are established systems mechanisms. SOCK and SEUSS share prepared state to reduce startup and increase parallel service density~\cite{sock,seuss}. Spice reduces disk snapshot restoration costs by co-designing the storage layout and kernel restore mechanisms~\cite{spice}. A contribution beyond these prepared-execution systems requires more than specialization to verification. Our comparison tests whether native behavior and bounded shared preparation together require and benefit from a verification-specific execution mechanism.

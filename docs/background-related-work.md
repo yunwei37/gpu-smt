@@ -245,3 +245,15 @@ RSS-watchdog failures and charged native kill/restart costs. Exact pass@k
 requires exhaustive checking of every observed-unsolved task;generic reward
 stopping cannot replace that obligation. A resource-failure record requires a
 valid native transition/resource model,not just task,tactic text and an RSS cap.
+
+
+### Closest Lean failure/cost-control precedents — 2026-10-30
+
+[LeanGraphSearch](https://arxiv.org/html/2610.22339v1),appendixB.4,already skips
+recompilation of unchanged deterministic failed candidates and excludes
+infrastructure failures. [Cost-quality Lean control](https://arxiv.org/abs/2606.04883)
+already uses failure history and predicted success/cost to control generation.
+These are direct threats to generic failure-memory or cost-aware-selection
+novelty. They do not establish native failed-transition fidelity or monotone
+RSS-failure certificates. [Primary-source follow-up](tmp/build-and-evaluate/step-0165-20261030T035108+0000/literature/report.md)
+retains the exact scope;no competitor implementation was reproduced.

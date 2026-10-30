@@ -68,3 +68,16 @@ The paper now records this narrow semantic control and compiles successfully.
 This does not restore the interrupted population measurement or enable caching.
 Keep pursuing full-state reuse evidence when native collection is qualified;
 current signal restriction remains an environment limit,not a negative result.
+
+## Steps0163–0165 — algorithm/system opportunities from complete data
+
+Full41resource-tail audit and two7808cost-selection matrices are committed.
+Source/last-line repetition does not certify full state or monotone RSS failures.
+Unsolved finite groups constrain p/c savings;history and charged restart worsen
+work,and generic failure memory/cost-aware search have direct prior art.
+Use actual data to avoid shipping an unvalidated runtime policy. Native state
+qualification remains a substantive dependency,not a zero-hit negative result.
+Paper results/positioning now follow these limits. No AI delegation or native
+collection;all outputs on existingPVC. An existing UM760control-plane CLI path
+read back successful paper build after a direct-SSH output stall;no UI/auth/
+credential/security/schedule/CronJob change or repeated direct reconnection.

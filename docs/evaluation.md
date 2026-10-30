@@ -348,3 +348,18 @@ processes launch,zero candidate results and no complete terminal are written.
 No native workload result,API pressure test or hardRSS quota follows from it.
 G10 still requires working interruption and readiness observability before
 native capture can run. No permission or lab-placement request is made.
+
+## 2026-10-30 — resource-tail and exact first-success opportunity
+
+The full41resource cohort and two7808point cost-selection matrices are complete
+in step0163/1d5e990 and step0164/952cae6. Source/whitespace/last-line groups are
+proxies,not complete native failure keys;41RSS-watchdog outcomes do not certify
+cross-budget deterministic failures. Exact entry-state match remains unknown.
+At the matched four-worker point,short-source frozen work is only1.018423x
+the minimum first-success work that still exhausts all102unsolved tasks.
+A task-heldout p/c predictor reduces work0.3874%but lacks end-to-end evidence;
+sibling history and charged one-probe restart do worse. The restart row is
+not full Gittins and has unknown original-budget eligibility. No unsafe resource
+cache or unvalidated runtime scheduler is enabled. Primary literature and
+paper now distinguish algorithm-selection/search/restart precedents from a
+prospective native-semantics contribution. Four directions/RQs remain active.
