@@ -60,9 +60,13 @@ LEAN_EXPORT lean_obj_res l_mPCStart(lean_obj_arg path,lean_obj_arg world){
  if(status){fprintf(stderr,"M_PC_START_FAILURE=%d\n",status);_exit(140+status);}
  return lean_io_result_mk_ok(lean_box(0));
 }
-LEAN_EXPORT lean_obj_res l_mPCPhase___boxed(lean_obj_arg value,lean_obj_arg world){
- (void)world;pcphase=(sig_atomic_t)lean_unbox_uint64(value);lean_dec(value);
+LEAN_EXPORT lean_obj_res l_mPCPhase(uint64_t value,lean_obj_arg world){
+ (void)world;pcphase=(sig_atomic_t)value;
  return lean_io_result_mk_ok(lean_box(0));
+}
+LEAN_EXPORT lean_obj_res l_mPCPhase___boxed(lean_obj_arg value,lean_obj_arg world){
+ uint64_t phase=lean_unbox_uint64(value);lean_dec(value);
+ return l_mPCPhase(phase,world);
 }
 LEAN_EXPORT lean_obj_res l_mPCStop(lean_obj_arg world){
  (void)world;pcphase=0;pc_end();return lean_io_result_mk_ok(lean_box(0));

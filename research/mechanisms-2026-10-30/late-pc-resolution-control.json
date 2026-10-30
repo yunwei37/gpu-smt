@@ -1,0 +1,46 @@
+{
+  "file": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler/control.bin",
+  "samples_written": 100,
+  "samples_retained": 100,
+  "overflow": 0,
+  "interval_cpu_us": 2000,
+  "threads": [
+    13610
+  ],
+  "phase_counts": {
+    "1": 100
+  },
+  "category_samples": [
+    {
+      "phase": 1,
+      "category": "other_named_native_residence",
+      "samples": 99
+    },
+    {
+      "phase": 1,
+      "category": "unresolved",
+      "samples": 1
+    }
+  ],
+  "top_symbols": [
+    {
+      "phase": 1,
+      "module": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler/pc-sampler-test",
+      "symbol": "main",
+      "samples": 99
+    },
+    {
+      "phase": 1,
+      "module": "<unmapped>",
+      "symbol": "",
+      "samples": 1
+    }
+  ],
+  "limits": [
+    "CPU timer samples are instruction residence, not PMU cycles/IPC/cache/TLB counts.",
+    "Out-of-line RC/allocation/table categories are lower bounds; inlined work stays in caller.",
+    "No precompilation speedup follows directly from interpreter residence.",
+    "Runtime mappings are start-time snapshot; later loads may be unresolved.",
+    "Sampling must pass native decision/diagnostic/heartbeat differential before interpretation."
+  ]
+}

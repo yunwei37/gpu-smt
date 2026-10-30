@@ -38,12 +38,34 @@ baseline at every modeled budget. It does not prove a shared-parent gain:
 observed peaks include parent contributions and no simultaneous COW discount
 has been established. Dropping resource-failing jobs changes terminal coverage.
 
-## Required experiments, still not established
+## Updated evidence boundary
 
-- Time actual tactic nodes with full metavariable dependencies for the fixed
-  200-source stratum. Separate missing/failed/interrupted/unsupported nodes;
-  calculate work/span only for an explicitly qualified DAG.
-- Check digits equivalence and count with ordinary kernel decide, print axioms
-  and time a declaration recheck. Compiler success alone is insufficient.
-- Record loaded objects and native handler symbols. File presence does not
-  establish loading; handler availability does not quantify interpreted helpers.
+- Digits equivalence,count and no-sorry axioms are actually checked by the
+  ordinary kernel; the warm declaration recheck is8.5572s. See step003.
+  This completes the small certificate prototype,not a general extraction IR.
+- Software maps/native-symbol checks distinguish plain Mathlib CLI from the
+  prepared backend's dependency-loaded native libraries. See hot-tactics.md.
+  Interpreter/RC/allocation CPU residence is still awaiting native-qualified
+  software sampling; module-file counts are not time fractions.
+- The400 diagnostic controls show trace.profiler changes7 error flags.
+  C profileit callbacks qualify on small controls; fixed200 native/off/on
+  comparison remains active. Complete work/span is not established.
+- Memory simulation now retains fit-subset results via exclusive retry,
+  instead of presenting dropped hard cases as throughput. Actual warm retries
+  change11 resource failures into timeouts at the same aggregate budget.
+
+## Upstream state contract, rechecked2026-10-30
+
+Official Lean.Elab.Parallel source was reopened. CoreM/MetaM/TacticM par
+collect snapshots and restore the caller's original state; iterator variants
+expose states in input or completion order. parFirst chooses a successful
+completed result and can cancel others. These APIs are not a proof that
+arbitrary successful goal states can be merged without conflicts,that
+parallel failure diagnostics equal serial diagnostics,or that budgets charge
+identically. This reinforces the need for an explicit effect/merge contract.
+It does not supply novelty to a new task queue.
+
+Primary sources reopened:Coq STM author PDF;LeanTree2507.14722 authors/title/
+independent-state factorization;LeanGraphSearch2610.22339 retrieval graph
+and feedback-loop scope;lean-egg author repository. No competitor reproduced.
+The GraphSearch name denotes lemma retrieval here,not a measured execution DAG.
