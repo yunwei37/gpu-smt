@@ -41,3 +41,5 @@ not a new acceleration method. A future replay is prepared with a declared
 be separate from native heartbeat exhaustion and ordinary rejection.
 Not enabled in the running capture. Reference:
 https://man7.org/linux/man-pages/man2/setitimer.2.html
+
+Later observation 2026-10-30T11:18:48Z:batch elapsed exceeded30minutes while one native call remained blocked. This violates the intended capture bound;not a completed30minute experiment or proof-cost measurement. Existing output continues on PVC;no second native starts. Exact record outside Git:late-block-observation.json.

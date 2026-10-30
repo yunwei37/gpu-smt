@@ -29,3 +29,5 @@ W006 complete:7source x baseline/profile-only14native compiles,all0. Wall44.0028
 W007:EPFL4.15/APRIL4.22rc4 SDKs+release Mathlib caches complete;144sources+39pairs,222native invocations launched10:46:07Z. Raw outside Git; final native result pending. Original Mathlib pins unknown.
 
 W008:214completed prefix preserved;136EPFL+78APRILstartup errors. Native13733/birth741054360 sleeps at214 exact?,SIGINT errno13. No second Lean. APRIL compat and self-alarm bounded replay prepared,not qualified/launched. Population tail unresolved; raw fully on PVC.
+
+W009:new MetaLKV public fixture audit in workloads/lean-kernel-verify;MIT,Lean4.34.0,90KIR cases fully parsed,12Lean files. No native build. Checker FAIL can be successful counterexample proof,not Lean rejection.

@@ -23,3 +23,5 @@ Two small OS self-timer controls pass; not native qualification. Future
 self-alarm wall bounds are prepared separately,not hot-edited into this run.
 Next native work requires retirement of the existing owned child. Offline
 work continues; full research objective stays open.
+
+Later observation 2026-10-30T11:18:48Z:batch elapsed exceeded30minutes while one native call remained blocked. This violates the intended capture bound;not a completed30minute experiment or proof-cost measurement. Existing output continues on PVC;no second native starts. Exact record outside Git:late-block-observation.json.
