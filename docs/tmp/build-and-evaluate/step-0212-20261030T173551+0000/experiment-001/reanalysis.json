@@ -1,0 +1,71 @@
+{
+  "W_frozen_result": "524394a",
+  "point": "openai4341-authored-sample23",
+  "original_source_byte_checks": 11,
+  "retired_native_identities": 11,
+  "controller_retired": true,
+  "rows": 19,
+  "actual_native_invocations": 11,
+  "statuses": {
+    "native_memory_failure": 2,
+    "compile_ok": 7,
+    "dependency_not_compiled": 8,
+    "wall_budget_exceeded": 2
+  },
+  "own_native_wall_denominator_s": 1399.8971438137814,
+  "own_native_CPU_sum_s": 1894.702852,
+  "budget_event_wall_s": 862.8260235097259,
+  "budget_fraction_of_own_native_wall": 0.6163495849124339,
+  "operational_costs": [
+    {
+      "class": "native_memory_exception",
+      "native_calls": 2,
+      "wall_s": 156.58966272883117,
+      "CPU_s": 240.89417400000002,
+      "wall_fraction_of_own11calls": 0.11185797715268515
+    },
+    {
+      "class": "completed",
+      "native_calls": 7,
+      "wall_s": 537.0711203040555,
+      "CPU_s": 838.803993,
+      "wall_fraction_of_own11calls": 0.38365041508756614
+    },
+    {
+      "class": "full600s_wall_censor",
+      "native_calls": 1,
+      "wall_s": 600.1200808761641,
+      "CPU_s": 634.555477,
+      "wall_fraction_of_own11calls": 0.42868869582892294
+    },
+    {
+      "class": "group_remainder_wall_censor",
+      "native_calls": 1,
+      "wall_s": 106.11627990473062,
+      "CPU_s": 180.449208,
+      "wall_fraction_of_own11calls": 0.07580291193082578
+    }
+  ],
+  "group_s": 1400.098983304575,
+  "capture_s": 1406.532695482485,
+  "sampled_combined_RSS_bytes": 13414285312,
+  "old_EPFL_RSS_included": true,
+  "hard_RSS_quota": false,
+  "native_M8192_is_universal_workload_limit": false,
+  "planned_fresh_modules": 10743,
+  "uninvoked_dependency_records": 8,
+  "not_started_jobs": 10724,
+  "total_uninvoked": 10732,
+  "new_probability_endpoint_costs": 0,
+  "frame_probability_costs_still": 19,
+  "probability_frame_size": 42,
+  "missing_original_endpoint_costs": 23,
+  "full_uncapped_Lake_CPU_estimate": null,
+  "population_95CI": null,
+  "allocation_tag_is_semantic_tactic_time": false,
+  "selected_cohort_share_is_population_estimate": false,
+  "outcome_failure_means_false_goal": false,
+  "root_new_native_processes": 0,
+  "root_elapsed_s": 0.006764908321201801,
+  "root_maxrss_kib": 16272
+}

@@ -372,6 +372,7 @@ Amplitudes, longer bound & 8 & 100 & 1 & 1 & 0 & 0 & 0 & 180.276 \\
 New strata & 8 & 100 & 109 & 106 & 2 & 1 & 2984 & 1399.656 \\
 Authored options & 8 & --- & 2 & 2 & 0 & 0 & 0 & 41.811 \\
 Authored sample & 8 & --- & 189 & 187 & 0 & 1 & --- & 1399.505 \\
+Remaining endpoints & 8 & --- & 11 & 7 & 0 & 2 & 10732 & 1399.897 \\
 \bottomrule
 \end{tabular}
 \caption{Distinct bounded native-build points, not a homogeneous full-library
@@ -395,6 +396,11 @@ lacks an external dependency and one self-interrupts. It records 47 blocked
 dependents, while the planned dependency closure is not exhausted; the dash
 does not mean zero uninvoked work. The last call receives only 11.734 seconds
 of the group remainder rather than the configured 600-second per-file cap.
+The remaining-endpoints row starts 11 of 10,743 planned fresh modules;
+seven compile, two report native memory exceptions and two self-interrupt.
+Eight dependency-blocked records and 10,724 never-started jobs remain
+uninvoked. One wall stop is a full 600-second opportunity; the last has
+only 106.116 seconds of group time.
 Heartbeats are the Lean option, not a cumulative group counter.
 Uninvoked dependencies have no measured compiler time or native verdict.
 Row clocks are not added to claim a fresh same-budget build or isolated
@@ -507,6 +513,29 @@ measures \texttt{.olean}-only compiler output rather than all Lake build
 artifacts and driver overhead. An unbiased whole-build CPU-hours estimate
 and its confidence interval therefore remain unavailable; the older
 100,000-heartbeat observations are not pooled into this different point.
+
+A further bounded group targets those same 23 missing probability
+endpoints without replacing them by easier draws. It starts only 11
+dependency modules: seven compile, two report
+\texttt{lean::memory\_exception} with an \texttt{interpreter} check-site tag
+and exit $-11$, and two terminate by their self-alarms. The latter are
+\texttt{IntegralPairings}, after a full 600.120-second opportunity, and
+\texttt{UMoments48}, after only 106.116 seconds of group time remain.
+Eight other recorded dependencies are uninvoked, and 10,724 jobs are never
+started. All 11 invoked source copies match the originals.
+
+The two memory-diagnostic calls consume 156.590 seconds, the full-opportunity
+wall censor 600.120 seconds, and the residual-time censor 106.116 seconds.
+Together they use 862.826 of this group's 1,399.897 native-wall seconds
+(61.63\%); seven successful dependency calls use the other 537.071 seconds.
+This selected dependency-heavy group is not a probability estimate of the
+library's failure cost. The configured \texttt{-M8192} point and an
+interpreter-labelled memory check identify an operational limit, not a
+measured semantic tactic phase, intrinsic false goal or failure under every
+memory budget. Collection takes 1,406.533 seconds; its 12.49\,GiB combined
+sampled peak again includes retained EPFL work. No additional probability
+endpoint cost is obtained, leaving the same 23/42 costs missing and the
+whole-build estimate unresolved.
 
 \paragraph{Typed metadata does not establish cache eligibility.}
 The earlier native reader covers 135 serialized objects, with 1,799 theorems,
