@@ -1,0 +1,74 @@
+{
+  "dataset": "nvidia/Nemotron-Math-Proofs-v1",
+  "revision": "97229c590831adfe96202f5cd071d444d535bf91",
+  "source_bytes": 29525155225,
+  "windows": [
+    {
+      "offset": 0,
+      "requested_bytes": 1048576,
+      "status": "complete-window",
+      "complete_line_rows": 83,
+      "observations": {
+        "rows": 83,
+        "nonnull_messages": 83,
+        "nonnull_formal_statement": 83,
+        "nonnull_lean_header": 83,
+        "messages_with_reasoning_content": 49,
+        "messages_with_lean_fence": 98
+      },
+      "roles": {
+        "user": 49,
+        "assistant": 49
+      },
+      "used_in": {
+        "nano_v3": 16
+      }
+    },
+    {
+      "offset": 14762577612,
+      "requested_bytes": 1048576,
+      "status": "complete-window",
+      "complete_line_rows": 52,
+      "observations": {
+        "rows": 52,
+        "nonnull_messages": 52,
+        "nonnull_formal_statement": 49,
+        "nonnull_lean_header": 49,
+        "messages_with_reasoning_content": 37,
+        "messages_with_lean_fence": 74
+      },
+      "roles": {
+        "user": 37,
+        "assistant": 37
+      },
+      "used_in": {
+        "nano_v3": 13
+      }
+    },
+    {
+      "offset": 29524106649,
+      "requested_bytes": 1048576,
+      "status": "complete-window",
+      "complete_line_rows": 67,
+      "observations": {
+        "rows": 67,
+        "nonnull_messages": 67,
+        "nonnull_formal_statement": 66,
+        "nonnull_lean_header": 66,
+        "messages_with_reasoning_content": 33,
+        "messages_with_lean_fence": 66
+      },
+      "roles": {
+        "user": 33,
+        "assistant": 33
+      },
+      "used_in": {
+        "nano_v3": 7
+      }
+    }
+  ],
+  "selection": "three deterministic byte windows, not random rows; position and row-length bias; no population proportions",
+  "native_runs": 0,
+  "peak_rss_kib": 30340,
+  "elapsed_s": 6.885980904102325
+}

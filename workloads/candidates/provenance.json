@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-10-30T06:30:10.455874+00:00",
+  "primary_metadata_location": "existing PVC /workspaces/.agent-state/gpu-smt-captures/workloads/{candidate-metadata,repository-metadata}",
+  "new_proofs_generated": 0,
+  "native_runs_started_by_W": 0,
+  "catalog_rows": 18,
+  "publisher_statistics_warning": "HF viewer statistics/info are observed publisher snapshots, not independently scanned raw corpora; immutable raw scans are distinguished in coverage.",
+  "leanmarathon_harness": {
+    "repository": "YuanheZ/LeanMarathon",
+    "revision": "e2febe2ce717ef5d8410909683f6f5b301bda4c2",
+    "license": "Apache-2.0",
+    "purpose": "harness source only; released delivery repos separately inventoried, no harness executed"
+  },
+  "goedel_v2_dataset_inspection": [
+    {
+      "path": "dataset/MOBench.jsonl",
+      "rows": 360,
+      "nonempty_lean4_code": 360,
+      "lean4_code_sorry": 360,
+      "solved_labels": {
+        "True": 286,
+        "False": 74
+      }
+    },
+    {
+      "path": "dataset/minif2f.jsonl",
+      "rows": 244,
+      "nonempty_lean4_code": 244,
+      "lean4_code_sorry": 244,
+      "solved_labels": {
+        "missing": 244
+      }
+    },
+    {
+      "path": "dataset/test.jsonl",
+      "rows": 8,
+      "nonempty_lean4_code": 8,
+      "lean4_code_sorry": 8,
+      "solved_labels": {
+        "missing": 8
+      }
+    }
+  ]
+}

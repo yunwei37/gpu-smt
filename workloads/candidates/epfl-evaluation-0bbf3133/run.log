@@ -1,0 +1,24 @@
+{
+  "dataset": "EPFL-LARA/lean-evaluation-benchmark",
+  "revision": "0bbf31331bd1c726f539b311cce8b058a821f15c",
+  "programs_read": 68932,
+  "valid": 28145,
+  "invalid": 40787,
+  "lexical_failures": 2,
+  "versions": [
+    "v4.15.0"
+  ],
+  "elapsed_s": 107.44169688504189,
+  "peak_rss_kib": 198376,
+  "no_native_processes": true,
+  "native_budget_exceeded_count": null,
+  "native_time_by_cause": null,
+  "tail_concentration_1_6_percent": null,
+  "limitations": [
+    "Reference labels include expected-theorem/forbidden-construct policy, not elaboration alone.",
+    "Publisher excludes timeouts, infrastructure exceptions, not_run and precheck failures; this is censored for tail-cost studies.",
+    "No original native timings or peak RSS columns; cannot test 1.6%/73% claim or assign causal over-budget time.",
+    "Tactic identifiers outside comments/strings are lexical occurrences, not executed call counts.",
+    "No explicit dataset license is present in the pinned README/card; do not infer a source-data license from related code."
+  ]
+}

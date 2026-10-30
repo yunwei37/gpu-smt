@@ -67,3 +67,7 @@ and must be reported as out of budget, not invalid source.
 
 No candidate generation, model inference, competitor-system reproduction or
 production mechanism enablement is part of W's static workload acquisition.
+
+## Completed cross-workload check
+
+The [candidate audit](workloads-candidates.md) and [tail CSV](../workloads/candidates/autoverus-tail-direct.csv) add an actual counterexample: AutoVerus top 1.6% candidates use 3.315–3.399% of summed direct native process elapsed, separately per repetition. The denominator is not batch wall or generation. EPFL evaluation censors timeouts; the other new candidate tables lack native time. Their causal cost distributions remain unknown.
