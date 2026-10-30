@@ -79,3 +79,11 @@ W022: bounded after-Grid group retired at1400s;12compile/2self-wall/
 Combined11.45GiB. Next actual native point is epfl-training12-native,
 controllerPID/birth in its launch.json;12released cases,10kHB/M6144/j2,
 20s self-case/300s group. Not finished yet. No automatic OAI queue started.
+
+
+W023: training12completed3compile/3error/6HB,29.393summed wall,
+55.04%budget-time in oversampled diagnostic only. Publisher-invalid amoeba_xor
+passes here; original environment/limits unknown,not proven labelbug.
+Current unique foreground native: openai4341-amplitudes-j8-1200,
+launch.json owns actualPID/birth.100kHB/M8192/j8,1200s self/1400s group.
+Prior pilot retired. Old13733RSS charged. Do not duplicate/restart it.
