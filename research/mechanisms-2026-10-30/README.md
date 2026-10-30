@@ -1,10 +1,28 @@
 # Mechanism feasibility measurements — M branch
 
 Owner: this M chat; all review is self-review. Only this directory is modified.
-Shared original Workspace/check-out on G10, main. No additional agent, no
-placement/security/CronJob changes. Per user: M at most5GiB, one Lean process,
-finite heartbeat-bounded runs under30minutes; aggregate four-branch budget12GiB.
-Outputs remain on the existingPVC. No main-engine change or inferred speedup.
+Shared original Workspace/check-out,main; now phobos-vt with local PVC.
+M uses at most16GiB and8cores within the four-line40GiB allocation. One M
+Lean process at a time; bounded native cells under30minutes. External child
+signals remain denied; no security or host PMU setting changed. Raw captures
+and generated binaries live outside Git on the existing PVC:
+/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/.
+No main-engine change or inferred speedup. Historical G10 points stay separate.
+
+## Current evidence
+
+- [Profiler perturbation](profiler-heartbeat-methodology.md):400 diagnostic
+  returns; trace.profiler changes7 error flags. Its lower runtime is not speedup.
+- [C timing qualification](step-007-report.md):fresh small controls match
+  stock flags,diagnostics,InfoTrees and heartbeats; fixed200 matrix in progress.
+- [Local dependency model](step-009-report.md):independent/coupled controls
+  separated; complete DAG and merge semantics still unknown.
+- [Ordinary-kernel certificate](step-003-report.md):digits answer100 passes;
+  [grid samples](step-004-report.md) are estimates,not full4million-cell execution.
+- [Memory/core conclusions](memory-budget-conclusion.md):four budgets;full
+  result coverage changes retry-model costs; no calibrated COW speedup claim.
+- [Hot tactics](hot-tactics.md) and [prior work](prior-work.md):actual loader
+  context matters; reflection/futures/compilation are established techniques.
 
 ## Questions and measurement sequence
 
@@ -24,8 +42,8 @@ an invented outcome. Compare fixed pool, destructive OOM and shared admission.
 Lean.Elab.Parallel/LeanTree, reflection/vm_compute/decide, lean-egg,
 LeanGraphSearch and SHRED. Naming/repackaging alone is not novelty.
 
-Heavy whole-project precompilation is not started: it requires module count,
-disk/CPU/memory estimates and the user's later machine-placement decision.
+Heavy whole-project precompilation is not started. The module census cannot
+replace a profile-weighted native-code opportunity estimate; PMU remains denied.
 
 ## phobos-vt continuation
 

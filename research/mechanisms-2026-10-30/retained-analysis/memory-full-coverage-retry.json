@@ -1,0 +1,491 @@
+{
+  "matrix": [
+    {
+      "GiB_per_core": 2,
+      "cores": 4,
+      "budget_bytes": 8589934592,
+      "fit": 7718,
+      "excluded": 90,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 8681.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 8691.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 8731.982937623014,
+          "terminal_coverage": 7718,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 10,
+          "serialized_retry_work_s": 2783.130154642,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "GiB_per_core": 4,
+      "cores": 4,
+      "budget_bytes": 17179869184,
+      "fit": 7766,
+      "excluded": 42,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 21156.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 21204.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 21396.681899982006,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 48,
+          "serialized_retry_work_s": 14440.244984541,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "GiB_per_core": 8,
+      "cores": 4,
+      "budget_bytes": 34359738368,
+      "fit": 7766,
+      "excluded": 42,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 18423.31459139101,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 18456.314591391005,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 18588.314591391005,
+          "terminal_coverage": 7766,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 33,
+          "serialized_retry_work_s": 9928.284769841,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    },
+    {
+      "GiB_per_core": 12,
+      "cores": 4,
+      "budget_bytes": 51539607552,
+      "fit": 7808,
+      "excluded": 0,
+      "scenarios": [
+        {
+          "makespan_proxy_s": 24832.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 0.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 24874.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 1.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        },
+        {
+          "makespan_proxy_s": 25042.477500274006,
+          "terminal_coverage": 7808,
+          "original_accepted_retained_by_assumption": 3014,
+          "preemptions": 42,
+          "serialized_retry_work_s": 13541.118143859001,
+          "cleanup_s_per_preemption_scenario": 5.0,
+          "lost_results": 0,
+          "post_victim_reservation_never_over_budget": true
+        }
+      ]
+    }
+  ],
+  "engine_retry_transitions": [
+    {
+      "from": "preempted",
+      "to": "resource_exhausted",
+      "count": 41
+    },
+    {
+      "from": "preempted",
+      "to": "timeout",
+      "count": 1
+    }
+  ],
+  "warm_retry_transitions": [
+    {
+      "from": "resource_failure",
+      "to": "resource_failure",
+      "count": 41
+    },
+    {
+      "from": "resource_failure",
+      "to": "timeout_error",
+      "count": 11
+    }
+  ],
+  "engine_retry_rows": [
+    {
+      "id": "minif2f-579",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 21495705600,
+      "exclusive_peak": 51259908096
+    },
+    {
+      "id": "minif2f-663",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 22751338496,
+      "exclusive_peak": 51263139840
+    },
+    {
+      "id": "minif2f-664",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 46403899392,
+      "exclusive_peak": 51289120768
+    },
+    {
+      "id": "minif2f-1885",
+      "initial_status": "preempted",
+      "exclusive_status": "timeout",
+      "initial_peak": 38365958144,
+      "exclusive_peak": 42710745088
+    },
+    {
+      "id": "minif2f-2401",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 19390824448,
+      "exclusive_peak": 51485749248
+    },
+    {
+      "id": "minif2f-2403",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 25363537920,
+      "exclusive_peak": 51365363712
+    },
+    {
+      "id": "minif2f-2404",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 24885522432,
+      "exclusive_peak": 51361353728
+    },
+    {
+      "id": "minif2f-2409",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 23310503936,
+      "exclusive_peak": 51494117376
+    },
+    {
+      "id": "minif2f-2412",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 25588801536,
+      "exclusive_peak": 51332481024
+    },
+    {
+      "id": "minif2f-2419",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 23533359104,
+      "exclusive_peak": 51278290944
+    },
+    {
+      "id": "minif2f-2421",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 22895206400,
+      "exclusive_peak": 51400675328
+    },
+    {
+      "id": "minif2f-2423",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 28097499136,
+      "exclusive_peak": 51442466816
+    },
+    {
+      "id": "minif2f-2424",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 46241075200,
+      "exclusive_peak": 51456262144
+    },
+    {
+      "id": "minif2f-3681",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 24130486272,
+      "exclusive_peak": 51341017088
+    },
+    {
+      "id": "minif2f-3682",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 34517041152,
+      "exclusive_peak": 51410264064
+    },
+    {
+      "id": "minif2f-3683",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 27218538496,
+      "exclusive_peak": 51277922304
+    },
+    {
+      "id": "minif2f-3685",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 22574432256,
+      "exclusive_peak": 51269287936
+    },
+    {
+      "id": "minif2f-3686",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 17431678976,
+      "exclusive_peak": 51392606208
+    },
+    {
+      "id": "minif2f-3687",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 17921511424,
+      "exclusive_peak": 51457789952
+    },
+    {
+      "id": "minif2f-3688",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 19200561152,
+      "exclusive_peak": 51270434816
+    },
+    {
+      "id": "minif2f-3689",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 19220545536,
+      "exclusive_peak": 51380449280
+    },
+    {
+      "id": "minif2f-3690",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18654191616,
+      "exclusive_peak": 51371720704
+    },
+    {
+      "id": "minif2f-3691",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18859462656,
+      "exclusive_peak": 51279577088
+    },
+    {
+      "id": "minif2f-3692",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18927521792,
+      "exclusive_peak": 51489968128
+    },
+    {
+      "id": "minif2f-3693",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18699407360,
+      "exclusive_peak": 51339886592
+    },
+    {
+      "id": "minif2f-3694",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18561654784,
+      "exclusive_peak": 51421302784
+    },
+    {
+      "id": "minif2f-3695",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18669342720,
+      "exclusive_peak": 51311714304
+    },
+    {
+      "id": "minif2f-3697",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18694438912,
+      "exclusive_peak": 51320545280
+    },
+    {
+      "id": "minif2f-3698",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18804609024,
+      "exclusive_peak": 51336617984
+    },
+    {
+      "id": "minif2f-3699",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18869755904,
+      "exclusive_peak": 51388252160
+    },
+    {
+      "id": "minif2f-3700",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18782601216,
+      "exclusive_peak": 51340484608
+    },
+    {
+      "id": "minif2f-3701",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18930278400,
+      "exclusive_peak": 51482300416
+    },
+    {
+      "id": "minif2f-3702",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18735939584,
+      "exclusive_peak": 51373719552
+    },
+    {
+      "id": "minif2f-3703",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18813915136,
+      "exclusive_peak": 51352088576
+    },
+    {
+      "id": "minif2f-3704",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18578956288,
+      "exclusive_peak": 51450150912
+    },
+    {
+      "id": "minif2f-3705",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18959654912,
+      "exclusive_peak": 51301634048
+    },
+    {
+      "id": "minif2f-3706",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18818199552,
+      "exclusive_peak": 51411070976
+    },
+    {
+      "id": "minif2f-3707",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18732523520,
+      "exclusive_peak": 51336413184
+    },
+    {
+      "id": "minif2f-3708",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 18874789888,
+      "exclusive_peak": 51346767872
+    },
+    {
+      "id": "minif2f-3709",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 20223143936,
+      "exclusive_peak": 51443118080
+    },
+    {
+      "id": "minif2f-3710",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 25182584832,
+      "exclusive_peak": 51445084160
+    },
+    {
+      "id": "minif2f-3711",
+      "initial_status": "preempted",
+      "exclusive_status": "resource_exhausted",
+      "initial_peak": 47721783296,
+      "exclusive_peak": 51302367232
+    }
+  ],
+  "limits": [
+    "Companion model, not a new native run or measured throughput.",
+    "Same budget-fit subsets as memory-matrix.json; excluded jobs are unknown under new budgets.",
+    "Frozen physical-attempt work includes historical retry overhead; no queue elapsed used.",
+    "Instantaneous full peaks omit within-job growth and victim work before detection.",
+    "0/1/5s are declared cleanup sensitivity scenarios, not measured cancellation latency.",
+    "Retries finish with frozen labels by assumption; native parity is NOT established.",
+    "No COW discount, per-worker import baseline, allocator retention or new memory trajectory invented.",
+    "Initial pressure is a modeled watchdog event, not a kernel hard RSS quota.",
+    "Warm aggregate resource_failure can become timeout under exclusive retry at the same48GiB total budget."
+  ]
+}
