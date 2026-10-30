@@ -1,0 +1,17 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6-7",
+    "/workspaces/.agent-state/gpu-smt-deps/tectonic-0.17.0/tectonic",
+    "--keep-logs",
+    "--outdir",
+    "/workspaces/.agent-state/gpu-smt-captures/paper-step-0161-20261030T030612+0000",
+    "main.tex"
+  ],
+  "exit": 0,
+  "output": "/workspaces/.agent-state/gpu-smt-captures/paper-step-0161-20261030T030612+0000",
+  "memory_scope": "sampled compiler tree; no hard enforcement; no native Lean",
+  "sampled_max_rss_bytes": 197390336,
+  "min_available_bytes": 19860606976
+}

@@ -412,7 +412,10 @@ Logging directory participates in configured identity. Main defaults are unchang
 The [Lean4.9 component](../native/lean/failure-replay/README.md) is a low-level
 dependency for future FailureCacheVerificationBackend implementations. It has
 default-off capture/replay and a strict same-retained-input guard. Native finite
-controls now exercise post-state/exception and action-charge preservation.
+controls exercise post-state/exception and action-charge preservation. The
+50-cell authored candidate differential also matches complete ordered JSON
+diagnostics and native verdict/exit fields, with six forced same-entry hits.
+Those controlled hits do not measure workload opportunity.
 It is not connected to the stock adapter or Rust service. Pointer identity,
 including reader/state layers, does not itself certify mutable/opaque/IO effects,
 cross-candidate compatibility or exact timeout parity. The selected-state

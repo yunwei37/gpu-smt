@@ -59,3 +59,12 @@ default-off generic backend example, contributor guidance and always-run raw
 native-fixture retention in the existing CI job. Two doctests and local fmt,
 clippy/rustdoc pass. CI upload remains pending until its source-SHA run completes.
 No formal collection or production failure caching was enabled.
+
+## Step0161 — close CI with actual retained evidence
+
+The source7ab0e40 engine and smoke runs passed. Retrieved full logs and the actual
+native differential ZIP:219files,50complete cells,6forced hits,noolean binaries.
+The paper now records this narrow semantic control and compiles successfully.
+This does not restore the interrupted population measurement or enable caching.
+Keep pursuing full-state reuse evidence when native collection is qualified;
+current signal restriction remains an environment limit,not a negative result.
