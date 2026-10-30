@@ -1,0 +1,38 @@
+{
+  "raw_build": "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler",
+  "results": [
+    {
+      "argv": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-DM_PC_TEST",
+        "/workspaces/repository/research/mechanisms-2026-10-30/software_pc_sampler.c",
+        "-o",
+        "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler/pc-sampler-test"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-fPIC",
+        "-shared",
+        "-I/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/include",
+        "/workspaces/repository/research/mechanisms-2026-10-30/software_pc_sampler.c",
+        "-o",
+        "/workspaces/.agent-state/gpu-smt-captures/mechanisms-2026-10-30/generated/late-pc-sampler/pc-sampler.so"
+      ],
+      "exit_code": 0
+    },
+    {
+      "control_exit": 0,
+      "wall_s": 0.23963152430951595,
+      "stdout": "samples=100 phase=1 value=1123297288019678209\n",
+      "retired": true
+    }
+  ],
+  "Lean_qualified": false
+}
