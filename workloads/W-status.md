@@ -72,3 +72,10 @@ W017–W021 current frontier (2026-10-30):
 - Typed Planar probe remains dependency-blocked; no invented goal-type count.
   All raw/partial/failed captures outside checkout on PVC. Only workloads/
   changed. Original53target sample and broader native cost coverage open.
+
+
+W022: bounded after-Grid group retired at1400s;12compile/2self-wall/
+10dependency-uninvoked/38not-started. Last wall41.935s was group remainder.
+Combined11.45GiB. Next actual native point is epfl-training12-native,
+controllerPID/birth in its launch.json;12released cases,10kHB/M6144/j2,
+20s self-case/300s group. Not finished yet. No automatic OAI queue started.
