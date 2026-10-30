@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "--root",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/pilot2",
+    "-T",
+    "5000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/pilot2/assumption_fallback-original.olean",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/pilot2/assumption_fallback.lean"
+  ],
+  "pid": 15982,
+  "start_ticks": 399238164,
+  "exit": 0,
+  "elapsed_seconds": 0.6264884010888636,
+  "retired": true,
+  "stdout": "",
+  "stderr": "[gpu-smt-failure-diff] {\"event\":\"original\"}\n[gpu-smt-failure-diff] {\"found\":true,\"event\":\"proof_audit\",\"direct_sorry\":false}\n",
+  "late": false
+}

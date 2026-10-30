@@ -1,0 +1,119 @@
+[
+  {
+    "case": "assumption_fallback",
+    "mode": "native",
+    "expected_status": "accepted",
+    "status": "accepted",
+    "exit": 0,
+    "diagnostics": [],
+    "proof_audit": {
+      "found": true,
+      "event": "proof_audit",
+      "direct_sorry": false
+    },
+    "hits": 0,
+    "events": [
+      {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      }
+    ]
+  },
+  {
+    "case": "assumption_fallback",
+    "mode": "original",
+    "expected_status": "accepted",
+    "status": "accepted",
+    "exit": 0,
+    "diagnostics": [],
+    "proof_audit": {
+      "found": true,
+      "event": "proof_audit",
+      "direct_sorry": false
+    },
+    "hits": 0,
+    "events": [
+      {
+        "event": "original"
+      },
+      {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      }
+    ]
+  },
+  {
+    "case": "assumption_fallback",
+    "mode": "default_off",
+    "expected_status": "accepted",
+    "status": "accepted",
+    "exit": 0,
+    "diagnostics": [],
+    "proof_audit": {
+      "found": true,
+      "event": "proof_audit",
+      "direct_sorry": false
+    },
+    "hits": 0,
+    "events": [
+      {
+        "event": "default_off"
+      },
+      {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      }
+    ]
+  },
+  {
+    "case": "assumption_fallback",
+    "mode": "record",
+    "expected_status": "accepted",
+    "status": "accepted",
+    "exit": 0,
+    "diagnostics": [],
+    "proof_audit": {
+      "found": true,
+      "event": "proof_audit",
+      "direct_sorry": false
+    },
+    "hits": 0,
+    "events": [
+      {
+        "event": "recorded_failure"
+      },
+      {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      }
+    ]
+  },
+  {
+    "case": "assumption_fallback",
+    "mode": "replay",
+    "expected_status": "accepted",
+    "status": "accepted",
+    "exit": 0,
+    "diagnostics": [],
+    "proof_audit": {
+      "found": true,
+      "event": "proof_audit",
+      "direct_sorry": false
+    },
+    "hits": 1,
+    "events": [
+      {
+        "event": "hit"
+      },
+      {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      }
+    ]
+  }
+]

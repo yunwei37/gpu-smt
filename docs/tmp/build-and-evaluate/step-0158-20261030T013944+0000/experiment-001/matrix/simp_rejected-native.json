@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "--root",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix",
+    "-T",
+    "5000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected-native.olean",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean"
+  ],
+  "pid": 16022,
+  "start_ticks": 399249226,
+  "exit": 1,
+  "elapsed_seconds": 1.1918715313076973,
+  "retired": true,
+  "stdout": "{\"severity\":\"error\",\"pos\":{\"line\":3,\"column\":51},\"keepFullRange\":false,\"fileName\":\"/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean\",\"endPos\":{\"line\":3,\"column\":64},\"data\":\"simp_all made no progress\",\"caption\":\"\"}\n",
+  "stderr": "[gpu-smt-failure-diff] {\"found\":true,\"event\":\"proof_audit\",\"direct_sorry\":true}\n",
+  "late": false
+}

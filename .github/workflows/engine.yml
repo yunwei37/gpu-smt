@@ -63,3 +63,4 @@ jobs:
           export LEAN_PATH="$transition_out"
           "$lean49" --root native/lean/failure-replay -T 100000 -o "$transition_out/FailureTransition.olean" native/lean/failure-replay/FailureTransition.lean
           "$lean49" --root native/lean/failure-replay/tests -T 100000 -o "$transition_out/Transition.olean" native/lean/failure-replay/tests/Transition.lean
+          python3 native/lean/failure-replay/tests/differential.py --lean "$lean49" --out "$RUNNER_TEMP/failure-candidate-differential"

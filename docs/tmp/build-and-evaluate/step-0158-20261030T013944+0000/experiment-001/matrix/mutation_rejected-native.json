@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "--root",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix",
+    "-T",
+    "5000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected-native.olean",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean"
+  ],
+  "pid": 16033,
+  "start_ticks": 399250466,
+  "exit": 1,
+  "elapsed_seconds": 0.8624669187702239,
+  "retired": true,
+  "stdout": "{\"severity\":\"information\",\"pos\":{\"line\":3,\"column\":50},\"keepFullRange\":false,\"fileName\":\"/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean\",\"endPos\":{\"line\":3,\"column\":70},\"data\":\"diagnostic before ordinary failure\",\"caption\":\"\"}\n{\"severity\":\"error\",\"pos\":{\"line\":3,\"column\":50},\"keepFullRange\":false,\"fileName\":\"/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean\",\"endPos\":{\"line\":3,\"column\":70},\"data\":\"ordinary differential failure after state changes\",\"caption\":\"\"}\n",
+  "stderr": "[gpu-smt-failure-diff] {\"found\":true,\"event\":\"proof_audit\",\"direct_sorry\":true}\n",
+  "late": false
+}

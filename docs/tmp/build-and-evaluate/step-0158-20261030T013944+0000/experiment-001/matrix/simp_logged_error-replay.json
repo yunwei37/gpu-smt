@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--json",
+    "--root",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix",
+    "-T",
+    "5000",
+    "-o",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error-replay.olean",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean"
+  ],
+  "pid": 16043,
+  "start_ticks": 399251448,
+  "exit": 1,
+  "elapsed_seconds": 1.0361772286705673,
+  "retired": true,
+  "stdout": "{\"severity\":\"error\",\"pos\":{\"line\":3,\"column\":65},\"keepFullRange\":false,\"fileName\":\"/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean\",\"endPos\":{\"line\":3,\"column\":89},\"data\":\"unknown identifier 'differentialUnknownLemma'\",\"caption\":\"\"}\n",
+  "stderr": "[gpu-smt-failure-diff] {\"event\":\"normal_return\"}\n[gpu-smt-failure-diff] {\"found\":true,\"event\":\"proof_audit\",\"direct_sorry\":false}\n",
+  "late": false
+}

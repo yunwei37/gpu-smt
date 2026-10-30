@@ -1,0 +1,1818 @@
+{
+  "complete": true,
+  "cases": 10,
+  "cells": 50,
+  "compared_fields": [
+    "status",
+    "exit",
+    "complete_json_diagnostics",
+    "native_theorem_audit"
+  ],
+  "accepted_cases": [
+    "assumption_fallback",
+    "mutation_fallback",
+    "normal_success"
+  ],
+  "forced_replay_hits": 6,
+  "rows": [
+    {
+      "case": "assumption_fallback",
+      "mode": "native",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "assumption_fallback",
+      "mode": "original",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "assumption_fallback",
+      "mode": "default_off",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "assumption_fallback",
+      "mode": "record",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "assumption_fallback",
+      "mode": "replay",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "assumption_rejected",
+      "mode": "native",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/assumption_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 61
+          },
+          "data": "tactic 'assumption' failed\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "assumption_rejected",
+      "mode": "original",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/assumption_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 61
+          },
+          "data": "tactic 'assumption' failed\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "assumption_rejected",
+      "mode": "default_off",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/assumption_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 61
+          },
+          "data": "tactic 'assumption' failed\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "assumption_rejected",
+      "mode": "record",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/assumption_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 61
+          },
+          "data": "tactic 'assumption' failed\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "assumption_rejected",
+      "mode": "replay",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/assumption_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 61
+          },
+          "data": "tactic 'assumption' failed\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_rejected",
+      "mode": "native",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 64
+          },
+          "data": "simp_all made no progress",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_rejected",
+      "mode": "original",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 64
+          },
+          "data": "simp_all made no progress",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_rejected",
+      "mode": "default_off",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 64
+          },
+          "data": "simp_all made no progress",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_rejected",
+      "mode": "record",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 64
+          },
+          "data": "simp_all made no progress",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_rejected",
+      "mode": "replay",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 51
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 64
+          },
+          "data": "simp_all made no progress",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "mutation_fallback",
+      "mode": "native",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "mutation_fallback",
+      "mode": "original",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "mutation_fallback",
+      "mode": "default_off",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "mutation_fallback",
+      "mode": "record",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "mutation_fallback",
+      "mode": "replay",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "mutation_rejected",
+      "mode": "native",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "information",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "diagnostic before ordinary failure",
+          "caption": ""
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "ordinary differential failure after state changes",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "mutation_rejected",
+      "mode": "original",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "information",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "diagnostic before ordinary failure",
+          "caption": ""
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "ordinary differential failure after state changes",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "mutation_rejected",
+      "mode": "default_off",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "information",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "diagnostic before ordinary failure",
+          "caption": ""
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "ordinary differential failure after state changes",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "mutation_rejected",
+      "mode": "record",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "information",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "diagnostic before ordinary failure",
+          "caption": ""
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "ordinary differential failure after state changes",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "mutation_rejected",
+      "mode": "replay",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "information",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "diagnostic before ordinary failure",
+          "caption": ""
+        },
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/mutation_rejected.lean",
+          "endPos": {
+            "line": 3,
+            "column": 70
+          },
+          "data": "ordinary differential failure after state changes",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_logged_error",
+      "mode": "native",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 65
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean",
+          "endPos": {
+            "line": 3,
+            "column": 89
+          },
+          "data": "unknown identifier 'differentialUnknownLemma'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "simp_logged_error",
+      "mode": "original",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 65
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean",
+          "endPos": {
+            "line": 3,
+            "column": 89
+          },
+          "data": "unknown identifier 'differentialUnknownLemma'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "simp_logged_error",
+      "mode": "default_off",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 65
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean",
+          "endPos": {
+            "line": 3,
+            "column": 89
+          },
+          "data": "unknown identifier 'differentialUnknownLemma'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "simp_logged_error",
+      "mode": "record",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 65
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean",
+          "endPos": {
+            "line": 3,
+            "column": 89
+          },
+          "data": "unknown identifier 'differentialUnknownLemma'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "simp_logged_error",
+      "mode": "replay",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 65
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_logged_error.lean",
+          "endPos": {
+            "line": 3,
+            "column": 89
+          },
+          "data": "unknown identifier 'differentialUnknownLemma'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "simp_open_return",
+      "mode": "native",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 107
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_open_return.lean",
+          "endPos": {
+            "line": 3,
+            "column": 111
+          },
+          "data": "unsolved goals\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_open_return",
+      "mode": "original",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 107
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_open_return.lean",
+          "endPos": {
+            "line": 3,
+            "column": 111
+          },
+          "data": "unsolved goals\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_open_return",
+      "mode": "default_off",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 107
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_open_return.lean",
+          "endPos": {
+            "line": 3,
+            "column": 111
+          },
+          "data": "unsolved goals\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_open_return",
+      "mode": "record",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 107
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_open_return.lean",
+          "endPos": {
+            "line": 3,
+            "column": 111
+          },
+          "data": "unsolved goals\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "simp_open_return",
+      "mode": "replay",
+      "expected_status": "rejected",
+      "status": "rejected",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 107
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/simp_open_return.lean",
+          "endPos": {
+            "line": 3,
+            "column": 111
+          },
+          "data": "unsolved goals\n⊢ False",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "normal_success",
+      "mode": "native",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "normal_success",
+      "mode": "original",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "normal_success",
+      "mode": "default_off",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "normal_success",
+      "mode": "record",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "normal_success",
+      "mode": "replay",
+      "expected_status": "accepted",
+      "status": "accepted",
+      "exit": 0,
+      "diagnostics": [],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": false
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "normal_return"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": false
+        }
+      ]
+    },
+    {
+      "case": "incomplete_fallback",
+      "mode": "native",
+      "expected_status": "incomplete",
+      "status": "incomplete",
+      "exit": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 3,
+            "column": 8
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/incomplete_fallback.lean",
+          "endPos": {
+            "line": 3,
+            "column": 22
+          },
+          "data": "declaration uses 'sorry'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "incomplete_fallback",
+      "mode": "original",
+      "expected_status": "incomplete",
+      "status": "incomplete",
+      "exit": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 3,
+            "column": 8
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/incomplete_fallback.lean",
+          "endPos": {
+            "line": 3,
+            "column": 22
+          },
+          "data": "declaration uses 'sorry'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "incomplete_fallback",
+      "mode": "default_off",
+      "expected_status": "incomplete",
+      "status": "incomplete",
+      "exit": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 3,
+            "column": 8
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/incomplete_fallback.lean",
+          "endPos": {
+            "line": 3,
+            "column": 22
+          },
+          "data": "declaration uses 'sorry'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "incomplete_fallback",
+      "mode": "record",
+      "expected_status": "incomplete",
+      "status": "incomplete",
+      "exit": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 3,
+            "column": 8
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/incomplete_fallback.lean",
+          "endPos": {
+            "line": 3,
+            "column": 22
+          },
+          "data": "declaration uses 'sorry'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "recorded_failure"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "incomplete_fallback",
+      "mode": "replay",
+      "expected_status": "incomplete",
+      "status": "incomplete",
+      "exit": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "pos": {
+            "line": 3,
+            "column": 8
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/incomplete_fallback.lean",
+          "endPos": {
+            "line": 3,
+            "column": 22
+          },
+          "data": "declaration uses 'sorry'",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 1,
+      "events": [
+        {
+          "event": "hit"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "heartbeat_limit",
+      "mode": "native",
+      "expected_status": "heartbeat_limit",
+      "status": "heartbeat_limit",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/heartbeat_limit.lean",
+          "endPos": {
+            "line": 3,
+            "column": 71
+          },
+          "data": "(deterministic) timeout at `differential`, maximum number of heartbeats (0) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "heartbeat_limit",
+      "mode": "original",
+      "expected_status": "heartbeat_limit",
+      "status": "heartbeat_limit",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/heartbeat_limit.lean",
+          "endPos": {
+            "line": 3,
+            "column": 71
+          },
+          "data": "(deterministic) timeout at `differential`, maximum number of heartbeats (0) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "original"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "heartbeat_limit",
+      "mode": "default_off",
+      "expected_status": "heartbeat_limit",
+      "status": "heartbeat_limit",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/heartbeat_limit.lean",
+          "endPos": {
+            "line": 3,
+            "column": 71
+          },
+          "data": "(deterministic) timeout at `differential`, maximum number of heartbeats (0) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "event": "default_off"
+        },
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "heartbeat_limit",
+      "mode": "record",
+      "expected_status": "heartbeat_limit",
+      "status": "heartbeat_limit",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/heartbeat_limit.lean",
+          "endPos": {
+            "line": 3,
+            "column": 71
+          },
+          "data": "(deterministic) timeout at `differential`, maximum number of heartbeats (0) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    },
+    {
+      "case": "heartbeat_limit",
+      "mode": "replay",
+      "expected_status": "heartbeat_limit",
+      "status": "heartbeat_limit",
+      "exit": 1,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "pos": {
+            "line": 3,
+            "column": 50
+          },
+          "keepFullRange": false,
+          "fileName": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/matrix/heartbeat_limit.lean",
+          "endPos": {
+            "line": 3,
+            "column": 71
+          },
+          "data": "(deterministic) timeout at `differential`, maximum number of heartbeats (0) has been reached\nuse `set_option maxHeartbeats <num>` to set the limit\nuse `set_option diagnostics true` to get diagnostic information",
+          "caption": ""
+        }
+      ],
+      "proof_audit": {
+        "found": true,
+        "event": "proof_audit",
+        "direct_sorry": true
+      },
+      "hits": 0,
+      "events": [
+        {
+          "found": true,
+          "event": "proof_audit",
+          "direct_sorry": true
+        }
+      ]
+    }
+  ]
+}

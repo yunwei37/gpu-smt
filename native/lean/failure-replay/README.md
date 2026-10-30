@@ -62,3 +62,32 @@ installation or action debit separately caused the intended assertions to fail;
 sources/logs are retained in step0156. These controls neither execute the selected
 2677sources nor establish their full-state match frequency, cross-candidate reuse,
 safe native production integration, accepted-set equality or speedup.
+
+## Whole-candidate differential
+
+tests/differential.py runs ten authored short candidates,one per naturally
+retiring compiler process,in five modes:unwrapped stock tactic reference,
+original direct probe,default-off capture,fresh capture/rethrow,and forced
+same-retained-input replay. The native reference uses an equal-width blank slot
+in place of our marker in these single-line fixtures,so inner tactic coordinates
+match. This is controlled fixture construction,not transformation of arbitrary
+external proofs. All modes share the support import and source path.
+
+The50-cell G10 differential matches native exit,status,the complete ordered JSON
+diagnostics(including locations)and a native theorem audit;it confirms6forced
+hits. Accepted,rejected,directsorry and native heartbeat-limit outcomes remain
+distinct. Logged errors and normal open-goal returns do not create failure hits.
+The audit's directsorry check is specific to these authored proofs and is not a
+general source verifier. Producer computation is paid in replay mode;no speedup,
+population match rate,cross-candidate reuse or exact timeout parity follows.
+
+Run with an existing matching SDK and a NEW owned PVC output path:
+
+    python3 native/lean/failure-replay/tests/differential.py --lean /path/to/lean --out /workspaces/.agent-state/gpu-smt-captures/new-native-differential
+
+An optional --case selects one fixed fixture for diagnosis. Native5000heartbeat
+units bound each command's computation. The15s wall threshold only classifies a
+late natural exit and stops subsequent dispatch;it does not kill or enforce a
+hard wall deadline. No watchdog/signals are used. Operational/unclassified exits
+remain failures of the test,not fabricated logical rejections. This is unsuitable
+for arbitrary/long candidates while G10 signalling remains unqualified.

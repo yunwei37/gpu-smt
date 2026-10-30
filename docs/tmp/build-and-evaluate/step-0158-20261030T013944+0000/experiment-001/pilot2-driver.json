@@ -1,0 +1,46 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "6-7",
+    "python3",
+    "native/lean/failure-replay/tests/differential.py",
+    "--lean",
+    "/workspaces/.agent-state/gpu-smt-deps/lean-4.9-capture/lean-4.9.0-rc1-linux/bin/lean",
+    "--out",
+    "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/pilot2",
+    "--case",
+    "assumption_fallback"
+  ],
+  "out": "/workspaces/.agent-state/gpu-smt-captures/failure-candidate-differential-20261030T015552Z/pilot2",
+  "pid": 15978,
+  "birth": 1793325411.38,
+  "exit": 0,
+  "retired": true,
+  "samples": [
+    {
+      "rss_bytes": 14790656,
+      "available_bytes": 21528494080
+    },
+    {
+      "rss_bytes": 558383104,
+      "available_bytes": 21447688192
+    },
+    {
+      "rss_bytes": 555298816,
+      "available_bytes": 21426556928
+    },
+    {
+      "rss_bytes": 514338816,
+      "available_bytes": 21435047936
+    },
+    {
+      "rss_bytes": 140345344,
+      "available_bytes": 21414469632
+    },
+    {
+      "rss_bytes": 514863104,
+      "available_bytes": 21403201536
+    }
+  ]
+}

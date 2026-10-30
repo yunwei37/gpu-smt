@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/repository/native/lean/failure-replay/tests/differential.py", line 149, in <module>
+    main()
+    ~~~~^^
+  File "/workspaces/repository/native/lean/failure-replay/tests/differential.py", line 128, in main
+    row = dict(case=name, mode=mode, expected_status=expected, **analyze(native))
+                                                                 ~~~~~~~^^^^^^^^
+  File "/workspaces/repository/native/lean/failure-replay/tests/differential.py", line 68, in analyze
+    raise RuntimeError("unexpected native stderr;operational result,not rejection")
+RuntimeError: unexpected native stderr;operational result,not rejection
