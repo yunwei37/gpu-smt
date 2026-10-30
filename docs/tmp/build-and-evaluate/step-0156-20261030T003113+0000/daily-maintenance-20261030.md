@@ -51,3 +51,11 @@ or independence evidence. Paper now states these separate scopes and compiles.
 The next work is exception-level state qualification and proper dynamic/service
 evidence,not deploying this ranking model or interpreting trace overlap as a
 GPU/Amdahl bound. Native long-capture AppArmor limit stays untouched.
+
+## Step0160 — execute public examples and retain fixture CI evidence
+
+Cargo all-target tests exclude doctests. Added explicit doc tests, a compiled
+default-off generic backend example, contributor guidance and always-run raw
+native-fixture retention in the existing CI job. Two doctests and local fmt,
+clippy/rustdoc pass. CI upload remains pending until its source-SHA run completes.
+No formal collection or production failure caching was enabled.

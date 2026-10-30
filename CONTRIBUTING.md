@@ -11,8 +11,14 @@ Use Rust1.98 or newer on Linux and Python3 for subprocess fixtures:
     cargo fmt --all -- --check
     cargo clippy --workspace --all-targets -- -D warnings
     cargo test --workspace --all-targets
+    cargo test --workspace --doc --locked
     RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps
     cargo bench -p gpu-smt-engine --bench exact_cache
+
+Cargo excludes doctests from --all-targets; run both test commands above. CI also
+retains the short native candidate differential artifact, including raw JSON,
+stdout/stderr and fixture sources, while excluding rebuilt olean files. These
+authored controls check fixture semantics, not population reuse or performance.
 
 The owned-RSS process integration test needs at least two eligible Linux CPUs.
 Use an allowed two-core affinity when running that full suite; a single-core

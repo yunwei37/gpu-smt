@@ -38,8 +38,8 @@ older measured two-worker cancellation. Failure section distinguishes source
 errors from thrown tactic exceptions. Code-workload section gives the trace-only
 intersection with explicit non-critical-path scope. NoRQ/thesis/contribution or
 acceptance claim changed. The complete manuscript builds with existingTectonic
-exit0;PDF/log/cache onPVC. Existing underfull/overfull warnings are preserved,
-not a claim of publication-ready layout. No new plotting dependency.
+exit0;PDF/log/cache onPVC. Observed underfull/overfull warnings are preserved; the prior manuscript was
+not rebuilt to attribute their origin. This is not a claim of publication-ready layout. No new plotting dependency.
 Initial monitored offline execution and paper build have separate memory records;
 the final additive missing-clock field rerun was not separately memory sampled.
 

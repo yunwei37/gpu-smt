@@ -48,6 +48,24 @@ pub trait FailureCacheVerificationBackend: VerificationBackend + FailureReplayBa
 /// CLI/HTTP configuration and stock native adapters remain unchanged.
 /// Retained records have no automatic eviction/size guarantee and count toward
 /// the owning process's memory; use the normal resource monitor and lifecycle.
+///
+/// Default-off wiring through the existing engine backend interface:
+///
+/// ```
+/// use gpu_smt_core::VerificationBackend;
+/// use gpu_smt_engine::{FailureCacheAdapter, FailureCacheVerificationBackend};
+/// use std::sync::Arc;
+///
+/// fn backend_for_engine<B>(backend: Arc<B>) -> Arc<dyn VerificationBackend>
+/// where
+///     B: FailureCacheVerificationBackend + 'static,
+/// {
+///     Arc::new(FailureCacheAdapter::new(backend))
+/// }
+/// ```
+///
+/// Explicit enablement uses [Self::enabled] after backend-specific native
+/// qualification. This example checks public API wiring, not replay safety.
 pub struct FailureCacheAdapter<B: FailureCacheVerificationBackend + ?Sized> {
     // Release native record references before the final backend Arc on drop.
     cache: Option<BackendFailureCache<B>>,

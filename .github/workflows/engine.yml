@@ -19,6 +19,7 @@ jobs:
       - run: cargo fmt --all -- --check
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - run: cargo test --workspace --all-targets --locked
+      - run: cargo test --workspace --doc --locked
       - run: cargo run -p gpu-smt-engine --example failure_replay --locked
       - run: cargo doc --workspace --no-deps --locked
         env:
@@ -64,3 +65,12 @@ jobs:
           "$lean49" --root native/lean/failure-replay -T 100000 -o "$transition_out/FailureTransition.olean" native/lean/failure-replay/FailureTransition.lean
           "$lean49" --root native/lean/failure-replay/tests -T 100000 -o "$transition_out/Transition.olean" native/lean/failure-replay/tests/Transition.lean
           python3 native/lean/failure-replay/tests/differential.py --lean "$lean49" --out "$RUNNER_TEMP/failure-candidate-differential"
+      - name: Retain native candidate differential evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-candidate-differential
+          path: |
+            ${{ runner.temp }}/failure-candidate-differential/**
+            !${{ runner.temp }}/failure-candidate-differential/**/*.olean
+          if-no-files-found: ignore

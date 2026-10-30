@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--doc",
+        "--offline"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--offline"
+      ],
+      "exit": 0
+    }
+  ],
+  "sampled_max_own_rss_bytes": 380882944,
+  "minimum_node_available_bytes": 18747928576,
+  "scope": "G10 offline Rust development; sampled process memory, not hard enforcement; no Lean"
+}
