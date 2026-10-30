@@ -2052,20 +2052,79 @@ incorrect submitted proof or establish unchanged-candidate verdict parity,
 a general extraction compiler or batch-service benefit. Reflection, arithmetic compression and independent proof checking
 alone establish no new systems contribution.
 
-Candidate-level integration requires a separate check. A prototype replaces
-only selected \texttt{rfl} or \texttt{interval\_cases} tokens, retains the
-surrounding submitted proof, and attempts a checked family theorem before
-restoring state and invoking the original tactic on failure. One short
-negative control reproduces the original diagnostics after normalizing only
-file paths and removing measurement markers. That control does not establish
-general fallback equivalence: the 49-source trial stops after 23 returns
-because pending synthetic obligations can escape the new attempt.
-Some logs print a certificate-hit marker before later unsolved goals and
-\texttt{sorryAx} appear. A hit marker is therefore not acceptance; errors in
-the transformed method are not certified rejections of the original candidate.
-The retained partial proofs and budget interruptions supply no full-cohort
-recovery rate, same-budget verdict parity or complete-service speedup.
-Complete original-source differential and performance measurements remain open.
+Candidate-level integration is evaluated separately as an opt-in,
+specialized proof-repair mode. A header router uses mathematical structure
+and literals rather than task names; runtime hooks inspect the actual
+elaborated goal and local context. They replace selected \texttt{rfl} or
+\texttt{interval\_cases} tokens, construct proofs from two pre-proved family
+lemmas, force pending synthesis and reject residual metavariables or
+admissions. On a mismatch, the hook restores state and runs the original
+tactic. The templates cover decimal digits on $[1000,9999]$ with count 100,
+and product 2005 with sum 406; this is not a general computation compiler.
+
+The complete catalog scan routes 63 of 7,808 source strings: 32 digits
+candidates and 31 grid candidates. A 64th task-labelled source is the
+literal \texttt{None}, has no theorem header and remains unsupported.
+No source outside these two task-labelled families routes in this catalog.
+That is a source-structure audit, not a general runtime precision estimate.
+
+We execute all 64 family sources in original and transformed modes, totaling
+128 native invocations in two completed serial groups. Both modes configure
+a 200,000-heartbeat source option, CLI \texttt{-T50000000}, one Lean worker,
+an 8,192\,MiB cooperative memory option and a 16-second internal wall bound
+on phobos-vt CPUs 8--11. Mode order alternates by source. The CLI limit is
+not a reconciled whole-process heartbeat quota. Original-source invocations
+load their original imports; transformed ones additionally load the checked
+proof module. Table~\ref{tab:certificate-native64} reports whole-source
+outcomes and summed invocation clocks, including loading and checking.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Mode & Accepted & Errors & \shortstack{Budget\\stops} &
+\shortstack{Invocation-wall\\sum (s)} \\
+\midrule
+Original & 0 & 13 & 51 & 879.431 \\
+Repaired & 31 & 29 & 4 & 285.778 \\
+\bottomrule
+\end{tabular}
+\caption{All 64 sources from two fixed-parameter families, 128 native
+invocations. Of 51 original budget interruptions, 31 become checked
+acceptances, 16 return ordinary proof errors and four remain interrupted;
+all 13 original ordinary errors remain errors. Proof-module builds take
+23.010 and 2.571 seconds separately and lie outside these candidate-phase
+sums. Censored original runtimes, changed outcomes and a cold CLI boundary
+preclude an uncensored latency or warm-service throughput claim.
+The cohort has no original-mode acceptances and therefore does not test
+preservation of previously passing candidates.}
+\label{tab:certificate-native64}
+\end{table}
+
+All 31 accepted transformed sources pass the original kernel with final
+axiom dependencies restricted to \texttt{propext}, \texttt{Quot.sound} and
+\texttt{Classical.choice}, without \texttt{sorryAx}. They comprise 16 digits
+and 15 grid proofs. The surrounding source commands are retained apart
+from the declared import, computation-token replacements, finite heartbeat
+setting and axiom report. The two task goals have no accepted candidate in
+the retained historical 7,808-source run; this observation does not establish
+a new full-run solved-task count under the different hardware and budget.
+
+An unrelated actual target under a relevant-looking header and a false
+prefix before a true cheap computation each remain native errors in both
+modes. All four control processes retire, and diagnostics match after only
+source-path and added-import-line mapping. These controls support the tested
+fallback cases, not universal diagnostic, heartbeat or acceptance parity.
+Earlier versions emitted hit markers before unresolved synthetic obligations;
+their failed and partial runs remain preserved and are excluded from the
+complete cohort. The remaining proof errors do not establish mathematical
+falsity of their intermediate assertions, and budget interruptions remain
+unresolved. No production engine mode is enabled. This result supplies checked
+new proofs under a specialized repair policy, not unchanged-source
+verification acceleration or a demonstrated systems novelty.
+Complete-stream differential and performance measurements remain open.
 
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,

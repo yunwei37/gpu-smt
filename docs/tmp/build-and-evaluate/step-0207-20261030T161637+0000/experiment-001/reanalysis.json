@@ -1,0 +1,316 @@
+{
+  "source_commits": [
+    "562a80e",
+    "88edb9d"
+  ],
+  "groups": [
+    {
+      "label": "candidate-recovery49-pair-v3",
+      "sources": 49,
+      "units": 98,
+      "group_wall_s": 1016.9686663923785,
+      "complete": true
+    },
+    {
+      "label": "candidate-auto-extra15-pair-v1",
+      "sources": 15,
+      "units": 30,
+      "group_wall_s": 148.70151489041746,
+      "complete": true
+    }
+  ],
+  "sources": 64,
+  "native_units": 128,
+  "route_counts": {
+    "none": 7745,
+    "digits": 32,
+    "grid": 31
+  },
+  "detected_headers_in_full_catalog": 63,
+  "malformed_unsupported": "minif2f-7206",
+  "flow": {
+    "lean_error -> lean_error": 13,
+    "budget_exceeded -> accepted": 31,
+    "budget_exceeded -> lean_error": 16,
+    "budget_exceeded -> budget_exceeded": 4
+  },
+  "costs": {
+    "original": {
+      "statuses": {
+        "budget_exceeded": 51,
+        "lean_error": 13
+      },
+      "native_wall_s": 879.4314129082486,
+      "native_cpu_s": 878.0212870000004,
+      "sampled_own_tree_peak_bytes": 5978619904
+    },
+    "certificate": {
+      "statuses": {
+        "accepted": 31,
+        "lean_error": 29,
+        "budget_exceeded": 4
+      },
+      "native_wall_s": 285.7780881272629,
+      "native_cpu_s": 284.24145799999957,
+      "sampled_own_tree_peak_bytes": 5837848576
+    }
+  },
+  "accepted_ids": [
+    "minif2f-3681",
+    "minif2f-3685",
+    "minif2f-3686",
+    "minif2f-3687",
+    "minif2f-3691",
+    "minif2f-3693",
+    "minif2f-3694",
+    "minif2f-3695",
+    "minif2f-3700",
+    "minif2f-3701",
+    "minif2f-3702",
+    "minif2f-3706",
+    "minif2f-3707",
+    "minif2f-3708",
+    "minif2f-3709",
+    "minif2f-3711",
+    "minif2f-7200",
+    "minif2f-7203",
+    "minif2f-7207",
+    "minif2f-7208",
+    "minif2f-7212",
+    "minif2f-7213",
+    "minif2f-7216",
+    "minif2f-7218",
+    "minif2f-7219",
+    "minif2f-7221",
+    "minif2f-7223",
+    "minif2f-7225",
+    "minif2f-7226",
+    "minif2f-7229",
+    "minif2f-7231"
+  ],
+  "accepted_axioms": {
+    "minif2f-3681": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3685": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3686": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3687": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3691": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3693": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3694": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3695": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3700": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3701": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3702": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3706": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3707": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3708": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3709": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-3711": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7200": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7203": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7207": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7208": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7212": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7213": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7216": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7218": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7219": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7221": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7223": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7225": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7226": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7229": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "minif2f-7231": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "verified_tasks": [
+    "amc12a_2020_p4",
+    "mathd_numbertheory_541"
+  ],
+  "historical_tasks": 142,
+  "new_task_goals_absent_historical_acceptance": true,
+  "ordinary_error_to_accept": 0,
+  "controls": [
+    {
+      "control": "CandidateAutoUnrelated",
+      "mode": "original",
+      "exit": 1,
+      "retired": true,
+      "added_import_lines": 0
+    },
+    {
+      "control": "CandidateAutoUnrelated",
+      "mode": "certificate",
+      "exit": 1,
+      "retired": true,
+      "added_import_lines": 1
+    },
+    {
+      "control": "CandidateAutoPrefixError",
+      "mode": "original",
+      "exit": 1,
+      "retired": true,
+      "added_import_lines": 0
+    },
+    {
+      "control": "CandidateAutoPrefixError",
+      "mode": "certificate",
+      "exit": 1,
+      "retired": true,
+      "added_import_lines": 1
+    }
+  ],
+  "negative_source_mapped_stdout_equal": true,
+  "module_setup": [
+    {
+      "label": "candidate-certificate-proofs-v10",
+      "source": "CertificateProofs.lean",
+      "wall_s": 23.009619176387787,
+      "source_commit": "88edb9d",
+      "outside_candidate_phase": true
+    },
+    {
+      "label": "candidate-certificate-build-v12",
+      "source": "CertificateMethods.lean",
+      "wall_s": 2.5714310724288225,
+      "source_commit": "88edb9d",
+      "outside_candidate_phase": true
+    }
+  ],
+  "all128_native_identities_retired": true,
+  "native_cpu_scope": [
+    "RUSAGE_CHILDREN delta for this serial run"
+  ],
+  "same_source_acceptance_parity": false,
+  "full7808_service_speedup": null,
+  "source_mode": "opt-in specialized proof repair, not original-proof result preservation",
+  "new_native_runs": 0,
+  "root_elapsed_s": 2.103258457966149,
+  "root_maxrss_kib": 198984,
+  "accepted_by_task": {
+    "amc12a_2020_p4": 16,
+    "mathd_numbertheory_541": 15
+  }
+}

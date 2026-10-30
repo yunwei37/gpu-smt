@@ -193,15 +193,35 @@ declarations,fresh names,discarded environments and per-task budgets do not
 implement first-check merging,global heartbeat parity or service acceleration.
 New theorem/algorithm is not validation of a false submitted prefix.
 
-[Candidate-hook audit](tmp/build-and-evaluate/step-0203-20261030T145358+0000/step-report.md) freezes23f8ac1controls and partial trial:
-v2stops23/49,10transformed proof accepts withoutsorryAx/7method errors/
-6budget interruptions,26unreturned. Exact source edits verified against inputs.
-HIT can precede pending synthetic obligations/sorryAx;short exact-diagnostic
-negative control does not prove general fallback atomicity. Errors are not
-original rejections;no full recovery rate or crosshardware speedup. M owns
-further fixes/runs;uncommitted versions are not admitted as complete results.
-Nine explicitly refuted original prefixes remain proof-repair cases,not
-transparent recoveries. Opportunity counts are not qualified transformations.
+[Complete two-family native audit](tmp/build-and-evaluate/step-0207-20261030T161637+0000/step-report.md) supersedes the v5partial frontier:
+pinned562a80e/88edb9d,all64family sources/128native calls,49pair98units plus15pair30.
+Router scans7808source strings by theorem-header structure/literals,not names:
+63routes(32digits/31grid);literalNone7206unsupported. No outside-family route
+in this catalog;not a general misclassification or typed-acceptance estimate.
+
+At the declared phobos/CPU8–11/j1/200k-sourceHB/-T50000000/M8192/16s-self point,
+original0accepted/13errors/51budget,879.431413s invocation-wall sum;
+repair31accepted/29errors/4budget,285.778088s. Flow31budget→accepted,
+16budget→ordinaryerror,4staybudget,13ordinaryerrorsstayerrors.
+All31final AXclosures subsetpropext/Quot.sound/Classical.choice,no sorryAx;
+16digits/15grid. Exact source/compiled-module bytes,all128native PID/birth
+retirements and fouradversarial controls checked by root. Original imports
+remain original;certificate mode adds its checked module. Builds23.009619/
+2.571431s outsidecandidate clocks;not free. Both finitegroupscomplete and
+alternate firstmode. Source-budget settings are configured values,not a
+globally reconciled heartbeat policy. Censored times are not uncensored speedup.
+
+Twoactual-target/false-prefix controls preserve mapped diagnostics;no universal
+fallback proof. v5stopped23/49,sorry leakage,panic and v8–v11 failures remain
+preserved in oldreports/raw,not final recovery data. Ordinary failures do not
+prove false assertions;known-false3689 inextra15 remainsrejected.
+No original-mode passes in this cohort means no test of previouslypassing
+candidate preservation. Two goal families absent from historical142solvedtasks
+now have verifiednewproofs;not a measured full7808newsolve/throughput result.
+This is opt-in specialized proof repair with changed acceptance,not result-
+preserving verification,a generic compiler or established systems novelty.
+No production mode enabled. Remaining37staticopportunities/11bridges and
+rough engineering estimates are not implemented coverage or time savings.
 
 <a id="public-lean-code-verification"></a>
 ## Earlier code/GPU evidence and interrupted captures
