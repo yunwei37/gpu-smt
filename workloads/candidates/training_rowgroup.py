@@ -77,7 +77,7 @@ def main():
     write(args.out/"tactics.csv",[{"label":l,"tactic":t,"measure":m,"value":n} for (l,t,m),n in sorted(tactics.items())])
     write(args.out/"feedback.csv",[{"label":l,"measure":m,"rows":n} for (l,m),n in sorted(feedback.items())])
     write(args.out/"source-sizes.csv",[{"label":l,"rows":len(v),"total_bytes":sum(v),"p50_bytes":quantile(v,.5),"p90_bytes":quantile(v,.9),"p99_bytes":quantile(v,.99),"max_bytes":max(v)} for l,v in sorted(lengths.items())])
-    summary={"selected_row_groups":args.row_group,"rows":expected,"unique_exact_sources":len(keys),"extra_exact_source_rows":sum(sum(v.values())-1 for v in keys.values()),"keys_with_both_labels":sum(len(v)>1 for v in keys.values()),"scope":"physical row groups, not random or whole corpus; no timing"}
+    summary={"selected_row_groups":args.row_group,"rows":expected,"unique_exact_sources":len(keys),"extra_exact_source_rows":sum(sum(v.values())-1 for v in keys.values()),"keys_with_both_labels":sum(len(v)>1 for v in keys.values()),"scope":"requested materialized physical groups; sampling design supplied separately; no native timing"}
     (args.out/"summary.json").write_text(json.dumps(summary,indent=2)+"\n")
     print(json.dumps(summary),flush=True)
 

@@ -32,7 +32,7 @@ retain them. Exact source-byte fingerprints find24,945distinct inputs, zero
 extra duplicates in this group; no goal-state/strategy-result reuse claim.
 
 Sources total45,588,215UTF8bytes. Valid median1,309B; see source-sizes.csv
-for exact interpolated quantiles (valid p998,428.22B; invalid p9914,556.60B).
+for exact interpolated quantiles (valid p99 = 8,428.22B; invalid p99 = 14,556.60B).
 No native elapsed time exists in these three columns: the fraction of compute
 spent on budget-exceeded rows and the1.6%/73% tail hypothesis remain unknown
 for this corpus.
