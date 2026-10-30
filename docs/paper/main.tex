@@ -383,6 +383,26 @@ at 68,930 programs. A separate scan of all 1,835 APRIL test tuples retains
 These are publisher-created proof mutations, not natural failed arrivals;
 diagnostic text does not establish a failure cause or its native cost.
 
+\paragraph{Released computational kernel-checking fixtures.}
+A separate source audit of Meta's Lean Kernel Verify release finds 90
+checked-in kernel-IR fixtures and 12 Lean source files~\cite{leanKernelVerify}.
+The fixtures contain 250 concrete input entries; the pinned emitter implies
+986 positive property wrappers across its five P0 specifications and one
+P1 specification. These are static obligations, not completed native checks
+or an LLM candidate stream. The release specifies Lean~4.34.0, core/Std and
+CPU-only checking of concrete cases. Its full kernel-to-IR frontend still
+depends on the publisher's monorepo.
+
+The tool's \texttt{FAIL} denotes a certain modeled violation; a generated
+positive \texttt{KV.Holds} theorem may consequently be refuted by
+\texttt{native\_decide}. This is not an accepted negation proof or a timeout.
+Its parser distinguishes such refutations from unrelated Lean errors and
+checks process-status consistency. \texttt{UNDECIDED} can exit zero, so exit
+status alone is insufficient to classify all specification outcomes.
+Native evaluation and the stated model/trust assumptions differ from the
+ordinary \texttt{decide +kernel} library point. No native time, acceptance
+rate or transitive axiom closure is established by this audit.
+
 \paragraph{Retained generated candidates and submission policy.}
 The retained generated-candidate workload groups alternative proofs by task. The Goedel-Prover-SFT generation~\cite{goedelInference} contains 32 candidates for each of
 244 miniF2F test tasks~\cite{minif2f} and 186 ProofNet-lineage test tasks~\cite{proofnetSource,goedelProofnet}, for a total of 13,760 candidates.

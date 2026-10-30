@@ -1,0 +1,102 @@
+{
+  "observed_utc": "2026-10-30T11:30:47.968403+00:00",
+  "pin": "129e65bfd8efbf6c45710732d205c941ef65928c",
+  "native_verifier_invocations": 0,
+  "tree_files": 173,
+  "Lean_sources": 12,
+  "Lean_source_bytes": 189413,
+  "JSON_assets": 92,
+  "KIR_fixtures": 90,
+  "KIR_bytes": 481125,
+  "fixture_mode_counts": {
+    "P0": 67,
+    "P1": 23
+  },
+  "concrete_input_counts": {
+    "P0": 184,
+    "P1": 66
+  },
+  "static_emitter_wrapper_counts": {
+    "P0": 920,
+    "P1": 66
+  },
+  "source_checks": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/facebookresearch/lean_kernel_verify/129e65bfd8efbf6c45710732d205c941ef65928c/README.md",
+      "bytes": 11771,
+      "retained_matches_pinned_primary": true,
+      "symbols": {
+        "Lean 4.34.0": [
+          18,
+          73,
+          87
+        ],
+        "native_decide": [
+          10,
+          58,
+          66
+        ]
+      }
+    },
+    {
+      "path": "frontend/emit_lean.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/lean_kernel_verify/129e65bfd8efbf6c45710732d205c941ef65928c/frontend/emit_lean.py",
+      "bytes": 14592,
+      "retained_matches_pinned_primary": true,
+      "symbols": {
+        "native_decide": [
+          17,
+          417
+        ],
+        "KV.Holds": [
+          16,
+          20,
+          417
+        ],
+        "SPECS_P1": [
+          43,
+          415
+        ]
+      }
+    },
+    {
+      "path": "scripts/lkv.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/lean_kernel_verify/129e65bfd8efbf6c45710732d205c941ef65928c/scripts/lkv.py",
+      "bytes": 57430,
+      "retained_matches_pinned_primary": true,
+      "symbols": {
+        "if errors != len(refuted)": [
+          483
+        ],
+        "if status != (1 if refuted else 0)": [
+          487
+        ],
+        "EXIT_STATUS =": [
+          128
+        ]
+      }
+    },
+    {
+      "path": "lean/KV/Check.lean",
+      "url": "https://raw.githubusercontent.com/facebookresearch/lean_kernel_verify/129e65bfd8efbf6c45710732d205c941ef65928c/lean/KV/Check.lean",
+      "bytes": 11232,
+      "retained_matches_pinned_primary": true,
+      "symbols": {
+        "certain : Bool": [
+          81
+        ],
+        "def Holds": [
+          67
+        ],
+        "UNDECIDED": [
+          15,
+          20,
+          207
+        ]
+      }
+    }
+  ],
+  "root_elapsed_s": 1.3174641663208604,
+  "root_maxrss_kib": 25692
+}

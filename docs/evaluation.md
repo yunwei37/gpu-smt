@@ -744,3 +744,28 @@ peak subtraction.
 The manuscript updates only the corresponding Evaluation method/limitations.
 Scientific framing and all four RQs remain fixed. Detailed source checks and
 actual build receipt are in tmp/build-and-evaluate/step-0183-20261030T112405+0000.
+
+
+## 2026-10-30 — released kernel-checker fixture units (step0184)
+
+Root independently verifies W6b95284's retained official pin and complete tree:
+173files,12Lean sources/189413bytes,92JSON assets,90KIR fixtures/481125bytes.
+All90raw JSON fixtures match published CSV size/role/parameter/tensor/grid
+fields. Four retained implementation/README files equal the independently
+retrieved official pinned source. No mirror supplies source evidence.
+
+The67P0/23P1fixtures contain184/66concrete inputs. The emitter's five/one
+specifications imply986positive property-wrapper obligations, not986executed
+proofs or90native requests. Every native outcome remains not_run; no elapsed
+time, acceptance or compiled axiom-closure claim is added.
+
+The emitter generates positive KV.Holds wrappers using native_decide. Tool
+FAIL means a certain modeled violation and can accompany a recognized Lean
+refutation of that positive theorem; no accepted negation proof is implied.
+The parser requires agreement among report, expected false-proposition errors
+and compiler status; unrelated errors are tool failures. UNDECIDED may exit0.
+Application verdict, compiler result and process exit must remain distinct.
+
+The paper adds only the existing-scope workload/setup fact and pinned citation.
+No competitor reproduction, runtime feature, new narrative or RQ change occurs.
+Primary-source details and completed static checks/build follow in tmp/build-and-evaluate/step-0184-20261030T113046+0000.
