@@ -1,5 +1,33 @@
 # Cost concentration versus failure frequency
 
+## Cross-dataset comparison (W036)
+
+| Data point | Cost numerator | Cost denominator | Share |
+|---|---|---|---:|
+| miniF2F7808 |126budget-containing sources,38,795.133s|52,992.124historical worker-attempt s, retries included|73.21%|
+| ProofNet5952,rep0 |70budget-containing sources,138.011s|1,192.435request s|11.57%|
+| AutoVerus3566,3reps |58slowest processes per rep|639.238/631.215/632.607process s|3.315–3.399%|
+
+AutoVerus's third-row metric is the slowest1.6%tail. Its budget-exceeded time
+share remains unknown; it must not be relabelled as3.4%. All ratios keep their
+own summed request/process denominator, not batch wall or a common hardware
+point. Thus miniF2F's concentrated budget exposure is not universal evidence
+about program verification or all Lean candidate distributions.
+
+[M's original audit](../research/mechanisms-2026-10-30/generalization/README.md)
+reports no whole-source recovery on ProofNet, EPFL or APRIL by the implemented
+routes. ProofNet has56recursion/14heartbeat budget sources; the separate
+operational source stays separate. The same70sources appear in all3retained
+repetitions. EPFL's two checked arithmetic expressions recover0complete
+sources; its six training HB cases were reviewed and do not match the proved
+numeric fragment. This is observed method coverage, not impossibility proof.
+
+[Exact comparison CSV and scope](candidates/cross-dataset-budget/) preserve all
+seven Mpoints plus three AutoVerus repetitions. EPFL136/7/12 and APRIL39+39
+remain unequal, stratified, budget-specific samples; none is a population
+budget-time estimate. Previous sample/label/retirement limitations below hold.
+
+
 AutoVerus direct native records contain3,566 candidates per repetition.
 Top58 candidates (ceil1.6%) use3.399%,3.338%,3.315% of each repetition's
 summed process elapsed. The tiny candidate tail consuming73% of Lean time

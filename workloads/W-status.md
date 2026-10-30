@@ -1,6 +1,6 @@
 # W current state
 
-## Current frontier (archived through W035, 2026-10-30)
+## Current frontier (archived through W036, 2026-10-30)
 
 - [OpenAI math](openai-math/README.md): static source audit complete; W035
   archived22/42probability costs,14/21cells observed,8complete. Full CPU/CI unknown.
@@ -21,7 +21,7 @@
   original/800k/.ilean replay pass,rec128fails/256and512pass; unique historical
   cause unresolved. No proven labelbug or time-only explanation.
 - M handoff ready: [6IDs/20HB diagnostic positions](candidates/epfl-training12-native/M-heartbeat-locations.csv).
-  Availability does not confirm M consumed it.
+  M5ef9a0f now explicitly reviews all6cases; none in the proved numeric fragment.
 - Raw/private/failed/partial data are outside checkout on the same PVC.
   Budget/SDK/artifact points are distinct. No full native1.35million type/work
   extrapolation or full-build acceptance claim.
