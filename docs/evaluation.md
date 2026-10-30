@@ -114,8 +114,16 @@ rechecks 136 of 144 selected EPFL returns: 53 compiler passes / 71 errors / 12 b
 cases, 623.799202 s. Eight remain unreturned/right-censored in that record;
 25.60% budget share is returned-prefix cost,not a population estimate.
 Compiler success does not implement the publisher's full declaration judge.
-APRIL qualification and ongoing workload capture status belong to W's
-[versioned replay record](../workloads/candidates/native-versioned/README.md).
+The [complete APRIL39 replay](tmp/build-and-evaluate/step-0188-20261030T115336+0000/step-report.md)
+has all 78 native returns at Lean 4.22rc4 / reconstructed Mathlib 928758a /
+50,000 HB / M6144 / one thread / 30 s self-bound. References: 35 compiler
+passes / 4 HB interruptions; mutations: 23 errors / 16 budget interruptions.
+Unweighted interrupted-mutation request cost share is 50.53%; the inverse-
+probability ratio is 11.05% for the released 1,835 mutation-test rows only,
+without a confidence interval. These are whole process costs, not tactic
+phase time or natural arrivals. The 39 pairs share 32 reference strings.
+Original Mathlib pin is unknown; no publisher acceptance reproduction or
+false-goal claim follows. EPFL censoring remains separate.
 
 [AutoVerus reaggregation](tmp/build-and-evaluate/step-0179-20261030T095708+0000/step-report.md)
 finds about 95% of each complete 3,566-candidate pass on nonzero-exit candidates,

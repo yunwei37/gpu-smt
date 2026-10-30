@@ -383,6 +383,36 @@ at 68,930 programs. A separate scan of all 1,835 APRIL test tuples retains
 These are publisher-created proof mutations, not natural failed arrivals;
 diagnostic text does not establish a failure cause or its native cost.
 
+A separate native replay completes all 39 selected APRIL error/reference
+pairs in two finite batches, using the published Lean~4.22.0-rc4 version,
+release Mathlib revision \texttt{928758a}, a 50,000-heartbeat option,
+6,144\,MiB native memory option, one Lean thread and a 30-second internal
+wall bound per compiler process. The original dataset's Mathlib commit is
+unknown, so this is a dependency reconstruction, not exact publisher
+reproduction. A small import declares the existing native memory option;
+the original proof sources remain retained separately. All 78 invocations
+return without a wall alarm, crash or startup-configuration failure.
+
+References produce 35 compiler passes and four heartbeat interruptions,
+with 125.856 seconds of summed process-wall cost. Mutations produce 23
+ordinary errors and 16 budget interruptions, totaling 118.649 seconds.
+The interrupted mutation requests cost 59.955 seconds, or 50.53\% of the
+unweighted mutation total. Their diagnostics are 12 recursion-only,
+three heartbeat-only and one containing both. These are whole process
+costs of classified requests, not time spent in a particular tactic.
+
+Selection deliberately includes 15 of the release's 20 budget-text cases.
+Using each stratum's inverse inclusion probability, the ratio of estimated
+budget-interrupted mutation cost to total mutation cost is 11.05\% for
+the 1,835 released mutation-test rows at this resource point. This small
+stratified point estimate has no confidence interval; it is not an estimate
+for natural prover arrivals or the original 7,808-candidate workload.
+The four bounded-out references do not become invalid reference proofs.
+There are only 32 distinct reference strings across the 39 pairs, so repeated
+originals induce correlation; exact strings do not establish native cache
+eligibility. The two batch clocks and their intervening pause are kept
+separate, and no service-throughput gain is inferred.
+
 \paragraph{Released computational kernel-checking fixtures.}
 A separate source audit of Meta's Lean Kernel Verify release finds 90
 checked-in kernel-IR fixtures and 12 Lean source files~\cite{leanKernelVerify}.

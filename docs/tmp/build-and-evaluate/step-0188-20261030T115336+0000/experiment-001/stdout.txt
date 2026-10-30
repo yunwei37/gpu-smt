@@ -1,0 +1,95 @@
+{
+  "observed_utc": "2026-10-30T11:53:36.691746+00:00",
+  "native_invocations": 0,
+  "pairs": 39,
+  "native_returns": 78,
+  "references_distinct_source_strings": 32,
+  "mutations_distinct_source_strings": 39,
+  "sample_recorded_budget_text": 15,
+  "sampling_cells": 14,
+  "released_mutation_test_rows": 1835,
+  "outcome_costs": [
+    {
+      "mode": "candidate",
+      "status": "budget_exceeded",
+      "n": 16,
+      "wall_s": 59.95455204229802,
+      "share": 0.5053108841690239
+    },
+    {
+      "mode": "candidate",
+      "status": "lean_error",
+      "n": 23,
+      "wall_s": 58.69429151248187,
+      "share": 0.4946891158309761
+    },
+    {
+      "mode": "reference",
+      "status": "budget_exceeded",
+      "n": 4,
+      "wall_s": 23.841268905438483,
+      "share": 0.18943250739577802
+    },
+    {
+      "mode": "reference",
+      "status": "compile_ok",
+      "n": 35,
+      "wall_s": 102.01500166393816,
+      "share": 0.810567492604222
+    }
+  ],
+  "weighted_cost_ratios": [
+    {
+      "mode": "candidate",
+      "status": "budget_exceeded",
+      "weighted_count": 84.33333333333333,
+      "weighted_cost_s": 588.0817012321204,
+      "ratio_of_estimated_cost_totals": 0.11054997045816263
+    },
+    {
+      "mode": "candidate",
+      "status": "lean_error",
+      "weighted_count": 1750.6666666666667,
+      "weighted_cost_s": 4731.519007794559,
+      "ratio_of_estimated_cost_totals": 0.8894500295418374
+    },
+    {
+      "mode": "reference",
+      "status": "budget_exceeded",
+      "weighted_count": 68.66666666666666,
+      "weighted_cost_s": 541.0457690367475,
+      "ratio_of_estimated_cost_totals": 0.0967303451818595
+    },
+    {
+      "mode": "reference",
+      "status": "compile_ok",
+      "weighted_count": 1766.3333333333333,
+      "weighted_cost_s": 5052.294852456388,
+      "ratio_of_estimated_cost_totals": 0.9032696548181405
+    }
+  ],
+  "mutation_budget_types": [
+    {
+      "diagnostics": [
+        "heartbeat"
+      ],
+      "n": 3
+    },
+    {
+      "diagnostics": [
+        "heartbeat",
+        "recursion"
+      ],
+      "n": 1
+    },
+    {
+      "diagnostics": [
+        "recursion"
+      ],
+      "n": 12
+    }
+  ],
+  "replay_rows_with_explicit_heartbeat_cap_edits": 0,
+  "root_elapsed_s": 0.004050935618579388,
+  "root_maxrss_kib": 12524
+}
