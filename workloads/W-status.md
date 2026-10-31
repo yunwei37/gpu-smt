@@ -1,19 +1,19 @@
 # W current state
-## Current frontier (W038)
-- .olean-only native costs25/42,10complete cells; latest snapshot
-  openai-math/partner-native-results. Per-cell intervals are nominal models;
-  full-build CPU/CIunknown. M9prerequisite timings excluded from M8targets.
-- Sole active collection: PVC workloads/openai4341-standard-artifacts-a,
-  controller81605/birth747121830; verify real launch/terminal.
-  Original42frame,26ready/16pending. Standard .olean/.ilean/.c,LLVMfalse,
-  M9216/CPU0-7/j8,self<=1200/group1700. W16GiBinc old13733unchanged.
-  Parent ownership also sampled. Keep healthy run; no second WLean.
-- M5ef9a0f:ProofNet70budget sources/11.574%request time,0recovery;
-  EPFL/APRIL0whole-source recovery. Cross-dataset comparison in
-  candidates/cross-dataset-budget; AutoVerus3.4%is slowest1.6%tail,
-  its budget-share unknown. M reviewed all6Wtraining HB cases.
-- All raw/failed/partial sources,objects,CPU/memory/exits on existing PVC.
-  No old capture restart, source substitution or CPU-oracle work.
+## Current frontier (W039)
+- Standard compiler artifacts .olean/.ilean/.c,M9216,j8,authoredHB:
+  26/42original draws,11/21complete cells. FullCPU/globalCI unknown.
+  Tables/method:openai-math/standard-artifact-native-a.
+  Largest cell74.1775CPUh,[0,623.1803]cell-only.
+- Old .olean-only M8192matrix25/42,10cells retained separately.
+- Sole active PVC workloads/openai4341-standard-artifacts-b,
+  controller84572/birth747199270,4original missing draws/closure,
+  group1700/child<=1200. W16GiB incl old13733,CPU0–7.
+- Cross-dataset candidates/cross-dataset-budget includes M5ef9a0f:
+  miniF2F73.21%budget-source attempttime,ProofNet11.57%. AutoVerus3.4%
+  is slowest1.6%tail,not budgetshare. EPFL/APRIL sample-specific;
+  ProofNet/EPFL/APRIL0whole-source recovery.
+- All raw/failed/partial/source/objects on PVC; no source substitution,
+  old capture restart,infrastructure mutation or CPU-oracle work.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
