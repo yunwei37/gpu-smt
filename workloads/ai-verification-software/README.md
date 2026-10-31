@@ -29,8 +29,9 @@ They are final experiment outcomes, not every repair/verification call.
 
 The45detailed tables contain Verus3839rows (527success/3312failure),
 3819nonempty programs; Dafny12186rows (9254success/2932failure),
-10290nonempty programs. They expose final code, feedback and prompts, not a
-complete intermediate-candidate history. No Lean table was found. Empty
+10290nonempty programs. They expose final code and feedback. All16025values in each of
+generate_prompt, fix_prompts and debug_files are empty strings, despite these
+columns being advertised in the schema. They expose no intermediate history. No Lean table was found. Empty
 outputs are missing, not zero-cost jobs. Selected runs cannot be weighted as
 all55397experiments. Diagnostic keyword classes are descriptive; zero matching
 budget keywords does not establish zero timeout cost.
@@ -106,3 +107,20 @@ or verifier. Preliminary joins/transport errors are retained; final joins use
 non-mutating dictionary lookups. No native CPU-hour estimate, acceptance,
 slow-tail share or speedup follows from this static audit. M/O keep P-core
 priority; future timing waits for actual completion. Review is self-review.
+
+
+## Public-thread and actual-payload follow-up
+
+All12official Vero issue/PR threads were inspected read-only. They include
+localized Lean/shell diagnostics and proposed reference/specification repairs,
+but no full model-run bundle or trajectory link was identified. Markdown code
+fences are not counted as complete candidates, and the external reported
+disproof/elaboration/axiom findings were not locally rechecked. See
+vero-public-threads.csv; immutable main source was not changed to a PR.
+
+trace-field-completeness.csv verifies that every one of16025values in each
+advertised prompt/debug field is actually an empty string. Schema presence
+does not mean released trajectory content. lean-snapshot-uniqueness.csv
+makes the1490unique-text/626overlap calculation explicit without semantic
+deduplication. repository-source-totals.csv includes all Git-tree source files;
+role-separated characterization tables deliberately exclude unrelated fixtures.

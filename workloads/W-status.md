@@ -1,5 +1,5 @@
 # W current state
-## Current frontier (W055: source costs collected; M/O priority hold)
+## Current frontier (W056: payload audit; M/O priority hold)
 - Direct user instruction: M profile matrix and O calibration/replay finish
   before W submits another timed job. Do not exploit gaps between their cases.
 - W waiting wrapper38309/birth748045910 cancelled06:28:45UTC before capture.
@@ -22,6 +22,8 @@
   are not substituted or naively pooled.
 - New ai-verification-software audit:1503Lean model snapshots/1490unique
   (primary626included),14109nonempty Verus/Dafny final programs with feedback.
+  All16025prompt/debug fields are actually empty, not released trajectories.
+  Vero12officialthreads audited; code fences not complete model candidates.
   No generated candidates. Lean4.34.0/4.29.1SDKs and9Vero dependency source
   packages prepared; compiled Mathlib caches absent.
 - Only workloads/ edited. No CPUoracle, extraAgent, root paper, infrastructure
