@@ -110,12 +110,16 @@ def main():
                   if r["module"] in complete]
         estimate, variance = stratum_estimate(population, sample_n, values)
         cells.append(dict(estimate=estimate, variance=variance, sample_n=sample_n))
+        cell_interval = confidence_interval([cells[-1]])
         coverage.append(dict(
             stratum=key, population_modules=population,
             planned_sample=sample_n, completed_native_costs=len(values),
             measured_cpu_sum_s=sum(values),
             estimated_stratum_cpu_h="" if estimate is None else estimate / 3600,
-            estimated_variance_cpu_s2="" if variance is None else variance))
+            estimated_variance_cpu_s2="" if variance is None else variance,
+            nominal_cell95_lower_cpu_h="" if cell_interval is None else cell_interval["lower_cpu_h"],
+            nominal_cell95_upper_cpu_h="" if cell_interval is None else cell_interval["upper_cpu_h"],
+            interval_scope="complete single stratum only; normal-cost model" if cell_interval else "unavailable: incomplete cell"))
     args.out.mkdir(parents=True, exist_ok=True)
     write_csv(args.out / "stratum-coverage.csv", coverage)
     sample_rows = []
