@@ -1,13 +1,13 @@
 # W current state
-## Current frontier (W053: M/O priority hold)
+## Current frontier (W054: software workload; M/O priority hold)
 - Direct user instruction: M profile matrix and O calibration/replay finish
   before W submits another timed job. Do not exploit gaps between their cases.
 - W waiting wrapper38309/birth748045910 cancelled06:28:45UTC before capture.
   /proc/locks confirms no W waiter after cancellation. launch history retained;
   additive queue-cancelled.json records it. No native run or target cost.
-- Active37246/birth747971468 cohort remains unchanged and may finish normally.
-  Raw point openai4341-locked-original-c. Verify actual PID/birth and terminal,
-  collect its complete raw data after it really ends; do not restart it.
+- Prior37246cohort has actual terminal:544native/543compile/1group censor.
+  Raw openai4341-locked-original-c retained; full collection/retirement and cost
+  aggregation are next. Do not restart it or launch followups.
 - Future W launch path is openai-math/pcore_launch.py: inspect actual /proc/locks
   waiters, then nonblocking take, recheck and yield. Never enqueue/block/retry
   while other lanes wait. Six controls passed; actual P lock only inspected.
@@ -19,6 +19,10 @@
   costs at that completed boundary; new active cohort not yet aggregated.
   FullCPU/globalCI still unestablished. Original42draws and six-draw extension
   are not substituted or naively pooled.
+- New ai-verification-software audit:1503Lean model snapshots/1490unique
+  (primary626included),14109nonempty Verus/Dafny final programs with feedback.
+  No generated candidates. Lean4.34.0/4.29.1SDKs and9Vero dependency source
+  packages prepared; compiled Mathlib caches absent.
 - Only workloads/ edited. No CPUoracle, extraAgent, root paper, infrastructure
   or other-lane changes. Every raw/failed/partial/interrupted record retained.
 

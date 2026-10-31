@@ -3,6 +3,8 @@
 Pinned characterization of already published proofs and candidates.
 No inference or new candidate generation.
 
+- [AI-generated verification software: public outputs and static audit](ai-verification-software/)
+
 - [Sources, revisions, licenses, versions, scale and selection](catalog.csv)
 - [OpenAI math source/import audit and partial native measurements](openai-math/README.md)
 - [Candidate verdicts, errors, tactics and retained native tail](candidates/README.md)
