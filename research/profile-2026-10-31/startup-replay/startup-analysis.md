@@ -35,3 +35,28 @@ Full smaps samples and raw commands are on the PVC path in README.
 Kernel replay and perf are not yet complete at this checkpoint. Only startup
 columns are populated. The first package-shadowing attempt remains separate
 and is not treated as measurement success. Review: self-review.
+
+## Resident-memory composition
+Across the 39 import-only runs, median wait4 peak RSS was 3,264,128 KiB
+(3.113 GiB), median sampled PSS at the RSS peak was 3,251,007 KiB.
+Median file-backed fraction of PSS was 92.89%; median anonymous PSS was
+243,472 KiB, and median Shared_Clean was only 2,008 KiB. Most resident file
+pages were reported Private_Clean because no second process mapped them in
+this serial experiment. This does not show that they cannot be shared or that
+3.1 GiB of mutable heap was rebuilt. Actual cross-worker sharing needs a
+different experiment. The retained import-only repetitions incurred zero major
+faults in total; these are warm-cache results, not cold-storage startup.
+Median native system/(user+system) share was 30.75% for import controls.
+The per-module medians are in import-memory.csv; source build fractions and
+import-control fractions are distinct populations.
+
+## Source interpretation before sampling evidence
+Lean 4.34.1 Environment.lean readModuleDataParts delegates to CompactedRegion.read.
+finalizeImport explicitly allocates constant-to-module and public/private
+constant hash maps, iterates module constants, constructs Kernel.Environment
+and initializes persistent extensions. These are source-defined candidate
+costs, not yet an observed hotspot ranking. See the versioned upstream
+[source](https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Environment.lean).
+The built-in LeanChecker uses that import environment then Kernel.Environment.replay
+for target constants; it trusts imports and skips unsafe/partial declarations.
+It is stock-kernel rechecking, not an independently implemented proof checker.
