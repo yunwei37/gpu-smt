@@ -410,3 +410,22 @@ at180s,rc-15; no completedfreshcost or ratioimputed. StockSDKsource
 verified: defaultimports trusted;freshloadedconstantmap intoemptykernel.
 Unsafe/partial skip upstream; neither independentimplementation/axiom audit.
 No current repairedemptycontrols/exclusivekernelcost; missing retained.
+
+## Public generated-software outputs and observation units — step0220
+[Self-review](tmp/build-and-evaluate/step-0220-20261031T081029+0000/step-report.md), published W2ad366d.
+Root independently reads1503original Lean snapshots, verifies1490byte strings,
+2013398bytes and626original snapshot inclusion; not626+1503.
+Streams published journal for exact lexicalcounts, with no compiler start.
+Reads all45rawfinaltables and joins16025rows/14109nonempty final outputs;
+emptyoutputs remainmissing, publisherlabels notnativeacceptance.
+No result is interpreted as perattempttiming, CPU fraction or fulltrajectory.
+Static snapshots deepmath/proceduralsoftware scope remain separate.
+Vero43/640active scaffold files/maxinternaldepth35 are not evaluatedoutputs;
+HTTP403 limits absenceclaim. LKV90fixtures/12Leanfiles/templatenative_decide
+notLLMstream/observednativeexecution. Vericoding rootversion metadata not
+historicalperrun environment. Software nativecosts still explicitmissing.
+RootE22–23/<4GiB; only paper/bib/eval/step edited. No W/M/O change.
+
+Root all45table audit finds0nonempty explicit error_message fields:
+do not call these complete failurediagnostics. Leanlexicalflags axiom35/
+sorry12files are not measured nativeaxioms or proofacceptance.
