@@ -491,3 +491,19 @@ Designimplication explicitlyexternalcgrouporlower/coalescedqueryfrequency,
 not implementedpolicy. Kernel docs memory.max/OOMboundary cited; distinct
 accounting/errorsemantics retained. No cgroup/nativeM/runtime change.
 Paperrootonly/E22–23, no P-lock/agent/otherlane mutation.
+
+## Completed Grid no-M triplets from closed native cells — step0225
+[Self-review](tmp/build-and-evaluate/step-0225-20261031T102209+0000/step-report.md).
+No new rootnative run. Nine MnoMplain/stat/trace cells have actual result/
+native receipts and retiredPIDbirths; source/explicitEnv/ARGV differ only-M/
+output. Outer15GiBcgroup retained; rootchecks empty native logs and all
+artifact sizes/retained parityreceipts. FullMprioritydriver/matrix notclaimed
+complete and healthy remainingworker cells untouched.
+n3plain wallmedian305.692852280s,
+range303.202725–320.611816 vsguardedn3median621.935656,
+ratio2.034511608/reduction50.848155%.
+Sysmedian107.411798range101.353828–213.345772 vs436.150621,
+75.372774%medianreduction. Notsinglefirstresult/fullcorpus/equalpolicygain.
+NoMstatwall+7.248272%/sys+
+126.981651% versusownplainmedians, notuniversal
+observercorrection. Wcostguardbias/othermoduleeffect/failuresemanticsunknown.
