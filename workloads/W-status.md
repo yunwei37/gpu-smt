@@ -1,16 +1,18 @@
 # W current state
-## Current frontier (W049)
+## Current frontier (W050)
 - Five original real-file profile cases/four modes completed20/20, all accepted,
   exact-source and identical native diagnostics; all native PID/birth retired.
   See openai-math/native-profile-five. Raw full evidence on PVC.
 - Selected computational cases75–94% C++ checker-family user cycles; mathematical
-  comparators~2%, mostly Meta/import. Family includes state cleanup; no global
+  comparators~2%, mostly Meta/import. Revision2 also recognizes private symbols.
+  Computational normalization anchors66–81%, state cleanup9–13%. Family includes state cleanup; no global
   wall/kernel/GPU bound.46,882native samples/lost0; unresolved mass retained.
 - Original native-setting cost frame27/42 and11/21complete cells;
   strict shared-P-lock frame6/42 and2cells. FullCPU/globalCI unknown.
-- No W capture active at this boundary. Next original endpoints: Moments.Tail,
-  Hadwiger.FiniteComparisonBounds, MixedTargets.OriginalBlock81, KeySound82;
-  verify closure/preparation and queue under shared lock, not old preparedC.
+- Original-cohort617jobs/four unchanged endpoint IDs actually queued on the
+  shared lock: openai4341-locked-original-c wrapper37246/birth747971468.
+  Read launch/capture-start/terminal and actual identity before interpreting it.
+  Moments.Tail/Hadwiger pair first; no native cost result at this boundary.
 - Every timed/profile run taskset0–7/flock pcore.lock; prep/analysis8–23.
   W16GiB sampled watchdog, no kernel hard quota. Old13733 ended platform restart.
 - Six independent precision draws remain prepared, not measured. No source

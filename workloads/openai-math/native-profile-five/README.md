@@ -4,11 +4,11 @@ All 20/20 planned native invocations completed without sorry, with exact origina
 
 | Original source (short name) | C++ checker family | Lean Meta | Import | Unresolved or runtime without phase anchor | IPC | Cache misses / 1,000 instructions |
 |---|---:|---:|---:|---:|---:|---:|
-| InteriorH1Derivative | 1.92% | 63.16% | 14.44% | 16.73% | 2.189 | 2.003 |
-| ReindexSingle | 2.06% | 48.84% | 35.60% | 11.90% | 1.928 | 3.503 |
-| UMoments9 | 81.52% | 5.64% | 0.69% | 4.04% | 1.450 | 1.737 |
-| BarrierData41 | 74.93% | 5.06% | 0.82% | 7.82% | 1.495 | 1.379 |
-| EnvelopePsiB | 94.01% | 1.06% | 2.23% | 0.91% | 1.638 | 6.101 |
+| InteriorH1Derivative | 1.92% | 64.38% | 16.02% | 11.44% | 2.189 | 2.003 |
+| ReindexSingle | 2.06% | 50.58% | 34.60% | 3.17% | 1.928 | 3.503 |
+| UMoments9 | 81.52% | 5.93% | 0.66% | 3.68% | 1.450 | 1.737 |
+| BarrierData41 | 74.93% | 5.37% | 0.80% | 7.55% | 1.495 | 1.379 |
+| EnvelopePsiB | 94.01% | 1.11% | 2.07% | 0.72% | 1.638 | 6.101 |
 
 These percentages partition **decoded native-PID user-cycle sample periods**, not wall time, all-mode CPU, whole-library work or a GPU speedup bound. Each sample uses the nearest recognized caller symbol. The C++ family includes reduction, inference/equality and state cleanup; it is not solely final theorem validation. Runtime-primitive leaf shares (19.5–29.9%) are a different, overlapping axis and must not be added to caller shares. The observed heterogeneity supports keeping computational and ordinary mathematical files separate in characterization.
 
@@ -29,6 +29,12 @@ All five decoded period totals exactly match stock perf report, with zero report
 Default inline/source address resolution invoked addr2line on the release Lean library and stalled during **offline** decoding. No DEBUGINFOD_URLS or sockets were observed. Only our verified owned decoder/addr2line children were terminated; native captures were already complete. postprocess-repair.json preserves the repair evidence, and original raw/earlier partial derivatives remain unchanged. Final decoding uses --no-inline --max-stack1024, changes no host setting, and does not rerun native compilation.
 
 case-summary.csv keeps native rusage separate from instrument wrapper costs. Baseline-after/before CPU drift is -9.91%, -2.41%, +5.62%, +0.11%, +6.38%. A negative instrument/baseline ratio is not an acceleration result. One bracket per file cannot give a reliable overhead CI; drift, cache state, sample noise and instrumentation remain confounded. System CPU is present in invocation metrics but outside the user-cycle phase denominator.
+
+## Attribution refinement
+
+Revision 2 recognizes the actual native private-name prefix l___private_Lean (the initial permissive anchor missed private functions and left them unresolved). Explicit private environment/module-reader symbols are included in import. Changing the nearest anchor can move a period from a more distant public import to nearer private Meta/Compiler code; this is a classification change, not a new measurement. The initial analyzer/tables remain under final-analysis/v1-classification on PVC.
+
+checker-subfamilies.csv splits the same checker-family periods: normalization anchors account for 71.43%, 65.71%, 80.61% of all native user-cycle periods in UMoments9, BarrierData41 and EnvelopePsiB, respectively; checker-state cleanup accounts for 9.30%, 8.87%, 13.34%. These are nearest symbol subfamilies, not disjoint semantic phases inside the evaluator. Their sum exactly equals the prior broader checker family. Every decoded category partition and stock-report period check still passes. No native rerun was needed.
 
 ## Cost-frame update and limits
 
