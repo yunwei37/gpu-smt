@@ -1,0 +1,52 @@
+{
+  "target_records": 15,
+  "successful_targets": 15,
+  "successful_short_modules": 13,
+  "scope_samples": [
+    {
+      "module": "Init.Data.Nat.Basic",
+      "import_relative_success": true,
+      "import_relative_s": 2.026039369404316,
+      "fresh_success": true,
+      "fresh_s": 2.428216775879264,
+      "fresh_stop": "",
+      "fresh_returncode": 0,
+      "fresh_over_import_relative": 1.1985042406126558,
+      "fresh_peak_rss_kib": 147992,
+      "default_peak_rss_kib": 147448,
+      "fresh_bound_s": 180
+    },
+    {
+      "module": "Mathlib.Data.Nat.Basic",
+      "import_relative_success": true,
+      "import_relative_s": 2.1949921678751707,
+      "fresh_success": true,
+      "fresh_s": 73.1344447657466,
+      "fresh_stop": "",
+      "fresh_returncode": 0,
+      "fresh_over_import_relative": 33.318772538739076,
+      "fresh_peak_rss_kib": 982452,
+      "default_peak_rss_kib": 885616,
+      "fresh_bound_s": 180
+    },
+    {
+      "module": "OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion",
+      "import_relative_success": true,
+      "import_relative_s": 2.555695364251733,
+      "fresh_success": false,
+      "fresh_s": 180.1111795194447,
+      "fresh_stop": "wall_budget",
+      "fresh_returncode": -15,
+      "fresh_over_import_relative": "",
+      "fresh_peak_rss_kib": 2240052,
+      "default_peak_rss_kib": 2023372,
+      "fresh_bound_s": 180
+    }
+  ],
+  "paths": [
+    "research/profile-2026-10-31/startup-replay/repaired-kernel-replay.csv",
+    "research/profile-2026-10-31/startup-replay/replay-scope-comparison.csv",
+    "research/profile-2026-10-31/startup-replay/repaired-replay-analysis.md",
+    "research/profile-2026-10-31/startup-replay/replay-analysis.md"
+  ]
+}

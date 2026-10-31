@@ -1,0 +1,56 @@
+{
+  "source": "3f52f97",
+  "raw_records": 21,
+  "successful_target_replays": 15,
+  "short_modules": 13,
+  "median_short_replay_process_wall_s": 3.5103127267211676,
+  "median_ratio_to_prior_build_medians": 1.2805046357990424,
+  "same_baseline_denominators_recomputed": 13,
+  "native_identities_retired": 21,
+  "flock_submission_identity_retired": true,
+  "scopes": [
+    {
+      "module": "Init.Data.Nat.Basic",
+      "import_relative_success": "True",
+      "import_relative_s": "2.026039369404316",
+      "fresh_success": "True",
+      "fresh_s": "2.428216775879264",
+      "fresh_stop": "",
+      "fresh_returncode": "0",
+      "fresh_over_import_relative": "1.1985042406126558",
+      "fresh_peak_rss_kib": "147992",
+      "default_peak_rss_kib": "147448",
+      "fresh_bound_s": "180"
+    },
+    {
+      "module": "Mathlib.Data.Nat.Basic",
+      "import_relative_success": "True",
+      "import_relative_s": "2.1949921678751707",
+      "fresh_success": "True",
+      "fresh_s": "73.1344447657466",
+      "fresh_stop": "",
+      "fresh_returncode": "0",
+      "fresh_over_import_relative": "33.318772538739076",
+      "fresh_peak_rss_kib": "982452",
+      "default_peak_rss_kib": "885616",
+      "fresh_bound_s": "180"
+    },
+    {
+      "module": "OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion",
+      "import_relative_success": "True",
+      "import_relative_s": "2.555695364251733",
+      "fresh_success": "False",
+      "fresh_s": "180.1111795194447",
+      "fresh_stop": "wall_budget",
+      "fresh_returncode": "-15",
+      "fresh_over_import_relative": "",
+      "fresh_peak_rss_kib": "2240052",
+      "default_peak_rss_kib": "2023372",
+      "fresh_bound_s": "180"
+    }
+  ],
+  "previous_failed_v2_rows_preserved": 41,
+  "root_native_runs": 0,
+  "root_analysis_s": 0.013352121226489544,
+  "root_analysis_maxrss_kib": 13444
+}

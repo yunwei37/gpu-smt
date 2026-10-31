@@ -1,0 +1,23 @@
+{
+  "scope": "functional E-core preparation only; no timing/profile metric",
+  "affinity": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "args": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=3",
+    "60",
+    "/workspaces/.agent-state/gpu-smt-workloads/toolchains/lean-4.34.1-linux/bin/leanchecker",
+    "-v",
+    "OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion"
+  ],
+  "returncode": 0,
+  "budget_stop": false,
+  "target_replay_announced": true,
+  "stdout": "replaying OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion\n",
+  "stderr": ""
+}

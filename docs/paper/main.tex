@@ -653,14 +653,63 @@ not a cause of the complete library modules' system-CPU share.
 \missing{Uninstrumented import controls, repeat-based observer uncertainty,
 cold-cache controls, allocation/CPU attribution and matched retained-state costs.}
 
-The attempted compiled-module replay matrix does not yet provide kernel
-costs: 28 target invocations and 13 empty-module controls all stop at
-module discovery before checking.
-All 28 target returns have \texttt{rc=1}, as do the 13 empty controls.
-Their exit-one records are operational setup failures, not proof rejections;
-no checker/build ratio or target-minus-empty kernel time is reported.
-\missing{Successful toolchain-qualified kernel replay and matched
-checking/build costs after module-discovery repair.}
+\paragraph{Replay costs depend on the checking boundary.}
+The first compiled-module replay attempt stops before checking:
+all 28 targets and 13 empty controls fail module discovery.
+Those operational failures remain excluded from replay-cost statistics.
+After correcting artifact-path enumeration, a separate stock Lean~4.34.1
+matrix completes all 15 requested import-relative target replays.
+Every successful invocation announces exactly its requested module and
+returns zero without diagnostics.
+
+For the 13 short modules, median checker-process wall time is 3.510 seconds.
+The median ratio to each module's earlier three-repeat full-build median
+is 1.281. Thus eliminating source elaboration does not automatically
+make this fresh checker process cheaper in the selected cohort.
+Both durations include process setup and environment work, and the
+denominators include the earlier import experiment's observer.
+These are separate sequential captures, not contemporaneous randomized
+construction/replay pairs or an exclusive-kernel fraction.
+Grid and Amplitudes replay in 253.439 and 113.618 seconds, respectively;
+their ratios to separately retained historical standard builds are
+0.400 and 0.630. These two historical comparisons remain separate from
+the 13-module median and do not establish service speedups.
+
+Import-relative replay trusts imported declarations and rechecks target
+constants. In contrast, \texttt{--fresh} imports the target and replays
+the loaded constant map into an empty kernel environment.
+Both modes use the stock kernel and skip upstream-designated unsafe and
+partial declarations~\cite{leanCheckerDocs}; neither is a separately
+implemented checker or an axiom-clean proof audit.
+The three scope controls in Table~\ref{tab:replay-scope} illustrate why
+their costs cannot be exchanged.
+Mathlib's Nat.Basic takes 2.195 seconds import-relative but 73.134 seconds
+with \texttt{--fresh}, a 33.32 ratio.
+NearPinDeletion's fresh-scope call reaches its 180-second wall bound;
+its 180.111-second observed duration is a censored attempt, not a completed
+replay cost, failed proposition or successful ratio.
+Fresh scope does not mean a cold OS page cache.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Module & Import-relative (s) & Fresh-scope (s)\\
+\midrule
+Init Nat.Basic & 2.026 & 2.428\\
+Mathlib Nat.Basic & 2.195 & 73.134\\
+NearPinDeletion & 2.556 & censored at 180\\
+\bottomrule
+\end{tabular}
+\caption{Separate bounded checker-process invocations with different
+trust/replay scopes. Fresh scope rechecks the loaded constant map, not
+only the target source; the last cell is not a successful checking time.}
+\label{tab:replay-scope}
+\end{table}
+
+\missing{Contemporaneous repeated build/replay comparisons, successful
+empty-module controls after repair, exclusive target-check cost and
+replay coverage beyond the selected 15 targets.}
 
 Established environment reuse provides a useful contrast~\cite{repl,kimina}.
 In one completed miniF2F resource comparison, four warm workers take
@@ -690,6 +739,11 @@ how much a production service can remove. The large file-backed share also preve
 gains by multiplying per-process RSS. Calibration and matched retained-state
 comparisons must establish these benefits without changing verification
 behavior.
+A verification service must also expose its checking boundary: rebuilding a
+source, rechecking it relative to trusted imports and replaying its full
+loaded constant map are different operations.
+Charge discovery, imports and cleanup for the chosen operation; do not
+substitute a cheaper trust scope for an equivalent performance comparison.
 
 \section{Budget-failure exposure is workload dependent}
 \label{sec:failures}

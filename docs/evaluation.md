@@ -390,3 +390,23 @@ consumer-specific cancellation/retry accounting, reproducible versioned
 logical-work budget, targeted certified representation changes.
 Existing allocationheartbeats not assumed observerinvariant; wall/RSS remain
 separate operational protection. No new policy/engine/other-lane mutation.
+
+## Qualified replay and trust-scope costs — step0219
+[Self-review](tmp/build-and-evaluate/step-0219-20261031T071200+0000/step-report.md).
+Supersedes missing qualified replay in step0218 with published O3f52f97,
+without rewriting failed v2 capture.21rawnative rows verified against CSV/
+stdout/stderr/budgets/PIDbirth; all identities and submission retired.
+Shared-lock holder matches submitted flock; root newLeanstarts0.
+15/15target replay successes,13earlier-short modules. Recomputed each
+build denominator from O4f0e90e39buildrecords/13medians:
+checkerprocessmedian3.510312727s,medianratio1.280504636.
+Sequential earlier-observer denominators, not purekernelfraction/speedup.
+Grid253.438516s/Amplitudes113.617746s compared separately to historical
+634.280070s/180.275578s, ratios0.399569/0.630245, not newmatchedbuilds.
+
+Scopecontrols Initdefault2.026039/fresh2.428217;Mathlib2.194992/73.134445,
+ratio33.318773. NearPinDeletiondefault2.555695;freshwallcensor180.111180
+at180s,rc-15; no completedfreshcost or ratioimputed. StockSDKsource
+verified: defaultimports trusted;freshloadedconstantmap intoemptykernel.
+Unsafe/partial skip upstream; neither independentimplementation/axiom audit.
+No current repairedemptycontrols/exclusivekernelcost; missing retained.
