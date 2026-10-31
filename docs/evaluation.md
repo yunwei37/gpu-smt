@@ -476,3 +476,18 @@ Instrumentedstatwall+1.4667%/sys+33.0974%;record+1.5681/+11.4738%;
 tracesys+18.2492%, fixedtriplets not randomizedCIs. Trace losses retained.
 Othermodulecausality/globalcost/softwarecosts stillmissing.
 RootE22–23/15180KiBpeak/12.964sanalysis/0native starts.
+
+## Preliminary half-wall contrast and implications for W costs — step0224
+[Self-review](tmp/build-and-evaluate/step-0224-20261031T093728+0000/step-report.md), explicit latest author request.
+Reuses already-audited d4768da, no new native run or repeatedrawdecode.
+Single noM320.611816 vsbaseline-n3median621.935656:48.449359%lesswall;
+107.411798vs436.150621sys:75.372774%less. Labels preliminary/n1vsn3/
+Gridonly/nonrandom, not finalspeedup or exactremovablephasefraction.
+UMoments9/EnvelopePsiB counterfactuals stillmissing in frozen resultset.
+
+Wcostpoint-M9216 remains actualguardedcost; projectedexternal-only costs
+maybelowerbyunknownamount. NoUniformGridcorrection/fullcorpusclaim.
+Designimplication explicitlyexternalcgrouporlower/coalescedqueryfrequency,
+not implementedpolicy. Kernel docs memory.max/OOMboundary cited; distinct
+accounting/errorsemantics retained. No cgroup/nativeM/runtime change.
+Paperrootonly/E22–23, no P-lock/agent/otherlane mutation.

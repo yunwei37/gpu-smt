@@ -573,14 +573,35 @@ No row is a kernel-only timer or a matched production-service speedup.}
 \label{tab:grid-guard-accounting}
 \end{table*}
 
+\paragraph{Preliminary wall-time impact and implications for cost estimates.}
 The first no-\texttt{-M} plain counterfactual completes in 320.612 seconds
 with 107.412 system-CPU seconds and matching diagnostics/\texttt{.olean}.
 Its source, explicit environment and command match the guarded control
 apart from the in-process memory option and output path.
 The outer limits remain active, but the internal resource policy changes.
-This single exploratory repetition supports the accounting-path
-interpretation; it is not the final repeated performance comparison or a
-guarantee for memory-exhausting candidates.
+Relative to the guarded triplet's medians, this one run has 48.45\%
+lower wall time and 75.37\% lower system CPU, with the same acceptance,
+diagnostics and serialized artifact.
+This preliminary contrast suggests that the in-process memory limit used
+in our benchmarks can consume nearly half the observed latency of this
+compute-heavy accepted module, without changing its verdict.
+It compares one removal run with three guarded baselines; it is not a
+completed repeated speedup result or a guarantee for memory-exhausting
+candidates. The accounting-path evidence and this counterfactual concern
+Grid only. Corresponding UMoments9 and EnvelopePsiB controls are not yet
+established by this result set.
+
+Our W-line source-cost measurements also enable \texttt{-M}, including
+\texttt{-M9216} at the standard-artifact point.
+Those measurements correctly describe their guarded configurations, but
+conditional cost projections derived from them may be high relative to
+verification protected only outside the process.
+The amount of any inflation remains unknown until matched controls
+establish the effect across the measured modules.
+We apply no Grid-derived percentage correction to W's recorded costs,
+sampling estimates or the full library.
+This potential configuration effect is separate from the incomplete
+probability sample's missing population estimate.
 
 Instrumentation is itself material here. Relative to the plain triplet's
 medians, perf-stat wall time rises 1.47\% while system CPU rises 33.10\%;
@@ -590,7 +611,8 @@ Syscall tracing has a slightly lower wall median while system CPU rises
 overhead intervals. A small wall perturbation does not make system
 accounting unperturbed.
 \missing{Completed no-memory-option and worker-count replications,
-cross-module guard attribution and budget-policy outcome equivalence.}
+UMoments9/EnvelopePsiB counterfactuals, cross-module cost-estimation impact
+and budget-policy outcome equivalence.}
 
 
 \paragraph{Native profiles expose different work inside the same compiler.}
@@ -666,15 +688,25 @@ expensive computational cases, even before weighting or extrapolation.
 and broader repeated profile-overhead uncertainty.}
 
 \paragraph{System-design implication.}
-Budget enforcement belongs in the measured acceptance path.
-For guarded Grid, resource-accounting checks are a concrete runtime target;
-the result does not identify allocator syscalls as the main kernel cost.
-Compare accounting frequency, worker configuration and protection mechanisms
-with their declared resource and outcome semantics, rather than silently
-removing a guard from the reported baseline.
-A fair optimization preserves the safety guarantee or explicitly changes
-the resource contract. The single no-\texttt{-M} control establishes neither
-failure equivalence nor a generally preferable memory policy.
+Move memory protection off the frequent reduction/checking path:
+enforce the memory budget outside the verification process, for example
+with a cgroup, or reduce/coalesce the in-process accounting-query frequency.
+Grid's existing outer limit makes the first option concrete without
+requiring an unprotected process; the lower-frequency option remains
+unmeasured.
+The attribution motivates these choices, while comparative performance and
+resource-failure behavior still require matched evaluation.
+Kernel-enforced \texttt{memory.max} limits charged cgroup memory and can
+invoke a cgroup OOM kill~\cite{cgroupV2Memory2026}; its accounting boundary
+and failure mode are not Lean's in-process memory exception.
+Declare the enforced quantity, overshoot and failure behavior for the chosen
+policy. A fair optimization preserves the safety guarantee or explicitly
+changes the resource contract.
+The single no-\texttt{-M} control establishes neither failure equivalence
+nor a generally preferable memory policy.
+Budget enforcement belongs in the measured acceptance path: for this
+guarded Grid point, resource-accounting checks, rather than allocator
+syscalls, are the identified kernel-cost target.
 Process-wide usage accounting also makes requested worker count different
 from the OS thread group whose resources are aggregated; the worker-count
 counterfactual is still pending.
