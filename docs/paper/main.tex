@@ -19,14 +19,17 @@ native measurements retain successful, failed and dependency-blocked work.
 In 26 randomly selected modules compiled with standard compiler artifacts,
 system CPU accounts for 28.26\% of measured compiler CPU. A large Grid module
 records 45.38 million voluntary context switches and averages 1.33 CPU cores
-despite eight requested workers. The default root omits 33.30\% of the
-release's lexical \texttt{decide +kernel} occurrences.
+despite eight requested workers. In a separate guarded Grid experiment,
+resource accounting occupies a median 74.98\% of sampled kernel cycles,
+exposing the cost of enforcing the benchmark's memory budget.
+The default root omits 33.30\% of the release's lexical
+\texttt{decide +kernel} occurrences.
 Budget-failure exposure varies across candidate streams, and profiling can
 change resource-bounded outcomes: seven of 200 diagnostic source pairs change
 error flags. We distinguish these observations from semantic falsity,
 whole-build costs and accelerator opportunity.
-\missing{Public generated-software output characterization, complete
-cost-estimation coverage, calibrated import attribution and system-CPU causes.}
+\missing{Generated-software native costs, complete cost-estimation coverage,
+calibrated import attribution and cross-module causal controls.}
 Certificate-repair experiments illustrate when changing proof representation
 can help pathological reductions and when it adds cost. The contribution is
 a characterization and its implications for verifier design, rather than a
@@ -56,7 +59,10 @@ establish that evaluated model outputs are available.
 
 Our central observation is that verification exposes different bottlenecks
 at different boundaries. Source-library compilation has substantial system
-CPU and repeated process-level preparation. Some candidate streams spend
+CPU and repeated process-level preparation. In the selected Grid case,
+the memory-budget check itself explains much of the sampled kernel work;
+this is a property of the guarded benchmark configuration, not an intrinsic
+cost assigned to every Lean proof. Some candidate streams spend
 most of their measured work on requests that end at resource limits; others
 have a much smaller slow tail. Profiling can itself alter those limits.
 Even the selected build domain changes the apparent amount of computational
@@ -224,8 +230,8 @@ cumulative phase timers do not form a wall-time partition.
 Stacks, missing/unresolved samples and observer CPU remain visible.
 We check diagnostics and resource outcomes as well as successful completion;
 a shorter profile ending at an earlier budget error is not a speedup.
-\missing{Completed native system-CPU attribution, matched profile
-perturbation controls and calibrated low-overhead import results.}
+\missing{Non-Grid system-CPU attribution, randomized perturbation
+controls and uninstrumented import-cost comparisons.}
 
 Rechecking compiled declarations is a distinct experiment.
 Import-relative \texttt{leanchecker} trusts imported declarations and replays
@@ -436,7 +442,7 @@ closure and emitted outputs as part of the workload contract, so that a
 faster default target is not mistaken for faster verification of all
 released artifacts.
 
-\section{System CPU can dominate without using the requested cores}
+\section{Memory-budget enforcement can dominate system CPU}
 \label{sec:system}
 Across the 26 completed standard-artifact probability targets, measured
 user CPU is 510.823 seconds and system CPU is 201.187 seconds.
@@ -509,6 +515,84 @@ perf attribution to synchronization/allocation/I/O, and causal controls.}
 The earlier one-worker profiled Grid run stops at its own 300-second bound;
 it cannot supply an isolated eight-versus-one-worker speedup.
 
+\paragraph{The guarded Grid configuration spends kernel cycles enforcing its limit.}
+A separate mechanism experiment uses exact original Grid source, Lean~4.34.1,
+eight requested workers, \texttt{-M8192}, 100,000 heartbeats and only an
+\texttt{.olean} output. It is distinct from the standard-artifact cost
+sample. Each condition has three repetitions under the shared P-core lock:
+plain, perf-stat, perf-record and syscall tracing, with a constant outer
+15\,GiB native cgroup and 16\,GiB capture-tree budget.
+All 12 compile; exact diagnostics and serialized \texttt{.olean} bytes
+match within this experiment.
+
+Table~\ref{tab:grid-guard-accounting} keeps unprofiled and instrumented clocks
+separate. The plain system-CPU share has median 53.07\%
+(range 52.92--53.08\%), with median wall time 621.936 seconds.
+Across the three recordings, resource-accounting callchains account for
+74.98\% of native kernel sampled periods (range 74.92--75.26\%);
+futex paths account for 20.42\%, mapping/advice for 0.14\% and page faults
+for 0.78\%. These are within-kernel sample fractions, not elapsed-time
+fractions or proportions borrowed from the plain run.
+The stack path is \texttt{getrusage} through libc to
+\texttt{lean::check\_memory}, \texttt{check\_system} and checker reduction.
+The pinned runtime source and SDK disassembly identify a per-thread
+200-call check counter and a \texttt{getrusage(RUSAGE\_SELF)} peak-RSS
+query~\cite{leanMemoryGuard2026}.
+Linux defines this usage for the process across all its
+threads~\cite{linuxGetrusage2026}.
+The first two recordings resolve the accounting callers to approximately
+93\% C++ checker and 7\% IR interpreter; the third retains kernel
+accounting symbols but lacks the application caller.
+Its unresolved application origin is retained, rather than labelled zero
+guard work. All three contain 305,417 native samples in total; decoded
+periods and counts match the retained flat-report totals.
+
+Three traces observe a median 4,010,856 \texttt{getrusage} calls, but two
+lose 16,749 and 7,348 events. These are observed counts, not a loss-free
+syscall census. Cumulative syscall elapsed time includes overlapping
+sleeping threads and cannot replace on-CPU period attribution.
+
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Grid configuration / observation & Repetitions & Wall (s) & User CPU (s) & System CPU (s)\\
+\midrule
+Guarded, unprofiled &3&621.936&385.525&436.151\\
+Guarded, perf stat &3&631.057&386.238&580.505\\
+Guarded, perf record &3&631.688&386.095&486.194\\
+Guarded, syscall trace &3&616.584&375.757&515.744\\
+Without \texttt{-M}, unprofiled (exploratory) &1&320.612&391.521&107.412\\
+\bottomrule
+\end{tabular}
+\caption{Native clocks at the separate \texttt{.olean}-only Grid point.
+Three-repeat rows report per-metric medians; the final row is one completed
+counterfactual with a changed in-process memory policy.
+The outer native and tree limits remain in place.
+No row is a kernel-only timer or a matched production-service speedup.}
+\label{tab:grid-guard-accounting}
+\end{table*}
+
+The first no-\texttt{-M} plain counterfactual completes in 320.612 seconds
+with 107.412 system-CPU seconds and matching diagnostics/\texttt{.olean}.
+Its source, explicit environment and command match the guarded control
+apart from the in-process memory option and output path.
+The outer limits remain active, but the internal resource policy changes.
+This single exploratory repetition supports the accounting-path
+interpretation; it is not the final repeated performance comparison or a
+guarantee for memory-exhausting candidates.
+
+Instrumentation is itself material here. Relative to the plain triplet's
+medians, perf-stat wall time rises 1.47\% while system CPU rises 33.10\%;
+perf-record rises 1.57\% and 11.47\%, respectively.
+Syscall tracing has a slightly lower wall median while system CPU rises
+18.25\%. These ordered triplets are descriptive comparisons, not randomized
+overhead intervals. A small wall perturbation does not make system
+accounting unperturbed.
+\missing{Completed no-memory-option and worker-count replications,
+cross-module guard attribution and budget-policy outcome equivalence.}
+
+
 \paragraph{Native profiles expose different work inside the same compiler.}
 A separate five-source panel brackets perf-stat and perf-record runs with
 unprofiled before/after baselines: 20 native invocations in all.
@@ -578,23 +662,26 @@ closure, whereas the other three panel sources are inside.
 Consequently, a default-root-only profile would omit two of these
 expensive computational cases, even before weighting or extrapolation.
 
-\missing{Causal attribution of the complete modules' system CPU and
-repeat-based profile-overhead uncertainty.}
+\missing{System-CPU attribution beyond the selected Grid configuration
+and broader repeated profile-overhead uncertainty.}
 
 \paragraph{System-design implication.}
-Worker count is not available parallelism. Increasing executor threads or
-offloading arithmetic can leave synchronization, allocation and kernel
-entry costs unchanged. The large system shares make allocator behavior,
-runtime memory accounting and synchronization concrete optimization
-candidates. Preserve proof checks while testing those runtime changes.
-System time and context switches alone do not identify which path causes
-the cost; the low-system EnvelopePsiB case also rules out treating every
-large computational module alike.
-Measure user/system CPU, elapsed time and actual runnable work together,
-then use matched causal controls before claiming a gain.
-User-cycle sampling can prioritize normalization and cleanup experiments,
-but cannot explain the excluded system work or establish a whole-flow
-accelerator ceiling. No runtime bottleneck is yet claimed fixed.
+Budget enforcement belongs in the measured acceptance path.
+For guarded Grid, resource-accounting checks are a concrete runtime target;
+the result does not identify allocator syscalls as the main kernel cost.
+Compare accounting frequency, worker configuration and protection mechanisms
+with their declared resource and outcome semantics, rather than silently
+removing a guard from the reported baseline.
+A fair optimization preserves the safety guarantee or explicitly changes
+the resource contract. The single no-\texttt{-M} control establishes neither
+failure equivalence nor a generally preferable memory policy.
+Process-wide usage accounting also makes requested worker count different
+from the OS thread group whose resources are aggregated; the worker-count
+counterfactual is still pending.
+Other modules retain their own attribution obligations.
+The separate user-cycle panel motivates normalization and cleanup studies,
+but cannot supply a whole-flow accelerator ceiling.
+
 
 \section{Fresh module verification has a preparation floor}
 \label{sec:imports}
@@ -1005,9 +1092,11 @@ purposeful stresses and dependency work cannot be pooled into a whole-library
 point estimate, and cold preparation costs remain outside the compiler
 clocks. Second, generated-software availability and performance must be
 established independently of published task scaffolds and benchmark scores.
-Third, current operating-system counters are observational; causal attribution
-awaits the privileged profiling campaign. No missing result is filled with
-an estimated speedup.
+Third, selected Grid callchains now identify native memory accounting
+at the guarded point, with an initial counterfactual supporting that
+interpretation. Repeated guard/worker controls and cross-module attribution
+remain incomplete. This does not establish that unguarded stock Lean has
+the same system share, nor replace missing results with estimated speedups.
 
 The artifacts preserve unsuccessful prototypes, signal-limited captures,
 budget interruptions and uninvoked dependencies.
@@ -1109,15 +1198,17 @@ findings remain explicit open results.
 \section{Conclusion}
 Verification of AI-generated formal artifacts has workload- and
 boundary-dependent costs.
-The research-library evidence exposes substantial system CPU, low realized
-core use, a repeated fresh-process floor and incomplete default-build
-coverage. Candidate streams expose different failure and tail structures;
+The research-library evidence exposes substantial system CPU at its guarded
+points, low realized core use, a repeated fresh-process floor and incomplete
+default-build coverage. In selected Grid runs, native memory accounting
+dominates sampled kernel work; the budget mechanism is part of the cost
+being characterized. Candidate streams expose different failure and tail structures;
 resource limits and profiling can change the observed outcome.
 Targeted certificate repair illustrates an algorithmic response to selected
 pathological reductions, while its negative transfer results limit that
 response's scope.
-\missing{Final generated-software, calibrated import-cost, perf-cause and
-population-cost findings.}
+\missing{Final generated-software, calibrated import-cost, cross-module
+causal controls and population-cost findings.}
 The characterization argues for measuring the complete acceptance path and
 its actual workload before selecting an acceleration mechanism.
 

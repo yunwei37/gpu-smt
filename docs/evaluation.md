@@ -453,3 +453,26 @@ generator; normalization/cleanup/source/counter caveats retained intext.
 RootE22–23/noLean. Firstfigurecompile rejects unqualifiedbarwidthkey; error
 retained and corrected to documented /pgf/bar width, separatev2output.
 No engine/runtime/other-lane/capture change. Not new performance evidence.
+
+## Grid memory-budget enforcement attribution — step0223
+[Self-review](tmp/build-and-evaluate/step-0223-20261031T092521+0000/step-report.md), Md4768da.
+Root checks12baseline result/native/command/logs/retirement and1noMcontrol,
+recomputes triplet medians/overhead ratios, streams305417cached native samples
+to independently sum resource-accounting kernel periods and PIDscope.
+Kernel fractions74.9786/74.9197/75.2593%, median74.9786%; applicationguard
+caller fullyresolvedfirst2, unresolvedthird notzero. SDKsource/disassembly
+retained; primaryLeanruntime/getrusage documentation verified.
+Reportedartifactparityreceipts retained; root checks sizes, not a new1GiB
+binarycomparison. No independentreview/axiom audit claimed.
+
+This Gridpoint is olean-only/j8/M8192/HB100000 withnative15GiBcgroup and
+M16GiBtreeguard, separate from Wstandardartifactcostsample.
+Plainn3median621.935656wall/385.525127user/436.150621sys,53.0655%sys.
+Recordkernelaccounting75%notmultipliedinto plainwallfraction.
+One noM320.611816wall/391.521471user/107.411798sys, exactcommand/env
+except-M/outputpath,matchingreportedartifact/logs; changedresourcepolicy,
+not final3repeatgain or candidatefailureequivalence.
+Instrumentedstatwall+1.4667%/sys+33.0974%;record+1.5681/+11.4738%;
+tracesys+18.2492%, fixedtriplets not randomizedCIs. Trace losses retained.
+Othermodulecausality/globalcost/softwarecosts stillmissing.
+RootE22–23/15180KiBpeak/12.964sanalysis/0native starts.

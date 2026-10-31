@@ -1,0 +1,50 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0223-20261031T092521+0000"
+    ],
+    "returncode": 0,
+    "stdout": " docs/evaluation.md        |  23 +++++++\n docs/paper/main.pdf       | Bin 167480 -> 174301 bytes\n docs/paper/main.tex       | 153 ++++++++++++++++++++++++++++++++++++----------\n docs/paper/references.bib |  15 +++++\n 4 files changed, 160 insertions(+), 31 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0223-20261031T092521+0000"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/references.bib",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0223-20261031T092521+0000"
+    ],
+    "returncode": 2,
+    "stdout": "docs/tmp/build-and-evaluate/step-0223-20261031T092521+0000/experiment-001/check-memory-SDK-disassembly.txt:13: trailing whitespace.\n+ 991ea82:\t00 \ndocs/tmp/build-and-evaluate/step-0223-20261031T092521+0000/experiment-001/check-memory-SDK-disassembly.txt:23: trailing whitespace.\n+ 991eab2:\t00 \ndocs/tmp/build-and-evaluate/step-0223-20261031T092521+0000/experiment-001/check-memory-SDK-disassembly.txt:33: trailing whitespace.\n+ 991ead8:\t00 \ndocs/tmp/build-and-evaluate/step-0223-20261031T092521+0000/experiment-001/check-memory-SDK-disassembly.txt:79: trailing whitespace.\n+ 991eb8b:\t00 00 00 00 00 \n",
+    "stderr": ""
+  }
+]
