@@ -92,14 +92,14 @@ the100kCLIoverride,7.934/33.878s,not a same-budget gain.
 171new dependencies. Last call11.734s,not600s.19of42probability endpoints
 and6of21complete cells;23costs missing. .olean-only,not full Lake artifacts.
 
-[Latest remaining23 audit](tmp/build-and-evaluate/step-0212-20261030T173551+0000/step-report.md):
+[Remaining23 point audit](tmp/build-and-evaluate/step-0212-20261030T173551+0000/step-report.md):
 11calls/7compile/2memory diagnostics/2selfalarms;8blocked/10724never-started,
 no new endpoint cost. Exact source,authored HB,j8/M8192,CPUs0–7.
 Native wall1399.897144/CPU1894.702852s,capture1406.532695s.
 Memory exceptions156.589663s/full600.120081s censor/remainder106.116280s
 sum862.826024s,61.63%of this selected dependency-heavy point only.
 Interpreter-tag memory exceptions exit-11;the tag is a check site,not tactic
-CPU or an intrinsic invalid-goal claim. Same19/42costs,23missing. No easy
+CPU or an intrinsic invalid-goal claim. At that boundary19/42costs,23missing. No easy
 replacement draws,missing-as-zero,successful-subset whole-library estimate
 or finite population95%CI. Combined sample12.49GiB includes retained EPFL.
 
@@ -176,6 +176,29 @@ direct theorem application excludes first imported proof checking;no new
 candidate recovery or exact reduction-node diagnosis.33/145inventory unchanged.
 
 <a id="public-lean-code-verification"></a>
+
+
+[Cross-corpus audit](tmp/build-and-evaluate/step-0213-20261030T184541+0000/step-report.md) checks all6185external source/mode observations,
+113budget observations and3historical ProofNet ZIPs. ProofNet5952sources/
+413reported-complete IDs identical across repetitions,28of186groups passing;
+five unparsed-name groups retained. Rep0budget70=56recursion+14HB,
+138.011222/1192.435110request seconds(11.57%);other reps remain separate.
+Operational5879 is not an ordinary failure. Currentthree-family router hits0
+across all6185source observations,not an exhaustive semantic classification.
+
+Two fitted EPFL factorial/product expressions are checked,generated5215539
+proof bytes regenerated exactly. Successful selected base/facts/method builds
+3.475372/85.263874/3.772063s useM6144,separate fromM8192/j1/CPU8–15/self30s
+whole-source pairs. Both originals and both final repairs exit1 with recursion
+diagnostics;one leaf hit does not recover a complete source.0new tasks/
+ProofNetinventory unchanged,not a newfull native run.22actual native
+identities retired;samplepeak4773236736B. Controls' accepted AXclosures standard,
+false-modulus control rejects by recursion,not a formal refutation proof.
+No production mode,generic fallback or amortized E2E benefit.
+
+MiniF2F's same-point126budget outcomes are85timeout+41resource,whose worker
+attempts use38795.133452/52992.124106s(73.21%). This is not the old83/42point
+or concurrent20323.0076s service wall;no cross-point phase/denominator reuse.
 
 ## Other retained results
 

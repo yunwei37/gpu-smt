@@ -2329,6 +2329,77 @@ not a new 7,808-invocation paired service run. It establishes additional
 checked proofs under an opt-in repair policy, not acceptance of the original
 submitted proofs, unchanged-source verdict parity or same-resource throughput.
 
+Cross-corpus observations limit the current template coverage.
+The retained ProofNet frame has 5,952 submitted sources in 186 groups of
+32 candidates. Across three historical repetitions, source bytes and the
+413 reported-complete candidate IDs agree, with 28 groups containing a pass.
+All 70 budget-containing requests per repetition are kept: 56 recursion
+diagnostics and 14 heartbeat diagnostics in repetition zero. One separate
+operational failure is not counted as an ordinary rejection or budget case.
+Five groups without parseable theorem names remain in the denominator.
+The unchanged three-family source detector matches none of these 5,952
+sources. Its unchanged 28/186 inventory (15.054\%) follows from routing no
+source; this is not a fresh paired ProofNet execution or axiom audit.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrr}
+\toprule
+Observed point & Sources & Budget &
+\shortstack{Budget request\\time (\%)} \\
+\midrule
+ProofNet rep0 & 5952 & 70 & 11.57 \\
+EPFL eval prefix & 136 & 12 & 25.60 \\
+EPFL later, 10k & 7 & 5 & 90.83 \\
+EPFL training, 10k & 12 & 6 & 55.04 \\
+APRIL mutations & 39 & 16 & 50.53 \\
+APRIL references & 39 & 4 & 18.94 \\
+\bottomrule
+\end{tabular}
+\caption{Distinct retained points, not one homogeneous population sample.
+Budget counts retain requests containing native budget diagnostics or
+self-wall interruptions, including earlier ordinary errors.
+Each share uses only its own sum of request durations; unreturned inputs,
+kernel-only costs and concurrent service wall are not supplied by these sums.
+The three-family detector matches zero across all 6,185 source/mode
+observations, including non-budget sources. This is source-route coverage,
+not an exhaustive classification of possible arithmetic algorithms.
+The EPFL prefix is incomplete; the later point has a smaller budget.
+APRIL mutation/reference observations have no 32-candidate task frame here.}
+\label{tab:cross-corpus-budget-coverage}
+\end{table}
+
+A further extension is fitted to two literal factorial/product patterns in
+the observed EPFL sources. Untrusted integer values are emitted in
+100-element chunks; original-kernel composition lemmas connect factorials,
+powers and odd products to those chunks. Regenerating the 5,215,539-byte
+proof source from detected literals exactly reproduces the compiled source.
+The selected successful base, fact and final method builds take
+3.475, 85.264 and 3.772 seconds separately (92.511 seconds total);
+these use a 6,144\,MiB native memory option and are not pure kernel timings.
+Generation and failed prototype versions remain recorded separately.
+A factorial-modulus control and the full odd-product identity pass with
+standard axiom dependencies. A false-modulus control returns a recursion
+error and is rejected; rejection is not a certified refutation.
+
+Whole-source tests use Lean~4.15, one worker, CPUs 8--15,
+a 200,000-heartbeat source option, an 8,192\,MiB cooperative memory option
+and a 30-second self-wall bound in both modes.
+Both original sources and both final insertions return budget errors.
+Their original/repair invocation clocks are 3.471/3.421 and 3.977/3.873
+seconds. One final insertion reports a successful arithmetic leaf; later
+divisibility and factorial obligations still fail. The other fails before
+a completed leaf application. No complete candidate or task is recovered.
+These small clock differences do not include setup or demonstrate speedup,
+and failed repair retains the paired original observation only offline.
+Generic in-process fallback and production enablement remain unqualified.
+All 22 native development/control/build invocations, including failures,
+are retained and retired; their maximum sampled owned-tree RSS is
+4,773,236,736 bytes. Successful expression checking and source-pattern
+exposure therefore remain distinct from complete-source repair.
+
 \subsubsection{Public code-verification references}
 A pinned LNSym source audit covers 196 files and 1,887,252 bytes,
 with 62 lexical \texttt{bv\_decide}, 153 \texttt{native\_decide} and one direct
