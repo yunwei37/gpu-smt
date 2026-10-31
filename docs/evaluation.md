@@ -429,3 +429,15 @@ RootE22–23/<4GiB; only paper/bib/eval/step edited. No W/M/O change.
 Root all45table audit finds0nonempty explicit error_message fields:
 do not call these complete failurediagnostics. Leanlexicalflags axiom35/
 sorry12files are not measured nativeaxioms or proofacceptance.
+
+## Collected locked original cohort C — step0221
+[Self-review](tmp/build-and-evaluate/step-0221-20261031T081546+0000/step-report.md), W9244ef3.
+Root rechecks544sourcebytecopies vsimmutablepublicsource,543triplesofartifact
+sizes,544retiredPIDbirthidentities, rawCPU/wall and allcompleted42frame
+costledgerreferences.617planned/73neverstarted retained, no restart.
+2neworiginalendpoints only;544nativecalls are not544sampledraws.
+OwnCPU2077.369333/wall1699.464566,average1.222367cores.
+LastKeys28actual0.335247s/allowance0.302875s,
+not600s failure. Native-settingcoverage29/42/12completecells, strict8/42/3.
+No globalCPUestimate/finitefullCI; no weightedpooling acrosshistoricalpoints.
+RootE22–23/0native starts; M/Otimingqueue untouched, Wcancelledqueues notresumed.

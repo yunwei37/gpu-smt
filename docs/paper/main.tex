@@ -136,12 +136,13 @@ records rather than pretending that a target's local CPU is its complete
 cold-build cost. Expensive or blocked draws stay in the original frame;
 we do not replace them with easier modules.
 At the legacy standard-artifact point, 26 targets have complete costs.
-The first locked continuation adds one cost to the labelled
-same-native-setting inventory (27/42). Five subsequent unprofiled baselines
-give six original target costs with the strict shared-lock guarantee and
-complete two strata. Eleven cells remain complete in the legacy-inclusive
-inventory. These policies and clocks stay separate; neither is a completed
-same-protocol full-population sample.
+The first locked continuation, five unprofiled panel baselines and the
+collected cohort C below increase the accumulated matching-native-setting
+inventory to 29/42 target costs and 12 complete strata.
+Its strict shared-lock subset has eight costs and three complete strata.
+Legacy and locked timing policies stay separate; neither is a completed
+same-protocol full-population sample. Dependency compiles and repeated
+profiles do not become additional probability draws.
 
 For a fully observed stratum of size $N_h$ with $n_h=2$ planned draws,
 we use the expansion estimate and finite-population variance
@@ -461,7 +462,8 @@ Only \texttt{CoverageK14} reaches an original probability endpoint,
 taking 11.016 seconds locally after prerequisites.
 At that boundary, the combined inventory reaches 27/42 target costs
 and strict locked coverage is one; the separate five-case panel below
-later raises strict coverage to six. Full total CPU and a global interval remain
+later raises strict coverage to six; cohort C below raises it to eight.
+Full total CPU and a global interval remain
 \missing{unavailable from the incomplete matching sample}.
 
 The freshly re-executed \texttt{CertificatesK14Part003} compiles in
@@ -472,6 +474,21 @@ returns after 93.078 seconds, rather than using a complete 600-second
 opportunity. Fourteen source/PID/birth records are checked and retired.
 These costs retain the deadline and import-cache boundary; they do not
 partition system CPU into causes.
+
+A second completed bounded capture, cohort C, returns 544 native calls:
+543 compile with the three standard outputs and one reaches the group
+deadline; 73 of its 617 planned jobs never start.
+Only two original probability endpoints finish, taking 3.946 and
+1.644 seconds locally. The remaining completed calls are dependency work,
+not 541 additional costed draws.
+Its summed CPU and native wall clocks are 2,077.369 and 1,699.465 seconds,
+or 1.222 average native CPU cores; group elapsed time is 1,700.033 seconds.
+The final dependency runs for 0.335 seconds with only 0.303 seconds of
+group allowance. It is not a failed 600-second opportunity.
+Source bytes, successful artifact sizes and all 544 native identities are
+checked. Current coverage is 29/42 under matching native compiler settings,
+or 8/42 with the strict shared lock; neither completes the original sample.
+
 
 The purposeful Grid module exposes a more extreme operating point.
 It compiles in 634.280 elapsed seconds with 399.934 user and 440.563

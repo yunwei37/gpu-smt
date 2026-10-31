@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-31T06:12:11.273363+00:00",
+  "monotonic_s": 7479714.689382213,
+  "group_limit_s": 1700,
+  "lock": "/workspaces/.agent-state/gpu-smt-captures/pcore.lock",
+  "timed_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "preparation_affinity": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "W_RSS_budget_GiB": 16,
+  "status": "queued_or_starting",
+  "args": [
+    "flock",
+    "/workspaces/.agent-state/gpu-smt-captures/pcore.lock",
+    "taskset",
+    "-c",
+    "0-7",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10",
+    "1760",
+    "python3",
+    "-u",
+    "/workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-locked-original-c/capture.py"
+  ],
+  "wrapper_pid": 37246,
+  "birth_ticks": "747971468"
+}
