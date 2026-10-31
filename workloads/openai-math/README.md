@@ -16,11 +16,13 @@ different measurements.
 | Evidence | Scope |
 |---|---|
 | [Standard compiler artifacts](standard-artifact-native-a/) |26/42 original random draws;11/21 complete strata; .olean/.ilean/.c,M9216,j8,authored options|
+| [Locked recovery cohort](locked-recovery-results/) |27/42native-setting costs,11/21cells;1cost strictly locked;13new compile successes|
 | [Earlier target costs](partner-native-results/) |25/42 draws;10/21 cells; M8192,.olean-only; kept separate|
 | [Whole Amplitudes](amplitudes-native-complete/) |180.276s at100kHB/j8 replay point|
 | [Whole Grid](grid-native-complete/) |634.280s at its100kHB/j8 replay point|
 | [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not a population total|
 | [Source/helper audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
+| [Native phase-profile plan](profile-case4-plan/) |5real files/20bracketed baseline-stat-record units; prepared,not yet measured|
 | [Precision extension plan](precision-panel-plan/) |6new random draws in largest observed-variance cell; prepared,not launched|
 | [Observed artifact expansion](artifact-expansion-observed/) |54.7x in A26/43.0x in B61; selected/incomplete,not population forecasts|
 | [Original sampling/build model](build-planning-4eaee875/) |fixed42-draw design; static8/24-core scenarios remain assumptions|

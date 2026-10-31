@@ -1,4 +1,4 @@
-# Native phase-profile matrix: four real reference files
+# Native phase-profile matrix: five real reference files
 
 **Prepared, not launched.** This supports the user-directed characterization
 question: where does native reference compilation spend CPU, and does a
@@ -8,8 +8,10 @@ Root owns paper framing/RQs. This is not an acceleration or population estimate.
 ## Selection and scope
 
 Three highest native-CPU files among the26standard-artifact observed original
-draws, plus the mathematical InteriorH1Derivative comparator without lexical
-decide+kernel. Their earlier CPU values are selection evidence only, not the
+draws, plus both original random pilots from the largest observed-variance
+cell (InteriorH1Derivative and ReindexSingle), without lexical decide+kernel.
+The two mathematical comparators execute first to avoid losing this contrast
+if a later expensive case exhausts the finite capture budget. Their earlier CPU values are selection evidence only, not the
 denominator for a new profile or a cross-platform speedup.
 cases.csv retains original strata and sampling weight0for **profile fractions**.
 The source identities also belong to the fixed42random frame: a fresh
@@ -26,10 +28,10 @@ separate and are not mathematical falsehoods or automatic profile wins.
 Each file: baseline_before ->perf stat ->perf record ->baseline_after.
 Fresh native processes, unchanged imports/source, distinct preserved outputs.
 The bracketing baselines expose drift and instrumentation overhead, not a
-precise repeated-trial CI. Four files x4modes=16planned invocations.
+precise repeated-trial CI. Five files x4modes=20planned invocations.
 Earlier unprofiled standard-artifact wall predicts roughly22minutes for4passes, not a
 guarantee; native self-limit<=600s and finite group1700s, parent cleanup1760s.
-Failed/missing units are retained and the16unit plan is not declared complete
+Failed/missing units are retained and the20unit plan is not declared complete
 from an easy prefix.
 
 All timing/profile work: taskset0–7/flock global pcore.lock; preparation and
@@ -64,3 +66,12 @@ while outer perf/wrapper rusage and wall are separate. Counter attachment and
 recording overhead never enter the original unprofiled cost estimator.
 All raw leaf logs/results/perf/tool failures stay outside Git on PVC at
 workloads/openai4341-perf-case4-plan. perf6.12.113 binary is pinned on PVC.
+
+
+Revision before execution (W048): the four-case/sixteen-unit plan was saved
+unchanged on PVC. Added the second fixed original pilot of the45,251module
+stratum and moved both mathematical comparators first. Only a few seconds
+of expected native work are added, while enabling the within-cell contrast.
+This is a purposefully chosen profile panel, not a new population sample or
+post-selection confidence guarantee. No profile result motivated this change.
+The existing PVC directory name case4 is retained as a path, not a case count.

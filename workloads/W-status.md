@@ -1,21 +1,20 @@
 # W current state
-## Current frontier (W045)
-- Sole active W timing capture: PVC workloads/openai4341-locked-b-recovery,
-  wrapper7216/birth747471297,capture7537/birth747478581.
-  Lock acquired04:50:02UTC; native Part003 fresh rerun, group1700s.
- 6original targets/659jobs; one native,j8,M9216,source/HB unchanged.
-- Shared taskset0–7/flock pcore.lock for all timing/profile. Prep8–23.
-  W16GiB sampled watchdog, attribution/kill available after privileged restart.
-  Queue wait separate. No host/security/infrastructure mutation byW.
-- Old B68ledger/61compiles/1self-censor/6blocked; one later platform
-  interrupted unit with unknown cost retained separately.13733ended at restart.
-- Primary standard artifact matrix26/42,11/21cells until new target returns.
-  New --locked-only option separates clean serialized costs; old data not
-  deleted or silently mixed. FullCPU/globalCI pending.
-- Six-draw precision panel remains prepared,unmeasured. OldC not launched.
-  Installed perf6.12.113 persisted as binary on PVC; no profile yet claimed.
-- Root owns characterization paper. Read default-build-scope and common-tail
-  audits for population/denominator distinctions. Raw/failed/partial all on PVC.
+## Current frontier (W048)
+- Locked recovery ended,all14native PID/birth retired:13compiles/1group
+  remainder censor. Source parity. Part003fresh258.741s; old platform-interrupted
+  costunknown. CoverageK14new original endpoint11.016s.
+- Primary native-setting matrix27/42,11/21complete cells; strict locked1cost.
+  FullCPU/globalCI unknown;659jobs/6targets not all completed.
+  Results openai-math/locked-recovery-results; rawsame-namedPVC point.
+- No W capture now active. Other lanes hold/queue globalP lock.
+  Next profile point prepared (not launched):openai4341-perf-case4-plan,
+  revision2 has5cases/20units; historicaldirectory namecase4retained.
+  Both original pilots of largest-variance cell first,then3heavy cases.
+- Every timed/profile run taskset0–7/flock pcore.lock. Prep/analysis8–23.
+  W16GiB/1s owned-tree watchdog, not kernel hard RSS.
+- perf6.12.113 frozen binary on PVC. Six-draw precision sampling remains
+  prepared,not measured. OldC notlaunched. All raw/failed/partial retained.
+- Root owns characterization paper/RQs. No CPUoracle, extraAgent or infra edits.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
