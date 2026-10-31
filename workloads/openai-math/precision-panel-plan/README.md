@@ -44,3 +44,13 @@ All-source163,097 and default OAI-root130,834 remain distinct populations.
 All six fixed random draws now have their full 2,403-module source union on the existing PVC, including1,165 newly fetched files/9,804,055bytes from the immutable public archive. The union is20,114,147source bytes. All expected source sizes match and all831external module objects resolve against the version-matched installed caches. Preparation on E8–23 peaked582,076KiB RSS and ran no native compiler. See source-preparation.csv; raw receipt/complete source journal at PVC workloads/openai4341-precision-data-preparation. This establishes input readiness, not compilation, a cost estimate or CI. First failed offline role-filter preparation of a separate cached-original plan is retained in its raw point; it started no native process.
 
 The two original pilots have now been independently remeasured under shared P lock in the five-profile panel. Use those baseline-mode native costs, not instrumented modes, if this conditional extension executes. Keep its fixed-seed six remainder draws separate from the original42 and retain any eventual budget failures or incomplete closures.
+
+### M/O priority hold and prepared dependency inputs (W053)
+
+The six fixed conditional draws now have2,385uncached module jobs copied and
+byte-matched into PVC openai4341-precision-native-prepared (19,920,109source
+bytes), with exact dependency lists, fixed selection and cached-module snapshot.
+This is input preparation only. No launcher or native job was submitted.
+M's profile matrix and O's calibration/replay must finish before any W timing;
+future W uses the nonblocking waiter-aware launcher, never blocking flock.
+See dependency-preparation-after-yield.csv and ../pcore-yield/.

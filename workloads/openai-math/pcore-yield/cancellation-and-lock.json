@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-31T06:36:48.498203+00:00",
+  "cancellation": {
+    "utc": "2026-10-31T06:28:45.288510+00:00",
+    "pid": 38309,
+    "birth_ticks": "748045910",
+    "action": "cancel waiting W flock before native capture",
+    "reason": "direct user instruction yield to M/O; active37246 retained",
+    "native_capture_started": false,
+    "signal": "SIGTERM"
+  },
+  "cancelled_wrapper_state": "absent",
+  "lock_lines": [
+    "3: FLOCK  ADVISORY  WRITE 37246 08:10:1443914 0 EOF",
+    "3: -> FLOCK  ADVISORY  WRITE 11027 08:10:1443914 0 EOF",
+    "3:  -> FLOCK  ADVISORY  WRITE 42521 08:10:1443914 0 EOF"
+  ],
+  "no_cached_native_capture": true,
+  "inspection_only": true
+}

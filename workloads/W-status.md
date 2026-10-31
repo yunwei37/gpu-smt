@@ -1,31 +1,26 @@
 # W current state
-## Current frontier (W052 active capture)
-- Five original real-file profile cases/four modes completed20/20, all accepted,
-  exact-source and identical native diagnostics; all native PID/birth retired.
-  See openai-math/native-profile-five. Raw full evidence on PVC.
-- Selected computational cases75–94% C++ checker-family user cycles; mathematical
-  comparators~2%, mostly Meta/import. Revision2 also recognizes private symbols.
-  Computational normalization anchors66–81%, state cleanup9–13%. Family includes state cleanup; no global
-  wall/kernel/GPU bound.46,882native samples/lost0; unresolved mass retained.
-- Original native-setting cost frame27/42 and11/21complete cells;
-  strict shared-P-lock frame6/42 and2cells. FullCPU/globalCI unknown.
-- Original-cohort617jobs/four unchanged endpoints started06:18:08UTC:
-  openai4341-locked-original-c capture37453/birth748007140, P0–7 lock held.
-  At 2026-10-31T06:26:36.149966+00:00, 85 returned prefix rows; all target conclusions still pending.
-  Read actual identity/terminal, not this dated snapshot. No full617-job result.
--21cached original identities queued with the same global flock, wrapper38309/
-  birth748045910. It can start only after prior capture terminal and native
-  retirement; no concurrent second native group. Raw locked-cached-originals.
-- Every timed/profile run taskset0–7/flock pcore.lock; prep/analysis8–23.
-  W16GiB sampled watchdog, no kernel hard quota. Old13733 ended platform restart.
-- System CPU is45.33/39.73% in the two heavy computational baselines, versus
-  4.12% in EnvelopePsiB; user-cycle fractions exclude it. Two computational
-  cases are outside default OAI; source/default-root scope stays explicit.
-- Twenty-one old original draws have a queued wrapper; native remeasurement
-  has not begun at this dated boundary. Six independent precision draws have full2403source/831external
-  input readiness; no precision native measurement. No source
-  replacement, CPUoracle, extraAgent, infra/security or other-lane edits.
-- Root owns characterization paper/RQs. All raw/failed/partial evidence retained.
+## Current frontier (W053: M/O priority hold)
+- Direct user instruction: M profile matrix and O calibration/replay finish
+  before W submits another timed job. Do not exploit gaps between their cases.
+- W waiting wrapper38309/birth748045910 cancelled06:28:45UTC before capture.
+  /proc/locks confirms no W waiter after cancellation. launch history retained;
+  additive queue-cancelled.json records it. No native run or target cost.
+- Active37246/birth747971468 cohort remains unchanged and may finish normally.
+  Raw point openai4341-locked-original-c. Verify actual PID/birth and terminal,
+  collect its complete raw data after it really ends; do not restart it.
+- Future W launch path is openai-math/pcore_launch.py: inspect actual /proc/locks
+  waiters, then nonblocking take, recheck and yield. Never enqueue/block/retry
+  while other lanes wait. Six controls passed; actual P lock only inspected.
+- During the hold only E8–23 analysis/preparation, W16GiB. No new native group.
+  Fixed six conditional draws now have2385uncached input jobs prepared on PVC
+  openai4341-precision-native-prepared, no launch. Full source2403/external831.
+- Completed five-file20-unit profile and its limitations remain in
+  openai-math/native-profile-five.27/42old native-setting costs,6strict-lock
+  costs at that completed boundary; new active cohort not yet aggregated.
+  FullCPU/globalCI still unestablished. Original42draws and six-draw extension
+  are not substituted or naively pooled.
+- Only workloads/ edited. No CPUoracle, extraAgent, root paper, infrastructure
+  or other-lane changes. Every raw/failed/partial/interrupted record retained.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
