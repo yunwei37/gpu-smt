@@ -26,7 +26,7 @@ change resource-bounded outcomes: seven of 200 diagnostic source pairs change
 error flags. We distinguish these observations from semantic falsity,
 whole-build costs and accelerator opportunity.
 \missing{Public generated-software output characterization, complete
-cost-estimation coverage, import-only attribution and system-CPU causes.}
+cost-estimation coverage, calibrated import attribution and system-CPU causes.}
 Certificate-repair experiments illustrate when changing proof representation
 can help pathological reductions and when it adds cost. The contribution is
 a characterization and its implications for verifier design, rather than a
@@ -266,6 +266,14 @@ user CPU is 510.823 seconds and system CPU is 201.187 seconds.
 System work is therefore 28.26\% of the 712.010-second CPU sum.
 This is the aggregate of completed random draws, not a population-weighted
 full-library fraction: 16 selected draws remain incomplete at this point.
+Within those 26 observations, two modules, \texttt{UMoments9} and
+\texttt{BarrierData41}, account for 84.11\% of the measured system CPU;
+adding \texttt{Barrier50} raises the share to 89.39\%.
+Their respective system fractions are 44.33\%, 38.91\% and 41.56\%.
+In contrast, \texttt{EnvelopePsiB} peaks at 8.10\,GiB leader RSS with a
+3.82\% system fraction. High resident memory alone does not explain
+this variation. This is a descriptive comparison at the old point, not a
+new perf attribution or a population-weighted ranking.
 
 The purposeful Grid module exposes a more extreme operating point.
 It compiles in 634.280 elapsed seconds with 399.934 user and 440.563
@@ -305,8 +313,64 @@ call takes 1.116 seconds and peaks at 2,598,928\,KiB
 This is a measured whole-process floor in that sample, not an isolated
 Mathlib import timer or a universal minimum.
 The clock includes source processing and artifact emission.
-\missing{Import-only versus empty-body controls, warm/cold page-cache
-conditions, allocation breakdown and matched retained-environment costs.}
+
+A completed import-control matrix narrows that interpretation.
+It selects the 13 of those 26 modules whose historical compiler wall time
+was below five seconds, then executes three adjacent build/import-only
+pairs per module, plus three \texttt{import Mathlib} controls.
+All 81 native processes return zero; original builds retain exact source
+bytes, and the controls retain only the original direct import lines.
+Both sides emit \texttt{.olean}, \texttt{.ilean} and \texttt{.c}.
+The sequential warm-OS-cache point uses a shared timing lock on CPUs~0--7,
+eight requested Lean workers and the 9,216\,MiB native memory option.
+Its numbers are conditional on this short-module selection and instrumentation.
+
+Per-module import-only wall medians range from 0.712 to 3.195 seconds,
+with a median of 1.355 seconds. The median per-module import/build ratio
+is 0.682; the ratio of summed module medians is 0.678.
+These are different descriptive aggregations, not a measured removable
+fraction or population estimate. The Mathlib-only control median is
+3.002 seconds. Multiplying any of these values by the released module
+count would not estimate a full build.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Import-control observation & Value\\
+\midrule
+Native runs / selected modules &39 / 13\\
+Median native peak RSS &3.113\,GiB\\
+Median sampled PSS at RSS peak &3.100\,GiB\\
+Median file-backed fraction of PSS &92.89\%\\
+Median anonymous PSS at RSS peak &237.77\,MiB\\
+Sum of major page faults &0\\
+\bottomrule
+\end{tabular}
+\caption{The 39 warm-cache import controls. Sampled PSS components use one
+simultaneous per-run RSS-peak sample; displayed medians need not add up.
+A 100\,ms sample can miss peaks. Leader high-water RSS is a separate metric.}
+\label{tab:import-memory}
+\end{table}
+
+Resident memory is mostly file-backed at this point
+(Table~\ref{tab:import-memory}). Low reported \texttt{Shared\_Clean}
+does not demonstrate that these pages cannot be shared: only one native
+compiler runs at a time, so mapped file pages can appear
+\texttt{Private\_Clean}. A 3.113\,GiB resident footprint is not evidence
+that 3.113\,GiB of mutable heap was rebuilt.
+Actual cross-worker page sharing and environment-construction CPU
+still require separate measurements.
+
+The observer is consequential. Native child CPU sums to 205.945 seconds
+and native wall intervals to 194.168 seconds.
+Driver waited-child accounting exceeds native CPU by approximately
+54.045 CPU seconds, including observation and phase preparation.
+The runner scans process descendants and collects \texttt{smaps\_rollup}
+at 100\,ms intervals. This additional work is reported rather than
+subtracted from the native wall clocks.
+\missing{Low-overhead observer calibration, cold-cache controls,
+allocation/CPU attribution and matched retained-environment costs.}
 
 Established environment reuse provides a useful contrast~\cite{repl,kimina}.
 In one completed miniF2F resource comparison, four warm workers take
@@ -327,8 +391,12 @@ not our novelty claim. It must be evaluated against a competent warm service
 and account for replicated resident memory, incompatible contexts, reloads,
 cancellation and cleanup~\cite{fork}.
 A gain over fresh processes alone is insufficient evidence of service benefit.
-The current import-only campaign will determine how much of the observed
-floor can actually be removed without changing verification behavior.
+The instrumented import matrix establishes substantial preparation-related
+latency in its selected cohort, but not how much a production service can
+remove. The large file-backed share also prevents inferring memory-capacity
+gains by multiplying per-process RSS. Calibration and matched retained-state
+comparisons must establish these benefits without changing verification
+behavior.
 
 \section{Budget-failure exposure is workload dependent}
 \label{sec:failures}
@@ -588,7 +656,7 @@ resource limits and profiling can change the observed outcome.
 Targeted certificate repair illustrates an algorithmic response to selected
 pathological reductions, while its negative transfer results limit that
 response's scope.
-\missing{Final generated-software, import-attribution, perf-cause and
+\missing{Final generated-software, calibrated import-cost, perf-cause and
 population-cost findings.}
 The characterization argues for measuring the complete acceptance path and
 its actual workload before selecting an acceleration mechanism.

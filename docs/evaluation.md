@@ -280,3 +280,23 @@ is public checker/fixture source, model-output provenance pending.
 No native software capture or generated candidate is run by root.
 Missing full native costs, software results, perf causes and import-only
 attribution remain explicit manuscript RESULT placeholders.
+
+## Import-floor and resident-page evidence — step0215
+[Self-reviewed integration](tmp/build-and-evaluate/step-0215-20261031T050401+0000/step-report.md).
+Primary O commits957feb9/e25fd64/fd348df: corrected startup phase actual
+81returns (39build/39direct-import/3Mathlib), all zero/retired;13modules selected
+by historical<5s among26completed random draws. Raw source/command/CPU/output/
+sampledPSS joined independently, not a new root native run.
+Instrumented warm-cache import median0.711834–3.195465s/median1.354781s;
+median per-module import/build0.682098 and ratio of sums0.677724 differ.
+Not a measured cache speedup or all-library import share.
+39controls median3.113GiB high-waterRSS,92.88898%file-backed sampledPSS and
+237.766MiB anonymousPSS; low Shared_Clean in serial runs does not show
+non-shareability. Observer/phase CPU54.044838s is additional to205.945162native
+CPU;194.168151native-wall sum remains uncorrected. Calibration/replay/perf
+continuation is incomplete and its healthy queued work is not restarted.
+
+Mcf49a93recomputed historical W26: top2systemCPU consumers84.11266%,top3
+89.38815%; high-RSS EnvelopePsiB has3.8238%systemCPU. Correlation/source-level
+getrusage/mimalloc hypotheses are not native causal attribution.
+No fullCPUglobalCI, novel mechanism, new throughput or semantic fidelity result.
