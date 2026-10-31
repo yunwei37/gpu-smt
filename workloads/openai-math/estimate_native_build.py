@@ -68,6 +68,8 @@ def main():
     parser.add_argument("--memory-mib", type=int, default=8192)
     parser.add_argument("--outputs", default="olean_only",
                         help="output artifact mode; legacy W captures emit only .olean")
+    parser.add_argument("--locked-only", action="store_true",
+                        help="exclude observations before shared P-core serialization")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     targets = [r for r in csv.DictReader(args.targets.open())
@@ -83,11 +85,16 @@ def main():
             module = row.get("module")
             if module not in lookup:
                 continue
+            if row.get("native_invoked") is False:
+                attempts[module] = row["status"]
+                excluded["not_invoked"] += 1
+                continue
             point = (row.get("threads") == args.threads
                      and str(row.get("heartbeat_budget")) == args.heartbeat_budget
                      and row.get("lean_memory_option_MiB") == args.memory_mib
                      and row.get("profiled") is False
-                     and row.get("compilation_outputs", "olean_only") == args.outputs)
+                     and row.get("compilation_outputs", "olean_only") == args.outputs
+                     and (not args.locked_only or row.get("pcore_lock") is True))
             if not point:
                 excluded["other_or_unknown_resource_point"] += 1
                 continue
@@ -97,7 +104,8 @@ def main():
                 complete[module] = dict(
                     cpu_s=row["user_cpu_s"] + row["system_cpu_s"],
                     file=str(file), line=number,
-                    sorry_warning=row.get("sorry_warning", "unknown"))
+                    sorry_warning=row.get("sorry_warning", "unknown"),
+                    pcore_lock=row.get("pcore_lock", False))
     cells, coverage = [], []
     for stratum in strata:
         key = ";".join(stratum[k] for k in STRATUM_FIELDS)
@@ -130,7 +138,8 @@ def main():
             module=module, stratum=row["stratum"],
             status="completed_cost" if chosen else attempts.get(module, "unmeasured"),
             cpu_s=chosen.get("cpu_s", ""), source_file=chosen.get("file", ""),
-            source_line=chosen.get("line", ""), sorry_warning=chosen.get("sorry_warning", "")))
+            source_line=chosen.get("line", ""), sorry_warning=chosen.get("sorry_warning", ""),
+            pcore_lock=chosen.get("pcore_lock", "")))
     write_csv(args.out / "sample-costs.csv", sample_rows)
     interval = confidence_interval(cells)
     summary = dict(
@@ -143,7 +152,10 @@ def main():
         memory_mib=args.memory_mib,
         status="conditional_approximate_interval" if interval else "not_estimable_incomplete_or_failed_sample",
         estimate_cpu_h="", lower_cpu_h="", upper_cpu_h="",
-        excluded_other_point_rows=excluded["other_or_unknown_resource_point"])
+        excluded_other_point_rows=excluded["other_or_unknown_resource_point"],
+        noninvoked_target_records=excluded["not_invoked"],
+        locked_only=args.locked_only,
+        completed_locked_costs=sum(x["pcore_lock"] is True for x in complete.values()))
     if interval:
         summary.update(interval)
     write_csv(args.out / "summary.csv", [summary])

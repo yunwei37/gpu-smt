@@ -1,21 +1,21 @@
 # W current state
-## Current frontier (W044)
-- User-directed privileged restart at2026-10-31around04:30UTC interrupted B.
-  Same phobos-vtWorkspace/PVC restored; historical13733also ended.
-  B68ledger rows/62returns/61compiles/1self-censor/6blocked retained;
-  CertificatesK14Part003 separately interrupted with unknown cost.
-  No active W native capture; prepared oldC has stale roots and is not launched.
-- Primary standard-artifact costs26/42,11/21complete strata, unchanged.
-  Old M8192 .olean-only25/42/10cells kept separate. FullCPU/globalCI unknown.
-- New timed/profile runs taskset0–7 with flock at
-  /workspaces/.agent-state/gpu-smt-captures/pcore.lock; all untimed prepE8–23.
-  W16GiB. Installed perf6.12.113 copied to PVC tools; no security/host edits.
-- Next: fresh interrupted dependency then remaining original B endpoints;
-  original frame fixed. Six-draw precision panel remains prepared,unmeasured.
-- Read openai-math/default-build-scope and candidates/common-tail for new
-  scope/concentration audits. Root owns the characterization paper integration.
-- All raw/failed/partial/native outputs remain on existing PVC.
-  No restarted historical queue, new Agent, CPU-oracle work or infrastructure mutation.
+## Current frontier (W045)
+- Sole active W timing capture: PVC workloads/openai4341-locked-b-recovery,
+  wrapper7216/birth747471297,capture7537/birth747478581.
+  Lock acquired04:50:02UTC; native Part003 fresh rerun, group1700s.
+ 6original targets/659jobs; one native,j8,M9216,source/HB unchanged.
+- Shared taskset0–7/flock pcore.lock for all timing/profile. Prep8–23.
+  W16GiB sampled watchdog, attribution/kill available after privileged restart.
+  Queue wait separate. No host/security/infrastructure mutation byW.
+- Old B68ledger/61compiles/1self-censor/6blocked; one later platform
+  interrupted unit with unknown cost retained separately.13733ended at restart.
+- Primary standard artifact matrix26/42,11/21cells until new target returns.
+  New --locked-only option separates clean serialized costs; old data not
+  deleted or silently mixed. FullCPU/globalCI pending.
+- Six-draw precision panel remains prepared,unmeasured. OldC not launched.
+  Installed perf6.12.113 persisted as binary on PVC; no profile yet claimed.
+- Root owns characterization paper. Read default-build-scope and common-tail
+  audits for population/denominator distinctions. Raw/failed/partial all on PVC.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
