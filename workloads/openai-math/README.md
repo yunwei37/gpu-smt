@@ -106,6 +106,9 @@ All163,097 modules are topologically ordered;370,864internal import edges.
 The longest unit-weight chain has451modules. The largest same-depth layer has
 9,225modules; this is structural width, not safe CPU/RSS concurrency.
 The OAI root reaches130,834modules /1,397,800,941source bytes.
+[Build-domain audit](default-build-scope/) finds451,008of1,354,379kernel tokens
+outside that root, including allPlanarPacking/Transonic source modules.
+These static counts do not measure runtime/checks.
 External dependency sources/timings are excluded. The initial path-only graph
 is preserved in summary.json as a superseded calculation.
 
