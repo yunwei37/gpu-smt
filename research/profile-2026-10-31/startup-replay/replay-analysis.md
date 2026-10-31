@@ -1,3 +1,5 @@
+> Historical failed lookup attempt: see [corrected replay results](repaired-replay-analysis.md).
+
 # Native kernel replay and finalized capture
 Generated from actual retained records at 2026-10-31T05:52:40Z.
 Review: self-review. Raw data: /workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/startup-replay.
