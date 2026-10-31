@@ -22,6 +22,7 @@ different measurements.
 | [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not a population total|
 | [Source/helper audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
 | [Precision extension plan](precision-panel-plan/) |6new random draws in largest observed-variance cell; prepared,not launched|
+| [Observed artifact expansion](artifact-expansion-observed/) |54.7x in A26/43.0x in B61; selected/incomplete,not population forecasts|
 | [Original sampling/build model](build-planning-4eaee875/) |fixed42-draw design; static8/24-core scenarios remain assumptions|
 
 The42primary probability targets span21source-size/import-depth/kernel-token
