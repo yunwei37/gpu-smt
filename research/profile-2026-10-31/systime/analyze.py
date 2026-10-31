@@ -36,6 +36,8 @@ def main():
         ref=BASE/'runs'/f"{x['module']}-baseline-plain-r1"/'artifact'/Path(*module.split('.')).with_suffix('.olean')
         own=folder/'artifact'/Path(*module.split('.')).with_suffix('.olean')
         x['olean_equal_baseline']=filecmp.cmp(own,ref,shallow=False) if own.exists() and ref.exists() else None
+        native_ref=BASE/'runs'/f"{x['module']}-baseline-plain-r1"/'native.log'
+        x['diagnostic_equal_baseline']=filecmp.cmp(folder/'native.log',native_ref,shallow=False) if native_ref.exists() else None
         rows.append(x)
         events.extend({**q,'module':x['module'],'config':x['config'],'mode':x['mode'],'rep':x['rep']} for q in counters(folder))
     summaries=[]
@@ -49,5 +51,14 @@ def main():
                 for agg,fn in [('median',statistics.median),('min',min),('max',max)]:s[metric+'_'+agg]=fn(vals)
         summaries.append(s)
     write(HERE/'native.csv',rows);write(HERE/'summary.csv',summaries);write(HERE/'counters.csv',events)
+    overhead=[]
+    for s in summaries:
+        ref=next((r for r in summaries if r['module']==s['module'] and r['config']==s['config'] and r['mode']=='plain'),None)
+        if s['mode']=='plain' or ref is None:continue
+        overhead.append(dict(module=s['module'],config=s['config'],mode=s['mode'],plain_n=ref['n'],profile_n=s['n'],
+            qualified_triplets=ref['n']>=3 and s['n']>=3 and ref['accepted']==ref['n'] and s['accepted']==s['n'],
+            native_wall_median_ratio=s['wall_s_median']/ref['wall_s_median'],
+            scope='separate native process medians; no pooling with unprofiled observations'))
+    write(HERE/'profiler-overhead.csv',overhead)
     print(json.dumps(summaries,indent=2))
 if __name__=='__main__':main()

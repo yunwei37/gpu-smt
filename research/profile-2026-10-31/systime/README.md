@@ -39,3 +39,8 @@ period-weighted on-CPU samples only, preserving unmatched frames. Stack parsing
 still requires actual first-capture qualification. Missing work is pending,
 not a negative result. No system-time attribution or acceleration claimed yet.
 All review is 自审; root owns characterization-paper integration.
+
+[Historical concentration](historical-attribution-prior.md): exact26-module
+systemCPU28.256%; UMoments9+BarrierData41 account for84.113%of that systemCPU.
+All historical peakRSS/native-M ratios <=0.9003. These are retained-point
+descriptions, not new perf samples or proof of the runtime overhead cause.

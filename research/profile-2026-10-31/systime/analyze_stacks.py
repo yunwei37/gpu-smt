@@ -7,6 +7,7 @@ def category(frames,kernel):
     s='\n'.join(frames).lower()
     # Prefer a visible originating user operation over a generic futex label.
     if any(v in s for v in ['check_memory','get_peak_rss','get_current_rss']):return 'native_memory_check'
+    if 'getrusage' in s:return 'unattributed_resource_accounting_syscall'
     if any(v in s for v in ['mi_malloc','mi_heap_malloc','mi_free','_mi_','malloc','calloc','realloc','_int_free','operator new','operator delete','lean_alloc','lean_free']):return 'allocation_release'
     if any(v in s for v in ['lean_inc_ref','lean_dec_ref','lean_inc_heartbeat','lean::inc(','lean::dec(']):
         return 'heartbeat' if 'heartbeat' in s else 'reference_count'
