@@ -1,19 +1,21 @@
 # W current state
-## Current frontier (W039)
-- Standard compiler artifacts .olean/.ilean/.c,M9216,j8,authoredHB:
-  26/42original draws,11/21complete cells. FullCPU/globalCI unknown.
-  Tables/method:openai-math/standard-artifact-native-a.
-  Largest cell74.1775CPUh,[0,623.1803]cell-only.
-- Old .olean-only M8192matrix25/42,10cells retained separately.
-- Sole active PVC workloads/openai4341-standard-artifacts-b,
-  controller84572/birth747199270,4original missing draws/closure,
-  group1700/child<=1200. W16GiB incl old13733,CPU0–7.
-- Cross-dataset candidates/cross-dataset-budget includes M5ef9a0f:
-  miniF2F73.21%budget-source attempttime,ProofNet11.57%. AutoVerus3.4%
-  is slowest1.6%tail,not budgetshare. EPFL/APRIL sample-specific;
-  ProofNet/EPFL/APRIL0whole-source recovery.
-- All raw/failed/partial/source/objects on PVC; no source substitution,
-  old capture restart,infrastructure mutation or CPU-oracle work.
+## Current frontier (W044)
+- User-directed privileged restart at2026-10-31around04:30UTC interrupted B.
+  Same phobos-vtWorkspace/PVC restored; historical13733also ended.
+  B68ledger rows/62returns/61compiles/1self-censor/6blocked retained;
+  CertificatesK14Part003 separately interrupted with unknown cost.
+  No active W native capture; prepared oldC has stale roots and is not launched.
+- Primary standard-artifact costs26/42,11/21complete strata, unchanged.
+  Old M8192 .olean-only25/42/10cells kept separate. FullCPU/globalCI unknown.
+- New timed/profile runs taskset0–7 with flock at
+  /workspaces/.agent-state/gpu-smt-captures/pcore.lock; all untimed prepE8–23.
+  W16GiB. Installed perf6.12.113 copied to PVC tools; no security/host edits.
+- Next: fresh interrupted dependency then remaining original B endpoints;
+  original frame fixed. Six-draw precision panel remains prepared,unmeasured.
+- Read openai-math/default-build-scope and candidates/common-tail for new
+  scope/concentration audits. Root owns the characterization paper integration.
+- All raw/failed/partial/native outputs remain on existing PVC.
+  No restarted historical queue, new Agent, CPU-oracle work or infrastructure mutation.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
