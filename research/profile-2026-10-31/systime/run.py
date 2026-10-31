@@ -41,8 +41,8 @@ def native(spec):
       'retired':not Path(f'/proc/{p.pid}').exists()}
     Path(s['native_receipt']).write_text(json.dumps(row,indent=2)+'\n')
     return code if code>=0 else 128-code
-def run_one(module,config,mode,rep,group_remaining):
-    inputs=json.loads((BASE/'inputs.json').read_text());m=inputs['modules'][module]
+def run_one(module,config,mode,rep,group_remaining,inputs_path=None):
+    inputs=json.loads(Path(inputs_path or BASE/'inputs.json').read_text());m=inputs['modules'][module]
     out=BASE/'runs'/f'{module}-{config}-{mode}-r{rep}';out.mkdir(parents=True,exist_ok=False)
     art=out/'artifact'/Path(*m['module'].split('.'));art.parent.mkdir(parents=True,exist_ok=True)
     args=[str(Path(inputs['sdk'])/'bin/lean'),'--root='+m['source_root'],'-j'+('1' if config=='threads1' else '8')]
@@ -82,7 +82,9 @@ def run_one(module,config,mode,rep,group_remaining):
     elif mode!='plain':raise ValueError(mode)
     cmd=['taskset','-c','0-7']+cmd
     with LOCK.open('a') as lock:
+        queued=time.monotonic()
         fcntl.flock(lock,fcntl.LOCK_EX)
+        queue_wait=time.monotonic()-queued
         start=time.monotonic();peak=0;stop=None
         with (out/'observer.log').open('w') as log,(out/'memory.jsonl').open('w') as mem:
             p=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
@@ -96,9 +98,16 @@ def run_one(module,config,mode,rep,group_remaining):
                     os.killpg(p.pid,signal.SIGKILL);p.wait();break
                 time.sleep(1)
             rc=p.wait()
+        # A failed observer must not leave an untracked Lean child behind.
+        if (cg/'cgroup.procs').read_text().strip():
+            (cg/'cgroup.kill').write_text('1')
+            for _ in range(50):
+                if not (cg/'cgroup.procs').read_text().strip():break
+                time.sleep(.1)
+            stop=stop or 'observer_exited_with_native_child'
         # Sampling is not a hard RSS cap; all outer/native limits and any overshoot remain explicit.
         result=dict(module=module,config=config,mode=mode,rep=rep,observer_rc=rc,observer_wall_s=time.monotonic()-start,
-          sampled_tree_peak_bytes=peak,stop_reason=stop,raw=str(out))
+          sampled_tree_peak_bytes=peak,stop_reason=stop,raw=str(out),queue_wait_s=queue_wait)
         if Path(s['native_receipt']).exists():result.update(json.loads(Path(s['native_receipt']).read_text()))
         result['olean_exists']=Path(str(art)+'.olean').exists()
         baseline=BASE/'runs'/f'{module}-baseline-plain-r1'/'artifact'/Path(*m['module'].split('.'))
@@ -107,6 +116,7 @@ def run_one(module,config,mode,rep,group_remaining):
         result['cgroup_memory_peak_bytes']=int((cg/'memory.peak').read_text())
         result['native_cgroup_retired']=not (cg/'cgroup.procs').read_text().strip()
         if result['native_cgroup_retired']:cg.rmdir()
+        else:raise RuntimeError('owned native cgroup not retired; do not release another native task')
         (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
         spec.unlink()
     print(json.dumps(result),flush=True)

@@ -44,3 +44,13 @@ All review is 自审; root owns characterization-paper integration.
 systemCPU28.256%; UMoments9+BarrierData41 account for84.113%of that systemCPU.
 All historical peakRSS/native-M ratios <=0.9003. These are retained-point
 descriptions, not new perf samples or proof of the runtime overhead cause.
+
+## Frozen queued matrix
+See matrix.csv and step-003-report.md:90unique native cells,30triplets.
+The actual finite controller is captured under PVC matrix-v3, queued through
+the same P-core lock after existing M/O producers. Each native task<=1200s;
+the overall requested matrix spans hours and is not claimed<30minutes.
+Existing UMoments9 baseline cells are retained; missing repetitions only fill
+after the original producer retires. No parallel M native process or replay
+of healthy work. Timing/perf/raw data stay separate; ordinary errors/timeouts
+remain data. Direct -M/no-M syscall triplets distinguish getrusage counts.
