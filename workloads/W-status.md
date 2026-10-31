@@ -1,5 +1,5 @@
 # W current state
-## Current frontier (W051)
+## Current frontier (W052 active capture)
 - Five original real-file profile cases/four modes completed20/20, all accepted,
   exact-source and identical native diagnostics; all native PID/birth retired.
   See openai-math/native-profile-five. Raw full evidence on PVC.
@@ -9,17 +9,20 @@
   wall/kernel/GPU bound.46,882native samples/lost0; unresolved mass retained.
 - Original native-setting cost frame27/42 and11/21complete cells;
   strict shared-P-lock frame6/42 and2cells. FullCPU/globalCI unknown.
-- Original-cohort617jobs/four unchanged endpoint IDs actually queued on the
-  shared lock: openai4341-locked-original-c wrapper37246/birth747971468.
-  Read launch/capture-start/terminal and actual identity before interpreting it.
-  Moments.Tail/Hadwiger pair first; no native cost result at this boundary.
+- Original-cohort617jobs/four unchanged endpoints started06:18:08UTC:
+  openai4341-locked-original-c capture37453/birth748007140, P0–7 lock held.
+  At 2026-10-31T06:26:36.149966+00:00, 85 returned prefix rows; all target conclusions still pending.
+  Read actual identity/terminal, not this dated snapshot. No full617-job result.
+-21cached original identities queued with the same global flock, wrapper38309/
+  birth748045910. It can start only after prior capture terminal and native
+  retirement; no concurrent second native group. Raw locked-cached-originals.
 - Every timed/profile run taskset0–7/flock pcore.lock; prep/analysis8–23.
   W16GiB sampled watchdog, no kernel hard quota. Old13733 ended platform restart.
 - System CPU is45.33/39.73% in the two heavy computational baselines, versus
   4.12% in EnvelopePsiB; user-cycle fractions exclude it. Two computational
   cases are outside default OAI; source/default-root scope stays explicit.
-- Twenty-one old original draws prepared for shared-lock remeasurement, not
-  launched. Six independent precision draws have full2403source/831external
+- Twenty-one old original draws have a queued wrapper; native remeasurement
+  has not begun at this dated boundary. Six independent precision draws have full2403source/831external
   input readiness; no precision native measurement. No source
   replacement, CPUoracle, extraAgent, infra/security or other-lane edits.
 - Root owns characterization paper/RQs. All raw/failed/partial evidence retained.
