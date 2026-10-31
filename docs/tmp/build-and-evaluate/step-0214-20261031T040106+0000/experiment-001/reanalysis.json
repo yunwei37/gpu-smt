@@ -1,0 +1,85 @@
+{
+  "W_sources": [
+    "1729b1c",
+    "dcb66b2",
+    "8ca51fa"
+  ],
+  "points": [
+    {
+      "point": "openai4341-deep-stratum2",
+      "actual_compiles": 69,
+      "source_byte_checks": 69,
+      "native_wall_s": 444.62286811042577,
+      "native_CPU_s": 870.687169,
+      "group_s": 444.74440189357847,
+      "capture_s": 451.4976897360757,
+      "sampled_combined_RSS_bytes": 10407489536,
+      "old_EPFL_included": true,
+      "selected_probability_targets": 2,
+      "purposeful_targets": 0
+    },
+    {
+      "point": "openai4341-algorithm-median",
+      "actual_compiles": 53,
+      "source_byte_checks": 53,
+      "native_wall_s": 257.8106077425182,
+      "native_CPU_s": 348.385737,
+      "group_s": 257.89029142819345,
+      "capture_s": 264.29572554770857,
+      "sampled_combined_RSS_bytes": 12974239744,
+      "old_EPFL_included": true,
+      "selected_probability_targets": 1,
+      "purposeful_targets": 1
+    },
+    {
+      "point": "openai4341-math-cells2",
+      "actual_compiles": 330,
+      "source_byte_checks": 330,
+      "native_wall_s": 1243.7949933214113,
+      "native_CPU_s": 1444.777884,
+      "group_s": 1244.1854379074648,
+      "capture_s": 1250.2822016179562,
+      "sampled_combined_RSS_bytes": 12817362944,
+      "old_EPFL_included": true,
+      "selected_probability_targets": 2,
+      "purposeful_targets": 0
+    }
+  ],
+  "new_native_compiles": 452,
+  "retired_native_identities": 452,
+  "original_source_byte_checks": 452,
+  "controllers_retired": 3,
+  "original_probability_frame": 42,
+  "matched_probability_costs": 24,
+  "new_probability_costs": 5,
+  "purposeful_targets_with_zero_population_weight": [
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.BucketProgramRow"
+  ],
+  "complete_cells": 9,
+  "observed_cells": 15,
+  "total_cells": 21,
+  "missing_target_costs": 18,
+  "complete_cell_population_modules": 92796,
+  "incomplete_cell_population_modules": 70301,
+  "population_total_CPU_h": null,
+  "population95interval": null,
+  "top_completed_cell_model": {
+    "stratum": "0-50;11-100;0",
+    "population_modules": 45251,
+    "observed_costs": 2,
+    "planned_costs": 2,
+    "observed_CPU_sum_s": 10.40045,
+    "estimated_cell_CPU_h": 65.36538374305555,
+    "estimated_cell_variance_s2": 17875022901.343876,
+    "nominal_cell_interval_low_h": 0,
+    "nominal_cell_interval_high_h": 537.2509043006836
+  },
+  "n2_t_critical": 12.706204736174707,
+  "cell_interval_assumption": "normal-cost nominal t approximation; not distribution-free or runtime/systematic uncertainty",
+  "census_variance_zero_is_sampling_only": true,
+  "output_scope": "conditional .olean-only per-module compiler CPU, not complete Lake build or service throughput",
+  "other_resource_rows_enter_weighted_costs": false,
+  "root_new_native_processes": 0,
+  "root_elapsed_s": 0.3566639171913266,
+  "root_maxrss_kib": 19408
+}

@@ -205,3 +205,26 @@ No new proof of benefit or contribution is implied by this direction change.
 ### 2026-10-25 — user prioritizes layered Rust engine and dynamic memory
 
 The complete Initial Narrative/evolution were read. The user adds the Rust engine as a fourth continuing direction and makes extensible OSS organization the immediate priority. Resource/workload/semantic layers preserve the original verification-service ambition more faithfully than isolated arithmetic primitives. Only workload-level methods may support novelty. The next resource point removes fixed24GiB process caps, retains48GiB total actual RSS, measures CPU demand for concurrency, and retries preempted candidates alone. Healthy existing capture stays unchanged; historical outcomes remain. Safe COW, native parity and throughput are unproven. CPU oracle remains frozen; no gate/deadline/closure. [Design and root disposition](architecture.md).
+
+## 2026-10-31 — user-authorized characterization reconstruction
+The user explicitly replaces the independent-branching paper with a
+characterization of the cost of verifying AI-generated formal artifacts.
+The complete Initial Narrative above and all historical experiments remain.
+Current primary workload: pinned openai/math research mathematics.
+Second workload class: public model-generated verified software; admit only
+existing public outputs, never generate replacements. Vero scaffolds do not
+establish evaluated-output release; Vericoding generated sources are public;
+Lean Kernel Verify is a distinct checker/fixture boundary with output
+provenance still open. miniF2F, ProofNet and AutoVerus are contrasts.
+
+Current claim: cost depends on build scope, stage/runtime boundary, outcome
+policy and measurement method. RQ1 covers artifact/build-domain coverage;
+RQ2 stage/CPU/memory costs; RQ3 failure/observation/reproducibility; RQ4
+validated design implications and their limits. These explicitly replace the
+previous four branching/device RQs by the user's scientific decision.
+Six finding sections carry evidence, limits and a design implication.
+Certificate repair and the Rust service are supporting cases, not core
+contributions. System-CPU causes/import-only/software/full-build results
+remain missing until qualified lane data arrive. No novelty or venue
+acceptance is inferred from counters or compilation.
+[Reconstruction and self-review](tmp/build-and-evaluate/step-0214-20261031T040106+0000/step-report.md).

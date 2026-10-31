@@ -253,3 +253,30 @@ or venue acceptance. Mainline and user decision remain unchanged.
 <a id="2026-10-30-released-kernel-checker-fixture-units-step0184"></a>
 <a id="2026-10-30-completed-prefixes-do-not-qualify-a-full-native-comparison-step0185"></a>
 <a id="2026-10-30-complete200-native-diagnostic-differential-step0186"></a>
+
+## Characterization reconstruction — current scientific contract
+The direct 2026-10-31 user decision replaces the former branching/device
+paper RQs. Current RQ1: artifact and build-domain coverage; RQ2: stage/system
+CPU, imports and memory; RQ3: budget exposure and observer/outcome
+reproducibility; RQ4: validated design implications and targeted repair limits.
+Historical results below/above retain their original questions and units.
+
+[Step0214](tmp/build-and-evaluate/step-0214-20261031T040106+0000/step-report.md) retains the previous full
+manuscript and bibliography, independently audited452native dependency
+compiles (five newly costed original probability targets, one purposeful
+zero-weight target), and the superseding separate26/42standard-artifact
+frontier.26targets/11complete cells are not a full-build estimate.
+Recomputed completed-target user/systemCPU510.822757/201.186913s gives
+28.2562%systemCPU. Grid52.41696%,45,375,721voluntary context switches,
+1.32512average cores. Amplitudes29.53777%,not an assumed39–52%cohort.
+Fastest sampled whole compiler1.11641s/2,598,928KiB is not import-only.
+Default-root omitted451,008/1,354,379kernel tokens=33.30%lexical coverage.
+AutoVerus3.4%slow-tail fraction remains separate from budget-error fractions.
+
+Public software availability: inspected full Vero0a7325df tree does not
+establish evaluated agent-output population; Vericoding387cd699 publicly
+contains626Lean/962Rust/1754Dafny generated files; Lean Kernel Verify129e65bf
+is public checker/fixture source, model-output provenance pending.
+No native software capture or generated candidate is run by root.
+Missing full native costs, software results, perf causes and import-only
+attribution remain explicit manuscript RESULT placeholders.

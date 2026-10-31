@@ -43,3 +43,10 @@ and then confirms restored gpu-smt-dev on phobos-vt, the same128GiB PVC and
 W16/M16/O4/root4GiB within40GiB total. No migration approval remains pending;
 the earlier lab-selector proposal was never applied. Root preserves lane paths
 and paper framing pending W/M and the user's scientific decision.
+
+## Paper mainline — resolved by the 2026-10-31 direct user decision
+The user selects characterization and explicitly authorizes title, abstract,
+RQ and structure changes. The earlier wait-for-framing decision is resolved.
+Root integrates paper/evidence; M/O/W retain their assigned profiling/import/
+population work. Missing numerical evidence remains a result placeholder,
+not a request to pause research.

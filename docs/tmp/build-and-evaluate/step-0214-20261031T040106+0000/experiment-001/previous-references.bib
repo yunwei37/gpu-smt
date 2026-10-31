@@ -1,0 +1,816 @@
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Lean REPL exposes persistent environment and proof-state identifiers, diagnostics and admissions. It supports backtracking and pickling relative to imported environments.
+% USED_FOR: Persistent Lean environments, backtracking, pickling, and admission diagnostics.
+@misc{repl,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean community REPL}, author={{Lean community}},
+ url={https://github.com/leanprover-community/repl}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/lean-snapshot-2605.25556.pdf
+% ABSTRACT: Captures elaborated Lean language-server proof state once and reuses it across parallel tactic branches, avoiding repeated import loading and theorem-body elaboration.
+% USED_FOR: Existing proof-state reuse and parallel tactic branching baseline.
+@misc{leanSnapshot,
+ title={Keep the Proof State Live: Snapshotting for Efficient Tactic Search in Lean 4},
+ author={Austin Shen and Yunong Shi},
+ doi={10.48550/arXiv.2605.25556},
+ url={https://arxiv.org/abs/2605.25556}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents native SMT command evaluation that retains state between calls, solver outcomes and artifact interfaces. The combined solver can change solving modes with incremental use.
+% USED_FOR: Native ordered SMT evaluation, requested artifacts, and Z3 combined-solver scope behavior.
+@misc{z3api,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Z3 C API}, author={{Z3 contributors}},
+ url={https://z3prover.github.io/api/html/group__capi.html}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents solver configuration including resource limits distinct from elapsed-time limits and optional artifact generation.
+% USED_FOR: Internal work limits and configured output support.
+@misc{z3params,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Z3 Guide: Parameters}, author={{Z3 contributors}},
+ url={https://microsoft.github.io/z3guide/programming/Parameters/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Describes Linux process duplication and copy-on-write memory, inherited file descriptions, reset process accounting, noninherited timers and restrictions after multithreaded fork.
+% USED_FOR: Process sharing, branch-owned communication and runtime/resource handling requirements.
+@misc{fork,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={fork(2) Linux manual page}, author={{Linux man-pages project}},
+ url={https://man7.org/linux/man-pages/man2/fork.2.html}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Runs alternative Lean kernel implementations on exported declarations, including library workloads, soundness regressions, corner cases and performance tests.
+% USED_FOR: Post-export checker workloads and benchmark boundary.
+@misc{leanArena,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean Kernel Arena}, author={{Lean contributors}},
+ url={https://github.com/leanprover/lean-kernel-arena}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Provides the community Lean 4 mathematical library and source development corpus.
+% USED_FOR: Source/library workload provenance, not generated-attempt locality.
+@misc{mathlib,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Mathlib}, author={{Lean community}},
+ url={https://github.com/leanprover-community/mathlib4}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Provides standalone proof tasks extracted from real Verus systems with source mappings and verified ground-truth solutions.
+% USED_FOR: Repository-derived systems verification task provenance; not a native candidate-stream trace.
+@misc{verusage,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={VeruSAGE-Bench}, author={{Microsoft Research}},
+ url={https://github.com/microsoft/verus-proof-synthesis/tree/cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1/benchmarks/VeruSAGE-Bench}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Lean kernel checker uses delayed substitutions and closures over interned environments; conversion and parser components derive from existing checkers.
+% USED_FOR: Existing delayed-substitution representation and alternative CPU checker.
+@misc{nanoclo,
+ note={Accessed 2026-10-07; year denotes access year. Checker modifications written by Claude, directed by Sebastian Graf; upstream components credited on the page},
+ title={Nanoclo: Lean Kernel Arena checker}, author={{Lean Kernel Arena}},
+ url={https://arena.lean-lang.org/checker/nanoclo/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Fortran translation of nanoclo stores kernel objects in parallel arrays referenced by integer identifiers, with immutable exported expressions and private worker contexts.
+% USED_FOR: Existing integer-indexed representation and alternative CPU checker.
+@misc{nanocloFortran,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Nanoclo-fortran: Lean Kernel Arena checker}, author={{Lean Kernel Arena}},
+ url={https://arena.lean-lang.org/checker/nanoclo-fortran/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Experimental CLI flags save full or import-only elaboration snapshots and reuse saved state up to syntactic differences on a later invocation.
+% USED_FOR: Native incremental elaboration snapshots baseline.
+@misc{leanIncremental,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Lean 4.32.0 release: incremental snapshots}, author={{Lean contributors}},
+ url={https://lean-lang.org/doc/reference/latest/releases/v4.32.0/}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Serves parallel Lean REPL processes and reuses warmed import headers. Manager bounds pool size and retires exhausted workers using configured use and memory controls.
+% USED_FOR: Bounded warm service, environment reuse and worker retirement baseline.
+@misc{kimina,
+ note={Accessed 2026-10-07; year denotes access year},
+ title={Kimina Lean Server}, author={{Project Numina}},
+ url={https://github.com/project-numina/kimina-lean-server}, year={2026}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/boogie-cache-krml245.pdf
+% ABSTRACT: Instruments Boogie programs with cached verification information and dependency tracking to avoid rechecking unaffected program regions after changes.
+% USED_FOR: Established fine-grained verification-result caching.
+@inproceedings{boogieCache,
+ title={Fine-Grained Caching of Verification Results},
+ author={K. Rustan M. Leino and Valentin W{\"u}stholz},
+ booktitle={Computer Aided Verification (CAV), Part I}, pages={380--397},
+ doi={10.1007/978-3-319-21690-4_22},
+ url={https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/krml245.pdf}, year={2015}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/sock-atc18-oakes.pdf
+% ABSTRACT: Optimizes serverless container initialization and caches prepared interpreter/library state using generalized Zygotes to reduce provisioning costs.
+% USED_FOR: Prior prepared execution and memory-sharing mechanism.
+@inproceedings{sock,
+ title={SOCK: Rapid Task Provisioning with Serverless-Optimized Containers},
+ author={Edward Oakes and Leon Yang and Dennis Zhou and Kevin Houck and Tyler Harter and Andrea C. Arpaci-Dusseau and Remzi H. Arpaci-Dusseau},
+ booktitle={2018 USENIX Annual Technical Conference (USENIX ATC 18)},
+ pages={57--70}, publisher={USENIX Association},
+ url={https://www.usenix.org/conference/atc18/presentation/oakes}, year={2018}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/seuss-eurosys20.pdf
+% ABSTRACT: Deploys serverless functions from unikernel snapshots and shares pages across the software stack to avoid initialization and increase cached execution density.
+% USED_FOR: Prior prepared execution and page-sharing mechanism.
+@inproceedings{seuss,
+ title={SEUSS: Skip redundant paths to make serverless fast},
+ author={James Cadden and Thomas Unger and Yara Awad and Han Dong and Orran Krieger and Jonathan Appavoo},
+ booktitle={Proceedings of the Fifteenth European Conference on Computer Systems (EuroSys)},
+ doi={10.1145/3342195.3392698}, numpages={15},
+ url={https://handong32.github.io/docs/3342195.3392698.pdf}, year={2020}}
+
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/lean4-cade21.pdf
+% ABSTRACT: Describes Lean 4 extensible parsing, elaboration and proof automation, native compilation, and its trusted kernel architecture.
+% USED_FOR: Original Lean 4 frontend and kernel architecture.
+@inproceedings{lean4,
+ title={The Lean 4 Theorem Prover and Programming Language},
+ author={Leonardo de Moura and Sebastian Ullrich},
+ booktitle={Automated Deduction (CADE 28)}, year={2021}, pages={625--635},
+ doi={10.1007/978-3-030-79876-5_37},
+ url={https://lean-lang.org/papers/lean4.pdf}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/verus-oopsla2023.pdf
+% ABSTRACT: SMT-based Rust verifier uses linear ghost permissions and a mode system separating specification, proof and executable code.
+% USED_FOR: Original Verus architecture and systems tool provenance.
+@article{verus,
+ title={Verus: Verifying Rust Programs using Linear Ghost Types},
+ author={Andrea Lattuada and Travis Hance and Chanhee Cho and Matthias Brun and Isitha Subasinghe and Yi Zhou and Jon Howell and Bryan Parno and Chris Hawblitzel},
+ journal={Proceedings of the ACM on Programming Languages}, volume={7},
+ number={OOPSLA1}, articleno={85}, numpages={30}, year={2023},
+ doi={10.1145/3586037},
+ url={https://matthias-brun.ch/assets/publications/verus_oopsla2023.pdf}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/kimina-2504.21230.pdf
+% ABSTRACT: Parallel Lean REPL service uses LRU import-header reuse and client batch feedback for large-scale proof verification.
+% USED_FOR: Established parallel warm service and import reuse; retirement details come from the artifact.
+@inproceedings{kiminaPaper,
+ title={Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification},
+ author={Marco Dos Santos and Hugues de Saxcé and Haiming Wang and Ran Wang and Mantas Bakšys and Mert Ünsal and Junqi Liu and Zhengying Liu and Jia Li},
+ booktitle={Fifth Workshop on Mathematical Reasoning and AI (MATH-AI) at NeurIPS},
+ year={2025}, doi={10.48550/arXiv.2504.21230},
+ url={https://arxiv.org/abs/2504.21230}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Documents proc memory accounting including proportional set size and private/shared dirty pages.
+% USED_FOR: Proportional memory definition and measurement source.
+@misc{procMemory,
+ title={The /proc Filesystem}, author={{Linux kernel contributors}},
+ year={2026}, note={Accessed 2026-10-07},
+ url={https://docs.kernel.org/filesystems/proc.html}}
+% VERIFIED: 2026-10-07
+% REAL: yes
+% PDF: docs/reference/verusage-2512.18436.pdf
+% ABSTRACT: Studies agent proof generation on tasks extracted from real Verus Rust systems and introduces VeruSAGE-Bench.
+% USED_FOR: Original dataset construction and task provenance, not ordered native candidate traffic.
+@misc{verusagePaper,
+ title={VeruSAGE: A Study of Agent-Based Verification for Rust Systems},
+ author={Chenyuan Yang and Natalie Neamtu and Chris Hawblitzel and Jacob R. Lorch and Shan Lu},
+ year={2025}, doi={10.48550/arXiv.2512.18436},
+ url={https://arxiv.org/abs/2512.18436}}
+
+% VERIFIED: 2026-10-09
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Defines per-thread CPU affinity masks and distinguishes restricting eligible CPUs from excluding other runnable threads.
+% USED_FOR: Affinity alone does not establish CPU isolation.
+@misc{cpuAffinity,
+ title={sched\_setaffinity(2) Linux manual page},
+ author={{Linux man-pages project}}, year={2026},
+ note={Accessed 2026-10-09},
+ url={https://man7.org/linux/man-pages/man2/sched_setaffinity.2.html}}
+
+% VERIFIED: 2026-10-09
+% REAL: yes
+% PDF: docs/reference/leanpolish-2609.38384v1.pdf
+% ABSTRACT: Releases local proof edits and failed tactic alternatives, complete-menu pools, and controlled studies of proof-compression supervision and search selection effects.
+% USED_FOR: Real proof-improvement attempts and the distinction between saved-state tactic screening and later edited-source verification; no service speed or venue acceptance claim.
+@misc{leanpolishPaper,
+ title={LeanPolish: Verified Supervision for Lean Proof Compression},
+ author={Pauline Bourigault}, year={2026},
+ doi={10.48550/arXiv.2609.38384}, note={arXiv preprint, version 1},
+ url={https://arxiv.org/abs/2609.38384v1}}
+
+% VERIFIED: 2026-10-09
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Native implementation saves and restores tactic state, retains command checkpoints, and shares imports in persistent workers; menu screening precedes selected-edit source re-elaboration.
+% USED_FOR: Existing native-reuse baseline and exact per-menu finalization boundary, not a certificate for every released alternative.
+@misc{leanpolishSource,
+ title={LeanPolish source implementation}, author={{LeanPolish contributors}},
+ year={2026}, note={Revision 70cda81a15cca1f805885df197361102f0123cbb; accessed 2026-10-09},
+ url={https://raw.githubusercontent.com/paulinebourigault/leanpolish/70cda81a15cca1f805885df197361102f0123cbb/leanpolish/LeanPolish.lean}}
+
+% VERIFIED: 2026-10-09
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Provides a container runtime library and utilities to configure GPU access for NVIDIA containers.
+% USED_FOR: Existing container allocation/runtime path, not a CUDA API choice or an installed version claim.
+@misc{nvidiaContainerToolkit,
+ title={NVIDIA Container Toolkit}, author={{NVIDIA contributors}}, year={2026},
+ note={Source revision a672e378ef91bea7dfe92c0ed274847fa1cb9236; accessed 2026-10-09},
+ url={https://raw.githubusercontent.com/NVIDIA/nvidia-container-toolkit/a672e378ef91bea7dfe92c0ed274847fa1cb9236/README.md}}
+
+% VERIFIED: 2026-10-14
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Original ProofNet repository defines an undergraduate mathematics formalization benchmark and identifies its original Lean3 boundary and later Lean4 ports.
+% USED_FOR: Origin of the ProofNet benchmark lineage, not identity of generated attempts or reported proving accuracy.
+@misc{proofnetSource,
+ title={ProofNet benchmark source}, author={{ProofNet contributors}},
+ url={https://github.com/zhangir-azerbayev/ProofNet},
+ year={2026}, note={Accessed 2026-10-14; year denotes access year}}
+% VERIFIED: 2026-10-14
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Pinned Goedel-Prover ProofNet dataset supplies the Lean4 formal statements and original split used by the retained candidate generation workload.
+% USED_FOR: Exact public Lean4 task source for the ProofNet-lineage attempts, separate from the original Lean3 benchmark.
+@misc{goedelProofnet,
+ title={Goedel-Prover ProofNet dataset}, author={{Goedel-Prover contributors}},
+ url={https://raw.githubusercontent.com/Goedel-LM/Goedel-Prover/d80349d93a80305765492014f0b395cec46e5023/datasets/proofnet.jsonl},
+ year={2026}, note={Source revision d80349d93a80305765492014f0b395cec46e5023; accessed 2026-10-14; year denotes access year}}
+
+% VERIFIED: 2026-10-15
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Releases 29750 Lean Workbook machine-generated proofs migrated to Lean4.27, with original migration statuses and source toolchain pins; not all model generation attempts or an arrival trace.
+% USED_FOR: Exact complete released source population and version-aligned native verification characterization.
+@misc{goedelWorkbook427,
+ title={Goedel Workbook migrated to Lean 4.27},
+ author={{mike1729 and dataset contributors}},
+ year={2026},
+ url={https://github.com/mike1729/goedel-workbook-lean427/tree/3c2afe6bfc6bdeca6b78d1f257468164bba56966},
+ note={Source revision 3c2afe6bfc6bdeca6b78d1f257468164bba56966; accessed 2026-10-15; year denotes access year}}
+
+% VERIFIED: 2026-10-15
+% REAL: yes
+% PDF: docs/reference/2026-xin-axle.pdf
+% ABSTRACT: Hosted Lean service uses preloaded libraries and per-request process isolation; reports computation-only comparisons against warmed Kimina on a normalized subset.
+% USED_FOR: Existing isolated preloaded Lean serving and its measurement boundary, not our numerical baseline or verified server-fork implementation.
+@misc{axle,
+ title={{AXLE}: A Cloud Infrastructure for Lean 4 Theorem Proving Utilities},
+ author={Jimmy Xin and Alex Schneidman and Chris Cummins and Karun Ram and Srihari Ganesh and Jannis Limperg},
+ year={2026}, doi={10.48550/arXiv.2606.26442},
+ url={https://arxiv.org/abs/2606.26442v1},
+ note={Version 1; accepted at the 3rd AI for Math Workshop, ICML 2026}}
+% VERIFIED: 2026-10-15
+% REAL: yes
+% PDF: docs/reference/2026-holmes-spice.pdf
+% ABSTRACT: Co-designs process-snapshot storage layout and kernel restoration mechanisms to reduce disk-restored serverless startup costs.
+% USED_FOR: Accepted snapshot-restoration prior work; generic process snapshotting is not verification-specific novelty.
+@inproceedings{spice,
+ author={Ben Holmes and Baltasar Dinis and Lana Honcharuk and Adam Belay and Joshua Fried},
+ title={Rethinking Process Snapshots for {Near-Warm} Serverless Cold Starts},
+ booktitle={20th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26)},
+ year={2026}, pages={2007--2025}, publisher={USENIX Association},
+ url={https://www.usenix.org/conference/osdi26/presentation/holmes}}
+
+% VERIFIED: 2026-10-15, pinned primary source opened on GitHub and read locally.
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official Goedel inference batches all selected model inputs through vLLM, requests n samples, and writes extracted candidate files after generation.
+% USED_FOR: Distinguish the published batched policy from the retained serial SGLang adaptation and its output-availability clocks.
+@misc{goedelInference,
+ title={Goedel-Prover inference workflow},
+ author={{Goedel-Prover contributors}},
+ url={https://github.com/Goedel-LM/Goedel-Prover/blob/d80349d93a80305765492014f0b395cec46e5023/eval/step1_inference.py},
+ year={2026},
+ note={Source revision d80349d93a80305765492014f0b395cec46e5023; accessed 2026-10-15; year denotes access year}}
+
+% VERIFIED: 2026-10-15, pinned primary source opened on GitHub and read locally.
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official Goedel verification reads the complete candidate file and submits all requests to Lean4ServerScheduler, with default cpu64 and original resource settings.
+% USED_FOR: Establish batch consumption as a published verification workload and avoid interpreting model output timestamps as actual verifier arrivals.
+@misc{goedelCompile,
+ title={Goedel-Prover batch verification workflow},
+ author={{Goedel-Prover contributors}},
+ url={https://github.com/Goedel-LM/Goedel-Prover/blob/d80349d93a80305765492014f0b395cec46e5023/eval/step2_compile.py},
+ year={2026},
+ note={Source revision d80349d93a80305765492014f0b395cec46e5023; accessed 2026-10-15; year denotes access year}}
+
+% VERIFIED: 2026-10-16
+% REAL: yes
+% PDF: docs/reference/minif2f-2109.00110v2.pdf
+% ABSTRACT: Introduces a cross-system formal Olympiad mathematics benchmark with 488 statements split equally between validation and test.
+% USED_FOR: Original miniF2F task provenance, not identity of our generated attempts or imported proving accuracy.
+@inproceedings{minif2f,
+  author = {Kunhao Zheng and Jesse Michael Han and Stanislas Polu},
+  title = {{miniF2F}: A Cross-System Benchmark for Formal Olympiad-Level Mathematics},
+  booktitle = {International Conference on Learning Representations},
+  year = {2022},
+  url = {https://dblp.org/rec/conf/iclr/ZhengHP22.html},
+  note = {Published conference version; author preprint first appeared in 2021}
+}
+
+% VERIFIED: 2026-10-16
+% PDF: not available
+% ABSTRACT: Pinned source provides exact tiered-rational certificate search and a numeric support probe followed by stock Lean proof reconstruction.
+% REAL: yes
+% PRIMARY: pinned upstream README, retrieved 2026-10-15.
+% USED_FOR: Existing native exact oracle and numeric-probe/restrict/stock-proof path.
+% PUBLICATION_DATE: not asserted; revision and access date identify this artifact.
+@misc{farkasSource,
+ author={{lucifer1004}},
+ title={{farkas}},
+ howpublished={Source repository},
+ year={2026},
+ url={https://github.com/lucifer1004/farkas/tree/5a38a7e8502213cb644faa2e11a15429f0cf0f9a},
+ note={Revision 5a38a7e; accessed 16 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-16
+% PDF: docs/reference/highs-dual-simplex-2018.pdf
+% ABSTRACT: Develops parallel forms of the dual revised simplex method, including suboptimization and parallel work within iterations.
+% REAL: yes
+% PRIMARY: official HiGHS preferred citation and publisher DOI metadata.
+% USED_FOR: Established numerical LP CPU competitor; no imported speedup claim.
+@article{highsSimplex,
+ author={Q. Huangfu and J. A. J. Hall},
+ title={Parallelizing the dual revised simplex method},
+ journal={Mathematical Programming Computation},
+ volume={10}, number={1}, pages={119--142}, year={2018},
+ doi={10.1007/s12532-017-0130-5},
+ url={https://link.springer.com/article/10.1007/s12532-017-0130-5}}
+
+% VERIFIED: 2026-10-16
+% PDF: not available
+% ABSTRACT: Documents process/thread/waited-child usage and the conditions for child-resource accounting.
+% REAL: yes
+% PRIMARY: Linux man-pages API contract, directly checked 2026-10-15.
+% USED_FOR: Child CPU accounting scope; no total-tree CPU guarantee.
+@misc{getrusage,
+ author={{Linux man-pages project}},
+ title={{getrusage(2)}: Linux manual page},
+ year={2026},
+ url={https://man7.org/linux/man-pages/man2/getrusage.2.html},
+ note={Accessed 15 October 2026; year denotes access year}}
+
+% VERIFIED: 2026-10-16
+% PDF: not available
+% ABSTRACT: Defines sampled event overhead and inclusive Children accounting, whose callchain weights overlap.
+% REAL: yes
+% PRIMARY: upstream perf manual, Children/Overhead calculation directly opened 2026-10-15.
+% USED_FOR: Inclusive callchain accounting overlaps; no wall-time or GPU bound.
+@misc{perfReport,
+ author={{Linux perf contributors}},
+ title={{perf-report(1)}: Linux manual page},
+ year={2026},
+ url={https://man7.org/linux/man-pages/man1/perf-report.1.html},
+ note={Children and Overhead calculation; accessed 16 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-16
+% PDF: not available
+% ABSTRACT: Version-pinned source implements expression definitional equality in MetaM with metavariable contexts and exports lean_is_expr_def_eq.
+% REAL: yes
+% PRIMARY: actual installed v4.27.0 SDK source read at export/MetaM declaration.
+% USED_FOR: lean_is_expr_def_eq belongs to Meta definitional equality, not pure kernel checking.
+% PUBLICATION_DATE: not asserted; version and access date identify source.
+@misc{lean427MetaDefEq,
+ author={{Lean project contributors}},
+ title={{Lean 4.27.0}: Meta expression definitional equality source},
+ year={2026},
+ url={https://github.com/leanprover/lean4/blob/v4.27.0/src/Lean/Meta/ExprDefEq.lean},
+ note={Meta definitional equality implementation; version v4.27.0; accessed 16 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-16
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official SGLang repository describes the model inference and serving framework and its request interfaces.
+% USED_FOR: Identity of the inference framework used by our retained serial adaptation; no imported speedup.
+@misc{sglangSource,
+ title={{SGLang}: inference framework},
+ author={{SGLang contributors}},
+ year={2026}, note={Accessed 16 October 2026; year denotes access year},
+ url={https://github.com/sgl-project/sglang}}
+
+% VERIFIED: 2026-10-16
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official vLLM repository documents the inference and serving library.
+% USED_FOR: Identity of the library in the published Goedel batched workflow; no imported performance result.
+@misc{vllmSource,
+ title={{vLLM}: inference and serving library},
+ author={{vLLM contributors}},
+ year={2026}, note={Accessed 16 October 2026; year denotes access year},
+ url={https://github.com/vllm-project/vllm}}
+
+% VERIFIED: 2026-10-16; existing checker passed for this entry, primary document read manually.
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official artifact documentation identifies released AutoVerus generated proofs and intermediate attempts across four main benchmark directories.
+% USED_FOR: Origin of our retained AutoVerus source replay cohort; our acquisition supplies the 3566 count, not the upstream document.
+@misc{autoverusArtifact,
+ author={{Microsoft Research and AutoVerus contributors}},
+ title={{AutoVerus}: Artifact Evaluation},
+ year={2026},
+ url={https://raw.githubusercontent.com/microsoft/verus-proof-synthesis/cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1/README-artifact-evaluation.md},
+ note={Source revision cbf9c0c6337b224fd8e5b7cb4e01ae65c0f98bc1; accessed 16 October 2026; year denotes access year}}
+
+% VERIFIED: 2026-10-16; existing checker passed for this entry, primary document read manually.
+% REAL: yes
+% PDF: not available
+% ABSTRACT: Official CUDA C++ documentation explains kernels, host launches, thread execution configuration and synchronization.
+% USED_FOR: CUDA programming-model terminology only; our implementation and measurements establish engagement, coverage and performance.
+@misc{cudaProgrammingGuide,
+ author={{NVIDIA}},
+ title={{CUDA} Programming Guide: Intro to {CUDA C++}},
+ year={2026},
+ url={https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html},
+ note={Accessed 16 October 2026; year denotes access year, not a measured CUDA version}}
+
+% VERIFIED: 2026-10-16
+% REAL: yes
+% PDF: docs/reference/leantree-2507.14722v1.pdf
+% ABSTRACT: Factorizes intermediate Lean proof states by metavariable dependencies and supplies extraction and interaction tools.
+% USED_FOR: State factorization, intermediate-state reuse and parallel search are existing mechanisms, not our contribution.
+% PRIMARY: arXiv 2507.14722v1 read in full; author repository supplies workshop metadata.
+@inproceedings{leantree,
+ author={Mat{\v e}j Kripner and Michal {\v S}ustr and Milan Straka},
+ title={{LeanTree}: Accelerating White-Box Proof Search with Factorized States in {Lean 4}},
+ booktitle={2nd AI for Math Workshop at ICML},
+ year={2025},
+ url={https://openreview.net/forum?id=pROVJwTb6w},
+ note={Workshop paper; arXiv:2507.14722v1}}
+
+% VERIFIED: 2026-10-16 local / 2026-10-17 UTC; pinned public repository, actual Lean source and aggregate reports read.
+% REAL: yes
+% PDF: not applicable, software artifact
+% ABSTRACT: Exact rooted tactic-prefix sharing and native-checked closing-certificate reuse for batched Lean candidates.
+% USED_FOR: These proof-construction reuse mechanisms are prior art; no per-hit or upstream CPU number is imported as our service result.
+@misc{shred,
+ author={{SHRED contributors}},
+ title={{SHRED}: Reuse repeated work across thousands of {Lean} proof attempts},
+ year={2026},
+ url={https://github.com/memo-ozdincer/shred/tree/a6616e99534ce777dcebfd56566eaaffb63997a8},
+ note={Software and experimental artifact; revision a6616e99534ce777dcebfd56566eaaffb63997a8; accessed 16 October 2026}}
+
+% VERIFIED: 2026-10-16 local / 2026-10-17 UTC; primary abstract, method, throughput and dataset/repository scope checked.
+% REAL: yes
+% PDF: not retained; primary arXiv HTML read
+% ABSTRACT: Learned verdict/feedback prediction on GPUs and approximate hybrid GRPO rewards.
+% USED_FOR: Prediction/execution and accuracy/cost boundaries; no H100 result transferred to RTX5090 exact verification.
+@misc{learnedLeanFeedback,
+ author={Lazar Milikic and Etienne Bamas and Emmanuel Abbe and Viktor Kun{\v c}ak},
+ title={Learning {Lean} Feedback for Efficient Proof-Candidate Evaluation on {GPUs}},
+ year={2026},
+ eprint={2610.21881},
+ archivePrefix={arXiv},
+ url={https://arxiv.org/abs/2610.21881},
+ note={Preprint, version 1; prediction-based evaluation, not exact native verdict execution}}
+
+
+% VERIFIED: 2026-10-18; mandatory checker passed this entry, official documentation read.
+% REAL: yes
+% PDF: not available, official software documentation
+% ABSTRACT: Documents numerical LP methods, GPU PDLP, batching interfaces, and solver-only time accounting.
+% USED_FOR: Identity and numerical-search boundary of the measured cuOpt backend; no native Lean acceptance or imported speedup.
+@misc{nvidia-cuopt-2026,
+  author = {{NVIDIA}},
+  title = {{cuOpt}: Convex Optimization Features},
+  year = {2026},
+  howpublished = {\url{https://docs.nvidia.com/cuopt/user-guide/latest/convex-features.html}},
+  note = {Version 26.10. Accessed 2026-10-17}
+}
+
+
+% VERIFIED: 2026-10-18
+% PDF: https://research.spec.org/icpe_proceedings/2019/proceedings/p59.pdf
+% ABSTRACT: Established CUDA batched simplex with one block per LP and application-level evaluation.
+% REAL: yes
+% PRIMARY: Official ICPE2019 proceedings PDF, pages59-66; DOI printed on first page.
+% USED_FOR: GPU batching is prior art; batch supply and complete application costs matter.
+@inproceedings{batchedLPGPU2019,
+ author={Amit Gurung and Rajarshi Ray},
+ title={Simultaneous Solving of Batched Linear Programs on a {GPU}},
+ booktitle={Proceedings of the Tenth ACM/SPEC International Conference on Performance Engineering},
+ year={2019},
+ pages={59--66},
+ publisher={ACM},
+ doi={10.1145/3297663.3310308},
+ url={https://research.spec.org/icpe_proceedings/2019/proceedings/p59.pdf}
+}
+
+% VERIFIED: 2026-10-18
+% PDF: https://ojs.aaai.org/index.php/AAAI/article/download/34868/37023
+% ABSTRACT: Verified approximate policy iteration includes LP solution certification and formally establishes infeasibility/unboundedness certificates.
+% REAL: yes
+% PRIMARY: AAAI2025 official proceedings page and full paper, section on LP certification.
+% USED_FOR: Exact dual/Farkas certification is established,not a new theorem or checker architecture here.
+@article{verifiedLP2025,
+ author={Maximilian Sch{\"a}ffeler and Mohammad Abdulaziz},
+ title={Formally Verified Approximate Policy Iteration},
+ journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+ volume={39},
+ number={25},
+ year={2025},
+ pages={26659--26667},
+ doi={10.1609/aaai.v39i25.34868},
+ url={https://ojs.aaai.org/index.php/AAAI/article/view/34868}
+}
+
+% VERIFIED: 2026-10-18; mandatory checker passed this entry, official driver API read.
+% REAL: yes
+% PDF: not available, official driver API documentation
+% ABSTRACT: Documents reservation, physical allocation, mapping, access rights and release for driver-managed CUDA virtual memory.
+% USED_FOR: Existing allocation API used by our request-sized device implementation, not a new memory-management contribution.
+@misc{cudaVMM,
+ author={{NVIDIA}},
+ title={{CUDA} Driver API: Virtual Memory Management},
+ year={2026},
+ url={https://docs.nvidia.com/cuda/cuda-driver-api/cuda_driver_api/group__CUDA__VA.html},
+ note={Accessed 18 October 2026; year denotes access year, not installed driver version}
+}
+
+% VERIFIED: 2026-10-20; mandatory checker passed after access-year correction, primary documentation read.
+% REAL: yes
+% PDF: not available, software documentation
+% ABSTRACT: Exports Lean goals and hypotheses to an untrusted Sage oracle and checks emitted proof text natively; includes rational LP and nonlinear arithmetic tools.
+% USED_FOR: Existing export/search/check architecture, not a measured competitor or imported performance result.
+@misc{veriphySource,
+  author = {{Veriphy contributors}},
+  title = {Veriphy},
+  year = {2026},
+  url = {https://georgedouzas.github.io/veriphy/},
+  note = {Software documentation, accessed 20 October 2026; year denotes access year, not publication date}
+}
+
+
+% VERIFIED: 2026-10-19; mandatory checker passed this entry 2026-10-20, pinned primary source reread.
+% REAL: yes
+% PDF: not available, software artifact
+% ABSTRACT: Linear-rational-arithmetic tactics reconstruct external dual coefficients into native kernel-checked proofs over supported carriers.
+% USED_FOR: Direct-certificate reconstruction precedent, not a new benchmark execution or imported speedup.
+@misc{lpTacticSource,
+ author={{Leanprover contributors}},
+ title={{LPTactic}},
+ howpublished={Source repository},
+ year={2026},
+ url={https://github.com/leanprover/lp-tactic/tree/86634295a1fa2b45110a680215e208b16f40cd33},
+ note={Revision 8663429; accessed 19 October 2026; year denotes access year, not publication date}}
+
+
+% VERIFIED: 2026-10-20; mandatory checker passed, official pinned source read.
+% REAL: yes
+% PDF: not available, official versioned source documentation
+% ABSTRACT: Documents Lean's omega tactic, natural/integer preprocessing, native contradiction proof construction and supported elimination procedure.
+% USED_FOR: Identity of the existing integer arithmetic baseline component, not a novel solver or performance claim.
+@misc{lean427OmegaSource,
+ author={{Lean project contributors}},
+ title={{Lean}: omega tactic source documentation},
+ year={2026},
+ url={https://raw.githubusercontent.com/leanprover/lean4/v4.27.0/src/Lean/Elab/Tactic/Omega.lean},
+ note={Version v4.27.0; accessed 20 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: docs/reference/2011-chamarthi-testing-proving.pdf
+% PDF_STORAGE: Local research copy; not bundled in this commit. The stable primary source URL below is canonical.
+% ABSTRACT: Integrates counterexample testing with proof-generated subgoals and uses refuted generalizations to guide backtracking in ACL2s.
+% USED_FOR: Prior art for testing intermediate goals and counterexample-guided backtracking, not our measured Lean or GPU performance.
+@article{acl2Testing,
+ author={Harsh Raju Chamarthi and Peter C. Dillinger and Matt Kaufmann and Panagiotis Manolios},
+ title={Integrating Testing and Interactive Theorem Proving},
+ journal={Electronic Proceedings in Theoretical Computer Science},
+ volume={70}, pages={4--19}, year={2011},
+ doi={10.4204/EPTCS.70.1}, url={https://arxiv.org/abs/1105.4394}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: not available, official software source
+% ABSTRACT: Tests Lean goals by sampling local variables and rejecting samples that violate hypotheses; finite testing success is not a proof.
+% USED_FOR: Existing Lean goal-testing mechanism, cited without installation or a numerical comparison.
+@misc{plausibleSource,
+ author={{Lean prover community}},
+ title={Plausible: Tactic source},
+ year={2026},
+ url={https://github.com/leanprover-community/plausible/blob/fb13df72ecefd8ddbf9291021d7f33a8673eb57b/Plausible/Tactic.lean},
+ note={Revision fb13df72; accessed 24 October 2026; year denotes access year, not publication date}}
+
+% VERIFIED: 2026-10-24; incremental mechanical checker passed, primary abstract/introduction or pinned source read.
+% REAL: yes
+% PDF: docs/reference/2026-li-learning-to-disprove-v2.pdf
+% PDF_STORAGE: Local research copy; not bundled in this commit. The stable primary source URL below is canonical.
+% ABSTRACT: Generates counterexamples together with Lean proof obligations using hypothesis-removal tasks and learned reasoning models.
+% LICENSE: https://creativecommons.org/licenses/by/4.0/ for the cited arXiv v2 document.
+% NOTE: The primary arXiv v2 PDF labels itself Rejected from ICLR 2026; cited as a preprint, not an accepted conference paper. OpenReview forum access returned a browser challenge.
+% USED_FOR: Formal Lean refutation precedent and the distinction from our externally checked numeric witness.
+@misc{learningToDisprove,
+ author={Zenan Li and Zhaoyu Li and Kaiyu Yang and Xiaoxing Ma and Zhendong Su},
+ title={Learning to Disprove: Formal Counterexample Generation with Large Language Models},
+ year={2026}, doi={10.48550/arXiv.2603.19514},
+ url={https://arxiv.org/abs/2603.19514v2},
+ note={Version 2, revised 14 October 2026; preprint}}
+
+
+% VERIFIED: 2026-10-29, arXiv metadata/v2 HTML and current official repository.
+% REAL: yes
+% PDF: not downloaded in this node
+% USED_FOR: Existing resumable/streamed LRAT-to-Lean checking; citation-only precedent.
+@misc{lratStreaming,
+ author={Stefan Szeider},
+ title={Streaming {LRAT} Certificates into Lean Theorems},
+ year={2026}, doi={10.48550/arXiv.2607.00815},
+ url={https://arxiv.org/abs/2607.00815v2},
+ note={Version 2, revised 7 September 2026; preprint}}
+
+
+% VERIFIED: 2026-10-29, primary PDF pp.57--71, especially managed evaluation on p.65.
+% USED_FOR: Existing proof futures, exception memoization, cancellation and ordered output.
+@inproceedings{wenzelProofFutures,
+ author={Makarius Wenzel},
+ title={READ-EVAL-PRINT in Parallel and Asynchronous Proof-checking},
+ booktitle={User Interfaces for Theorem Provers},
+ series={EPTCS}, volume={118}, pages={57--71}, year={2013},
+ doi={10.4204/EPTCS.118.4},
+ url={https://arxiv.org/abs/1307.1944}}
+% VERIFIED: 2026-10-29, primary paper Sections2.2 and4.
+@misc{tactician2020,
+ author={Lasse Blaauwbroek and Josef Urban and Herman Geuvers},
+ title={The Tactician (extended version): A Seamless, Interactive Tactic Learner and Prover for Coq},
+ year={2020}, eprint={2008.00120}, archivePrefix={arXiv},
+ url={https://arxiv.org/abs/2008.00120},
+ note={Extended version of the CICM paper}}
+% VERIFIED: 2026-10-29, official source; current API is not the measured Lean4.9 context.
+@misc{leanParallelSource,
+ author={{Lean contributors}},
+ title={{Lean.Elab.Parallel}: parallel tactic-monad combinators},
+ year={2026},
+ url={https://github.com/leanprover/lean4/blob/master/src/Lean/Elab/Parallel.lean},
+ note={Source documentation; accessed 29 October 2026}}
+% VERIFIED: 2026-10-29, installed pin and official versioned source agree.
+@misc{lean49StateReuse,
+ author={{Lean contributors}},
+ title={Lean4.9.0-rc1 CoreM: saved-state reuse and heartbeat restoration},
+ year={2024},
+ url={https://github.com/leanprover/lean4/blob/v4.9.0-rc1/src/Lean/CoreM.lean},
+ note={withRestoreOrSaveFull; source explicitly notes approximate accounting of reuse overhead}}
+% VERIFIED: 2026-10-29, official release notes and pinned simplifier source.
+@misc{leanSimpCache,
+ author={{Lean contributors}},
+ title={Lean4.22.0 release: simplifier cache reuse},
+ year={2025},
+ url={https://lean-lang.org/doc/reference/latest/releases/v4.22.0/},
+ note={Simp section; PR 8880}}
+
+@article{satzilla2008,
+  author={Lin Xu and Frank Hutter and Holger H. Hoos and Kevin Leyton-Brown},
+  title={{SATzilla}: Portfolio-based Algorithm Selection for {SAT}},
+  journal={Journal of Artificial Intelligence Research},
+  volume={32}, pages={565--606}, year={2008},
+  doi={10.1613/jair.2490}, url={https://arxiv.org/abs/1111.2249}
+}
+@techreport{weitzmanSearch,
+  author={Martin L. Weitzman}, title={Optimal Search for the Best Alternative},
+  institution={MIT Department of Economics}, number={214}, year={1978},
+  url={https://dspace.mit.edu/entities/publication/990c36ff-57d4-4d0e-916e-2db6a4e93969}
+}
+@article{lubyRestart1993,
+  author={Michael Luby and Alistair Sinclair and David Zuckerman},
+  title={Optimal Speedup of {Las Vegas} Algorithms},
+  journal={Information Processing Letters}, volume={47}, number={4},
+  pages={173--180}, year={1993}, doi={10.1016/0020-0190(93)90029-9},
+  url={https://www.cs.utexas.edu/~diz/pubs/speedup.pdf}
+}
+@misc{soap2018,
+  author={Ziv Scully and Mor Harchol-Balter and Alan Scheller-Wolf},
+  title={{SOAP}: One Clean Analysis of All Age-Based Scheduling Policies},
+  year={2018}, howpublished={arXiv:1712.00790v2},
+  url={https://arxiv.org/abs/1712.00790}
+}
+@misc{optimalStoppingBon2025,
+  author={Yusuf Kalayci and Vinod Raman and Shaddin Dughmi},
+  title={Optimal Stopping vs Best-of-{N} for Inference Time Optimization},
+  year={2025}, howpublished={arXiv:2510.01394},
+  url={https://arxiv.org/abs/2510.01394}
+}
+
+@misc{leanGraphSearch2026,
+  author={Yihan Xu and Jia-Chen Gu and Junyi Zhang and Di Wu and Haikang Deng and Po-Nien Kung and Kai-Wei Chang and Amit Sahai and Wei Wang and Nanyun Peng},
+  title={Lean Graph Search for Formal Theorem Proving}, year={2026},
+  howpublished={arXiv:2610.22339v1}, url={https://arxiv.org/abs/2610.22339}
+}
+@misc{leanCostQuality2026,
+  author={K{\'a}ri R{\"o}gnvaldsson and Chenhao Sun and Jasper Dekoninck and Martin Vechev},
+  title={Optimizing the Cost-Quality Tradeoff of Agentic Theorem Provers in Lean},
+  year={2026}, howpublished={arXiv:2606.04883v3},
+  url={https://arxiv.org/abs/2606.04883}
+}
+
+% VERIFIED: 2026-10-30; official algorithm documentation read.
+% REAL: yes; year denotes access year, not a publication claim.
+@misc{salsaDependencies,
+ author={{Salsa contributors}},
+ title={The red-green algorithm},
+ url={https://salsa-rs.github.io/salsa/reference/algorithm.html},
+ year={2026},
+ note={Official algorithm documentation; accessed 30 October 2026}}
+% VERIFIED: 2026-10-30; authors' PLDI paper and project metadata read.
+% REAL: yes.
+@inproceedings{adapton,
+ author={Matthew A. Hammer and Khoo Yit Phang and Michael Hicks and Jeffrey S. Foster},
+ title={{Adapton}: Composable, Demand-Driven Incremental Computation},
+ booktitle={Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation},
+ year={2014}, pages={156--166},
+ doi={10.1145/2594291.2594324},
+ url={https://matthewhammer.org/adapton/adapton-pldi2014.pdf}}
+
+% VERIFIED: 2026-10-30; pinned publisher README, Lean README/toolchain and Lake file read.
+% REAL: yes; source corpus, not a native verification acceptance claim.
+@misc{openaiMathSource,
+ author={{OpenAI math contributors}},
+ title={{math}: Mathematical manuscripts and supporting proof artifacts},
+ year={2026},
+ url={https://github.com/openai/math/tree/4eaee87548250b2682affda7d05d947c05554bae},
+ note={Pinned source release 4eaee87548250b2682affda7d05d947c05554bae; accessed 30 October 2026}}
+% VERIFIED: 2026-10-30; exact version used by the static source corpus.
+% REAL: yes.
+@misc{leanDecide434,
+ author={{Lean contributors}},
+ title={{Lean} 4.34.1 decision-tactic implementation},
+ year={2026},
+ url={https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Elab/Tactic/Decide.lean},
+ note={doKernel invokes mkAuxLemma; accessed 30 October 2026}}
+% VERIFIED: 2026-10-30; cache lookup and declaration insertion implementation read.
+% REAL: yes.
+@misc{leanAuxLemma434,
+ author={{Lean contributors}},
+ title={{Lean} 4.34.1 auxiliary-lemma implementation},
+ year={2026},
+ url={https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Meta/Tactic/AuxLemma.lean},
+ note={Branch-local cache lookup; accessed 30 October 2026}}
+
+% VERIFIED: 2026-10-30; exact pinned publisher card read via CLI after web access failed.
+% REAL: yes; dataset labels and selection, not new native timing.
+@misc{epflEvaluation,
+ author={{EPFL-LARA}},
+ title={Lean Evaluation Benchmark},
+ year={2026},
+ url={https://huggingface.co/datasets/EPFL-LARA/lean-evaluation-benchmark/tree/0bbf31331bd1c726f539b311cce8b058a821f15c},
+ note={Pinned release 0bbf31331bd1c726f539b311cce8b058a821f15c; accessed 30 October 2026}}
+% VERIFIED: 2026-10-30; exact pinned publisher card read.
+% REAL: yes; mutation test subset, not natural-arrival costs.
+@misc{aprilDataset,
+ author={{UW Math AI}},
+ title={{APRIL}: Lean Proof Repair Dataset},
+ year={2026},
+ url={https://huggingface.co/datasets/uw-math-ai/APRIL/tree/4e3075279b4aedfb28fe435d08a8caf76272586d},
+ note={Pinned release 4e3075279b4aedfb28fe435d08a8caf76272586d; accessed 30 October 2026}}
+% VERIFIED: 2026-10-30; pinned README describes symbolic simulation and proof builds.
+% REAL: yes; static source corpus only in this audit.
+@misc{lnsymPinned,
+ author={{LNSym contributors}},
+ title={{LNSym}: Native Code Symbolic Simulator in Lean},
+ year={2026},
+ url={https://github.com/leanprover/LNSym/tree/5c05220ff970e3bdd7813ad0c9ef3741522c8b92},
+ note={Pinned revision 5c05220ff970e3bdd7813ad0c9ef3741522c8b92; accessed 30 October 2026}}
+
+% VERIFIED: 2026-10-30; versioned handler read, not a native timing result.
+@misc{lean49DecideSource,
+ author={{Lean contributors}},
+ title={{Lean} 4.9.0-rc1 ordinary decision tactic implementation},
+ url={https://github.com/leanprover/lean4/blob/v4.9.0-rc1/src/Lean/Elab/Tactic/ElabTerm.lean},
+ note={Pinned evalDecide handler; accessed 30 October 2026}}
+
+% VERIFIED: 2026-10-30; pinned official README/emitter/checker/parser read.
+% REAL: yes; released fixtures and static semantics, not our native timing.
+@misc{leanKernelVerify,
+ author={{Meta Platforms}},
+ title={{Lean Kernel Verify}: Compiler-based safety checker for GPU kernels},
+ year={2026},
+ url={https://github.com/facebookresearch/lean_kernel_verify/tree/129e65bfd8efbf6c45710732d205c941ef65928c},
+ note={Pinned release 129e65bfd8efbf6c45710732d205c941ef65928c; accessed 30 October 2026}}
+
+% VERIFIED: 2026-10-30; pinned publisher JSON fetched via CLI and all 37 W counters checked.
+% REAL: yes; publisher construction counters, not our native recensus or timing.
+@misc{epflTrainingAudit,
+ author={{EPFL-LARA}},
+ title={Lean Compiler Training Corpus: Construction Audit},
+ year={2026},
+ url={https://huggingface.co/datasets/EPFL-LARA/lean-compiler-training-corpus/blob/e5ff00a803d6a4a346a53d2116664c184c946bd7/answer_data.audit.json},
+ note={Pinned audit e5ff00a803d6a4a346a53d2116664c184c946bd7; accessed 30 October 2026}}

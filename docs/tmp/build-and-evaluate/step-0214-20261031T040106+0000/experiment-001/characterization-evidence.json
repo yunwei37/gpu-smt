@@ -1,0 +1,102 @@
+{
+  "standard26": {
+    "n": 26,
+    "user_s": 510.82275699999997,
+    "system_s": 201.186913,
+    "system_fraction": 0.2825620514395542,
+    "min_wall_row": {
+      "module": "OAI.MeasureTheory.Falconer.Estimates.NearPinDeletion",
+      "status": "compile_ok",
+      "returncode": "0",
+      "wall_s": "1.1164106149226427",
+      "user_cpu_s": "0.8958769999999999",
+      "system_cpu_s": "0.296628",
+      "peak_rss_kib": "2598928",
+      "source_bytes": "2072",
+      "source_exact": "True",
+      "lean_memory_option_MiB": "9216",
+      "threads": "8",
+      "profiled": "False",
+      "compilation_outputs": "olean_ilean_c",
+      "actual_self_wall_s": "1200.0",
+      "sorry_warning": "False",
+      "artifact_bytes": "82539"
+    }
+  },
+  "purposeful": [
+    {
+      "point": "grid-native-complete",
+      "system_fraction": 0.5241695544820063,
+      "CPU_s": 840.496378,
+      "wall_s": 634.280069835484,
+      "mean_CPU_cores": 1.32511869436163,
+      "voluntary_switches": 45375721
+    },
+    {
+      "point": "amplitudes-native-complete",
+      "system_fraction": 0.29537770511361466,
+      "CPU_s": 324.851559,
+      "wall_s": 180.27557753026485,
+      "mean_CPU_cores": 1.801972088789806,
+      "voluntary_switches": 14929651
+    }
+  ],
+  "public_artifacts": [
+    {
+      "repo": "sunblaze-ucb/vero",
+      "pin": "0a7325df9e9e6dbc275c0ad483b3d1cbe38d9b09",
+      "complete_tree": true,
+      "blob_count": 1456,
+      "vericoded_by_extension": {},
+      "agent_runs_paths": [],
+      "reference_solution_paths": [
+        "reference/BankLedger-solution-old/BankLedger.lean",
+        "reference/BankLedger-solution-old/BankLedger/Harness.lean",
+        "reference/BankLedger-solution-old/BankLedger/Impl/Account.lean",
+        "reference/BankLedger-solution-old/BankLedger/Impl/Ledger.lean",
+        "reference/BankLedger-solution-old/BankLedger/Impl/Transaction.lean",
+        "reference/BankLedger-solution-old/BankLedger/Impl/Transfer.lean",
+        "reference/BankLedger-solution-old/BankLedger/Sig.lean",
+        "reference/BankLedger-solution-old/BankLedger/Spec/Account.lean",
+        "reference/BankLedger-solution-old/BankLedger/Spec/Ledger.lean",
+        "reference/BankLedger-solution-old/BankLedger/Spec/Transaction.lean",
+        "reference/BankLedger-solution-old/BankLedger/Spec/Transfer.lean",
+        "reference/BankLedger-solution-old/BankLedger/Test.lean",
+        "reference/BankLedger-solution-old/BankLedger/Types.lean",
+        "reference/BankLedger-solution-old/lake-manifest.json",
+        "reference/BankLedger-solution-old/lakefile.toml",
+        "reference/BankLedger-solution-old/lean-toolchain"
+      ],
+      "measured": false
+    },
+    {
+      "repo": "Beneficial-AI-Foundation/vericoding-benchmark",
+      "pin": "387cd69996792d452ead7b0460f36ee4c5cdd148",
+      "complete_tree": true,
+      "blob_count": 16006,
+      "vericoded_by_extension": {
+        ".dfy": 1754,
+        ".lean": 626,
+        ".rs": 962
+      },
+      "agent_runs_paths": [],
+      "reference_solution_paths": [],
+      "measured": false,
+      "lean_output_examples": [
+        "vericoded/LA0003_vericoded.lean",
+        "vericoded/LA0012_vericoded.lean"
+      ],
+      "example_preview": "import Mathlib\n-- <vc-preamble>\ndef ValidInput (n a b p q : Int) : Prop :=\n  n > 0 \u2227 a > 0 \u2227 b > 0 \u2227 p > 0 \u2227 q > 0\n\naxiom gcd : Int \u2192 Int \u2192 Int\n\n@[reducible, simp]\ndef solve_precond (n a b p q : Int) : Prop :=\n  ValidInput n a b p q\n-- </vc-preamble>\n\n-- <vc-helpers>\n-- LLM HELPER\n-- No helper code required for this verification condition.\n-- </vc-helpers>\n\n-- <vc-definitions>\ndef solve (n a b p q : Int) (h_precond : solve_precond n a b p q) : Int :=\n  0\n-- </vc-definitions>\n\n-- <vc-theorems>\n@[reducible, simp]\ndef solve_postcond (n a b p q : Int) (result: Int) (h_precond : solve_precond n a b p q) : Prop :=\n  result \u2265 0\n\ntheorem solve_spec_satisfied (n a b p q : Int) (h_precond : solve_precond n a b p q) :\n    solve_postcond n a b p q (solve n a b p q h_precond) h_precond := by\n  dsimp [solve_postcond, solve]\n  exact le_rfl\n-- </vc-theorems>\n"
+    },
+    {
+      "repo": "facebookresearch/lean_kernel_verify",
+      "pin": "129e65bfd8efbf6c45710732d205c941ef65928c",
+      "complete_tree": true,
+      "blob_count": 173,
+      "vericoded_by_extension": {},
+      "agent_runs_paths": [],
+      "reference_solution_paths": [],
+      "measured": false
+    }
+  ]
+}

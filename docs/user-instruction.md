@@ -280,3 +280,13 @@ Full/Fast × hybrid/HiGHS 矩阵达到 **9 / 16**? 你在干嘛? 走偏了? 谁�
 - M：接着完成关键路径和可并行度测量、amc12a_2020_p4 证书原型的内核实测、内存配比模拟和先例核查；硬件计数器仍然拿不到，就用软件层面的方法估算。
 - O：把写好但没提交的 README、信任边界文档、CHANGELOG、release 说明分步提交；Docker 全量构建控制在 4 GiB 以内，可以试一次。
 - 主线程：把离线写的论文草稿合入、编译、提交；论文主线仍然等 W 和 M 的结果、用户拍板再定。
+
+
+## 2026-10-31 — direct user characterization decision
+
+【Claude 通知：论文改成刻画论文】用户决定，原话：「论文先变成 charaction 论文, 这个 workspace 可以给 root 权限啥的, 总之要做好 profile 的实验」。请把 docs/paper 改成刻画（characterization）论文：
+- 主题：验证 AI 生成的形式化产物，成本从哪里来。主体负载是研究级数学库 openai/math；第二类是 AI 写的验证软件仓库，Vero（arXiv 2608.13522，43 个多模块 Lean 4 实例）、facebookresearch/lean_kernel_verify、Vericoding 输出，用之前先确认是否公开了模型输出，不自己生成；RL 候选流（miniF2F、ProofNet、AutoVerus）作对照。
+- 结构：每节一个发现，配证据和它对系统设计的含义。证书修复等机制降为验证某条含义的案例，不再当主贡献。标题、摘要、RQ 一起改。
+- 已有发现：(1) 系统态 CPU，26 个随机抽样模块合计 28%，证书类大模块 39–52%；Grid 有 4,500 万次主动上下文切换，8 线程只用 1.3 核。(2) 每个模块进程都要重新导入 Mathlib，最小的模块 1.1 s、2.5 GiB。(3) 注定失败的候选占用的时间比例因负载而异：73% / 11.6% / 3.4%。(4) 判定不可复现：递归深度导致标签不一致，profiler 改变了 7/200 个判定。(5) 默认构建范围漏掉了约 33.3% 的 decide +kernel 词法出现。(6) 证书修复只对病态的内核约简有效。
+- Workspace 已切成 privileged（root，perf 可用）。M 线做系统态归因，O 线做导入成本和内核复核成本，W 线继续做全量成本估算。你负责论文结构和整合，数据进来前缺的数字一律用 \missing，不预填。
+改完 commit 并 push。
