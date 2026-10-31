@@ -24,3 +24,28 @@ resource samples and perf.data live on PVC outside Git. Perf-record runs are
 separate from unprofiled timing runs. Self-review only, no independent review.
 Upstream: https://github.com/leanprover/lean4/blob/v4.34.1/src/LeanChecker.lean
 and https://github.com/leanprover/lean4/blob/v4.34.1/src/Lean/Replay.lean .
+
+## Execution notes
+First attempt exposed LEAN_PATH package-root shadowing: the 26-artifact directory
+cannot precede an incomplete OAI dependency root. All failed rows and three
+Mathlib controls remain in the original PVC directory and are excluded from
+main timing statistics. The corrected v2 uses an OAI symlink union of retained
+dependency artifacts, overridden only by the exact 26 A-batch compiler artifacts.
+A real NearPinDeletion source preflight returned zero and emitted all outputs.
+A pidfd readiness wait avoids rounding 1-second workloads to 100ms sample ticks.
+Raw root: /workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/startup-replay/v2 .
+Existing perf 6.12.113 and its retained .deb are reused; no host package/sysctl change.
+
+## Reproduction
+The runner sets process affinity with sched_setaffinity(0, {0,...,7}) and takes
+an exclusive POSIX flock on the shared pcore.lock before launching any timed
+child (equivalent to the requested taskset/flock boundary). No waiting time is
+included in per-child wall clocks. Child exit is detected with pidfd; sampled
+RSS/PSS are separate from wait4 maximum RSS. Columns at_sampled_rss_peak_* use
+one simultaneous sample; independently sampled field maxima must not be added.
+Private_Clean file-backed mappings may be shareable even when Shared_Clean is
+small in a single-process run. Full smaps_rollup samples retain Pss_File/Anon.
+Run phases with python3 measure.py startup, replay, perf; each takes the same
+lock. analyze.py RAW OUTPUT_DIRECTORY emits the small CSVs. The retained .deb
+for perf is under sibling systime/linux-perf_6.12.113-1_amd64.deb. The toolchain
+and dependency roots are explicit in measure.py and raw environment.txt.

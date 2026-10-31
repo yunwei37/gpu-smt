@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Bounded startup/import/replay measurements; raw outputs stay on PVC."""
-import os,sys,json,time,signal,subprocess,pathlib,re,fcntl,csv
+import os,sys,json,time,signal,subprocess,pathlib,re,fcntl,csv,select
 from pathlib import Path
 BASE=Path('/workspaces/.agent-state/gpu-smt-captures')
-RAW=BASE/'profile-2026-10-31/startup-replay'
+RAW=BASE/'profile-2026-10-31/startup-replay/v2'
 A=Path('/workspaces/.agent-state/gpu-smt-workloads')
 SDK=A/'toolchains/lean-4.34.1-linux'
 OLD=BASE/'workloads/openai4341-standard-artifacts-a'
@@ -14,7 +14,7 @@ env['PATH']=str(SDK/'bin')+':'+env['PATH']
 env['LEAN_NUM_THREADS']='8'
 env['TMPDIR']=str(RAW/'tmp')
 (RAW/'tmp').mkdir(exist_ok=True)
-env['LEAN_PATH']=':'.join([str(OLD/'artifacts'),str(A/'rellich4341-oleans'),str(A/'openai4341-oleans'),(BASE/'workloads/mathlib4341-setup/LEAN_PATH.txt').read_text().strip()])
+env['LEAN_PATH']=':'.join([str(RAW/'replay-oleans'),str(A/'rellich4341-oleans'),(BASE/'workloads/mathlib4341-setup/LEAN_PATH.txt').read_text().strip()])
 rows=[json.loads(x) for x in (OLD/'results.jsonl').read_text().splitlines()]
 small=[r for r in rows if r['wall_s']<5 and r['status']=='compile_ok']
 def imports(text):
@@ -45,6 +45,7 @@ def measure(key,cmd,limit=90,extra=None):
     out=RAW/(key+'.stdout');err=RAW/(key+'.stderr')
     with out.open('w') as fo,err.open('w') as fe:
         p=subprocess.Popen(cmd,env=env,cwd=ROOT,stdout=fo,stderr=fe,start_new_session=True)
+        pidfd=os.pidfd_open(p.pid)
         birth=Path('/proc',str(p.pid),'stat').read_text().rsplit(')',1)[1].split()[19]
         while True:
             pid,status,u=os.wait4(p.pid,os.WNOHANG)
@@ -58,7 +59,8 @@ def measure(key,cmd,limit=90,extra=None):
             if cause:
                 try:os.killpg(p.pid,signal.SIGKILL)
                 except ProcessLookupError:pass
-            time.sleep(.1)
+            select.select([pidfd],[],[],.1)
+        os.close(pidfd)
         p.returncode=os.waitstatus_to_exitcode(status)
     end=time.monotonic()
     (RAW/(key+'.smaps.json')).write_text(json.dumps(samples))
@@ -75,6 +77,11 @@ def lean_args(src,key):
     out=RAW/'artifacts'/key;out.parent.mkdir(exist_ok=True)
     return [str(SDK/'bin/lean'),'--root='+str(ROOT),'-j8','-M9216','-DautoImplicit=false',
       '-o',str(out)+'.olean','-i',str(out)+'.ilean','-c',str(out)+'.c',str(src)]
+def preflight():
+    r=small[0];text=(A/'openai-math-4eaee875'/r['path']).read_text()
+    src=ROOT/'Preflight.lean';src.write_text(text)
+    result=measure('preflight',lean_args(src,'preflight'),90,dict(mode='preflight',module=r['module']))
+    if result['returncode']:raise SystemExit(1)
 def startup():
     for i,r in enumerate(small):
         original=(A/'openai-math-4eaee875'/r['path']).read_text()
