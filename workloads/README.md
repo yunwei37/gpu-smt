@@ -12,6 +12,8 @@ No inference or new candidate generation.
 - [EPFL training filtering](candidates/epfl-training-provenance/)
 - [Real native Grid completion](openai-math/grid-native-complete/)
 - [Six EPFL heartbeat cases for M](candidates/epfl-training12-native/M-handoff.md)
+- [Cross-dataset budget/time denominators](candidates/cross-dataset-budget/)
+- [Standard-artifact random cost sample](openai-math/standard-artifact-native-a/)
 - [Current W ownership and remaining scope](W-status.md)
 - [W reports and same-thread self-review](reports/)
 

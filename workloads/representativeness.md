@@ -128,3 +128,18 @@ not the dependency's original4.29.1objects. Source lexical1.35million kernel
 sites are not runtime check counts:Jet50shows944sites versus3938retained
 shape-matched helpers after branching. Neither type dedup nor static tokens
 establishes a timed global reuse opportunity.
+
+
+### Current research-formalization cost point (W039/W041)
+
+The historical W032 .olean-only/budget-tail numbers above remain frozen.
+Current standard .olean/.ilean/.c sampling has26/42random observations,
+11/21complete strata at M9216/j8/authored source options.
+[Cost tables and assumptions](openai-math/standard-artifact-native-a/)
+keep this new point separate from25/42old M8192 .olean-only costs.
+Full successful-build CPU/global95%CI remain unknown; per-cell nominal
+intervals are fragile normal-cost models, not full-build confidence.
+[Six-draw precision extension](openai-math/precision-panel-plan/) is prepared,
+not measured. Default OAI-root130,834modules and all-source163,097modules
+remain different populations; neither can inherit static size fractions
+as runtime fractions.

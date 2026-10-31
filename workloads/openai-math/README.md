@@ -8,33 +8,48 @@ licenses. Every manifest dependency revision is in static-4eaee875/dependencies.
 
 ## Latest archived native evidence
 
-Lean4.34.1 and pinned Mathlib cache are prepared on the same PVC. The W035
-snapshot has665distinct compiled module artifacts across explicitly separate
-budget/observation points, not full library acceptance.
+Lean4.34.1 and pinned Mathlib cache are prepared on the existing PVC.
+No full-library build or globally finite CPU-hour confidence interval has
+completed. Static source coverage and successful native compilation are
+different measurements.
 
 | Evidence | Scope |
 |---|---|
-| [Whole Amplitudes](amplitudes-native-complete/) |180.276s,100kHB/j8 replay point|
-| [Whole Grid](grid-native-complete/) |634.280s,its100kHB/j8 replay point|
-| [Original-option target costs](algorithm-native-complete/) |22/42probability endpoints;8/21complete cells at W035|
-| [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not population count|
-| [Source/helper unit audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
-| [Artifact controls](artifact-scope-control/) |3targets emit .olean/.ilean/.c; separate cost point|
-| [Build-cost estimator](native-build-cost/) |full CPU-hours/95%CI still unavailable|
+| [Standard compiler artifacts](standard-artifact-native-a/) |26/42 original random draws;11/21 complete strata; .olean/.ilean/.c,M9216,j8,authored options|
+| [Earlier target costs](partner-native-results/) |25/42 draws;10/21 cells; M8192,.olean-only; kept separate|
+| [Whole Amplitudes](amplitudes-native-complete/) |180.276s at100kHB/j8 replay point|
+| [Whole Grid](grid-native-complete/) |634.280s at its100kHB/j8 replay point|
+| [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not a population total|
+| [Source/helper audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
+| [Precision extension plan](precision-panel-plan/) |6new random draws in largest observed-variance cell; prepared,not launched|
+| [Original sampling/build model](build-planning-4eaee875/) |fixed42-draw design; static8/24-core scenarios remain assumptions|
 
-The42probability targets span21source-size/import-depth/kernel-token strata.
-Purposeful targets and compiled dependencies get no extra population weight.
-The active group covers two original draws from large mathematical cells; [W state](../W-status.md)
-records launch ownership. Source options remain unchanged, with child self
-timers despite denied parent signals. W16GiB includes separately censored
-old EPFL process13733; sampled RSS is not a hard kernel quota.
+The42primary probability targets span21source-size/import-depth/kernel-token
+strata. Dependencies and purposeful stresses receive no extra population
+weight. Missing/censored/budget-exceeded observations remain in the frame;
+they are not zero-cost outcomes or replaced by easier sources.
+[Current W state](../W-status.md) records sole active capture ownership.
 
-Current uniform costs emit .olean only. Missing/censored/budget-exceeded
-targets are not zero. Complete-stratum HT/variance calculation is implemented;
-incomplete cells do not produce an invented full interval. Standard Lake
-artifacts/setup and external-package work remain separate. Earlier static
-work/span scenarios are assumptions, not calibrated forecasts. No clocks or
-costs are pooled across HB/SDK/thread/profiling/artifact configurations.
+At the new standard-artifact point,26unchanged sources compiled without
+sorry. Sum native CPU712.009670s; group471.845673s. Largest complete cell
+(45,251small non-kernel/depth11–100modules) estimates74.1775CPUh with a
+fragile cell-only nominal95%interval[0,623.1803]. This is not a full-build
+estimate or CI. All16pending random draws and incomplete strata remain
+visible in its coverage tables.
+
+For a complete stratum, the Horvitz–Thompson total is N*samplemean, with
+SRS-without-replacement finite-population variance. Nominal t intervals use
+Welch–Satterthwaite degrees of freedom and assume approximately normal costs.
+Two observations/heavy tails do not justify a confidence guarantee.
+The [precision plan](precision-panel-plan/) specifies an independent
+conditional-remainder sample rather than naively pooling an adaptive n8.
+
+Compiler-artifact timing excludes Lake driver/setup, external caches and
+linking. It is not a measured full Lake build or an8/24-core throughput run.
+No native clocks/costs are pooled across HB,SDK,threads,profiling,artifact
+or memory-guard points. Child self timers work despite denied parent signals;
+W16GiB includes separately censored EPFL13733. -M is cooperative RSS checking
+and1s sampled whole-tree RSS is not a kernel hard quota.
 
 ## Complete source coverage
 
