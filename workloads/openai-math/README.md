@@ -16,6 +16,7 @@ different measurements.
 | Evidence | Scope |
 |---|---|
 | [Standard compiler artifacts](standard-artifact-native-a/) |26/42 original random draws;11/21 complete strata; .olean/.ilean/.c,M9216,j8,authored options|
+| [Locked original cohort C](locked-original-c-results/) |543compile/1remainder censor;29/42costs,12cells; strict locked8costs,3cells|
 | [Locked recovery cohort](locked-recovery-results/) |27/42native-setting costs,11/21cells;1cost strictly locked;13new compile successes|
 | [Earlier target costs](partner-native-results/) |25/42 draws;10/21 cells; M8192,.olean-only; kept separate|
 | [Whole Amplitudes](amplitudes-native-complete/) |180.276s at100kHB/j8 replay point|

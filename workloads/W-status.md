@@ -1,13 +1,13 @@
 # W current state
-## Current frontier (W054: software workload; M/O priority hold)
+## Current frontier (W055: source costs collected; M/O priority hold)
 - Direct user instruction: M profile matrix and O calibration/replay finish
   before W submits another timed job. Do not exploit gaps between their cases.
 - W waiting wrapper38309/birth748045910 cancelled06:28:45UTC before capture.
   /proc/locks confirms no W waiter after cancellation. launch history retained;
   additive queue-cancelled.json records it. No native run or target cost.
-- Prior37246cohort has actual terminal:544native/543compile/1group censor.
-  Raw openai4341-locked-original-c retained; full collection/retirement and cost
-  aggregation are next. Do not restart it or launch followups.
+- Prior37246cohort collected after actual terminal/retirement:544native,
+  543compile/1group-remainder censor,73jobs not started. Source parity/artifacts
+  checked; openai-math/locked-original-c-results. Do not restart or follow up.
 - Future W launch path is openai-math/pcore_launch.py: inspect actual /proc/locks
   waiters, then nonblocking take, recheck and yield. Never enqueue/block/retry
   while other lanes wait. Six controls passed; actual P lock only inspected.
@@ -15,8 +15,9 @@
   Fixed six conditional draws now have2385uncached input jobs prepared on PVC
   openai4341-precision-native-prepared, no launch. Full source2403/external831.
 - Completed five-file20-unit profile and its limitations remain in
-  openai-math/native-profile-five.27/42old native-setting costs,6strict-lock
-  costs at that completed boundary; new active cohort not yet aggregated.
+  openai-math/native-profile-five. Updated original standard-artifact frame:
+  29/42costs and12/21complete cells; strict P-lock8/42and3cells. All544C records
+  and failed/unstarted suffix preserved; no current W native capture.
   FullCPU/globalCI still unestablished. Original42draws and six-draw extension
   are not substituted or naively pooled.
 - New ai-verification-software audit:1503Lean model snapshots/1490unique
