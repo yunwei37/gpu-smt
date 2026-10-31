@@ -366,3 +366,27 @@ These are own-mode denominators, not user-cycle fractions or syscall causality.
 Two computational targets are outside default OAI root. Revision2 partition
 sums and checker-subfamily periods rechecked: normalization71.43/65.71/80.61%,
 cleanup9.30/8.87/13.34% native-user periods, not purefinalcheck.
+
+## Conditional import scale and actionable design implications — step0218
+[Self-review](tmp/build-and-evaluate/step-0218-20261031T063558+0000/step-report.md).
+User-requested interpretation refinement, no new native capture.
+Frozen O4f0e90e39successful import controls reconstruct13module medians:
+min0.711834286s/median1.354780910s/max3.195464632s.
+Hypothetical163000identical serial calls give32.230275/
+61.341469/144.683537hours; rounded32–145,median61.
+Warm-page-cache/short-successful/cohort/observer/parallelism limits explicit.
+Not all-source native total, interval, cold-start estimate or removable work.
+
+Five-source caller shares retain published revision2;75–94%/about2% are
+native-user-cycle sample-period distributions, excluding systemCPU and
+not full-flow wall fractions. No classification/data/source change.
+28target replayrc1 plus13controlrc1 remain setup failures; successful
+kernelreplay/matchedcost now explicit missing, no cheap-replay inference.
+
+All six finding-specific implications now name the engineering choice and
+evidence boundary: coverage-aware cache/build contract, allocator/memory
+accounting/synchronization candidate tests, resident/warm environment,
+consumer-specific cancellation/retry accounting, reproducible versioned
+logical-work budget, targeted certified representation changes.
+Existing allocationheartbeats not assumed observerinvariant; wall/RSS remain
+separate operational protection. No new policy/engine/other-lane mutation.
