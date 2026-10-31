@@ -1,0 +1,3 @@
+# W049 outer audit — self-review
+
+All five cases/four modes returned; profile fractions use their own native user-cycle periods. Counter scope includes launcher and is explicit; no Amdahl or cache-bandwidth assertion follows from IPC/MPKI. No-lost does not imply perfect unwind. State cleanup belongs in the checker symbol family and prevents calling it final validation alone. Baseline drift prevents treating negative overhead as speedup. Original draw count unchanged; no mixed-lock global CI reported. Native collection is terminal; only owned offline readers were repaired. W-only paths and PVC raw retention checked.

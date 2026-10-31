@@ -1,20 +1,21 @@
 # W current state
-## Current frontier (W048)
-- Locked recovery ended,all14native PID/birth retired:13compiles/1group
-  remainder censor. Source parity. Part003fresh258.741s; old platform-interrupted
-  costunknown. CoverageK14new original endpoint11.016s.
-- Primary native-setting matrix27/42,11/21complete cells; strict locked1cost.
-  FullCPU/globalCI unknown;659jobs/6targets not all completed.
-  Results openai-math/locked-recovery-results; rawsame-namedPVC point.
-- No W capture now active. Other lanes hold/queue globalP lock.
-  Next profile point prepared (not launched):openai4341-perf-case4-plan,
-  revision2 has5cases/20units; historicaldirectory namecase4retained.
-  Both original pilots of largest-variance cell first,then3heavy cases.
-- Every timed/profile run taskset0–7/flock pcore.lock. Prep/analysis8–23.
-  W16GiB/1s owned-tree watchdog, not kernel hard RSS.
-- perf6.12.113 frozen binary on PVC. Six-draw precision sampling remains
-  prepared,not measured. OldC notlaunched. All raw/failed/partial retained.
-- Root owns characterization paper/RQs. No CPUoracle, extraAgent or infra edits.
+## Current frontier (W049)
+- Five original real-file profile cases/four modes completed20/20, all accepted,
+  exact-source and identical native diagnostics; all native PID/birth retired.
+  See openai-math/native-profile-five. Raw full evidence on PVC.
+- Selected computational cases75–94% C++ checker-family user cycles; mathematical
+  comparators~2%, mostly Meta/import. Family includes state cleanup; no global
+  wall/kernel/GPU bound.46,882native samples/lost0; unresolved mass retained.
+- Original native-setting cost frame27/42 and11/21complete cells;
+  strict shared-P-lock frame6/42 and2cells. FullCPU/globalCI unknown.
+- No W capture active at this boundary. Next original endpoints: Moments.Tail,
+  Hadwiger.FiniteComparisonBounds, MixedTargets.OriginalBlock81, KeySound82;
+  verify closure/preparation and queue under shared lock, not old preparedC.
+- Every timed/profile run taskset0–7/flock pcore.lock; prep/analysis8–23.
+  W16GiB sampled watchdog, no kernel hard quota. Old13733 ended platform restart.
+- Six independent precision draws remain prepared, not measured. No source
+  replacement, CPUoracle, extraAgent, infra/security or other-lane edits.
+- Root owns characterization paper/RQs. All raw/failed/partial evidence retained.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.

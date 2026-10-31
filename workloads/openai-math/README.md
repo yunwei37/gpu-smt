@@ -22,7 +22,7 @@ different measurements.
 | [Whole Grid](grid-native-complete/) |634.280s at its100kHB/j8 replay point|
 | [Retained-type census](native-type-keys-363/) |363objects,42,610global Expr types; not a population total|
 | [Source/helper audit](native-type-attribution/) |multi-goal expansion breaks site/check equivalence|
-| [Native phase-profile plan](profile-case4-plan/) |5real files/20bracketed baseline-stat-record units; prepared,not yet measured|
+| [Native hardware/call-stack profiles](native-profile-five/) |5real files/20completed units; heterogeneous hotspots, no population phase weights|
 | [Precision extension plan](precision-panel-plan/) |6new random draws in largest observed-variance cell; prepared,not launched|
 | [Observed artifact expansion](artifact-expansion-observed/) |54.7x in A26/43.0x in B61; selected/incomplete,not population forecasts|
 | [Original sampling/build model](build-planning-4eaee875/) |fixed42-draw design; static8/24-core scenarios remain assumptions|
@@ -50,8 +50,9 @@ conditional-remainder sample rather than naively pooling an adaptive n8.
 Compiler-artifact timing excludes Lake driver/setup, external caches and
 linking. It is not a measured full Lake build or an8/24-core throughput run.
 No native clocks/costs are pooled across HB,SDK,threads,profiling,artifact
-or memory-guard points. Child self timers work despite denied parent signals;
-W16GiB includes separately censored EPFL13733. -M is cooperative RSS checking
+or memory-guard points. Historical child self timers worked despite denied parent signals.
+After the user-authorized privileged restart, owned-process signals work and
+EPFL13733 is retired; historical censored records remain unchanged. -M is cooperative RSS checking
 and1s sampled whole-tree RSS is not a kernel hard quota.
 
 ## Complete source coverage
@@ -99,8 +100,9 @@ macros or generated proof terms. It requires version-matched compiled
 the later native subset has not established full axiom closure.
 
 This release exposes much more source-level kernel-evaluation work than the
-old arithmetic-proof corpus. Whether it dominates native time remains to be
-measured; identifier density is not a speedup opportunity in seconds.
+old arithmetic-proof corpus. The five-file native panel finds heterogeneous checker/Meta/import hotspots;
+its purposeful selection cannot establish population shares. Identifier density
+is not a speedup opportunity in seconds.
 
 ## Import graph and reuse exposure
 
