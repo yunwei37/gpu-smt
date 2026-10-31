@@ -49,3 +49,18 @@ Run phases with python3 measure.py startup, replay, perf; each takes the same
 lock. analyze.py RAW OUTPUT_DIRECTORY emits the small CSVs. The retained .deb
 for perf is under sibling systime/linux-perf_6.12.113-1_amd64.deb. The toolchain
 and dependency roots are explicit in measure.py and raw environment.txt.
+
+## Finite exit-driven continuation
+The actual serial sequence is startup -> replay -> four user-space import perf
+runs -> thirteen no-declaration checker controls and one user+kernel Mathlib
+profile -> min/median/max observer calibration -> result collection.
+Every timed phase takes the existing shared P-core lock; other lines can acquire
+it between phases. Exit waits use pidfds rather than per-minute polling.
+There is no timer, new agent or persistent scheduler. The small finalize.py
+reduces actual records, retains non-successes and instrumentation caveats, and
+commits only this directory's generated CSV/report paths after the chain exits.
+It first attempts pull --rebase --no-autostash; if the shared checkout is dirty,
+it never stashes others' work and pushes only when origin/main is already an
+ancestor. A divergent fetch stops publication. Finalization stdout and the
+published commit receipt stay under raw v2/finalize.log and published-result.txt.
+Absence of that receipt is not experiment completion.
