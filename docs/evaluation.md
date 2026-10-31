@@ -300,3 +300,32 @@ Mcf49a93recomputed historical W26: top2systemCPU consumers84.11266%,top3
 89.38815%; high-RSS EnvelopePsiB has3.8238%systemCPU. Correlation/source-level
 getrusage/mimalloc hypotheses are not native causal attribution.
 No fullCPUglobalCI, novel mechanism, new throughput or semantic fidelity result.
+
+## Methodology, related work and W cost evidence — step0216
+[Self-review](tmp/build-and-evaluate/step-0216-20261031T054013+0000/step-report.md) follows the explicit
+author request, preserving the four characterization RQs and main title.
+Native timing now explicitly separates P0–7/sharedlock from E8–23preparation,
+old prelock observations, clocks, output facets, censoring and hypothetical
+source/byte-rate/import/storage extrapolations.21strata/seed20261030/42draws,
+HTandfinite-population equations, no easy-target substitution or missing=0.
+
+We independently recheck e3301f9:14native returns/13compile/1group-remainder
+censor,14byte matches/retired identities,3304.393144CPU/1700.017556nativewall,
+1.94374mean cores. OnlyCoverageK14new original endpoint11.015661s:
+27/42legacy-plus-locked native-setting inventory, strictlocked1,11complete
+legacy cells; no fullCPU/globalCI. KernelValues20actualallowance92.929919s,
+not a full600s failed opportunity. Part003fresh258.740709s has no known
+old interrupted cost and no speedup ratio.
+b2df330:actual261artifact sizes across87successful rows match raw records;
+A26:1,418,376→77,581,124bytes=54.697149x; B61:9,780,494→420,157,676
+=42.958738x. Success/selection-conditioned, not full-build/RAM/CPU estimates.
+O import1.354781s/ratio0.677724/PSSfile92.88898% remains instrumented,
+conditional13short-module matrix with54.044838observer/phaseCPU caveat.
+
+Related work now distinguishes runtime/tactic/build engineering, Mathlib
+cache/CI, official-kernel replay versus separately implemented checkers,
+RLservices and multiversion proof engineering. Primary sources verified,
+no upstream performance figures imported. Vero/LKV evaluated-model-output
+provenance remains unconfirmed in inspected official artifacts; Vericoding
+generated files are public. No model generation or root native capture.
+Mcausal attribution is still a missing result, not filled by a queued run.
