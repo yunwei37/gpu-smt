@@ -1,30 +1,19 @@
 # W current state
-
-## Current frontier (archived through W036, 2026-10-30)
-
-- [OpenAI math](openai-math/README.md): static source audit complete; W035
-  archived22/42probability costs,14/21cells observed,8complete. Full CPU/CI unknown.
-- Sample23 retired:7compile/2allocation exceptions/1full600s/1remainder106s/
-  8uninvoked; no new endpoint costs. Do not restart known blocked draws.
-- Exact Rellich context now15/15native compile complete; no sorry. Setup
-  sources, official patch and objects preserved on PVC, not old4.29.1binaries.
-- Deep rare cellN2 is now complete:69fresh compiles/no sorry, both original
-  endpoints passed; foreground retired.612OAI module artifacts across points.
-- Algorithm/Catalan group53/53compile complete,no sorry; 665OAI artifacts
-  across source/budget points. Purposeful algorithm median has0populationweight.
-- Sole foreground Wcapture: PVC workloads/openai4341-math-cells2,
-  controller70195/birth743414608. Two original probability targets in the
-  39933/45251population cells; source options unchanged,j8/M8192,
-  child self600/group1400; old13733stillcharged. Verify actual launch/terminal,
-  not a stale running flag. No parallel WLean/restart.
-- [Publisher-label diagnosis](candidates/epfl-label-reproducibility/):
-  original/800k/.ilean replay pass,rec128fails/256and512pass; unique historical
-  cause unresolved. No proven labelbug or time-only explanation.
-- M handoff ready: [6IDs/20HB diagnostic positions](candidates/epfl-training12-native/M-heartbeat-locations.csv).
-  M5ef9a0f now explicitly reviews all6cases; none in the proved numeric fragment.
-- Raw/private/failed/partial data are outside checkout on the same PVC.
-  Budget/SDK/artifact points are distinct. No full native1.35million type/work
-  extrapolation or full-build acceptance claim.
+## Current frontier (W038)
+- .olean-only native costs25/42,10complete cells; latest snapshot
+  openai-math/partner-native-results. Per-cell intervals are nominal models;
+  full-build CPU/CIunknown. M9prerequisite timings excluded from M8targets.
+- Sole active collection: PVC workloads/openai4341-standard-artifacts-a,
+  controller81605/birth747121830; verify real launch/terminal.
+  Original42frame,26ready/16pending. Standard .olean/.ilean/.c,LLVMfalse,
+  M9216/CPU0-7/j8,self<=1200/group1700. W16GiBinc old13733unchanged.
+  Parent ownership also sampled. Keep healthy run; no second WLean.
+- M5ef9a0f:ProofNet70budget sources/11.574%request time,0recovery;
+  EPFL/APRIL0whole-source recovery. Cross-dataset comparison in
+  candidates/cross-dataset-budget; AutoVerus3.4%is slowest1.6%tail,
+  its budget-share unknown. M reviewed all6Wtraining HB cases.
+- All raw/failed/partial sources,objects,CPU/memory/exits on existing PVC.
+  No old capture restart, source substitution or CPU-oracle work.
 
 ## Historical step notes (retained unchanged below)
 W004ea41025 build-planning models and53-target stratified frame are preserved.
