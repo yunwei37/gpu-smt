@@ -23,3 +23,11 @@ Only nine closednoM cells used; fullprioritydriver and othermodule outcomes
 remain outside scope. Mainoutcomes/costWguardqualification persist.
 Scientificconclusion limited to Gridorderedthree-repeatcomparison;
 notgeneralservicegain or samefailuresemantics. Self-review only.
+
+## Completed heartbeat fact synchronization
+After1aaaf1epublication, existinggpu-smt-osdi snapshot refreshed from214to225
+using the owningautomationtool. Readback changes onlyprompt andupdated_at;
+existinghourlycadence/ACTIVE/sametarget/notificationfields unchanged. Functional
+goal/resource/ownership/instructionblocks remainbyteidentical. No newtimer,
+runner, goal or clusterCronJob. Factualmaintenance is not a newresearchresult.
+Receipt avoids copying privateappthreadidentifier into this publicrepository.
