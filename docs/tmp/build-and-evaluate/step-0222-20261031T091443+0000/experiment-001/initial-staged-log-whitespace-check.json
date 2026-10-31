@@ -1,0 +1,56 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--stat",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/figures/plot-native-cost-domains.py",
+      "docs/paper/figures/native-cost-domains.tex",
+      "docs/paper/figures/native-cost-domains.pdf",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0222-20261031T091443+0000"
+    ],
+    "returncode": 0,
+    "stdout": " docs/evaluation.md  |  12 ++++++++++++\n docs/paper/main.pdf | Bin 153211 -> 167480 bytes\n docs/paper/main.tex |  38 +++++++++++++++-----------------------\n 3 files changed, 27 insertions(+), 23 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/figures/plot-native-cost-domains.py",
+      "docs/paper/figures/native-cost-domains.tex",
+      "docs/paper/figures/native-cost-domains.pdf",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0222-20261031T091443+0000"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      "docs/paper/main.tex",
+      "docs/paper/main.pdf",
+      "docs/paper/figures/plot-native-cost-domains.py",
+      "docs/paper/figures/native-cost-domains.tex",
+      "docs/paper/figures/native-cost-domains.pdf",
+      "docs/evaluation.md",
+      "docs/tmp/build-and-evaluate/step-0222-20261031T091443+0000"
+    ],
+    "returncode": 2,
+    "stdout": "docs/tmp/build-and-evaluate/step-0222-20261031T091443+0000/experiment-001/figure-build.stderr:77: trailing whitespace.\n+! Package pgfkeys Error: I do not know the key '/pgfplots/bar width', to which \ndocs/tmp/build-and-evaluate/step-0222-20261031T091443+0000/experiment-001/figure-build.stderr:82: trailing whitespace.\n+ ...                                              \ndocs/tmp/build-and-evaluate/step-0222-20261031T091443+0000/experiment-001/figure-build.stderr:83: trailing whitespace.\n+                                                  \ndocs/tmp/build-and-evaluate/step-0222-20261031T091443+0000/experiment-001/figure-build.stderr:85: trailing whitespace.\n+      \n",
+    "stderr": ""
+  }
+]

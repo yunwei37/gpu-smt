@@ -441,3 +441,15 @@ LastKeys28actual0.335247s/allowance0.302875s,
 not600s failure. Native-settingcoverage29/42/12completecells, strict8/42/3.
 No globalCPUestimate/finitefullCI; no weightedpooling acrosshistoricalpoints.
 RootE22–23/0native starts; M/Otimingqueue untouched, Wcancelledqueues notresumed.
+
+## Separate cost-denominator visualization — step0222
+[Self-review](tmp/build-and-evaluate/step-0222-20261031T091443+0000/step-report.md).
+No new measurement/conclusion. Five published W4f89614sources rendered as
+twoaligned panels: before-baseline native user/systemCPU vs separate
+native-user-period nearestcaller classes. Frozen217evidence is input;
+allseries sum100%within its own denominator. No cross-run multiplication.
+Replaces numeric phase table with reproducible PGFPlots PDF/TeX/stdlibplot
+generator; normalization/cleanup/source/counter caveats retained intext.
+RootE22–23/noLean. Firstfigurecompile rejects unqualifiedbarwidthkey; error
+retained and corrected to documented /pgf/bar width, separatev2output.
+No engine/runtime/other-lane/capture change. Not new performance evidence.

@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Original module & C++ checker family & Lean Meta & Import &
+Unresolved/anchorless & Other\\
+\midrule
+InteriorH1Derivative & 1.92\% & 64.38\% & 16.02\% & 11.44\% & 6.24\%\\
+ReindexSingle & 2.06\% & 50.58\% & 34.60\% & 3.17\% & 9.59\%\\
+UMoments9 & 81.52\% & 5.93\% & 0.66\% & 3.68\% & 8.21\%\\
+BarrierData41 & 74.93\% & 5.37\% & 0.80\% & 7.55\% & 11.35\%\\
+EnvelopePsiB & 94.01\% & 1.11\% & 2.07\% & 0.72\% & 2.08\%\\
+\bottomrule
+\end{tabular}
+\caption{Five purposeful source profiles, using the published revision-two
+caller-family classification, including private-name anchors. Shares partition decoded native user-cycle
+periods, not wall time, system CPU or final-kernel-only time.
+Other includes recognized elaborator/compiler/serialization families.
+Unresolved includes runtime leaves without a recognized phase anchor.
+Primitive leaf costs overlap these caller shares and must not be added.}
+\label{tab:native-phase-panel}
+\end{table*}

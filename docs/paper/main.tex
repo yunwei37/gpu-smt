@@ -518,7 +518,7 @@ mechanism inspection. The panel has no population phase weights.
 Every source compiles in all four modes with exact source bytes and
 identical native diagnostics, and every recorded native process retires.
 
-Table~\ref{tab:native-phase-panel} attributes native-PID user-cycle sample
+Figure~\ref{fig:native-cost-domains} (right) attributes native-PID user-cycle sample
 periods to the nearest recognized caller family.
 Every hotspot percentage below is a sampling distribution within that
 event and PID scope, not a percentage of complete-process elapsed time
@@ -538,28 +538,20 @@ Private-name recognition refines the initial Meta/import attribution;
 it changes classification, not the original native recordings.
 
 
-\begin{table*}[t]
-\centering\small
-\begin{tabular}{lrrrrr}
-\toprule
-Original module & C++ checker family & Lean Meta & Import &
-Unresolved/anchorless & Other\\
-\midrule
-InteriorH1Derivative & 1.92\% & 64.38\% & 16.02\% & 11.44\% & 6.24\%\\
-ReindexSingle & 2.06\% & 50.58\% & 34.60\% & 3.17\% & 9.59\%\\
-UMoments9 & 81.52\% & 5.93\% & 0.66\% & 3.68\% & 8.21\%\\
-BarrierData41 & 74.93\% & 5.37\% & 0.80\% & 7.55\% & 11.35\%\\
-EnvelopePsiB & 94.01\% & 1.11\% & 2.07\% & 0.72\% & 2.08\%\\
-\bottomrule
-\end{tabular}
-\caption{Five purposeful source profiles, using the published revision-two
-caller-family classification, including private-name anchors. Shares partition decoded native user-cycle
-periods, not wall time, system CPU or final-kernel-only time.
-Other includes recognized elaborator/compiler/serialization families.
-Unresolved includes runtime leaves without a recognized phase anchor.
-Primitive leaf costs overlap these caller shares and must not be added.}
-\label{tab:native-phase-panel}
-\end{table*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/native-cost-domains.pdf}
+\caption{The same five purposeful sources have different cost mixtures.
+Left: native CPU accounting in each unprofiled before baseline.
+Right: decoded native-PID user-cycle sampling in a separate perf-record
+execution, using published revision-two caller-family classification.
+These are separate denominators and runs; the panels are not multiplied
+into a full-process phase estimate. The checker family includes
+normalization/inference/equality and cleanup, not only final validation.
+Other includes recognized elaborator/compiler/serialization families;
+unresolved includes runtime leaves without a recognized phase anchor.}
+\label{fig:native-cost-domains}
+\end{figure*}
 
 The five recordings contain 46,882 native samples and zero reported lost
 samples. Their decoded period totals plus excluded launcher periods match
