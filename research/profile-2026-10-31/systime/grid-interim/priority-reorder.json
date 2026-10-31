@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-31T09:08:52.682954+00:00",
+  "controller": {
+    "pid": 62867,
+    "birth": "748852933",
+    "raw": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/priority-grid-v1",
+    "cells": 12,
+    "new_cells": 0,
+    "original_matrix_progress_at_queue": 19,
+    "reason": "two complete Grid record profiles place about74.5%of kernel periods in rusage accounting; prioritize noM then one-worker contrast"
+  },
+  "frozen_runner_unchanged": true,
+  "new_native_cells": 0,
+  "existing_cells_promoted": 12,
+  "original_full_matrix": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/matrix-v3",
+  "selection": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/priority-grid-v1/selected-cells.json",
+  "current_progress": {
+    "completed": 2,
+    "planned": 12,
+    "last": {
+      "sequence_in_original_matrix": 56,
+      "raw": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/runs/Grid-noM-stat-r1",
+      "returncode": 0,
+      "retired": true
+    }
+  },
+  "reason": "three recorded Grid runs:75%kernel periods are resource-accounting paths; prioritize noM then one-worker controls",
+  "correctness": "original matrix later reuses same retired result paths; no active capture stopped"
+}

@@ -1,0 +1,91 @@
+{
+  "1": {
+    "IR_interpreter": {
+      "period": 12061514,
+      "functions": [
+        "thread_group_cputime",
+        "thread_group_cputime_adjusted",
+        "getrusage",
+        "__do_sys_getrusage",
+        "__x64_sys_getrusage",
+        "x64_sys_call",
+        "do_syscall_64",
+        "entry_SYSCALL_64_after_hwframe",
+        "getrusage",
+        "lean::check_memory(char const*)",
+        "lean::check_system(char const*, bool)",
+        "lean::ir::interpreter::check_system()",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+        "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+        "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)"
+      ]
+    },
+    "kernel_checker": {
+      "period": 32232582,
+      "functions": [
+        "getrusage",
+        "__do_sys_getrusage",
+        "__x64_sys_getrusage",
+        "x64_sys_call",
+        "do_syscall_64",
+        "entry_SYSCALL_64_after_hwframe",
+        "getrusage",
+        "lean::check_memory(char const*)",
+        "lean::check_system(char const*, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf(lean::expr const&)",
+        "lean::type_checker::reduce_recursor(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)"
+      ]
+    }
+  },
+  "2": {
+    "kernel_checker": {
+      "period": 8321985,
+      "functions": [
+        "task_cputime",
+        "thread_group_cputime_adjusted",
+        "getrusage",
+        "__do_sys_getrusage",
+        "__x64_sys_getrusage",
+        "x64_sys_call",
+        "do_syscall_64",
+        "entry_SYSCALL_64_after_hwframe",
+        "getrusage",
+        "lean::check_memory(char const*)",
+        "lean::check_system(char const*, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf(lean::expr const&)",
+        "lean::type_checker::reduce_recursor(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)",
+        "lean::type_checker::whnf_core(lean::expr const&, bool, bool)"
+      ]
+    },
+    "IR_interpreter": {
+      "period": 5050505,
+      "functions": [
+        "getrusage",
+        "__do_sys_getrusage",
+        "__x64_sys_getrusage",
+        "x64_sys_call",
+        "do_syscall_64",
+        "entry_SYSCALL_64_after_hwframe",
+        "getrusage",
+        "lean::check_memory(char const*)",
+        "lean::check_system(char const*, bool)",
+        "lean::ir::interpreter::check_system()",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+        "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)",
+        "lean::ir::interpreter::call(lean::name const&, lean::array_ref<lean::object_ref> const&)",
+        "lean::ir::interpreter::eval_body(lean::object_ref const&)"
+      ]
+    }
+  },
+  "3": {}
+}

@@ -54,3 +54,11 @@ Existing UMoments9 baseline cells are retained; missing repetitions only fill
 after the original producer retires. No parallel M native process or replay
 of healthy work. Timing/perf/raw data stay separate; ordinary errors/timeouts
 remain data. Direct -M/no-M syscall triplets distinguish getrusage counts.
+
+## First complete Grid baseline attribution
+[Grid interim result](grid-interim/README.md), step004:3plain/stat/record/trace
+runs each accepted with exact diagnostics and.olean bytes. About75%of recorded
+kernel cycle periods serve native resource-accounting checks,20%futex paths.
+Profiler systemCPU perturbation is material. First no-M control is n1with
+identical artifacts; full counterfactual triplet is prioritized, not yet claimed.
+Third record's application caller gap and trace losses remain explicit.
