@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-31T04:53:38.063474+00:00",
+  "uid": 0,
+  "apparmor": "unconfined",
+  "kernel": "7.0.0-29-generic",
+  "perf": "perf version 6.12.113",
+  "lean": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "saved_deb": [
+    "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/linux-perf_6.12.113-1_amd64.deb"
+  ],
+  "pmu": "cpu_core (P0-7); cpu_atom events excluded",
+  "signals": "short owned sleep child SIGTERM -> -15",
+  "control_cgroup": "test-local sibling under this Workspace Pod cgroup, memory.max15GiB, child affinity0-7, exit0; events all0; removed",
+  "source_facts": {
+    "allocator": "installed config.h defines LEAN_MIMALLOC; inline lean_alloc_small_object uses mi_malloc_small/mi_malloc; dynamic binary also references glibc malloc",
+    "memory_check": "v4.34.1runtime/memory.cpp defaults LEAN_CHECK_MEM_THRESHOLD200, uses getrusage RUSAGE_SELF fast path; /proc/self/statm fallback after peak exceeds limit",
+    "scope": "source and linked symbols, not measured cycle shares",
+    "binary_memory_check": "objdump actual libleanshared.so check_memory: compare $0xc8, direct getrusage@plt call; disabled when g_max_memory=0"
+  },
+  "invalid_attempts": {
+    "wrong_affinity": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/invalid-e-affinity-v0",
+    "AS_thread_creation_failures": "/workspaces/.agent-state/gpu-smt-captures/profile-2026-10-31/systime/invalid-AS15GiB-v1"
+  },
+  "pending_controller": {
+    "pid": 7507,
+    "birth": "747477545"
+  },
+  "formal_native_completed": 0
+}
