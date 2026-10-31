@@ -56,6 +56,17 @@ and successful-proof releases omit failed arrivals. None supplies uncensored
 causal costs from labels or tactic tokens alone.
 
 
+## Same slow-tail definition (W043)
+
+[Common tail audit](candidates/common-tail/) uses ceil(1.6%*N)ranked by
+each point's candidate costs. miniF2F's top125costshare is **at least72.677%**
+from distinct retained witnesses; ProofNet's top96are **33.519–33.591%**
+across3reps; AutoVerus's top58are **3.315–3.399%**.
+ProofNet11.57%above is its70budget-source cost share, not its slow-tail share.
+Mini sums retries per source while the other points use single request/process
+costs; hardware/policy differences and small-frame censoring remain.
+This is descriptive concentration, not removable phase cost or speedup.
+
 ## Versioned native samples and constructed training releases
 
 [EPFL136 native returns](candidates/native-versioned/epfl-completed136/)
