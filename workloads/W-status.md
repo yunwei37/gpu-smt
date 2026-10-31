@@ -1,5 +1,5 @@
 # W current state
-## Current frontier (W050)
+## Current frontier (W051)
 - Five original real-file profile cases/four modes completed20/20, all accepted,
   exact-source and identical native diagnostics; all native PID/birth retired.
   See openai-math/native-profile-five. Raw full evidence on PVC.
@@ -15,7 +15,12 @@
   Moments.Tail/Hadwiger pair first; no native cost result at this boundary.
 - Every timed/profile run taskset0–7/flock pcore.lock; prep/analysis8–23.
   W16GiB sampled watchdog, no kernel hard quota. Old13733 ended platform restart.
-- Six independent precision draws remain prepared, not measured. No source
+- System CPU is45.33/39.73% in the two heavy computational baselines, versus
+  4.12% in EnvelopePsiB; user-cycle fractions exclude it. Two computational
+  cases are outside default OAI; source/default-root scope stays explicit.
+- Twenty-one old original draws prepared for shared-lock remeasurement, not
+  launched. Six independent precision draws have full2403source/831external
+  input readiness; no precision native measurement. No source
   replacement, CPUoracle, extraAgent, infra/security or other-lane edits.
 - Root owns characterization paper/RQs. All raw/failed/partial evidence retained.
 

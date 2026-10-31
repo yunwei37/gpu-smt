@@ -20,6 +20,12 @@ Original evidence: /workspaces/.agent-state/gpu-smt-captures/workloads/openai434
 
 Native group 1,280.714450s, capture 1,281.667573s; summed native wall 1,273.268909s and CPU 1,895.034937s include all four modes, not one build. W sampled tree peak 8,676,712,448 bytes; maximum native concurrency one. Raw perf.data totals 437,217,656 bytes. All native PID/birth identities retired before collection.
 
+## Kernel CPU, source mix and default-build membership
+
+native-system-costs.csv retains both unprofiled brackets. In baseline_before, system CPU is 45.33% of UMoments9's native CPU and 39.73% of BarrierData41's, versus 4.12% for EnvelopePsiB (10.73% and 19.54% for the two mathematical files). Their voluntary-switch rates are approximately 115,680/s, 131,232/s and 572/s respectively. These are native rusage observations, not proof that all system CPU is synchronization or a diagnosis of one syscall. The user-cycle profiles exclude this substantial system work and must not be read as percentages of total CPU. Raw page-fault counts remain available; they do not measure physical disk bytes.
+
+source-features.csv links lexical evidence without treating token counts as runtime calls: UMoments9 has40 decide+kernel tokens and a146.09s first baseline, while BarrierData41 has1320tokens and87.84s. The five-file panel is too small/purposeful for a population cost relationship. Default-root-membership shows **UMoments9 and BarrierData41 are outside the publisher's default OAI import closure**, while the mathematical comparators and EnvelopePsiB are inside. Thus a default-root-only build would miss two of these computational cases; an all-public-source characterization must report that domain difference.
+
 ## Instruments and overhead
 
 Per case: baseline_before, perf_stat, perf_record, baseline_after. Frozen PVC perf 6.12.113. Stat counts cpu_core cycles, instructions, cache-misses, page-faults and context-switches for the leaf launcher plus native descendants; all reported running percentages are 100.00. IPC/MPKI retain that tool scope. Record uses cpu_core/cycles/u at 99Hz with DWARF8192 stacks; native-PID filtering removes launcher periods.

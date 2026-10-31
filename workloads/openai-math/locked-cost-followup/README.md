@@ -1,0 +1,7 @@
+# Shared-lock original-cost follow-up
+
+The original42 probability sample remains unchanged. After the privileged restart, every timed run takes the common P0–7 lock. At W051, six original identities have matching standard-artifact unprofiled locked costs;21additional already-passing identities have inputs prepared for a future same-protocol remeasurement. They are **not yet remeasured** and are not extra draws. Their old summed CPU227.229316s is a planning observation, not new measured cost or a completion guarantee. Every direct import is already cached; standard artifacts/authored options/j8/M9216 remain.
+
+Prepared raw point: /workspaces/.agent-state/gpu-smt-captures/workloads/openai4341-locked-cached-originals, no launch.json. It must not run concurrently with the original-missing-endpoint point. It will use the existing shared flock and16GiB owned-tree sampled watchdog; no fixed-AS or host changes. Old unlocked observations stay unchanged.
+
+The actually queued original-missing-endpoint point is openai4341-locked-original-c:617closure jobs/four original endpoints, wrapper37246/birth747971468. Its immutable plan prioritizes both draws of the deep mathematical cell, then two missing kernel-token cells. A queued wrapper is not an invoked native compiler or a completed617-job matrix. Read actual launch/start/terminal and PID/birth; do not trust this dated status for future liveness. All files/source records and cooperative/self-wall budgets remain on PVC.
