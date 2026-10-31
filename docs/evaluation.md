@@ -329,3 +329,40 @@ no upstream performance figures imported. Vero/LKV evaluated-model-output
 provenance remains unconfirmed in inspected official artifacts; Vericoding
 generated files are public. No model generation or root native capture.
 Mcausal attribution is still a missing result, not filled by a queued run.
+
+## Native source profiles, observer follow-up and unavailable replay — step0217
+[Self-review](tmp/build-and-evaluate/step-0217-20261031T061359+0000/step-report.md) integrates published
+W2996335/O4f0e90e initially, then published W31f32b1/4f89614 before completion.
+Initial frozen tables remain; the manuscript uses committed private-anchor
+revision2, not uncommitted worktree derivatives.
+W20actualinvocations/5sources: sourcebytes/native diagnostics match4modes;
+all20retired. Root independently streams decoded stacks:46,882native samples,
+all5period/launcher totals match, zero lost; raw stat IPC/MPKI recomputed.
+C++caller shares (unchanged under revision2)1.918/2.061/81.520/74.931/94.012%:
+nativeusercycles, nearestrecognizedcaller includingcleanup, not purefinalcheck/
+systemCPU/wall/population. Other/anchorless mass retained. Before/afterCPU
+drift-9.905..+6.384%; no acceleration or perfectobserverparity inference.
+Strictlockedcostcoverage now6/42/twocompletecells; legacy27/42/11distinct.
+
+O21calibrationcalls allzero/retired/source-matched;7groups x3,
+wallmedianrelative0.919882–1.087370, observer14.347585CPU/native49.964258CPU.
+Not randomized or uninstrumented, and incomparable to81call54.044838CPUtotal.
+5perfimportcontrols allzero/retired; eventscopes/samples/lost checked.
+One Mathlib user+kernel579sample profile:markpersistent9.29%,nameeq5.69%
+selfperiod, not a whole-source causal profile. Msystemcauses remain missing.
+
+O28target+13emptychecker attempts all exit1 withCouldnotfindanyoleans.
+Read-onlySDK4.34.1source/path audit: module discovery canonicalizes target
+filenames, while41existing alias objects resolve outsideeveryrecordedsearch
+root. This happens before replay; times/statuses excluded from nativechecking
+cost or acceptance. No0/41proofvalidityclaim; no new native rerun or Ofileedit.
+Allrawfailuresandpublishedblankratios preserved. Own root analysis/compile
+usesE22–23,4GiB; no timednativequeue or infrastructure changed.
+
+The final integration also recomputes W4f89614's ten before/after rusage rows
+against the frozen20invocation matrix. First-baseline systemCPU45.33%/39.73%
+in UMoments9/BarrierData41 versus4.12%EnvelopePsiB; switchrates115680/131232/572s-1.
+These are own-mode denominators, not user-cycle fractions or syscall causality.
+Two computational targets are outside default OAI root. Revision2 partition
+sums and checker-subfamily periods rechecked: normalization71.43/65.71/80.61%,
+cleanup9.30/8.87/13.34% native-user periods, not purefinalcheck.

@@ -136,10 +136,11 @@ records rather than pretending that a target's local CPU is its complete
 cold-build cost. Expensive or blocked draws stay in the original frame;
 we do not replace them with easier modules.
 At the legacy standard-artifact point, 26 targets have complete costs.
-The later locked continuation adds one cost to the labelled same-native-setting
-inventory (27/42), but only that new observation has the strict shared-lock
-timing guarantee. Eleven cells are complete in the combined inventory;
-zero are complete in the locked-only subset. Neither is a completed
+The first locked continuation adds one cost to the labelled
+same-native-setting inventory (27/42). Five subsequent unprofiled baselines
+give six original target costs with the strict shared-lock guarantee and
+complete two strata. Eleven cells remain complete in the legacy-inclusive
+inventory. These policies and clocks stay separate; neither is a completed
 same-protocol full-population sample.
 
 For a fully observed stratum of size $N_h$ with $n_h=2$ planned draws,
@@ -415,8 +416,9 @@ or 1.944 average native CPU cores; group and external capture clocks are
 jobs for six endpoints, not their complete build.
 Only \texttt{CoverageK14} reaches an original probability endpoint,
 taking 11.016 seconds locally after prerequisites.
-The combined inventory therefore reaches 27/42 target costs, while strict
-locked coverage remains one. Full total CPU and a global interval remain
+At that boundary, the combined inventory reaches 27/42 target costs
+and strict locked coverage is one; the separate five-case panel below
+later raises strict coverage to six. Full total CPU and a global interval remain
 \missing{unavailable from the incomplete matching sample}.
 
 The freshly re-executed \texttt{CertificatesK14Part003} compiles in
@@ -446,6 +448,83 @@ Thus the inspected large modules do not all share a 39--52\% range.
 perf attribution to synchronization/allocation/I/O, and causal controls.}
 The earlier one-worker profiled Grid run stops at its own 300-second bound;
 it cannot supply an isolated eight-versus-one-worker speedup.
+
+\paragraph{Native profiles expose different work inside the same compiler.}
+A separate five-source panel brackets perf-stat and perf-record runs with
+unprofiled before/after baselines: 20 native invocations in all.
+The two mathematical comparators are the original random pilots in one
+high-variance stratum; three heavy original targets are selected for
+mechanism inspection. The panel has no population phase weights.
+Every source compiles in all four modes with exact source bytes and
+identical native diagnostics, and every recorded native process retires.
+
+Table~\ref{tab:native-phase-panel} attributes native-PID user-cycle sample
+periods to the nearest recognized caller family.
+The three computational cases have 74.93--94.01\% in the C++ checker family;
+the two mathematical comparators have only 1.92--2.06\%.
+The C++ family includes inference, equality, reduction and checker-state
+cleanup, rather than solely final theorem validation.
+The contrast supports measuring mathematical and computational proof
+families separately; it is not an all-library kernel fraction.
+Within the same sampled user-cycle denominator, normalization anchors
+account for 71.43\%, 65.71\% and 80.61\% in the three computational
+cases; checker-state cleanup accounts for another 9.30\%, 8.87\% and
+13.34\%. These symbol subfamilies explain the breadth of the checker
+label without assigning a source-level tactic from a C++ frame.
+Private-name recognition refines the initial Meta/import attribution;
+it changes classification, not the original native recordings.
+
+
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Original module & C++ checker family & Lean Meta & Import &
+Unresolved/anchorless & Other\\
+\midrule
+InteriorH1Derivative & 1.92\% & 64.38\% & 16.02\% & 11.44\% & 6.24\%\\
+ReindexSingle & 2.06\% & 50.58\% & 34.60\% & 3.17\% & 9.59\%\\
+UMoments9 & 81.52\% & 5.93\% & 0.66\% & 3.68\% & 8.21\%\\
+BarrierData41 & 74.93\% & 5.37\% & 0.80\% & 7.55\% & 11.35\%\\
+EnvelopePsiB & 94.01\% & 1.11\% & 2.07\% & 0.72\% & 2.08\%\\
+\bottomrule
+\end{tabular}
+\caption{Five purposeful source profiles, using the published revision-two
+caller-family classification, including private-name anchors. Shares partition decoded native user-cycle
+periods, not wall time, system CPU or final-kernel-only time.
+Other includes recognized elaborator/compiler/serialization families.
+Unresolved includes runtime leaves without a recognized phase anchor.
+Primitive leaf costs overlap these caller shares and must not be added.}
+\label{tab:native-phase-panel}
+\end{table*}
+
+The five recordings contain 46,882 native samples and zero reported lost
+samples. Their decoded period totals plus excluded launcher periods match
+stock perf-report totals.
+Zero lost samples does not guarantee complete stacks: full root markers
+are rarely reached, and the shortest recording has only 215 native samples.
+Stat IPC spans 1.450--2.189 and cache misses per thousand instructions
+1.379--6.101, but those counters include the launcher and native descendants;
+the phase table separately filters to the native PID.
+Per-case baseline-after CPU differs from baseline-before by -9.91\% to
++6.38\%. One bracket per source cannot establish a general overhead
+correction or interval, even with equal observed diagnostics.
+System CPU remains outside the user-cycle phase denominator.
+This exclusion matters even among the three computational cases.
+In their unprofiled before baselines, UMoments9 and BarrierData41 spend
+45.33\% and 39.73\% of native CPU in system mode, with approximately
+115,680 and 131,232 voluntary context switches per wall second.
+EnvelopePsiB instead spends 4.12\% in system mode and records 572 such
+switches per second. The two mathematical comparators have system shares
+10.73\% and 19.54\%. Each fraction uses that invocation's own CPU
+denominator; switch counts alone do not attribute the work to a syscall.
+UMoments9 and BarrierData41 are outside the publisher's default import
+closure, whereas the other three panel sources are inside.
+Consequently, a default-root-only profile would omit two of these
+expensive computational cases, even before weighting or extrapolation.
+
+\missing{Causal attribution of the complete modules' system CPU and
+repeat-based profile-overhead uncertainty.}
 
 \paragraph{System-design implication.}
 Worker count is not available parallelism. Increasing executor threads or
@@ -522,8 +601,32 @@ Driver waited-child accounting exceeds native CPU by approximately
 The runner scans process descendants and collects \texttt{smaps\_rollup}
 at 100\,ms intervals. This additional work is reported rather than
 subtracted from the native wall clocks.
-\missing{Low-overhead observer calibration, cold-cache controls,
-allocation/CPU attribution and matched retained-environment costs.}
+A completed follow-up changes descendant discovery while retaining
+100\,ms memory sampling. It executes three build/import repetitions on
+three historical short-module controls, plus three Mathlib-only repetitions:
+21 successful native calls and 14.348 seconds of measured observer CPU
+alongside 49.964 native CPU seconds.
+Across the seven mode/module groups, follow-up/original wall-median ratios
+range from 0.920 to 1.087, including both slower and faster observations.
+This fixed-order, smaller-cohort comparison is neither an uninstrumented
+reference nor a randomized overhead estimate. Its observer CPU cannot be
+compared directly with the earlier 81-call matrix's 54.045-second aggregate.
+
+Five separate import-only perf runs also complete.
+The user-plus-kernel Mathlib recording contains 579 samples and zero
+reported lost samples; its self-period shares include 9.29\% for
+\texttt{lean\_mark\_persistent} and 5.69\% for \texttt{lean\_name\_eq}.
+The other four recordings sample user cycles only and keep their own
+denominators. These profiles expose work within import preparation,
+not a cause of the complete library modules' system-CPU share.
+\missing{Uninstrumented import controls, repeat-based observer uncertainty,
+cold-cache controls, allocation/CPU attribution and matched retained-state costs.}
+
+The attempted compiled-module replay matrix does not yet provide kernel
+costs: 28 target invocations and 13 empty-module controls all stop at
+module discovery before checking.
+Their exit-one records are operational setup failures, not proof rejections;
+no checker/build ratio or target-minus-empty kernel time is reported.
 
 Established environment reuse provides a useful contrast~\cite{repl,kimina}.
 In one completed miniF2F resource comparison, four warm workers take
@@ -544,9 +647,9 @@ not our novelty claim. It must be evaluated against a competent warm service
 and account for replicated resident memory, incompatible contexts, reloads,
 cancellation and cleanup~\cite{fork}.
 A gain over fresh processes alone is insufficient evidence of service benefit.
-The instrumented import matrix establishes substantial preparation-related
-latency in its selected cohort, but not how much a production service can
-remove. The large file-backed share also prevents inferring memory-capacity
+The instrumented import matrix and limited observer follow-up establish
+substantial preparation-related latency in their selected cohorts, but not
+how much a production service can remove. The large file-backed share also prevents inferring memory-capacity
 gains by multiplying per-process RSS. Calibration and matched retained-state
 comparisons must establish these benefits without changing verification
 behavior.

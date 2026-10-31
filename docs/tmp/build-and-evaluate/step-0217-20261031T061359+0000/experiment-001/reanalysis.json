@@ -1,0 +1,111 @@
+{
+  "O_source": "4f0e90e",
+  "calibration21": {
+    "completed_records": 21,
+    "all_exit_zero": true,
+    "same_source_control_pairs": 21,
+    "module_selection": "3 historical min/median/max small modules plusMathlib; 7groups x3",
+    "native_CPU_s": 49.964258,
+    "native_wall_sum_s": 50.18806004151702,
+    "observer_self_CPU_s": 14.347584975999998,
+    "relative_wall_median_range": [
+      0.91988227962306,
+      1.087370461294456
+    ],
+    "randomized": false,
+    "uninstrumented_control": false
+  },
+  "replay": {
+    "target_modules": 28,
+    "empty_controls": 13,
+    "module_discovery_failures": 41,
+    "successful_replays": 0,
+    "native_check_cost_available": false,
+    "canonical_files_outside_search_roots": 41
+  },
+  "perf": [
+    {
+      "key": "perf-mathlib",
+      "event": "cycles:u",
+      "samples": 584,
+      "lost": 0,
+      "exit_code": 0,
+      "wall_s": 4.351986885070801
+    },
+    {
+      "key": "perf-deps-0",
+      "event": "cycles:u",
+      "samples": 222,
+      "lost": 0,
+      "exit_code": 0,
+      "wall_s": 2.2890342473983765
+    },
+    {
+      "key": "perf-deps-4",
+      "event": "cycles:u",
+      "samples": 257,
+      "lost": 0,
+      "exit_code": 0,
+      "wall_s": 2.350503752939403
+    },
+    {
+      "key": "perf-deps-10",
+      "event": "cycles:u",
+      "samples": 555,
+      "lost": 0,
+      "exit_code": 0,
+      "wall_s": 4.357905154116452
+    },
+    {
+      "key": "perf-all-mathlib",
+      "event": "cycles",
+      "samples": 579,
+      "lost": 0,
+      "exit_code": 0,
+      "wall_s": 4.374192927032709
+    }
+  ],
+  "selected_import_self_samples": {
+    "event_scope": "cpu_core/cycles user+kernel in one Mathlib import",
+    "lean_mark_persistent_pct": 9.29,
+    "lean_name_eq_pct": 5.69,
+    "same_hardware_repetition_or_wholebuild_fraction": false
+  },
+  "all_checked_native_identities_retired": 67,
+  "root_native_processes_started": 0,
+  "root_analysis_s": 0.038918957114219666,
+  "root_analysis_maxrss_kib": 13860,
+  "W_profile_panel": {
+    "commit": "2996335",
+    "native_invocations": 20,
+    "sources": 5,
+    "source_byte_matches": 20,
+    "native_diagnostic_sets_equal": 5,
+    "retired_PID_births": 20,
+    "verified_native_cycle_samples": 46882,
+    "lost_samples": 0,
+    "records_have_launcher_native_scope_separated": true,
+    "cpp_checker_family_percentages": {
+      "InteriorH1Derivative": 1.9183586638178016,
+      "ReindexSingle": 2.0610328343137247,
+      "UMoments9": 81.51997826060952,
+      "BarrierData41": 74.93148598248757,
+      "EnvelopePsiB": 94.01219683374013
+    },
+    "CPU_drift_fraction_range": [
+      -0.09905459080979828,
+      0.0638394746972124
+    ],
+    "phase_scope": "nearest recognized caller of native PID user-cycle sample periods; C++ includes cleanup; not pure final check/systemCPU/wall/population",
+    "uncommitted_later_classification_edits_used": false,
+    "root_pure_analysis_s": 2.288547351025045
+  },
+  "W_published_refinement": {
+    "commit": "4f89614",
+    "native_rusage_rows_joined": 10,
+    "private_anchor_revision": 2,
+    "phase_partition_and_checker_subfamily_sums_verified": true,
+    "initial_2996335_snapshots_preserved": true,
+    "new_native_runs": 0
+  }
+}
